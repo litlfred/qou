@@ -1,7 +1,7 @@
 {
   "computation": "q-pinning-50-digit",
   "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath.  READ THE THREE anchor_* ROLE FIELDS BELOW BEFORE USING THIS: the word \"anchor\" does three different jobs in this witness and they do NOT all say the same thing.  This producer is listed under ideal_muon in q0_anchor_manifest.json, so when run under its own name q_parameter rebinds q_at to return the MUON literal and the Newton solve described below never executes -- derived_50_digit.q is the muon value.  The m_p/m_e route is what DEFINES the quantity, not what ran.  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 8.30e-13 (830 ppQ) from the 0.017 ppb m_p/m_e ratio (see physical_anchoring_bound).  m_\u03bc/m_e is recorded only as a 9.5\u03c3 cross-check prediction.  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-08-29T03:09:57.257517+00:00",
+  "timestamp": "2026-08-28T20:47:21.415667+00:00",
   "precision_decimal_digits": 70,
   "calibration_inputs": {
     "Vol_4_1_str": "2.029883212819307250042405108549040571883378615060599584034978213553195",
@@ -66,9 +66,9 @@
   },
   "scriptHash": "58f994b46a01",
   "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-  "commitSha": "a0f49261e5bf4703c8d01f2e1eb3b474995559b3",
+  "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
   "engine": "mpmath",
-  "computedAt": "2026-08-29T03:09:57.402493+00:00",
+  "computedAt": "2026-08-28T20:47:21.480123+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "muon",

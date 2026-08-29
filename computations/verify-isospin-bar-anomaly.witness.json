@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean",
-      "source": "bar-involution parity of \u210f_q\u00b2 \u00b7 h \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3"
+      "source": "bar-involution parity of ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3"
     }
   ],
   "allPassed": true,
@@ -42,12 +42,12 @@
     ],
     "reproduce": "python3 -u computations/verify_isospin_bar_anomaly.py"
   },
-  "description": "Verifies that the substrate flavor-split closed form \u0394m/M_N = \u210f_q\u00b2 \u00b7 h \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3 is bar-ANTI-symmetric at leading order (consistent with the SU(2)_I Z/2 swap residue per `conj:isospin-from-canonical-bowtie`, PR #1162).  Each factor is bar-classified individually + the overall product parity verified.",
+  "description": "Verifies that the substrate flavor-split closed form Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3 is bar-ANTI-symmetric at leading order (consistent with the SU(2)_I Z/2 swap residue per `conj:isospin-from-canonical-bowtie`, PR #1162).  Each factor is bar-classified individually + the overall product parity verified.",
   "contentBlock": "conj:isospin-from-canonical-bowtie",
   "parameters": {
     "q_0_50dps": "1.10997859564273904668179512938",
     "h_q0_50dps": "0.209060322150316746630800261502",
-    "diagnostics_slot_j": "GB filtration: N/A (closed-form expression); Jet order: h^1 leading bar-anti-symmetric; Bar-symmetry: bar-anti-symmetric leading + bar-symmetric subleading via (1 + \u210f_q\u00b3) factor"
+    "diagnostics_slot_j": "GB filtration: N/A (closed-form expression); Jet order: h^1 leading bar-anti-symmetric; Bar-symmetry: bar-anti-symmetric leading + bar-symmetric subleading via (1 + ℏ_q³) factor"
   },
   "data": {
     "per_factor_bar_parity": {
@@ -89,7 +89,7 @@
     },
     "expected_parity": "mixed",
     "parity_matches_expectation": true,
-    "d9_audit_correction_finding": "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q \u2194 q\u207b\u00b9) is 'mixed' because \u210f_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar \u2014 must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` \u00a73 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged.",
+    "d9_audit_correction_finding": "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged.",
     "codata_cross_check": {
       "M_p_codata_MeV": "938.27208943",
       "M_n_codata_MeV": "939.56542194",
@@ -112,7 +112,7 @@
     ]
   },
   "caveats": [
-    "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q \u2194 q\u207b\u00b9) is 'mixed' because \u210f_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar \u2014 must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` \u00a73 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged."
+    "D9 audit/conjecture mis-attribution surfaced: claimed bar-anti-symmetric leading order, actual parity under bar involution (q ↔ q⁻¹) is 'mixed' because ℏ_q = (q-1)/q is not cleanly bar-classifiable.  Isospin SU(2)_I Z/2 swap is a different involution from bar — must not conflate.  Recommend correction of `2026-05-24-isospin-categorical-source.md` §3 four-factor decomposition + `conj:isospin-from-canonical-bowtie.md` headline.  305 ppm empirical match unchanged."
   ],
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

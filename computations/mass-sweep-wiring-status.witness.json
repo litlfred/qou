@@ -42,13 +42,13 @@
     ],
     "reproduce": "python3 -u computations/mass_sweep_wiring_status.py"
   },
-  "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired \u2014 every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
+  "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
     "q_0": 1.109978595642739,
     "h_q0": 0.20906032215031675,
     "h_sq_q0": 0.04370621829759422,
     "h_4_q0": 0.0019102335178769597,
-    "klr_positivity": "Khovanov-Lauda-Rouquier categorical positivity: framework's |tr_M|\u00b7Vol(K) prediction is a LOWER BOUND on observed binding. Over-predictions (B_pred > B_AME) indicate the formula has a mistake \u2014 wrong knot, wrong \u03bd_SDP, or missing restriction."
+    "klr_positivity": "Khovanov-Lauda-Rouquier categorical positivity: framework's |tr_M|·Vol(K) prediction is a LOWER BOUND on observed binding. Over-predictions (B_pred > B_AME) indicate the formula has a mistake — wrong knot, wrong ν_SDP, or missing restriction."
   },
   "data": {
     "per_atom_wiring_status": [
@@ -63,8 +63,8 @@
         "err_rel": 0.010893719413699711,
         "wiring_status": "exploratory",
         "klr_positivity_violates": true,
-        "jet_order_classification": "between h\u2074 and h\u00b2/2",
-        "suspect_component": "knot=6_2 census-assigned + \u03bd_SDP=1 guess",
+        "jet_order_classification": "between h⁴ and h²/2",
+        "suspect_component": "knot=6_2 census-assigned + ν_SDP=1 guess",
         "needs_for_canonical": "Rule-14 census + R5-full SDP solver"
       },
       {
@@ -78,8 +78,8 @@
         "err_rel": -0.0015558261114549576,
         "wiring_status": "exploratory",
         "klr_positivity_violates": false,
-        "jet_order_classification": "\u2248 h\u2074 (\u2248 1.91e-03)",
-        "suspect_component": "knot=8_11 census-assigned + \u03bd_SDP=2 guess",
+        "jet_order_classification": "≈ h⁴ (≈ 1.91e-03)",
+        "suspect_component": "knot=8_11 census-assigned + ν_SDP=2 guess",
         "needs_for_canonical": "Rule-14 census + R5-full SDP solver"
       },
       {
@@ -93,8 +93,8 @@
         "err_rel": -0.029689050692980754,
         "wiring_status": "exploratory",
         "klr_positivity_violates": false,
-        "jet_order_classification": "\u2248 h\u00b2 (\u2248 4.37e-02)",
-        "suspect_component": "link=L6a4 census-assigned + \u03bd_SDP=2 guess",
+        "jet_order_classification": "≈ h² (≈ 4.37e-02)",
+        "suspect_component": "link=L6a4 census-assigned + ν_SDP=2 guess",
         "needs_for_canonical": "Rule-14 census + R5-full SDP solver"
       },
       {
@@ -108,8 +108,8 @@
         "err_rel": 0.05866756453808973,
         "wiring_status": "extrapolated",
         "klr_positivity_violates": true,
-        "jet_order_classification": "\u2248 h\u00b2 (\u2248 4.37e-02)",
-        "suspect_component": "A\u00b78G magic rule + \u03bd_SDP=2 extrapolated",
+        "jet_order_classification": "≈ h² (≈ 4.37e-02)",
+        "suspect_component": "A·8G magic rule + ν_SDP=2 extrapolated",
         "needs_for_canonical": "R5-full SDP solver"
       },
       {
@@ -124,8 +124,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no atom\u2192knot rule for A=5",
-        "needs_for_canonical": "Rule-14 census expansion to A\u2208{5,6,7}"
+        "suspect_component": "no atom→knot rule for A=5",
+        "needs_for_canonical": "Rule-14 census expansion to A∈{5,6,7}"
       },
       {
         "atom": "6Li",
@@ -139,8 +139,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no atom\u2192knot rule for A=6",
-        "needs_for_canonical": "Rule-14 census expansion to A\u2208{5,6,7}"
+        "suspect_component": "no atom→knot rule for A=6",
+        "needs_for_canonical": "Rule-14 census expansion to A∈{5,6,7}"
       },
       {
         "atom": "7Li",
@@ -154,8 +154,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "no atom\u2192knot rule for A=7",
-        "needs_for_canonical": "Rule-14 census expansion to A\u2208{5,6,7}"
+        "suspect_component": "no atom→knot rule for A=7",
+        "needs_for_canonical": "Rule-14 census expansion to A∈{5,6,7}"
       },
       {
         "atom": "8Be",
@@ -168,8 +168,8 @@
         "err_rel": 0.10334231217226478,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "between h\u00b2 and h/2",
-        "suspect_component": "2\u00d74He + 1\u00d7c_\u03b1\u03b1 recursion (built on \u2074He extrap.)",
+        "jet_order_classification": "between h² and h/2",
+        "suspect_component": "2×4He + 1×c_αα recursion (built on ⁴He extrap.)",
         "needs_for_canonical": "4He canonical first"
       },
       {
@@ -184,8 +184,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "2\u03b1+n Borromean halo \u2014 composite rule needed",
-        "needs_for_canonical": "\u03b1-core + valence nucleon decomposition"
+        "suspect_component": "2α+n Borromean halo — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "11B",
@@ -199,8 +199,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "2\u03b1+3p p-shell \u2014 composite rule needed",
-        "needs_for_canonical": "\u03b1-core + valence nucleon decomposition"
+        "suspect_component": "2α+3p p-shell — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "12C",
@@ -213,8 +213,8 @@
         "err_rel": 0.05410324782244259,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "\u2248 h\u00b2 (\u2248 4.37e-02)",
-        "suspect_component": "3\u00d74He + 3\u00d7c_\u03b1\u03b1 recursion",
+        "jet_order_classification": "≈ h² (≈ 4.37e-02)",
+        "suspect_component": "3×4He + 3×c_αα recursion",
         "needs_for_canonical": "4He canonical first"
       },
       {
@@ -229,8 +229,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "3\u03b1+2p N=Z mirror \u2014 composite rule needed",
-        "needs_for_canonical": "\u03b1-core + valence nucleon decomposition"
+        "suspect_component": "3α+2p N=Z mirror — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "16O",
@@ -243,8 +243,8 @@
         "err_rel": 0.053011656780099614,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "\u2248 h\u00b2 (\u2248 4.37e-02)",
-        "suspect_component": "4\u00d74He + 6\u00d7c_\u03b1\u03b1 recursion",
+        "jet_order_classification": "≈ h² (≈ 4.37e-02)",
+        "suspect_component": "4×4He + 6×c_αα recursion",
         "needs_for_canonical": "4He canonical first"
       },
       {
@@ -259,8 +259,8 @@
         "wiring_status": "gap",
         "klr_positivity_violates": false,
         "jet_order_classification": "(no B_pred)",
-        "suspect_component": "4\u03b1+3p sd-shell onset \u2014 composite rule needed",
-        "needs_for_canonical": "\u03b1-core + valence nucleon decomposition"
+        "suspect_component": "4α+3p sd-shell onset — composite rule needed",
+        "needs_for_canonical": "α-core + valence nucleon decomposition"
       },
       {
         "atom": "20Ne",
@@ -273,8 +273,8 @@
         "err_rel": 0.08343522475602405,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "\u2248 h\u00b2 (\u2248 4.37e-02)",
-        "suspect_component": "5\u00d74He + 10\u00d7c_\u03b1\u03b1 recursion",
+        "jet_order_classification": "≈ h² (≈ 4.37e-02)",
+        "suspect_component": "5×4He + 10×c_αα recursion",
         "needs_for_canonical": "4He canonical first"
       },
       {
@@ -288,8 +288,8 @@
         "err_rel": 0.09019610414568172,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "between h\u00b2 and h/2",
-        "suspect_component": "6\u00d74He + 15\u00d7c_\u03b1\u03b1 recursion",
+        "jet_order_classification": "between h² and h/2",
+        "suspect_component": "6×4He + 15×c_αα recursion",
         "needs_for_canonical": "4He canonical first"
       },
       {
@@ -303,8 +303,8 @@
         "err_rel": 0.19505566549657202,
         "wiring_status": "alpha-cluster",
         "klr_positivity_violates": true,
-        "jet_order_classification": "\u2248 h (\u2248 2.09e-01)",
-        "suspect_component": "10\u00d74He + 45\u00d7c_\u03b1\u03b1 recursion",
+        "jet_order_classification": "≈ h (≈ 2.09e-01)",
+        "suspect_component": "10×4He + 45×c_αα recursion",
         "needs_for_canonical": "4He canonical first"
       }
     ],

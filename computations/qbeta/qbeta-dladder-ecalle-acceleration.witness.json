@@ -62,7 +62,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py 43"
   },
-  "description": "Jackson q-Borel / Ecalle acceleration machinery for the bar-odd Q_beta D-ladder (odd-channel singularity locator; unowned item #1 of the 2026-07-17 1ppQ reassessment). Arm 1: Borel-Leroy s-scan + conformal dlog-Pade (core imported from the merged even-channel probe) with a pre-stated 15% estimator-consistency gate (dlog-Pade vs root-test radius) \u2014 the honest fix for the prior 0.156-vs-0.32 gap. Arm 2: Jackson q-Borel b_k = d_k/q0^{t k(k-1)/2} at substrate q0, same gate. Arm 3: parity-split acceleration in w = zeta^2 per the 2-adic Z/2 grading. Exact d_k at committed ORD 43 (k<=21); core API takes any-length exact (a_k, b_k) pairs so the extension arm's k~31 terms plug in. Scope-(a); no instanton action claimed without the gate; no c_k wired; no fit; no tier change.",
+  "description": "Jackson q-Borel / Ecalle acceleration machinery for the bar-odd Q_beta D-ladder (odd-channel singularity locator; unowned item #1 of the 2026-07-17 1ppQ reassessment). Arm 1: Borel-Leroy s-scan + conformal dlog-Pade (core imported from the merged even-channel probe) with a pre-stated 15% estimator-consistency gate (dlog-Pade vs root-test radius) — the honest fix for the prior 0.156-vs-0.32 gap. Arm 2: Jackson q-Borel b_k = d_k/q0^{t k(k-1)/2} at substrate q0, same gate. Arm 3: parity-split acceleration in w = zeta^2 per the 2-adic Z/2 grading. Exact d_k at committed ORD 43 (k<=21); core API takes any-length exact (a_k, b_k) pairs so the extension arm's k~31 terms plug in. Scope-(a); no instanton action claimed without the gate; no c_k wired; no fit; no tier change.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "parameters": {
     "ORD_committed": 43,
@@ -511,11 +511,11 @@
       }
     },
     "consistent_within_spread": [],
-    "verdict": "K1: the estimator-consistency gate (tol 0.15) fails at every Borel\u2013Leroy order s \u2264 0.40, every Jackson q-Borel order t \u2264 0.50, and at s*/t* with the 8-config headline set \u2014 the finite-k shadow persists at the committed ORD 43 (k = 21). Scope-(a): a statement about k=21 resolution power, NOT a refutation of resummability or of any singularity candidate. The machinery (exact-pair API, both transforms, the gate) is ready for the extension arm's k\u224831 terms. K2: the parity-split estimates diverge beyond 0.25 \u2014 recorded as bar-parity \u2124/2 structure acting on the Borel plane (the odd part as the S-carrier), not as failure."
+    "verdict": "K1: the estimator-consistency gate (tol 0.15) fails at every Borel–Leroy order s ≤ 0.40, every Jackson q-Borel order t ≤ 0.50, and at s*/t* with the 8-config headline set — the finite-k shadow persists at the committed ORD 43 (k = 21). Scope-(a): a statement about k=21 resolution power, NOT a refutation of resummability or of any singularity candidate. The machinery (exact-pair API, both transforms, the gate) is ready for the extension arm's k≈31 terms. K2: the parity-split estimates diverge beyond 0.25 — recorded as bar-parity ℤ/2 structure acting on the Borel plane (the odd part as the S-carrier), not as failure."
   },
   "caveats": [
     "The gate-pass rho values are accelerated-plane singularity locations (transform-order dependent); consistent-within-spread wording only, no identification claims, no instanton action wired.",
-    "Committed-order run (ORD 43, k<=21) \u2014 the ORD-63 / k~31 extension is the running sibling arm; rerun this probe on its exact pairs when it lands (the core API is any-length)."
+    "Committed-order run (ORD 43, k<=21) — the ORD-63 / k~31 extension is the running sibling arm; rerun this probe on its exact pairs when it lands (the core API is any-length)."
   ],
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

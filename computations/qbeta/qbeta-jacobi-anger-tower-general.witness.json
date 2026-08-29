@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "symbolic barodd[\u03c7_\u03bb(\ud835\udcd1_n\u2212\ud835\udcd1_p)] vs physical-weight BAR_ODD_COEFFS"
+      "source": "symbolic barodd[χ_λ(𝓑_n−𝓑_p)] vs physical-weight BAR_ODD_COEFFS"
     },
     {
       "name": "reconciles_physical_weight_6_8pct_both_anchors",
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_jacobi_anger_tower_general.py"
   },
-  "description": "General-n Jacobi\u2013Anger tower harness, reconciled to the \u00a74a physical-weight object. Derives the bar-odd sinh coefficients symbolically from the Lean-proved \u03c7_\u03bb(\ud835\udcd1_n \u2212 \ud835\udcd1_p) closed forms (explicit typed-B\u2083 neutron-minus-proton braid difference \u2014 NOT the min-norm T_\u03b2\u221dt SDP fit), weights by the Markov weights y_\u03bb FROZEN at the substrate anchor, and reproduces the physical-weight script's 6.8% single-x over-determination residual at both the proton and muon anchors. Resolves the prior tower-object reconciliation WIP. Tower extension to n\u22656 requires first-principles \u03c7_\u03bb(\ud835\udcd1_n \u2212 \ud835\udcd1_p) at \u03bb\u22a26,9 (typed braids embedded at higher brane-tower levels), not the SDP fit.",
+  "description": "General-n Jacobi–Anger tower harness, reconciled to the §4a physical-weight object. Derives the bar-odd sinh coefficients symbolically from the Lean-proved χ_λ(𝓑_n − 𝓑_p) closed forms (explicit typed-B₃ neutron-minus-proton braid difference — NOT the min-norm T_β∝t SDP fit), weights by the Markov weights y_λ FROZEN at the substrate anchor, and reproduces the physical-weight script's 6.8% single-x over-determination residual at both the proton and muon anchors. Resolves the prior tower-object reconciliation WIP. Tower extension to n≥6 requires first-principles χ_λ(𝓑_n − 𝓑_p) at λ⊢6,9 (typed braids embedded at higher brane-tower levels), not the SDP fit.",
   "data": {
     "n3": {
       "proton": {

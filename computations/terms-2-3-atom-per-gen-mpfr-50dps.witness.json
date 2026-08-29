@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/terms_2_3_atom_per_gen_mpfr_50dps.py"
   },
-  "description": "MPFR-native per-generator additive Wedderburn volumes V\u0302_i^full at 50 dps for the atom braid at A = 1, 2, 3 (proton, neutron, deuteron, tritium, helium-3). Feeds mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp as the source of T2 and T3 per-generator volumes. PR #671 Item A: this witness now covers A=1 (was missing); either the proton T2+T3 yields a non-zero brane-tower contribution (closes m_p chain Items A/B/C analytically) or returns ~0 (confirms brane-tower-z-habiro level-selection structurally forbids A=1, per Story B).",
+  "description": "MPFR-native per-generator additive Wedderburn volumes V̂_i^full at 50 dps for the atom braid at A = 1, 2, 3 (proton, neutron, deuteron, tritium, helium-3). Feeds mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp as the source of T2 and T3 per-generator volumes. PR #671 Item A: this witness now covers A=1 (was missing); either the proton T2+T3 yields a non-zero brane-tower contribution (closes m_p chain Items A/B/C analytically) or returns ~0 (confirms brane-tower-z-habiro level-selection structurally forbids A=1, per Story B).",
   "parameters": {
     "q_0_50dps": "1.1099785956427390466817951293800017527000655610290",
     "q_inv_50dps": "0.90091827349242230005099486787808186671992839180313",
