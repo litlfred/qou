@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-08-29T07:42:48Z
+updated_at: 2026-08-29T07:52:16Z
 ---
 
 Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not
@@ -218,3 +218,47 @@ DESIGN RULE worth carrying: every extractor RAISES TwinParseError rather than
 returning empty, and --selftest asserts a shape change raises. A markdown
 scraper that cannot find its table must report "cannot check", never "nothing
 wrong" — the failure that nearly shipped twice this session.
+
+ADDENDUM 2026-08-29 — the OTHER twinned registry: checked, and the gap is not
+where I predicted.
+
+I named kernel-constraints-registry.json as the likely next instance of "a
+JSON-internal validator that never opens its .md twin". CHECKED IT FIRST rather
+than assuming — which is precisely the mistake I had just made about ck-dk one
+commit earlier — and it does NOT have that gap. R6 twin-drift has been in
+kernel_constraints_registry_validate.py since 2026-08-15 (bean qou-ungx), it is
+ALWAYS ON, and it is finer-grained than my T1-T5: R6a forbids the JSON
+restating text the MD row struck through, R6b requires a WITHDRAWN marker to
+reach the JSON, R6c warns in the other direction. Nothing to add there.
+
+What IS wrong is the other half of the same defect, and it generalises: NOTHING
+RUNS IT EITHER. A repo-wide grep for its name returns zero hits outside itself.
+
+So the pattern to carry forward is TWO independent failure modes, and this
+repo has had both on the same file pair:
+
+  (a) the check does not exist            <- ck-dk, before this PR
+  (b) the check exists and nothing runs it <- BOTH, before this PR
+
+(b) is the quieter one. A validator that exists and passes reads as coverage in
+every audit that greps for it, while contributing nothing. AGENTS.md already
+says this ("A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS") about the
+precision-gates array; it is not scoped to that array.
+
+Both are now wired into scripts/check-sidecars.sh, dispatched per file because
+the two validators read DIFFERENT SECTIONS of the same markdown:
+
+  ck-dk-registry.json              -> ck_dk --twin   (SS3/SS4/SS6)
+  kernel-constraints-registry.json -> kernel          (SS9, KC rows)
+  ck-dk-canonical-registry.md      -> BOTH            (the shared twin)
+
+The third line is the one worth having: a SS9 edit to the .md previously
+triggered no check at all, from either side.
+
+Cost measured before wiring, not assumed: both are ~30 ms. An earlier ">120 s"
+reading was my own repo-wide grep for the validator name, not the validator —
+worth recording as a small instance of the same lesson, since I nearly wrote it
+down as a cost argument against wiring.
+
+Also noted, not fixed: AGENTS.md places kernel_constraints_registry_validate.py
+under computations/. It is at docs/coordination/.
