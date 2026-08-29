@@ -61,28 +61,23 @@ move, because it never counted them. So draining the shape audit to zero
 would not end the excision. Bean `qou-t9r1`; the four sites that cannot be
 migrated by substituting `z_D` at all are `qou-pmkh`.
 
-## TRAP — `markovZC` and `markovZc` differ by ONE LETTER'S CASE and mean OPPOSITE conventions
+## TRAP — the name, the docstring and the body can all three disagree
 
-The `markovZ` overload is **resolved** — `qou-961o` landed 2026-08-29
-(`ae8098c3`), and bare `markovZ` now means convention D uniformly. Re-measured
-the same day: **9 bare `markovZ`, all D**, 0 C.
+`qou-961o` (`ae8098c3`) made bare `markovZ` mean convention D uniformly. But
+the rename left a case-only twin, and under it a worse defect:
 
-But the rename created a worse hazard than the one it fixed. Verified by
-evaluating both at the proton q₀:
+`markovZc`'s docstring read *"z = 1 / (√q + 1/√q)"* — C, `0.4993203342` —
+above a body computing `q³/(q²+1)`, D, `0.6126880371`. The **name** said C
+(lowercase twin of `markovZC`, which really is C); the **docstring** said C;
+only the **body** said D. A reader checking name against docstring gets
+agreement and is still wrong by 0.113.
 
-| name | body | at q₀ | convention |
-|---|---|---|---|
-| `markovZC` (**upper** C) | `1/(√q + q^-½)`, `√q/(q+1)` | `0.4993203342` | **C** |
-| `markovZc` (**lower** c) | `q³/(q²+1)` | `0.6126880371` | **D** |
+Fixed 2026-08-29 (#6015): renamed to bare `markovZ`, docstring corrected to
+the body. `markovZC` now has no case twin.
 
-Three `markovZC` (`EigenphaseCarrierVacuity`, `q-beta-cos-resummation`,
-`MarkovConventionSeparation`) against one `markovZc`
-(`categorical-chain-convergence-mechanisms.lean:83`). A case-insensitive grep,
-a rename, or a skimming reader cannot tell them apart. `markovZD` (3) and
-`cosKernel` (1, the renamed neutral kernel) complete the family.
-
-**Always resolve a `markovZ*` to its definition body before reasoning about its
-value** — the suffix is now actively misleading, not merely absent.
+**The generalisable rule: agreement between two labels is not evidence about
+the third thing.** Only the body is evidence — the `Λ`/`Cl₂` failure below,
+one level deeper, because here the prose agreed with the wrong name.
 
 ## STABLE — the counter-move: test the ANSWER, not the source
 
@@ -177,7 +172,11 @@ every re-measurement, in both directions.
 | `.py` C by shape | `python3 scripts/convention-c-producer-audit.py` | 9 actionable (7 registry-blocked on `qou-cds1`) | 2026-08-29 |
 | `.py` C by value | `python3 scripts/convention-c-value-audit.py` | 85 in `computations/`, 21 invisible to the shape audit; `tools/` 0, `content/` 0 | 2026-08-29 |
 | `.lean` C defs | `python3 scripts/lean-markov-convention-audit.py` | 14 defs, 0 actionable / 14 deliberate | 2026-08-29 (post-`qou-961o`) |
-| `markovZ*` family | that script, `\((markovZ\|markovZC\|markovZc\|markovZD\|cosKernel)\)` | bare `markovZ` 9 (all D); `markovZC` 2, `markovZc` 1, `markovZD` 3, `cosKernel` 1 | 2026-08-29 (post-`qou-961o`) |
+| `markovZ*` family | that script **and** `grep -rn 'def markovZ'` — they disagree, see below | bare `markovZ` **10, all D**; `markovZD` 3; `cosKernel` 1; `markovZc` **gone**. `markovZC`: audit says **2**, grep says **3** | 2026-08-29 (post-#6015) |
+
+`markovZC` 2-vs-3 is live and unexplained: grep finds three (all genuinely C),
+the audit lists two; it predates #6015, so detector scope, not regression.
+**Quote both with their method**; do not silently prefer one.
 | muon-fingerprint witnesses | see the prefix note below | 477 | 2026-08-26 |
 
 **State the METHOD when quoting the muon count.** Three different values are
@@ -197,4 +196,5 @@ One line per audit: what you measured, with which script, any TRAP added. Keep
 under 200 lines — prune the log or split a section out, never the TRAPs.
 
 - 2026-08-29 — re-measured post-`qou-961o`: bare `markovZ` 9, all D; found the
-  `markovZC`/`markovZc` case collision; split `q0-pin-migration.md` out.
+  `markovZC`/`markovZc` case collision and, under it, a docstring that agreed
+  with the wrong name; fixed in #6015; split `q0-pin-migration.md` out.
