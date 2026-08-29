@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T21:02:34.870051+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T03:01:05.214737+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 16,
   "computation": "terms-2-3-atom-per-gen-mpfr-50dps",
   "scriptFile": "terms_2_3_atom_per_gen_mpfr_50dps.py",
   "scriptHash": "b6dd054a7b86",
-  "scriptCommitSha": "3f63d180a4b8bfaa425f98971fe64eb17fe32670",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/terms_2_3_atom_per_gen_mpfr_50dps.py"
   },
-  "description": "MPFR-native per-generator additive Wedderburn volumes V̂_i^full at 50 dps for the atom braid at A = 1, 2, 3 (proton, neutron, deuteron, tritium, helium-3). Feeds mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp as the source of T2 and T3 per-generator volumes. PR #671 Item A: this witness now covers A=1 (was missing); either the proton T2+T3 yields a non-zero brane-tower contribution (closes m_p chain Items A/B/C analytically) or returns ~0 (confirms brane-tower-z-habiro level-selection structurally forbids A=1, per Story B).",
+  "description": "MPFR-native per-generator additive Wedderburn volumes V\u0302_i^full at 50 dps for the atom braid at A = 1, 2, 3 (proton, neutron, deuteron, tritium, helium-3). Feeds mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp as the source of T2 and T3 per-generator volumes. PR #671 Item A: this witness now covers A=1 (was missing); either the proton T2+T3 yields a non-zero brane-tower contribution (closes m_p chain Items A/B/C analytically) or returns ~0 (confirms brane-tower-z-habiro level-selection structurally forbids A=1, per Story B).",
   "parameters": {
     "q_0_50dps": "1.1099785956427390466817951293800017527000655610290",
     "q_inv_50dps": "0.90091827349242230005099486787808186671992839180313",

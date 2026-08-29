@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:41:15.521458+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:52:37.660439+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [
     {
       "name": "linear_trace_matches_transfer_engine",
@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-08",
-      "unit": "max rel diff of Σ y_λ tr(ρ_λ(W)) vs 50-dps tr_m_atom_zn",
+      "unit": "max rel diff of \u03a3 y_\u03bb tr(\u03c1_\u03bb(W)) vs 50-dps tr_m_atom_zn",
       "source": "float64 seminormal path vs canonical transfer (validation)."
     },
     {
@@ -19,16 +19,16 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-10",
-      "unit": "max rel |tr_M(W^♯) − tr_M(W)|",
-      "source": "character symmetry χ^λ(T_{w⁻¹}) = χ^λ(T_w); the QUADRATIC Gram norm tr_M(W·W^♯) is the non-trivial diagnostic."
+      "unit": "max rel |tr_M(W^\u266f) \u2212 tr_M(W)|",
+      "source": "character symmetry \u03c7^\u03bb(T_{w\u207b\u00b9}) = \u03c7^\u03bb(T_w); the QUADRATIC Gram norm tr_M(W\u00b7W^\u266f) is the non-trivial diagnostic."
     }
   ],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 44,
   "computation": "gram-norm-binding-probe",
   "scriptFile": "gram_norm_binding_probe.py",
   "scriptHash": "a67cb484c3f1",
-  "scriptCommitSha": "457c3fc487845ef5f54f58e63890ebe9ad0dfb4c",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gram_norm_binding_probe.py"
   },
-  "description": "Exploratory operator-space Gram norm G(W)=tr_M(W·W^♯) vs binding residuals (q-bar / Baer-* norm discussion, 2026-07-03).",
+  "description": "Exploratory operator-space Gram norm G(W)=tr_M(W\u00b7W^\u266f) vs binding residuals (q-bar / Baer-* norm discussion, 2026-07-03).",
   "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
   "parameters": {
     "q0": 1.109978595642739,
@@ -62,7 +62,7 @@
       "3H",
       "3He"
     ],
-    "sharp_involution": "word reversal; fixes q and each letter c·σ_g + d·1"
+    "sharp_involution": "word reversal; fixes q and each letter c\u00b7\u03c3_g + d\u00b71"
   },
   "data": {
     "rows": [
@@ -532,7 +532,7 @@
           }
         ],
         "qbar": {},
-        "wall_sec": 28.37
+        "wall_sec": 19.42
       },
       {
         "iso": "3He",
@@ -860,7 +860,7 @@
           }
         ],
         "qbar": {},
-        "wall_sec": 30.56
+        "wall_sec": 28.32
       }
     ]
   },

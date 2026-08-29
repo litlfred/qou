@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:37:52.225564+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:57:48.604594+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [
     {
       "name": "li_2_q_finite_proton",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "hydrogen-step-by-step",
   "scriptFile": "hydrogen_step_by_step.py",
   "scriptHash": "3e2243aacc0a",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,7 +45,7 @@
     ],
     "reproduce": "python3 -u computations/hydrogen_step_by_step.py"
   },
-  "description": "Full ¹H mass step-by-step under canonical Li_2^q tower",
+  "description": "Full \u00b9H mass step-by-step under canonical Li_2^q tower",
   "data": {
     "convention": "paper canonical (Li_2^q, 2026-05-03 revision)",
     "q_pinned": "1.109978595642739046681795129380001752700065561029011556974045769999095",
@@ -74,8 +74,8 @@
       {
         "name": "T7_A1_not_implemented",
         "kind": "missing_term",
-        "estimated_max_magnitude_MeV": "≲ 10 (by |α_5·S_crystal| scaling from A=2)",
-        "doc": "term7_alpha5_crystal_derivation covers A∈{2,3,4} only; A=1 atoms not added"
+        "estimated_max_magnitude_MeV": "\u2272 10 (by |\u03b1_5\u00b7S_crystal| scaling from A=2)",
+        "doc": "term7_alpha5_crystal_derivation covers A\u2208{2,3,4} only; A=1 atoms not added"
       },
       {
         "name": "T8_plus_higher_loop",
@@ -85,12 +85,12 @@
       {
         "name": "V_hat_i_convention_mismatch",
         "kind": "structural",
-        "doc": "additive_wedderburn_volumes was tuned to compact q-dilog Φ_q (now retired); Li_2^q may need re-derived V̂_i"
+        "doc": "additive_wedderburn_volumes was tuned to compact q-dilog \u03a6_q (now retired); Li_2^q may need re-derived V\u0302_i"
       },
       {
         "name": "Faddeev_pole_artifact_pre_revision",
         "kind": "documented_now_resolved",
-        "doc": "previous 1.50% closure was T2≈1M cat-units from Φ_q near-pole at |V̂|=0.989 > q^{-1}=0.901; Li_2^q gives finite T2≈1.6"
+        "doc": "previous 1.50% closure was T2\u22481M cat-units from \u03a6_q near-pole at |V\u0302|=0.989 > q^{-1}=0.901; Li_2^q gives finite T2\u22481.6"
       }
     ],
     "upstream_witness_hashes": [
