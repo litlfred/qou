@@ -77,11 +77,18 @@ def _cv(xs):
 
 
 def main() -> int:
-    me, q0, E0, g8 = _constants()
+    # `_constants()` returns THREE values (me, q0, E0) and has since at least
+    # 2026-08-08; `_row()` takes nine parameters and no `g8`. This producer was
+    # written against older signatures of both and was never updated, so it
+    # died on the first line of main() with
+    #   ValueError: not enough values to unpack (expected 4, got 3)
+    # Bean qou-0djm. `g8` (8G = Vol(L6a4)) is no longer part of either
+    # contract, so it is dropped rather than sourced from knot_volumes.
+    me, q0, E0 = _constants()
     Lbond = _bond_type_L()
     nm = _nucleon_msym(E0)
     ame = _ame_table()
-    rows = [_row(n, Z, N, E0, me, g8, Lbond, nm, ame, 21)
+    rows = [_row(n, Z, N, E0, me, Lbond, nm, ame, 21)
             for (n, Z, N) in GROUPS["low"]]
 
     # structural factors g(K) to test as the single collapsing correction

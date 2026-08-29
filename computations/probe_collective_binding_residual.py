@@ -76,7 +76,9 @@ def B_sym(alpha, Lbond, Z, N):
 
 def main():
     mp.mp.dps = DPS
-    me, q0, alpha, g8 = _constants()
+    # Three values, not four — see bean qou-0djm. `g8` was unpacked here and
+    # never used, so nothing else needs rewiring.
+    me, q0, alpha = _constants()
     alpha = mp.mpf(str(alpha))
     ame = _ame_table()
     Lbond = {k: mp.mpf(str(v)) for k, v in _bond_type_L().items()}
