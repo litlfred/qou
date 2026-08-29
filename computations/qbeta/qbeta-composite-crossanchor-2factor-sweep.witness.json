@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:17:00.379911+00:00",
-  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
+  "computedAt": "2026-08-29T12:25:04.375083+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "c3_target_proton_matches_canonical",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-composite-crossanchor-2factor-sweep",
   "scriptFile": "qbeta_composite_crossanchor_2factor_sweep.py",
   "scriptHash": "db782416a483",
-  "scriptCommitSha": "98f6bfecb17731e452230df3979c8f15aec85d94",
+  "scriptCommitSha": "5f4cbd0a0d98646008fb60cfa32621fb0f92b28a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
