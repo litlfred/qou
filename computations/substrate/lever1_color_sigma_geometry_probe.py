@@ -155,7 +155,7 @@ def main() -> int:
                     expected=1, tolerance=0,
                     source="Puiseux slope (X−Xc)/t finite ⇒ no 1/t pole ⇒ Res=0")
     w.add_assertion("infinity_residue_sheetsum_zero",
-                    computed=float(mp.nstr(abs(sheet_sum), 4)), expected=0.0, tolerance=1e-3,
+                    computed=mp.nstr(abs(sheet_sum), 4), expected=0.0, tolerance=1e-3,
                     source="ΣX_i=−(z+1) has no 1/z term ⇒ Σ Res_∞=0")
 
     out = w.save()

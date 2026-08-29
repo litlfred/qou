@@ -221,7 +221,7 @@ def main() -> int:
         })
         .add_assertion(
             name="max_residue_across_all_tests_at_q0",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

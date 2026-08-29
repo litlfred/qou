@@ -215,8 +215,8 @@ def main() -> int:
 
     w.add_assertion(
         "kappa_computed",
-        computed=float(kappa),
-        expected=float(-G),
+        computed=kappa,
+        expected=-G,
         tolerance=max(abs(float(kappa)), abs(float(G))) * 2,
         unit="h² coefficient",
         source="d²(tr_M(Borromean))/dh² / 2 vs −G",

@@ -310,14 +310,14 @@ def main():
     )
     wb.add_assertion(
         "control_tau0_passes",
-        computed=float(abs(t5_ref - T5_TARGET)),
+        computed=abs(t5_ref - T5_TARGET),
         expected=0.0,
         tolerance=float(TOL_PASS_T5),
         source="|t5(tau0)+10| at BDH22 6-d.p. tau0 (truncation-limited ~2e-5).",
     )
     wb.add_assertion(
         "gamma0_5_invariance",
-        computed=float(inv_dev),
+        computed=inv_dev,
         expected=0.0,
         tolerance=1e-30,
         source="max |t5(gamma tau0) - t5(tau0)| over gamma in {T, [[1,0],[5,1]]} "
@@ -325,7 +325,7 @@ def main():
     )
     wb.add_assertion(
         "fricke_involution",
-        computed=float(fricke_dev),
+        computed=fricke_dev,
         expected=0.0,
         tolerance=1e-25,
         source="|t5(-1/(5 tau0)) - 5^3/t5(tau0)|; image ~ -25/2 = j(5 tau0).",

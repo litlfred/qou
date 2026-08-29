@@ -3,9 +3,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-endomorphism-tower",
   title:
-    "Proton--electron mass ratio from the $\\Phi_q$ tower",
-  lean: { ref: "qou:QOU.MassEndomorphism.proton_electron_ratio",
-    validation: "not_checked",
+    "Proton--electron mass endomorphism tower (convention D, $\\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm",
+  lean: { ref: "qou:QOU.MassEndomorphism.mass_endomorphism_positive",
+    validation: "validated",
   },
   uses: [
     "rem:kashaev-volume-density",
@@ -18,6 +18,36 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-08-29",
+      body:
+        "**Re-formalized (convention D + Li_2^q; bean qou-p046).** The prior " +
+        "`proton_electron_ratio` theorem carried a provably-FALSE `sorry`: " +
+        "`frobeniusNorm : R -> R` was an arbitrary unconstrained function, so at " +
+        "n=0 the mass reduced to `frobeniusNorm(1)` (empty product = 1, empty " +
+        "sums = 0), and `frobeniusNorm := fun _ => -1` refutes the claimed " +
+        "`q > 1 -> massPoly > 0`. That theorem is REMOVED and replaced by two " +
+        "PROVED, sorry-free results — `mass_endomorphism_nonneg` and " +
+        "`mass_endomorphism_positive`: the mass formula is >= 0 (and > 0 when its " +
+        "descended trace term is > 0) under an explicit `MassPositivityHyp` — a " +
+        "genuine (non-negative) Frobenius norm plus the bounded-Rogers dilog sign " +
+        "`Li_2^q(-x) <= 0` for x >= 0. Two further legacy defects were fixed in " +
+        "the same pass: (1) the Markov parameter `markovParamPoly v = " +
+        "1/(v + v^-1) = sqrt(q)/(q+1)` was EXCISED convention C — replaced by " +
+        "`markovZD q = q^3/(q^2+1)` (convention D, owner ruling 2026-08-15); " +
+        "(2) the Faddeev `quantumDilogPoly q z = 1 - q^-1 z` (the `Phi_q` " +
+        "truncation, refuted 2026-06-18 for isospin-symmetry incompatibility and " +
+        "mirror-nucleus pathologies) was replaced by an ABSTRACT bounded " +
+        "`Li_2^q : R -> R` passed in as data — matching the .md's abstract " +
+        "`Li_2^q`, with no series formalised. The Lean now matches the .md boxed " +
+        "formula (descended term minus the two `Li_2^q` sums, `z^2` pair weight, " +
+        "convention D). Verified `lean`-direct exit 0, axiom-clean " +
+        "(propext, Classical.choice, Quot.sound; no `sorryAx`). The numerical " +
+        "proton-electron ratio is NOT a Lean claim — it stays the compute " +
+        "witness (`habiro_exact_mass_endomorphism.py`).",
+      see: "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
+    },
     {
       kind: "refined-framing",
       date: "2026-06-22",
@@ -45,16 +75,19 @@ export default proposition({
       kind: "note",
       date: "2026-08-08",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
+        "**§7c base-ring note (order-tier specialisation).** " +
         "This block's Lean file **already implements the §7c split " +
-        "explicitly** and the archimedean half is the point of the block. " +
+        "explicitly** and the order-sensitive half is the point of the block. " +
         "`QOU.MassEndomorphism.Pre` is pre-archimedean and generic (`{R : " +
-        "Type u} [Field R]`, with `Φ_q` an opaque element of `R` and an " +
-        "abstract Frobenius norm); the sibling `Arch` tier is specialised to " +
-        "`ℝ` with `1 < q` because it is where the proton–electron ratio is " +
-        "compared to CODATA. `proton_electron_ratio` is the `ℝ`-side " +
-        "statement, so its `ℝ` is forced by the statement rather than chosen. " +
-        "(Its `sorry` is a proof-queue item, not a base-ring one.)",
+        "Type u} [Field R]`, with the `q`-dilogarithm and Frobenius norm as " +
+        "abstract `R -> R` data); the order-tier positivity theorems " +
+        "(`mass_endomorphism_nonneg` / `mass_endomorphism_positive`) are " +
+        "specialised to an ordered field (`[Field R] [LinearOrder R] " +
+        "[IsStrictOrderedRing R]`) because the non-negativity `0 <= massPoly` " +
+        "genuinely needs the ordering. That order typeclass is forced by the " +
+        "statement rather than chosen. See the 2026-08-29 note for the removal " +
+        "of the earlier `ℝ`-side `proton_electron_ratio` sorry (which this " +
+        "note previously described).",
     },
   ],
 });

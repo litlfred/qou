@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:50:32.505303+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:31:46.407356+00:00",
+  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
   "assertions": [
     {
       "name": "controls_pass",
@@ -22,7 +22,7 @@
     },
     {
       "name": "ray_singer_torsion_of_flat_torus_is_trivial",
-      "computed": 1.0,
+      "computed": "1.0",
       "expected": 1.0,
       "passed": true,
       "tolerance": "1e-08",
@@ -46,10 +46,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "alpha-em-torsion-perloop",
   "scriptFile": "alpha_em_torsion_perloop_probe.py",
-  "scriptHash": "d072b8d55010",
+  "scriptHash": "cef927a75a7d",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

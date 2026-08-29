@@ -127,8 +127,8 @@ def main() -> int:
         w.add_data(f"m_e_times_sum_n{n}_MeV", mp.nstr(frob, 30))
         w.add_assertion(
             name=f"frobenius_co_casimir_n{n}_matches_documented",
-            computed=float(frob),
-            expected=float(doc),
+            computed=frob,
+            expected=doc,
             tolerance=1e-3,
             source=f"knot-mass-formula-unified.md (n={n}, A={A})",
         )

@@ -207,7 +207,7 @@ def main() -> int:
     pr1874_rel_err = (L1b_he3 - lambda_emp_he3) / lambda_emp_he3
     w.add_assertion(
         "L1b_He3_matches_PR1874_value",
-        computed=float(pr1874_rel_err),
+        computed=pr1874_rel_err,
         expected=-0.1815,
         tolerance=2e-3,
         source="Re-derived L1b(3He) must reproduce PR #1874's -18.15% rel_err.",
@@ -216,7 +216,7 @@ def main() -> int:
     lamA_half_rel = (lam_A / 2 - residual_ratio) / residual_ratio
     w.add_assertion(
         "lambdaA_over_2_baseline_reproduced",
-        computed=float(lamA_half_rel),
+        computed=lamA_half_rel,
         expected=0.0365,
         tolerance=2e-3,
         source=(

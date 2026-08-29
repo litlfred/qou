@@ -156,13 +156,13 @@ def main() -> int:
     w.add_data("Q_beta_agreement_MeV", str(q_beta_agreement_mev))
     w.add_assertion(
         "bridge_residual_within_O_h_squared",
-        computed=float(bridge_residual),
+        computed=bridge_residual,
         expected=0.0,
         tolerance=float(h_squared),
     )
     w.add_assertion(
         "Q_beta_form_a_form_b_agree_within_O_h_squared_MeV",
-        computed=float(q_beta_agreement_mev),
+        computed=q_beta_agreement_mev,
         expected=0.0,
         # h² · E_0 is the propagated MeV tolerance.
         tolerance=float(h_squared * e_0),

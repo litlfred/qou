@@ -446,7 +446,7 @@ def main():
     # Assertions: tight matches
     w.add_assertion(
         name="m_p_matches_codata_within_1ppm",
-        computed=float(abs(res_m_p_ppm)),
+        computed=abs(res_m_p_ppm),
         expected=0.0,
         tolerance=1.0,
         unit="ppm",
@@ -457,7 +457,7 @@ def main():
     )
     w.add_assertion(
         name="m_n_matches_codata_within_10ppb",
-        computed=float(abs(res_m_n_ppm) * 1000),      # ppm → ppb
+        computed=abs(res_m_n_ppm) * 1000,      # ppm → ppb
         expected=0.0,
         tolerance=10.0,
         unit="ppb",

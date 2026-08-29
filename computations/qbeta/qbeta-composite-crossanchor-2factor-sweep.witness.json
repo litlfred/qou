@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T08:14:50.373872+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-29T12:25:04.375083+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "c3_target_proton_matches_canonical",
-      "computed": -2.069342577115168,
+      "computed": "-2.069342577115167837879719517249628589022030998103438866912838445101431",
       "expected": -2.069342577115168,
       "passed": true,
       "tolerance": "1e-12"
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "qbeta-composite-crossanchor-2factor-sweep",
   "scriptFile": "qbeta_composite_crossanchor_2factor_sweep.py",
-  "scriptHash": "c2c43d4dc3e2",
-  "scriptCommitSha": "98f6bfecb17731e452230df3979c8f15aec85d94",
+  "scriptHash": "db782416a483",
+  "scriptCommitSha": "5f4cbd0a0d98646008fb60cfa32621fb0f92b28a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

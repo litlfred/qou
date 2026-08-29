@@ -368,7 +368,7 @@ def main() -> int:
     A_rel_err = abs(A_D - mp.mpf("22.9594")) / mp.mpf("22.9594")
     w.add_assertion(
         "phase4_amplitude_A_D_matches_table",
-        computed=float(A_rel_err),
+        computed=A_rel_err,
         expected=0.0,
         tolerance=1e-3,
         source=(
@@ -380,7 +380,7 @@ def main() -> int:
     c5_S = mp.mpf([r["S_at_q0"] for r in results if r["code"] == "C5"][0])
     w.add_assertion(
         "zero_control_C5_sums_to_zero",
-        computed=float(abs(c5_S)),
+        computed=abs(c5_S),
         expected=0.0,
         tolerance=1e-40,
         source="C5 control with P_λ ≡ 0 must give |S| = 0 exactly.",
