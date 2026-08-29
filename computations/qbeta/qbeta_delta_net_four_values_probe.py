@@ -532,9 +532,25 @@ def main() -> int:
     print("    is merely rounded) or resolves it into an identifiable term.")
     w.add_data("blocker", "neutron NF vector recorded only to 4 dp")
 
-    # ---- the 10-digit gamma-gamma anchor EXCLUDES hecke_core at every z --
-    print("\n  the gamma-gamma 10-digit anchor (Step 6: Delta tr_M(n-p) = +0.0445860283)")
-    T10 = mp.mpf("0.0445860283")
+    # ---- the gamma-gamma anchor EXCLUDES hecke_core at every z ----------
+    # PRECISION PROVENANCE.  The .md block RENDERS 10 digits
+    # (+0.0445860283), but that is the rendering, not the record.  Four
+    # independent witnesses agree on this quantity to 49 digits:
+    #   _deprecated/q-beta-gamma-gamma-derivation .../delta_tau_M_n_minus_p (101 dps)
+    #   _deprecated/per-orientation-skein         .../delta_tau_M_n_minus_p ( 51 dps)
+    #   _deprecated/q-beta-three-irrep-closed-form.../delta_tau_M_composed  ( 51 dps)
+    #   _deprecated/q-beta-two-wrap-nf            .../wrap_results/1/delta_tau (51 dps)
+    # Anchoring on the 10-digit STRING (as this probe first did) both throws
+    # away 39 verified digits and, once serialized, leaves a binary tail
+    # (0.0445860283000...0127797582) with the shape of float64 padding.
+    # Use the 49-digit CONSENSUS: digits past 49 appear in only one witness.
+    # CAVEAT: all four sources are under _deprecated/.  The precision is
+    # real and mutually confirmed, but nothing LIVE carries it.
+    T_CONSENSUS_49 = mp.mpf("0.0445860283330804029291040528152801211016800484547")
+    print("\n  the gamma-gamma anchor, at its recorded precision")
+    print(f"    .md renders 10 digits; 4 deprecated witnesses agree to 49:")
+    print(f"      {mp.nstr(T_CONSENSUS_49, 49)}")
+    T10 = T_CONSENSUS_49
     HN = num(h)
     dv = [num(hecke_word(_NEUTRON_G0, _NEUTRON_G1)[i]
               - hecke_word(_PROTON_G0, _PROTON_G1)[i]) for i in range(N)]
@@ -551,11 +567,19 @@ def main() -> int:
     print(f"    range over ALL real z = (-inf, {mp.nstr(vert_v, 12)}]")
     w.add_data("hecke_deltatrM_max_over_all_z", fmt(vert_v))
     w.add_data("gamma_gamma_step6_target", fmt(T10))
+    # exact decimal record, not a re-serialized binary mpf: storing only
+    # fmt(T) round-trips through mp and leaves noise past digit 49.
+    w.add_data("gamma_gamma_target_consensus_exact_decimal",
+               "0.0445860283330804029291040528152801211016800484547")
+    w.add_data("gamma_gamma_target_digits_rendered_in_md", 10)
+    w.add_data("gamma_gamma_target_digits_consensus", 49)
+    w.add_data("gamma_gamma_target_sources_all_deprecated", True)
 
     check("the_10_digit_anchor_EXCLUDES_hecke_core_at_EVERY_z",
           A < 0 and vert_v < -T10 and vert_v < T10,
-          f"the gamma-gamma block quotes Delta tr_M(n-p) = +0.0445860283 to "
-          f"TEN significant figures. hecke_core's Delta tr_M is a downward "
+          f"the gamma-gamma anchor is +0.04458602833308... , agreed to 49 "
+          f"digits by four witnesses (the .md renders only 10). "
+          f"hecke_core's Delta tr_M is a downward "
           f"parabola in z whose maximum over all real z is "
           f"{mp.nstr(vert_v, 10)} -- BELOW both +T and -T. So no Markov "
           f"parameter whatsoever makes hecke_core's element produce that "
