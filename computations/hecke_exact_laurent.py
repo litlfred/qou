@@ -6,15 +6,66 @@ Why this exists
 The pure-sympy reducer in `jet_history_retention_probe` calls `sp.simplify()`
 on every coefficient addition. That, not the algebra, is the wall: the H_9
 support is ~500 terms, nowhere near the 9! = 362880 a dense-basis estimate
-suggests. Measured by the H_9 investigation: H_6 14.7 s -> 0.001 s, H_9
-191 s -> 0.016 s.
+suggests. Measured: H_6 14.7 s -> 0.0015 s, H_9 191 s -> 0.018 s.
 
-Coefficients here are dicts {exponent: int} over Z[q, q^-1] -- exact, no
-floats, no mpmath, canonical by construction (zero coefficients are dropped),
-so equality is dict equality and needs no simplification pass.
+## Where the speedup actually comes from -- CORRECTED
+
+I first described this as "sympy -> Laurent". Decomposed on the same reducer,
+same word, per-coefficient-verified at every rung, that is wrong:
+
+    coefficient kernel                  H_6      H_9     vs int-dict
+    sp.simplify(sp.expand(..)) per add  16.12 s  196.0 s  x10235 / x10835
+    sp.expand only                       0.030    0.202   x19 -> x5.8
+    sympy raw add, no expand             0.0054   0.039   x3.4 -> x1.7
+    pyhecke.laurent_q.LaurentQ           0.0071   0.071   x4.5 -> x3.3
+    int-dict Z[q,q^-1] (this module)     0.0016   0.018   --
+
+**~99.8 % of the win is deleting `sp.simplify` from the inner loop.** The
+representation contributes 2-4x, and that shrinks with n (3.4x -> 1.7x). So
+the thing to look for elsewhere is not "sympy" but A CANONICALISING SYMPY
+CALL INSIDE A PER-TERM LOOP.
+
+## Prior art -- this re-derives existing infrastructure
+
+`tools/pyhecke/python/pyhecke/laurent_q.py` already implements the same
+sparse {exp: coef} design (rational-valued), `computations/laurent_q.py`
+shims to it, `computations/hecke/hecke_laurent_fast.py` builds Hecke elements
+on it, and the compute-audit skill's pattern **P17** already prescribes this
+substitution. The int-dict here is genuinely the fastest of them, but it is
+a variant of a known idea, not a new one.
+
+## 🛑 RING HAZARD -- int coefficients are NOT always enough
+
+Coefficients here are `{exponent: int}` over **Z**[q,q^-1]. That is correct
+for the plain Hecke rule (h = q - 1/q has integer coefficients), and WRONG
+without warning for anything landing in Q[q,q^-1]. Known cases:
+
+  - `hecke_symbolic.D_MIX = -(q - 1/q)/2`  -- the pn-mixed crossing
+  - the colour delta (q-1)^2 (1 - q^-4)/3  -- carries a 1/3
+
+Python's `int` will silently floor-divide or refuse, so a caller who needs Q
+gets a wrong answer rather than an error. Use `fractions.Fraction` values --
+the arithmetic here is generic over the coefficient type, and Fraction costs
+3.1-12.9x over int while remaining ~1000x faster than sympy.
+`canonical_color_bridge_tau_probe.py` does exactly this for the colour delta.
+
+## Memory -- this module is the WRONG tool if memory is the wall
+
+Measured retained size of the final element:
+
+                  H_6      H_9      H_12
+    int-dict     0.034 MB  0.532 MB  6.61 MB
+    sympy raw    0.010     0.096     0.95 MB   <- 7x SMALLER
+
+sympy interns and shares identical coefficient objects across terms; a fresh
+dict per term throws that sharing away. If memory is the binding constraint,
+this substitution moves the wall EARLIER. The fix is hash-consing the
+coefficient dicts (measured 13.6x at H_12, 18.9x at H_15, H_18 in 222 MB
+peak), not packing the keys -- keys are only ~10 % of the bytes.
 
 Correctness is not assumed: `crosscheck_against_sympy()` verifies support and
-every coefficient against the sympy reducer on H_6, and is run by __main__.
+every coefficient against the sympy reducer on H_6, and is asserted in
+__main__ so the module cannot be used while disagreeing with what it replaces.
 """
 from __future__ import annotations
 
