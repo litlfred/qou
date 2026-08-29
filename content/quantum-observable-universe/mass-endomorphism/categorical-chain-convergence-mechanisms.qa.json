@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "e184d1bd21c7",
     "ts": "296e28248bc0",
-    "lean": "20d0f5b771ae",
-    "lean_statement": "4803c6f9d272"
+    "lean": "74278be4c9f7",
+    "lean_statement": "33891c65fd26"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1324,8 +1324,8 @@
         "field_hash": {
           "md": "e184d1bd21c7",
           "ts": "296e28248bc0",
-          "lean": "20d0f5b771ae",
-          "lean_statement": "4803c6f9d272"
+          "lean": "74278be4c9f7",
+          "lean_statement": "33891c65fd26"
         },
         "result": "pass",
         "reviewer": {
@@ -1333,10 +1333,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "5f54e3f82f73",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_commit_sha": "5aea6cc0a84e9f8470faaf7f72f905d84e59270a"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-29T11:58:44.380Z",
+        "reviewed_sha": "9813de3f0d9ee9c28fbd6a8008a890b686d786bb"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1467,8 +1467,8 @@
         "field_hash": {
           "md": "e184d1bd21c7",
           "ts": "296e28248bc0",
-          "lean": "20d0f5b771ae",
-          "lean_statement": "4803c6f9d272"
+          "lean": "74278be4c9f7",
+          "lean_statement": "33891c65fd26"
         },
         "result": "n/a",
         "reviewer": {
@@ -1476,12 +1476,12 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "badf9b8e012f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "script_commit_sha": "5aea6cc0a84e9f8470faaf7f72f905d84e59270a",
           "deps_hash": "16d8c7a8984e"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "stale: cached lean_sha 41cbf58c16e3 != current 20d0f5b771ae; re-run content/pipeline/lean-compile-audit.ts to refresh"
+        "reviewed_at": "2026-08-29T11:58:44.380Z",
+        "reviewed_sha": "9813de3f0d9ee9c28fbd6a8008a890b686d786bb",
+        "notes": "stale: cached lean_sha 41cbf58c16e3 != current 74278be4c9f7; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "canonical-calibration-count": [
@@ -2112,8 +2112,8 @@
         "field_hash": {
           "md": "e184d1bd21c7",
           "ts": "296e28248bc0",
-          "lean": "20d0f5b771ae",
-          "lean_statement": "4803c6f9d272"
+          "lean": "74278be4c9f7",
+          "lean_statement": "33891c65fd26"
         },
         "result": "pass",
         "reviewer": {
@@ -2121,11 +2121,11 @@
           "id": "content/pipeline/qa-checkers-uses.ts",
           "version": "v1",
           "script_hash": "b1c323c3439c",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_commit_sha": "5aea6cc0a84e9f8470faaf7f72f905d84e59270a",
+          "deps_hash": "a86dfebb515f"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-29T11:58:44.380Z",
+        "reviewed_sha": "9813de3f0d9ee9c28fbd6a8008a890b686d786bb",
         "metrics": {
           "decl_claimants": 1
         }
@@ -2493,6 +2493,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-29T11:58:44.380Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
