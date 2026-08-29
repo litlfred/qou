@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-25T13:22:59Z
+updated_at: 2026-08-29T16:26:15Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -298,3 +298,49 @@ a single `grep -rn '^\(theorem\|lemma\|def\) .*<Object>' content/`.
 **Still open, unchanged across four passes:** $E_{\mathrm{EM}}$'s magnitude. Every
 pass has sharpened *where* it lives and *why* it is needed; none has produced a
 number.
+
+
+
+---
+
+**2026-08-29 — arc work-plan review after 1524 commits landed on `main`.**
+
+**Nothing on `main` touched this arc's eight Lean files.** Verified per file
+against the merge base: zero commits. No conflicts, no supersession.
+
+**But one landing reframes the arc's priority order, and it is not this bean.**
+`qou-tnho` settled 2026-08-29: *"the hypercharge programme IS blocked upstream
+on N=3"*. Read from `eightfold-open-problems.md`'s own conditionality ledger —
+`N = 3` gates **every** flavour statement, the obstruction is proved and the
+**construction is missing**.
+
+That lands squarely on **front 4 (GMO)**, which is entirely
+$(I, Y)$-ansatz work: `gmo_second_order`, `gmo_blind_to_Yd`, the two
+absorption lemmas, both surjectivity theorems. $Y$ is a flavour quantum number
+on the $A_2$ weight lattice. So **the whole GMO front is a refinement of a
+blocked branch** — the theorems stay true and sorry-free, and none of them is
+reachable as physics until $N = 3$ exists.
+
+It does not weaken front 4's verdict; it deepens it. I closed `qou-s4h6`
+concluding *"the only route left is deriving $e, f, g$ categorically"*.
+`qou-tnho` says the **stage those coefficients live on** is itself gated. Two
+independent arguments, same direction.
+
+**Consequence for the arc's order, which inverts what I had.** I ended the last
+pass saying front 4-A was answered and front 4 was the live one. Backwards:
+
+| front | status after the review |
+|---|---|
+| **4-A — N=3 / non-symmetric reconstruction** | **the gate.** Proved the band argument is circular (symmetric-category machinery, non-symmetric braiding). The missing $N=3$ *construction* is what unblocks the flavour sector |
+| 4 — GMO | **blocked behind 4-A.** Pruned as far as it goes; second-order GMO is vacuous, and the stage is gated |
+| 4-B — EM linking | partially blocked: $\mathfrak{m}_n - \mathfrak{m}_p$ is not flavour-gated, so **this bean stays live** |
+| this bean — $E_{\mathrm{EM}}$ | **live, and the only front not gated on $N=3$** |
+
+So this bean is now the arc's *least* blocked item, not its weakest. That is a
+change of judgement on my part, and the reason is external: the flavour side
+acquired a proved upstream gate while $E_{\mathrm{EM}}$ did not.
+
+**Also opened from this review:** `qou-54tg` — a Lean/narrative divergence in
+`q-game-of-life`, whose `_reversible` theorem assumes an involutivity its own
+proof denies at generator level. In this arc's lane because
+`double_braiding_eq_one_iff` is the σ-level fact the two sides disagree about.
