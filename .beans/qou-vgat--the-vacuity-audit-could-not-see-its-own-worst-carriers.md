@@ -53,24 +53,53 @@ files**. Three compounding defects, each of which alone was sufficient:
    — bracket **and** backtick. One `?` too few.
 
 Fixed all three (`.md` sibling scanned; own label also read from the
-authoritative `.ts` `label:` field; character class widened). **0 → 5 hits**,
-and the full-audit delta is exactly those 5 (134 → 139 defects), with no other
+authoritative `.ts` `label:` field; character class widened). **0 → 3 hits** (see the correction below —
+my first pass said 5 and three of those were an artifact of my own change), and
+the full-audit delta is exactly those 3 (134 → 137 defects), with no other
 category moving — the fix is surgical, not a flood.
 
-## The five, and why the last three matter
+## CORRECTION — my first pass reported 5, and 3 were my own bug
+
+I first reported five hits and wrote that *"three are conditional on
+`QuantumLanglandsDual` — the carrier whose only field is `holds : Prop` — so they
+declare themselves conditional on a conjecture that asserts nothing."*
+
+**Retracted. That was an artifact of the fix, not a finding.**
+
+A Lean docstring belongs to one declaration; a `.md` is the narrative of the
+whole **content block**, and a block may define several carriers.
+`phi-q-aj-machinery-identification.lean` defines **three** classes sharing one
+`.md`, whose line 1 says *"conditional on [`conj:quantum-langlands-dual`]"*. By
+charging the file-level narrative to every carrier in the file, I turned one
+sentence into three hits.
+
+Worse, the three classes I called out are **good** carriers, not defective ones.
+`QuantumAPolynomial` carries `ahat`, `homogeneous`, `jones`, `annihilates`,
+`nontrivial`; `PhiQRegulator` and `Li2QRegulator` each carry a real
+`saddle_annihilated` field and bind `[QuantumAPolynomial …]` — and the file's own
+section heading reads *"Conditional theorems (derived, not projected)"* with an
+explicit §3b-cond item-5 note. I cited three well-formed carriers as evidence of
+rot because my detector counted one prose line three times.
+
+Fixed: `.md`-sourced claims are now scoped **once per file** and marked
+`prose-conditional-block-level`, distinct from the per-declaration
+`prose-conditional-not-in-type`.
+
+## The three, and what they are NOT
 
 ```
-RootOfUnityTruncationContext  conditional on QAubinLions          — no binder
-MagicABindingFormula          conditional on MagicNumbersBring    — no binder
-QuantumAPolynomial            conditional on QuantumLanglandsDual — no binder
-PhiQRegulator                 conditional on QuantumLanglandsDual — no binder
-Li2QRegulator                 conditional on QuantumLanglandsDual — no binder
+RootOfUnityTruncationContext  block .md: conditional on QAubinLions          — no binder
+MagicABindingFormula          block .md: conditional on MagicNumbersBring    — no binder
+QuantumAPolynomial            block .md: conditional on QuantumLanglandsDual — no binder
 ```
 
-Three are conditional on `QuantumLanglandsDual` — **the carrier whose only field
-is `holds : Prop`**. So they declare themselves conditional on a conjecture that
-asserts nothing and is inhabited by `⟨True⟩`. Both halves of that are now
-visible; before this, neither was.
+All three are `prose-conditional-block-level`; **zero** are doc-sourced, i.e. no
+Lean docstring in the corpus makes an unmet conditionality claim. These are
+**candidates for adjudication, not established defects** — a block whose
+narrative motivates itself by reference to a conjecture its theorems do not
+depend on may be perfectly honest framing. The criterion's job is to surface the
+mismatch; an agent decides. That is the design, and after the correction above it
+is worth restating rather than assuming.
 
 ## STILL OPEN — `field : Prop` has no criterion at all
 
