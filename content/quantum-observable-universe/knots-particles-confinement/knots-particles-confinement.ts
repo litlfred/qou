@@ -43,6 +43,17 @@ export default chapter({
       label: "sec:nucleon-derivation",
       blocks: [
         "nucleon-derivation-intro",
+        // Moved up from sec:electroweak-higgs-torus-link-triplet 2026-08-29.
+        // The quark blocks below invoke the Coulomb charge, and that
+        // dependency is Lean-proved rather than decorative
+        // (QOU.Braiding.CoulombCharge.value_mirror and
+        // mirror_odd_neutral_neutron_forces_zero), so it is declared in
+        // `uses[]` rather than left implicit in prose. Declaring it alone
+        // created two MEDIUM H1 forward refs (section_span=6); moving both
+        // definitions here removes them. Both stay ahead of the EW-triplet
+        // consumers, preserving decision 5's ordering constraint.
+        "crossing-energy",
+        "coulomb-charge",
         "up-quark",
         "up-quark-properties",
         "down-quark",
@@ -177,16 +188,18 @@ export default chapter({
       title: "Electroweak and Higgs sector as an even-twist torus-link triplet",
       label: "sec:electroweak-higgs-torus-link-triplet",
       blocks: [
-        // Relocated here 2026-08-09 (decision 5) so the EW-triplet results
-        // below no longer forward-reference their own definitions.
-        // Order is forced by the dependency chain
-        //   def:crossing-energy → def:coulomb-charge → the EW triplet blocks.
-        // crossing-energy + coulomb-charge came from climax-volume-mass
-        // sec:crossing-energy; spin-involution from mass-theory
-        // sec:lp-dual-jucys-murphy (which keeps the lp-dual-invariance arc
-        // and now reads backward for the definition).
-        "crossing-energy",
-        "coulomb-charge",
+        // crossing-energy + coulomb-charge were relocated INTO this section
+        // 2026-08-09 (decision 5) so the EW-triplet results below no longer
+        // forward-referenced their own definitions. They moved again
+        // 2026-08-29 to sec:nucleon-derivation, further UP the chapter --
+        // decision 5's constraint is an ORDER,
+        //   def:crossing-energy → def:coulomb-charge → the EW triplet blocks,
+        // and moving them earlier preserves it. Measured net-zero on the
+        // content graph: all seven heuristics unchanged against baseline
+        // (H1 530, total 772) with the two quark `uses` edges declared.
+        // spin-involution came from mass-theory sec:lp-dual-jucys-murphy
+        // (which keeps the lp-dual-invariance arc and now reads backward for
+        // the definition).
         "spin-involution",
         "electroweak-triplet-bring-embedding",
         "electroweak-triplet-far-commuting-minimal",
