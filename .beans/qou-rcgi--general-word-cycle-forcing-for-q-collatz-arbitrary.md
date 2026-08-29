@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:28:52Z
-updated_at: 2026-08-29T16:43:52Z
+updated_at: 2026-08-29T18:16:03Z
 parent: qou-ifot
 ---
 
@@ -41,3 +41,15 @@ VERIFICATION (CI auto-triggers are off repo-wide, so this is the gate): lean-dir
 WHAT IT DID NOT DO, recorded so nobody reads more into it. The upper bound is sharp and alone forces m <= 1, so the general word is NOT reached and is not claimed. Two follow-ons a later agent could take:
 1. The bound is stated at a single cut D. A word with odd steps front-loaded in SEVERAL blocks (front-loaded within each of many windows) should admit a per-window version of the same induction; nothing here attempts it.
 2. qcollatz_no_front_loaded_cycle takes the forced equation as a hypothesis, matching the landed style of qcollatz_no_adj_tail_cycle. Composing it with qcollatz_word_forces to give a single statement in terms of the orbit alone is mechanical and was left undone.
+
+FOLLOW-ON LANDED 2026-08-29, commit below. The bean's own 'follow-on 1' (a per-window version of the bound) is superseded by something better: rather than generalising the bound window-by-window, the EXACT closed form now replaces bounding altogether.
+
+wordNum_map_closed: phi(n_w) = sum_{i<k, w i} 3^(#odd after i) * 2^i, proved by induction (N-subtraction in the exponent handled via a new oddCount_mono, not avoided).
+
+qcollatz_no_cycle_of_height_lt: exclusion with NO shape hypothesis -- for ANY word, positive height strictly below 2^k - 3^m excludes the cycle. Both hypotheses are finite integer computations for concrete w,k, so it is evaluable rather than merely stated.
+
+The two earlier bounds are now visibly the extreme cases of this sum (odd steps earliest -> 3^m - 2^m; latest -> 3^m 2^(k-m) - 2^k). Previously asserted in the docstring; now derivable and numerically confirmed (4000 random words, 0 mismatches; extremes reproduce the bounds at (m,k)=(3,9),(4,11),(5,13)).
+
+Bean 'follow-on 2' (composing the exclusion with qcollatz_word_forces into a single orbit-level statement) is still undone and still mechanical.
+
+Scope unchanged: a criterion, not a proof it is met. For a general word the height can exceed 2^k - 3^m; deciding when it does not IS the open problem.
