@@ -1,11 +1,11 @@
 ---
 # qou-pwut
 title: 287 root-level ad-hoc QA writers bypass qa-agent-entry.ts and emit no field_hash
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T06:14:19Z
-updated_at: 2026-08-29T01:35:00Z
+updated_at: 2026-08-29T02:35:00Z
 ---
 
 ## What
@@ -170,3 +170,67 @@ not be cited as an explanation for anything.
 
 The `qa-agent-drain` / `-heuristic` writers remain unfixed and remain the live
 issue for the `da-*` path.
+
+---
+
+## BOTH OPEN ITEMS ARE NOW CLOSED — and the writers were already fixed (2026-08-29)
+
+Came back to fix the `qa-agent-drain` / `-heuristic` writers on owner
+instruction. Measured before changing anything: **there is nothing left to fix.**
+
+**OPEN 2 — "Decide the 287: delete as scratch debris, or consolidate."**
+**Already decided: deleted.** Commit `9ddf0ad9c0`, *"remove 316 unreferenced
+root-level ad-hoc QA scratch scripts"*. `find` over the whole tree for
+`review_next_*.py`, `review_batch*.py`, `run_qa.py`, `info_seq*.py` returns **0**.
+
+**OPEN 1's writers — already correct.** Only **three** files in the tree write an
+agent verdict into a sidecar, and every one of them hashes all three siblings:
+
+| writer | reviewer id | `field_hash` |
+|---|---|---|
+| `scripts/reaudit_verdict.py` | `local/qa-agent-drain` | `field_hash()` over md/ts/lean ✓ |
+| `scripts/reaudit-proof-deterministic.py` | `local/qa-agent-drain` | `current_field_hash()` ✓ |
+| `scripts/reaudit-da-compile-claims.py` | `local/reaudit-da-compile-claims` | `field_hash()` ✓ |
+| `content/pipeline/qa-agent-entry.ts` | (caller-supplied) | fixed in #5946 ✓ |
+
+**No file in the tree stamps `local/qa-agent-drain-heuristic` at all** — its
+10,245 entries come from a writer that no longer exists.
+
+So the **53,293 unhashed entries are historical residue** from writers already
+fixed or deleted. This bean's premise — that the 287 are the live source — was
+true when written and is no longer.
+
+### What was actually missing, and is now fixed
+
+**Nothing PREVENTED the class returning.** The sibling guard test
+(`qa-agent-entry.guard.test.ts`, PR #5745) pins `evidence` only, and `field_hash`
+is absent from the schema's `required` list — so the next writer added could
+reintroduce the whole thing in silence, exactly as it arose the first time.
+
+Added `content/pipeline/qa-agent-entry.fieldhash.test.ts`: five tests, each
+pinned to a defect that actually occurred, including that the hash **tracks
+content** rather than mere existence (a frozen digest would satisfy every other
+assertion and pin nothing).
+
+**Mutation-tested** — a guard never seen to fail is not a guard. Reverting the
+writer to each historical defect:
+
+| mutation | result |
+|---|---|
+| drop `field_hash` entirely (the `qa-agent-drain` defect) | 0 pass / 5 fail |
+| drop the `.lean` spread (the pre-#5946 defect) | 3 pass / 2 fail |
+| emit `lean` unconditionally (present-but-empty) | 3 pass / 2 fail |
+| writer restored | **5 pass / 0 fail** |
+
+### Still open, and it is not this bean's
+
+**The 53,293 existing unhashed entries.** They cannot be repaired by hashing them
+now — the hash would record *today's* content, asserting that a July verdict
+reviewed an August block, which is worse than leaving them unresolvable.
+Invalidating them instead would force re-review of essentially every `da-*`
+verdict in the corpus. That is a scope decision for the author, not a cleanup.
+
+**One piece of debris survived the purge:** `run_agy.sh` writes unhashed
+`milnor-editor` verdicts (the 41 in the measurement) and clobbers whole
+sidecars. It is hardcoded to `/Users/litlfred/space_cats/qou/...` and cannot run
+anywhere in this repo, so it is inert. Deleting it is `qou-gljq`'s call.
