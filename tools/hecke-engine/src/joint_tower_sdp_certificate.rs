@@ -54,16 +54,31 @@ pub struct FiltrationCertificate {
 }
 
 /// Per-Wedderburn-block PSD report (R3 — populated by
-/// `wedderburn_psd::evaluate`).  Empty when block evaluation
-/// is deferred.
+/// `wedderburn_psd::evaluate`).
+///
+/// A block whose `d_lambda` exceeds the `--max-dim-psd` cap is **not
+/// evaluated**, and this struct says so rather than fabricating a value.
+/// Before 2026-08-29 a skipped block was emitted with `min_eigenvalue: 0.0`,
+/// `max_eigenvalue: 0.0` and `psd_symmetric_part: false` — so "nobody looked
+/// at this block" was indistinguishable from "this block's spectrum is {0}",
+/// and the console printed it as `NOT PSD`, asserting non-positivity about a
+/// matrix that was never formed. In the witness on `main` that affected 51 of
+/// 169 blocks, every one with `d_lambda > 500` (bean qou-ia6f).
+///
+/// The three measured fields are therefore `Option`, `None` for a skipped
+/// block, and `skipped_dim_cap` names the reason. `matrix_at_q_0_sym_eigvals`
+/// is empty in that case, which is what every existing Python consumer already
+/// keys on.
 #[derive(Serialize, Clone, Debug, Default)]
 pub struct WedderburnBlockReport {
     pub partition: Vec<usize>,
     pub d_lambda: usize,
     pub matrix_at_q_0_sym_eigvals: Vec<f64>,
-    pub min_eigenvalue: f64,
-    pub max_eigenvalue: f64,
-    pub psd_symmetric_part: bool,
+    pub min_eigenvalue: Option<f64>,
+    pub max_eigenvalue: Option<f64>,
+    pub psd_symmetric_part: Option<bool>,
+    /// True when the block was skipped because `d_lambda > max_dim_psd`.
+    pub skipped_dim_cap: bool,
 }
 
 /// Cross-level consistency edge for tower embeddings (R4 —
@@ -145,9 +160,37 @@ pub struct JointTowerSdpWitness {
     pub consumed_by: String,
     pub phase: String,
     pub engine: EngineMetadata,
+    /// The substrate modulus the Wedderburn-block PSD evaluation actually ran
+    /// at. Set from the `--q0` argument, NOT hardcoded: before 2026-08-29 this
+    /// field was the literal `1.1097` while `args.q0` fed the arithmetic, so a
+    /// run with `--q0 <anything else>` recorded a value it had not used.
     pub q_0_numeric: f64,
+    /// Declares the raw-float64 tier for `witness_raw_float64_audit`. See
+    /// [`DeprecationNote`] for why this producer takes the deprecated-f64
+    /// carve-out rather than the `float64-integrator` one.
+    pub precision_tier: String,
+    pub deprecated: DeprecationNote,
     pub per_atom_certificates: Vec<JointTowerSdpCertificate>,
     pub summary: WitnessSummary,
+}
+
+/// Why the numeric half of this witness is retired rather than rewritten.
+///
+/// The witness has two halves and only one of them is numeric. The structural
+/// half — filtration certificates, jet logs, Wedderburn shapes, and every
+/// `coefficient_in_q` — is **exact**, carried as `ℚ(q)` strings such as
+/// `"q**(-2) - 1 + q**2"`, and is unaffected by anything here. The numeric
+/// half is the PSD sanity evaluation at `q_0`, and it is f64.
+///
+/// An mpmath/MPFR rewrite of that half would be precision theatre, because the
+/// f64 rounding is not the dominant error and is not close to being it: the
+/// evaluation runs at `q_0 = 1.1097`, which is **251 ppm** from the canonical
+/// proton pin `1.1099785827513808`. Refining 1e-16 arithmetic underneath a
+/// 2.5e-4 input error buys nothing.
+#[derive(Serialize, Clone, Debug)]
+pub struct DeprecationNote {
+    pub reason: String,
+    pub not_production: String,
 }
 
 #[derive(Serialize, Clone, Debug)]
@@ -159,7 +202,15 @@ pub struct EngineMetadata {
 
 #[derive(Serialize, Clone, Debug)]
 pub struct WitnessSummary {
+    /// Number of certificates actually in `per_atom_certificates`.
+    ///
+    /// This was `registry.len()` until 2026-08-29, which is a different number
+    /// whenever `--max-n` filters anything: a run of the 12-atom registry with
+    /// `--max-n 12` emitted 11 certificates and reported `n_atoms: 12`.
     pub n_atoms: usize,
+    /// Number of atoms in the registry before `--max-n` filtering, so the two
+    /// are distinguishable rather than conflated.
+    pub n_atoms_in_registry: usize,
     pub max_grade_observed: u32,
     pub total_jet_steps: u64,
     pub total_hecke_relations_fired: u64,
