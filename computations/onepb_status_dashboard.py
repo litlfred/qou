@@ -51,6 +51,12 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
+from _precision import set_compute_dps  # noqa: E402
+# Idempotent, at module scope: mpmath defaults to dps=15, and this file now
+# does mpf arithmetic on 50-digit inputs.  Without it the `max_rel_delta`
+# reduction would silently round to float64 precision -- the defect this
+# module was just fixed for, one layer down.
+set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 
 
