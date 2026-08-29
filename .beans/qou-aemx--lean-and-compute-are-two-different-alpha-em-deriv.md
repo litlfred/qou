@@ -309,3 +309,74 @@ The docstring is corrected in the same tranche (resummed form + the measured
 11.07 ppb). The `opaque` Prop and the absent instance are untouched: what the
 conjecture asserts, which `κ` it asserts it of, and whether the tier is algebraic
 or numerical remain author decisions.
+
+
+---
+
+## 2026-08-29 — TWO of the three stated causes of the -467 ppb are now CLOSED (PR #6000)
+
+The block offered three explanations for its residual. It had already excluded
+one itself (the truncation: the tower is geometric and resums, worth 11.07 ppb
+against a 468 ppb gap). The other two were the ambiguities it names in `κ`.
+Both are now closed, and neither closes the way the block expected.
+
+**1. The basis choice is not an ambiguity at all.** The block lists *"the
+choice of basis for the rank-2 sublattice"* as unfixed. A Gram matrix
+transforms by congruence `G ↦ BᵀGB`, so `det` acquires `(det B)²` — the **same**
+factor on the classical and the q-deformed side, where it cancels. `κ` is
+independent of the basis for **every** invertible `B`: unimodular,
+non-unimodular (a finite-index sublattice), or irrational.
+
+Lean, sorry-free, `#print axioms` = the three standard ones:
+`QOU/Archimedean/GramDetRatioCongruence.lean` — `det_congr_eq` (any `CommRing`),
+`gramDetRatio_congr_invariant` (a `Field`), `gramDetRatio_indep_of_basis`.
+Confirmed numerically to 60 digits under all three kinds of `B`.
+
+This is the determinant analogue of `gauge_ratio_invariant` in
+`QOU/Archimedean/GaugeGroupThreeScale.lean` — the corpus already held the
+degree-0 ratio principle for Schur scalars and had **not** applied it here.
+Nothing in the QOU tree carried a det-congruence lemma before this.
+
+**2. The q-reading family is finite, and none of it lands.** The block's other
+named ambiguity — *"the explicit form of `s_i, ℓ, c_i` in the q-deformed
+setting"* — is enumerable: each of `s`, `ℓ`, `c` and `CS` admits two readings of
+*"replace `m,n` with `[m]_q,[n]_q`"* (deform the composite, or deform its
+constituents), giving **16** combinations, of which the shipped producer is one.
+
+At the proton pin, `κ` spans `[-10.92, 144.61]` and **none** of the 16 falls in
+the `[1.8739, 1.9567]` window that would bring `1/α` within 100 ppb.
+
+| reading | κ | ppb |
+|---|---:|---:|
+| shipped (`s,ℓ,c` constituents, CS deformed) | 1.7216 | **−467.6** |
+| `s` composite, rest as shipped | 2.1155 | +483.6 |
+| all composite, CS classical | 3.2650 | +3266 |
+| `s,ℓ,c` constituents, CS classical | 144.61 | +442899 |
+
+Probe: `computations/alpha/alpha_em_kappa_qdeformation_family_probe.py`. Its
+shipped row reproduces `_alpha_em_inv_derived` at **rel-diff 0.0** — without
+that cross-check the table would be about the script, not the corpus.
+
+**Do not read the bracketing as evidence.** The needed 1.9153 sits between the
+shipped 1.7216 and the next reading's 2.1155. The map `κ ↦ 1/α` is monotone and
+the 16 values span two orders of magnitude, so *some* adjacent pair brackets
+almost any target in range. It carries no information.
+
+**Nor is "the shipped reading is closest of 16" evidence for it.** That is what
+selecting for closeness produces. It is the reading someone chose, and the
+plausible reason they chose it.
+
+**Scope, per AGENTS.md.** Scope-**(a)**: the `[m]_q` substitution family,
+*alone*, does not supply the needed `κ`. **Not** scope-(b): a Gram-determinant
+`κ` is not excluded, because a **different pairing** — different matrix entries,
+rather than a different reading of these ones — is untouched by the enumeration.
+
+**What survives.** Exactly the block's own third alternative, now the only one
+left standing: *"the entire ansatz uses the wrong decomposition."* That is no
+longer one hypothesis among three; it is the residual. Closing `κ` structurally
+still requires deriving the pairing, which nothing in the corpus supplies.
+
+**Not changed:** no number in the block moves. The prediction, the −467 ppb
+residual, and the required `κ ≈ 1.9153` are all as they were. The `opaque` Prop
+and its absent instance are untouched — which tier the conjecture belongs to
+remains an author call, and the 0/5-unconditional L2 count is unaffected.

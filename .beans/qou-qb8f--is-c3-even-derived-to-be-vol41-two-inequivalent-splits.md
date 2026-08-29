@@ -1,11 +1,11 @@
 ---
 # qou-qb8f
 title: Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-08T10:45:00Z
-updated_at: 2026-08-19T21:14:17Z
+updated_at: 2026-08-29T08:27:16Z
 ---
 
 Raised (not adjudicated) from PR #4724 after retracting an S_leak-based filter.
@@ -287,3 +287,25 @@ Re-adjudicated against committed corpus. All three sub-questions ARE resolved; n
 (b) rival c₃^even≈+86.66 = projection artifact / different object (same glyph). Two S's are distinct (SLeakZeroCrossing guards collision). Neither split is a genuinely derived decomposition.
 (c) registry pointer landed #5022, refined #5074 §9f. KC21 tiers only the STRUCTURAL parity (proved-lean, Im S odd) + S=h·D split / 1/u³ / Φ_b saddle (symbolic-exact) — the EQUALITY c₃^even=−Vol(4₁) stays (H1), untiered.
 Open residuals correctly tracked as qb8e (magnitude gate) + qb8g (bar-parity undetermined). NEW live thread beyond qb8f: whole c₃ ladder is C-frame, awaits convention-D re-derivation (qou-cds1).
+
+CLAIMED for idle-window adjudication (build reseed running in bg). Plan: (1) reproduce offset-genericity exact; (2) confirm two-splits divergence by reading both audits; (3) fold in the 2026-08-15 convention-D ruling (bean predates it, PR #4724); (4) record crisp verdict. Not force-settling the owner question — producing the adjudication evidence.
+
+
+## ADJUDICATION (verified on main 2026-08-29, idle window)
+
+The bean's substantive question is ANSWERED and superseded twice over. Verified live on main today.
+
+**A. `c₃^even = −Vol(4₁)` is NOT derived** — a defined residual, not a decomposition:
+ - offset-genericity reproduced EXACTLY (`sleak_offset_genericity_check.py`): 7/7 unrelated constants in the (2.02020024, 2.06934258) window give the SAME sign flip ⇒ the flip restates 'c₃ differs between anchors', not evidence about Vol(4₁);
+ - the sign flip is not even resolved by the DATA — uncertainty 130× the value; only the 2.43% swing is resolved (SLeakZeroCrossing.lean §APPLICABILITY, 2026-08-08);
+ - what exists is a ~2.9% geometric MOTIVATION (Φ_b saddle: Im𝔙=0 at the real meridian + volume deficit 0.0094 ≈ |S(μ)|=0.00968; KC21, symbolic-exact) — motivation, exact normalisation open, conj:im-q-physical-role still a conjecture.
+
+**B. The 'two inequivalent splits' is largely a same-glyph/two-referents confusion.** The rival `c₃^even ≈ +86.66` is (i) a PROJECTION ARTIFACT (2026-07-07 audit: 'the honest rungs are the e_k') and (ii) a DIFFERENT OBJECT (the k=3 rung of the bar-even channel of log R, not the bar-even part of the c₃ COEFFICIENT). The genuine bar-even channel of log R IS substrate-derived (exact ℚ(√3) ũ-ladder, e₁=3√3/4, over-det margin 9) — but that is a different object from the −Vol(4₁) scalar reading. Not two rival derivations of one object.
+
+**C. Dedicated audit already exists** and is tagged to THIS bean: docs/audits/2026-08-08-c3-even-vol41-contradicts-canonical-split.md (PR #4742). Reproduction c3_even_canonical_split_contradiction.py → 12/12 assertions pass (exit 0, verified on main today). SLeakZeroCrossing.lean already carries the 'definition, not decomposition' framing.
+
+**D. Convention-D supersession (post-dates this bean, from PR #4724).** The 2026-08-15 owner ruling makes convention D canonical and excises C; AGENTS.md (≈L1640-41) explicitly lists `c₃^even = −Vol(4₁)` and `S_leak` among the C-conditional facts pending re-derivation under D (bean qou-cds1). So the whole subject is now C-frame — even the exact ℚ(√3) even-ladder is C-conditional.
+
+**What genuinely stays open (NOT this bean's to close):** qou-qb8e (c₃ magnitude gate), qou-qb8g (c₃ bar-parity undetermined — needs a genuinely derived decomposition, which neither split is), qou-cds1 (D re-derivation), + the registry-annotation call (registry maintainers').
+
+**RECOMMENDATION (my judgement):** qou-qb8f is superseded — its substance is resolved by the 2026-08-08 audit and its live residuals carried by qou-qb8g / qou-cds1. Marking completed on those factual grounds; the only remaining item is a registry-annotation DECISION which belongs to the registry maintainers via qou-qb8g, not here.

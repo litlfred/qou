@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-26T04:22:51Z
+updated_at: 2026-08-29T10:50:29Z
 ---
 
 Parent: `qou-cds1`. The highest-value Q_beta vector, and it is already in the
@@ -92,3 +92,51 @@ residue is G2: the form clash. A correction affine in the loop weight and a
 cosine cannot both be right, and only one of them is axiomatised.
 
 Probe: computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py
+
+
+## 2026-08-29 — G2 SHARPENED: the affine transport's even part is the CONSTANT 1 (convention-agnostic)
+
+Idle-window analytical advance (reseed build running). Makes G2 precise and
+frame-independent, and connects it to the two proved Lean files.
+
+REPARAMETRISE the proved KC19 transport by the gap. CrossingWeightAffine.evalMap_ratio
+(sorry-free, generic field) gives L(z) = evalMap h z / evalMap h 1 = (h-2z)/(h-2).
+With alpha = (z-1)h/2 (so eps - tr_M = 2 alpha, the exact identity), this is
+  T(alpha) = 1 - 4 alpha / (h (h-2))     -- LINEAR in alpha.
+
+EVEN PART = CONSTANT 1. Under alpha -> -alpha, z -> 2-z, so
+  (T(z) + T(2-z))/2 = [(h-2z) + (h-4+2z)] / [2(h-2)] = (2h-4)/(2(h-2)) = 1  exactly.
+So the proved affine transport carries ZERO even-order content.
+
+THE CLASH, SHARPENED. q-beta-cos-resummation.lean axiomatises the correction as
+cos(alpha) (class TransferMatrixEigenphase), whose even part is cos(alpha) itself
+= 1 - alpha^2/2 + O(alpha^4). Since the proved transport's even part is the
+constant 1, the ENTIRE O(alpha^2) content of the cosine resummation is sourced by
+the AXIOM alone -- nothing proved (KC19) supplies it. This is why the transport
+overshoots ~300x: a linear-in-alpha transport structurally cannot source a
+quadratic alpha^2 correction.
+
+CONVENTION-AGNOSTIC. This is a statement about functional FORM in alpha, not about
+z. It holds for any z (C or D) -- evalMap is over a generic field and alpha is a
+free parameter. So unlike the numerical w* (C/D-dependent), the G2 form-clash does
+NOT wait on qou-cds1's D re-derivation. (The cos file's own markovZ is C and cannot
+migrate to D -- its bar-antisymmetry needs z bar-even -- but the even-part clash is
+upstream of that.)
+
+LEAN PLAN (queued for verification when the reseed build lands; drafted, sorry-free
+target ~55 lines, new file QOU/QBeta/LadderCosClash.lean):
+ - transportFactor k a := 1 - k*a; transport_even_part_const: T(a)+T(-a) = 2  [ring, CommRing]
+ - evalMap_ratio_eq_transportFactor: KC19 ratio at w0=1 = transportFactor (4/(h(h-2))) ((z-1)h/2)  [field_simp;ring, Field]
+ - cos_lt_one_of_mem_Ioo (0<a<2pi): cos a < 1  [Real.cos_le_one + Real.cos_eq_one_iff]
+ - cos_correction_ne_affine_even_part: cos a != (T(a)+T(-a))/2 = 1  [the G2 theorem]
+This DROPS nothing yet but makes 'the cosine is the thing to drop' precise: the
+cosine is the SOLE carrier of the O(alpha^2) term. Verified affine even-part = 1 by
+hand two ways.
+
+
+## 2026-08-29 — workflow-verified (adversarial, both lenses survive): cosine loses justification under D
+Under canonical D the cosine correction is NOT derived: its evenness-forcing (Markov cyclicity via eigenphase_bar_involution) EVAPORATES because z_D is neither bar-even nor bar-odd (symbolic-exact: alpha_D(1/q)+alpha_D(q)=q^2/2-1+1/(2q^2) != 0; alpha(1/q)=-alpha(q) IFF z(1/q)=z(q), true C false D). The only convention-agnostic PROVED transport is affine (even-part 1), O(alpha^2)=0, so the cosine's O(alpha^2) is axiom-only with no D backing. Scope-(a) (not 'false under D'). NEW: a SECOND carrier QOU.BraidKnot.V21Eigenphase / markovSymmetrizedV21Character (HoefsmitV21CosSymmetrization.lean) is ALSO on the C eigenphase -> verdict STRONGER; C-scope/drop must cover BOTH files. Next: land LadderCosClash.lean (drafted) + open the fork bean (does a bar-odd alpha_D exist reproducing the H3 V_(2,1) spectrum?). Audit docs/audits/2026-08-29-convention-d-qbeta-front-adversarial-audit.md.
+
+
+## 2026-08-29 — G2 is now PROVED-LEAN (landed)
+QOU/QBeta/LadderCosClash.lean committed (0f4df6eed6), sorry-free, verified lean-direct (axioms={propext,Classical.choice,Quot.sound}): transport_even_sum (affine even part =1), evalMap_ratio_eq_transportFactor (KC19 ratio = 1-4a/(h(h-2))), cos_correction_ne_affine_even_part (cos a != affine even part on (0,2pi)). The cosine is the SOLE carrier of the O(a^2) term. Still open: the fork bean (does a bar-odd alpha_D exist reproducing the H3 V_(2,1) spectrum) + C-scope/drop BOTH cosine carriers (QBetaCosResummation + V21Eigenphase).

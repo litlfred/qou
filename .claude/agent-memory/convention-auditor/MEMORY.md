@@ -1,11 +1,11 @@
 # convention-auditor — memory
 
 Entry types: **STABLE** · **TRAP** · **BASELINE** (re-measure, never quote).
-Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them.
+Seeded 2026-08-29 from `AGENTS.md`; confirm entries as you use them.
 
-**The rule governing this whole file: cite the rule, re-measure the
-instance.** Three named instances in `AGENTS.md`'s own convention section went
-stale between being written and being read.
+**The rule governing this whole file: cite the rule, re-measure the instance.**
+Named instances in `AGENTS.md`'s convention section go stale between being
+written and being read — four so far.
 
 ---
 
@@ -61,14 +61,23 @@ move, because it never counted them. So draining the shape audit to zero
 would not end the excision. Bean `qou-t9r1`; the four sites that cannot be
 migrated by substituting `z_D` at all are `qou-pmkh`.
 
-## TRAP — `markovZ` is one name spanning both conventions
+## TRAP — the name, the docstring and the body can all three disagree
 
-It was 5 declarations (3 C, 2 D), then **13** (3 C, 10 D). Two files
-`AGENTS.md` names as C `markovZ` are **now D**. A name that spans two
-conventions keeps accreting declarations while the question underneath it is
-being settled — a naming defect that migration does not fix. Bean
-`qou-961o`. **Always resolve a `markovZ` to its own definition** before
-reasoning about its value.
+`qou-961o` (`ae8098c3`) made bare `markovZ` mean convention D uniformly. But
+the rename left a case-only twin, and under it a worse defect:
+
+`markovZc`'s docstring read *"z = 1 / (√q + 1/√q)"* — C, `0.4993203342` —
+above a body computing `q³/(q²+1)`, D, `0.6126880371`. The **name** said C
+(lowercase twin of `markovZC`, which really is C); the **docstring** said C;
+only the **body** said D. A reader checking name against docstring gets
+agreement and is still wrong by 0.113.
+
+Fixed 2026-08-29 (#6015): renamed to bare `markovZ`, docstring corrected to
+the body. `markovZC` now has no case twin.
+
+**The generalisable rule: agreement between two labels is not evidence about
+the third thing.** Only the body is evidence — the `Λ`/`Cl₂` failure below,
+one level deeper, because here the prose agreed with the wrong name.
 
 ## STABLE — the counter-move: test the ANSWER, not the source
 
@@ -90,17 +99,14 @@ the figure-eight complement is `Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3) ≈ 2.029
 `2Λ(π/3) ≈ 0.6766` and `3·Cl₂(π/3) ≈ 3.0448` are **both wrong** — each keeps
 one function's coefficient with the other's name.
 
-The 2026-08-10 drain swept `content/` only. Re-measured 2026-08-15: **54
-sites across 35 files** remained (5 `content/`, 28 `computations/`, 21
-`docs/`; **0** in `.lean`/`.ts`). Bean `qou-zdz5`.
-
-Most survivors compute the RIGHT value under the WRONG name — e.g.
-`VOL41 = 2*mp.clsin(2, mp.pi/3)` is 2.0299 ✓ annotated `# Vol(4₁) = 2Λ(π/3)`
-✗. **A grep for the bad name does not imply a bad number**; check the
-arithmetic beside it before "fixing" a value.
-
-**Do not borrow this guard's "0 in `.lean`" as a convention-C all-clear.**
-The two were conflated once, by shape rather than subject.
+The 2026-08-10 drain swept `content/` only; re-measured 2026-08-15, **54 sites
+across 35 files** remained (5 `content/`, 28 `computations/`, 21 `docs/`; 0 in
+`.lean`/`.ts`). Bean `qou-zdz5`. Most survivors compute the RIGHT value under
+the WRONG name — `VOL41 = 2*mp.clsin(2, mp.pi/3)` is 2.0299 ✓ annotated
+`# Vol(4₁) = 2Λ(π/3)` ✗ — so **a grep for the bad name does not imply a bad
+number**; check the arithmetic beside it before "fixing" a value. And do not
+borrow this guard's "0 in `.lean`" as a convention-C all-clear: the two were
+conflated once, by shape rather than subject.
 
 ## STABLE — the two q₀ layers, and the straddle hazard
 
@@ -141,34 +147,20 @@ muon *identifier* in `q0_producer_pin_classifier` reclassified **56
 producers** proton → `BOTH`, and `BOTH` shields a producer from triage as a
 possible deliberate comparison. It would have hidden 56 clean files.
 
-## STABLE — the migration is authorised, with four bought constraints
+## STABLE — the re-pin migration is authorised, with four bought constraints
 
 Owner, 2026-08-15: *"we want proton unless for an explicit reason (like
 comparison on proton vs muon results). otherwise pin proton"* / *"fix all,
-even if not visible."* Scope: bean `qou-1c4y`. The first attempt broke
-`main` for **208 producers** (`qou-m9xp`). The constraints:
+even if not visible."* Scope: bean `qou-1c4y`.
 
-1. **NEVER re-pin an anchor-DEFINING witness.** Re-pinning
-   `q-pinning-50-digit.witness.json` redefines what "muon" *means* — 262
-   `Q0_FLIP`s, and `q_parameter`'s guard then hard-fails every `ideal_muon`
-   producer including the one that would regenerate the anchor.
-   `q0_repin_sweep.py` excludes it by name; do not remove that.
-2. **The muon anchor keeps its definition.** Something must still hold the
-   muon 50-digit string or the ideal/CAL-2 layer becomes unstatable.
-3. **A comparison producer needs BOTH pins**, via a per-process override,
-   and belongs under `physical_proton`.
-4. **Do not split the change.** The manifest reclassification and the
-   witnesses it re-pins are one change. PR #5049 merged the witnesses and
-   held the manifest; the half that landed is the half that broke `main`.
-
-**Do NOT "migrate" by emptying `ideal_muon` in
-`computations/q0_anchor_manifest.json`.** `q_parameter.py` selects by
-membership, so an empty list means no producer ever resolves to the muon
-anchor and the anti-corruption guard can never fire. It also relabels every
-already-emitted muon witness as proton. The list does not end at zero:
-several producers refuse a proton run *by design*
-(`atomic_tr_m_mpfr_50dps`, `he4_stage2_ranking_seminormal_xcheck`,
-`cross_check_trM_1ppb`), and `q_pinning_50_digit` defines the anchor.
+**Read `q0-pin-migration.md` in this directory before running any of it.** The
+first attempt broke `main` for **208 producers** (`qou-m9xp`), and the four
+constraints that came out of it are not optional: never re-pin the
+anchor-DEFINING witness; the muon anchor keeps its definition; a comparison
+producer needs both pins via a per-process override; and the manifest
+reclassification and the witnesses it re-pins are **one change**. That file
+also records why "empty `ideal_muon` in the manifest" is a disabling rather
+than a migration, and the producers that refuse a proton run by design.
 
 ## BASELINE — re-measure, do not quote
 
@@ -179,8 +171,12 @@ every re-measurement, in both directions.
 |---|---|---|---|
 | `.py` C by shape | `python3 scripts/convention-c-producer-audit.py` | 9 actionable (7 registry-blocked on `qou-cds1`) | 2026-08-29 |
 | `.py` C by value | `python3 scripts/convention-c-value-audit.py` | 85 in `computations/`, 21 invisible to the shape audit; `tools/` 0, `content/` 0 | 2026-08-29 |
-| `.lean` C defs | `python3 scripts/lean-markov-convention-audit.py` | 14 defs, 0 actionable / 14 deliberate; 38 D defs | 2026-08-29 |
-| `markovZ` declarations | that script | 13 (3 C, 10 D) | 2026-08-29 |
+| `.lean` C defs | `python3 scripts/lean-markov-convention-audit.py` | 14 defs, 0 actionable / 14 deliberate | 2026-08-29 (post-`qou-961o`) |
+| `markovZ*` family | that script **and** `grep -rn 'def markovZ'` — they disagree, see below | bare `markovZ` **10, all D**; `markovZD` 3; `cosKernel` 1; `markovZc` **gone**. `markovZC`: audit says **2**, grep says **3** | 2026-08-29 (post-#6015) |
+
+`markovZC` 2-vs-3 is live and unexplained: grep finds three (all genuinely C),
+the audit lists two; it predates #6015, so detector scope, not regression.
+**Quote both with their method**; do not silently prefer one.
 | muon-fingerprint witnesses | see the prefix note below | 477 | 2026-08-26 |
 
 **State the METHOD when quoting the muon count.** Three different values are
@@ -196,5 +192,9 @@ makes the migration look ~3× more complete than it is.
 
 ## Session log
 
-One line per audit: what you measured, with which script, and any TRAP you
-added. Keep under ~200 lines — prune the log, never the TRAPs.
+One line per audit: what you measured, with which script, any TRAP added. Keep
+under 200 lines — prune the log or split a section out, never the TRAPs.
+
+- 2026-08-29 — re-measured post-`qou-961o`: bare `markovZ` 9, all D; found the
+  `markovZC`/`markovZc` case collision and, under it, a docstring that agreed
+  with the wrong name; fixed in #6015; split `q0-pin-migration.md` out.

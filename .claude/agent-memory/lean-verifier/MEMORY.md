@@ -3,9 +3,9 @@
 Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
 **BASELINE** (a number — re-measure, never quote from here).
 
-Seeded 2026-08-29 from `AGENTS.md` + `.claude/skills/local/lean-environment-setup.md`.
-Nothing below has been re-verified by me in a live session yet; the first
-session to use each entry should confirm it and mark it verified.
+Seeded 2026-08-29 from `AGENTS.md` + `local/lean-environment-setup.md`.
+Entries marked (verified <date>) were confirmed live; the rest are inherited
+and should be confirmed on first use.
 
 ---
 
@@ -56,16 +56,15 @@ Delete the marker only once Lake has genuinely rebuilt the tree.
 ## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
 
 The recipe streams every `lake-oleans.tgz.part` into one temp file before
-untarring. Until 2026-08-28 nothing deleted it; a single leaked
-`/tmp/tmp.*` from 2026-08-15 was still present thirteen days later and
-drove the container to **92K free**, at which point the Bash harness cannot
-write its own output capture and *every* command fails — including the `rm`
-that would fix it. The `trap 'rm -f "$TGZ"' EXIT INT TERM` in the recipe is
-load-bearing; keep it.
+untarring. Nothing reaped it until 2026-08-28: one leaked `/tmp/tmp.*` from
+2026-08-15 survived thirteen days and drove the container to **92K free**,
+where the Bash harness cannot write its output capture and *every* command
+fails — including the `rm` that would fix it. The
+`trap 'rm -f "$TGZ"' EXIT INT TERM` is load-bearing; keep it.
 
-Disk reads deceptively here: `df` shows ~252G nominal at 100% with ~38G
-used, because the real limit is a per-session quota near 38G. "Avail 0 with
-low Used" means the allowance is spent, not that the machine is broken.
+`df` reads deceptively: ~252G nominal at 100% with ~38G used, because the
+real limit is a per-session quota near 38G. "Avail 0, low Used" = allowance
+spent, not machine broken.
 
 ## TRAP — seeding route depends on how you built
 
@@ -86,17 +85,14 @@ parse release data", empty `~/.elan/toolchains/`, `lake build` timeout —
 do **not** conclude Lean is unavailable.
 
 `release.lean-lang.org` is firewalled in some sandboxes but the **GitHub
-release asset is allowlisted**, so the toolchain can be installed by hand.
-GitHub clones work; only the release server and `lake exe cache get` are
-blocked, and both are sidesteppable. First
+release asset is allowlisted** — install the toolchain by hand. GitHub
+clones work; only the release server and `lake exe cache get` are blocked,
+both sidesteppable. First
 `grep -ri "<error keyword>" .claude/skills/ AGENTS.md docs/`, then delegate
-a long install to a background subagent so the foreground task is not
-blocked. Only a *hard* network block justifies falling back to a hand
-audit — and then say so explicitly.
-
-Mathlib cache 403 fallback (shallow local clone + `git config --global
-url."file:///…".insteadOf`) is in the skill under §"Mathlib cache 403
-fallback".
+a long install to a background subagent. Only a *hard* network block
+justifies a hand audit — and then say so explicitly. Mathlib cache 403
+fallback (shallow local clone + `git config --global
+url."file:///…".insteadOf`) is in the skill.
 
 ## TRAP — a sibling `.lean` stub shadows the real declaration
 
@@ -106,16 +102,44 @@ real library declaration the ref would otherwise reach. Never create or
 keep one when the real formalisation exists. If the decl is in a mis-named
 library file, align the filename — do not paper over it with a stub.
 
+## TRAP — a slow first `lean`-direct run is COLD PAGE CACHE, not a rebuild
+
+Measured 2026-08-29 on one Mathlib-importing file: first run **2m50s wall but
+only 5.7s `user`**; second run **4.4s wall**. The wall time is faulting in
+~7000 Mathlib oleans, nothing more.
+
+**The discriminator is `user` time — always `time` the run.** Seeing three
+minutes and concluding "Mathlib is rebuilding from source" leads straight to
+`lake build` or a re-restore, and `lake build` is the thing that evicts the
+cache (TRAP above). The misdiagnosis causes the harm; the slow run is benign.
+
+## TRAP — a chapter-directory `.lean` DOES have a `.qa.json` sidecar
+
+The "nothing but you checks library Lean" exemption is scoped to
+`content/<paper>/lean/QOU/**`. A `.lean` sitting beside a `.ts`/`.md` in a
+**chapter directory** is a content-block sibling and **has** a sidecar, so
+editing it stales `source_hashes.lean` — and `lean_statement` too, since a
+rename reaches declaration types. Measured 2026-08-29 on
+`categorical-chain-convergence-mechanisms.lean`: `20d0f5b771ae → 74278be4c9f7`
+and `4803c6f9d272 → 33891c65fd26`.
+
+A green `lean`-direct verdict is **not** the whole preflight there. The sidecar
+wants `qa-sweep --only <crit>` and must never be hand-edited. Two cautions
+measured the same day: `qa-staleness`/`qa-sweep` take a **directory**, not a
+file (a file path dies `ENOTDIR`), and a chapter-scoped sweep rewrites **every**
+block's sidecar — 128 files for a one-block change — so revert all but the
+block you actually staled, or a rename PR silently becomes a chapter sweep.
+
 ## STABLE — the honest dispositions when a proof will not close
 
 Exactly three, per `AGENTS.md` §1a / §"Strict Lean Discipline":
 
 1. **Prove it.**
-2. **Queue it** — the *real* proposition with `sorry` + a `-- Ref:` citation
-   whose `[key]` matches `content/schema/references.ts` exactly.
+2. **Queue it** — the *real* proposition with `sorry` + `-- Ref:` whose
+   `[key]` matches `content/schema/references.ts` exactly.
 3. **Demote it** — a `conjecture`, or a content-bearing conditional class
-   (§3b-cond). The class must carry the *hypotheses*, not the conclusion; a
-   "theorem" that projects its own claim out of a class field is a vacuous
+   (§3b-cond) carrying the *hypotheses*, not the conclusion. A "theorem"
+   projecting its own claim out of a class field is a vacuous
    self-assuming projection.
 
 Banned: `: True := trivial` in any declaration kind (including the
@@ -125,34 +149,35 @@ claim, and an `axiom`/`class` substituting for a proof. If you cannot
 close it: `beans create "GAP: <what is open>" --type task` and report the
 gap. An honest bean is always acceptable.
 
-## STABLE — verification is the only merge gate; do not wait on the dead ones
+## STABLE — your verdict IS the gate; do not wait on the dead ones
 
-All three original Phase-4 gates are gone. Do not block on any:
+All three Phase-4 external gates are gone: **CI** (auto-triggers disabled
+repo-wide 2026-06-30, `build.yml` is `workflow_dispatch`-only, no `lean_ci.yml`
+exists), **Gemini** (sunset 2026-08-01), **Copilot** (measured n=5, never
+enqueues — `qou-gwe9`). `prepare-merge-auto` Phase 1b still prescribes a
+15-minute Copilot poll that can only expire; skip it and cite the bean. Full
+detail lives in `merge-coordinator`'s memory, which owns this.
 
-- **CI** — auto-triggers disabled repo-wide (owner directive 2026-06-30,
-  Actions billing). `build.yml` is `workflow_dispatch`-only; there is no
-  `lean_ci.yml` in the tree. Feature branches routinely show zero runs.
-- **Gemini review** — the consumer Gemini Code Assist on GitHub was sunset
-  2026-08-01.
-- **Copilot review** — measured n=5 (bean `qou-gwe9`): requested explicitly,
-  zero reviews every time, and `get_check_runs` returns `total_count: 0`,
-  so nothing is ever enqueued. `prepare-merge-auto` Phase 1b still
-  prescribes a 15-minute poll for a check run that is never created —
-  **skip it and record why**, citing `qou-gwe9`.
-
-So your `lean`-direct verdict *is* the gate. State the verification you
-actually ran. Never write "CI green" unless a run exists.
-
-For a **library** file under `content/<paper>/lean/QOU/**` there is no
-`.qa.json` sidecar and `lean-content-siblings.yml` does not cover it —
-nothing but you checks it.
+So state the verification you actually ran and **never write "CI green"**
+unless a run exists. A **library** file under `content/<paper>/lean/QOU/**` has
+no `.qa.json` sidecar and `lean-content-siblings.yml` does not cover it —
+nothing but you checks it. **But see the sidecar TRAP above: that exemption is
+scoped to the library tree, and a chapter-directory `.lean` DOES have a
+sidecar.**
 
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
 |---|---|---|---|
-| restored root mathlib oleans | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | ~2919 (healthy); ≪2919 ⇒ a stray `lake build` evicted the cache, re-restore | 2026-06-13 |
+| root mathlib oleans, healthy tree, v4.24.0 | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **6990** | 2026-08-29 |
+| cold vs warm `lean`-direct wall time, one Mathlib-importing file | `time lean <file>` | 2m50s cold / 4.4s warm; `user` ≈ 5s in **both** | 2026-08-29 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate; verify per-module | 2026-08 |
+
+⚠ The `~2919 (healthy)` figure this table carried until 2026-08-29 was
+**wrong and dangerous**, and it contradicted the TRAP above it in this same
+file (which cites 6990 as the pre-eviction count). A tree evicted from 6990
+down to 2919 would have read as *healthy* under the old row. Re-measure;
+do not treat any number here as a threshold.
 
 ---
 

@@ -3,8 +3,8 @@
 
 Beans `qou-fivt`, `qou-abel`, `qou-0yqu`. Literature supplied 2026-08-08:
 `library/arxiv-hep-th-9408113v2/9408113v2.pdf` (Kirillov, *Dilogarithm identities*, hep-th/9408113) and
-`library/the-dilogarithm-function-514sniwxl7.pdf` (Zagier, *The Dilogarithm
-Function*).
+`[zagier-dilogarithm]` (Zagier, *The Dilogarithm Function*) -- cited by bib
+key because the PDF was never committed to this repo.
 
 THE CORRECTION THIS PROBE RECORDS
 ---------------------------------

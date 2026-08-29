@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T08:23:42Z
+updated_at: 2026-08-29T10:58:44Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -157,3 +157,19 @@ Net verified outcome of THIS session:
 2026-08-29: general-n gap SHARPENED via induction route (qou-x4zl). normalizedSum n q=1 reduced (sorry-free, MolienFakeDegreeInduction.lean) to the one-step recursion normalizedSum(n+1)=normalizedSum(n), then to the addable-box hook identity (B) [verified n<=6] + SYT branching (A) [corpus infra exists]. (B) is more elementary than the coinvariant/maj-RSK routes -- no rep theory. Remaining: prove (B) in Lean (q-JM contents) + the Nat.Partition addable-box reindexing.
 
 2026-08-29 CLOSED (math) via corpus telescope, NOT open: normalizedSum n q = 1 follows from MacdonaldTelescopeGeneralX.telescope_generalX at X=0. Convention bridge (exact n<=5): q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam) = schurElement(q^2,0,lam)*(1-q^2)^n; telescope@X=0: Sum f schurElement(q^2,0) = (1/(1-q^2))^n; chain = 1. Per-cell 1-q^2h = -q^h(q-q^-1)[h]_q; n-stat identity kappa = Sum h - n - 2 n(lam). Probe fake_degree_via_telescope_probe.py 3/3. So NOT multi-week coinvariant/maj-RSK. Remaining = MECHANICAL Lean bridging (convention foldl + Nat.Partition<->YoungDiagram carrier). Audit 2026-08-29-normalizedsum-closes-via-telescope.md.
+
+
+UPDATE 2026-08-29 (PR #6011): the telescope closure is now assembled and VERIFIED
+sorry-free in Lean. normalizedSum_eq_one_of_convBridge (NormalizedSumClosure.lean)
+compiles lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound],
+no sorryAx. Carrier reindex (CarrierReindexBridge.lean) + per-cell brick
+(one_sub_qsq_pow_eq, #5975) also sorry-free.
+
+The general-n statement's three original blockers (#SYT, coinvariant grading,
+q-RSK) are BYPASSED: the corpus general-X Macdonald telescope (telescope_generalX,
+#5970) closes it at X=0 via the (Q=q^2, X=0) convention bridge. Math CLOSED (probe
+exact n<=5). The ONE remaining unproved Lean input is that per-lambda convention
+bridge hconv itself (q^(-kappa)/hookProd = schurElement(q^2,0)*(1-q^2)^n), carried
+as an explicit hypothesis (NOT a sorry). It reduces to the n-statistic identity
+kappa = sum h - n - 2 n(lambda) + foldl chaining of the per-cell brick -- mechanical,
+no open combinatorics. Follow-up bean for hconv if pursued.
