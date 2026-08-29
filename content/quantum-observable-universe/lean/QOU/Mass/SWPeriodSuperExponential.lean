@@ -213,4 +213,62 @@ theorem barSymmetric_ge_at_one {m : ℕ} (c : Fin m → ℝ) (c₀ : ℝ) {q : �
   rw [this]
   exact add_le_add_left (Finset.sum_le_sum fun i _ => hterm i) c₀
 
+/-- **The `q`-transfer, conditional on the presentation.** Suppose the na-Stokes period
+`S(n)(q) = Σ_{λ⊢n} dim_q λ` is presented as a bar-symmetric Laurent polynomial with
+non-negative coefficients, `S = c₀ + Σ_k c_k (q^k + q^{−k})`, whose value at `q = 1`
+is the involution number `I n` (that value is `c₀ + 2 Σ_k c_k`). Then for **every**
+`q > 0`, `I n ≤ S`.
+
+Combined with `factorial_le_involution_two_mul` this transports the whole
+super-exponential lower bound off `q = 1` and onto the physical pin: the period at any
+`q > 0` is at least the classical one, which is at least `(n/2)!`.
+
+The presentation hypothesis is **verified exactly at `n = 2..9`** by
+`computations/sw_period_bar_positivity_probe.py` (balanced `[k]_q`, q-hook dimension,
+sympy exact — `S(n)` is a Laurent polynomial, bar-symmetric, with non-negative
+coefficients, and `S(n)(1) = I(n)` at every `n`). It is **not proved for general `n`**;
+the general statement is the q-hook-length formula
+`[n]_q!/∏[h]_q = Σ_{T ∈ SYT(λ)} q^{maj T}`, which needs the same missing
+`StandardYoungTableau` layer as beans `qou-m3xr` / `qou-jlam`.
+
+Note the transfer carries **no regime condition on `q`**: non-negativity of the
+coefficients is what does the work. In particular it does not require `q < φ`, and the
+probe confirms the bound at `q = φ`, `q = 2` and `q = 5`. (`q − q⁻¹ = 1` exactly at
+`q = φ` — a real feature of the balanced `q`-integer, but not a gate on this claim.) -/
+theorem involution_le_of_barSymmetric_presentation
+    {n m : ℕ} {c : Fin m → ℝ} {c₀ S q : ℝ}
+    (hq : 0 < q) (hc : ∀ i, 0 ≤ c i)
+    (hpres : S = c₀ + ∑ i, c i * (q ^ (i : ℕ) + (q ^ (i : ℕ))⁻¹))
+    (hat_one : c₀ + 2 * ∑ i, c i = (involutionNumber n : ℝ)) :
+    (involutionNumber n : ℝ) ≤ S := by
+  rw [hpres, ← hat_one]
+  exact barSymmetric_ge_at_one c c₀ hq hc
+
+/-- **The physical period dominates the classical one.** Same hypotheses, divided by `n`:
+`a_D^(n)(q) = S/n ≥ I(n)/n = classicalPeriod n` for every `q > 0`. -/
+theorem classicalPeriod_le_of_barSymmetric_presentation
+    {n m : ℕ} {c : Fin m → ℝ} {c₀ S q : ℝ} (hn : 0 < n)
+    (hq : 0 < q) (hc : ∀ i, 0 ≤ c i)
+    (hpres : S = c₀ + ∑ i, c i * (q ^ (i : ℕ) + (q ^ (i : ℕ))⁻¹))
+    (hat_one : c₀ + 2 * ∑ i, c i = (involutionNumber n : ℝ)) :
+    classicalPeriod n ≤ S / (n : ℝ) := by
+  have hnR : (0:ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hle := involution_le_of_barSymmetric_presentation (n := n) hq hc hpres hat_one
+  unfold classicalPeriod
+  gcongr
+
+/-- **The transferred super-exponential bound.** For every `q > 0` satisfying the
+presentation hypothesis, the period `S` is bounded below by `(k)!` whenever `2k ≤ n` —
+factorial growth, off `q = 1`. -/
+theorem factorial_le_of_barSymmetric_presentation
+    {n m k : ℕ} {c : Fin m → ℝ} {c₀ S q : ℝ}
+    (hq : 0 < q) (hc : ∀ i, 0 ≤ c i)
+    (hpres : S = c₀ + ∑ i, c i * (q ^ (i : ℕ) + (q ^ (i : ℕ))⁻¹))
+    (hat_one : c₀ + 2 * ∑ i, c i = (involutionNumber n : ℝ))
+    (hk : 2 * k ≤ n) :
+    (k.factorial : ℝ) ≤ S := by
+  have h1 : (k.factorial : ℝ) ≤ (involutionNumber n : ℝ) := by
+    exact_mod_cast factorial_le_involution k n hk
+  exact h1.trans (involution_le_of_barSymmetric_presentation hq hc hpres hat_one)
+
 end QOU.Mass.SWPeriodSuperExponential
