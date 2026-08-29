@@ -45,14 +45,42 @@ NO FLOAT64.  All arithmetic is `mpmath.mpf` at 60 dps, per AGENTS.md
 what is true, which for a detector means it cannot distinguish `z_C` from a
 near-miss and would report agreement as a fact about the arithmetic.
 
+COMPARISON SITES, AND WHY THE COUNT ALONE MISLEADS (bean `qou-ztee`).  Because
+this audit reads neither names nor comments, it cannot tell a producer computing
+at the wrong convention (a defect) from a probe binding `z_C` **beside** `z_D` in
+order to compare them (the subject).  Both are confirmed convention-C bindings
+and both were counted identically.  As the C surface drains, the census therefore
+converges to a floor consisting entirely of the second kind, at which point the
+report reads "N confirmed, exit 1" with every entry deliberate — and the obvious
+next move, "drain the last N", deletes measurements.  Two things address that,
+and the difference between them is the point:
+
+  * **co-binding is a HINT.**  A confirmed-C site with a convention-D binding in
+    the same enclosing scope is reported `[co-bound with z_D]`.  It is a
+    value-level signal — no name, no comment — and it is the shape a comparison
+    has.  It carries **no exemption power**, deliberately: an author could game
+    it by adding a throwaway `z_D` beside the site.
+  * **the ledger DECIDES.**  `docs/audits/convention-c-comparison-ledger.json`
+    holds adjudicated sites, keyed on path + target + a hash of the source line.
+    An entry there, and only an entry there, stops a site blocking.  It cannot
+    be self-granted: it lives outside the scanned tree, must be committed
+    separately, and expires the moment the site's source line changes.
+
+Exit is 1 while any confirmed-C site is unadjudicated, so the gate can actually
+reach green once the surface is drained-or-adjudicated, rather than staying red
+forever and training its readers to ignore it.
+
   python3 scripts/convention-c-value-audit.py            # C sites only
   python3 scripts/convention-c-value-audit.py --all      # C and D
   python3 scripts/convention-c-value-audit.py --selftest
+  python3 scripts/convention-c-value-audit.py --propose-ledger   # stubs to adjudicate
 """
 from __future__ import annotations
 
 import argparse
 import ast
+import hashlib
+import json
 import pathlib
 import sys
 
@@ -103,6 +131,69 @@ def _var_kind(var: str) -> str:
     if var in _Q_VARS:
         return "q"
     return "unknown"
+
+
+#: Adjudicated comparison sites — the ONLY thing that can stop a confirmed C
+#: binding from blocking.  See `_load_ledger` for why it is a committed file
+#: rather than a source-level annotation.
+_LEDGER = pathlib.Path("docs/audits/convention-c-comparison-ledger.json")
+
+
+def _site_hash(src: str) -> str:
+    """12 hex of sha256 over the site's source line, whitespace-normalised.
+
+    Keyed on the SOURCE rather than the line number so an adjudication survives
+    the line moving, and expires the moment the line's content changes.
+    """
+    return hashlib.sha256(" ".join(src.split()).encode()).hexdigest()[:12]
+
+
+def _scope_of(tree: ast.AST) -> dict:
+    """Map each line to its innermost enclosing `def`/`class`, else `<module>`.
+
+    Used for the co-binding signal only.  File-level would over-credit: a large
+    producer could bind C in one function and D in an unrelated other, and read
+    as a comparison when it is not.
+    """
+    spans = []
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            end = getattr(node, "end_lineno", None) or node.lineno
+            spans.append((node.lineno, end, node.name))
+    spans.sort(key=lambda s: s[1] - s[0])          # innermost (narrowest) first
+
+    def lookup(line: int) -> str:
+        for start, end, name in spans:
+            if start <= line <= end:
+                return name
+        return "<module>"
+    return lookup
+
+
+def _load_ledger(path: pathlib.Path) -> dict:
+    """Adjudicated comparison sites, keyed `(path, target, source-hash)`.
+
+    WHY A COMMITTED FILE RATHER THAN A SOURCE ANNOTATION.  A `# comparison only`
+    comment or a `z_C`-style name would be an exemption an author grants
+    themselves, in the file being audited — which is the evasion surface this
+    detector exists to close, reintroduced one level up.  A ledger entry cannot
+    be granted that way: it lives outside the scanned tree, it has to be
+    committed as a separate deliberate act, and because the key includes a hash
+    of the site's own source line, editing that line expires the adjudication
+    automatically.  Same shape as `docs/audits/lean-vacuity-review-ledger.json`,
+    which carries agent verdicts a machine cannot reach for the same reason.
+    """
+    if not path.exists():
+        return {}
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        print(f"  !! ledger unreadable ({exc}); treating every site as unadjudicated")
+        return {}
+    out = {}
+    for e in doc.get("entries", []):
+        out[(e.get("path"), e.get("target"), e.get("source_hash"))] = e
+    return out
 
 
 class _NotArithmetic(Exception):
@@ -220,7 +311,7 @@ def _classify(node: ast.AST) -> str | None:
 
 
 def scan(root: pathlib.Path):
-    """Yield (path, lineno, target, label, source, variable) per classified site."""
+    """Yield (path, lineno, target, label, source, variable, scope) per site."""
     for path in sorted(root.rglob("*.py")):
         if any(part in _SKIP_DIRS for part in path.parts):
             continue
@@ -230,6 +321,7 @@ def scan(root: pathlib.Path):
         except (SyntaxError, OSError, UnicodeDecodeError):
             continue
         lines = text.splitlines()
+        scope_at = _scope_of(tree)
         for node in ast.walk(tree):
             if isinstance(node, ast.Assign):
                 value, targets = node.value, node.targets
@@ -247,7 +339,8 @@ def scan(root: pathlib.Path):
             names = [t.id for t in targets if isinstance(t, ast.Name)] or ["<return>"]
             src = lines[node.lineno - 1].strip() if node.lineno <= len(lines) else ""
             (var,) = _free_names(value)
-            yield path, node.lineno, names[0], label, src, var
+            yield (path, node.lineno, names[0], label, src, var,
+                   scope_at(node.lineno))
 
 
 _SELFTEST = '''
@@ -264,6 +357,15 @@ not_markov   = q / (q + 1)
 two_vars     = a / (b + 1)
 def f(q):
     return sqrt(q) * (q + 1) ** -1
+
+def compares(q):
+    z_c_here = sqrt(q) / (q + 1)
+    z_d_here = q ** 3 / (q ** 2 + 1)
+    return z_c_here, z_d_here
+
+def c_only(q):
+    z_c_alone = sqrt(q) / (q + 1)
+    return z_c_alone
 '''
 
 
@@ -280,13 +382,17 @@ def _selftest() -> int:
     want = {
         "z_plain": "C", "z_recip": "C", "z_halfpow": "C", "z_sqrtvar": "C-sqrtvar",
         "<return>": "C", "z_d": "D", "z_d_sqrtvar": "D-sqrtvar",
+        "z_c_here": "C", "z_d_here": "D", "z_c_alone": "C",
     }
     tmp = pathlib.Path("/tmp/_conv_selftest")
     tmp.mkdir(exist_ok=True)
     (tmp / "case.py").write_text(_SELFTEST)
-    got = {t: lab for _, _, t, lab, _, _ in scan(tmp)}
+    rows = list(scan(tmp))
     (tmp / "case.py").unlink()
     tmp.rmdir()
+    got = {r[2]: r[3] for r in rows}
+    scopes = {r[2]: r[6] for r in rows}
+    srcs = {r[2]: r[4] for r in rows}
     ok = True
     for target, label in want.items():
         if got.get(target) != label:
@@ -296,6 +402,36 @@ def _selftest() -> int:
         if spurious in got:
             print(f"  FAIL  {spurious} matched {got[spurious]} -- over-matching")
             ok = False
+
+    # Scope, and the co-binding signal built on it.  `compares` binds C and D
+    # together and must read as co-bound; `c_only` binds C in its own scope and
+    # must NOT, even though the same FILE contains D bindings elsewhere.  A
+    # file-level signal would credit `c_only` wrongly, which is the whole reason
+    # `_scope_of` exists.
+    d_scopes = {(r[0], r[6]) for r in rows if r[3].startswith("D")}
+    for target, want_scope, want_cobound in (("z_c_here", "compares", True),
+                                             ("z_c_alone", "c_only", False),
+                                             ("z_plain", "<module>", True)):
+        if scopes.get(target) != want_scope:
+            print(f"  FAIL  {target}: scope want {want_scope}, got {scopes.get(target)}")
+            ok = False
+        row = next((r for r in rows if r[2] == target), None)
+        cob = row is not None and (row[0], row[6]) in d_scopes
+        if cob != want_cobound:
+            print(f"  FAIL  {target}: co-bound want {want_cobound}, got {cob}")
+            ok = False
+
+    # The ledger key must expire when the site's source changes.  This is the
+    # property that stops an adjudication from being something an author grants
+    # themselves by editing the file: same text -> same key, any edit -> miss.
+    src = srcs.get("z_c_here", "")
+    if _site_hash(src) != _site_hash("   " + " ".join(src.split()) + "  "):
+        print("  FAIL  _site_hash is not whitespace-stable")
+        ok = False
+    if _site_hash(src) == _site_hash(src.replace("sqrt(q)", "sqrt(q) * 1")):
+        print("  FAIL  _site_hash did not change when the source changed")
+        ok = False
+
     print("  selftest PASS" if ok else "  selftest FAIL")
     return 0 if ok else 1
 
@@ -306,6 +442,11 @@ def main() -> int:
     ap.add_argument("--all", action="store_true", help="report convention-D sites too")
     ap.add_argument("--root", default="computations", help="tree to scan")
     ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--ledger", default=str(_LEDGER),
+                    help="adjudicated-comparison ledger (JSON)")
+    ap.add_argument("--propose-ledger", action="store_true",
+                    help="print ledger stubs for the co-bound sites, for an "
+                         "adjudicator to edit and commit; does not write")
     args = ap.parse_args()
     if args.selftest:
         return _selftest()
@@ -330,26 +471,83 @@ def main() -> int:
         else:
             unresolved.append(r)
 
+    # Co-binding: does a convention-D binding sit in the SAME enclosing scope?
+    # That is a value-level signal — it reads no name and no comment — and it is
+    # the shape a comparison has: both parameters bound together so they can be
+    # set against each other.  It is a HINT ONLY and deliberately carries no
+    # exemption power, because it CAN be gamed: an author wanting to silence a
+    # site could add a throwaway `z_D = q**3/(q**2+1)` beside it.  Only the
+    # ledger, which lives outside the scanned tree, can stop a site blocking.
+    d_scopes = {(r[0], r[6]) for r in d_rows}
+    ledger = _load_ledger(pathlib.Path(args.ledger))
+    seen_keys = set()
+
+    adjudicated, blocking = [], []
+    for r in confirmed:
+        key = (str(r[0]), r[2], _site_hash(r[4]))
+        seen_keys.add(key)
+        (adjudicated if key in ledger else blocking).append(r)
+    stale = [k for k in ledger if k not in seen_keys]
+
+    def cobound(r) -> bool:
+        return (r[0], r[6]) in d_scopes
+
     print("VALUE-BASED convention audit — the expression is EVALUATED, not matched.")
     print(f"  root: {args.root}")
     print(f"  convention-C bindings (confirmed): {len(confirmed)}")
+    print(f"      of which co-bound with z_D in the same scope: "
+          f"{sum(1 for r in confirmed if cobound(r))}  (hint only — not an exemption)")
+    print(f"      of which adjudicated in the ledger: {len(adjudicated)}")
+    print(f"      BLOCKING (confirmed, unadjudicated): {len(blocking)}")
     print(f"  sqrtvar shape on a q-variable = 1/[2]_q, NOT C: {len(notc)}")
     print(f"  sqrtvar shape, variable unresolved (needs an eye): {len(unresolved)}")
     print(f"  convention-D bindings: {len(d_rows)}")
-    for title, group in (("CONFIRMED convention C", confirmed),
-                         ("UNRESOLVED — variable name not recognised", unresolved),
-                         ("NOT C — 1/[2]_q on a q-variable", notc)):
+    if stale:
+        print(f"\n  !! {len(stale)} ledger entr(y/ies) match nothing — the site "
+              f"moved, changed or went away.  Non-blocking; prune them.")
+        for p, t, h in stale:
+            print(f"     stale: {p}  {t}  {h}")
+
+    # The co-bound marker is printed ONLY for the confirmed-C groups.  A NOT-C
+    # or UNRESOLVED row sitting beside a D binding is not evidence of anything —
+    # `1/[2]_q` on a q-variable is convention-neutral — and marking it made the
+    # visible markers (45) disagree with the summary count (44, over confirmed
+    # rows), which is the kind of small discrepancy that costs a report its
+    # credibility faster than the missing signal would have.
+    for title, group, mark_cobound in (
+            ("BLOCKING — confirmed convention C, unadjudicated", blocking, True),
+            ("ADJUDICATED as comparisons (ledger)", adjudicated, True),
+            ("UNRESOLVED — variable name not recognised", unresolved, False),
+            ("NOT C — 1/[2]_q on a q-variable", notc, False)):
         if not group:
             continue
         print(f"\n  === {title} ({len(group)}) ===")
-        for path, line, target, label, src, var in group:
-            print(f"  [{label:10s} var={var:8s}] {path}:{line}")
+        for row in group:
+            path, line, target, label, src, var, scope = row
+            mark = "  [co-bound with z_D]" if (mark_cobound and cobound(row)) else ""
+            print(f"  [{label:10s} var={var:8s}] {path}:{line}  scope={scope}{mark}")
             print(f"      {target} = {src[:100]}")
     if args.all and d_rows:
         print(f"\n  === convention D ({len(d_rows)}) ===")
-        for path, line, target, label, src, var in d_rows:
+        for path, line, target, label, src, var, scope in d_rows:
             print(f"  [{label:10s} var={var:8s}] {path}:{line}   {target}")
-    return 1 if confirmed else 0
+
+    if args.propose_ledger:
+        stubs = [{
+            "path": str(r[0]), "target": r[2], "source_hash": _site_hash(r[4]),
+            "line_when_adjudicated": r[1], "scope": r[6],
+            "source": r[4][:120],
+            "verdict": "comparison",
+            "rationale": "FILL IN: why this site binds z_C deliberately.",
+            "adjudicated_by": "FILL IN", "date": "FILL IN (YYYY-MM-DD)",
+        } for r in blocking if cobound(r)]
+        print(f"\n  === ledger stubs for the {len(stubs)} co-bound blocking site(s) ===")
+        print("  Edit the rationale/attribution and commit into the ledger's "
+              "`entries`.  Co-binding is why these are PROPOSED; it is not why "
+              "they would be exempt — the commit is.")
+        print(json.dumps(stubs, indent=2))
+
+    return 1 if blocking else 0
 
 
 if __name__ == "__main__":
