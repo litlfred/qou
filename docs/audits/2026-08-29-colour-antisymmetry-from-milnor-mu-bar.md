@@ -369,73 +369,95 @@ These act on different sets — three roots versus four resolvents — so "recov
 **Adjudicated below in §8**, after reading that remark's own text.
 
 
-## 8. §7.5 resolved — two findings, one of them internal to a single remark
+## 8. §7.5 resolved — one finding stands, one is RETRACTED, and the retraction is the good news
 
-§7.5 flagged the `H₁,H₂` tension and deliberately withheld a verdict pending
-[`rem:holonomy-trefoil`](../../content/quantum-observable-universe/braids-and-knots/holonomy-trefoil.md)'s
-own definition. Read, it yields two separate findings. Neither is introduced by
-this branch; both are on `main`.
+> **⚠ This section was rewritten at 15:50Z, hours after it was first filed.**
+> `main` landed [`7adab17a3d`](https://github.com/litlfred/qou/commit/7adab17a3d)
+> *"revert to S3 3-cycle — braid-twist-flip V4 was the wrong def"* at 15:44Z,
+> which removed the text §8.2 was built on. Filed at 15:23Z, §8.2 was correct
+> about the block as it then stood and is **void** about the block as it now
+> stands. It is retracted below rather than quietly edited, because a
+> retraction that leaves no trace is how a stale finding gets re-derived.
+>
+> The ordering is recorded neutrally: this note preceded the revert by 21
+> minutes. **No causal claim is made** — `qou-3nva`/`qou-htv4` were working the
+> same block independently, and a sibling reaching the same conclusion from
+> the other direction is the expected outcome of the parallel-work policy, not
+> evidence that one caused the other.
 
-### 8.1 The remark contradicts itself, and needs nothing external to see it
+### 8.1 `rem:holonomy-trefoil` contradicts itself — STANDS, unchanged in force
 
-It asserts, four sentences apart:
+The revert did not touch the two sentences that matter. The block still says:
 
 > The mapping `x ↦ H₁`, `y ↦ H₂` forms an isomorphism
 > `π₁(S³ ∖ K_{3,2}) ≅ ⟨H₁, H₂⟩`. Thus, the monodromy group of the branched
 > cover is exactly the trefoil-knot group.
 
-and
+and now says:
 
-> The composite holonomy `H₁H₂ : w ↦ (w₃,w₄,w₁,w₂)` is [...] a double
-> transposition, hence an involution — and satisfies `(H₁H₂)² = id` on `SO(3)`.
+> The composite holonomy `H₁H₂` acts as a **3-cycle** in the symmetric-group
+> holonomy `S₃` [...] and satisfies `(H₁H₂)³ = id` on `SO(3)`.
 
-**These are incompatible, by a one-line argument.** Exponent sum is a
-homomorphism `B₃ → ℤ` (it is well defined because the braid relation
-`σ₁σ₂σ₁ = σ₂σ₁σ₂` has exponent sum 3 on both sides). `σ₁σ₂` has exponent sum
-`2 ≠ 0`, so **`σ₁σ₂` has infinite order in `B₃`**. An isomorphism carries it to
-an element of infinite order, which cannot be an involution.
+**The argument is unaffected, because it was never about which finite order.**
+Exponent sum is a homomorphism `B₃ → ℤ` (well defined: the braid relation has
+exponent sum 3 on both sides), and `σ₁σ₂` has exponent sum `2 ≠ 0`, so it has
+**infinite order** in `B₃`. An isomorphism carries it to an element of infinite
+order. `(H₁H₂)³ = id` makes it order 3. Before the revert the claim was order 2;
+the contradiction is identical either way, and would survive any finite order.
 
-The `SO(3)` qualifier does not rescue it. If the relation holds only after the
-2-to-1 projection `SU(2) → SO(3)`, then `(H₁H₂)² = ±1` in `SU(2)` and
-`(H₁H₂)⁴ = 1`; the element is still of **finite** order, and `⟨H₁,H₂⟩` still
-cannot be isomorphic to `B₃`.
+The `SO(3)` qualifier still does not rescue it: through the 2-to-1 `SU(2) →
+SO(3)` projection the element is of finite order in `SU(2)` too.
 
-So at most one of the two claims stands. Either the map is a **surjection**
-rather than an isomorphism — the honest reading, since a monodromy
-representation of a knot group is a quotient — or the involution claim is
-wrong. The sentence *"the monodromy group of the branched cover is exactly the
-trefoil-knot group"* is the one that cannot survive: the monodromy group of a
-finite branched cover is finite, and `B₃` is not.
+**What cannot stand is "exactly the trefoil-knot group"**: the monodromy group
+of a finite branched cover is finite, and `B₃` is not. The honest repair is
+**surjection**, not isomorphism — which is what a monodromy representation of a
+knot group always is. Scope-**(b)**: the invariant is the exponent-sum
+homomorphism, which forbids any isomorphism onto a group where `σ₁σ₂` is
+torsion.
 
-### 8.2 The bridge in `prop:color-elliptic` is unsupported as written
+### 8.2 The `prop:color-elliptic` bridge — RETRACTED
 
-`prop:color-elliptic` closes: *"The monodromy of `𝓔_z` around the singular
-fibres [...] recovers the holonomy generators `H₁, H₂`."* Three arithmetic
-obstacles, all from the blocks' own statements:
+As filed, §8.2 argued that *"recovers the holonomy generators `H₁,H₂`"* failed
+three ways. **All three rested on the reverted `V₄` text, and all three are now
+void:**
 
-| | |
+| filed row | status after `7adab17a3d` |
 |---|---|
-| **cardinality** | `H₁,H₂` transport **four** spectral modes `w = (w₁,w₂,w₃,w₄)`. `𝓔_z` has **three** sheets. |
-| **group order** | the computed monodromy is `S₃`, of order 6. `\|V₄\| = 4` and `4 ∤ 6`, so `S₃` contains no `V₄` — the composite cannot land in the computed group at all. |
-| **stabiliser** | by A6 the colour triple is `{w₂,w₃,w₄}` (`r_z = w₂−z`, etc.). But `H₁H₂ : w ↦ (w₃,w₄,w₁,w₂)` sends `w₃ ↦ w₁` and `w₁ ↦ w₃`, so it **does not preserve the colour triple** and does not restrict to a permutation of the sheets. |
+| cardinality: the `H`s move **four** spectral modes, `𝓔_z` has **three** sheets | **void** — the explicit four-mode formula `w ↦ (w₃,w₄,w₁,w₂)` is gone; the block now states an action on `S₃` |
+| group order: `\|V₄\| = 4`, `4 ∤ 6`, so `S₃` contains no `V₄` | **void** — there is no `V₄` claim any more, and a 3-cycle *is* in `S₃` |
+| stabiliser: `(1 3)(2 4)` does not preserve `{w₂,w₃,w₄}` | **void** — that permutation is no longer asserted |
 
-"Recovers" therefore needs a stated map between a four-letter action and a
-three-letter one, and the block supplies none.
+§8.3's caution — that the two blocks' `w_k` differ in cardinality and no block
+identifies them — is also moot, since the block no longer indexes a four-element
+`w`.
 
-### 8.3 What is *not* established, kept separate
+### 8.3 What replaces it: the probe corroborates the corrected claim
 
-The `w_k` of `rem:holonomy-trefoil` are called "the spectral modes" and run
-`w₁…w₄`; the `w_k` of `def:color-tube-coordinates` are "the Lagrange resolvents
-of Bring's surface" and run `w₀…w₄`. Same symbol, overlapping indices,
-**different cardinality**, and no block states they are the same objects. §8.2's
-third row assumes they are — which is the reading most favourable to the
-corpus, and is why that row is listed third rather than leaned on. Rows one and
-two do not depend on the identification and stand regardless.
+Better than a retraction. **Fact A7**, computed from the same six loops as A1–A6:
 
-### 8.4 Scope
+- The six local monodromies are exactly **two distinct transpositions**,
+  `(0 1)` and `(0 2)`.
+- Composing two distinct ones gives `(2 0 1)` and `(1 2 0)` — **3-cycles, of
+  order exactly 3**, in either order.
 
-Per the (a)/(b) discipline: **§8.1 is a scope-(b) structural exclusion** — the
-invariant is the exponent-sum homomorphism `B₃ → ℤ`, which forbids any
-isomorphism onto a group in which `σ₁σ₂` is torsion. **§8.2 is scope-(a)**: the
-stated bridge does not go through as written, which is a fact about the
-argument, not a proof that no relation exists between the two monodromies.
+`rem:holonomy-trefoil` says `H₁, H₂` are the holonomies around **two distinct
+branch points**, and that `H₁H₂` acts as a 3-cycle in `S₃` with `(H₁H₂)³ = id`.
+Each loop in this probe *is* such a holonomy. **So the corrected block's claim
+is exactly what this computation produces** — two transpositions sharing a
+letter compose to a 3-cycle, and these do.
+
+That also removes the tension `prop:color-elliptic`'s closing sentence was
+flagged for: a 3-cycle sits inside the `S₃` computed here, so "recovers the
+holonomy generators" is at least **consistent** with the monodromy, where the
+`V₄` reading was not. It is not thereby *derived* — no map is exhibited, and
+consistency is weaker than recovery — but there is no longer an arithmetic
+obstruction to it. Scope-**(a)**, and the (a) is now positive rather than
+negative.
+
+### 8.4 The lesson worth keeping
+
+§8.1 was written via exponent sum rather than "order 2", and survived a change
+of the very quantity a more direct argument would have keyed on. §8.2 was
+written against three specific quoted numbers and died with them. **Both were
+about the same block, filed in the same hour.** When a finding can be stated
+against an invariant, state it against the invariant.
