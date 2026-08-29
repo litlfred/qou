@@ -68,12 +68,37 @@ identities: `nSign = molSignNum(q², qz/W)·W²` (the cleared Molien numerator) 
 `ySignNum · molOneDimDen(q²) = yOneDimDen · nSign` (the cleared `y_λ = M_ν·Z`), and
 likewise for `(3)` and `(2,1)`; capstone `jonesMarkov_weights_are_molien`.
 
+## General n (added 2026-08-29 — `qou-3quc`)
+
+The identification generalises. Define, for every `n`, the `S_n` reflection-rep
+Molien series `M_ν(u,t)` and
+
+  **`y_λ(q,z) = M_ν(u=q², t=q z/(q²−qz−1)) · (1 + q z − q²)^{n−1}`.**
+
+The normaliser is `Z_n = (1 + q z − q²)^{n−1}` — a power of **one** linear form
+(the Poincaré/Molien shape, not `[n]_q!`). For `n=3`, `Z_3 = (1+qz−q²)² =
+(q²−qz−1)²`, the even power in the theorem above; for `n≥4` the `1+qz−q²` sign is
+load-bearing.
+
+**Verified at `n=4`**
+([`molien_jones_markov_general_n_probe.py`](../../computations/qbeta/molien_jones_markov_general_n_probe.py),
+3/3), by checks independent of the `S₄` Molien side:
+
+- Markov normalisation `Σ_λ f^λ y_λ = 1` — **exact symbolic** in `z`.
+- at `z = z_D = q³/(q²+1)`: the `≥3`-row weights `y_(2,1,1)`, `y_(1⁴)` **vanish**
+  (`~10⁻⁴³`) — the convention-D two-row cap emerges automatically — and the
+  surviving `y_(4)`, `y_(3,1)`, `y_(2,2)` reproduce the corpus SU(2) quantum
+  dimensions `y_lambda_su_n(4, q₀, 2)` to full precision (diff `< 10⁻¹⁴`).
+
 ## Honest scope
 
-**`n = 3` only.** General `n` (`qou-3quc`) is the real prize and stays open — this
-is one (strong, overdetermined, exact) data point. The pattern to test at `n=4`:
-does the same monomial `u = q²` and a perfect-square normaliser `Z_n` reproduce
-the `y_λ` from the general `S_n` Molien series? Nothing is wired; `free_parameters = 0`.
+**Lean:** `n=3` is Lean-proved, sorry-free, general `z` (`MolienJonesMarkovN3.lean`).
+`n=4` is verified by exact symbolic normalisation + independent numeric per-weight
+at `z=z_D` — **not** yet a Lean `ring` identity, because that needs the independent
+general-`z` `H₄` weights `y_λ(q,z)` as explicit polynomials (the `z=z_D` corpus check
+pins one `z`, not the polynomial). The **∀n** Lean proof is a genuine formalisation
+project (abstract `S_n` Molien + `H_n` Markov-weight machinery), tracked under
+`qou-3quc`. Nothing is wired; `free_parameters = 0`.
 
 ## Bearing on the cds1 wall
 

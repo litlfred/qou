@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T01:40:51Z
+updated_at: 2026-08-29T02:22:57Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -92,3 +92,16 @@ S_4 Jones-Markov weights from the general S_n Molien series? Template + Lean
 (MolienJonesMarkovN3.lean) + probe (molien_jones_markov_n3_identification_probe.py)
 ready to generalise. Note: the refuted f^l q^-k/[n]! form had the WRONG normaliser;
 the right one is the Molien Z, so the general-n normaliser is a Poincare series.
+
+## 2026-08-29 — general-n formula CONFIRMED at n=4 (numeric+normalization); Lean n=3 only
+
+y_lambda(q,z) = M_nu(u=q^2, t=qz/(q^2-qz-1)) * (1+qz-q^2)^(n-1), M_nu the S_n
+reflection-rep Molien series. Normaliser is a power of ONE linear form (Poincare/
+Molien), not [n]_q!. n=3 Z=(1+qz-q^2)^2=(q^2-qz-1)^2 (even); n>=4 the sign matters.
+n=4 (molien_jones_markov_general_n_probe.py, 3/3): Sum f^lam y_lam=1 EXACT symbolic;
+at z=z_D the >=3-row weights vanish (two-row cap) and survivors match corpus
+y_lambda_su_n(4,q0,2) SU(2) q-dims to <1e-14.
+LEAN STATUS: n=3 sorry-free (general z, MolienJonesMarkovN3.lean). n=4 needs the
+INDEPENDENT general-z H_4 weights as polynomials for a ring proof (only have z=z_D
+corpus pin + exact normalization). forall-n Lean = abstract S_n Molien + H_n Markov
+machinery, a real formalization project = THIS BEAN. Nothing wired.
