@@ -195,6 +195,33 @@ about the author's intent, not a mechanical repair, and an encoding restricted t
 parameter-level facts about `ℝ` would be *provable*, which would misrepresent an
 open conjecture as closed. That is a worse outcome than the stub. Bean `qou-hprp`.
 
+**Why none of them had ever been flagged — bean `qou-vgat`.** Asking why no
+`holds : Prop` carrier appears in
+[`lean-vacuity-review-ledger.json`](lean-vacuity-review-ledger.json) turned out to
+be the more consequential question: **the audit could not see them.**
+`isConjectureCarrier` in
+[`lean-vacuity-axiom-audit.ts`](../../content/pipeline/lean-vacuity-axiom-audit.ts)
+admitted a declaration only if its docstring carried a `conj:` reference or the
+word "axiomatis"; a carrier whose docstring is a bare `**CONJECTURE.** …` fails
+both, and that gate runs *before every criterion in the family*. Widening it
+moved the conjecture graph from **243 to 309 carriers** — sixty-five had never
+been examined, among them every carrier named in this section.
+
+Separately, `proof-dependent-conjecture-not-conditional` — severity **critical** —
+returned **0 hits across 244 carriers and 3264 files**, through three compounding
+defects (wrong source file, a label map keyed on a spelling used in 15 files
+against 113, and a regex one character short of the corpus's own cross-reference
+form). Now 0 → 3. Both are fixed on this branch; the `field : Prop` shape still
+has **no criterion at all**, which is why widening the gate did not move
+`proof-claims-unencoded`, and that remains an owner call.
+
+Cautionary note attached to that work: my first report of the conditionality fix
+said 5 hits and attributed three of them to carriers that are in fact well-formed.
+A `.md` is the narrative of a whole *block*, and I charged one block-level
+sentence to each of the three classes sharing that file. Corrected to 3, scoped
+per file. The rule I had already written into the sibling detector's docstring —
+sample before quoting — is the one I skipped.
+
 ## What can be chipped away, in order
 
 1. **Give the spectral coordinate map a carrier.** Small, well-defined, and it
