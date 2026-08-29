@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:37:12Z
-updated_at: 2026-08-29T18:55:28Z
+updated_at: 2026-08-29T18:59:20Z
 ---
 
 ## Why this exists
@@ -125,3 +125,27 @@ is the Coxeter order accessor being "in flux in Mathlib's `CoxeterSystem` API",
 but `m_{st}` is just `orderOf (s * t : W)` — plain Mathlib group theory, no
 accessor — and `altProduct` already exists in `Defn.lean`. Worth checking that
 route before waiting.
+
+
+## Corollary worth keeping: the bridge rules out one explanation of the OTHER √q
+
+Raised by a sibling on #6033, which found `√q` in the Toffoli information-theory
+closed forms (`P₇₇`, `Φ`) and traced it to the excised convention-C Markov
+parameter `z_C = √q/(q+1)`. Their four reconstructions verify symbolically to
+exact zeros (checked here, sympy, not taken on trust).
+
+**This bridge does NOT give an independent derivation of that** — theirs is
+about the Markov parameter `z`, mine about generator normalisation, and
+`σ ↦ cσ` does not act on `z`. Recorded so the headline agreement ("the √q was
+the convention") is not mistaken for two witnesses to one result.
+
+What it DOES give is a negative: **`z_C`'s `√q` is not the Iwahori↔corpus
+normalisation root.** The bridge fixes corpus-`q = √Q`, so `√q = Q^{1/4}` — a
+*fourth* root of the Iwahori parameter, one level deeper than any generator
+rescaling reaches. That kills a plausible-sounding explanation before someone
+writes it down.
+
+Side observation, independent of their route: the two Markov parameters are the
+same rational shape `x^k/(x²+1)` — C is `u/(u²+1)` at `u = √q` (`u²+1 = q+1`,
+which is why the denominators look unlike), D is `q³/(q²+1)` at `x = q`. The
+`√q` is carried by the choice of variable, not by the shape.
