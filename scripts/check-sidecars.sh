@@ -285,6 +285,28 @@ for f in "${files[@]}"; do
       echo "    → check scriptHash drift (NOT scriptCommitSha — rebase-merge rewrites it; bean qou-wsha)"
       echo "      LP/SDP duals via lp_dual_witness_validator.py"
       ;;
+    # The c_k/d_k registry is a TWINNED pair — an authoritative `.md` and a
+    # machine-readable `.json` that its own meta says "MUST agree". Touching
+    # either one is what makes them disagree, so the twin check runs on a
+    # change to either.
+    #
+    # Wiring it here is the point, not a nicety. `ck_dk_registry_validate.py`
+    # existed for months and was named in exactly one place — a prose link in
+    # the very document it validates — so nothing ever ran it. The measured
+    # cost: the `dc_3/dq ≈ 4.6e6 → 3.84e6` correction landed in the `.md` on
+    # 2026-08-25 and the JSON still said 4.6e6 four days later, and the swing
+    # figure drifted the OTHER way in the same table cell. Compare AGENTS.md
+    # §"A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS".
+    docs/coordination/ck-dk-registry.json|docs/coordination/ck-dk-canonical-registry.md)
+      echo "▸ $f  [c_k/d_k registry — twinned .md + .json]"
+      if out=$(python3 "$ROOT/docs/coordination/ck_dk_registry_validate.py" --twin 2>&1); then
+        printf '%s\n' "$out" | sed 's/^/    /'
+      else
+        printf '%s\n' "$out" | sed 's/^/    /'
+        echo "    ⚠ twin divergence — fix the file that is stale, not the checker"
+        action=1
+      fi
+      ;;
     *) : ;;  # no known sidecar axis
   esac
 done

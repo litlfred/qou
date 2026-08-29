@@ -142,8 +142,10 @@
     "qbeta_note": "c_2 only (Q_N2-level); q_beta_predicted.py wires no c_3+; ~0.17% c_2-level truncation residual.",
     "mp_wired_rungs": [],
     "mp_note": "bare; ~2.89% categorical VolDensity gap.",
-    "dashboard_beats_100x": 2,
-    "dashboard_total": 7,
+    "dashboard_beats_100x": 1,
+    "dashboard_total": 5,
+    "dashboard_fields": "summary.beats_100x_scoreable / summary.scoreable_total",
+    "dashboard_note": "CORRECTED 2026-08-29 (qou-kt8o) from 2/7. The old pair read summary.beats_100x_count / summary.total, which counts the CALIBRATION INPUTS m_e and m_p alongside the predictions -- m_e's err_ppb is not measured but DEFINED zero, being the CAL-1 input that fixes the MeV unit. AGENTS.md SSPrecision goals: bare beats_100x_count 'must not be quoted as an accuracy result'. The .md twin carried the same 2/7, so the two AGREED and a file-vs-file diff passes them both; ck_dk_registry_validate.py --twin T5 checks each against the witness instead. The surviving 1 is m_K/m_pi, itself truncation-fitted and alpha_em-sorry-conditional, so the UNCONDITIONAL parameter-free count is 0/5.",
     "dashboard_source": "computations/per-observable-100x-status.witness.json"
   },
   "flip_flop_guard": [
