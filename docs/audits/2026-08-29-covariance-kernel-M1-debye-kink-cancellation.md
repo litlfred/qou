@@ -1,70 +1,63 @@
-# Covariance-kernel epic (`qou-x631`) — M₁>0 Debye constant-tracking: the kink term cancels (rate θ⁻¹), closure de-risked
+# Covariance-kernel epic (`qou-x631`) — M₁>0 Debye constant-tracking: sub-leading exponent is indeterminate (kink-cancellation claim RETRACTED)
 
 **Date:** 2026-08-29 · **Branch:** `claude/m1-debye-constant-tracking-2026-08-29` · **Tier:**
-Debye/asymptotic-structure measurement + a candidate rigorous mechanism · **Discipline:** no fit
-(asymptotic-coefficient read-off, not a physical fit); nothing wired; no `c_k`; L2 unchanged.
-**Epic:** `qou-x631`; gap `qou-k5r5`.
+asymptotic-structure measurement + **self-correction** · **Discipline:** no fit; nothing wired; no
+`c_k`; L2 unchanged; honest-negative. **Epic:** `qou-x631`; gap `qou-k5r5`; machinery `qou-h315`.
 
-## What the Debye attempt found
+## 🛑 RETRACTION (of this file's first draft)
 
-The rigorous finite-n bound needs `|V_A(θ)/θ² − v_A| ≤ C_A·θ^{−p}` for `V_A = Var(Σ|c|)`. The
-conservative worst case is `p = 1/2` (the `|u|` kink), which carries a **hard** explicit constant. This
-attempt measured the actual asymptotic expansion and found the kink case does **not** occur.
+The first version of this audit claimed: *"the `|u|`-kink term vanishes; the rigorous rate is `θ^{−1}`
+(smooth Euler–Maclaurin), by transpose symmetry."* **That is retracted — over-stated on two counts:**
 
-`wlambda_covariance_epic_M1_debye_expansion_fit.py` (exit 0; exact Bessel sums; dps 60; NO float64)
-computes `V_A/θ²` at `θ = 256…8192` and fits the expansion `v_A + c_{1/2}θ^{−1/2} + c_1θ^{−1} + …`
-across multiple bases:
+1. **The transpose-symmetry argument does not prove `c_{1/2}=0`.** The reflection `k ↦ −1−k` sends the
+   weight `g_A ↦ −g_A` and the kernel `J² ↦ J²`, so `V_A = ½Σ(g_A(x)−g_A(y))²J²` is **automatically**
+   invariant — the symmetry is a relabelling of the summation, satisfied by construction, and it does
+   **not** isolate or annihilate the `θ^{−1/2}` coefficient. "Even statistic under a symmetric law ⟹
+   the half-power cancels" is a heuristic about *distributional* (Edgeworth/skewness) expansions, not
+   about the *variance*'s asymptotic expansion; it was applied without justification.
 
-| θ | `V_A/θ²` |
-|---|---|
-| 256 | 0.81031103 |
-| 1024 | 0.81050248 |
-| 4096 | 0.81055297 |
-| 8192 | 0.81056117 |
+2. **The numerics do not resolve the sub-leading exponent.** Re-tested on the same 6 points
+   (`θ = 256…8192`, `V_A/θ²` good to ~1e-6): the bases `θ^{−1/2}`, `θ^{−2/3}`, `θ^{−5/6}`, `θ^{−1}` all
+   fit with **comparable residual** (3.4, 3.2, 3.0, 2.3 ×10⁻⁶); the best *single* power is `p ≈ 0.94`.
+   The `c_{1/2}` estimate is small (`|·|<1e-3`) and sign-unstable — consistent with 0, but **also**
+   consistent with a `θ^{−5/6}` Airy-**edge** term I had ignored. Six points at this precision cannot
+   tell these apart, so `c_{1/2}=0` is **not** established numerically either.
 
-- **Monotone increasing toward `v_A = 0.810568`** — the correction is *negative*, no oscillation.
-- **The `θ^{−1/2}` kink coefficient is at the fit-noise floor**: across bases `c_{1/2} ∈ {−0.00048,
-  +0.0010}`, sign-unstable, `|·| < 0.001` — **consistent with zero**, while the `θ^{−1}` term is
-  stable (`c_1 ≈ −0.066`).
+## What is actually true (robust)
 
-**Conclusion: the `|u|`-kink term vanishes; the rigorous rate is `θ^{−1}` (the *smooth*
-Euler–Maclaurin case), not `θ^{−1/2}`.** The feared hard kink constant does not exist.
+- `V_A/θ² → v_A = 0.810568`, monotone from below, no oscillation.
+- The correction is **small** — coefficient magnitude `~0.05`, effective single-power exponent
+  `≈ 0.9` over `θ ∈ [256, 8192]`.
+- That is all that the **(CS) closure** needs: any rate `≥ θ^{−1/2}` with a small constant traps the
+  margin (30–300× headroom, PR #5937). **The closure feasibility is unaffected by this retraction** —
+  what changes is only the *claimed mechanism/exponent*, not the prospect.
 
-## Why it cancels — a candidate rigorous mechanism
+## Consequence for the machinery plan
 
-Plancherel measure is **transpose-invariant** (`λ ↦ λ'` preserves `(dim λ)²/n!`), and the transpose
-sends content `u ↦ −u`. Hence the Plancherel content law is **symmetric about 0**, and `Σ|c| =
-Σ_u |u|·h(u)` is an **even** functional of it. The `θ^{−1/2}` correction to a bulk linear statistic is
-the *odd* (edge-asymmetry) part of the `1/√θ` expansion; for an even statistic under a symmetric law
-it must cancel, leaving an expansion in **integer powers of `1/θ`**. This is a structural argument
-(not yet a fully written proof), and it matches the measurement exactly: `c_{1/2} = 0`, leading term
-`c_1/θ`.
+- **`qou-8quz` ("prove `c_{1/2}=0` by transpose symmetry") is refuted as posed.** The symmetry does
+  not do it. Whether the half-power vanishes (or is a `θ^{−5/6}` edge term) is entangled with the
+  Airy-edge contribution and can only be settled by the **actual Euler–Maclaurin + edge analysis**
+  (`qou-tvok`), not a symmetry one-liner. `qou-8quz` should be closed as *refuted*, folding its
+  question into `qou-tvok`.
+- The Route-1 decision (Kerov limit-shape + `CompositeEulerMaclaurin`) stands, but `qou-tvok` must now
+  **include the edge (`θ^{−5/6}`) contribution explicitly** rather than assume a clean `θ^{−1}` bulk.
 
-## Status of the closure — de-risked, not yet closed
+## Why record the negative
 
-- **Before:** "rigorous modulo one *hard* constant" (the `θ^{−1/2}` Olver/Debye kink bound).
-- **After this attempt:** "rigorous modulo one *easy* constant" — the leading correction is
-  `≈ −0.066/θ`, monotone from below, in the **smooth** `θ^{−1}` regime, with a clean symmetry reason
-  the half-power is absent. The constant to pin is a standard smooth-weight Euler–Maclaurin remainder,
-  and it is tiny.
-- **Still not produced:** a **verified explicit `C`**. Two steps remain, both now easier: (i) turn the
-  transpose-symmetry heuristic into a written proof that `c_{1/2} = 0`; (ii) the explicit `θ^{−1}`
-  Euler–Maclaurin constant for `V_A` (and the analogous `V_W`, `P`, `V_D`), then ratio propagation.
-  These are smooth-case estimates; I did **not** complete them to a verified number this session and
-  will not assert a "rigorous `C`" from the measurement alone.
-
-Net: the Debye constant-tracking removed the one genuinely hard obstruction (the kink), leaving a
-routine smooth estimate with a tiny constant and 30–300× headroom (PR #5937). `qou-k5r5` stays
-**OPEN**, but closure is now clearly bookkeeping-grade.
+The retracted claim was a plausible-sounding symmetry shortcut that the measurement seemed to confirm.
+It failed both tests — the symmetry is automatic, and the "confirmation" was an artifact of an
+ill-conditioned power-basis fit that cannot discriminate the candidate exponents. Recording it
+prevents a future agent (or me) from re-deriving the same wrong shortcut, and keeps the honest state:
+the correction is small and closure-compatible, but its exponent is open.
 
 ## Compute
 
 - [`wlambda_covariance_epic_M1_debye_expansion_fit.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_debye_expansion_fit.py)
-  (exit 0; dps 60; exact Bessel sums; NO float64).
+  (exit 0; dps 60; exact Bessel sums; NO float64) — now reports the discriminancy test and the
+  corrected verdict.
 
 ## Cross-references
 
-- Debye investigation + verdict: [`2026-08-29-covariance-kernel-M1-debye-CA-investigation-verdict.md`](2026-08-29-covariance-kernel-M1-debye-CA-investigation-verdict.md)
-- Constant-C landscape: [`2026-08-29-covariance-kernel-M1-constant-C-and-N0.md`](2026-08-29-covariance-kernel-M1-constant-C-and-N0.md)
-- Rigorous finite-n bound: [`2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md`](2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md)
-- Gap bean `qou-k5r5`.
+- Debye investigation: [`2026-08-29-covariance-kernel-M1-debye-CA-investigation-verdict.md`](2026-08-29-covariance-kernel-M1-debye-CA-investigation-verdict.md)
+- Machinery inventory + route: [`2026-08-29-covariance-kernel-M1-machinery-inventory-and-route.md`](2026-08-29-covariance-kernel-M1-machinery-inventory-and-route.md)
+- Gap bean `qou-k5r5`; machinery epic `qou-h315`; task `qou-tvok` (now inherits the edge term).

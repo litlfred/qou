@@ -96,18 +96,38 @@ def main():
             chalf_vals.append(chalf)
         print(f"#   basis {label:>14}: v_A={mp.nstr(vA,11)}  coeffs={rest}  resid={mp.nstr(rn,3)}")
     print()
-    # verdict on the kink term
     spread = max(abs(x) for x in chalf_vals) if chalf_vals else mp.inf
     print(f"# c_1/2 across bases: {[mp.nstr(x,4) for x in chalf_vals]}  (|max|={mp.nstr(spread,3)})")
-    if spread < mp.mpf('5e-3'):
-        print("# VERDICT: c_{1/2} is at the fit-noise floor (sign-unstable, |.|<5e-3) -> the |u|-KINK")
-        print("#   term VANISHES. Rigorous rate is theta^{-1} (the SMOOTH Euler-Maclaurin case).")
-        print("#   Structural reason: Plancherel is transpose-invariant => the content law is symmetric")
-        print("#   u<->-u, and Sum|c| is EVEN, so its bulk expansion runs in INTEGER powers of 1/theta")
-        print("#   (no half-power). Leading correction ~ -0.066/theta, monotone from below, small.")
-    else:
-        print("# VERDICT: c_{1/2} appears stable/nonzero -> theta^{-1/2} kink term present.")
-    print("RESULT: kink term vanishes (numerically) -> rate theta^{-1}, small constant. qou-k5r5 OPEN.")
+    print()
+    # DISCRIMINANCY TEST: can 6 points at ~1e-6 tell theta^{-1/2}/-2/3/-5/6/-1 apart? (single power)
+    print("# discriminancy — best single-power fit v_A + c*theta^{-p}, sweeping p:")
+    best = None
+    p = mp.mpf('0.4')
+    while p <= mp.mpf('1.3'):
+        c, rn = fit(thetas, S, [mp.mpf(0), p])
+        if best is None or rn < best[1]:
+            best = (p, rn)
+        p += mp.mpf('0.02')
+    print(f"#   best p = {mp.nstr(best[0],4)}  (resid {mp.nstr(best[1],3)})")
+    print("#   two-power residuals (all comparable => NOT discriminable):")
+    for lbl, e in (("{0,1/2,1}", [0, mp.mpf(1)/2, 1]),
+                   ("{0,2/3,1}", [0, mp.mpf(2)/3, 1]),
+                   ("{0,5/6,1}", [0, mp.mpf(5)/6, 1]),
+                   ("{0,1,3/2}", [0, 1, mp.mpf(3)/2])):
+        c, rn = fit(thetas, S, [mp.mpf(x) for x in e])
+        print(f"#     {lbl:>10}: resid {mp.nstr(rn,3)}")
+    print()
+    print("# VERDICT (corrected 2026-08-29): the sub-leading structure is NOT resolvable here.")
+    print("#   c_{1/2} is small (|.|<1e-3, sign-unstable) BUT theta^{-1/2}/-2/3/-5/6/-1 all fit with")
+    print("#   comparable residual (best single power ~0.94). A theta^{-5/6} Airy-EDGE term is plausible")
+    print("#   and cannot be excluded. So 'kink cancels => rate theta^{-1}' is OVERSTATED and RETRACTED:")
+    print("#   c_{1/2}=0 is NOT established (neither numerically here nor by the transpose symmetry, which")
+    print("#   is automatic and does not isolate the half-power). What IS robust: the correction is SMALL")
+    print("#   (|coeff|~0.05) with effective exponent ~0.9 -- enough for the (CS) closure (any rate")
+    print("#   >= theta^{-1/2} with a small constant works; 30-300x headroom, PR #5937). Settling the")
+    print("#   exact exponent / c_{1/2} needs the real Euler-Maclaurin+edge analysis (bean qou-tvok).")
+    print("RESULT: sub-leading exponent INDETERMINATE at 6 points; kink-cancellation claim RETRACTED;")
+    print("        correction small (eff. exp ~0.9), closure feasibility intact. qou-k5r5 OPEN.")
     print("EXIT: 0")
     return 0
 
