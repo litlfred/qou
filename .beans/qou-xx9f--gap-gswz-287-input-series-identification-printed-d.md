@@ -102,7 +102,7 @@ Installed `pymupdf` and rendered the regions at 5–6× instead of relying on
 and one of them was answerable all along.
 
 **(a) The f-subscript in (287): it is `f₅`.** Rendered
-`uploads/2412.04241v2.pdf` p. 57, y≈60–165. The display reads
+`library/arxiv-2412.04241v2/2412.04241v2.pdf` p. 57, y≈60–165. The display reads
 
   `C f₅^{5₂}(x) Ψ_{[ζ₂₄],5}(x)^{−(1+4·5+3·5²+⋯)} Ψ_{[ζ²₂₄],5}(x)^{−(3+5+⋯)} Ψ_{[ζ⁶₂₄],5}(x)^{−(1+5+4·5²+⋯)}`
 
