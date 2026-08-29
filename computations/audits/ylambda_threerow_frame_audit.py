@@ -41,6 +41,15 @@ TWO LAYERS, because a source-only detector cannot decide this.
      in an expression is not prose, since `mpf("2.5995")` computes.  The tag reads
      "but ONLY in prose"; the HARD-CODES tag stays visible beside it.
 
+  WITNESSLESS FILES ARE THE BLIND SPOT, and the triage now counts them.  Layers 2
+  and 3 both read `*.witness.json`, so a consumer that emits no witness is visible
+  to NOTHING but the source scan.  Measured on this corpus: 44 of the 167 y_lambda
+  consumers emit no witness, and 12 of those are flagged.  That is not a defect
+  list -- a library module legitimately emits none -- but it is where a real
+  instance hides, and it is how the sixth one (`qou-iav7`,
+  `threerow_isospin_parity_probe`) was found: by a sibling reading source, because
+  no other layer could reach it.  Tagged `NO WITNESS` in the report.
+
   2. `--measure`: NUMERIC confirmation, convention-agnostic.  Evaluates the
      `ell >= 3` stratum directly at the proton pin.  A value cannot be stale,
      mislabelled, or re-spelled and still be nonzero.  This is the layer that
@@ -78,6 +87,10 @@ GUARD = re.compile(r"noise[_ ]?floor|NOISE\b", re.I)
 COMPARE = re.compile(r"C[_ ]?vs[_ ]?D|convention[-_ ]?C\b.*convention[-_ ]?D|D[_ ]?vs[_ ]?C", re.I)
 # C's level, hard-coded: Q^r = u^3/D(u) with D(u) = -u^6 - u^4 + u^3 + u^2 + 1
 C_LEVEL = re.compile(r"-\s*u\s*\*\*\s*6\s*-\s*u\s*\*\*\s*4|2\.5995|1\.7202|1\.13068")
+# Does the file emit a witness at all?  Heuristic, and deliberately broad: any of
+# the three routes this corpus uses to write one.  A file that emits none is
+# invisible to layers 2 and 3 -- see the WITNESSLESS note in the module docstring.
+EMITS = re.compile(r"WitnessBuilder|witness_base|\.save\(\s*\)")
 
 
 SELF = pathlib.Path(__file__).resolve()
@@ -188,6 +201,7 @@ def triage():
             "comparison": bool(COMPARE.search(txt)),
             "hardcodes_C_level": bool(C_LEVEL.search(txt)),
             "C_level_prose_only": _c_level_is_prose_only(txt),
+            "emits_witness": bool(EMITS.search(txt)),
         })
     rows.sort(key=lambda r: (-r["score"], r["path"]))
     return rows
@@ -325,6 +339,9 @@ def main() -> int:
             "NEGV": (NEGV, "sum over negative-weight blocks"),
             "C_LEVEL/poly": (C_LEVEL, "D = -u**6 - u**4 + u**3 + u**2 + 1"),
             "C_LEVEL/const": (C_LEVEL, "r(q0) = 2.5995, Q^r = 1.7202, u* = 1.13068"),
+            "EMITS/builder": (EMITS, "w = WitnessBuilder('x')"),
+            "EMITS/import": (EMITS, "from witness_base import WitnessBuilder"),
+            "EMITS/save": (EMITS, "    w.save()"),
         }
         missing = [k for k, (rx, txt) in probes.items() if not rx.search(txt)]
         if missing:
@@ -356,6 +373,12 @@ def main() -> int:
             ("unparseable stays flagged",
              "def f(:\n  2.5995\n", False),
         ]
+        if EMITS.search("# reads the committed witness; emits none itself"):
+            print("SELFTEST FAIL: EMITS fires on prose that only MENTIONS a witness, "
+                  "so the NO-WITNESS count is an undercount and the blind spot reads "
+                  "smaller than it is")
+            return 1
+
         wrong = [name for name, src, want in prose_cases
                  if _c_level_is_prose_only(src) is not want]
         if wrong:
@@ -435,6 +458,12 @@ def main() -> int:
     print(f"  y_lambda consumers scanned : {len(rows)}")
     print(f"  flagged                    : {len(flagged)}")
     print(f"  clean                      : {len(rows) - len(flagged)}")
+    _blind = [r for r in rows if not r["emits_witness"]]
+    _blind_flagged = [r for r in _blind if r["score"]]
+    print(f"  emitting NO witness        : {len(_blind)}  "
+          f"({len(_blind_flagged)} of them flagged)")
+    print( "                               ^ layers 2 and 3 are blind to these; this")
+    print( "                                 scan is the only thing that can see them.")
     print()
     for r in flagged:
         tags = []
@@ -444,6 +473,8 @@ def main() -> int:
                 tags.append("but ONLY in prose -- cannot reach a computation")
         if r["comparison"]:
             tags.append("declares a C-vs-D comparison")
+        if not r["emits_witness"]:
+            tags.append("NO WITNESS -- layers 2 and 3 cannot see this file")
         if r["guarded"]:
             tags.append("has a noise floor")
         t = ("   [" + "; ".join(tags) + "]") if tags else ""
@@ -463,6 +494,12 @@ def main() -> int:
     print("    declares a C-vs-D comparison  -- says so in its own text. Reasoning about")
     print("                                     the annihilated stratum is then CORRECT")
     print("                                     BY DESIGN; both tags together are expected.")
+    print("    NO WITNESS                    -- emits nothing for the numeric or dating")
+    print("                                     layers to check, so ONLY this source scan")
+    print("                                     can see it. Not a defect by itself -- a")
+    print("                                     library module legitimately emits none --")
+    print("                                     but it is where a real instance hides, and")
+    print("                                     is how the sixth one (qou-iav7) was found.")
     print("    has a noise floor             -- already distinguishes round-off from a")
     print("                                     measured value. Not a clearance, but it")
     print("                                     cannot make the mu3_door_budget error.")
