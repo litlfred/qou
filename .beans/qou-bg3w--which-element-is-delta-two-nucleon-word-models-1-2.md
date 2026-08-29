@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-08-29T08:35:36Z
+updated_at: 2026-08-29T10:57:19Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -123,3 +123,55 @@ there rides on L-, not L+.
 **Still open, and still the block on qou-cds1:** which element the decay channel
 is about. The candidate set is now measured and priced, but nothing here selects
 one.
+
+
+## 2026-08-29 (LATER) — every decimal in the entry above was at q = 111/100
+
+Caught by a SIBLING's numbers, not by re-reading my own. PR #5958 independently
+measured the same elements and reported the gen-grouped net as -0.2331977;
+mine said -0.2332458961. Agreement to 4 digits, which I would have called
+confirmation — but a 2.1e-4 relative gap is ~18000x the 11.54 ppb mu-p
+tension, so it had to be something else.
+
+**`pyhecke.gram._H_FRAC` derives from `_Q_FRAC = Fraction(111, 100)`** — q =
+1.11 exactly, a deliberate exactness device ("H_3(q) at q = 111/100 is exact in
+Q"). It is **185 ppm** off the substrate pin.
+
+Contained, and checked before calling it anything: `_H_FRAC` / `_Q_FRAC` /
+`hm_exact` / `build_atom_nf_exact` have 12 importers and the ONLY one emitting
+a witness is under `_deprecated/`; `computations/lint_q_approximation.py`
+already guards the class. Not a production leak — the defect was mine, reading
+it as the substrate.
+
+### Corrected table, and it makes every identification STRONGER
+
+                       quoted at 111/100    at the substrate pin   vs recorded
+  Delta_S               -0.187237882         -0.187207194529        -0.187207     4 -> 6 digits
+  9-crossing            -0.188321615         -0.188290601471        -0.188290601  4 -> NINE
+  11 interleaved        -0.227204142         -0.227159711766        (no record)
+  11 gen-grouped        -0.233245896         -0.233197711316        -0.233198     4 -> 6
+                                                                    (#5958: -0.2331977, 9 digits)
+
+**The 9-crossing row settles this bean's open question.** The entry above
+explained its residual as "float64 h vs exact _H_FRAC". That was wrong and
+there was no residual: at the substrate pin the exact net matches the stored
+float64 PROTON_NF/NEUTRON_NF coordinate-sum difference to NINE significant
+figures. **The coordinate sum IS net** — conclusion unchanged, stated reason
+replaced.
+
+The symbolic exclusions are untouched: they are polynomial identities in h and
+never depended on a pin.
+
+### The candidate set is larger than either of us had
+
+#5958's candidates come from CONTENT BLOCKS, mine from PYHECKE CODE PATHS, and
+only the two endpoints overlap. Union:
+
+  Delta_S (short model)                        -0.187207194529
+  build_nucleon_nf (9 crossings)               -0.188290601471
+  categorical-* as STATED                      -0.2089        (#5958)
+  categorical-* recipe as CONSTRUCTED k=1      -0.2137638     (#5958)
+  build_atom_nf_exact (11, interleaved)        -0.227159711766
+  hecke_core / nucleon_gen_chains (11, grouped) -0.233197711316
+
+**Six**, not four, and not two. Still unadjudicated; still an owner call.
