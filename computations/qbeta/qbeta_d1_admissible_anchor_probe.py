@@ -5,7 +5,7 @@ qou-cds1 / qou-99qc / qou-bg3w.  Three questions the corpus has been treating
 separately turn out to be one:
 
   * "excise convention C"                     -- z_C = sqrt(q)/(q+1)
-  * "net is structurally excluded under D"    -- net = tr_M at z = 1
+  * "net is structurally excluded under D"    -- net, and tr_M at z = 1
   * "(D1) is short-model-specific"            -- 2*alpha = net(D) - tr^z(D)
 
 ConventionDAdmissibleRoots.lean (sorry-free) proves the (1^3)-block weight
@@ -17,6 +17,24 @@ so a functional descends to the two-row quotient iff z is a root, i.e. iff
 z = q or z = z_D = q^3/(q^2+1).  EXACTLY TWO.  This probe checks what that
 criterion says about z_C and about z = 1, and what (D1) becomes when it is
 re-anchored on admissible parameters only.
+
+SCOPING CORRECTION (2026-08-29).  An earlier revision of the bullet above
+read "net = tr_M at z = 1", i.e. asserted the two are the same functional.
+They are NOT, in general: tr_M(z=1) weights the standard basis
+[1,1,1,1,1,h+1] while `net` is the plain coordinate sum [1,1,1,1,1,1], so
+
+    tr_M(z=1) - net = h * (e_minus coordinate).
+
+They agree on BOTH Delta models only because both carry a zero e_minus
+coordinate.  Everything this probe measures is unaffected -- it works with
+those elements -- but the identity must not be quoted as general.
+
+The corpus holds a stronger, ELEMENT-INDEPENDENT exclusion of `net` that does
+not route through z at all: `net` is the functional sigma -> 1, and
+sigma^2 = h*sigma + 1 then forces 1 = h + 1, i.e. h = 0, so `net` is not an
+algebra map -- while the augmentation sigma -> q is one, since q^2 = hq + 1
+exactly when h = q - 1/q.  That is `qbeta_epsnpq_functional_mismatch_probe`,
+which could not be RUN until PR #5943 fixed its import bootstrap.
 
 SCOPE-(a).  No c_k is proposed, no element is adjudicated, nothing is wired.
 
