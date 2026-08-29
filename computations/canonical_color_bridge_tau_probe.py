@@ -179,6 +179,50 @@ def coloured_trace_separates(E) -> dict:
     return rows
 
 
+def rerun_the_bare_word_negatives(E) -> dict:
+    """Option 5: do the arc's negatives survive the canonical interface?
+
+    The H_6 isospin negative was: identical grade COUNTS, identical grade-MASS
+    and identical SUPPORT across pn, pp and nn. Re-run against sigma_g + d*I.
+    """
+    print("\n" + "=" * 74)
+    print("Do the bare-word negatives survive the canonical interface?")
+    print("=" * 74)
+
+    def counts(X):
+        return {g: len(v) for g, v in sorted(X.profile().items())}
+
+    def mass(X):
+        out: dict = {}
+        for w, c in X.terms.items():
+            g = coxeter_length(w)
+            out[g] = lau_add(out.get(g, {}), c)
+        return {g: v for g, v in sorted(out.items()) if v}
+
+    for k in ("pn", "pp", "nn"):
+        print(f"    counts({k}) = {counts(E[k])}")
+    same_c = counts(E["pn"]) == counts(E["pp"]) == counts(E["nn"])
+    same_s = set(E["pn"].terms) == set(E["pp"].terms) == set(E["nn"].terms)
+    m = {k: mass(E[k]) for k in ("pn", "pp", "nn")}
+    same_m = m["pn"] == m["pp"] == m["nn"]
+    print(f"\n    counts identical    : {same_c}")
+    print(f"    support identical   : {same_s}")
+    print(f"    grade-mass identical: {same_m}")
+    print("\n    NEGATIVE LIFTED -- it was an artifact of the bare-word bridge.")
+    print("\n    But read the grouping before celebrating. The profile splits")
+    print("    {pp} from {pn, nn}, because pp's interface scalar is d = 0 while")
+    print("    both others are nonzero. The PHYSICAL split is {pn} bound from")
+    print("    {pp, nn} unbound. So the profile now sees something -- and what")
+    print("    it sees is 'does the interface carry a scalar', a property of the")
+    print("    convention, not boundness. Lifting a blindness is not the same as")
+    print("    acquiring the right signal.")
+    print("\n    The TRACE does better: all three come out distinct (above).")
+    print("    Whether they RANK correctly is a separate question, untested.")
+    assert not (same_c and same_s and same_m), "negative survived -- rewrite this"
+    return {"counts_identical": same_c, "support_identical": same_s,
+            "mass_identical": same_m}
+
+
 def main():
     E = {"pn": bridged(P_A, N_B, "pn"), "np": bridged(N_A, P_B, "pn"),
          "pp": bridged(P_A, P_B, "pp"), "nn": bridged(N_A, N_B, "nn")}
@@ -192,6 +236,7 @@ def main():
     print("    negatives are scoped to bare-word bridges, not to the framework.")
     assert d_ppnn != d_pnnp, "tau not broken -- the docstring is now wrong"
     tr = coloured_trace_separates(E)
+    rerun_the_bare_word_negatives(E)
     return {"pp_vs_nn": d_ppnn, "pn_vs_np": d_pnnp, "tau_broken": True,
             "coloured_trace_separates": {k: v for k, v in tr.items()}}
 
