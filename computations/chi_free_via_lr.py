@@ -45,6 +45,10 @@ import mpmath as mp  # noqa: E402
 from active_set_lr_profile import multi_lr  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 ZN = {
     "D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
     "6Li": (3, 3), "7Li": (3, 4), "9Be": (4, 5), "10B": (5, 5),
@@ -152,7 +156,7 @@ def main() -> int:
     if validated:
         w.add_assertion(
             "free_lr_matches_witnesses_machine_eps",
-            computed=float(max_rel_overall),
+            computed=max_rel_overall,
             expected=0.0,
             tolerance=1e-12,
             source="chi_free_lr vs chi-*-free witnesses",

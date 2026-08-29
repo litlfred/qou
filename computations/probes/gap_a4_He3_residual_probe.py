@@ -291,7 +291,7 @@ def main() -> int:
     pr1874_rel_err = (L1b_he3 - lambda_emp_he3) / lambda_emp_he3
     w.add_assertion(
         "L1b_He3_matches_PR1874_value",
-        computed=float(pr1874_rel_err),
+        computed=pr1874_rel_err,
         expected=-0.1815,
         tolerance=2e-3,
         source=(

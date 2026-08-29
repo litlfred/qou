@@ -1,12 +1,12 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T09:25:24.228592+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "computedAt": "2026-08-29T12:25:04.622085+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "single_coefficient_hypothesis",
-      "computed": 1.9453547247491583,
+      "computed": "1.945354724749158283726328796249840091016516635219054084334394371919308",
       "expected": 0.0,
       "passed": false,
       "tolerance": "0.05",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "mass-sweep-bar-sym-h2-coefficient",
   "scriptFile": "mass_sweep_bar_sym_h2_coefficient_hunt.py",
-  "scriptHash": "d3ce05434562",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "af4d46f727ff",
+  "scriptCommitSha": "52ce4583dde51262d737e5654bdbab2732e78097",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T18:00:19.626700+00:00",
-  "commitSha": "c938bfb7a36db8ee5fd8d28b3b80ab459ead0f49",
+  "computedAt": "2026-08-29T11:28:40.985267+00:00",
+  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
   "assertions": [
     {
       "name": "truncated_series_matches_fconv",
-      "computed": 0.22593988612649848,
+      "computed": "0.22593988612649847566255711192997276945013189394986239610316",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.4397054075439577,
@@ -22,8 +22,8 @@
     },
     {
       "name": "solve_family_completed",
-      "computed": 21.0,
-      "expected": 21.0,
+      "computed": 21,
+      "expected": 21,
       "passed": true,
       "tolerance": "0.5",
       "source": "all 21 pre-registered exact solves completed and recorded"
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-masbaum-block-row",
   "scriptFile": "qbeta_5two_masbaum_block_row_probe.py",
-  "scriptHash": "172f5967c625",
-  "scriptCommitSha": "c938bfb7a36db8ee5fd8d28b3b80ab459ead0f49",
+  "scriptHash": "502f1dd29d8d",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_masbaum_block_row_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_masbaum_block_row_probe.py"
   },
   "description": "B1.3 (bean qou-hrmo): the λ-row selection question answered by exact formal-series linear algebra — the Masbaum tail built as an exact u-series from the integer-Laurent C_n, its u-parity recorded, and its membership in the ℚ-span of the 18 GGM block series H±_(j,λ) (re-gated against the printed tables at the probe truncation) decided by exact rational rank/solve over a pre-registered dressed family (q;q)_∞^p·q^s·F, p ∈ −3..3, s ∈ 0..2 — every solve reported, a solution means every residual order vanishes identically. No numerics in the decision; the numeric F_conv gate is truncation-consistency only. auditOnly; no c_k wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:36:44.361615+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:44:16.475768+00:00",
+  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
   "assertions": [
     {
       "name": "sum_rule_exact",
-      "computed": 2.897817305224548e-70,
+      "computed": "2.89781730522454795760291817308409336981840998340452422066643676477936e-70",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-35",
@@ -14,7 +14,7 @@
     },
     {
       "name": "relation_V3_from_V1",
-      "computed": 2.173362978918411e-70,
+      "computed": "2.17336297891841096820218862981307002736380748755339316549982757358452e-70",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-35",
@@ -22,7 +22,7 @@
     },
     {
       "name": "extraction_is_centering",
-      "computed": 2.173362978918411e-70,
+      "computed": "2.17336297891841096820218862981307002736380748755339316549982757358452e-70",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-35",
@@ -30,7 +30,7 @@
     },
     {
       "name": "legacy_literals_are_extraction_convention",
-      "computed": 0.00010498525121583873,
+      "computed": "0.0001049852512158387242524837070541495224308109187153822293479075854239284",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.0002",
@@ -38,8 +38,8 @@
     },
     {
       "name": "legacy_pair_internally_inconsistent",
-      "computed": 7.30306e-05,
-      "expected": 7.30306e-05,
+      "computed": "0.00007303060000000000000000000000000000000000000000000000000000000000002219",
+      "expected": "0.00007303060000000000000000000000000000000000000000000000000000000000002219",
       "passed": true,
       "tolerance": 0.0,
       "source": "the pair violates the exact relation => the two were computed independently"
@@ -49,7 +49,7 @@
   "durationMs": 0,
   "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
   "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
-  "scriptHash": "d107facd5f64",
+  "scriptHash": "1b1eeda064cf",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

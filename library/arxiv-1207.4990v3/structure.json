@@ -1,0 +1,223 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1207.4990v3",
+ "source": {
+  "file": "1207.4990v3.pdf",
+  "sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
+  "bytes": 807177,
+  "pages": 70,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1207.4990",
+   "version": "3",
+   "primary_class": "math.FA",
+   "stamp_date": "1 Dec 2012"
+  },
+  "doi": null,
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift",
+  "authors_raw": "Courant Institute, New York",
+  "title_lines": [
+   "Toeplitz matrices and Toeplitz determinants under the impetus of",
+   "the Ising model. Some history and some recent results",
+   "Percy Deift"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181030085028-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Setting the problem",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Toeplitz meets Ising",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Szego's Theorem",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Back to Ising",
+   "page": 23,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "New questions for SSLT",
+   "page": 27,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+   "page": 29,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Basor-Tracy conjecture",
+   "page": 36,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Hankel and Toeplitz+Hankel determinants",
+   "page": 40,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Some applications",
+   "page": 42,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Block Toeplitz matrices",
+   "page": 45,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Double-scaling limits",
+   "page": 49,
+   "source": "outline",
+   "number": "11"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-setting-the-problem",
+   "number": "1",
+   "title": "Setting the problem",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 19894,
+   "n_words": 3643
+  },
+  {
+   "id": "sec-001-2-toeplitz-meets-ising",
+   "number": "2",
+   "title": "Toeplitz meets Ising",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 23,
+   "n_chars": 35618,
+   "n_words": 6830
+  },
+  {
+   "id": "sec-002-4-back-to-ising",
+   "number": "4",
+   "title": "Back to Ising",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 9640,
+   "n_words": 1852
+  },
+  {
+   "id": "sec-003-5-new-questions-for-sslt",
+   "number": "5",
+   "title": "New questions for SSLT",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 5191,
+   "n_words": 1048
+  },
+  {
+   "id": "sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co",
+   "number": "6",
+   "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 36,
+   "n_chars": 19564,
+   "n_words": 3945
+  },
+  {
+   "id": "sec-005-7-basor-tracy-conjecture",
+   "number": "7",
+   "title": "Basor-Tracy conjecture",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 8256,
+   "n_words": 1785
+  },
+  {
+   "id": "sec-006-8-hankel-and-toeplitzhankel-determinants",
+   "number": "8",
+   "title": "Hankel and Toeplitz+Hankel determinants",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 4611,
+   "n_words": 989
+  },
+  {
+   "id": "sec-007-9-some-applications",
+   "number": "9",
+   "title": "Some applications",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 7515,
+   "n_words": 1516
+  },
+  {
+   "id": "sec-008-10-block-toeplitz-matrices",
+   "number": "10",
+   "title": "Block Toeplitz matrices",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 49,
+   "n_chars": 13036,
+   "n_words": 2321
+  },
+  {
+   "id": "sec-009-11-double-scaling-limits",
+   "number": "11",
+   "title": "Double-scaling limits",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 70,
+   "n_chars": 54148,
+   "n_words": 9069
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 10,
+  "chars_total": 177473
+ }
+}

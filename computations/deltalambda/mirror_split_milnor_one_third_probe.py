@@ -269,7 +269,7 @@ def main() -> int:
                         "channel is structurally zero for the Borromean A=3 link"))
             wb.add_assertion(
                 name="one_third_datum_within_0p3pct",
-                computed=float(3 * r), expected=1.0, tolerance=0.005,
+                computed=3 * r, expected=1.0, tolerance=0.005,
                 source=("split·3/B_pp with B_pp recomputed per-block (H₆) and split "
                         "from AME2020 codata_constants — the guarded datum, 0.23% off"))
             wb.add_assertion(
@@ -280,7 +280,7 @@ def main() -> int:
                         "the 1/3 route would have to SUPERSEDE the derived ratio"))
             wb.add_assertion(
                 name="tanh_ln_sqrt2_equals_one_third_exactly",
-                computed=float(id_err), expected=0.0, tolerance=1e-40,
+                computed=id_err, expected=0.0, tolerance=1e-40,
                 source=("numerology-guard datum: tanh(ln √2)=(2−1)/(2+1)=1/3 exact; "
                         "√2 = 1/x* (target-2 Borel coupling). Reported, not identified."))
             out = wb.save()

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T19:25:24Z
-updated_at: 2026-08-23T09:01:39Z
+updated_at: 2026-08-29T08:28:11Z
 ---
 
 ## Why this bean exists
@@ -721,3 +721,38 @@ Consequences, all of them simplifications:
    `(verdictsFor w k).length = 2`
 
 Then the well-founded reduction.
+
+## 2026-08-29 — the diagnosed-blocked `cycleLen_inv` is CLOSED (PR #5976)
+
+`BraidClosure.lean` carried three paragraphs headed "Blocked lemma,
+diagnosed" for `cycleLen f⁻¹ p = cycleLen f p`, ending "the fix is instance
+plumbing, not mathematics". Every particular of that diagnosis was correct.
+The plumbing is **one `congr!`** — `Decidable` is a subsingleton, so
+`DecidableRel` is one pointwise:
+
+    unfold cycleLen
+    rw [← orderOf_inv (f.cycleOf p), Equiv.Perm.cycleOf_inv f p]
+    congr!
+
+Two routes that do NOT work, measured and now recorded in the file so the
+next reader does not retry them:
+
+- `simp only [cycleLen, h]` with `h : f⁻¹.cycleOf p = (f.cycleOf p)⁻¹`
+  proved separately reports `h` **unused** — the instance a tactic block
+  synthesizes is not the one `cycleLen`'s body carries.
+- `show orderOf (f⁻¹.cycleOf p) = orderOf (f.cycleOf p)` fails with a
+  **pattern error**, so the two instances are not definitionally equal
+  either. Restating the goal cannot bridge them.
+
+Scope note: the lemma is no longer *needed*. The `stepPerm` refactor phrases
+the walk and the lap count in one permutation, which removes the bridge from
+the critical path rather than paying for it. The `stepPerm` docstring still
+pointed at "the diagnosis above" as though the bridge were unavailable; that
+is corrected.
+
+**Still open on this bean** (unchanged): the partition fact — that the cycles
+of `closurePerm w`, each represented once by its leader and walked for its
+full length, cover `Fin n` exactly. Until that lands,
+`(verdictsFor w k).length = 2` is unavailable and `Descending` is a
+well-formed definition whose two-entry structure rests on an undischarged
+fact. That is real mathematics, not plumbing.

@@ -176,4 +176,104 @@ theorem length_mul {u v : Equiv.Perm (Fin m)} (hu : LowerOnly k u)
   rw [length, length, length, invSet_mul hu hv,
     Finset.card_union_of_disjoint (invSet_disjoint hu hv)]
 
+/-! ## A blocks, not two
+
+`length_mul` is the two-block statement and carries the content. The atomic
+braid has `A` nucleon blocks, so the composition law needs the `A`-fold form.
+I previously declined this as "index plumbing that adds no insight" — the
+insight claim was right, the declining was not: two is not `A`, and
+`gf_pow`'s `A`-fold factorisation has nothing to stand on without it. -/
+
+/-- The identity has no inversions. -/
+theorem length_one : length (1 : Equiv.Perm (Fin m)) = 0 := by
+  rw [length, Finset.card_eq_zero]
+  ext p
+  simp only [invSet, Finset.mem_filter, Finset.mem_univ, true_and,
+    Finset.notMem_empty, iff_false, not_and, Equiv.Perm.one_apply, not_lt]
+  exact fun h => le_of_lt h
+
+/-- Lower-only is closed under multiplication. -/
+theorem lowerOnly_mul {u v : Equiv.Perm (Fin m)} (hu : LowerOnly k u)
+    (hv : LowerOnly k v) : LowerOnly k (u * v) := by
+  intro x hx
+  rw [Equiv.Perm.mul_apply, hv x hx, hu x hx]
+
+/-- Lower-only at a threshold is lower-only at any larger one. -/
+theorem lowerOnly_mono {u : Equiv.Perm (Fin m)} {k k' : ℕ} (h : LowerOnly k u)
+    (hk : k ≤ k') : LowerOnly k' u :=
+  fun x hx => h x (le_trans hk hx)
+
+/-- The identity is lower-only at every threshold. -/
+theorem lowerOnly_one : LowerOnly k (1 : Equiv.Perm (Fin m)) := fun _ _ => rfl
+
+/-- The product of the first `n` blocks, in order. -/
+def blockProd (w : ℕ → Equiv.Perm (Fin m)) : ℕ → Equiv.Perm (Fin m)
+  | 0 => 1
+  | (n + 1) => blockProd w n * w n
+
+/-- The first `n` blocks together move nothing at or above the `n`-th split. -/
+theorem lowerOnly_blockProd {b : ℕ → ℕ} (hb : Monotone b)
+    {w : ℕ → Equiv.Perm (Fin m)} (hlow : ∀ i, LowerOnly (b (i + 1)) (w i)) :
+    ∀ n, LowerOnly (b n) (blockProd w n)
+  | 0 => lowerOnly_one
+  | (n + 1) => by
+      exact lowerOnly_mul
+        (lowerOnly_mono (lowerOnly_blockProd hb hlow n) (hb (Nat.le_succ n)))
+        (hlow n)
+
+/-- **Length is additive across `A` order-separated blocks.** Block `i` occupies
+`[b i, b (i+1))`; the Coxeter length of the whole is the sum of the blocks'.
+
+This is what `BodyOrderExpansion.gf_pow` needs in order to apply to the atomic
+braid: it makes the filtration's index set an honest `A`-fold product, not a
+two-fold one. -/
+theorem length_blockProd {b : ℕ → ℕ} (hb : Monotone b)
+    {w : ℕ → Equiv.Perm (Fin m)} (hlow : ∀ i, LowerOnly (b (i + 1)) (w i))
+    (hup : ∀ i, UpperOnly (b i) (w i)) :
+    ∀ A, length (blockProd w A) = ∑ i ∈ Finset.range A, length (w i)
+  | 0 => by simp [blockProd, length_one]
+  | (n + 1) => by
+      rw [blockProd, length_mul (lowerOnly_blockProd hb hlow n) (hup n),
+        length_blockProd hb hlow hup n, Finset.sum_range_succ]
+
+/-! ## The hypotheses are exactly "each block acts inside its own block"
+
+`length_blockProd` takes `hlow` and `hup` separately, which leaves open whether
+anything satisfies both at once. It does, and the condition is the natural one:
+a permutation supported in the half-open interval `[a, b)` is lower-only at `b`
+and upper-only at `a` simultaneously.
+
+Stating this matters for the same reason the Hecke-relation instantiation did.
+A theorem whose hypotheses no interesting family satisfies proves nothing about
+the object it names, and the two-sided form is what a nucleon block actually
+is: block `i` moves strands `3i, 3i+1, 3i+2` and nothing else. -/
+
+/-- `w` moves only points in the half-open interval `[a, b)`. -/
+def SupportedIn (a b : ℕ) (w : Equiv.Perm (Fin m)) : Prop :=
+  ∀ x : Fin m, x.val < a ∨ b ≤ x.val → w x = x
+
+theorem lowerOnly_of_supportedIn {a b : ℕ} {w : Equiv.Perm (Fin m)}
+    (h : SupportedIn a b w) : LowerOnly b w :=
+  fun x hx => h x (Or.inr hx)
+
+theorem upperOnly_of_supportedIn {a b : ℕ} {w : Equiv.Perm (Fin m)}
+    (h : SupportedIn a b w) : UpperOnly a w :=
+  fun x hx => h x (Or.inl hx)
+
+/-- **Length is additive over any family of block-supported permutations.**
+This is `length_blockProd` with its two hypotheses replaced by the single
+condition that each `w i` acts inside its own block — the form a nucleon
+decomposition actually supplies. -/
+theorem length_blockProd_of_supportedIn {b : ℕ → ℕ} (hb : Monotone b)
+    {w : ℕ → Equiv.Perm (Fin m)} (hs : ∀ i, SupportedIn (b i) (b (i + 1)) (w i)) :
+    ∀ A, length (blockProd w A) = ∑ i ∈ Finset.range A, length (w i) :=
+  length_blockProd hb (fun i => lowerOnly_of_supportedIn (hs i))
+    (fun i => upperOnly_of_supportedIn (hs i))
+
+/-- The condition is satisfiable non-trivially: a permutation fixing everything
+outside `[a, b)` is block-supported there, and the identity is the degenerate
+case rather than the only one. -/
+theorem supportedIn_one {a b : ℕ} : SupportedIn a b (1 : Equiv.Perm (Fin m)) :=
+  fun _ _ => rfl
+
 end QOU.Knot.BlockLengthAdditive

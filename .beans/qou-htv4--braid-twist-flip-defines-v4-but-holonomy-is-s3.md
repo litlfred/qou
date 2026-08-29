@@ -83,3 +83,48 @@ fixed resolvent (chose w₄) is conventional — documented in both docstrings +
    generator in rho-s3) — §7aa collision.
 3. `braid-twist-flip.qa.json` SIDECAR staled by the .lean edit; qa-sweep needs
    the folio pipeline, ABSENT this session. Needs a pipeline pass to refresh.
+
+## 2026-08-29 (session cont.) — items 1+2 DONE; item 3 is a CROSS-BLOCK physics decision (owner)
+
+- **Item 1 (α overload): DONE.** rho-s3 renamed its twist/flip generators α/β →
+  σ₁/σ₂ and reserves α for the 3-cycle (σ₁σ₂), matching `def:su2-generators` and
+  `brings-surface/braid-group-action` §(ii). Overload resolved.
+- **Item 2 (sidecars): DONE.** Folio pipeline returned this session; qa-sweep
+  refreshed `braid-twist-flip.qa.json` (staled by #6024) and
+  `rho-s3-holonomy-exposition.qa.json` (staled by item 1). `needs-agent`
+  criteria are the normal agent-verdict backlog.
+
+### Item 3 — NOT mechanical: two different concrete S₃ actions live in the corpus
+
+Reading `brings-surface/braid-group-action.md §(ii)` "Spectral S₃" revealed the
+real blocker. There are **two inequivalent concrete realizations** of "the S₃
+action on the four resolvents", and rho-s3's (V₄) matched neither:
+
+- **Action A** — my #6024 `braid-twist-flip` Lean: σ₁ = (w₁ w₂), σ₂ = (w₂ w₃),
+  **w₄ fixed**; product = 3-cycle (w₁ w₂ w₃). Simple, group-verified in Lean, but
+  no conjugate-pair structure — w₄ inertly fixed.
+- **Action B** — `braid-group-action §(ii)`: S₃ acts on the ratios
+  η₁ = w₁/w₂, η₂ = w₃/w₄; conjugate pairs (w₁,w₄),(w₂,w₃); the **reflection β**
+  swaps the pairs, the **3-cycle α** rotates; time-like = (w₂,w₃), space-like =
+  w₁. Richer, and it is what rho-s3's chiral-sheet / time-like–space-like physics
+  is actually built on. Already uses the correct α/β convention.
+
+A and B are inequivalent concrete embeddings of S₃ into the resolvent space
+(A fixes w₄ and ignores the pairing; B swaps the conjugate pairs). rho-s3
+`interprets` `def:braid-twist-flip` (Action A) but describes physics closer to B.
+**One cannot make rho-s3 consistent with both A and B**, so the corpus must pick
+a canonical concrete action. I did NOT fabricate a choice.
+
+**DECISION FOR OWNER.** Is **Action B** (braid-group-action's conjugate-pair /
+ratio model) canonical?
+- If **B**: revise the #6024 `braid-twist-flip` Lean+md to realize B (β = the
+  pair-swap (w₁w₂)(w₃w₄), a second generator giving the 3-cycle), and rewrite
+  rho-s3 to match B. Follow-up; needs Lean re-verification. **[my recommendation
+  — B is the detailed corpus physics and respects the chiral-sheet structure]**
+- If **A**: revise braid-group-action §(ii) + rho-s3's conjugate-pair physics to
+  match A's w₄-fixed simple transpositions (loses the conjugate-pair narrative).
+- **Default (no action):** items 1+2 stand; rho-s3 keeps its α-corrected but
+  still-V₄-flavored operational description, inconsistency flagged here; #6024's
+  Action A stands as a valid-but-maybe-non-canonical S₃ realization.
+- **Blast radius:** rho-s3, r-matrix-braiding-structure, braid-group-action,
+  braid-twist-flip (.lean+.md), su2-generators — the trefoil-holonomy cluster.

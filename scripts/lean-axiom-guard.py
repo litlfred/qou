@@ -505,6 +505,26 @@ QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_
 # rather than statements that merely resemble it. The general induction is open.
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieriStep_one | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieriStep_two_one | clean
+# --- qou-8mtd: the triangulation-to-manifold volume bridge, stated CONDITIONALLY ---
+# The class HyperbolicVolumeBridge has NO INSTANCE by design (the honest open state).
+# These theorems are conditional on it; their axiom status is what shows the conditional
+# layer itself is sorry-free, i.e. that the gap is carried in the TYPE and not in a proof.
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.IdealTriangulation.volume_rotateAt | clean
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.IdealTriangulation.rotateAt_tet_self | clean
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.IdealTriangulation.rotateAt_tet_of_ne | clean
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_of_two_realisations | clean
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_rotateAt | clean
+QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_sum_of_realises | clean
+#
+# MostowTriangulationBridge connects the corpus's TWO "volume of M" notions:
+# Encounter.MostowRigidity.volume (a per-type real, entered as a literal and synced
+# from a witness by codemod-leanval.ts) and MathlibExt.IdealTriangulation.volume
+# (the computed Bloch-Wigner sum). Before it they were unrelated. The compatibility
+# between them is an EXPLICIT hypothesis argument, deliberately not a class field.
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_literal_eq_triangulation_volume | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
+
 """
 
 

@@ -1,0 +1,57 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T15:51:21.971860+00:00",
+  "commitSha": "8d1e9bd3f883fef7272476a8f1fe76fccb072c6c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 113,
+  "computation": "qbeta-nl84-provenance",
+  "scriptFile": "qbeta_nl84_provenance_probe.py",
+  "scriptHash": "ffec2e4f4336",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nl84_provenance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nl84_provenance_probe.py"
+  },
+  "description": "Provenance audit of N_l = 84: the block declares no producer, the one named witness does not contain the number, and the only ILP-counting code in the corpus is a deprecated heuristic capped at 3. The figure is unsourced, so the two failed reproductions on this branch cannot be read as evidence against their readings.",
+  "data": {
+    "block_declares_computation": false,
+    "used_block_declares_computation": false,
+    "neither_the_block_nor_what_it_uses_declares_a_producer": true,
+    "cited_witness_exists": true,
+    "cited_witness_fields_equal_84": 0,
+    "cited_witness_relevant_keys": [],
+    "the_ONE_named_source_is_a_DEAD_citation": true,
+    "counting_code_return_values": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "counting_code_live_importers": 0,
+    "the_only_counting_code_CANNOT_return_84_and_is_orphaned": true,
+    "grep_adjoin_loose": 50,
+    "grep_adjoin_excluding_adjoint": 8,
+    "N_l_eq_84_is_an_UNSOURCED_FIGURE": true,
+    "scope": "(a) provenance only"
+  }
+}

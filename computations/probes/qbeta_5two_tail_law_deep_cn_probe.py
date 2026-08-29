@@ -50,6 +50,10 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_masbaum_barodd_profile",
     _HERE / "qbeta_g3_5two_masbaum_barodd_profile.py")
@@ -247,7 +251,7 @@ def main() -> int:
                      source="shared-triangle C_n == profile C52(n), integer "
                             "dict equality at n = 5, 20, 43")
     wb.add_assertion("overlap_with_a62_values",
-                     computed=float(g2_dev), expected=0.0, tolerance=1e-30,
+                     computed=g2_dev, expected=0.0, tolerance=1e-30,
                      source="T̂_n (n ≤ 43) matches the A6.2 profile-module "
                             "route")
     wb.add_assertion("deep_ranking_reproducible",
@@ -257,7 +261,7 @@ def main() -> int:
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_assertion("plateau_pole_extraction_stable",
-                     computed=float(pole_stab), expected=0.0, tolerance=0.02,
+                     computed=pole_stab, expected=0.0, tolerance=0.02,
                      source="Aitken plateau c∞ of (−1)^n·T̂_n stable across "
                             "offsets — simple pole at w = −1, residue c∞")
     ok = all(a.passed for a in wb.assertions)

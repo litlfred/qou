@@ -94,7 +94,7 @@ def main() -> int:
     })
     w.add_assertion(
         "Λ(π/4) = G/2 (exact identity, to numerical precision)",
-        computed=float(mp.fabs(delta_Lambda_vs_G_half / G_over_2)),
+        computed=mp.fabs(delta_Lambda_vs_G_half / G_over_2),
         expected=0.0,
         tolerance=1e-30,
         unit="relative",
@@ -115,7 +115,7 @@ def main() -> int:
     })
     w.add_assertion(
         "Vol(𝓑₃) via Lobachevsky == 8·G (at 100 dps)",
-        computed=float(mp.fabs(delta_B3 / vol_B3_catalan)),
+        computed=mp.fabs(delta_B3 / vol_B3_catalan),
         expected=0.0,
         tolerance=1e-30,
         unit="relative",

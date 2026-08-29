@@ -460,24 +460,24 @@ def main() -> int:
 
     wb.add_assertion(
         "pipeline_tau_is_jones_tl_decomposition",
-        computed=float(dev_jones), expected=0.0, tolerance=1e-40,
+        computed=dev_jones, expected=0.0, tolerance=1e-40,
         source="τ closed form = [4]/[2]³·1 + 1/[2]²·(2−3h⁴−h⁶) exactly "
                "(SU(2)/TL weights, (1³) killed)",
     )
     wb.add_assertion(
         "chi21_closed_form_vs_seminormal",
-        computed=float(dev_chi21), expected=0.0, tolerance=1e-40,
+        computed=dev_chi21, expected=0.0, tolerance=1e-40,
         source="χ^{(2,1)}((σ1σ2⁻¹)³) = 2−3h⁴−h⁶ vs direct Hoefsmit "
                "seminormal matrix product at 50 dps",
     )
     wb.add_assertion(
         "markov_m3_both_conventions",
-        computed=float(dev_m3_J + dev_m3_W), expected=0.0, tolerance=1e-40,
+        computed=dev_m3_J + dev_m3_W, expected=0.0, tolerance=1e-40,
         source="Σ y_λ d_λ = 1 under both Jones/TL and Wenzl weights",
     )
     wb.add_assertion(
         "trace_convention_gap_recorded",
-        computed=float(convention_gap), expected=1.9554e-4, tolerance=1e-6,
+        computed=convention_gap, expected=1.9554e-4, tolerance=1e-6,
         source="|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the "
                "Jones/TL trace, NOT the corpus-canonical Wenzl z-trace",
     )
@@ -503,14 +503,14 @@ def main() -> int:
     )
     wb.add_assertion(
         "scalar_baseline_matches_committed_witness",
-        computed=float(max_base_dev), expected=0.0, tolerance=1e-6,
+        computed=max_base_dev, expected=0.0, tolerance=1e-6,
         source="scalar Jones tower vs borromean-binding-recompute."
                "witness.json per-isotope B_tower (q-string precision "
                "difference only)",
     )
     wb.add_assertion(
         "perlambda_does_not_close_16O",
-        computed=float(max(max_shift, max_shift_w, max_shift_6)),
+        computed=max(max_shift, max_shift_w, max_shift_6),
         expected=0.0, tolerance=0.01,
         source="max per-λ tower shift vs scalar < 1% across all isotopes "
                "and all three collapse-last variants — the ¹⁶O 2.3× "

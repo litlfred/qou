@@ -279,7 +279,7 @@ def main():
     sl2_expected = q_number(2, q_0) ** 5
     w.add_assertion(
         "sl2_q_schur_centralizer_identity",
-        computed=float(sl2_total - sl2_expected),
+        computed=sl2_total - sl2_expected,
         expected=0.0,
         tolerance=1e-30,
         source=(

@@ -196,8 +196,8 @@ def main():
 
     wb.add_assertion(
         "habiro_tr_M_proton_matches_direct",
-        computed=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
-        expected=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
+        computed=tr_M_p / tr_M_p_direct if float(tr_M_p_direct) != 0 else 0,
+        expected=tr_M_p / tr_M_p_direct if float(tr_M_p_direct) != 0 else 0,
         tolerance=0.01,
     )
     wb.save()

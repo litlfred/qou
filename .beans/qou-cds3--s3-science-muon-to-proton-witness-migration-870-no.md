@@ -5,8 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T09:42:17Z
-updated_at: 2026-08-29T08:52:07Z
+updated_at: 2026-08-29T12:36:26Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -322,3 +321,206 @@ qbeta slice of it.
 
 The float64 ratchet was RED first pass and is green only after fixing
 qbeta_exponentiated_per_block_probe.py at the producer. No baseline widened.
+
+
+## 2026-08-29 (LATER) — the INDIRECT class, partitioned
+
+The direct-reader set is done (20/20, PRs #5992 + #6001). What #5989 called
+"~25 whose producers reach muon indirectly" is now measured and split, so the
+remaining work is enumerable rather than a gesture.
+
+**25 muon witnesses over 25 producers whose producer does NOT read
+q-pinning-50-digit.witness.json directly.** They partition:
+
+    13  listed in ideal_muon      -> THE MANIFEST IS THE LEVER
+         binding_via_interface_knot, block_swap_binding, wlambda_q0_continuation,
+         fivetwo_stokes_matrix_zq, gram_norm_binding_probe,
+         habiro_interpolation_wlambda, hadron_knot_table,
+         he3_tritium_cosh_asymmetry_diagnosis,
+         lever1_binding_habiro_single_element_test, theta_jet_gb_grading_probe,
+         + 3 qbeta c_k (see below)
+
+    10  UNLISTED                  -> muon comes from CODE; needs a cone trace
+         canonical_lepton_braid_words, derive_m_p_hecke_full_tower_50dps,
+         f_ell_derivation_via_per_braid_mass_tower, qbeta_c4even_exact_sseries_probe,
+         rho_k_h3a_residual_decomposition, t6_lepton_h3_3channel_convention,
+         t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+         vhat_std_vs_full_tower_compare, xi_ell_phi_q_probe
+
+     2  DUAL-LAYER — do NOT migrate  (see below)
+         canonical_tr_m_via_chi_cache, markov_peel_atomic_witness
+
+**4 are cds1-gated** and must wait for the D re-derivation regardless of which
+bucket they sit in: qbeta_c4even_ladder_reconstruction_probe,
+qbeta_hoefsmit_tbeta_matrix_build_probe, qbeta_jacobi_anger_tower_general,
+qbeta_c4even_exact_sseries_probe.
+
+So the actionable remainder is **10 manifest moves + 10 cone traces**, not 25.
+
+### The 2 dual-layer ones are a ledger gap, not migration work
+
+Both emit ONE WITNESS PER ANCHOR with the muon layer `-muon`-suffixed, and both
+document why in their own source. markov_peel_atomic_witness INVERTS the
+sibling convention deliberately — six consumers of its base name are not
+anchor-aware, so making the base muon would hand them muon values, the very
+straddle the split closes.
+
+**The ledger's dual_layer class listed 2 members; there are 4.** Added the two.
+The originating regex (PR #5500) keys on an assert / a raise / prose demanding
+a muon run — and **a producer that simply writes both layers asserts nothing
+and raises nothing**, so it was structurally invisible. The detector that finds
+them keys on OUTPUT: a producer emitting two witnesses whose q0Anchor values
+DIFFER is dual-layer by construction. Recorded in the class rule.
+
+(My first pass also reported atomic_tr_m_mpfr_50dps as missing. It was not —
+dual_layer.members holds DICTS keyed `producer` and my parser looked for
+`stem`. The ledger was right; the reader was wrong.)
+
+
+## 2026-08-29 — indirect class, first half: 8 migrated, 2 held
+
+PR #6001. ideal_muon 31 -> 22. Each of the 8 verified BEFORE the move to have
+q_parameter reachable in its cone; otherwise the manifest is not the lever.
+
+  binding_via_interface_knot      gram_norm_binding_probe
+  block_swap_binding              he3_tritium_cosh_asymmetry_diagnosis
+  wlambda_q0_continuation         lever1_binding_habiro_single_element_test
+  fivetwo_stokes_matrix_zq        theta_jet_gb_grading_probe
+
+### hadron_knot_table — HELD, cannot be regenerated
+
+Its committed witness reads durationMs: 53, which is what made it look cheap.
+It is not. The three A=1 atoms finish in seconds, then it stalls on DEUTERIUM,
+the first bound atom — exactly what AGENTS.md records. Killed at 1297 s.
+
+Moving it in the manifest without a regenerated witness would leave the
+manifest asserting proton over a muon witness. Entry reverted; stays
+ideal_muon until someone has a route to compute it.
+
+### habiro_interpolation_wlambda — a COMPARISON, and two lessons
+
+Its cone does not reach q_parameter at all, which is what flagged it. Line 389
+loops over BOTH pins and reports the cross-pin swing of F_lambda. Migrating it
+would destroy the measurement.
+
+**`ambiguous` was my first answer and it was the wrong WORD.** Ambiguous means
+UNDETERMINED; this is the opposite — two pins, deliberately, with the
+difference as the result. The vocabulary reserves `comparison` for exactly
+this, producer-declared, because resolve_q0_anchor structurally cannot return
+an intent no manifest lookup can establish.
+
+**🛑 And a manifest entry is SILENTLY INERT for any producer whose
+WitnessBuilder is constructed without a script path.** This one is. It kept
+stamping `muon` through TWO full re-runs while the manifest said `ambiguous`
+and `resolve_q0_anchor(...) == ("ambiguous", None)` agreed. I only found out by
+re-running and watching it ignore both. Fixed by declaring at the producer via
+`q0_comparison(...)`.
+
+That generalises beyond this file and deserves a detector: any producer whose
+builder lacks a script path cannot be steered by the manifest at all, so a
+manifest entry for it is a false record. Not filed as its own bean yet.
+
+### Remaining
+
+  10  unlisted producers needing cone traces
+   4  cds1-gated qbeta c_k
+   1  hadron_knot_table (compute-blocked)
+
+
+## 2026-08-29 — the INDIRECT remainder is mostly NOT migration work
+
+Traced the 10 "unlisted, muon comes from code" producers. The picture changes
+substantially: only **2** are genuine migration candidates.
+
+    6  DERIVE the muon pin from the CAL-2 lepton tower  -> must NOT migrate
+    1  rho_k_h3a_residual_decomposition: muon as an explicit COMPARISON
+    1  qbeta_c4even_exact_sseries_probe: cds1-gated
+    2  derive_m_p_hecke_full_tower_50dps, vhat_std_vs_full_tower_compare
+       -> still genuinely unexplained; the only real remainder
+
+### The 6 compute the anchor rather than reading one
+
+    hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E
+    hbar_q    = sqrt(hbar_q_sq)
+    q0        = 1 / (1 - hbar_q)
+
+That is AGENTS.md's CAL-2 lepton tower verbatim. Re-pinning them to proton is
+not a migration, it is incoherent: the quantity they produce IS the
+muon-anchored one. Added to the ledger as a NEW class,
+`derives_the_muon_pin` (7 classes, 26 members).
+
+  canonical_lepton_braid_words          t6_tau_h5_embedding_probe
+  f_ell_derivation_via_per_braid_mass_tower  t6_three_halves_factor_probes
+  t6_lepton_h3_3channel_convention      xi_ell_phi_q_probe
+
+### 🛑 Why two independent scans both said "no muon route"
+
+A marker scan over the import cone (q_muon_at, pin_value_for_anchor,
+_q0_value_for_anchor, Q0_MUON, the anchor witness, a muon literal,
+QOU_Q0_ANCHOR) finds NOTHING. An upstream-witness scan finds nothing either:
+zero upstreams. Both are correct.
+
+**The route is a MASS RATIO — not a q0 name, not a witness read.** No q0-shaped
+token appears in these files at all. Same shape as the dual_layer gap found an
+hour earlier, where the ledger's originating regex could not see a producer
+that asserts nothing.
+
+I first tested whether they were merely STALE — committed at muon, never
+re-run. They are not: re-running two reproduces muon exactly. That is what
+forced looking past the scans to the source.
+
+### Corroboration, from the opposite direction
+
+Three of the six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+xi_ell_phi_q_probe) are EXACTLY the witnesses that flipped proton -> muon in
+the #5989 drain, where resolve_q0_anchor_payload_first caught them declaring
+proton (the manifest default for an unlisted stem) over a muon computation.
+The two findings explain each other.
+
+### Revised remaining work
+
+    2  genuine unexplained migration candidates
+    4  cds1-gated qbeta c_k
+    1  hadron_knot_table (compute-blocked, stalls on deuterium)
+
+Down from "~25 indirect" to **2**.
+
+
+## 2026-08-29 — INDIRECT class CLOSED at zero migration work
+
+The last two, derive_m_p_hecke_full_tower_50dps and
+vhat_std_vs_full_tower_compare, had no explanation because there is none to
+find: both call `load_q_50dps()` bare, which defaults to anchor="proton", and a
+plain re-run takes each **muon -> proton** with no code and no manifest change.
+Committed at muon before that default flipped; never re-run.
+
+Final partition of the 25:
+
+    13  ideal_muon -> 8 migrated, 1 compute-blocked (hadron_knot_table),
+                      1 comparison (habiro), 3 cds1-gated
+     6  DERIVE the muon pin (CAL-2 lepton tower) -> ledgered, must not migrate
+     2  dual-layer -> ledgered, must not migrate
+     2  STALE -> re-run, now proton
+     1  rho_k_h3a: muon as a COMPARISON reference
+     1  qbeta_c4even_exact_sseries_probe: cds1-gated
+
+Nothing outstanding in the indirect class.
+
+### Stale convention-C docstring on a shared loader, fixed
+
+`load_q_50dps` advertised `z = 1/(q^{1/2}+q^{-1/2})` — convention C. The code
+returns `_markov_z(q)`, convention D via the single definition in
+closed_form_tau_M, whose own docstring explains it deliberately avoids an
+inline respelling because shape-keyed detectors miss those. So the helper is
+exemplary and the docstring one frame above it was left behind. ~33 importers;
+a reader checking the contract at the function they call would conclude C.
+
+### Whole-of-cds3 status
+
+  DIRECT readers    20/20 migrated (PRs #5992 + #6001)
+  INDIRECT class    closed, zero migration work outstanding
+  BLOCKED           4 cds1-gated qbeta c_k; hadron_knot_table (compute)
+  PROTECTED         26 producers across 7 ledger classes
+
+The sweep this bean opened with -- "870 witnesses" -- was 222, of which the
+actionable part is now done except for what cds1 and one long compute gate.

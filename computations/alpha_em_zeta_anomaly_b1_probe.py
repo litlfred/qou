@@ -122,7 +122,7 @@ def main() -> int:
         z0_table[label] = float(mp.re(z))
         print(f"    {label:>22}: Z_Λ(0) = {mp.nstr(z, 12)}   |Z(0)+1| = {float(abs(z+1)):.1e}")
     print(f"    ⇒ max |Z_Λ(0) + 1| = {float(worst):.1e}  (metric-independent −1)")
-    wb.add_assertion("scalar_epstein_Z0_is_minus_one", computed=float(worst),
+    wb.add_assertion("scalar_epstein_Z0_is_minus_one", computed=worst,
                      expected=0.0, tolerance=1e-4,
                      source="Z_Λ(0) = −1 for every flat n-torus (Seeley: a_{n/2}=0, "
                             "dim ker=1); verified n∈{1,2,3,8}, several covolumes")
@@ -149,7 +149,7 @@ def main() -> int:
           f"integer in ζ(0).")
     covolume_in_heat = abs(hc_num - hc_exp) < mp.mpf("1e-3")
     wb.add_assertion("covolume_in_heat_leading_not_in_zeta0",
-                     computed=float(abs(hc_num - hc_exp)), expected=0.0, tolerance=1e-3,
+                     computed=abs(hc_num - hc_exp), expected=0.0, tolerance=1e-3,
                      source="covolume V appears in the leading heat coeff V/(4π)^{n/2} "
                             "(μ-absorbable) — NOT in ζ(0), which is the bare count −b₁")
 

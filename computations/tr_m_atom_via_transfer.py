@@ -242,7 +242,7 @@ def main() -> int:
         )
     w.add_assertion(
         "free_chi_matches_parabolic_lr_50dps",
-        computed=float(free_lr_max), expected=0.0, tolerance=1e-40,
+        computed=free_lr_max, expected=0.0, tolerance=1e-40,
         source="chi_free_via_lr (independent parabolic-LR formula)",
     )
     w.save()

@@ -526,25 +526,25 @@ def main() -> int:
         source="cached ⁶Li H₁₈ atom witness is complete (no max_dim skip)")
     wb.add_assertion(
         "li6_trM_internal_consistency",
-        computed=float(li6_meta["tr_M_consistency_rel"]),
+        computed=li6_meta["tr_M_consistency_rel"],
         expected=0.0, tolerance=1e-30,
         source="Σ y_λ·χ_λ(atom) reproduces the witness's own tr_M_at_q0")
     wb.add_assertion(
         "lr_free_path_validated_at_4He",
-        computed=float(lr_max_rel),
+        computed=lr_max_rel,
         expected=0.0, tolerance=LR_CONVENTION_GAP_TOL,
         source="chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness; "
                "tolerance is the documented sign-only-vs-averaged "
                "convention gap (≤1e-5), which perturbs 𝒜 by ≪ 0.01 %")
     wb.add_assertion(
         "li5_trM_internal_consistency",
-        computed=float(large_meta["5Li"]["tr_M_consistency_rel"]),
+        computed=large_meta["5Li"]["tr_M_consistency_rel"],
         expected=0.0, tolerance=1e-30,
         source="Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0")
     wb.add_assertion(
         "li6_amplification_measured",
-        computed=float(A6["y_dim"]),
-        expected=float(A6["y_dim"]), tolerance=0.0,
+        computed=A6["y_dim"],
+        expected=A6["y_dim"], tolerance=0.0,
         source="MEASURED diagnostic 𝒜(⁶Li) under w = y·dim — recorded "
                "value, self-referential by design (no target smuggling)")
     wb.add_assertion(

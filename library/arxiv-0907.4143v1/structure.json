@@ -1,0 +1,198 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0907.4143v1",
+ "source": {
+  "file": "0907.4143v1.pdf",
+  "sha256": "a2090d1e574b27dbd479637a4057c31e4a46e23696fbb431c9a30d31e5db87dd",
+  "bytes": 235768,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0907.4143",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "23 Jul 2009"
+  },
+  "doi": null,
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars1",
+  "authors_raw": "Chunhua Zhua,b, Guoliang L\u00fcb, Zhaojun Wanga,b and",
+  "title_lines": [
+   "Soft and Supersoft X-ray Sources in Symbiotic",
+   "Stars1"
+  ],
+  "abstract": "Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from \u223c2 to 20 yr\u22121, and \u223c2 to 17 yr\u22121, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210906105223-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The model",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Symbiotic stars",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "X-ray sources",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Basic parameters of the Monte Carlo simulation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Population of X-ray sources",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Properties of X-ray sources",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2835,
+   "n_words": 464
+  },
+  {
+   "id": "sec-001-the-model",
+   "number": null,
+   "title": "The model",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 154,
+   "n_words": 27
+  },
+  {
+   "id": "sec-002-symbiotic-stars",
+   "number": null,
+   "title": "Symbiotic stars",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3097,
+   "n_words": 538
+  },
+  {
+   "id": "sec-003-x-ray-sources",
+   "number": null,
+   "title": "X-ray sources",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2177,
+   "n_words": 363
+  },
+  {
+   "id": "sec-004-results",
+   "number": null,
+   "title": "Results",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 937,
+   "n_words": 171
+  },
+  {
+   "id": "sec-005-basic-parameters-of-the-monte-carlo-simulation",
+   "number": null,
+   "title": "Basic parameters of the Monte Carlo simulation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2182,
+   "n_words": 379
+  },
+  {
+   "id": "sec-006-population-of-x-ray-sources",
+   "number": null,
+   "title": "Population of X-ray sources",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5664,
+   "n_words": 1015
+  },
+  {
+   "id": "sec-007-properties-of-x-ray-sources",
+   "number": null,
+   "title": "Properties of X-ray sources",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 4138,
+   "n_words": 724
+  },
+  {
+   "id": "sec-008-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3875,
+   "n_words": 658
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 25059
+ }
+}

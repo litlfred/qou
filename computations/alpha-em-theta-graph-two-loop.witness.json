@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:53:50.091901+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:05:00.039569+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "evaluator_validated",
@@ -22,7 +22,7 @@
     },
     {
       "name": "dictated_candidate_ratio_recorded",
-      "computed": 1.11969,
+      "computed": "1.11969",
       "expected": 1.12,
       "passed": true,
       "tolerance": "0.05",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 23,
   "computation": "alpha-em-theta-graph-two-loop",
   "scriptFile": "alpha_em_theta_graph_two_loop_probe.py",
-  "scriptHash": "811834e81893",
+  "scriptHash": "8b09435be39f",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

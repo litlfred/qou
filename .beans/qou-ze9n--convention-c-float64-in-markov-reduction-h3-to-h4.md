@@ -1,11 +1,11 @@
 ---
 # qou-ze9n
 title: Convention-C + float64 in markov_reduction_h3_to_h4_verify — cited as Lean keystone evidence
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T09:59:39Z
-updated_at: 2026-08-25T01:38:56Z
+updated_at: 2026-08-29T16:35:03Z
 ---
 
 ## What was found
@@ -167,3 +167,5 @@ have changed it.
 For completeness, this file's `deliberate` verdict was NOT among the seven
 collisions `qou-4bq3` measured — but six other files in the same drain's set
 were, and all six were migrated anyway because each was read.
+
+Closed 2026-08-29: landed in PR #5754. markov_reduction_h3_to_h4_verify::z is registered blocked-on-C-by-design; verified on main today — it is the one row the audit excludes from ACTIONABLE.
