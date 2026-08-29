@@ -1,29 +1,29 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:18:14.533989+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:22:14.940905+00:00",
+  "commitSha": "460ea31fb2958e1936c677828b4d10385f4ed2d3",
   "assertions": [
     {
       "name": "geometric_form_equals_exponential_form_to_50dps",
-      "computed": 9.961246986709384e-71,
+      "computed": "9.96124698670938360426003121997657095875078431795305200854088e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40"
     },
     {
       "name": "N0_observed_residual_within_per_braid_bound",
-      "computed": 0.16920006477069252,
+      "computed": "0.169200064770692530521463926677013707167957682782937302172518",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "c-k-beta-decay-bound",
   "scriptFile": "c_k_beta_decay_witness.py",
-  "scriptHash": "2da665553d35",
+  "scriptHash": "d22d05fa0643",
   "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
