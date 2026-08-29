@@ -106,6 +106,7 @@ export default chapter({
       title: "Color algebra from octonionic stabilization",
       label: "sec:color-algebra",
       blocks: [
+        "octonion-algebra",
         "color-su3-from-g2",
         // Cross-chapter references (blocks live in SM appendix):
         // conj:sm-colour-stabilizer-action — faithfulness of SU(3) on state space
