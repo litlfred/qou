@@ -510,3 +510,61 @@ itself — and returned "0 differences", which is indistinguishable from a real
 agreement.
 
 Probe: `computations/audits/mpmath_version_staleness_probe.py`, 3/3.
+
+## RETRACTION: "Frobenius positivity has no machine-checkable definition"
+
+**That claim was wrong, and I put it to the owner as needing a ruling.**
+`stable-atom.md` (`def:stable-atom`) defines it, and precisely:
+
+> Let `G(q)` be the Frobenius Gram matrix of the primitive Wedderburn-block
+> operators `{e_λ}`. Decompose `T_w = Σ_λ x_λ · e_λ` with `x_λ ∈ ℤ_{≥0}`. The
+> atom is **stable at q** iff `∃ x ∈ ℤ_{≥0}^N` with `G(q) x ≥ 0`
+> coordinatewise.
+
+One grep on the exact phrase found it. I had searched the two properties
+blocks and the ILP block, found the phrase used but not defined there, and
+concluded it was undefined corpus-wide — without grepping the phrase itself
+across `content/`. The definition block was one hop away.
+
+**Two things in that sentence are load-bearing and I dropped both:** the
+inequality is on `G x`, **not** on `x`; and `x` are coordinates in the
+**primitive Wedderburn basis** `{e_λ}`, not the normal-form basis `{T_w}` my
+probe used. So my "naive reading" was not a plausible-but-unconfirmed
+interpretation — it was a different predicate on a different basis.
+
+### Formalised: `QOU.ParticleInteractions.FrobeniusPositivityPredicate`
+
+Sorry-free, `lean`-direct exit 0, zero warnings, `#print axioms` clean on all
+8 declarations.
+
+| declaration | content |
+|---|---|
+| `frobPos_of_entriesNonneg` | `G` entrywise ≥ 0 ⟹ the naive reading is sound |
+| `exists_coordPos_not_frobPos` | ONE negative Gram entry already separates them — witness is the indicator of that column, so they part company on the basis |
+| `coordPos_imp_frobPos_iff_entriesNonneg` | the naive reading is sound for *every* selection vector **iff** `G` is entrywise nonnegative |
+| `naive_reading_unsound_of_neg_entry` | contrapositive, in the form to check |
+| `frobPos_zero` / `_add` / `_smul` | the feasible set is a convex cone |
+| `stableAt_trivial` | the **relaxed** predicate is trivially satisfied for every `G` |
+
+`stableAt_trivial` is a *sharpness* result: the corpus's condition carries
+content only through what the relaxation drops — that `x` be the
+primitive-basis decomposition of the given `T_w` with nonnegative **integer**
+coordinates. A formalisation that omits it proves nothing about stability.
+
+So my probe's verdict (k=1 infeasible for the proton, contradicting
+`categorical-proton-properties.md`) is exactly the unsoundness
+`naive_reading_unsound_of_neg_entry` describes. **The corpus was right.**
+
+### The open item, restated and narrowed — NOT an owner ruling
+
+The predicate is pinned. What is missing to evaluate it for `H_3` is
+**computable, not conventional**:
+
+1. the Frobenius Gram matrix `G(q)` of the primitive Wedderburn-block
+   operators `{e_λ}`, `λ ⊢ k`, `k ≤ k_max`; and
+2. the primitive-basis decomposition of the nucleon normal form, with
+   nonnegative **integer** coordinates.
+
+With those two, the selection rule (`minimize |tr_M|` over the feasible set)
+becomes evaluable, and Lead 2 — the neutron NF table's missing producer —
+unblocks with it.
