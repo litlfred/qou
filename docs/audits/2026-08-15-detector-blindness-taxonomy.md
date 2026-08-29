@@ -34,6 +34,7 @@ question.
 | 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
 | 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
 | 16 | **the expression's SHAPE** — every matcher above | the same value under a sqrt-variable spelling, invisible in the *deliberate* bucket too | 21 sites `convention-c-producer-audit.py` reports in NO bucket (qou-t9r1) |
+| 17 | **the EXEMPTION's shape** — the dispatcher / co-binding test | a two-arm comparison whose D arm is a **call** to the canonical helper, not an inline re-spelling | `he4_body_order_shortfall_location_probe.z_of` counted ACTIONABLE, and `--propose-ledger` would not stub it either (qou-1jny) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -593,6 +594,24 @@ nothing reported. A caller imports a module, not a registry entry.
 3. **A detector needs fixtures that pin its narrowing**, not only its matching.
 4. **Verify the premise of a record before deriving from it.** The registry is
    an input, not an axiom.
+
+### Row 17 is the first that blinds an EXEMPTION rather than a detector
+
+Rows 1-16 are all ways a defect escapes notice. Row 17 is the mirror image: a
+site that IS a labelled comparison fails the test that would have excused it,
+so it is reported as a defect forever and no amount of draining removes it.
+Both failure directions cost the same thing -- a count nobody can act on.
+
+It is also the second recorded case of one house rule blinding another. The
+first (`_is_unit_numerator`, spelling #13) was the NO-FLOAT64 discipline:
+writing `mpf(1)` instead of `1`, as the precision rule requires, made a site
+invisible to the convention detector. This one is the DRY/canonical-helper
+discipline: writing `return markov_z(q)` instead of re-spelling
+`q**3/(q**2+1)` inline -- the maintainable choice, the one that survives the
+next convention migration -- is what made the comparison look like a leak.
+
+When adding an exemption test, ask what a COMPLIANT author would write, not
+only what a careless one would.
 
 ## Provenance
 
