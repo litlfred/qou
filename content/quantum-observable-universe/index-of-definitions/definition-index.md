@@ -1109,7 +1109,7 @@
 | [conj:lqg-entropy-qdim-partition-pole](#conj:lqg-entropy-qdim-partition-pole) | Horizon entropy as the $q$-dimension partition-function pole | Ch 13 | `qou:QOU.GravitySpacetime.LQGEntropyQDimPartitionPole` |
 | [conj:infinitesimal-frobenius](#conj:infinitesimal-frobenius) | Infinitesimal Frobenius pairing: $\int_A \circ \mu = \mathrm{id} + O(\varepsilon)$ | Ch 26 | `qou:QOU.AppendixSurreals.InfinitesimalFrobenius` |
 | [conj:infinitesimal-observability](#conj:infinitesimal-observability) | Infinitesimal observability: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.InfinitesimalObservability` |
-| [conj:vacuum-epsilon](#conj:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\unicode{9737}) = \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.VacuumEpsilon` |
+| [conj:vacuum-epsilon](#conj:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\bigcirc) = \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.VacuumEpsilon` |
 | [conj:inter-nucleon-channel-color-tube](#conj:inter-nucleon-channel-color-tube) | Inter-nucleon Hecke channel assignment from Bring color-tube weighting | Ch 6 | `qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube` |
 | [conj:single-volume-irrationality](#conj:single-volume-irrationality) | Irrationality of a single hyperbolic knot volume | Ch 14 | `qou:QOU.Archimedean.SingleVolumeIrrationality` |
 | [conj:hecke-anyonic-substrate](#conj:hecke-anyonic-substrate) | Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation | Ch 10 | `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` |
