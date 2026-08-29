@@ -119,7 +119,7 @@ downstream that builds a witness.
 
 ---
 
-## Also observed — `q_ns_wellposedness` prose contradicts its own code
+## Also observed — `q_ns_wellposedness` prose contradicted its own code (**FIXED, same session**)
 
 [`lean/QOU/FluidDynamics/q_ns_wellposedness.lean`](../../content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean)
 carries a "Disposition (integrity)" section stating that the self-assuming
@@ -143,3 +143,38 @@ the honest disposition and finds the forbidden one.
 
 The history is shallow-cloned here, so which encoding came first is **not
 established** and is not claimed.
+
+### Fix applied
+
+Rather than restore the `sorry`, the file was **de-abstracted**: the single
+conclusion-typed field was split by what each conjunct actually needs.
+
+Two of the block's three properties do not require any q-NS-specific
+infrastructure — given the evolution's own differential inequalities they are
+Grönwall comparisons. They are now proved, in
+[`q_ns_energy_and_decay.lean`](../../content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_energy_and_decay.lean):
+
+| block property | before | after |
+|---|---|---|
+| existence + uniqueness | assumed (inside the monolith) | `existence_uniqueness` — **assumed**, and now visibly the only substantive input |
+| (i) smoothness | assumed | `smooth_of_isSolution` — **assumed** |
+| (ii) energy inequality | assumed | `q_ns_energy_inequality` — **proved** from the pointwise balance `E' + 2ν_q D ≤ 0` |
+| (iii) `Δ_q`-spectral decay | assumed | `q_ns_spectral_decay` — **proved** from `d/dt|v̂_k| ≤ −ν_q [k]_q² |v̂_k|` |
+
+Both lemmas are stated for a bare real trajectory, so they carry no q-NS
+commitments and cannot reintroduce the conclusion: the hypothesis is the
+pointwise *rate* statement (about the equations), the conclusion is the
+*integrated* bound (what the block claims). Built on Mathlib's
+`le_gronwallBound_of_liminf_deriv_right_le` and `gronwallBound_ε0`.
+
+Verified `lean`-direct, exit 0; `#print axioms` on all five new/changed
+declarations shows only `propext`, `Classical.choice`, `Quot.sound` — no
+`sorryAx`. No field of the class is or implies either derived conclusion, and
+`grep` finds no consumer of the removed field anywhere in `content/` or
+`docs/`, so the blast radius was nil.
+
+What is still assumed is exactly the open problem and no more: that a solution
+exists, is unique, and is smooth. `qou-t28w` (tier B, infra-blocked) therefore
+narrows from "the whole theorem" to "global existence, uniqueness and
+regularity" — the Millennium-adjacent core, which is untouched and remains
+open.

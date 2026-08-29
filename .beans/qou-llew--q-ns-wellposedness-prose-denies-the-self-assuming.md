@@ -1,11 +1,11 @@
 ---
 # qou-llew
 title: 'q_ns_wellposedness: prose denies the self-assuming projection it contains'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:40:02Z
-updated_at: 2026-08-29T16:40:43Z
+updated_at: 2026-08-29T17:51:51Z
 ---
 
 `lean/QOU/FluidDynamics/q_ns_wellposedness.lean` carries a "Disposition
@@ -32,3 +32,11 @@ Scope: fix the docstring to describe the file, and re-title/close the two stale
 beans. Whether to convert the projection back to a cited `sorry` is the author's
 call — it is a Millennium-adjacent claim either way (`qou-t28w` tier B,
 infra-blocked).
+
+**RESOLVED same session.** Fixed by de-abstraction rather than by restoring
+the sorry: the conclusion-typed field `wellposedness_holds` is gone, replaced by
+`existence_uniqueness` + `smooth_of_isSolution` (the genuinely open inputs) and
+the equations. Properties (ii) and (iii) are now proved from those equations via
+the new `q_ns_energy_and_decay.lean` Gronwall lemmas. The integrity docstring
+now describes the file it is in. lean-direct exit 0, no sorryAx, no consumers of
+the removed field.
