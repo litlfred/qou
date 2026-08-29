@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T10:04:54Z
+updated_at: 2026-08-29T11:09:27Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -82,3 +82,41 @@ The excess is entirely computations/_deprecated (74) and the generated
 qou-mass mirror (1), both out of scope. This bean 883/300 is right and
 reproduces exactly. Recorded rather than quietly dropped — the failure mode all
 session has been adopting whichever number agreed with me.
+
+BUCKET B MEASURED 2026-08-29 (PR #5996) — IT IS THREE JOBS, AND THE BIGGEST IS
+NOT A PRECISION FIX AT ALL.
+
+291 fields over 58 producers. Split by what the producer actually is:
+
+    15 producers  import mpmath but never raise mp.dps
+                  -> plausibly mechanical: add set_compute_dps(), verify the
+                     mpf actually flows, and they become bucket A.
+    43 producers  NO MPMATH AT ALL — float64 end to end.
+                  -> not a serialization or dps problem. "Fixing" one means
+                     RE-DERIVING the computation in mpmath, per producer,
+                     changing values that feed real claims.
+
+The float64 constants they pull: q_parameter (38), experimental_constants
+(16), codata_constants (12), codata_table (1). Those modules export plain
+floats BY DESIGN — the corpus pattern for wanting precision is mpf(str(CONST))
+at the call site (binding_link_volumes.py:111,
+option_e_v8_hecke_involution_isospin_mirror.py:43).
+
+FOR THE 43, THE CORPUS ALREADY DEFINES THE HONEST OUTCOMES and none is a
+sweep:
+  1. port to mpf — real work, per producer, moves values;
+  2. declare precision_tier AND deprecate — note the audit is explicit that
+     'precision_tier: "float64" alone excuses nothing', so a producer cannot
+     self-excuse (witness_raw_float64_audit.py:311-332). main landed one of
+     these on 2026-08-29: 4f246d4320 'the four H_9 A-operator extracts are
+     float64 by measurement';
+  3. establish float64 is adequate for what the producer claims, and say so.
+
+Worked case for (3): channel_product_mass.py is the #1 offender at 64 fields,
+and its assertion tolerance is 2% of the observed mass. Precision is not the
+binding constraint there by ~14 orders of magnitude. Draining it would change
+64 numbers and improve nothing that any claim rests on.
+
+RECOMMENDATION (judgement, not a finding): do the 15, and treat the 43 as a
+separate bean. Folding a mathematical re-derivation into a drain labelled
+'remove float casts' is the same smuggling the zero-gain rule already refuses.
