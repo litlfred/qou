@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:06:11.231235+00:00",
-  "commitSha": "459d3f91324db31ce4f08b6cbbe50d812c626927",
+  "computedAt": "2026-08-29T07:37:49.699122+00:00",
+  "commitSha": "f79afa92a40c91f652901340a441b8d0d64f153f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 311903,
+  "durationMs": 315755,
   "computation": "qbeta-delta-net-four-values",
   "scriptFile": "qbeta_delta_net_four_values_probe.py",
-  "scriptHash": "eaed04665a21",
-  "scriptCommitSha": "459d3f91324db31ce4f08b6cbbe50d812c626927",
+  "scriptHash": "4c9cbc2579b2",
+  "scriptCommitSha": "f79afa92a40c91f652901340a441b8d0d64f153f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -91,10 +91,15 @@
     "the_residual_is_real_but_its_shape_is_rounding_limited": true,
     "the_residual_sits_in_the_two_LOOSEST_quoted_components": true,
     "blocker": "neutron NF vector recorded only to 4 dp",
+    "hecke_deltatrM_max_over_all_z": "-0.103412421103889076763000166929962191148884263404354028569693",
+    "gamma_gamma_step6_target": "0.0445860283000000000000000000000000000000000000000000127797582",
+    "the_10_digit_anchor_EXCLUDES_hecke_core_at_EVERY_z": true,
+    "constructed_z_reaching_anchor": "0.498365626911747247723480047925041979412851768218155661786887",
+    "the_constructed_model_reaches_the_anchor_near_z_C": true,
     "scope": "a",
     "adjudicates": false,
-    "checks_passed": 15,
-    "checks_total": 15
+    "checks_passed": 17,
+    "checks_total": 17
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
