@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-29T16:28:38Z
-updated_at: 2026-08-29T17:57:53Z
+updated_at: 2026-08-29T18:25:49Z
 ---
 
 TURN 1 (2026-08-29). Reviewed the arc against main -- main's collatz substance is IDENTICAL to the working tree (only .qa.json sidecar churn differs on those paths), so 'lots landed on main' is true corpus-wide but did not move this arc. What HAD moved is the arc's own record: six beans listed as open work that had already landed. Refreshed all six (commit 4c8d75a98a) and opened + landed the successor chip qou-rcgi (commit 13d3d51bbb, PR #6042).
@@ -25,3 +25,11 @@ REVISED live gap order for the arc:
 3. Multi-window generalisation of the general-word forcing (qou-rcgi).
 4. Wire the arc's library .lean files to content blocks as a class -- needs the folio-assistant pipeline, absent in this container.
 5. The general word / q-Steiner. Open, and open classically.
+
+TURN 6-7. Landed: orbit-level compositions (qou-rcgi follow-on list now empty), and then the arc's most useful negative -- qou-n3xf, which MEASURES the height criterion's coverage over all 2^k words (k<=18) and then PROVES the criterion is empty at the critical ratio. That bounds the entire height approach: no extension of it can reach cycle candidates.
+
+ARC STATUS. Nothing bounded remains. The three open items are all research and all now sharply stated:
+1. An invariant surviving at 2^k ~ 3^m (the cycle question). qou-n3xf says the q=1 height is not it, and says why.
+2. A non-valuation descent measure on D_inf (the convergence question). qou-4atn says no valuation is it, and says why -- descent_measure_pos_off_target forces strict positivity off the attractor.
+3. The Connes / Hattori-Stallings computation for C11 (qou-7kfp localised it to one equation).
+Each of the three now has a proved statement of what will NOT work, which is the durable product of this session.
