@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T10:14:39Z
+updated_at: 2026-08-29T10:18:14Z
 ---
 
 ## Summary
@@ -110,3 +110,75 @@ but whether the singlet's SIGN BEHAVIOUR under tube exchange is what mu-bar
 supplies.
 
 Run that before investing further in the route.
+
+
+## The falsification test was RUN. Result: the question is now well-posed, and sharper.
+
+I said the next step was to check whether the corpus's colour-state construction
+reads the singlet's sign off mu-bar. It does not -- it reads it off an
+ASSUMPTION, and that assumption is exactly what mu-bar could supply.
+
+### What the corpus already has
+
+`prop:baryon-product-from-alt` (predicted-spectra, Lean sibling
+baryon-product-from-alt.lean):
+
+- S_3 acts on the THREE COLOUR SHEETS by permutation
+- Wedderburn: R[S_3] = trivial (+) sign (+) standard
+- lambda_baryon(z) := prod_k dc_k/dz IS THE PROJECTION ONTO THE Alt^3 (SIGN)
+  ISOTYPE
+- and then, verbatim: "The quark-color content of the baryon SELECTS the Alt
+  isotype. This selection fixes the integrand up to a scalar."
+
+SELECTS. The Alt choice is an input there, which is item 7's complaint appearing
+in a second place.
+
+### The two S_3's are the same one -- checked, not assumed
+
+This was the conflation risk and it is the thing I checked before writing
+anything down:
+
+  color-tube-cubic.md      roots are the colour tube coordinate
+                           c in {r_z, g_z, b_z}
+  bring-trefoil-...md      "the colour-tube cubic's three sheets (r,g,b)"
+  photon-channel-...md     "Its three roots are the three quark color charges"
+  borromean-quark.md       unknots nu_r, nu_g, nu_b localize IN the red, green,
+                           blue colour tubes
+
+Same three tubes, same labels (r,g,b). The cubic's roots are the tubes'
+coordinates; the Borromean components are the unknots threaded through those
+same tubes. So the S_3 permuting sheets and the S_3 permuting link components
+are one group acting on one set of three objects.
+
+### Where that leaves it
+
+TWO one-dimensional sign-isotype objects for the SAME S_3 on (r,g,b):
+
+  lambda_baryon = prod dc_k/dz    Alt^3 projection   ASSUMED to be selected
+  mu-bar_123                      sign line          PROVED antisymmetric
+
+### The remaining question, now well-posed
+
+They are not the same object -- lambda_baryon is built from SHEET VELOCITIES
+(base/geometric), mu-bar from LINKING of the threaded unknots (fibre). So this
+is still an identification, not a theorem. But the question has changed from the
+vague
+
+  "is colour carried by mu-bar?"
+
+to the sharp
+
+  "does the Alt selection that prop:baryon-product-from-alt STATES AS AN INPUT
+   follow from mu-bar's PROVED antisymmetry, or are these two independent facts
+   that happen to agree because both are sign-isotypes of the same S_3?"
+
+That is answerable, and answering it either derives item 7's input or kills the
+route. Both outcomes are worth having.
+
+### Honesty note
+
+A one-dimensional sign isotype is UNIQUE up to scalar, so any two sign-valued
+objects for the same S_3 are proportional. That is nearly trivial and is NOT by
+itself the derivation -- it does not say the physics of one is the physics of
+the other. Do not let the uniqueness be mistaken for the identification; it is
+the reason the two agree, not evidence that one causes the other.
