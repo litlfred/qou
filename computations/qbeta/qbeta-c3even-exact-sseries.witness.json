@@ -2,7 +2,7 @@
   "description": "EXACT-rational s-series extraction of the net-route (bar-even) ladder rungs c_2^even, c_3^even — the measurement gated by the 1jrh AW one-recurrence formalize-first prune. Supersedes the mp.taylor instability that blocked c_3+ in qbeta-ck-sseries-operator-match. auditOnly; no production wiring; no fit.",
   "audit_only": true,
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "series_order": 8,
     "KC": 3
   },
@@ -37,12 +37,12 @@
     }
   ],
   "allPassed": false,
-  "scriptHash": "af310a672f84",
-  "scriptCommitSha": "e74801bfbfd8f0c35f54c297a7b377b9ef5d4500",
-  "commitSha": "897bfa7b5676eba8a8c65ac13dc04e0bc7b93513",
+  "scriptHash": "416240070fda",
+  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
+  "commitSha": "92d46000f691a683917a23310b049548e9f2a091",
   "engine": "sympy",
-  "computedAt": "2026-08-29T00:14:48.556716+00:00",
-  "durationMs": 382581,
+  "computedAt": "2026-08-29T10:20:26.604772+00:00",
+  "durationMs": 287593,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

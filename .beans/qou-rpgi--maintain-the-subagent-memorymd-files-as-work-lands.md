@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:24:44Z
-updated_at: 2026-08-29T10:25:12Z
+updated_at: 2026-08-29T10:58:40Z
 parent: qou-j5jq
 ---
 
@@ -26,3 +26,22 @@ Keep MEMORY.md under 200 lines — it is the injected entry point. Split detail
 into sibling files the agent reads on demand;
 `.claude/agent-memory/compute-precision-auditor/producer-health.md` is the
 worked example.
+
+**First firing, 2026-08-29** — one turn after this bean was created.
+
+`qou-961o` landed (`ae8098c3`), renaming the three convention-C `markovZ`.
+That staled `convention-auditor`'s markovZ BASELINE exactly as designed. Re-ran
+`scripts/lean-markov-convention-audit.py` rather than copying main's prose, and
+the re-measurement found something the rename's own resolution note missed:
+
+**`markovZC` (upper C) is convention C; `markovZc` (lower c) is convention D.**
+One letter's case, opposite meanings, `0.4993203342` vs `0.6126880371` at the
+proton q₀. `AGENTS.md` line 2060 claimed "one convention, no collision" — that
+is measurably false and is corrected on this branch.
+
+Recorded as a TRAP; baseline refreshed; `q0-pin-migration.md` split out to keep
+MEMORY.md inside the 200-line injection cap.
+
+Merged as #6010 (5ed07e4). Bean returns to `todo` — this is a standing obligation, not a task that completes.
+
+Left open for the author: whether `markovZc` or `markovZC` is the one to rename. Flagged on #5999, not actioned.

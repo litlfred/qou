@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:22:57.344904+00:00",
-  "commitSha": "7af52d17f8206141b583fd416fd5c18168a75d63",
+  "computedAt": "2026-08-29T10:13:26.296951+00:00",
+  "commitSha": "92d46000f691a683917a23310b049548e9f2a091",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "ab-methodology-metrics",
   "scriptFile": "ab_methodology_metrics.py",
-  "scriptHash": "e0393f16c392",
-  "scriptCommitSha": "ef9280085ecd818de817a8e8990a91c5554f9e44",
+  "scriptHash": "5c7e078c7040",
+  "scriptCommitSha": "865ab46c3f4ecade9794437c1166fd19259dc858",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,7 +20,6 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "825fe60e51bf0442"
@@ -92,7 +91,7 @@
         "n_blocks": 68,
         "M1_pass_pct": "100.000000000000000000000000000000000000000000000000000000000",
         "M1_n": 1,
-        "M2_mean_score": "0.849999999999999977795539507496869191527366638183593750000000",
+        "M2_mean_score": "0.850000000000000000000000000000000000000000000000000000000000",
         "M2_n": 3,
         "M4_median_revisions_to_green": "1.00000000000000000000000000000000000000000000000000000000000",
         "M5_pass_pct": "69.8412698412698412698412698412698412698412698412698412698413"
