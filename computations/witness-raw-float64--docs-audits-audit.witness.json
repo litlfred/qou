@@ -41,8 +41,10 @@
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "577549623ef8",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "354099160e362ac9eff65f4feeff0d879fe2ffa1",
+  "commitSha": "50d5efbfaaf4b3fad514f41b16324d551d9fd2e2",
   "engine": "python",
-  "computedAt": "2026-08-29T03:31:27.923623+00:00",
-  "durationMs": 0
+  "computedAt": "2026-08-29T05:50:37.684425+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
