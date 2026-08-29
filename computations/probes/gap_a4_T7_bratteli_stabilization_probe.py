@@ -243,7 +243,7 @@ def main():
 
     w.add_assertion(
         "chi_21_recovers_dim_at_q1",
-        computed=float(sanity["chi_21_at_q1"]),
+        computed=sanity["chi_21_at_q1"],
         expected=2.0,
         tolerance=1e-30,
         source=(
@@ -253,7 +253,7 @@ def main():
     )
     w.add_assertion(
         "bratteli_ratio_5_over_4",
-        computed=float(bratteli["chi_ratio_H_over_Borromean"]),
+        computed=bratteli["chi_ratio_H_over_Borromean"],
         expected=1.25,
         tolerance=1e-30,
         source=(

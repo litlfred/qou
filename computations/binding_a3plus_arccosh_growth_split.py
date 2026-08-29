@@ -243,7 +243,7 @@ if "3He" in results["V1_rot_plus_growth"]:
     he3_v1_rel_err = mp.mpf(results["V1_rot_plus_growth"]["3He"]["rel_err"])
     wb.add_assertion(
         "he3_v1_rotation_plus_growth_does_not_close",
-        computed=float(he3_v1_rel_err * 100),
+        computed=he3_v1_rel_err * 100,
         expected=120.6,
         tolerance=10.0,
         source=(
