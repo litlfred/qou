@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T08:34:20Z
+updated_at: 2026-08-29T10:00:25Z
 ---
 
 
@@ -450,3 +450,5 @@ corpus checked at the source. Status:
   measured C is not a proved C; no fake closure.
 
 2026-08-29 (tail half + ingested lit): owner ingested 10 kernel-rate papers (commit f45f79c8 -> library/). TAIL half of the effective variance bound is now Olver-FREE + CITABLE: Johansson 2001 (arxiv-math-9906120v3) Lemma 3.9 gives explicit super-exp Bessel decay past the edge; poly weight x super-exp kernel => TAIL(K) <= poly(theta) exp(-K^{3/2}/4) = o(theta^-A). Measured (tail_bulk_split.py, no float64): tail/V_A drops 1.8e-2 -> 4e-20 across K=1..10, super-exp, below the theta^-1 remainder by K=3-4. De-poissonization citable too (Johansson Lemma 3.8, C/N^2). Bulk sine-kernel RATE machinery now in-corpus: Gorbunov sm10137 (Berry-Esseen for Bessel-kernel DPP via Kac-Akhiezer + Borodin-Okounkov Toeplitz), continuous analogue of the discrete Toeplitz case; needs application to the discrete Plancherel descent variance (an analytic step, not a missing citation). Wall reduced from 'no rate in corpus' to 'bulk application step'. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-tail-half-and-ingested-kernel-rate-lit.md. Gap OPEN, materially narrowed.
+
+2026-08-29 (formalize-first, cited): added the 4 literature citations to references.ts (borodin-okounkov-olshanski2000, johansson2001, gorbunov2024; ivanov-olshanski2003 already there) and a Lean carrier M1DescentDPPConvergence.lean (sorry-free, lean-direct exit 0, #print axioms clean). class DescentDPPMarginConvergence (Prop, content-bearing Filter.Tendsto to the exact limits + strict leading gap, CITED, NO instance) + sorry-free theorems cs_margin_eventually and m1_pos_eventually deriving eventual M_1>0 from the assumed convergence via the CS core. Honest: axiomatizing the cited results is assuming them; the bulk-rate step stays open; eventual->all-n closed by gorbunov2024 explicit threshold + exact table via the existing m1_pos_all_of_base_and_tail. NOT a proof. Gap OPEN.
