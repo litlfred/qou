@@ -1,4 +1,5 @@
 import QOU.MathlibExt.WenzlSchurElement
+import QOU.MathlibExt.WenzlSchurElementBridge
 import Mathlib.Algebra.Polynomial.Roots
 
 /-!
@@ -70,5 +71,43 @@ theorem powers_infinite (Q : ℝ) (hQ : 1 < Q) :
     · rintro ⟨n, rfl⟩; exact ⟨n, rfl⟩
   rw [hset]
   exact Set.infinite_range_of_injective hmono.injective
+
+open QOU.MathlibExt.WenzlSchurElement
+open QOU.MathlibExt.QPartitionCombinatorics
+open Polynomial
+
+/-- Polynomial-in-`X` lift of a single cell factor. `cellFactor Q X λ i j` has
+`X` only in the numerator `(1 − X·Q^{c})`; the denominator `(1 − Q^{h})` is
+`X`-free and enters as the constant `C ((1 − Q^{h})⁻¹)`. -/
+noncomputable def cellFactorPoly (Q : ℝ) (lam : Partition) (i j : ℕ) : ℝ[X] :=
+  C ((1 - Q ^ (Partition.hookLength lam i j))⁻¹)
+    * (C 1 - C (Q ^ (WenzlSchurElement.cellContent i j)) * X)
+
+/-- Polynomial-in-`X` lift of the whole Schur element: `Q^{n(λ)}` (constant) times
+the row/cell product of the `cellFactorPoly`s. -/
+noncomputable def schurElementPoly (Q : ℝ) (lam : Partition) : ℝ[X] :=
+  C (Q ^ (nLambda lam))
+    * ∏ i ∈ Finset.range lam.length,
+        ∏ j ∈ Finset.range ((lam[i]?).getD 0), cellFactorPoly Q lam i j
+
+/-- **Brick 2 — the polynomial lift is faithful.** Evaluating `schurElementPoly`
+at `X₀` recovers `schurElement Q X₀ λ`. This makes `schurElement Q · λ` a genuine
+polynomial in its second argument, the premise the identity-theorem route needs. -/
+theorem eval_schurElementPoly (Q X0 : ℝ) (lam : Partition) :
+    (schurElementPoly Q lam).eval X0 = schurElement Q X0 lam := by
+  rw [QOU.MathlibExt.WenzlSchurElementBridge.schurElement_eq_finset_prod]
+  unfold schurElementPoly
+  rw [Polynomial.eval_mul, Polynomial.eval_C]
+  congr 1
+  rw [Polynomial.eval_prod]
+  apply Finset.prod_congr rfl
+  intro i _
+  rw [Polynomial.eval_prod]
+  apply Finset.prod_congr rfl
+  intro j _
+  unfold cellFactorPoly cellFactor
+  simp only [Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_sub,
+    Polynomial.eval_X]
+  ring
 
 end QOU.MathlibExt.MacdonaldTelescopeGeneralX
