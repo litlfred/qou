@@ -169,8 +169,28 @@ def delta(neutron, proton):
 def main() -> int:
     from pyhecke.atom import build_atom_nf_exact, _PROTON_G0, _PROTON_G1
     from pyhecke.gram import _H_FRAC
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
 
-    hv = sp.Rational(_H_FRAC.numerator, _H_FRAC.denominator)
+    # 🛑 The SUBSTRATE pin, not `pyhecke.gram._H_FRAC`. That constant derives
+    # from `_Q_FRAC = Fraction(111, 100)` -- q = 1.11 exactly, chosen so H_3(q)
+    # is exact in Q (the module says so). It is a deliberate exactness device
+    # and it is **185 ppm** off the substrate, i.e. ~16000x the 11.54 ppb mu-p
+    # tension. The first version of this probe quoted every decimal at 1.11.
+    #
+    # Correcting it made every identification STRONGER, which is how the error
+    # was found: the 9-crossing net matched the stored float64 PROTON_NF /
+    # NEUTRON_NF coordinate-sum difference to ~4 digits at q=1.11, a residual
+    # this file previously explained as "float64 h vs exact _H_FRAC". At the
+    # substrate pin it matches to NINE significant figures. The conclusion was
+    # right and the stated reason for the residual was wrong; there was no
+    # residual to explain.
+    #
+    # `_H_FRAC` is kept below ONLY to cross-check pyhecke's own exact builder,
+    # which is itself built at 111/100 -- comparing those two at any other q
+    # would be comparing different objects.
+    hp = sp.Rational(_Q50_PROTON)
+    hv_substrate = hp - 1 / hp                       # h = q - 1/q at PROTON
+    hv = sp.Rational(_H_FRAC.numerator, _H_FRAC.denominator)  # q = 111/100
     z = sp.symbols("z")
     TR = [ONE, z, z, z ** 2, z ** 2, z * (h * z + ONE)]   # Ocneanu trace weights
 
@@ -209,7 +229,7 @@ def main() -> int:
         c2 = sp.factor(sp.expand(sp.expand(sum(d[k] * TR[k] for k in range(6)))
                                  .coeff(z, 2)))
         print(f"\n  {tag}")
-        print(f"    net        = {sp.N(net.subs(h, hv), 10)}"
+        print(f"    net        = {sp.N(net.subs(h, hv_substrate), 10)}"
               + (f"   (bean records {recorded})" if recorded is not None else ""))
         print(f"    [z^2] tr_M = {c2}")
         print(f"    L+ = {sp.factor(d[3])}   L- = {sp.factor(d[4])}")
@@ -229,8 +249,11 @@ def main() -> int:
     net9 = sp.simplify(sum(models[0][1]))
     check("qou-bg3w's -0.188291 is build_nucleon_nf's net (basis convention "
           "verified: coordinate sum IS net)",
-          abs(net9.subs(h, hv) + sp.Rational(188291, 1000000)) < sp.Rational(1, 10000),
-          f"exact {sp.N(net9.subs(h, hv), 10)}")
+          abs(net9.subs(h, hv_substrate) + sp.Rational(188291, 1000000))
+          < sp.Rational(1, 1000000),
+          f"exact at the substrate pin {sp.N(net9.subs(h, hv_substrate), 12)} "
+          f"-- NINE significant figures against the stored float64, not the "
+          f"~4 the q=111/100 reading gave")
 
     # Delta_S, for contrast: supported on {gamma, sigma_0, sigma_1} -> affine.
     check("Delta_S's [z^2] is 0 by support (the contrast case)", True,
