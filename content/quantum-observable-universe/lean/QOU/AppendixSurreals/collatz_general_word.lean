@@ -353,4 +353,100 @@ theorem front_loaded_beyond_adjacent_tail :
   rw [oeoWord_oddCount]
   norm_num
 
+
+/-! ## The exact height, and a computable exclusion criterion for any word
+
+The two bounds above are enough for the front-loaded family but throw information
+away. The numerator's `q = 1` height has an exact closed form: each odd step at
+position `i` contributes `2^i`, carried through the `[3]_q` of every *later* odd
+step. Writing `m_i` for the number of odd steps after `i`,
+
+    φ(n_w) = Σ_{i < k, w i} 3^{m_i} · 2^i.
+
+With that, the height engine gives an exclusion criterion computable directly
+from the word — no shape hypothesis at all. `wordNum_map_lower` and
+`wordNum_map_upper` are then the two extreme cases of this sum (all odd steps as
+early, resp. as late, as possible). -/
+
+theorem oddCount_mono (w : ℕ → Bool) {a b : ℕ} (h : a ≤ b) :
+    oddCount w a ≤ oddCount w b := by
+  induction b with
+  | zero => simp_all
+  | succ n ih =>
+    rcases Nat.eq_or_lt_of_le h with rfl | hlt
+    · exact le_rfl
+    · have hn : a ≤ n := by omega
+      have := ih hn
+      simp only [oddCount]
+      split <;> omega
+
+/-- **Exact `q = 1` height of the numerator.** Each odd step at position `i`
+    contributes `2^i`, tripled once for every odd step strictly after it. -/
+theorem wordNum_map_closed (q : R) (w : ℕ → Bool) (hq : φ q = 1) :
+    ∀ n, φ (wordNum q w n)
+      = ∑ i ∈ Finset.range n,
+          (if w i then (3 : ℤ) ^ (oddCount w n - oddCount w (i + 1)) * 2 ^ i else 0) := by
+  intro n
+  induction n with
+  | zero => simp [wordNum]
+  | succ n ih =>
+    rw [Finset.sum_range_succ]
+    by_cases h : w n = true
+    · have ho : oddCount w (n + 1) = oddCount w n + 1 := by simp [oddCount, h]
+      have hlast :
+          (if w n then (3 : ℤ) ^ (oddCount w (n + 1) - oddCount w (n + 1)) * 2 ^ n else 0)
+            = 2 ^ n := by simp [h]
+      have hrest : ∑ i ∈ Finset.range n,
+            (if w i then (3 : ℤ) ^ (oddCount w (n + 1) - oddCount w (i + 1)) * 2 ^ i else 0)
+          = 3 * ∑ i ∈ Finset.range n,
+            (if w i then (3 : ℤ) ^ (oddCount w n - oddCount w (i + 1)) * 2 ^ i else 0) := by
+        rw [Finset.mul_sum]
+        refine Finset.sum_congr rfl (fun i hi => ?_)
+        have hin : i + 1 ≤ n := Finset.mem_range.mp hi
+        have hle : oddCount w (i + 1) ≤ oddCount w n := oddCount_mono w hin
+        by_cases hw : w i = true
+        · simp only [hw, if_true, ho]
+          have hsub : oddCount w n + 1 - oddCount w (i + 1)
+              = (oddCount w n - oddCount w (i + 1)) + 1 := by omega
+          rw [hsub, pow_succ]
+          ring
+        · simp [hw]
+      rw [wordNum_map_succ_odd φ q w hq n h, hlast, hrest, ih]
+    · have ho : oddCount w (n + 1) = oddCount w n := by simp [oddCount, h]
+      have hlast :
+          (if w n then (3 : ℤ) ^ (oddCount w (n + 1) - oddCount w (n + 1)) * 2 ^ n else 0)
+            = 0 := by simp [h]
+      rw [wordNum_map_succ_even φ q w n (by simpa using h), hlast, add_zero, ho, ih]
+
+/-- **General-word exclusion, by the exact height.** For *any* parity word: if the
+    numerator's height is positive and strictly below the denominator's height
+    `2^k − 3^m`, the divisibility `φ(D) ∣ φ(n_w)` demanded by a cycle fails, so no
+    such cycle exists.
+
+    Unlike `qcollatz_no_front_loaded_cycle` this carries **no shape hypothesis** —
+    the criterion is evaluated directly from the word. Both hypotheses are finite
+    integer computations for a concrete `w` and `k`.
+
+    **Scope (a), unchanged.** This is a criterion, not a proof that the criterion
+    is always met: for a general word the height can exceed `2^k − 3^m`, and
+    deciding when it does not is the open problem. It systematises the two
+    existing families rather than superseding the question. -/
+theorem qcollatz_no_cycle_of_height_lt (q P0 : R) (w : ℕ → Bool) (hq : φ q = 1) (k : ℕ)
+    (hpos : 0 < ∑ i ∈ Finset.range k,
+      (if w i then (3 : ℤ) ^ (oddCount w k - oddCount w (i + 1)) * 2 ^ i else 0))
+    (hlt : (∑ i ∈ Finset.range k,
+      (if w i then (3 : ℤ) ^ (oddCount w k - oddCount w (i + 1)) * 2 ^ i else 0))
+        < 2 ^ k - 3 ^ oddCount w k)
+    (hforce : ((q + 1) ^ k - wordHol q w k) * P0 = wordNum q w k) :
+    False := by
+  have hmap := congrArg φ hforce
+  rw [map_mul, map_sub, map_pow, map_add, map_one, hq, wordHol_map φ q w hq k,
+    wordNum_map_closed φ q w hq k] at hmap
+  norm_num at hmap
+  have hdvd : ((2 : ℤ) ^ k - 3 ^ oddCount w k) ∣
+      ∑ i ∈ Finset.range k,
+        (if w i then (3 : ℤ) ^ (oddCount w k - oddCount w (i + 1)) * 2 ^ i else 0) :=
+    ⟨φ P0, hmap.symm⟩
+  exact absurd (Int.le_of_dvd hpos hdvd) (not_le.mpr hlt)
+
 end QOU.AppendixSurreals.CollatzGeneralWord
