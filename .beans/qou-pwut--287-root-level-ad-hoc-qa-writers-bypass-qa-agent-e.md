@@ -135,3 +135,38 @@ So the gate for this defect class exists and is correctly scoped; what fails is
 its **staleness model**. An agent verdict pinned to a commit sha rather than to
 the content it reviewed stays green through arbitrary later edits to that
 content.
+
+### Adjacent defect found while measuring the above — and it is NOT the same one
+
+Reading `qa-agent-entry.ts` to confirm the canonical path, its `field_hash` was
+built from `.md` and `.ts` only — **no `.lean`** — and `qa-agent-drain-queue.ts:74`
+gates on `e.field_hash?.md === curmd`, i.e. `.md` alone. The obvious reading is
+that even correctly-written verdicts about the Lean can never go stale on a
+`.lean` edit, which would make this a corpus-scale problem.
+
+**Measured, it is not.** On Lean-reading criteria, agent verdicts carrying a
+`field_hash` on blocks that have a `.lean`:
+
+| | count |
+|---|---|
+| already record the `lean` key | **114** |
+| do not | **4** (all `proof-statement-integrity`) |
+
+A **latent** bug with 4 live instances. Fixed anyway (one conditional spread plus
+a `leanPath` declaration, verified behaviourally in both branches), but it must
+not be cited as an explanation for anything.
+
+**Two false trails, recorded so they are not re-walked:**
+
+1. *"40,646 agent entries carry a `field_hash` with no `lean` key."* True and
+   misleading — **31,935** of those blocks have **no `.lean` sibling**, so the
+   key is legitimately absent. Real population 9,056, and nearly all of that is
+   `trap-*` criteria that read only `.md` prose and do not need it. Hence 4.
+2. *"This explains the em-coupling incident."* It does not. Those
+   `da-lean-narrative-divergence` verdicts carry **no `field_hash` at all** —
+   they are `local/qa-agent-drain` output, i.e. **this bean's** defect. Two
+   adjacent defects with one mechanism each; conflating them would have
+   mis-attributed both and left the real one unfixed.
+
+The `qa-agent-drain` / `-heuristic` writers remain unfixed and remain the live
+issue for the `da-*` path.
