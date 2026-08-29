@@ -89,3 +89,21 @@ script (borromean_operator_reconstruct_laptop.py) delivered for the
 degree-terminus-blocked multi-hour CRT run.
 
 CORPUS NOTE 2026-08-21 (bean qou-kqbk): the primary source this bean's TITLE calls unavailable — Habiro [H1], RIMS Kokyuroku 1172 — IS in the library and is now greppable: library/1172-3/ ('ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS', Kazuo Habiro), whose own opening names 'the trefoil and the figure eight knots, the Whitehead and the Borromean links'. The 2026-07-06 unblock came via a different document (arxiv-math-0508100v6, GL2011), so the transcription stands; this is a second, independent copy of the formula's original statement available for cross-check. Its extracted title was over-welded ('THECOLOREDJONESPOLYNOMIALSOF') which is why a title-grep missed it.
+
+REVIVAL 2026-08-29 (branch claude/borromean-a-polynomial-2026-08-29, PR
+#6064). Arc reassessed after a ~7-week gap. CLOSEOUT of the physics
+hope: the reason colored-Jones q-holonomy mattered to QOU was the hope
+it would deliver the Q_beta c_k truncation constants; main's c3-wall
+capstone PROVED the odd D-ladder non-holonomic (KC22) and WITHDREW the
+resurgent/Ecalle inference (kappa=0, 2026-08-09), so any c_k closure
+lies OUTSIDE every holonomic class — the AJ->c_k bridge is dead
+(scope-limited negative backed by a proved invariant; c_k closure by
+non-holonomic means is not excluded). SURVIVING PIECE (pursued for its
+own sake, physics-decoupled): the explicit Phase-2 reconstruction. The
+reconstruction is now UNBLOCKED environmentally — the sampler is
+per-prime resumable (DEG_CAP=320), resuming from main's committed
+prime-0 checkpoint (184 cols, max deg 252) with a reclaim-safe
+per-prime checkpoint commit, so container reclaim resumes instead of
+restarting. Deliverable: explicit operator + q->1 Borromean
+A-polynomial, or an honest primes_used ceiling. See
+docs/audits/2026-08-29-borromean-a-polynomial-revival.md.
