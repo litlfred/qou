@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T12:31:12Z
+updated_at: 2026-08-29T12:36:26Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -484,3 +484,43 @@ The two findings explain each other.
     1  hadron_knot_table (compute-blocked, stalls on deuterium)
 
 Down from "~25 indirect" to **2**.
+
+
+## 2026-08-29 — INDIRECT class CLOSED at zero migration work
+
+The last two, derive_m_p_hecke_full_tower_50dps and
+vhat_std_vs_full_tower_compare, had no explanation because there is none to
+find: both call `load_q_50dps()` bare, which defaults to anchor="proton", and a
+plain re-run takes each **muon -> proton** with no code and no manifest change.
+Committed at muon before that default flipped; never re-run.
+
+Final partition of the 25:
+
+    13  ideal_muon -> 8 migrated, 1 compute-blocked (hadron_knot_table),
+                      1 comparison (habiro), 3 cds1-gated
+     6  DERIVE the muon pin (CAL-2 lepton tower) -> ledgered, must not migrate
+     2  dual-layer -> ledgered, must not migrate
+     2  STALE -> re-run, now proton
+     1  rho_k_h3a: muon as a COMPARISON reference
+     1  qbeta_c4even_exact_sseries_probe: cds1-gated
+
+Nothing outstanding in the indirect class.
+
+### Stale convention-C docstring on a shared loader, fixed
+
+`load_q_50dps` advertised `z = 1/(q^{1/2}+q^{-1/2})` — convention C. The code
+returns `_markov_z(q)`, convention D via the single definition in
+closed_form_tau_M, whose own docstring explains it deliberately avoids an
+inline respelling because shape-keyed detectors miss those. So the helper is
+exemplary and the docstring one frame above it was left behind. ~33 importers;
+a reader checking the contract at the function they call would conclude C.
+
+### Whole-of-cds3 status
+
+  DIRECT readers    20/20 migrated (PRs #5992 + #6001)
+  INDIRECT class    closed, zero migration work outstanding
+  BLOCKED           4 cds1-gated qbeta c_k; hadron_knot_table (compute)
+  PROTECTED         26 producers across 7 ledger classes
+
+The sweep this bean opened with -- "870 witnesses" -- was 222, of which the
+actionable part is now done except for what cds1 and one long compute gate.
