@@ -33,6 +33,7 @@ question.
 | 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
 | 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
 | 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
+| 16 | **the expression's SHAPE** — every matcher above | the same value under a sqrt-variable spelling, invisible in the *deliberate* bucket too | 21 sites `convention-c-producer-audit.py` reports in NO bucket (qou-t9r1) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -485,6 +486,60 @@ scanner's own walk-back found *that* opener first, so the site still came back
 `actionable` with the marker sitting one line above the window. Two different
 tools, one character, the same failure. Rephrased, and both are green.
 
+
+### 16 — the sqrt-variable spelling, invisible in BOTH buckets (added 2026-08-29)
+
+`z = 1 / (sq + 1 / sq)` where `sq = mp.sqrt(q)`, and its sibling `u / (u**2 + 1)`
+where `u` is the square root variable. Both are `sqrt(q)/(q+1) = z_C` exactly.
+`scripts/convention-c-producer-audit.py` matches neither.
+
+This one is worth a row of its own even though blindness-to-a-spelling is the
+theme of the whole document, because of *where* the loss lands. Every earlier
+row costs a false **negative** in the actionable bucket: a defect goes
+unreported. This spelling is invisible in the **deliberate** bucket too. The
+audit does not under-report these sites; it does not know they exist. So the
+usual reassurance — "the count is a floor, the deliberates are accounted for" —
+does not hold, and an agent draining the actionable list to zero would declare
+the excision complete with 21 convention-C bindings still live.
+
+**Measured 2026-08-29 (PR #5972).** `scripts/convention-c-value-audit.py`
+evaluates each binding at two sample points rather than matching its shape, and
+finds **90 confirmed convention-C bindings** in `computations/` against the
+shape audit's 71 rows. **Twenty-one** appear in no bucket of the shape audit.
+Their dispositions on inspection: 4 already announced and deliberate (including
+`schur_principal_mpmath._wenzl_constants_convention_C_HISTORICAL`, kept on
+purpose as the one live C implementation the D-vs-C comparison quotes), 5
+migrated in that PR, 4 blocked by a measured obstruction (`qou-pmkh`), 8 still
+open (`qou-t9r1`).
+
+**Confirmed from the other side, which is the part to remember.** Five of the
+21 were registered in `blocked_on_rederivation` that same day. The audit's
+printed count went from 9 actionable to 9 actionable. Registering a site the
+detector cannot see changes nothing it prints — so a stable count is not
+evidence of a stable surface.
+
+**The counter-move.** Not another matcher. `convention-c-value-audit.py` walks
+the AST for any binding whose RHS is a closed arithmetic expression in one free
+variable, compiles it, and **evaluates** it against `z_C`, `z_D` and their
+sqrt-variable forms at two independent points — one point is a numeric
+coincidence, two is functional identity. It cannot be evaded by re-spelling
+because it never reads the spelling. All arithmetic is `mpmath.mpf` at 60 dps:
+a float64 evaluation bottoms out at ~1e-16 and could not separate `z_C` from a
+near-miss, which is the failure the section below on tolerance describes.
+
+**Its own limit, stated rather than papered over.** A `-sqrtvar` match is a
+*candidate*: `x/(x**2+1)` is `z_C` when `x` is `sqrt(q)` and is `1/[2]_q`, a
+convention-neutral quantity, when `x` **is** `q`. Nothing in the expression
+distinguishes them — only what the variable *means* does. The report prints the
+variable, triages on a name list, and reports `unresolved` rather than guessing;
+on the current corpus that is 3 not-C and 1 unresolved out of 89.
+
+**Two false positives from its own first run**, both fixed with regression
+fixtures in `--selftest`, per row 3's lesson that a detector needs fixtures
+pinning its narrowing: an attribute *base* counted as a free variable, so every
+`mp.mpf(...)` binding looked like a one-variable expression; and NaN comparing
+out of every inequality, so an `mp.mpf("nan")` sentinel "agreed" with whatever
+it was tested against. Four sites reported, zero real.
 
 ## The counter-move that worked, twice
 
