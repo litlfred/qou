@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:18:28.493143+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:31:45.647084+00:00",
+  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
   "assertions": [
     {
       "name": "all_77_partitions_evaluated",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 19,
   "computation": "chi-lambda-he4-full-partition-table",
   "scriptFile": "chi_lambda_he4_full_partition_table.py",
   "scriptHash": "3833838eb63c",
-  "scriptCommitSha": "417cfccfabef8259fef1c6fcc61a1269bc851296",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,13 +42,13 @@
     ],
     "reproduce": "python3 -u computations/chi_lambda_he4_full_partition_table.py"
   },
-  "description": "Full χ_λ(β_⁴He) table — all 77 partitions of 12 evaluated on the heuristic 4·Borromean tensor at q_0. Structural template for the canonical mass formula B(⁴He) = m_e · Σ_λ y_λ · χ_λ when R5-full SDP supplies y_λ. Shows the multi-block distribution that production's single-block ν_SDP=2 projection discards.",
+  "description": "Full \u03c7_\u03bb(\u03b2_\u2074He) table \u2014 all 77 partitions of 12 evaluated on the heuristic 4\u00b7Borromean tensor at q_0. Structural template for the canonical mass formula B(\u2074He) = m_e \u00b7 \u03a3_\u03bb y_\u03bb \u00b7 \u03c7_\u03bb when R5-full SDP supplies y_\u03bb. Shows the multi-block distribution that production's single-block \u03bd_SDP=2 projection discards.",
   "parameters": {
     "q_0_f64": 1.109978595642739,
     "n_partitions": 77,
     "braid_length": 24,
     "beta_construction": "4 disjoint Borromean copies (strands 1-3, 4-6, 7-9, 10-12)",
-    "elapsed_seconds": 12.272714853286743
+    "elapsed_seconds": 17.824071168899536
   },
   "data": {
     "per_partition_chi_lambda": [

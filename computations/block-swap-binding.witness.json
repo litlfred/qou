@@ -1,8 +1,8 @@
 {
   "engine": "python+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:18:13.650534+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:31:26.728318+00:00",
+  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
   "assertions": [
     {
       "name": "block_swap_braids_realize_block_perms",
@@ -10,11 +10,11 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-30",
-      "source": "block_swap_word self-asserts _apply(word)==block_swap_perm for swap_p (0,3) and swap_n (6,3) — the braids are the correct S₂×S₂ block transpositions."
+      "source": "block_swap_word self-asserts _apply(word)==block_swap_perm for swap_p (0,3) and swap_n (6,3) \u2014 the braids are the correct S\u2082\u00d7S\u2082 block transpositions."
     }
   ],
   "allPassed": true,
-  "durationMs": 1655,
+  "durationMs": 1918,
   "computation": "block-swap-binding",
   "scriptFile": "block_swap_binding.py",
   "scriptHash": "49b8ee75b5d6",
@@ -41,7 +41,7 @@
     ],
     "reproduce": "python3 -u computations/block_swap_binding.py"
   },
-  "description": "Exact block-swapped bound symmetrization S_atom for ⁴He (task-1, #2103 follow-up). tr_atom_sym = ¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ) with β_σ the positive block-swap braid (NOT the orbit identity's relabeling — that is conjugation; the Young symmetrizer composes the braid). Sign-only (chi_q_via_gp). The binding signal of identical-nucleon exchange is the residual log(S_free/S_atom): if the bonds break block symmetry, S_atom ≠ S_free and the symmetrization does NOT cancel in the log-ratio binding.",
+  "description": "Exact block-swapped bound symmetrization S_atom for \u2074He (task-1, #2103 follow-up). tr_atom_sym = \u00bc\u03a3_{\u03c3\u2208S\u2082\u00d7S\u2082} tr_M(W_atom\u00b7\u03b2_\u03c3) with \u03b2_\u03c3 the positive block-swap braid (NOT the orbit identity's relabeling \u2014 that is conjugation; the Young symmetrizer composes the braid). Sign-only (chi_q_via_gp). The binding signal of identical-nucleon exchange is the residual log(S_free/S_atom): if the bonds break block symmetry, S_atom \u2260 S_free and the symmetrization does NOT cancel in the log-ratio binding.",
   "parameters": {
     "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
   },
