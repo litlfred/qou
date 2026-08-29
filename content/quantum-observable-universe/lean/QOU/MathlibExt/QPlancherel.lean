@@ -127,11 +127,28 @@ class HasQPlancherelCLT (Λ : Type u) (R : Type v)
   Cq : ℝ
   /-- The constant is positive. -/
   Cq_pos : 0 < Cq
-  /-- The O(1/√k) bound holds for any branching-fraction sequence
-      `f : ℕ → ℝ` and limit `f_inf : ℝ` arising from the q-Plancherel
-      asymptotics. -/
-  bound : ∀ (f : ℕ → ℝ) (f_inf : ℝ) (k : ℕ), k ≥ 4 →
-    |f k - f_inf| ≤ Cq / Real.sqrt (k - 3 : ℝ)
+  /-- The branching-fraction sequence the CLT is about. -/
+  f : ℕ → ℝ
+  /-- Its limit. -/
+  f_inf : ℝ
+  /-- The Féray–Méliot `O(1/√k)` bound, for **this** sequence and **its**
+      limit.
+
+      `f` and `f_inf` are class *data*, not universally quantified.  They
+      were `∀`-bound until 2026-08-29, which made the class
+      **uninhabitable**: `Cq` is fixed by the instance while `f_inf`
+      ranged over all of `ℝ`, so `f := 0`, `f_inf := Cq + 1`, `k := 4`
+      (where `√(4-3) = 1`) gave `Cq + 1 ≤ Cq`, and `False` followed —
+      machine-checked, `#print axioms` clean, in
+      `docs/audits/2026-08-29-qplancherel-clt-uninhabitable-probe.lean`.
+
+      The defect was the general shape a sibling branch named on
+      PR #6041: *an external theorem asserted for every inhabitant of a
+      structure that does not carry the theorem's hypotheses.*
+      [feray2010] Theorem 1.1 is a statement about the q-Plancherel
+      branching fractions, not about arbitrary real sequences, and the
+      type must say so. -/
+  bound : ∀ k : ℕ, k ≥ 4 → |f k - f_inf| ≤ Cq / Real.sqrt (k - 3 : ℝ)
 
 /-! ## §3  The partition function as a constructed sum, and total mass one
 
