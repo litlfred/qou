@@ -239,7 +239,8 @@ def main() -> int:
             r_T = next((x for x in rows if x["partition"] == shape_T), None)
             if r_T is not None:
                 paired_count += 1
-                rel_diff = abs(r["chi_lambda_he4"] - r_T["chi_lambda_he4"]) / max(abs(r["chi_lambda_he4"]), 1e-12)
+                rel_diff = (abs(r["_chi_mp"] - r_T["_chi_mp"])
+                            / max(abs(r["_chi_mp"]), mp.mpf("1e-12")))
                 if rel_diff < 1e-6:
                     matched_pair_count += 1
             seen.add(key)
