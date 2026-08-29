@@ -26,6 +26,10 @@
           },
           {
             "type": "command",
+            "command": "./scripts/fix-python-pdf-deps.sh >\"${TMPDIR:-/tmp}/qou-fix-python-pdf-deps.log\" 2>&1 &"
+          },
+          {
+            "type": "command",
             "command": "./scripts/session-start-coord-sweep.sh"
           }
         ]
