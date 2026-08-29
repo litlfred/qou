@@ -1,11 +1,11 @@
 ---
 # qou-961o
 title: 'GAP: markovZ names 13 Lean declarations across both conventions'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-29T10:30:17Z
+updated_at: 2026-08-29T10:47:46Z
 ---
 
 Measured 2026-08-29 on main (PR #5972). `grep -rn --include=*.lean "^\s*(noncomputable\s+)?(private\s+)?def\s+markovZ\b" content/` returns THIRTEEN declarations of the same name carrying two different functions:
