@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T11:59:55Z
+updated_at: 2026-08-29T16:08:28Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -154,3 +154,45 @@ its selftest.
 Also: "round-trips through float64" is NOT proof of laundering. It flagged 55
 of the 302 already-drained fields; all 55 are exact k·2^-235 ULP residuals,
 and a power of two round-trips losslessly. Flag for reading, never decide.
+
+
+## CODATA flip DONE; bucket B does NOT generalise (2026-08-29, PR #6022)
+
+Owner authorised both halves. First half landed, second half largely did not,
+and the reason is the useful part.
+
+### Flip (done)
+`experimental_constants.py` casts removed — the registry already held mpf.
+- No CODATA INPUT moved (rel 0.0 on m_e/m_p/m_n). Only derived quantities
+  changed, by the float64 error they carried: Q_β 4.1e-50, κ=m_e/3 9.8e-17.
+- 204 importers screened both sides, fresh subprocess each: 6 fail before,
+  23 after, **6 after fixing → 0 attributable**.
+- Fixed at cause: 96 `mpf(repr(CONST))` sites (broken for mpf, correct for
+  float — the other 84 in the tree left alone); 2 bare `json.dump` given
+  `default=str`; one silent `math.sqrt(mpf)` downcast in the module itself.
+
+### Bucket B splits on q₀, which is float64 BY DESIGN
+`q_parameter.Q` is a float (17 digits vs a canonical 50). `q_parameter.py`
+header says do NOT change it; `q_at(dps)` is the accessor. So:
+- 26 q-independent (82 fields) — ran them: **ok=4, reverted=22**
+- 32 q-dependent (209 fields) — BLOCKED on a per-producer proton/muon anchor
+  choice. Layer-straddle hazard; not mechanical. NOT attempted.
+
+### The 22 reverts are diagnoses, not failures
+- 17 "no gain", 12 with ZERO casts (`0+0`) — float64 enters by a route neither
+  a dps raise nor a cast removal touches.
+- 5 LAUNDERING — guard caught the value still round-tripping through binary64.
+  Worked case: `codata_reconciliation` emitted
+  `0.782333409309999949776…` = Q_NEUTRON_MEV (exact mpf) pushed through a
+  double downstream and printed at 40 digits.
+
+### Landed
+qbeta_counit_substrate_consistency (17→65 digits), chi_free_via_lr,
+qbeta_5two_tail_law_deep_cn_probe, qbeta_uw_reparam_probe.
+Fields 599 → 593; ratchet NEW 0 / REGRESSED 0 / exit 0.
+
+### Process notes for the next agent
+- Pipe a long producer run to a FILE, never through `tail` — buffering swallows
+  every verdict and a kill loses them all. Made this mistake twice today.
+- Scope before running: my first pilot took the 6 LARGEST producers, 4 of them
+  q-dependent and certain to revert.
