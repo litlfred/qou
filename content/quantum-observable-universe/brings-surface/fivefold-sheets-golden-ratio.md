@@ -2,4 +2,6 @@ Bring's curve $\Sigma_4$ is defined by the vanishing of the first three power su
 
 The five sheets meet at ramification points where two or more coordinates coincide. The regular pentagon inscribed in the unit circle links non-adjacent sheets via a "diagonal" connection ($T_{3,5}$ interaction) proportional to the golden ratio $\varphi \approx 1.618$. 
 
-The $q$-AND polynomial $P_{7,6}(q)$ has a zero at $q = 1/\varphi^2 \approx 0.382$. This golden ratio phase transition eliminates the diagonal $T_{3,5}$ connection, degenerating the $5$-fold symmetry down to $3$-fold.
+The Toffoli diagonal $P_{7,7}(q) = (q + q^{1/2} - 1)/(q + 1)$ has a zero at $q = 1/\varphi^2 \approx 0.382$. This golden ratio phase transition eliminates the diagonal $T_{3,5}$ connection, degenerating the $5$-fold symmetry down to $3$-fold. The zero belongs to the diagonal, not to the $q$-AND amplitude $P_{7,6} = \Phi$, whose own zero sits at $q \approx 0.4656$, the root of $q^{3/2} + q^{1/2} - 1$.
+
+**Convention scope.** The closed form above is the traced volume $\hat V_1 = z(q)\,c + d$ evaluated at the *excised* Markov parameter $z_C = q^{1/2}/(q+1)$: it reconstructs exactly as $z_C(q) + (q-1)/(q+1)$. The golden ratio is therefore a feature of that frame rather than of the gate — under the canonical $z_D = q^3/(q^2+1)$ the same recipe has no zero at $1/\varphi^2$. The convention-$D$ form of the diagonal has not been derived, so this identification is stated as conditional on the $C$ frame, not withdrawn.
