@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-29T16:26:15Z
+updated_at: 2026-08-29T18:06:58Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -344,3 +344,61 @@ acquired a proved upstream gate while $E_{\mathrm{EM}}$ did not.
 `q-game-of-life`, whose `_reversible` theorem assumes an involutivity its own
 proof denies at generator level. In this arc's lane because
 `double_braiding_eq_one_iff` is the σ-level fact the two sides disagree about.
+
+
+
+---
+
+**2026-08-29 — the bean's target NARROWS to one scalar, and the corpus already
+had half of what I was about to write.**
+
+**Corpus-grepped FIRST this time, and it paid.** Before attempting the
+charge-structure route I ran the object-grep, and
+`QOU/MassTheory/NeutronProtonEMSign.lean` on `main` already derives exactly it,
+parameter-free and sorry-free:
+
+    Sum_{i<j} q_i q_j  =  0     proton (uud)      chargeStructure_uud
+                       = -1/3   neutron (udd)     chargeStructure_udd
+    gap                = +1/3                     em_gap_eq
+    correction sign    negative                   em_correction_neg
+
+Sixth object-grep hit this session — the first where running the grep **first**
+saved the work rather than the failure being found afterwards.
+
+**So the gap is one positive scalar.** Its own docstring says so: *"does not
+derive the EM coupling from the 13 categorical drivers"*. Combining with this
+branch's two shape constraints, the state is:
+
+| piece | status |
+|---|---|
+| charge structure, the $0$ vs $-1/3$ | **derived** (corpus, parameter-free) |
+| sign of the correction | **derived** (corpus) |
+| $E_{\mathrm{EM}}$ even in $\bar\mu_{123}$ | **derived** (this branch) |
+| pairwise linking cannot see the carrier | **derived** (this branch) |
+| the coupling $k > 0$ | **NOT derived — this is the whole remaining gap** |
+
+**A falsifiable target for $k$**
+(`computations/probes/em_selfenergy_coupling_target_probe.py`, mpmath 50 dps,
+no witness). Inverting the **external** lattice decomposition
+($m_n - m_p$ QED part $= -1.00 \pm 0.16$ MeV, BMW 2015):
+
+    k = 3.0 MeV   [2.52, 3.48]
+    r = 0.480 fm  [0.414, 0.571]   if k = alpha_EM * hbar c / r
+
+**This is a TARGET, not a derivation** — inverting a measurement to obtain a
+parameter is a fit, and the probe says so in its own docstring. It is recorded
+because a target with a number can be *checked*.
+
+**And it prunes a move I was about to make.** Front 4-B established that the
+*nuclear* Coulomb length is $\bar\lambda_\pi$; the tempting step was to reuse
+it here. Measured, it is **off by 2.9×** ($-0.339$ vs $-1.00$ MeV). The proton
+charge radius is off by 1.75×. **Neither** framework length reproduces the
+target, so a future derivation of $k$ is falsifiable against a factor stated in
+advance.
+
+**Also found: `NeutronProtonEMSign` has ZERO consumers** outside its own file
+(only generated `.c` IR). The corpus prune is orphaned, and this branch's
+$E_{\mathrm{EM}}$ work never cited it. Both are about the same object.
+
+**Still open, and now sharply:** derive $k$ from the categorical side. Not a
+length chosen to match — that is the fit this probe exists to make visible.
