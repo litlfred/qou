@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T08:07:16Z
+updated_at: 2026-08-29T08:34:20Z
 ---
 
 
@@ -448,3 +448,5 @@ corpus checked at the source. Status:
   - Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-the-missing-citation-is-a-kernel-rate.md.
   Gap OPEN. Honest: morally certain (leading 0.30 + exact positivity n<=40 + damped tail) but a
   measured C is not a proved C; no fake closure.
+
+2026-08-29 (tail half + ingested lit): owner ingested 10 kernel-rate papers (commit f45f79c8 -> library/). TAIL half of the effective variance bound is now Olver-FREE + CITABLE: Johansson 2001 (arxiv-math-9906120v3) Lemma 3.9 gives explicit super-exp Bessel decay past the edge; poly weight x super-exp kernel => TAIL(K) <= poly(theta) exp(-K^{3/2}/4) = o(theta^-A). Measured (tail_bulk_split.py, no float64): tail/V_A drops 1.8e-2 -> 4e-20 across K=1..10, super-exp, below the theta^-1 remainder by K=3-4. De-poissonization citable too (Johansson Lemma 3.8, C/N^2). Bulk sine-kernel RATE machinery now in-corpus: Gorbunov sm10137 (Berry-Esseen for Bessel-kernel DPP via Kac-Akhiezer + Borodin-Okounkov Toeplitz), continuous analogue of the discrete Toeplitz case; needs application to the discrete Plancherel descent variance (an analytic step, not a missing citation). Wall reduced from 'no rate in corpus' to 'bulk application step'. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-tail-half-and-ingested-kernel-rate-lit.md. Gap OPEN, materially narrowed.
