@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-29T16:33:12Z
+updated_at: 2026-08-29T18:17:28Z
 ---
 
 ## 2026-08-29 — this is closer than the standing plan implies (from qou-0ubf)
@@ -31,3 +31,34 @@ docs/audits/2026-08-29-pneqnp-gap-inventory-refresh.md.
 
 Crosses no barrier — semisimplicity is a magnitude-axis fact. It removes one of the
 two remaining cited classes from the conditional chain.
+
+## 2026-08-29 (later) — CORRECTION: this is DOWNSTREAM of the T_w basis, not an alternative to it
+
+My own note above, and the audit §3 ranking it came from, presented this bean and
+the T_w/Matsumoto basis as **alternatives** — `0y6h` ranked #1 'chippable', the
+T_w basis ranked #5 'no longer P!=NP critical path'. **That is wrong.**
+
+Measured: `WenzlSchurElement.schurElement` is **purely combinatorial** — a
+hook/content product over ℝ. A grep of the whole file for
+`IwahoriHecke|HeckeAlgebra|Algebra|Module|Basis` returns **nothing**. No algebra
+is attached to it anywhere.
+
+So `SchurElementCriterion` silently bundles TWO obligations:
+  (i) the combinatorial formula *equals* the algebra-theoretic Schur element, and
+  (ii) Geck-Pfeiffer 7.2.6 proper (all Schur ≠ 0 => semisimple).
+Both need the algebra side: a **basis** of H_n(q) to state det(Gram) against, plus
+the symmetrizing-trace/Wedderburn theory. For H_n(q) that basis is T_w.
+
+The downstream half of the chain already exists and is fine —
+`RegTraceGram.isSemisimpleRing_of_regTraceGram_det_ne_zero` and the
+`TraceFormSemisimple` keystone give det(Gram) ≠ 0 => semisimple. What is missing
+is precisely 'Schur ≠ 0 => det(Gram) ≠ 0', i.e. det(Gram) = ∏ Schur, and that
+cannot even be *stated* without the basis.
+
+**What remains true:** `semisimple_of_substrate` does give all-n semisimplicity
+without the T_w basis — but only CONDITIONALLY, on the unproved criterion. The
+distinction I blurred is between an all-n *conditional* statement (no T_w needed,
+true) and an all-n *discharge* (T_w needed, which is this bean).
+
+**Verdict: not chippable in isolation. Genuine Mathlib-scale, gated on T_w
+(qou-lrz1 / qou-twwf).** Do those first or accept the conditional.
