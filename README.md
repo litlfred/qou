@@ -26,57 +26,98 @@ cross-references, renders LaTeX, and runs AST validation before
 producing `chapters/*.tex` output. LaTeX is a **rendering target**,
 not the source of truth.
 
-## Papers
+## Contents
 
-The repository hosts multiple papers as a **folio**:
+One section per paper in the folio.  The **Source** column links to the
+content objects; the **PDF** column links to the published standalone build,
+and shows `—` for a chapter that has not been published.
 
-| Paper | Directory |
-|-------|-----------|
-| On the Mechanics of Quantum Observable Universes | `content/quantum-observable-universe/` |
-| Controlled Double-Slit Electron Diffraction | `content/bach2013-double-slit/` |
-| Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | `content/unital-groebner-bases/` |
-| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | `content/fred2005-formal-groups/` |
-| QOU Visualizer | `content/visualizer/` |
+<!-- Generated — regenerate with `readme_toc` (MCP) or, from the platform
+     checkout, `bun run readme:toc`.  Edits between the markers are lost. -->
 
-## Chapters (Quantum Observable Universe)
+<!-- folio:toc:begin -->
 
-Each chapter is also published as a standalone PDF on GitHub Pages —
-useful when you only want the relevant slice of the paper rather than
-the full document.  The **PDF** column links to the standalone build;
-the **Directory** column links to the source content objects.
+### On the Mechanics of Quantum Observable Universes
 
-| # | Directory | Title | Standalone PDF |
-|---|-----------|-------|----------------|
-| 0 | `introduction/` | Introduction | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
-| 1 | `notation/` | Notation | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
-| 2 | `quantum-universes/` | Quantum Universes | [quantum-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-universes.pdf) |
-| 3 | `quantum-observable-universes/` | Quantum Observable Universes | [quantum-observable-universes.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/quantum-observable-universes.pdf) |
-| 4 | `models-of-qous/` | Models of QOUs | [models-of-qous.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/models-of-qous.pdf) |
-| 5 | `lifting-and-descent/` | Lifting and Descent | [lifting-and-descent.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/lifting-and-descent.pdf) |
-| 6 | `braids-and-knots/` | Braids and Knots | [braids-and-knots.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/braids-and-knots.pdf) |
-| 7 | `brings-surface/` | Bring's Surface | [brings-surface.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/brings-surface.pdf) |
-| 8 | `mass-endomorphism/` | The Mass Endomorphism | [mass-endomorphism.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/mass-endomorphism.pdf) |
-| 9 | `particle-interactions/` | Particle Interactions and Nuclear Structure | [particle-interactions.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/particle-interactions.pdf) |
-| 10 | `climax-volume-mass/` | q-Hyperbolic Geometry | [climax-volume-mass.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/climax-volume-mass.pdf) |
-| 11 | `mass-theory/` | Mass Analysis | [mass-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/mass-theory.pdf) |
-| 12 | `gravity-spacetime/` | Gravity and Spacetime Emergence | [gravity-spacetime.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/gravity-spacetime.pdf) |
-| 13 | `predicted-spectra/` | Predicted Particle Spectra | [predicted-spectra.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/predicted-spectra.pdf) |
-| 14 | `observations/` | Physical Observations | [observations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/observations.pdf) |
-| 15 | `molecular-construction/` | Molecular Construction from Nucleon Braids | [molecular-construction.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/molecular-construction.pdf) |
-| 16 | `organic-chemistry/` | Organic Chemistry from Hopf Chains | [organic-chemistry.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/organic-chemistry.pdf) |
-| 17 | `fluid-dynamics/` | Fluid Dynamics of the Brane | [fluid-dynamics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/fluid-dynamics.pdf) |
-| 18 | `stochastic-mechanics/` | Stochastic Mechanics | [stochastic-mechanics.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/stochastic-mechanics.pdf) |
-| 19 | `information-theory/` | Information-Theoretic Perspectives | [information-theory.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/information-theory.pdf) |
-| 20 | `measurement-observation/` | Measurement and Observation | [measurement-observation.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/measurement-observation.pdf) |
-| 21 | `q-geometric-langlands/` | $q$-Geometric Langlands Correspondence | [q-geometric-langlands.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/q-geometric-langlands.pdf) |
-| 22 | `glossary/` | Glossary | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
-| App | `appendix-knot-periodic-table/` | Knot-Periodic Table of the Elements | [appendix-knot-periodic-table.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
-| App | `appendix-knot-operations/` | Knot Operation Actions Dictionary | [appendix-knot-operations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-knot-operations.pdf) |
-| App | `appendix-transfer-matrices/` | Transfer Matrices | [appendix-transfer-matrices.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
-| App | `appendix-atomic-mass-calculations/` | Atomic Mass Calculations | [appendix-atomic-mass-calculations.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-atomic-mass-calculations.pdf) |
-| App | `appendix-qvalues/` | Q-Value Predictions from $q$ | [appendix-qvalues.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-qvalues.pdf) |
-| App | `appendix-surreals/` | Surreal-number lift of QOU (appendix) | [appendix-surreals.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/appendix-surreals.pdf) |
-| — | `index-of-definitions/` | Index of Definitions | [front-matter.pdf](https://litlfred.github.io/qou/papers/quantum-observable-universe/chapters/front-matter.pdf) |
+[`content/quantum-observable-universe/`](content/quantum-observable-universe/) · [full PDF](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf)
+
+| # | Chapter | Source | PDF |
+|---|---------|--------|-----|
+| 0 | Introduction | [`introduction/`](content/quantum-observable-universe/introduction/) | — |
+| 1 | Quantum Universes | [`quantum-universes/`](content/quantum-observable-universe/quantum-universes/) | — |
+| 2 | Quantum Observable Universes | [`quantum-observable-universes/`](content/quantum-observable-universe/quantum-observable-universes/) | — |
+| 3 | Models of QOUs | [`models-of-qous/`](content/quantum-observable-universe/models-of-qous/) | — |
+| 4 | Lifting and Descent | [`lifting-and-descent/`](content/quantum-observable-universe/lifting-and-descent/) | — |
+| 5 | Braids and Knots | [`braids-and-knots/`](content/quantum-observable-universe/braids-and-knots/) | — |
+| 6 | Bring's Surface | [`brings-surface/`](content/quantum-observable-universe/brings-surface/) | — |
+| 7 | The Mass Endomorphism | [`mass-endomorphism/`](content/quantum-observable-universe/mass-endomorphism/) | — |
+| 8 | Knots, Particles, and Confinement | [`knots-particles-confinement/`](content/quantum-observable-universe/knots-particles-confinement/) | — |
+| 9 | The Eightfold Way and Flavor Structure | [`eightfold-way/`](content/quantum-observable-universe/eightfold-way/) | — |
+| 10 | Nuclear Interactions and Binding | [`nuclear-interactions/`](content/quantum-observable-universe/nuclear-interactions/) | — |
+| 11 | q-Hyperbolic Geometry | [`climax-volume-mass/`](content/quantum-observable-universe/climax-volume-mass/) | — |
+| 12 | Mass Analysis | [`mass-theory/`](content/quantum-observable-universe/mass-theory/) | — |
+| 13 | Gravity and Spacetime Emergence | [`gravity-spacetime/`](content/quantum-observable-universe/gravity-spacetime/) | — |
+| 14 | Predicted Particle Spectra | [`predicted-spectra/`](content/quantum-observable-universe/predicted-spectra/) | — |
+| 15 | Physical Observations | [`observations/`](content/quantum-observable-universe/observations/) | — |
+| 16 | Molecular Construction from Nucleon Braids | [`molecular-construction/`](content/quantum-observable-universe/molecular-construction/) | — |
+| 17 | Organic Chemistry from Hopf Chains | [`organic-chemistry/`](content/quantum-observable-universe/organic-chemistry/) | — |
+| 18 | Fluid Dynamics of the Brane | [`fluid-dynamics/`](content/quantum-observable-universe/fluid-dynamics/) | — |
+| 19 | Stochastic Mechanics | [`stochastic-mechanics/`](content/quantum-observable-universe/stochastic-mechanics/) | — |
+| 20 | Information-Theoretic Perspectives | [`information-theory/`](content/quantum-observable-universe/information-theory/) | — |
+| 21 | Measurement and Observation | [`measurement-observation/`](content/quantum-observable-universe/measurement-observation/) | — |
+| 22 | $q$-Geometric Langlands Correspondence | [`q-geometric-langlands/`](content/quantum-observable-universe/q-geometric-langlands/) | — |
+| 23 | Glossary | [`glossary/`](content/quantum-observable-universe/glossary/) | [glossary.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/glossary.pdf) |
+| App | Knot-Periodic Table of the Elements | [`appendix-knot-periodic-table/`](content/quantum-observable-universe/appendix-knot-periodic-table/) | [appendix-knot-periodic-table.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-knot-periodic-table.pdf) |
+| App | Knot Operation Actions Dictionary | [`appendix-knot-operations/`](content/quantum-observable-universe/appendix-knot-operations/) | — |
+| App | Knot Operations Dictionary — archimedean evaluations at the substrate | [`appendix-knot-operations-archimedean/`](content/quantum-observable-universe/appendix-knot-operations-archimedean/) | — |
+| App | Transfer Matrices | [`appendix-transfer-matrices/`](content/quantum-observable-universe/appendix-transfer-matrices/) | [appendix-transfer-matrices.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/appendix-transfer-matrices.pdf) |
+| App | Mass and Binding Algorithms | [`appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) | — |
+| App | Toward the Standard Model | [`appendix-standard-model/`](content/quantum-observable-universe/appendix-standard-model/) | — |
+| App | Normal Form Witnesses | [`appendix-nf-witnesses/`](content/quantum-observable-universe/appendix-nf-witnesses/) | — |
+| App | Imaginary part of the complex volume: $Q$-values from $q$ | [`appendix-qvalues/`](content/quantum-observable-universe/appendix-qvalues/) | — |
+| App | Surreal-number lift of QOU (appendix) | [`appendix-surreals/`](content/quantum-observable-universe/appendix-surreals/) | — |
+| App | Surreal-number lift at the substrate (archimedean appendix) | [`appendix-surreals-archimedean/`](content/quantum-observable-universe/appendix-surreals-archimedean/) | — |
+| — | Index of Definitions | [`index-of-definitions/`](content/quantum-observable-universe/index-of-definitions/) | [index-of-definitions.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/index-of-definitions.pdf) |
+| 24 | Notation | [`notation/`](content/quantum-observable-universe/notation/) | — |
+
+### Controlled Double-Slit Electron Diffraction
+
+[`content/bach2013-double-slit/`](content/bach2013-double-slit/)
+
+| # | Chapter | Source | PDF |
+|---|---------|--------|-----|
+| 0 | Controlled Double-Slit Electron Diffraction | [`double-slit-experiment/`](content/bach2013-double-slit/double-slit-experiment/) | — |
+
+### Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings
+
+[`content/unital-groebner-bases/`](content/unital-groebner-bases/)
+
+| # | Chapter | Source | PDF |
+|---|---------|--------|-----|
+| 0 | Introduction | [`introduction/`](content/unital-groebner-bases/introduction/) | — |
+| 1 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | [`unital-groebner-bases-chapter/`](content/unital-groebner-bases/unital-groebner-bases-chapter/) | — |
+| 2 | Buchberger's Theorem and the PBW Corollary | [`buchberger-and-pbw/`](content/unital-groebner-bases/buchberger-and-pbw/) | — |
+
+### Integration of Skewed-Poisson Structures on Non-commutative Formal Groups
+
+[`content/fred2005-formal-groups/`](content/fred2005-formal-groups/)
+
+| # | Chapter | Source | PDF |
+|---|---------|--------|-----|
+| 0 | Formal Groups and the Lifting Theorem | [`formal-groups-chapter/`](content/fred2005-formal-groups/formal-groups-chapter/) | — |
+
+### QOU Visualizer
+
+[`content/visualizer/`](content/visualizer/)
+
+| # | Chapter | Source | PDF |
+|---|---------|--------|-----|
+| 0 | Overview | [`overview/`](content/visualizer/overview/) | — |
+
+> PDF links point at the published build on the `gh-pages` branch through github.com, so they resolve for anyone with access to this repository — public or private — and GitHub renders them inline. A chapter with no published PDF shows `—`.
+
+<!-- folio:toc:end -->
+
 
 ## Lean 4 Formalization
 
@@ -276,24 +317,34 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
 | Valley Stability | `simulators/valley_stability.html` |
 
-## Published Artefacts (GitHub Pages)
+## Published Artefacts
 
-> **Note:** If GitHub Pages is not publicly accessible, use the GitHub source
-> links in the rightmost column to browse the repository directly.
+Every artefact below is committed to the **`gh-pages` branch of this
+repository**, so the middle column resolves for anyone with repository access
+— whether or not the Pages site is public — and GitHub renders PDFs, SVGs and
+JSON inline.  The right-hand column is the same file served as a web page,
+which needs GitHub Pages to be publicly accessible; use it for the artefacts
+that are only useful rendered (the viewer, the API docs).
 
-| Artefact | GitHub Pages | GitHub Source |
-|----------|-------------|--------------|
-| Folio landing page | [index.html](https://litlfred.github.io/qou/) | [home_page/](https://github.com/litlfred/qou/tree/main/home_page) |
-| Paper viewer | [papers/quantum-observable-universe/](https://litlfred.github.io/qou/papers/quantum-observable-universe/) | [folio-assistant/viewer/](https://github.com/litlfred/qou/tree/main/folio-assistant/viewer) |
-| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) | [content/](https://github.com/litlfred/qou/tree/main/content) |
-| Blueprint (interactive graph) | [blueprint/](https://litlfred.github.io/qou/blueprint/) | [blueprint/src/](https://github.com/litlfred/qou/tree/main/blueprint/src) |
-| Lean interactive docs | [docs/](https://litlfred.github.io/qou/docs/) | [content/.../lean/](https://github.com/litlfred/qou/tree/main/content/quantum-observable-universe/lean) |
-| Schema docs (TypeDoc) | [schema-docs/](https://litlfred.github.io/qou/schema-docs/) | [content/schema/](https://github.com/litlfred/qou/tree/main/content/schema) |
-| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [.github/scripts/](https://github.com/litlfred/qou/tree/main/.github/scripts) |
-| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | CI-generated |
-| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | CI-generated |
-| Glossary | [glossary.json](https://litlfred.github.io/qou/glossary.json) | CI-generated |
-| Feature branch drafts | [drafts/](https://litlfred.github.io/qou/drafts/) | CI-generated |
+| Artefact | On `gh-pages` (any collaborator) | Rendered (needs public Pages) |
+|----------|----------------------------------|-------------------------------|
+| Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) | [/](https://litlfred.github.io/qou/) |
+| Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) | [/papers/quantum-observable-universe/](https://litlfred.github.io/qou/papers/quantum-observable-universe/) |
+| Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) | [/quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) |
+| Lean interactive docs | [lean/docs/](https://github.com/litlfred/qou/tree/gh-pages/lean/docs) | [/lean/docs/](https://litlfred.github.io/qou/lean/docs/) |
+| Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) | [/schema-docs/](https://litlfred.github.io/qou/schema-docs/) |
+| Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) | [/python-api/](https://litlfred.github.io/qou/python-api/) |
+| Rust API docs | [rust-api/](https://github.com/litlfred/qou/tree/gh-pages/rust-api) | [/rust-api/](https://litlfred.github.io/qou/rust-api/) |
+| Axiom / Gap Report | [axiom-report.txt](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) | [/axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) |
+| Dependency Graph | [dependency-graph.svg](https://github.com/litlfred/qou/blob/gh-pages/dependency-graph.svg) | [/dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) |
+| Proof Objects Manifest | [proof-objects.json](https://github.com/litlfred/qou/blob/gh-pages/proof-objects.json) | [/proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) |
+| Glossary | [glossary.json](https://github.com/litlfred/qou/blob/gh-pages/glossary.json) | [/glossary.json](https://litlfred.github.io/qou/glossary.json) |
+| Feature branch drafts | [drafts/](https://github.com/litlfred/qou/tree/gh-pages/drafts) | [/drafts/](https://litlfred.github.io/qou/drafts/) |
+
+> The **Blueprint** row and the `docs/` row that used to sit here have been
+> removed: neither `blueprint/` nor `docs/` exists on `gh-pages`, so both
+> links were dead in either column.  The Lean docs are published at
+> `lean/docs/`, which is what the row above points at.
 
 ## Libraries
 
