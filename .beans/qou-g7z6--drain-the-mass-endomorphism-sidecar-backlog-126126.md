@@ -85,3 +85,64 @@ before believing the bucket.
 Not run here: firing a 128-file sidecar rewrite that also opens a ~2,000-item
 agent queue is a scoping decision for the owner, not an idle-pass action. The
 measurement above is what was missing to make that decision.
+
+
+---
+
+## 2026-08-29 — the mechanical half is RUN, and the prescribed remedy is
+## weaker than this bean assumed
+
+Ran `qa-sweep` over the chapter directory. It works, but not the way the
+bean (or my own scoping entry above) described it.
+
+    total stale+missing   5,854 -> 4,967   (-887)
+      everything else     5,575 -> 3,833   (-1,742)
+      detangler family      279 -> 1,134   (  +855)
+
+    1,015 criteria newly evaluated (810 n/a, 205 pass)
+       37 verdict transitions: 16 fail->pass, 10 pass->n/a,
+          6 warn->pass, 5 pass->fail
+      129 sidecars
+
+**Do not quote the -887 alone; it understates the work by 2x.** The real
+movement is -1,742, masked by a +855 regression confined entirely to the
+nine `detangler-*` criteria plus `foreshadows-point-forward`, each of which
+goes from a handful of stale blocks to all 126.
+
+**Three corrections to my own scoping entry above.**
+
+1. **"The mechanical 37 % is one sanctioned bulk sweep" is not the whole
+   truth.** Of 1,155 automated stale occurrences, the sweep took 49
+   distinct criteria to zero — but the aggregate moved only 1,155 -> 1,139,
+   because the detangler family absorbed the gain. Whether a criterion is
+   `automated: true` does **not** by itself predict that `qa-sweep` will
+   resolve it.
+2. **The detangler regression is not the sweep writing placeholders**, which
+   was my first hypothesis. Checked at the entry: the new detangler entries
+   are real script verdicts with fresh `script_hash`es —
+   `detangler-no-forward-ref` moved `fail -> pass` on a genuine
+   re-evaluation, and `foreshadows-point-forward` went from ABSENT to a
+   real `n/a`. **`qa-staleness` reports them stale immediately after
+   `qa-sweep` wrote them**, so the two tools disagree about freshness for
+   this family. That is an open item (below), not something to paper over.
+3. **Block-level status cannot move here and that is expected.** Still
+   126 PART / 0 fresh, and it will stay there while the agent 63 % is
+   unworked: a block is fresh only when *every* criterion is. Do not read
+   "126 PART" as "the sweep did nothing".
+
+**Five new failures, all real.** `voice-author-notes-pollution` flipped
+pass -> fail on `categorical-mass-markov-proof`, both
+`qbeta-canonical-markov-weights-explicit-instance` blocks, and both
+`qou-motivic-galois-instance` blocks. One checker got stricter; these are
+genuine one-voice findings for whoever drains that axis.
+
+### Still open
+
+- **The agent 63 %** (~1,975 judgements over 39 criteria) — untouched, and
+  the sweep marks rather than drains it. Unchanged from the scoping entry.
+- **NEW: `qa-sweep` and `qa-staleness` disagree on the detangler family.**
+  A criterion written by the sweep, with a current `script_hash`, is
+  reported stale by the staleness scanner on the same tree. Until that is
+  resolved, the detangler bucket cannot be drained by any number of sweeps,
+  and its count is not a meaningful backlog signal. Worth its own bean if
+  anyone takes the detangler axis.
