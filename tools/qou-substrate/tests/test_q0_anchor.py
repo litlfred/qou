@@ -16,7 +16,13 @@ def test_env_override_muon():
     # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
     # computes with the witness string, so a derived label would disagree with
     # the number the witness reports. See _q0_value_for_anchor's note.
-    assert v is None or v.startswith("1.109978595557")
+    #
+    # Was the literal "1.109978595557" until 2026-08-29. That is the same rule
+    # this comment states, applied: the witness string is what the assertion is
+    # about, `fca08de7d` moved it, and comparing against the witness itself
+    # cannot go stale the way a transcription does. The q_muon_at() value the
+    # note forbids is a DIFFERENT number and is still forbidden.
+    assert v is None or v == _MUON
 
 
 def test_env_override_proton():
@@ -383,8 +389,28 @@ if __name__ == "__main__":
 # directly: that string IS the muon anchor's definition, 67 of the 85 are
 # absent from the manifest, and the manifest's runtime default is proton.
 
-_MUON = "1.10997859555733471989976322048322502665620840878015368660798114614493"
-_PROTON = "1.1099785827513808075916690956107688798744991218736"
+# DERIVED from the anchors themselves, not transcribed. Both were literals
+# until 2026-08-29, and `fca08de7d` ("muon anchor -> CODATA 2022 (owner
+# ruling): derive it, stop the self-certification") re-derived the
+# anchor-defining witness, leaving `_MUON` behind at
+# "1.10997859555733471989..." against a live "1.10997859564273904668...".
+# They diverge at the 13th significant digit and five tests in this file
+# failed on `main` from that alone.
+#
+# This does NOT contradict the "Do NOT correct this" note on
+# `test_env_override_muon` below. That note forbids one specific substitution
+# -- to the `q_muon_at()` DERIVED-LABEL value -- on the grounds that "a
+# muon-tagged producer computes with the witness string, so a derived label
+# would disagree with the number the witness reports". Reading the anchor
+# straight out of the witness is that rule's own remedy, not a violation of
+# it: it is the witness string, by construction, whatever the witness
+# currently holds.
+#
+# The corpus calls THREE values "the muon q0" (the frozen pin, the CODATA-2018
+# lepton tower, and the CODATA-2022 one). A literal here silently picks one and
+# goes stale the next time the ruling moves; this cannot.
+_MUON = w._q0_value_for_anchor("muon")
+_PROTON = w._q0_value_for_anchor("proton")
 # A REAL path (the stamper hashes the file) whose stem is absent from
 # `q0_anchor_manifest.json`, so it resolves to the runtime default, proton.
 _UNLISTED = __file__
@@ -397,7 +423,13 @@ def test_payload_evidence_beats_the_manifest_default():
         payload, script_path=_UNLISTED, engine="mpmath",
     )
     assert payload["q0Anchor"] == "muon"
-    assert payload["q0Value"].startswith("1.109978595557")
+    # RESOLVED, so it must track the live anchor. Was a transcribed
+    # "1.109978595557" prefix until 2026-08-29 and went stale with
+    # `fca08de7d`. Note the contrast with the round-trip tests above, which
+    # PASS an explicit `q0_value=` and assert that same literal comes back:
+    # there the literal is arbitrary input and pinning it is the point, so
+    # they are correct as they stand and must not be swept into this change.
+    assert payload["q0Value"] == _MUON
 
 
 def test_payload_evidence_is_read_before_serialisation():
