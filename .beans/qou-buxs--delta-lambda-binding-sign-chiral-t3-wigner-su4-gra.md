@@ -5,7 +5,25 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-02T19:31:44Z
-updated_at: 2026-08-02T19:31:45Z
+updated_at: 2026-08-29T16:01:06Z
 parent: qou-20sx
 ---
 
+RESOLVED 2026-08-29 (PR #6019, session 01JBMtTn). The proposed identification does NOT hold, and the reason is which SU(2) the sign grades.
+
+WHAT DOES HOLD. On the convention-D physical (two-row) stratum the Delta_lambda sign is exactly T-graded:
+    sgn(Delta_lambda) = (-1)^((n-2T)/2)     verified n=2..10, exact
+because lambda=(n-k,k) has n(lambda)=k so sgn=(-1)^k, and the Schur-Weyl label is T=(n-2k)/2.
+
+WHY IT DOES NOT ANSWER THIS BEAN. That T is the SU_q(2) / Temperley-Lieb spin of the BRAID SUBSTRATE, not nucleon isospin:
+ 1. braids-and-knots/jones-markov-trace.md states the fibre V is the two-dimensional fundamental of SU_q(2) -- which is also what kills ell(lambda)>=3.
+ 2. The corpus nowhere identifies that SU_q(2) fundamental with isospin (grepped content/ and docs/: zero hits).
+ 3. Nucleon flavour enters by a different mechanism: mass-theory/flavor-split-habiro-derivation.md derives p/n from a CROSSING REVERSAL (Hopf antipode S(T_w)=T_{w^-1}, sigma_1^3-sigma_1^-3 = q^3-q^-3). Flavour is a property of the braid WORD, not an index on the fibre.
+
+Also, independently: the bean asks about T3, which is a WEIGHT varying within a multiplet and so cannot be a per-block quantity at all; and the phase is n-dependent, not a single grading in T.
+
+FRAME NOTE. I first computed this in the SU(4) frame and got a scope-(b) refutation. That was the wrong frame, and sibling bean qou-ubsl ROAST (ii) had already flagged it ('Descartes forces dim V=2, so Schur-Weyl gives GL(2) NOT GL(4) ... Resolve (ii) before any work'). This resolves qou-ubsl (ii) in favour of GL(2), via the Lean-proved two-row cap (YoungDiagramThreeRowCorner.threeRow_vanishing_all_levels).
+
+SCOPE. Corpus-status finding, not a proof that no bridge could exist. An SU_q(2)-fundamental <-> isospin-doublet bridge would have to be stated explicitly; nothing currently implies it. Anyone reviving this bean should start there rather than with the sign pattern.
+
+BLOCKED INPUT, unchanged: this bean's own stated test still cannot run -- its input, the derived T3 of qou-tdrd, is status todo.
