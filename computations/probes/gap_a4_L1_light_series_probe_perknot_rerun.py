@@ -304,7 +304,7 @@ def main() -> int:
         / lambda_empirical(M_P_MEV, VOL_BORROMEAN_8G, q_0)
     w.add_assertion(
         "L1a_lambdaA_proton_gap_matches_documented",
-        computed=float(proton_rel),
+        computed=proton_rel,
         expected=0.0296,
         tolerance=2e-3,
         source=(
@@ -314,7 +314,7 @@ def main() -> int:
     )
     w.add_assertion(
         "L1a_lambdaA_worst_at_4He_matches_documented",
-        computed=float(worst["L1a_lambdaA"][1]),
+        computed=worst["L1a_lambdaA"][1],
         expected=-0.556,
         tolerance=5e-3,
         source="PR #1874 L1a worst-rel ~ -55.6% at 4He (lambda_A constant vs growing lambda_emp).",

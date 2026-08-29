@@ -295,7 +295,7 @@ def main() -> int:
     # Reproduction anchors.
     w.add_assertion(
         "original_lambda_A_form_reproduced",
-        computed=float(a4_sum_dimq / 4),
+        computed=a4_sum_dimq / 4,
         expected=2.5328,
         tolerance=5e-4,
         source="(1/4)·Σ_{λ⊢4} dim_q(V_λ) at q₀ — the original T4 target "
@@ -312,7 +312,7 @@ def main() -> int:
     )
     w.add_assertion(
         "rho_roundtrip_proton_near_2_46",
-        computed=float(rho_rt_p),
+        computed=rho_rt_p,
         expected=2.460,
         tolerance=2e-3,
         source="Round-trip density target m_p·ℏ_q²/(m_e·Vol(𝓑₃)) — the "
