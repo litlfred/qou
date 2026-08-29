@@ -92,13 +92,22 @@ load-bearing.
 
 ## Honest scope
 
-**Lean:** `n=3` is Lean-proved, sorry-free, general `z` (`MolienJonesMarkovN3.lean`).
-`n=4` is verified by exact symbolic normalisation + independent numeric per-weight
-at `z=z_D` — **not** yet a Lean `ring` identity, because that needs the independent
-general-`z` `H₄` weights `y_λ(q,z)` as explicit polynomials (the `z=z_D` corpus check
-pins one `z`, not the polynomial). The **∀n** Lean proof is a genuine formalisation
-project (abstract `S_n` Molien + `H_n` Markov-weight machinery), tracked under
-`qou-3quc`. Nothing is wired; `free_parameters = 0`.
+**Lean:** `n=3` and `n=4` are **both** now Lean-proved, sorry-free, general `z`.
+
+- `n=3`: the exact identity `y_λ = M_ν·Z` (`MolienJonesMarkovN3.lean`).
+- `n=4` (upgraded 2026-08-29): the **full** weight identity `y_λ^Molien =
+  y_λ^Jones-Markov` (`MolienJonesMarkovN4.lean`, `n4_full_identity`). The missing
+  ingredient — an *independent* general-`z` `H₄` weight — is supplied by **Wenzl's
+  Schur-principal closed form** `s_λ = Q^{n(λ)}∏(1−R Q^c)/∏(1−Q^h)`,
+  `R = qz/(1−q²+qz)` (no Molien input). The Molien weight *ratios* are proved
+  (`ring`) to equal the Wenzl `ŝ_λ` ratios, and the Markov normalisation pins the
+  scale ⇒ the two families coincide. The symbolic `(q,z)` equality
+  `y_λ^Molien = y_λ^Wenzl` at n=3 and n=4 is checked exactly in
+  [`molien_wenzl_weight_identity_probe.py`](../../computations/qbeta/molien_wenzl_weight_identity_probe.py).
+
+The **∀n** Lean proof is a genuine formalisation project (abstract `S_n` Molien +
+`H_n` Markov-weight machinery), tracked under `qou-3quc`. Nothing is wired;
+`free_parameters = 0`.
 
 ## Molien → binding: the signed dimensions come from the SAME series (added 2026-08-29)
 
