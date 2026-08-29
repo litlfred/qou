@@ -7,7 +7,7 @@ docs/audits/2026-08-26-n3-body-order-forcing.md), which established that the two
 stated anchors of `conj:binding-manybody-eq-jet-filtration` leave exactly one
 free parameter and that A=3 therefore DEFINES the n=3 term rather than testing
 it. That result is verified here, not re-derived; this probe asks the next
-question (bean qou-w3cl):
+question (bean qou-1xne):
 
   Is there ANY route in the corpus that determines `w_3`?
 
@@ -135,7 +135,7 @@ def line(c="-", n=78):
 def main() -> int:
     print("=" * 78)
     print("IS w_3 CLOSEABLE?  four candidate routes, measured")
-    print("bean qou-w3cl * proton q0 pin * mpmath end-to-end, no float64")
+    print("bean qou-1xne * proton q0 pin * mpmath end-to-end, no float64")
     print("=" * 78)
     print(f"q0  = {mp.nstr(Q0, 20)}   (proton pin, q_parameter.Q_50_DIGIT_STR)")
     print(f"m_e = {mp.nstr(M_E, 12)} MeV   (CAL-1)")
