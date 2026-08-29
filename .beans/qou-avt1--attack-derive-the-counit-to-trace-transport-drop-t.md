@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-29T10:27:26Z
+updated_at: 2026-08-29T10:50:29Z
 ---
 
 Parent: `qou-cds1`. The highest-value Q_beta vector, and it is already in the
@@ -136,3 +136,7 @@ hand two ways.
 
 ## 2026-08-29 — workflow-verified (adversarial, both lenses survive): cosine loses justification under D
 Under canonical D the cosine correction is NOT derived: its evenness-forcing (Markov cyclicity via eigenphase_bar_involution) EVAPORATES because z_D is neither bar-even nor bar-odd (symbolic-exact: alpha_D(1/q)+alpha_D(q)=q^2/2-1+1/(2q^2) != 0; alpha(1/q)=-alpha(q) IFF z(1/q)=z(q), true C false D). The only convention-agnostic PROVED transport is affine (even-part 1), O(alpha^2)=0, so the cosine's O(alpha^2) is axiom-only with no D backing. Scope-(a) (not 'false under D'). NEW: a SECOND carrier QOU.BraidKnot.V21Eigenphase / markovSymmetrizedV21Character (HoefsmitV21CosSymmetrization.lean) is ALSO on the C eigenphase -> verdict STRONGER; C-scope/drop must cover BOTH files. Next: land LadderCosClash.lean (drafted) + open the fork bean (does a bar-odd alpha_D exist reproducing the H3 V_(2,1) spectrum?). Audit docs/audits/2026-08-29-convention-d-qbeta-front-adversarial-audit.md.
+
+
+## 2026-08-29 — G2 is now PROVED-LEAN (landed)
+QOU/QBeta/LadderCosClash.lean committed (0f4df6eed6), sorry-free, verified lean-direct (axioms={propext,Classical.choice,Quot.sound}): transport_even_sum (affine even part =1), evalMap_ratio_eq_transportFactor (KC19 ratio = 1-4a/(h(h-2))), cos_correction_ne_affine_even_part (cos a != affine even part on (0,2pi)). The cosine is the SOLE carrier of the O(a^2) term. Still open: the fork bean (does a bar-odd alpha_D exist reproducing the H3 V_(2,1) spectrum) + C-scope/drop BOTH cosine carriers (QBetaCosResummation + V21Eigenphase).
