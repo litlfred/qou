@@ -85,7 +85,7 @@ def isReduced (w : BraidWord) : Prop :=
     w[i]! = w[i+2]! → (w[i]! : Int) - w[i+1]! ≠ 1 ∧
     (w[i]! : Int) - w[i+1]! ≠ -1 ∨ w[i]! ≤ w[i+1]!)
 
-/-- REMOVED (2026-08-25): `normal_form_exists_unique` was formally defective —
+/- REMOVED (2026-08-25): `normal_form_exists_unique` was formally defective —
     the bound variables `q`, `hq`, `A`, `word` did not appear in the conclusion
     `∃! nf, ∀ wb ∈ nf, isReduced wb.1`, making the statement provably false
     (both `[]` and `[([], 1.0)]` satisfy the predicate). The axiom had zero
