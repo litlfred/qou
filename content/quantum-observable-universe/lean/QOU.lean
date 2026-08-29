@@ -1277,3 +1277,15 @@ import QOU.MassTheory.PnOffsetBarOddClass
 -- lean-direct run in that PR.  Wiring them here is the other half of the fix.
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
 import QOU.Archimedean.ParticleKnots
+
+-- Same fix, same reason, a third module (bean qou-aemx follow-on).
+-- `QOU/Observations/centered_hecke_variance_positive.lean` is the canonical
+-- declaration for `prop:centered-hecke-variance-positive`, and nothing imported
+-- it, so `lake build QOU` never compiled it.  Its block's `.md` was corrected
+-- from convention C to convention D on 2026-08-09 -- withdrawing the figure
+-- `Var ≈ 0.855` -- and the Lean sibling was not: it kept the C parameter, the
+-- withdrawn number, and a pair of positivity axioms that under D hold only on
+-- `q ∈ (1, ψ)`.  Nineteen days of drift that a compile would not have caught
+-- either, since the old file type-checked fine; but an uncompiled module is one
+-- nobody has reason to open.  Wiring it in at least puts it in the build.
+import QOU.Observations.centered_hecke_variance_positive
