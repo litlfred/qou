@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-29T07:05:42Z
+updated_at: 2026-08-29T07:12:10Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -192,3 +192,5 @@ FULL UNCONDITIONAL M1 VERIFIED (sorry-free): sum_dim_jonesMarkovCoeff_eq_one com
 GENERAL-X TELESCOPE (research frontier) STARTED: MacdonaldTelescopeGeneralX.lean lays out the polynomial-identity route (both telescope sides are polynomials in X of degree n, agreeing at all X=Q^r via the merged bridge + sum_dim_wenzlWeight_eq_one; {Q^r} infinite for Q>1 ⇒ Polynomial.eq_of_infinite_eval_eq forces equality for ALL X). Brick 1 landed sorry-free (powers_infinite: {x|∃n,Q^n=x} infinite for Q>1). Bricks 2-4 open + substantial (schurElementPoly : ℝ[X] lift of the nested product; un-normalised X=Q^r agreement; assembly). Research tranche, not one-sitting.
 
 General-X BRICK 2 landed (sorry-free): schurElementPoly Q λ : ℝ[X] (cellFactorPoly per cell) + eval_schurElementPoly ((schurElementPoly Q λ).eval X0 = schurElement Q X0 λ). Proves schurElement Q · λ is a genuine polynomial in X, via WenzlSchurElementBridge.schurElement_eq_finset_prod + Polynomial.eval_prod/eval_mul/eval_C/eval_X + ring. #print axioms = [propext, Classical.choice, Quot.sound]. Remaining: brick 3 (un-normalised X=Q^r agreement Σ f_λ s_λ(Q,Q^r) = Z_n from SchurWeyl.sum_dim_wenzlWeight_eq_one + bridge) and brick 4 (assembly via eq_of_infinite_eval_eq).
+
+GENERAL-X TELESCOPE COMPLETE (sorry-free, all 4 bricks): telescope_generalX proves Σ_{|ν|=n} f^ν·schurElement Q X ν.rowLens = ((1-X)/(1-Q))^n for ALL X (Q>1) -- the corpus previously had it only at X=Q^r. Route: bricks 1 (powers_infinite), 2 (schurElementPoly + eval_schurElementPoly, the ℝ[X] lift), 3 (sum_dim_schurElement_rowLens_eq, un-normalised X=Q^r agreement via sum_dim_wenzlWeight_eq_one + bridge), 4 (telescopeLHS/RHSPoly + eval lemmas + levelBracket_succ_ne_zero + eq_of_infinite_eval_eq over {Q^{r+1}}). All #print axioms = [propext, Classical.choice, Quot.sound]. This generalises the conditional jonesMarkov_normalisation_of_telescope's hypothesis to free X.
