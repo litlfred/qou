@@ -111,4 +111,33 @@ theorem m1_pos_eventually
   have hslack : 0 ≤ sigD n * sigW n - N n := by linarith [hN n]
   rw [hsplit]; linarith
 
+/-- **The leading-margin field, reduced to the rigorous `V_D` ceiling (sorry-free).**
+
+`leading_margin_pos` asks `sigRatioInf < rhoInf` with `sigRatioInf = √(V_D/V_A)`, `rhoInf = 2√6/5`.
+Because `π` cancels in the square, this is exactly `V_D < 64/(75π²)` — and that bound is proved
+rigorously (certified interval partial sum + explicit analytic tail majorant,
+`wlambda_covariance_epic_M1_VD_ceiling_rigorous.py`: `V_D < 0.0415975 < 0.0864607`). This lemma is the
+Lean reduction: given `V_A = 8/(9π²)`, `sigRatioInf² = V_D/V_A`, `rhoInf² = 24/25`
+(`CSMarginCorrelationConstant.csMargin_rhoSq_eq`), `0 ≤ rhoInf`, and the ceiling `V_D < 64/(75π²)`,
+the strict inequality follows by `π`-cancellation in the square. **Unlike the two `Tendsto` fields,
+this one is NOT gated on the open bulk kernel rate** — it is a fact about the exact limit constants,
+now discharged modulo the certified numeric ceiling.
+
+-- Ref: [manuscript] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
+theorem leading_margin_pos_of_VD_ceiling
+    (VA VD sigRatioInf rhoInf p : ℝ)
+    (hp : 0 < p)
+    (hVA : VA = 8 / (9 * p ^ 2))
+    (hceil : VD < 64 / (75 * p ^ 2))
+    (hsig : sigRatioInf ^ 2 = VD / VA)
+    (hrho2 : rhoInf ^ 2 = 24 / 25)
+    (hrhonn : 0 ≤ rhoInf) :
+    sigRatioInf < rhoInf := by
+  have hsq : sigRatioInf ^ 2 < rhoInf ^ 2 := by
+    rw [hsig, hrho2, hVA, div_lt_iff₀ (by positivity)]
+    have h : (24 : ℝ) / 25 * (8 / (9 * p ^ 2)) = 64 / (75 * p ^ 2) := by
+      field_simp; ring
+    rw [h]; exact hceil
+  exact lt_of_pow_lt_pow_left₀ 2 hrhonn hsq
+
 end QOU.BraidsAndKnots.M1DescentDPPConvergence

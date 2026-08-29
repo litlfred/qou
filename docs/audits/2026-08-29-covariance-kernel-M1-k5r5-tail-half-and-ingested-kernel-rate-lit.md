@@ -86,11 +86,31 @@ application is a real analytic step, not a missing reference.
 The gap is **OPEN** but materially narrowed: the only remaining rigorous step is the bulk sine-kernel
 rate for the discrete Plancherel descent variance, and the tools for it are now on hand.
 
+## Result 3 — the leading-margin field is now *proved* (rigorous `V_D` ceiling) and discharged in Lean
+
+The `M1DescentDPPConvergence.DescentDPPMarginConvergence` class has three fields; two are the `Tendsto`
+convergences gated on the bulk rate, but the third — `leading_margin_pos : √(V_D/V_A) < 2√6/5` — is a
+fact about the *exact limit constants* and is **not** gated on the bulk rate. Because `π` cancels in
+the square it is exactly `V_D < 64/(75π²)`, and `V_D` (no closed form) is now bounded **rigorously**:
+
+- **Certified** (`wlambda_covariance_epic_M1_VD_ceiling_rigorous.py`, `mpmath.iv` interval arithmetic,
+  NO float64): the partial sum over odd `k = 3…999` encloses to `V_D_partial ∈ [0.0415974805, …]`, and
+  an **explicit elementary tail majorant** `R(K) ≤ a²/(2K⁴) + b²/(3K⁶)` (from `|Â_k| ≤ (72/5)/(πk²)`,
+  `|Ω̂_k| ≤ (4032/25)/(π²k³)`, both via `k²−4 ≥ (5/9)k²`) gives `R(999) ≤ 1.05e−11`. Hence
+  `V_D < 0.0415974806 < 0.0864607 = 64/(75π²)` with margin `0.0449`. This upgrades `m∞ > 0` from
+  *measured* to *proved*.
+- **Lean** (`M1DescentDPPConvergence.leading_margin_pos_of_VD_ceiling`, sorry-free, `#print axioms`
+  clean): given `V_A = 8/(9π²)`, `sigRatioInf² = V_D/V_A`, `rhoInf² = 24/25`, `0 ≤ rhoInf`, and the
+  ceiling `V_D < 64/(75π²)`, derives `sigRatioInf < rhoInf` by `π`-cancellation in the square. So the
+  `leading_margin_pos` field is discharged modulo the certified numeric ceiling — one of the three
+  class fields closed with genuine rigor, leaving only the two bulk-rate `Tendsto`.
+
 ## No fake closure
 
 The bulk-application step is not done here, and a *measured* tail decay is corroboration of the *cited*
 Johansson bound, not a substitute for it. The tail-half reduction is rigorous (cited bound + polynomial
-weight); the bulk remains genuinely open.
+weight); the leading-margin ceiling is rigorous (certified interval + explicit majorant); the **bulk
+correlation/ratio convergence remains genuinely open** (the two `Tendsto` fields). Gap `qou-k5r5` OPEN.
 
 ## Compute + sources
 
