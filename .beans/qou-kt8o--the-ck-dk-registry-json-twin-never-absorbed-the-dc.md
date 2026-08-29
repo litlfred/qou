@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-08-29T01:47:03Z
+updated_at: 2026-08-29T03:02:08Z
 ---
 
 Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not
@@ -127,3 +127,42 @@ the muon anchor moved to CODATA 2022 in `fca08de7d`, so the live secant gives
 **3.812e6**. Route 2 (`2.37/u³`) is unaffected at **3.832e6** and reproduces
 AGENTS.md exactly. Nothing turns on it; recorded so the next person re-deriving
 does not think they have found a third figure.
+
+
+## 2026-08-29 — the last two .lean, and AGENTS.md's own count
+
+FaddeevModularDouble.lean was the worst of the five .lean sites: it carried the
+superseded muon c_3 = -2.0097 ITSELF, not just the derived slope, plus both of
+that value's arithmetic consequences. The stale pair reproduces its 4.66e6 and
+4.4e-7 to every digit shown (live: 3.83925e6 / 5.39e-7) — that reproduction is
+what identifies a figure as the stale twin, and is the cheapest available test.
+MeridianHolonomyAnchorCarrier.lean needed only the slope; its argument turns on
+the ORDER O(10^6), which both values satisfy, so nothing downstream moved.
+
+lean-direct exit 0 on both against the real import cone (LEAN_PATH over the 19
+restored olean dirs). Note the trap: oleans live under .lake/build/lib/lean/,
+not .lake/build/lib/ — pointing LEAN_PATH at the latter fails with 'unknown
+module prefix Mathlib' AND STILL EXITS 0, so the exit code alone is not a check.
+
+AGENTS.md's 'five other sites … audit docs and local/compute-author
+§precedent-table' is wrong twice over. Measured on origin/main excluding
+.beans/: 43 files / 71 lines with c_3 named on the same line, or 88 files
+allowing adjacent-line context — 10-20x. And the characterisation misses both
+groups that matter: the largest is computations/qbeta (20 files), live probes
+and producers that RECOMPUTE the figure, and the 5 .lean go unmentioned.
+
+Measurement caution for whoever re-runs this: my first pass said 132 files
+because I included the '0.0596' spelling unguarded. 66 of 78 of those hits were
+coincidental prefixes (0.05968895…, 0.05963573…) in unrelated witnesses. The
+figure has three spellings — 4.6e6, 4.66e6, Delta c_3 = 0.0596 — and only the
+first two are safely greppable on their own.
+
+Corrected AGENTS.md accordingly, including an explicit 'do not sweep the
+remainder blind': most survivors are dated audit docs (qou-3nva's standing
+decision, not overridden) or witness description fields that cannot be fixed
+without re-running their producer.
+
+Also fixed the #5942 PR body, which still asserted the route-1 3.812e6 and the
+'AGENTS.md is ~0.7% stale' claim I had already retracted in a comment. A
+retracted claim left standing in a PR body is the same defect class this bean
+exists to drain.
