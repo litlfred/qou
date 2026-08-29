@@ -55,6 +55,13 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# The float64 drain in this PR put mpmath into a probe that had none. Without
+# this call every mp.mpf/mp.log below would run at mpmath's DEFAULT dps=15 --
+# i.e. the drain would have swapped binary64 for a decimal type of the same
+# width and changed nothing. Caught by never_raises_dps_audit, not by eye.
+set_compute_dps()
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T01:02:45.413311+00:00",
-  "commitSha": "e7141199d140303fcfa5efa75a3b30c2c4ccc9cf",
+  "computedAt": "2026-08-29T01:24:08.882293+00:00",
+  "commitSha": "596e9e97c155b9412f7abbef2c2ac4b37ce7d548",
   "assertions": [
     {
       "name": "deuteron_not_closable_by_integer_edge_set",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 84,
+  "durationMs": 107,
   "computation": "bond-edge-set-selection",
   "scriptFile": "bond_edge_set_selection_probe.py",
-  "scriptHash": "3fa9569c618f",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "18304f85c12b",
+  "scriptCommitSha": "3b68f0b9d56d47f8de4a9b42f7ef2740403b4868",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -214,7 +214,7 @@
         "Z": 4,
         "N": 3,
         "A": 7,
-        "B_AME_MeV": "37.6003",
+        "B_AME_MeV": "37.6004",
         "L_required": "8.9824",
         "edge_box": {
           "pp": 6,
