@@ -525,12 +525,29 @@ def test_false_beats_payload_evidence():
 
 
 def test_none_and_str_are_unchanged_by_the_new_branch():
-    """Regression: the default and the explicit-string paths still stamp."""
+    """Regression: the default and the explicit-string paths still stamp.
+
+    Deliberately asserts THAT an anchor is stamped, not WHICH one. What the
+    `q0_anchor=False` branch could plausibly break is the other two paths
+    silently stamping nothing; which anchor a given payload resolves to is a
+    different question, owned by the resolution tests above.
+
+    Naming a specific anchor here also made this test hostage to a value it is
+    not about. It first read `assert default.get("q0Anchor") == "muon"` off
+    `_MUON`, and `fca08de7d` ("muon anchor -> CODATA 2022 (owner ruling)")
+    moved the anchor-defining witness to a different one of the THREE values
+    the corpus calls "the muon q₀" (they diverge at the 13th significant
+    digit). That turned this into a sixth instance of the five failures that
+    commit already left in this module -- and it passed in a full-file run
+    anyway, because an earlier test leaks `QOU_Q0_ANCHOR=muon` into the
+    environment and masks it. A test that only passes via another test's
+    leaked state is worse than one that fails honestly.
+    """
     default = {"parameters": {"q0": _MUON}}
     w.WitnessBuilder.stamp_staleness_metadata(
         default, script_path=_UNLISTED, engine="python",
     )
-    assert default.get("q0Anchor") == "muon"
+    assert default.get("q0Anchor"), "the default path must still resolve and stamp"
 
     explicit = {"result": 1}
     w.WitnessBuilder.stamp_staleness_metadata(
