@@ -1,0 +1,198 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.3910v1",
+ "source": {
+  "file": "0707.3910v1.pdf",
+  "sha256": "ad31f3cba16c4ea4ba12e789dae066ac6642f519613076b901067d0a7bf5b6de",
+  "bytes": 227159,
+  "pages": 20,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.3910",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "26 Jul 2007"
+  },
+  "doi": null,
+  "title": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+  "authors_raw": "GEORGE BOROS AND VICTOR H. MOLL",
+  "title_lines": [
+   "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF",
+   "RATIONAL FUNCTIONS"
+  ],
+  "abstract": "We present a rational version of the classical Landen transfor- mation for elliptic integrals. This is employed to obtain explicit closed-form expressions for a large class of integrals of even rational functions and to de- velop an algorithm for numerical integration of these functions.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210811023211-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The reduction formula",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The quartic case",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The symmetric case of degree 8",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A sequence of Landen transformations",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The sixth degree case",
+   "page": 10,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 11,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Two binomial sums",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7076,
+   "n_words": 1339
+  },
+  {
+   "id": "sec-001-2-the-reduction-formula",
+   "number": "2",
+   "title": "The reduction formula",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2644,
+   "n_words": 579
+  },
+  {
+   "id": "sec-002-3-the-quartic-case",
+   "number": "3",
+   "title": "The quartic case",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2352,
+   "n_words": 575
+  },
+  {
+   "id": "sec-003-4-the-symmetric-case-of-degree-8",
+   "number": "4",
+   "title": "The symmetric case of degree 8",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1271,
+   "n_words": 308
+  },
+  {
+   "id": "sec-004-5-a-sequence-of-landen-transformations",
+   "number": "5",
+   "title": "A sequence of Landen transformations",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3653,
+   "n_words": 809
+  },
+  {
+   "id": "sec-005-6-the-sixth-degree-case",
+   "number": "6",
+   "title": "The sixth degree case",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2869,
+   "n_words": 622
+  },
+  {
+   "id": "sec-006-7-examples",
+   "number": "7",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 17,
+   "n_chars": 8419,
+   "n_words": 1974
+  },
+  {
+   "id": "sec-007-appendix-a-two-binomial-sums",
+   "number": null,
+   "title": "Appendix A. Two binomial sums",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3115,
+   "n_words": 778
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2736,
+   "n_words": 385
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 34135
+ }
+}

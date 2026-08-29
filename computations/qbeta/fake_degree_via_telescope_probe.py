@@ -165,19 +165,22 @@ def main() -> int:
                     source="Sum f schurElement(q^2,0) = (1/(1-q^2))^n, exact n<=5")
     w.add_assertion("normalizedSum_eq_one", 1 if norm_ok else 0, 1,
                     source="chain closes normalizedSum n q = 1, exact n<=5")
-    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
-    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
-    # an undeclared witness goes out asserting a pin it never used, and
-    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
-    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
-    # in the payload.
+    # q0-INDEPENDENT, producer-declared. This probe never evaluates at a
+    # substrate pin: `q` is a sympy Symbol throughout, there is no
+    # `q_parameter` import, and `normalizedSum n q = 1` is an identity in the
+    # indeterminate. Stamping it `proton` would assert a pin the computation
+    # does not have; omitting the field leaves it in Q0_ANCHOR_MISSING, where
+    # it took the q0-anchor refill ratchet RED on main as the one NEW
+    # unbaselined witness. `independent` is producer-declared only -- see
+    # `qou_substrate/witness.py`, and `hecke-a1-tail-schedule` for the same
+    # symbolic-parameter case.
     out = w.save({
         "q0Anchor": "independent",
-        "q0AnchorReason": (
-            "q0-independent: q_0 is unreachable from this producer's entire import "
-            "cone. The fake-degree telescope is combinatorics on partitions; no "
-            "substrate evaluation enters it."
-        ),
+        "q0AnchorReason":
+            "Symbolic identity in the indeterminate q (sympy Symbol; no "
+            "q_parameter import and no numeric evaluation anywhere in the "
+            "producer). normalizedSum n q = 1 holds for all q, so no "
+            "substrate pin applies and no q0Value exists to record.",
     })
     print(f"witness -> {out}")
     return 0 if ok else 1

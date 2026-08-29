@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1099,
-    "total_fields": 46136,
+    "dirty_witnesses": 1098,
+    "total_fields": 35400,
     "lp_dual_carved_out_fields": 394,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -67,11 +67,12 @@
       "elapsed_seconds"
     ],
     "f64_integrator_carved_out_fields": 65,
-    "deprecated_f64_carved_out_fields": 80675,
+    "deprecated_f64_carved_out_fields": 91732,
     "deprecated_f64_carved_out_by_file": {
       "computations/a_operator/A-operator-extract-h9-pn.witness.json": 22738,
       "computations/a_operator/A-operator-extract-h9-pp.witness.json": 22750,
       "computations/atom-level-wedderburn-tower.witness.json": 97,
+      "computations/joint-tower-sdp-rust.witness.json": 11057,
       "computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json": 17531,
       "computations/sublemma-2-1-A-operator-extract-h9-pn.witness.json": 17559
     },
@@ -81,18 +82,18 @@
       "computations/qns-tail-pileup-probe.witness.json": 17
     },
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1100,
-    "baseline_fields": 46467,
+    "baseline_files": 1098,
+    "baseline_fields": 35400,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 6
+    "drained_files": 0
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "410c297b818b",
   "scriptCommitSha": "0a455009681d90a8a1bc5d6d34b088b8973b3670",
-  "commitSha": "2098a2da8cd3b3d466344a7f2fdd9ceeac3fa98f",
+  "commitSha": "35baa02f854972079424a5e783ad19b6bc02ab01",
   "engine": "python",
-  "computedAt": "2026-08-29T15:24:55.158157+00:00",
+  "computedAt": "2026-08-29T12:07:44.000803+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

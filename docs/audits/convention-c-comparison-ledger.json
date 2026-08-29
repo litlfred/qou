@@ -1,0 +1,15 @@
+{
+  "schema": "convention-c-comparison/v1",
+  "purpose": "Adjudicated convention-C comparison sites for scripts/convention-c-value-audit.py. An entry here is the ONLY thing that stops a confirmed convention-C binding from blocking that audit.",
+  "why_a_committed_file": "The audit reads no names and no comments, by design: its whole premise is that it cannot be evaded by re-spelling, and docs/audits/2026-08-15-detector-blindness-taxonomy.md records sixteen spellings that defeated shape-matching detectors, four of them found BY detectors written to catch the previous blind spot. A '# comparison only' comment or a z_C-style name would be an exemption an author grants themselves inside the file being audited -- the same evasion surface, one level up. A ledger entry cannot be granted that way. It lives outside the scanned tree, it must be committed as a separate deliberate act, and its key includes a hash of the site's own source line, so editing that line expires the adjudication automatically. Same shape as docs/audits/lean-vacuity-review-ledger.json, which holds agent verdicts a machine cannot reach for the same reason.",
+  "what_co_binding_is_not": "The audit reports which confirmed-C sites are co-bound with a convention-D binding in the same enclosing scope. That is a value-level hint at which sites are PROBABLY comparisons, and it deliberately carries no exemption power: it can be gamed by adding a throwaway z_D beside the site. Co-binding is why a site gets PROPOSED for the ledger (--propose-ledger). It is never why a site is exempt; the commit is.",
+  "how_to_add_an_entry": [
+    "1. Run: python3 scripts/convention-c-value-audit.py --propose-ledger",
+    "2. Take the stub for the site you are adjudicating.",
+    "3. Fill in `rationale` with why that site binds z_C deliberately -- what it compares, and what would be lost by binding only z_D.",
+    "4. Fill in `adjudicated_by` and `date`.",
+    "5. Commit it here. Do NOT edit the audited source to make the site disappear; that is AGENTS.md 1a audit-dodging.",
+    "6. If the site's source line later changes, the entry stops matching and the site blocks again. That is intended: the adjudication was about that expression, and it is now a different one. The audit lists such entries as `stale` (non-blocking) so they can be pruned or renewed."
+  ],
+  "entries": []
+}

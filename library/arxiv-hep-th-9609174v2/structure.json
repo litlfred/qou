@@ -1,0 +1,233 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9609174v2",
+ "source": {
+  "file": "9609174v2.pdf",
+  "sha256": "87885f4d03661f26747d265ab45a37952535091439d3affc200cc844565c95e8",
+  "bytes": 193643,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9609174",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "23 Sep 1996"
+  },
+  "doi": null,
+  "title": "Universality of random matrices in the microscopic limit and the Dirac operator spectrum",
+  "authors_raw": "G. Akemann\u2217, P. H. Damgaard\u2020, U. Magnea\u2021 and S. Nishigaki\u00a7",
+  "title_lines": [
+   "Universality of random matrices in the microscopic limit",
+   "and the Dirac operator spectrum"
+  ],
+  "abstract": "We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit. The essence of the proof consists in reducing the three-term recursion relation for the relevant orthogonal polynomials into a Bessel equation governing the local asymptotics around the origin. The possible physical interpretation as the universality of soft spectrum of the Dirac operator is brie\ufb02y discussed. PACS: 05.45.+b, 11.15.Pg, 11.30.Rd e-mail addresses: \u2217akemann@itp.uni-hannover.de, \u2020 phdamg, \u2021 umagnea, \u00a7 shinsuke@alf.nbi.dk",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9609174v2  23 Sep 1996",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126155412-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(V (\u03bb)+V (\u00b5)) 1",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(u(t)x)",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(ux)",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(V (\u03bb2)+V (\u00b52)) 1",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(ux)J\u03b1\u22121",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(u\u2032x) = 1",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "J\u03b1\u22123",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 576,
+   "n_words": 80
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 14963,
+   "n_words": 2861
+  },
+  {
+   "id": "sec-002-2-v-\u03bbv-\u00b5-1",
+   "number": "2",
+   "title": "(V (\u03bb)+V (\u00b5)) 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5363,
+   "n_words": 1099
+  },
+  {
+   "id": "sec-003-2-utx",
+   "number": "2",
+   "title": "(u(t)x)",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2325,
+   "n_words": 489
+  },
+  {
+   "id": "sec-004-2-ux",
+   "number": "2",
+   "title": "(ux)",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2158,
+   "n_words": 446
+  },
+  {
+   "id": "sec-005-2-v-\u03bb2v-\u00b52-1",
+   "number": "2",
+   "title": "(V (\u03bb2)+V (\u00b52)) 1",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 578,
+   "n_words": 128
+  },
+  {
+   "id": "sec-006-2-uxj\u03b11",
+   "number": "2",
+   "title": "(ux)J\u03b1\u22121",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-2-ux-1",
+   "number": "2",
+   "title": "(u\u2032x) = 1",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1046,
+   "n_words": 237
+  },
+  {
+   "id": "sec-008-2-j\u03b13",
+   "number": "2",
+   "title": "J\u03b1\u22123",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4001,
+   "n_words": 683
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 319,
+   "n_words": 53
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1418,
+   "n_words": 251
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 32747
+ }
+}

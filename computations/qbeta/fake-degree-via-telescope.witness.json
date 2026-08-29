@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T10:49:31.041815+00:00",
-  "commitSha": "4f4623deac32699cad47ce9765c1bf510a9aede7",
+  "computedAt": "2026-08-29T17:32:33.049034+00:00",
+  "commitSha": "e451b631e31002f973331cef1d03a9103217259f",
   "assertions": [
     {
       "name": "convention_bridge_q2_X0",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 16,
   "computation": "fake-degree-via-telescope",
   "scriptFile": "fake_degree_via_telescope_probe.py",
-  "scriptHash": "e3273a14fd66",
-  "scriptCommitSha": "24c30714a6a74d0cb93683b64b41a458aa3b3b8b",
+  "scriptHash": "5459d67b1f76",
+  "scriptCommitSha": "4e1f63fd5e1327d7d8157b7b82f1ccd250973b45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,5 +61,5 @@
     "free_parameters": 0
   },
   "q0Anchor": "independent",
-  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's entire import cone. The fake-degree telescope is combinatorics on partitions; no substrate evaluation enters it."
+  "q0AnchorReason": "Symbolic identity in the indeterminate q (sympy Symbol; no q_parameter import and no numeric evaluation anywhere in the producer). normalizedSum n q = 1 holds for all q, so no substrate pin applies and no q0Value exists to record."
 }
