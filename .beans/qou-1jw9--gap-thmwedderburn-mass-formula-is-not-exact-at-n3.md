@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T18:43:31Z
+updated_at: 2026-08-29T18:51:28Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -832,3 +832,53 @@ STATUS
 NEXT: (1) correct the "unfalsifiable as written" claim on main — it is my own
 and it is wrong; (2) Phi_1 under convention D, which is the honest way to ask
 whether the table survives the C excision at all.
+
+
+=== BOTH NEXT ITEMS DONE (cf660aaa4f) ===
+
+(1) RETRACTION AT SOURCE. The "unfalsifiable as written / prose does not
+determine a unique construction" claim is corrected in the two files on main
+that carried it: wedderburn_Mi_constructor_test.py (SCOPED banner) and
+wedderburn_mass_table_z1_20.py (my cross-reference). The constructor probe's
+numbers are kept as the record of a REFUTED READING and now say so. The table
+producer's caveat now says the remaining gap is PHI_1 ALONE, not all three.
+
+(2) PHI_1 DOES NOT SURVIVE THE C EXCISION — measured, convention D only.
+
+    atom   carried Phi_1   min over D    reachable?   rel gap
+    He        -5.558902    -4.064853         NO        0.269
+    Li        -9.838642    -6.979815         NO        0.291
+    Be       -18.272718   -10.642315         NO        0.418
+    B        -22.803608   -14.999845         NO        0.342
+    C        -24.310734   -17.239301         NO        0.291
+
+0/5. Every carried value lies BELOW convention D's reachable minimum, by
+27-42 %. The carried Phi_1 — and therefore the published mass table computed
+from it — is a CONVENTION-C ARTIFACT.
+
+COST OF THE EXCISION: excising C does NOT leave the table intact. Phi_1 must be
+recomputed under D, moving every published row. OWNER DECISION, same kind as
+the beta3 repair. Not taken here.
+
+WHAT IT DOES NOT COST: Phi_2 and Phi_3 are convention-free (neither uses z) and
+stay re-derived at 19/19 under D. So the excision's blast radius is EXACTLY ONE
+INVARIANT — which is the useful part of the measurement.
+
+Probe: computations/phi1_convention_d_probe.py (D only; the earlier C-computing
+probe was deleted, not committed).
+
+SCOPE (a): 400-arrangement cap (reported per row, hit for B and C), five light
+atoms, one chain structure. Not a claim that no convention-D construction
+reaches these values — only that the one which works for Phi_2 and Phi_3 does not.
+
+=== ARC STATUS ===
+  Phi_2 ..... RE-DERIVED 19/19, convention-free
+  Phi_3 ..... RE-DERIVED 19/19, convention-free
+  Phi_1 ..... open, convention-dependent, and shown to be C-frame
+  item 2 .... base masses 44/36 ppm below CODATA, untouched
+
+NEXT, and it is now an owner call rather than a research question: recomputing
+Phi_1 under D moves every published row of the mass table. Someone has to decide
+whether the table is regenerated (as beta3 was, PR #5781) or the C-frame
+provenance is documented and the table left as-is. The measurement needed to
+make that decision is done; the decision is not mine.
