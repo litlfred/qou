@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T00:41:48Z
+updated_at: 2026-08-29T01:03:13Z
 ---
 
 
@@ -412,3 +412,18 @@ assert rigorous in-session without an independent check. A wrong rigorous C is w
 RESTING STATE: M_1>0 proved for n<=78 (exact), reduced for n>78 to one explicit constant
 (Olver/Debye C_A) in a validated three-region+de-poissonization scheme with 30-300x measured
 headroom. Strong publishable state. Close-outright is a well-scoped follow-on, not a new idea.
+
+## 2026-08-29 — Debye constant-tracking step 1: KINK CANCELS (branch claude/m1-debye-constant-tracking)
+
+Measured V_A/theta^2 = Var(Sum|c|)/theta^2 expansion (exact Bessel sums, dps 60):
+v_A=0.810568 monotone from below; c_{1/2} (theta^-1/2 kink) sign-unstable at noise floor
+({-0.00048,+0.0010}, |.|<0.001) = consistent with ZERO; c_1 (theta^-1) ~ -0.066 stable.
+
+=> the |u|-kink term VANISHES; rigorous rate is theta^-1 (SMOOTH Euler-Maclaurin), not the
+feared theta^-1/2. Candidate rigorous reason: Plancherel transpose-invariant => content law
+symmetric u<->-u => Sum|c| EVEN => integer-power expansion (half-power cancels).
+
+Closure DE-RISKED: 'modulo one HARD constant' -> 'modulo one EASY constant' (smooth theta^-1,
+coeff ~0.066, 30-300x headroom). NOT yet a verified C. Remaining: (i) write transpose-symmetry
+c_{1/2}=0 proof; (ii) explicit theta^-1 Euler-Maclaurin constant + ratio propagation. Did not
+fake a rigorous number.
