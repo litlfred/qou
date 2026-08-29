@@ -96,9 +96,10 @@ already says. Neither requires progress on the underlying open problem; they
 restore the gap to its honest size.
 
 ```lean
--- p2-critical-exponent.lean
+-- p2-critical-exponent.lean  (one-sided: the md says q → 1⁺, and the
+-- substrate regime is q > 1)
 enstrophy_diverges :
-  ∀ M : ℝ, ∀ ε : ℝ, 0 < ε → ∃ q : ℝ, q ≠ 1 ∧ |q - 1| < ε ∧ M < enstrophy q
+  ∀ M : ℝ, ∀ ε : ℝ, 0 < ε → ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q
 
 -- p5-counterexample.lean
 ns_counterexample_holds :
@@ -107,7 +108,16 @@ ns_counterexample_holds :
                M < velocityProfile t x
 ```
 
-Both witnesses above are then refuted, which is the point of making the change.
+Both witnesses above are then refuted, which is the point of making the change —
+and the probe now proves that refutation rather than asserting it.
+
+**What the fix does not reach.** `p2`'s md asserts a *power law*,
+`Ω_max(q) ~ (q-1)^{-α}`. The strengthened field asserts unboundedness on every
+right-neighbourhood of 1, which is what makes the conjecture non-vacuous, but
+it is not the rate. So `criticalExponent` (γ_c) remains unconstrained by any
+field even after this change: the class still admits any positive real as the
+critical exponent. Encoding the asymptotic rate is separate, open work, and is
+noted in the carrier's docstring rather than silently left to look finished.
 
 **Blast radius.** Neither class has an instance anywhere in the tree, and the
 `QOU.FluidDynamics` carriers are not the ones `ConditionalCorollaries.lean`

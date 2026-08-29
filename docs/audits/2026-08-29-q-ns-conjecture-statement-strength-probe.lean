@@ -78,11 +78,10 @@ Same functions, same `T*`; only the quantifier changed. -/
     the enstrophy is below `2`, so `M = 10` has no witness. -/
 theorem regularAtOne_refuted_by_strengthened :
     ¬ (∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
-        ∃ q : ℝ, q ≠ 1 ∧ |q - 1| < ε ∧ M < max q 0) := by
+        ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < max q 0) := by
   intro h
-  obtain ⟨q, _, hq, hM⟩ := h 10 1 one_pos
-  rw [abs_lt] at hq
-  have hq2 : q < 2 := by linarith [hq.2]
+  obtain ⟨q, -, hq, hM⟩ := h 10 1 one_pos
+  have hq2 : q < 2 := by linarith
   rcases max_cases q 0 with ⟨he, _⟩ | ⟨he, _⟩ <;> rw [he] at hM <;> linarith
 
 /-- `velocityProfile t x = max (-t) 0` with `T* = 1` no longer inhabits
