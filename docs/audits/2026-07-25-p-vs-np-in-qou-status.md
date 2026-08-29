@@ -134,10 +134,38 @@ instance-free because it *is* the counting→decision transfer, which is:
 | Target | Needs the transfer? | Status |
 |---|---|---|
 | non-vanishing `χ(A)=−6≠0` | no | **proved** (axiom consequence) |
-| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | **n=2 fully discharged as a theorem** (`h2_isSemisimpleRing_of_generic`, no cited class, no sorry); general `n` needs the `T_w` basis (Mathlib wall) |
+| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | **n=2, n=3, n=4 discharged as theorems** (`h2_isSemisimpleRing_of_generic`, `HeckeH3Semisimple`, `HeckeH4Semisimple` — the last det-free); general `n` is reachable via the **Schur route**, not the `T_w` basis — see the 🛑 note below |
 | soundness `P≠NP ⟹ Jones∉FP` | no | **proved** (JVW+Toda) |
 | **abstract P≠NP** | **yes** (the wall) | open; provably not-by-fiat |
 | physical intractability | **no** | **derived** (mod exp-domination) |
+
+> **🛑 CORRECTED 2026-08-29 — the row above and §5 item 1 were stale, and in a
+> way that sends an agent to build the wrong thing.** Re-measured on `main` at
+> `df81b22be4`:
+>
+> - **The rank ladder went past n=2.** `QOU/Machinery/HeckeH3Semisimple.lean` and
+>   `QOU/Machinery/HeckeH4Semisimple.lean` both prove `IsSemisimpleRing` at their
+>   rank by transport along an explicit Wedderburn isomorphism. H₄ is explicitly
+>   **det-free** — the 24×24 Gram determinant is sympy-verified but
+>   Lean-out-of-reach — so that rung was reached *without* the determinant §5
+>   item 1 says to go and get.
+> - **The general-`n` gap is no longer the `T_w` basis.**
+>   `QOU/MathlibExt/WenzlSchurElement.lean` `semisimple_of_substrate` gives
+>   semisimplicity **at every rank** for `Q > 1`, `X ≤ 0`, and its Schur-element
+>   leg is *computed*: `schurElement_ne_zero` is a sorry-free theorem whose only
+>   hypotheses are `1 < Q` and `X ≤ 0` — no class, no `sorry`.
+> - **This is NOT a discharge.** `semisimple_of_substrate` carries
+>   `[SchurElementCriterion Q X ss]`, itself instance-free, and per the 2026-08-21
+>   audit that class and `WenzlCriterion` *"state the same literature theorem from
+>   two equivalent angles"*. The citation **count** did not improve. What improved
+>   is that one feeding leg is proved for all `n`, so the residual is a single
+>   named theorem (Geck–Pfeiffer Thm 7.2.6, bean `qou-0y6h`) rather than a missing
+>   basis theory.
+>
+> The `T_w` basis remains the honest Mathlib gap for the *determinant* route and
+> is worth doing on its own merits — it is simply **not** on the critical path to
+> all-`n` semisimplicity. Full re-measurement:
+> [2026-08-29 gap inventory refresh](2026-08-29-pneqnp-gap-inventory-refresh.md).
 
 ## 5. Next steps (prioritized)
 
