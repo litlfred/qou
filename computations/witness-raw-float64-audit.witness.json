@@ -78,10 +78,17 @@
       "computations/qns-tail-pileup-probe.witness.json": 17
     },
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1409,
-    "baseline_fields": 487597,
+    "baseline_files": 1106,
+    "baseline_fields": 128542,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 991
-  }
+    "drained_files": 0
+  },
+  "scriptFile": "witness_raw_float64_audit.py",
+  "scriptHash": "577549623ef8",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "764ddba75800347ae99c98e8d8cfa655559cbd49",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:35:32.054826+00:00",
+  "durationMs": 0
 }
