@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-29T18:15:05Z
+updated_at: 2026-08-29T18:26:02Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -457,3 +457,71 @@ matching a number.
 evenness in $\bar\mu_{123}$, pairwise-blindness all derived; $f$ (hence $k$)
 not. The target it must hit is now the framework's own residual rather than an
 imported one.
+
+
+
+---
+
+**2026-08-29, third attempt — $k$ still NOT derived, but the EM sector yields
+its first parameter-free consequence, and this bean's framing was wrong.**
+
+I stopped the last attempt at *"every remaining move is picking an
+$\hbar_q$-function to hit 0.011363"*. Attacking the **structure** instead of
+the number produced three findings.
+
+**1. "One scalar remains" — my own framing — is wrong. Two remain.** The
+symmetric quadratics in three charges span a **2**-dimensional space: the *self*
+term $\sum q_i^2$ and the *interaction* term $\sum_{i<j} q_iq_j$ (total charge
+is not independent, $Q^2 = \sum q_i^2 + 2\sum q_iq_j$). So
+$E = A\sum q_i^2 + B\sum q_iq_j$.
+
+**2. The nucleon datum cannot separate them.** Proton and neutron differ by
+**$1/3$ in *both*** invariants, so $E(p) - E(n) = (A+B)/3$: the splitting
+constrains only the **sum**. Every target I have computed for this bean has been
+a target for $A+B$, not for a single coupling.
+
+Corollary: the corpus's `NeutronProtonEMSign` uses $\sum q_iq_j$ alone, i.e.
+sets $A = 0$. That is the standard renormalisation choice — each quark's own
+field energy absorbed into its mass — but it is a **choice**, it is not derived,
+and the block does not flag it. Its **sign** result is unaffected and in fact
+generalises: the gap is positive whenever $A + B > 0$, weaker than $B > 0$.
+
+**3. Coleman–Glashow is automatic, and is the first parameter-free consequence
+this branch's EM work has produced.** Because $s$ and $d$ carry the **same**
+charge $-1/3$, the octet's seven baryons occupy only **three** distinct charge
+configurations — $(1,0)$ for $p,\Sigma^+$; $(2/3,-1/3)$ for
+$n,\Sigma^0,\Xi^0$; $(1/3,1/3)$ for $\Sigma^-,\Xi^-$. Three configurations
+against two couplings leave **exactly one** relation, and it holds identically
+in $A$ and $B$:
+
+    (m_n - m_p) - (m_Sigma- - m_Sigma+) + (m_Xi- - m_Xi0) = 0
+
+Measured: residual $0.0643$ MeV, **0.29σ** of the combined PDG error, $0.80\%$
+of its largest term.
+
+**Novelty, stated precisely.** Coleman–Glashow (1961) is textbook; **that** is
+not the finding. What is new here is that it follows from the corpus's *own*
+charge-structure invariants with **no** additional input — no coupling, no $q$,
+no length scale — so the framework's EM sector is **over-determined and
+therefore falsifiable**: a measured violation refutes the entire
+quadratic-in-charge class at once. My own `GellMannOkuboSecondOrder` docstring
+explicitly put Coleman–Glashow **out of scope** as "an
+electromagnetic/isospin-breaking relation, not an $SU(3)$-breaking one". It is
+in scope from the EM side, and it comes out for free.
+
+**Lean:** `QOU/MassTheory/ChargeQuadraticSumRule.lean`, sorry-free, all
+axiom-clean. Non-vacuity checked three ways: `energy` is not constant, $A$ and
+$B$ act differently on some configuration, and CG is a genuine **cancellation**
+rather than each term vanishing.
+
+**What this does NOT do.** It derives neither coupling. $k$ is untouched. What
+it changes is the shape of the remaining question: the magnitude needs a
+**second** splitting to separate $A$ from $B$, and the $\Sigma$ triplet
+supplies one — its configuration difference $(2/3, -1/3)$ is not proportional to
+the nucleon's $(1/3, 1/3)$, determinant $-1/3 \neq 0$
+(`pn_sigma_determinant_ne_zero`).
+
+**Next, and it is now concrete:** with $\Sigma^\pm$ added, $A$ and $B$ are
+both fixed by measurement — which makes them *fitted*, not derived. The
+derivation problem is unchanged in kind but now has two targets instead of one,
+and a consistency relation already satisfied.
