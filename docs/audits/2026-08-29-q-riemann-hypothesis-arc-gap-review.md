@@ -37,6 +37,13 @@ not fitted.
 
 ## What was inconsistent (fixed here)
 
+**Four axioms across two files of this arc proved `False`** — two in
+`hasse-weil-bound.lean` (`qou-hwax`) and two in `explicit-formula.lean`
+(`qou-qexf`, §1 below). With the two already fixed in
+`macroscopic-stability-equivalence.lean` (`qou-rhax`, 2026-08-22), that is six
+in this arc's recorded history. Every one was found by reading, none by a
+checker.
+
 Two axioms in `hasse-weil-bound.lean`, each universally quantified over an
 arbitrary `LocalQZetaFunction`, **each proved `False`**. `LocalQZetaFunction`
 records the *shape* of a zeta function and never that the shape comes from a
@@ -46,39 +53,68 @@ refutes the functional equation. Machine-checked, `#print axioms` clean on each
 `class IsWeilZeta`, with `weilZetaExample` witnessing that the class is inhabited.
 Full record: bean `qou-hwax`.
 
-**The generalisable lesson.** `qou-rhax` was `forall a b, P a <-> Q b` with `P` not
-constant in `a`. This is its sibling: *an external theorem asserted for every
-inhabitant of a structure that does not carry the theorem's hypotheses.* Both are
-instances of one failure — a citation making an over-quantified axiom look
-load-bearing rather than arbitrary. Worth a detector: any
-`axiom : forall (S : SomeStructure), <classical theorem about S>` where
-`SomeStructure` is a shape record.
+**The generalisable lesson, now with three instances.** All three are one shape:
+*a claim asserted for every inhabitant of a domain wider than the claim's
+subject.*
+
+| instance | the over-wide domain |
+|---|---|
+| `qou-rhax` | `forall a b, P a <-> Q b` with `P` not constant in `a` |
+| `qou-hwax` | a structure that does not carry the theorem's hypotheses |
+| `qou-qexf` | two lists quantified independently that must be one geometry's two faces |
+
+The common aggravator is a citation: each made an over-quantified axiom look
+load-bearing rather than arbitrary. Worth a detector — the shape is mechanically
+recognisable, and a cheap first pass is to construct the smallest inhabitant of
+the quantified domain (an empty list, a constant family, a degenerate structure)
+and evaluate the claim on it. All four `False` derivations here were found that
+way in minutes.
+
+A fourth axiom, `qLog_tendsto_log_axiom`, is a *different* and simpler failure:
+false against a definition three lines above it. No instantiation trick was
+needed. That one argues for reading each axiom against its own file before
+reaching for any detector.
 
 ## The remaining gaps, ranked by what they cost
 
-### 1. `thm:explicit-formula` is assumed, not derived — and the citation does not cover it
+### 1. Both axioms in `explicit-formula.lean` prove `False` — CORRECTED 2026-08-29
 
-`explicit_formula_axiom` asserts the entire identity
+**This section originally read "`thm:explicit-formula` is assumed, not derived —
+and the citation does not cover it", and said the defect was the caption rather
+than the axiom. That was an undercall, and it was mine.** Re-measured the same
+day: **both** axioms in the file prove `False`, machine-checked, each `#print
+axioms` reporting its own axiom plus Lean's three. Bean `qou-qexf`.
 
-```
-psi_q(X) = X - sum_{rho} X^rho/[rho]_q - ln_q(2 pi Omega_q) - (1/2) ln_q(1 - X^{-2})
-```
+`explicit_formula_axiom` quantified over `ideals` and `spectrum`
+**independently**. The geometric side is determined by `ideals`, the spectral
+side by `spectrum`, and nothing tied them together — so the identity was
+asserted for every unrelated pair. With no ideals, no spectrum and
+`Ω_q = 1/(2π)`, the left side is `0` and the right side exceeds `2`.
 
-and `theorem explicit_formula` is its projection. Nothing is derived. It is
-captioned *"External theorem (Rosen 2002 Ch 5 Thm 5.12; Weil 1948;
-Reshetikhin-Turaev 1991)"*, but the **q-deformed** explicit formula — with
-`[rho]_q`, `ln_q`, and the `Omega_q` term — is the framework's own claim, not
-Rosen's or Weil's. This is the caption-provenance defect `qou-rhax` named, in a
-milder form: the axiom is not inconsistent, but its attribution overstates what
-the literature supplies.
+`qLog_tendsto_log_axiom` is false against its own definition three lines above
+it: `qLog q x = log x / log q`, and `log q → 0⁺` as `q → 1⁺`, so for `x ≠ 1` it
+**diverges**. Multiplying by `log q` forces `log 2 = 0`. The word *renormalised*
+in its caption was pointing at the true fact — `qLog q x · log q = log x`, with
+no limit — and what genuinely tends to `log x` is the Tsallis q-logarithm
+`(x^{1−q} − 1)/(1−q)`, a different function.
 
-`qLog_tendsto_log_axiom` in the same file is a second assumed analytic fact,
-honestly cited to `[manuscript]`.
+Both are withdrawn. The file now has **zero live axioms and zero sorries**:
+`qLog_mul_log` (the true identity, proved), `not_qLog_tendsto_log` and
+`not_qExplicitFormula_empty` (the two refutations, proved and kept so the false
+forms cannot return silently), `QZetaDatum` bundling one geometry's data, and
+`QExplicitFormula` as a no-instance §3b conjecture class with `explicit_formula`
+conditional on it.
 
-Corpus-grep run on "explicit formula": 7 audit hits (all mass-theory or the rhax
-audit), 6 `computations/` hits (lambda-scale, h4 drivers, figure-eight), 3
-`library/INDEX.md` hits (Reidemeister torsion, holonomy R-matrix, Ohtsuki), 5
-beans. **None derives it.** The item is open.
+The citation point in the original section still stands and is acted on: Rosen
+Thm 5.12 and Weil are the classical explicit formula over `𝔽_q`, which is
+theirs; the q-deformation — `[ρ]_q`, `ln_q`, the `Ω_q` term — is the framework's
+own, and is now `[manuscript]`.
+
+**Corpus-grep** run on "explicit formula" (all six paths): 7 audit hits (all
+mass-theory or the rhax audit), 6 `computations/` hits (λ-scale, h4 drivers,
+figure-eight), 3 `library/INDEX.md` hits (Reidemeister torsion, holonomy
+R-matrix, Ohtsuki), 5 beans. **None derives it.** The identity remains open; it
+is now stated as open rather than assumed.
 
 ### 2. The spectral coordinate map has no carrier
 
