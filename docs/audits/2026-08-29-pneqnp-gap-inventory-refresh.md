@@ -240,6 +240,38 @@ useful beyond this programme. But per §1(b) it is **no longer** blocking all-`n
 semisimplicity, so it should be scheduled as a Mathlib contribution on its own
 merits, not as P≠NP critical path.
 
+### §3b. Correction to the §3 ranking — items 1 and 5 are not independent
+
+Recorded after attempting `qou-0y6h`. The ranking above presents the
+Geck–Pfeiffer item (#1) and the `T_w` basis (#5, *"no longer P≠NP critical
+path"*) as **alternatives**. They are not: **#1 is downstream of #5.**
+
+`WenzlSchurElement.schurElement` is **purely combinatorial** — a hook/content
+product over `ℝ`. A grep of that file for
+`IwahoriHecke|HeckeAlgebra|Algebra|Module|Basis` returns **nothing**; no algebra
+is attached to it. So `SchurElementCriterion` silently bundles two obligations:
+(i) the combinatorial formula *equals* the algebra-theoretic Schur element, and
+(ii) Geck–Pfeiffer 7.2.6 proper. Both need the algebra side — a **basis** of
+`H_n(q)` to state `det(Gram)` against, plus the symmetrizing-trace theory. For
+`H_n(q)` that basis is `T_w`.
+
+The downstream half of the chain is fine and already exists:
+`RegTraceGram.isSemisimpleRing_of_regTraceGram_det_ne_zero` plus the
+`TraceFormSemisimple` keystone give `det(Gram) ≠ 0 ⟹ semisimple`. The missing
+link is exactly `Schur ≠ 0 ⟹ det(Gram) ≠ 0`, i.e. `det(Gram) = ∏ Schur` — and
+that cannot even be *stated* without the basis.
+
+**What §1(b) got right, and the distinction it blurred.**
+`semisimple_of_substrate` genuinely does give all-`n` semisimplicity without the
+`T_w` basis — but **conditionally**, on the unproved criterion. That is an all-`n`
+*conditional statement* (no `T_w`, true) versus an all-`n` *discharge* (`T_w`
+needed). §1(b) is correct as written about the conditional; §3's ranking read it
+as though it applied to the discharge, and that is the error.
+
+**Revised verdict on #1:** genuine Mathlib-scale, gated on `T_w`
+(`qou-lrz1` / `qou-twwf`). Do those first, or accept the conditional. It is not
+the cheap win the ranking implied.
+
 ## 4. Do not re-attack
 
 Consolidated from the prior audits; each is a *proved* dead end, not a matter of
