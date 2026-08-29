@@ -1,6 +1,6 @@
 {
   "schema": "trace-convention-registry/v1",
-  "updated": "2026-08-25",
+  "updated": "2026-08-29",
   "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
   "bean": "qou-n1dj",
   "meta": {
@@ -894,6 +894,51 @@
       "evidence": "Companion to the sorry-free certificate QOU/QBeta/ZBarParity.lean, whose theorem z_bar_invariant proves z = sqrt(q)/(1+q) is exactly bar-even (zNum s = s, zDen s = 1 + s^2). Measured: parity(z_D^m) is NEITHER for m = 1..4, so the z-alone exclusion (a bar-even z-functional cannot source the bar-odd a_1) has no D-frame statement at all. The Lean must move first.",
       "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
       "owner_decision_required": false
+    },
+    {
+      "file": "computations/gram_h3_det_factorization.py",
+      "symbol": "e",
+      "line": 55,
+      "stays": "C until qou-cds2 lands",
+      "blocked_on_bean": "qou-cds2",
+      "registered_on": "2026-08-29",
+      "evidence": "Under convention D the Gram determinant is IDENTICALLY ZERO, so a z_D substitution turns this file's product -- the symbolic factorisation emitted for the Lean gramMatrix_det_ne_zero discharge -- into a proof of a false statement. MEASURED with sympy on the factorisation recorded in gram-matrix-h3-symbolic.md item 2: det G = -(z-q)^5 (qz+1)^5 ((q^2+1)z - q^3) (q^3 z + qz + 1)/q^8, whose third factor (q^2+1)z - q^3 vanishes for EVERY q at z_D = q^3/(q^2+1). At z_C it is nonzero (-0.1892 at q0). This is the convention-D Gram singularity that qou-cds2 tracks; what replaces the theorem under D (rank 5, radical spanned by the three-strand q-antisymmetriser) is the re-derivation. Site is AST-invisible to convention-c-producer-audit.py: the spelling is u/(u^2+1) with u = sqrt(q)."
+    },
+    {
+      "file": "computations/gram_h3_symbolic_regression.py",
+      "symbol": "gram_entry",
+      "line": 72,
+      "stays": "C until qou-cds2 lands",
+      "blocked_on_bean": "qou-cds2",
+      "registered_on": "2026-08-29",
+      "evidence": "Companion to gram_h3_det_factorization.py and blocked for the same measured reason: det G == 0 identically under convention D. This file is the Lean-vs-compute drift guard for QOU/Interactions/GramMatrixH3Symbolic.lean, whose gramEntry (convention C, deliberate) and gramEntryD (convention D) BOTH exist -- so the honest fix is to mirror both arms, not to substitute z_D into the one arm. Same sqrt-variable spelling, same audit blindness."
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "symbol": "z_naive",
+      "line": 131,
+      "stays": "C until a D-frame bar decomposition exists",
+      "blocked_on_bean": "qou-pmkh",
+      "registered_on": "2026-08-29",
+      "evidence": "The probe asserts z_naive_bar_even and its whole subject is the bar-even B4 magnitude. MEASURED symbolically: bar(z_C) - z_C = 0, so z_C IS bar-even; bar(z_D) = 1/(q^3+q) and bar(z_D) - z_D = 1/q - q = -h, so z_D is bar-NEITHER. Substituting z_D flips the probe's own assertion False and leaves it reporting on a premise it no longer has. The substitution was applied on branch claude/convention-c-full-excision-2026-08-29, observed to do exactly this, and REVERTED. The relation bar(z_D) = z_D - h is what a D-frame re-derivation has to be built on. Converges with QOU/QBeta/ZBarParity.lean, whose z_bar_invariant proves the C statement."
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
+      "symbol": "z",
+      "line": 86,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-29",
+      "evidence": "Builds TR_M = [1,z,z,z^2,z^2,z^3] from z_C and feeds the c_3 bar-odd resolvent. Same class as the six qbeta rows already registered here: AGENTS.md scopes the entire Q_beta c_k ladder as convention-C-frame pending qou-cds1, and QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) makes the C-frame ladder and the mass channel's three-row forcing mutually exclusive, so substituting z_D is not a valid move by a proved result rather than by preference. Sqrt-variable spelling 1/(sq + 1/sq); AST-invisible to the producer audit."
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_cross_anchor_exactness_probe.py",
+      "symbol": "z",
+      "line": 55,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-29",
+      "evidence": "Feeds the ladder phase alpha = (z-1)h/2 from z_C, the same construction as qbeta_eta_singularity_probe and qbeta_h_frame_rungs_probe already registered here. Blocked on the qou-cds1 re-derivation for the same reason. Sqrt-variable spelling 1/(sq + 1/sq); AST-invisible to the producer audit."
     }
   ],
   "blocked_on_rederivation_note": "Sites that must NOT stay on convention C but cannot be migrated by substituting z_D, because the substitution changes the site's asserted RESULT rather than its coordinate. Distinct from `blocked_migrations`, whose rows say `stays: C` permanently by design -- these are PENDING the qou-cds1 ladder re-derivation. Recorded so a drain agent stops re-litigating them from scratch (the failure mode the markov_reduction_h3_to_h4_verify row names in its `why_the_detector_keeps_listing_it` field), and DELIBERATELY LEFT IN the audit's actionable count: a declaration accounts for a site without excusing it, exactly as `intra_module_split_waivers` does. Shrinking the number without changing the corpus is the thing this registry exists to prevent. Every `evidence` field is a measurement, not a judgement.",
