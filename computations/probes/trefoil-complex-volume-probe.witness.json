@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python (stdlib decimal, 60 dps)",
-  "computedAt": "2026-08-28T20:47:21.628611+00:00",
-  "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+  "computedAt": "2026-08-29T04:41:01.807999+00:00",
+  "commitSha": "2e92c56a4e899a3a7d41fd9421b3364f1c1a47e4",
   "assertions": [
     {
       "name": "trefoil_markov_trace_nonzero",
@@ -26,11 +26,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 0,
   "computation": "trefoil-complex-volume-probe",
   "scriptFile": "trefoil_complex_volume_probe.py",
-  "scriptHash": "de370bdd7c98",
-  "scriptCommitSha": "334d86849a9c5dc390c3be634a17a6a9353dca6a",
+  "scriptHash": "d1f0abbf461f",
+  "scriptCommitSha": "e63907e6f0248768e8f62597fbefc2080737b0d9",
   "precisionMetadata": {
     "compute_dps": 60,
     "output_dps": 30,
@@ -60,5 +60,7 @@
     "abs_jones_trefoil_at_q0": "0.973370174529144848190871929036",
     "vol_hyp_trefoil": "0.0",
     "vol_hyp_reason": "(2,3) torus knot: Seifert-fibered, non-hyperbolic, Gromov norm 0"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
