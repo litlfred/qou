@@ -106,6 +106,28 @@ real library declaration the ref would otherwise reach. Never create or
 keep one when the real formalisation exists. If the decl is in a mis-named
 library file, align the filename — do not paper over it with a stub.
 
+## TRAP — a SEGFAULT (exit 139) loading Mathlib oleans is a corrupt/partial restore, not the source
+
+Reported by a caller 2026-08-29: `lean`-direct against the restored
+`lake-cache/qou-v4-24-0` oleans **segfaulted (exit 139)** on loading Mathlib,
+while a trivial no-import file compiled (exit 0). This is the signature of a
+**truncated / corrupt olean** in the restore — the FETCH_HEAD-race or
+truncated-`.part` failure the skill warns about — reaching a `.olean` whose
+header passes the version check but whose body is malformed. It is **not** a
+source defect and **not** an ABI/commit mismatch when both toolchains report
+the same commit.
+
+Diagnosis order that worked: (1) both `~/.elan/toolchains/*` at same commit
+(`797c613` for v4.24.0) rules out toolchain mismatch; (2) `find …/mathlib
+… -name '*.olean' | wc -l` — a **healthy full set is ~6990**; a partial
+restore is far less; (3) the load test that proves the whole closure is
+intact is `echo 'import Mathlib.Tactic' | lean` → exit 0 (a single corrupt
+olean in the ~3000-module closure would segfault/error here). The fix is a
+**clean full re-restore** (run serially, or race-proof via a private ref
+`git fetch … "$BR:refs/restore-tmp"` and read `refs/restore-tmp:$p`), not a
+rebuild. In the reported case the tree had already been re-restored to a
+clean 6990 by the time I verified, and the segfault did not reproduce.
+
 ## STABLE — the honest dispositions when a proof will not close
 
 Exactly three, per `AGENTS.md` §1a / §"Strict Lean Discipline":
@@ -161,3 +183,13 @@ nothing but you checks it.
 Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
+
+- 2026-08-29 (branch `claude/tender-keller-nvldp3`): verified
+  `mass-endomorphism/categorical-chain-convergence-mechanisms.lean`
+  (markovZc→markovZD rename) — `lean`-direct with `LEAN_PATH` over the
+  restored (untraced, 0 `.trace`, full 6990) oleans: **exit 0, sorry-free**,
+  `#print axioms` on the 3 named decls = `[propext, Classical.choice,
+  Quot.sound]`, no `sorryAx`. Confirmed restore-first+lean-direct STABLE
+  entry. Caller's reported olean-load **segfault did not reproduce** (tree
+  was already a clean full restore) → added the segfault=corrupt-restore
+  TRAP above.
