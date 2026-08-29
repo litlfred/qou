@@ -1,11 +1,11 @@
 ---
 # qou-zloi
 title: Phi_q pole in per_generator_V_hat_3A is set by alpha_i, not by the Markov convention
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T08:27:35Z
-updated_at: 2026-08-29T08:28:05Z
+updated_at: 2026-08-29T10:48:57Z
 ---
 
 Measured 2026-08-29 on branch claude/tower-gap-lean-and-infra-2026-08-29
