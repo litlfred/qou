@@ -53,11 +53,20 @@ class CriticalExponent where
   /-- Enstrophy is non-negative. -/
   enstrophy_nonneg : ∀ q, 0 ≤ enstrophy q
   /-- **The conjecture itself.**  The enstrophy diverges as $q \to 1$:
-      for every bound $M$ there exists $q \neq 1$ exhibiting an
-      enstrophy exceeding $M$.  This is the finite-time-blowup
-      statement at the substrate-parameter level. -/
+      on *every* punctured neighbourhood of $q = 1$ it exceeds every
+      bound $M$.  This is the finite-time-blowup statement at the
+      substrate-parameter level.
+
+      The `|q - 1| < ε` conjunct is what localises the divergence at
+      $q = 1$ and is not optional: without it the field says only that
+      enstrophy is unbounded *somewhere*, which is satisfied by
+      `enstrophy q = max q 0` — a function that is the identity near
+      $q = 1$ and therefore perfectly regular exactly where the
+      conjecture claims blow-up (verified counterexample:
+      `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`). -/
   -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
   enstrophy_diverges :
-    ∀ M : ℝ, ∃ q : ℝ, q ≠ 1 ∧ M < enstrophy q
+    ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+      ∃ q : ℝ, q ≠ 1 ∧ |q - 1| < ε ∧ M < enstrophy q
 
 end QOU.FluidDynamics
