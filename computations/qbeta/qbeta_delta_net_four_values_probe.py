@@ -350,6 +350,77 @@ def main() -> int:
           "word is not one crossing away from the blocks' construction; the "
           "divergence is structural. A tempting route, closed", w)
 
+    # ---- the proton asymmetry: 96 variants, no hit; and the required
+    #      correction is not a corpus quantity ------------------------------
+    print("\n  the proton asymmetry")
+    n_exact = ladder[1]
+    required_p = n_exact + mp.mpf("0.2089")   # exact neutron + the STATED Delta
+    print(f"    exact neutron net          = {mp.nstr(n_exact, 12)}")
+    print(f"    + the stated Delta 0.2089  => net(p) must be "
+          f"{mp.nstr(required_p, 12)}  (rounds to the stated 1.0065)")
+    w.add_data("required_net_p", fmt(required_p))
+
+    best_p = None
+    for gens in itertools.product([0, 1], repeat=3):
+        for glu in (L_MINUS, L[0] * L[1]):
+            for order in ("BQG", "BGQ", "QBG", "GBQ", "QGB", "GQB"):
+                Qf = ONE
+                for g, d in zip(gens, QUARKS["p"]):
+                    Qf = Qf * (L[g] + d * ONE)
+                M = {"BQG": B3 * Qf * glu, "BGQ": B3 * glu * Qf,
+                     "QBG": Qf * B3 * glu, "GBQ": glu * B3 * Qf,
+                     "QGB": Qf * glu * B3, "GQB": glu * Qf * B3}[order]
+                v = num(sum(sp.expand(M * basis_vec(0))))
+                if best_p is None or abs(v - required_p) < abs(best_p - required_p):
+                    best_p = v
+    print(f"    closest of 96 variants     = {mp.nstr(best_p, 12)}   "
+          f"|err| = {mp.nstr(abs(best_p - required_p), 4)}")
+    w.add_data("best_net_p_over_96_variants", fmt(best_p))
+
+    check("the_stated_proton_net_is_unreachable_by_the_blocks_own_recipe",
+          abs(best_p - required_p) > mp.mpf("5e-5"),
+          f"96 variants -- 8 quark-generator assignments x 2 Hopf orientations "
+          f"x 6 compositions -- and the closest is "
+          f"{mp.nstr(abs(best_p - required_p), 3)} away, against a NEUTRON "
+          f"match exact to ~1e-30. The asymmetry is structural, not numerical", w)
+
+    # solve for the uu shift the stated value would require, then ask whether
+    # that shift is a quantity the corpus recognises. A NEGATIVE test: it is
+    # used to weigh the stated number, never to propose a new one.
+    dsy = sp.Symbol("d_uu")
+    Pv = sp.expand(B3 * (L[0] + dsy * ONE) * (L[0] - h / 2 * ONE)
+                   * (L[0] - h / 2 * ONE) * L_MINUS * basis_vec(0))
+    sol = sp.solve(sp.Eq(sp.simplify(sum(Pv)).subs(q, Q0),
+                         sp.nsimplify(required_p, rational=True)), dsy)
+    d_req = mp.mpf(str(sp.N(sol[0], 30))) if sol else None
+    H = num(h)
+    cands = {"0": mp.mpf(0), "-h": -H, "-h/2": -H / 2, "-h/4": -H / 4,
+             "-h/8": -H / 8, "-h/16": -H / 16, "-h/32": -H / 32,
+             "-h^2": -H**2, "-h^2/2": -H**2 / 2, "-h^2/4": -H**2 / 4,
+             "-h^2/8": -H**2 / 8, "-h^3": -H**3, "-h^3/2": -H**3 / 2,
+             "-h^4": -H**4, "q-1": num(q) - 1, "-1/q": -1 / num(q),
+             "-(q-1)^2": -(num(q) - 1)**2, "-(q-1)^3": -(num(q) - 1)**3}
+    rels = sorted((abs(v - d_req) / abs(d_req), k) for k, v in cands.items())
+    print(f"    required uu shift          = {mp.nstr(d_req, 12)}  "
+          f"(the block reads it as 0)")
+    print(f"    nearest of {len(cands)} corpus shapes  = {rels[0][1]} at "
+          f"{mp.nstr(rels[0][0] * 100, 4)} % relative error")
+    w.add_data("required_uu_shift", fmt(d_req))
+    w.add_data("nearest_corpus_shape", rels[0][1])
+
+    check("the_required_correction_is_NOT_a_corpus_quantity",
+          rels[0][0] > mp.mpf("1e-6"),
+          f"solving for the uu shift that would make net(p) match gives "
+          f"{mp.nstr(d_req, 10)}; the nearest of {len(cands)} corpus-shaped "
+          f"candidates is {rels[0][1]}, {mp.nstr(rels[0][0] * 100, 3)} % away. "
+          f"So the stated 1.0065 is not one recognised correction from the "
+          f"recipe. Given the same block family already carries a "
+          f"demonstrated error (its '13 crossings' sentence), the weight of "
+          f"evidence is that the stated PROTON net is wrong -- which would "
+          f"make the derivable Delta the constructed "
+          f"{mp.nstr(ladder[1] - mp.mpf(str(num(sum(built('p', (0, 0, 0), 1))))), 10)}. "
+          f"NOT proved: an incomplete reading of the recipe remains open", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -358,12 +429,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 9 - len(_FAILURES)
-    print(f"\n  {npass}/9 checks passed")
+    npass = 11 - len(_FAILURES)
+    print(f"\n  {npass}/11 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 9)
+    w.add_data("checks_total", 11)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
