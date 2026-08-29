@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-28T20:17:54.033049+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T03:59:01.865693+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 43,
   "computation": "a-K-via-lp-dual-hecke-basis",
   "scriptFile": "aK_via_lp_dual_hecke_basis.py",
   "scriptHash": "f1cc27d897e7",
-  "scriptCommitSha": "86e639171915a5090ccc66e60ee9bcf5cc1ab491",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
     ],
     "reproduce": "python3 -u computations/aK_via_lp_dual_hecke_basis.py"
   },
-  "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
+  "description": "Item B (B.1a-rev.5) \u2014 full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + \u03a3_{i \u2209 sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit \u00a77b at the only A where the full basis is tractable (A=1, 6 elements). A \u2265 2 requires the analytical C_\u03bb \u00b7 S_\u03bb factorisation per audit \u00a77d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
     "q0": "mpf('1.109978595642739046681795129380001752700065561029011556974045769999094996')",
@@ -133,11 +133,11 @@
         "a_K_chi_active": null,
         "a_K_C_closed": 1.0,
         "chi_vs_C_residual": null,
-        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
+        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) \u2014 a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
         "per_basis": [
           {
             "index": 0,
-            "name": "γ",
+            "name": "\u03b3",
             "word": [],
             "t_i": 1.0,
             "dominant_block": [
@@ -152,7 +152,7 @@
           },
           {
             "index": 1,
-            "name": "σ₀",
+            "name": "\u03c3\u2080",
             "word": [
               0
             ],
@@ -169,7 +169,7 @@
           },
           {
             "index": 2,
-            "name": "σ₁",
+            "name": "\u03c3\u2081",
             "word": [
               1
             ],
@@ -186,7 +186,7 @@
           },
           {
             "index": 3,
-            "name": "L₊",
+            "name": "L\u208a",
             "word": [
               0,
               1
@@ -205,7 +205,7 @@
           },
           {
             "index": 4,
-            "name": "L₋",
+            "name": "L\u208b",
             "word": [
               1,
               0
@@ -224,7 +224,7 @@
           },
           {
             "index": 5,
-            "name": "e⁻",
+            "name": "e\u207b",
             "word": [
               0,
               1,
@@ -304,11 +304,11 @@
         "a_K_chi_active": null,
         "a_K_C_closed": 1.0,
         "chi_vs_C_residual": null,
-        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
+        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) \u2014 a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
         "per_basis": [
           {
             "index": 0,
-            "name": "γ",
+            "name": "\u03b3",
             "word": [],
             "t_i": 1.0,
             "dominant_block": [
@@ -323,7 +323,7 @@
           },
           {
             "index": 1,
-            "name": "σ₀",
+            "name": "\u03c3\u2080",
             "word": [
               0
             ],
@@ -340,7 +340,7 @@
           },
           {
             "index": 2,
-            "name": "σ₁",
+            "name": "\u03c3\u2081",
             "word": [
               1
             ],
@@ -357,7 +357,7 @@
           },
           {
             "index": 3,
-            "name": "L₊",
+            "name": "L\u208a",
             "word": [
               0,
               1
@@ -376,7 +376,7 @@
           },
           {
             "index": 4,
-            "name": "L₋",
+            "name": "L\u208b",
             "word": [
               1,
               0
@@ -395,7 +395,7 @@
           },
           {
             "index": 5,
-            "name": "e⁻",
+            "name": "e\u207b",
             "word": [
               0,
               1,

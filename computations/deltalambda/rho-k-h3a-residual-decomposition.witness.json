@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:24:43.640295+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T04:05:29.216852+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "schur_weyl_identity_exact_at_matched_pin",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 34,
   "computation": "rho-k-h3a-residual-decomposition",
   "scriptFile": "rho_k_h3a_residual_decomposition.py",
   "scriptHash": "01b49a3893af",
-  "scriptCommitSha": "80fa94b0ffb6aaa79694bd4e2e85c72fcf4b731c",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:17:54.596846+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T04:13:17.972845+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "binding_routes_agree",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "ame-2020-binding-energies",
   "scriptFile": "ame_2020_binding_energies.py",
   "scriptHash": "0ca5d6dc31b7",
-  "scriptCommitSha": "03c25e8dbf15522899dc588e6fb81549b6a52968",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -82,6 +82,6 @@
     "B_o16_MeV": "127.6193152",
     "B_o16_MeV_mass_excess_route": "127.619315162"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
