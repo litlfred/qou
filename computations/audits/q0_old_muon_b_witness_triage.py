@@ -313,12 +313,23 @@ def cmd_survey(args):
     print(f"distinct producers in that set: "
           f"{len({r['producer'] for r in drainable})}")
     if args.out:
-        json.dump({"prefixes": {"A": MUON_A, "B": MUON_B, "C": MUON_C},
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload_1 = {"prefixes": {"A": MUON_A, "B": MUON_B, "C": MUON_C},
                    "population": len(rows),
                    "by_class": dict(collections.Counter(r["class"] for r in rows)),
                    "by_resolution": dict(collections.Counter(r["resolution"]
                                                              for r in rows)),
-                   "rows": rows, "environment": environment()},
+                   "rows": rows, "environment": environment()}
+        _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+        json.dump(_prov_payload_1,
                   open(args.out, "w"), indent=2)
         print(f"\nwrote {args.out}")
     return 0
@@ -355,13 +366,24 @@ def cmd_rerun(args):
         if not args.out:
             return
         tmp = args.out + ".tmp"
-        json.dump({"results": rs,
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload_2 = {"results": rs,
                    "tally": dict(collections.Counter(r["verdict"] for r in rs)),
                    "tree_commit": ENV.get("tree_commit"),
                    "prefixes": {"A": MUON_A, "B": MUON_B, "C": MUON_C},
                    "population": len(runnable), "partial": partial,
                    "measured": len(rs), "total": len(runnable),
-                   "environment": ENV}, open(tmp, "w"), indent=2)
+                   "environment": ENV}
+        _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+        json.dump(_prov_payload_2, open(tmp, "w"), indent=2)
         os.replace(tmp, args.out)
 
     results, t0 = [], time.time()

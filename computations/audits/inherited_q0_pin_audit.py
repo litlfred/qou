@@ -407,7 +407,18 @@ def main() -> int:
     print("\n  " + "  ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     print("=" * 72)
     if args.json:
-        Path(args.json).write_text(json.dumps({"rows": rows, "tally": tally}, indent=2))
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"rows": rows, "tally": tally}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+        Path(args.json).write_text(json.dumps(_prov_payload, indent=2))
     return 0
 
 

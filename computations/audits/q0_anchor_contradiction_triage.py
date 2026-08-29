@@ -180,7 +180,18 @@ def main(argv=None) -> int:
 
     rows = triage()
     if args.json:
-        json.dump({"total": len(rows), "rows": rows}, sys.stdout, indent=1)
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"total": len(rows), "rows": rows}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+        json.dump(_prov_payload, sys.stdout, indent=1)
         return 0
 
     by_class = collections.Counter(r["class"] for r in rows)

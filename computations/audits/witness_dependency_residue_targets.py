@@ -59,6 +59,17 @@ print(f"SELFTEST known positive detected: {bool(known)}")
 if not known:
     print("ABORT: detector missed the known positive; count is not trustworthy")
     sys.exit(2)
-json.dump({"sha":SHA,"witnesses":[[str(w),s] for w,s in hits]},
+# Provenance stamp (bean qou-f1rs): the witness dict was built
+# INLINE at the write below, so there was nothing to stamp. It
+# is bound to a name here so this producer records which script
+# wrote it -- a re-run of an unstamped producer DELETES the
+# scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+import os as _os  # noqa: E402 -- provenance stamp
+from qou_substrate.witness import WitnessBuilder as _WB
+_prov_payload = {"sha":SHA,"witnesses":[[str(w),s] for w,s in hits]}
+_prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+_WB.stamp_staleness_metadata(
+    _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+json.dump(_prov_payload,
           open("/tmp/residue_targets.json","w"))
 print(f"targets written: /tmp/residue_targets.json")

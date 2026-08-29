@@ -181,7 +181,14 @@ def main() -> int:
               f"{r['err_pct']:>+7.2f}%")
     print()
     out_path = Path(__file__).parent / "family-1-kashaev.witness.json"
-    out_path.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "computation": "family-1-kashaev",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
@@ -194,7 +201,11 @@ def main() -> int:
         "constants": {"m_e_MeV": M_E_MEV},
         "knot_volumes": KNOT_VOL,
         "rows": rows,
-    }, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out_path.write_text(json.dumps(_prov_payload, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
     print(f"Wrote: {out_path}")
     return 0
 

@@ -411,7 +411,18 @@ def main() -> int:
         done[s] = {"rc": rc, "sec": round(dt, 1), "witnesses": outs,
                    "max_rel_move": mx, "median_rel_move": md,
                    "n_fields": nfields, "err": err[0][:200]}
-        PROGRESS.write_text(json.dumps({"done": done}, indent=1), encoding="utf-8")
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"done": done}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+        PROGRESS.write_text(json.dumps(_prov_payload, indent=1), encoding="utf-8")
 
         tag = "ok " if rc == 0 else f"FAIL({rc})"
         mv = (f"med {md*1e9:,.1f} / max {mx*1e9:,.1f} ppb" if mx else "no change")
