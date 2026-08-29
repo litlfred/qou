@@ -41,10 +41,20 @@ Phi_1/Phi_2/Phi_3 literally from the three blocks that define them
 the ONE point the theorem claims exactness, n = A+Z = 3 being the only n where
 the three extremal Wedderburn blocks exhaust the partitions -- by 208.5 % under
 the literal reading, and by 54 % to 2653 % across all four readings of that
-prose. So the obstacle is not effort: the published prose does not determine the
-construction uniquely, and no reading of it reproduces the carried values.
-Treat "which reading" as the open question. `wedderburn_table_binding_recast.py`
-part 2 shows the same constructor missing every published row.
+prose.
+
+CORRECTED 2026-08-29: that probe's reading is WRONG, and so was the conclusion I
+drew from it. "chaining the crossing matrices of all strands j > i" means an
+ALL-PAIRS braid -- for strand i, cross with every strand j > i -- not a suffix
+product of adjacent crossings. Under the correct reading Phi_2 and Phi_3 ARE
+re-derived, 19 of 19 non-hydrogen rows:
+
+    Phi_3 = (-2Z - N(N-1)) * ln q
+    Phi_2 = Z*N * ln(1 + h^2/4)
+
+both convention-free (neither uses the Markov parameter z). See
+computations/phi_allpairs_reconstruction.py. Phi_1 is the only invariant that uses z and
+is still carried. So the remaining gap is Phi_1 alone, not all three.
 
 q0 CONVENTION. Coefficients are evaluated at the PROTON pin
 (`qou_substrate.constants.Q`), per the owner directive of 2026-08-07 that all
