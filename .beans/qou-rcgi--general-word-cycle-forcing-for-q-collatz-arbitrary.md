@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:28:52Z
-updated_at: 2026-08-29T18:16:03Z
+updated_at: 2026-08-29T18:20:23Z
 parent: qou-ifot
 ---
 
@@ -53,3 +53,5 @@ The two earlier bounds are now visibly the extreme cases of this sum (odd steps 
 Bean 'follow-on 2' (composing the exclusion with qcollatz_word_forces into a single orbit-level statement) is still undone and still mechanical.
 
 Scope unchanged: a criterion, not a proof it is met. For a general word the height can exceed 2^k - 3^m; deciding when it does not IS the open problem.
+
+FOLLOW-ON LIST NOW EMPTY (commit d065c32f74). qcollatz_no_periodic_orbit_of_height_lt and qcollatz_no_front_loaded_periodic_orbit compose each exclusion with qcollatz_word_forces, so the hypotheses are a step relation, a return P k = P 0, and finite integer computations -- what a consumer actually holds -- rather than the intermediate forced cycle equation. One-line compositions, no new mathematics. lean-direct exit 0 first pass; axioms [propext, Classical.choice, Quot.sound], no sorryAx.
