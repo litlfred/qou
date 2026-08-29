@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T01:00:09.826901+00:00",
-  "commitSha": "df68e7d4d1a50c9b2fad35b6f04c11d7dcf0d640",
+  "computedAt": "2026-08-29T04:40:54.302121+00:00",
+  "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "fe610e62513c",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "56720a633b6c",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
   "parameters": {
     "input_witness": "low-isotope-mass-table.witness.json",
     "q_0_at_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-    "h_q0": "0.20906032215031675",
+    "h_q0": "0.2090603221503167466308002615019198859801371692258791137037392757061475",
     "channel_d_coefficients": "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), SIGMA_INV=(1,-h))"
   },
   "data": {
@@ -63,7 +63,7 @@
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 0,
@@ -77,7 +77,7 @@
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 1,
@@ -91,7 +91,7 @@
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 1,
-        "signed_h_weight": -0.10453016107515838
+        "signed_h_weight": "-0.1045301610751583733154001307509599429900685846129395568518696378530738"
       },
       {
         "Z": 1,
@@ -105,7 +105,7 @@
         "channels_pn": 1,
         "channels_nn": 1,
         "n_inter_total": 2,
-        "signed_h_weight": -0.3135904832254751
+        "signed_h_weight": "-0.3135904832254751199462003922528798289702057538388186705556089135592213"
       },
       {
         "Z": 2,
@@ -119,7 +119,7 @@
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 2,
-        "signed_h_weight": -0.10453016107515838
+        "signed_h_weight": "-0.1045301610751583733154001307509599429900685846129395568518696378530738"
       }
     ],
     "linear_fit_err_pct_vs_n_inter": {
@@ -128,9 +128,9 @@
       "R_squared": "0.2652944812197065394440946509926375860363483685828766583837015970373011"
     },
     "linear_fit_err_pct_vs_signed_h_weight": {
-      "slope": "0.4962732570090686731480515277837814156829430389437832410174409221048423",
-      "intercept_pct": "-0.3549043252241506414056844425707258973849146318956660263988126167142048",
-      "R_squared": "0.00175532366481437245545294869226312613989199493420853709478671584323865"
+      "slope": "0.4962732570090684274542516316154114141163362291329356535333015287537943",
+      "intercept_pct": "-0.3549043252241506684008624786831069107049438105370996616880353692818992",
+      "R_squared": "0.001755323664814371212330776706436980268798858336873637913838476698317553"
     },
     "klr_positivity_check": {
       "trace_level_violations": [],
@@ -152,7 +152,7 @@
         },
         {
           "atom": "³H",
-          "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+          "err_pct": "-0.15560149902991727428132779731255509298844034946271135383209",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
@@ -176,11 +176,11 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "6d3984f107c945d27de12b8e69707b07f266280845b19418caacaf267f261200",
+        "sha256": "bbe87f5d5f363ae43238c54e79e26895218b7795e2bf8bc1bc540f2494e9704f",
         "size_bytes": 6238,
-        "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
-        "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
-        "computedAt": "2026-08-28T20:41:41.698540+00:00"
+        "commitSha": "a0f49261e5bf4703c8d01f2e1eb3b474995559b3",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-29T03:09:57.402493+00:00"
       }
     ]
   },
