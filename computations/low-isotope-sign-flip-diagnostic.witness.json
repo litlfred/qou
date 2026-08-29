@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T04:40:54.302121+00:00",
-  "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+  "computedAt": "2026-08-29T06:21:17.420869+00:00",
+  "commitSha": "ee94bdb8a6be696ba58f94c78a5404016af3522d",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "56720a633b6c",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "fc1197d7a4e8",
+  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -152,7 +152,7 @@
         },
         {
           "atom": "³H",
-          "err_pct": "-0.15560149902991727428132779731255509298844034946271135383209",
+          "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
@@ -176,11 +176,11 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "bbe87f5d5f363ae43238c54e79e26895218b7795e2bf8bc1bc540f2494e9704f",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
         "size_bytes": 6238,
-        "commitSha": "a0f49261e5bf4703c8d01f2e1eb3b474995559b3",
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
         "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-29T03:09:57.402493+00:00"
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
