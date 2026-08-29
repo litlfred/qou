@@ -1,5 +1,13 @@
 # Owner decision needed: which knot is the deuteron?
 
+> **🟧 OWNER RULING (2026-08-29): Option A.** The deuteron knot is the canonical
+> braid closure (trefoil / Hopf, Vol = 0), with the explicit corollary that **the
+> deuteron binding is NOT a hyperbolic-volume term** (the Bloch volume leg is proved
+> identically 0). The 2-body binding is to be sourced from the **Gram/Frobenius
+> pairing (⟨g,g⟩) + confinement SDP** channel, not the volume leg. Item 4 of the
+> bk-crossing arc is re-scoped accordingly; the 6₂ census assignment is retired as a
+> bare lookup. This resolves the `qou-e5jf` blocking ambiguity.
+
 **Date:** 2026-08-29
 **Tier:** decision (no new result — consolidates the blocking state for an owner ruling)
 **Bean:** `qou-e5jf` (BLOCKING, todo) · **Arc:** bk-crossing mass-binding

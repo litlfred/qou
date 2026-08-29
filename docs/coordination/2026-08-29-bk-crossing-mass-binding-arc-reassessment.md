@@ -18,7 +18,7 @@ Arc structure (audit `2026-07-11-bk-crossing-coordination-multiplicity.md`):
 | 2 | magic `a_D^(A)` activation | **open, narrowing by exclusion** | since 08-21: `a_D` obstruction proved-lean (`37cfae1a4d`); ⁴He magic surplus proved *not* a Milnor μ̄ term (`1e4afe69fd`, `klgu`). Magnitude `a_D^(4)≈2.52` still an AME read. **Same phenomenon as item 1** — the magic-shell regime. |
 | 3a | close-packing count (n_α≥5) | **settled / derived** | fcc contact-graph, one `b_αα` → ²⁰Ne/²⁴Mg/⁴⁰Ca to <0.5%. The arc's real win. |
 | 3b | derive `b_αα ≈ 2.41` | **retire → scope-(a) negative** | VolDensity overshoots 259×; SU(4) base scale forever-gated; `ρ_αα ≈ ℏ_q²` demoted to a definitional restatement (circular). No in-scope route survives; stop carrying it as a derivation target. |
-| 4 | deuteron crossing weight | **BLOCKED on an owner decision** | three inconsistent knot assignments (trefoil Vol=0 / 6₂ Vol=4.40 / Hopf Vol=0); volume leg *proved* 0 (`BlochVolumeLeg`, PR #5242). Magnus Ω₂ pairing progress (`acc9c651a6`), but the uncoloured trace gives deuteron ≡ diproton (`qou-dcvv`). See the owner-decision doc. |
+| 4 | deuteron crossing weight | **RE-SCOPED — Owner Ruling A (2026-08-29)** | knot = canonical braid closure (Vol=0) ⇒ binding is **not** a volume term; sourced from the **Gram/Frobenius pairing (⟨g,g⟩) + confinement SDP** channel. 6₂ census assignment retired. `qou-e5jf` unblocked. Magnus Ω₂ progress (`acc9c651a6`) folds into the pairing channel. See the owner-decision doc. |
 
 **Net:** the arc reduces to (i) the **magic-shell regime switch** (items 1+2, the same object seen
 twice — `A−1` in the linear chain vs ~2 at doubly-magic ⁴He) and (ii) the **deuteron knot
@@ -40,10 +40,13 @@ identity** (item 4, foundational). 3a is done; 3b should be retired.
 1. **Merge items 1+2 → derive the magic-shell regime switch** (`z=A−1` chain ↔ M≈2 magic). In
    scope (does not route through the forever-gated q₀). `BondExtensiveBinding` is the slot the
    derived law must fill. Deepest, highest value.
-2. **Escalate item 4 to the owner as a decision** —
-   [`2026-08-29-deuteron-knot-owner-decision.md`](../audits/2026-08-29-deuteron-knot-owner-decision.md)
-   (recommendation: Option A — canonical braid closure, Vol=0 ⇒ deuteron binding is *not* a volume
-   term; redirect to the coordination/colour-trace weight). Everything 2-body waits on this.
+2. **Item 4 — OWNER RULED A (2026-08-29); now compute the 2-body binding via Gram/SDP.**
+   [`2026-08-29-deuteron-knot-owner-decision.md`](../audits/2026-08-29-deuteron-knot-owner-decision.md).
+   Deuteron binding is *not* a volume term; the mechanism is the **Gram/Frobenius pairing (⟨g,g⟩)
+   + confinement SDP** (the operator-selection LP/SDP dual — `lp_dual_solver.solve_psd_operator_selection_sdp`;
+   the active demand channels `y_star[i] > 0` are the binding shadow prices). **In flight** this
+   session (corpus + compute investigation). Gated on the convention-D status of the Gram
+   (`qou-cds2`, priority 3 below), since an SDP built on a convention-C Gram is C-frame.
 3. **Gate the arc's `b_αα`/deuteron numbers on `qou-cds2`** (engine-level D migration) before any
    canonical use.
 4. **Retire 3b** to a scope-(a) negative; **keep `qou-brng`** (prove saturated binding fraction is
