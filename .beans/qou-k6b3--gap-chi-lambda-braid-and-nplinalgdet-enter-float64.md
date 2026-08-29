@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T09:40:22Z
-updated_at: 2026-08-29T10:45:34Z
+updated_at: 2026-08-29T15:28:21Z
 ---
 
 Parent: qou-cds3. Surfaced by the proton migration (PR #5992), which had to
@@ -140,3 +140,43 @@ the witness kept stamping muon under migrated source. This is #5992's
 
 `gram_matrix_seminormal_h6` was the mirror: in NEITHER list, so correct by the
 runtime DEFAULT rather than by declaration. Now declared explicitly.
+
+
+## FOLLOW-UP LANDED 2026-08-29 — the condition numbers, and my own incomplete report
+
+Closed as 'dets + characters drained' with the h6 condition numbers deferred as
+"needs an mpmath SVD, a genuinely separate change". mpmath has `svd_r`; it was a
+small change. Commit `6e08f1f570`.
+
+**h6 residue 59 -> 2.** The 2 are `compute_time_s` at h3 and h6 and STAY: wall-clock
+is a genuine float64 measurement, and padding it to 50 digits with `fmt` is exactly
+what the float64-padding ratchet forbids. Draining them trades one gate for another.
+
+**MEASURED: kappa_2(rho_lambda(sigma_k)) = q_0^2** for all 47 generators in every
+block of dim > 1, across lambda |- 3 and lambda |- 6, max relative deviation
+9.2e-51. New witness assertion `generator_condition_number_equals_q0_squared`.
+
+This is a TRAP worth keeping, and it is not the same trap as the integral carve-out
+already recorded here. In float64 the SAME quantity was serialized under THREE
+different spellings (1.232052482785027 / ...0272 / ...0274 at the muon pin). The
+noise was larger than the structure, so there was no constant to recognise. A
+float64 field does not merely lose digits — it can destroy the evidence that a
+quantity is constant at all.
+
+STATED AS OBSERVATION, NOT DERIVATION: q^2 = |q| / |-q^-1| is the ratio of the two
+Hecke eigenvalue magnitudes, which is what kappa_2 would be for a NORMAL matrix.
+Hoefsmit-seminormal rho_lambda(sigma_k) is real but NOT symmetric, so normality (or
+an orthogonal-form conjugation supplying it) is NOT established. Mechanism open.
+
+**AND A CORRECTION TO MY OWN CLOSING REPORT.** I wrote that the consumer
+`probe_option_e_h6_entry_point.py` "needed mp.mpf(repr(d)) -> mp.mpf(str(d))",
+implying it then worked. It did not, and it did not work on main either: the file
+had FIVE such calls, and the producer's `_c` has serialized matrix entries as
+STRINGS on main all along, so `repr` wrapped them in quotes and mpmath raised
+`invalid literal for int()` at line 113 — BEFORE reaching the field I fixed. I
+fixed the one site the det change forced me to notice and reported the consumer as
+handled without running it. All five are now `str`; the probe exits 0.
+
+Generalisable: when a serializer change forces a consumer fix, grep the consumer for
+EVERY instance of the pattern and RUN it. One site compiling is not the consumer
+working.
