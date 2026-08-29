@@ -1,11 +1,11 @@
 ---
 # qou-rcgi
 title: General-word cycle forcing for q-Collatz — arbitrary-parity-word denominator equation + front-loaded-odd exclusion family
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:28:52Z
-updated_at: 2026-08-29T16:29:27Z
+updated_at: 2026-08-29T16:43:52Z
 parent: qou-ifot
 ---
 
@@ -31,3 +31,13 @@ THE NEW EXCLUSION FAMILY. If every odd step occurs within d of the front (i_t <=
 d = 0 recovers the landed O^m E^{k-m} case; every d >= 1 is new. This is a genuine two-parameter infinite family strictly containing what is on main.
 
 HONEST CEILING -- state it in the docstring, do not oversell. The crude UPPER bound i_t <= k-m+t gives only 3^m*(2^{k-m}+1) < 2^{k+1}, i.e. m <= 1, so it does NOT close the general word. It cannot: the general classical cycle problem is open, and this is its q-analog. The deliverable is scope-(a) -- an enlarged excluded family plus the general forcing equation as reusable infrastructure -- NOT a structural exclusion of all words. No fabricated invariant.
+
+LANDED 2026-08-29 on claude/q-collatz-gaps-conjectures-7bz3hg, PR #6042, commit 13d3d51bbb. File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_general_word.lean.
+
+Delivered (all sorry-free): word_collapse, qcollatz_word_forces (the arbitrary-word forcing equation), wordHol_map, wordNum_map_succ_odd/even, wordNum_map_nonneg, wordNum_map_lower, wordNum_map_upper, wordNum_const_of_front, qcollatz_no_front_loaded_cycle, and the non-vacuity witness front_loaded_beyond_adjacent_tail.
+
+VERIFICATION (CI auto-triggers are off repo-wide, so this is the gate): lean-direct against the real Mathlib import cone, exit 0. #print axioms on qcollatz_word_forces / wordNum_map_lower / wordNum_map_upper / qcollatz_no_front_loaded_cycle / front_loaded_beyond_adjacent_tail returns only [propext, Classical.choice, Quot.sound] -- no sorryAx. Generic [CommRing R] throughout per 7c; no ordering, radical or Real.* construct.
+
+WHAT IT DID NOT DO, recorded so nobody reads more into it. The upper bound is sharp and alone forces m <= 1, so the general word is NOT reached and is not claimed. Two follow-ons a later agent could take:
+1. The bound is stated at a single cut D. A word with odd steps front-loaded in SEVERAL blocks (front-loaded within each of many windows) should admit a per-window version of the same induction; nothing here attempts it.
+2. qcollatz_no_front_loaded_cycle takes the forced equation as a hypothesis, matching the landed style of qcollatz_no_adj_tail_cycle. Composing it with qcollatz_word_forces to give a single statement in terms of the orbit alone is mechanical and was left undone.
