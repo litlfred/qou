@@ -2163,6 +2163,8 @@ function classifyConjectures(files: string[]): {
   const primary: ConjGraph["primary"] = [];
   const dependent: ConjGraph["dependent"] = [];
   const hitsByFile = new Map<string, Hit[]>();
+  /** `.md`-sourced claims already reported for a file — see `scan` below. */
+  const narrativeReported = new Map<string, Set<string>>();
 
   for (const c of carriers) {
     const edges = bindersReferencing(c.sig, names).filter((n) => n !== c.name);
@@ -2174,14 +2176,30 @@ function classifyConjectures(files: string[]): {
     // `conj:Y` (another carrier) yet the type binds no such class. This is
     // the intent-vs-type mismatch — a result that reads as conditional but
     // is stated unconditionally. Plain prose mentions are NOT flagged.
-    const claimed = [
-      ...`${c.doc}\n${c.narrative}`.matchAll(
+    // Sourced separately, because they have different SCOPE. A Lean docstring
+    // belongs to one declaration; the `.md` is the narrative of the whole
+    // content block, which may define several carriers. Charging a block-level
+    // sentence to each carrier in the file manufactures duplicates: measured,
+    // one line of `phi-q-aj-machinery-identification.md` became three "hits"
+    // across the three classes that share it, and all three were spurious --
+    // those classes are well-formed §3b-cond carriers binding
+    // `[QuantumAPolynomial …]`, not the conjecture the prose names.
+    const scan = (text: string) => [
+      ...text.matchAll(
         // `[[`]?` allowed exactly ONE bracket-or-backtick, but the corpus's
         // canonical cross-reference is ``[`conj:X`]`` -- bracket AND backtick.
         // That single `?` was the third reason this criterion never fired.
         /(?:conditional on|assuming|given|depends on|modulo)\s+[[`\s]*conj:([a-z0-9-]+)/gi,
       ),
     ].map((m) => m[1].toLowerCase());
+    const fromDoc = scan(c.doc);
+    // block-level: emit once per file, not once per carrier
+    const narrativeSeen = narrativeReported.get(c.file) ?? new Set<string>();
+    const fromNarrative = scan(c.narrative).filter((l) => !narrativeSeen.has(l));
+    for (const l of fromNarrative) narrativeSeen.add(l);
+    narrativeReported.set(c.file, narrativeSeen);
+    const blockLevel = fromDoc.length === 0 && fromNarrative.length > 0;
+    const claimed = [...new Set([...fromDoc, ...fromNarrative])];
     const unmet = claimed
       .filter((l) => !c.ownLabels.includes(l))
       .map((l) => labelToName.get(l))
@@ -2191,11 +2209,13 @@ function classifyConjectures(files: string[]): {
       const hit: Hit = {
         line: c.line,
         category: "proof-dependent-conjecture-not-conditional",
-        pattern: "prose-conditional-not-in-type",
+        pattern: blockLevel
+          ? "prose-conditional-block-level"
+          : "prose-conditional-not-in-type",
         snippet: c.name,
         decl: c.name,
         severity: SEVERITY["proof-dependent-conjecture-not-conditional"],
-        detail: `doc claims conditionality on ${unmet
+        detail: `${blockLevel ? "the block's .md" : "doc"} claims conditionality on ${unmet
           .map((n) => `\`${n}\``)
           .join(", ")} but the signature takes no binder on it`,
       };
