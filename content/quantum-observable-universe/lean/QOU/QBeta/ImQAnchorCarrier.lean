@@ -29,8 +29,9 @@ anchor-invariant to `1.9×10⁻⁷`, so the model MEASURES `Im(q₀)` faithfully
 that same near-equality is the problem: a **single global** `Im(q₀)=ε` produces the
 SAME `S` at both anchors up to the `22 ppb` `q_r` difference — a swing of
 `7.4×10⁻⁹` for the fitted `|ε|≈0.06`, versus the observed `|S_p − S_m| = 0.0492`: an
-**order-mismatch of `6.63×10⁶`** (the registry `dc₃/dq ≈ 4.6×10⁶` obstruction
-reappearing through `arg(u)`; and the amplitude ceiling `(√3/2)r² = 0.0377` at fixed
+**order-mismatch of `6.63×10⁶`** (the registry `dc₃/dq ≈ 3.84×10⁶` obstruction
+reappearing through `arg(u)`; corrected 2026-08-29 from `4.6×10⁶`, the
+superseded-`c₃` secant — bean `qou-kt8o`; and the amplitude ceiling `(√3/2)r² = 0.0377` at fixed
 `r` is already below `|S_p|=0.0395`). Reproducing the swing therefore demands a
 **different `Im(q)` per anchor**: `ε_p = −0.061` (`−5.5%` of `q_r`),
 `ε_m = +0.015` (`+1.3%`), **opposite sign** (forced by the merged
