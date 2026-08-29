@@ -258,6 +258,66 @@ closed them. Nothing hand-edited.
 
 ---
 
+## What is still open
+
+Filed rather than closed, each with the reason:
+
+| item | bean | blocked on |
+|---|---|---|
+| `hadron-knot-table` flip | `qou-r4w5` | compute. It **resolves** its pin correctly, so a re-run would be a valid migration — it just cannot finish. The hot call is now named. |
+| `qbeta-c4even-exact-sseries` flip | `qou-cds1` | scope. Its stem is UNLISTED so a re-run yields **proton**, not the muon@C this migration is about; and its payload is the convention C→D ladder re-derivation that `qou-cds1` owns. |
+| the remaining ~1e-7 on the seminormal leg | `qou-2wtx` step 2 | a pin-policy decision on an L1 reference — dropping the leg's `QOU_Q0_ANCHOR=ideal` default so both legs sit at proton. |
+| `onepb` / LP-dual raw float64 | `qou-ftuv` | an mpf refactor of the LP producer. Pre-existing; reproduced identically from `main`'s own producer. |
+| **L1 is not met, and the corpus says otherwise in two places** | `qou-3zby`, `qou-mj1o` | see below. |
+
+### The L1 status claim needs an owner
+
+This is the finding with the widest blast radius, so it is stated plainly.
+
+AGENTS.md's Precision-goals table records **"L1 compute met"** and directs
+readers to `onepb-status-dashboard.witness.json`. That witness now reports
+`allPassed: False`, driven by `markov_trace_max_rel_delta` = **2.90663e-7**
+against a 1e-9 tolerance, with `all_within_1ppQ` False on 6 of 6 atoms.
+
+Two corpus records point the other way and both are now wrong:
+
+- **`qou-mj1o`** is `completed` and its title asserts *"L1 actually MET"*. Its
+  own fix was correct — excluding dead structural inventory from `allPassed` —
+  and is untouched here. But the green it left behind rested on an assertion
+  that could not fail.
+- **AGENTS.md** itself. Not edited here: a Precision-goals change is an owner
+  call, not a drain's.
+
+**`qou-3zby` reached the same conclusion from the other side on 2026-08-16** —
+*"while it is red, 'L1 compute met' is not supportable by this cross-check"* —
+and it is `in-progress`. The dashboard side now agrees with it. Two independent
+routes, one conclusion.
+
+**This is a reporting defect, not a new physics failure.** The 2.9e-7 was
+already in the committed cross-check witness on `main`; nothing computed here
+made L1 worse. What changed is that the dashboard can no longer report `0.0`
+for it.
+
+## One defect this branch introduced, and the gate that caught it
+
+Worth recording because it is a trap in the *fix* rather than the bug.
+
+Adding `import mpmath as mp` to the dashboard — to replace the banned
+`float()` — introduced a quieter version of the same defect one layer down:
+**mpmath defaults to `dps=15`**, so the max over 50-digit decimal strings was
+still being taken at float64 precision. The witness recorded
+`2.90663064970691e-7`, fifteen significant figures.
+
+The `never-raises-dps` ratchet flagged it as `NEW: onepb_status_dashboard.py`,
+and the fix is the module-scope idempotent `set_compute_dps()` the ratchet's own
+message prescribes. The witness now records the full
+`0.00000029066306497069143204195642669120799801012802521353`. Not baselined —
+the gate says *"Do NOT add the file to the baseline to silence this"*, and the
+value really was low.
+
+**An mpf fix can itself be a precision defect if the module never raises dps.
+The two are one import apart.**
+
 ## Discipline
 
 No baseline was widened at any point: no `--rebaseline`, no file added to a
