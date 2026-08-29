@@ -529,6 +529,33 @@ user's last message, not the most recently mentioned file.
       type is a **guard the corpus defines**. Without all seven its verdicts are
       about itself.
 
+      **🛑 But requirement one MASKS a whole defect class, and the "2 real
+      defects" figure below cannot see it (added 2026-08-29, bean `qou-0e1t`).**
+      Setting `PYTHONPATH` is necessary for the runner to reach the corpus's
+      bare-name imports — and it is exactly what hides a script whose
+      `import _path_bridge` precedes the `sys.path` bootstrap that resolves it.
+      `_path_bridge` lives in `computations/`; a script in a cluster subdir has
+      `sys.path[0]` set to its own directory, so that import fails unless the
+      parent is already on the path. **Measured on the SAME file at the SAME
+      commit, varying only the environment:** without `PYTHONPATH`,
+      `ModuleNotFoundError: No module named '_path_bridge'`; with
+      `PYTHONPATH=computations`, 4/4 checks pass and the witness is written.
+      **Six such scripts were live on `main`** — among them
+      `qbeta_d_frame_trace_baseline_probe`, whose `gap_over_ladder_ratio =
+      92.1058` the Δ fork-pricing probe calibrates against — and none appears
+      in the "2 real defects" list, because the runner that produced that list
+      set `PYTHONPATH` by its own rule. So read that 2 as *"2 that survive a
+      PYTHONPATH-equipped runner"*, not as *"2 that a user can run"*.
+
+      The fix is at the script (move the import after the bootstrap, per
+      `_path_bridge`'s documented USAGE), and the guard is
+      [`computations/audits/path_bridge_bootstrap_audit.py`](computations/audits/path_bridge_bootstrap_audit.py),
+      which narrows by pattern but **decides by executing each candidate with
+      `PYTHONPATH` stripped**. Its own count was 28 before it was corrected to
+      6: the first pass matched only `sys.path.insert(` and missed
+      `sys.path[:0] = [...]` — 22 false positives from one unknown spelling,
+      the same detector-blindness class as everything else in this section.
+
       **The 2 real defects**, re-verified against `main` on 2026-08-24:
       `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
       `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
