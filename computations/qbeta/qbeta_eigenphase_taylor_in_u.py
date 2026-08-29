@@ -88,7 +88,20 @@ Q0_MUON_PIN = "1.1099785955541805752815940796095093779932822799587"
 # Empirical c_k (qbeta-ck-truncation-order-analysis.witness.json).
 C2_EMP = mpf("-1")
 C3_EMP_MP = mpf("-2.0693")
-C3_EMP_MUON = mpf("-2.0097")
+# 🛑 WAS -2.0097 (corrected 2026-08-29, bean `qou-t39x`). That is the pre-#1422
+# value and it matches NO anchor the corpus currently uses. There is no single
+# "muon c_3": re-running the extraction c_3 = (Q_codata/Q_N2 - 1)/u^3 gives a
+# DIFFERENT value at each muon pin —
+#
+#     frozen pin  (…5557…)   -2.02018813
+#     CODATA-2018 (…5554…)   -2.02020024   <- this file's Q0_MUON_PIN
+#     CODATA-2022 (…5642…)   -2.01986031
+#
+# so the constant is only meaningful paired with the pin it belongs to. This
+# file's `Q0_MUON_PIN` (:86) is 1.10997859555418…, the CODATA-2018 anchor, and
+# the value below is the one extracted there. Verified by reproducing the
+# corpus PROTON value -2.06934257712 to 12 digits with the same routine.
+C3_EMP_MUON = mpf("-2.02020023502")
 
 
 def substrate_syms(q: sp.Symbol):
