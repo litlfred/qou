@@ -290,7 +290,7 @@ def term_4_frobenius_mp(A: int) -> mp.mpf:
     wrong formula.
     """
     from paper_six_term_isotope_sweep import term4_frobenius_codim
-    m_e_mp = mp.mpf(repr(M_E_MEV))
+    m_e_mp = mp.mpf(M_E_MEV)
     return m_e_mp * term4_frobenius_codim(A)
 
 
