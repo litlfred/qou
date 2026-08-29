@@ -76,3 +76,43 @@ Unchanged and worth re-reading before anyone starts: numerical agreement at more
 **not** progress here, and axiomatising the bridge as a class field is the
 §"Axiomatization is NOT a Proof" failure. The honest smaller win remains a content-bearing
 conditional class with no instance.
+
+### DONE 2026-08-29 — the bridge is now stated as a conditional, with no instance
+
+`QOU/MathlibExt/ManifoldVolumeBridge.lean`. The smaller win this bean scoped is
+implemented, and the gap is unchanged: **the volume of a topological 3-manifold is still
+undefined.** What changed is that downstream statements can now carry the dependence in
+their type instead of being silently ambiguous.
+
+**§1 is unconditional and real.** `volume_rotateAt` — relabelling any single tetrahedron
+of a triangulation leaves the total volume unchanged. This lifts the arc's proved
+one-tetrahedron `volume_rotate` to triangulations; no class involved.
+
+**§2 is the hypothesis.** `class HyperbolicVolumeBridge M` carries `vol`, a `Realises`
+relation, the transport `Realises T m → vol m = T.volume` (this is Thurston's theorem,
+an INPUT), and non-triviality. **No instance is provided, and providing one would be a
+defect** absent a real theory of hyperbolic 3-manifolds.
+
+**§3 derives rather than projects** — the §3b-cond item 5 trap. `vol_eq_of_two_realisations`
+applies transport twice and cancels; `vol_eq_rotateAt` composes it with §1's proved
+invariance. Neither is `fun h => h.field`.
+
+#### Two traps hit while writing it, both recorded in the module header
+
+1. **A vacuous corollary, caught by the structure's own field.** "A triangulation of flat
+   tetrahedra has volume zero" is *unstatable*: `IdealTetrahedron` carries
+   `im_pos : 0 < shape.im`, so no such triangulation exists. The theorem would have been
+   vacuously true over an empty hypothesis.
+2. **The class was DEGENERATE on its first draft.** With three fields it admitted
+   `Realises := fun _ _ => False` on `Unit`, under which transport holds vacuously and
+   the class asserts nothing. That instance was written out and **typechecked** — which
+   is why this is stated as fact, not suspicion. It is the same defect the corpus records
+   for the birthday axioms. The `realisable` field closes it; the degenerate instance now
+   fails with `Fields missing: realisable`.
+
+Verified: `lean` exit 0; `#print axioms` on all six = `[propext, Classical.choice,
+Quot.sound]`, zero `sorryAx`; pinned in the axiom guard; registered in `QOU.lean` so it
+is not orphaned (this arc had 11 orphaned modules once).
+
+**Still open, and unchanged:** steps 1–3 above — hyperbolic 3-manifolds in Mathlib,
+Mostow rigidity, Thurston hyperbolisation. This bean stays open for those.
