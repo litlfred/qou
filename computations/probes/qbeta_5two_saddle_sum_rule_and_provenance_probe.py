@@ -321,22 +321,22 @@ def main() -> int:
         "provenance verdict on the two long-unexplained corpus literals. "
         "auditOnly; comparison to published mathematics; no fit; nothing "
         "wired.")
-    w.add_assertion("sum_rule_exact", computed=float(r_sum), expected=0.0,
+    w.add_assertion("sum_rule_exact", computed=r_sum, expected=0.0,
                     tolerance=float(EXACT_TOL),
                     source="sum_j Re V_j = -3 pi^2/2")
-    w.add_assertion("relation_V3_from_V1", computed=float(r_rel), expected=0.0,
+    w.add_assertion("relation_V3_from_V1", computed=r_rel, expected=0.0,
                     tolerance=float(EXACT_TOL),
                     source="V3 = -2 Re V1 - 3 pi^2/2")
-    w.add_assertion("extraction_is_centering", computed=float(cen),
+    w.add_assertion("extraction_is_centering", computed=cen,
                     expected=0.0, tolerance=float(EXACT_TOL),
                     source="sum_j V_j^ext = 0 -- the pi^2/2 shift centers")
     w.add_assertion("legacy_literals_are_extraction_convention",
-                    computed=float(max(d1, d3)), expected=0.0,
+                    computed=max(d1, d3), expected=0.0,
                     tolerance=float(CONV_TOL),
                     source="both legacy literals match the extraction "
                            "convention to ~4 digits")
     w.add_assertion("legacy_pair_internally_inconsistent",
-                    computed=float(incons), expected=float(incons),
+                    computed=incons, expected=incons,
                     tolerance=0.0,
                     source="the pair violates the exact relation => the two "
                            "were computed independently")

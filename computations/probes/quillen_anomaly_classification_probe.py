@@ -385,7 +385,7 @@ def main() -> None:
         all_devs.append(devs)
     wb.add_assertion(
         "anomaly_cancellation_t5_max_dev",
-        computed=float(max(d[0] for d in all_devs)),
+        computed=max(d[0] for d in all_devs),
         expected=0.0,
         tolerance=1e-40,
         source="|t5(tau)| = 5^(3/2) * (N(tau)/N(5 tau))^6, N = (Im tau)^(1/4) "
@@ -395,7 +395,7 @@ def main() -> None:
     )
     wb.add_assertion(
         "fricke_125_is_square_of_cancellation_constant_max_dev",
-        computed=float(max(max(d[1], d[2]) for d in all_devs)),
+        computed=max(max(d[1], d[2]) for d in all_devs),
         expected=0.0,
         tolerance=1e-40,
         source="R(W5 tau) = 1/R(tau) and |t5(tau) * t5(W5 tau)| = 125 = "
@@ -407,7 +407,7 @@ def main() -> None:
     fp = mpc(0, 1 / sqrt(5))
     dev_fp = abs(t5(fp) - 5 * sqrt(5))
     assert dev_fp < mpf("1e-40"), f"fixed-point value off: {dev_fp}"
-    wb.add_assertion("w5_fixed_point_value_dev", computed=float(dev_fp),
+    wb.add_assertion("w5_fixed_point_value_dev", computed=dev_fp,
                      expected=0.0, tolerance=1e-40,
                      source="t5(i/sqrt5) = 5 sqrt(5); R = 1 at the W5 fixed "
                             "point => |t5| = 5^(3/2): the 2026-07-24 "
@@ -428,13 +428,13 @@ def main() -> None:
         f"naive product drifted from corpus print 2.922: {prod_naive}"
     assert abs(prod_8226 - mpf("8.226")) < mpf("5e-3"), \
         f"8.226 product drifted from corpus print: {prod_8226}"
-    wb.add_assertion("naive_product_m5t0_mt0", computed=float(prod_naive),
+    wb.add_assertion("naive_product_m5t0_mt0", computed=prod_naive,
                      expected=2.922, tolerance=5e-3,
                      source="m(5 tau_0)*m(tau_0), m(tau) = 1/(sqrt(Im tau) "
                             "|eta|^2): corpus print 2.922 (2026-07-18 "
                             "retraction audit) — product of genus-1 Quillen "
                             "norms, class (b)")
-    wb.add_assertion("retracted_8226_product", computed=float(prod_8226),
+    wb.add_assertion("retracted_8226_product", computed=prod_8226,
                      expected=8.226, tolerance=5e-3,
                      source="m(5 tau_0)^3*m(tau_0): the retracted 8.226 is a "
                             "product of genus-1 Quillen norms — class (b), "
