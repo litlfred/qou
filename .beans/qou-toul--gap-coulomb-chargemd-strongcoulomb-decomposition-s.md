@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T13:04:42Z
-updated_at: 2026-08-29T02:31:23Z
+updated_at: 2026-08-29T02:54:33Z
 ---
 
 ## VERIFIED AND FIXED — 2026-08-29
@@ -73,3 +73,52 @@ separating genuine dependence from citation, then deciding whether `Q` should
 be renamed, is a physics/naming call for the author. The blast radius of the
 Lean fix itself is zero — both corrected definitions were used only in their
 own files.
+
+
+## Propagation MEASURED — the bean's "5 blocks" was not verifiable, here is what is
+
+I did not take the count on trust. Of the 12 .ts files carrying a
+`def:coulomb-charge` edge, two blocks genuinely inherit the swap; the rest
+cite the label without using the decomposition.
+
+**1. `strangelet-crossing-energy` — the conclusion is inverted, with a number.**
+It states Q = 0 for each baryon unit, then concludes "Purely strong crossing
+energy … there is no Coulomb correction; the entire crossing energy lies in
+the symmetric (strong) channel", writing `N·½(n+ + n-)(q + q^-1)`.
+
+Under the correct assignment Q = 0 means n+ = n-, which annihilates the
+SYMMETRIC term; the energy is then entirely ANTISYMMETRIC,
+`N·½(n+ + n-)(q - q^-1)`. Verified symbolically: sym = 0, asym = k(q - 1/q),
+and sym+asym reconstructs E exactly. The stated energy exceeds the true one by
+`2 N n- q^-1` — a factor of **9.62 at q0** (2.0109 vs 0.2091). And the block
+CITES prop:crossing-energy-decomposition, which says the opposite.
+
+Fixed the algebra; flagged rather than invented the physics: the strangelet
+now has zero symmetric and maximal antisymmetric content, which contradicts
+the "electromagnetic neutrality" reading in item 1 and the enhanced-binding
+argument in item 3. Those need re-deriving, not relabelling.
+
+**2. `strangelet-crossing-energy` also uses non-representable Q values.**
+Item 1 computes Q = +2/3 - 1/3 - 1/3 from assigned quark charges. But
+`def:coulomb-charge` is ½(n+ - n-) in ½Z, so ±1/3 and ±2/3 are outside its
+range for EVERY braid word. Two distinct quantities share the symbol Q. The
+vanishing of the sum is unaffected; it is simply not a statement about the
+crossing-count Q that item 2 then uses. Flagged in place.
+
+**3. `coulomb-strong-ratio-q-rational` — scoping only.**
+Its identity `tanh(ln q) = (q^2-1)/(q^2+1)` is true for all real q > 0 and is
+untouched. What it inherited was the UNCONDITIONAL attribution: it said
+"def:coulomb-charge defines the Coulomb-to-strong ratio as tanh(ln q)", which
+holds only at n- = 0. Scoped to positive braid closures, with the general
+multiplicity factor named.
+
+**Not affected:** electroweak-higgs-torus-link-triplet,
+electroweak-triplet-charge-spin-from-involution, sm-hypercharge-invariant,
+strand-twist-datum, sm-gauge-truncation, sm-lagrangian-selection-rules,
+flavor-charge-assignments — these cite the label without invoking the
+decomposition.
+
+**Credit where due:** strangelet-crossing-energy already knew Q is
+writhe-derived and NOT a Markov invariant, citing `writhe_stabilize` for the
+±1 shift under stabilisation. That was one of my red-team lines and the corpus
+had already answered it.
