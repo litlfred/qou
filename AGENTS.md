@@ -2069,6 +2069,14 @@ Do not regress either.
 >   reasoning about its value; the suffix is now actively misleading rather
 >   than merely absent. Bean `qou-961o` (reopened scope).
 >
+>   **RESOLVED 2026-08-29 (#6015), and the docstring was the worse half.**
+>   `markovZc` is renamed to bare `markovZ` (convention D, matching the other
+>   ten), so `markovZC` has no case twin. Underneath the collision its
+>   **docstring** read *"z = 1 / (√q + 1/√q)"* — convention C — above a body
+>   computing `q³/(q²+1)`. Name and docstring agreed with each other and both
+>   were wrong; only the body was right. Docstring corrected to the body.
+>   **Agreement between two labels is not evidence about the third thing.**
+>
 >   **And the `computations/` figure is NOT a measurement of the C surface.**
 >   26 → 9 is real drain, but both numbers count only what a shape-matcher can
 >   see. Measured by VALUE with
