@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-26T07:43:58Z
+updated_at: 2026-08-29T16:35:30Z
 ---
 
 ## What
@@ -470,3 +470,53 @@ be the "cheap" one** — that was this bean's own framing and it was wrong.
 
 The 12 blocked on muon-built upstreams remain the critical path for
 `qou-1c4y`, unchanged.
+
+=== INTERSECTION WITH THE ideal_muon CARVE-OUT (from qou-6p3b, 2026-08-29) ===
+
+This bean measures the bypass corpus-wide (85 producers). Here is the cut that
+decides whether Tranche A can be finished at all:
+
+  ideal_muon on main:            32 stems
+    group A, manifest-driven:    14   <- QOU_Q0_ANCHOR reaches these
+    group B, reads the pin file: 17   <- it does NOT
+    source not found on disk:     1   (alpha_high_precision)
+
+So 53% of the muon carve-out is inside this bean's blast radius. For those 17
+the manifest entry is DECORATIVE: they take muon from the file whether or not
+the stem is listed, so migrating them by editing q0_anchor_manifest.json moves
+no number at all.
+
+WHY THIS IS A CORRECTNESS ISSUE AND NOT ONLY AN ARCHITECTURE ONE
+
+proton_pin_assertion_check.py decides "may this producer be migrated?" by
+setting QOU_Q0_ANCHOR=physical and reading the producer's own assertions. On a
+group-B producer that override is inert: it would run at MUON, pass its
+muon-tuned assertions, and be reported PASSES-AT-PROTON. A false pass on a
+migration question is worse than no answer, because nothing distinguishes it
+from a real one.
+
+Fixed on the qou-6p3b branch (PR #5755) by refusing rather than guessing: new
+verdict UNSOUND-ENV-BYPASS, decided from the producer source BEFORE running, so
+it costs 0 s and cannot dirty the tree. Verified on cross_check_trM_1ppb.
+That makes the tool honest; it does not make the 17 measurable. Only routing
+them through q_parameter does — i.e. this bean.
+
+THE 17:
+  atomic_tr_m_mpfr_50dps, chi_lambda_he4_full_partition_table,
+  cross_check_trM_1ppb, cross_check_trM_cw_seminormal_leg,
+  frakV_askey_wilson_recurrence_tie_probe, he4_binding_k_stage2_probe,
+  he4_stage2_ranking_seminormal_xcheck, lambda_scale_substrate_probe,
+  q0_anchor_consistency_audit, q1_mass_gap_probe, q_pinning_50_digit,
+  qbeta_decay_sdp_extended_ck, qbeta_fsc_g_pattern_comparison, qbeta_physics,
+  qbeta_symbolic_sdp_strict_complementarity, rho_f_categorical_probe,
+  wlambda_q0_continuation
+
+CAUTION — at least three of these must NOT be routed:
+q_pinning_50_digit DEFINES the anchor (AGENTS.md constraint 1: never re-pin the
+anchor-defining witness); q0_anchor_consistency_audit is the flip detector and
+needs both pins; cross_check_trM_1ppb states in its own source that the L1
+cross-check must run under the muon pin. So the drainable set is at most 14, and
+each needs its rationale read before it is touched.
+
+Reachability data committed at
+computations/audits/proton-pin-assertion-verdicts.json (PR #5755).

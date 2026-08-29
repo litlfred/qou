@@ -1,12 +1,13 @@
 ---
 # qou-6p3b
 title: 'qfac/dim_q threading: 12 decisions, not 133 edits (scoped)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
 updated_at: 2026-08-25T09:51:12Z
 updated_at: 2026-08-25T12:42:12Z
+updated_at: 2026-08-29T16:33:38Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -271,3 +272,84 @@ row on its own, before spending another multi-hour block.
 
 Not proposing that as work yet — recording it so the next agent does not simply
 re-run at 4 h and lose another half day.
+
+=== ARC REVIEW after 1603 commits on main (2026-08-29) ===
+
+WHERE THE ARC STANDS
+
+PR #5755 is still OPEN and draft. Nothing in it has landed. Measured against
+main, not assumed:
+  - proton_pin_assertion_check.py is NOT on main (only anchor_flip_straddle_audit).
+  - aoperator_a5_crosscheck is STILL in ideal_muon on main.
+  - ideal_muon 35 -> 32 (siblings migrated 3), physical_proton -> 689.
+  - block_swap_binding, gram_norm_binding_probe: both still ideal_muon.
+
+So the cds3 drain (#5989, #5992, 18 producers) did NOT subsume Tranche A; it
+worked a disjoint set. No duplication, nothing of mine superseded.
+
+THE FINDING GOT SHARPER, NOT STALER
+
+Main ran a q0Anchor BACKFILL over 573 witnesses plus a flip-detector audit for
+enforcement (b8eb7d9e66). Main's aoperator witness is STILL q0Anchor: None,
+q0Value: None, asserting allPassed: true from ideal_muon — the anchor where its
+own a5_per_lambda_max_abs_diff FAILS. The backfill missed it, so the enforcement
+audit has nothing to enforce here. Re-ran the producer at proton on main's
+current code (which changed twice in the interval): exit 0, 22s, q0Anchor
+proton, allPassed True, 4/4 assertions. Reproduces.
+
+FIVE SIBLING COMMENTS LANDED. THREE CHANGED THE TOOL.
+
+1. #5792 — ENV-BYPASS, the serious one. QOU_Q0_ANCHOR is only read by
+   q_parameter. A producer that loads q-pinning-50-digit.witness.json itself
+   gets MUON regardless, so the check would run it at muon, pass its muon-tuned
+   assertions, and report PASSES-AT-PROTON. MEASURED: 17 of 32 ideal_muon stems.
+   (#5792 says 7 of 13 — a different subset, not a disagreement.)
+   FIXED: new verdict UNSOUND-ENV-BYPASS, decided from source BEFORE running,
+   0 s, cannot dirty the tree. Verified on cross_check_trM_1ppb.
+   MY THREE VERDICTS ARE UNAFFECTED — all group A, checked not assumed.
+
+2. #5805 — read the VALUE not the DELTA. True->False, True->null and the field
+   going absent are three findings in one shape. `is False` silently passed the
+   last two. FIXED: `is not True`, splitting FAILS-AT-PROTON from UNCLEAR. Added
+   NO-ASSERTIONS: a producer that writes a witness but asserts nothing
+   established nothing, and calling that PASSES was the same false reassurance
+   one layer down.
+
+3. #5765 — asked for a citable artifact. My verdicts were in /tmp, which the
+   container reclaim duly took. FIXED: committed at
+   computations/audits/proton-pin-assertion-verdicts.json with a READ_THIS_FIRST
+   stating the soundness precondition, so it cannot be quoted without it.
+
+ONE SIBLING INFERENCE IS WRONG, AND IT IS LOAD-BEARING
+
+#5765 reads `_PINS = {muon, proton}` in aoperator_a5_crosscheck as a two-pin
+COMPARISON PATH and asks whether this PR's migration broke it. There is no
+comparison path. _PINS is a reverse-lookup that DERIVES the stamp from the q
+the run actually used; the comment directly above it says "DERIVE the anchor
+label from the q0 this run actually used — never assert it." Two consequences:
+the migration breaks nothing, and this producer already does what #5699 is
+generalising, so it is on the RIGHT side of the stamp-vs-arithmetic gap #5765
+raises rather than an instance of it.
+
+LONG-RUN STATE — the resumability earned itself
+
+The container was reclaimed mid-run. /tmp/qou-proton-pin-check/checkpoint.json
+SURVIVED, holding in_flight: gram_norm_binding_probe, so a restart restores the
+tree and re-runs it. block_swap_binding's UNKNOWN (7200.33s) is preserved.
+gram_norm is recorded PENDING, not UNKNOWN — it was interrupted at ~2100s while
+on 3H, and an interrupted run measured nothing.
+
+NEXT, in the order I would take it:
+
+  1. Land #5755. It is now even with main (merge resolved: main's manifest +
+     my one move; main's witness + a real re-run). Blocked only on merge
+     permission.
+  2. The 17 group-B stems are the REAL Tranche A blocker, not the two slow
+     producers. Until they route through q_parameter (qou-aj91 mechanism 5)
+     their manifest entry is decorative and no assertion check can measure them.
+     That is a bigger and more tractable target than another multi-hour run.
+  3. gram_norm_binding_probe: restart from the checkpoint. Its per-isotope log
+     will pin the wall at a specific n, which block_swap's could not.
+  4. block_swap_binding: do NOT re-run at a larger budget. Row 1 <=19s, row 2
+     unfinished at 7181s (>378x). Instrument per-row timing or cost one
+     non-identity row first.
