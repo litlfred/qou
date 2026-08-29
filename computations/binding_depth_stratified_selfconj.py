@@ -196,7 +196,7 @@ def main() -> int:
 
     builder.add_data("results", all_results)
     builder.add_assertion(
-        "data_loaded", computed=float(B_AME["D"]), expected=2.22456607,
+        "data_loaded", computed=B_AME["D"], expected=2.22456607,
         tolerance=1e-10, unit="B(D) MeV", source="AME 2020",
     )
     builder.save()

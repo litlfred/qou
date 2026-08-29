@@ -293,7 +293,7 @@ if "3He" in per_atom_combined:
     he3_base = mp.mpf(per_atom_combined["3He"]["baseline_sum_y_dim_abs_dtheta"])
     wb.add_assertion(
         "he3_baseline_sum_reproduces_full_theta_assembly",
-        computed=float(he3_base),
+        computed=he3_base,
         expected=0.7587,
         tolerance=0.01,
         source="baseline Σ y·dim·|Δθ| for ³He must match "
