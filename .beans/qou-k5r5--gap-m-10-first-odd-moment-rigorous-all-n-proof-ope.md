@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T00:13:09Z
+updated_at: 2026-08-29T00:29:06Z
 ---
 
 
@@ -379,3 +379,20 @@ skeleton. Generic ordered comm ring, no R.
 REMAINING (the one mechanical step): pin the explicit constant C (=> explicit N0,
 check N0<=78) by tracking constants through Olver/Debye/BDJ + the Euler-Maclaurin
 kink term. Real analysis, no new idea. Gap OPEN until then.
+
+## 2026-08-29 — constant-C step scoped (branch claude/m1-constant-C-N0-2026-08-29)
+
+Target for N0<=79 (exact M_1>0 covers n<=78): C <= m_inf*sqrt(79) = 2.668.
+Empirical envelope C_emp(n>=6)=0.087, decreasing (deviation decays faster than
+n^-1/2) => 13-30x headroom; N0<=79 very reachable.
+
+Rigorous C reduces to explicit published constants: tail (Olver DLMF 10.41, ~1e-8),
+sine-series truncation (Sum 1/k^5), de-poissonization (BOO O(1/n)), ratio propagation
+(Lipschitz). ONE binding piece NOT pinned: the Olver/Debye bulk-remainder constant
+C_A for Var(Sum|c|) -- carry the explicit theta^-1/2 remainder through the x^2-weighted
+bulk sum (multi-page hard analysis).
+
+Finite part (n<=78) certified exact. A VERIFIED explicit C NOT produced this session --
+declined to launder the empirical 0.087 as rigorous. Gap reduced to that one constant.
+NEXT: the Olver/Debye C_A computation, or accept the honest 'rigorous modulo one explicit
+constant' resting point.
