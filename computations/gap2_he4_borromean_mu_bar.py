@@ -229,7 +229,20 @@ def main() -> int:
         wb.add_data("he4_surplus_MeV", fmt(surplus))
         wb.add_data("models", {nm: {"M3_irr": m3, "M4": m4} for nm, (m3, m4) in results.items()})
         wb.add_data("free_parameters", 0)
-        out = wb.save()
+        # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+        # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+        # an undeclared witness goes out asserting a pin it never used, and
+        # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+        # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+        # in the payload.
+        out = wb.save({
+            "q0Anchor": "independent",
+            "q0AnchorReason": (
+                "q0-independent: this producer never references q_0 at all. Its only "
+                "path to `qou_substrate.constants` is the CODATA mass table reached via "
+                "`codata_2022_source`, and importing a table is not computing at a pin."
+            ),
+        })
         print(f"\nWitness: {out}")
     except Exception as e:
         print(f"\n(witness emit skipped: {e})")
