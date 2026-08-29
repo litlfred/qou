@@ -64,7 +64,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -78,26 +78,30 @@ INPUT_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
-def _pearson_r(xs: list[float], ys: list[float]) -> float:
-    """Pearson correlation coefficient.  Returns NaN if degenerate."""
+def _pearson_r(xs: list, ys: list):
+    """Pearson correlation coefficient (mpmath).  Returns NaN if degenerate.
+
+    mpmath rather than float: this aggregates a whole sample, and AGENTS.md
+    bans float64 accumulation in `computations/` scripts, probes included.
+    """
     n = len(xs)
     if n < 2:
-        return float("nan")
+        return mp.nan
     mx = sum(xs) / n
     my = sum(ys) / n
     num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    denx = sum((x - mx) ** 2 for x in xs) ** 0.5
-    deny = sum((y - my) ** 2 for y in ys) ** 0.5
+    denx = mp.sqrt(sum((x - mx) ** 2 for x in xs))
+    deny = mp.sqrt(sum((y - my) ** 2 for y in ys))
     if denx == 0 or deny == 0:
-        return float("nan")
+        return mp.nan
     return num / (denx * deny)
 
 
-def _linear_fit(xs: list[float], ys: list[float]) -> tuple[float, float, float]:
-    """Returns (slope, intercept, R²) for y = slope·x + intercept."""
+def _linear_fit(xs: list, ys: list):
+    """Returns (slope, intercept, R²) for y = slope·x + intercept (mpmath)."""
     r = _pearson_r(xs, ys)
     if not (r == r):  # NaN check
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     n = len(xs)
     mx = sum(xs) / n
     my = sum(ys) / n
@@ -155,8 +159,12 @@ def main() -> int:
         rows_out.append({
             "Z": r["Z"], "N": r["N"], "A": r["A"],
             "atom_label": _atom_label(r["Z"], r["N"]),
-            "err_pct": r["err_pct"],
-            "err_MeV": r["err_MeV"],
+            # mpf at construction, not at each use: this field arrives from the
+            # upstream witness as a STRING (_precision.fmt), and every
+            # downstream consumer below compares or sums it. Converting here
+            # once is why lines that read `r["err_pct"] < 0` work at all.
+            "err_pct": mp.mpf(str(r["err_pct"])),
+            "err_MeV": mp.mpf(str(r["err_MeV"])),
             "prediction_type": r.get("prediction_type", "binding_energy"),
             "channels_pp": ch["pp"],
             "channels_pn": ch["pn"],
@@ -166,8 +174,13 @@ def main() -> int:
         })
 
     # Regress err_pct against each candidate predictor
-    err_pcts = [r["err_pct"] for r in rows_out]
-    n_inters = [float(r["n_inter_total"]) for r in rows_out]
+    # mpf, not float: witness numerics are serialized as STRINGS by
+    # _precision.fmt, so err_pct arrives as str (this crashed with
+    # "unsupported operand type(s) for +: 'int' and 'str'"). Converting with
+    # float() would fix the crash and introduce the defect AGENTS.md forbids in
+    # probes -- aggregating a sample in float64. Carry mpf end to end.
+    err_pcts = [r["err_pct"] for r in rows_out]          # already mpf
+    n_inters = [mp.mpf(str(r["n_inter_total"])) for r in rows_out]
     h_weights = [r["signed_h_weight"] for r in rows_out]
 
     slope_n, intercept_n, r2_n = _linear_fit(n_inters, err_pcts)
@@ -245,7 +258,7 @@ def main() -> int:
         "prediction_error_sign_flips": [
             {
                 "atom": r["atom_label"],
-                "err_pct": r["err_pct"],
+                "err_pct": fmt(r["err_pct"]),
                 "interpretation": (
                     "UNDER-prediction (err < 0) → missing positive "
                     "contributions OR over-weighted negative channels"
