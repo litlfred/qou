@@ -1,5 +1,5 @@
-"""The H_3 Frobenius Gram matrix is diagonal and nonnegative — so feasibility
-is LOOSE, and my earlier probe's tightness was the artifact.
+"""The Frobenius Gram matrix is entrywise nonnegative — so feasibility is
+LOOSE, and my earlier probe's tightness was the artifact.
 
 This closes the loop opened by qbeta_nucleon_selection_rule_probe, which
 adopted a wrong reading of Frobenius positivity, found feasibility very tight
@@ -55,12 +55,32 @@ CONSEQUENCES, and they are the point:
     gluon configuration -- consistent with the corpus stating the rule and the
     84-solution count in the same sentence.
 
-SCOPE-(a).  This computes G for k = 3 alone.  stable-atom.md's basis is
+THE FILTRATION, AND WHY IT MATTERS.  stable-atom.md's basis is
 {e_lambda}_{lambda |- k, k <= k_max} -- a FILTRATION across several k -- and
-operators from different H_k need not be orthogonal, so the full G may carry
-off-diagonal entries and need not be entrywise nonnegative.  Whether the
-looseness survives the filtration is NOT settled here.  No gluon count is
-selected and no net value is adjudicated.
+operators from different H_k are NOT orthogonal, so the diagonality above is a
+k = 3 accident and could have failed immediately.  Measured over the k <= 2
+basis {1, E+, E-} (idempotency, completeness and orthogonality all verified
+symbolically):
+
+              1            E+            E-
+    1       1.0        0.7527        0.2473
+    E+   0.7527        0.7527           0.0
+    E-   0.2473           0.0        0.2473
+
+FOUR nonzero off-diagonal entries -- the H_2 idempotents genuinely are not
+orthogonal to the H_1 identity -- and STILL entrywise nonnegative.  So the
+looseness is not an artifact of diagonality; it survives real off-diagonal
+structure.
+
+Structurally this is what one expects: tr_M = sum_lambda y_lambda chi_lambda,
+so tr_M(e_a e_b) is a nonnegative-coefficient combination whenever every
+y_lambda >= 0, which is exactly what convention D's row cap delivers.  That
+argument is NOT a proof -- it needs chi_lambda(e_a e_b) >= 0 as well -- and is
+flagged as unproved in the probe.
+
+SCOPE-(a).  MEASURED at k = 3 and across the k <= 2 filtration; NOT
+established for general k <= k_max.  No gluon count is selected and no net
+value is adjudicated.
 
 -- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/stable-atom.md
 -- Ref: [manuscript] content/quantum-observable-universe/knots-particles-confinement/ilp-solution-count-unwrap.md
@@ -83,10 +103,29 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from qbeta_net_trace_invariance_probe import (  # noqa: E402
+    q, h, L, ONE, basis_vec,
+)
 
 set_compute_dps(50)
 
 Q0 = sp.Rational(Q_50_DIGIT_STR)
+Z_D = q**3 / (q**2 + 1)
+
+
+def num(e):
+    """Exact q -> q_0 substitution, then a 40-dps mpf readout. No float64."""
+    return mp.mpf(str(sp.N(sp.simplify(sp.sympify(e)).subs(q, Q0), 40)))
+
+
+def tr_M_of(M):
+    """Markov trace of the algebra element with left-multiplication matrix M."""
+    d = [sp.simplify(c) for c in (M * basis_vec(0))]
+    return sp.simplify(
+        d[0] + (d[1] + d[2]) * Z_D + (d[3] + d[4]) * Z_D**2
+        + d[5] * Z_D * (h * Z_D + 1)
+    )
+
 
 _FAILURES: list[str] = []
 
@@ -170,17 +209,79 @@ def main() -> int:
           "a formalisation or probe that omits the decomposition constraint "
           "decides nothing about stability", w)
 
-    print("\n  scope")
-    print("    SCOPE-(a). k = 3 ONLY. stable-atom.md's basis is")
-    print("    {e_lambda}_{lambda |- k, k <= k_max} -- a FILTRATION across")
-    print("    several k -- and operators from different H_k need not be")
-    print("    orthogonal, so the full G may have off-diagonal entries and")
-    print("    need not be entrywise nonnegative. Whether the looseness")
-    print("    survives the filtration is NOT settled here. No gluon count")
-    print("    selected, no net value adjudicated.")
-    w.add_data("scope", "(a) k=3 only; filtration across k<=k_max not settled")
+    # ---- the FILTRATION: does the looseness survive off-diagonal entries? --
+    # H_2 idempotents on strands (0,1). Hecke relation (s - q)(s + 1/q) = 0,
+    # so the eigenvalues are q and -1/q and the spectral projectors are:
+    den = q + 1 / q
+    Ep = sp.simplify((L[0] + (1 / q) * ONE) / den)   # symmetric
+    Em = sp.simplify((q * ONE - L[0]) / den)         # antisymmetric
 
-    total = 4
+    idem_ok = (sp.simplify(Ep * Ep - Ep).is_zero_matrix
+               and sp.simplify(Em * Em - Em).is_zero_matrix)
+    complete = sp.simplify(Ep + Em - ONE).is_zero_matrix
+    orth = sp.simplify(Ep * Em).is_zero_matrix
+    print("\n  the k <= 2 filtration basis {1, E+, E-}")
+    print(f"    E+^2 = E+ and E-^2 = E- ? {idem_ok}    "
+          f"E+ + E- = 1 ? {complete}    E+E- = 0 ? {orth}")
+    w.add_data("filtration_idempotents_verified",
+               bool(idem_ok and complete and orth))
+
+    fbasis = [("1", ONE), ("E+", Ep), ("E-", Em)]
+    Gf = {}
+    print("\n    G_ab = tr_M(e_a e_b):")
+    print(f"    {'':>6}" + "".join(f"{nb:>16}" for nb, _ in fbasis))
+    for na, A in fbasis:
+        row = ""
+        for nb, B in fbasis:
+            v = num(tr_M_of(sp.simplify(A * B)))
+            Gf[(na, nb)] = v
+            row += f"{mp.nstr(v, 10):>16}"
+        print(f"    {na:>6}{row}")
+    for (na, nb), v in Gf.items():
+        w.add_data(f"G_filtration_{na}_{nb}".replace("+", "p").replace("-", "m"),
+                   fmt(v))
+
+    fneg = [(a, b) for (a, b), v in Gf.items() if v < 0]
+    foff = [(a, b) for (a, b), v in Gf.items()
+            if a != b and abs(v) > mp.mpf("1e-30")]
+    w.add_data("filtration_negative_entries", len(fneg))
+    w.add_data("filtration_nonzero_offdiagonal", len(foff))
+
+    check("the_looseness_SURVIVES_the_filtration_despite_OFF_DIAGONAL_entries",
+          len(fneg) == 0 and len(foff) > 0,
+          f"over the k <= 2 basis the Gram matrix is NOT diagonal -- "
+          f"{len(foff)} nonzero off-diagonal entries, since an H_2 idempotent "
+          f"is not orthogonal to the H_1 identity -- and yet it is still "
+          f"entrywise nonnegative ({len(fneg)} negative entries). So the k=3 "
+          f"result above is not an artifact of diagonality: the hypothesis of "
+          f"frobPos_of_entriesNonneg survives genuine off-diagonal structure, "
+          f"and Frobenius positivity stays loose across the filtration to "
+          f"k <= 2. This closes the scope caveat the k=3 computation left open", w)
+
+    print("\n  why this is expected to persist, structurally")
+    print("    tr_M expands over Wedderburn blocks as tr_M = sum_lambda "
+          "y_lambda chi_lambda,")
+    print("    so tr_M(e_a e_b) is a nonnegative-coefficient combination "
+          "whenever every")
+    print("    y_lambda >= 0. Convention D's row cap gives exactly that "
+          "(y_lambda = 0 for")
+    print("    l(lambda) > 2, positive otherwise). NOT proved here for "
+          "general k -- the")
+    print("    characters chi_lambda(e_a e_b) would have to be shown "
+          "nonnegative too.")
+    w.add_data("structural_argument_proved", False)
+
+    print("\n  scope")
+    print("    SCOPE-(a). MEASURED at k = 3 and across the k <= 2")
+    print("    filtration; the off-diagonal entries are real and the")
+    print("    nonnegativity survives them. NOT established for general")
+    print("    k <= k_max: that needs chi_lambda(e_a e_b) >= 0, which is")
+    print("    argued structurally above but not proved. No gluon count")
+    print("    selected, no net value adjudicated.")
+    w.add_data("scope",
+               "(a) measured at k=3 and k<=2 filtration; general k not proved")
+
+    total = 5
     print(f"\n  {total - len(_FAILURES)}/{total} checks passed")
     for f in _FAILURES:
         print(f"    FAILED: {f}")
