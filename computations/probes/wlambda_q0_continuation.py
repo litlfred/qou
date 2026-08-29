@@ -25,6 +25,16 @@ import time
 from datetime import datetime, timezone
 from fractions import Fraction
 from pathlib import Path
+# Path bridge — this file had NONE, which is why `from q_parameter import ...`
+# raised ModuleNotFoundError from any cwd but computations/. Every sibling in
+# probes/ carries this (or an equivalent sys.path insert) before its bare-name
+# imports; the `# noqa: E402` below implies preceding setup that was never here.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Substrate modulus q₀ (muon-pinned; computations/ layer canonical, from
