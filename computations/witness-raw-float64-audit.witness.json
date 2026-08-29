@@ -81,18 +81,18 @@
       "computations/qns-tail-pileup-probe.witness.json": 17
     },
     "f64_integrator_declared_tier": "float64-integrator",
-    "baseline_files": 1106,
-    "baseline_fields": 128542,
+    "baseline_files": 1100,
+    "baseline_fields": 46467,
     "new_not_baselined": 0,
     "regressed": 1,
-    "drained_files": 15
+    "drained_files": 0
   },
   "scriptFile": "witness_raw_float64_audit.py",
-  "scriptHash": "577549623ef8",
+  "scriptHash": "410c297b818b",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "c4304c93e9dcdbf5edc0b1ea6a9ae1252efd0e23",
+  "commitSha": "08d91907b0af8923ee35d8fcc4cbd7bd22cb73f6",
   "engine": "python",
-  "computedAt": "2026-08-29T07:45:57.387439+00:00",
+  "computedAt": "2026-08-29T07:57:00.860734+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
