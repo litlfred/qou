@@ -1124,7 +1124,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1139,7 +1139,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1152,7 +1152,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-statement-integrity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-statement-integrity.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1167,7 +1167,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1180,7 +1180,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-no-self-assuming-projection.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-no-self-assuming-projection.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1195,7 +1195,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1208,7 +1208,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-no-trivial-true.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-no-trivial-true.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1223,7 +1223,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1236,7 +1236,7 @@
       },
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1252,7 +1252,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1265,7 +1265,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-no-decide-masking.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-no-decide-masking.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1280,7 +1280,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1293,7 +1293,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-no-unused-hypotheses.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-no-unused-hypotheses.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1308,7 +1308,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1324,7 +1324,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-rater-strategy-clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-rater-strategy-clarity.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1339,7 +1339,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1355,7 +1355,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-rater-goal-plausibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-rater-goal-plausibility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1370,7 +1370,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -1386,7 +1386,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-rater-novelty.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-rater-novelty.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1401,7 +1401,7 @@
     "voice-statement-no-interpretation": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies voice-statement-no-interpretation.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies voice-statement-no-interpretation.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1416,7 +1416,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies fit-section-chapter.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies fit-section-chapter.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1429,7 +1429,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1456,7 +1456,7 @@
     "wall-side-statement": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies wall-side-statement.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies wall-side-statement.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1471,7 +1471,7 @@
     "wall-side-proof": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies wall-side-proof.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies wall-side-proof.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1486,7 +1486,7 @@
     "da-false-claim": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1500,7 +1500,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1515,7 +1515,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-vacuous.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-vacuous.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1528,7 +1528,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1543,7 +1543,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-circular.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-circular.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1556,7 +1556,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1571,7 +1571,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-overclaim.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-overclaim.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1584,7 +1584,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1599,7 +1599,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-hidden-dof.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-hidden-dof.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1612,7 +1612,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1627,7 +1627,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-non-sequitur.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-non-sequitur.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1640,7 +1640,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1655,7 +1655,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-lean-narrative-divergence.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1668,7 +1668,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1683,7 +1683,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-citation-misuse.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-citation-misuse.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1696,7 +1696,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1711,7 +1711,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-definitional-ambiguity.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1724,7 +1724,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1739,7 +1739,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-empirical-fragility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1752,7 +1752,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1767,7 +1767,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-physical-implausibility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1780,7 +1780,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1795,7 +1795,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-reproducibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-reproducibility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1808,7 +1808,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1823,7 +1823,7 @@
     "da-referee-verdict": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1837,7 +1837,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1852,7 +1852,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1867,7 +1867,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies milnor-brevity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies milnor-brevity.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1880,7 +1880,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:52:12.000Z",
         "reviewed_sha": "8fd578fbbe218aa799bfb3d39b057e92da4d29dc",
         "reviewer": {
@@ -1955,7 +1955,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -2512,5 +2512,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-26T07:22:24.691Z"
+  "updated_at": "2026-08-26T07:22:24.691Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

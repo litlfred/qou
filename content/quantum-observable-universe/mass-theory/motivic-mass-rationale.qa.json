@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -216,7 +216,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" — interrogative / rhetorical opener — use a declarative noun phrase | content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" — starts with a question word"
+        "evidence": "content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 interrogative / rhetorical opener \u2014 use a declarative noun phrase | content/quantum-observable-universe/mass-theory/motivic-mass-rationale.ts:5: title \"Why a motivic measure: singular intermediate states and the archimedean realization\" \u2014 starts with a question word"
       }
     ],
     "voice-ai-slop": [
@@ -609,7 +609,7 @@
           "in_degree": 0,
           "cone_size": 99,
           "depth": 25,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 511,
           "edge_span_mean": 206,
           "worst_target": ""
@@ -948,7 +948,7 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not yet a real number.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not yet a real number.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -963,7 +963,7 @@
         },
         "reviewed_at": "2026-08-21T21:36:34.825Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Two constructions examined. (i) 'there is no smooth volume form to integrate, no measure-theoretic Lebesgue construction that survives the blow-up' states the actual obstruction that motivates a motivic measure — substantive. (ii) 'a motive, not yet a real number' is the temporal/scope false-positive class and is load-bearing disambiguation against reading m_mot as MeV."
+        "evidence": "Two constructions examined. (i) 'there is no smooth volume form to integrate, no measure-theoretic Lebesgue construction that survives the blow-up' states the actual obstruction that motivates a motivic measure \u2014 substantive. (ii) 'a motive, not yet a real number' is the temporal/scope false-positive class and is load-bearing disambiguation against reading m_mot as MeV."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1099,7 +1099,7 @@
         },
         "reviewed_at": "2026-08-21T21:36:35.205Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Final clause is a forward cross-reference ('constructed later in this chapter once the adelic substrate it projects from is in place') — bookkeeping, in the cross-reference-closer false-positive class."
+        "evidence": "Final clause is a forward cross-reference ('constructed later in this chapter once the adelic substrate it projects from is in place') \u2014 bookkeeping, in the cross-reference-closer false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -1296,5 +1296,6 @@
     "md": "974843dd9c32",
     "ts": "3818988f1657"
   },
-  "updated_at": "2026-08-21T21:36:35.740Z"
+  "updated_at": "2026-08-21T21:36:35.740Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

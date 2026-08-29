@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-26T15:11:01.346918+00:00",
-  "commitSha": "a1019fbc334e971d44b685eba0ce16487a7237d4",
+  "computedAt": "2026-08-29T07:40:28.056740+00:00",
+  "commitSha": "4f96783a6a1040c50988effb4c4857eb1552a87d",
   "assertions": [
     {
       "name": "overdetermined_lambda_consistent",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 25,
   "computation": "sublemma-2-1-A-operator-extract-h9-nn",
   "scriptFile": "sublemma_2_1_A_operator_extract_h9.py",
-  "scriptHash": "9fcbaf7243d6",
-  "scriptCommitSha": "0e531116233f5dd2ed5bf4f501b371d5f0953d0c",
+  "scriptHash": "407ef21ee13f",
+  "scriptCommitSha": "f7df6dfc39b87efefafc00a7f7ff4046834fc2cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,16 +27,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
-      "computations/sublemma_2_1_A_operator_extract_h9.py"
+      "computations/sublemma_2_1_A_operator_extract_h9.py",
+      "--interface",
+      "nn"
     ],
-    "reproduce": "python3 -u computations/sublemma_2_1_A_operator_extract_h9.py"
+    "reproduce": "python3 -u computations/sublemma_2_1_A_operator_extract_h9.py --interface nn"
   },
   "description": "Multi-interface Sub-lemma 2.1: operator-valued A^λ_{ξν}(I_2) extraction at H_9 ↓ H_6 × H_3 for I_2 = nn. Phase 1 (tractable scope) with K_6 = 12, K_3 = 12 test words. Low-dim λ ⊢ 9 are over-determined and reach machine-ε consistency; high-dim λ (e.g. (4,3,1,1) with d_λ=216) are under-determined at this K and flagged. Phase 2 (K = 60+) deferred.",
   "auditOnly": "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md",
@@ -51,7 +55,7 @@
     "K_6_h6_test_words": 12,
     "K_3_h3_test_words": 12,
     "n_test_pairs": 144,
-    "chi_compute_time_seconds": 126.03555778500001,
+    "chi_compute_time_seconds": 76.07505068,
     "n_partitions_9": 30,
     "n_overdetermined": 4,
     "n_consistent": 4,
@@ -92962,6 +92966,11 @@
           }
         }
       }
+    },
+    "precision_tier": "float64",
+    "deprecated": {
+      "reason": "np.linalg.lstsq on dense complex systems, residual ~1e-14. A genuine float64 COMPUTATION, not a float64 exit -- there is no higher-precision value being cast away here. An mpmath rewrite is not available at any budget: mp.qr_solve at 50 dps measures 2.62 / 8.91 / 21.32 / 76.65 s at n_unknowns 64 / 96 / 128 / 192, a fitted exponent of 3.07, and the largest real block is 3,390 unknowns -- ~145 h for one block, ~17,000 h across 30 blocks x 4 witnesses. Robust to the exponent: even at n^2 it is ~500 h. Bean qou-1lr8.",
+      "not_production": "Reachability established by reading the CONTROL FLOW, not by grep and not by import cone -- both of those gave wrong answers first, in opposite directions (qou-1lr8 records them). canonical_tr_m_via_branching sets n = 3*A and returns via the fine-Bratteli transfer for A >= 3 BEFORE the extract load, so the load is reached only at A == 2 where n is always 6. NO H_9 entry is reachable from it, and the canonical mass table reaches these witnesses only through that function. The two real consumers -- sublemma_2_1_h9_tritium_verify.py and sublemma_2_1_h12_helium_4_framework.py -- are ANCHOR-ONLY: neither contains q_val, q0, Q_MP or Q_50_DIGIT anywhere, so the hybrid-off-anchor failure mode qou-8chw fixed for the deuteron cannot arise. Closes that bean's surviving item."
     }
   },
   "caveats": [

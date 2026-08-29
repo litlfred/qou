@@ -4,7 +4,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. \"Status (live)\" is now \"Status\". The supersession sentence citing the pre-re-pin \"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb\" note is removed from the published prose and moved verbatim into authorNotes in the .ts, since those figures describe a former pin rather than the current construction. \"exact closure gated on the s5-so3 / Habiro keystone\" is now \"exact closure depends on the s5-so3 fibre action (conj:s5-so3-fiber-action), which is unproved\" — same dependency, no programme ranking. Two workplan gates (\"a wire/un-wire gate\", \"an inclusion/exclusion gate\") become \"criterion\". The live figures (160x, 1248 ppb, 1.25 ppm, 181x, 1.04 ppb, 1690x) and the near-match tier are unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"Status (live)\" is now \"Status\". The supersession sentence citing the pre-re-pin \"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb\" note is removed from the published prose and moved verbatim into authorNotes in the .ts, since those figures describe a former pin rather than the current construction. \"exact closure gated on the s5-so3 / Habiro keystone\" is now \"exact closure depends on the s5-so3 fibre action (conj:s5-so3-fiber-action), which is unproved\" \u2014 same dependency, no programme ranking. Two workplan gates (\"a wire/un-wire gate\", \"an inclusion/exclusion gate\") become \"criterion\". The live figures (160x, 1248 ppb, 1.25 ppm, 181x, 1.04 ppb, 1690x) and the near-match tier are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -156,7 +156,7 @@
         "reviewed_at": "2026-08-09T12:59:53.423Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md:12: - *Target precision $\\varepsilon \\in \\mathbb{R}_{> 0}$ → truncation | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md:81: sub-CAL-2-floor) 100× targets — both improved $\\sim 1690\\times$ over the"
+        "evidence": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md:12: - *Target precision $\\varepsilon \\in \\mathbb{R}_{> 0}$ \u2192 truncation | content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md:81: sub-CAL-2-floor) 100\u00d7 targets \u2014 both improved $\\sim 1690\\times$ over the"
       }
     ],
     "voice-editorializing": [
@@ -547,7 +547,7 @@
           "in_degree": 0,
           "cone_size": 130,
           "depth": 34,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -954,8 +954,8 @@
         },
         "reviewed_at": "2026-08-19T21:22:57.605Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
-        "evidence": "No narrated emphasis. Nearest miss is the imperative 'State which series —' in the c_2 bullet, which is an authoring directive rather than narrated emphasis; flagged separately as a register/agent-instruction leak.",
-        "notes": "Proposed (register, not trap): 'State which series — the normalised series coefficient is c~_2 = -9/8' -> 'The claim is specific to that series: the normalised series has c~_2 = c_2 - 1/8 = -9/8.'"
+        "evidence": "No narrated emphasis. Nearest miss is the imperative 'State which series \u2014' in the c_2 bullet, which is an authoring directive rather than narrated emphasis; flagged separately as a register/agent-instruction leak.",
+        "notes": "Proposed (register, not trap): 'State which series \u2014 the normalised series coefficient is c~_2 = -9/8' -> 'The claim is specific to that series: the normalised series has c~_2 = c_2 - 1/8 = -9/8.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1023,7 +1023,7 @@
         },
         "reviewed_at": "2026-08-19T21:23:17.761Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
-        "evidence": "5 em-dashes over 453 words; each separates a bolded tier label from its gloss ('structural — the exact u^2 coefficient') or introduces a genuine parenthetical. None substitutes for sentence structure."
+        "evidence": "5 em-dashes over 453 words; each separates a bolded tier label from its gloss ('structural \u2014 the exact u^2 coefficient') or introduces a genuine parenthetical. None substitutes for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1072,5 +1072,6 @@
   "paths": {
     "ts": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.ts",
     "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md"
-  }
+  },
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

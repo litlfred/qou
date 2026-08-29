@@ -10,5 +10,10 @@
   "simulators": {
     "dir": "folio-assistant/simulators",
     "pyodideCache": true
+  },
+  "readme": {
+    "linkStyle": "blob",
+    "publishRef": "gh-pages",
+    "pagesBaseUrl": "https://litlfred.github.io/qou"
   }
 }
