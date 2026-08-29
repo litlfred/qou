@@ -2069,6 +2069,15 @@ Do not regress either.
 >   reasoning about its value; the suffix is now actively misleading rather
 >   than merely absent. Bean `qou-961o` (reopened scope).
 >
+>   **RESOLVED 2026-08-29 (session tender-keller).** The offending lowercase
+>   `markovZc` — the sole convention-**D** lowercase-`c`, at
+>   `categorical-chain-convergence-mechanisms.lean:83` — was renamed to
+>   **`markovZD`**. Its body `q³/(q²+1)` is byte-identical to
+>   `QOU.BraidKnot.markovZD`, so the name now matches its value and convention.
+>   No lowercase `markovZc` remains; the surviving family is `markovZ` (bare,
+>   D), `markovZC` (C), `markovZD` (D), `cosKernel` — **no pair differs by case
+>   alone.**
+>
 >   **And the `computations/` figure is NOT a measurement of the C surface.**
 >   26 → 9 is real drain, but both numbers count only what a shape-matcher can
 >   see. Measured by VALUE with

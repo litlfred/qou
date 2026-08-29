@@ -63,6 +63,14 @@ migrated by substituting `z_D` at all are `qou-pmkh`.
 
 ## TRAP — `markovZC` and `markovZc` differ by ONE LETTER'S CASE and mean OPPOSITE conventions
 
+**RESOLVED 2026-08-29 (session tender-keller, follow-up to `qou-961o`).** The
+lowercase `markovZc` — the sole convention-D lowercase-`c`, at
+`categorical-chain-convergence-mechanisms.lean:83` — was renamed to `markovZD`
+(byte-identical body `q³/(q²+1)` to `QOU.BraidKnot.markovZD`). No `markovZc`
+remains, so no `markovZ*` pair now differs by case alone. Re-measure to confirm
+before quoting; the table below is retained as the history that motivated the
+fix.
+
 The `markovZ` overload is **resolved** — `qou-961o` landed 2026-08-29
 (`ae8098c3`), and bare `markovZ` now means convention D uniformly. Re-measured
 the same day: **9 bare `markovZ`, all D**, 0 C.
