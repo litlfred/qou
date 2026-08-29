@@ -92,6 +92,22 @@ moved. This script deliberately does NOT run producers -- it is a static audit,
 and adding a run would make it slow, environment-dependent, and capable of
 dirtying the tree (producers write SIBLING witnesses).
 
+A SECOND REASON TO DRY-RUN: `scriptFile` MAY NAME A CONSUMER, NOT THE WRITER
+----------------------------------------------------------------------------
+Every bucket here is assigned by inspecting the file `scriptFile` names, which
+assumes that file WROTE the witness. It does not always. Raised by the #5919
+author, whose worked example is `free-neutron-decay.witness.json` naming
+`derived_masses.py` -- a module that only READS it. Where that happens this
+script classifies the wrong file's source as builder-vs-hand-rolled, and a
+stamp applied on its verdict would patch a consumer.
+
+Nothing here detects it, and a static audit cannot: deciding which module
+writes a given path means resolving delegated writes through shims. **The
+dry-run is what closes it** -- running the named producer and requiring the
+witness to actually change proves the attribution empirically, which is why
+every stamp landed under `1j39` was gated on one. Treat a bucket assignment as
+a hypothesis about who writes the file, not a fact.
+
 Exit 0 always -- this reports, it does not gate.
 """
 from __future__ import annotations
