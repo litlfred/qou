@@ -209,15 +209,43 @@ def main() -> int:
     a = ap.parse_args()
 
     if a.selftest:
-        rows = triage()
-        known = "computations/deltalambda/threerow_qcross_trend_probe.py"
-        hit = next((r for r in rows if r["path"] == known), None)
-        if hit is None or not hit["score"]:
-            print(f"SELFTEST FAIL: {known} not detected")
+        # Anchor the SOURCE layer on a SYNTHETIC FIXTURE, not on a live file.
+        #
+        # This selftest used to require that
+        # `computations/deltalambda/threerow_qcross_trend_probe.py` be detected AND
+        # read as hard-coding C's level. That file was the confirmed instance when
+        # this tool was written -- and in 6ebae05c45 it was RETIRED, exactly as the
+        # audit asked. The selftest then began failing on a clean tree, reporting a
+        # regression that was in fact the fix landing.
+        #
+        # A selftest anchored to a mutable instance goes stale the moment the
+        # instance is repaired, and it fails in the WORST direction: it cries
+        # regression at success, which trains a reader to ignore it. Test the
+        # DETECTOR against a fixture it cannot lose, and leave the corpus to the
+        # report.
+        # Each pattern gets its OWN minimal probe string, so breaking one branch
+        # of one regex is detectable. A single combined fixture is NOT enough: the
+        # first version of this check used one blob containing a variable named
+        # `three_row`, which matches ROWS' `three[_-]?row` alternative — so
+        # sabotaging ROWS' `len(x) >= 3` branch left the selftest GREEN. The
+        # negative control caught it; without per-branch probes this selftest would
+        # have been decoration.
+        probes = {
+            "CONSUMER": (CONSUMER, "v = y_lambda_at_q0_mpmath(9, q)"),
+            "SIGN": (SIGN, "if Y[l] < 0:"),
+            "ROWS/len": (ROWS, "sel = [l for l in P if len(l) >= 3]"),
+            "ROWS/word": (ROWS, "the threerow stratum"),
+            "NEGV": (NEGV, "sum over negative-weight blocks"),
+            "C_LEVEL/poly": (C_LEVEL, "D = -u**6 - u**4 + u**3 + u**2 + 1"),
+            "C_LEVEL/const": (C_LEVEL, "r(q0) = 2.5995, Q^r = 1.7202, u* = 1.13068"),
+        }
+        missing = [k for k, (rx, txt) in probes.items() if not rx.search(txt)]
+        if missing:
+            print(f"SELFTEST FAIL: the source detector missed {missing} on minimal "
+                  f"strings containing exactly those patterns — layer 1 has been "
+                  f"narrowed and no longer detects what it claims to")
             return 1
-        if not hit["hardcodes_C_level"]:
-            print(f"SELFTEST FAIL: {known} no longer reads as hard-coding C's level")
-            return 1
+
         m = measure((9,))
         st = m["strata"][0]
         if not st["is_structural_zero"]:
@@ -227,6 +255,13 @@ def main() -> int:
         if st["n_negative_above_floor"]:
             print(f"SELFTEST FAIL: {st['n_negative_above_floor']} genuinely negative "
                   f"y_lambda at n=9 — convention D should leave none")
+            return 1
+        # Layer 3 must still be able to read provenance at all. It reports a COUNT,
+        # never a required count: zero C-frame records is the goal state, reached on
+        # main on 2026-08-25, not a failure.
+        if not date_witnesses():
+            print("SELFTEST FAIL: layer 3 matched no witnesses at all — the "
+                  "stem-matching has broken, not the corpus")
             return 1
         print("SELFTEST OK")
         return 0
