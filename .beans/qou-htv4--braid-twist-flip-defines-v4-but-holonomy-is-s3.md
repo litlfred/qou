@@ -53,3 +53,33 @@ tracked here:
 
 Until (1) lands, `def:braid-twist-flip` still says V4 while its interpreting
 blocks say S3 — a KNOWN, filed transient inconsistency, not an oversight.
+
+## 2026-08-29 — Lean + .md corrected to S3 and VERIFIED (lean-direct exit 0, no sorryAx)
+
+Both Lean files rewritten V4 -> S3 and verified via lean-direct (olean cache
+restored; RESTORED-NO-TRACES, no lake build):
+
+- `braid-twist-flip.lean` (content sibling): deleted the false `twist_flip_comm`;
+  added `twist_flip_braid` (σ₁σ₂σ₁ = σ₂σ₁σ₂), `twist_flip_pow_three` ((σ₁σ₂)³=id),
+  `twist_flip_ne_id` (σ₁σ₂ ≠ id) — together pinning the order at exactly 3 — plus
+  `w4_fixed`. Generators are the adjacent transpositions (w₁ w₂), (w₂ w₃) on Fin 4.
+- `lean/QOU/BraidTwistFlip.lean` (library, no importers): same correction on the
+  4-tuple carrier; axiom-free rfl.
+- `braid-twist-flip.md`: rewritten to the S3/braid-relation statement; hand
+  render-QA clean.
+
+**Structurally forced, not guessed:** a faithful S3 on four resolvents MUST fix
+one and act as the standard rep on the other three (4 ∤ 6). Only the label of the
+fixed resolvent (chose w₄) is conventional — documented in both docstrings + .md.
+
+**Still open (deferred, needs author / other tooling):**
+1. The 4-resolvent PHYSICS narrative in `rem:rho-s3-holonomy-exposition`,
+   `r-matrix-braiding-structure`, `brings-surface:braid-group-action` — the
+   "conjugate pairs (w₁,w₄),(w₂,w₃) / chiral sheets / time-like–space-like"
+   description is V₄-flavored and does not match "S3 fixes w₄, cycles w₁w₂w₃".
+   Reconciling the physical mode-assignment with the S3 action is genuine
+   authoring, not a mechanical fix.
+2. α NOTATION OVERLOAD unresolved (α = 3-cycle in su2-generators vs α = twist
+   generator in rho-s3) — §7aa collision.
+3. `braid-twist-flip.qa.json` SIDECAR staled by the .lean edit; qa-sweep needs
+   the folio pipeline, ABSENT this session. Needs a pipeline pass to refresh.
