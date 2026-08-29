@@ -33,8 +33,21 @@ Pin: PROTON (`qou_substrate.constants.Q`), per the 2026-08-07 directive.
 The C-frame column is computed from the SAME q0 -- it varies the Markov
 parameter z, not the pin -- so the two columns are frame-comparable and
 neither straddles a layer.  `wedderburn_jones_markov.y_lambda_at` is
-deliberately NOT called (it serves a muon-built cache when handed
-q_parameter.Q); the live closed form is used instead.
+not called; the live closed form is used instead.
+
+STALE RATIONALE CORRECTED 2026-08-29. That parenthetical used to read "(it
+serves a muon-built cache when handed q_parameter.Q)". It no longer does: the
+gated cache load moved into `_y_lambda_at_convention_C_HISTORICAL`, which is
+dead (convention C, excised 2026-08-09), and the live body computes from
+whatever q it is handed. The cache file itself was also re-derived to
+convention D and re-pinned to PROTON in the same cascade, so the parenthetical
+was wrong about the caching AND about the pin. The CHOICE here is unaffected —
+using the closed form directly is fine either way — only the reason was stale.
+
+Recorded rather than silently deleted because AGENTS.md warns specifically
+against acting on that old wording: promoting `y_lambda_at` to a muon
+identifier once reclassified 56 clean producers. The same stale rationale is
+carried by 10 other live files; tracked in bean qou-5wng.
 """
 
 from __future__ import annotations
