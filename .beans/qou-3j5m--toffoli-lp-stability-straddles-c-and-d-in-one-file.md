@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T16:34:33Z
+updated_at: 2026-08-29T16:39:15Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -63,3 +63,54 @@ NOT ESTABLISHED, and deliberately not guessed:
 SCOPE: (a). This says the file computes two conventions at once and that the
 published stability numbers are C's. It does NOT say the stability conclusion is
 wrong -- that needs the D derivation, which is the actual work here.
+
+
+## PROVED 2026-08-29, not inferred — and the golden ratio is a C artifact
+
+The `sqrt(q)` was suggestive, not proof: a square root can enter from a framing
+factor with nothing to do with z. So I RECONSTRUCTED the published closed form
+from the transfer-matrix block's own recipe instead.
+
+Probe: computations/probes/toffoli_diagonal_convention_frame_probe.py
+Witness: toffoli-diagonal-convention-frame.witness.json (3 assertions, all passed)
+mpmath 50 dps, no float64.
+
+RESULT 1 — the frame is identified, exactly.
+
+    P_77 published  ==  z_C(q) + (q-1)/(q+1)
+
+over 7 values of q, worst |difference| **1.34e-51**. Against z_D the SMALLEST
+|difference| over the same values is 0.113 — never close. So the published
+diagonal IS the `V_1 = z*c + d` recipe at c = 1, d = (q-1)/(q+1), with z = z_C.
+
+RESULT 2 — the golden-ratio threshold does not survive the convention.
+
+    1/phi^2                        0.3819660112501051518
+    P_77(1/phi^2), published (C)   0.0            <- vanishes exactly
+    same recipe with z_D there    -0.398580917583 <- does not vanish
+    its root instead               0.66313789836736143447   (+73.6%)
+
+The content block's "vanishes exactly at the golden ratio threshold q = 1/phi^2"
+is a property of the C-frame closed form, not of the gate.
+
+RESULT 3 — at q0 the VERDICT survives; the NUMBER does not.
+
+    published (C)      0.551443414318   positive
+    same recipe, z_D   0.664811117281   positive     gap +20.6%
+
+So "q0 lies safely inside the stable regime" is unaffected. What is affected is
+every quoted magnitude and every quoted threshold.
+
+SCOPE, and the boundary is the point. Substituting z_D into a closed form derived
+under C is NOT a migration — AGENTS.md states this for the c_k ladder and it
+applies verbatim. The z_D column does NOT say what the convention-D Toffoli
+diagonal is. It says the golden-ratio root is NOT FRAME-INVARIANT, hence cannot
+be quoted unconditionally. Deriving the D-frame diagonal is the open work.
+
+WORTH FLAGGING TO WHOEVER PICKS THIS UP: the golden ratio recurs across the corpus
+(beans qou-84in, qou-r4hg, qou-zpgk are golden-window items; there is also
+brings-surface/fivefold-sheets-golden-ratio and golden-ratio-degeneration-brings).
+This result says NOTHING about those — they are a different construction and I did
+not look at them. But an appearance of phi that traces back to a z_C closed form is
+now a known failure mode, and checking is cheap: reconstruct from the recipe and
+swap z.
