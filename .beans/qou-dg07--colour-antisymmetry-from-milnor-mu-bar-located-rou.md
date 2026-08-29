@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T10:22:06Z
+updated_at: 2026-08-29T10:46:58Z
 ---
 
 ## Summary
@@ -259,3 +259,41 @@ So this is probably notation (prod written for wedge) rather than mathematics.
 Flagging it because the two differ by exactly the sign that this whole route is
 about, and because a reader checking the Alt claim against the literal formula
 will hit the same wall I did. Worth one clarifying word in the block.
+
+
+## Update — the Bring side gives the sign rep, computed (2026-08-29)
+
+`computations/probes/bring_cubic_monodromy_probe.py` + witness. The
+monodromy of the Bring chiral cubic is the **full S₃**, so its sgn
+character is non-trivial. Two independent exact routes over ℚ[z] (no
+float): (i) irreducible over ℂ(z) ⇒ transitive, plus depressed p coprime
+to Δ ⇒ every local monodromy is a transposition ⇒ S₃; (ii) Δ squarefree
+of degree 6 ⇒ not a square in ℂ(z) ⇒ ℂ(z)(√Δ) genuine. Cross-checked at
+50 dps: six loops from a common base point, all transpositions,
+generating S₃; worst step/separation guard 0.028 over 21600 steps.
+
+**Why it matters:** Λ³ of the 3-dim colour permutation rep is a line
+carrying det = sgn. Under A₃ that line would be *trivial* and selecting
+Alt would carry no information. S₃ makes Alt a genuinely non-trivial
+place for the state to sit. That is the derivable half of
+prop:baryon-product-from-alt.
+
+**Correction to my own framing.** The probe names as a gap 'that the
+three sheets ARE the three colour tubes'. `rem:brings-qou-4tuple`
+already supplies that identification — x₂,x₃,x₄ are the colour DOF, 'the
+S₃ permutation of the three sheets' yields the SO(3) holonomy, the fibre
+is 'the color ℙ¹ parametrised by the three roots of the elliptic cubic',
+the six branch points are 'where color sheets merge'. It is a *remark*
+interpreting a definition, so supplied-not-derived, but it is the
+corpus's own construction rather than a premise I added.
+
+**Still open (statement B):** that the physical state occupies Alt³
+rather than the trivial or standard isotype. §6 supplies the line, not
+the state's place in it.
+
+**Two questions raised, not answered:**
+1. Are the Milnor sign line (Borromean side) and the monodromy sign line
+   (Bring side) the SAME line? Same route twice, or two colour S₃s?
+2. `rem:brings-qou-4tuple` says 'degree 4' and 'three sheets' two
+   sentences apart. A degree-4 covering has no three sheets. Flagged,
+   deliberately not resolved.
