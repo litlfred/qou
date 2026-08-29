@@ -419,4 +419,71 @@ theorem t_push {N : ℕ} (d : ℕ) : ∀ (k i : ℕ), i = k + 1 + d → i < N �
             simp only [mul_assoc]; ring_nf
 
 
+/-! ### The parabolic coset cover
+
+`inCosets_all` is the structural heart of the order bound: **every** element of
+`W(Aₙ (n+1))` lies in one of the `n+2` cosets `H · t_k`, where `H` is the
+`incl`-image parabolic.  It is proved by `CoxeterSystem.simple_induction_right`,
+whose inductive step is exactly `inCosets_mul_gen` — which in turn is where the
+four closure cases above are consumed, one per branch of a trichotomy on `i` vs
+`k`.
+
+What this does **not** yet do is turn the cover into a cardinality statement.
+That needs the surjection `(Aₙ n).Group × Fin (n+2) → (Aₙ (n+1)).Group`, a
+finiteness induction anchored at the trivial `W(Aₙ 0)`, and then the comparison
+against `|S_{n+1}| = (n+1)!`. -/
+
+theorem incl_simple (n : ℕ) (i : Fin n) :
+    incl n (CoxeterMatrix.simple (Aₙ n) i) =
+      CoxeterMatrix.simple (Aₙ (n + 1)) i.castSucc :=
+  PresentedGroup.toGroup.of _
+
+/-- The parabolic contains every generator of index `< n`. -/
+theorem gen_mem_incl_range {n i : ℕ} (hi : i < n) :
+    gen (n + 1) i ∈ (incl n).range := by
+  refine ⟨CoxeterMatrix.simple (Aₙ n) ⟨i, hi⟩, ?_⟩
+  rw [incl_simple]
+  simp only [gen, dif_pos (show i < n + 1 by omega)]
+  rfl
+
+/-- Membership in the union of the `n+2` parabolic cosets `H · t_k`. -/
+def InCosets (n : ℕ) (x : (Aₙ (n + 1)).Group) : Prop :=
+  ∃ k, k ≤ n + 1 ∧ ∃ h ∈ (incl n).range, x = h * t (n + 1) k
+
+theorem inCosets_one (n : ℕ) : InCosets n 1 :=
+  ⟨n + 1, le_rfl, 1, one_mem _, by simp⟩
+
+
+/-- **The coset union is closed under right multiplication by a generator.**
+    This is where the four cases of the closure argument are consumed. -/
+theorem inCosets_mul_gen {n : ℕ} {x : (Aₙ (n + 1)).Group} (hx : InCosets n x)
+    {i : ℕ} (hi : i < n + 1) : InCosets n (x * gen (n + 1) i) := by
+  obtain ⟨k, hkN, h, hh, rfl⟩ := hx
+  rcases lt_trichotomy i k with hik | hik | hik
+  · rcases Nat.lt_or_ge (i + 1) k with hlt | hge
+    · exact ⟨k, hkN, h * gen (n + 1) i, mul_mem hh (gen_mem_incl_range (by omega)), by
+        rw [mul_assoc, t_comm hlt, ← mul_assoc]⟩
+    · have hk : k = i + 1 := by omega
+      subst hk
+      refine ⟨i, by omega, h, hh, ?_⟩
+      rw [mul_assoc]
+      congr 1
+      simpa using t_mul_gen_pred (N := n + 1) (k := i + 1) (by omega) (by omega)
+  · subst hik
+    exact ⟨i + 1, by omega, h, hh, by rw [mul_assoc, t_mul_gen_self (by omega)]⟩
+  · exact ⟨k, hkN, h * gen (n + 1) (i - 1),
+      mul_mem hh (gen_mem_incl_range (by omega)), by
+        rw [mul_assoc, t_push (i - k - 1) k i (by omega) hi, ← mul_assoc]⟩
+
+/-- **Every element lies in one of the `n+2` parabolic cosets.** -/
+theorem inCosets_all (n : ℕ) (x : (Aₙ (n + 1)).Group) : InCosets n x := by
+  refine (Aₙ (n + 1)).toCoxeterSystem.simple_induction_right x (inCosets_one n) ?_
+  intro w j hw
+  have : (Aₙ (n + 1)).toCoxeterSystem.simple j = gen (n + 1) j := by
+    simp only [gen, dif_pos j.isLt]
+    rfl
+  rw [this]
+  exact inCosets_mul_gen hw j.isLt
+
+
 end QOU.Hecke.SymmetricCoxeter
