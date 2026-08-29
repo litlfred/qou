@@ -1,11 +1,11 @@
 ---
 # qou-1jny
 title: convention-C detector counts a deliberate C-vs-D switch as actionable (he4_body_order probe)
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:35:51Z
-updated_at: 2026-08-29T16:36:16Z
+updated_at: 2026-08-29T17:56:57Z
 ---
 
 ## What this is
@@ -48,3 +48,19 @@ documented history of blind spots in both directions
 spellings), and the file already carries one entry annotated
 "[detector false positive -- MEASURED, not argued]" for a different site
 in the same probe family.
+
+RESOLVED 2026-08-29 — and the cause was one level deeper than this bean assumed.
+
+The site is not merely 'unregistered'; it FAILS the dispatcher exemption that
+should have covered it automatically. `_returns_convention_d` matched only the
+inline `q**3/(q**2+1)`, and z_of's D arm is `markov_z(q)` — a call. The same
+D-arm-as-call defeats the value audit's co-binding hint, so `--propose-ledger`
+does not stub the site either: no drain pass would ever have adjudicated it.
+
+Fixed by resolving the callee to its definition and testing the SHAPE there
+(never the name — mu4_rhoF_cluster_derivation_probe.markov_z was privately
+convention C while sharing the name). Unresolvable callee stays actionable.
+Ledger entry added; taxonomy row 17.
+
+ACTIONABLE 9 -> 8, selftest 144/144. Also repaired a selftest assertion that
+went stale the same day (registry pinned at exactly 7 rows).
