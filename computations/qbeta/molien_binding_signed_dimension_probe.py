@@ -151,7 +151,20 @@ def main() -> int:
                     source="(-1)^(u-val) fd(1) == (-1)^n(lambda) dim, exact sympy S_3")
     w.add_assertion("s4_delta_from_fake_degree", 1 if ok4 else 0, 1,
                     source="(-1)^(u-val) fd(1) == (-1)^n(lambda) dim, exact sympy S_4")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's entire import "
+            "cone. Signed dimensions are Wedderburn/Springer counts, not substrate "
+            "evaluations."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok else 1
 

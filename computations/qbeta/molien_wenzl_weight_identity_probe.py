@@ -165,7 +165,20 @@ def main() -> int:
                     source="Wenzl weights == Molien weights, exact Q(q,z), n=3")
     w.add_assertion("n4_wenzl_eq_molien", 1 if results[4] else 0, 1,
                     source="Wenzl weights == Molien weights, exact Q(q,z), n=4")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's entire import "
+            "cone. The Wenzl weight identity is an algebraic identity in the formal "
+            "parameter, not a substrate evaluation."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok_all else 1
 

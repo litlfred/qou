@@ -156,7 +156,20 @@ def main() -> int:
                     source="unique solution of the overdetermined conic system")
     w.add_assertion("normaliser_is_perfect_square", 1 if Z_is_square else 0, 1,
                     source="Z = (q^2 - q z - 1)^2")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: everything is exact in Q(q,z), as this file's own "
+            "docstring states. q_0 is reachable through an imported probe but is "
+            "never evaluated at; no q_0 value reaches the payload."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok else 1
 
