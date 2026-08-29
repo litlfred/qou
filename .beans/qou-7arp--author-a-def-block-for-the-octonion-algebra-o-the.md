@@ -1,11 +1,11 @@
 ---
 # qou-7arp
 title: 'Author a def: block for the octonion algebra O — the ledger row is an EXPOSITION gap, not a citation gap'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T18:48:30Z
-updated_at: 2026-08-25T18:49:15Z
+updated_at: 2026-08-29T09:58:31Z
 parent: qou-8lxd
 ---
 

@@ -11189,6 +11189,109 @@ export const references: Reference[] = [
     note: "Berry–Esseen rate for linear statistics of the (continuous hard-edge) Bessel-kernel DPP via the Kac–Akhiezer variance formula (Basor–Ehrhardt) and the Borodin–Okounkov Toeplitz identity; framed as the continuous analogue of the discrete (Toeplitz) case. PDF library/sm10137-eng/.",
   }),
 
+  // ── Deift–Its–Krasovsky 2012 (Toeplitz determinant asymptotics with error terms) ──
+  ref({
+    id: "deift-its-krasovsky2012",
+    library: {
+      docId: "arxiv-1207.4990v3",
+      dir: "library/arxiv-1207.4990v3",
+      pdf: "library/arxiv-1207.4990v3/1207.4990v3.pdf",
+      stage: "sections",
+      pages: 70,
+      sections: 10,
+      arxiv: "1207.4990v3",
+    },
+    type: "article",
+    title:
+      "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+    author: [
+      { family: "Deift", given: "Percy" },
+      { family: "Its", given: "Alexander" },
+      { family: "Krasovsky", given: "Igor" },
+    ],
+    "container-title": "Communications on Pure and Applied Mathematics",
+    volume: "66",
+    page: "1360-1438",
+    issue: "9",
+    issued: { "date-parts": [[2013]] },
+    DOI: "10.1002/cpa.21467",
+    URL: "https://arxiv.org/abs/1207.4990",
+    note: "Survey of Toeplitz-determinant asymptotics WITH error terms: the strong Szegő limit theorem (smooth symbol → exponentially small remainder via the Borodin–Okounkov identity), Fisher–Hartwig singularities (jump/arc symbol → ALGEBRAIC power-law remainder), Toeplitz+Hankel, double-scaling. §11 (p49–53) treats the moving soft edge as a DOUBLE-SCALING limit (Painlevé II/Airy) and identifies the Poissonized Plancherel determinant (Gessel) as exactly this problem, citing Baik–Deift–Johansson. PDF library/arxiv-1207.4990v3/.",
+  }),
+
+  // ── Baik–Deift–Johansson 1999 (longest increasing subsequence / edge double-scaling) ──
+  ref({
+    id: "baik-deift-johansson1999",
+    library: {
+      docId: "arxiv-math-9810105v2",
+      dir: "library/arxiv-math-9810105v2",
+      pdf: "library/arxiv-math-9810105v2/9810105v2.pdf",
+      stage: "sections",
+      pages: 60,
+      sections: 57,
+      arxiv: "math/9810105v2",
+    },
+    type: "article-journal",
+    title:
+      "On the distribution of the length of the longest increasing subsequence of random permutations",
+    author: [
+      { family: "Baik", given: "Jinho" },
+      { family: "Deift", given: "Percy" },
+      { family: "Johansson", given: "Kurt" },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: "12",
+    page: "1119-1178",
+    issue: "4",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.1090/S0894-0347-99-00307-0",
+    URL: "https://arxiv.org/abs/math/9810105",
+    note: "The foundational EDGE result: (λ₁ − 2√θ)/θ^{1/6} → Tracy–Widom (Airy), with convergence of moments, via the Riemann–Hilbert double-scaling analysis of the Plancherel Toeplitz determinant. Supplies the RH double-scaling METHOD + the edge half of the asymptotic — NOT the global linear-statistic (Kerov-CLT) variance rate the qou-k5r5 (CS) margin needs. PDF library/arxiv-math-9810105v2/.",
+  }),
+
+  // ── Baik–Rains 2001 (symmetrized permutations / edge symmetry classes) ──
+  ref({
+    id: "baik-rains2001",
+    library: {
+      docId: "arxiv-math-9910019v1",
+      dir: "library/arxiv-math-9910019v1",
+      pdf: "library/arxiv-math-9910019v1/9910019v1.pdf",
+      stage: "sections",
+      pages: 17,
+      sections: 4,
+      arxiv: "math/9910019v1",
+    },
+    type: "article",
+    title: "Symmetrized random permutations",
+    author: [
+      { family: "Baik", given: "Jinho" },
+      { family: "Rains", given: "Eric M." },
+    ],
+    issued: { "date-parts": [[2001]] },
+    URL: "https://arxiv.org/abs/math/9910019",
+    note: "Edge (λ₁) fluctuations for symmetry classes of random permutations (the β=1,4 / GOE, GSE analogues). Edge regime. PDF library/arxiv-math-9910019v1/.",
+  }),
+
+  // ── Baik 2022 (KPZ limit theorems — modern review) ──
+  ref({
+    id: "baik2022kpz",
+    library: {
+      docId: "arxiv-2206.14086v3",
+      dir: "library/arxiv-2206.14086v3",
+      pdf: "library/arxiv-2206.14086v3/2206.14086v3.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 19,
+      arxiv: "2206.14086v3",
+    },
+    type: "article",
+    title: "KPZ limit theorems",
+    author: [{ family: "Baik", given: "Jinho" }],
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2206.14086",
+    note: "Modern survey of the KPZ universality class and edge (Airy-process) limit theorems, with the Plancherel/longest-increasing-subsequence case as a central example. Edge regime. PDF library/arxiv-2206.14086v3/.",
+  }),
+
   ref({
     id: "tsoukalas-etal2026",
     library: {

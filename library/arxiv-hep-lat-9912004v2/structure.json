@@ -1,0 +1,199 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-lat-9912004v2",
+ "source": {
+  "file": "9912004v2.pdf",
+  "sha256": "7033719ec7a8a0bc039bb89901312db8d7f59859d85a7c83676bc4228da3da20",
+  "bytes": 284274,
+  "pages": 9,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-lat/9912004",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "9 Mar 2000"
+  },
+  "doi": null,
+  "title": "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD F. Farchioni",
+  "authors_raw": "Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, D-22603 Hamburg, Germany",
+  "title_lines": [
+   "Microscopic Universality and the Chiral Phase Transition in two Flavor QCD",
+   "F. Farchioni"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-lat/9912004v2  9 Mar 2000",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181013000636-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Hip",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "B. Lang",
+   "page": 1,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "EXPECTATIONS FROM CHRMT",
+   "page": 2,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "GAUGE FIELD CONFIGURATIONS AND",
+   "page": 3,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "REPORTING THE RESULTS",
+   "page": 4,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Soft inner edge",
+   "page": 7,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "SUMMARY AND CONCLUSIONS",
+   "page": 8,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-hip",
+   "number": "I",
+   "title": "Hip",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 84,
+   "n_words": 12
+  },
+  {
+   "id": "sec-001-c-b-lang",
+   "number": "C",
+   "title": "B. Lang",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 905,
+   "n_words": 128
+  },
+  {
+   "id": "sec-002-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5330,
+   "n_words": 888
+  },
+  {
+   "id": "sec-003-ii-expectations-from-chrmt",
+   "number": "II",
+   "title": "EXPECTATIONS FROM CHRMT",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5843,
+   "n_words": 1012
+  },
+  {
+   "id": "sec-004-iii-gauge-field-configurations-and",
+   "number": "III",
+   "title": "GAUGE FIELD CONFIGURATIONS AND",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2604,
+   "n_words": 470
+  },
+  {
+   "id": "sec-005-iv-reporting-the-results",
+   "number": "IV",
+   "title": "REPORTING THE RESULTS",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 13039,
+   "n_words": 2267
+  },
+  {
+   "id": "sec-006-c-soft-inner-edge",
+   "number": "C",
+   "title": "Soft inner edge",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3362,
+   "n_words": 637
+  },
+  {
+   "id": "sec-007-v-summary-and-conclusions",
+   "number": "V",
+   "title": "SUMMARY AND CONCLUSIONS",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2860,
+   "n_words": 467
+  },
+  {
+   "id": "sec-008-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3584,
+   "n_words": 650
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 37611
+ }
+}

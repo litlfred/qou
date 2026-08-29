@@ -436,6 +436,12 @@ impl HeckeElement {
         let shape: BTreeMap<u32, usize> =
             by_grade.iter().map(|(&g, v)| (g, v.len())).collect();
         let max_grade = by_grade.keys().max().copied().unwrap_or(0);
+        // Always built Full here; `--truncate-for-repo` summarises afterwards,
+        // so truncation is a serialisation policy and never a compute path.
+        let by_grade: std::collections::BTreeMap<u32, cert::GradeTerms> = by_grade
+            .into_iter()
+            .map(|(g, v)| (g, cert::GradeTerms::Full(v)))
+            .collect();
         cert::FiltrationCertificate {
             by_grade,
             shape,

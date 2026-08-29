@@ -1,11 +1,11 @@
 ---
 # qou-ztee
 title: convention-c-value-audit has no way to mark a deliberate comparison — the census floor will look drainable
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T09:54:51Z
-updated_at: 2026-08-29T09:55:32Z
+updated_at: 2026-08-29T16:27:27Z
 ---
 
 Observed 2026-08-29 on branch claude/tower-gap-lean-and-infra-2026-08-29 (PR
