@@ -1,0 +1,52 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T11:02:44.327514+00:00",
+  "commitSha": "fb9a0af4f8839e5d69bb58429ff363cdaf5b21e6",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 130,
+  "computation": "qbeta-frobenius-gram-h3",
+  "scriptFile": "qbeta_frobenius_gram_h3_probe.py",
+  "scriptHash": "fd9e95336834",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_frobenius_gram_h3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_frobenius_gram_h3_probe.py"
+  },
+  "description": "The H_3 Frobenius Gram matrix of the primitive Wedderburn-block operators is diagonal with nonnegative entries under convention D, so Frobenius positivity is a LOOSE constraint -- matching the corpus's own count of 84 feasible ILP solutions, and refuting the tightness a sibling probe found by using the wrong basis.",
+  "data": {
+    "markov_convention": "D",
+    "basis": "primitive Wedderburn-block idempotents e_lambda, H_3",
+    "y_lambda_1_1_1": "0.0",
+    "y_lambda_2_1": "0.247297886748034598406220648379763862169800000000000099442177",
+    "y_lambda_3": "0.505404226503930803187558703240472275660400000000000469306823",
+    "all_y_lambda_nonneg": true,
+    "count_y_lambda_zero": 1,
+    "the_H3_Gram_matrix_is_ENTRYWISE_NONNEGATIVE": true,
+    "therefore_COORDINATE_POSITIVITY_IMPLIES_FROBENIUS_POSITIVITY_here": true,
+    "so_feasibility_is_LOOSE_matching_the_corpus_84_and_refuting_my_2_of_8": true,
+    "the_BINDING_constraint_is_integrality_and_decomposition_not_Gx_geq_0": true,
+    "scope": "(a) k=3 only; filtration across k<=k_max not settled"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
