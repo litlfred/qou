@@ -437,3 +437,76 @@ regenerated. Suggestive of the same pattern here; **not evidence for it**.
 **How much this still matters: less than it did.** The exact parabola gives
 infinite precision on the `hecke_core` side, so that exclusion is now a theorem
 and needs
+## The three open leads, pursued (2026-08-29)
+
+### Lead 1 — pin the reconstruction from a corpus source: PARTLY CLOSED
+
+**The B_3 word is a corpus statement, not my reconstruction.**
+`binding-knots-visual-inventory-table1-data.md:12` gives the Borromean as
+`(s0 s1^-1)^3`; `categorical-proton-properties.md` Step 1 gives
+`s1^-1 = s1 - h`. Together that IS `(s0(s1-h))^3`. I had flagged this as an
+open reconstruction DOF. It was pinned all along, in a table I had not read.
+
+**A selection rule EXISTS, and I had reported it absent.** The previous probe
+listed all eight quark-generator assignments because "the corpus does not say
+which". Wrong: `ilp-solution-count-unwrap.md` states a parameter-free
+tie-break — *"The proton's 9-crossing element admits N_l = 84 feasible ILP
+solutions ... minimizing |tr_M| selects the unique sigma_0 -> sigma_0
+solution"* — and `categorical-proton-properties.md` repeats it.
+
+**But it cannot be applied, and that is the new open item.** "Minimize |tr_M|"
+is monotone in the gluon count, so unconstrained it returns k=0 — the bare
+element both blocks call infeasible. The rule is meaningful only over a
+feasible set, and the corpus never defines that set machine-checkably. The
+obvious reading — Frobenius positivity as "every NF channel coefficient >= 0",
+which is the neutron block's own phrasing since it names the *sigma_0 channel*
+— is **refuted by the corpus itself**: under it k=1 is infeasible for the
+proton, while the proton block states *"a single Hopf link L_- = sigma_1
+sigma_0 is the minimum additional structure capable of restoring stability"*.
+
+So no gluon count is claimed. Under the naive reading the rule would pick k=2
+(proton) / k=3 (neutron); those are NOT published, because the predicate that
+produced them contradicts the corpus. Finding A is neither confirmed nor
+withdrawn by this route.
+
+**Restated blocker** (materially different from before): not "the corpus is
+silent on which configuration", but "**Frobenius positivity has no
+machine-checkable definition**". It must be the Gram/LP condition
+`G(q) x >= 0` over operator SELECTIONS rather than sign-positivity of one
+element's NF coefficients — no block pins it.
+
+Probe: `computations/qbeta/qbeta_nucleon_selection_rule_probe.py`, 4/4.
+
+### Lead 2 — a producer for the neutron NF table: BLOCKED BY LEAD 1
+
+Confirmed again that no producer exists (all six basis rows tested; the one
+apparent `1.0109` match is at the wrong basis element). Writing one requires
+the exact element, which requires the gluon count and the quark assignment —
+and Lead 1 shows the rule that would fix the gluon count cannot be evaluated
+until Frobenius positivity is defined. **So Lead 2 is not independently
+actionable**; it unblocks exactly when Lead 1's predicate is pinned.
+
+### Lead 3 — the mpmath split: CLOSED, it is not a staleness axis
+
+My "566/449" was wrong. Measured over live witnesses: **1160 at 1.3.0, 829 at
+1.4.1, 2 at "0.0.0"** (that last a real defect — version not captured), total
+1991.
+
+The corpus cannot settle it: five producers have witnesses under both
+versions, but none has a *same-named* witness under both — they are producers
+whose different SUBJECTS were computed at different times, so a difference is
+the subject, not the version. No in-corpus control exists.
+
+Tested directly instead: both versions as pinned wheels, the framework's
+load-bearing primitives at 60 dps compared at 55 significant digits. **All ten
+byte-identical**, including `Vol(4_1) = 2*Cl2(pi/3)`, the q_0 root-solve,
+polylog, hyp2f1, besselj, zeta, gamma. The split is not a reason to re-run
+anything. Concern was mine; retired.
+
+Method note, now asserted as check 1 so it cannot recur silently: the
+container's INSTALLED mpmath is **1.4.1**, not 1.3.0. My first attempt
+compared the installed interpreter against a 1.4.1 wheel — 1.4.1 against
+itself — and returned "0 differences", which is indistinguishable from a real
+agreement.
+
+Probe: `computations/audits/mpmath_version_staleness_probe.py`, 3/3.
