@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:44:37Z
-updated_at: 2026-08-29T18:50:30Z
+updated_at: 2026-08-29T18:56:19Z
 parent: qou-ifot
 ---
 
@@ -22,3 +22,21 @@ MEASURED: all three natural heights (L1, span, L1+span) rise on exactly 30 of 74
 SCOPE -- two limits, both real. (1) This is a REDUCTION, not a proof: one open requirement replaced by a weaker open requirement, no mu supplied. Supplying one closes q-Collatz-on-a-QOU. (2) The probe CANNOT be evidence for the conjecture -- the backward tree is generated FROM the attractor, so every element converges by construction and no counterexample can appear in it. What it shows is that block descent is the right SHAPE, not that any height descends in general.
 
 NEXT for whoever picks this up: the open question is now 'does some height descend per block on all of D_inf', and the honest sub-question that is actually attackable is whether block length v is bounded below on D_inf (the sample says v >= 6, but the sample is the attractor's own backward tree and proves nothing). A proof that v >= 2 always would close convergence via this reduction.
+
+FOLLOW-ON, same PR, commit 7001595736: the block SHAPE is not automatic, and the trichotomy is now proved.
+
+The reduction assumed 'one odd step then a run of evens'. That is not a theorem about the map. A q-odd element is P = -1 + [2]_q A, and the odd branch then simplifies to one ring identity, oddStep_of_qOdd_form: [3]P + 1 = [2](-q + [3]A), so C(P) = -q + [3]A. Evaluating at the divisor (oddStep_next_residue) gives residue 1 + A(-1), hence:
+  A(-1) = -1 -> residue  0 -> next step EVEN (block continues)
+  A(-1) = -2 -> residue -1 -> next step ODD  (a v = 0 block)
+  otherwise               -> orbit LEAVES the domain
+That trichotomy is what makes 'block' well defined.
+
+consecutive_odd_steps_exist (A = -2) shows two consecutive odd steps ARE possible: over Z[q], P = -2q-3 |-> -2q^2-3q-2, both residue -1. Derived by hand from the identity BEFORE probing; the probe then reproduced the predicted image exactly.
+
+MEASURED with its limit stated: 1420 consecutive-odd starts (degree <= 3, coeffs in [-6,6]) -- NONE reached the cycle, all left the domain, 1320 within two steps, longest prefix 6. Bounded coefficient-box search, NOT a proof.
+
+SO THE OPEN SUB-QUESTION IS NOW SHARP: can a v = 0 block occur inside D_inf? If not, the block decomposition is total on D_inf and 'v >= 1' is free; if so, the decomposition needs a third case. Either answer is progress and neither is currently known.
+
+Pattern worth noting: this repeats qou-4atn exactly -- the phenomenon exists in the domain and every witness found escapes D_inf. Two different questions, same shape of answer. That is now twice, which suggests D_inf is much thinner than the domain in a way nobody has characterised; a characterisation of D_inf would likely settle both.
+
+Verified: lean-direct exit 0 (one first-pass error, an unreduced phi 2 numeral cast, fixed with map_ofNat). Axioms: oddStep_of_qOdd_form [propext, Quot.sound], the other two standard. No sorryAx.
