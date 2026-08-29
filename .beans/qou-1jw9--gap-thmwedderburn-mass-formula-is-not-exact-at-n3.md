@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T18:27:15Z
+updated_at: 2026-08-29T18:43:31Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -767,3 +767,68 @@ candidates is wrong — the crossing signs, the chain structure, or the strand
 content. The Phi_3 integers are 19 exact constraints to test any candidate
 against, which is a far sharper instrument than the MeV corrections I started
 this arc with.
+
+
+=== ANSWERED: THE CHAIN STRUCTURE — and two invariants are now RE-DERIVED (4366709e74) ===
+
+Which of crossing signs / chain structure / strand content is wrong: the CHAIN
+STRUCTURE, and the error is MINE, not the corpus's.
+
+thm:wedderburn-mass-formula says M_i chains "the crossing matrices of all
+strands j > i". I read that as a SUFFIX PRODUCT OF ADJACENT crossings and tested
+four variants of that misreading. It means what it says: for strand i, cross
+with EVERY strand j > i. Summing over i visits every PAIR once. ALL-PAIRS, with
+NO ordering dependence — which is exactly why the ordering inversion failed and
+why the target sat in the gap BETWEEN ordering-dependent families.
+
+The corpus already said so: markov-pair-z2.md:137 — the pair weight holds
+"regardless of its position in the braid, matching the empirically-verified
+all-pairs set". I did not connect it.
+
+RETRACTION, and it is on MAIN. My claim in this arc and in PRs #5743 + #5753
+(both merged) that "the published prose does not determine the construction" and
+that the formula is "unfalsifiable as written" is WRONG and withdrawn. The prose
+determines it; I misread one preposition four ways and never tried the plain
+reading. THAT CLAIM IS LIVE ON MAIN AND NEEDS CORRECTING THERE — in
+computations/wedderburn_Mi_constructor_test.py's SCOPED banner and
+wedderburn_table_binding_recast.py's docstring. Not done in this commit.
+
+RE-DERIVED (signs from HeckeLinearReduction.lean's sorry-free ratio lemmas;
+pair counts forced by strand content Z p, N n, Z e):
+
+  Phi_3 = w*ln q,  w = 2[2*C(Z,2) - C(N,2) - Z^2] = -2Z - N(N-1)
+      19/19 EXACT, including Ar — the row that REFUTED the earlier candidate
+      -Z(2N-Z+1). Held-out confirmation, not a fit.
+  Phi_2 = Z*N*ln(1 + h^2/4)
+      19/19, worst rel err 5.0e-6 = the 6-decimal publication precision.
+
+Phi_2 also discriminates the pn coefficient: only pn has |det| != 1, and the
+recorded values match the UN-DOUBLED (1, -h/2), NOT Table 1's doubled (2, -h).
+Both give chirality ratio -1, so Phi_3 is unaffected — which is why Phi_3 held
+at 19/19 while Phi_2 decides. (1, -h/2) is symAltRatio_half's exact hypothesis.
+
+CONVENTION C EXCISED (owner directive, received mid-work). Costs nothing here:
+Phi_2 and Phi_3 are CONVENTION-FREE — neither uses z at all. The C/D ruling does
+not reach them; both stand under D unchanged. Phi_1 is the ONLY invariant using
+z, hence the only convention-dependent one.
+
+PHI_1 — NOT SHIPPED, finding recorded here instead. Its probe computed in
+convention C and was DELETED rather than committed; zero C sites in what landed.
+The provenance finding, as a fact about the recovered artifact and an input to
+the C-excision effort:
+  Under convention C, minimised over orderings (def:atomic-braid's own
+  ground-state rule), Phi_1 reproduced He (-5.55890166 vs -5.558902) and Li
+  (-9.83864166 vs -9.838642) at published precision. Be missed under the
+  "electron immediately before its proton" constraint, so that constraint is
+  too strong or the true ground state lies outside it.
+  => the April-2026 producer appears to have been CONVENTION-C. That bears on
+     whether the published table is C-frame. OWNER DECISION, not mine.
+
+STATUS
+  Phi_2 ..... RE-DERIVED, 19/19, convention-free
+  Phi_3 ..... RE-DERIVED, 19/19, convention-free
+  Phi_1 ..... open; convention-dependent; C evaluation excised
+
+NEXT: (1) correct the "unfalsifiable as written" claim on main — it is my own
+and it is wrong; (2) Phi_1 under convention D, which is the honest way to ask
+whether the table survives the C excision at all.
