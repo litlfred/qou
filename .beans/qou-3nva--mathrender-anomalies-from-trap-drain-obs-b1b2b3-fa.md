@@ -4192,3 +4192,52 @@ than newly caused: `voice-ai-slop` (hedge tokens counted across 1269 index
 rows — likely a false positive on generated output) and `voice-unicode-crash`
 (`Λ`, `²`, `≡` in table cells, inherited from upstream block titles). Same
 rule: upstream or generator, not the file.
+
+---
+
+## 2026-08-29 — re-verified against main; ledger is now substantially STALE
+
+Branch `claude/cool-johnson-t1wveh`. Ten days of sibling landings since the
+2026-08-19 reconciliation have **drained most of the mechanical render-class
+defects** — the "nothing has been fixed" headline no longer holds for that
+class. Environment note: Lean LSP + folio-assistant pipeline MCP were down this
+session, so all edits are HAND render-QA'd (grep battery), NOT machine-validated.
+
+**Re-scanned corpus-wide (content/quantum-observable-universe), now DRAINED:**
+- `\operatorname` (L-V55): 1 hit left, and it is in the **generated**
+  `index-of-definitions/definition-index.md` — fix belongs in the generator,
+  not the content. All the L-V55 hand-authored sites (mobius-surreal-*,
+  hyperreal-limit-transfer) are clean.
+- `\pid` / `\pia` / `\lambdaL` (L-V52): **0** hits.
+- `\frac{…}{1}` denominator-1 (L-V53): **0** hits.
+- `## Corollarys` (L-V59): **0** (and it was a generated heading anyway).
+- q₀ digit-transposition `1.10977859555` (L-V60): live file carries the
+  **correct** `1.10997859555` — already fixed/never-wrong.
+- "rank 2" (L-V20 sibling scan): the 3 remaining "rank 2" strings are all
+  **correct** usages (SDP PSD-block rank, Borel rank-2 space, covalent-bond
+  rank) — not the SU(2) error.
+
+**FIXED this pass (PR forthcoming, branch claude/cool-johnson-t1wveh):**
+- **L-V20** `braids-and-knots/why-b3.md:1` — "SU(2), which has rank 2" → rank 1.
+- **L-V58** Čech háček — bare "Cech" → "Čech" at 11 sites across 7 files
+  (the 6 listed + `descent-condition-proof.md` + `descent-cocycle-deviation-proof.md`;
+  includes the `descent-cocycle-deviation.ts` title).
+
+**FLAGGED — author judgment, NOT guessed (per AGENTS.md anti-guessing):**
+- **L-V21** `braids-and-knots/holonomy-trefoil.md:15` — the displayed map
+  `H₁H₂: w ↦ (w₃,w₄,w₁,w₂)` is (1 3)(2 4), an involution (order 2), yet the
+  text calls it "the 3-cycle α" with "(H₁H₂)³ = id on SO(3)". Genuinely LIVE,
+  but the fix is ambiguous: either the displayed permutation is wrong (should
+  be a genuine 3-cycle) OR the "3-cycle / ³=id" labelling is wrong. Which side
+  is correct depends on how α is defined and used downstream — needs the author.
+- **"forbids beta decay"** `observations/complexity-interpretation-intro.md:5`
+  — "the electron trefoil [is] a stable building block … This forbids beta
+  decay." Beta decay is a nuclear/neutron process; electron stability is the
+  wrong referent. The *correct* term is unknown (electron decay? a specific
+  categorical channel?) — needs the author.
+- **L-V54** `\unicode{9737}` (☉, used as the unknot glyph) in vacuum-epsilon.md,
+  casimir-epsilon-vacuum.md, archimedean-stpart.md (+ generated definition-index).
+  A real KaTeX render bug, but the replacement is a **notation choice**
+  (`\bigcirc` is the conventional unknot glyph and is KaTeX-safe) across
+  multiple files — belongs in the notation register / author sign-off, not a
+  unilateral swap.
