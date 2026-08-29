@@ -1,8 +1,8 @@
 {
   "engine": "lp+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:59:55.159090+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T03:01:04.635675+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [
     {
       "name": "lp_strong_duality",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 39,
+  "durationMs": 54,
   "computation": "qbeta-symbolic-sdp-strict-complementarity",
   "scriptFile": "qbeta_symbolic_sdp_strict_complementarity.py",
   "scriptHash": "d4cc29756eb3",
-  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,16 +49,16 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py"
   },
-  "description": "EXPLORATORY: replaces the archimedean min-L2 selection of the β-decay knot operator T_β with the canonical q-rational operator-selection LP/SDP (solve_operator_selection_lp) using q-rational cost t_i=τ_M(b_i) and Frobenius Gram G_{ij}=τ_M(b_i b_j). Tests whether strict complementarity makes the selector direction S-independent and q-rational so the CODATA scalar S=Q_β/E_0 cancels from the c_k directions. Finding: the selector DIRECTION is scale-invariant and q-rational (c_k *ratios* S-independent), but the overall Q_β magnitude still needs n_target=τ_M(T_β)=Q_β/E_0 — the SDP fixes the shape of T_β, not its trace. HONEST PARTIAL; no CAL-4 fit.",
+  "description": "EXPLORATORY: replaces the archimedean min-L2 selection of the \u03b2-decay knot operator T_\u03b2 with the canonical q-rational operator-selection LP/SDP (solve_operator_selection_lp) using q-rational cost t_i=\u03c4_M(b_i) and Frobenius Gram G_{ij}=\u03c4_M(b_i b_j). Tests whether strict complementarity makes the selector direction S-independent and q-rational so the CODATA scalar S=Q_\u03b2/E_0 cancels from the c_k directions. Finding: the selector DIRECTION is scale-invariant and q-rational (c_k *ratios* S-independent), but the overall Q_\u03b2 magnitude still needs n_target=\u03c4_M(T_\u03b2)=Q_\u03b2/E_0 \u2014 the SDP fixes the shape of T_\u03b2, not its trace. HONEST PARTIAL; no CAL-4 fit.",
   "parameters": {
     "q_0": "1.109978595642739",
-    "n_target_canonical": "1.0  (q-rational unit net; NOT CODATA Q_β)"
+    "n_target_canonical": "1.0  (q-rational unit net; NOT CODATA Q_\u03b2)"
   },
   "data": {
     "nf_names": [
-      "γ",
-      "σ_0",
-      "σ_1",
+      "\u03b3",
+      "\u03c3_0",
+      "\u03c3_1",
       "L_+",
       "L_-",
       "e_-"
@@ -151,7 +151,7 @@
     "S_cancels_from_ck_directions": false,
     "S_cancels_from_Qbeta_scale_via_Q_A_to_0p17pct": true,
     "S_cancels_from_Qbeta_subppb_normalisation": false,
-    "verdict": "NEGATIVE. The SDP selector direction was not scale-invariant in this configuration; S does not cleanly cancel. Reported as a negative result — no CODATA-Q_β fit attempted."
+    "verdict": "NEGATIVE. The SDP selector direction was not scale-invariant in this configuration; S does not cleanly cancel. Reported as a negative result \u2014 no CODATA-Q_\u03b2 fit attempted."
   },
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

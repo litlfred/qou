@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:37:51.145676+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:57:47.979290+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [
     {
       "name": "intra_pn_difference_is_bar_odd_exact_h",
@@ -10,7 +10,7 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "Σd(proton uud) − Σd(neutron udd) = +h exactly (ratio 1.000000)"
+      "source": "\u03a3d(proton uud) \u2212 \u03a3d(neutron udd) = +h exactly (ratio 1.000000)"
     },
     {
       "name": "alld0_cosh_gives_identical_mirror",
@@ -18,15 +18,15 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "all-d-zeroed χ_λ(³H) == χ_λ(³He) → cosh asymmetry is an artifact"
+      "source": "all-d-zeroed \u03c7_\u03bb(\u00b3H) == \u03c7_\u03bb(\u00b3He) \u2192 cosh asymmetry is an artifact"
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 33,
   "computation": "he3-tritium-cosh-asymmetry-diagnosis",
   "scriptFile": "he3_tritium_cosh_asymmetry_diagnosis.py",
   "scriptHash": "2584d598d364",
-  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +50,7 @@
     "reproduce": "python3 -u computations/he3_tritium_cosh_asymmetry_diagnosis.py"
   },
   "data": {
-    "description": "Diagnosis of the 5.9% cosh mirror-asymmetry in the ³H/³He q-Reeb split: per-λ character mismatch under full / inter-zeroed / all-d-zeroed. all-d-zeroed → ³H ≡ ³He proves the asymmetry is an artifact of incomplete sinh-removal; the entire split is bar-odd (sinh). Audit-only; no fit.",
+    "description": "Diagnosis of the 5.9% cosh mirror-asymmetry in the \u00b3H/\u00b3He q-Reeb split: per-\u03bb character mismatch under full / inter-zeroed / all-d-zeroed. all-d-zeroed \u2192 \u00b3H \u2261 \u00b3He proves the asymmetry is an artifact of incomplete sinh-removal; the entire split is bar-odd (sinh). Audit-only; no fit.",
     "q0": 1.109978595642739,
     "per_mode_mirror_mismatch": {
       "full": {
@@ -67,7 +67,7 @@
       }
     },
     "intra_pn_d_difference_over_h": 1.0,
-    "verdict": "The proton(uud)−neutron(udd) intra-nucleon d-difference is exactly +h (bar-odd/sinh). strong_channel_rho zeros only inter-nucleon d (k%3==2), leaving the intra-nucleon bar-odd term in the 'cosh' bucket → the 5.9% asymmetry. The TRUE all-d-zeroed cosh channel gives ³H ≡ ³He (max|Δχ_λ| = 0.0e+00), so the cosh contributes ZERO to the split: the entire ³H/³He split is bar-odd (sinh), per the cheat-sheet n−p rule. The residual is therefore a clean ~18% overshoot of the all-sinh q-Reeb phase at universal ρ, NOT a cosh/sinh mixing. No fit; no rewire."
+    "verdict": "The proton(uud)\u2212neutron(udd) intra-nucleon d-difference is exactly +h (bar-odd/sinh). strong_channel_rho zeros only inter-nucleon d (k%3==2), leaving the intra-nucleon bar-odd term in the 'cosh' bucket \u2192 the 5.9% asymmetry. The TRUE all-d-zeroed cosh channel gives \u00b3H \u2261 \u00b3He (max|\u0394\u03c7_\u03bb| = 0.0e+00), so the cosh contributes ZERO to the split: the entire \u00b3H/\u00b3He split is bar-odd (sinh), per the cheat-sheet n\u2212p rule. The residual is therefore a clean ~18% overshoot of the all-sinh q-Reeb phase at universal \u03c1, NOT a cosh/sinh mixing. No fit; no rewire."
   },
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

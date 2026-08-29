@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:41:38.916738+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T03:00:55.794336+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "q1-mass-gap-probe",
   "scriptFile": "q1_mass_gap_probe.py",
   "scriptHash": "731e45977248",
-  "scriptCommitSha": "f0ef4964827019dbabe5be70f50321faa1844f79",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/q1_mass_gap_probe.py"
   },
-  "description": "EXPLORATORY q → 1 probe of the categorical mass-gap quantities and Plancherel weight towers (n = 3..6).  Answers: what survives in the mass tower End(A_n) at q = 1?  Result: semisimple weight structure survives; crossing energy, categorical gap bound (~h³), and physical-units gap (= ½q(q−1)(q+1), ~h) all vanish.  Conventions validated against q-pinning-50-digit.witness.json and the classical q = 1 Plancherel measure.",
+  "description": "EXPLORATORY q \u2192 1 probe of the categorical mass-gap quantities and Plancherel weight towers (n = 3..6).  Answers: what survives in the mass tower End(A_n) at q = 1?  Result: semisimple weight structure survives; crossing energy, categorical gap bound (~h\u00b3), and physical-units gap (= \u00bdq(q\u22121)(q+1), ~h) all vanish.  Conventions validated against q-pinning-50-digit.witness.json and the classical q = 1 Plancherel measure.",
   "exploratory": true,
   "data": {
     "q0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
@@ -352,21 +352,21 @@
       }
     },
     "exact_identities": {
-      "physical_units_gap": "Δ_q/ℏ_q² = ½·q·(q−1)·(q+1)  [exact]",
-      "categorical_gap_leading_order": "Δ_q ~ h³ + O(h⁴), h = q−1"
+      "physical_units_gap": "\u0394_q/\u210f_q\u00b2 = \u00bd\u00b7q\u00b7(q\u22121)\u00b7(q+1)  [exact]",
+      "categorical_gap_leading_order": "\u0394_q ~ h\u00b3 + O(h\u2074), h = q\u22121"
     },
     "verdict": {
       "survives_at_q_1": [
-        "semisimplicity: all Plancherel weights strictly positive at q = 1 (classical d_λ²/n!), n = 3..6",
-        "level structure: the number of distinct weight levels is unchanged across q → 1 (no level collision on the real path tested)",
-        "weight normalization: Σ_λ w_λ(1) = 1 exactly (q-Plancherel defect 1 − Σ w_λ(q₀) ≈ 0.0126 closes at q = 1)"
+        "semisimplicity: all Plancherel weights strictly positive at q = 1 (classical d_\u03bb\u00b2/n!), n = 3..6",
+        "level structure: the number of distinct weight levels is unchanged across q \u2192 1 (no level collision on the real path tested)",
+        "weight normalization: \u03a3_\u03bb w_\u03bb(1) = 1 exactly (q-Plancherel defect 1 \u2212 \u03a3 w_\u03bb(q\u2080) \u2248 0.0126 closes at q = 1)"
       ],
       "dies_at_q_1": [
-        "crossing energy E_×(1) = 0 exactly — every braid word becomes energetically free",
-        "categorical gap bound Δ_q = ½(q−q⁻¹)(q−1)² → 0 cubically in h = q − 1 (the ε³ rate)",
-        "physical-units gap Δ_q/ℏ_q² = ½q(q−1)(q+1) → 0 LINEARLY in h (exact closed form; the 1/ℏ_q² archimedean normalization buys back two powers of h, not three)"
+        "crossing energy E_\u00d7(1) = 0 exactly \u2014 every braid word becomes energetically free",
+        "categorical gap bound \u0394_q = \u00bd(q\u2212q\u207b\u00b9)(q\u22121)\u00b2 \u2192 0 cubically in h = q \u2212 1 (the \u03b5\u00b3 rate)",
+        "physical-units gap \u0394_q/\u210f_q\u00b2 = \u00bdq(q\u22121)(q+1) \u2192 0 LINEARLY in h (exact closed form; the 1/\u210f_q\u00b2 archimedean normalization buys back two powers of h, not three)"
       ],
-      "conclusion": "Direct evaluation: at q = 1 the mass tower End(A_n) is structurally intact (semisimple, distinct levels) but massless — the gap is deformation-induced and does NOT survive the q → 1 limit in either normalization.  This is the computational shadow of the conj:yang-mills-mass-gap μ₂-vanishing statement and supports the obstruction branch (classical-limit obstruction) over any q → 1 gap-transfer strategy."
+      "conclusion": "Direct evaluation: at q = 1 the mass tower End(A_n) is structurally intact (semisimple, distinct levels) but massless \u2014 the gap is deformation-induced and does NOT survive the q \u2192 1 limit in either normalization.  This is the computational shadow of the conj:yang-mills-mass-gap \u03bc\u2082-vanishing statement and supports the obstruction branch (classical-limit obstruction) over any q \u2192 1 gap-transfer strategy."
     }
   },
   "q0Anchor": "muon",

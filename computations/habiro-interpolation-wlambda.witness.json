@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-Q5",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T00:16:38.418531+00:00",
-  "commitSha": "897bfa7b5676eba8a8c65ac13dc04e0bc7b93513",
+  "computedAt": "2026-08-29T02:57:46.390614+00:00",
+  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
   "assertions": [
     {
       "name": "uniform_candidate_interpolates_all_fibre_roots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "habiro-interpolation-wlambda",
   "scriptFile": "habiro_interpolation_wlambda.py",
   "scriptHash": "84cfbb11affb",
-  "scriptCommitSha": "e46d2cd0e63125c8c4e63d533c2c63cf271a9cc3",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -99,52 +99,52 @@
       "p5_m1": {
         "p": 5,
         "ell": 1,
-        "two_cos": "(1/2+1/2√5)",
+        "two_cos": "(1/2+1/2\u221a5)",
         "char_marks": {
           "1": "1",
-          "2": "(1/2+1/2√5)",
-          "3": "(1/2+1/2√5)",
+          "2": "(1/2+1/2\u221a5)",
+          "3": "(1/2+1/2\u221a5)",
           "4": "1",
           "5": "0",
           "6": "-1"
         },
-        "D2": "(10+2√5)",
+        "D2": "(10+2\u221a5)",
         "F_lambda": {
-          "triv": "(1/8-1/40√5)",
-          "2s": "(1/8+1/40√5)",
-          "3": "(1/8+1/40√5)",
-          "4s": "(1/8-1/40√5)",
+          "triv": "(1/8-1/40\u221a5)",
+          "2s": "(1/8+1/40\u221a5)",
+          "3": "(1/8+1/40\u221a5)",
+          "4s": "(1/8-1/40\u221a5)",
           "5": "0",
-          "6": "(1/8-1/40√5)",
-          "4": "(1/8-1/40√5)",
-          "2s'": "(1/8+1/40√5)",
-          "3'": "(1/8+1/40√5)"
+          "6": "(1/8-1/40\u221a5)",
+          "4": "(1/8-1/40\u221a5)",
+          "2s'": "(1/8+1/40\u221a5)",
+          "3'": "(1/8+1/40\u221a5)"
         },
         "F_sum_eq_1": true
       },
       "p5_m2": {
         "p": 5,
         "ell": 2,
-        "two_cos": "(-1/2+1/2√5)",
+        "two_cos": "(-1/2+1/2\u221a5)",
         "char_marks": {
           "1": "1",
-          "2": "(-1/2+1/2√5)",
-          "3": "(1/2-1/2√5)",
+          "2": "(-1/2+1/2\u221a5)",
+          "3": "(1/2-1/2\u221a5)",
           "4": "-1",
           "5": "0",
           "6": "1"
         },
-        "D2": "(10-2√5)",
+        "D2": "(10-2\u221a5)",
         "F_lambda": {
-          "triv": "(1/8+1/40√5)",
-          "2s": "(1/8-1/40√5)",
-          "3": "(1/8-1/40√5)",
-          "4s": "(1/8+1/40√5)",
+          "triv": "(1/8+1/40\u221a5)",
+          "2s": "(1/8-1/40\u221a5)",
+          "3": "(1/8-1/40\u221a5)",
+          "4s": "(1/8+1/40\u221a5)",
           "5": "0",
-          "6": "(1/8+1/40√5)",
-          "4": "(1/8+1/40√5)",
-          "2s'": "(1/8-1/40√5)",
-          "3'": "(1/8-1/40√5)"
+          "6": "(1/8+1/40\u221a5)",
+          "4": "(1/8+1/40\u221a5)",
+          "2s'": "(1/8-1/40\u221a5)",
+          "3'": "(1/8-1/40\u221a5)"
         },
         "F_sum_eq_1": true
       }
@@ -153,8 +153,8 @@
     "D2_values": {
       "p2": "4",
       "p3": "6",
-      "p5_m1": "(10+2√5)",
-      "p5_m2": "(10-2√5)"
+      "p5_m1": "(10+2\u221a5)",
+      "p5_m2": "(10-2\u221a5)"
     },
     "D2_p2_eq_4": true,
     "D2_p3_eq_6": true,
@@ -476,25 +476,25 @@
         {
           "node": "triv",
           "mark": 1,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250525
         },
         {
           "node": "2s",
           "mark": 2,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749473
         },
         {
           "node": "3",
           "mark": 3,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749473
         },
         {
           "node": "4s",
           "mark": 4,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250525
         },
         {
@@ -506,25 +506,25 @@
         {
           "node": "6",
           "mark": 6,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250525
         },
         {
           "node": "4",
           "mark": 4,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250525
         },
         {
           "node": "2s'",
           "mark": 2,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749473
         },
         {
           "node": "3'",
           "mark": 3,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749473
         }
       ],
@@ -532,25 +532,25 @@
         {
           "node": "triv",
           "mark": 1,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749476
         },
         {
           "node": "2s",
           "mark": 2,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250527
         },
         {
           "node": "3",
           "mark": 3,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250527
         },
         {
           "node": "4s",
           "mark": 4,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749476
         },
         {
@@ -562,25 +562,25 @@
         {
           "node": "6",
           "mark": 6,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749476
         },
         {
           "node": "4",
           "mark": 4,
-          "F_lambda_exact": "(1/8+1/40√5)",
+          "F_lambda_exact": "(1/8+1/40\u221a5)",
           "F_lambda_numeric": 0.18090169943749476
         },
         {
           "node": "2s'",
           "mark": 2,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250527
         },
         {
           "node": "3'",
           "mark": 3,
-          "F_lambda_exact": "(1/8-1/40√5)",
+          "F_lambda_exact": "(1/8-1/40\u221a5)",
           "F_lambda_numeric": 0.06909830056250527
         }
       ]
