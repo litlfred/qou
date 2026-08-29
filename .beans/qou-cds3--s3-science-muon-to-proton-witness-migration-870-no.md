@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T12:14:48Z
+updated_at: 2026-08-29T12:31:12Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -425,3 +425,62 @@ manifest entry for it is a false record. Not filed as its own bean yet.
   10  unlisted producers needing cone traces
    4  cds1-gated qbeta c_k
    1  hadron_knot_table (compute-blocked)
+
+
+## 2026-08-29 — the INDIRECT remainder is mostly NOT migration work
+
+Traced the 10 "unlisted, muon comes from code" producers. The picture changes
+substantially: only **2** are genuine migration candidates.
+
+    6  DERIVE the muon pin from the CAL-2 lepton tower  -> must NOT migrate
+    1  rho_k_h3a_residual_decomposition: muon as an explicit COMPARISON
+    1  qbeta_c4even_exact_sseries_probe: cds1-gated
+    2  derive_m_p_hecke_full_tower_50dps, vhat_std_vs_full_tower_compare
+       -> still genuinely unexplained; the only real remainder
+
+### The 6 compute the anchor rather than reading one
+
+    hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E
+    hbar_q    = sqrt(hbar_q_sq)
+    q0        = 1 / (1 - hbar_q)
+
+That is AGENTS.md's CAL-2 lepton tower verbatim. Re-pinning them to proton is
+not a migration, it is incoherent: the quantity they produce IS the
+muon-anchored one. Added to the ledger as a NEW class,
+`derives_the_muon_pin` (7 classes, 26 members).
+
+  canonical_lepton_braid_words          t6_tau_h5_embedding_probe
+  f_ell_derivation_via_per_braid_mass_tower  t6_three_halves_factor_probes
+  t6_lepton_h3_3channel_convention      xi_ell_phi_q_probe
+
+### 🛑 Why two independent scans both said "no muon route"
+
+A marker scan over the import cone (q_muon_at, pin_value_for_anchor,
+_q0_value_for_anchor, Q0_MUON, the anchor witness, a muon literal,
+QOU_Q0_ANCHOR) finds NOTHING. An upstream-witness scan finds nothing either:
+zero upstreams. Both are correct.
+
+**The route is a MASS RATIO — not a q0 name, not a witness read.** No q0-shaped
+token appears in these files at all. Same shape as the dual_layer gap found an
+hour earlier, where the ledger's originating regex could not see a producer
+that asserts nothing.
+
+I first tested whether they were merely STALE — committed at muon, never
+re-run. They are not: re-running two reproduces muon exactly. That is what
+forced looking past the scans to the source.
+
+### Corroboration, from the opposite direction
+
+Three of the six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+xi_ell_phi_q_probe) are EXACTLY the witnesses that flipped proton -> muon in
+the #5989 drain, where resolve_q0_anchor_payload_first caught them declaring
+proton (the manifest default for an unlisted stem) over a muon computation.
+The two findings explain each other.
+
+### Revised remaining work
+
+    2  genuine unexplained migration candidates
+    4  cds1-gated qbeta c_k
+    1  hadron_knot_table (compute-blocked, stalls on deuterium)
+
+Down from "~25 indirect" to **2**.
