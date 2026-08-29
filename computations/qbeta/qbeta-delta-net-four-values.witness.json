@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:53:46.812631+00:00",
-  "commitSha": "7d7de5970bdb9351263b3c151f6525fa9037e021",
+  "computedAt": "2026-08-29T03:24:16.279626+00:00",
+  "commitSha": "1ca1dcf21f69f8ee9edeaf0d783a22bd47236d33",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 21169,
+  "durationMs": 42021,
   "computation": "qbeta-delta-net-four-values",
   "scriptFile": "qbeta_delta_net_four_values_probe.py",
-  "scriptHash": "4dff9feb38d4",
-  "scriptCommitSha": "7d7de5970bdb9351263b3c151f6525fa9037e021",
+  "scriptHash": "886374a127dd",
+  "scriptCommitSha": "1ca1dcf21f69f8ee9edeaf0d783a22bd47236d33",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,10 +55,13 @@
     "hecke_neutron_sigma1_pure": 0,
     "hecke_core_words_contain_NO_hopf_link": true,
     "the_derivable_delta_is_the_CONSTRUCTED_one": true,
+    "proton_best_single_edit": "1.00718869712436312712434652356771881687200000000000078351868",
+    "neutron_best_single_edit": "0.799581945083732790011450468433364697990299999999999361990872",
+    "the_missing_hopf_link_is_NOT_a_one_crossing_slip": true,
     "scope": "a",
     "adjudicates": false,
-    "checks_passed": 8,
-    "checks_total": 8
+    "checks_passed": 9,
+    "checks_total": 9
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
