@@ -31,17 +31,34 @@ TWO LAYERS, because a source-only detector cannot decide this.
      precisely because it now DOCUMENTS the trap and carries the fix.  A file that
      discusses the defect scores like a file that has it.
 
+     One class of that false positive IS decidable without the numeric layer, and
+     is now decided: a file whose C-level constants sit ONLY in comments and
+     docstrings cannot affect a computation, whatever its prose says.  Measured
+     case: `y_lambda_su_n.py` quotes `2.5995` inside a passage explaining that the
+     value is retired evidence AGAINST convention C.  Decided structurally with
+     `ast` + `tokenize`, never by keyword -- looking for "historical" near the
+     number would be an escape hatch any file could acquire, and a string literal
+     in an expression is not prose, since `mpf("2.5995")` computes.  The tag reads
+     "but ONLY in prose"; the HARD-CODES tag stays visible beside it.
+
   2. `--measure`: NUMERIC confirmation, convention-agnostic.  Evaluates the
      `ell >= 3` stratum directly at the proton pin.  A value cannot be stale,
      mislabelled, or re-spelled and still be nonzero.  This is the layer that
      decides; the triage only says where to point it.
 
-`--selftest` fails unless the known instance is detected, so a future narrowing
-cannot quietly report a clean tree.
+`--selftest` tests each detector branch against a minimal string carrying exactly
+that pattern, and tests the prose-only discriminator in BOTH directions -- it must
+clear a retired mention and must NOT clear `mpf("2.5995")` or a file holding the
+value in prose and in code alike.  It is deliberately NOT anchored to any live
+file: the previous version required a specific probe to be detected, that probe
+was retired exactly as the audit asked, and the selftest then cried regression at
+its own fix.  A check anchored to a mutable instance goes stale the moment the
+instance is repaired.
 """
 from __future__ import annotations
 
 import argparse
+import ast
 import pathlib
 import re
 import sys
@@ -64,6 +81,75 @@ C_LEVEL = re.compile(r"-\s*u\s*\*\*\s*6\s*-\s*u\s*\*\*\s*4|2\.5995|1\.7202|1\.13
 
 
 SELF = pathlib.Path(__file__).resolve()
+
+
+def _c_level_is_prose_only(txt: str) -> bool:
+    """Do ALL of this file's C-level constants sit in a comment or a docstring?
+
+    WHY THIS EXISTS.  The `HARD-CODES C's LEVEL` tag is a text match, so it fires
+    on a file that quotes `2.5995` in order to say the value is RETIRED.  Measured:
+    `computations/y_lambda_su_n.py` is flagged, and its only hit is inside a
+    docstring reading "kept because it is the evidence against C ... the implied
+    real N was 2.5995155".  That is the opposite of the defect the tag names.
+
+    WHY NOT KEYWORD PROXIMITY.  The obvious fix -- look for "historical" or
+    "retired" near the constant -- is an escape hatch: any file that writes the
+    word clears itself, and a real offender can acquire one by accident.  Whether
+    a number can reach a computation is not a question about vocabulary.
+
+    So decide it structurally: a constant that appears ONLY in a comment or a
+    docstring cannot affect any computation, whatever the prose around it says.
+    A string literal in an expression position is NOT prose -- `mpf("2.5995")`
+    computes -- so only comments and true docstrings (module, class, function)
+    count.
+
+    Conservative on failure: an unparseable file returns False, keeping the tag.
+    """
+    if not C_LEVEL.search(txt):
+        return False
+
+    spans = []  # (start_offset, end_offset) of prose regions
+
+    # line offsets, so token (row, col) -> absolute offset
+    starts, off = [], 0
+    for line in txt.splitlines(keepends=True):
+        starts.append(off)
+        off += len(line)
+    starts.append(off)
+
+    def _abs(row, col):
+        return starts[row - 1] + col if 1 <= row <= len(starts) else 0
+
+    try:
+        import io
+        import tokenize
+        for tok in tokenize.generate_tokens(io.StringIO(txt).readline):
+            if tok.type == tokenize.COMMENT:
+                spans.append((_abs(*tok.start), _abs(*tok.end)))
+    except (tokenize.TokenError, IndentationError, SyntaxError, ValueError):
+        return False
+
+    try:
+        tree = ast.parse(txt)
+    except SyntaxError:
+        return False
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.Module, ast.ClassDef,
+                                 ast.FunctionDef, ast.AsyncFunctionDef)):
+            continue
+        body = getattr(node, "body", None)
+        if not body:
+            continue
+        first = body[0]
+        if (isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant)
+                and isinstance(first.value.value, str)):
+            spans.append((_abs(first.lineno, first.col_offset),
+                          _abs(first.end_lineno, first.end_col_offset)))
+
+    for m in C_LEVEL.finditer(txt):
+        if not any(a <= m.start() and m.end() <= b for a, b in spans):
+            return False
+    return True
 
 
 def _files():
@@ -101,6 +187,7 @@ def triage():
             "guarded": bool(GUARD.search(txt)),
             "comparison": bool(COMPARE.search(txt)),
             "hardcodes_C_level": bool(C_LEVEL.search(txt)),
+            "C_level_prose_only": _c_level_is_prose_only(txt),
         })
     rows.sort(key=lambda r: (-r["score"], r["path"]))
     return rows
@@ -246,6 +333,38 @@ def main() -> int:
                   f"narrowed and no longer detects what it claims to")
             return 1
 
+        # The prose-only discriminator, BOTH directions. It exists to retract a
+        # false positive, so an over-broad version would be an escape hatch: it
+        # must clear a retired mention and must NOT clear a live one. The two
+        # cases that decide that are `mpf("2.5995")` -- a string literal that
+        # computes -- and a file carrying the value in prose AND in code.
+        prose_cases = [
+            ("docstring only",
+             '"""The implied real N was 2.5995155, evidence against C."""\nx = 1\n', True),
+            ("comment only",
+             "x = 1  # historical: r = 2.5995 under convention C\n", True),
+            ("mpf string literal is NOT prose",
+             'from mpmath import mpf\nr = mpf("2.5995")\n', False),
+            ("bare float in code",
+             "r = 2.5995\n", False),
+            ("polynomial in code",
+             "D = -u**6 - u**4 + u**3 + u**2 + 1\n", False),
+            ("prose mention AND a live copy",
+             '"""r = 2.5995 historically."""\nr = 2.5995\n', False),
+            ("no C level present",
+             "z = q**3 / (q**2 + 1)\n", False),
+            ("unparseable stays flagged",
+             "def f(:\n  2.5995\n", False),
+        ]
+        wrong = [name for name, src, want in prose_cases
+                 if _c_level_is_prose_only(src) is not want]
+        if wrong:
+            print(f"SELFTEST FAIL: the prose-only discriminator is wrong on {wrong}. "
+                  f"It clears a HARD-CODES tag, so a version that over-clears is an "
+                  f"escape hatch and one that under-clears re-raises the false "
+                  f"positive it was written for.")
+            return 1
+
         m = measure((9,))
         st = m["strata"][0]
         if not st["is_structural_zero"]:
@@ -321,6 +440,8 @@ def main() -> int:
         tags = []
         if r["hardcodes_C_level"]:
             tags.append("HARD-CODES C's LEVEL")
+            if r.get("C_level_prose_only"):
+                tags.append("but ONLY in prose -- cannot reach a computation")
         if r["comparison"]:
             tags.append("declares a C-vs-D comparison")
         if r["guarded"]:
@@ -330,6 +451,12 @@ def main() -> int:
         print(f"       {r['hits']}")
     print()
     print("  Reading the tags:")
+    print("    but ONLY in prose             -- every C-level constant in the file sits")
+    print("                                     in a comment or a docstring, decided by")
+    print("                                     ast + tokenize, not by keywords. It cannot")
+    print("                                     reach a computation, so the tag above is a")
+    print("                                     false positive for this file. A string in an")
+    print("                                     expression is NOT prose: mpf(\"2.5995\") computes.")
     print("    HARD-CODES C's LEVEL          -- quotes Q^r = u^3/D(u), r = 2.5995,")
     print("                                     Q^r = 1.7202, or u* = 1.13068. On its")
     print("                                     own this is the strongest signal.")
