@@ -83,3 +83,64 @@ inhabited witness.
 Sharpened statement of what is open: *the Frobenius eigenvalues of Bring's
 curve and the Reeb spectrum are two sets of numbers that the arc requires to be
 the same set, and no result in the corpus relates them.*
+
+---
+
+## BLOCKED 2026-08-29 — option 2 cannot be written faithfully today
+
+Attempted the `HasReebSpectralCoords` class. **The object it must quantify over
+does not exist in the corpus**, and that is a more precise statement of the gap
+than "nothing relates them".
+
+Corpus-grep, all `.lean` under `content/`: the identifier `ReebEigenvalue`
+occurs in **exactly one file** — `q-geometric-langlands/explicit-formula.lean` —
+which is a content-block sibling, i.e. outside the package globs and therefore
+**not importable by any module**. The library's Reeb infrastructure
+(`ReebEpsilon` over a monoidal category, `QReebFlow`, `ReebDecomposition`,
+`ReebVectorField`) carries no spectrum with complex eigenvalues.
+
+So a `HasReebSpectralCoords Z` class would have to take the Reeb side as an
+opaque parameter — which is precisely the `holds : Prop` shape filed as
+`qou-hprp` in the same session. Writing it would look like progress and assert
+nothing. Not written.
+
+**Blocker, stated for whoever unblocks it:** a ℂ-valued Reeb spectrum as a
+library module — something of the shape `QOU.AlgebraicSubstrate.ReebSpectrum`
+with eigenvalues in `ℂ`, importable, that `spectral-half-line.lean` and
+`explicit-formula.lean` can both reference. Until that exists the arc has two
+unconnected notions of "the Reeb spectrum" and no way to say they are the same.
+
+## And the two notions are not merely unconnected — they disagree on the field
+
+`ReebEigenvalue` is `structure ReebEigenvalue where val : ℝ`, docstring *"The
+eigenvalue ρ ∈ ℂ (represented here as ℝ for the real part)"*. `spectralSide`
+then uses it as the exponent directly:
+
+```lean
+(spectrum.map fun ρ => X ^ ρ.val / qInteger q hq ρ.val).sum
+```
+
+Meanwhile `spectral_half_line` quantifies over `ρ : Fin 8 → ℂ` and concludes
+`(ρ i).re = 1/2`.
+
+Two consequences, both worth fixing independently of this bean:
+
+1. **`Re(ρ) = 1/2` is nearly contentless against a real spectrum.** If Reeb
+   eigenvalues were real, the spectral half-line would assert every eigenvalue
+   *equals* ½ — a different and far stronger claim than the one the arc makes.
+   The two blocks cannot both be about the same object as typed.
+
+2. **The formalised spectral side cannot oscillate — `da-lean-narrative-divergence`.**
+   `explicit-formula.md` says *"each eigenvalue `ρ` contributes a wave of
+   amplitude `X^ρ/[ρ]_q`"*. A wave is what the imaginary part produces: in the
+   classical explicit formula `X^ρ` with `ρ = ½ + iγ` is `X^{1/2}·e^{iγ log X}`.
+   Substituting the *real part* for `ρ`, as `spectralSide` does, leaves
+   `X^{1/2}` — monotone, no oscillation. The docstring calls the truncation a
+   representation "for the real part"; the arithmetic then uses that real part
+   where the full complex exponent belongs. The narrative promises an
+   oscillatory sum the Lean cannot express.
+
+Item 2 is the cheaper of the two and does not need the missing module: widen
+`ReebEigenvalue.val` to `ℂ` and let `spectralSide` use `Complex.cpow`. It will
+change the type of `spectralSide` and of `QExplicitFormula`, both of which this
+session already touched, so it is a natural follow-on rather than a new tranche.
