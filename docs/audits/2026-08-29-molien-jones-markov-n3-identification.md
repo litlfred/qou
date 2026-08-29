@@ -100,6 +100,59 @@ pins one `z`, not the polynomial). The **∀n** Lean proof is a genuine formalis
 project (abstract `S_n` Molien + `H_n` Markov-weight machinery), tracked under
 `qou-3quc`. Nothing is wired; `free_parameters = 0`.
 
+## Molien → binding: the signed dimensions come from the SAME series (added 2026-08-29)
+
+Probe:
+[`molien_binding_signed_dimension_probe.py`](../../computations/qbeta/molien_binding_signed_dimension_probe.py)
+(exact sympy, no float; S₃ + S₄ all pass).
+
+The binding formula is `B = m_e · Σ_λ y_λ χ^λ Δ_λ` with the **proved** per-partition
+signed dimension (2026-08-02, sorry-free, general-n,
+`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`):
+
+  `Δ_λ = (−1)^{n(λ)} · dim V_λ`.
+
+The weights `y_λ` live at the `(u=q², t=qz/(q²−qz−1))` corner of `M_ν(u,t)`. The
+**binding signed dimensions live at the *other* corner** — the fake-degree edge
+`t = 0`. Define the fake-degree polynomial
+
+  `fd_λ(u) := M_ν(u, 0) · ∏_{i=2}^{n}(1 − u^i)`
+
+(the graded multiplicity of `V_λ` in `Sym•(𝔥*)`, made a genuine polynomial by the
+**full** coinvariant denominator — the `S_n` fundamental degrees `2,3,…,n`). Then
+
+  `n(λ) = u-valuation (lowest u-degree) of fd_λ(u)`,   `dim V_λ = fd_λ(1)`,
+
+so `Δ_λ = (−1)^{u-val fd_λ} · fd_λ(1)`. Verified exact at S₃ and S₄:
+
+| λ | `fd_λ(u)` | u-val = n(λ) | fd_λ(1) = dim | Δ_λ |
+|---|---|---|---|---|
+| (3) | `1` | 0 | 1 | +1 |
+| (2,1) | `u + u²` | 1 | 2 | −2 |
+| (1³) | `u³` | 3 | 1 | −1 |
+| (4) | `1` | 0 | 1 | +1 |
+| (3,1) | `u + u² + u³` | 1 | 3 | −3 |
+| (2,2) | `u² + u⁴` | 2 | 2 | +2 |
+| (2,1,1) | `u³ + u⁴ + u⁵` | 3 | 3 | −3 |
+| (1⁴) | `u⁶` | 6 | 1 | +1 |
+
+Every `fd_λ` has non-negative integer coefficients summing to `dim V_λ` — the
+genuine graded-multiplicity polynomial, not an artifact.
+
+**Honest correction:** an earlier cut of this probe took the *reduced* numerator of
+`M_ν(u,0)` and read `dim = fd(1)` off it — that is wrong (it gives `1` for every λ
+because reduction cancels the coinvariant denominator into the numerator). The
+u-valuation `= n(λ)` survives reduction, but `fd(1) = dim` needs the **unreduced**
+fake degree `M_ν(u,0)·∏(1−u^{d_i})`. The table above uses the corrected form.
+
+**What Molien buys for binding.** The *whole* `B = Σ_λ y_λ χ^λ Δ_λ` is one bigraded
+Molien object `M_ν(u,t)` read at two specialisations: the weights `y_λ` from the
+`(u=q², t=qz/W)` corner (this document's main result) and the signed dimensions
+`Δ_λ` from the `(u, t=0)` fake-degree edge. It does **not** re-derive the binding
+*magnitude* (the open `M_n(K)` extensive term is untouched); it unifies the two
+already-known ingredients under one generating object. `∀n` stays open (`qou-3quc`).
+Nothing wired; `free_parameters = 0`.
+
 ## Bearing on the cds1 wall
 
 Modest and indirect. This identifies the `tr_M` *weights* with a bigraded Molien
