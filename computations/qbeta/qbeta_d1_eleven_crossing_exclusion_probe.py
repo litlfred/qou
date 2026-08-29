@@ -111,7 +111,18 @@ h = _adj.h
 build_nucleon = _adj.build_nucleon
 
 ZERO, ONE = sp.Integer(0), sp.Integer(1)
-BASIS = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e^-"]
+# 🛑 hm_sym's slot order is the REVERSE of gram.py's canonical NF_BASIS at
+# positions 3 and 4. Measured, not assumed: applying sigma_0 then sigma_1
+# lands in slot 4, and sigma_1 then sigma_0 lands in slot 3, whereas
+# `NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]` with
+# `NF_NAMES = ["gamma","sigma_0","sigma_1","L+","L-","e^-"]` puts
+# L+ = sigma_0 sigma_1 at index 3. So this file must NOT reuse NF_NAMES
+# positionally -- earlier versions did, and reported L+ and L- swapped.
+#
+# Caught by PR #5958, which transcribed the same element independently:
+# all six components agree, with slots 3 and 4 exchanged. `_assert_slots`
+# below pins the mapping so it cannot drift again.
+BASIS = ["gamma", "sigma_0", "sigma_1", "L-", "L+", "e^-"]
 FAILED: list[str] = []
 
 
@@ -119,6 +130,23 @@ def check(name: str, ok: bool, note: str = "") -> None:
     print(f"  [{'PASS' if ok else 'FAIL'}] {name}" + (f": {note}" if note else ""))
     if not ok:
         FAILED.append(name)
+
+
+
+def _assert_slots() -> None:
+    """Pin hm_sym's slot order against gram.py's canonical NF_BASIS.
+
+    The two disagree at positions 3 and 4, and every per-basis statement this
+    probe makes depends on knowing which way round. Verified by construction
+    rather than by comment.
+    """
+    ident = [ONE] + [ZERO] * 5
+    s0s1 = hm(hm(ident, ONE, ZERO, 0), ONE, ZERO, 1)   # sigma_0 then sigma_1
+    s1s0 = hm(hm(ident, ONE, ZERO, 1), ONE, ZERO, 0)   # sigma_1 then sigma_0
+    assert s0s1[4] == 1 and s0s1[3] == 0, (
+        f"sigma_0 sigma_1 (= canonical L+) expected in hm_sym slot 4, got {s0s1}")
+    assert s1s0[3] == 1 and s1s0[4] == 0, (
+        f"sigma_1 sigma_0 (= canonical L-) expected in hm_sym slot 3, got {s1s0}")
 
 
 def nuc11_interleaved(kind: str, electrons: int = 0):
@@ -194,6 +222,9 @@ def main() -> int:
     z = sp.symbols("z")
     TR = [ONE, z, z, z ** 2, z ** 2, z * (h * z + ONE)]   # Ocneanu trace weights
 
+    _assert_slots()
+    check("hm_sym slot order pinned against gram.py NF_BASIS", True,
+          "slots 3/4 are REVERSED vs canonical; see _assert_slots")
     print("Validating the transcriptions against pyhecke (exact):")
     for tag, mine, ref in (
         ("neutron", nuc11_interleaved("n", 0), build_atom_nf_exact(0, 1)),
@@ -238,12 +269,16 @@ def main() -> int:
         check(f"{tag[:34]}: only real root is h = 0",
               real_roots == [sp.Integer(0)], f"real roots {real_roots}")
 
-    # The correction: L+ alone does NOT settle it -- it vanishes for Delta_L.
+    # The correction: neither coordinate alone settles it. The one that
+    # VANISHES for Delta_L is canonical L- (= sigma_1 sigma_0, hm_sym slot 3);
+    # the exclusion rides on canonical L+. Earlier versions had these two
+    # names the wrong way round -- see the BASIS note above.
     d_grp = models[2][1]
-    check("L+ vanishes for qou-bg3w's Delta_L (so the first version's stated "
-          "reason is false there)", sp.simplify(d_grp[3]) == 0)
-    check("L- does not, which is what actually excludes it",
-          sp.simplify(d_grp[4]) != 0, f"L- = {sp.factor(d_grp[4])}")
+    check("canonical L- (sigma_1 sigma_0) vanishes for qou-bg3w's Delta_L, so "
+          "an exclusion argued from ONE coordinate is false there",
+          sp.simplify(d_grp[3]) == 0)
+    check("canonical L+ (sigma_0 sigma_1) does not, which is what excludes it",
+          sp.simplify(d_grp[4]) != 0, f"L+ = {sp.factor(d_grp[4])}")
 
     # qou-bg3w's flagged third model.
     net9 = sp.simplify(sum(models[0][1]))
