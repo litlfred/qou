@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T11:54:32.298728+00:00",
-  "commitSha": "36489c4624bb7e99a8322fcbb10dc10cd313fcef",
+  "computedAt": "2026-08-29T15:09:46.334632+00:00",
+  "commitSha": "01666719890c827e292f33d0b2fd07cb655fa02e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 380,
+  "durationMs": 209,
   "computation": "qbeta-primitive-basis-overcomplete",
   "scriptFile": "qbeta_primitive_basis_overcomplete_probe.py",
-  "scriptHash": "c999b41fc107",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9c97524badb1",
+  "scriptCommitSha": "01666719890c827e292f33d0b2fd07cb655fa02e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_primitive_basis_overcomplete_probe.py"
   },
-  "description": "The primitive filtration basis of def:stable-atom is linearly dependent (E+ + E- = 1 exactly), so the decomposition of a normal form is not unique and the corpus's 'exists x' quantifies over a real solution set -- which is what N_l counts.",
+  "description": "The primitive filtration basis of def:stable-atom is linearly dependent (E+ + E- = 1 exactly; rank 4, nullity 2 over k <= 3). RETRACTED in the same file: the inference that this is what N_l = 84 counts. The proton's element is NOT in the basis span (rank 4 vs augmented rank 5), so the decomposition has no solution at all; the ILP actually ranges over gluon ADJOINDERS per stable-atom-properties.md, not over decompositions.",
   "data": {
     "relation_Ep_plus_Em_eq_one_symbolic": true,
     "operators_are_idempotent": true,
@@ -40,7 +40,13 @@
     "the_filtration_basis_carries_an_EXACT_LINEAR_RELATION": true,
     "redundancy_direction": "(+1, -1, -1) on (1, E+, E-)",
     "the_decomposition_is_therefore_NOT_UNIQUE": true,
-    "so_N_l_counts_LATTICE_POINTS_not_what_positivity_cuts_out": true,
-    "scope": "(a) one relation at k<=2; full rank and N_l=84 not computed"
+    "the_LATTICE_POINT_reading_of_N_l_is_REFUTED_measured_not_argued": true,
+    "what_SURVIVES_is_the_overcompleteness_itself_not_its_interpretation": true,
+    "scope": "(a) overcompleteness measured; lattice-point reading of N_l RETRACTED",
+    "lattice_point_reading_of_N_l": "retracted",
+    "proton_element_in_filtration_span": false,
+    "rank_filtration_basis": 4,
+    "rank_basis_augmented_with_Tw": 5,
+    "correct_reading": "ILP ranges over gluon ADJUNCTIONS from {sigma_0,sigma_1,L_+,L_-} (stable-atom-properties.md), not over decompositions"
   }
 }
