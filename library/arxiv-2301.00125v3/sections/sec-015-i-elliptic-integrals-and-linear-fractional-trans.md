@@ -7,6 +7,7 @@ section_number: null
 pages: 31-35
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
 From equation (85) we know that we may write A2(x,w ) as
 A2(x,w ) = 1

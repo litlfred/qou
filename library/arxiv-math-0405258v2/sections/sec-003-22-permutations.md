@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-5
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 ements by Sn. We will quite often use the cycle notation for such
 permutations, i.e., π = ( i1, i2, . . . , ir) is a cycle which sends ik to ik+1

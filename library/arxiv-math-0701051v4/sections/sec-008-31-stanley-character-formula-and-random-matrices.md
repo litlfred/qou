@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 8-10
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 diagram and N ≥ r(λ), c(λ). We consider a random matrixTλ = (tij)1≤i,j≤N
 such that

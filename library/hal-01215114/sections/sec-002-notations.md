@@ -7,6 +7,7 @@ section_number: null
 pages: 2-3
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 In this section, we give some deﬁnitions and notations on symmetric functions in general, on Jack poly-
 nomials and, in particular, zonal polynomials. We also give a few deﬁnitions of pair-partitions, which are

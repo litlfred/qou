@@ -7,6 +7,7 @@ section_number: null
 pages: 9-9
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 In this paragraph we prove that the functionsYλ satisfy property N.
 Letλ be a partition of n. We ﬁx a bijective ﬁlling T of 2λ. We have to ﬁnd the T -admissible couples

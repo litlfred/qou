@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 9-10
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 The following proposition is well known and easy to prove.
 Proposition 2.10 LetI be a set and Hi,i ∈I ﬁnite dimensional Hilbert spaces. Consider the algebraic d irect

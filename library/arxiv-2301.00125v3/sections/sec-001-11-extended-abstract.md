@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
 In two papers Ross Pinsky considered a random variable Zn,k equal to the number of increasing subsequences
 of length k in a uniform random permutation π∈Sn. That investigation may be called the “generalized Ulam

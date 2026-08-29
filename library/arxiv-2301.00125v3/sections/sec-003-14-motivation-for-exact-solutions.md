@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 4-4
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
 In theoretical physics and in the mathematical physics of spin glass es, one is interested in the precise form
 of the second moment and all higher moments, at least to leading ord er asymptotically as n→∞ . Even

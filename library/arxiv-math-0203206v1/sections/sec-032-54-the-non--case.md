@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 36-37
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 Our starting point in this paper is a tensor ∗-category with direct sums, subobjects, conjugates and irredu cible
 unit. From it we (re)construct a multiplier Hopf ∗-algebra with positive left invariant functional. Such algebras

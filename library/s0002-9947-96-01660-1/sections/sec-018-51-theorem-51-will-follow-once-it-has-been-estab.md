@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 19-22
 source_pdf: S0002-9947-96-01660-1.pdf
 source_sha256: aa63e62b78aa5045
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state"
 ---
 under bistellar moves of orders 2 and 3. The bistellar moves of order 1 and 0 are
 the inverses of these moves.

@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 10-11
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 diagram λ we denote by µλ its transition measure (which is a probability
 measure on the real line) [Ker93, Bia98] and by Rλ

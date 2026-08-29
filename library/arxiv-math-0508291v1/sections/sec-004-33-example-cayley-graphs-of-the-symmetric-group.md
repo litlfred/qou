@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 14-15
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 section applies the theory of Subsection 3.2 to the case wher e the group is
 Sn and C is the conjugacy class of i-cycles.

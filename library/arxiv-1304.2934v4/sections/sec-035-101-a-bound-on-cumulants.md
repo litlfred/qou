@@ -7,6 +7,7 @@ section_number: 10.1
 pages: 81-83
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 10.1.1. Subgraph count statistics. In the following we denote A(n, k) the set of arrange-
 ments in [n] of length k, i.e., lists of k distinct elements in [n]. The cardinality of A(n, k)

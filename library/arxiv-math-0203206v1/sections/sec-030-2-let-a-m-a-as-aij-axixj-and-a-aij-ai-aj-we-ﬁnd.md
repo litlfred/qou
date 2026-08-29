@@ -7,6 +7,7 @@ section_number: 2
 pages: 30-32
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 ∆( a) = a ⊗a ⇔ aXi⊗Xj =aXi ⊗aXj ∀i,j ∈I.
 Thus the grouplike elements of M (A) are in one-to-one correspondence with those natural transfo rmations of

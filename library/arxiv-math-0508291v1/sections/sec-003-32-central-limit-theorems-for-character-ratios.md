@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 9-14
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 section is to prove a central limit theorem for the random var iableW deﬁned
 byW (λ) = |C|1/ 2χ λ (C)

@@ -7,6 +7,7 @@ section_number: 6
 pages: 42-57
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
+doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
 ---
 brownian matrices
 In the previous paragraphs, we have shown that the rows and columns

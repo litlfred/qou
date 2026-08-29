@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 11-13
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 for a moment that hypothesis (A) is replaced by the stronger hypotheses of Deﬁnition
 2, with c = + ∞ and thereforeBc = C. Fix then 0 < a < b, and consider the partial

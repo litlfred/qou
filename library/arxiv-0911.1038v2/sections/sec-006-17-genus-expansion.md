@@ -7,6 +7,7 @@ section_number: 1.7
 pages: 5-6
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 spect to which the degree of the free cumulantRk is equal tok. We denote
 byKk,d the homogeneous part of degree d of the Kerov character polyno-

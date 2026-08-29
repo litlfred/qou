@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 13-15
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 bound of the number of factorizations ofπ with a given value of the statistic
 o(σ1, σ2).

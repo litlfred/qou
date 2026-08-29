@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 7-8
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 ﬁne ˆN λ(σ1, σ2) as the number of all functions f : {1, . . . , l} → λ (with
 values in the set of boxes ofλ) with a property that r ◦ f is constant on each

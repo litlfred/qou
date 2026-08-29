@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 3-84
 source_pdf: mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf
 source_sha256: c563cc999000e75d
+doc_brief: "ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientifique ouverte www.centre-mersenne.org — 2 sections: Intr"
 ---
 Consider a sequence (Bi)i/greaterorequalslant1 of independent Bernoulli random variables,
 with P[Bi = 1] = pi and P[Bi = 0] = 1 −pi. We set

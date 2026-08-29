@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-1
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 a permutation π ∈ Sl (where l ≤ n) we deﬁne the normalized character
 (1) Σ λ(π) = ( n)l χλ(π),

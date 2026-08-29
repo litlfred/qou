@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 11-13
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 functions on R+. We equip it with an expected value φ : D → C given by
 φ(f ) =

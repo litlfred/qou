@@ -7,6 +7,7 @@ section_number: 2
 pages: 23-25
 source_pdf: S0002-9947-96-01660-1.pdf
 source_sha256: aa63e62b78aa5045
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state"
 ---
 3. The antipode, γ, is deﬁned by γ(K)= K−1 and γ(X)= −sX.
 The element w =K2 satisﬁes the conditions

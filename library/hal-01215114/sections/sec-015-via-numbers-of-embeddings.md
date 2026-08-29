@@ -7,6 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 LetS0,S1,S2 be three pair-partitions of the set [2k]. We consider the following function on the set of
 Young diagrams:

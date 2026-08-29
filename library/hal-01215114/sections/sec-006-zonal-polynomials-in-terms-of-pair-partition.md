@@ -7,6 +7,7 @@ section_number: null
 pages: 4-5
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 Let λ = (λ1,λ 2,... ) be a partition of n and T be a bijective ﬁlling of the Young diagram 2λ =
 (2λ1, 2λ2,... ) with the elements of [2n]. Any pair-partition of [2n] can be viewed as a pairings of

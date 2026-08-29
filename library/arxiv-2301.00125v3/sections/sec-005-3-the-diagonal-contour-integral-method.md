@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-12
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
 We now apply the diagonal method, based on a complex contour integ ral. Firstly, we obtain
 ∮

@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 16-17
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 entire function of x, the function J(x, y) is entire in x and y. We shall
 now obtain several denominator–free formulas for the kerne l J.

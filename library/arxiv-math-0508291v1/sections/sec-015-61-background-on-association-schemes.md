@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 42-44
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 liminaries about association schemes, using notation from [MaSl]. Another
 useful reference is [BaI], and what we call association sche mes some authors

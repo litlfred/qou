@@ -7,6 +7,7 @@ section_number: 9.2
 pages: 72-73
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 cumulants, that we shall use to prove Theorem 9.7. We present in this paragraph its
 deﬁnition and basic properties. Most of this material can be found in Leonov’s and

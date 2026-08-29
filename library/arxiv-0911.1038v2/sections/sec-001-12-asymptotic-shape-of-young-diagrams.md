@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 1-2
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 scaling of balanced Young diagrams which means that a Young diagram
 withn boxes is assumed to have at most O(√

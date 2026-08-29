@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 10-11
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 and 4 from Theorem 1 using the so-called depoissonization te chniques.
 We recall that the fundamental idea of depoissonization is t he following.

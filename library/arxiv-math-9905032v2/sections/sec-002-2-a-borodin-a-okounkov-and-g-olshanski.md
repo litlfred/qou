@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 We denote the Plancherel measure on partitions of n by Mn
 Mn(λ) = (dim λ)2

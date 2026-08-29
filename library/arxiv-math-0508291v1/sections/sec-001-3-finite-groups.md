@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-7
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 This section uses Stein’s method to study the spectrum of ran dom walk
 on a ﬁnite group G, where the generating set is a conjugacy class C which

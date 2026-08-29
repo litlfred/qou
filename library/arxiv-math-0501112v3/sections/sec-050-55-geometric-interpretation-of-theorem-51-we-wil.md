@@ -7,6 +7,7 @@ section_number: 5.5
 pages: 30-32
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 of Theorem 5.1. On the surface of a large sphere we draw a small circle on
 which we mark counterclockwise points i1 + 1, i 1 + 2, . . . , i r+1. Inside the

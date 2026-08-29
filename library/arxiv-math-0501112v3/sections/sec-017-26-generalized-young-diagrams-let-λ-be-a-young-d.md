@@ -7,6 +7,7 @@ section_number: 2.6
 pages: 7-7
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 to it a piecewise afﬁne function ω λ : R → R with slopes ±1, such that
 ω λ(x) = |x|for large |x|as it can be seen on the example from Figure 2.2.

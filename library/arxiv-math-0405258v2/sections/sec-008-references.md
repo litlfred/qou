@@ -7,6 +7,7 @@ section_number: null
 pages: 30-31
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 [AJM] J. Ambjørn, J. Jurkiewicz, and Y. Makeenko: Multiloop correla tors for
 two-dimensional quantum gravity, Phys. Lett. 251B (1990), 517 -524.

@@ -7,6 +7,7 @@ section_number: 5
 pages: 36-42
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
+doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
 ---
 In the previous paragraph, it was shown that all the coherent systems of
 measures (Pn,ω)n∈N have a property of concentration, that can be seen at the

@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 55-58
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 ber of cycles of random permutations under the so-called weighted probability mea-
 sure. This example was already considered in [NZ13] and we follow the presentation

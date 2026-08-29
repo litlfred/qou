@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 15-16
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 Proof of Theorem 1. Let k1, . . . , kr ≥ 2 be the lengths of the non-trivial
 cycles in the cycle decomposition of π ∈ Sn. It follows that l := k1 + · · · +

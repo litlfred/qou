@@ -7,6 +7,7 @@ section_number: 2
 pages: 12-22
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
+doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
 ---
 In this section, we shall explain how the coherent systems of measures on
 Y are related to models of random permutations that can be deﬁned by using

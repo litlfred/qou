@@ -7,6 +7,7 @@ section_number: null
 pages: 13-14
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
 ---
 [AlD] D. Aldous and P. Diaconis, Longest increasing subsequ ences: from patience sorting
 to the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999) 413-432.

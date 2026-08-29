@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 8-8
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 Berry-Esseen estimates for random variables that converge mod- φ (Proposition 4.1).
 These estimates are optimal for this setting, though they can be improved in some

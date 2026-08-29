@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
 ---
 The Plancherel measure of a ﬁnite group G is a probability measure on
 the set of irreducible representations of G which chooses a representation

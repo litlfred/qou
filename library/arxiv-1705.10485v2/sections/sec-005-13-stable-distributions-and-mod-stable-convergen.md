@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 5-6
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 Let us recall brieﬂy the classiﬁcation of stable distributions (see [Sat99, Chapter 3]). Fixc >0 (the
 scale parameter), α∈ (0, 2] (the stability parameter), andβ∈ [−1, 1] (the skewness parameter).

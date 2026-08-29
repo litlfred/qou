@@ -7,6 +7,7 @@ section_number: null
 pages: 15-15
 source_pdf: 2106.01332v4.pdf
 source_sha256: 44c19a99624997bf
+doc_brief: "Braided matter interactions in quantum gravity via 1-handle attachment — 9 sections: INTRODUCTION; (for C𝓁(6)) and B3 (for C𝓁(4)). In; THEORIES ON RIBBON GRAPHS"
 ---
 We thank the anonymous Referee for comments and suggestions that helped improve the manuscript. NG was
 supported by the Natural Science Foundation of the Jiangsu Higher Education Institutions of China Programme Grant

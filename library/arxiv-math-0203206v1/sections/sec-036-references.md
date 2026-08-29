@@ -7,6 +7,7 @@ section_number: null
 pages: 41-43
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 [1] E. Abe: Hopf Algebras. Cambridge University Press, 1977.
 [2] J. Barrett & B. Westbury: Spherical categories. Adv. Math. 143, 357–375 (1999).
