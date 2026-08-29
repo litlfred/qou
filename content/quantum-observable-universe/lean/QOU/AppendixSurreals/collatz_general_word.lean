@@ -449,4 +449,45 @@ theorem qcollatz_no_cycle_of_height_lt (q P0 : R) (w : ℕ → Bool) (hq : φ q 
     ⟨φ P0, hmap.symm⟩
   exact absurd (Int.le_of_dvd hpos hdvd) (not_le.mpr hlt)
 
+
+/-! ## Orbit-level form
+
+Every exclusion above takes the *forced cycle equation* as a hypothesis, matching
+the style of the landed `qcollatz_no_adj_tail_cycle`. Composing each with
+`qcollatz_word_forces` removes that intermediate step, giving statements phrased
+purely in terms of an orbit: a step relation and a return. These are what a
+consumer actually has in hand. -/
+
+/-- **No periodic orbit of any word whose exact height is below the denominator
+    height.** The orbit-level form of `qcollatz_no_cycle_of_height_lt`: the forced
+    cycle equation is discharged internally, so the hypotheses are just the step
+    relation, the return `P k = P 0`, and two finite integer computations. -/
+theorem qcollatz_no_periodic_orbit_of_height_lt (q : R) (w : ℕ → Bool) (P : ℕ → R)
+    (hq : φ q = 1) (k : ℕ)
+    (hstep : ∀ i, P (i + 1) * (q + 1) = stepMul q w i * P i + stepAdd q w i)
+    (hcyc : P k = P 0)
+    (hpos : 0 < ∑ i ∈ Finset.range k,
+      (if w i then (3 : ℤ) ^ (oddCount w k - oddCount w (i + 1)) * 2 ^ i else 0))
+    (hlt : (∑ i ∈ Finset.range k,
+      (if w i then (3 : ℤ) ^ (oddCount w k - oddCount w (i + 1)) * 2 ^ i else 0))
+        < 2 ^ k - 3 ^ oddCount w k) :
+    False :=
+  qcollatz_no_cycle_of_height_lt φ q (P 0) w hq k hpos hlt
+    (qcollatz_word_forces q w P k hstep hcyc)
+
+/-- **No front-loaded periodic orbit under the contractivity bound.** The
+    orbit-level form of `qcollatz_no_front_loaded_cycle`. -/
+theorem qcollatz_no_front_loaded_periodic_orbit (q : R) (w : ℕ → Bool) (P : ℕ → R)
+    (hq : φ q = 1) (k D : ℕ) (hDk : D ≤ k)
+    (hstep : ∀ i, P (i + 1) * (q + 1) = stepMul q w i * P i + stepAdd q w i)
+    (hcyc : P k = P 0)
+    (hfront : ∀ i, D ≤ i → w i = false)
+    (hm : 1 ≤ oddCount w D)
+    (hcontract : (3 : ℤ) ^ oddCount w D * 2 ^ D
+        < 2 ^ oddCount w D * 2 ^ k - 2 ^ oddCount w D * 3 ^ oddCount w D
+          + 2 ^ oddCount w D * 2 ^ D) :
+    False :=
+  qcollatz_no_front_loaded_cycle φ q (P 0) w hq k D hDk hfront hm hcontract
+    (qcollatz_word_forces q w P k hstep hcyc)
+
 end QOU.AppendixSurreals.CollatzGeneralWord
