@@ -432,3 +432,21 @@ different minimal polynomials, matching discriminants) makes them mutually check
 - **An empty log from a detached job is evidence of nothing.** Not that it died, not that
   it succeeded. `ps` answers in one call what I guessed at twice — and the job was alive
   with 21 minutes of CPU while I was writing that it had been killed.
+
+### Control run: modStd is the lever, and that is now measured (2026-08-29)
+
+The reach correction landed on main, but it rested on two runs differing in more than one
+variable. The control closes that: **same container, same manifold, same geometric class,
+same ideal form, differing ONLY in modStd** —
+
+| configuration | result |
+|---|---|
+| `modStd` + `finduni` | **42.0s**, dim 0, 15 eliminants |
+| plain `finduni` | **TIMEOUT at 1800s** |
+
+So the `finduni` timeout the sibling probe recorded **reproduces**. That measurement was
+right; only the conclusion drawn from it was wrong. `modStd` is the whole lever, and this
+is now established by a controlled comparison rather than asserted.
+
+Both rows are in `qbeta-route76-strategy-matrix.witness.json`. The 67.0s figure is kept
+beside the 42.0s one — same configuration under load — as the conservative bound.
