@@ -328,7 +328,7 @@ def main() -> int:
         f"invariantForm_pullback_smul) — full normalization-freedom of the "
         f"magnitude is impossible with two pins; the third scale IS the "
         f"tau-scale gate",
-        computed=float(abs(c4_t / c4_0 - expected_factor)), expected=0.0,
+        computed=abs(c4_t / c4_0 - expected_factor), expected=0.0,
         tolerance=1e-40)
 
     # ---- K2: theta_5 — the conditional invariant restatement ---------------
@@ -344,7 +344,7 @@ def main() -> int:
         f"narrowing, Markov leg UNVERIFIED) theta_5 is gauge-invariant and "
         f"'25 = deg^2' restates normalization-independently as theta_5 = 0. "
         f"CONDITIONAL, not derived; H5's Markov leg is tested next",
-        computed=float(theta5), expected=0.0, tolerance=5e-5)
+        computed=theta5, expected=0.0, tolerance=5e-5)
 
     # ---- K3: Markov-side canonical pins ------------------------------------
     # (a) Jones-Markov y_(4,1)(q0) — corpus-canonical producer.
@@ -449,7 +449,7 @@ def main() -> int:
         f"form scale cancels — the canonical trace normalizations (a),(b) "
         f"are ALGEBRA scalars and transmit NO canonical scale to the module "
         f"Gram entering c. A trace pin is not a module pin (structural)",
-        computed=float(adj_dev), expected=0.0, tolerance=1e-45)
+        computed=adj_dev, expected=0.0, tolerance=1e-45)
 
     # ---- K4: does the 25 survive the declared pins? (per-pin rows) ---------
     # Replacing entry-[0,0]=1 by pin p rescales G_M by lam_p = p (the
@@ -639,7 +639,13 @@ def main() -> int:
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=None)
-        json.dump(witness, f, indent=2)
+        # `default=str` is what lets an mpf reach the file at full precision;
+        # without it this hand-rolled dump raises "Object of type mpf is not
+        # JSON serializable" and the producer is forced to float() its results
+        # at the assertion, throwing the digits away. This is the same
+        # serialization the canonical WitnessBuilder path uses
+        # (qou_substrate/witness.py).
+        json.dump(witness, f, indent=2, default=str)
     print("witness ->", out)
     return 0 if all_passed else 1
 
