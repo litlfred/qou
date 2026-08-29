@@ -48,6 +48,8 @@ import json
 import sys
 from pathlib import Path
 
+import mpmath as mp
+
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -157,18 +159,52 @@ def main() -> None:
         tolerance_float = float(tolerance)
     except (TypeError, ValueError):
         tolerance_float = 1e-9
+    # Per-atom relative delta.  The key is `rel_delta_max` -- the max over
+    # the method PAIRS compared for that atom.  This read `rel_delta`, a key
+    # NO delta entry has ever carried, so `.get(..., 0)` returned 0 for every
+    # atom and `max_rel_delta` was 0.0 by key-miss rather than by measurement.
+    # That fed the GATING `markov_trace_max_rel_delta` assertion below
+    # (expected 0.0, tolerance 1e-9), so the L1 Markov-trace gate could not
+    # fail whatever the cross-check found.  Legacy names kept as fallbacks.
+    _DELTA_KEYS = ("rel_delta_max", "rel_delta", "peel_rel_delta")
+
+    def _rel_delta(d: dict):
+        """Largest relative delta recorded for one atom, as mpf.
+
+        mpf, not float(): these arrive as 50-digit decimal STRINGS under the
+        NO-FLOAT64 discipline, and this value is recorded in the witness and
+        asserted against -- an argument, not a display.
+        """
+        vals = [mp.mpf(str(d[k])) for k in _DELTA_KEYS
+                if d.get(k) is not None]
+        return max(vals) if vals else None
+
+    _deltas = trm.get("deltas", []) or []
+    _rds = [v for v in (_rel_delta(d) for d in _deltas) if v is not None]
     trm_summary = {
         "atoms_compared": trm.get("atoms_compared", 0),
         "any_diverge": trm.get("any_diverge", None),
         "tolerance_relative": tolerance_float,
         "tolerance_relative_raw": tolerance,
-        "max_rel_delta": max(
-            (float(d.get("rel_delta", 0)) for d in trm.get("deltas", [])),
-            default=0.0,
-        ),
+        "max_rel_delta": max(_rds) if _rds else None,
+        "max_rel_delta_source_key": next(
+            (k for k in _DELTA_KEYS
+             if any(d.get(k) is not None for d in _deltas)), None),
+        "n_atoms_with_rel_delta": len(_rds),
         "all_within_1ppb": all(
-            d.get("within_1ppb", False) for d in trm.get("deltas", [])
-        ) if trm.get("deltas") else None,
+            d.get("within_1ppb", False) for d in _deltas
+        ) if _deltas else None,
+        # L1's target was upgraded from 1 ppb to 1 ppQ (1e-15) on 2026-05-26.
+        # `all_within_1ppb` is retained for consumer compatibility but is
+        # named for the SUPERSEDED threshold; this is the current target.
+        "all_within_1ppQ": all(
+            d.get("within_1ppQ", False) for d in _deltas
+        ) if _deltas else None,
+        "l1_target_note": (
+            "L1 target is 1 ppQ (1e-15) since 2026-05-26; the *_1ppb field "
+            "names predate that upgrade and are kept for compatibility. "
+            "Quote all_within_1ppQ for L1 status."
+        ),
     }
 
     # ── Layer 3: structural identities ─────────────────────────────
@@ -274,7 +310,8 @@ def main() -> None:
     print("Layer 2 — Markov-trace consistency (Hoefsmit vs markov_peel):")
     print(f"  atoms compared: {trm_summary['atoms_compared']}, "
           f"any_diverge: {trm_summary['any_diverge']}, "
-          f"max rel_delta: {trm_summary['max_rel_delta']:.2e}, "
+          f"max rel_delta: "
+          f"{mp.nstr(trm_summary['max_rel_delta'], 6) if trm_summary['max_rel_delta'] is not None else 'n/a'}, "
           f"all_within_1ppb: {trm_summary['all_within_1ppb']}")
     print()
     print("Layer 3 — Structural identities:")
@@ -314,13 +351,19 @@ def main() -> None:
             source="prop:operator-selection-lp strong duality",
         )
     # Markov-trace consistency: max relative difference < 1ppb.
-    builder.add_assertion(
-        name="markov_trace_max_rel_delta",
-        computed=trm_summary["max_rel_delta"],
-        expected=0.0,
-        tolerance=1e-9,
-        source="cross-check-trM-1ppb (Hoefsmit vs markov_peel)",
-    )
+    # NOTE: this reads `max_rel_delta`, which until 2026-08-29 was 0.0 by
+    # key-miss (see the `_DELTA_KEYS` note above), so this assertion passed
+    # unconditionally.  It now carries the measured value and can fail.
+    # The tolerance stays 1e-9 -- it is NOT widened to accommodate the
+    # measurement it now sees.  AGENTS.md: baselines drain, never grow.
+    if trm_summary["max_rel_delta"] is not None:
+        builder.add_assertion(
+            name="markov_trace_max_rel_delta",
+            computed=trm_summary["max_rel_delta"],
+            expected=0.0,
+            tolerance=1e-9,
+            source="cross-check-trM-1ppb (Hoefsmit vs markov_peel)",
+        )
     builder.add_data("summary", summary)
     builder.add_data("framing_note",
                      "Layers 1–2 are QOU's structural predictions "
