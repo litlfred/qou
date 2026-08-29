@@ -34,6 +34,24 @@ mp.mp.dps = 60
 
 # ---------------------------------------------------------------------------
 # 0. Canonical constants (LOCKED)
+#
+# ANCHOR NOTE (2026-08-29).  "LOCKED" above refers to the anti-fit discipline
+# -- the target is fixed before compute -- NOT to the anchor.  The q0 below is
+# the FROZEN MUON literal, hardcoded: it never consults `q_parameter`, so the
+# stem's absence from `q0_anchor_manifest.json` does NOT mean a run resolves to
+# proton.  It cannot; nothing here asks.
+#
+# This file is one of the 248 UNDECLARED hardcodes the corpus's own
+# `computations/audits/q0_hardcoded_pin_audit.py` reports.  Re-pinning them is
+# the tracked migration (bean qou-1c4y), a scoped sweep -- deliberately NOT
+# done here, and NOT to be done file-by-file as a drive-by.
+#
+# For whoever runs that sweep: the verdict of THIS probe is robust to the
+# change.  Proton vs frozen muon is 11.5 ppb in q0 (21.9 ppb in z_markov,
+# since d ln z / d ln q = 3 - 2q^2/(q^2+1) = 1.896 at q0), and the verdict
+# turns on a 0.6904 % miss -- five orders of magnitude larger.  Every number
+# printed below moves in the 8th significant figure; the honest-negative
+# stands.
 # ---------------------------------------------------------------------------
 q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
 A = mp.sqrt(q0)                      # skein variable sqrt(q)
@@ -62,7 +80,7 @@ print("LOCKED TARGETS (anti-fit, computed before candidate compute)")
 print("=" * 78)
 print(f"q0            = {mp.nstr(q0, 20)}")
 print(f"A = sqrt(q0)  = {mp.nstr(A, 20)}")
-print(f"z_markov      = {mp.nstr(z, 20)}   (committed 0.49932...)")
+print(f"z_markov      = {mp.nstr(z, 20)}   (convention D)")
 print(f"s_skein       = {mp.nstr(s, 20)}   (committed 0.10439...)")
 print(f"m_e*|S|       = {mp.nstr(first_order, 12)} MeV (first-order)")
 print(f"C_knot TARGET = {mp.nstr(C_target, 12)}   [surface multiplier]")
