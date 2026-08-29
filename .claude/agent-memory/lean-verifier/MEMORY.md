@@ -186,3 +186,16 @@ do not treat any number here as a threshold.
 Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
+
+- 2026-08-29 (cool-johnson): gate task. GitHub orphan-branch restore WORKS
+  (`git ls-remote`/`git fetch origin lake-cache/qou-v4-24-0` exit 0) — the
+  blocked host is Azure blob `lakecache.blob.core.windows.net`, NOT the git
+  restore path; the restore does not use it. 1.6 G tarball, `tar xzf` exceeds
+  a 2-min Bash timeout — stream parts direct to `tar xzf -` and give it ~7 min
+  (extraction is the slow part, not the fetch). Cache carries deps AND the full
+  QOU library (942 QOU oleans incl. `QOU/Basic`, `QOU/BraidTwistFlip`; 6990
+  mathlib). lean-direct verified both `braids-and-knots/braid-twist-flip.lean`
+  (imports `QOU.Basic`) and `lean/QOU/BraidTwistFlip.lean` (imports
+  `Mathlib.Tactic`): EXIT 0. Confirmed cold-cache TRAP (chapter file 1m3s wall /
+  4.6s user; lib file warm 4s). Confirmed sidecar TRAP: chapter-dir file HAS a
+  `.qa.json`; library file does not.
