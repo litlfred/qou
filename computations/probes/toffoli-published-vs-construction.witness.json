@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T18:53:03.178465+00:00",
-  "commitSha": "4d1ca315199e523c46635583229ac8e013901785",
+  "computedAt": "2026-08-29T19:03:55.530321+00:00",
+  "commitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
   "assertions": [
     {
       "name": "reconstruction_equals_producer_witness",
@@ -33,14 +33,20 @@
       "computed": 1,
       "expected": 1,
       "passed": true
+    },
+    {
+      "name": "universality_fails_under_blocks_own_indexing_too",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 489,
+  "durationMs": 966,
   "computation": "toffoli-published-vs-construction",
   "scriptFile": "toffoli_published_vs_construction_audit.py",
-  "scriptHash": "99a541cefd12",
-  "scriptCommitSha": "6cea425e6c54872bfdd0f5df634ae586a988253d",
+  "scriptHash": "fe05aa4d715a",
+  "scriptCommitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,13 +85,23 @@
     "Phi_published": "0.049548943474034783985",
     "chain_amplitude_block_convention": "-0.046674829171900710964",
     "chain_over_Phi_ratio": "-0.941994438214",
-    "P_flip_by_control_pair": {
+    "P_flip_by_control_pair_target_last": {
       "pp": "-0.13061590026045002348",
       "mixed": "-0.11767065403640645275",
       "nn": "-0.10701098816280097533"
+    },
+    "P_flip_by_control_pair_target_first": {
+      "pp": "-0.046674829171900710964",
+      "mixed": "-0.032586792772638093571",
+      "nn": "-0.020784336723813569493"
+    },
+    "P_flip_over_Phi_target_first": {
+      "pp": "-0.941994438214",
+      "mixed": "-0.657668771277",
+      "nn": "-0.419470835634"
     }
   },
   "caveats": [
-    "NOT a claim that the published forms are wrong. The only recorded construction lives in a _deprecated file that neither the content blocks nor the live producer cite, so it may itself be superseded by a derivation absent from the tree. What is established: the two disagree on three of four entries, the proof block's key lemma is convention-dependent and false as the producer runs, and the corpus does not record which side is current. NOTE the universality result WEAKENS a transcription-drift reading: a structural claim (all three control pairs giving the same amplitude) cannot arise from a mistyped number, so either the published forms come from a different, unrecorded derivation that does have universality, or that derivation is wrong. This probe cannot distinguish those."
+    "NOT a claim that the published forms are wrong. The only recorded construction lives in a _deprecated file that neither the content blocks nor the live producer cite, so it may itself be superseded by a derivation absent from the tree. What is established: the two disagree on three of four entries, the proof block's key lemma is convention-dependent and false as the producer runs, and the corpus does not record which side is current. NOTE the universality result WEAKENS a transcription-drift reading: a structural claim (all three control pairs giving the same amplitude) cannot arise from a mistyped number. Universality is now measured under BOTH indexings and fails under both, including the target-first reading where the block's own key lemma Delta_1 = 0 does hold -- so no choice of convention rescues it. That removes one of the two branches this probe previously could not separate: the published trio does not come from this construction under any reading of it. It remains possible that a different, unrecorded derivation produces them; the probe still cannot speak to a derivation that is not in the tree."
   ]
 }

@@ -40,6 +40,26 @@ WHAT IT FINDS.
    Phi:  V_1^par * Delta_0 = -0.04667 against Phi = +0.04955, ratio -0.942 -- 6% in
    magnitude and a sign flip.
 
+5. THE UNIVERSALITY CLAIM FAILS UNDER BOTH INDEXINGS.  The block asserts
+   P_flip = c_{k1k2} * Phi with c = 1 for every control pair, and the interpretation
+   table lists all three as +0.0495 "1x".  Measured, at q = 111/100:
+
+       control   target = LAST   target = FIRST   first / Phi
+       pp          -0.13061590      -0.04667483      -0.9420
+       mixed       -0.11767065      -0.03258679      -0.6577
+       nn          -0.10701099      -0.02078434      -0.4195
+
+   Three different amplitudes, not one -- including in the target-FIRST reading,
+   which is the block's own prose and the only one where its key lemma Delta_1 = 0
+   holds.  So no choice of convention rescues universality from this construction.
+
+   That matters for reading finding 2 and is why it is stated separately.  A number
+   that disagrees could be transcription drift; a STRUCTURAL property that fails
+   cannot be.  It removes the branch "the published trio is this construction, mis-
+   copied" -- under no reading of this construction is c universal.  What survives is
+   the branch the probe still cannot test: an unrecorded derivation that is not in
+   the tree.
+
 CONSEQUENCE, and it is why this probe exists rather than a content edit.  The
 convention-D work upstream of this took the published closed forms as the
 framework's quantities and asked which z they carry.  For P_77 that is safe -- it
@@ -179,25 +199,53 @@ def main() -> int:
 
     # 4. THE UNIVERSALITY CLAIM. The block states P_flip = c_{k1k2} * Phi with c = 1
     # for all three control pairs, and the interpretation table lists all three as
-    # +0.0495, "1x". Test it: vary the control pair, flip the target.
-    uni = {}
-    for label, ctrl in (("pp", (1, 1)), ("mixed", (1, 0)), ("nn", (0, 0))):
-        par, dau = (ctrl[0], ctrl[1], 0), (ctrl[0], ctrl[1], 1)
+    # +0.0495, "1x". Test it BOTH ways, because the two indexings are the two ways
+    # the block can be read and only one of them makes its key lemma true:
+    #
+    #   target = LAST strand  -- what `toffoli_output` actually does (k & 1); the
+    #                            lemma Delta_1 = 0 is FALSE here.
+    #   target = FIRST strand -- the block's own prose; the lemma Delta_1 = 0 HOLDS,
+    #                            so this is the reading most favourable to the block.
+    #
+    # Universality has to survive at least one of them to be a property of the
+    # construction at all.
+    def _pflip(ctrl, target_first):
+        c1, c2 = ctrl
+        if target_first:
+            par, dau = (0, c1, c2), (1, c1, c2)
+        else:
+            par, dau = (c1, c2, 0), (c1, c2, 1)
         Vp = [_V(i, par) for i in range(2)]
         Vd = [_V(i, dau) for i in range(2)]
-        uni[label] = sum(sp.prod([Vp[j] for j in range(2) if j != c])
-                         * (Vp[c] - Vd[c]) for c in range(2))
-    vals = [_num(v) for v in uni.values()]
-    universal = max(vals) - min(vals) < mp.mpf("1e-12")
+        return sum(sp.prod([Vp[j] for j in range(2) if j != c])
+                   * (Vp[c] - Vd[c]) for c in range(2))
+
+    CTRL = (("pp", (1, 1)), ("mixed", (1, 0)), ("nn", (0, 0)))
+    uni = {lab: _pflip(c, False) for lab, c in CTRL}
+    uni_first = {lab: _pflip(c, True) for lab, c in CTRL}
+
+    def _spread(d):
+        v = [_num(x) for x in d.values()]
+        return max(v) - min(v)
+
+    universal = _spread(uni) < mp.mpf("1e-12")
+    universal_first = _spread(uni_first) < mp.mpf("1e-12")
+
     print(f"\n  the block's UNIVERSALITY claim (c = 1 for every control pair, so all")
     print(f"  three P_flip equal Phi = +0.0495 — the interpretation table's '1x' rows):")
-    for label, v in uni.items():
-        print(f"    {label:<6} {mp.nstr(_num(v), 12):>16}")
-    print(f"    all equal: {universal}   published says yes")
+    print(f"    {'control':<8}{'target = LAST':>20}{'target = FIRST':>20}"
+          f"{'first / Phi':>16}")
+    phi_n = _num(pub["Phi"])
+    for lab, _ in CTRL:
+        vf = _num(uni_first[lab])
+        print(f"    {lab:<8}{mp.nstr(_num(uni[lab]), 12):>20}"
+              f"{mp.nstr(vf, 12):>20}{mp.nstr(vf / phi_n, 8):>16}")
+    print(f"    all equal:  target = LAST {universal}    target = FIRST {universal_first}")
+    print(f"    published says yes for both — it claims c = 1 unconditionally.")
 
     gates_ok = (agree_prod and recon_matches_pub_77
                 and lemma_conv_dependent and not chain_is_phi
-                and not universal)
+                and not universal and not universal_first)
 
     print("\n" + "=" * 90)
     print(" RESULT")
@@ -207,6 +255,9 @@ def main() -> int:
     print("    producer flips the LAST strand, where it is false.")
     print("  * Even under the block's own convention the chain gives -0.0467, not the")
     print("    published Phi = +0.0495 — 6% and a sign.")
+    print("  * And universality fails under BOTH indexings: the three control pairs give")
+    print("    three different amplitudes even where the block's key lemma holds. So the")
+    print("    disagreement is STRUCTURAL, not a mistyped number.")
     print("  => Migrating Phi/P_66/P_67 to convention D is premature: the prior question")
     print("     is which of the two disagreeing objects is current. P_77 is unaffected.")
     print("=" * 90)
@@ -220,6 +271,8 @@ def main() -> int:
     w.add_assertion("chain_does_NOT_reproduce_published_Phi", 0 if chain_is_phi else 1, 1)
     w.add_assertion("construction_does_NOT_give_universal_c_eq_1",
                     0 if universal else 1, 1)
+    w.add_assertion("universality_fails_under_blocks_own_indexing_too",
+                    0 if universal_first else 1, 1)
     w.add_parameter("q_evaluated_at", str(Q_EVAL))
     w.add_parameter("construction_source",
                     "computations/_deprecated/toffoli-braid.py::chain_reduce")
@@ -230,8 +283,12 @@ def main() -> int:
     w.add_data("Phi_published", mp.nstr(_num(pub["Phi"]), 20))
     w.add_data("chain_amplitude_block_convention", mp.nstr(_num(chain_amp), 20))
     w.add_data("chain_over_Phi_ratio", mp.nstr(ratio, 12))
-    w.add_data("P_flip_by_control_pair",
+    w.add_data("P_flip_by_control_pair_target_last",
                {k: mp.nstr(_num(v), 20) for k, v in uni.items()})
+    w.add_data("P_flip_by_control_pair_target_first",
+               {k: mp.nstr(_num(v), 20) for k, v in uni_first.items()})
+    w.add_data("P_flip_over_Phi_target_first",
+               {k: mp.nstr(_num(v) / phi_n, 12) for k, v in uni_first.items()})
     w.add_caveat(
         "NOT a claim that the published forms are wrong. The only recorded "
         "construction lives in a _deprecated file that neither the content blocks nor "
@@ -241,9 +298,13 @@ def main() -> int:
         "runs, and the corpus does not record which side is current. NOTE the "
         "universality result WEAKENS a transcription-drift reading: a structural claim "
         "(all three control pairs giving the same amplitude) cannot arise from a "
-        "mistyped number, so either the published forms come from a different, "
-        "unrecorded derivation that does have universality, or that derivation is "
-        "wrong. This probe cannot distinguish those."
+        "mistyped number. Universality is now measured under BOTH indexings and fails "
+        "under both, including the target-first reading where the block's own key lemma "
+        "Delta_1 = 0 does hold -- so no choice of convention rescues it. That removes "
+        "one of the two branches this probe previously could not separate: the published "
+        "trio does not come from this construction under any reading of it. It remains "
+        "possible that a different, unrecorded derivation produces them; the probe still "
+        "cannot speak to a derivation that is not in the tree."
     )
     w.set_description(
         "Compares the published Toffoli transfer-matrix entries against the only "
