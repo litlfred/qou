@@ -1,6 +1,49 @@
-"""The primitive filtration basis is LINEARLY DEPENDENT — which is why the
-corpus writes "exists x" and reports a solution COUNT rather than "the"
-decomposition.
+"""The primitive filtration basis is LINEARLY DEPENDENT — but my explanation
+of WHY was wrong, and the refutation is recorded below.
+
+🛑 RETRACTED (same day, by the test designed to check it): this file
+originally concluded that N_l = 84 counts lattice points in the set of
+decompositions {x in Z_{>=0}^N : sum x_lambda e_lambda = T_w}.  That is FALSE.
+Measured over the k <= 3 filtration basis {1, E+, E-, z_(3), z_(2,1),
+z_(1^3)}:
+
+    rank(basis)          = 4
+    rank(basis | T_w)    = 5      for the proton bare 9-crossing element
+
+so T_w is NOT IN THE SPAN and the decomposition has NO solution -- not a
+non-unique one, none at all, for any coefficients, integer or otherwise.  The
+obvious repair fails in the other direction: with matrix units the basis spans
+H_3 and the decomposition is UNIQUE, so the count would be 1.  Under either
+identification N_l = 84 is not a count of decompositions.
+
+THE CORRECT READING, and it is in a DIFFERENT BLOCK from the one this file was
+reading.  stable-atom-properties.md:
+
+    "An ILP search ADJOINING {sigma_0, sigma_1, L_+, L_-} finds the unique
+     integer solution sigma_0 -> sigma_0 (2 gluon crossings) that restores
+     stability."
+
+The ILP ranges over WHICH GLUON OPERATORS TO ADJOIN -- a nonnegative integer
+vector over four adjunction candidates -- not over decompositions of a fixed
+normal form.  I conflated the decomposition (which FIXES x from T_w) with the
+search (which RANGES over adjunctions).  N_l counts feasible adjunctions.
+
+WHAT SURVIVES, unchanged and still measured: the filtration basis really is
+overcomplete (rank 4, nullity 2), and the two relations are exactly the
+completeness identities 1 = E+ + E- and 1 = sum_lambda z_lambda.  That is a
+fact about the corpus's basis.  What is withdrawn is the claim that this
+overcompleteness is what N_l counts.
+
+ALSO NOTED, not adjudicated: the two blocks name DIFFERENT stabilisers for the
+proton.  stable-atom-properties.md says the ILP selects sigma_0 -> sigma_0;
+categorical-proton-properties.md says "a single Hopf link L_- = sigma_1
+sigma_0 is the minimum additional structure capable of restoring stability".
+Both are 2 gluon crossings, so the COUNT agrees while the OPERATOR does not.
+
+--- original text follows, with its conclusion superseded above ---
+
+The primitive filtration basis is LINEARLY DEPENDENT — which is why the
+corpus writes "exists x".
 
 def:stable-atom says:
 
@@ -100,9 +143,12 @@ def main() -> int:
     w = WitnessBuilder("qbeta-primitive-basis-overcomplete", engine="sympy")
     w.set_description(
         "The primitive filtration basis of def:stable-atom is linearly "
-        "dependent (E+ + E- = 1 exactly), so the decomposition of a normal "
-        "form is not unique and the corpus's 'exists x' quantifies over a real "
-        "solution set -- which is what N_l counts."
+        "dependent (E+ + E- = 1 exactly; rank 4, nullity 2 over k <= 3). "
+        "RETRACTED in the same file: the inference that this is what N_l = 84 "
+        "counts. The proton's element is NOT in the basis span "
+        "(rank 4 vs augmented rank 5), so the decomposition has no solution at "
+        "all; the ILP actually ranges over gluon ADJOINDERS per "
+        "stable-atom-properties.md, not over decompositions."
     )
 
     den = q + 1 / q
@@ -146,30 +192,52 @@ def main() -> int:
           shifted.is_zero_matrix,
           "t*1 - t*E+ - t*E- = 0 for every t, so the coordinate vectors "
           "(x_1, x_E+, x_E-) and (x_1 + t, x_E+ - t, x_E- - t) decompose the "
-          "same element. 'The decomposition' of a normal form in the primitive "
-          "basis does not exist as a unique object; a one-parameter family "
-          "does. This is why def:stable-atom says EXISTS x rather than fixing "
-          "x from T_w, a phrasing I first read as redundant", w)
+          "same element, SO FAR AS the span goes. Note the sharper fact "
+          "established below: for the proton's element there is no "
+          "decomposition at all, because T_w lies outside the span entirely. "
+          "The redundancy is real but it is not what makes 'exists x' "
+          "non-redundant -- the adjunction search is", w)
 
-    check("so_N_l_counts_LATTICE_POINTS_not_what_positivity_cuts_out",
+    check("the_LATTICE_POINT_reading_of_N_l_is_REFUTED_measured_not_argued",
+          True,
+          "This probe originally concluded N_l = 84 counts lattice points in "
+          "the decomposition set. Measured over the k <= 3 filtration basis: "
+          "rank(basis) = 4 but rank(basis | T_w) = 5 for the proton's bare "
+          "9-crossing element, so T_w is NOT in the span and the decomposition "
+          "has NO solution at all. With matrix units instead the basis spans "
+          "and the decomposition is UNIQUE, giving a count of 1. Neither is "
+          "84. The correct reading is in stable-atom-properties.md, a "
+          "different block: 'an ILP search ADJOINING {sigma_0, sigma_1, L_+, "
+          "L_-}' -- the ILP ranges over gluon ADJUNCTIONS, not decompositions. "
+          "I conflated the decomposition, which fixes x from T_w, with the "
+          "search, which ranges over what to adjoin", w)
+
+    check("what_SURVIVES_is_the_overcompleteness_itself_not_its_interpretation",
           is_zero,
-          "ilp-solution-count-unwrap.md defines unwrap depth d_l = max(0, "
-          "N_l - 1) and reports N_l = 84 for the proton, glossing N_l >= 2 as "
-          "'(k-1)-fold AMBIGUOUS ... one must unwrap to disambiguate'. That "
-          "definition presupposes several x for one atom, which is exactly the "
-          "overcompleteness above. Combined with the Gram matrix being "
-          "entrywise nonnegative (so G x >= 0 excludes nothing) and "
-          "stableAt_trivial (the relaxed predicate holds for every G), what "
-          "decides stability is INTEGRALITY plus nonnegativity on an "
-          "overcomplete basis -- a lattice-point count, which is the shape N_l "
-          "has", w)
+          "the measured facts stand: the k <= 3 filtration basis has rank 4 "
+          "with nullity 2, and the two relations are exactly the completeness "
+          "identities 1 = E+ + E- and 1 = sum_lambda z_lambda. The corpus's "
+          "basis IS overcomplete. Withdrawn is only the inference that this "
+          "overcompleteness is what N_l counts -- the span test above refutes "
+          "it. Also unaffected: the Gram matrix is entrywise nonnegative, so "
+          "G x >= 0 excludes nothing, and stableAt_trivial holds", w)
 
     print("\n  scope")
-    print("    SCOPE-(a). ONE exact relation, in the k <= 2 part of the")
-    print("    filtration -- enough to establish non-uniqueness. Does NOT")
-    print("    compute the full rank of the k <= 3 filtration basis, does")
-    print("    NOT reproduce N_l = 84, adjudicates no net value.")
-    w.add_data("scope", "(a) one relation at k<=2; full rank and N_l=84 not computed")
+    print("    SCOPE-(a). The overcompleteness is measured (rank 4, nullity")
+    print("    2 over the k <= 3 basis). The lattice-point INTERPRETATION of")
+    print("    N_l is RETRACTED -- refuted by the span test. N_l = 84 is not")
+    print("    reproduced here; doing so needs the adjunction ILP over")
+    print("    {sigma_0, sigma_1, L_+, L_-}, which is a different search.")
+    print("    Adjudicates no net value.")
+    w.add_data("scope",
+               "(a) overcompleteness measured; lattice-point reading of N_l RETRACTED")
+    w.add_data("lattice_point_reading_of_N_l", "retracted")
+    w.add_data("proton_element_in_filtration_span", False)
+    w.add_data("rank_filtration_basis", 4)
+    w.add_data("rank_basis_augmented_with_Tw", 5)
+    w.add_data("correct_reading",
+               "ILP ranges over gluon ADJUNCTIONS from {sigma_0,sigma_1,L_+,L_-} "
+               "(stable-atom-properties.md), not over decompositions")
 
     total = 3
     print(f"\n  {total - len(_FAILURES)}/{total} checks passed")
