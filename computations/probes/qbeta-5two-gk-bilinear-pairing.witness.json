@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:19:15.624652+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-29T11:26:38.880330+00:00",
+  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
   "assertions": [
     {
       "name": "splus_reproduces_committed_a2",
-      "computed": 2.209637089157538e-25,
+      "computed": "2.20963708915753764257175101035337609749768626564157833578047e-25",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-20",
@@ -14,8 +14,8 @@
     },
     {
       "name": "confrontation_completed",
-      "computed": 440.0,
-      "expected": 440.0,
+      "computed": 440,
+      "expected": 440,
       "passed": true,
       "tolerance": "0.5",
       "source": "pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded"
@@ -25,8 +25,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-gk-bilinear-pairing",
   "scriptFile": "qbeta_5two_gk_bilinear_pairing_probe.py",
-  "scriptHash": "4eebe6f56647",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "28c21ba0c470",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_gk_bilinear_pairing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_gk_bilinear_pairing_probe.py"
   },
   "description": "B1.2 (bean qou-9s8k): the GK bilinear block pairing confronted with the Habiro-face targets. Both sides of the substrate bar-pair evaluated through A2's 8/8-gated block machinery (the |q|>1 glue, GGM eq 25); the naked bilinear W₋₁(1/q)·B·W₋₁(q)ᵀ, the dressed S± pair, their odd/even splits — every entry compared parameter-free against F_conv, s(F̄), D_odd, D_even (gate 1e-6, pin band; all near-misses reported, no selection) plus small-(half-)integer ratio tests on the odd assemblies. auditOnly; no c_k wired; no fit; a hit is a lead, not an identification.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -203,8 +210,8 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-stokes-barodd-index.witness.json",
-        "sha256": "a80fd701463598f50ad182990ce8f260762e653aa404a70ffedcf781ec36c874",
-        "size_bytes": 6510,
+        "sha256": "845a5af6ecc8f849fe4949c8ad3b5d4157cb3947c94b555b83c03641d8f72a61",
+        "size_bytes": 6526,
         "commitSha": "80bd9ad75cd025ccb05177289a22b62020530d06",
         "scriptCommitSha": "c4df210824c148c3fc6c9f1ad2c7a5aca10aa864",
         "computedAt": "2026-07-18T17:52:55.488437+00:00"
