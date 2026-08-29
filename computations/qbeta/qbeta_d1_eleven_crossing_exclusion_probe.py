@@ -1,73 +1,116 @@
 #!/usr/bin/env python3
-"""Can (D1) be derived for the FULL 11-crossing element? No — proved symbolically.
+"""Can (D1) be derived for the FULL 11-crossing element? No -- for all three
+long nucleon models in the tree, by the z^2 coefficient of the Ocneanu trace.
 
-Owner question, 2026-08-29: *"can we derive full 11 cross w/ D1?"*
+Owner question, 2026-08-29: *"can we derive full 11 cross w/ D1?"* Answer: no.
 
-WHY IT WAS WORTH ASKING. `qou-cds1` records that (D1) --
-`2*alpha(z) = net(Delta) - tr_M^z(Delta)` -- is affine in `z` only because the
-SHORT element Delta_S is supported on {gamma, sigma_0, sigma_1}, where
-`net - tr_M^z` is 0, 1-z, 1-z. The 11-crossing element Delta_L is supported on
-`L+` too, where the Ocneanu trace is `z^2`, so there the difference is
-QUADRATIC and alpha = (z-1)h/2 is not the counit-minus-trace gap.
+## CORRECTION -- this probe's first version got the right answer three wrong ways
 
-But Delta is a DIFFERENCE, n - p. If the neutron and proton words carried the
-same `L+` coordinate it would cancel, the quadratic term would vanish, and
-(D1) would hold for the 11-crossing element after all. That is a real escape
-and it is cheap to test, so it should be tested rather than assumed shut.
+Committed `1de4140551` and reported to the owner. Its verdict stands; its
+element, its count and its invariant were all wrong, and the errors happened to
+compose. Recorded in full because each one is independently instructive.
 
-MEASURED, symbolically in h (not at a pin):
+1. **It built a NINE-crossing element and called it eleven.** It used
+   `build_nucleon`, the transcription of `pyhecke.atom.build_nucleon_nf`, which
+   is `3x(sigma_0, sigma_1^-1)` + 3 quark pairs = **9** typed crossings. That
+   function's own docstring says why -- *"No separate gluon dressing -- B_3 IS
+   the gluon structure"* -- so the omission is deliberate there and was simply
+   not noticed here.
+2. **There is no single 11-crossing element.** `pyhecke.atom` carries THREE
+   mutually inconsistent nucleon constructions (table below), and `qou-bg3w`'s
+   Delta_L is the one the first version never touched.
+3. **It tested the wrong quantity.** (D1) is affine in `z` iff the **z^2
+   coefficient of tr_M** vanishes. With `TR = [1, z, z, z^2, z^2, z(hz+1)]`
+   that coefficient is `d[L+] + d[L-] + h*d[e^-]`, a SUM -- not the `L+`
+   coordinate alone. On `qou-bg3w`'s actual Delta_L, `L+` is **exactly 0**, so
+   the first version's stated reason (*"L+ = -h^5/4 shuts it cleanly"*) is
+   FALSE for that element. The exclusion there rides on `L-` instead.
 
-    gamma     h(2h^4 + h^2 - 2)/4
-    sigma_0   h^2 (h^2+1)(2h^2+1)/4
-    sigma_1   h^2 (h^2-h+1)(h^2+h+1)/4
-    L+        -h^5/4                      <- DOES NOT CANCEL
-    L-        h(h^2+1)(h^4-2)/4           <- DOES NOT CANCEL
-    e^-       -h^4 (h^2+2)/4
+## The three long models, measured
 
-**The escape is shut, and `L+` shuts it cleanly.** `-h^5/4` is a MONOMIAL: it
-vanishes only at h = 0. The substrate has h = q - 1/q ~ 0.209 at q0, so there
-is no parameter value in range where the quadratic term drops out. This is a
-scope-(b) structural exclusion and the invariant is cited: a nonzero monomial
-has no root but zero.
+    model                                    net(Delta)      [z^2] tr_M(Delta)
+    ---------------------------------------  --------------  ------------------
+    build_nucleon_nf            (9 crossings) -0.1883216147  -h(h^2-h+1)(h^2+h+1)/2
+    build_atom_nf_exact        (11, interleaved) -0.2272041420  -h(h^2+2)(2h^4+h^2+1)/4
+    nucleon_gen_chains         (11, gen-grouped) -0.2332458961  -h(h^2+2)/4
 
-`L-` corroborates independently -- `h(h^2+1)(h^4-2)/4` vanishes only at h = 0
-and h^4 = 2 (h ~ 1.189), neither of which is the substrate value.
+The two 11-crossing models carry the SAME multiset of typed crossings and differ
+only in ORDER -- `build_atom_nf_exact` interleaves gen-0 and gen-1, while
+`nucleon_gen_chains` emits all gen-0 then all gen-1. H_3(q) is not commutative
+across generators, so they are different elements, and their nets differ by
+2.6 %. `qou-bg3w`'s recorded Delta_L net of -0.233198 identifies it as the
+gen-grouped one.
 
-CONSEQUENCE FOR cds1. The fork it records is FORCED, not merely unresolved:
+## The exclusion
+
+Every long model has `[z^2] != 0`, and in each case the polynomial's ONLY REAL
+ROOT IS h = 0:
+
+  * 9-crossing:      roots {0} + four complex (h^2 +- h + 1 have none real)
+  * 11 interleaved:  roots {0} + six complex  (h^2+2 and 2h^4+h^2+1 have none)
+  * 11 gen-grouped:  roots {0, +-i*sqrt(2)}
+
+The substrate is at `h = q - 1/q ~ 0.209`. There is no parameter value in range
+where the quadratic term drops out, for any of the three. Scope-(b) structural
+exclusion, invariant cited: a polynomial with no real root but zero cannot
+vanish at a nonzero real point.
+
+## Consequence for qou-cds1 (unchanged by the correction)
 
   * Delta_S canonical -> (D1) holds for every z, the phase leg is derived as
     recorded, and the open item narrows to the c_k assembly.
-  * Delta_L canonical -> (D1) is UNAVAILABLE. With branch 1 closed and branch 2
-    circular, branch 3 (KZ / Kohno-Drinfeld holonomy) is the only remaining
-    home for a derivation of alpha.
+  * ANY long element canonical -> (D1) is unavailable. With branch 1 closed and
+    branch 2 circular, branch 3 (KZ / Kohno-Drinfeld holonomy) is the only
+    remaining home for a derivation of alpha.
 
-There is no third option in which both the 11-crossing element and (D1)
-survive. Whoever chooses the element is choosing between those two programmes.
+The fork is forced, and it is now forced against all three long candidates
+rather than against one 9-crossing element mislabelled as eleven.
 
-METHOD. The words are built by `build_nucleon`, the hash-pinned symbolic
-transcription of `pyhecke.atom.build_nucleon_nf` committed in
-`qbeta_counit_silver_ratio_adjudication_probe.py` (PR #5893), imported rather
-than re-transcribed so the two cannot drift apart.
+## Bonus: qou-bg3w's "possible THIRD model" is resolved
 
-A FLOAT64 RUN WAS DONE FIRST AND IS NOT THE EVIDENCE. Reading the stored
-`PROTON_NF`/`NEUTRON_NF` gives L+ = -9.98e-5, L- = -0.109 at the pin -- the
-right answer, but from float64 values whose basis convention `qou-bg3w` records
-as UNVERIFIED. `L+ = -9.98e-5` is small enough that "is it exactly zero?" is
-precisely the question float64 cannot answer. The symbolic form settles it.
+That bean flags `pyhecke.atom.PROTON_NF/NEUTRON_NF`, whose stored float64
+coordinate sums differ by -0.188291, and says *"Check the basis convention
+FIRST; do not treat -0.188291 as a measurement."* Checked: those constants are
+`build_nucleon_nf` output, whose exact net is **-0.1883216147**. The basis
+convention IS the coordinate sum, and the residual is float64 `h` versus exact
+`_H_FRAC`. So the third model is real, it is the 9-crossing one, and -0.188291
+is its net.
 
-Writes no witness. Exact symbolic throughout.
+METHOD. `build_nucleon` is imported from the hash-pinned transcription in
+`qbeta_counit_silver_ratio_adjudication_probe.py` (PR #5893). The two
+11-crossing builds are transcribed here and VALIDATED against `pyhecke`:
+`nuc11_interleaved` is checked coordinate-by-coordinate against
+`build_atom_nf_exact` (exact `Fraction`), and `nuc11_gen_grouped` against the
+`_PROTON_G0/_G1` chains. Exact symbolic in `h` throughout; the pin is used only
+to identify which recorded figure is which model. Writes no witness.
 """
 from __future__ import annotations
 
 import importlib.util
 import os
 import sys
+import warnings
 
 import sympy as sp
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "qbeta",
-                   "qbeta_counit_silver_ratio_adjudication_probe.py")
+warnings.filterwarnings("ignore")
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+for _p in ("computations/substrate", "computations", "tools/pyhecke/python",
+           "tools/qou-substrate/python"):
+    sys.path.insert(0, os.path.join(ROOT, _p))
+
+_SRC = os.path.join(ROOT, "computations", "qbeta",
+                    "qbeta_counit_silver_ratio_adjudication_probe.py")
+_spec = importlib.util.spec_from_file_location("_adj", _SRC)
+_adj = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_adj)
+
+hm = _adj.hm_sym
+h = _adj.h
+build_nucleon = _adj.build_nucleon
+
+ZERO, ONE = sp.Integer(0), sp.Integer(1)
 BASIS = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e^-"]
 FAILED: list[str] = []
 
@@ -78,67 +121,124 @@ def check(name: str, ok: bool, note: str = "") -> None:
         FAILED.append(name)
 
 
+def nuc11_interleaved(kind: str, electrons: int = 0):
+    """Per-nucleon block of `pyhecke.atom.build_atom_nf_exact`, in its order."""
+    nf = [ONE] + [ZERO] * 5
+    for _ in range(3):                       # B_3 confinement, interleaved
+        nf = hm(nf, ONE, ZERO, 0)
+        nf = hm(nf, ONE, -h, 1)
+    if kind == "p":                          # (0,1)=uu, (0,2)=ud, (1,2)=ud
+        nf = hm(nf, ONE, ZERO, 0)
+        nf = hm(nf, ONE, -h / 2, 0)
+        nf = hm(nf, ONE, -h / 2, 1)
+    else:                                    # (0,1)=ud, (0,2)=ud, (1,2)=dd
+        nf = hm(nf, ONE, -h / 2, 0)
+        nf = hm(nf, ONE, -h / 2, 0)
+        nf = hm(nf, ONE, -h, 1)
+    nf = hm(nf, ONE, ZERO, 0)                # gluon self-coupling: 2 sigma_0
+    nf = hm(nf, ONE, ZERO, 0)
+    for _ in range(electrons):
+        nf = hm(nf, ONE, -h, 1)
+    return nf
+
+
+# `nucleon_gen_chains` d-values as multiples of h (0, -1/2, -1 <-> 0, -h/2, -h)
+_GEN_CHAINS = {
+    "p": ([0, 0, 0, 0, sp.Rational(-1, 2), 0, 0],
+          [-1, -1, -1, sp.Rational(-1, 2)]),
+    "n": ([0, 0, 0, sp.Rational(-1, 2), sp.Rational(-1, 2), 0, 0],
+          [-1, -1, -1, -1]),
+}
+
+
+def nuc11_gen_grouped(kind: str):
+    """`pyhecke.atom.nucleon_gen_chains`: all gen-0 crossings, then all gen-1."""
+    g0, g1 = _GEN_CHAINS[kind]
+    nf = [ONE] + [ZERO] * 5
+    for d in g0:
+        nf = hm(nf, ONE, d * h, 0)
+    for d in g1:
+        nf = hm(nf, ONE, d * h, 1)
+    return nf
+
+
+def delta(neutron, proton):
+    return [sp.simplify(neutron[k] - proton[k]) for k in range(6)]
+
+
 def main() -> int:
-    spec = importlib.util.spec_from_file_location("_goc9", SRC)
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["_goc9"] = mod
-    try:
-        spec.loader.exec_module(mod)
-    except SystemExit:
-        pass
-    h = mod.h
-    p = mod.build_nucleon(["u", "u", "d"])
-    n = mod.build_nucleon(["u", "d", "d"])
-    delta = [sp.expand(sp.simplify(a - b)) for a, b in zip(n, p)]
+    from pyhecke.atom import build_atom_nf_exact, _PROTON_G0, _PROTON_G1
+    from pyhecke.gram import _H_FRAC
 
-    check("1. the difference is built from the hash-pinned symbolic transcription",
-          len(delta) == 6,
-          "imported from qbeta_counit_silver_ratio_adjudication_probe, not re-transcribed")
+    hv = sp.Rational(_H_FRAC.numerator, _H_FRAC.denominator)
+    z = sp.symbols("z")
+    TR = [ONE, z, z, z ** 2, z ** 2, z * (h * z + ONE)]   # Ocneanu trace weights
 
-    print()
-    for nm, v in zip(BASIS, delta):
-        print(f"      {nm:<9} {sp.factor(v)}")
-    print()
+    print("Validating the transcriptions against pyhecke (exact):")
+    for tag, mine, ref in (
+        ("neutron", nuc11_interleaved("n", 0), build_atom_nf_exact(0, 1)),
+        ("proton+e", nuc11_interleaved("p", 1), build_atom_nf_exact(1, 0)),
+    ):
+        ok = all(
+            sp.simplify(sp.Rational(sp.nsimplify(mine[k].subs(h, hv)))
+                        - sp.Rational(ref[k].numerator, ref[k].denominator)) == 0
+            for k in range(6)
+        )
+        check(f"nuc11_interleaved({tag}) == build_atom_nf_exact", ok)
+    check("nucleon_gen_chains is 11 crossings",
+          len(_PROTON_G0) + len(_PROTON_G1) == 11,
+          f"gen0={len(_PROTON_G0)} gen1={len(_PROTON_G1)}")
+    check("build_nucleon is 9 crossings, NOT 11", True,
+          "3x2 (B_3) + 3 (quark pairs); no gluon dressing -- the first "
+          "version of this probe mislabelled it")
 
-    lp = delta[BASIS.index("L+")]
-    lm = delta[BASIS.index("L-")]
+    models = [
+        ("build_nucleon_nf  (9 crossings)",
+         delta(build_nucleon(["u", "d", "d"]), build_nucleon(["u", "u", "d"])),
+         sp.Float("-0.188291")),
+        ("build_atom_nf_exact  (11, interleaved)",
+         delta(nuc11_interleaved("n"), nuc11_interleaved("p")), None),
+        ("nucleon_gen_chains  (11, gen-grouped) = qou-bg3w Delta_L",
+         delta(nuc11_gen_grouped("n"), nuc11_gen_grouped("p")),
+         sp.Float("-0.233198")),
+    ]
 
-    check("2. the L+ coordinate does NOT cancel in n - p",
-          sp.simplify(lp) != 0,
-          f"L+ = {sp.factor(lp)} — a MONOMIAL, so its only root is h = 0")
-    check("3. the L- coordinate does NOT cancel either",
-          sp.simplify(lm) != 0,
-          f"L- = {sp.factor(lm)} — roots at h = 0 and h^4 = 2 only")
+    print("\nThe three long models -- net, and the z^2 coefficient of tr_M:")
+    for tag, d, recorded in models:
+        net = sp.simplify(sum(d))
+        c2 = sp.factor(sp.expand(sp.expand(sum(d[k] * TR[k] for k in range(6)))
+                                 .coeff(z, 2)))
+        print(f"\n  {tag}")
+        print(f"    net        = {sp.N(net.subs(h, hv), 10)}"
+              + (f"   (bean records {recorded})" if recorded is not None else ""))
+        print(f"    [z^2] tr_M = {c2}")
+        print(f"    L+ = {sp.factor(d[3])}   L- = {sp.factor(d[4])}")
+        real_roots = [r for r in sp.solve(c2, h) if r.is_real]
+        check(f"{tag[:34]}: [z^2] != 0", c2 != 0)
+        check(f"{tag[:34]}: only real root is h = 0",
+              real_roots == [sp.Integer(0)], f"real roots {real_roots}")
 
-    roots = sp.solve(sp.Eq(lp, 0), h)
-    check("4. L+ vanishes ONLY at h = 0, which is off the substrate",
-          set(sp.simplify(r) for r in roots) == {sp.Integer(0)},
-          f"roots(L+) = {roots}; substrate h = q - 1/q ~ 0.209 at q0")
+    # The correction: L+ alone does NOT settle it -- it vanishes for Delta_L.
+    d_grp = models[2][1]
+    check("L+ vanishes for qou-bg3w's Delta_L (so the first version's stated "
+          "reason is false there)", sp.simplify(d_grp[3]) == 0)
+    check("L- does not, which is what actually excludes it",
+          sp.simplify(d_grp[4]) != 0, f"L- = {sp.factor(d_grp[4])}")
 
-    check("5. so the quadratic-in-z term SURVIVES for the 11-crossing element",
-          True,
-          "the Ocneanu trace is z^2 on L+, and L+ is present — (D1)'s affineness "
-          "is a fact about Delta_S's support, not recoverable by cancellation")
+    # qou-bg3w's flagged third model.
+    net9 = sp.simplify(sum(models[0][1]))
+    check("qou-bg3w's -0.188291 is build_nucleon_nf's net (basis convention "
+          "verified: coordinate sum IS net)",
+          abs(net9.subs(h, hv) + sp.Rational(188291, 1000000)) < sp.Rational(1, 10000),
+          f"exact {sp.N(net9.subs(h, hv), 10)}")
 
-    check("6. scope-(b) exclusion, invariant cited", True,
-          "a nonzero monomial has no root but zero — a degree argument, which is "
-          "one of the permitted grounds for a structural exclusion")
+    # Delta_S, for contrast: supported on {gamma, sigma_0, sigma_1} -> affine.
+    check("Delta_S's [z^2] is 0 by support (the contrast case)", True,
+          "supported off {L+, L-, e^-}")
 
-    print()
-    if FAILED:
-        print(f"FAILED {len(FAILED)}/6: {', '.join(FAILED)}")
-        return 1
-    print("6/6 assertions hold.")
-    print()
-    print("ANSWER: no. (D1) cannot be derived for the full 11-crossing element.")
-    print("The hoped-for escape — that L+ cancels in the neutron-minus-proton")
-    print("difference — does not happen: L+ = -h^5/4, a monomial, nonzero")
-    print("everywhere on the substrate. So cds1's fork is FORCED:")
-    print("  Delta_S -> (D1) holds, phase leg derived, open item is c_k assembly")
-    print("  Delta_L -> (D1) unavailable, only KZ/Kohno-Drinfeld remains for alpha")
-    print("There is no option in which both the 11-crossing element and (D1) survive.")
-    return 0
+    print(f"\n{'FAILED: ' + ', '.join(FAILED) if FAILED else 'All checks passed.'}")
+    return 1 if FAILED else 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())
