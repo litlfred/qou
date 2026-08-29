@@ -490,4 +490,60 @@ theorem qcollatz_no_front_loaded_periodic_orbit (q : R) (w : ℕ → Bool) (P : 
   qcollatz_no_front_loaded_cycle φ q (P 0) w hq k D hDk hfront hm hcontract
     (qcollatz_word_forces q w P k hstep hcyc)
 
+
+/-! ## Where the criterion stops — a proved limitation
+
+`qcollatz_no_cycle_of_height_lt` is evaluable for every word, and
+`computations/qcollatz_height_criterion_coverage.py` evaluates it over all `2^k`
+words for `k ≤ 18`. Two facts come out of that sweep, and the second is provable
+rather than merely observed.
+
+*Measured.* The excluded fraction does not grow with `k` — it **declines**,
+`0.375` at `k = 3` down to `0.319` at `k = 18`, monotonically from `k = 5` on. So
+the criterion does not asymptotically cover the word space.
+
+*Proved, below.* More sharply, the criterion **cannot fire at all** unless
+`2^k > 2·3^m − 2^m`. The reason is the lower height bound: every word has
+`φ(n_w) ≥ 3^m − 2^m`, so once the denominator height `2^k − 3^m` drops to that
+level there is no room left.
+
+The consequence is the useful part. A genuine cycle needs its holonomy near one,
+i.e. `2^k/3^m ≈ 1`; the criterion needs `2^k/3^m > 2 − (2/3)^m`, i.e. roughly
+`2^k > 2·3^m`. **Those two regimes are disjoint.** The criterion is strong away
+from the critical ratio `m/k ≈ log 2 / log 3` and empty at it — which the sweep
+sees directly: at `k = 18` exclusion reaches `m ≤ 10` while the denominator stays
+positive to `m = 11`, and that critical band of 31824 words has *no* exclusions.
+
+This bounds the whole height approach, `qcollatz_no_adj_tail_cycle` and
+`qcollatz_no_front_loaded_cycle` included: pushing the criterion further cannot
+reach cycle candidates. Closing the cycle question needs an invariant that
+survives at `2^k ≈ 3^m`, which the `q = 1` height provably does not. -/
+
+/-- **The height criterion is vacuous below the threshold.** If
+    `2^k ≤ 2·3^m − 2^m` then no word satisfies `φ(n_w) < 2^k − 3^m`, so
+    `qcollatz_no_cycle_of_height_lt` cannot fire for any word at all.
+
+    Complementary to `qcollatz_no_front_loaded_cycle`, whose hypothesis at
+    `D = m` is exactly `2·3^m − 2^m < 2^k`: the criterion is available above the
+    threshold and provably unavailable below it. -/
+theorem height_criterion_vacuous_below_threshold (q : R) (w : ℕ → Bool)
+    (hq : φ q = 1) (n : ℕ)
+    (hthr : (2 : ℤ) ^ n ≤ 2 * 3 ^ oddCount w n - 2 ^ oddCount w n) :
+    ¬ (φ (wordNum q w n) < 2 ^ n - 3 ^ oddCount w n) := by
+  have hlow := wordNum_map_lower φ q w hq n
+  intro hlt
+  linarith
+
+/-- **A cycle's own regime is below that threshold.** If the holonomy ratio is
+    near one in the sense `2^k < 2 · 3^m − 2^m` — which includes every
+    `2^k ≤ 3^m`, and more generally everything up to nearly twice `3^m` — the
+    criterion is unavailable. Since a bounded cycle value forces `2^k` close to
+    `3^m`, cycle candidates sit inside this regime. -/
+theorem cycle_regime_is_below_threshold (m k : ℕ) (hm : 1 ≤ m)
+    (hnear : (2 : ℤ) ^ k ≤ 3 ^ m) :
+    (2 : ℤ) ^ k ≤ 2 * 3 ^ m - 2 ^ m := by
+  have h2 : (2 : ℤ) ^ m < 3 ^ m :=
+    pow_lt_pow_left₀ (by norm_num) (by norm_num) (by omega)
+  linarith
+
 end QOU.AppendixSurreals.CollatzGeneralWord
