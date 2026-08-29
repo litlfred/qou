@@ -1,11 +1,11 @@
 ---
 # qou-961o
 title: 'GAP: markovZ names 13 Lean declarations across both conventions'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-29T08:05:54Z
+updated_at: 2026-08-29T10:15:00Z
 ---
 
 Measured 2026-08-29 on main (PR #5972). `grep -rn --include=*.lean "^\s*(noncomputable\s+)?(private\s+)?def\s+markovZ\b" content/` returns THIRTEEN declarations of the same name carrying two different functions:
@@ -75,3 +75,39 @@ build would evict the restore. Measured recipe that works here:
 NOT done in PR #5972 because a rename touching three files needs each one
 lean-verified and the session budget went to the computations/ surface, where
 the finding was larger. Deliberately left rather than half-done.
+
+---
+
+2026-08-29 (fervent-noether): the TWO convention-C **VALUE** declarations — the
+genuinely-misleading ones, and the source of the stale-`rfl` bug this bean
+records — are renamed `markovZ → markovZC` and lean-direct verified (exit 0,
+v4.24.0, restored cache):
+
+- `QOU/QBeta/EigenphaseCarrierVacuity.lean` (namespace `QOU.QBeta.EigenphaseCarrier`)
+- `nuclear-interactions/q-beta-cos-resummation.lean` (namespace `QOU.Interactions`;
+  its `eigenphase_bar_involution` proof `unfold markovZC` updated). The
+  `QBetaSpectralBridge.markovZ` cross-reference at line 57 is preserved (it names
+  the sibling's D object, correctly). Both are file-local (no cross-file qualified
+  refs), so the renames are self-contained. `markovZ` no longer carries a
+  convention-C **value** anywhere; the spanning-C-vs-D defect is fixed.
+
+- **q-beta-cos-resummation.qa.json** `source_hashes.lean` / `lean_statement` now
+  drift (pure Lean-internal rename). Could NOT `qa-sweep`-refresh:
+  folio-assistant is not set up in this container. No criterion verdict changes
+  under a rename (proof still compiles; voice/q-usage/wall-side/proof-* all
+  unaffected). Needs a qa-sweep refresh when the pipeline is available.
+
+**NEW FINDING on the third site (HoefsmitV21.markovZ) — it is NOT a rename, it is
+a consolidation decision.** The bean proposed `markovKernel` for it "matching the
+existing MarkovConventionSeparation.markovKernel." Measured: that file
+(`QOU/BraidKnot/MarkovConventionSeparation.lean`) is an **ORPHAN — imported
+nowhere** (not by `BraidKnot.lean`, not by `QOU.lean`, by no file), and it
+already owns `QOU.BraidKnot.markovKernel` (identical `u/(u²+1)`), plus honest
+`markovZC` / `markovZD`. HoefsmitV21's `markovZ` is a **redundant duplicate** of
+that orphan's kernel, in the SAME namespace `QOU.BraidKnot`. So renaming it to
+`markovKernel` would create two `QOU.BraidKnot.markovKernel` (latent clash the
+moment anything imports both). It is also convention-**NEUTRAL** (a kernel, not a
+C value), so it is not part of the misleading-spanning defect. The right move is
+a consolidation — either fold HoefsmitV21's kernel onto the orphan's
+`markovKernel`, or delete/inline the orphan — which is a framed follow-up, not
+this rename. Left in-progress for that decision.

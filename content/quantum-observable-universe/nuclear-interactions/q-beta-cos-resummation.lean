@@ -36,7 +36,9 @@ namespace QOU.Interactions
     **Convention C, deliberately, and this file cannot be migrated to D by
     swapping the body** (bean `qou-cxjq`, 2026-08-26).
 
-    `markovZ` here is `1/(√q + 1/√q) = √q/(q+1)` — convention C. The
+    `markovZC` here is `1/(√q + 1/√q) = √q/(q+1)` — convention C (named
+    `markovZC`, not `markovZ`, per bean `qou-961o`, so the name never spans
+    conventions; the canonical Markov parameter is convention D). The
     migration was attempted and **Lean rejected it**, which turned out to be
     the right answer rather than a proof-engineering problem: the file's
     bar-antisymmetry result needs `z` to be **bar-even**, and
@@ -55,18 +57,19 @@ namespace QOU.Interactions
     side rather than the Markov parameter.
 
     **The `rfl` agreement with `QBetaSpectralBridge.markovZ` is GONE**, and that
-    is the point: that sibling migrated to D in this same tranche, so the two
-    `markovZ` definitions now differ. The original docstring's claim that they
-    "agree by `rfl`" has been removed rather than left to rot — it was true and
-    is no longer, which is exactly the kind of stale cross-reference the
-    five-way `markovZ` overload was built out of. -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+    is the point: that sibling migrated to D in this same tranche, so this
+    file's `markovZC` and the sibling's `markovZ` now differ. The original
+    docstring's claim that they "agree by `rfl`" has been removed rather than
+    left to rot — it was true and is no longer, which is exactly the kind of
+    stale cross-reference the `markovZ` overload was built out of (bean
+    `qou-961o`: this C value is renamed `markovZC` so the name stops spanning). -/
+noncomputable def markovZC (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Hecke-Skein quantum-integer differential `h(q) = q - q⁻¹`. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
 /-- Single-wrap transfer-matrix eigenphase on the 2-d irrep `V_{(2,1)}`. -/
-noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ q - 1) * heckeH q / 2
+noncomputable def eigenphase (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
 
 /-! ## Markov-cyclicity ⇒ even resummation
 
@@ -90,14 +93,14 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
   -- by unfolding both sides and using:
   --   √(q⁻¹) = 1/√q                            (Real.sqrt_inv)
   --   (q⁻¹)⁻¹ = q                              (inv_inv)
-  -- which makes markovZ(q⁻¹) syntactically equal to markovZ(q),
+  -- which makes markovZC(q⁻¹) syntactically equal to markovZC(q),
   -- and heckeH(q⁻¹) = q⁻¹ - q = -(q - q⁻¹) = -heckeH(q).
   have hq_ne : q ≠ 0 := ne_of_gt hq
   have hsq_ne : Real.sqrt q ≠ 0 := by
     rw [ne_eq, Real.sqrt_eq_zero (le_of_lt hq)]; exact hq_ne
-  unfold eigenphase markovZ heckeH
+  unfold eigenphase markovZC heckeH
   rw [Real.sqrt_inv]
-  -- markovZ(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZ(q)
+  -- markovZC(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZC(q)
   -- heckeH(q⁻¹) factor: q⁻¹ - (q⁻¹)⁻¹ = q⁻¹ - q
   have h_sqrt_inv_inv : (Real.sqrt q)⁻¹⁻¹ = Real.sqrt q := inv_inv _
   have h_q_inv_inv : q⁻¹⁻¹ = q := inv_inv _
