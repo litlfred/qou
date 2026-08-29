@@ -11,5 +11,17 @@
     "5. Commit it here. Do NOT edit the audited source to make the site disappear; that is AGENTS.md 1a audit-dodging.",
     "6. If the site's source line later changes, the entry stops matching and the site blocks again. That is intended: the adjudication was about that expression, and it is now a different one. The audit lists such entries as `stale` (non-blocking) so they can be pruned or renewed."
   ],
-  "entries": []
+  "entries": [
+    {
+      "path": "computations/probes/he4_body_order_shortfall_location_probe.py",
+      "target": "<return>",
+      "source_hash": "6a3e1d0c3e9c",
+      "line_at_adjudication": 102,
+      "scope": "z_of",
+      "rationale": "`z_of(q, convention)` is a two-arm frame-comparison helper: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe calls both to measure the frame difference in the He-4 body-order shortfall. The function's own docstring scopes the C arm 'excised - computed here ONLY to measure the frame difference, never wired'. Binding only z_D would delete the comparison the probe exists to make. NOTE: --propose-ledger does NOT stub this site, because its D arm is a CALL (`markov_z(q)`) rather than an inline z_D binding, so the co-binding hint does not fire. Adjudicated by hand for that reason; see bean qou-1jny.",
+      "adjudicated_by": "claude (session 2b6a2d13)",
+      "date": "2026-08-29",
+      "bean": "qou-1jny"
+    }
+  ]
 }
