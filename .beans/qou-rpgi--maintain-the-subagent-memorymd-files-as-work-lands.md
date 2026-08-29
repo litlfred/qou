@@ -1,11 +1,11 @@
 ---
 # qou-rpgi
 title: Maintain the subagent MEMORY.md files as work lands
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:24:44Z
-updated_at: 2026-08-29T10:56:09Z
+updated_at: 2026-08-29T10:58:40Z
 parent: qou-j5jq
 ---
 
@@ -41,3 +41,7 @@ is measurably false and is corrected on this branch.
 
 Recorded as a TRAP; baseline refreshed; `q0-pin-migration.md` split out to keep
 MEMORY.md inside the 200-line injection cap.
+
+Merged as #6010 (5ed07e4). Bean returns to `todo` — this is a standing obligation, not a task that completes.
+
+Left open for the author: whether `markovZc` or `markovZC` is the one to rename. Flagged on #5999, not actioned.
