@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T00:09:27.616321+00:00",
-  "commitSha": "9e0be429156cafcd0ff4fe39bb727e4b12474e2f",
+  "computedAt": "2026-08-29T00:35:48.093963+00:00",
+  "commitSha": "897bfa7b5676eba8a8c65ac13dc04e0bc7b93513",
   "assertions": [
     {
       "name": "no_q0_flip",
-      "computed": 30,
+      "computed": 27,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -44,7 +44,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 994,
+      "Q0_OK": 997,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 45,
@@ -56,7 +56,7 @@
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
-      "Q0_FLIP": 30
+      "Q0_FLIP": 27
     },
     "match_prefix_digits": 14,
     "by_verdict": {
@@ -8548,6 +8548,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-interpolation-wlambda.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "hbond-categorical-action.witness.json",
           "detail": ""
         },
@@ -10020,6 +10024,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3even-exact-sseries.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c4even-ladder-reconstruction.witness.json",
           "detail": ""
         },
@@ -10117,6 +10125,10 @@
         },
         {
           "witness": "qbeta-dladder-barodd-borel-pade-laplace.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-dladder-ecalle-acceleration.witness.json",
           "detail": ""
         },
         {
@@ -10806,10 +10818,6 @@
           "detail": "q0Values[muon]=1.10997859555733… (expected 1.109978595642…) — a comparison mislabelling one of its own legs is the flip-flop bug with extra steps"
         },
         {
-          "witness": "habiro-interpolation-wlambda.witness.json",
-          "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
-        },
-        {
           "witness": "hadron-knot-table.witness.json",
           "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
         },
@@ -10846,15 +10854,7 @@
           "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
         },
         {
-          "witness": "qbeta-c3even-exact-sseries.witness.json",
-          "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
-        },
-        {
           "witness": "qbeta-c4even-exact-sseries.witness.json",
-          "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
-        },
-        {
-          "witness": "qbeta-dladder-ecalle-acceleration.witness.json",
           "detail": "anchor=muon but q0Value=1.10997859555733… (expected 1.109978595642…)"
         }
       ],
