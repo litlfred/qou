@@ -1,5 +1,8 @@
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Any product of linear factors in ONE Hecke generator is linear in that generator
@@ -126,5 +129,57 @@ with the product without pinning what the fold *is*. -/
 theorem collapseFold_singleton (h c d : R) :
     collapseFold h [(c, d)] = (c, d) := by
   simp [collapseFold, collapseStep]
+
+/-! ## The Markov trace of the collapsed element, and the distance to the Φ_q pole
+
+`mass_endomorphism.additive_wedderburn_volumes` runs exactly `collapseStep`
+(`a, b = a*c*HA + a*d + b*c, a*c + b*d`) and then takes the Markov trace of the
+result, `Vs = z_mark * a + b`, using `tr(σ) = z` and `tr(1) = 1`.  So the whole
+V̂ is an **affine function of the Markov parameter `z`**, with slope the
+σ-coefficient the collapse produced.
+
+That matters because `Φ_q(V̂) = ∏_k (1 - q^{-k} V̂)^{-1}` has a pole at
+`V̂ = q`, and the 2026-08-15 owner ruling moved `z` from convention C
+(`√q/(q+1) ≈ 0.4993`) to convention D (`q³/(q²+1) ≈ 0.6127`) — a 22.7 %
+increase.  Bean `qou-dchz` records that several Φ_q towers which converged
+under C emit `+inf` under D.
+
+`vHat_margin` is why a convention change can do that: the margin to the pole,
+measured in `z`, is the margin measured in `V̂` **divided by `α`**.  A large
+σ-coefficient means a small change in the convention is a large change in the
+distance to the singularity.  It is the conditioning statement, exactly. -/
+
+/-- The Markov trace of a collapsed element `α·σ + β`, with `tr(σ) = z`,
+`tr(1) = 1`.  This is `Vs = z_mark * a + b` in `additive_wedderburn_volumes`. -/
+def vHat (z : R) (ab : R × R) : R := z * ab.1 + ab.2
+
+/-- `vHat` is affine in the Markov parameter, with slope the σ-coefficient.
+Changing convention moves V̂ by `Δz · α` and by nothing else. -/
+theorem vHat_sub_vHat (z z' : R) (ab : R × R) :
+    vHat z' ab - vHat z ab = (z' - z) * ab.1 := by
+  simp only [vHat]; ring
+
+/-- **The conditioning statement.**  The margin from the current Markov
+parameter to the one that would put V̂ exactly on the Φ_q pole at `q` is the
+V̂-margin divided by the σ-coefficient.
+
+So `α` is the amplification from "how far the convention moved" to "how far the
+pole moved": with `α` small the tower is insensitive to the C→D change, and with
+`α` large a 22.7 % shift in `z` can cross the singularity. -/
+theorem vHat_margin {R : Type*} [Field R] (q b z : R) {α : R} (hα : α ≠ 0) :
+    (q - vHat z (α, b)) / α = (q - b) / α - z := by
+  simp only [vHat]
+  field_simp
+  ring
+
+/-- The pole is hit at exactly one Markov parameter, when the element carries a
+nonzero σ-coefficient. -/
+theorem vHat_eq_iff {R : Type*} [Field R] (q b : R) {α : R} (hα : α ≠ 0) (z : R) :
+    vHat z (α, b) = q ↔ z = (q - b) / α := by
+  simp only [vHat]
+  rw [eq_div_iff hα]
+  constructor
+  · intro h; linear_combination h
+  · intro h; linear_combination h
 
 end QOU.BraidsAndKnots
