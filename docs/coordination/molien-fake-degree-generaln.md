@@ -33,3 +33,13 @@ valuable). Conventions differ: #5948 balanced `[m]_q`, content `κ_λ`; #5970 Ma
 | Date | PR | Event |
 |------|----|-------|
 | 2026-08-29 | #5948 | n=3,4 full Molien=Jones–Markov identity (Wenzl-independent) Lean-proved; general-n reduced to addable-box hook identity (B) via induction (sorry-free skeleton); GAP-2 He4 = Milnor-indeterminacy exclusion. Convergence flagged to #5970. |
+
+## RESOLVED 2026-08-29 — the telescope closes it
+
+The convergence question is answered **YES**: #5970's `telescope_generalX` (all X) closes
+`normalizedSum n q = 1` via the X=0 specialisation + the `(Q=q², X=0)` convention bridge
+(exact `n≤5`, `fake_degree_via_telescope_probe.py`; audit
+`2026-08-29-normalizedsum-closes-via-telescope.md`). `qou-3quc` is no longer open math —
+only mechanical Lean bridging remains (per-cell brick `one_sub_qsq_pow_eq` landed sorry-free
+in #5975). The induction/(B) route is now an independent second proof. Posted on #5970
+(issuecomment-5461309188).

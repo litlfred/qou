@@ -1,0 +1,60 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T08:21:59.083477+00:00",
+  "commitSha": "3445329bd017c4f66040cbb8347b323d2d5ac6ad",
+  "assertions": [
+    {
+      "name": "convention_bridge_q2_X0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam), exact n<=5"
+    },
+    {
+      "name": "telescope_at_X0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum f schurElement(q^2,0) = (1/(1-q^2))^n, exact n<=5"
+    },
+    {
+      "name": "normalizedSum_eq_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "chain closes normalizedSum n q = 1, exact n<=5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "fake-degree-via-telescope",
+  "scriptFile": "fake_degree_via_telescope_probe.py",
+  "scriptHash": "3e5ad10806ae",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/fake_degree_via_telescope_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/fake_degree_via_telescope_probe.py"
+  },
+  "description": "beans qou-3quc/qou-x4zl: normalizedSum n q = 1 (the open general-n fake-degree residual) CLOSES via the corpus general-X Macdonald telescope at X=0. Per-lambda: q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam) = schurElement(q^2,0,lam)*(1-q^2)^n; telescope_generalX@X=0: Sum f schurElement(q^2,0) = (1/(1-q^2))^n; chain gives 1. Verified exact n<=5. Remaining Lean work is MECHANICAL bridging (convention + Nat.Partition<->YoungDiagram carrier), no open math. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-normalizedsum-closes-via-telescope.md",
+  "data": {
+    "route": "normalizedSum = (1-q^2)^n * Sum f schurElement(q^2,0) = (1-q^2)^n*(1/(1-q^2))^n = 1",
+    "free_parameters": 0
+  }
+}
