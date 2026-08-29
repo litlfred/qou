@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-08-29T03:02:08Z
+updated_at: 2026-08-29T07:42:48Z
 ---
 
 Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not
@@ -166,3 +166,55 @@ Also fixed the #5942 PR body, which still asserted the route-1 3.812e6 and the
 'AGENTS.md is ~0.7% stale' claim I had already retracted in a comment. A
 retracted claim left standing in a PR body is the same defect class this bean
 exists to drain.
+
+## The twin guard, and the claim it corrected — 2026-08-29 (PR #5942)
+
+MY OWN CLAIM WAS WRONG. This bean and the PR body said ck-dk-registry.json
+"has no validator at all". It has one, ck_dk_registry_validate.py. The real
+defect is narrower and more interesting: the validator opens ONE file. All
+three of its checks are JSON-internal, while the JSON meta.description says
+"Tiers and wiring MUST agree between the two" and nothing checked that. Second
+half: the validator was named in exactly ONE place, a prose link inside the
+document it validates, so nothing ever ran it.
+
+Added T1 coverage / T2 tiers / T3 wiring / T4 pinned figures (twin), plus T5
+dashboard-vs-witness, and wired it into scripts/check-sidecars.sh.
+
+T5 IS SEPARATE ON PURPOSE, and this registry is why. Twin agreement is
+necessary but NOT SUFFICIENT: both files said "2/7 beats-100x" citing
+summary.beats_100x_count, so they AGREED and any file-vs-file diff passes them
+both — while both were wrong the way AGENTS.md rules out explicitly (that field
+counts the calibration inputs m_e and m_p; m_e error is DEFINED zero). A twin
+checker that only compared the twins would have certified the error. T5 checks
+each file against the witness instead.
+
+TWO LIVE DIVERGENCES FOUND BY RUNNING IT:
+
+1. The c_3 swing had drifted the OPPOSITE WAY from the slope. .md had the
+   corrected 3.84e6 slope + the STALE -2.88% swing; JSON had the live -2.375%
+   swing + the stale slope. Each file was ahead of the other on a different
+   number IN THE SAME TABLE CELL. This is the finding that justifies a
+   mechanical check over care: reading either file alone, in full, finds
+   nothing wrong.
+
+2. The forbidden 2/7 framing in both twins AND IN THE VALIDATOR, which printed
+   dashboard_beats_100x on every green run — a propagation route for the
+   framing rather than a guard against it.
+
+TWO BUGS MY OWN SELFTEST CAUGHT IN MY OWN CHECKS, both being repo-documented
+failure modes I reproduced anyway:
+
+- T2 matched tier words against the WHOLE status cell. Setting c_2 tier to
+  "refuted" did not fire, because c_2 cell says "the implied empirical c2 under
+  convention D" further along and the substring matched that prose. These cells
+  are paragraphs citing other tiers by name. Fixed: leading **...** verdict
+  token only.
+- The forbidden-field check fired on the note EXPLAINING the ban — the same
+  tripwire #5923 rebuilt, where writing the correct thing down failed the check
+  that it had not been done. Fixed: ignore blockquotes (this doc annotation
+  register), both directions pinned in selftest.
+
+DESIGN RULE worth carrying: every extractor RAISES TwinParseError rather than
+returning empty, and --selftest asserts a shape change raises. A markdown
+scraper that cannot find its table must report "cannot check", never "nothing
+wrong" — the failure that nearly shipped twice this session.
