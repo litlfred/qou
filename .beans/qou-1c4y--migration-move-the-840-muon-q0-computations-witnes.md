@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-29T01:09:43Z
+updated_at: 2026-08-29T05:10:54Z
 ---
 
 
@@ -1540,3 +1540,34 @@ producer resolves or hardcodes* before sizing. The resolving set is a
 re-run; the 248 hardcodes are edits, each one changing every number that
 producer prints — so each needs its own verdict-robustness check of the kind
 done above, not a blanket regeneration.
+## 2026-08-29 — second drain pass (PR #5950): 47 -> 5 flips
+
+Ran the proton migration under the recorded owner authorisation. Gates:
+q0-anchor flip 47 -> 5, q0-value drift 318/101 -> 240/26, refill ratchet green
+(NEW 0), raw-float64 NEW 0 / REGRESSED 0. No baseline widened.
+
+THE PARTITION THIS BEAN ASKED FOR, MEASURED. Of the 45 producers behind the 47
+flips, **25 hardcode a q0 literal in EXECUTABLE code** (AST-checked). For those
+a bare re-run does not migrate — it writes `q0Anchor: proton` onto a payload
+computed with frozen muon A, i.e. replaces a truthful contradiction with a
+silent one. All 25 were run, inspected and reverted; 17 were then migrated at
+the source with a per-producer verdict-robustness check.
+
+THE MANIFEST GATES THE STALENESS CHECK. A producer that declares no anchor
+inherits the previous run's pin unless judged stale, and staleness needs either
+payload evidence or `q0_anchor_is_declared`. 40 of 48 had an UNLISTED stem, so
+their stale pair was immune to any number of re-runs. That is why constraint 4
+is load-bearing rather than procedural.
+
+Also: 11 producers falsely declared `q0_anchor=False` (deleting the stamp every
+run); `main`'s `a-K-via-lp-dual-full` active_set disagreed with its own y_star
+in all six atoms; `low_isotope_sign_flip_diagnostic` fixed (its TypeError was a
+string/float boundary, and the naive fix would have added float64 aggregation).
+
+NOT LANDED: the c3even/c4even ladder re-run. It moves `c2_even` -8.00641 ->
+-7.45876, and that is NOT the pin — origin/main's producer with its frozen
+muon-A literal produces the identical value. It is qou-cds1's C->D
+re-derivation surfacing through a witness that predates its own producer.
+
+Remaining 5 flips, all with stated reasons, in
+docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md.
