@@ -191,14 +191,28 @@ uniform family**, and gives the first point of contact between it and a
 concrete rank: `toAdjoinRoot : IwahoriHecke K q 1 →ₐ[K] AdjoinRoot (X²-(q-1)X-q)`,
 with `toAdjoinRoot_σ` (non-degeneracy: `σ₀ ↦ root`) and `root_quad`.
 
-**It is deliberately not claimed to be an isomorphism.** The inverse is blocked
-on a named Mathlib gap, now bean `qou-vu2d`: `AdjoinRoot.liftHom` requires a
-**commutative** target; `IwahoriHecke K q 1` carries only `Ring`; `RingQuot`
-inherits `CommRing` solely from a `CommRing` base
-(`Mathlib/Algebra/RingQuot.lean:362`); and Mathlib has **no**
-`CommRing (FreeAlgebra K (Fin 1))` and no `FreeAlgebra K (Fin 1) ≃ₐ[K] K[X]` to
-transport one along. That is a small, self-contained, independently worthwhile
-Mathlib contribution — and a far better specified gap than "the `T_w` basis".
+**Update, same day — the isomorphism landed, and my "blocked" was wrong.** The
+first version of this section recorded the inverse as blocked on a Mathlib gap:
+`AdjoinRoot.liftHom` needs a *commutative* target, `IwahoriHecke K q 1` carries
+only `Ring`, `RingQuot` inherits `CommRing` solely from a `CommRing` base, and
+Mathlib has no `CommRing (FreeAlgebra K (Fin 1))`. Every one of those statements
+is **true**; the conclusion drawn from them was **false**.
+
+`AdjoinRoot.liftHom` is not the only way out of an `AdjoinRoot`. Mathlib carries
+`Polynomial.eval₂AlgHom'`, which evaluates into a **noncommutative** algebra
+given only that the scalars commute with the chosen element — supplied by
+`Algebra.commutes` — and `Ideal.Quotient.liftₐ`, which descends it through the
+quotient. Composing the two builds the inverse with no commutativity hypothesis
+anywhere. So the file now carries `rankOneEquiv : IwahoriHecke K q 1 ≃ₐ[K]
+AdjoinRoot (X²-(q-1)X-q)` and `commute_rankOne`, with commutativity of `H₂(q)`
+falling out as a *corollary* of the isomorphism rather than being a prerequisite
+for it. Bean `qou-vu2d` is **scrapped** as dissolved.
+
+This is the scope-(a)/(b) discipline failing in miniature, on my own work and
+inside the very audit that restates it: *"this construction, via this API, does
+not go through"* is a scope-limited negative about a route. It is not a
+structural exclusion. No invariant forbade the inverse — only the obvious lemma
+did not apply, and I wrote that down as though it were a wall.
 
 No new class was introduced: discharging a class by adding another that assumes
 the same content is the anti-laundering failure.
