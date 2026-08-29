@@ -200,17 +200,27 @@ theorem mulGen_mulGen_single (A : R) (s : Equiv.Perm (Fin m)) (hs : s * s = 1)
       if_pos hlt, smul_add, Finsupp.smul_single, smul_eq_mul]
 
 
-/-- **The relation, unconditionally, at the fresh top generator.** For a
-permutation fixing the top point the length hypothesis is discharged by
-`JetGradeLengthShift.length_mul_sTop`, so nothing is assumed.
+/-- **The Hecke relation at the fresh top generator, with nothing assumed.**
+`JetGradeLengthShift.length_mul_sTop_ne` discharges the hypothesis for *every*
+permutation -- the length always moves, rising by one when `(sub, top)` was not
+an inversion and falling by one when it was.
 
-This is what stops `mulGen_mulGen_single` from being a vacuous statement about
-an unsatisfiable hypothesis: here the hypothesis is a theorem. -/
-theorem mulGen_mulGen_single_top (A : R) {w : Equiv.Perm (Fin (n + 2))}
-    (hw : w top = top) (c : R) :
+This is what stops `mulGen_mulGen_single` being a vacuous statement about an
+unsatisfiable hypothesis: at `sTop` the hypothesis is a theorem, for all `w`. -/
+theorem mulGen_mulGen_single_top (A : R) (w : Equiv.Perm (Fin (n + 2))) (c : R) :
     mulGen A sTop (mulGen A sTop (Finsupp.single w c))
       = A • mulGen A sTop (Finsupp.single w c) + Finsupp.single w c :=
-  mulGen_mulGen_single A sTop (Equiv.swap_mul_self _ _)
-    (by rw [length_mul_sTop hw]; omega) c
+  mulGen_mulGen_single A sTop (Equiv.swap_mul_self _ _) (length_mul_sTop_ne w) c
+
+/-- The relation on a general element, by linearity. -/
+theorem mulGen_mulGen_top (A : R) (x : Hecke R (n + 2)) :
+    mulGen A sTop (mulGen A sTop x) = A • mulGen A sTop x + x := by
+  classical
+  induction x using Finsupp.induction_linear with
+  | zero => simp [mulGen, Finsupp.sum_zero_index]
+  | add p q hp hq =>
+      simp only [mulGen_add, smul_add, hp, hq]
+      abel
+  | single w c => exact mulGen_mulGen_single_top A w c
 
 end QOU.Knot.HeckeTwBasis

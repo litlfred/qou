@@ -169,4 +169,92 @@ theorem length_mul_sTop {w : Equiv.Perm (Fin (n + 2))} (hw : w top = top) :
   rw [length, length, invSet_mul_sTop hw, Finset.card_insert_of_notMem hnot,
     Finset.card_image_of_injective _ phi_injective]
 
+
+/-! ## The length always moves, for every permutation
+
+`length_mul_sTop` needs `w` to fix the top point. That hypothesis is not needed
+for the weaker statement that the length *changes*, and the weaker statement is
+what the Hecke relation requires -- if the length could stay put, the descending
+branch of the right-action rule would be taken twice and `T_s^2 = A T_s + 1`
+would fail.
+
+The bijection `phi` never used any hypothesis on `w` (see `sTop_lt_sTop`), so it
+generalises verbatim. Only the special pair needs care, and there the two
+alternatives are exhaustive: `(sub, top)` is an inversion of `v * sTop` exactly
+when it is *not* one of `v`, because right multiplication by `sTop` exchanges
+the values at those two points and a permutation cannot take the same value
+twice. So the count moves by exactly one, in one direction or the other. -/
+
+theorem mem_invSet_sub_top {v : Equiv.Perm (Fin (n + 2))} :
+    ((sub : Fin (n + 2)), top) ∈ invSet v ↔ v top < v sub := by
+  rw [mem_invSet]
+  exact ⟨fun h => h.2, fun h => ⟨sub_lt_top, h⟩⟩
+
+/-- The fresh generator flips the status of the one pair it can see. -/
+theorem mem_invSet_sub_top_mul {v : Equiv.Perm (Fin (n + 2))} :
+    ((sub : Fin (n + 2)), top) ∈ invSet (v * sTop) ↔ ¬ (((sub : Fin (n + 2)), top) ∈ invSet v) := by
+  have hne : v sub ≠ v top := fun h => absurd (v.injective h) (ne_of_lt sub_lt_top)
+  rw [mem_invSet_sub_top, mem_invSet_sub_top, Equiv.Perm.mul_apply, Equiv.Perm.mul_apply,
+    Equiv.swap_apply_left, Equiv.swap_apply_right, not_lt]
+  exact ⟨fun h => le_of_lt h, fun h => lt_of_le_of_ne h hne⟩
+
+/-- **Every other pair transports**, with no hypothesis on `v` at all. -/
+theorem invSet_erase_image (v : Equiv.Perm (Fin (n + 2))) :
+    (invSet (v * sTop)).erase ((sub : Fin (n + 2)), top)
+      = ((invSet v).erase ((sub : Fin (n + 2)), top)).image phi := by
+  ext q
+  simp only [Finset.mem_erase, Finset.mem_image]
+  constructor
+  · rintro ⟨hqne, hq⟩
+    refine ⟨phi q, ⟨?_, ?_⟩, phi_phi q⟩
+    · intro hc
+      have hq2 : q = ((top : Fin (n + 2)), sub) := by
+        have := congrArg phi hc
+        rwa [phi_phi, phi_sub_top] at this
+      rw [hq2, mem_invSet] at hq
+      exact absurd hq.1 (not_lt.mpr (le_of_lt sub_lt_top))
+    · rw [mem_invSet] at hq ⊢
+      obtain ⟨hlt, hinv⟩ := hq
+      refine ⟨sTop_lt_sTop hlt hqne, ?_⟩
+      simpa [phi, Equiv.Perm.mul_apply, Equiv.swap_apply_self] using hinv
+  · rintro ⟨p, ⟨hpne, hp⟩, rfl⟩
+    refine ⟨?_, ?_⟩
+    · intro hc
+      have hp2 : p = ((top : Fin (n + 2)), sub) := by
+        have := congrArg phi hc
+        rwa [phi_phi, phi_sub_top] at this
+      rw [hp2, mem_invSet] at hp
+      exact absurd hp.1 (not_lt.mpr (le_of_lt sub_lt_top))
+    · rw [mem_invSet] at hp ⊢
+      obtain ⟨hlt, hinv⟩ := hp
+      refine ⟨sTop_lt_sTop hlt hpne, ?_⟩
+      simpa [phi, Equiv.Perm.mul_apply, Equiv.swap_apply_self] using hinv
+
+/-- **The length always moves.** For every permutation -- no hypothesis at all --
+right multiplication by the fresh generator changes the Coxeter length. It rises
+by one when `(sub, top)` was not an inversion and falls by one when it was, so in
+particular it is never left where it was.
+
+This is what the Hecke relation needs: if the length could stay put, the
+descending branch of the right-action rule would be taken twice and
+`T_s^2 = A T_s + 1` would fail. -/
+theorem length_mul_sTop_ne (v : Equiv.Perm (Fin (n + 2))) :
+    length (v * sTop) ≠ length v := by
+  have hcard : ((invSet (v * sTop)).erase ((sub : Fin (n + 2)), top)).card
+      = ((invSet v).erase ((sub : Fin (n + 2)), top)).card := by
+    rw [invSet_erase_image, Finset.card_image_of_injective _ phi_injective]
+  by_cases hv : ((sub : Fin (n + 2)), top) ∈ invSet v
+  · have hnv : ((sub : Fin (n + 2)), top) ∉ invSet (v * sTop) :=
+      fun h => (mem_invSet_sub_top_mul.mp h) hv
+    rw [Finset.erase_eq_of_notMem hnv, Finset.card_erase_of_mem hv] at hcard
+    have hpos : 0 < (invSet v).card := Finset.card_pos.mpr ⟨_, hv⟩
+    rw [length, length]
+    omega
+  · have hnv : ((sub : Fin (n + 2)), top) ∈ invSet (v * sTop) :=
+      mem_invSet_sub_top_mul.mpr hv
+    rw [Finset.erase_eq_of_notMem hv, Finset.card_erase_of_mem hnv] at hcard
+    have hpos : 0 < (invSet (v * sTop)).card := Finset.card_pos.mpr ⟨_, hnv⟩
+    rw [length, length]
+    omega
+
 end QOU.Knot.JetGradeLengthShift
