@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T17:40:47Z
+updated_at: 2026-08-29T18:10:41Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -203,3 +203,43 @@ the diagonal HAS that shape — its V_1 table gives d = 0 for the pp pair — so
 D-frame diagonal is conditional on that shape, not derived. Which means the
 1/phi^2 golden-ratio threshold is established as C-frame (previous entry) but its
 D replacement is NOT yet known.
+
+
+## RETRACTION 2026-08-29 — I claimed the diagonal was derived. It is not.
+
+Commit 039910ce46 ("derive P_77 too") is WRONG on its central claim and this
+supersedes it. What it got right: (q-1)/(q+1) == h*z_C^2 exactly, h = q - 1/q.
+What does not follow: that P_77 = z + h z^2 is THE decomposition.
+
+BOTH of these are exact at z_C:
+
+    P_77 = z + (q-1)/(q+1)     constant + degree 1
+    P_77 = z + h z^2           no constant, degree 2
+
+and they DISAGREE at the canonical z. At q0: 0.664811117281 vs 0.691166478358.
+The off-diagonal P_66 carries the same ambiguity — both c0 + c1 z and c1 z + c2 z^2
+reproduce it exactly with coefficients rational in q.
+
+THE REASON IS COUNTABLE. The parity split in s = sqrt(q) gives TWO equations (the
+rational part, the sqrt part). A z-polynomial of degree <= 3 has FOUR unknowns.
+Uniqueness needs the degree and the constant term fixed from outside the data.
+
+WHY Phi SURVIVES AND THE DIAGONAL DOES NOT. `toffoli-transfer-matrix-proof.md`
+STATES Phi's chain: P_flip = V_1 * Delta_0, V_0 = z a_0 + b_0. That forces no
+constant term and degree exactly 2 — two unknowns, two equations, determined. The
+corpus states no such chain for the diagonal. So the difference between "derived"
+and "undetermined" here is a sentence of prose in one block, not a property of the
+arithmetic. I mistook a consistent fit for a derivation, which is the exact error
+class this arc exists to catch.
+
+CONSEQUENCE FOR THE OWNER'S OPTION 1 (correct the blocks to the D forms):
+**it is only half-completable today.** Phi can be corrected. The diagonal cannot,
+so the q_star = 1/phi^2 golden-ratio threshold can be SCOPED as C-frame but not
+replaced. The half-D chapter I named as Option 1's risk is unavoidable without new
+input.
+
+WHAT WOULD SETTLE IT: the Hecke element whose Markov trace is the diagonal. Every
+element of H_3 traces to sum_w c_w z^{|w|} on the normal-form basis [(), (0,), (1,),
+(0,1), (1,0), (0,1,0)], so the element gives all four coefficients at once and the
+D form immediately. Reconstructing the 3-strand Toffoli transfer matrix from the
+braid is the open work, and it is real work, not a sweep.

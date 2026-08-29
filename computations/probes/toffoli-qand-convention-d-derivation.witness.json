@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T18:06:03.543947+00:00",
-  "commitSha": "d60cda35b4e7b367abf37c843583187d7c8cbffb",
+  "computedAt": "2026-08-29T18:09:47.576574+00:00",
+  "commitSha": "039910ce467e9502fc60705c4fcbc05088ff5b30",
   "assertions": [
     {
       "name": "published_Phi_is_A_zC2_plus_B_zC_exactly",
@@ -23,24 +23,24 @@
       "passed": true
     },
     {
-      "name": "published_P77_is_z_plus_h_z2_exactly",
+      "name": "P77_admits_TWO_exact_decompositions_at_zC",
       "computed": 1,
       "expected": 1,
       "passed": true
     },
     {
-      "name": "P77_D_positive_for_all_q_gt_0",
+      "name": "those_two_DISAGREE_at_zD_so_diagonal_undetermined",
       "computed": 1,
       "expected": 1,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 27,
   "computation": "toffoli-qand-convention-d-derivation",
   "scriptFile": "toffoli_qand_convention_d_derivation.py",
-  "scriptHash": "2a6be24b767f",
-  "scriptCommitSha": "9fa43d70b421b6e870efa6e327a0549853634ebc",
+  "scriptHash": "ac850257e233",
+  "scriptCommitSha": "039910ce467e9502fc60705c4fcbc05088ff5b30",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
     ],
     "reproduce": "python3 -u computations/probes/toffoli_qand_convention_d_derivation.py"
   },
-  "description": "Derives the convention-D q-AND amplitude rather than z-swapping it. Splitting the published Phi by parity in sqrt(q) gives Phi = A z^2 + B z with A = (q-1)^2(q+1)^2/(2q) and B = (q-1)(q^2+q+1)/(2(q+1)), both RATIONAL in q, and the decomposition is unique because z_C is not in Q(q). The convention enters through z alone, so Phi_D = A z_D^2 + B z_D = q^3(q-1)(q^6+2q^5+q^4-q^3+q^2+q+1) / (2(q+1)(q^2+1)^2). Its sextic has no real roots, so Phi_D vanishes on (0,inf) only at q = 1. The convention-C threshold at q ~ 0.4656, published as a phase reversal of the q-AND, does not exist under the canonical convention. At q0 both amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives.",
+  "description": "Derives the convention-D q-AND amplitude rather than z-swapping it. Splitting the published Phi by parity in sqrt(q) gives Phi = A z^2 + B z with A = (q-1)^2(q+1)^2/(2q) and B = (q-1)(q^2+q+1)/(2(q+1)), both RATIONAL in q, and the decomposition is unique because z_C is not in Q(q). The convention enters through z alone, so Phi_D = A z_D^2 + B z_D = q^3(q-1)(q^6+2q^5+q^4-q^3+q^2+q+1) / (2(q+1)(q^2+1)^2). Its sextic has no real roots, so Phi_D vanishes on (0,inf) only at q = 1. The convention-C threshold at q ~ 0.4656, published as a phase reversal of the q-AND, does not exist under the canonical convention. At q0 both amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives. The DIAGONAL is NOT derived: two decompositions exact at z_C disagree at z_D, and the corpus states no chain to choose between them.",
   "parameters": {
     "q0": "1.10997858275138080759166909561",
     "A_chain_coefficient": "(q - 1)**2*(q + 1)**2/(2*q)",
@@ -76,16 +76,17 @@
     "Phi_D_at_convention_C_threshold": "-0.0209080982892547310368841080021",
     "Phi_C_at_q0": "0.0495376843629006907569056253187",
     "Phi_D_at_q0": "0.0624697516022889701705696957421",
-    "P77_D_closed_form": "q**3*(q**4 + 1)/(q**2 + 1)**2",
-    "P77_h_coefficient": "(q - 1)*(q + 1)/q",
-    "golden_threshold_q_star": "0.381966011250105151795413165634",
-    "P77_D_at_golden_threshold": "0.0433440700006542778381263639471",
+    "P77_candidate_A_no_constant_deg2": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+    "P77_candidate_B_constant_plus_deg1": "z_D + (q-1)/(q+1)",
+    "P77_candidate_A_at_q0": "0.691166478358444526147719530979",
+    "P77_candidate_B_at_q0": "0.664811117281226792765751883737",
     "P77_C_at_q0": "0.551443414318455993583364700049",
-    "P77_D_at_q0": "0.691166478358444526147719530979",
-    "surviving_thresholds_under_D": "q = 1 only (Phi vanishes; classical limit)"
+    "golden_threshold_q_star": "0.381966011250105151795413165634",
+    "diagonal_status": "UNDETERMINED — two exact decompositions at z_C disagree at z_D; the corpus states no chain for it",
+    "surviving_thresholds_under_D": "for Phi: q = 1 only. For the diagonal: undetermined."
   },
   "caveats": [
-    "Both entries are DERIVED, not z-swapped: each is a z-polynomial with Q(q) coefficients and no constant term (Phi = B z + A z^2, P_77 = z + h z^2), reconstructed symbolically against the published closed forms, so the convention enters through z alone. An earlier revision reported P_77 as conditional because the constant (q-1)/(q+1) looked unstructured; it is h*z_C^2 exactly. NOT covered here: the off-diagonal P_66, whose published form carries q^{7/2} and which this probe does not decompose."
+    "Phi ALONE is derived. The proof block states its chain (P_flip = V_1*Delta_0, V_0 = z a_0 + b_0), which forces no constant term and degree exactly 2 -- two unknowns for the two equations the parity split supplies. The corpus states no such chain for the DIAGONAL, and without it the decomposition is underdetermined: P_77 = z + (q-1)/(q+1) and P_77 = z + h z^2 are BOTH exact at z_C and disagree at z_D (0.6648 vs 0.6912 at q0). P_66 carries the same ambiguity. An earlier revision of this probe claimed the diagonal was derived; that is RETRACTED here. Settling it needs the Hecke element whose Markov trace the diagonal is -- any H_3 element traces to sum_w c_w z^{|w|} on the normal-form basis, so the element gives every coefficient at once."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

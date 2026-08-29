@@ -41,35 +41,36 @@ had the root of q^{3/2} + q^{1/2} - 1 at q ~ 0.4656, which `toffoli-q-and.md`
 reports as a threshold "below which the q-AND changes sign, imparting a phase
 reversal to the target".  UNDER D THAT SECOND THRESHOLD DOES NOT EXIST.
 
-THE DIAGONAL, now derived too.  An earlier revision of this probe reported P_77 as
-CONDITIONAL, because the z-linear fit `z + (q-1)/(q+1)` had no structural backing --
-the proof block's V_1 table gives d = 0 for the pp pair, so that constant was
-unexplained.  It is not a constant.  Measured:
+THE DIAGONAL IS **NOT** DETERMINED, and an earlier revision of this probe said it
+was.  RETRACTED HERE.
 
-    (q - 1)/(q + 1)  ==  h * z_C^2      with h = q - 1/q,
+That revision found (q-1)/(q+1) == h*z_C^2 exactly, concluded P_77 = z + h z^2, and
+reported P_77_D = q^3(q^4+1)/(q^2+1)^2.  The identity is real; the conclusion does
+not follow.  BOTH of these reproduce the published diagonal exactly at z_C:
 
-exactly -- because h*z_C^2 = ((q^2-1)/q)(q/(q+1)^2) = (q^2-1)/(q+1)^2.  So
+    P_77 = z + (q-1)/(q+1)        (a constant, plus degree 1)
+    P_77 = z + h z^2              (no constant, degree 2)
 
-    P_77  =  1*z  +  h*z^2
+and they DISAGREE under the canonical z: at q0, 0.664811117281 against
+0.691166478358.  The same ambiguity holds for the off-diagonal P_66, which likewise
+admits both c0 + c1 z and c1 z + c2 z^2 with coefficients rational in q, each exact.
 
-with BOTH coefficients in Q(q), verified symbolically against the published closed
-form.  That is the same shape as Phi = B*z + A*z^2: a z-polynomial with rational
-coefficients and no constant term, which is what a 1-jet amplitude built from
-V = z*(.) + (.) must be, and what any Markov trace on the H_3 normal-form basis is
-(tr_M(w) = z^|w|, so any Hecke element traces to a z-polynomial whose coefficients
-are its NF expansion -- convention-independent by construction).
+The reason is countable: the parity split in s = sqrt(q) gives TWO equations (the
+rational part and the sqrt part), and a z-polynomial of degree <= 3 has FOUR
+unknowns.  Uniqueness needs the degree and the constant term fixed from outside.
 
-    P_77_D(q) = q^3 (q^4 + 1) / (q^2 + 1)^2
+WHY Phi IS DIFFERENT, and it is the whole reason it survives.  The proof block
+STATES its chain -- P_flip = V_1 * Delta_0 with V_0 = z a_0 + b_0 -- which forces no
+constant term and degree exactly 2, leaving two unknowns for two equations.  The
+corpus states no such chain for the diagonal.  So Phi_D is derived and P_77_D is
+not, and the difference is a sentence of prose in one block, not a property of the
+arithmetic.
 
-whose numerator vanishes only at q = 0.  So P_77_D > 0 for EVERY q > 0: the
-golden-ratio threshold q_star = 1/phi^2, where the published diagonal vanishes, does
-not exist under D either.
+WHAT WOULD SETTLE IT: the Hecke element whose Markov trace is the diagonal.  Any
+element of H_3 traces to sum_w c_w z^{|w|} over the normal-form basis, so knowing
+the element gives every c_w and the D form immediately.  That derivation is not in
+the corpus and reconstructing the 3-strand Toffoli transfer matrix is the open work.
 
-NET: of the three published "operator thresholds" -- q_star = 1/phi^2 (diagonal
-vanishes), q_Phi = 0.4656 (q-AND reverses sign), q = 1 (q-AND vanishes) -- only
-q = 1 survives the canonical convention.
-
-NO-FLOAT64: sympy exact for the algebra, mpmath 40 dps for the evaluations.
 """
 from __future__ import annotations
 
@@ -112,9 +113,14 @@ def p77_C(q):
     return (q + mp.sqrt(q) - 1) / (q + 1)
 
 
-def p77_D(q):
-    """Derived: P_77 = z + h z^2 at the canonical z_D, h = q - 1/q."""
+def p77_D_candidate_quadratic(q):
+    """CANDIDATE ONLY: z + h z^2 at z_D. Not the derived diagonal — see docstring."""
     return q ** 3 * (q ** 4 + 1) / (q ** 2 + 1) ** 2
+
+
+def p77_D_candidate_constant(q):
+    """CANDIDATE ONLY: z + (q-1)/(q+1) at z_D. Equally exact at z_C, different here."""
+    return q ** 3 / (q ** 2 + 1) + (q - 1) / (q + 1)
 
 
 def main() -> int:
@@ -170,18 +176,29 @@ def main() -> int:
     p77_no_positive_zero = all(r <= 0 for r in p77_roots)
     q_star = 1 / ((1 + mp.sqrt(5)) / 2) ** 2
 
-    print(f"\n  P_77 = 1*z + h*z^2,  h = {sp.factor(h_sym)}")
-    print(f"    reconstruction against the published form: {p77_recon}   exact: {p77_exact}")
-    print(f"    P_77_D = {p77_d_sym}")
-    print(f"    numerator real roots {p77_roots} -> positive for every q > 0: "
-          f"{p77_no_positive_zero}")
-    print(f"    at q_star = 1/phi^2 = {mp.nstr(q_star, 18)}:")
-    print(f"      P_77_C = {mp.nstr(p77_C(q_star), 8)}   (zero — the golden-ratio threshold)")
-    print(f"      P_77_D = {mp.nstr(p77_D(q_star), 12)}   (not zero)")
-    print(f"    at q0: P_77_C = {mp.nstr(p77_C(Q0), 12)}   P_77_D = {mp.nstr(p77_D(Q0), 12)}")
+    # The diagonal admits TWO exact decompositions at z_C, and they disagree at z_D.
+    const_form = sp.simplify(zc_s + ((_s ** 2 - 1) / (_s ** 2 + 1))
+                             - (_s ** 2 + _s - 1) / (_s ** 2 + 1))
+    both_exact = (p77_exact and const_form == 0)
+    d_gap = abs(p77_D_candidate_quadratic(Q0) - p77_D_candidate_constant(Q0))
+    ambiguous = d_gap > mp.mpf("1e-20")
+
+    print(f"\n  THE DIAGONAL IS NOT DETERMINED — two exact decompositions at z_C:")
+    print(f"    z + (q-1)/(q+1)   - P_77_published = {const_form}")
+    print(f"    z + h*z^2         - P_77_published = {p77_recon}      h = {sp.factor(h_sym)}")
+    print(f"    both exact: {both_exact}")
+    print(f"  and they DISAGREE at the canonical z, q0:")
+    print(f"    z_D + (q-1)/(q+1) = {mp.nstr(p77_D_candidate_constant(Q0), 12)}")
+    print(f"    z_D + h*z_D^2     = {mp.nstr(p77_D_candidate_quadratic(Q0), 12)}")
+    print(f"    gap = {mp.nstr(d_gap, 8)}   ambiguous: {ambiguous}")
+    print(f"  parity gives 2 equations; a degree-<=3 z-polynomial has 4 unknowns.")
+    print(f"  Phi escapes this ONLY because the proof block states its chain.")
+    print(f"  (P_66 carries the same ambiguity — both forms verified exact.)")
+    print(f"  golden threshold q_star = 1/phi^2 = {mp.nstr(q_star, 18)}, "
+          f"P_77_C there = {mp.nstr(p77_C(q_star), 8)}")
 
     gates_ok = (exact_C and closed_ok and no_extra_root
-                and p77_exact and p77_no_positive_zero)
+                and both_exact and ambiguous)
 
     print("\n" + "=" * 90)
     print(" RESULT")
@@ -201,8 +218,9 @@ def main() -> int:
     w.add_assertion("published_Phi_is_A_zC2_plus_B_zC_exactly", 1 if exact_C else 0, 1)
     w.add_assertion("Phi_D_closed_form_matches_A_zD2_plus_B_zD", 1 if closed_ok else 0, 1)
     w.add_assertion("Phi_D_has_no_positive_zero_but_q_eq_1", 1 if no_extra_root else 0, 1)
-    w.add_assertion("published_P77_is_z_plus_h_z2_exactly", 1 if p77_exact else 0, 1)
-    w.add_assertion("P77_D_positive_for_all_q_gt_0", 1 if p77_no_positive_zero else 0, 1)
+    w.add_assertion("P77_admits_TWO_exact_decompositions_at_zC", 1 if both_exact else 0, 1)
+    w.add_assertion("those_two_DISAGREE_at_zD_so_diagonal_undetermined",
+                    1 if ambiguous else 0, 1)
     w.add_parameter("q0", mp.nstr(Q0, 30))
     w.add_parameter("A_chain_coefficient", str(sp.factor(A_SYM)))
     w.add_parameter("B_chain_coefficient", str(sp.factor(B_SYM)))
@@ -212,21 +230,27 @@ def main() -> int:
     w.add_data("Phi_D_at_convention_C_threshold", mp.nstr(phi_D(q_phi), 30))
     w.add_data("Phi_C_at_q0", mp.nstr(phi_C(Q0), 30))
     w.add_data("Phi_D_at_q0", mp.nstr(phi_D(Q0), 30))
-    w.add_data("P77_D_closed_form", str(p77_d_sym))
-    w.add_data("P77_h_coefficient", str(sp.factor(h_sym)))
-    w.add_data("golden_threshold_q_star", mp.nstr(q_star, 30))
-    w.add_data("P77_D_at_golden_threshold", mp.nstr(p77_D(q_star), 30))
+    w.add_data("P77_candidate_A_no_constant_deg2", str(p77_d_sym))
+    w.add_data("P77_candidate_B_constant_plus_deg1", "z_D + (q-1)/(q+1)")
+    w.add_data("P77_candidate_A_at_q0", mp.nstr(p77_D_candidate_quadratic(Q0), 30))
+    w.add_data("P77_candidate_B_at_q0", mp.nstr(p77_D_candidate_constant(Q0), 30))
     w.add_data("P77_C_at_q0", mp.nstr(p77_C(Q0), 30))
-    w.add_data("P77_D_at_q0", mp.nstr(p77_D(Q0), 30))
-    w.add_data("surviving_thresholds_under_D", "q = 1 only (Phi vanishes; classical limit)")
+    w.add_data("golden_threshold_q_star", mp.nstr(q_star, 30))
+    w.add_data("diagonal_status", "UNDETERMINED — two exact decompositions at z_C "
+                                  "disagree at z_D; the corpus states no chain for it")
+    w.add_data("surviving_thresholds_under_D",
+               "for Phi: q = 1 only. For the diagonal: undetermined.")
     w.add_caveat(
-        "Both entries are DERIVED, not z-swapped: each is a z-polynomial with Q(q) "
-        "coefficients and no constant term (Phi = B z + A z^2, P_77 = z + h z^2), "
-        "reconstructed symbolically against the published closed forms, so the "
-        "convention enters through z alone. An earlier revision reported P_77 as "
-        "conditional because the constant (q-1)/(q+1) looked unstructured; it is "
-        "h*z_C^2 exactly. NOT covered here: the off-diagonal P_66, whose published form "
-        "carries q^{7/2} and which this probe does not decompose."
+        "Phi ALONE is derived. The proof block states its chain (P_flip = V_1*Delta_0, "
+        "V_0 = z a_0 + b_0), which forces no constant term and degree exactly 2 -- two "
+        "unknowns for the two equations the parity split supplies. The corpus states no "
+        "such chain for the DIAGONAL, and without it the decomposition is "
+        "underdetermined: P_77 = z + (q-1)/(q+1) and P_77 = z + h z^2 are BOTH exact at "
+        "z_C and disagree at z_D (0.6648 vs 0.6912 at q0). P_66 carries the same "
+        "ambiguity. An earlier revision of this probe claimed the diagonal was derived; "
+        "that is RETRACTED here. Settling it needs the Hecke element whose Markov trace "
+        "the diagonal is -- any H_3 element traces to sum_w c_w z^{|w|} on the "
+        "normal-form basis, so the element gives every coefficient at once."
     )
     w.set_description(
         "Derives the convention-D q-AND amplitude rather than z-swapping it. Splitting "
@@ -237,7 +261,9 @@ def main() -> int:
         "/ (2(q+1)(q^2+1)^2). Its sextic has no real roots, so Phi_D vanishes on (0,inf) "
         "only at q = 1. The convention-C threshold at q ~ 0.4656, published as a phase "
         "reversal of the q-AND, does not exist under the canonical convention. At q0 both "
-        "amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives."
+        "amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives. "
+        "The DIAGONAL is NOT derived: two decompositions exact at z_C disagree at z_D, "
+        "and the corpus states no chain to choose between them."
     )
     w.save()
     return 0 if gates_ok else 1
