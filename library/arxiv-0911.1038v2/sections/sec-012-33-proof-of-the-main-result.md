@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 16-18
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 STRUCTURE OF KEROV CHARACTER POLYNOMIALS 17
 Proof of Theorem 1.1. We know by Proposition 1.2 that for any integerg ≥

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 41-42
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 If A1,...,A r are real-valued random variables, there is a notion of joint cumulant that generalize the
 cumulants of Section 4:

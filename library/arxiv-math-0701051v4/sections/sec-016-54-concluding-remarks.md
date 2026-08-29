@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 19-19
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 only need Lemma 11 and we can avoid most of the technicalities. Therefore,
 our method gives a uniﬁed, simple way to reprove three import ant results

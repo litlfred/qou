@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 29-30
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 Theorem 4.3. Suppose φ non-lattice, and consider as before a sequence (Xn)n∈N that con-
 verges mod-φ on a bandS(c,d) with c < 0 < d. If x∈ (η′(0), η′(d)), then

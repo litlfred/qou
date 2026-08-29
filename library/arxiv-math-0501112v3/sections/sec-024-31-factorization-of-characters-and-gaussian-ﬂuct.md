@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 10-12
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 ing theorem is the main result of this article. In order not toscare the Reader
 we postpone its proof to Section 4.

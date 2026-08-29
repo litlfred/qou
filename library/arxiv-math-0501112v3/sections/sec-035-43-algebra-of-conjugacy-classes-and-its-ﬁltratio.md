@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 19-20
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 [IK99] deﬁned a partial permutation of a setX as a pairα = (d, w ), where d
 (called support of α ) is any subset of X and w : X → X is a bijection which

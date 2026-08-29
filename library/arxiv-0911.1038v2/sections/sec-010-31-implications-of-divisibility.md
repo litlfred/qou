@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 12-16
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 In order to prove Theorem 1.1 we would like to show that for eac h integer
 g ≥ 1, functions ˜fg and ˜hg are divisible by the symmetric function

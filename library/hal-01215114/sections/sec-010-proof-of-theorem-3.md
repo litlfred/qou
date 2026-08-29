@@ -7,6 +7,7 @@ section_number: null
 pages: 6-6
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 From now on we ﬁx α = 2. Let us deﬁne Yλ as the right-hand side of Theorem 3 (it obviously does not
 depend on the choice of T ). In this section we prove that Yλ satisﬁes the three properties of Proposition

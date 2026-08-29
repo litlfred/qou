@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 13-14
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 character factorization property but additionally are as in Theorem 3.2.
 Example 3.4 (Left-regular representation). It is easy to check that if ρq is

@@ -7,6 +7,7 @@ section_number: 2
 pages: 17-17
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 where ε and S are the counit and coinverse of (A, ∆) , respectively. Let Comodf (A, ∆ op) denote the tensor
 ∗-category of linear maps β : K → A ⊗K satisfying properties 1-2 above, with arrows t : β → β′ being linear

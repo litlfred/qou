@@ -7,6 +7,7 @@ section_number: 2
 pages: 10-11
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 3. Tripi(f ) = Tripi(f −1), where Tri is the usual trace on B(Hi).
 It also satisﬁes S(f ) = f −1 (where the unique extension of S to M (A) is understood).

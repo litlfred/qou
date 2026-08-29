@@ -1,0 +1,119 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2605.09605v2",
+ "source": {
+  "file": "2605.09605v2.pdf",
+  "sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
+  "bytes": 463186,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2605.09605",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "26 May 2026"
+  },
+  "doi": null,
+  "title": "Cocycle Actions on Hidden Quantum Markov Models:",
+  "authors_raw": "Symmetry Protection and Topological Order",
+  "title_lines": [
+   "Cocycle Actions on Hidden Quantum Markov Models:"
+  ],
+  "abstract": "We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and symmetry-protected topological (SPT) phases. In our setting, a symmetry groupGacts projectively on the hidden (virtual) degrees of freedom and linearly on the physical observation space, yielding a global HQMM state that is invariant under the combined action ofGfor both conventional and causal (input\u2013 output) structures. We show that such symmetry actions are naturally classified by a group- cohomology 2-cocycle [\u03c9]\u2208H 2(G,U(1)), in direct analogy with the standard cohomological classification of one-dimensional bosonic SPT phases via projective edge representations. As an explicit example, we apply this construction to the Affleck\u2013Kennedy\u2013Lieb\u2013Tasaki (AKLT) chain, where the hidden layer carries a nontrivial class [\u03c9]\u2208H 2(SO(3),U(1)) encoding its SPT order. In this case the HQMM formalism reproduces the known SPT properties of the AKLT state while providing a stochastic, Markovian description of the underlying virtual dynamics. Our results establish HQMMs as a natural bridge between quantum stochas- tic processes, tensor-network descriptions of many-body systems, and symmetry-protected topological order.",
+  "docinfo": {
+   "Author": "Abdessatar Souissi; Abdessatar Barhoumi",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Application to AKLT's Symmetry-Protected Topological Order",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion and Outlook",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appedix: Hidden Quantum Markov Models",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8322,
+   "n_words": 1211
+  },
+  {
+   "id": "sec-001-cocycle-actions-and-symmetry-protection-in-hqmms",
+   "number": null,
+   "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 21712,
+   "n_words": 3311
+  },
+  {
+   "id": "sec-002-discussion-and-outlook",
+   "number": null,
+   "title": "Discussion and Outlook",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2740,
+   "n_words": 374
+  },
+  {
+   "id": "sec-003-appedix-hidden-quantum-markov-models",
+   "number": null,
+   "title": "Appedix: Hidden Quantum Markov Models",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 13261,
+   "n_words": 1967
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 4,
+  "chars_total": 46035
+ }
+}

@@ -7,6 +7,7 @@ section_number: null
 pages: 10-11
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 The following observation is due to Lassalle [Las09]. Let k≥ 1 be a ﬁxed integer and let α be ﬁxed.
 Since Σ(α)

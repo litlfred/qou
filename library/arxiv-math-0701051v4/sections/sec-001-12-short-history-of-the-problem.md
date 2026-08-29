@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 1-2
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 calculating characters, the Murnaghan–Nakayama rule, qui ckly becomes
 cumbersome and hence intractable for computing characters corresponding

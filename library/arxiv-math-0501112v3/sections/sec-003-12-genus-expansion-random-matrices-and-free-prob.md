@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 2-3
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 probability of V oiculescu [VDN92] is a non-commutative probability the-
 ory which turned out to be very successful in describing rand om matrices.

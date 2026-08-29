@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 7-9
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 ﬁnes a Markov chain on the set of irreducible representation s of G, and uses
 it to construct an exchangeable pair. It then shows that the m oment com-

@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 4-4
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 tation ρq of the symmetric groupSq deﬁnes a canonical probability measure
 on the Young diagrams contributing to ρq given as follows: probability of

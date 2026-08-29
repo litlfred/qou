@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 49-50
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 of Subsection 6.2 for the Hamming scheme H(d,q ), where d,q are positive
 integers and q ≥ 2.

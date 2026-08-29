@@ -7,6 +7,7 @@ section_number: 10.3
 pages: 85-91
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 10.3.1. End of the proof of Theorem 10.1. We would like to apply Proposition 5.2 to the
 sequence Sn = X(n)

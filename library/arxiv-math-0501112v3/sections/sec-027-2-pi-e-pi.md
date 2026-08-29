@@ -7,6 +7,7 @@ section_number: 2
 pages: 12-13
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 converges to a Gaussian distribution in the weak topology of prob-
 ability measures, where ˜pi = ˜pi(λ) is the functional of the shape of

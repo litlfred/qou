@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 16-21
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 Lemma 3.3. Let X be a Z-valued random variable whose generating functionϕX(z) = E[ezX ]
 converges absolutely in the stripS(c,d), with c < 0 < d. For k∈ Z,

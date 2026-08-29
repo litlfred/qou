@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 5-7
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 Kxr≥3 as the limiting residue in mod-Gaussian convergence is a phenomenon that oc-
 curs not only for sums of i.i.d. random variables, but more generally for sums of pos-

@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 23-25
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 2 con-
 sists of n-tuples of 0’s and 1’s. Random walk on it proceeds by picking a

@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 17-19
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 shik and Kerov [VK81] proved that if π is a ﬁxed permutation with the
 lengths of non-trivial cycles k1, . . . , kr then for any Young diagram λ with

@@ -7,6 +7,7 @@ section_number: 9.5
 pages: 78-81
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 plication of Theorem 9.7 is the following general result on sums of weakly dependent
 random variables, to be compared with [Pen02, §2.3]. Let Xn = ∑Nn

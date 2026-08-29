@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-20
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 deﬁned degree determines the asymptotic behavior of an element, namely
 EX = O

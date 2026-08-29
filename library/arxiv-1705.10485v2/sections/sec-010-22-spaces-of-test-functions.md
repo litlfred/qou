@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 8-9
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 Until the end of Section 2, all the spaces of functions considered will be spaces of complex valued
 functions on the real line. Iff∈ L1(R), we denote its Fourier transform

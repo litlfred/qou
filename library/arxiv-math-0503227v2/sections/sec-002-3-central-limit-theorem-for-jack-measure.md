@@ -7,6 +7,7 @@ section_number: 3
 pages: 9-13
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
 ---
 For α > 0 the Jack α measure on partitions of size n chooses a partition λ
 with probability

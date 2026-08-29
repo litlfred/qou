@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 25-27
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 and K is the hyperoctahedral group of signed permutations on n symbols,
 of size 2 nn!. This Gelfand pair is discussed at length in Chapter 7 of [Ma c]

@@ -7,6 +7,7 @@ section_number: null
 pages: 23-23
 source_pdf: 1009.4034v1.pdf
 source_sha256: 8f8d6d786b60c279
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young"
 ---
 [Bia98] P. Biane. Representations of symmetric groups and free probability.Adv. Math., 138:126–181, 1998.
 [Bia01] P. Biane. Approximate factorization and concentration for characters of symmetric groups.Internat. Math. Res.

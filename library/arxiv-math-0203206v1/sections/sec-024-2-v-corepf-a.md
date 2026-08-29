@@ -7,6 +7,7 @@ section_number: 2
 pages: 19-20
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 3. πV =πV . (Here it is understood that the same J :K →K is used in both constructions.)
 Proof. To prove 1., observe that

@@ -7,6 +7,7 @@ section_number: 3
 pages: 10-30
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 matrices
 Notation 3.1. Suppose ǫ : [2 l] → {− 1, 1} is such that ∑ 2l

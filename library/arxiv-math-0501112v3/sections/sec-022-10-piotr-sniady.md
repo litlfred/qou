@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-10
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 given by the free cumulants of the transition measure. Equation (2.7) shows
 that functionals ˜pk from the family (2.5) can be expressed as polynomials

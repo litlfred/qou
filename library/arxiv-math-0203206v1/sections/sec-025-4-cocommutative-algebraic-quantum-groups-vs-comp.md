@@ -7,6 +7,7 @@ section_number: 4
 pages: 20-25
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 Definition 4.1 Let (A, ∆) be an aqg. The intrinsic group G of (A, ∆) is the following subgroup of the unitaries
 in the multiplier algebra M (A):

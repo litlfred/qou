@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 48-50
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 where mod-convergence is proved using an explicit formula for the Laplace transform
 were already given in Section 2.1. We provide here two additional examples of mod-

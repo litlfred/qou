@@ -7,6 +7,7 @@ section_number: 5
 pages: 27-29
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 Let G be a ﬁnite group and H a subgroup of G. If φ is a linear charac-
 ter of H such that the induced representation Ind G

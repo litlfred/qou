@@ -7,6 +7,7 @@ section_number: null
 pages: 11-12
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 Our result on zonal polynomials and zonal characters are analogs of recent developments on Schur poly-
 nomials and characters of symmetric groups. Lassalle’s work suggests that this kind of results hold for

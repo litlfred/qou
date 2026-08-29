@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 13-14
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 several times throughout the paper, so we decided to present them together here.
 Lemma 2.7 (Gaussian integrals).

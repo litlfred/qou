@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 12-13
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 ties of the Legendre-Fenchel transform, a classical tool in large deviation theory (see
 e.g. [DZ98, Section 2.2]) that we shall use a lot in this paper. The Legendre-Fenchel

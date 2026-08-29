@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 7-11
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 nomenon of mod-Gaussian convergence for probabilistic models stemming from sta-
 tistical mechanics; this extends the already long list of models for which we were able

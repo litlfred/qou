@@ -7,6 +7,7 @@ section_number: 1.6
 pages: 4-5
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 notions needed to state the main result and its applications. In Section 3 we
 present the main result: Theorem and Deﬁnition 3.1 where fou r equivalent

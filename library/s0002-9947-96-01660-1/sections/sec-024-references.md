@@ -7,6 +7,7 @@ section_number: null
 pages: 25-26
 source_pdf: S0002-9947-96-01660-1.pdf
 source_sha256: aa63e62b78aa5045
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state"
 ---
 [ 1 ] H .H .A n d e r s e n ,Tensor products of quantized tilting modules , Comm. Math. Phys. 149
 (1992), 149–159. MR 94b:17015

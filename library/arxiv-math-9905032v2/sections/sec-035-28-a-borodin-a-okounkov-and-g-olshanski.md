@@ -7,6 +7,7 @@ section_number: 28
 pages: 28-28
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 Now we get to the proofs of Propositions 4.1 and 4.3 which will
 require some computations. Recall that the Airy function ca n be ex-

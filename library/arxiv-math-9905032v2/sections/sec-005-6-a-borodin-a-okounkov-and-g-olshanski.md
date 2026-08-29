@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 Remark 1.3. Observe that all Bessel functions involved in the above
 formulas are of integer order. Also note that the ratios like J(x, y) are

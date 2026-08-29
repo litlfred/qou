@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 28-30
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 From now on, C will be a semisimple strict tensor ∗-category. (As discussed in the Introduction, the strictness
 assumption does not entail a loss of generality.) We will introduce oth er requirements as we proceed. By

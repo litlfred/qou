@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 40-41
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 An edge-weighted graphG, orweighted graphfor short, is a graphG in which each edgee is assigned a
 weightwG(e). Here we restrict ourselves to weightswG(e) withwG(e)∈ R+. Edges not in the graph can
