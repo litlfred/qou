@@ -43,6 +43,11 @@ surjective half of that bridge.
   `toPerm_simple`.
 * `toPerm_surjective` — surjective, via Mathlib's
   `Equiv.Perm.mclosure_swap_castSucc_succ`.
+* `incl` — the parabolic inclusion `W(Aₙ) →* W(A_{n+1})`.
+* An **`ℕ`-indexed generator layer** (`gen`) with all three relation families
+  restated arithmetically: `gen_mul_self`, `gen_comm`, `gen_braid`.  These are
+  the working form for the order-bound induction, whose index side conditions
+  are arithmetic rather than `Fin`-shaped.
 
 ## What is NOT proved — the remaining half, stated precisely
 
@@ -218,6 +223,90 @@ def incl (n : ℕ) : (Aₙ n).Group →* (Aₙ (n + 1)).Group :=
       simp [CoxeterMatrix.relation]
     rw [h, ← An_castSucc n i j]
     exact (Aₙ (n+1)).toCoxeterSystem.simple_mul_simple_pow _ _)
+
+
+/-! ### An `ℕ`-indexed generator layer
+
+The order-bound induction reasons about indices arithmetically (`i + 1 < j`,
+`j + 1 < N`), which is painful through `Fin`.  This layer re-indexes the simple
+reflections by `ℕ` with junk value `1` out of range, and restates the three
+Coxeter relation families in that form.  `comm_of_sq_one` and
+`braid_of_pow_three` are the group-theoretic content, stated for any group. -/
+
+variable (N : ℕ)
+
+/-- `σ_j` as an `ℕ`-indexed generator, with junk value `1` out of range. -/
+noncomputable def gen (N : ℕ) (j : ℕ) : (Aₙ N).Group :=
+  if h : j < N then CoxeterMatrix.simple (Aₙ N) ⟨j, h⟩ else 1
+
+theorem gen_mul_self (j : ℕ) : gen N j * gen N j = 1 := by
+  unfold gen
+  split
+  · exact (Aₙ N).toCoxeterSystem.simple_mul_simple_self _
+  · simp
+
+theorem An_val (i j : Fin N) :
+    Aₙ N i j = if (i:ℕ) = j then 1 else (if (j:ℕ) + 1 = i ∨ (i:ℕ) + 1 = j then 3 else 2) := by
+  simp only [Aₙ, Matrix.of_apply, Fin.ext_iff]
+
+/-- Two elements of order ≤ 2 whose product squares to 1 commute. -/
+theorem comm_of_sq_one {G : Type*} [Group G] {a b : G}
+    (ha : a * a = 1) (hb : b * b = 1) (hab : (a * b) * (a * b) = 1) : a * b = b * a := by
+  have h := inv_eq_of_mul_eq_one_left hab
+  rw [mul_inv_rev, inv_eq_of_mul_eq_one_left ha, inv_eq_of_mul_eq_one_left hb] at h
+  exact h.symm
+
+/-- Distant generators commute. -/
+theorem gen_comm {i j : ℕ} (hij : i + 1 < j) : gen N i * gen N j = gen N j * gen N i := by
+  by_cases hi : i < N
+  · by_cases hj : j < N
+    · simp only [gen, dif_pos hi, dif_pos hj]
+      refine comm_of_sq_one
+        ((Aₙ N).toCoxeterSystem.simple_mul_simple_self _)
+        ((Aₙ N).toCoxeterSystem.simple_mul_simple_self _) ?_
+      have hpow := (Aₙ N).toCoxeterSystem.simple_mul_simple_pow
+        (⟨i, hi⟩ : Fin N) (⟨j, hj⟩ : Fin N)
+      rw [An_val] at hpow
+      simp only [Fin.val_mk] at hpow
+      rw [if_neg (by omega), if_neg (by omega), pow_two] at hpow
+      exact hpow
+    · simp [gen, dif_pos hi, dif_neg hj]
+  · simp [gen, dif_neg hi]
+
+
+/-- From `(ab)³ = 1` with `a, b` involutions, the braid relation. -/
+theorem braid_of_pow_three {G : Type*} [Group G] {a b : G}
+    (ha : a * a = 1) (hb : b * b = 1) (h3 : (a * b) ^ 3 = 1) : a * b * a = b * a * b := by
+  have key : a * b * a * b * a * b = 1 := by
+    have e : (a * b) ^ 3 = a * b * a * b * a * b := by
+      simp [pow_succ, mul_assoc]
+    rw [← e]; exact h3
+  have hprod : (a * b * a) * (b * a * b) = 1 := by
+    have e : (a * b * a) * (b * a * b) = a * b * a * b * a * b := by simp [mul_assoc]
+    rw [e]; exact key
+  have hbab : (b * a * b) * (b * a * b) = 1 := by
+    calc (b * a * b) * (b * a * b) = b * a * (b * b) * a * b := by simp [mul_assoc]
+      _ = b * a * a * b := by rw [hb, mul_one]
+      _ = b * (a * a) * b := by simp [mul_assoc]
+      _ = b * b := by rw [ha, mul_one]
+      _ = 1 := hb
+  exact (inv_eq_of_mul_eq_one_left hprod).symm.trans (inv_eq_of_mul_eq_one_left hbab)
+
+/-- Adjacent generators braid. -/
+theorem gen_braid {j : ℕ} (hj : j + 1 < N) :
+    gen N j * gen N (j + 1) * gen N j = gen N (j + 1) * gen N j * gen N (j + 1) := by
+  have hj0 : j < N := by omega
+  simp only [gen, dif_pos hj0, dif_pos hj]
+  refine braid_of_pow_three
+    ((Aₙ N).toCoxeterSystem.simple_mul_simple_self _)
+    ((Aₙ N).toCoxeterSystem.simple_mul_simple_self _) ?_
+  have hpow := (Aₙ N).toCoxeterSystem.simple_mul_simple_pow
+    (⟨j, hj0⟩ : Fin N) (⟨j + 1, hj⟩ : Fin N)
+  rw [An_val] at hpow
+  simp only [Fin.val_mk] at hpow
+  simp only [or_true, if_true] at hpow
+  rw [if_neg (show ¬(j = j + 1) by omega)] at hpow
+  exact hpow
 
 
 end QOU.Hecke.SymmetricCoxeter
