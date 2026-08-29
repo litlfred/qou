@@ -620,3 +620,80 @@ baseline JSON, no hand-edited digit.
   dropped the witness had no anchor. That tripped the refill ratchet, which is
   blocking and green-on-arrival. An `ambiguous` stem that *does* resolve a
   concrete pin is a silent hole in the stamping path.
+
+## Post-rebase re-measurement (2026-08-29, `/prepare-merge`)
+
+Everything above records what this branch's own two passes did, measured
+against the `main` they started from. That `main` has since moved 61 commits,
+and one of those arcs was **a concurrent q₀ drain of its own** (`cfe73b8eb5`,
+"re-run the flip producers at the derived anchor — Q0_FLIP 83 → 34"). The
+numbers below are the rebased head, and they differ from the tables above for
+that reason. The tables are not corrected: they are a record of two passes
+that happened, and they were right about the tree they ran on.
+
+### Gate counts on the rebased head
+
+| gate | this branch, pre-rebase | rebased onto `main` |
+|---|---|---|
+| **q0-anchor flip** | 5 | **3** |
+| `Q0_OK` | 1025 | **1032** |
+| **q0-value drift** | 240 stale / 26 NEW | **307 stale / 81 NEW** |
+| **raw-float64 ratchet** | NEW 0, REGRESSED 0 | NEW 0, REGRESSED 0 |
+| **witness shape guard** | — | collapsed 0 |
+
+**The three remaining flips are a strict subset of the five named above**:
+`cross-check-trM-cw-seminormal`, `hadron-knot-table`,
+`qbeta-c4even-exact-sseries`. Each keeps the reason already given for it.
+`main` independently drained the other two —
+`qbeta-c3even-exact-sseries` and `qbeta-c3-complex-habiro-cross-anchor` — so
+this branch's decision **not** to land the C→D ladder re-derivation
+(`qou-cds1`) was not undone by the rebase; the flip cleared from the other
+side.
+
+**The drift number went up because two drains merged, not because a site
+regressed.** Every NEW-stale entry still reports the same `0.0769 ppb` A→C
+muon step described above. Attribution was measured rather than assumed: for
+each NEW-stale witness, its q₀-bearing field values were compared against
+*both* parents. **Zero differ from both** — 19 have values on which the two
+parents agree, 2 are this branch's own. No q₀ value on the rebased head was
+produced by the merge.
+
+### Two defects the merge itself introduced, and how they were caught
+
+Neither was in the branch as pushed; both were artifacts of resolving 81
+overlapping witnesses between two concurrent drains.
+
+1. **A split `q0Anchor` / `q0Value` pair in two witnesses.** The two fields
+   are coupled and a field-level 3-way merge does not know that, so
+   `habiro-coefficients-extended` and
+   `lever1-binding-habiro-single-element-test` each ended up labelled
+   `proton` while carrying the muon value — two `Q0_FLIP`s present on
+   neither parent. Resolved by **re-running each producer on the merged
+   tree** rather than by choosing a side: `habiro_coefficients_extended`
+   emits proton and reproduces `main`'s witness exactly (of 409 leaves in
+   `results`, the only 20 that differ are `timings_sec`);
+   `lever1_binding_habiro_single_element_test` emits muon, matching this
+   branch's copy with zero non-ephemeral differences — which is the branch's
+   own producer fix from `97c6f695e0`, where the producer read
+   `qou_substrate.constants` directly and its `ideal_muon` listing was inert.
+   A tree-wide scan for the same shape now reports 0.
+2. **39 witnesses re-serialized with `ensure_ascii=True`.** Caught by
+   `witness_shape_guard.py`, which saw only the 2 unstaged vendored mirrors;
+   scanning against both parents found the real population. The producers
+   write UTF-8 — confirmed by round-tripping four `main` copies through
+   `json.dumps(d, indent=2, ensure_ascii=False)`, which reproduces them
+   byte-exactly. No value moved.
+
+**The anchor-DEFINING witness was not re-pinned.**
+`computations/q-pinning-50-digit.witness.json` is byte-identical to
+`origin/main` on the rebased head. `main` had independently landed the same
+self-stamp refresh this branch made, so that commit replayed as empty and
+was dropped — 20 commits became 19.
+
+### Still not done, unchanged by the rebase
+
+No baseline was widened at any point in the rebase either: no
+`--rebaseline`, no file added to a baseline JSON, no hand-edited digit, and
+`q0-anchor-missing-baseline.json` still not regenerated. The two producers
+this pass deliberately declined to re-run (`qbeta_c3even`, `qbeta_c4even`)
+were **not** re-run during the merge.
