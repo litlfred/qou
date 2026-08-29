@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T07:33:01.686988+00:00",
-  "commitSha": "45b4d6824801ebb4f352a47b138bd48dace48857",
+  "computedAt": "2026-08-29T09:56:19.919994+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
   "assertions": [
     {
       "name": "main_identity_star",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 19,
   "computation": "fake-degree-addable-box-recursion",
   "scriptFile": "fake_degree_addable_box_recursion_probe.py",
-  "scriptHash": "5081acd63e93",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "25b2f934abc8",
+  "scriptCommitSha": "bfa481d67fb167305ba4edada16d4f751f9c4d53",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,10 +40,13 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -57,5 +60,7 @@
     "identity_B": "Sum_{b addable to mu} q^{-c(b)} qDim(mu+b)/qDim(mu) = [|mu|+1]_q",
     "verified_up_to_n": 6,
     "free_parameters": 0
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's entire import cone. Fake-degree / addable-box recursion is combinatorics on partitions; no substrate evaluation enters it."
 }

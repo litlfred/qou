@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+scipy+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:23:49.920764+00:00",
-  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
+  "computedAt": "2026-08-29T08:31:28.369887+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "hoefsmit_chi_finite_per_block_for_n3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "qbeta-hoefsmit-tbeta-matrix-build-probe",
   "scriptFile": "qbeta_hoefsmit_tbeta_matrix_build_probe.py",
   "scriptHash": "d19ab02fd176",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T06:25:55.444218+00:00",
-  "commitSha": "21b05b3f50d80aa1f6c95f9383aad9da9a541379",
+  "computedAt": "2026-08-29T07:03:00.348228+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-lepton-braid-words",
   "scriptFile": "canonical_lepton_braid_words.py",
   "scriptHash": "ab9e67f5b75a",
-  "scriptCommitSha": "e22ad2d0b7aaed4e18d22cdb3b41e8da8f03f4ad",
+  "scriptCommitSha": "f1540d4e21d0ff2e6421b03361de33ef456b3f55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -111,5 +111,7 @@
     "Apply Li_2^q canonical mass tower; check m_μ/m_e against CODATA 206.77",
     "Same for tau; check m_τ/m_e against CODATA 3477.23"
   ],
-  "timestamp": "2026-08-25T06:25:55+00:00"
+  "timestamp": "2026-08-29T07:03:00+00:00",
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

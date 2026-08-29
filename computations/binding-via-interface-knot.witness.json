@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:31:24.032356+00:00",
-  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
+  "computedAt": "2026-08-29T07:02:48.457938+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3862,
+  "durationMs": 4583,
   "computation": "binding-via-interface-knot",
   "scriptFile": "binding_via_interface_knot.py",
   "scriptHash": "97abc18d496f",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "1dfe31ac4506a5bb117a5b5266d066f2dca983e6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

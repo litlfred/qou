@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T02:30:14.974235+00:00",
-  "commitSha": "f5dd354ef641558792e062f4f20c37246154250c",
+  "computedAt": "2026-08-29T07:55:37.960909+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "probe_1_proton_within_10ppm",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "lambda-scale-substrate-probe",
   "scriptFile": "lambda_scale_substrate_probe.py",
   "scriptHash": "a0b67b7e0900",
@@ -146,11 +146,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
-        "size_bytes": 6237,
-        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
-        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
-        "computedAt": "2026-08-22T21:11:04.185076+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },

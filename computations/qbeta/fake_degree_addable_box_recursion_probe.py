@@ -185,7 +185,20 @@ def main() -> int:
     w.add_assertion("recursion_R", 1 if rec_ok else 0, 1, source="normalizedSum(n+1)=normalizedSum(n)")
     w.add_assertion("addable_box_hook_identity_B", 1 if B_ok else 0, 1,
                     source="Sum_addable q^-c(b) qDim(mu+b)/qDim(mu) = [|mu|+1]_q, all mu |mu|<=6")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's entire import "
+            "cone. Fake-degree / addable-box recursion is combinatorics on "
+            "partitions; no substrate evaluation enters it."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok else 1
 

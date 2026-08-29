@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:05:49.021053+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-29T08:35:09.992864+00:00",
+  "commitSha": "e111288a19a646d9715517796f7e5a8ee04b41eb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 34,
   "computation": "vhat-std-vs-full-tower-compare",
   "scriptFile": "vhat_std_vs_full_tower_compare.py",
   "scriptHash": "5371fccd57cd",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -129,11 +129,11 @@
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "59cedf5f1b46fc883755ce66ca5fdd7ff32d61adb315b1aa53f6f153d38defe9",
+        "sha256": "c037e7f3b77170f16ac9ca0399fd6a17993a75c709a2a48a857b6e4e502ab06a",
         "size_bytes": 10741,
-        "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
-        "scriptCommitSha": "3f63d180a4b8bfaa425f98971fe64eb17fe32670",
-        "computedAt": "2026-08-28T21:02:34.870051+00:00"
+        "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-29T03:01:05.214737+00:00"
       }
     ]
   },

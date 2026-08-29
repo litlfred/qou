@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:00:55.367911+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T07:33:27.185132+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -19,7 +19,7 @@
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
   "scriptHash": "a23fb0934008",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -319,11 +319,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
-        "size_bytes": 6237,
-        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
-        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
-        "computedAt": "2026-08-22T21:11:04.185076+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },

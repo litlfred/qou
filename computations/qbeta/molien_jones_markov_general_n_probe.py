@@ -133,7 +133,21 @@ def main() -> int:
                     source="y_(2,1,1), y_(1^4) -> 0 at z=z_D")
     w.add_assertion("n4_survivors_match_su2_qdims", 1 if survivor_ok else 0, 1,
                     source="predicted y(q0,zD) == corpus y_lambda_su_n(4,q0,2)")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: EXACT SYMBOLIC in q and z (sp.symbols), as this file's "
+            "own docstring states. q_0 is reachable through the Hecke machinery it "
+            "imports but is never evaluated at -- nothing substitutes a pin, and no "
+            "q_0 value reaches the payload."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok else 1
 
