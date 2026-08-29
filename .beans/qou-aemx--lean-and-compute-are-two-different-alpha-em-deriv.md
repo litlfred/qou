@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-08-28T16:32:49Z
+updated_at: 2026-08-29T00:47:00Z
 ---
 
 Found while re-examining the two open knobs on `m_K/m_pi` (the framework's
@@ -224,3 +224,36 @@ The defect is a **stale Lean sibling** (`proof-statement-integrity`): the `.lean
 does not state its `.md`'s claim. Fixing it means formalising the resummed
 Gram-κ form. Not done here — it is a real content change and the target κ is
 itself an unproved conjecture class, so the shape of the fix is an author call.
+---
+
+## Follow-on 2026-08-29 — the divergence is a CLASS (bean `qou-mdlv`, PR #5936)
+
+PR #5931 retracted this bean's cross-sector dilemma on the finding that
+`em-coupling-chern-simons`'s `.lean` states a formula its own `.md` supersedes.
+The next question was whether that is a one-off. It is not.
+
+Grepping content `.md` for blocks that announce their own supersession gives
+six; of the four that have Lean, **two are divergent**. The second is
+`prop:centered-hecke-variance-positive`, whose `.md` moved from convention C to
+convention D on 2026-08-09 — explicitly withdrawing `Var(σ_i) ≈ 0.855` — while
+its Lean sibling kept the C parameter, the dropped Wenzl hypothesis, and the
+withdrawn figure, for 19 days.
+
+That second case is worse than a stale docstring. The old encoding carried
+
+    term1_pos : 0 < (q - q⁻¹) * z
+    term2_pos : 0 < 1 - z²
+
+as §3b context-class axioms. Under D they are not jointly satisfiable on the
+`.md`'s domain: `term1_pos` forces `q > 1`, `term2_pos` forces `q < ψ` (the
+supergolden ratio, `q³ = q²+1`, ψ ≈ 1.4655712319). So the class was inhabited
+only on `q ∈ (1, ψ)` while the `.md` claims all `q > 0` — and `q = 1`, where the
+`.md` says the minimum 3/4 is *attained*, is excluded. Fixed in #5936 by
+deriving the closed form instead: six sorry-free, axiom-free declarations
+replacing two class axioms.
+
+**Both cases were invisible to every existing gate**, and the reason generalises:
+the stale files type-check, so a compile does not catch them, and nothing
+compares an `.md`'s displayed formula against its resolved `.lean`. The grep
+above finds only blocks whose prose *says* it was superseded, so it is a lower
+bound. Carried forward in `qou-mdlv`.
