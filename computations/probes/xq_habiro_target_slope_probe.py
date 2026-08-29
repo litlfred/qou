@@ -48,8 +48,8 @@ def main():
         return Q_N2 * (1 + c3_hab * u_q_cubed)
     
     # Target X(q) = (Q_beta(q) + m_e) / M_N_avg
-    m_e = mp.mpf(repr(M_E_MEV))
-    m_p = mp.mpf(repr(M_P_MEV))
+    m_e = mp.mpf(M_E_MEV)
+    m_p = mp.mpf(M_P_MEV)
     
     # Wait, M_N_avg is (m_p + m_n)/2 = m_p + (Q_beta + m_e)/2
     def X_target(q):

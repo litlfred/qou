@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T10:35:09.162672+00:00",
+  "commitSha": "22d1693169aa63e63e2abfafce16c9152ea94bed",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 1430,
+  "computation": "mpmath-version-staleness",
+  "scriptFile": "mpmath_version_staleness_probe.py",
+  "scriptHash": "74129839eda7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/mpmath_version_staleness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/audits/mpmath_version_staleness_probe.py"
+  },
+  "description": "A/B of the framework's load-bearing mpmath primitives under mpmath 1.3.0 and 1.4.1, both from pinned wheels, to decide whether the 1160/829 version split across the witness corpus is a staleness axis.",
+  "data": {
+    "versions_requested": [
+      "1.3.0",
+      "1.4.1"
+    ],
+    "versions_imported": [
+      "1.3.0",
+      "1.4.1"
+    ],
+    "the_two_runs_really_used_DIFFERENT_mpmath_versions": true,
+    "primitives_compared": 10,
+    "primitives_differing": 0,
+    "differing_keys": [],
+    "mpmath_1_3_0_and_1_4_1_AGREE_on_every_load_bearing_primitive": true,
+    "the_scope_is_the_PRIMITIVES_not_the_whole_corpus": true,
+    "scope": "(a) scope-limited to the listed primitives"
+  }
+}

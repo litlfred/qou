@@ -59,7 +59,7 @@ from sympy.utilities.iterables import partitions as _sp_partitions
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()  # canonical compute precision per qou_substrate.precision
 
@@ -93,9 +93,11 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
 from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
 Q0_MP = mp.mpf(_Q50_PROTON)
-# `Q0_F64` is kept ONLY for the numpy conditioning diagnostics below, which
-# are float64 by construction (`np.linalg.cond` is a binary64 SVD). Every
-# matrix entry is now evaluated at `Q0_MP`, the full 50-digit pin.
+# `Q0_F64` is a DISPLAY/echo alias only -- the banner print and the
+# `q_0_f64` witness field, which records the pin as the binary64 decimal it
+# rounds to. It no longer feeds any computation: the conditioning
+# diagnostics that used to need it now run through `mp.svd_r`. Every matrix
+# entry is evaluated at `Q0_MP`, the full 50-digit pin.
 Q0_F64 = float(Q0_MP)
 
 # Digits requested from sympy's `evalf` for each matrix entry. Matched to the
@@ -220,27 +222,84 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
 
         residual = abs(chi_direct - chi_chain)
 
-        # Per-block det/cond telemetry (real part; imag is float-noise zero)
-        import numpy as _np
-        def _np_real(M):
-            # `float(...)` is REQUIRED here, not a leftover: the entries are
-            # `mpc` now, and numpy would build an object array that
-            # `linalg.det`/`cond` cannot factor. The DIAGNOSTICS below are
-            # float64 by construction (`np.linalg.cond` is a binary64 SVD)
-            # and are declared as such rather than pretended otherwise; the
-            # matrices they describe are exact. Draining these four fields
-            # means an mpmath SVD, which is a separate change.
-            return _np.array([[float(v.real) for v in row] for row in M],
-                             dtype=_np.float64)
+        # Per-block det/cond telemetry. Both are computed at working
+        # precision on the mpmath matrices these already are; nothing here
+        # goes through numpy any more.
 
-        sigma_k_dets = [float(_np.linalg.det(_np_real(M))) for M in sigma_k_at_q0]
-        sigma_k_conds = [
-            (float(_np.linalg.cond(_np_real(M))) if dim > 1 else 1.0)
-            for M in sigma_k_at_q0
-        ]
-        w0_arr = _np_real(w0_at_q0)
-        w0_det = float(_np.linalg.det(w0_arr))
-        w0_cond = float(_np.linalg.cond(w0_arr)) if dim > 1 else 1.0
+        def _real_part(M):
+            """M's real part as a real mpmath matrix, refusing imag residue.
+
+            The seminormal construction is real over real q, so any imaginary
+            residue is a sqrt-branch artefact -- `_eval_matrix` applies this
+            entrywise already; this repeats it at the point where the value
+            is about to be consumed by a real-only routine (`mp.svd_r`).
+            """
+            # `M` is a list-of-lists of `mpc` here, not an `mp.matrix` --
+            # `mp.det` coerces one silently, `mp.svd_r` does not.
+            R = mp.matrix(len(M), len(M[0]))
+            for i, row in enumerate(M):
+                for j, v in enumerate(row):
+                    im = abs(mp.im(v))
+                    if im > mp.mpf("1e-40"):
+                        raise ValueError(
+                            f"entry ({i},{j}) has a non-negligible imaginary "
+                            f"part {im} (sqrt-branch artefact or bug)")
+                    R[i, j] = mp.re(v)
+            return R
+
+        def _real_cond(M):
+            """cond_2(M) = sigma_max/sigma_min as a real mpf.
+
+            This WAS `float(np.linalg.cond(...))`, a binary64 SVD, and it is
+            the same defect class as the determinant below rather than a
+            different one: the old comment here declared all four telemetry
+            fields "float64 by construction", which was only ever true of
+            `cond`, and `cond` did not have to be. `mp.svd_r` runs the SVD at
+            working precision on the exact matrix, and on a worked 3x3 whose
+            true condition number is 4 numpy returns 3.999999999999999 while
+            this returns 4. Bean `qou-k6b3`.
+            """
+            if len(M) <= 1:
+                return mp.mpf(1)
+            S = mp.svd_r(_real_part(M), compute_uv=False)
+            s_min, s_max = min(S), max(S)
+            if s_min == 0:
+                raise ValueError(
+                    "matrix is singular; rho_lam(sigma_k) is a representation "
+                    "of an invertible braid generator and cannot be")
+            return s_max / s_min
+
+        def _real_det(M):
+            """det(M) as a real mpf, refusing a non-negligible imaginary part.
+
+            The seminormal construction is real over real q, so any imaginary
+            residue is a sqrt-branch artefact -- the same reasoning
+            `_eval_matrix` applies entrywise, applied to the determinant.
+            """
+            d = mp.det(M)
+            im = abs(mp.im(d))
+            if im > mp.mpf("1e-40"):
+                raise ValueError(
+                    f"det has a non-negligible imaginary part {im} "
+                    "(sqrt-branch artefact or bug)")
+            return mp.re(d)
+
+        # DETERMINANTS are exact; only the CONDITION NUMBERS need float64.
+        # The comment above lumped the four fields together as "float64 by
+        # construction", but that is true only of `cond`, which is a binary64
+        # SVD. `mp.det` is LU-based and runs directly on the mpmath matrices
+        # these already are — so the dets never needed the `_np_real` round
+        # trip. It mattered: rho_lam(sigma_k) is a representation of an
+        # invertible braid generator, so several of these determinants are
+        # exactly +-1, and float64 returned -0.9999999999999999. The
+        # raw-float64 ratchet cannot see that error while the true value is
+        # whole (its integral carve-out skips an exact -1.0), so it stayed
+        # hidden until an anchor change pushed the results off the integers.
+        # Bean `qou-k6b3`.
+        sigma_k_dets = [fmt(_real_det(M)) for M in sigma_k_at_q0]
+        sigma_k_conds = [fmt(_real_cond(M)) for M in sigma_k_at_q0]
+        w0_det = fmt(_real_det(w0_at_q0))
+        w0_cond = fmt(_real_cond(w0_at_q0))
 
         # q → 1 classical-limit check (recorded as data, not asserted).
         # The Hoefsmit-seminormal construction has axial-distance
@@ -367,6 +426,33 @@ def main() -> None:
         computed=mp.nstr(results[6]["max_residual"], _EVAL_DPS),
         expected="0", tolerance="1e-6",
         source="χ_λ(w_0) direct == χ_λ(w_0) via chain, for all λ ⊢ 6",
+    )
+    # κ₂(ρ_λ(σ_k)) = q₀² for EVERY generator in EVERY block of dim > 1.
+    # This became visible only once the condition numbers stopped being a
+    # binary64 SVD: in float64 the SAME quantity was serialized under three
+    # different spellings, so there was nothing to recognise. Exactly, all 47
+    # such generators agree with q₀² to ~1e-50.
+    #
+    # The value is the ratio of the two Hecke eigenvalue magnitudes,
+    # |q| / |-q⁻¹| = q², which is what κ₂ would be for a NORMAL matrix. The
+    # seminormal ρ_λ(σ_k) is real but not symmetric, so that is an
+    # OBSERVATION about the measured singular values, NOT a derivation --
+    # normality (or an orthogonal-form conjugation that supplies it) is not
+    # established here. Recorded as measured; the mechanism is open.
+    _cond_devs = [
+        abs(mp.mpf(c) - Q0_MP ** 2) / Q0_MP ** 2
+        for res in (results[3], results[6])
+        for blk in res["blocks"].values() if blk["dim"] > 1
+        for c in blk["sigma_k_conds"]
+    ]
+    w.add_assertion(
+        "generator_condition_number_equals_q0_squared",
+        computed=mp.nstr(max(_cond_devs), 12),
+        expected="0", tolerance="1e-45",
+        source=(f"kappa_2(rho_lambda(sigma_k)) == q_0^2 for all {len(_cond_devs)} "
+                "generators in blocks of dim > 1, over lambda |- 3 and lambda |- 6; "
+                "max relative deviation. MEASURED, not derived -- see the comment "
+                "at the assertion for why normality is not established."),
     )
     w.add_assertion(
         "h3_wedderburn_sum_dim_squared",

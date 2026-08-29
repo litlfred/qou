@@ -273,7 +273,15 @@ def load_q_50dps(
     path: Path | None = None,
     anchor: str = "proton",
 ) -> tuple[mpf, mpf, mpf]:
-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full ``mp.dps``.
+    """Load q_0, q_0^{-1}, and the Markov parameter z at full ``mp.dps``.
+
+    `z` is CONVENTION D, `q**3/(q**2+1)`, via `_markov_z` -> the single
+    definition in `closed_form_tau_M`. This line previously advertised
+    `z = 1/(q^{1/2}+q^{-1/2})`, which is convention C and has not been
+    what the function returns since the excision. A stale convention
+    claim in a docstring is worse than none on a loader with ~33
+    importers: a reader checking the contract here would conclude they
+    were handed C. Corrected 2026-08-29 (qou-cds3).
 
     Returns ``(q, q_inv, z)``.  Shared by every script that ingests
     per-generator Wedderburn volumes — centralized per gemini #687.

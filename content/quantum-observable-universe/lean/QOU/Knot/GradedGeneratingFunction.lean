@@ -33,6 +33,8 @@ level of algebra elements.
 -/
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.BigOperators.Finprod
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Data.Fintype.Pi
 import Mathlib.Tactic.Ring
 
 namespace QOU.Knot.GradedGeneratingFunction
@@ -50,6 +52,33 @@ noncomputable def gf (s : Finset ι) (c : ι → R) (deg : ι → ℕ) : R[X] :=
 
 @[simp] theorem gf_empty (c : ι → R) (deg : ι → ℕ) : gf (∅ : Finset ι) c deg = 0 := by
   simp [gf]
+
+/-- **Congruence in the degree**: only degrees at indices actually present in
+`s` can matter. Used to replace a per-block degree sum by the length of the
+assembled word, which agree only on the product index set. -/
+theorem gf_congr (s : Finset ι) (c : ι → R) {deg deg' : ι → ℕ}
+    (h : ∀ i ∈ s, deg i = deg' i) : gf s c deg = gf s c deg' :=
+  Finset.sum_congr rfl fun i hi => by rw [h i hi]
+
+/-- **Multiplicativity over a dependent product index set.**
+
+When the index set is `∏ᵢ S i`, the coefficient multiplicative across factors
+and the degree additive, the generating function is the product of the factors'
+generating functions.
+
+This is the form the block factorisation needs: nucleon blocks are *not*
+identical to one another -- block `i` is supported on strands `[bᵢ, bᵢ₊₁)` --
+so the family `S i` must be allowed to vary with `i`. The constant-family case
+is `QOU.Knot.BodyOrderExpansion.gf_pow`. -/
+theorem gf_pi {κ : Type*} [Fintype κ] [DecidableEq κ] {α : κ → Type*}
+    [∀ i, DecidableEq (α i)] (S : ∀ i, Finset (α i)) (c : ∀ i, α i → R)
+    (deg : ∀ i, α i → ℕ) :
+    gf (Fintype.piFinset S) (fun f => ∏ i, c i (f i)) (fun f => ∑ i, deg i (f i))
+      = ∏ i, gf (S i) (c i) (deg i) := by
+  simp only [gf]
+  rw [Finset.prod_univ_sum]
+  refine Finset.sum_congr rfl fun f _ => ?_
+  rw [Finset.prod_mul_distrib, ← map_prod, Finset.prod_pow_eq_pow_sum]
 
 /-- **A degree shift is multiplication by `X`.**
 

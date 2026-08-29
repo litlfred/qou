@@ -8,7 +8,7 @@ The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single dow
 
 The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing. A single Hopf link $L_- = \sigma_1\sigma_0$ restores structural stability. 
 
-The integer LP dual selects $L_+ \to L_-$ (two Hopf links, 4 gluon crossings) as the minimum-action stabiliser. The neutron requires more gluon crossings than the proton (4 versus 2) because the $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability ($\mathrm{tr}_M = -0.132$ versus $-0.006$). This yields a total of 13 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 4 from gluons).
+The integer LP dual selects $L_-$ as the minimum-action stabiliser. The $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability than the proton's ($\mathrm{tr}_M = -0.132$ versus $-0.006$), a difference in depth rather than in the number of gluon crossings required. This yields a total of 11 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 2 from gluons).
 
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:

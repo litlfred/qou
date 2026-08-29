@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T12:02:02.286437+00:00",
-  "commitSha": "eb13db877c81f5438db6c15ebce4c2806fea0a86",
+  "computedAt": "2026-08-29T17:32:33.049034+00:00",
+  "commitSha": "e451b631e31002f973331cef1d03a9103217259f",
   "assertions": [
     {
       "name": "convention_bridge_q2_X0",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 16,
   "computation": "fake-degree-via-telescope",
   "scriptFile": "fake_degree_via_telescope_probe.py",
   "scriptHash": "5459d67b1f76",
-  "scriptCommitSha": "24c30714a6a74d0cb93683b64b41a458aa3b3b8b",
+  "scriptCommitSha": "4e1f63fd5e1327d7d8157b7b82f1ccd250973b45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,6 +45,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {

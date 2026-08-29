@@ -69,11 +69,11 @@ VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
-M_E = mp.mpf(repr(_M_E_MEV))
+M_E = mp.mpf(_M_E_MEV)
 from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
-M_P = mp.mpf(repr(_M_P_MEV))
+M_P = mp.mpf(_M_P_MEV)
 from experimental_constants import Q_NEUTRON_MEV as _Q_NEUTRON_MEV  # noqa: E402
-M_N = M_P + mp.mpf(repr(_Q_NEUTRON_MEV)) + M_E  # m_n derived via 3-input scheme
+M_N = M_P + mp.mpf(_Q_NEUTRON_MEV) + M_E  # m_n derived via 3-input scheme
 # Σ baryons (PDG):
 M_SIGMA_PLUS = mp.mpf("1189.37")
 M_SIGMA_0 = mp.mpf("1192.642")

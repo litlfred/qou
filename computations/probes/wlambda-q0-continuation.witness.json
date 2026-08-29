@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-08-29T07:57:47.124023+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-29T11:11:19.206724+00:00",
+  "commitSha": "a63a9642b80badff001cfa418f19df3b61104d40",
   "assertions": [
     {
       "name": "muon_block_folds_to_zero_at_root",
@@ -51,14 +51,14 @@
   },
   "description": "The archimedean q₀-continuation of the W_λ value map is polynomial evaluation of the Chebyshev quantum integers at t = q₀+q₀⁻¹. Exhibits the muon-block fold (0 at the root) / unfold (t⁴−3t²+1 generically) and the growing 4-class (1,[4],[5],[5]+1). Lean certificate: KeystoneWLambdaContinuation.lean. Scope-(a); does NOT derive loc_matches; no fit; nothing wired.",
   "data": {
-    "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-    "t0": 2.0108968691351614,
-    "D2_q0": 83.83638762884735,
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "t0": 2.0108968667071223,
+    "D2_q0": 83.83638628991918,
     "table": {
       "(5)   [1]": {
         "root_d_q(phi)": 1.0,
         "q0_d_q(t0)": 1.0,
-        "W_lambda(q0)": 0.01192799
+        "W_lambda(q0)": 0.011928
       },
       "(4,1) [4]": {
         "root_d_q(phi)": 1.0,
@@ -77,6 +77,6 @@
       }
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-Q5",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:57:46.390614+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T12:08:40.655406+00:00",
+  "commitSha": "a63a9642b80badff001cfa418f19df3b61104d40",
   "assertions": [
     {
       "name": "uniform_candidate_interpolates_all_fibre_roots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "habiro-interpolation-wlambda",
   "scriptFile": "habiro_interpolation_wlambda.py",
-  "scriptHash": "84cfbb11affb",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "a4e73f31566d",
+  "scriptCommitSha": "e46d2cd0e63125c8c4e63d533c2c63cf271a9cc3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -693,6 +693,10 @@
     ],
     "sum_mark_sq_eq_120": true
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "evaluates F_lambda at both documented q0 pins and reports the cross-pin swing; the difference IS the measurement, so neither pin alone describes this witness"
 }
