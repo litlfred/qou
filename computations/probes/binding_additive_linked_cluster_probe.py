@@ -39,6 +39,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
 set_compute_dps()
 REPO = Path(__file__).resolve().parents[2]
@@ -154,6 +155,10 @@ def main():
                  "ame_scaling_4He_D": mp.nstr(sc_ame, 8),
                  "closest_form": best[0]},
     }
+    # Hand-rolled write: never reaches WitnessBuilder.build(), so it never
+    # stamped q0Anchor and no re-run would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out = COMP / "binding-additive-linked-cluster-scan.witness.json"
     with open(out, "w") as f:
         # Provenance stamp (bean qou-4un2): this producer writes its

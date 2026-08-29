@@ -81,8 +81,19 @@ OUT = HERE / "qbeta-habiro-residual.witness.json"
 MU_P_Q0_SPLIT_PPB = mp.mpf("11.5")
 # Registry-settled c_3 cross-anchor swing (J_Hopf near-match) and real-q
 # rigidity-falsification slope, ck-dk-canonical-registry.md §3.
-C3_CROSS_ANCHOR_SWING_PCT = mp.mpf("2.98")
-C3_DCDQ = mp.mpf("4.6e6")
+#
+# CORRECTED 2026-08-29 (bean `qou-kt8o`). These read 2.98 and 4.6e6, and the
+# comment above cites §3 — which had already been corrected to 2.375 % and
+# 3.84e6 (PR #5765, 2026-08-25), so the citation refuted the values it
+# introduced. Both stale numbers derive from the same root: the pre-#1422
+# SUPERSEDED muon `c_3 = -2.0097`, where live is `-2.02020024`.
+#
+# Neither constant enters any arithmetic — both are printed and recorded into
+# the witness — so this moves no computed number, only what the witness
+# asserts. The REFUTED verdict is untouched: 3.84e6 is just as impossible for
+# a smooth real `f` as 4.6e6.
+C3_CROSS_ANCHOR_SWING_PCT = mp.mpf("2.3748")
+C3_DCDQ = mp.mpf("3.84e6")
 
 
 def q_beta_single_wrap(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:

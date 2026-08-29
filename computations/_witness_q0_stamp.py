@@ -11,16 +11,37 @@ from a builder producer is merely stale — regeneration fixes it.
 
 **A producer that hand-rolls `json.dump` never reaches `build()`, so it never
 stamps, and re-running it never will.** That is the one unstamped class
-regeneration cannot fix. Measured on `main` 2026-08-28:
+regeneration cannot fix.
 
-    witnesses carrying q0Anchor                        1103
-    unstamped, carrying a RESOLVABLE pin at depth <= 3  169
-      ... attributed to a named producer               124  (120 producers)
-      ... UNATTRIBUTED (scriptFile null)                45  (cannot be ported —
-                                                            no producer named)
+🛑 CORRECTED 2026-08-28, same day this file landed. It read:
 
-Every one of the 169 is from a hand-rolled producer. Each already carries the
-pin under a key `_Q0_FIELDS` knows; nothing consults it.
+    "Every one of the 169 is from a hand-rolled producer."
+    "That is the one unstamped class regeneration cannot fix."
+
+applying the second sentence to the whole class. **Both are wrong about most
+of it.** Re-measured with the extraction traps fixed (see below), of 120 named
+producers only **17 hand-roll**; **62 use `WitnessBuilder` already** and their
+witnesses are merely STALE — re-running them does stamp. The claim was wrong
+about roughly four fifths of the population it described.
+
+Do not restate the split from here either. It is computed by
+[`audits/unstamped_q0_portability_split.py`](audits/unstamped_q0_portability_split.py),
+which reports four buckets and what closes each: producer GONE (nothing to
+port), producer uses WitnessBuilder (RE-RUN), producer HAND-ROLLS (this
+helper), producer UNNAMED (no attribution to port). Run it; the number moved
+within a single day the last time it was written down.
+
+Two extraction traps produced wrong counts before that script settled, both of
+which bit here — check them before trusting any figure about this class:
+
+  1. `scriptFile` is **top-level**, not under a `witness` block. Reading
+     `payload["witness"]["scriptFile"]` reports 0 named against a true 124.
+  2. `scriptFile` holds a **bare basename**, not a repo-relative path.
+     `Path(sf).exists()` then reads as "producer deleted" for 121 of 124,
+     against a true 41.
+
+What survives unchanged: every witness in the class already carries its pin
+under a key `_Q0_FIELDS` knows, and nothing consults it.
 
 WHY A STAMP RATHER THAN THE FULL `WitnessBuilder` PORT
 -------------------------------------------------------
@@ -28,14 +49,18 @@ WHY A STAMP RATHER THAN THE FULL `WitnessBuilder` PORT
 right end state — it is bean `cmiy`, ~133 scripts, deliberately deferred. But
 the port is a per-file refactor: a hand-rolled payload is an arbitrary dict, and
 reshaping it into `add_data`/`add_assertion` calls rewrites the witness file's
-structure. That is a large diff per producer and 120 of them.
+structure. That is a large diff per producer.
 
 This helper separates the two. It adds ONLY the two provenance keys and touches
 nothing else in the payload, so:
 
   * no number moves, and no key is renamed or reordered;
-  * the diff on each witness is exactly two added lines;
-  * it applies uniformly to all 120, where the full port does not.
+  * the diff on each witness is exactly two added lines.
+
+**Its scope is bucket C only** — the hand-rolled producers the split script
+names. It is the wrong tool for bucket B: those already build through
+`WitnessBuilder`, so adding a manual stamp beside `build()` would duplicate
+what `build()` does on the next run. Re-run those instead.
 
 It is NOT a substitute for `cmiy`. A stamped hand-rolled witness still lacks the
 `environment`, `scriptHash`, `commitSha` and `precisionMetadata` blocks that

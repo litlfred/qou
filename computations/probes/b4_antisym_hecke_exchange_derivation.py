@@ -64,8 +64,12 @@ def det_uniform(g):
 
 def main() -> int:
     q = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+    # Convention D (canonical, owner ruling 2026-08-15 R1, re-affirmed by the
+    # owner 2026-08-29). This read `1/(sq + 1/sq)` with `sq = sqrt(q)` = z_C — unannounced, and
+    # invisible to scripts/convention-c-producer-audit.py, whose matcher does
+    # not see the sqrt-variable spelling. Found by convention-c-value-audit.py.
     sq = mp.sqrt(q)
-    z = 1 / (sq + 1 / sq)
+    z = q ** 3 / (q ** 2 + 1)
     h = q - 1 / q
     lam_minus = -1 / sq
     E0 = mp.mpf("0.51099895069") / (q * (q - 1))

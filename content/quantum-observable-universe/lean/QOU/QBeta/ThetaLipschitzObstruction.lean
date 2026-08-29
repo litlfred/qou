@@ -35,7 +35,7 @@
   That matters because the c₃ arc already carries a structural obstruction the ϑ
   arc never had.  The ck-dk canonical registry records c₃ as
   **"EMPIRICAL — near-match, REFUTED as real-q fibre element"**, with
-  `dc₃/dq ≈ 4.6×10⁶` — "impossible for smooth real `f`", which killed the real-q
+  `dc₃/dq ≈ 3.84×10⁶` — "impossible for smooth real `f`", which killed the real-q
   c₃ family.  Via the affine relation, the same obstruction lands on ϑ.
 
   WHAT THIS FILE PROVES.  A Lipschitz bound in the forward direction — a ϑ that
@@ -77,9 +77,14 @@
     moderate constant can move that far over 11.54 ppb, whether or not the
     underlying object is a function of `q₀`.
   * Recomputing `dS/dq` from the tabulated anchor values gives `3.84e6`; the
-    registry quotes `≈ 4.6e6`.  Same order, and the conclusion is insensitive to
-    the difference, but they do not agree exactly and no attempt is made here to
-    reconcile them.
+    registry quoted `≈ 4.6e6`.  **RECONCILED 2026-08-29 (bean `qou-kt8o`): this
+    file was right and the registry was stale.**  `4.6e6` is what the secant
+    gives when the muon `c₃` is the pre-#1422 **superseded** `-2.0097`; the live
+    value is `-2.02020024`, which yields `3.84e6` — exactly the number computed
+    here.  `ck-dk-canonical-registry.md` §3 absorbed the correction on
+    2026-08-25 (PR #5765) and its JSON twin on 2026-08-29.  The caution above
+    was well placed: the disagreement was real, not a rounding artifact, and the
+    conclusion is indeed insensitive to it.
   * Nothing here proposes a ϑ or derives `A_ω`.
 
   Scope (a): what is excluded is the class of Lipschitz-with-moderate-constant

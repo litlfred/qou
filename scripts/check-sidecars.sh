@@ -285,6 +285,55 @@ for f in "${files[@]}"; do
       echo "    → check scriptHash drift (NOT scriptCommitSha — rebase-merge rewrites it; bean qou-wsha)"
       echo "      LP/SDP duals via lp_dual_witness_validator.py"
       ;;
+    # The c_k/d_k registry is a TWINNED pair — an authoritative `.md` and a
+    # machine-readable `.json` that its own meta says "MUST agree". Touching
+    # either one is what makes them disagree, so the twin check runs on a
+    # change to either.
+    #
+    # Wiring it here is the point, not a nicety. `ck_dk_registry_validate.py`
+    # existed for months and was named in exactly one place — a prose link in
+    # the very document it validates — so nothing ever ran it. The measured
+    # cost: the `dc_3/dq ≈ 4.6e6 → 3.84e6` correction landed in the `.md` on
+    # 2026-08-25 and the JSON still said 4.6e6 four days later, and the swing
+    # figure drifted the OTHER way in the same table cell. Compare AGENTS.md
+    # §"A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS".
+    # TWO registries are twinned against ck-dk-canonical-registry.md, and they
+    # check DIFFERENT sections of it, so a change to the .md runs both:
+    #
+    #   ck_dk_registry_validate.py --twin   §3/§4/§6 vs ck-dk-registry.json
+    #   kernel_constraints_registry_validate.py  §9 (KC rows) vs
+    #                                       kernel-constraints-registry.json
+    #
+    # Neither was wired anywhere. The kernel one already had a twin-drift
+    # check (R6, always-on, bean qou-ungx) and it was still reachable only by
+    # someone typing its path — the same "gate nobody runs" half of the defect
+    # that let the ck-dk twin sit stale for four days. Both are ~30 ms, so
+    # there is no cost argument for leaving them out.
+    #
+    # NOT passing --lint-docs to the kernel validator: that mode rglobs every
+    # docs/**/*.md and is a corpus-wide sweep, not a preflight for the file in
+    # front of you. R6 twin-drift runs either way.
+    docs/coordination/ck-dk-registry.json|docs/coordination/ck-dk-canonical-registry.md|docs/coordination/kernel-constraints-registry.json)
+      echo "▸ $f  [twinned registry — .md + .json]"
+      case "$f" in
+        *ck-dk-registry.json) vals="ck_dk" ;;
+        *kernel-constraints-registry.json) vals="kernel" ;;
+        *) vals="ck_dk kernel" ;;   # the shared .md — both read it
+      esac
+      for v in $vals; do
+        case "$v" in
+          ck_dk)  cmd=("$ROOT/docs/coordination/ck_dk_registry_validate.py" --twin) ;;
+          kernel) cmd=("$ROOT/docs/coordination/kernel_constraints_registry_validate.py") ;;
+        esac
+        if out=$(python3 "${cmd[@]}" 2>&1); then
+          printf '%s\n' "$out" | sed 's/^/    /'
+        else
+          printf '%s\n' "$out" | sed 's/^/    /'
+          echo "    ⚠ twin divergence — fix the file that is stale, not the checker"
+          action=1
+        fi
+      done
+      ;;
     *) : ;;  # no known sidecar axis
   esac
 done

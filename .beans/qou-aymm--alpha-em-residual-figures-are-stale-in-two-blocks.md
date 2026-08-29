@@ -1,11 +1,11 @@
 ---
 # qou-aymm
 title: 'alpha_EM residual figures are stale in two blocks: open-problems table carries muon-pin order-2 values, hydrogen block cites the wrong prop and quotes an unsourceable 2.1 ppm'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T05:21:15Z
-updated_at: 2026-08-29T06:26:47Z
+updated_at: 2026-08-29T07:49:03Z
 ---
 
 ## Finding: one un-propagated proton re-pin, not four wrong numbers

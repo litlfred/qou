@@ -1,11 +1,11 @@
 ---
 # qou-toul
 title: 'GAP: coulomb-charge.md strong/Coulomb decomposition swaps (p+m)/(p-m) multiplicities — Lean-refuted, 5 blocks propagate'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T13:04:42Z
-updated_at: 2026-08-29T02:54:33Z
+updated_at: 2026-08-29T07:49:03Z
 ---
 
 ## VERIFIED AND FIXED — 2026-08-29

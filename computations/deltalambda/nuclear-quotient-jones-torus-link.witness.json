@@ -4,46 +4,46 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "nuclear_quotient_jones_torus_link_probe.py",
-  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
-  "scriptHash": "6ed4891b4bf8",
+  "commitSha": "a263f4f7040df3b4785a5fd050c39f56371cce84",
+  "scriptHash": "80c3a7fec380",
   "description": "(2,k) torus-link Jones values (Markov trace tr_M(sigma_1^k)) for the nuclear quotient braid: unknot/Hopf/trefoil closed forms wired into QOU/BraidKnot/JonesNuclearQuotient.lean; RHS of the OPEN Part-4 conjecture conj:jet-filtered-knot-factor (a(Z,N)=J_beta_bar(q)). Infra provenance only; does NOT prove the conjecture.",
   "generated": "2026-07-11T00:00:00+00:00",
   "assertions": [
     {
       "name": "unknot_(2,1)_is_z",
       "passed": true,
-      "got": "sqrt(q)/(q + 1)",
-      "want": "sqrt(q)/(q + 1)"
+      "got": "q**3/(q**2 + 1)",
+      "want": "q**3/(q**2 + 1)"
     },
     {
       "name": "hopf_(2,2)_is_hz_plus_1",
       "passed": true,
-      "got": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
-      "want": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))"
+      "got": "(q**4 + 1)/(q**2 + 1)",
+      "want": "(q**4 + 1)/(q**2 + 1)"
     },
     {
       "name": "trefoil_(2,3)_is_h2p1_z_plus_h",
       "passed": true,
-      "got": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))",
-      "want": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))"
+      "got": "(q**6 + q**2 - 1)/(q**3 + q)",
+      "want": "(q**6 + q**2 - 1)/(q**3 + q)"
     },
     {
       "name": "hopf_matches_jonesviamarkovtrace_closed_form",
       "passed": true,
-      "got": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
-      "want": "(q**(5/2) - sqrt(q) + q**2 + q)/(q*(q + 1))"
+      "got": "(q**4 + 1)/(q**2 + 1)",
+      "want": "(q**4 + 1)/(q**2 + 1)"
     }
   ],
   "allPassed": true,
   "result": {
-    "unknot_2_1": "sqrt(q)/(q + 1)",
-    "hopf_2_2": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
-    "trefoil_2_3": "(q**(9/2) + q**(7/2) - q**(5/2) - q**(3/2) + q**5 - q**3 + q)/(q**(5/2)*(q + 1))",
+    "unknot_2_1": "q**3/(q**2 + 1)",
+    "hopf_2_2": "(q**4 + 1)/(q**2 + 1)",
+    "trefoil_2_3": "(q**6 + q**2 - 1)/(q**3 + q)",
     "hopf_matches_existing_lean_jonesHopf": true,
     "numeric_q4": {
-      "tr_sigma1_pow_1_at_q4": 0.4,
-      "tr_sigma1_pow_2_at_q4": 2.5,
-      "tr_sigma1_pow_3_at_q4": 9.775
+      "tr_sigma1_pow_1_at_q4": 3.764705882352941,
+      "tr_sigma1_pow_2_at_q4": 15.117647058823529,
+      "tr_sigma1_pow_3_at_q4": 60.455882352941174
     }
   },
   "context": {
@@ -53,7 +53,9 @@
     "markov_parameter": "z = 1/(sqrt(q) + 1/sqrt(q))",
     "scope": "infra RHS construction; NOT a closure of the conjecture"
   },
-  "scriptCommitSha": "1c32090b4296efd3d8b9fa7c91d3cba6092a11bc",
-  "computedAt": "2026-07-18T10:18:41.701535+00:00",
-  "durationMs": 0
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "computedAt": "2026-08-29T08:02:30.877862+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

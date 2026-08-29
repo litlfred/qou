@@ -22,6 +22,7 @@ Two parts, both exact/audit (no fit, no wiring, no c_k value changed):
      were later wired into Q_β, it would be a CALIBRATION (Q_β/m_n/Δ_pn become
      CAL-3-anchored, not predicted) -- a reclassification, not an accuracy win.
 """
+import ast
 import datetime
 import hashlib
 import json
@@ -34,7 +35,9 @@ import mpmath as mp
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.insert(0, os.path.join(ROOT, "computations", "substrate"))
+sys.path.insert(0, os.path.join(ROOT, "computations"))
 from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
 set_compute_dps()
 
@@ -65,10 +68,63 @@ _PRODUCTION_SOURCES = [
 _C3_WIRING_RE = re.compile(r"\bc_?3\b|\bc\[3\]|c_k\[3\]|_n[3-9]_|_n1[0-9]_")
 
 
+def _c3_wiring_identifiers(tree):
+    """Every IDENTIFIER in `tree` that looks like a c_3 wiring signature.
+
+    AST-based, and that is the whole point: this scan must see CODE, not source
+    text. Comments never enter the AST at all, and docstrings/string constants
+    are skipped explicitly below.
+    """
+    out = []
+    for node in ast.walk(tree):
+        name = None
+        if isinstance(node, ast.Name):
+            name = node.id
+        elif isinstance(node, ast.Attribute):
+            name = node.attr
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            name = node.name
+        elif isinstance(node, ast.Subscript):
+            # `c[3]` / `c_k[3]`: the identifier alone is innocent, the index is not.
+            base = node.value
+            base_name = getattr(base, "id", None) or getattr(base, "attr", None)
+            idx = node.slice
+            if (base_name in {"c", "c_k", "ck"}
+                    and isinstance(idx, ast.Constant) and idx.value == 3):
+                out.append((getattr(node, "lineno", 0), f"{base_name}[3]"))
+            continue
+        # NOTE: ast.Constant is deliberately NOT inspected. A c_3 mention inside
+        # a string is prose, not a wire.
+        if name and _C3_WIRING_RE.search(name):
+            out.append((getattr(node, "lineno", 0), name))
+    return out
+
+
 def _production_uses_c3():
     """Live scan: does any production Q_β/binding source reference a c_3 rung or an
     order≥3 truncation? Returns (bool, dict of per-file hits). Falsifiable — if c_3
-    is ever wired in, this returns True and the audit FAILS (not self-fulfilling)."""
+    is ever wired in, this returns True and the audit FAILS (not self-fulfilling).
+
+    🛑 THIS WAS A LINE-REGEX OVER SOURCE TEXT AND IT FIRED ON THE DOCUMENTATION.
+    Measured 2026-08-28: the only two "hits" in the whole production surface were
+    `derived_masses.py:550` and `:552`, both inside the coefficient-tier
+    **docstring**, and both saying c_3 is NOT wired:
+
+        • c_3 = −2 : EMPIRICAL — near-match, REFUTED as a real-q fibre element
+                     (… no fixed real c_3 holds across anchors — SRigidityPrune).
+
+    So the tripwire that checks "c_3 must not be wired into production" was
+    tripped by prose stating that c_3 is refuted, and the audit's verdict read
+    *"INCONCLUSIVE — a factorization/wiring assertion failed; re-derive before
+    citing"*, which sends a reader chasing a wiring regression that does not
+    exist. Writing the correct thing down in the production file was enough to
+    fail the check.
+
+    The falsifiability the docstring above claims is UNCHANGED — the scan still
+    reads live sources and still returns True the moment a real `c_3` /
+    order≥3 identifier appears in code. `--selftest` proves it, so a future
+    narrowing cannot quietly turn this into a check that can never fail.
+    """
     hits = {}
     for path in _PRODUCTION_SOURCES:
         rel = os.path.relpath(path, _REPO_ROOT)
@@ -76,14 +132,51 @@ def _production_uses_c3():
             hits[rel] = ["<missing — production layout changed; re-audit>"]
             continue
         with open(path, "r") as f:
-            matched = [
-                f"{i}:{ln.strip()}"
-                for i, ln in enumerate(f, 1)
-                if _C3_WIRING_RE.search(ln) and "n2_mev" not in ln  # n2 = order 2, the c_2 rung
-            ]
+            src = f.read()
+        try:
+            tree = ast.parse(src, filename=rel)
+        except SyntaxError as e:
+            # A production source that will not parse is a louder problem than
+            # the one being audited; surface it rather than reading it as clean.
+            hits[rel] = [f"<SyntaxError line {e.lineno}: {e.msg} — cannot audit>"]
+            continue
+        lines = src.splitlines()
+        matched = []
+        for lineno, ident in _c3_wiring_identifiers(tree):
+            text = lines[lineno - 1].strip() if 0 < lineno <= len(lines) else ""
+            if "n2_mev" in text:                 # n2 = order 2, the c_2 rung
+                continue
+            matched.append(f"{lineno}:{ident}: {text}")
         if matched:
             hits[rel] = matched
     return (len(hits) > 0), hits
+
+
+def _selftest_scanner():
+    """Prove the scanner can still FAIL. A tripwire that has never fired is not
+    evidence, and the AST narrowing above is exactly the kind of change that can
+    silently defang one."""
+    ok = True
+    cases = [
+        ("wired: bare c_3 in code",        "def f(q):\n    return c_3 * q\n",            True),
+        ("wired: order-3 truncation call", "def f(q):\n    return q_beta_n3_mev(q)\n",   True),
+        ("wired: c[3] subscript",          "def f(c):\n    return c[3]\n",               True),
+        ("clean: c_3 in a docstring",      '"""c_3 = -2 is REFUTED, not wired."""\n',    False),
+        ("clean: c_3 in a comment",        "# c_3 would go here, but does not\nx = 1\n", False),
+        ("clean: c_3 inside a string",     'MSG = "c_3 is not wired"\n',                 False),
+        ("clean: the c_2 rung",            "def f(q):\n    return q_beta_n2_mev(q)\n",   False),
+    ]
+    for label, src, expect_hit in cases:
+        tree = ast.parse(src)
+        lines = src.splitlines()
+        found = [i for i, ident in _c3_wiring_identifiers(tree)
+                 if "n2_mev" not in (lines[i - 1] if 0 < i <= len(lines) else "")]
+        got = bool(found)
+        status = "PASS" if got == expect_hit else "FAIL"
+        if got != expect_hit:
+            ok = False
+        print(f"  [{status}] {label:34s} expected hit={expect_hit}  got={got}")
+    return ok
 
 
 def _repo_head_sha():
@@ -214,6 +307,10 @@ def main():
             "registry": "docs/coordination/ck-dk-canonical-registry.md §9",
         },
     }
+    # Hand-rolled write: never reaches WitnessBuilder.build(), so it never
+    # stamped q0Anchor and no re-run would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out = os.path.join(os.path.dirname(__file__), "qbeta-cal3-anchor-table-impact.witness.json")
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)
@@ -232,4 +329,7 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        print("SELF-TEST — the c_3 wiring scanner must still be able to FIRE")
+        sys.exit(0 if _selftest_scanner() else 1)
     sys.exit(main())
