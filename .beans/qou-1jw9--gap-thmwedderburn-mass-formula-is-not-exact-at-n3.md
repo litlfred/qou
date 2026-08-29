@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T18:06:34Z
+updated_at: 2026-08-29T18:27:15Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -711,3 +711,59 @@ Also caught: the stash/checkout dance for the baseline comparison left OTHER
 AGENTS' bean edits in my working tree. Reset to HEAD and re-applied only my own
 file. A baseline comparison that touches the tree can pick up neighbours' work —
 check `git status` before every commit, not just at the end.
+
+
+=== THE ORDERING IS NOT THE OBSTACLE — I named it wrong (commit fb27763501) ===
+
+The previous entry derived Phi_3's quantum and named the ground-state ORDERING
+as the next obstacle for w(Z,N). WRONG, and here is the refutation.
+
+What I missed: w is an EXACT INTEGER already in the tree, so the ordering can be
+INVERTED rather than derived. Enumerate every ordering def:atomic-braid allows
+(each electron immediately before its proton), compute w, compare.
+
+RESULT over 4 readings of the M_i prose x every allowed ordering, He/Li/Be/B/C:
+16 of the 20 (atom x reading) cells do not merely miss — the target is OUTSIDE
+the achievable range entirely.
+
+And the failure is STRUCTURED. For Li, Be, B, C the recorded w sits strictly
+BETWEEN the weakest weighting (m_j = 1) and the next weakest (m_j = j-1):
+
+    atom  target   max at m=1   max at m=j-1
+    Li      -18        -6           -24
+    Be      -28        -8           -44
+    B       -40       -10           -70
+    C       -42       -12           -90
+
+The ordering only slides w WITHIN a family; the target is in the gap BETWEEN
+families. No ordering reaches it.
+
+WHY THIS MATTERS MORE THAN THE NEGATIVE. def:atomic-braid's ground-state rule is
+an exponential minimisation (C(40,20) = 1.4e11 at Ca), already flagged by this
+arc as intractable as written. I had put it on the critical path for Phi_3. IT IS
+NOT ON THAT PATH. That removes the one genuinely unsolvable-as-written step from
+the Phi_3 problem.
+
+WHERE THE OBSTACLE ACTUALLY IS: upstream of the ordering — the crossing-sign
+assignment (Table 1 as read), the chain structure, or the strand content.
+
+SCOPE (a): this construction over these orderings/readings does not reach the
+integers. Excludes the ORDERING as the search target, not a construction. He is
+reachable (m=1 family) and is least constrained, so it weighs little.
+
+DO NOT, on picking this up: solve for a weight profile m_j that WOULD hit the
+targets. That is fitting a construction to its own outputs and the owner
+directive of 2026-08-25 forbids it. I deliberately did not do it.
+
+STATUS NOW
+  Phi_3 quantum ....... DERIVED (Lean, sorry-free)
+  Phi_3 integer w ..... OPEN — but the ordering is RULED OUT as the obstacle,
+                        and one closed form (-Z(2N-Z+1)) is refuted by Ar
+  Phi_1, Phi_2 ........ UNTOUCHED — not quantised, so neither argument reaches
+                        them
+
+NEXT, and it is now a narrower question than before: which of the three upstream
+candidates is wrong — the crossing signs, the chain structure, or the strand
+content. The Phi_3 integers are 19 exact constraints to test any candidate
+against, which is a far sharper instrument than the MeV corrections I started
+this arc with.
