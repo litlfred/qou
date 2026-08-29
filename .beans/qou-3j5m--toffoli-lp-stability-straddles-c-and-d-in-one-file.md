@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T16:57:22Z
+updated_at: 2026-08-29T17:40:47Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -149,3 +149,57 @@ thing to check and because assuming it either way would be wrong.
 
 The beans qou-84in / qou-r4hg / qou-zpgk (golden window, SubstrateRegime.lean)
 were not examined at all.
+
+
+## DERIVED 2026-08-29 — and my own "a z-swap is not a migration" caveat was too strong HERE
+
+Probe: computations/probes/toffoli_qand_convention_d_derivation.py (3/3 pass)
+
+I declined the swap on the c_k-ladder precedent. That precedent is right in general
+and does not apply to Phi, for a reason the proof block supplies itself.
+
+`toffoli-transfer-matrix-proof.md` gives the chain:
+
+    V_1 = z*c + d,  Delta_1 = 0 for a target flip,
+    P_flip = V_1 * Delta_0,  V_0 = z*a_0 + b_0
+    => Phi = z*(z*Delta_a0 + Delta_b0) = Delta_a0 * z^2 + Delta_b0 * z
+
+So Phi is a QUADRATIC IN z whose coefficients are properties of the chain. And the
+decomposition is UNIQUE: z_C = sqrt(q)/(q+1) is not in Q(q), so {1, z_C} is a
+Q(q)-basis of Q(q)(sqrt q) and matching rational vs sqrt parts pins A and B.
+Splitting the published Phi by parity in s = sqrt(q):
+
+    A = Delta_a0 = (q-1)^2 (q+1)^2 / (2q)         BOTH RATIONAL IN q
+    B = Delta_b0 = (q-1)(q^2+q+1) / (2(q+1))      hence frame-independent
+
+and A*z_C^2 + B*z_C - Phi_published = 0 SYMBOLICALLY, not numerically.
+
+The convention therefore enters through z ALONE. Evaluating the same A, B at the
+canonical z_D is the framework's own construction at the canonical parameter, not a
+substitution into a foreign closed form.
+
+    Phi_D(q) = q^3 (q-1) (q^6 + 2q^5 + q^4 - q^3 + q^2 + q + 1)
+               -------------------------------------------------
+                          2 (q+1) (q^2+1)^2
+
+THE CONSEQUENCE, and it is a content-level one. The sextic has NO REAL ROOTS
+(sympy real_roots = []), so Phi_D vanishes on (0, inf) at **q = 1 only** — the
+classical limit the block already states as item 5. Convention C additionally had
+the root of q^{3/2}+q^{1/2}-1 at q = 0.465571231876768027, which
+`toffoli-q-and.md` publishes as a threshold "below which the q-AND changes sign,
+imparting a phase reversal to the target", and which
+`toffoli-lp-stability-proof.md` solves for as q_Phi ~ 0.4656.
+
+**That second threshold does not exist under the canonical convention.**
+Phi_D(0.4656) = -0.0209, not zero.
+
+At q0 both are positive (Phi_C = 0.0495, Phi_D = 0.0625, ratio 1.261), so the
+q-GoL STABILITY VERDICT survives. What does not survive is the phase-reversal
+threshold and every magnitude.
+
+STILL NOT DERIVED: the diagonal P_77. The same uniqueness gives P_77 = z +
+(q-1)/(q+1) as the unique z-linear form, but the proof block does not state that
+the diagonal HAS that shape — its V_1 table gives d = 0 for the pp pair — so the
+D-frame diagonal is conditional on that shape, not derived. Which means the
+1/phi^2 golden-ratio threshold is established as C-frame (previous entry) but its
+D replacement is NOT yet known.
