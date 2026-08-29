@@ -65,3 +65,35 @@ instance noSingularityAtT : NSCounterexampleCopy where
 
 #print axioms regularAtOne
 #print axioms noSingularityAtT
+
+/-! ## Part 2 — the fix bites (added 2026-08-29, same session)
+
+The strengthened fields landed in `p2-critical-exponent.lean` and
+`p5-counterexample.lean`.  These two theorems show the strengthening is
+not cosmetic: the very witnesses above are now **provably excluded**.
+Same functions, same `T*`; only the quantifier changed. -/
+
+/-- `enstrophy q = max q 0` no longer inhabits the strengthened
+    `enstrophy_diverges`: on the punctured neighbourhood `|q - 1| < 1`
+    the enstrophy is below `2`, so `M = 10` has no witness. -/
+theorem regularAtOne_refuted_by_strengthened :
+    ¬ (∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+        ∃ q : ℝ, q ≠ 1 ∧ |q - 1| < ε ∧ M < max q 0) := by
+  intro h
+  obtain ⟨q, _, hq, hM⟩ := h 10 1 one_pos
+  rw [abs_lt] at hq
+  have hq2 : q < 2 := by linarith [hq.2]
+  rcases max_cases q 0 with ⟨he, _⟩ | ⟨he, _⟩ <;> rw [he] at hM <;> linarith
+
+/-- `velocityProfile t x = max (-t) 0` with `T* = 1` no longer inhabits
+    the strengthened `ns_counterexample_holds`: on the left
+    neighbourhood `1 - 1 < t < 1` the velocity is `0`, so `M = 1` has
+    no witness. -/
+theorem noSingularityAtT_refuted_by_strengthened :
+    ¬ (∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+        ∃ t _x : ℝ, (1 : ℝ) - ε < t ∧ t < 1 ∧ M < max (-t) 0) := by
+  intro h
+  obtain ⟨t, -, ht0, -, hM⟩ := h 1 1 one_pos
+  have htpos : (0 : ℝ) < t := by linarith
+  have : max (-t) 0 = 0 := max_eq_right (by linarith)
+  rw [this] at hM; linarith
