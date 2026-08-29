@@ -111,7 +111,18 @@ h = _adj.h
 build_nucleon = _adj.build_nucleon
 
 ZERO, ONE = sp.Integer(0), sp.Integer(1)
-BASIS = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e^-"]
+# 🛑 hm_sym's slot order is the REVERSE of gram.py's canonical NF_BASIS at
+# positions 3 and 4. Measured, not assumed: applying sigma_0 then sigma_1
+# lands in slot 4, and sigma_1 then sigma_0 lands in slot 3, whereas
+# `NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]` with
+# `NF_NAMES = ["gamma","sigma_0","sigma_1","L+","L-","e^-"]` puts
+# L+ = sigma_0 sigma_1 at index 3. So this file must NOT reuse NF_NAMES
+# positionally -- earlier versions did, and reported L+ and L- swapped.
+#
+# Caught by PR #5958, which transcribed the same element independently:
+# all six components agree, with slots 3 and 4 exchanged. `_assert_slots`
+# below pins the mapping so it cannot drift again.
+BASIS = ["gamma", "sigma_0", "sigma_1", "L-", "L+", "e^-"]
 FAILED: list[str] = []
 
 
@@ -119,6 +130,23 @@ def check(name: str, ok: bool, note: str = "") -> None:
     print(f"  [{'PASS' if ok else 'FAIL'}] {name}" + (f": {note}" if note else ""))
     if not ok:
         FAILED.append(name)
+
+
+
+def _assert_slots() -> None:
+    """Pin hm_sym's slot order against gram.py's canonical NF_BASIS.
+
+    The two disagree at positions 3 and 4, and every per-basis statement this
+    probe makes depends on knowing which way round. Verified by construction
+    rather than by comment.
+    """
+    ident = [ONE] + [ZERO] * 5
+    s0s1 = hm(hm(ident, ONE, ZERO, 0), ONE, ZERO, 1)   # sigma_0 then sigma_1
+    s1s0 = hm(hm(ident, ONE, ZERO, 1), ONE, ZERO, 0)   # sigma_1 then sigma_0
+    assert s0s1[4] == 1 and s0s1[3] == 0, (
+        f"sigma_0 sigma_1 (= canonical L+) expected in hm_sym slot 4, got {s0s1}")
+    assert s1s0[3] == 1 and s1s0[4] == 0, (
+        f"sigma_1 sigma_0 (= canonical L-) expected in hm_sym slot 3, got {s1s0}")
 
 
 def nuc11_interleaved(kind: str, electrons: int = 0):
@@ -169,11 +197,34 @@ def delta(neutron, proton):
 def main() -> int:
     from pyhecke.atom import build_atom_nf_exact, _PROTON_G0, _PROTON_G1
     from pyhecke.gram import _H_FRAC
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
 
-    hv = sp.Rational(_H_FRAC.numerator, _H_FRAC.denominator)
+    # 🛑 The SUBSTRATE pin, not `pyhecke.gram._H_FRAC`. That constant derives
+    # from `_Q_FRAC = Fraction(111, 100)` -- q = 1.11 exactly, chosen so H_3(q)
+    # is exact in Q (the module says so). It is a deliberate exactness device
+    # and it is **185 ppm** off the substrate, i.e. ~16000x the 11.54 ppb mu-p
+    # tension. The first version of this probe quoted every decimal at 1.11.
+    #
+    # Correcting it made every identification STRONGER, which is how the error
+    # was found: the 9-crossing net matched the stored float64 PROTON_NF /
+    # NEUTRON_NF coordinate-sum difference to ~4 digits at q=1.11, a residual
+    # this file previously explained as "float64 h vs exact _H_FRAC". At the
+    # substrate pin it matches to NINE significant figures. The conclusion was
+    # right and the stated reason for the residual was wrong; there was no
+    # residual to explain.
+    #
+    # `_H_FRAC` is kept below ONLY to cross-check pyhecke's own exact builder,
+    # which is itself built at 111/100 -- comparing those two at any other q
+    # would be comparing different objects.
+    hp = sp.Rational(_Q50_PROTON)
+    hv_substrate = hp - 1 / hp                       # h = q - 1/q at PROTON
+    hv = sp.Rational(_H_FRAC.numerator, _H_FRAC.denominator)  # q = 111/100
     z = sp.symbols("z")
     TR = [ONE, z, z, z ** 2, z ** 2, z * (h * z + ONE)]   # Ocneanu trace weights
 
+    _assert_slots()
+    check("hm_sym slot order pinned against gram.py NF_BASIS", True,
+          "slots 3/4 are REVERSED vs canonical; see _assert_slots")
     print("Validating the transcriptions against pyhecke (exact):")
     for tag, mine, ref in (
         ("neutron", nuc11_interleaved("n", 0), build_atom_nf_exact(0, 1)),
@@ -209,7 +260,7 @@ def main() -> int:
         c2 = sp.factor(sp.expand(sp.expand(sum(d[k] * TR[k] for k in range(6)))
                                  .coeff(z, 2)))
         print(f"\n  {tag}")
-        print(f"    net        = {sp.N(net.subs(h, hv), 10)}"
+        print(f"    net        = {sp.N(net.subs(h, hv_substrate), 10)}"
               + (f"   (bean records {recorded})" if recorded is not None else ""))
         print(f"    [z^2] tr_M = {c2}")
         print(f"    L+ = {sp.factor(d[3])}   L- = {sp.factor(d[4])}")
@@ -218,19 +269,26 @@ def main() -> int:
         check(f"{tag[:34]}: only real root is h = 0",
               real_roots == [sp.Integer(0)], f"real roots {real_roots}")
 
-    # The correction: L+ alone does NOT settle it -- it vanishes for Delta_L.
+    # The correction: neither coordinate alone settles it. The one that
+    # VANISHES for Delta_L is canonical L- (= sigma_1 sigma_0, hm_sym slot 3);
+    # the exclusion rides on canonical L+. Earlier versions had these two
+    # names the wrong way round -- see the BASIS note above.
     d_grp = models[2][1]
-    check("L+ vanishes for qou-bg3w's Delta_L (so the first version's stated "
-          "reason is false there)", sp.simplify(d_grp[3]) == 0)
-    check("L- does not, which is what actually excludes it",
-          sp.simplify(d_grp[4]) != 0, f"L- = {sp.factor(d_grp[4])}")
+    check("canonical L- (sigma_1 sigma_0) vanishes for qou-bg3w's Delta_L, so "
+          "an exclusion argued from ONE coordinate is false there",
+          sp.simplify(d_grp[3]) == 0)
+    check("canonical L+ (sigma_0 sigma_1) does not, which is what excludes it",
+          sp.simplify(d_grp[4]) != 0, f"L+ = {sp.factor(d_grp[4])}")
 
     # qou-bg3w's flagged third model.
     net9 = sp.simplify(sum(models[0][1]))
     check("qou-bg3w's -0.188291 is build_nucleon_nf's net (basis convention "
           "verified: coordinate sum IS net)",
-          abs(net9.subs(h, hv) + sp.Rational(188291, 1000000)) < sp.Rational(1, 10000),
-          f"exact {sp.N(net9.subs(h, hv), 10)}")
+          abs(net9.subs(h, hv_substrate) + sp.Rational(188291, 1000000))
+          < sp.Rational(1, 1000000),
+          f"exact at the substrate pin {sp.N(net9.subs(h, hv_substrate), 12)} "
+          f"-- NINE significant figures against the stored float64, not the "
+          f"~4 the q=111/100 reading gave")
 
     # Delta_S, for contrast: supported on {gamma, sigma_0, sigma_1} -> affine.
     check("Delta_S's [z^2] is 0 by support (the contrast case)", True,

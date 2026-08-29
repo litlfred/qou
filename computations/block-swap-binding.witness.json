@@ -1,8 +1,8 @@
 {
   "engine": "python+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:31:26.728318+00:00",
-  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
+  "computedAt": "2026-08-29T11:11:17.676152+00:00",
+  "commitSha": "a63a9642b80badff001cfa418f19df3b61104d40",
   "assertions": [
     {
       "name": "block_swap_braids_realize_block_perms",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1918,
+  "durationMs": 1881,
   "computation": "block-swap-binding",
   "scriptFile": "block_swap_binding.py",
   "scriptHash": "49b8ee75b5d6",
@@ -43,26 +43,26 @@
   },
   "description": "Exact block-swapped bound symmetrization S_atom for ⁴He (task-1, #2103 follow-up). tr_atom_sym = ¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ) with β_σ the positive block-swap braid (NOT the orbit identity's relabeling — that is conjugation; the Young symmetrizer composes the braid). Sign-only (chi_q_via_gp). The binding signal of identical-nucleon exchange is the residual log(S_free/S_atom): if the bonds break block symmetry, S_atom ≠ S_free and the symmetrization does NOT cancel in the log-ratio binding.",
   "parameters": {
-    "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+    "q0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "atom_traces": {
-      "id": 2.8995899808431616,
-      "swap_p": 3.0782212877080877,
-      "swap_n": 3.0782212929401007,
-      "swap_pn": 3.2678572970991437
+      "id": 2.899588321399906,
+      "swap_p": 3.0782191796495035,
+      "swap_n": 3.0782191796495035,
+      "swap_pn": 3.267854697865307
     },
     "free_traces": {
-      "id": 12.60719192946261,
-      "swap_p": 8.349322986801349,
-      "swap_n": 8.349322986801349,
-      "swap_pn": 5.529478311107214
+      "id": 12.60718540360831,
+      "swap_p": 8.349317793262141,
+      "swap_n": 8.349317793262141,
+      "swap_pn": 5.52947429431249
     },
-    "S_atom": 1.0625545283998112,
-    "S_free": 0.6907826185457582,
-    "binding_signal_log_Sfree_over_Satom": -0.43060603571343675,
+    "S_atom": 1.0625544053624754,
+    "S_free": 0.6907825610797088,
+    "binding_signal_log_Sfree_over_Satom": -0.43060600310930375,
     "convention": "sign-only (chi_q_via_gp); averaged-binding is the slow refinement"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
