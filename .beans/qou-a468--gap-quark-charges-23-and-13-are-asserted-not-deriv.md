@@ -1,11 +1,11 @@
 ---
 # qou-a468
 title: 'GAP: quark charges +2/3 and -1/3 are asserted, not derived — the stated mirror mechanism forces Q_d = -Q_u and cannot make the neutron neutral'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T04:09:43Z
-updated_at: 2026-08-29T04:29:27Z
+updated_at: 2026-08-29T07:49:03Z
 ---
 
 ## The finding, derived rather than asserted
