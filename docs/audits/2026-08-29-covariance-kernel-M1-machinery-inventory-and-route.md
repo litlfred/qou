@@ -46,17 +46,25 @@ inner-product inequality; the repo's `QBessel*` files are the *algebraic* q-Bess
 `J_ν`). This route needs the most new infrastructure.
 
 **Route decision (`qou-2toh`): Route 1.** It reuses `CompositeEulerMaclaurin` (sorry-free, explicit
-constant) and the Gaussian bounds; the kink already cancels (PR #5939), so the integrand is smooth and
-the order-2 EM remainder is exactly the right tool. Route 2's Bessel-J asymptotics are a larger new
-build with no other consumer in the corpus. The measured kink-cancellation (`c_{1/2}=0`, transpose
-symmetry) is the structural fact that makes Route 1's smooth EM applicable.
+constant) for the bulk and the Gaussian bounds for the edge, whereas Route 2's Bessel-J asymptotics
+are a larger new build with no other consumer in the corpus. **Correction (2026-08-29):** an earlier
+draft justified Route 1 by "the kink cancels (`c_{1/2}=0`, transpose symmetry) so the integrand is
+smooth" — **that is retracted** (PR #5939): the symmetry argument is invalid (the reflection is
+automatic) and the numerics cannot resolve the sub-leading exponent (`θ^{−1/2}`/`θ^{−5/6}`/`θ^{−1}`
+all fit; a `θ^{−5/6}` Airy-edge term is plausible). Route 1 still stands — it reuses the most infra —
+but `qou-tvok` must handle the **edge** term explicitly (via the Gaussian bounds), not assume a clean
+smooth `θ^{−1}` bulk. What is robust is only that the correction is *small* (any rate `≥ θ^{−1/2}`
+with a small constant closes the (CS) margin, 30–300× headroom, PR #5937).
 
 ## Decomposition (epic `qou-h315`)
 
 - `qou-2toh` — route decision (**this audit: Route 1**).
-- `qou-8quz` — rigorous transpose-symmetry proof `c_{1/2}=0` (finite substrate already Lean:
-  `YoungDiagramTranspose.csq_transpose`, `YoungDiagramTransposeBridge.cells_conj`).
-- `qou-tvok` — explicit `θ^{−1}` EM constant `C_A` for `Var(Σ|c|)` via `CompositeEulerMaclaurin`.
+- ~~`qou-8quz` — transpose-symmetry proof `c_{1/2}=0`~~ **SCRAPPED / refuted (2026-08-29, PR #5939):**
+  the reflection is automatic and does not isolate the half-power; the sub-leading exponent is
+  numerically indeterminate. The half-power/edge question folds into `qou-tvok`.
+- `qou-tvok` — explicit sub-leading EM constant `C_A` for `Var(Σ|c|)` via `CompositeEulerMaclaurin`
+  (bulk) **+ the Airy-edge contribution** via the Gaussian bounds; establishes the rate + constant
+  rigorously (the exponent is `θ^{−1/2}`…`θ^{−1}`, currently open).
 - `qou-po72` — the analogous `C_W`, `C_P`, `C_D` (smooth weights, easier than `C_A`).
 - `qou-xs2c` — explicit de-poissonization `O(1/n)` constant (reuse `GaussianTailBound`/`GaussianSumBound`).
 - `qou-jh3m` — ratio propagation `m = ρ_P − σ_D/σ_A → C →` verify `N₀ ≤ 78`, discharging `hCS`.
@@ -64,10 +72,12 @@ symmetry) is the structural fact that makes Route 1's smooth EM applicable.
 ## Honest status
 
 The closure is **not** done, but it is now accurately scoped: the reduction is Lean-proved
-(`m1_pos_all_of_cs_inputs`), the kink is gone (`θ^{−1}`, PR #5939), and the analytic tools (EM with
-explicit remainder, Gaussian bounds) **already exist sorry-free**. What remains is Route 1's
-Kerov-profile layer + the constant assembly — a real but now well-scoped multi-piece build, tracked
-under `qou-h315`. Gap `qou-k5r5` OPEN.
+(`m1_pos_all_of_cs_inputs`), the correction is **small** (effective exponent `≈0.9`, `|coeff|~0.05`;
+the exact sub-leading exponent `θ^{−1/2}`…`θ^{−1}` is open, and the "kink cancels" claim was retracted
+— PR #5939), and the analytic tools (EM with explicit remainder, Gaussian bounds) **already exist
+sorry-free**. What remains is Route 1's Kerov-profile layer + the constant assembly **including the
+Airy-edge term** — a real but well-scoped multi-piece build, tracked under `qou-h315`. Gap `qou-k5r5`
+OPEN.
 
 ## Cross-references
 
