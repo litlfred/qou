@@ -284,14 +284,14 @@ def main() -> int:
         "anti_laundering": "no CODATA read; no convention tuned to land on 8π"})
 
     wb.add_assertion("control_zeta_delta1_zero_equals_minus_b1",
-                     computed=float(zeta_delta1_0), expected=float(-B1), tolerance=1e-3,
+                     computed=zeta_delta1_0, expected=-B1, tolerance=1e-3,
                      source="reused #3834 machinery: ζ_{Δ₁}(0)=d·E_Λ(0)=−b₁=−8 (sanity control)")
     wb.add_assertion("control_gaussian_2pi_bookkeeping_ok",
                      computed=1.0 if all(r["ok"] for r in toy_ratios) else 0.0,
                      expected=1.0, tolerance=0.5,
                      source="∫da e^{−½λa²}=(2π)^{½}λ^{−½} verified for λ=0.5,1,3.7 (per-mode 2π bookkeeping)")
     wb.add_assertion("measure_pi_power_is_minus_b1_over_2_not_minus_1",
-                     computed=float(measure_pi_power), expected=float(-B1) / 2, tolerance=1e-3,
+                     computed=measure_pi_power, expected=-B1 / 2, tolerance=1e-3,
                      source="Maxwell oscillator measure (2π)^{½ζ_Δ₁(0)}=(2π)^{−b₁/2}: π-power −4, NOT the target −1")
     wb.add_assertion("moduli_covolume_dependence_survives",
                      computed=1.0 if covolume_survives else 0.0, expected=1.0, tolerance=0.5,

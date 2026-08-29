@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:49:16.097921+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:15:29.354449+00:00",
+  "commitSha": "cd38c4f3dd258b4e1f3d1004824fecdc92084191",
   "assertions": [
     {
       "name": "control_zeta_delta1_zero_equals_minus_b1",
-      "computed": -8.000000087760949,
-      "expected": -8.0,
+      "computed": "-8.000000087760949367747275749805909596448341577740308451613864307722285",
+      "expected": -8,
       "passed": true,
       "tolerance": "0.001",
       "source": "reused #3834 machinery: ζ_{Δ₁}(0)=d·E_Λ(0)=−b₁=−8 (sanity control)"
@@ -22,7 +22,7 @@
     },
     {
       "name": "measure_pi_power_is_minus_b1_over_2_not_minus_1",
-      "computed": -4.000000043880474,
+      "computed": "-4.000000043880474683873637874902954798224170788870154225806932153861143",
       "expected": -4.0,
       "passed": true,
       "tolerance": "0.001",
@@ -46,10 +46,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "alpha-em-flat-torus-maxwell-perloop",
   "scriptFile": "alpha_em_flat_torus_maxwell_perloop_probe.py",
-  "scriptHash": "174ac2201384",
+  "scriptHash": "e3b2d27a4593",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
