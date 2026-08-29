@@ -1,5 +1,15 @@
 # Torus-knot reference papers — usability analysis (2026-07-02)
 
+> **Currency note (2026-08-29).** This audit's §6 described actions on a PR
+> that was closed unmerged; the corpus then moved independently. The uploads
+> were re-homed to `library/arxiv-math-0405126v1/` and math/0405126 is
+> registered as **`murakami2004a`** (not the four keys named in §6, which were
+> never landed and should not be re-added). The V1 re-scope has now been
+> executed against the 2026-06-30 muon-ID ruling, and the citation wiring done
+> under `murakami2004a` — see
+> [2026-08-29-mass-provenance-breakdown-and-gap-map.md](2026-08-29-mass-provenance-breakdown-and-gap-map.md).
+> The gap-by-gap verdicts V1–V8 stand as written.
+
 Two papers were uploaded to `uploads/` (commits `9e2c2d2a`, `1088902c`):
 
 1. **Murakami, H.** *Asymptotic behaviors of the colored Jones polynomials of a
