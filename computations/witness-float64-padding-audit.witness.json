@@ -92,9 +92,10 @@
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "ba7a8bbc7be0",
   "scriptCommitSha": "unknown",
-  "commitSha": "a972c7f6a706578c6cacf662612ac5515a424b26",
-  "engine": null,
-  "computedAt": "2026-08-29T05:49:44.239454+00:00",
+  "commitSha": "19c22712bb5c535b1483138fcdc36afe77a3d02a",
+  "engine": "python",
+  "computedAt": "2026-08-29T07:01:39.105676+00:00",
   "durationMs": 0,
-  "q0Anchor": false
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
