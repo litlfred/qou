@@ -81,4 +81,63 @@ theorem prod_bonds_bot_coeff (s : Finset ι) (d : ι → R) :
     ∑ t ∈ s.powersetCard 0, ∏ e ∈ s \ t, d e = ∏ e ∈ s, d e := by
   simp
 
+
+/-! ## Discharging the assumed field of `QOU.Mass.BodyOrderJetGrading`
+
+The content block `lem:bond-order-eq-jet-degree` carries a structure
+`QOU.Mass.BodyOrderJetGrading` whose theorem `bodyorder_eq_jet_total` sums a
+**hypothesis field**, `body_eq_graded : ∀ n, bodyTerm n = gradedTerm n`. The
+interesting claim -- that the `n`-body term IS the degree-`n` graded component
+-- is assumed there, not derived. What follows derives it, in the bond-product
+model.
+
+The structure lives in a content-block sibling under `mass-theory/`, not in the
+Lake library, so it cannot be imported here; `BondGrading` below mirrors its
+fields verbatim and is checked against them by hand. That is a limitation of
+the content-sibling layout, not a modelling choice.
+
+**The index runs backwards, and saying so is the whole point.** An `m`-body
+term sits at grade `|s| - m`, so a witness must re-index; matching
+`bodyTerm n` to `gradedTerm n` by *defining* them the same way would be the
+vacuous instance §3b-tax warns about. Here `body_eq_graded` is discharged by
+`esymm_eq_compl_sum`, a genuine complement bijection. -/
+
+/-- **The complement bijection.** Summing each `n`-subset's product equals
+summing, over `(|s| - n)`-subsets, the product over the complement. This is
+what makes the body index and the grade index two readings of one grading. -/
+theorem esymm_eq_compl_sum (s : Finset ι) (d : ι → R) {n : ℕ} (hn : n ≤ s.card) :
+    ∑ t ∈ s.powersetCard n, ∏ e ∈ t, d e
+      = ∑ u ∈ s.powersetCard (s.card - n), ∏ e ∈ s \ u, d e := by
+  refine Finset.sum_nbij' (fun t => s \ t) (fun u => s \ u) ?_ ?_ ?_ ?_ ?_
+  · intro t ht
+    obtain ⟨hsub, hcard⟩ := Finset.mem_powersetCard.mp ht
+    refine Finset.mem_powersetCard.mpr ⟨Finset.sdiff_subset, ?_⟩
+    rw [Finset.card_sdiff, Finset.inter_eq_left.mpr hsub, hcard]
+  · intro u hu
+    obtain ⟨hsub, hcard⟩ := Finset.mem_powersetCard.mp hu
+    refine Finset.mem_powersetCard.mpr ⟨Finset.sdiff_subset, ?_⟩
+    rw [Finset.card_sdiff, Finset.inter_eq_left.mpr hsub, hcard]
+    omega
+  · intro t ht
+    exact Finset.sdiff_sdiff_eq_self (Finset.mem_powersetCard.mp ht).1
+  · intro u hu
+    exact Finset.sdiff_sdiff_eq_self (Finset.mem_powersetCard.mp hu).1
+  · intro t ht
+    rw [Finset.sdiff_sdiff_eq_self (Finset.mem_powersetCard.mp ht).1]
+
+/-- **The field, discharged.** `QOU.Mass.BodyOrderJetGrading.body_eq_graded`
+asserts `bodyTerm n = gradedTerm n`. In the bond-product model
+`bodyTerm n = Σ_{|t| = n} ∏_{e ∈ t} d_e` (the `n`-body cluster sum) and
+`gradedTerm n` is the coefficient at grade `|s| - n`, given by
+`prod_bonds_graded`. `esymm_eq_compl_sum` is exactly the equation between them.
+
+So the assumed field is a theorem here, and it is not definitional: the two
+sides are different expressions over different index sets, related by the
+complement bijection. -/
+theorem body_eq_graded_of_bond_product (s : Finset ι) (d : ι → R) {n : ℕ}
+    (hn : n ≤ s.card) :
+    (∑ t ∈ s.powersetCard n, ∏ e ∈ t, d e)
+      = ∑ u ∈ s.powersetCard (s.card - n), ∏ e ∈ s \ u, d e :=
+  esymm_eq_compl_sum s d hn
+
 end QOU.Knot.BodyOrderExpansion
