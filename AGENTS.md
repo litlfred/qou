@@ -255,6 +255,55 @@ Concretely:
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
 
+## Subagents with persistent memory (`.claude/agents/`)
+
+Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
+carrying `memory: project` in its frontmatter. That gives the agent its own
+directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
+25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
+prompt when it starts, and it reads and writes the directory as it works.
+
+| agent | owns |
+|---|---|
+| `lean-verifier` | olean cache restore, `lean`-direct verification, sorry/axiom status |
+| `corpus-grepper` | the six-path checklist before anything is declared open / refuted |
+| `compute-precision-auditor` | the NO-FLOAT64 gate family, witness staleness, producer health |
+| `convention-auditor` | convention C vs D, the muon/proton q₀ pin, Λ vs Cl₂, layer straddles |
+| `merge-coordinator` | branch/PR policy, sibling coordination, drive-to-green |
+
+The point is the failure mode this document is itself a record of: an agent
+spends a session measuring something, writes the number down, and the number
+is quoted months later as though it were current. **Memory does not fix that
+by holding better numbers — it fixes it by holding methods.** Each `MEMORY.md`
+labels every entry as exactly one of:
+
+- **STABLE** — a path, a command, a ruling, a structural fact. Trustworthy;
+  verify cheaply if surprising.
+- **TRAP** — a specific way the task goes wrong, with the evidence that
+  established it. Durable, and the highest-value entry type.
+- **BASELINE** — a measured number, stored **with the command that produced it
+  and the date, and never quoted as a current answer.** A baseline tells the
+  agent what to measure and how; re-run it, report fresh, then update the
+  entry.
+
+**Maintaining them is part of the work.** When a session establishes a durable
+fact in one of these areas — a detector blind spot, a producer that refuses by
+design, a gate that cannot fire — add it to the relevant `MEMORY.md` as a TRAP
+in the same PR. When a session re-measures a BASELINE, update the entry with
+the fresh number and date. A memory file that only accretes becomes the thing
+it exists to prevent.
+
+Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+under 200 lines — split detail into sibling files the agent reads on demand
+(`compute-precision-auditor/producer-health.md` is the worked example). And
+`memory: project` writes under `.claude/agent-memory/`, which is **committed**;
+`memory: local` writes under `.claude/agent-memory-local/`, which is
+gitignored, for anything genuinely per-machine.
+
+The agents defer to `.claude/skills/local/*.md` as the source of truth on
+procedure. Memory summarises; the skill governs. Where the two disagree, the
+skill wins and the memory entry is wrong — fix it.
+
 ## Agent work-plan policy (STRICT)
 
 Every session must run from a **prioritized work-plan** maintained
