@@ -59,3 +59,20 @@ silently ambiguous about which volume they mean.
 
 Surfaced by PR #4925 (`thm:ideal-tetrahedron-volume-well-defined`); the same caveat is
 stated in every block of the gluing/volume arc.
+
+### Status 2026-08-29 — this is now the arc's SOLE open item
+
+The gluing/volume arc has landed on main: the exposition blocks, the strategy-matrix
+probe and witness, the reach correction, and the axiom-guard pins (verified 27/27 clean
+by proof term under `qou-0r4e`, which also found and fixed a guard bug that made a primed
+declaration silently unverifiable).
+
+Everything measurable in the arc is therefore done, and what remains is exactly the
+definitional gap recorded above: **the volume of a topological 3-manifold is undefined,
+so nothing connects an `IdealTriangulation` to a knot complement.** No amount of further
+measurement moves it — the constraint is that Mathlib has no hyperbolic 3-manifolds.
+
+Unchanged and worth re-reading before anyone starts: numerical agreement at more knots is
+**not** progress here, and axiomatising the bridge as a class field is the
+§"Axiomatization is NOT a Proof" failure. The honest smaller win remains a content-bearing
+conditional class with no instance.
