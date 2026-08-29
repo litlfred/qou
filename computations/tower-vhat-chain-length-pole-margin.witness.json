@@ -1,0 +1,319 @@
+{
+  "description": "The tower's per-generator V_hat takes seven values at every nucleon count; max |V_hat| saturates rather than degrading with A; and the largest is the sigma^-4 chain, one even chain-length step from the Phi_q pole.",
+  "scope": "Scope-(a): measures the construction as built. Does NOT claim the chain length 4 is tuned -- it is 3 (B_3 closure) + 1 (quark pair), fixed upstream. Excludes no ingredient.",
+  "lean": [
+    "qou:QOU.BraidsAndKnots.prod_eq_linear",
+    "qou:QOU.BraidsAndKnots.markov_param_eq_half_h",
+    "qou:QOU.BraidsAndKnots.sigma_mul_sub_h",
+    "qou:QOU.BraidsAndKnots.vHat_half_h_eq_avg_evals",
+    "qou:QOU.BraidsAndKnots.vHat_invChain",
+    "qou:QOU.BraidsAndKnots.identity_coeff_avg_eq_trace_full"
+  ],
+  "q": "1.1099785827513808076",
+  "h": "0.20906029879563931543",
+  "markov_parameter_half_h": "0.10453014939781965772",
+  "saturation": {
+    "rows": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_generators": 2,
+        "has_neutron": false,
+        "max_abs_V_hat": "1.0551103188317245612",
+        "max_abs_V_over_q": "0.95056817782587256816",
+        "n_distinct_alpha_beta": 2
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_generators": 2,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 2
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_generators": 5,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 5
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_generators": 8,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 6
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_generators": 11,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 7
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_generators": 17,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 7
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "n_generators": 23,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 7
+      },
+      {
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "n_generators": 35,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 7
+      },
+      {
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "n_generators": 47,
+        "has_neutron": true,
+        "max_abs_V_hat": "1.0883675333971881278",
+        "max_abs_V_over_q": "0.9805302105013378955",
+        "n_distinct_alpha_beta": 7
+      }
+    ]
+  },
+  "alphabet": [
+    {
+      "alpha": "-0.42725783060631219849",
+      "beta": "1.1330288582618542662",
+      "V_hat": "1.0883675333971881278",
+      "abs_V_over_q": "0.9805302105013378955",
+      "n_factors": 4,
+      "word": "sigma_inv*sigma_inv*sigma_inv*sigma_inv"
+    },
+    {
+      "alpha": "-0.31815906470097575696",
+      "beta": "1.0883675333971881278",
+      "V_hat": "1.0551103188317245612",
+      "abs_V_over_q": "0.95056817782587256816",
+      "n_factors": 4,
+      "word": "sigma_inv*sigma_inv*sigma_inv*avg"
+    },
+    {
+      "alpha": "1.2024503809027993559",
+      "beta": "0.54569350643246485853",
+      "V_hat": "0.67138582439169962866",
+      "abs_V_over_q": "0.60486376478318083853",
+      "n_factors": 7,
+      "word": "sigma*sigma*sigma*sigma*avg*sigma*sigma"
+    },
+    {
+      "alpha": "1.1454089571499937418",
+      "beta": "0.43192628556672030775",
+      "V_hat": "0.5516560549792099682",
+      "abs_V_over_q": "0.4969970263856640264",
+      "n_factors": 7,
+      "word": "sigma*sigma*sigma*avg*avg*sigma*sigma"
+    },
+    {
+      "alpha": "1.0",
+      "beta": "0.0",
+      "V_hat": "0.10453014939781965772",
+      "abs_V_over_q": "0.094173122817120970934",
+      "n_factors": 1,
+      "word": "sigma"
+    },
+    {
+      "alpha": "1.0",
+      "beta": "-0.20906029879563931543",
+      "V_hat": "-0.10453014939781965772",
+      "abs_V_over_q": "0.094173122817120970934",
+      "n_factors": 1,
+      "word": "sigma_inv"
+    },
+    {
+      "alpha": "1.0",
+      "beta": "-0.10445824776972628902",
+      "V_hat": "0.000071901628093368697589",
+      "abs_V_over_q": "0.000064777491395501660041",
+      "n_factors": 1,
+      "word": "colour_avg"
+    }
+  ],
+  "inv_chain": {
+    "rows": [
+      {
+        "n": 1,
+        "V_hat_recursion": "-0.10453014939781965772",
+        "V_hat_closed_form": "-0.10453014939781965772",
+        "abs_difference": "0.0",
+        "abs_V_over_q": "0.094173122817120970934",
+        "past_the_pole": false
+      },
+      {
+        "n": 2,
+        "V_hat_recursion": "1.0218531042662609947",
+        "V_hat_closed_form": "1.0218531042662609947",
+        "abs_difference": "2.6727647100921956461e-51",
+        "abs_V_over_q": "0.92060614515040724082",
+        "past_the_pole": false
+      },
+      {
+        "n": 3,
+        "V_hat_recursion": "-0.31815906470097575696",
+        "V_hat_closed_form": "-0.31815906470097575696",
+        "abs_difference": "6.6819117752304891154e-52",
+        "abs_V_over_q": "0.28663531859536680663",
+        "past_the_pole": false
+      },
+      {
+        "n": 4,
+        "V_hat_recursion": "1.0883675333971881278",
+        "V_hat_closed_form": "1.0883675333971881278",
+        "abs_difference": "0.0",
+        "abs_V_over_q": "0.9805302105013378955",
+        "past_the_pole": false
+      },
+      {
+        "n": 5,
+        "V_hat_recursion": "-0.54569350643246485853",
+        "V_hat_closed_form": "-0.54569350643246485853",
+        "abs_difference": "0.0",
+        "abs_V_over_q": "0.4916252573809276219",
+        "past_the_pole": false
+      },
+      {
+        "n": 6,
+        "V_hat_recursion": "1.2024503809027993559",
+        "V_hat_closed_form": "1.2024503809027993559",
+        "abs_difference": "0.0",
+        "abs_V_over_q": "1.0833095337048777069",
+        "past_the_pole": true
+      },
+      {
+        "n": 7,
+        "V_hat_recursion": "-0.7970781423509343988",
+        "V_hat_closed_form": "-0.7970781423509343988",
+        "abs_difference": "1.3363823550460978231e-51",
+        "abs_V_over_q": "0.71810227218543405515",
+        "past_the_pole": false
+      },
+      {
+        "n": 8,
+        "V_hat_recursion": "1.3690877755061588294",
+        "V_hat_closed_form": "1.3690877755061588294",
+        "abs_difference": "2.6727647100921956461e-51",
+        "abs_V_over_q": "1.233436209293792062",
+        "past_the_pole": true
+      },
+      {
+        "n": 9,
+        "V_hat_recursion": "-1.083300041775709125",
+        "V_hat_closed_form": "-1.083300041775709125",
+        "abs_difference": "2.6727647100921956461e-51",
+        "abs_V_over_q": "0.97596481464575493437",
+        "past_the_pole": false
+      },
+      {
+        "n": 10,
+        "V_hat_recursion": "1.5955628059251171319",
+        "V_hat_closed_form": "1.5955628059251171319",
+        "abs_difference": "5.3455294201843912923e-51",
+        "abs_V_over_q": "1.43747170505766433",
+        "past_the_pole": true
+      },
+      {
+        "n": 11,
+        "V_hat_recursion": "-1.4168688787296227769",
+        "V_hat_closed_form": "-1.4168688787296227769",
+        "abs_difference": "5.3455294201843912923e-51",
+        "abs_V_over_q": "1.2764830788153873497",
+        "past_the_pole": true
+      },
+      {
+        "n": 12,
+        "V_hat_recursion": "1.8917738370665745158",
+        "V_hat_closed_form": "1.8917738370665745158",
+        "abs_difference": "5.3455294201843912923e-51",
+        "abs_V_over_q": "1.7043336389223868193",
+        "past_the_pole": true
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "max |V_hat| SATURATES: one value for every neutron-containing atom, A = 1 to 16, and it never grows",
+      "passed": true,
+      "detail": "neutron-containing maxima: ['1.0883675333971881278']; proton-only: ['1.0551103188317245612'] \u2014 the max is attained already at A = 1 and adding nucleons only repeats the alphabet"
+    },
+    {
+      "name": "a proton-only system is strictly FURTHER from the pole than any neutron-containing one",
+      "passed": true,
+      "detail": "proton-only ['1.0551103188317245612'] < neutron-containing ['1.0883675333971881278']: the neutron's dd pair contributes a further sigma^-1 where the proton's uu pair contributes a sigma"
+    },
+    {
+      "name": "the (alpha, beta) alphabet saturates at 7 for A >= 4",
+      "passed": true,
+      "detail": "distinct-pair counts at A >= 4: [7, 7, 7, 7, 7]"
+    },
+    {
+      "name": "the maximum is the pure sigma^-4 chain",
+      "passed": true,
+      "detail": "top word = sigma_inv*sigma_inv*sigma_inv*sigma_inv, |V|/q = 0.9805302105013378955"
+    },
+    {
+      "name": "vHat_invChain: recursion == ((1/q)^n + (-q)^n)/2",
+      "passed": true,
+      "detail": "worst |recursion - closed form| over n = 1..12 = 5.3455294201843912923e-51"
+    },
+    {
+      "name": "the alphabet maximum IS the n=4 chain value",
+      "passed": true,
+      "detail": "alphabet max 1.0883675333971881278 vs chain n=4 1.0883675333971881278"
+    },
+    {
+      "name": "n = 4 is the LAST EVEN chain length that stays inside the pole",
+      "passed": true,
+      "detail": "even n with |V_n| < q, over n = 1..12: [2, 4]; n=4 sits at 0.9805302105013378955 of q, n=6 is past it"
+    },
+    {
+      "name": "vHat_half_h_eq_avg_evals holds on every alphabet element",
+      "passed": true,
+      "detail": "worst |vHat(h/2) - (eval_q + eval_-1/q)/2| = 1.3363823550460978231e-51"
+    }
+  ],
+  "all_checks_passed": true,
+  "scriptFile": "tower_vhat_chain_length_pole_margin_probe.py",
+  "scriptHash": "c5be8b883f97",
+  "scriptCommitSha": "unknown",
+  "commitSha": "c2b9513dc63c1ee4cff38d2f172cfdab2bdbb217",
+  "engine": "python",
+  "computedAt": "2026-08-29T09:44:03.759163+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

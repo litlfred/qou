@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T07:34:41Z
+updated_at: 2026-08-29T08:23:42Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -155,3 +155,5 @@ Net verified outcome of THIS session:
    neither in Mathlib v4.24.0.
 
 2026-08-29: general-n gap SHARPENED via induction route (qou-x4zl). normalizedSum n q=1 reduced (sorry-free, MolienFakeDegreeInduction.lean) to the one-step recursion normalizedSum(n+1)=normalizedSum(n), then to the addable-box hook identity (B) [verified n<=6] + SYT branching (A) [corpus infra exists]. (B) is more elementary than the coinvariant/maj-RSK routes -- no rep theory. Remaining: prove (B) in Lean (q-JM contents) + the Nat.Partition addable-box reindexing.
+
+2026-08-29 CLOSED (math) via corpus telescope, NOT open: normalizedSum n q = 1 follows from MacdonaldTelescopeGeneralX.telescope_generalX at X=0. Convention bridge (exact n<=5): q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam) = schurElement(q^2,0,lam)*(1-q^2)^n; telescope@X=0: Sum f schurElement(q^2,0) = (1/(1-q^2))^n; chain = 1. Per-cell 1-q^2h = -q^h(q-q^-1)[h]_q; n-stat identity kappa = Sum h - n - 2 n(lam). Probe fake_degree_via_telescope_probe.py 3/3. So NOT multi-week coinvariant/maj-RSK. Remaining = MECHANICAL Lean bridging (convention foldl + Nat.Partition<->YoungDiagram carrier). Audit 2026-08-29-normalizedsum-closes-via-telescope.md.

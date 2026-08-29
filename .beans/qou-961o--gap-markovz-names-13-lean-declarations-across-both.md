@@ -1,11 +1,11 @@
 ---
 # qou-961o
 title: 'GAP: markovZ names 13 Lean declarations across both conventions'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-29T08:05:54Z
+updated_at: 2026-08-29T10:30:17Z
 ---
 
 Measured 2026-08-29 on main (PR #5972). `grep -rn --include=*.lean "^\s*(noncomputable\s+)?(private\s+)?def\s+markovZ\b" content/` returns THIRTEEN declarations of the same name carrying two different functions:
@@ -75,3 +75,7 @@ build would evict the restore. Measured recipe that works here:
 NOT done in PR #5972 because a rename touching three files needs each one
 lean-verified and the session budget went to the computations/ surface, where
 the finding was larger. Deliberately left rather than half-done.
+
+SCOPED 2026-08-29 (session tender-keller): all 3 C markovZ are FILE-LOCAL (no cross-file refs) — safe to rename. Proposed: EigenphaseCarrierVacuity markovZ->markovZC (2 refs); q-beta-cos-resummation markovZ->markovZC (9 refs); HoefsmitV21CosSymmetrization markovZ->cosKernel (10 refs, it is the convention-neutral kernel u/(u²+1)). Leaves bare markovZ = convention D (10 sites, consistent). CAUTION: surgical word-boundary rename needed — bare replace_all corrupts substrings like markovZD_eq_sq_mul_kernel. Then correct AGENTS.md stale '5 decls/3C/2D'. Awaiting owner nod (touches deliberately-documented decls; audit says 0-actionable so hygiene not correctness).
+
+FIX APPLIED 2026-08-29 (session tender-keller): renamed the 3 C markovZ — EigenphaseCarrierVacuity + q-beta-cos-resummation -> markovZC; HoefsmitV21CosSymmetrization kernel -> cosKernel. Word-boundary rename (markovZ_real/legacy/markovZD substrings + QBetaSpectralBridge.markovZ untouched). All 3 lean-direct GREEN (exit 0). AGENTS.md resolution note added. PR pending; close on merge.
