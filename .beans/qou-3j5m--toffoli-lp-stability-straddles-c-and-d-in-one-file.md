@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T18:36:04Z
+updated_at: 2026-08-29T18:53:51Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -396,3 +396,36 @@ mis-scoped a dozen blocks.
   toffoli-transfer-matrix-interpretation  the P_77 table row, both frames
 
 NOT touched, per the audit above: Phi, q_Phi, P_66, P_67.
+
+
+## A FOURTH disagreement — and it WEAKENS my own "transcription drift" reading
+
+Tested the block's UNIVERSALITY claim: P_flip = c_{k1k2} * Phi with c = 1 for every
+control pair, so all three amplitudes equal Phi = +0.0495 (the interpretation
+table lists all three as "1x"). Against the construction, target = last strand:
+
+    pp      -0.1306159003
+    mixed   -0.1176706540
+    nn      -0.1070109882
+
+Three DIFFERENT values, all negative where the table says +0.0495. So the
+construction does not produce the universal factorization the block's Statement 1
+asserts.
+
+WHY THIS MATTERS FOR THE VERDICT. I wrote that the three disagreements were "most
+plausibly transcription drift in hand-written blocks". That reading is now weaker:
+a mistyped number cannot produce a STRUCTURAL claim. Universality is either a real
+property of some derivation, or a mistake in one. So either
+
+  (a) the published forms come from a different, unrecorded derivation that DOES
+      have universality -- in which case the construction is not the current object
+      despite being the only one in the tree that computes; or
+  (b) that derivation is wrong.
+
+I cannot distinguish these, and I should not have leaned as far toward drift as I
+did. What stands unchanged: the construction is the ONLY thing in the tree that
+derives anything here, it agrees with the published P_77 exactly, and its
+deprecation was about consumers rather than correctness.
+
+Running total: 4 independent disagreements (P_66 value, P_76/P_67 value AND sign,
+the Delta_1 = 0 lemma, universality) against 1 agreement (P_77).

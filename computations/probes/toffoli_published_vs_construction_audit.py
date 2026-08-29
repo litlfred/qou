@@ -177,8 +177,27 @@ def main() -> int:
     print(f"    published Phi = {mp.nstr(_num(pub['Phi']), 12)}   equal: {chain_is_phi}"
           f"   ratio {mp.nstr(ratio, 8)}")
 
+    # 4. THE UNIVERSALITY CLAIM. The block states P_flip = c_{k1k2} * Phi with c = 1
+    # for all three control pairs, and the interpretation table lists all three as
+    # +0.0495, "1x". Test it: vary the control pair, flip the target.
+    uni = {}
+    for label, ctrl in (("pp", (1, 1)), ("mixed", (1, 0)), ("nn", (0, 0))):
+        par, dau = (ctrl[0], ctrl[1], 0), (ctrl[0], ctrl[1], 1)
+        Vp = [_V(i, par) for i in range(2)]
+        Vd = [_V(i, dau) for i in range(2)]
+        uni[label] = sum(sp.prod([Vp[j] for j in range(2) if j != c])
+                         * (Vp[c] - Vd[c]) for c in range(2))
+    vals = [_num(v) for v in uni.values()]
+    universal = max(vals) - min(vals) < mp.mpf("1e-12")
+    print(f"\n  the block's UNIVERSALITY claim (c = 1 for every control pair, so all")
+    print(f"  three P_flip equal Phi = +0.0495 — the interpretation table's '1x' rows):")
+    for label, v in uni.items():
+        print(f"    {label:<6} {mp.nstr(_num(v), 12):>16}")
+    print(f"    all equal: {universal}   published says yes")
+
     gates_ok = (agree_prod and recon_matches_pub_77
-                and lemma_conv_dependent and not chain_is_phi)
+                and lemma_conv_dependent and not chain_is_phi
+                and not universal)
 
     print("\n" + "=" * 90)
     print(" RESULT")
@@ -199,6 +218,8 @@ def main() -> int:
     w.add_assertion("delta1_lemma_is_convention_dependent",
                     1 if lemma_conv_dependent else 0, 1)
     w.add_assertion("chain_does_NOT_reproduce_published_Phi", 0 if chain_is_phi else 1, 1)
+    w.add_assertion("construction_does_NOT_give_universal_c_eq_1",
+                    0 if universal else 1, 1)
     w.add_parameter("q_evaluated_at", str(Q_EVAL))
     w.add_parameter("construction_source",
                     "computations/_deprecated/toffoli-braid.py::chain_reduce")
@@ -209,13 +230,20 @@ def main() -> int:
     w.add_data("Phi_published", mp.nstr(_num(pub["Phi"]), 20))
     w.add_data("chain_amplitude_block_convention", mp.nstr(_num(chain_amp), 20))
     w.add_data("chain_over_Phi_ratio", mp.nstr(ratio, 12))
+    w.add_data("P_flip_by_control_pair",
+               {k: mp.nstr(_num(v), 20) for k, v in uni.items()})
     w.add_caveat(
         "NOT a claim that the published forms are wrong. The only recorded "
         "construction lives in a _deprecated file that neither the content blocks nor "
         "the live producer cite, so it may itself be superseded by a derivation absent "
         "from the tree. What is established: the two disagree on three of four entries, "
         "the proof block's key lemma is convention-dependent and false as the producer "
-        "runs, and the corpus does not record which side is current."
+        "runs, and the corpus does not record which side is current. NOTE the "
+        "universality result WEAKENS a transcription-drift reading: a structural claim "
+        "(all three control pairs giving the same amplitude) cannot arise from a "
+        "mistyped number, so either the published forms come from a different, "
+        "unrecorded derivation that does have universality, or that derivation is "
+        "wrong. This probe cannot distinguish those."
     )
     w.set_description(
         "Compares the published Toffoli transfer-matrix entries against the only "
