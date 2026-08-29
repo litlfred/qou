@@ -1,11 +1,11 @@
 ---
 # qou-aemx
-title: 'The Lean and the compute are two DIFFERENT alpha_em derivations (470 ppb apart); the scorecard rests on the one the paper does not cite'
+title: 'The alpha_em Lean file holds TWO rival conjectures and the block cites only one; the 470 ppb figure compares the .md to the UNCITED one (corrected 2026-08-29)'
 status: in-progress
 type: task
 priority: high
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-08-29T00:47:00Z
+updated_at: 2026-08-29T01:25:00Z
 ---
 
 Found while re-examining the two open knobs on `m_K/m_pi` (the framework's
@@ -257,3 +257,55 @@ the stale files type-check, so a compile does not catch them, and nothing
 compares an `.md`'s displayed formula against its resolved `.lean`. The grep
 above finds only blocks whose prose *says* it was superseded, so it is a lower
 bound. Carried forward in `qou-mdlv`.
+
+
+---
+
+## CORRECTION 2026-08-29 — the 470 ppb compares the `.md` to a DIFFERENT conjecture
+
+Re-read `em-coupling-chern-simons.lean` closely while writing up why its repair
+is an author call, and found that this bean's own framing — including its title —
+was imprecise in a way that matters.
+
+**The file carries TWO conjecture classes for `1/α_EM`, and the block's
+`lean.ref` points at only one of them:**
+
+| class in the file | formula it is built on | `.ts` `lean.ref` points here? |
+|---|---|---|
+| `AlphaEmGluonOctetConjecture` | `alphaEmInvCorrected = 45·[3]_q·(1 + δ + κδ²)`, `κ = 8q` | **no** |
+| `ChernSimonsCorrectionConjecture` | `q·[9]_q·[10]_q·(…)` | **yes** — `.ts` line 9 |
+
+So the `45·[3]_q` / `κ = 8q` form this bean repeatedly calls *"the Lean"* belongs
+to the **uncited** class. The class the block actually references carries the
+**same prefactor as the `.md`** — `q·[9]_q·[10]_q` — and differed only in taking
+the **truncated** `(1 + δ_CS + κδ_CS²)` where the `.md` gives the **resummed**
+`(1 + δ_CS/(1 − δ_CS·κ))`.
+
+**Measured cost of that real divergence: 11.07 ppb, not 470.** Re-derived at
+50 dps at the proton pin with the Witten `κ ≈ 1.722`:
+
+| form | `1/α` | vs CODATA-2022 |
+|---|---|---|
+| resummed (the `.md`) | `137.0359352` | −466.7 ppb |
+| truncated (the docstring) | `137.0359337` | −477.8 ppb |
+
+difference **11.0676 ppb**, reproducing the `.md`'s own stated `11.06`. The
+`.md`'s other two figures check out independently too (`137.0359351`, `−468 ppb`).
+
+**What stays true.** The file does contain a construction 470 ppb from the `.md`
+— `alphaEmInvCorrected` — and the production compute does follow the `.md`. Two
+rival conjectural formulas for one observable living in one file, only one cited,
+is a real finding. What was wrong is calling the uncited one *"the block's
+Lean"*, and therefore sizing the block's `.md`/`.lean` divergence at 470 ppb when
+it is 11.
+
+**Root cause, and it is the same one this bean already records.** I read the file
+for *a* formula rather than for *which declaration the block cites*, exactly as I
+earlier read the `.lean` instead of the `.md`. One level further in: **within a
+file, the `lean.ref` names the declaration — a formula that merely shares the
+file is not the block's claim.**
+
+The docstring is corrected in the same tranche (resummed form + the measured
+11.07 ppb). The `opaque` Prop and the absent instance are untouched: what the
+conjecture asserts, which `κ` it asserts it of, and whether the tier is algebraic
+or numerical remain author decisions.
