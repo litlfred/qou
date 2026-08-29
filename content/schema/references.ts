@@ -11111,6 +11111,84 @@ export const references: Reference[] = [
     note: "PDF library/arxiv-math-0304010v1/",
   }),
 
+  // ── Borodin–Okounkov–Olshanski 2000 (descent DPP / discrete Bessel kernel) ──
+  ref({
+    id: "borodin-okounkov-olshanski2000",
+    library: {
+      docId: "arxiv-math-9905032v2",
+      dir: "library/arxiv-math-9905032v2",
+      pdf: "library/arxiv-math-9905032v2/9905032v2.pdf",
+      stage: "sections",
+      pages: 43,
+      sections: 43,
+      arxiv: "math/9905032v2",
+    },
+    type: "article-journal",
+    title: "Asymptotics of Plancherel measures for symmetric groups",
+    author: [
+      { family: "Borodin", given: "Alexei" },
+      { family: "Okounkov", given: "Andrei" },
+      { family: "Olshanski", given: "Grigori" },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: "13",
+    page: "481-515",
+    issue: "3",
+    issued: { "date-parts": [[2000]] },
+    DOI: "10.1090/S0894-0347-00-00337-4",
+    URL: "https://arxiv.org/abs/math/9905032",
+    note: "The descent set D(λ)={λ_i−i} is a determinantal point process with the discrete Bessel kernel (Thm 1/eq 1.8-1.9); Thm 3 gives the bulk discrete-sine-kernel limit (rate-free); Remark 1.6 identifies the Toeplitz-determinant structure (Widom). Published twin s0894-0347-00-00337-4. PDF library/arxiv-math-9905032v2/.",
+  }),
+
+  // ── Johansson 2001 (discrete OPE ensembles / Plancherel edge + Bessel bounds) ──
+  ref({
+    id: "johansson2001",
+    library: {
+      docId: "arxiv-math-9906120v3",
+      dir: "library/arxiv-math-9906120v3",
+      pdf: "library/arxiv-math-9906120v3/9906120v3.pdf",
+      stage: "sections",
+      pages: 38,
+      sections: 14,
+      arxiv: "math/9906120v3",
+    },
+    type: "article-journal",
+    title: "Discrete orthogonal polynomial ensembles and the Plancherel measure",
+    author: [{ family: "Johansson", given: "Kurt" }],
+    "container-title": "Annals of Mathematics",
+    volume: "153",
+    page: "259-296",
+    issue: "1",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.2307/2661375",
+    URL: "https://arxiv.org/abs/math/9906120",
+    note: "Lemma 3.9 (eq 3.41): explicit super-exponential Bessel tail bound past the edge (the Olver-free tail). Lemma 3.8 (eq 3.38): de-Poissonization with explicit C/N^2 error. Bulk sine-kernel stated as a limit (defers to BOO). PDF library/arxiv-math-9906120v3/.",
+  }),
+
+  // ── Gorbunov 2024 (Berry–Esseen rate for the Bessel-kernel DPP) ──
+  ref({
+    id: "gorbunov2024",
+    library: {
+      docId: "sm10137-eng",
+      dir: "library/sm10137-eng",
+      pdf: "library/sm10137-eng/sm10137_eng.pdf",
+      stage: "sections",
+      pages: 26,
+      sections: 43,
+    },
+    type: "article-journal",
+    title:
+      "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+    author: [{ family: "Gorbunov", given: "Sergei M." }],
+    "container-title": "Sbornik: Mathematics",
+    volume: "215",
+    page: "1607-1632",
+    issue: "12",
+    issued: { "date-parts": [[2024]] },
+    DOI: "10.4213/sm10137e",
+    note: "Berry–Esseen rate for linear statistics of the (continuous hard-edge) Bessel-kernel DPP via the Kac–Akhiezer variance formula (Basor–Ehrhardt) and the Borodin–Okounkov Toeplitz identity; framed as the continuous analogue of the discrete (Toeplitz) case. PDF library/sm10137-eng/.",
+  }),
+
   ref({
     id: "tsoukalas-etal2026",
     library: {

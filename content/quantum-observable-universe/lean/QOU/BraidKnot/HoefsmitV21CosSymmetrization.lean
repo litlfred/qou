@@ -191,9 +191,9 @@ the transfer matrix `M_β` on `V_(2,1)` has eigenvalues `e^{±iα}` with
     proves the kernel's real range is `[-1/2, 1/2]` while `z_D q > 1/2` for every
     `q > 1` — it is the rescaling `q² · (this kernel at q)`. Consume the `_real`
     shim below, which is convention D. -/
-def markovZ {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
+def cosKernel {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
 
-/-- Archimedean shim of `markovZ` with explicit positivity.
+/-- Archimedean shim of `cosKernel` with explicit positivity.
 
     **Convention D** `z_D q = q³/(q²+1) = q² · (kernel at q)`, migrated from
     convention C 2026-08-26 (bean `qou-cxjq`). This read `(kernel at √q)`, i.e.
@@ -203,12 +203,12 @@ def markovZ {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
     API compatibility and is now genuinely unused — convention D has no
     `Real.sqrt` in it. -/
 noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q) : ℝ :=
-  q ^ 2 * markovZ q
+  q ^ 2 * cosKernel q
 
-/-- **Legacy unsafe form** of `markovZ` — `Real.sqrt q` without the
-    `0 < q` hypothesis. Use `markovZ (u : R)` (Tier 2) or `markovZ_real
+/-- **Legacy unsafe form** of `cosKernel` — `Real.sqrt q` without the
+    `0 < q` hypothesis. Use `cosKernel (u : R)` (Tier 2) or `markovZ_real
     q hq` (Tier 5) in new code. -/
-@[deprecated "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
+@[deprecated "Migrate to (a) the generic `cosKernel (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZ_legacy (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Quantum-integer differential. -/

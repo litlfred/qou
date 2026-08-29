@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T01:03:13Z
+updated_at: 2026-08-29T10:09:18Z
 ---
 
 
@@ -427,3 +427,30 @@ Closure DE-RISKED: 'modulo one HARD constant' -> 'modulo one EASY constant' (smo
 coeff ~0.066, 30-300x headroom). NOT yet a verified C. Remaining: (i) write transpose-symmetry
 c_{1/2}=0 proof; (ii) explicit theta^-1 Euler-Maclaurin constant + ratio propagation. Did not
 fake a rigorous number.
+
+2026-08-29 (branch m1-k5r5-bessel-rate-citation): the one open step is precisely NAMED and the
+corpus checked at the source. Status:
+  - Leading margin m_inf = rho_P - sqrt(V_D/V_A) = 2sqrt6/5 - 0.67961 = 0.300186 > 0. Constants
+    exact (V_A=8/(9pi^2), Var(w3) lead 1/3, P=8/(15pi), rho_P=2sqrt6/5; V_D=0.0415975). PR #5969.
+  - Exact finite-n: m(n) > 0 for ALL 4<=n<=40 (exact Fraction), min m(4)=0.20025, oscillates around
+    0.30019 with DECREASING amplitude (~0.008 at n=40). Not monotone -> exact-small-n + leading-large-n
+    does not trivially cover all n.
+  - The one open step: effective variance bound |Var_n(Sum g eta)/n^2 - V_g| <= C_g n^{-a}, a>0.
+  - PRIMARY SOURCE (corpus-grep path 5): BOO Thm 3 (arxiv-math-9905032v2 sec-006) states the bulk
+    discrete-Bessel -> discrete-sine kernel convergence as a RATE-FREE LIMIT (no error term). Whole-
+    library grep for olver/uniform-asymptotic/error-term/rate finds NO citable kernel rate; Fulman
+    Stein (0305423) is a marginal Berry-Esseen (ruled out); Sniady-Dolega (1402.4615) needs polynomial
+    statistics (Sum h / Sum|c| are not). So the "Olver-Bessel wall" is a GENUINE external-citation gap,
+    not an in-corpus oversight.
+  - Missing citation named: error-bounded discrete-Bessel->sine kernel convergence (Olver uniform
+    asymptotics of J_x(2sqrt th) in the bulk, or Deift-Its RH), |J-S| <= c th^{-b} on the bulk + the
+    classical super-exp Bessel tail past the edge. Tail half is Olver-free; bulk half needs the lemma.
+  - Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-the-missing-citation-is-a-kernel-rate.md.
+  Gap OPEN. Honest: morally certain (leading 0.30 + exact positivity n<=40 + damped tail) but a
+  measured C is not a proved C; no fake closure.
+
+2026-08-29 (tail half + ingested lit): owner ingested 10 kernel-rate papers (commit f45f79c8 -> library/). TAIL half of the effective variance bound is now Olver-FREE + CITABLE: Johansson 2001 (arxiv-math-9906120v3) Lemma 3.9 gives explicit super-exp Bessel decay past the edge; poly weight x super-exp kernel => TAIL(K) <= poly(theta) exp(-K^{3/2}/4) = o(theta^-A). Measured (tail_bulk_split.py, no float64): tail/V_A drops 1.8e-2 -> 4e-20 across K=1..10, super-exp, below the theta^-1 remainder by K=3-4. De-poissonization citable too (Johansson Lemma 3.8, C/N^2). Bulk sine-kernel RATE machinery now in-corpus: Gorbunov sm10137 (Berry-Esseen for Bessel-kernel DPP via Kac-Akhiezer + Borodin-Okounkov Toeplitz), continuous analogue of the discrete Toeplitz case; needs application to the discrete Plancherel descent variance (an analytic step, not a missing citation). Wall reduced from 'no rate in corpus' to 'bulk application step'. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-tail-half-and-ingested-kernel-rate-lit.md. Gap OPEN, materially narrowed.
+
+2026-08-29 (formalize-first, cited): added the 4 literature citations to references.ts (borodin-okounkov-olshanski2000, johansson2001, gorbunov2024; ivanov-olshanski2003 already there) and a Lean carrier M1DescentDPPConvergence.lean (sorry-free, lean-direct exit 0, #print axioms clean). class DescentDPPMarginConvergence (Prop, content-bearing Filter.Tendsto to the exact limits + strict leading gap, CITED, NO instance) + sorry-free theorems cs_margin_eventually and m1_pos_eventually deriving eventual M_1>0 from the assumed convergence via the CS core. Honest: axiomatizing the cited results is assuming them; the bulk-rate step stays open; eventual->all-n closed by gorbunov2024 explicit threshold + exact table via the existing m1_pos_all_of_base_and_tail. NOT a proof. Gap OPEN.
+
+2026-08-29 (leading margin PROVED): discharged the ONE class field not gated on the bulk rate. leading_margin_pos = (sqrt(V_D/V_A) < 2sqrt6/5) = (V_D < 64/(75pi^2)) after pi cancels. V_D (no closed form) bounded RIGOROUSLY: certified mp.iv interval partial sum k=3..999 + explicit elementary tail majorant R(K)<=a^2/(2K^4)+b^2/(3K^6), R(999)<=1.05e-11 => V_D < 0.0415974806 < 0.0864607, margin 0.0449. Upgrades m_inf>0 from measured to PROVED. Lean leading_margin_pos_of_VD_ceiling (sorry-free, axiom-clean) reduces the field to the certified ceiling. 1 of 3 class fields closed with rigor; only the two bulk-rate Tendsto remain open. Probe: wlambda_covariance_epic_M1_VD_ceiling_rigorous.py.
