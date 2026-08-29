@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T01:24:53Z
-updated_at: 2026-08-29T01:25:32Z
+updated_at: 2026-08-29T01:30:03Z
 ---
 
 ## What was broken
@@ -58,3 +58,25 @@ confirmed by EXECUTING it.
 interpreter really raises. Strips `PYTHONPATH` first, since that inheritance is
 the masking bug itself. Self-tested: revert one file -> exit 1 naming it;
 restore -> exit 0. It is not reporting clean vacuously.
+
+
+## 2026-08-29 — this class is INVISIBLE to the corpus's documented producer-runner
+
+AGENTS.md's producer-runner recipe lists seven requirements, the first being
+*"set `PYTHONPATH`"*. That is necessary for the runner to reach the corpus's
+bare-name imports — and it is **exactly what masks this defect**.
+
+Measured on the SAME file at the SAME commit, varying only the environment:
+
+    env -u PYTHONPATH  python3 qbeta_ladder_convention_fee_probe.py
+      -> ModuleNotFoundError: No module named '_path_bridge'
+
+    PYTHONPATH=computations python3 qbeta_ladder_convention_fee_probe.py
+      -> 4/4 checks passed, witness written
+
+So AGENTS.md's *"2 producers are genuinely broken, not 14"* (2026-08-24) is
+**structurally blind to these six**: the runner that produced that figure set
+`PYTHONPATH` by its own rule, so none of them could ever appear. The 2 should
+be read as "2 that survive a PYTHONPATH-equipped runner", not "2 that a user
+can run". Note added to AGENTS.md beside that figure rather than changing it —
+the 2 is correct for what it measured.
