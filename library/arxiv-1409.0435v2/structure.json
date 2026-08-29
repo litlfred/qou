@@ -1,0 +1,283 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1409.0435v2",
+ "source": {
+  "file": "1409.0435v2.pdf",
+  "sha256": "0c6abbb9c5a720d99c94bd059f63fe790b12d001453b7b2b13923ea406193a9b",
+  "bytes": 542568,
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1409.0435",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "25 Feb 2015"
+  },
+  "doi": null,
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+  "authors_raw": "Christophe Charlier\u2217and Tom Claeys\u2217",
+  "title_lines": [
+   "Asymptotics for Toeplitz determinants: perturbation of",
+   "symbols with a gap"
+  ],
+  "abstract": "We study the determinants of Toeplitz matrices as the size of the matrices tends to in\ufb01nity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a su\ufb03ciently fast rate. We generalize an asymptotic expansion by Widom [22], which was known for symbols supported on an arc. We highlight applications of our results in the Circular Unitary Ensemble and in the study of Fredholm determinants associated to the sine kernel.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "TeX",
+   "CreationDate": "D:20180914151402Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "I\u2032",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "K\u2032",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2(\u2212\u03b6)",
+   "page": 18,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "W(z)\u03c33,",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "W(z)\u03c33 1",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We get",
+   "page": 23,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(0) = sin \u03b80",
+   "page": 24,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(if W = 0),",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(0) + R12(0)P (\u221e)",
+   "page": 24,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "O(n1/2),",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 486,
+   "n_words": 84
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 18,
+   "n_chars": 28787,
+   "n_words": 6070
+  },
+  {
+   "id": "sec-002-2-i",
+   "number": "2",
+   "title": "I\u2032",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 16,
+   "n_words": 6
+  },
+  {
+   "id": "sec-003-2-k",
+   "number": "2",
+   "title": "K\u2032",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 44,
+   "n_words": 17
+  },
+  {
+   "id": "sec-004-0-2\u03b6",
+   "number": "0",
+   "title": "(2(\u2212\u03b6)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 1879,
+   "n_words": 479
+  },
+  {
+   "id": "sec-005-2-wz\u03c33",
+   "number": "2",
+   "title": "W(z)\u03c33,",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 750,
+   "n_words": 138
+  },
+  {
+   "id": "sec-006-2-wz\u03c33-1",
+   "number": "2",
+   "title": "W(z)\u03c33 1",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5592,
+   "n_words": 1152
+  },
+  {
+   "id": "sec-007-1-we-get",
+   "number": "1",
+   "title": "We get",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1296,
+   "n_words": 259
+  },
+  {
+   "id": "sec-008-12-0-sin-\u03b80",
+   "number": "12",
+   "title": "(0) = sin \u03b80",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-2-if-w-0",
+   "number": "2",
+   "title": "(if W = 0),",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 87,
+   "n_words": 20
+  },
+  {
+   "id": "sec-010-12-0-r120p",
+   "number": "12",
+   "title": "(0) + R12(0)P (\u221e)",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 645,
+   "n_words": 144
+  },
+  {
+   "id": "sec-011-2-on12",
+   "number": "2",
+   "title": "O(n1/2),",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3859,
+   "n_words": 728
+  },
+  {
+   "id": "sec-012-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 412,
+   "n_words": 61
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3909,
+   "n_words": 572
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 47762
+ }
+}
