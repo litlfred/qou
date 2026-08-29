@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:35:19Z
+updated_at: 2026-08-29T18:39:58Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -308,3 +308,83 @@ answered, not merely edited around.
 3. The 35 volume-path readers are unaffected: `_chain_V_full` multiplies within
    ONE generator and `atom_per_generator_volumes` adds, so ordering across
    generators never arises there.
+
+
+## 2026-08-29 — PROVENANCE OF THE MONOTONE CONVENTION: it is an algorithm's input
+## restriction, and one canonical consumer obeys it gratuitously
+
+Owner asked for the provenance. It is fully traced, and it is not physics.
+
+### The chain
+
+1. **The physics is interleaved.** `B_3 = (sigma_0 sigma_1^-1)^3` is the
+   Borromean confinement braid, interleaved by construction — the alternation
+   IS the Borromean structure. `computations/confinement-operator-selection.py`
+   carries it under exactly that name in the operator-selection candidate set,
+   i.e. it is the form the confinement SDP itself ranks.
+
+2. **`chi_all_lambda` accepts only monotone words**, and enforces it:
+
+       for d_mp, g in gens:                  # group + assert monotone
+           if g < last:
+               raise ValueError(f"non-monotone word: gen {g} after {last}")
+
+   This is structural, not a check that could be relaxed: it is a fine-Bratteli
+   transfer matrix that applies `O_g` once per generator in increasing order,
+   advancing the Young shape one box at a time (`for g in range(0, n-1)`).
+   There is no state for returning to gen 0 after gen 1.
+
+3. **So the word was re-sorted to fit the routine.** `closed_form_tau_M` says
+   so in the only justification either construction ever offers:
+
+       # The chain is (c, d, gen) and MONOTONE (all gen 0, then all gen 1),
+       # which is what `chi_all_lambda` requires.
+
+   `nucleon_gen_chains` exists to emit that shape.
+
+### What it costs: the monotone word is a DIFFERENT LINK
+
+Measured at 50 dps, on `B_3` **alone**:
+
+    (s0 s1^-1)^3   tr_M = 0.99856216383678726595     <- Borromean
+    s0^3 s1^-3     tr_M = 0.18006453953550109830     <- monotone re-sort
+    relative diff       = 0.81967618
+
+The full-nucleon discrepancy is 0.820607, so **essentially all of it is B_3**
+— the quark and gluon crossings contribute almost nothing to the gap. Flattening
+the alternation does not perturb the Borromean braid; it replaces it with a
+different link, and "confinement" is precisely what the alternation encodes.
+
+### The finding that makes this actionable NOW
+
+`binding_canonical` does **not** use `chi_all_lambda`. It uses
+`tr_M_via_wenzl_bridge_mpfr`, and that routine has **no monotonicity
+restriction** — verified by feeding it the interleaved word directly:
+
+    interleaved -> 0.629328402202921918   (accepted, Borromean order)
+    monotone    -> 1.14575969245730087
+
+So the canonical binding path is passing a distorted word **gratuitously**. It
+inherited the monotone shape from `nucleon_gen_chains` — whose shape exists for
+a *different* routine — and nothing in its own trace path required it.
+
+### Verdict on provenance
+
+The monotone convention has **no physics derivation**. Its entire justification
+is one routine's input precondition, and it is applied in at least one place
+where that routine is not even used. The earlier framing on this bean — "two
+deliberate incompatible conventions" — is too generous: one is the SDP's own
+candidate and the other is an artifact of a fast character algorithm's
+restriction, propagated past its origin.
+
+### Consequence for the remediation
+
+The 18 word-path readers split further, and the split matters:
+
+* **Consumers on `tr_M_via_wenzl_bridge_mpfr` or any non-monotone-restricted
+  trace** — fixable immediately by passing braid order. `binding_canonical` is
+  one, confirmed.
+* **Consumers genuinely on `chi_all_lambda`** — blocked on a character routine
+  that can take a non-monotone word. That is a real piece of work
+  (the fine-Bratteli transfer matrix does not generalise for free), and it is
+  the actual blocker behind the whole convention.
