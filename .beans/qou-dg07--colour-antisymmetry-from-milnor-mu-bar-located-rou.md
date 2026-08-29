@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T10:46:58Z
+updated_at: 2026-08-29T15:14:53Z
 ---
 
 ## Summary
@@ -297,3 +297,41 @@ the state's place in it.
 2. `rem:brings-qou-4tuple` says 'degree 4' and 'three sheets' two
    sentences apart. A degree-4 covering has no three sheets. Flagged,
    deliberately not resolved.
+
+
+## A6 — the sheets ARE the colour tubes (2026-08-29, later)
+
+Worked the open §6.4 question. It turned on arithmetic, not more reading.
+
+**§6.3 of my own audit understated the identification.** It cited
+`rem:brings-qou-4tuple` (a remark interpreting a definition) and said the
+sheets-to-colour link was 'supplied rather than established'.
+`prop:color-elliptic` is a PROPOSITION, states the colour elliptic
+equation to be exactly the cubic the probe computes, and names
+X = (x_2,x_3,x_4) the colour variable.
+
+**The obstacle that dissolved.** `def:color-tube-fibers` defines
+(r_z,g_z,b_z) off a different-LOOKING cubic
+c^3+(4z+1)c^2+(6z^2+3z+1)c+(4z^3+3z^2+2z+1). A6 checks the claimed
+substitution X = c+z instead of quoting it: it reproduces the tube cubic
+coefficient by coefficient, and disc_c(tube) = disc_X(chiral) as
+POLYNOMIALS in z. A coordinate translation is an isomorphism at every z,
+so it is ONE curve — same branch points, same monodromy.
+
+**So the three sheets are (r_z,g_z,b_z)**, the corpus's own colour tubes,
+and Lambda^3 of their span is a non-trivial sign line under the full S_3.
+
+**Partial answer to the same-line question.** Both sign lines are the sign
+rep of an S_3 on the same three labels, so the corpus carries ONE colour
+S_3, not two: the two routes are one route with two derivations of its key
+step, NOT independent evidence. Still open: whether the identification is
+canonical — whether mu-bar_123 and the Vandermonde sqrt(Delta) are the
+same function or two sections of isomorphic lines. Isomorphic is not equal.
+
+**Flagged, not adjudicated (§7.5).** `prop:color-elliptic` says this
+monodromy 'recovers the holonomy generators H_1,H_2'; main's fresh
+7be95242b9 makes H_1H_2 = (1 3)(2 4), order 2 in a V_4 on FOUR Lagrange
+resolvents. S_3 has order 6, 4 does not divide 6, so no V_4 inside; and
+(1 3)(2 4) does not fix w_1, so it does not restrict to {w_2,w_3,w_4}.
+Different sets, no stated map. Needs rem:holonomy-trefoil's own definition
+read before anyone calls it a defect.
