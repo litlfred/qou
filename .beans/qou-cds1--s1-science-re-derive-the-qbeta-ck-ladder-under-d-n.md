@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T08:35:14Z
+updated_at: 2026-08-29T10:27:29Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2432,3 +2432,5 @@ nucleon constructions disagree by up to 24 %, and different consumers read
 different ones. The exact atom/mass path uses build_atom_nf_exact; the module
 constants PROTON_NF/NEUTRON_NF are build_nucleon_nf; the fork-pricing probe
 reads _PROTON_G0/_G1. Not filed as its own bean yet.
+## 2026-08-29 — workflow: ALL 5 Q_beta/c3 lanes converge on this bean as the blocker
+Adversarially-verified (audit 2026-08-29-convention-d-qbeta-front). Key results: (1) proved-lean STRUCTURAL VERDICT (both lenses survive): the C ladder does NOT survive under D; z_D IS the two-row/TL trace (y_(1^3)=0 IFF z=z_D; qou-06wh/PR#5925 proves roots {q,z_D}, net excluded); C->D not a z-swap. Next brick = owner-call qou-99qc (a counit eps that DESCENDS to TL_inf AND reduces to the mass-channel eps; current net(e) != 0 on J_(1^3)). (2) c2 under D is OPEN, NOT -1 and NOT -9.299: the C-frame expression 1-u^2 is z-free (docstring, symbolic-exact) but whether the D-REBUILT N=2 factor = 1-u^2 is OPEN; -9.299 is a CODATA data-inversion (Q_exp/Q_N1^D-1)/u^2, scope-(a) non-structural. (3) -974 cost framing corrected: it is a 1/u^3 amplifier; D phase residual 0.895x (better than C) -- 'measures the amplifier, not the physics'. Mass three-row forcing is COMPATIBLE with a genuine D ladder (must factor through TL, co-located with mass channel).
