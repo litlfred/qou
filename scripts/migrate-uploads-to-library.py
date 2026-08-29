@@ -76,21 +76,27 @@ def sh(*args: str) -> str:
 def build_mapping() -> dict[str, str]:
     """basename.pdf -> doc-id, from the generated structure.json files."""
     mapping: dict[str, str] = {}
-    root = SRC if os.path.isdir(SRC) else LIB
-    if not os.path.isdir(root):
+    # BOTH roots, library/ first so a fresh uploads/ entry wins on conflict.
+    # Scanning only one root is what made the residual pass necessary: a
+    # citation to an ALREADY-migrated PDF (`library/ki6c/ki6c.pdf`) had no doc-id
+    # here, fell through to the blanket rewrite, and became the dangling
+    # `library/ki6c/ki6c.pdf` instead of `library/<doc-id>/ki6c.pdf`.
+    roots = [r for r in (LIB, SRC) if os.path.isdir(r)]
+    if not roots:
         return mapping
-    for entry in sorted(os.listdir(root)):
-        sj = os.path.join(root, entry, "structure.json")
-        if not os.path.exists(sj):
-            continue
-        try:
-            art = json.load(open(sj))
-        except Exception:
-            continue
-        src = art.get("source", {}).get("file")
-        doc_id = art.get("doc_id") or entry
-        if src:
-            mapping[src] = doc_id
+    for root in roots:
+        for entry in sorted(os.listdir(root)):
+            sj = os.path.join(root, entry, "structure.json")
+            if not os.path.exists(sj):
+                continue
+            try:
+                art = json.load(open(sj))
+            except Exception:
+                continue
+            src = art.get("source", {}).get("file")
+            doc_id = art.get("doc_id") or entry
+            if src:
+                mapping[src] = doc_id
 
     # Fallback for PDFs no structure.json claims. Two causes, both benign:
     # a duplicate upload (`X (1).pdf` beside `X.pdf`) and an alternate
@@ -164,18 +170,14 @@ def move_files(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
                 os.replace(src, dst)
         moved += 1
 
-    # 3. loose non-document files (tarballs, notes) keep their names at the root
-    if apply and os.path.isdir(SRC):
-        for entry in sorted(os.listdir(SRC)):
-            s = os.path.join(SRC, entry)
-            if os.path.isfile(s):
-                os.makedirs(LIB, exist_ok=True)
-                r = subprocess.run(["git", "mv", "--", f"uploads/{entry}", f"{LIBNAME}/{entry}"],
-                                   cwd=REPO, capture_output=True, text=True)
-                if r.returncode != 0:
-                    os.replace(s, os.path.join(LIB, entry))
-        if not os.listdir(SRC):
-            os.rmdir(SRC)
+    # 3. Loose non-document files STAY in uploads/, and uploads/ is never
+    # removed. This step used to sweep every loose file to the library root
+    # and then rmdir the directory -- correct for the one-time 2026-08-15
+    # rename, wrong for every run since. uploads/ is a LIVE intake queue that
+    # "stays live for the next drop" (AGENTS.md project-structure table,
+    # corrected 2026-08-25); the sweep carried off uploads/.gitignore -- the
+    # whitespace placeholder that keeps the empty directory tracked -- so a
+    # successful ingest deleted the queue it exists to serve.
 
     return moved, missing
 
@@ -189,8 +191,16 @@ def rewrite_refs(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
     """
     pats = [(re.compile(r"uploads/" + re.escape(n)), f"{LIBNAME}/{d}/{n}")
             for n, d in sorted(mapping.items(), key=lambda kv: -len(kv[0]))]
-    pats.append((re.compile(r"\buploads/"), f"{LIBNAME}/"))
-    pats.append((re.compile(r"`uploads`"), f"`{LIBNAME}`"))
+    # NO residual `uploads/` -> `library/` pass. It was blanket, and a
+    # blanket rewrite cannot tell a citation from a sentence: it turned the
+    # AGENTS.md row defining the two stages into "`library/` and `library/`
+    # are two stages of one pipeline, not the same directory renamed", ate
+    # this file's own docstring, retitled a bean about "un-ingested PDFs in
+    # uploads/", and pointed every citation of an already-migrated PDF at a
+    # path that does not exist. Measured on the 2026-08-29 ingest: 91 of 219
+    # rewritten mentions were prose or dangling, none were repairs the
+    # per-basename patterns above had missed. A mention this loop does not
+    # match is a mention with no known target -- leave it alone.
     files_changed = subs = 0
     for rel in tracked_text_files():
         path = os.path.join(REPO, rel)
@@ -235,6 +245,46 @@ def verify(mapping: dict[str, str]) -> int:
     for n in missing[:5]:
         print(f"    {n}")
     problems += len(missing)
+
+    # Dangling `library/<file>` citations -- the check the old residual pass
+    # made unfalsifiable. "stale flat references remaining: 0" above was
+    # guaranteed by construction once every `uploads/` had been renamed, so
+    # it reported clean while pointing 128 citations at files that are one
+    # directory deeper. This asks the question the other way round: does the
+    # path a citation names actually exist? Same failure mode this file's
+    # ledger comment already records -- a checker passing because its own
+    # action removed the evidence.
+    # Split repairable from absent. A gate that is permanently red gets
+    # ignored, which is the same end state as one that is unfalsifiable:
+    # 45 of these name PDFs that were never committed to the repo at all
+    # (the ledger row below counts the same 45), so nothing in this tree
+    # can fix them and they are reported, not counted.
+    by_basename: dict[str, str] = {}
+    if os.path.isdir(LIB):
+        for d in os.listdir(LIB):
+            dp = os.path.join(LIB, d)
+            if os.path.isdir(dp):
+                for f in os.listdir(dp):
+                    by_basename.setdefault(f, d)
+
+    repairable, absent = [], []
+    pat = re.compile(r"\b" + LIBNAME + r"/([A-Za-z0-9][\w.\- ]*\.(?:pdf|tgz|zip))")
+    for rel in tracked_text_files():
+        try:
+            text = open(os.path.join(REPO, rel), encoding="utf-8", errors="surrogateescape").read()
+        except Exception:
+            continue
+        for m in pat.finditer(text):
+            n = m.group(1)
+            if os.path.exists(os.path.join(LIB, n)):
+                continue
+            (repairable if n in by_basename else absent).append((rel, n))
+    print(f"dangling library/<file>, repairable : {len(repairable)}")
+    for rel, n in repairable[:5]:
+        print(f"    {rel}: {LIBNAME}/{n} -> {LIBNAME}/{by_basename[n]}/{n}")
+    print(f"dangling library/<file>, file absent: {len(absent)}"
+          + ("  (pre-existing: never committed)" if absent else ""))
+    problems += len(repairable)
 
     if os.path.exists(LEDGER):
         led = json.load(open(LEDGER))
