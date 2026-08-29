@@ -196,6 +196,60 @@
         }
       ],
       "source": "q0_muon_population_partition.py::co_read_fields (dict-key test, not substring: substring over-reports 7x)"
+    },
+    "derives_the_muon_pin": {
+      "rule": "DERIVES the muon pin from its own definition -- the CAL-2 lepton tower `m_mu/m_e = Vol(4_1)/hbar_q^2`, `hbar_q = 1 - q0^-1`, inverted as `q0 = 1/(1 - sqrt(Vol_4_1 / M_MU_OVER_M_E))`. These do not READ an anchor; they COMPUTE one, and the one they compute is the ideal/CAL-2 layer. Re-pinning them to proton is incoherent: the quantity they produce IS the muon-anchored one, so a proton stamp would describe a number that does not exist in the file. DETECTION: `M_MU_OVER_M_E` (or `codata_2022_source`) imported AND `hbar_q` present AND a `q0 = .../(1 - hbar_q)` assignment. The mass-ratio import alone OVER-MATCHES -- `rho_k_h3a_residual_decomposition` imports muon material but has hbar_q nowhere; it uses the muon value as an explicit comparison reference, which is a different class. Added 2026-08-29 (qou-cds3).",
+      "members": [
+        {
+          "producer": "canonical_lepton_braid_words",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/canonical_lepton_braid_words.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "f_ell_derivation_via_per_braid_mass_tower",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/f_ell_derivation_via_per_braid_mass_tower.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_lepton_h3_3channel_convention",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_lepton_h3_3channel_convention.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_tau_h5_embedding_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/probes/t6_tau_h5_embedding_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_three_halves_factor_probes",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_three_halves_factor_probes.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "xi_ell_phi_q_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/xi_ell_phi_q_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        }
+      ],
+      "note": "Found while partitioning the INDIRECT remainder. A marker scan for q0 names (q_muon_at, pin_value_for_anchor, the anchor witness, a muon literal, QOU_Q0_ANCHOR) reports NO muon route for these, and an upstream scan reports none either -- because the route is neither a q0 name nor a witness read, but a mass ratio. That is why the class was missing. Corroborated independently: three of these six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes, xi_ell_phi_q_probe) are exactly the witnesses that flipped proton -> muon in the PR #5989 drain, where `resolve_q0_anchor_payload_first` caught them declaring proton (the manifest default for an unlisted stem) over a muon computation. The two findings explain each other."
     }
   },
   "rejected": [
