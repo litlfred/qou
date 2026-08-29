@@ -33,7 +33,14 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-REPO = HERE.parents[1]
+# PRE-EXISTING PATH BUG, fixed 2026-08-29. `HERE` is `<repo>/computations`, so
+# `parents[1]` is the directory ABOVE the repo -- the script globbed
+# `<parent>/content`, which does not exist, found zero sidecars, and printed
+# "no proof-* sidecar entries found" on every run. It has been reporting nothing
+# since at least 2026-06-15, the last date its committed witness was touched
+# (and that by a refactor commit, not a run). M1/M2/M4/M5 were not being
+# computed at all.
+REPO = HERE.parents[0]
 
 PASS = {"pass"}
 M1_CRIT = "proof-statement-integrity"
@@ -53,8 +60,25 @@ def iter_first_verdicts():
         for crit, entries in crits.items():
             if not crit.startswith("proof-") or not isinstance(entries, list):
                 continue
+            # RESOLVABLE ONLY (2026-08-29). An entry with no `field_hash` records
+            # no block version, so it cannot be tied to the content it judged --
+            # it is neither confirmable nor refutable, and averaging it produces
+            # a number about nothing. Every such entry here comes from the
+            # 2026-07 `e62336dabc1` batch ("heuristic agentic redo for proof
+            # criteria (full replace)"), which REPLACED the criteria arrays and
+            # so destroyed the genuine earlier first-verdicts.
+            #
+            # Measured consequence, and it is severe: this filter removes 99.7%
+            # of M2's input (3286 of 3297) and 99.6% of M1's (1096 of 1100),
+            # because taking the FIRST verdict systematically selects the oldest
+            # entry -- exactly the one that batch overwrote. M1 and M2 are
+            # therefore NOT COMPUTABLE from resolvable data and are reported as
+            # such rather than as a number; see `insufficient` in the witness.
+            # M5 is unaffected (0% unhashed) and the cohort axis is intact
+            # (3 cohorts survive: 145/983/2404 blocks).
             dated = [e for e in entries
-                     if isinstance(e, dict) and e.get("reviewed_at")]
+                     if isinstance(e, dict) and e.get("reviewed_at")
+                     and e.get("field_hash")]
             if not dated:
                 continue
             dated.sort(key=lambda e: e["reviewed_at"])
