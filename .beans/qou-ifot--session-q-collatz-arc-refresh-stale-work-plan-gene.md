@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-29T16:28:38Z
-updated_at: 2026-08-29T18:25:49Z
+updated_at: 2026-08-29T18:38:58Z
 ---
 
 TURN 1 (2026-08-29). Reviewed the arc against main -- main's collatz substance is IDENTICAL to the working tree (only .qa.json sidecar churn differs on those paths), so 'lots landed on main' is true corpus-wide but did not move this arc. What HAD moved is the arc's own record: six beans listed as open work that had already landed. Refreshed all six (commit 4c8d75a98a) and opened + landed the successor chip qou-rcgi (commit 13d3d51bbb, PR #6042).
@@ -33,3 +33,13 @@ ARC STATUS. Nothing bounded remains. The three open items are all research and a
 2. A non-valuation descent measure on D_inf (the convergence question). qou-4atn says no valuation is it, and says why -- descent_measure_pos_off_target forces strict positivity off the attractor.
 3. The Connes / Hattori-Stallings computation for C11 (qou-7kfp localised it to one equation).
 Each of the three now has a proved statement of what will NOT work, which is the durable product of this session.
+
+TURN 8 -- verification debt CLOSED, and a self-correction. Twice in this PR I wrote that a docstring edit was 'an argument, not a machine check' because the QOU cone had no oleans. Both files are now machine-verified (commit 11613e241c).
+
+SELF-CORRECTION: collatz_contact_boundary.lean does NOT import 'the QOU cone' as I claimed. It imports exactly ONE module (qou_obstruction_reduction) whose olean I had already built for C11. It was verifiable the entire time -- I inferred the difficulty from the file's location instead of reading its imports. That is the same class of error this session has been correcting in the corpus, made by me, in this PR's own commit messages.
+
+For the genuinely deep file (QOU/QCollatz.lean -- cone reaches QOU.Mass.*, Glossary, BraidKnot) I restored lake-cache/qou-v4-24-0 (3407 mathlib + 2275 QOU oleans) into a SEPARATE directory rather than over the working .lake, so a bad tarball could not cost the Mathlib oleans the session depends on. No lake build at any point, so nothing evicted (the AGENTS.md eviction footgun avoided by construction). Exit 0.
+
+NEW RESULT enabled by having the real cone: collatz_three_forms_bridge.lean proves the correspondence collatz_three_forms.lean had only ASSERTED -- contactThreshold_eq_qInt (the 7c-generic form IS the library's qInt form), qInt_contactThreshold_mem_Ioo (the two-sided 1 < v* < 2 in the library's own terms), agrees_with_landed (the landed one-sided theorem is recovered, so the developments are consistent rather than parallel). All exit 0 against the real cone, axioms clean.
+
+OPERATIONAL NOTE for the next agent: the AGENTS.md LEAN_PATH overlay trap is real and bit here. Lean resolves a module by the FIRST LEAN_PATH root owning the namespace and does NOT fall through, so a freshly-built QOU olean placed in a second root is invisible -- it must be copied into the restored root itself. Cost me one 5-minute cycle.
