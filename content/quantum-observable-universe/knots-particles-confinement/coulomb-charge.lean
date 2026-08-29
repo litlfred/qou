@@ -140,4 +140,68 @@ theorem CoulombCharge.antisymCoefficient_eq_zero_iff (C : CoulombCharge) :
            exact_mod_cast this)
   · rintro ⟨hp, hn⟩; rw [hp, hn]; norm_num
 
+
+/-! ## The mirror, and why the asserted quark charges are not derivable from it
+
+`def:down-quark` states that the down quark "differs from the up quark only
+by crossing orientation", and `down-quark.lean` proves exactly that
+(`QOU.Archimedean.quark_crossing_asymmetry`). The declarations below record
+what that mechanism forces, and what it therefore cannot deliver.
+
+The obstruction is *mechanism-independent*: only oddness of the charge under
+orientation reversal is used, never the particular form `(n₊ − n₋)/2`. The
+exact enumeration is
+`computations/probes/quark_charge_mirror_obstruction_probe.py`.
+-/
+
+/-- Reversing every crossing: the mirror of a braid word. -/
+def CoulombCharge.mirror (C : CoulombCharge) : CoulombCharge :=
+  { numPositive := C.numNegative, numNegative := C.numPositive }
+
+/-- **`Q` is odd under the mirror.** This is the invariant the whole
+    obstruction rests on. -/
+theorem CoulombCharge.value_mirror (C : CoulombCharge) :
+    C.mirror.value = -C.value := by
+  simp only [mirror, value]
+  ring
+
+/-- A mirror pair carries equal magnitudes, so its charge ratio is `-1` for
+    every crossing count. -/
+theorem CoulombCharge.abs_value_mirror (C : CoulombCharge) :
+    |C.mirror.value| = |C.value| := by
+  rw [value_mirror, abs_neg]
+
+/-- **The asserted pair `(+2/3, −1/3)` is not a mirror pair.**
+
+    The two blocks state a mechanism that forces `Q(d) = −Q(u)` and then
+    assert a pair whose ratio is `−2`. No crossing count repairs this: it is
+    a statement about the symmetry, not about the counts. -/
+theorem asserted_quark_charges_not_mirror_odd :
+    ¬ ∃ qu : ℝ, qu = 2 / 3 ∧ -qu = -1 / 3 := by
+  rintro ⟨qu, h1, h2⟩
+  rw [h1] at h2
+  norm_num at h2
+
+/-- **A mirror-odd charge makes the neutron the proton's exact opposite.**
+
+    With the proton `uud` and the neutron `udd`, oddness alone gives
+    `Q(n) = −Q(p)`. Nothing about crossing counts, `q`, or the particular
+    charge formula enters. -/
+theorem neutron_charge_eq_neg_proton_charge (qu qd : ℝ) (hmirror : qd = -qu) :
+    qu + 2 * qd = -(2 * qu + qd) := by
+  subst hmirror
+  ring
+
+/-- **Neutron neutrality forces every quark charge to vanish.**
+
+    So the mechanism cannot hold a neutral neutron beside a charged proton:
+    demanding the first makes the second neutral too. The Standard Model
+    escapes this because it takes `|Q_u| = 2|Q_d|`, an asymmetry between the
+    two orientations that a pure mirror cannot supply. -/
+theorem mirror_odd_neutral_neutron_forces_zero (qu qd : ℝ) (hmirror : qd = -qu)
+    (hneutral : qu + 2 * qd = 0) : qu = 0 ∧ 2 * qu + qd = 0 := by
+  subst hmirror
+  constructor <;> linarith
+
+
 end QOU.Braiding
