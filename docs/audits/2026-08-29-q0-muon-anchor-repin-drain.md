@@ -584,7 +584,7 @@ remains — and the pin is no longer what stands in the way.
 | **q0-anchor refill ratchet** | green | green | green (NEW 0) |
 | **raw-float64 ratchet** | green | red on 1 field | **NEW 0, REGRESSED 0** |
 
-`Q0_OK` 984 → **1024**; `Q0_COMPARISON` 2 → 4, all four with a reason and named
+`Q0_OK` 984 → **1025**; `Q0_COMPARISON` 2 → 4, all four with a reason and named
 legs; `Q0_ANCHOR_MISSING` 1668 → **1667**.
 
 **No baseline was widened at any point** — no `--rebaseline`, no file added to a
