@@ -144,3 +144,39 @@ Item 2 is the cheaper of the two and does not need the missing module: widen
 `ReebEigenvalue.val` to `ℂ` and let `spectralSide` use `Complex.cpow`. It will
 change the type of `spectralSide` and of `QExplicitFormula`, both of which this
 session already touched, so it is a natural follow-on rather than a new tranche.
+
+---
+
+## Item 2 CLOSED 2026-08-29 — `ReebEigenvalue` widened to ℂ
+
+`explicit-formula.lean`. `structure ReebEigenvalue where val : ℂ` (was `ℝ`), and
+`spectralSide` now returns `ℂ`, so the identity in `QExplicitFormula` reads
+`(ψ_q(X) : ℂ) = spectralSide …` — the geometric side coerced, the spectral side
+genuinely complex. The oscillatory term `X^ρ` is `Complex.cpow` and can now
+oscillate; previously it was `X^{Re ρ}`, monotone for every eigenvalue.
+
+Nothing about the real-index case was lost, and that is checked rather than
+asserted:
+
+- `qIntegerReal` keeps the real-index bracket, and `qIntegerReal_pos` — the
+  genuine positivity fact the complex bracket cannot state — is preserved
+  verbatim, renamed only.
+- `qInteger_ofReal` proves the two agree: `qInteger q hq (ρ : ℂ) = ↑(qIntegerReal q hq ρ)`.
+  So the widening is conservative on the old domain.
+- `exists_offAxis_reebEigenvalue` records what it bought: the type now admits
+  `ρ = ½ + i`, which the old `val : ℝ` could not express at all.
+
+`not_qExplicitFormula_empty` survives the change — its hypothesis is now a ℂ
+equation whose terms are all real coercions, so it returns to ℝ by taking real
+parts, and the counterexample stands.
+
+**Verification.** `lean`-direct exit 0; `#print axioms`
+`[propext, Classical.choice, Quot.sound]` on `qIntegerReal_pos`,
+`qInteger_ofReal`, `not_qExplicitFormula_empty`, `explicit_formula` and
+`not_qLog_tendsto_log`. `run-validate` exit 0.
+
+**Item 1 of that pair is NOT closed.** The two Reeb notions no longer disagree on
+the *field*, but nothing still ties these eigenvalues to `spectral_half_line`'s
+`ρ : Fin 8 → ℂ`, and the blocker above stands: there is no importable ℂ-valued
+Reeb spectrum module. The widening removes a type-level obstruction to writing
+one; it does not write it. This bean stays open on that.
