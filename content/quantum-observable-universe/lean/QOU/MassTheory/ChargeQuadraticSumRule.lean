@@ -35,26 +35,45 @@ The corpus's **sign** result is unaffected and in fact generalises: the gap is
 positive whenever `A + B > 0`, a weaker hypothesis than `B > 0`, and both
 couplings are positive for a Coulomb-like energy.
 
-## 2. Coleman–Glashow is automatic — parameter-free
+## 2. Coleman–Glashow is implied — but it is NOT new, and NOT a prediction here
 
-Because the strange and down quarks carry the **same** charge `−1/3`, the octet's
-seven baryons occupy only **three** distinct charge configurations
-(`sigmaPlus_config_eq_proton`, `xiZero_config_eq_neutron`,
-`xiMinus_config_eq_sigmaMinus`). Three configurations and two couplings leave
-exactly one relation, and it holds identically in `A` and `B`
-(`coleman_glashow`):
+**Retracted claim (2026-08-29).** An earlier version of this file presented the
+Coleman–Glashow relation as "the first parameter-free consequence the EM sector
+yields on this branch" and as "a genuine prediction". Both are wrong, and the
+corpus already said so.
 
-  `(mₙ − m_p) − (m_Σ⁻ − m_Σ⁺) + (m_Ξ⁻ − m_Ξ⁰) = 0`.
+`QOU/Eightfold/ColemanGlashowIdentity.lean` proves the relation sorry-free
+(`coleman_glashow_identity`) from a **weaker** premise than this file's: EM
+self-energy constant on a U-spin multiplet, with *three* free shifts `a, b, c`
+at charge `+1, 0, −1`. The block `eightfold-way/u-spin-coleman-glashow.md`
+records the same measured residual this file quotes — `−0.064 MeV`, `0.8 %` of
+the largest splitting — and states the epistemics plainly: *"Reproducing
+Coleman–Glashow would therefore be no evidence for this framework, or for any
+other."* The quadratic-charge ansatz here is a **specialisation** of that
+three-parameter family, so CG follows a fortiori and adds nothing.
 
-That is the Coleman–Glashow relation, obtained here with **no fitted quantity**:
-it does not depend on the couplings, on `q`, or on any length scale. Measured, it
-holds to `0.064 MeV` — `0.80 %` of its largest term and inside the combined PDG
-error on the hyperon masses.
+## 2a. What the ansatz actually does on the octet: it saturates, so it predicts nothing
 
-**This is the first parameter-free consequence the EM sector yields on this
-branch**, and it is a genuine prediction rather than a postdiction of a number:
-any EM self-energy that is quadratic in the strand charges satisfies it, so a
-measured violation would refute the whole class at once.
+The sharper statement, and the one that is this file's own, is negative.
+The octet's *observable* EM content is two-dimensional: the three splittings
+`p−n`, `Σ⁺−Σ⁻`, `Ξ⁰−Ξ⁻` obey CG, leaving two independent, and an overall shift
+of `a, b, c` moves all eight masses together and is absorbed into the strong
+parameters. In terms of `(A, B)` those two observables are
+
+  `a − b = (A + B)/3`,   `b − c = (A − 2B)/3`,
+
+a linear map of determinant `−1/3 ≠ 0` (`octet_em_map_det_ne_zero`), hence a
+**bijection** onto the whole two-dimensional space
+(`octet_em_pattern_surjective`, which exhibits `A = 2u + v`, `B = u − v`).
+
+Two consequences, both unwelcome and both worth stating:
+
+* **The ansatz excludes no octet EM pattern.** Whatever the three splittings
+  had come out to, some `(A, B)` reproduces them. So it makes no falsifiable
+  octet prediction — not CG, not anything else.
+* **`A` and `B` are exactly determined by the octet data, i.e. fitted.** The
+  bijection is the obstruction, not a route: any derivation of the couplings
+  must come from outside the octet.
 
 ## What this does NOT do
 
@@ -62,11 +81,16 @@ It does **not** derive either coupling, so `qou-bn8e`'s target — the magnitude
 is untouched. It says the magnitude question needs a **second** measured
 splitting to separate `A` from `B`, and that the Σ triplet supplies one (its
 configuration difference is `(2/3, −1/3)`, not proportional to the nucleon's
-`(1/3, 1/3)`).
+`(1/3, 1/3)`) — but supplying one *fits* the couplings rather than deriving
+them, which is exactly the move `qou-bn8e` refuses.
 
-It also does not claim the EM self-energy *is* quadratic in the charges. That is
-the hypothesis under test; Coleman–Glashow holding is evidence for it, and the
-relation is what makes the hypothesis falsifiable.
+It also does not claim the EM self-energy *is* quadratic in the charges, and —
+correcting this file's earlier wording — Coleman–Glashow holding is **not**
+evidence for that hypothesis. By `octet_em_pattern_surjective` the ansatz
+reproduces every octet EM pattern, so CG could not have come out otherwise; a
+test no candidate can fail discriminates nothing. `u-spin-coleman-glashow.md`
+reaches the same verdict from the weaker U-spin premise. The hypothesis is
+untested by the octet, and testing it needs data the octet does not contain.
 
 Everything is over `ℚ` — charges and couplings are rational, no archimedean
 construct appears (§7c).
@@ -138,15 +162,18 @@ theorem xiMinus_config_eq_sigmaMinus :
 
 /-! ### The sum rule -/
 
-/-- **Coleman–Glashow, parameter-free.** For *every* pair of couplings `(A, B)`,
+/-- **Coleman–Glashow holds for the ansatz — as an implication, not as a result
+of this file.** For every pair of couplings `(A, B)`,
 
   `(E(n) − E(p)) − (E(Σ⁻) − E(Σ⁺)) + (E(Ξ⁻) − E(Ξ⁰)) = 0`.
 
-Three charge configurations and two couplings leave exactly one relation, and
-this is it. Nothing here depends on the couplings, on `q`, or on a length scale,
-so any EM self-energy quadratic in the strand charges satisfies it — and a
-measured violation refutes that whole class. Measured residual: `0.064 MeV`,
-`0.80 %` of the largest term, inside the combined PDG error. -/
+Kept only so the specialisation is visibly consistent with the corpus. The
+relation is already proved from a strictly weaker premise in
+`QOU/Eightfold/ColemanGlashowIdentity.lean` (`coleman_glashow_identity`, three
+free U-spin shifts, any commutative ring), and `u-spin-coleman-glashow.md`
+already records the `−0.064 MeV` residual. Do **not** cite this declaration as
+evidence for the quadratic-charge ansatz: by `octet_em_pattern_surjective` the
+ansatz reaches every octet EM pattern, so it could not have failed CG. -/
 theorem coleman_glashow (A B : ℚ) :
     (energy A B qU qD qD - energy A B qU qU qD)
       - (energy A B qD qD qS - energy A B qU qU qS)
@@ -170,5 +197,52 @@ theorem pn_sigma_determinant_ne_zero :
       - (chargeInter qU qU qD - chargeInter qU qD qD)
         * (chargeSelf qU qU qS - chargeSelf qD qD qS) ≠ 0 := by
   simp only [chargeSelf, chargeInter, qU, qD, qS]; norm_num
+
+/-! ### Saturation: the ansatz has no octet predictive content -/
+
+/-- The EM shift of the `Q = +1` U-spin multiplet (`p`, `Σ⁺`). -/
+def emPlus (A B : ℚ) : ℚ := energy A B qU qU qD
+
+/-- The EM shift of the `Q = 0` U-spin multiplet (`n`, `Ξ⁰`). -/
+def emZero (A B : ℚ) : ℚ := energy A B qU qD qD
+
+/-- The EM shift of the `Q = −1` U-spin multiplet (`Σ⁻`, `Ξ⁻`). -/
+def emMinus (A B : ℚ) : ℚ := energy A B qD qD qS
+
+/-- The two independent observable EM splittings, in closed form:
+`a − b = (A + B)/3` and `b − c = (A − 2B)/3`. -/
+theorem octet_em_gaps (A B : ℚ) :
+    emPlus A B - emZero A B = (A + B) / 3 ∧
+      emZero A B - emMinus A B = (A - 2 * B) / 3 := by
+  constructor <;>
+    simp only [emPlus, emZero, emMinus, energy, chargeSelf, chargeInter, qU, qD, qS] <;> ring
+
+/-- The map `(A, B) ↦ (a − b, b − c)` has determinant `-1/3`, so it is
+invertible. -/
+theorem octet_em_map_det_ne_zero :
+    (1 / 3 : ℚ) * (-2 / 3) - (1 / 3) * (1 / 3) ≠ 0 := by norm_num
+
+/-- **The ansatz excludes no octet electromagnetic pattern.** For *any* target
+pair `(u, v)` of the two independent splittings there are couplings reproducing
+it, exhibited as `A = 2u + v`, `B = u − v`.
+
+This is the file's real octet result, and it is negative: a class that reaches
+every pattern forbids none, so the quadratic-charge ansatz makes no falsifiable
+prediction on the baryon octet — Coleman–Glashow included. It also shows `A`
+and `B` are *fitted* by the octet rather than constrained by it, which is why
+`qou-bn8e` cannot be closed from this data. -/
+theorem octet_em_pattern_surjective (u v : ℚ) :
+    ∃ A B : ℚ, emPlus A B - emZero A B = u ∧ emZero A B - emMinus A B = v := by
+  refine ⟨2 * u + v, u - v, ?_, ?_⟩ <;>
+    simp only [emPlus, emZero, emMinus, energy, chargeSelf, chargeInter, qU, qD, qS] <;> ring
+
+/-- And the couplings are uniquely determined, so the octet fixes them exactly:
+two data, two parameters, no slack left over. -/
+theorem octet_em_pattern_unique {A B A' B' : ℚ}
+    (h1 : emPlus A B - emZero A B = emPlus A' B' - emZero A' B')
+    (h2 : emZero A B - emMinus A B = emZero A' B' - emMinus A' B') :
+    A = A' ∧ B = B' := by
+  simp only [emPlus, emZero, emMinus, energy, chargeSelf, chargeInter, qU, qD, qS] at h1 h2
+  constructor <;> linarith
 
 end QOU.MassTheory.ChargeQuadraticSumRule

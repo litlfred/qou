@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
-"""Coleman-Glashow from a quadratic-in-charge EM term: parameter-free, and checked.
+"""What a quadratic-in-charge EM term says about the baryon octet: nothing new.
+
+RETRACTION (2026-08-29).  This script was first written and committed under the
+title "Coleman-Glashow from a quadratic-in-charge EM term: parameter-free, and
+checked", claiming CG as a prediction of the ansatz and as the first
+parameter-free EM consequence on this branch.  Both claims were wrong, and the
+corpus already contained the refutation -- `QOU/Eightfold/ColemanGlashowIdentity`
+proves CG sorry-free from a WEAKER premise, and
+`eightfold-way/u-spin-coleman-glashow.md` records the same -0.064 MeV residual
+this script "measured", together with the verdict "Reproducing Coleman-Glashow
+would therefore be no evidence for this framework, or for any other."  My
+corpus-grep had matched the topic and not the object.  The script is kept, with
+its arithmetic intact and its conclusion reversed.
 
 Bean `qou-bn8e`.  Companion to
 `QOU/MassTheory/ChargeQuadraticSumRule.lean`, which proves the algebra
@@ -23,9 +35,13 @@ TWO CONSEQUENCES.
       two couplings => exactly one relation, holding for every A and B.  It is
       Coleman-Glashow.
 
-This is a PREDICTION, not a postdiction of a magnitude: it fixes no number and
-depends on no coupling, no q, and no length scale, so a measured violation
-refutes the whole quadratic-in-charge class at once.
+(3) THE REASON (2) IS NOT A PREDICTION.  The map (A, B) -> (the two independent
+    octet splittings) has determinant -1/3, hence is a BIJECTION: for any octet
+    EM pattern whatsoever some (A, B) reproduces it (Lean:
+    `octet_em_pattern_surjective`, exhibiting A = 2u+v, B = u-v).  A class that
+    reaches every pattern excludes none, so CG could not have failed here and is
+    no evidence for the ansatz.  The same bijection says the octet FITS A and B
+    rather than constraining them -- which is why `qou-bn8e` stays open.
 
 Exact rationals for the algebra; mpmath for the mass comparison.  No float64.
 Emits no witness.
@@ -122,9 +138,35 @@ def main() -> int:
         print("  is standardly quoted as approximate, and higher-order EM and")
         print("  isospin-breaking terms are expected at this level.")
 
+    # (4) SATURATION: the ansatz reaches EVERY octet EM pattern, so it excludes
+    #     none.  Exhibit A = 2u+v, B = u-v for arbitrary target splittings.
+    print("\nSATURATION CHECK -- does the ansatz forbid any octet pattern?")
+    sat_ok = True
+    for (u, v) in [(F(1), F(0)), (F(0), F(1)), (F(-7, 5), F(3, 11)), (F(22, 7), F(-9, 4))]:
+        A, B = 2 * u + v, u - v
+        def _E(cfg):
+            sf, it = invariants(cfg)
+            return A * sf + B * it
+        a, b, c = _E(OCTET["p"]), _E(OCTET["n"]), _E(OCTET["Sig-"])
+        if (a - b, b - c) != (u, v):
+            sat_ok = False
+            print(f"   FAIL: target ({u}, {v}) not reproduced by (A,B)=({A},{B})")
+    if sat_ok:
+        print("   every target (u, v) is reproduced  =>  the ansatz excludes NOTHING")
+        print("   determinant of (A,B) -> (a-b, b-c) is -1/3, a bijection")
+    ok = ok and sat_ok
+
     print("\nWHAT THIS DOES NOT DO: it derives neither A nor B, so the magnitude")
-    print("target in `qou-bn8e` is untouched. It constrains the FORM.")
-    print("\nVERDICT:", "structure confirmed" if ok else "CHECK FAILED")
+    print("target in `qou-bn8e` is untouched.")
+    print("\nAND WHAT IT DOES NOT SHOW (retracted 2026-08-29): Coleman-Glashow")
+    print("holding here is NOT evidence for the quadratic-in-charge ansatz. By the")
+    print("saturation check above the ansatz reproduces every octet EM pattern, so")
+    print("CG could not have failed; a test nothing can fail discriminates nothing.")
+    print("CG is already proved sorry-free in QOU/Eightfold/ColemanGlashowIdentity")
+    print("from a WEAKER premise, and u-spin-coleman-glashow.md already records")
+    print("this same -0.064 MeV residual and this same verdict.")
+    print("\nVERDICT:", "arithmetic checks out; adds no octet prediction" if ok
+          else "CHECK FAILED")
     return 0 if ok else 1
 
 

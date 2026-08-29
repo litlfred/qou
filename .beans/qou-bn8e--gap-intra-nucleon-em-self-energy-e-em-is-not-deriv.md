@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-29T18:26:02Z
+updated_at: 2026-08-29T18:46:52Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -525,3 +525,43 @@ the nucleon's $(1/3, 1/3)$, determinant $-1/3 \neq 0$
 both fixed by measurement — which makes them *fitted*, not derived. The
 derivation problem is unchanged in kind but now has two targets instead of one,
 and a consistency relation already satisfied.
+
+
+---
+
+**RETRACTION 2026-08-29 — the Coleman–Glashow finding reported one turn earlier
+is withdrawn as a result. The arithmetic stands; the significance does not.**
+
+I claimed CG "falls out parameter-free" as "the first parameter-free consequence
+the EM sector yields on this branch" and "a genuine prediction". Both wrong, and
+the corpus already held both refutations:
+
+* `QOU/Eightfold/ColemanGlashowIdentity.lean` proves CG sorry-free from a
+  **weaker** premise (U-spin invariance, three free shifts). The quadratic-charge
+  ansatz is a two-parameter specialisation, so CG follows a fortiori.
+* `eightfold-way/u-spin-coleman-glashow.md` already records the same `−0.064 MeV`
+  / `0.8 %` residual I reported as my measurement, and states outright:
+  *"Reproducing Coleman–Glashow would therefore be no evidence for this
+  framework, or for any other."*
+
+Seventh object-grep failure of the arc, and the worst: the corpus file has
+`coleman-glashow` **in its filename**. I grepped the topic, not the object, and
+did not run `scripts/prior-art-probe.py` — which I wrote on this branch for
+exactly this failure.
+
+**What is genuinely new is negative, and it sharpens this bean.** The octet's
+observable EM content is 2-dimensional; in the couplings it is
+`a−b = (A+B)/3`, `b−c = (A−2B)/3`, determinant **−1/3 ≠ 0**, a bijection. So
+(`octet_em_pattern_surjective`, sorry-free, `A = 2u+v`, `B = u−v`):
+
+1. **The ansatz excludes no octet EM pattern** — CG could not have failed, hence
+   is no evidence for it.
+2. **The octet FITS `A` and `B`, it does not constrain them.** Adding the Σ
+   triplet does not help; it is what makes the fit exact. Any derivation must
+   come from outside the octet.
+
+So the magnitude gap is unchanged in size but better characterised: it is not
+"one more datum away", it is *provably not reachable from the octet at all*.
+
+Audit: docs/audits/2026-08-29-coleman-glashow-retraction-and-octet-saturation.md
+Lean/probe corrected in place; both carry the retraction in their own docstrings.
