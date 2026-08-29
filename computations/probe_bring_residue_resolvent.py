@@ -19,7 +19,7 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -52,7 +52,10 @@ def main() -> int:
         denom = 1 - h_q * q**n
         roundtrip = F_n * denom
 
-        denom_abs = float(abs(denom))
+        # Serialized from the mpf at output precision. `float(...)` here
+        # truncated a 70-dps magnitude to a double before it reached the
+        # witness (AGENTS.md §PROBES ARE NOT EXEMPT; bean qou-p77d).
+        denom_abs = fmt(abs(denom))
         w.add_assertion(
             name=f"denominator_nonzero_n{n}",
             computed=denom_abs,
@@ -61,11 +64,13 @@ def main() -> int:
             source=f"|1 − h_q·q^{n}| > 0 at q₀",
         )
 
-        err = float(abs(roundtrip - 1))
+        # The residual is ~1e-72 against a 1e-49 tolerance; the cast
+        # reported 17 of its digits (bean qou-p77d).
+        err = fmt(abs(roundtrip - 1))
         w.add_assertion(
             name=f"roundtrip_identity_n{n}",
             computed=err,
-            expected=0.0,
+            expected="0",
             tolerance=1e-49,
             source=f"F_{n}·(1−h_q·q^{n}) = 1 at 50 dps",
         )
@@ -74,6 +79,8 @@ def main() -> int:
     distinct_count = len(set(round(v, 20) for v in vals))
     w.add_assertion(
         name="resolvent_values_distinct",
+        # NOT stringified: this is a count, already serialized as a JSON int,
+        # and the integer-field audit requires declared counts stay ints.
         computed=distinct_count,
         expected=len(POLE_ORDERS),
         tolerance=0,
