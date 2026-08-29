@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:48:48Z
+updated_at: 2026-08-29T18:53:06Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -457,3 +457,74 @@ whole investigation.
 `nucleon_braid_word` is kept as a comparison object, with a docstring that says
 plainly it is NOT established as the correct reduction and must not be swapped
 in.
+
+
+## 2026-08-29 — the "next question" was already answered on main, and my framing had a category error
+
+I proposed as the next open item: *"what is the correct H_3 reduction of the 3A
+nucleon, and why does the monotone form reproduce it?"* It is substantially
+answered by work that landed 2026-08-25, four days before I posed it. I grepped
+the ordering question but not the closure question, which is the corpus-grep
+discipline failing in the direction it always fails: I checked whether my
+*answer* was known and not whether my *question* was.
+
+### 1. Monotone is the 3A word's OWN convention
+
+`atom_braid_word_3A`'s docstring:
+
+    Matches the chain-walk convention of hecke_core.atom_per_generator_volumes:
+    for each nucleon k, apply intra g_0, intra g_1, then (if include_inter)
+    the appropriate pp/nn/pn crossing at gen 3k+2.
+
+So the 3A word lays each nucleon down as all-g_0-then-all-g_1 at generators
+3k, 3k+1. `nucleon_gen_chains` mirrors that faithfully. The Markov peel
+agreeing with the monotone H_3 value is therefore **not** independent
+corroboration of a coincidence — both express the same corpus-wide convention.
+That is a better reason to keep monotone than "an independent route agrees",
+which is what I said in the retraction above; the retraction's conclusion was
+right and its stated reason was weaker than the real one.
+
+### 2. My "different link" framing was in the wrong category
+
+From `docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md`:
+
+    `atom_braid_word_3A` does not return a braid word. Each letter is a triple
+    (c, d, g) meaning c.sigma_g + d.1 — an element of H_n(q), not of the braid
+    group.
+
+The averaged crossings are literally weight-1 averages over crossing sign
+(`sigma - (h/2).1 = ½sigma + ½sigma^-1`). For 2H there are 5 non-braid letters
+(= 2A+1 in general), so by linearity `tr_M(W)` is a weighted sum of **2^5 = 32**
+link invariants. **There is no single closure to ask about.**
+
+So "the monotone re-sort substitutes a different link for the Borromean braid"
+is a statement about an object the full nucleon word is not. What survives is
+the narrower claim, which is a genuine braid comparison because both words are
+pure sigma / sigma^-1 with no averaged letters:
+
+    (s0 s1^-1)^3  tr_M = 0.99856216383678726595
+    s0^3 s1^-3    tr_M = 0.18006453953550109830     81.97 % apart
+
+That stands. Its extension to the full nucleon does not.
+
+### 3. And the consequence is already measured, not conjectural
+
+The same audit reports, SnapPy-verified: **all 32 branch closures for 2H are
+non-hyperbolic** — each branch braid is monotone, so its closure is a connected
+sum of (2,k) torus links — with **Vol = 0 for every one**. Beans qou-2pnv,
+qou-d5e8, qou-9ot5; the audit's own headline is that the volume route therefore
+cannot justify `B_sym`.
+
+That is the real downstream consequence of the monotone convention, it is
+established, and it is a strictly bigger finding than the ordering question I
+opened here.
+
+### Where that leaves this bean
+
+* **9-vs-11 (the gluon term)** — still live, still unresolved, and untouched by
+  any of the above. The gamma-gamma SDP has four components; `build_nucleon_nf`
+  drops one. Docstring corrected; no consumer moved.
+* **The ordering question** — closed. Monotone is the corpus convention, applied
+  consistently from the 3A word down. Not a defect.
+* **What I added** — `build_nucleon_nf_mp` (float-free, true q_0) and
+  `nucleon_braid_word` (comparison object, marked not-canonical). Both additive.
