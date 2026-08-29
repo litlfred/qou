@@ -1,0 +1,73 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T17:40:02.276213+00:00",
+  "commitSha": "36cccfad5e2faebe5089a1894ee74d25df105392",
+  "assertions": [
+    {
+      "name": "published_Phi_is_A_zC2_plus_B_zC_exactly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_closed_form_matches_A_zD2_plus_B_zD",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_has_no_positive_zero_but_q_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 150,
+  "computation": "toffoli-qand-convention-d-derivation",
+  "scriptFile": "toffoli_qand_convention_d_derivation.py",
+  "scriptHash": "63894d54ee27",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_qand_convention_d_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_qand_convention_d_derivation.py"
+  },
+  "description": "Derives the convention-D q-AND amplitude rather than z-swapping it. Splitting the published Phi by parity in sqrt(q) gives Phi = A z^2 + B z with A = (q-1)^2(q+1)^2/(2q) and B = (q-1)(q^2+q+1)/(2(q+1)), both RATIONAL in q, and the decomposition is unique because z_C is not in Q(q). The convention enters through z alone, so Phi_D = A z_D^2 + B z_D = q^3(q-1)(q^6+2q^5+q^4-q^3+q^2+q+1) / (2(q+1)(q^2+1)^2). Its sextic has no real roots, so Phi_D vanishes on (0,inf) only at q = 1. The convention-C threshold at q ~ 0.4656, published as a phase reversal of the q-AND, does not exist under the canonical convention. At q0 both amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "A_chain_coefficient": "(q - 1)**2*(q + 1)**2/(2*q)",
+    "B_chain_coefficient": "(q - 1)*(q**2 + q + 1)/(2*(q + 1))"
+  },
+  "data": {
+    "Phi_D_closed_form": "q**3*(q - 1)*(q**6 + 2*q**5 + q**4 - q**3 + q**2 + q + 1)/(2*(q + 1)*(q**2 + 1)**2)",
+    "sextic_real_roots": "[]",
+    "convention_C_threshold_q": "0.46557123187676802665673122522",
+    "Phi_D_at_convention_C_threshold": "-0.0209080982892547310368841080021",
+    "Phi_C_at_q0": "0.0495376843629006907569056253187",
+    "Phi_D_at_q0": "0.0624697516022889701705696957421"
+  },
+  "caveats": [
+    "DERIVED for Phi, on the proof block's own chain (Phi = z*(z*Delta_a0 + Delta_b0)) plus uniqueness of the decomposition over Q(q). For the DIAGONAL P_77 the same uniqueness gives P_77 = z + (q-1)/(q+1) as the unique z-linear form, but the proof block does not state that the diagonal has that shape -- its V_1 table gives d = 0 for the pp pair -- so the D-frame diagonal is NOT derived here and is not reported as such."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
