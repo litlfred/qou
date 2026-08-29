@@ -145,8 +145,8 @@ def main() -> int:
     # (~72), which is the positive evidence that no constant N exists.
     w.add_assertion(
         "phi0_normalization_not_constant_across_orders",
-        computed=float(abs(N_h2 - N_h4)),
-        expected=float(abs(N_h2 - N_h4)),
+        computed=abs(N_h2 - N_h4),
+        expected=abs(N_h2 - N_h4),
         tolerance=1e-6,
         unit="|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
         source="N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀",

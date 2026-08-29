@@ -33,7 +33,7 @@ Setting $n = 3$ and $d = 6$ recovers the
 | Basis $\{b_1, \ldots, b_d\}$ | $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ |
 | Gram matrix $G \in \mathbb{R}^{d \times d}$ | $6 \times 6$ Gram matrix of $H_3(q)$ |
 | Target $n_{\mathrm{target}}$ | $\approx 1.000$ (proton), $\approx 0.811$ (neutron) |
-| Optimal $x^*$ | $\mathrm{NF}(\mathcal{B}_3) \approx (+0.998, -0.010, +0.009, +0.046, -0.044, 0)$ |
+| Optimal $x^*$ | not determined by the program — the minimisers form a face at objective $0$. $\mathrm{NF}(\mathcal{B}_3) \approx (+0.998, -0.010, +0.009, +0.046, -0.044, 0)$ is **feasible but not optimal** ($\mathrm{tr}_M \approx 0.9986$). |
 | Active set $\mathcal{A}$ | $\{\sigma_0, L_-\}$ (two active demand channels) |
 
 The confinement LP is the $n = 3$ instantiation: three strands

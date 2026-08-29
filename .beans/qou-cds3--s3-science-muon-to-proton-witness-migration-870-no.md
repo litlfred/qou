@@ -1,12 +1,11 @@
 ---
 # qou-cds3
 title: 'S3 (SCIENCE): muon -> proton witness migration — 870 not ~840, and 69 straddle both pins'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T13:20:00Z
-updated_at: 2026-08-24T02:55:00Z
+updated_at: 2026-08-29T12:36:26Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -56,1593 +55,472 @@ Standing posture until then: new/touched code uses proton; untouched muon
 witnesses stay as recorded; never mix within one quantity; every new witness
 records its q₀.
 
----
 
-## 2026-08-23 — `qbeta_singularity_cross_anchor_probe` unblocked and committed (11 of 21), and the real defect was not the one I fixed first
+## Re-measured 2026-08-25 — 105 both-pin, not 69, and ZERO unpaired straddles
 
-Two corrections to my own account, then the fix.
+The 69 above is from 2026-08-15; the corpus has grown. Re-measured on main
+`2c53783e3d3` over `computations/**/*.witness.json`:
 
-### 1. It is no longer blocked, because main moved
+    both-pin witnesses                              105
+      DELIBERATE — every site names its own layer    30
+      DELIBERATE — computed-at sites layer-PAIRED    19
+      ABOUT — audits reporting the pins as data       8
+      residue needing a human read                   48
+      UNPAIRED computed-at straddles                  0
 
-I recorded this probe as blocked by an upstream all-null `c_k_extracted_50dps`.
-A merge from main brought `6e586861b` — *"only c_2 and c_3 are supported; my own
-guard was off by one"* — so the witness now reads
+**The bucket that would be the real defect class is EMPTY.** A witness carrying
+both pins is overwhelmingly a deliberate comparison: `/data/muon_anchor/q0`
+beside `/data/proton_anchor/q0`, or `/anchors[1]/q` beside `/anchors[0]/q`.
+The bean's framing -- "a defect either way" -- does not survive measurement.
 
-```
-c_2: -1.017217328566724951324066253      c_3: -2.021615577060006120530024970
-c_4..c_10: null        last_resolved_rung: 3   n_unresolved: 7
-```
+**My first classifier said 19 straddles and was wrong.** It required EVERY
+mention of a pin to name its layer, so a plain `q0Value` provenance stamp --
+which names nothing -- kicked 19 genuine paired comparisons into the straddle
+bucket. Testing for PAIRING (is each muon computed-at site matched by a proton
+sibling, by name or by index?) absorbed all 19. Five iterations of the
+classifier plateaued at ~48 residue, which is the signal that the rest needs
+reading rather than more regex.
 
-With two rungs resolved the probe no longer crashes at all.
+## TWO confirmed, and they are NOT the same defect
 
-### 2. My first guard was the wrong guard
+Both are stamped `proton` while their `parameters.q_0_50dps` is muon-family.
+Cross-confirmed from an independent direction: both also appear in the
+stamp-vs-payload scan recorded on `qou-khac`.
 
-I added `raise SystemExit` when the resolved set is **empty**. That fires on the
-old state and not the current one — and the current one is worse. The probe ran
-to completion, printed `VERDICT: FIBRE_LEVEL_CONFIRMED`, and wrote
-`allPassed: true` **over a c_k table with zero rows**.
+  he3-brane-tower-structural-gap    q_0_50dps = 1.1099785955573347...  = A
+      the CANONICAL muon anchor. A plain mis-stamp; the honest label is `muon`.
 
-Why: section (a) consumes `k >= 6` only (`if k < 6: continue`), and 6..10 are
-exactly the nulled rungs. So the resolved set is non-empty (c_2, c_3) while the
-consumed range is entirely absent. A guard keyed to "is anything resolved" cannot
-see that. The verdict itself comes from section (b), the `u_subst` location test,
-which uses **no `c_k` at all** — which is why the probe looks healthy.
+  he3-tower-charge-asymmetry        q_0_50dps = 1.1099785955541805...  = B
+      the CODATA-2018-derived value, which is NEITHER anchor. Same class as
+      `meson_mass_from_hecke` (PR #5742), whose honest label is `ambiguous`
+      plus a reason naming the value.
 
-### The fix — keyed to the range actually consumed
+Neither is fixed here -- each needs its producer read, which is separate work.
 
-`load_ck_from_witness` now returns `(resolved, nulled)` and skips sentinels;
-`main()` reports the coverage of the range it consumes and refuses to let an
-empty (a) read as a passed (a):
+## The bean's "specific trap" note is STALE — do not act on it
 
-```
-  rungs k>=6 available: NONE   nulled upstream: [6, 7, 8, 9, 10]
-  *** SECTION (a) EVALUATED NOTHING. … The VERDICT printed later comes from
-      section (b) alone, which uses no c_k at all -- do not read it as
-      confirming (a).
-```
+The section above tells the reader to check every `y_lambda_at(n, q)` call site
+because it "returns the cached muon-built witness". **That was corrected on
+2026-08-23** (beans `qou-c1ya` / `qou-vu19`, and AGENTS.md carries the
+correction): the live `y_lambda_at` is five statements, reads no witness, and
+its whole call cone is cache-free. The gate and the cache load moved into
+`_y_lambda_at_convention_C_HISTORICAL`, which is dead code.
 
-and the witness carries it, so the artefact cannot be misread either:
-
-```json
-"ck_section_a_coverage": {"min_k_consumed": 6, "rungs_available": [],
-  "rungs_nulled_upstream": [6,7,8,9,10], "section_a_evaluated": false}
-```
+Measured cost of following the stale wording: promoting `y_lambda_at` to a
+muon identifier reclassified **56 producers** from `proton` to `BOTH`, hiding
+56 clean files behind an association the code no longer has.
 
-`allPassed: true` is still true of what ran; it is now impossible to read as
-covering what did not.
-
-### Committed as a cds3 item
 
-Mislabelled proton-named field **1 → 0** (`data.q_proton` is now
-`1.10997858275138…`), failed assertions 0 → 0, verdict byte-identical,
-environment **upgraded** (`scipy None → 1.17.1`, `mpmath 1.3.0 → 1.4.1`) not
-downgraded. Consistent with the agent finding that this producer imports
-`q_at` from `qou_substrate.constants` and therefore resolves proton regardless of
-its `ideal_muon` listing — i.e. genuinely stale, and regeneration is the right
-fix for it.
+## CORRECTION, same day — both "confirmed" are STALE WITNESSES, not defects
 
-**Running total: 11 of 21 committed.**
-## RE-MEASURED + TRAP RE-CHECKED 2026-08-21
-
-### The named trap is CLOSED — on both of its premises
-
-This bean's *"specific trap to check at every call site"* says
-`wedderburn_jones_markov.y_lambda_at(n, q)` serves the cached **muon-built**
-`y-lambda-at-q0.witness.json` whenever `|q − q_parameter.Q| < 1e-12`, a gate
-satisfied trivially when the caller passes `q_parameter.Q` itself, so *"the
-ideal-layer cache reaches an experimental-layer caller with no signal."*
-
-Both halves are now false, and the fix was the convention-D excision, not a pin
-migration:
-
-**1. The cache is unreachable.** Since 2026-08-09 the function computes directly:
-
-```python
-if q_val is not None:
-    _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)      # hook-content, at the q PASSED
-    return {sh: sp.Float(...) for sh, v in _y.items()}
-```
-
-Its own docstring: *"THE THREE C FAST PATHS BELOW ARE NOW DEAD … the D result
-returns before any of them is reached. In particular `y-lambda-at-q0.witness.json`
-holds C weights and **must NOT be served** — that cache is why the switch has to
-happen here rather than only at `markov_z`."*
-
-**2. `q_parameter.Q` is the PROTON pin.** Measured: `Q_MP =
-1.10997858275138080759166909561076…` — identical to `Q_50_DIGIT_STR`, the
-canonical proton anchor. A caller passing `q_parameter.Q` therefore gets proton,
-not muon.
-
-Verified by running it, not by reading it:
-
-```
-y_lambda_at(3, Q_MP)  ->  (3,)=0.5054042265…  (2,1)=0.2472978867…  (1,1,1)=0.0
-docstring D values    ->   0.5054042           0.2472979            0
-convention C would be ->   0.4153958           0.2809296            0.0227449
-```
-
-So the ~12 live call sites that pass `q0` — including the production one,
-`binding_canonical.py:422` (`from q_parameter import Q_MP as q0`, line 65) — are
-**safe from this mechanism**. They recompute at the q they pass. Whether each
-passes the *right* q is a separate and *visible* question; the silent-straddle
-channel this bean names is gone.
-
-### Counts have moved a lot, and one moved the wrong way
-
-Re-measured with the same fixed-string method over `computations/**/*.witness.json`
-(excluding `_deprecated/`):
-
-| | bean, 2026-08-15 | now, 2026-08-21 | Δ |
-|---|---|---|---|
-| total witnesses | 2941 | **2690** | −251 |
-| muon fingerprint | 870 | **617** | −253 |
-| proton fingerprint | 588 | **653** | +65 |
-| muon-only | 801 | **539** | −262 |
-| proton-only | 519 | **575** | +56 |
-| **both pins** | **69** | **78** | **+9** |
-
-Migration is clearly progressing — muon-only down 262 — but **the straddle class
-grew**, which is the one this bean says to triage first *regardless* of whether
-the bulk migration is authorised. Of the 78, **19 were touched since 2026-08-15**
-and 59 predate it, so the growth is not purely inherited: partial migration
-appears to be creating both-pin artefacts.
-
-### First-cut triage of the 78 — and its limits, stated
-
-Classifying by whether the witness's `computation` name or `description` signals
-a deliberate pin comparison (drift / tension / compare / cross-anchor / …):
-
-- **41 deliberate** — e.g. `q0-value-drift-audit`,
-  `mu-substrate-tension-audit-100dps`. These *must* carry both pins; flagging them
-  would be the false positive.
-- **37 candidate straddles** — no such signal.
-
-**This is a first cut, not a verdict, and it has visible false negatives**:
-`mu-p-pin-sensitivity-map`, `q0-consistency-audit` (×2) and
-`qbeta-meridian-holonomy-anchor-swing` are plainly deliberate and landed in the
-"candidate" bucket. I did **not** widen the keyword set to sweep them in — that is
-the "widening a regex suppresses a real finding" failure this corpus has already
-recorded once. The queue is written to
-`scratchpad/ambiguous_straddle.txt`; it needs per-file eyes, not a better regex.
-
-### Unchanged
-
-The bulk migration still lacks its own scoped sign-off (R2 states the end state,
-not the sweep), so nothing was migrated. Standing posture holds: new/touched code
-uses proton, untouched muon witnesses stay as recorded, never mix within one
-quantity, every new witness records its q₀.
-
-### ADDENDUM, same day — the sweep is live, and straddles grow WITH it
-
-Between my first measurement this session and a `main` merge ~1 h later, **232
-witness files changed** and the population moved sharply. Both figures are
-correct for their tree; verified by counting at each commit
-(`git grep -l … 93d4abbf0` → 617, at HEAD → 430).
-
-| | bean 08-15 | 08-21 early | **08-21 HEAD** |
-|---|---|---|---|
-| total witnesses | 2941 | 2690 | 2694 |
-| muon fingerprint | 870 | 617 | **430** |
-| proton fingerprint | 588 | 653 | **861** |
-| muon-only | 801 | 539 | **332** |
-| **both pins** | **69** | **78** | **98** |
-
-The migration is working — muon-only 801 → 332. But **the straddle class grows
-with it**: 69 → 78 → 98, i.e. **+20 in the same hour that migrated ~187
-witnesses**. That is roughly one new both-pin artefact per nine migrated. It is
-consistent with partial migration: a witness that gets its production value moved
-to proton while retaining a muon-derived reference now matches both fingerprints.
-
-**Any count here is perishable.** The population moved 30 % in an hour. Quoting a
-straddle number without its commit is meaningless; this bean's "69" was accurate
-on 2026-08-15 and is now three revisions stale.
-
-### NEW: a straddle class nobody has counted — two MUON pins in one file
-
-The `1.109978595` fingerprint conflates the two muon values `qou-khac` is about.
-Splitting it:
-
-| | count |
-|---|---|
-| stale hand-typed `Q_MUON` (`…55733…`) only | **212** |
-| derived `q_muon_at()` (`…55418…`) only | **164** |
-| **both muon values in ONE file** | **24** |
-
-Those 24 are an **intra-muon straddle**, and they are invisible to every
-muon-vs-proton test — including this bean's, which is why they have never been
-counted. `qou-khac` names the two-value problem but scopes it to *3 hand-typed
-constants in source*; this is the same defect in the **witness** layer, at 24
-files, plus a 212/164 split showing the stale constant is still the **majority**
-of muon-bearing witnesses.
-
-Worth doing before the muon→proton sweep finishes: a witness migrated from the
-*stale* muon pin inherits a value 3.15e-12 off the one `q_muon_at()` derives, and
-once it is relabelled proton nobody can tell which muon value it came from.
-
-### On the structural triage I attempted
-
-I tried to separate deliberate comparisons from straddles by checking whether
-both pins sit under a shared JSON parent. **That test does not discriminate** —
-calibrating on two cases showed clean comparisons with shared parents:
-`peel-anchor-identification` stores `/q0_pins/proton` + `/q0_pins/muon` (its
-description: *"no anchor enters it — so both q0 pins can be evaluated from one
-expression"*), and `definitive-q0-shift` stores `q0_current` vs
-`q0_exact_for_mp`, which is the entire point of the witness. Recorded as a
-negative result rather than tuned until it agreed with me.
-
-What would actually discriminate is whether the two pins feed **one computed
-quantity** versus sitting in two labelled fields — which needs the producer, not
-the artefact. That is the per-file work this bean asks for, and it is not
-automatable from the JSON alone.
-
-### ⚠ THE MIGRATION METRIC CANNOT SEE THE WORST CASE — 22 witnesses label a MUON value "proton"
-
-Chasing the 24 intra-muon files turned up something they were a symptom of.
-
-**Measured at HEAD**, over `computations/**/*.witness.json` (excluding
-`_deprecated/`), looking at fields whose *name* contains `proton`:
-
-| | count |
-|---|---|
-| proton-named field holding the real proton pin `1.1099785827513808…` | **63** |
-| **proton-named field holding a MUON value** | **22** |
-
-Examples, verbatim:
-
-```
-probes/flavor-split-alpha-dilog-expansion   /data/proton_anchor/q0 = 1.1099785955573347…   <- stale MUON
-                                            /data/muon_anchor/q0   = 1.1099785955541805…   <- derived muon
-                                            /q0Value               = 1.1099785955573347…
-qbeta/qbeta-c6-c10-crossanchor-falsification /data/q_proton        = 1.10997859555733471…  <- stale MUON
-audits/q0-consistency-audit                  /canonical_proton_q0  = 1.10997859555733471…  <- stale MUON
-```
-
-The real proton pin is `1.1099785827513808…`; these are `1.10997859…`. They differ
-at the 9th significant digit, so this is not rounding.
-
-**Why this matters more than the straddle count.** This bean measures migration by
-**fingerprint** — counting `1.1099785827` as "proton". These 22 witnesses contain
-**no proton fingerprint at all**. They are counted as *muon* witnesses awaiting
-migration, or as *both*-pin straddles, and in neither case does the metric reveal
-that a field literally named `proton` holds a muon number. **The measurement
-method is blind to the failure mode it most needs to catch**: right name, wrong
-value.
-
-Worse for the sweep: `audits/q0-consistency-audit.witness.json` — the *consistency
-audit* — asserts `canonical_proton_q0` = the stale muon constant, and carries
-**no `computedAt` and no `scriptHash`**, so nothing flags it as stale.
-
-**Two "cross-anchor" probes are therefore not cross-anchor.**
-`qbeta-c6-c10-crossanchor-falsification` and
-`qbeta-singularity-cross-anchor-probe` compare `q_proton` against `q_muon` where
-`q_proton` holds a muon value — so the "anchor swing" they measure is the
-**3.15e-12 gap between the two muon constants** (`qou-khac`), not the ~1.28e-8
-muon↔proton separation. Any conclusion drawn from their swing magnitude is scoped
-to the wrong comparison. Not re-derived here; flagged.
-
-**Provenance, stated as inference not fact.** Both dated examples were computed in
-**June 2026** (`2026-06-29`, `2026-06-22`), before the 2026-08-15 proton ruling. At
-a June-era commit the substrate's canonical branch required
-`_d["q"].startswith("1.109978595557")` and raised *"not canonical muon"* otherwise
-— i.e. **"canonical" then resolved to the muon pin**. So these witnesses recorded
-the then-canonical value under a `proton` name. Whether the probes mis-named it in
-June or the meaning of "canonical" moved under them, I did not establish, and it
-does not change the current state: the field says proton and the value is muon.
-
-**Not fixed here.** Regenerating them is producer work across 22 files and several
-of them are `qbeta`-channel probes whose conclusions would move; and hand-editing
-a witness value is prohibited outright. The queue is
-`scratchpad/proton_mislabel.txt`.
-
-**Bears directly on `qou-khac`**, which scopes the two-muon-value problem to 3
-hand-typed source constants. The witness layer carries it at 212 stale-only, 24
-both-values, and now 22 mislabelled-as-proton — and the last group will be
-*hardest to fix after* the sweep, because once a witness is relabelled there is
-nothing left to tell which muon value it came from.
-
-### ANSWERED 2026-08-23 — the mislabelled witnesses are STALE ARTEFACTS, not live producer bugs
-
-The open question on the 22 (20 currently detectable) was whether their producers
-*still* emit a muon value into a `proton`-named field. **They do not.** Checked
-all 20 named producers — every witness carries a `scriptFile`, so none had to be
-guessed:
-
-| how the producer obtains its proton pin | count |
-|---|---|
-| runtime call / import (`q_at()`, `mpf(str(q_at()))`, `Q_50_DIGIT_STR`, `Q_MP`) | **20** |
-| hardcoded muon literal assigned to a proton variable | **0** |
-
-The five that my first pass could not classify resolve the same way on reading —
-e.g. `qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py:102` and
-`qbeta_c6_c10_crossanchor_falsification.py:153` are both `q_p = mpf(str(q_at()))`.
-
-**Consequence for this bean: these need regeneration, not source repair.** Every
-one of them was computed while `q_at()` still returned the muon-anchored value,
-and every one would now emit the proton pin unchanged. That is a materially
-cheaper item than it looked, and it removes them from the "needs a producer fix"
-column entirely.
-
-### But the PROSE did not self-correct, and one file now contradicts itself
-
-`computations/h4_form_AB_cross_anchor_stability.py` is the clearest case. Its code
-is correct — `:98` is `q_proton = q_at(DPS)`, resolved at runtime — and its
-docstring at `:17` says `q_proton = 1.10997858275…`, also correct. But the ANCHOR
-NOTE at the top of the same file (`:1-5`, dated 2026-06-22) says:
-
-> `q0 = 1.10997858275…` occurrences below are the **RETIRED** pre-2026-05-28
-> proton anchor … The **CURRENT canonical proton q0 is `q_at()` ≈
-> 1.1099785955573347…**
-
-That calls the **muon** value the current canonical proton pin, and declares the
-actual canonical value retired — **twelve lines above a docstring that says the
-opposite**. It was true when written (`q_at()` did return that value in June) and
-the 2026-08-15 ruling reversed it.
-
-This is the same shape as `atomic_tr_m_helium4_canonical.py` in `qou-cds4` and as
-`q0_consistency_audit.py` in `qou-ivhc`: **code that resolves a value at runtime
-is self-correcting; the prose describing it is not.** Three instances now, in
-three different files, all from the same ruling.
-
-The practical hazard is specific: a reader who trusts the ANCHOR NOTE over the
-code will "fix" the correct value to the stale one. That is the mechanism by
-which a self-correcting producer acquires a real bug.
-
-**Not edited here** — `h4_form_AB_cross_anchor_stability.py`'s header ends
-*"This probe is preserved as-is by design"*, so rewriting its banner is a call for
-whoever owns that preservation, not a hygiene edit. Recorded with the line numbers
-so it is actionable.
-
----
-
-## RE-MEASURED 2026-08-23 — still 21 live, and the sibling 563-witness sweep did NOT cover them
-
-The queue file `scratchpad/proton_mislabel.txt` did not survive a container
-reset, so the population was re-derived from the artefacts rather than recovered
-from the note: **every field anywhere in a witness whose key path contains
-`proton` and whose value starts with the muon prefix `1.109978595`**.
-
-```
-witnesses with a PROTON-named field holding a MUON value: 21
-```
-
-Worth checking explicitly, because it could have been fixed by someone else:
-`claude/mass-table-comprehensive-triage` regenerated **563 witnesses** on
-2026-08-23 (`qou-fl9i`). **None of these 21 were among them.** The item is live.
-
-A narrower test — top-level `q0Anchor` vs `q0Value` — reports **0 mislabelled**
-across 620 proton-labelled witnesses. That is not a contradiction: only 676 of
-~2700 witnesses carry those two fields at all, and this defect lives in
-producer-specific payload keys (`data.q_proton`, `parameters.q_proton`,
-`data.proton_anchor.q0`), not in the anchor stamp. **The anchor-stamp layer is
-clean; the payload layer is not** — which is exactly why the migration metric
-could not see these.
-
-### Split by whether regeneration moves a published conclusion
-
-| class | n | note |
-|---|---|---|
-| **qbeta-channel** | **11** | `qbeta_c3_habiro_3rung_crossanchor_rigidity`, `qbeta_c6_c10_crossanchor_falsification`, `qbeta_singularity_cross_anchor_probe`, … — cross-anchor probes whose *result* is a comparison between pins |
-| **non-qbeta** | **10** | `h4_form_AB_cross_anchor_stability`, `flavor_split_alpha_*`, `yekutieli_*`, `he4_rho_f_bar_symmetric_audit_probe`, … |
-
-All 21 carry a `scriptFile`; none had to be guessed. All were computed
-**2026-06-18 → 2026-07-17**, i.e. before the 2026-08-15 ruling.
-
-### One anomaly, and it ties to `qou-khac`
-
-`habiro-interpolation-wlambda.witness.json` carries
-`data.archimedean_F_lambda.proton_q0.q0 = 1.1099785955541805…` — that is **value
-B** (the CODATA-2018 evaluation), where the other 20 all carry **value A** (the
-frozen canonical muon pin). So this queue is not uniform in *which* muon value it
-mislabels. Per the `qou-khac` correction of the same date, B and A are different
-objects — B is the live derivation at an older CODATA vintage, A is not
-reproducible from any published muon ratio. **Regenerating this one changes a B
-to a proton value and destroys the only remaining evidence that it was ever B**,
-which is precisely the "hardest to fix after the sweep" hazard this bean warned
-about. Do it last, and record the old value in the commit.
-
-### ONE REGENERATED — the inference is now a measurement
-
-The previous section concluded *from reading source* that these need
-regeneration, not repair. Verified on `he4_rho_f_bar_symmetric_audit_probe.py`:
-
-```
-q_proton  before  1.1099785955573347198997…   (muon)
-q_proton  after   1.1099785827513808075916…   (proton)
-```
-
-- The probe's **conclusion is unchanged** — *"BAR-SYMMETRIC ρ_F CANDIDATES ALL
-  FAIL — best is C1 at +5.87% vs the current production at +5.87%"* — so for this
-  one, regeneration is genuinely hygiene.
-- The **environment record improved** rather than degraded: `scipy None → 1.17.1`,
-  `mpmath 1.3.0 → 1.4.1`, python/numpy unchanged. No environment warning fired.
-  (Checked because the `guarded-off-audit` refresh in `qou-i5jy` had to be
-  abandoned for the opposite reason.)
-- The 28 raw-float64 fields the guard warns about **pre-existed** —
-  `candidates[].value_numeric` and friends were already `float` in the committed
-  witness. Not introduced here, and not fixed here either.
-- Ran in well under 9 minutes.
-
-**20 remain.** Not batched in this session: the container has reset four times
-today, and a long serial regeneration would be lost mid-run. Each is now a
-one-file job with a known producer, so they can be drained individually and
-pushed as they land.
-
-### Still the owner's call, unchanged
-
-The **bulk** muon→proton migration. R2 states an end state, not a sweep. These 21
-are a different argument — a field named `proton` holding a muon value is wrong
-under either reading — but the 11 qbeta cross-anchor probes are the overlap: a
-probe whose *purpose* is to compare two pins may be recording the pins it
-actually used, in which case the label is right and the value is right and only
-the name reads oddly. **Check that per-probe before regenerating any of the 11.**
-
----
-
-## ⚠ 2026-08-23 — SEVEN REGENERATIONS RUN AND DELIBERATELY NOT COMMITTED. Regeneration is not hygiene.
-
-Last section I regenerated `he4_rho_f_bar_symmetric_audit_probe`, found its
-conclusion unchanged, and wrote that *"for this one, regeneration is genuinely
-hygiene."* **That generalised, and the generalisation is wrong.** I then ran the
-other seven non-qbeta producers and reverted every one.
-
-### What regenerating actually does
-
-A witness computed in **June 2026** and regenerated in **August** replays *every*
-producer change in between — not just the q₀ pin. Two are load-bearing here:
-
-- **`e5dcd8f54`** (2026-08-01) — *"A=3 magnitude r\*≈1.585 is a FREE parameter of
-  the Berezinian cross-term"*. A physics change, touching all three probes I
-  spot-checked.
-- **`bc96793e5`** (**2026-08-23, today**) — a **sibling's** q0-literal migration
-  (`claude/q0-literal-transcription-drain`), which edited
-  `binding_qgaussian_ell1_ceiling_measurement.py`.
-
-So the mislabel fix **cannot be isolated by regeneration**. Running the producer
-applies the pin correction *and* two months of unrelated evolution in one commit.
-
-### Measured, on the seven
-
-| witness | what moved |
-|---|---|
-| `xq-habiro-element-search-probe` | **all 6 candidates `TIER 1 (cross-anchor proved-candidate)` → `TIER 2 (near-match)`** |
-| `binding-qgaussian-ell1-ceiling-measurement` | `muon_anchor.rows[0].classical_ceiling_over_target` 0.516 → 0.566 (**9.7 %**) |
-| `flavor-split-alpha-*` | `alpha_true_anchor_drift` 5.8e-8 → 2.4e-4 (**4000×**) |
-| `option-e-v9-bar-symmetric-test-probe` | 29 non-pin fields; verdict held |
-| `yekutieli-*` | `data.h` moved at 1e-8; verdicts held |
-
-A 9.7 % move is not an 11.5 ppb pin shift, and `muon_anchor.*` fields moving at
-all is the tell: these probes' **muon legs** changed too. Every one still reported
-*"1 assertions, all passed"* — which is exactly why "assertions passed" is not a
-substitute for diffing the payload.
-
-### The one that is a finding in its own right, independent of the pin
-
-`xq-habiro-element-search-probe.witness.json` **as committed advertises six
-`TIER 1 (cross-anchor proved-candidate)` results that the current producer does
-not reproduce** — it now grades all six `TIER 2 (near-match)`. The committed
-artefact is not merely stale in its pin; it is asserting a stronger claim than
-today's code supports. That is worth someone's attention on its own terms, and it
-was invisible until a regeneration was attempted. **Not resolved here** —
-deciding whether June's TIER 1 or August's TIER 2 is correct is `qbeta`/Berezinian
-subject matter, not migration hygiene.
-
-### Why the `he4` commit still stands
-
-Re-checked its committed diff field by field: 34 non-pin fields moved, all at the
-**ppb level** (`B_pred_MeV` 29.95567724 → 29.95567728, ~1.4e-9 relative) and the
-verdict is identical (+5.87 %, all candidates fail). That is the pin correction
-propagating and nothing else — the honest outcome of a regeneration whose producer
-had not meaningfully changed. Kept.
-
-### Consequence for this bean
-
-The remaining **20** are not a drain queue. Each needs its payload diffed against
-the committed witness **before** the regeneration is committed, and any probe
-whose conclusion moves needs an owner, not a hygiene commit. That applies to the
-non-qbeta ten as much as the qbeta eleven — the split I drew last section was the
-wrong axis. The right axis is **"has this producer changed since the witness was
-computed?"**, which is a one-line `git log` per file and should be the first
-question, not the last.
-
----
-
-## 2026-08-23 — two cheap proxies for "will regeneration move conclusions", and BOTH are wrong
-
-Last section ended by recommending a one-line `git log` per producer as the first
-question. **I tried it, and it does not work.** Then I tried the mechanism the
-corpus is actually built on, and that does not work either. Each failure has a
-concrete counterexample, so both are recorded rather than just the fix.
-
-### Proxy 1 — `git log --since=<witness date> -- <producer>`. REJECTED.
-
-It reported **0 of 20 producers unchanged**, with `e5dcd8f54` (2026-08-01) as the
-sole commit for **14 of them** — which looked like a single reviewable class.
-
-It is not. `e5dcd8f54` is a **28,620-file, 9,957,932-insertion** commit that adds
-`uploads/*.pdf` and shows these producers as `new file mode`: a bulk
-import/re-baseline of the tree, not a change to any probe. **My own recommendation
-from the previous section was measuring repository history, not producer history.**
-
-### Proxy 2 — recorded `scriptHash` vs the current file. BETTER, STILL WRONG.
-
-The designed mechanism (`witness.scriptHash` = sha256 prefix of the producer's
-bytes, `witness.py:417`). It separates cleanly:
-
-| | n |
-|---|---|
-| `scriptHash` **matches** — producer byte-identical since the witness was made | **13** |
-| `scriptHash` **differs** — producer genuinely changed | **7** |
-
-`h4-form-AB`, `binding-qgaussian`, both `flavor-split-alpha-*`, and three `qbeta`
-cross-anchor probes are the seven that really moved.
-
-**But `xq-habiro-element-search-probe` is in the MATCHES column** — and
-regenerating it flipped all six candidates `TIER 1 → TIER 2`. A byte-identical
-producer produced a different verdict.
-
-### Why, and it is the interesting part
-
-`scriptHash` covers the **producer file only**. `xq_habiro_element_search_probe.py`
-imports `_precision`, `witness_base`, `experimental_constants`, and via
-`_path_bridge` the substrate — and the substrate's muon input moved. `qou-khac`
-measured it directly this session at dps=60:
-
-```
-MASS_RATIO_MU_E_STR   206.7682830  (CODATA 2018)  ->  206.7682827  (CODATA 2022)
-q_muon_at()           1.109978595554180…          ->  1.109978595642739…
-```
-
-`constants.py:231` now reads `MASS_RATIO_MU_E_STR = _MU_E.value_str  # CODATA 2022`.
-(The `git log -S` history for that line is unreadable — it resolves to the same
-bulk-import commit — which is *why* the runtime measurement in `qou-khac` was
-worth doing.)
-
-So a probe with a muon leg changes output while its own bytes, and therefore its
-`scriptHash`, are unchanged.
-
-### Corpus-level consequence — this is a hole in the staleness apparatus itself
-
-`producer_importability_audit`'s own thesis is that *"every existing staleness
-mechanism compares a witness against its producer: `witness.scriptHash` vs the
-current file hash…"*. **`scriptHash` is blind to dependency drift, and there is a
-live instance in this queue.** A witness can be materially stale — asserting
-`TIER 1` where the current code says `TIER 2` — with every drift detector green,
-because nothing hashes what the producer *imports*.
-
-Same shape as `qou-i5jy`: a check reporting clean over a surface it does not
-cover. Recorded here because it is discovered from the migration queue, but it is
-not a cds3 defect and is bigger than this bean.
-
-### Settled method for the remaining 20
-
-Neither proxy is sound, so the only reliable test is the one used last section:
-**regenerate into a snapshot, diff the payload excluding pin/timestamp/env fields,
-and decide per witness.** It costs a producer run each, and that cost is not
-avoidable by inspection — which is the useful thing to have established, since
-both cheap alternatives look convincing until they are checked.
-
-### NARROWING the "nothing hashes what the producer imports" claim (same day)
-
-Two sibling beans landed on `main` while this was being written, and both bear on
-the paragraph above. Checked before leaving the claim standing.
-
-**`qou-jvav`** — *"witness_dependency_drift resolver missed subdirectory upstreams
-— 357 of 688 drift records were false."* So the corpus **does** have an
-upstream-drift mechanism (`witness_dependency_drift.py`, wired into
-`staleness-gates.sh`), and my "nothing hashes what the producer imports" was too
-strong. Narrowed to what is actually true, on three measurements of my own:
-
-1. It tracks **declared upstream witnesses** (`upstream_witness_hashes`), not
-   Python module imports. A probe importing `qou_substrate.constants` declares no
-   upstream witness for it, because there is no witness to declare.
-2. Almost nothing declares them anyway: `witness_dependency_coverage_audit`,
-   run this session, reports **2 of 2643 witnesses (0.1 %)** carrying
-   `upstream_witness_hashes`.
-3. So for `xq-habiro-element-search-probe` specifically — `scriptHash` matched,
-   no upstream declared, output flipped `TIER 1 → TIER 2`. The gap is real for
-   this witness; the general claim was not.
-
-**`qou-a31p`** — *"Witness regeneration flipped 29 assertions PASS→FAIL and every
-blocking gate stayed green."* Independently, on commit `a0ee2ac5e` (the 563-witness
-sweep), a sibling measured exactly the failure mode this section reasoned toward:
-regeneration moves results, and *"assertions all passed"* does not catch it —
-because the failed-assertion ratchet is wired **advisory** in
-`precision-gates.sh:118`, `blocking = no`. Their measurement is stronger than my
-inference: 29 flips, net −27, 136 witnesses / 177 failed assertions against a
-baseline of 111.
-
-**Reattributed accordingly.** My contribution here is the narrower one: that the
-payload diff is the only sound pre-commit test, with `git log --since` and
-`scriptHash` each falsified by a counterexample. The consequence at corpus scale
-is `qou-a31p`'s, measured on a real sweep, not mine.
-
-### Merge note — the two conflicted chi witnesses
-
-Merging `origin/main` conflicted on
-`chi-at-q0-rust-lossless-helium-4.witness.json` and
-`chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json` — the collision `qou-k3wq`
-predicted (item C3). Resolved by taking **main's** side: newer (2026-08-23
-`a0ee2ac5e` vs my 2026-08-21 `dc30f78a0`), a legitimate producer run, and taking
-mine would have reverted a sibling's work. Hand-merging was never an option —
-witness numbers may not be edited.
-
-Checked against `qou-a31p` before accepting, since `a0ee2ac5e` is the commit that
-flipped 29 assertions: **neither file is named in that bean, and both carry zero
-assertions**, so neither can be among the flips. Both are also clean of the
-convention-C `z` literal on both sides, so `qou-cdh3`'s property survives the
-resolution either way.
-
----
-
-## 2026-08-23 — THREE MORE COMMITTED, by the settled method. Running total 4 of 21.
-
-Applied the method fixed in the previous section — regenerate into a snapshot,
-diff the payload, decide per witness — to the three of last section's seven whose
-verdicts had held.
-
-| witness | largest non-pin move | verdict |
-|---|---|---|
-| `option-e-v9-bar-symmetric-test-probe` | **5.7e-8 percentage points** on `err_vs_target_pct`; `predicted_B_diff_MeV` 4.4e-10 MeV | `data.verdict` **byte-identical** |
-| `yekutieli-a2-em-gauge-coupling-h2-probe` | 2.2e-7 relative on `u1_ansatz_h2_weight` | held |
-| `yekutieli-per-cell-qlambert-decomposition-probe` | 2.2e-7 relative on `per_cell_hypotheses[5].value` | held |
-
-All three: mislabelled proton-named field **1 → 0**, failed assertions **0 → 0**,
-no environment downgrade.
-
-### A methodological correction, because the first pass over-flagged
-
-I screened on **relative** movement against the 11.5 ppb pin shift, and it flagged
-`option-e-v9` at 5.9e-6 — 500× the pin — which looked like another
-conclusion-mover. It is not. The flagged field is
-`candidates[0].err_vs_required_factor_pct`, a **residual near −0.103**: a
-6.1e-7-percentage-point change on a near-zero quantity reads as a large *relative*
-move and is nothing in absolute terms.
-
-**Relative change is the wrong metric for a field that is itself an error or
-residual.** Screening must look at absolute movement in the field's own units, and
-at the verdict, before calling anything a regression. Recorded because the same
-screen would misfire on every `*_pct`, `*_err*`, `*_residual*` field in the
-remaining queue.
-
-The ~2.2e-7 moves on the two `yekutieli` probes are ~19× the pin shift — expected
-amplification through the formula, not a separate effect, and both verdicts hold.
-Stated rather than rounded to "consistent with the pin".
-
-### Running state of the 21
-
-| | n |
-|---|---|
-| committed, verdict-preserving | **4** — `he4_rho_f_bar`, `option_e_v9`, `yekutieli_a2`, `yekutieli_per_cell` |
-| regenerated, REVERTED — conclusion moves | **4** — `xq_habiro` (TIER 1→2), `binding_qgaussian` (9.7 %), both `flavor_split_alpha_*` (drift 4000×) |
-| not yet regenerated | **12** — 11 `qbeta` + `habiro_interpolation_wlambda` |
-| excluded by design | **1** — `h4_form_AB_cross_anchor_stability` (*"preserved as-is by design"*) |
-
-`habiro_interpolation_wlambda` still goes last: it is the only one carrying muon
-**value B**, and regenerating it destroys the evidence of which muon value it held.
-
----
-
-## 2026-08-23 — four left the queue without me: the sibling sweep committed the changes I declined
-
-Re-scanning after merging `origin/main`, the queue is **13**, not the 17 that
-`21 − 4 committed` predicts. Four are gone, and three of them are **exactly the
-ones I regenerated, measured as conclusion-moving, and reverted**:
-
-| witness | fixed by |
-|---|---|
-| `binding-qgaussian-ell1-ceiling-measurement` | `a0ee2ac5e` |
-| `flavor-split-alpha-bond-dilog` | `a0ee2ac5e` |
-| `flavor-split-alpha-dilog-expansion` | `a0ee2ac5e` |
-| `qbeta-route-alpha-lift-prediction` | `a0ee2ac5e` |
-
-`a0ee2ac5e` is the sibling's **563-witness** sweep (`qou-fl9i`), which reached
-this branch through the merge.
-
-### My measurements were exactly right, and that is checkable
-
-The committed versions carry the values I recorded before reverting:
-
-```
-flavor-split-alpha-*  alpha_true_anchor_drift  0.00023620856905347091…   (I measured 2.4e-4, was 5.8e-8)
-binding-qgaussian     inflation_anchor_drift   0.00000023211456270013…   (I measured 2.3e-7, was 6.9e-11)
-```
-
-Independent regeneration, identical numbers to every digit I had. So the
-movement is real and reproducible, and reverting did not make it go away — it
-landed by another route.
-
-### Was the caution wrong? No, but it was about a different thing
-
-All three still report `allPassed: true, failed: 0`, so **they are not among
-`qou-a31p`'s 29 flips** — their assertions tolerate the movement. On correctness,
-the sibling's commit is fine and arguably better than my revert: the new values
-are computed at the proton pin with current code.
-
-What I was protecting was not correctness but **attribution and visibility** — a
-4000× move in a published drift metric should not ride inside a commit whose
-stated purpose is fixing a mislabelled field. That concern stands independently
-of these three being harmless, and `qou-a31p` exists precisely because the same
-563-witness sweep *did* silently break 29 assertions elsewhere while every
-blocking gate stayed green.
-
-**Recorded rather than quietly dropped**, because "I declined to commit X and
-someone else committed X" is exactly the kind of thing a work-plan should surface
-instead of leaving the next reader to wonder why the queue shrank.
-
----
-
-## 2026-08-23 — the qbeta batch: 6 committed, 4 held back, and the mislabel turns out to be TWO different defects
-
-Ran all 11 remaining qbeta-channel producers. Results split four ways, and the
-split corrects this bean's earlier conclusion that *"these need regeneration, not
-source repair."* **Two of them need source repair and regeneration cannot touch
-them.**
-
-### THE HEADLINE — the mislabel made every cross-anchor probe compare an anchor with ITSELF
-
-`qbeta-c3-habiro-3rung-crossanchor-rigidity`, before regeneration:
-
-```
-q_muon   = 1.109978595554180575281594   <- value B (CODATA-2018 muon)
-q_proton = 1.109978595557334719899763   <- value A (the FROZEN CANONICAL MUON PIN)
-```
-
-Both legs are muon. The probe was measuring the **B↔A separation (3.15e-12)** and
-reporting it as the muon↔proton cross-anchor swing. After the fix it is a real
-11.5 ppb comparison — and the reported swings grow by three to four orders of
-magnitude across the batch:
-
-| probe | swing before | swing after |
-|---|---|---|
-| `qbeta-c3-habiro-3rung` | −1.52e-10 % | **+6.23e-07 %** |
-| `qbeta-c6-c10-falsification` | 5.82e-11 % | **2.38e-07 %** |
-| `qbeta-li2q-spectral-combiner` | 1.91e-12 % | **7.79e-09 %** |
-
-**Every qualitative verdict survives** — `RIGID`, `EMPIRICAL — SILVER-ANCHORED`,
-`STRUCTURAL REFUTATION CONFIRMED` — because each rests on *swing ≪ empirical*
-(−2.88 %, 1 %), and that inequality still holds by orders of magnitude. But those
-verdicts were previously supported by a **degenerate comparison**: a probe whose
-job is to discriminate two anchors was handed the same anchor twice. The
-conclusions are unchanged; the evidence for them is now real. That is the
-`AGENTS.md` "never straddle the two layers inside one quantity" rule, caught in
-the act.
-
-### The two that regeneration CANNOT fix — a live source defect, not a stale artefact
-
-`qbeta-composite-crossanchor-2factor-sweep` and
-`qbeta-cosh-avatar-crossanchor-multicoeff-probe` came back **still mislabelled
-(1 → 1)** after a clean run.
-
-Traced: `computations/substrate/q_parameter.py:100-108` resolves the anchor from
-`QOU_Q0_ANCHOR`, and **when that is unset it auto-selects by the running
-producer's `sys.argv[0]` stem** against `q0_anchor_manifest.json`. Both producers
-are in the **`ideal_muon`** layer (110 producers), so `q_at()` *correctly* returns
-the muon pin for them — and they write it into a field named **`q_proton`**.
-
-So the defect is the field NAME in the producer source, not the value, and no
-number of regenerations will change it. It also explains why this bean's earlier
-audit — *"all 20 obtain their pin at runtime via `q_at()`; zero hardcode a muon
-literal"* — was true and still missed these: `q_at()` returns a **different value
-depending on how the script is invoked**. A `python3 -c` replication of the same
-two lines returns the proton pin, because `argv[0]` is then `-c` and the manifest
-never matches.
-
-### Committed — 6, mislabel cleared, verdict preserved
-
-`qbeta-c3-habiro-3rung-crossanchor-rigidity`,
-`qbeta-li2q-spectral-combiner-crossanchor`, `qbeta-c6-c10-crossanchor-falsification`,
-`qbeta-cosh-q-sinh-q-candidate-scan`, `qbeta-delta-tau-m-canonical-explicit-instance`,
-`qbeta-signed-vs-abs-tower-diagnostic`. All: mislabelled field 1 → 0, failed
-assertions 0 → 0, no environment downgrade. The only textual changes are embedded
-swing figures and `engineVersion mpmath 1.3.0 → 1.4.1`.
-
-### Held back — 4
-
-| witness | why |
-|---|---|
-| `xq-habiro-element-search-probe` | 6 candidates `TIER 1 → TIER 2` |
-| `qbeta-jacobi-anger-tower-general` | `allPassed true → false`; one assertion flips |
-| `qbeta-composite-crossanchor-2factor-sweep` | ideal-layer naming defect; regeneration is a no-op on it |
-| `qbeta-cosh-avatar-crossanchor-multicoeff-probe` | same |
-
-### Blocked — 1, by an upstream data defect
-
-`qbeta_singularity_cross_anchor_probe.py` crashes before writing:
-
-```
-mp.mpf(str(v))  ->  ValueError: invalid literal for int() with base 10: ''
-```
-
-reading `c_k_extracted_50dps` from `qbeta-decay-sdp-extended-ck.witness.json`
-(`:97-103`). A stored value has a malformed exponent, so the producer cannot run
-at all. **Its witness is untouched** — nothing was half-written.
-
-### Queue state
-
-4 + 6 = **10 of 21 committed**. 4 held back on conclusion movement, 2 reclassified
-as source defects, 1 blocked upstream, 1 excluded by design (`h4_form_AB`),
-`habiro_interpolation_wlambda` still last (only carrier of value B), and 3 were
-fixed by the sibling sweep.
-
----
-
-## 2026-08-23 — `habiro_interpolation_wlambda` is the THIRD source defect, settled without running it
-
-This bean has repeatedly said `habiro_interpolation_wlambda` must be regenerated
-**last**, because it is the only carrier of muon **value B** and regenerating
-destroys the evidence of which muon value it held. Reading it settles the
-question without spending the run at all.
-
-Its two q₀ fields, as committed (2026-07-17):
-
-```
-data.archimedean_F_lambda.muon_q0.q0    = 1.1099785955573347   <- value A (frozen muon pin)
-data.archimedean_F_lambda.proton_q0.q0  = 1.1099785955541805   <- value B (CODATA-2018 muon)
-```
-
-**Neither leg is the proton pin.** The probe's "archimedean F_λ at proton vs muon
-q₀" comparison is B-versus-A — a 3.15e-12 muon-to-muon gap presented as the
-11.5 ppb muon-to-proton one. That is the **third** independent instance of the
-degenerate-comparison pattern found today, after the qbeta cross-anchor batch.
-
-### Why regeneration cannot fix it
-
-`habiro_interpolation_wlambda` **is in the `ideal_muon` manifest layer**. Under
-that layer `q_parameter` re-derives the q-family from
-`computations/q-pinning-50-digit.witness.json`, which holds
-
-```
-q0Value = 1.10997859555733471989976322048322     <- value A
-```
-
-So for this producer `q_at()` returns **A**, and `q_muon_at()` returns **C**.
-A regeneration would rewrite the fields as `proton_q0 = A`, `muon_q0 = C` —
-**still two muon values**, with the proton-named field still holding a muon
-number. The defect is the field name in source, exactly as for
-`qbeta_composite_crossanchor_2factor_sweep` and
-`qbeta_cosh_avatar_crossanchor_multicoeff_probe`.
-
-**So it is NOT the value-B evidence problem this bean feared.** Value B survives
-in the committed witness and should stay there until the naming is fixed; running
-the producer would have destroyed it *and* achieved nothing. Recorded here as the
-value of record:
-
-```
-habiro-interpolation-wlambda.witness.json
-  data.archimedean_F_lambda.proton_q0.q0 = 1.1099785955541805    (value B)
-  data.archimedean_F_lambda.muon_q0.q0   = 1.1099785955573347    (value A)
-  computedAt 2026-07-17T20:26:41Z   scriptHash 02bbdfe7dd7a
-```
-
-### Revised queue arithmetic
-
-The "regenerate" class is smaller and the "source naming defect" class is larger
-than this bean assumed:
-
-| class | n |
-|---|---|
-| committed, verdict-preserving | **10** |
-| held back — conclusion moves | 2 (`xq_habiro`, `qbeta_jacobi_anger`) |
-| **source naming defect — regeneration is a NO-OP** | **3** (`qbeta_composite_crossanchor`, `qbeta_cosh_avatar`, `habiro_interpolation_wlambda`) |
-| blocked by an upstream malformed value | 1 (`qbeta_singularity_cross_anchor`) |
-| excluded by design | 1 (`h4_form_AB`) |
-| fixed by the sibling sweep | 3 |
-| unresolved remainder | 1 |
-
-**Not fixed here.** Renaming `proton_q0` / `q_proton` in an ideal-layer producer
-changes a published witness field name, which is a contract change for anything
-reading it — and this bean's own §"the last group will be hardest to fix after
-the sweep" warns against unilateral moves in this area. The three are now
-identified precisely, with the mechanism, which is what the fix needs.
-
----
-
-## 2026-08-23 — the blocked probe: my "malformed exponent" diagnosis was WRONG
-
-I recorded that `qbeta_singularity_cross_anchor_probe.py` is blocked because *"a
-stored value has a malformed exponent"*. **There is no malformed value.**
-Verified directly:
-
-```
-c_k_extracted_50dps = {'c_2': None, 'c_3': None, … 'c_10': None}    all null
-str(None)            = 'None'
-'None'.split('e')    = ['Non', '']
-mp.mpf(str(None))    -> ValueError: invalid literal for int() with base 10: ''
-```
-
-The "empty exponent" is the **letter `e` inside the word `None`**. mpmath splits
-the mantissa on `e`, gets `['Non', '']`, and calls `int('')`. The probe's
-`mp.mpf(str(v))` turns a JSON `null` into that error.
-
-### The nulls are deliberate, and the probe is a stale consumer
-
-`qbeta_decay_sdp_extended_ck.py:463-466` writes `None` for every unresolved rung:
-
-```python
-w.add_data("c_k_extracted_50dps", {
-    f"c_{k}": (mp.nstr(v, 50) if resolved[k] else None) for k, v in c_k.items()})
-```
-
-Introduced by `e5885ebc0` — *"SDP c_k extractor emitted the residual FLOOR as
-data"* (bean `qou-8ofm`). The witness records `last_resolved_rung: null`,
-`n_unresolved: 9`, so **all nine rungs are null**. The raw quotients are preserved
-under `c_k_unresolved_raw_quotient`, and their successive ratios lock onto
-117.409001 = the recorded `one_over_u` — the floor/uᵏ blow-up signature the fix
-exists to stop publishing.
-
-So the blockage is **not an upstream data defect**. It is a consumer written
-against the pre-`e5885ebc0` format, which coerces a sentinel instead of skipping
-it. The fix belongs in the probe (`skip or raise on None`), not in the witness —
-and there is no "correct number" to substitute, because the whole point of
-`qou-8ofm` was that those numbers were spurious.
-
-### A worse instance of the same shape, found while checking the breadth claim
-
-`computations/deltalambda/binding_weight_markov_pinning_probe.py:125` uses the
-same `mp.mpf(str(v))` idiom — but inside:
-
-```python
-    try:
-        …  return {…: mp.mpf(str(v)) …}, "canonical-module"
-    except Exception:
-        return dict(Y_LAMBDA_CACHE.get(n, {})), "verified-cache"
-```
-
-A `None` here does **not** crash. It raises, is swallowed by the bare
-`except Exception`, and the function silently returns a **cached** y_λ table
-labelled `"verified-cache"`. That is strictly worse than the crash: the crash
-stops and says so; this substitutes different data and calls it verified. Same
-family as `qou-i5jy`.
-
-### Breadth NOT established — stated as a bound, not a finding
-
-`grep` counts **687** `.py` files under `computations/` using `mp.mpf(str(`, of
-which **495** also mention `witness.json`. **These are file counts, not verified
-call sites**, and this campaign's own rule is to verify counts by resolving call
-sites rather than by `grep -rl`. They are recorded as an upper bound on where the
-idiom *could* meet a `null`, and nothing more. The corpus holds ~6600 `null`s
-sitting in dicts whose siblings are numeric strings, so the collision surface is
-real — but how much of it is live is unmeasured.
-
-**Consequence for this bean:** `qbeta_singularity_cross_anchor_probe` moves out of
-"blocked by upstream data" and into "consumer needs a null guard" — a one-line
-source fix in a file this bean does not own, so it is reported rather than made.
-
----
-
-## CORRECTION 2026-08-23 — my mechanism for the "source defects" was wrong; the count and membership change
-
-I recorded three source-naming defects, all attributed to the `ideal_muon`
-manifest auto-select. **The mechanism is narrower than I said, and only two of my
-three belong to it.**
-
-The auto-select in `computations/substrate/q_parameter.py:100-108` rebinds
-`q_at` / `Q_50_DIGIT_STR` **only inside the `q_parameter` module namespace**
-(`:206-217`); `qou_substrate.constants` is left untouched. So manifest membership
-is **not sufficient** — the producer must also import through `q_parameter`.
-Verified by reading the import lines:
-
-| producer | import route | today's `q_at()` | verdict |
-|---|---|---|---|
-| `qbeta_composite_crossanchor_2factor_sweep.py:88` | `from q_parameter` | **muon** | source defect ✓ |
-| `qbeta_cosh_avatar_crossanchor_multicoeff_probe.py:106` | `from q_parameter` | **muon** | source defect ✓ |
-| `qbeta_singularity_cross_anchor_probe.py:92` | `from qou_substrate.constants` | proton | **STALE**, not a source defect |
-| `qbeta_jacobi_anger_tower_general.py:87` | `from qou_substrate.constants` | proton | **STALE** |
-| `xq_habiro_element_search_probe.py:72` | `from qou_substrate.constants` | proton | **STALE** |
-
-So `xq_habiro`, `qbeta_singularity` and `qbeta_jacobi_anger` are in `ideal_muon`
-but bypass the mechanism entirely.
-
-### `habiro_interpolation_wlambda` — right conclusion, wrong reason, and the real reason is worse
-
-I wrote that its `proton_q0` is fed muon *by the manifest*. It is not.
-`habiro_interpolation_wlambda.py:372`:
-
-```python
-Q0_PROTON = mpf("1.1099785955541805")    # package-layer proton-pinned q₀ (constants.py)
-```
-
-A **hardcoded literal**, with a comment asserting it came from `constants.py`. It
-did not: that is the *old* `q_muon_at()` closed form (value B). So the file
-hardcodes a muon value, names it `Q0_PROTON`, and documents it as the proton pin
-— wrong on all three counts, and none of them touched by regeneration.
-
-My conclusion ("regeneration is a no-op, do not run it") **stands and is
-reinforced** — a hardcoded literal is even less reachable by re-running than a
-manifest lookup would be. But the reason I gave was wrong, and the correct reason
-identifies a defect that `q_at()`-based reasoning would never have found.
-
-### An agent inference I checked and did NOT adopt
-
-It was reported that `binding_qgaussian_ell1_ceiling_measurement.py` is a
-**latent** instance — its committed witness is correct, but re-running would
-introduce the mislabel, since it takes `Q_50_DIGIT_STR` from `q_parameter` (`:69`)
-and is in `ideal_muon`.
-
-The mechanism is real in isolation: forcing `sys.argv[0]` to that script's name,
-`Q_50_DIGIT_STR` does resolve to the muon pin. **But two actual runs contradict
-the prediction** — the sibling sweep `a0ee2ac5e` and my own regeneration both
-produced the correct proton value, and the committed witness holds
-`proton_anchor.q0 = 1.10997858275138…` with `muon_anchor.q0` at the current value C.
-`measure()` records `"q0": str(q)` directly from `mpf(Q_50_DIGIT_STR)` (`:214`,
-`:223`), so there is no laundering step between them.
-
-There are **two** `q_parameter.py` in the tree — `computations/substrate/` and
-`qou-mass/src/qou_mass/_internal/` — which plausibly explains why an isolated
-import resolves differently from the producer's own path setup. **I did not pin
-it down**, and I am not recording a latent defect on an inference that direct
-evidence contradicts. Noted as an open question about the auto-select's
-invocation sensitivity, not as a finding.
-
-### Corrected arithmetic
-
-| class | was | now |
-|---|---|---|
-| source naming defect (regeneration is a no-op) | 3 | **3**, but different membership: `qbeta_composite`, `qbeta_cosh_avatar` (manifest route) + `habiro_interpolation_wlambda` (hardcoded literal) |
-| stale — regeneration fixes | — | `xq_habiro`, `qbeta_singularity`, `qbeta_jacobi_anger`, `h4_form_AB` (the last in `ambiguous`, so auto-select never fires) |
-
-Two of those four stale ones are already held back for *conclusion movement*
-(`xq_habiro` TIER 1→2, `qbeta_jacobi_anger` assertion flip), and
-`qbeta_singularity` is the null-sentinel consumer. So the reclassification does
-not free any of them to be committed — it corrects **why** each is where it is.
-
----
-
-## ⚠ REGRESSION I INTRODUCED 2026-08-23 — six witnesses now declare an anchor their numbers do not use
-
-Caught while re-running `qbeta_singularity_cross_anchor_probe` on a recovered
-checkout. **My own cds3 regenerations added a false `q0Anchor` stamp to six
-committed witnesses.**
-
-```
-q0Anchor (stamp) : "muon"
-q0Value  (stamp) : 1.1099785955573347…      <- value A
-data.q_proton    : 1.1099785827513808…      <- the REAL proton pin, computed
-data.q_muon      : 1.1099785956427390…      <- value C, computed
-```
-
-Neither computed value is the stamped one. Verified `BEFORE` → `AFTER` on each:
-
-| witness | before | after |
-|---|---|---|
-| `option-e-v9-bar-symmetric-test-probe` | `q0Anchor: None` | `"muon"` / A |
-| `qbeta-c6-c10-crossanchor-falsification` | `None` | `"muon"` / A |
-| `qbeta-cosh-q-sinh-q-candidate-scan` | `None` | `"muon"` / A |
-| `qbeta-signed-vs-abs-tower-diagnostic` | `None` | `"muon"` / A |
-| `yekutieli-a2-em-gauge-coupling-h2-probe` | `None` | `"muon"` / A |
-| `yekutieli-per-cell-qlambert-decomposition-probe` | `None` | `"muon"` / A |
-
-(committed in `245a6d1d5` and `bd4067648`; `he4_rho_f_bar` is unaffected — still
-unstamped.)
-
-### Mechanism
-
-`WitnessBuilder` stamps the anchor from `q0_anchor_manifest.json`: all six
-producers are listed `ideal_muon`, so the stamp reads muon and takes value A from
-the pinning witness. But all six import `q_at` / `q_muon_at` from
-**`qou_substrate.constants`**, which the manifest auto-select never rebinds — so
-they compute at the real proton pin. Measured across the layer: of **124**
-`ideal_muon` producers, **49** import via `q_parameter` (stamp agrees with
-computation) and **11** via `qou_substrate.constants` (stamp cannot agree). Six of
-those 11 are the witnesses above.
-
-### Why this is worse than what it replaced
-
-`q0_anchor_consistency_audit.py` checks `q0Anchor` against **`q0Value`** — stamp
-against stamp — not against the payload (`_EXPECTED_PREFIX`, `:97`, `:111`). A
-`muon` stamp carrying value A **matches**, so all six now classify **`Q0_OK`**.
-Before my change they were `Q0_ANCHOR_MISSING`, which the audit documents as
-*"pre-backfill; not a failure"* — visibly unstamped.
-
-**So I moved six witnesses from "visibly unstamped" to "confidently mis-declared
-and passing a gate."** That is this campaign's own defect shape, authored by me.
-
-### How my verification missed it
-
-My payload diff excluded any key whose name contains `"q0"`, on the reasoning that
-pin fields are *expected* to change in a pin migration. The field is called
-**`q0Anchor`**. The filter that was supposed to suppress known noise suppressed
-the one field that records what the witness claims about its anchor — a blind spot
-of exactly the kind `qou-i5jy` catalogues, in the checking code I wrote to avoid it.
-
-### Not reverted, and why — but this needs an owner
-
-The **payload** fix is correct and should stand: those files previously held a
-muon value under a proton-named field, and now hold the proton pin. Reverting
-would restore a worse defect. What is wrong is the **declaration**, and it cannot
-be fixed by editing the witness — the stamp comes from the manifest, and witness
-numbers may not be hand-edited. The real repair is one of:
-
-1. remove these 11 producers from `ideal_muon` (they compute at proton — the
-   manifest entry is what is false), or
-2. switch their imports to `q_parameter` so the manifest actually governs them,
-3. and independently: make `q0_anchor_consistency_audit` compare the stamp against
-   the **computed payload**, not only against `q0Value`. As written it can only
-   ever catch a stamp that contradicts itself.
-
-(3) is the general fix and is the one that would have caught me.
-
----
-
-## 2026-08-24 — the THIRD seam, and a detector for it
-
-The regression above (six witnesses stamped `muon` while computing at proton)
-passed **both** existing anchor checks. Verified by calling them directly:
-
-```
-witness                                              classify()        payload_mislabels
-option-e-v9-bar-symmetric-test-probe                 Q0_OK             0
-qbeta-c6-c10-crossanchor-falsification               Q0_OK             0
-qbeta-cosh-q-sinh-q-candidate-scan                   Q0_AUDIT_EXEMPT   0
-qbeta-signed-vs-abs-tower-diagnostic                 Q0_OK             0
-yekutieli-a2-em-gauge-coupling-h2-probe              Q0_OK             0
-yekutieli-per-cell-qlambert-decomposition-probe      Q0_OK             0
-```
-
-Because they test different things, and neither is this:
-
-| check | compares | blind to |
-|---|---|---|
-| `Q0_OK` / `Q0_FLIP` | envelope ↔ envelope (`q0Anchor` vs `q0Value`) | what the payload actually used |
-| `payload_mislabels` | field NAME ↔ field VALUE inside `data` | a field whose name and value **agree** |
-| **(missing)** | **envelope ↔ payload** | — |
-
-A witness stamped `muon`, whose `q0Value` is the canonical muon pin, and whose
-payload holds only proton values in fields correctly named `q_proton`, is
-self-consistent on every axis anyone was measuring. That is exactly the shape I
-produced.
-
-### `envelope_vs_payload` added
-
-Reports only when the evidence is unambiguous — the other anchor's pin is present
-**and** the stamped anchor's is absent. A witness with no q0-shaped payload gives
-no evidence either way and is not reported (`zhabiro-phiq-production-crosscheck`
-is correctly silent for this reason, despite being a known stamp/compute
-contradiction: its payload carries no q0 field at all).
-
-Corpus sweep: **9 mismatches — 8 `muon` stamp / proton payload, 1 the other way.**
-
-| | |
-|---|---|
-| mine, introduced today | 6 |
-| **pre-existing** | **3** — `derivation-chain-audit`, `casimir-macdonald-probe`, and `h4-form-AB-cross-anchor-stability` (**proton** stamp / **muon** payload) |
-
-So the class is real and bidirectional, and it existed before my six. `h4_form_AB`
-is the file this bean already excluded from regeneration as *"preserved as-is by
-design"* — it turns out to carry the mirror-image defect.
-
-### Diagnostic, not a gate — deliberately
-
-Wired under the existing `--payload-check` flag: printed, never written to the
-witness, cannot change the exit code. `Q0_FLIP` remains the only gate. Making
-this fatal would fail CI on 9 witnesses including 3 nobody has triaged, which is
-the same trap `payload_mislabels` documents for its own 22. Same
-visible-not-fatal criterion applied throughout `qou-i5jy`.
-
-**This is the fix that would have caught me**, and it is now in the tree rather
-than in a recommendation.
-
----
-
-## The 3 pre-existing envelope-vs-payload mismatches, diagnosed
-
-The new `envelope_vs_payload` check found 3 beyond my own 6. Each is a different
-defect, not three of one kind.
-
-### 1. `computations/probes/casimir-macdonald-probe.witness.json` — the clean twin of mine
-
-```
-q0Anchor "muon"   q0Value 1.109978595557334719899763   (muon-A)
-parameters.substrate_q = 1.1099785827513808              (PROTON)
-```
-
-Same shape as the six I introduced: envelope self-consistent, the one q₀ the
-probe actually used is the proton pin. Producer `casimir_macdonald_probe.py`.
-Nothing else in the payload is muon.
-
-### 2. `computations/derivation-chain-audit.witness.json` — an audit, and narrower
-
-```
-q0Anchor "muon"   q0Value muon-A
-data.chain_results[36].target_value   = 1.1099785827513808   (PROTON)
-data.chain_results[36].computed_value = 1.1099785827513808   (PROTON)
-```
-
-Only **one** chain step out of many carries q₀-shaped values, and both its legs
-are proton while the envelope says muon. Producer `derivation_chain_validator.py`.
-Milder than (1): the witness is an audit report over many steps, and the envelope
-is describing the validator's own anchor rather than each step's. Worth a label,
-probably not a regeneration.
-
-### 3. `computations/h4-form-AB-cross-anchor-stability.witness.json` — THREE defects at once
-
-```
-q0Anchor "proton"   q0Value 1.109978582751380807591669   (PROTON — envelope correct)
-parameters.q_proton = 1.109978595557334719899763          (muon-A)   ← mislabelled
-data.q_muon         = 1.109978595554180575281594          (muon-B)
-```
-
-- The **envelope is right** and the payload contains **no proton value at all** —
-  which is why it trips in the opposite direction from every other hit.
-- `parameters.q_proton` holds **muon-A**: the payload mislabel this bean has been
-  tracking all along.
-- Its two "cross-anchor" legs are **muon-A vs muon-B** — a 3.15e-12 muon-to-muon
-  gap presented as the 11.5 ppb muon-to-proton one. **The fourth independent
-  instance of the degenerate-comparison pattern**, after the qbeta batch and
-  `habiro_interpolation_wlambda`.
-
-This is the file this bean excluded from regeneration because its header says
-*"This probe is preserved as-is by design"*. That exclusion still stands — but it
-should now be recorded as preserving an artefact whose stability result rests on
-comparing an anchor with itself, not as preserving a clean historical datum. Its
-`ANCHOR NOTE` was already flagged here for calling the muon value "the CURRENT
-canonical proton q0"; the payload matches that note rather than the file's own
-docstring, so the note is not merely stale prose — the numbers followed it.
-
-### Disposition
-
-| witness | class | action |
-|---|---|---|
-| `casimir-macdonald-probe` | same as my 6 | regenerate or re-stamp with the 11 producers |
-| `derivation-chain-audit` | audit-level label | label; likely no regeneration |
-| `h4-form-AB-cross-anchor-stability` | **preserved artefact, degenerate comparison** | leave; annotate that its stability claim is muon-vs-muon |
-
-None of the three is mine, and none was visible to any check before today.
-
-
-## 2026-08-24 — the 12 `ideal_muon` producers that import from `qou_substrate.constants`
-
-Owner asked for option (b) — declare them muon — **conditioned on** double-checking
-that they actually intend the muon rather than the proton. **The check fails. Not
-one of the 12 is a muon-only producer.** Option (b) is void by its own condition.
-
-Re-derived on the post-merge tree (`ideal_muon` is now 120, not 124; the set is
-12, not 11 — main added `q_pinning_50_digit`). Method: resolve each manifest stem
-to exactly one file, AST-parse it, record the `ImportFrom` module and the actual
-call sites. Not `grep -rl`.
-
-**`q_at()` is the PROTON accessor** — `tools/qou-substrate/python/qou_substrate/
-constants.py:274-285`: *"via the proton substrate identity … this pin sits ~11.5
-ppb from `q_muon_at()`"*. `q_muon_at()` is labelled *"CROSS-CHECK: q from the
-muon-anchor closed form"*. So a producer that calls only `q_at()` computes at the
-proton, whatever the manifest says about it.
-
-| # | producer | calls | "muon" in source | what it actually is |
-|---|---|---|---|---|
-| 1 | `he4_rho_f_bar_symmetric_audit_probe` | `q_at` | **0** | proton-only |
-| 2 | `option_e_v9_bar_symmetric_test_probe` | `q_at` | **0** | proton-only |
-| 3 | `qbeta_cosh_q_sinh_q_candidate_scan` | `q_at` | **0** | proton-only |
-| 4 | `qbeta_signed_vs_abs_tower_diagnostic` | `q_at` | **0** | proton-only |
-| 5 | `yekutieli_a2_em_gauge_coupling_h2_probe` | `q_at` | **0** | proton-only |
-| 6 | `yekutieli_per_cell_qlambert_decomposition_probe` | `q_at` | **0** | proton-only |
-| 7 | `qbeta_c6_c10_crossanchor_falsification` | `q_at`+`q_muon_at` | 6 | cross-anchor |
-| 8 | `qbeta_jacobi_anger_tower_general` | `q_at`+`q_muon_at` | 9 | cross-anchor — `anchors = {"proton": q_at(), "muon": q_muon_at()}` (:212) |
-| 9 | `qbeta_route_alpha_lift_prediction` | `q_at`+`q_muon_at` | 12 | cross-anchor — `anchors = [("proton", …), ("muon", …)]` (:83); docstring calls itself *"the L3 anchor-stability gate"* |
-| 10 | `xq_habiro_element_search_probe` | `q_at`+`q_muon_at` | 13 | cross-anchor (:143) |
-| 11 | `binding_qgaussian_ell1_ceiling_measurement` | `Q_50_DIGIT_STR` + `q_muon_at` | 14 | cross-anchor — `measure(…,"proton_q0")` and `measure(…,"muon_q0")` (:223-224); witness says *"at both proton and muon anchors"* |
-| 12 | `q_pinning_50_digit` | `q_at`, `vol_4_1_at` | 14 | **the pin DEFINER** — `Q = q_at(mp.dps)` (:108), imports `MASS_RATIO_MU_E_STR` to *derive* the muon pin |
-
-Six mention the muon **zero times in their entire source** and call the proton
-accessor. Five deliberately evaluate at both and name the anchors in their own
-output — declaring them `ideal_muon` would silently rewrite what one arm of a
-comparison means. The twelfth defines the pin; declaring it `ideal_muon` makes
-the pin certify itself, which is exactly the *"stop the self-certification"*
-defect the owner already ruled against on the CODATA-2022 branch.
-
-### Recommended instead of (b) — awaiting owner
-
-1. **6 → `physical_proton`.** They call `q_at()` and nothing else. Zero risk.
-2. **5 → a `comparison` declaration**, not an anchor. A cross-anchor probe has no
-   single anchor; forcing one is what produced the degenerate-comparison defect
-   found 4× already (a probe whose `q_proton` field held a muon value, so it
-   measured the 3.15e-12 B↔A gap while reporting it as the 11.5 ppb μ↔p gap — a
-   factor ~3600). The manifest has no such class today; adding one is the fix.
-3. **1 (`q_pinning_50_digit`) → excluded by construction**, with the reason
-   recorded in the manifest rather than left implicit.
-
-### Related, found during the merge and NOT resolved
-
-`origin/main` now stamps `q0Anchor: muon` + the canonical A pin on
-`he4-rho-f-bar-symmetric-audit-probe.witness.json` and
-`qbeta-c3-habiro-3rung-crossanchor-rigidity.witness.json`, where this branch had
-no `q0Anchor` at all. Row 1 above says that producer mentions the muon zero
-times. **A sibling's regeneration is writing muon stamps onto proton
-computations, on main, at some scale.** Not diagnosed here — flagged.
-
-
-## 2026-08-24 — the muon-stamp / proton-compute population, measured
-
-Follow-on from the merge note above. Denominator first: **2938** committed
-`*.witness.json` outside `_deprecated/`, all parsed. `q0Anchor` distribution —
-absent 1781, `proton` 933, **`muon` 156**, `independent` 49, `ambiguous` 18,
-`comparison` 1, `not-applicable` 1. Producers resolved for 155/156.
-
-| bucket | n |
-|---|---|
-| CONSISTENT | 107 |
-| **MISMATCH — proton compute, muon stamp** | **7** |
-| CROSS-ANCHOR (calls both; no single anchor is meaningful) | 15 |
-| **UNRESOLVED — not folded into any bucket above** | **27** |
-
-### A correction that changes how the whole campaign must be read
-
-**`from q_parameter import q_at` IS anchor-governed.** Confirmed by execution
-under a faked `sys.argv[0]`:
-
-    q_parameter.q_at(50), stem in ideal_muon      -> 1.1099785955573347198997…  (muon A)
-    q_parameter.q_at(50), stem not in manifest    -> 1.10997858275138…          (proton)
-    qou_substrate.constants.q_at(50)              -> 1.10997858275138…          (ALWAYS)
-
-So *"calls `q_at`"* does **not** mean *"computes proton"* — it depends entirely on
-which module the name came from. The naive reading gives 14 mismatches; removing
-three that also read the muon witness or hardcode the muon literal (comparisons
-by this bean's own clause) gives 11; removing four that import `q_at` from
-`q_parameter` under a declared stem — `cyclic-intertwiner-verify`,
-`alpha-em-coulomb-channel-probe`, `alpha-em-multicell-yekutieli-probe`,
-`qbeta-signblock-template-check`, which genuinely compute muon — gives **7**.
-
-**The table earlier in this bean is unaffected**: all 12 rows there were selected
-by `route == qou_substrate.constants`, where `q_at` is proton unconditionally.
-
-### The seven, and they are TWO bugs not one
-
-| witness | producer calls | manifest |
-|---|---|---|
-| `probes/he4-rho-f-bar-symmetric-audit-probe` | `q_at` ← `qou_substrate.constants` | `ideal_muon` |
-| `probes/option-e-v9-bar-symmetric-test-probe` | ″ | `ideal_muon` |
-| `probes/yekutieli-a2-em-gauge-coupling-h2-probe` | ″ | `ideal_muon` |
-| `probes/yekutieli-per-cell-qlambert-decomposition-probe` | ″ | `ideal_muon` |
-| `qbeta/qbeta-cosh-q-sinh-q-candidate-scan` | ″ | `ideal_muon` |
-| `qbeta/qbeta-signed-vs-abs-tower-diagnostic` | ″ | `ideal_muon` |
-| `qbeta/qbeta-signchannel-cross-atom` | `q_at`, `q_str` ← `q_parameter` | **absent** |
-
-**Six are "declared but the declaration cannot bind"** — listed `ideal_muon`, but
-importing from `qou_substrate.constants`, which the rebind never touches. The
-declaration is unenforceable by construction. **The seventh is the opposite
-shape**: declared nowhere, stamped by the payload-labelling pass `4101909790`
-because its June 2026 payload happens to record a muon `q_50dps`; its producer
-today returns proton, so the stamp is faithful to a run nobody can reproduce.
-
-All seven carry `q0Value` = pin A and contain the string "muon" **zero times**.
-
-**Verified by hand here, not relayed.** `he4-rho-f-bar-symmetric-audit-probe`
-holds, in one file:
-
-    q0Anchor      muon
-    q0Value       1.10997859555733471989976322048322   <- MUON  (what it CLAIMS)
-    data.q_proton 1.10997858275138080759166909561076   <- PROTON (what it RAN)
-
-and its producer mentions the muon zero times.
-
-### It grew on main, from zero
-
-| ref | muon-stamped | MISMATCH |
-|---|---|---|
-| merge-base `91bf8fcb4c` | 70 | **0** |
-| this branch `2b5c23112a` | 76 | — |
-| `origin/main` `b134176d93` | **156** | **7** |
-
-**Not one of the seven carried a muon stamp at the merge-base.** Introducing
-commits, all sibling regeneration work in the last 48h: `235987fa3d` (five of
-seven), `8aceb89448` (`qbeta-signed-vs-abs-tower-diagnostic`), `4101909790`
-(`qbeta-signchannel-cross-atom`). 105 of the 156 muon stamps were introduced on
-2026-08-23, 4 more on 2026-08-24.
-
-**Attribution, stated against my own interest:** this branch's earlier cds3
-commits `245a6d1d5d` / `bd4067648e` independently stamped four of the same probes
-muon *before* main did, and `2dba79b163` already self-reports six. Main's side
-carries all seven without those commits, so reverting my work would not remove
-them — but I was not merely the discoverer here, I was also an early
-contributor to the population.
-
-### Forward exposure — this is the part that keeps growing
-
-Of the **152** `ideal_muon` stems on this branch, **13 import q functions only
-from `qou_substrate`**, where the declaration can never bind: the 12 tabled
-earlier plus **`q0_anchor_consistency_audit` itself**. Six show a live MISMATCH
-today; the rest will on their next regeneration. *The audit that checks anchor
-consistency is in the exposed set.*
-
-This branch's 32 declarations include **none** of the seven.
-
-### What is measured and what is not
-
-**Measured:** the 156 denominator and full distribution (JSON parse,
-cross-checked by an independent `git grep`); all seven classifications (AST, hand
--read source, and the recorded `q0Value`); the `q_parameter`-vs-`qou_substrate`
-rebind behaviour (executed); the 13-stem exposure set; every git count.
-
-**Weaker, and not to be quoted as measured:** the CONSISTENT bucket. 82 of 107
-rest on evidence in the producer's own file; **21 rest only on a muon route found
-in a helper up to two imports away**, and that attribution over-claims — caught on
-`clambda_shape_invariant_probe`, credited to a `q-pinning` read in `_li_2_q_util`
-when it actually reaches q0 via `mass_binding_dashboard._constants()` →
-`q_parameter.Q_50_DIGIT_STR`. Right verdict, wrong reason. CROSS-ANCHOR (15) is
-AST-only and unverified. The 27 UNRESOLVED are reported as unresolved, not split
-between the good buckets.
-
-
-## 2026-08-24 — DETECTOR: manifest declarations that cannot bind
-
-`computations/audits/q0_declaration_bindability_audit.py`, `--layer <name>`,
-`--strict` exits 1. Nothing else could ask this question: the manifest is data,
-so no Python check reads it; the anchor-consistency audit compares stamps to
-payloads and never asks whether a declaration was *capable* of acting; the drift
-audit reports which producers are NOT declared, which is the opposite question.
-
-A declaration is honoured by exactly one mechanism — the `sys.argv[0]` rebind
-inside `q_parameter`'s own namespace. A producer that never obtains q0 through
-`q_parameter` is unaffected by its own declaration, so declaring it changes only
-the STAMP. Whether that is a fix or a defect depends on what it already computes.
-
-| layer | declared | direct | via helper | cannot bind | contradicts | agrees | comparison | undet. | unres. |
-|---|---|---|---|---|---|---|---|---|---|
-| `ideal_muon` | 152 | 50 | 13 | 89 | **6** | 77 | 4 | 2 | 0 |
-| `physical_proton` | 514 | 387 | 10 | 109 | **4** | 26 | 21 | 58 | 8 |
-| `ambiguous` | 17 | 7 | 0 | 10 | — | — | 1 | 9 | 0 |
-
-`ambiguous` claims no single layer, so the audit **refuses to judge it** and
-reports all 10 as undetermined rather than manufacturing a verdict.
-
-### Independent confirmation of the hand-built table
-
-The six `ideal_muon` contradictions the audit finds are **exactly rows 1-6** of
-the 12-producer table earlier in this bean, and its four cross-anchor findings
-are four of that table's five — the fifth, `binding_qgaussian_ell1_ceiling_
-measurement`, imports `Q_50_DIGIT_STR` from `q_parameter` and so classifies
-`direct`, which is correct. Two methods built independently, same answer.
-
-### NEW — the mirror defect, on the proton layer
-
-Four stems declared `physical_proton` compute **muon**. Not previously known:
-
-    lever1_trB_geometric_target         hardcoded q0 literal
-    lever1_trB_quantum_integer_form     hardcoded q0 literal
-    per_atom_audit_witnesses            reads q-pinning-50-digit.witness.json
-    probe_9b_perlambda_brane_tower      reads q-pinning-50-digit.witness.json
-
-The campaign has been reading the drift as one-directional. It is not.
-
-### Three bugs I put in this detector, each caught before it shipped
-
-1. **Headline too strong.** The first version said an unbindable declaration's
-   *"only effect is to attach a muon label to a proton computation"* — which
-   would have reported the 32 `qou-fd0e` declarations, correct stamp fixes, as
-   defects. Split by what the producer actually computes.
-2. **Transitive over-reach.** `qou_substrate.constants` was reduced to the bare
-   stem `constants`, matched against an unrelated `constants.py`, and followed to
-   `q_parameter` — so a module listed two lines away as never-governed came back
-   *bindable*. It silently cleared all six real findings; the run reported **0**.
-   Fixed by testing known-ungoverned modules BEFORE the transitive step and never
-   resolving a dotted import by its last component. `via_helper` 37 → 13.
-3. **Verdicts hardcoded to the muon framing.** `--layer physical_proton` reported
-   every correctly-proton producer as a false stamp. Now relative to what the
-   declared layer claims.
-
-All three are the same shape this campaign keeps cataloguing: **the detector
-keyed on how something is SPELLED rather than on what it DOES.** Worth recording
-that the shape is not something other agents do — I wrote all three today.
-
-
-## 2026-08-24 (2) — draining `undetermined`, and a 31-item false finding I caught
-
-The previous entry left 58 `physical_proton` stems whose compute layer the audit
-could not determine. `undetermined` is the one bucket that is not an answer, so
-I went after it. Clustering the 58 by local import: **49 `witness_base`, 36
-`_path_bridge`, 35 `_precision`, 15 `_li_2_q_util`, 14 `_gap_a4_qsafe`** — two of
-those carry q0, and neither was visible to `_computes`, which had no transitive
-step at all. (`_classify` had one; I fixed that function this morning and did not
-notice its sibling.)
-
-### The false finding, in full, because the correction is the useful part
-
-Adding transitive resolution took `physical_proton` contradictions **4 → 18 →
-31**. The 31 looked like the campaign's biggest result: a mirror-direction defect
-seven times larger than the four already known.
-
-**It was wrong.** Hand-checking `binding_block_multiplicative` broke it: the
-audit said *computes muon*, and the witness said `q0Value: 1.1099785827…` —
-proton. Reading `_li_2_q_util.load_q_50dps` explains it:
-
-> ``anchor``  ``"proton"`` (default) takes the experimental pin from
-> ``q_parameter.Q_MP``; ``"muon"`` reads the ideal/CAL-2 pin from
-> ``q-pinning-50-digit.witness.json``.
->
-> The default was ``None`` -> the muon witness **until 2026-08-22**. … Measured
-> at the time: 28 live no-arg call sites in 26 files, of which **nine were
-> declared physical_proton** … and **zero** were declared ``ideal_muon``.
-
-My rule was *"the body mentions the pinning witness, therefore muon"*. The body
-mentions it because that is the **non-default** branch. A bare `load_q_50dps()`
-returns **proton**, so I had inverted the answer for all 13 importers — and the
-population I thought I had found is one that beans `qou-dkm2` / `qou-v90i`
-**already drained two days ago**.
-
-Third instance of the same error in this one file, all mine, all today: read a
-thing's spelling instead of its behaviour. **A helper FUNCTION's layer lives at
-its call site, not in its body.** Constants are different — a name bound to a
-literal carries its value — so `_gap_a4_qsafe.Q_0_50DPS` remains sound. The rule
-now: attribute from Assign-bound names only; for functions, take a layer only
-from an explicit `anchor=` argument at the call site, and otherwise leave the
-stem undetermined rather than guess a default.
-
-### Where it settles
-
-| layer | declared | direct | via helper | cannot bind | contradicts | agrees | comparison | undet. | unres. |
-|---|---|---|---|---|---|---|---|---|---|
-| `ideal_muon` | 152 | 50 | 13 | 89 | **6** | 75 | 6 | 2 | 0 |
-| `physical_proton` | 514 | 387 | 10 | 109 | **18** | 26 | 21 | 44 | 8 |
-| `ambiguous` | 17 | 7 | 0 | 10 | — | — | 4 | 6 | 0 |
-
-**The `ideal_muon` six have been byte-identical across five revisions** of the
-resolution logic, including the two that were wrong. A finding that survives its
-detector being wrong twice in both directions is worth more than one that
-appeared once.
-
-The 18 decompose exactly: **4** original (hardcoded literal / direct qpin read) +
-**14** importing `_gap_a4_qsafe.Q_0_50DPS`, the constant found this morning to
-hold the muon pin under a "proton-mass-anchored" label. One mislabelled line in
-one shared helper puts 14 stems in conflict with their own declaration.
-
-### Verified end to end, one case
-
-`gap_a4_T10_mckay_character_2I_probe`: declared `physical_proton` ✓, imports
-`Q_0_50DPS` ✓, witness `q0Anchor: muon` and `q0Value` = pin A ✓, payload
-`q_0_50dps` = pin A ✓.
-
-**Here the MANIFEST is the false record, not the witness** — producer, payload
-and stamp all agree on muon, and only the declaration says proton. The audit's
-output said the declaration "mislabels the witness", which is the other case;
-corrected to state that which side is wrong is not the audit's call and the
-producer must be read.
-
-
-## 2026-08-24 (3) — the same mechanism, read correctly, drains 13 and finds 1
-
-The retraction above left `load_q_50dps` callers deliberately undetermined: I had
-guessed its default once and inverted 13 answers, so I refused to guess again.
-But the default does not have to be guessed — it can be **read from the helper's
-own signature**, and then checked by running it:
-
-    load_q_50dps()               -> 1.10997858275138…   proton
-    load_q_50dps(anchor="muon")  -> 1.10997859555733…   muon
-
-`anchor: str = "proton"`. Executed, not inferred — the check that should have
-preceded the false finding.
-
-One more obstacle first: `_anchor_signature` skipped every duplicated stem, and
-`_li_2_q_util` exists **twice** (`computations/` and
-`qou-mass/src/qou_mass/_internal/`), so the resolution silently did nothing —
-the run came back byte-identical and I nearly took that for "no effect". Same
-agreement rule as before: collect from every copy, accept where they agree.
-
-### Result — and it is the exact mirror of the false finding
-
-| | before | after |
-|---|---|---|
-| `physical_proton` undetermined | 44 | **31** |
-| `physical_proton` agrees with declaration | 26 | **39** |
-| `physical_proton` contradicts | 18 | 18 |
-| `ideal_muon` contradicts | 6 | **7** |
-| `ideal_muon` undetermined | 2 | 1 |
-
-The **+13 to "agrees"** are precisely the 13 `load_q_50dps` callers. Read wrongly
-they were 13 false contradictions; read correctly they are 13 confirmations that
-the declaration is right. Same producers, same call, opposite verdict — which is
-what a defaulted keyword argument does to an audit that will not read it.
-
-### The seventh, and the six are still the six
-
-`binding_via_interface_knot` — declared `ideal_muon`, calls `load_q_50dps()` bare
-at `:194`, so it computes **proton**. Verified by hand.
-
-This is **not** the six changing: they are still byte-identical. The seventh came
-out of the `undetermined` bucket, which is the bucket shrinking rather than the
-finding moving. Checked against `6be1198585` (the main merge, before my
-declarations) — it was already `ideal_muon` there, so it is **pre-existing and
-not one of the 32 I added**.
-
-Worth stating plainly: the single mechanism I got wrong yesterday produced, once
-read properly, **13 correct clearances and 1 genuine finding**. The lesson is not
-"be more cautious about helpers" — it is that a default argument is behaviour,
-and behaviour is executable.
+The section above names two confirmed both-pin defects and diagnoses them
+differently (one a mis-stamp, one the meson class). **Both diagnoses are
+wrong.** Reading the producers instead of the witnesses:
+
+`computations/probes/he3_brane_tower_structural_gap.py:46` carries a comment I
+had not found:
+
+    # q0 comes from the pin table, never a literal. This held
+    # `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+    # neither current pin, so nothing could compare it against
+    # anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+    Q0 = Q_MP
+
+`Q_MP` is the PROTON pin. So the producer was already fixed by an owner ruling
+on 2026-08-24; only its committed witness was stale. And
+`he3_tower_charge_asymmetry_probe.py:55` IMPORTS `Q0` from that same module, so
+one ruling fixed both.
+
+Verified by re-running, not inferred:
+
+    he3-brane-tower-structural-gap   q_0_50dps  1.1099785955573347 -> 1.1099785827513808
+    he3-tower-charge-asymmetry       q_0_50dps  1.1099785955541805 -> 1.1099785827513808
+
+Both now match their own `q0Value: proton` stamp, and both leave the both-pin
+population. Regenerated and committed; gates green.
+
+**So the both-pin count is 105 -> 103, and the confirmed-defect count is ZERO.**
+Every one of the 105 is a deliberate comparison, an audit reporting the pins as
+data, or -- in these two -- a witness stale against a fix already applied at the
+producer.
+
+The lesson for whoever drains the remaining 48-by-hand: **read the producer,
+not the witness.** Both of these looked like live stamp/payload contradictions
+from the witness alone, and both had been fixed upstream a day earlier.
+
+
+## The 46-by-hand residue, discriminated by SOURCE — and re-run decides nothing
+
+Applying the lesson above (read the producer, not the witness) mechanically:
+
+    residue examined                                          46
+      BOTH reads the pin table AND hardcodes a muon literal   21
+      READS the pin table — witness could be stale            14
+      neither signal                                           5
+      HARDCODES a muon literal — deliberate comparison         5
+      no scriptFile — cannot reach the producer                1
+
+The 14 are the only ones a re-run can settle, so all 14 were re-run (zero
+untracked witnesses verified first; the tree restored afterwards).
+
+**7 of 14 moved. NONE of the moves is a value.** Every one is environment:
+
+    mpmath              1.4.1  -> 1.3.0        (this container is OLDER)
+    pyhecke_native_build 30fd920c... -> b843d058...
+    clarabel            (absent) -> 0.11.1
+
+Four of the seven have literally zero non-environment lines. Two more are my
+own filter leaking the `invocation` block. The seventh,
+`deuteron-from-scratch-ledger`, moves LP duality numbers
+(`duality_gap 43938.59 -> 43926.64`, ~0.03 %) — and `clarabel 0.11.1` is in the
+same environment diff, so that is a SOLVER VERSION difference, not q0 staleness.
+
+**Nothing was committed.** Committing any of them would write this container's
+older mpmath and its clarabel over a record made with newer ones — the same
+provenance degradation that excluded `atomic_tr_m_helium4` from PR #5736.
+
+## Net result for this bean
+
+    both-pin population                    105 (bean said 69, from 2026-08-15)
+    deliberate comparisons / audits         57
+    stale witnesses, fixed and committed     2   (he3 pair, PR #5752)
+    residue re-run, zero stale values       14
+    residue still needing a human read      30
+    CONFIRMED DEFECTS                        0
+
+The bean's "a defect either way" premise is measured false. What remains is 30
+files that need eyes, and the useful thing learned is that **re-running them in
+a container older than the one that wrote them cannot decide anything** — the
+environment delta swamps the signal. A future drain needs an environment
+matching the recorded one, or it should compare only non-environment fields.
+
+
+## 2026-08-29 (LATER) — the 36 direct readers: 18 MIGRATED, PR #5992
+
+The work the drain established could not be done by re-running. Source edit +
+manifest move + re-run, all three, per producer.
+
+**Landed (18 producers, 19 witnesses to proton).** ideal_muon 45 -> 32.
+Zero straddles among the touched witnesses.
+
+**The manifest half is not optional and half the change is a NO-OP.** 14 of
+the 20 stems were listed under ideal_muon, so q_parameter.Q_50_DIGIT_STR
+resolves to MUON for them and the source edit alone does nothing. Found it
+when delta-S-chain-audit came back stamped muon with a muon data.q_0_50dps
+after a source-only edit — the payload-first resolver caught it instantly.
+AGENTS.md says this ("the manifest reclassification and the witnesses it
+re-pins are one change") and it reads as advice about MERGE ORDER; it is also
+a statement that half the change is inert.
+
+**5 excluded after reading, not by pattern.** The ledger
+(q0-muon-legitimate-producers.json, 17 entries, inherited from PR #5500 rather
+than rebuilt) covers 13. Three more on inspection: muon_pin_three_values_probe
+(derives inline to COMPARE the three values), lambda_scale_substrate_probe
+(self-documents that it reads directly BY DESIGN and measures that), and
+q_beta_predicted (no direct read at all — prose label only; reaches muon via
+derived_masses, so it is the indirect class).
+
+**2 DEFERRED on a float64 defect — and the mechanism generalises.**
+chi_lambda_he4_full_partition_table and gram_matrix_seminormal_h6 turned the
+raw-float64 ratchet red (194->196, 130->131). The migration did NOT add
+float64: those fields were always f64, evaluated to exactly 1.0 / -1.0 at the
+muon pin where the ratchet's INTEGRAL-VALUED CARVE-OUT does not count them,
+and to 1.000000000000009 / -0.9999999999999999 / 0.9999999999999998 at proton
+where it does.
+
+  🛑 The carve-out hides float64 error whenever the true value is whole.
+  A clean ratchet on a determinant-of-±1 or an exact-count character is NOT
+  evidence the arithmetic is exact.
+
+Root cause: chi_lambda_braid(..., q0_f64) enters the f64 Rust kernel;
+gram_matrix_seminormal_n.py:190,195 uses float(np.linalg.det(M)). Fix is named
+by the corpus (precision='mpfr_50dps' / chi_lambda_braid_mpf) but changes the
+COMPUTE PATH, so every value in both witnesses moves. Bean qou-k6b3.
+
+## What remains on cds3
+
+  * 2 direct readers, blocked on qou-k6b3
+  * ~25 witnesses whose producers reach muon INDIRECTLY (imports, upstream
+    witnesses) — these need cone tracing, not a direct edit, and are the
+    genuinely unmeasured part
+## 2026-08-29 — the sweep RAN, and it cannot finish the migration
+
+Drain: computations/audits/q0_muon_proton_drain.py across 177 producers, 94.7 min.
+149 OK + 5 completed-with-failing-assertion, 11 crash, 9 timeout (240 s budget),
+3 refuse by design. 131 witness files changed. Landed on
+claude/cds3-muon-proton-drain-2026-08-29.
+
+### The population this bean records is stale by ~4x
+
+The body above says 870 witnesses. **Measured: 222**, of which **178 actionable
+over 177 producers** — 11 legitimate-muon by ledger, 10 declared
+ambiguous/comparison/independent, 20 with no scriptFile, 2 whose producer is
+gone, 1 anchor-defining (excluded by name). The 870 is the ten-digit-prefix
+reading of an older tree; see AGENTS.md's own warning that three different
+values are all called "the muon q0" and the prefix length silently selects which.
+
+### What the re-run bought — and why muon went UP
+
+HEAD vs worktree, identical filters over computations/**/*.witness.json:
+
+    10-digit muon fingerprint    437 -> 431   (-6)
+    frozen canonical pin literal  66 ->  42   (-24)
+    q0Anchor: "muon"              49 ->  61   (+12)
+
+**The +12 is correct.** resolve_q0_anchor_payload_first (2026-08-24, qou-aj91)
+reads the payload's recorded q0 instead of the manifest, so three witnesses that
+declared "proton" over a muon computation now declare the layer their numbers
+actually belong to (t6-tau-h5-embedding-probe, t6-three-halves-factor-probes,
+xi-ell-phi-q-probe). Straddle corrections, not regressions. The -24 is
+stale-to-current: the anchor-defining witness on main already holds the
+CODATA-2022 derivation 1.10997859564273904..., not the frozen
+1.1099785955573347..., so those witnesses were disagreeing with their own anchor.
+
+### 🛑 THE FINDING: re-running producers is structurally incapable of finishing
+
+Of the **61** muon witnesses remaining, **36 have producers that read
+computations/q-pinning-50-digit.witness.json directly**. That string IS the muon
+anchor's definition — it is what _q0_value_for_anchor("muon") returns — so those
+producers compute at muon whatever the manifest says, QOU_Q0_ANCHOR cannot reach
+them, and re-running them re-derives the same muon value forever.
+
+**163 producers in the tree read the pinning witness.** Migrating them needs a
+per-producer SOURCE EDIT (read q_at() instead), which is a code change, not a
+sweep. And the manifest is not the lever either: resolve_q0_anchor_payload_first
+deliberately overrules it with payload evidence — that is the function's whole
+purpose, so relabelling the manifest would now change nothing at all.
+
+So "re-run the impacted witnesses" — the method this bean assumes — is done, and
+it moved 6. The remaining work is 36 producer edits plus 25 whose muon route is
+via imports/upstream and needs tracing. That is the real shape of what is left.
+
+### 🛑 AND cds1 BLOCKS IT: four witnesses reverted for live C->D contamination
+
+The re-run put convention-D values into the Q_beta c_k channel, which qou-cds1
+explicitly forbids ("c_3 ~ -974 is a sensitivity measurement, not a proposed
+value. Do not wire it anywhere"):
+
+    qbeta-ck-basis-constrained-pslq     c3_reproduced_canonical -2.0202 -> -974.38
+    qbeta-decay-sdp-full-ck-derivation  c_3 -2.0097 -> -974.12 (c_4/c_6/c_7 dropped)
+    qbeta-habiro-integrality-kill-test  three N3 residuals ~1e-44 -> -972.05
+    qbeta-borromean-cyclotomic          documented_D_neq_C_split_reproduced FAILED
+
+Detector: assertions flipping passed true -> false across the drain — catches
+the class generally rather than by value range. All four reverted to their
+committed C-frame state.
+
+**The ladder core is already on D while the ladder itself has not been
+re-derived**, so any mechanical re-run of a c_k producer bakes in a value the
+corpus says is not a value. cds1 is not merely adjacent to cds3; it gates the
+qbeta slice of it.
+
+### Gates
+
+    witness_raw_float64_audit.py --strict   PASS (0 new, 0 regressed; 12 drained)
+    q0_anchor_ratchet.py --strict           PASS (0 new; 39 drained)
+
+The float64 ratchet was RED first pass and is green only after fixing
+qbeta_exponentiated_per_block_probe.py at the producer. No baseline widened.
+
+
+## 2026-08-29 (LATER) — the INDIRECT class, partitioned
+
+The direct-reader set is done (20/20, PRs #5992 + #6001). What #5989 called
+"~25 whose producers reach muon indirectly" is now measured and split, so the
+remaining work is enumerable rather than a gesture.
+
+**25 muon witnesses over 25 producers whose producer does NOT read
+q-pinning-50-digit.witness.json directly.** They partition:
+
+    13  listed in ideal_muon      -> THE MANIFEST IS THE LEVER
+         binding_via_interface_knot, block_swap_binding, wlambda_q0_continuation,
+         fivetwo_stokes_matrix_zq, gram_norm_binding_probe,
+         habiro_interpolation_wlambda, hadron_knot_table,
+         he3_tritium_cosh_asymmetry_diagnosis,
+         lever1_binding_habiro_single_element_test, theta_jet_gb_grading_probe,
+         + 3 qbeta c_k (see below)
+
+    10  UNLISTED                  -> muon comes from CODE; needs a cone trace
+         canonical_lepton_braid_words, derive_m_p_hecke_full_tower_50dps,
+         f_ell_derivation_via_per_braid_mass_tower, qbeta_c4even_exact_sseries_probe,
+         rho_k_h3a_residual_decomposition, t6_lepton_h3_3channel_convention,
+         t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+         vhat_std_vs_full_tower_compare, xi_ell_phi_q_probe
+
+     2  DUAL-LAYER — do NOT migrate  (see below)
+         canonical_tr_m_via_chi_cache, markov_peel_atomic_witness
+
+**4 are cds1-gated** and must wait for the D re-derivation regardless of which
+bucket they sit in: qbeta_c4even_ladder_reconstruction_probe,
+qbeta_hoefsmit_tbeta_matrix_build_probe, qbeta_jacobi_anger_tower_general,
+qbeta_c4even_exact_sseries_probe.
+
+So the actionable remainder is **10 manifest moves + 10 cone traces**, not 25.
+
+### The 2 dual-layer ones are a ledger gap, not migration work
+
+Both emit ONE WITNESS PER ANCHOR with the muon layer `-muon`-suffixed, and both
+document why in their own source. markov_peel_atomic_witness INVERTS the
+sibling convention deliberately — six consumers of its base name are not
+anchor-aware, so making the base muon would hand them muon values, the very
+straddle the split closes.
+
+**The ledger's dual_layer class listed 2 members; there are 4.** Added the two.
+The originating regex (PR #5500) keys on an assert / a raise / prose demanding
+a muon run — and **a producer that simply writes both layers asserts nothing
+and raises nothing**, so it was structurally invisible. The detector that finds
+them keys on OUTPUT: a producer emitting two witnesses whose q0Anchor values
+DIFFER is dual-layer by construction. Recorded in the class rule.
+
+(My first pass also reported atomic_tr_m_mpfr_50dps as missing. It was not —
+dual_layer.members holds DICTS keyed `producer` and my parser looked for
+`stem`. The ledger was right; the reader was wrong.)
+
+
+## 2026-08-29 — indirect class, first half: 8 migrated, 2 held
+
+PR #6001. ideal_muon 31 -> 22. Each of the 8 verified BEFORE the move to have
+q_parameter reachable in its cone; otherwise the manifest is not the lever.
+
+  binding_via_interface_knot      gram_norm_binding_probe
+  block_swap_binding              he3_tritium_cosh_asymmetry_diagnosis
+  wlambda_q0_continuation         lever1_binding_habiro_single_element_test
+  fivetwo_stokes_matrix_zq        theta_jet_gb_grading_probe
+
+### hadron_knot_table — HELD, cannot be regenerated
+
+Its committed witness reads durationMs: 53, which is what made it look cheap.
+It is not. The three A=1 atoms finish in seconds, then it stalls on DEUTERIUM,
+the first bound atom — exactly what AGENTS.md records. Killed at 1297 s.
+
+Moving it in the manifest without a regenerated witness would leave the
+manifest asserting proton over a muon witness. Entry reverted; stays
+ideal_muon until someone has a route to compute it.
+
+### habiro_interpolation_wlambda — a COMPARISON, and two lessons
+
+Its cone does not reach q_parameter at all, which is what flagged it. Line 389
+loops over BOTH pins and reports the cross-pin swing of F_lambda. Migrating it
+would destroy the measurement.
+
+**`ambiguous` was my first answer and it was the wrong WORD.** Ambiguous means
+UNDETERMINED; this is the opposite — two pins, deliberately, with the
+difference as the result. The vocabulary reserves `comparison` for exactly
+this, producer-declared, because resolve_q0_anchor structurally cannot return
+an intent no manifest lookup can establish.
+
+**🛑 And a manifest entry is SILENTLY INERT for any producer whose
+WitnessBuilder is constructed without a script path.** This one is. It kept
+stamping `muon` through TWO full re-runs while the manifest said `ambiguous`
+and `resolve_q0_anchor(...) == ("ambiguous", None)` agreed. I only found out by
+re-running and watching it ignore both. Fixed by declaring at the producer via
+`q0_comparison(...)`.
+
+That generalises beyond this file and deserves a detector: any producer whose
+builder lacks a script path cannot be steered by the manifest at all, so a
+manifest entry for it is a false record. Not filed as its own bean yet.
+
+### Remaining
+
+  10  unlisted producers needing cone traces
+   4  cds1-gated qbeta c_k
+   1  hadron_knot_table (compute-blocked)
+
+
+## 2026-08-29 — the INDIRECT remainder is mostly NOT migration work
+
+Traced the 10 "unlisted, muon comes from code" producers. The picture changes
+substantially: only **2** are genuine migration candidates.
+
+    6  DERIVE the muon pin from the CAL-2 lepton tower  -> must NOT migrate
+    1  rho_k_h3a_residual_decomposition: muon as an explicit COMPARISON
+    1  qbeta_c4even_exact_sseries_probe: cds1-gated
+    2  derive_m_p_hecke_full_tower_50dps, vhat_std_vs_full_tower_compare
+       -> still genuinely unexplained; the only real remainder
+
+### The 6 compute the anchor rather than reading one
+
+    hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E
+    hbar_q    = sqrt(hbar_q_sq)
+    q0        = 1 / (1 - hbar_q)
+
+That is AGENTS.md's CAL-2 lepton tower verbatim. Re-pinning them to proton is
+not a migration, it is incoherent: the quantity they produce IS the
+muon-anchored one. Added to the ledger as a NEW class,
+`derives_the_muon_pin` (7 classes, 26 members).
+
+  canonical_lepton_braid_words          t6_tau_h5_embedding_probe
+  f_ell_derivation_via_per_braid_mass_tower  t6_three_halves_factor_probes
+  t6_lepton_h3_3channel_convention      xi_ell_phi_q_probe
+
+### 🛑 Why two independent scans both said "no muon route"
+
+A marker scan over the import cone (q_muon_at, pin_value_for_anchor,
+_q0_value_for_anchor, Q0_MUON, the anchor witness, a muon literal,
+QOU_Q0_ANCHOR) finds NOTHING. An upstream-witness scan finds nothing either:
+zero upstreams. Both are correct.
+
+**The route is a MASS RATIO — not a q0 name, not a witness read.** No q0-shaped
+token appears in these files at all. Same shape as the dual_layer gap found an
+hour earlier, where the ledger's originating regex could not see a producer
+that asserts nothing.
+
+I first tested whether they were merely STALE — committed at muon, never
+re-run. They are not: re-running two reproduces muon exactly. That is what
+forced looking past the scans to the source.
+
+### Corroboration, from the opposite direction
+
+Three of the six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+xi_ell_phi_q_probe) are EXACTLY the witnesses that flipped proton -> muon in
+the #5989 drain, where resolve_q0_anchor_payload_first caught them declaring
+proton (the manifest default for an unlisted stem) over a muon computation.
+The two findings explain each other.
+
+### Revised remaining work
+
+    2  genuine unexplained migration candidates
+    4  cds1-gated qbeta c_k
+    1  hadron_knot_table (compute-blocked, stalls on deuterium)
+
+Down from "~25 indirect" to **2**.
+
+
+## 2026-08-29 — INDIRECT class CLOSED at zero migration work
+
+The last two, derive_m_p_hecke_full_tower_50dps and
+vhat_std_vs_full_tower_compare, had no explanation because there is none to
+find: both call `load_q_50dps()` bare, which defaults to anchor="proton", and a
+plain re-run takes each **muon -> proton** with no code and no manifest change.
+Committed at muon before that default flipped; never re-run.
+
+Final partition of the 25:
+
+    13  ideal_muon -> 8 migrated, 1 compute-blocked (hadron_knot_table),
+                      1 comparison (habiro), 3 cds1-gated
+     6  DERIVE the muon pin (CAL-2 lepton tower) -> ledgered, must not migrate
+     2  dual-layer -> ledgered, must not migrate
+     2  STALE -> re-run, now proton
+     1  rho_k_h3a: muon as a COMPARISON reference
+     1  qbeta_c4even_exact_sseries_probe: cds1-gated
+
+Nothing outstanding in the indirect class.
+
+### Stale convention-C docstring on a shared loader, fixed
+
+`load_q_50dps` advertised `z = 1/(q^{1/2}+q^{-1/2})` — convention C. The code
+returns `_markov_z(q)`, convention D via the single definition in
+closed_form_tau_M, whose own docstring explains it deliberately avoids an
+inline respelling because shape-keyed detectors miss those. So the helper is
+exemplary and the docstring one frame above it was left behind. ~33 importers;
+a reader checking the contract at the function they call would conclude C.
+
+### Whole-of-cds3 status
+
+  DIRECT readers    20/20 migrated (PRs #5992 + #6001)
+  INDIRECT class    closed, zero migration work outstanding
+  BLOCKED           4 cds1-gated qbeta c_k; hadron_knot_table (compute)
+  PROTECTED         26 producers across 7 ledger classes
+
+The sweep this bean opened with -- "870 witnesses" -- was 222, of which the
+actionable part is now done except for what cds1 and one long compute gate.

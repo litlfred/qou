@@ -56,6 +56,9 @@ m — queued as the next increment on qou-9p9y.
 import json
 import sys
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 checks = {}
 detail = {}
 
@@ -216,7 +219,16 @@ witness = {
         "5_2 symbols is the next increment"
     ),
 }
-with open("computations/probes/cgz_cyclic_qdilog_unit.witness.json", "w") as f:
+with open(_HERE_W / "cgz_cyclic_qdilog_unit.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

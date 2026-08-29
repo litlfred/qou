@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "shared exact-series engine reproduces the 18 printed GGM H-tables"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "per-level terms re-sum to a u-even total, consistent with the B1.3 parity finding"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 165.0,
       "expected": 165.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "all pre-registered (sign,j,λ)×shift combinations decided and recorded"
     }
   ],

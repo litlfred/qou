@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Sum_e I(0,e) == 1-8q-9q^2+18q^3+46q^4+90q^5+62q^6 exactly (internal x-order 96, |e|<=14)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "e-sum identical for E=14 vs E=11 through q^6"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I(0,e) == I(0,-e) exactly at full order for e=1,2,3"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "every I(0,e)(q_sub), e<=E_SUB, agrees to >=6 digits between internal x-orders 2400 and 3200 (exact-int engine; diff>=1 counts as 0 digits, no else-40 sentinel)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "max |Im A_eff| < 1e-30 on unit-modulus sheet conventions (amphichiral structural check)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S+11 deep series head == printed (61) AND ladder agreement >= 8 digits at q-orders 1200 vs 1600 (supersedes the g3 witness sentinel-guarded value)"
     }
   ],

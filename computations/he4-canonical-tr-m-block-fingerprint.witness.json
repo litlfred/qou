@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T12:59:39.381900+00:00",
-  "commitSha": "a9faf3f83276e743f7d01121350c055cc865bf33",
+  "computedAt": "2026-08-29T10:40:52.826813+00:00",
+  "commitSha": "84d00e5f87f8bf1a146c887d047e4a54aa64df20",
   "assertions": [
     {
       "name": "tr_M_at_q0",
-      "computed": 0.16097414544240737,
-      "expected": 0.16097414544240737,
+      "computed": "0.16097414544240738105078705762147093643649886605098",
+      "expected": "0.160974145442407381050787057621",
       "passed": true,
-      "tolerance": 5e-07,
+      "tolerance": "5e-07",
       "source": "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = 0.160974145442 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
     },
     {
@@ -22,10 +22,10 @@
     },
     {
       "name": "top5_cumulative_pct",
-      "computed": 91.12950228541085,
+      "computed": "91.12950228541084524574555821079182343124448381452",
       "expected": 91.13,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "prop:he4-two-row-dominance: top-5 binding-receptive blocks carry 91.130% cumulative (the two-row stratum figure)"
     },
     {
@@ -38,10 +38,10 @@
     },
     {
       "name": "trivial_rep_pct",
-      "computed": 5.9615082185253625,
+      "computed": "5.9615082185253622493007997661151083061353467490679",
       "expected": 5.962,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%"
     },
     {
@@ -54,59 +54,59 @@
     },
     {
       "name": "pct_block_9_3",
-      "computed": 29.617035149076738,
+      "computed": "29.617035149076737125429544242424337504896030061825",
       "expected": 29.617,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(9, 3) carries 29.617% of |tr_M|"
     },
     {
       "name": "pct_block_8_4",
-      "computed": 22.451817379191496,
+      "computed": "22.451817379191495341629161465380025795511624920981",
       "expected": 22.452,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(8, 4) carries 22.452% of |tr_M|"
     },
     {
       "name": "pct_block_10_2",
-      "computed": 15.407394331963712,
+      "computed": "15.407394331963712493594550999955621495149042438793",
       "expected": 15.407,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(10, 2) carries 15.407% of |tr_M|"
     },
     {
       "name": "pct_block_11_1",
-      "computed": 14.235066935245504,
+      "computed": "14.235066935245503831042415324481764492864189706023",
       "expected": 14.235,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(11, 1) carries 14.235% of |tr_M|"
     },
     {
       "name": "pct_block_7_5",
-      "computed": 9.418188489933396,
+      "computed": "9.4181884899333964540498861785500741428235966868972",
       "expected": 9.418,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(7, 5) carries 9.418% of |tr_M|"
     },
     {
       "name": "pct_block_12",
-      "computed": 5.9615082185253625,
+      "computed": "5.9615082185253622493007997661151083061353467490679",
       "expected": 5.962,
       "passed": true,
-      "tolerance": 0.15,
+      "tolerance": "0.15",
       "source": "prop:he4-two-row-dominance table: λ=(12,) carries 5.962% of |tr_M|"
     }
   ],
   "allPassed": true,
-  "durationMs": 85,
+  "durationMs": 59,
   "computation": "he4-canonical-tr-m-block-fingerprint",
   "scriptFile": "probe_he4_canonical_tr_m_fingerprint.py",
-  "scriptHash": "a887d1bfc051",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "8eae1bbc66e3",
+  "scriptCommitSha": "a1075250516e15e9863a9305daa797726a065834",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -121,7 +121,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

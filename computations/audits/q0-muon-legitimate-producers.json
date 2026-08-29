@@ -1,0 +1,288 @@
+{
+  "schema": "q0-muon-legitimate-producers/v1",
+  "question": "Which producers must LEGITIMATELY stay on the muon anchor, and must NOT be re-pinned to proton by a consumer sweep?",
+  "asked_by": "PR #5765 comment on PR #5500: 'which producers have you already established must legitimately stay muon (anchor-defining / dual-layer / deliberate comparison) — I'd rather inherit your list than rebuild it'",
+  "measured_on": "branch claude/muon-anchor-codata-2022-2026-08-22, rebased onto main cdbdc84af1",
+  "method": {
+    "candidates": "regex over every computations/**/*.py (excluding _deprecated): an assert on a q0 prefix literal, a raise/SystemExit mentioning muon, or prose saying a muon run is required",
+    "verdicts": "AGENT-CONFIRMED by reading each candidate. The regex is high-recall: 4 of 8 undeclared candidates were FALSE POSITIVES and are listed under rejected[] with the reason, so a re-run does not re-litigate them.",
+    "scope_note": "This answers 'must stay muon', which is NOT the same question as 'is stamped muon' (78) or 'carries the muon value' (139). See q0_muon_population_partition.py --list for those."
+  },
+  "classes": {
+    "anchor_defining": {
+      "rule": "AGENTS.md STRICT: never re-pin as if it were a consumer. It DEFINES the muon anchor; re-pinning it collapses both anchors, flips every correctly-stamped muon witness, and hard-fails every ideal_muon producer including this one. Broke main once; recovery + ANCHOR_DEFINING exclusion list in 2e4745448d.",
+      "members": [
+        {
+          "producer": "q_pinning_50_digit",
+          "witness": "computations/q-pinning-50-digit.witness.json",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/q_pinning_50_digit.py",
+            "line": 360,
+            "text": "\"derived_50_digit\": {"
+          },
+          "note": "The ONE file PR #5500 legitimately changes — as the anchor's own re-derivation, never as part of a consumer sweep."
+        }
+      ]
+    },
+    "refuses_non_muon_run": {
+      "rule": "The producer raises rather than run at the proton pin. A sweep that re-pins it does not migrate it; it breaks it.",
+      "members": [
+        {
+          "producer": "atomic_tr_m_mpfr_50dps",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/atomic_tr_m_mpfr_50dps.py",
+            "line": 110,
+            "text": "if not str(_resolved).startswith(\"1.10997859564\"):"
+          },
+          "note": "ALSO dual-layer: emits one witness per layer via --anchor. Its error text mislabels the muon value as 'the PROTON pin' — wrong either way, still open."
+        },
+        {
+          "producer": "cross_check_trM_1ppb",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/cross_check_trM_1ppb.py",
+            "line": 224,
+            "text": "\"L1 cross-check must run under the MUON q0 pin, but the runtime \""
+          },
+          "note": "Its own docstring: the L1 cross-check must run under the muon pin. PR #5500 leaves its witness at main's A-state deliberately; the re-run belongs to the regeneration tranche."
+        }
+      ]
+    },
+    "asserts_anchor_prefix": {
+      "rule": "Reads q from the anchor-defining witness and asserts its prefix. These must move WITH the anchor (A->C), never to proton. PR #5500 updates all four asserts.",
+      "members": [
+        {
+          "producer": "cross_check_trM_cw_seminormal_leg",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/cross_check_trM_cw_seminormal_leg.py",
+            "line": 70,
+            "text": "assert q.startswith(\"1.109978595642\"), q"
+          }
+        },
+        {
+          "producer": "he4_binding_k_stage2_probe",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/deltalambda/he4_binding_k_stage2_probe.py",
+            "line": 105,
+            "text": "assert q.startswith(\"1.109978595642\"), q"
+          }
+        },
+        {
+          "producer": "he4_stage2_ranking_seminormal_xcheck",
+          "manifest": "ideal_muon",
+          "evidence": {
+            "file": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
+            "line": 64,
+            "text": "assert q.startswith(\"1.109978595642\"), q"
+          }
+        },
+        {
+          "producer": "he4_binding_k_presentation_correction_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+            "line": 101,
+            "text": "assert q.startswith(\"1.109978595642\"), q"
+          },
+          "GAP": "Asserts the anchor prefix but is absent from q0_anchor_manifest.json. It is a muon consumer that the manifest cannot see, so QOU_Q0_ANCHOR does not reach it. Reported, NOT fixed here — a manifest edit is the migration's own change (AGENTS.md constraint 4: do not split it)."
+        }
+      ]
+    },
+    "dual_layer": {
+      "rule": "Anchor-parameterised: emits one artifact per layer. Needs BOTH pins; the manifest cannot express that, so it is served per-process. DETECTION (added 2026-08-29): a producer emitting two witnesses whose `q0Anchor` values DIFFER is dual-layer by construction. That test found 4 where the originating regex -- which keys on assertions, raises and prose -- had found 2, because a producer that simply writes both layers makes no assertion and raises nothing.",
+      "members": [
+        {
+          "producer": "atomic_tr_m_mpfr_50dps",
+          "manifest": "ideal_muon",
+          "note": "see refuses_non_muon_run"
+        },
+        {
+          "producer": "regenerate_y_lambda_mpfr",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/regenerate_y_lambda_mpfr.py",
+            "line": 98,
+            "text": "raise SystemExit(f\"unknown anchor {anchor!r}: expected 'proton' or 'ideal'\")"
+          },
+          "note": "Takes --anchor proton|ideal and refuses anything else."
+        },
+        {
+          "producer": "canonical_tr_m_via_chi_cache",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/canonical_tr_m_via_chi_cache.py",
+            "line": 300,
+            "text": "the muon run writes a suffixed file; the anchor is DERIVED from the q0 actually in force, not read from the filename"
+          },
+          "witnesses": [
+            "computations/canonical-tr-m-via-chi-cache.witness.json (proton)",
+            "computations/canonical-tr-m-via-chi-cache-muon.witness.json (muon)"
+          ],
+          "note": "Base name is PROTON. `cross_check_trM_1ppb` is declared ideal_muon and reads this cache, so one file cannot serve both. Added 2026-08-29 (qou-cds3): found by a dual-layer detector -- a producer emitting two witnesses whose q0Anchor values differ -- not by the regex that built this ledger."
+        },
+        {
+          "producer": "markov_peel_atomic_witness",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/markov/markov_peel_atomic_witness.py",
+            "line": 113,
+            "text": "Base name = PROTON here, and the muon layer takes the `-muon` suffix"
+          },
+          "witnesses": [
+            "computations/markov/markov-peel-atomic-tr-m.witness.json (proton)",
+            "computations/markov/markov-peel-atomic-tr-m-muon.witness.json (muon)"
+          ],
+          "note": "Inverts the sibling convention (elsewhere the base name is the muon layer) and says so. The inversion was deliberate: SIX consumers of the base name are not anchor-aware, so making the base muon would hand them muon values -- the same straddle class this is meant to close. Added 2026-08-29 (qou-cds3)."
+        }
+      ]
+    },
+    "resolves_muon_as_reference": {
+      "rule": "Does NOT compute at the muon pin — it RESOLVES the pin to measure other things against. Never re-pin these; but note their OUTPUTS move when the anchor moves, so they need re-running as part of the migration, not exclusion from it.",
+      "members": [
+        {
+          "producer": "q0_anchor_consistency_audit",
+          "manifest": "ideal_muon"
+        },
+        {
+          "producer": "q0_value_drift_audit",
+          "manifest": "UNDECLARED",
+          "note": "Made a live resolver by PR #5500; it was a transcribed A literal and classified the migrated anchor as the defect."
+        },
+        {
+          "producer": "hardcoded_q0_literal_families_audit",
+          "manifest": "UNDECLARED",
+          "note": "#5477 flagged this: its divergent/clean split moves under a re-pin with no literal edited."
+        },
+        {
+          "producer": "muon_pin_stored_vs_live_gate",
+          "manifest": "UNDECLARED",
+          "note": "#5471 asked for its witness to be refreshed in this tranche: its 0.063 sigma gap collapses to ~0 at C."
+        },
+        {
+          "producer": "undeclared_muon_pin_flip_risk_audit",
+          "manifest": "UNDECLARED"
+        },
+        {
+          "producer": "q0_muon_population_partition",
+          "manifest": "UNDECLARED"
+        }
+      ]
+    },
+    "co_readers_cannot_be_repointed_alone": {
+      "rule": "Reads a SECOND field of the anchor witness besides q, so re-pointing only the q read would straddle two layers inside one quantity — which AGENTS.md forbids outright. Migrate whole or not at all.",
+      "members": [
+        {
+          "producer": "nuclide_braid_pipeline",
+          "co_read": [
+            "hbar_q"
+          ]
+        },
+        {
+          "producer": "q1_mass_gap_probe",
+          "co_read": [
+            "plancherel_weights_n3",
+            "two_q"
+          ]
+        },
+        {
+          "producer": "qbeta_decay_sdp_extended_ck",
+          "co_read": [
+            "hbar_q_sq"
+          ]
+        }
+      ],
+      "source": "q0_muon_population_partition.py::co_read_fields (dict-key test, not substring: substring over-reports 7x)"
+    },
+    "derives_the_muon_pin": {
+      "rule": "DERIVES the muon pin from its own definition -- the CAL-2 lepton tower `m_mu/m_e = Vol(4_1)/hbar_q^2`, `hbar_q = 1 - q0^-1`, inverted as `q0 = 1/(1 - sqrt(Vol_4_1 / M_MU_OVER_M_E))`. These do not READ an anchor; they COMPUTE one, and the one they compute is the ideal/CAL-2 layer. Re-pinning them to proton is incoherent: the quantity they produce IS the muon-anchored one, so a proton stamp would describe a number that does not exist in the file. DETECTION: `M_MU_OVER_M_E` (or `codata_2022_source`) imported AND `hbar_q` present AND a `q0 = .../(1 - hbar_q)` assignment. The mass-ratio import alone OVER-MATCHES -- `rho_k_h3a_residual_decomposition` imports muon material but has hbar_q nowhere; it uses the muon value as an explicit comparison reference, which is a different class. Added 2026-08-29 (qou-cds3).",
+      "members": [
+        {
+          "producer": "canonical_lepton_braid_words",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/canonical_lepton_braid_words.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "f_ell_derivation_via_per_braid_mass_tower",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/f_ell_derivation_via_per_braid_mass_tower.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_lepton_h3_3channel_convention",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_lepton_h3_3channel_convention.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_tau_h5_embedding_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/probes/t6_tau_h5_embedding_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_three_halves_factor_probes",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_three_halves_factor_probes.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "xi_ell_phi_q_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/xi_ell_phi_q_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        }
+      ],
+      "note": "Found while partitioning the INDIRECT remainder. A marker scan for q0 names (q_muon_at, pin_value_for_anchor, the anchor witness, a muon literal, QOU_Q0_ANCHOR) reports NO muon route for these, and an upstream scan reports none either -- because the route is neither a q0 name nor a witness read, but a mass ratio. That is why the class was missing. Corroborated independently: three of these six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes, xi_ell_phi_q_probe) are exactly the witnesses that flipped proton -> muon in the PR #5989 drain, where `resolve_q0_anchor_payload_first` caught them declaring proton (the manifest default for an unlisted stem) over a muon computation. The two findings explain each other."
+    }
+  },
+  "rejected": [
+    {
+      "candidate": "q0_manifest_finalize",
+      "why": "Its docstring QUOTES cross_check_trM_1ppb's requirement. Citing a rule is not carrying it."
+    },
+    {
+      "candidate": "qbeta_trm_crosscheck_convention_pin_split_probe",
+      "why": "Same — its docstring describes cross_check_trM_1ppb's SystemExit."
+    },
+    {
+      "candidate": "ksel2id_u1_promotion_probe",
+      "why": "The raise it matched is 'A_w series did not converge'. Unrelated to any pin."
+    },
+    {
+      "candidate": "q1_mass_gap_probe (as anchor WRITER)",
+      "why": "Reads derived_50_digit, does not write it. Only q_pinning_50_digit writes the anchor. Listed above as a co-reader instead."
+    },
+    {
+      "candidate": "qbeta_physics (as anchor WRITER)",
+      "why": "Same — reads."
+    }
+  ],
+  "findings": [
+    {
+      "finding": "alpha_high_precision is listed ideal_muon in q0_anchor_manifest.json but its only source is computations/_deprecated/alpha_high_precision.py",
+      "impact": "A manifest anchor declaration pointing at a deprecated script. Harmless today (nothing runs it) but it inflates the ideal_muon count and will mislead any sweep that iterates the manifest.",
+      "action": "reported, not fixed here — see the GAP note above on why manifest edits stay with the migration"
+    },
+    {
+      "finding": "he4_binding_k_presentation_correction_probe asserts the anchor prefix but is UNDECLARED",
+      "impact": "A muon consumer the manifest cannot see."
+    }
+  ]
+}

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T00:26:41Z
+updated_at: 2026-08-28T15:42:06Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -671,3 +671,69 @@ comment flags it as a coincidence not to carry forward.
    pseudoinverse. Deliberately out of scope in both #5592 and #5625:
    `G_PINV` is computed at import, so changing what it means is the
    documented failure mode. Needs its own PR with per-consumer adjudication.
+
+## The general-n Rust module: DO NOT BUILD IT — no consumer (measured 2026-08-24)
+
+The remaining item I listed after PR #5625 was "general-n Rust TL form", to
+give `gram.rs` parity with Python's `pyhecke.tl`. I raised the objection
+twice that it "buys nothing until something calls it" and did not check.
+Checked now, and the objection holds:
+
+  * `gram_inverse_n` — the general-n inverse, guarded in #5591 — has ZERO
+    callers anywhere outside its own module and the probe written to test
+    the guard.
+  * `gram_matrix_n` at general n appears once outside its module, in a
+    DOCSTRING comment in `per_atom_audit_witnesses.py` ("pn.gram_matrix_n(
+    n=3A, q_0) -> diagonal Gram"). Not a call.
+  * Nothing in `tools/hecke-engine/src/*.rs` asks for an n >= 4 Gram,
+    Markov or quotient form.
+
+So a Rust general-n port would be a second implementation of code nothing
+runs. It is not blocked and not hard -- it is unwanted, which is a different
+and better reason not to do it. Build it when a consumer exists, and let
+that consumer define the interface.
+
+Two things this also settles, worth recording so they are not re-derived:
+
+  * The #5591 guard broke nothing, because nothing calls the function it
+    guards. It is preventive, not load-bearing. That is the correct reading
+    of it and slightly less impressive than it sounded when landed.
+  * The n = 3 Rust form in #5625 IS used -- it is additive beside
+    `gram_quotient_inverse`, which the SDP/confinement path exercises.
+
+
+## 🛑 CURRENCY CORRECTION 2026-08-28 — four claims in this bean are STALE, and they propagated
+
+This bean's body was used verbatim to brief a sub-agent on 2026-08-28. **Four of
+its facts were wrong**, and the agent had to spend its first pass correcting them
+before it could work. Recording them here so the next reader is not sent the same
+way. Each verified independently against `origin/main`, not taken on report.
+
+| this bean says | measured on `main` |
+|---|---|
+| `G_INV = np.linalg.inv(G)` runs at module import (8 mentions) | **`G_INV` DOES NOT EXIST** — deleted, not renamed. `tools/pyhecke/tests/test_gram_values.py:174` asserts `not hasattr(pyhecke_gram, "G_INV")`. The import-time export is **`G_PINV = np.linalg.pinv(G)` at line 432** (this bean says 429). |
+| `‖G·G_INV − I‖ = 1.64` | **1.64 belongs to the DELETED `np.linalg.inv`.** `G_PINV`'s residual is `‖G·G_PINV − I‖_F = √corank = 1` — the rank-5 projector defect, which is **correct pseudoinverse behaviour**. Quoting 1.64 against `G_PINV` makes a working object look broken. |
+| `qbeta_crossing_weight_hecke_probe.py:128` does an UNGUARDED `np.linalg.solve` (split as `qou-yof3`) | **Fixed 2026-08-23; `qou-yof3` is `completed`.** The live call is gone — the one remaining `np.linalg.solve` occurrence in that file is inside a **comment** recording the removal. Verified by reading the line, not by grep count. |
+| "13 re-exporters + 13 consumers", "every consumer of `pyhecke.gram` is affected" | **Far smaller.** Most importers take only the scalars `gram.h` / `gram.z`. Grepped `G_PINV|RADICAL` corpus-wide: outside `pyhecke`'s own files/tests and `_deprecated/`, it is **one genuine consumer** (`computations/gram-matrix-dual.py`), **two re-export hubs** (`substrate/hecke_core.py`, `hecke_core_legacy.py`), **one generated mirror** (`qou-mass/.../hecke_core.py` — never hand-edit), **one comment-only** mention (`confinement-operator-selection.py`, which uses its own `_pg_safe_inverse`), and **two** files where `RADICAL` appears only in an output string. |
+
+**Finding 1 of this bean was already corrected on 2026-08-23** (`gram.py` has zero
+convention-C left; `z_mp` is convention D, migrated 2026-08-16). That correction
+is above. The four here are additional.
+
+### Why this matters beyond the four facts
+
+A bean is a primary source for the next agent, and this one was quoted as fact
+into a briefing without re-verification — by me. AGENTS.md already records that
+*"a sibling's bean is not a primary source either"*, with a worked case. This is
+a second instance, and the failure mode is identical: specific, recent, and
+authoritative-looking content that had simply been overtaken.
+
+**The live science in this bean is unaffected.** The convention-D singularity is
+exact and structural (|det| exactly 0 at 30/60/120 dps; corank = n! − Catalan(n)
+confirmed exactly at n=3,4,5 — PR #5531), and `quotient by the radical` remains
+the correctly-aimed repair. Only the *infrastructure* facts had rotted.
+
+Scope upgrade landed since: **PR #5894** gives `det G_TL(n)` in closed form at
+n = 3, 4, 5 with every irreducible factor root-free on `(0,∞)` by exact Sturm
+counting — so the quotient form is non-singular for **every real q > 0** at those
+n, not merely non-singular over ℚ(q).

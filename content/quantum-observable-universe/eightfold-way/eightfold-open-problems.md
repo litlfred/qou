@@ -18,6 +18,7 @@ the list cannot silently break the pointers.
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
 | $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a sorry-free machine-checked *arithmetic* instance: the Lean defines $\dim V_{(1^3)} := \binom{N}{3}$ and proves $\binom{N}{3} = 0 \iff N < 3$. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not formalised — same caveat as `Sym2Gate` and `WeylInvariance` | `RowCapObstruction.lean` |
 | $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
+| No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved** (Lean, sorry-free), and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | `Sym2GateMultiplicity.lean` |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
 | Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item *Hypercharge $Y$* |
 | The baryon octet's weight map is non-injective | **proved** (Lean, sorry-free): $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
@@ -25,8 +26,8 @@ the list cannot silently break the pointers.
 | $S_4$ bridge: transitive on local Fano lines | verified numerically (`s4_fano_action.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (machine-verified), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only arithmetic ($6=6 \wedge 0=0$) | `Sym2Gate.lean` |
-| The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **open**: used throughout [the colour-algebra section](#sec:color-algebra) but never defined — this paper has no definition of $\mathbb{O}$ to point at | — |
+| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only the dimension shadow ($3\cdot 4/2 = 6 \wedge 0 < 1$ --- $\mathrm{Sym}^2$ dimension $6$, singlet count $0$ below the fail threshold).  The singlet count $0$ is the cited $\mathrm{SU}(3)$-irreducibility input, not a formalised one | `Sym2Gate.lean` |
+| The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **closed** 2026-08-29: [definition](#def:octonion-algebra) authored in [the colour-algebra section](#sec:color-algebra). The row previously read "never defined … no definition to point at", which invited a hunt for a missing source; the gap was **exposition only**. The citation side was already closed (\cite{baez2002}, with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ recorded) and so was the Lean side (nine `QOU/MathlibExt/Octonion*.lean` files, including the concrete Baez-convention `octMul`). What was missing was a content block for them to point at | `QOU.MathlibExt.OctonionDerivations` |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
 | Flavour vs. colour $\mathrm{SU}(3)$ | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved** (Lean, sorry-free): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
@@ -56,9 +57,88 @@ Gell-Mann--Nishijima relation cannot be closed.
    missing.  *Open:* construct a
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
-   The octonion $G_2$ route provides a colour $\mathrm{SU}(3)$ candidate
-   that passes this test; whether it yields *flavour*
+   The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)$ candidate
+   that the gate does not exclude --- *not excluded* rather than
+   *passes*, since the singlet count $0$ that would make it pass is the
+   cited $\mathrm{SU}(3)$-irreducibility input and not a formalised one
+   (ledger row, `Sym2Gate.lean`).  Whether it yields *flavour*
    $\mathrm{SU}(3)$ is untested.
+
+   **What such a construction must supply is now a theorem, and it is one
+   property rather than a list.**  `SelfDualSectorConfinement.lean`
+   (sorry-free) puts the two halves together: a three-dimensional object
+   passing the gate must contain a complex-type irrep
+   (`gate_forces_complex_of_dim_three`), and a category all of whose irreps
+   are self-dual contains none — which is precisely the single-fibre case,
+   since every $\mathrm{SU}(2)$ irrep is self-dual.  So *the property a
+   groupoid construction must exhibit is exactly the property one fibre
+   lacks*: **non-self-duality**.  This yields a screening test
+   (`screen_out_selfDual_candidate`): a candidate whose three-dimensional
+   object is isomorphic to its own dual is dead, and can be discarded
+   before its $\mathrm{Sym}^2$ decomposition is computed.  It does not
+   construct anything — Route A stays open — but it replaces "more
+   structure" with a single checkable condition.
+
+   **The same condition is reachable from the row cap, independently.**
+   The Descartes characteristic $\chi(A) = -6$ forces $\mathrm{SU}(2)$,
+   hence $\dim V = 2$, hence partitions of at most two rows, so the
+   $(1^3)$ block drops at $n = 3$ and a three-dimensional object cannot
+   be a tensor power of the single fibre.  That argument reaches
+   non-self-duality without the $\mathrm{Sym}^2$ gate and without the
+   Frobenius--Schur trichotomy, as the gate-and-trichotomy argument
+   reaches it without the Euler characteristic and without Schur--Weyl.
+   A third route reaches the same negative from a different direction
+   again: `SU2EmergenceRankForced.no_three_dimensional_fundamental_in_one_fibre`
+   derives $N \neq 3$ from non-degeneracy of the fibre's volume form
+   ($\Lambda^2 V \cong \mathbf{1}$ forces $N = 2$), without the
+   $\mathrm{Sym}^2$ gate, the row cap or the Euler characteristic.
+
+   The three are not three votes on one proposition, and the difference
+   is what matters here.  The row-cap and volume-form arguments bound the
+   **fibre**: they say $N = 2$, so one fibre cannot supply a
+   three-dimensional object.  The gate-and-trichotomy argument bounds any
+   **candidate**: it says which property a candidate must have, and so
+   yields a test that can be applied to an object nobody has built yet.
+   The negative is now over-determined; the screen is what is additive.
+
+   *That the search is confined to the groupoid level is now a theorem,
+   not an extrapolation.*  The parity criterion
+   (`Sym2GateParity.lean`) decides the $\mathrm{Sym}^2$ gate for a single
+   **irreducible** summand, and a three-dimensional $W$ need not be
+   irreducible --- $W = V_{1/2} \oplus V_0$ has dimension $3$, sits in the
+   tensor category generated by the fibre, and is not an irrep, so that
+   criterion does not reach it.  The multiplicity form
+   (`Sym2GateMultiplicity.lean`, sorry-free) closes the case: counting
+   singlets by Frobenius--Schur type, a passing $W$ must be a sum of
+   pairwise *distinct* even-dimensional irreps, hence $\dim W$ is even.
+   Since $3$ is odd, **no** three-dimensional object of the single-fibre
+   category passes the gate, reducible or not.  Any $N = 3$ must therefore
+   come from genuinely multi-fibre structure --- which is what the route
+   above asserts, now with a proved invariant behind it (a scope-(b)
+   exclusion, the invariant being the Frobenius--Schur indicator
+   $(-1)^{2j}$).  Even dimension is *necessary, not sufficient*:
+   $V_{1/2}^{\oplus 2}$ has dimension $4$ and fails the gate too, so the
+   parity invariant prunes candidates rather than characterising them.
+   The octonionic candidate is no counterexample to this: it is not an
+   object of the single-fibre category at all, arising instead from
+   $G_2 = \mathrm{Aut}(\mathbb{O})$, which is precisely why the parity
+   exclusion leaves it standing.
+
+   The mechanism behind that escape is now proved rather than asserted, and
+   it is worth stating because it bounds how far the exclusion reaches.
+   The parity argument runs through self-duality: every $\mathrm{SU}(2)$
+   irrep satisfies $V^* \cong V$, so the cross terms $V_i \otimes V_j$
+   contribute no singlet and the survivors are forced to be distinct
+   even-dimensional irreps.  A **complex-type** representation
+   ($\mathrm{FS} = 0$, $\mathbf{3} \not\cong \bar{\mathbf{3}}$) pairs to a
+   singlet only against its conjugate, so one whose conjugate is *absent*
+   from the object passes the gate at any dimension, odd included ---
+   `Sym2GateComplexType.lean`, sorry-free, exhibits such an object at
+   dimension exactly $3$.  So `dimOfMult_ne_three_of_gate` is a scope-(b)
+   exclusion **within the self-dual sector** and is silent, not negative,
+   outside it.  This is the same non-self-duality that
+   [the colour construction](#prop:color-su3-from-g2) already identifies as
+   what the $\mathrm{Sym}^2$ gate consumes.
 
 2. **Hypercharge $Y$.**
    The writhe-to-isospin map $w \mapsto I_3$ is derived.  The
@@ -107,11 +187,68 @@ Gell-Mann--Nishijima relation cannot be closed.
    The octonionic $\mathrm{SU}(3)$ is colour.  The eightfold-way
    classification requires flavour $\mathrm{SU}(3)$.  Whether these
    are the same, different, or related by a groupoid-level duality
-   is open.  The obstruction audit
-   ([the colour-algebra section](#sec:color-algebra)) shows
-   that they *cannot* both come from the same construction: the
-   $\mathrm{Sym}^2$ gate excludes the icosahedral colour triple $T_1$,
-   while the $G_2$ route passes it.
+   is open, and **the $\mathrm{Sym}^2$ gate cannot settle it.**
+
+   An earlier version of this item claimed the gate shows the two
+   *cannot* both come from the same construction, on the grounds that
+   it excludes the icosahedral triple $T_1$ while the $G_2$ route
+   passes.  That is withdrawn.  The premise compares **two different
+   objects** and establishes only that those two differ; the
+   conclusion is about **one construction supplying two roles**, which
+   does not follow.  (The cited support was also misattributed: the
+   $T_1$ comparison is in
+   [the Schur--Weyl proposition](#prop:schur-weyl-eightfold), where it
+   is stated carefully as *not excluded* on a literature
+   decomposition, not in the colour-algebra section.)
+
+   The failure is structural, not a repairable gap in the inference.
+   `Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` proves that
+   at dimension three, passing the gate is equivalent to carrying a
+   complex-type irrep.  Any two three-dimensional objects that both
+   pass are therefore both complex type, and the gate has returned the
+   same verdict for each --- `gate_does_not_separate_two_triples`
+   exhibits two distinct such objects.  A flavour triple and a colour
+   triple that each pass are, to this gate, indistinguishable.
+
+   What the gate *does* establish is a class exclusion: no real or
+   quaternionic construction reaches dimension three through it, so
+   $T_1$'s failure is a consequence of its Frobenius--Schur type and
+   not a fact about the icosahedron.  Whatever separates flavour from
+   colour lies elsewhere --- as it does for the $\mathbb{Z}/3$ grading,
+   which
+   `TrialitySelectionRule.identification_invisible_to_selection_rule`
+   shows is likewise blind to the identification.
+
+   **The two blindnesses are one blindness.**  Both gates read only
+   *object-level* data --- a dimension, a Frobenius--Schur type, a
+   triality class --- and on that data the two triples coincide: the
+   colour triple is the $\mathbb{C}^3$ of
+   $\mathrm{Im}(\mathbb{O}) = \mathbb{R}\oplus\mathbb{C}^3$, of complex
+   dimension $(7-1)/2 = 3$; the flavour triple is the fundamental with
+   Dynkin label $(1,0)$, of Weyl dimension $2\cdot 1\cdot 3/2 = 3$;
+   both are complex type with triality $1$.
+   `FlavourColourDiscriminator.no_object_gate_separates` turns this into
+   a class exclusion --- **no** gate reading only object data separates
+   them, so there is no third such gate to look for.  This is scope-(b),
+   with the invariant named: equal data, equal verdict.
+
+   **Where a discriminator can live is item 7 below, not a further
+   invariant of the object.**  The obstruction lifts as soon as a gate
+   may also read *which Young-symmetry channel of $V^{\otimes 3}$ carries
+   the physical state*: colour occupies the totally antisymmetric channel
+   $\lambda = (1^3)$, flavour the symmetric $\lambda = (3)$ for the
+   decuplet and the mixed $\lambda = (2,1)$ for the octet.  These are
+   distinct $S_3$-irreps, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that tells them apart.  Item 7 already names this data, in the
+   form *"colour antisymmetric and spin symmetric force flavour
+   symmetric"*; items 4 and 7 are the same question seen from two sides.
+
+   This locates the discriminator; it does not establish one.  The
+   channel assignment is an **input**, and item 7 records that the
+   chapter derives neither the spin factor nor the colour antisymmetry
+   that would supply it.  What is settled is the negative half --- and
+   the negative half is what redirects the search.
 
 5. **Truncation mechanism.**
    Why does the observable-scale symmetry reduce to a finite-dimensional
@@ -137,6 +274,15 @@ Gell-Mann--Nishijima relation cannot be closed.
    constraint from the braid structure, and show that together they
    determine the Young symmetriser.  Compatibility with it is what the
    chapter currently establishes.
+
+   **This item is where item 4's discriminator lives.**  Item 4 asks
+   what separates flavour from colour and shows that no invariant of
+   the *object* can; the Young-symmetry channel named here is data
+   about the *role*, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that reads it and does separate them.  So deriving the
+   colour-antisymmetry constraint would settle more than the
+   selection rule --- it would supply the one input item 4 is missing.
 
 8. **The Gell-Mann--Okubo deviation.**
    The relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is *not* a target

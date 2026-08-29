@@ -1,11 +1,11 @@
 ---
 # qou-bdlp
 title: 'Retroactive: shell 2n² capacity demoted; self-square conjecture opened (PR #5476)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T20:39:11Z
-updated_at: 2026-08-22T20:39:34Z
+updated_at: 2026-08-23T07:43:11Z
 ---
 
 ## Why this bean is retroactive

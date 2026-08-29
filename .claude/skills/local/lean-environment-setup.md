@@ -658,6 +658,60 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
 > without the `pkill -f` pattern matching its own argv, use a bracket
 > escape: `pkill -f 'lake buil[d]'`.)
 
+### A private write overlay — and the trap it exists to avoid (2026-08-24)
+
+`lean`-direct as described above **checks a file against the shared restored
+oleans**. That is not enough the moment you *edit an existing module*: any file
+importing it keeps loading the stale shared olean and **appears to compile**.
+Rebuilding into the shared tree is not the answer either — it corrupts the
+restore for every other agent and every later run.
+
+Use [`scripts/lean-overlay-env.sh`](../../../scripts/lean-overlay-env.sh):
+
+```bash
+scripts/lean-overlay-env.sh init                                  # once
+scripts/lean-overlay-env.sh build QOU/SchurWeyl/Edited.lean       # your version
+scripts/lean-overlay-env.sh check /tmp/importer.lean              # now sees it
+scripts/lean-overlay-env.sh selftest                              # invariant holds
+```
+
+> **🟥 An overlay is NOT a shadowing layer, and a PARTIAL overlay is worse than
+> none.** Lean resolves a module by taking the **first `LEAN_PATH` root that
+> contains the matching directory** and then looking **only there** — it does
+> **not** fall through to later roots. So an overlay holding one rebuilt file
+> breaks *every* sibling import:
+>
+> ```
+> $ mkdir -p $OVL/QOU/SchurWeyl            # one module rebuilt here
+> $ LEAN_PATH=$OVL:<shared> lean t.lean
+> error: object file '$OVL/QOU/SchurWeyl/WenzlMarkovCorner.olean' of module
+>        QOU.SchurWeyl.WenzlMarkovCorner does not exist
+> ```
+>
+> — although that olean **is** present in the shared root. An *empty* overlay is
+> harmless; a *partial* one fails on modules you never touched, which is why the
+> symptom looks unrelated to what you were doing.
+>
+> The fix is to make the overlay **complete**: a symlink farm mirroring every
+> module in the shared roots, real files only where you rebuilt. `init` does
+> that (~9.4k links, ~37 MB, seconds).
+>
+> **And `lean -o` must not write through a symlink.** Building onto an unbroken
+> link writes into the **shared cache** — the exact corruption the overlay was
+> meant to prevent. `build` unlinks first and then asserts the output is not a
+> symlink.
+>
+> History: two independent agents hit this within an hour on 2026-08-24, from a
+> hand-rolled `LEAN_PATH` whose author (me) had assumed overlays shadow. One
+> lost ~20 minutes; the other reported the symptom without being able to
+> diagnose it. Both independently arrived at the symlink farm. `selftest`
+> asserts *both* directions — that the trap still reproduces with a partial
+> overlay, and that the farm resolves — because a guard that no longer detects
+> its own known positive is a guard nobody can trust.
+
+`LEAN_EXTRA_ROOTS` (colon-separated) prepends further read-only olean roots,
+e.g. a session-local overlay left by an earlier build.
+
 ### ProofWidgets `widgetJsAll` release-fetch block — build the JS from source (2026-07-18)
 
 When the **full** `lake build` path is genuinely needed (e.g. verifying a

@@ -277,6 +277,29 @@ Each corresponds to a real error that shipped:
    logically independent of whether some scalar is equivalent to a single
    proposition. (Error: "the halting set is not cut out by any ideal, so no
    algebraic class can be equivalent to it".)
+5. **Transported to a basis that destroys the property?** A structural property
+   of a pairing — anti-diagonality, perfectness, a Poincaré-type
+   $\ell \leftrightarrow N-\ell$ duality — is a property *relative to a basis*.
+   Before restating it on a **different** basis, check the new basis's own
+   multiplication. (Error, added 2026-08-26 from bean `qou-xsv8`: two blocks
+   transported an anti-diagonal annihilator duality from the algebra $A$ to the
+   centre's **central primitive idempotent** strata. Distinct idempotents
+   *mutually annihilate*, $e_\lambda e_\mu = \delta_{\lambda\mu} e_\lambda$, so
+   the pairing there is $\mathrm{diag}(\varphi(e_\lambda))$ — every stratum
+   self-dual, every distinct pair zero. The asserted duality is identically
+   zero exactly where it claims to be perfect. Note the shape: this is not a
+   subtle slip but the assertion of a property of precisely the structure the
+   new basis removes.)
+
+   Two things about instance 5 are worth carrying forward. First, it is
+   **basis-algebraic, not corpus-specific**: $\varphi(e_\lambda e_\mu) = 0$
+   holds for *every* linear functional and every $n$, so no choice of
+   filtration or of Frobenius form can rescue it — which also means supplying
+   an unrelated missing bridge, as three sessions had been spending effort on,
+   would not have repaired it. Second, and against the usual expectation,
+   **correcting it strengthened the downstream proof**: the block's Step 4
+   needed the *diagonal* statement and did not follow from the anti-diagonal
+   one. Finding a defect of this class is not automatically a cost.
 
 **Why this is agent-adjudicated (`automated: false`), and why the scanner is
 print-only.** A mechanical scanner for this class was prototyped and **measured**

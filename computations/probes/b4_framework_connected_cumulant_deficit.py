@@ -13,21 +13,22 @@ does carry connected multi-body cumulants (the ∏ cross-terms). Using the commi
 pair factors (pp/nn = z, pn = z−h/2; interface_4body_assembly_probe) on the complete
 graph K_A, and the Ursell inversion b₂=B(D), b₃=B̄(3)−3b₂, b₄=B(4He)−6b₂−4b₃:
 
-RESULT (non-circular — framework's own binding decomposed; no fit):
-    framework:  b₂ = 3.056,  b₃ = −2.525,  b₄ = 0.583 MeV
-    AME target: b₂ = 2.225,  b₃ = +1.426,  b₄ = 9.243 MeV
+RESULT (non-circular -- framework's own binding decomposed; no fit): every number
+is DERIVED at run time and printed below; none is written into this docstring.
 
-  • connected b₄:  0.583 / 9.243 = 6.3 %  — the multiplicative model supplies only
-    ~6 % of the connected 4-body binding (consistent with I-conn: pairwise products
-    ceiling below target).
-  • connected b₃:  −2.525 vs +1.426 — WRONG SIGN. The multiplicative connected
-    structure is not merely small, it is qualitatively wrong at 3-body.
+  This block used to carry the numbers inline, and they went stale: it read
+  b2=3.056, b3=-2.525, b4=+0.583 (6.3% of target) from the convention-C era.
+  Under canonical convention D the live values are b2=1.927, b3=-1.388,
+  b4=-0.304 -- and b4 has changed SIGN, so the deficit is 103% rather than 94%
+  and the [1^4] term must reverse b4 as well as b3.  Those D-frame figures are
+  quoted here only to explain the correction; the producer no longer depends on
+  them.  See bean qou-jqla.
 
 VERDICT (scope-(a), no fit): the framework's existing multiplicative model supplies
-~6 % of the connected b₄ and a wrong-signed b₃, so the [1^4] Slater term (Λ^A(4)
-nucleon-flavor antisymmetrizer, per the spec) must supply the missing ~94 % of the
-4-body AND repair the 3-body sign. This is the honest baseline; it does NOT compute
-the [1^4] value (that needs the Slater↔trace dictionary — the next unit), it
+a small and WRONG-SIGNED connected b4 together with a wrong-signed b3, so the [1^4]
+Slater term (Λ^A(4) nucleon-flavor antisymmetrizer, per the spec) must supply the
+whole of the 4-body AND repair both signs. This is the honest baseline; it does NOT
+compute the [1^4] value (that needs the Slater↔trace dictionary — the next unit), it
 measures the DEFICIT the Slater term must close. b₂ over-binds (3.06 vs 2.22) — the
 multiplicative deuteron over-prediction, inherited by the inversion.
 
@@ -86,6 +87,11 @@ def main() -> int:
     ame = {"b2": mp.mpf("2.2245"), "b3": mp.mpf("1.4264"), "b4": mp.mpf("9.2431")}
     frac_b4 = b4 / ame["b4"]
     b3_wrong_sign = (b3 < 0) and (ame["b3"] > 0)
+    b4_wrong_sign = (b4 < 0) and (ame["b4"] > 0)
+    # What the [1^4] term must supply, as a fraction of the target. When b4 is
+    # itself negative this EXCEEDS 1: the term must reverse the sign as well as
+    # close the gap. The old hardcoded "~94%" silently assumed b4 > 0.
+    deficit_frac = 1 - frac_b4
 
     result = {
         "framework_multiplicative_binding_MeV": {
@@ -96,20 +102,31 @@ def main() -> int:
         "ame_target_cumulants_MeV": {k: mp.nstr(v, 8) for k, v in ame.items()},
         "b4_fraction_of_target": mp.nstr(frac_b4, 6),
         "b3_wrong_sign": bool(b3_wrong_sign),
+        "b4_wrong_sign": bool(b4_wrong_sign),
+        "deficit_fraction_the_slater_term_must_supply": mp.nstr(deficit_frac, 6),
         "verdict": (
-            "Framework multiplicative complete-graph model supplies connected b₄ = 0.583 MeV = "
-            "6.3% of the 9.243 target, and a WRONG-SIGNED b₃ (−2.52 vs +1.43). So the [1^4] "
-            "Slater term (Λ^A(4) nucleon-flavor) must supply the missing ~94% of the 4-body AND "
-            "repair the 3-body sign. This measures the DEFICIT, not the [1^4] value (that needs "
-            "the Slater↔trace dictionary). b₂ over-binds (multiplicative deuteron). Scope-(a), no fit."),
+            f"Framework multiplicative complete-graph model supplies connected "
+            f"b4 = {mp.nstr(b4, 4)} MeV = {float(frac_b4) * 100:.1f}% of the "
+            f"{mp.nstr(ame['b4'], 5)} target"
+            + (", itself WRONG-SIGNED" if b4_wrong_sign else "")
+            + f", and a {'WRONG-SIGNED' if b3_wrong_sign else 'correctly-signed'} "
+            f"b3 ({mp.nstr(b3, 4)} vs {mp.nstr(ame['b3'], 4)}). So the [1^4] "
+            f"Slater term must supply ~{float(deficit_frac) * 100:.0f}% of the "
+            f"4-body AND repair the 3-body sign"
+            + (" and the 4-body sign" if b4_wrong_sign else "")
+            + ". This measures the DEFICIT, not the [1^4] value (that needs the "
+            "Slater-to-trace dictionary). Scope-(a), no fit."),
     }
 
     payload = {
         "computation": "b4-framework-connected-cumulant-deficit",
-        "description": ("Framework multiplicative complete-graph connected cumulants (Ursell "
-                        "inversion of committed pair factors): b₄=0.58 MeV = 6.3% of the 9.24 "
-                        "target, b₃ wrong-signed. Quantifies the deficit the [1^4] Slater term "
-                        "must close. audit-only, no fit."),
+        "description": (
+            f"Framework multiplicative complete-graph connected cumulants (Ursell "
+            f"inversion of committed pair factors): b4={mp.nstr(b4, 4)} MeV = "
+            f"{float(frac_b4) * 100:.1f}% of the {mp.nstr(ame['b4'], 5)} target"
+            + (" and wrong-signed" if b4_wrong_sign else "")
+            + ", b3 wrong-signed. Quantifies the deficit the [1^4] Slater term "
+            "must close. audit-only, no fit."),
         "tier": "structural (framework's own multiplicative binding, cumulant-inverted)",
         "result": result,
         "context": {
@@ -122,8 +139,22 @@ def main() -> int:
         "b4-framework-connected-cumulant-deficit", payload,
         script_path=__file__, engine="python+mpmath", output_dir=os.path.join(COMP, "probes"),
     )
-    wb.add_assertion("framework_b4_far_below_target", computed=mp.nstr(frac_b4, 4), expected="0.063", tolerance=0.02)
+    # The old assertion pinned expected="0.063", the convention-C measurement, as
+    # though it were a prediction. It is not: it was a RECORD of a past run, so it
+    # went red the moment the frame changed and could only ever be "fixed" by
+    # editing the number -- which is the laundering the precision discipline
+    # forbids. Assert the PROPOSITION the probe exists to establish instead, and
+    # carry the value in the data block where a changing number belongs.
+    #
+    # "far below" is made explicit as < 50% of target. That threshold is a stated
+    # reading of the words, not a tuned parameter: the live value is -3.3% and the
+    # C-frame value was 6.3%, so the claim holds in both frames by a wide margin.
+    wb.add_assertion("framework_b4_far_below_target",
+                     computed=str(bool(frac_b4 < mp.mpf("0.5"))), expected="True")
     wb.add_assertion("framework_b3_wrong_sign", computed=str(bool(b3_wrong_sign)), expected="True")
+    # NEW under convention D, and a strengthening rather than a weakening: b4 is
+    # not merely small, it is negative against a positive target.
+    wb.add_assertion("framework_b4_wrong_sign", computed=str(bool(b4_wrong_sign)), expected="True")
     out = wb.save(extra={"auditOnly": True})
 
     print("=== Framework connected-cumulant deficit (multiplicative complete-graph) ===")
@@ -131,7 +162,9 @@ def main() -> int:
     print(f"  framework cumulants:  b2={float(b2):.3f}  b3={float(b3):.3f}  b4={float(b4):.3f} MeV")
     print(f"  AME target:           b2={float(ame['b2']):.3f}  b3={float(ame['b3']):.3f}  b4={float(ame['b4']):.3f} MeV")
     print(f"  connected b4 fraction supplied: {float(frac_b4)*100:.1f}%   b3 wrong-signed: {b3_wrong_sign}")
-    print("  ⇒ [1^4] Slater term must supply ~94% of b4 AND fix the b3 sign. Deficit measured; value TBD.")
+    print(f"  ⇒ [1^4] Slater term must supply ~{float(deficit_frac) * 100:.0f}% of b4"
+          + (" (b4 is WRONG-SIGNED, so it must reverse it too)" if b4_wrong_sign else "")
+          + " AND fix the b3 sign. Deficit measured; value TBD.")
     print("witness ->", out)
     return 0
 

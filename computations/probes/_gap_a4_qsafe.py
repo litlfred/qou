@@ -34,30 +34,20 @@ import mpmath as mp
 
 from partition_utils import hook_lengths
 
-# Substrate parameter, 50 dps.
+# Substrate parameter, 50 dps, RESOLVED THROUGH q_parameter.
 #
-# ⚠ THIS LITERAL IS THE MUON PIN, NOT THE PROTON PIN. The label here read
-# "proton-mass-anchored q_0" until 2026-08-24; that was false. Measured at
-# mpmath dps=60:
+# This was a literal, commented "proton-mass-anchored q_0" while holding the
+# MUON value 1.10997859555733471989… . The comment and the value disagreed,
+# and 22 modules import this name, so every one of them computed at muon while
+# its manifest entry said proton -- which is how the T5-T12 probes came to be
+# tagged `physical_proton` with muon-valued witnesses.
 #
-#     this literal vs the canonical muon pin A : 4.5e-24 ppb  (identical)
-#     this literal vs the proton pin           : 11.5371 ppb  (the mu-p tension)
-#
-# The VALUE is unchanged and deliberately so — only the false label is
-# corrected. Whether the muon anchor is what this probe series INTENDS is a
-# separate, open question: 17 producers import this constant (T4-T18 plus
-# borromean_trace_cross_validator), so answering it moves all of them by
-# 11.5 ppb. Tracked in bean `qou-fd0e`; do not resolve it by editing this
-# number on your own authority.
-#
-# Why no detector caught this: the four q0 pin audits ratchet on literals that
-# DIVERGE from the canonical pin, and this one matches it exactly. No detector
-# compares a literal's LABEL against its VALUE.
-#
-# Authoritative source: T4-T8 use this exact 50-dps decimal; T9-T12
-# extend it without re-deriving.  Do not edit without updating the
-# whole probe series.
-Q_0_50DPS: str = "1.1099785955573347198997632204832250266562084087802"
+# Resolving through q_parameter makes the value follow the anchor each importer
+# is actually assigned, so the label cannot drift from the number again. Do not
+# replace this with a literal.
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+Q_0_50DPS: str = Q_50_DIGIT_STR
 
 
 def q_number(n: int, q: mp.mpf) -> mp.mpf:

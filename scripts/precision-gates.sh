@@ -59,6 +59,16 @@ cd "$ROOT"
 # name|script|args|self-test?|blocking?
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
+  # The gate above fires on CONTRADICTIONS (Q0_FLIP) only — its --strict
+  # ignores the 1678 witnesses carrying no q0Anchor at all, which its own
+  # header calls "pre-backfill; not a failure". Correct for a contradiction
+  # detector, but it left the INFLOW ungated: measured on witness files newly
+  # added to main, ~50% arrive unstamped (60/101, 20/44, 16/31 over the last
+  # 500/250/100 commits), so the population refills as fast as it drains.
+  # This ratchet tolerates the backlog and blocks NEW arrivals. Blocking is
+  # safe: it is green at its own baseline, so it can only ever fire on a new
+  # regression. Bean qou-y98b.
+  "q0-anchor refill ratchet|computations/audits/q0_anchor_ratchet.py|--strict|yes|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
   "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "never-raises-dps ratchet|computations/never_raises_dps_audit.py|--strict|yes|yes"
@@ -66,6 +76,26 @@ GATES=(
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # The OTHER HALF of the ratchet above, split from it on 2026-08-24 (bean
+  # qou-xt5l). The ratchet asks "did a value lose digits a double cannot
+  # hold?"; an integral float answers no, because integers are exact in
+  # binary64. It counted them anyway, and the cost was measured: re-running
+  # eight producers flipped 82 fields int->float, the ratchet called all 82 a
+  # REGRESSION, and every pair was VALUE UNCHANGED (80 equal, 0 changed).
+  #
+  # But `54.0` for a Specht dimension IS wrong -- a different wrongness, asked
+  # here. Intent is DECLARED in computations/witness-integer-fields.json, never
+  # inferred: 225,385 integral floats live in this corpus and 218,697 are
+  # exactly 0.0, mostly matrix_im, where 0.0 is the CORRECT encoding. Inferring
+  # from values would be wrong ~99% of the time, and wrong in both directions
+  # (matrix_im is always-integral yet real; word_cd looks like a braid word yet
+  # has 83 fractional entries).
+  #
+  # It lives in this family despite not being a precision gate because the two
+  # are one split, and a gate wired nowhere is a gate nobody runs -- the exact
+  # failure this script's own header was written about. BLOCKING because it is
+  # green on arrival, which this file says is when that is safe.
+  "integer-field typing|computations/witness_integer_field_audit.py|--strict|yes|yes"
   # Paired with the ratchet above and deliberately independent of it: the
   # ratchet counts raw floats, so a GUTTED witness scores zero and reads as a
   # perfect drain. This one asks the orthogonal question — did the witness lose

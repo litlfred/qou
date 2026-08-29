@@ -1,11 +1,11 @@
 ---
 # qou-dz0p
 title: 'proof-watcher naked-conjecture queue: all 3 stale; one hid a live empty-carrier shadow'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T02:19:21Z
-updated_at: 2026-08-23T02:34:28Z
+updated_at: 2026-08-23T07:43:12Z
 ---
 
 The proof-integration-watcher queue's **only** three genuinely open items were all

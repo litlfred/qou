@@ -60,6 +60,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -70,7 +71,7 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps q₀ — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # Phase-4 deuteron hyperbolic volume (canonical atomic braid closure,
 # SnapPy JSJ value from `2026-05-19-delta-lambda-phase4-z4N-closure.md`
@@ -367,7 +368,7 @@ def main() -> int:
     A_rel_err = abs(A_D - mp.mpf("22.9594")) / mp.mpf("22.9594")
     w.add_assertion(
         "phase4_amplitude_A_D_matches_table",
-        computed=float(A_rel_err),
+        computed=A_rel_err,
         expected=0.0,
         tolerance=1e-3,
         source=(
@@ -379,7 +380,7 @@ def main() -> int:
     c5_S = mp.mpf([r["S_at_q0"] for r in results if r["code"] == "C5"][0])
     w.add_assertion(
         "zero_control_C5_sums_to_zero",
-        computed=float(abs(c5_S)),
+        computed=abs(c5_S),
         expected=0.0,
         tolerance=1e-40,
         source="C5 control with P_λ ≡ 0 must give |S| = 0 exactly.",

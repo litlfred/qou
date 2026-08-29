@@ -1,0 +1,180 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2512.18642v1",
+ "source": {
+  "file": "2512.18642v1.pdf",
+  "sha256": "c4c7f8b0a719aa2df0a0ae6c4260bced585090a6c53c51c07b770579ecbda39e",
+  "bytes": 468429,
+  "pages": 20,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2512.18642",
+   "version": "1",
+   "primary_class": "quant-ph",
+   "stamp_date": "21 Dec 2025"
+  },
+  "doi": null,
+  "title": "A Hidden Quantum Markov model framework for",
+  "authors_raw": "Entanglement and Topological Order in the AKLT Chain",
+  "title_lines": [
+   "A Hidden Quantum Markov model framework for"
+  ],
+  "abstract": "This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck\u2013Kennedy\u2013Lieb\u2013Tasaki (AKLT) state\u2014a cornerstone example of a symmetry-protected topological (SPT) phase. The model\u2019s observation system is the physical spin-1 chain, which emerges from a hidden spin-\u00bdlayer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information. KeywordsAKLT, Hidden Markov Model, SPT Order, Quantum Theory, Entanglement",
+  "docinfo": {
+   "Author": "Abdessatar Souissi; Amenallah Andolsi",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hidden Quantum Markov Models",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The AKLT State and its SPT Order",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "HQMM Structure of the AKLT State",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Entanglement Dynamics in Hidden Markov Channel",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "SPT order on the AKLT,s HQMMs",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6750,
+   "n_words": 976
+  },
+  {
+   "id": "sec-001-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-hidden-quantum-markov-models",
+   "number": null,
+   "title": "Hidden Quantum Markov Models",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2459,
+   "n_words": 347
+  },
+  {
+   "id": "sec-003-the-aklt-state-and-its-spt-order",
+   "number": null,
+   "title": "The AKLT State and its SPT Order",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6379,
+   "n_words": 1015
+  },
+  {
+   "id": "sec-004-hqmm-structure-of-the-aklt-state",
+   "number": null,
+   "title": "HQMM Structure of the AKLT State",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 13735,
+   "n_words": 2234
+  },
+  {
+   "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
+   "number": null,
+   "title": "Entanglement Dynamics in Hidden Markov Channel",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 4804,
+   "n_words": 791
+  },
+  {
+   "id": "sec-006-spt-order-on-the-aklts-hqmms",
+   "number": null,
+   "title": "SPT order on the AKLT,s HQMMs",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3852,
+   "n_words": 585
+  },
+  {
+   "id": "sec-007-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 10792,
+   "n_words": 1532
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 48771
+ }
+}

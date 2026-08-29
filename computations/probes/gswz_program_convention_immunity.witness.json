@@ -3,15 +3,15 @@
  "probe": "gswz_program_convention_immunity_probe",
  "engine": "python3-sympy-exact",
  "scriptFile": "gswz_program_convention_immunity_probe.py",
- "commitSha": "afb460ca13e06cccc8adb082c033e8f5f500a516",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
  ],
  "source": "owner ruling docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md; template docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md; AGENTS.md c_k banner",
  "checks": {
-  "no_markov_or_gram_layer_imported": true,
-  "no_trace_parameter_reference": true,
+  "no_markov_or_gram_layer_imported": false,
+  "no_trace_parameter_reference": false,
   "no_substrate_anchor_reference": true,
   "candidates_are_integer_laurent_in_q": true,
   "c3_two_forms_still_identical": true,
@@ -19,9 +19,24 @@
   "control_detector_fires_on_planted_text": true
  },
  "result": {
-  "programme_probe_count": 20,
-  "trace_layer_hits": [],
-  "trace_parameter_hits": [],
+  "programme_probe_count": 39,
+  "trace_layer_hits": [
+   "gswz_epsm_chi_eigenspace_place_probe.py"
+  ],
+  "trace_parameter_hits": [
+   "gswz_epsm_alpha_line_unit_structure_probe.py",
+   "gswz_epsm_chi_eigenspace_place_probe.py",
+   "gswz_epsm_field_variation_probe.py",
+   "gswz_epsm_five_term_validation_probe.py",
+   "gswz_epsm_h_lift_m12_m24_probe.py",
+   "gswz_epsm_h_lift_m8_probe.py",
+   "gswz_epsm_m6_rwf_value_probe.py",
+   "gswz_epsm_m_lattice_eigenspace_census_probe.py",
+   "gswz_epsm_second_element_feasibility_probe.py",
+   "gswz_epsm_v1_computable_m_terminal_probe.py",
+   "gswz_epsm_v1_lift_and_value_probe.py",
+   "gswz_epsm_v2_vacuity_confirmation_probe.py"
+  ],
   "substrate_anchor_hits": [],
   "classification": {
    "epsm_descent_chain_addenda_17_18_21_25": "VALID-immune (no q, no z, no anchor)",

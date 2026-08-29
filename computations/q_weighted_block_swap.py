@@ -39,7 +39,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
@@ -83,8 +83,13 @@ def main() -> int:
         Sa = _S(at, wid, wp, wn, wpn)
         Sf = _S(fr, wid, wp, wn, wpn)
         sig = mp.log(Sf / Sa) if (Sf > 0 and Sa > 0) else mp.nan
-        rows.append({"symmetrizer": lab, "S_atom": float(Sa), "S_free": float(Sf),
-                     "signal": float(sig)})
+        # Keep mpf here — `rows` is WORKING DATA as well as the witness
+        # payload (`spread`, the verdict f-strings and the percentage all read
+        # `r["signal"]`). Formatting in place turns those into strings and the
+        # arithmetic dies with `unsupported operand type(s) for -: 'str' and
+        # 'str'`. Serialisation happens once, at the witness boundary below.
+        rows.append({"symmetrizer": lab, "S_atom": Sa, "S_free": Sf,
+                     "signal": sig})
         print(f" {lab:>18}{float(Sa):>11.6f}{float(Sf):>11.6f}{float(sig):>+11.6f}")
     print(" " + "-" * 52)
 
@@ -115,13 +120,18 @@ def main() -> int:
         "so E_± is a first-order q-deformation, not the exact block R-matrix "
         "spectral projector; the w∈{q⁻¹,1,q} spread bounds the residual ambiguity."
     )
-    w.add_parameter("q0", float(q))
-    w.add_data("rows", rows)
-    w.add_data("plain_vs_qbosonic_spread", float(spread))
+    w.add_parameter("q0", fmt(q))
+    # Serialise ONLY here, off the mpf working rows.
+    w.add_data("rows", [{"symmetrizer": r["symmetrizer"],
+                         "S_atom": fmt(r["S_atom"]),
+                         "S_free": fmt(r["S_free"]),
+                         "signal": fmt(r["signal"])} for r in rows])
+    w.add_data("plain_vs_qbosonic_spread", fmt(spread))
     w.add_data("verdict", verdict)
     w.add_assertion(
         name="signal_robust_to_q_symmetrizer",
-        computed=float(abs(spread)), expected=0.0, tolerance=0.1,
+        computed=fmt(abs(spread)), expected=fmt(mp.mpf(0)),
+        tolerance=fmt(mp.mpf("0.1")),
         source="|plain − q-bosonic| signal spread < 0.1 — q₀≈1 makes the "
                "symmetrizer choice a sub-10%% effect; the positive, sub-dominant "
                "verdict does not depend on plain-vs-q-weighted.",

@@ -9,7 +9,7 @@
       "computed": 1.4081481417314879e-37,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "finite-difference closure of dS/dq = A'/u^3 - 3(u'/u)(S - Vol41); the identity itself is exact calculus, machine-checked in Lean (QOU.QBeta.LeverLogDerivative); this numeric check verifies the implementation at step h=1e-20/70 dps"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.9999734524335919,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "A'/u^3 carries >99% of dS/dq at both anchors: the hypersensitivity is STATIC 1/u^3 amplification of the smooth slope A' ~ +2.37 (= round-1 dr/dq, consistency)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 6.218380595872427e-07,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "S is smooth between the anchors; the two-anchor swing is the same lever derivative (no hidden discontinuity)"
     }
   ],

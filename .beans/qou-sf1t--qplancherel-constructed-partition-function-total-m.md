@@ -1,11 +1,11 @@
 ---
 # qou-sf1t
 title: 'QPlancherel: constructed partition function + total mass one (retroactive claim for merged PR #5372)'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:05:17Z
-updated_at: 2026-08-21T16:18:58Z
+updated_at: 2026-08-29T01:40:51Z
 ---
 
 RETROACTIVE CLAIM. Opened 2026-08-21 *after* the work merged, because it was
@@ -86,3 +86,18 @@ what the lead doc actually says, is narrower: the citation is BARE (that block's
 prose never discusses the paper) and 'Molien' appears NOWHERE in content/, docs/
 or computations/. So the paper was ingested and cited and its content never
 pulled through. Registered-but-unmined, not undiscovered.
+
+## 2026-08-29 — items 4/2 RESOLVED (n=3), correct normaliser found (PR pending)
+
+Computed the Webster-Williamson S_3 Molien series M_nu(u,t) and the H_3 Jones-Markov
+y_lambda(z) by unrelated routes. Eliminating t gives a Molien conic; demanding the
+three y_lambda ratios lie on it is OVERDETERMINED (3 z-coeffs, 1 unknown u) and its
+UNIQUE solution is the monomial u=q^2 (bar u=q^-2). Then:
+  y_lambda = M_nu(u=q^2, t=qz/(q^2-qz-1)) * Z,  Z=(q^2-qz-1)^2
+ONE common perfect-square normaliser -- the Poincare/Molien shape the lead predicted,
+NOT [n]_q!. This is exactly why the 2026-08-22 guess (f^l q^-k/[n]!) failed: right
+family, wrong normaliser.
+RESOLVED (n=3): item 4 (weight family = y_lambda), item 2 (specialisation forced),
+weight-level half of item 1. Lean QOU/QBeta/MolienJonesMarkovN3.lean (sorry-free,
+ring, self-contained: N_nu=cleared Molien AND y=M*Z). Probe 6/6 exact Q(q,z).
+Audit 2026-08-29-molien-jones-markov-n3-identification.md. Nothing wired.

@@ -44,7 +44,7 @@
       "computed": "-14.348054954552774683",
       "expected": "-14.348054954552774683",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im τ)²|η|⁴] at the Bring τ₀ = −0.5 + 0.186676i"
     }
   ],

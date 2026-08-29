@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:52:30.213174+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-26T07:08:06.530821+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [
     {
       "name": "rungs_grow_finite_radius",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25706,
+  "durationMs": 18066,
   "computation": "qbeta-eta-singularity",
   "scriptFile": "qbeta_eta_singularity_probe.py",
-  "scriptHash": "52519c340ea6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "cfb0da20a749",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [

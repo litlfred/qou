@@ -119,7 +119,7 @@ def _stamp_anchor(out: Path, cached: dict) -> None:
                        encoding="utf-8")
 
 
-def compute_atom(atom: str, q: mp.mpf) -> dict:
+def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
     """Lossless χ cache for one atom via Rust chi_q_via_gp. Writes the witness."""
     Z, N = ATOMS[atom]
     n_strands, word = _word_for_braid_word_3a(Z, N)
@@ -129,7 +129,18 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
     # Idempotent / resumable: a COMPLETE cache (lossless, all λ) is reused as-is
     # so a batch re-run (e.g. to refresh the summary witness) never recomputes a
     # finished nucleus.
-    if out.exists():
+    # --fresh EXISTS BECAUSE THE REUSE BRANCH CANNOT SEE A CONVENTION CHANGE.
+    # It gates on completeness (all λ present, not partial) and on nothing else,
+    # so a cache computed under a SUPERSEDED CONVENTION is "complete" and is
+    # served forever. Worse, the hit still calls `_stamp_anchor`, which rewrites
+    # the file — so a routine re-run leaves it looking freshly regenerated while
+    # every number in it is stale.
+    #
+    # Measured (2026-08-24): chi-helium-3-h9 and chi-tritium-h9 sat at
+    # convention C across the 2026-08-09 cascade for this reason. Deleting the
+    # cache and re-running turns 25 C-scale y_λ into 25 zeros per file — the
+    # producer had been correct the whole time and could not say so.
+    if out.exists() and not fresh:
         cached = json.loads(out.read_text(encoding="utf-8"))
         if (not cached.get("tr_M_partial", True)
                 and cached.get("n_partitions") == cached.get("n_partitions_total")):
@@ -231,7 +242,8 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
 
 def main() -> int:
     set_compute_dps()
-    raw = sys.argv[1:] or ["5Li", "6Li"]
+    raw = [a for a in sys.argv[1:] if a != "--fresh"] or ["5Li", "6Li"]
+    fresh = "--fresh" in sys.argv[1:]
     atoms = [ATOM_ALIASES.get(a, a) for a in raw]
     q = mp.mpf(Q_50_DIGIT_STR)
     t0 = time.monotonic()   # WitnessBuilder durationMs = monotonic() − start_time
@@ -244,7 +256,7 @@ def main() -> int:
         if atom not in ATOMS:
             print(f"  {atom}: not in ATOMS, skip", flush=True)
             continue
-        results.append(compute_atom(atom, q))
+        results.append(compute_atom(atom, q, fresh=fresh))
 
     wb = WitnessBuilder("chi-via-rust-lossless-general", engine="python",
                         start_time=t0)

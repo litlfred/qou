@@ -1,0 +1,296 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0501112v3",
+ "source_sha256": "f95088789da2453a",
+ "brief": "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q.",
+ "extended": "**GAUSSIAN FLUCTUATIONS OF CHARACTERS OF**\n\n*SYMMETRIC GROUPS AND OF YOUNG DIAGRAMS*\n\n37 pp, 55 sections.\n\n**Abstract.** We study asymptotics of reducible representations of the symmetric groups Sq for large q. We decompose such a representation as a sum of irreducible components (or, alternatively, Youn g diagrams) and we ask what is the character of a randomly chosen componen t (or, what is the shape of a randomly chosen Young diagram). Our main result is that for a large class of representations the ﬂuctuations of characters (and ﬂuctuations of the shape of the Young diagrams) are asym ptoti- cally Gaussian; in this way we generalize Kerov’s central limit theorem. The considered class consists of representations for whichthe characters almost factorize and this class includes, for example, left -regular repre- sentation (Plancherel measure), tensor representations. This class is also closed under induction, restriction, outer product and ten sor product of representations.\n\n**Outline.** 2 PIOTR ´SNIADY; 1 I NTRODUCTION; 1.1 Representations of large symmetric groups.; 1.2 Genus expansion, random matrices and free ; 1.3 Higher-order free probability. As we menti; 1.4 Factorization of characters. Biane [Bia01]; 4 PIOTR ´SNIADY; 1.5 Fluctuations of Young diagrams. Every ﬁnit; 1.6 Overview of this article. In Section 2 we ; 2 P RELIMINARIES; 2.1 Normalized conjugacy class indicators. Let; 2.2 Disjoint product. Usually by a product of ; 6 PIOTR ´SNIADY; 2.3 Classical cumulants. The notion of cumulan; 2 We; 2.4 Elements of the group algebra as random va; 2.5 Canonical probability measure on Young dia; 2.6 Generalized Young diagrams. Let λ be a You",
+ "tokens": {
+  "brief": 32,
+  "extended": 417
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-i-ntroduction",
+   "title": "I NTRODUCTION",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-11-representations-of-large-symmetric-groups-irr",
+   "title": "Representations of large symmetric groups. Irreducible represen-",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-12-genus-expansion-random-matrices-and-free-prob",
+   "title": "Genus expansion, random matrices and free probability. Free",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-13-higher-order-free-probability-as-we-mentioned",
+   "title": "Higher-order free probability. As we mentioned above, the ﬁrst or-",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-14-factorization-of-characters-biane-bia01-prove",
+   "title": "Factorization of characters. Biane [Bia01] proved (under some mild",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-006-4-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-007-15-fluctuations-of-young-diagrams-every-ﬁnite-di",
+   "title": "Fluctuations of Young diagrams. Every ﬁnite-dimensional represen-",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-16-overview-of-this-article-in-section-2-we-pres",
+   "title": "Overview of this article. In Section 2 we present brieﬂy all necessary",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-009-2-p-reliminaries",
+   "title": "P RELIMINARIES",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-010-21-normalized-conjugacy-class-indicators-let-int",
+   "title": "Normalized conjugacy class indicators. Let integer numbers",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-011-22-disjoint-product-usually-by-a-product-of-norm",
+   "title": "Disjoint product. Usually by a product of normalized conjugacy",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-012-6-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-013-23-classical-cumulants-the-notion-of-cumulants-o",
+   "title": "Classical cumulants. The notion of cumulants (or semi-invariants)",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-014-2-we",
+   "title": "We",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-015-24-elements-of-the-group-algebra-as-random-varia",
+   "title": "Elements of the group algebra as random variables. Let us ﬁx",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-016-25-canonical-probability-measure-on-young-diagra",
+   "title": "Canonical probability measure on Young diagrams associated to a",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-017-26-generalized-young-diagrams-let-λ-be-a-young-d",
+   "title": "Generalized Young diagrams. Let λ be a Young diagram. We assign",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-018-27-functionals-of-the-shape-of-young-diagramsthe",
+   "title": "Functionals of the shape of Young diagrams.The main result of this",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-019-8-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-020-28-transition-measure-of-a-young-diagram-to-any",
+   "title": "Transition measure of a Young diagram. To any generalized Young",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-021-29-free-cumulants-of-the-transition-measure-cauc",
+   "title": "Free cumulants of the transition measure. Cauchy transform of a",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-022-10-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-023-3-r-epresentations-with-character-factorization",
+   "title": "R EPRESENTATIONS WITH CHARACTER FACTORIZATION PROPERTY",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-024-31-factorization-of-characters-and-gaussian-ﬂuct",
+   "title": "Factorization of characters and Gaussian ﬂuctuations. The follow-",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-025-12-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-026-2-ri-eri",
+   "title": "(Ri − ERi)",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-027-2-pi-e-pi",
+   "title": "( ˜pi − E ˜pi)",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-028-32-examples-all-examples-presented-in-this-secti",
+   "title": "Examples. All examples presented in this section not only have the",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-029-14-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-030-16-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-031-18-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-032-4-p-roof-of-the-main-result",
+   "title": "P ROOF OF THE MAIN RESULT",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-033-41-toy-example-let-us-have-a-look-on-the-main-re",
+   "title": "Toy example. Let us have a look on the main result (Theorem and",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-034-42-partitions-we-recall-that-π-π-1-π-r-is-a-part",
+   "title": "Partitions. We recall that π = {π 1, . . . , π r} is a partition of a ﬁnite",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-035-43-algebra-of-conjugacy-classes-and-its-ﬁltratio",
+   "title": "Algebra of conjugacy classes and its ﬁltration. Ivanov and Kerov",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-036-20-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-037-44-three-probability-spaces-commutative-algebras",
+   "title": "Three probability spaces. Commutative algebras A and A• can be",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-038-45-cumulants-of-products-if-ρ-ρ1-ρ-kis-a-partiti",
+   "title": "Cumulants of products. If ρ = {ρ1, . . . , ρ k}is a partition of the set",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-039-22-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-040-24-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-041-471-cumulants-of-falling-factorials-element-σ-1",
+   "title": "Cumulants of falling factorials. Element Σ 1, . . . , 1",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-042-26-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-043-5-p-roof-of-theorem-43",
+   "title": "P ROOF OF THEOREM 4.3",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-044-51-cumulants-if-µ-µ-1-µ-k-is-a-partition-of-the",
+   "title": "Cumulants. If µ = {µ 1, . . . , µ k} is a partition of the set {1, . . . , n }",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-045-52-partitionindexed-conjugacy-classes-in-the-fol",
+   "title": "Partition–indexed conjugacy classes. In the following we present",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-046-0-1-2-1-q-1",
+   "title": "(1, 2 ) . . . (1, q ) 1",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-047-28-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-048-54-geometric-interpretation-of-the-degree-of-σ-π",
+   "title": "Geometric interpretation of the degree of Σ π . It is very useful to",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-049-30-piotr-sniady",
+   "title": "PIOTR ´SNIADY",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-050-55-geometric-interpretation-of-theorem-51-we-wil",
+   "title": "Geometric interpretation of Theorem 5.1. We will use the notations",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-051-56-fat-partitions-let-π-π-1-π-r-be-a-partition-o",
+   "title": "Fat partitions. Let π = {π 1, . . . , π r} be a partition of the set",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-052-57-explicit-form-of-the-partitionindexed-conjuga",
+   "title": "Explicit form of the partition–indexed conjugacy class ind ica-",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-053-6-a-cknowledgments",
+   "title": "A CKNOWLEDGMENTS",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-054-references",
+   "title": "References",
+   "pages": "35-37"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T09:23:46.429719+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T10:49:20.614850+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [
     {
       "name": "colored_lr_at_root_scope_a_excluded_as_valuemap_carrier",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 15,
   "computation": "keystone-colored-lr-modulus-s013",
   "scriptFile": "keystone_colored_lr_modulus_s013.py",
-  "scriptHash": "3306afcb268c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "6375e270f16f",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -43,29 +42,29 @@
   },
   "description": "s013 Front-2: the COLORED Lawrence-Rozansky modulus vs the McKay value map. Colours the p3=5 fibre of the machine-validated Sigma(2,3,5) S-matrix (keystone_valuemap_genuine_smatrix_s013, cited) by a Wilson line alpha=1..4 and computes the fifth-root quantum dims [alpha]_k = sin(alpha k pi/5)/sin(k pi/5) at both flat connections EXACTLY. K1: alpha=1 recovers the unit anchor. K2: reflection alpha=4=1, alpha=3=2 collapses to <=2 independent moduli per flat -> colouring the p3=5 fibre does NOT escape the D=2 vacuum row. K3: |[alpha]_k| <= 1/sin(pi/5)=1.7013 while the target ratios (1,[4]_q0,[5]_q0,[5]_q0+1)~(1,4.11,5.22,6.22) grow past it -- the value map is a REAL-q0 growing object, not a root-level modulus. K4: mark 6 (electron split node) exceeds the fibre order 5, and the 3+3' two-block 2[3]_k~3.24 does not reproduce the target [5]_q0+1=6.22 ('[6]_zeta vs [5]_zeta+1' criterion). Verdict: colored-LR-at-Sigma(2,3,5)-root is scope-(a) EXCLUDED as the value-map carrier; refines (not contradicts) the ledger -- the genuine open object is the q0-continuation. No fit; nothing wired; Lean loc_matches gate stays open.",
   "data": {
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "p3_fibre_order": 5,
     "target_dq_q0": {
       "1": 1.0,
-      "4": 4.109682435637709,
-      "5": 5.220441324664574,
-      "6": 6.220441324664574
+      "4": 4.109682411207941,
+      "5": 5.220441275326898,
+      "6": 6.220441275326898
     },
     "target_bwS0": {
-      "1": 0.10921535996711285,
-      "4": 0.44884044655869343,
-      "5": 0.5701523784604328,
-      "6": 0.6793677384275456
+      "1": 0.10921536083324614,
+      "4": 0.4488404474501203,
+      "5": 0.5701523775935988,
+      "6": 0.679367738426845
     },
     "target_ratios_over_mark1": [
       1.0,
-      4.109682435637709,
-      5.220441324664574,
-      6.220441324664574
+      4.109682411207941,
+      5.220441275326898,
+      6.220441275326898
     ],
     "split_node_is_qint5_plus_1_not_qint6": {
-      "qint5_plus_1": 6.220441324664574,
-      "qint6": 6.388086679547021,
+      "qint5_plus_1": 6.220441275326898,
+      "qint6": 6.388086592175452,
       "distinct": true
     },
     "colored_qdim_flat1_exact": {
@@ -99,12 +98,12 @@
     "K2_independent_moduli_flat2": 2,
     "K2_D2_collapse_confirmed": true,
     "K3_root_qdim_bound_1_over_sin_pi5": 1.7013016167040798,
-    "K3_max_target_ratio": 6.220441324664574,
+    "K3_max_target_ratio": 6.220441275326898,
     "K3_target_exceeds_root_bound": true,
     "K4_mark6_exceeds_fibre_order": true,
     "K4_two_block_2x_qdim3_flat1": 3.23606797749979,
     "K4_two_block_2x_qdim3_flat2": -1.2360679774997898,
-    "K4_target_split_value": 6.220441324664574,
+    "K4_target_split_value": 6.220441275326898,
     "K4_two_block_reproduces_split": false,
     "verdict_colored_lr_carries_valuemap": false,
     "verdict_scope_a_excluded_at_root": true

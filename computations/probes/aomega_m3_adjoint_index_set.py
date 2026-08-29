@@ -29,7 +29,7 @@ H_Ad is empty.
 
 Audit-only; scope-(a); nothing wired; no value claimed for A_omega.
 """
-import json, os, subprocess, time
+import json, os, sys, time
 from fractions import Fraction
 
 def repo_root():
@@ -38,13 +38,6 @@ def repo_root():
         if os.path.exists(os.path.join(d, "AGENTS.md")): return d
         d = os.path.dirname(d)
     raise RuntimeError("no repo root")
-
-def head_sha(root):
-    for ev in ("GITHUB_SHA","GIT_COMMIT_SHA"):
-        v = os.environ.get(ev)
-        if v and v.strip(): return v.strip()
-    try: return subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
-    except Exception: return "unknown"
 
 def main():
     t0=time.time(); root=repo_root(); A=[]
@@ -336,9 +329,7 @@ def main():
                        "adversarial checks and the Lean-proved forced remainder.",
          "computation":"aomega-m3-adjoint-index-set","engine":"python",
          "scriptFile":"computations/probes/aomega_m3_adjoint_index_set.py",
-         "scriptCommitSha":head_sha(root),
-         "computedAt":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),
-         "durationMs":int((time.time()-t0)*1000),"auditOnly":True,
+         "auditOnly":True,
          "auditDoc":"docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md",
          "q0Anchor":"independent",
          "q0AnchorReason":(
@@ -352,6 +343,15 @@ def main():
                        "lean":"QOU.QBeta.AdjointIndexSetM3"},
          "data":{"forced_extra_4_1":extra_41,"forced_extra_5_2":extra_52,"verdict":verdict},
          "assertions":A}
+    # Provenance via WitnessBuilder (check-sidecars P30). The first version of this
+    # producer hand-wrote scriptCommitSha and emitted NO scriptHash / commitSha /
+    # engineVersion, i.e. PROV_MISSING — fixed here rather than left on main.
+    sys.path.insert(0, os.path.join(root, "tools", "qou-substrate", "python"))
+    from qou_substrate.witness import WitnessBuilder
+    WitnessBuilder.stamp_staleness_metadata(
+        w, script_path=__file__, engine="python",
+        engine_version=sys.version.split()[0], q0_anchor="independent")
+    w["durationMs"] = int((time.time()-t0)*1000)
     out=os.path.join(root,"computations","probes","aomega-m3-adjoint-index-set.witness.json")
     with open(out,"w") as fh: json.dump(w,fh,indent=2); fh.write("\n")
     print(f"\n witness: {out}")

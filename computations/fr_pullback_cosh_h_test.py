@@ -49,6 +49,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from mass_at_3A_proper import dim_q, qfac  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -100,7 +101,7 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
                             h_val=None):
     """K_3* = 4_1 FR pullback at depth 3 only, with optional cosh(h)
     multiplier on the dim_q² weight (Variant 6)."""
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     eps = vanishing_threshold()
     weights = {}
     chi_at_3 = {}
@@ -110,7 +111,7 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         dq_sq = mp.mpf(str(dq * dq))
         if per_partition_cosh_multiplier:
             dq_sq = dq_sq * cosh_h
@@ -126,13 +127,13 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64,
         z_norm += dq_sq * mp.fabs(chi_K)
     if z_norm < eps:
         for shape in chi_at_3:
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             dq_sq = mp.mpf(str(dq * dq)) * cosh_h
             weights[shape] = dq_sq / qfact
     else:
         scale = s_uniform / z_norm
         for shape, chi_K in chi_at_3.items():
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             dq_sq = mp.mpf(str(dq * dq)) * cosh_h
             weights[shape] = dq_sq * mp.fabs(chi_K) * scale
     return weights
@@ -146,7 +147,7 @@ def phi_k_with_weights(by_partition, k, weights):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue

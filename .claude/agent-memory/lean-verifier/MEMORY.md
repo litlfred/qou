@@ -1,0 +1,201 @@
+# lean-verifier — memory
+
+Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
+**BASELINE** (a number — re-measure, never quote from here).
+
+Seeded 2026-08-29 from `AGENTS.md` + `local/lean-environment-setup.md`.
+Entries marked (verified <date>) were confirmed live; the rest are inherited
+and should be confirmed on first use.
+
+---
+
+## STABLE — workspace shape
+
+- Single **root** Lake workspace: `/lakefile.toml`, `/lean-toolchain`.
+  Three paper packages: `qou` → `QOU` (`content/quantum-observable-universe/lean/`),
+  `ugb` → `UGB`, `fred2005` → `Fred2005`.
+- **Name the targets.** A bare `lake build` at the root is a *no-op*: it
+  exits 0 with "Build completed successfully (0 jobs)". The root package
+  declares no library of its own and glob libraries build only when named.
+  Use `lake build QOU UGB Fred2005`.
+- Content blocks reference Lean by package-qualified URI:
+  `lean: { ref: "qou:QOU.Torsion.lifting_exists" }`. The legacy
+  `decl:`/`file:` shape is removed from the schema.
+- Toolchain on PATH via `export PATH="$HOME/.elan/bin:$PATH"`.
+
+## STABLE — the restore-first recipe (the whole point of this agent)
+
+Order is: **RESTORE → verify lean-direct → SEED**. A from-source Mathlib
+build is the last resort, not the first move.
+
+Prebuilt oleans live on orphan branches `lake-cache/<pkg>-<toolchain-slug>`
+(slug derived from `lean-toolchain`: `v4.24.0` → `v4-24-0`). Restore is
+~2 min against a 30–60 min rebuild. Full command block is in
+`.claude/skills/local/lean-environment-setup.md` §"PROVEN sandbox build
+recipe" / §"PRESERVE THE BUILD" — read it there rather than reconstructing
+it, and derive the slug from the file rather than hardcoding a version.
+
+Verification is `lean`-direct with `LEAN_PATH` pointed at the restored
+olean dirs: `exit 0` means the file checks. Not `lake build`.
+
+## TRAP — `lake build` silently evicts a restored cache
+
+A restored tree has oleans but **no `.trace` files**, so Lake treats every
+one as stale, rebuilds from source, and deletes the restore. It is silent:
+the output reads as ordinary build progress.
+
+Measured 2026-08-15 (bean `qou-r13s`), `lake build QOU UGB Fred2005` against
+a freshly restored tree: root mathlib oleans **6990 → 334**, and of 536
+oleans written in ten minutes **zero** were QOU/UGB/Fred2005.
+
+Guard: the restore recipe touches `.lake/RESTORED-NO-TRACES`. Before any
+build step, check for it:
+`[ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"`.
+Delete the marker only once Lake has genuinely rebuilt the tree.
+
+## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
+
+The recipe streams every `lake-oleans.tgz.part` into one temp file before
+untarring. Nothing reaped it until 2026-08-28: one leaked `/tmp/tmp.*` from
+2026-08-15 survived thirteen days and drove the container to **92K free**,
+where the Bash harness cannot write its output capture and *every* command
+fails — including the `rm` that would fix it. The
+`trap 'rm -f "$TGZ"' EXIT INT TERM` is load-bearing; keep it.
+
+`df` reads deceptively: ~252G nominal at 100% with ~38G used, because the
+real limit is a per-session quota near 38G. "Avail 0, low Used" = allowance
+spent, not machine broken.
+
+## TRAP — seeding route depends on how you built
+
+- Built with `lake build` → seed the monolithic branch via
+  `scripts/lean-olean-cache-seed.sh`.
+- Built `lean`-direct → **no `.trace` files are written**, so that script's
+  guard correctly *refuses*. Never force it past: Lake treats untraced
+  oleans as stale, rebuilds, and evicts them (bean `02kc`). Preserve
+  lean-direct output as a plain `tar` addon orphan branch instead
+  (e.g. `lake-cache/qou-v4-24-0-h4-wedderburn-cone`), restored with
+  `tar xzf` and consumed via `LEAN_PATH`.
+
+## TRAP — env failures are routable; "Lean is unavailable" is usually wrong
+
+On any of: LSP "no valid project path", `leansearch` SSL error, `lake exe
+cache get` 403 on every shard, `elan toolchain install` SSL / "failed to
+parse release data", empty `~/.elan/toolchains/`, `lake build` timeout —
+do **not** conclude Lean is unavailable.
+
+`release.lean-lang.org` is firewalled in some sandboxes but the **GitHub
+release asset is allowlisted** — install the toolchain by hand. GitHub
+clones work; only the release server and `lake exe cache get` are blocked,
+both sidesteppable. First
+`grep -ri "<error keyword>" .claude/skills/ AGENTS.md docs/`, then delegate
+a long install to a background subagent. Only a *hard* network block
+justifies a hand audit — and then say so explicitly. Mathlib cache 403
+fallback (shallow local clone + `git config --global
+url."file:///…".insteadOf`) is in the skill.
+
+## TRAP — a sibling `.lean` stub shadows the real declaration
+
+`lean.ref` resolution checks the **sibling file first**. A trivial
+`theorem foo : True := trivial` content-block sibling therefore shadows the
+real library declaration the ref would otherwise reach. Never create or
+keep one when the real formalisation exists. If the decl is in a mis-named
+library file, align the filename — do not paper over it with a stub.
+
+## TRAP — a slow first `lean`-direct run is COLD PAGE CACHE, not a rebuild
+
+Measured 2026-08-29 on one Mathlib-importing file: first run **2m50s wall but
+only 5.7s `user`**; second run **4.4s wall**. The wall time is faulting in
+~7000 Mathlib oleans, nothing more.
+
+**The discriminator is `user` time — always `time` the run.** Seeing three
+minutes and concluding "Mathlib is rebuilding from source" leads straight to
+`lake build` or a re-restore, and `lake build` is the thing that evicts the
+cache (TRAP above). The misdiagnosis causes the harm; the slow run is benign.
+
+## TRAP — a chapter-directory `.lean` DOES have a `.qa.json` sidecar
+
+The "nothing but you checks library Lean" exemption is scoped to
+`content/<paper>/lean/QOU/**`. A `.lean` sitting beside a `.ts`/`.md` in a
+**chapter directory** is a content-block sibling and **has** a sidecar, so
+editing it stales `source_hashes.lean` — and `lean_statement` too, since a
+rename reaches declaration types. Measured 2026-08-29 on
+`categorical-chain-convergence-mechanisms.lean`: `20d0f5b771ae → 74278be4c9f7`
+and `4803c6f9d272 → 33891c65fd26`.
+
+A green `lean`-direct verdict is **not** the whole preflight there. The sidecar
+wants `qa-sweep --only <crit>` and must never be hand-edited. Two cautions
+measured the same day: `qa-staleness`/`qa-sweep` take a **directory**, not a
+file (a file path dies `ENOTDIR`), and a chapter-scoped sweep rewrites **every**
+block's sidecar — 128 files for a one-block change — so revert all but the
+block you actually staled, or a rename PR silently becomes a chapter sweep.
+
+## STABLE — the honest dispositions when a proof will not close
+
+Exactly three, per `AGENTS.md` §1a / §"Strict Lean Discipline":
+
+1. **Prove it.**
+2. **Queue it** — the *real* proposition with `sorry` + `-- Ref:` whose
+   `[key]` matches `content/schema/references.ts` exactly.
+3. **Demote it** — a `conjecture`, or a content-bearing conditional class
+   (§3b-cond) carrying the *hypotheses*, not the conclusion. A "theorem"
+   projecting its own claim out of a class field is a vacuous
+   self-assuming projection.
+
+Banned: `: True := trivial` in any declaration kind (including the
+`def`-disguised form, which is detected as `def-disguised-true`),
+tautological conclusions, `native_decide` over an unproved structural
+claim, and an `axiom`/`class` substituting for a proof. If you cannot
+close it: `beans create "GAP: <what is open>" --type task` and report the
+gap. An honest bean is always acceptable.
+
+## STABLE — your verdict IS the gate; do not wait on the dead ones
+
+All three Phase-4 external gates are gone: **CI** (auto-triggers disabled
+repo-wide 2026-06-30, `build.yml` is `workflow_dispatch`-only, no `lean_ci.yml`
+exists), **Gemini** (sunset 2026-08-01), **Copilot** (measured n=5, never
+enqueues — `qou-gwe9`). `prepare-merge-auto` Phase 1b still prescribes a
+15-minute Copilot poll that can only expire; skip it and cite the bean. Full
+detail lives in `merge-coordinator`'s memory, which owns this.
+
+So state the verification you actually ran and **never write "CI green"**
+unless a run exists. A **library** file under `content/<paper>/lean/QOU/**` has
+no `.qa.json` sidecar and `lean-content-siblings.yml` does not cover it —
+nothing but you checks it. **But see the sidecar TRAP above: that exemption is
+scoped to the library tree, and a chapter-directory `.lean` DOES have a
+sidecar.**
+
+## BASELINE — re-measure, do not quote
+
+| what | command | last seen | when |
+|---|---|---|---|
+| root mathlib oleans, healthy tree, v4.24.0 | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **6990** | 2026-08-29 |
+| cold vs warm `lean`-direct wall time, one Mathlib-importing file | `time lean <file>` | 2m50s cold / 4.4s warm; `user` ≈ 5s in **both** | 2026-08-29 |
+| whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate; verify per-module | 2026-08 |
+
+⚠ The `~2919 (healthy)` figure this table carried until 2026-08-29 was
+**wrong and dangerous**, and it contradicted the TRAP above it in this same
+file (which cites 6990 as the pre-eviction count). A tree evicted from 6990
+down to 2919 would have read as *healthy* under the old row. Re-measure;
+do not treat any number here as a threshold.
+
+---
+
+## Session log
+
+Append one line per session: what you verified, by what method, and any
+entry above you confirmed or corrected. Keep this file under ~200 lines —
+prune the log, never the TRAPs.
+
+- 2026-08-29 (cool-johnson): gate task. GitHub orphan-branch restore WORKS
+  (`git ls-remote`/`git fetch origin lake-cache/qou-v4-24-0` exit 0) — the
+  blocked host is Azure blob `lakecache.blob.core.windows.net`, NOT the git
+  restore path; the restore does not use it. 1.6 G tarball, `tar xzf` exceeds
+  a 2-min Bash timeout — stream parts direct to `tar xzf -` and give it ~7 min
+  (extraction is the slow part, not the fetch). Cache carries deps AND the full
+  QOU library (942 QOU oleans incl. `QOU/Basic`, `QOU/BraidTwistFlip`; 6990
+  mathlib). lean-direct verified both `braids-and-knots/braid-twist-flip.lean`
+  (imports `QOU.Basic`) and `lean/QOU/BraidTwistFlip.lean` (imports
+  `Mathlib.Tactic`): EXIT 0. Confirmed cold-cache TRAP (chapter file 1m3s wall /
+  4.6s user; lib file warm 4s). Confirmed sidecar TRAP: chapter-dir file HAS a
+  `.qa.json`; library file does not.

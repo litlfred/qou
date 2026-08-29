@@ -62,10 +62,17 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
+from q0_stamp import pin_value_for_anchor  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 DPS = 50
 
-MUON_Q0 = "1.1099785955541805"
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches neither
+# current pin. The NAME says muon, so the muon pin is taken explicitly
+# rather than through the manifest, which would hand this stem proton.
+# Owner ruling 2026-08-24, bean `qou/ftuv`.
+MUON_Q0 = pin_value_for_anchor("muon")
 
 TARGETS = [
     "wenzl-y-lambda-h9.witness.json",
@@ -211,6 +218,15 @@ def main() -> int:
             doc["markov_convention"] = "D"
             doc["markov_parameter_symbolic"] = "q**3/(q**2 + 1)"
             doc["scriptFile"] = f"computations/{Path(__file__).name}"
+            # Provenance stamp (bean qou-4un2): this producer writes its
+            # witness directly, so nothing else records which script made
+            # it -- and a re-run of an unstamped producer DELETES the
+            # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+            from qou_substrate.witness import WitnessBuilder as _WB
+            import os as _os  # noqa: E402 -- provenance stamp
+            doc.setdefault("scriptFile", _os.path.basename(__file__))
+            _WB.stamp_staleness_metadata(
+                doc, script_path=__file__, engine=None, q0_anchor=False)
             path.write_text(json.dumps(doc, indent=2) + "\n")
     if args.check:
         print("\n--check: nothing written.")

@@ -92,7 +92,7 @@ def main() -> None:
     wb.set_audit_only("docs/audits/2026-08-01-tau-knot-discussion-review.md")
     wb.add_assertion(
         name="k2_target_value",
-        computed=float(targets[2]), expected=34.14, tolerance=0.05,
+        computed=targets[2], expected=34.14, tolerance=0.05,
         unit="hyperbolic volume",
         source="(m_tau/m_e)*hbar_q^2 at canonical q0.")
     wb.add_assertion(
@@ -104,7 +104,7 @@ def main() -> None:
                 "25-knot low-crossing census cannot contain it."))
     wb.add_assertion(
         name="k3_target_value",
-        computed=float(targets[3]), expected=3.383, tolerance=0.005,
+        computed=targets[3], expected=3.383, tolerance=0.005,
         unit="hyperbolic volume",
         source="(m_tau/m_e)*hbar_q^3 at canonical q0.")
     wb.add_assertion(

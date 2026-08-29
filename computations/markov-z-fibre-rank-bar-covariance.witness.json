@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T19:13:37.329194+00:00",
-  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
+  "computedAt": "2026-08-25T22:21:51.934739+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "checks_failed",
@@ -31,15 +31,15 @@
       "computed": 0,
       "expected": 0,
       "passed": true,
-      "source": "sympy exact"
+      "source": "sympy exact, counted over n = 1..8"
     }
   ],
   "allPassed": true,
-  "durationMs": 1264,
+  "durationMs": 1166,
   "computation": "markov-z-fibre-rank-bar-covariance",
   "scriptFile": "markov_z_fibre_rank_bar_covariance_probe.py",
-  "scriptHash": "47cacb3d249e",
-  "scriptCommitSha": "4945fae345f23d4eeeed130f7e9126f19e492edc",
+  "scriptHash": "4739a1ce448a",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,7 +51,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/markov_z_fibre_rank_bar_covariance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/markov_z_fibre_rank_bar_covariance_probe.py"
   },
   "description": "z*[N]_q = q^N makes the Markov-parameter convention and the fibre rank the same choice; bar(z_N) = q^(-2N) z_N shows no integer rank N >= 1 gives a bar-invariant z. Joins #4767 (z value) and #4766 (bean qou-rm47, binding fibre N).",
   "parameters": {

@@ -237,10 +237,10 @@ def main() -> int:
     #    series-truncation residuals — this is the genuine relation.
     w.add_assertion(
         "FALSIFICATION: ½(log Φ_q + log Φ_{q⁻¹}) is identically 0 (NOT Li_2^q)",
-        computed=float(max(mp.fabs(r["claim_sum_log_phi_sum_to_zero"]
+        computed=max(mp.fabs(r["claim_sum_log_phi_sum_to_zero"]
                                    if isinstance(r["claim_sum_log_phi_sum_to_zero"], (int, float))
                                    else mp.mpf(r["claim_sum_log_phi_sum_to_zero"]))
-                          for r in rows)),
+                          for r in rows),
         expected=0.0,
         tolerance=1e-40,
         unit="absolute",
@@ -252,7 +252,7 @@ def main() -> int:
     )
     w.add_assertion(
         "CORRECT identity: Li_2^q(z) = (h/2)(log Φ_{q⁻¹} - log Φ_q) holds",
-        computed=float(max_rel_diff_correct),
+        computed=max_rel_diff_correct,
         expected=0.0,
         tolerance=1e-4,  # series truncation at 60 dps
         unit="relative",

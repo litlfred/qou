@@ -8,11 +8,30 @@ specialisation
 
     s_λ  =  Q^{n(λ)} · ∏_{x ∈ λ} (1 − Q^r·Q^{c(x)}) / (1 − Q^{h(x)}),      Q = q².
 
-The corpus records `y_λ` only qualitatively, as *"sign-indefinite for n ≥ 4"*
-(`docs/audits/2026-05-19-weight-factor-audit.md` §W3).  This file upgrades that to a
-**combinatorial rule**, because `Mu3SlotExclusion.door_mechanism_dichotomy` makes the μ₃ door
-depend on exactly this sign: one of its two mechanisms is "negative weight on supermodular
-geometry", and without a rule for `sign(y_λ)` that mechanism has no budget.
+**Convention scope (added 2026-08-24).**  The premise below — that the corpus records `y_λ`
+only qualitatively as *"sign-indefinite for n ≥ 4"*
+(`docs/audits/2026-05-19-weight-factor-audit.md` §W3) — is a **convention-C** statement, and C
+was excised on 2026-08-09.  Under the production convention D there is nothing indefinite to
+resolve: `y_λ ≥ 0` on the two-row stratum and `y_λ = 0` identically for `ℓ(λ) ≥ 3`
+(`QOU.QBeta.TemperleyLiebTower`, sorry-free), measured zero-negative over `n = 4 … 12` at `q₀`.
+The content block `mass-theory/y-lambda-sign-pattern` withdrew the indefiniteness claim on
+2026-08-09; this file was not updated with it.
+
+The motivating clause below is affected the same way: `Mu3SlotExclusion.door_mechanism_dichotomy`
+does make the μ₃ door depend on `sign(y_λ)`, but under D its "negative weight on supermodular
+geometry" branch is **vacuous**, so that mechanism has no budget for the reason opposite to the
+one stated — not because the sign rule is unknown, but because the sign is known and never
+negative.
+
+**What survives, and why this file is kept.**  The combinatorial rule derived here is a
+statement about the Wenzl principal specialisation itself, not about which convention selects
+`z`, so the derivation stands as-is and remains the sharp form of the qualitative claim. Read it
+as characterising `sign(s_λ)` in general; do not read the motivation as a live μ₃-door opening.
+
+This file upgrades the qualitative record to a **combinatorial rule**, because
+`Mu3SlotExclusion.door_mechanism_dichotomy` makes the μ₃ door depend on exactly this sign: one of
+its two mechanisms is "negative weight on supermodular geometry", and without a rule for
+`sign(y_λ)` that mechanism has no budget.
 
 ## The derivation
 
@@ -33,15 +52,28 @@ The `Q^{n(λ)}` prefactor is positive and drops out.
 
 ## What this buys
 
-At `q₀` the threshold is `c* ≈ −2.5995`, so `P(λ)` counts cells of content `≤ −3`.  A cell of
-content `≤ −3` requires `≥ 4` rows, so **every `λ` with `ℓ(λ) ≤ 3` carries a positive weight**
-(`shallow_of_no_deep_cells`).  That is why `(8,1)` is positive — the case that refutes the
-naive "`ℓ`-parity" reading of the measured data.
+**Convention C (as recorded).**  At `q₀` under C the threshold is `c* ≈ −2.5995`, so `P(λ)`
+counts cells of content `≤ −3`.  A cell of content `≤ −3` requires `≥ 4` rows, so every `λ`
+with `ℓ(λ) ≤ 3` carries a positive weight (`shallow_of_no_deep_cells`).  That is why `(8,1)`
+is positive — the case that refutes the naive "`ℓ`-parity" reading of the measured data.
+Machine-verified on all 270 partitions for `n = 2..12`; smallest threshold margin `8.0e-2`,
+far from the `1e-12` degeneracy guard.
 
-Machine-verified on **all 270 partitions for n = 2..12**
-(`computations/deltalambda/ylambda_sign_content_threshold_probe.py`, witness
-`ylambda-sign-content-threshold.witness.json`; smallest threshold margin `8.0e-2`, far from
-the `1e-12` degeneracy guard).
+**Convention D: `hnd` is UNSATISFIABLE on the `ℓ(λ) ≥ 3` stratum, and this is prior to the
+`y_λ = 0` point made above.**  D pins `r = 2`, so `Q^r = Q²` and `c* = −log_Q(Q²) = −2`
+*exactly* — an attainable content, at row 3 column 1 of every diagram with `ℓ(λ) ≥ 3`.  There
+`Q^r·Q^{c} = Q²·Q^{−2} = 1` exactly, so the cell is neither above nor below the threshold and
+the smallest margin is **`0.0`, not merely small** (measured at every `n = 3..12`).  That is
+exactly the `hnd` hypothesis of `wenzl_sign` failing, which by that theorem's own docstring
+leaves the parity "genuinely undefined, not merely hard to prove".
+
+Nothing below is thereby refuted: every theorem here is generic in `Q` and `QR` and remains
+correct.  What fails under D is the *premise*, on that stratum — conditional-proved is not
+premise-established.  On the surviving `ℓ(λ) ≤ 2` stratum the rule is well-posed but carries
+no information: the minimum content is `−1` while a below-threshold cell needs `≤ −3`, so
+`P(λ) ≡ 0` and the predicted sign is the constant `+1`.  The rule's whole discriminating
+power required `ℓ(λ) ≥ 4`, precisely the stratum D annihilates.  Retired as a live rule and
+re-recorded in `ylambda-sign-content-threshold.witness.json` (bean `qou-ulxr`).
 
 ## Honest scope
 
@@ -197,9 +229,14 @@ theorem wenzl_sign {Q QR : ℝ} (hQ : 1 < Q) (nlam : ℕ)
   exact div_pos (mul_pos hQpos hnum) hden
 
 /-- **No deep cells ⇒ positive.**  If every cell sits above the threshold, `P(λ) = 0` and the
-weight is positive.  At `q₀` a below-threshold cell needs content `≤ −3`, hence `≥ 4` rows — so
-this is exactly the statement that every `ℓ(λ) ≤ 3` block carries a positive weight, `(8,1)`
-included. -/
+weight is positive.
+
+At `q₀` a below-threshold cell needs content `≤ −3`, hence `≥ 4` rows.  **Under convention C**
+that made this exactly the statement that every `ℓ(λ) ≤ 3` block carries a positive weight,
+`(8,1)` included.  **Under D read `ℓ(λ) ≤ 2`**: the `ℓ(λ) = 3` blocks are not positive but
+identically zero, and in any case they fail this theorem's own `hnd` hypothesis, since under D
+a cell of content `−2` sits *exactly* on the threshold.  The theorem itself is unchanged and
+generic — only which diagrams can satisfy its hypotheses moves with the convention. -/
 theorem shallow_of_no_deep_cells {Q QR : ℝ} (hQ : 1 < Q) (nlam : ℕ)
     (cells : Finset α) (val : α → ℝ) (hgt : α → ℕ)
     (hh : ∀ x ∈ cells, 1 ≤ hgt x) (hnd : ∀ x ∈ cells, QR * val x ≠ 1)

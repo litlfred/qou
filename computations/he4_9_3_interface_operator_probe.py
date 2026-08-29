@@ -17,12 +17,20 @@ from a_operator.a_operator_categorical import q0_mp
 from a_operator.a_operator_recursive import interface_blocks
 from lr_coefficients import partitions_of
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 def run_probe():
     dps = 50
     q = q0_mp(dps)
     q_str = mp.nstr(q, dps)
     h = q - 1/q
-    bridge_coef = -h / 2
+    bridge_coef = _pn_d(h)
 
     print("=== Option E PROBE 2: A=4 (9,3) Interface Operator ===", flush=True)
     print(f"Targeting ν = (2, 1) block of H_3(q) (Borromean h^4 trace coefficient)")

@@ -8,7 +8,37 @@ $$
 
 ## Setting
 
-The QOU mass identity at $A \geq 2$ contracts a per-interface averaging functional $\sigma_{pn}$ across the p-n boundary slice. The two production candidates are the uniform bar-invariant form and the Bring color-tube weighted form. Both satisfy bar-invariance and standard normalisation. Once we fix color-flavor compatibility, the averaging is uniquely determined.
+The QOU mass identity at $A \geq 2$ contracts a per-interface averaging functional $\sigma_{pn}$ across the p-n boundary slice. The two production candidates are the uniform bar-invariant form $z - h/2$ and the Bring color-tube weighted form $z - h(1/2 - \delta/4)$. Once we fix color-flavor compatibility, the averaging is uniquely determined **within the class satisfying (a)–(c)**.
+
+> **Scope of (a) — corrected.** An earlier version of this paragraph stated that
+> *both* candidates satisfy bar-invariance. Only the uniform form does. Writing
+> $\overline{\phantom{x}}$ for $q \mapsto q^{-1}$, the flavour split is
+> bar-mixed, $\overline{\delta} = -q^{2}\delta$, and
+>
+> $$
+>   \overline{\sigma_{pn}^{\,\mathrm{weighted}}} - \sigma_{pn}^{\,\mathrm{weighted}}
+>   \;=\; \frac{(q-1)^{5}(q+1)^{3}(q^{2}+1)}{12\,q^{5}}
+>   \;\neq\; 0
+>   \quad (q \neq 1),
+> $$
+>
+> about $1.67 \times 10^{-5}$ at the substrate anchor, whereas the uniform form
+> satisfies (a) exactly — it is the bar-symmetriser $\tfrac12(z + \overline{z})$
+> of the p-p factor, since $\overline{z} = z - h$
+> ([`prf:interface-knot-markov-z`](#prf:interface-knot-markov-z)).
+> Verified exactly in
+> [`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py).
+>
+> The Lean is unaffected: `pn_averaging_unique` carries `BarInvariant` as an
+> instance hypothesis and proves only the implication, so it is silent on which
+> candidate discharges it. What was wrong was restating the antecedent as
+> established for both — a conditional hypothesis reported as a settled fact.
+>
+> The consequence is one of **scope**, and is recorded rather than resolved: the
+> uniqueness statement covers the bar-invariant class, and the colour-weighted
+> convention lies outside its hypotheses. This does not say the colour weighting
+> is wrong, and it does not by itself bear on which convention should be
+> canonical.
 
 ### Derivation chain for the closed-form weight
 

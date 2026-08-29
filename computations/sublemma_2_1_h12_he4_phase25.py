@@ -38,18 +38,45 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def load_f1_cache() -> dict[tuple, complex]:
-    """Load F1's chi_q_at_q0 per λ ⊢ 12 from cached witness."""
+    """Load F1's per-λ⊢12 character from its cached witness.
+
+    The F1 witness was re-schema'd: the per-partition list moved from
+    ``per_partition_contributions`` (field ``chi_q_at_q0``, a raw float) to
+    ``per_block_ranked`` (field ``chi_lambda``, a drained string).  This loader
+    read only the old shape and reached the new witness through a
+    ``.get(..., [])`` default, so a schema mismatch was indistinguishable from
+    an empty cache: it returned ``{}`` and this producer went on to "verify"
+    0 of 77 partitions and assert ``0 == 0``.
+
+    Both shapes are read, newest first.  An empty result RAISES rather than
+    returning ``{}`` -- the swallow is what made the drift silent, and the
+    caller cannot tell "no such field" from "no such partitions" once the
+    default has been substituted.
+    """
     cache_path = _pb.witness_path("he4-canonical-tr-m-block-fingerprint.witness.json", HERE)
     if not cache_path.exists():
         raise FileNotFoundError(f"F1 cache not found at {cache_path}")
     d = json.loads(cache_path.read_text())
     data = d.get("data", {})
-    contribs = data.get("per_partition_contributions", [])
-    chi_a = {}
-    for c in contribs:
-        part = tuple(c["partition"])
-        chi = complex(c["chi_q_at_q0"], 0.0)
-        chi_a[part] = chi
+
+    chi_a: dict[tuple, complex] = {}
+    # Current shape.  chi_lambda is a _precision.fmt string; complex() parses
+    # it directly, and the value it carries is real (the character at q0).
+    for c in data.get("per_block_ranked", []):
+        chi_a[tuple(c["partition"])] = complex(float(c["chi_lambda"]), 0.0)
+    if not chi_a:
+        # Pre-#4619 shape.
+        for c in data.get("per_partition_contributions", []):
+            chi_a[tuple(c["partition"])] = complex(c["chi_q_at_q0"], 0.0)
+
+    if not chi_a:
+        raise SystemExit(
+            f"F1 cache at {cache_path} carries neither `per_block_ranked` nor "
+            f"`per_partition_contributions`; its data keys are "
+            f"{sorted(data)}. Path A would be empty and every assertion below "
+            f"would pass vacuously. Re-run the F1 producer, or teach this "
+            f"loader whichever field now holds the per-λ character."
+        )
     return chi_a
 
 
@@ -137,6 +164,24 @@ def main() -> int:
     print(f"  Total Path B compute: {t_total:.1f}s")
     print()
 
+    # GUARD: refuse a vacuous pass. The assertion below is n_pass == n_total,
+    # which is trivially TRUE when both are 0 -- and both are 0 whenever the F1
+    # cache is missing, because every target then hits the `lam not in chi_a`
+    # continue. Without this guard the producer wrote allPassed=true having
+    # verified nothing, describing itself as "Verified 0/0", and the only sign
+    # was two stdout lines disagreeing ("loaded 0 λ" then "Processing 8").
+    # Refusing here follows the repo's own idiom for a guard that must not be
+    # silently satisfiable (cf. low_isotope_mass_table refusing below its
+    # target precision).
+    if n_total == 0:
+        raise SystemExit(
+            f"REFUSING to emit a witness: 0 of {len(targets)} target "
+            f"partitions were verified, because Path A (the F1 chi_q_at_q0 "
+            f"cache) supplied {len(chi_a)} entries. The assertion "
+            f"n_pass == n_total would pass vacuously. Re-run the F1 producer "
+            f"so the cache exists, then re-run this."
+        )
+
     builder = (
         WitnessBuilder("sublemma-2-1-h12-he4-phase25-verify",
                        engine="numpy")
@@ -156,8 +201,22 @@ def main() -> int:
         .add_data("approach", "h12_branching_basis_phase25_f1_cache_reuse")
         .add_data("n_partitions_processed", n_total)
         .add_data("n_partitions_verified", n_pass)
-        .add_data("max_relative_residual", max_rel)
-        .add_data("path_b_compute_time_seconds", t_total)
+        # STRINGS, not raw floats: the raw-float64 ratchet flags both, and
+        # `path_b_compute_time_seconds` matches neither "dur" nor "elapsed",
+        # so the duration carve-out does not cover it (widening that mask is
+        # what the audit's own comment warns against -- cf. d8d3713f8).
+        #
+        # `max_relative_residual` is stringified but NOT laundered into
+        # apparent precision. It is a float64 quantity by construction: Path B
+        # runs in numpy complex128 (`path_b_chi_h12`) and Path A comes from the
+        # F1 complex cache, so this residual cannot resolve below ~1e-16 no
+        # matter what is true. Per AGENTS.md, do not report it as "exact" or
+        # "to N digits". What the 1e-9 pass threshold DOES establish is
+        # structural: a wrong branching decomposition would miss by ~1e0, not
+        # by 1e-15, so the check is meaningful about the DECOMPOSITION while
+        # saying nothing about the last several digits of either character.
+        .add_data("max_relative_residual", repr(max_rel))
+        .add_data("path_b_compute_time_seconds", f"{t_total:.2f}")
         .add_data("max_dim_filter",
                   args.max_dim if not args.all else None)
         .add_data("chi_path_a_from_f1", {

@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "b_1^2 = a_1*a_1' + 1 = 0"
     }
   ],

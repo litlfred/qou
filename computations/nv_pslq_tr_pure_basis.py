@@ -188,6 +188,13 @@ def main() -> int:
     print("  remains the path forward.")
 
     out = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
         "computation": "nv-pslq-tr-pure-basis",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
@@ -239,6 +246,15 @@ def main() -> int:
         ),
     }
     out_path = Path(__file__).parent / "nv-pslq-tr-pure-basis.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWrote: {out_path}")
     return 0

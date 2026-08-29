@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T17:07:38.043167+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:05:24.499227+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "kappa_computed",
-      "computed": 0.1875,
-      "expected": -0.915965594177219,
+      "computed": "0.1875",
+      "expected": "-0.915965594177219015054603514932384110774149374281672134266498119621763",
       "passed": true,
       "tolerance": 1.831931188354438,
       "unit": "h² coefficient",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 6,
   "computation": "yekutieli-borromean-h2-extraction",
   "scriptFile": "yekutieli_borromean_h2_extraction.py",
-  "scriptHash": "0e2d9fea6433",
-  "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
+  "scriptHash": "6ba6e7a91808",
+  "scriptCommitSha": "d9983c61a820bf19da55b45b157b07e447d5ccf1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/yekutieli_borromean_h2_extraction.py"
+    ],
+    "reproduce": "python3 -u computations/yekutieli_borromean_h2_extraction.py"
   },
   "description": "Computes the h² Taylor coefficient of the Borromean braid Markov trace tr_M((σ₁σ₂⁻¹)³, q) via the Jones polynomial of the Borromean rings, V(t) = −t⁻³ + 3t⁻² − 2t⁻¹ + 4 − 2t + 3t² − t³ at t = q². The h² coefficient κ is compared against the Yekutieli conjecture's claimed −G (Catalan constant = Vol(𝓑₃)/8).",
   "contentBlock": "conj:lambda-scale-bring-bloch-identity",

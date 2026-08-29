@@ -83,6 +83,47 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 - 1 ppt → N=5
 - **1 ppQ → N=7**
 
+## Resummation arm — CLOSED (the D-ladder is convergent)
+
+> **The bar-odd `D(ũ)` resummation front is closed, and its negative results are
+> not open levers.** `D(ũ)` is **convergent** — radius
+> `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero** at
+> `q*_ρ ≈ 1.48989`, the real root > 1 of an irreducible degree-12 factor of the
+> `Δ_net` numerator; `κ = 0`. So there is no instanton action, no Borel-plane
+> singularity to locate, no Stokes constant to extract and no Écalle/`Φ_b`
+> resummation to perform for this object. Correction:
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md);
+> registry row **KC22**. The large-order law is fixed with no free parameters by
+> the single logarithmic branch point,
+> `d_k = −(1/(2h*_ρ))·ρ^{−k}/k·(1 + O(1/k))`, `h*_ρ = 0.818706471352`.
+>
+> **Tier the 11 probe witnesses of that arm as scope-(b) closed / ill-posed**,
+> not scope-(a) negative. Their recorded failures — *"gate fails at every `s`"*,
+> *"length-blocked at k=41"*, *"UNDECIDABLE at k=21"*, *"estimator gap
+> persists"* — are the estimators detecting that **there is nothing to
+> estimate**, not obstructions to be overcome by more terms:
+>
+> `qbeta-dladder-` **ecalle-acceleration** · **ecalle-phib-resummation** ·
+> **single-instanton-extraction** · **fibre-branch-stokes-ambiguity** ·
+> **fibre-two-action** · **jackson-qborel-acceleration** ·
+> **qborel-leroy-resummation** · **parity-split-resummation** ·
+> **parity-odd-singularity-even-order** · **barodd-borel-pade-laplace** ·
+> **parity-adjudication**
+>
+> **Do not delete them** — they are the evidence the arm was pursued properly
+> and exhausted, and their input (the exact `d_k`, `k ≤ 21`) is live.
+> **Do not widen this to the neighbours.** The 6 arithmetic witnesses
+> (non-holonomicity, the 2-adic parity grading and its Lean anchors) are
+> **unaffected**; `qbeta-dladder-extension-singularity`'s exact k=31 extension
+> **stands and is reusable** (only its "divergence-class `C` drift" reading is
+> the spurious `1/log k` decay); and the deformed-meridian / odd-channel-Stokes
+> witnesses are a **different object**, not assessed either way.
+> **`Φ_b` itself is genuinely resurgent — only `D(ũ)` is not**, so a blanket
+> sweep of the family would be the mirror of the original error.
+>
+> Full classification of all 29 (A unaffected / B ill-posed / C partial /
+> D not assessed): audit §6. Tracked on bean `qou-4wq6`.
+
 ## Open probes (current queue)
 
 > **Refuted-class map (method-level).** Before opening a new derivation probe,
@@ -1093,6 +1134,14 @@ is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
 corpus sweep finds zero remaining shift-divide offenders. Audit:
 `2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
 integer Stokes constant claimed; no tier change.
+
+> **⚠ Premise corrected 2026-08-09 — read the entry below with this.** Its
+> results are stated "conditional on the triple-confirmed divergence class",
+> and the ladder is **convergent** (`κ = 0`). The gate failure is therefore not
+> a finite-`k` shadow to be resolved by longer ladders, and the `A ≈ 0.236`
+> observation is **not** a lever awaiting ORD-63 confirmation. What survives:
+> the sorry-free 2-adic transport invariant, and the measurements as data. See
+> §"Resummation arm — CLOSED" at the top of this ledger.
 
 **2026-07-17 (PR #3818, `claude/dladder-qborel-acceleration-2026-07-17`) —
 q-Borel acceleration of the D-ladder: transport invariant proved, fixed-base
@@ -3606,3 +3655,47 @@ carried the duration as a float; this branch serialized it as the string
 wall-clock field drifting on every re-run. On rebase this branch's version of
 that one fix was **dropped in favour of main's** (convergent fix, superseded);
 the leak is drained either way.
+
+## 2026-08-26 — coordination: PR #5864 (ε admissibility) vs PR #5337 (two-row cap)
+
+**Scope map.** Two open PRs are on `qou-cds1` simultaneously. This is deliberate
+overlap under the measured-research-overlap rule, and the angles are distinct.
+
+| PR | branch | angle |
+|---|---|---|
+| [#5337](https://github.com/litlfred/qou/pull/5337) | `claude/qbeta-f-coordinate-2026-08-19` | fold the Wenzl two-row cap in as a **correction** — what does the capped decomposition *produce*? |
+| [#5864](https://github.com/litlfred/qou/pull/5864) | `claude/qbeta-decay-channel-algebra-2026-08-26` | which functional is **admissible** at all — what is *permitted*? |
+
+Different questions; neither subsumes the other. No file overlap: #5864 touches
+`computations/qbeta/`, `QOU/QBeta/`, `docs/audits/`, and one `observations/`
+block; #5337's scope is the F-coordinate bridge and the cap fold-in.
+
+**What #5864 hands #5337**, posted as intent on that PR
+([comment](https://github.com/litlfred/qou/pull/5337#issuecomment-5431694623)):
+
+- the per-block resolution `2α(z) = Σ_λ [a_λ − y_λ(z)] χ^λ(Δ) + net(d_C)`, which
+  is the step #5337's body names as *"NOT folded in yet"*, done for every `z`;
+- `χ^(2,1)(Δ) = 0` identically, so Δ's block support is `{(3), (1³)}` in every
+  convention;
+- under D the cap leaves the `(1³)` block **uncancelled** (`a_(1³) ≠ 0` against
+  `y_(1³) = 0`) — a sign flip and 7.8×, not a cancellation;
+- the two-row condition has **two** roots, `z = q` and `z = z_D`, and at `z = q`
+  the Markov trace **is** the augmentation — so the cap does not single out `z_D`;
+- the phase's z-free floor `net(d_C) = −h·y_(2,1)(1)`, bar-even, extending the
+  `fcffeee29` prune.
+
+**The disagreement worth recording** (not resolved, not split): on #5864's
+reading the cap cannot supply the correction, because the object being corrected
+is not admissible under the canonical convention in the first place. #5337 tests
+a different proposition and may still return something. Flagged to that PR
+rather than asserted over it.
+
+**#5857 — adjacent, not overlapping.** Its `schurElement` prefactor fix is a Lean
+correction; #5864's weights come from the Ocneanu recursion and were cross-checked
+against `y_lambda_su_n`. Posted a corroboration of its §1 "the Lean drifted from
+the Python" direction-of-drift call at n=3
+([comment](https://github.com/litlfred/qou/pull/5857#issuecomment-5431696870)),
+explicitly not a claim about the telescope or `n(λ)` vs `contentSum`.
+
+**Not commented on:** #5352 (TL-arc Lean infra) — plausibly relevant to #5864's TL
+result, but not read, and the skill's "don't post on every sibling" applies.

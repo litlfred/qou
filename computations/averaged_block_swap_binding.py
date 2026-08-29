@@ -47,7 +47,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
@@ -64,8 +64,20 @@ N_STRANDS = 12
 
 
 def averaged_factors(Z: int, N: int, include_inter: bool):
-    """Atom braid word as averaged Hecke factors (c, d, gen_1based)."""
-    return [(float(c), float(d), g + 1)
+    """Atom braid word as averaged Hecke factors (c_str, d_str, gen_1based).
+
+    DECIMAL STRINGS, not floats — `chi_q_atomic_mpfr` takes them that way
+    precisely to avoid the lossy f64 boundary. Measured on the 4He word (47
+    factors, 6 distinct (c, d) pairs), the `float()` this used to do loses:
+
+        d = -0.10453014939781965771...   ->  2.738e-18
+        d = -0.20906029879563931543...   ->  5.476e-18
+        d = -0.10445824776972628901...   ->  2.238e-18
+
+    (c = 1 and d = 0 are exact, so three of the six were lossless — which is
+    why this reads as harmless until measured.)
+    """
+    return [(mp.nstr(mp.mpf(str(c)), 50), mp.nstr(mp.mpf(str(d)), 50), g + 1)
             for (c, d, g) in atom_braid_word_3A(Z, N, include_inter=include_inter)]
 
 
@@ -75,7 +87,7 @@ def _trM_worker(args):
     Loads y_λ + pyhecke_native inside the worker so nothing non-picklable crosses
     the process boundary; returns the trace as a decimal string.
     """
-    key, factors, q_f = args
+    key, factors, q_str = args
     import mpmath as _mp
     _mp.mp.dps = 50
     import pyhecke_native as _p
@@ -83,26 +95,54 @@ def _trM_worker(args):
     from tr_m_wenzl_bridge_mpfr import _load_y_lambda as _ly
     yt = _ly(N_STRANDS, None)
     total = _mp.mpf(0)
+    # Skip terms whose y_λ is structurally zero under convention D.
+    #
+    # The guard used to be `if y is None`, which only skips a MISSING entry.
+    # Under convention D, `y_λ = 0` for ℓ(λ) > 2 — but the loaded table carries
+    # those zeros as ROUND-OFF, not as exact 0, so `.get()` returns a tiny
+    # nonzero and every one of them was computed in full.
+    #
+    # MEASURED on the H₁₂ table (77 partitions of 12):
+    #
+    #     7 shapes   |y| ~ 1e-3    <- ℓ(λ) ≤ 2, the ones that contribute
+    #    70 shapes   |y| ≤ 1e-73   <- ℓ(λ) > 2, convention-D zeros as noise
+    #
+    # `count(|y| > 1e-40) == count(rows ≤ 2) == 7`. A 70-order gap, so the
+    # threshold is not a tuned parameter — anything in (1e-73, 1e-3) picks out
+    # the same 7 shapes.
+    #
+    # This was the ENTIRE cost. The skipped shapes are the expensive ones:
+    # (5,3,2,1,1) is dim 7700 and 120 s in MPFR by itself, against a y_λ of
+    # 1e-77, while the 7 that matter top out at dim 132. With them in, the
+    # MPFR run exceeded 3300 s and was killed. So this is NOT an MPFR
+    # affordability problem — the producer was doing convention-C-shaped work
+    # (every row contributes) against convention-D weights.
+    Y_VANISHING = _mp.mpf("1e-40")
     for sh in _parts(N_STRANDS):
         st = tuple(sh)
         y = yt.get(st)
-        if y is None:
+        if y is None or abs(_mp.mpf(str(y))) < Y_VANISHING:
             continue
-        total += _mp.mpf(str(y)) * _mp.mpf(str(_p.chi_q_atomic(st, factors, q_f)))
-    return key, _mp.nstr(total, 40)
+        # `chi_q_atomic_mpfr`, not `chi_q_atomic`. The f64 entry returns a
+        # double, and `_mp.mpf(str(<double>))` then lifted it back into a
+        # 50-dps accumulator — the laundering idiom, on a value with ~15 real
+        # digits. The MPFR entry returns a decimal string at `dps`.
+        chi = _p.chi_q_atomic_mpfr(st, factors, q_str, 50)
+        total += _mp.mpf(str(y)) * _mp.mpf(chi)
+    return key, _mp.nstr(total, 50)
 
 
 def main() -> int:
     t0 = time.monotonic()
     Z, N = 2, 2
-    q_f = float(mp.mpf(Q_50_DIGIT_STR))
+    q_str = Q_50_DIGIT_STR
     n = N_STRANDS
 
     sigma = {  # pure-σ block-swap factors (c=1, d=0)
         "id": [],
-        "swap_p": [(1.0, 0.0, g + 1) for g in block_swap_word(0, 3, n)],
-        "swap_n": [(1.0, 0.0, g + 1) for g in block_swap_word(6, 3, n)],
-        "swap_pn": [(1.0, 0.0, g + 1) for g in
+        "swap_p": [("1", "0", g + 1) for g in block_swap_word(0, 3, n)],
+        "swap_n": [("1", "0", g + 1) for g in block_swap_word(6, 3, n)],
+        "swap_pn": [("1", "0", g + 1) for g in
                     (block_swap_word(0, 3, n) + block_swap_word(6, 3, n))],
     }
     w_atom = averaged_factors(Z, N, include_inter=True)
@@ -111,8 +151,8 @@ def main() -> int:
     # 8 independent tr_M sweeps (atom/free × 4 σ) → Pool over them.
     jobs = []
     for name, beta in sigma.items():
-        jobs.append((("atom", name), w_atom + beta, q_f))
-        jobs.append((("free", name), w_free + beta, q_f))
+        jobs.append((("atom", name), w_atom + beta, q_str))
+        jobs.append((("free", name), w_free + beta, q_str))
     nproc = min(len(jobs), os.cpu_count() or 1)
     print(f" computing {len(jobs)} tr_M sweeps on {nproc} processes …", flush=True)
     import multiprocessing as mp_
@@ -174,14 +214,14 @@ def main() -> int:
         "parallelized over the 8 independent tr_M sweeps."
     )
     w.add_parameter("q0", Q_50_DIGIT_STR)
-    w.add_data("atom_traces", {k: float(v) for k, v in at.items()})
-    w.add_data("free_traces", {k: float(v) for k, v in fr.items()})
-    w.add_data("S_atom", float(S_atom))
-    w.add_data("S_free", float(S_free))
-    w.add_data("S_free_scalar_frobenius", float(S_free_scalar))
-    w.add_data("exact_over_scalar_ratio", float(exact_over_scalar))
-    w.add_data("binding_signal_log_Sfree_over_Satom", float(signal))
-    w.add_data("signonly_signal_task1", -0.357903)
+    w.add_data("atom_traces", {k: fmt(v) for k, v in at.items()})
+    w.add_data("free_traces", {k: fmt(v) for k, v in fr.items()})
+    w.add_data("S_atom", fmt(S_atom))
+    w.add_data("S_free", fmt(S_free))
+    w.add_data("S_free_scalar_frobenius", fmt(S_free_scalar))
+    w.add_data("exact_over_scalar_ratio", fmt(exact_over_scalar))
+    w.add_data("binding_signal_log_Sfree_over_Satom", fmt(signal))
+    w.add_data("signonly_signal_task1", fmt(mp.mpf("-0.357903")))
     w.add_data("open_question",
                "whether the plain ¼Σβ_σ average is the q-correct q-Young "
                "projection, or whether q-weighted symmetrizers shift the number.")
@@ -191,7 +231,14 @@ def main() -> int:
     tr_canon = mp.mpf(str(r["tr_M_atom"]).strip("()").split("+")[0])
     w.add_assertion(
         name="id_trace_matches_binding_canonical",
-        computed=float(abs(at["id"] - tr_canon)), expected=0.0, tolerance=1e-9,
+        # `fmt`, not `float`: this assertion is the one that MISSED a 65.6 %
+        # error. The committed witness carried `computed` from a 2026-06-11
+        # run and reported "passed" at 1e-9 while its own `atom_traces.id`
+        # (0.0554) disagreed with the live `binding_canonical` (0.1610). A
+        # stored assertion is only re-evaluated when the producer runs, so it
+        # certifies the run that wrote it, never the file you are reading.
+        computed=fmt(abs(at["id"] - tr_canon)),
+        expected=fmt(mp.mpf(0)), tolerance=fmt(mp.mpf("1e-30")),
         source="tr_M(W_atom·id) via chi_q_atomic == binding_canonical's averaged "
                "⁴He tr_M_atom — validates the averaged path + y_λ weighting.",
     )

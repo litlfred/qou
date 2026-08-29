@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "5₂ raw J'_3: Rust tl-cable-mpfr = live Python TL engine at 2 real q, 1e-25"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B₄(q*), B₅(q*) = committed witness values at 1e-10 (string-limited)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.35328794556218e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "source": "B₆(q*) full-MPFR = main's independently-written dense-f64 tl_cable engine within its f64 noise floor (~1e-8; two-route convergence)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|fr| = q^{17.5} exactly (θ_{V₆} ribbon magnitude) from the writhe-1 unknot at 2 q points; sign measured and recorded, not assumed"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 2.4036555190926643e-41,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "4₁ 5-cable J'_6 (framing-free) = trusted p=−1 tower"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "B₆(4₁;q*) = 0 — mirror/bar control at N=6"
     },
     {
@@ -57,7 +57,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1"
     }
   ],

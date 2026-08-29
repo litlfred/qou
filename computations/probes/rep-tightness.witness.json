@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:52:34.017355+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-29T07:57:32.427711+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "second_moment_exact_identities",
@@ -17,7 +17,7 @@
       "computed": "9.4182e-32",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "∫ s² dK = N^bal_q(3) for BOTH explicit kernels (atomic Jackson ⊛ theta via the separable Mellin factors [2]_p!·q^{1/2}; a.c. Jackson ⊛ log-normal via the exact Gaussian moment e^{2μ̂+2σ²} = q^{1/2}) at every sampled q (test, proton, muon, 1+1e-1, 1+1e-2, 1+1e-3), rel < 1e−30 (60 dps), and every value ≤ the exact monotone bound C₂ = max N^bal(3) = 2.00831604419 — the uniformly-bounded-second-moment hypothesis of the Lean tightness theorem is verified on the constructed family"
     },
     {
@@ -41,12 +41,12 @@
       "computed": "7.5368e-49",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "N^bal_q(3) − 2 = (√q−1)²/√q exactly (rel < 1e−30 vs the closed form) and strictly decreasing to 0 along q = 1+10^{−k}, k = 1..6 — the k = 2 moment-convergence hypothesis (Tendsto → 2!) that the Lean theorem isTightMeasureSet_of_tendsto_integral_sq converts into tightness via Tendsto.bddAbove_range + Markov"
     }
   ],
   "allPassed": true,
-  "durationMs": 47579,
+  "durationMs": 53773,
   "computation": "rep-tightness",
   "scriptFile": "rep_tightness_probe.py",
   "scriptHash": "49b9d33e06b7",
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "0aaae20308e9cca7"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -90,10 +90,10 @@
         "m2_ac": "2.00272236386053329050782"
       },
       "muon": {
-        "q": "1.10997859556",
-        "N_bal_3": "2.002722364462701994524582",
-        "m2_atomic": "2.002722364462701994524582",
-        "m2_ac": "2.002722364462701994524582"
+        "q": "1.10997859564",
+        "N_bal_3": "2.002722364466717924590711",
+        "m2_atomic": "2.002722364466717924590711",
+        "m2_ac": "2.002722364466717924590711"
       },
       "1+1e-1": {
         "q": "1.1",
@@ -247,7 +247,7 @@
       "1e-6": "2.49999750000234e-13"
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
     },
@@ -269,11 +269,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   }

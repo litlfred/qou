@@ -42,11 +42,15 @@ import sympy as sp  # noqa: E402
 
 from young_qdim import q, qint, qfact, S  # noqa: E402
 
-try:
-    from qou_substrate import constants as C  # noqa: E402
-    Q0 = str(C.Q_MP) if hasattr(C, "Q_MP") else str(C.Q)
-except Exception:
-    Q0 = "1.10997859555733471"  # muon-q0 fallback (computations layer canonical)
+# This read qou_substrate.constants.Q_MP/Q DIRECTLY, bypassing q_parameter --
+# so this producer's `ideal_muon` listing in q0_anchor_manifest.json could not
+# be honoured, and a re-run emitted the PROTON pin (a silent -11.54 ppb layer
+# move) while the file's own fallback comment says it wants muon. The fallback
+# additionally froze the superseded value A. Route through q_parameter, which
+# resolves the anchor from the manifest, so the declaration is EFFECTIVE and
+# the value follows if the declaration later changes. Bean qou-3f7a.
+from q_parameter import q_at  # noqa: E402
+Q0 = str(q_at(50))
 
 MMAX = 10
 print(f"[1/4] Computing binding period S(0..{MMAX}) (symbolic in q) ...", flush=True)

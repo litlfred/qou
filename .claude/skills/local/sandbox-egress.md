@@ -15,13 +15,80 @@ unreachable.** The sandbox proxy allowlists a few big hosts; most
 project-specific data hosts are blocked. Before declaring an external
 resource unavailable, walk the route table below.
 
-## What is open (verified, 2026-08-15)
+## ALWAYS TRY github.com FIRST — and probe it correctly
+
+**github.com is open for git.** Before concluding anything else, try the clone.
+A public repo needs no attachment and no credentials: the session's git proxy
+serves anonymous reads directly.
+
+```sh
+GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 \
+    https://github.com/<owner>/<repo> /home/user/<owner>/<repo>
+```
+
+Give it a **generous timeout (~10 min)**. A large shallow pack takes 5–10
+minutes through the proxy and `git index-pack` looks stalled while unpacking.
+Do not interrupt it, do not re-run it, and do not run two clones at once. The
+`GIT_LFS_SKIP_SMUDGE=1` prefix is load-bearing: the anonymous lane does not
+serve LFS objects, so an unprefixed clone of an LFS repo ABORTS at the smudge
+filter. With it, LFS files arrive as pointer stubs — say so if the real
+contents are needed.
+
+### 🛑 DO NOT probe with `curl https://github.com` — it returns 400 and means nothing
+
+Measured 2026-08-29, in a session where cloning github.com **worked**:
+
+| probe | result | what it means |
+|---|---|---|
+| `curl https://github.com` | **HTTP 400** | the PROXY refusing a pathless request — `{"message": "Request path could not be canonicalized."}`. **NOT a block.** |
+| `curl https://github.com/<owner>/<repo>` | HTTP 404 | web UI is not served; says nothing about git |
+| `curl https://raw.githubusercontent.com/...` | HTTP 404 | not served on this lane despite the row below |
+| `curl https://github.com/<o>/<r>/info/refs?service=git-upload-pack` | **HTTP 200** | **the git protocol works — this is the correct probe** |
+| `curl https://api.github.com` | **HTTP 200** | API host reachable |
+
+An agent that probes the bare host, sees 400, and reports "github.com is
+blocked" is wrong, and the clone it declined would have succeeded. Probe with
+`/info/refs?service=git-upload-pack`, or simply attempt the clone — the clone
+is cheap to try and is the thing you actually want.
+
+`git ls-remote` is also a valid probe, with the caveat in route 1 below.
+
+## If github.com is genuinely unreachable — escalate with instructions, do not just report failure
+
+Only after the `/info/refs` probe or an actual clone attempt fails. Do not
+escalate off a bare-host 400.
+
+Tell the author (Yoon) **what to open and how**, not merely that something is
+blocked. Include, concretely:
+
+1. **The exact host and path** that failed, and the probe you ran verbatim.
+2. **The observed result** — status code and body, or the git error.
+3. **`curl -sS "$HTTPS_PROXY/__agentproxy/status"`** output, which reports
+   `enabled`, `selective`, `toolScoped` and the `noProxy` list. `selective:
+   true` means an allowlist is in force and the host must be added to it;
+   `selective: false` means the block is elsewhere and the allowlist is not
+   the lever.
+4. **The remedy, named**: for a Claude Code on the web session the network
+   policy is chosen when the ENVIRONMENT is created, so opening a host means
+   editing that environment's network policy — not a per-session setting an
+   agent can change. Point at
+   <https://code.claude.com/docs/en/claude-code-on-the-web> and say which
+   policy the work needs.
+5. **What you did instead**, so the escalation is not a dead end: the route
+   table below, and what you got working without the blocked host.
+
+Never disable TLS verification, never unset `HTTPS_PROXY`, and never propose
+either as the fix.
+
+## What is open (verified, 2026-08-15; github rows re-measured 2026-08-29)
 
 | Channel | Status | Evidence |
 |---|---|---|
-| `github.com` git clone / ls-remote / push | **OPEN** | mathlib4 shallow clone (AGENTS.md fallback); `3-manifolds/SnapPy` clone this session |
+| `github.com` git clone / ls-remote / fetch | **OPEN** | mathlib4 shallow clone (AGENTS.md fallback); `3-manifolds/SnapPy`; `litlfred/folio-assistant` shallow clone 2026-08-29 (17 MB, `2d63a7a`) |
+| `github.com` **push** to an UNATTACHED repo | **NOT available** | the anonymous lane is read-only; use `add_repo` with `access:"push"` to attach with credentials |
+| `api.github.com` | **OPEN** (HTTP 200) | re-measured 2026-08-29 |
 | PyPI (`pip install`) | **OPEN** | `pip install snappy` (3.3.2 + 30 deps) worked first try |
-| `raw.githubusercontent.com` | usually open (rides the github allowance) | — |
+| `raw.githubusercontent.com` | **404 on this lane** — do NOT rely on it | re-measured 2026-08-29; the old "usually open" row was wrong. Clone the repo instead. |
 | WebSearch (MCP) | OPEN (out-of-band) | used to locate repos |
 
 ## What is blocked (and does NOT mean "give up")
@@ -61,6 +128,17 @@ resource unavailable, walk the route table below.
 
 ## History
 
+- 2026-08-29: the author asked that agents be told to try github.com egress
+  and, when it is shut, to hand the author instructions rather than a dead
+  end. Measuring it to write the rule turned up the misleading probe: bare
+  `curl https://github.com` returns **400** in a session where cloning works,
+  because the proxy will not canonicalize a pathless request. An agent using
+  that as its reachability test concludes "blocked" and declines a clone that
+  would have succeeded — the same shape as the `add_repo` tool's own warning
+  not to pre-check with curl, and as `precision-gates.sh --changed` returning
+  a green-looking `EXIT=0` on a clean checkout when it has actually skipped.
+  Also corrected: `raw.githubusercontent.com` is **404** on this lane, not
+  "usually open" as the table claimed since 2026-08-15.
 - 2026-08-15: ptolemy DB 403 nearly ended the D3 connection-count
   hardening as "needs open env"; the owner's hint ("egress github.com
   clone repos") led to route 1 → route 2: the data was in the installed

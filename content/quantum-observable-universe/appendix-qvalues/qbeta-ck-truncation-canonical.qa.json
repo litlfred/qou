@@ -732,7 +732,7 @@
           "in_degree": 0,
           "cone_size": 130,
           "depth": 35,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -950,7 +950,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -963,7 +963,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -994,7 +994,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1019,8 +1019,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "The headline witness assertion N3_beats_100x_experimental_target has computed:38.61 expected:6.02 passed:false — N=3 does NOT beat the 7.8 ppb target under the current anchor; '+6.02' is a frozen pre-re-pin number.",
-        "rebuttal": "partial — the .md never asserts N=3 beats the target (only the tiering), so the stale number does not propagate into a false narrative claim; but the block ships a stale/false witness assertion as backing.",
+        "referee_argument": "The headline witness assertion N3_beats_100x_experimental_target has computed:38.61 expected:6.02 passed:false \u2014 N=3 does NOT beat the 7.8 ppb target under the current anchor; '+6.02' is a frozen pre-re-pin number.",
+        "rebuttal": "partial \u2014 the .md never asserts N=3 beats the target (only the tiering), so the stale number does not propagate into a false narrative claim; but the block ships a stale/false witness assertion as backing.",
         "evidence": [
           {
             "text": "qbeta-ck-truncation-order-analysis.witness.json:9-12,82 'passed:false'"
@@ -1039,7 +1039,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1052,7 +1052,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1074,8 +1074,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "Post-2026-06-04 'near-match' understates the corpus position — the universal-fibre reading is falsified, not merely unproved; the block (2026-05-31) predates and ignores this.",
-        "rebuttal": "partial — block does not claim c_3 is a derivation; 'near-match, anchor-dependent, no predictive content' is directionally correct (honest-tiering carve-out); defect is staleness, not fabrication.",
+        "referee_argument": "Post-2026-06-04 'near-match' understates the corpus position \u2014 the universal-fibre reading is falsified, not merely unproved; the block (2026-05-31) predates and ignores this.",
+        "rebuttal": "partial \u2014 block does not claim c_3 is a derivation; 'near-match, anchor-dependent, no predictive content' is directionally correct (honest-tiering carve-out); defect is staleness, not fabrication.",
         "evidence": [
           {
             "text": "qbeta-ck-truncation-canonical.md:25-32; ck-dk-canonical-registry.md:65"
@@ -1094,7 +1094,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1107,7 +1107,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1130,7 +1130,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": ".ts see: points only to the superseded 2026-05-31 framing doc (header: 'SUPERSEDED for status'); neither .md nor .ts references ck-dk-canonical-registry.md.",
-        "rebuttal": "minor — the superseded doc still chains forward to the registry, but the manifest's auditable pointer leads to a doc explicitly marked superseded.",
+        "rebuttal": "minor \u2014 the superseded doc still chains forward to the registry, but the manifest's auditable pointer leads to a doc explicitly marked superseded.",
         "evidence": [
           {
             "text": "qbeta-ck-truncation-canonical.ts see:"
@@ -1149,7 +1149,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1162,7 +1162,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1185,7 +1185,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Lean sibling vacuity check.",
-        "rebuttal": "rebutted — Lean states the real proposition with sorry + -- Ref:, no library shadow, honest §3b conjecture class; the c_2=-1 leg is genuinely proved (q-beta-c-2-eq-neg-one-structural.lean).",
+        "rebuttal": "rebutted \u2014 Lean states the real proposition with sorry + -- Ref:, no library shadow, honest \u00a73b conjecture class; the c_2=-1 leg is genuinely proved (q-beta-c-2-eq-neg-one-structural.lean).",
         "evidence": [
           {
             "text": "qbeta-ck-truncation-canonical.lean"
@@ -1203,7 +1203,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1216,7 +1216,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1246,11 +1246,12 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-07-07T14:26:55.528600Z",
-        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "evidence": "The block presents c_3 = -2 = J_Hopf(q=1) as a respectable 'structural near-match' while the corpus's authoritative 2026-06-04 registry (post-dating this block) has since REFUTED every real-q c_3 form as a single-anchor coincidence, and the block cites neither the registry nor the falsification."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1263,7 +1264,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1278,7 +1279,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1293,7 +1294,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1308,7 +1309,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1323,7 +1324,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1338,7 +1339,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1356,7 +1357,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1393,7 +1394,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1406,7 +1407,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1440,7 +1441,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1453,7 +1454,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1487,7 +1488,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1500,7 +1501,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1534,7 +1535,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1547,7 +1548,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1580,7 +1581,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1593,7 +1594,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1627,7 +1628,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1640,7 +1641,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1674,7 +1675,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1687,7 +1688,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1721,7 +1722,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:26.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1734,7 +1735,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1789,7 +1790,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1804,7 +1805,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1819,7 +1820,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1834,7 +1835,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1849,7 +1850,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Exceptional epistemic hygiene. Rigorously segregates exact Taylor coefficients from near-matches and circularly calibrated terms. Sets clear conjecture constraints for Habiro elements.",
         "reviewed_at": "2026-07-08T08:58:44.000Z",
         "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
         "reviewer": {
@@ -1924,7 +1925,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
         "reviewed_at": "2026-08-08T00:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1934,7 +1935,7 @@
       },
       {
         "result": "pass",
-        "notes": "Re-reviewed under the added scope, which splits workplan uses of \"gate\" from mathematical ones. \"Target precision, not a canonicity gate, determines $N$\" is now \"... not a canonicity criterion ...\". The truncation-order inequality and the 2.07-digits-per-rung estimate are unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Re-reviewed under the added scope, which splits workplan uses of \"gate\" from mathematical ones. \"Target precision, not a canonicity gate, determines $N$\" is now \"... not a canonicity criterion ...\". The truncation-order inequality and the 2.07-digits-per-rung estimate are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2035,7 +2036,7 @@
         "reviewed_at": "2026-08-15T10:31:00.957Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "2 negation-contrast construction(s): \", not an exact identity.\"; \", not a prediction.\" — state the positive claim directly"
+        "evidence": "2 negation-contrast construction(s): \", not an exact identity.\"; \", not a prediction.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -2187,7 +2188,7 @@
         },
         "reviewed_at": "2026-08-19T21:22:58.161Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
-        "evidence": "Closes on 'higher rungs serve as a calibration record, not a prediction' — a factual status statement about the open conjecture, not a manufactured quotable."
+        "evidence": "Closes on 'higher rungs serve as a calibration record, not a prediction' \u2014 a factual status statement about the open conjecture, not a manufactured quotable."
       }
     ],
     "trap-meta-commentary": [
@@ -2222,7 +2223,7 @@
         "reviewed_at": "2026-08-19T21:22:58.220Z",
         "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
         "severity": "major",
-        "evidence": "Opener narrated the block's own act ('We set out the epistemic status ...'), with a dangling anaphor ('It designates' after a 'We' subject — sweep damage), and paragraph 5 opened by narrating the conjecture just stated ('This conjecture outlines the requirement for closure.').",
+        "evidence": "Opener narrated the block's own act ('We set out the epistemic status ...'), with a dangling anaphor ('It designates' after a 'We' subject \u2014 sweep damage), and paragraph 5 opened by narrating the conjecture just stated ('This conjecture outlines the requirement for closure.').",
         "notes": "FIXED: opener -> 'The Q_beta truncation coefficients differ in epistemic status. The tiering below records, for each rung, whether it is proved, near-matched, or calibration-anchored, so that its open status is explicit and checkable.'; deleted 'This conjecture outlines the requirement for closure.'"
       },
       {
@@ -2399,5 +2400,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:52:06.384Z"
+  "updated_at": "2026-08-19T21:52:06.384Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

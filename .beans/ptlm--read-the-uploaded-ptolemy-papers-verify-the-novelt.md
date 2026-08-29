@@ -9,9 +9,9 @@ tags:
     - hyperbolic-volume
     - gluing-equations
     - ptolemy
-parent: m015
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T06:00:00Z
+updated_at: 2026-08-10T16:22:07Z
+parent: m015
 ---
 
 Two primary sources were uploaded to the repo at
@@ -255,6 +255,67 @@ Use **both**, for different purposes:
 
 And G5 makes them mutually checking, which is worth more than either alone.
 
+
+---
+
+## Reach measured (2026-08-10, PR #4925) — the ceiling was one step on one class
+
+**Route 76 DOES reach 14 tetrahedra.** 10_100's geometric obstruction class solves in
+**67.0s** with `modStd` + `finduni`, and its degree-14 eliminant factor generates the
+**same field** as Route 75's independently derived shape field (disc `75015471937637449`,
+`nfisisom` isomorphic). Gate G5 had that two-route agreement at 2–4 tets; it now holds
+at 14, where LLL had been the only route shown to work.
+
+So the earlier entry in this bean — "Ptolemy+Singular times out at 14 tetrahedra",
+"strictly less far-reaching" — is **superseded**. Two attribution errors produced it:
+
+1. the 600s wall is the primary **decomposition**, not the Gröbner basis (GB alone lands
+   dim 0 in 87.6s);
+2. the wall is **class-specific** — `minAssGTZ` finished class 0 in 312s, *inside* the
+   original 600s budget. The earlier run timed out on a **class** and recorded a
+   **manifold**.
+
+Route 76 is slower on 10_100 (67.0s vs Route 75's 7.2s) but not less far-reaching.
+
+Three traps pinned so they do not recur:
+
+- **`I = sat(I,J)[1]` silently mangles the ideal** — reports dim 3 for a dim-0 ideal,
+  reading as "the saturated formulation is worse" rather than as a scripting bug.
+- **`dp` in Singular already IS degree-reverse-lex** — this bean's recorded next step
+  "try a degrevlex ring" was the configuration that timed out. `lp` is the alternative.
+- **Saturating in Singular is a pessimisation here**, 1014s vs 102s. Measured negative.
+
+Selection step is real: `finduni` returns the minimal polynomial on the *whole* variety,
+so the geometric degree-14 factor arrives with a companion and must be picked out. Every
+10_100 eliminant split into exactly two factors with exactly one of degree 14 — unambiguous
+for this manifold, not guaranteed in general.
+
+**Still open:** 11a1 (17 tets), where Route 75's identification fails.
+
+
+### Reach question CLOSED (2026-08-10, PR #4925)
+
+**10₁₀₀ (14 tets): reached, 67.0s**, geometric class, `modStd`+`finduni`; degree-14
+eliminant factor generates Route 75's field (disc `75015471937637449`). Selection of that
+factor is independent of Route 75 — 14 is the only degree common to all 15 eliminants.
+
+**11a1 (17 tets): not reached** — three timeouts on an idle machine (2700s geometric,
+1800s class 0, 3600s GB-alone). Scope-(a).
+
+**The bottleneck MIGRATES**, which is the substantive finding:
+
+| | Gröbner basis | decomposition | wall |
+|---|---|---|---|
+| 10₁₀₀ (14 tets) | 87.6s | 312s minAss | **decomposition** |
+| 11a1 (17 tets) | **TIMEOUT > 3600s** | never reached | **Gröbner basis** |
+
+So 11a1 is not "10₁₀₀ but harder" — they fail at different steps. The eliminant
+strategies that won at 14 tets attack the decomposition and therefore **cannot** help at
+17. Any route past 11a1 must make the GB cheaper (ordering, ideal presentation,
+algorithm), not the decomposition. A longer `finduni` budget is the wrong direction.
+
+Confound found and removed mid-run: a background `lake build` (SessionStart hook) was
+competing during both original 11a1 timeouts. Re-measured clean — negative holds.
 ---
 **2026-08-10 — `finduni` is the right tool, and the 600s "ceiling" was mostly my choice
 of algorithm.**
@@ -371,3 +432,21 @@ different minimal polynomials, matching discriminants) makes them mutually check
 - **An empty log from a detached job is evidence of nothing.** Not that it died, not that
   it succeeded. `ps` answers in one call what I guessed at twice — and the job was alive
   with 21 minutes of CPU while I was writing that it had been killed.
+
+### Control run: modStd is the lever, and that is now measured (2026-08-29)
+
+The reach correction landed on main, but it rested on two runs differing in more than one
+variable. The control closes that: **same container, same manifold, same geometric class,
+same ideal form, differing ONLY in modStd** —
+
+| configuration | result |
+|---|---|
+| `modStd` + `finduni` | **42.0s**, dim 0, 15 eliminants |
+| plain `finduni` | **TIMEOUT at 1800s** |
+
+So the `finduni` timeout the sibling probe recorded **reproduces**. That measurement was
+right; only the conclusion drawn from it was wrong. `modStd` is the whole lever, and this
+is now established by a controlled comparison rather than asserted.
+
+Both rows are in `qbeta-route76-strategy-matrix.witness.json`. The 67.0s figure is kept
+beside the 42.0s one — same configuration under load — as the conservative bound.

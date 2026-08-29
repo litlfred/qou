@@ -8,3 +8,14 @@ on:
 jobs:
   publish:
     uses: litlfred/folio-assistant/.github/workflows/publish.yml@main
+    permissions:
+      contents: write
+      pull-requests: write
+      packages: read
+    with:
+      # The TeX builder image is a FOLIO asset, not a platform one: its TeX
+      # package set is chosen for this paper and it carries this repo's
+      # CC-BY-4.0 licence. It is built here by `paper-builder-image.yml` from
+      # `.github/docker/Dockerfile.paper-builder`, and passed in so the
+      # platform's publish pipeline stays folio-agnostic.
+      builder_image: ghcr.io/litlfred/qou-paper-builder:latest

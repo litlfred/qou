@@ -262,8 +262,8 @@ def main() -> int:
         target = mp.mpf(r["target_tr_M"])
         w.add_assertion(
             f"cumulative_at_max_grade_matches_target[{atom}]",
-            computed=float(last_cum),
-            expected=float(target),
+            computed=last_cum,
+            expected=target,
             tolerance=1e-10,
         )
 

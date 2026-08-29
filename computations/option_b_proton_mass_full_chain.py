@@ -73,6 +73,7 @@ from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV
 from lp_dual_solver import (
+    provenance,
     solve_psd_operator_selection_sdp,
     SdpDualResult,
 )
@@ -332,7 +333,12 @@ def sdp_select_knot_operator(
     Returns the full dual contract per AGENTS.md (y0_star / y_star /
     active_set / primal_obj / dual_obj / duality_gap).
     """
-    res: SdpDualResult = solve_psd_operator_selection_sdp(t_costs, G_gram, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res: SdpDualResult = solve_psd_operator_selection_sdp(t_costs, G_gram, n_target, backend="clarabel")
     if not res.feasible:
         return {
             "site": site_label,
@@ -370,6 +376,9 @@ def sdp_select_knot_operator(
         "duality_gap": float(res.duality_gap),
         "eigenvalues": [float(e) for e in res.eigenvalues],
         "strong_duality_holds": bool(res.duality_gap < 1e-6),
+        # Solver, precision, and the full-precision decimals behind every
+        # `float(...)` cast above — those casts are what dropped them.
+        **provenance(res),
     }
 
 

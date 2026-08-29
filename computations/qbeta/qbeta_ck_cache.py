@@ -69,7 +69,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 
 
-def main() -> int:
+def main(convention: str = "D") -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-ck-cache", engine="mpmath")
 
@@ -82,7 +82,62 @@ def main() -> int:
     b_sq = (h ** 2 + 3) / (h ** 2 + 4)
     b = sqrt(b_sq)
     u = b * hbar_q ** 2
-    z = q**3 / (q**2 + 1)
+
+    # ── Markov-convention guard (bean `qou-ckwt`) ────────────────────────────
+    # This line read `z = q**3 / (q**2 + 1)` -- convention D -- while the
+    # committed witness carried the convention-C value, so the producer did not
+    # reproduce its own output. Measured: c_3 -2.0693425771 (committed, C) vs
+    # -974.4318877 (this code, D), and the DERIVED-tier Q_N2 error 1278.6 ppb
+    # vs 602433.2 ppb -- a 471x regression in the framework's headline derived
+    # Q_beta, one `python3 qbeta_ck_cache.py` away from landing.
+    #
+    # Substituting z_D into the C-frame eigenphase `alpha = (z-1)h/2` is a move
+    # the corpus has PROVED invalid, twice and independently:
+    #   QOU.QBeta.decayLadder_zC_threeRow_ne_zero  -- at z_C the third
+    #     Wedderburn row is forcibly present for every substrate s = sqrt(q) > 1,
+    #     so "keep the C ladder" and "the two-row forcing applies" are
+    #     incompatible;
+    #   QOU.QBeta.eigenphase_bar_defect_of_fullBar -- feeding a full-bar
+    #     parameter into the C eigenphase leaves a bar defect of exactly h^2,
+    #     Z-INDEPENDENTLY, so no member of the family repairs it.
+    # Both sorry-free. The D-frame ladder must be RE-DERIVED, not re-evaluated
+    # (bean `qou-cds1`), and until it is there is NO D-frame Q_beta prediction:
+    # -974 is a sensitivity measurement, not a value, and must not be wired.
+    #
+    # So this producer REFUSES rather than emit. It is the same class as
+    # `low_isotope_mass_table` (refuses below target_dps) and
+    # `qbeta_braid_nf_sdp_offset_probe` (refuses rather than "publish laundered
+    # numbers") -- a guard working correctly, explaining itself on STDOUT
+    # because a stderr-only harness never sees it.
+    if convention == "D":
+        print("=" * 72)
+        print(" REFUSING TO RUN -- convention D has no derived c_k ladder")
+        print("=" * 72)
+        print("  The ladder eigenphase alpha = (z-1)h/2 is CONVENTION-C-derived.")
+        print("  Substituting z_D is proved invalid:")
+        print("    QOU.QBeta.decayLadder_zC_threeRow_ne_zero")
+        print("    QOU.QBeta.eigenphase_bar_defect_of_fullBar   (defect h^2, z-independent)")
+        print("  Running anyway would emit c_3 = -974.43 and a derived-tier Q_N2")
+        print("  error of 602433 ppb (vs the committed 1278.6 ppb) -- a 471x")
+        print("  regression, and -974 is a SENSITIVITY MEASUREMENT, not a value.")
+        print()
+        print("  To re-derive the D-frame ladder: bean `qou-cds1`. That is research,")
+        print("  not a z-swap. To reproduce the historical convention-C artifact")
+        print("  byte-for-byte (it is load-bearing -- 10 consumers, incl. the L2")
+        print("  dashboard `per_observable_100x_status.py`), run:")
+        print()
+        print("      python3 qbeta_ck_cache.py --historical-convention-C")
+        print()
+        raise SystemExit(2)
+
+    if convention != "C":
+        raise ValueError(f"unknown Markov convention {convention!r}; expected 'C' or 'D'")
+
+    # Convention C, reached ONLY via the explicit --historical-convention-C
+    # flag. C was excised by owner ruling (2026-08-09, re-affirmed 2026-08-15
+    # and 2026-08-26); this path exists solely so the committed witness stays
+    # machine-reproducible, and it is never the default.
+    z = sqrt(q) / (1 + q)
     alpha = (z - 1) * h / 2
 
     # Substrate quantities
@@ -204,6 +259,24 @@ def main() -> int:
         "Taylor precision. See deep audit "
         "docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md."
     )
+    # DECLARE THE FRAME. Measured 2026-08-26: of 278 c_k-bearing witnesses under
+    # computations/qbeta/, ZERO declared a Markov convention -- which is how this
+    # producer drifted to D while its witness stayed C without anything noticing.
+    # A witness that does not say which convention it was computed in cannot be
+    # audited, only guessed at.
+    wb.add_data("markov_convention", convention)
+    wb.add_data("markov_convention_note",
+                "Convention C (z = sqrt(q)/(1+q)), reached only via "
+                "--historical-convention-C. C was excised by owner ruling "
+                "(2026-08-09, re-affirmed 2026-08-15 and 2026-08-26); this "
+                "artifact is retained because 10 consumers read it, including "
+                "the L2 dashboard per_observable_100x_status.py. The DEFAULT "
+                "(convention D) path REFUSES: no D-frame ladder has been "
+                "derived, so there is no D-frame c_k to emit (bean qou-cds1). "
+                "Substituting z_D into alpha = (z-1)h/2 is proved invalid by "
+                "QOU.QBeta.decayLadder_zC_threeRow_ne_zero and "
+                "QOU.QBeta.eigenphase_bar_defect_of_fullBar."
+                if convention == "C" else "convention D")
     wb.add_data("q_0", mp.nstr(q, 50))
     wb.add_data("u_substrate", mp.nstr(u, 50))
     wb.add_data("Q_codata", str(Q_BETA_MEV))
@@ -247,4 +320,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    import sys as _sys
+    _conv = "C" if "--historical-convention-C" in _sys.argv else "D"
+    raise SystemExit(main(_conv))

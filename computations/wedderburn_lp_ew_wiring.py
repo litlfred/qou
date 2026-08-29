@@ -187,7 +187,12 @@ def _mp_trace(M, dim: int):
         acc += M[i, i]
     return acc
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
+from lp_dual_solver import (  # noqa: E402
+    PROVENANCE_STR_FIELDS,
+    provenance,
+    solve_operator_selection_lp,
+)
 from partition_utils import hook_lengths  # noqa: E402
 
 
@@ -702,6 +707,11 @@ def main() -> int:
             "y0_star": ra.get("y0_star_str") or fmt(ra["y0_star"]),
             "n_active": len(ra.get("active_set", [])),
             "n_target": fmt(ntarget_a),
+            # `ra` is already a to_dict(); carry its provenance + `*_str`
+            # through the formatting above rather than dropping them.
+            **{k: v for k, v in ra.items()
+               if k in ("backend", "precision_bits")
+               or k in PROVENANCE_STR_FIELDS},
         })
         print(f"    {atom_name:<12} (Z={Za}, N={Na}): pairs={npairs_a}, "
               f"primal={mp.nstr(mp.mpf(str(ra['primal_obj'])), 8)}, "
@@ -897,6 +907,8 @@ def main() -> int:
         # see this one at all: it is a CONTAINER-API consumer of the
         # ndarray -> list change. Both categories move when a type widens.
         "supply_matrix_shape": [len(G), len(G[0]) if G else 0],
+        # Solver, precision, and the full-precision decimals.
+        **provenance(res),
         "atom_sweep": lp_results_per_atom,
     })
 
@@ -914,6 +926,8 @@ def main() -> int:
     w.add_data("y_star", res_dict.get("y_star_str")
                or [fmt(y) for y in res_dict.get("y_star", [])])
     w.add_data("active_set", list(res_dict.get("active_set", [])))
+    for _k, _v in provenance(res).items():
+        w.add_data(_k, _v)
 
     # (B) Alt-Δ_I Weinberg probe. Drop the `_*_mp` working twins — they exist
     # only so ordering and the verdict thresholds compare mpf against mpf; the

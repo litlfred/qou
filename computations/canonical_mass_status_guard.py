@@ -186,6 +186,27 @@ PY_EXCLUDED_DIR_PARTS = ("probes", "audits", "sweeps")
 #: files may go stale unwatched, and that is preferable to the guard being
 #: ignored for noise.
 PY_EXCLUDED_NAME_PREFIXES = ("audit_", "probe_", "sweep_")
+#: PREFIX ONLY, DELIBERATELY — do not add the SUFFIX forms (bean `qou-omiu`,
+#: measured 2026-08-24). This repo names overwhelmingly by suffix, so the
+#: asymmetry looks like an oversight and has been reported as one: 57 files carry
+#: `probe_`/`audit_`/`sweep_` as a prefix, while 210 top-level files carry those
+#: words as a suffix, and across the full recursive scan surface 742 of the 2790
+#: SCANNED files are suffix-class — 26.6 % of everything this guard looks at.
+#:
+#: Mirroring the prefixes into suffixes was measured and DECLINED. Re-running the
+#: guard with both `PY_EXCLUDED_DIR_PARTS` and `PY_EXCLUDED_NAME_PREFIXES`
+#: neutralised surfaces 11 hits, and every one is in an already-excluded location
+#: (`audit_delta_S_chain.py`, four files under `probes/`, one under `sweeps/`).
+#: ZERO are suffix-named files in the scanned surface. So the existing exclusions
+#: are load-bearing — they suppress 11 genuine would-be false positives — while a
+#: suffix rule would drop a quarter of the scan surface to prevent none.
+#:
+#: Note the detail that settles it: several of those hits DO end in `_probe.py`
+#: (`..._q_locality_probe.py`), and they are already excluded BY DIRECTORY. A
+#: suffix rule adds nothing for them; it would only blind the top-level files,
+#: which cite nothing. Consistency of naming is not a reason to blind a guard.
+#:
+#: `_test.py` is separately never a candidate: a real unit test SHOULD be guarded.
 
 #: Markers that, in a docstring's SUMMARY, declare the epistemic scope of
 #: everything below it. Deliberately NOT the whole `NEGATED` set: a summary can

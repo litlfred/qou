@@ -125,7 +125,7 @@ def main() -> int:
         .add_data("per_N_results", results)
         .add_assertion(
             name="cl3_full_orbit_sum_closed_form",
-            computed=float(max_full_residue),
+            computed=max_full_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over N ∈ {3,5,7,9,11} of |Σ Cl_3 − "
@@ -138,7 +138,7 @@ def main() -> int:
         )
         .add_assertion(
             name="cl3_half_orbit_sum_closed_form_odd_N",
-            computed=float(max_half_residue),
+            computed=max_half_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over N ∈ {3,5,7,9,11} of |Σ_{k=1..(N-1)/2} "

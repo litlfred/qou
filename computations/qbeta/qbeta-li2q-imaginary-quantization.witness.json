@@ -1,32 +1,32 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T18:05:13.756820+00:00",
-  "commitSha": "d1a18070528e95e7aba9ef1407e792ba6c401eb6",
+  "computedAt": "2026-08-29T11:36:32.349404+00:00",
+  "commitSha": "d2e6d7fbc450c46335a8aa285b6382c50381a4fc",
   "assertions": [
     {
       "name": "im_li2q_is_z_independent_above_q0",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Im Li_2^q(z) is identical (spread < 1e-12) for all z>q₀ — it is the +i0 arc residue π·Res, independent of the upper limit z. Resolves the PR #1657 reality gate: the additive imaginary constant cancels in the m_e-normalised ratio."
     },
     {
       "name": "im_equals_pi_residue",
-      "computed": 6.226747840562556e-09,
+      "computed": "0.000000006226747840562555678041520168824005312235021108430924157215291085397952",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im Li_2^q(z>q₀) = π·Res to converging precision — the imaginary part is exactly the simple-pole residue of the integrand at u=q₀."
     }
   ],
   "allPassed": true,
-  "durationMs": 146560,
+  "durationMs": 128405,
   "computation": "qbeta-li2q-imaginary-quantization",
   "scriptFile": "qbeta_li2q_imaginary_quantization.py",
-  "scriptHash": "b8d9bb5630c0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6a184ec0b9eb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_li2q_imaginary_quantization.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_li2q_imaginary_quantization.py"
   },
   "description": "Resolve the reality gate of PR #1657 (convergence-safe V̂ tower): the imaginary part of the +i0 analytically continued Li_2^q(z) for z>q₀ is a z-INDEPENDENT constant π·Res (Res = residue of the integrand −ln_q(1−u)/u at the simple pole u=q₀), verified to 15 digits. So Im(tower) is quantised in units of π·Res and cancels in the m_e-normalised ratio / p/n difference — the observable mass is REAL, the Im is a fibre-level branch-cut artifact. Structural counterpart of the PR #1622 ζ_4 modular pole (residue ∓i/2). Builds on PR #1657's li_2_q_continued; no duplication, no fit, no MeV claim.",
   "contentBlock": "prop:mass-endomorphism-tower",

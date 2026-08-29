@@ -182,18 +182,28 @@ def main() -> int:
         "chirality-topology-binding", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(HERE.parent),
-    ).save({"q0Anchor": "independent",
+    ).save({"q0Anchor": "proton",
          "q0AnchorReason": (
-            'Reads no substrate value. PROVED by running this producer'
-            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
-            'witness: the only non-ephemeral leaves that differ are'
-            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
-            'byte-identical, so the pin changes the label and nothing else.'
-            'Its previous `muon` label was therefore a false claim that'
-            'this producer computed at that anchor. `independent` is the'
-            'honest disposition; a q0_anchor_manifest entry would be the'
-            'WRONG fix, promoting a false claim into a declared one. Bean'
-            'qou-o922, class (ii).'
+            'Experimental (proton) pin, the standing default. Q0 = Q_MP, '
+            'imported transitively via hecke_channel_binding_probe, and Q_MP '
+            'DOES track QOU_Q0_ANCHOR. '
+            'CORRECTED 2026-08-26 (bean qou-1c4y). This previously declared '
+            '`independent`, on the stated ground that running under '
+            'QOU_Q0_ANCHOR=muon and =proton and diffing the witness showed '
+            '"the only non-ephemeral leaves that differ are q0Anchor and '
+            'q0Value THEMSELVES -- every substantive field is byte-identical". '
+            'That experiment was re-run and REFUTES the claim: 43 '
+            'non-ephemeral leaves differ, among them /E0_MeV and every entry '
+            'of /channel_values_at_q0 for pp, nn and pn. Those are physics '
+            'fields, not labels, so `independent` was false and the committed '
+            'witness held the MUON value for q0. '
+            'The CONCLUSION is unaffected: Pauli-complete is the best model '
+            'under both anchors and the RMS values move by ~1e-8 relative, '
+            'consistent with the 11.5 ppb muon-proton separation -- a '
+            'correctness/hygiene re-pin, not a results-changing one, exactly '
+            'as qou-1c4y predicts for this class. '
+            'The earlier `muon` label was indeed a false claim; the fix is '
+            'the honest pin, not a claim of independence.'
          )})
     print(f"\n  witness: {out}")
     return 0

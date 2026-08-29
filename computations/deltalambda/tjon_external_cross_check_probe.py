@@ -121,7 +121,21 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-set_compute_dps(30)
+DPS = 30
+set_compute_dps(DPS)
+
+
+def sfmt(v):
+    """`fmt` pinned to THIS probe's compute precision.
+
+    Same defect as the GAP-10 producer this reads, one level down: bare `fmt`
+    serialises at the corpus OUTPUT_DPS (60 decimals) regardless of `mp.dps`,
+    and this probe computes at 30 -- inverting the corpus design of compute
+    ABOVE serialisation. Its inputs now carry 30 honest digits; padding them
+    back out to 60 here would re-introduce downstream exactly the noise the
+    producer fix removed. Bean `qou-k6b3`.
+    """
+    return fmt(v, dps=DPS)
 
 AME_PATH = REPO / "library" / "mass_1.mas20.txt"
 GAP10_WITNESS = HERE / "gap10-tjon-correlation.witness.json"
@@ -288,11 +302,11 @@ def main() -> int:
         ratio43 = lad["4"] / lad["3"]
         op_mu = moments(lad["2"], lad["3"], lad["4"])
         ladders[name] = {
-            "ladder": {a: fmt(lad[a]) for a in ("2", "3", "4")},
-            "ratio_M4_over_M3": fmt(ratio43),
-            "mu": {"2": fmt(op_mu[0]), "3": fmt(op_mu[1]), "4": fmt(op_mu[2])},
-            "gap_to_universal": fmt(UNIVERSAL_B4_OVER_B3 / ratio43),
-            "gap_to_nature": fmt(nat_ratio / ratio43),
+            "ladder": {a: sfmt(lad[a]) for a in ("2", "3", "4")},
+            "ratio_M4_over_M3": sfmt(ratio43),
+            "mu": {"2": sfmt(op_mu[0]), "3": sfmt(op_mu[1]), "4": sfmt(op_mu[2])},
+            "gap_to_universal": sfmt(UNIVERSAL_B4_OVER_B3 / ratio43),
+            "gap_to_nature": sfmt(nat_ratio / ratio43),
             "_r43": ratio43,
         }
         print(f"      {name}")
@@ -359,28 +373,28 @@ def main() -> int:
         "ame2020": {
             "source": str(AME_PATH.relative_to(REPO)),
             "source_sha256": ame_sha,
-            "binding_MeV": {k: fmt(v) for k, v in B.items()},
-            "ratio_3H_over_2H_derived": fmt(r3_derived),
-            "ratio_4He_over_2H_derived_raw": fmt(r4_derived_raw),
-            "literal_rho_strong": {str(a): fmt(RHO_STRONG_LITERAL[a]) for a in (2, 3, 4)},
-            "literal_3_relative_error": fmt(r3_rel),
-            "literal_4_implied_B_MeV": fmt(b4_implied),
-            "literal_4_implied_coulomb_MeV": fmt(coulomb_implied),
+            "binding_MeV": {k: sfmt(v) for k, v in B.items()},
+            "ratio_3H_over_2H_derived": sfmt(r3_derived),
+            "ratio_4He_over_2H_derived_raw": sfmt(r4_derived_raw),
+            "literal_rho_strong": {str(a): sfmt(RHO_STRONG_LITERAL[a]) for a in (2, 3, 4)},
+            "literal_3_relative_error": sfmt(r3_rel),
+            "literal_4_implied_B_MeV": sfmt(b4_implied),
+            "literal_4_implied_coulomb_MeV": sfmt(coulomb_implied),
             "coulomb_inside_platter_band": coulomb_ok,
         },
         "external_targets": {
-            "universal_B4_over_B3": fmt(UNIVERSAL_B4_OVER_B3),
+            "universal_B4_over_B3": sfmt(UNIVERSAL_B4_OVER_B3),
             "universal_source": "[hammer2007fourbody] §III.B, nucl-th/0610105",
-            "platter_B_alpha_exp_MeV": fmt(PLATTER_B_ALPHA_EXP),
-            "platter_B_alpha_LO_at_MeV": fmt(PLATTER_B_ALPHA_LO_AT),
-            "platter_B_alpha_LO_Bd_MeV": fmt(PLATTER_B_ALPHA_LO_BD),
+            "platter_B_alpha_exp_MeV": sfmt(PLATTER_B_ALPHA_EXP),
+            "platter_B_alpha_LO_at_MeV": sfmt(PLATTER_B_ALPHA_LO_AT),
+            "platter_B_alpha_LO_Bd_MeV": sfmt(PLATTER_B_ALPHA_LO_BD),
             "platter_source": "[platter2005tjon] p.5, nucl-th/0409040",
         },
         "moments": {
-            "nature": {"2": fmt(nat_mu[0]), "3": fmt(nat_mu[1]), "4": fmt(nat_mu[2])},
-            "universal": {"2": fmt(uni_mu[0]), "3": fmt(uni_mu[1]), "4": fmt(uni_mu[2])},
-            "universal_over_nature_mu4": fmt(uni_mu[2] / nat_mu[2]),
-            "baseline_mu4_zero_ratio": fmt(baseline_ratio),
+            "nature": {"2": sfmt(nat_mu[0]), "3": sfmt(nat_mu[1]), "4": sfmt(nat_mu[2])},
+            "universal": {"2": sfmt(uni_mu[0]), "3": sfmt(uni_mu[1]), "4": sfmt(uni_mu[2])},
+            "universal_over_nature_mu4": sfmt(uni_mu[2] / nat_mu[2]),
+            "baseline_mu4_zero_ratio": sfmt(baseline_ratio),
         },
         "operator": ladders,
         "gap10_witness_scriptHash": w_hash,

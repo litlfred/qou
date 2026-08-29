@@ -1,0 +1,207 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0405258v2",
+ "source": {
+  "file": "0405258v2.pdf",
+  "sha256": "dbd6bf5a94deebaf152abfa7f11ee13eb42f2fd13671bfa7cc466d2fdcacae0b",
+  "bytes": 313443,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0405258",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Jun 2005"
+  },
+  "doi": null,
+  "title": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+  "authors_raw": "JAMES A. MINGO (\u2217), PIOTR \u015aNIADY (\u2021), AND ROLAND SPEICHER (\u2217)(\u2020)",
+  "title_lines": [
+   "SECOND ORDER FREENESS AND FLUCTUATIONS",
+   "OF RANDOM MATRICES:",
+   "II. UNITARY RANDOM MATRICES"
+  ],
+  "abstract": "We extend the relation between random matrices and free probability theory from the level of expectations to the level of \ufb02uctuations. We show how the concept of \u201csecond order freenes s\u201d, which was introduced in Part I, allows one to understand global \ufb02uctuations of Haar distributed unitary random matrices. In par- ticular, independence between the unitary ensemble and another ensemble goes in the large N limit over into asymptotic second order freeness. Two important consequences of our general th eory are: (i) we obtain a natural generalization of a theorem of Diaconis and Shahshahani to the case of several independent unitary mat ri- ces; (ii) we can show that global \ufb02uctuations in unitarily invariant multi-matrix models are not universal.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181105055003-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The lattice of partitions",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Permutations",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "A triangle inequality",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Haar distributed unitary random matrices and the Weingarten function",
+   "page": 6,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Second order freeness",
+   "page": 7,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic second order freeness for unitary random matrices",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Failure of Universality for multi-matrix models",
+   "page": 27,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4417,
+   "n_words": 721
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-the-lattice-of-partitions",
+   "number": "2.1",
+   "title": "The lattice of partitions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2173,
+   "n_words": 510
+  },
+  {
+   "id": "sec-003-22-permutations",
+   "number": "2.2",
+   "title": "Permutations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2638,
+   "n_words": 501
+  },
+  {
+   "id": "sec-004-23-a-triangle-inequality",
+   "number": "2.3",
+   "title": "A triangle inequality",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1453,
+   "n_words": 360
+  },
+  {
+   "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
+   "number": "2.4",
+   "title": "Haar distributed unitary random matrices and the Weingarten function",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3126,
+   "n_words": 585
+  },
+  {
+   "id": "sec-006-25-second-order-freeness",
+   "number": "2.5",
+   "title": "Second order freeness",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 4379,
+   "n_words": 1020
+  },
+  {
+   "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
+   "number": "3",
+   "title": "Asymptotic second order freeness for unitary random matrices",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 30,
+   "n_chars": 37348,
+   "n_words": 8261
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3113,
+   "n_words": 465
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 9,
+  "chars_total": 58647
+ }
+}

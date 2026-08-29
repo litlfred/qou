@@ -177,7 +177,14 @@ for n in [2, 3, 4]:
 # Save witness
 out_path = Path(__file__).parent / "y-lambda-cyclotomic-factor.witness.json"
 with open(out_path, "w") as fp:
-    json.dump({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "computation": "y-lambda-cyclotomic-factor",
         "description": (
             "Factor y_λ closed forms over Q in r = q^{1/2} to identify "
@@ -193,5 +200,9 @@ with open(out_path, "w") as fp:
         # only raw float64 in the witness — an exact zero that nonetheless
         # tripped the raw-float64 ratchet.
         "truncation_eps": "0",
-    }, fp, indent=2, default=str)
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+    json.dump(_prov_payload, fp, indent=2, default=str)
 print(f"Witness: {out_path}")

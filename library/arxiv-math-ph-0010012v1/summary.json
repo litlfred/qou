@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-ph-0010012v1",
+ "source_sha256": "cd6eca5ccb81ff90",
+ "brief": "From random polynomials to symplectic geometry Steve Zelditch — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry.",
+ "extended": "**From random polynomials to symplectic geometry Steve Zelditch**\n\n7 pp, 9 sections.\n\n**Abstract.** We review some recent results on random polynomials and their generalizations in complex and symplectic geometry. The main theme is the universality of statistics of zeros and critical points of (generalized) polynomials of degree N on length scales of order D √ N (complex case), resp. D N (real case).\n\n**Outline.** 1 Introduction; 2 Mathematical Tools; 2 (|u|2+|v|2){1 +; 2 J m−2; 2 (|u −v|) + · · · ,; 3 Distribution of zeros and critical points; 1 (zp, 0; zp′, 0) ,; 4 Quantum ergodicity and random waves; References",
+ "tokens": {
+  "brief": 44,
+  "extended": 155
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-mathematical-tools",
+   "title": "Mathematical Tools",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-u2v21",
+   "title": "(|u|2+|v|2){1 +",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-2-j-m2",
+   "title": "J m−2",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-2-u-v",
+   "title": "(|u −v|) + · · · ,",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-3-distribution-of-zeros-and-critical-points",
+   "title": "Distribution of zeros and critical points",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-1-zp-0-zp-0",
+   "title": "(zp, 0; zp′, 0) ,",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-4-quantum-ergodicity-and-random-waves",
+   "title": "Quantum ergodicity and random waves",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "7-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

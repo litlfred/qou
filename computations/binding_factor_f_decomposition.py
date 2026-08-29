@@ -134,7 +134,7 @@ def main() -> int:
         "derived; not fittable from 4 points — open Barrier-1."))
     wb.add_assertion(
         "deuteron_f_is_unity",
-        computed=float(rows[0]["f_AME_extracted"]), expected=1.0,
+        computed=rows[0]["f_AME_extracted"], expected=1.0,
         tolerance=0.01,
         source="B(D) = m_e·8G·Δtr → f(D)=1 (Borromean volume, +0.19%)")
     wb.save()

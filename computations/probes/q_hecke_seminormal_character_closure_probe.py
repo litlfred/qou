@@ -50,7 +50,7 @@ import sympy as sp  # noqa: E402
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from markov_weights_symbolic import y_lambda_symbolic  # noqa: E402
 from markov_trace_recursive import markov_trace_of_word  # noqa: E402
@@ -187,7 +187,7 @@ def main() -> int:
         .add_data("per_test_results", results)
         .add_assertion(
             name="partition_sum_equals_recursive_reducer",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-10,
             unit=(

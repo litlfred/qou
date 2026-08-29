@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "odd-order valid residuals of G−model vanish (exact ℚ(√3))"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "C by tail {4: 0.09907720860150417, 8: 0.06677216030303215, 12: 0.0582819726906891}: monotone-decreasing ⇒ not fixed-Gevrey-s"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "stable band [0.1474,0.1680] brackets ['1/(2pi)', 'Vol(4_1)/(4pi)', '1/6'] — s-dependent, consistent-not-identified"
     }
   ],

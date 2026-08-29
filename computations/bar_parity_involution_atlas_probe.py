@@ -267,10 +267,19 @@ def main() -> int:
         2,
         source="sympy exact",
     )
-    wb.add_assertion(
-        "n_distinct_involutions_behind_the_four_gradings", 1, 1,
-        source="sympy exact; the halves are halves of def:bar-involution",
-    )
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    # NOT converted to a real check: I could not establish from this file what the
+    # "four gradings" are indexed over, and fabricating a count I do not understand
+    # would be worse than recording the claim honestly. A real check is available to
+    # someone who knows the intended indexing.
+    wb.add_parameter(
+        "n_distinct_involutions_behind_the_four_gradings",
+        "1 (DECLARED, not counted. The source field read 'sympy exact; the halves are "
+        "halves of def:bar-involution' -- but no count was performed here.)")
 
     wb.add_data(
         "interpretation",

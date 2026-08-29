@@ -1,3 +1,4 @@
+import QOU.AlgebraicSubstrate.LocalQZetaFunction
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
@@ -34,8 +35,9 @@ namespace QOU.AlgebraicSubstrate
     This pairs eigenvalues such that |αᵢ| · |q/αᵢ| = q.
 
     See [weil1948] §IV, or [rosen2002] Ch 5, Thm 5.9
-    (functional equation for the zeta function of a curve). -/
-/-- **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
+    (functional equation for the zeta function of a curve).
+
+    **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
     functional-equation pairing of zeta eigenvalues.** -/
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
@@ -54,18 +56,19 @@ theorem eigenvalue_functional_equation
 
     See [weil1948] §V; [milne2013] §27 for the étale-cohomological
     formulation; or [rosen2002] Ch 5, Thm 5.10 (Riemann hypothesis
-    for function fields). -/
-/-- **External axiom (Weil 1948 §V; Milne 2013 §27; Rosen 2002 Ch 5
+    for function fields).
+
+    **External axiom (Weil 1948 §V; Milne 2013 §27; Rosen 2002 Ch 5
     Thm 5.10): Castelnuovo–Severi inequality on B × B.** -/
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
 axiom castelnuovo_severi_bound_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),
-      Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q
+      ‖Z.eigenvalues i‖ ^ 2 ≤ Z.q
 
 theorem castelnuovo_severi_bound
     (Z : LocalQZetaFunction) (i : Fin 8) :
-    Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q :=
+    ‖Z.eigenvalues i‖ ^ 2 ≤ Z.q :=
   castelnuovo_severi_bound_axiom Z i
 
 /-- The functional equation + Castelnuovo–Severi together force
@@ -73,27 +76,27 @@ theorem castelnuovo_severi_bound
 
     The functional equation gives |αᵢ| · |q/αᵢ| = q for paired
     eigenvalues, so |αᵢ|² ≥ q. Combined with CS, equality holds.
-    See [rosen2002] Ch 5, proof of Thm 5.12. -/
-/-- **External axiom (Rosen 2002 Ch 5 proof of Thm 5.12):
+    See [rosen2002] Ch 5, proof of Thm 5.12.
+
+    **External axiom (Rosen 2002 Ch 5 proof of Thm 5.12):
     functional equation + Castelnuovo–Severi force equality.** -/
 -- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
-axiom eigenvalue_norm_sq_axiom :
-    ∀ (Z : LocalQZetaFunction) (i : Fin 8)
-      (_h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
-      (_h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i),
-      Complex.abs (Z.eigenvalues i) ^ 2 = Z.q
-
 theorem eigenvalue_norm_sq
     (Z : LocalQZetaFunction) (i : Fin 8)
-    (h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
+    (h_cs : ‖Z.eigenvalues i‖ ^ 2 ≤ Z.q)
     (h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i) :
-    Complex.abs (Z.eigenvalues i) ^ 2 = Z.q := by
-  -- Proof note (2026-08-03): The proof requires obtaining `j` from `h_fe`,
-  -- substituting into `castelnuovo_severi_bound Z j`, and using `nlinarith` or `field_simp`.
-  -- However, since `lake build` is prohibited for this task, the exact mathlib lemma
-  -- names for complex absolute value of division and coercions cannot be safely verified.
-  -- Retaining the axiom fallback.
-  exact eigenvalue_norm_sq_axiom Z i h_cs h_fe
+    ‖Z.eigenvalues i‖ ^ 2 = Z.q := by
+  obtain ⟨j, hj⟩ := h_fe
+  have hq : 0 < Z.q := Z.q_pos
+  have hnorm : ‖Z.eigenvalues i‖ ≠ 0 := norm_ne_zero_iff.mpr (Z.eigenvalues_ne_zero i)
+  have hsq : (0 : ℝ) < ‖Z.eigenvalues i‖ ^ 2 := by positivity
+  -- The paired eigenvalue has norm q / ‖αᵢ‖ …
+  have hj_norm : ‖Z.eigenvalues j‖ = Z.q / ‖Z.eigenvalues i‖ := by
+    rw [hj, norm_div, Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq]
+  -- … and Castelnuovo–Severi applies to it too, giving the reverse bound.
+  have h_cs_j := castelnuovo_severi_bound Z j
+  rw [hj_norm, div_pow, div_le_iff₀ hsq] at h_cs_j
+  nlinarith [h_cs, h_cs_j, hq, hsq]
 
 /-- **Hasse–Weil bound**: every fundamental Frobenius eigenvalue αᵢ
     of Bring's curve satisfies |αᵢ| = q^{1/2}.
@@ -109,17 +112,13 @@ theorem eigenvalue_norm_sq
 theorem hasse_weil_bound
     (Z : LocalQZetaFunction)
     (i : Fin 8) :
-    Complex.abs (Z.eigenvalues i) = Real.rpow Z.q (1 / 2) := by
+    ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ) := by
   have h_cs := castelnuovo_severi_bound Z i
   have h_fe := eigenvalue_functional_equation Z i
   have h_sq := eigenvalue_norm_sq Z i h_cs h_fe
   -- |αᵢ|² = q  implies  |αᵢ| = q^{1/2}  (since |αᵢ| ≥ 0, q > 0)
-  have h_nn : (0 : ℝ) ≤ Complex.abs (Z.eigenvalues i) := Complex.abs.nonneg _
-  have h_qnn : (0 : ℝ) ≤ Z.q := le_of_lt Z.q_pos
-  -- |α| = √(|α|²) = √q = q^{1/2}
-  rw [← Real.sqrt_eq_rpow]
-  rw [← Real.sqrt_sq h_nn]
-  congr 1
-  exact h_sq
+  have h_nn : (0 : ℝ) ≤ ‖Z.eigenvalues i‖ := norm_nonneg _
+  -- q^{1/2} = √q = √(|α|²) = |α|, the middle step being h_sq.
+  rw [← Real.sqrt_eq_rpow, ← h_sq, Real.sqrt_sq h_nn]
 
 end QOU.AlgebraicSubstrate

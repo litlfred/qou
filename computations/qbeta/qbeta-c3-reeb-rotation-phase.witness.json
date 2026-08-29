@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T00:20:23.656888+00:00",
-  "commitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
+  "computedAt": "2026-08-26T15:28:26.987767+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "fig8_eigenvalue_unit_modulus",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "det M_{4₁}=1 and |tr M_{4₁}|<2 at q₀ (seminormal V_{(2,1)} block)"
     },
     {
       "name": "theta_classical_2pi_over_3",
-      "computed": 120.0,
+      "computed": "120.000000000000000000000000000000000000000000000000000000000",
       "expected": 120.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "θ(q=1)=120°: (σ₀σ₁)² is an S₃ 3-cycle, eigenvalue e^{2πi/3}"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "tr M_{4_1}(phi)=2 (theta=0): the Reeb rotation degenerates at the golden ratio = A-poly branch point u=2 ln phi"
     },
     {
@@ -33,16 +33,16 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "tr M_{4_1}(sqrt(omega))=-2 (theta=pi) at q^2=omega=e^{i pi/3}, the figure-8 cusp shape (Phi_6 root, barEven=1/barOdd^2=-3)"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "qbeta-c3-reeb-rotation-phase",
   "scriptFile": "qbeta_c3_reeb_rotation_phase_probe.py",
-  "scriptHash": "6351b09e264f",
-  "scriptCommitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
+  "scriptHash": "10845ba8a49e",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_reeb_rotation_phase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_reeb_rotation_phase_probe.py"
   },
   "description": "q-Reeb rotation angle θ of the figure-eight operator M_{4₁}=(σ₀σ₁⁻¹)² on V_{(2,1)} of H₃(q), built from the 2×2 Hoefsmit seminormal block (gauge-invariant eigenvalues). Verified: braid+Hecke hold, det M=1, |tr M|<2 ⇒ |λ_{4₁}|=1 (confirms the content block's Reeb claim). θ(q₀)=117.087° at both anchors; θ(1)=120°=2π/3 exact (S₃ 3-cycle); closed form tr=q⁴−2q²+1−2q⁻²+q⁻⁴. θ is SMOOTH (dθ/dq≈−51°/unit q) ⇒ NOT the dc₃/dq≈4.66e6 sign-flip source (the open q₀→u map is). Reeb's real contribution: Δθ=θ(q₀)−120°=−2.913° is the derived amphichirality-breaking seed of S. Scope-(a); C14; no c_k wired; no fit; arg(u)=θ negative.",
   "contentBlock": "prop:figure-eight-reeb-rotation",

@@ -60,7 +60,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "A(L,1) = (L+1)\u00b2 \u2014 CCGLS 4\u2081 A-polynomial, complete structure"
     },
     {
@@ -68,7 +68,7 @@
       "computed": 3.045066911770561e-62,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "no branch point of the gluing variety inside |u| = 0.06; v is a single-valued analytic function there"
     },
     {
@@ -76,7 +76,7 @@
       "computed": 1.9983858259058005e-54,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "NZ85 oddness on the geometric branch, corroborated from the A-polynomial: v\u2080 = v\u2082 = v\u2084 = v\u2086 = 0 (Cauchy-extracted); no framing-linear even part on this branch"
     },
     {

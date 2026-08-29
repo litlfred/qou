@@ -294,7 +294,7 @@ def main() -> int:
 
     w.add_assertion(
         "tr_M_cross_validation_within_1e-6",
-        computed=float(err_rel),
+        computed=err_rel,
         expected=0.0,
         tolerance=1e-6,
     )

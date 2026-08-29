@@ -1,0 +1,92 @@
+{
+  "engine": "pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T21:17:48.164124+00:00",
+  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
+  "assertions": [
+    {
+      "name": "ceiling_bounds_measured_N",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "mu3-door-budget",
+  "scriptFile": "mu3_door_budget_probe.py",
+  "scriptHash": "280ccf1b576f",
+  "scriptCommitSha": "affcb889949e9fb3563598da8f1efa3359361f10",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/mu3_door_budget_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/mu3_door_budget_probe.py"
+  },
+  "description": "Decomposes Delta^2 g into positive- and negative-weight contributions to quantify the mu3 door budget. Establishes scope-(b) that the 're-weight the Wedderburn weights' escape does not exist (tr_M unique => y_lambda fixed). Under the canonical trace convention D the scope-(a) half is moot: the Wenzl level collapses to r=2, so y_lambda = 0 exactly for every partition with three or more rows -- which is every partition that was negative under the excised convention C -- hence N = 0 identically and there is no negative-weight budget. Weights are classified against an explicit noise floor so the ~1e-42 round-off in the zeroed entries is not reported as a supply.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "q0_anchor": "experimental/proton"
+  },
+  "data": {
+    "ceiling_below_P_both_isotopes": 1,
+    "results": {
+      "T": {
+        "P_positive_weight": "0.32783983234711737691",
+        "N_negative_weight": "0",
+        "d2g_total": "0.32783983234711737691",
+        "n_positive_blocks": 5,
+        "n_negative_blocks": 0,
+        "y_noise_floor": "2.212227603e-34",
+        "negative_blocks_exist": false,
+        "shortfall_factor": "inf",
+        "sum_abs_y_negative": "0",
+        "sum_y_positive": "0.062025436960613858621",
+        "max_abs_chi": "99.01761010349405",
+        "ceiling_on_N": "0.0",
+        "ceiling_over_P": "0.0",
+        "ceiling_below_P": true,
+        "bound_sane": true
+      },
+      "3He": {
+        "P_positive_weight": "0.24697584011312590171",
+        "N_negative_weight": "0",
+        "d2g_total": "0.24697584011312590171",
+        "n_positive_blocks": 5,
+        "n_negative_blocks": 0,
+        "y_noise_floor": "2.212227603e-34",
+        "negative_blocks_exist": false,
+        "shortfall_factor": "inf",
+        "sum_abs_y_negative": "0",
+        "sum_y_positive": "0.062025436960613858621",
+        "max_abs_chi": "113.47859218345472",
+        "ceiling_on_N": "0.0",
+        "ceiling_over_P": "0.0",
+        "ceiling_below_P": true,
+        "bound_sane": true
+      }
+    }
+  },
+  "caveats": [
+    "SCOPE: the weights-are-fixed statement is scope-(b) with the invariant named (uniqueness of the non-degenerate Markov trace, prop:markov-trace-frobenius-selection + Alexander-Markov). The CEILING is scope-(a) only: max|chi| is measured on this word, |chi| grows with braid length, and no universal bound is claimed. The ceiling must NOT be quoted as excluding the route for all operators.",
+    "Corrects #4657: that PR stated the mixed-sign escape was 'not foreclosed' because reweight_cannot_open_door assumes w >= 0 while the physical y_lambda is sign-indefinite. The hypothesis mismatch was real but the conclusion was wrong -- there is no re-weighting freedom to foreclose in the first place."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

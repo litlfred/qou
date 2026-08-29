@@ -34,6 +34,8 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
+
+import mpmath as mp
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -41,8 +43,37 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV_MP  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-M_E_MEV = float(_M_E_MEV_MP)
+set_compute_dps()
+
+# NOT `float(_M_E_MEV_MP)`. It is already an `mpf`, and it is subtracted from
+# a mass difference that has itself already lost six digits to cancellation.
+M_E_MEV = _M_E_MEV_MP
+
+
+def _num(x):
+    """Read one upstream shard cell as an exact `mpf`, or `None`.
+
+    THIS FUNCTION IS THE FIX. `canonical-isotope-witness-Z*.witness.json`
+    carries `composite_mass.M_{pred,AME}_MeV` as 60-DIGIT DECIMAL STRINGS —
+    measured: 3,558 of 3,558 for `M_AME_MeV`, 3,255 of 3,558 for `M_pred_MeV`
+    with the rest `null`, and ZERO floats. This producer went on doing
+    `pm - dm - M_E_MEV` on them, which is `str - str`, so it did not merely
+    lose precision: it raised
+
+        TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+    and could not run at all. Its committed 5,455-field witness predates the
+    upstream drain and cannot be regenerated without this. Verified on `main`
+    at `derive_q_values.py:101` before the change.
+
+    `mpmathify` parses a decimal as a decimal; `float()` would throw away 44
+    of the 60 digits before a subtraction that then cancels six more.
+    """
+    if x is None:
+        return None
+    return mp.mpmathify(x) if isinstance(x, str) else mp.mpf(repr(x))
 
 
 def load_all_shards() -> dict:
@@ -97,20 +128,29 @@ def derive_q_beta_minus(
     # Q from nuclear masses needs the −m_e correction (β⁻ produces
     # an electron that's NOT bound to the daughter nucleus when
     # using nuclear-mass form).
+    pm, dm = _num(pm), _num(dm)
+    p_ame, d_ame = _num(p_ame), _num(d_ame)
+
+    # Both of these are CATASTROPHIC CANCELLATIONS: two atomic masses of
+    # order 1e4 MeV differing by ~1e-2 MeV, so about six significant digits
+    # are annihilated by construction. Done in binary64 that leaves ~10 real
+    # digits behind a 17-digit printout; done on the upstream 60-digit
+    # decimals it leaves ~54. This is the one place in this producer where
+    # precision is actually at stake.
     if pm is not None and dm is not None:
         out["Q_pred_MeV"] = pm - dm - M_E_MEV
     if p_ame is not None and d_ame is not None:
         out["Q_AME_MeV"] = p_ame - d_ame
         # AME also stores Q_β explicitly (beta_decay_energy_keV in
         # the parent row); include for cross-check.
-        ame_q_keV = (row.get("ame_reference") or {}).get("Q_beta_keV")
+        ame_q_keV = _num((row.get("ame_reference") or {}).get("Q_beta_keV"))
         if ame_q_keV is not None:
             out["Q_AME_book_keV"] = ame_q_keV
     if "Q_pred_MeV" in out and "Q_AME_MeV" in out:
         diff_MeV = out["Q_pred_MeV"] - out["Q_AME_MeV"]
-        out["err_keV"] = diff_MeV * 1000.0
+        out["err_keV"] = diff_MeV * 1000
         out["err_ppm"] = (
-            diff_MeV / out["Q_AME_MeV"] * 1e6
+            diff_MeV / out["Q_AME_MeV"] * 1000000
             if out["Q_AME_MeV"] else None
         )
     out["status"] = (
@@ -118,6 +158,13 @@ def derive_q_beta_minus(
         if ("Q_pred_MeV" in out and "Q_AME_MeV" in out)
         else "partial"
     )
+    # Serialize the mpf cells as decimal strings. `fmt` at OUTPUT_DPS (60) is
+    # honest here and not padding: the upstream shards carry 60 digits, so
+    # after a cancellation that eats six the result still has ~54 real ones.
+    for k in ("Q_pred_MeV", "Q_AME_MeV", "Q_AME_book_keV",
+              "err_keV", "err_ppm"):
+        if out.get(k) is not None:
+            out[k] = fmt(out[k])
     return out
 
 
@@ -178,9 +225,13 @@ def main() -> int:
         for s in samples:
             parent_label = f"Z={s['parent_Z']},N={s['parent_N']}"
             daughter_label = f"Z={s['daughter_Z']},N={s['daughter_N']}"
-            qp = s.get("Q_pred_MeV", "")
-            qa = s.get("Q_AME_MeV", "")
-            err = s.get("err_keV", "")
+            # cells are decimal strings; float() only for the 4-dp display
+            qp = s.get("Q_pred_MeV") or ""
+            qa = s.get("Q_AME_MeV") or ""
+            err = s.get("err_keV") or ""
+            qp = qp if qp == "" else float(qp)
+            qa = qa if qa == "" else float(qa)
+            err = err if err == "" else float(err)
             print(f"  {s['parent_A']:>3} {parent_label:>10} "
                   f"{daughter_label:>14}  "
                   f"{qp if qp == '' else f'{qp:>14.4f}'}  "
@@ -201,7 +252,7 @@ def main() -> int:
             "Q_β value from beta_decay_energy_keV is also included "
             "for triangulation."
         )
-        .add_parameter("m_e_MeV", M_E_MEV)
+        .add_parameter("m_e_MeV", fmt(M_E_MEV))
         .add_parameter("n_rows_total", len(shards))
         .add_parameter("n_ok", n_ok)
         .add_parameter("n_partial", n_partial)

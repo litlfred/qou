@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-23T08:36:54Z
+updated_at: 2026-08-28T15:01:59Z
 ---
 
 ## Context
@@ -235,3 +235,99 @@ caused by my lean.ref adds specifically).
   research; documented above. Not session-closeable.
 The honest formalization-bookkeeping items (1,2,3,4) are closed; what remains is
 genuine research (5,6,7) or large mechanical drains (QA staleness).
+
+
+## VERIFIED 2026-08-25 — items 1-4 confirmed closed against the tree, not the bean
+
+Re-checked every "DONE" claim in this bean against the working tree, per the
+rule that a bean is not a primary source. All four verify:
+
+  item 1  15/15 .qa.json sidecars in eightfold-way/, 0 with empty criteria.
+  item 2  All three props wired to real, sorry-free decls:
+            prop:schur-weyl-eightfold      -> RowCapObstruction.weyl_dim_alt_eq_zero_iff
+            prop:borromean-decuplet        -> RowCapObstruction.eightfold_channels_at_three
+            prop:meson-octet-decomposition -> MesonOctet.meson_octet_at_three
+                                              (content-block sibling, candidate-1
+                                              resolution; 0 sorry, no True-concl)
+  item 3  Sym2Gate.lean carries no axiom, no `: True` conclusion. The removed
+          su3_sym2_irreducible survives only in two docstring lines recording
+          that it WAS removed.
+  item 4  discharged earlier (PR #4727).
+
+Zero sorry, zero axiom, zero True-conclusions across all 10 files in
+lean/QOU/Eightfold/.
+
+Method note, because it cost three wrong readings before it gave a right one:
+grepping by FILENAME fails here (the decuplet block lives in
+borromean-decuplet-derivation.ts, not borromean-decuplet.ts), and grepping a
+label with `grep -rl` + `head -1` for the ref ALSO fails, because a label
+appears in other blocks' uses[] arrays and head -1 then reports a neighbouring
+block's ref. Resolve on `label: "<x>"` and read the ref from a window AFTER
+that line. Two of my three "NO REF" findings were my own tooling.
+
+## THE REMAINING SU(3) GAP IS SHARPER THAN "NO SU(3) IN MATHLIB"
+
+This bean records T2-hard as: the SU(3)-irreducibility behind the octonion
+singlet count 0 "stays the Mathlib gap - no SU(3) type in Mathlib". That is
+true but it is not the binding constraint, and Sym2GateMultiplicity.lean
+(merged this session, b457b8ad57 arc) shows why.
+
+Sym2GateMultiplicity proves the gate criterion for a MULTISET of irreps
+without needing an SU(2) type at all - it is purely combinatorial, indexed by
+j with Even j deciding orthogonal vs symplectic:
+
+    sym2SingletCount S m = SUM over j of (Even j ? C(m+1,2) : C(m,2))
+    sym2SingletCount = 0  <->  for all j: (Even j -> m j = 0) and (odd -> m j <= 1)
+    gate  ->  Even (dimOfMult S m)     ->  dimOfMult /= 3
+
+So a group type was never required. What IS missing is the THIRD
+Frobenius-Schur class. That file models FS = +1 (orthogonal) and FS = -1
+(symplectic) - both SELF-CONJUGATE. The SU(3) fundamental is FS = 0, COMPLEX
+type, X not iso X-bar, which the file does not model at all.
+
+That is exactly why the even-dimension conclusion does not bind on SU(3). In
+the self-conjugate setting the gate survivors are the odd-j irreps at
+multiplicity <= 1, all of even dimension, so the total is even and 3 is
+excluded. Admit complex-type irreps and the singlet contribution from a
+conjugate pair is m_X * m_Xbar, which vanishes when the conjugate is ABSENT -
+so a lone complex irrep passes the gate at ANY dimension, odd included.
+
+CONCRETE, WELL-SCOPED SUCCESSOR (not attempted here): extend sym2SingletCount
+with a complex class,
+
+    sym2SingletCount = SUM_orth C(m+1,2) + SUM_sympl C(m,2) + SUM_pairs m_X * m_Xbar
+
+and derive octonion_3_passes_sym2_gate from it instead of asserting `0 < 1`.
+This needs no SU(3) type, for the same reason the SU(2) side needed no SU(2)
+type. It would turn the 3-passes-the-gate fact from an assertion into a
+consequence, and would make the even-dimension theorem's SCOPE explicit -
+it is a theorem about the self-conjugate sector, which is the whole reason
+SU(3) escapes it.
+
+NOT claimed: that this closes the rep-level SU(3) content. The Clebsch-Gordan
+decompositions and weight assignments remain what they were. This is about
+the GATE, which is a counting statement, and counting statements are exactly
+what the merged file showed to be formalisable without the group.
+
+## STATUS
+
+Formalization-bookkeeping items 1-4: CLOSED and verified.
+Remaining: item 5 (def:octonion-algebra - author vs cite), items 6-7
+(research-gated), chapter-wide QA staleness (large drain, route via
+/integration-audit), and the complex-type extension above.
+
+
+
+## REVISED 2026-08-28 — items 1-4 CLOSED; siblings extended further
+Since my last pass: meson octet-singlet is now a real traceless/scalar
+decomposition (sibling), the decuplet warning is drained by the dimension formula,
+and the Sym²-gate scope is wired into the chapter prose. Formalization-bookkeeping
+items (1,2,3,4) done. REMAINING (research, not formalization bookkeeping):
+ - item 5 def:octonion-algebra — author the algebra (Mathlib has none) OR keep
+   literature citation; decision needed, not session-tractable as a proof.
+ - items 6,7 — Gell-Mann-Okubo (asserted not derived), spin-flavour-colour
+   selection rule. Open physics.
+ - chapter-wide QA-staleness refresh — large idle-backlog qa-drain, route to
+   /integration-audit.
+This bean is now essentially at its research frontier; no clean formalization
+increment remains.

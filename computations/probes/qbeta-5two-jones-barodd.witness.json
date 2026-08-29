@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "TL₃-computed V(4₁) == known q⁻²−q⁻¹+1−q+q² (palindromic)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "TL₃-computed V(5₂) == known q⁻¹−q⁻²+2q⁻³−q⁻⁴+q⁻⁵−q⁻⁶ (or its mirror) — validates the H₃/TL₃ machinery"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "V(4₁) bar-odd = 0 (amphichiral), V(5₂) bar-odd ≠ 0 (chiral) — the complete classical bar-odd datum"
     }
   ],

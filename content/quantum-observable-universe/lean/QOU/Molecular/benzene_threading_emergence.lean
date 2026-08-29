@@ -48,7 +48,7 @@ none is a projected conclusion field:
 The single irreducibly-conjectural input is the **LP-dual ground-state
 selection** — the threading link minimises `Φ₁` over the candidate
 π-electron configurations (`Φ₁^{T(2,6)} < Φ₁^{Kekulé} < Φ₁^{Dewar}` in
-the `.md`). It is carried by the §3b-cond class `QIntegerMassFormula`
+the `.md`). It is carried by the §3b-cond class `BenzeneThreadingSelection`
 as a *quantified hypothesis* the theorem instantiates, never restated
 verbatim in the conclusion.
 
@@ -112,7 +112,7 @@ class BenzeneThreadingEmergenceContext (R : Type*) [Field R] [LinearOrder R]
     threading link `T(2,6)` is the `Φ₁`-minimiser over the candidate
     π-electron configurations (the ground-state selection) — as a
     quantified field, NOT any conclusion of the theorem below. -/
-class QIntegerMassFormula (ctx : BenzeneThreadingEmergenceContext R) : Prop where
+class BenzeneThreadingSelection (ctx : BenzeneThreadingEmergenceContext R) : Prop where
   /-- The LP dual selects the threading link: it minimises `Φ₁` over
       all candidate configurations. -/
   threading_minimises :
@@ -131,7 +131,7 @@ theorem benzene_alexander_weight_pos [ctx : BenzeneThreadingEmergenceContext R] 
   rw [ctx.alexander_weight_def]
   positivity
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the benzene
+/-- **Theorem (conditional on `BenzeneThreadingSelection`)** — the benzene
     resonance stabilisation shadow price is non-negative:
     `0 ≤ Φ₁^{Kekulé} − Φ₁^{T(2,6)}` (the `.md`'s
     `E_res = α(Φ₁^{Kekulé} − Φ₁^{T(2,6)})` has non-negative sign).
@@ -141,7 +141,7 @@ theorem benzene_alexander_weight_pos [ctx : BenzeneThreadingEmergenceContext R] 
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, shadow price)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
 theorem benzene_resonance_nonneg (ctx : BenzeneThreadingEmergenceContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : BenzeneThreadingSelection ctx] :
     0 ≤ ctx.Phi1_config BenzeneConfig.kekule -
         ctx.Phi1_config BenzeneConfig.threading := by
   have h := hc.threading_minimises BenzeneConfig.kekule
@@ -167,7 +167,7 @@ theorem benzene_resonance_nonneg (ctx : BenzeneThreadingEmergenceContext R)
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, optimal configuration)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
 theorem benzene_threading_emergence (ctx : BenzeneThreadingEmergenceContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : BenzeneThreadingSelection ctx] :
     ctx.n_shared_localised < ctx.n_shared_threading ∧
     ctx.symmetry_order = 12 ∧
     ctx.alexander_weight ≠ 0 ∧

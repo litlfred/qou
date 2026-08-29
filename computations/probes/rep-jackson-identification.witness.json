@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:51:45.429464+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-29T07:56:36.934139+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "corpus_formal_strip_exact",
@@ -25,7 +25,7 @@
       "computed": "9.5948e-47",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = test (1.2…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {
@@ -33,15 +33,15 @@
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
-      "source": "q = muon (1.10997859556…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
+      "tolerance": "1e-30",
+      "source": "q = muon (1.10997859564…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {
       "name": "fibre_falsifier_match_proton",
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = proton (1.10997858275…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {
@@ -54,7 +54,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 676,
+  "durationMs": 802,
   "computation": "rep-jackson-identification",
   "scriptFile": "rep_jackson_identification_probe.py",
   "scriptHash": "1920d488d9b8",
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "0aaae20308e9cca7"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -101,7 +101,7 @@
       "dist_u_vs_inv_u": "0.24392224"
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
     },
@@ -128,11 +128,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   }

@@ -1,0 +1,116 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0710.4405v1",
+ "source": {
+  "file": "0710.4405v1.pdf",
+  "sha256": "af6234179a1345327e0796c811992b8caa632733fe5b96ec8a74307125ba53de",
+  "bytes": 124013,
+  "pages": 8
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0710.4405",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "24 Oct 2007"
+  },
+  "doi": null,
+  "title": "Instituto de F\u00b4 \u0131sica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
+  "authors_raw": "Apt. Correus 22085, E-46071 Val` encia, Spain",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211115133955-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Tools : Large-NC and QCD asymptotic constraints",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Status and Prospects",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "O(p4)",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "O(p6)",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8962,
+   "n_words": 1541
+  },
+  {
+   "id": "sec-001-status-and-prospects",
+   "number": null,
+   "title": "Status and Prospects",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 94,
+   "n_words": 16
+  },
+  {
+   "id": "sec-002-op4",
+   "number": null,
+   "title": "O(p4)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 594,
+   "n_words": 105
+  },
+  {
+   "id": "sec-003-op6",
+   "number": null,
+   "title": "O(p6)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6565,
+   "n_words": 1145
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 4,
+  "chars_total": 16215
+ }
+}

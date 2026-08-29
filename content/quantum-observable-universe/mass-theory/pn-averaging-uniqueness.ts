@@ -3,7 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:pn-averaging-uniqueness",
   title: "Canonical p-n interface averaging uniqueness",
-  chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988"],
   uses: [],
   defines: [],

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:40:21.876873+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:59:12.410027+00:00",
+  "commitSha": "ee1db89069501ba81d67bc5ba0f7ccffcbfe36d7",
   "assertions": [
     {
       "name": "cusp_coefficients_exact",
@@ -13,26 +13,26 @@
     },
     {
       "name": "cusp_form_matches_eta_product_both_pins",
-      "computed": 2.5015e-119,
+      "computed": "2.5015e-119",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-60,
+      "tolerance": "1e-60",
       "source": "t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at dps 120, both q0 pins — the nome dictionary is exponentially cusp-suppressed at theorem level."
     },
     {
       "name": "fricke_fixed_point_exact_value",
-      "computed": 1.448908652612274e-70,
+      "computed": "1.44890865261227397880145908654204668490920499170226211033321838238968e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125)."
     },
     {
       "name": "w5_circle_family_excluded",
-      "computed": 4.9842457649862225e-68,
+      "computed": "4.9842457649862224870770192577046405960876651714557816595462712354205e-68",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "||t5|^2 - 125| on the bar<->Fricke-equivariant circle family (both pins) — |t5| = 5*sqrt5 != 10 excludes every parametrization of the W5-fixed circle (proved invariant)."
     },
     {
@@ -51,10 +51,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3175,
+  "durationMs": 2504,
   "computation": "tau-dictionary-fricke-spin-probe",
   "scriptFile": "tau_dictionary_fricke_spin_probe.py",
-  "scriptHash": "57fc9dd50af7",
+  "scriptHash": "7f9e4a998fd2",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -70,7 +70,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

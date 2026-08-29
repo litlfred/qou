@@ -1,0 +1,63 @@
+{
+  "computation": "qbeta-delta-vs-deltaTbeta-discrepancy",
+  "description": "Two objects called the neutron-minus-proton element of H_3(q) agree classically but differ 39% at the substrate, with no disambiguation row in the corpus.",
+  "engine": "mpmath",
+  "markov_convention": "D",
+  "assertions": [
+    {
+      "name": "classical_limit_is_one",
+      "passed": true,
+      "note": "(ratio -> 1 as q -> 1)"
+    },
+    {
+      "name": "substrate_ratio_differs_from_one_by_more_than_30pct",
+      "passed": true,
+      "note": "(ratio at q0 = 1.39090616920312)"
+    },
+    {
+      "name": "both_linear_in_hbar_q_at_leading_order",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "antipode_relation_holds_for_the_hand_derived_forms",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "delta_tau_M_is_not_trM_of_Delta_in_either_weighting",
+      "passed": true,
+      "note": "(dim=-0.18443099, nodim=-0.158016, trM=-0.10623564)"
+    }
+  ],
+  "data": {
+    "ratio_ladder_toward_q_eq_1": [
+      {
+        "q": "1+1e-2",
+        "ratio": "1.03045453525176259"
+      },
+      {
+        "q": "1+1e-4",
+        "ratio": "1.00030004500450035"
+      },
+      {
+        "q": "1+1e-6",
+        "ratio": "1.0000030000045"
+      },
+      {
+        "q": "1+1e-8",
+        "ratio": "1.00000003000000045"
+      }
+    ],
+    "ratio_at_q0": "1.3909061692031195656282739595",
+    "chi_3_at_q0": "-0.260387641790120802073285342788",
+    "eps_Delta_at_q0": "-0.187207194529378320729836545291"
+  },
+  "verdict": "FLAG, not a verdict. chi_(3)(Delta_T_beta)/eps(Delta) -> 1 as q -> 1 but is 1.3909 at the substrate. Since the counit IS the lambda=(n) block, that ratio would be identically 1 for one and the same element, so the two objects the corpus calls the neutron-minus-proton element of H_3 are DIFFERENT -- agreeing classically, diverging 39% at q0, and both linear in hbar_q at leading order (which is why a leading-order check missed it). That is what two different q-deformations of one classical object look like, and is NOT automatically an error. What IS a defect is that no registry section-2 disambiguation row exists and nothing in the corpus states they differ, while Delta_tau_M and tr_M(Delta) feed different consumers. Settling it needs the two WORDS exhibited; not attempted here. Nothing wired.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_delta_vs_deltaTbeta_discrepancy_probe.py",
+    "scriptHash": "034f72490e55",
+    "commitSha": "5f3f9d4e86e83689be5bcf3f06973a05a1909c14",
+    "generatedAt": "2026-08-26T04:30:02.049712+00:00"
+  }
+}

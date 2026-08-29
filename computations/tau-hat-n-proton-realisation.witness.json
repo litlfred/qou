@@ -1,4 +1,7 @@
 {
+  "scriptFile": "tau_hat_n_proton_realisation.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-03-tau-hat-n-proton-realisation.md",
   "computation": "tau-hat-n-proton-realisation",
   "description": "Numerical realisation of the descent involution tau_hat_0 = ell_0 . d_1 acting on End_C(A_1) at A=1 (proton scale).  A_0 = H_3(q_0); Omega^1 = ker(m); A_1 = A_0 (x) Omega^1.  Phase A.3 of issue #522.",
   "phase": "A.3",

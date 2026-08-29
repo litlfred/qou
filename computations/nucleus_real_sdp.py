@@ -255,7 +255,11 @@ def main() -> int:
     t_pos = t[pos]
     G_pos = np.diag(frob_diag[pos])
     n_target_pos = float(t_pos.sum())
-    lp = solve_operator_selection_lp(t_pos, G_pos, n_target_pos)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by whether
+    # the Rust binary happens to be built, so the same script yields different
+    # numbers on different boxes. Bean `qou/ftuv`.
+    lp = solve_operator_selection_lp(t_pos, G_pos, n_target_pos,
+                                     backend="clarabel")
     lp_d = lp.to_dict()
     _gap = lp_d.get("duality_gap")
     bounded = (_gap is not None and abs(float(_gap)) < 1e-6
@@ -299,6 +303,13 @@ def main() -> int:
                 "primal_obj": lp_d.get("primal_obj"),
                 "dual_obj": lp_d.get("dual_obj"),
                 "duality_gap": lp_d.get("duality_gap"),
+                # `lp_d` is a to_dict() and carries the companions; mirroring
+                # the numbers up without them is what left these bare.
+                **{_sk: lp_d[_sk] for _sk in
+                   ("y0_star_str", "y_star_str", "primal_obj_str",
+                    "dual_obj_str", "duality_gap_str") if _sk in lp_d},
+                **{_k: lp_d[_k] for _k in ("backend", "precision_bits")
+                   if _k in lp_d},
             },
             "note": (
                 "Full real SDP needs Phase B color-flavor constraints (LR "
@@ -310,6 +321,15 @@ def main() -> int:
         },
     }
     out = HERE / f"nucleus-real-sdp-{atom}.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
 
     print(f"{atom}: {n_blocks} blocks @ H_{meta['n_strands']}  "

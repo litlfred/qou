@@ -31,9 +31,16 @@ class `MatrixFarkas A a c` (§3b-cond of `AGENTS.md`). Its single field
 `farkas_alternative` is a genuine, true theorem (a feasibility transposition), and
 it is a *hypothesis about the data* `(A, a, c)`, not the block's own conclusion. The
 strong-duality theorems below are then **fully derived** (sorry-free) from this
-class together with the unconditional `lp_weak_duality`. The one unproved input in
-the whole chain is the class instance = Farkas' lemma, honestly labelled as the open
-analytic import.
+class together with the unconditional `lp_weak_duality`.
+
+**2026-08-21 (bean `qou/kl8z`): the class instance is no longer an open import.**
+`QOU.Mathlib.FinitelyGeneratedConeClosed` proves Farkas' lemma — a finitely
+generated cone is closed, hence separable from any point outside it — and
+`QOU.Optimization.MatrixFarkasInstance` registers the instance. Importing that
+module makes every theorem below **unconditional**. This file keeps the
+conditional framing deliberately: it is how the layer was built, it does not
+depend on the analytic development, and the separation stays useful if the
+analytic route is ever replaced.
 
 ## Contents
 

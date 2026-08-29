@@ -1,0 +1,65 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T17:32:33.049034+00:00",
+  "commitSha": "e451b631e31002f973331cef1d03a9103217259f",
+  "assertions": [
+    {
+      "name": "convention_bridge_q2_X0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam), exact n<=5"
+    },
+    {
+      "name": "telescope_at_X0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum f schurElement(q^2,0) = (1/(1-q^2))^n, exact n<=5"
+    },
+    {
+      "name": "normalizedSum_eq_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "chain closes normalizedSum n q = 1, exact n<=5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "fake-degree-via-telescope",
+  "scriptFile": "fake_degree_via_telescope_probe.py",
+  "scriptHash": "5459d67b1f76",
+  "scriptCommitSha": "4e1f63fd5e1327d7d8157b7b82f1ccd250973b45",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/fake_degree_via_telescope_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/fake_degree_via_telescope_probe.py"
+  },
+  "description": "beans qou-3quc/qou-x4zl: normalizedSum n q = 1 (the open general-n fake-degree residual) CLOSES via the corpus general-X Macdonald telescope at X=0. Per-lambda: q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam) = schurElement(q^2,0,lam)*(1-q^2)^n; telescope_generalX@X=0: Sum f schurElement(q^2,0) = (1/(1-q^2))^n; chain gives 1. Verified exact n<=5. Remaining Lean work is MECHANICAL bridging (convention + Nat.Partition<->YoungDiagram carrier), no open math. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-normalizedsum-closes-via-telescope.md",
+  "data": {
+    "route": "normalizedSum = (1-q^2)^n * Sum f schurElement(q^2,0) = (1-q^2)^n*(1/(1-q^2))^n = 1",
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Symbolic identity in the indeterminate q (sympy Symbol; no q_parameter import and no numeric evaluation anywhere in the producer). normalizedSum n q = 1 holds for all q, so no substrate pin applies and no q0Value exists to record."
+}

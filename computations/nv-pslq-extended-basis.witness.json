@@ -1,4 +1,7 @@
 {
+  "scriptFile": "nv_pslq_extended_basis.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-02-4-parallel-followup-synthesis.md",
   "computation": "nv-pslq-extended-basis",
   "description": "PSLQ on the EXTENDED basis for N_v that adds the Plancherel-weighted Hecke factors [2k]_q^2/[2]_q (k=2,3,4) and the conjectured product [4]_q[6]_q[8]_q/[2]_q^3 from conj:weak-spectral-completeness.  log-basis form: integer coefficients encode multiplicative product structure.",
   "timestamp_utc": "2026-08-23T21:09:17.873927+00:00",

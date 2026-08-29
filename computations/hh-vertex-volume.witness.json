@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:51:06.325509+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "computedAt": "2026-08-24T10:54:07.347001+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "hh-vertex-volume",
   "scriptFile": "hh-vertex-volume.py",
   "scriptHash": "32eb2b8513da",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,14 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hh-vertex-volume.py"
+    ],
+    "reproduce": "python3 -u computations/hh-vertex-volume.py"
   },
   "description": "H₂ binding via per-generator 3-channel Wedderburn vertex volumes. V̂_full = w_sym·λ_sym + w_std·(z·a+b) + w_alt·λ_alt per generator.",
   "contentBlock": "def:h2-molecular-braid",

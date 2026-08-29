@@ -34,25 +34,30 @@ structure CompoundBetaChain where
 def CompoundBetaChain.reference_E_0_MeV (_ : CompoundBetaChain) : Float := 0.782
 
 
-/-- The Q-value of a magic-crossing β-decay is:
-    Q_beta = E_0 * (|tr_M(parent)| - |tr_M(daughter)| - |tr_M(e^- + \bar\nu)|)
+/-! Both formulas below were `theorem … : ∃ x : Float, x = <rhs> := ⟨_, rfl⟩`
+    until 2026-08-21.  Neither said anything: an existential naming a value
+    of a total expression holds for every right-hand side, so the formula
+    was never actually asserted — only written down.  They are `def`s now,
+    which is what writing a formula down *is*.  `Float` admits no useful
+    reasoning anyway (no `ring`, no associativity), so promoting them back
+    to theorems would need the quantities to be `ℝ`-valued first; that is a
+    larger change than this pass, and the `.ts` block is `not_checked`.  -/
+
+/-- The Q-value of a magic-crossing β-decay:
+    `Q_beta = E_0 * (|tr_M(parent)| - |tr_M(daughter)| - |tr_M(e^- + \bar\nu)|)`.
     The Q-value measures the difference of shell-operator contributions. -/
 -- Ref: [manuscript] prop:compound-beta-shell-calibration
-theorem magic_crossing_Q_value
-    (E_0 : Float) (tr_M_parent tr_M_daughter tr_M_leptons : Float) :
-    ∃ Q_beta : Float,
-      Q_beta = E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons) :=
-  ⟨_, rfl⟩
+def magicCrossingQ
+    (E_0 : Float) (tr_M_parent tr_M_daughter tr_M_leptons : Float) : Float :=
+  E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons)
 
 /-- **y_target extraction.**
-    y_target = [Σ (chain) Q - Σ (non-magic) Q^(3)] / (E_0 · A_magic) -/
+    `y_target = [Σ (chain) Q - Σ (non-magic) Q^(3)] / (E_0 · A_magic)` -/
 -- Ref: [manuscript] prop:compound-beta-shell-calibration
-theorem compound_beta_y_target_extraction
-    (chain : CompoundBetaChain) (non_magic_Q_sum : Float) :
-    ∃ y_target : Float,
-      y_target = (chain.chain_Q_MeV.sum - non_magic_Q_sum) /
-                 (chain.reference_E_0_MeV * chain.A_magic.toFloat) :=
-  ⟨_, rfl⟩
+def compoundBetaYTarget
+    (chain : CompoundBetaChain) (non_magic_Q_sum : Float) : Float :=
+  (chain.chain_Q_MeV.sum - non_magic_Q_sum) /
+    (chain.reference_E_0_MeV * chain.A_magic.toFloat)
 
 /-- **Single-calibration framework invariant.**
     The framework uses only E_0 = 0.782 MeV as archimedean input. -/

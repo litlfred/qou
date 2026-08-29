@@ -156,6 +156,14 @@ from hecke_core import (  # noqa: E402
     CATALAN_G, VOL_BORROMEAN, VOL_FIGURE8,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 # ════════════════════════════════════════════════════════════════════
 # MOVED SYMBOLS — original source preserved verbatim from hecke_core.py
 # ════════════════════════════════════════════════════════════════════
@@ -908,7 +916,7 @@ def _step_chain_22(nucleon_type, prev_types):
         elif ti == 'n' and nucleon_type == 'n':
             chain.append((1.0, -h, 3))       # nn
         else:
-            chain.append((1.0, -h / 2, 3))   # pn
+            chain.append((1.0, _pn_d(h), 3))   # pn
     return chain
 
 
@@ -1192,7 +1200,7 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
             elif ti == 'n' and nucleon_type == 'n':
                 chain.append((1.0, -h, g % n_gens))       # nn
             else:
-                chain.append((1.0, -h / 2, g % n_gens))   # pn
+                chain.append((1.0, _pn_d(h), g % n_gens))   # pn
             g += 1
     return chain
 

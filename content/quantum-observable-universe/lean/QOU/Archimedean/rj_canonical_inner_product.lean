@@ -68,8 +68,29 @@ class HeckeRepRingContext (r : ℕ) where
   schur_orthogonality : ∀ lam mu, tr_M_char lam mu = if @decide (lam = mu) (decEq lam mu) then qDim lam else 0
   /-- Uniqueness: any diagonal form is a scalar multiple of the Schur dimension form. -/
   claim_unique_up_to_scalar : ∀ (φ : Partition → Partition → ℝ) (_h_diag : ∀ lam mu, lam ≠ mu → φ lam mu = 0), ∃ c : ℝ, ∀ lam, φ lam lam = c * qDim lam
-  /-- Rosso–Jones formula evaluation sum. -/
-  jonesPoly_eq_eval : ∀ (s : ℕ) (partitions_of_r : Finset Partition), jonesPoly r s = partitions_of_r.sum (fun lam => rjPairing lam lam * fullTwistEig lam ^ s)
+  /-- The partitions of `r` — the index set of the Rosso–Jones sum.
+
+      This is **data**, and must be: the formula sums over `λ ⊢ r`, a
+      specific finite set determined by `r`. -/
+  partitionsOf : Finset Partition
+  /-- Rosso–Jones formula evaluation sum:
+      `J(τ(r,s)) = Σ_{λ ⊢ r} d_λ(q) · ω_λ^s`.
+
+      **Corrected 2026-08-29.** `partitions_of_r` used to be universally
+      quantified here — the field read
+      `∀ s (partitions_of_r : Finset Partition), jonesPoly r s = …sum…`,
+      i.e. the Jones polynomial equalled the sum over *every* finite set
+      of partitions. Instantiating at `∅` gives `jonesPoly r s = 0`, so
+      every model of the old class had an identically vanishing Jones
+      polynomial — machine-checked, `#print axioms` clean, in
+      `docs/audits/2026-08-29-rosso-jones-index-set-probe.lean`.
+
+      The class was still *inhabitable* (take everything zero), which is
+      why no vacuity or `False`-derivation check flagged it: the defect
+      was not inconsistency but collapse. Found by
+      `scripts/unbounded-quantifier-audit.py`. -/
+  jonesPoly_eq_eval : ∀ s : ℕ,
+    jonesPoly r s = partitionsOf.sum (fun lam => rjPairing lam lam * fullTwistEig lam ^ s)
 
 /-- **(i) Markov-trace diagonal form** ([`prop:rj-canonical-inner-product`] item (i)).
 
@@ -112,10 +133,9 @@ theorem rj_canonical_inner_product_unique
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
 -- Ref: [rosso-jones1993] Rosso–Jones, *Inv. Math.* 1993
 theorem rj_canonical_inner_product_torus_knot
-    {r : ℕ} [ctx : HeckeRepRingContext r]
-    (s : ℕ) (partitions_of_r : Finset ctx.Partition) :
+    {r : ℕ} [ctx : HeckeRepRingContext r] (s : ℕ) :
     ctx.jonesPoly r s =
-      (partitions_of_r.sum
+      (ctx.partitionsOf.sum
         fun lam => ctx.qDim lam * ctx.fullTwistEig lam ^ s) := by
   rw [ctx.jonesPoly_eq_eval]
   apply Finset.sum_congr rfl
@@ -127,14 +147,13 @@ theorem rj_canonical_inner_product_torus_knot
 /-- **Top-level statement bundle**: combines all three parts. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
 theorem rj_canonical_inner_product
-    {r : ℕ} [ctx : HeckeRepRingContext r]
-    (s : ℕ) (partitions_of_r : Finset ctx.Partition) :
+    {r : ℕ} [ctx : HeckeRepRingContext r] (s : ℕ) :
     (∀ lam mu, ctx.rjPairing lam mu =
       if @decide (lam = mu) (ctx.decEq lam mu) then ctx.qDim lam else 0) ∧
     ctx.jonesPoly r s =
-      (partitions_of_r.sum
+      (ctx.partitionsOf.sum
         fun lam => ctx.qDim lam * ctx.fullTwistEig lam ^ s) :=
   ⟨fun lam mu => rj_canonical_inner_product_diagonal lam mu,
-   rj_canonical_inner_product_torus_knot s partitions_of_r⟩
+   rj_canonical_inner_product_torus_knot s⟩
 
 end QOU.Archimedean

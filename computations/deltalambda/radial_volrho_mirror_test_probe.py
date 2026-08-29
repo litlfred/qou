@@ -69,7 +69,14 @@ def main() -> int:
     print("  survives only if ρ≠tr_M or Vol(T)≠Vol(³He). No fit; free_parameters=0.")
 
     out = COMP / "deltalambda" / "radial-volrho-mirror-test.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "description": "Radial Vol·ρ mirror test (front 1): C_knot=Vol·ρ/ℏ_q² with ρ=tr_M and "
                        "Vol(T)=Vol(³He) is refuted in DIRECTION — C_knot ratio 1.35 (>1) vs tr_M "
                        "ratio 0.50 (<1), anti-correlated. scope-(a). Survivors: ρ≠tr_M or "
@@ -80,7 +87,11 @@ def main() -> int:
         "ratio_of_ratios": ror,
         "anti_correlated": anti,
         "verdict": "rho-eq-trM-radial-ansatz-refuted-in-direction",
-    }, indent=2) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

@@ -27,7 +27,24 @@ def parallelogramIntegral (f : ℂ → ℂ) (ω₁ ω₂ z₀ : ℂ) : ℂ :=
 -- The standard proof involves decomposing the parallelogram into two triangles and proving Goursat's
 -- lemma for triangles (subdividing into 4 smaller triangles and bounding the integral). However,
 -- Mathlib currently completely lacks integrals over triangles and Goursat's lemma for simplices.
-axiom parallelogramIntegral_eq_zero_of_differentiable (f : ℂ → ℂ) (ω₁ ω₂ z₀ : ℂ) :
+--
+-- SOUNDNESS FIX 2026-08-24. This axiom was stated WITHOUT any hypothesis on `f`:
+--
+--     axiom … (f : ℂ → ℂ) (ω₁ ω₂ z₀ : ℂ) : parallelogramIntegral f ω₁ ω₂ z₀ = 0
+--
+-- The name says `_of_differentiable` and the comment above says "If f is analytic",
+-- but neither reached the statement, so it asserted that the contour integral of
+-- EVERY function vanishes. Instantiated at `fun z => (z - w)⁻¹` it contradicts the
+-- pole axiom below, and `False` was derivable (verified against this module, not a
+-- reproduction: docs/audits/2026-08-24-parallelogram-axioms-inconsistent.lean).
+--
+-- `Differentiable ℂ f` (entire) is the SOUND repair, not the sharp one: Cauchy's
+-- theorem needs only differentiability on a neighbourhood of the closed
+-- parallelogram. Entire is strictly stronger, so the axiom is weaker than it could
+-- be — correct but less useful. Sharpening it to a neighbourhood hypothesis is the
+-- eventual target and is left open deliberately rather than guessed at.
+axiom parallelogramIntegral_eq_zero_of_differentiable (f : ℂ → ℂ) (ω₁ ω₂ z₀ : ℂ)
+    (hf : Differentiable ℂ f) :
   parallelogramIntegral f ω₁ ω₂ z₀ = 0
 
 -- MATHLIB GAP: Bare pole integral
@@ -38,7 +55,30 @@ axiom parallelogramIntegral_eq_zero_of_differentiable (f : ℂ → ℂ) (ω₁ �
 -- the integral of the holomorphic part `g(z)` vanishes. Furthermore, we would need to continuously
 -- deform the parallelogram contour into a small circle around the pole `w`, which requires
 -- homotopy invariance of contour integrals (also missing for generic polygonal paths in Mathlib).
-axiom parallelogramIntegral_inv_sub_eq_two_pi_i (ω₁ ω₂ z₀ w : ℂ) :
+--
+-- SOUNDNESS FIX 2026-08-24. This axiom was stated WITHOUT hypotheses on `ω₁ ω₂ w`:
+--
+--     axiom … (ω₁ ω₂ z₀ w : ℂ) : parallelogramIntegral (fun z => (z - w)⁻¹) … = 2πi
+--
+-- and was inconsistent BY ITSELF, independently of the axiom above. Every term of
+-- `parallelogramIntegral` carries a literal `ω₁` or `ω₂` factor, so at the
+-- DEGENERATE parallelogram `ω₁ = ω₂ = 0` the left side is identically `0`, giving
+-- `0 = 2πi`. Verified, exit 0.
+--
+-- It was also false for `w` OUTSIDE the parallelogram, where the true value is `0`,
+-- and the sign depends on orientation. Three hypotheses, all of them standard:
+--
+--   * `horient : 0 < (ω₂ / ω₁).im` — the periods are positively oriented. This also
+--     rules out the degenerate case (it forces `ω₁ ≠ 0` and `ω₂ / ω₁ ∉ ℝ`), and it
+--     fixes the SIGN: without it the residue is `±2πi`.
+--   * `w` is strictly interior, written in the period coordinates `a, b ∈ (0,1)`.
+--
+-- The residue theorem then gives `2πi` with multiplicity one, since a strictly
+-- interior `w` is enclosed exactly once.
+axiom parallelogramIntegral_inv_sub_eq_two_pi_i (ω₁ ω₂ z₀ w : ℂ)
+    (horient : 0 < (ω₂ / ω₁).im)
+    (a b : ℝ) (ha₀ : 0 < a) (ha₁ : a < 1) (hb₀ : 0 < b) (hb₁ : b < 1)
+    (hw : w = z₀ + (a : ℂ) * ω₁ + (b : ℂ) * ω₂) :
   parallelogramIntegral (fun z => (z - w)⁻¹) ω₁ ω₂ z₀ = 2 * Real.pi * I
 
 end

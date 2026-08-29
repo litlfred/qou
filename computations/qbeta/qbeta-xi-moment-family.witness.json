@@ -1,0 +1,76 @@
+{
+  "computation": "qbeta-xi-moment-family",
+  "description": "The k-cycle moment family Xi_k = (1+Q^k)/(1+Q)^k of the convention-D Schur-measure weights, verified from Murnaghan-Nakayama characters for n = 2..7; the corpus's proved loop-mean identity is its k=2 member.",
+  "engine": "sympy-exact",
+  "markov_convention": "D",
+  "assertions": [
+    {
+      "name": "xi_k_equals_one_plus_Qk_over_one_plus_Q_k__n_2_to_7",
+      "passed": true
+    },
+    {
+      "name": "loopMean_identity_2z_minus_h_eq_bracket2_times_Xi2",
+      "passed": true
+    },
+    {
+      "name": "xi_k_exactly_bar_even_k_1_to_6",
+      "passed": true
+    },
+    {
+      "name": "xi_k_numerator_is_cyclotomic_k_1_to_4",
+      "passed": true
+    }
+  ],
+  "data": {
+    "family": "Xi_k = (1 + Q^k)/(1 + Q)^k, Q = q^2",
+    "n_range_checked": [
+      2,
+      7
+    ],
+    "rows_at_n_7": [
+      {
+        "k": 1,
+        "Xi_k": "Integer(1)",
+        "Xi_k_str": "1"
+      },
+      {
+        "k": 2,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-2)), Add(Pow(Symbol('q', positive=True), Integer(4)), Integer(1)))",
+        "Xi_k_str": "(q**4 + 1)/(q**2 + 1)**2"
+      },
+      {
+        "k": 3,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-2)), Add(Pow(Symbol('q', positive=True), Integer(4)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(2))), Integer(1)))",
+        "Xi_k_str": "(q**4 - q**2 + 1)/(q**2 + 1)**2"
+      },
+      {
+        "k": 4,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-4)), Add(Pow(Symbol('q', positive=True), Integer(8)), Integer(1)))",
+        "Xi_k_str": "(q**8 + 1)/(q**2 + 1)**4"
+      },
+      {
+        "k": 5,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-4)), Add(Pow(Symbol('q', positive=True), Integer(8)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(6))), Pow(Symbol('q', positive=True), Integer(4)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(2))), Integer(1)))",
+        "Xi_k_str": "(q**8 - q**6 + q**4 - q**2 + 1)/(q**2 + 1)**4"
+      },
+      {
+        "k": 6,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-6)), Add(Pow(Symbol('q', positive=True), Integer(4)), Integer(1)), Add(Pow(Symbol('q', positive=True), Integer(8)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Integer(1)))",
+        "Xi_k_str": "(q**4 + 1)*(q**8 - q**4 + 1)/(q**2 + 1)**6"
+      },
+      {
+        "k": 7,
+        "Xi_k": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-6)), Add(Pow(Symbol('q', positive=True), Integer(12)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(10))), Pow(Symbol('q', positive=True), Integer(8)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(6))), Pow(Symbol('q', positive=True), Integer(4)), Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(2))), Integer(1)))",
+        "Xi_k_str": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/(q**2 + 1)**6"
+      }
+    ],
+    "bar_parity": "exactly even (twist 1) for every k"
+  },
+  "verdict": "DERIVED FAMILY (scope: structural, nothing wired). The proved loop-mean identity 2z - h = [2]_q * Xi_2 is the k=2 member of an n-independent, parameter-free, exactly-bar-even family Xi_k = (1+Q^k)/(1+Q)^k with cyclotomic numerators, obtained from the SAME D weights and ordinary S_n characters at the k-cycle classes. It is the only derived source of bar-even weight functionals located by corpus grep, and KC20's no-root-of-unity exclusion does not bind it (KC20 is about the bar-ODD carrier). NOT COMPARED to the cds1 residual ce and must not be: ce is resolved to 1.45%, so any k selected against the data is a fit.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_xi_moment_family_probe.py",
+    "scriptHash": "e2d0d0308db0",
+    "commitSha": "f0c5d467da1d379408cdc33eafe6a6d46b2e58b4",
+    "generatedAt": "2026-08-26T03:23:56.365255+00:00"
+  }
+}

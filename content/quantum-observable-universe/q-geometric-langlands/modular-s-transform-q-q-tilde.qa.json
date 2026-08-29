@@ -152,7 +152,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "112805b8753ec0251cbec0dd84bea59bfea434da",
-        "notes": "False positive: 'so the S-duality is not vacuous' is precise — the nondegenerate field exists to keep the conjecture carrier non-vacuous (the content-bearing-carrier requirement, AGENTS.md s3b-tax); 'not vacuous' is the project's technical vocabulary, not informal.",
+        "notes": "False positive: 'so the S-duality is not vacuous' is precise \u2014 the nondegenerate field exists to keep the conjecture carrier non-vacuous (the content-bearing-carrier requirement, AGENTS.md s3b-tax); 'not vacuous' is the project's technical vocabulary, not informal.",
         "severity": "minor"
       },
       {
@@ -754,7 +754,7 @@
           "in_degree": 0,
           "cone_size": 7,
           "depth": 4,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -994,7 +994,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1041,7 +1041,7 @@
       },
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1079,7 +1079,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1114,7 +1114,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1149,7 +1149,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1179,11 +1179,12 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
+        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs.",
+        "evidence": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1218,7 +1219,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1253,7 +1254,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1283,11 +1284,12 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1322,7 +1324,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1357,7 +1359,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1392,7 +1394,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1427,7 +1429,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1457,11 +1459,12 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1493,11 +1496,12 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1531,7 +1535,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1546,7 +1550,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1561,7 +1565,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1576,7 +1580,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1591,7 +1595,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1606,7 +1610,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1621,7 +1625,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1636,7 +1640,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1654,7 +1658,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1732,7 +1736,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1741,13 +1745,14 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1762,7 +1767,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" / \"Slot J\" stanza, the \"landed in PR #1127\" sentence, the duality-tracker \"D14 + §2 Cluster D\" citation, the \"13-driver menu\" `docs/audits/` memo and the D1/D2 ids for the two involutions are all gone; the involutions are now named (bar, Hermitian $*$, modular $S$).",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" / \"Slot J\" stanza, the \"landed in PR #1127\" sentence, the duality-tracker \"D14 + \u00a72 Cluster D\" citation, the \"13-driver menu\" `docs/audits/` memo and the D1/D2 ids for the two involutions are all gone; the involutions are now named (bar, Hermitian $*$, modular $S$).",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1863,7 +1868,7 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not the Hecke-element level.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not the Hecke-element level.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -2220,5 +2225,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T06:35:42.309Z"
+  "updated_at": "2026-08-22T06:35:42.309Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

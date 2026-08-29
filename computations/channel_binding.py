@@ -362,12 +362,19 @@ def self_test() -> None:
         mine = BOND_CROSSING[bond][0]
         assert sp.simplify(canonical[0] - mine[0]) == 0, (bond, canonical, mine)
         assert sp.simplify(canonical[1] - mine[1]) == 0, (bond, canonical, mine)
-    # numeric sanity: f_pn(std) ≈ 0.3948, f_pp(alt) < 0 (unbound)
+    # numeric sanity: f_pn(std) ≈ 0.5082, f_pp(alt) < 0 (unbound)
+    #
+    # 0.5082 is the **convention D** value (z = q³/(q²+1)).  This constant read
+    # 0.3948 until 2026-08-24, which was convention C (z = √q/(q+1)); the
+    # channel is linear in z -- fitting the two runs gives std = z - 0.10452 to
+    # 1e-4 -- so the whole move is the z shift and nothing else.  The
+    # structural half of this self-test (BOND_CROSSING vs atom_gen_chains_sym)
+    # is convention-independent and passed unchanged through the migration.
     ch = bond_channels("pn", "numeric")
-    assert abs(ch["std"] - mp.mpf("0.3948")) < mp.mpf("1e-3"), ch
+    assert abs(ch["std"] - mp.mpf("0.5082")) < mp.mpf("1e-3"), ch
     assert bond_channels("pp", "numeric")["alt"] < 0
     print("self_test: OK (BOND_CROSSING matches atom_gen_chains_sym; "
-          "f_pn(std)≈0.395; pp(alt)<0 unbound)")
+          "f_pn(std)≈0.508; pp(alt)<0 unbound)")
 
 
 # ── CLI dashboard ─────────────────────────────────────────────────────

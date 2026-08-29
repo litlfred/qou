@@ -6,3 +6,4 @@
 -- conditional-class axiomatisation of Mostow rigidity.
 
 import QOU.Encounter.MostowRigidity
+import QOU.Encounter.MostowTriangulationBridge

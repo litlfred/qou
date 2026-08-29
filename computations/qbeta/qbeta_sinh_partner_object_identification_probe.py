@@ -122,8 +122,14 @@ def qa_over_me(q: mp.mpf) -> mp.mpf:
 def qbeta_C_over_me(q: mp.mpf) -> mp.mpf:
     """The committed C-frame prediction: Q_A * cos(alpha - u/2) * (1 + c_2 u^2)."""
     h, hbar, b, u = _sub(q)
-    z = mp.sqrt(q) / (q + 1)
-    a = (z - 1) * h / 2
+    # NAMED z_C, not z: this reproduces the COMMITTED convention-C chain on
+    # purpose -- it is the object whose bar-ratio is being measured, so a
+    # convention-D substitution here would measure a different chain and
+    # destroy the finding. The plain name `z` made a deliberate reproduction
+    # look like an un-migrated defect to the AST detector, which decides
+    # `deliberate` from the target name (scripts/lib/convention_c_names.py).
+    z_C = mp.sqrt(q) / (q + 1)
+    a = (z_C - 1) * h / 2
     return qa_over_me(q) * mp.cos(a - b * hbar**2 / 2) * (1 - u**2)
 
 

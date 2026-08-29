@@ -58,6 +58,7 @@ from syt_prefix_cache import (
     BlockCache,
     build_seminormal_matrices_cached,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Shared BlockCache for P21 compute-audit compliance — avoids
 # rebuilding Hoefsmit content-distance tables per shape at large n.
@@ -109,7 +110,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
     and per-level breakdown by height."""
     A = Z + N
     k = 3 * A
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     descended = 0.0
@@ -121,7 +122,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
         chi, d = chi_lambda_atom(shape, crossings)
         if d == 0:
             continue
-        d_q_val = float(dim_q(shape))
+        d_q_val = float(dim_q(shape, Q0_PROTON))
         w_lambda = d_q_val ** 2 / float(nfac)
         # Markov contribution
         mc = w_lambda * chi / d

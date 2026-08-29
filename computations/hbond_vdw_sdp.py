@@ -62,7 +62,7 @@ for _p in (str(_HERE), str(_HERE.parents[1] / "tools" / "pyhecke" / "python")):
         sys.path.insert(0, _p)
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
-from lp_dual_solver import solve_operator_selection_lp
+from lp_dual_solver import provenance, solve_operator_selection_lp
 from mpmath import mp  # noqa: E402
 from _precision import fmt  # noqa: E402
 mp.dps = 50
@@ -161,16 +161,26 @@ def main() -> None:
     print(f"    Hopf link σ₁² = q²·e₊ + q⁻²·e₋ = {float(w_sym):.4f}·e₊ + {float(w_asym):.4f}·e₋ "
           f"⇒ {float(100*w_sym/(w_sym+w_asym)):.1f}% symmetric (carrier-dominated)")
 
-    # GENUINE float64 boundary, unlike the Gram eigen-solve above: the LP is
-    # solved by scipy, which is float64 by construction. Converting here is
-    # therefore documented rather than excised -- the alternative would be an
-    # exact-rational LP, which is a different piece of work. Everything
-    # upstream of this line stays mpf.
-    t2 = np.array([float(tr_ep), float(tr_em)])
-    G2 = np.diag([float(tr_ep), float(tr_em)])
-    res = solve_operator_selection_lp(t2, G2, n_target, backend="scipy")
-    print(f"    SDP duals: y0*={float(res.y0_star):.5f} (binding density)  "
-          f"y*={[f'{float(y):.5f}' for y in res.y_star]}  active={res.active_set}")
+    # MERGE NOTE 2026-08-24: `origin/main` converted these to float() and
+    # solved with backend="scipy", documenting the result as a "GENUINE float64
+    # boundary ... the LP is solved by scipy, which is float64 by construction".
+    # That premise is conditioned on the backend, and it stops holding once the
+    # solve is pinned to clarabel-MPFR, so the conversion is not reinstated.
+    # main's underlying worry -- that the answer depends on which solver is
+    # present -- is real and is what QOU_REQUIRE_CLARABEL=1 answers: a missing
+    # binary becomes an error rather than a silently different number.
+    t2 = np.array([tr_ep, tr_em])
+    G2 = np.diag([tr_ep, tr_em])
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t2, G2, n_target, backend="clarabel")
+    print(f"    SDP duals: y0*={res.y0_star:.5f} (binding density)  "
+          f"y*={[f'{y:.5f}' for y in res.y_star]}  active={res.active_set}")
     hopf_active = True   # the symmetric block e₊ is a genuine independent channel
     hopf_price = float(tr_ep)
     print()
@@ -212,6 +222,9 @@ def main() -> None:
     w.add_data("primal_obj", res.primal_obj)
     w.add_data("dual_obj", res.dual_obj)
     w.add_data("duality_gap", res.duality_gap)
+    # Solver, precision, and full-precision decimals behind the f64 fields.
+    for _k, _v in provenance(res).items():
+        w.add_data(_k, _v)
     w.add_data("hopf_vdw_channel_active", bool(hopf_active))
     w.add_data("hopf_vdw_shadow_price", float(hopf_price))
     w.add_data("naive_basis_gram_rank", rank)

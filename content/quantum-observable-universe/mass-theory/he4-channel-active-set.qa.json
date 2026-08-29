@@ -898,7 +898,7 @@
           "in_degree": 0,
           "cone_size": 4,
           "depth": 4,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 29,
           "edge_span_mean": 29,
           "worst_target": ""
@@ -1036,7 +1036,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1070,7 +1070,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1085,7 +1085,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1100,7 +1100,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1115,7 +1115,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1130,7 +1130,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1145,7 +1145,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1160,7 +1160,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1178,7 +1178,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1196,7 +1196,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1214,7 +1214,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1228,7 +1228,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -1241,7 +1241,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1256,7 +1256,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1271,7 +1271,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1286,7 +1286,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1301,7 +1301,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1316,7 +1316,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1331,7 +1331,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1346,7 +1346,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1361,7 +1361,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1376,7 +1376,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1391,7 +1391,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1406,7 +1406,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1421,7 +1421,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1436,7 +1436,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1451,7 +1451,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:54:48.000Z",
         "reviewed_sha": "7a1316543564cbc74d960d9081ba804a8b9583a0",
         "reviewer": {
@@ -1606,7 +1606,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -1787,7 +1787,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.702Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1821,7 +1821,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.740Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-em-dash": [
@@ -1889,7 +1889,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.831Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-closing-aphorism": [
@@ -1923,7 +1923,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.885Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-meta-commentary": [
@@ -1957,7 +1957,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.930Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-thesis-restatement": [
@@ -1991,7 +1991,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:57.963Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-performed-warmth": [
@@ -2025,7 +2025,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:58.009Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Six first-person constructions ('We load the empirical anchors', 'We apply', 'We have y_0* = 20.380', 'We make this connection explicit'), but mathematical 'we' is standard scholarly register, not personal warmth. Noted for a different audit: 'We have X = ...' as a way of reporting a computed value is filler — the value can simply be stated."
+        "evidence": "Six first-person constructions ('We load the empirical anchors', 'We apply', 'We have y_0* = 20.380', 'We make this connection explicit'), but mathematical 'we' is standard scholarly register, not personal warmth. Noted for a different audit: 'We have X = ...' as a way of reporting a computed value is filler \u2014 the value can simply be stated."
       }
     ],
     "trap-superlative": [
@@ -2059,7 +2059,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:58.069Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "'the most binding-receptive sub-braid' is licensed — y_DD is in fact the largest shadow price. Two numeric overstatements are reported separately rather than as inflation: 'This is five times the effect of the 3He+n channel' recomputes as 3.778/0.796 = 4.746, and 'Sub-braid corrections are sub-percent' is asserted with no witness."
+        "evidence": "'the most binding-receptive sub-braid' is licensed \u2014 y_DD is in fact the largest shadow price. Two numeric overstatements are reported separately rather than as inflation: 'This is five times the effect of the 3He+n channel' recomputes as 3.778/0.796 = 4.746, and 'Sub-braid corrections are sub-percent' is asserted with no witness."
       }
     ],
     "trap-nonspeakable": [
@@ -2093,7 +2093,7 @@
         },
         "reviewed_at": "2026-08-21T16:27:58.108Z",
         "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
-        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) \u2014 the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2117,5 +2117,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:27:58.108Z"
+  "updated_at": "2026-08-21T16:27:58.108Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

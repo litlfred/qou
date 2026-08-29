@@ -575,9 +575,48 @@ variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
 variable [ctx : OperatorSelectionLpContext R]
 
 /-- A vector `x : Fin d → R` is LP-feasible: it satisfies the net
-    constraint and Frobenius positivity. (Boundedness `xᵢ ≥ -M` is
-    absorbed into the existence of a large `M`; we keep the two
-    binding constraints, which are the ones that select the optimum.)
+    constraint and Frobenius positivity.  The box `xᵢ ≥ -M` is dropped.
+
+    **Why dropping it is sound, and why the old reason was the wrong
+    one.**  This docstring used to say the box was "absorbed into the
+    existence of a large `M`" and call the other two "the two binding
+    constraints".  That is not what happens.  In the committed solve
+    (`computations/a-K-via-lp-dual-hecke-basis.witness.json`, both atoms)
+
+        x*₀ = -1000000.0 = -M   exactly ,
+
+    so the box at index `0` is **active** at the solver's optimum.  Bean
+    `qou/0tjt` concluded "the box is non-binding at `x*`" and this file
+    dropped it on that basis; the statement is true of the radical
+    optimum `x* = c·v` that `0tjt` reasoned about and false of the
+    vertex the solver returned.  The LP has many optima and they differ
+    on this.
+
+    Dropping the box does not depend on either.  Two reasons, both
+    independent of where the optimum sits:
+
+    1. **The drop only enlarges `IsFeasible`.**  Every theorem below is
+       either "`x*` satisfies these two constraints" — unaffected — or
+       "`x*` is optimal among all feasible points" / a lower bound over
+       all feasible points, which is *strengthened* by admitting more
+       points.  A boxed optimum is a relaxed-feasible point, so nothing
+       here can be true of the relaxation and false of the box.
+    2. **The certificate, not the box, is what bounds the program.**
+       `dual_bound_le_objective` uses the net constraint, Frobenius
+       positivity and `s ≥ 0`, and nothing else.  The box exists in the
+       narrative to make the polyhedron bounded; here the dual bound
+       already does that, so the box is not load-bearing for any
+       conclusion.
+
+    What *is* true of the witness, and is the right form of `0tjt`'s
+    claim: the box **multipliers** vanish, which is what makes the
+    narrative's `≤` dual tight and the equality `dual_feasible` correct.
+    With `y = e₀` and `y₀ = 0`, `μⱼ = tⱼ - y₀ - Σᵢ Gⱼᵢ yᵢ = tⱼ - Gⱼ₀ = 0`
+    for every `j`, because `t` is row `0` of `G` and `G` is symmetric.
+    So index `0` is an active constraint with a zero multiplier —
+    primal degeneracy at a box vertex, not a constraint that binds in
+    the dual sense.  Note this holds for the structural reason
+    `t = G₀·`, not because `M` was chosen large.
 
     This is a genuine predicate on the data, not a projected field. -/
 def IsFeasible (x : Fin (ctx.d) → R) : Prop :=

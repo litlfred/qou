@@ -1,0 +1,177 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2508.03145v1",
+ "source": {
+  "file": "2508.03145v1.pdf",
+  "sha256": "2bf03452cb503e969a2a1b2b393f56270a02563f1e4e62798866f86edf76a988",
+  "bytes": 622830,
+  "pages": 33,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2508.03145",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "5 Aug 2025"
+  },
+  "doi": null,
+  "title": "\u0398-Categories and Tannakian duality",
+  "authors_raw": "Joost NUITEN, Bertrand TOEN",
+  "title_lines": [
+   "\u0398-Categories and Tannakian duality"
+  ],
+  "abstract": "We introduce a notion of\u0398-categories, which is a refinement of the notion of symmetric monoidal\u221e-categories. We use this notion to prove a Tannakian duality statement, relating\u0398-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of \u0398-categories. This provides, over a base ring of arbitrary characteris- tic, a strong link betweenTannakian \u0398-categories and the schematic homotopy types of [Toe06].",
+  "docinfo": {
+   "Author": "Joost Nuiten; Bertrand Toen",
+   "Creator": "arXiv GenPDF (tex2pdf:)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Theta-Categories and Tannakian duality"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "-Categories",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "-Categories",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "-Categories",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "-Categories of modules",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Tannaka duality",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "-Categories of quasi-coherent and ind-perfect sheaves",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Tannakian -categories and Tannakian gerbes",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Tannakian duality theorem",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Positive tor-dimension descent",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000--categories",
+   "number": null,
+   "title": "-Categories",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 7533,
+   "n_words": 1144
+  },
+  {
+   "id": "sec-001--categories",
+   "number": null,
+   "title": "-Categories",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 11,
+   "n_chars": 9202,
+   "n_words": 1456
+  },
+  {
+   "id": "sec-002--categories-of-modules",
+   "number": null,
+   "title": "-Categories of modules",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 6199,
+   "n_words": 985
+  },
+  {
+   "id": "sec-003-tannaka-duality",
+   "number": null,
+   "title": "Tannaka duality",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 162,
+   "n_words": 28
+  },
+  {
+   "id": "sec-004--categories-of-quasi-coherent-and-ind-perfect-sh",
+   "number": null,
+   "title": "-Categories of quasi-coherent and ind-perfect sheaves",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 23,
+   "n_chars": 16767,
+   "n_words": 2417
+  },
+  {
+   "id": "sec-005-the-tannakian-duality-theorem",
+   "number": null,
+   "title": "The Tannakian duality theorem",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 29,
+   "n_chars": 10488,
+   "n_words": 1612
+  },
+  {
+   "id": "sec-006-positive-tor-dimension-descent",
+   "number": null,
+   "title": "Positive tor-dimension descent",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 5846,
+   "n_words": 832
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 7,
+  "chars_total": 56197
+ }
+}

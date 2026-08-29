@@ -104,7 +104,7 @@ def main() -> int:
         .add_data("per_q_value_results", results)
         .add_assertion(
             name="factorisation_h_equals_hbar_q_times_q_plus_1",
-            computed=float(max_factor_residue),
+            computed=max_factor_residue,
             expected=0.0, tolerance=1e-40,
             unit="max over {q_0, 1.5, 2} of |h − ℏ_q · (q+1)|",
             source=(
@@ -114,7 +114,7 @@ def main() -> int:
         )
         .add_assertion(
             name="log_decomposition_identity",
-            computed=float(max_log_residue),
+            computed=max_log_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over {q_0, 1.5, 2} of "

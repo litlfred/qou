@@ -62,9 +62,9 @@ mp.mp.dps = 80  # mpmath context precision (50 dps inputs, 30 dps headroom)
 Q = mp.mpf(Q_50_DIGIT_STR)
 
 # CODATA (single source of truth — experimental_constants)
-M_E = mp.mpf(repr(M_E_MEV))
-M_P = mp.mpf(repr(M_P_MEV))
-Q_BETA_CAL3 = mp.mpf(repr(Q_NEUTRON_MEV))  # m_n - m_p - m_e
+M_E = mp.mpf(M_E_MEV)
+M_P = mp.mpf(M_P_MEV)
+Q_BETA_CAL3 = mp.mpf(Q_NEUTRON_MEV)  # m_n - m_p - m_e
 
 # Derive m_n from m_p + Q_β + m_e per the 3-input scheme (Copilot review on PR #701)
 M_N = M_P + Q_BETA_CAL3 + M_E

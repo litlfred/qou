@@ -1,34 +1,52 @@
-import QOU.Torsion.BraneTower
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+import Mathlib.Data.Fintype.Card
+import Mathlib.Tactic.Linarith
 
 /-!
-# Mass Endomorphism: Proton–Electron Mass Ratio
+# Mass Endomorphism: Proton–Electron Mass Tower (convention D, `Li₂^q`)
 
-The mass of a vortex with braid representative β ∈ Bₙ decomposes
-into a descended term (base-level Markov trace) and transient
-terms (Φ_q at blow-up centres), one per generator and one per
-adjacent generator pair.
+The mass of a vortex with braid representative `β ∈ Bₙ` decomposes into
+a descended term (base-level regular-representation trace) and transient
+`Li₂^q` corrections, one per generator and one per adjacent generator
+pair.
 
 **Two-tier split.** Per the audit
 [`docs/audits/2026-05-03-pre-archimedean-proof-audit.md`](../../../docs/audits/2026-05-03-pre-archimedean-proof-audit.md)
-§1 Step 18a, the previous version conflated the algebraic
-mass-tower (which lives in `H_n(R, q)` over `R ⊇ ℤ[q^±1]`) with
-its numerical evaluation at `q = q₀ ∈ ℝ`.  This file now carries
-two namespaces:
+§1 Step 18a, the algebraic mass-tower (which lives in `H_n(R, q)` over
+`R ⊇ ℤ[q^±1]`) is kept separate from its numerical evaluation at
+`q = q₀ ∈ ℝ`.  This file carries two tiers:
 
-  - `QOU.MassEndomorphism.Pre`    — pre-Archimedean: polymorphic
-    in the ground field `R`; the quantum dilogarithm `Φ_q` is an
-    opaque element of `R` (Habiro / formal-series), and the mass
-    formula uses the abstract Frobenius norm `‖·‖_F`.
-  - `QOU.MassEndomorphism.Arch`   — post-Archimedean: specialised
-    to `ℝ` with `1 < q`, using `|·|`, `Real.tsum`, and CODATA
-    comparisons.  This is the realm of the `MassEvaluation` class
-    and the proton–electron ratio theorem.
+  - `QOU.MassEndomorphism.Pre` — pre-Archimedean: polymorphic in the
+    ground field `R` (`{R : Type u} [Field R]`); the `q`-dilogarithm
+    `Li₂^q` and the Frobenius norm `‖·‖_F` are opaque `R → R` data
+    (Habiro / formal-series), and the Markov parameter is
+    `z = q³/(q²+1)` (**convention D**, owner ruling 2026-08-15).
+  - `QOU.MassEndomorphism` (order tier) — specialised to an ordered
+    field (`[Field R] [LinearOrder R] [IsStrictOrderedRing R]`).  The
+    Archimedean-side result here is the mass formula's **positivity**:
+    under a genuine (`0 ≤ ‖·‖_F`) norm and the bounded-Rogers sign
+    `Li₂^q(-x) ≤ 0` for `0 ≤ x`, the mass `𝔪(ϱ)` is `≥ 0`, and `> 0`
+    once its descended term is `> 0`.  This is *not* the numerical
+    proton–electron ratio — that stays the compute witness
+    (`habiro_exact_mass_endomorphism.py`), not a Lean claim.
 
-Content blocks: conj:mass-endomorphism-conjecture,
+**Convention D + bounded `Li₂^q`.** The canonical formula (see the
+`.md`) is
+`𝔪(ϱ) = |∏ V̂ᵢ| − Σᵢ Li₂^q(−|V̂ᵢ|) − Σ z²·Li₂^q(−|V̂ᵢ·V̂ⱼ|)`,
+with `z = q³/(q²+1)`.  The bounded symmetric Rogers `Li₂^q` REPLACES
+the older Faddeev `Φ_q` truncation, which was **refuted 2026-06-18**
+(empirically incompatible with isospin symmetry; massive mirror-nucleus
+pathologies).  `li2q` here is abstract — its bounded sign is carried as
+the `MassPositivityHyp` hypothesis, not by formalising the series.
+
+Content blocks: prop:mass-endomorphism-tower,
+     conj:mass-endomorphism-conjecture,
      thm:topological-mass (decomposition theorem),
      def:hecke-mass-element (categorical definition)
 -/
+
+universe u
 
 namespace QOU.MassEndomorphism
 
@@ -36,49 +54,107 @@ namespace QOU.MassEndomorphism
 
 namespace Pre
 
-universe u
-
 variable {R : Type u} [Field R]
 
-/-- Pre-Arch quantum dilogarithm.  Content-bearing first-order
-    approximation: `1 - q⁻¹·z` (the leading Habiro-ring expansion of
-    `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` truncated at `k=1`).  The genuine formal
-    infinite product is the upgrade target. -/
-def quantumDilogPoly (q z : R) : R := 1 - q⁻¹ * z
+/-- Markov parameter `z = q³/(q²+1)` (**convention D**, owner ruling
+    2026-08-15), valued in the ground field `R`.  Supersedes the excised
+    convention-C form `√q/(q+1)`. -/
+noncomputable def markovZD (q : R) : R := q ^ 3 / (q ^ 2 + 1)
 
-/-- Markov parameter `z = 1 / (v + v⁻¹)` where `v² = q` (the
-    formal square root of `q`), valued in `R`. -/
-noncomputable def markovParamPoly (v : R) : R :=
-  1 / (v + v⁻¹)
+/-- Frobenius norm of an adjacent generator pair's product.  Hides the
+    `Fin` casts (`i.val < n` and `i.val + 1 < n`, from `i : Fin (n-1)`)
+    so downstream proofs stay clean. -/
+noncomputable def adjPairNorm (frobeniusNorm : R → R) (n : ℕ) (V : Fin n → R)
+    (i : Fin (n - 1)) : R :=
+  frobeniusNorm (V ⟨i.val, by omega⟩ * V ⟨i.val + 1, by omega⟩)
 
 /-- The pre-Arch mass formula, valued in the ground field `R`.
 
-    Each generator's traced volume `V i ∈ R` is supplied as data;
-    the Frobenius norm `‖·‖_F : R → R` is also passed in (no
-    Archimedean `|·|`).
+    Each generator's traced volume `V i ∈ R` is supplied as data; the
+    Frobenius norm `‖·‖_F : R → R` and the symmetric `q`-dilogarithm
+    `Li₂^q : R → R` are also passed in (abstract; no Archimedean `|·|`,
+    no series).  Signs and the `z²` pair weight follow the `.md` boxed
+    formula (convention D):
 
-      𝔪 = ‖∏ V i‖_F + Σᵢ Φ_q(‖V i‖_F)
-            + z² · Σ_{adj} Φ_q(‖V i · V j‖_F). -/
-noncomputable def massPoly
-    (frobeniusNorm : R → R)
-    (q v : R) (n : ℕ) (V : Fin n → R) : R :=
-  let prod_V : R := ∏ i, V i
-  let single_terms : R :=
-    ∑ i, quantumDilogPoly q (frobeniusNorm (V i))
-  -- Adjacent-generator cross-terms (weight z² = tr_M(σ_i σ_j))
-  let adj_terms : R :=
-    (markovParamPoly v) ^ 2 *
-      ∑ i : Fin (n - 1),
-        quantumDilogPoly q
-          (frobeniusNorm
-            (V ⟨i.val, by omega⟩ * V ⟨i.val + 1, by omega⟩))
-  frobeniusNorm prod_V + single_terms + adj_terms
+      𝔪 = ‖∏ V i‖_F − Σᵢ Li₂^q(−‖V i‖_F)
+            − z² · Σ_{adj} Li₂^q(−‖V i · V j‖_F),   z = q³/(q²+1). -/
+noncomputable def massPoly (frobeniusNorm li2q : R → R) (q : R) (n : ℕ)
+    (V : Fin n → R) : R :=
+  frobeniusNorm (∏ i, V i)
+    - (∑ i, li2q (- frobeniusNorm (V i)))
+    - (markovZD q) ^ 2 * (∑ i : Fin (n - 1), li2q (- adjPairNorm frobeniusNorm n V i))
 
 end Pre
 
--- Ref: [manuscript] prop:mass-endomorphism-tower
-/-- Proton-electron mass ratio theorem. -/
-theorem proton_electron_ratio (frobeniusNorm : ℝ → ℝ) (q v : ℝ) (n : ℕ) (V : Fin n → ℝ) :
-    q > 1 → Pre.massPoly frobeniusNorm q v n V > 0 := sorry
+/-! ## §2.  Order tier — positivity of the mass formula -/
+
+variable {R : Type u} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- The hypotheses under which the mass endomorphism is non-negative:
+    a genuine (non-negative) Frobenius norm, and the bounded-Rogers sign
+    of the symmetric `q`-dilogarithm.  The second field is exactly why
+    the bounded `Li₂^q` replaced the Faddeev `Φ_q`: on the physical
+    (non-negative-norm) arguments the `Φ_q` face blows up and changes
+    sign, whereas `Li₂^q(−x) ≤ 0` for `0 ≤ x`. -/
+structure MassPositivityHyp (frobeniusNorm li2q : R → R) : Prop where
+  /-- The Frobenius norm is genuinely a norm: non-negative everywhere. -/
+  norm_nonneg : ∀ x, 0 ≤ frobeniusNorm x
+  /-- Bounded-Rogers sign: `Li₂^q(−x) ≤ 0` on non-negative arguments. -/
+  li2q_nonpos_on_neg : ∀ x, 0 ≤ x → li2q (-x) ≤ 0
+
+/-- **The mass endomorphism is non-negative.**  Under `MassPositivityHyp`
+    (a genuine norm + the bounded-Rogers dilog sign), the pre-Arch mass
+    `Pre.massPoly` is `≥ 0` for every braid data `(q, n, V)`.
+
+    Proof: the descended term `‖∏ V i‖_F ≥ 0`; both `Li₂^q` sums are
+    `≤ 0` (each summand `Li₂^q(−‖·‖_F) ≤ 0` since `‖·‖_F ≥ 0`, then
+    `Finset.sum_nonpos`); the pair weight `z² ≥ 0` (`sq_nonneg`), so
+    `z²·(sum ≤ 0) ≤ 0`; hence `A − B − z²·D ≥ 0` with `A ≥ 0`, `B ≤ 0`,
+    `z²·D ≤ 0`. -/
+theorem mass_endomorphism_nonneg (frobeniusNorm li2q : R → R)
+    (h : MassPositivityHyp frobeniusNorm li2q) (q : R) (n : ℕ) (V : Fin n → R) :
+    0 ≤ Pre.massPoly frobeniusNorm li2q q n V := by
+  unfold Pre.massPoly
+  have hA : 0 ≤ frobeniusNorm (∏ i, V i) := h.norm_nonneg _
+  have hB : (∑ i, li2q (- frobeniusNorm (V i))) ≤ 0 := by
+    apply Finset.sum_nonpos
+    intro i _
+    exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
+  have hD : (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 := by
+    apply Finset.sum_nonpos
+    intro i _
+    unfold Pre.adjPairNorm
+    exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
+  have hz : 0 ≤ (Pre.markovZD q) ^ 2 := sq_nonneg _
+  have hzD : (Pre.markovZD q) ^ 2 *
+      (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 :=
+    mul_nonpos_of_nonneg_of_nonpos hz hD
+  linarith
+
+/-- **The mass endomorphism is strictly positive when its descended term
+    is.**  Under `MassPositivityHyp`, if the descended trace term
+    `‖∏ V i‖_F > 0` then the pre-Arch mass `Pre.massPoly > 0`.  This is
+    the strict form of `mass_endomorphism_nonneg`: the two `Li₂^q`
+    contributions are still `≤ 0`, so a strictly positive descended term
+    dominates. -/
+theorem mass_endomorphism_positive (frobeniusNorm li2q : R → R)
+    (h : MassPositivityHyp frobeniusNorm li2q) (q : R) (n : ℕ) (V : Fin n → R)
+    (hprod : 0 < frobeniusNorm (∏ i, V i)) :
+    0 < Pre.massPoly frobeniusNorm li2q q n V := by
+  unfold Pre.massPoly
+  have hB : (∑ i, li2q (- frobeniusNorm (V i))) ≤ 0 := by
+    apply Finset.sum_nonpos
+    intro i _
+    exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
+  have hD : (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 := by
+    apply Finset.sum_nonpos
+    intro i _
+    unfold Pre.adjPairNorm
+    exact h.li2q_nonpos_on_neg _ (h.norm_nonneg _)
+  have hz : 0 ≤ (Pre.markovZD q) ^ 2 := sq_nonneg _
+  have hzD : (Pre.markovZD q) ^ 2 *
+      (∑ i : Fin (n - 1), li2q (- Pre.adjPairNorm frobeniusNorm n V i)) ≤ 0 :=
+    mul_nonpos_of_nonneg_of_nonpos hz hD
+  linarith
 
 end QOU.MassEndomorphism

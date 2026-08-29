@@ -104,7 +104,10 @@ def main() -> int:
             rows.append({"Z": Z, "N": N, "A": A, "nf_overflow": True})
             continue
 
-        lp = solve_operator_selection_lp(t, G, float(A))
+        # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+        # whether the Rust binary happens to be built, so the same script
+        # yields different numbers on different boxes. Bean `qou/ftuv`.
+        lp = solve_operator_selection_lp(t, G, float(A), backend="clarabel")
         try:
             frob = solve_frobenius_dual_lp(t, G, nf_net, np.asarray(nf, float))
         except Exception:
@@ -145,7 +148,10 @@ def main() -> int:
             continue
         if not all(np.isfinite(np.asarray(nf, dtype=float))):
             continue
-        lp = solve_operator_selection_lp(t, G, float(A))
+        # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+        # whether the Rust binary happens to be built, so the same script
+        # yields different numbers on different boxes. Bean `qou/ftuv`.
+        lp = solve_operator_selection_lp(t, G, float(A), backend="clarabel")
         sample_duals.append({
             "Z": Z, "N": N, "A": A, "n_target": A,
             "lp": lp.to_dict(),

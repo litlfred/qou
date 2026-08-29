@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T13:34:18.067494+00:00",
-  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:01:49.702804+00:00",
+  "commitSha": "67bd5e3e16d6ebf109266e9d11a352152e5fa37a",
   "assertions": [
     {
       "name": "swing_is_amplified_slope",
-      "computed": 0.9999996300752454,
+      "computed": "0.999999630075245383974959521636951956954255887239467235991132",
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "S(p)-S(mu) = S'(q*)*(q_p-q_mu) to <5%: the anchor swing is the KC21 1/u^3 slope, so a c3-level smooth meridian source is structurally excluded from the swing"
     },
     {
@@ -17,24 +17,24 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(proton)*S(muon) < 0 while every candidate is a single positive number"
     },
     {
       "name": "candidates_at_S_scale",
-      "computed": 0.17118534203267116,
+      "computed": "0.17118534203267114997657458862346337528067318415916061010905",
       "expected": 0.4,
       "passed": true,
-      "tolerance": 0.4,
+      "tolerance": "0.4",
       "source": "all |S|/candidate ratios are O(0.17-0.7): the deformed rungs supply the scale (only)"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-kc19-kappatilde-barodd-source-test",
   "scriptFile": "qbeta_kc19_kappatilde_barodd_source_test.py",
-  "scriptHash": "ab7cde3fd1d5",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "dc074e000299",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -104,8 +104,8 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-c3-borel-pade-deformed-rungs.witness.json",
-        "sha256": "31b63bd22c3e7d3de8b4c2e0e5d6861c3fca6bface7338b8a440275b16bae93c",
-        "size_bytes": 5293,
+        "sha256": "f34b6cd8201523e84069fe83175db387059fac297707b1801655f4221ddedc6e",
+        "size_bytes": 5297,
         "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
         "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
         "computedAt": "2026-08-23T09:44:59.388404+00:00"

@@ -52,6 +52,7 @@ from pathlib import Path
 
 import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from q_parameter import Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -66,7 +67,11 @@ def delta_n(n: int) -> mp.mpf:
 PHI = delta_n(1)
 DELTA_SILVER = delta_n(2)
 DELTA_BRONZE = delta_n(3)
-Q0 = mp.mpf("1.1099785955541805")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:

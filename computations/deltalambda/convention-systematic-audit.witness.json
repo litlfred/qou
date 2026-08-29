@@ -1,0 +1,172 @@
+{
+  "engine": "pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T09:46:32.548009+00:00",
+  "commitSha": "29f66902809ffc8db4d34cd8b46f49c2f2739c20",
+  "assertions": [
+    {
+      "name": "all_8_cells_evaluate",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "sign_invariant_across_conventions",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "convention-systematic-audit",
+  "scriptFile": "convention_systematic_audit_probe.py",
+  "scriptHash": "a9c37a729d15",
+  "scriptCommitSha": "374c699ee1095f5095f1b853dbdcb9d4d184f353",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/convention_systematic_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/convention_systematic_audit_probe.py"
+  },
+  "description": "Full 2x2x2 factorial over three underived convention choices (q0 anchor, trace object, p-n crossing) measuring their combined effect on Delta^2 g and the A=3 cluster coefficient cl_3. Under the canonical trace convention D the combined floor is 0.0146%, ALL of it the p-n crossing: the q0 anchor and the |chi|-vs-signed trace object each contribute 0. The trace-object zero is structural under D -- the Wenzl level collapses to r=2, so every partition with three or more rows carries y_lambda = 0 and |chi| is a no-op. The 7.7% spread this probe measured under the excised convention C was that same choice, and is a C artifact. Sign claims are convention-invariant. The #4404 baseline is convention C, is recorded as history with its delta, and is deliberately NOT a gate.",
+  "parameters": {
+    "q0_proton": "1.10997858275138080759166909561",
+    "q0_muon": "1.10997859555733471989976322048",
+    "canonical_combination": "proton|abs|bring_color_weighted"
+  },
+  "data": {
+    "results": {
+      "T": {
+        "cells": {
+          "proton|abs|bring_color_weighted": {
+            "d2": "0.32783983234711737691",
+            "cl3_MeV": "-1.3723314283506188152",
+            "submodular": false
+          },
+          "proton|abs|strict_averaged": {
+            "d2": "0.32788776574607166378",
+            "cl3_MeV": "-1.372532076665320819",
+            "submodular": false
+          },
+          "proton|signed|bring_color_weighted": {
+            "d2": "0.32783983234711737691",
+            "cl3_MeV": "-1.3723314283506188152",
+            "submodular": false
+          },
+          "proton|signed|strict_averaged": {
+            "d2": "0.32788776574607166378",
+            "cl3_MeV": "-1.372532076665320819",
+            "submodular": false
+          },
+          "muon|abs|bring_color_weighted": {
+            "d2": "0.32783993451092623015",
+            "cl3_MeV": "-1.3723316803787677406",
+            "submodular": false
+          },
+          "muon|abs|strict_averaged": {
+            "d2": "0.32788786792612424118",
+            "cl3_MeV": "-1.3725323287357871851",
+            "submodular": false
+          },
+          "muon|signed|bring_color_weighted": {
+            "d2": "0.32783993451092623015",
+            "cl3_MeV": "-1.3723316803787677406",
+            "submodular": false
+          },
+          "muon|signed|strict_averaged": {
+            "d2": "0.32788786792612424118",
+            "cl3_MeV": "-1.3725323287357871851",
+            "submodular": false
+          }
+        },
+        "marginal_effects": {
+          "q0_anchor": "1.8364962261944859205e-7",
+          "trace_object": "0.0",
+          "pn_crossing": "0.00014620980803679436709"
+        },
+        "canonical_cl3_MeV": "-1.3723314283506188152",
+        "spread_abs_MeV": "0.0002009003851683699",
+        "spread_rel_to_canonical": "0.00014639348849558052132",
+        "sign_invariant": true,
+        "convention_C_4404_baseline_MeV": "-1.769",
+        "delta_vs_convention_C_MeV": "0.39666857164938118479"
+      },
+      "3He": {
+        "cells": {
+          "proton|abs|bring_color_weighted": {
+            "d2": "0.24697584011312590171",
+            "cl3_MeV": "-1.0338362638975412683",
+            "submodular": false
+          },
+          "proton|abs|strict_averaged": {
+            "d2": "0.2470119504032985514",
+            "cl3_MeV": "-1.0339874208992271355",
+            "submodular": false
+          },
+          "proton|signed|bring_color_weighted": {
+            "d2": "0.24697584011312590171",
+            "cl3_MeV": "-1.0338362638975412683",
+            "submodular": false
+          },
+          "proton|signed|strict_averaged": {
+            "d2": "0.2470119504032985514",
+            "cl3_MeV": "-1.0339874208992271355",
+            "submodular": false
+          },
+          "muon|abs|bring_color_weighted": {
+            "d2": "0.24697591357148324024",
+            "cl3_MeV": "-1.0338364390849979537",
+            "submodular": false
+          },
+          "muon|abs|strict_averaged": {
+            "d2": "0.24701202387338014027",
+            "cl3_MeV": "-1.0339875961164166073",
+            "submodular": false
+          },
+          "muon|signed|bring_color_weighted": {
+            "d2": "0.24697591357148324024",
+            "cl3_MeV": "-1.0338364390849979537",
+            "submodular": false
+          },
+          "muon|signed|strict_averaged": {
+            "d2": "0.24701202387338014027",
+            "cl3_MeV": "-1.0339875961164166073",
+            "submodular": false
+          }
+        },
+        "marginal_effects": {
+          "q0_anchor": "1.6945377406761388162e-7",
+          "trace_object": "0.0",
+          "pn_crossing": "0.00014620980803672763359"
+        },
+        "canonical_cl3_MeV": "-1.0338362638975412683",
+        "spread_abs_MeV": "0.000151332218875339",
+        "spread_rel_to_canonical": "0.00014637929057046197449",
+        "sign_invariant": true,
+        "convention_C_4404_baseline_MeV": "-1.405",
+        "delta_vs_convention_C_MeV": "0.37116373610245873173"
+      }
+    },
+    "worst_relative_spread": "0.00014639348849558052132"
+  },
+  "caveats": [
+    "This measures only THREE of the live convention choices -- the ones exposed as parameters in the A=3 path. At least two more exist and are NOT varied here: the chi-encoding split of 2026-06-09 (matrix-M vs markov_trace_3A vs canonical tr_M_element, disagreeing by factors of ~7 in chi) and the signed-vs-double-modulus binding convention. The true systematic is therefore a LOWER BOUND on what is reported here."
+  ]
+}

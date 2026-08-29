@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:23.505091+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-24T10:56:00.352665+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "nf-transition-lifting",
   "scriptFile": "nf_transition_lifting.py",
   "scriptHash": "49e6bcb0a0dd",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,14 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/nf_transition_lifting.py"
+    ],
+    "reproduce": "python3 -u computations/nf_transition_lifting.py"
   },
   "description": "NF transition lifting: per-step Wedderburn channel decomposition during atom construction. Proton steps increase R_std (pp chirality), neutron steps decrease (nn cancellation). Neutron-step V_new decays geometrically with ratio → W_STD. R_std = V_std(full)/V_std(free) tracks cumulative confinement.",
   "contentBlock": "conj:jet-filtered-knot-factor",

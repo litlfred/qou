@@ -55,12 +55,18 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
 set_compute_dps()
 
 # --- exact constants from production witnesses (50 dps) ----------------------
-Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 HBAR_Q = 1 - 1 / Q0  # quantum Planck constant ℏ_q = 1 − q₀⁻¹
 
 # physical z_i = |V̂_i^full| (additive Wedderburn traced volume, FULL channel).
@@ -238,7 +244,21 @@ def main() -> None:
             "vhat-std-vs-full-tower-compare.witness.json",
         ],
     }
+    # Hand-rolled write: this payload never reaches `WitnessBuilder.build()`,
+    # so it never picked up the `q0Anchor` provenance stamp and no number of
+    # re-runs would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out = self_path.parent.parent / "zhabiro-physical-z-pin.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nwrote {out}")
 

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Im V(m=q0 real)=0 exactly at both anchors (real meridian => CS=0, amphichirality)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "volume deficit identical at both anchors (m=q0 differ ~1e-8); state integral supplies S scale but no anchor-dependence => sign-flip is the 1/u^3 ladder artifact not physics"
     }
   ],

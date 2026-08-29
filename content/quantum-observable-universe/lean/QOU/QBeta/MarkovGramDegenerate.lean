@@ -2,6 +2,7 @@ import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import QOU.QBeta.TemperleyLiebTower
+import QOU.Mathlib.TwoRowDimCatalan
 
 /-!
 # The Markov–Gram matrix is singular under convention D
@@ -193,6 +194,54 @@ lower blocks of `S₅` — dimensions `6, 5, 4, 1` — give `6² + 5² + 4² + 1
 theorem corank_five : 120 - (1 ^ 2 + 4 ^ 2 + 5 ^ 2) = 6 ^ 2 + 5 ^ 2 + 4 ^ 2 + 1 ^ 2 := by
   norm_num
 
+/-! #### The same accounting for general `n`
+
+The three theorems above are instances, and they are instances of a weaker kind
+than they look: each writes its two-row dimensions out **by hand** (`1, 2` at
+`n = 3`; `1, 3, 2` at `n = 4`; `1, 4, 5` at `n = 5`) and then checks an
+arithmetic identity between literals. Nothing in them derives those dimensions,
+and nothing in them extends to `n = 6`.
+
+`corank_general` below removes the hand-listing. The visible-block dimension
+count is `Σ_{ℓ(λ) ≤ 2} (dim V_λ)²` with the dimensions given by the hook length
+formula, and `QOU.Mathlib.dimHLF_two_row_sq_sum` proves that sum is `catalan n`
+for **every** `n` — so the corank is `n! − catalan n` with nothing enumerated.
+
+**Scope.** This is the *arithmetic* half, and it is unconditional. It says: if
+the trace-visible blocks are the two-row ones, the corank is `n! − catalan n`.
+That antecedent — Wenzl level `r = 2` in convention D — is carried elsewhere as
+a Lean class and is **not** proved here; see `QOU.Mathlib.TwoRowDimCatalan`'s
+docstring and bean `qou-fpjy` for why `#print axioms` cannot see that
+dependency. -/
+
+/-- **The corank accounting for general `n`**: `n!` minus the two-row
+square-sum is `n! − catalan n`.
+
+Supersedes `corank_three` / `_four` / `_five`, which are the `n = 3, 4, 5`
+instances with their block dimensions written out by hand. -/
+theorem corank_general (n : ℕ) :
+    (n.factorial : ℤ)
+        - ∑ k ∈ Finset.range (n / 2 + 1),
+            ((QOU.BraidKnot.IdentityI.dimHLF [n - k, k] : ℕ) : ℤ) ^ 2
+      = (n.factorial : ℤ) - (catalan n : ℤ) :=
+  QOU.Mathlib.factorial_sub_two_row_sq_sum n
+
+/-- **`n = 6`: corank `588`** — the value
+`computations/probes/tl_n6_discriminator.py` measured, now an instance of
+`corank_general` rather than a separate arithmetic check. -/
+theorem corank_six_value : (Nat.factorial 6 : ℤ) - (catalan 6 : ℤ) = 588 :=
+  QOU.Mathlib.corank_value_six
+
+/-- **`n = 7`: `4611`.** An arithmetic *prediction* — the number a Gram-rank
+measurement at `n = 7` would have to produce. No such measurement exists; the
+probe reaches `n = 6`. -/
+theorem corank_seven_value : (Nat.factorial 7 : ℤ) - (catalan 7 : ℤ) = 4611 :=
+  QOU.Mathlib.corank_value_seven
+
+/-- **`n = 8`: `38890`.** Prediction, as for `n = 7`. -/
+theorem corank_eight_value : (Nat.factorial 8 : ℤ) - (catalan 8 : ℤ) = 38890 :=
+  QOU.Mathlib.corank_value_eight
+
 end RankAccounting
 
 section SharpCorank
@@ -280,6 +329,37 @@ theorem gram_rank_le_card_sub (tau : A →ₗ[R] R) (b : ι → A)
     (hW : ∀ c ∈ W, ∀ i, tau (b i * ∑ j, c j • b j) = 0) :
     (gram tau b).rank ≤ Fintype.card ι - Module.finrank R W := by
   have := gram_rank_add_le_card tau b W hW
+  omega
+
+omit [DecidableEq ι] in
+/-- **`rank G ≤ catalan n`** — the surviving dimension is at most `Catalan`.
+
+The three hypotheses are the three things that have to be true for the
+Temperley–Lieb reading of the degeneracy, and the conclusion is *derived* from
+them by rank–nullity, not assumed:
+
+* `hW` — `W` is a radical subspace (its combinations pair to zero against
+  everything). For the intended instance this is the image of
+  `ker(H_n(q) ↠ TL_n(q))`, radical because the radical is a two-sided ideal
+  containing the three-strand `q`-antisymmetriser.
+* `hcard` — the basis is the `T_w` basis, so `card ι = n!`.
+* `hdim` — the radical has the predicted dimension. Stated additively,
+  `dim W + catalan n = n!`, rather than as `dim W = n! − catalan n`: the
+  subtraction form would be a truncated `ℕ` subtraction and would silently hold
+  for the wrong reason if `catalan n` exceeded `n!`.
+
+What makes the conclusion worth stating is that `catalan n` here is
+`Σ_{ℓ(λ) ≤ 2} (dim V_λ)²` — see `corank_general` and
+`QOU.Mathlib.dimHLF_two_row_sq_sum` — so this reads: *what survives the
+degenerate trace form is at most the two-row part*, for every `n`, with no
+per-`n` computation. -/
+theorem gram_rank_le_catalan {n : ℕ} (tau : A →ₗ[R] R) (b : ι → A)
+    (W : Submodule R (ι → R))
+    (hW : ∀ c ∈ W, ∀ i, tau (b i * ∑ j, c j • b j) = 0)
+    (hcard : Fintype.card ι = n.factorial)
+    (hdim : Module.finrank R W + catalan n = n.factorial) :
+    (gram tau b).rank ≤ catalan n := by
+  have h := gram_rank_add_le_card tau b W hW
   omega
 
 end SharpCorank

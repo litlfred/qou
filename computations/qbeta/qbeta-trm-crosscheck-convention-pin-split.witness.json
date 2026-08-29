@@ -5,13 +5,13 @@
   "tier": "measured (from committed witnesses)",
   "scope": "scope-(a), diagnosis only. Wires nothing, changes no value, regenerates no witness. Only one script in computations/ enforces a runtime pin, so this is this gate \u2014 not a corpus-wide class.",
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-  "computedAt": "2026-08-21T15:02:38.811233+00:00",
-  "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "computedAt": "2026-08-29T08:31:45.258486+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_trm_crosscheck_convention_pin_split_probe.py",
-  "scriptHash": "de5fab542d84",
+  "scriptHash": "cef88f217f30",
   "assertions": [
     {
       "name": "1_hoef_and_chi_are_same_footing",
@@ -30,11 +30,11 @@
     },
     {
       "name": "4_two_inputs_cannot_be_pin_verified",
-      "passed": true,
-      "detail": "inputs recording no q0 VALUE: ['Habiro', 'Hoefsmit']. Habiro is labelled q0Anchor=ambiguous, a tolerated state, and Hoefsmit carries no anchor at all \u2014 neither gives the guard anything to compare, so both bypass a gate that refuses to START off-muon"
+      "passed": false,
+      "detail": "inputs recording no q0 VALUE: []. Habiro is labelled q0Anchor=ambiguous, a tolerated state, and Hoefsmit carries no anchor at all \u2014 neither gives the guard anything to compare, so both bypass a gate that refuses to START off-muon"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "result": {
     "deuteron_abs_tr_M": {
       "Hoefsmit": "0.575172243917771800000000000000000000000000000000000000000000",
@@ -46,31 +46,28 @@
       "Hoefsmit": {
         "witness": "atomic-tr-m-mpfr-50dps",
         "q0Anchor": "muon",
-        "recorded_q0": null
+        "recorded_q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
       },
       "chi-cache": {
         "witness": "canonical-tr-m-via-chi-cache",
-        "q0Anchor": "muon",
-        "recorded_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+        "q0Anchor": "proton",
+        "recorded_q0": "1.1099785827513808075916690956107688798744991218736"
       },
       "markov_peel": {
         "witness": "markov-peel-atomic-tr-m-muon",
         "q0Anchor": "muon",
-        "recorded_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+        "recorded_q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
       },
       "Habiro": {
         "witness": "habiro-coefficients-extended",
-        "q0Anchor": "ambiguous",
-        "recorded_q0": null
+        "q0Anchor": "proton",
+        "recorded_q0": "1.1099785827513808075916690956107688798744991218736"
       }
     },
     "hoef_vs_chi_rel": "0.00000000321990414805465830166504854223538449613535015134474463044398",
     "peel_vs_habiro_rel": "0.000182126263859234398321393784323500389958556745732590103912806",
     "convention_ratio_hoef_over_peel": "1.48103926132512763584753784600642749086859158180854867124804",
-    "inputs_without_recorded_q0": [
-      "Habiro",
-      "Hoefsmit"
-    ],
+    "inputs_without_recorded_q0": [],
     "verdict": "Two repairs, two owners: regenerate habiro-coefficients-extended under QOU_Q0_ANCHOR=ideal and stamp its anchor (the pin straddle); the C->D split belongs to the convention-D cascade. The guard extension landing with this probe closes the false-assurance hole but drains neither."
   },
   "context": {
@@ -78,5 +75,8 @@
     "gate": "computations/cross_check_trM_1ppb.py (the L1 compute-precision gate)",
     "audit": "docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md",
     "corpus_context": "1966 of 2681 witnesses (73%) carry no q0Anchor"
-  }
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0,
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

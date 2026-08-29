@@ -1,0 +1,191 @@
+{
+ "engine": "mpmath",
+ "engineVersion": "mpmath 1.4.1",
+ "computation": "b3-charge-decomposition-a3",
+ "scriptFile": "b3_charge_decomposition_a3_probe.py",
+ "description": "Charge-symmetric / charge-antisymmetric decomposition of the A=3 3-body cumulant b3 and of every candidate 3-body object in the corpus. 3H and 3He are mirror nuclei, so b3(3H)-b3(3He) is exactly the binding difference and is the Coulomb displacement up to the Nolen-Schiffer residual. FINDINGS: (1) the chirality route's '10-24x' magnitude gap is one number per variant on the symmetric part -- 14.5x (2-bond), 8.4x (triangle-closed) -- the range was Coulomb splitting leaking into a strong-channel comparison; (2) every chiral variant, including triangle-closed and long-range, has a WRONG-SIGNED charge asymmetry, so the inversion is not an artifact of the 2-adjacent-bond truncation; (3) no candidate supplies more than ~22% of the Coulomb displacement and the per-bond factors carry no EM term, so the A=3 charge asymmetry is a missing CHANNEL, not a wrong 3-body operator. Scope-limited: n=2 atoms, a decomposition rather than a closure. Exploratory; no production wiring, no fit.",
+ "sources": [
+  {
+   "witness": "binding-triangle-3body-cluster.witness.json",
+   "scriptHash": "2940d781b124",
+   "convention_row_used": "bring_color_weighted (canonical, R3)"
+  },
+  {
+   "witness": "chirality-weighted-3body-cluster.witness.json",
+   "scriptHash": "650e9c6470aa",
+   "q0Anchor": "proton"
+  },
+  {
+   "witness": "structured-combiner-and-triangle.witness.json",
+   "scriptHash": "98a293a38cd1"
+  }
+ ],
+ "parameters": {
+  "b3_definition": "AME(A=3) - 3 * B(2H)",
+  "B2_MeV": "2.224566",
+  "AME_MeV": {
+   "T": "8.481798",
+   "3He": "7.718043"
+  },
+  "free_parameters": 0
+ },
+ "data": {
+  "b3_empirical_MeV": {
+   "T": "1.8081",
+   "3He": "1.044345"
+  },
+  "b3_sym_MeV": "1.4262225",
+  "b3_asym_MeV": "0.3818775",
+  "coulomb_displacement_MeV": "0.763755",
+  "rows": [
+   {
+    "candidate": "product_beyond_pairwise",
+    "value_3H_MeV": "-3.201419419",
+    "value_3He_MeV": "-2.871925119",
+    "sym_MeV": "-3.036672269",
+    "asym_MeV": "-0.16474715",
+    "sym_attractive": false,
+    "b3_sym_over_sym": "-0.4696662576",
+    "asym_over_b3_asym": "-0.4314136078",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "product_two_bond_only",
+    "value_3H_MeV": "-3.876291135",
+    "value_3He_MeV": "-3.380334996",
+    "sym_MeV": "-3.628313065",
+    "asym_MeV": "-0.2479780695",
+    "sym_attractive": false,
+    "b3_sym_over_sym": "-0.3930814332",
+    "asym_over_b3_asym": "-0.6493654889",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "product_three_bond_only",
+    "value_3H_MeV": "0.6748717156",
+    "value_3He_MeV": "0.5084098772",
+    "sym_MeV": "0.5916407964",
+    "asym_MeV": "0.0832309192",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "2.410622304",
+    "asym_over_b3_asym": "0.2179518804",
+    "asym_sign_matches_coulomb": true
+   },
+   {
+    "candidate": "joint_trace_abs_c3",
+    "value_3H_MeV": "-1.7687753",
+    "value_3He_MeV": "-1.4054244",
+    "sym_MeV": "-1.58709985",
+    "asym_MeV": "-0.18167545",
+    "sym_attractive": false,
+    "b3_sym_over_sym": "-0.8986343865",
+    "asym_over_b3_asym": "-0.4757427447",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "joint_trace_signed_c3",
+    "value_3H_MeV": "-1.6324812",
+    "value_3He_MeV": "-1.3288376",
+    "sym_MeV": "-1.4806594",
+    "asym_MeV": "-0.1518218",
+    "sym_attractive": false,
+    "b3_sym_over_sym": "-0.9632346912",
+    "asym_over_b3_asym": "-0.397566759",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "joint_trace_chiral_c3",
+    "value_3H_MeV": "0.075991527",
+    "value_3He_MeV": "0.12021733",
+    "sym_MeV": "0.0981044285",
+    "asym_MeV": "-0.0221129015",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "14.53779938",
+    "asym_over_b3_asym": "-0.05790574595",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "chiral_c3_two_bond",
+    "value_3H_MeV": "0.11155618",
+    "value_3He_MeV": "0.15464001",
+    "sym_MeV": "0.133098095",
+    "asym_MeV": "-0.021541915",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "10.7155741",
+    "asym_over_b3_asym": "-0.05641053741",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "chiral_joint_triangle",
+    "value_3H_MeV": "0.16353209",
+    "value_3He_MeV": "0.17686477",
+    "sym_MeV": "0.17019843",
+    "asym_MeV": "-0.00666634",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "8.379762963",
+    "asym_over_b3_asym": "-0.01745674987",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "chiral_joint_longrange",
+    "value_3H_MeV": "0.21213195",
+    "value_3He_MeV": "0.25335508",
+    "sym_MeV": "0.232743515",
+    "asym_MeV": "-0.020611565",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "6.127872134",
+    "asym_over_b3_asym": "-0.05397428495",
+    "asym_sign_matches_coulomb": false
+   },
+   {
+    "candidate": "abs_joint_triangle",
+    "value_3H_MeV": "4.0745151",
+    "value_3He_MeV": "4.3237485",
+    "sym_MeV": "4.1991318",
+    "asym_MeV": "-0.1246167",
+    "sym_attractive": true,
+    "b3_sym_over_sym": "0.3396469956",
+    "asym_over_b3_asym": "-0.3263263743",
+    "asym_sign_matches_coulomb": false
+   }
+  ],
+  "chiral_asym_all_wrong_sign": true,
+  "right_signed_asym_candidates": [
+   "product_three_bond_only"
+  ],
+  "best_right_signed_asym_fraction_of_coulomb": "0.2179518804",
+  "mechanism": {
+   "tau_vac_ratio_3He_over_3H": "1.159976729",
+   "bond_sum_ratio_3He_over_3H": "0.8676760425",
+   "bond_product_ratio_3He_over_3H": "0.6494466421",
+   "note": "Two competing NON-EM sources: tau_p/tau_n favours 3He, f_pp > f_nn (so x_pp < x_nn) favours 3H. Which dominates is term-dependent, so the sign of the mirror splitting is an accident of the term, not a prediction."
+  },
+  "max_abs_asym_fraction_of_coulomb": "0.6493654889"
+ },
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "assertions": [
+  {
+   "name": "b3 antisymmetric part equals half the 3H-3He binding difference",
+   "passed": true
+  },
+  {
+   "name": "every chiral variant has wrong-signed charge asymmetry",
+   "passed": true
+  },
+  {
+   "name": "at most one candidate has a right-signed charge asymmetry",
+   "passed": true
+  },
+  {
+   "name": "the right-signed candidate supplies under half the Coulomb displacement",
+   "passed": true
+  },
+  {
+   "name": "tau_vac favours 3He while the bond product favours 3H (competing sources)",
+   "passed": true
+  }
+ ],
+ "allPassed": true,
+ "durationMs": 120
+}
