@@ -162,14 +162,14 @@ def main() -> int:
     wb.add_data("numerator_level", {a: {kk: mp.nstr(vv, 10) for kk, vv in numer[a].items()} for a in anchors} |
                 {"dN_odd_dq_at_qstar": mp.nstr(dN, 8)})
     wb.add_assertion("swing_is_amplified_slope",
-                     computed=float(swing_pred / swing_true), expected=1.0, tolerance=0.05,
+                     computed=swing_pred / swing_true, expected=1.0, tolerance=0.05,
                      source="S(p)-S(mu) = S'(q*)*(q_p-q_mu) to <5%: the anchor swing is the KC21 1/u^3 slope, "
                             "so a c3-level smooth meridian source is structurally excluded from the swing")
     wb.add_assertion("targets_sign_flip",
                      computed=1.0 if sign_flip else 0.0, expected=1.0, tolerance=0.5,
                      source="S(proton)*S(muon) < 0 while every candidate is a single positive number")
     wb.add_assertion("candidates_at_S_scale",
-                     computed=float(min(abs(r) for k in cands for r in ratios[k].values())),
+                     computed=min(abs(r) for k in cands for r in ratios[k].values()),
                      expected=0.4, tolerance=0.4,
                      source="all |S|/candidate ratios are O(0.17-0.7): the deformed rungs supply the scale (only)")
     wb.save()

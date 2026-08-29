@@ -228,7 +228,7 @@ def main() -> int:
     S_p_base = mp.mpf(base["rows"][0]["S_emp_MeV"])
     w.add_assertion(
         "baseline_S_emp_proton_matches_documented",
-        computed=float(S_p_base),
+        computed=S_p_base,
         expected=-27.76,
         tolerance=0.1,
         source=(

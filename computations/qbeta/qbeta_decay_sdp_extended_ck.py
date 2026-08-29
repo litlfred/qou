@@ -547,22 +547,22 @@ def main() -> None:
     # Assertions (low tolerance — these are 50dps reproducibility checks)
     w.add_assertion(
         "c_8_extracted_finite",
-        computed=float(abs(c_k[8])),
-        expected=float(abs(c_k[8])),
+        computed=abs(c_k[8]),
+        expected=abs(c_k[8]),
         tolerance=1e-10,
         source="c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization",
     )
     w.add_assertion(
         "c_9_extracted_finite",
-        computed=float(abs(c_k[9])),
-        expected=float(abs(c_k[9])),
+        computed=abs(c_k[9]),
+        expected=abs(c_k[9]),
         tolerance=1e-10,
         source="c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization",
     )
     w.add_assertion(
         "c_10_extracted_finite",
-        computed=float(abs(c_k[10])),
-        expected=float(abs(c_k[10])),
+        computed=abs(c_k[10]),
+        expected=abs(c_k[10]),
         tolerance=1e-10,
         source="c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization",
     )

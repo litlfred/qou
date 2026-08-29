@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:56:34.695974+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-29T11:15:05.909718+00:00",
+  "commitSha": "3329bc8a1dc222403105e37b2d308b240ab77a5b",
   "assertions": [
     {
       "name": "linear_unit_invisibility",
@@ -14,7 +14,7 @@
     },
     {
       "name": "bar_even_fold_half",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -22,7 +22,7 @@
     },
     {
       "name": "bar_odd_channel_zero",
-      "computed": 3.1861838222649046e-58,
+      "computed": "3.1861838222649045540577607955354236111822091103852e-58",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -30,7 +30,7 @@
     },
     {
       "name": "theta8_weight4_reflection",
-      "computed": 1.870935297064537e-50,
+      "computed": "1.8709352970645369522983755270060373151706378160735e-50",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 604,
+  "durationMs": 534,
   "computation": "r2core-schwinger-measure-explore",
   "scriptFile": "r2core_schwinger_measure_explore_probe.py",
-  "scriptHash": "02731f2eede2",
-  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "scriptHash": "311d94392faf",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -105,7 +105,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

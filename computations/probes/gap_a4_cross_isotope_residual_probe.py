@@ -320,7 +320,7 @@ def main() -> int:
         # was misleading (suggested fit, not mismatch); renamed per
         # Copilot review on PR #1883.
         "negative_control_He3_under_R5_mismatch_24pct",
-        computed=float(he3_R5_rel),
+        computed=he3_R5_rel,
         # ³He has Z·N = 2 so R5 gives sqrt([3]_q/[2]_q)^2 = [3]_q/[2]_q
         # ≈ 1.514, not 1.222 → expected to be off by ~24 %
         expected=0.24,

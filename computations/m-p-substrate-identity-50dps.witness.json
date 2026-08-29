@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:11:29.904633+00:00",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:06:01.894087+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
-      "computed": 2.8517700811806503e-06,
+      "computed": "0.000002851770081180650411597989082673147553577069893547453740433924754438904",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": 501.43180043143343,
+      "computed": "501.4316328051656071123342958476165381650237915658254389662523487981405",
       "expected": 0.0,
       "passed": false,
       "tolerance": 10.0,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "e721edad9b80",
-  "scriptCommitSha": "fab11b31a6700c768c67e1412c61020addb65720",
+  "scriptHash": "d4e739a31ca7",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,10 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -70,17 +70,17 @@
     },
     "predictions": {
       "m_p_MeV": "938.2720894273242637273567",
-      "m_n_MeV": "939.5658930679811464936213",
-      "M_N_MeV": "938.918991247652705110489",
-      "Q_beta_MeV": "0.7828046899668827573528469",
-      "Delta_m_pn_MeV": "1.293803640656882766264642"
+      "m_n_MeV": "939.5658930678236506485695",
+      "M_N_MeV": "938.9189912475739571879631",
+      "Q_beta_MeV": "0.7828046898093869123009924",
+      "Delta_m_pn_MeV": "1.293803640499386921212788"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5658930679811464936213",
-      "m_n_residual_ppm": "0.501431800431",
-      "Delta_m_pn_MeV": "1.293803640656882766264642",
-      "Delta_m_pn_ppb": "364276.51299259946",
-      "Q_beta_N3_MeV": "0.7828046899668827573528469",
+      "m_n_MeV": "939.5658930678236506485695",
+      "m_n_residual_ppm": "0.501431632805",
+      "Delta_m_pn_MeV": "1.293803640499386921212788",
+      "Delta_m_pn_ppb": "364276.391217384",
+      "Q_beta_N3_MeV": "0.7828046898093869123009924",
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
@@ -95,11 +95,11 @@
       "m_p_codata_MeV": "938.27208943",
       "m_p_residual_ppm": "-2.85177008118e-6",
       "m_n_codata_MeV": "939.56542194",
-      "m_n_residual_ppm": "0.501431800431",
+      "m_n_residual_ppm": "0.501431632805",
       "M_N_codata_MeV": "938.918755685",
-      "M_N_residual_ppm": "0.25088715214",
+      "M_N_residual_ppm": "0.25088706827",
       "Q_beta_codata_MeV": "0.7823335593099999910882048",
-      "Q_beta_residual_ppm": "602.211999314"
+      "Q_beta_residual_ppm": "602.211797999"
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",

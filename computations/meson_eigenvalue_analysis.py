@@ -124,7 +124,7 @@ def main():
 
     wb.add_assertion(
         "trace_ratio_computed",
-        computed=float(ratio),
+        computed=ratio,
         expected=1.461,
         tolerance=0.01,
         source="|tr_M(sigma_1^5)|/|tr_M(sigma_1^3)|",

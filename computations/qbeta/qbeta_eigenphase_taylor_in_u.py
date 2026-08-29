@@ -428,8 +428,8 @@ def main() -> int:
     })
     builder.add_assertion(
         "eigenphase_u_series_extracted",
-        computed=float(len(coeffs)),
-        expected=float(ORDER + 1),
+        computed=len(coeffs),
+        expected=ORDER + 1,
         tolerance=0.0,
         source=("cos(α−bℏ²/2) Taylor-expanded in u = b·ℏ² to order "
                 f"{ORDER}; coefficients are exact symbolic radicals, "
@@ -442,15 +442,15 @@ def main() -> int:
     a2_target = mpf(-11) / 32 - mp.sqrt(3) / 12
     builder.add_assertion(
         "eigenphase_a1_equals_neg_sqrt3_over_12",
-        computed=float(coeffs[1]),
-        expected=float(a1_target),
+        computed=coeffs[1],
+        expected=a1_target,
         tolerance=1e-25,
         source="Numeric u¹ coefficient matches the exact radical -√3/12.",
     )
     builder.add_assertion(
         "eigenphase_a2_equals_neg_11_32_minus_sqrt3_over_12",
-        computed=float(coeffs[2]),
-        expected=float(a2_target),
+        computed=coeffs[2],
+        expected=a2_target,
         tolerance=1e-25,
         source="Numeric u² coefficient matches the exact radical -11/32 - √3/12.",
     )

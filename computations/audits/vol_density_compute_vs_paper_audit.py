@@ -209,9 +209,9 @@ def main():
         from experimental_constants import M_N_MEV
     except Exception:
         M_N_MEV = None
-    m_e = mp.mpf(repr(M_E_MEV))
-    m_p = mp.mpf(repr(M_P_MEV))
-    m_n = mp.mpf(repr(M_N_MEV)) if M_N_MEV is not None else None
+    m_e = mp.mpf(M_E_MEV)
+    m_p = mp.mpf(M_P_MEV)
+    m_n = mp.mpf(M_N_MEV) if M_N_MEV is not None else None
     m_avg_codata = (m_p + m_n) / 2 if m_n is not None else m_p
 
     hbar_q = 1 - 1 / q0

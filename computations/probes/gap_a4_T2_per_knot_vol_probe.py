@@ -283,7 +283,7 @@ def main() -> int:
     lam_p_A = mp.mpf(proton["lambda_emp_A_phase4_jsj"])
     w.add_assertion(
         "proton_lambda_emp_matches_documented_value",
-        computed=float(lam_p_A),
+        computed=lam_p_A,
         expected=2.460,
         tolerance=2e-3,
         source=(

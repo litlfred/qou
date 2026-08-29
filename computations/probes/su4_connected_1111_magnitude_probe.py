@@ -206,9 +206,12 @@ def main() -> int:
           f"(SUPPLIES if |Δ|<5%, PARTIAL if 0.5–2×, else DOES-NOT)")
     print(f"    A=6 vanishing: {'✓' if float(li6['gated_conn_abs'])==0 else '✗'} "
           f"(SU(4) gate C(4,6)=0)")
-    print("    CAVEAT: `delivered` uses a Σg-normalization convention (hidden DOF, "
-          "Rule 14); the direct |b4c|=1.96 vs 2.093 (6%) is UNITS-MISMATCHED — "
-          "a dimensionless Mayer sum vs a binding-ratio ratio — NOT a derivation.")
+    _b4c = float(he4["b_conn_abs"])
+    _direct_gap = abs(_b4c - need) / need
+    print(f"    CAVEAT: `delivered` uses a Σg-normalization convention (hidden DOF, "
+          f"Rule 14); the direct |b4c|={_b4c:.4g} vs {need:.4g} "
+          f"({_direct_gap * 100:.0f}%) is UNITS-MISMATCHED — a dimensionless Mayer "
+          f"sum vs a binding-ratio ratio — NOT a derivation.")
 
     # ── durable witness ──────────────────────────────────────────────
     import json, datetime
@@ -223,7 +226,7 @@ def main() -> int:
             "irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the "
             "canonical zero-fit interface graph (g_ij=1−f_ij; f_pp=z, f_nn=z−h, "
             "f_pn=z−h(½−δ/4)), gated by SU(4) dim C(4,A). Tests whether it "
-            "supplies the measured 2.093× super-pairwise excess at ⁴He and "
+            f"supplies the measured {need:.4g}× super-pairwise excess at ⁴He and "
             "vanishes at ⁶Li (C(4,6)=0). Audit-only, no fit, single operator."),
         "tier": "structural (zero-fit canonical bond factors + proved SU(4) gate)",
         "data": {
@@ -242,14 +245,17 @@ def main() -> int:
             "he4_delivered_over_needed": float(delivered / need),
             "verdict": verdict,
             "verdict_note": (
-                "PARTIAL / scope-(a): the connected [1^4] cluster is right-KIND "
+                f"{verdict} / scope-(a): the connected [1^4] cluster is right-KIND "
                 "(irreducible 4-body), right-LOCALITY (A=6 vanishing supplied by "
                 "the PROVED gate C(4,6)=0 — the ungated cluster overshoots to "
-                "22.2, so the gate is load-bearing), and right-ORDER at A=4 "
-                "(×1.54 delivered vs ×2.09 needed, 74%). It does NOT close the "
-                "magnitude parameter-free: the exact value is convention-"
+                f"{float(li6['b_conn_abs']):.4g}, so the gate is load-bearing), "
+                f"and right-ORDER at A=4 (×{delivered:.4g} delivered vs "
+                f"×{need:.4g} needed, {delivered / need * 100:.0f}%). It does NOT "
+                "close the magnitude parameter-free: the exact value is convention-"
                 "dependent (Σg-normalization hidden DOF). Does NOT exclude the "
-                "ingredient; constrains the magnitude."),
+                f"ingredient; constrains the magnitude. The DIRECT (un-normalized) "
+                f"reading is |b4c|={_b4c:.4g} vs {need:.4g}, i.e. {_direct_gap * 100:.0f}% "
+                "off, reported because the normalized figure flatters it."),
         },
         "assertions": [
             {"name": "a6_vanishes_via_gate",

@@ -1,0 +1,71 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T15:42:29.044297+00:00",
+  "commitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 1169,
+  "computation": "qbeta-adjunction-ilp",
+  "scriptFile": "qbeta_adjunction_ilp_probe.py",
+  "scriptHash": "890709a55811",
+  "scriptCommitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_adjunction_ilp_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_adjunction_ilp_probe.py"
+  },
+  "description": "Evaluates Frobenius positivity as tr_M(e_gamma . T_w) >= 0, which needs no decomposition. Reproduces the corpus's bare-element infeasibility; finds the minimum restoring adjunction is THREE gluon crossings, not the two that two blocks assert; and does NOT reproduce N_l = 84.",
+  "data": {
+    "markov_convention": "D",
+    "primitives": [
+      "1",
+      "E+",
+      "E-",
+      "z_r1",
+      "z_r1",
+      "z_r4"
+    ],
+    "bare_pairing_1": "0.544370078179695182212578030754752163488799999999999690701973",
+    "bare_pairing_Ep": "0.412543047608856831816683835154919922012600000000000172336460",
+    "bare_pairing_Em": "0.131827030570838350395894195599832241476199999999999852461102",
+    "bare_pairing_z_r1": "0.0",
+    "bare_pairing_z_r4": "-0.0227474520470864878193086973428615706927000000000000109527479",
+    "bare_negative_channels": [
+      "z_r4"
+    ],
+    "the_PAIRING_FORMULATION_reproduces_the_corpus_bare_element_claim": true,
+    "feasible_count_cap_0": 0,
+    "feasible_count_cap_1": 0,
+    "feasible_count_cap_2": 0,
+    "feasible_count_cap_3": 2,
+    "feasible_count_cap_4": 6,
+    "feasible_count_cap_5": 12,
+    "feasible_count_cap_6": 19,
+    "NO_two_gluon_crossing_adjunction_restores_proton_stability": true,
+    "N_l_eq_84_is_NOT_reproduced_and_the_filtration_does_NOT_excuse_it": true,
+    "confinement_filtration_levels_m": 1,
+    "confinement_filtration_restricts": false,
+    "E_lambda_2_1_at_q0": "0.165163593315",
+    "scope": "(a) tension recorded; N_l not reproduced; filtration trivial"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

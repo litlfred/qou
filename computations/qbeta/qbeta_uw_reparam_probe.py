@@ -45,6 +45,10 @@ import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 
 HERE = Path(__file__).resolve().parent
 
@@ -297,14 +301,14 @@ def main() -> None:
     )
     wb.add_assertion(
         name="v-reconstruction-error-at-q-1p001",
-        computed=float(sp.N(err_v, 10)),
+        computed=sp.N(err_v, 10),
         expected=0.0,
         tolerance=1e-8,
         source=f"Σ c_k^(v) v^k truncated at order {TAYLOR_ORDER}, reconstruct f(1.001)",
     )
     wb.add_assertion(
         name="w-reconstruction-error-at-q-1p001",
-        computed=float(sp.N(err_w, 10)),
+        computed=sp.N(err_w, 10),
         expected=0.0,
         tolerance=1e-8,
         source=f"Σ c_k^(w) w^k truncated at order {TAYLOR_ORDER}, reconstruct f(1.001)",

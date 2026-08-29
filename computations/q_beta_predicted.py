@@ -204,19 +204,19 @@ def main() -> int:
     # standard schema).
     builder.add_assertion(
         "Q_beta_pred_within_0.5_pct_of_codata",
-        computed=float(abs(q_pred - q_codata) / q_codata),
+        computed=abs(q_pred - q_codata) / q_codata,
         expected=0.0,
         tolerance=0.005,
     )
     builder.add_assertion(
         "Q_beta_pred_residual_under_2_keV",
-        computed=float(abs(q_pred - q_codata) * 1000),
+        computed=abs(q_pred - q_codata) * 1000,
         expected=0.0,
         tolerance=2.0,
     )
     builder.add_assertion(
         "single_wrap_beats_typed_crossings",
-        computed=float(abs(q_pred - q_codata)),
+        computed=abs(q_pred - q_codata),
         expected=0.0,
         tolerance=float(abs(q_pred_tc - q_codata)),
     )

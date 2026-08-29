@@ -148,7 +148,7 @@ def main() -> int:
                    "NOT the mass-sector statistical mean (which sits ~0% muon-ward = proton); "
                    "the mu-p tension becomes a mu-p-Q_beta three-way picture"})
     wb.add_assertion("hypersensitivity_is_ladder_1_over_u3_amplification",
-                     computed=float(prefactor), expected=2.37, tolerance=0.5,
+                     computed=prefactor, expected=2.37, tolerance=0.5,
                      source="S'(q*) = (smooth O(1) prefactor ~2.37) x 1/u^3; the dc3/dq swing is a 1/u^3 representation artifact, not a physical singularity")
     wb.add_assertion("anchors_reproduced_exactly",
                      computed=1.0 if repro else 0.0, expected=1.0, tolerance=0.5,

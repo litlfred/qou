@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T06:38:26.674165+00:00",
-  "commitSha": "f18e14642e70a1ce63f4c08b27f016d921b18430",
+  "computedAt": "2026-08-29T10:51:44.713782+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
-      "computed": 1.8111358157653425e-71,
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -14,7 +14,7 @@
     },
     {
       "name": "chi21_closed_form_vs_seminormal",
-      "computed": 5.4334074472960274e-71,
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -22,7 +22,7 @@
     },
     {
       "name": "markov_m3_both_conventions",
-      "computed": 1.8111358157653425e-71,
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -30,7 +30,7 @@
     },
     {
       "name": "trace_convention_gap_recorded",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.00019554,
       "passed": false,
       "tolerance": "1e-06",
@@ -62,7 +62,7 @@
     },
     {
       "name": "scalar_baseline_matches_committed_witness",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-06",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 20,
+  "durationMs": 16,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
-  "scriptHash": "a757d7ad14d9",
-  "scriptCommitSha": "c64b8af5f16752d63e55f15514e913a5e713578d",
+  "scriptHash": "9b24bdac0958",
+  "scriptCommitSha": "b7df510f2a3d529278a3ae33d305846556349fc9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

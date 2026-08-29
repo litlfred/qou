@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:48:43.137180+00:00",
-  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
+  "computedAt": "2026-08-29T11:06:53.359515+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "negative_control_He3_under_R5_mismatch_24pct",
-      "computed": 0.23887392990626846,
+      "computed": "0.2388739299062684722208691801781015496704678048279578041147941758214818",
       "expected": 0.24,
       "passed": true,
       "tolerance": "0.05",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 59,
+  "durationMs": 60,
   "computation": "gap-a4-cross-isotope-residual-probe",
   "scriptFile": "gap_a4_cross_isotope_residual_probe.py",
-  "scriptHash": "ce46bfcf858f",
-  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
+  "scriptHash": "41d20e9be18c",
+  "scriptCommitSha": "5e545bc88e6644de6b66424fbc0a088e129b58b3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

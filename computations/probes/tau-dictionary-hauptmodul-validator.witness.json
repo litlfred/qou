@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:57:45.382869+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-29T12:25:29.170672+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "control_tau0_passes",
-      "computed": 1.6845754483580537e-05,
+      "computed": "0.00001684575448358053589530158667906255226137415335032576977242117399578368",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.001",
@@ -14,7 +14,7 @@
     },
     {
       "name": "gamma0_5_invariance",
-      "computed": 8.5542896562114e-69,
+      "computed": "8.554289656211400700923184547352789712336555206274128745379974776537298e-69",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-30",
@@ -22,7 +22,7 @@
     },
     {
       "name": "fricke_involution",
-      "computed": 1.9485004122780365e-69,
+      "computed": "1.948500412278036368264961264495223017983635661508457029397365706021618e-69",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -44,11 +44,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 645,
+  "durationMs": 539,
   "computation": "tau-dictionary-hauptmodul-validator",
   "scriptFile": "tau_dictionary_hauptmodul_validator.py",
-  "scriptHash": "5e2d97717924",
-  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "scriptHash": "273f61b7b733",
+  "scriptCommitSha": "065cacc63b9c987bd2d1229bbd517ade14b5337c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

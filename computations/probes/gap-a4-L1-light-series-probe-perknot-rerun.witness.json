@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:49:46.093410+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-08-29T10:52:08.995239+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "L1a_lambdaA_proton_gap_matches_documented",
-      "computed": 0.029605202317669388,
+      "computed": "0.02960520231766938839569392117900430398468810370928",
       "expected": 0.0296,
       "passed": true,
       "tolerance": "0.002",
@@ -14,7 +14,7 @@
     },
     {
       "name": "L1a_lambdaA_worst_at_4He_matches_documented",
-      "computed": -0.5559734894917526,
+      "computed": "-0.55597348949175267586145679362600173817054941339659",
       "expected": -0.556,
       "passed": true,
       "tolerance": "0.005",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 134,
+  "durationMs": 91,
   "computation": "gap-a4-L1-light-series-probe-perknot-rerun",
   "scriptFile": "gap_a4_L1_light_series_probe_perknot_rerun.py",
-  "scriptHash": "b28e623960f7",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "95752de27fea",
+  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

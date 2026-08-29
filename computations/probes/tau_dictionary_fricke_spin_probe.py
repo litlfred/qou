@@ -524,7 +524,7 @@ def main():
     )
     wb.add_assertion(
         "cusp_form_matches_eta_product_both_pins",
-        computed=float(max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results)),
+        computed=max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results),
         expected=0.0,
         tolerance=1e-60,
         source="t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at "
@@ -533,14 +533,14 @@ def main():
     )
     wb.add_assertion(
         "fricke_fixed_point_exact_value",
-        computed=float(fix_dev),
+        computed=fix_dev,
         expected=0.0,
         tolerance=1e-40,
         source="|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125).",
     )
     wb.add_assertion(
         "w5_circle_family_excluded",
-        computed=float(circle_dev),
+        computed=circle_dev,
         expected=0.0,
         tolerance=1e-40,
         source="||t5|^2 - 125| on the bar<->Fricke-equivariant circle family "

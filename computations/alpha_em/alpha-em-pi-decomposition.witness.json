@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:49:26.153651+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:15:30.375480+00:00",
+  "commitSha": "cd38c4f3dd258b4e1f3d1004824fecdc92084191",
   "assertions": [
     {
       "name": "zero_mode_pi_is_geometric_area",
@@ -14,7 +14,7 @@
     },
     {
       "name": "self_energy_pi_home_differs_from_geometric_by_topology",
-      "computed": 1.5,
+      "computed": "1.5",
       "expected": 1.5,
       "passed": true,
       "tolerance": "1e-09",
@@ -22,7 +22,7 @@
     },
     {
       "name": "eight_pi_matches_universal_2d_heat_kernel_factor",
-      "computed": 2.0,
+      "computed": "2.0",
       "expected": 2.0,
       "passed": true,
       "tolerance": "1e-09",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "alpha-em-pi-decomposition",
   "scriptFile": "alpha_em_pi_universal_loop_factor_probe.py",
-  "scriptHash": "dd94137a6e1c",
+  "scriptHash": "669ac130a0ec",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

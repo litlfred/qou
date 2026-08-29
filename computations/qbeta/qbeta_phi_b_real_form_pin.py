@@ -191,15 +191,15 @@ def main() -> int:
     wb.add_data("lean_construction",
                 "QOU.MathlibExt.FaddeevPhiBRealIntegral (phiB; sorry-free "
                 "phiB_self_dual / norm_phiB / phiB_inversion / phiB_zero)")
-    wb.add_assertion("P1_real_form_identity", computed=float(p1), expected=0.0,
+    wb.add_assertion("P1_real_form_identity", computed=p1, expected=0.0,
                      tolerance=1e-25,
                      source="Im log Φ_b = −J/2 + πz²/2 + π(b²+b⁻²)/24 on grid")
-    wb.add_assertion("P2_pure_phase", computed=float(p2), expected=0.0,
+    wb.add_assertion("P2_pure_phase", computed=p2, expected=0.0,
                      tolerance=1e-25,
                      source="Re log Φ_b = 0 at real b, real z (fibre saddle)")
-    wb.add_assertion("P3_J_self_dual", computed=float(p3), expected=0.0,
+    wb.add_assertion("P3_J_self_dual", computed=p3, expected=0.0,
                      tolerance=1e-30, source="J(z,b) = J(z,1/b)")
-    wb.add_assertion("P4_J_odd_in_z", computed=float(p4), expected=0.0,
+    wb.add_assertion("P4_J_odd_in_z", computed=p4, expected=0.0,
                      tolerance=1e-30, source="J(−z,b) = −J(z,b)")
 
     ok = p1 < mp.mpf("1e-25") and p2 < mp.mpf("1e-25") \

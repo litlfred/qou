@@ -1,11 +1,11 @@
 ---
 # qou-k5r5
 title: 'GAP: M_1>0 (first odd moment) — rigorous all-n proof OPEN; identity Lean-proved, Kerov-CLT gives asymptotic only'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T16:00:05Z
+updated_at: 2026-08-29T16:34:28Z
 ---
 
 
@@ -466,3 +466,5 @@ corpus checked at the source. Status:
 2026-08-29 (regime structure mapped; BDJ = edge): owner uploaded Baik-Deift-Johansson (math/9810105, JAMS 1999), Baik KPZ review (2206.14086), Baik-Rains (9910019). CRITICAL distinction: BDJ is the EDGE result (lambda_1 -> Tracy-Widom, theta^1/6), NOT the global linear-statistic (Kerov CLT) variance rate the (CS) margin needs. Regime structure now fully mapped: (1) leading V_A=8/pi^2 = IO Kerov CLT mode sum (cited); (2) qualitative Var-convergence = IO mode-wise moment convergence + a uniform high-mode tail argument for the non-smooth |x| (partly citable, one gap); (3) the RATE theta^-1 = 2nd s-derivative of the FULL Plancherel Toeplitz determinant asymptotic combining bulk (Szego/Widom-arc, DIK+Widom1971) + edge (BDJ/double-scaling, DIK sec11). The annulus probe honest-negative (regions compensate) confirms both contribute. TOOLKIT NOW COMPLETE (IO,BOO,Johansson,Gorbunov,DIK,BDJ,TW,Widom-ref) but NO single paper states the (CS) variance rate -- assembling it is original RH research, NOT faked. Added baik-deift-johansson1999/baik-rains2001/baik2022kpz to references.ts. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-regime-structure-BDJ-is-the-edge.md. Gap OPEN.
 
 2026-08-29 (research route, piece 1): owner chose to treat the bulk rate as a research problem. Piece 1 DONE: the classical DEBYE bulk asymptotic of J_x(2sqrt th) (Watson 1944 sec8.4 / DLMF 10.19.6) VERIFIED against exact besselj (debye_bulk_asymptotic_probe.py, no float64): rel err ~ theta^-1/2, exponent 0.51 at deepest bulk a=0.5. Confirms J -> discrete sine kernel with angle R=arccos(a/2) and the O(theta^-1/2) pointwise correction. This is a rigorous+cited+verified brick. Remaining: write J=S+E, variance = sine-part + 2*cross(S*E) + E^2; the cross term is oscillatory so summation-by-parts/stationary-phase gains one more theta^-1/2 -> net theta^-1 (measured tvok). That cancellation with explicit constant is the hard analysis, NOT done (would risk laundering). Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-research-piece1-debye-verified.md. Gap OPEN.
+
+2026-08-29 (session tender-keller, branch m1-k5r5-bulk-rate-derivation): owner supplied two on-target papers (00231c40) — Charlier-Claeys 1409.0435 (arc/gap Toeplitz + sine-kernel Fredholm det, RH O(1/n) parametrix matching) and Corwin-Deift-Its 2201.05665 (Widom sine-kernel survey). Ingested + registered as charlier-claeys2015 / corwin-deift-its2022. PIECE 2 (rigorous brick): verified the Widom/CC arc-Toeplitz constant c=(1/12)ln2+3zeta'(-1)=-0.4385 against the actual finite-n determinant (Cholesky, NO float64); residual ~n^{-2} (even-symbol cancels the n^{-1} term). HONEST STATUS: these give the determinant-level TOOL + limit object + constant, now in-corpus/citable, but NOT the Plancherel linear-statistic variance rate (adjacent functional: gap-probability n^{-2} / sine-det O(1/y) vs variance theta^{-1}). Open piece unchanged: the bulk cross-term summation-by-parts/stationary-phase cancellation (the RH computation), now better-equipped. Not laundered. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-charlier-claeys-widom-toeplitz.md

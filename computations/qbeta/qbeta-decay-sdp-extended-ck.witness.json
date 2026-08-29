@@ -1,40 +1,40 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:01:00.851953+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T11:16:59.288040+00:00",
+  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
-      "computed": 21688247146661.387,
-      "expected": 21688247146661.387,
+      "computed": "21688247146661.38776563114437406006105948217169569677429102419001358252",
+      "expected": "21688247146661.38776563114437406006105948217169569677429102419001358252",
       "passed": true,
       "tolerance": "1e-10",
       "source": "c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization"
     },
     {
       "name": "c_9_extracted_finite",
-      "computed": 2546395431398100.0,
-      "expected": 2546395431398100.0,
+      "computed": "2546395431398100.089770904710500469200424073337636886826638802903321394",
+      "expected": "2546395431398100.089770904710500469200424073337636886826638802903321394",
       "passed": true,
       "tolerance": "1e-10",
       "source": "c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization"
     },
     {
       "name": "c_10_extracted_finite",
-      "computed": 2.989697438062701e+17,
-      "expected": 2.989697438062701e+17,
+      "computed": "298969743806270109.2870250780361334367159704595290029491161939820735748",
+      "expected": "298969743806270109.2870250780361334367159704595290029491161939820735748",
       "passed": true,
       "tolerance": "1e-10",
       "source": "c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "305df5e6cc71",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "ff52e23f76ab",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -220,11 +220,11 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "6d3984f107c945d27de12b8e69707b07f266280845b19418caacaf267f261200",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
         "size_bytes": 6238,
-        "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
-        "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
-        "computedAt": "2026-08-28T20:41:41.698540+00:00"
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
