@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T01:03:13Z
+updated_at: 2026-08-29T08:07:16Z
 ---
 
 
@@ -427,3 +427,24 @@ Closure DE-RISKED: 'modulo one HARD constant' -> 'modulo one EASY constant' (smo
 coeff ~0.066, 30-300x headroom). NOT yet a verified C. Remaining: (i) write transpose-symmetry
 c_{1/2}=0 proof; (ii) explicit theta^-1 Euler-Maclaurin constant + ratio propagation. Did not
 fake a rigorous number.
+
+2026-08-29 (branch m1-k5r5-bessel-rate-citation): the one open step is precisely NAMED and the
+corpus checked at the source. Status:
+  - Leading margin m_inf = rho_P - sqrt(V_D/V_A) = 2sqrt6/5 - 0.67961 = 0.300186 > 0. Constants
+    exact (V_A=8/(9pi^2), Var(w3) lead 1/3, P=8/(15pi), rho_P=2sqrt6/5; V_D=0.0415975). PR #5969.
+  - Exact finite-n: m(n) > 0 for ALL 4<=n<=40 (exact Fraction), min m(4)=0.20025, oscillates around
+    0.30019 with DECREASING amplitude (~0.008 at n=40). Not monotone -> exact-small-n + leading-large-n
+    does not trivially cover all n.
+  - The one open step: effective variance bound |Var_n(Sum g eta)/n^2 - V_g| <= C_g n^{-a}, a>0.
+  - PRIMARY SOURCE (corpus-grep path 5): BOO Thm 3 (arxiv-math-9905032v2 sec-006) states the bulk
+    discrete-Bessel -> discrete-sine kernel convergence as a RATE-FREE LIMIT (no error term). Whole-
+    library grep for olver/uniform-asymptotic/error-term/rate finds NO citable kernel rate; Fulman
+    Stein (0305423) is a marginal Berry-Esseen (ruled out); Sniady-Dolega (1402.4615) needs polynomial
+    statistics (Sum h / Sum|c| are not). So the "Olver-Bessel wall" is a GENUINE external-citation gap,
+    not an in-corpus oversight.
+  - Missing citation named: error-bounded discrete-Bessel->sine kernel convergence (Olver uniform
+    asymptotics of J_x(2sqrt th) in the bulk, or Deift-Its RH), |J-S| <= c th^{-b} on the bulk + the
+    classical super-exp Bessel tail past the edge. Tail half is Olver-free; bulk half needs the lemma.
+  - Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-the-missing-citation-is-a-kernel-rate.md.
+  Gap OPEN. Honest: morally certain (leading 0.30 + exact positivity n<=40 + damped tail) but a
+  measured C is not a proved C; no fake closure.
