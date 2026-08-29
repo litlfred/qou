@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T01:34:20Z
-updated_at: 2026-08-29T06:32:28Z
+updated_at: 2026-08-29T07:03:12Z
 ---
 
 SCOPE UPDATE (2026-08-29): 'kink cancels => clean theta^{-1} bulk' is RETRACTED (qou-8quz refuted).
@@ -32,3 +32,5 @@ candidate -2/(3pi^2)=-0.06755 REJECTED, near-miss 2.2e-4; no clean closed form).
 |d|<=C_A/theta NOT yet derived (needs EM bulk + Airy edge); target C_A~0.07-0.1. c_1 measured !=
 C_A bounded. Probe: wlambda_covariance_epic_M1_tvok_remainder_rate.py; audit:
 docs/audits/2026-08-29-covariance-kernel-M1-tvok-remainder-rate.md
+
+2026-08-29: qou-po72 sibling (PR #5969) pins the de-poissonized CS constants; clarified that step-1 v_A=8/pi^2 is POISSONIZED (k>=1), CS uses V_A=8/(9pi^2) (k>=2). C_A finite-n rate bound still open (Olver-Bessel wall).
