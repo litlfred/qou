@@ -32,6 +32,20 @@ re-derive them, and is not a from-scratch computation of the table. It evaluates
 the published closed form on those recorded invariants. The base masses are also
 carried as recorded, deliberately: see the CAVEAT below.
 
+RE-DERIVING THEM HAS BEEN ATTEMPTED, AND THE GAP IS MEASURED (added 2026-08-29,
+bean qou-1jw9). Do not start this from scratch.
+`computations/wedderburn_Mi_constructor_test.py` reconstructs the M_i and hence
+Phi_1/Phi_2/Phi_3 literally from the three blocks that define them
+(def:atomic-braid + tbl:atomic-braid-table1-data + thm:wedderburn-mass-formula's
+"chaining the crossing matrices of all strands j > i"). It misses deuterium --
+the ONE point the theorem claims exactness, n = A+Z = 3 being the only n where
+the three extremal Wedderburn blocks exhaust the partitions -- by 208.5 % under
+the literal reading, and by 54 % to 2653 % across all four readings of that
+prose. So the obstacle is not effort: the published prose does not determine the
+construction uniquely, and no reading of it reproduces the carried values.
+Treat "which reading" as the open question. `wedderburn_table_binding_recast.py`
+part 2 shows the same constructor missing every published row.
+
 q0 CONVENTION. Coefficients are evaluated at the PROTON pin
 (`qou_substrate.constants.Q`), per the owner directive of 2026-08-07 that all
 production compute defaults to the experimental anchor. The recovered witness
@@ -59,6 +73,14 @@ from pathlib import Path
 from mpmath import mp, mpf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+# `q_parameter` lives in the `substrate/` cluster subdirectory, not beside this
+# file, so the line above does not reach it and the bare-name import below
+# raises ModuleNotFoundError from a clean checkout. `_path_bridge` is the
+# repo's idiom for that (it puts every cluster subdir on sys.path); importing
+# it is what every other producer doing a bare-name cross-cluster import does.
+# Added 2026-08-29, bean qou-1jw9 — verified pre-existing against pristine
+# origin/main, which fails identically.
+import _path_bridge as _bridge  # noqa: E402, F401
 
 from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402

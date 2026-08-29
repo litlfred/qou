@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T19:01:37Z
+updated_at: 2026-08-29T16:27:27Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -580,3 +580,81 @@ TWO THINGS REMAIN, both recorded as caveats, neither authorised here:
      This is the deeper provenance gap and is the natural next item.
   2. Base masses are 44/36 ppm below CODATA -- ~1.5 MeV at Z=20, i.e. LARGER
      than the coefficient fix on heavy rows. Separate defect.
+
+
+=== ARC REVIEW 2026-08-29 — where this stands after three sibling PRs ===
+
+Returning to this arc after main moved ~2500 commits. Reviewed rather than
+resumed, because most of what I left open was closed by other sessions while
+I was away — and two of my own claims did not survive.
+
+MY CLAIMS, ADJUDICATED
+  RETRACTED (theirs, correct — verified independently here). "Vol_B3 is
+    mislabelled: 8G, not a volume." WRONG. Vol(Borromean) = 2*V_oct = 8G IS
+    the volume, V_oct = 4G, and binding_link_volumes.py:112 already sets
+    VOL_B3 = 8*catalan under that exact comment. I mistook a closed form for a
+    substitution — and the check that catches it is the same corpus-grep my
+    own audit section 1 invokes. I failed to run my own discipline.
+    Worse than a wrong claim: alpha = m_e*8G and Vol_B3 = 8G are the SAME
+    number because alpha = m_e * Vol(B^3). Calling it a mislabelling destroyed
+    a real structural coherence.
+  SUPERSEDED, by a strictly stronger argument. I left "either the published
+    h_A^2 is wrong or beta3 is undocumented" open, saying the artifact cannot
+    distinguish. It can be settled without the artifact: h_A^2 = [3]_q - 3
+    exactly, so beta2 = -2[3]_q forces 2*beta3 + beta2 + 6 = 0 IDENTICALLY IN
+    q. The recorded pair misses by 0.012385 — inconsistent for EVERY q. Mine
+    needed q0 and produced a 14.2 % gap at one anchor. Verified both here.
+  STANDS. The Delta/B vs Delta/m recast (the published error metric divides by
+    the inputs); the four space-corrupted citations; the migration class
+    (three witnesses lost to folio-assistant/computations/ in miga); the
+    basename-search discipline.
+
+WHAT LANDED WHILE I WAS AWAY
+  #5763, #5773 (265ae726df), #5781. Net: the table was REGENERATED under
+  h_A^2 — mean 0.0745925 %, max 0.190854 % (worst row improves), 0 fitted
+  parameters, proton pin, and the block is now witness-backed by
+  computations/wedderburn_mass_table_z1_20.py. My own PR #5758 was closed
+  WITHOUT merging, but all of its content reached main by rebase at
+  2026-08-25T20:16Z — verify content, not PR state, before assuming work was
+  lost.
+
+THE TWO REMAINING ITEMS — and item 1 is my n=3 finding, which nobody has
+connected:
+
+  1. Phi_1/Phi_2/Phi_3 are CARRIED VERBATIM from the recovered witness, not
+     re-derived (wedderburn_mass_table_z1_20.py:30, :69, :204 say so
+     explicitly). Named there as "the deeper provenance gap and the natural
+     next item".
+     *** THIS IS EXACTLY WHAT computations/wedderburn_Mi_constructor_test.py
+     ATTEMPTED AND FAILED. *** That probe reconstructs Phi from the content
+     blocks (def:atomic-braid + tbl:atomic-braid-table1-data +
+     thm:wedderburn-mass-formula) and misses D by 54 %-2653 % across four
+     readings of the M_i prose. So the gap is not merely unclosed — its size
+     is already MEASURED, and the measurement says the published prose does
+     not determine the construction. Anyone taking item 1 should start from
+     that probe, not from scratch, and should treat "which reading" as the
+     open question rather than assuming one.
+     This also re-scopes my "unfalsifiable as written" finding correctly: the
+     TABLE is now reproducible (witness-backed, 0 fitted parameters); it is
+     the DERIVATION of Phi from the atomic braid that is not.
+
+  2. Base masses 44/36 ppm below CODATA (M_P = 938.230457, M_N = 939.532005),
+     explicitly not fixed. Measured here against binding, since "larger than
+     the coefficient fix" is true but not the right yardstick:
+        D      -0.0750 MeV   3.37 % of B
+        4He    -0.1501 MeV   0.53 %
+        12C    -0.4503 MeV   0.49 %
+        40Ca   -1.5009 MeV   0.43 %   (vs +1.205 coefficient fix — larger, yes)
+        208Pb  -7.6241 MeV   0.47 %
+     Real, and worst at D where B is smallest — but ~0.4 % of B on heavy rows
+     against a reported Delta/B near 9.9 %, so NOT the dominant term. Fixing it
+     will not close the table; treat it as hygiene, not as the accuracy story.
+
+NEXT, my judgement and open to being overruled: item 1, entered through the
+existing constructor probe. Item 2 is cheaper and certain, but it is hygiene —
+it moves 0.4 %-of-binding on rows already 9.9 % out. Item 1 is where the
+framework's claim actually rests, and it already has a measurement waiting.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; no fitting (owner,
+2026-08-25); do not close the D residual with any parameter; only CAL-1/2/3
+admissible.
