@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T10:11:14Z
+updated_at: 2026-08-29T10:14:39Z
 ---
 
 ## Summary
@@ -62,3 +62,51 @@ one object serves both open problems.
 Settle the identification: is the colour degree of freedom carried by mu-bar, or
 is mu-bar merely an invariant that happens to be alternating? That is the whole
 remaining question on this route.
+
+
+## Sharper formulation of the route (same session, before any further work)
+
+The audit states the fact as "mu-bar_123 is antisymmetric, hence transforms in
+the sign rep". There is a stronger and more natural way to say it, which makes
+the identification in the gap a smaller premise rather than a leap:
+
+**The components of the Borromean baryon are UNORDERED.** Milnor's mu-bar_{ijk}
+is defined only after choosing an ordering of the components, and relabelling by
+sigma in S_3 multiplies it by sign(sigma). So on the physical link mu-bar is not
+a number at all: it is well-defined only up to sign, i.e. it is canonically an
+element of a ONE-DIMENSIONAL SPACE ON WHICH S_3 ACTS BY THE SIGN CHARACTER.
+
+Under that reading the corpus's own "mu-bar_123 = +-1" is not a convention to be
+fixed but the statement that the value lives in the sign line. There is no
+preferred ordering of (r, g, b) to fix it with -- the colour tubes are
+interchangeable, which is the corpus's own ingredient 2.
+
+So the framework's confinement invariant does not merely HAPPEN to be
+alternating; it has nowhere else to live. That is the difference between "an
+invariant that is antisymmetric" and "an invariant valued in the sign
+representation", and it is the latter that the colour channel lambda = (1^3)
+needs.
+
+## What this does and does NOT change about the gap
+
+Still NOT established: that the state's colour content is read off mu-bar. The
+premise is unchanged in kind. What changes is its plausibility: the premise is
+now "the colour degree of freedom is carried by the canonical confinement
+invariant" rather than "the colour degree of freedom happens to share a symmetry
+type with some invariant".
+
+## The falsification test to run next, stated so it can be run
+
+The route dies if the colour degree of freedom is a LABEL ON STATES rather than
+a property of the link type. mu-bar is an invariant of the LINK TYPE: every
+baryon is the same 𝓑_3, so every baryon has the same mu-bar. If colour were a
+state label distinguishing baryons, mu-bar could not carry it.
+
+The reason that is NOT obviously fatal, and must be checked rather than waved
+through: colour is CONFINED, so all physical baryons ARE the same colour state
+(the singlet). "Constant across baryons" is what a confined charge should look
+like. So the test is not "does mu-bar distinguish baryons" -- it should not --
+but whether the singlet's SIGN BEHAVIOUR under tube exchange is what mu-bar
+supplies.
+
+Run that before investing further in the route.
