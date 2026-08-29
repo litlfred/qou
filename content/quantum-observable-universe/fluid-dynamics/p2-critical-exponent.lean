@@ -57,16 +57,25 @@ class CriticalExponent where
       bound $M$.  This is the finite-time-blowup statement at the
       substrate-parameter level.
 
-      The `|q - 1| < ε` conjunct is what localises the divergence at
-      $q = 1$ and is not optional: without it the field says only that
-      enstrophy is unbounded *somewhere*, which is satisfied by
-      `enstrophy q = max q 0` — a function that is the identity near
-      $q = 1$ and therefore perfectly regular exactly where the
-      conjecture claims blow-up (verified counterexample:
-      `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`). -/
+      The `1 < q ∧ q - 1 < ε` conjunct localises the divergence at
+      $q = 1$ and is essential: without it the field asserts only that
+      enstrophy is unbounded somewhere, a condition satisfied by
+      `enstrophy q = max q 0`, which is the identity near $q = 1$ and
+      hence regular exactly where the conjecture asserts blow-up
+      (counterexample verified in
+      `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`).
+
+      The neighbourhood is one-sided, matching the statement's
+      $q \to 1^{+}$ and the substrate regime $q > 1$.
+
+      The field asserts unboundedness on every right-neighbourhood of
+      $1$, which is weaker than the accompanying asymptotic
+      $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$: the divergence *rate*
+      is not encoded, and `criticalExponent` is accordingly
+      unconstrained by any field of this class. -/
   -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
   enstrophy_diverges :
     ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
-      ∃ q : ℝ, q ≠ 1 ∧ |q - 1| < ε ∧ M < enstrophy q
+      ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q
 
 end QOU.FluidDynamics
