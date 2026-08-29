@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T03:25:06Z
+updated_at: 2026-08-29T05:38:02Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -143,3 +143,40 @@ blocks call strictly required, and is not one edit away from having it.
 assignment reproduces the stated 1.0065 (closest 1.0067901, err 2.9e-4),
 while the neutron's 0.7976 is reproduced exactly by two of eight. That
 asymmetry — neutron exact, proton never — is the sharpest remaining lead.
+
+
+## 2026-08-29 (cont. 3) — the proton is where Delta breaks, and the stated value is the likely error
+
+The neutron/proton asymmetry, pursued to a conclusion.
+
+**Derived target.** If the exact neutron net (0.797566438888) and the stated
+Delta net (−0.2089) are both right, then `net(p)` **must** be
+**1.00646643889** — which does round to the stated 1.0065. So the corpus's own
+pair is self-consistent, and this is a verification target, not a fit.
+
+**96 variants, no hit.** 8 quark-generator assignments x 2 Hopf orientations
+(`L_-`, `L_+`) x 6 compositions (`BQG`/`BGQ`/`QBG`/`GBQ`/`QGB`/`GQB`). Closest
+is **1.00679010515**, |err| **3.2e-4** — against a NEUTRON match exact to
+~1e-30. The asymmetry is structural, not numerical.
+
+**The required correction is not a corpus quantity.** The proton differs from
+the neutron only in the uu crossing's shift, which the block reads as 0.
+Solving for the shift that would make `net(p)` match gives **−0.004756809789**.
+Against 18 corpus-shaped candidates (`0`, `±h`, `−h/2`, `−h/4`, `−h/8`,
+`−h/16`, `−h/32`, `−h²`, `−h²/2`, `−h²/4`, `−h²/8`, `−h³`, `−h³/2`, `−h⁴`,
+`q−1`, `−1/q`, `−(q−1)²`, `−(q−1)³`) the nearest is **−h³/2 at 3.96 %
+relative error**. Nothing matches.
+
+**Weight of evidence: the stated PROTON net is wrong.** The same block family
+already carries one demonstrated error — its "13 crossings" sentence, refuted
+by its own neutron number. The proton value is unreachable by 96 readings of
+the block's own recipe and is not one recognised correction away from it.
+
+**Which makes the derivable Delta the CONSTRUCTED −0.2137638306**, from the
+assignment that reproduces the neutron exactly.
+
+**NOT proved.** An incomplete reading of the recipe remains open — the
+composition order and the quark-generator assignment are both my
+reconstruction, not corpus statements. What is established is that no reading
+I can find reaches the stated value, and the gap is 1000x the neutron's
+residual.
