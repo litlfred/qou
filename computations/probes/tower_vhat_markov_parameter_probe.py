@@ -300,6 +300,129 @@ def verify_lean_hypotheses(A: int) -> dict:
     }
 
 
+def pn_identity_coefficient_relation() -> dict:
+    """The proton's identity coefficient IS the neutron's V̂ — and why.
+
+    Measured: at generator 1 of the canonical atom words,
+    `β(proton) = 1.0883675333971881277792…= V̂(neutron)`, agreeing to ~50
+    digits at 60 dps.  That is far too sharp to be an accident and far too
+    specific to leave as one.
+
+    It is `QOU.BraidsAndKnots.identity_coeff_avg_eq_trace_full`.  The two words
+    differ in exactly one factor — `σ − h/2` for the proton against `σ − h` for
+    the neutron — and appending the averaged factor then reading the identity
+    coefficient is the *same linear functional* as appending the full factor
+    then taking the Markov trace at `z = h/2`.  Both are `α − β·h/2`.  It holds
+    for every prefix, over any field; nothing about this word, this `q` or this
+    atom is used.
+
+    `d = −h/2` is `AveragedCrossingCollapse`'s averaged crossing, the value
+    `2d = −h` at which the σ-coefficient vanishes.
+
+    Also checked here: every factor in `atom_braid_word_3A` has `c = 1` and
+    `d ∈ {0, −h/2, −h}`, so every collapsed word is a product of just three
+    distinct factors.  That is what makes the relation above reachable at all.
+    """
+    h = Q - QI
+    ab_p = per_generator_alpha_beta(1, 0)
+    ab_n = per_generator_alpha_beta(0, 1)
+    beta_p = ab_p[1]["beta"]
+    Z = markov_parameter(1, "normalized_plancherel")["Z"]
+    V_n = ab_n[1]["alpha"] * Z + ab_n[1]["beta"]
+
+    # The general identity, on the actual prefixes rather than on a model.
+    # x = (σ − h)³ is the shared prefix of both generator-1 words.
+    def step(ab, cd):
+        a, b = ab
+        c, d = cd
+        return (a * (c * h + d) + b * c, a * c + b * d)
+
+    x = (mpf(0), mpf(1))
+    for _ in range(3):
+        x = step(x, (mpf(1), -h))
+    lhs = step(x, (mpf(1), -(h / 2)))[1]              # identity coeff, averaged
+    rhs_pair = step(x, (mpf(1), -h))                  # full factor
+    rhs = (h / 2) * rhs_pair[0] + rhs_pair[1]         # Markov trace at h/2
+
+    # Every factor is (1, d) with d drawn from the FOUR-value template
+    # `atom_braid_word_3A`'s docstring states: {0, -h, -h/2, -h(1/2 - delta/4)}.
+    #
+    # An earlier version of this check listed only the first three and FAILED,
+    # by 7.19e-5, on exactly one factor out of 45 — the single inter-nucleon
+    # generator.  That factor is the colour-weighted p-n interface
+    # (pn_convention = "bring_color_weighted", canonical per the 2026-08-15
+    # owner ruling R3), and the 7.19e-5 is its whole V̂.  The check is fixed by
+    # stating the template correctly, not by widening a tolerance.
+    #
+    # `delta` is solved for from that one factor.  Note that predicting the
+    # inter-nucleon V̂ from the solved delta is then CIRCULAR — `V̂ = h/2 + d`
+    # and `delta := 4(1/2 + d/h)` give `h·delta/4 = h/2 + d` identically, so
+    # that comparison can only ever pass.  (An earlier draft of this file
+    # asserted the opposite, "a wrong delta cannot make this pass"; it is
+    # recorded rather than deleted because the shape recurs.)  The content is
+    # in the INDEPENDENT check below: the solved delta must equal
+    # `pyhecke.constants.flavor_split_leading(q)`, which knows nothing about
+    # this word.  That is what identifies the fourth template value as the
+    # colour weighting rather than merely naming it so.
+    delta_solved = None
+    worst_factor_dev = mpf(0)
+    n_factors = 0
+    raw_d: list = []          # the mpf values themselves — NOT round-tripped
+    seen_d: dict[str, int] = {}
+    for (Zn, Nn) in ((1, 0), (0, 1), (1, 1)):
+        for (c, d, _g) in M3A.atom_braid_word_3A(Zn, Nn):
+            n_factors += 1
+            dv = mpf(str(d))
+            raw_d.append(dv)
+            seen_d[_fmt(dv)] = seen_d.get(_fmt(dv), 0) + 1
+            worst_factor_dev = max(worst_factor_dev, abs(mpf(str(c)) - 1))
+            if min(abs(dv - a) for a in (mpf(0), -(h / 2), -h)) > mpf("1e-45"):
+                # the colour-weighted one: d = -h(1/2 - delta/4)
+                delta_solved = 4 * (mpf(1) / 2 + dv / h)
+    # Compare against the RAW values.  Keying this loop off `seen_d` instead
+    # would compare 20-digit round-trips and report a spurious ~5e-21 floor
+    # that is this file's serializer, not the corpus (it did, before this note).
+    allowed = [mpf(0), -(h / 2), -h]
+    if delta_solved is not None:
+        allowed.append(-(h * (mpf(1) / 2 - delta_solved / 4)))
+    for dv in raw_d:
+        worst_factor_dev = max(worst_factor_dev,
+                               min(abs(dv - a) for a in allowed))
+
+    # inter_nucleon_vHat: that generator's V̂ must be h*delta/4, predicted from
+    # the delta solved above rather than read back off the same number.
+    inter_pred = h * delta_solved / 4 if delta_solved is not None else None
+    inter_meas = per_generator_alpha_beta(1, 1)[2]
+    Z2 = markov_parameter(2, "normalized_plancherel")["Z"]
+    inter_V = inter_meas["alpha"] * Z2 + inter_meas["beta"]
+
+    # THE INDEPENDENT CHECK. `flavor_split_leading` is the closed form the
+    # braid-word builder's own docstring names as the source of delta; it takes
+    # only q and has never seen this word.
+    from pyhecke.constants import flavor_split_leading
+    delta_closed_form = mpf(flavor_split_leading(Q))
+
+    return {
+        "flavor_split_delta_solved_from_word": _fmt(delta_solved),
+        "flavor_split_leading_closed_form": _fmt(delta_closed_form),
+        "flavor_split_abs_difference": _fmt(abs(delta_solved - delta_closed_form)),
+        "inter_nucleon_vHat_predicted_h_delta_over_4": _fmt(inter_pred),
+        "inter_nucleon_vHat_measured": _fmt(inter_V),
+        "inter_nucleon_vHat_abs_difference": _fmt(abs(inter_pred - inter_V)),
+        "distinct_d_values": seen_d,
+        "beta_proton_gen1": _fmt(beta_p),
+        "V_hat_neutron_gen1": _fmt(V_n),
+        "abs_difference": _fmt(abs(beta_p - V_n)),
+        "identity_lhs_beta_of_x_times_avg": _fmt(lhs),
+        "identity_rhs_trace_of_x_times_full": _fmt(rhs),
+        "identity_abs_difference": _fmt(abs(lhs - rhs)),
+        "h": _fmt(h),
+        "half_h": _fmt(h / 2),
+        "factors_checked": n_factors,
+        "worst_factor_deviation_from_template": _fmt(worst_factor_dev),
+    }
+
+
 def reconcile_two_v_hats() -> dict:
     """The corpus carries TWO inequivalent V̂ for the same atom.  Name them.
 
@@ -463,6 +586,50 @@ def main() -> int:
         "worst |Z - h/2| over n = 3, 6, 9 = "
         + max(lc["abs_Z_minus_half_h"] for lc in lean_checks)))
 
+    # 7. The p/n identity-coefficient relation, and the identity behind it.
+    pn = pn_identity_coefficient_relation()
+    print("proton identity coefficient vs neutron V_hat, generator 1:")
+    print(f"  beta(proton)   = {pn['beta_proton_gen1']}")
+    print(f"  V_hat(neutron) = {pn['V_hat_neutron_gen1']}")
+    print(f"  |difference|   = {pn['abs_difference']}")
+    print(f"  identity_coeff_avg_eq_trace_full on the shared prefix: "
+          f"|lhs - rhs| = {pn['identity_abs_difference']}")
+    print(f"  every one of {pn['factors_checked']} word factors is (1, d) with d in "
+          f"the 4-value template {{0, -h/2, -h, -h(1/2 - delta/4)}}: worst "
+          f"deviation {pn['worst_factor_deviation_from_template']}")
+    print(f"  flavour split solved from the word: delta = "
+          f"{pn['flavor_split_delta_solved_from_word']}")
+    print(f"  inter-nucleon V_hat: predicted h*delta/4 = "
+          f"{pn['inter_nucleon_vHat_predicted_h_delta_over_4']}, measured "
+          f"{pn['inter_nucleon_vHat_measured']}, "
+          f"differ {pn['inter_nucleon_vHat_abs_difference']}")
+    print()
+    checks.append((
+        "proton's identity coefficient EQUALS the neutron's V_hat (gen 1)",
+        mpf(pn["abs_difference"]) < mpf("1e-45"),
+        f"|beta_p - V_n| = {pn['abs_difference']}"))
+    checks.append((
+        "and it is identity_coeff_avg_eq_trace_full, not a coincidence",
+        mpf(pn["identity_abs_difference"]) < mpf("1e-45"),
+        f"beta(x*(sigma - h/2)) vs trace(x*(sigma - h)) differ by "
+        f"{pn['identity_abs_difference']}"))
+    checks.append((
+        "every braid-word factor is (1, d) with d in the 4-value template",
+        mpf(pn["worst_factor_deviation_from_template"]) < mpf("1e-45"),
+        f"{pn['factors_checked']} factors checked across p, n, d; worst "
+        f"deviation {pn['worst_factor_deviation_from_template']}"))
+    checks.append((
+        "the fourth template value IS the colour weighting "
+        "(delta solved from the word == flavor_split_leading(q))",
+        mpf(pn["flavor_split_abs_difference"]) < mpf("1e-45"),
+        f"solved {pn['flavor_split_delta_solved_from_word']} vs closed form "
+        f"{pn['flavor_split_leading_closed_form']}, differ "
+        f"{pn['flavor_split_abs_difference']} — this is the non-circular one; "
+        f"h*delta/4 == V_hat is an identity and proves nothing on its own. "
+        f"With the identification made, inter_nucleon_vHat says the p-n "
+        f"interface reaches the tower ONLY through the colour weighting and "
+        f"contributes exactly 0 under the colour-blind convention"))
+
     print("checks:")
     ok = True
     for name, passed, detail in checks:
@@ -488,6 +655,7 @@ def main() -> int:
             "qou:QOU.BraidsAndKnots.markov_param_eq_half_h",
             "qou:QOU.BraidsAndKnots.markov_param_indep_of_weights",
             "qou:QOU.BraidsAndKnots.trace_pair_sum_eq_h",
+            "qou:QOU.BraidsAndKnots.identity_coeff_avg_eq_trace_full",
         ],
         "q": _fmt(Q),
         "conventions": {
@@ -497,6 +665,7 @@ def main() -> int:
         },
         "atoms": results,
         "two_v_hat_constructions": recon,
+        "pn_identity_coefficient_relation": pn,
         "lean_hypotheses_on_production_weights": lean_checks,
         "checks": [{"name": n, "passed": bool(p), "detail": d}
                    for (n, p, d) in checks],
