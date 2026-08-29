@@ -49,32 +49,37 @@ surjective half of that bridge.
   the working form for the order-bound induction, whose index side conditions
   are arithmetic rather than `Fin`-shaped.
 
-## What is NOT proved — the remaining half, stated precisely
+## The bridge is COMPLETE
 
-`CoxeterSystem M W` is a structure carrying a **`MulEquiv` `W ≃* M.Group`**
-(`Coxeter/Basic.lean:154`).  So constructing one needs `toPerm` to be
-**injective** as well — i.e. that the presentation imposes *no relations beyond*
-the three families, so `|(Aₙ n).Group| ≤ (n+1)!`.
+`permCoxeterSystem n : CoxeterSystem (Aₙ n) (Equiv.Perm (Fin (n+1)))`, together
+with the `IsCoxeterGroup (Equiv.Perm (Fin (n+1)))` instance.  **`S_{n+1}` is the
+Coxeter group of type `Aₙ`, formalized.**
 
-That is the classical hard half of the presentation theorem for `S_n`, and
-nothing here bears on it.  It is normally obtained from an order bound
-(`|W(Aₙ)| ≤ (n+1)!` by induction over parabolics) or the geometric
-representation.
+The route, in order:
 
-**How hard: Mathlib has never done it for any group.**  Measured — the only
+1. `s_rel` — the adjacent transpositions satisfy every type-`Aₙ` relation, so
+   `toPerm : (Aₙ n).Group →* S_{n+1}` exists.
+2. `toPerm_surjective` — via `Equiv.Perm.mclosure_swap_castSucc_succ`.
+3. `inCosets_all` — every element of `W(Aₙ (n+1))` lies in one of `n+2`
+   parabolic cosets `H · t_k`, by `simple_induction_right` over the four closure
+   cases.
+4. `cover_surjective`, `finiteAn`, `card_An_le` — the cover becomes a surjection
+   `W(Aₙ n) × Fin (n+2) ↠ W(Aₙ (n+1))`, giving finiteness from the trivial
+   `W(Aₙ 0)` and the bound `|W(Aₙ n)| ≤ (n+1)!`.
+5. `toPerm_bijective` — `(n+1)! ≥ |W(Aₙ n)| ≥ |S_{n+1}| = (n+1)!` squeezes, so
+   the surjection is a bijection.
+
+**Mathlib does not have this.**  Measured before starting: the only
 `CoxeterSystem` values in all of Mathlib are the tautological
 `CoxeterMatrix.toCoxeterSystem` (the system *on the presented group itself*) and
-`CoxeterSystem.map` (transport along an existing `MulEquiv`); there are **zero**
-`IsCoxeterGroup` instances.  So Mathlib carries the whole theory —
-length, inversions, the exchange property — with **no concrete group** ever
-plugged into it.  Completing this bridge is therefore a genuine Mathlib
-contribution, not a repo chore, and the surjection above is the first half of
-something upstream does not have.  **Do not read this file as
-`CoxeterSystem (Aₙ n) (Perm (Fin (n+1)))`** — it is the surjection only.
+`CoxeterSystem.map` (transport along an existing `MulEquiv`), and there are
+**zero** `IsCoxeterGroup` instances — the whole theory (length, inversions,
+exchange) with no concrete group ever plugged in.  This file plugs the first one
+in, which means `cs.length` and all of `Coxeter/Length.lean` and
+`Coxeter/Inversion.lean` now apply to `Equiv.Perm`.  That is exactly the length
+theory AGENTS.md records as missing, and it is what `T_w` well-definedness rests
+on (beans `qou-lrz1` / `qou-twwf`).
 
-Scope note (AGENTS.md): the above is a **scope-(a)** statement about what this
-file does, not a claim that injectivity is hard *in principle* or blocked.  No
-invariant forbids it; it simply is not done here.
 -/
 
 open Equiv
@@ -484,6 +489,77 @@ theorem inCosets_all (n : ℕ) (x : (Aₙ (n + 1)).Group) : InCosets n x := by
     rfl
   rw [this]
   exact inCosets_mul_gen hw j.isLt
+
+
+/-! ### The order bound, and the Coxeter system
+
+`cover_surjective` turns the coset cover into a surjection
+`W(Aₙ n) × Fin (n+2) ↠ W(Aₙ (n+1))`.  That gives finiteness by induction from
+the trivial `W(Aₙ 0)`, and the bound `|W(Aₙ n)| ≤ (n+1)!`.  Since `toPerm` is
+surjective onto `S_{n+1}`, whose order is exactly `(n+1)!`, the two cardinalities
+squeeze together and `toPerm` is **bijective**. -/
+
+/-- The coset cover, as a surjection from `W(Aₙ n) × Fin (n+2)`. -/
+theorem cover_surjective (n : ℕ) :
+    Function.Surjective (fun p : (Aₙ n).Group × Fin (n + 2) =>
+      incl n p.1 * t (n + 1) (p.2 : ℕ)) := by
+  intro x
+  obtain ⟨k, hk, h, ⟨a, rfl⟩, rfl⟩ := inCosets_all n x
+  exact ⟨(a, ⟨k, by omega⟩), rfl⟩
+
+/-- `W(A₀)` is trivial: there are no generators. -/
+theorem eq_one_of_A0 (x : (Aₙ 0).Group) : x = 1 := by
+  refine (Aₙ 0).toCoxeterSystem.simple_induction (p := fun w => w = 1) x
+    (fun i => i.elim0) rfl ?_
+  intro w w' hw hw'
+  rw [hw, hw', one_mul]
+
+instance : Subsingleton ((Aₙ 0).Group) :=
+  ⟨fun a b => (eq_one_of_A0 a).trans (eq_one_of_A0 b).symm⟩
+
+instance finiteAn : ∀ n : ℕ, Finite ((Aₙ n).Group)
+  | 0 => Finite.of_subsingleton
+  | (n + 1) => by
+      have := finiteAn n
+      exact Finite.of_surjective _ (cover_surjective n)
+
+open Nat
+
+/-- **The order bound: `|W(Aₙ n)| ≤ (n+1)!`.** -/
+theorem card_An_le : ∀ n : ℕ, Nat.card ((Aₙ n).Group) ≤ (n + 1)!
+  | 0 => by
+      have h1 : Nat.card ((Aₙ 0).Group) = 1 :=
+        Nat.card_eq_one_iff_unique.mpr ⟨inferInstance, inferInstance⟩
+      rw [h1]
+      norm_num [Nat.factorial]
+  | (n + 1) => by
+      have ih := card_An_le n
+      have hs := Nat.card_le_card_of_surjective _ (cover_surjective n)
+      simp only [Nat.card_prod, Nat.card_fin] at hs
+      calc Nat.card ((Aₙ (n + 1)).Group)
+          ≤ Nat.card ((Aₙ n).Group) * (n + 2) := hs
+        _ ≤ (n + 1)! * (n + 2) := Nat.mul_le_mul_right _ ih
+        _ = (n + 1 + 1)! := by rw [Nat.factorial_succ (n + 1)]; ring
+
+theorem card_perm_fin (n : ℕ) : Nat.card (Equiv.Perm (Fin (n + 1))) = (n + 1)! := by
+  rw [Nat.card_eq_fintype_card, Fintype.card_perm, Fintype.card_fin]
+
+/-- **`toPerm` is bijective.** -/
+theorem toPerm_bijective (n : ℕ) : Function.Bijective (toPerm n) := by
+  refine (Nat.bijective_iff_surjective_and_card _).mpr ⟨toPerm_surjective n, ?_⟩
+  have hle : Nat.card ((Aₙ n).Group) ≤ Nat.card (Equiv.Perm (Fin (n + 1))) := by
+    rw [card_perm_fin]; exact card_An_le n
+  have hge : Nat.card (Equiv.Perm (Fin (n + 1))) ≤ Nat.card ((Aₙ n).Group) :=
+    Nat.card_le_card_of_surjective _ (toPerm_surjective n)
+  omega
+
+/-- **`S_{n+1}` is the Coxeter group of type `Aₙ`.** -/
+noncomputable def permCoxeterSystem (n : ℕ) :
+    CoxeterSystem (Aₙ n) (Equiv.Perm (Fin (n + 1))) :=
+  ⟨(MulEquiv.ofBijective (toPerm n) (toPerm_bijective n)).symm⟩
+
+instance (n : ℕ) : IsCoxeterGroup (Equiv.Perm (Fin (n + 1))) :=
+  ⟨_, Aₙ n, ⟨permCoxeterSystem n⟩⟩
 
 
 end QOU.Hecke.SymmetricCoxeter
