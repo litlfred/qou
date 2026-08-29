@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-24T16:34:39Z
-updated_at: 2026-08-29T18:33:38Z
+updated_at: 2026-08-29T19:04:26Z
 ---
 
 ## 2026-08-29 — the surjective half of the Sn <-> type-A bridge is BUILT
@@ -38,3 +38,26 @@ this file bears on it.
 
 Scope-(a): a statement about what this file does, NOT a claim that injectivity
 is hard in principle or blocked. No invariant forbids it.
+
+## 2026-08-29 — THE BRIDGE IS COMPLETE
+
+permCoxeterSystem n : CoxeterSystem (Aₙ n) (Equiv.Perm (Fin (n+1))), plus the
+IsCoxeterGroup instance. **S_{n+1} IS the Coxeter group of type Aₙ, formalized**,
+sorry-free at general n, all declarations #print axioms clean.
+
+Route: s_rel (all three relation families) -> toPerm -> toPerm_surjective (via
+Mathlib's mclosure_swap_castSucc_succ) -> the four coset-closure cases
+(t_mul_gen_self / t_mul_gen_pred / t_comm / t_push) -> inCosets_all (every element
+in one of n+2 parabolic cosets, by simple_induction_right) -> cover_surjective ->
+finiteAn + card_An_le (|W(Aₙ n)| <= (n+1)!, induction from the trivial W(Aₙ 0))
+-> toPerm_bijective by the cardinality squeeze against |S_{n+1}| = (n+1)!.
+
+**Mathlib does not have this.** Measured before starting: the only CoxeterSystem
+values in all of Mathlib are the tautological CoxeterMatrix.toCoxeterSystem and
+CoxeterSystem.map (transport along an existing MulEquiv), and there are ZERO
+IsCoxeterGroup instances -- the whole theory with no concrete group plugged in.
+
+Consequence: cs.length and all of Coxeter/Length.lean and Coxeter/Inversion.lean
+now apply to Equiv.Perm. That is exactly the length theory AGENTS.md records as
+missing for Equiv.Perm, and it is what T_w well-definedness rests on. qou-twwf is
+now unblocked.
