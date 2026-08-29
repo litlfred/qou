@@ -297,15 +297,42 @@ for f in "${files[@]}"; do
     # 2026-08-25 and the JSON still said 4.6e6 four days later, and the swing
     # figure drifted the OTHER way in the same table cell. Compare AGENTS.md
     # §"A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS".
-    docs/coordination/ck-dk-registry.json|docs/coordination/ck-dk-canonical-registry.md)
-      echo "▸ $f  [c_k/d_k registry — twinned .md + .json]"
-      if out=$(python3 "$ROOT/docs/coordination/ck_dk_registry_validate.py" --twin 2>&1); then
-        printf '%s\n' "$out" | sed 's/^/    /'
-      else
-        printf '%s\n' "$out" | sed 's/^/    /'
-        echo "    ⚠ twin divergence — fix the file that is stale, not the checker"
-        action=1
-      fi
+    # TWO registries are twinned against ck-dk-canonical-registry.md, and they
+    # check DIFFERENT sections of it, so a change to the .md runs both:
+    #
+    #   ck_dk_registry_validate.py --twin   §3/§4/§6 vs ck-dk-registry.json
+    #   kernel_constraints_registry_validate.py  §9 (KC rows) vs
+    #                                       kernel-constraints-registry.json
+    #
+    # Neither was wired anywhere. The kernel one already had a twin-drift
+    # check (R6, always-on, bean qou-ungx) and it was still reachable only by
+    # someone typing its path — the same "gate nobody runs" half of the defect
+    # that let the ck-dk twin sit stale for four days. Both are ~30 ms, so
+    # there is no cost argument for leaving them out.
+    #
+    # NOT passing --lint-docs to the kernel validator: that mode rglobs every
+    # docs/**/*.md and is a corpus-wide sweep, not a preflight for the file in
+    # front of you. R6 twin-drift runs either way.
+    docs/coordination/ck-dk-registry.json|docs/coordination/ck-dk-canonical-registry.md|docs/coordination/kernel-constraints-registry.json)
+      echo "▸ $f  [twinned registry — .md + .json]"
+      case "$f" in
+        *ck-dk-registry.json) vals="ck_dk" ;;
+        *kernel-constraints-registry.json) vals="kernel" ;;
+        *) vals="ck_dk kernel" ;;   # the shared .md — both read it
+      esac
+      for v in $vals; do
+        case "$v" in
+          ck_dk)  cmd=("$ROOT/docs/coordination/ck_dk_registry_validate.py" --twin) ;;
+          kernel) cmd=("$ROOT/docs/coordination/kernel_constraints_registry_validate.py") ;;
+        esac
+        if out=$(python3 "${cmd[@]}" 2>&1); then
+          printf '%s\n' "$out" | sed 's/^/    /'
+        else
+          printf '%s\n' "$out" | sed 's/^/    /'
+          echo "    ⚠ twin divergence — fix the file that is stale, not the checker"
+          action=1
+        fi
+      done
       ;;
     *) : ;;  # no known sidecar axis
   esac
