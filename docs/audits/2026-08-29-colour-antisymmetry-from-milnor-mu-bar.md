@@ -221,15 +221,37 @@ one. §6 supplies the line; it does not put the state in it.
    finding.
 
 2. **`rem:brings-qou-4tuple` says "degree 4" and "three sheets" in one
-   paragraph.** *"The branched covering `π: S → ℙ¹(ℂ)` (degree 4, six branch
-   points)"* sits two sentences above *"the `S₃` permutation of the three
-   sheets"*, and a degree-4 covering does not have three sheets. The cubic that
-   §6 computes with is degree 3 with six branch points, matching the sheet count
-   and the branch-point count but not the stated degree. One of the three
-   numbers is wrong, or "degree 4" refers to a different map than the one whose
-   sheets carry colour. **Flagged, not resolved** — it bears directly on whether
-   "the three sheets" in that remark is the object §6 computed, and resolving it
-   by picking whichever reading suits this note would be exactly the wrong move.
+   paragraph — and Riemann–Hurwitz says which one is describing the fibre.**
+   *"The branched covering `π: S → ℙ¹(ℂ)` (degree 4, six branch points)"* sits
+   two sentences above *"the `S₃` permutation of the three sheets"*, and a
+   degree-4 covering does not have three sheets. This was flagged as unresolved
+   when §6 was first written; it is now settled, by computation rather than by
+   picking the reading that suits this note (fact **A5** of the probe).
+
+   The fibre curve is unramified over `z = ∞`: substituting `X = zY` and taking
+   the leading form gives `Y³ + Y² + Y + 1`, of discriminant `−16 ≠ 0`, so the
+   three sheets stay distinct there and *all* the branching is the six finite
+   points. Riemann–Hurwitz, `2g − 2 = −2d + b`, then gives:
+
+   | reading | `d` | `b` | forced genus |
+   |---|---|---|---|
+   | the cubic §6 computes | 3 | 6 | **1** — elliptic |
+   | "degree 4, six branch points" | 4 | 6 | 0 |
+   | Bring's surface (`g = 4`), trigonal | 3 | 12 | 4 |
+   | Bring's surface (`g = 4`), degree 4 | 4 | 14 | 4 |
+
+   So *no* map has degree 4, six branch points **and** genus 4: that triple is
+   arithmetically impossible. The only reading consistent with both "six branch
+   points" and "three sheets" is the degree-3, genus-1 cover — which is exactly
+   what the same remark elsewhere calls **"the elliptic cubic"**, and whose
+   three roots it says parametrise colour. The `q → 0` figure block calls the
+   same object the "chiral **elliptic** fibre". Genus 1 is what "elliptic"
+   means, and the computation returns it.
+
+   **This is good news for §6, not bad:** the object whose monodromy was
+   computed is the object the remark identifies with colour. What "degree 4"
+   refers to — a different map, or an error — is a question for that block's
+   author, and is **not** repaired here.
 
 ### 6.5 Scope
 

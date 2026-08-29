@@ -50,12 +50,34 @@ Four facts, all in exact rational arithmetic over `QQ[z]`:
   A4. `Delta` is squarefree of positive degree, hence not a square in
       `C(z)`, so `C(z)(sqrt(Delta))` is a genuine quadratic extension.
 
+  A5. Substituting `X = zY` and taking the leading form at `z = infinity`
+      gives `Y^3 + Y^2 + Y + 1`, which is squarefree, so the covering is
+      unramified there and all the branching is the six finite points.
+      Riemann-Hurwitz then gives `2g - 2 = -2*3 + 6 = 0`: the fibre is a
+      genus-1 curve. This confirms `rem:brings-qou-4tuple`'s own words
+      ("the elliptic cubic", "chiral elliptic fibre") and pins down an
+      inconsistency in the same remark -- see below.
+
 A2 + A3 give the monodromy group: a transitive subgroup of `S_3`
 containing a transposition is `S_3` itself. A4 gives the same
 conclusion by a second, independent route and identifies the character
 concretely -- `sgn` is cut out by the Vandermonde `sqrt(Delta)`, and a
 loop has `sgn = -1` exactly when it exchanges the two sheets of that
 double cover.
+
+**A5 settles which object `rem:brings-qou-4tuple` is talking about.**
+That remark writes "the branched covering `pi: S -> P^1(C)` (degree 4,
+six branch points)" two sentences above "the `S_3` permutation of the
+three sheets", and a degree-4 covering does not have three sheets.
+Riemann-Hurwitz decides it. A degree-4 cover of `P^1` with six simple
+branch points has genus 0, not 4; and Bring's genus-4 surface would need
+12 branch points at degree 3, or 14 at degree 4 -- never 6. The only
+reading consistent with "six branch points" AND "three sheets" is the
+degree-3, genus-1 cover computed here, which is exactly what the remark
+elsewhere calls "the elliptic cubic" and whose three roots it says
+parametrise colour. So "degree 4" does not describe the colour-carrying
+fibre; it belongs to a different map, or is simply wrong. Recorded, not
+silently repaired: the fix belongs in the content block, by its author.
 
 **The numerical cross-check** (mpmath, 50 dps -- no float64 anywhere)
 transports the three roots along a closed path from a base point out to
@@ -203,6 +225,49 @@ def exact_facts() -> dict:
         "quadratic_extension_nontrivial": a1["squarefree"] and a1["degree"] > 0,
     }
 
+    # A5 — the genus of the fibre curve, by Riemann-Hurwitz. Needed
+    # because rem:brings-qou-4tuple describes the covering as "degree 4,
+    # six branch points" two sentences above "the S_3 permutation of the
+    # three sheets", and those cannot both describe one map.
+    #
+    # Behaviour over z = infinity: substituting X = z*Y and taking the
+    # leading form gives Y^3 + Y^2 + Y + 1. If that is squarefree the
+    # three sheets stay distinct at infinity, so the covering is
+    # unramified there and ALL the branching is the six finite points.
+    Y = sp.symbols("Y")
+    leading = sp.Poly(Y**3 + Y**2 + Y + 1, Y)
+    disc_leading = sp.discriminant(leading)
+    unramified_at_infinity = disc_leading != 0
+
+    degree = 3
+    n_branch = int(delta.degree())
+    # Each branch point carries a double root (A3), i.e. one point of
+    # ramification index 2, contributing (2-1) = 1 to the RH sum.
+    ramification = n_branch if a3["local_monodromy_is_transposition"] else None
+    two_g_minus_2 = -2 * degree + ramification if ramification is not None else None
+    genus = (two_g_minus_2 + 2) // 2 if two_g_minus_2 is not None else None
+
+    def rh_genus(d: int, b: int):
+        """Genus forced by Riemann-Hurwitz for a degree-d cover of P^1
+        with b simple branch points, or None if b has the wrong parity."""
+        val = -2 * d + b + 2
+        return val // 2 if val % 2 == 0 else None
+
+    a5 = {
+        "leading_form_at_infinity": sp.sstr(leading.as_expr()),
+        "leading_form_discriminant": sp.sstr(disc_leading),
+        "unramified_at_infinity": bool(unramified_at_infinity),
+        "degree": degree,
+        "n_simple_branch_points": n_branch,
+        "riemann_hurwitz_2g_minus_2": int(two_g_minus_2),
+        "genus": int(genus),
+        "fibre_is_elliptic": genus == 1,
+        # The two readings rem:brings-qou-4tuple cannot both hold.
+        "genus_if_degree_4_with_6_branch_points": rh_genus(4, 6),
+        "branch_points_needed_for_genus_4_at_degree_3": 6 + 2 * 3,
+        "branch_points_needed_for_genus_4_at_degree_4": 6 + 2 * 4,
+    }
+
     monodromy_group = (
         "S_3" if (a2["monodromy_transitive"]
                   and a3["local_monodromy_is_transposition"]) else "undetermined"
@@ -212,6 +277,7 @@ def exact_facts() -> dict:
         "A2_irreducible_transitive": a2,
         "A3_no_triple_root": a3,
         "A4_sign_line_nontrivial": a4,
+        "A5_fibre_genus": a5,
         "monodromy_group": monodromy_group,
         "sgn_character_surjective": monodromy_group == "S_3",
     }
@@ -446,6 +512,19 @@ def main() -> int:
     print(f"   A4  Delta a square in C(z): {a4['is_square_in_C_of_z']}  ->  "
           f"C(z)(sqrt Delta) is a genuine quadratic extension: "
           f"{a4['quadratic_extension_nontrivial']}")
+    a5 = exact["A5_fibre_genus"]
+    print(f"   A5  leading form at infinity {a5['leading_form_at_infinity']}, "
+          f"discriminant {a5['leading_form_discriminant']}  ->  unramified "
+          f"there: {a5['unramified_at_infinity']}; Riemann-Hurwitz with "
+          f"degree {a5['degree']} and {a5['n_simple_branch_points']} simple "
+          f"branch points gives genus {a5['genus']} (elliptic: "
+          f"{a5['fibre_is_elliptic']})")
+    print(f"       a degree-4 cover with 6 simple branch points would have "
+          f"genus {a5['genus_if_degree_4_with_6_branch_points']}; a genus-4 "
+          f"cover would need "
+          f"{a5['branch_points_needed_for_genus_4_at_degree_3']} of them at "
+          f"degree 3, "
+          f"{a5['branch_points_needed_for_genus_4_at_degree_4']} at degree 4")
     print(f"   =>  monodromy group {exact['monodromy_group']}; sgn "
           f"surjective onto {{+1,-1}}: {exact['sgn_character_surjective']}")
 
@@ -532,6 +611,17 @@ def main() -> int:
                 "(the same six branch points, located numerically at "
                 "residuals ~1e-15)",
             ],
+            "corpus_inconsistency_flagged": (
+                "rem:brings-qou-4tuple describes the covering as 'degree 4, "
+                "six branch points' two sentences above 'the S_3 permutation "
+                "of the three sheets'. By Riemann-Hurwitz a degree-4 cover of "
+                "P^1 with six simple branch points has genus 0, and a genus-4 "
+                "cover needs 12 branch points at degree 3 or 14 at degree 4. "
+                "The degree-3, genus-1 cover computed here is the only "
+                "reading consistent with both 'six branch points' and 'three "
+                "sheets', and matches that remark's own 'elliptic cubic'. "
+                "Flagged for the block's author; not repaired here."
+            ),
             "bears_on": [
                 "prop:baryon-product-from-alt",
                 "eightfold-open-problems item 4 (flavour vs colour)",

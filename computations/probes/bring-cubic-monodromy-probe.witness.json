@@ -41,6 +41,19 @@
       "is_square_in_C_of_z": false,
       "quadratic_extension_nontrivial": true
     },
+    "A5_fibre_genus": {
+      "leading_form_at_infinity": "Y**3 + Y**2 + Y + 1",
+      "leading_form_discriminant": "-16",
+      "unramified_at_infinity": true,
+      "degree": 3,
+      "n_simple_branch_points": 6,
+      "riemann_hurwitz_2g_minus_2": 0,
+      "genus": 1,
+      "fibre_is_elliptic": true,
+      "genus_if_degree_4_with_6_branch_points": 0,
+      "branch_points_needed_for_genus_4_at_degree_3": 12,
+      "branch_points_needed_for_genus_4_at_degree_4": 14
+    },
     "monodromy_group": "S_3",
     "sgn_character_surjective": true
   },
@@ -184,17 +197,18 @@
     "consumes": [
       "computations/bring_chiral_fibre_figure.py (the same six branch points, located numerically at residuals ~1e-15)"
     ],
+    "corpus_inconsistency_flagged": "rem:brings-qou-4tuple describes the covering as 'degree 4, six branch points' two sentences above 'the S_3 permutation of the three sheets'. By Riemann-Hurwitz a degree-4 cover of P^1 with six simple branch points has genus 0, and a genus-4 cover needs 12 branch points at degree 3 or 14 at degree 4. The degree-3, genus-1 cover computed here is the only reading consistent with both 'six branch points' and 'three sheets', and matches that remark's own 'elliptic cubic'. Flagged for the block's author; not repaired here.",
     "bears_on": [
       "prop:baryon-product-from-alt",
       "eightfold-open-problems item 4 (flavour vs colour)",
       "eightfold-open-problems item 7 (colour antisymmetry)"
     ]
   },
-  "scriptHash": "3753b38697d6",
-  "scriptCommitSha": "unknown",
-  "commitSha": "641ec6bfe6950368a70776909ce5c554c64ddc33",
+  "scriptHash": "56504ed88f3a",
+  "scriptCommitSha": "077660c93b508c00fdba130d606efee2367fcd74",
+  "commitSha": "2e4a4422ece409bb3b972fc463b6e9150e45c398",
   "engine": "python",
-  "computedAt": "2026-08-29T10:35:08.229025+00:00",
+  "computedAt": "2026-08-29T10:50:40.000809+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
