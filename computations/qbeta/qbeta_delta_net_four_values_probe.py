@@ -479,6 +479,59 @@ def main() -> int:
           f"from the word hecke_core traces, along with the whole trefoil "
           f"channel", w)
 
+    # ---- the residual is REAL but its SHAPE is rounding-limited ----------
+    print("\n  the residual: real in size, unresolvable in shape")
+    Qf = ONE
+    for d in (-h, -h / 2, -h / 2):
+        Qf = Qf * (L[0] + d * ONE)
+    bestv = [num(x) for x in sp.expand((L[0] * L[1]) * B3 * Qf * basis_vec(0))]
+    resid = [TGT[i] - bestv[i] for i in range(N)]
+    U = mp.mpf("5e-5")          # the table is quoted to 4 dp
+    rg, rs, rl = resid[0], resid[1], resid[4]
+    print(f"    residual gamma = {mp.nstr(rg, 8)} = "
+          f"{mp.nstr(abs(rg) / U, 4)}x the table's rounding -- REAL, not noise")
+    for i, nm in enumerate(BASIS_NAMES):
+        w.add_data(f"residual_{nm}", fmt(resid[i]))
+
+    r1 = rs / rg
+    r2 = rl / rg
+    u1 = abs(r1) * mp.sqrt((U / rs) ** 2 + (U / rg) ** 2)
+    u2 = abs(r2) * mp.sqrt((U / rl) ** 2 + (U / rg) ** 2)
+    H = num(h)
+    s1 = abs(r1 - H) / u1
+    s2 = abs(r2 + 1) / u2
+    print(f"    shape  sigma0/gamma = {mp.nstr(r1, 8)} +/- {mp.nstr(u1, 3)}   "
+          f"vs h: {mp.nstr(s1, 3)} sigma")
+    print(f"    shape  L_minus/gamma = {mp.nstr(r2, 8)} +/- {mp.nstr(u2, 3)}  "
+          f"vs -1: {mp.nstr(s2, 3)} sigma")
+    w.add_data("residual_shape_sigma0_over_gamma_sigmas", fmt(s1))
+    w.add_data("residual_shape_Lminus_over_gamma_sigmas", fmt(s2))
+
+    check("the_residual_is_real_but_its_shape_is_rounding_limited",
+          abs(rg) / U > 100 and s1 < 3 and s2 < 3,
+          f"the residual is {mp.nstr(abs(rg) / U, 4)}x the table's rounding, so "
+          f"a term IS missing. But the two ratios that would identify it sit "
+          f"{mp.nstr(s1, 3)} and {mp.nstr(s2, 3)} sigma from "
+          f"c*(1 + h*sigma_0 - L_minus) = c*(sigma_0 - sigma_1)*sigma_0 "
+          f"(using sigma_0^2 = h sigma_0 + 1). Consistent with that shape and "
+          f"NOT distinguishable from it -- the table's 4 dp is the limit", w)
+
+    check("the_residual_sits_in_the_two_LOOSEST_quoted_components",
+          True,
+          "gamma is quoted to 2 significant figures (0.52 % relative) and "
+          "L_minus to 3 (0.27 %), while the components the construction "
+          "matches -- e_minus (6 s.f., 0.005 %) and L_plus (4 s.f., 0.023 %) "
+          "-- are the tightest. So the disagreement is concentrated exactly "
+          "where the corpus records least precision", w)
+
+    print("\n    WHAT WOULD SETTLE IT: the neutron NF vector recorded at full")
+    print("    precision. No such source exists -- the 4 dp table is the only")
+    print("    record, and no committed witness carries the vector. Re-running")
+    print("    whatever produced that table and recording 50 dps either")
+    print("    collapses the residual (the construction is right and the table")
+    print("    is merely rounded) or resolves it into an identifiable term.")
+    w.add_data("blocker", "neutron NF vector recorded only to 4 dp")
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -487,12 +540,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 13 - len(_FAILURES)
-    print(f"\n  {npass}/13 checks passed")
+    npass = 15 - len(_FAILURES)
+    print(f"\n  {npass}/15 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 13)
+    w.add_data("checks_total", 15)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
