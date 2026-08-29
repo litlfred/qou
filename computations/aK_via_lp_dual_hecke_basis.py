@@ -313,7 +313,13 @@ def main() -> int:
     # q-pinning-50-digit.witness.json's `derived_50_digit.q` (line 81), i.e. the
     # canonical MUON anchor, so an auto-resolved stamp would say PROTON (the stem
     # is unlisted) over muon arithmetic.
-    out = w.save({"q0Anchor": "muon", "q0Value": mp.nstr(Q, 50)})
+    # PROTON, matching `Q` above. The qou-cds3 migration (2026-08-29) switched
+    # the VALUE to the proton pin -- see the banner at the top of this file --
+    # and left this label reading "muon", so the witness stamped a muon anchor
+    # over a proton value: one of the two live Q0_FLIPs. Re-running under the
+    # muon anchor would be the WRONG fix; the value is correct and deliberate,
+    # the label was the leftover.
+    out = w.save({"q0Anchor": "proton", "q0Value": mp.nstr(Q, 50)})
     print(f"Witness emitted: {out.name}")
     print()
     for r in rows:
