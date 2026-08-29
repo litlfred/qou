@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:48:48.574734+00:00",
-  "commitSha": "faa8a83a9d15e84acb46597a36948cb1f2457874",
+  "computedAt": "2026-08-29T02:53:46.812631+00:00",
+  "commitSha": "7d7de5970bdb9351263b3c151f6525fa9037e021",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22504,
+  "durationMs": 21169,
   "computation": "qbeta-delta-net-four-values",
   "scriptFile": "qbeta_delta_net_four_values_probe.py",
-  "scriptHash": "c82b4be6237c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4dff9feb38d4",
+  "scriptCommitSha": "7d7de5970bdb9351263b3c151f6525fa9037e021",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,10 +51,14 @@
     "delta_net_hecke": "-0.233197711315658702040064033324676534336000000000000045932669",
     "no_two_of_the_four_delta_values_agree": true,
     "net_p_alone_takes_three_values": true,
+    "hecke_proton_sigma1_pure": 0,
+    "hecke_neutron_sigma1_pure": 0,
+    "hecke_core_words_contain_NO_hopf_link": true,
+    "the_derivable_delta_is_the_CONSTRUCTED_one": true,
     "scope": "a",
     "adjudicates": false,
-    "checks_passed": 6,
-    "checks_total": 6
+    "checks_passed": 8,
+    "checks_total": 8
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
