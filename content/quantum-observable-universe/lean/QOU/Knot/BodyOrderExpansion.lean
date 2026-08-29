@@ -42,6 +42,7 @@ import QOU.Knot.GradedGeneratingFunction
 namespace QOU.Knot.BodyOrderExpansion
 
 open Polynomial
+open QOU.Knot.GradedGeneratingFunction
 
 variable {ι R : Type*} [CommRing R] [DecidableEq ι]
 
@@ -139,5 +140,49 @@ theorem body_eq_graded_of_bond_product (s : Finset ι) (d : ι → R) {n : ℕ}
     (∑ t ∈ s.powersetCard n, ∏ e ∈ t, d e)
       = ∑ u ∈ s.powersetCard (s.card - n), ∏ e ∈ s \ u, d e :=
   esymm_eq_compl_sum s d hn
+
+
+/-! ## Block factorisation, abstract half
+
+The measured composition law is `G_A(x) = [∏_bonds (x + d)] · G_1(x)^A`. The
+bracket is `gf_bonds` and its factors are derived (`gfOf_bridge`). This section
+supplies the `G_1(x)^A` half **abstractly**: a generating function over a
+product index set, with additive degree and multiplicative coefficients,
+factorises.
+
+**What is still missing, and it is the harder half.** Applying this to the
+atomic braid needs the index set of `H_{3A}`'s normal forms to BE such a
+product -- i.e. that Coxeter length is additive over the Young subgroup
+`S_3 × ⋯ × S_3`, `ℓ(w) = Σᵢ ℓ(wᵢ)`. That is the parabolic length formula, it is
+a real theorem in the inversion-set model, and it is **not proved here**. So
+this section is the bookkeeping half of the block factorisation, not the
+content. -/
+
+/-- **The generating function is multiplicative over a product index set**,
+when the degree is additive and the coefficient multiplicative across the
+factors. -/
+theorem gf_product {ι₁ ι₂ : Type*} (s₁ : Finset ι₁) (s₂ : Finset ι₂)
+    (c₁ : ι₁ → R) (c₂ : ι₂ → R) (deg₁ : ι₁ → ℕ) (deg₂ : ι₂ → ℕ) :
+    gf (s₁ ×ˢ s₂) (fun p => c₁ p.1 * c₂ p.2) (fun p => deg₁ p.1 + deg₂ p.2)
+      = gf s₁ c₁ deg₁ * gf s₂ c₂ deg₂ := by
+  rw [gf, gf, gf, Finset.sum_product, Finset.sum_mul_sum]
+  refine Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => ?_
+  rw [map_mul, pow_add]
+  ring
+
+/-- **The `A`-fold form: `G_1(x)^A`.** Over `A` independent copies of one block,
+with the total degree the sum of the blocks' degrees and the coefficient their
+product, the generating function is the single block's raised to the `A`. -/
+theorem gf_pow {ι : Type*} [DecidableEq ι] (s : Finset ι) (c : ι → R)
+    (deg : ι → ℕ) (A : ℕ) :
+    gf (Fintype.piFinset fun _ : Fin A => s)
+       (fun f => ∏ i, c (f i)) (fun f => ∑ i, deg (f i))
+      = (gf s c deg) ^ A := by
+  have hA : (gf s c deg) ^ A = ∏ _i : Fin A, gf s c deg := by simp
+  rw [hA]
+  simp only [gf]
+  rw [Finset.prod_univ_sum]
+  refine Finset.sum_congr rfl fun f _ => ?_
+  rw [Finset.prod_mul_distrib, ← map_prod, Finset.prod_pow_eq_pow_sum]
 
 end QOU.Knot.BodyOrderExpansion
