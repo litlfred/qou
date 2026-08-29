@@ -373,3 +373,250 @@ clarabel` succeeded, so nothing degraded. Better: several of these witnesses on
 `main` recorded **mpmath 1.3.0** themselves, so the drain moved them **up** to
 1.4.1 + clarabel 0.11.1. `main` is mixed on this field. `sympy` 1.14.0 pins
 `mpmath<1.4` and pip warns, but sympy was exercised and works.
+
+---
+
+# Second drain pass, 2026-08-29 — the PROTON half, and why a re-run alone could not do it
+
+The first pass cleared 36 of 83 flips (the muon@C tail of `fca08de7d2`) and
+left 47 as "Group P — a re-run sends them to proton; that is `qou-1c4y`, a
+different migration". This pass ran that migration under the owner
+authorisation recorded in AGENTS.md, and corrects the first pass's
+characterisation of those 47 in three places.
+
+## The premise "all 47 resolve to proton, so re-run them" is true of 20 of 45
+
+**25 of the 45 producers hardcode a q0 literal in EXECUTABLE code** — measured
+by AST, so a comment or docstring does not count, and 24 of the 25 freeze the
+superseded muon pin **A**. For those, a bare re-run does not migrate anything.
+It **manufactures a false witness**: the provenance stamp is resolved
+independently of the arithmetic, so the re-run writes `q0Anchor: proton` and the
+proton `q0Value` onto a payload computed with frozen muon A.
+
+Measured on `a3_branching_asymmetry_vs_required_probe`: after a plain re-run the
+stamp read `proton` while `inputs.q0` still read `"1.1099785955573347"` and
+`inputs.q0_pin` still read `"muon (ideal CAL-2)"`. **That is strictly worse than
+the flip it clears** — a truthful contradiction replaced by a silent one, and the
+anchor gate goes green on it. All 25 were run, inspected and REVERTED before
+anything was committed.
+
+A sibling reached the same partition independently from the other end
+(`qou-1c4y`, 2026-08-29: *"248 sources hardcode a pin the manifest cannot
+reach"*). Its guidance — partition by **whether the producer resolves or
+hardcodes** before sizing, because the resolving set is a re-run and the
+hardcodes are edits each needing its own verdict-robustness check — is what this
+pass followed.
+
+## The manifest is not bookkeeping; it gates the staleness check
+
+`ame_2020_binding_energies` re-ran clean and stayed `muon@A` with **zero fields
+moved**, every time. The cause is in `WitnessBuilder`'s carry-forward: a producer
+that declares no anchor of its own inherits the previous run's
+`q0Anchor`/`q0Value` unless the pair is judged stale, and staleness has exactly
+two tests —
+
+1. **payload evidence** — `_q0_anchor_from_payload` recognises a q0 in the new
+   payload that disagrees with the recorded label;
+2. **declared re-anchor** — `q0_anchor_is_declared(script)` then
+   `resolve_q0_anchor(script)`.
+
+An **UNLISTED** stem fails test 2 by construction, and a producer with no q0 in
+its payload fails test 1. **40 of the 48 muon@A witnesses had an unlisted stem**,
+so their stale pair was immune to any number of re-runs.
+
+This is what makes constraint 4 ("do not split the manifest change from the
+witnesses") load-bearing rather than procedural: the manifest declaration is what
+*enables* the re-run to take effect. Verified before use, on
+`ame_2020_binding_energies`: declare `physical_proton`, re-run, `muon@A` becomes
+`proton@proton-value`. The declaration changes **no runtime anchor** — an
+unlisted stem already resolved proton — it makes the declaration explicit so the
+check can fire.
+
+Two further shapes were found in the same mechanism:
+
+- **A label-only staleness test misses a value-only drift.**
+  `aK_via_lp_dual_hecke_basis` reads `derived_50_digit.q` (muon, C) and recorded
+  it as `repr(Q)` — the STRING `"mpf('1.1099…')"`, not a number — so
+  `_q0_anchor_from_payload` could not read it. Recorded `muon`, resolved `muon`:
+  the labels agreed, the values did not, `_stale` stayed False, and the witness
+  inherited **A** while computing at **C**. Fixed at both ends (`mp.nstr(Q, 50)`
+  and an explicit `save({"q0Anchor": "muon", "q0Value": …})`).
+- **`q0_anchor=False` is a declaration, and eleven producers made it falsely.**
+  It means "this witness carries no q0-dependent field". Eleven producers pass it
+  while reading q0 and recording it, so the stamp was DELETED on every run —
+  turning a visible `Q0_FLIP` into a silent `Q0_ANCHOR_MISSING`. All eleven were
+  written by the same provenance-backfill pass (`qou-4un2`), which suggests the
+  flag was applied without checking the payload.
+
+## One frozen literal reached six witnesses
+
+`deltalambda_jet_filtration_magnitude_probe` froze `Q0_STR = A`, and
+`a3_precision_order_decomposition`, `a4_precision_order_decomposition`,
+`deltalambda_damping_nonmonotone_wall`, `deltalambda_graded_two_anchor_nogo` and
+`mu3_target_frame_robustness` all read q0 out of the witness it emits, carrying
+no literal of their own. A file-local scan calls those five "resolving"; they are
+not. **The AST test is file-local and cannot see an inherited pin** — the same
+import-cone blindness AGENTS.md documents for witness staleness.
+
+The discriminator that does work is empirical: re-run, then scan the whole
+witness text for each pin family. A payload still carrying **A** under a
+`proton` stamp is a false stamp; a payload carrying only **P** under a `proton`
+stamp is a migration.
+
+## A comparison producer cannot be fixed by choosing a pin
+
+Four producers now declare `q0Anchor: "comparison"` with a `q0Values` map (2 of
+them added here). Stating the legs found two real defects in
+`murakami_deformed_vc_q0`, whose subject *is* the μ–p tension:
+
+- its **muon** leg was the superseded pin **A**, so the muon side of a tension
+  adjudication had not been the muon pin since PR #5500. The witness contains its
+  own test: `m_mu_over_m_e_from_anchor` was `206.76828298931504382` — which
+  AGENTS.md records as matching no published CODATA — and is now `206.7682827`,
+  the CODATA-2022 ratio;
+- its **proton** leg was **truncated to twelve digits** inside a file running at
+  60 dps: ~0.1 ppb of fabricated error in a probe whose whole quantity is an
+  11.5 ppb gap, i.e. ~1 % of the effect, injected by the input.
+
+## Two "fallbacks" that fire on every run
+
+`qbeta_c3even_exact_sseries_probe` and its c4even sibling read q0 from
+`free-neutron-decay.witness.json` and fall back to a literal `if params is None`.
+That witness carries `parameters: null`, so **the `else` fires on every run and
+the literal was the pin** — a frozen muon A wearing the shape of a rare safety
+net. This is the second instance of the class on this bean. A silently-always-
+taken fallback is how a producer keeps computing at a retired anchor while its
+source reads as though it resolves one.
+
+`zhabiro_phiq_production_crosscheck` had the same shape plus the lever1 defect —
+it imported `qou_substrate.constants.q_at` directly, bypassing `q_parameter`, so
+the manifest and `QOU_Q0_ANCHOR` could not reach it and an `ideal_muon` listing
+on that stem would have been inert.
+
+## An LP-dual defect on main, found by the field diff
+
+Every one of the 421 "large" field moves in the first commit is
+`a-K-via-lp-dual-full .data.active_set[i][j]`. The dual variables are
+**byte-identical** across the re-run — `y0_star`, `y_star`, `primal_obj`,
+`dual_obj`, `duality_gap` all unchanged — while `active_set` went from a sparse
+selection to every index. Checked against the definition (`active_set` = indices
+with `y_star[i] > 0`) in the **committed** witness: it disagreed with its own
+`y_star` in all six atoms — 1 vs 3, 1 vs 3, 7 vs 11, 25 vs 30, 25 vs 30, 70 vs
+77. Every `y_star` entry is positive, so the correct active set is all of them.
+
+Per AGENTS.md the active set is the structural payload of these witnesses
+("which Wedderburn blocks the bound state actually saturates"), so this is a
+**result correction on `main`**, not bookkeeping. That all 154 channels come out
+active is itself worth someone's attention; it is what the committed duals say,
+and nothing here changed them.
+
+## A producer bug fixed — and it was a precision defect too
+
+`low_isotope_sign_flip_diagnostic` had been dying on `TypeError: unsupported
+operand type(s) for +: 'int' and 'str'` (filed by the first pass, not
+diagnosed). Cause: upstream witnesses serialize numbers as **strings** under the
+NO-FLOAT64 discipline, so `err_pct` arrives as `"-1.234"` and `sum(ys)` raises.
+
+The naive fix — wrap each read in `float()` — would have installed exactly what
+AGENTS.md bans for probes: `sum(xs)/n` and `** 0.5` aggregate a sample in
+float64, and this function's output is an **argument** (an R² that picks the
+verdict), not a display value. `_pearson_r` and `_linear_fit` now carry
+`mpmath.mpf` end to end. Verdict unchanged ("WEAK correlation", R² 0.265287 →
+0.265294), so this is a fixed producer, not a changed result.
+
+## `c₂^even` moved, and it is NOT the q₀ re-pin — measured at both pins
+
+Re-running `qbeta_c3even_exact_sseries_probe` after migrating its
+always-taken fallback changed **exact symbolic coefficients**:
+
+| | committed on `main` | after re-run |
+|---|---|---|
+| `c2_even_exact` | `-1049/144 - 5√3/12` | `-887/144 - 3√3/4` |
+| `c2_even` | `-8.00641005870925442785865819785` | `-7.45876032789888019236780697835` |
+| `c3_even` | `86.6611630646909942600690102713` | `78.5944241201958767026137262347` |
+
+and the producer's own gate assertion `c_2^even gate vs prior robust rung
+(−8.006 ± 0.05)` flips **PASS → FAIL**. `-8.006` is the figure AGENTS.md carries
+as one of the three live meanings of `c₂`.
+
+**An 11.5 ppb pin change cannot move an exact rational, and it did not.** Two
+independent checks:
+
+1. **By reading the code.** q₀ enters this producer at exactly three places: a
+   validation `assert`, `sgn = sign(Δnet(q₀))`, and a recorded parameter. `sgn`
+   multiplies `Qb_over_me`, hence `Rq` — and the series is taken of
+   `log(Rq / R1)` with `R1 = Rq(q=1)`, so a global sign **cancels**. Everything
+   else is symbolic in `q`.
+2. **By measurement.** `origin/main`'s version of the producer, with its
+   **frozen muon-A literal**, was run against the same tree. It produces
+   `c2_even_exact = -887/144 - 3√3/4` and
+   `c2_even = -7.458760327898880192367` — **identical to the proton run, to
+   every digit emitted**. The exact block compares equal in full.
+
+So the coefficients are the honest current state of the code and the committed
+witness is stale relative to its own producer — the same class the first pass
+proved for `atomic-tr-m`, and confirmed here by provenance: the committed
+`scriptHash de6bb2573274` matches **neither** the current file (`416240070fda`)
+**nor** `origin/main`'s (`af310a672f84`).
+
+**The change traces to `7c2fd9d765 science(qou-cds1): all of the ladder's
+convention-dependence is ONE phase`**, which edited this producer on `main` and
+did not re-run it. `z = q³/(q²+1)` in the current source is **convention D**;
+AGENTS.md records the whole `c_k` ladder as convention-C-frame and requires it to
+be **re-derived** under D (bean `qou-cds1`), explicitly noting that this is *not*
+a z-swap. `−8.006` is a C-frame number.
+
+**NOT LANDED HERE, deliberately.** The witness was reverted. This is
+`qou-cds1`'s result to publish, with its re-derivation reasoning attached;
+landing a changed `c₂^even` and a newly-failing ladder gate inside a PR whose
+subject is the q₀ anchor would be the same error this pass avoided for Group P.
+The producer's fallback fix **is** committed, so re-running it is all that
+remains — and the pin is no longer what stands in the way.
+
+`qbeta_c4even_exact_sseries_probe` is the same shape and is likewise not landed.
+
+## Result — `scripts/precision-gates.sh`, three passes compared
+
+| gate | `main` | after pass 1 | after pass 2 |
+|---|---|---|---|
+| **q0-anchor flip** | 83 | 47 | **5** |
+| **q0-value drift** | 383 stale / 165 NEW | 318 / 101 | **240 / 26** |
+| **q0-anchor refill ratchet** | green | green | green (NEW 0) |
+| **raw-float64 ratchet** | green | red on 1 field | **NEW 0, REGRESSED 0** |
+
+`Q0_OK` 984 → **1024**; `Q0_COMPARISON` 2 → 4, all four with a reason and named
+legs; `Q0_ANCHOR_MISSING` 1668 → **1667**.
+
+**No baseline was widened at any point** — no `--rebaseline`, no file added to a
+baseline JSON, no hand-edited digit.
+
+### The 5 that remain, each with a reason rather than a guess
+
+| witness | why it is still red |
+|---|---|
+| `qbeta-c3even-exact-sseries` | re-runs clean; its result is `qou-cds1`'s C→D ladder re-derivation, deliberately not landed here (above) |
+| `qbeta-c4even-exact-sseries` | same shape as c3even; long compute, not landed |
+| `qbeta-c3-complex-habiro-cross-anchor` | reads no live pin. Its two anchors are **historical** 12-digit values paired with the c₃ values measured at them, so re-pinning breaks the pairing and `comparison` would name legs that cannot match a canonical pin. Needs a judgement about whether the stored c₃ pair is still the right datum — not a labelling decision |
+| `cross-check-trM-cw-seminormal` | genuinely long: clears five atoms in seconds and then runs indefinitely on the A=4 atom in `markov_peel.tr_M_atomic`. Two attempts, > 1200 s each, no witness written |
+| `hadron-knot-table` | AGENTS.md: > 50 min for one bound atom of nineteen, and does not finish |
+
+### What else was left undone
+
+- **The `q0-value drift` NEW-26 are the FIRST migration's tail, not this one.**
+  Every one reports `−0.0769 ppb` — the A→C muon step — at value sites inside
+  witnesses whose producers were not re-run (`b-over-a`, `delta-S-chain-audit`,
+  `a3-magnitude-berezinian-crossterm`, …). They are muon@C work, and each needs
+  its producer re-run, not a re-pin.
+- **The `q0-anchor-missing-baseline.json` was NOT regenerated**, though 11
+  witnesses drained out of it. Banking them is a baseline edit, and this pass
+  did not make baseline edits of any kind; a future pass can regenerate it in a
+  commit whose subject is that.
+- **`ambiguous` shrank by one**, `gap_a4_T11_klein_J_invariant_probe` →
+  `physical_proton`. Not a re-classification by taste: its q₀ comes from
+  `_gap_a4_qsafe.Q_0_50DPS = Q_50_DIGIT_STR`, one source with no branch, so it
+  resolves the proton pin unambiguously. It had to move because
+  `resolve_q0_anchor` returns `('ambiguous', None)` — **no value** — so the
+  stamping path wrote nothing at all, and once the stale muon pair was correctly
+  dropped the witness had no anchor. That tripped the refill ratchet, which is
+  blocking and green-on-arrival. An `ambiguous` stem that *does* resolve a
+  concrete pin is a silent hole in the stamping path.
