@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: low
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-08-29T16:27:13Z
+updated_at: 2026-08-29T17:44:42Z
 ---
 
 The "on a QOU" content — currently narrative or section-3b-conditional axioms.
@@ -36,3 +36,15 @@ STALE-REFRESH 2026-08-29, verified against main. Per-child state:
 - C11 (contact-boundary iff) STILL CONDITIONAL, and its residual is now NAMED rather than diffuse: what remains assumed is the kappa_0 = chi(A) trace-gap input inherited from QouObstructionReductionContext. The iff itself still restates the conjecture, so keeping it honestly conditional is correct; the chippable part is the trace-gap input alone.
 - C12 (couple the Markov-trace face tr_M(C_q^k(h)) -> 1 to the map) UNTOUCHED and is now the largest unformalized Tier-C item: collatz-three-forms.md states the categorical convergence over H_n(q) in prose and its .ts carries NO lean ref at all.
 Tier C is therefore 3 done / 1 conditional-with-named-residual / 1 untouched.
+
+C12 CARRIER LANDED 2026-08-29, PR #6042, commit d09d3357e7. File: content/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_three_forms.lean. rem:collatz-three-forms now has a machine-checked carrier at four separated tiers.
+
+PROVED (sorry-free, axiom-audited): integer_threshold_eq_two (v=1 never suffices, v=2 always does, no v<2 can, for every q>0 -- no transcendental quantity); one_lt_contactThreshold + contactThreshold_lt_two + contactThreshold_mem_Ioo; the residue face at q=-1 over generic CommRing (qi2_at_divisor, qi3_at_divisor, odd_branch_at_divisor); expected_halvings_eq_two (the block's displayed E[v_2(3n+1)] = sum k 2^-k = 2, via Mathlib's geometric series); classical_limit_is_critical.
+
+OPEN, carried honestly: MarkovTraceConvergence, a 3b-tax PRIMARY conjecture class with two content-bearing fields (the display equation, and the unique-attractor clause) and NO instance.
+
+THE COUPLING C12 ACTUALLY ASKED FOR: no_nontrivial_periodic_trace derives FROM the conjecture that the step operator admits no periodic orbit whose trace differs from the unknot value -- the categorical shadow of the arc's arithmetic cycle-exclusion results. The two faces are now related by a theorem rather than by prose. identity_orbit_trace_one shows unconditionally that the target is attained (and depends on NO axioms at all), so the conjecture's conclusion is not vacuously unreachable.
+
+DEFECT FOUND AND FIXED EN ROUTE (commit 876f70faa3): QOU.Substrate.contact_threshold_lt_two in QOU/QCollatz.lean was titled 'The contact threshold 1 < v* < 2' while its statement and proof establish only v* < 2. The lower half existed NOWHERE in the corpus, and it is the half that rules out a single halving, so it was load-bearing for this very block's 'the integer threshold is exactly 2'. Docstring corrected; the missing half proved in the new file.
+
+STILL NOT DONE on C12, and deliberately: collatz-three-forms.ts is untouched, so the block still carries no lean ref. Wiring one needs pipeline validation and folio-assistant is NOT set up in this container (bun present, folio-assistant/ absent), so I did not guess at the ref shape. Note every other collatz library file in the arc is likewise unreferenced from any content block, so this matches the arc's existing pattern rather than leaving C12 uniquely unwired. A later agent with the pipeline should decide whether the arc's library files get content-block refs as a class.
