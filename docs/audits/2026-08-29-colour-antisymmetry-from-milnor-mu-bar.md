@@ -366,7 +366,76 @@ Two things do not obviously fit, and both are arithmetic:
 
 These act on different sets — three roots versus four resolvents — so "recovers
 `H₁, H₂`" needs a stated map between them, and none is given in the block.
-**Flagged, not adjudicated:** I have read the block that *refers* to
-`rem:holonomy-trefoil`, not that remark's own definition of `H₁, H₂`, and the
-correction on `main` is hours old. Resolving it by assuming the reading that
-suits §7 would be the same error §6.4 item 2 was written to avoid.
+**Adjudicated below in §8**, after reading that remark's own text.
+
+
+## 8. §7.5 resolved — two findings, one of them internal to a single remark
+
+§7.5 flagged the `H₁,H₂` tension and deliberately withheld a verdict pending
+[`rem:holonomy-trefoil`](../../content/quantum-observable-universe/braids-and-knots/holonomy-trefoil.md)'s
+own definition. Read, it yields two separate findings. Neither is introduced by
+this branch; both are on `main`.
+
+### 8.1 The remark contradicts itself, and needs nothing external to see it
+
+It asserts, four sentences apart:
+
+> The mapping `x ↦ H₁`, `y ↦ H₂` forms an isomorphism
+> `π₁(S³ ∖ K_{3,2}) ≅ ⟨H₁, H₂⟩`. Thus, the monodromy group of the branched
+> cover is exactly the trefoil-knot group.
+
+and
+
+> The composite holonomy `H₁H₂ : w ↦ (w₃,w₄,w₁,w₂)` is [...] a double
+> transposition, hence an involution — and satisfies `(H₁H₂)² = id` on `SO(3)`.
+
+**These are incompatible, by a one-line argument.** Exponent sum is a
+homomorphism `B₃ → ℤ` (it is well defined because the braid relation
+`σ₁σ₂σ₁ = σ₂σ₁σ₂` has exponent sum 3 on both sides). `σ₁σ₂` has exponent sum
+`2 ≠ 0`, so **`σ₁σ₂` has infinite order in `B₃`**. An isomorphism carries it to
+an element of infinite order, which cannot be an involution.
+
+The `SO(3)` qualifier does not rescue it. If the relation holds only after the
+2-to-1 projection `SU(2) → SO(3)`, then `(H₁H₂)² = ±1` in `SU(2)` and
+`(H₁H₂)⁴ = 1`; the element is still of **finite** order, and `⟨H₁,H₂⟩` still
+cannot be isomorphic to `B₃`.
+
+So at most one of the two claims stands. Either the map is a **surjection**
+rather than an isomorphism — the honest reading, since a monodromy
+representation of a knot group is a quotient — or the involution claim is
+wrong. The sentence *"the monodromy group of the branched cover is exactly the
+trefoil-knot group"* is the one that cannot survive: the monodromy group of a
+finite branched cover is finite, and `B₃` is not.
+
+### 8.2 The bridge in `prop:color-elliptic` is unsupported as written
+
+`prop:color-elliptic` closes: *"The monodromy of `𝓔_z` around the singular
+fibres [...] recovers the holonomy generators `H₁, H₂`."* Three arithmetic
+obstacles, all from the blocks' own statements:
+
+| | |
+|---|---|
+| **cardinality** | `H₁,H₂` transport **four** spectral modes `w = (w₁,w₂,w₃,w₄)`. `𝓔_z` has **three** sheets. |
+| **group order** | the computed monodromy is `S₃`, of order 6. `\|V₄\| = 4` and `4 ∤ 6`, so `S₃` contains no `V₄` — the composite cannot land in the computed group at all. |
+| **stabiliser** | by A6 the colour triple is `{w₂,w₃,w₄}` (`r_z = w₂−z`, etc.). But `H₁H₂ : w ↦ (w₃,w₄,w₁,w₂)` sends `w₃ ↦ w₁` and `w₁ ↦ w₃`, so it **does not preserve the colour triple** and does not restrict to a permutation of the sheets. |
+
+"Recovers" therefore needs a stated map between a four-letter action and a
+three-letter one, and the block supplies none.
+
+### 8.3 What is *not* established, kept separate
+
+The `w_k` of `rem:holonomy-trefoil` are called "the spectral modes" and run
+`w₁…w₄`; the `w_k` of `def:color-tube-coordinates` are "the Lagrange resolvents
+of Bring's surface" and run `w₀…w₄`. Same symbol, overlapping indices,
+**different cardinality**, and no block states they are the same objects. §8.2's
+third row assumes they are — which is the reading most favourable to the
+corpus, and is why that row is listed third rather than leaned on. Rows one and
+two do not depend on the identification and stand regardless.
+
+### 8.4 Scope
+
+Per the (a)/(b) discipline: **§8.1 is a scope-(b) structural exclusion** — the
+invariant is the exponent-sum homomorphism `B₃ → ℤ`, which forbids any
+isomorphism onto a group in which `σ₁σ₂` is torsion. **§8.2 is scope-(a)**: the
+stated bridge does not go through as written, which is a fact about the
+argument, not a proof that no relation exists between the two monodromies.
