@@ -6,6 +6,7 @@ import Mathlib.Data.List.Sort
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Algebra.Algebra.Hom
 import QOU.BraidKnot.IdentityIContentDecomposition
+import QOU.Mathlib.SYTHookGNW
 
 open BigOperators
 
@@ -67,16 +68,36 @@ what closes the last freedom the class had. Before 2026-08-30 `blockDim` was a
 free `Partition n → ℕ`, so `y_λ` was pinned only *relative* to it and every
 `1/d` remained realisable.
 
-**What is committed here, stated precisely.** That `dimHLF λ` is the number of
-standard Young tableaux of shape `λ` is Frame–Robinson–Thrall. In this corpus it
-is proved for one-row shapes (`dimHLF_single`), two-row shapes
-(`prodHooks_pair_mul`) and — added with this definition — one-column shapes
-(`dimHLF_column`); the general theorem `numSYTenum l = dimHLF l` is **open
-here**, and is validated computationally in aggregate by `dim_validated_le12`
-(`Σ_λ dim(λ)² = n!`, which would fail were any value floor-rounded). So the
-class commits to the FRT *formula*; it does not prove FRT. -/
+**This IS the SYT count, and that is a theorem here — not a commitment.**
+Frame–Robinson–Thrall (`dimHLF λ = #SYT(λ)`) is proved in this corpus at general
+`n`, sorry-free: `QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF`, via the
+Greene–Nijenhuis–Wilf route (corner recursion + hook-summation identity, combined
+by strong induction). `blockDim_eq_numSYT` below discharges it against a
+`Partition n`, whose `decreasing` and `positive` fields supply exactly the two
+hypotheses FRT needs, so nothing is left assumed.
+
+**Corrected 2026-08-30.** An earlier version of this docstring said the general
+theorem was "open here" and that the class committed to the FRT *formula* without
+proving FRT. Both halves were false. The error came from trusting
+`SYTHookFormulaRows.lean`'s header, which is itself stale and is fixed in the
+same commit — the corpus, not a source file's status note, is the authority
+(AGENTS.md §"Before declaring open"). -/
 def blockDim {n : ℕ} (lam : Partition n) : ℕ :=
   QOU.BraidKnot.IdentityI.dimHLF lam.parts
+
+/-- **The block dimension IS the number of standard Young tableaux of shape `λ`.**
+
+`blockDim` is defined by the hook-length *formula*; this identifies it with the
+combinatorial object that formula computes, via the corpus's sorry-free general
+Frame–Robinson–Thrall theorem.
+
+Both hypotheses FRT needs come free from the `Partition n` structure — `parts` is
+weakly decreasing (`lam.decreasing`) and its entries are positive
+(`lam.positive`) — so there is nothing left to assume. This is what upgrades
+`blockDim` from a chosen formula to `f^λ`. -/
+theorem blockDim_eq_numSYT {n : ℕ} (lam : Partition n) :
+    blockDim lam = QOU.Mathlib.SYTEnum.numSYTenum lam.parts :=
+  (QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF lam.parts lam.decreasing lam.positive).symm
 
 /--
 Wedderburn–Artin decomposition of `H_n(q)`. An instance asserts:

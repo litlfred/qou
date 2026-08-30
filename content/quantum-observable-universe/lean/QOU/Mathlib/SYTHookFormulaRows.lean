@@ -4,9 +4,16 @@ import QOU.BraidKnot.IdentityIContentDecomposition
 # QOU.Mathlib.SYTHookFormulaRows — Frame–Robinson–Thrall hook-length formula, closed
 in full generality for one- and two-row shapes (sorry-free).
 
-The general HLF `numSYTenum l = dimHLF l` is the classical Greene–Nijenhuis–Wilf theorem
-and remains open in this corpus.  This file proves the **closed-form sub-cases** that
-HLF specialises to on shapes with at most two rows — genuine `∀`-quantified theorems
+The general HLF `numSYTenum l = dimHLF l` is **PROVED, sorry-free**, in
+`QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF` (`SYTHookGNW.lean`) via the
+Greene–Nijenhuis–Wilf route — corner recursion plus the hook-summation identity,
+combined by strong induction. **This header said "remains open in this corpus" until
+2026-08-30**, long after that proof landed; it is a source-file status note that went
+stale, and it misled a downstream consumer into writing the same false claim into
+`QOU.Hecke.blockDim`, a PR body and a bean. Cite the theorem, not this file, for the
+general case.  This file proves the **closed-form sub-cases** that
+HLF specialises to on small shapes — worth having independently of the general
+theorem, since they are explicit closed forms rather than an existence result — genuine `∀`-quantified theorems
 (not bounded `decide`):
 
 * **One row** `[a]` (`a ≥ 1`): `prodHooks [a] = a!`, hence `dimHLF [a] = 1`
