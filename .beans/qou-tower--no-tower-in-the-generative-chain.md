@@ -133,3 +133,65 @@ does `k = 10` (42 partitions, max dim 768) in 37 s. A ~10–20× step is minutes
 not a barrier. Being tested directly by running `shell_closure_compute.py
 --kmax 12`; if it completes, the k12-barrier framing needs re-scoping and the
 homological bypass it motivates loses its stated justification.
+
+## 🛑 The k=12 barrier IS real — my "minutes, not a barrier" was wrong
+
+I predicted `--kmax 12` would finish in minutes. **It was OOM-killed**:
+`anon-rss 12.6 GB` in a 16 GB container, dying silently after k=11 with no
+traceback and no k=12 line. Measured timings up to the kill:
+
+    k= 9:  30 partitions, max_dim=  216,    8.7s
+    k=10:  42 partitions, max_dim=  768,   30.9s
+    k=11:  56 partitions, max_dim= 2310,  129.4s
+    k=12:  77 partitions, max_dim= 7700,  OOM-KILLED
+
+### The cause is not what the corpus says either
+
+`k12-barrier-bypass.md` attributes it to the **partition count** growing
+combinatorially. 77 partitions is nothing. The real cause is that
+`_extract_blocks` **materialises a dense d×d matrix per partition** (via
+`seminormal_matrix`) and `shell_closure_compute` holds every partition's
+structure simultaneously:
+
+    structs[shape] = {0: _extract_blocks(shape,0), 1: _extract_blocks(shape,1)}
+
+Summed over partitions that is `Σ d_λ² = n!`:
+
+| k | Σd² = n! | per generator | both |
+|---|---|---|---|
+| 10 | 3,628,800 | 0.03 GB | 0.06 GB |
+| 11 | 39,916,800 | 0.32 GB | 0.64 GB |
+| **12** | **479,001,600** | **3.83 GB** | **7.66 GB** |
+
+7.66 GB plus numpy temporaries gives the 12.6 GB observed. It matches.
+
+### Two numbers I conflated, and the correction to my correction
+
+- **state to carry once extracted**: `Σ d_λ` = 140,152 = **5.6 MB** — correct,
+  and still correct;
+- **what the current extractor transiently needs**: `Σ d_λ²` = `n!` = **3.8 GB
+  per generator** — which is what actually runs.
+
+My "5.6 MB, entirely tractable" was right about the *state* and wrong about the
+*code path to it*. So the previous correction in this bean over-corrected: the
+`(3A)!` figure I called wrong is exactly the right figure for
+`_extract_blocks` as written. Both statements were half right, and the honest
+version needs both numbers side by side.
+
+### It is still fixable, and that is the actionable part
+
+The barrier is an implementation artifact, not mathematics. Hoefsmit's form
+gives matrix entries directly from **axial distances on standard Young
+tableaux** — gen 0 is pure diagonal and gen 1 is 2×2 blocks plus diagonal, which
+`_extract_blocks` *rediscovers by scanning a dense matrix it just built*. Built
+directly from the SYT combinatorics the extraction is `O(Σ d_λ)` = 5.6 MB at
+k=12, never allocating the dense matrix. That is also why the current code is
+slow: the partner search is an `O(dim²)` Python double loop, 59M iterations per
+partition at k=12.
+
+So the k=12 barrier — and the homological bypass it motivates — rests on a
+dense materialisation that the mathematics does not require. Re-scoping that
+claim needs the direct-construction extractor written and measured first; until
+then the correct statement is **"the barrier as stated is not what blocks this,
+and what does block it is fixable"**, not "the bypass is unnecessary". Those are
+different claims and only the first is measured.
