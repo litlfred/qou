@@ -323,6 +323,7 @@ import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mass.SumSYTEqInvolution
 import QOU.Mathlib.YoungLatticeUpOperator
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
