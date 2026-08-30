@@ -247,3 +247,18 @@ thread resolved.
 was n=1, request-agnostic, and had none of the quota mechanism or the
 self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
 stay that way.
+
+**One more datum (PR #6039, 2026-08-30).** Request 07:38Z → review submitted
+07:52Z, **~14 min**; 41/41 files, 3 inline comments, **3 of 3 real**. Added only
+because it widens the recorded latency spread — it sits between the ~2–5 min
+cluster and the ~30 min case — and adds 3/3 to the findings-quality tally
+(running with the footnote above: 8 of 9 real). Everything else this session
+observed is already covered by the quota mechanism and the self-sealing
+diagnosis above; my longer write-up of it was **dropped as redundant** rather
+than merged, for the same reason the note directly above this one was.
+
+All three findings were of a class the agent-side gate cannot reach:
+`run-validate` and `lean`-direct both pass a stale prose note, a `.qa.json`
+`kind` field no schema cross-checks against the builder, and a generated-index
+row. That is the argument for keeping the *request* even though the wait is
+worthless.

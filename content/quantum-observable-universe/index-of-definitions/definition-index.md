@@ -285,7 +285,6 @@
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 | `qou:QOU.categorical_reeb_exists` |
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `qou:QOU.WeightDecomposition.ofMaximalTorus` |
-| [thm:explicit-formula](#thm:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 22 | `qou:QOU.AlgebraicSubstrate.explicit_formula` |
 | [thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal) | Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\{T(2,4),T(2,6),T(2,8)\}$ | Ch 8 | `qou:QOU.ParticleInteractions.electroweak_triplet_far_commuting_minimal` |
 | [thm:frobenius-antipode-unifies-chirality-and-tower](#thm:frobenius-antipode-unifies-chirality-and-tower) | Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure | Ch 12 | `qou:QOU.BraidKnot.frobenius_antipode_unifies` |
 | [thm:gauge-conformal-invariance](#thm:gauge-conformal-invariance) | Gauge conformal invariance | Ch 14 | `qou:QOU.Archimedean.gauge_conformal_invariance` |
@@ -310,7 +309,7 @@
 | [thm:rivin-concavity-one-tetrahedron](#thm:rivin-concavity-one-tetrahedron) | Rivin concavity for one ideal tetrahedron: $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ is strictly concave along every line in the angle simplex | Ch 12 | `qou:QOU.Knot.Rivin.strictConcaveOn_tetVolLine` |
 | [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 | `qou:QOU.AlgebraicSubstrate.substrate_self_duality` |
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 12 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
-| [thm:tannaka-krein-isomorphism](#thm:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism` |
+| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 12 | `qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le` |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 | `qou:QOU.AppendixSurreals.liouvilleWith_separates` |
 | [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
@@ -1101,6 +1100,7 @@
 | [conj:hydrogen-shell-writhe](#conj:hydrogen-shell-writhe) | Electron shell number equals writhe level of the trefoil embedding | Ch 14 | `qou:QOU.BringsSurface.hydrogen_shell_writhe` |
 | [conj:gs-residue-at-root-existence](#conj:gs-residue-at-root-existence) | Existence of the cyclotomic residue at each filtration level | Ch 12 | `qou:QOU.BraidKnot.ResidueAtRoot` |
 | [conj:gs-graded-markov-trace-existence](#conj:gs-graded-markov-trace-existence) | Existence of the graded Markov trace on the GS filtration (categorical existence) | Ch 12 | `qou:QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence` |
+| [conj:explicit-formula](#conj:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 22 | `qou:QOU.AlgebraicSubstrate.explicit_formula` |
 | [conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay) | Exponential decay of the archimedean brane-tower truncation remainder | Ch 10 | `qou:QOU.Interactions.ArchimedeanRemainderExponentialDecay` |
 | [conj:q-gl-fiber-functor](#conj:q-gl-fiber-functor) | Fibre-functor mediation of the $q$-Langlands correspondence | Ch 22 | `qou:QOU.QGeometricLanglands.q_gl_fiber_functor` |
 | [conj:gs-spectral-sum-finite](#conj:gs-spectral-sum-finite) | Finiteness of the GS residue spectral sum | Ch 12 | `qou:QOU.BraidKnot.spectral_sum_finite` |

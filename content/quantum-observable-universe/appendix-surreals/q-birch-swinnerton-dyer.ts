@@ -7,7 +7,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.AppendixSurreals.QBirchSwinnertonDyer", validation: "stub" },
   uses: [
     "def:categorical-mordell-weil",
-    "thm:tannaka-krein-isomorphism",
+    "conj:tannaka-krein-isomorphism",
     "prop:ns-kummer-specialisation",
   ],
   tags: [
