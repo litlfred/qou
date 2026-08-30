@@ -184,4 +184,36 @@ instance : IsWeilZeta weilZetaExample where
   castelnuovo_severi := by
     intro i; simp [weilZetaExample]; norm_num
 
+/-! ## The spectrum is conjugation-closed
+
+`hasse_weil_bound` gives the magnitude `|αᵢ| = q^{1/2}`. Composed with the
+functional equation and `weil_partner_eq_conj` (in the shared
+`LocalQZetaFunction` module, because content-block siblings cannot import one
+another), it gives the *structural* statement: the Frobenius eigenvalue multiset
+is closed under complex conjugation.
+
+That is the standard characterisation of Weil numbers, and it is what makes the
+critical line a line of symmetry rather than an arbitrary vertical — see
+`spectral_half_line_is_fixed_locus` in the `cor:spectral-half-line` sibling. -/
+
+/-- The `q^{1/2}` magnitude, squared: `‖αᵢ‖² = q`. -/
+theorem eigenvalue_norm_sq_eq (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin 8) :
+    ‖Z.eigenvalues i‖ ^ 2 = Z.q := by
+  have hq : (0 : ℝ) < Z.q := Z.q_pos
+  rw [hasse_weil_bound Z i, ← Real.rpow_natCast (Z.q ^ (1 / 2 : ℝ)) 2,
+    ← Real.rpow_mul (le_of_lt hq)]
+  norm_num
+
+/-- **The Frobenius spectrum is closed under conjugation.** For every eigenvalue
+    `αᵢ` there is an eigenvalue `αⱼ` equal to `conj αᵢ`.
+
+    Derived, not assumed: the functional equation supplies *some* partner
+    `αⱼ = q/αᵢ`, and the Hasse–Weil magnitude is exactly the condition under
+    which that partner is the conjugate. Neither input alone gives it. -/
+theorem eigenvalues_conj_closed (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin 8) :
+    ∃ j : Fin 8, Z.eigenvalues j = (starRingEnd ℂ) (Z.eigenvalues i) := by
+  obtain ⟨j, hj⟩ := eigenvalue_functional_equation Z i
+  exact ⟨j, hj.trans (weil_partner_eq_conj Z.q (Z.eigenvalues i)
+    (Z.eigenvalues_ne_zero i) (eigenvalue_norm_sq_eq Z i))⟩
+
 end QOU.AlgebraicSubstrate
