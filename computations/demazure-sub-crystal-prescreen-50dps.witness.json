@@ -1,29 +1,45 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:27:50.066875+00:00",
-  "commitSha": "414b4fd90594cd9a1b945fc6d5aff0fa9b7ee325",
+  "computedAt": "2026-08-30T09:19:12.911032+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "prescreen_completed",
-      "computed": true,
-      "expected": true,
+      "name": "prescreen_fitted_every_scheme_attempted",
+      "computed": 22,
+      "expected": 22,
       "passed": true,
       "tolerance": 0,
-      "source": "Scanned 22 scheme/H_n combinations against target h² = -G. Sanity check: search completed without error."
+      "source": "All 22 scheme/H_n combinations scanned against target h² = -G produced an h-fit — none was dropped by the fit loop's `except Exception`, so the ranking and the verdict are over the whole scan."
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 15,
   "computation": "demazure-sub-crystal-prescreen-50dps",
   "scriptFile": "demazure_sub_crystal_h5_h6_h7_prescreen.py",
-  "scriptHash": "ab8f0d8ce38a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d672f2d69c87",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/demazure_sub_crystal_h5_h6_h7_prescreen.py"
+    ],
+    "reproduce": "python3 -u computations/demazure_sub_crystal_h5_h6_h7_prescreen.py"
   },
   "description": "Pre-screen of Demazure-inspired sub-sum schemes at H_5, H_6, H_7 against Reading-A's h² target -G. Tests 6 normalization schemes (full Wedderburn, per-irrep, bar-symmetric, self-conjugate, two-row, rectangle). If any scheme yields h² ≈ -G after h⁰ normalization to 5/2, flag for deeper Demazure-characters investigation.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",

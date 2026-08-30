@@ -132,6 +132,21 @@ def demazure_char_at_word(
     return sum(subset_q_monomial(S, q) for S in demazure_subset(n, j, word))
 
 
+def gaussian_binomial(n: int, j: int, q: mp.mpf) -> mp.mpf:
+    """[n choose j]_q = Π_{i=1..j} (1 − q^{n−i+1}) / (1 − q^i).
+
+    Written as the product formula rather than as a subset sum, so it gives
+    an independent route to the w_0 Demazure character — whose crystal is
+    the full set of j-subsets. Used by the cross-checks in main().
+    """
+    num = mp.mpf(1)
+    den = mp.mpf(1)
+    for i in range(1, j + 1):
+        num *= 1 - q ** (n - i + 1)
+        den *= 1 - q ** i
+    return num / den
+
+
 def is_reduced(word: tuple[int, ...], n: int) -> bool:
     """A word is reduced iff its length equals the length of the
     resulting permutation in S_n (Bruhat length = #inversions)."""
@@ -345,14 +360,53 @@ def main() -> None:
         f"Anti-pattern guards respected: TIERED; cross-anchor in witness; "
         f"NO ansatz."
     )
+    # The source string names two cross-checks, and `computed=True,
+    # expected=True` ran neither — so the assertion said "real D_i wiring"
+    # of any run at all, including one where kashiwara_f_i had been stubbed
+    # back out and every candidate in the scan was wrong. Both endpoints are
+    # cheap to actually evaluate, so evaluate them (bean qou-26f2):
+    #   identity word:  χ_e(ω_j; q)    = q^{j(j-1)/2}
+    #   longest word:   χ_{w_0}(ω_j;q) = q^{j(j-1)/2} · [n choose j]_q
+    # The second is checked against the Gaussian-binomial product formula,
+    # not against another subset sum, so it exercises the crystal walk
+    # rather than restating it. 1e-40 is a relative floor at 50 dps; the
+    # observed residuals are ~1e-71.
+    demazure_endpoint_pairs = 0
+    identity_word_ok = 0
+    longest_word_ok = 0
+    for n_sl in (3, 4, 5):
+        w0 = max(sample_reduced_words(n_sl), key=len)
+        for j in range(1, n_sl):
+            demazure_endpoint_pairs += 1
+            q_pow = Q_PROTON_50 ** (j * (j - 1) // 2)
+            chi_e = demazure_char_at_word(n_sl, j, (), Q_PROTON_50)
+            chi_w0 = demazure_char_at_word(n_sl, j, w0, Q_PROTON_50)
+            want_w0 = q_pow * gaussian_binomial(n_sl, j, Q_PROTON_50)
+            identity_word_ok += int(
+                abs(chi_e / q_pow - 1) < mp.mpf("1e-40"))
+            longest_word_ok += int(
+                abs(chi_w0 / want_w0 - 1) < mp.mpf("1e-40"))
     wb.add_assertion(
-        name="real_demazure_d_i_wiring",
-        computed=True,
-        expected=True,
+        name="demazure_identity_word_gives_q_pow_j_choose_2",
+        computed=identity_word_ok,
+        expected=demazure_endpoint_pairs,
+        tolerance=0,
         source=(
             "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, "
-            "replacing the q-binomial stub. Cross-checked: identity word at "
-            "ω_j gives q^{j(j-1)/2}; longest word gives e_j(1,q,...,q^{n-1})."
+            "replacing the q-binomial stub. Identity word at ω_j must give "
+            "q^{j(j-1)/2}; checked for every (n, j) with n ∈ {3,4,5}."
+        ),
+    )
+    wb.add_assertion(
+        name="demazure_longest_word_gives_e_j_gaussian_binomial",
+        computed=longest_word_ok,
+        expected=demazure_endpoint_pairs,
+        tolerance=0,
+        source=(
+            "Longest word w_0 at ω_j must give e_j(1,q,...,q^{n-1}) = "
+            "q^{j(j-1)/2}·[n choose j]_q, compared against the Gaussian-"
+            "binomial product formula rather than a second subset sum; "
+            "checked for every (n, j) with n ∈ {3,4,5}."
         ),
     )
     wb.add_data("residue_target_A", str(RESIDUE_A))

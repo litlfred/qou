@@ -47,18 +47,29 @@ def main() -> int:
     w.add_parameter("pole_orders", POLE_ORDERS)
     w.add_parameter("q_0_digits_used", 50)
 
+    denominator_magnitudes = {}
     for n in POLE_ORDERS:
         F_n = canonical_resolvent(q, n)
         denom = 1 - h_q * q**n
         roundtrip = F_n * denom
 
-        denom_abs = float(abs(denom))
+        # `computed=denom_abs, expected=denom_abs` passed for every possible
+        # denominator, including one collapsed onto the pole — the single
+        # failure this check exists to catch, F_n being 1/denom. The source
+        # states a magnitude comparison, so make it one, at the probe's own
+        # 50-dps floor: below 1e-49 the denominator is not distinguishable
+        # from zero here, and 1e-49 is already the tolerance the round-trip
+        # assertion just below uses (bean qou-26f2). The magnitude itself is
+        # kept as data — all four are O(0.4–0.7), nowhere near the floor.
+        denominator_magnitudes[f"n{n}"] = mp.nstr(abs(denom), 20)
         w.add_assertion(
             name=f"denominator_nonzero_n{n}",
-            computed=denom_abs,
-            expected=denom_abs,  # presence-of-magnitude check
-            tolerance=None,
-            source=f"|1 − h_q·q^{n}| > 0 at q₀",
+            computed=int(abs(denom) > mp.mpf("1e-49")),
+            expected=1,
+            tolerance=0,
+            unit="boolean",
+            source=f"|1 − h_q·q^{n}| > 1e-49 at q₀ — non-zero to the probe's "
+                   f"own 50-dps floor, so F_{n} is defined",
         )
 
         err = float(abs(roundtrip - 1))
@@ -69,6 +80,8 @@ def main() -> int:
             tolerance=1e-49,
             source=f"F_{n}·(1−h_q·q^{n}) = 1 at 50 dps",
         )
+
+    w.add_data("denominator_magnitudes_at_q0", denominator_magnitudes)
 
     vals = [float(canonical_resolvent(q, n)) for n in POLE_ORDERS]
     distinct_count = len(set(round(v, 20) for v in vals))

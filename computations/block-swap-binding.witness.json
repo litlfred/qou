@@ -1,23 +1,23 @@
 {
   "engine": "python+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:11:17.676152+00:00",
-  "commitSha": "a63a9642b80badff001cfa418f19df3b61104d40",
+  "computedAt": "2026-08-30T09:15:57.343959+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "block_swap_braids_realize_block_perms",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 2,
+      "expected": 2,
       "passed": true,
-      "tolerance": "1e-30",
-      "source": "block_swap_word self-asserts _apply(word)==block_swap_perm for swap_p (0,3) and swap_n (6,3) — the braids are the correct S₂×S₂ block transpositions."
+      "tolerance": 0,
+      "source": "_apply(block_swap_word(s,3,n), n) == _block_swap_perm(s,3,n) re-evaluated at witness time for swap_p (s=0) and swap_n (s=6) — the braids are the correct S₂×S₂ block transpositions."
     }
   ],
   "allPassed": true,
-  "durationMs": 1881,
+  "durationMs": 1655,
   "computation": "block-swap-binding",
   "scriptFile": "block_swap_binding.py",
-  "scriptHash": "49b8ee75b5d6",
+  "scriptHash": "528bc8edb746",
   "scriptCommitSha": "6e1009bed880a0ebec181fd38a134930f7df82b3",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

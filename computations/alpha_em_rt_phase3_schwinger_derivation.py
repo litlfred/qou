@@ -148,12 +148,16 @@ def main() -> int:
     sigma_eig_neg = -1/q_sym
     h_def = q_sym - 1/q_sym
 
-    # Verify σ_i² = h·σ_i + 1 for each eigenvalue
+    # Verify σ_i² = h·σ_i + 1 for each eigenvalue. The residuals are kept
+    # rather than only printed — they are what the Part-A assertion at the
+    # bottom of main() checks.
+    hecke_residuals = {}
     for label, eig in [("+ eigenvalue (q)", sigma_eig_pos),
                        ("- eigenvalue (-q⁻¹)", sigma_eig_neg)]:
         lhs = eig**2
         rhs = h_def * eig + 1
         diff = sp.simplify(lhs - rhs)
+        hecke_residuals[label] = diff
         print(f"    {label}: σ² - (h·σ + 1) = {diff}  "
               f"{'✓' if diff == 0 else '✗'}")
     print()
@@ -316,14 +320,20 @@ def main() -> int:
     builder.add_data("phase_3_status",
                      "STRUCTURAL SHAPE established; rigorous coefficient match deferred")
 
+    # `computed=1, expected=1` would have read "verified" no matter what
+    # Part A found: the two residuals were printed and discarded, so a
+    # non-zero σ² - h·σ - 1 at either eigenvalue left the witness saying the
+    # identity held. Count the eigenvalues whose residual sympy reduces to
+    # exactly 0 and require both — the number the source string was always
+    # describing (bean qou-26f2).
     builder.add_assertion(
         "hecke_quadratic_verified_symbolically",
-        computed=1,
-        expected=1,
+        computed=sum(1 for d in hecke_residuals.values() if d == 0),
+        expected=2,
         tolerance=0,
         source="Hecke quadratic σ² - h·σ - 1 = 0 verified for both "
                "eigenvalues q and -q⁻¹ of σ_i symbolically via "
-               "sympy.simplify.",
+               "sympy.simplify; counts the residuals that reduce to 0.",
     )
     builder.save()
     return 0

@@ -1,23 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:15:44.883675+00:00",
-  "commitSha": "cd38c4f3dd258b4e1f3d1004824fecdc92084191",
+  "computedAt": "2026-08-30T09:07:51.155741+00:00",
+  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
   "assertions": [
     {
       "name": "habiro_tr_M_proton_matches_direct",
-      "computed": "1.000000000000001672503680645958090545155906921398204195555351948158995",
-      "expected": "1.000000000000001672503680645958090545155906921398204195555351948158995",
+      "computed": "1.000000000000001672503680645958090545156",
+      "expected": "1",
       "passed": true,
-      "tolerance": "0.01"
+      "tolerance": "0.01",
+      "source": "Habiro sum Σ a_m (u;u)_m / D(u) against the direct tr_M_at_q0 carried by habiro-coefficients-atomic.witness.json, proton"
+    },
+    {
+      "name": "habiro_tr_M_neutron_matches_direct",
+      "computed": "1.000000000000001348885191684883670071632",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "the same two routes on the neutron — both are computed above and only the proton pair was ever compared"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "habiro-exact-qbeta",
   "scriptFile": "habiro_exact_qbeta.py",
-  "scriptHash": "155026d9c5cc",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "a0f590e87609",
+  "scriptCommitSha": "87445c6cdebee17f001a9f934cf51d49dbea8140",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -46,8 +55,8 @@
     "tr_M_neutron_habiro_sum": "0.9877436881158108633358575342636915265012",
     "tr_M_proton_direct": "1.145759692457300816435440394600000000000",
     "tr_M_neutron_direct": "0.9877436881158095309830234546360000000000",
-    "Q_A_MeV": "0.7836458273746212267416824157120593613822",
-    "Q_N5_MeV": "0.7836448547740296864028506965787845852639",
+    "Q_A_MeV": "0.7836458273746212130749397513413968905257",
+    "Q_N5_MeV": "0.7836448547740296727361249943120923842938",
     "Q_beta_codata_MeV": "0.7823334100000000000000000000000000000000",
     "err_Q_A_ppb": "1677567.8475",
     "err_Q_N5_ppb": "1676324.6428",

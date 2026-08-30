@@ -103,10 +103,16 @@ def main() -> int:
     print(f"  Looking for integer relations a·target = b·basis_i, "
           f"|a|, |b| ≤ 10⁶")
     matches = []
+    # The `except: pass` below means a PSLQ that RAISES is indistinguishable
+    # from one that searched and found nothing — and "found nothing" is this
+    # script's headline verdict. Count the searches that actually ran, so the
+    # NULL can be told apart from 17 swallowed exceptions.
+    pslq_searches_completed = 0
     for name, val in basis.items():
         try:
             rel = mp.pslq([coef_h4, val], tol=mp.mpf("1e-25"),
                           maxcoeff=1000000)
+            pslq_searches_completed += 1
             if rel and rel[0] != 0:
                 ratio = -mp.mpf(rel[1]) / mp.mpf(rel[0])
                 check = coef_h4 - ratio * val
@@ -197,12 +203,30 @@ def main() -> int:
     w.add_data("exact_N_for_one_minus_pi2_over_N", mp.nstr(N_exact, 18))
     w.add_data("verdict", verdict)
 
+    # `computed=True, expected=True` said the run reached the end. The two
+    # things that make its NULL verdict mean anything went unrecorded: that
+    # every basis element was really searched (the pairwise loop swallows
+    # exceptions, so 17 failures look exactly like 17 clean nulls), and that
+    # the search ran at the precision the name claims. Assert both instead
+    # (bean qou-26f2).
     w.add_assertion(
-        name="higher_precision_pslq_completed",
-        computed=True,
-        expected=True,
+        name="pslq_searched_every_basis_element",
+        computed=pslq_searches_completed,
+        expected=len(basis),
         tolerance=0,
-        source="120-dps PSLQ at maxcoeff up to 10⁶.",
+        source="Pairwise PSLQ at maxcoeff 10⁶ returned — rather than raising "
+               "into the loop's `except: pass` — for every basis element, so "
+               "the NULL verdict reflects completed searches.",
+    )
+    w.add_assertion(
+        name="pslq_ran_at_declared_precision",
+        computed=int(mp.mp.dps >= DPS),
+        expected=1,
+        tolerance=0,
+        unit="boolean",
+        source=f"Working precision at witness time is at least the declared "
+               f"{DPS} dps; the 'higher-precision' claim in this probe's "
+               f"name is exactly this.",
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

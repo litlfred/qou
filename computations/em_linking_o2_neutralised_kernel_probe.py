@@ -134,7 +134,11 @@ def main() -> None:
         return m, rel, pearson(As, cs)
 
     # --- 1. the inadmissible incumbent, re-scored here for continuity ----
-    c_inc, rel_inc, r_inc = score(bound, mpf(0))
+    # Named rather than inlined so the exclusion assertion at the bottom can
+    # compare the incumbent's c0 against the admissible floor the scan below
+    # actually uses, instead of restating "0 < 1" as a literal.
+    C0_INCUMBENT = mpf(0)
+    c_inc, rel_inc, r_inc = score(bound, C0_INCUMBENT)
 
     # --- 2. scan the admissible family c0 >= 1 --------------------------
     # Coarse-to-fine scan; every point is a legitimate member of the
@@ -338,12 +342,34 @@ def main() -> None:
     wb.add_data("verdict", verdict)
     wb.set_audit_only("docs/audits/2026-08-01-em-linking-reads-round1.md")
 
+    # `computed=1, expected=1` restated the conclusion instead of checking
+    # anything, and the three neighbouring assertions in this block show what
+    # the shape should have been. The exclusion rests on one arithmetic fact
+    # and one fact about this run: coth > 1 pointwise, and the incumbent is
+    # scored below the floor the admissible scan starts at. Both are here, so
+    # both are checked (bean qou-26f2). The grid stops at alpha = 10 because
+    # coth(alpha) - 1 = 2e^{-2alpha} stops being resolvable at 50 dps around
+    # alpha ~ 57 — past that a failure would be a precision artefact, not a
+    # counterexample; it also covers every alpha this run evaluates.
+    coth_grid = ([mpf(10) ** k for k in range(-9, 2)]
+                 + [c_inc * mpf(r["A"]) ** third for r in bound])
+    wb.add_assertion(
+        name="coth_exceeds_one_pointwise_on_probed_alphas",
+        computed=sum(1 for a in coth_grid if coth(a) > 1),
+        expected=len(coth_grid), tolerance=0,
+        source=("The premise of the exclusion: coth(alpha) > 1 pointwise on "
+                "(0, inf), hence c0 = <coth>_M > 1 for any finite-volume M. "
+                "Checked on a decade grid 1e-9..10 plus every alpha this "
+                "probe scores the incumbent at."))
     wb.add_assertion(
         name="unsubtracted_kernel_outside_admissible_family",
-        computed=1, expected=1, tolerance=0, unit="boolean",
-        source=("coth(alpha) > 1 pointwise on (0, inf), so c0 = <coth>_M > 1 "
-                "for any finite-volume M. The scored H_coth uses c0 = 0, "
-                "which is not a member. Structural, no data involved."))
+        computed=int(C0_INCUMBENT < lo), expected=1, tolerance=0,
+        unit="boolean",
+        source=(f"The scored H_coth uses c0 = {mp.nstr(C0_INCUMBENT, 4)}, "
+                f"strictly below the admissible floor c0 >= "
+                f"{mp.nstr(lo, 4)} that the scan above enumerates from, so "
+                f"it is not a member of the family. Structural, no data "
+                f"involved."))
     wb.add_assertion(
         name="admissible_family_does_not_beat_incumbent_at_equal_dof",
         computed=1 if (best is None or best["rel_scatter"] >= rel_inc

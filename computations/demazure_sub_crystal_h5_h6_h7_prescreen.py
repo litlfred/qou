@@ -193,6 +193,11 @@ def main() -> int:
     print()
 
     results: dict[str, dict] = {}
+    # The h-fit loop below drops any scheme whose fit raises, so a scan that
+    # lost half its schemes is indistinguishable in `results` from one that
+    # never had them. Counted here so the witness can say which it was.
+    schemes_attempted = 0
+    schemes_fitted = 0
 
     for n in [4, 5, 6, 7]:
         parts = partitions_of(n)
@@ -269,8 +274,10 @@ def main() -> int:
         n_results: dict[str, dict] = {}
         for scheme_name, vals in schemes.items():
             ys = [v for _, v in vals]
+            schemes_attempted += 1
             try:
                 a_0, a_2 = fit_h0_h2(ys, h_vals, dps=50)
+                schemes_fitted += 1
                 a_2_normalized_to_h0_5over2 = a_2 * mp.mpf("2.5") / a_0
                 delta_to_target = a_2_normalized_to_h0_5over2 - target_h2
                 n_results[scheme_name] = {
@@ -339,15 +346,21 @@ def main() -> int:
             f"operators, KLR canonical basis) required — multi-session."
         ))
 
+    # The source string ended "Sanity check: search completed without error",
+    # which is the one thing `computed=True, expected=True` could not tell
+    # you — the fit loop swallows exceptions, so a scan that lost schemes
+    # silently shrinks `results` and the verdict is then read off whatever
+    # survived. Compare fits obtained against fits attempted (bean qou-26f2).
     w.add_assertion(
-        name="prescreen_completed",
-        computed=True,
-        expected=True,
+        name="prescreen_fitted_every_scheme_attempted",
+        computed=schemes_fitted,
+        expected=schemes_attempted,
         tolerance=0,
         source=(
-            f"Scanned {sum(len(r) for r in results.values())} "
-            f"scheme/H_n combinations against target h² = -G. "
-            f"Sanity check: search completed without error."
+            f"All {schemes_attempted} scheme/H_n combinations scanned "
+            f"against target h² = -G produced an h-fit — none was dropped "
+            f"by the fit loop's `except Exception`, so the ranking and the "
+            f"verdict are over the whole scan."
         ),
     )
 

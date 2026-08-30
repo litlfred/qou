@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:52:34.829801+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T09:23:18.406877+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "zeta12_calibration",
@@ -23,18 +23,18 @@
     {
       "name": "favours_published_V3",
       "computed": "0.006638164172502431654988613421018008164552243048357143870247035476532192",
-      "expected": "0.006638164172502431654988613421018008164552243048357143870247035476532192",
+      "expected": "0",
       "passed": true,
       "tolerance": 1.8078250278728225,
-      "source": "V3_measured is closer to the published GGM value than to the legacy literal"
+      "source": "V3_measured is closer to the published GGM value than to the legacy literal: |rel dev vs GGM| <= |rel dev vs legacy|"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-v3-from-borel-poles",
   "scriptFile": "qbeta_5two_v3_from_borel_poles_probe.py",
-  "scriptHash": "b3caa6d7d4dc",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "e3fcee015cdb",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

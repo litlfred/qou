@@ -106,6 +106,13 @@ def main() -> int:
     # qLambert identity test: [n]_q · h · q^(-n) = 1 - q^(-2n) for n = 1..6
     print("q-Lambert identity (Lean-proven main 58308c24a) at n = 1..6:")
     print(f"  {'n':>3} {'[n]_q · h · q^(-n)':>25} {'1 - q^(-2n)':>25} {'agree':>10}")
+    # Both verdicts are counted, not just printed — the assertion at the
+    # bottom of main() is named after this loop, and printing was the only
+    # place its result existed. `n_q` (the Laurent sum) was computed and
+    # thrown away; it is the second, independent route to [n]_q, so it is
+    # checked against the closed form rather than left dead.
+    qlambert_agree = 0
+    n_q_routes_agree = 0
     for n in range(1, 7):
         n_q = sum(q ** (2 * k - n + 1) for k in range(n))
         # [n]_q = (q^n - q^(-n)) / (q - q^(-1))
@@ -113,6 +120,8 @@ def main() -> int:
         lhs = n_q_canonical * h * q ** (-n)
         rhs = 1 - q ** (-2 * n)
         agree = abs(lhs - rhs) < mp.mpf("1e-40")
+        qlambert_agree += int(agree)
+        n_q_routes_agree += int(abs(n_q - n_q_canonical) < mp.mpf("1e-40"))
         print(f"  {n:>3} {fmt(lhs)[:24]:>25} {fmt(rhs)[:24]:>25} {str(agree):>10}")
     print()
 
@@ -211,12 +220,29 @@ def main() -> int:
         "Stokes integrand, NOT q-Lambert indexing of cells."
     ))
 
+    # `computed=True, expected=True` claimed the n = 1..6 identity was
+    # verified while checking nothing: the loop that actually evaluates it
+    # printed its verdict and dropped it, so a q-Lambert kernel that failed
+    # at every n would still have produced this pass. Assert the count the
+    # name promises (bean qou-26f2), plus the [n]_q cross-route the same
+    # loop was already computing and discarding.
     builder.add_assertion(
         name="qlambert_identity_verified_n_1_to_6",
-        computed=True,
-        expected=True,
-        tolerance=0.0,
-        source="Lean-proven main commit 58308c24a — numerical check at q_proton",
+        computed=qlambert_agree,
+        expected=6,
+        tolerance=0,
+        source="Lean-proven main commit 58308c24a — numerical check at "
+               "q_proton: [n]_q·h·q^(-n) = 1 - q^(-2n) to < 1e-40, counted "
+               "over n = 1..6",
+    )
+    builder.add_assertion(
+        name="q_integer_sum_and_closed_form_agree_n_1_to_6",
+        computed=n_q_routes_agree,
+        expected=6,
+        tolerance=0,
+        source="Σ_{k<n} q^(2k-n+1) = (q^n - q^(-n))/(q - q^(-1)) to < 1e-40 "
+               "for n = 1..6 — the Laurent-sum route to [n]_q agreeing with "
+               "the closed form the identity above is built on",
     )
 
     out = builder.save()

@@ -360,17 +360,30 @@ def main() -> int:
           f"(baseline {i_result['baseline_variance']:.4f}×, "
           f"Δ = {delta_i:+.2f}%)")
 
-    # Assertion: at minimum, the script completed both probes
+    # `computed=1.0, expected=1.0` said "the script completed", which is what
+    # reaching this line means anyway — and the two findings it narrated in
+    # its source string are measurements with no independent target, so it
+    # could never have been anything else. Those move to data. What IS
+    # checkable, and matters, is the 5i sweep's COVERAGE: `compute_B` can
+    # return a "deferred" result, in which case that atom silently drops out
+    # of `ratios` and the max/min variance every conclusion here rests on is
+    # taken over a smaller set with nothing saying so (bean qou-26f2).
+    scored_cells = sum(len(r["per_atom"]) for r in i_result["results"].values())
+    expected_cells = len(i_result["results"]) * 4  # 5 schemes × 4 atoms
     builder.add_assertion(
-        "phase_5g_5i_completed",
-        computed=1.0, expected=1.0, tolerance=0.0, unit="boolean",
-        source=(
-            f"5g best categorical match for 1.220358: {best_5g[0]} "
-            f"({best_5g[2]*100:.3f}% rel.err). "
-            f"5i best Vol_hyp normaliser: {i_result['best_normaliser']} "
-            f"({delta_i:+.2f}% vs baseline)."
-        ),
+        "volhyp_sweep_scored_every_atom_in_every_scheme",
+        computed=scored_cells, expected=expected_cells, tolerance=0,
+        source="Every (normaliser, atom) cell of the Phase 5i sweep produced "
+               "a ratio — no atom was deferred out of the max/min variance "
+               "the sweep's verdict is read from.",
     )
+    builder.add_data("phase_5g_5i_findings", {
+        "phase_5g_best_categorical_match_for_1_220358":
+            f"{best_5g[0]} ({best_5g[2] * 100:.3f}% rel.err)",
+        "phase_5i_best_volhyp_normaliser":
+            f"{i_result['best_normaliser']} ({delta_i:+.2f}% vs baseline)",
+        "has_independent_expected_value": False,
+    })
 
     builder.save()
     return 0

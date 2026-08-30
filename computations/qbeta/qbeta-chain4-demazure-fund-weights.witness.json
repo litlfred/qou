@@ -1,22 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T08:14:43.838967+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T09:10:11.994059+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "real_demazure_d_i_wiring",
-      "computed": true,
-      "expected": true,
+      "name": "demazure_identity_word_gives_q_pow_j_choose_2",
+      "computed": 9,
+      "expected": 9,
       "passed": true,
-      "source": "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, replacing the q-binomial stub. Cross-checked: identity word at ω_j gives q^{j(j-1)/2}; longest word gives e_j(1,q,...,q^{n-1})."
+      "tolerance": 0,
+      "source": "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, replacing the q-binomial stub. Identity word at ω_j must give q^{j(j-1)/2}; checked for every (n, j) with n ∈ {3,4,5}."
+    },
+    {
+      "name": "demazure_longest_word_gives_e_j_gaussian_binomial",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Longest word w_0 at ω_j must give e_j(1,q,...,q^{n-1}) = q^{j(j-1)/2}·[n choose j]_q, compared against the Gaussian-binomial product formula rather than a second subset sum; checked for every (n, j) with n ∈ {3,4,5}."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "3d37b6fe15c6",
+  "scriptHash": "8f395b67ffac",
   "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -32,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

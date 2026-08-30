@@ -164,11 +164,18 @@ def main() -> int:
     print(f"  Search 3: Σ f^λ and Σ f^λ² over partitions of n")
     print()
     sum_matches = []
+    # Σ_{λ⊢n} (f^λ)² = n! by Schur–Weyl. Counted per n rather than left as the
+    # comment below, because it is the only independent handle this probe has
+    # on `specht_dim` — and all three searches are built out of that one
+    # hook-length function.
+    schur_weyl_ok = 0
     for n in SEARCH_RANGE:
         parts = partitions_of(n)
         sum_f = sum(specht_dim(p) for p in parts)
         sum_f_sq = sum(specht_dim(p) ** 2 for p in parts)
         # sum_f_sq = n! by Schur-Weyl
+        if sum_f_sq == math.factorial(n):
+            schur_weyl_ok += 1
         for d in [1, 2, 3, 4, 5, 6]:
             for name, val in [("Σf^λ", Fraction(sum_f, d)),
                               ("Σ(f^λ)²", Fraction(sum_f_sq, d))]:
@@ -238,20 +245,35 @@ def main() -> int:
     builder.add_data("structural_derivation_status",
                      "OWNER-GATED — match identification ≠ structural derivation")
 
+    # `computed=1, expected=1` said only that the search "ran end-to-end",
+    # which is true of any run that reaches this line — including one where
+    # `specht_dim` returned nonsense for every partition, which would make
+    # all three match lists above meaningless while the witness still read
+    # "executed". The probe does have an independent expected value, and
+    # Search 3 already names it: Σ_{λ⊢n} (f^λ)² = n! by Schur–Weyl, checked
+    # against `math.factorial` for each n in the search range. That is what
+    # is asserted now; "the search ran" moves to data, where a note with no
+    # independent expected value belongs (bean qou-26f2).
     builder.add_assertion(
-        "mass_side_q1_anchor_search_executed",
-        computed=1,
-        expected=1,
+        "specht_dims_satisfy_schur_weyl_sum",
+        computed=schur_weyl_ok,
+        expected=len(SEARCH_RANGE),
         tolerance=0,
-        source=("Mass-side §4(c) anchor hunt: searches Specht dimensions, "
-                "pairwise ratios, and partition-sums for clean rational "
-                "matches to the linking_weight q=1 shadows (5/2, 1, 9/4). "
-                "Diagnostic only — any positive match is a CANDIDATE anchor, "
-                "not a derivation. The structural anchor link is owner-gated "
-                "multi-session research. The assertion records the search "
-                "ran end-to-end; the witness data contains the candidate "
-                "matches for future structural investigation."),
+        source=("Independent check on the one primitive all three searches "
+                "are built from: for every n ∈ {2..6} the hook-length "
+                "`specht_dim` must satisfy Σ_{λ⊢n} (f^λ)² = n! (Schur–Weyl), "
+                "compared against math.factorial(n)."),
     )
+    builder.add_data("search_scope", {
+        "executed": "Mass-side §4(c) anchor hunt: searches Specht dimensions, "
+                    "pairwise ratios, and partition-sums for clean rational "
+                    "matches to the linking_weight q=1 shadows (5/2, 1, 9/4).",
+        "caveat": "Diagnostic only — any positive match is a CANDIDATE "
+                  "anchor, not a derivation. The structural anchor link is "
+                  "owner-gated multi-session research; the witness data "
+                  "carries the candidate matches for that investigation.",
+        "has_independent_expected_value": False,
+    })
 
     builder.save()
     print(f"  Witness: mass-side-q1-anchor-hunt-probe.witness.json")

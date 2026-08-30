@@ -1,24 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T16:03:14.025412+00:00",
-  "commitSha": "a28f0a8ee2ac539680fa8156a8d568681e2ec42d",
+  "computedAt": "2026-08-30T09:05:49.963534+00:00",
+  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
   "assertions": [
     {
       "name": "sign_character_is_the_radical_direction",
-      "computed": 1,
-      "expected": 1,
+      "computed": "1.00000000000000000000000000000000000000000000000000000000000",
+      "expected": "1",
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "1.0e-25",
       "source": "radical_is_sign_representation is true, so the sign character and the radical coincide by construction; |cos| = 1 confirms it numerically"
+    },
+    {
+      "name": "trivial_character_orthogonal_to_radical",
+      "computed": "2.95420168787181990216633204489705907298044149548372979688056e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-25",
+      "source": "the other half of the same measurement: the trivial channel is orthogonal to the radical down to the 50-dps floor, which is what makes its dual pairing well-defined"
     }
   ],
   "allPassed": true,
-  "durationMs": 74,
+  "durationMs": 53,
   "computation": "axial-observable-is-the-gram-radical",
   "scriptFile": "axial_observable_is_the_gram_radical_probe.py",
-  "scriptHash": "2bfe977e795e",
-  "scriptCommitSha": "be2d53b167c5fa560a56454b8a5aa9ae1e41ca4f",
+  "scriptHash": "d561ec0657f7",
+  "scriptCommitSha": "475a65d78560b5f3620bab239d9b0543b97039ee",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,9 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

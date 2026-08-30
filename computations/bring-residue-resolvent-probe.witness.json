@@ -1,15 +1,17 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:47:26.465091+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:25:17.818790+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "denominator_nonzero_n3",
-      "computed": 0.714099204348418,
-      "expected": 0.714099204348418,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^3| > 0 at q₀"
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "|1 − h_q·q^3| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_3 is defined"
     },
     {
       "name": "roundtrip_identity_n3",
@@ -21,10 +23,12 @@
     },
     {
       "name": "denominator_nonzero_n4",
-      "computed": 0.6826562400351649,
-      "expected": 0.6826562400351649,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^4| > 0 at q₀"
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "|1 − h_q·q^4| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_4 is defined"
     },
     {
       "name": "roundtrip_identity_n4",
@@ -36,10 +40,12 @@
     },
     {
       "name": "denominator_nonzero_n9",
-      "computed": 0.46530889612641135,
-      "expected": 0.46530889612641135,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^9| > 0 at q₀"
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "|1 − h_q·q^9| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_9 is defined"
     },
     {
       "name": "roundtrip_identity_n9",
@@ -51,10 +57,12 @@
     },
     {
       "name": "denominator_nonzero_n10",
-      "computed": 0.40650432631262273,
-      "expected": 0.40650432631262273,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^10| > 0 at q₀"
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "|1 − h_q·q^10| > 1e-49 at q₀ — non-zero to the probe's own 50-dps floor, so F_10 is defined"
     },
     {
       "name": "roundtrip_identity_n10",
@@ -74,11 +82,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 3,
   "computation": "bring-residue-resolvent-probe",
   "scriptFile": "probe_bring_residue_resolvent.py",
-  "scriptHash": "cc4c8feb3e7f",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "16f3a70639e0",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -86,12 +94,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_bring_residue_resolvent.py"
+    ],
+    "reproduce": "python3 -u computations/probe_bring_residue_resolvent.py"
   },
   "description": "Canonical resolvent F_n(q) = 1/(1−h_q·q^n) verified at substrate q_0 for pole orders n∈{3,4,9,10} (downstream: meson pair, 1/α_EM, p-n weight). Checks: denominator non-zero, round-trip identity, distinct values.",
   "contentBlock": "prop:bring-residue-resolvent",
@@ -103,5 +119,13 @@
       10
     ],
     "q_0_digits_used": 50
+  },
+  "data": {
+    "denominator_magnitudes_at_q0": {
+      "n3": "0.71409920434841799372",
+      "n4": "0.68265624003516486789",
+      "n9": "0.46530889612641136971",
+      "n10": "0.40650432631262275146"
+    }
   }
 }

@@ -173,19 +173,24 @@ def main():
         "prerequisite for the open A≥3 binding problem."
     )
     wb.add_data("per_bond", results)
+    # Demoted from `add_assertion` to data (bean `qou-26f2`). It read
+    # `computed=method_gap_pct, expected=method_gap_pct, tolerance=1`, so it
+    # passed for any gap whatsoever — 24 %, 0 %, or a NaN-free garbage value —
+    # while contributing a guaranteed pass to `allPassed`. Its own source
+    # string said what it was ("Diagnostic: records the ... gap"), and a
+    # recorded diagnostic is precisely the thing that has no independent
+    # expected value: the discrepancy IS the finding this script exists to
+    # report, and the number it reports is the measurement, not a target.
+    # Nothing is lost — `gap_pct` below is the same value the assertion
+    # carried, and demoting it also removes two of the six raw-float64 fields
+    # the witness guard flags here.
     wb.add_data("method_discrepancy_2H", {
         "delta_tr_binding_canonical": str(float(dtr_canonical_2H)),
         "delta_tr_h3a_direct": str(float(dtr_h3a_2H)),
         "gap_pct": method_gap_pct,
         "note": "Two production trace conventions disagree; reconcile before A≥3.",
+        "has_independent_expected_value": False,
     })
-    wb.add_assertion(
-        "method_discrepancy_recorded",
-        computed=method_gap_pct,
-        expected=method_gap_pct,
-        tolerance=1,
-        source="Diagnostic: records the binding_canonical vs H_{3A} Δtr gap",
-    )
     wb.save()
 
 

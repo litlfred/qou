@@ -380,11 +380,19 @@ def main() -> int:
                     computed=ref["im_dev"], expected=0.0,
                     tolerance=0.10,
                     source="a Pade pole sits on the line Im zeta = Vol")
+    # `expected=d_ggm` made this pass for any measurement at all, so the one
+    # preference the probe exists to establish went untested. The tolerance
+    # was already the right quantity — with `expected=0` the check reads
+    # |d_ggm| <= d_leg, which IS the source string's claim, and it matches
+    # the shape of the two assertions above. Nothing is loosened: d_leg is
+    # the rival deviation rather than a chosen threshold, and the margin is
+    # currently 272x (d_ggm 0.0066 vs d_leg 1.81) (bean qou-26f2).
     w.add_assertion("favours_published_V3",
-                    computed=d_ggm, expected=d_ggm,
+                    computed=d_ggm, expected="0",
                     tolerance=float(d_leg),
                     source="V3_measured is closer to the published GGM value "
-                           "than to the legacy literal")
+                           "than to the legacy literal: |rel dev vs GGM| <= "
+                           "|rel dev vs legacy|")
     w.add_data("measurement", {
         "V3_measured": mp.nstr(v3m, 15),
         "V3_ggm": mp.nstr(V3_GGM, 15),

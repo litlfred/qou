@@ -219,12 +219,52 @@ def main() -> int:
                [(n, mp.nstr(v, 18), mp.nstr(e, 10)) for n, v, e in within_011])
     w.add_data("verdict", verdict)
 
+    # A uniqueness verdict is a COUNT of distinct q-arithmetic forms landing
+    # in a band, so two labels naming the same number would inflate it. The
+    # curated list does contain such pairs — at 40 significant figures the 31
+    # labels take only 28 distinct values ('q/[2]_q' = '(1+q²)/[2]_q²',
+    # '[2]_q/2' = '(1+q²)/(2q)', 'ℏ_q² + 1' = '(1 + ℏ_q²)'). All three
+    # collisions sit outside the 0.5% band, so today's verdict is unaffected,
+    # but the recording is what makes that checkable rather than assumed.
+    value_key = {}
+    for name, val, _ in scored:
+        value_key.setdefault(mp.nstr(val, 40), []).append(name)
+    collisions = [labels for labels in value_key.values() if len(labels) > 1]
+    w.add_data("candidate_label_value_collisions", {
+        "n_labels": len(scored),
+        "n_distinct_values_40sig": len(value_key),
+        "colliding_label_groups": collisions,
+        "meaning": "labels in the curated candidate list that denote the same "
+                   "number; only matters if a colliding pair enters a band",
+        "has_independent_expected_value": False,
+    })
+
+    # `computed=True, expected=True` recorded only that main() reached this
+    # line, which is true of every run that does not crash — a scan that
+    # silently dropped half the candidate list, or one whose basin count was
+    # doubled by a duplicate label, would still have reported "completed".
+    # Assert instead the property the verdict actually rests on: the widest
+    # band the verdict quotes counts that many DISTINCT values, not that many
+    # labels (bean qou-26f2).
     w.add_assertion(
-        name="audit_completed",
-        computed=True,
-        expected=True,
+        name="widest_band_counts_distinct_values",
+        computed=len({mp.nstr(v, 40) for _, v, _ in within_05}),
+        expected=len(within_05),
         tolerance=0,
-        source="Option E v9 uniqueness audit completed.",
+        source="The 0.5% band — the widest one the verdict reports — holds as "
+               "many distinct candidate values as labels, so the coincidence-"
+               "basin count is not inflated by two names for one number.",
+    )
+    w.add_assertion(
+        name="match_bands_are_nested",
+        computed=int(len(within_005) <= len(within_011) <= len(within_05)
+                     <= len(scored)),
+        expected=1,
+        tolerance=0,
+        unit="boolean",
+        source="0.05% ⊆ 0.11% ⊆ 0.5% ⊆ all scored — the nesting the verdict's "
+               "candidate counts are read off; a mis-typed threshold or a "
+               "swapped list breaks it.",
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")
