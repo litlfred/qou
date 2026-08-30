@@ -1,10 +1,11 @@
 ---
 # qou-lp5d
 title: 'GAP: 5 convention-C B4 sites are unmigratable by substitution — z_C''s analytic properties ARE their subject'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-25T09:53:00Z
-updated_at: 2026-08-25T09:53:00Z
+updated_at: 2026-08-29T16:35:03Z
 ---
 
 
@@ -108,3 +109,5 @@ which is what AGENTS.md already says.
 Measured on branch `claude/convention-c-drain-b4-2026-08-25` (PR #5754),
 2026-08-25. The z_C-vs-z_D table is exact sympy, reproducible in a few lines;
 no float64 was used anywhere in producing it.
+
+Closed 2026-08-29: landed in PR #5754 (merged 2026-08-25). The five remaining B4 sites and WHY each cannot be z-swapped are recorded in the probe.

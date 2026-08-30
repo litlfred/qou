@@ -13,7 +13,9 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 The repo owner is physically disabled and types with difficulty.
 Adapt ALL responses accordingly:
-- **Short answers.** One-liners when possible.
+- **Short answers.** One-liners when possible — but read this together
+  with **Terse ≠ compressed** below: "short" cuts ceremony, never
+  evidence, implications, or options.
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
@@ -130,6 +132,69 @@ Adapt ALL responses accordingly:
   `AskUserQuestion` calls all session while ending turn after turn with bare
   one-line decision gestures, because every rule it had was addressed to the
   tool rather than to the act.
+
+- **Terse ≠ compressed: "short" governs ceremony, never content (STRICT,
+  2026-08-25).** The *Short answers* rule at the top of this section is about
+  **the author's typing cost**, not about how much of what you measured reaches
+  them. Agents read it as licence to compress a finding into a headline and drop
+  the evidence, the implications and the options — and the author then has to
+  spend keystrokes asking for material the agent was already holding. In a repo
+  whose owner types with difficulty, **that round-trip is the single most
+  expensive failure mode there is.** A one-line answer that triggers three
+  follow-up questions cost four messages; the three-paragraph answer costs one.
+
+  **What "short" legitimately cuts** — cut all of it, always:
+
+  - preamble, restating the request back, narrating what you are about to do;
+  - status theatre, apologies, self-criticism, hedging, "great question";
+  - options you have already decided not to pursue;
+  - re-derivation of facts already established earlier in the session.
+
+  **What it must NEVER cut.** Every substantive report carries the same
+  four-part frame the `AskUserQuestion` rules above demand — because a finding
+  and a question need the same scaffolding to be actionable:
+
+  - **The claim**, stated flatly, with its number. Not "the tolerance moved" —
+    `1.9177226708e-06 → 1.9177218447e-06, rel 4.31e-7`.
+  - **The evidence.** File path and line, the exact command run, the value
+    *before* as well as after, the sample size, and whether the figure was
+    measured this session or carried from a prior one.
+  - **The implications** — what this changes for the corpus, the paper or the
+    next agent, in physics-and-paper terms rather than call-graph terms. Name
+    the consumers by file, and say which of them feeds something a reader sees.
+  - **The options**, each with cost / risk / what it forecloses, plus **a stated
+    recommendation marked as your judgement** rather than as a finding. Include
+    the no-op and say what happens if the author does nothing.
+
+  **Two triggers where terseness is always a defect**, because the compressed
+  form is not merely thin but *misleading*:
+
+  1. **Correcting your own earlier claim.** Say what you asserted, what is
+     actually true, how the new figure was measured, and — the part that gets
+     dropped — **what else that error may have contaminated**: which beans, PR
+     bodies, audit docs or content blocks repeated it. A bare "corrected" is
+     unusable, and this corpus has repeatedly had a wrong figure survive in five
+     other places after being fixed in one.
+  2. **Any negative or absence-of-evidence result.** *"I found no rationale in
+     the source"* and *"there is no rationale"* are different claims and only
+     one of them was measured. Say which, name the surface you searched, and say
+     what observation would separate them. Absence of a comment is not evidence
+     of absence of a reason — and a *measurement* you already have outranks the
+     silence of a source file.
+
+  **This applies to chat, commit messages, PR bodies and bean updates alike.**
+  The chat is ephemeral; the commit and the PR are what a reviewer and the next
+  agent read cold. A commit message that says "migrate X" over a change whose
+  whole point is that the previous recommendation was backwards is the same
+  defect as the terse chat answer, with a longer half-life.
+
+  History: added 2026-08-25 on owner instruction — *"you are as USUAL too terse
+  (PLEASE update Agents.md linked directives)"* — after an agent reported that
+  `aoperator_a5_crosscheck` (a probe cross-checking the A-operator at A=5)
+  "carries no muon rationale in its source" and stopped there, in a session that
+  had **already measured** that the producer's own assertions FAIL at the muon
+  anchor and PASS at the proton one. The absent comment and the present
+  measurement are not the same evidence, and only the weaker one was reported.
 
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
@@ -412,6 +477,13 @@ user's last message, not the most recently mentioned file.
      without a bean, say so and open one. That omission is the failure
      this exists to catch — a manifest-parser bug was found, fixed,
      tested and merged before anyone noticed it had never been claimed.
+   - **The 50-word cap is a cap on the LEDGER, not on the turn.** It
+     bounds this bean-status block so the author can scan it — it is
+     never a budget for the substantive report of what you found, which
+     is governed by **Terse ≠ compressed** in §User accessibility above.
+     A turn that measured something puts the claim, the evidence, the
+     implications and the options in the body of the reply, and uses
+     these lines only to say which beans that touched.
 
 4. **Parallelize independent tasks.** When two queued tasks have no
    dependency between them (e.g. one Lean fix + one .md edit on
@@ -1699,7 +1771,7 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
->    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −8.006`) are separated in §2 and in the notation register.
+>    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −7.4588`) are separated in §2 and in the notation register. **That third figure read `−8.006` until 2026-08-29 and was stale, not a different normalisation.** The producer's own upstream source of the exact rungs, `qbeta-c4even-exact-sseries.witness.json`, carries `−7.45876032789888019236780697835`, and a fresh run of `qbeta_c4even_ladder_reconstruction_probe` reproduces it byte-for-byte at BOTH pins — the `c_k^even` are exact s-series coefficients and are **anchor-independent** (only the `abs_ck_uk` products move, by ~4e-7). The downstream ladder witness had simply never been regenerated since it was first written: `−8.006` survived the convention C→D excision (`70d1ade383`) and a sweep whose own message claims it re-ran 154 producers (`119885a4c6`). Fixed in PR #6054, which regenerates that witness and pins the producer to proton.
 >    - **"PROVED" IS wrong.** The Lean is `1 − b²ℏ⁴ = 1 − (bℏ²)²`, a one-line `ring` identity: it proves only that *re-reading* the N=2 factor in the ansatz form yields `−1`. Corpus-grepped: `N2_factor` is a bare `def` with **no** theorem deriving it — every use in `QBetaCategoricalPrecisionLadder.lean` merely `unfold`s it, and its provenance ("Kashiwara `f̃_1†f̃_1`") lives in a docstring. **"Structural" is the defensible word** (no fit, no CODATA, no q₀) and is what the source block itself claims; the compression to "PROVED" happened here, not there.
 > 2. **"`N` is the truncation order chosen by target precision" does not describe the canonical producer.** `qbeta_ck_cache.py` extracts **one** rung by inverting the target; the residual at the next rung is then **exactly zero**, not merely below tolerance, so its guard fires and `c_4 … c_7` are **never computed** (`QOU.QBeta.greedy_rung_exact` / `greedy_later_rungs_vanish`, sorry-free). Whether some abstract ladder converges is a separate question this does not settle; the point is that no `N` is being *chosen* by an `ε` anywhere in the producer.
 > 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3748 %** (proton-normalised; 2.4571 % normalised by the candidate `-2`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.02020024`), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.

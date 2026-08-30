@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:35:09.162672+00:00",
-  "commitSha": "22d1693169aa63e63e2abfafce16c9152ea94bed",
+  "computedAt": "2026-08-29T19:23:04.999089+00:00",
+  "commitSha": "79e2a903449ef29602f9de9eebfeda5264688c93",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1430,
+  "durationMs": 1721,
   "computation": "mpmath-version-staleness",
   "scriptFile": "mpmath_version_staleness_probe.py",
-  "scriptHash": "74129839eda7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "20dc3c5e46a1",
+  "scriptCommitSha": "7dc7c65c876a852718f11bcd6b78ec2779dde71f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -49,5 +49,7 @@
     "mpmath_1_3_0_and_1_4_1_AGREE_on_every_load_bearing_primitive": true,
     "the_scope_is_the_PRIMITIVES_not_the_whole_corpus": true,
     "scope": "(a) scope-limited to the listed primitives"
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's import cone -- it imports only stdlib, mpmath and WitnessBuilder, and neither q_parameter nor qou_substrate.constants appears anywhere in it. This is an ENVIRONMENT audit (mpmath version vs recorded), not a substrate evaluation. It was declared `ambiguous` in the manifest, which the builder can never stamp, so the witness went out unstamped. Bean qou-fl0a."
 }

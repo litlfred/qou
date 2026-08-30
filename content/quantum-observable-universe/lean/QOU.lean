@@ -186,6 +186,7 @@ import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
+import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
@@ -435,6 +436,7 @@ import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction

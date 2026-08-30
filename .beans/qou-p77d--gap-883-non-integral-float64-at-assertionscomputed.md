@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T16:08:28Z
+updated_at: 2026-08-29T18:13:23Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -196,3 +196,62 @@ Fields 599 → 593; ratchet NEW 0 / REGRESSED 0 / exit 0.
   every verdict and a kill loses them all. Made this mistake twice today.
 - Scope before running: my first pilot took the 6 LARGEST producers, 4 of them
   q-dependent and certain to revert.
+
+
+## MERGED 2026-08-29 — 883 → 593 fields, 300 → 208 files
+
+Two PRs on main: #5996 (`3eb2375`, bucket-A drain) and #6022 (`22b84c2`,
+CODATA constants off float64 + 4 bucket-B producers).
+
+**Bucket A: 139 producers drained.** Of 302 committed float→string fields,
+**258 genuinely gained digits**. Every drain judged against a FRESH UNMODIFIED
+baseline re-run, never the committed witness — three of the first five targets
+already drift on an unmodified re-run, so the committed file blames the cast
+removal for movement that was already there.
+
+**The upstream cause, fixed.** `experimental_constants.py` cast every CODATA
+mass to binary64 at import while `codata_2022_source` already held them as mpf
+at full width. Removed. No input value moved (rel change 0.0 on M_E/M_P/M_N);
+only `Q_NEUTRON_MEV` (4.1e-50) and `KAPPA` (9.8e-17) changed, by exactly the
+float64 error they were carrying. 204 importers screened both sides in fresh
+subprocesses: **0 new failures**.
+
+## STILL OPEN — three jobs, not one
+
+1. **32 q-dependent producers / 209 fields.** `q_parameter.Q` is a `float`
+   (17 digits vs the canonical 50). DELIBERATE — `q_parameter.py` says not to
+   change `Q`/`Q_50_DIGIT_STR` and provides `q_at(dps)`. So every producer
+   reading `Q` has a float64 ceiling on its q-dependent arithmetic. Fixing
+   them means `Q` → `q_at(dps)` per producer, which forces a PROTON-VS-MUON
+   ANCHOR CHOICE each time — the layer straddle AGENTS.md singles out.
+   **Owner decision, 32 times. Not guessable.**
+2. **22 diagnosed reverts.** 17 "no gain" (12 with ZERO casts to remove — the
+   float64 arrives by a route neither a dps raise nor a cast removal touches)
+   and 5 laundering-guard hits (`codata_reconciliation` emitted
+   `0.782333409309999949776…`: an exact mpf round-tripped through a double
+   downstream, printed at 40 digits). Each needs its entry point found.
+3. **The 593 remaining fields.** Re-measure; do not quote this figure.
+
+## Traps established, each pinned by a selftest
+
+- **The A/B split is a STATIC HEURISTIC and cannot settle any single
+  producer.** A one-hop import-cone check reported "13 misfiled B→A" —
+  RETRACTED: the inherited `set_compute_dps()` in `mass_at_3A_proper` is
+  INSIDE A FUNCTION, and the hits came from an `ast.walk` descending into
+  `def` bodies. An earlier regex draft was worse — it skipped comments with
+  `line[0] != "#"`, letting through a docstring line starting with a backtick,
+  so three producers were reclassified on the strength of PROSE.
+- **"Round-trips through float64" does NOT prove laundering.** It flagged 55
+  of 302 drained fields; all 55 are exact `k·2^-235` ULP residuals, and a
+  power of two round-trips losslessly. Flag for reading, never decide.
+- **The flip alone is necessary but NOT sufficient.** mpmath defaults to
+  `mp.dps = 15` (~53 bits), so mpf constants still compute at float64 grade
+  until the producer raises dps. Removing casts without raising dps is WORSE
+  than nothing — it serializes a 53-bit value at full width (the
+  float64-padding defect).
+- **`math.log(mpf)` does not raise, it DOWNCASTS.** This module's own
+  `Q_NEUTRON_MEV_ERR` was quietly the last float64 quantity after the casts
+  came off.
+- **`mpf(repr(x))` is right for a float, broken for an mpf.** `repr(mpf('.78'))`
+  is `"mpf('0.78')"`, unparseable. 96 sites unwrapped; the OTHER 84 in the tree
+  lift genuine floats and must stay.
