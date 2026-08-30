@@ -12,11 +12,21 @@
   its real part, imaginary part or modulus, so *no* numeric statement about `VOL_5_2` can
   even be started.  This file supplies the missing handle.
 
-  It is deliberately scoped to the part that is cheap and certain.  The route to
-  `VOL_4_1 < VOL_5_2` continues through certified `Λ` values at three angles that are
-  **not rational multiples of π**, which needs interval arithmetic on `sin` at irrational
-  arguments — machinery the corpus does not have, and its own project.  See `qou-f8lit`.
-  Nothing here attempts that, and nothing here should be read as progress on it.
+  It is deliberately scoped to the part that is cheap and certain.
+
+  ⚠ **CORRECTED 2026-08-30 (`qou-52ch`).**  This paragraph used to say the route to
+  `VOL_4_1 < VOL_5_2` "continues through certified `Λ` values at three angles that are
+  not rational multiples of π, which needs interval arithmetic on `sin` at irrational
+  arguments — machinery the corpus does not have, and its own project."  **That is
+  false, and it named the wrong obstruction.**  No `Λ` value is needed at all:
+  Rivin concavity gives a chord bound in which `Cl₂(π/3)` cancels from both sides, and
+  the surviving angle condition `a_min > 2π/9` is polynomial — see
+  `QOU.Knot.FiveTwoNinthPower`, where it reduces to `Re z < 2/3` via `z³ = z − 1`.
+
+  What this file supplies is still the handle the route needs; only the description of
+  what follows it was wrong.  One consequence bites here: `realRoot_gt : 2/5 < realRoot`
+  is **not** strong enough for that condition (`−3(2/5)² + 6(2/5) − 2 < 0`), which is why
+  `FiveTwoNinthPower.realRoot_gt_three_sevenths` exists.
 
   ═══ WHAT MAKES IT EASY ═══
 

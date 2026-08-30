@@ -191,6 +191,7 @@ import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FiveTwoAngleSum
+import QOU.Knot.FiveTwoNinthPower
 import QOU.Knot.FiveTwoShapeBounds
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
