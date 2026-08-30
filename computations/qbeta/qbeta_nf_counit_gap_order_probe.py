@@ -1,54 +1,73 @@
-"""The single-wrap/typed NF gap is O(h^3) — so it CANNOT reach the O(t^2)
-acceptance test, and "basis-change" is the wrong name for it.
+"""The NF gap is O(h^3) in the COUNIT and O(t) in ALPHA — the gate stands.
 
-Bean `qou-pdix` (child of `qou-cds1`), following its last entry, which made the
-NF question the gate on branch 3: *"A 0.16% phase cannot be derived from an
-object whose NF convention is unsettled at 0.58%. Scope-(a): settle which NF is
-canonical FIRST; settling it moves the target by more than the target."*
+Bean `qou-pdix` (child of `qou-cds1`).
 
-Two results, neither of which is in the corpus.
+## RETRACTION of this probe's own first conclusion (same day)
 
-## 1. It is not a change of BASIS. It is two different ELEMENTS.
+This file first concluded: *"the NF ambiguity is O(t^3), so it does NOT gate the
+entry-6 acceptance test."* **That is wrong, and the error is the interesting
+part.** I proved a statement about the COUNIT `eps` and applied it to the PHASE
+`alpha`. They are different functionals:
 
-`docs/audits/2026-05-11-q-beta-residual-decomposition.md` labels the 1.00579
-factor **"basis-change typed-vs-single-wrap"**. Its own §2 proves the dual-basis
-identity `G^-1 . t = e_gamma`, i.e. *"the framework's net sum_i (Delta_NF)_i IS
-the Frobenius counit eps(beta)"*.
+    alpha = (eps(n-p) - tr_M(n-p)) / 2          [bean entry (9)]
 
-Those two statements cannot both be about one element. `eps` is a canonical
-algebra map, so it is **basis-independent**: expanding one element in two bases
-gives one value of `eps`. The two NFs give
+and only the `eps` half is insensitive. Measured, first nonzero order in `t`
+with `q = 1 + t`, identical for BOTH conventions:
 
-    single-wrap   eps(n-p) = h(h-2)/2
-    typed 6-term  eps(n-p) = h(h^6+2h^5+2h^4+2h^3-h^2+2h-4)/4
+    eps   gap   t^3   (coeff -2)
+    tr_M  gap   t^1   (coeff -1/4)
+    ALPHA gap   t^1   (coeff  1/8)
 
-which are different polynomials. Therefore they are expansions of **different
-elements**, and the label in §1 is a category error against §2 of the same
-document.
+**So the NF choice moves `alpha` at FIRST order and the bean's gate stands
+exactly as written.** The bean was right; my correction of it was not.
 
-That reframes the open question. "Which NF is canonical" sounds like a
-convention to be picked; it is actually "which braid element is the canonical
-nucleon pair", which is a modelling question with a physical criterion.
+## Why the two halves differ — this is the finding worth keeping
 
-## 2. The gap is O(h^3), so it cannot touch the t^1 or t^2 coefficients
+The counit sets every `z^k -> 1`. The Markov trace weights by `z^{#cr}`. The two
+NFs differ precisely in the `L_+/L_-/e^-` coefficients, which carry crossing
+numbers 2, 2, 3 — so under `eps` those differences cancel down to `O(h^3)`,
+and under `tr_M` they survive at `O(t)` because each is weighted differently.
 
-Exact, and it reproduces the audit's 1.00579 to six digits:
+**The NF sensitivity of the phase lives entirely in the crossing-number
+grading**, not in the algebra. That is a sharper statement of the gate than
+"unsettled at 0.58%": it says WHERE the sensitivity is and why no re-basing of
+the counit can remove it.
 
-    eps_typed - eps_sw = h^3 (h^4 + 2h^3 + 2h^2 + 2h - 1) / 4
-                       = -h^3/4 + h^4/2 + h^5/2 + h^6/2 + O(h^7)
+Corroboration that the machinery is right rather than merely self-consistent:
+it reproduces bean entry (6) exactly, which was computed independently —
+single-wrap C `alpha` coefficients `[-1/2, 1/4, -5/16]` (t^2 matches
+`c*ln q`, t^3 does not) and single-wrap D `t^2 = 5/4` (does not match).
 
-So the two NFs **agree through O(h^2)** and first differ at **O(h^3)**.
+## What SURVIVES the retraction
 
-Bean entry (6) states the branch-3 acceptance test as: reproduce `alpha` through
-order `t^2` in `q = 1 + t`, with the coefficient pinned at `t^1` so `t^2` is a
-prediction. Since `h = 2t - t^2 + ...`, an `O(h^3)` gap is `O(t^3)` and
-**contributes nothing to the `t^1` or `t^2` coefficients**.
+1. **The closed form.** `eps_typed - eps_sw = h^3(h^4+2h^3+2h^2+2h-1)/4`,
+   leading `-h^3/4`, reproducing the audit's 1.00579 to six digits. Verified
+   twice; the Lean theorems are statements about `eps` only and are all correct.
 
-**The NF ambiguity therefore does NOT gate the entry-6 acceptance test.** The
-bean's magnitude argument is untouched and still correct for the absolute
-0.160% target — 0.579% really is 3.6x larger — but a magnitude at q0 and an
-order in the expansion are different claims, and only the latter governs which
-Taylor coefficients an ambiguity can move.
+2. **It is not a change of BASIS — it is two different ELEMENTS.**
+   `docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 labels the
+   1.00579 factor "basis-change typed-vs-single-wrap". Its own §2 proves the
+   dual-basis identity `G^-1 . t = e_gamma`, i.e. *"the net IS the Frobenius
+   counit"*. Those cannot both be about one element: `eps` is a canonical
+   algebra map, hence basis-independent, so one element has one `eps`. The two
+   NFs give different polynomials, so they expand DIFFERENT ELEMENTS and §1's
+   label is a category error against §2 of the same document. Unaffected by the
+   retraction, and it reframes the open question as *"which braid element is
+   the canonical nucleon pair"* rather than a convention to be picked.
+
+3. **The typed NF is worse, not better.** Switching to it does not repair the
+   `t^3` mismatch; it destroys the `t^2` match that single-wrap C had:
+
+       C single-wrap  [-1/2,  1/4, -5/16]   vs pred [-1/2,  1/4, -1/6]
+       C typed        [-3/8, 11/16, -71/32] vs pred [-3/8,  3/16, -1/8]
+       D single-wrap  [-1/2,  5/4, -1/2]    vs pred [-1/2,  1/4, -1/6]
+       D typed        [-3/8, 19/16, -45/16] vs pred [-3/8,  3/16, -1/8]
+
+   So single-wrap C remains the only combination matching `c*ln q` through
+   `t^2`, and the recorded "tension with the ruling" is unchanged.
+
+4. **The alpha-gap leading coefficient is 1/8 for BOTH conventions.** The NF
+   sensitivity is convention-independent at leading order.
 
 Run:  python3 -u computations/qbeta/qbeta_nf_counit_gap_order_probe.py
 """
@@ -101,21 +120,85 @@ def main() -> int:
         "different polynomials => (eps canonical) => DIFFERENT ELEMENTS, "
         "not two bases for one element",
     ))
-    # in t, with q = 1 + t and h = q - 1/q
+    # in t, with q = 1 + t and h = q - 1/q: the COUNIT gap is O(t^3) ...
     h_of_t = sp.simplify((1 + t) - 1 / (1 + t))
     gap_t = sp.series(GAP.subs(h, h_of_t), t, 0, 4).removeO()
     for k in (1, 2):
         checks.append((
-            f"gap_has_no_t{k}_term",
+            f"counit_gap_has_no_t{k}_term",
             sp.simplify(gap_t.coeff(t, k)) == 0,
-            f"the NF gap contributes nothing at order t^{k} — so it cannot "
-            f"move the entry-6 acceptance test",
+            f"the COUNIT gap contributes nothing at order t^{k}",
         ))
     checks.append((
-        "gap_first_appears_at_t3",
-        sp.simplify(sp.series(GAP.subs(h, h_of_t), t, 0, 4).removeO().coeff(t, 3)) != 0,
-        "first nonzero order in t is 3",
+        "counit_gap_first_appears_at_t3",
+        sp.simplify(gap_t.coeff(t, 3)) != 0,
+        "counit gap first nonzero order in t is 3",
     ))
+
+    # ... but ALPHA = (eps - tr_M)/2, and the tr_M half is NOT insensitive.
+    z = sp.Symbol("z")
+    CR = [0, 1, 1, 2, 2, 3]          # crossing numbers of [γ,σ₀,σ₁,L₊,L₋,e⁻]
+    TYPED = [h*(2*h**4 + h**2 - 2)/4,
+             h**2*(h**2 + 1)*(2*h**2 + 1)/4,
+             h**2*(h**2 - h + 1)*(h**2 + h + 1)/4,
+             -h**5/4,
+             h*(h**2 + 1)*(h**4 - 2)/4,
+             -h**4*(h**2 + 2)/4]
+    SW = [h**2/2, -h/2, -h/2, 0, 0, 0]
+    tr = lambda v: sp.expand(sum(c * z**k for c, k in zip(v, CR)))
+    ep = lambda v: sp.expand(sum(v))
+    checks.append(("typed_eps_matches_recorded_vector",
+                   bool(sp.simplify(ep(TYPED) - EPS_TYPED) == 0),
+                   "the typed 6-term vector sums to the recorded eps_typed"))
+    checks.append(("single_wrap_eps_matches_recorded_vector",
+                   bool(sp.simplify(ep(SW) - EPS_SW) == 0),
+                   "the single-wrap vector sums to the recorded eps_sw"))
+
+    q_t = 1 + t
+    zC, zD = sp.sqrt(q_t)/(q_t + 1), q_t**3/(q_t**2 + 1)
+
+    def first_order(e, zv):
+        ser = sp.expand(sp.series(sp.simplify(e.subs({z: zv, h: h_of_t})),
+                                  t, 0, 5).removeO())
+        for k in range(6):
+            c = sp.simplify(ser.coeff(t, k))
+            if c != 0:
+                return k, sp.nsimplify(c)
+        return None, 0
+
+    alpha_gap = (ep(TYPED) - tr(TYPED)) / 2 - (ep(SW) - tr(SW)) / 2
+    trm_gap = tr(TYPED) - tr(SW)
+    for nm, zv in (("C", zC), ("D", zD)):
+        k, c = first_order(trm_gap, zv)
+        checks.append((f"trM_gap_reaches_t1_{nm}", k == 1,
+                       f"the tr_M half of the gap is O(t), coeff {c} "
+                       f"— NOT O(t^3)"))
+        k, c = first_order(alpha_gap, zv)
+        checks.append((f"alpha_gap_reaches_t1_{nm}", k == 1 and c == sp.Rational(1, 8),
+                       f"ALPHA moves at FIRST order, coeff {c} — the bean's "
+                       f"gate stands; this probe's first conclusion was wrong"))
+
+    # reproduce bean entry (6) independently: single-wrap C matches c*ln q at t^2
+    def alpha_coeffs(v, zv):
+        a = sp.simplify((ep(v) - tr(v)) / 2)
+        ser = sp.expand(sp.nsimplify(sp.series(a.subs({z: zv, h: h_of_t}),
+                                               t, 0, 5).removeO()))
+        return [sp.nsimplify(sp.simplify(ser.coeff(t, k))) for k in (1, 2, 3)]
+
+    cC = alpha_coeffs(SW, zC)
+    checks.append(("reproduces_bean_entry6_singlewrap_C",
+                   cC == [sp.Rational(-1, 2), sp.Rational(1, 4), sp.Rational(-5, 16)],
+                   "single-wrap C alpha = [-1/2, 1/4, -5/16], matching bean "
+                   "entry (6) computed independently"))
+    cD = alpha_coeffs(SW, zD)
+    checks.append(("reproduces_bean_entry6_singlewrap_D_t2",
+                   cD[1] == sp.Rational(5, 4),
+                   "single-wrap D alpha t^2 = 5/4, matching bean entry (6)"))
+    cCt = alpha_coeffs(TYPED, zC)
+    checks.append(("typed_C_destroys_the_t2_match",
+                   cCt[1] != -cCt[0] / 2,
+                   f"typed C alpha t^2 = {cCt[1]} against c*ln q prediction "
+                   f"{-cCt[0]/2}: the typed NF is WORSE, not better"))
 
     # numerics at the proton pin — reproduce the audit's 1.00579
     import mpmath as mp
@@ -154,11 +237,16 @@ def main() -> int:
                        engine="python+sympy+mpmath", output_dir=HERE,
                        _script_path=__file__)
     w.set_description(
-        "The single-wrap vs typed nucleon-NF counit gap is "
+        "RETRACTION-CARRYING. The single-wrap vs typed nucleon-NF COUNIT gap is "
         "h^3(h^4+2h^3+2h^2+2h-1)/4, leading -h^3/4, so the two NFs agree "
-        "through O(h^2) and the gap contributes nothing at order t^1 or t^2. "
-        "It therefore cannot move the qou-pdix entry-6 branch-3 acceptance "
-        "test, which pins at t^1 and predicts t^2. Separately: because the "
+        "through O(h^2). BUT alpha = (eps - tr_M)/2 and the tr_M half is NOT "
+        "insensitive: the tr_M gap is O(t) and the ALPHA gap is O(t) with "
+        "coefficient 1/8 in BOTH conventions, so the NF choice moves the phase "
+        "at FIRST order and the qou-pdix gate STANDS. This probe's first "
+        "conclusion (that the gap could not move the entry-6 test) is "
+        "RETRACTED. The sensitivity lives in the crossing-number grading: eps "
+        "sets z^k -> 1 and the L/e differences cancel; tr_M weights by z^#cr "
+        "and they survive. Separately: because the "
         "Frobenius counit is a canonical (basis-independent) map, two "
         "expansions of ONE element cannot give different eps, so the 1.00579 "
         "factor is NOT a 'basis-change' as labelled in the 2026-05-11 audit "
@@ -173,10 +261,13 @@ def main() -> int:
                           for n, ok, why in checks])
     w.add_data("numeric_at_proton_pin", numeric)
     w.add_data("verdict", (
-        "The NF ambiguity is O(h^3) = O(t^3) and does NOT gate the entry-6 "
-        "acceptance test. The bean's magnitude argument (0.579% vs a 0.160% "
-        "target) is untouched and still correct for the ABSOLUTE target; a "
-        "magnitude at q0 and an order in the expansion are different claims."))
+        "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with "
+        "coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 "
+        "and tr_M weights by z^#cr where eps sets z^k -> 1. The bean was right "
+        "and this probe's first conclusion was wrong. Surviving: the exact "
+        "closed form; that the 1.00579 is NOT a basis change (eps is canonical, "
+        "so different eps => different ELEMENTS); and that the typed NF is "
+        "worse, destroying single-wrap C's t^2 match rather than repairing t^3."))
     for n, ok, _ in checks:
         w.add_assertion(n, "pass" if ok else "fail", "pass")
     w.save()

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:37:37.108653+00:00",
-  "commitSha": "43fe7446bb2a0bf3dd43fc8da8f589242cf6729a",
+  "computedAt": "2026-08-30T11:48:28.153925+00:00",
+  "commitSha": "0d414e780fe168670f57ad7c37d214cf251ed157",
   "assertions": [
     {
       "name": "gap_closed_form",
@@ -29,19 +29,73 @@
       "passed": true
     },
     {
-      "name": "gap_has_no_t1_term",
+      "name": "counit_gap_has_no_t1_term",
       "computed": "pass",
       "expected": "pass",
       "passed": true
     },
     {
-      "name": "gap_has_no_t2_term",
+      "name": "counit_gap_has_no_t2_term",
       "computed": "pass",
       "expected": "pass",
       "passed": true
     },
     {
-      "name": "gap_first_appears_at_t3",
+      "name": "counit_gap_first_appears_at_t3",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "typed_eps_matches_recorded_vector",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "single_wrap_eps_matches_recorded_vector",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "trM_gap_reaches_t1_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_gap_reaches_t1_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "trM_gap_reaches_t1_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_gap_reaches_t1_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_bean_entry6_singlewrap_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_bean_entry6_singlewrap_D_t2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "typed_C_destroys_the_t2_match",
       "computed": "pass",
       "expected": "pass",
       "passed": true
@@ -57,8 +111,8 @@
   "durationMs": 0,
   "computation": "qbeta-nf-counit-gap-order",
   "scriptFile": "qbeta_nf_counit_gap_order_probe.py",
-  "scriptHash": "4c39202dee90",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e38fb70659ea",
+  "scriptCommitSha": "0d414e780fe168670f57ad7c37d214cf251ed157",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,14 +135,14 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_nf_counit_gap_order_probe.py"
   },
-  "description": "The single-wrap vs typed nucleon-NF counit gap is h^3(h^4+2h^3+2h^2+2h-1)/4, leading -h^3/4, so the two NFs agree through O(h^2) and the gap contributes nothing at order t^1 or t^2. It therefore cannot move the qou-pdix entry-6 branch-3 acceptance test, which pins at t^1 and predicts t^2. Separately: because the Frobenius counit is a canonical (basis-independent) map, two expansions of ONE element cannot give different eps, so the 1.00579 factor is NOT a 'basis-change' as labelled in the 2026-05-11 audit - the two NFs expand DIFFERENT ELEMENTS. That audit's own section 2 proves the net IS the counit, which is what makes the section 1 label a category error against it.",
+  "description": "RETRACTION-CARRYING. The single-wrap vs typed nucleon-NF COUNIT gap is h^3(h^4+2h^3+2h^2+2h-1)/4, leading -h^3/4, so the two NFs agree through O(h^2). BUT alpha = (eps - tr_M)/2 and the tr_M half is NOT insensitive: the tr_M gap is O(t) and the ALPHA gap is O(t) with coefficient 1/8 in BOTH conventions, so the NF choice moves the phase at FIRST order and the qou-pdix gate STANDS. This probe's first conclusion (that the gap could not move the entry-6 test) is RETRACTED. The sensitivity lives in the crossing-number grading: eps sets z^k -> 1 and the L/e differences cancel; tr_M weights by z^#cr and they survive. Separately: because the Frobenius counit is a canonical (basis-independent) map, two expansions of ONE element cannot give different eps, so the 1.00579 factor is NOT a 'basis-change' as labelled in the 2026-05-11 audit - the two NFs expand DIFFERENT ELEMENTS. That audit's own section 2 proves the net IS the counit, which is what makes the section 1 label a category error against it.",
   "contentBlock": "prop:q-beta-spectral-bridge",
   "parameters": {
     "q0_anchor": "proton (physical_proton pin)"
   },
   "data": {
-    "assertions_passed": 8,
-    "assertions_total": 8,
+    "assertions_passed": 17,
+    "assertions_total": 17,
     "checks": [
       {
         "name": "gap_closed_form",
@@ -111,19 +165,64 @@
         "why": "different polynomials => (eps canonical) => DIFFERENT ELEMENTS, not two bases for one element"
       },
       {
-        "name": "gap_has_no_t1_term",
+        "name": "counit_gap_has_no_t1_term",
         "pass": true,
-        "why": "the NF gap contributes nothing at order t^1 — so it cannot move the entry-6 acceptance test"
+        "why": "the COUNIT gap contributes nothing at order t^1"
       },
       {
-        "name": "gap_has_no_t2_term",
+        "name": "counit_gap_has_no_t2_term",
         "pass": true,
-        "why": "the NF gap contributes nothing at order t^2 — so it cannot move the entry-6 acceptance test"
+        "why": "the COUNIT gap contributes nothing at order t^2"
       },
       {
-        "name": "gap_first_appears_at_t3",
+        "name": "counit_gap_first_appears_at_t3",
         "pass": true,
-        "why": "first nonzero order in t is 3"
+        "why": "counit gap first nonzero order in t is 3"
+      },
+      {
+        "name": "typed_eps_matches_recorded_vector",
+        "pass": true,
+        "why": "the typed 6-term vector sums to the recorded eps_typed"
+      },
+      {
+        "name": "single_wrap_eps_matches_recorded_vector",
+        "pass": true,
+        "why": "the single-wrap vector sums to the recorded eps_sw"
+      },
+      {
+        "name": "trM_gap_reaches_t1_C",
+        "pass": true,
+        "why": "the tr_M half of the gap is O(t), coeff -1/4 — NOT O(t^3)"
+      },
+      {
+        "name": "alpha_gap_reaches_t1_C",
+        "pass": true,
+        "why": "ALPHA moves at FIRST order, coeff 1/8 — the bean's gate stands; this probe's first conclusion was wrong"
+      },
+      {
+        "name": "trM_gap_reaches_t1_D",
+        "pass": true,
+        "why": "the tr_M half of the gap is O(t), coeff -1/4 — NOT O(t^3)"
+      },
+      {
+        "name": "alpha_gap_reaches_t1_D",
+        "pass": true,
+        "why": "ALPHA moves at FIRST order, coeff 1/8 — the bean's gate stands; this probe's first conclusion was wrong"
+      },
+      {
+        "name": "reproduces_bean_entry6_singlewrap_C",
+        "pass": true,
+        "why": "single-wrap C alpha = [-1/2, 1/4, -5/16], matching bean entry (6) computed independently"
+      },
+      {
+        "name": "reproduces_bean_entry6_singlewrap_D_t2",
+        "pass": true,
+        "why": "single-wrap D alpha t^2 = 5/4, matching bean entry (6)"
+      },
+      {
+        "name": "typed_C_destroys_the_t2_match",
+        "pass": true,
+        "why": "typed C alpha t^2 = 11/16 against c*ln q prediction 3/16: the typed NF is WORSE, not better"
       },
       {
         "name": "reproduces_audit_ratio_1_00579",
@@ -140,6 +239,6 @@
       "relative_gap": "0.0057872078299556551719",
       "gap_closed_form": "h**3*(h**4 + 2*h**3 + 2*h**2 + 2*h - 1)/4"
     },
-    "verdict": "The NF ambiguity is O(h^3) = O(t^3) and does NOT gate the entry-6 acceptance test. The bean's magnitude argument (0.579% vs a 0.160% target) is untouched and still correct for the ABSOLUTE target; a magnitude at q0 and an order in the expansion are different claims."
+    "verdict": "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 and tr_M weights by z^#cr where eps sets z^k -> 1. The bean was right and this probe's first conclusion was wrong. Surviving: the exact closed form; that the 1.00579 is NOT a basis change (eps is canonical, so different eps => different ELEMENTS); and that the typed NF is worse, destroying single-wrap C's t^2 match rather than repairing t^3."
   }
 }
