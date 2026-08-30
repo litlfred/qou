@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T12:00:06Z
+updated_at: 2026-08-30T12:33:58Z
 parent: qou-mhj9
 ---
 
@@ -564,3 +564,52 @@ really pairing, or pairing supplies only a small part of b3.
 
 Scope (a): refutes pairing as the SOLE quantitative mechanism, not its presence
 in a multi-term closure. **delta is NOT derived.**
+
+
+## TWO RETRACTIONS OF MY OWN, and the reframing that survives (2026-08-30)
+
+Probe: `computations/probes/b3_is_the_deuteron_deficit_probe.py` (2/2).
+
+### RETRACTION 1 — the '25-100x systematic under-shoot across four mechanisms'
+**I asserted this and proposed a turn investigating it. It is FALSE.** Measured in
+the b3/b2 coordinate (measured 0.64112282):
+
+    SU(N) Casimir     Delta^3 = 0 EXACTLY — ZERO contribution, not small
+    Milnor mu-bar     normalised +-1 — NO magnitude at all
+    n!                0.0          -> INFINITE
+    [n]_q!            0.0437062    -> 14.67x
+    C(2n,n)           0.3333333    -> **1.92x**
+
+Two have no magnitude, so 'too small' is undefined for them; the rest span 1.92x
+to infinite — and C(2n,n) under by less than 2x **directly contradicts the range I
+quoted**. What is actually there is the tautology 'nothing produces b3'.
+
+### RETRACTION 2 — 'the fitted pairing delta is 25-40x too weak'
+Worse, because it stood as a REFUTATION. I judged the fitted A=2 pairing against
+the SEMF a_P = 12/sqrt(A) = 8.485 MeV. **The SEMF has no validity at A <= 4** —
+with standard coefficients it predicts
+
+    2H  B = -4.661 MeV  (UNBOUND)    3H  2.325 vs 8.482    4He  22.841 vs 28.296
+
+A formula that puts the deuteron below threshold cannot supply that standard.
+**The refutation is WITHDRAWN.** Against the quantity pairing must actually
+explain — the deuteron deficit, 0.475-0.603 MeV — the fitted 0.208-0.338 MeV is
+the SAME ORDER, covering **34.5-71.1%** of it. The SEMF extrapolation is 17.8x
+the entire deficit.
+
+**PAIRING IS RESTORED as a live candidate: sign derived, magnitude the right order.**
+
+### WHAT SURVIVES — and it is sharper than the pattern I invented
+    b3 = B(3) - 3B(2) = 3 * (B(3)/3 - B(2)) = 3 * (deuteron deficit)   EXACTLY
+
+**The b3 question IS the deuteron-weakness question.** The deuteron is 17.6-21.3%
+weaker than b3 = 0 requires; in B/A it sits 2.54x below A=3 and 6.36x below 4He.
+Every mechanism treating B(2) as an ordinary member of a smooth family gets b3
+too small because none makes the deuteron anomalously weak — **a TWO-body anomaly
+dominating a connected THREE-body cumulant.**
+
+Relocated target: derive the deuteron deficit, not b3. It has an established
+cause (near-unitary 3S1, a_t = 5.42 fm against a ~1.4 fm range; unbound 1S0
+virtual state), so it is a sharper question than 'produce b3'.
+
+The identity is trivial and is NOT a result; its value is the relocation.
