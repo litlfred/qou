@@ -4486,3 +4486,69 @@ ruling.
 **What remains** is what this bean already names: the functional form must
 change, and α is axiomatised in both frames
 (`q-beta-cos-resummation.ts:48`). That is a derivation, not a measurement.
+
+
+## The filter, verified and made executable (2026-08-30, PR #6264)
+
+### The two-constraint filter
+
+`α_required` is known at two anchors that share `Q_codata_MeV` **exactly**
+(checked, not assumed — otherwise the "slope" is a confound between two
+experimental values, not a q-derivative). Imposing both value and slope on
+`α = (z−1)h/2`:
+
+    required   z(q0) = 0.499104480185     z'(q0) = +400.289678821
+    z_C        z = 0.4993203342           z' = -0.01172370089
+    z_D        z = 0.6126880371           z' =  1.046577629
+    z=q        z = 1.109978583            z' =  1.0
+
+**`z_C` passes the VALUE row to four decimals and misses the SLOPE row by a
+factor of −34,144, sign included.** That is this bean's "transversal crossing",
+quantified. **Passing row 1 alone is not evidence.**
+
+For *constant* z the two rows are contradictory: the value needs `z ≈ 0.4991`,
+the slope needs `z = 46.69` (which gives `α = +4.78`).
+
+### The slope was red-teamed before being relied on
+
+It is a secant over `dq = 1.29e-8` from two points, and two points cannot
+distinguish a derivative from an artifact. Reconstructed `α_required` from its
+closed form (`−arccos(Q_codata/(Q_A(1−u²)))`) and differentiated exactly:
+
+    witness secant   41.388615
+    my secant        41.31873053
+    my exact deriv   41.31853588        agree to 0.17 %
+
+**Caveat:** my reconstruction sits a *constant* −0.004259 from the witness at
+both anchors (my `Q_A`/`m_e` differs slightly), which is exactly why the slopes
+agree while the values do not. Quote the slope as **≈ +41.3–41.4**, not to six
+digits.
+
+**Bonus corroboration:** at `q₀+1e-3` the reconstruction returns a COMPLEX α —
+independently reproducing this bean's separate note that past ±0.1 % in q the
+ladder has no real phase at all.
+
+### Delivered as a probe, not a table
+
+`computations/qbeta/qbeta_ladder_alpha_form_filter_probe.py` recomputes the
+filter from the required-phase witness on every run and asserts its own
+precondition. Rationale is this arc's own history: the convention-C tranche was
+a sequence of recorded figures going stale, three of them mine. A table records
+what the numbers were; the probe tracks the anchor.
+
+### What this changes for the search
+
+The prune is now **exhaustive over the two-row cap's admissible set** (proved
+complete: `{q, z_D}`; `z = q` excluded structurally by sign for all `q > 1`), and
+the filter says what any replacement must satisfy: **sit at ≈0.499 while
+carrying a derivative ≈+400**. No rational function of the kind this corpus uses
+does that near `q₀` without a near-pole or an engineered feature exactly there —
+a fine-tuning signature.
+
+That is independent support for this bean's existing conclusion: **the
+functional form must change.** The problem is not that the wrong `z` was picked.
+
+**Still open, and unchanged:** the derivation of α itself, axiomatised in both
+frames (`q-beta-cos-resummation.ts:48`). The filter above is now the
+pre-registered test any candidate must pass — which is what the Discipline
+section asks for before a search begins.
