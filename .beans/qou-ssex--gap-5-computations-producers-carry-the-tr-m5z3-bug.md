@@ -1,11 +1,11 @@
 ---
 # qou-ssex
 title: 'GAP: 5 computations/ producers carry the TR_M[5]=z^3 bug — a third surface qou-m7py does not list'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T07:09:49Z
-updated_at: 2026-08-30T07:10:28Z
+updated_at: 2026-08-30T07:56:33Z
 ---
 
 ## What is new here, and what is NOT
@@ -81,3 +81,13 @@ Register the five so the standing audits account for them, and pause. Do not
 migrate `compound_shift_nf`'s `z` under `qou-t9r1` while its trace is wrong —
 that would produce a doubly-wrong Gram that looks healthier than either defect
 alone.
+
+## RESOLVED 2026-08-30 (PR #6110) — owner: "Fix all five with the quotient. Real work."
+
+**Correction to this bean's own framing: 2 of the 5 are DEAD constants.** `basis_knot_tables.TR_M` and `jet_knot_invariants.tr_basis` are defined and never read — both move ZERO substantive fields on re-run. Fixed anyway (a wrong constant nothing reads is a trap for the next consumer), but corrected, not repaired.
+
+The 3 live ones: `atom_mass_derived` (103 fields move, 10/10 pass), `electron_sigma_f_chain` (diagonal SDP cost, no Gram), `compound_shift_nf` (127 fields move).
+
+**The quotient work.** Fixing the trace alone broke 5/19 assertions in `compound_shift_nf`, exactly as `pyhecke/gram.py`'s banner predicts. Repair is `_min_norm_lstsq_mp` — a minimum-norm SVD solve, the mpmath twin of `G_PINV`, i.e. the solve on H₃/rad. `mp.qr_solve` RAISES on a rank-deficient system and the old except-branch returned NaN, reporting "no answer" for a system whose answer is merely non-unique.
+
+I patched the DUAL solve first and it did not help — the dual was already fine; the NaN was in the PRIMAL recompute, whose `(Gx)_i = 0` rows are rows of the rank-5 form. 19/19 now pass, duality gaps at the 50-dps floor.
