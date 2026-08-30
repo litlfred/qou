@@ -9,7 +9,7 @@ tags:
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T13:58:14Z
+updated_at: 2026-08-30T14:27:31Z
 parent: qou-8mtd
 ---
 
@@ -670,3 +670,44 @@ route that worked; recording that distinction because "blocked by the method" re
 "blocked", and it was not.
 
 Item 1 (exactify both `MostowRigidity` instances) is unchanged.
+
+
+---
+
+## 2026-08-30 (later) — item 3 is HALF closed, and my own "still open" was the wrong claim
+
+Two hours after writing "*Item 3 of Still open — general `0 < D(z)` on the upper half
+plane — is untouched*" in the note above, and while drafting a PR body that repeated it,
+I checked instead of asserting. **The non-strict half was six lines away.**
+
+`QOU/Archimedean/BlochWignerNonneg.lean` (#6234), both `lean`-direct exit 0 and
+axiom-clean:
+
+    volume_nonneg          : 0 ≤ T.volume            (T : IdealTetrahedron)
+    blochWigner_lob_nonneg : 0 ≤ BlochWigner_lob z   (0 < z.im)
+
+**Nothing new was needed in the geometry.** `MathlibExt/IdealTriangulation.lean` already
+carried Milnor's angle formula as `rfl` (`volume_eq_lob_sum`), the angle sum `= π`, and
+each angle strictly in `(0, π)`; and every `z` with `Im z > 0` *is* an `IdealTetrahedron`
+shape by construction. The single missing piece was the Λ-sum lemma — and
+`LobMonotonicity.lob_sum_nonneg` landed in #6141 as a step toward the 5₂ chord, for an
+entirely different purpose. The gap closed sideways, from a lemma written for another
+target.
+
+**Strict `0 < D(z)` is still open, and the distinction is the whole point.** Strict is
+what `ManifoldVolumeBridge` declines to assume, and what `vol_ne_zero_of_realises` needs.
+`lob_sum_nonneg` descends from subadditivity of `Λ` on `[0, π/2]`, which is not strict,
+and the Λ-sum genuinely tends to `0` as the tetrahedron degenerates. Ruling that out needs
+the angles bounded away from the corners, or a strict subadditivity. So item 3 should now
+read **"strict `0 < D(z)`"**, not "positivity".
+
+**Three sites carried the unqualified absence claim** and are sharpened rather than
+deleted — the design decisions they justify are unchanged, because each needs the strict
+half: `MathlibExt/ManifoldVolumeBridge.lean`, `Encounter/FiveTwoVolumeBridge.lean`, and
+the `lean-axiom-guard.py` registry comment.
+
+**The lesson is the one this repo already writes down.** *"I found no `0 < D(z)`"* and
+*"there is no `0 < D(z)`"* are different claims, and I had only measured the first — for
+the strict statement, at that. AGENTS.md §"Terse ≠ compressed" names this exact failure,
+and the corpus-grep checklist exists to catch it. I had walked path 2 (`content/`) and
+not path 2 into `MathlibExt/`, where the answer was sitting in a `rfl`.
