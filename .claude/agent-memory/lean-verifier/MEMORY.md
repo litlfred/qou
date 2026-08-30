@@ -269,6 +269,12 @@ prune the log, never the TRAPs.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-30 (milnor-v7ro): verified new `QOU/MassTheory/DeficitRecursionReduction.lean`
+  (Mathlib.Tactic-only, no QOU imports; `deficit` def + 2 field-algebra theorems).
+  lean-direct EXIT 0, zero errors/sorries. `#print axioms` on BOTH theorems =
+  `[propext, Classical.choice, Quot.sound]`, no sorryAx. Cache already restored
+  (3407 mathlib oleans, RESTORED-NO-TRACES marker present). Confirmed cold-cache
+  TRAP again: wall 3m31s but `user` only 10s — page faulting, not a rebuild.
 - 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
   after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
   Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT
