@@ -357,3 +357,62 @@ Why `hadron_knot_table` is compute-bound past 600 s, with the corrected baseline
 of *unknown* rather than 53 ms. The A-scaling hypothesis (ATOMS runs to ca40,
 A=40) is untested. Instrument the loop with per-atom timing before theorising —
 this bean has now produced three wrong inferences from uninstrumented output.
+
+### `hadron_knot_table` LOCALIZED — `binding_energy`, and it is two defects
+
+With the producer instrumented (`f400a5c0f`), the per-atom column confirms what
+was earlier only guessed: proton, neutron and protium are **0.00 s each**, and
+deuterium — the first **A=2** atom — never returns.
+
+Bisected `compute_atom("deuterium", 1, 1)` call by call:
+
+    build_atom_nf(1,1)         0.00s
+    nf_tr / nf_net             0.00s
+    check_frobenius            0.00s
+    classify_nuclear_knot      0.00s
+    ground_state_ordering(1,1) 0.00s      <- my earlier suspect. INNOCENT.
+    binding_energy(1,1)        >90s       <- the bottleneck
+
+The A=1 atoms are fast for a boring reason: `binding_energy` opens with
+`if A <= 1: return 0.0`. So does `compute_per_generator_volumes`
+(`if A < 2: return`). That shared short-circuit is what made the
+`ground_state_ordering` path look guilty — both functions are skipped entirely
+for the first three atoms, so the first A=2 atom is the first time EITHER runs.
+Only one of them is slow.
+
+Bisecting `binding_energy` further gives **two independent defects**:
+
+    unified_iterative_correction(1,1)     >120s     <- THE BOTTLENECK
+    sdp_cross_channel_contribution(1,1)   0.01s
+    binding_from_frobenius_pairing(1,1)   TypeError <- SEPARATE BUG
+
+**(a) `unified_iterative_correction` is the timeout.** It takes over two minutes
+on Z=1,N=1 — the smallest possible A=2 input. `ATOMS` runs to ca40 (A=40), so
+this producer is not slow, it is unrunnable, and no cap increase reaches it.
+
+**(b) `binding_from_frobenius_pairing` cannot run at all:**
+
+    scipy/sparse/_sputils.py: upcast(*map(np.dtype, args))
+    TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))
+
+An mpmath/object dtype is reaching a `scipy.sparse` operation, which supports
+no object dtype. This is currently INVISIBLE because (a) times out first — it
+would only surface once the bottleneck is fixed. Given this container carries
+scipy 1.17.1 / numpy 2.4.6 (newer than whatever built the June witness — see
+the environment note above), an older scipy tolerating this is a plausible
+explanation, but that is untested: it may equally be a real leak of mpf values
+into a sparse matrix.
+
+### Where this leaves the two open items
+
+Neither is a batch defect and neither is fixable by raising a cap:
+
+- `q0_migration_decompose` "times out" only because it runs `hadron_knot_table`
+  twice under a 900 s child cap.
+- `hadron-knot-table.witness.json` stays the corpus's single Q0_FLIP (retired
+  pin A under a `muon` label, stale since 2026-06-17) because the producer
+  cannot be re-run to repin it.
+
+Both unblock on `unified_iterative_correction`, then on (b). Recommend splitting
+those into their own bean — they are a performance/correctness problem in
+`hecke_core_legacy`, not batch residue.
