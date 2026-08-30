@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-30T11:10:01Z
+updated_at: 2026-08-30T11:14:32Z
 ---
 
 
@@ -333,3 +333,23 @@ definition is canonical — `QOU.BraidKnot.writhe`, `QOU.Mathlib.addCell`,
 `QOU.Mathlib.IsAddableCell`, the last two being one decision (same module
 pair). Rename rather than delete: no direct importer under `QOU/` does not
 mean dead, since a content-block `.lean` sibling can still resolve from it.
+
+
+### WITHDRAWN: "the 21 mechanical renames are safe to batch"
+
+Opening the first pair refutes it. `QOU.Archimedean.T_pp` exists **three**
+times, not twice: the two library modules the audit reports, plus
+`mass-theory/beta-decay-transfer-matrix.lean` — a **content-block sibling in
+the same namespace**, drifted from the library copy (195 lines vs 97, a
+bespoke `TM` vs `Matrix (Fin 2) (Fin 2) ℝ`). Its `.ts` sets
+`lean: { ref: "qou:QOU.Archimedean.beta_decay_transfer_matrix", validation:
+"not_checked" }`, and the sibling wins candidate-1 resolution — so the sibling
+is what the block's checkers audit while the library file is what collides.
+
+Renaming in the library file to drain a collision would push a drifted mirror
+further apart. **The drain is entangled with `qou-u87j`** (mirror drift,
+`check-mirror-drift.ts`, 141 same-FQN pairs / 35 drifted). Each pair needs a
+content-sibling check first; there is no safe blind batch.
+
+The audit scans `lean/QOU/` only — recorded as a SCOPE section in the script
+docstring. A clean run is **not** evidence a name is unambiguous corpus-wide.
