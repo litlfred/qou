@@ -320,8 +320,12 @@ import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
-import QOU.Mathlib.YoungLatticeDifferential
-import QOU.Mathlib.YoungLatticeCornerCount
+-- QOU.Mathlib.YoungLatticeDifferential / YoungLatticeCornerCount are deliberately NOT
+-- imported here: they declare `QOU.Mathlib.cornerRows` (and siblings), which
+-- QOU.Mathlib.YoungDiagramAddable (imported below) also declares, so importing both
+-- fails with "environment already contains". See bean `qou-dup1` — the modules
+-- duplicate YoungDiagramAddable and must be consolidated onto it before they can join
+-- the aggregator. Removing these two lines keeps QOU.lean buildable meanwhile.
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
