@@ -217,4 +217,69 @@ theorem consecutive_odd_steps_exist {R : Type*} [CommRing R]
   · rw [oddStep_next_residue φ q (-2) hq, map_neg, map_ofNat]
     norm_num
 
+
+/-! ## The cube-root criterion, and why the attractor has no odd-preimage
+
+The `v = 0` question — can two consecutive odd steps occur inside `D∞`? — is
+attacked from the backward side by asking which elements admit an **odd
+branch-inverse** at all. That has an exact criterion at a primitive cube root of
+unity `w`, where `[3]_q` vanishes, and the criterion is pure ring algebra.
+
+An odd step from `Q` to `P` is `[2]_q·P = [3]_q·Q + 1`. Evaluating at `w` kills
+the `[3]_q` term outright, leaving `(w+1)·P(w) = 1` — a condition on `P` alone,
+with `Q` eliminated. Since `(w+1)·(-w) = 1`, that pins `P(w) = -w`.
+
+What this buys, proved below: the attractor `q⁻¹` evaluates to `w² ≠ -w`, so
+**`q⁻¹` admits no odd-preimage** — the attractor is reached only by even steps.
+That is the structural reason the backward tree's odd-preimages are as rare as
+the probes find them (6 of 154 nodes at depth 40; 20 of 1260 at depth 120).
+
+**What is NOT proved here, and is the open part.** The measured obstruction to a
+`v = 0` block inside `D∞` is a *congruence*: across 1260 backward-tree nodes,
+every one admitting an odd-preimage has `P'(w) ≡ -w (mod 6)`, whereas a second
+chained odd-preimage requires `P'(w) = 2`, and `2 ≢ -w (mod 6)` because
+`N(2+w) = 3` is not divisible by `N(6) = 36`. That congruence is an **observed
+pattern, not a theorem** — it is not proved here and must not be cited as one.
+Proving it would settle the `v = 0` question for the backward tree; the step from
+there to all of `D∞` is the convergence conjecture itself (`qcz7` A1).
+
+`w` is taken as a ring element satisfying `w² + w + 1 = 0` rather than
+constructing `ℤ[w]`, which keeps every statement over a generic `[CommRing R]`
+(§7c). -/
+
+/-- `w + 1` is a **unit** whenever `w² + w + 1 = 0`, with inverse `-w`. -/
+theorem cubeRoot_one_add_mul_neg {R : Type*} [CommRing R] (w : R)
+    (hw : w ^ 2 + w + 1 = 0) : (w + 1) * (-w) = 1 := by
+  linear_combination -hw
+
+/-- **The cube-root criterion.** If `P` is the odd-branch image of `Q` —
+    `[2]_q·P = [3]_q·Q + 1` — then at a primitive cube root `w` the `[3]_q` term
+    vanishes and `P(w)` is pinned to `-w`, with `Q` eliminated entirely.
+
+    So `P(w) = -w` is **necessary** for `P` to admit an odd-preimage. -/
+theorem oddPreimage_forces_eval_cubeRoot {R : Type*} [CommRing R] (w p q : R)
+    (hw : w ^ 2 + w + 1 = 0)
+    (h : (w + 1) * p = (w ^ 2 + w + 1) * q + 1) :
+    p = -w := by
+  have h1 : (w + 1) * p = 1 := by linear_combination h + q * hw
+  have hunit := cubeRoot_one_add_mul_neg w hw
+  have hkey : (w + 1) * (p + w) = 0 := by linear_combination h1 - hunit
+  have hexp : p + w = (-w) * ((w + 1) * (p + w)) := by
+    linear_combination (-(p + w)) * hunit
+  have hz : p + w = 0 := by rw [hkey] at hexp; simpa using hexp
+  linear_combination hz
+
+/-- **The attractor admits no odd-preimage.** `q⁻¹` evaluates to `w⁻¹ = w²` at a
+    primitive cube root, and `w² = -w` would force `1 = 0`. So no `q`-odd element
+    maps to the attractor under the odd branch — it is reached only by even
+    steps.
+
+    This is the structural reason odd-preimages are rare in the backward tree,
+    and it is proved rather than observed. -/
+theorem attractor_no_oddPreimage {R : Type*} [CommRing R] [Nontrivial R] (w : R)
+    (hw : w ^ 2 + w + 1 = 0) : (w ^ 2 : R) ≠ -w := by
+  intro h
+  have : (1 : R) = 0 := by linear_combination hw - h
+  exact one_ne_zero this
+
 end QOU.AppendixSurreals.CollatzBlockDescent
