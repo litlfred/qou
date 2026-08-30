@@ -59,5 +59,21 @@ This is a **scope-(b) exclusion**, and the invariant is the factorisation above:
 
 No claim of LP-instability is made, and none is available: the condition as stated is satisfied. The downstream statement that $\{q\text{-Toffoli}, H\}$ generates universal reversible computation on the Reeb bundles inherits that opening.
 
+**Every sign and zero claim above is Lean-proved.** Nothing in this arc rests on evaluation at a single anchor:
+
+| claim | theorem (`QOU.Information.*`) |
+|---|---|
+| $P_{7,7} > 0$ on $q > 0$, no positive root | `toffoliDiagonal_pos` |
+| $P_{6,6} > 0$ on $q > 0$ | `toffoliP66_pos` |
+| $P_{7,6}$'s only positive zero is $q = 1$ | `toffoliFlip_eq_zero_iff` |
+| $P_{7,6} < 0$ on $q > 1$, the substrate side | `toffoliFlip_neg_of_one_lt` |
+| $P_{7,6} > 0$ on $0 < q < 1$ | `toffoliFlip_pos_of_lt_one` |
+| $P_{6,7} + P_{7,6} = q(q-1)^2(q+1)^2/2(q^2+1)$ | `toffoli_antisymmetry_defect` |
+| the flip channel is **not** antisymmetric | `toffoli_not_antisymmetric` |
+| $W_{\mathrm{std}} > 0$ and $P_{7,7}W_{\mathrm{std}} > 0$ | `wStd_pos`, `toffoliDiagonal_mul_wStd_pos` |
+| $\mathrm{sign}\,P_{7,6} = -\mathrm{sign}\,\hbar_\times$ | `toffoliFlip_mul_coneCoord_nonpos` |
+
+All sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
+
 **Substrate stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).
