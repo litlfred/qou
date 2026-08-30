@@ -1,11 +1,11 @@
 ---
 # qou-0y6h
 title: 'B3: invariant Gram bilinear form on cell modules; Schur element = hook/content product (reuse WenzlSchurElement.schurElement); det(Gram)=∏ Schur (Geck-Pfeiffer)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-29T18:17:28Z
+updated_at: 2026-08-30T07:56:22Z
 ---
 
 ## 2026-08-29 — this is closer than the standing plan implies (from qou-0ubf)
