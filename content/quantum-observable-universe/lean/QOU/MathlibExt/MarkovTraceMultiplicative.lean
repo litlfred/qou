@@ -102,10 +102,16 @@ theorem markovTrace_juxtapose_one {A : Matrix m m R}
   rw [markovTrace_juxtapose h, Matrix.trace_one]
   simp
 
-/-! ## Extensivity: `n` disjoint components multiply -/
+/-! ## The two-fold case
 
-/-- **A self-juxtaposed block multiplies its trace.** The `k`-fold disjoint union of one component
-has trace `(tr A)^k` — stated for the two-fold case plus induction below. -/
+(Retitled, bean `qou-bsfg`: this section read *"Extensivity: `n` disjoint components multiply"* and
+its lemma cited an induction that was never written. The `n`-fold statement now lives in
+`QOU.Mass.ClosureNormalisationDefect.closureNorm_assemble` / `freeEnergy_closureNorm_assemble`,
+where it also carries the closure-normalisation deficit `δ^{A−1}` that the bare matrix identity
+does not see.) -/
+
+/-- **A self-juxtaposed block squares its trace.** Two-fold only; for `A` components see
+`QOU.Mass.ClosureNormalisationDefect.closureNorm_assemble`. -/
 theorem trace_kron_self (A : Matrix m m R) :
     (A ⊗ₖ A).trace = A.trace ^ 2 := by
   rw [trace_kron]; ring
