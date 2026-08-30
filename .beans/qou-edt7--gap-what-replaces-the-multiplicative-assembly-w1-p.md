@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T12:33:58Z
+updated_at: 2026-08-30T12:43:32Z
 parent: qou-mhj9
 ---
 
@@ -613,3 +613,33 @@ cause (near-unitary 3S1, a_t = 5.42 fm against a ~1.4 fm range; unbound 1S0
 virtual state), so it is a sharper question than 'produce b3'.
 
 The identity is trivial and is NOT a result; its value is the relocation.
+
+## Near-unitary two-body channel — asked and answered (2026-08-30, PR #6197)
+
+**Question:** does the framework produce a near-unitary two-body channel — the
+mechanism that would explain the deuteron deficit the previous commit relocated
+b3 onto?
+
+**STRUCTURE: yes, and not by analogy.** The Hecke relation sigma^2 = h*sigma + 1
+has eigenvalues q and -1/q, split by h = q - 1/q = 0.2090602988 at q0. h -> 0 as
+q -> 1, so **q = 1 is the framework's degenerate point** — the structural
+analogue of the 3S1/1S0 near-degeneracy that makes the physical two-nucleon
+system near-unitary. Symmetric and antisymmetric channels; one splitting
+parameter.
+
+**NEARNESS: no, and the route is closed by RULE, not by physics.** q0 is a CAL-2
+calibration input. Deriving q0 from the substrate is FOREVER GATED (owner ruling
+2026-08-02, bean qou-eic1). A nearness derivation would have to answer 'why is q0
+close to 1', which is precisely the forbidden question. **The deuteron-deficit
+route therefore terminates at the q0 gate rather than at a wall in the
+mathematics.**
+
+**A near-match deliberately NOT reported as evidence.** h = 0.2090603 sits 1.93%
+from the 3H deficit fraction 0.2131739. That fraction is convention-dependent
+over [0.1760783, 0.2131739] — 21.07% wide — and 3 of 8 framework small parameters
+land inside it (h, 1 - 1/q^2, 2*hbar_q). Three of eight is not discrimination.
+Recorded in the witness so a later agent does not rediscover it and read it as a
+hit.
+
+Probe: computations/probes/framework_near_unitary_channel_probe.py (mpmath 65
+dps, no float64, 2/2). Commit 755965d10d.
