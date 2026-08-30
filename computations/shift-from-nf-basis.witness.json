@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-24T10:56:49.504649+00:00",
-  "commitSha": "fa94034954eea81399e33561c6242180c688c208",
+  "computedAt": "2026-08-30T07:12:01.053865+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "shift_proton_h3_finite",
-      "computed": 18,
-      "expected": 18,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "canonical Markov trace via NF basis"
     },
     {
       "name": "shift_neutron_h3_finite",
-      "computed": 14,
-      "expected": 14,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "canonical Markov trace via NF basis"
     },
@@ -39,8 +39,8 @@
   "durationMs": 26,
   "computation": "shift-from-nf-basis",
   "scriptFile": "shift_from_nf_basis.py",
-  "scriptHash": "c9d174b05bbc",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptHash": "f7cb5afc4a58",
+  "scriptCommitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

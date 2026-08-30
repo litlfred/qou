@@ -114,6 +114,22 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
 
 -- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
+-- ── NAME COLLISION — this file is the one a content block resolves to ──
+--
+-- `QOU.Interactions.QIntegerMassFormula` is declared twice. The other is
+-- `lean/QOU/Interactions/QIntegerMassFormula.lean`, which IS compiled by lake
+-- and has zero consumers there; this file is NOT compiled, and is what
+-- `mass-theory/q-integer-mass-formula.ts` resolves to, siblings being resolved
+-- first.
+--
+-- They differ in the field carrying the conjecture: this one states `fits_AME`
+-- directly and supplies no instance, so its conditional is genuinely
+-- conditional. The compiled one forwards `fits_AME` to `IsAMEValue.fits_bound`
+-- and carries a `canonical` (demoted to a `def` on 2026-08-28).
+--
+-- So `#print axioms` and `lake build` see the other file; the manuscript sees
+-- this one. Bean `qou-ltal`.
+
 /-- **Conjecture class.** An instance asserts the existence of:
     (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
         {2, 8, 20, 28, 50, 82, 126},

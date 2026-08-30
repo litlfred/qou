@@ -1,17 +1,9 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-19T14:51:25.036689+00:00",
-  "commitSha": "4d32aec60d92f77e4173909a108af1e49ef3522d",
+  "computedAt": "2026-08-30T07:06:02.058590+00:00",
+  "commitSha": "d5f8f18be541088c161657752eec3b52b658706b",
   "assertions": [
-    {
-      "name": "alpha_required_is_convention_independent_by_construction",
-      "computed": "1",
-      "expected": "1",
-      "passed": true,
-      "tolerance": 0,
-      "source": "b = sqrt(d1*d2+1) with d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1)); u = b*hbar^2; Q_A = m_e|q^2-2q-1|(q+1)/(2q^3). None reads z, so cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) is the same target in both frames — which is what makes the C/D comparison fair rather than a comparison of two different targets."
-    },
     {
       "name": "D_frame_phase_residual_is_COMPARABLE_to_C_not_orders_worse",
       "computed": "1",
@@ -27,22 +19,14 @@
       "passed": true,
       "tolerance": 0,
       "source": "cos(alpha_eff) differs C->D by 0.0006011538 relative; divided by u^3 that is 972.94833, against an actual |c_3(D)-c_3(C)| = 972.36255 — agreement to 0.06024 %. So c_3 = -974 is the ladder's own 1/u^3 = 1.6e6 amplifier acting on a 0.06 % cos difference, not evidence that D breaks the physics."
-    },
-    {
-      "name": "RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2",
-      "computed": "0",
-      "expected": "0",
-      "passed": true,
-      "tolerance": 0,
-      "source": "RETRACTED 2026-08-18. This asserted that both frames leave ~0.1 rad for c_3 because both gaps exceed 0.01. The gaps were measured against the PRINCIPAL arccos branch only, but cos is EVEN — the C phase sits on the NEGATIVE branch, with a true residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce CODATA at N=2 to that residual, which under 1/u^3 amplification is exactly c_3 = -2.069. Kept as a recorded retraction rather than deleted, so the corpus shows the correction. Superseded by qbeta_eigenphase_branch_and_barodd_projection_probe.py."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-alpha-required-c-vs-d",
   "scriptFile": "qbeta_alpha_required_c_vs_d_probe.py",
-  "scriptHash": "7d1f1541a999",
-  "scriptCommitSha": "ed7d0f12365a729e764922cc305f9cd15ef5c8bb",
+  "scriptHash": "52df1a4b26ec",
+  "scriptCommitSha": "42dc46ef5f2ccbad3d4d8c01561f8f884dc12e62",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,10 +37,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py"
   },
   "description": "Bean qou-cds1. Scores both Markov conventions against the phase the N=2 Q_beta ladder actually requires. alpha_required is convention-INDEPENDENT because b and u are built from the Hoefsmit couplings (d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1))) and not from z — note d1 is numerically identical to z_D while being a different object, a coincidence this probe explicitly does not read as 'the Gram already uses D'. So the phase is the only convention-dependent input to the N=1 rung, and one fixed target scores both frames at both anchors. Records the residual each frame's asserted phase leaves for the c_3 rung to absorb, and that residual's cross-anchor drift. DERIVES NOTHING: proposes no phase, wires no value, settles no convention — alpha is asserted in both frames (probe_q_beta_operator_valued_N3.py:70) and derived in neither, which is precisely what cds1 is open on.",
   "data": {
@@ -84,7 +75,18 @@
     ],
     "gap_ratio_D_over_C_proton": "0.895326123426269708771329795592810272806344013721732600598343",
     "gap_C_cross_anchor_drift": "0.000000525890794084247695625023405071904364133651421500605135000000",
-    "gap_D_cross_anchor_drift": "0.000000528640726034051648370962986738537327587281373537053303000000"
+    "gap_D_cross_anchor_drift": "0.000000528640726034051648370962986738537327587281373537053303000000",
+    "alpha_required_is_convention_independent_by_construction": {
+      "why": "b = sqrt(d1*d2+1) with d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1)); u = b*hbar^2; Q_A = m_e|q^2-2q-1|(q+1)/(2q^3). None reads z, so cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) is the same target in both frames — which is what makes the C/D comparison fair rather than a comparison of two different targets",
+      "enforced_by": "substrate() takes q only; the convention enters through z, which it never reads",
+      "has_independent_expected_value": false
+    },
+    "RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2": {
+      "retracted_on": "2026-08-18",
+      "what_it_claimed": "both frames leave ~0.1 rad for c_3 because both gaps exceed 0.01",
+      "why_it_was_wrong": "the gaps were measured against the PRINCIPAL arccos branch only, but cos is EVEN — the C phase sits on the NEGATIVE branch, with a true residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce CODATA at N=2 to that residual, which under 1/u^3 amplification is exactly c_3 = -2.069",
+      "superseded_by": "qbeta_eigenphase_branch_and_barodd_projection_probe.py"
+    }
   },
   "q0Anchor": "ambiguous"
 }

@@ -1,32 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-24T21:03:13.392904+00:00",
-  "commitSha": "0018c3389172c5493dcc5a73462a69b340ffb2b5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T07:03:44.302425+00:00",
+  "commitSha": "dc6f42fadc0d74d77fd5a9a6180657f41b42e3ae",
   "assertions": [
     {
       "name": "gate_data_recorded_honestly",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 3,
+      "expected": 3,
       "passed": true,
-      "tolerance": "0.5",
-      "source": "held-out/conjugation/constancy gate values recorded; failure is the diagnostic, not papered over"
-    },
-    {
-      "name": "resonance_cause_localized",
-      "computed": 1.0,
-      "expected": 1.0,
-      "passed": true,
-      "tolerance": "0.5",
-      "source": "x_tilde = 1 exactly at the substrate — l-tower degeneracy explains the finite-rank failure; tilt counter-test recorded"
+      "tolerance": 0,
+      "source": "held-out/conjugation/constancy gate verdicts all recorded; failure is the diagnostic, not papered over, so this counts them rather than requiring them to pass"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-phiodd-engine-reextraction",
   "scriptFile": "qbeta_g3_5two_phiodd_engine_reextraction.py",
-  "scriptHash": "fb71776c7be5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6e7a963afae1",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_phiodd_engine_reextraction.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_phiodd_engine_reextraction.py"
   },
   "description": "W2 part 3: phi_odd re-extraction with the certified engine 3-loop transseries (superseding the flawed (238) transcription), rank-3 solve closing the sigma1 leak, and a sector-constancy sweep as sheet-certification and error bar.",
   "contentBlock": "conj:im-q-physical-role",
@@ -117,6 +117,15 @@
       "tilt_attempt": "theta = 0.1..0.35 suppresses the tower but explodes the saddle magnitude hierarchy (|a2| ~ 1e20, held-out to 1e12)",
       "gates_pass": false
     },
-    "verdict": "HONEST DIAGNOSTIC — THE SUBSTRATE IS A TRANSSERIES-RESONANT POINT AND FINITE-RANK EXTRACTION IS STRUCTURALLY INADEQUATE THERE: with the corrected engine 3-loop models the rank-3 solve FAILS its own gates (held-out False, conjugation dev 5.03e+3, arg-constancy spreads q/bar 4.14/5.47), and the cause is LOCALIZED, not mysterious: on the imaginary-tau ray |x_tilde| = 1 identically (Re(u/tau) = 0), so the GGM (13)-(14) l-tower Phi_sigma*qtilde^k*xtilde^l is NON-DECAYING — and at the substrate point itself x_tilde = e^(-4 pi i) = 1 EXACTLY, so the entire l-tower DEGENERATES onto the bare saddle exponents (an x_tilde-RESONANCE locus, the same coincidence lattice as the 2c-2 0/0 node and the W1 pole-family swap). A 3-term model cannot represent a degenerate tower: the drifting pseudo-amplitudes (|a| varying ~3.5x, args rotating) are the tower aliasing into finite rank. Tilting the ray to suppress the tower (theta = 0.1..0.35) instead explodes the saddle magnitude hierarchy (|a2| ~ 1e20, held-out up to 1e12) — recorded. CONSEQUENCES (scope-(a), method-level): (1) the #3987 phi_odd = -0.004145 was extracted AT the resonance with a 2-term model + the superseded (238) transcription — it cannot be a derived sigma-pair amplitude phase; (2) a derived on-ray sigma-pair phi_odd requires resumming the degenerate l-tower (the deformed M-dictionary lateral machinery), not better finite-rank numerics; (3) the near-term derived-grade route to the 5_2 bar-odd datum is the MASBAUM CYCLOTOMIC FACE (exact Laurent-polynomial C_(5_2,n) already landed) rather than state-integral amplitudes at the resonant point. No phi_odd value is claimed. No fit; no c_k wired."
+    "verdict": "HONEST DIAGNOSTIC — THE SUBSTRATE IS A TRANSSERIES-RESONANT POINT AND FINITE-RANK EXTRACTION IS STRUCTURALLY INADEQUATE THERE: with the corrected engine 3-loop models the rank-3 solve FAILS its own gates (held-out False, conjugation dev 5.03e+3, arg-constancy spreads q/bar 4.14/5.47), and the cause is LOCALIZED, not mysterious: on the imaginary-tau ray |x_tilde| = 1 identically (Re(u/tau) = 0), so the GGM (13)-(14) l-tower Phi_sigma*qtilde^k*xtilde^l is NON-DECAYING — and at the substrate point itself x_tilde = e^(-4 pi i) = 1 EXACTLY, so the entire l-tower DEGENERATES onto the bare saddle exponents (an x_tilde-RESONANCE locus, the same coincidence lattice as the 2c-2 0/0 node and the W1 pole-family swap). A 3-term model cannot represent a degenerate tower: the drifting pseudo-amplitudes (|a| varying ~3.5x, args rotating) are the tower aliasing into finite rank. Tilting the ray to suppress the tower (theta = 0.1..0.35) instead explodes the saddle magnitude hierarchy (|a2| ~ 1e20, held-out up to 1e12) — recorded. CONSEQUENCES (scope-(a), method-level): (1) the #3987 phi_odd = -0.004145 was extracted AT the resonance with a 2-term model + the superseded (238) transcription — it cannot be a derived sigma-pair amplitude phase; (2) a derived on-ray sigma-pair phi_odd requires resumming the degenerate l-tower (the deformed M-dictionary lateral machinery), not better finite-rank numerics; (3) the near-term derived-grade route to the 5_2 bar-odd datum is the MASBAUM CYCLOTOMIC FACE (exact Laurent-polynomial C_(5_2,n) already landed) rather than state-integral amplitudes at the resonant point. No phi_odd value is claimed. No fit; no c_k wired.",
+    "gate_verdicts": {
+      "held_out": false,
+      "conjugation": false,
+      "constancy": false
+    },
+    "gates_pass_covers": [
+      "held_out",
+      "conjugation"
+    ]
   }
 }

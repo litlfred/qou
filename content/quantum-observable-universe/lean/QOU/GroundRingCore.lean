@@ -61,6 +61,29 @@ noncomputable def q_param : R_q := LaurentPolynomial.T 1
     defining relation. -/
 noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
+/-- **`R_q` is not the zero ring.**
+
+    Free by instance search — `LaurentPolynomial ℤ` is nontrivial — but named
+    here so it can be cited rather than re-derived, and so the fact is
+    greppable.
+
+    Why it is worth a name. A statement proved over an arbitrary `CommRing`
+    often needs `[Nontrivial R]` to have content: in the zero ring `1 = 0`, so
+    `x ≠ 0` is unsatisfiable, every module is zero, and every short exact
+    sequence splits vacuously. The zero ring is the ring-level analogue of the
+    trivial instances the vacuity audit exists to catch, and a theorem that
+    holds only there holds for the same reason `PUnit` satisfies a class with a
+    propositional field.
+
+    Downstream, that hypothesis does **not** need adding to the substrate
+    classes. Anything stated over `R_q` gets it from here, which is why
+    `QOU/Mathlib/HeckeExtOne.lean` can carry `[Nontrivial R]` in its general
+    form and drop it entirely in `groundRing_not_splits_at_neg_one`. -/
+instance : Nontrivial R_q := inferInstance
+
+/-- `1 ≠ 0` in the ground ring, in the form a proof usually wants it. -/
+theorem one_ne_zero_R_q : (1 : R_q) ≠ 0 := one_ne_zero
+
 /-- `q · q⁻¹ = 1`. The relation that makes `q_inv_param` an inverse rather
     than an unrelated element — without it, the pair says nothing. -/
 theorem q_param_mul_inv : q_param * q_inv_param = 1 := by

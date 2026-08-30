@@ -159,11 +159,20 @@ def main() -> int:
     # ── Pairwise PSLQ on sub_residual ──
     print(f"\n[Pairwise PSLQ on sub_residual at maxcoeff 10⁶]")
     matches = []
+    # Coverage counters. The loop can drop an element two ways — the
+    # near-zero guard below, and the bare `except: pass` that follows — so
+    # "PSLQ over N elements" is not established by reaching the end of the
+    # loop (bean `qou-26f2`). Counted, so the assertion can say it.
+    _skipped_zero: list[str] = []
+    _errored: list[str] = []
+    _ran: list[str] = []
     for name, val in basis.items():
         if abs(val) < mp.mpf("1e-30"):
+            _skipped_zero.append(name)
             continue
         try:
             rel = mp.pslq([sub_residual, val], tol=mp.mpf("1e-22"), maxcoeff=1000000)
+            _ran.append(name)
             if rel and rel[0] != 0:
                 ratio = -mp.mpf(rel[1]) / mp.mpf(rel[0])
                 check = sub_residual - ratio * val
@@ -172,7 +181,7 @@ def main() -> int:
                     print(f"  ⭐ sub_residual ≈ ({rel[1]}/{rel[0]}) · {name} "
                           f"(resid {mp.nstr(abs(check), 8)})")
         except Exception:
-            pass
+            _errored.append(name)
     if not matches:
         print(f"  No tight pairwise integer relations.")
 
@@ -231,12 +240,30 @@ def main() -> int:
     w.add_data("matches", len(matches))
     w.add_data("verdict", verdict)
 
+    # Was `computed=True, expected=True` (bean `qou-26f2`) — a literal claiming
+    # the PSLQ sweep completed, which reaching this line does not establish:
+    # the loop drops an element on the near-zero guard and swallows any
+    # exception with a bare `except: pass`, so a run where PSLQ threw on every
+    # single element would have arrived here and reported the same `True`.
+    #
+    # Coverage is the falsifiable content of "over N elements": every basis
+    # element must have been either deliberately skipped as ~0 or actually
+    # submitted to PSLQ. A swallowed exception now fails this instead of
+    # quietly shrinking the sweep.
+    w.add_data("pslq_coverage", {
+        "basis_size": len(basis),
+        "ran": len(_ran),
+        "skipped_near_zero": _skipped_zero,
+        "errored": _errored,
+    })
     w.add_assertion(
         name="exotic_basis_pslq_completed",
-        computed=True,
-        expected=True,
+        computed=len(_ran) + len(_skipped_zero),
+        expected=len(basis),
         tolerance=0,
-        source=f"Exotic-basis PSLQ over {len(basis)} elements at 120 dps.",
+        source=f"Exotic-basis PSLQ at 120 dps: {len(_ran)} of {len(basis)} "
+               f"elements submitted, {len(_skipped_zero)} skipped as ~0, "
+               f"{len(_errored)} errored",
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

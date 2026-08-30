@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:47.594402+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T07:11:50.550206+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "standard_channel_scan_completed",
-      "computed": 13,
-      "expected": 13,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "source": "Scanned 13 candidates at 80 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "mn-standard-channel-correction",
   "scriptFile": "mn_standard_channel_correction.py",
-  "scriptHash": "968a251601ea",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "cc98681eda19",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mn_standard_channel_correction.py"
+    ],
+    "reproduce": "python3 -u computations/mn_standard_channel_correction.py"
   },
   "description": "Follow-up to PR #1654 Item A insight: tests candidate forms for the standard-channel (P_(2,1) = 4/6) correction needed to close m_n flavor-split 0.10% residual.",
   "parameters": {
@@ -39,10 +47,10 @@
     "mp_dps_runtime": "80"
   },
   "data": {
-    "delta_extra": "0.000001759130890765183368726604",
-    "standard_piece_target": "0.000002638696336147775053089905",
+    "delta_extra": "0.000001759130890741501981302377",
+    "standard_piece_target": "0.000002638696336112252971953565",
     "best_candidate": "(b) (α_em/π) · h⁴ / 2",
-    "best_rel_pct": "-15.9220112603",
+    "best_rel_pct": "-15.9220112592",
     "verdict": "NULL — no natural categorical candidate matches the standard-channel piece needed (2.6387e-6). May need q-deformed Plancherel or non-Hecke operator."
   },
   "q0Anchor": "proton",

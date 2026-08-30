@@ -51,13 +51,32 @@ structure SDPState (_n : ℕ) (_q : ℝ) where
 def canonicalState (n : ℕ) (q : ℝ) : SDPState n q :=
   { strands := n, qVal := q }
 
-/-- The "is in the closed span of tensor products of canonical
-    states indexed by a decomposition" predicate.
-    Concrete model: `False` (no canonical state is decomposable in
-    the trivial model — every `n ≥ 1` is therefore algebraically
-    prime).  The genuine span predicate is the upgrade target. -/
-def InTensorSpan (_n : ℕ) (_q : ℝ)
-    (_psi : SDPState _n _q) (_decomp : List ℕ) : Prop := False
+/-- The "is in the closed span of tensor products of canonical states
+    indexed by a decomposition" predicate.  **`opaque` since
+    2026-08-24**; the genuine span predicate is still the upgrade
+    target.
+
+    It was `def … : Prop := False`, ignoring all four of its arguments.
+    Its own docstring drew the consequence — *"every `n ≥ 1` is
+    therefore algebraically prime"* — and stopped there.  That
+    consequence is not a harmless simplification; it is the negation of
+    what this file exists to state.  `IsAlgebraicallyPrime n q` unfolded
+    to `n ≥ 1 ∧ ∀ decomp, … → ¬False`, i.e. definitionally to `n ≥ 1`.
+    So `IsKnownMagic n q` was provable in one line for **every** `n ≥ 1`,
+    magic or not, and `IsKnownNotMagic n q` was *unprovable* for every
+    `n ≥ 1` — while `MagicEqualsEmpirical` asserts primality holds
+    exactly on `{2, 8, 20, 28, 50, 82, 126}` and
+    `magicEqualsEmpirical_of_perNAxioms` needs both halves.  The model
+    did not under-specify the conjecture; it contradicted it.
+
+    Sealing the body keeps the type and every structural result that
+    quantifies over the predicate (`IsAlgebraicallyPrime`,
+    `not_prime_of_inTensorSpan`, `two_isAlgebraicallyPrime`) while
+    removing the ability to discharge a primality claim by unfolding.
+    Same remedy, and the same reason, as the three `opaque` surreal
+    placeholders in `QOU/AppendixSurreals/Conjectures.lean`. -/
+opaque InTensorSpan (_n : ℕ) (_q : ℝ)
+    (_psi : SDPState _n _q) (_decomp : List ℕ) : Prop
 
 /-! ## §2  Decomposition predicates -/
 
@@ -317,21 +336,63 @@ theorem two_isAlgebraicallyPrime
   rw [h_eq] at h_in
   exact N.not_in_oneOne_span h_in
 
-/-- **Instance.** `NonTrivialBindingAtTwo` discharges the n = 2 case
-    of the per-n axiom collection for `MagicEqualsEmpirical`. -/
+/-- **Conditional instance.** `NonTrivialBindingAtTwo q` discharges the
+    n = 2 case of the per-n axiom collection for `MagicEqualsEmpirical`.
+
+    This one stays an `instance`, deliberately.  It is the §3b-cond
+    pattern working as intended: the `[NonTrivialBindingAtTwo q]` binder
+    *is* the dependency edge, and `is_prime` is a real derivation —
+    `two_isAlgebraicallyPrime` combines `decomp_two_eq_oneOne` (proved
+    arithmetic) with the class field.  It looked vacuous only because
+    §11 used to supply `NonTrivialBindingAtTwo q` globally, so
+    resolution chained through and answered `IsKnownMagic 2 q`
+    unconditionally.  With §11 gone the chain has no free end. -/
 -- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
 instance two_isKnownMagic_of_nonTrivialBinding
     (q : ℝ) [NonTrivialBindingAtTwo q] :
     IsKnownMagic 2 q where
   is_prime := two_isAlgebraicallyPrime q
 
-/-! ## §11  Trivial-model instance — `InTensorSpan ≡ False` -/
+/-! ## §11  The n = 2 binding axiom has no model — and that is the point
 
+Until 2026-08-24 this section read:
+
+```lean
 /-- **Trivial-model instance.**  On the concrete `InTensorSpan ≡ False`
-    model, `not_in_oneOne_span` reduces to `¬ False`, which is
-    `True`.  Provides a Lean-verified discharge of the n = 2 axiom
-    on every substrate `q`. -/
+    model, `not_in_oneOne_span` reduces to `¬ False`, which is `True`.
+    Provides a Lean-verified discharge of the n = 2 axiom on every
+    substrate `q`. -/
 instance trivialBindingAtTwo (q : ℝ) : NonTrivialBindingAtTwo q where
   not_in_oneOne_span := not_false
+```
+
+The description was accurate and the instance was worthless: `¬ False`
+is not evidence that `ψ_2(q)` fails to decompose, it is evidence that
+`InTensorSpan` had been defined to hold of nothing.  Being an
+`instance`, it discharged `[NonTrivialBindingAtTwo q]` at every real
+`q`, and `two_isKnownMagic_of_nonTrivialBinding` chained off it, so
+`IsKnownMagic 2 q` — the *first non-trivial* magic shell, the one the
+whole per-n factorisation is aimed at — resolved for free.
+
+With `InTensorSpan` now `opaque` the witness no longer typechecks, and
+**no instance is provided.**  That is the honest open state (AGENTS.md
+§3b-tax: "an unproved primary is honestly represented by a
+content-bearing class with no instance; do not fabricate a trivial
+instance to 'close' it").  Demoting the instance to a `def` would not
+have been enough on its own: with `InTensorSpan ≡ False` still
+unfolding, anyone could rebuild the witness inline without naming
+anything, so the root had to go first and the instance then went with
+it.
+
+Nothing else in this file depended on it — `one_isKnownMagic` and
+`zero_isKnownNotMagic` are real proofs (vacuous quantification at
+`n = 1`; the `n ≥ 1` clause at `n = 0`) that never consult
+`InTensorSpan`'s body, and this module has no importers.
+
+What is now genuinely open, and was previously masked: a model of
+`InTensorSpan` in which `IsKnownNotMagic n q` is provable for
+`n ∉ empiricalMagicLadder`.  `magicEqualsEmpirical_of_perNAxioms` needs
+that half too, and the `≡ False` model made it unprovable for every
+`n ≥ 1`. -/
 
 end QOU.Interactions.AlgebraicPrimality

@@ -18,7 +18,7 @@
   records the exact value one file over, in `Knot/FigureEightVolume.lean`:
 
       VOL_4_1        := 2 · Cl₂(π/3)                        -- exact
-      VOL_4_1_decimal := 2.029883212819307250011597804990   -- the approximation carrier
+      VOL_4_1_decimal := 2.029883212819307250042405108549   -- the approximation carrier
 
   and `MostowRigidity.figureEight.volume := 2.02988321281930`.  Those differ at the
   16th significant digit, so `volumeInvariant FigureEight ≠ VOL_4_1`.  Instantiating the

@@ -379,23 +379,28 @@ def a_zeros(qt, n_zeros, tol_exp=40):
 
 def block_u1_sw_closed_form(wb: WitnessBuilder):
     # (a) symbolic qd, symbolic qtilde, depth 4
+    _ok: list[bool] = []
     qts = sp.symbols("qts", positive=True)
     ms = [qts ** (k * (k - 1) // 2) for k in range(2 * 4 + 3)]
     al, be = qd_jacobi(ms, 4)
     for n in range(len(al)):
-        assert sp.simplify(al[n] - sw_alpha(qts, n)) == 0, ("alpha", n)
+        _ok.append(bool(sp.simplify(al[n] - sw_alpha(qts, n)) == 0))
+        assert _ok[-1], ('alpha', n)
     for n in range(1, len(be) + 1):
-        assert sp.simplify(be[n - 1] - sw_beta(qts, n)) == 0, ("beta", n)
+        _ok.append(bool(sp.simplify(be[n - 1] - sw_beta(qts, n)) == 0))
+        assert _ok[-1], ('beta', n)
     # (b) exact-Q qd at r = 6/5, depth 20
     r = Fr(6, 5)
     qt = r * r
     ms = [r ** (k * (k - 1)) for k in range(2 * 20 + 3)]
     alq, beq = qd_jacobi(ms, 20)
-    assert all(alq[n] == sw_alpha(qt, n) for n in range(len(alq)))
-    assert all(beq[n - 1] == sw_beta(qt, n)
-               for n in range(1, len(beq) + 1))
+    _ok.append(bool(all((alq[n] == sw_alpha(qt, n) for n in range(len(alq))))))
+    assert _ok[-1]
+    _ok.append(bool(all((beq[n - 1] == sw_beta(qt, n) for n in range(1, len(beq) + 1)))))
+    assert _ok[-1]
     # incremental balanced-moment builder vs reference (exact)
-    assert balanced_moments(r, 20) == balanced_moments_ref(r, 20)
+    _ok.append(bool(balanced_moments(r, 20) == balanced_moments_ref(r, 20)))
+    assert _ok[-1]
     # (c) SW scale map S (exact symbolic): nu_k := qt^{-k} G_{k+1}/G_1
     # = G_k, i.e. the pushforward of x dmu(x)/G_1 under s -> s/qtilde
     # represents G again — the solution-set automorphism shifting
@@ -403,9 +408,10 @@ def block_u1_sw_closed_form(wb: WitnessBuilder):
     ks = sp.symbols("ks", integer=True, nonnegative=True)
     Gk = qts ** (ks * (ks - 1) / 2)
     Gk1 = qts ** ((ks + 1) * ks / 2)
-    assert sp.simplify(qts ** (-ks) * Gk1 / (qts ** 0) - Gk) == 0
+    _ok.append(bool(sp.simplify(qts ** (-ks) * Gk1 / qts ** 0 - Gk) == 0))
+    assert _ok[-1]
     wb.add_assertion(
-        "u1_sw_jacobi_closed_form_exact", computed="0", expected="0",
+        "u1_sw_jacobi_closed_form_exact", computed=all(_ok), expected=True,
         tolerance=0,
         source="pure-SW family G_k = qtilde^{k(k-1)/2}: monic Jacobi "
                "data alpha_n = qtilde^{2n-1}(1+qtilde) - qtilde^{n-1}, "
@@ -424,6 +430,7 @@ def block_u1_sw_closed_form(wb: WitnessBuilder):
 # ---------------------------------------------------------------- U2
 
 def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
+    _ok: list[bool] = []
     mp.dps = 220
     qt = mpf(36) / 25
     pt = 1 / qt
@@ -445,7 +452,8 @@ def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
         lhs = a_coef[n] - a_coef[n] * wsym ** n
         if n >= 1:
             lhs = lhs + a_coef[n - 1] * wsym ** (2 * n - 1)
-        assert sp.simplify(lhs) == 0, ("qdiff", n)
+        _ok.append(bool(sp.simplify(lhs) == 0))
+        assert _ok[-1], ('qdiff', n)
     # (b) D(z) = c0 z A_pt(z): orthonormal series vs Ramanujan function
     Dn = [mpf(1)]
     for b in bef:
@@ -473,7 +481,8 @@ def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
                 "41")]
     ratios = [Dfun(z) / (z * a_ramanujan(pt, z, 80)[0]) for z in samples]
     spread = max(abs(rr / c0 - 1) for rr in ratios)
-    assert spread < mpf("1e-18"), spread
+    _ok.append(bool(spread < mpf('1e-18')))
+    assert _ok[-1], spread
     prog("U2", f"D(z) = c0 z A_pt(z): ratio constancy {mp.nstr(spread, 3)}"
                f" over {len(samples)} sign-spread samples; c0 = "
                f"{mp.nstr(c0, 10)}")
@@ -486,13 +495,16 @@ def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
     N = 56
     tsh = +(P0[N] / P0[N - 1])
     lamK, wK = sym_trunc_eig(alf120, bef120, N, tshift=tsh)
-    assert abs(lamK[0]) < mpf("1e-80")
+    _ok.append(bool(abs(lamK[0]) < mpf('1e-80')))
+    assert _ok[-1]
     lamF, _ = sym_trunc_eig(alf120, bef120, N)
     zeta = a_zeros(qt, 12)
     relK = max(abs(lamK[j + 1] / zeta[j] - 1) for j in range(8))
     relF = max(abs(lamF[j] * qt / zeta[j] - 1) for j in range(8))
-    assert relK < mpf("1e-6"), relK
-    assert relF < mpf("1e-6"), relF
+    _ok.append(bool(relK < mpf('1e-6')))
+    assert _ok[-1], relK
+    _ok.append(bool(relF < mpf('1e-6')))
+    assert _ok[-1], relF
     # (d) class: signed distance of log_qt zeta_n to nearest integer
     # (raise dps for the deep zeros: max series term ~ exp(n^2 L))
     mp.dps = int(float(Lq) * (60 * 60 + 60) / 2.302) + 140
@@ -503,17 +515,21 @@ def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
     # parity: Krein nearest integers ODD (and hence Friedrichs, one
     # qtilde-step down, EVEN) in the asymptotic tail
     par = [int(nearest[i]) % 2 for i in range(20, 60)]
-    assert all(x == 1 for x in par), "Krein tail parity odd"
+    _ok.append(bool(all((x == 1 for x in par))))
+    assert _ok[-1], 'Krein tail parity odd'
     # rate ~ pt and extrapolation to 0
     tail = devs[20:60]
     rats = [tail[i + 1] / tail[i] for i in range(len(tail) - 1)]
     rate_err = max(abs(x - pt) for x in rats[-10:])
-    assert rate_err < mpf("5e-3"), rate_err
+    _ok.append(bool(rate_err < mpf('5e-3')))
+    assert _ok[-1], rate_err
     a2, r2, unc = extrapolate(tail, pt)
-    assert abs(devs[-1]) < mpf("1e-8"), devs[-1]
-    assert abs(a2) < mpf("1e-12"), a2
+    _ok.append(bool(abs(devs[-1]) < mpf('1e-8')))
+    assert _ok[-1], devs[-1]
+    _ok.append(bool(abs(a2) < mpf('1e-12')))
+    assert _ok[-1], a2
     wb.add_assertion(
-        "u2_sw_nevanlinna_d_is_ramanujan_a", computed="0", expected="0",
+        "u2_sw_nevanlinna_d_is_ramanujan_a", computed=all(_ok), expected=True,
         tolerance=1e-18,
         source="r = 6/5 pure SW: (a) the q-difference equation "
                "A_w(z) = A_w(wz) - wz A_w(w^2 z) verified symbolically "
@@ -552,6 +568,7 @@ def block_u2_d_equals_ramanujan(wb: WitnessBuilder):
 
 def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
     # (a) exact transfer factorization m_k = G_k E^k (p;p)_k, k <= 12
+    _ok: list[bool] = []
     qts = sp.symbols("qts", positive=True)
     qsym = qts ** 2
     psym = 1 / qsym
@@ -561,7 +578,8 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
             [(qsym ** j - 1) / (qsym - 1) for j in range(1, k + 1)])
         Gk = qts ** sp.Rational(k * (k - 1), 2)
         poch = sp.prod([(1 - psym ** j) for j in range(1, k + 1)])
-        assert sp.simplify(mk - Gk * Esym ** k * poch) == 0, k
+        _ok.append(bool(sp.simplify(mk - Gk * Esym ** k * poch) == 0))
+        assert _ok[-1], k
     prog("U3", "exact transfer factorization m_k = G_k E^k (p;p)_k "
                "verified (k <= 12)")
     # (b) certified qd at r = 6/5, K = 96
@@ -570,16 +588,19 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
     K = 96
     ms = balanced_moments(r, 2 * K + 2)
     al, be = qd_jacobi(ms, K)
-    assert all(b > 0 for b in be)
+    _ok.append(bool(all((b > 0 for b in be))))
+    assert _ok[-1]
     worst = max(abs(pow00(al, be, n) / ms[n] - 1) for n in range(1, 25))
-    assert worst < mpf("1e-600"), worst
+    _ok.append(bool(worst < mpf('1e-600')))
+    assert _ok[-1], worst
     re_ = Fr(6, 5)
     ale, bee = qd_jacobi(balanced_moments(re_, 2 * 16 + 2), 16)
     xworst = mpf(0)
     for k in range(16):
         ev = mpf(ale[k].numerator) / mpf(ale[k].denominator)
         xworst = max(xworst, abs(al[k] / ev - 1))
-    assert xworst < mpf("1e-700"), xworst
+    _ok.append(bool(xworst < mpf('1e-700')))
+    assert _ok[-1], xworst
     # (c) Jacobi data -> E-scaled SW closed forms at rate pt
     qt = r * r
     pt = 1 / qt
@@ -589,9 +610,11 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
     ra = [al[n] / (E * sw_alpha(qt, n)) - 1 for n in range(K)]
     rb = [be[n - 1] / (E * E * sw_beta(qt, n)) - 1
           for n in range(1, K)]
-    assert abs(ra[40]) < mpf("1e-6") and abs(rb[39]) < mpf("1e-6")
+    _ok.append(bool(abs(ra[40]) < mpf('1e-6') and abs(rb[39]) < mpf('1e-6')))
+    assert _ok[-1]
     rr = [ra[n + 1] / ra[n] for n in range(20, 41)]
-    assert max(abs(x - pt) for x in rr) < mpf("2e-2"), "alpha ratio rate"
+    _ok.append(bool(max((abs(x - pt) for x in rr)) < mpf('2e-2')))
+    assert _ok[-1], 'alpha ratio rate'
     prog("U3", f"balanced Jacobi -> E-scaled SW: |dev(40)| = "
                f"{mp.nstr(abs(ra[40]), 3)}, rate = pt confirmed")
     # (d) K-ladder of Friedrichs classes at r = 6/5
@@ -608,7 +631,8 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
             jmax = j
         else:
             break
-    assert jmax >= 34, jmax
+    _ok.append(bool(jmax >= 34))
+    assert _ok[-1], jmax
     ladder = {}
     for N in (48, 64, 80, 96):
         lamN = lam_ref if N == 96 else sym_trunc_eig(alf, bef, N)[0]
@@ -618,19 +642,23 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
         a1 = aitken_level(devs)
         ladder[N] = (abs(a1[-1]), devs)
     devsq = [ladder[N][0] for N in (48, 64, 80, 96)]
-    assert all(devsq[i + 1] < devsq[i] for i in range(3)), devsq
+    _ok.append(bool(all((devsq[i + 1] < devsq[i] for i in range(3)))))
+    assert _ok[-1], devsq
     devs96 = ladder[96][1]
     rats = [devs96[i + 1] / devs96[i] for i in range(len(devs96) - 1)]
-    assert max(abs(x - pt) for x in rats[-8:]) < mpf("5e-3")
+    _ok.append(bool(max((abs(x - pt) for x in rats[-8:])) < mpf('5e-3')))
+    assert _ok[-1]
     a2, r2, unc = extrapolate(devs96, pt)
-    assert abs(a2) < mpf("1e-8"), a2
+    _ok.append(bool(abs(a2) < mpf('1e-8')))
+    assert _ok[-1], a2
     # (e) Krein classes at N = 96 -> same class
     mp.dps = 800
     P0 = monic_p_at_zero(al, be, K)
     tsh = P0[96] / P0[95]
     mp.dps = 120
     lamKr, wKr = sym_trunc_eig(alf, bef, 96, tshift=+tsh)
-    assert abs(lamKr[0]) < mpf("1e-60")
+    _ok.append(bool(abs(lamKr[0]) < mpf('1e-60')))
+    assert _ok[-1]
     lamKr84, _ = sym_trunc_eig(alf, bef, 84,
                                tshift=+(P0[84] / P0[83]))
     jK = -1
@@ -642,17 +670,18 @@ def block_u3_transfer_and_k_ladder(wb: WitnessBuilder):
     devsK = [signed_dev(mlog(lamKr[j]) / Lq, phi1)
              for j in range(3, jK + 1)]
     a2K, r2K, uncK = extrapolate(devsK, pt)
-    assert abs(a2K) < mpf("1e-6"), a2K
+    _ok.append(bool(abs(a2K) < mpf('1e-6')))
+    assert _ok[-1], a2K
     # (f) mod-2 complementarity relative to the E-scaled lattice
     psiF = [mlog(lam_ref[j] / E) / Lq for j in range(jmax - 5, jmax + 1)]
     psiK = [mlog(lamKr[j] / E) / Lq for j in range(jK - 5, jK + 1)]
     parF = {int(mp.nint(x)) % 2 for x in psiF}
     parK = {int(mp.nint(x)) % 2 for x in psiK}
-    assert len(parF) == 1 and len(parK) == 1 and parF != parK, \
-        (parF, parK)
+    _ok.append(bool(len(parF) == 1 and len(parK) == 1 and (parF != parK)))
+    assert _ok[-1], (parF, parK)
     wb.add_assertion(
-        "u3_transfer_exact_and_k_ladder_promotion", computed="0",
-        expected="0", tolerance=1e-8,
+        "u3_transfer_exact_and_k_ladder_promotion", computed=all(_ok),
+        expected=True, tolerance=1e-8,
         source="TRANSFER, exact moment level: m_k = G_k E^k (p;p)_k "
                "symbolically exact (k <= 12) — the balanced family is "
                "the E-scaled SW family times the geometrically-"
@@ -779,6 +808,7 @@ def rung_study(qstr, K, qd_dps, eig_dps, ctol, sw_leg=True):
 
 
 def block_u4_q_ladder(wb: WitnessBuilder):
+    _ok: list[bool] = []
     results = []
     n_cert = 0
     for tag, qstr, K, qd_dps, eig_dps, ctol, cert, sw in RUNGS:
@@ -790,7 +820,8 @@ def block_u4_q_ladder(wb: WitnessBuilder):
         if certified:
             # hard certification gate for rungs that meet the a-priori
             # per-rung bound with self-consistent uncertainty
-            assert a2 < mpf(cert) and unc < mpf(cert)
+            _ok.append(bool(a2 < mpf(cert) and unc < mpf(cert)))
+            assert _ok[-1]
             n_cert += 1
             res["tier"] = "certified"
         else:
@@ -800,24 +831,27 @@ def block_u4_q_ladder(wb: WitnessBuilder):
             # gates only, set an order of magnitude below the 0.5
             # half-step-discriminator scale (a genuine class
             # MISalignment would sit at ~0.5):
-            assert a2 < mpf("0.05"), (qstr, res["aitken2"])
-            assert abs(res["_raw"]) < mpf("0.2"), (qstr,
-                                                   res["raw_dev_at_jmax"])
+            _ok.append(bool(a2 < mpf('0.05')))
+            assert _ok[-1], (qstr, res['aitken2'])
+            _ok.append(bool(abs(res['_raw']) < mpf('0.2')))
+            assert _ok[-1], (qstr, res['raw_dev_at_jmax'])
             res["tier"] = "measured-preasymptotic"
         res["cert_threshold"] = cert
         if sw:
-            assert abs(res["_a2s"]) < mpf("1e-8"), (qstr,
-                                                    res["sw_aitken2"])
-            assert res["sw_parity"] == [1], qstr
+            _ok.append(bool(abs(res['_a2s']) < mpf('1e-8')))
+            assert _ok[-1], (qstr, res['sw_aitken2'])
+            _ok.append(bool(res['sw_parity'] == [1]))
+            assert _ok[-1], qstr
         prog(tag, f"  -> window j <= {res['jmax']}, dev(phi_1): "
                   f"Aitken^2 {res['aitken2']} (unc {res['unc']}) "
                   f"[{res['tier']}]"
                   + (f", SW-side class-0 Aitken^2 {res['sw_aitken2']}"
                      if sw else ""))
         results.append(res)
-    assert n_cert >= 2, n_cert
+    _ok.append(bool(n_cert >= 2))
+    assert _ok[-1], n_cert
     wb.add_assertion(
-        "u4_q_ladder_tiered_alignment", computed="0", expected="0",
+        "u4_q_ladder_tiered_alignment", computed=all(_ok), expected=True,
         tolerance=1e-4,
         source="q-ladder 1.8 / 1.5 / 1.3 / 1.2 / 1.15 (with 2.0736 in "
                "U3), K = N up to 240, all qd runs certified by moment "
@@ -854,6 +888,7 @@ def block_u4_q_ladder(wb: WitnessBuilder):
 # ---------------------------------------------------------------- U5
 
 def block_u5_pins(wb: WitnessBuilder):
+    _ok: list[bool] = []
     out = {}
     # (a) SW core at the muon pin, truncation-free via A_pt zeros
     mp.dps = 380
@@ -870,9 +905,12 @@ def block_u5_pins(wb: WitnessBuilder):
     rate_err = max(abs(x - pt) for x in rats[-15:])
     a2, r2, unc = extrapolate(devs, pt)
     par = {int(mp.nint(x)) % 2 for x in lg[-10:]}
-    assert par == {1}, par
-    assert rate_err < mpf("2e-2"), rate_err
-    assert abs(a2) < mpf("1e-4"), a2
+    _ok.append(bool(par == {1}))
+    assert _ok[-1], par
+    _ok.append(bool(rate_err < mpf('2e-2')))
+    assert _ok[-1], rate_err
+    _ok.append(bool(abs(a2) < mpf('1e-4')))
+    assert _ok[-1], a2
     spacing = [(lg[i + 1] - lg[i]) for i in range(len(lg) - 6,
                                                  len(lg) - 1)]
     out["muon_sw"] = {
@@ -900,7 +938,8 @@ def block_u5_pins(wb: WitnessBuilder):
     # |d dev| ~ O(dq0 / L^2) = 1.28e-8 / 0.0522^2 ~ 4.7e-6; bound at
     # twice that scale (measured 1.7e-6, comfortably inside; 10^5x
     # below the 0.5 half-step class scale)
-    assert max_pin_diff < mpf("1e-5"), max_pin_diff
+    _ok.append(bool(max_pin_diff < mpf('1e-5')))
+    assert _ok[-1], max_pin_diff
     out["proton_sw_spot"] = {
         "n_zeros": 32,
         "max_raw_dev_diff_vs_muon": mp.nstr(max_pin_diff, 3)}
@@ -911,20 +950,24 @@ def block_u5_pins(wb: WitnessBuilder):
     K = 96
     ms = balanced_moments(r, 2 * K + 2)
     al, be = qd_jacobi(ms, K)
-    assert all(b > 0 for b in be)
+    _ok.append(bool(all((b > 0 for b in be))))
+    assert _ok[-1]
     worst = max(abs(pow00(al, be, n) / ms[n] - 1) for n in range(1, 15))
-    assert worst < mpf("1e-800"), worst
+    _ok.append(bool(worst < mpf('1e-800')))
+    assert _ok[-1], worst
     qtb = r * r
     E = 1 / (1 - 1 / (r ** 4))
     ra = [al[n] / (E * sw_alpha(qtb, n)) - 1 for n in range(K)]
     dev40, dev65, dev90 = abs(ra[40]), abs(ra[65]), abs(ra[90])
-    assert dev90 < dev65 < dev40, "geometric decay of Jacobi deviation"
+    _ok.append(bool(dev90 < dev65 < dev40))
+    assert _ok[-1], 'geometric decay of Jacobi deviation'
     g1 = (dev65 / dev40) ** (mpf(1) / 25)
     g2 = (dev90 / dev65) ** (mpf(1) / 25)
     ptb = 1 / qtb
     # per-step decay rate vs pt: reported; loose sanity band only (the
     # pin sits deep in the pre-asymptotic window)
-    assert mpf("0.85") < g1 < 1 and mpf("0.85") < g2 < 1, (g1, g2)
+    _ok.append(bool(mpf('0.85') < g1 < 1 and mpf('0.85') < g2 < 1))
+    assert _ok[-1], (g1, g2)
     out["muon_balanced_jacobi"] = {
         "qd_repro": mp.nstr(worst, 3),
         "alpha_dev_n40_n65_n90": [mp.nstr(x, 3)
@@ -939,7 +982,8 @@ def block_u5_pins(wb: WitnessBuilder):
     lam96, _ = sym_trunc_eig(alf, bef, 96)
     lam84, _ = sym_trunc_eig(alf, bef, 84)
     for j in range(40):
-        assert lam96[j] < lam84[j], "min-max monotone at pin"
+        _ok.append(bool(lam96[j] < lam84[j]))
+        assert _ok[-1], 'min-max monotone at pin'
     reldiffs = [abs(lam96[j] / lam84[j] - 1) for j in range(0, 40, 8)]
     # eps_lambda(j, N) ~ C_lam pt^(N-j) with N = 84 (the coarser of
     # the pair dominates the difference): extract C_lam on the j-grid
@@ -977,7 +1021,7 @@ def block_u5_pins(wb: WitnessBuilder):
     }
     wb.add_assertion(
         "u5_pins_sw_core_certified_balanced_preasymptotic",
-        computed="0", expected="0", tolerance=1e-5,
+        computed=all(_ok), expected=True, tolerance=1e-5,
         source="q0 pins: the SW-core lattice-class statement is "
                "certified TRUNCATION-FREE at the muon pin from 100 "
                "zeros of A_pt (signed lattice deviation -> 0, rate = "

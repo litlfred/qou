@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T08:18:06.334649+00:00",
+  "commitSha": "2c008899be19ddad07a2181a0a228648d2cd2519",
+  "assertions": [
+    {
+      "name": "P77_D_positive_at_golden_threshold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_D_has_no_positive_root",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "sextic_has_no_positive_real_root",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_negative_at_q0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_positive_below_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qgol-stability-region-convention-d",
+  "scriptFile": "qgol_stability_region_convention_d.py",
+  "scriptHash": "a3fa9a88cd30",
+  "scriptCommitSha": "b828037bb1d5ade1ef2649f8b2394f4af474e0c0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qgol_stability_region_convention_d.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qgol_stability_region_convention_d.py"
+  },
+  "description": "Measures the sign of the two convention-D Toffoli amplitudes over the stability region asserted by prop:q-game-of-life. P_77^D has no positive root, so the golden-ratio threshold the q-GoL proof cites is a convention-C artifact; Phi^D is positive exactly on 0 < q < 1, so the region where both are strictly positive is 0 < q < 1 and the substrate q_0 sits where the q-AND is negative. Scope (a): what is excluded is the condition AS WRITTEN. Whether strict positivity or non-vanishing is the right condition is the author's call and is not settled here.",
+  "parameters": {
+    "convention": "D (z = q^3/(q^2+1))",
+    "P_77_D": "q^3 (q^4+1) / (q^2+1)^2  [toffoli-lp-stability.md]",
+    "Phi_D": "-(q-1)(q+1)(q^6+q^4+2q^2+1) / (2q(q^2+1)^2)  [toffoli-q-and.md]"
+  },
+  "data": {
+    "P77_D_at_q0": "0.691166478358444526147719530979",
+    "Phi_D_at_q0": "-0.143769370003809294991367940081",
+    "P77_D_at_golden_threshold": "0.0433440700006542778381263639471",
+    "stability_region_both_strictly_positive": "0 < q < 1",
+    "region_asserted_by_proposition": "q > 1"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

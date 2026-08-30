@@ -123,8 +123,29 @@ class QRogersAnalyticContinuation where
       convergent (u, v). -/
   q_rogers_holds_classical : ∀ u v : ℝ, q_rogers_holds_at u v 1
 
-/-- Default instance discharging the q = 1 case unconditionally. -/
-instance : QRogersAnalyticContinuation where
+/-- **Model with the predicate read as its own witness.**
+    `q_rogers_holds_at` is *defined* to be `fun _u _v q => q = 1`,
+    discarding both `u` and `v`, so the conjectural field
+    `q_rogers_holds_classical : ∀ u v, q_rogers_holds_at u v 1` unfolds
+    to `1 = 1` and closes by `rfl` for every configuration.  Nothing
+    about the Rogers five-term identity, convergence of `(u, v)`, or
+    the q-log² correction is encoded; the field is satisfied by
+    choosing the predicate to be the equation the field asserts.
+
+    The real classical-limit content in this file is
+    `rogersLogCorrection_factored` and `rogersLogCorrection_at_zero`,
+    which compute; this model touches neither.  Note also
+    `DilogPentagonAssociator`'s description of this class as the place
+    where "the `Li₂` five-term stays an honest conjecture class" — that
+    is the intended state, and it is what the demotion restores.
+
+    **A `def`, not an `instance`, since 2026-08-24**, and given a name:
+    it was anonymous, so resolution supplied it under the generated
+    name `instQRogersAnalyticContinuation`.  Nothing in the corpus
+    takes `[QRogersAnalyticContinuation]`.
+
+    Callers name it: `letI := qRogersAnalyticContinuation_qEqOne`. -/
+def qRogersAnalyticContinuation_qEqOne : QRogersAnalyticContinuation where
   q_rogers_holds_at _ _ q := q = 1
   q_rogers_holds_classical _ _ := rfl
 

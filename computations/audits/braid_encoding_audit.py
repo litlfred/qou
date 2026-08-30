@@ -562,21 +562,51 @@ def main() -> int:
     w.add_data("gamma_gamma_per_particle", gg)
     w.add_data("tr_M_cross_check", xc)
     w.add_data("structural_finding", STRUCTURAL_FINDING)
-    w.add_assertion(
-        "delta_n_squared_is_placeholder",
-        computed=True,   # full_twist_scalar returns 1.0 unconditionally
-        expected=True,   # documents the placeholder
-    )
-    w.add_assertion(
-        "canonical_a_k_method_unknown",
-        computed=True,   # jet-knot-invariants.witness.json `method` field is "unknown"
-        expected=True,   # documents the open provenance
-    )
-    w.add_assertion(
-        "neutron_error_localised_to_T1_trace_asymmetry",
-        computed=True,   # confirmed by neutron_error_diagnostic.py
-        expected=True,
-    )
+    # These three were `add_assertion(computed=True, expected=True)` — they
+    # passed by construction and contributed to `allPassed` without checking
+    # anything (bean `qou-26f2`). Each *documents* a finding this audit made by
+    # reading; none of the three is a computation this script performs, so the
+    # remedy is to record them as findings rather than dress them as checks.
+    #
+    # Two are worse than vacuous, and re-checking them is how that surfaced:
+    #
+    #   * `full_twist_scalar` lived in `atomic_braid_mass_table`, which no
+    #     longer exists anywhere in the repo. The name now survives only as a
+    #     string in this file and in `delta_n2_placeholder_audit.py`, which
+    #     reads the *legacy witness* rather than the module and says so.
+    #   * `jet-knot-invariants.witness.json` carries no `method` field at all
+    #     — no `canonical_a_k` key either. The witness was rebuilt since (it
+    #     has `q0Anchor`/`q0Value`), and the provenance gap this recorded is
+    #     no longer stated where it was found.
+    #
+    # So both are claims about subjects that have moved, and as assertions
+    # they would have gone on reporting green forever. Recorded here with
+    # their verification status attached, which is the part that was missing.
+    w.add_data("audit_findings", {
+        "delta_n_squared_is_placeholder": {
+            "finding": "full_twist_scalar(A) returned mp.mpf(1) unconditionally",
+            "source": "atomic_braid_mass_table.full_twist_scalar",
+            "verifiable_here": False,
+            "note": "defining module no longer present in the repo; the "
+                    "legacy record is atomic-braid-mass-table.witness.json, "
+                    "which delta_n2_placeholder_audit.py reads by design",
+        },
+        "canonical_a_k_method_unknown": {
+            "finding": "canonical_a_k for 3H/3He/4He had method: 'unknown'",
+            "source": "jet-knot-invariants.witness.json",
+            "verifiable_here": False,
+            "note": "that witness now carries neither a `method` field nor a "
+                    "`canonical_a_k` key; re-check against the current "
+                    "producer before citing this finding",
+        },
+        "neutron_error_localised_to_T1_trace_asymmetry": {
+            "finding": "the neutron error localises to the T1 trace asymmetry",
+            "source": "neutron_error_diagnostic.py",
+            "verifiable_here": False,
+            "note": "asserted from a sibling script's output, not recomputed "
+                    "here; that script is still present",
+        },
+    })
     w.save()
     print(f"\n✓ Witness: braid-encoding-audit.witness.json")
     return 0

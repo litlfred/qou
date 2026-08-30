@@ -13,6 +13,20 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-08-30",
+      body:
+        "**Lean block re-synced to the sibling `.lean`.** The narrative Lean block " +
+        "previously showed `pair_gen_functional ... := sorry` together with a carrier " +
+        "field $\\forall M \\ge 0,\\ \\exists M_{\\mathrm{rec}},\\ |M_{\\mathrm{rec}} - M| \\le M/100$. " +
+        "That field is trivially inhabited (take $M_{\\mathrm{rec}} := M$), so it asserted " +
+        "nothing and a downstream `[PairGenCanonical]` hypothesis would have constrained " +
+        "nothing. The sibling `.lean` had already been corrected to the content-bearing " +
+        "form — one concrete $T_3$ quantum-dilogarithm functional recovering `physMass` " +
+        "uniformly over atomic braids, with no instance provided — but this narrative " +
+        "block had not been re-synced. It now matches the `.lean`.",
+    },
+    {
       kind: "status",
       date: "2026-05-25",
       body:

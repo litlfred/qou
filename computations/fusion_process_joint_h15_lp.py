@@ -154,8 +154,15 @@ def main() -> int:
 
     ok = all(r["lp"].get("duality_gap") is not None and
              abs(float(r["lp"]["duality_gap"])) < 1e-6 for r in (ri, rf))
-    # split multiplicativity check on the final side (exact split union)
-    mult_fin = abs(float(rf["tr15_branched"]) - 0.99426104515176 * 0.9877436881158096)
+    # split multiplicativity checks (exact split union, both sides; factors
+    # read LIVE from the committed per-subject SDP witnesses, never hardcoded
+    # (Copilot review, PR #6129))
+    import json as _json
+    def _tr(atom):
+        w = _json.load(open(os.path.join(HERE, f"nucleus-real-sdp-{atom}.witness.json")))
+        return float(w.get("data", w)["tr_M"])
+    mult_fin = abs(float(rf["tr15_branched"]) - _tr("he4") * _tr("neutron"))
+    mult_init = abs(float(ri["tr15_branched"]) - _tr("deuteron") * _tr("tritium"))
 
     from qou_substrate.witness import WitnessBuilder
     wb = WitnessBuilder("fusion-process-joint-h15-lp", engine="python", output_dir=HERE)
@@ -177,20 +184,21 @@ def main() -> int:
     wb.add_data("active_final_only", sorted(act_f - act_i))
     wb.add_data("delta_y0_star_same_frame", mp.nstr(mpf(repr(dy)), 17))
     wb.add_caveat(
-        "Deuteron chi source (iterative-lp-dual-h6-deuteron.witness.json) "
-        "implies tr_H6 = 0.5752, while nucleus-real-sdp-deuteron.witness.json "
-        "records tr_M = 0.38836 — the known tr_m_atom_via_transfer import-cone "
-        "drift pair (AGENTS.md binding_canonical note). The two committed "
-        "witnesses disagree; this producer uses the former (the per-block "
-        "table). Which is canonical is a staleness question tracked outside "
-        "this witness; the final side shows exact split multiplicativity "
-        "(tr15 = tr(4He) x tr(n)) under the same branching."
+        "ADJUDICATED 2026-08-30 (bean qou-lzgv): the deuteron witness "
+        "disagreement this caveat used to record is resolved — the live trace "
+        "gives tr_H6 = 0.57517 (matching the chi table this producer uses), "
+        "and nucleus-real-sdp-deuteron.witness.json was regenerated to it. "
+        "Both sides of the process are split-multiplicative under the "
+        "branching (asserted below)."
     )
     wb.add_assertion("both_sides_strong_duality", "1" if ok else "0", "1",
                      tolerance="0",
                      source="duality_gap < 1e-6 on both joint solves")
     wb.add_assertion("frames_match", str(ri["n_blocks_total"]), str(rf["n_blocks_total"]),
                      tolerance="0", source="both sides branched into p(15)=176 blocks")
+    wb.add_assertion("initial_split_multiplicativity",
+                     mp.nstr(mpf(repr(mult_init)), 6), "0", tolerance="1e-8",
+                     source="tr15(D x T branched) equals tr(2H)*tr(3H) from the regenerated witnesses, f64 accumulation floor")
     wb.add_assertion("final_split_multiplicativity",
                      mp.nstr(mpf(repr(mult_fin)), 6), "0", tolerance="1e-8",
                      source="tr15(4He x n branched) equals tr(4He)*tr(n) from the committed SDP witnesses, at the f64 accumulation resolution of the branching sum (observed 2.5e-9; inputs are f64 by construction, qou-ftuv)")

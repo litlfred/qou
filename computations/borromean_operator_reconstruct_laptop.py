@@ -270,55 +270,84 @@ def fit_column(qs, ys, p, cap):
     return Pc, Qc
 
 
-def sample_prime(p, log):
+def sample_prime(p, state, log, save):
     """Per-prime: base-point RREF null vectors -> per-column rational fits.
-    Returns {col: {P:[...], Q:[...]}} with the modal pivot structure."""
+    Returns {str(col): {P:[...], Q:[...]}} with the modal pivot structure.
+
+    Resumable: the base points and per-column fits are checkpointed into
+    state["partial"] so a kill mid-prime (this remote container suspends
+    background work when the session idles) resumes from the last saved
+    column rather than restarting the ~50-min prime.  Base points are stored
+    once collected (so the same q-points are reused, keeping the fits mutually
+    consistent for the CRT), and the column dict is flushed every 10 columns."""
     nmax = R_FIT + R_ORD
-    # collect canonical null vectors over base points with a consistent
-    # pivot structure (the modal one).
-    from collections import Counter
-    raw = []
-    pcount = Counter()
-    s = 2
-    # base points must support a degree-DEG_CAP fit: try_deg(d) needs
-    # 2d+3 fit rows, plus NHOLD holdout rows -> 2*DEG_CAP + NHOLD + margin.
-    NEED = 2 * DEG_CAP + NHOLD + 20
-    t0 = time.time()
-    while len(raw) < NEED and s < NEED * 6 + 500:
-        s += 1
-        J = jones_tower_mod(p, s, nmax)
-        if J is None:
-            continue
-        rows = build_fit_rows(J, p, s)
-        vec, piv = canonical_nullvec(rows, p)
-        if vec is None:
-            continue
-        raw.append((s, piv, vec))
-        pcount[piv] += 1
-        if len(raw) % 50 == 0:
-            log(f"    [p={p}] {len(raw)}/{NEED} base points  "
-                f"({time.time()-t0:.0f}s)")
-    if not raw:
-        raise RuntimeError(f"no canonical null vectors at p={p}")
-    modal = pcount.most_common(1)[0][0]
-    kept = [(s, v) for s, pv, v in raw if pv == modal]
-    log(f"    [p={p}] modal pivots kept {len(kept)}/{len(raw)}")
+    partial = state.get("partial", {})
+    if partial.get("_prime") == p and "kept" in partial:
+        kept = [(int(s), v) for s, v in partial["kept"]]
+        cols = partial.get("cols", {})
+        log(f"    [p={p}] RESUME partial: {len(cols)}/{NCOLS} cols done, "
+            f"{len(kept)} base points")
+    else:
+        # fresh collection of canonical null vectors with a consistent
+        # (modal) pivot structure.
+        from collections import Counter
+        raw = []
+        pcount = Counter()
+        s = 2
+        # base points must support a degree-DEG_CAP fit: try_deg(d) needs
+        # 2d+3 fit rows, plus NHOLD holdout rows -> 2*DEG_CAP + NHOLD + margin.
+        NEED = 2 * DEG_CAP + NHOLD + 20
+        t0 = time.time()
+        while len(raw) < NEED and s < NEED * 6 + 500:
+            s += 1
+            J = jones_tower_mod(p, s, nmax)
+            if J is None:
+                continue
+            rows = build_fit_rows(J, p, s)
+            vec, piv = canonical_nullvec(rows, p)
+            if vec is None:
+                continue
+            raw.append((s, piv, vec))
+            pcount[piv] += 1
+            if len(raw) % 50 == 0:
+                log(f"    [p={p}] {len(raw)}/{NEED} base points  "
+                    f"({time.time()-t0:.0f}s)")
+        if not raw:
+            raise RuntimeError(f"no canonical null vectors at p={p}")
+        modal = pcount.most_common(1)[0][0]
+        kept = [(s, v) for s, pv, v in raw if pv == modal]
+        log(f"    [p={p}] modal pivots kept {len(kept)}/{len(raw)}")
+        cols = {}
+        # persist the base points immediately: this protects the ~50-min
+        # fitting phase that follows from a kill (the ~min collection above
+        # is cheap to redo; the fits are not).
+        state["partial"] = {"_prime": p,
+                            "kept": [[s, v] for s, v in kept],
+                            "cols": cols}
+        save(state)
     qs = [s * s % p for s, _ in kept]
-    cols = {}
+    t0 = time.time()
     for c in range(NCOLS):
+        if str(c) in cols:
+            continue
         ys = [v[c] for _, v in kept]
         if not any(ys):
-            cols[c] = {"P": [0], "Q": [1]}
-            continue
-        fit = fit_column(qs, ys, p, DEG_CAP)
-        if fit is None:
-            raise RuntimeError(f"column {c} at p={p}: no rational fit "
-                               f"(raise DEG_CAP)")
-        Pc, Qc = fit
-        cols[c] = {"P": Pc, "Q": Qc}
-        if c % 40 == 0:
-            log(f"    [p={p}] col {c}/{NCOLS} fitted (deg {len(Pc)-1})  "
-                f"({time.time()-t0:.0f}s)")
+            cols[str(c)] = {"P": [0], "Q": [1]}
+        else:
+            fit = fit_column(qs, ys, p, DEG_CAP)
+            if fit is None:
+                raise RuntimeError(f"column {c} at p={p}: no rational fit "
+                                   f"(raise DEG_CAP)")
+            Pc, Qc = fit
+            cols[str(c)] = {"P": Pc, "Q": Qc}
+        if c % 10 == 0:
+            state["partial"]["cols"] = cols
+            save(state)
+            if c % 40 == 0:
+                log(f"    [p={p}] col {c}/{NCOLS} fitted  "
+                    f"({time.time()-t0:.0f}s)")
+    state["partial"]["cols"] = cols
+    save(state)
     return cols
 
 
@@ -377,8 +406,11 @@ def try_lift(runs):
 # ----------------------------------------------------------------------
 def load_ckpt():
     if CKPT.exists():
-        return json.loads(CKPT.read_text())
-    return {"runs": []}
+        d = json.loads(CKPT.read_text())
+        d.setdefault("runs", [])
+        d.setdefault("partial", {})   # in-progress prime: {_prime, kept, cols}
+        return d
+    return {"runs": [], "partial": {}}
 
 
 def save_ckpt(state):
@@ -399,6 +431,9 @@ def main():
     log(f"  window (r,W)=({R_ORD},{W_WIN}), {NCOLS} columns, DEG_CAP={DEG_CAP}")
     state = load_ckpt()
     done_primes = {r["_prime"] for r in state["runs"]}
+    # a partial belonging to an already-completed prime is stale — drop it
+    if state.get("partial", {}).get("_prime") in done_primes:
+        state["partial"] = {}
     if done_primes:
         log(f"  resuming: {len(done_primes)} prime(s) already sampled")
 
@@ -406,10 +441,11 @@ def main():
     for p in PRIMES:
         if p not in done_primes:
             log(f"  sampling prime p={p} ...")
-            cols = sample_prime(p, log)
+            cols = sample_prime(p, state, log, save_ckpt)
             run = {"_prime": p}
-            run.update({str(c): cols[c] for c in range(NCOLS)})
+            run.update(cols)   # cols is already {str(c): {...}}
             state["runs"].append(run)
+            state["partial"] = {}
             save_ckpt(state)
             log(f"  prime p={p} done + checkpointed  ({time.time()-t0:.0f}s)")
         if len(state["runs"]) >= 2:

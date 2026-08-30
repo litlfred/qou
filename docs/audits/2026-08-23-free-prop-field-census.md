@@ -157,6 +157,33 @@ names three propositions and asserts them.
 > IwahoriHeckeAlgebra ℤ 3 1` now reports *failed to synthesize*; the trivial
 > model stays reachable by name (`triv_hecke ℤ 3 1`). See the correction on
 > blast radius below.
+>
+> **Blast-radius correction, 2026-08-24.** `triv_hecke`'s own docstring records
+> the demotion as costing *"one error, `triv_wedderburn` below, fixed in place.
+> Nothing else in the corpus depended on the global resolution."* That was
+> wrong: `QOU.Mathlib.Summary.inventory_check` also did, via `⟨inferInstance⟩`
+> for `Nonempty (IwahoriHeckeAlgebra R 2 q)`. It stayed invisible for a day
+> because `Summary.olean` predated the demotion and nothing rebuilt that
+> 80-module cone, so `failed to synthesize` was never surfaced. Now threaded
+> explicitly as `⟨triv_hecke R 2 q⟩`. **Method note for the next demotion in
+> this family: a green `lean-direct-cone.sh` on the *edited* module does not
+> measure blast radius — the dependents must be rebuilt, and a stale olean
+> reads as up-to-date.**
+>
+> **FIXED 2026-08-24**: `HasGeneratorAction_punit`, listed just above as
+> screened but unverified, was confirmed to have exactly this shape and demoted
+> to `def`. `#synth HasGeneratorAction 3 1` now reports *failed to synthesize*.
+> Blast radius zero — and the reason is itself the finding: `HasGeneratorAction`
+> has **no consumers anywhere in the corpus**, so the §3b-cond hypothesis its
+> docstring advertises is one no theorem takes. Demoted in the same pass:
+> `NonAbelianStokes.punitInstance` *and* its sibling `content_bearing_stokes`
+> (demoting one alone would have changed nothing — resolution falls through to
+> the other), `MassEndomorphism.canonical` + `trivial_int_zero`, six
+> `instProvable` models in `AppendixSurreals/Conjectures.lean`,
+> `surrealRateCalculus_classicalLimit`, `ClassicalLimitStpart.canonical`,
+> `ShellClosureNFTermCount.canonical`, and four anonymous predicate-as-data
+> instances in `QOU/BraidKnot/`. Separately, `Interactions/AlgebraicPrimality`
+> needed its root sealed rather than its instance demoted — see the commit.
 
 ### Inhabitation is what makes a free `Prop` field harmful — and it re-ranks the queue
 

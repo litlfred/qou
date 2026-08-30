@@ -21,11 +21,22 @@ strong and should not be cited. What is established:
     the published formula (beta3 = 0.0499 against h_A^2 = 0.0437073, a
     14.2 pct departure). See docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md.
 
-So the defensible claim is that thm:wedderburn-mass-formula is currently
-UNFALSIFIABLE AS WRITTEN -- its M_i prose does not determine a unique
-construction, and nothing in the corpus can adjudicate between candidates.
-Weaker than "the formula is false"; stronger than "this probe failed".
-The measurement below is unchanged and still stands as measured.
+RETRACTED IN TURN, 2026-08-29. This banner went on to claim that
+thm:wedderburn-mass-formula is "UNFALSIFIABLE AS WRITTEN -- its M_i prose does
+not determine a unique construction". THAT IS ALSO WRONG, and the error was
+mine twice over.
+
+The prose determines it. "chaining the crossing matrices of all strands j > i"
+means: for strand i, cross with EVERY strand j > i -- an ALL-PAIRS braid with
+no ordering dependence. I read it as a suffix product of ADJACENT crossings and
+tested four variants of that one misreading, never the plain one. Under the
+correct reading, Phi_2 and Phi_3 are re-derived on 19 of 19 non-hydrogen rows
+(see computations/phi_allpairs_reconstruction.py), including Ar, the row that had refuted
+the earlier candidate.
+
+So what this file measures is a REFUTED READING, not an underdetermined
+formula. The numbers below are correct for the adjacent reading and are kept
+as the record of it; do not cite them as evidence about the formula.
 
 thm:wedderburn-mass-formula states its own domain:  the three invariants
 Phi_1/Phi_2/Phi_3 are the three EXTREMAL Wedderburn blocks, so the formula

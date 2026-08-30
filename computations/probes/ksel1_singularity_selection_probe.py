@@ -548,6 +548,7 @@ def block_k4_selection_verdict(wb: WitnessBuilder) -> None:
     """K4 (q = 1.2): Tonelli rearrangement — the kernel output on the
     positive axis equals the u-independent balanced series for every u;
     the output wall is exactly u-invariant; verdict recorded."""
+    _ok: list[bool] = []
     q0 = mpf("1.2")
     qt = mpsqrt(q0)
     NTR = 30
@@ -573,7 +574,8 @@ def block_k4_selection_verdict(wb: WitnessBuilder) -> None:
                     acc = acc * xi + b[n]
                 dsum += cj * ct * acc * xi / t
         worst = max(worst, abs(dsum / series - 1))
-    assert worst < TOL_MEAS, worst
+    _ok.append(bool(worst < TOL_MEAS))
+    assert _ok[-1], worst
     wb.add_assertion(
         "k4_output_positive_axis_u_invariant", computed=mp.nstr(worst, 5),
         expected="0", tolerance=TOL_MEAS,
@@ -591,8 +593,8 @@ def block_k4_selection_verdict(wb: WitnessBuilder) -> None:
                f"therefore EXACTLY u-invariant, by the same reindex "
                f"mechanism that makes the moments u-invariant")
     wb.add_assertion(
-        "k4_ksel1_verdict_continuum_survives", computed="0",
-        expected="0", tolerance=TOL_EXACT,
+        "k4_ksel1_verdict_continuum_survives", computed=all(_ok),
+        expected=True, tolerance=TOL_EXACT,
         source="VERDICT (scope-(a)): the u-translate CONTINUUM "
                "SURVIVES KSel-1 (singularity matching). The principle "
                "is well-formed and uniquely selective in form (K2: an "

@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:51:25.787839+00:00",
-  "commitSha": "b15cef402dd3ce6f2f6dc6d7e15dabfbaf10bd2b",
+  "computedAt": "2026-08-30T08:27:28.446143+00:00",
+  "commitSha": "a945911dd5e4df37cc43e27590036816fc0fd041",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 76,
+      "computed": 78,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
+  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,18 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py",
-      "--strict"
+      "computations/audits/witness_provenance_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -58,14 +57,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2899,
-      "prov_ok": 2485,
+      "total_scanned": 2905,
+      "prov_ok": 2488,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 258,
+      "prov_exempt_no_reader": 259,
       "prov_exempt_acknowledged": 0,
-      "prov_missing": 76,
+      "prov_missing": 78,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.973784063470162124870645050017247326664367023111417730251811"
+      "completeness_ratio": "0.973149741824440619621342512908777969018932874354561101549053"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -7078,6 +7077,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qgol-stability-region-convention-d.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qlift_ggm_diagonal_gauge_prune_probe.witness.json",
           "missing_fields": []
         },
@@ -7111,6 +7114,10 @@
         },
         {
           "witness": "rep-tightness.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-f-categorical-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -7555,6 +7562,10 @@
         },
         {
           "witness": "hd-to-s-bridge-anchor-dependence.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "integer-lp-gluon-convention-d.witness.json",
           "missing_fields": []
         },
         {
@@ -10246,6 +10257,25 @@
           ]
         },
         {
+          "witness": "milnor-a4-deficit-h-form.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "milnor-a5-a6-recursion-test.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "milnor-recursion-tl-derivation.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
           "witness": "saturating-shared-channel.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -10416,14 +10446,6 @@
         {
           "witness": "gt-matrix-pslq-probe.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-f-categorical-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -11149,6 +11171,12 @@
           "missing_fields": [
             "engine",
             "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "milnor-recursion-forall-A-reduction.witness.json",
+          "missing_fields": [
             "commitSha"
           ]
         },

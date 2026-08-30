@@ -44,9 +44,12 @@ def calAnchor : Sector → Nat
   | .electromagnetic => 1
   | .weak => 2
 
-/-- Bar parity of the sector's primary observable, where the corpus
-establishes one (strong: binding, bar-even; weak: Q_β, bar-odd;
-electromagnetic: not established — `none`, deliberately). -/
+/-- Bar parity of the sector's primary observable, where a PURE channel
+exists (strong: binding, bar-even; weak: Q_β, bar-odd). For the
+electromagnetic sector `none` is itself a theorem-backed verdict: the EM
+coupling is provably neither bar-even nor bar-odd under nondegeneracy
+(`QOU.Interactions.EmCouplingBarParity.emCouplingBare_not_bar_even/odd`) —
+the sector admits no pure-parity assignment. -/
 def parity : Sector → Option BarParity
   | .strong => some .even
   | .electromagnetic => none
@@ -70,9 +73,10 @@ theorem strong_unique_bar_even :
     ∀ s : Sector, parity s = some .even ↔ s = .strong := by
     intro s; cases s <;> decide
 
-/-- The electromagnetic sector is exactly the one with no established
-bar-parity assignment. -/
-theorem em_parity_open :
+/-- The electromagnetic sector is exactly the one with no pure bar-parity
+assignment (and provably cannot have one — see the library module
+`QOU.Interactions.EmCouplingBarParity`). -/
+theorem em_no_pure_parity :
     ∀ s : Sector, parity s = none ↔ s = .electromagnetic := by
     intro s; cases s <;> decide
 

@@ -1,11 +1,11 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: completed
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-28T15:06:25Z
+updated_at: 2026-08-30T08:02:14Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -134,38 +134,145 @@ original gates no longer exist" while its own table and closing paragraph
 both say three. Corrected -- that heading is the line a skimming agent
 reads.
 
-## FALSIFIED 2026-08-30 — a Copilot review arrived, with three real findings
 
-The n=5 negative recorded above was real when measured. It is **not** a
-permanent property of the integration, and this bean's title ("Copilot review
-does not arrive") is now false as stated.
 
-PR #6058 requested a review via `request_copilot_review` at ~07:40 UTC and
-received one at 07:49 — about 9 minutes — carrying three findings, **all three
-confirmed by measurement**, none cosmetic:
+## REOPENED 2026-08-30 — Copilot reviews again; the rule was self-sealing
 
-1. `markov_parameter_convention_C` dispatched on bare
-   `hasattr(q, "free_symbols")`, which is also True for sympy NUMERICS
-   (`Rational(1,2)`, `Float(1.11)`) whose `free_symbols` is the EMPTY set — so
-   numeric callers were handed a sympy expression where they asked for a
-   number.
-2. + 3. Two probes imported `pyhecke.atom` / `qbeta_utils` with no
-   `_path_bridge` bootstrap. Confirmed by running with PYTHONPATH STRIPPED:
-   `No module named 'pyhecke'` / `No module named 'qbeta_utils'`.
+Write-up: `docs/audits/2026-08-30-copilot-review-works-again.md`.
 
-Findings 2 and 3 are the `qou-0e1t` class, and the agent could not have found
-them with its own runner: it had `PYTHONPATH` set for every invocation all
-session, which is exactly the masking AGENTS.md documents. **The external
-reviewer's value here was precisely that it did not share the agent's
-environment.**
+**Measured first-hand today, two repos:**
+| PR | requested | review | latency |
+|---|---|---|---|
+| qou#6122 | 07:24Z | **07:27:39Z** | ~3 min |
+| folio-assistant#153 | 07:48Z | **07:51:52Z** | ~4 min |
 
-What this does and does not establish:
+Both `copilot-pull-request-reviewer[bot]`, both COMMENTED with line-level
+findings. 5 of 6 findings were real defects; 4 were mine. The second row is the
+important one — a DIFFERENT REPO, so this is not a qou-specific setting.
 
-- It DOES refute "zero reviews every time" / "nothing is ever enqueued" as a
-  standing claim, and it refutes the derived guidance to skip requesting one.
-- It does NOT establish that reviews are dependable. One positive against five
-  negatives means UNRELIABLE, not RESTORED. Do not now build a gate on it.
+**This bean was not wrong.** It recorded n=2 controlled, called its five
+background PRs weak evidence, and said outright it did NOT prove org-level
+disablement. The later strengthening (5 requests + `get_check_runs
+total_count: 0` mechanism + #5532 + ~12 background PRs) was also sound. And it
+was not merely slow: **#5495, this bean's own controlled case, still shows zero
+reviews eight days on.** The behaviour changed between 2026-08-27 and 08-30.
 
-Guidance that follows: **request it every time, never block on it, and never
-assert in a durable artifact that it will not come.** AGENTS.md's Phase-4
-banner and gate table are corrected accordingly.
+**THE DEFECT IS DOWNSTREAM.** AGENTS.md rule 10 turned the observation into an
+instruction: *"that wait can only expire, so skip it and record why (citing
+qou-gwe9)"*. That instruction PREVENTS THE OBSERVATION THAT WOULD FALSIFY IT —
+an agent who never waits never sees a review arrive. Self-sealing.
+
+**Measured cost this session:** I merged #6068 at 06:59Z having requested
+Copilot at ~06:57Z, ~2 min earlier, because the rule said not to wait. #6068
+shows zero reviews — not because none was coming, but because I merged inside
+the latency window. Every finding Copilot later made on #6122 applied to code
+that also shipped in #6068.
+
+**Generalises:** the corpus has many correctly-scoped measurements that became
+standing facts (the 4.6e6 slope, ~840 muon witnesses, the 39/73/58 % figures).
+This is that class plus a turn of the screw — the stale fact is wired into an
+instruction that suppresses re-measurement. Test for any such rule: *if this
+became false, what would notice?* If the answer is "nothing, the rule says
+don't look", it needs an expiry or a cheap periodic probe.
+
+**Still to do (NOT done here):** rewrite the Copilot row in AGENTS.md rule 10
+and prepare-merge-auto Phase 1b from "does not arrive" to "arrives in ~3-4
+min; wait for it". Left out of the audit deliberately — it belongs with a
+revisit of the 15-minute poll duration, and this file is the measurement that
+justifies it.
+
+
+
+## 🛑 QUOTA — the mechanism, found the hard way (2026-08-30 07:56Z)
+
+Third request on #6122 returned, from the same bot:
+
+> *"Copilot was unable to review this pull request because the user who
+> requested the review has reached their **quota limit**."*
+
+**Copilot review is RATIONED, not binary available/unavailable.** Five requests
+across two repos in ~30 min — three of them fired while chasing this very
+measurement — exhausted it. That is my own error and nothing in the repo's docs
+warns of it.
+
+**Candidate, NOT established, explanation for the historical zeros.** Signature
+mismatch: today's exhaustion ANNOUNCES ITSELF as a posted review, whereas this
+bean recorded `get_check_runs total_count: 0` with nothing enqueued and no
+message at all. Either the older exhaustion was silent and the message is new,
+or they are different failure modes. Cannot tell from here, and it matters:
+"over quota all along" and "off, then back" imply different operating rules.
+
+**Actionable now:** request Copilot ONCE per PR, when the branch is actually
+ready, and wait ~3-4 min. Not after every push.
+
+## Footnote: 5 of 6 findings real, 1 false — and the false one mattered
+
+Copilot's second #6122 review claimed the refutation proofs "leave goals
+unsolved" because `norm_num at h` does not close `False`. **It does**, when
+`h` reduces to `False`. Verified: lean-direct exit 0, 0 errors, 0 sorry, and
+`#print axioms` on both named proofs shows only propext / Classical.choice /
+Quot.sound — no sorryAx.
+
+The correct handling was NOT to apply the suggested fix. Rewriting two working
+proofs to satisfy a speculative comment is the same failure as widening a
+baseline to make a gate green.
+
+**Independent corroboration (second session, same day):** PR #6124 (check run enqueued, in_progress) and PR #6129 (full review submitted ~4 min after request: 4 substantive inline comments, all verified-real, addressed same session). Matches the reopened record above; and the quota mechanism explains that session's later thread-resolution 'rate limit' errors.
+
+## Addendum (session tender-keller, PR #6119): one review arrived UNREQUESTED
+
+Not a separate finding — the sections above are the measurement, and this is one
+more row for their table. Recording it only because it differs in the variable
+their two rows hold fixed:
+
+  qou#6119   push 07:25:09Z   review 07:27:31Z   ~2.5 min   NOT REQUESTED
+
+I never called `request_copilot_review` on that push. Both rows in the table
+above are explicit requests, so this says the trigger is not solely a request —
+a push alone can draw one.
+
+**Bearing on the open mechanism question.** The QUOTA section asks whether the
+historical zeros were "over quota all along" or "off, then back", and notes the
+two imply different operating rules. An unrequested review consumes quota that
+nobody spent deliberately, which fits "over quota all along" more comfortably
+than the request-only reading does — but it does not settle it, and I am not
+claiming it does. One observation, offered as a constraint on the candidates.
+
+The finding itself was correct and substantive (two `rfl` proofs of
+`tr_M(1) = 1` that should have used the `MarkovTrace.normalised` axiom, since
+the enclosing theorems quantify over an arbitrary decomposition). Fixed,
+thread resolved.
+
+**My own AGENTS.md correction is SUPERSEDED and was dropped**, not merged: it
+was n=1, request-agnostic, and had none of the quota mechanism or the
+self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
+stay that way.
+
+## One more row, from PR #6058 (2026-08-30)
+
+Adding a datum, not a correction — the row above is better than what I had and
+I dropped mine, exactly as the previous agent did for the same reason (n=1,
+request-agnostic, no quota mechanism).
+
+  qou#6058   requested 07:40Z   review 07:49Z   ~9 min   EXPLICIT REQUEST
+
+Widens the observed explicit-request latency from ~3–4 min to ~9 min, so a
+short poll that gives up at five minutes would have missed it.
+
+**The qualitative datum the table does not yet carry: WHY the external review
+is worth requesting even though it cannot be a gate.** Two of its three
+findings on #6058 were missing `_path_bridge` bootstraps — the `qou-0e1t`
+masking class. The agent could not have found them with its own runner,
+because it had `PYTHONPATH` set on every invocation all session, which is
+precisely what hides them. Confirmed by re-running with the variable stripped:
+`No module named 'pyhecke'` / `No module named 'qbeta_utils'`.
+
+So the reviewer's value here was **not sharing the agent's environment**. That
+is a different argument from "a second opinion is nice", and it survives the
+quota finding: a rationed reviewer that sees what your runner structurally
+cannot is worth spending a request on, even when it cannot be relied upon to
+answer.
+
+(The third finding was a real bug in this branch's own code: dispatch on bare
+`hasattr(q, "free_symbols")`, which is True for sympy NUMERICS whose
+`free_symbols` is the empty set.)

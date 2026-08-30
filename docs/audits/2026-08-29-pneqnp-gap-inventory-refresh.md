@@ -272,6 +272,24 @@ as though it applied to the discharge, and that is the error.
 (`qou-lrz1` / `qou-twwf`). Do those first, or accept the conditional. It is not
 the cheap win the ranking implied.
 
+> **🛑 The gate is gone (2026-08-30, PR #6053).** `qou-twwf` closed over a
+> field: `QOU.Hecke.TwBasis.basisTwOfField` is a genuine
+> `Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)` whose vectors
+> are the `T_w`, with `finrank_eq_factorial : dim_K H_n(q) = (n+1)!`.
+>
+> So `det(Gram)` **can now be stated**, which is the thing §3b says it could
+> not be. #1 is unblocked, not gated. The two obligations §3b separates are
+> unchanged and both still open: (i) the combinatorial `schurElement` equals
+> the algebra-theoretic Schur element, and (ii) Geck–Pfeiffer 7.2.6 proper.
+> What changed is only that the *basis* half is no longer in front of them.
+>
+> Two scope notes so this does not get over-read. The basis is a **field**
+> statement — everything upstream of `QOU/Hecke/TwBasisField.lean` holds over
+> an arbitrary commutative ring, but the dimension squeeze does not. And
+> **Matsumoto's theorem is still absent from Mathlib** (`Coxeter/Basic.lean:78`)
+> and is still unproved here; the route simply goes around it, so nothing in
+> this document that depends on Matsumoto being available has changed.
+
 ## 4. Do not re-attack
 
 Consolidated from the prior audits; each is a *proved* dead end, not a matter of

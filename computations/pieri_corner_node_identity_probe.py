@@ -27,10 +27,13 @@ has `beta = 0`, hence the node `b = 1` that fact 6 shows is essential.
 
        prod_{c in lam} (1 - q^{h(c)})  =  prod_i (q;q)_{beta_i} / prod_{j<l} (1 - q^{beta_j - beta_l})
 
-   This is the q-deformed Frame-Robinson-Thrall hook identity. It is **not proved in
-   the corpus**; `QOU/Mathlib/LagrangeCoeffSum.lean` calls it out by name as the open
-   input standing between `sum_eq_bracket_mul_of_qratio_scaling` and general-r
-   branching. Measured here, not derived.
+   This is the q-deformed Frame-Robinson-Thrall hook identity. **It IS proved in the
+   corpus** -- `SYTBetaGapVandermonde.prodHooksF_one_sub_pow_pair`, sorry-free, as the
+   `f n = 1 - Q^n` case of a per-row identity proved over an arbitrary commutative
+   monoid. An earlier version of this docstring said it was open, on the strength of
+   `LagrangeCoeffSum`'s docstring, which is stale (its bean `qou-j7ln` is completed).
+   A source file's status note is not authoritative; that rule covers docstrings too.
+   Measured here as an independent check of the Lean, not as evidence for an open item.
 
 3. **The row-index weight `Q^r` in (P1) is forced, not chosen.** It is exactly the
    `q^{sum_l l*beta_l}` normalisation that converts the sign-free form of fact 2 into

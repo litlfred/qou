@@ -186,15 +186,34 @@ def main():
     )
 
     # 2. NF coefficients for leptons
+    #
+    # These read `computed=round(a[n]+b[n],10), expected=round(a[n]+b[n],10)`
+    # — the same expression on both sides under a relative tolerance, so the
+    # tolerance had nothing to measure and each passed for whatever
+    # `chebyshev_nf` returned (bean `qou-26f2`). The `source` already named
+    # the check that should have been running: the Chebyshev recurrence.
+    #
+    # It supplies an independent route to the same number. From the
+    # generator, a[n+1] = b[n] and b[n+1] = h*b[n] + a[n]; so b[n-1] = a[n]
+    # and a[n+1] = h*a[n] + a[n-1]. b inherits that recurrence, and therefore
+    # so does the net s[n] = a[n] + b[n]:
+    #
+    #     s[n] = h * s[n-1] + s[n-2]
+    #
+    # `expected` is now that right-hand side. Assertion 1 above checks the
+    # recurrence holds across all n; this checks each lepton's own amplitude
+    # sits on it, which is what the source claimed all along.
+    net = [a[i] + b[i] for i in range(len(a))]
     for name, info in leptons.items():
         n = info["n"]
         w.add_assertion(
             f"NF(T_{{2,{n}}}) net amplitude ({name})",
-            computed=round(a[n] + b[n], 10),
-            expected=round(a[n] + b[n], 10),
-            tolerance=abs(a[n] + b[n]) * 1e-8,
+            computed=round(net[n], 10),
+            expected=round(h * net[n - 1] + net[n - 2], 10),
+            tolerance=abs(net[n]) * 1e-8,
             unit="dimensionless",
-            source=f"Chebyshev recurrence at n={n}",
+            source=f"Chebyshev recurrence at n={n}: "
+                   f"s[{n}] = h*s[{n - 1}] + s[{n - 2}]",
         )
 
     # 3. BR ratio NF vs PDG

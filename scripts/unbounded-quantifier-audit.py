@@ -75,15 +75,49 @@ def classes(src):
         yield name, names, fields
         i = j
 
+# A binder whose TYPE is a proposition is a proof, not a quantity: nothing
+# is "arbitrary" about it, and the hypothesis it carries constrains the
+# statement rather than widening it.  `hn : H.n ≥ 2` is the common shape.
+PROOF_TYPE_RE = re.compile(r'[≥≤<>=≠∈∉⊆∣]|\bTrue\b|\bFalse\b')
+
+# A binder over a FINITE type ranges over boundedly many values, so a fixed
+# constant can bound it.  `i : Fin channels` is the common shape.
+#
+# `Finset X` is deliberately NOT here, and the omission is load-bearing: a
+# `Finset` is a finite set, but the TYPE of finite sets is infinite, so a
+# binder over it is arbitrary.  Including it silently skipped the
+# Rosso-Jones defect this detector found -- `∀ (partitions_of_r : Finset
+# Partition), jonesPoly r s = partitions_of_r.sum …`, refuted by `∅`.
+# Pinned as a positive control in --selftest.
+FINITE_TYPE_RE = re.compile(r'\bFin\b|\bBool\b|\bUnit\b|\bPUnit\b|\bEmpty\b')
+
 def binders(stmt):
-    """Universally bound variable names appearing in leading foralls."""
+    """Universally bound (name, type) pairs from the leading foralls."""
     out = []
     for grp in re.finditer(r'∀\s*([^,]+),', stmt):
-        for tok in re.finditer(r'\(?\s*([a-zA-Z_][A-Za-z0-9_\']*)[^):]*:', grp.group(1)):
-            out.append(tok.group(1))
-        for bare in re.findall(r'^\s*([a-zA-Z_][A-Za-z0-9_\']*)\s*$', grp.group(1)):
-            out.append(bare)
+        body = grp.group(1)
+        for m in re.finditer(r'\(?\s*([a-zA-Z_][A-Za-z0-9_\']*)\s*([^):]*):([^)]*)\)?', body):
+            out.append((m.group(1), m.group(3)))
+        for bare in re.findall(r'^\s*([a-zA-Z_][A-Za-z0-9_\']*)\s*$', body):
+            out.append((bare, ''))
     return out
+
+def quantity_binders(stmt):
+    """Binder names that denote an ARBITRARY QUANTITY.
+
+    Excludes proof binders, binders over finite types, and `_`-prefixed
+    names (conventionally unused).  Each exclusion is a measured
+    false-positive source, not a guess -- see the module docstring."""
+    keep = []
+    for name, ty in binders(stmt):
+        if name.startswith('_'):
+            continue
+        if PROOF_TYPE_RE.search(ty or ''):
+            continue
+        if FINITE_TYPE_RE.search(ty or ''):
+            continue
+        keep.append(name)
+    return keep
 
 def audit(paths):
     hits = []
@@ -98,7 +132,13 @@ def audit(paths):
                 if len(parts) < 2:
                     continue
                 lhs, rhs = parts[-2], parts[-1]
-                bs = set(binders(stmt))
+                # An `∃` after the `∀` can witness the variable, so the
+                # claim is satisfiable however large it gets: that is
+                # unboundedness, not an unbounded quantity bounded by a
+                # constant.  `∀ M, ∃ q, M < enstrophy q` is the shape.
+                if '∃' in stmt:
+                    continue
+                bs = set(quantity_binders(stmt))
                 if not bs:
                     continue
                 # a class-data constant must appear on the bounding side
@@ -138,19 +178,60 @@ class HasQPlancherelCLT where
   bound : ∀ k : ℕ, k ≥ 4 → |f k - f_inf| ≤ Cq / Real.sqrt (k - 3 : ℝ)
 end T
 '''
+    # Three further shapes that must NOT flag -- each was a measured
+    # false positive before the precision rules were added.
+    controls = '''namespace T
+class MarkovTrace where
+  z : R
+  tr : C -> R
+  markov_stab : ∀ (hn : H.n ≥ 2) (x : C), tr (mul x (T last)) = z * tr x
+class CriticalExponent where
+  enstrophy : ℝ → ℝ
+  enstrophy_diverges : ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+    ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q
+class LpDualStabilityContext where
+  y_star : Fin channels → ℝ
+  κ_G : ℝ
+  t_norm : ℝ
+  dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
+end T
+'''
+
+    # The Rosso-Jones shape, which this detector found (#6041).  It must
+    # keep flagging: `Finset Partition` is an infinite type of finite sets.
+    rosso_jones = '''namespace T
+class HeckeRepRingContext where
+  jonesPoly : ℕ → ℕ → ℝ
+  rjPairing : P → P → ℝ
+  fullTwistEig : P → ℝ
+  jonesPoly_eq_eval : ∀ (s : ℕ) (partitions_of_r : Finset P),
+    jonesPoly r s = partitions_of_r.sum (fun lam => rjPairing lam lam * fullTwistEig lam ^ s)
+end T
+'''
+
     def run(text):
         with tempfile.NamedTemporaryFile('w', suffix='.lean', delete=False) as fh:
             fh.write(text); t = fh.name
         got = audit([t]); os.unlink(t); return got
-    bad, good = run(pre_fix), run(post_fix)
+    bad, good, ctrl, rj = (run(pre_fix), run(post_fix), run(controls),
+                           run(rosso_jones))
     if not bad:
         print("SELFTEST FAIL: did not flag the known-refutable pre-fix shape")
         return 1
     if good:
         print(f"SELFTEST FAIL: flagged the FIXED shape (false positive): {good}")
         return 1
-    print("selftest ok: flags the refutable HasQPlancherelCLT shape, "
-          "and does NOT flag its fix")
+    if ctrl:
+        names = [f'{c}::{f}' for _, c, f, _, _ in ctrl]
+        print(f"SELFTEST FAIL: flagged a known false-positive shape: {names}")
+        return 1
+    if not rj:
+        print("SELFTEST FAIL: did not flag the Rosso-Jones shape "
+              "(a `Finset` binder is arbitrary -- see FINITE_TYPE_RE)")
+        return 1
+    print("selftest ok: flags the refutable HasQPlancherelCLT and Rosso-Jones "
+          "shapes; does NOT flag a repaired carrier, a proof binder, an "
+          "∃-witnessed bound, or a finite index")
     return 0
 
 if __name__ == '__main__':

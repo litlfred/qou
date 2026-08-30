@@ -76,11 +76,14 @@ from q_parameter import Q as Q_0  # noqa: E402
 # Jones-Markov tr_M of the 11-crossing canonical braid at the
 # proton-pinned q₀:
 #
-#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132
+#   p = 1.1457596924573009  n = 0.9877436881158096  D = 0.5751722439177719
 #
 # Four independent production methods (`atomic_tr_m_mpfr_50dps`
 # Hoefsmit, `markov_peel`, chi-cache combiner, Habiro `a_m` integer
-# coefficients) derive these to ≤ 2e-15 at 50 dps; the Lean theorem
+# coefficients) were reported to derive these to ≤ 2e-15 at 50 dps. That
+# agreement was established for the CONVENTION-C values these entries used to
+# hold and has NOT been re-established for the convention-D values now here
+# (2026-08-30, bean qou-46ab) — do not cite it as current cross-validation. The Lean theorem
 # `qou_markov_trace_is_jones_markov`
 # (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
 # sorry-free, axiomatising Wenzl / Jones Markov-trace uniqueness via a
@@ -93,10 +96,22 @@ from q_parameter import Q as Q_0  # noqa: E402
 #
 # Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
 # §"Resolution 2026-05-29".
+# CONVENTION FIX (2026-08-30, bean qou-46ab). These were CONVENTION C.
+# `p` matched the C-frame value to 3.3e-20 — i.e. exactly, proved by
+# `audits/he4_witness_convention_attribution_probe.py` — while convention D
+# has been canonical since the owner ruling of 2026-08-15.
+#
+# `D` (deuteron) was ALSO WRONG IN A SECOND, SEPARATE WAY and that is worth
+# keeping: it matched neither convention. It sat 1.82e-4 from the C-frame
+# deuteron (0.3883571887237810073, computed from `chi-deuteron-h6.witness.json`)
+# and 0.325 from the D-frame one. So it was not simply a C-era value; it had an
+# additional ~2e-4 discrepancy of unestablished origin on top of the convention.
+# Replacing it with the D value fixes the convention and removes that anomaly
+# in the same stroke — but the anomaly is NOT explained, only superseded.
 TR_M_AT_Q0: dict[str, float] = {
-    "p": 1.0653062286131670,
-    "n": 0.9232332971861535,
-    "D": 0.3882864715477132,
+    "p": 1.1457596924573009,
+    "n": 0.9877436881158096,
+    "D": 0.5751722439177719,
 }
 
 # ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
@@ -108,10 +123,14 @@ TR_M_AT_Q0: dict[str, float] = {
 # `mp.mpf(TR_M_AT_Q0_50DPS["p"])`.  Source: atomic-tr-m-mpfr-50dps.witness.json
 # (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
 # production canonical Markov trace).
+# Convention D, at the PROTON pin, read from
+# `atomic-tr-m-mpfr-50dps-proton.witness.json`. Prefer
+# `canonical_trm_reference.tr_m_nucleon()` in new code — it selects the witness
+# by its own recorded q0 and so cannot silently serve the other layer.
 TR_M_AT_Q0_50DPS: dict[str, str] = {
-    "p":  "1.0653062286131670593652845464313725576506616741351",
-    "n":  "0.92323329718615355710525339599068604013866212190134",
-    "D":  "0.3882864715477132785110659223165687998713135876719",
+    "p":  "1.14575969245730086968908159577411930594372806194352738498820",
+    "n":  "0.987743688115809571634020165501294982055048759062827475627723",
+    "D":  "0.575172243917771870826535343986180889152494352892855072730158",
 }
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
@@ -143,8 +162,19 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   1.0653062286131670,  # 11-crossing typed B_3 (uud)
-    "n":   0.9232332971861535,  # 11-crossing typed B_3 (udd)
+    # CONVENTION FIX (2026-08-30, bean qou-46ab). `p` and `n` were the
+    # convention-C values, and this dict's OWN comment above is why they had to
+    # move with the Model A ones: it states that at A = 1 the two models
+    # converge and that the source is "the same as TR_M_AT_Q0 above". They are
+    # the same quantity, so leaving these at C while fixing that one would have
+    # split a documented identity.
+    #
+    # D / T / 3He are NOT touched here. They are SDP-canonical low-strand knots
+    # (6_2, 8_11, L6a4) — different quantities, not this trace under another
+    # convention — and they already carry their own "#1422-recompute pending"
+    # marker. Changing them would need those recomputes, not a substitution.
+    "p":   1.1457596924573009,  # 11-crossing typed B_3 (uud)
+    "n":   0.9877436881158096,  # 11-crossing typed B_3 (udd)
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)

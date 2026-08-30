@@ -1014,16 +1014,13 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | **UNRELIABLE, not absent — the "never arrives" claim is FALSIFIED (2026-08-30).** The n=5 negative (bean `qou-gwe9`; #5474, #5495, #5411, #5459, #5482 — zero reviews, `get_check_runs` `total_count: 0`) was real when measured, but it is **not** a permanent property: PR #6058 requested a review via `request_copilot_review` and **received one ~9 minutes later, with 3 findings, all confirmed by measurement** — a sympy dispatch bug (`hasattr(q, "free_symbols")` is True for sympy *numerics* with an empty set) and two missing `_path_bridge` bootstraps that made probes unrunnable without a pre-set `PYTHONPATH`. So: request it, do not *block* on it, and do not assert it will not come. One positive does not make it dependable, and five negatives did not make it impossible. |
+    > | Copilot review | **🛑 CORRECTED 2026-08-30 — reviews DO arrive, and are RATIONED.** Measured first-hand on `qou#6122` (~3 min) and `folio-assistant#153` (~4 min), both from `copilot-pull-request-reviewer[bot]`, both with substantive findings — and on qou#6104/#6116, where the reviews landed minutes AFTER those PRs were merged on this row's old guidance, carrying six findings including a real correctness regression. **A quota exists**: five requests across two repos in ~30 min returned *"reached their quota limit"*, so do NOT re-request after every push. The mechanism for the historical zeros is UNSETTLED (three candidates weighed in [`docs/audits/2026-08-30-copilot-review-works-again.md`](docs/audits/2026-08-30-copilot-review-works-again.md), bean `qou-gwe9` **reopened**); note `get_check_runs` still returns `total_count: 0`, so that signal does not discriminate and must not be read as "no review is coming". Superseded text follows: Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
     >
-    > **🛑 So the Phase-4 gate table has ZERO *dependable* external gates —
-    > but no longer zero live ones (corrected 2026-08-30).** CI and Gemini are
-    > genuinely gone. Copilot is not: it reviewed #6058 on request and found
-    > three real defects the agent's own verification had missed, two of them
-    > invisible to that agent precisely because its runner set `PYTHONPATH`.
-    > Request it every time; treat its arrival as a bonus rather than a gate. The agent's own verification
+    > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
+    > one.** All three original gates are gone. The agent's own verification
     > is not the last gate standing — it is the *only* gate. Act accordingly:
-    > state the verification you actually ran, and do **not** wait on Copilot.
+    > state the verification you actually ran. (The "do not wait on Copilot" that
+> stood here is corrected above — reviews arrive, subject to quota.)
     > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
     > check run that is never created; that wait can only expire, so skip it
     > and record why (citing `qou-gwe9`) rather than burning the window.

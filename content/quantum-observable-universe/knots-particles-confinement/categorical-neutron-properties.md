@@ -6,9 +6,21 @@ As in the [proton](#def:categorical-proton) construction, we find $\mathrm{net}(
 **Step 2: Typed crossings + Hopf gluon stabilisation.**
 The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton. The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
 
-The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing. A single Hopf link $L_- = \sigma_1\sigma_0$ restores structural stability. 
+*(Partly withdrawn — see below. Two independent corrections, four days apart.)*
 
-The integer LP dual selects $L_-$ as the minimum-action stabiliser. The $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability than the proton's ($\mathrm{tr}_M = -0.132$ versus $-0.006$), a difference in depth rather than in the number of gluon crossings required. This yields a total of 11 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 2 from gluons).
+~~The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing.~~ A single Hopf link $L_- = \sigma_1\sigma_0$ is what the construction applies.
+
+The integer LP dual selects $L_-$ as the minimum-action stabiliser, for a total of **11 crossings** (6 from $\mathcal{B}_3$, 3 from quarks, 2 from gluons) — [`qou-vtlj`](#rem:gluon-stabiliser-ledger), which rebuilt the block's own recipe and found the stated $\mathrm{net}(\mathfrak{n}) = +0.7976$ is the eleven-crossing value. The earlier "$L_+ \to L_-$, 4 gluon crossings, 13 total" was wrong on its own terms, independently of anything below.
+
+~~The $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability than the proton's ($\mathrm{tr}_M = -0.132$ versus $-0.006$), a difference in depth rather than in the number of gluon crossings required.~~
+
+**The remaining depth claim does not survive either** (`qou-jqjx`). Those two figures come from `computations/_deprecated/integer-lp-gluon.py`, which computes the Markov trace on convention C with $\mathrm{tr}_M(e^-) = z^3$ — a weight retired on 2026-05-19 in favour of the Markov-recursion value $h z^2 + z$. Reproduced on the retired convention the numbers come out at $-0.132224$ and $-0.005936$, matching what was published. On the live convention the same elements are $+0.408$ and $+0.544$, and the $\sigma_0$ channel is positive at *every* step of the typed build. There is no instability, deeper or otherwise, and so no depth difference to carry a mass split.
+
+Note the sequence, because it is the point: correcting the crossing count removed the $4$-versus-$2$ asymmetry and moved the surviving claim onto the two numbers that are themselves convention artefacts. Both corrections are needed; neither alone finishes the paragraph.
+
+What replaces it is open. Nothing is offered here — the derivation needs re-deriving rather than patching, and the [gluon ledger](#rem:gluon-stabiliser-ledger) carries the full measurement.
+
+What survives unchanged is the *scope* of the enumeration: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, admissible and simply losing the minimisation.
 
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-30T06:48:57Z
+updated_at: 2026-08-30T07:53:19Z
 ---
 
 
@@ -242,3 +242,111 @@ Note for whoever takes item 2: the exclusion `rankOne_finrank_ne_factorial`
 still has to be argued from `Module.finrank Q Q /= n!` rather than from the
 class, precisely because `SpechtDimension` supplies no dimension count. Closing
 item 2 should let that argument come from the class instead.
+
+
+---
+
+## 2026-08-30 — ITEM 2 DONE. blockDim is a function of lambda; y_lambda is DETERMINED
+
+PR #6119 (item 1 was #6097, merged).
+
+`blockDim` is no longer a field of `WedderburnDecomp`:
+
+    def blockDim {n : N} (lam : Partition n) : N :=
+      QOU.BraidKnot.IdentityI.dimHLF lam.parts
+
+the Frame-Robinson-Thrall hook-length dimension n!/prod_c h_c, computed from the
+partition alone. A witness has no `d` left to choose.
+
+**`rankOneWedderburnDim` can no longer be WRITTEN**, and that is the result --
+nothing was weakened to retire it. `yLambda_residual_freedom` goes with it.
+Replaced by:
+
+  * `rankOne_blockDim_forced` : blockDim (lam0 n) = 1  (lam0 is the single column)
+  * `yLambda_forced_one`      : pi_lam = 1 -> y_lam = 1, over an ARBITRARY
+    decomposition on this carrier, not over a witness
+
+Ledger, now complete:
+
+  before #6097:  y_lam ranges over ALL of Q-nonzero
+  after  #6097:  y_lam ranges over {1/d : d >= 1}
+  after  #6119:  DETERMINED
+
+Supporting mathematics, added to `QOU/Mathlib/SYTHookFormulaRows.lean` beside
+the existing one-row and two-row cases: `colLen_column`, `prodHooks_column`
+(= n!), `dimHLF_column` (= 1). The corpus already had `dimHLF`/`prodHooks`/
+`numSYTenum` in `QOU.BraidKnot.IdentityI` -- found by corpus-grep, so this PR
+USES them rather than defining a second hook-length function. Mathlib at the
+pinned rev has no Combinatorics/Young and no hookLength/StandardYoungTableau,
+confirming the "not in Mathlib" half.
+
+## What the class NOW commits to -- do not read this as more than it is
+
+That `dimHLF lam` IS `#SYT(lam)` is Frame-Robinson-Thrall. In this corpus it is
+proved for one-row, two-row and (this PR) one-column shapes; the general theorem
+`numSYTenum l = dimHLF l` is OPEN here, validated in aggregate by
+`dim_validated_le12`. **The class uses the FRT formula; it does not prove FRT.**
+Written into blockDim's docstring, not left implicit. That is the honest
+residue of qou-luq7 and it is a different KIND of gap from what item 1 and item
+2 closed -- a cited classical theorem, not a free parameter.
+
+## Third instance of the 1646b5d6d3 fallout, found by the cone check
+
+`QOU.MathlibExt.QIntegerCanonical.qIntGeo` -- the corpus's CANONICAL geometric
+q-integer alias -- had a body naming `QOU.Mass.QHookDimension.qIntPoly`, deleted
+by 1646b5d6d3. Retargeted to `QHookDimensionBalanced.qIntPoly`. Consumers reach
+it through a three-hop chain (`QOU.BraidKnot.qInt` -> `qIntGeo` -> dead name), so
+`qIntPoly` appears nowhere in the failing file -- a grep of the consumer finds
+nothing. Same shape as the miss that let #6097's break sit six days, with an
+alias hop in place of an instance. Verified pre-existing: reproduces against
+main's own oleans with this branch off the LEAN_PATH.
+
+
+---
+
+## 2026-08-30 — FRT WAS ALREADY PROVED. My "open" claim was FALSE; retracted
+
+Asked to prove Frame-Robinson-Thrall in general. It is already in the corpus,
+sorry-free, at general n:
+
+    QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF   (Mathlib/SYTHookGNW.lean)
+
+Greene-Nijenhuis-Wilf route: `cornerRecursion` + `gnwHookIdentity` (via the
+beta-Lagrange Vandermonde keystone), strong induction to `#SYT * prod h = n!`.
+VERIFIED, not trusted: 0 code sorries across all six files of the chain;
+`#print axioms` on the theorem and its three inputs = [propext, Classical.choice,
+Quot.sound], no sorryAx.
+
+## The retraction
+
+The entry above ("What the class NOW commits to -- do not read this as more than
+it is") says the general theorem is OPEN here and that the class uses the FRT
+formula without proving it. **Both halves are false.** The same false claim went
+into `QOU.Hecke.blockDim`'s docstring, `WedderburnRankDegeneracy`'s module
+docstring, and PR #6119's body.
+
+Root cause, and it is the exact failure AGENTS.md warns about: I read
+`SYTHookFormulaRows.lean`'s header, which says the general HLF "remains open in
+this corpus", and propagated it. That header is a source-file status note that
+went stale after the GNW proof landed. §"Before declaring open" says in terms
+that such notes are NOT authoritative and the corpus is. My corpus-grep looked
+for `dimHLF`/`prodHooks` (which is how I found the machinery to reuse) but never
+for the THEOREM'S STATUS -- the one question the checklist exists to answer.
+
+Fixed at the source as well: that header now records that it was stale and that
+it misled a downstream consumer.
+
+## What this changes for qou-luq7 -- the last residue is GONE
+
+`QOU.Hecke.blockDim_eq_numSYT : blockDim lam = numSYTenum lam.parts`, one line,
+because `Partition n`'s `decreasing` and `positive` fields ARE the two hypotheses
+FRT takes. So:
+
+  before #6097:  y_lam free over all of Q-nonzero
+  after  #6097:  y_lam in {1/d : d >= 1}
+  after  #6119:  y_lam determined; blockDim = the FRT FORMULA (a commitment)
+  now:           blockDim = #SYT(lam) as a THEOREM (no commitment left)
+
+qou-luq7 now carries no free parameter and no cited-but-unproved classical
+input. I previously said the remaining gap was "proving FRT, a standalone
+formalisation" -- that was wrong too, and for the same reason.

@@ -148,7 +148,16 @@ and the working recipe are in the sibling file; the shapes:
    a complete `cp -al` mirror, `rm -f`-ing each olean before rebuilding it.
 3. **A disk-full `lake build` writes truncated oleans that segfault.** Signature
    **exit 139, zero errors, 0–1 s**; 10 of 11 "failing" modules were this. Never
-   call a module broken from exit 139 alone.
+   call a module broken from exit 139 alone. **Do NOT use olean size as the
+   test** — 2026-08-30, three segfaulters measured 50–226 KB inside a normal
+   33 KB–6.7 MB range, so size flagged nothing.
+4. **Most cone failures are the harness, not the code.** Measured 8, of which
+   **1** was a real defect. `object file … does not exist` usually means a
+   *non-cone* dependency has no olean at all — `ls` it. Decisive test for every
+   one: re-run against **main's own oleans**, your changes off `LEAN_PATH`.
+5. **A dead constant hides behind `abbrev` hops.** A consumer can fail on a
+   deleted constant whose name does not appear in it (three hops, measured), so
+   grepping consumers is not a blast-radius check. Same class as 1.
 
 ## STABLE — the honest dispositions when a proof will not close
 
@@ -173,10 +182,12 @@ gap. An honest bean is always acceptable.
 
 All three Phase-4 external gates are gone: **CI** (auto-triggers disabled
 repo-wide 2026-06-30, `build.yml` is `workflow_dispatch`-only, no `lean_ci.yml`
-exists), **Gemini** (sunset 2026-08-01), **Copilot** (measured n=5, never
-enqueues — `qou-gwe9`). `prepare-merge-auto` Phase 1b still prescribes a
-15-minute Copilot poll that can only expire; skip it and cite the bean. Full
-detail lives in `merge-coordinator`'s memory, which owns this.
+exists), **Gemini** (sunset 2026-08-01), **Copilot** — **CORRECTED 2026-08-30: reviews DO arrive**
+(~3-4 min) and are **quota-rationed**; the old "never enqueues" reading came
+from `get_check_runs: total_count 0`, which is real but does not discriminate.
+Do not block on that poll; do expect a review wake on a subscribed PR. Bean
+`qou-gwe9` (reopened), `docs/audits/2026-08-30-copilot-review-works-again.md`.
+Full detail lives in `merge-coordinator`'s memory, which owns this.
 
 So state the verification you actually ran and **never write "CI green"**
 unless a run exists. A **library** file under `content/<paper>/lean/QOU/**` has
@@ -199,6 +210,35 @@ file (which cites 6990 as the pre-eviction count). A tree evicted from 6990
 down to 2919 would have read as *healthy* under the old row. Re-measure;
 do not treat any number here as a threshold.
 
+## TRAP — v4.24.0 module moves + subscript ± are notation tokens
+
+Two authoring mistakes that block a NEW file but are trivial, correct fixes
+(no statement/witness change) — seen 2026-08-29 on
+`QOU/MassTheory/MagnusPairingSignStructure.lean`:
+
+- `import Mathlib.Data.Matrix.Notation` **does not exist** in mathlib
+  v4.24.0. The `!![a,b;c,d]` matrix literal notation lives in
+  `Mathlib.LinearAlgebra.Matrix.Notation`. (`Mathlib.Data.Matrix.Notation`
+  has neither olean nor source in the tree; the olean error is a red
+  herring for "cache is partial" — the module is gone, not uncached.)
+- Under a full `import Mathlib.Tactic`, `₊`/`₋` (U+208A/U+208B subscript
+  plus/minus) are **notation tokens** (PosPart etc.), so a bound-variable
+  name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
+  the binder (`ρ₊`→`ρp`) — pure alpha-renaming, the proposition is
+  identical. Fine in comments/docstrings, not in identifiers.
+
+## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
+
+`lake-cache/qou-v4-24-0` (25 parts) extracts to `$ROOT/.lake/` (root
+workspace layout: `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`).
+Measured 2026-08-29: **3407 mathlib oleans** + 2275 QOU-library oleans,
+`Mathlib.Tactic.olean` and `Matrix/Trace.olean` present. The pre-existing
+`content/quantum-observable-universe/lean/.lake/packages/**` tree is a
+**partial decoy** (~726 mathlib, QOU lib = 0) — do NOT point LEAN_PATH at
+it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
+(The prior log's "6990 mathlib" was not what THIS restore produced; 3407 is
+the QOU-cone partial and it is sufficient for QOU + Mathlib.Tactic files.)
+
 ---
 
 ## Session log
@@ -207,6 +247,14 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
+  (sign-isotype exclusion, statement-B). lean-direct EXIT 0, `#print axioms` =
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`. TRAP: cache tarball is
+  now **2.3G** (was 1.6G) and restore ran out at ~2.2G free — extraction cut off
+  in the QOU library files, but mathlib extracted 3407 oleans, ENOUGH for a
+  Mathlib-only import cone. Lesson: a Mathlib-only file needs no complete restore
+  — probe the import cone with a minimal `example` first. Gotcha: `omit [inst] in`
+  must precede the docstring, not sit between docstring and `theorem`.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
@@ -221,3 +269,14 @@ prune the log, never the TRAPs.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
+  after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
+  Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT
+  source FIRST (avoids false-green), then Borromean/Brunnian against the fresh
+  olean: all exit 0. Magnus standalone exit 0. All 9 key theorems axiom-clean
+  {propext,Classical.choice,Quot.sound}. No instance of `BrunnianDeficitRecursion`
+  (content-bearing class, honest §3b-cond open state). No rebase breakage; Milnor
+  still exports leadingOrder/leadingOrder_four/tauBorromean/borromean_deficit_factor/
+  MilnorExactOrderConjecture. Confirmed: cache restores to ROOT `.lake` (2277 QOU
+  oleans), the per-paper `content/.../lean/.lake` tree is a 3-olean decoy — the
+  harness §3 base path must be ROOT, not $LEANLIB.

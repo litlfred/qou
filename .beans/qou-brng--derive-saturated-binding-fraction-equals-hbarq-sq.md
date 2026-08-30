@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-21T15:05:00Z
+updated_at: 2026-08-30T07:33:05Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -41,3 +41,29 @@ likely numerology than a derived prediction**. Do NOT wire the 0.95·ℏ_q² mat
 correction to force it to 1·ℏ_q². The honest state: analytic dichotomy proved (Lean); the exact
 ℏ_q² saturation value is open AND now more suspect. Needs a genuinely new structural mechanism
 (the linking-vs-self-energy route) or a scoped owner decision on whether it is worth pursuing.
+
+
+---
+**Update 2026-08-30 (session qou-d3i9, PR #6125).** Partial progress on the surviving
+(linking-vs-self-energy) route — the TYPE question is resolved; two sub-questions stay open.
+
+CORPUS CORRECTION that reframed it: the ³He/⁴He carrier L6a4 is BRUNNIAN (pairwise Gauss
+lk ≡ 0), so M cannot be a linking number — it is a coordination COUNT (graph degree z=A−1).
+The em-linking sibling thread proved the same obstruction (docs/audits/2026-08-01-em-linking-reads-round1.md,
+O1 antisymmetry + topological-vs-metric pairing).
+
+PROVED (Lean, sorry-free — QOU.Mass.BrunnianBindingChannel, built on the proved
+CrossingEnergy.decomposition): the mutual crossing energy splits into a signed writhe/linking
+channel (n₊−n₋=2·lk) and an unsigned count/coordination channel (n₊+n₋). For a Brunnian pair
+n₊=n₋ so the signed channel is ZERO and the whole binding energy is the unsigned count channel,
+strictly positive for a crossing pair at q>1 — binding SURVIVES the Brunnian vanishing where the
+linking number does not. This is why M is a coordination count, discrete analogue of the
+em-linking thread's "route around O1 is an UNSIGNED quantity" (Khesin Rmk 3.5). Audit:
+docs/audits/2026-08-30-brunnian-binding-channel.md.
+
+STILL OPEN (the sharpened kernel — a future attack aims here):
+1. exact map n₊+n₋ → z=A−1 (the channel is proved; the coefficient is not);
+2. why the surviving count channel enters as a BARE INTEGER while the self/mass channel keeps the
+   full q-dim self-trace lw (self = closed quantum trace over Wedderburn channels; mutual = pairing
+   of two fixed components, no internal channel sum — plausible but NOT proved);
+3. the exact ℏ_q² saturation value stays numerology-suspect (unchanged; not touched, not forced).
