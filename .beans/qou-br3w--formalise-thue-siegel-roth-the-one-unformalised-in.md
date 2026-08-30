@@ -1182,3 +1182,13 @@ WHAT SURVIVES: the axiom result, the non-vacuity check, step 1 being genuinely l
 rejection of slack_pos in favour of the product-form budget. Three of six findings are REPORTING
 defects, not proof defects -- the Lean is checked by a machine that cannot be talked into agreeing,
 and the prose around it is checked by nobody.
+
+## 2026-08-30 -- MERGED to main as 9c5ee67c4b (PR #6096).
+
+Roth's theorem for psi(alpha_0), in height form, steps 1-5, axiom-clean. Bean stays IN-PROGRESS: the
+general statement is not reached. Child qou-mjbr carries what is left, and it is construction, not
+estimate -- not_approximable_of_nsmul_eq already does the analytic half.
+
+The roast's R0 is the reason this is not marked completed. "Roth's theorem is proved" was the claim
+I made; "Roth's theorem for psi(alpha_0), in height form" is what is true. Closing the bean on the
+first sentence would bury the second.
