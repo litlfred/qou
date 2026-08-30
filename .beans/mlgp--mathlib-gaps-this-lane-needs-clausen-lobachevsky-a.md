@@ -480,3 +480,61 @@ cache predates HEAD. Rebuilding them is unrelated to this change.
 **Ordering update.** ~~Gap 2~~ → ~~Gap 3~~ → Gap 1 (upstream `Cl₂`/`Λ`; the corpus
 already has them, so this is a contribution, not a blocker) → Gap 4 → Gap 5.
 All five new `MathlibExt` lemmas are written to be upstreamable unchanged.
+
+## Gap 5 — first bricks landed, and part (C) is proved (2026-08-30)
+
+Not the whole gap. Steepest descent and stationary phase are still absent from Mathlib
+(`grep -ril "steepest descent\|stationary phase\|Laplace"` over `f897ebcf`: nothing),
+and nothing here produces an asymptotic expansion. What is done is the part that does
+**not** need them, isolated so the cost of the part that does is visible.
+
+**`QOU/MathlibExt/ExponentialGrowthRate.lean`** — *a sub-exponential factor cannot
+change an exponential growth rate*. Every volume-conjecture instance re-derives this
+per knot; it is one fact.
+`tendsto_log_norm_div_of_tendsto_one` **discharges part (C)** of the `5₂` bridge, and
+`volume_conjecture_five_two` is now **sorry-free**: nothing stands between Ohtsuki's
+Theorem 1.1 and the volume conjecture for `5₂` but the two identities (B) and (D),
+which the bridge takes as explicit hypotheses. Also `tendsto_log_div_of_sandwich`, the
+squeeze skeleton the `4₁` and Borromean proofs each write out separately.
+
+**`QOU/MathlibExt/HalfPlaneNonCancellation.lean`** — the missing *direction*. Mathlib
+gives `‖Σz‖ ≤ Σ‖z‖` free and nothing the other way, and that asymmetry is where every
+open instance sits: the upper halves of the squeezes are done, the lower halves are
+not. Full non-cancellation is false in general and proving it where it matters *is*
+steepest descent — but terms confined to a half-plane keep a `cos α` share, with a
+constant independent of the number of terms. Measured on the Whitehead-chain sums the
+inner clasp sum is exactly phase-free at `e^{2πi/N}`; the outer sum spans 347–351°. So
+this settles the inner sums and isolates the outer one as the real obstruction.
+
+Two hypotheses became theorems on the way: `kashaev_eventually_ne_zero` (a ratio
+tending to 1 is eventually non-zero), and the class field now writes `N^{3/2}` as a
+*real* power cast into `ℂ` rather than `Complex.cpow` — faithful, since Ohtsuki's
+`N^{3/2}` is a positive real and `cpow` would import a branch choice he does not make.
+
+## Adjacent: two prose assertions turned into theorems
+
+Both were claims I had made in text, and the discipline says a claim that can be
+proved should not stay prose.
+
+* **`QOU/BraidKnot/TorusKnotTracePolynomial.lean`** — the cheat sheet's `P_m` closed
+  form, recorded there as "sympy-exact across `m = 1..6`", is now `traceIdentity`:
+  sorry-free, any field of characteristic zero, no bound on `m`. Route is the shared
+  Chebyshev recursion (`q² + q⁻² = h² + 2`), with `choose_shift_identity` the Pascal
+  fact underneath. **My first derivation of that coefficient identity was wrong** —
+  `h²·S_m` shifts the index, so it contributes `C(m+j−1, 2j−2)`, not `C(m+j, 2j−2)`.
+* **`QOU/MathlibExt/CoshCosSeparation.lean`** — `cosh a/cosh b < 1 < cos a/cos b` for
+  all `0 < a < b < π/2`. This makes the refutation of the cheat sheet's
+  "the 1 % gap is the cosh-vs-cos discrepancy" structural instead of arithmetic at one
+  point: the two readings bracket `1` at *every* admissible `η`, so swapping `cosh` for
+  `cos` moves the answer across `1` and away from the SM value, rather than perturbing
+  it by a percent.
+
+## On the mass/binding magnitude gaps — this machinery does not close them
+
+Asked directly, so recorded directly. The dominant budget (+2.89 % → +3.86 % across
+`m_p`, `m_n`, ⁴He, ¹²C, ⁵⁶Fe) is the per-knot `VolDensity(K, q₀)` wire-up — 64 of 65
+atom-touching scripts call `vol_density_borromean(q)` uniformly. That is compute
+wiring, not analysis, and none of the convexity, growth-rate or non-cancellation work
+touches it. The binding scale rides on the VC for **8₁₁**, which stays open (see
+`qou-b5h9`); `5₂` is not in that chain. So: conditionality stated more sharply, numbers
+unmoved.
