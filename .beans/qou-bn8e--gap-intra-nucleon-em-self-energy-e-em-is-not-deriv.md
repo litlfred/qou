@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T09:28:56Z
+updated_at: 2026-08-30T09:34:26Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -673,3 +673,73 @@ return `[]` even for a maximally-broad query, and `curl` to each host gives
 the open out-of-band lane and WebFetch is not. **The arXiv numbers above are
 from search-result metadata and are NOT verified against the papers**, which
 this session cannot fetch.
+
+
+---
+
+## CRUX RESOLVED 2026-08-30 — the framework's Δ_pn is the NET quantity, and there is no room for an EM term
+
+The lit-search entry above named this as the prerequisite and declined to state a
+target. Measured now, against the production witness, it is settled — and it
+corrects two figures I gave earlier in the same session.
+
+### How the framework builds the splitting
+
+`computations/m_p_substrate_identity_50dps.py` lines 261–263:
+
+```
+Q_beta_pred  = q_beta_kashiwara_n2_mev()   # parameter-free Kashiwara b² truncation
+Delta_m_pred = Q_beta_pred + m_e           # = m_n − m_p, computed directly
+m_n_pred     = m_p_pred + Delta_m_pred
+```
+
+So `m_n − m_p` is **one derived quantity**, `Q_β + m_e`, with `Q_β` a
+parameter-free near-match — *not* an input. The witness is explicit: *"CAL-3
+(Q_β) is NOT used as input — Q_β becomes a DERIVED quantity."*
+
+### What it reproduces
+
+From `m-p-substrate-identity-50dps.witness.json`:
+
+| | value |
+|---|---|
+| framework `Δ_pn` (predicted) | `1.293803640499387` MeV |
+| CODATA `Δ_pn` | `1.29333251` MeV |
+| **residual (over-prediction)** | **`0.0004711305` MeV = `0.471` keV** |
+| relative | **`0.0364276 %` = `364276` ppb** |
+
+The relative figure reproduces the witness's own recorded
+`predictions_pathC/Delta_m_pn_ppb = 364276.391217384` to the digit, so this is
+the framework's own accounting, not a re-derivation of mine.
+
+### The consequence for this bean
+
+**The framework's `Δ_pn` targets and reproduces the NET measured splitting.** It
+is therefore *not* the pure-strong quantity, and the tempting move — take BMW's
+electromagnetic piece `+1.00 MeV` and set `(A+B)/3 = 1.00` — is **definitively
+wrong**. That would be **2123×** the entire residual and would destroy an
+agreement that currently stands at 0.036 %.
+
+Room actually available to an EM term, if it is an additive correction on the
+splitting:
+
+    (A + B)/3  ≤  0.000471 MeV      ⟹      A + B  ≲  1.41 keV
+
+**The deeper point, which reframes the bean.** The electromagnetic physics is not
+a *missing* term here — whatever of it is real is **already inside `Q_β`**, since
+`Q_β` alone covers the whole splitting to 364 ppm. So "derive `E_EM` as a
+separate additive term on the nucleon splitting" is close to mis-posed: there is
+no gap of electromagnetic size to fill. The honest questions that survive are
+different ones — *does `Q_β`'s derivation contain an identifiable EM part?*, and
+*is the 0.471 keV residual EM in origin or just the b²-truncation error?*
+
+### 🛑 Correcting two of my own figures from earlier this session
+
+I wrote that the framework "over-predicts by **0.638 %** (residual **0.008255
+MeV**)" and that the 3.0 MeV reading was wrong by "**121×**". All three numbers
+are wrong. Measured from the production witness: the over-prediction is
+**0.0364 %**, the residual is **0.000471 MeV**, and the ratio is **2123×**. The
+earlier figures are off by ~17× on the residual and ~18× on the ratio; I cannot
+reconstruct what they were computed from, so they should be treated as
+unsourced and not reused. **The verdict they supported — that the 3.0 MeV target
+was wrong — stands, and is now stronger, not weaker.**
