@@ -246,3 +246,26 @@ of which component dominates; both move together.
 −19, the `Z ≥ 5` threshold, or the crossover at 26. They are fits to exact
 integer data over a stated range, and the range is stated for the reason §3
 gives.
+
+### 6a. One lead, checked and refuted
+
+The obvious first guess for "6 per neutron" is that it counts negative-crossing
+(`d = −h`) steps. It does not, and the refutation is one line of arithmetic
+against the `Z`-independence:
+
+| | `d = −h` steps | gap |
+|---|---:|---:|
+| `Z = 5, N = 5` | 50 | 11 |
+| `Z = 9, N = 5` | 66 | 12 |
+
+The step count moves by **16** while the gap moves by **1**. The count is
+`4Z + 4N + N(N−1)/2` — it grows with `Z` at 4 per proton plus one per electron —
+whereas the gap is `Z`-independent for `Z ≥ 5` by construction of the law. So
+the two cannot be proportional.
+
+**And the asymmetry that motivated the guess does not exist.** I had said a
+neutron block carries four `d = −h` steps against a proton's three. Counted
+from the sequence itself, a proton block *plus its electron* also carries
+**four** — the electron step supplies the missing one. Both nucleons contribute
+4. The 6-per-neutron rate therefore has no candidate mechanism at all yet, which
+is a cleaner statement of the open problem than the one it replaces.
