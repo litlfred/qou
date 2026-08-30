@@ -53,6 +53,29 @@ structure KnotEmbedding (M : Type*) where
   arcLength_symm : ∀ s t, arcLengthDist s t = arcLengthDist t s
   /-- Arc-length distance is non-negative. -/
   arcLength_nonneg : ∀ s t, 0 ≤ arcLengthDist s t
+  /-- **Ambient (chord) distance** `|γ(s) − γ(t)|` between the strand points at
+      parameters `s` and `t`.
+
+      Carried as a field rather than obtained from a `MetricSpace M` instance,
+      matching how `arcLengthDist` is already carried: `M` is the fibre of the
+      realisation functor and the rest of this file keeps it a bare `Type*`, so
+      requiring a metric instance would constrain every use site for one
+      definition.
+
+      Added 2026-08-30 (bean `qou-o6ml`, route 2). Until then this structure
+      carried only the *intrinsic* distance, so the Möbius/O'Hara integrand —
+      which is a function of the **ambient** separation minus the intrinsic one
+      — could not be written in this encoding at all, and the `ClassicalMobiusEnergy`
+      docstring stated an integral none of the data here could express. -/
+  ambientDist : ℝ → ℝ → ℝ
+  /-- Ambient distance is symmetric. -/
+  ambient_symm : ∀ s t, ambientDist s t = ambientDist t s
+  /-- Ambient distance is non-negative. -/
+  ambient_nonneg : ∀ s t, 0 ≤ ambientDist s t
+  /-- **The chord never exceeds the arc.**  This is what makes the O'Hara
+      integrand pointwise non-negative, and hence what makes
+      `ClassicalMobiusEnergy.nonneg` a consequence rather than an assumption. -/
+  chord_le_arc : ∀ s t, ambientDist s t ≤ arcLengthDist s t
 
 /-- The **classical Möbius energy** of a knot embedding.
 
@@ -89,6 +112,49 @@ structure ClassicalMobiusEnergy where
       sibling. -/
   -- Ref: [freedman1994] https://doi.org/10.2307/2946626
   unknot_iff : value = 4 ↔ isUnknot
+
+/-- The **O'Hara / Möbius integrand** at parameters `(s, t)`:
+
+    $$\frac{1}{|\gamma(s) - \gamma(t)|^2} - \frac{1}{D(\gamma(s), \gamma(t))^2}.$$
+
+    The subtracted term is the *regularisation*: the singularity of the ambient
+    term as `t → s` is cancelled by the intrinsic term, which is what makes the
+    double integral converge.  It is also, structurally, why this functional is
+    a candidate where an unsubtracted kernel is not — see bean `qou-17mq`, whose
+    O2 (neutrality) obstruction excludes pair kernels that are not zero-mean; a
+    kernel whose subtraction is intrinsic is not vulnerable to that argument.
+
+    Ref: [ohara1991], [freedman1994] -/
+noncomputable def KnotEmbedding.oharaIntegrand {M : Type*} (k : KnotEmbedding M)
+    (s t : ℝ) : ℝ :=
+  1 / k.ambientDist s t ^ 2 - 1 / k.arcLengthDist s t ^ 2
+
+/-- **The O'Hara integrand is pointwise non-negative** off the diagonal.
+
+    Derived from `chord_le_arc`, not assumed.  `ClassicalMobiusEnergy.nonneg`
+    below is a *field* — the positivity of the energy is carried as a hypothesis
+    there because the structure has no integrand to derive it from.  This lemma
+    supplies the pointwise half of that derivation: the remaining step is that
+    an integral of a non-negative function is non-negative, which needs
+    integration theory this file does not set up.
+
+    The hypothesis is that the two points are distinct in the ambient space,
+    which is exactly the off-diagonal condition the double integral imposes. -/
+theorem KnotEmbedding.oharaIntegrand_nonneg {M : Type*} (k : KnotEmbedding M)
+    (s t : ℝ) (hpos : 0 < k.ambientDist s t) :
+    0 ≤ k.oharaIntegrand s t := by
+  have harc : 0 < k.arcLengthDist s t := lt_of_lt_of_le hpos (k.chord_le_arc s t)
+  have hsq : k.ambientDist s t ^ 2 ≤ k.arcLengthDist s t ^ 2 := by
+    nlinarith [k.chord_le_arc s t, hpos.le]
+  have h : 1 / k.arcLengthDist s t ^ 2 ≤ 1 / k.ambientDist s t ^ 2 :=
+    one_div_le_one_div_of_le (by positivity) hsq
+  simpa [KnotEmbedding.oharaIntegrand, sub_nonneg] using h
+
+/-- The integrand is symmetric in its two parameters, inherited from the two
+    distance symmetries. -/
+theorem KnotEmbedding.oharaIntegrand_symm {M : Type*} (k : KnotEmbedding M)
+    (s t : ℝ) : k.oharaIntegrand s t = k.oharaIntegrand t s := by
+  simp [KnotEmbedding.oharaIntegrand, k.ambient_symm s t, k.arcLength_symm s t]
 
 /-! ## §2  Categorical Möbius Energy -/
 

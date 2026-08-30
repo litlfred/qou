@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T14:42:31Z
+updated_at: 2026-08-30T14:46:53Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -336,3 +336,58 @@ it against my own result.
 
 **Net:** route (2)'s ranking is unchanged; the obstruction narrows *how* it may
 be built, not *whether* it can reach the target.
+
+
+## ROUTE (2) UNBLOCKED 2026-08-30 — the O'Hara integrand is now writable, and its positivity is derived
+
+The blocker recorded in this bean's ROAST — *"`KnotEmbedding` has `arcLengthDist`
+and **no ambient distance**, so the Möbius integrand cannot be written at all"* —
+is closed. `lean`-direct exit 0, sorry-free.
+
+`QOU.KnotEmbedding` gains four fields: `ambientDist`, `ambient_symm`,
+`ambient_nonneg`, and **`chord_le_arc : ∀ s t, ambientDist s t ≤ arcLengthDist s t`**.
+Carried as fields rather than taken from a `MetricSpace M` instance, matching how
+`arcLengthDist` was already carried — `M` is the fibre of the realisation functor
+and the rest of the file keeps it a bare `Type*`, so a metric instance would
+constrain every use site for one definition. Safe to extend: `KnotEmbedding`
+has exactly **one** use in the tree (the `knot` field of
+`CategoricalMobiusEnergy`) and **no constructor anywhere**, so no call site
+breaks. (`genus_from_hecke_completeness.lean` matches a grep for the name only
+through the unrelated `torusKnotEmbeddingCount`.)
+
+Then:
+
+- **`oharaIntegrand`** — `1/|γ(s)−γ(t)|² − 1/D(s,t)²`, the actual O'Hara/Möbius
+  integrand, definable for the first time.
+- **`oharaIntegrand_nonneg`** — pointwise non-negative off the diagonal,
+  **derived from `chord_le_arc`**, not assumed.
+- **`oharaIntegrand_symm`** — symmetric in `(s,t)`, from the two distance
+  symmetries.
+
+### Why the positivity lemma is worth more than it looks
+
+`ClassicalMobiusEnergy.nonneg` is a structure **field** — the positivity of the
+energy is *carried as a hypothesis*, because that structure had no integrand to
+derive it from. `oharaIntegrand_nonneg` supplies the pointwise half of the
+derivation. Stated honestly in the docstring: the remaining step is that the
+integral of a non-negative function is non-negative, which needs integration
+theory this file does not set up. So this **does not** discharge the field yet —
+it reduces an assumption to one standard missing step, which is a different and
+weaker claim than closing it.
+
+### And it is the structural reason route (2) survives O2
+
+The subtracted term is not decoration. `qou-17mq`'s O2 obstruction excludes pair
+kernels that are not zero-mean; `oharaIntegrand`'s regularisation is **intrinsic
+to its definition** rather than imposed by hand, so the argument that excluded
+route (1)'s unsubtracted `coth` has nothing to bite on here. That was recorded
+above as a literature fact; it is now a fact about a definition in this corpus.
+
+### What is still needed before the GATE can be attempted
+
+Writing the integrand is not evaluating it. Reproducing `κ(A)` needs actual
+geometric embeddings of the nuclear links, and `qou-17mq` finding 3 established
+that **no per-isotope hyperbolic geometry beyond A = 3 exists** in the corpus
+(`binding-link-volumes.witness.json` holds A = 2 and 3 only). So the next
+blocker on route (2) is *data*, not formalisation — and it is the same data gap
+that stopped the kernel contest from being adjudicable.
