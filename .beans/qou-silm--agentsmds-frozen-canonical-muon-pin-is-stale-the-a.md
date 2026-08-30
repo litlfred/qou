@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T01:17:44Z
-updated_at: 2026-08-30T01:18:54Z
+updated_at: 2026-08-30T02:36:55Z
 ---
 
 Found while diagnosing a declaration/content mismatch under `qou-5wng`. NOT a
@@ -84,3 +84,45 @@ intended.
 `q_parameter`'s anti-corruption guard hard-fails when the muon anchor cannot be
 established. The single witness still on the old pin is in the `y-lambda`
 family. Nothing is currently failing.
+
+
+## ANSWERED 2026-08-30 (owner asked "moved from what?") — and my framing was wrong twice
+
+**From** `1.10997859555733471989976322048322502665620840878015368660798114614493`
+**To**   `1.109978595642739046681795129380001752700065561029011556974045769999095`
+
+**Commit `fca08de7d2`, 2026-08-22 21:23 UTC** — *"muon anchor -> CODATA 2022
+(owner ruling): derive it, stop the self-certification"*, quoting the owner:
+*"2022 CODATA better than 2018. A --> CODATA 2022."*
+
+### Two corrections to what this bean said
+
+1. **The date was wrong.** I wrote 2026-08-28. That is the `computedAt` of a
+   LATER regeneration (`83bab99730`, "carry convention D through to the stale
+   witnesses"). The VALUE changed on **2026-08-22**. Reading a `computedAt`
+   stamp as the date a value changed is the same class of error as reading a
+   `scriptCommitSha` as provenance — the stamp records the last run, not the
+   last change. `git log -- <file>` was the right instrument and I did not use
+   it until asked.
+2. **The open question is closed.** I framed this as "was the re-pin
+   deliberate? I cannot tell from the tree." It was an explicit owner ruling,
+   quoted verbatim in the commit message — i.e. the tree DID say, in the one
+   place I had not looked.
+
+### Why the old value had to go — sharper than "a CODATA update"
+
+Per `fca08de7d2`: the old anchor inverts to `m_μ/m_e = 206.768282989315`, which
+matches **no published CODATA**, and disagrees by **1.4 ppb** with the ratio the
+SAME witness declares in its own `calibration_inputs` (`206.7682827`, CODATA
+2022). The witness contradicted its own stated input. Root cause named in that
+commit: `q_pinning_50_digit.py` is listed `ideal_muon`, so `q_parameter` rebound
+`q_at` for that very producer and it self-certified.
+
+### What actually remains
+
+Only the documentation gap: **AGENTS.md §"q₀ anchor convention" still names
+`1.1099785955573347…` as the "frozen canonical pin"**, eight days after a ruling
+replaced it, and its three-values table still lists the live anchor
+(`…56427390…`) as merely "lepton tower, CODATA 2022". No risk analysis is needed
+— the change was ruled, the corpus is consistent with it (measured: 3206
+witnesses, no genuine Q0_FLIPs), and the word "frozen" is simply out of date.

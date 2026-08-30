@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T19:07:45Z
+updated_at: 2026-08-30T02:48:35Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -489,3 +489,76 @@ P_77 half of it is now at least derivable in both frames.
 the published closed forms, or _deprecated/toffoli-braid.py? Nothing in the tree
 records it, and the two disagree in value AND in structure. I have deliberately
 not edited those blocks.
+
+
+## RESOLVED BY DERIVATION 2026-08-30 (owner: "no determination. we need to rederive/investigate/resolve")
+
+`computations/probes/toffoli_trio_rederivation.py`, 6/6 assertions. Five results.
+
+**R1. Φ is not in the construction's image AT ALL.** Exhaustive exact-rational
+search — 32 objects (both generators × all 8 orderings, plus every
+parent–daughter difference over both indexings) and all 528 pairwise products,
+at six q where √q is rational, in `Fraction` arithmetic: **zero matches**, as a
+single object or as a product of two.
+
+The structural reason, and it is decisive: split Φ over the ℚ(q)-basis {1, √q}
+and its z-coefficient is **(q³−1)/(2(q+1))** — a `(q+1)` in the DENOMINATOR.
+Every `chain_reduce` object has denominators that are powers of q alone, because
+the only source of one is `h = q − 1/q`. A `(q+1)` cannot arise. So
+`P₇₆ = 1·Φ` is unrecoverable under ANY indexing or convention: the right-hand
+side is not a quantity this construction produces.
+
+**R2. The producer OVERWRITES its own entry, and the committed value is the
+overwrite.** `build_matrix` loops k = 0..7 and, when the Toffoli output m ≠ k,
+writes BOTH `M[m][k]` and `M[k][m]`. Only k = 6 and k = 7 qualify — and they are
+each other's m, so both iterations write both cells and **k = 7, running last,
+wins**. At q = 111/100:
+
+    parent |110> (the docstring's convention)   -0.13061590026045
+    parent |111> (the k=7 overwrite)            -0.14153164476025   <- the witness
+
+**R3. And the overwrite is deliberate — it IMPOSES the antisymmetry.** The
+second write is commented *"Reverse transition (use parent context for
+antisymmetry)"* and uses `V_par` for both directions. With one shared context
+`P₆₇ = −P₇₆` holds trivially. Derived honestly — each entry from its own input
+column, as the docstring specifies — **antisymmetry is FALSE in both
+conventions**. Block item 4 is not a result; it is an assumption implemented by
+using the wrong parent for one of the two entries. Same shape as asserting a
+value and proving it by `rfl`.
+
+**R4. The block contradicts itself twice, without any external object.**
+(a) Item 1 factors `P_flip = c·Φ` and its own table gives **c = 1 for all three
+control pairs** — so item 1 asserts universality. But the same table's `d`
+column differs per pair, and item 2 says `V̂₁ = zc + d` is "type-dependent". The
+factorization drops `d`, which is where the type-dependence lives.
+(b) The opening sentence fixes "target strand 3"; item 2's `Δ₁ = 0` requires the
+target to be strand 1. `toffoli_output` flips `k & 1`, the LAST strand — so the
+opening sentence is the framework's convention and item 2 is the false one.
+
+**R5. What survives.** `P₇₇` reproduces the published closed form exactly
+(symbolic zero), and block item 5 (all target-flip amplitudes vanish as q → 1)
+**holds** — the derived `P₇₆` retains its `(q−1)` factor. Two of the block's
+claims stand; three do not.
+
+## The derived replacements
+
+    convention C   P_76 = -(q-1)(q^2+3q+1) / (2q(q+1))        [rational in q]
+    convention D   P_76 = -(q-1)(q+1)(q^6+q^4+2q^2+1) / (2q(q^2+1)^2)
+    convention D   P_67 =  (q-1)(q+1)(2q^6+q^4+q^2+1) / (2q(q^2+1)^2)
+    convention D   P_66 =  (q^4+1)(q^4+q^2+2) / (4q(q^2+1)^2)
+    convention D   P_77 =  q^3(q^4+1) / (q^2+1)^2             [unchanged]
+
+## What is NOT claimed
+
+That the published forms are arbitrary. An unrecorded derivation could still
+produce them and this probe cannot speak to one absent from the tree. What is
+settled: the corpus's own recorded construction does not, under any indexing or
+convention, and three of the block's four claims are false against it — two of
+them by the block's own internal contradiction.
+
+## Still to do
+
+The content edits: `toffoli-transfer-matrix.md` items 1-4, and
+`toffoli-q-and.md`, whose entire factor-anatomy section describes Φ's factors
+`(q^{3/2}+q^{1/2}-1)` and `(q^{3/2}+q+1)` — including the q ≈ 0.466 sign-reversal
+threshold, which belongs to a polynomial the construction does not produce.
