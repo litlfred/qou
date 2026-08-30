@@ -3,6 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
 import Mathlib.Data.Fin.Basic
+import Mathlib.Algebra.Polynomial.Roots
 
 /-!
 # QOU.AlgebraicSubstrate.hasse_weil_bound
@@ -411,5 +412,41 @@ theorem charPoly_natDegree_of_roots (α : Fin 8 → ℂ) :
     (∏ i : Fin 8, (Polynomial.X - Polynomial.C (α i))).natDegree = 8 := by
   rw [Polynomial.natDegree_prod _ _ (fun i _ => Polynomial.X_sub_C_ne_zero (α i))]
   simp
+
+/-! ## Vieta: the trace is a coefficient of `P̃`
+
+Everything above about `∑ αᵢ` is a statement about the eigenvalue family. Vieta
+turns it into a statement about the polynomial: the `X⁷` coefficient of a monic
+degree-8 `∏ (X − αᵢ)` is `−∑ αᵢ`.
+
+That closes the loop. `P̃` and the eigenvalue family were two presentations of
+the same object with nothing connecting them; `norm_charPoly_eval_zero` tied the
+constant term to the determinant, and this ties the sub-leading term to the
+trace. Both structure fields — `charPoly_roots` and, via
+`charPoly_natDegree_of_roots`, the degree — now carry weight. -/
+
+/-- `P̃` is monic. -/
+theorem charPoly_monic (Z : LocalQZetaFunction) : Z.charPoly.Monic := by
+  rw [Z.charPoly_roots]
+  exact Polynomial.monic_prod_of_monic _ _ fun i _ => Polynomial.monic_X_sub_C (Z.eigenvalues i)
+
+/-- **Vieta.** The `X⁷` coefficient of `P̃` is minus the trace of Frobenius. -/
+theorem charPoly_coeff_seven (Z : LocalQZetaFunction) :
+    Z.charPoly.coeff 7 = -∑ i : Fin 8, Z.eigenvalues i := by
+  have hnd : Z.charPoly.natDegree = 8 := by
+    rw [Z.charPoly_roots]; exact charPoly_natDegree_of_roots Z.eigenvalues
+  have hnext : Z.charPoly.nextCoeff = -∑ i : Fin 8, Z.eigenvalues i := by
+    rw [Z.charPoly_roots]; exact Polynomial.prod_X_sub_C_nextCoeff Z.eigenvalues
+  rwa [Polynomial.nextCoeff_of_natDegree_pos (by omega), hnd] at hnext
+
+/-- **The point-count bound, read off `P̃`.** `‖P̃.coeff 7‖ ≤ 2g·q^{1/2}`.
+
+    The same Hasse–Weil bound as `norm_sum_eigenvalues_le`, now stated about the
+    polynomial rather than the eigenvalue family — which is the form a reader
+    holding only `P̃` can check. -/
+theorem norm_charPoly_coeff_seven_le (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ‖Z.charPoly.coeff 7‖ ≤ 8 * Z.q ^ (1 / 2 : ℝ) := by
+  rw [charPoly_coeff_seven Z, norm_neg]
+  exact norm_sum_eigenvalues_le Z
 
 end QOU.AlgebraicSubstrate
