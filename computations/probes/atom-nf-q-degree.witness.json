@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T18:44:35.306523+00:00",
-  "commitSha": "ae6efc971980f4b6fb9870b10fb16dcee4a8fbe3",
+  "computedAt": "2026-08-30T19:02:05.458563+00:00",
+  "commitSha": "0ad9adc87e660acfe1fd55a5e22114e8abd2ef8c",
   "assertions": [
     {
       "name": "coefficients_are_laurent_over_Z_half",
@@ -51,14 +51,38 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "denominator_is_2_to_the_averaged_crossing_count",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "averaged_pn_crossing_never_opens_a_gap",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tight_implies_at_most_one_nn_pair",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "at_most_one_nn_pair_is_NOT_sufficient",
+      "computed": true,
+      "expected": true,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 324074,
+  "durationMs": 356869,
   "computation": "atom-nf-q-degree",
   "scriptFile": "atom_nf_q_degree_probe.py",
-  "scriptHash": "361577215194",
-  "scriptCommitSha": "ae6efc971980f4b6fb9870b10fb16dcee4a8fbe3",
+  "scriptHash": "d8a33c63ee17",
+  "scriptCommitSha": "0ad9adc87e660acfe1fd55a5e22114e8abd2ef8c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,13 +112,13 @@
           "Z": 1,
           "N": 0,
           "identical": true,
-          "ms": 125
+          "ms": 113
         },
         {
           "Z": 0,
           "N": 1,
           "identical": true,
-          "ms": 223
+          "ms": 236
         }
       ],
       "normalised_cases": [
@@ -102,61 +126,61 @@
           "Z": 1,
           "N": 1,
           "identical": true,
-          "ms": 364
+          "ms": 414
         },
         {
           "Z": 2,
           "N": 1,
           "identical": true,
-          "ms": 984
+          "ms": 1060
         },
         {
           "Z": 2,
           "N": 2,
           "identical": true,
-          "ms": 2118
+          "ms": 2036
         },
         {
           "Z": 3,
           "N": 2,
           "identical": true,
-          "ms": 3323
+          "ms": 3329
         },
         {
           "Z": 2,
           "N": 3,
           "identical": true,
-          "ms": 2254
+          "ms": 2406
         },
         {
           "Z": 3,
           "N": 3,
           "identical": true,
-          "ms": 4841
+          "ms": 4189
         },
         {
           "Z": 0,
           "N": 4,
           "identical": true,
-          "ms": 2332
+          "ms": 2161
         },
         {
           "Z": 4,
           "N": 0,
           "identical": true,
-          "ms": 3207
+          "ms": 3137
         },
         {
           "Z": 0,
           "N": 5,
           "identical": true,
-          "ms": 1763
+          "ms": 1823
         },
         {
           "Z": 5,
           "N": 0,
           "identical": true,
-          "ms": 3558
+          "ms": 3400
         }
       ],
       "expand_is_value_preserving": true,
@@ -634,6 +658,789 @@
       "A27_break_in_triangular_law": "measured, not derived",
       "shift_NF": "18Z + 21N + 1 is a D(u) exponent shift from the crystal pole order, not an NF-coefficient q-degree; it matches nothing here and is not a discrepancy",
       "A_above_30": "not measured"
+    },
+    "denominator_is_two_to_the_averaged_crossing_count": {
+      "rule": "denominator = 2^(number of d=-h/2 averaged crossings)",
+      "published_as": "content/quantum-observable-universe/appendix-nf-witnesses/witness-computation-method.md states poly / 2^{p_n} for the RUST hecke-engine; this reproduces it from the independent Python hecke_core_symbolic",
+      "holds_on_all_65_nuclei_A_le_10": true,
+      "rows": [
+        {
+          "A": 1,
+          "Z": 0,
+          "N": 1,
+          "averaged_crossings": 2,
+          "denominator_exp": 2
+        },
+        {
+          "A": 1,
+          "Z": 1,
+          "N": 0,
+          "averaged_crossings": 2,
+          "denominator_exp": 2
+        },
+        {
+          "A": 2,
+          "Z": 0,
+          "N": 2,
+          "averaged_crossings": 4,
+          "denominator_exp": 4
+        },
+        {
+          "A": 2,
+          "Z": 1,
+          "N": 1,
+          "averaged_crossings": 5,
+          "denominator_exp": 5
+        },
+        {
+          "A": 2,
+          "Z": 2,
+          "N": 0,
+          "averaged_crossings": 4,
+          "denominator_exp": 4
+        },
+        {
+          "A": 3,
+          "Z": 0,
+          "N": 3,
+          "averaged_crossings": 6,
+          "denominator_exp": 6
+        },
+        {
+          "A": 3,
+          "Z": 1,
+          "N": 2,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 3,
+          "Z": 2,
+          "N": 1,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 3,
+          "Z": 3,
+          "N": 0,
+          "averaged_crossings": 6,
+          "denominator_exp": 6
+        },
+        {
+          "A": 4,
+          "Z": 0,
+          "N": 4,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 4,
+          "Z": 1,
+          "N": 3,
+          "averaged_crossings": 11,
+          "denominator_exp": 11
+        },
+        {
+          "A": 4,
+          "Z": 2,
+          "N": 2,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 4,
+          "Z": 3,
+          "N": 1,
+          "averaged_crossings": 11,
+          "denominator_exp": 11
+        },
+        {
+          "A": 4,
+          "Z": 4,
+          "N": 0,
+          "averaged_crossings": 8,
+          "denominator_exp": 8
+        },
+        {
+          "A": 5,
+          "Z": 0,
+          "N": 5,
+          "averaged_crossings": 10,
+          "denominator_exp": 10
+        },
+        {
+          "A": 5,
+          "Z": 1,
+          "N": 4,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 5,
+          "Z": 2,
+          "N": 3,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 5,
+          "Z": 3,
+          "N": 2,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 5,
+          "Z": 4,
+          "N": 1,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 5,
+          "Z": 5,
+          "N": 0,
+          "averaged_crossings": 10,
+          "denominator_exp": 10
+        },
+        {
+          "A": 6,
+          "Z": 0,
+          "N": 6,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 6,
+          "Z": 1,
+          "N": 5,
+          "averaged_crossings": 17,
+          "denominator_exp": 17
+        },
+        {
+          "A": 6,
+          "Z": 2,
+          "N": 4,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 6,
+          "Z": 3,
+          "N": 3,
+          "averaged_crossings": 21,
+          "denominator_exp": 21
+        },
+        {
+          "A": 6,
+          "Z": 4,
+          "N": 2,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 6,
+          "Z": 5,
+          "N": 1,
+          "averaged_crossings": 17,
+          "denominator_exp": 17
+        },
+        {
+          "A": 6,
+          "Z": 6,
+          "N": 0,
+          "averaged_crossings": 12,
+          "denominator_exp": 12
+        },
+        {
+          "A": 7,
+          "Z": 0,
+          "N": 7,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 7,
+          "Z": 1,
+          "N": 6,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 7,
+          "Z": 2,
+          "N": 5,
+          "averaged_crossings": 24,
+          "denominator_exp": 24
+        },
+        {
+          "A": 7,
+          "Z": 3,
+          "N": 4,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 7,
+          "Z": 4,
+          "N": 3,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 7,
+          "Z": 5,
+          "N": 2,
+          "averaged_crossings": 24,
+          "denominator_exp": 24
+        },
+        {
+          "A": 7,
+          "Z": 6,
+          "N": 1,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 7,
+          "Z": 7,
+          "N": 0,
+          "averaged_crossings": 14,
+          "denominator_exp": 14
+        },
+        {
+          "A": 8,
+          "Z": 0,
+          "N": 8,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 8,
+          "Z": 1,
+          "N": 7,
+          "averaged_crossings": 23,
+          "denominator_exp": 23
+        },
+        {
+          "A": 8,
+          "Z": 2,
+          "N": 6,
+          "averaged_crossings": 28,
+          "denominator_exp": 28
+        },
+        {
+          "A": 8,
+          "Z": 3,
+          "N": 5,
+          "averaged_crossings": 31,
+          "denominator_exp": 31
+        },
+        {
+          "A": 8,
+          "Z": 4,
+          "N": 4,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 8,
+          "Z": 5,
+          "N": 3,
+          "averaged_crossings": 31,
+          "denominator_exp": 31
+        },
+        {
+          "A": 8,
+          "Z": 6,
+          "N": 2,
+          "averaged_crossings": 28,
+          "denominator_exp": 28
+        },
+        {
+          "A": 8,
+          "Z": 7,
+          "N": 1,
+          "averaged_crossings": 23,
+          "denominator_exp": 23
+        },
+        {
+          "A": 8,
+          "Z": 8,
+          "N": 0,
+          "averaged_crossings": 16,
+          "denominator_exp": 16
+        },
+        {
+          "A": 9,
+          "Z": 0,
+          "N": 9,
+          "averaged_crossings": 18,
+          "denominator_exp": 18
+        },
+        {
+          "A": 9,
+          "Z": 1,
+          "N": 8,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 9,
+          "Z": 2,
+          "N": 7,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 9,
+          "Z": 3,
+          "N": 6,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 9,
+          "Z": 4,
+          "N": 5,
+          "averaged_crossings": 38,
+          "denominator_exp": 38
+        },
+        {
+          "A": 9,
+          "Z": 5,
+          "N": 4,
+          "averaged_crossings": 38,
+          "denominator_exp": 38
+        },
+        {
+          "A": 9,
+          "Z": 6,
+          "N": 3,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 9,
+          "Z": 7,
+          "N": 2,
+          "averaged_crossings": 32,
+          "denominator_exp": 32
+        },
+        {
+          "A": 9,
+          "Z": 8,
+          "N": 1,
+          "averaged_crossings": 26,
+          "denominator_exp": 26
+        },
+        {
+          "A": 9,
+          "Z": 9,
+          "N": 0,
+          "averaged_crossings": 18,
+          "denominator_exp": 18
+        },
+        {
+          "A": 10,
+          "Z": 0,
+          "N": 10,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        },
+        {
+          "A": 10,
+          "Z": 1,
+          "N": 9,
+          "averaged_crossings": 29,
+          "denominator_exp": 29
+        },
+        {
+          "A": 10,
+          "Z": 2,
+          "N": 8,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 10,
+          "Z": 3,
+          "N": 7,
+          "averaged_crossings": 41,
+          "denominator_exp": 41
+        },
+        {
+          "A": 10,
+          "Z": 4,
+          "N": 6,
+          "averaged_crossings": 44,
+          "denominator_exp": 44
+        },
+        {
+          "A": 10,
+          "Z": 5,
+          "N": 5,
+          "averaged_crossings": 45,
+          "denominator_exp": 45
+        },
+        {
+          "A": 10,
+          "Z": 6,
+          "N": 4,
+          "averaged_crossings": 44,
+          "denominator_exp": 44
+        },
+        {
+          "A": 10,
+          "Z": 7,
+          "N": 3,
+          "averaged_crossings": 41,
+          "denominator_exp": 41
+        },
+        {
+          "A": 10,
+          "Z": 8,
+          "N": 2,
+          "averaged_crossings": 36,
+          "denominator_exp": 36
+        },
+        {
+          "A": 10,
+          "Z": 9,
+          "N": 1,
+          "averaged_crossings": 29,
+          "denominator_exp": 29
+        },
+        {
+          "A": 10,
+          "Z": 10,
+          "N": 0,
+          "averaged_crossings": 20,
+          "denominator_exp": 20
+        }
+      ]
+    },
+    "gap_attribution_by_step_kind": {
+      "crossing_dictionary": {
+        "gen0 d=0": "sigma (positive crossing) -- pp pair, uu quark",
+        "gen0 d=-h": "sigma^-1 (negative crossing) -- nn pair, dd quark",
+        "gen0 d=-h/2": "(sigma + sigma^-1)/2 averaged -- pn pair, ud quark"
+      },
+      "published_convention": "the three-row table is already in appendix-nf-witnesses/witness-computation-method.md; this probe re-derived it and adds only the DEGREE consequence below",
+      "steps_run": {
+        "gen0 d=0": 2915,
+        "gen1 d=-h": 1760,
+        "gen0 d=-h/2": 1155,
+        "gen1 d=-h/2": 220,
+        "gen0 d=-h": 495
+      },
+      "gap_units_opened": {
+        "gen0 d=-h": 531,
+        "gen1 d=-h": 169,
+        "gen0 d=0": 135
+      },
+      "averaged_crossing_opens_zero_gap": {
+        "units": 0,
+        "occurrences": 1375
+      },
+      "tropical_tight_nuclei": [
+        {
+          "Z": 0,
+          "N": 1
+        },
+        {
+          "Z": 1,
+          "N": 0
+        },
+        {
+          "Z": 1,
+          "N": 1
+        },
+        {
+          "Z": 2,
+          "N": 0
+        },
+        {
+          "Z": 2,
+          "N": 1
+        },
+        {
+          "Z": 3,
+          "N": 0
+        },
+        {
+          "Z": 3,
+          "N": 1
+        },
+        {
+          "Z": 4,
+          "N": 0
+        },
+        {
+          "Z": 3,
+          "N": 2
+        },
+        {
+          "Z": 4,
+          "N": 1
+        },
+        {
+          "Z": 5,
+          "N": 0
+        },
+        {
+          "Z": 4,
+          "N": 2
+        },
+        {
+          "Z": 5,
+          "N": 1
+        },
+        {
+          "Z": 6,
+          "N": 0
+        },
+        {
+          "Z": 5,
+          "N": 2
+        },
+        {
+          "Z": 6,
+          "N": 1
+        },
+        {
+          "Z": 7,
+          "N": 0
+        },
+        {
+          "Z": 6,
+          "N": 2
+        },
+        {
+          "Z": 7,
+          "N": 1
+        },
+        {
+          "Z": 8,
+          "N": 0
+        },
+        {
+          "Z": 7,
+          "N": 2
+        },
+        {
+          "Z": 8,
+          "N": 1
+        },
+        {
+          "Z": 9,
+          "N": 0
+        },
+        {
+          "Z": 8,
+          "N": 2
+        },
+        {
+          "Z": 9,
+          "N": 1
+        },
+        {
+          "Z": 10,
+          "N": 0
+        }
+      ],
+      "criterion": "N <= 2 (at most one nn pair) is NECESSARY for the max-plus bound to be tight, and NOT sufficient",
+      "n_le_2_but_not_tight": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "steps_after_last_nn_step": [
+        {
+          "Z": 0,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 0,
+          "N": 2,
+          "steps_after_last_nn": 0,
+          "tight": false
+        },
+        {
+          "Z": 1,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 1,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 1,
+          "N": 2,
+          "steps_after_last_nn": 1,
+          "tight": false
+        },
+        {
+          "Z": 2,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 2,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 2,
+          "N": 2,
+          "steps_after_last_nn": 3,
+          "tight": false
+        },
+        {
+          "Z": 3,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 3,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 3,
+          "N": 2,
+          "steps_after_last_nn": 19,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 4,
+          "N": 2,
+          "steps_after_last_nn": 36,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 5,
+          "N": 2,
+          "steps_after_last_nn": 54,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 6,
+          "N": 2,
+          "steps_after_last_nn": 73,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 7,
+          "N": 2,
+          "steps_after_last_nn": 93,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 8,
+          "N": 2,
+          "steps_after_last_nn": 114,
+          "tight": true
+        },
+        {
+          "Z": 9,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 9,
+          "N": 1,
+          "steps_after_last_nn": null,
+          "tight": true
+        },
+        {
+          "Z": 10,
+          "N": 0,
+          "steps_after_last_nn": null,
+          "tight": true
+        }
+      ]
     },
     "checks_failed": []
   },
