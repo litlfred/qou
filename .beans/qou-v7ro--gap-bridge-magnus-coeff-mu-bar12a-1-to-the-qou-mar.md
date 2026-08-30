@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T02:58:22Z
+updated_at: 2026-08-30T03:30:41Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -76,3 +76,16 @@ This REDUCES MilnorExactOrderConjecture nonvanishing from 'needs weight-system b
 deficit obeys this 1-line recursion' (4-pt verified). REMAINING OPEN (the instance): structural
 TL/Jones-Wenzl derivation of the -h^2(h^2+2)=-h^2*(q^2+q^-2) strand-addition factor. Not
 fabricated; conditional result only.
+
+
+
+--- 2026-08-30 operator-level derivation of -h^2(h^2+2) (PR #6077) ---
+Derived the recursion MECHANISM in the spin-1/2 rep (= convention D, verified C0). Verified as
+matrices (C2): rho(w_{A+1}) = 1 + q^2 h e_A - h q^-2 We_AW^-1 - h^2 We_AW^-1 e_A; the SOLE
+w_A-dependent term carries coeff exactly -h^2. qtr of it reproduces D_{A+1}=-h^2(h^2+2)D_A
+(C3/C4). e_A=q-R, band=q^2-h e_A. Verified A=3 (A=4 = 32-dim symbolic inverse, intractable);
+recursion A=3..6. CORRECTION: my clean 'single conditional-expectation identity' guess was
+REFUTED by the probe (messy rational, not affine) - the recursion is the full 4-term assembly.
+Caught pre-durable; Lean+PR unaffected. STATUS: -h^2 derived at operator level; the (h^2+2)
+trace-assembly + forall-A Brunnian induction (a concrete TL statement, NOT the weight-system
+bridge) remain open. No instance.
