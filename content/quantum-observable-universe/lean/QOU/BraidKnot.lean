@@ -4,6 +4,11 @@ import QOU.BraidKnot.PieceAGeneral
 -- cells-to-rows decomposition; the conjugation-symmetric form is the input to the
 -- Plancherel argument that `Σ_h` is not a shifted symmetric function.
 import QOU.BraidKnot.HookSumClosedForm
+-- Bridges that hook sum to `QOU.Common.HookSumComplete`, which proves the same
+-- identity over a sorted `List ℕ` in truncated ℕ subtraction. Identifies the two
+-- hook sums and re-derives the YoungDiagram closed form from the list one, so the
+-- duplicate is a checked equivalence rather than two proofs free to drift.
+import QOU.BraidKnot.HookSumRegisterBridge
 import QOU.BraidKnot.BarParityInvariant
 import QOU.BraidKnot.BsymLinearChain
 import QOU.BraidKnot.ChiralityTopologySelection
