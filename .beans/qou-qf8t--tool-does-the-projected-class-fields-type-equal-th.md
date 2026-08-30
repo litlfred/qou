@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T11:12:58Z
-updated_at: 2026-08-30T11:24:45Z
+updated_at: 2026-08-30T11:29:57Z
 ---
 
 ## Candidate 2 measured and REFUTED — and it explains candidate 1
@@ -50,3 +50,31 @@ the proof introduces no term of its own. Not attempted here; NOT known to work.
 Both counters kept and emitted (`substantive_external`, `local_proj_count`) with
 their refutations in the docstrings, marked DO NOT THRESHOLD, so neither is
 rebuilt by an agent who reads a bean and not the code.
+
+
+## Candidate 3 was ALREADY IMPLEMENTED — my "not attempted" was a corpus-grep failure
+
+I wrote in the kernel docstring and in PR #6195 that the direct semantic check
+was "not attempted here". I did not grep before saying so, in a PR about
+measurement discipline. It is attempted:
+[`scripts/lean-self-assuming-audit.py`](scripts/lean-self-assuming-audit.py)
+**Rule 2** — *"the proof projects a class field whose DECLARED TYPE is the
+conclusion"* — matching `norm(ftype) == conclusion`, in the tree since `qou-q407`.
+
+It is the `isDefEq fieldType conclusion` variant I had already ruled out on the
+grounds that `q_hecke_eigenvalue` projects `∀ a b, a.sp = b.sp → … → a = b` and
+applies it, so the types differ while the declaration is degenerate. **Measured
+against the ledger, the ruling-out is correct and the variant is worse than
+doing nothing:**
+
+    flags 14 corpus-wide     genuine 5, legit 9
+    precision  36 %          vs 85 % base rate (112 genuine / 132 verdicts)
+    recall      4 %          (5 of the 112 genuine already adjudicated)
+
+**So all three structural candidates now measure at or below baseline, by three
+different mechanisms** — ornamentation (`substantive_external`), composition
+count (`local_proj_count`), and declared-type equality (Rule 2).
+
+Genuinely unattempted, and the one I actually proposed: the projection is
+applied only to BOUND VARIABLES and their projections — the proof introduces no
+term of its own. Distinct from Rule 2, which compares types.
