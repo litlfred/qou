@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T15:16:54Z
+updated_at: 2026-08-30T15:48:57Z
 ---
 
 ## What is ESTABLISHED (two independent proofs)
@@ -220,3 +220,41 @@ needs a scoped pass with the long-compute members identified first.
 
 Recorded rather than done, and stated on PR #6144 so it is not silently
 inherited by whoever merges it.
+
+
+### 🛑 CORRECTION, same day — "none of those 121 has been re-run" is WRONG
+
+The entry above says the z³ tranche *"fixed the 12 source sites and verified
+them; it did not follow the witnesses computed against the old constant."*
+**Measured, that is false**, and I published it on PR #6144 before checking.
+
+The commit's diff to `hecke_core_symbolic.py` is **one line of code plus five
+lines of comment**:
+
+    -TR_M_SYM = [ONE, z, z, z**2, z**2, z**3]
+    +# 6th weight is the Ocneanu value on the longest element … Bean qou-isu5.
+    +TR_M_SYM = [ONE, z, z, z**2, z**2, h * z**2 + z]
+
+`TR_M_SYM` is therefore the ONLY changed symbol. Of the 11 direct importers,
+**exactly one references it** — `computations/shift_from_nf_basis.py`, 10
+occurrences; the other seven import `_phi1_from_ordering_sym`,
+`_ground_state_ordering` and similar, none of which the commit touched.
+
+And that one consumer **was re-run in the same commit**:
+
+    shift-from-nf-basis.witness.json  computedAt 2026-08-30T09:19:53Z
+    6b149f4379                       committed  2026-08-30T09:21:41Z
+    `git log origin/main..HEAD -- <witness>` -> 6b149f4379
+
+Re-ran it again now to confirm: 4/4 assertions, **not one non-ephemeral field
+moved**, witness restored rather than committed.
+
+**So the 121 are false positives**, by exactly the mechanism `qou-a2q5`
+documents: read the module diff, and a witness-level count collapses. I quoted
+that bean's rule in the same PR comment and then failed to apply it to my own
+module — I reasoned "the constant genuinely moved, so the false-positive
+argument does not apply", which conflates *the module changed* with *the changed
+symbol reaches these consumers*.
+
+**No scoped pass is needed. Nothing is owed here.** What the audit flagged is
+the module's mtime, not a stale number.
