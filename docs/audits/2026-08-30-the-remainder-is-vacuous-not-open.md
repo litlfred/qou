@@ -23,7 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 26 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 35 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+
+**26 by machine, 9 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -32,9 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses (machine-proved)** | **26** |
-| unproven — INCONCLUSIVE, see method below | 26 |
-| skipped — generator could not build a model at all | 27 |
+| **INHABITED with no hypotheses** | **35** (26 machine + 9 hand) |
+| still undecided — INCONCLUSIVE, see method below | 44 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -246,6 +247,42 @@ rather than committed: a change with no measured yield is not an improvement.
 Recorded at this length because the error is the one this whole arc is about: I
 generalised from a single verified case to a population, put the number in a
 commit message and a PR body, and only then measured it.
+
+### So the method is per-class hand construction — and it is fast
+
+Having refuted the tool route, I applied the only method shown to work. Nine of
+the undecided classes hand-adjudicated in one sitting, all **inhabited**, all
+`lean`-direct exit 0, in
+[`2026-08-30-context-classes-hand-adjudicated.lean`](2026-08-30-context-classes-hand-adjudicated.lean):
+
+`EwInterfaceKnotContext`, `FermionBosonKnotLinkContext`,
+`AtomicLPStabilityContext`, `ZHabiroConvergenceClass`,
+`SpectralSequenceH3ExplicitContext`, `Terms26HigherOperationsContext`,
+`SortingColorEnergyContext`, `DecayChannelContext`, `SchurWeylMassContext`.
+
+**Floor: 26 → 35.**
+
+**The rate is the useful number, not the count.** Nine classes in roughly
+forty minutes of working time, several minutes of which is `lean` startup on a
+cold import rather than thought. At that rate the remaining ~44 undecided are
+**hours, not the week** the sizing audit projected — its estimate assumed each
+one needed the mathematics the class was standing in for, and so far not one
+has.
+
+Two of the nine say something sharper than "inhabited":
+
+- **`SchurWeylMassContext`** — the Schur–Weyl decomposition
+  `tr_M(𝒜) = Σ_λ s_λ χ_λ / H_q(λ)` holds over the **empty** partition set.
+  `partitions` is a context field and no claim requires it to be the partitions
+  of `3A`, so `Z` and `N` — the two parameters the class takes — are inert and
+  the identity reduces to `0 = 0`.
+- **`DecayChannelContext`** — "uniqueness of the decay channel off the boundary
+  variety" is discharged by `on_boundary := fun _ => True`. Nothing in the class
+  ties the boundary predicate to the energy `E_λ` it is supposed to be the
+  vanishing locus of.
+
+Both are §3b-cond item 5 in a form a syntactic checker cannot see: the *shape*
+is right, and the constraint is missing between fields rather than within one.
 
 The `--selftest` pins the five classes inhabited by hand before the script
 existed. That guard is load-bearing rather than ceremonial: **the first version
