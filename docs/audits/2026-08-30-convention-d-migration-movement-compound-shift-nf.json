@@ -1,4 +1,9 @@
 {
+ "SUPERSEDED": "Measured against a producer carrying the z^3 Markov-weight bug, on BOTH arms. compound_shift_nf.tr_m_weights_mp returned [1, z, z, z^2, z^2, z^3] when this was run; the correct sixth weight is z(hz+1) = h*z^2 + z (docs/audits/2026-05-19-trm5-markov-bug.md, bean qou-isu5), and at the substrate the two differ by 4.4x (0.124490943 vs 0.551443414). NF_BASIS[5] is the element the LP duals are most sensitive to, so y0_star, x_star and the shadow prices below are the entries most affected.",
+ "what_still_stands": "The METHOD and the qualitative finding: 19/19 in-script assertions passed while 95 substantive witness fields moved, i.e. the assertions do not discriminate the convention. That is a statement about the assertions, not about the ratios, and it is unaffected by the weight bug.",
+ "what_does_NOT_stand": "Every RATIO and every absolute value in top_by_ratio below. They are not the C->D migration ratios; they are ratios between two evaluations of a non-trace. Do not quote them as the cost of the migration.",
+ "not_re-measured_because": "The mechanical z_C -> z_D substitution this profile was pricing is not going ahead: every remaining silent blocking site is one where z_C is the SUBJECT of a claim rather than a parameter in it, so substitution deletes the statement rather than fixing a defect (bean qou-nsih). A re-measurement would price a sweep that will not run. The successor work is the convention-D re-derivation, qou-cds1 / qou-cds2.",
+ "recorded": "2026-08-30, on sibling coordination from PR #6144",
  "moved_count": 95,
  "top_by_ratio": [
   {
