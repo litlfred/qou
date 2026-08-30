@@ -731,3 +731,40 @@ REVISED REMAINING WORK:
      good approximations. Unchanged, and still the only piece that is not bookkeeping.
 The O_K half (RothAlgebraicInteger, RothAssembly) remains correct and off the critical path.
 
+## 2026-08-30 -- THE CHAIN CLOSES. QOU/Mathlib/RothIntegerChain.lean
+
+roth_contradiction_int runs step 1 -> step 2 -> step 3 -> step 4 with the coefficient rings
+agreeing throughout. Five declarations, axiom-clean, .olean deleted first, registered in QOU.lean.
+
+TWO PIECES OF GLUE, both small enough to be invisible and large enough to be wrong:
+
+  * inRothPolySet_of_real_bound. Siegel states its bound over R; InRothPolySet wants an integer a.
+    The CEILING is forced -- it is the only integer bound that follows from |coeff| <= X, and
+    rounding down would be an assertion rather than a consequence.
+  * index_real_of_index_field. Step 1 proves the index over K; step 2 consumes it over R. They
+    transport along a real embedding psi : K ->+* R, and that embedding is a GENUINE HYPOTHESIS,
+    not a technicality: it says the alpha_h are REAL algebraic numbers, which is what Roth's
+    theorem is about. A number field with no real embedding has nothing to say here, and the
+    composition correctly refuses to typecheck without one. Worth stating because it is exactly
+    the kind of hypothesis that gets silently discharged with a `sorry`-free but wrong instance.
+
+A SHAPE CORRECTION I MADE TO MY OWN FIRST DRAFT. It stated the remaining hypotheses as
+`forall (P) (a), InRothPolySet a r P -> Gamma_m for a /\ ...`, quantified over every polynomial in
+R(a;r). That is a strictly STRONGER hypothesis and therefore a weaker theorem, and it would have
+asked a caller to verify Gamma_m for polynomials the construction never produces. Naming Siegel's
+bound (siegelHeight, in RothAuxiliaryInt) lets the hypotheses land on the a the construction
+ACTUALLY produces -- ceil(siegelHeight r alpha mu) -- so hg, hCpos and hlog are now about one
+concrete quantity. The over-strong version compiled fine; nothing but reading it would have caught
+that it was asking for too much.
+
+WHAT roth_contradiction_int STILL TAKES, and it is only what earlier stages already isolated:
+Gamma_m's clauses (hg), the approximation quality (hclose, hT, hGT), and the two numeric
+comparisons (hlog, hgap). Nothing new was introduced by the composition, which is the outcome
+worth having: the chain did not turn out to need a bridging lemma nobody had budgeted for.
+
+REMAINING -- ONE ITEM, and it is the only piece of Roth's theorem that is not bookkeeping:
+  THE PARAMETER SELECTION. Choose q_1 large, then q_2, ..., q_m from an infinite supply of good
+  approximations with q_{h+1} >> q_h, and r_h from the q_h, so that hg, hlog and hgap all hold
+  simultaneously. This is what turns a contradiction into "finitely many solutions", and it is
+  what step 5 (not LiouvilleWith) needs. Everything else in the arc is now proved.
+

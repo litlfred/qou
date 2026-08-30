@@ -101,6 +101,20 @@ noncomputable def auxMatrixInt (r : Fin m → ℕ) (α : Fin m → 𝓞 K) (μ :
     (RingOfIntegers.basis K).repr
       (translateMatrix α (il.1 : Fin m →₀ ℕ) (n : Fin m →₀ ℕ)) il.2
 
+/-- **Siegel's height bound for the auxiliary system**, named.
+
+Consumers need to state `Γ_m`'s clauses and the size comparison at the `a` the construction
+actually produces — `⌈siegelHeight⌉` — and not universally over all of `R(a; r)`.  Quantifying
+over every `(P, a)` instead would be a strictly stronger hypothesis and therefore a weaker
+theorem, and it would ask a caller to check `Γ_m` for polynomials the construction never makes. -/
+noncomputable def siegelHeight (r : Fin m → ℕ) (α : Fin m → 𝓞 K) (μ : ℚ) : ℝ :=
+  ((Fintype.card {n // n ∈ idxBoxF r} : ℝ) * max 1 ‖auxMatrixInt r α μ‖)
+    ^ ((Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
+          × Module.Free.ChooseBasisIndex ℤ (𝓞 K)) : ℝ)
+      / ((Fintype.card {n // n ∈ idxBoxF r} : ℝ)
+        - (Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
+            × Module.Free.ChooseBasisIndex ℤ (𝓞 K)) : ℝ)))
+
 /-- **Route A's step 1.**  A non-zero `ℤ`-coefficient polynomial of bounded degree whose index at
 `(α₁,…,α_m)` is at least `μ`, with Siegel's height bound on its coefficients.
 
@@ -115,13 +129,7 @@ theorem exists_auxiliary_polynomial_int (r : Fin m → ℕ) (α : Fin m → 𝓞
     ∃ P : MvPolynomial (Fin m) ℤ, P ≠ 0 ∧ (∀ h, degreeOf h P ≤ r h) ∧
       ((μ : ℚ) : WithTop ℚ)
         ≤ index r (fun h => (algebraMap (𝓞 K) K) (α h)) (map (algebraMap ℤ K) P) ∧
-      ∀ n, |((coeff n P : ℤ) : ℝ)|
-        ≤ ((Fintype.card {n // n ∈ idxBoxF r} : ℝ) * max 1 ‖auxMatrixInt r α μ‖)
-            ^ ((Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
-                  × Module.Free.ChooseBasisIndex ℤ (𝓞 K)) : ℝ)
-              / ((Fintype.card {n // n ∈ idxBoxF r} : ℝ)
-                - (Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
-                    × Module.Free.ChooseBasisIndex ℤ (𝓞 K)) : ℝ))) := by
+      ∀ n, |((coeff n P : ℤ) : ℝ)| ≤ siegelHeight r α μ := by
   classical
   obtain ⟨t, ht0, hteq, htnorm⟩ :=
     Int.Matrix.exists_ne_zero_int_vec_norm_le (auxMatrixInt r α μ) hcount hpos
@@ -168,7 +176,7 @@ theorem exists_auxiliary_polynomial_int (r : Fin m → ℕ) (α : Fin m → 𝓞
     rw [map_mul, ← translateMatrix_map (algebraMap (𝓞 K) K) α i n]
     norm_cast
   · intro n
-    rw [coeff_ofBox]
+    rw [coeff_ofBox, siegelHeight]
     split_ifs with hmem
     · rw [hc]
       simp only [hmem, dif_pos]

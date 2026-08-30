@@ -1318,6 +1318,14 @@ import QOU.Mathlib.RothAssembly
 -- One O_K-linear vanishing condition is finrank Q K integer ones, so deg(alpha) comes
 -- back into the count and "take m large" becomes m > deg(alpha)/(4 eps^2).
 import QOU.Mathlib.RothAuxiliaryInt
+-- THE CHAIN CLOSES: steps 1 -> 2 -> 3 -> 4 with the coefficient rings agreeing.
+-- Two pieces of glue, both small enough to be invisible and large enough to be wrong:
+-- Siegel states its height bound over R while InRothPolySet wants an integer, so the
+-- ceiling is taken (the only direction that is a consequence rather than an assertion);
+-- and step 1 proves the index over K while step 2 consumes it over R, so it transports
+-- along a real embedding -- which is a real hypothesis, being the statement that the
+-- alpha_h are REAL algebraic numbers, and the composition refuses to typecheck without one.
+import QOU.Mathlib.RothIntegerChain
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
