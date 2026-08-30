@@ -113,7 +113,16 @@ def scan_file(path: str) -> list[dict]:
             name = str(node.args[0].value)[:60]
         out.append({
             "path": os.path.relpath(path, ROOT),
-            "line": node.lineno,
+            # The `computed=` expression's OWN line, not the call's. In a fluent
+            # builder chain -- `WitnessBuilder(...).set_description(...)
+            # .add_assertion(...).add_assertion(...)` -- every chained Call node
+            # carries the lineno where the WHOLE chain starts, so three distinct
+            # assertions all reported one line (measured:
+            # gauge_coupling_uniqueness_probe 3x line 125,
+            # explicit_central_idempotent_probe 3x line 204). AST-correct and
+            # useless for finding the site. The snippet was already taken from
+            # `comp_node.lineno`, so the two disagreed in the same row.
+            "line": comp_node.lineno,
             "assertion": name,
             "tolerance": tol,
             "computed": lines[comp_node.lineno - 1].strip()[:88]
