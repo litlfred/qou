@@ -2,7 +2,7 @@
   "computation": "qbeta-hopf-cubic-shadow-bridge",
   "engine": "python-decimal",
   "scriptFile": "qbeta_hopf_cubic_shadow_bridge.py",
-  "commitSha": "6ec666854e4e1b14cda3689e9d8a470c3b967a4e",
+  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "description": "Reconcile KC20 (Hopf cubic C_Hopf) with KC19 (affine crossing weight, c_3=open scalar). SHADOW: C_Hopf(2)=-2=c_3 q=1 shadow (Lean cubicC_Hopf_classical_shadow). SUBSTRATE: C_Hopf(y0) anchor-rigid ~-2.0873 while c_3 swings 2.375% -> cubic does NOT determine c_3; swing lives in w(q). Near-coincidence, not identity.",
   "data": {
     "shadow_C_Hopf_at_2": "-2",
@@ -78,5 +78,11 @@
     }
   ],
   "audit_only": "docs/audits/2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge.md",
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "3ae177661766",
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "computedAt": "2026-08-30T16:10:06.325867+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -2,12 +2,12 @@
  "schema": "witness/v1",
  "engine": "mpmath",
  "scriptFile": "c3_w2_c1_stokes_pair_prony.py",
- "commitSha": "a8c8f2de07dd02062f1d640d04a0b4aa39a5f5cf",
+ "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
  "description": "C1 infinity step 3 (bean qou-odh5). Two-pole Prony resolves the q-Borel singularity structure into an EXACT ANTIPODAL PAIR xi = +/- 2.36510358..., sum zero to 21 digits, branch-independent to 2.2e-29. This corrects step 2's reading of a 3.7e-4 'branch spread' as two nearby singularities: that was a single-pole ratio test blending one antipodal pair. The +/- matches the leading blocks B = +/- sqrt(q-1)/q. |xi| is normalisation-dependent and is NOT identified; xi_2/xi_1 = -1 is the canonical datum. Multipliers not extracted.",
  "computation": {
   "script": "computations/qbeta/c3_w2_c1_stokes_pair_prony.py",
-  "scriptCommitSha": "a8c8f2de07dd02062f1d640d04a0b4aa39a5f5cf",
-  "scriptHash": "e5ddaeccae16"
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "scriptHash": "71ef032759de"
  },
  "results": {
   "method": "two-pole Prony / Hankel on c_m = b_m q^{m(m-1)/4}",
@@ -62,5 +62,11 @@
   "sector_interpretation_withdrawn": true
  },
  "scope": "Separates and characterises the singularity pair. Does NOT extract the Stokes multipliers. |xi| deliberately not identified (normalisation-dependent). Numerical, no fit, nothing wired.",
- "durationMs": 1114
+ "durationMs": 0,
+ "scriptHash": "71ef032759de",
+ "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+ "computedAt": "2026-08-30T16:03:22.509136+00:00",
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

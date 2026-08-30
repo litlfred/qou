@@ -2,8 +2,8 @@
   "schema": "witness/v1",
   "engine": "mpmath",
   "scriptFile": "c3_w2_c1_theta_zero_count.py",
-  "scriptSha256": "3fd2a990fe499241b15770ea2934a8adf2acfc20442958da8059d6a675e5ae4e",
-  "commitSha": "d10cf0c5e32bf2e9d310d2fd376f7ce493ef139e",
+  "scriptSha256": "9ce09818a3debdabb7aefea9b1bc9d6ea9a363c8b9be4ac42dde9a09f140358f",
+  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "description": "Bean qou-c1ln row 2. Establishes that the CONVERSE theta zero locus does NOT need the Jacobi triple product. Holomorphy on C* (Lean differentiableOn_qThetaC) plus the functional equation theta(pw) = w theta(w) (Lean qThetaC_functional_equation) give, after differentiating, p th'(pw)/th(pw) = 1/w + th'(w)/th(w) (Lean logDeriv_qThetaC_functional_equation); substituting w -> pw in the contour integral turns the 1/w into 2 pi i, so the winding number rises by exactly one per period. The argument principle then gives exactly one zero per fundamental annulus, and the Lean-proved theta(-p^k) = 0 supplies it, forcing simplicity and excluding others. JTP additionally needs Liouville on C*/p^Z and is therefore strictly more work and off the critical path. This script (a) checks the two new Lean identities numerically, which is what would catch a wrong power of p or a P-vs-p normalisation mismatch against the theta() used by the other nine C1 scripts, and (b) runs the contour integrals directly: one zero per fundamental annulus, located at exactly -p^k, and exactly 9 in a p^-4.5 < |w| < p^4.5 sweep, which excludes zeros hiding between orbit points. Geometric-mean radii, periodic trapezoid rule (spectrally accurate here), M-ladder 512/1024/2048 reporting convergence rather than asserting it.",
   "computation": {
     "dps": 60,
@@ -102,8 +102,11 @@
     }
   ],
   "verdict": "The statement holds at our p, and \u2014 the substantive finding \u2014 the Jacobi triple product is NOT required to prove it. The converse zero locus follows from three facts already proved in Lean (holomorphy on C*, the functional equation, vanishing on the orbit) plus the argument principle, which is the SOLE remaining gap. Mathlib has no argument principle, no winding number and no complex residue (name scan at HEAD 2026-08-07), but it does have the full circleIntegral API including the annulus Cauchy theorem, so this is one named lemma rather than a theory build-out. Bean qou-c1ln row 2 is rescoped accordingly: it previously said JTP was needed, and that was over-scoped. Numerically: one simple zero per fundamental annulus at exactly -p^k, exactly 9 across a 9-annulus sweep, and both new Lean identities reproduced to full working precision. Still NOT proved in Lean: the = direction itself. Nothing wired to production.",
-  "durationMs": 680316,
+  "durationMs": 0,
+  "scriptHash": "9ce09818a3de",
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "computedAt": "2026-08-30T16:10:05.910736+00:00",
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): computation.q, results.zero_locations.2). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

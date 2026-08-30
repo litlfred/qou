@@ -1,11 +1,11 @@
 {
   "schema": "witness/v1",
   "engine": "mpmath",
-  "engineVersion": "python 3.11.15",
-  "commitSha": "c2221baeff36d6370bc345e8a15491de13479994",
+  "engineVersion": "mpmath 1.4.1",
+  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "scriptFile": "awzero_asymptotics_probe.py",
-  "scriptHash": "b48ed92d1d8e",
-  "scriptCommitSha": "e6dae7d2c53c57acd393d5ab7edd68fe4697f418",
+  "scriptHash": "b55e69945e5e",
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "computation": "awzero-asymptotics",
   "description": "Zeros of the Ramanujan entire function A_w: theta-limit Rouch\u00e9 localization \u03b6_n = w^{1\u22122n}(1+\u03b8_n), |\u03b8_n| \u2264 2\u03ba(w)w^n for n \u2265 n\u2080(w), n\u2080 explicit",
   "auditOnly": "docs/audits/2026-08-01-awzero-asymptotics.md",
@@ -938,23 +938,23 @@
           "one_minus_w2": "0.0990817"
         },
         {
-          "w": "0.9491671411502285914409209",
+          "w": "0.9491671528006758253076431",
           "note": "proton pin w = q\u0303\u207b\u00b9",
-          "kappa": "0.644904190058",
-          "Lambda_odd": "40.479308",
-          "Lambda_even": "27.441999",
-          "M1_majorant": "61.008488",
+          "kappa": "0.644904188114",
+          "Lambda_odd": "40.47932",
+          "Lambda_even": "27.442007",
+          "M1_majorant": "61.008502",
           "sup_Omega_counting_evaluated": "1.013128",
-          "M1_slack": "60.2179",
-          "M2_majorant_at_n0": "18.260779",
-          "sup_Omega_localization_evaluated": "9.272985",
-          "M2_slack": "1.96924",
+          "M1_slack": "60.218",
+          "M2_majorant_at_n0": "18.26077",
+          "sup_Omega_localization_evaluated": "9.2729701",
+          "M2_slack": "1.96925",
           "n0_counting_certified": 135,
-          "supB_counting_at_n0": "0.99524858",
+          "supB_counting_at_n0": "0.9952507",
           "n0_counting_evaluated_sup": 64,
           "n0_localization_certified": 113,
-          "eps_at_n0": "0.0035501749",
-          "supB_localization_at_n0": "0.99420878",
+          "eps_at_n0": "0.0035501798",
+          "supB_localization_at_n0": "0.99420993",
           "n0_certified": 135,
           "theorem_relative_bound_at_n0": "0.00112665",
           "one_minus_w2": "0.0990817"
@@ -2050,5 +2050,9 @@
       "residual": "the theorem is silent for n < n\u2080(w); the refinement \u03b8_n = \u2212\u03ba w^n + O(w^{3n}) is derived-and-measured, not separately proved; nothing is wired",
       "scope": "no scope-(b) claims anywhere"
     }
-  }
+  },
+  "computedAt": "2026-08-30T16:02:34.154612+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

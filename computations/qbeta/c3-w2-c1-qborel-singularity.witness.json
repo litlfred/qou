@@ -2,12 +2,12 @@
  "schema": "witness/v1",
  "engine": "mpmath",
  "scriptFile": "c3_w2_c1_qborel_singularity.py",
- "commitSha": "143061cae6ac3176d4427289b9c3e53c4d1edce1",
+ "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
  "description": "C1 infinity step 2 (bean qou-odh5). q-Gevrey order of the C1 solutions is 1/2, matching the Newton-polygon slope 1/2 found independently in step 1. The level-1/2 q-Borel transform has finite radius ~ q^8.2526. The ratio estimator below differs between branches at 3.7e-4. RE-SCOPED 2026-08-07 (bean qou-64jx): that spread is an ARTIFACT of sampling at a single parity, NOT two singularities. The estimator 1/(c[901]/c[900]) is a single-point ratio and 1/(c_{m+1}/c_m) is exactly 2-periodic in m; the stability check compares m=400 with m=900, both even. The parity-free estimator gives xi_s = 2.3651035824525764564 for ALL branches, agreeing to 3.1e-25. See computations/qbeta/c3_w2_c1_parity_artifact.py. The q-Gevrey and radius results here are UNAFFECTED. Stokes multipliers NOT extracted.",
  "computation": {
   "script": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
-  "scriptCommitSha": "143061cae6ac3176d4427289b9c3e53c4d1edce1",
-  "scriptHash": "ec8403631089"
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "scriptHash": "24699ab8fd9c"
  },
  "results": {
   "recurrence": "[m+2]_q b_{m+2} = b_{m+1} + b_m",
@@ -57,5 +57,11 @@
  ],
  "verdict": "CONFIRMED, and PARTLY RE-SCOPED 2026-08-07 (bean qou-64jx). STANDS: q-Gevrey order = Newton slope = 1/2 (independent cross-check of step 1), and the level-1/2 q-Borel transform converges with finite radius. Those results are unaffected. RETRACTED: the inference from the 3.7e-4 branch spread to 'TWO nearby singularities, i.e. the two-sector structure'. The ratio estimator is exactly 2-periodic in m and was sampled at a single parity (m=900, and the m=400 stability check is also even). The parity-free estimator gives xi_s = 2.3651035824525764564 for all three branches to 3.1e-25 -- one radius, not two -- and log_q(xi_s) matches the q-Gevrey fit B + 1/4 exactly. What survives is a stable 2-cycle whose amplitude is branch-dependent; that is the recurrence's two-step decoupling, which step 3 (PR #4656) already classified as NOT Stokes sectors. Multipliers remain open; qou-wgnx is the route.",
  "scope": "Singularity structure only. Does NOT extract the Stokes multipliers. Numerical, no fit, nothing wired.",
- "durationMs": 796
+ "durationMs": 0,
+ "scriptHash": "24699ab8fd9c",
+ "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+ "computedAt": "2026-08-30T16:03:22.002063+00:00",
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

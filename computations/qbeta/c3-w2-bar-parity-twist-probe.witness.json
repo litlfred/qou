@@ -2,8 +2,8 @@
   "schema": "witness/v1",
   "engine": "mpmath",
   "scriptFile": "c3_w2_bar_parity_twist_probe.py",
-  "scriptSha256": "5550cb0109c3717d702a7a2c2a07e17071396431d25822435af8f35af51714be",
-  "commitSha": "f52ed928ef8c743e73b919551636c0f1421f8392",
+  "scriptSha256": "1532bdc5ba8e3a93cb19467e6bc57440f250b59474665829d699c23ecfa71d73",
+  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "description": "Tests the scalar-combination reading of the positive half of conj:c1-ggm-bar-parity-faces \u2014 that the diagonal Z/2 character (-1)^m is the WHOLE difference. The twist maps the Stokes carrier's recurrence y_{m+2} - (2-q^{m+1})y_{m+1} + y_m = 0 to the sign-flipped one (verified to 1e-50 relative, and proved in Lean as barTwist_recursion), and it inverts EVERY consecutive-pair sign, not only the alternating ones. Since the carrier's solution is flip-free below m+1 = log2/log q, the twisted sequence acquires flips exactly there \u2014 measured \u2014 and doorV_parity_no_identity needs only one flip. So the twist relocates the parity obstruction rather than removing it. The scalar reading of 'sole residual' is therefore excluded; the module-level reading, where the comparison is up to a gauge, is untouched and remains the conjecture's content.",
   "computation": {
     "dps": 80,
@@ -75,8 +75,11 @@
     }
   ],
   "verdict": "The bar-parity twist RELOCATES the parity obstruction, it does not remove it. Proved in Lean (obstruction_fires_on_one_of, twist_clears_only_if_everywhere_alternating) and measured here: the twisted sequence still flips, at exactly the indices where the untwisted one did not. Consequence: 'the diagonal Z/2 character is the sole residual' cannot be read as 'applying the character makes the target a non-negative combination of the squares'. It must be read at the MODULE level, up to a gauge. This does not refute the conjecture \u2014 it removes one reading of it, and the block has been amended to say which. Deliberately NOT reported: a scalar fit against a prose-reconstructed f_+/f_-, which would not be trustworthy. Nothing wired to production.",
-  "durationMs": 7,
+  "durationMs": 0,
+  "scriptHash": "1532bdc5ba8e",
+  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "computedAt": "2026-08-30T16:02:48.251109+00:00",
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): computation.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
