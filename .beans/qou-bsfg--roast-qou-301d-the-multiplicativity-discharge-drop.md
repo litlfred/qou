@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:46:58Z
-updated_at: 2026-08-30T13:47:52Z
+updated_at: 2026-08-30T14:26:36Z
 ---
 
 Red-team of `6033ea80f7` (`QOU.MathlibExt.MarkovTraceMultiplicative` + the
@@ -124,3 +124,35 @@ normalisation the corpus records three files away. `qou-301d` should read
 3. Reword `binding_juxtapose_eq_zero`'s docstring: it is a consistency check.
 4. Either add the `n`-fold induction or retitle the section to the two-fold case.
 5. Reopen `qou-301d` at "relocated", or rename the bean to what was delivered.
+
+
+---
+**RESOLVED 2026-08-30 — item 1 fixed, and the correction is machine-checked rather than prose.**
+
+`QOU/Mass/ClosureNormalisationDefect.lean` (4 declarations, sorry-free, `lean`-direct exit 0,
+axioms `[propext, Classical.choice, Quot.sound]`):
+
+* `closureNorm δ k t = t / δ^k` — the closure-normalised trace of a `(k+1)`-strand braid.
+* `closureNorm_juxtapose` — normalised traces multiply **only after paying `δ`**:
+  `closureNorm δ a A * closureNorm δ b B = δ * closureNorm δ (a+b+1) (A*B)`.
+* `freeEnergy_closureNorm_juxtapose` — hence the free energy is additive **up to `log δ`**.
+* `freeEnergy_closureNorm_additive_iff` — additivity holds **iff `δ = 1`**.
+* `loopValue_ne_one` — `[2]_q ≠ 1` for `q > 1`, so the escape is closed at the substrate.
+
+So the defect is no longer a caveat someone can read past; it is a theorem saying the additive
+reading is false except at a point the substrate excludes.
+
+Three minimal corrections to the sibling's files, each retaining the true matrix-level lemma:
+
+1. `MarkovTraceMultiplicative` title — dropped "hence under connected sum", with the reason
+   (Kronecker models the disjoint union; `V(K₁⊔K₂) = δ·V·V` while `V(K₁#K₂) = V·V`).
+2. `markovTrace_juxtapose_one` docstring — now says the `1` comes from `Fintype.card Unit = 1`, a
+   fact about the index type, and that a real unlinked component costs `log δ`.
+3. `ArchimedeanTraceBridge.freeEnergy_juxtapose_trivial` — the "as it must" is retracted explicitly
+   and pointed at the new file.
+
+**Items 2-6 of the roast are NOT fixed** and were not claimed to be: the title fix covers item 2's
+substance, but the `x − x = 0` docstring (item 4), the `n`-vs-2 section header and phantom induction
+(item 5), and "BOTH hypotheses from the juxtaposition alone" (item 6) are left for the sibling —
+they are rewording, not false claims. Item 3 (hypothesis renamed rather than discharged) is a
+scoping judgement for whoever owns `qou-301d`, not something to unilaterally revert.
