@@ -35,12 +35,6 @@ This file supplies it.
 * `sphericalOfRibbon` — **every ribbon right-rigid category is spherical.**  Barrett–Westbury's
   classical statement, and the reason the pivotal structure of a ribbon category is the one worth
   having.  Derived, not assumed: the field is discharged by `qDimTwistedLeftWith_eq`.
-* `coev_comp_rightDualIso` — the coevaluation counterpart of
-  `QOU.MathlibExt.rightDualIso_hom_evaluation`.  Its natural home is
-  [`RightDualIsoUnique.lean`](RightDualIsoUnique.lean), beside the evaluation form; it is stated here
-  only because that module is imported (transitively) by every file this one uses, so adding it
-  there would invalidate the olean of each of them.  Move it when the tree is next rebuilt.
-
 ## Relation to `QOU.BraidKnot.KeystonePivotalSpherical.SphericalStructure`
 
 That class is a **different object** and both should stay. It is stated over the *twistless* braided
@@ -65,36 +59,6 @@ namespace QOU.MathlibExt
 open CategoryTheory MonoidalCategory BraidedCategory
 
 variable {C : Type*} [Category C] [MonoidalCategory C]
-
-/-- **The coevaluation identity that characterises `rightDualIso`** — the mirror of
-`rightDualIso_hom_evaluation`.
-
-Where the evaluation form says the comparison of two right duals commutes with the two evaluations,
-this says it carries one coevaluation to the other.  Proved by transporting both sides through
-`tensorLeftHomEquiv` *for the pairing `p₁`* — the choice matters: the `p₂` equivalence leaves a
-mixed `η_{p₂}` against `ε_{p₁}` that is no snake, while the `p₁` one reduces each side to
-`(ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom` after one use of the evaluation form. -/
-theorem coev_comp_rightDualIso {A B₁ B₂ : C}
-    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
-    @ExactPairing.coevaluation _ _ _ A B₁ p₁ ≫ A ◁ (rightDualIso p₁ p₂).hom
-      = @ExactPairing.coevaluation _ _ _ A B₂ p₂ := by
-  apply (tensorLeftHomEquiv (𝟙_ C) A B₁ B₂).symm.injective
-  simp only [tensorLeftHomEquiv, Equiv.coe_fn_symm_mk]
-  have hL : B₁ ◁ (@ExactPairing.coevaluation _ _ _ A B₁ p₁ ≫ A ◁ (rightDualIso p₁ p₂).hom)
-        ≫ (α_ B₁ A B₂).inv ≫ ε_ A B₁ ▷ B₂ ≫ (λ_ B₂).hom
-      = (ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom := by
-    rw [MonoidalCategory.whiskerLeft_comp, Category.assoc,
-      MonoidalCategory.associator_inv_naturality_right_assoc, whisker_exchange_assoc,
-      ExactPairing.coevaluation_evaluation_assoc]
-    simp
-  have hR : B₁ ◁ (@ExactPairing.coevaluation _ _ _ A B₂ p₂)
-        ≫ (α_ B₁ A B₂).inv ≫ ε_ A B₁ ▷ B₂ ≫ (λ_ B₂).hom
-      = (ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom := by
-    rw [← rightDualIso_hom_evaluation p₁ p₂, comp_whiskerRight, Category.assoc,
-      ← MonoidalCategory.associator_inv_naturality_left_assoc, whisker_exchange_assoc,
-      ExactPairing.coevaluation_evaluation_assoc]
-    simp
-  rw [hL, hR]
 
 section Pivotal
 
