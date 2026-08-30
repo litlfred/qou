@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T12:46:34Z
+updated_at: 2026-08-30T14:04:46Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -340,3 +340,63 @@ symptom is an `unknown constant` error that reads exactly like a broken `main` �
 nearly reported `WedderburnRankDegeneracy.lean` as broken twice. Both constants
 (`yLambda_determined`, `dimHLF_column`) existed; the oleans were up to **five days**
 older than their sources. Refresh on `source -nt olean`, not on absence.
+
+
+---
+
+## 2026-08-30 — the general Murphy `x_λ` is CLOSED. `QOU/BraidKnot/HeckeMurphy.lean`.
+
+The item this bean left open — *"that pairing argument over `Equiv.Perm (Fin (n+1))` is the open
+work"* — is proved, for **general** `λ`, not just the rank-one case that landed earlier today.
+
+- `σ_mul_Tw_pair (i) (v) : σ_i · (T_v + T_{v s_i}) = q · (T_v + T_{v s_i})` — **unconditional**,
+  no ascent/descent hypothesis.
+- `σ_mul_murphySum (i) (S) (hS : ∀ w ∈ S, w * s_i ∈ S) : σ_i · x_S = q · x_S`, where
+  `x_S = Σ_{w ∈ S} T_w`.
+- `σ_mul_murphySum_subgroup (i) (H) (hi : s_i ∈ H)` — the Young-subgroup form, i.e. Murphy's
+  `x_λ` proper.
+
+`lean`-direct EXIT=0, errors=0 warnings=0; `#print axioms` on all seven declarations gives
+`propext / Classical.choice / Quot.sound`, no `sorryAx`.
+
+### The move that made it tractable, which is worth carrying to the next piece
+
+I had this bean's own plan wrong. It said the blocker was "the combinatorics" — pairing `w` with
+`w s_i`, one length up and one down, then combining the two `rsFun` branches. That is the right
+mathematics, but implemented directly it means partitioning `S` into ascents and descents and
+building a bijection between the halves, which is the expensive part.
+
+**None of that is needed.** The two branches are exactly complementary *on a pair*, so the pair
+identity holds with no hypothesis at all — whichever of `w`, `w s_i` ascends, the coefficients
+recombine the same way (`1 + (q−1) = q`). Restated as `f w + f (w s_i) = 0` for
+`f w = σ_i T_w − q T_w`, that is verbatim the hypothesis of `Finset.sum_involution`. The sum then
+vanishes with no partition of `S` at all.
+
+**And the payoff is not just brevity.** The obvious one-line alternative — sum the pair identity
+over all of `S`, getting `2σx = 2qx` — needs `2` invertible and would have quietly imported a
+characteristic hypothesis into the foundation of the Murphy basis. The involution route does not.
+
+Built on `QOU.Hecke.TwMul`'s `σ_mul_Tw_of_lt` / `σ_mul_Tw_of_not_lt` rather than re-deriving the
+structure constants, and on the `T_w` basis from #6053 that this branch transported — so the
+transport was load-bearing rather than decorative.
+
+### What remains of `qou-phir`, stated so nothing reads as covered
+
+The eigenvector property is **not** the Murphy basis. Still open:
+
+1. **That the `m_{st} = T_{d(s)}^* x_λ T_{d(t)} are a basis** — needs coset representatives `d(s)`
+   indexed by standard tableaux, hence standard-tableau combinatorics, which the corpus does not
+   have.
+2. **Cellular axioms (C1) and (C3)** — (C1) is the basis statement plus the indexing; (C3) needs
+   the **dominance order** on partitions and the filtration it cuts out. (C2), the anti-involution,
+   is already proved (`antiAut`, this branch).
+
+So the remaining blocker really is combinatorics this time — specifically standard tableaux and
+dominance — and unlike the eigenvector property there is no algebraic shortcut around it.
+
+### An authoring trap that cost a compile cycle
+
+`abbrev sw (i : Fin n)` written under a `variable (n : ℕ)` block makes `n` an **explicit**
+argument of `sw`, so every later `sw i` elaborates as `sw (n := i)` with `i` read as the rank. The
+error surfaces far from the cause, as `Fin ↑i → Equiv.Perm (Fin (↑i + 1))` mismatches at the use
+sites. Bind `n` implicitly in the signature when a helper needs only some of the block's variables.
