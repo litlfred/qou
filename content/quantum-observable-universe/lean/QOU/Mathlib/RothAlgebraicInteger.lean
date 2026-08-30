@@ -103,4 +103,120 @@ theorem norm_le_house (φ : K →+* ℂ) (x : K) : ‖φ x‖ ≤ house x := by
     exact_mod_cast Finset.le_sup' (fun ψ : K →+* ℂ => ‖ψ x‖₊) (Finset.mem_univ φ)
   simpa using h
 
+section Index
+
+open Finsupp in
+/-- A finite sum of elements each in the image of a ring hom is in the image. -/
+theorem exists_preimage_sum {R S ι : Type*} [CommRing R] [CommRing S] (f : R →+* S)
+    (t : Finset ι) (g : ι → S) (h : ∀ n ∈ t, ∃ y : R, f y = g n) :
+    ∃ y : R, f y = ∑ n ∈ t, g n := by
+  classical
+  induction t using Finset.induction with
+  | empty => exact ⟨0, by simp⟩
+  | insert a t ha ih =>
+      obtain ⟨ya, hya⟩ := h a (Finset.mem_insert_self a t)
+      obtain ⟨yt, hyt⟩ := ih (fun n hn => h n (Finset.mem_insert_of_mem hn))
+      refine ⟨ya + yt, ?_⟩
+      rw [Finset.sum_insert ha, map_add, hya, hyt]
+
+/-- The per-monomial denominator statement with the degree bound folded in. -/
+theorem exists_int_mul_translateMatrix_deg {m : ℕ} (pn : Fin m → ℤ) (qd : Fin m → ℕ)
+    (hq : ∀ h, qd h ≠ 0) (r : Fin m → ℕ) {n : Fin m →₀ ℕ} (hnr : ∀ h, n h ≤ r h)
+    (i : Fin m →₀ ℕ) :
+    ∃ z : ℤ, (∏ h, (qd h : ℚ) ^ (r h)) *
+      translateMatrix (fun h => (pn h : ℚ) / (qd h : ℚ)) i n = (z : ℚ) := by
+  obtain ⟨zn, hzn⟩ :=
+    exists_int_mul_translateMatrix pn qd hq (n.sum fun _ e => e) n rfl i
+  have hD : (∏ h, (qd h : ℚ) ^ (r h))
+      = (∏ h, (qd h : ℚ) ^ (r h - n h)) * (∏ h, (qd h : ℚ) ^ (n h)) := by
+    rw [← Finset.prod_mul_distrib]
+    refine Finset.prod_congr rfl (fun h _ => ?_)
+    rw [← pow_add]
+    congr 1
+    have := hnr h
+    omega
+  refine ⟨(∏ h, (qd h : ℤ) ^ (r h - n h)) * zn, ?_⟩
+  rw [hD]
+  push_cast
+  linear_combination (∏ h, (qd h : ℚ) ^ (r h - n h)) * hzn
+
+variable {m : ℕ}
+
+/-- **`∏ q_h^{r_h}` clears the denominator over `𝓞 K` too.**  The rational-point matrix entries are
+rational, so the `ℤ` computation is reused verbatim; what changes is only that the coefficients it
+is multiplied against are algebraic integers rather than rational ones. -/
+theorem exists_ringOfIntegers_mul_coeff_translate (pn : Fin m → ℤ) (qd : Fin m → ℕ)
+    (hq : ∀ h, qd h ≠ 0) (r : Fin m → ℕ) (P : MvPolynomial (Fin m) (𝓞 K))
+    (hdeg : ∀ h, degreeOf h P ≤ r h) (i : Fin m →₀ ℕ) :
+    ∃ y : 𝓞 K, (algebraMap (𝓞 K) K) y
+      = ((∏ h, (qd h) ^ (r h) : ℕ) : K)
+        * coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+            (map (algebraMap (𝓞 K) K) P)) := by
+  classical
+  rw [coeff_translate_eq_sum, Finset.mul_sum]
+  refine exists_preimage_sum _ _ _ (fun n hn => ?_)
+  have hnP : n ∈ P.support := support_map_subset (algebraMap (𝓞 K) K) P hn
+  have hnr : ∀ h, n h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hnP) (hdeg h)
+  obtain ⟨z, hz⟩ := exists_int_mul_translateMatrix_deg pn qd hq r hnr i
+  refine ⟨coeff n P * (z : 𝓞 K), ?_⟩
+  have htm : translateMatrix (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ))) i n
+      = algebraMap ℚ K (translateMatrix (fun h => (pn h : ℚ) / (qd h : ℚ)) i n) :=
+    (translateMatrix_map (algebraMap ℚ K) _ i n).symm
+  have hDcast : (((∏ h, (qd h) ^ (r h) : ℕ)) : K)
+      = algebraMap ℚ K (∏ h, (qd h : ℚ) ^ (r h)) := by
+    push_cast
+    simp
+  have hz' : (((∏ h, (qd h) ^ (r h) : ℕ)) : K)
+      * algebraMap ℚ K (translateMatrix (fun h => (pn h : ℚ) / (qd h : ℚ)) i n)
+      = ((z : ℤ) : K) := by
+    rw [hDcast, ← map_mul, hz]
+    exact map_intCast _ z
+  rw [map_mul, coeff_map, htm, map_intCast]
+  linear_combination (-((algebraMap (𝓞 K) K) (coeff n P))) * hz'
+
+/-- **Step 2's index lower bound over `𝓞 K`.**  Every low-weight translated coefficient that is
+small at `φ₀` and bounded at the other conjugates vanishes, and enough vanishing is a lower bound
+on the index.
+
+The hypothesis is a *pair* per coefficient, unlike the `ℤ` case's single bound: `M` at the other
+`d−1` conjugates and smallness at `φ₀` measured against `M^{d−1}`.  That asymmetry is the whole
+difference between `|N(x)| ≥ 1` and `|z| ≥ 1`. -/
+theorem le_index_of_norm_lt (pn : Fin m → ℤ) (qd : Fin m → ℕ) (hq : ∀ h, qd h ≠ 0)
+    (r : Fin m → ℕ) (P : MvPolynomial (Fin m) (𝓞 K)) (hdeg : ∀ h, degreeOf h P ≤ r h)
+    (φ₀ : K →+* ℂ) {M : ℝ} {ν : ℚ}
+    (hsmall : ∀ i : Fin m →₀ ℕ, idxWeight r i < ν →
+      (∀ φ : K →+* ℂ, φ ≠ φ₀ →
+          ((∏ h, (qd h) ^ (r h) : ℕ) : ℝ)
+            * ‖φ (coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+                (map (algebraMap (𝓞 K) K) P)))‖ ≤ M)
+        ∧ ((∏ h, (qd h) ^ (r h) : ℕ) : ℝ)
+            * ‖φ₀ (coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+                (map (algebraMap (𝓞 K) K) P)))‖
+            * M ^ (Fintype.card (K →+* ℂ) - 1) < 1) :
+    ((ν : ℚ) : WithTop ℚ)
+      ≤ index r (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+          (map (algebraMap (𝓞 K) K) P) := by
+  classical
+  have hDpos : 0 < ∏ h, (qd h) ^ (r h) :=
+    Finset.prod_pos (fun h _ => pow_pos (Nat.pos_of_ne_zero (hq h)) _)
+  have hDne : ((∏ h, (qd h) ^ (r h) : ℕ)) ≠ 0 := hDpos.ne'
+  refine (le_index_iff_coeff_eq_zero r _ _ ν).mpr (fun i hi => ?_)
+  obtain ⟨y, hy⟩ := exists_ringOfIntegers_mul_coeff_translate pn qd hq r P hdeg i
+  obtain ⟨hother, hlt⟩ := hsmall i hi
+  have hnorm : ∀ φ : K →+* ℂ, ‖φ ((algebraMap (𝓞 K) K) y)‖
+      = ((∏ h, (qd h) ^ (r h) : ℕ) : ℝ)
+        * ‖φ (coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+            (map (algebraMap (𝓞 K) K) P)))‖ := by
+    intro φ
+    rw [hy, map_mul, map_natCast, norm_mul, Complex.norm_natCast]
+  have hy0 : y = 0 := by
+    refine eq_zero_of_norm_mul_pow_lt_one (φ₀ := φ₀) (M := M) (fun φ hφ => ?_) ?_
+    · rw [hnorm φ]; exact hother φ hφ
+    · rw [hnorm φ₀]; exact hlt
+  rw [hy0, map_zero] at hy
+  have hDK : (((∏ h, (qd h) ^ (r h) : ℕ)) : K) ≠ 0 := Nat.cast_ne_zero.mpr hDne
+  exact (mul_eq_zero.mp hy.symm).resolve_left hDK
+
+end Index
+
 end MvPolynomial
