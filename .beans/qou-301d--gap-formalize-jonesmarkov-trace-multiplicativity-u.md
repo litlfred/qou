@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T12:30:19Z
+updated_at: 2026-08-30T12:34:44Z
 ---
 
 ## Context
@@ -59,3 +59,7 @@ The gap is purely LEAN FORMALISATION labour, not open math.
 Positivity discharged. Multiplicativity is a large Lean-formalisation gap (option 1/2, ~epic
 qou-08a2), NOT open math (Jones 1987 suffices), and is PARTLY irreducible (the amplitude=trace
 identification is a definition). Low priority; the honest state is "modulo the Jones citation."
+
+
+
+Upstream infra bean: qou-dyij (Mathlib knot theory — Jones/connected-sum/Markov-trace). See its roast: route B (algebraic Ocneanu trace) is the only sane path, and even it leaves the amplitude=trace identification as a modelling input.
