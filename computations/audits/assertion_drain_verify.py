@@ -258,7 +258,11 @@ def selftest() -> int:
          "GAIN"),
         # a value that MOVED is never a drain
         ("moved", classify(0.5, "0.6000000000000000000000000000"), "VALUE-MOVED"),
-        # trap 1: a double's own expansion, printed wider, is not a gain
+        # trap 1: a double's own expansion, printed wider, is not a gain.
+        # The mix below is the FIXTURE, not a leak: without constructing a
+        # binary64 value and re-serializing it, the selftest cannot prove the
+        # classifier separates a real gain from a widened double.
+        # float64-intentional: builds the defect this case exists to catch
         ("reserialized-double", classify(0.1, mp.nstr(mpf(float(0.1)), 40)),
          "NO-DIGITS-RECOVERED"),
         # a field the edit failed to stringify
