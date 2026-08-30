@@ -1,29 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T16:02:48.064994+00:00",
+  "computedAt": "2026-08-30T18:08:48.952738+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "commitSha": "d0fbf3da07558495e00cae9aa783787cabc62846",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
   },
   "data": {
-    "q0_canonical": "1.1099785955573347198997632204832250266562084087802",
+    "q0_muon_pin_A": "1.1099785955573347198997632204832250266562084087802",
+    "markov_convention": "none \u2014 C excised, D not re-derived",
+    "markov_convention_note": "This probe no longer evaluates a Markov frame. Convention C is EXCISED by owner ruling; convention D has no derived c_k ladder (bean qou-cds1 \u2014 z_D in the C-frame eigenphase is refuted by decayLadder_zC_threeRow_ne_zero and eigenphase_bar_defect_of_fullBar, both sorry-free). The entropy bound needs neither: u = b\u00b7\u210f_q\u00b2 contains no z, and the only frame-dependent factor in the amplifier is Q/Q_Nk = 1 + O(6e-4), worth <3e-4 of a digit against a ~7-digit deficit. Asserted as entropy_bound_is_convention_immune, not assumed.",
     "q0_proton": "1.1099785827513808075916690956107688798744991218736",
     "Q_beta_codata_MeV": "0.78233341",
-    "u_substrate": "0.0085172363404849214399331129023",
-    "u_cubed": "6.178685578e-7",
-    "u_fourth": "5.262532534e-9",
-    "c3_reproduced_canonical": "-974.382476607697851630950275826",
-    "c3_cache_value": "-2.02018812814143945582016855395",
+    "u_substrate": "0.00851723455015614218925557360331",
+    "u_cubed": "6.178681681e-7",
+    "u_fourth": "5.262528109e-9",
+    "c3_on_record_consumed": "-2.06934257711516783787971951725",
+    "c3_muon_pin_A_superseded": "-2.02018812814143945582016855395",
     "c3_proton_on_record": "-2.06934257711516783787971951725",
     "c3_muon_hopf_on_record": "-2.0097",
-    "c4_reproduced_canonical": "0.0",
+    "c4_zero_by_construction": "0.0",
     "c4_artifact_note": "c_4 is exactly 0 by construction when c_3 is extracted exactly against the same Q_beta reference (Q_N3 = Q_CODATA identically); the quoted empirical c_4 = -0.972 is the truncation residual of a rounded c_3 \u2014 no independent empirical content exists for PSLQ. Confirms registry rung-4 tier 'empirical_fit / artifact'.",
-    "amplifier_dc3_dQrel": "1617492.8",
-    "amplifier_dc4_dQrel": "1.9002258e+8",
+    "amplifier_dc3_dQrel": "1618468.2",
+    "amplifier_dc4_dQrel": "1.9002274e+8",
     "anchor_slope_dc3_dq": "3.83841e+6",
     "sigma_Q_rel_actual": "7.8e-7",
     "sigma_Q_rel_optimistic_reading": "7.8e-9",
@@ -40,10 +42,10 @@
       },
       {
         "scenario": "actual sigma(Q)=0.78ppm",
-        "anchor": "muon",
+        "anchor": "muon-pin-A",
         "err_c3_from_Q": "1.262",
         "err_c3_from_pin": "0.09373",
-        "err_c3_total": "1.265",
+        "err_c3_total": "1.266",
         "eff_digits_c3": 0.2,
         "err_c4_from_Q": "148.2",
         "eff_digits_c4": 0.0
@@ -53,14 +55,14 @@
         "anchor": "proton",
         "err_c3_from_Q": "0.01262",
         "err_c3_from_pin": "0.0002556",
-        "err_c3_total": "0.01262",
+        "err_c3_total": "0.01263",
         "eff_digits_c3": 2.21,
         "err_c4_from_Q": "1.482",
         "eff_digits_c4": 0.0
       },
       {
         "scenario": "optimistic sigma(Q)=7.8ppb",
-        "anchor": "muon",
+        "anchor": "muon-pin-A",
         "err_c3_from_Q": "0.01262",
         "err_c3_from_pin": "0.09373",
         "err_c3_total": "0.09458",
@@ -99,7 +101,7 @@
     "minimal_requirement_digits": 9.2,
     "digit_deficit": 6.99,
     "max_supportable_basis_terms_at_H10": 1,
-    "sigma_Q_rel_needed_for_minimal_budget": "3.8e-13",
+    "sigma_Q_rel_needed_for_minimal_budget": "8.07e-16",
     "arithmetic_basis_not_run": {
       "1": "1",
       "sqrt3": "1.73205080756887729352744634151",
@@ -110,12 +112,12 @@
   },
   "assertions": [
     {
-      "name": "extraction_chain_reproduces_cache_c3",
-      "computed": 972.3622884795565,
+      "name": "entropy_bound_is_convention_immune",
+      "computed": 0.0002615546377846382,
       "expected": 0.0,
-      "passed": false,
-      "tolerance": 1e-08,
-      "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341)"
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "max |\u0394 log10(D_eff)| induced by Q/Q_Nk over BOTH Markov frames (worst dev 6.02e-4, convention D; 1.28e-6 under C) \u2014 mechanises row P3 of docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md"
     },
     {
       "name": "stage1_entropy_verdict_is_blocked",
@@ -132,8 +134,8 @@
     "stage2": null,
     "conclusion": "ENTROPY-BLOCKED: the empirical c_3 carries at most ~2 reliable digits per anchor (c_4: zero) because the extraction divides the Q_\u03b2 experimental error by u\u00b3 (\u00d71.6e6) / u\u2074 (\u00d71.9e8); even the minimal 4-term H\u2264100 basis needs ~9.2 digits. PSLQ was NOT run \u2014 any relation it returned would be lattice noise. The coefficients remain empirical under the arithmetic basis; no value proposed, nothing wired. Closing this avenue requires either sigma(Q_\u03b2) improved by ~9 orders of magnitude or a canonical (non-extracted) high-precision c_3 producer \u2014 i.e. the open keystone F(q) itself."
   },
-  "allPassed": false,
-  "scriptHash": "39900a33dba5",
+  "allPassed": true,
+  "scriptHash": "9d91c7a9a4ac",
   "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
   "durationMs": 0,
   "q0Anchor": "ambiguous"

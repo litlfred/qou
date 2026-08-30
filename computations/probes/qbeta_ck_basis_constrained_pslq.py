@@ -11,6 +11,14 @@ meaningful ONLY if the target carries
 reliable digits; below that, ANY relation found is guaranteed-spurious
 lattice noise).
 
+MARKOV FRAME: **none**. Convention C is EXCISED by owner ruling; convention D
+has no derived c_k ladder (bean `qou-cds1`). This probe therefore evaluates no
+ladder at all — it CONSUMES the on-record empirical c_3 and bounds its entropy
+using only frame-free substrate scalars (`u = b·ℏ_q²` contains no `z`). Until
+2026-08-30 it silently ran a convention-D `z` and compared the result against a
+convention-C cache, missing by 972.36 on a 1e-8 tolerance (bean `qou-l2we`);
+the fix was to remove the frame, not to pick one.
+
 STAGE 1 (entropy audit, mandatory) — determine the ACTUAL effective
 precision of the empirical c_3 / c_4 by tracing the extraction chain:
 
@@ -77,9 +85,15 @@ mp.mp.dps = 60  # ≥ 50 dps discipline
 # ---------------------------------------------------------------------------
 # Canonical inputs (traced to producers — see docstring)
 # ---------------------------------------------------------------------------
-# canonical (muon-family) q₀ — qbeta-ck-cache.witness.json / Q0_MP_PIN
-Q0_CANONICAL = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-# proton-pinned q₀ — full 50-dps pin (qou_substrate.constants.Q_50_DIGIT_STR)
+# muon-family q₀, VINTAGE A — the anchor this probe was written against in
+# 2026-07-11. RETIRED by owner ruling 2026-08-22 ("A -> CODATA 2022"); kept
+# because the second anchor of the anchor-slope below is measured at it and
+# deleting it would delete that measurement. It is NOT "canonical" and it is
+# no longer where qbeta-ck-cache lives -- the cache moved to the proton pin on
+# 2026-08-08 (633ac8a7d). Do not reintroduce it as a reproduction target.
+Q0_MUON_PIN_A = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# proton-pinned q₀ — full 50-dps pin (qou_substrate.constants.Q_50_DIGIT_STR).
+# This is the anchor qbeta-ck-cache is CURRENTLY extracted at.
 Q0_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
 M_E_MEV = mp.mpf("0.51099895069")
 # Q_β reference used by the cache extraction (qbeta-ck-cache Q_codata)
@@ -96,7 +110,7 @@ PIN_REL_MUON = mp.mpf("22e-9")       # 22 ppb
 # Empirical c_3 readouts on record (inter-producer spread evidence).
 #
 # THESE ARE THREE DIFFERENT PRODUCERS' READOUTS, NOT INTERCHANGEABLE VALUES.
-# Only `C3_EMP_CACHE` is extracted at `Q0_CANONICAL`; pairing either of the
+# Only `C3_MUON_PIN_A` is extracted at `Q0_MUON_PIN_A`; pairing either of the
 # others with that pin measures a producer difference, not an anchor slope
 # (bean `qou-t39x` — that mismatch is where the corpus's "4.6e6" came from).
 #
@@ -104,32 +118,72 @@ PIN_REL_MUON = mp.mpf("22e-9")       # 22 ppb
 # purpose: the inter-producer spread below is a real measurement of how far
 # apart two producers' "empirical c_3" got, and deleting it would delete the
 # evidence. It must never enter an arithmetic slope.
+# `C3_EMP_PROTON` (root-of-unity probe) and the CURRENT qbeta-ck-cache value
+# agree to every digit the cache records -- an independent cross-check of the
+# convention-C chain at the proton pin, not a duplicate.
 C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")  # root-of-unity probe
 C3_EMP_MUON_HOPF = mp.mpf("-2.0097")                         # hopf-profile probe (SUPERSEDED; spread only)
-C3_EMP_CACHE = mp.mpf("-2.02018812814143945582016855395")    # ck-cache, extracted AT Q0_CANONICAL
+# ck-cache readout at Q0_MUON_PIN_A. This WAS the cache value until 2026-08-08;
+# it is now the SUPERSEDED pin-A readout and is retained only as the second
+# anchor of the slope below. Renamed from `C3_EMP_CACHE` (bean qou-l2we): the
+# old name asserted "this is the cache", which stopped being true seven weeks
+# before anything re-ran this file.
+C3_MUON_PIN_A = mp.mpf("-2.02018812814143945582016855395")
 
 MARGIN_DIGITS = 3.0  # confidence margin beyond the raw entropy floor
 
 
-def ladder_chain(q):
-    """Reproduce the c_3/c_4 extraction chain at anchor q (the producer's
-    exact convention — qbeta_ck_k_gt_3_habiro_extension_scoping.py)."""
+def substrate_scalars(q):
+    """Convention-FREE substrate scalars at anchor `q`.
+
+    This function used to be `ladder_chain`, and it carried a Markov `z`.
+    It no longer does, because it no longer needs one -- and because
+    **convention C is excised** (owner ruling; re-affirmed 2026-08-09 /
+    08-15 / 08-26 and again on this bean) while convention D has no derived
+    ladder (`qou-cds1`: substituting z_D into the C-frame eigenphase is
+    refuted by two sorry-free theorems, `decayLadder_zC_threeRow_ne_zero`
+    and `eigenphase_bar_defect_of_fullBar`). With both frames unavailable,
+    a probe that evaluated either would be publishing a number the corpus
+    says is not a value.
+
+    The escape is that THIS probe never needed the ladder. Its result is an
+    ENTROPY BOUND on the empirical c_k, and every quantity that bound
+    depends on is convention-independent:
+
+        h      = q - 1/q                      no z
+        hbar_q = (q - 1)/q                    no z
+        b      = sqrt((h^2+3)/(h^2+4))        no z
+        u      = b * hbar_q^2                 no z
+
+    (`b` is often written `sqrt(d1*d2 + 1)` with the D-frame `d1`, `d2`;
+    that is the SAME NUMBER -- both reduce to `sqrt(q^4+q^2+1)/(q^2+1)` --
+    so even the historical spelling carried no convention content. Measured:
+    the two expressions agree to 0.0 exactly at every pin tested.)
+
+    The amplifier is `dc_k/d(rel Q err) = (Q/Q_Nk)/u^k`, and the only
+    convention-dependent factor is `Q/Q_Nk`, which is `1 + O(6e-4)` at
+    worst across BOTH frames (derived-tier Q_N2 error: 1.28e-6 relative
+    under C, 6.02e-4 under D). Its effect on a base-10 digit count is
+    `log10(1 + 6e-4) < 3e-4` digits, against a deficit of ~7 digits. So the
+    bound is reported at `Q/Q_Nk -> 1` and the residual is asserted, not
+    assumed -- see `entropy_bound_is_convention_immune`. This restates,
+    mechanically, the conclusion already reached in
+    docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md
+    (row P3: "Q_N2 moves 6e-4 relative under D -- bound unchanged;
+    VALID-immune").
+    """
     h = q - 1 / q
-    z = q**3 / (q**2 + 1)
-    alpha = (z - 1) * h / 2
-    d1 = q ** 3 / (q ** 2 + 1)
-    d2 = -1 / (q * (q ** 2 + 1))
-    b = mp.sqrt(d1 * d2 + 1)
     hbar_q = (q - 1) / q
+    b = mp.sqrt((h ** 2 + 3) / (h ** 2 + 4))
     u = b * hbar_q ** 2
-    Q_A = M_E_MEV * (2 * q + 1 - q ** 2) * (q + 1) / (2 * q ** 3)
-    alpha_eff = alpha - b * hbar_q ** 2 / 2
-    Q_N1 = Q_A * mp.cos(alpha_eff)
-    Q_N2 = Q_N1 * (1 - u ** 2)  # c_2 = -1 CANONICAL
-    c3 = (Q_BETA_CODATA_MEV / Q_N2 - 1) / u ** 3
-    Q_N3 = Q_N2 * (1 + c3 * u ** 3)
-    c4 = (Q_BETA_CODATA_MEV / Q_N3 - 1) / u ** 4
-    return {"u": u, "Q_N2": Q_N2, "Q_N3": Q_N3, "c3": c3, "c4": c4}
+    return {"h": h, "hbar_q": hbar_q, "b": b, "u": u}
+
+
+# Worst-case |Q/Q_Nk - 1| over BOTH Markov frames, from the derived-tier
+# Q_N2 error each produces (qbeta_ck_cache.py guard: 1278.6 ppb under C,
+# 602433.2 ppb under D). Used only to BOUND the convention sensitivity of
+# the entropy verdict; never to compute a c_k.
+Q_OVER_QN_DEV_WORST = mp.mpf("6.024332e-4")
 
 
 def eff_digits(value, err):
@@ -148,17 +202,22 @@ def main():
     # -----------------------------------------------------------------
     # Extraction-chain reproduction (validates we audit the real chain)
     # -----------------------------------------------------------------
-    chain = ladder_chain(Q0_CANONICAL)
-    u, c3, c4 = chain["u"], chain["c3"], chain["c4"]
-    c3_cache_delta = mp.fabs(c3 - C3_EMP_CACHE)
-    print(f"\n  extraction chain at canonical q₀:")
+    sub = substrate_scalars(Q0_PROTON)
+    u = sub["u"]
+    # c_3 is NOT recomputed here. Recomputing it needs a Markov frame, and
+    # both are unavailable (C excised, D not re-derived) -- so this probe
+    # consumes the on-record readout instead of manufacturing one. c_4 is
+    # exactly 0 by construction, which is an ALGEBRAIC fact needing no frame:
+    # if c_3 is extracted exactly against the same Q reference then
+    # Q_N3 = Q_N2*(1 + c_3 u^3) = Q_codata identically, so c_4 = 0.
+    c3 = C3_EMP_PROTON
+    c4 = mp.mpf(0)
+    print(f"\n  substrate scalars at the proton pin (convention-FREE):")
     print(f"    u = b·ℏ_q²     = {mp.nstr(u, 20)}")
     print(f"    u³             = {mp.nstr(u ** 3, 8)}")
     print(f"    u⁴             = {mp.nstr(u ** 4, 8)}")
-    print(f"    c_3 reproduced = {mp.nstr(c3, 25)}")
-    print(f"    c_3 cache      = {mp.nstr(C3_EMP_CACHE, 25)}")
-    print(f"    |delta|        = {mp.nstr(c3_cache_delta, 5)}")
-    print(f"    c_4 reproduced = {mp.nstr(c4, 15)}")
+    print(f"    c_3 on record  = {mp.nstr(c3, 25)}  (consumed, not recomputed)")
+    print(f"    c_4            = {mp.nstr(c4, 15)}   (exactly 0 by construction)")
     print(f"      NOTE: c_4 ≡ 0 BY CONSTRUCTION when c_3 is extracted exactly")
     print(f"      against the same Q reference — the nonzero 'empirical c_4'")
     print(f"      (−0.972, qbeta_1ppq_achieved) exists only as the truncation")
@@ -170,14 +229,14 @@ def main():
     # Error propagation — the extraction amplifier
     # -----------------------------------------------------------------
     # exact partials: dc3/d(eps_Q) = (Q/Q_N2)/u³ ; dc4/d(eps_Q) = (Q/Q_N3)/u⁴
-    dc3_dQ = (Q_BETA_CODATA_MEV / chain["Q_N2"]) / u ** 3
-    dc4_dQ = (Q_BETA_CODATA_MEV / chain["Q_N3"]) / u ** 4
+    dc3_dQ = 1 / u ** 3      # (Q/Q_N2)/u^3 with Q/Q_N2 -> 1; see the bound below
+    dc4_dQ = 1 / u ** 4      # (Q/Q_N3)/u^4 with Q/Q_N3 -> 1
     # Empirical anchor slope dc3/dq from the two recorded anchors.
     #
     # 🛑 THIS PAIRED TWO DIFFERENT PRODUCERS' READOUTS (fixed 2026-08-29, bean
     # `qou-t39x`). It read `C3_EMP_MUON_HOPF`, the hopf-profile probe's value,
-    # against `Q0_CANONICAL` — but this file's OWN readout at that pin is
-    # `C3_EMP_CACHE`, defined three lines above it. The mismatch is the entire
+    # against `Q0_MUON_PIN_A` — but this file's OWN readout at that pin is
+    # `C3_MUON_PIN_A`, defined three lines above it. The mismatch is the entire
     # source of the number:
     #
     #     proton readout vs HOPF readout   ->  4657409.9      <- the "4.6e6"
@@ -185,15 +244,15 @@ def main():
     #
     # and the print below then reported the artifact as agreeing with the
     # registry's (then also stale) "≈ 4.6e6" — two errors corroborating each
-    # other. `C3_EMP_CACHE` is the value extracted AT `Q0_CANONICAL`, so it is
+    # other. `C3_MUON_PIN_A` is the value extracted AT `Q0_MUON_PIN_A`, so it is
     # the only one that makes this a slope rather than a producer difference.
     #
     # `C3_EMP_MUON_HOPF` stays defined: the inter-producer spread below is a
     # DELIBERATE measurement and needs it. It just must not enter a slope.
-    slope_c3 = (C3_EMP_PROTON - C3_EMP_CACHE) / (Q0_PROTON - Q0_CANONICAL)
+    slope_c3 = (C3_EMP_PROTON - C3_MUON_PIN_A) / (Q0_PROTON - Q0_MUON_PIN_A)
     print(f"\n  amplifiers:")
-    print(f"    dc_3/d(rel Q err) = 1/u³·(Q/Q_N2) = {mp.nstr(dc3_dQ, 6)}")
-    print(f"    dc_4/d(rel Q err) = 1/u⁴·(Q/Q_N3) = {mp.nstr(dc4_dQ, 6)}")
+    print(f"    dc_3/d(rel Q err) = 1/u³ (Q/Q_N2→1) = {mp.nstr(dc3_dQ, 6)}")
+    print(f"    dc_4/d(rel Q err) = 1/u⁴ (Q/Q_N3→1) = {mp.nstr(dc4_dQ, 6)}")
     print(f"    dc_3/dq (empirical, cross-anchor) = {mp.nstr(slope_c3, 4)}"
           f"   (registry §3, corrected PR #5765: ≈ 3.84e6)")
 
@@ -204,9 +263,9 @@ def main():
     ]:
         for (anchor, pin_rel, c3_anchor) in [
             ("proton", PIN_REL_PROTON, C3_EMP_PROTON),
-            ("muon", PIN_REL_MUON, C3_EMP_CACHE),
+            ("muon-pin-A", PIN_REL_MUON, C3_MUON_PIN_A),
         ]:
-            dq = pin_rel * Q0_CANONICAL
+            dq = pin_rel * (Q0_PROTON if anchor == "proton" else Q0_MUON_PIN_A)
             err_c3_Q = sigma_q * dc3_dQ
             err_c3_pin = mp.fabs(slope_c3) * dq
             err_c3 = mp.sqrt(err_c3_Q ** 2 + err_c3_pin ** 2)
@@ -232,10 +291,10 @@ def main():
               f"{s['err_c4_from_Q']:>10} {s['eff_digits_c4']:>10}")
 
     # observed inter-producer spread corroboration
-    spread = mp.fabs(C3_EMP_CACHE - C3_EMP_MUON_HOPF)
-    d_spread = eff_digits(C3_EMP_CACHE, spread)
+    spread = mp.fabs(C3_MUON_PIN_A - C3_EMP_MUON_HOPF)
+    d_spread = eff_digits(C3_MUON_PIN_A, spread)
     print(f"\n  corroboration — inter-producer spread of 'empirical c_3' at the")
-    print(f"  muon-family anchor: |{mp.nstr(C3_EMP_CACHE, 7)} - "
+    print(f"  muon-family anchor: |{mp.nstr(C3_MUON_PIN_A, 7)} - "
           f"({mp.nstr(C3_EMP_MUON_HOPF, 6)})| = {mp.nstr(spread, 3)}"
           f"  ⇒ ~{d_spread:.1f} stable digits")
 
@@ -289,6 +348,16 @@ def main():
     # -----------------------------------------------------------------
     # Witness
     # -----------------------------------------------------------------
+    # Convention sensitivity of the verdict: the amplifier carries a factor
+    # Q/Q_Nk that IS frame-dependent; everything else in the bound is not.
+    # Bound its effect on the digit count directly.
+    dig_shift_worst = mp.fabs(mp.log10(1 + Q_OVER_QN_DEV_WORST))
+    print(f"\n  convention sensitivity of the verdict:")
+    print(f"    worst |Q/Q_Nk - 1| over both frames = {mp.nstr(Q_OVER_QN_DEV_WORST, 6)}")
+    print(f"    ⇒ max shift in D_eff                = {mp.nstr(dig_shift_worst, 4)} digits")
+    print(f"    deficit being decided               = "
+          f"{round(d_req_min - d_eff_best, 2)} digits  ⇒ IMMUNE")
+
     vol41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
     out = {
         "engine": "mpmath",
@@ -313,17 +382,28 @@ def main():
         ),
         "precisionMetadata": {"compute_dps": 60},
         "data": {
-            "q0_canonical": mp.nstr(Q0_CANONICAL, 50),
+            "q0_muon_pin_A": mp.nstr(Q0_MUON_PIN_A, 50),
+            "markov_convention": "none — C excised, D not re-derived",
+            "markov_convention_note": (
+                "This probe no longer evaluates a Markov frame. Convention C is "
+                "EXCISED by owner ruling; convention D has no derived c_k ladder "
+                "(bean qou-cds1 — z_D in the C-frame eigenphase is refuted by "
+                "decayLadder_zC_threeRow_ne_zero and eigenphase_bar_defect_of_fullBar, "
+                "both sorry-free). The entropy bound needs neither: u = b·ℏ_q² "
+                "contains no z, and the only frame-dependent factor in the amplifier "
+                "is Q/Q_Nk = 1 + O(6e-4), worth <3e-4 of a digit against a ~7-digit "
+                "deficit. Asserted as entropy_bound_is_convention_immune, not assumed."
+            ),
             "q0_proton": mp.nstr(Q0_PROTON, 50),
             "Q_beta_codata_MeV": mp.nstr(Q_BETA_CODATA_MEV, 12),
             "u_substrate": mp.nstr(u, 30),
             "u_cubed": mp.nstr(u ** 3, 10),
             "u_fourth": mp.nstr(u ** 4, 10),
-            "c3_reproduced_canonical": mp.nstr(c3, 30),
-            "c3_cache_value": mp.nstr(C3_EMP_CACHE, 30),
+            "c3_on_record_consumed": mp.nstr(c3, 30),
+            "c3_muon_pin_A_superseded": mp.nstr(C3_MUON_PIN_A, 30),
             "c3_proton_on_record": mp.nstr(C3_EMP_PROTON, 30),
             "c3_muon_hopf_on_record": mp.nstr(C3_EMP_MUON_HOPF, 8),
-            "c4_reproduced_canonical": mp.nstr(c4, 20),
+            "c4_zero_by_construction": mp.nstr(c4, 20),
             "c4_artifact_note": (
                 "c_4 is exactly 0 by construction when c_3 is extracted exactly "
                 "against the same Q_beta reference (Q_N3 = Q_CODATA identically); "
@@ -355,14 +435,31 @@ def main():
         },
         "assertions": [
             {
-                "name": "extraction_chain_reproduces_cache_c3",
-                "computed": float(c3_cache_delta),
+                # REPLACES `extraction_chain_reproduces_cache_c3` (bean qou-l2we).
+                # That assertion re-evaluated a Markov ladder to check it against
+                # the cache. It cannot survive the excision of convention C: with
+                # no admissible frame there is no chain to reproduce, and the one
+                # this file actually ran was convention D, which missed the cache
+                # by 972.36 on a 1e-8 tolerance for seven weeks while the producer
+                # was unrunnable. What that assertion was really protecting is the
+                # claim that the STAGE-1 VERDICT does not depend on the frame — so
+                # that is what is asserted now, directly and without a frame.
+                "name": "entropy_bound_is_convention_immune",
+                "computed": float(dig_shift_worst),
                 "expected": 0.0,
-                "passed": bool(c3_cache_delta < mp.mpf("1e-8")),
-                "tolerance": 1e-8,
-                "source": ("same chain + same Q_codata + same q0 as "
-                           "qbeta-ck-cache.witness.json (cache prints Q_codata "
-                           "rounded to 0.78233341)"),
+                "passed": bool(dig_shift_worst < mp.mpf("0.01")),
+                # str, not float: `bc8131bd5` drained 1232 declared
+                # tolerances out of 499 witnesses, but the PRODUCERS kept
+                # emitting floats, so re-running one silently undid the
+                # drain (this witness went 17 -> 18 raw f64 on 2026-08-30).
+                # Fixed at the producer, per raw-float64-baseline.json:
+                # "Adding a file here to silence a failure defeats the
+                # gate — fix at the producer instead."
+                "tolerance": "0.01",
+                "source": ("max |Δ log10(D_eff)| induced by Q/Q_Nk over BOTH Markov "
+                           "frames (worst dev 6.02e-4, convention D; 1.28e-6 under C) "
+                           "— mechanises row P3 of docs/audits/"
+                           "2026-08-15-c3-refutation-chain-convention-validity-audit.md"),
             },
             {
                 "name": "stage1_entropy_verdict_is_blocked",
@@ -421,7 +518,7 @@ def run_stage2():
     basis = [mp.mpf(1), mp.sqrt(3), mp.pi ** 2,
              2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3))), mp.zeta(3)]
     results = {}
-    anchors = {"proton": C3_EMP_PROTON, "muon": C3_EMP_CACHE}
+    anchors = {"proton": C3_EMP_PROTON, "muon-pin-A": C3_MUON_PIN_A}
     for name, c3_val in anchors.items():
         vec = [c3_val] + basis
         rel = mp.pslq(vec, maxcoeff=100, maxsteps=10 ** 5)

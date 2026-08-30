@@ -57,3 +57,32 @@ Blocks `qou-s6b9` (the `Vol(4_1)=2*Lambda(pi/3)` key mislabel at line 313 — a
 correct rename that cannot land until this witness can be regenerated validly).
 
 Found while completing the Vol(4₁) drain in PR #5119.
+
+---
+
+## 2026-08-30 — the "Not a simple z-convention swap" section is WRONG (bean `qou-l2we`)
+
+It **was** a simple z-convention swap. The five candidate `z` tested above are
+all *rational* functions of q; convention C itself — `z = sqrt(q)/(1+q)`, the one
+form carrying a square root — was never tried. It reproduces the committed target
+exactly:
+
+    z = sqrt(q)/(1+q)   ->  c_3 = -2.02018812814143945582   |delta| ~ 1e-30
+
+which is the committed assertion's own `computed: 1.583530407934892e-30`. So
+`alpha`/`Q_N1`/`Q_A` did NOT move — only `z` did, from C to D, in
+`ladder_chain`. Same defect `qbeta_ck_cache.py` carried until `a340f7c87`.
+
+This matters because the disposition above routes the bean to the Q_β
+trace-convention front (PR #5111 / `qou-b3nk`) on the strength of that wrong
+premise.
+
+**Not reopened as a z-swap, though**: the owner ruling is to **excise convention
+C**, so the probe was fixed by REMOVING the frame rather than picking one — its
+entropy verdict never needed a Markov `z` (`u = b·hbar_q^2` contains none). See
+`qou-l2we` for the resolution and the retired assertion.
+
+Status left as-is — not this bean's owner. The parts of it that still stand:
+`allPassed:false` was the honest state, and it must not be made green by
+retuning. It was not: a false assertion was retired and a frame-immunity
+assertion proved in its place.
