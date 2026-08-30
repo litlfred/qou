@@ -36,9 +36,19 @@ which has **P = 1/5 = 0.2 under the null** for any single observable -- and
 three observables are computed, so an extremum in at least one is near
 even-odds by chance alone. An ordering result here would NOT be evidence. What
 would be evidence is a QUALITATIVE change: a rank deficiency where the others
-are full, or an argmax partition that no non-magic configuration shares. This
-is stated up front deliberately -- the arc has five recorded instances of a
-magic-looking result whose control was inadequate.
+are full, or an argmax partition that no non-magic configuration shares.
+
+THE ARGMAX CRITERION HAS ITS OWN CONTROL, and it is not automatic. "4He has an
+argmax no non-magic configuration shares" is evidence only if the non-magic
+configurations share one WITH EACH OTHER. Measured on the first two: Z=4,N=0
+gives (9,3) and Z=3,N=1 gives (5,4,1,1,1) -- already distinct, so if that
+continues the criterion is VACUOUS and every configuration trivially "has its
+own". The probe reports `argmax_criterion_informative` and refuses to count an
+unshared argmax as a qualitative separation when it is False.
+
+All of this is stated up front deliberately -- the arc has five recorded
+instances of a magic-looking result whose control was inadequate, and the
+first version of THIS probe's own verdict was a sixth.
 
 OBSERVABLES, identical to the A=3 walk. Per partition `lambda |- 12` the walk
 returns the full `d_lambda x d_lambda` matrix; the weight is `w_lambda =
