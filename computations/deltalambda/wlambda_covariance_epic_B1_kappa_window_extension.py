@@ -146,7 +146,9 @@ def main() -> int:
             "kappa_n": mp.nstr(kap, 25),
             "kappa_n_minus_kappa": mp.nstr(diff, 12),
             "sign": sgn,
-            "seconds": round(dt, 2),
+            # integer ms, not float seconds: a witness carries no raw float64,
+            # and this matches the WitnessBuilder's own `durationMs`.
+            "ms": int(dt * 1000),
         })
         print(f"  {n:>4} {dt:>9.1f} {mp.nstr(kap, 20):>22} {mp.nstr(diff, 6):>16} {sgn:>5}")
         sys.stdout.flush()
