@@ -497,11 +497,15 @@ def main() -> int:
         f"\n  Σ_{{λ⊢4}} dim_q(V_λ) = {sp.expand(sigma_4)}  "
         f"(expected 3q²+4+3q⁻²; Δ = {delta_sigma_4})"
     )
+    # NO FLOAT64 (owner directive): passed as STRINGS, which is the drained
+    # convention (qou-t0rf) -- WitnessBuilder.add_assertion coerces with
+    # float() when evaluating `passed`, so the 1e-12 tolerance check is
+    # unaffected while the recorded values stay out of float64.
     w.add_assertion(
         "sigma_over_4_matches_3q2_plus_4_plus_3qinv2",
-        computed=float(sp.N(sigma_4.subs(q, 1), 20)),
-        expected=10.0,
-        tolerance=1e-12,
+        computed=str(sp.N(sigma_4.subs(q, 1), 20)),
+        expected="10",
+        tolerance="1e-12",
     )
 
     # ── B1, B2, B3 ──
