@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-11T10:20:21.653111+00:00",
-  "commitSha": "b85359ca4ca32639d3872f97c6671d69a4c80365",
+  "computedAt": "2026-08-30T03:54:38.444766+00:00",
+  "commitSha": "8527d1da82901d9c5a9c57c2afb81b07145720d8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 28,
   "computation": "delta-lambda-2row-stratum",
   "scriptFile": "delta_lambda_2row_stratum_analysis.py",
   "scriptHash": "d065b8ddc2d7",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "f2d7e8d982059b37c6d1c8169ef204347864349b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,18 +20,25 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_2row_stratum_analysis.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_2row_stratum_analysis.py"
   },
   "description": "2-row Wedderburn stratum analysis follow-up to Proposal 1's empirical Δ_λ tabulation. The dominant block per atom always lands in the 2-row stratum; this script (a) measures what fraction of |tr_M| the 2-row sector carries vs > 2-row, (b) restricts the Δ_λ ansätze to the 2-row stratum, and (c) tests several selector hypotheses inside 2-row to find the categorical rule that picks (5,1) for D, (6,3) for T+³He, (9,3) for ⁴He.  Mixed-precision: tier-2 chi data is float64 (numpy); per-row arithmetic uses mpmath but does not exceed float64 input precision.",
   "contentBlock": "prop:rho-k-h3a-refinement",
   "parameters": {
     "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "m_e_MeV": "0.51099895069",
-    "m_p_MeV": "938.27208816",
-    "m_n_MeV": "939.56542052"
+    "m_p_MeV": "938.27208943",
+    "m_n_MeV": "939.56542179"
   },
   "data": {
     "per_atom": {
