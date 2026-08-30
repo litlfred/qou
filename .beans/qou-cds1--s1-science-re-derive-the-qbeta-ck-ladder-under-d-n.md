@@ -4178,3 +4178,63 @@ been searching inside a constraint that was never derived for this channel.
 
 z = 1 is NOT readmitted: its admissibility leak is 7.6x too small to be the
 correction. "Nearly z=1" describes the tension; it is not a mechanism.
+
+
+## Step 11 (2026-08-30, PR #6144) — the decay fibre DERIVED from bar-parity, and the settled account
+
+Lean sorry-free, `QOU/QBeta/DecayFibreBarParity.lean`, lean-direct exit 0,
+axioms clean on all ten.
+
+### Derived: the bar-parity iff (uses NO two-row cap)
+
+    chi3S_bar_odd                  chi^(3)(Delta_S) at q^-1 is its NEGATIVE
+    g_bar_defect_mul               (g(q^-1,zbar) - g(q,z))(q^2+1) = 2q(zbar-(z-h))
+    g_bar_even_iff_fullBar         g bar-EVEN  <=>  bar(z) = z - h  (FULL-BAR)
+    decayTrace_bar_odd_of_fullBar  full-bar => the decay trace is bar-ODD
+    one_not_fullBar                the CONSTANT z == 1 is not full-bar
+    barEven_not_fullBar            a bar-EVEN z is NEVER full-bar (so z_C isn't)
+    y21_at_augmentation            y_(2,1)(q) = 0 EXACTLY
+
+g can never be bar-ODD (no solution). Measured parity:
+
+    z = q  full-bar YES -> bar-ODD      z = 1  full-bar NO -> NO definite parity
+    z_D    full-bar YES -> bar-ODD      z_C    full-bar NO -> NO definite parity
+
+This also explains `decayLadder_zC_threeRow_ne_zero` from the parity side:
+**z_C is bar-EVEN, which is a DIFFERENT condition from full-bar.** The two have
+sat adjacent in the corpus for weeks; what is new is that they are not the same
+one, and which one this channel needs.
+
+### THE SETTLED ACCOUNT — three conditions, three different jobs
+
+  cap  y_(1^3) = 0     RULING for this channel    narrows to {q, z_D}
+  faithful y_21 != 0   STRUCTURAL (corpus hfaith) picks z_D from that pair
+  full-bar             DERIVED here               excludes z_C and z == 1;
+                                                  constrains FORM, not VALUE
+
+**The limitation, and it narrows my own Step 11 first pass.** `fullBar_add_const`:
+z_D + c is full-bar for ANY constant c, since constants are bar-even. So a
+full-bar parameter can take ANY value at the pin. `one_not_fullBar` excludes
+z = 1 as a CHOICE OF PARAMETER; it does NOT exclude the required VALUE
+(z_required ~ 0.99850), which a full-bar function could attain.
+
+**So the narrowing to the admissible set — and hence the exclusion of what the
+data wants — still rests on the cap, i.e. on the ruling.** Bar-parity and
+faithfulness say WHICH POINT of that set is the decay channel's; they do not
+establish the set.
+
+### Correction trail, recorded so it stops oscillating
+
+  Step 10        "the block is a ruling, not an impossibility"  — right about
+                 the CAP
+  Step 11 (1st)  "bar-parity excludes z=1 independently"        — right about
+                 the CONSTANT, overstated as a closure of the gap
+  Step 11 (2nd)  this reconciliation                            — written INTO
+                 the Lean file's prose so it cannot be quoted away
+
+### Still open
+
+What establishes the admissible set for the DECAY channel without the ruling.
+Bar-parity + faithfulness pin z_D GIVEN the cap; nothing yet derives the cap
+for this channel. That is the same open item the registry names, now with the
+logical structure around it fully mapped.
