@@ -1,11 +1,11 @@
 ---
 # qou-9zh3
 title: bun test rewrites the committed vacuity audit json, and its content depends on Lean build state
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-30T14:26:33Z
-updated_at: 2026-08-30T14:26:33Z
+updated_at: 2026-08-30T14:56:45Z
 ---
 
 Found while roasting the Roth arc (PR #6096, `qou-br3w`).
