@@ -60,8 +60,20 @@ def syt_depth(T_dict: dict[int, tuple[int, int]]) -> int:
 
 def main():
     set_compute_dps()
-    q = mpf("1.1099785955573347198997632204832250266562084087802")
-    qi = mpf(1) / q
+    # DEAD q0 REMOVED 2026-08-30 (bean qou-0hnz, precedent 462fdd360). This was
+    #     q  = mpf("1.1099785955573347198997632204832250266562084087802")
+    #     qi = mpf(1) / q
+    # AST-verified dead: `q` was read at exactly one place -- to build `qi` --
+    # and `qi` was never read anywhere in the module. So the literal computed
+    # nothing. It was the retired pin A (fca08de7d2, owner ruling 2026-08-22),
+    # and the archeology filed it as Q6 "needs a ruling"; it does not. A dead
+    # assignment has no anchor intent to rule on. Nothing this file prints or
+    # returns changes, and it writes no witness.
+    #
+    # This probe is q0-INDEPENDENT: Kazhdan-Lusztig polynomials and the left-cell
+    # decomposition below are combinatorial in the Coxeter group S_6, with no
+    # numeric q0 anywhere. If a future revision needs q0, resolve it through
+    # `q_parameter` -- do not retype a literal.
 
     print("=== PROBE 4 KL BATCH ===")
     n = 6

@@ -285,10 +285,10 @@ retyping either is right under neither for long."
 |---|---|---|---|
 | ~~**Q1**~~ | ~~**lever1 / z2bn binding-period cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded".** | rows 22, 23, 24, 25 | **4 ✅** |
 | ~~**Q2**~~ | ~~**qbeta c_k / rung-2 / stage-C cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded" below.** | rows 26–35 | **10 ✅** |
-| **Q3** | **`mmu_gap_a4_*` scratch scripts** — two undocumented ≤61-line evaluation scripts. A plausible answer is "these are scratch; delete rather than rule" | rows 36, 37 | **2** |
+| ~~**Q3**~~ | ~~**`mmu_gap_a4_*` scratch scripts**~~ — **RULED DELETE 2026-08-30.** | rows 36, 37 | **2 ✅** |
 | **Q4** | **`he_nu_sdp_*` probes** — the SDP saturation/PSD/barfold trio | rows 38, 39, 40 | **3** |
 | **Q5** | **τ-binding / unified-τ** — and specifically: *was the original "proton-pinned" label right and the value wrong, or the reverse?* This is the ruling request's group (b), and it needs a yes/no, not analysis | rows 41, 42 | **2** |
-| **Q6** | **option-E KL batch** — a single orphan with no post-root history at all | row 43 | **1** |
+| ~~**Q6**~~ | ~~**option-E KL batch**~~ — **NO RULING NEEDED: the q₀ is a DEAD assignment.** | row 43 | **1 ✅** |
 
 **Q5 deserves a sentence of framing**, because it is the only place where the
 tree contradicts itself. Two files carried a comment claiming proton over a muon
@@ -443,4 +443,28 @@ discriminant's branch points. That is upstream of any q₀ use and independent o
 the pin (`zk` comes from `sp.discriminant(P, X)`), so it is a pre-existing
 defect, recorded not fixed.
 
-### Q3, Q4, Q5, Q6 — still open (8 files).
+### Q3 — **DELETE** (owner, 2026-08-30). Closed.
+
+`computations/qbeta/mmu_gap_a4_h5_qdim_probe.py` and
+`mmu_gap_a4_wedderburn_eval.py` deleted. Verified safe before removing: neither
+writes a witness or any file (0 write calls), neither has a witness of its own,
+and nothing imports either. The only references are a file listing, the ruling
+request, and two AUDIT witnesses that merely enumerate them as findings — those
+stop listing them on their next regeneration.
+
+### Q6 — **NO RULING NEEDED.** Closed without owner input.
+
+`computations/probe_option_e_probe4_kl_batch.py` — the q₀ is a **dead
+assignment**, AST-verified: `q` is read at exactly one place (to build `qi`),
+and `qi` is **never read anywhere in the module**. The literal computed nothing.
+
+So this is not a Q6 at all: it belongs in **Bucket 3 (dead or unreachable)**,
+where the precedent is already set by `462fdd360`. A dead assignment has no
+anchor intent to rule on. Removed rather than migrated; the probe is
+q₀-independent (Kazhdan–Lusztig polynomials and the left-cell decomposition are
+combinatorial in S₆), it writes no witness, and nothing it prints changes.
+
+**This is a correction to the archeology above**, which filed row 43 as needing
+a ruling. It did not; the deadness was simply not checked.
+
+### Q4, Q5 — still open (5 files).
