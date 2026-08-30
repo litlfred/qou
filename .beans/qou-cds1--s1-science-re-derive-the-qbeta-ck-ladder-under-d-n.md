@@ -4020,3 +4020,21 @@ by `qbeta_c3_barodd_hs_matrix_resolvent_probe` is WITHDRAWN. Its trace vector wa
 `z*z*z`; with the correct weight its finding 2 ("the pairing is bar-even") is
 falsified at mu=0 (BAR-ODD, 18.38 vs 6.86). Not a positive either -- still
 convention C, and inverting a now-singular Gram in float64. Re-run belongs here.
+
+### How this sits with Step 8 (added on the rebase that brought Step 8 in)
+
+Step 8 and this section are two DIFFERENT routes, both negative, and neither
+subsumes the other. Recording the relation so a later reader does not treat one
+as a restatement of the other:
+
+  Step 8   closes the ADDITIVE/cos route: under C the bar-invariant is the
+           constant 1, a fixed centre for a resummation; under D it is V^/q,
+           which moves with q, so nothing is available to centre on.
+  this     closes RESCUING THE AUGMENTATION BASE via the z=1 return: the
+           admissibility leak at z=1 is 1.459 %, against an 11.087 % required
+           correction -- 7.6x short, so the violation is not correction-sized.
+
+They converge on the same consequence from opposite ends: the D re-derivation
+needs a genuinely new form, not a repair of the C one. Step 8 says the C FORM
+has no D analogue; this says the nearest INADMISSIBLE point is not where the
+missing size comes from either.
