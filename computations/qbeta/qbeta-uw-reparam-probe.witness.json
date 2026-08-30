@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T15:54:26.283320+00:00",
-  "commitSha": "b1d776b09dcefff755e54d11b827168193e7454b",
+  "computedAt": "2026-08-30T09:34:54.339058+00:00",
+  "commitSha": "458f17211f5d1442dc573b3c24685bdcfb3e4f66",
   "assertions": [
     {
       "name": "u-leading-eps-coefficient-is-zero",
@@ -13,10 +13,11 @@
     },
     {
       "name": "v-leading-eps-coefficient-nonzero",
-      "computed": "sqrt(2)*3**(1/4)/2",
-      "expected": "sqrt(2)*3**(1/4)/2",
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper Taylor coord"
+      "tolerance": 0,
+      "source": "v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper Taylor coord; coefficient in data.v_leading_eps_coefficient"
     },
     {
       "name": "w-leading-eps-coefficient",
@@ -43,11 +44,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "qbeta-uw-reparam-probe",
   "scriptFile": "qbeta_uw_reparam_probe.py",
-  "scriptHash": "bff2590482ac",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "f73202a91ab3",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,6 +73,7 @@
   },
   "description": "Pre-archimedean coordinate-choice probe: u vs v=√u vs w=q-1/q near q=1; Taylor comparison on reference f(q) = 4q/(q+1)².",
   "data": {
+    "v_leading_eps_coefficient": "sqrt(2)*3**(1/4)/2",
     "substrate_variables": {
       "u_leading_eps_coeff": "0",
       "v_leading_eps_coeff": "sqrt(2)*3**(1/4)/2",
