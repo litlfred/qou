@@ -86,3 +86,44 @@ full `cp -r` of the QOU build tree is **2.1 G** — three of those plus a leaked
 restore tarball took this container to 740 K free, at which point the Bash
 harness cannot write its own output capture and every command fails. `cp -al`
 makes the same mirror for ~0 bytes. Use it.
+
+## 6. Triaging a cone failure: three ways it is the HARNESS, not the code
+
+Measured 2026-08-30 on a 97-module cone with 8 failures, of which **exactly one**
+was a real code defect. Work this order before calling anything broken.
+
+**(a) "object file … does not exist" — a non-cone dependency with no olean.**
+The harness rebuilds cone members only. If a cone member imports something
+*outside* the cone whose olean was never built, it fails with `object file
+'/tmp/mir/QOU/X.olean' … does not exist` — and the mirror faithfully reproduces
+the gap because `cp -al` copied a tree that never had it. Measured:
+`WenzlSchurElementBridge.olean` and `MolienFakeDegreeGeneralN.olean` are absent
+from `.lake/build/lib/lean` entirely, taking three dependents down with them.
+**Check `ls` on the named olean before diagnosing.** Absent ⇒ harness gap.
+
+**(b) exit 139 with zero errors — but do NOT trust the size heuristic.**
+§4 above says a truncated olean segfaults, and gives 61,440 bytes against a
+1.7 MB sibling as the example. **That example is not a general test, and I
+misapplied it.** On this run the three segfaulting modules had oleans of 57 KB,
+226 KB and 50 KB against a tree range of 33 KB–6.7 MB — entirely normal sizes.
+Size flagged nothing. The reliable discriminator is the *signature* (exit 139,
+zero errors, ≤1 s: it dies before elaborating) plus (c).
+
+**(c) The decisive test for all of them: re-run against MAIN's own oleans.**
+Point `LEAN_PATH` at the committed build tree with no mirror and your branch's
+changes off the path. Any file your diff does not touch that still fails there
+is pre-existing, full stop. This is cheap, needs no worktree, and converts
+"probably not mine" into a fact. All 8 failures reproduced this way.
+
+## 7. A dead constant hides behind `abbrev` hops — grep the DEFINITION chain
+
+`QOU/Mathlib/QHookProduct.lean` failed with `Unknown constant
+QOU.Mass.QHookDimension.qIntPoly`. That string **does not occur in the file**.
+The path is `unfold QOU.BraidKnot.qInt` → `abbrev … := QOU.QInteger.qIntGeo` →
+`abbrev … := QOU.Mass.QHookDimension.qIntPoly` (deleted upstream). Three hops.
+
+So after any rename or deletion, grepping *consumers* for the old name is not a
+blast-radius check — an `abbrev` whose body names a missing constant elaborates
+fine until something unfolds it. Resolve the chain, or rebuild the cone. This is
+the same class as §1's instance-vs-binder miss: both are "the reference has a
+shape my grep did not model".
