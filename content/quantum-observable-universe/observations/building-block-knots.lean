@@ -207,7 +207,28 @@ noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
     measured one, and the prose states exactly what the Lean carries.
 
     The tightening cost nothing: the tactic is unchanged.  The arithmetic is
-    rational and exact, so `norm_num` is indifferent to the tolerance. -/
+    rational and exact, so `norm_num` is indifferent to the tolerance.
+
+    **Do NOT read `0.00448` as a framework-vs-experiment result.**  Measured at
+    50 dps, the deviation is driven almost entirely by the SIX-DIGIT `q₀` literal
+    above, not by the framework and not by the `Vol(4₁)` truncation:
+
+        q₀ = 1.10998            (this file)      dev = 4.76e-3
+        q₀ = 1.1099785827513808 (proton pin)     dev = 4.34e-5
+        q₀ = 1.109978595642739  (muon, CODATA22) dev = 3.0e-7
+
+    and at every one of those, the 15-digit `vol_figure_eight` and the exact
+    `2·Cl₂(π/3)` give the same ratio to 12 printed digits — so the volume literal
+    contributes nothing at all.  A third truncation is in play too: the comparison
+    target `206.768` is itself `2.83e-4` from the CODATA `206.7682830`.
+
+    **And the tight agreement at the muon pin is not evidence either.**  That pin
+    is DEFINED by inverting this very relation (`m_μ/m_e = Vol(4₁)/ℏ_q²`, AGENTS.md
+    §canonical chain), so `3.0e-7` there is the CAL-2 calibration tautology, not an
+    accuracy win — the same thing AGENTS.md forbids reporting as one for `m_μ`.
+
+    What this theorem honestly states is therefore an *arithmetic* fact about the
+    literals in this file, and nothing more. -/
 -- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [manuscript] Ch. 7
 theorem muon_electron_ratio_from_substrate :
     |muon_electron_ratio q₀ - 206.768| < 0.00448 := by
