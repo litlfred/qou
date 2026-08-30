@@ -92,12 +92,44 @@ def _literals(txt: str):
         if t.type == _tk.STRING:
             body = t.string.strip("\"'")
             if _NUMONLY.match(body):
-                yield body
+                yield body, t.start[0]
         elif t.type == _tk.NUMBER:
             if _NUMONLY.match(t.string):
-                yield t.string
+                yield t.string, t.start[0]
 
 
+
+def _fixture_lines(txt: str) -> set[int]:
+    """Line numbers inside a self-test, where routing needs its own ruling.
+
+    A byte-exact string match says routing preserves the VALUE. It does not say
+    routing is CORRECT, and inside a test the answer splits two ways:
+
+      • `registry_witness_pin_validator.self_test()` builds two synthetic mass
+        tables -- one healthy, one reproducing the 2026-06-22 incident where
+        `rows[2]` silently became 3He. Routing those would make the validator
+        check the registry against itself, and would let the incident
+        reproduction drift the moment a registry value moved. Never route.
+      • `delta_lambda_shape_probe._test_option_e_delta_lambda()` just holds the
+        real AME values as comparison targets. Routing is defensible there.
+
+    This function does not try to tell the two apart -- it only stops them being
+    counted as ordinary REVIEW work, since both need a ruling a reader must make.
+    """
+    import ast as _ast
+    try:
+        tree = _ast.parse(txt)
+    except SyntaxError:
+        return set()
+    out: set[int] = set()
+    for n in _ast.walk(tree):
+        if isinstance(n, (_ast.FunctionDef, _ast.AsyncFunctionDef)) and (
+                n.name == "self_test" or n.name.startswith("test_")
+                or n.name.startswith("_test_")):
+            lo = n.lineno
+            hi = max((getattr(c, "lineno", lo) for c in _ast.walk(n)), default=lo)
+            out.update(range(lo, hi + 1))
+    return out
 
 # ── Role classification: which UNSAFE sites may be routed AT ALL ────────
 #
@@ -401,15 +433,19 @@ def main() -> int:
              and q.name != "codata_constants.py"]
     safe: dict[str, set] = {}
     unsafe: dict[str, set] = {}
+    fixture: dict[str, set] = {}
     roles: dict[str, str] = {}
     for p in files:
         fn = p.name
         txt = p.read_text(encoding="utf-8")
-        for lit in _literals(txt):
+        fixlines = _fixture_lines(txt)
+        for lit, lineno in _literals(txt):
             v = float(lit)
             if not _in_range(v):
                 continue
-            if lit in REG:
+            if lineno in fixlines:
+                fixture.setdefault(fn, set()).add((lit, REG.get(lit, "~near")))
+            elif lit in REG:
                 safe.setdefault(fn, set()).add((lit, REG[lit]))
             else:
                 for rs, nm in REG.items():
@@ -423,7 +459,10 @@ def main() -> int:
     n_unsafe = sum(len(v) for v in unsafe.values())
     print(f"AME-literal → registry routing triage")
     print(f"  registry value strings: {len(REG)}")
+    n_fixture = sum(len(v) for v in fixture.values())
     print(f"  SAFE (byte-exact, value-preserving): {n_safe_routes} routes in {len(safe)} files")
+    print(f"  IN-SELF-TEST (routing needs a per-test ruling): "
+          f"{n_fixture} in {len(fixture)} files")
     print(f"  UNSAFE (near, value-change — decision needed): {n_unsafe} in {len(unsafe)} files")
 
     # Role split. SAFE/UNSAFE says whether routing moves a VALUE; role says
@@ -455,6 +494,7 @@ def main() -> int:
             "value-reconciliation decisions that must precede any route."
         ),
         "registry_value_strings": REG,
+        "fixture_sites": {k: sorted(v) for k, v in fixture.items()},
         "safe_routes": {fn: sorted([list(t) for t in v]) for fn, v in sorted(safe.items())},
         "unsafe_near_matches": {fn: sorted([list(t) for t in v]) for fn, v in sorted(unsafe.items())},
         "counts": {"safe_routes": n_safe_routes, "safe_files": len(safe),

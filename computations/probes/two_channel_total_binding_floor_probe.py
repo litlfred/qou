@@ -95,10 +95,11 @@ import sys
 
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 E0_STR = "4.1859813632944758969"
-DEUTERON = "2.2245662"      # 3S1, MeV, bound
+DEUTERON = AME_B_DEUTERON_MEV_VALIDATION   # 3S1, MeV, bound
 S0_VIRTUAL = "0.0736"       # 1S0 virtual-state energy hbar^2/(m_N a^2), MeV, UNbound
 
 
@@ -109,7 +110,7 @@ def main() -> int:
     E0 = mp.mpf(E0_STR)
     mup = (z + 1 / q) / (q + 1 / q)      # T = 1, symmetric
     mum = (q - z) / (q + 1 / q)          # T = 0, antisymmetric
-    D = mp.mpf(DEUTERON)
+    D = DEUTERON
     V = mp.mpf(S0_VIRTUAL)
     nature = D - V
 
