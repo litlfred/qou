@@ -1249,6 +1249,7 @@ import QOU.Mathlib.RothGammaProducer
 import QOU.Mathlib.RothAuxiliaryPolynomial
 import QOU.Mathlib.RothHouseBound
 import QOU.Mathlib.RothAuxiliaryConstruction
+import QOU.Mathlib.RothAuxiliary
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

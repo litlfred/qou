@@ -154,14 +154,14 @@ theorem index_map [DecidableEq σ] (f : R →+* S) (hf : Function.Injective f) (
 Everything the construction has to deliver, from a coefficient vector that (a) is not identically
 zero on the box and (b) kills every vanishing condition of weight below `μ`.  Siegel's lemma
 supplies exactly such a vector; this theorem is what turns it into a polynomial. -/
-theorem exists_ofBox_of_solution [DecidableEq σ] {m : ℕ} (r : Fin m → ℕ)
+theorem exists_ofBox_of_solution {m : ℕ} (r : Fin m → ℕ)
     (α : Fin m → R) (μ : ℚ) (c : (Fin m →₀ ℕ) → R)
     (hc : ∃ n ∈ idxBoxF r, c n ≠ 0)
     (heq : ∀ i ∈ idxBoxF r, idxWeight r i < μ →
       ∑ n ∈ idxBoxF r, c n * translateMatrix α i n = 0) :
     ∃ P : MvPolynomial (Fin m) R, P ≠ 0 ∧ (∀ h, degreeOf h P ≤ r h) ∧
       ((μ : ℚ) : WithTop ℚ) ≤ index r α P ∧
-      ∀ n ∈ idxBoxF r, coeff n P = c n := by
+      ∀ n, coeff n P = if n ∈ idxBoxF r then c n else 0 := by
   classical
   obtain ⟨n₀, hn₀box, hn₀⟩ := hc
   refine ⟨ofBox r c, ?_, degreeOf_ofBox_le r c, le_index_ofBox r c α μ heq, ?_⟩
@@ -170,7 +170,7 @@ theorem exists_ofBox_of_solution [DecidableEq σ] {m : ℕ} (r : Fin m → ℕ)
     have hcz : coeff n₀ (ofBox r c) = c n₀ := by rw [coeff_ofBox, if_pos hn₀box]
     rw [hz, coeff_zero] at hcz
     exact hcz.symm
-  · intro n hn
-    rw [coeff_ofBox, if_pos hn]
+  · intro n
+    rw [coeff_ofBox]
 
 end MvPolynomial

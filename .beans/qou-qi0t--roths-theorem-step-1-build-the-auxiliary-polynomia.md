@@ -1,11 +1,11 @@
 ---
 # qou-qi0t
 title: 'Roth''s theorem step 1: build the auxiliary polynomial, and thereby audit Gamma_m'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T19:34:44Z
-updated_at: 2026-08-29T19:41:08Z
+updated_at: 2026-08-30T03:17:38Z
 ---
 
 Roth's Lemma is proved (qou-4lbh) but Gamma_m has never been PRODUCED -- only transported (rename_equiv), descended (rothGammaFull_descend), or hand-built at m=2. Its seven clauses have never been discharged from a Diophantine setup at m >= 3. Mathlib has the engine: NumberTheory/SiegelsLemma.lean (exists_ne_zero_int_vec_norm_le) and NumberField/House.lean. The work is the wiring: encode 'P vanishes to index >= mu at (alpha,...,alpha)' as a linear system over Z in P's coefficients, count equations against unknowns, apply Siegel, and read off the height bound. Treat it as an AUDIT of RothGammaFull, not as construction: if Gamma_m is misstated, index_le_rothBound is a true theorem about the wrong hypothesis -- which is exactly what correction 18 was. Child of qou-br3w.
@@ -280,3 +280,42 @@ without the number-field dependency.
 Only the Siegel call: build the matrix `a i n := translateMatrix α i n` over `𝓞 K` on the two
 subtypes, discharge `a ≠ 0` (the `(0,0)` entry is `1`) and `0 < p` (the zero multi-index is an
 equation when `ε ≤ ½`), and feed `fintypeCard_idxWeight_lt` and `house_translateMatrix_le`.
+
+## Summary of Changes — the auxiliary polynomial exists
+
+`MvPolynomial.exists_auxiliary_polynomial` (`QOU/Mathlib/RothAuxiliary.lean`):
+
+> Given degrees `r`, algebraic integers `α`, and `ε` with `0 < ε ≤ ½` and `m > 1/(4ε²)`, there is
+> a non-zero `P ∈ 𝓞 K[x₁,…,x_m]` with `degreeOf h P ≤ r h`, index at least `m(½ − ε)` at
+> `(α₁,…,α_m)`, and every coefficient of house at most Siegel's bound.
+
+No `sorry`; `[propext, Classical.choice, Quot.sound]`. Step 1 of `qou-br3w` is done.
+
+### Three things this turn found by *applying* what was already proved
+
+1. **`ε ≤ ½` is load-bearing and is not implied by the counting hypothesis.** Siegel needs
+   `0 < p`, and the zero multi-index is an equation exactly when `m(½ − ε) ≥ 0`. The counting
+   hypothesis `1 < 4ε²m` does not give it — `ε = 10, m = 1` satisfies it while making the
+   threshold negative and the equation set empty. Free in Roth's regime, but it had to be found.
+   I flagged it as a question at the end of last turn and it turned out to be real.
+
+2. **`exists_ofBox_of_solution` carried an unusable instance binder.** It was declared
+   `[DecidableEq σ]` where `σ` is the *section* variable and does not occur in the statement —
+   so the instance was unresolvable and the lemma **could not be applied at all**. It compiled,
+   `#print axioms` was clean, and it had no witness. Found the moment something tried to use it.
+   ⚠ This is correction 9's shape once more, in its purest form yet: not a false hypothesis, an
+   *unsatisfiable elaboration obligation*. The fix was deleting six characters.
+
+3. **Siegel's height bound is stated with a `private` constant.** `c₁` in Mathlib's `House.lean`
+   is `private def`, so the bound in `exists_ne_zero_int_vec_house_le`'s conclusion cannot be
+   named downstream in the ordinary way. `open private c₁ from …` reaches it, and
+   `auxHeightBound` gives it a name. Without that the height clause would have had to be dropped,
+   or weakened to `∃ C, ∀ n, house ≤ C` — which is **contentless**, since a finite coefficient set
+   always has such a `C`. Worth naming as a Mathlib API limitation rather than working around
+   silently.
+
+### Follow-on for `qou-br3w`
+
+Step 1 of five is complete. Remaining: the index *lower* bound at the rational point (step 2,
+partial — `RothHeightBound` has the one-variable case), the contradiction and parameter
+bookkeeping (step 4), and `¬LiouvilleWith` (step 5). Step 3, Roth's Lemma, was `qou-4lbh`.
