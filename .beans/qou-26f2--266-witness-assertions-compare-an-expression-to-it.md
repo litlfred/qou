@@ -369,3 +369,30 @@ fail.** That was the whole point of triaging by impact rather than by count.
 via `assertions_are_falsifiable` (folio-assistant, `critical`), so they surface
 at the gate rather than needing a census. The four remedies recorded above still
 apply; picking between them is still the work.
+
+
+---
+
+## `rem:hadron-level-knot-table` closed 2026-08-30 — by deletion, not repair
+
+`hadron_knot_table.py:258` read `computed=r["tr_M"], expected=r["tr_M"]` under
+`source="hecke_core.build_atom_nf -> nf_tr"`: it advertised a check against a
+named producer while comparing the value to itself.
+
+**Removed rather than repaired, and there is nothing to repair it to.** Each
+`tr_M` has one derivation route, so no assertion over it can fail — and
+`w.add_data("atoms", results)` twenty lines below *already records every one of
+these values* at full precision. The assertion contributed a guaranteed pass to
+`allPassed` and nothing else. Deleting it loses no information and removes a
+claim that was never made.
+
+Note this did NOT need the producer to run, which is why it could be done here
+after the earlier attempt timed out at 580s: the fix is a deletion justified by
+reading, not a pin requiring values.
+
+The LP-stability assertion four lines below is the model and is left alone —
+`computed` is the measured predicate, `expected=1` is fixed, and it can fail.
+
+That leaves `conj:casimir-epsilon-vacuum` (`status: experimental`) as the only
+tautology touching a content block, and an experimental status over an
+exploratory probe is not a false claim.

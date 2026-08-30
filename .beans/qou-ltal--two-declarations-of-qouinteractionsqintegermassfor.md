@@ -57,6 +57,43 @@ classes named `BorromeanQuark`, and the same hazard agent-B hit on
 `content/*.lean` sibling be allowed to shadow a compiled module path? Nothing
 today detects it.
 
-- [ ] Answer whether the duplicate FQN was known at demotion time
-- [ ] Decide: delete the compiled copy, rename one, or document why both exist
+- [x] Answer whether the duplicate FQN was known at demotion time
+- [x] Decide: delete the compiled copy, rename one, or document why both exist
 - [ ] Platform: consider a check for `content/*.lean` shadowing a compiled FQN
+
+
+## Resolved 2026-08-30 — the sibling WAS known; the collision was not written down
+
+The question this bean turned on is answered by the demotion commit itself,
+`eaebcc286c4`:
+
+> Measured: library file + **content-block sibling** +
+> `wigner_coefficient_conditional` (the only outside consumer, binding the class
+> as a HYPOTHESIS) all exit 0, 0 errors.
+
+So the sibling was known, compiled and measured. Keeping both is a **standing
+decision, not an oversight**, and the deletion `qou-tpt6` proposed would have
+overridden a considered call. Good that the merge reverted it.
+
+What was missing is not a decision — it is the **note**. Nothing in either file
+said the other existed, and nothing detects a `content/*.lean` sibling shadowing
+a compiled module path, so a reader of either had no way to know that
+"the Lean says X" is ambiguous between two declarations differing in exactly
+the field that carries the conjecture.
+
+**Fixed by documenting the collision in both files**, each from its own side:
+
+- `lean/QOU/Interactions/QIntegerMassFormula.lean` — compiled, zero consumers in
+  the compiled tree, and the note says a content block's `lean.ref` resolves
+  siblings first so the manuscript does not reach this file.
+- `content/…/mass-theory/q-integer-mass-formula.lean` — not compiled, is what
+  the block resolves to, states `fits_AME` directly and supplies no instance.
+
+Cone compiles, `ok=1`.
+
+The split is now explicit: **`#print axioms` and `lake build` see one file; the
+manuscript sees the other.**
+
+- [ ] Platform: a check for `content/*.lean` shadowing a compiled FQN — still
+      open, and the general form of `qou-znut`'s three `BorromeanQuark` classes
+      and the `CrystalRMatrixSubLemma` case. Nothing detects this today.
