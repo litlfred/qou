@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T08:39:48Z
+updated_at: 2026-08-30T09:11:26Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -272,3 +272,51 @@ a constructor exists this population regrows.
 Also landed: taxonomy **row 18 — calling-form blindness**
 (`docs/audits/2026-08-15-detector-blindness-taxonomy.md`), the first row in that
 file from outside the convention-C arc.
+
+
+## 🛑 2026-08-30, LATER — superseded by `qou-26f2`; the real marginal number is 6, not 26
+
+Corrects the entry above, which was written before rebasing onto a `main` that
+had moved 990 commits.
+
+**A sibling ran bean `qou-26f2` as a multi-batch campaign over the same 56
+sites** and got there first. Re-measured with the same detector against both
+trees: `main` 56 -> **17**; this branch on top of it -> **11**. So the branch's
+marginal contribution is **6**, not the 26 recorded above.
+
+**In every case where our dispositions differ, theirs is better.** Not close:
+
+- `brundan_kleshchev_audit.py` — my headline "theorem name over a tautology",
+  which I flagged as needing an author decision. They renamed it
+  `partition_count_p_{n}` with `expected=KNOWN_P_N[n]` (an independent table)
+  and wrote the scope distinction into the source. That KEEPS a falsifiable
+  check; my recommendation was rename-and-demote, which removes one.
+- `qbeta_5two_stokes_population_bridge_probe` — I demoted the count. They
+  derive `expected=_n_channels * len(weights_x) * len(cand)`, so the scan now
+  fails if it misses combinations.
+- `qbeta_decay_sdp_extended_ck` — I wrote three copy-pasted finiteness flags
+  plus a hand-rolled `_is_finite`, then argued int-vs-string with Copilot. They
+  write one loop over `mp.isfinite` with `expected=True`; the question is moot.
+- `mn_flavor_split_h4_plancherel` — I thought they missed this one. Batch 3
+  covered it.
+
+All superseded files taken from `main` wholesale in the rebase.
+
+**Adopt their rule, which is sharper than mine:** assert `> 0` when finding
+nothing is the outcome the name exists to exclude; demote ONLY when finding
+nothing is a legitimate result. By it, my `alpha_em_4pi_q_hyperbolic_b3_pslq`
+demotion is right (`pslq_executed…` — no relation IS the answer) and my
+`mn_flavor_split_h4_plancherel` demotion was wrong.
+
+**What survives is worth more than the count.** Two agents partitioned the same
+population independently and converged on compatible dispositions, including on
+the one case I singled out as needing human judgement. The four classes in
+`docs/audits/2026-08-30-self-fulfilling-assertion-triage-of-the-remaining-30.md`
+are therefore a second independent derivation, not one agent's taxonomy.
+
+**Live remainder: 11** — 7 class R, 3 class D, 1 class C. Named in that doc.
+
+**Coordination lesson for this bean:** `qou-3e5m` and `qou-26f2` are the same
+work under two names. This is mechanical drain, not open research, so per
+AGENTS.md it has ONE owner — and neither of us posted intent. Check `.beans/`
+for an existing bean on the same population before opening one.
