@@ -44,7 +44,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
 
-MUON_PREFIXES = ("1.10997859555", "1.1099785955")
+# WIDENED 2026-08-30. Both former entries ("1.10997859555", "1.1099785955")
+# were A/A'-only and matched vintage C — the CURRENT muon pin — nowhere, so a
+# fallback substituting today's muon value scanned as clean. "1.109978595" is
+# the prefix all three vintages share and subsumes the old shorter entry.
+MUON_PREFIXES = ("1.109978595",)
 PROTON_TOKENS = ("q_at", "Q_50_DIGIT_STR", "Q_MP", "qou_substrate.constants",
                  "q_parameter")
 

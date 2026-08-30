@@ -158,7 +158,9 @@ PEEL_WITNESS = HERE / "markov" / "markov-peel-atomic-tr-m.witness.json"
 Y_LAMBDA_WITNESS = HERE / "y-lambda-mpfr-witness.json"
 
 PROTON_PREFIX = "1.10997858275"
-MUON_PREFIX = "1.10997859555"
+# WIDENED 2026-08-30 from "1.10997859555" (the A/A' shared prefix, blind to
+# vintage C — the current muon pin) to the prefix all three vintages share.
+MUON_PREFIX = "1.109978595"
 
 # Measured floor for two same-pin implementations of one Markov trace: three
 # complete atoms (tritium, helium-3, and ⁴He before its rebuild) all land at

@@ -115,10 +115,12 @@ REPO = COMPUTE_DIR.parent
 sys.path.insert(0, str(HERE))
 from q0_producer_pin_classifier import strip_main_block, classify  # noqa: E402
 
-# 11 digits after the point — the corpus carries two muon values agreeing to 11
-# and diverging at the 12th (see q0_muon_population_partition.py). A 12-digit
-# prefix silently drops every artifact still on the superseded value.
-MUON_PREFIX = "1.10997859555"
+# The FAMILY prefix — the most that ALL THREE muon vintages share (A
+# 1.109978595557…, A' 1.109978595554…, C 1.109978595642…; see
+# q0_muon_population_partition.py). WIDENED 2026-08-30 from "1.10997859555",
+# which covered A and A' but dropped every artifact on C — the CURRENT pin.
+# Cannot collide with proton: that diverges a digit earlier, at 1.109978582…
+MUON_PREFIX = "1.109978595"
 PROTON_PREFIX = "1.109978582751"
 PINNED_ANCHORS = {"muon", "proton", "comparison"}
 

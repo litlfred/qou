@@ -141,14 +141,25 @@ def _artifact_pin(name: str) -> str:
 
 # Literal q₀ pins written directly into producer source.
 #
-# MUON_LITERAL is deliberately 11 digits after the point, NOT 12. The corpus
-# carries TWO muon values that agree to 11 digits and diverge at the 12th —
-#     current     1.10997859555733471989…
-#     superseded  1.10997859555418057528…   ("the old muon value")
-# — as `q0_muon_population_partition.py` documents. Both are the muon anchor for
-# classification purposes, so the shared prefix is the correct test here; a
-# 12-digit prefix silently drops every producer still on the superseded value.
-MUON_LITERAL = "1.10997859555"
+# MUON_LITERAL is deliberately the FAMILY prefix — the most that ALL THREE
+# muon vintages share. The corpus carries three, not two:
+#     A   1.10997859555733471989…   frozen 3-CAL pin      (superseded)
+#     A'  1.10997859555418057528…   CODATA-2018 closed form (superseded)
+#     C   1.10997859564273904668…   CODATA-2022 — THE CURRENT PIN
+# — as `q0_muon_population_partition.py` documents. All three are the muon
+# anchor for classification purposes, so the shared prefix is the correct test.
+#
+# WIDENED 2026-08-30 from "1.10997859555", which is the A/A' shared prefix and
+# matches C nowhere. Measured before the fix: `_pin_of_literal` returned ""
+# (neither pin) for the LIVE muon pin while returning "muon" for both
+# superseded vintages — it recognised every muon value except the one in use.
+# The reasoning of the original comment was right and simply ran one vintage
+# behind: the fix is the same move it already made, made again.
+#
+# "1.109978595" cannot collide with proton, which diverges a digit earlier at
+# 1.109978582…; `witness_regen_classify.py` and `consumer_control_arm_audit.py`
+# already used exactly this width, which is why neither ever had the blind spot.
+MUON_LITERAL = "1.109978595"
 PROTON_LITERAL = "1.109978582751"
 
 # The two pins first differ at the 9th digit after the point

@@ -56,34 +56,45 @@ REPO = COMPUTE_DIR.parent
 # The two pins, as serialized-decimal prefixes. Long enough to separate them
 # (they agree to 1.10997858/1.10997859) and short enough to match a value
 # serialized at any dps >= 13.
-# 11 digits after the point, NOT 12 — deliberately.
+# The FAMILY prefix — the most that ALL THREE muon vintages share.
 #
-# The corpus carries TWO muon values agreeing to 11 digits and diverging at the
-# 12th (`q0_muon_population_partition.py` on main):
-#     current     1.10997859555733471989…
-#     superseded  1.10997859555418057528…   ("the old muon value")
-# The first draft of this file used the 12-digit prefix "1.109978595557", which
-# matches the current value and MISSES every witness still carrying the
-# superseded one — counting them as "no pin in payload" and so shunting them
-# into the expensive producer-analysis bucket they do not belong in.
+# The corpus carries THREE muon values (`q0_muon_population_partition.py`):
+#     A   1.10997859555733471989…   frozen 3-CAL pin        (superseded)
+#     A'  1.10997859555418057528…   CODATA-2018 closed form (superseded)
+#     C   1.10997859564273904668…   CODATA-2022 — THE CURRENT PIN
+# A and A' agree to 11 digits and diverge at the 12th; C leaves both at the
+# 10th. The first draft of this file used the 12-digit prefix "1.109978595557",
+# which matches A and MISSES every witness carrying A' — counting them as "no
+# pin in payload" and so shunting them into the expensive producer-analysis
+# bucket they do not belong in. Its replacement, "1.10997859555", made the very
+# same mistake one vintage later against C.
 # TWO GUARDS, both learned by getting it wrong on 2026-08-23 (see below).
 #
-# 1. The 11-digit MUON_PREFIX deliberately matches BOTH muon values -- the
-#    current 1.10997859555733471989... and the superseded 1.10997859555418057528...
-#    That is right for ASKING "does this witness carry a muon-family value?" and
-#    WRONG for writing `q0Anchor: "muon"`, because the anchor NAMES the current
-#    value: q0_anchor_consistency_audit compares q0Value[:14] against it, and a
+# 1. MUON_PREFIX deliberately matches ALL THREE muon values. That is right for
+#    ASKING "does this witness carry a muon-family value?" and WRONG for
+#    writing `q0Anchor: "muon"`, because the anchor NAMES THE CURRENT value:
+#    q0_anchor_consistency_audit compares q0Value[:14] against it, and a
 #    superseded-muon witness then reads as a FLIP. Measured: 74 of 307 proposed
 #    labels were superseded-muon and all 74 became flips.
+#
+#    WIDENED 2026-08-30 — and `_SUPERSEDED_MUON` had to widen WITH it. That
+#    half is not optional. When C became the pin, A joined A' as superseded;
+#    widening MUON_PREFIX alone would have started proposing `q0Anchor: "muon"`
+#    for A-valued payloads, which q0_anchor_consistency_audit
+#    (_EXPECTED_PREFIX["muon"] == "1.109978595642") would have read as flips —
+#    reproducing the exact 74-flip defect guard 1 was written to prevent, on a
+#    different vintage. Only C may now be labelled `muon`.
 # 2. A string that CONTAINS a pin prefix is not necessarily a NUMBER. Four
 #    payloads carried it inside prose ("1.10997859555...; current producer...").
 #    Transcribing those wrote a non-decimal into q0Value.
 #
 # Both are now refused at proposal time rather than discovered by the gate.
-_SUPERSEDED_MUON = "1.10997859555418"
+# Both superseded vintages. `str.startswith` takes a tuple, so the refusal
+# site below needs no change. A is here because C superseded it.
+_SUPERSEDED_MUON = ("1.10997859555418", "1.10997859555733")
 _CLEAN_DECIMAL = re.compile(r"^\d\.\d{14,}$")
 
-MUON_PREFIX = "1.10997859555"
+MUON_PREFIX = "1.109978595"
 PROTON_PREFIX = "1.109978582751"
 
 # Kept BYTE-IDENTICAL to q0_anchor_consistency_audit.AUDIT_SUFFIXES. These are

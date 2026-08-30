@@ -43,9 +43,15 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 PRODUCER = ROOT / "tools" / "hecke-engine" / "src" / "bin" / "joint_tower_sdp.rs"
 
 #: The two pins a q0 can legitimately be. Neither is the producer's default.
+#:
+#: The muon key is the FAMILY prefix, widened 2026-08-30 from the full
+#: "1.1099785955573347". That was vintage A alone, so a q0 on A' or on C — the
+#: CURRENT muon pin — matched no key and this stamper wrote "ambiguous" for a
+#: value that is not remotely ambiguous. "1.109978595" is what all three muon
+#: vintages share and still cannot collide with proton (1.109978582…).
 _PINS = {
     "1.1099785827513808": "physical_proton",
-    "1.1099785955573347": "ideal_muon",
+    "1.109978595": "ideal_muon",
 }
 
 

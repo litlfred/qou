@@ -70,7 +70,21 @@ _Y_LAMBDA_BY_ANCHOR = {
     "proton": _Y_LAMBDA_DEFAULT,
 }
 _PROTON_PREFIX = "1.10997858275"
-_MUON_PREFIX = "1.10997859555"
+# WIDENED 2026-08-30 from "1.10997859555" — the A/A' shared prefix, which
+# matches vintage C (the CURRENT muon pin) nowhere. Two live consequences,
+# both in `load_y_lambda_for_q0` below, neither of which showed as an error:
+#   * a caller passing today's muon q₀ got `anchor_of_q0() -> None` and so the
+#     OFF-ANCHOR branch — numerically fine (the live closed form at that exact
+#     q, convention D) but silently bypassing both the muon cache and the
+#     straddle guard that the `declared != want` check exists to enforce;
+#   * that same guard reads the TABLE's own declared pin, so regenerating
+#     `y-lambda-mpfr-witness.json` at the current pin would have made
+#     `declared` None and raised "declares the None pin" — i.e. the muon cache
+#     could not be moved to the live pin at all. It is still at A today, which
+#     is the only reason this was latent rather than broken.
+# "1.109978595" is the prefix all three vintages share; proton diverges a digit
+# earlier at 1.109978582…, so it stays unambiguous.
+_MUON_PREFIX = "1.109978595"
 
 
 def anchor_of_q0(q) -> str | None:
