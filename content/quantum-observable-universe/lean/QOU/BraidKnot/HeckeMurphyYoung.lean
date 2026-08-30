@@ -1,0 +1,69 @@
+import QOU.BraidKnot.HeckeMurphy
+import QOU.BraidKnot.Specht
+
+/-!
+# QOU.BraidKnot.HeckeMurphyYoung — Murphy's `x_λ` over the *actual* Young subgroup
+
+`QOU.BraidKnot.HeckeMurphy` proves `σ_i · x_S = q · x_S` for any finite set of permutations
+closed under right multiplication by `s_i`, and specialises it to an arbitrary `Subgroup`.
+This file connects that to the Young subgroup a *tableau* actually has, which is what makes
+it Murphy's `x_λ` rather than a statement about an abstract subgroup.
+
+## The join, and why it is only bookkeeping
+
+The two clusters were built independently and index their symmetric groups differently:
+
+* the **Specht** cluster works over `Equiv.Perm (Fin (Specht.nOf μ))`, where `nOf μ = μ.card`;
+* the **Hecke** cluster works over `Equiv.Perm (Fin (n + 1))`, because `IwahoriHecke K q n` has
+  `n` generators and so models `S_{n+1}`.
+
+Given `μ.card = n + 1` these are the same group, and the corpus already carries the transport
+(`Equiv.permCongrHom (finCongr h)`, used by `SpechtClassification.transportPermHom`). So the
+bridge is a `Subgroup.map`, not new mathematics — but it is the point at which the `q`-deformed
+side can finally name the combinatorial object the `q = 1` side has had all along.
+
+`Specht.rowStab t` is exactly the Young subgroup `S_λ`: the stabiliser of the row pattern of
+`t`, i.e. the permutations preserving each row of `t` setwise. It is `MulAction.stabilizer`, so
+it is a `Subgroup` by construction and carries a `DecidablePred` instance
+(`Specht.instDecidableMemRowStab`) — which is what `murphySum`'s `Finset.filter` needs.
+
+## What this does and does not establish
+
+It gives the eigenvector property for the **genuine** `x_λ`. It is still **not** the Murphy
+basis: that the `m_{st} = T_{d(s)}^* x_λ T_{d(t)}` are a basis, and cellular axioms (C1)/(C3),
+remain open. What has changed is that those are now stated against objects that exist —
+`colSuperstandard` for the reference tableau `t^λ`, `partitionDom` for the dominance order —
+rather than against combinatorics that would have to be built. Bean `qou-phir`.
+-/
+
+namespace QOU.BraidKnot.HeckeMurphyYoung
+
+open QOU.BraidKnot.HeckeMurphy
+open QOU.Hecke.TwBasis
+open QOU.Hecke.IwahoriHecke (σ)
+
+variable (K : Type*) [Field K] (q : K) (n : ℕ)
+
+/-- **The Young subgroup of a tableau, at the Hecke algebra's index.**
+
+`Specht.rowStab t` lives over `Fin (Specht.nOf μ)`; `h : Specht.nOf μ = n + 1` transports it to
+`Fin (n + 1)`, where `IwahoriHecke K q n` acts. Pure re-indexing — `Equiv.permCongrHom` is a
+`MulEquiv`, so the image is a subgroup isomorphic to `rowStab t`. -/
+noncomputable def youngSubgroup {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (t : QOU.BraidKnot.Specht.Tableau μ) : Subgroup (Equiv.Perm (Fin (n + 1))) :=
+  (QOU.BraidKnot.Specht.rowStab t).map (Equiv.permCongrHom (finCongr h)).toMonoidHom
+
+/-- **Murphy's `x_λ` is a `q`-eigenvector, for the Young subgroup of an actual tableau.**
+
+`σ_i · x_λ = q · x_λ` whenever `s_i` lies in the (transported) row stabiliser of `t`. This is
+the defining property of `x_λ`, now stated about the combinatorial object it is supposed to be
+about rather than about an abstract subgroup. -/
+theorem σ_mul_murphySum_young {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (t : QOU.BraidKnot.Specht.Tableau μ) (i : Fin n)
+    [DecidablePred (· ∈ youngSubgroup n h t)]
+    (hi : sw i ∈ youngSubgroup n h t) :
+    σ K q n i * murphySum K q n {w | w ∈ youngSubgroup n h t}
+      = q • murphySum K q n {w | w ∈ youngSubgroup n h t} :=
+  σ_mul_murphySum_subgroup K q n i _ hi
+
+end QOU.BraidKnot.HeckeMurphyYoung
