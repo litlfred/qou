@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T09:06:36Z
+updated_at: 2026-08-30T13:37:23Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -392,3 +392,179 @@ out to be sounder than its stated premise.
 
 Also: quota did not replenish within ~63 minutes, so a retry-after-an-hour
 strategy is not viable on the observed window.
+
+
+
+---
+
+## Data point 2026-08-30 (~10:08–10:40Z) — three PRs, and one is the direct NEGATIVE counterpart to row 2
+
+Recorded because the entry above establishes *"a review on a push with NO
+contemporaneous request"* (row 2, 10m28s) and reads as support for the
+push-trigger hypothesis. This session ran the same configuration and got the
+opposite result at more than twice the observation window.
+
+| PR | head pushed | `request_copilot_review` | merged | reviews, last checked **10:54Z** |
+|---|---|---|---|---|
+| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 45 min |
+| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 43 min |
+| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ≥ 18 min (weak) |
+
+> **Re-read 10:54Z by a second session** (`get_reviews` → `[]` on all three,
+> plus `#6170` at ≥ 42 min). The bounds above were ≥ 37 / ≥ 35 / ≥ 10 at the
+> 10:46Z read and ≥ 31 / ≥ 29 / ~5 at 10:40Z, and the prose below still carried
+> the 10:40Z pair while this table carried the 10:46Z one — the same figure
+> disagreeing with itself two paragraphs apart. **A censored bound grows until
+> the event happens, so it is not a number, it is a number plus a read time.**
+> Quote it with the timestamp or a later reader cannot tell a stale figure from
+> a different measurement. Prose below aligned to this read.
+
+All three `get_reviews` → `[]`, re-checked after each merge.
+
+**#6168 is the discriminating row.** Push with NO request, ≥ 43 min observed
+(re-read 10:54Z), no review. That is the same configuration as row 2 above and the opposite
+outcome, at ~3.4x its 10m28s latency. So **a push does not reliably trigger a
+review** — row 2 shows it *can* happen, this shows it does not always.
+
+**#6162 is a clean negative for the request-trigger at ≥ 45 min** (re-read
+10:54Z), which is ~11x the 3–4 min request→review latency the reopened audit
+measured. Unlike the
+audit's #6068 and this session's own earlier merges, the observation window
+here is not the merge — I kept reading `get_reviews` for half an hour after.
+
+### What this does NOT establish
+
+- **Not "reviews stopped again".** The most economical reading is the **quota**
+  the entry above found the hard way: that exhaustion was measured at 07:56Z,
+  and 10:08Z is ~2h later with the recharge interval unknown. If the quota was
+  still spent, all three rows are explained and neither trigger hypothesis is
+  touched. **I did not receive the quota-limit message on any of them** — which
+  is the same undetermined signature row 3 above hit, and is the reason this
+  cannot be scored either way.
+- **Not a latency measurement.** These are censored observations (no event), so
+  they bound latency from below and cannot be averaged with row 2's 10m28s or
+  the audit's 3–4 min.
+- **#6174's window is still too weak to count.** At ≥ 18 min (re-read 10:54Z)
+  it is only ~1.7x row 2's own 10m28s, so it barely discriminates. Included for
+  completeness.
+
+### The one operational thing that IS true under every candidate
+
+I requested on #6162 and merged **2 min 3 s later** — the exact error the audit
+records against its own #6068. It happened not to cost anything (nothing
+arrived in the following half hour), but the window was not mine to gamble.
+The rule that follows is the audit's, unchanged: **do not wait, but keep
+reading after the merge**, because the merge is not the end of the window.
+
+
+### Observation CLOSED 2026-08-30 11:33Z — final bounds, nothing arrived
+
+Final sweep of all four merged PRs. `get_reviews` → `[]` on every one.
+
+| PR | pushed | requested | final censored window |
+|---|---|---|---|
+| #6162 | 10:08:42Z | **~10:09Z** | **≥ 84 min** |
+| #6168 | 10:10:53Z | none | **≥ 81 min** |
+| #6174 | 10:35:45Z | none | ≥ 57 min |
+| #6179 | 10:47:00Z | none | ≥ 45 min |
+
+Superseding the ≥37/≥35 recorded above: these are the same observations carried
+to their end, not new ones.
+
+**What the two strong rows now bound.**
+
+- **#6162 — request trigger, ≥ 84 min.** That is ~21× the 3–4 min
+  request→review latency the reopened audit measured. A request-triggered review
+  did not arrive within twenty-one times its own observed latency.
+- **#6168 — push trigger, ≥ 81 min.** ~7.8× the 10m28s push→review latency of
+  the data point in `f96325ec1`. A push-triggered review did not arrive within
+  nearly eight times its own observed latency.
+
+**Still NOT scored, and this is the point.** The quota exhausted at 07:56Z with
+an unknown recharge interval remains the one live explanation that fits all four
+rows without touching either trigger hypothesis, and **no quota-limit message
+was posted on any of them** — the same undetermined signature row 3 hit. Four
+negatives at long windows are consistent with "quota still spent for the whole
+session" and say nothing on their own about what triggers a review.
+
+**What would settle it, for whoever picks this up:** a request on a fresh PR
+after a known-long quiet period, with the quota-limit message watched for
+explicitly. Until then the three candidates in
+`docs/audits/2026-08-30-copilot-review-works-again.md` stand unresolved and this
+bean stays open.
+
+Observation closed; no further check-in scheduled. Past ~80 min further waiting
+adds nothing — a fifth zero at 120 min would not discriminate either.
+
+## Third datum: quota had NOT refilled at 5 hours (2026-08-30, 13:03Z)
+
+Requested on #6167 at **12:56Z** — exactly **5h 00m** after the 07:56Z refusal on
+#6131. `get_reviews` at 13:03Z (7 min later, against a ~3 min observed latency for
+a real review on #6088): **`[]`**.
+
+| request | elapsed since 07:56Z exhaustion | outcome |
+|---|---|---|
+| 07:55Z (#6131) | — | refusal posted, ~40 s |
+| 08:58Z (#6131) | 1h 02m | silence |
+| 12:56Z (#6167) | **5h 00m** | **silence** |
+
+So the retry-after-an-hour strategy already ruled out is now ruled out at five
+hours too. Either the window is longer than 5h, or it is not a simple time-based
+refill (per-user-per-day is consistent with all three rows).
+
+**Practical consequence, unchanged in direction but firmer:** budget Copilot as a
+resource you get roughly *once*, not as a step in every prepare-merge. Spending it
+on the first substantive PR of a session and not re-requesting is the strategy the
+data supports. `prepare-merge-auto` Phase 1b's per-run request is exactly the
+behaviour that drained it here.
+
+
+---
+
+## 2026-08-30 13:37Z — four more censored negatives, and what they do NOT bound
+
+Read by hand at **13:37Z**, `get_reviews` → `[]` on all four. Windows run from
+PR creation (itself a push), so a push-triggered review had the whole interval:
+
+| PR | repo | created | merged | window @ 13:37Z |
+|---|---|---|---|---|
+| [`fa#156`](https://github.com/litlfred/folio-assistant/pull/156) | folio-assistant | 10:43:27Z | 11:04:14Z | **≥ 2 h 54 m** |
+| [`#6189`](https://github.com/litlfred/qou/pull/6189) | qou | 10:57:06Z | 11:00:52Z | **≥ 2 h 40 m** |
+| [`#6204`](https://github.com/litlfred/qou/pull/6204) | qou | 12:17:14Z | 12:31:54Z | **≥ 1 h 20 m** |
+| [`#6208`](https://github.com/litlfred/qou/pull/6208) | qou | 12:44:23Z | 12:53:11Z | **≥ 53 m** |
+
+`#6204` and `#6208` were each force-pushed again (rebase) shortly before merge,
+which only *adds* trigger opportunities inside the window — it does not shorten
+it. Two repositories, so this is not a qou-specific setting.
+
+**These are push-trigger evidence, NOT quota evidence.** No
+`request_copilot_review` was fired on any of the four. That matters for how they
+may be used:
+
+- **Against the push trigger** they are the strongest rows in this bean. The
+  entry that opened the push-trigger hypothesis measured a review arriving
+  **10m28s** after an unrequested push; `fa#156` and `#6189` are the same
+  configuration at **~15×** that latency, in two different repos, with nothing.
+  Together with `#6168` (≥ 43 min) that is four independent censored negatives
+  against a trigger whose one positive observation is a single 10m28s event.
+- **They say nothing about the quota**, because an un-requested PR would draw no
+  review under *either* the quota-exhausted or the request-required reading.
+  Do not cite them as evidence the ration is still spent.
+
+**The recharge interval is barely bounded, and by less than the elapsed time
+suggests.** The only request fired since exhaustion at **07:56:40Z** is the
+sibling's on `#6162` at ~10:09Z, which returned nothing at ≥ 45 min. So the
+honest statement is **recharge > ~2 h 13 m**, from that one request — *not*
+"> 5 h 40 m" from the wall clock, which would be reading four unrequested PRs
+as if they had asked.
+
+**The passive-measurement instruction stands and is now sharper.** The next
+successful review after 07:56:40Z bounds the recharge from above — but only a
+**requested** one bounds it usefully, and nobody should fire a request to find
+out, which is the error that created the shortage. The cheap discriminator is
+already scheduled by ordinary work: the next session that requests a review on
+its first substantive PR will produce the datapoint for free.
+
+Recorded because the alternative was leaving it in a chat transcript, which is
+this corpus's documented way of losing a measurement — and because this bean
+already tells future agents to write exactly this observation down.

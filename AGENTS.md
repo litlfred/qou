@@ -1385,9 +1385,19 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **536** document directories are searchable this
-   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
-   low by 62 %, not merely old).
+   and re-deriving one. **542** document directories, holding **10,922**
+   section files, are searchable this way (this read *"332 documents /
+   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+
+   **Say which count you mean, or the next reader will "correct" you.**
+   Three numbers describe this library and they are all different:
+   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   *index rows*, because the 23 known duplicate copies deliberately get no
+   row of their own; and `summarize-library.py` prints that 518 as
+   "documents". A grep-coverage claim wants the 542; a "how many distinct
+   works do we hold" claim wants the 518. Quoting one against the other
+   reads as staleness when it is a category difference.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1398,7 +1408,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
@@ -2076,6 +2086,83 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🛑 OWNER RULING — the muon pin is CODATA 2022. The frozen value is retired.
+> RULED 2026-08-22; IMPLEMENTED 2026-08-28; re-confirmed 2026-08-30.** The
+> original wording is a sibling session's record of the owner's 2026-08-22
+> ruling: *"2022 CODATA better than 2018. A --> CODATA 2022."* It was put to the
+> owner again on 2026-08-30, against the three-values measurement below, and
+> re-confirmed — *"C."* then *"CODATA 2022 for muon"*.
+>
+> **🛑 The 2026-08-30 half of this block was written as though nothing had been
+> done yet. It had. Corrected the same day — read this before acting on the
+> paragraphs below.** The ruling was dated 2026-08-30 (it is 2026-08-22), and the
+> anchor was described as still frozen at A. `fca08de7d29` (2026-08-28, *"muon
+> anchor -> CODATA 2022 (owner ruling): derive it, stop the self-certification"*)
+> had **already migrated it**, and that commit is an ancestor of the one carrying
+> the stale description. The corpus-grep checklist would have caught it — so
+> would `git log` on the named file.
+>
+> **What the tree actually holds, measured on `main` `3a919ad14fe`:**
+>
+> - `computations/q-pinning-50-digit.witness.json` carries
+>   `1.109978595642739046681795129380001752700065561029011556974045769999095`
+>   — that is **C**, not A.
+> - `computations/audits/muon_pin_stored_vs_live_gate.py`: stored and live agree,
+>   **gap 0.0 ppb** (0.0 σ against σ(q₀) = 1.22335 ppb).
+> - `q0_anchor_consistency_audit.py`: **`Q0_FLIP` = 1**, and it is
+>   `hadron-knot-table.witness.json` alone, still carrying **A**.
+>
+> **The fix was to DERIVE, not to re-freeze**, which is why it did not repeat the
+> 2026-08-19 breakage: `q_parameter`'s ideal/muon branch now takes q from
+> `q_muon_at()` over `constants.MASS_RATIO_MU_E_STR`, so the witness records a
+> value it did not choose. Previously `q_pinning_50_digit` was listed `ideal_muon`,
+> so `q_at` was rebound *for that very producer* and it wrote back the value it
+> had just read — **the anchor certified itself.** A also disagreed by 1.4 ppb
+> with the ratio the same witness declares in its own `calibration_inputs`.
+>
+> `computations/audits/muon_pin_three_values_probe.py` establishes that **three
+> different numbers are all called "the muon q₀"**, diverging at the 13th
+> significant digit — five orders of magnitude above the framework's own 1 ppQ L1
+> target, and inside the ~11.5 ppb μ–p separation the two-pin vocabulary exists to
+> keep straight. Re-derived independently 2026-08-30 at `mp.dps = 60`, with
+> `Vol(4₁) = 2·Cl₂(π/3) = 2.02988321281930725004240510855`:
+>
+> | | `m_μ/m_e` | `q₀ = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` |
+> |---|---|---|
+> | **A** former frozen pin (retired) | *(none — see below)* | `1.1099785955573347…` |
+> | **B** CODATA 2018 | `206.7682830` | `1.10997859555418057528159407961` |
+> | **C** CODATA 2022 | `206.7682827` | `1.10997859564273904668179512938` |
+>
+> **The ruling's reason is the dataset constraint, and it is measured rather than
+> aesthetic: CAL-1, CAL-2 and CAL-3 must come from one experimental dataset.**
+> Inverting **A** through its own defining relation gives `m_μ/m_e =
+> 206.768282989315111`, which matches **neither published figure** — it sits
+> strictly between them (5.17e-11 relative from 2018, 1.40e-9 from 2022). So A is
+> not that derivation at *any* CODATA vintage and cannot be in a common dataset
+> with anything; the tempting reading *"A is just the older CODATA"* is
+> **measurably false**. Between B and C, the live table already decides:
+> `constants.py` serves `MASS_RATIO_MU_E_STR = 206.7682827  # CODATA 2022` from
+> the same `codata.py` that supplies `M_E_MEV` for CAL-1, so **C is the only
+> choice that does not also require rolling CAL-1 back**.
+>
+> **What is already done:** both the live derivation path *and* the
+> anchor-defining witness `computations/q-pinning-50-digit.witness.json` are at C
+> (`fca08de7d29`, 2026-08-28), and `cfe73b8eb5f` drained the resulting flips
+> `Q0_FLIP` 83 → 34. **Do not "migrate the anchor" — that step has run.**
+>
+> **🛑 WHAT REMAINS IS STILL NOT A BULK SWEEP, and the reason is on the record.**
+> The anchor step above was done deliberately and by derivation. Re-pinning that
+> witness *as a step in a bulk pass* is a different act, and it is what took
+> `main` red on 2026-08-19: both anchors
+> collapsed to one string, **262 correctly-stamped muon witnesses flipped to
+> `Q0_FLIP`** (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
+> including, circularly, the one that regenerates the anchor. `q0_repin_sweep.py`
+> carries an `ANCHOR_DEFINING` exclusion for exactly this; **do not remove it** and
+> do not re-pin that file as a step in a bulk pass. Note also that C is a **live**
+> derivation over a CODATA input, so unlike A it moves whenever that table is
+> updated — accepted deliberately as the price of reproducibility from a published
+> source. Migration scope and staging: bean `qou-tekx`.
+>
 > **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
 > canonical; colour weighting canonical.** Verbatim: *"convention D is
 > convention. excise convention C."* / *"similarly, use proton pin and color
@@ -2256,10 +2343,24 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **sixteen** distinct detector-blind spellings (this said *thirteen*
->   and was itself stale — the table already ran to 15 on 2026-08-26, and row 16
->   landed 2026-08-29), several of which were
->   found *by* detectors written to catch the previous blind spot. So: **treat
+>   catalogues **twenty-two** rows, and they split three ways: **1-16** are
+>   detector-blind *spellings* of convention C, **17-21** blind an *exemption*
+>   or a guard rather than a detector, and **22** is a different arc entirely.
+>   Several were found *by* detectors written to catch the previous blind spot.
+>   Quote the split, not the total, because folding the last six into the C
+>   figure inflates exactly the number this note exists to keep honest.
+>   Rows 17-21 are the `qou-t9r1` family — a labelled two-arm comparison whose
+>   D arm is a call, a sibling scope, a derived closed form, a Lean
+>   declaration, or unreachable to an mpmath-only guard, so each is reported
+>   as a leak forever. Row **22** is not about conventions at all — it comes from the
+>   NO-FLOAT64 arc, where an assertion detector read its operands positionally
+>   and so examined 13 % of a corpus that writes 87 % of its calls with
+>   keywords, reporting `MEASURED: 0` against a true 56. That row is the first
+>   evidence the pattern is not an artifact of the convention migration.
+>   (This line has been stale four times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21 — and on the fourth fix I first wrote "twenty are
+>   spellings", miscounting the very split I was adding. **Re-count the table;
+>   do not trust this sentence, including this parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
@@ -2448,9 +2549,15 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
-     `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
+     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
+     (−11.5 ppb) when the counts below were measured, and since
+     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
+     `1.109978595642739…`. The **counts are still the counts** — they
+     describe witnesses computed under the old anchor, which is exactly
+     the population the migration is about — but do not read the literal
+     as the live anchor. It fed ~72 producers / **870** witnesses — the
+     canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -2464,7 +2571,8 @@ muon; muon-anchor → ~4000σ on proton).
      > fingerprint" is ambiguous *in this corpus specifically*, because
      > [`muon_pin_three_values_probe.py`](computations/audits/muon_pin_three_values_probe.py)
      > establishes that **three different values are all called "the muon
-     > q₀"** — the frozen canonical pin `1.1099785955573347…`, and the
+     > q₀"** — the then-canonical frozen pin `1.1099785955573347…`
+     > (**retired 2026-08-28**; C is canonical now), and the
      > lepton-tower derivation at CODATA 2018 (`…55541805…`) and 2022
      > (`…56427390…`). They diverge at the **13th significant digit**, so
      > the choice of prefix length silently selects which of the three you
@@ -2473,7 +2581,7 @@ muon; muon-anchor → ~4000σ on proton).
      > | match on | counts | at 2026-08-16 | at 2026-08-26 |
      > |---|---|---|---|
      > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
-     > | `1.1099785955573347` (full) | **the canonical pin only** | 468 | 149 |
+     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
      >
      > The **870** above is the ten-digit reading and is correct. Measured
      > with the same script at both ends (`git ls-tree` on each revision,

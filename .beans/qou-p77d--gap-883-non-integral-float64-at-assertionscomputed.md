@@ -1,11 +1,11 @@
 ---
 # qou-p77d
 title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across 300 witnesses — the class #5910 deferred'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T18:13:23Z
+updated_at: 2026-08-30T08:40:35Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -255,3 +255,285 @@ subprocesses: **0 new failures**.
 - **`mpf(repr(x))` is right for a float, broken for an mpf.** `repr(mpf('.78'))`
   is `"mpf('0.78')"`, unparseable. 96 sites unwrapped; the OTHER 84 in the tree
   lift genuine floats and must stay.
+
+
+## Session 2026-08-30 — the work order in this bean is INVERTED, and two drains landed
+
+PR #6060. Job 3 re-measured, job 1 untouched (owner-blocked), bucket-A drain
+started and immediately re-scoped.
+
+### Job 3: re-measured, no drift
+
+    ACTIONABLE fields  593    files 208
+      A. dps raised          304   (153 producers, long-tailed: most carry 2)
+      B. float64-equivalent  284
+      C. producer not found    5
+
+Reproduces the merged figure exactly. Re-checked against the 33 commits main
+gained during the session: only 7 touch `computations/`, none in the candidate
+set.
+
+### THE WORK ORDER IS BACKWARDS — pick by BINDING shape, not by edit shape
+
+I selected the 40 producers with an inline `computed=float(...)` because that
+shape is mechanically rewritable. **That criterion selects AGAINST gains.**
+
+    inline `computed=float(...)`     11 tried -> 0 KEEP, 4 REVERT, 5 SKIP
+    local  `x = float(EXPR)` -> x    both confirmed gains are this shape
+
+Not statistical. An inline cast at the assertion is what you write when
+WRAPPING a solver's float; binding to a local first is what you write when
+CARRYING an mpf. **Next agent: work the ~100 local-binding producers first.**
+
+### Bucket A contains producers that are float64 IN FACT
+
+Four confirmed: he4_sdp_compositional_probe, borromean_per_lambda_fr_probe,
+fr_pullback_k1_k2_test, qbeta_c3_phib_pole_seed_sensitivity_probe. Each calls
+`set_compute_dps()` (so the static classifier files it A) while its asserted
+value comes from a solver, a helper, or a float accumulation. `_precision.fmt`
+**short-circuits a Python float to `str()`** — its own docstring says so — so
+the prescribed repair changes the JSON type and NOTHING ELSE.
+
+This is this bean's own "the A/B split is a STATIC HEURISTIC" trap reached
+from the OPPOSITE side: a bucket-A file that is float64-valued. So A=304
+OVERSTATES what is drainable; the real boundary is between the two figures.
+
+### Two drains landed
+
+    probe_bring_residue_resolvent.py        8 fields  17 -> 60 digits
+    qbeta_c3_two_route_cross_pin_probe.py   2 fields  17 -> 60 digits
+
+Second witness: 16 raw float64 fields -> 1 (survivor is `expected: 0.0`).
+
+### Automation ceiling: 2 of 152
+
+With the only safe guard (the local feeds assertion values and nothing else),
+exactly **2 producers of 152** are auto-rewritable. Everything else reuses the
+local in a print or a comparison, where stringifying changes behaviour. This
+CONFIRMS this bean's "nothing here is a candidate for a textual sweep", now
+with a number.
+
+### Traps established this session
+
+- **`f"{mpf:.4f}"` raises TypeError.** Dropping a cast is not sufficient on
+  its own; every `:.Nf` print of that value must move to `mp.nstr`. I found
+  the second such print only by RUNNING the producer — it was on a branch the
+  first run did not take.
+- **A cast can hide in a list comprehension.** `dists = [(nm, float(...)) ...]`
+  then `min(dists, ...)`: `min` chooses among values already cut to 17 digits.
+  No rewriter here finds that shape.
+- **The drain driver's `restore()` wipes a previous KEEP.** Batch drains must
+  commit between producers, or run one at a time. (Batch 1's results were only
+  trustworthy because it had 0 KEEPs.)
+- **Re-running a producer in a bare container DOWNGRADES its provenance
+  block** (numpy/scipy/python/pyhecke_native). The witness tooling warns and
+  refuses. Build a venv matching the recorded environment; `pyhecke_native` is
+  not on PyPI and must be built with `maturin build --release`.
+- **precision-gates.sh already exits 1 on a CLEAN tree in a fresh container**
+  (q0-anchor flip, q0-anchor refill, mpf(<float>) source, float64-padding,
+  q0-value drift, CODATA stale-edition, mixed mpf/f64). Measure that baseline
+  before attributing any red to your own change.
+
+### Tooling added (both selftested; both were WRONG first)
+
+- `computations/audits/assertion_drain_verify.py` — the methodology this bean
+  states twice. **Its first version reported phantom gains**: it read a JSON
+  float as the exact BINARY double against a string read as an exact DECIMAL,
+  manufacturing a ~1e-17 difference from nothing (five phantom gains on a
+  producer whose values are byte-identical). The right question is not "did
+  the string change" but **does it carry information binary64 cannot hold**.
+- `computations/audits/assertion_value_provenance_audit.py` — predicts
+  DRAIN-NO-OP statically. **Three rule versions, first two pushed:**
+  v1 flagged every sum/min/max (35/152 — wrong: `sum(1 for ...)` is an exact
+  integer count); v2 required a visible float64 argument (3/152 — missed a
+  confirmed case); v3 flags unless the accumuland is provably an int literal
+  (34/152), validated **2 of 3** against the drain batch, negative control
+  clean. Blind spot is structural: it is call-site-local and cannot see a
+  float64 produced INSIDE a helper.
+
+**A green selftest was never evidence about the corpus.** Both tools passed
+their selftests through every wrong version; only running them against real
+producer verdicts corrected them.
+
+### Still open
+
+1. 32 q-dependent producers / 209 fields — owner decision, 32 times. Untouched.
+2. The 22 diagnosed reverts from #6022 — no committed list exists, so the list
+   itself must be re-derived. DRAIN-NO-OP is a candidate explanation for part
+   of the "no gain" half.
+3. Bucket A minus the 4 confirmed no-ops and the 2 drained. Work the
+   local-binding shape first, per above.
+4. `computations/witness-raw-float64-audit.witness.json` regenerates with
+   total_fields 35109 -> 34779 and drained_files +3, while this session's
+   drains account for far less. NOT committed — the movement is not
+   established as mine. Regenerate on a clean tree and attribute it.
+
+
+## Continued 2026-08-30 — the binding-shape finding is confirmed, and three new traps
+
+### The shape split, now with numbers
+
+    inline `computed=float(...)`     11 verdicted -> 0 KEEP
+    local  `x = float(EXPR)`          9 verdicted -> 7 KEEP
+
+**Work the local-binding shape.** Not a tendency — 0/11 vs 7/9.
+
+### Drained this session: 21 fields over 8 producers
+
+    probe_bring_residue_resolvent            8
+    qbeta_c3_two_route_cross_pin_probe       2
+    qbeta_habiro_residual_probe              3
+    seifert_volume_meson_n7_extension        2
+    q0_figure_eight_phase_derivation         2
+    binding_endomorphism_deuteron            2
+    binding_per_bond_decomposition           2   (+ a STALE VALUE, see below)
+    difference_knot_volume_extrema_stability 1   (unblocked by snappy)
+
+Ratchet drained-since-baseline moved 150 -> 156 files, +623 -> +631 fields.
+
+### THE TRANSFORM: parallel binding, not rewriting the local
+
+Rewriting `x = float(EXPR)` to `x = fmt(EXPR)` is WRONG whenever `x` is read
+anywhere else, and it usually is. `fmt` returns a str; `f"{x:.4f}"` on a str
+raises, exactly as `f"{mpf:.4f}"` raises TypeError. Instead:
+
+    x_exact_mpf = EXPR
+    x = float(x_exact_mpf)      # unchanged; every existing use still works
+    ... computed=fmt(x_exact_mpf)
+
+Only the witness field moves, so no safety guard is needed at all. (Where
+nothing but the assertion reads the local, the simple rewrite is used so no
+dead line is left.) Driver at /tmp/drain_driver.py — NOT committed; it is
+scaffolding, and the committed instruments are the two audits.
+
+### 🛑 `git checkout -- <file>` DOES NOT give you an unmodified baseline
+
+The driver now STAGES each KEEP, because its own restore uses
+`git checkout -- <path>` which restores from the INDEX — that is what stops a
+batch wiping earlier KEEPs. The same fact then makes `git checkout --` useless
+for reverting: I ran a "truly unmodified" producer that was still my drained
+version, and it reported a 17% VALUE-MOVED that would have been blamed on the
+cast removal. **`git checkout HEAD -- <file>` is the spelling that reverts.**
+Verify with `grep -c 'fmt(' <producer>` before trusting a baseline.
+
+### A committed witness is STALE by 17% (independent of any drain)
+
+`computations/binding-per-bond-decomposition.witness.json`,
+`method_discrepancy_recorded`:
+
+    committed         28.749413293755964
+    fresh unmodified  23.800662623432725      rel 0.172
+
+Measured on a genuinely unmodified producer (checked out from HEAD, 0
+occurrences of `fmt(`). It is a diagnostic (records the binding_canonical vs
+H_{3A} Δtr gap, tolerance 1) with nothing asserting on it downstream.
+HYPOTHESIS NOT VERIFIED: this bean already records import-cone drift in exactly
+this cone (`binding_canonical` source-stable while `tr_M_atom` moved 48%
+because `tr_m_atom_via_transfer` changed). This producer reads
+binding_canonical. Plausible mechanism; establishing it needs the import-cone
+audit. Refreshed in a commit that leads with the value change, not with "drain".
+
+### 🛑 "producer exit 1" is not a producer-health figure
+
+9 of 13 exited 1 on an unmodified run. Triaged, they are three different
+things and only one is a producer bug:
+
+    ModuleNotFoundError: snappy       ENVIRONMENT — `pip install snappy`
+                                      (SnapPy 3.3.2) and it runs; it then
+                                      drained cleanly
+    FileNotFoundError: jet-knot-...   a missing UPSTREAM WITNESS
+    TypeError: Cannot convert expr    a genuine producer error
+
+"9 of 13 cannot run" would have been a wrong headline. Install the optional
+deps before counting: mpmath, sympy, numpy, scipy, snappy, and
+`pyhecke-native` built locally (`maturin build --release`, it is not on PyPI).
+
+### Recorded environments differ PER WITNESS — one venv cannot match them all
+
+Correcting my own looser phrasing: `difference-knot-volume-extrema-stability`
+records python 3.11.15 / numpy 2.4.6 (bare-container versions), while the venv
+built for the earlier witnesses is 3.13.12 / numpy 2.5.0 / scipy 1.18.0. So
+that re-run UPGRADES the block rather than matching it. Honest provenance, and
+the tooling only refuses downgrades — but do not claim a blanket "matched
+environment" across the corpus.
+
+### Remaining bucket-A map (146 producers, measured on this branch)
+
+     84 producers  173 fields  float() present but not reaching an assertion value
+     34            64          predicted DRAIN-NO-OP (float64-valued)
+     20            33          rewriter finds a cast -> drainable
+      7            12          no float() at all — float64 enters another way
+      1             4          producer file not found
+
+The 84-producer group is the real remaining body of work and it is NOT
+mechanical: the cast sits in a helper, a dict, or a comprehension. The
+`min(dists, ...)` case in qbeta_c3_two_route_cross_pin is the worked example.
+
+
+### CORRECTION to the count two sections up: 19 fields, not 21
+
+I wrote "21 fields over 8 producers". **It is 19.** The 21 summed the drain
+verifier's GAIN rows, which is not the same population as the tranche: a field
+can be removed from the tranche without gaining digits (NO-DIGITS-RECOVERED is
+still converted to a string), and a GAIN row can land on a field that was
+integral and therefore never counted.
+
+Measured properly — actionable fields in each drained witness, `origin/main`
+vs this branch:
+
+    9 -> 0  bring-residue-resolvent-probe
+    2 -> 0  qbeta-c3-two-route-cross-pin
+    2 -> 0  qbeta-habiro-residual
+    1 -> 0  seifert-volume-meson-n7-extension
+    1 -> 0  q0-figure-eight-phase-derivation
+    1 -> 0  binding-endomorphism-deuteron
+    2 -> 0  binding-per-bond-decomposition
+    2 -> 1  difference-knot-volume-extrema-stability   <- one left undrained
+                                                          in this witness
+
+    20 -> 1, i.e. 19 removed.
+
+Corpus tranche now **574 fields / 201 files** (was 593 / 208). The 19-field
+delta is entirely attributable — I checked against `origin/main` per witness
+rather than differencing two whole-corpus measurements taken 68 commits apart,
+which would have conflated my drains with main's movement.
+
+**Quote the per-witness attribution, not a whole-corpus difference.** This
+branch merged 68 commits of main mid-session; a before/after of the global
+figure cannot separate the two.
+
+
+## 2026-08-30 — status at PR #6060 rebase onto `a917f3da1e`
+
+**Done:** Job 3 re-measure reproduced `A=304 / B=284 / C=5` exactly. 20 fields
+drained over 8 producers, all 17 → 60 digits, attribution measured per-witness
+against a `git worktree` of the exact base.
+
+**The bean's work order was backwards and is corrected in the PR body.** The 40
+producers with an inline `computed=float(...)` are the *mechanically* easiest and
+the *least* rewarding: 11 tried → 0 KEEP, against 9 tried → 7 KEEP for the
+`x = float(EXPR)` … `computed=x` local-binding shape. Mechanical, not
+statistical — an inline cast is what you write when wrapping a solver's float; a
+local binding is what you write when carrying an `mpf`. **Work the local-binding
+shape first.**
+
+**Bucket A overstates what is drainable.** Four producers call
+`set_compute_dps()` (so the static classifier files them A) while the asserted
+value comes from a solver, a helper, or a float accumulation. `_precision.fmt`
+short-circuits a Python `float` to `str()`, so the prescribed repair changes the
+JSON type and nothing else. `computations/audits/assertion_value_provenance_audit.py`
+predicts this statically — 34 producers / 64 fields of the 152 bucket-A — but it
+is call-site-local and cannot see a float64 produced inside a helper.
+
+**Remaining, unchanged:**
+
+1. **32 q-dependent producers / 209 fields** — each forces a proton-vs-muon
+   anchor choice. Owner decision, 32 times. Untouched.
+2. **84 literal `expected` fields across 69 producers** — mechanically safe
+   fidelity fix, needs 69 producer re-runs.
+
+**Do not run item 2 in a weaker container.** Same constraint recorded on
+`qou-3e5m`: `save()`'s environment guard fires only on the preserve path
+(`_witnesses_substantively_equal`), and a drain is substantive by construction,
+so the rewrite path takes a downgraded `environment` block under a warn-only
+check. Match python/mpmath/clarabel to what the target witnesses record first.

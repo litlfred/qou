@@ -39,6 +39,7 @@ question.
 | 19 | **the EXEMPTION's SHAPE, other side** — the D arm assumed to be a Markov parameter | a C-vs-D comparison whose D side is a derived closed form in `h`, never a `z` at all | `probe_convention_d_vs_c_borromean.py`, whose D is `tau_pipe = (4+h^2-3h^4-h^6)/(h^2+4)` (qou-t9r1) |
 | 20 | **the EXEMPTION's LANGUAGE** — both arms assumed to be in the same file, hence the same language | a C-vs-D comparison whose D arm is a **Lean declaration**, so no Python-side pairing test can ever see it | `probe_h3_central_idempotents_exact.py` computes the C arm; its D counterpart is Lean `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D ≠ C sorry-free (qou-t9r1) |
 | 21 | **the GUARD's TYPE** — the anti-invisibility helper is mpmath-only (SCOPE: 1 measured site, NOT a wide class — see note below) | a SYMBOLIC (sympy) consumer cannot call `markov_parameter_convention_C` (`TypeError: cannot create mpf from q`), so it MUST inline `sqrt(q)/(1+q)` — invisible to the very mechanism built to make deliberate C visible | `probes/qbeta_fmap_power_class_prune.py`; helper made polymorphic 2026-08-30 (qou-t9r1) |
+| 22 | the **argument-passing form** — positional `args` only | every keyword call, i.e. 87 % of the corpus's call sites | `self_fulfilling_assertion_audit` reported `MEASURED: 0` against a true 56 (qou-3e5m) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -643,6 +644,56 @@ wrong by 38 % and would have had no way to know from the report alone.
 a legitimate comparison that this tool cannot pair.** That question is cheap and
 it is what found rows 18 and 19; grepping harder for C is what found rows 1-16
 and would not have found either.
+
+### Row 22 is not about conventions at all, and that is the point
+
+Added 2026-08-30 (bean `qou-3e5m`). Rows 1-21 all come from the convention-C
+excision. This one comes from a completely different arc — the NO-FLOAT64
+assertion-integrity work — and it is the same failure verbatim, which is the
+first evidence in this file that the pattern is not an artifact of one
+migration.
+
+`computations/audits/self_fulfilling_assertion_audit.py` exists to catch
+`add_assertion(name, X, X)`: an assertion that compares a value to itself,
+cannot fail, and reports `passed: true`. It read its operands positionally:
+
+```python
+computed, expected = node.args[1], node.args[2]   # and skipped len(args) < 3
+```
+
+The word `keywords` did not appear anywhere in the file. Measured on the
+corpus at the time:
+
+```
+add_assertion calls    487 positional    3300 KEYWORD
+```
+
+So it examined **13 %** of its own subject and reported `MEASURED: 0`. The
+true figure, once it could see keyword calls, was **56** across 183 files —
+and the case that exposed it was found by hand, not by the tool built for it
+(`m_p_m_e_li2q.py:134` asserts `codata_mp_me_loaded` with computed and
+expected both the literal `1836.152`).
+
+**Two things generalise beyond this file.**
+
+First, the blind shape here is *not* an expression form, a declaration
+keyword, or an exemption's scope — the categories rows 1-21 are drawn from. It
+is the **calling convention** of a Python function, which no previous row
+touches. A detector that resolves a call's operands by position is blind to the
+same call written with names, and in this corpus the named form is the
+overwhelming majority. Any AST tool reading `node.args[i]` has this hole; grep
+for the pattern before trusting a count from one.
+
+Second, **the selftest passed through every wrong version, and its docstring
+claimed it would not** — it said it *"guards against a future narrowing
+quietly reporting a clean tree"*. It did not, because every fixture in it was
+a positional call. A selftest written from the same assumption as the code
+under test exercises the assumption's consequences, never the assumption. That
+is practical consequence 3 above ("a detector needs fixtures that pin its
+narrowing") arriving from a second, unrelated direction — and it is worth
+strengthening: the fixture must pin the narrowing *in the dimension the author
+did not think of*, which is the one dimension a same-author fixture reliably
+misses.
 
 ## Provenance
 

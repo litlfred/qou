@@ -1,5 +1,23 @@
 # First structural crack at the q-deformed keystone (muon) shift
 
+> **🛑 CORRECTED 2026-08-30 — `y_(3,1,1)^{H5}` is EXACTLY ZERO, not 0.0167666.**
+> The figure below came from `ph.trace_weights_n(5, float(q))`, whose `float(q)`
+> downgraded the 50-dps pin to 53 bits; the routine is float64 internally, so the
+> result was then dressed as 50 dps by `mpf(str(w))`. Recomputed in exact
+> arithmetic (`y_lambda_wenzl_bridge_numeric`), **four of the seven `y_λ` are
+> exactly 0** — (3,1,1), (2,2,1), (2,1,1,1), (1⁵) — while the three nonzero ones
+> agree to 14 digits. The zeros are structural: `y_λ = 0` iff λ has **more than
+> two rows**, the SU(2)/N=2 truncation.
+>
+> Consequence for what is below: the "electron home-block" (3,1,1) carries **no
+> Markov weight at all**, so `T_electron = 0` exactly and `δ = T_μ` trivially.
+> Any (3,2)-vs-(3,1,1) shift computed here is `T_μ` under another name. The
+> producer is fixed; the numbers in this document are left as the historical
+> record. Beans `qou-j3u0` (the finding) and `qou-bake` (the witness has no
+> producer and cannot self-refresh).
+
+
+
 **Date:** 2026-06-20
 **Branch:** `claude/keystone-branching-shift-probe-2026-06-20`
 **Status:** Negative / sharpening result — naive Res functor mechanism refuted for the h⁴ channel

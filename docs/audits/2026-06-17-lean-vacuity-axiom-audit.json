@@ -1,10 +1,10 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-30T10:32:48.013Z",
+  "generated": "2026-08-30T13:07:02.279Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3369,
-  "files_flagged": 155,
-  "total_defects": 136,
+  "scanned_files": 3377,
+  "files_flagged": 153,
+  "total_defects": 133,
   "total_exempt": 59,
   "total_promoted_from_exempt": 66,
   "categories": {
@@ -12,8 +12,7 @@
     "proof-docstring-sorry-mismatch": 12,
     "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1,
-    "proof-no-provable-axiom": 2,
-    "proof-dependent-conjecture-not-conditional": 3
+    "proof-no-provable-axiom": 2
   },
   "conjecture_graph": {
     "total": 310,
@@ -111,7 +110,7 @@
       {
         "name": "BlowupYekutieli",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
-        "line": 244
+        "line": 261
       },
       {
         "name": "BorelZagierQOU",
@@ -326,7 +325,7 @@
       {
         "name": "CriticalExponent",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
-        "line": 203
+        "line": 205
       },
       {
         "name": "CrystalEigenlineSignBlind",
@@ -871,7 +870,7 @@
       {
         "name": "NSCounterexample",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
-        "line": 136
+        "line": 138
       },
       {
         "name": "NVBringAction",
@@ -991,7 +990,7 @@
       {
         "name": "QAubinLions",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
-        "line": 96
+        "line": 98
       },
       {
         "name": "QBesselRadialPartRealization",
@@ -1161,7 +1160,7 @@
       {
         "name": "RegularityBreakdown",
         "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean",
-        "line": 271
+        "line": 289
       },
       {
         "name": "ResidueAtRoot",
@@ -1730,15 +1729,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      },
-      {
-        "line": 31,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-block-level",
-        "snippet": "RootOfUnityTruncationContext",
-        "decl": "RootOfUnityTruncationContext",
-        "severity": "critical",
-        "detail": "the block's .md claims conditionality on `QAubinLions` but the signature takes no binder on it"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
@@ -3837,28 +3827,6 @@
         "snippet": "theorem QuantumObservableUniverse.exists_instance",
         "decl": "QuantumObservableUniverse.exists_instance",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean": [
-      {
-        "line": 107,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-block-level",
-        "snippet": "MagicABindingFormula",
-        "decl": "MagicABindingFormula",
-        "severity": "critical",
-        "detail": "the block's .md claims conditionality on `MagicNumbersBring` but the signature takes no binder on it"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean": [
-      {
-        "line": 167,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-block-level",
-        "snippet": "QuantumAPolynomial",
-        "decl": "QuantumAPolynomial",
-        "severity": "critical",
-        "detail": "the block's .md claims conditionality on `QuantumLanglandsDual` but the signature takes no binder on it"
       }
     ]
   }

@@ -657,6 +657,71 @@ QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.radicand_bounds | clea
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im_bounds | clean
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_normSq_gt_one | clean
 
+# LobMonotonicity supplies the sign of Lambda' where Rivin concavity needs it.
+# qou-52ch's chord argument folds an obtuse angle with Lob_pi_sub, leaving
+# (Lob a - Lob (a+c)) + Lob c; the first bracket is positive because Lambda
+# DECREASES past pi/6, and no VALUE of Lambda is used -- which is the whole
+# point of that reduction and would be lost if it were done numerically.
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.one_lt_two_mul_sin | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.deriv_Lob_neg | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.strictAntiOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_sub_Lob_add_pos | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.concaveOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_nonneg_of_le_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_add_le | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.lob_sum_nonneg | clean
+
+# FiveTwoAngleSum translates VOL_5_2 (a Bloch-Wigner value) into the ANGLE
+# functional Rivin concavity is stated for. The corpus already had fiveTwoTet
+# and volume_eq_lob_sum; only the composition was missing.
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle_sum | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₁_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₂_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₃_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.VOL_5_2_eq_three_mul_lob_sum | clean
+
+# FiveTwoNinthPower proves the 5_2 smallest dihedral angle exceeds 2*pi/9 --
+# the angle condition qou-52ch's Rivin-concavity chord bound needs. Reached
+# WITHOUT any value of a transcendental function: z^3 = z - 1 makes z^9 a
+# quadratic in z, and Im(z^9) > 0 collapses to Re z < 2/3.
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.realRoot_gt_three_sevenths | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_upper | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_lower | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.ninth_power_im_pos_reduced | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_ne_zero | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_cubic | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_mul_realRoot | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_lt_two_thirds | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.disc_pos' | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_lt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.sqrt_three_mul_zz_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_arctan | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_lt_pi_div_four | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_six_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_arg_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₁ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.angle₁_lt_pi_div_two | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₂ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.all_angles_gt_two_pi_div_nine | clean
+
+# FiveTwoVolumeChord assembles the Rivin chord: VOL_4_1 < VOL_5_2. Only the
+# public theorem is pinned; the rest of the module is `private` scaffolding.
+QOU.Knot.FiveTwoVolumeChord | QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2 | clean
+
 """
 
 

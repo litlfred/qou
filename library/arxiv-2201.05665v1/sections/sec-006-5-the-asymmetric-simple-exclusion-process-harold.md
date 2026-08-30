@@ -7,6 +7,7 @@ section_number: 5
 pages: 10-14
 source_pdf: 2201.05665v1.pdf
 source_sha256: bad7bde03d199a73
+doc_brief: "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices."
 ---
 The asymmetric simple exclusion process (ASEP) was introduced (in the probability lit-
 erature) in Spitzer’s 1970 work [Spi]. It is a continuous time Markov process of interacting

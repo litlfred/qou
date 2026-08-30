@@ -7,6 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 1409.0435v2.pdf
 source_sha256: 0c6abbb9c5a720d9
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 The authors are grateful to Igor Krasovsky for useful discussions and for sharing an early
 version of [6], and to Alexander Bufetov for useful discussions. They were supported

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:16:52.210508+00:00",
-  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
+  "computedAt": "2026-08-30T09:34:40.189184+00:00",
+  "commitSha": "458f17211f5d1442dc573b3c24685bdcfb3e4f66",
   "assertions": [
     {
       "name": "locus_is_O1_far_from_canonical_paths",
@@ -14,19 +14,19 @@
     },
     {
       "name": "complete_structure_not_on_locus",
-      "computed": "0.6604590185851418652286230046558126017346496288673810303387104996541823",
-      "expected": "0.6604590185851418652286230046558126017346496288673810303387104996541823",
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true,
-      "tolerance": "1e-30",
-      "source": "recorded exact-locus distance from m=1 (informational)"
+      "tolerance": "0.1",
+      "source": "exact-locus distance from m=1 is 0.660459, at or above the 1e-6 graze bar this probe uses for the other paths"
     }
   ],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 99,
   "computation": "qbeta-c3-phib-gluing-discriminant",
   "scriptFile": "qbeta_c3_phib_gluing_discriminant_probe.py",
-  "scriptHash": "da1b8e803f7c",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "6a17364f5546",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
