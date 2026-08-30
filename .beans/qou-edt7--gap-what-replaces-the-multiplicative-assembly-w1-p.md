@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T11:25:27Z
+updated_at: 2026-08-30T11:38:22Z
 parent: qou-mhj9
 ---
 
@@ -435,3 +435,44 @@ ZERO free parameters — the discriminator the earlier work said it needed.
 Refutes the SPECIFIC pairing as an explanation of the cumulants. Does NOT touch
 CoordinationSaturation (a statement about A -> infinity, unaffected by having no
 A <= 4 signature), and does NOT refute two-term structures generally.
+
+
+## SCREENED THE FINGERPRINT — 0 hits, and the METHOD result is the keeper (2026-08-30)
+
+Probe: `computations/probes/fingerprint_screen_zero_parameter_probe.py` (2/2).
+
+**Exploited an asymmetry first**: f(4) = B(4)/B(2) = 12.71963154 does not involve
+the A=3 binding at all, so it is CONVENTION-INDEPENDENT; f(3) carries the whole
+4.7% band [3.641123, 3.812787].
+
+### RESULT 1 — a free parameter destroys the test (this is the durable one)
+Design A: fit each one-parameter family to the solid f(4), predict f(3). Ten
+families, ONE hit (alpha^A * A at alpha = 2.5219 -> f(3) = 3.7828).
+
+**That hit is exactly chance.** The 9 valid predictions span 3.089..4.820 (range
+1.731); the band is 0.172; per-candidate chance 9.9%; EXPECTED hits 0.89;
+observed 1. Spending the f(4) constraint on a fitted parameter leaves ONE
+prediction against a 4.7% band — a ~10% false-positive filter.
+
+**So the fingerprint discriminates only at ZERO free parameters.** That is a
+constraint on how any future candidate may be tested, and it is the useful output
+of this turn.
+
+### RESULT 2 — zero-parameter screen: 0 of 14
+Both numbers predicted, nothing fitted, q0 at the proton pin. Closest overall is
+the central binomial C(2n,n) at 8.45% / 8.28% — not a hit, and unremarkable among
+14 candidates.
+
+### RESULT 3 — the miss is STRUCTURED
+The factorial family lands f(3) ~ 3.00-3.04 against a measured 3.64-3.81 (low by
+16-18%), while [n]_q! is within **1.66%** on f(4). They get the A=4 growth roughly
+right and the A=3 step badly wrong: b3/b2 ~ 0 where the measurement wants 0.64.
+
+That is the arc's recurring defect in the fingerprint's own coordinates — **a
+smooth growth law reproduces b4 far better than b3.** Whatever supplies b3 is not
+a smooth growth law.
+
+### SCOPE
+Honest negative. Derives nothing, refutes no named framework claim, and is NOT an
+enumeration — 14 hand-chosen functions is a sample. Do not cite it as 'the
+fingerprint has been screened'.
