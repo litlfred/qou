@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T09:00:27Z
+updated_at: 2026-08-30T09:08:42Z
 ---
 
 ## What is ESTABLISHED (two independent proofs)
@@ -113,3 +113,49 @@ form.
 So qou-6hm4 part (i) should be re-scoped from "wrong row order in one 2026-05-02
 witness" to "the H_3 weight vector is not a trace, corpus-wide". This bean is
 that cause; qou-6hm4 is one of its symptoms.
+
+
+## 2026-08-30 — BLAST RADIUS MEASURED (not inferred)
+
+Method: perturb ONLY the 6th weight (z^3 -> z^3 * 1.5) at each live site, in a
+detached worktree, and see whether the producer's output moves. MOVES = the 6th
+basis element is genuinely reached.
+
+### CONFIRMED AFFECTED — 8
+
+    ch-bond-writhe-lp.py:30
+    compound_shift_nf.py:257
+    h4_markov_character_decomposition.py:111        (also exits 0 -> 1)
+    hh-trefoil-corrected.py:51
+    intermediate_knot_detection.py:31
+    probes/markov_reduction_h3_to_h4_verify.py:115  (also exits 0 -> 1)
+    probes/nucleon-lp-convention-probe.py:91
+    substrate/hecke_core_symbolic.py:161            -> via shift_from_nf_basis.py
+
+The last one needed a second measurement and is the important one. Run
+standalone it reports "no-move", because it is a DEFINITION module -- executing
+it computes nothing. That is the same harness artefact that made qbeta_utils
+look INERT earlier in this bean, and I nearly recorded it the same way.
+Perturbing the definition and running its CONSUMER, `shift_from_nf_basis.py`,
+gives MOVES. So the core module's defect does propagate.
+
+### CARRIES THE LITERAL BUT DOES NOT REACH IT — 3
+
+    basis_knot_tables.py:54
+    jet_knot_invariants.py:56
+    photon_operator_table.py:60
+
+Still worth fixing (the literal is wrong and will bite the next reader), but no
+committed number depends on it.
+
+### NOT MEASURED — 1
+
+    atom_mass_derived.py   (timeout at 240 s)
+
+### So the count is 8 affected, 3 inert-but-wrong, 1 unmeasured
+
+NOT "13 broken producers", which is what a grep alone would have suggested, and
+not "1 live file", which is what my first too-narrow grep suggested. Two of the
+eight also FAIL outright under perturbation (exit 0 -> 1), which means their own
+assertions are sensitive to this weight -- those are the two most likely to
+reveal what the correct value does.
