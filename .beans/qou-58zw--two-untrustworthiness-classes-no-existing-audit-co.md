@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T21:50:02Z
+updated_at: 2026-08-30T21:55:16Z
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -360,3 +360,68 @@ shrank) has a detector and 11 verified findings.
 **Not done here**: draining the 11. Each is a decision about whether to
 regenerate a witness (deleting recorded analysis) or restore the producing code,
 and `qou-58zw` explicitly declined to overwrite one for that reason.
+
+
+---
+
+## Following the 11 — and a correction to my own framing
+
+I wrote that `C_knot_fitted_deficit` "deserves its own look: a key with *fitted*
+in its name, recorded in a committed witness, whose producing code exists
+nowhere." That phrasing implies laundering. **Read, it is the opposite.**
+
+The orphaned block's own `conclusion` field:
+
+> **RETRACTED. NOT zero free parameters** — AME closure requires the fitted
+> `C_knot = 5.852` deficit ratio. The Δ_λ gate remains open for the deuteron.
+> The genuine zero-parameter deuteron closure is the scalar endomorphism
+> `B = m_e·Vol(𝓑₃)·Δtr = +0.19%`, not this.
+
+The number is recorded **as the evidence for a retraction**, and the fit is
+named as a fit — the honest disposition AGENTS.md requires. Corroborated
+corpus-wide: `C_knot` / `5.852086` appears in **81 files** outside witnesses,
+and `docs/audits/2026-08-02-deuteron-symbolic-closed-form-trefoil-qinvariant.md`
+calls it *"the fitted `C_knot`"* and a *"categorical master-formula
+normalization artifact"*. Nothing is passing it off as derived.
+
+**What IS wrong is narrower and still real:** the producer that computed the
+retraction is gone, so `5.852086` cannot be re-derived. An unreproducible
+retraction is much better than an unreproducible claim, and it is not nothing.
+
+### The high-impact one is `per-irrep-pole-proton-h3`, and it converges with an independent finding
+
+Citation surface, measured:
+
+| witness | content/ | docs/ | beans | read by .py |
+|---|---|---|---|---|
+| `per-irrep-pole-proton-h3` | **2** | 4 | 2 | 2 |
+| `deuteron-binding-interface-closure` | 0 | 3 | 1 | 1 |
+| `deltalambda/b1-kappa-window-extension` | 0 | 0 | 1 | 1 |
+
+The proton one is cited from reader-facing prose —
+`mass-theory/per-nucleon-shift-additive-linearity-proof.md:42` links the witness
+directly.
+
+And that block's `.qa.json` sidecar **already carries a MAJOR finding on the
+same two witnesses, reached from the other direction**: an agent review recorded
+that the block *"reports their numbers as confirmations"* while both witnesses
+are committed **failing** — proton `full_tr_M_u_pole_eq_shift_NF_proton`
+`computed: 18, expected: 19, passed: false`; deuteron `computed: 38, expected:
+40`. The same sidecar names `per_irrep_pole_proton_h3.py` and
+`per_irrep_pole_deuteron_h6.py` as producers lost to token-substitution sweep
+damage ("the canonical formalism" standing in for a script name, four sites in
+one block).
+
+**So two independent routes land on the same pair.** That review found the
+*numbers* wrong; this audit found the *producing code* gone. Together they say
+the failing number cannot even be re-derived — and my `scriptFile` resolution
+supplies the missing third piece: the witnesses record
+`scriptFile: per_irrep_pole_atom.py`, a generalised producer that took over from
+both per-atom scripts.
+
+### Still not drained, and still the author's call
+
+Each of the 11 is a choice between regenerating a witness — which deletes
+recorded analysis, including a retraction — and restoring producing code from
+history. The `per_irrep_pole_*` pair is the one with a reader-facing consumer
+and an existing MAJOR sidecar finding, so it is where the value is.
