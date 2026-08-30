@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-25T03:29:22Z
-updated_at: 2026-08-30T04:31:01Z
+updated_at: 2026-08-30T04:49:25Z
 ---
 
 ## 2026-08-30 — the whole Hecke presentation now holds for the `T_w` operators
@@ -122,3 +122,47 @@ induction step gets `k ≤ n` and truncation cannot bite again.
 4. Over a **field**: with `linearIndependent_Tw` giving `≥`, conclude `orbitMap`
    injective and make `basisTw` unconditional. Note this last step wants
    `[Field K]`; `basisTw` as stated is over any `CommRing`.
+
+
+## 2026-08-30 — CLOSED over a field: the `T_w` ARE a basis, and Matsumoto is never used
+
+`QOU/Hecke/TwBasisField.lean`:
+
+```lean
+theorem finrank_eq_factorial : Module.finrank K (IwahoriHecke K q n) = (n+1)!
+theorem orbitMap_injective   : Function.Injective (orbitMap K q n)
+noncomputable def basisTwOfField :
+    Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)
+@[simp] theorem coe_basisTwOfField : ⇑(basisTwOfField K q n) = Tw K q n
+```
+
+The two halves meet: `exists_spanning_finset` gives `≤ (n+1)!`,
+`orbitMap_surjective` gives `≥ (n+1)!`, and a surjection between spaces of equal
+finite dimension is injective — exactly the hypothesis `basisTw` was carrying.
+
+**Matsumoto is never used.** `T_w` is the product along *some* reduced word;
+well-definedness is never needed, because along any reduced word the operators
+merely walk the basis, so `orbitMap (T_w) = single w 1` whichever word was
+chosen. Mathlib lists Matsumoto as an open TODO (`Coxeter/Basic.lean:78`).
+
+**The field is used in exactly one file.** Everything upstream — the Coxeter
+bridge, the `Rs` relations, the representation, the spanning bound, the
+independence — holds over an arbitrary commutative ring. If the basis is wanted
+over `ℤ[q,q⁻¹]`, `TwBasisField.lean` is the only file to redo.
+
+Whole 14-file arc: `lean`-direct exit 0, no warnings, `#print axioms` clean on
+every declaration, and greps clean for `sorry` / `native_decide` / `axiom` /
+`: True` / `:= trivial`.
+
+### What this unblocks
+
+`qou-0y6h` (Geck–Pfeiffer `det(Gram) = ∏ Schur`) was gated on this and is now
+unblocked *over a field*. The `WenzlCriterion` / `SchurElementCriterion`
+discharge is the consumer.
+
+### What is still open on the Hecke side
+
+* The basis over a general commutative ring (only `TwBasisField.lean` blocks it).
+* Matsumoto itself, as a standalone upstreamable contribution — no longer needed
+  here, but still absent from Mathlib and still the honest statement of what the
+  general-Coxeter route would want. Worth its own bean if anyone wants it.
