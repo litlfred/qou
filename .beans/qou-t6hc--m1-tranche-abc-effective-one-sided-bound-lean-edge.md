@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T18:18:49Z
+updated_at: 2026-08-30T18:33:31Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -734,3 +734,49 @@ Lean hypothesis instead of prose spread across a dozen probes.**
 **STILL OPEN.** qou-k5r5 OPEN, and on this route it stays open until Mathlib
 grows an effective limit-shape theory — or until someone finds a bound with more
 than 0.047% of room.
+
+
+---
+
+## Leg A, 2026-08-30 (tenth) — the area constraint: 160× more room
+
+**The lever was sitting unused.** Every bound so far used only `D(0)`, `λ₁` and
+1-Lipschitz. The global constraint **`Σ_c D(c) = n`** was never touched, and it is
+worth more than both previous refinements combined:
+
+    monotonicity:  a·D(a) ≤ Σ_{c<a} D(c)
+    1-Lipschitz:   D(a)(D(a)+1)/2 ≤ Σ_{c≥a} D(c)     (the tail triangle)
+    together:      a·D(a) + D(a)²/2 ≤ A_σ
+              ⟹    D(a) ≤ √(a² + 2A) − a
+
+| bound | B_opp → | total | margin |
+|---|---|---|---|
+| crude `D(0)` | 0.675475 | 1.005709 | **fails** 0.57% |
+| refined `min(D0, λ₁−a)` | 0.669299 | 0.999534 | 0.047% |
+| **+ area** `√(a²+2A) − a` | **0.594394** | **0.924629** | **7.54%** |
+
+**Why it works:** the near-side bound `min(D0, λ₁−a)` is nearly *vacuous* away
+from the origin — it permits `D(1) = 0.637` where the truth is `φ(1) = 0.218`.
+The area constraint is what closes that gap.
+
+**HONEST CAVEAT, and it is not small.** With only the fully deterministic
+`A_σ ≤ n` the margin is **0.094%** — still knife-edge. The jump to 7.54% needs
+`A_σ → n/2`, i.e. the boxes splitting evenly between the two sides. That is the
+conjugation symmetry of the limit shape: the same *class* of input as
+`D(0)/√n → 2/π`, arguably more robust, but an input all the same.
+
+**A control failure of mine, worth recording.** My first check of the area
+inequality reported **5870 violations of a true statement**. The bookkeeping was
+wrong: the `c = 0` diagonal belongs to the **positive** side's sum, so the
+negative side's total is `A_- + D(0)`, not `A_-`. Corrected: **0 violations**
+across 31,766 positive-side and 27,259 negative-side diagonals. Both the
+inequality and the c=0 subtlety are now checks in the probe.
+
+**LITERATURE.** Not needed for this step — area, monotonicity and 1-Lipschitz are
+elementary and Lean-reachable from lemmas already proved. Literature *is* needed
+for the finite-n crossover, specifically effective versions of `λ₁/√n → 2`,
+`D(0)/√n → 2/π` and `A_σ/n → 1/2`. **What changes is that with 7.5% of room
+instead of 0.047%, ordinary effective limit-shape bounds become plausibly usable
+— they were hopeless before.**
+
+**STILL OPEN.** qou-k5r5 OPEN.

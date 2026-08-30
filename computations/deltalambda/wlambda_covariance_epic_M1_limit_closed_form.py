@@ -174,6 +174,46 @@ def main():
           f"reasons, of which the sharpest is that this is asymptotic and the "
           f"finite-n budget is WORSE (B_opp rises to its limit, Ehat falls to its).")
 
+    # ---- THE AREA CONSTRAINT: the big unused lever ----
+    #
+    # Everything above uses only D(0), lambda_1 and 1-Lipschitz. The global
+    # constraint sum_c D(c) = n was never used, and it is worth far more than
+    # either refinement so far. Two consequences, both elementary:
+    #
+    #   monotonicity:  a * D(a) <= sum_{c<a} D(c)
+    #   1-Lipschitz:   D(a)(D(a)+1)/2 <= sum_{c>=a} D(c)   (the tail triangle)
+    #   together:      a D(a) + D(a)^2/2 <= A_sigma
+    #             =>   D(a) <= sqrt(a^2 + 2 A) - a
+    #
+    # in rescaled units with A = A_sigma/n. That is a MUCH better near-side bound
+    # than min(D0, L-a), which is nearly vacuous away from the origin.
+    A_half = mpf(1) / 2      # A_sigma/n -> 1/2, by conjugation symmetry of VKLS
+    A_det = mpf(1)           # A_sigma <= n, with no limit-shape input at all
+    far = lambda r: max(mpf(0), D0 - r)                                # noqa: E731
+    b_area = Bopp(lambda a, r: min(D0, L1 - a, sqrt(a * a + 2 * A_half) - a) - far(r))
+    b_det = Bopp(lambda a, r: min(D0, L1 - a, sqrt(a * a + 2 * A_det) - a) - far(r))
+
+    check("THE AREA CONSTRAINT buys ~160x more room than the refinement above",
+          S_same + b_area < 1 and (1 - S_same - b_area) > 50 * (1 - S_same - refined),
+          f"adding D(a) <= sqrt(a^2 + 2A) - a with A = 1/2 gives B_opp -> "
+          f"{nstr(b_area, 7)}, total {nstr(S_same + b_area, 7)} -- a margin of "
+          f"{nstr(1 - S_same - b_area, 3)} ({nstr((1 - S_same - b_area) * 100, 3)}%) "
+          f"against the {nstr((1 - S_same - refined) * 100, 3)}% of the previous "
+          f"refinement. The near-side bound min(D0, L-a) is nearly vacuous away "
+          f"from the origin -- it allows D(1) = 0.637 where the truth is 0.218 -- "
+          f"and the area constraint is what closes that.")
+
+    check("HONEST: the big margin needs A -> n/2, one more limit-shape fact",
+          S_same + b_det < 1,
+          f"with only the fully deterministic A_sigma <= n (no limit-shape input) "
+          f"the bound gives {nstr(b_det, 7)}, total {nstr(S_same + b_det, 7)} -- a "
+          f"margin of just {nstr(1 - S_same - b_det, 3)}. The jump to "
+          f"{nstr((1 - S_same - b_area) * 100, 3)}% comes from A_sigma -> n/2, "
+          f"i.e. the boxes splitting evenly between the two sides, which is the "
+          f"conjugation symmetry of the limit shape -- the same CLASS of input as "
+          f"D(0)/sqrt(n) -> 2/pi, and arguably more robust, but an input all the "
+          f"same. Quoting 7.5% without saying so would be dishonest.")
+
     check("for scale: the bound is ~2x the truth, and 2x is nearly enough",
           crude / S_same > 2,
           f"S_opp itself -> {nstr(S_same, 7)} while the crude bound gives "
@@ -251,6 +291,35 @@ def main():
           f"({100 * tighter // nedge}%), which is where the gain in the integrals "
           f"comes from. Corresponds to "
           f"QOU.BraidKnot.M1EdgeCalculus.diagLen_sub_transpose_le_refined.")
+
+    # CONTROL for the area inequality itself, with the bookkeeping that first
+    # got it wrong: the c = 0 diagonal belongs to the POSITIVE side's sum, so the
+    # negative side's total is A_- + D(0), not A_-. Checking against A_- alone
+    # reported 3974 violations -- of a true statement.
+    apos = aneg = badp = badn = 0
+    for nn in range(1, 23):
+        for lam in _partitions(nn):
+            Dp = _prof(lam)
+            Ap = sum(v for c, v in Dp.items() if c >= 0)
+            Am = sum(v for c, v in Dp.items() if c < 0) + Dp.get(0, 0)
+            for c, dv in Dp.items():
+                aa = abs(c)
+                lhs = aa * dv + dv * (dv + 1) // 2
+                if c >= 0:
+                    apos += 1
+                    if lhs > Ap:
+                        badp += 1
+                else:
+                    aneg += 1
+                    if lhs > Am:
+                        badn += 1
+    check("CONTROL: the AREA inequality a·D(a) + D(a)(D(a)+1)/2 <= A_side holds",
+          badp == 0 and badn == 0,
+          f"all partitions n <= 22: {apos} positive-side diagonals with {badp} "
+          f"violations, {aneg} negative-side with {badn}. The negative side is "
+          f"measured against A_- + D(0), because the c = 0 diagonal is counted on "
+          f"the positive side -- checking it against A_- alone reports 3974 "
+          f"violations of a true statement, which is how this was first got wrong.")
 
     check("CONTROL: ...and that check discriminates -- tightening by 2 fails",
           tight2 > 0,

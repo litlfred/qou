@@ -38,6 +38,16 @@
    "detail": "adding N^tau(r) <= min(r, D(0)) and N^sigma(a) >= max(0, a - (l1-D0)) gives B_opp -> 0.66929883, total 0.99953355 -- under 1 by only 0.000466 (0.0466%). Both refinements are elementary: the first is D(c) >= D(0) - c, i.e. `diagLen_le_add_sub`, already proved sorry-free; the second is the same telescoping identity read from the other end. NOT A PROOF -- see the header for the three reasons, of which the sharpest is that this is asymptotic and the finite-n budget is WORSE (B_opp rises to its limit, Ehat falls to its)."
   },
   {
+   "name": "THE AREA CONSTRAINT buys ~160x more room than the refinement above",
+   "pass": true,
+   "detail": "adding D(a) <= sqrt(a^2 + 2A) - a with A = 1/2 gives B_opp -> 0.5943941, total 0.9246288 -- a margin of 0.0754 (7.54%) against the 0.0466% of the previous refinement. The near-side bound min(D0, L-a) is nearly vacuous away from the origin -- it allows D(1) = 0.637 where the truth is 0.218 -- and the area constraint is what closes that."
+  },
+  {
+   "name": "HONEST: the big margin needs A -> n/2, one more limit-shape fact",
+   "pass": true,
+   "detail": "with only the fully deterministic A_sigma <= n (no limit-shape input) the bound gives 0.6688232, total 0.9990579 -- a margin of just 0.000942. The jump to 7.54% comes from A_sigma -> n/2, i.e. the boxes splitting evenly between the two sides, which is the conjugation symmetry of the limit shape -- the same CLASS of input as D(0)/sqrt(n) -> 2/pi, and arguably more robust, but an input all the same. Quoting 7.5% without saying so would be dishonest."
+  },
+  {
    "name": "for scale: the bound is ~2x the truth, and 2x is nearly enough",
    "pass": true,
    "detail": "S_opp itself -> 0.3302347 while the crude bound gives 0.6754746 -- a factor of 2.045. The refined bound is 2.027x. The budget tolerates a factor of 2.028x, which is why refinements of a few tenths of a percent decide it."
@@ -48,12 +58,17 @@
    "detail": "brute force over every opposite-sign edge at n = 6..20 (6282 edges): 0 violations of the crude bound, 0 of the refined one. The refined bound is STRICTLY TIGHTER on 2696 of them (42%), which is where the gain in the integrals comes from. Corresponds to QOU.BraidKnot.M1EdgeCalculus.diagLen_sub_transpose_le_refined."
   },
   {
+   "name": "CONTROL: the AREA inequality a\u00b7D(a) + D(a)(D(a)+1)/2 <= A_side holds",
+   "pass": true,
+   "detail": "all partitions n <= 22: 31766 positive-side diagonals with 0 violations, 27259 negative-side with 0. The negative side is measured against A_- + D(0), because the c = 0 diagonal is counted on the positive side -- checking it against A_- alone reports 3974 violations of a true statement, which is how this was first got wrong."
+  },
+  {
    "name": "CONTROL: ...and that check discriminates -- tightening by 2 fails",
    "pass": true,
    "detail": "minimum slack of the refined bound over the same edges is 1, and tightening it by 2 is violated on 1896 edges. So the bound is essentially attained -- the residual slack is O(1), hence o(sqrt n) and invisible to the rescaled integrals above. Without this the 'no violations' line would be consistent with a hopelessly loose bound."
   }
  ],
- "passed": 8,
- "total": 8,
- "ms": 40565
+ "passed": 11,
+ "total": 11,
+ "ms": 135883
 }
