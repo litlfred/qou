@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-24T20:03:10Z
+updated_at: 2026-08-30T03:53:16Z
 ---
 
 
@@ -138,3 +138,55 @@ The instance. `qou-0cyu` names the route — Mathlib's
 `exists_algEquiv_pi_matrix_divisionRing_finite` plus `IsHeckeOfFullRank`
 (finrank = n!) — and that route is now unobstructed. Leaving this `todo` for
 that half rather than closing on the half that is done.
+
+
+---
+
+## RESOLVED as stated, 2026-08-30 — and the fix does not do what this bean asked for
+
+**The defect above is FIXED.** PR #5710 (`30e5df8938`) removed the
+`trace_decomp` field and replaced it with
+
+    block_scaling : tr_M(x * pi_lambda lam) = y_lambda lam * chi_lambda lam x
+
+so `Hecke.Wedderburn.trace_decomposition` now *derives* the summation identity
+from `complete` (via `trace_exhaustive`) plus `block_scaling`. It no longer
+projects a field. The `#1 self-assuming` shape this bean names is gone.
+
+**But the class is still degenerate, and by a mechanism this bean did not
+anticipate.** Encoding the block-scaling sentence required adding `chi_lambda`
+as a SECOND free field, because the class stores its blocks abstractly and has
+nothing to compute the character from. An equation on the PRODUCT
+`y_lambda * chi_lambda` pins neither factor. Machine-checked in PR #6097:
+
+    theorem yLambda_not_pinned (n : ℕ) (c : ℚ) (hc : c ≠ 0) :
+        ∃ WD : WedderburnDecomp (R := ℚ) n 1 ℚ, ∀ lam, WD.y_lambda lam = c
+
+Every nonzero rational is realised as the weight at every partition, by
+`rankOneWedderburnScaled` — the rank-one witness with `y_lambda ≡ c` and the
+block character rescaled by `c⁻¹`. So an instance STILL carries no information
+about the Ocneanu weights.
+
+**Collateral I caused and have fixed.** Removing `trace_decomp` broke
+`QOU/Hecke/WedderburnRankDegeneracy.lean`, whose `rankOneWedderburn` instance
+discharged it. That file was red on `main` from 2026-08-24 to 2026-08-30, six
+days. My blast-radius check in #5710 grepped for `[WedderburnDecomp …]`
+HYPOTHESIS BINDERS (of which there are genuinely zero outside the defining
+file) — and an *instance* is not a hypothesis binder. A `lean`-direct run also
+returned exit 0, against a five-day-stale olean for the dependency. Both traps
+are now recorded in `.claude/agent-memory/lean-verifier/verification-harness.md`.
+
+## What is actually still open (this is the live remainder)
+
+Two things, both Mathas (1999) Thm 3.43, neither in Mathlib:
+
+1. `chi_lambda` must be COMPUTED — the matrix trace of a representation
+   `rho_lambda : A → M_{f^λ}(R)` — not carried as a field. Only then is
+   `block_scaling` an equation in one unknown.
+2. `SpechtDimension.dim` must be tied to its partition. It is currently a free
+   `ℕ` with the hook-length formula only in its docstring, which is why the
+   rank-one exclusion has to be argued from `Module.finrank ℚ ℚ ≠ n!` rather
+   than from anything the class says.
+
+Until those land, do not build an instance: it would silence the audit and
+prove nothing. Scope (b) structural exclusion, per AGENTS.md.
