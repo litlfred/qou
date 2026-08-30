@@ -354,12 +354,22 @@ def main():
     infl = [r["infl"] for r in tail]
     PI2 = mp.pi / 2
     worst = max(r["infl"] for r in rows)
-    check("SURVIVES: inflation E[slope|same]/E[global density|same] stays far under pi/2",
+    # CORRECTED (see ..._M1_kappa_site_distribution.py). An earlier version of this
+    # check called 0.494 against pi/2 "comfortable headroom". It is not headroom.
+    # E_omega[D(0)/lambda_1] -> 1/pi, so asymptotically infl < pi/2 is the SAME
+    # statement as E_omega[density] < 1/2 -- the pointwise limit-shape bound that
+    # ..._edge_ratio_decomposition.py already showed to be EXACTLY CRITICAL. The
+    # check still measures something real; it just is not independent evidence.
+    check("inflation E[slope|same]/E[global density|same] < pi/2 (NOT independent)",
           mpf(worst.numerator) / mpf(worst.denominator) < PI2,
           f"max over n = 4..{nmax} is {show(worst)} against pi/2 = {nstr(PI2, 6)}; "
           f"last eight {[show(v, 4) for v in infl]} -- rising, and its limit is NOT "
           f"determined by this range. Below 1 throughout, i.e. the omega-chosen "
-          f"intervals drop LESS than the diagram's own average, not more.")
+          f"intervals drop LESS than the diagram's own average. CAVEAT: "
+          f"asymptotically this inequality IS the critical pointwise bound "
+          f"E[density] < 1/2, not a margin on top of it. What does bear on the "
+          f"route is WHERE kappa sits, measured in ..._M1_kappa_site_distribution.py: "
+          f"infl -> pi/2 needs kappa at the origin, and kappa moves away from it.")
 
     # NOT scoped to the tail to make it pass: n = 4 genuinely violates it (25/48),
     # because lambda = (2,2) has lambda_1 = D(0). The exception is named, and the

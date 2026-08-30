@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T14:16:28Z
+updated_at: 2026-08-30T14:37:01Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -342,3 +342,64 @@ are now elementary and finite (a telescoping sum, a transpose symmetry) instead
 of Berry–Esseen-grade asymptotics; what it does not buy is the conclusion.
 
 **STILL OPEN.** qou-k5r5 OPEN. Monotonicity remains observed on n = 9..60.
+
+
+---
+
+## Leg A, 2026-08-30 (third) — what the inflation factor IS, and a correction to my own report
+
+**THE IDENTITY, and it is now Lean.** By the telescoping lemmas a same-sign slope
+is the density of drop sites `δ(t) := D(t) − D(t+1) ∈ {0,1}` in the edge's
+content interval. Give each edge weight `w_e` and let it spread that weight
+uniformly over the sites it covers, `κ(t) := Σ_{e ∋ t} w_e/g_e`. Then
+
+    Σ_t κ(t) = Σ_e w_e          -- each edge spreads exactly its own weight
+    E_ω[density] = Σ_t κ(t) δ(t) / Σ_e w_e
+
+So **κ, normalised, is a probability distribution on SITES**, and the ω-average
+interval density is exactly *the κ-mass sitting on drop sites*. There are `D(0)`
+drop sites among `λ₁` (telescoping), so uniform κ gives exactly `D(0)/λ₁`, i.e.
+**infl = 1**. The inflation factor is therefore not a fitted constant and not
+mysterious: it is precisely κ's departure from uniform, and `infl > 1` iff ω
+over-weights drop sites.
+
+**Formalized sorry-free** in `QOU/BraidKnot/M1EdgeCalculus.lean` (now 21
+theorems, up from 8 at the start of this arc; all `#print axioms` = the standard
+three): `kappa` (def), `kappa_sum`, `sum_drop_eq`,
+`weighted_density_eq_kappa_dot`, `kappa_uniform_dot`, `diagLen_rowLen_zero`,
+`sum_drop_diagLen`. The last is the capstone for actual diagrams: the profile
+falls from `D(0)` to `0` across `[0, λ₁)`, so the global drop density is exactly
+`D(0)/λ₁` — an identity, not an estimate. Both κ identities verified exactly as
+Fractions at every n measured.
+
+**CORRECTION TO MY OWN REPORT.** Last turn I wrote that `infl = 0.494` against
+`π/2 = 1.5708` was "comfortably inside" and treated it as headroom. **It is not
+headroom.** `E_ω[D(0)/λ₁] → 1/π`, so asymptotically
+
+    infl < π/2   ⟺   E_ω[density] < 1/2
+
+and `1/2` is exactly the pointwise limit-shape bound that
+`..._edge_ratio_decomposition.py` had *already* shown to be **critical**. So the
+FALSIFIER-2 check was restating the constraint, not testing a margin on top of
+it. The check text and the probe are corrected in place.
+
+**WHAT ACTUALLY BEARS ON THE ROUTE.** `1/2` is the pointwise maximum of the VKLS
+local drop density `ρ(u) = (1 − (2/π)arcsin(u/2))/2`, attained **only at u = 0**.
+So `infl → π/2` requires κ to concentrate **at the origin**. Measured over
+n = 12..48, κ's mean site position moves *outward* — 0.701, 0.726, 0.790, 0.809,
+0.805, 0.819, 0.844, 0.856 — and then **plateaus**: 0.8563 (n=40), 0.85476 (44),
+0.85348 (48), i.e. it settles near **0.853** rather than continuing to rise. The
+VKLS local density there gives a ceiling of **0.3545**, also settled (0.35418,
+0.35440, 0.35451), not 0.5. Taken at face value that puts `infl → π·0.3545 ≈
+1.11`, well under π/2 = 1.5708.
+
+**That is evidence, not proof**, and the weak point is explicit: the ratio of the
+actual `E[density]` to that VKLS-predicted ceiling is only 0.538 at n = 48 and
+still climbing (0.484, 0.517, 0.538), so while the *ceiling* now looks settled,
+n ≤ 48 does not pin where `E[density]` lands under it. What the measurement does
+rule out is the failure mode I flagged last turn — κ is demonstrably not heading
+for the origin, so the `infl → π/2` scenario is not what is happening.
+
+**STILL OPEN.** qou-k5r5 OPEN. No bound on infl is proved and none can be from
+`diagLen` alone: κ is a property of the Plancherel up-down edge measure, not of
+Young diagrams.

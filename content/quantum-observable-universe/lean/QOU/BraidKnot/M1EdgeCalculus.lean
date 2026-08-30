@@ -263,4 +263,161 @@ theorem abs_diagLen_sub_transpose_le (u v : ℕ) :
   rw [abs_le]
   omega
 
+/-! ## The site distribution `κ`, and what the "inflation factor" actually is
+
+The `M₁ > 0` route needs `E_ω[slope]`, and by the telescoping lemmas above a
+same-sign slope is the *density of drop sites* `δ t := D t − D (t+1) ∈ {0,1}`
+in the edge's content interval. The measured quantity that governs the route is
+
+    infl := E_ω[density] / E_ω[D 0 / λ₁]
+
+— how much more the ω-chosen intervals drop than the diagram's own global
+average. It is measured at 0.494 at `n = 46` and rising
+(`wlambda_covariance_epic_M1_telescoping_route.py`).
+
+This section says what that ratio *is*. Give each interval `e` weight `w e` and
+let it spread that weight uniformly over the sites it covers:
+
+    κ t := ∑_{e ∋ t} w e / (hi e − lo e).
+
+Two facts, both elementary and both proved here:
+
+* `kappa_sum` — `∑_t κ t = ∑_e w e`. Each interval contributes `g · (1/g) = 1`,
+  so **κ is (after normalising) a probability distribution on SITES**.
+* `weighted_density_eq_kappa_dot` — the weighted sum of interval densities
+  equals `∑_t κ t · δ t`.
+
+Together: the ω-average interval density is exactly *the κ-mass sitting on drop
+sites*. Since there are `D 0` drop sites among `T` (the telescoping identity),
+uniform κ gives exactly the global density `D 0 / T`, i.e. `infl = 1`. So the
+inflation factor is neither mysterious nor a fitted constant — it is precisely
+the departure of κ from uniform, and `infl > 1` iff ω over-weights drop sites.
+
+What this does NOT do is bound it. κ is determined by the Plancherel up-down
+edge measure, not by any property of a Young diagram, so no theorem about
+`diagLen` can constrain it; that is measurement's job. Recorded because the
+identity is what makes the measured number mean something.
+
+Two consequences worth stating, since one of them corrects a claim I made
+before proving any of this:
+
+* `E_ω[D 0 / λ₁] → 1/π`, so asymptotically `infl < π/2` is *the same statement*
+  as `E_ω[density] < 1/2` — the pointwise limit-shape bound already known to be
+  exactly critical. I had reported "infl = 0.494 against π/2" as comfortable
+  headroom. It is the constraint restated, not headroom.
+* `1/2` is the pointwise maximum of the VKLS local drop density, attained only
+  at the main diagonal. So `infl → π/2` would require κ to concentrate at the
+  ORIGIN. Measured over `n = 12..48`, κ's mean site moves *away* from it and
+  then **plateaus** near `0.853·√n` — it is not heading for the origin, which
+  is the failure mode that would sink the route. Evidence, not proof: the
+  ceiling implied by that position has settled at ≈0.3545 (so `infl → ≈1.11`),
+  but the measured density is still only ~54% of it and climbing.
+
+`sum_drop_diagLen` below is the same telescoping identity instantiated at an
+actual Young diagram: the profile falls from `D 0` to `0` across `[0, λ₁)`, so
+the diagram's global drop density is exactly `D 0 / λ₁`. -/
+
+section Kappa
+
+variable {ι : Type*}
+
+/-- `κ t` — the weight a finite family of intervals `[lo e, hi e)` puts on site
+`t`, each interval spreading its weight `w e` uniformly over the sites it
+covers. -/
+noncomputable def kappa (E : Finset ι) (lo hi : ι → ℕ) (w : ι → ℚ) (t : ℕ) : ℚ :=
+  ∑ e ∈ E, if t ∈ Finset.Ico (lo e) (hi e) then w e / ((hi e : ℚ) - (lo e : ℚ)) else 0
+
+/-- **κ is a distribution on sites.** Each interval spreads exactly its own
+weight, so the site weights sum to the total interval weight. -/
+theorem kappa_sum (E : Finset ι) (lo hi : ι → ℕ) (w : ι → ℚ) (T : ℕ)
+    (hsub : ∀ e ∈ E, Finset.Ico (lo e) (hi e) ⊆ Finset.range T)
+    (hpos : ∀ e ∈ E, lo e < hi e) :
+    ∑ t ∈ Finset.range T, kappa E lo hi w t = ∑ e ∈ E, w e := by
+  unfold kappa
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun e he => ?_
+  rw [Finset.sum_ite_mem, Finset.inter_eq_right.mpr (hsub e he), Finset.sum_const,
+    Nat.card_Ico, nsmul_eq_mul]
+  have h : ((hi e : ℚ) - (lo e : ℚ)) ≠ 0 := by
+    have := hpos e he
+    have : (lo e : ℚ) < (hi e : ℚ) := by exact_mod_cast this
+    linarith
+  rw [Nat.cast_sub (le_of_lt (hpos e he))]
+  field_simp
+
+/-- Telescoping over an interval: the total fall of `D` across `[lo, hi)` is
+`D lo − D hi`, whatever `D` is. -/
+theorem sum_drop_eq (D : ℕ → ℤ) {lo hi : ℕ} (h : lo ≤ hi) :
+    ∑ t ∈ Finset.Ico lo hi, (D t - D (t + 1)) = D lo - D hi := by
+  induction hi, h using Nat.le_induction with
+  | base => simp
+  | succ m hm ih =>
+    rw [Finset.sum_Ico_succ_top hm, ih]
+    ring
+
+/-- **The weighted average of interval densities is the κ-average of `δ`.**
+Each interval's density `(D lo − D hi)/(hi − lo)` is the mean of the one-step
+drops over its sites; weighting and exchanging the two sums replaces the
+intervals by κ. -/
+theorem weighted_density_eq_kappa_dot (E : Finset ι) (lo hi : ι → ℕ) (w : ι → ℚ)
+    (D : ℕ → ℤ) (T : ℕ)
+    (hsub : ∀ e ∈ E, Finset.Ico (lo e) (hi e) ⊆ Finset.range T)
+    (hpos : ∀ e ∈ E, lo e < hi e) :
+    ∑ e ∈ E, w e * (((D (lo e) - D (hi e) : ℤ) : ℚ) / ((hi e : ℚ) - (lo e : ℚ)))
+      = ∑ t ∈ Finset.range T, kappa E lo hi w t * ((D t - D (t + 1) : ℤ) : ℚ) := by
+  have key : ∀ e ∈ E,
+      w e * (((D (lo e) - D (hi e) : ℤ) : ℚ) / ((hi e : ℚ) - (lo e : ℚ)))
+        = ∑ t ∈ Finset.range T,
+            (if t ∈ Finset.Ico (lo e) (hi e)
+              then w e / ((hi e : ℚ) - (lo e : ℚ)) else 0) * ((D t - D (t + 1) : ℤ) : ℚ) := by
+    intro e he
+    have hle : lo e ≤ hi e := le_of_lt (hpos e he)
+    have hs : ∑ t ∈ Finset.Ico (lo e) (hi e), ((D t - D (t + 1) : ℤ) : ℚ)
+        = ((D (lo e) - D (hi e) : ℤ) : ℚ) := by
+      rw [← sum_drop_eq D hle]
+      push_cast
+      rfl
+    simp only [ite_mul, zero_mul]
+    rw [Finset.sum_ite_mem, Finset.inter_eq_right.mpr (hsub e he), ← Finset.mul_sum, hs]
+    ring
+  rw [Finset.sum_congr rfl key, Finset.sum_comm]
+  refine Finset.sum_congr rfl fun t _ => ?_
+  unfold kappa
+  rw [Finset.sum_mul]
+
+/-- **Uniform κ gives exactly the global density.** If every site carries the
+same weight, the ω-average of the interval densities collapses to the total fall
+of `D` spread over all `T` sites. So `infl = 1` is precisely the uniform case,
+and the inflation factor measures nothing but κ's departure from uniform. -/
+theorem kappa_uniform_dot (D : ℕ → ℤ) (T : ℕ) (c : ℚ) :
+    ∑ t ∈ Finset.range T, c * ((D t - D (t + 1) : ℤ) : ℚ)
+      = c * ((D 0 - D T : ℤ) : ℚ) := by
+  rw [← Finset.mul_sum]
+  congr 1
+  rw [Finset.range_eq_Ico, ← sum_drop_eq D (Nat.zero_le T)]
+  push_cast
+  rfl
+
+end Kappa
+
+/-- Past the first row every diagonal is empty: `i + λ₁ < rowLen i ≤ λ₁` is
+impossible. -/
+theorem diagLen_rowLen_zero : diagLen μ (μ.rowLen 0) = 0 := by
+  rw [diagLen, Finset.card_eq_zero, Finset.eq_empty_iff_forall_notMem]
+  intro i hi
+  rw [mem_diagIdx] at hi
+  have := μ.rowLen_anti 0 i (Nat.zero_le i)
+  omega
+
+/-- **The telescoping total for a Young diagram.** The profile falls from `D 0`
+to `0` across `[0, λ₁)`, so the sum of the one-step drops is exactly `D 0` — the
+Durfee side — and the diagram's global drop density is exactly `D 0 / λ₁`. This
+is the quantity the `M₁ > 0` route trades the effective CLT for: it is an
+identity, not an estimate. -/
+theorem sum_drop_diagLen :
+    ∑ t ∈ Finset.range (μ.rowLen 0), ((diagLen μ t : ℤ) - (diagLen μ (t + 1) : ℤ))
+      = (diagLen μ 0 : ℤ) := by
+  rw [Finset.range_eq_Ico, sum_drop_eq _ (Nat.zero_le _), diagLen_rowLen_zero]
+  simp
+
 end QOU.BraidKnot.M1EdgeCalculus
