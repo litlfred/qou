@@ -750,6 +750,32 @@
       "adjudicated_by": "claude (session 2b6a2d13), evidence: module scope + consumer measurement",
       "date": "2026-08-29",
       "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/ocneanu_param_from_fibre_dimension.py",
+      "target": "z_c",
+      "source_hash": "dd1ca8095ef4",
+      "line_when_adjudicated": "178",
+      "scope": "check_convention_c",
+      "source": "z_c = 1 / (sqrt(q) + 1 / sqrt(q))   # EXCISED — audited here, not used",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C retention, and the module says so at the site: \"EXCISED -- audited here, not used\". Its purpose is RECOGNITION, not computation: the weights the corpus once quoted are the ones z_C actually produces, so keeping this arm is what lets a reader identify a surviving C-era number wherever it turns up. Deleting it would remove that ability, which is the opposite of what excision is for. Note on why no pairing test finds this file's D arm: it is written in the parametrised fibre form z = q^N/[N]_q (equal to q^3/(q^2+1) at N=2), not the N=2 literal -- a third spelling beyond taxonomy rows 18 and 19.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: in-function docstring + refutation shape",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/ocneanu_param_from_fibre_dimension.py",
+      "target": "z_c",
+      "source_hash": "9e078dc33ffd",
+      "line_when_adjudicated": "202",
+      "scope": "check_effective_N",
+      "source": "z_c = 1 / (sqrt(q) + 1 / sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C retention: this check REFUTES z_C, by showing N_eff(z_C) is not an integer, i.e. z_C is not the Ocneanu parameter of any integer-dimensional fibre. The refutation is about z_C, so it cannot be stated without binding z_C. Note on why no pairing test finds this file's D arm: it is written in the parametrised fibre form z = q^N/[N]_q (equal to q^3/(q^2+1) at N=2), not the N=2 literal -- a third spelling beyond taxonomy rows 18 and 19.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: in-function docstring + refutation shape",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     }
   ]
 }
