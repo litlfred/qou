@@ -895,6 +895,22 @@
       "line_at_adjudication": 97,
       "scope": "<module>",
       "rationale": "NOT residual C: this probe (bean qou-3j5m) independently reconstructs THE ONLY RECORDED CONSTRUCTION, `computations/_deprecated/toffoli-braid.py`, and compares three things -- its reconstruction, the producer's committed witness, and the values published in the content blocks. All three are convention-C-era artefacts. The reconstruction matches the producer EXACTLY (symbolic zero, both diagonals), which is what establishes the recipe as the framework's; rebuilding it with z_D would compare against a construction nobody recorded and would destroy the audit's purpose, which is to locate a published-vs-construction discrepancy (3 of 4 published entries do not match). Same class as probe_h3_central_idempotents_exact: reproducing a DEFINED C-era object, not carrying residual C."
+    },
+    {
+      "path": "computations/gram_h3_det_factorization.py",
+      "target": "<return>",
+      "source_hash": "070d0c725249",
+      "line_at_adjudication": 55,
+      "scope": "build_gram_h3_symbolic",
+      "rationale": "Mirrors a LEAN-DEFINED object and must track it, not be migrated independently. The script emits the witness discharging `gramMatrix_det_ne_zero`, whose Gram entries are fixed by the Lean side; `u/(u**2+1)` is the generic-u spelling of the Markov kernel, matching Lean `markovKernel (u : R) := u / (u ^ 2 + 1)` in MarkovConventionSeparation.lean. Per AGENTS.md the Tier-2 migration that replaced `Real.sqrt q` with a generic `markovZ (u : R)` DID NOT change the convention -- it removed the square root and left C harder to see -- so this is convention C in the generic-u disguise. Migrating the Python alone would DESYNCHRONISE the witness from the theorem it discharges. The Lean-side C surface is tracked separately as qou-cxjq; this site should move when that does, and not before."
+    },
+    {
+      "path": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "target": "z_naive",
+      "source_hash": "b3ed07382e4a",
+      "line_at_adjudication": 131,
+      "scope": "main",
+      "rationale": "`z_naive` is one of the two PARAMETER-FREE magnitudes the probe fixes BEFORE comparison under its stated anti-fit discipline (the other is g_reeb); it is the object under study, named 'naive' precisely to mark it as the unrefined candidate being tested against the derived reeb magnitude and the 1/sqrt(5) ceiling. Substituting z_D would test a different candidate and invalidate the recorded comparison. Adjacent finding recorded in the source, not migrated: the companion `z_bar_even` assertion is VACUOUS -- z_bar differs from z_naive only by commuting the addition, so the difference is exactly 0 and the assertion cannot fail. The claim is true (z is bar-even) but the symmetry is syntactic, so no formulation of that test can be non-vacuous; g_bar_even by contrast is a genuine algebraic identity check. Labelled in situ so the witness's two assertions are not read as equally strong."
     }
   ]
 }

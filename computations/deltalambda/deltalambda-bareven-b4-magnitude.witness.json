@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:52:05.352273+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T09:17:46.213336+00:00",
+  "commitSha": "1c2cd0aede09ba94a3d233539d394701f0810268",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -65,8 +65,8 @@
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "8f3a031ca267",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "9d179570ce05",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
