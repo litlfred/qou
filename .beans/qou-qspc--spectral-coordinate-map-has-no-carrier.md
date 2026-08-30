@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-29T17:00:00Z
+updated_at: 2026-08-30T04:20:00Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -180,3 +180,74 @@ the *field*, but nothing still ties these eigenvalues to `spectral_half_line`'s
 `ρ : Fin 8 → ℂ`, and the blocker above stands: there is no importable ℂ-valued
 Reeb spectrum module. The widening removes a type-level obstruction to writing
 one; it does not write it. This bean stays open on that.
+
+---
+
+## Item 1 CARRIED 2026-08-30 — the blocker is lifted; the identification is still unproved
+
+The blocker stated above — *"a ℂ-valued Reeb spectrum as a library module …
+importable, that `spectral-half-line.lean` and `explicit-formula.lean` can both
+reference"* — is now satisfied by
+`QOU/AlgebraicSubstrate/ReebSpectrum.lean`. **Read the rest of this entry before
+recording the bean as closed: it is not.**
+
+### What was written
+
+`ReebSpectrum H` is a structure, not an opaque carrier: an operator
+`op : H →ₗ[ℂ] H`, eight modes, eight complex eigenvalues, and the two facts that
+make it content-bearing — `mode_ne_zero` and `is_eigen : ∀ i, op (mode i) =
+spec i • mode i`. The earlier attempt was abandoned because it would have taken
+the Reeb side as an opaque parameter, "the `holds : Prop` shape filed as
+`qou-hprp`". This one does not: an instance has to produce an operator and
+vectors satisfying a real equation, which `⟨True⟩` cannot discharge.
+
+`HasReebSpectralCoords Z R` carries the identification — `∀ i, Z.eigenvalues i =
+(Z.q : ℂ) ^ (R.spec i)` — as a `Prop` class **with no instance**. That is the
+honest open state (§3b-tax), not an omission.
+
+Two payoff theorems in `spectral-half-line.lean`, both taking the class as an
+explicit `[…]` hypothesis so the dependency is visible in the type
+(§3b-cond): `reeb_spectrum_on_critical_line` — the Reeb spectrum lies on the
+critical line — and `reeb_spectrum_fixed_by_involution`, the same as a symmetry
+statement.
+
+### The check that mattered, and what it changed
+
+A conditional theorem is worthless if its hypothesis cannot be met. That is
+exactly the defect the `False`-proving axioms in `hasse-weil-bound.lean` had, so
+it was worth proving rather than assuming — and the inhabitedness witness
+already in the file does **not** settle it: `reebSpectrumExample` has every
+`spec i = 1`, which forces `αᵢ = q` for all `i`, false for any `Z` with distinct
+eigenvalues. It witnesses that `ReebSpectrum` is inhabited and nothing about the
+class.
+
+`hasReebSpectralCoords_satisfiable` proves the real statement: for every `Z` with
+`q > 1` there **is** a `ReebSpectrum` satisfying `HasReebSpectralCoords Z`. The
+proof is a construction — take the exponents from `exists_spectral_coord` and
+diagonalise them on `Fin 8 → ℂ` with `diagOp`, modes `Pi.single i 1`.
+
+**This sharpens the gap rather than closing it, and the sharpening is the
+result.** Satisfiability says *some* operator has the Frobenius exponents as its
+spectrum — here one built from them, which is bookkeeping. The arc claims the
+framework's Reeb derivation `ξ_q` is such an operator, a statement about a
+*particular* operator, untouched by this. So: everything now rests on the choice
+of operator and nothing on the shape of the hypothesis, and one way the arc could
+have been empty is eliminated.
+
+### Verification
+
+`lean`-direct exit 0 on `ReebSpectrum.lean`, `spectral-half-line.lean`,
+`hasse-weil-bound.lean`, `explicit-formula.lean`. `#print axioms`
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx` — on
+`hasReebSpectralCoords_satisfiable`, `diagOp`, `reeb_spectrum_on_critical_line`,
+`reeb_spectrum_fixed_by_involution`, `reebSpectrumExample`, `spectral_half_line`,
+`spectral_half_line_is_fixed_locus`, `critical_line_iff_fixed`,
+`partner_re_eq_one_sub`. `run-validate` ✓ Valid (13 warnings, all pre-existing,
+none in these files).
+
+### What stays open
+
+The identification itself: *no result relates the framework's `ξ_q` to
+`HasReebSpectralCoords`.* An instance would assert it, so none is provided. The
+bean stays open on precisely that, and it is now a single named class rather than
+a missing module plus an unstated hypothesis.
