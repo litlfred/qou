@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T12:48:01Z
+updated_at: 2026-08-30T13:03:02Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3003,3 +3003,59 @@ stated goal for this step. It does not produce a c_k, does not re-derive the
 ladder, and does not reopen the additive-resummation route Step 8 closed. The
 status line above should now read alpha: DERIVED (probe) + FORMALIZED (#6211),
 where it previously read "NOT formalized in Lean, where it remains a bare def".
+
+
+
+## The offset is the BAR-MIDPOINT — and one rule derives C's `1` too (PR #6211)
+
+Owner authorised duplication ("duplicate ok", 2026-08-30). This walks at
+Steps 7/8 from a different direction and lands on a WEAKER conclusion than
+Step 8's. Probe: `computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py`,
+12/12, sympy exact, no float64 (verified: 0 hits in f64-into-mpmath and
+raw-float64; the file imports only sympy).
+
+### The measurement
+
+  * `(q^4+1)/(2q^2)` — the offset Step 7 solves for — is NOT an arbitrary
+    function of q. It is `(q^2 + q^-2)/2`, the BAR-MIDPOINT `(Vhat + bar Vhat)/2`,
+    i.e. `cosh(2 log q)`.
+  * Under C the bar-midpoint is the CONSTANT `1`. So the single rule
+    **offset := bar-midpoint** DERIVES convention C's offset instead of
+    assuming it, and hands D its `(q^2+q^-2)/2`. C's `1` is `cosh(0)`.
+  * The midpoint-built phase `(Vhat - midpoint - h)/2` is bar-ODD in BOTH
+    conventions.
+  * Under C it reproduces the KNOWN `alpha` exactly — so it is not a new object
+    there, it IS `alpha` re-derived. Under D it DIFFERS from the naive z-swap,
+    which is what makes it a candidate rather than a restatement.
+
+That is the same consistency test Step 2's bar-weight argument passed — a rule
+that only described D could be tuned to say anything — applied to the OFFSET
+rather than the weight.
+
+### What this changes, and what it does not
+
+**Step 8's "no FIXED centre" is CONFIRMED**, explicitly, by check 5:
+`d/dq` of the D midpoint is nonzero. Not overturned, and I am not claiming to.
+
+**Step 7's "a q-dependent offset is not a re-centring of the phase, it is a
+different object" is too strong as stated.** It IS the same object; its VALUE
+is constant in C and q-dependent in D — exactly as the bar-weight is 0 in C
+and −4 in D. Both are two-case facts about one construction, not a structure
+C has and D lacks. This bean already makes that correction once, for
+bar-homogeneity ("'bar-even' is not something C has and D lacks; it is weight
+0"). The offset is the same shape of correction, one line down.
+
+So: **"no fixed centre" stands; "nothing to be centred on" does not follow
+from it.**
+
+### What is still open — unchanged
+
+The replacement FORM. Naming a centre does not exhibit a resummation about it,
+and `cos` remains the wrong realisation because the action is multiplicative.
+NO `c_k` is proposed, extracted or wired. Scope (a): one object (`Vhat`), two
+conventions, symbolic.
+
+The concrete next question this leaves is narrower than Step 8's: not "what
+replaces the cosine" in general, but **what resums about a centre that moves as
+`cosh(2 log q)`** — a named, derived, q-dependent centre rather than an absent
+one.
