@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T04:23:47Z
+updated_at: 2026-08-30T04:57:31Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -169,3 +169,54 @@ My ad-hoc classifier reported 57 where the committed detector reports 55 (now
 `ROOTS = ("computations",)` and does not scan `tools/`; my script did. Quote
 the detector for `computations/`, and note `tools/` is outside its scope —
 3 further self-comparisons live there, all LITERAL.
+
+
+## Batch 1 of bucket B: 4 landed (54 -> 50), 2 held. The 2 are the finding.
+
+Landed, each verified after re-run (key present in `data`, gone from
+`assertions`, `allPassed` unchanged, producer keeps other real assertions):
+
+    qbeta_5two_stokes_population_bridge_probe   assembly_scan_completed
+    qbeta_5two_gk_bilinear_pairing_probe        confrontation_completed
+    qbeta_5two_masbaum_cyclo_level_probe        scan_completed
+    qbeta_5two_masbaum_block_row_probe          solve_family_completed
+
+### 🛑 A STATIC COUNT OF `add_assertion` CALLS OVERCOUNTS — failure branches
+
+`binding_per_bond_decomposition` was classified "safe" because the file has
+**2** `add_assertion` calls and only 1 was a hit. The other is inside
+`if not HAVE_INFRA:` — a failure path that never fires — so at RUNTIME the
+witness carries exactly **1** assertion and demoting it leaves ZERO. Reverted.
+
+**Consequence for the open decision: the zero-assertion set is >= 17, not 16,
+and the source scan cannot get it right.** Establishing the true count needs a
+RUN per producer, comparing `len(witness["assertions"])` against the number of
+hits, not a source count. Do that before quoting a figure.
+
+### `fr_pullback_borromean_h3a_test` — reverted, NOT verifiable here
+
+Two independent reasons, either sufficient:
+
+  * Its witness `fr-pullback-borromean-h3a-test.witness.json` is **not
+    committed anywhere** — not at HEAD, not on disk. So there is no artifact to
+    verify a demotion against. (Note this means the self-fulfilling-assertion
+    detector legitimately flags producers whose output is untracked: it scans
+    SOURCE. The defect is real; only the verification path is missing.)
+  * It is slow — killed at >159 s having emitted 17 progress lines.
+
+**And a measurement trap of my own, worth carrying:** the first batch recorded
+`fr_pullback ... exit=0` after 2.2 s. That was FALSE. The process had been
+killed by an earlier `pkill -f fr_pullback_borromean` of mine, and the runner
+captured `$?` after a redirect, so a killed producer was recorded as a clean
+success. **A recorded exit code is only trustworthy if nothing else could have
+killed the process.** Cross-check a suspiciously fast exit-0 against whether the
+producer actually wrote its artifact — that is what caught this.
+
+### The `source=` prose nearly went missing
+
+The first version of the demotion transform replaced `add_assertion(...)` with
+`add_data(name, value)` and dropped `source=` — e.g. "all 21 pre-registered
+exact solves completed and recorded", the only place that description exists.
+Applied to six files and re-runs started before I noticed. It now emits
+`{'value': ..., 'source': ...}`. **A demotion must carry the prose, or it is a
+deletion wearing a demotion's commit message.**
