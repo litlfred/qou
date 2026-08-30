@@ -1,11 +1,11 @@
 ---
 # qou-lrz1
 title: 'B2c: H_n(q) is fin-dim K-algebra, dim = n! (basis {T_w : w∈S_n}). [track2]'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-24T16:34:39Z
-updated_at: 2026-08-29T19:04:26Z
+updated_at: 2026-08-30T07:56:21Z
 ---
 
 ## 2026-08-29 — the surjective half of the Sn <-> type-A bridge is BUILT
@@ -61,3 +61,11 @@ Consequence: cs.length and all of Coxeter/Length.lean and Coxeter/Inversion.lean
 now apply to Equiv.Perm. That is exactly the length theory AGENTS.md records as
 missing for Equiv.Perm, and it is what T_w well-definedness rests on. qou-twwf is
 now unblocked.
+
+
+## 2026-08-30 — CLOSED, merged to main as 9c7211676c (PR #6053)
+
+`QOU.Hecke.TwBasis.basisTwOfField` is a genuine
+`Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)` with
+`coe = Tw`, and `finrank_eq_factorial : dim_K H_n(q) = (n+1)!`.  Sorry-free at
+general `n`, over a field.  Matsumoto never used — see `qou-twwf` for why.
