@@ -32,7 +32,7 @@ contamination hiding here.  But one carries a declaration its own contents refut
     y-lambda-wenzl-bridge-numeric-witness.json
         q0Anchor:       "independent"
         q0AnchorReason: "producer declared q0-independent at the stamp site
-                         (q0_anchor=False): no q0-dependent field in this witness"
+                         (q0_anchor=None): no q0-dependent field in this witness"
         /q0:            1.10997859555418051695830018898879867637876138498395
 
 A `/q0` VALUE field, not a mention in a description -- checked by walking the JSON

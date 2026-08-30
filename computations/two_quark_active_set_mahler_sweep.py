@@ -408,7 +408,7 @@ def main() -> None:
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=False)
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out_json.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"Saved witness: {out_json}", file=sys.stderr)
 

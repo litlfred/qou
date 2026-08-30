@@ -14,7 +14,7 @@ Immediately before the statement that writes the witness:
     from qou_substrate.witness import WitnessBuilder as _WB
     <payload>.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        <payload>, script_path=__file__, engine=None, q0_anchor=False)
+        <payload>, script_path=__file__, engine=None, q0_anchor=None)
 
 `stamp_staleness_metadata` is the corpus's own helper for "the filename is
 non-standard and wrap_legacy().save() cannot be applied", which is precisely
@@ -54,7 +54,7 @@ WHY `q0_anchor` IS A PER-PRODUCER DECISION
 and the resolver has no "no anchor" outcome. Measured over this population:
 196 of 287 producers do not reach q0 even one import hop out, so stamping
 unconditionally would add ~196 INERT anchors -- byte-identical to load-bearing
-ones, and roughly doubling the class PR #5884 reported. Hence `q0_anchor=False`
+ones, and roughly doubling the class PR #5884 reported. Hence `q0_anchor=None`
 (added in this branch's first commit) for the ones that provably do not.
 
 The asymmetry matters and the default leans safe: an inert anchor is a
@@ -119,17 +119,17 @@ Q_MARKERS = ("q_parameter", "Q_50_DIGIT", "qou_substrate.constants", "q_at", "Q_
 #: Added 2026-08-30 (bean qou-j0nv). Every name in `Q_MARKERS` above is a
 #: RESOLUTION name, so a producer that hardcodes `1.1099785955573347…` matched
 #: none of them and `reaches_q0` returned False -- and this script then stamped
-#: `q0_anchor=False`, "no q0 in this producer's cone", over a file with a q0
+#: `q0_anchor=None`, "no q0 in this producer's cone", over a file with a q0
 #: literal in it. `reaches_q0`'s docstring calls itself "deliberately
 #: conservative: anything this cannot rule out is treated as q0-dependent". That
 #: is true of the import hop and was exactly backwards for literals: it could
 #: not SEE them, so it silently ruled them out.
 #:
-#: Measured before the fix: of 389 producers stamping `q0_anchor=False`, 44 hold
+#: Measured before the fix: of 389 producers stamping `q0_anchor=None`, 44 hold
 #: a q0 decimal on a non-comment line with no resolution marker anywhere -- 6
 #: audits/detectors carrying it deliberately as a fixture, and 38 real
 #: producers. Worked example: `tau_binding_hitchin_wzw_wall_probe` stamped
-#: `q0_anchor=False` under a comment reading "no q0 in this producer's cone",
+#: `q0_anchor=None` under a comment reading "no q0 in this producer's cone",
 #: with the literal 30 lines above it.
 #:
 #: Both pins, truncated to where they diverge: proton `1.10997858…` and the
@@ -721,7 +721,7 @@ def main() -> int:
     print(f"  transformable               : {len(plans)}")
     print(f"    -> fresh stamp            : {len(fresh)}")
     print(f"       - q0_anchor=None (q0 seen) : {q0_yes}")
-    print(f"       - q0_anchor=False          : {len(fresh) - q0_yes}")
+    print(f"       - q0_anchor=None          : {len(fresh) - q0_yes}")
     print(f"    -> scriptFile upgrade only: {upgrades}  (no q0_anchor written)")
     print(f"  NOT transformable           : {len(skips)}")
     from collections import Counter

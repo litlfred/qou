@@ -309,7 +309,7 @@ def main() -> int:
         _prov_payload = {"done": done}
         _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
         PROGRESS.write_text(json.dumps(_prov_payload, indent=1) + "\n")
         # Keep the PROTON result -- that is the migration target. A refused
         # proton leg (a producer that needs muon by design) keeps nothing.

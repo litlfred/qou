@@ -205,7 +205,7 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        wit, script_path=__file__, engine=None, q0_anchor=False)
+        wit, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1

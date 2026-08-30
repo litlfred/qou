@@ -53,8 +53,8 @@ the literal 30 lines above it.
 ## Todo
 
 - [x] Add a q0-literal pattern to the detector so `reaches_q0` sees pinned files.
-- [x] Do NOT mass-restamp on the strength of it: re-running the migration script
-      would rewrite 41 producers' provenance in one sweep. Reported, not run.
+- [x] Do NOT mass-restamp on the strength of it — reported first, then RUN on
+      owner instruction 2026-08-30.
 - [x] Exempt audits/detectors that hold the literal deliberately as a fixture — **deliberately NOT done, see below**.
 
 
@@ -96,3 +96,40 @@ under-stamping a producer is the defect being fixed. A path-based exemption
 would also be fragile (it keys on directory names, not on what the file does).
 Left unexempted on purpose; the 6 are named above so a restamp pass can judge
 them individually.
+
+
+## 2026-08-30 — restamped on owner instruction
+
+**The migration script could not do it.** `--dry-run` finds only 16 *bare*
+producers (2 transformable): its job is to ADD provenance to producers that have
+none, and it detects already-touched files by `STAMP_MARKER`. The mis-stamped
+population is already stamped — with `q0_anchor=False` — so it is excluded by
+construction. Running `--apply` would have touched 2 unrelated files and none of
+the real ones.
+
+So the restamp was done directly, against the script's own documented rule
+(module docstring): *"anything this script cannot show to be q0-free gets
+`q0_anchor=None` (resolve and stamp)"*. `q0_anchor=False` → `q0_anchor=None`
+in exactly the files where the FIXED `reaches_q0` returns True.
+
+| | files | stamp sites |
+|---|---|---|
+| real producers | 47 | 59 |
+| audits/fixtures (not exempted, see above) | 6 | 8 |
+| **left alone** — genuinely q₀-free, stamp stays `False` | **336** | — |
+
+53 files changed, AST-checked, 0 failures. Verified after: **0** q₀-reaching
+files still stamped `False`, and the 336 free ones untouched.
+
+(47, not the 41 in the filing: that number counted files where a literal was the
+*sole* reason. This uses the script's full `reaches_q0`, so it also catches ones
+reachable via the import hop that were stamped False anyway.)
+
+### What this does NOT do
+
+The stamp lives in the SOURCE. Those 47 witnesses do not carry a corrected
+anchor until each producer is re-run — they will get one on next regeneration,
+not now. No witness was regenerated here.
+
+- [ ] Regenerate the 47 so their witnesses carry the anchor the source now
+      resolves (qou-jjge).

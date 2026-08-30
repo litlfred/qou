@@ -395,7 +395,7 @@ def main():
         import os as _os  # noqa: E402 -- provenance stamp
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            out, script_path=__file__, engine=None, q0_anchor=False)
+            out, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(out, f, indent=2)
     print(f"\n  witness → {wpath}")
     return out

@@ -1772,7 +1772,7 @@ class WitnessBuilder:
             payload.setdefault(
                 "q0AnchorReason",
                 "producer declared q0-independent at the stamp site "
-                "(q0_anchor=False): no q0-dependent field in this witness",
+                "(q0_anchor=None): no q0-dependent field in this witness",
             )
             return payload
         if q0_anchor is None:

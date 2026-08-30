@@ -417,7 +417,7 @@ def main() -> int:
         _prov_payload = {"rows": rows, "tally": tally}
         _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
         Path(args.json).write_text(json.dumps(_prov_payload, indent=2))
     return 0
 

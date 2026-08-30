@@ -282,7 +282,7 @@ def main() -> int:
              "padded_keys": sorted(key(r) for r in rows)}
         _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=None)
         BASELINE.write_text(json.dumps(
             _prov_payload_1, indent=2) + "\n")
         print(f"\nRebaselined: {len(rows)} padded keys recorded.")
@@ -307,7 +307,7 @@ def main() -> int:
     }
     _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
     print(f"\nWrote {out.name}")
     return 1 if (args.strict and new) else 0

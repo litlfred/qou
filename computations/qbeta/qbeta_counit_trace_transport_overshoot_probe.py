@@ -157,7 +157,7 @@ def main():
         from qou_substrate.witness import WitnessBuilder as _WB
         w.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            w, script_path=__file__, engine=None, q0_anchor=False)
+            w, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(w, f, indent=2); f.write("\n")
     print(f"\n{verdict}\n\nWitness: {os.path.basename(out)}")
     return 0 if all_passed else 1

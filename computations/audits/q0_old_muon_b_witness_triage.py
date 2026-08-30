@@ -328,7 +328,7 @@ def cmd_survey(args):
                    "rows": rows, "environment": environment()}
         _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(_prov_payload_1,
                   open(args.out, "w"), indent=2)
         print(f"\nwrote {args.out}")
@@ -382,7 +382,7 @@ def cmd_rerun(args):
                    "environment": ENV}
         _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload_2, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(_prov_payload_2, open(tmp, "w"), indent=2)
         os.replace(tmp, args.out)
 

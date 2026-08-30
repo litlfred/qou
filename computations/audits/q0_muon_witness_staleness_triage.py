@@ -295,7 +295,7 @@ def main() -> int:
                                for w, s_, c in skipped]}
         _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(_prov_payload,
                   open(tmp, "w"), indent=2)
         os.replace(tmp, args.out)          # atomic: never a half-written file
