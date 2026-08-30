@@ -234,12 +234,22 @@ def main() -> int:
                      tolerance=0.5,
                      source="per-level terms re-sum to a u-even total, "
                             "consistent with the B1.3 parity finding")
-    # DEMOTED (bean qou-3e5m): this compared 'scan_completed' to itself and
-    # reported `passed` unconditionally. A count of what a run found is
-    # DATA, not a check, and `add_assertion` has no way to say
-    # "is nonzero" -- which is plausibly why it was written this way.
-    # The assertion's `source` prose is kept alongside the value.
-    wb.add_data('scan_completed', {'value': float(n_scan), 'source': 'all pre-registered (sign,j,λ)×shift combinations decided and recorded'})
+    # Read `computed=float(n_scan), expected=float(n_scan)` -- a self-comparison
+    # that also carried the count as float64. I first demoted it to `add_data`;
+    # that was the weaker of the two available dispositions. The grid here is
+    # PRE-REGISTERED, so the count IS knowable in advance and the assertion can
+    # be made to fail: derive it from the three factors the loops iterate, the
+    # way `qbeta_5two_stokes_population_bridge_probe` does (bean `qou-26f2`).
+    # Decoupling a loop bound from its grid, or dropping a sign branch, now
+    # fails here instead of being recorded as a passing "scan completed".
+    _n_expected = sum(len(_l) for _l in LAM_GRID.values()) * 3 * len(SHIFTS)
+    wb.add_assertion("scan_completed",
+                     computed=n_scan,
+                     expected=_n_expected,
+                     tolerance=0,
+                     source="all pre-registered (sign,j,λ)×shift combinations "
+                            "decided and recorded; expected = "
+                            "Σ|LAM_GRID| × 3 (j) × |SHIFTS|")
 
     ok = all(a.passed for a in wb.assertions)
 

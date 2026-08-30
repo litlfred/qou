@@ -1,8 +1,8 @@
 {
   "engine": "exact-fraction-series",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-08-30T04:51:09.402448+00:00",
-  "commitSha": "091916d186dde354770d7f8ab5d3135253f95944",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T09:19:20.287929+00:00",
+  "commitSha": "a60c27098ce56d427af720786743c8f987d5b46b",
   "assertions": [
     {
       "name": "printed_tables_regated",
@@ -19,14 +19,22 @@
       "passed": true,
       "tolerance": "0.5",
       "source": "per-level terms re-sum to a u-even total, consistent with the B1.3 parity finding"
+    },
+    {
+      "name": "scan_completed",
+      "computed": 165,
+      "expected": 165,
+      "passed": true,
+      "tolerance": 0,
+      "source": "all pre-registered (sign,j,λ)×shift combinations decided and recorded; expected = Σ|LAM_GRID| × 3 (j) × |SHIFTS|"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-masbaum-cyclo-level",
   "scriptFile": "qbeta_5two_masbaum_cyclo_level_probe.py",
-  "scriptHash": "4f8fa97cebcf",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "d7aed0f77c89",
+  "scriptCommitSha": "59a85d2071f0440f38dec5b8003c0bef3b5bd279",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,10 +59,6 @@
   "description": "B1.4' (module map, arm 2): the cyclotomic LEVEL correspondence — is the n-th Masbaum term a fixed n-independent dressing of the (n+k)-th GGM block term? Decided by exact cross-multiplication T^Mas_n·T^H_{n+1+k} == T^Mas_{n+1}·T^H_{n+k} in the u-series ring at O(u^96), over the extended λ-grid (33 rows) × level shifts k ∈ −2..2, Masbaum levels 0..8; depth-limited pairs reported, never counted as matches. Per-level u-parity recorded; levels re-summed against the B1.3 u-even total as a consistency gate. No numerics in the decision. auditOnly; no c_k wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
-    "scan_completed": {
-      "value": 165.0,
-      "source": "all pre-registered (sign,j,λ)×shift combinations decided and recorded"
-    },
     "level_parity": {
       "0": {
         "odd_u_terms": 0,
