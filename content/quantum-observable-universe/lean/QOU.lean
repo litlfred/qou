@@ -1256,6 +1256,13 @@ import QOU.Mathlib.RothAuxiliary
 -- Roth's Lemma (step 3) contradicts.  The analytic half (Taylor expansion about
 -- alpha) is deliberately left as a hypothesis; see the module header.
 import QOU.Mathlib.RothRationalIndex
+-- The two facts step 2's smallness hypothesis is built from: Taylor's theorem in
+-- the form Roth needs (translating by alpha then gamma is translating by alpha+gamma,
+-- so the index at alpha deletes the low-weight terms of the expansion at alpha+gamma),
+-- and a translateMatrix bound that TRACKS the power of gamma the entry carries.
+-- RothAuxiliaryPolynomial's (2B)^{|n|} is the wrong shape here: step 2's whole content
+-- is that gamma = beta - alpha is tiny, and that bound throws it away.
+import QOU.Mathlib.RothTaylorBound
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
