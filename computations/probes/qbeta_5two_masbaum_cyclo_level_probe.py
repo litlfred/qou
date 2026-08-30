@@ -234,11 +234,13 @@ def main() -> int:
                      tolerance=0.5,
                      source="per-level terms re-sum to a u-even total, "
                             "consistent with the B1.3 parity finding")
-    wb.add_assertion("scan_completed",
-                     computed=float(n_scan), expected=float(n_scan),
-                     tolerance=0.5,
-                     source="all pre-registered (sign,j,λ)×shift "
-                            "combinations decided and recorded")
+    # DEMOTED (bean qou-3e5m): this compared 'scan_completed' to itself and
+    # reported `passed` unconditionally. A count of what a run found is
+    # DATA, not a check, and `add_assertion` has no way to say
+    # "is nonzero" -- which is plausibly why it was written this way.
+    # The assertion's `source` prose is kept alongside the value.
+    wb.add_data('scan_completed', {'value': float(n_scan), 'source': 'all pre-registered (sign,j,λ)×shift combinations decided and recorded'})
+
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("level_parity", {str(k): v for k, v in level_parity.items()})
