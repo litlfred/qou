@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T12:40:17.149Z",
+  "updated_at": "2026-08-30T13:06:14.873Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3645,130 +3645,6 @@
       "verdict": "genuine",
       "file_sha": "c5dbf1de8bd4",
       "agent_note": "`(h_invalid : not P) : not P := h_invalid` -- the identity function. Sharpest of the nine: the docstring EIGHT LINES ABOVE records that a previous `(h : not P) : not P := h` 'was a self-assuming tautology that asserted nothing about braid words'. The lesson is written down and the shape is repeated below it for a different predicate. NEW candidate, no prior verdict."
-    },
-    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 1,
-      "verdict": "genuine",
-      "file_sha": "575487b7fc66",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.CriticalExponent::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 1,
-      "verdict": "genuine",
-      "file_sha": "575487b7fc66",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.NSCounterexample::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 1,
-      "verdict": "genuine",
-      "file_sha": "575487b7fc66",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 1,
-      "verdict": "genuine",
-      "file_sha": "575487b7fc66",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 1,
-      "verdict": "genuine",
-      "file_sha": "575487b7fc66",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 71,
-      "verdict": "genuine",
-      "file_sha": "d478ac005104",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 86,
-      "verdict": "genuine",
-      "file_sha": "e65daee41813",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
-      "reviewed_at": "2026-08-30T09:24:38Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
-    },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
-      "category": "proof-carrier-inhabited-by-probe",
-      "pattern": "lean-inhabited-no-hypotheses",
-      "line": 244,
-      "verdict": "genuine",
-      "file_sha": "4d855ce423f8",
-      "stale_prev_verdict": "genuine",
-      "reviewed_at": "2026-08-30T10:31:50Z",
-      "reviewer": "agent",
-      "evidence": "RE-ADJUDICATED 2026-08-30. The carrier is UNCHANGED and still vacuous: its one field is `exists_blowup_rate : forall T, 0 <= T -> exists r, 0 <= r and r <= 1 + T`, satisfied by r = 0, as its own sub-docstring concedes. Only the file_sha moved, via the CriticalExponent de-boxing in PR #6161 (bean qou-4670) elsewhere in the same file. It is the last vacuous carrier of the five.\n\nTHE PREVIOUS NOTE ON THIS ENTRY WAS WRONG AND IS RETRACTED. It read: 'its rate is not in the corpus at all and its conjecture block does not exist'. The second clause is true of the LABEL and false of the corpus. There is no `conj:blowup-yekutieli`, but the block is live at content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.{ts,md,lean,qa.json}, labelled `prop:blowup-yekutieli`, with ten blocks interpreting or using it. I had grepped for the conj: label, found nothing, and stopped; the block had MOVED chapters, not been deleted.\n\nThe upstream carrier QOU.FluidDynamics.BlowupYekutieli holds `obstruction : Nat -> Nat`, `smooth : Prop`, and `smooth_iff_all_obstructions_vanish : smooth <-> forall n, obstruction n = 0`, with a derived sorry-free `theorem blowup_yekutieli` getting the blow-up direction by contraposition. That is a well-formed 3b-cond non-degenerate carrier, and it is a DIFFERENT PROPOSITION from the local rate existential -- two claims sharing a name, not two strengths of one.\n\nWhat survives from the earlier audit: there is still no Yekutieli blow-up RATE anywhere in the corpus (six grep paths, docs/audits/2026-08-30-blowup-yekutieli-has-no-source.md), so no bound can be transcribed and none may be invented. FIX, no longer authorial: re-encode against the live upstream obstruction statement and correct the `-- Ref:` from the non-existent conj: label to prop:blowup-yekutieli. That needs no rate and no number chosen by an agent. Whether the borrowed NAME should survive (qou-0avp) is separate and stays open. Beans qou-88nf, qou-4670.",
-      "disposition": "transcribe-the-live-upstream-obstruction-statement"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
