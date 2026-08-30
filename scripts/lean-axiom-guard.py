@@ -666,6 +666,11 @@ QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.one_lt_two_mul
 QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.deriv_Lob_neg | clean
 QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.strictAntiOn_Lob | clean
 QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_sub_Lob_add_pos | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.concaveOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_nonneg_of_le_pi_div_two | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_add_le | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.lob_sum_nonneg | clean
 
 # FiveTwoAngleSum translates VOL_5_2 (a Bloch-Wigner value) into the ANGLE
 # functional Rivin concavity is stated for. The corpus already had fiveTwoTet
