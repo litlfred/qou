@@ -4,7 +4,7 @@ title: 'FINDING: crossing energy E_x = 1 IS the silver-ratio beta-decay null (h=
 status: in-progress
 type: task
 created_at: 2026-08-30T14:01:38Z
-updated_at: 2026-08-30T14:01:38Z
+updated_at: 2026-08-30T17:00:00Z
 ---
 
 
@@ -154,7 +154,7 @@ So this block reads as ten-axes-red for a file that was moved and repaired.
 Lean that has none. That is a stale-evidence failure, not a content failure,
 and it is the kind that trains readers to ignore red.
 
-## Proposed Lean, NOT COMMITTED — could not be type-checked here
+## Lean — LANDED 2026-08-30 on owner instruction, NOT type-checked here
 
 The following extends the lake-built module. It is **not** in the tree: this
 container has **no Mathlib oleans anywhere** (`find / -name Mathlib.olean` is
@@ -258,3 +258,51 @@ the ones most likely to need adjustment.
       sorry-free.
 - [ ] The `q → ∞` limit deserves a home a reader of the mass formula will
       actually meet, not only this block.
+
+---
+
+## 2026-08-30 — Lean landed on instruction; three verification routes exhausted first
+
+Owner: "Land the lean." Done, into the lake-built module
+`QOU/ParticleInteractions/silver_ratio_beta_decay_null.lean`. CI is the first
+type-checker. Before landing, verification was attempted three ways and all
+three are closed in this container:
+
+1. **No Mathlib oleans anywhere.** `find / -name Mathlib.olean` → empty.
+2. **`lake` exists but cannot fetch them.** It is in the elan toolchain
+   (not on PATH). `lake update` fetched the dependency *sources* fine —
+   `.lake/packages` now has mathlib, batteries, aesop, … — but building
+   `cache:exe` fails at link: `ld: cannot find -lleancpp`, `-lLean`. The
+   toolchain ships only `libLean.a.trace` / `.hash` stubs, **not the archives**,
+   so this Lean can elaborate but cannot link any executable. `lake exe cache
+   get` is therefore unavailable.
+3. **Source build** of the `Mathlib.Tactic` closure is hours and is the
+   forbidden `lake build` path.
+
+`lake update` left `lake-manifest.json` untouched and wrote only into the
+gitignored `.lake/`; working tree verified clean afterwards.
+
+### What IS verified
+
+Every proposition, numerically, at `q ∈ {0.5, 1.11, 2, 3, 1+√2, 10}` and at
+`q = 10^4, 10^8` for the limit. Structural check of the file: 9 new
+declarations present, parens/brackets balanced, no `sorry`, namespace closed.
+
+### What is NOT verified
+
+Whether the tactic scripts close the goals. Before landing I hardened the two
+weakest:
+
+* `crossing_energy_eq_one_iff` — the factorisation was `nlinarith [hquad, hs]`
+  on an *equality* goal, which nlinarith handles poorly. Replaced with an
+  explicit `ring` expansion plus `rw [hs]; linarith`. The `field_simp at h2`
+  step became a `have hmul … hexp` pair so the intermediate form is pinned
+  rather than left to field_simp's normalisation.
+* `crossing_energy_one_not_on_unit_circle` — **had a real bug**: the goal is
+  `|q| ≠ 1` and I ended with `linarith`, which cannot close a `≠`. Now
+  `intro hcontra; linarith`. Writing Lean without a compiler found this only
+  on re-reading, which is the argument for not doing it.
+
+Residual risk sits in `div_eq_one_iff_eq` (name/signature), the `simpa`
+normalisations in the two limit lemmas, and `Filter.Tendsto.div`'s argument
+order. If CI reddens, those are the places to look first.
