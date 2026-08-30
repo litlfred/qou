@@ -1010,6 +1010,54 @@
       "line_at_adjudication": 180,
       "scope": "Rq",
       "rationale": "Follow-up to bean 0zr0 (docs/audits/2026-07-03-0zr0-eta-descent-invariant-theory-prune.md), identifying the eta-plane singularity from the descent rungs g_k that the 0zr0 prune left as its one sharpened datum. Those rungs are ladder quantities and carry the ladder's C frame (qou-cds1); the probe's subject is the singularity structure of that C-frame object, so re-basing on z_D would relocate the singularity being identified rather than re-express it."
+    },
+    {
+      "path": "computations/probes/coordination_weight_rise_and_turnover_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_at_adjudication": 123,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures coordination-weight rise/turnover measured in both frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/probes/mu4_magnitude_gap_anatomy_probe.py",
+      "target": "zC",
+      "source_hash": "e83d4b1880e3",
+      "line_at_adjudication": 130,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures mu4 magnitude-gap anatomy priced in both frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 106,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the bar action on traced volume compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 51,
+      "scope": "<module>",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the bar-midpoint offset compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bridge_generic_z.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 135,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the D-frame bridge evaluated at a generic z, with both endpoints instantiated; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_log_coordinate_form_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 59,
+      "scope": "<module>",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the log-coordinate form compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
     }
   ]
 }
