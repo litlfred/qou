@@ -282,4 +282,109 @@ theorem attractor_no_oddPreimage {R : Type*} [CommRing R] [Nontrivial R] (w : R)
   have : (1 : R) = 0 := by linear_combination hw - h
   exact one_ne_zero this
 
+
+/-! ### The unit obstruction — why chained odd-preimages are blocked
+
+The mod-6 congruence recorded above as an *observed pattern* has an explanation,
+and the explanation is cleaner than the pattern. It needs no norm and no `ℤ[w]`:
+it is about **unit-ness** of `P(w)`.
+
+Three facts drive it.
+
+1. An odd-preimage forces `P(w) = -w` (above), and `-w` is a **unit**
+   (`(-w)·(-w²) = w³ = 1`). So *only a node whose cube-root evaluation is a unit
+   can admit an odd-preimage at all*.
+2. The even branch-inverse is `Q = [2]_q·P`, so `Q(w) = (w+1)·P(w)` — and `w+1`
+   is itself a unit (`cubeRoot_one_add_mul_neg`). So **unit-ness of the
+   evaluation is invariant along an entire even chain**.
+3. Hence a single non-unit evaluation blocks odd-preimages *forever* along that
+   chain (`evenSubtree_no_oddPreimage`).
+
+That is the engine. Measured against the actual backward tree
+(`computations/qcollatz_vzero_block_probe.py`), it accounts for everything the
+sampling saw:
+
+* `w+1` has multiplicative **order 6**, so along the main even chain from
+  `1+q⁻¹` the evaluation returns to `-w` exactly at steps `n ≡ 0 (mod 6)` —
+  *this is where the 6 comes from*;
+* solving the coupled recursion gives the closed form
+  `vₙ = αⁿv₀ + n·αⁿ⁻¹u₀` with `α = w+1`, verified against the real chain for
+  `n = 0…24`, which produces exactly the observed `P'(w) = (-6k, -6k-1)`;
+* the odd-preimage taken at the `n = 6k` node lands on an evaluation of norm
+  `1 + 6k + 12k²` (verified `k = 0…10`), which equals `1` **only** for `k = 0` —
+  and `k = 0` returns `q⁻¹`, already on the chain.
+
+So for every `k ≥ 1` the odd branch sits at a non-unit evaluation, and by fact 3
+no node of its even-subtree can admit a further odd-preimage. **No two chained
+odd-preimages occur in the backward tree**, hence no `v = 0` block there.
+
+**Scope — what is and is not established.** Facts 1–3 are proved below. The
+*measured* inputs are the norm formula `1 + 6k + 12k²` and the claim that every
+tree node lies on the main chain or in one of its `k ≥ 1` branches; both are
+verified computationally over the range stated, not proved here, so the
+tree-level conclusion is **argued, not formalized**. And even fully formalized it
+would settle `v = 0` for the backward *tree* only — the step to all of `D∞` is
+the convergence conjecture itself (`qcz7` A1). -/
+
+/-- `w³ = 1` for a primitive cube root. -/
+theorem cubeRoot_pow_three {R : Type*} [CommRing R] (w : R)
+    (hw : w ^ 2 + w + 1 = 0) : w ^ 3 = 1 := by
+  linear_combination (w - 1) * hw
+
+/-- `-w` is a unit, with inverse `-w²`. -/
+theorem isUnit_neg_cubeRoot {R : Type*} [CommRing R] (w : R)
+    (hw : w ^ 2 + w + 1 = 0) : IsUnit (-w) :=
+  isUnit_of_mul_eq_one (-w) (-w ^ 2) (by linear_combination (w - 1) * hw)
+
+/-- `w + 1` is a unit, with inverse `-w`. -/
+theorem isUnit_one_add_cubeRoot {R : Type*} [CommRing R] (w : R)
+    (hw : w ^ 2 + w + 1 = 0) : IsUnit (w + 1) :=
+  isUnit_of_mul_eq_one (w + 1) (-w) (cubeRoot_one_add_mul_neg w hw)
+
+/-- **Only a unit evaluation can admit an odd-preimage.** Combining
+    `oddPreimage_forces_eval_cubeRoot` (`P(w) = -w`) with the unit-ness of `-w`. -/
+theorem isUnit_eval_of_oddPreimage {R : Type*} [CommRing R] (w p q : R)
+    (hw : w ^ 2 + w + 1 = 0)
+    (h : (w + 1) * p = (w ^ 2 + w + 1) * q + 1) : IsUnit p := by
+  rw [oddPreimage_forces_eval_cubeRoot w p q hw h]
+  exact isUnit_neg_cubeRoot w hw
+
+/-- **Unit-ness of the evaluation is invariant along an even chain.** The even
+    branch-inverse multiplies `P(w)` by the unit `w + 1`. -/
+theorem evenPreimage_isUnit_iff {R : Type*} [CommRing R] (w p : R)
+    (hw : w ^ 2 + w + 1 = 0) : IsUnit ((w + 1) * p) ↔ IsUnit p := by
+  constructor
+  · intro h
+    have hu : (-w) * ((w + 1) * p) = p := by linear_combination (-p) * hw
+    rw [← hu]
+    exact (isUnit_neg_cubeRoot w hw).mul h
+  · intro h
+    exact (isUnit_one_add_cubeRoot w hw).mul h
+
+/-- Iterating: unit-ness survives any number of even branch-inverses. -/
+theorem evenChain_isUnit_iff {R : Type*} [CommRing R] (w p : R)
+    (hw : w ^ 2 + w + 1 = 0) :
+    ∀ n : ℕ, IsUnit ((w + 1) ^ n * p) ↔ IsUnit p := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    have : (w + 1) ^ (n + 1) * p = (w + 1) * ((w + 1) ^ n * p) := by ring
+    rw [this, evenPreimage_isUnit_iff w _ hw]
+    exact ih
+
+/-- **The obstruction.** If a node's cube-root evaluation is not a unit, then
+    **no** node in its even-subtree admits an odd-preimage — the block is
+    permanent, not local.
+
+    This is why the `k ≥ 1` odd branches of the backward tree can never chain a
+    second odd step: each lands on a non-unit evaluation (norm `1 + 6k + 12k²`),
+    and every even descendant inherits that. -/
+theorem evenSubtree_no_oddPreimage {R : Type*} [CommRing R] (w p : R)
+    (hw : w ^ 2 + w + 1 = 0) (hnu : ¬ IsUnit p) (n : ℕ) :
+    ¬ ∃ q : R, (w + 1) * ((w + 1) ^ n * p) = (w ^ 2 + w + 1) * q + 1 := by
+  rintro ⟨q, hq⟩
+  exact hnu ((evenChain_isUnit_iff w p hw n).mp
+    (isUnit_eval_of_oddPreimage w _ q hw hq))
+
 end QOU.AppendixSurreals.CollatzBlockDescent
