@@ -270,6 +270,28 @@ def _role_for(txt: str, lits: set) -> str:
     for node in ast.walk(tree):
         # (a) assignment targets: `err_pct = (pred - AME) / AME`
         if isinstance(node, ast.Assign):
+            # PAIRWISE for a tuple-to-tuple assignment. `pred, obs =
+            # mp.mpf(mpred), mp.mpf(mobs)` taints only `obs`; reading the whole
+            # statement as one unit hands the AME value to `pred` as well and
+            # reports a prediction built from the measurement where the file
+            # merely stores the two side by side.
+            pairs = []
+            if (len(node.targets) == 1 and isinstance(node.targets[0], ast.Tuple)
+                    and isinstance(node.value, ast.Tuple)
+                    and len(node.targets[0].elts) == len(node.value.elts)):
+                pairs = list(zip(node.targets[0].elts, node.value.elts))
+            if pairs:
+                for tg, val in pairs:
+                    if not ({n.id for n in ast.walk(val) if isinstance(n, ast.Name)} & names):
+                        continue
+                    for tn in ast.walk(tg):
+                        if not isinstance(tn, ast.Name):
+                            continue
+                        if _INPUT_RE.search(tn.id):
+                            return "INPUT"
+                        if _TARGET_RE.search(tn.id):
+                            saw_target = True
+                continue
             used = {n.id for n in ast.walk(node.value) if isinstance(n, ast.Name)}
             if used & names:
                 for t in node.targets:
@@ -317,6 +339,12 @@ def _selftest() -> int:
          "literal and the residual with the same variable",
          'B_AME = 2.22452\nb_exp = B_AME\nerr_pct = (pred - b_exp) / b_exp\n',
          "TARGET"),
+        ("TUPLE ASSIGNMENT is matched pairwise — storing a prediction beside "
+         "the measurement is not building one from it",
+         'ROWS = [(1, 2.0, 2.22452)]\n'
+         'for Z, mpred, mobs in ROWS:\n'
+         '    pred, obs = mp.mpf(mpred), mp.mpf(mobs)\n',
+         "REVIEW"),
         ("UNPACKING a table of rows — the corpus keeps AME values in tuples "
          "and reads them out in a for-loop, so taint that cannot cross the "
          "unpack stops at a container that is never itself in arithmetic",
