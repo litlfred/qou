@@ -3692,3 +3692,57 @@ conditions met" the leading factor would carry that ambiguity.
 
 **Not claimed:** that the bar-midpoint rule is itself forced. It is the arc's
 own rule applied consistently — parsimony, not derivation. Probe **14/14**.
+---
+
+## Entry 11 — bar-parity prunes **every** D rung, and `u` is why C escaped it
+
+`computations/qbeta/qbeta_d_rung_bar_parity_prune_probe.py` — **6/6**.
+
+Entry 7 recorded that D's bar-odd slot is structure-free. This entry says the
+same thing from the algebra, and turns it into a **test a candidate rung can
+fail**.
+
+### The prune
+
+Under D the ladder variable is `X = u·V̂`, which entry 4 established is
+**bar-invariant**. Expand `∏_{k≥2}(1 + c_k X^k)` and apply `bar` coefficient by
+coefficient:
+
+    [X^2]   c2 - bar(c2) = 0
+    [X^3]   c3 - bar(c3) = 0
+    [X^4]   c4 - bar(c4) = 0
+
+Verified symbolically, not numerically. So **every D rung is forced bar-even** —
+`bar(c_k) = c_k` for all `k`, with no bar-odd freedom anywhere in the ladder.
+
+### Why the C ladder was never pinned this way
+
+Because the C variable is **not** bar-invariant. Measured exactly:
+
+    u = (q-1)^2 * sqrt(q^4 + q^2 + 1) / (q^4 + q^2)
+    bar(u) / u = q^2          (exact, symbolic)
+
+`u` is bar-**covariant** with weight `q²`. A `bar` applied to `∏(1 + c_k u^k)`
+therefore reshuffles the grading instead of matching coefficient to coefficient,
+so the C product imposes no parity condition on its own rungs. The conventions
+differ here structurally, not by a substitution.
+
+### What this buys, and what it does not
+
+**Buys:** a falsifying test. Any future D-frame `c_k` must be bar-even, and the
+extraction route — invert one rung against experimental `Q_β` — does not respect
+that constraint, so a candidate produced that way is checkable against something
+other than its own residual.
+
+**Does not buy:** a value. No `c_3` is produced, proposed or fitted; the k=3 rung
+stays underived and L2 is untouched. Scope **(a)**.
+
+**Three things it is explicitly not:**
+
+1. Not a claim the C-frame `c_3 = -2.0693…` *fails* the test. Bar-evenness needs
+   `c_3` at both `q` and `1/q`; every anchor in this corpus sits at `q ≈ 1.11`,
+   so the C value is not measurable against it (same accessibility obstruction as
+   the §"Defined residual ≠ derived decomposition" bar-split).
+2. Not applicable to the candidate `c_3 = -2 = J_Hopf(q=1)` — a constant is
+   trivially bar-even, so the test has nothing to say about it either way.
+3. Not a uniqueness result. It constrains the rungs; it does not select them.
