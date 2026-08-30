@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T03:17:39Z
+updated_at: 2026-08-30T03:34:50Z
 parent: qou-mhj9
 ---
 
@@ -63,3 +63,30 @@ That is the honest next question, and it is a DERIVATION question, not a fit.
   * propose a functional chosen because it lands b3 > 0 -- that is the forbidden
     anchor inversion in new clothes;
   * re-run an edge-set / typing / scale variant expecting the sign to move.
+
+
+## HALF LANDED 2026-08-30 — the trilemma is now machine-checked
+
+Lean: QOU/MassTheory/PairwiseAdditiveCumulants.lean, sorry-free, lean-direct
+exit 0, #print axioms clean on all 9 decls.
+
+  pairwise_b3_eq_zero / pairwise_b4_eq_zero -- a pairwise-additive assembly
+      B(A) = C(A,2)*g has b3 = 0 and b4 = 0 EXACTLY, for every g. Not small.
+  ame_b3_pos            -- AME's b3 > 0, from the 08-29 probe's own literals.
+  no_pairwise_matches_ame / trilemma -- so no pairwise-additive assembly
+      reproduces the measured 3-body cumulant.
+
+With the merged MayerThreeBodySign.b3_neg_of_le (multiplicative assembly below
+the 2/3 threshold => b3 < 0), both corpus assemblies are now machine-checked to
+miss the measured sign, in opposite directions. The trilemma is no longer an
+argument in a bean; it is two sorry-free files.
+
+### STILL OPEN — and it is the whole question
+
+What replaces the assembly. Nothing here proposes one, and the constraint list in
+the body above stands unchanged. The 08-08 s10a Cauchy derivation of the log form
+is untouched by this: if it is right, the corpus is committed to a functional
+with zero 3-body content while the body-order programme needs some. My reading
+of where the escape is -- judgement, marked as such in the Lean docstring too --
+is that s10a assumes the trace factorises over INDEPENDENT subsystems, which a
+bound state is not.

@@ -1,11 +1,11 @@
 ---
 # qou-9yqb
 title: 'CONTRADICTION: prop:prolonged-periods-fixed-depth (n-independent kernel) is inconsistent with a_D^(n)=I(n)/n growing super-exponentially — at most one holds'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T03:17:39Z
+updated_at: 2026-08-30T03:34:50Z
 parent: qou-mhj9
 ---
 
@@ -76,3 +76,43 @@ which of (a)/(b)/(c) is wrong -- that is a corpus judgement.
 NOT MINE TO RESOLVE: (2) belongs to #6052. Flagged to them on that PR
 (issuecomment-5466412367); they were told explicitly I had not read their Lean at
 the time. This bean records the verification I have since done.
+
+
+## LANDED + a CORRECTION TO MY OWN ARGUMENT (2026-08-30)
+
+Lean: QOU/MassTheory/FixedDepthGrowthBound.lean, sorry-free, lean-direct exit 0,
+#print axioms clean on both decls.
+
+  abs_le_geometric   -- a depth-d constant-kernel recurrence obeys
+                        |a n| <= M * K^n, K >= max(1, sum|c_j|), M bounds the
+                        d initial terms. Elementary strong induction.
+  not_factorial_growth -- no such sequence satisfies n! <= a(2n) for all n.
+                        Via Real.summable_pow_div_factorial: (K^2)^n / n! is
+                        summable so its terms -> 0, and the factorial outruns
+                        every geometric.
+
+### CORRECTION — the ratio form does NOT contradict the bound
+
+The original body above says the contradiction is with "involution_ratio_unbounded
+-- I leaves every geometric class". THAT IS TOO QUICK AND IS WRONG AS STATED.
+
+A geometric UPPER bound does not by itself forbid unbounded two-step ratios: a
+sequence may dip far below K^n at some n and jump back, making a(n+2)/a(n)
+arbitrarily large while never exceeding M*K^n. Excluding that needs a LOWER bound
+as well, which the ratio statement alone does not supply.
+
+The FACTORIAL statement (factorial_le_involution_two_mul : n! <= I(2n)) IS a
+genuine lower bound and does contradict the geometric one. So the incompatibility
+is real, but it rests on the factorial bound, NOT on the ratio bound. The Lean
+proves the version that survives.
+
+This matters for what to tell #6052: the load-bearing half of their file, for
+this purpose, is factorial_le_involution_two_mul -- not involution_ratio_unbounded.
+
+### What is still NOT settled
+
+Which premise is false. One of: the identification a_D^(n) = I(n)/n; that
+a_D^(n) = phi(M^n v_0) for a FIXED finite-rank M; or the n-independence of the
+kernel. Note I(n+2) = I(n+1) + (n+1)I(n) is depth 2 with an n-DEPENDENT
+coefficient, consistent with everything here and inconsistent with the
+proposition. Corpus judgement, not mine to make unilaterally.
