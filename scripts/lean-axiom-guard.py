@@ -142,6 +142,11 @@ DEFAULT_REGISTRY = """
 QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_prod_qratio_corner | clean
 QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_eq_one_of_corner_ratio_scaling | clean
 QOU.Mathlib.LagrangeCoeffSum | QOU.Mathlib.sum_eval_div_prod_eq_coeff | clean
+# The q-FRT chain the corner identity consumes. `prodHooksF_one_sub_pow_pair` is pinned
+# because a session read LagrangeCoeffSum's (stale) docstring as saying it was OPEN and
+# nearly rebuilt the chain; a registry row is a claim a machine re-checks.
+QOU.Mathlib.SYTBetaGapVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_pair | clean
+QOU.Mathlib.QHookVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_vandermonde | clean
 # --- the (TAIL) first-instance chain (covariance-kernel epic qou-x631) ---
 # The SIGN is genuinely sorry-free and is the content of the (TAIL) instance.
 QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagramTailFirstInstance.nuV_top_nonneg | clean
