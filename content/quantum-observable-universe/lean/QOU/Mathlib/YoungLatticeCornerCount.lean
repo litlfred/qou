@@ -234,4 +234,96 @@ theorem sum_numSYT_succ_split (n : ℕ) :
           + ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
               numStandardYoungTableaux ν.1 * (cornerCells ν.1).card := Nat.add_comm _ _
 
+/-! ## The last step, reduced to a pointwise identity
+
+What remains between this file and `Σ_λ f^λ = I(n)` is
+
+    Σ_{ν of size n+1} #SYT(ν)·r(ν) = (n+1) · s(n).
+
+Reindexing it by `rankExchange` (weight = `#SYT` of the BIGGER diagram this time, which
+the exchange reconstructs as `addCell μ s`) turns it into a sum of *pointwise* statements.
+The pointwise statement is the classical **up-operator identity** of Young's lattice:
+
+    Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1) · #SYT(μ).
+
+Verified with zero counterexamples over every partition of `0..9` (97 shapes). It is
+carried here as an explicit hypothesis, NOT asserted: its own proof needs the
+differential-poset induction, which this file does not do. -/
+
+/-- **The up-operator identity of Young's lattice**, as a named hypothesis.
+`Σ_{λ = μ + box} #SYT(λ) = (|μ| + 1)·#SYT(μ)`. Open in this corpus; see bean `qou-jlam`. -/
+def UpOperatorIdentity : Prop :=
+  ∀ (m : ℕ) (μ : YoungDiagram), μ.cells.card = m →
+    ∑ s : {s : ℕ × ℕ // IsAddableCell μ s},
+        numStandardYoungTableaux (addCell μ s.1 s.2) = (m + 1) * numStandardYoungTableaux μ
+
+set_option maxHeartbeats 1000000 in
+/-- **The weighted corner sum, reduced.** Given the up-operator identity, the corner-weighted
+rank sum is exactly `(n+1)·s(n)` — which is the coefficient the involution recurrence needs. -/
+theorem sum_numSYT_mul_corners_of_upOperator (h : UpOperatorIdentity) (n : ℕ) :
+    ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+        numStandardYoungTableaux ν.1 * Fintype.card {c : ℕ × ℕ // IsCornerCell ν.1 c}
+      = (n + 1) * ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, numStandardYoungTableaux μ.1 := by
+  classical
+  -- weight on the corner side is #SYT of the BIGGER diagram; the exchange rebuilds it
+  have hw : ∀ x : (Σ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+                    {c : ℕ × ℕ // IsCornerCell ν.1 c}),
+      numStandardYoungTableaux x.1.1
+        = numStandardYoungTableaux
+            (addCell (rankExchange n x).1.1 (rankExchange n x).2.1 (rankExchange n x).2.2) := by
+    intro x
+    congr 1
+    exact (addCell_eraseCorner x.2.1 x.2.2 (isAddableCell_eraseCorner x.2.1 x.2.2)).symm
+  calc ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+          numStandardYoungTableaux ν.1 * Fintype.card {c : ℕ × ℕ // IsCornerCell ν.1 c}
+      = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+          ∑ _c : {c : ℕ × ℕ // IsCornerCell ν.1 c}, numStandardYoungTableaux ν.1 := by
+        refine Finset.sum_congr rfl fun ν _ => ?_
+        rw [Finset.sum_const, Finset.card_univ, smul_eq_mul, mul_comm]
+    _ = ∑ x : (Σ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+                {c : ℕ × ℕ // IsCornerCell ν.1 c}), numStandardYoungTableaux x.1.1 :=
+        (Fintype.sum_sigma
+          (fun x : (Σ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
+                     {c : ℕ × ℕ // IsCornerCell ν.1 c}) =>
+            numStandardYoungTableaux x.1.1)).symm
+    _ = ∑ y : (Σ μ : {μ : YoungDiagram // μ.cells.card = n},
+                {s : ℕ × ℕ // IsAddableCell μ.1 s}),
+          numStandardYoungTableaux (addCell y.1.1 y.2.1 y.2.2) :=
+        Fintype.sum_equiv (rankExchange n) _ _ (fun x => hw x)
+    _ = ∑ μ : {μ : YoungDiagram // μ.cells.card = n},
+          ∑ s : {s : ℕ × ℕ // IsAddableCell μ.1 s},
+            numStandardYoungTableaux (addCell μ.1 s.1 s.2) :=
+        Fintype.sum_sigma
+          (fun y : (Σ μ : {μ : YoungDiagram // μ.cells.card = n},
+                     {s : ℕ × ℕ // IsAddableCell μ.1 s}) =>
+            numStandardYoungTableaux (addCell y.1.1 y.2.1 y.2.2))
+    _ = ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, (n + 1) * numStandardYoungTableaux μ.1 :=
+        Finset.sum_congr rfl fun μ _ => h n μ.1 μ.2
+    _ = (n + 1) * ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, numStandardYoungTableaux μ.1 :=
+        (Finset.mul_sum _ _ _).symm
+
+set_option maxHeartbeats 1000000 in
+/-- **The involution recurrence, conditional on the up-operator identity.**
+
+    s(n+2) = s(n+1) + (n+1)·s(n),      s(k) := Σ_{μ of size k} #SYT(μ).
+
+This is *exactly* the recurrence defining the involution numbers,
+`I(n+2) = I(n+1) + (n+1)·I(n)` (`QOU.BraidKnot.KeystoneC8SuperExpBound.involutionNumber`).
+With matching base cases `s(0) = s(1) = 1` it gives `Σ_{λ⊢n} f^λ = I(n)` — the identity
+that licenses reading the involution numbers as the `q = 1` na-Stokes period in
+`QOU.Mass.SWPeriodSuperExponential`, and the open target of beans `qou-m3xr` / `qou-jlam`.
+
+**Everything here is proved except `UpOperatorIdentity`**, which is carried as an explicit
+hypothesis and is the single remaining obligation. It is not asserted anywhere in this
+file; §3b-cond, and "conditional-proved ≠ premise-established". -/
+theorem sum_numSYT_recurrence (h : UpOperatorIdentity) (n : ℕ) :
+    ∑ μ : {μ : YoungDiagram // μ.cells.card = n + 2}, numStandardYoungTableaux μ.1
+      = (∑ μ : {μ : YoungDiagram // μ.cells.card = n + 1}, numStandardYoungTableaux μ.1)
+        + (n + 1) * ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, numStandardYoungTableaux μ.1 := by
+  classical
+  rw [sum_numSYT_succ_split (n + 1), ← sum_numSYT_mul_corners_of_upOperator h n]
+  congr 1
+  refine Finset.sum_congr rfl fun ν _ => ?_
+  rw [card_cornerCells_eq_card_subtype]
+
 end QOU.Mathlib
