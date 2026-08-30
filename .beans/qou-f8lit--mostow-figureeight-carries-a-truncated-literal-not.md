@@ -520,3 +520,61 @@ NEW 0, REGRESSED 0.
 EXEMPT" rule (AGENTS.md, owner directive 2026-08-18) makes a defect in its own right.
 Fixing it means carrying `mpf` through the whole cost computation — a different change
 from correcting a constant, and out of this branch's scope. Recorded so it is not lost.
+
+## 2026-08-30 — re-verified the other five axis-2 rows; 1 was false
+
+Closing the flag this arc left on
+`docs/audits/2026-06-21-constant-consistency-axis2-clean.md`. That flag read
+*"none has been re-run against `content/`"* about the five surviving ✅ rows.
+**It was an unmeasured absence.** Four of the five had been re-verified by
+independent arcs before I wrote it.
+
+    Vol(Hopf)=0   HOLDS   every executable carrier is literally 0; no nonzero
+                          literal anywhere binds a Hopf-volume name
+    Catalan G     HOLDS   covered by known-constant-literal-audit.py (computes
+                          mp.catalan, walks content/**/*.lean)
+    m_mu/m_e      DRAINED qou-7ot6 closed 2026-08-22; qou-wn1w wired
+    m_mu (MeV)    DRAINED codata_corpus_literal_scan.py --strict as BLOCKING,
+                          widening --changed to content/**/*.{lean,ts}.
+                          Re-run on main 2026-08-30: CODE 0.
+    q-bracket     FALSE   see below
+
+**Row 4 is genuinely false, and the corpus found it three weeks before I
+flagged it as unchecked.** `qou-qint` (2026-08-08): 55 q-integer definitions
+under ~15 aliases — 43 balanced, 10 geometric, 1 geometric-in-`q²`, 1 ℤ-poly —
+and the bare name `qInt` **defined in 18 files meaning BOTH conventions**. Two
+single-line witnesses:
+
+    QIntegerFactorial.lean:37   def qInt … := ∑ i ∈ range n, q ^ i     GEOMETRIC
+    degree-two-baryon-weight.lean:22
+                                abbrev qInt … := QOU.QInteger.qIntBal q n  BALANCED
+
+Not cosmetic: `qIntBal` is bar-even, the geometric form is not, so a geometric
+`[n]` inside a bar-even quantity breaks parity bookkeeping silently. Fixed at
+`lean/QOU/MathlibExt/QIntegerCanonical.lean`; `qou-qint` stays `todo` at its
+stated consolidation ceiling (the residue are guarded / ℤ- / ring-indexed
+variants that are *different functions*).
+
+### Two additions to this arc's lesson
+
+1. **A verdict is only as sharp as its PREDICATE, not only its surface.** Row 4's
+   surface was fine. Its question — *"is any def unbalanced?"* — structurally
+   could not see *"is any NAME both?"*. That needs classify-by-body then
+   group-by-name. Same shape as the `markovZ` overload AGENTS.md documents.
+2. **An audit's canonical COLUMN ages.** This audit certifies `206.7682830`;
+   PR #4860/#5149 made that the *stale* CODATA-2018 value on 2026-08-09. The ✅
+   decayed without anyone touching the row. Record the edition, not the digits.
+
+### Defect in my own measurement, recorded not quietly fixed
+
+First classifier took an 8-line body window. Every migrated site carries a
+**bridge lemma** right after it, so the window swallowed the bridge and
+inherited its convention — it labelled `QCollatz.lean:46` BALANCED when that
+site's own docstring says *"Bridge to the canonical GEOMETRIC bracket"*, and
+left 22 of 82 unclassified. The tell was disagreeing with docstrings written by
+the people who did the migration. The two witnesses above are single-line
+bodies chosen so no window can contaminate them.
+
+**Third time in this arc that a claim of mine was an unmeasured absence** (after
+"no numpy/scipy" and "the producers are unblocked"). The pattern is specific: I
+report the *absence of evidence I did not look for* as evidence of absence.
