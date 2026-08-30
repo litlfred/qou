@@ -95,3 +95,166 @@ in-repo; what is missing is anyone having pointed it at this question.
       formula will meet it.
 - [ ] Decide whether the radial/tangential non-commutation deserves its own
       block. It bears directly on whether the substrate pin can ever see VC.
+
+---
+
+## 2026-08-30 — restatement landed, and it uncovered two errors in the block
+
+The "cheap exposition win" was not only exposition. Restating
+`prop:silver-ratio-beta-decay-null` in crossing-energy terms required reading
+the `.md` against its own Lean, and the two disagreed twice.
+
+### Defect 1 — the boxed closed form was wrong
+
+The block asserted
+
+    Δ(net) = h(h-2)/2 = (q² − 2q − 1) / (2q)
+
+The second equality is false. With `h = q − 1/q`,
+
+    h(h−2)/2 = (q² − 1)(q² − 2q − 1) / (2q²)
+
+Measured: at q = 2 the two sides are −0.375 and −0.25; at q = 3, 0.889 and
+0.333. **They agree only where both vanish — at the silver ratio itself**,
+which is the one point the block is about. A reader checking the identity at
+the block's own subject would confirm it; the error is invisible exactly there.
+
+### Defect 2 — the stated iff omitted a root
+
+The prose read "vanishes if and only if $h = 2$". The block's own Lean theorem
+is `beta_decay_null_iff_h_zero_or_two`: the null is `h = 0 ∨ h = 2`. Verified
+`deltaNet(1) = 0` exactly. The narrative was strictly weaker than the formal
+statement it carries — the reverse of the usual drift direction.
+
+### What landed
+
+Both fixed, and the null is now stated as `𝔈_× ∈ {0, 1}` alongside the h-form,
+with a third equivalent `Δ(net) = 2𝔈_×(𝔈_× − 1)`. All three forms verified
+numerically to agree at q ∈ {0.5, 1.11, 2, 3, 1+√2, 10}. The q→∞ behaviour and
+the VC-regime separation are stated with their numbers.
+
+QA: my edit initially tripped `voice-editorializing` twice ("the one a reader
+can interpret", "undefined rather than merely large") — a fair catch both
+times; reworded to plain statements. Final sweep is back to the pre-existing
+baseline of 10 failing axes, i.e. **my change adds no new QA failure**.
+
+### A third finding: 10 QA axes are failing on a deleted file
+
+All 10 baseline failures on this block say a variant of "the Lean sibling
+`content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean`
+fails compilation / contains sorry". **That file does not exist.** Only two
+copies remain — `nuclear-interactions/…` and the lake-built
+`lean/QOU/ParticleInteractions/…` — and **both are sorry-free**. The block's
+`.ts` correctly references `qou:QOU.ParticleInteractions.beta_decay_null_iff_h_zero_or_two`
+and carries `validation: "not_checked"`, which is why nothing ever forced a
+re-check.
+
+So this block reads as ten-axes-red for a file that was moved and repaired.
+`da-vacuous` in particular reports "contains 'sorry' placeholders" about
+Lean that has none. That is a stale-evidence failure, not a content failure,
+and it is the kind that trains readers to ignore red.
+
+## Proposed Lean, NOT COMMITTED — could not be type-checked here
+
+The following extends the lake-built module. It is **not** in the tree: this
+container has **no Mathlib oleans anywhere** (`find / -name Mathlib.olean` is
+empty), `lake` is not installed, and no `lake-cache` branch carries them — so
+`scripts/lean-direct-cone.sh` fails at `unknown module prefix 'Mathlib'`.
+Pushing unverified proofs onto a branch three sessions share is not worth the
+convenience, so it is parked here until someone can compile it.
+
+Every proposition below is numerically verified (see above); what is unverified
+is whether these particular *tactic scripts* close the goals.
+
+```lean
+/-- Per-crossing energy 𝔈_×(q) = ½(q − q⁻¹). -/
+noncomputable def crossingEnergy (q : ℝ) : ℝ := heckeSkein q / 2
+
+theorem crossingEnergy_eq_half_heckeSkein (q : ℝ) :
+    crossingEnergy q = heckeSkein q / 2 := rfl
+
+/-- The β-decay null is exactly zero-or-unit crossing energy. -/
+theorem beta_decay_null_iff_crossing_energy_zero_or_one (q : ℝ) (hq : q > 0) :
+    deltaNet q = 0 ↔ crossingEnergy q = 0 ∨ crossingEnergy q = 1 := by
+  rw [beta_decay_null_iff_h_zero_or_two q hq]
+  unfold crossingEnergy
+  constructor
+  · rintro (h | h)
+    · left; rw [h]; norm_num
+    · right; rw [h]; norm_num
+  · rintro (h | h)
+    · left; linarith
+    · right; linarith
+
+/-- Unit crossing energy pins q to the silver ratio. -/
+theorem crossing_energy_eq_one_iff (q : ℝ) (hq : 0 < q) :
+    crossingEnergy q = 1 ↔ q = 1 + Real.sqrt 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hs : Real.sqrt 2 * Real.sqrt 2 = 2 :=
+    Real.mul_self_sqrt (by norm_num : (0 : ℝ) ≤ 2)
+  have hs_pos : (0 : ℝ) < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
+  constructor
+  · intro h
+    have h2 : q - 1 / q = 2 := by unfold crossingEnergy heckeSkein at h; linarith
+    have hquad : q ^ 2 - 2 * q - 1 = 0 := by field_simp at h2; nlinarith [h2]
+    have hfac : (q - 1 - Real.sqrt 2) * (q - 1 + Real.sqrt 2) = 0 := by
+      nlinarith [hquad, hs]
+    rcases mul_eq_zero.mp hfac with h1 | h1
+    · linarith
+    · exfalso; nlinarith [hs, hs_pos]
+  · intro h
+    subst h
+    unfold crossingEnergy heckeSkein
+    have hden : (1 : ℝ) + Real.sqrt 2 ≠ 0 := by positivity
+    field_simp
+    nlinarith [hs]
+
+/-- The unit-crossing-energy point is not on the unit circle, where the
+volume conjecture's root-of-unity limit lives. -/
+theorem crossing_energy_one_not_on_unit_circle (q : ℝ) (hq : 0 < q)
+    (h : crossingEnergy q = 1) : |q| ≠ 1 := by
+  rw [crossing_energy_eq_one_iff q hq] at h
+  have hs_pos : (0 : ℝ) < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
+  rw [abs_of_pos hq, h]; linarith
+
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - 1 / q
+noncomputable def volTerm (V q : ℝ) : ℝ := V / (hbarQ q) ^ 2
+
+/-- ℏ_q vanishes exactly at q = 1, the 𝔈_× = 0 root. -/
+theorem hbarQ_eq_zero_iff (q : ℝ) (hq : q ≠ 0) : hbarQ q = 0 ↔ q = 1 := by
+  unfold hbarQ
+  constructor
+  · intro h; field_simp at h; linarith
+  · intro h; subst h; norm_num
+
+theorem tendsto_hbarQ_atTop :
+    Filter.Tendsto hbarQ Filter.atTop (nhds (1 : ℝ)) := by
+  have h : Filter.Tendsto (fun q : ℝ => 1 - q⁻¹) Filter.atTop (nhds (1 - 0)) :=
+    Filter.Tendsto.sub tendsto_const_nhds tendsto_inv_atTop_zero
+  simpa [hbarQ, one_div] using h
+
+/-- The large-q limit returns the bare hyperbolic volume. -/
+theorem tendsto_volTerm_atTop (V : ℝ) :
+    Filter.Tendsto (volTerm V) Filter.atTop (nhds V) := by
+  have h1 : Filter.Tendsto (fun q : ℝ => (hbarQ q) ^ 2) Filter.atTop
+      (nhds ((1 : ℝ) ^ 2)) := tendsto_hbarQ_atTop.pow 2
+  have h2 : Filter.Tendsto (fun q : ℝ => V / (hbarQ q) ^ 2) Filter.atTop
+      (nhds (V / (1 : ℝ) ^ 2)) :=
+    Filter.Tendsto.div tendsto_const_nhds h1 (by norm_num)
+  simpa [volTerm] using h2
+```
+
+Risk assessment for whoever lands it: the `rfl`, `rw`/`rintro` and limit proofs
+are low-risk; the two `field_simp; nlinarith` steps in
+`crossing_energy_eq_one_iff` and the `nlinarith [hquad, hs]` factorisation are
+the ones most likely to need adjustment.
+
+## Next
+
+- [ ] Land the Lean above in a container that can compile it.
+- [ ] Repoint or clear the stale QA evidence on this block (10 axes red for a
+      deleted file). Consider whether `validation: "not_checked"` in the `.ts`
+      should become a checked reference now that both live copies are
+      sorry-free.
+- [ ] The `q → ∞` limit deserves a home a reader of the mass formula will
+      actually meet, not only this block.
