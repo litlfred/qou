@@ -231,6 +231,7 @@ import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
+import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
 import QOU.MassTheory.SaturationRhoCap

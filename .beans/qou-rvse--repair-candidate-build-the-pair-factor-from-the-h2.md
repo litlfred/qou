@@ -1,11 +1,11 @@
 ---
 # qou-rvse
 title: 'Repair candidate: build the pair factor from the H2 Wedderburn split (isospin 2x2 = 3+1), not from crossing signs'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-30T10:32:43Z
-updated_at: 2026-08-30T10:33:37Z
+updated_at: 2026-08-30T10:44:44Z
 ---
 
 ## Why the current pair factor cannot be repaired by convention
@@ -76,3 +76,103 @@ tuning the assignment against the anchors would be a fit, and the three-calibrat
 discipline review will catch it.
 
 Parent: qou-1pig (the parity defect), qou-brng (the extensive term).
+
+
+
+---
+
+# 🛑 REFUTED, and by the corpus's own charge conjugation (2026-08-30)
+
+Owner: *"derive the irrep-isospin assignment"*. It cannot be derived, because
+**it cannot exist**. Lean, sorry-free, lean-direct exit 0:
+`QOU/MassTheory/PairIsospinAssignment.lean`.
+
+## The argument
+
+`shell-schur-weyl-self-duality-proof.md` **step 4** fixes what charge
+conjugation IS on the Hecke side, in the corpus's own words:
+
+> *"On the Hecke side, the corresponding involution is tensoring with the sign
+> representation V_{H_n}(1^n), which maps V_lambda -> V_{lambda*}."*
+
+At **n = 2** the partitions of 2 are `(2)` and `(1,1)`, and `(2)* = (1,1)`.
+**So C SWAPS the two blocks.**
+
+Total isospin `T` is **C-invariant** — charge conjugation carries `|T,T3>` to
+`|T,-T3>`, fixing `T`.
+
+A C-invariant labelling of a two-element set whose C is the swap is
+**constant** (`isospin_const_of_conj_invariant`). Hence
+`no_conj_invariant_separating_label`: no C-invariant `T` gives the blocks
+different values, so **none assigns (2) the triplet and (1,1) the singlet.**
+
+The assignment is not merely underived. It **contradicts the corpus's own C.**
+
+## The swap, concretely — and it exposes the real defect
+
+Writing the H_2 relation inverse-free as `sigma^2 = h*sigma + 1` (`h = q - 1/q`),
+the block swap is the algebra automorphism
+
+    Phi(sigma) = h - sigma
+
+(`heckeConj_isHecke` — it preserves the relation; `heckeConj_involutive`;
+`eigen_swap` — it exchanges the eigenvalues `q` and `-1/q`). Verified
+numerically: `h - q = -0.90091828395574149216 = -1/q` and `h + 1/q = q`, both
+exact.
+
+Push it through the Markov trace, where the corpus has `f_pp = tr(sigma) = z`
+and `f_nn = z - h`:
+
+    tr(Phi(sigma)) = h - z = -0.40362773835082593616 = **-f_nn**
+
+**So C(f_pp) = -f_nn, not +f_nn.** Residual exactly 0.0. That missing sign is
+the whole of the pair layer's parity defect measured in qou-1pig.
+
+And `charge_symmetric_iff`: `f_pp = f_nn` **iff h = 0**, i.e. iff `q = 1/q`.
+**The framework buys its q-deformation and its charge asymmetry with the same
+parameter and cannot have one without the other.**
+
+## Why there was never an isospin SU(2) at this level
+
+Corpus-grepped. The corpus's `T_3` is defined in `spin-involution.md` as a
+**Z/2 grading**: `T_3(a) = (1/2) sgn_sigma(a)`, `2 T_3 = sgn_sigma`. There is
+no total-`T`, no Casimir, no `2 (x) 2 = 3 (+) 1` at the pair level.
+
+And the corpus says so itself, in
+`shell-schur-weyl-self-duality-interpretation.md`:
+
+> *"Isospin doubling. Proton-neutron interchange symmetry emerges **at closed
+> shells** via isospin SU(2) doubling."*
+> *"Parity-violating phenomena arise at **level 3 (the inter-nucleon pair)**,
+> where conjugate symmetry breaks via **skein asymmetry**. They do not appear at
+> level 4 (the shell), where Schur-Weyl self-duality is exact."*
+
+So isospin SU(2) is an emergent **level-4** structure; the pair is **level 3**,
+where the corpus deliberately has only the Z/2. `prop:skein-crossing-asymmetry`
+is the corpus's own name for the mechanism.
+
+**Nothing here refutes that proposition.** It prices it: the level-3 charge
+asymmetry it introduces is `h/2` in the bond factor, 1454x the isoscalar
+splitting, and 2.29x the observed A=3 mirror splitting in energy.
+
+## Status
+
+**Scrapped as a repair route.** Scope-(b) exclusion with a named invariant
+(C-invariance of total isospin) plus the corpus's own C. Do not re-propose
+keying the pair factor on the H_2 block label.
+
+The -7.8% 2H number recorded above is now **numerology** and must not be quoted
+as support: its premise is refuted, and the three cautions listed with it
+(underived assignment, one anchor, cheap re-assignment) were the right instinct.
+
+## What survives, as the real question
+
+The defect is not the pn averaging rule and not the block labelling. It is
+`p |-> sigma, n |-> sigma^{-1}` — the identification of the nucleon's identity
+with a **crossing sign**. Under the corpus's own C that map is not covariant:
+C sends `sigma |-> h - sigma`, whose trace is `-f_nn`, not `f_nn`.
+
+A repair has to change that identification, and the corpus's architecture says
+where the isospin SU(2) actually lives: **level 4**. Whether a level-3 quantity
+can inherit charge symmetry from a level-4 structure is the open question, and
+it is qou-brng's neighbour, not its duplicate.
