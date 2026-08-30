@@ -40,6 +40,7 @@ import re
 __all__ = [
     "blank_comments", "split_statement", "decl_spans", "docstring_before",
     "binder_names", "local_def_names", "discharges_via_binder_field",
+    "line_comments_before", "line_comments_inside", "comment_cone",
     "DECL", "PLAIN_DEF",
 ]
 
@@ -248,3 +249,65 @@ def discharges_via_binder_field(proof: str, binders: set[str]) -> bool:
     the open-claim signal into a false CRITICAL.
     """
     return any(re.search(rf"\b{re.escape(b)}\.[A-Za-z_]", proof) for b in binders)
+
+
+def line_comments_before(lines: list[str], line_no: int) -> str:
+    """The contiguous `--` comment block immediately above `line_no`.
+
+    `docstring_before` deliberately *skips* `--` lines while walking up, so
+    that a `-- Ref:` citation sitting between a docstring and its declaration
+    does not hide the docstring.  The cost of that skip is that prose written
+    in `--` comments -- which in this corpus is where the honest admissions
+    tend to live -- is invisible to every caller of `docstring_before`.
+
+    Worked case (`qou-rfq9`): `b3_nf_wedderburn_uniqueness` carries a docstring
+    ending "the NF coefficients are PROVED CORRECT", and immediately below it,
+    in `--` comments, "The formal proof needs: Wedderburn for finite-dim
+    algebras (Mathlib)".  Only the first is read.
+
+    Blank lines are skipped between comment lines but the walk stops at the
+    first non-blank, non-`--` line, so this never reaches over a declaration.
+    """
+    j = line_no - 2
+    out: list[str] = []
+    while j >= 0:
+        s = lines[j].lstrip()
+        if s.startswith("--"):
+            out.append(lines[j])
+            j -= 1
+        elif not lines[j].strip():
+            j -= 1
+        else:
+            break
+    return "\n".join(reversed(out))
+
+
+def line_comments_inside(lines: list[str], line_no: int, span_lines: int) -> str:
+    """`--` comments occurring INSIDE a declaration's own source span.
+
+    `blank_comments` runs before parsing, so by the time a detector sees a
+    statement every inline comment in it is whitespace.  This reads them back
+    out of the raw lines.
+
+    This is not a stylistic nicety: in the worked case the admission
+    "Full proof requires Wedderburn-Artin over R_q" sits between the theorem
+    name and the proposition it is introducing -- i.e. inside the statement,
+    where nothing else looks.
+    """
+    out = [ln for ln in lines[line_no - 1: line_no - 1 + span_lines]
+           if ln.lstrip().startswith("--")]
+    return "\n".join(out)
+
+
+def comment_cone(lines: list[str], line_no: int, span_lines: int) -> str:
+    """All authored prose attached to one declaration.
+
+    docstring above + `--` block above + `--` comments inside the span.
+    Detectors that ask "does the author's own prose admit this is open?"
+    should read this, not `docstring_before` alone.
+    """
+    return "\n".join(x for x in (
+        docstring_before(lines, line_no),
+        line_comments_before(lines, line_no),
+        line_comments_inside(lines, line_no, span_lines),
+    ) if x)
