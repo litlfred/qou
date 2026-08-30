@@ -83,3 +83,67 @@ Do not read "both admissible bases fail" as licence to search for a third. The
 admissible set is **proved** to have exactly two members; a third base would have
 to come from dropping the two-row cap, which is the constraint under the ruling.
 Searching outside it for a value that lands near the required phase is a fit.
+
+---
+
+# Addendum: the two-constraint filter — what any candidate `z` must satisfy
+
+The exclusion above is a *sign* argument. There is a sharper one, and it prunes
+the whole family rather than its two admissible members. It is stated here so the
+next tranche can test a candidate **before** running any search, per the bean's
+Discipline section.
+
+## The filter
+
+`α_required` is measured at two anchors that share their experimental input
+**exactly** — `Q_codata_MeV = 0.78233340999999999999999999999999` for both — so
+the difference between them is a genuine `q`-derivative and not a confound
+between two experimental values. That was checked, not assumed.
+
+    alpha_required(q0)      = -0.052358683519
+    d(alpha_required)/dq    = +41.388615        (secant over the two anchors)
+
+Imposing both on `α = (z−1)·h/2`, `h = q − 1/q`:
+
+    z(q0)   = 1 + 2*alpha/h                     =   0.4991044802
+    z'(q0)  = (slope - (z-1)*h'/2) * 2/h        = +400.2896759
+
+## What the candidates give
+
+| | `z(q₀)` | `z′(q₀)` |
+|---|---|---|
+| **required** | **0.4991044802** | **+400.2896759** |
+| `z_C` | 0.4993203342 | −0.01172370089 |
+| `z_D` | 0.6126880371 | 1.046577629 |
+| `z = q` | 1.109978583 | 1.0 |
+
+## Reading
+
+**`z_C` matches the VALUE to four decimals and misses the DERIVATIVE by a factor
+of −34,144**, sign included. That is the "transversal crossing" `qou-cds1`
+already reported, now quantified: the two curves agree in position at `q₀` and
+disagree in slope by four and a half orders of magnitude.
+
+**For constant `z` the two constraints are outright contradictory.** Matching the
+value needs `z ≈ 0.4991`; matching the slope needs `z = 46.69`, which would give
+`α = +4.78` — wrong sign and ~91× too large.
+
+## The prune this supplies
+
+A viable `z` must sit at **≈ 0.499** while having derivative **≈ +400**. No
+rational function of `q` of the kind the corpus uses behaves that way near `q₀`
+without a near-pole or a steep engineered feature sitting exactly there — which
+is a fine-tuning signature, not a derivation.
+
+So this is independent evidence for `qou-cds1`'s existing conclusion that **the
+functional form must change**: the problem is not that the wrong `z` was picked,
+it is that no well-behaved `z` can carry a slope two orders of magnitude above
+its own scale.
+
+## Scope
+
+Scope-(a), and it is a **filter, not a refutation**: it says what a candidate
+must satisfy, and that the natural candidates fail. It does not prove no `z`
+exists. A candidate presented in future should be checked against **both** rows
+of the table above — passing the value alone is what `z_C` already does, and is
+not evidence.
