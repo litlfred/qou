@@ -312,6 +312,15 @@ def _y_lambda_at_convention_C_HISTORICAL(
         q_mp = _mp_inner.mpf(str(q_val))
         y_mp = y_lambda_at_q0_mpmath(n, q_mp)
         # Convert mpmath → sympy for consumer compatibility.
+        # NOTE (qou-840k item 6, re-checked 2026-08-30): this still returns 30
+        # digits while the comment above quotes ~1e-50 verification. Both are
+        # accurate — the closed form IS good to ~1e-50, and this conversion
+        # then discards it — but read together they invite a copy of the wrong
+        # half. The LIVE `y_lambda_at` uses 50 (see its L201); this function is
+        # `_y_lambda_at_convention_C_HISTORICAL` and its own live counterpart's
+        # docstring calls it dead. Verified 2026-08-30: no runtime caller, only
+        # docstring and audit references. Left at 30 deliberately — a historical
+        # path should reproduce its history, not be quietly improved.
         return {sh: sp.Float(_mp_inner.nstr(y, 30), 30)
                 for sh, y in y_mp.items()}
     except (ImportError, Exception):

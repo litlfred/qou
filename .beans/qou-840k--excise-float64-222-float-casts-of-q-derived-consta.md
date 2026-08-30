@@ -88,7 +88,7 @@ mathematics.
 - [x] `y_lambda_at`: read `Q_MP`, and reconsider the 30-digit `sp.Float` cap
       — DONE 2026-08-24 (PR #5641). See "Round 2" below.
 - [ ] `mass_at_3A_proper.py:164` BlockCache f64 seeding
-- [ ] correct "1e-50" claims that are actually about tr_M
+- [x] correct "1e-50" claims that are actually about tr_M — RE-CHECKED 2026-08-30: no edit needed, see Round 3
 
 SEQUENCING CONSTRAINT: wave 4 (163 producers) is running in this checkout. Do
 NOT run any producer and do NOT edit modules producers import until it finishes
@@ -515,3 +515,72 @@ ones. My earlier note overstated it; corrected there.
 `docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py` is pure
 Python and genuinely fixable — still open, and it also holds a **superseded
 vintage** (B, while the canonical pin is now C), which is a second decision.
+
+
+## Item 6 — RE-CHECKED 2026-08-30. The answer is DO NOT EDIT, and here is the evidence
+
+Round 2 warned that item 6's premise had inverted and that acting on the
+original instruction would introduce the error item 6 exists to remove. Checked
+rather than taken on trust, because the first thing I found appeared to
+contradict it.
+
+### The apparent contradiction, and its resolution
+
+The 30-digit cap **is still in the file** — `sp.Float(_mp_inner.nstr(y, 30), 30)`,
+both `30`s, and in the `qou-mass` twin too. That reads like Round 2's note was
+wrong.
+
+It is not. That cap is at **`:315`, inside
+`_y_lambda_at_convention_C_HISTORICAL`**. The live `y_lambda_at` is at 118-212
+and its conversion is **`:201  sp.Float(_mp.nstr(v, 50), 50)`** — 50, with a
+comment at `:179` explaining the change from 30. Round 2 raised the live path
+and left the historical one, which is correct.
+
+Verified the historical path is genuinely dead: the live function's own
+docstring says so at `:151`, and every other reference in the tree is a
+docstring or an audit — no runtime caller.
+
+### Measured, not read
+
+    mp.dps = 70
+    y(3,)   = 0.50540422650393080318755870324047227566035119774981   (50 sig digits)
+    y(2,1)  = 0.24729788674803459840622064837976386216982440112509   (50 sig digits)
+
+The live path returns 50 significant digits. The cap is gone where it matters.
+
+*(One near-miss worth recording: I checked `sum(y) - 1` as a normalisation
+residual and got `-0.2473`, which looks alarming. It is not a precision result —
+the two-row Wenzl cap makes `y_(1³) = 0`, so these weights do not sum to 1 in
+this convention. My assumption was wrong, not the numbers. Do not re-derive that
+scare.)*
+
+### The target claim is TRUE as written
+
+`content/…/mba-step03-markov-trace.md:94`:
+
+> The numerical mode at $q = q_0$ meets L1 to $10^{-50}$ by the precision
+> discipline of `qou-substrate`.
+
+With the live conversion at 50 digits this holds. **Rewriting it to $10^{-30}$
+would make a true statement false** — precisely what Round 2 predicted. **No
+edit made to any of item 6's three targets.**
+
+### But it only became true for ONE path today
+
+Worth stating because it ties item 6 to item 3: the claim covers "the numerical
+mode". Until this round, a reader following the numerical mode through
+`global_wedderburn_sum_q_hecke_seminormal` got a **float64** kernel — ~1e-15,
+not 1e-50. Item 3's rewire (same branch, previous commit) is what makes the
+sentence true along that route as well. Before it, the claim was true of the
+symbolic and mpf paths and false of the Hecke-seminormal numerical one, and
+nothing said which path a reader was on.
+
+### One annotation added, no behaviour changed
+
+The historical function's comment quotes *"Verified to ~10⁻⁵⁰"* immediately
+above a conversion that returns 30. Both statements are accurate — the closed
+form is that good, and the conversion then discards it — but read together they
+invite copying the wrong half, which is plausibly how the cap propagated in the
+first place. A note now records the split, that the live path uses 50, and that
+30 is kept **deliberately**: a historical path should reproduce its history, not
+be quietly improved.
