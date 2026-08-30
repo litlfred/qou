@@ -8,6 +8,27 @@ import Mathlib.Algebra.Group.Hom.Defs
 
 **Bean `qou-7gei` item 6, and a defect report on `QOU.Hecke.Wedderburn`.**
 
+> **RESOLVED upstream 2026-08-24 (PR #5710); re-scoped 2026-08-30.** The defect
+> described below is fixed: `QOU.Hecke.WedderburnDecomp` no longer carries a
+> `trace_decomp` field, and `QOU.Hecke.Wedderburn.trace_decomposition` now
+> *derives* the identity from `complete` together with a new `block_scaling`
+> field — the very repair this module prescribed. The analysis below is left in
+> the present tense as the record of why that change was made; read "states" as
+> "stated, until PR #5710".
+>
+> **The prescription was not sufficient**, which matters before reusing this
+> reasoning. `block_scaling` is an equation on the *product* `y_λ · χ^λ`, and
+> since the class stores its blocks abstractly it had to add `chi_lambda` as a
+> second free field — so neither factor is pinned.
+> `QOU.Hecke.RankOneDegeneracy.yLambda_not_pinned` realises **every** nonzero
+> rational as the weight at every partition, under a witness satisfying the
+> whole class. Encoding the block-scaling sentence was necessary and is not
+> enough; `χ^λ` has to become *computed* rather than assumed.
+>
+> The three theorems in this file are untouched by all of it — they were always
+> stated over a generic `tr`, `pi`, `y`, `chi` with the block scaling as an
+> explicit hypothesis, which is exactly why the class change did not reach them.
+
 ## The defect
 
 `QOU/Hecke/Wedderburn.lean` (merged to main in PR #4857) states
