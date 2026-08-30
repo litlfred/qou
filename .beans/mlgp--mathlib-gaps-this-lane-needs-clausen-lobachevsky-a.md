@@ -9,7 +9,7 @@ tags:
     - mathlib-gap
     - hyperbolic-volume
 created_at: 2026-08-09T19:45:00Z
-updated_at: 2026-08-30T17:30:00Z
+updated_at: 2026-08-30T18:15:00Z
 ---
 
 Inventory of what Mathlib does **not** have that the volume lane needs, with what
@@ -233,3 +233,75 @@ Gap 1 already notes `Cl₂` is a clean Mathlib contribution. Add: **`Li₂` /
 polylogarithm and the Lobachevsky function are equally self-contained**, and
 QOU has working versions of both. Steepest descent is a much larger piece and a
 different kind of contribution.
+
+### Gap 4 follow-through (2026-08-30) — the shrink is done, and it does NOT need steepest descent
+
+Owner: "Shrink the axiom and see if we can prove it." Done, in
+`QOU/Archimedean/FiveTwoOhtsukiBridge.lean`. The headline: **the volume half
+separates from the analytic half, and only the analytic half needs the missing
+Mathlib.**
+
+Ohtsuki's Theorem 1.1 (extracted verbatim from `library/ki52`, §1) is
+
+    ⟨5₂⟩_N = e^{Nζ}·N^{3/2}·ω·(1 + Σᵢ κᵢ(2πi/N)ⁱ + O(N^{-d-1}))
+
+with `y₀` the positive-imaginary root of `(y−1)³ = y`, `x₀ = 1 − 1/y₀`, and
+
+    ζ = (1/2πi)·( Li₂(x₀y₀) + Li₂(1/x₀y₀) + Li₂(y₀) − Li₂(1/y₀) − Li₂(1/x₀) − π²/6 )
+
+Splitting on that gives four parts, of which **one** is the hard analysis:
+
+| part | content | status |
+|---|---|---|
+| (A) | the asymptotic form above | axiom — the 67-page part, not attempted |
+| (B) | `2π·Re ζ = 3·D(y₀)` | **pure dilogarithm identity — provable** |
+| (C) | (A) ⟹ growth rate `= 2π·Re ζ` | elementary analysis |
+| (D) | `Vol(5₂) = 3·D(y₊)` | **already** axiomatised as `FiveTwoTriangulation` |
+
+**(B) is the finding.** It looks like it needs hyperbolic geometry and does
+not: `π²/6` is real, so it drops from the imaginary part, and what remains is
+an identity among dilogarithms at the root of a cubic — reachable from the
+Bloch–Wigner functional equations already in
+`QOU/Archimedean/BlochWignerLobachevsky.lean`. Neither (B) nor (C) touches the
+method of steepest descent. That is needed only to prove (A), which we are not
+attempting, so **Gap 4 does not block the rigor gain** — it blocks only the
+elimination of the last axiom.
+
+### The corpus was already further along than the survey suggested
+
+`BlochWignerLobachevsky.lean` already carries `fiveTwoSaddleCubic`,
+`fiveTwoShapeCubic`, a proved `landen_root`, and a `FiveTwoTriangulation`
+class with **no instance** stating exactly `Vol(5₂) = 3·D(y₊)`. So part (D) was
+done before this session; what was missing was the bridge from the *Kashaev
+asymptotic* to that geometry.
+
+**Two cubics, reconciled — not a discrepancy.** Ohtsuki's is `y³−3y²+2y−1`;
+the corpus's `fiveTwoSaddleCubic` is `y³−2y²+3y−1`. Measured: the corpus root
+`y₊ = conj(1/y₀)` **exactly**, and since `D(1/z) = −D(z)` and `D(z̄) = −D(z)`
+the two sign flips cancel, giving `D(y₀) = D(y₊)` to 40 digits. The algebraic
+half of that reconciliation is proved in the new file
+(`inv_root_of_ohtsuki_cubic`, a `field_simp`/`linear_combination` one-liner).
+
+### Numerically verified before writing anything
+
+* `y₀` and `ζ` reproduce Ohtsuki's printed constants
+  (`0.3376410213…+0.5622795120…i`, `0.4501096100…+0.4813049796…i`);
+* `2π·Re ζ = Vol(5₂)` to **4.6e-41**;
+* `3·D(y₀) = Vol(5₂)` to **5.3e-50**;
+* `Im S = 3·D(y₀)` to machine zero;
+* `D(x₀) = D(y₀)` and `D(x₀y₀) = D(y₀)/2` exactly — both should fall out of the
+  five-term relation rather than be assumed, and step 4 of the proof strategy
+  in the file says so.
+
+### Honest state of the new file
+
+Three `sorry`s, each with a written strategy, and **not type-checked** — same
+container limitation as `qou-9ilw` (no Mathlib oleans; toolchain ships no
+`libLean.a` so `lake exe cache get` cannot be built). The `Li₂` is taken as a
+*parameter with hypotheses* rather than constructed, so the statement does not
+depend on which polylogarithm the corpus or Mathlib eventually supplies —
+Mathlib has none (Gap 1 extension).
+
+- [ ] Prove (B). This is the real target and it is a dilogarithm problem.
+- [ ] Prove (C). Elementary; Mathlib has what it needs.
+- [ ] Leave (A) cited. Proving it is the steepest-descent programme.
