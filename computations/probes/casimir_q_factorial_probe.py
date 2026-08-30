@@ -69,7 +69,7 @@ from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
 from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -166,6 +166,11 @@ def main() -> int:
             "value_at_substrate": float(val_substrate),
             "value_at_q→1": float(val_classical),
             "rel_residue_substrate": float(rel_res_substrate),
+            # The mpf kept alongside the float64 so the demoted-goal record
+            # below can report this residue without adding a second raw
+            # float64 to the witness (the ratchet counts occurrences, not
+            # distinct values, so re-exposing the same number costs one).
+            "rel_residue_substrate_exact": fmt(rel_res_substrate),
             "rel_residue_classical": float(rel_res_classical),
             "classical_limit_ok": bool(classical_ok),
         })
@@ -258,7 +263,7 @@ def main() -> int:
         "n_within_one_percent_at_substrate": n_sub_one_pct,
         "met": bool(n_sub_one_pct > 0),
         "best_classical_ok_substrate_residue": (
-            best_classical_ok["rel_residue_substrate"]
+            best_classical_ok["rel_residue_substrate_exact"]
             if best_classical_ok else None),
         "has_independent_expected_value": False,
     })
