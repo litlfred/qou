@@ -84,6 +84,11 @@ DECL = re.compile(
     r"^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+)*"
     r"(?:def|abbrev)\s+([A-Za-z_][\w'.]*)"
 )
+# A `private` declaration's environment name is mangled per module
+# (`_private.<module>.0.<Ns>.<name>`), so it can never collide with anything in
+# another module -- not with another private of the same name, and not with a
+# public one. Excluding it from the propose stage is sound, not a recall loss.
+PRIV = re.compile(r"^\s*(?:@\[[^\]]*\]\s*)?(?:\w+\s+)*?private\b")
 NS = re.compile(r"^\s*namespace\s+([\w.]+)")
 SEC = re.compile(r"^\s*section\b")
 END = re.compile(r"^\s*end\b")
@@ -144,6 +149,8 @@ def scan() -> dict[str, set[str]]:
                 stack.pop()
                 continue
             if (m := DECL.match(ln)):
+                if PRIV.match(ln):
+                    continue
                 ns = ".".join(x for kind, x in stack if kind == "ns")
                 fq = f"{ns}.{m.group(1)}" if ns else m.group(1)
                 declmods[fq].add(mod)
@@ -191,6 +198,12 @@ def main() -> int:
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
+    # A baseline check without --verify would fall through the propose-only
+    # branch below and `return 0` having examined nothing -- a gate that
+    # reports success without looking. Both baseline modes imply --verify.
+    if args.check_baseline or args.write_baseline:
+        args.verify = True
+
     pairs = propose(scan())
     if not args.verify:
         print(f"proposed duplicate-FQN module pairs: {len(pairs)}")
@@ -202,6 +215,7 @@ def main() -> int:
     if not args.lean_path:
         print("--verify needs --lean-path or LEAN_PATH", file=sys.stderr)
         return 2
+
     confirmed = verify(pairs, args.lean_path)
     key = lambda d: (d["fqn"], tuple(d["modules"]))
     print(f"proposed pairs: {len(pairs)}   COMPILER-CONFIRMED collisions: {len(confirmed)}")
