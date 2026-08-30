@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-30T03:25:29Z
+updated_at: 2026-08-30T03:27:23Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -468,3 +468,36 @@ environment" across the corpus.
 The 84-producer group is the real remaining body of work and it is NOT
 mechanical: the cast sits in a helper, a dict, or a comprehension. The
 `min(dists, ...)` case in qbeta_c3_two_route_cross_pin is the worked example.
+
+
+### CORRECTION to the count two sections up: 19 fields, not 21
+
+I wrote "21 fields over 8 producers". **It is 19.** The 21 summed the drain
+verifier's GAIN rows, which is not the same population as the tranche: a field
+can be removed from the tranche without gaining digits (NO-DIGITS-RECOVERED is
+still converted to a string), and a GAIN row can land on a field that was
+integral and therefore never counted.
+
+Measured properly — actionable fields in each drained witness, `origin/main`
+vs this branch:
+
+    9 -> 0  bring-residue-resolvent-probe
+    2 -> 0  qbeta-c3-two-route-cross-pin
+    2 -> 0  qbeta-habiro-residual
+    1 -> 0  seifert-volume-meson-n7-extension
+    1 -> 0  q0-figure-eight-phase-derivation
+    1 -> 0  binding-endomorphism-deuteron
+    2 -> 0  binding-per-bond-decomposition
+    2 -> 1  difference-knot-volume-extrema-stability   <- one left undrained
+                                                          in this witness
+
+    20 -> 1, i.e. 19 removed.
+
+Corpus tranche now **574 fields / 201 files** (was 593 / 208). The 19-field
+delta is entirely attributable — I checked against `origin/main` per witness
+rather than differencing two whole-corpus measurements taken 68 commits apart,
+which would have conflated my drains with main's movement.
+
+**Quote the per-witness attribution, not a whole-corpus difference.** This
+branch merged 68 commits of main mid-session; a before/after of the global
+figure cannot separate the two.
