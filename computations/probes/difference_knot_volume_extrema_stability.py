@@ -185,7 +185,11 @@ def main() -> int:
     w.add_data("sage_script", SAGE_SCRIPT)
     w.add_assertion(
         "modal_spread_reproduces_audit_and_exceeds_1p1",
-        computed=fmt(modal_spread), expected=2.358, tolerance=0.6,
+        # `expected` is an AUTHOR-TYPED reference (the committed audit's
+        # 2.358), not a measurement: as a string the witness records what was
+        # written, where the float recorded the binary64 nearest it
+        # (2.35799999...). Nothing to recover — a fidelity fix, not a gain.
+        computed=fmt(modal_spread), expected="2.358", tolerance=0.6,
         source="modal B_AME/Vol spread from default-simplify volumes; reproduces the "
                "committed audit 2.358 and stays ≫ 1.1, so AT THE MODAL TRIANGULATION "
                "the constant-ρ closure is refuted. HONEST CAVEAT: all difference links "

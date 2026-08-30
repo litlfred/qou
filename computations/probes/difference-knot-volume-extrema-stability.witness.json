@@ -1,24 +1,24 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-30T03:22:50.189298+00:00",
-  "commitSha": "cf540b0a1a39f95ffc1fd0a765a7939580f85b06",
+  "computedAt": "2026-08-30T03:29:31.215752+00:00",
+  "commitSha": "f7fcedac26b4860b6fdbe3fb38440c2e6cc3f0ac",
   "assertions": [
     {
       "name": "modal_spread_reproduces_audit_and_exceeds_1p1",
       "computed": "2.35761722653000919287866830955149899216831393933368750425833",
-      "expected": 2.358,
+      "expected": "2.358",
       "passed": true,
       "tolerance": "0.6",
       "source": "modal B_AME/Vol spread from default-simplify volumes; reproduces the committed audit 2.358 and stays ≫ 1.1, so AT THE MODAL TRIANGULATION the constant-ρ closure is refuted. HONEST CAVEAT: all difference links return degenerate-triangulation volumes (raw envelope >2×), so the volumes are not rigorously pinned; the Sage rigorous interval volume is genuinely warranted for airtightness — this REFINES the prune audit's 'expect it to confirm, do not prioritise Sage' to 'Sage is warranted'."
     }
   ],
   "allPassed": true,
-  "durationMs": 4570,
+  "durationMs": 4472,
   "computation": "difference-knot-volume-extrema-stability",
   "scriptFile": "difference_knot_volume_extrema_stability.py",
-  "scriptHash": "0b897fbb0f3f",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "2347d45e6a47",
+  "scriptCommitSha": "8d9bbe47499c4b40b65638f63d40d6a79d0105da",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,7 +62,7 @@
         "k_modal": "0.5790618983151841571982764065803549871565872811507315270719433981088977",
         "vmin": "12.467301445162524278748041795617864091111589864037364853614637197",
         "vmax": "14.647477626620405111118254972426559030196170412279651146839311821",
-        "cluster_frac": 0.9,
+        "cluster_frac": 0.7,
         "deg_frac": 1.0
       },
       "3He": {
@@ -78,9 +78,9 @@
         "A": 4,
         "modal_vol": "32.847288436482324981531769632900833325016132872571936634261805363",
         "k_modal": "0.8614306917514995105183804481250212091549259847148066113123642461477069",
-        "vmin": "31.778343881784499705006609151903660695517417963261216510646538037",
+        "vmin": "31.773406519890919861887497102719967612873670460439752949787970234",
         "vmax": "32.847288436482324981531769632900833325016132872571936634261805363",
-        "cluster_frac": 0.9,
+        "cluster_frac": 0.6,
         "deg_frac": 1.0
       }
     },
