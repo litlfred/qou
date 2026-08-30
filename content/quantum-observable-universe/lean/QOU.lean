@@ -1326,6 +1326,14 @@ import QOU.Mathlib.RothAuxiliaryInt
 -- along a real embedding -- which is a real hypothesis, being the statement that the
 -- alpha_h are REAL algebraic numbers, and the composition refuses to typecheck without one.
 import QOU.Mathlib.RothIntegerChain
+-- THE PARAMETER SELECTION -- the one piece of the arc that CONSTRUCTS data rather
+-- than composing supplied hypotheses, and the only place the "infinitely many
+-- solutions" assumption is consumed.  Greedy recursion: pick a denominator past a
+-- threshold, raise it to a power, pick another past THAT.  The max against a floor is
+-- load-bearing -- without it a later height could land below the floor and Gamma_m's
+-- two_le would fail on every index but the first.  At floor 2^F it discharges clause 3
+-- as well, which is the clause that bites hardest (m = 2 needed H = 1024 for it).
+import QOU.Mathlib.RothSelection
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

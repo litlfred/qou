@@ -768,3 +768,40 @@ REMAINING -- ONE ITEM, and it is the only piece of Roth's theorem that is not bo
   simultaneously. This is what turns a contradiction into "finitely many solutions", and it is
   what step 5 (not LiouvilleWith) needs. Everything else in the arc is now proved.
 
+## 2026-08-30 -- the parameter selection, started. QOU/Mathlib/RothSelection.lean
+
+Six declarations, axiom-clean, .olean deleted first, registered in QOU.lean.
+
+THIS IS THE ONLY PIECE OF THE ARC THAT CONSTRUCTS DATA rather than composing hypotheses a caller
+supplies, and the only place the "infinitely many solutions" assumption is consumed. growSeq is
+the greedy recursion: pick a denominator past a threshold, raise it to a power, pick another past
+THAT. exists_heights_growing turns an unbounded supply into m heights satisfying Gamma_m's growth
+clause, which is where the informal proof's "sufficiently large" actually lives.
+
+THE max AGAINST A FLOOR IS LOAD-BEARING, and it took writing the two_le clause to see why. Without
+it the growth function's output is the only lower bound on the next term, so a later height can
+land below the floor whenever f returns something small -- and Gamma_m's two_le would then hold at
+index 0 and fail everywhere else. Carrying the floor through the recursion makes le_growSeq
+uniform in n, which is what two_le needs.
+
+THE GROWTH FUNCTION IS FORCED BY THE CLAUSE. rothGammaFull_of_heights wants
+H j ^ (2q) <= H k ^ p on consecutive indices. Choosing the next height beyond H j ^ (2q) gives
+H j ^ (2q) <= H k, and H k <= H k ^ p because p >= 1 and H k >= 2. So x |-> x^(2q) is not a choice,
+it is what the clause reads off.
+
+TWO CLAUSES, NOT ONE. Making the floor a parameter rather than the constant 2 means
+exists_heights_growing_floor discharges Gamma_m's clause 3 as well, at N_0 = 2^F. That clause is
+the one that bites hardest -- RothRealLadder's witness needed H = 1024 at m = 2 purely because of
+it -- so having it fall out of the same construction is worth the extra parameter.
+
+REMAINING for the selection:
+  * hlarge (p + 2q <= p * rothDegrees H N h): needs N chosen large RELATIVE TO THE SELECTED
+    HEIGHTS, so it comes after the selection, not before. The dependency order is heights -> N ->
+    degrees, and rothDegrees already computes the degrees from (H, N).
+  * hbound (b^(mq) <= H_0^(rothDegrees H N 0 * p)): needs H_0 large relative to b, the auxiliary
+    polynomial's height bound -- which is ceil(siegelHeight), itself a function of the degrees. So
+    this one is genuinely circular-looking and is the piece to think about carefully: the standard
+    resolution is that b depends on the degrees only through explicit constants, so H_0 can be
+    chosen last.
+  * then assemble with slack_pos's condition on eps, delta and m, and step 5 (not LiouvilleWith).
+
