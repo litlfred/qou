@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:30:58Z
-updated_at: 2026-08-30T14:45:00Z
+updated_at: 2026-08-30T14:52:52Z
 ---
 
 NEXT TRANCHE, opened 2026-08-30 after PR #6095 merged (d43f261ed1).
@@ -154,3 +154,49 @@ Recorded Gram identities, verified to 40 dps, useful for that build:
     G[0][1] = z(q)        G[0][3] = z(q)^2        G[0][5] = P_77(q)
 i.e. the Gram's first row IS the trace vector, as prop:operator-selection-lp
 says (G_1j = tr_M(b_j) = t_j).
+
+
+## RESOLVED 2026-08-30 — the threshold is EXACT, and my "REJECTED" was the error
+
+The blocker recorded above was a general H_3 NF multiplication. It is a FINITE
+12-entry right-multiplication table (s_i^2 = h s_i + 1, braid s0s1s0 = s1s0s1),
+not a research problem. With it the Gram is symbolic in q -- validated against
+pyhecke.gram.gram_matrix_mp at five values of q to ~1e-37 -- and row 5 is
+
+    (G t)_5 = (q^10 + q^6 - q^4 + q^2 - 1) / (q^2 + 1)^2
+
+The numerator is IRREDUCIBLE over Q with EXACTLY ONE positive real root,
+
+    q_c = 0.894480292910614763779004984173341677394988638886...
+
+matching the bisected value to 1.14e-46.
+
+MY CORRECTION. PSLQ had returned 1 - q^2 + q^4 - q^6 - q^10, which is exactly
+-1 times this numerator. PSLQ WAS RIGHT. I declined to quote it (correctly --
+the entropy bound gives no headroom at degree 10) and then went further and
+"REJECTED" it on a dps-160 run. That second step was wrong: gram_matrix_mp
+saturates near 60 digits, so the extra digits were noise and the rejection
+rested on noise exactly as an acceptance would have. Withholding judgement was
+right; converting that into a refutation was not. The way out was to stop
+fitting and derive.
+
+FORMALIZED, sorry-free (file now 27 theorems, 0 sorries):
+  coneRow5Numerator / coneRow5Poly    the constraint and its u = q^2 form
+  coneRow5Numerator_eq                the substitution
+  quad_pos                            3u^2 - 2u + 1 > 0 (negative discriminant)
+  coneRow5Poly_strictMono             strictly increasing on u >= 0
+  coneRow5Numerator_one               = 1 at q = 1, so STRICTLY satisfied there
+  coneRow5Numerator_half_neg          < 0 at q = 1/2, so a root lies below 1
+  cone_threshold_ne_amplitude_threshold
+      THE PAYOFF: P_76(1) = 0 while (G t)_5's numerator = 1 > 0 at q = 1.
+
+THE ARC'S CONCLUSION. The two thresholds are DIFFERENT and provably so: the
+amplitude vanishes at q = 1, the cone constraint is strictly satisfied there
+and turns at q_c < 1. Sign-inheriting reductions were already excluded
+(toffoliFlip_mul_coneCoord_nonpos); a negative proportionality would require
+the thresholds to coincide, and they do not. So the reduction that
+prop:toffoli-lp-stability asserts has NO surviving form, and that is now proved
+rather than measured.
+
+QUESTION (b) -- the orderings-to-NF map -- is untouched and remains open, but
+is now a much smaller target: one constraint, with an explicit polynomial.

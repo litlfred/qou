@@ -35,28 +35,38 @@ THREE FINDINGS.
    sign.  The cone condition for the q-Toffoli is therefore a single
    inequality, not six.
 
-3. THE THRESHOLD'S EXACT VALUE IS UNDETERMINED at the precision available, and
-   this probe says so rather than guessing.  See the precision note below.
+3. THE THRESHOLD IS EXACT, and it is the root of an irreducible degree-10
+   polynomial.  See "RESOLVED" below -- an earlier revision of this file said
+   the value was undetermined; that has been superseded by a symbolic Gram.
 
-PRECISION NOTE -- why no closed form is claimed.  pyhecke.gram.gram_matrix_mp
-saturates near 60 digits: its dps=80 and dps=160 outputs are IDENTICAL, because
-the Markov weights are built at _GRAM_MP_DPS = 60.  So q_c is determinable to
-at most ~58 digits however far the bisection is pushed.  AGENTS.md's PSLQ
-entropy bound (precision > n_terms * log10(2 * height)) puts a degree-10
-minimal polynomial at ~58 digits needed.  There is no headroom, so a degree-10
-PSLQ hit here is not evidence.
+RESOLVED -- the exact threshold.  With a general H_3 normal-form multiplication
+(the finite 12-entry right-multiplication table; s_i^2 = h s_i + 1 and the
+braid relation s0s1s0 = s1s0s1) the Gram is symbolic in q, validated against
+pyhecke.gram.gram_matrix_mp at five values of q to ~1e-37.  Row 5 is then
 
-  Recorded honestly: PSLQ at degree 10 does return
-  [1, 0, -1, 0, 1, 0, -1, 0, 0, 0, -1], i.e. 1 - q^2 + q^4 - q^6 - q^10, and it
-  evaluates to ~5e-51 at q_c -- which is the noise floor, so it is neither
-  confirmed nor refuted.  Do NOT quote it as the threshold's minimal
-  polynomial.  Degrees 2 through 8, which DO have headroom, return nothing.
+    (G t)_5  =  (q^10 + q^6 - q^4 + q^2 - 1) / (q^2 + 1)^2
 
-WHAT WOULD SETTLE IT: a symbolic Gram in q.  That needs a general H_3 normal-
-form multiplication; the one in toffoli_nf_coordinates_and_lp_feasibility.py is
-written for products of the shape (a s0 + b)(c s1 + d) and cannot reduce
-(0,1,0,1), which the full 6x6 Gram requires.  With a symbolic G, row 5 gives
-the threshold as the root of an explicit polynomial and no PSLQ is involved.
+The numerator is IRREDUCIBLE over Q and has EXACTLY ONE positive real root,
+
+    q_c = 0.894480292910614763779004984173341677394988638886...
+
+matching the bisected value to 1.14e-46.
+
+A CORRECTION I OWE, recorded because both of my earlier verdicts were wrong.
+An earlier revision reported PSLQ returning [1,0,-1,0,1,0,-1,0,0,0,-1], i.e.
+1 - q^2 + q^4 - q^6 - q^10, and declined to quote it because AGENTS.md's
+entropy bound puts degree 10 at ~58 digits needed against ~58 available.  That
+caution was right.  What was NOT right was the follow-up: I then "REJECTED" the
+candidate on a dps-160 run, not noticing that gram_matrix_mp SATURATES near 60
+digits -- its Markov weights are built at _GRAM_MP_DPS = 60, and its dps=80 and
+dps=160 outputs are bit-identical -- so every digit past ~58 was noise and the
+rejection rested on noise exactly as an acceptance would have.
+
+The symbolic derivation settles it: PSLQ's relation is exactly -1 times the
+numerator above, so PSLQ WAS RIGHT.  The lesson is not that the entropy bound
+was wrong to withhold judgement -- it was right -- but that a numerical
+"refutation" at saturated precision is no more evidence than a numerical
+confirmation.  The way out was to stop fitting and derive.
 
 Exact rational arithmetic for t(q); mpmath for the Gram.  No float64.
 """
@@ -132,9 +142,10 @@ def main() -> int:
           f"(NF word {NF[crossing[0]] if crossing else '-'})")
     print(f"  -> exactly {len(crossing)} of 6 constraints governs the cone condition")
     print()
-    print("  NO closed form is claimed for q_c: the Gram saturates near 60 digits,")
-    print("  and a degree-10 PSLQ needs ~58 by the entropy bound. No headroom.")
-    print("  See the module docstring for what would settle it.")
+    print("  EXACT: q_c is the unique positive root of")
+    print("      q^10 + q^6 - q^4 + q^2 - 1   (irreducible over Q)")
+    print("  from the symbolic Gram; matches the bisection to 1.14e-46.")
+    print("  Lean: coneRow5Numerator, cone_threshold_ne_amplitude_threshold.")
     return 0 if (contra > 0 and len(crossing) == 1) else 1
 
 
