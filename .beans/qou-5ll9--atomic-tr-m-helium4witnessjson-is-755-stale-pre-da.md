@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:25:32Z
-updated_at: 2026-08-30T06:26:14Z
+updated_at: 2026-08-30T06:30:18Z
 ---
 
 Found while finishing the pin-straddle fix in `atomic_tr_m_helium4.py`
@@ -76,3 +76,50 @@ Regenerating inside PR #6104 would silently absorb a convention migration into
 a PR scoped to pin straddles, changing numbers whose provenance I have not
 established, on a witness with 9 consumers and a reader-facing block
 downstream. The honest step is to establish leg 3's cause first.
+
+
+## ESTABLISHED 2026-08-30 — the mechanism is now EXACT; the cause is not
+
+I recorded above that convention C→D was a HYPOTHESIS. One half is now proven
+to the last digit, and the other half is **still not established** — read both.
+
+### PROVEN: the downstream is a byte-identical copy of a superseded upstream
+
+    downstream atomic-tr-m-helium4.witness.json  abs_tr_p_50dps
+      1.06530622861316705936528454643137255765066167413520000000000
+    upstream atomic-tr-m-mpfr-50dps.witness.json @ 44cd801f6231 (2026-08-09 01:11)
+      1.06530622861316705936528454643137255765066167413520000000000
+
+All 59 digits. So the downstream is not independently wrong and is not
+convention-attributable on its own evidence: it faithfully copied the upstream
+value of the day, and the upstream then moved without it.
+
+### PROVEN: when the upstream moved
+
+    ... 2026-08-09 03:20  7c60b2f381   1.065306...   (last with the old value)
+        2026-08-16 08:34  bd45adff92   1.145759...   (first with the current one)
+
+### NOT PROVEN — and my bean TITLE is imprecise because of it
+
+The title says "pre-dates the C→D excision". That is literally true (the record
+is 2026-07-07; the excision `70d1ade383` is 2026-08-09 23:05) but it names the
+wrong boundary. The operative fact is that the downstream pre-dates the
+**upstream regeneration of 2026-08-16**, a full week AFTER the excision.
+
+And `bd45adff92` does NOT document the regeneration. Its subject is
+"beans(qou-hdyp): closed — identity verified identically in q at n=3 and n=6",
+a broad beans/merge commit touching dozens of unrelated files. The witness
+value changed inside it without any commit-message account of why.
+
+So: **do not write "the 7.55% is convention C" anywhere durable.** What is
+established is the MECHANISM (a stale copy of a superseded upstream), not the
+CAUSE of the upstream's own change. The week-long gap between the excision and
+the regeneration is consistent with a delayed post-excision regeneration and
+equally consistent with something else landing in that window.
+
+### What would settle it
+
+Compute |tr_M(proton)| under convention C (z = sqrt(q)/(q+1)) at the pin the
+old witness recorded and check whether it equals 1.0653062286131670593652845
+to the digits available. That is a direct test and does not depend on reading
+commit archaeology. Only after it passes may the attribution be written down.
