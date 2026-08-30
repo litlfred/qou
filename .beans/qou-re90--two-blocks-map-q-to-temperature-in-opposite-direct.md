@@ -1,11 +1,11 @@
 ---
 # qou-re90
 title: Two blocks map q to temperature in OPPOSITE directions, and nothing adjudicates them
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T16:51:46Z
-updated_at: 2026-08-30T16:52:24Z
+updated_at: 2026-08-30T18:15:56Z
 ---
 
 Found 2026-08-30 while answering an owner question about `qou-vvv4` (the
@@ -82,3 +82,47 @@ either is wrong. Nothing here is wired, no value is proposed, and no `c_k` is
 involved. NOT blocking `qou-vvv4` — the melt-block correction is defensible
 without resolving this, because it only has to agree with its own parent
 theorem, which makes no temperature claim at all.
+
+
+## RESOLVED 2026-08-30 — the two maps have DISJOINT DOMAINS, and my framing above was misleading
+
+PR #6299. Resolved by compiling the thing rather than reading it.
+
+**The answer.** `T_q = hbar_q = (q-1)/q` is defined only over
+`ArchimedeanSubstrateField`, which carries the classicality bound as a
+STRUCTURE FIELD:
+
+    field_ge_one : forall (p : M), 1 <= field p
+
+with the docstring "q(p) = 1 is the classical limit (hbar_q = 0); q(p) > 1 is
+the quantum regime, where the physical substrate sits". Its range is `[0,1)`,
+proved by `quantumPlanckConstant_nonneg` + `quantumPlanckConstant_lt_one`.
+
+So below the aeon boundary `T_q` is **not negative — it is UNCONSTRUCTIBLE.**
+You cannot build the structure at `q < 1`. Map (B)'s effective-q regime
+(descending to `q_gold = 0.382`) lies wholly outside map (A)'s domain, so the
+two never compete. "They are different objects" is correct, and the corpus
+carries the reason in a docstring; it was simply never written where the
+temperature question is asked.
+
+**CORRECTION of my own table above.** I wrote that deconfinement "sits where
+(A) reports a negative temperature" and tabulated `T_q = -1.618` at `q_gold`
+and `-1.148` at `1/psi^2`. Those numbers are arithmetically right and
+epistemically wrong: they are the formula evaluated OUTSIDE ITS TYPE. The
+framework assigns no temperature there at all. Do not quote that table as
+evidence of a sign problem.
+
+**What the discriminating test actually found.** The test I proposed was
+"does any numerical consumer of T_q sit at q < 1". Measured: there are **ZERO**
+numerical consumers — every `computations/` hit is `_deprecated/` or an
+unrelated `net_q` / softmax `temperature`. Five content blocks `uses` it
+(quantum-pressure, boltzmann-constant, molecular-hbond-phase-transition,
+quantum-temperature-interpretation, and boltzmann-constant-proof) and none
+evaluates below 1. So the question was answerable from the type alone.
+
+**Found en route, and it is the bigger finding:** six content-block Lean
+siblings under `information-theory/` DID NOT COMPILE, left behind by the
+`SubstrateParameter` -> `ArchimedeanSubstrateField` split. 31 theorems
+recovered, all axiom-clean. Two further files fail for other causes
+(`substrate-parameter-exists` on a missing dep, `quantum-planck-constant` on
+something else) and are NOT this class — unclaimed, worth their own bean.
