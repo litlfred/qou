@@ -871,6 +871,30 @@
       "line_at_adjudication": 83,
       "scope": "markov_parameter_convention_C",
       "rationale": "This IS the sanctioned named convention-C source. `markov_parameter_convention_C` exists precisely so that a deliberate C consumer is greppable rather than inlining sqrt(q)/(1+q); flagging its own return as residual C would be flagging the guard for doing its job, and migrating it to z_D would make the function a liar to every caller that asks for C by name. The registry registers this symbol under `evaluators.z` as C so R9 asserts z_C numerically on every validator run. Newly VISIBLE (not newly introduced) on 2026-08-30: the helper was mpmath-only and raised TypeError on a sympy Symbol, so symbolic consumers had to inline C and were invisible to the guard (taxonomy row 21); adding the sympy branch is what put this return in the audit's view. The mpmath arm at the same site is the identical object in the other numeric tower."
+    },
+    {
+      "path": "computations/probes/toffoli_diagonal_convention_frame_probe.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_at_adjudication": 61,
+      "scope": "z_C",
+      "rationale": "Two-arm C-vs-D comparison with BOTH arms as sibling defs in the same file: `def z_C` at :60 (docstring 'Convention C, excised 2026-08-09') and `def z_D` at :64 returning q**3/(q**2+1). The probe asks whether the q-GoL golden-ratio threshold is convention-dependent and PRINTS both values side by side ('same recipe, z_D = ...'). Binding only z_D deletes the comparison the probe exists to make. Taxonomy ROW 18 (sibling-def spelling: scope-local co-binding sees neither arm from the other)."
+    },
+    {
+      "path": "computations/qbeta/qbeta_bar_parity_of_the_decay_trace_probe.py",
+      "target": "zC",
+      "source_hash": "adfb5f133f3c",
+      "line_at_adjudication": 134,
+      "scope": "main",
+      "rationale": "Two-arm comparison, co-bound in one scope: zD = q**3/(q**2+1) at :133 immediately above zC at :134. The probe's conclusion is explicitly about the C arm -- :160 reports the bar-parity 'identity fails for z_C (markov_z_full_bar_condition_probe)' -- so z_C is the object under test and removing it removes the finding. The audit already tags this site [co-bound with z_D]; co-binding is reported but does not by itself exempt, hence the explicit adjudication."
+    },
+    {
+      "path": "computations/probes/toffoli_published_vs_construction_audit.py",
+      "target": "_zC",
+      "source_hash": "90ede994d1a1",
+      "line_at_adjudication": 97,
+      "scope": "<module>",
+      "rationale": "NOT residual C: this probe (bean qou-3j5m) independently reconstructs THE ONLY RECORDED CONSTRUCTION, `computations/_deprecated/toffoli-braid.py`, and compares three things -- its reconstruction, the producer's committed witness, and the values published in the content blocks. All three are convention-C-era artefacts. The reconstruction matches the producer EXACTLY (symbolic zero, both diagonals), which is what establishes the recipe as the framework's; rebuilding it with z_D would compare against a construction nobody recorded and would destroy the audit's purpose, which is to locate a published-vs-construction discrepancy (3 of 4 published entries do not match). Same class as probe_h3_central_idempotents_exact: reproducing a DEFINED C-era object, not carrying residual C."
     }
   ]
 }
