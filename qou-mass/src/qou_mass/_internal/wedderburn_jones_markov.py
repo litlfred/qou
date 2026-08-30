@@ -39,6 +39,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 import markov_weights_symbolic as m  # noqa: E402
@@ -310,6 +311,15 @@ def _y_lambda_at_convention_C_HISTORICAL(
         q_mp = _mp_inner.mpf(str(q_val))
         y_mp = y_lambda_at_q0_mpmath(n, q_mp)
         # Convert mpmath → sympy for consumer compatibility.
+        # NOTE (qou-840k item 6, re-checked 2026-08-30): this still returns 30
+        # digits while the comment above quotes ~1e-50 verification. Both are
+        # accurate — the closed form IS good to ~1e-50, and this conversion
+        # then discards it — but read together they invite a copy of the wrong
+        # half. The LIVE `y_lambda_at` uses 50 (see its L201); this function is
+        # `_y_lambda_at_convention_C_HISTORICAL` and its own live counterpart's
+        # docstring calls it dead. Verified 2026-08-30: no runtime caller, only
+        # docstring and audit references. Left at 30 deliberately — a historical
+        # path should reproduce its history, not be quietly improved.
         return {sh: sp.Float(_mp_inner.nstr(y, 30), 30)
                 for sh, y in y_mp.items()}
     except (ImportError, Exception):
@@ -469,13 +479,13 @@ def per_stratum_sum_jones_markov(
 def global_wedderburn_sum_q_hecke_seminormal(
     Z: int,
     N: int,
-    q_val: float,
+    q_val: mp.mpf | sp.Expr | float,
     *,
     include_inter: bool = True,
     m_pp: int = 1,
     m_pn: int = 1,
     m_nn: int = 1,
-) -> tuple[float, list[dict]]:
+) -> tuple[mp.mpf, list[dict]]:
     """tr_M(β_atomic(Z, N)) = Σ_{λ ⊢ 3A} y_λ(q_0) · χ^λ_q(β) — exact form.
 
     **Closes the character gap** flagged in
@@ -483,39 +493,38 @@ def global_wedderburn_sum_q_hecke_seminormal(
 
     Composes:
       - y_λ via Wenzl Schur principal specialization (numerical-q-from-start)
-      - χ^λ_q via Hoefsmit seminormal matrices at q_val (numerical, float64)
-
-    ⚠ THIS COPY IS STILL float64 AND ITS TWIN IS NOT.
-    `computations/wedderburn_jones_markov.py` was rewired onto the mpf
-    seminormal builder on 2026-08-30 (bean qou-840k item 3): it returns an
-    mpf and serialises its breakdown as strings. This copy could NOT follow,
-    because `tr_m_wenzl_bridge_mpfr` — which supplies
-    `_build_seminormal_matrices_mpf` and `_chi_lambda_of_word_mpf` — does not
-    exist under `qou-mass/src/qou_mass/_internal/`. Mirroring the edit here
-    would raise ImportError, so the divergence is recorded rather than faked.
-
-    Consequence for callers: the two copies now differ in RETURN TYPE
-    (float vs mpf) and in the breakdown's field types (float vs str), not
-    merely in precision. Do not assume they are interchangeable. Closing
-    this needs the bridge module vendored or the function re-homed.
+      - χ^λ_q via Hoefsmit seminormal matrices at q_val (mpmath, full dps)
 
     Drop-in replacement for the q=1-character-limited
     `global_wedderburn_sum_jones_markov` when consumers need the
-    canonical Hecke character at q ≠ 1.  Numerically agrees with
-    `markov_trace_recursive` (canonical Markov-axiom reducer) to
-    1e-13 (proton/neutron, A=1) — 1e-10 (deuteron, A=2) relative;
-    full-precision mpmath path lives on PR #564 as
-    `rho_k_h3a_refinement.py` with 50-dps agreement at 1.4e-16.
+    canonical Hecke character at q ≠ 1.
 
-    Returns (tr_M_value, per_partition_breakdown).
+    PRECISION (bean qou-840k item 3, 2026-08-30).  This was a float64
+    kernel — `total = 0.0`, `float(y) * float(chi)`, numpy Hoefsmit —
+    and its docstring quoted agreement with `markov_trace_recursive` of
+    1e-13 (A=1) to 1e-10 (A=2).  **Those figures described the f64 path
+    and no longer describe this one**; they are not restated as mpf
+    figures because that would be asserting a measurement nobody has
+    made.  Re-measure before quoting a number here.
+
+    The mpf seminormal builder and character kernel already existed
+    (`tr_m_wenzl_bridge_mpfr`), so this is a rewire, not new mathematics.
+    `q_val` is now carried as mpf: pass the pin itself, NOT `float(Q_MP)`,
+    or the cast discards what the rewire buys.
+
+    Returns (tr_M_value, per_partition_breakdown); the value is an mpf and
+    the breakdown serialises its numbers as STRINGS, so no float64 reaches
+    a witness.
     """
-    import numpy as np
-
-    from hecke_characters import build_seminormal_matrices  # noqa: E402
-    from mass_at_3A_proper import (  # noqa: E402
-        atom_braid_word_3A,
-        chi_lambda_of_word,
+    from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
+        _build_seminormal_matrices_mpf,
+        _chi_lambda_of_word_mpf,
     )
+    from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+
+    # sympy Float -> mpf must go through str(): mp.mpf(sp.Float(...)) rounds
+    # through a C double and would silently cap this at ~15 digits.
+    q_mp = mp.mpf(str(q_val))
 
     A = Z + N
     n = 3 * A
@@ -545,21 +554,30 @@ def global_wedderburn_sum_q_hecke_seminormal(
         )
 
     rows = []
-    total = 0.0
+    total = mp.mpf(0)
     for shape, y in y_vals.items():
-        sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
+        sigmas, dim = _build_seminormal_matrices_mpf(shape, q_mp)
         if dim == 0:
             continue
+        # NOTE: the f64 `chi_lambda_of_word` took `n_gens_required` as its
+        # FOURTH POSITIONAL arg; the mpf kernel's fourth is `q`. Passing it
+        # positionally would bind an int like 8 as q0 and silently compute
+        # the wrong character. `q=` by keyword, always. (The f64 parameter
+        # was vestigial — zero uses in its body — so nothing is lost; the
+        # range check above still uses `n_gens_required`.)
         # IndexError now propagates with context (no silent skip).
-        chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
-        contrib = float(y) * float(chi)
+        chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q_mp)
+        y_mp = mp.mpf(str(y))
+        contrib = y_mp * chi
         total += contrib
         rows.append({
             "partition": list(shape),
             "dim": int(dim),
-            "y_at_q0": float(y),
-            "chi_q_at_q0": float(chi),
-            "contribution": float(contrib),
+            # strings, not floats: these land in witness JSON and the corpus
+            # forbids float64 there. Readers lift with mp.mpf(...).
+            "y_at_q0": mp.nstr(y_mp, 50),
+            "chi_q_at_q0": mp.nstr(chi, 50),
+            "contribution": mp.nstr(contrib, 50),
         })
     return total, rows
 
