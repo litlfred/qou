@@ -641,4 +641,63 @@ theorem proton_ne_neutron_degrees : degreeProfileZ 1 0 ≠ degreeProfileZ 0 1 :=
   rw [proton_degrees, neutron_degrees]
   decide
 
+/-! ### The scale relation
+
+The integer walk and the rational walk run the same step list and differ only
+by the factor pulled out of the half-step. `ScaledStep` says exactly that for
+one step, and `denoteZ_contribZ` discharges it at the level of a single table
+entry — the level where the two `contrib` functions actually differ.
+
+This is what closes the last gap: with it, the kernel-checked degrees of
+`atomNFZ` are the degrees of the rational normal form, rather than of a
+separate object that merely agrees numerically. -/
+
+/-- The integral multiplier pair `(cNum, dNum)` is the `cNum`-fold scaling of
+the rational pair `(1, dRat)`. Holds for all three steps the atom path uses:
+`(1,0)/0`, `(1,-1)/(-1)`, and `(2,-1)/(-1/2)`. -/
+def ScaledStep (cNum dNum : ℤ) (dRat : ℚ) : Prop := (dNum : ℚ) = (cNum : ℚ) * dRat
+
+theorem scaledStep_zero : ScaledStep 1 0 0 := by simp [ScaledStep]
+
+theorem scaledStep_full : ScaledStep 1 (-1) (-1) := by norm_num [ScaledStep]
+
+theorem scaledStep_half : ScaledStep 2 (-1) (-1/2) := by norm_num [ScaledStep]
+
+/-- **One table entry scales.** The integral contribution denotes `cNum` times
+the rational one. This is the level at which `contribZ` and `contrib` differ,
+so it is the level the scale relation has to be proved at. -/
+theorem denoteZ_contribZ (cNum dNum : ℤ) (dRat : ℚ) (dH : Bool) (m : Mult)
+    (hc : (cNum : ℚ) ≠ 0) (hs : ScaledStep cNum dNum dRat)
+    (pZ : ZLaurent) (p : CLaurent) (hp : denoteZ pZ = denote p) :
+    denoteZ (contribZ cNum dNum dH m pZ) = C (cNum : ℚ) * denote (contrib dRat dH m p) := by
+  cases m with
+  | c => simp [contribZ, contrib, hp]
+  | ch => simp [contribZ, contrib, hp]
+  | d =>
+      have hiff : dNum = 0 ↔ dRat = 0 := by
+        constructor
+        · intro h
+          have : (0 : ℚ) = (cNum : ℚ) * dRat := by rw [← hs, h]; norm_num
+          rcases mul_eq_zero.mp this.symm with h' | h'
+          · exact absurd h' hc
+          · exact h'
+        · intro h
+          have : (dNum : ℚ) = 0 := by rw [hs, h, mul_zero]
+          exact_mod_cast this
+      by_cases hd : dNum = 0
+      · have hd' : dRat = 0 := hiff.mp hd
+        simp [contribZ, contrib, hd, hd']
+      · have hd' : dRat ≠ 0 := fun h => hd (hiff.mpr h)
+        have hC : (C (dNum : ℚ) : ℚ[T;T⁻¹]) = C (cNum : ℚ) * C dRat := by
+          rw [← map_mul, ← hs]
+        cases dH with
+        | false =>
+            simp only [contribZ, contrib, if_neg hd, if_neg hd', Bool.false_eq_true,
+                       if_false, denoteZ_zsmul, denote_csmul, hp]
+            rw [hC]; ring
+        | true =>
+            simp only [contribZ, contrib, if_neg hd, if_neg hd', if_true,
+                       denoteZ_zsmul, denote_csmul, denoteZ_zmulH, denote_cmulH, hp]
+            rw [hC]; ring
+
 end QOU.BraidKnot.LaurentWalk
