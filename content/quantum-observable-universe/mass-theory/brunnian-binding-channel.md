@@ -33,9 +33,14 @@ coordination unit, so a fully coordinated cluster carries $\binom{A}{2}$ units a
 $z = A - 1$; which pairs bond is the coordination-graph question, saturation-limited for heavy $A$
 (the complete graph is excluded there, `QOU.Mass.CoordinationSaturation`).
 
-The deuteron sits at the boundary: its Hopf carrier has $\mathrm{lk} = 1 \neq 0$ and coordination
-$z = 1$, so signed and unsigned channels coincide there. The two invariants agree for a Hopf-bonded
-pair and diverge only at $A \geq 3$, where the unsigned count is the non-vanishing one.
+The deuteron sits at the boundary. What coincides there is the two *multiplicities* — the writhe
+$n_+ - n_- = 2\,\mathrm{lk}$ and the crossing count $n_+ + n_-$, which are what play the role of the
+binding multiplier — not the channel values, whose $\cosh$ and $\sinh$ weights differ at every $q$.
+The two multiplicities agree **exactly** on all-positive carriers, $n_- = 0$, and the positive Hopf
+link is such a carrier ($n_+ = 2$, $n_- = 0$, giving $|\mathrm{lk}| = 1$ and coordination $z = 1$,
+both multiplicities equal to $2$). On a Brunnian carrier $n_+ = n_-$ instead, collapsing the signed
+multiplicity to $0$ while the unsigned one is the full crossing count. So the two invariants agree
+for a Hopf-bonded pair and diverge from $A \geq 3$, where only the unsigned count is non-vanishing.
 
 ## Why the assignment is forced — bar-parity
 
