@@ -411,8 +411,25 @@ def apply_one(plan: dict) -> str | None:
       * a local import cannot change module-import order or introduce a cycle
         in a file that never imported this package before.
 
-    `qou_substrate` resolves without any sys.path bootstrap in this repo (309
-    in-repo importers rely on that), so no path manipulation is emitted.
+    CORRECTED 2026-08-30 (bean qou-ya1e). This said: "`qou_substrate` resolves
+    without any sys.path bootstrap in this repo (309 in-repo importers rely on
+    that), so no path manipulation is emitted." **That is false**, and it is why
+    this script produced producers that cannot run.
+
+    Measured: `qou_substrate` is NOT importable on its own here -- not
+    pip-installed, no `.pth`, `PYTHONPATH` empty, `importlib.util.find_spec`
+    returns None. The 309 in-repo importers resolve it because they import
+    `_path_bridge`, directly or through a module that does; not natively.
+
+    A stamp emitted into a file with no bridge therefore raises
+    ModuleNotFoundError -- and because the import is local to the write site it
+    fires only when the producer goes to SAVE, so the run does all its work and
+    then dies. Measured on a 43-producer batch: 16 failed exactly this way.
+
+    The bootstrap below searches UPWARD for the directory holding
+    `_path_bridge.py` rather than counting `.parent`s -- the idiom
+    `computations/substrate/_precision.py` adopted after a fixed count proved
+    wrong in both layouts it lives in.
     """
     path = ROOT / plan["path"]
     lines = path.read_text(errors="ignore").split("\n")
@@ -452,6 +469,10 @@ def apply_one(plan: dict) -> str | None:
         f"{pad}# it -- and a re-run of an unstamped producer DELETES the",
         f"{pad}# scriptFile a downstream pass had added. {note}.",
         f"{pad}import os as _os  # noqa: E402 -- provenance stamp",
+        f"{pad}import sys as _sys, pathlib as _pl  # noqa: E402 -- bean qou-ya1e",
+        f"{pad}for _anc in _pl.Path(__file__).resolve().parents:",
+        f"{pad}    if (_anc / '_path_bridge.py').exists():",
+        f"{pad}        _sys.path.insert(0, str(_anc)); break",
         f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
         # `stamp_staleness_metadata` does NOT write `scriptFile` -- it stamps
         # scriptHash / scriptCommitSha / commitSha / engine / computedAt /
@@ -593,6 +614,10 @@ def hoist_inline_dicts(path: pathlib.Path, check_only: bool = False):
             f"{pad}# wrote it -- a re-run of an unstamped producer DELETES the",
             f"{pad}# scriptFile a downstream pass had added. {note}.",
             f"{pad}import os as _os  # noqa: E402 -- provenance stamp",
+            f"{pad}import sys as _sys, pathlib as _pl  # noqa: E402 -- bean qou-ya1e",
+            f"{pad}for _anc in _pl.Path(__file__).resolve().parents:",
+            f"{pad}    if (_anc / '_path_bridge.py').exists():",
+            f"{pad}        _sys.path.insert(0, str(_anc)); break",
             f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
             f"{pad}{var} = {dict_src}",
             f'{pad}{var}.setdefault("scriptFile", _os.path.basename(__file__))',

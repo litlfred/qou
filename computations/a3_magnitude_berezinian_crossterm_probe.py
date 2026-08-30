@@ -32,6 +32,18 @@ DM-cubic-derived off-block (qou-jqof), which is open.
 """
 from __future__ import annotations
 
+# PATH BRIDGE — required before the provenance stamp can import
+# `qou_substrate` (bean qou-ya1e). That module is not installed and not on
+# PYTHONPATH; it is reachable only through `_path_bridge`, which
+# `migrate_bare_producer_provenance.py` inserted the stamp WITHOUT. The
+# import sits at function scope, so this producer did all its work and then
+# died at the save with ModuleNotFoundError. Idiom copied verbatim from
+# `qbeta/qbeta_c3_candidate_audit.py`.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
 import json
 import math
 from datetime import datetime, timezone
