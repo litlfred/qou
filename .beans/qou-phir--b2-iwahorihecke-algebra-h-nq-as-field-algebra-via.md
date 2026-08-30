@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T09:26:24Z
+updated_at: 2026-08-30T12:46:34Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -288,3 +288,55 @@ of it.
 
 So this bean's remaining scope is now exactly: **the Murphy basis and `S^λ`**. The two
 extreme cell modules are done; the general ones are not.
+
+
+## 2026-08-30 — the transport landed, and the Murphy base case with it
+
+**#6053 merged at 07:52Z**, so both halves of what I offered there became writable.
+
+### The transport (closes the gap #6053's author declined to claim)
+
+```lean
+theorem finrank_IwahoriHeckeOfSn :
+    Module.finrank K (IwahoriHeckeOfSn K q (n + 1)) = Nat.factorial (n + 1)
+noncomputable def basisTwOfSn :
+    Module.Basis (Equiv.Perm (Fin (n + 1))) K (IwahoriHeckeOfSn K q (n + 1))
+```
+
+`algEquiv` is an `AlgEquiv`, hence a linear equivalence, so it moves both the dimension
+and the basis. `dim_K H_n(q) = (n+1)!` now holds on the `HeckeAlgebra`-backed side.
+
+### Murphy, base case
+
+Murphy's basis is `m_{st} = T_{d(s)}^* · x_λ · T_{d(t)}` with `x_λ = Σ_{w ∈ S_λ} T_w`,
+whose defining property is being a **`q`-eigenvector**: `σ_i · x_λ = q · x_λ` for
+`s_i ∈ S_λ`.
+
+The **rank-one** case is proved — `S_λ = ⟨s_i⟩`, `x = 1 + σ_i`, both multiplication
+orders. It needs nothing but the quadratic relation: `σ_i + σ_i² = q(1 + σ_i)` *is*
+that relation rearranged. `parabolicSym`, `sigma_mul_parabolicSym`,
+`parabolicSym_mul_sigma`.
+
+### The general case — precisely what is left
+
+`x_λ` for a general Young subgroup is a sum over `S_λ`, and the eigenvector property is
+proved by **pairing each `w` with `w s_i`**: one of the two has length going up, the
+other down, and the two `rsFun` branches combine to `q·(T_w + T_{w s_i})`. That pairing
+argument over `Equiv.Perm (Fin (n+1))` is the open work.
+
+**The blocker is now the combinatorics, not the algebra.** The `T_w` basis the argument
+needs is merged and transported. What remains is the Young subgroup as a subgroup of
+`Equiv.Perm`, the sum over it, and the length-involution pairing.
+
+`lean`-direct exit 0 on both files, zero errors, zero warnings, re-run after rebasing
+across a further 124 commits of main. `#print axioms` clean on all five new
+declarations.
+
+### Method note worth keeping — the stale-olean trap
+
+Building the sibling's `QOU/Hecke/` chain with a loop that builds only **missing**
+oleans left pre-existing stale ones in place, and they shadowed newer sources. The
+symptom is an `unknown constant` error that reads exactly like a broken `main` — I
+nearly reported `WedderburnRankDegeneracy.lean` as broken twice. Both constants
+(`yLambda_determined`, `dimHLF_column`) existed; the oleans were up to **five days**
+older than their sources. Refresh on `source -nt olean`, not on absence.
