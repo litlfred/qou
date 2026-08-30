@@ -1,11 +1,11 @@
 ---
 # qou-rep6
 title: 'GUARD: warn when a commit deletes adjudicated vacuity-ledger verdicts'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T09:38:38Z
-updated_at: 2026-08-30T09:39:01Z
+updated_at: 2026-08-30T10:13:21Z
 ---
 
 ## What happened
@@ -43,3 +43,10 @@ The first version passed both ledgers through the environment, hit `E2BIG`
 reported clean on a real shrink. Fixed via temp files, and an empty result is
 now `exit 2` / "DID NOT RUN" rather than OK. A guard that reports OK when it
 did not run is worse than no guard.
+
+
+
+Merged 2026-08-30 as `790dc4a04` + `8801e697d` (PR #6162, rebase). The guard is
+live on main as a third `PreToolUse` Bash hook; verified post-merge with
+`ledger_shrink_check selftest OK (5 cases)` and `--check` returning
+`OK 385 -> 385`.
