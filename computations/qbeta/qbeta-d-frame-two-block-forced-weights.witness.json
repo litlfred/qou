@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:16:52.029471+00:00",
-  "commitSha": "1c61841bb07642b3baa2f41d1ec625f573601319",
+  "computedAt": "2026-08-30T13:09:32.331169+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
   "assertions": [
     {
       "name": "y_(1^3) vanishes at z_D (the two-row cap)",
@@ -110,11 +110,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 53,
+  "durationMs": 76,
   "computation": "qbeta-d-frame-two-block-forced-weights",
   "scriptFile": "qbeta_d_frame_two_block_forced_weights_probe.py",
   "scriptHash": "49ef03170eb7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2589de44abf4611a267734a8f7af16049b14df8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -218,5 +218,7 @@
     "scope": "(a) — a class closure or a lead, never a derivation of Q_beta",
     "q0Anchor": "proton",
     "q0Value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
