@@ -190,9 +190,14 @@ def main() -> int:
                 "ref_y_at_q0": str(ref_val),
                 "cached_y_at_q0": str(cached_val),
                 "rel_err": str(rel_err),
-                "agrees_to_1e_minus_15": float(rel_err) < 1e-15,
+                # Compared in mpmath, not float64. `rel_err` is computed at
+                # mp.dps = 50 and the bar sits at 1e-15; round-tripping it
+                # through binary64 to make the comparison narrows a 50-digit
+                # quantity to ~16 digits for no reason (bean qou-srvu, riding
+                # on the assertion drain). The emitted boolean is unchanged.
+                "agrees_to_1e_minus_15": bool(rel_err < mp.mpf("1e-15")),
             }
-            tag = "✓" if float(rel_err) < 1e-15 else "✗"
+            tag = "✓" if rel_err < mp.mpf("1e-15") else "✗"
             print(f"    {tag} {atom} λ={list(ref_lam)}: rel_err = {mp.nstr(rel_err, 6)}")
         except Exception as exc:
             sanity[atom] = {"error": f"{type(exc).__name__}: {exc}"}
@@ -206,6 +211,40 @@ def main() -> int:
     })
     w.add_data("by_n", {str(n): by_n[n] for n in sorted(by_n.keys())})
     w.add_data("sanity_check", sanity)
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. The check already existed: each entry of
+    # `sanity_check` compares this cache's `y_at_q0_50dps` against an
+    # INDEPENDENTLY computed reference for the same partition and records
+    # `rel_err` + `agrees_to_1e_minus_15`. It was stored as data and never
+    # asserted. Nothing new is claimed.
+    #
+    # THRESHOLD PROVENANCE: 1e-15 is this file's own declared bar AND the
+    # framework's L1 target (1 ppQ, see AGENTS.md "Precision goals"). It is
+    # not fitted -- the measured margin is ~35 orders of magnitude
+    # (helium-4 rel_err 5.04e-50 against a 1e-15 bar), and the arithmetic is
+    # mpmath at 50 dps, so the bar sits far above the arithmetic floor rather
+    # than at it.
+    _scored = {k: v for k, v in sanity.items() if "rel_err" in v}
+    if _scored:
+        w.add_assertion(
+            "cached_y_lambda_agrees_with_independent_reference_count",
+            computed=str(sum(1 for v in _scored.values()
+                             if v["agrees_to_1e_minus_15"])),
+            expected=str(len(_scored)),
+            source="per-atom |cached - ref|/|ref| against the L1 1 ppQ target "
+                   "1e-15; expected is the number of atoms with a reference, "
+                   "not a number matched to the result",
+        )
+        _worst = max(_scored.values(), key=lambda v: mp.mpf(v["rel_err"]))
+        w.add_assertion(
+            "cached_y_lambda_worst_relative_error",
+            computed=_worst["rel_err"],
+            expected="0",
+            tolerance="1e-15",
+            source="largest per-atom relative error across `sanity_check`; "
+                   "computed at mp.dps = 50, so the 1e-15 bar is well above "
+                   "the arithmetic floor rather than at it",
+        )
     out = w.save()
     print(f"\n  Witness: {out}")
     return 0
