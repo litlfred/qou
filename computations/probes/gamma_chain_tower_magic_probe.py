@@ -63,6 +63,54 @@ THE FIRST MAGIC NUMBER IS 2 -- and the first DOUBLY-magic nucleus is He-4
 
 PRECISION. mpmath at 25-40 dps throughout; the chain replays `hm_mp` exactly,
 never float(). writhe and mixed are integer counts.
+
+🛑 RETRACTED IN SCOPE (2026-08-30, owner correction). The claim "the H_{3A}
+structure is destroyed as it is built" is WRONG, and the corpus says so in
+three places this probe did not reach:
+
+  * `trace-locality-gs-reconciliation.md` -- "The GS algorithm DIGESTS global
+    entanglement into local coefficients; after digestion, the Markov trace
+    factorises locally over the normal form." Digested, not destroyed.
+  * `bond-order-eq-jet-degree-proof.md` -- adding a nucleon "rais[es] the
+    Groebner-Shirshov normal-form length by a fixed increment", placing the
+    n-nucleon cluster sub-word at JET VERTICAL DEGREE n.
+  * `prop:gb-spectral-sequence` (E_2 collapse) + `prop:jet-prefix-gb-filtration`
+    -- the associated graded gr_n IS the n-nucleon cluster contribution.
+
+So the NF is 6 LAURENT POLYNOMIALS IN q graded by GS filtration length, and
+the surviving grading is exactly the many-body decomposition. "Hydrogen and
+Pb-208 occupy the same state space" is true of the DIMENSION and false of the
+CONTENT. Reading `len(nf) == 6` and concluding "no shell degree of freedom is
+expressible" was reading the wrong object.
+
+WHAT THIS PROBE ACTUALLY MEASURED, and it stands as that: numeric magnitudes
+at the single point q = q_0. Evaluating at q_0 collapses the whole filtration
+into one float per basis element, so a negative here is a negative about
+magnitudes at a point -- NOT about the graded structure, which this probe
+never looked at. Scope (a), and narrower than it was written.
+
+THE OBJECT TO MEASURE INSTEAD is the symbolic NF over Q(q, sqrt q) --
+`hecke_core_symbolic.build_atom_nf_sym(Z, N)` -- and its q-degree /
+filtration shape. The corpus already ships the data model:
+`gb-filtration-jet-order.witness.json` carries per word a
+`filtration_certificate` (grade -> {perm, canonical_word, coefficient_in_q}),
+a `filtration_shape` (grade -> multiplicity), and a `jet_log` recording
+`filtration_before -> filtration_after` per reduction step. Measured, the
+order rises with interactions: electron sigma_1^3 gives q^2 - 1 + q^-2, the
+proton body (sigma_1 sigma_2^-1)^3 gives
+-q^5 + 4q^3 - 7q + 7/q - 4/q^3 + q^-5. And at A=1 the symbolic NF already
+separates p from n by q-degree (max 11 / ops 169 vs max 10 / ops 103) -- a
+distinction the numeric NF at q_0 cannot express at all.
+
+ALSO RETRACTED: "A=4 is the end of the road; A=5 needs 686 GB". That is
+max_lambda d_lambda^2, the cost of storing a general OPERATOR in the largest
+irrep -- a property of the representation chosen here, not of the
+construction. The corpus algorithm for this object is O(N * dim H_n(q)),
+LINEAR in the Hecke dimension (`mba-step08-jet-prefix`, Complexity), and the
+symbolic NF is 6 coefficients for ANY nucleus at ANY A: the state does not
+grow with A, only the polynomial degree does.
+
+Tracked in bean `qou-tower` (REOPENED).
 """
 from __future__ import annotations
 
