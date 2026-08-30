@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:27Z",
+  "updated_at": "2026-08-30T07:02:28Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -4030,6 +4030,160 @@
       "file_sha": "617c8fea8905",
       "disposition": "no-change",
       "evidence": "Genuine field manipulation with the nonzero hypothesis USED: `field_simp` needs `h_alpha : alpha != 0` to clear the denominator, and `ring` closes it. The result is the conditioning statement the docstring describes -- alpha is the amplification from how far the convention moved to how far the pole moved.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesFigureEight::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 300,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "Real Laurent-polynomial arithmetic, not a table comparison. `LP.mul` is a genuine double fold over both coefficient lists, and `decide` evaluates it -- the file raises `maxHeartbeats` to 400000 (2000000 for the 8_19 case), which is direct evidence the kernel is doing work rather than matching literals. Same family as the jones_*_value group already recorded legit.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTrefoil::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 363,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "Real Laurent-polynomial arithmetic, not a table comparison. `LP.mul` is a genuine double fold over both coefficient lists, and `decide` evaluates it -- the file raises `maxHeartbeats` to 400000 (2000000 for the 8_19 case), which is direct evidence the kernel is doing work rather than matching literals. Same family as the jones_*_value group already recorded legit.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTorus819::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 497,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "Real Laurent-polynomial arithmetic, not a table comparison. `LP.mul` is a genuine double fold over both coefficient lists, and `decide` evaluates it -- the file raises `maxHeartbeats` to 400000 (2000000 for the 8_19 case), which is direct evidence the kernel is doing work rather than matching literals. Same family as the jones_*_value group already recorded legit.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::identity_coeff_avg_eq_trace_full::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 217,
+      "verdict": "legit",
+      "file_sha": "617c8fea8905",
+      "disposition": "no-change",
+      "evidence": "Real algebra: `collapseStep` is an honest product formula on pairs, and the identity is closed by `field_simp; ring` using the hypothesis `two_ne : (2 : R) != 0`. General in h and x. The content -- that appending the AVERAGED factor and taking the identity coefficient equals appending the FULL factor and taking the Markov trace at z = h/2 -- is substantive, and the docstring is careful that the h/2 is forced by `markov_param_eq_half_h`, not chosen.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_half_h_eq_avg_evals::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 317,
+      "verdict": "legit",
+      "file_sha": "617c8fea8905",
+      "disposition": "no-change",
+      "evidence": "Substantive and general: `vHat ((q - q^-1)/2) ab = (evalAt q ab + evalAt (-q^-1) ab)/2`, closed by `field_simp; ring` using `hq : q != 0`. This is the conceptual content of why h/2 is the Markov parameter -- transposing a shape swaps the two Hecke eigenvalues, so pairing shapes with their transposes averages them. A real derivation, not a restatement.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/HeckeTowerBasicConstruction.lean::smul_jonesIdempotent::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 70,
+      "verdict": "legit",
+      "file_sha": "b690f8b3f64d",
+      "disposition": "no-change",
+      "evidence": "Uses its hypothesis: `rw [jonesIdempotent, smul_smul, mul_inv_cancel_0 hd, one_smul]` needs `hd : q + q^-1 != 0` to cancel. Real module algebra over an abstract H, general in q and s.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mass/BindingEigenfunctionTwoTier.lean::D4_habiro_factor::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 138,
+      "verdict": "legit",
+      "file_sha": "d14ad445d368",
+      "disposition": "no-change",
+      "evidence": "A genuine factorisation identity: `q^2 * (S4 q - (S3 q + qbr3 q * S2)) = (q-1)^2 * (q^2 + q + 1)`, closed by `field_simp; ring` with `hq : q != 0`. It establishes that the n = 4 deviation carries a cyclotomic signature -- Phi_3 times the universal double root at q = 1 -- which is a structural result about the Habiro expansion, not a definitional restatement. The S2/S3/S4 seeds are small explicit q-integer sums, not opaque literals.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::bernstein_bound_linear::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 397,
+      "verdict": "advisory",
+      "file_sha": "b538e202d529",
+      "disposition": "no-change",
+      "evidence": "`rw [conj.bernstein_bound_eq]; ring` -- the content is a FIELD of the `LeviDegeneracyConjecture` structure binder, so this is a conditional projection of a stated assumption rather than something the file establishes. Legitimate as a 3b-cond projection; advisory because the name and docstring (\"The Bernstein bound GROWS LINEARLY with kappa\") read as a derived growth result while linearity is exactly what the assumed field says.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::mackey_level2::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 93,
+      "verdict": "legit",
+      "file_sha": "510818819ea4",
+      "disposition": "no-change",
+      "evidence": "Real matrix arithmetic on both sides: `mulT R32 R32 = matadd (mulT [[1],[1]] [[1],[1]]) Id2` with `mulT` an honest row-dot-row fold and `matadd` an entrywise zipWith, so `decide` computes the Mackey relation Res.Ind = Ind.Res + Id rather than comparing literals. The branching matrix R32 = [[1,1,0],[0,1,1]] is the real H_2 -> H_3 branching data.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::level2_gram::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 104,
+      "verdict": "legit",
+      "file_sha": "510818819ea4",
+      "disposition": "no-change",
+      "evidence": "`mulT R32 R32 = [[2,1],[1,2]]` -- the LEFT side is a computed matrix product; only the RHS is a literal, which is the normal shape for stating a computed answer. Docstring opens \"Sanity:\", announcing itself as a check rather than a derivation.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/MassEndomorphism/ZHabiroCauchy.lean::truncSection_zHabiroLimit::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 792,
+      "verdict": "legit",
+      "file_sha": "4cae52c0c153",
+      "disposition": "no-change",
+      "evidence": "Substantial Mathlib polynomial algebra -- quotients by `braneIdeal`, monic division `%_m`, a section of the truncation map -- discharged by rewriting through two real lemmas (`zHabiroLimit_coe_apply`, `truncSection_mk`) with `hq : IsUnit qinv` in scope. Nothing here is a table or a restatement; `branePoly` and `braneMonic` are genuine recursive polynomial constructions.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/MassTheory/ExtremalPrincipleDoesNotDetermine.lean::two_costs_two_minimisers::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 98,
+      "verdict": "legit",
+      "file_sha": "740a8966e81f",
+      "disposition": "no-change",
+      "evidence": "An HONEST NEGATIVE, and a well-built one. It exhibits one constraint and two cost vectors that select DIFFERENT coordinates -- same feasible set, same optimum principle, different answer -- to show an extremal principle does not determine the result. `norm_num` on real inequalities over `singleSupportCost w a b := w * |b| / |a|`. The docstring says what it is a miniature of (Option D's Plancherel-vs-Frobenius split). Exactly the class of work the audit should protect.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/MassTheory/PnOffsetBarOddClass.lean::likeFlavour_bond_not_barInvariant::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 219,
+      "verdict": "legit",
+      "file_sha": "2f341a11eb18",
+      "disposition": "no-change",
+      "evidence": "A genuine inequality proof: rewrites through `bondConst_bar_sub`, assumes the equality, and derives a contradiction with `hh : h != 0` via `linear_combination`. The hypothesis is used and the result is negative -- the like-flavour bonds form a bar ORBIT rather than two fixed points.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/PermutationEnumeration.lean::lengthFn4_for_h3_to_h4_at_six::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 520,
+      "verdict": "advisory",
+      "file_sha": "cd78b471ca60",
+      "disposition": "no-change",
+      "evidence": "`rfl` reading one arm of the `lengthFn4_for_h3_to_h4 : Fin 24 -> N` table, so it verifies the table entry rather than the Coxeter length. Honest about its purpose -- the docstring says it is \"the value needed by `markov_axiom_identity_witness`\" -- and the table's first six arms are annotated with the permutations they encode. Advisory rather than genuine: a tabulated length function is a reasonable way to carry S_4 data, but nothing here checks it against the inversion count that `coxeterLength` (same module family) computes for real.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
