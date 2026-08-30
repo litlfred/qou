@@ -117,6 +117,29 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     # producing the identical return schema.
     numerical = _load_numerical_chi_cache(atom_name, n)
     if numerical is not None:
+        # Pin-straddle guard (qou-wgaw / L1, 2026-08-30). The numerical χ cache
+        # is precomputed at ONE fixed q_0 (recorded in `q0Value`). Combining its
+        # χ with runtime-pinned y_λ when the two pins differ is a layer straddle:
+        # the muon L1 cross-check read the PROTON-pinned cache (built 2026-08-10)
+        # while y_λ resolved to the muon pin, giving |tr_M| that missed the
+        # markov_peel/Hoefsmit value by 7.84e-8 on the proton (2.9e-7 at ⁴He) —
+        # the sole reason L1 (1 ppQ) read red. On a pin mismatch, drop to the
+        # symbolic path (evaluates χ at the runtime q_0, verified to reproduce
+        # markov_peel to 3e-50) — but ONLY when the symbolic cache is COMPLETE:
+        # a partial symbolic cache (T / ³He / ⁴He) would be a larger error than
+        # the straddle, so for those the complete numerical cache is kept (their
+        # real fix is to regenerate the numerical χ cache at the runtime pin).
+        _cache_q0 = numerical.get("q0Value") or numerical.get("q_0")
+        if _cache_q0 is not None and abs(
+            mp.mpf(str(_cache_q0)) - mp.mpf(Q_50_DIGIT_STR)
+        ) > mp.mpf("1e-40"):
+            try:
+                _, _sym_partial, _ = _load_chi_cache(atom_name, n)
+                if not _sym_partial:
+                    numerical = None
+            except FileNotFoundError:
+                pass
+    if numerical is not None:
         q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
         n_total = numerical.get("n_partitions_total", len(numerical["by_partition"]))
         n_used = numerical.get("n_partitions", len(numerical["by_partition"]))
