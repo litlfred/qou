@@ -73,6 +73,60 @@ def lob(t):
     return mp.clsin(2, 2 * t) / 2
 
 
+
+def bracket_requirement() -> bool:
+    """How tight must a RATIONAL bracket on y_1 be to certify a_min > 2*pi/9?
+
+    a_min = arg(z) with z = 1 - 1/y, so
+
+        Im(z)/Re(z) = Im(y) / (Re(y)^2 - Re(y) + Im(y)^2)
+
+    and the condition is that this exceeds tan(2*pi/9).  Interval-evaluate the
+    right-hand side over a rational box for (Re y, Im y): the denominator
+    Re^2 - Re + Im^2 is increasing in Re on Re > 1/2 (which holds here) and in Im,
+    so the worst case is smallest numerator over largest denominator.
+
+    This decides whether `QOU.Knot.FiveTwoShapeBounds` (landed #6084) already
+    suffices, or whether the Lean brackets must be refined first.
+    """
+    tan_ = mp.tan(2 * mp.pi / 9)
+
+    def ratio_lo(re_lo, re_hi, im_lo, im_hi):
+        d_hi = re_hi**2 - re_hi + im_hi**2      # largest denominator
+        return im_lo / d_hi                      # smallest numerator
+
+    print("\n" + "=" * 66)
+    print("BRACKET REQUIREMENT — is FiveTwoShapeBounds already tight enough?")
+    print("=" * 66)
+    print("need Im(z)/Re(z) > tan(2*pi/9) =", mp.nstr(tan_, 20))
+
+    # the bounds QOU.Knot.FiveTwoShapeBounds actually proves
+    existing = (mp.mpf(31)/40, mp.mpf(4)/5, mp.mpf(13)/10, mp.mpf(33)/25)
+    lo = ratio_lo(*existing)
+    print("\nEXISTING (31/40 < Re < 4/5, 13/10 < Im < 33/25):")
+    print("  worst-case ratio =", mp.nstr(lo, 15),
+          "   SUFFICIENT" if lo > tan_ else
+          "   NOT SUFFICIENT, short by " + mp.nstr(tan_ - lo, 10))
+
+    y = five_two_shape()
+    re_y, im_y = mp.re(y), mp.im(y)
+    print("\nSmallest denominator that suffices:")
+    need = None
+    for den in (50, 100, 200, 400, 800):
+        rl, rh = mp.floor(re_y*den)/den, mp.ceil(re_y*den)/den
+        il, ih = mp.floor(im_y*den)/den, mp.ceil(im_y*den)/den
+        lo = ratio_lo(rl, rh, il, ih)
+        ok = lo > tan_
+        print(f"  den={den:4d}  ratio_lo={mp.nstr(lo, 15)}  {'SUFFICIENT' if ok else '-'}")
+        if ok and need is None:
+            need = (den, int(rl*den), int(rh*den), int(il*den), int(ih*den))
+    if need:
+        d, a, b, c, e = need
+        print(f"\n  -> refine FiveTwoShapeBounds to:  {a}/{d} < Re(y_1) < {b}/{d}")
+        print(f"                                     {c}/{d} < Im(y_1) < {e}/{d}")
+    return need is not None
+
+
 def main() -> int:
     y1 = five_two_shape()
     angles = dihedral_angles(y1)
@@ -119,7 +173,8 @@ def main() -> int:
           mp.nstr(a_min - two_pi_9, 8),
           f"({mp.nstr((a_min - two_pi_9)/two_pi_9*100, 4)} %).")
     print()
-    print("VERDICT:", "REDUCTION HOLDS" if ok else "REDUCTION FAILS")
+    ok &= bracket_requirement()
+    print("\nVERDICT:", "REDUCTION HOLDS" if ok else "REDUCTION FAILS")
     return 0 if ok else 1
 
 
