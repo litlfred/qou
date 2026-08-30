@@ -22,7 +22,19 @@ sys.path.insert(0, os.path.join(HERE, ".."))
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 
 # muon-q0 canonical (computations layer); scale cancels in the ratio anyway.
-Q0 = 1.10997859555733471
+# Was the float64 literal `1.10997859555733471` until 2026-08-30 (bean
+# qou-840k): a 17-digit truncation of the muon pin A, fed straight into
+# `global_wedderburn_sum_q_hecke_seminormal`, which became an mpf kernel earlier
+# in this bean. A float64 q0 there discards exactly the precision that rewire
+# exists to keep, so it is now the full 50-digit value as an mpf.
+#
+# VINTAGE NOT CHANGED: the canonical pin moved A -> C on 2026-08-29 and this is
+# still A. The payload below calls it "muon (computations-layer canonical)", so
+# re-pinning it is a convention decision, not a precision fix, and is left alone.
+import mpmath as _mp  # noqa: E402
+from _precision import fmt  # noqa: E402
+
+Q0 = _mp.mpf("1.1099785955573347198997632204832250266562084087802")
 
 # AME2020 binding energies (MeV).
 B_OBS = {
@@ -89,10 +101,16 @@ def _emit_witness(ratios, spread, mr):
     data_payload = {
         "name": "rho-binding-constancy",
         "probe": True,
-        "substrate": {"q0": Q0, "q0_pin": "muon (computations-layer canonical)"},
-        "ratios_B_over_trM": {k: float(v) for k, v in ratios.items()},
-        "relative_spread": float(spread),
-        "t_he3_mirror_mismatch": (float(mr) if mr is not None else None),
+        "substrate": {"q0": fmt(Q0),
+                      "q0_pin": "muon (computations-layer canonical)"},
+        # `fmt`, not `float`: these descend from an mpf kernel, and the
+        # corpus's raw-float64 guard fires on floats entering a witness.
+        # fmt() is only honest once Q0 above is an mpf — on a float64 it
+        # would render 53 bits out to 50 digits, which _precision.py warns
+        # about explicitly.
+        "ratios_B_over_trM": {k: fmt(v) for k, v in ratios.items()},
+        "relative_spread": fmt(spread),
+        "t_he3_mirror_mismatch": (fmt(mr) if mr is not None else None),
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/rho_binding_constancy_probe.py"},
     }

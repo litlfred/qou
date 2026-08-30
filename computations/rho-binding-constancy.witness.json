@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:55:39.296711+00:00",
-  "commitSha": "8527d1da82901d9c5a9c57c2afb81b07145720d8",
+  "computedAt": "2026-08-30T06:44:23.349969+00:00",
+  "commitSha": "7e2e62e7bd67a1258157470dad0a97fefe4c48e1",
   "assertions": [
     {
       "name": "ratios computed for all 3 atoms",
@@ -15,7 +15,7 @@
   "durationMs": 0,
   "computation": "rho-binding-constancy",
   "scriptFile": "rho_binding_constancy_probe.py",
-  "scriptHash": "fbcc340b7a1b",
+  "scriptHash": "8af9f95796fd",
   "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -43,19 +43,19 @@
   "name": "rho-binding-constancy",
   "probe": true,
   "substrate": {
-    "q0": 1.1099785955573347,
+    "q0": "1.10997859555733471989976322048322502665620840878020000000000",
     "q0_pin": "muon (computations-layer canonical)"
   },
   "ratios_B_over_trM": {
-    "D": 3.8676508306656623,
-    "T": 36.9884159132435,
-    "He3": 19.1151187447463
+    "D": "3.86765083066566074802477038933126012584257325367281686774270",
+    "T": "36.9884159132434746617377278424577425015349464949489124390322",
+    "He3": "19.1151187447462876611642706428453525000352427998459796403421"
   },
-  "relative_spread": 1.6568339351325567,
-  "t_he3_mirror_mismatch": 0.6371540501843169,
+  "relative_spread": "1.65683393513255664717432155596311491078648452047584939913482",
+  "t_he3_mirror_mismatch": "0.637154050184316944406636413831146763131125251301211055905044",
   "witness": {
     "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
-    "scriptHash": "fbcc340b7a1b",
+    "scriptHash": "8af9f95796fd",
     "producer": "computations/probes/rho_binding_constancy_probe.py"
   },
   "auditOnly": true

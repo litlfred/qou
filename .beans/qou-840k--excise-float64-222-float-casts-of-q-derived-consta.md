@@ -809,3 +809,98 @@ not, so the premise for flipping is gone.
 **What would unblock it:** a completed A=4 measurement under the flag. That is
 one long unattended run, and it is the only thing standing between here and the
 flip.
+
+
+## 2026-08-30 — BOTTLENECK ANALYSIS: how to make A=4 tractable
+
+Profiled the mpf character kernel at a size that completes (dim=768, the A=2
+word, 23 letters -> 10 after collapse) rather than guessing from the A=4 hang.
+
+    ncalls     tottime  function
+    8,735,905    7.118  mpmath ctx_mp_python.__mul__
+    8,732,967    6.952  mpmath ctx_mp_python.__add__
+    8,732,968    6.495  mpmath libmp.mpf_add
+            1    5.867  _chi_lambda_of_word_mpf itself
+    8,735,905    3.541  mpmath libmp.mpf_mul
+   17,468,917    2.661  built-in __new__
+   17,468,936    1.443  built-in hasattr
+
+### The arithmetic is NOT the bottleneck
+
+    real arithmetic   mpf_add 6.5s + mpf_mul 3.5s        = 10.0s   ~29%
+    object protocol   __mul__/__add__ wrappers, __new__,
+                      hasattr                            = 18.2s   ~55%
+
+**17.5 million object allocations and 17.5 million `hasattr` calls** — one of
+each per elementary operation. gmpy2 is already doing the mantissa work
+efficiently; what costs is wrapping every intermediate in a Python `mpf`.
+
+This also explains the flint result. Flint attacked the 29%, and paid for it by
+discarding sparsity — hence 0.39x. The 55% is the part worth attacking, and it
+does not require giving up the sparse structure.
+
+### Measured: fixed-point integers remove it
+
+Same multiply-add workload at ~70 digits, 200k operations:
+
+    mpmath mpf objects   0.294s
+    gmpy2 fixed-point    0.045s      **6.58x**
+
+Values here are O(1) in magnitude and the precision is fixed, so a scaled
+integer `round(x * 2^240)` is a faithful representation: multiply is an mpz
+multiply plus a shift, add is an mpz add. gmpy2's mpz is a thin C object with
+no per-operation precision bookkeeping and no `hasattr` dispatch.
+
+### The route to A=4
+
+    run-collapse (landed)          2.24x   measured
+    fixed-point kernel             6.58x   measured on the primitive
+    combined                     ~14.7x    projection
+
+A=4 under the flag did not finish in 850s; float64 does it in 75.6s. A ~15x cut
+puts the mpf path in the same order as float64 rather than two orders above it.
+**That is a projection from a primitive benchmark, not a measured A=4 run** —
+the projection is what makes the work worth doing, and only a completed A=4 run
+settles it.
+
+### What NOT to try, with reasons
+
+- **python-flint** — measured 0.39x at dim=768. Dense-only, so it costs the
+  sparsity. Recorded above.
+- **Trace-only propagation** — computing `tr(prod)` by propagating d basis
+  vectors is O(d * k * nnz), identical to maintaining the d x d accumulator.
+  No win, and it looks like one.
+- **Lower working precision** — 70 -> 55 dps is maybe 15%, against 658% from
+  the representation change. Not where the money is.
+
+### Implementation risk, stated up front
+
+A fixed-point kernel means owning rounding and sign handling by hand. The flint
+attempt is the cautionary case: it was *correct-looking*, agreed to 1e-70 on
+three shapes, and still had a sign bug that a positive-only conversion test
+missed. Any fixed-point kernel must be A/B'd against the mpf path on values of
+BOTH signs before it is trusted.
+
+## 2026-08-30 — issue fixed: `rho_binding_constancy_probe`
+
+The raw-float64 guard fired on 6 fields. Unlike `per_atom_audit_witnesses`
+(Rust backend, structural) this one has **no numpy, scipy or native backend** —
+it consumes `global_wedderburn_sum_q_hecke_seminormal`, which this bean made an
+mpf kernel, and then threw the precision away:
+
+    Q0 = 1.10997859555733471                      # float64, 17-digit truncation
+    "ratios_B_over_trM": {k: float(v) ...}        # mpf -> float64
+    "relative_spread": float(spread)
+
+Fixed: `Q0` is the full 50-digit value as an mpf, and the payload serializes
+through `_precision.fmt`. Order matters — `fmt` on a float64 renders 53 bits out
+to 50 digits, which `_precision.py` warns about, so the literal had to be fixed
+first.
+
+    raw float64 fields   6 -> 0
+    verdicts             identical
+    relative_spread      1.65683393513255664717432155596311  (was float64)
+
+Vintage deliberately unchanged: the canonical pin moved A -> C, this is still A,
+and the payload calls it "muon (computations-layer canonical)" — re-pinning is a
+convention decision, not a precision fix.
