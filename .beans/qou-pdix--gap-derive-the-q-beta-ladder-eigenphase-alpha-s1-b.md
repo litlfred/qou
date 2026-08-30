@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T11:20:04Z
+updated_at: 2026-08-30T11:41:13Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -644,3 +644,71 @@ LEAN: QOU/QBeta/MBetaV21Spectrum.lean — 27 theorems, lean-direct exit 0,
 #print axioms clean on all 27, zero sorryAx.
 PROBE: computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py (23/23, exact
 Q(q) + mpmath 50 dps at the proton pin). precision-gates.sh --changed exit 0.
+
+
+## 2026-08-30 (12) — the NF gate is NOT a gate on the entry-6 test: the gap is O(t^3)
+
+The last entry made this the gating question ahead of branch 3: *"A 0.16% phase
+cannot be derived from an object whose NF convention is unsettled at 0.58%.
+Scope-(a): settle which NF is canonical FIRST; settling it moves the target by
+more than the target."* Two results, and the second changes that conclusion for
+one specific purpose.
+
+### 1. It is NOT a change of BASIS — it is two different ELEMENTS
+
+`docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 labels the 1.00579
+factor **"basis-change typed-vs-single-wrap"**. **Its own §2 proves the
+dual-basis identity** `G^-1 . t = e_gamma`, i.e. *"the framework's net
+sum_i (Delta_NF)_i IS the Frobenius counit eps(beta)"*.
+
+Those cannot both be about one element. `eps` is a canonical algebra map, so it
+is **basis-independent**: one element has one `eps`, in every basis. The two
+NFs give different polynomials, therefore they expand **DIFFERENT ELEMENTS**,
+and §1's label is a category error against §2 of the same document.
+
+**This reframes the open question.** "Which NF is canonical" sounds like a
+convention to be picked. It is actually *"which braid element is the canonical
+nucleon pair"* — a modelling question with a physical criterion, not a
+bookkeeping one. Worth carrying into whoever takes this next.
+
+### 2. The gap is O(h^3), so it cannot reach the t^1 or t^2 coefficients
+
+Exact, and it reproduces the audit's 1.00579 to six digits:
+
+    eps_typed - eps_sw = h^3 (h^4 + 2h^3 + 2h^2 + 2h - 1) / 4
+                       = -h^3/4 + h^4/2 + h^5/2 + h^6/2 + O(h^7)
+
+The two NFs **agree through O(h^2)** and first differ at **O(h^3)**. With
+`h = 2t - t^2 + ...` that is `O(t^3)`.
+
+Entry (6) states the branch-3 acceptance test as *reproduce alpha through order
+t^2*, with the coefficient pinned at t^1 so t^2 is a prediction. **An O(t^3)
+ambiguity contributes nothing at t^1 or t^2, so it cannot move that test.**
+
+**Scope, carefully.** The bean's magnitude argument is untouched and remains
+correct for the ABSOLUTE 0.160% target: 0.579% really is 3.6x larger, and any
+derivation targeting the absolute value is still blocked on which element is
+canonical. What is now established is narrower and useful: *a magnitude at q0
+and an order in the expansion are different claims*, and only the order governs
+which Taylor coefficients an ambiguity can reach. So **branch 3's falsifiable
+test is available now** — it does not have to wait on the NF question.
+
+### An error of mine, caught by Lean
+
+I wrote the gap at `h = 1` as `-1/4`, which is the **cofactor at h = 0**, a
+different quantity. The actual gap at h=1 is `1 - (-1/2) = 3/2`, which the
+closed form gives as `(1+2+2+2-1)/4 = 3/2`. `norm_num` reduced my claim to
+`False` on the first run. Recorded because the two numbers sit one line apart
+in the same theorem block and the conflation is easy to repeat.
+
+LEAN: QOU/QBeta/NFCounitGapOrder.lean — 7 theorems, lean-direct exit 0,
+#print axioms clean on all 7, zero sorryAx. Generic `Field K` with `(2:K) != 0`
+where the halves require it; the cofactor statement needs no hypothesis at all.
+PROBE: computations/qbeta/qbeta_nf_counit_gap_order_probe.py (8/8, exact Q(h),
+reproducing 1.00579 at the proton pin).
+
+### Route table
+
+Unchanged: routes 1-4 closed, route 5 (transcendental/holonomy) still the only
+live one. What changes is that its acceptance test is **no longer gated on the
+NF question**, so it can be attempted now.
