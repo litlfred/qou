@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T19:54:53Z
+updated_at: 2026-08-30T20:07:54Z
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -169,3 +169,77 @@ Regenerating the Wenzl witness moved `target_c_k["3"]`:
     fresh      -2.069342577115   rel 2.1e-09 from AGENTS.md proton c_3(p)  = -2.0693425728
 
 One of the ~870 muon-fingerprint witnesses, re-pinned to proton by being run.
+
+
+---
+
+## 🛑 CORRECTION 2026-08-30 (second, and it INVERTS the first)
+
+`18c6898208`. Two corrections to this detector in one session; this one reverses
+the split I recorded above. Both earlier versions were reasoned, neither
+measured, and the settling measurement is four lines of mpmath.
+
+### The fact I had not read
+
+    # qou_substrate/witness.py:830, Assertion.passed
+    return abs(float(self.computed) - float(self.expected)) <= float(self.tolerance)
+
+**Every verdict in this corpus is a float64 subtraction.** How a producer passes
+a value — `mpf`, `str`, `float` — changes what the witness *records* and never
+the verdict. So "is there a `float()` cast at the call site" was never the right
+question, and **dropping the cast is not the fix**.
+
+### Measured
+
+| | result | |
+|---|---|---|
+| `float(mpf("1e-45"))` | `1e-45` **exactly** | 16 sig figs at any exponent to ~1e-308 |
+| `computed=1e-30, expected=0.0, tol=1e-40` | `False` | **correct**, fails as advertised |
+| `computed=1e-45, expected=0.0, tol=1e-40` | `True` | **correct**, passes as advertised |
+| `computed=1+1e-30, expected=1.0, tol=1e-40` | `True` | **vacuous**; would pass on a 1e-20 miss |
+
+The defect is **catastrophic cancellation between two same-scale numbers**, so
+the floor is *relative*: `2.22e-16·|expected|`. Asserting against exact zero is
+the SAFE case — nothing cancels — and it is the bucket the update above gated on.
+
+### The original bean finding is also wrong
+
+The `fr_pullback_borromean_h3a_test.py:549,554` sites that opened this bean —
+`computed=float(plancherel_dev), expected=0.0, tolerance=1e-40` — are the
+`expected == 0` shape and are **fine** on this axis. `float()` of a tiny mpf
+residual is lossless. Whatever else is true of that file (it carries a
+substrate-pure banner and its witness has never been committed — Class 2 of this
+bean, untouched), the tolerance is not the problem.
+
+### The corrected detector
+
+`expected != 0` **and** `tolerance < 2.22e-16·|expected|`: **19 sites, 13
+files**, sorted by shortfall. It sees sites the old version excluded by rule —
+worst is `probes/su4_casimir_beta_derivation_probe.py:156`, `expected="0.75"`,
+`tolerance="1e-50"`, **1.7e34× below** the reachable floor; string bounds were
+previously skipped as "legitimate".
+
+`_numeric` now unwraps a literal inside a numeric constructor (`mp.mpf(1)`,
+`sp.Integer(-1)`), because that is exactly the shape a first-pass fix produces —
+without it the audit went quiet on the two assertions `f61deb33bf` had just
+written. 19 → 21, both extras mine. Fixed to residual-against-zero.
+
+### The call-site rule
+
+    # vacuous however `norm` is passed
+    add_assertion("normalised", computed=norm, expected=mp.mpf(1), tolerance=1e-25)
+    # meaningful
+    add_assertion("normalised", computed=fmt(abs(norm - 1)), expected="0", tolerance="1e-25")
+
+### Unaffected
+
+Everything measured rather than inferred: the `atom_mass` `ZeroDivisionError` on
+main, `ŷ_alt = 0` exactly, the stale convention-C witness, the 8–90 % `tr_full`
+shift (`qou-enn6`), the `qbeta_wenzl` input-compared-to-itself, and the
+list-slot blindness (row 17). What does not stand is calling the 39
+`expected == 0` sites a defect class.
+
+### Still open on this bean
+
+Class 2 (producers that SHRANK) is untouched. And the 19 corrected sites are
+undrained.
