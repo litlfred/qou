@@ -23,7 +23,9 @@ group side, and everything below is ℕ arithmetic.
   relation enters, and it is the only place a coefficient appears.
 * `stair_push` — a generator above the run's foot passes through with its index
   dropped by one: `c_k σ_i = σ_{i-1} c_k`.  Braid on one letter, commutation on
-  the rest; the Hecke analogue of `SymmetricCoxeter.t_push`.
+  the rest; the Hecke analogue of `SymmetricCoxeter.t_push`.  Its hypothesis is
+  `n + 1 - k < i`, **not** `n - k + 1 < i`: the two agree for `k ≤ n` and differ
+  at the full run, where the second is off by one against truncated subtraction.
 
 Together with `c_k σ_{n-k} = c_{k+1}` (definitional) these are the four cases of
 the closure argument.  **The closure itself, the submodule, and the induction on
@@ -93,8 +95,15 @@ theorem stair_fold (k : ℕ) (hk : k ≤ n) :
     mul_smul_comm, mul_one]
 
 /-- **A generator above the run's foot passes through with its index dropped.**
-    The Hecke analogue of `SymmetricCoxeter.t_push`. -/
-theorem stair_push (k : ℕ) : ∀ i : ℕ, i ≤ n → n - k + 1 < i →
+    The Hecke analogue of `SymmetricCoxeter.t_push`.
+
+    The foot of `c_k = σ_n ⋯ σ_{n-k+1}` is `σ_{n+1-k}`, and `n + 1 - k` is the
+    right way to write it: `n - k + 1` agrees for `k ≤ n` but is **off by one at
+    the full run** `k = n+1`, where truncated subtraction turns `n - (n+1) + 1`
+    into `1` while the actual foot is `σ_0`.  That would silently exclude
+    `i = 1` from the last case of the closure argument, where it is needed and
+    where it is true — at `n = 1`, `c₂ σ₁ = σ₁σ₀σ₁ = σ₀σ₁σ₀ = σ₀ c₂`. -/
+theorem stair_push (k : ℕ) (hk : k ≤ n + 1) : ∀ i : ℕ, i ≤ n → n + 1 - k < i →
     stair K q n k * gen K q n i = gen K q n (i - 1) * stair K q n k := by
   induction k with
   | zero => intro i hi h; omega
@@ -125,7 +134,16 @@ theorem stair_push (k : ℕ) : ∀ i : ℕ, i ≤ n → n - k + 1 < i →
         have hcom : gen K q n i * gen K q n (n - k)
             = gen K q n (n - k) * gen K q n i :=
           gen_comm K q n (by omega) (by omega)
-        rw [stair_succ, mul_assoc, ← hcom, ← mul_assoc, ih i hi (by omega),
-          mul_assoc]
+        rw [stair_succ, mul_assoc, ← hcom, ← mul_assoc,
+          ih (by omega) i hi (by omega), mul_assoc]
+
+/-- **The full run, which is the case the old hypothesis missed.**  For
+    `c_{n+1} = σ_n ⋯ σ_0` every generator except `σ_0` itself passes through.
+    Stated separately because it is the instance the closure argument's last
+    case needs, and the instance `n - k + 1 < i` would have excluded. -/
+theorem stair_push_full (i : ℕ) (hi : i ≤ n) (h0 : 0 < i) :
+    stair K q n (n + 1) * gen K q n i
+      = gen K q n (i - 1) * stair K q n (n + 1) :=
+  stair_push K q n (n + 1) le_rfl i hi (by omega)
 
 end QOU.Hecke.IwahoriHecke
