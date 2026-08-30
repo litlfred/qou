@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-23T00:52:17Z
+updated_at: 2026-08-30T11:20:04Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -557,3 +557,90 @@ the 2026-05-11 audit treats the 1.00579 as still to be explained.
 
 NEXT: this is now the gating question for the whole alpha derivation, ahead of
 branch 3. Which NF is canonical for the Q_beta counit chain?
+
+
+## 2026-08-30 (11) — the FOUR NAMED transfer matrices, excluded by determinant
+
+Routes 1-4 above are for the SEMINORMAL BRAID IMAGE and are not re-run. The gap
+they leave: `prop:q-beta-cos-resummation` is conditional on
+`prop:beta-decay-transfer-matrix`, which defines four explicit 2x2 matrices over
+`Z[q^+-1]` — and TWO OF THEM ARE NOT BRAID-IMAGE ELEMENTS, so the rationality
+invariant does not reach them. `T_mix` is an algebraic average (the block says
+so) and `Delta_beta` is a scalar multiple of the identity.
+
+    T(c,d) = [[c*h+d, c],[c, d]]
+    T_pp = T(1,0) = sigma;  T_nn = T(1,-h) = sigma^-1  (proved: T_pp*T_nn = 1)
+    T_mix = T(1,-h/2) = (T_pp+T_nn)/2      NOT a group element
+    Delta_beta = T_mix - T_nn = T_pp - T_mix = (h/2)*I    SCALAR
+
+**Excluded by DETERMINANT, no hypothesis on q, over a generic field:**
+
+    det T_pp = det T_nn = -1
+    det T_mix = -(1 + h^2/4)   <= -1 < 1  for EVERY real q
+    det Delta_beta = h^2/4     = 1 only at h = +-2  (q = 1+sqrt2)
+
+A unit-circle pair forces `det = 1`, so all four fail at the first clause.
+Cheaper and more uniform than the rationality invariant, and it covers the two
+matrices that one cannot.
+
+**M_beta is undefined.** Six-path corpus-grep, this session: exactly two
+occurrences corpus-wide, both inside the claim in
+`nuclear-interactions/q-beta-cos-resummation.md`. The only "universal beta
+decay matrix" the conditional-on block defines is `Delta_beta = (h/2)*I`, whose
+spectrum is the REPEATED REAL eigenvalue `h/2`. A scalar matrix has no
+eigenphase at all — proved via centrality (`Delta_beta_central`).
+
+## z_D IS the seminormal diagonal entry — sharper than the recorded wording
+
+`qbeta_alpha_required_c_vs_d_probe.py:37` records `d1` as "numerically identical
+to z_D ... a different object". The identity is stronger: `z_D = q^3/(q^2+1)`
+and `d1` are THE SAME RATIONAL FUNCTION of q, at every q, not a coincidence at
+one anchor. With the already-proved `d1 + d2 = h`:
+
+    z_D + d2 = h        D splits the Hecke differential across the V_(2,1) diagonal
+
+Convention C does not (`z_C(4) = 2/5` vs `d1(4) = 64/17`, Lean-proved). **That
+is an argument FOR the 2026-08-15 owner ruling from the representation side**,
+independent of the trace-convention registry. Worth carrying into the cds1
+write-up; it is the first non-registry reason for D I have seen.
+
+## The braid image is NOT short of q-dependent phases
+
+`sigma_1 sigma_2^-1`: det 1, trace `-1 - h^2`. Genuinely elliptic when
+`h^2 <= 1`, i.e. `q <= golden ratio` — the substrate (h = 0.2091) qualifies,
+eigenphase 2.1198 rad. But it tends to `2pi/3` as `q -> 1` while the ladder
+phase tends to 0 (h(1) = 0, for ANY z). **They do not share a classical limit.**
+A quantitative separation to sit alongside entry 4's functional-identity one,
+and it refines entry 8's "the rep supplies oscillatory phases; it just never
+supplies THIS one" with the reason: wrong classical limit.
+
+## Two errors of mine, both caught by computing rather than asserting
+
+1. I took `sigma_2`'s diagonal as `(d1, d2)`; the braid relation FAILED. The
+   off-diagonal residual `b*(a*q^2 - d + q)` forces `d = a*q^2 + q`, hence
+   `a = d2, d = d1` — which is exactly what `SeminormalV21Trace.lean` already
+   had. The prior agent was right; my guess was the wrong one.
+2. My first ellipticity assertion was a TAUTOLOGY (`(-1-h^2)+2 = 1-h^2`, an
+   algebraic restatement that cannot fail). Replaced with the golden-ratio
+   boundary, which can. Same class as the tautological-field carrier defect
+   this bean's entry (2) added a detector for — in an assertion this time.
+
+## Hypothesis note
+
+The Lean carries `(2 : K) != 0`, NOT `CharZero`. The half lives in the OBJECT:
+`T_mix = T(1, -h/2)`, so in characteristic 2 it collapses to `T_pp` and
+`Delta_beta_eq_scalar` is FALSE, not merely unprovable. `4 != 0` is derived from
+`2 != 0` rather than assumed.
+
+## Route table — unchanged where it matters
+
+Routes 1-4 stay closed; **route 5 (transcendental / holonomy) is still the only
+live one** and is untouched by this. What changes is coverage, not status: the
+four matrices the block is actually conditional on are now excluded too, by a
+named invariant, so "M_beta is some other matrix in the corpus" is no longer an
+escape.
+
+LEAN: QOU/QBeta/MBetaV21Spectrum.lean — 27 theorems, lean-direct exit 0,
+#print axioms clean on all 27, zero sorryAx.
+PROBE: computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py (23/23, exact
+Q(q) + mpmath 50 dps at the proton pin). precision-gates.sh --changed exit 0.
