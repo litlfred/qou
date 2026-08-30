@@ -251,3 +251,62 @@ The identification itself: *no result relates the framework's `ξ_q` to
 `HasReebSpectralCoords`.* An instance would assert it, so none is provided. The
 bean stays open on precisely that, and it is now a single named class rather than
 a missing module plus an unstated hypothesis.
+
+---
+
+## The magnitude is now DERIVED, not assumed 2026-08-30
+
+A duplication found while writing the entry above, and worth recording as its
+own finding because it is a *structural* consequence of §0a rather than an
+oversight anyone made.
+
+`reeb_spectrum_on_critical_line` carried
+
+```lean
+(hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ))
+```
+
+as a hypothesis. That is exactly `hasse_weil_bound`, which is **proved** in
+`hasse-weil-bound.lean` from `[IsWeilZeta Z]` — the file next door. The same
+fact was assumed in one sibling and derived in the other, and neither could see
+the other, because content-block siblings sit outside the package globs and
+cannot import one another (§0a). Nothing was wrong with either file on its own;
+the gap was in the gap between them, and it would have stayed invisible to any
+per-file check.
+
+**Fix.** `IsWeilZeta`, the chain `eigenvalue_functional_equation` →
+`castelnuovo_severi_bound` → `eigenvalue_norm_sq` → `hasse_weil_bound`, and the
+`weilZetaExample` instance moved verbatim to a new library module
+`QOU/AlgebraicSubstrate/WeilZeta.lean`, importable by both siblings.
+`hasse-weil-bound.lean` imports it and keeps everything downstream of the
+magnitude — conjugation-closure, the characteristic-polynomial facts, Vieta —
+which is the block's own content. `spectral-half-line.lean` imports it and
+replaces `hw` with `[IsWeilZeta Z]`.
+
+**What this buys.** The critical-line theorem is now conditional on exactly two
+hypotheses, of quite different standing:
+
+- `[IsWeilZeta Z]` — the two classical Weil inputs, cited, and jointly
+  satisfiable (`weilZetaExample`).
+- `[HasReebSpectralCoords Z R]` — the identification. **The open one.**
+
+Before, a reader had to notice that a third hypothesis was redundant to see
+this. Now the statement says it. The arc's whole remaining conditionality is one
+named class, which is the shape a gap should have.
+
+**Verification.** `lean`-direct exit 0 on all six files — the three library
+modules (`LocalQZetaFunction`, `WeilZeta`, `ReebSpectrum`) and the three content
+blocks (`hasse-weil-bound`, `explicit-formula`, `spectral-half-line`).
+`#print axioms` `[propext, Classical.choice, Quot.sound]` on
+`reeb_spectrum_on_critical_line`, `reeb_spectrum_fixed_by_involution`,
+`hasReebSpectralCoords_satisfiable`, `hasse_weil_bound`, `eigenvalue_norm_sq`,
+`eigenvalues_conj_closed`, `charPoly_coeff_isReal`, `prod_eigenvalues_eq_pm`,
+`norm_charPoly_coeff_seven_le`, `weilZetaExample`.
+
+**Generalisable, and probably not unique.** Two content-block siblings in one
+chapter, one assuming what the other proves, is a defect class §0a makes
+structurally likely and no existing checker looks for: the per-block sidecars
+audit blocks in isolation, and neither file is wrong by itself. Worth a detector
+— hypotheses of a content-block theorem that match, up to renaming, the
+*conclusion* of a theorem in a sibling block of the same chapter. Filed as
+`qou-sibdup`.
