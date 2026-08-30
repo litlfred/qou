@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T18:06:51Z
+updated_at: 2026-08-30T18:10:03Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -711,3 +711,59 @@ Do **not** attempt `lead_inj` for this `lead`. Either:
   Murphy's theory actually stratifies by dominance.
 
 The first is worth probing before formalising — and the probe now exists to test it.
+
+
+### …and the repair is RSK, which the corpus already has. `lead_inj` is FREE.
+
+The refutation above says the collisions are cross-λ, so `lead` must see λ. My first repair idea —
+*"order `MurphyIndex` by dominance on λ first, permutation second"* — **cannot work**, and checking
+why is what found the real answer.
+
+**`Triangular`'s `α` is forced.** Its field is `v : ι → (α →₀ R)`, so `α` is the index type of the
+*coordinate vectors* — for us the `T_w` basis index, `Equiv.Perm (Fin (n+1))`. `lead` therefore
+**must** land in permutations and cannot carry λ alongside.
+
+That looks like a dead end, and is the opposite:
+
+> `Nat.card (MurphyIndex m) = m!` (`murphyIndex_card`, #6239) and `|S_m| = m!`.
+> So for `lead : MurphyIndex m → S_m`, **injective ⟺ bijective.**
+
+And the canonical bijection between permutations and same-shape SYT pairs is **Robinson–Schensted**
+— which is already here, sorry-free:
+
+```
+QOU.Mathlib.Schensted.rskEquiv (n : ℕ) :
+  Equiv.Perm (Fin n) ≃ { X : Σ μ : YoungDiagram, SYT μ × SYT μ // X.fst.cells.card = n }
+```
+
+`#print axioms` → `propext / Classical.choice / Quot.sound`, no `sorryAx`. Built in-repo precisely
+because the pinned Mathlib has no RSK, and already load-bearing: it is what proves
+`rskBurnsideHolds`, which is what `murphyIndex_card` rests on.
+
+**So `lead := (rskEquiv m).symm` is injective for free — it is an `Equiv`.** The hard field of
+`Triangular` is not hard; it was only hard for the wrong candidate.
+
+This also explains the refutation cleanly: `d(s)⁻¹ w_λ d(t)` was never going to be a bijection,
+because `λ ↦ w_λ` already collapses partitions before the `d`'s are applied.
+
+### One bookkeeping gap, stated so it is not mistaken for zero work
+
+`MurphyIndex n` (mine, #6239) is `Σ p : Nat.Partition n, SYT(partitionShape p)²`; `rskEquiv`'s
+codomain is a **subtype over `YoungDiagram`** cut by `cells.card = n`. Equivalent, not definitionally
+equal. The bridge is `partitionEquivYoungIndex` (`SpechtClassification`) plus a `Sigma`/subtype
+shuffle — real but mechanical.
+
+### Revised state of (C1)
+
+| field | status |
+|---|---|
+| `lead_inj` | **free**, via `rskEquiv` (modulo the index bridge above) |
+| `diag_unit` | `repr_murphySum_one_of_subgroup` (#6285) gives coefficient 1; carry through the two `T_{d(·)}` conjugations |
+| `supp_le` | **the genuine remaining content** — that the RSK-leading permutation dominates the support of `m_{st}`. This is essentially Murphy's theorem, and it is where `q` enters via the `rsFun` down-branch |
+
+So `supp_le` is the last substantive step after all — but for the **RSK** `lead`, not the `w_λ` one,
+and with `lead_inj` no longer in front of it.
+
+**Note for whoever picks this up:** #6297 (the maximal-length element) is now **unused by this
+route**. It was built for the refuted `lead`. It is correct, sorry-free and plausibly
+Mathlib-upstreamable on its own, but do not assume the (C1) proof needs it.
