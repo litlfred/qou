@@ -89,3 +89,70 @@ with this one. `is_mathematics` (3 blocks), `consumers` (1) and `computation` (1
 are fields that do not exist anywhere in the schema — invented or misspelled.
 `authorNotes` is real and declared; only its reachability is broken. Fixing the
 schema will silence 3 of the 13 and must not be expected to silence the rest.
+
+---
+
+## 2026-08-29 — THE FIX EXISTS, and predates this bean by two days
+
+`folio-assistant` commit `affcec4`, 2026-08-24: *"schema: grant authorNotes to
+prose, equation, diagram and table"*. This bean was filed 2026-08-26 by someone
+who did not know, which is the fourth independent rediscovery on this branch in
+a week (the others: the `qa-agent-entry` evidence guard, the four
+`generate-index.ts` defects, and this).
+
+Recording it here so it is not found and fixed a **third** time.
+
+### What the fix does, verified
+
+Both halves, all four kinds — checked individually rather than assumed:
+
+| kind | `schemas/types.ts` | `schemas/constraints.ts` (Zod) |
+|---|---|---|
+| `ProseBlock` / `ProseSchema` | ✅ | ✅ |
+| `EquationBlock` / `EquationSchema` | ✅ | ✅ |
+| `DiagramBlock` / `DiagramSchema` | ✅ | ✅ |
+| `TableBlock` / `TableSchema` | ✅ | ✅ |
+
+Both sides matter and the bean is right to imply it: declaring the TS field
+alone would have kept the validator quiet while a **non-strict Zod object
+silently strips the unknown key and still parses**, so the note would have been
+lost with nothing said. `scripts/tests/schema-ts-zod-parity.test.ts` gained
+three cases — every kind carries `authorNotes` in TS, the same in Zod, and a
+round-trip proving the field *survives validation* rather than merely being
+declared.
+
+### Live impact: five blocks, and none of it was decoration
+
+`run-validate` reports **zero** `authorNotes` warnings with the fix in place
+(it reported them before). The five blocks that were silently losing content:
+
+* `fine-structure-data` (prose) — *"`det G_q` disambiguated; α⁻¹ is
+  convention-independent. This block previously wrote the Chern–Simons damping
+  factor as κ = …"* — a correction record
+* `tm-interaction-completeness` (prose) — a rigour caveat scoping what the
+  single-crossing enumeration does and does not close
+* `millennium-bounds-via-surreals-intro` (prose) — a re-scope of the
+  Millennium-problem entries
+* `hecke-log-decomposition-table-data` and
+  `q-beta-form-a-n1-symbolic-table-data` (table) — both carrying **"This table
+  has no source block"**, a provenance warning
+
+Exactly the §4d material the convention exists to preserve, on exactly the
+kinds where §4d's instruction destroyed it.
+
+### AGENTS.md needs no edit
+
+The bean notes §4d asserts *"every block kind accepts it"* and that this was
+false. The fix makes it **true**, so the documentation is now correct as
+written rather than needing a caveat.
+
+### Still open, and what unblocks it
+
+`affcec4` is on `claude/stalled-prs-scope-map-ufyvla` in folio-assistant
+(merged with main, suite green: 1,214 pass / 0 fail, eslint clean) and has
+**not landed on that repo's main**. Until it does, main still discards those
+five notes.
+
+NOT closing: the defect is fixed on a branch, not in the product. Closing on
+"someone has a fix somewhere" is the failure mode this corpus keeps paying for.
+

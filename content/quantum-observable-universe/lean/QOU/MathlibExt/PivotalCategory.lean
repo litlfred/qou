@@ -85,10 +85,19 @@ the monoidality field present that instance is unconstructible, because the clai
 survives, and is enough for `FGModuleCat K`, is `pivotalOfRibbon`: symmetric ⇒ balanced ⇒ ribbon,
 so the symmetric rigid categories are still pivotal with no linear algebra involved.
 
-## What is still not proved
+## Sphericality — no longer open
 
 Sphericality — that the left and right quantum dimensions agree — is a separate condition and is
-not touched here.  A pivotal structure does not imply it.
+still not *implied* by a pivotal structure, which is why it is a class of its own rather than a
+theorem here.  It is, however, no longer unproved: `QOU.MathlibExt.SphericalCategory` states it in
+the braiding-free pivotal form, and `QOU.MathlibExt.sphericalOfRibbon` derives it for every ribbon
+right-rigid category (Barrett–Westbury), via the two bridges identifying the pivotal dimensions of
+`pivotalOfRibbon` with the twisted braided closures of
+`QOU.MathlibExt.TwistedQuantumDimension`.
+
+*This section previously read "not touched here" with nothing further, and that was accurate when
+written.  It is corrected rather than deleted so the reader can see that the gap was named before
+it was closed.*
 
 ## `PivotalCategory` carries the monoidality field — and `drinfeldIso` cannot satisfy it
 

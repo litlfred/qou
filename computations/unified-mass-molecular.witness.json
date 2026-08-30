@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T14:15:46.121591+00:00",
-  "commitSha": "e8f6e7fb4186eed4928ed3ff49dcd1e726326622",
+  "computedAt": "2026-08-30T06:19:02.435068+00:00",
+  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
   "assertions": [
     {
       "name": "H2",
@@ -30,7 +30,7 @@
     },
     {
       "name": "CH4",
-      "computed": 27.16,
+      "computed": 27.15,
       "expected": 17.4,
       "passed": false,
       "tolerance": "8.7",
@@ -62,7 +62,7 @@
     },
     {
       "name": "CO2",
-      "computed": 27.16,
+      "computed": 27.15,
       "expected": 16.56,
       "passed": false,
       "tolerance": "8.28",
@@ -70,7 +70,7 @@
     },
     {
       "name": "C6H6",
-      "computed": 81.47,
+      "computed": 81.46,
       "expected": 57.4,
       "passed": true,
       "tolerance": "28.7",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
   "scriptHash": "a38fa1bfab4f",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,10 +100,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -118,12 +119,12 @@
     "w_s": 0.16546138503360688,
     "w_d": 0.6690772299327864,
     "w_a": 0.16546138503360688,
-    "E_mol_eV": 6.729338426152079,
-    "kappa_MeV": 0.51099895069
+    "E_mol_eV": 6.72932460783094,
+    "kappa_MeV": "0.51099895069"
   },
   "data": {
     "mass_mae_pct": 0.7677277566849037,
-    "molecular_mae_pct": 58.41415214939467,
+    "molecular_mae_pct": 58.413826854768544,
     "mass_H": {
       "Z": 1,
       "N": 0,
@@ -286,32 +287,32 @@
     },
     "bond_HH": {
       "k": 7,
-      "E": 6.788752790887951,
+      "E": 6.788738850562727,
       "obs": 4.478
     },
     "bond_CH": {
       "k": 7,
-      "E": 6.788752790887948,
+      "E": 6.788738850562725,
       "obs": 4.33
     },
     "bond_CC": {
       "k": 7,
-      "E": 6.788752790887912,
+      "E": 6.788738850562689,
       "obs": 3.6
     },
     "bond_CO": {
       "k": 7,
-      "E": 6.78875279088796,
+      "E": 6.788738850562737,
       "obs": 3.71
     },
     "bond_OH": {
       "k": 7,
-      "E": 6.788752790887948,
+      "E": 6.788738850562725,
       "obs": 4.82
     },
     "bond_NH": {
       "k": 7,
-      "E": 6.788752790887951,
+      "E": 6.788738850562727,
       "obs": 3.87
     }
   },

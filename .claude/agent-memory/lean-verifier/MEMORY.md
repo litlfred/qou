@@ -130,6 +130,26 @@ file (a file path dies `ENOTDIR`), and a chapter-scoped sweep rewrites **every**
 block's sidecar — 128 files for a one-block change — so revert all but the
 block you actually staled, or a rename PR silently becomes a chapter sweep.
 
+## TRAP — false greens and corrupt oleans → `verification-harness.md`
+
+Three ways a `lean`-direct verdict is about the harness, not the code. Evidence
+and the working recipe are in the sibling file; the shapes:
+
+1. **Green against a STALE dependency olean is a FALSE GREEN.** Imports resolve
+   from disk, so a consumer compiles against the olean your changed module had
+   *before* the edit. Measured 2026-08-30: exit 0 against the tree, **exit 1**
+   once the dependency was rebuilt — a file red on `main` for six days.
+   **Rebuild each changed module from source, then check its whole
+   reverse-import cone, computed from the import graph.** Companion mistake: a
+   grep for `[Foo …]` *hypothesis binders* misses a file that *constructs an
+   instance*.
+2. **A partial `LEAN_PATH` overlay shadows the whole namespace** —
+   `SearchPath.findWithExt` commits to the first root holding a `QOU/` dir. Use
+   a complete `cp -al` mirror, `rm -f`-ing each olean before rebuilding it.
+3. **A disk-full `lake build` writes truncated oleans that segfault.** Signature
+   **exit 139, zero errors, 0–1 s**; 10 of 11 "failing" modules were this. Never
+   call a module broken from exit 139 alone.
+
 ## STABLE — the honest dispositions when a proof will not close
 
 Exactly three, per `AGENTS.md` §1a / §"Strict Lean Discipline":
@@ -187,15 +207,17 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
-- 2026-08-29 (cool-johnson): gate task. GitHub orphan-branch restore WORKS
-  (`git ls-remote`/`git fetch origin lake-cache/qou-v4-24-0` exit 0) — the
-  blocked host is Azure blob `lakecache.blob.core.windows.net`, NOT the git
-  restore path; the restore does not use it. 1.6 G tarball, `tar xzf` exceeds
-  a 2-min Bash timeout — stream parts direct to `tar xzf -` and give it ~7 min
-  (extraction is the slow part, not the fetch). Cache carries deps AND the full
-  QOU library (942 QOU oleans incl. `QOU/Basic`, `QOU/BraidTwistFlip`; 6990
-  mathlib). lean-direct verified both `braids-and-knots/braid-twist-flip.lean`
-  (imports `QOU.Basic`) and `lean/QOU/BraidTwistFlip.lean` (imports
-  `Mathlib.Tactic`): EXIT 0. Confirmed cold-cache TRAP (chapter file 1m3s wall /
-  4.6s user; lib file warm 4s). Confirmed sidecar TRAP: chapter-dir file HAS a
-  `.qa.json`; library file does not.
+- 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
+  Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
+  Confirmed the cold-cache and sidecar TRAPs.
+- 2026-08-30 (torus-knots): restored `lake-cache/qou-v4-24-0` fresh (3407
+  mathlib oleans this seed — vs 6990 in the baseline; cone was sufficient),
+  verified new `QOU/Interactions/EmCouplingBarParity.lean` lean-direct exit 0
+  + `#print axioms` (std 3 only). One fix: `/-!` docstring preceded imports —
+  Lean rejects any `import` after a module doc; imports must be first.
+- 2026-08-30: found `QOU/Hecke/WedderburnRankDegeneracy.lean` red on `main` for
+  six days behind a FALSE GREEN — my own #5710 removed a field its instance
+  discharged. Rebuilt the 8-module reverse-import cone: ALL-GREEN after repair.
+  Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
+  stale `open`). Added `verification-harness.md` with all three traps measured.
+  PR #6097.

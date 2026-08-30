@@ -1,11 +1,11 @@
 ---
 # qou-0avp
 title: 'TOOL: borrowed-name audit — decl named after an external theory whose statement is all local defs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-27T13:28:14Z
+updated_at: 2026-08-30T05:14:31Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -311,3 +311,55 @@ Remaining on this bean: 34 unadjudicated `major` candidates (expected yield near
 zero — §6a of #5875 measures the genuine findings as concentrated 16-of-18 in
 the mass/binding files, and the remainder sit outside them), and 741 QOU modules
 with no olean, two of which are known compile failures.
+
+
+---
+
+## 2026-08-30 — both tiers drained; the kernel pass gained a second predicate
+
+**Adjudication complete: 177 of 177 borrowed-name findings** (27 CRITICAL, 150
+major). Verdicts: 104 legit, 41 advisory, 37 genuine. Ledger 346 entries,
+0 stale. PR #6093.
+
+**Ledger staleness backlog cleared, and it produced the first measured
+remediations.** 15 entries stale after the rebase (I first reported 4 — my gate
+checked only my own 152). Two were *fixed declarations*: `q_ns_wellposedness`
+genuine → legit (was `ctx.wellposedness_holds`, now composes assumed hypotheses
+with in-file proofs, and its module docstring cites the finding by name), and
+`traceInner_nonneg_of_posSemidef` advisory → legit (axiom → full spectral
+proof). `toffoli_transfer_matrix` is partially remediated with a *stronger*
+finding: two of five conjuncts removed as FALSE, not merely self-assuming, so
+the class was uninhabitable in its intended model.
+
+**The kernel finding is the durable one: `defeqCollapse` is structurally blind
+to `proof-no-self-assuming-projection`,** which is 111 of the 168 genuine
+verdicts. Measured on 117 theorems in 10 modules chosen for that family: 1
+collapse total, and 0 of the 5 targets it could see. The reason is not sample
+size — `defeqCollapse` asks about the STATEMENT, and a projection's statement
+is two opaque class-field applications with nothing to reduce; the defect is
+entirely in the VALUE.
+
+**Implemented the fix.** `BorrowedNameKernel.valueOnlyProjects` /
+`value_only_projects`: every own-module constant in the proof term is a field
+projection, at least one is. Same 117 theorems — `defeq_collapse` 1 (0.85 %),
+`value_only_projects` 21 (17.9 %). Recall 6/6 on targets. Precision validated
+on the one case that can decide it: `q_ns_wellposedness` does NOT fire, so the
+predicate separates the pre- and post-remediation forms of the same
+declaration, i.e. the §3b-cond forbidden pattern from the sanctioned one.
+
+**Two follow-ups, both named and neither done:**
+1. False-positive class: it reads only own-module constants, so a proof doing
+   real work through Mathlib alone is indistinguishable from a projection
+   (measured: `langlands_dual_pos`, and the two `q_ns` conjuncts). Fix is a
+   non-local non-packaging constant count; needs its own recall measurement.
+2. The pass enumerates THEOREMS, so a `def` carrying a proposition — the
+   AGENTS.md §1a def-disguise, the whole reason that rule exists — is invisible
+   to it. `toffoli_transfer_matrix` is one, adjudicated genuine, and its module
+   reports 0 of 3.
+
+**Trap for the next agent:** the first version of `valueOnlyProjects` returned
+ZERO across five modules chosen for containing the defect. Field access leaves
+BOTH the projection AND the structure in `getUsedConstants`, so
+`all isFieldProjection` is false exactly when the structure is local. A detector
+returning zero on its own designed-for population is a bug until proved
+otherwise.
