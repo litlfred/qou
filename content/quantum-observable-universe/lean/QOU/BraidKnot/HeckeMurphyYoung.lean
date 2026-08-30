@@ -220,4 +220,39 @@ theorem murphyIndex_card (n : ℕ) : Nat.card (MurphyIndex n) = n.factorial := b
   rw [h]
   exact QOU.Mathlib.rskBurnsideHolds n
 
+/-! ## The anchor of the family: `m_{t^λ t^λ} = x_λ`
+
+The triangularity argument that gives (C1) is an induction over the dominance order, and every
+such induction needs a base. Here it is the **reference pair**: at `s = t = t^λ` the conjugating
+factors collapse, because `d(t^λ) = 1` and `T_1 = 1`, so `m_{st}` is `x_λ` itself.
+
+Cheap, but load-bearing twice over: it anchors the induction, and it is the first check that
+`murphyM` was assembled correctly — if the conjugation were mis-oriented, this would not reduce.
+-/
+
+@[simp] theorem dAt_colSuperstandard {μ : YoungDiagram}
+    (h : QOU.BraidKnot.Specht.nOf μ = n + 1) :
+    dAt n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ) = 1 := by
+  rw [dAt, dOf_colSuperstandard, map_one]
+
+/-- **`m_{t^λ, t}` drops its left factor.** `d(t^λ) = 1`, so `T_{d(t^λ)}^* = 1`. -/
+theorem murphyM_colSuperstandard_left {μ : YoungDiagram}
+    (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (t : QOU.BraidKnot.Specht.Tableau μ) [DecidablePred (· ∈ youngSubgroup n h t)] :
+    murphyM K q n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ) t
+      = murphySum K q n {w | w ∈ youngSubgroup n h t} * Tw K q n (dAt n h t) := by
+  simp [murphyM]
+
+/-- **The anchor: `m_{t^λ t^λ} = x_λ`.** Both conjugating factors are `1`, so the reference pair
+of the Murphy family is the Murphy element itself — the base case of the dominance induction. -/
+theorem murphyM_colSuperstandard_diag {μ : YoungDiagram}
+    (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    [DecidablePred (· ∈ youngSubgroup n h
+      (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ))] :
+    murphyM K q n h (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)
+        (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)
+      = murphySum K q n {w | w ∈ youngSubgroup n h
+          (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)} := by
+  simp [murphyM]
+
 end QOU.BraidKnot.HeckeMurphyYoung
