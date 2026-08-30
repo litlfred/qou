@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-30T02:48:09Z
+updated_at: 2026-08-30T04:59:35Z
 ---
 
 ## What
@@ -578,3 +578,56 @@ NEXT
     q_pinning_50_digit (defines the anchor), q0_anchor_consistency_audit (the
     flip detector, needs both pins), cross_check_trM_1ppb (its own source says
     the L1 cross-check must run at muon).
+
+=== hadron_knot_table: UNKNOWN at 7200.15s (2026-08-30T04:57:29Z) ===
+
+The fifth and last MEASURABLE stem is now measured. Verdict UNKNOWN, and the
+run was clean: 100% CPU throughout (7196s cpu / 7190s wall, RSS 611 MB), tree
+clean afterwards, checkpoint in_flight cleared.
+
+WHAT IT ESTABLISHES — a much stronger bound than AGENTS.md carries
+
+AGENTS.md records deuterium "ran for a full 50 minutes and was killed by its own
+timeout". This run extends that by more than 2x:
+
+  - all THREE A=1 atoms (proton, neutron, protium) were complete by the FIRST
+    30s progress tick;
+  - the producer log then NEVER GREW again, across 239 further ticks;
+  - so deuterium -- atom 4 of 19, the first BOUND atom -- consumed >=7170s
+    (~2 hours) and did not finish.
+
+The step from the A=1 group to one bound atom is therefore >239x, measured
+rather than inferred.
+
+WHAT IT DOES NOT ESTABLISH
+
+Whether hadron_knot_table works at the proton pin. A timeout is silent on that.
+It stays ideal_muon as UNMEASURED, NOT held-for-cause -- the same distinction
+that had to be restated for block_swap_binding, and the one whose collapse
+produced the backwards aoperator HOLD at the start of this arc.
+
+WHY THIS ONE IS MORE USEFUL THAN block_swap_binding's UNKNOWN
+
+block_swap_binding printed one row and stopped, so its timeout located nothing.
+This producer reports PER ATOM, so the wall is pinned exactly: atom 4, the first
+bound one. That is the difference between "somewhere past row 1" and a named
+boundary, and it is why per-unit logging was worth insisting on.
+
+CONSEQUENCE FOR ANY RE-RUN
+
+Do NOT simply raise the budget. 19 atoms at >2h for the first bound one is not a
+budget problem; a full table is out of reach by orders of magnitude. If the
+anchor question for this producer matters, the tractable routes are (a) run it
+restricted to the A=1 atoms, which complete in <30s and DO exercise the pin, or
+(b) instrument deuterium to report intermediate progress so the cost is
+attributable. Neither is done here.
+
+MEASURABLE SURFACE NOW FULLY ACCOUNTED FOR (5 of 5)
+  alpha_5_lp_dual_crystal                   PASSES-AT-PROTON  -> MIGRATED
+  qbeta_c4even_ladder_reconstruction_probe  PASSES-AT-PROTON  -> MIGRATED
+  rho_f_categorical_probe                   NO-ASSERTIONS
+  qbeta_hoefsmit_tbeta_matrix_build_probe   BROKEN-AT-BOTH
+  hadron_knot_table                         UNKNOWN (>=7170s on atom 4 of 19)
+
+The remaining 15 are UNSOUND-ENV-BYPASS and cannot be measured by this tool at
+all until they route through q_parameter. Three of them must never be routed.

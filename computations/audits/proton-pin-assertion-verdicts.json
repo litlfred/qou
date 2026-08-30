@@ -1,7 +1,7 @@
 {
   "schema": "proton-pin-assertion-verdicts/v1",
   "producedBy": "computations/audits/proton_pin_assertion_check.py",
-  "generatedAt": "2026-08-29T18:34:24.269765+00:00",
+  "generatedAt": "2026-08-30T04:59:35.699951+00:00",
   "manifestBaseline": "origin/main q0_anchor_manifest.json, ideal_muon = 21 stems",
   "READ_THIS_FIRST": "A verdict is sound ONLY for a producer QOU_Q0_ANCHOR actually reaches. The reachability test was WRONG IN BOTH DIRECTIONS in the first version and the count hid it: bare-name matching gave 15 of 21 on 2026-08-29, the corrected test also gives 15, over a DIFFERENT SET. It falsely refused rho_f_categorical_probe (names the producer in a docstring, never reads the witness) and falsely RAN qbeta_jacobi_anger_tower_general (reaches muon via q_muon_at(), never mentions the file) \u2014 the second being a false pass, the dangerous direction. A matching count is not agreement.",
   "verdicts": {
@@ -65,6 +65,17 @@
       "timeout": 600,
       "measured_at": "2026-08-29",
       "detail": "TypeError: unsupported format string passed to mpf.__format__, IDENTICALLY at both pins. NOT a hold \u2014 a pre-existing producer defect (the mpf-formatting class). Fix the producer; the anchor question is unanswered until then.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "hadron_knot_table": {
+      "verdict": "UNKNOWN",
+      "seconds": 7200.153592746001,
+      "timeout": 7200,
+      "measured_at": "2026-08-30T04:57:29Z",
+      "detail": "exceeded 7200s. NOT a pass and NOT a fail: it does not establish whether the producer works at the proton pin. It DOES establish a measured lower bound, and a much stronger one than AGENTS.md carries. The three A=1 atoms (proton, neutron, protium) were all complete by the FIRST 30s progress tick; the log then never grew again across 239 further ticks. So deuterium -- atom 4 of 19, the first BOUND atom -- ran >=7170s (~2h) without finishing, against the ~50 min AGENTS.md records before its own timeout cut it off. Producer held 100% CPU throughout (7196s cpu / 7190s wall, RSS 611 MB), so this is compute, not a stall.",
+      "atoms_completed": 3,
+      "atoms_total": 19,
       "sound": true,
       "group": "A_manifest_driven"
     }
