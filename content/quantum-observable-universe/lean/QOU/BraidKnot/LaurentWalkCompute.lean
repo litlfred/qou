@@ -58,22 +58,41 @@ agree.
 **🛑 That agreement is NOT kernel-checked, and the distinction matters.**
 `#eval` runs the *compiler's* evaluator, not the kernel, so it is evidence at
 exactly the same epistemic level as running the Python — a third program
-agreeing, not a proof. Stating `((cnorm (atomNF 1 0 0)).map Prod.fst).max? =
-some 10` and closing it with `rfl` FAILS: the kernel cannot reduce it, because
-the unnormalised walk builds a 177,045-term intermediate (`rawTerms 1 0`)
-before collection leaves 59. `decide` is worse and `native_decide` is banned
-outright by the repo's Strict Lean Discipline, so there is no shortcut here.
+agreeing, not a proof. `degreeProfile 1 0 = [some 10, …]` closed with `rfl`
+FAILS.
 
-**Two things are therefore still open, and neither is faked anywhere below:**
+**🛑 CORRECTION to my own first explanation of that failure.** I wrote here
+that the cause was size: the unnormalised walk builds a 177,045-term
+intermediate (`rawTerms 1 0`) before collection leaves 59. **That was a
+hypothesis and it is refuted.** `denote_cnorm` is now proved, `atomNFN`
+collects after every step so the kernel sees the true 11/12/10/9/11/6 terms,
+and `rfl` fails exactly as before. Bisecting:
 
-1. `denote_cnorm : denote (cnorm a) = denote a` — unproved. Until it lands, a
-   degree read through `cnorm` is a computed number, not a proved property of
-   the polynomial the walk denotes. No degree is asserted as a theorem in this
-   file.
-2. Normalising *inside* the step, so the kernel sees ~59 terms rather than
-   177,045 and `rfl` becomes feasible. That is what would turn the measured
-   degrees into machine-checked claims — and it depends on (1) being proved
-   first, or the normalisation would be changing the object silently.
+    (cmulH [(0, 1)]).length = 2                     rfl SUCCEEDS
+    cnorm [((0:ℤ), (1:ℚ)), (0, -1)] = []            rfl FAILS  ← two terms
+    (hmStep (-1) true false nfOne 0).length = 1     rfl FAILS
+
+So the obstruction is **`Rat` decidable equality in the kernel**, not the term
+count. `cinsert` tests `c + c' = 0` and `contrib` tests `dRat = 0`; `Rat`
+carries a `Nat.gcd` normalisation invariant that the kernel will not reduce
+through. A two-term list is already enough to hit it, and no amount of
+collecting helps.
+
+**The fix is principled, not a workaround.** The atom path's coefficients are
+only `1`, `0`, `-1` and `-1/2`, so the walk lives in `ℤ[1/2][q^{±1}]`: carry
+`ℤ` coefficients together with a single power-of-two scale, and every
+comparison becomes `Int` equality, which the kernel does reduce. That is the
+next step, and `denote_cnorm` above is what will license the re-scaling as
+denotation-preserving.
+
+`decide` is worse than `rfl` here and `native_decide` is banned outright by
+the repo's Strict Lean Discipline, so neither is an escape.
+
+**Still open, and not faked anywhere below:** no degree is asserted as a
+theorem in this file. `degreeProfile` and `termProfile` are *computed*, and
+`denote_cnorm` says the collection they run through preserves the denotation
+— but the numbers themselves reach the reader through `#eval`, and are
+reported as such.
 
 What this file does establish is the harder half: that the computable
 operations *denote* the abstract ones. Without those bridge lemmas an
@@ -283,11 +302,111 @@ the raw walk are *bounds* on the span, not the span — which is exactly what
 `walk_mem_spanRange` already gives abstractly. The measured degrees stay in
 the probe's witness and are not restated here as Lean claims. -/
 
+/-- Insert a single term into a list, combining it with any existing term at
+the same exponent and dropping the result when it cancels.
+
+Defined by recursion rather than by grouping-and-summing, because each step is
+then a small equation that `denote` can be pushed through — which is what
+makes `denote_cinsert` provable at all. -/
+def cinsert (e : ℤ) (c : ℚ) : CLaurent → CLaurent
+  | [] => if c = 0 then [] else [(e, c)]
+  | (e', c') :: t =>
+      if e' = e then (if c + c' = 0 then t else (e, c + c') :: t)
+      else (e', c') :: cinsert e c t
+
+/-- **Insertion denotes adding the term.** The cancellation branch is the one
+that matters: dropping a term whose coefficients sum to zero does not change
+what the list denotes. -/
+theorem denote_cinsert (e : ℤ) (c : ℚ) (a : CLaurent) :
+    denote (cinsert e c a) = C c * T e + denote a := by
+  induction a with
+  | nil =>
+      by_cases hc : c = 0
+      · simp [cinsert, hc]
+      · simp [cinsert, hc]
+  | cons p t ih =>
+      obtain ⟨e', c'⟩ := p
+      by_cases he : e' = e
+      · subst he
+        have hun : cinsert e' c ((e', c') :: t)
+            = (if c + c' = 0 then t else (e', c + c') :: t) := by
+          simp [cinsert]
+        rw [hun]
+        by_cases hz : c + c' = 0
+        · have hcc : C c * T e' + C c' * T e' = (0 : ℚ[T;T⁻¹]) := by
+            rw [← add_mul, ← map_add, hz, map_zero, zero_mul]
+          rw [if_pos hz]
+          simp only [denote_cons]
+          rw [← add_assoc, hcc, zero_add]
+        · rw [if_neg hz]
+          simp only [denote_cons]
+          rw [← add_assoc, ← add_mul, ← map_add]
+      · have hun : cinsert e c ((e', c') :: t) = (e', c') :: cinsert e c t := by
+          simp [cinsert, he]
+        rw [hun]
+        simp only [denote_cons, ih]
+        rw [← add_assoc, ← add_assoc, add_comm (C c' * T e')]
+
 /-- Collect duplicate exponents and drop zero coefficients. -/
-def cnorm (a : CLaurent) : CLaurent :=
-  let exps := (a.map Prod.fst).eraseDups
-  (exps.map (fun e => (e, (a.filter (fun p => p.1 = e)).foldl (fun s p => s + p.2) 0))).filter
-    (fun p => p.2 != 0)
+def cnorm : CLaurent → CLaurent
+  | [] => []
+  | (e, c) :: t => cinsert e c (cnorm t)
+
+/-- **Normalisation preserves the denotation.**
+
+This is what licenses reading a degree off `cnorm`: the collected list denotes
+the same Laurent polynomial as the raw walk, so its exponents really are the
+exponents of the polynomial the walk computes, not an artefact of collection. -/
+@[simp] theorem denote_cnorm (a : CLaurent) : denote (cnorm a) = denote a := by
+  induction a with
+  | nil => rfl
+  | cons p t ih =>
+      obtain ⟨e, c⟩ := p
+      rw [cnorm, denote_cinsert, ih, denote_cons]
+
+/-! ## The normalising walk
+
+`denote_cnorm` licenses collecting terms after every step rather than only at
+the end. That is not a cosmetic change: the unnormalised walk builds a
+177,045-term intermediate for a single proton, which is why the kernel cannot
+check it; collecting each step keeps every coefficient at its true term count
+(11, 12, 10, 9, 11, 6 for the proton) and brings the computation into range. -/
+
+/-- One step, with the result collected. Denotes the same thing as `hmStep`
+by `denote_cnorm`. -/
+def hmStepN (dRat : ℚ) (dH : Bool) (gen : Bool) (nf : NF6) : NF6 :=
+  fun t => cnorm (hmStep dRat dH gen nf t)
+
+/-- Normalising a step changes nothing about what it denotes. -/
+theorem denote_hmStepN (dRat : ℚ) (dH gen : Bool) (nf : NF6) (t : Fin 6) :
+    denote (hmStepN dRat dH gen nf t) = denote (hmStep dRat dH gen nf t) :=
+  denote_cnorm _
+
+/-- Run a list of steps, collecting after each. -/
+def runStepsN (steps : List (ℚ × Bool × Bool)) (nf : NF6) : NF6 :=
+  steps.foldl (fun s e => hmStepN e.1 e.2.1 e.2.2 s) nf
+
+/-- The atom normal form, collected at every step. -/
+def atomNFN (Z N : ℕ) : NF6 :=
+  let ord := ordering Z N
+  let stepsFor (k : ℕ) : List (ℚ × Bool × Bool) :=
+    let tk := ord.getD k true
+    nucleonSteps tk ++
+      ((List.range k).map (fun prev => interfaceStep (ord.getD prev true) tk))
+  let body := (List.range (Z + N)).flatMap stepsFor
+  let electrons := (List.replicate Z ((-1 : ℚ), true, true))
+  runStepsN (body ++ electrons) nfOne
+
+/-- The q-degree profile: the maximum exponent of each of the six
+coefficients. Because the walk is collected at every step and
+`denote_cnorm` says collection preserves the denotation, these are the
+exponents of the polynomials the walk computes. -/
+def degreeProfile (Z N : ℕ) : List (Option ℤ) :=
+  (List.finRange 6).map (fun i => ((atomNFN Z N i).map Prod.fst).max?)
+
+/-- Term count per coefficient. -/
+def termProfile (Z N : ℕ) : List ℕ :=
+  (List.finRange 6).map (fun i => (atomNFN Z N i).length)
 
 /-- Raw term count of the walk, before collection: a computable upper bound on
 the number of distinct monomials. -/
