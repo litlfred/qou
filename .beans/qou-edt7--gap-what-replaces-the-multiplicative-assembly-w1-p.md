@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T11:38:22Z
+updated_at: 2026-08-30T11:50:22Z
 parent: qou-mhj9
 ---
 
@@ -476,3 +476,46 @@ a smooth growth law.
 Honest negative. Derives nothing, refutes no named framework claim, and is NOT an
 enumeration — 14 hand-chosen functions is a sample. Do not cite it as 'the
 fingerprint has been screened'.
+
+
+## PAIRING PARITY DERIVES THE b3 SIGN — the first mechanism that does (2026-08-30)
+
+Lean: `QOU/Mass/PairingParityForcesPositiveB3.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/pairing_parity_b3_sign_probe.py` (2/2).
+
+Followed the structured miss (smooth laws get b4 to 1.66%, b3 low by 16-18%) to
+whatever is NON-SMOOTH at A=3. It is the parities:
+
+    A=2  2H  Z=1,N=1  ODD-ODD      A=3  3H/3He  ODD-A      A=4  4He Z=2,N=2  EVEN-EVEN
+
+and the SEMF pairing term is parity-dependent by construction (+d even-even, 0
+odd-A, -d odd-odd, d > 0).
+
+### THE SIGN IS DERIVED
+    b3-contribution = p(3) - 3p(2) = 0 - 3(-d) = **+3d > 0 for EVERY d > 0**
+
+The signs come from which nuclei are odd and even; the magnitude never enters the
+sign. **First mechanism in the arc with the measured sign for a principled
+reason** — every earlier candidate either could not contribute (Delta^3 = 0),
+carried no magnitude (mu-bar = +-1), or had the sign wrong (b4/b3 <= 0).
+
+Textbook physical reading: the deuteron is ODD-ODD so pairing PENALISES it, which
+is the standard reason 2H is weakly bound — and a weak B(2) is exactly what makes
+b3 = B(3) - 3B(2) positive.
+
+### THE MAGNITUDE IS NOT — and the good number was convention luck
+Fit smooth + pairing to b3,b4; PREDICT b2. Best smooth partner C(2n,n):
+
+    raw AME, isospin avg   b2 pred 2.196193   **1.28%**
+    raw AME, 3H            b2 pred 1.887753    15.14%
+    Coulomb-corrected      b2 pred 2.044540     8.09%
+
+**The 1.28% does not survive the Coulomb correction, and that correction is the
+physically required one**: Coulomb ~ Z(Z-1)/A^(1/3) touches 3He and 4He but NOT
+2H or 3H, so 3H is the Coulomb-free A=3 point and 4He needs its own shift. A
+model with no Coulomb term must be compared against corrected data. The 1.28% was
+the best of nine trials on the one dataset that flatters it.
+
+### STATUS
+Strongest candidate the arc has produced. **Sign derived, size open.** Not a
+closure and not a refutation — and the 1.28% must not be quoted as a result.
