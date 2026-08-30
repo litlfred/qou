@@ -71,11 +71,14 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 HERE = Path(__file__).resolve().parent
 
 # AME2020 binding energies (MeV) — comparison targets only, nothing tuned.
-B_AME = {"D": 2.224566, "T": 8.481798, "3He": 7.718043, "4He": 28.295673}
+B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": 8.481798, "3He": 7.718043, "4He": 28.295673}
 CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # Hand-assigned census binding-link volumes (binding_link_volumes.py) — the
 # Q3 reference the derived difference knot is asked to reproduce.

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:37.750250+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:07:06.186656+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "cumulant_reconstruction_exact",
@@ -22,7 +22,7 @@
   "durationMs": 0,
   "computation": "b4-value-cumulant-target",
   "scriptFile": "b4_value_cumulant_target_probe.py",
-  "scriptHash": "3eb3f4a9dbc1",
+  "scriptHash": "60275e01c17c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -38,7 +38,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -51,8 +51,8 @@
   "result": {
     "cumulants_MeV": {
       "b2_pair": "2.22452",
-      "b3_connected_3body": "1.42636",
-      "b4_connected_4body_TARGET": "9.24311"
+      "b3_connected_3body": "1.4263588",
+      "b4_connected_4body_TARGET": "9.243115"
     },
     "reconstruction_check": {
       "sum_6b2_4b3_b4": "28.29567",

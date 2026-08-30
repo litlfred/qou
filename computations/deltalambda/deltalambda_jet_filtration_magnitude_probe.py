@@ -118,6 +118,9 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
 # this file emits -- so the frozen literal was reaching five further witnesses
 # that carry no literal of their own.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 Q0_STR = _Q0_RESOLVED
 
@@ -158,7 +161,7 @@ def main() -> int:
 
     # -- isospin-corrected STRONG targets (identical construction to the sibling
     #    bareven / coulomb-mirror probes, from AME2020 + the #3986/#3990 premise) --
-    BD = mp.mpf("2.224566")        # deuteron binding (A=2 reference)
+    BD = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)        # deuteron binding (A=2 reference)
     B3H = mp.mpf("8.481821")       # ³H (Z=1: Coulomb-free ⇒ pure strong)
     B3He = mp.mpf("7.718058")      # ³He
     B4 = mp.mpf("28.295673")       # ⁴He

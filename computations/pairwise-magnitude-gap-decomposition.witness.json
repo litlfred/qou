@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:55:40.710982+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T09:07:37.871014+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "pairwise-magnitude-gap-decomposition",
   "scriptFile": "pairwise_magnitude_gap_probe.py",
-  "scriptHash": "4abbb47e776d",
+  "scriptHash": "6e1ee078c11a",
   "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -36,7 +36,7 @@
   "inputs": {
     "E0_MeV": "4.185981363",
     "q0": "1.10997858275",
-    "B2_MeV": "2.224566",
+    "B2_MeV": "2.2245662",
     "fit_params": 0
   },
   "data": {
@@ -44,30 +44,30 @@
       {
         "atom": "T",
         "B_AME_MeV": "8.481798",
-        "b3_emp_MeV": "1.8081",
+        "b3_emp_MeV": "1.8080994",
         "per_bond_MeV": [
           "2.3011322",
           "2.7905949"
         ],
         "B_pair_model_MeV": "5.0917271",
-        "B_pair_target_MeV": "6.673698",
-        "deficit_MeV": "1.5819709",
+        "B_pair_target_MeV": "6.6736986",
+        "deficit_MeV": "1.5819715",
         "deficit_pct": "23.7046",
-        "deficit_per_bond_MeV": "0.79098545"
+        "deficit_per_bond_MeV": "0.79098575"
       },
       {
         "atom": "3He",
         "B_AME_MeV": "7.718043",
-        "b3_emp_MeV": "1.044345",
+        "b3_emp_MeV": "1.0443444",
         "per_bond_MeV": [
           "2.1022751",
           "2.6692598"
         ],
         "B_pair_model_MeV": "4.7715349",
-        "B_pair_target_MeV": "6.673698",
-        "deficit_MeV": "1.9021631",
+        "B_pair_target_MeV": "6.6736986",
+        "deficit_MeV": "1.9021637",
         "deficit_pct": "28.5024",
-        "deficit_per_bond_MeV": "0.95108154"
+        "deficit_per_bond_MeV": "0.95108184"
       }
     ],
     "per_bond_deficit_spread_pct": "18.38"

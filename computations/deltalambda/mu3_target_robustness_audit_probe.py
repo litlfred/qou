@@ -36,6 +36,9 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -46,7 +49,7 @@ Q0_PROTON = mp.mpf("1.10997859")  # ~identical to 8 sig figs; the pin swing is ~
 
 # ── AME2020 connected binding energies (MeV), from the #3943 committed witness ──
 B_AME = {
-    "2H":  mp.mpf("2.224566"),
+    "2H":  mp.mpf(AME_B_DEUTERON_MEV_VALIDATION),
     "3H":  mp.mpf("8.481821"),
     "3He": mp.mpf("7.718058"),
     "4He": mp.mpf("28.295673"),

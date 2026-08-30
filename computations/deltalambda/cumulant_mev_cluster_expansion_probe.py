@@ -67,6 +67,9 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 COMP = str(_COMP)
 set_compute_dps()
@@ -86,7 +89,7 @@ def main() -> int:
     # V1 -- deuteron PAIR-ORDER (linear) form, corpus ladder shape
     ladder = 1 - x / 10 + 3 * x ** 2 / 200
     B_deut_pair = mp.sqrt(5) * E_unit * ladder
-    B_AME_2H = mp.mpf("2.224566")
+    B_AME_2H = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
     v1_match = abs(B_deut_pair - B_AME_2H) < mp.mpf("1e-5")
 
     # V2 -- category error: pair-order linear (5g) vs 4-body cumulant (log, ~g^2)

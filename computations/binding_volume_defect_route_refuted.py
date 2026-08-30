@@ -51,11 +51,14 @@ from _precision import set_compute_dps  # noqa: E402
 from _li_2_q_util import linking_weight_family_a  # noqa: E402
 import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+)
 
 # nucleus = interface link volume (arc committed values); free nucleon knot = Borromean 𝓑₃.
 ISO = [
     ("3H",  3, "8.286316817806593", "8.481821"),
-    ("3He", 3, "7.327724753417752", "7.718041"),
+    ("3He", 3, "7.327724753417752", AME_B_HE3_MEV_VALIDATION),
     ("4He", 4, "7.327724753417752", "28.295674"),
 ]
 

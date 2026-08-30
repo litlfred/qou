@@ -37,7 +37,10 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV,
+)
 
 q0 = mp.mpf(str(Q0)); q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
@@ -112,7 +115,7 @@ def main():
             sign = "+" if c3 > 0 else "-"
             print(f"    {mode:7s}: c3 = {float(c3):+.4f} MeV  (sign {sign})")
             atom[mode + "_c3_MeV"] = mp.nstr(c3, 8)
-        b3 = AME[name] - 3 * mp.mpf("2.224566")
+        b3 = AME[name] - 3 * mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
         atom["b3_empirical_MeV"] = mp.nstr(b3, 8)
         rows.append(atom)
         print()

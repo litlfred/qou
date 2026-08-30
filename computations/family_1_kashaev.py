@@ -63,6 +63,9 @@ from knot_volumes import (  # noqa: E402
     VOL_6_2_MPF as _VOL_6_2,
     VOL_8_11_MPF as _VOL_8_11,
 )
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+)
 
 KNOT_VOL = {
     "6_2":  _VOL_6_2,
@@ -98,7 +101,7 @@ FAMILY_1_REGISTRY: dict[tuple[int, int], dict] = {
 AME_BA_MEV: dict[tuple[int, int], mp.mpf] = {
     (1, 1):  mp.mpf("2.22452"),
     (1, 2):  mp.mpf("8.48181"),
-    (2, 1):  mp.mpf("7.71804"),
+    (2, 1):  mp.mpf(AME_B_HE3_MEV_VALIDATION),
 }
 
 

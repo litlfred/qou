@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:55:19.229205+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:07:08.403017+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "edge_set_is_max_contact_packing",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "binding-edge-set-selection",
   "scriptFile": "binding_edge_set_selection.py",
-  "scriptHash": "9a858995399b",
+  "scriptHash": "42044a83da9c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -43,7 +43,7 @@
   },
   "description": "EXPLORATORY: the nuclear edge set is variationally selected by binding-maximization (B~Σ_bonds b*, b* const) ⇒ the max-contact 3D sphere packing (between chain A−1 and complete C(A,2)). Resolves #2089's chain-vs-complete: neither, max-contact. Pairwise edges ≈ simplex C(A,2) for A≤4; ⁴He magic surplus = 3-body Milnor M_3, not extra edges. Cluster/halo deviate below (open, s5-so3; α-level = #3551 Brink deltahedra). No fit.",
   "data": {
-    "per_bond_bstar_MeV": 2.224566,
+    "per_bond_bstar_MeV": 2.2245662,
     "bonds_vs_topologies": {
       "D": {
         "A": 2,
@@ -53,19 +53,19 @@
       },
       "T": {
         "A": 3,
-        "bonds_implied": 3.8127980918525233,
+        "bonds_implied": 3.8127977490622667,
         "chain": 2,
         "simplex": 3
       },
       "3He": {
         "A": 3,
-        "bonds_implied": 3.91829158364594,
+        "bonds_implied": 3.918291231371273,
         "chain": 2,
         "simplex": 3
       },
       "4He": {
         "A": 4,
-        "bonds_implied": 13.127416384105622,
+        "bonds_implied": 13.127415203883036,
         "chain": 3,
         "simplex": 6
       }

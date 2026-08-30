@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:17:50.991160+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-30T09:07:23.720453+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "W_A_is_length_gen_func_not_determinant",
@@ -58,8 +58,8 @@
   "durationMs": 0,
   "computation": "deltalambda-jet-filtration-magnitude",
   "scriptFile": "deltalambda_jet_filtration_magnitude_probe.py",
-  "scriptHash": "b57aad2e81d8",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "6de5db93c74c",
+  "scriptCommitSha": "598c083c6fab6eba9ee863dabc5ab233a7224beb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,7 +74,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -90,8 +90,8 @@
   },
   "data": {
     "strong_targets": {
-      "rho_strong_3": "3.8127981",
-      "rho_strong_4": "13.031575",
+      "rho_strong_3": "3.8127977",
+      "rho_strong_4": "13.031573",
       "construction": "AME2020 + Lean #3986/#3990 Coulomb premise"
     },
     "det_cap_C_A_2": {
@@ -110,14 +110,14 @@
       },
       {
         "A": 3,
-        "target_rho": 3.8127980918525233,
+        "target_rho": 3.8127977490622667,
         "C_A_2_cap": 3.0,
         "classical_A!/2!": 3.0,
         "graded_q0_ratio": 3.342031036918145
       },
       {
         "A": 4,
-        "target_rho": 13.03157458024245,
+        "target_rho": 13.031573408636536,
         "C_A_2_cap": 6.0,
         "classical_A!/2!": 12.0,
         "graded_q0_ratio": 15.739572135410121
@@ -129,7 +129,7 @@
       "graded_[4]_q0": "4.70958"
     },
     "forced_fit_check": {
-      "q_forcing_rho3": "1.2500852",
+      "q_forcing_rho3": "1.2500851",
       "rho4_forced": "21.9858",
       "overshoot_pct": "68.71"
     },

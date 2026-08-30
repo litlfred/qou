@@ -19,7 +19,7 @@
     "n_complete": 1,
     "B_chain_MeV": "1.926659419",
     "B_complete_MeV": "1.926659419",
-    "B_AME_MeV": "2.224566",
+    "B_AME_MeV": "2.2245662",
     "err_chain_pct": "-13.3917",
     "err_complete_pct": "-13.3917"
    },
@@ -64,14 +64,14 @@
   "scaling_4He_over_D": {
    "chain": "2.60333022429",
    "complete": "2.96129413645",
-   "AME": "12.7196374484"
+   "AME": "12.7196363048"
   }
  },
- "scriptHash": "f32cc943531e",
+ "scriptHash": "c9ba41421c08",
  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
- "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+ "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
  "engine": "mpmath",
- "computedAt": "2026-08-23T09:23:43.238083+00:00",
+ "computedAt": "2026-08-30T09:07:34.140663+00:00",
  "durationMs": 0,
  "engineVersion": "mpmath 1.4.1",
  "q0Anchor": "proton",

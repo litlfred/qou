@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:52:05.352273+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T09:07:22.216451+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -30,14 +30,14 @@
     },
     {
       "name": "rho_strong_3_is_3p81",
-      "computed": "3.81279809185252314384019174976152651798148492784660019077879",
+      "computed": "3.81279774906226661180053890956358142994350988520818581996094",
       "expected": 3.8128,
       "passed": true,
       "tolerance": "0.001"
     },
     {
       "name": "rho_strong_4_is_13p03",
-      "computed": "13.0315745802424503211623589870221376805893997543700945173013",
+      "computed": "13.0315734086365363013907449831449784373951373773368031625794",
       "expected": 13.032,
       "passed": true,
       "tolerance": "0.02"
@@ -65,8 +65,8 @@
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "8f3a031ca267",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "8da43ae34947",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -153,7 +153,7 @@
     },
     "steelman_coherence_scan_free_m": {
       "writhe_fix_rho4": {
-        "m": "0.4268738",
+        "m": "0.42687379",
         "rho3_forced": "2.4661",
         "rho3_target": "3.8128",
         "rho3_err_pct": "-35.32"

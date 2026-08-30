@@ -22,7 +22,7 @@
  ],
  "parameters": {
   "b3_definition": "AME(A=3) - 3 * B(2H)",
-  "B2_MeV": "2.224566",
+  "B2_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
   "AME_MeV": {
    "T": "8.481798",
    "3He": "7.718043"
@@ -31,10 +31,10 @@
  },
  "data": {
   "b3_empirical_MeV": {
-   "T": "1.8081",
-   "3He": "1.044345"
+   "T": "1.8080994",
+   "3He": "1.0443444"
   },
-  "b3_sym_MeV": "1.4262225",
+  "b3_sym_MeV": "1.4262219",
   "b3_asym_MeV": "0.3818775",
   "coulomb_displacement_MeV": "0.763755",
   "rows": [
@@ -45,7 +45,7 @@
     "sym_MeV": "-3.036672269",
     "asym_MeV": "-0.16474715",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.4696662576",
+    "b3_sym_over_sym": "-0.46966606",
     "asym_over_b3_asym": "-0.4314136078",
     "asym_sign_matches_coulomb": false
    },
@@ -56,7 +56,7 @@
     "sym_MeV": "-3.628313065",
     "asym_MeV": "-0.2479780695",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.3930814332",
+    "b3_sym_over_sym": "-0.3930812679",
     "asym_over_b3_asym": "-0.6493654889",
     "asym_sign_matches_coulomb": false
    },
@@ -67,7 +67,7 @@
     "sym_MeV": "0.5916407964",
     "asym_MeV": "0.0832309192",
     "sym_attractive": true,
-    "b3_sym_over_sym": "2.410622304",
+    "b3_sym_over_sym": "2.41062129",
     "asym_over_b3_asym": "0.2179518804",
     "asym_sign_matches_coulomb": true
    },
@@ -78,7 +78,7 @@
     "sym_MeV": "-1.58709985",
     "asym_MeV": "-0.18167545",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.8986343865",
+    "b3_sym_over_sym": "-0.8986340084",
     "asym_over_b3_asym": "-0.4757427447",
     "asym_sign_matches_coulomb": false
    },
@@ -89,7 +89,7 @@
     "sym_MeV": "-1.4806594",
     "asym_MeV": "-0.1518218",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.9632346912",
+    "b3_sym_over_sym": "-0.963234286",
     "asym_over_b3_asym": "-0.397566759",
     "asym_sign_matches_coulomb": false
    },
@@ -100,7 +100,7 @@
     "sym_MeV": "0.0981044285",
     "asym_MeV": "-0.0221129015",
     "sym_attractive": true,
-    "b3_sym_over_sym": "14.53779938",
+    "b3_sym_over_sym": "14.53779327",
     "asym_over_b3_asym": "-0.05790574595",
     "asym_sign_matches_coulomb": false
    },
@@ -111,7 +111,7 @@
     "sym_MeV": "0.133098095",
     "asym_MeV": "-0.021541915",
     "sym_attractive": true,
-    "b3_sym_over_sym": "10.7155741",
+    "b3_sym_over_sym": "10.7155696",
     "asym_over_b3_asym": "-0.05641053741",
     "asym_sign_matches_coulomb": false
    },
@@ -122,7 +122,7 @@
     "sym_MeV": "0.17019843",
     "asym_MeV": "-0.00666634",
     "sym_attractive": true,
-    "b3_sym_over_sym": "8.379762963",
+    "b3_sym_over_sym": "8.379759437",
     "asym_over_b3_asym": "-0.01745674987",
     "asym_sign_matches_coulomb": false
    },
@@ -133,7 +133,7 @@
     "sym_MeV": "0.232743515",
     "asym_MeV": "-0.020611565",
     "sym_attractive": true,
-    "b3_sym_over_sym": "6.127872134",
+    "b3_sym_over_sym": "6.127869556",
     "asym_over_b3_asym": "-0.05397428495",
     "asym_sign_matches_coulomb": false
    },
@@ -144,7 +144,7 @@
     "sym_MeV": "4.1991318",
     "asym_MeV": "-0.1246167",
     "sym_attractive": true,
-    "b3_sym_over_sym": "0.3396469956",
+    "b3_sym_over_sym": "0.3396468527",
     "asym_over_b3_asym": "-0.3263263743",
     "asym_sign_matches_coulomb": false
    }
@@ -187,5 +187,5 @@
   }
  ],
  "allPassed": true,
- "durationMs": 120
+ "durationMs": 534
 }

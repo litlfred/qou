@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-25T00:22:21.985962+00:00",
-  "commitSha": "7823271e66b3b24b04b491a61bc37c78df85aae7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:12:46.209217+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "proton_anchor_exact",
-      "computed": -96.74951971879314,
+      "computed": -96.74951972152232,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-06",
@@ -15,7 +15,7 @@
     },
     {
       "name": "non_proton_max_err_finite",
-      "computed": 146.79197701272196,
+      "computed": 146.79194316614652,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1000000.0,
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
-  "scriptHash": "27185729bfb7",
-  "scriptCommitSha": "c86e55ec9f547271b135371823248cac0a4b1560",
+  "scriptHash": "95b1b6a7bec1",
+  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,10 +39,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -67,8 +67,8 @@
   "parameters": {
     "q_0": 1.1099785827513808,
     "canonical_mode": "li2q",
-    "E_0_MeV": 4.2274828233998445,
-    "E_0_MeV_brane_legacy": 4.2274828233998445
+    "E_0_MeV": 4.22748281985035,
+    "E_0_MeV_brane_legacy": 4.22748281985035
   },
   "rows": [
     {
@@ -77,8 +77,8 @@
       "N": 0,
       "A": 1,
       "M_codata": 938.27208943,
-      "M_predicted": 30.49834925098972,
-      "err_pct": -96.74951971879314,
+      "M_predicted": 30.498349225382583,
+      "err_pct": -96.74951972152232,
       "term1_canonical_tr_M": 1.1457596924573008,
       "term2_single_gen_tower": 1.664060126876477,
       "term3_pair_gen_tower": 0.3149079680624188,
@@ -100,8 +100,8 @@
       "N": 1,
       "A": 1,
       "M_codata": 939.565,
-      "M_predicted": 26.861996493499152,
-      "err_pct": -97.1410177589098,
+      "M_predicted": 26.861996470945183,
+      "err_pct": -97.14101776131027,
       "term1_canonical_tr_M": 0.9877436881158096,
       "term2_single_gen_tower": 1.5650816863542332,
       "term3_pair_gen_tower": 0.27919712157099186,
@@ -122,8 +122,8 @@
       "Z": 1,
       "N": 1,
       "A": 2,
-      "M_codata": 1876.124,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "M_codata": 1876.1239303536554,
+      "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
       "error_kind": "unknown"
     },
     {
@@ -131,8 +131,8 @@
       "Z": 1,
       "N": 2,
       "A": 3,
-      "M_codata": 2809.432,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "M_codata": 2809.4321220785237,
+      "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
       "error_kind": "unknown"
     },
     {
@@ -141,7 +141,7 @@
       "N": 1,
       "A": 3,
       "M_codata": 2809.413,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
       "error_kind": "unknown"
     },
     {
@@ -149,12 +149,12 @@
       "Z": 2,
       "N": 2,
       "A": 4,
-      "M_codata": 3728.401,
-      "M_predicted": -1744.5925388620951,
-      "err_pct": -146.79197701272196,
+      "M_codata": 3728.4013307525797,
+      "M_predicted": -1744.5914316915973,
+      "err_pct": -146.79194316614652,
       "term1_canonical_tr_M": 0.05534834587669799,
-      "term2_single_gen_tower": 7.399268263671214,
-      "term3_pair_gen_tower": -423.7003128513006,
+      "term2_single_gen_tower": 7.399330194857278,
+      "term3_pair_gen_tower": -423.70011323069724,
       "term4_frobenius_codim_raw": 2.251934048039021,
       "term4_frobenius_codim_scaled": 2.251934048039021,
       "term5_chirality_factor_a_K": 24.75793000593541,
@@ -165,7 +165,7 @@
       "tower_mode": "li2q",
       "sub_tower_mode": null,
       "m_e_hecke": 1.0,
-      "total_hecke": -412.6788000664308
+      "total_hecke": -412.6785385146414
     },
     {
       "isotope": "5Li",
@@ -181,7 +181,7 @@
       "Z": 3,
       "N": 3,
       "A": 6,
-      "M_codata": 5603.052,
+      "M_codata": 5603.0515027829515,
       "deferred": true,
       "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
     },
@@ -224,7 +224,7 @@
   ],
   "all_modes": {
     "brane-legacy": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -232,8 +232,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 2777451.1885098526,
-          "err_pct": 295917.67118503473,
+          "M_predicted": 2777451.1861778386,
+          "err_pct": 295917.6709364913,
           "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 656993.5756665132,
@@ -255,8 +255,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 108374.66567024938,
-          "err_pct": 11434.557552723802,
+          "M_predicted": 108374.66557925544,
+          "err_pct": 11434.557543039113,
           "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 25631.233728726478,
@@ -277,8 +277,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -286,8 +286,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -296,7 +296,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -304,12 +304,12 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": 31817814.376684316,
-          "err_pct": 853290.3508953119,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": 31817814.63030619,
+          "err_pct": 853290.2819920877,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0,
-          "term3_pair_gen_tower": 7526417.112233035,
+          "term3_pair_gen_tower": 7526417.178545988,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -320,7 +320,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 7526420.734477556
+          "total_hecke": 7526420.800790509
         },
         {
           "isotope": "5Li",
@@ -336,7 +336,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -379,7 +379,7 @@
       ]
     },
     "drop": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -387,8 +387,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 22.132295621579225,
-          "err_pct": -97.64116444782829,
+          "M_predicted": 22.13229560299642,
+          "err_pct": -97.64116444980883,
           "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -410,8 +410,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 19.06533951143492,
-          "err_pct": -97.97083336315902,
+          "M_predicted": 19.06533949542721,
+          "err_pct": -97.97083336486276,
           "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -432,8 +432,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -441,8 +441,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -451,7 +451,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -459,9 +459,9 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": 15.312976495521335,
-          "err_pct": -99.58928837065751,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": 15.312976482664196,
+          "err_pct": -99.58928840743727,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -491,7 +491,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -534,7 +534,7 @@
       ]
     },
     "q1-base": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -542,8 +542,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 24.246037033279148,
-          "err_pct": -97.41588422948736,
+          "M_predicted": 24.246037012921597,
+          "err_pct": -97.41588423165705,
           "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.5,
           "term3_pair_gen_tower": 0.0,
@@ -565,8 +565,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 21.179080923134844,
-          "err_pct": -97.74586314697389,
+          "M_predicted": 21.179080905352386,
+          "err_pct": -97.7458631488665,
           "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.5,
           "term3_pair_gen_tower": 0.0,
@@ -587,8 +587,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -596,8 +596,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -606,7 +606,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -614,9 +614,9 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": 15.346003705079147,
-          "err_pct": -99.58840254293787,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": 15.346003692194277,
+          "err_pct": -99.58840257979693,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0078125,
           "term3_pair_gen_tower": 0.0,
@@ -646,7 +646,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -689,7 +689,7 @@
       ]
     },
     "r-side-bare": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -697,8 +697,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 25.90189295026511,
-          "err_pct": -97.23940493998916,
+          "M_predicted": 25.901892928517267,
+          "err_pct": -97.23940494230702,
           "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.7507732617247767,
           "term3_pair_gen_tower": 0.140915122630215,
@@ -720,8 +720,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 22.834936840120807,
-          "err_pct": -97.56962670596278,
+          "M_predicted": 22.83493682094805,
+          "err_pct": -97.56962670800338,
           "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.7507732617247767,
           "term3_pair_gen_tower": 0.140915122630215,
@@ -742,8 +742,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -751,8 +751,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -761,7 +761,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -769,9 +769,9 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": 65.53371669688129,
-          "err_pct": -98.24231039802636,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": 65.53371664185762,
+          "err_pct": -98.24231055542967,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 4.129252939486271,
           "term3_pair_gen_tower": 7.750331744661825,
@@ -801,7 +801,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -844,7 +844,7 @@
       ]
     },
     "li2q": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -852,8 +852,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 30.49834925098972,
-          "err_pct": -96.74951971879314,
+          "M_predicted": 30.498349225382583,
+          "err_pct": -96.74951972152232,
           "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 1.664060126876477,
           "term3_pair_gen_tower": 0.3149079680624188,
@@ -875,8 +875,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 26.861996493499152,
-          "err_pct": -97.1410177589098,
+          "M_predicted": 26.861996470945183,
+          "err_pct": -97.14101776131027,
           "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 1.5650816863542332,
           "term3_pair_gen_tower": 0.27919712157099186,
@@ -897,8 +897,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -906,8 +906,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -916,7 +916,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -924,12 +924,12 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": -1744.5925388620951,
-          "err_pct": -146.79197701272196,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": -1744.5914316915973,
+          "err_pct": -146.79194316614652,
           "term1_canonical_tr_M": 0.05534834587669799,
-          "term2_single_gen_tower": 7.399268263671214,
-          "term3_pair_gen_tower": -423.7003128513006,
+          "term2_single_gen_tower": 7.399330194857278,
+          "term3_pair_gen_tower": -423.70011323069724,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -940,7 +940,7 @@
           "tower_mode": "li2q",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": -412.6788000664308
+          "total_hecke": -412.6785385146414
         },
         {
           "isotope": "5Li",
@@ -956,7 +956,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -999,7 +999,7 @@
       ]
     },
     "habiro": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1007,8 +1007,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 21.319514120968897,
-          "err_pct": -97.72778979987346,
+          "M_predicted": 21.319514103068528,
+          "err_pct": -97.72778980178126,
           "term1_canonical_tr_M": 1.0653062286131671,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -1030,8 +1030,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 18.509669046681534,
-          "err_pct": -98.02997461094427,
+          "M_predicted": 18.509669031140376,
+          "err_pct": -98.02997461259834,
           "term1_canonical_tr_M": 0.9232332971861535,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -1052,8 +1052,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1061,8 +1061,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1071,7 +1071,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1079,7 +1079,7 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
+          "M_codata": 3728.4013307525797,
           "deferred": true,
           "deferred_mode": "habiro",
           "upstream_witness": "path-b-habiro-mass-probe.witness.json",
@@ -1100,7 +1100,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -1143,7 +1143,7 @@
       ]
     },
     "per-partition-k": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1168,8 +1168,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1177,8 +1177,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1187,7 +1187,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1195,7 +1195,7 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
+          "M_codata": 3728.4013307525797,
           "error": "FileNotFoundError: tower_mode='per-partition-k' requires probe-phiq-per-partition-klambda.witness.json; run probe_phiq_per_partition_klambda.py first.",
           "error_kind": "unknown"
         },
@@ -1213,7 +1213,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },
@@ -1256,7 +1256,7 @@
       ]
     },
     "combined": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1264,8 +1264,8 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 21.319514120968897,
-          "err_pct": -97.72778979987346,
+          "M_predicted": 21.319514103068528,
+          "err_pct": -97.72778980178126,
           "term1_canonical_tr_M": 1.0653062286131671,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -1287,8 +1287,8 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 18.509669046681534,
-          "err_pct": -98.02997461094427,
+          "M_predicted": 18.509669031140376,
+          "err_pct": -98.02997461259834,
           "term1_canonical_tr_M": 0.9232332971861535,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -1309,8 +1309,8 @@
           "Z": 1,
           "N": 1,
           "A": 2,
-          "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 1876.1239303536554,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1318,8 +1318,8 @@
           "Z": 1,
           "N": 2,
           "A": 3,
-          "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "M_codata": 2809.4321220785237,
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1328,7 +1328,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /tmp/qou-mine/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
           "error_kind": "unknown"
         },
         {
@@ -1336,12 +1336,12 @@
           "Z": 2,
           "N": 2,
           "A": 4,
-          "M_codata": 3728.401,
-          "M_predicted": -1744.5925388620951,
-          "err_pct": -146.79197701272196,
+          "M_codata": 3728.4013307525797,
+          "M_predicted": -1744.5914316915973,
+          "err_pct": -146.79194316614652,
           "term1_canonical_tr_M": 0.05534834587669799,
-          "term2_single_gen_tower": 7.399268263671214,
-          "term3_pair_gen_tower": -423.7003128513006,
+          "term2_single_gen_tower": 7.399330194857278,
+          "term3_pair_gen_tower": -423.70011323069724,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -1352,7 +1352,7 @@
           "tower_mode": "combined",
           "sub_tower_mode": "li2q",
           "m_e_hecke": 1.0,
-          "total_hecke": -412.6788000664308
+          "total_hecke": -412.6785385146414
         },
         {
           "isotope": "5Li",
@@ -1368,7 +1368,7 @@
           "Z": 3,
           "N": 3,
           "A": 6,
-          "M_codata": 5603.052,
+          "M_codata": 5603.0515027829515,
           "deferred": true,
           "deferral_reason": "Canonical |tr_M(6Li)| at H_18 is intractable with current Python mpmath @ 50 dps; awaits Rust kernel or Wenzl-1988 LR-branching categorical reduction."
         },

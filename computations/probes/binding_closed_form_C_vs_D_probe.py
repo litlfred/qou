@@ -76,11 +76,14 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf, _chi_lambda_of_word_mpf,
 )
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 T0 = time.time()
 
 # AME2020 -- OUTPUT COMPARISON TARGETS ONLY.
-AME = {(1, 1): ("2H", "2.224566"), (1, 2): ("3H", "8.481821"),
+AME = {(1, 1): ("2H", AME_B_DEUTERON_MEV_VALIDATION), (1, 2): ("3H", "8.481821"),
        (2, 1): ("3He", "7.718043"), (2, 2): ("4He", "28.295673"),
        (3, 3): ("6Li", "31.994566"), (3, 4): ("7Li", "39.244538"),
        (4, 3): ("7Be", "37.600411")}

@@ -8,6 +8,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q
+from codata_constants import (  # noqa: E402
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
 
 q = Q
 q_half = math.sqrt(q)
@@ -26,11 +30,11 @@ m_e = M_E_MEV
 # For heavier: AME2020 nuclear mass + Z*m_e
 elements = [
     ( 1,   1, "H",   "Hydrogen",      0.0000,    938.783),
-    ( 2,   4, "He",  "Helium",        7.0739,   3728.401),
+    ( 2,   4, "He",  "Helium",        7.0739,   float(M_HE4_ATOMIC_MEV_VALIDATION)),
     ( 3,   7, "Li",  "Lithium",       5.6063,   6535.366),
     ( 4,   9, "Be",  "Beryllium",     6.4628,   8394.794),
     ( 5,  11, "B",   "Boron",         6.9277,  10255.103),
-    ( 6,  12, "C",   "Carbon",        7.6801,  11177.929),
+    ( 6,  12, "C",   "Carbon",        7.6801,  float(M_C12_ATOMIC_MEV_VALIDATION)),
     ( 7,  14, "N",   "Nitrogen",      7.4756,  13043.781),
     ( 8,  16, "O",   "Oxygen",        7.9762,  14899.169),
     ( 9,  19, "F",   "Fluorine",      7.7790,  17696.929),

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T19:59:45.674673+00:00",
-  "commitSha": "21bf71f1f122cc042c16ee3e336b10f8f571c7c4",
+  "computedAt": "2026-08-30T09:07:11.697997+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "a3_perblock_does_not_close",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 39,
   "computation": "binding-per-block-magnitude-a3",
   "scriptFile": "binding_per_block_magnitude_a3_probe.py",
-  "scriptHash": "2e6f626167d3",
-  "scriptCommitSha": "c2a0a4429248ef7d847567ec78bfbb22ce9d15ca",
+  "scriptHash": "1d78d1e8c567",
+  "scriptCommitSha": "897caf93fc40b816bd8a212ae4d926d2819e44fe",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,9 +55,9 @@
       "t": {
         "B_perblock_MeV": 3.719395667707039,
         "B_scalar_MeV": 3.719395667707039,
-        "AME_MeV": 8.4818,
-        "err_perblock": -0.5614851013102126,
-        "err_scalar": -0.5614851013102126,
+        "AME_MeV": 8.4817962,
+        "err_perblock": -0.5614849048475087,
+        "err_scalar": -0.5614849048475087,
         "n_strands": 9
       },
       "3he": {

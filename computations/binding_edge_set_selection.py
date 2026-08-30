@@ -52,9 +52,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
 
-ISO = {"D": (2.224566, 1, 2), "T": (8.481821, 1, 3),
+ISO = {"D": (float(AME_B_DEUTERON_MEV_VALIDATION), 1, 2), "T": (8.481821, 1, 3),
        "3He": (7.718058, 2, 3), "4He": (28.295661, 2, 4)}
 
 

@@ -58,6 +58,10 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
@@ -67,7 +71,7 @@ for _p in (os.path.join(_ROOT, "computations"),
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-B_AME_MEV = {"d": "2.22452", "t": "8.48180", "3he": "7.71804", "4he": "28.29567"}
+B_AME_MEV = {"d": "2.22452", "t": AME_B_TRITIUM_MEV_VALIDATION, "3he": AME_B_HE3_MEV_VALIDATION, "4he": "28.29567"}
 M_E_MEV = "0.51099895000"
 
 

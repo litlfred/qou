@@ -44,6 +44,9 @@ from _precision import set_compute_dps  # noqa: E402
 # reuse #3548's exact connected-cluster machinery
 from su4_connected_1111_magnitude_probe import (  # noqa: E402
     connected_spanning_subgraphs, nodes)
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -88,7 +91,7 @@ def ceiling_over_D(Z, N, z, h, fpn, symmetric):
     return logsum(Z, N) / logsum(1, 1)
 
 
-AME = {"D": mpf("2.224566"), "4He": mpf("28.295673"), "6Li": mpf("31.994564")}
+AME = {"D": mpf(AME_B_DEUTERON_MEV_VALIDATION), "4He": mpf("28.295673"), "6Li": mpf("31.994564")}
 
 
 def main() -> int:

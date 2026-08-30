@@ -38,7 +38,10 @@ import _path_bridge  # noqa: E402, F401
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
+from codata_constants import (  # noqa: E402
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -56,7 +59,7 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 # Only "d" is routed: it is byte-exact. "t" and "3he" are 5-figure roundings
 # (8.4818 vs 8.4817962; 7.7180 vs 7.71804132) and routing them would CHANGE
 # a value -- the UNSAFE class, a reconciliation decision, not a sweep.
-ISO = {"d": (6, AME_B_DEUTERON_MEV_VALIDATION), "t": (9, "8.4818"), "3he": (9, "7.7180")}
+ISO = {"d": (6, AME_B_DEUTERON_MEV_VALIDATION), "t": (9, AME_B_TRITIUM_MEV_VALIDATION), "3he": (9, "7.7180")}
 
 
 def _mpf(v):

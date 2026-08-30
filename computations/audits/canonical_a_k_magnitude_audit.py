@@ -67,6 +67,10 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+)
 
 
 # Closed-form atomic Markov traces at q_0 (from various witnesses)
@@ -107,9 +111,9 @@ M_CODATA = {
     "6Li": 5601.518600,
 }
 B_CODATA = {
-    "D":   2.224566,
+    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
     "T":   8.481793,
-    "3He": 7.718041,
+    "3He": float(AME_B_HE3_MEV_VALIDATION),
     "4He": 28.295674,
     "6Li": 31.994576,
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:10.918890+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:07:21.462671+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "deuteron_pair_order_matches_AME_6dig",
@@ -27,7 +27,7 @@
   "durationMs": 0,
   "computation": "cumulant-mev-cluster-expansion",
   "scriptFile": "cumulant_mev_cluster_expansion_probe.py",
-  "scriptHash": "7a8e2aa2c3b0",
+  "scriptHash": "c06568fd3414",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -61,7 +61,7 @@
     "cluster_expansion": "B(K) = E_unit * [ Σ_pairs (linear pair term) + Σ_{k>=3} b_k (connected k-body cumulants) ]",
     "V1_deuteron_pair_order_linear": {
       "sqrt5_E_unit_ladder_MeV": "2.224566787",
-      "AME_2H_MeV": "2.224566",
+      "AME_2H_MeV": "2.2245662",
       "matches_AME_6dig": true,
       "note": "the ladder (1 - x/10 + 3x^2/200) fixes the +0.41% that bare 5g=2.2336 carries."
     },
@@ -74,9 +74,9 @@
       "note": "5g is LINEAR in g (pair order); -ln det2 ~ g^2 is QUADRATIC (4-body cumulant). Different powers => different cluster orders, not a normalization mismatch. This is the #4093 category error, resolved."
     },
     "V3_He4_cluster_structure": {
-      "pair_additive_baseline_MeV": "13.347396",
+      "pair_additive_baseline_MeV": "13.347397",
       "AME_4He_MeV": "28.295673",
-      "many_body_remainder_MeV": "14.948277",
+      "many_body_remainder_MeV": "14.948276",
       "rho4_pair_baseline": 6,
       "rho4_observed": "12.7196",
       "many_body_positive": true,

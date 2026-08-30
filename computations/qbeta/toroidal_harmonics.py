@@ -25,6 +25,9 @@ Toroidal Harmonics Derivation Script
 import numpy as np
 import sympy as sp
 from scipy.special import lpmv
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 def toroidal_harmonic_P(n, m, cosh_eta):
     """
@@ -138,7 +141,7 @@ def evaluate_c_lambda():
     # NOTE the circularity: c_lambda_exp is DEFINED via the experimental
     # binding B_AME, so any 'match' below is a fit to an experimental input,
     # not a parameter-free prediction.
-    b_ame = 28.29566 # AME2020 binding energy in MeV
+    b_ame = float(AME_B_HE4_MEV_VALIDATION) # AME2020 binding energy in MeV
     e_gate = 29.99   # SU(4) Plancherel occupancy from B_gate
 
     c_lambda_exp = b_ame / e_gate

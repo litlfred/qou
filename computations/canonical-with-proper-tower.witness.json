@@ -1,7 +1,7 @@
 {
   "computation": "canonical-with-proper-tower",
   "description": "Canonical-with-proper-tower binding: per-generator V\u0302_i computed via Jucys-Murphy eigenvalue Plancherel averages (no H_3 shortcut), fed into the \u03a6_q tower formula of prop:mass-endomorphism-tower.  Single jet level; multi-level extension requires K\u00e4hler-differential propagation (open).  pair_mode \u2208 {adjacent, full} toggles the audit-flagged adjacent-only restriction.",
-  "timestamp": "2026-08-29T06:40:23.152555+00:00",
+  "timestamp": "2026-08-30T09:09:43.250209+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "E_0_calibration": "proton-tower (m_p_CODATA / m_proton_tower)",
@@ -14,13 +14,13 @@
       "A": 2,
       "m_atom_per_irrep_total": "3.56199254199908",
       "m_free_per_irrep_total": "4.96461715108294",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "1.09732009240655",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "1.09732009240668",
       "pair_mode": "adjacent",
       "atom": "D",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": "0.0600678587955348"
+      "delta_m_over_m_pct": "0.0600678587955279"
     },
     {
       "Z": 1,
@@ -28,13 +28,13 @@
       "A": 3,
       "m_atom_per_irrep_total": "5.80806195531154",
       "m_free_per_irrep_total": "8.60610393026501",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "2.18900171765758",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "2.18900171765783",
       "pair_mode": "adjacent",
       "atom": "T",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 8.481821,
-      "delta_m_over_m_pct": "0.223560569591468"
+      "delta_m_over_m_pct": "0.223560569591459"
     },
     {
       "Z": 2,
@@ -42,13 +42,13 @@
       "A": 3,
       "m_atom_per_irrep_total": "5.94477842121925",
       "m_free_per_irrep_total": "8.80552942290521",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "2.23806108433571",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "2.23806108433597",
       "pair_mode": "adjacent",
       "atom": "3He",
       "binder": "per_irrep_tower (new, rigorous)",
-      "B_AME_MeV": 7.71804,
-      "delta_m_over_m_pct": "0.194683360949643"
+      "B_AME_MeV": 7.71804132,
+      "delta_m_over_m_pct": "0.194683407844346"
     },
     {
       "Z": 2,
@@ -56,13 +56,13 @@
       "A": 4,
       "m_atom_per_irrep_total": "10.6543168835552",
       "m_free_per_irrep_total": "16.2560542269937",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "4.38242627395087",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "4.38242627395138",
       "pair_mode": "adjacent",
       "atom": "4He",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 28.295674,
-      "delta_m_over_m_pct": "0.637161863691811"
+      "delta_m_over_m_pct": "0.637161863691797"
     },
     {
       "Z": 1,
@@ -70,13 +70,13 @@
       "A": 2,
       "m_atom_per_irrep_total": "4.57644999720067",
       "m_free_per_irrep_total": "6.40817598294767",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "1.433020435351",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "1.43302043535117",
       "pair_mode": "full",
       "atom": "D",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": "0.042178573441838"
+      "delta_m_over_m_pct": "0.042178573441829"
     },
     {
       "Z": 1,
@@ -84,13 +84,13 @@
       "A": 3,
       "m_atom_per_irrep_total": "9.15342649068015",
       "m_free_per_irrep_total": "14.2618431168669",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "3.9964849953401",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "3.99648499534056",
       "pair_mode": "full",
       "atom": "T",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 8.481821,
-      "delta_m_over_m_pct": "0.159347381041845"
+      "delta_m_over_m_pct": "0.159347381041828"
     },
     {
       "Z": 2,
@@ -98,13 +98,13 @@
       "A": 3,
       "m_atom_per_irrep_total": "9.41230278687928",
       "m_free_per_irrep_total": "14.5930294806433",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "4.05305557703526",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "4.05305557703573",
       "pair_mode": "full",
       "atom": "3He",
       "binder": "per_irrep_tower (new, rigorous)",
-      "B_AME_MeV": 7.71804,
-      "delta_m_over_m_pct": "0.130203326741152"
+      "B_AME_MeV": 7.71804132,
+      "delta_m_over_m_pct": "0.130203373635848"
     },
     {
       "Z": 2,
@@ -112,13 +112,13 @@
       "A": 4,
       "m_atom_per_irrep_total": "19.8843903571377",
       "m_free_per_irrep_total": "33.1320273674437",
-      "E_0_MeV_per_cat": 0.7823334093099085,
-      "B_MeV": "10.3640690275728",
+      "E_0_MeV_per_cat": "0.78233340931",
+      "B_MeV": "10.3640690275741",
       "pair_mode": "full",
       "atom": "4He",
       "binder": "per_irrep_tower (new, rigorous)",
       "B_AME_MeV": 28.295674,
-      "delta_m_over_m_pct": "0.477782648936104"
+      "delta_m_over_m_pct": "0.477782648936072"
     },
     {
       "Z": 1,
@@ -150,13 +150,13 @@
         "0.582844276959044",
         "1.17398814692221"
       ],
-      "B_MeV": "1.43115478847161",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "1.43115478847177",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "adjacent",
       "atom": "D",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": "0.0422779927307846"
+      "delta_m_over_m_pct": "0.0422779927307757"
     },
     {
       "Z": 1,
@@ -194,13 +194,13 @@
         "0.694706888769371",
         "1.39817602407254"
       ],
-      "B_MeV": "2.62825812710768",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "2.62825812710799",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "adjacent",
       "atom": "T",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 8.481821,
-      "delta_m_over_m_pct": "0.207955415734767"
+      "delta_m_over_m_pct": "0.207955415734756"
     },
     {
       "Z": 2,
@@ -238,13 +238,13 @@
         "0.694706888769371",
         "1.39817602407254"
       ],
-      "B_MeV": "2.76754193178149",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "2.76754193178181",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "adjacent",
       "atom": "3He",
       "binder": "canonical_tower (provisional)",
-      "B_AME_MeV": 7.71804,
-      "delta_m_over_m_pct": "0.175872866871909"
+      "B_AME_MeV": 7.71804132,
+      "delta_m_over_m_pct": "0.17587291376661"
     },
     {
       "Z": 2,
@@ -288,13 +288,13 @@
         "1.00651775793625",
         "2.02423022870374"
       ],
-      "B_MeV": "12.3767418732624",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "12.3767418732639",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "adjacent",
       "atom": "4He",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 28.295674,
-      "delta_m_over_m_pct": "0.424155538304681"
+      "delta_m_over_m_pct": "0.424155538304642"
     },
     {
       "Z": 1,
@@ -326,13 +326,13 @@
         "0.582844276959044",
         "1.17398814692221"
       ],
-      "B_MeV": "1.87753023069665",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "1.87753023069687",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "full",
       "atom": "D",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": "0.0184908926319094"
+      "delta_m_over_m_pct": "0.0184908926318977"
     },
     {
       "Z": 1,
@@ -370,13 +370,13 @@
         "0.694706888769371",
         "1.39817602407254"
       ],
-      "B_MeV": "4.66533143290718",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "4.66533143290772",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "full",
       "atom": "T",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 8.481821,
-      "delta_m_over_m_pct": "0.135585743555878"
+      "delta_m_over_m_pct": "0.135585743555859"
     },
     {
       "Z": 2,
@@ -414,13 +414,13 @@
         "0.694706888769371",
         "1.39817602407254"
       ],
-      "B_MeV": "4.83294924858561",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "4.83294924858618",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "full",
       "atom": "3He",
       "binder": "canonical_tower (provisional)",
-      "B_AME_MeV": 7.71804,
-      "delta_m_over_m_pct": "0.102496592190263"
+      "B_AME_MeV": 7.71804132,
+      "delta_m_over_m_pct": "0.102496639084956"
     },
     {
       "Z": 2,
@@ -464,13 +464,13 @@
         "1.00651775793625",
         "2.02423022870374"
       ],
-      "B_MeV": "18.0399849656838",
-      "E_0_MeV_per_cat": 0.7823334093099085,
+      "B_MeV": "18.0399849656859",
+      "E_0_MeV_per_cat": "0.78233340931",
       "pair_mode": "full",
       "atom": "4He",
       "binder": "canonical_tower (provisional)",
       "B_AME_MeV": 28.295674,
-      "delta_m_over_m_pct": "0.273259994351599"
+      "delta_m_over_m_pct": "0.273259994351542"
     }
   ]
 }

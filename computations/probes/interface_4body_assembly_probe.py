@@ -41,6 +41,9 @@ REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 sys.path.insert(0, str(COMP))
 import closed_form_tau_M as C  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
@@ -57,7 +60,7 @@ TRM = {
     "3He": mp.mpf("0.443664207812095038274595411452"),
     "4He": mp.mpf("0.153871967541095181777587076812"),
 }
-AME = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
+AME = {"D": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "T": mp.mpf("8.481798"),
        "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
 ATOMS = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 

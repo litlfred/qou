@@ -90,6 +90,9 @@ from q_parameter import Q as Q0  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 40)
@@ -172,7 +175,7 @@ def main() -> int:
     sl = slots(word)
     gens = [g + 1 for (_c, _d, g) in word]
     pos = gens.index(WALL)
-    need = mp.sqrt(mp.mpf("2.224566"))
+    need = mp.sqrt(mp.mpf(AME_B_DEUTERON_MEV_VALIDATION))
 
     def atom_trace(I):
         tot = mp.mpf(0)

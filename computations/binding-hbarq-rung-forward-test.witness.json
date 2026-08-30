@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T15:03:58.910366+00:00",
-  "commitSha": "cdbdc84af1332800dae14cf6ce68b7bf476eb78f",
+  "computedAt": "2026-08-30T09:07:09.232757+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "rho_over_hbarsq_is_M_need_and_binding_is_M_hbarsq_not_universal_hbarsq",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 21,
   "computation": "binding-hbarq-rung-forward-test",
   "scriptFile": "binding_hbarq_rung_forward_test.py",
-  "scriptHash": "67411960987b",
-  "scriptCommitSha": "42ca55b1c94c773ad011a96bb1c229ee02deeb85",
+  "scriptHash": "27d297f6864b",
+  "scriptCommitSha": "2b375faa278ff5fc7acd0821766e9e16f52acb48",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -47,7 +47,7 @@
   },
   "data": {
     "M_need_3H": "2.00312273682",
-    "M_need_3He": "2.06118951756",
+    "M_need_3He": "2.06118960302",
     "M_need_4He": "7.55667748346",
     "M_need_alpha_alpha": "0.995471959393",
     "mass_multiplier_mp_over_meVol": "250.576097659",

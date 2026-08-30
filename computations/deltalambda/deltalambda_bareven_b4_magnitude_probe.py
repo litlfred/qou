@@ -66,6 +66,9 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 COMP = str(_COMP)
 mp.mp.dps = 60
@@ -150,7 +153,7 @@ def main() -> int:
 
     # ---- 2. isospin-corrected STRONG rho targets (from #3990 E_C) -------------
     # AME2020 binding energies (MeV) and the deuteron reference.
-    BD = mp.mpf("2.224566")
+    BD = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
     B3H = mp.mpf("8.481821")
     B3He = mp.mpf("7.718058")
     B4 = mp.mpf("28.295673")

@@ -71,6 +71,9 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -93,7 +96,7 @@ NUCLEAR_MASS = {
 
 # (Z, N, knot, ρ_F=ν_SDP, Vol_hyp, B_AME MeV); ρ_F<0 ⇒ extrapolated
 ATOMS = [
-    (1, 1, "6_2",   1, "4.400833", "2.224566"),
+    (1, 1, "6_2",   1, "4.400833", AME_B_DEUTERON_MEV_VALIDATION),
     (1, 2, "8_11",  2, "8.286300", "8.481821"),
     (2, 1, "L6a4",  2, "7.327700", "7.718058"),
     (2, 2, "magic", -1, None,      "28.295673"),  # no census knot

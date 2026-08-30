@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:55:19.700573+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:07:09.413101+00:00",
+  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
   "assertions": [
     {
       "name": "fewbody_truncation_tames_overshoot",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "binding-fewbody-bondcount",
   "scriptFile": "binding_fewbody_bondcount.py",
-  "scriptHash": "e2231e00dbf0",
+  "scriptHash": "b509155a9d49",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -44,19 +44,19 @@
   "description": "EXPLORATORY: few-body truncation (n_max=3) of the na-Stokes jet-filtration binding drops the sum-to-A overshoot from ~2e6% to ~50%; the residual is the geometric bond-count M_n(K) (implied #bonds/A = nuclear coordination, plateau ~2.6-3.8 for A≥6). Synthesis: a_D=per-cluster energy, knot topology=cluster count; missing piece is geometric (bond-count), not an algebraic weight kernel. Weights anchored on D,T; no free fit.",
   "data": {
     "w2_w3_anchored": {
-      "w2": 4.353367060727183,
-      "w3": 5.902751252214728
+      "w2": 4.3533674521174195,
+      "w3": 5.902750666724376
     },
     "coordination_bonds_per_A": {
       "D": 0.5,
-      "T": 1.2709326972841744,
-      "3He": 1.3060971945486466,
-      "4He": 3.2818540960264055,
-      "6Li": 2.5751860227421237,
-      "7Li": 2.6652296210999453,
-      "9Be": 3.1126495266684895,
-      "12C": 3.8058505576350634
+      "T": 1.2709325830207556,
+      "3He": 1.3060970771237577,
+      "4He": 3.281853800970759,
+      "6Li": 2.5751857912195892,
+      "7Li": 2.665229381482026,
+      "9Be": 3.112649246825208,
+      "12C": 3.8058502154694263
     },
-    "chain_worst_err_pct": 49.52855923937046
+    "chain_worst_err_pct": 49.52855992423619
   }
 }

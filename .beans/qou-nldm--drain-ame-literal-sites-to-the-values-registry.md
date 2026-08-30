@@ -18,7 +18,11 @@ Roadmap from probes/ame_registry_routing_triage.py:
 Branch: claude/ame-roadmap-replant-2026-08-29 (worktree /tmp/qou-mine).
 
 ## Todo
-- [ ] Route the SAFE sites that survive review
-- [ ] Fix the triage: byte-exact string match is NOT sufficient for SAFE
-- [ ] Work the REVIEW bucket
-- [ ] Close verification loose ends (4 unmapped witnesses, catalan_binding empty witness)
+- [x] Route the SAFE sites that survive review — 6 of 9 routed, 3 are self-test fixtures
+- [x] Fix the triage: byte-exact string match is NOT sufficient for SAFE
+- [x] Split REVIEW into ROUNDING (63, routable) and DIVERGENT (125, needs a ruling)
+- [x] Route the 63 ROUNDING sites — verified, 0 unexplained leaves
+- [ ] DIVERGENT (125 sites / 66 files): evidence says hand-typing drift, not an
+      older AME edition — binding_canonical.py documents 8.481821 as "a typo for
+      8.481798", and PR #1105 already set the precedent of routing such values
+- [x] Close verification loose ends — see qou-fsva, now completed
