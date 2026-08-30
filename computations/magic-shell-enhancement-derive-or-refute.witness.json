@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T19:34:23.132362+00:00",
-  "commitSha": "dcb483020bbf523e0059703f39abf701af04a21c",
+  "computedAt": "2026-08-30T19:48:46.611847+00:00",
+  "commitSha": "fa7e57a8cf682353fdf8ad67e6ccf60d4da6b990",
   "assertions": [
     {
       "name": "a_D_4_is_AME_free",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "magic-shell-enhancement-derive-or-refute",
   "scriptFile": "magic_shell_enhancement_derive_or_refute.py",
-  "scriptHash": "f6513874b524",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "13dd25c0c2bd",
+  "scriptCommitSha": "16f1c02613cb3f2843a6d780522c202a07383137",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -148,5 +148,8 @@
   "caveats": [
     "Scope (a): a construction tested alone. No proved invariant is cited here, so nothing is structurally excluded by THIS probe. The scope-(b) exclusion of the Wigner-SU(4) sizing route is in QOU.Mass.WignerSU4RowBoundInactive.",
     "Only 4He is magic in the Vol_A-covered range (A <= 4). binding_link_volumes.py assigns links for 2H/3H/3He and the 4He L6a4 base only, so the magic/non-magic selector has ZERO out-of-sample support and cannot be validated until Vol_A extends past A=4."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "a_D^(n) = sum_{lam|-n} dim_q lam / n is evaluated at the experimental (proton) pin, the standing default for new compute. One pin only: the question is whether the derived period matches the AME read M_need/z, not how the two pins differ."
 }
