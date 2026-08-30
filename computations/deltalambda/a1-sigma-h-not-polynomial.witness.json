@@ -18,38 +18,38 @@
     "E_sigma_h_ratios": [
       {
         "n": 8,
-        "over_n_1p5": 0.9991829192637139,
-        "over_n_2": 0.3532645089285714
+        "over_n_1p5": "0.999182919264",
+        "over_n_2": "0.353264508929"
       },
       {
         "n": 12,
-        "over_n_1p5": 0.9896235829129498,
-        "over_n_2": 0.2856797209955968
+        "over_n_1p5": "0.989623582913",
+        "over_n_2": "0.285679720996"
       },
       {
         "n": 16,
-        "over_n_1p5": 0.9841988135607879,
-        "over_n_2": 0.24604970339019697
+        "over_n_1p5": "0.984198813561",
+        "over_n_2": "0.24604970339"
       },
       {
         "n": 20,
-        "over_n_1p5": 0.9806120780869595,
-        "over_n_2": 0.21927152661597735
+        "over_n_1p5": "0.980612078087",
+        "over_n_2": "0.219271526616"
       },
       {
         "n": 24,
-        "over_n_1p5": 0.9780395676551369,
-        "over_n_2": 0.19964149075061266
+        "over_n_1p5": "0.978039567655",
+        "over_n_2": "0.199641490751"
       },
       {
         "n": 28,
-        "over_n_1p5": 0.9761144711530028,
-        "over_n_2": 0.1844682958430126
+        "over_n_1p5": "0.976114471153",
+        "over_n_2": "0.184468295843"
       },
       {
         "n": 32,
-        "over_n_1p5": 0.9745991970068439,
-        "over_n_2": 0.17228642528562585
+        "over_n_1p5": "0.974599197007",
+        "over_n_2": "0.172286425286"
       }
     ],
     "verdict": "Sigma_h is NOT in Lambda*; A1 is impossible as stated and the genus route does not apply to the Sigma_h leg. Track D (Fulman/Stein) needs no polynomiality and is promoted."
@@ -121,7 +121,7 @@
       "expected": true,
       "passed": true,
       "source": "A1_sigmah_not_polynomial",
-      "note": "settles near 0.9746 -- half-integer Plancherel order"
+      "note": "settles near 0.974599 -- half-integer Plancherel order"
     },
     {
       "name": "E_sigma_h_over_n_squared_decays",
@@ -141,10 +141,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "6b12d40ae7e0",
-  "scriptCommitSha": "unknown",
-  "commitSha": "8b05d35531764f764d0b9ce276b0eb3f6d50291a",
-  "computedAt": "2026-08-30T06:21:49.313209+00:00",
-  "durationMs": 40131,
+  "scriptHash": "cd8cfe1a489b",
+  "scriptCommitSha": "0a160c984190eb850fc515536a8d83f63a41c808",
+  "commitSha": "c76d2cb7dec2228a92e9bc79c0d62685b414673f",
+  "computedAt": "2026-08-30T06:43:16.128803+00:00",
+  "durationMs": 6917,
   "engineVersion": "3.11.15"
 }

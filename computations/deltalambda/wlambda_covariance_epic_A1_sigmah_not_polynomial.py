@@ -65,6 +65,10 @@ import sys
 import time
 from fractions import Fraction as F
 
+import mpmath as mp
+
+mp.mp.dps = 60
+
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants import (  # noqa: E402
     partitions, transition_atoms, free_cumulants, sigma_h,
@@ -167,14 +171,18 @@ def main() -> int:
             s += f * f * int(sigma_h(l))
             w += f * f
         E = F(s, w)
-        ratios.append((n, float(E) / n ** 1.5, float(E) / n ** 2))
+        # mpmath at 60 dps, not float64: these are ratios of exact rationals and
+        # the corpus standard is no float64 in a producer (probe-float64-guard).
+        Emp = mp.mpf(E.numerator) / E.denominator
+        ratios.append((n, Emp / mp.power(n, mp.mpf(3) / 2), Emp / mp.power(n, 2)))
     r32 = [r for _, r, _ in ratios]
     r2_ = [r for _, _, r in ratios]
     chk("E_sigma_h_over_n_three_halves_is_bounded_away_from_0",
-        all(0.9 < r < 1.1 for r in r32), True,
-        "settles near %.4f -- half-integer Plancherel order" % r32[-1])
+        all(mp.mpf("0.9") < r < mp.mpf("1.1") for r in r32), True,
+        "settles near %s -- half-integer Plancherel order" % mp.nstr(r32[-1], 6))
     chk("E_sigma_h_over_n_squared_decays",
-        all(r2_[i] > r2_[i + 1] for i in range(len(r2_) - 1)) and r2_[-1] < 0.2, True,
+        all(r2_[i] > r2_[i + 1] for i in range(len(r2_) - 1))
+        and r2_[-1] < mp.mpf("0.2"), True,
         "so the order is NOT 2; combined with the above it is 3/2")
 
     # The conclusion, as a checkable proposition.
@@ -193,7 +201,8 @@ def main() -> int:
         "parameters": {"n_max_exact": NMAX, "k_max_cumulant": KMAX,
                        "gap": "qou-k5r5", "beans": ["qou-470y", "qou-nna0"]},
         "data": {
-            "E_sigma_h_ratios": [{"n": n, "over_n_1p5": a, "over_n_2": b} for n, a, b in ratios],
+            "E_sigma_h_ratios": [{"n": n, "over_n_1p5": mp.nstr(a, 12),
+                                  "over_n_2": mp.nstr(b, 12)} for n, a, b in ratios],
             "verdict": ("Sigma_h is NOT in Lambda*; A1 is impossible as stated and the "
                         "genus route does not apply to the Sigma_h leg. Track D "
                         "(Fulman/Stein) needs no polynomiality and is promoted."),
