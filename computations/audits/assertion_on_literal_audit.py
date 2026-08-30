@@ -170,7 +170,11 @@ def scan_file(path: str) -> list[dict]:
                 name = str(node.args[0].value)[:60]
             elif isinstance(kw.get("name"), ast.Constant):
                 name = str(kw["name"].value)[:60]
-            out.append({"path": os.path.relpath(path, ROOT), "line": node.lineno,
+            # `comp.lineno`, not `node.lineno`: in a fluent builder chain every
+            # chained Call carries the line the chain STARTS on, so several
+            # assertions collapse onto one number. See the sibling tolerance
+            # audit for the measured cases.
+            out.append({"path": os.path.relpath(path, ROOT), "line": comp.lineno,
                         "assertion": name, "value": val,
                         "expr": ast.unparse(comp)[:60]})
     # one row per (file,line); Module-level and function-level walks can overlap
