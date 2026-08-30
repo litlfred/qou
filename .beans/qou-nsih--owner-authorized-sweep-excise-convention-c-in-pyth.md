@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T08:18:46Z
+updated_at: 2026-08-30T08:51:37Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -153,3 +153,63 @@ qbeta decay channel where qou-cds1 forbids substitution outright (a z-swap is
 not a re-derivation). Expect the honest outcome for some of them to be "cannot
 migrate by substitution; needs the D-frame derivation first", i.e. blocked on
 qou-cds1 rather than on effort.
+
+
+## 2026-08-30 — TRANCHE 1 ATTEMPTED AND REVERTED: the migration is not mechanical
+
+First real migration target: `compound_shift_nf.py:256` (`tr_m_weights_mp`), a
+production module with a committed witness and a downstream audit doc
+(2026-05-16-compound-shift-nf-impl.md), using z_C as THE Markov parameter with
+no comparison framing.
+
+### Method
+
+Baseline first. The container was missing scipy and clarabel and had mpmath
+1.3.0 against the witness's 1.4.1 -- and the PRODUCER DETECTED THIS ITSELF:
+
+    environment: the environment block records LESS than the witness on disk --
+    dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is
+    simply missing a library, install it and re-run rather than committing the
+    weaker record; the numbers can be identical while the provenance silently
+    degrades.
+
+Installed all three; the clean baseline then reproduced the committed witness
+byte-identically on substantive fields, 19/19. That is what made the comparison
+below trustworthy -- without it I would have been diffing my container against
+the corpus.
+
+### Result: 19/19 STILL PASS, and 95 substantive fields MOVE
+
+    /data/atoms[0]/categorical_mass   0.2903  ->  0.4442     (+53 %)
+    /data/atoms[0]/y0_star           -0.7985  -> -2.8593     (3.6x)
+    /data/atoms[0]/x_star[1..2]      -0.0457  -> -0.3333     (7.30x)
+    /data/atoms[2]/x_star[1..2]                               (7.24x)
+    /data/atoms[5]/y_star[0]                                  (6.22x)
+
+**Assertions passing is NOT reassurance here.** They are structural (per-nucleon
+linearity, the alpha_EM chain) and hold under either convention, while every
+reported LP dual and shadow price moves by factors of 3-7. y0_star and y_star[i]
+are the binding-energy shadow prices AGENTS.md calls first-class infrastructure.
+
+### Why I reverted rather than committed
+
+I have NO independent check that the D numbers are RIGHT. The probe verifies
+internal consistency, not the correctness of the convention choice. Committing
+would rewrite 95 published numbers on the strength of "assertions still pass",
+which is exactly the reassurance that does not hold. Left uncommitted it risked
+being swept up by a later auto prepare-merge, so the code is reverted and this
+record stands in its place.
+
+### A separate possible defect, NOT conflated with the migration
+
+`tr_m_weights_mp` returns weights [1, z, z, z^2, z^2, z^3]. The Ocneanu value on
+H_3's longest element is z(h z + 1), not z^3. If that is wrong it is wrong under
+BOTH conventions, and migrating would carry it forward. Cheap to settle and it
+could invalidate the migration either way, so it should go first.
+
+### Consequence for the tranche
+
+The remaining ~20 are the same shape: each rewrites published numbers, and
+"assertions pass" will keep being true while they do. This needs either a
+per-file review of the movement, or the D-frame derivation (qou-cds1) to give an
+independent check. Raised with the author.
