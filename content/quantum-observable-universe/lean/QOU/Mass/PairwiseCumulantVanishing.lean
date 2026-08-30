@@ -66,7 +66,34 @@ variable (M : BindingMap R)
 
 /-- The **connected three-body cumulant** of a triple: its binding, less the
 three pair bindings inside it. This is the Ursell/Möbius definition, and it is
-the quantity the AME inversion measures as `b₃ = +1.426222` MeV. -/
+the quantity the AME inversion measures as `b₃ = +1.426222` MeV.
+
+**That figure is the ISOSPIN AVERAGE of the two A = 3 nuclei — say so when you
+quote it (provenance recorded 2026-08-30).** With the uniform pair value
+`e₂ = B(²H) = 2.224566`:
+
+* `b₃(³H)  = 8.481798 − 3e₂ = 1.808100`
+* `b₃(³He) = 7.718058 − 3e₂ = 1.044360`
+* mean **`= 1.426230`**, matching the quoted `1.426222` to `8·10⁻⁶` MeV — the
+  residual is AME input precision (it implies `B(²H) = 2.2245687` against
+  `2.2245660`, a 2.7 eV difference). Each single-nucleus alternative is **26.8 %
+  away**, so the identification is not a coincidence.
+
+Why the average is the right object *here*: this file's binding model carries one
+uniform pair value, with no `pp`/`pn`/`nn` distinction — the regime
+`ChainBondOrderDependence.orderIndependent_iff` identifies as the physical one.
+The entire ³H–³He splitting (`0.763740` MeV, dominantly the Coulomb repulsion of
+³He's second proton) therefore has nowhere to live but `b₃`, and averaging is what
+keeps it from being charged to one nucleus.
+
+**Do not compare it directly against a triton-pinned `e₃`.** The body-order tower
+pins `e₃ = (B(³H) − 3e₂)/M₃(³H) = 1.808100` on the triton *alone*, because that is
+the nucleus whose single triple is genuinely Borromean (`lk = 0`, `μ̄₁₂₃ = +1`).
+The two numbers differ by 27 % for that reason and not because either is wrong;
+they are different conventions for the same order.
+
+**No theorem here depends on which convention is used**: `not_isPairwise_of_b3_ne_zero`
+needs only `b₃ ≠ 0`, and `1.426222` and `1.808100` are both nonzero. -/
 def b3 (i j k : Fin 4) : R :=
   M.triple i j k - (M.pair i j + M.pair i k + M.pair j k)
 
