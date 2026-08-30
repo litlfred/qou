@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T14:42:14Z
-updated_at: 2026-08-30T15:14:43Z
+updated_at: 2026-08-30T17:05:07Z
 ---
 
 ## Measured 2026-08-30 — the mechanism, and what it does to the melt
@@ -66,3 +66,39 @@ descent condition and this solves the character-table system.
 - Whether any convention-D transition exists by a NON-Wedderburn mechanism
   (SDP feasibility boundary not driven by weight vanishing, higher-n block,
   archimedean bound). Nothing here bears on it.
+
+
+## 2026-08-30 — the melt block IS corrected (owner authorised)
+
+Owner said "work the block correction". Done in `3b5dc46a30`, PR #6270.
+
+Correcting the number alone was NOT sufficient, and that is the finding:
+
+- The block implied a monotone ladder (molecules ~1.045/1.17, then nucleons).
+  The molecular thresholds are ABOVE q_0 = 1.10998; the corrected hadronic one
+  is BELOW it, at 1/psi^2 = 0.4656. Opposite directions in q. The block now
+  says so explicitly instead of implying one sequence.
+- Under convention C there is NO Gram degeneracy above the substrate at all —
+  the parent says it outright. Grepped: this block was the ONLY place in the
+  corpus asserting a q > q_0 hadronic threshold. So "dissolution by heating"
+  had nothing behind it and could not be repaired by renumbering.
+- Gain: it stops contradicting `rem:deconfinement-golden-threshold` too
+  (q_gold = 1/phi^2 = 0.382, also below q_0). Corrected, the two are ordered
+  0.4656 then 0.382 as q descends — the hierarchy the block's title promises.
+  Added as a `uses` edge.
+- Added a Scope paragraph: convention-C only; under D the (2,1) weight is
+  q^2/(q^2+1)^2 > 0 for all real q, so the degeneracy has no canonical
+  counterpart. Fixing the number does not make the block canonical.
+
+**No temperature verb used.** The q-to-T orientation is genuinely unsettled —
+beaned separately as `qou-re90` — so "cooled past" would have picked a side.
+
+**Left alone deliberately:** the molecular thresholds 1.045 / 1.17. No source
+for them anywhere in `content/` or `computations/`; the Lean marks that claim
+DEFERRED and mis-cites it to the parent block when it lives here. They carry
+the same u-vs-q risk that caused this defect. Not mine to guess at.
+
+Verification: pipeline render exit 0; `run-validate` exit 0 "Valid" with the new
+cross-ref RESOLVING (absent from the undefined-xref warning); qa-sweep 0/0/0
+with all 8 mechanical criteria refreshed at 0 findings; grep battery + expository
+pass clean.
