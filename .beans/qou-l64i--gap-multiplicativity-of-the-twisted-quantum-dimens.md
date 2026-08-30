@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T04:27:54Z
+updated_at: 2026-08-30T04:30:39Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -778,3 +778,34 @@ which `monoidal` should discharge.
 Finishers retried on the two-braiding goal — `monoidal`, two loaded `simp`s — still fail. TWENTY-FIVE
 approaches ruled out, but the shape of the remaining work has changed completely: it is now ONE
 grouping bridge plus the detachment, not a braid-relation search.
+
+
+GROUPING BRIDGE ALSO FIRES — verified. Braidings are natural in the ASSOCIATOR itself, which is what
+converts between the two groupings:
+
+    have hgrp : ∀ (Z : C) (k : (Y ⊗ Y' ⊗ X') ⊗ X ⟶ Z),
+        (β_ X (Y ⊗ Y' ⊗ X')).hom ≫ k
+          = X ◁ (α_ Y Y' X').inv ≫ (β_ X ((Y ⊗ Y') ⊗ X')).hom ≫ (α_ Y Y' X').hom ▷ X ≫ k := by
+      intro Z k
+      rw [← braiding_naturality_right_assoc]
+      simp
+
+    rw [hgrp]
+
+After it the braiding is `β_{X, (Y⊗Y')⊗X'}` — the grouping `braiding_naturality_right X (η_Y ▷ X')`
+needs for the cup detachment. So the blocker named in the previous entry is CLEARED.
+
+WHAT STILL BLOCKS THE DETACHMENT, and it is now the last thing: the cup `X ◁ η_Y ▷ X'` and the
+braiding are separated by coherence — `⊗𝟙.hom ≫ (α_ X Y (Y'⊗X')).hom ≫ X ◁ (α_ Y Y' X').inv`.
+`braiding_naturality_right` wants `X ◁ f ≫ β_{X,·}` ADJACENT. Tried and failed:
+`simp only [← MonoidalCategory.whiskerLeft_comp, Category.assoc]` then
+`rw [braiding_naturality_right_assoc]`; and `monoidal` on the whole thing. TWENTY-SEVEN ruled out.
+
+The remaining task is therefore narrow and purely coherence: merge the two `X ◁ (…)` factors and
+absorb the `⊗𝟙.hom` between them so the naturality pattern is adjacent, then one
+`braiding_naturality_right` detaches the Y-cup and leaves `β_{X,X'}` — the X-loop framing crossing
+the RHS wants. After that only the Y side remains, by the same method.
+
+STATE OF THE PROOF: six braidings reduced to two, groupings reconciled, one coherence merge away from
+the detachment. No Yang-Baxter, no slide lemma, no `sorry`. Every step above is verified to fire and
+the goal was printed after each.
