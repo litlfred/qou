@@ -394,7 +394,49 @@ def _vertex_channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]):
     since convention D's ``z = q³/(q²+1)`` is rational in q.  Under the
     excised convention C this dropped to the field of fractions of
     ``ℤ[q^{±1/2}]``.
+
+    Carries the same exponential-swell defect the NF fold had, and takes the
+    same cure.  MEASURED 2026-08-30: on the pure-``Expr`` path
+    ``atom_V_full_sym(1, 0)`` (A=1) already cost 0.30 s and
+    ``atom_V_full_sym(1, 1)`` (A=2) did **not finish in 120 s** — the running
+    pair ``(a, b)`` and the two channel products accumulate an unevaluated
+    ``Add``/``Mul`` tree exactly as ``hm_sym`` did.
+
+    Every intermediate here is Laurent whenever ``(c, d)`` are: ``a``, ``b``,
+    ``sp_chan = Π(c·q + d)`` and ``ap_chan = Π(−c·q⁻¹ + d)`` never divide by a
+    polynomial.  Only the final ``V_std = z·a + b`` leaves ``ℤ[q, q⁻¹]``,
+    because ``z = q³/(q²+1)`` is rational — so the boundary is that one line
+    and nothing else.
+
+    The fast path is therefore **conditional, not assumed**: each ``(c, d)``
+    is offered to ``LaurentQ.from_sympy`` and any chain carrying a
+    non-Laurent coefficient falls back to the original sympy loop verbatim.
+    ``_vertex_channels_sym`` is public-ish and accepts arbitrary chains, so
+    the fallback is what keeps this a pure speedup rather than a narrowing of
+    the accepted domain.
     """
+    chain = list(chain)
+
+    try:
+        pairs = [(LaurentQ.from_sympy(c, q), LaurentQ.from_sympy(d, q))
+                 for c, d in chain]
+    except (ValueError, TypeError, AttributeError):
+        pairs = None
+
+    if pairs is not None:
+        L_q = LaurentQ.monomial(1)
+        L_qinv = LaurentQ.monomial(-1)
+        a = _L_ZERO
+        b = _L_ONE
+        sp_chan = _L_ONE
+        ap_chan = _L_ONE
+        for c, d in pairs:
+            a, b = a * c * _L_H + a * d + b * c, a * c + b * d
+            sp_chan = sp_chan * (c * L_q + d)
+            ap_chan = ap_chan * (_L_ZERO - c * L_qinv + d)
+        V_std = z * a.to_sympy(q) + b.to_sympy(q)
+        return sp_chan.to_sympy(q), V_std, ap_chan.to_sympy(q)
+
     a = sp.Integer(0)
     b = sp.Integer(1)
     sp_chan = sp.Integer(1)   # symmetric channel running product
