@@ -49,7 +49,19 @@ ROOT = HERE.parent.parent
 # recomputed, so this probe consumes the SAME numbers the escape Lean was built on.
 JET_WITNESS = HERE / "deltalambda-jet-filtration-magnitude.witness.json"
 jw = json.loads(JET_WITNESS.read_text())
-q0 = mp.mpf(str(jw["data"].get("q0", jw["parameters"].get("q0", "1.10997859555733471"))))
+# The third-level default here was the superseded MUON pin A (bean qou-0hnz,
+# 2026-08-30). Verified unreachable: deltalambda-jet-filtration-magnitude.witness.json
+# supplies parameters.q0 = 1.1099785827513808075916690956 (proton), so the
+# default never fired and removing it moves no value. Left as a raise rather
+# than a proton literal — a missing upstream q0 is a real fault, not something
+# to paper over with any pin.
+_q0_raw = jw["data"].get("q0", jw["parameters"].get("q0"))
+if _q0_raw is None:
+    raise SystemExit(
+        "deltalambda_graded_two_anchor_nogo_probe: upstream witness carries no "
+        "q0 in data or parameters. Refusing to fall back to a hardcoded pin "
+        "from the OTHER anchor layer.")
+q0 = mp.mpf(str(_q0_raw))
 # strong targets (isospin/Coulomb-corrected; #3986/#3990) — comparison constants only
 RHO3 = mp.mpf("3.8128")     # ρ_strong(3)  (jet-filtration witness)
 RHO4 = mp.mpf("13.0316")    # ρ_strong(4)  (jet-filtration witness)

@@ -140,7 +140,21 @@ def main() -> int:
         if isinstance(r, dict) and "tr_M_q0_numerical_60dps" in r
     }
 
-    q_0 = mp.mpf(str(atomic.parameters.get("q_0", "1.1099785955573347")))
+    # The default here was the superseded MUON pin A (bean qou-0hnz, 2026-08-30).
+    # Verified unreachable: habiro-coefficients-atomic.witness.json supplies
+    # parameters.q_0 = 1.1099785827513808 (proton), so it never fired and
+    # removing it moves no value. NOTE a competing prior classification —
+    # docs/audits/2026-06-21-q0-clusterA-migration-plan.md lists this file among
+    # files "migrated A->C", i.e. treated as MUON. That migration is not in this
+    # tree, and the live dataflow is unambiguous: the only q0 this file consumes
+    # comes from a proton-anchored upstream. Raising rather than picking a pin.
+    _q0_raw = atomic.parameters.get("q_0")
+    if _q0_raw is None:
+        raise SystemExit(
+            "habiro_interpolate_cross_validator: habiro-coefficients-atomic "
+            "carries no parameters.q_0. Refusing to fall back to a hardcoded "
+            "pin from the OTHER anchor layer.")
+    q_0 = mp.mpf(str(_q0_raw))
     mp.mp.dps = 70  # work above the 60 dps interpolate precision
     # Tie tolerance to the active precision (Gemini #472 medium).
     global AGREEMENT_RTOL
