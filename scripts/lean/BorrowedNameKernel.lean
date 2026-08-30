@@ -116,6 +116,71 @@ def valueOnlyProjects (env : Environment) (self : Name) (v : Expr) : Bool :=
   let projs := ls.filter (isFieldProjection env)
   !projs.isEmpty && ls.all fun c => isFieldProjection env c || isStructure env c
 
+/-- Logical plumbing: constants that assemble or destructure a proof without
+    contributing mathematical content.
+
+    `valueOnlyProjects` deliberately ignores every non-local constant, on the
+    grounds that a proof "may still call foreign packaging (`And.intro`,
+    `Iff.intro`, `Exists.intro`) and Mathlib lemmas".  Packaging genuinely is
+    content-free; MATHLIB LEMMAS ARE NOT, and lumping the two together is the
+    predicate's false-positive class -- a proof that reads one class field and
+    then does real work through Mathlib is indistinguishable from a bare
+    projection, because nothing in `Row` counts Mathlib at all (`isCorpus` is
+    QOU/UGB/Fred2005, so `valueForeign` excludes it too).
+
+    This list is the plumbing half, so the remainder can be counted. -/
+def isPackaging (c : Name) : Bool :=
+  [``And.intro, ``And.left, ``And.right, ``And.elim,
+   ``Iff.intro, ``Iff.mp, ``Iff.mpr, ``Iff.rfl,
+   ``Exists.intro, ``Exists.elim,
+   ``Eq.refl, ``Eq.mpr, ``Eq.symm, ``Eq.trans, ``Eq.subst, ``Eq.ndrec,
+   ``rfl, ``id, ``trivial, ``True.intro,
+   ``congrArg, ``congrFun, ``congr,
+   ``of_eq_true, ``eq_true, ``eq_self,
+   ``Prod.mk, ``Subtype.mk, ``Sigma.mk, ``PProd.mk,
+   ``letFun, ``sorryAx].contains c
+
+/-- Constants from OUTSIDE this module that carry mathematical content --
+    everything the proof leans on that is neither local, nor plumbing, nor
+    compiler-generated.
+
+    This is the counter `Row` was missing.
+
+    üõë MEASURED 2026-08-30 AND REFUTED AS A DISCRIMINATOR ‚Äî the hypothesis
+    above is stated as it was proposed, and it is WRONG, in the opposite
+    direction.  It predicted that a false positive (a proof doing real Mathlib
+    work) would carry a HIGH count and a true self-assuming projection a low
+    one.  Measured over 297 theorems in 18 modules, against the 29 of those the
+    review ledger has already adjudicated under
+    `proof-no-self-assuming-projection`:
+
+        legit   (false alarm)  n=11  median  0.0  mean  3.5
+        genuine (real defect)  n=18  median  9.5  mean 13.7
+
+    The real defects carry MORE external machinery, not less, and the ranges
+    overlap end to end.  The best single threshold scores 62 %, which is exactly
+    the always-flag baseline ‚Äî i.e. ZERO discriminating power.
+
+    Why, in hindsight: a `legit` conditional theorem that honestly discharges
+    its goal from a stated hypothesis is a SHORT proof (`exact ctx.foo h`), so
+    it touches almost nothing external; a `genuine` self-assuming projection is
+    often DRESSED ‚Äî a `rw`, a `simp`, some arithmetic ‚Äî and the dressing is what
+    this counts.  So the quantity tracks how ornamented a proof is, not whether
+    the class carries the conclusion.
+
+    That is precisely what `valueOnlyProjects`'s own docstring already said:
+    *"what separates the two is whether the class carries the conclusion or its
+    inputs, and that is a reading, not a computation."*  This measurement is the
+    evidence for that sentence rather than a way around it.
+
+    KEPT, not reverted, and emitted as `substantive_external`, so that the
+    follow-up recorded in bean `qou-0avp` ("fix is a non-local non-packaging
+    constant count") is not proposed a second time by an agent who reads the
+    bean and not this.  Do NOT threshold it. -/
+def substantiveExternal (env : Environment) (self : Name) (e : Expr) : Array Name :=
+  e.getUsedConstants.filter fun c =>
+    modOf env c != some self && !isPackaging c && !c.isInternal
+
 /-- Is the proof term a reflexivity proof, after stripping lambdas? -/
 partial def valueIsRfl : Expr -> Bool
   | .lam _ _ b _  => valueIsRfl b
@@ -174,6 +239,7 @@ structure Row where
   defeq        : Bool
   isRfl        : Bool
   onlyProjects : Bool
+  substExt     : Nat
 
 /-- Analyse SEVERAL modules in ONE pass over the environment.
 
@@ -205,9 +271,12 @@ def analyzeModules (mods : List Name) : MetaM (Array (Name × Array Row)) := do
     let op := match ci.value? with
       | some v => valueOnlyProjects env self v
       | none   => false
+    let se := match ci.value? with
+      | some v => (substantiveExternal env self v).size
+      | none   => 0
     let row : Row := { decl := n, typeForeign := tf, typeLocal := tl,
                        valueForeign := vf, defeq := dq, isRfl := rf,
-                       onlyProjects := op }
+                       onlyProjects := op, substExt := se }
     acc := acc.insert self ((acc.getD self #[]).push row)
   return mods.toArray.map fun m => (m, acc.getD m #[])
 
@@ -233,9 +302,12 @@ def analyzeModule (self : Name) : MetaM (Array Row) := do
     let op := match ci.value? with
       | some v => valueOnlyProjects env self v
       | none   => false
+    let se := match ci.value? with
+      | some v => (substantiveExternal env self v).size
+      | none   => 0
     rows := rows.push { decl := n, typeForeign := tf, typeLocal := tl,
                         valueForeign := vf, defeq := dq, isRfl := rf,
-                        onlyProjects := op }
+                        onlyProjects := op, substExt := se }
   return rows
 
 def esc (s : String) : String := s.replace "\"" "\\\""
@@ -250,7 +322,8 @@ def render (self : Name) (rows : Array Row) : String :=
                           then "true" else "false") ++ "," ++
     "\"defeq_collapse\":" ++ (if r.defeq then "true" else "false") ++ "," ++
     "\"value_is_rfl\":" ++ (if r.isRfl then "true" else "false") ++ "," ++
-    "\"value_only_projects\":" ++ (if r.onlyProjects then "true" else "false") ++ "}"
+    "\"value_only_projects\":" ++ (if r.onlyProjects then "true" else "false") ++ "," ++
+    "\"substantive_external\":" ++ toString r.substExt ++ "}"
   "{\"module\":\"" ++ esc self.toString ++ "\",\"decls\":[" ++
     String.intercalate "," items.toList ++ "]}"
 
