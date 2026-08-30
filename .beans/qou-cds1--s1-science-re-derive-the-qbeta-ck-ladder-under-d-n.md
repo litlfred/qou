@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T06:34:34Z
+updated_at: 2026-08-30T06:45:30Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2596,3 +2596,51 @@ strings; that was str(mpf) at 65 dps.)
 
 SCOPE: the probe does not reproduce the corpus's recorded c_3 = -2.0693425728
 with either reference and says so up front. Its content is structural.
+
+## 2026-08-30 (fourth pass) — the audit is COMPLETE: nothing above N=0 is derived
+
+Traced every ingredient of the published ladder to its definition site.
+
+| ingredient | z-carrying? | derivation status |
+|---|---|---|
+| Q_A = abs(eps m_e/(q(q-1))) | no | eps is a coordinate sum; z-free |
+| hbar_q = (q-1)/q | no | definition |
+| b = sqrt([3]_q)/[2]_q | no | Hoefsmit off-diagonal, axial distance 2 — genuinely representation-theoretic, and convention-INDEPENDENT |
+| alpha = (z-1)h/2 | **YES, the only one** | **bare `def`, NO derivation theorem** |
+| c_2 = -1 | no | bare `def` (N2_factor), no theorem; 'structural' by unfolding only |
+| c_3 = -2 | no | **EXTRACTED by inverting CODATA**; the J_Hopf(q=1) match is post-hoc |
+| c_4 = -2b^4, c_5 = -(b^2+1/2) | no | read off b |
+
+**So 're-derive the ladder under D' has nothing to re-derive.** Above N=0 the
+ladder is one undeirved phase, one undeirved structural rung, one extracted
+rung, and two read off a representation-theoretic constant. The task is to
+DERIVE it, first time — that is a bigger and more honest statement of this
+bean than 'redo the derivation under a different convention'.
+
+Evidence for the alpha row specifically
+(content/.../lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean):
+`alpha` is a bare `noncomputable def` at line 61. Every theorem touching it
+evaluates at q=1 (`alpha_one`), states bar-behaviour
+(`eigenphase_bar_involution`), or restates the form (`q_beta_nK_structural_form`).
+None derives it. The same file at lines 686-690 already records that the
+'eigenphase = f' hypothesis is **falsified at u^1** — so the one derivational
+story alpha had is closed, negatively.
+
+## Two things I checked that were ALREADY KNOWN (corpus-grep caught both)
+
+1. The Lean ladder's `markovZ'` is convention **D** (`q^3/(q^2+1)`) while the
+   Python implementation is **C**. Not a discovery: the file's own docstring
+   carries the caveat ('a theorem evaluated only at the classical point is
+   convention-agnostic by accident of sitting exactly on the coincidence ...
+   anything evaluated away from q = 1 still needs re-deriving under D'), and
+   the migration commit bf7d8f3d3e is titled 'qou-cxjq: the c_k ladder — it
+   COMPILES under D, and that is a much weaker result than it sounds'.
+2. The D-frame H_3 Markov weights — already in y-lambda-symbolic-witness.json.
+
+## Where a next session should start
+
+Not on the ladder's algebra, which this pass has now exhausted. On alpha: it
+is the only convention-carrying object and it has no derivation. Either derive
+the single-wrap eigenphase from the D-frame two-row trace, or establish that
+the product ansatz Pi(1 + c_k u^k) with u = b*hbar_q^2 is not the right shape
+under D. The u^1 falsification above is a live constraint on the first route.
