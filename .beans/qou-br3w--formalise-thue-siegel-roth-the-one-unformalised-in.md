@@ -1033,3 +1033,47 @@ REMAINING:
      hypothesis is now either produced or a named arithmetic condition.
   2. Step 5, not LiouvilleWith.
 
+
+## 2026-08-30 -- Steps 1->2->3->4 assembled. Nothing assumed that the chain produces.
+
+roth_contradiction_selected (QOU/Mathlib/RothFinalAssembly.lean) produces the heights, N, the
+degrees, the auxiliary polynomial and the approximations, and derives False. Axiom-clean.
+
+WHAT THE PREVIOUS ENTRY GOT WRONG ABOUT b. exists_rothGammaFull_of_supply took b : Z as a CONSTANT
+and I called the implication shape "honest". It was honest about hbound and WRONG ABOUT b: the b it
+must be applied at is ceil(siegelHeight (rothDegrees H N) alpha mu), a function of the H and N the
+theorem itself produces. A constant b cannot be instantiated with it. Generalised to
+bOf : (Fin m -> N) -> N -> Z, and exists_rothGammaFull_auxiliary now DISCHARGES the height clause
+rather than assuming it -- the threshold mentions none of the produced data, so it goes in as the
+selection's floor T and comes back out of T <= H j.
+
+THE NORMALISATION SLACK HAD NO SOURCE. hT and hL' both need a two-sided estimate on r_h log H_h,
+and rothDegrees_log_bounds is two-sided only to within log H_h. Nothing in the selection bounded
+that against log N, so eta was a free constant with no way to make it small. Fixed by adding an
+exponent parameter k to the selection with the clause (H h)^k <= N; then log H_h <= (1/k) log N and
+eta = 1/k. That is the formal content of "let N be large compared with the heights".
+
+A FLOOR ON THE HEIGHTS IS NOT A FLOOR ON THE DENOMINATORS -- a rational of height 10^9 can have
+denominator 1 -- and hpt constrains the denominators. height_le_mul_den closes it: a rational
+bounded by B has max(|num|,den) <= B den. Without that lemma the theta clause is unreachable from
+anything the selection can impose.
+
+THE SLACK BUDGET IS NOT slack_pos's. This chain produces K = (2+delta)(1-eta) log N against
+L' = (1+eta) log N, so eta appears TWICE WITH OPPOSITE SIGNS -- it inflates the denominators' total
+size and deflates the approximation exponent. slack_pos's additive form sees only the first.
+fin_of_slack is the right budget: four slacks below a common t with t(16+5 delta) < delta, tight to
+that threshold (surplus t + t^2(3+2 delta)). Equivalently, the excess paid from is not delta but
+delta - eta(2+delta).
+
+New/changed: exists_rothGammaFull_auxiliary, card_prod_pos, selection_normalisation,
+log_pow_le_log, height_le_mul_den, hpt_of_floor, roth_contradiction_selected, fin_of_slack,
+hfin_of_slack, exists_slack_bound; k and T threaded through exists_heights_and_N and
+exists_rothGammaFull_of_supply. index_real_of_index_field dropped [NumberField K] (linter).
+
+REMAINING:
+  1. The parameter existence lemma: exhibit m, p, q, F, k, T, eps, nu, theta satisfying every
+     hypothesis of roth_contradiction_selected EXCEPT app. This is the non-vacuity check and it is
+     the only thing standing between the assembly and step 5. Order: delta -> t (exists_slack_bound)
+     -> eps, theta, k -> m (from hm2 AND nu/m <= t) -> T (from hTtheta) -> p, q, nu, F (hgap needs
+     q/p large, hfloorExp then needs F large; both are free).
+  2. Step 5: the supply app from a Liouville-type hypothesis, and hence not LiouvilleWith.
