@@ -1,0 +1,38 @@
+{
+ "probe": "m1_route_budget",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "inputs": {
+  "infl": "1.0282336",
+  "w_same": "0.5137602983",
+  "S_opp": "0.2811487478",
+  "B_opp": "0.6644560103",
+  "n_sampler": 800,
+  "n_opp": 800
+ },
+ "S_same": "0.3363043267",
+ "sum": "0.6174530745",
+ "bound_total": "1.000760337",
+ "checks": [
+  {
+   "name": "ACCOUNTING: the two halves reproduce the proved limit N/P -> 0.6605",
+   "pass": true,
+   "detail": "S_same 0.3363 + S_opp 0.28115 = 0.617453 against 0.6605, short by 6.52%. S_opp is still RISING at n = 800, so the sum is a lower bound on the limit and should sit slightly under -- overshooting would be the failure. The two halves and the target come from three different routes, so this is a real cross-check on the decomposition."
+  },
+  {
+   "name": "BOUNDS: at this precision the total is INDISTINGUISHABLE from 1",
+   "pass": true,
+   "detail": "granting S_same its measured value for free -- which is NOT a bound, and is generous -- and adding the only deterministic opposite-sign bound B_opp = 0.66446 +- 0.0042, the total is 1.00076 with a range of [0.991351, 1.01189] once infl's seed refits (['1.025', '1.012', '1.05']) and B_opp's seed spread are carried through. That range STRADDLES 1. So the honest verdict is not 'closes' and not 'misses' -- the bounds land exactly on the boundary and the precision in hand cannot separate them."
+  },
+  {
+   "name": "...and the tie-breaker is against us: B_opp is still RISING",
+   "pass": true,
+   "detail": "B_opp across the grid = ['0.6369', '0.6463', '0.6351', '0.6535', '0.658', '0.6645'] at n = [24, 40, 100, 200, 400, 800]. Landing on the boundary with the leading term still growing is not a near miss that a better constant fixes -- extrapolating the rise puts the total above 1. The opposite-sign half needs an averaging argument of its own; the same-sign half got one from the telescoping density reading, and that reading provably does not apply here."
+  }
+ ],
+ "passed": 3,
+ "total": 3,
+ "ms": 0
+}

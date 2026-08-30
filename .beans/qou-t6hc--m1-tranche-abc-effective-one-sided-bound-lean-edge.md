@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T15:10:03Z
+updated_at: 2026-08-30T15:28:41Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -466,3 +466,72 @@ real guard; the point estimate alone was what misled.
 fitted form, not a limit. And it settles only the SAME-sign half: `S_opp` carried
 ~44% of ω-weight and was saturating near 0.118 at n = 46, and nothing here
 touches it. That is now the only place the route can fail.
+
+
+---
+
+## Leg A, 2026-08-30 (fifth) — S_opp at n = 800, and the budget lands exactly on the boundary
+
+**S_opp measured at large n** by the same exact Plancherel edge sampler
+(`Λ ~ Plancherel(n+1)` by RSK, two independent GNW hook walks, ω weight exactly
+`(r−a)²(r+a)`). Sample count scaled ~1/n so the control tiers get real precision.
+
+| n | 24 | 40 | 100 | 200 | 400 | 800 |
+|---|---|---|---|---|---|---|
+| S_opp | 0.04847 | 0.11641 | 0.18659 | 0.23233 | 0.26107 | **0.28115** |
+| B_opp | 0.6369 | 0.6463 | 0.6351 | 0.6535 | 0.6580 | **0.6645** |
+| slack | 13.1 | 5.55 | 3.40 | 2.81 | 2.52 | **2.36** |
+| w_opp | 0.457 | 0.460 | 0.457 | 0.474 | 0.481 | 0.486 |
+
+**CONTROL:** reproduces the exact S_opp at n = 24 and 40 to **−0.23%** and
+**−0.62%**, and B_opp to within a few parts in a thousand.
+
+**A prediction of mine, confirmed.** I wrote before the run that the budget
+`S → 0.6605` with `S_same → 0.327` forces `S_opp → ≈0.33`, nearly triple its
+n = 46 value of 0.118. Measured: 0.281 at n = 800 and still rising. A flat S_opp
+would have meant the accounting was wrong; it is not.
+
+**FALSIFIER did not fire.** The Lean bound's slack `B_opp/S_opp` **shrinks**
+(13.1 → 2.36), so `|slope| ≤ D(0)/g` stays a bounded factor above the truth
+rather than degrading. B_opp itself is roughly flat, drifting up slowly.
+
+### The budget, and the honest verdict
+
+Two questions that must not be conflated:
+
+**(1) Does the accounting close?** `S_same → 2·w_same·infl/π = 0.3363` (from the
+inflation extrapolation) plus the separately measured `S_opp = 0.2811` gives
+**0.6175** against the independently proved **0.6605** — short by 6.5%, exactly
+as expected since S_opp is still rising. Three different routes agreeing is real
+evidence the decomposition is right and nothing is dropped or double-counted.
+
+**(2) Do the BOUNDS close it?** No — and not "no" either. Granting `S_same` its
+measured value **for free** (not a bound, and generous), plus the only
+deterministic opposite-sign bound `B_opp`:
+
+    S_same + B_opp = 1.00076,  range [0.99135, 1.01189]
+
+once infl's three seed refits (1.012, 1.025, 1.050) and B_opp's seed spread are
+carried through. **That range straddles 1.** The honest verdict is neither
+"closes" nor "misses": the bounds land exactly on the boundary and the precision
+in hand cannot separate them.
+
+**The tie-breaker is against us.** B_opp is still *rising* with n. Landing on the
+boundary with the leading term still growing is not a near miss a better constant
+fixes — extrapolating the rise puts the total above 1.
+
+**An error of mine, caught and gated.** The first version of this check reported
+"over 1 by 0.00076" and asked for B_opp to fall by "0.114%" — three significant
+figures on a gap eight times smaller than infl's own uncertainty. It now
+propagates the seed spreads and refuses to call it either way when they overlap 1.
+
+**A third serialisation defect.** The witness serialisers in this cluster route
+everything non-int through `nstr`, which turned `infl_per_seed` into the single
+string `"[...]"` and (earlier) `n` into `"12"`. Both silently broke a downstream
+consumer. Fixed at source in both probes; the budget probe also reads either form
+so old witnesses still work.
+
+**STILL OPEN.** qou-k5r5 OPEN. The same-sign half has an averaging argument (the
+telescoping density reading, `infl → 1.028`). The opposite-sign half has none —
+and that reading provably does not apply to it. **That is the whole remaining
+gap**, and it is now stated in one line rather than spread across five probes.

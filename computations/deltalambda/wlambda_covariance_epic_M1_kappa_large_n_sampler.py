@@ -317,7 +317,12 @@ def main():
             "probe": "m1_kappa_large_n_sampler",
             "bean": ["qou-t6hc", "qou-k5r5"],
             "nsamp": nsamp, "seeds": seeds,
-            "rows": [{k: (nstr(v, 12) if v is not None and not isinstance(v, int) else v)
+            # Lists and ints must survive intact: routing everything else
+            # through nstr turned `infl_per_seed` into the single string
+            # "[...]" and `n` into "12", each of which silently broke a
+            # downstream consumer. Third instance of this in the cluster.
+            "rows": [{k: ([nstr(x, 12) for x in v] if isinstance(v, list) else
+                          v if isinstance(v, int) or v is None else nstr(v, 12))
                       for k, v in r.items()} for r in rows],
             "infl_extrapolated": nstr(Iinf, 8),
             "checks": checks,
