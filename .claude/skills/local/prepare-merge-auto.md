@@ -65,6 +65,42 @@ Do NOT skip ahead — the review is the input to Phase 2.
 > only live external reviewer.** Waiting for a Gemini review that can
 > never arrive is the documented stall mode (PR #4456).
 
+> **🛑 CORRECTED 2026-08-30 (bean `qou-426q`) — READ THIS BEFORE THE BANNER
+> BELOW. The banner is half right, and the wrong half is the operative one.**
+>
+> Measured on #6104, #6116, #6132:
+>
+> | claim | verdict |
+> |---|---|
+> | `get_check_runs` returns `total_count: 0` — no `copilot-pull-request-reviewer` run is ever created | **CONFIRMED** |
+> | therefore **zero reviews arrive** | **FALSE** — Copilot reviewed #6104 and #6116 |
+>
+> **Copilot delivers a review as a `pull_request_review.submitted` WEBHOOK
+> EVENT, not as a check run.** The wait protocol below polls `get_check_runs`
+> for a check run — so it is structurally incapable of observing the thing it
+> waits for, and `total_count: 0` was read as "no review is coming" when it
+> only ever meant "not delivered as a check run". This is the
+> detector-blindness pattern AGENTS.md catalogues, applied to the merge
+> pipeline itself: **the signal was measured correctly and the wrong signal
+> was measured.** n=5 on a blind instrument is n=0 on the question.
+>
+> **Cost, on the record:** #6104 and #6116 were merged on the "do not wait"
+> guidance and the reviews landed minutes later, carrying six findings — one a
+> real correctness regression (a tautology introduced into a three-path
+> cross-check, so its printed "should be ≈ 1.0" ratio read exactly 1.0 by
+> construction). Fixed in #6132, after the merge.
+>
+> **What to do:** do NOT restore a blocking poll on check runs — that half of
+> `qou-gwe9` stands and the poll would still see nothing. Instead, subscribe
+> to the PR (`subscribe_pr_activity`) and expect the review to arrive as a
+> wake. A merge is not gated on a check run that does not exist, but a
+> subscribed session **must handle the review when it lands** — which, after a
+> merge, means a follow-up PR rather than nothing. **Latency is unmeasured**
+> (n=2, both within minutes); do not write a specific wait window into this
+> skill on that basis.
+>
+> The original banner follows, and its check-run half remains accurate:
+>
 > **🛑 MEASURED 2026-08-23 — do NOT run this wait. Copilot never enqueues.**
 > n=5 (bean `qou-gwe9`, AGENTS.md rule 10): on #5474, #5495, #5411, #5459 and
 > #5482 the review was requested explicitly and **zero** arrived. Critically
