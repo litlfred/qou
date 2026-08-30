@@ -200,6 +200,43 @@ supports say which blocks a joint model may use, nothing about magnitudes;
 the joint solve itself (constraint transfer, Phase-B LR constraints)
 remains the open research under `qou-dpy1`.
 
+### 4c. The joint $H_{15}$ solve (2026-08-30, beans `qou-t37g`/`qou-dpy1`)
+
+Two corrections and a result. **First, the "blocked on ³H/⁴He character
+tables" framing above was stale**: re-measured, all four subjects' block
+tables are complete ($p(6)=11$, $p(9)=30$, $p(12)=77$, $p(3)=3$ entries) —
+the "partial" flag was legacy truncation lore. **Second, the joint solve is
+therefore cheap**: for a split element of the parabolic
+$H_a \times H_b \subset H_{15}$ the block characters branch by
+Littlewood–Richardson,
+$\chi^\nu(x \otimes y) = \sum c^\nu_{\lambda\mu}\, \chi^\lambda(x)\chi^\mu(y)$,
+so both sides' $H_{15}$ cost vectors come from the existing per-subject
+tables plus the cached LR tables — no new character computation.
+[`fusion_process_joint_h15_lp.py`](../../computations/fusion_process_joint_h15_lp.py)
+(witness `fusion-process-joint-h15-lp.witness.json`, 4/4 assertions, both
+solves clarabel with duality gaps $\le 2.6\times10^{-43}$) solves the
+bar-fold operator-selection LP for both sides in the one frame:
+
+| side | pos-blocks | $n_{\mathrm{target}}$ | $y_0^*$ | active |
+|---|---|---:|---:|---|
+| D + T | 8/176 | +0.13189 | +0.0016948 | 7 |
+| ⁴He + n | 8/176 | +0.98208 | +0.0007731 | 7 |
+
+**Result: the two sides select the *same* seven active $H_{15}$ channels**
+(overlap = union; asserted in the witness) — the canonical $T_w$ active
+support is invariant across the fusion process, sharpening §4b(vi)'s
+containment into same-frame equality of the *selected* channels. The
+same-frame dual-price shift is $\Delta y_0^* = -9.217\times10^{-4}$. The
+final side exhibits exact split multiplicativity —
+$\mathrm{tr}_{15}(^4\mathrm{He} \otimes n) = \mathrm{tr}(^4\mathrm{He})\cdot\mathrm{tr}(n)$
+to $2.5\times10^{-9}$, the f64 accumulation floor of the branching sum —
+while the initial side exposes a **committed-witness inconsistency**: the
+deuteron χ table (`iterative-lp-dual-h6-deuteron.witness.json`) implies
+$\mathrm{tr}_{H_6} = 0.5752$ against the SDP witness's $0.38836$ — the
+known `tr_m_atom_via_transfer` import-cone drift pair. Which deuteron word
+is canonical is a staleness adjudication, not a solve question; flagged in
+the witness caveat.
+
 ## 5. The electron layer — ¹H's 13.6 eV is imported
 
 The dashboard's $B_{\mathrm{el}}(Z) = 1.44381\times10^{-5}Z^{2.39} +
