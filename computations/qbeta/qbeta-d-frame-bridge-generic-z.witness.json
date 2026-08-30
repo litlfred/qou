@@ -1,0 +1,89 @@
+{
+  "engine": "python+sympy (exact in q, z free)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:06:22.556587+00:00",
+  "commitSha": "224800183f1a72a20811c1207fd9644fa9a88ef4",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-d-frame-bridge-generic-z",
+  "scriptFile": "qbeta_d_frame_bridge_generic_z.py",
+  "scriptHash": "796f2243b9f2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_bridge_generic_z.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_bridge_generic_z.py"
+  },
+  "description": "The Q_beta bridge phase alpha = (z-1)h/2 is GENERIC in z, not a convention-C specialisation. z enters only via the Markov trace functional and the E_0/z normalisation; the transfer matrices are z-free. So the D re-derivation target is the RESUMMATION FORM and the ladder, not the phase formula.",
+  "where_z_enters": {
+    "transfer_matrices_are_z_free": true,
+    "T_pp": "[[q - 1/q, 1], [1, 0]]",
+    "T_nn": "[[0, 1], [1, -q + 1/q]]",
+    "T_mix": "[[q/2 - 1/(2*q), 1], [1, -q/2 + 1/(2*q)]]",
+    "Delta_beta": "[[(q**2 - 1)/(2*q), 0], [0, (q**2 - 1)/(2*q)]]",
+    "trace_functional": "Vhat = z*M_11 + M_21   (z-linear)",
+    "normalisation": "Q^B = ln(Vhat_dau/Vhat_par) * E_0/z"
+  },
+  "generic_z_bridge": {
+    "Vhat_pp": "q*z + 1 - z/q",
+    "Vhat_nn": "1",
+    "QB_over_E0": "log(q*z + 1 - z/q)/z",
+    "QA_over_E0": "(q**2 - 1)*(-q**2 + 2*q + 1)/(2*q**2)",
+    "expansion_about_q_eq_1": {
+      "w^0": "1",
+      "w^1": "z - 1",
+      "w^2": "-z**2/3 - 3*z/2 + 1/2",
+      "w^3": "z**3/3 + 2*z**2/3 + 3*z/2 - 1/2"
+    },
+    "first_order_matches_corpus_(z-1)": true,
+    "second_and_third_order_are_new": "the corpus records 1 + (z-1)h/2 + O(h^2) only; w^2 and w^3 above are the exact generic-z continuation"
+  },
+  "phases_at_proton_pin": {
+    "C": {
+      "alpha_at_q0": "-0.0523361202682284715",
+      "cos_alpha_at_q0": "0.998630777833329759",
+      "bar_ratio": "-1"
+    },
+    "D": {
+      "alpha_at_q0": "-0.0404857773406425699",
+      "cos_alpha_at_q0": "0.999180562853895953",
+      "bar_ratio": "(q**3 + q - 1)/(q*(q**3 - q**2 - 1))"
+    }
+  },
+  "scope": {
+    "bridge_term": "generic in z -> z_D substitution legitimate",
+    "cos_resummation": "justified by alpha bar-odd (qou-cds1 Step 4); bar(alpha)/alpha = -1 under C, non-constant under D -> FAILS",
+    "ck_ladder": "C-frame -> FAILS under D",
+    "guard_is_correct_for_the_ladder": "qbeta_utils.py's KeyError cites decayLadder_zC_threeRow_ne_zero and eigenphase_bar_defect_of_fullBar, which are about the ladder and the bar defect, not about the bridge coefficient. Nothing here asks for the guard to be loosened; it withholds z/alpha unless a convention is NAMED, and already serves D.",
+    "no_ck_wired": true
+  },
+  "context": {
+    "beans": [
+      "qou-cds1"
+    ],
+    "prior": [
+      "qbeta_d_frame_ladder_bar_weight_prune.py",
+      "qbeta_trm_identity_normalisation_under_d.py"
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138"
+}
