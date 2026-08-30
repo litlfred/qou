@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T08:03:24Z
+updated_at: 2026-08-30T09:26:24Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -232,3 +232,59 @@ one-line corollary waits on their merge. Offered it to them since the basis is t
 equal* pairwise, "retire vs repair" is less pressing than it looked: the cost of an
 extra name is bounded by whether an equivalence exists, and here one did. That argues
 for proving more of these before deleting any.
+
+
+## 2026-08-30 — the cell/Specht half: what is now proved, and what is not
+
+`QOU/BraidKnot/HeckeCellular.lean`. **This is not a cellular structure**, and the file
+header says so first. It is the part of the Graham–Lehrer datum provable from the
+presentation alone, plus the two cell modules that exist for every `n`.
+
+### Proved
+
+- **`antiAut` — cellular axiom (C2).** The anti-automorphism fixing every generator, as
+  an algebra map into the opposite algebra. It exists because the defining relations are
+  **palindromic**. This is a prerequisite for Specht theory rather than a corollary: it
+  is what makes the bilinear form on a cell module symmetric, hence what lets the
+  radical of that form cut out the simple head.
+- **`T_quadratic_swap`** — the quadratic relation with factors reversed, which is the
+  form the opposite algebra needs. Choice-free.
+- **`signRep`** (in MathlibExt, beside `indexRep`) — `T_i ↦ −1`. Its quadratic check is
+  *cheaper* than `indexRep`'s: the **second** factor `(T_i + 1)` vanishes outright, so
+  `q` is never used.
+- **`typeAIndexRep` / `typeASignRep`** — the `q`-analogues of the trivial and sign
+  representations, i.e. the extreme cell modules `S^{(n)}` and `S^{(1ⁿ)}`.
+- **`indexRep_ne_signRep`** — they are distinct exactly when `q ≠ −1`. That collision
+  point is where semisimplicity starts to fail, which is why the cellular machinery is
+  needed at all.
+
+`lean`-direct exit 0, no warnings, no sorries; `#print axioms` clean on all nine.
+`T_quadratic_swap`, `signRep` and `indexRep_ne_signRep` are choice-free.
+
+### Why type A, and not a general Coxeter matrix
+
+Worth recording because it is the whole reason this was tractable. For general `M` the
+reversal of `altProd a b m` is `altProd a b m` when `m` is odd and `altProd b a m` when
+`m` is even, so the general anti-involution needs a parity lemma **plus** a chain of
+auxiliary word identities (`altProd a b (n+1) = altProd a b n * last`, and the
+even/odd split). In type `A` the matrix takes only `1, 2, 3`, and at each value the
+commutation the reversal needs is *supplied by the relation itself*:
+
+| `m` | reversal needs | supplied by |
+|---|---|---|
+| 1 (`i = j`) | nothing | both sides are `altProd _ _ 1` |
+| 2 (far) | `a·b = b·a` | far-commutation |
+| 3 (adjacent) | `a·b·a = b·a·b` | braid |
+
+Three-way case split, no parity argument. And type `A` is where Specht modules live.
+
+### STILL OPEN — the Murphy basis
+
+`{m_{s,t}}` indexed by pairs of standard tableaux. It is what makes cellular axioms
+**(C1)** and **(C3)** statable at all, and with it the general Specht module `S^λ`.
+Needs the `T_w` basis (proved on #6053, transported here by `algEquiv`) plus
+standard-tableau combinatorics and the dominance order. Nothing in the file claims any
+of it.
+
+So this bean's remaining scope is now exactly: **the Murphy basis and `S^λ`**. The two
+extreme cell modules are done; the general ones are not.
