@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T12:12:21Z
+updated_at: 2026-08-30T12:33:15Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -860,3 +860,80 @@ one.
 PROBE: computations/qbeta/qbeta_three_nucleon_nf_alpha_spread_probe.py (5/5,
 exact Fractions from build_atom_nf_exact carried into mpmath at 50 dps).
 Gates: NEW dirty witnesses 0 on both ratchets.
+
+
+## 2026-08-30 — 🟧 OWNER RULING: single-wrap is canonical for the Q_beta channel
+
+Verbatim: **"single-wrap. it's A=1, no gluon, no electron"**.
+
+The three-builder fork of entry (14) is settled, and settled STRUCTURALLY rather
+than by residual: free-neutron beta decay is **A=1** — one nucleon, no nucleus —
+so the gluon dressing and the electron that `build_atom_nf` carries describe a
+different system.
+
+    CANONICAL   single-wrap             bare A=1 nucleon                alpha = -0.0523361
+    not this    build_nucleon_nf (9cr)  bare nucleon + quark crossings  alpha = -0.0354101
+    not this    build_atom_nf           + gluons + electrons            alpha = +0.2355793
+
+### Consequence 1 — the corpus split is CORRECT, not an inconsistency
+
+Entry (14) framed the Q_beta chain (single-wrap) and the live mass compute
+(`build_atom_nf`) as two objects of which "one is wrong for this channel".
+**Under the ruling neither is wrong.** They describe different systems and each
+is used where it belongs: a nucleus has gluon dressing and electrons, a decaying
+free neutron does not. That is a resolution of the tension, not a choice between
+its horns — and it retires the framing rather than deciding it.
+
+No electron double-count: the framework's Q_beta carries `m_e` as an explicit
+prefactor (`Q_beta = m_e * |q0^2-2q0-1|(q0+1)/(2q0^3)`), so the emitted electron
+enters the Q-value there, not inside the normal form. The atomic-mass convention
+comparing neutron to HYDROGEN is experiment's bookkeeping, not this
+construction's.
+
+### Consequence 2 — branch 3's acceptance test is UN-GATED
+
+The retraction of entry (12) established that the NF choice moves `alpha` at
+O(t), which is what gated the test. With one NF fixed there is no such freedom
+left, so entry (6)'s acceptance test is runnable against a fixed object.
+
+### Consequence 3 — and it immediately reads C, not D
+
+With the builder fixed, entry (6)'s Kohno-Drinfeld test (does `alpha` look like
+a holonomy angle `c*ln q`, `c` pinned at t^1 so t^2 is a PREDICTION) is
+unambiguous:
+
+    single-wrap C   t^1 -1/2   t^2 pred 1/4   actual 1/4   MATCH
+    single-wrap D   t^1 -1/2   t^2 pred 1/4   actual 5/4   FAILS
+
+**Under the canonical builder AND the canonical convention D, the ladder phase
+fails the holonomy acceptance test at second order.** Entry (6) recorded this as
+a "tension with the ruling" and could not press it, because the builder
+ambiguity was a live alternative explanation. That alternative is now gone: the
+t^2 failure is a property of convention D in this channel, not of a modelling
+choice.
+
+**Scope, carefully.** This does NOT overturn the 2026-08-15 convention-D ruling,
+which is corpus-wide and about the trace convention; it is one channel's phase
+failing one consistency test. It also does not make C right — entry (6) notes
+C's own t^3 coefficient (-5/16) misses its prediction (-1/6), so C is not a
+logarithm either. What is established is that the D reading of THIS phase now
+carries a second-order defect with no remaining excuse.
+
+### What the ruling does NOT do
+
+It does not close the ladder. At the proton pin the canonical builder still
+leaves **14.5%** of the required N=1 correction unexplained under C and **48.9%**
+under D. The ruling picks the object; the residual is untouched.
+
+### Route table
+
+Routes 1-4 stay closed. **Route 5 (transcendental / holonomy) is now the only
+live route AND is un-gated** — the first time in this bean's history that it is
+attemptable against a fixed object. Its three-part acceptance test stands
+(reproduce alpha through t^2; account for the -1/4 of Re(log-gap) and the
+discarded i*pi; deliver a value below 1), with the added datum that any
+construction must now explain why C passes t^2 where the canonical convention
+does not.
+
+PROBE: `qbeta_three_nucleon_nf_alpha_spread_probe.py`, now 9/9 — the ruling and
+both C/D holonomy verdicts are assertions, not prose.
