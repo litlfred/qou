@@ -56,9 +56,12 @@ from hoefsmit_numpy import hoefsmit_matrices_numpy  # noqa: E402
 # Canonical substrate q₀, inlined. NOTE: this is the MUON pin, not the proton
 # one — it read "proton-pinned; == computations/q_parameter.Q" until 2026-08-29
 # and sits 11.5371 ppb from the proton pin. Label corrected, value untouched;
-# whether muon is INTENDED is open (bean qou-fd0e). Separately, this is a
-# float64 literal, which the corpus's no-float64 directive forbids — fixing
-# that changes the compute, so it is recorded rather than done here.
+# whether muon is INTENDED is open (bean qou-fd0e). Separately: this is a float64
+# literal, and an earlier version of this note called that a no-float64
+# violation. It is not. This probe runs on numpy throughout
+# (`hoefsmit_matrices_numpy`, `np.linalg.eigvalsh`) and its witness records
+# `"engine": "numpy"`, so an mpf here would be downcast at the first call. It is
+# f64 BY CONSTRUCTION — bean qou-840k's 67-file class, not its 49 fixable ones.
 Q0 = 1.1099785955573347
 H = Q0 - 1.0 / Q0
 TOL = 1e-9

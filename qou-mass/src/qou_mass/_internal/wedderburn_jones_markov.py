@@ -485,6 +485,20 @@ def global_wedderburn_sum_q_hecke_seminormal(
       - y_λ via Wenzl Schur principal specialization (numerical-q-from-start)
       - χ^λ_q via Hoefsmit seminormal matrices at q_val (numerical, float64)
 
+    ⚠ THIS COPY IS STILL float64 AND ITS TWIN IS NOT.
+    `computations/wedderburn_jones_markov.py` was rewired onto the mpf
+    seminormal builder on 2026-08-30 (bean qou-840k item 3): it returns an
+    mpf and serialises its breakdown as strings. This copy could NOT follow,
+    because `tr_m_wenzl_bridge_mpfr` — which supplies
+    `_build_seminormal_matrices_mpf` and `_chi_lambda_of_word_mpf` — does not
+    exist under `qou-mass/src/qou_mass/_internal/`. Mirroring the edit here
+    would raise ImportError, so the divergence is recorded rather than faked.
+
+    Consequence for callers: the two copies now differ in RETURN TYPE
+    (float vs mpf) and in the breakdown's field types (float vs str), not
+    merely in precision. Do not assume they are interchangeable. Closing
+    this needs the bridge module vendored or the function re-homed.
+
     Drop-in replacement for the q=1-character-limited
     `global_wedderburn_sum_jones_markov` when consumers need the
     canonical Hecke character at q ≠ 1.  Numerically agrees with

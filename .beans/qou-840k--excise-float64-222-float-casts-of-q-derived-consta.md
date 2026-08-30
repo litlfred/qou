@@ -83,7 +83,7 @@ mathematics.
 - [x] tier the 222 by blast radius: canonical chain > witness-writing producers
       > probes > display-only — done; recount is 232 casts = 214 defects +
       18 display-only. See "Round 1" below, and its CORRECTIONS section.
-- [ ] rewire `global_wedderburn_sum_q_hecke_seminormal` onto
+- [x] rewire `global_wedderburn_sum_q_hecke_seminormal` onto
       `_build_seminormal_matrices_mpf`
 - [x] `y_lambda_at`: read `Q_MP`, and reconsider the 30-digit `sp.Float` cap
       — DONE 2026-08-24 (PR #5641). See "Round 2" below.
@@ -422,3 +422,96 @@ Item 3 (rewire `global_wedderburn_sum_q_hecke_seminormal` onto
 `_build_seminormal_matrices_mpf`) is the next-largest precision win and its
 Round 1 edit notes are still accurate — but VERIFY THE LINE NUMBERS FIRST.
 Round 1's item-4 references had drifted by a whole function in two weeks.
+
+
+## Round 3 (2026-08-30, branch `claude/anchor-followups-2026-08-08`) — ITEM 3 DONE
+
+Every line number in the Round-1 plan had drifted, exactly as the "VERIFY THE
+LINE NUMBERS FIRST" note warned: the function is at **470-551**, not 339-417.
+The mpf helpers moved too — `_build_seminormal_matrices_mpf` is at
+`tr_m_wenzl_bridge_mpfr.py:188` (plan said 144), `_chi_lambda_of_word_mpf` at
+**306** (plan said 262). Everything else in the plan held.
+
+### The trap the plan named, and it is worse than it reads
+
+    f64:  chi_lambda_of_word(sigmas, dim, word, n_gens_required: int)
+    mpf:  _chi_lambda_of_word_mpf(sigmas, dim, word, q=None)
+
+The call site passed **four positional arguments**. A literal swap would have
+bound `n_gens_required` (here `8`) to `q` — computing the character at q=8 and
+returning a number, silently. Passing `q=` by keyword is not style, it is the
+whole safety of this edit. Checked that dropping the argument loses nothing:
+`n_gens_required` has **zero uses** in the f64 body (AST-counted, not grepped);
+it is vestigial. The range-check above the loop still uses it.
+
+### A second downcast the plan did not mention
+
+`y_lambda_at` returns `sp.Float(..., 50)`. `mp.mpf(sp.Float(...))` rounds
+through a C double, so the conversion must go through `str()`. Written that
+way, with the reason in-line — this would have capped the rewire at ~15 digits
+while looking correct.
+
+### The consumer had to move in the same commit
+
+`delta_lambda_empirical_tabulation.py` did
+
+    q0_float = float(Q_MP)                                  # :403
+    ... q_val=q0_float                                      # :405
+    "contribution": fmt(term["y_at_q0"] * term["chi_q_at_q0"])   # :413
+
+The first is this bean's own defect class — an f64 cast of the pin — and would
+have discarded the entire benefit at the entry point. The third does
+**arithmetic on the breakdown fields**, which are now strings; left alone it
+breaks. Both fixed here. Three other readers (`:457-458` `mp.mpf(...)`,
+`q_sweep_2row_dominance:56` `float(...)`, `binding_row_length_stratification:106`
+`Decimal(...)`) all lift from strings already and are unaffected — checked, not
+assumed.
+
+### Verified by A/B, not by inspection
+
+    A=1 (proton), q = Q_MP
+      new (mpf)          1.14575969245730086968908159577
+      old f64 path       1.1457596924573032
+      relative difference  2.07e-15
+
+Float64 epsilon. That is the signature of a correct precision upgrade: the same
+mathematics, resolved further. A materially different number would have meant
+the rewire was wrong. Return type is `mpf` and the three breakdown fields are
+`str`, both confirmed by running it; the fixed consumer reproduces the same
+total.
+
+### The docstring's accuracy claim is REMOVED, not restated
+
+It quoted agreement with `markov_trace_recursive` of 1e-13 (A=1) to 1e-10
+(A=2). Those figures measured the f64 path. They are not re-quoted as mpf
+figures, because nobody has measured this path against `markov_trace_recursive`
+— asserting an improved bound I had not tested would be the same error as the
+label/value mislabels in `qou-fd0e`. The docstring now says to re-measure.
+
+### The twin CANNOT follow, and that is now recorded in the twin
+
+`qou-mass/src/qou_mass/_internal/wedderburn_jones_markov.py` stays float64:
+**`tr_m_wenzl_bridge_mpfr` does not exist under `qou-mass/`**, so mirroring the
+edit raises ImportError. A note in that copy's docstring records the divergence
+and, more importantly, that the two now differ in **return type and field
+types**, not merely precision — callers must not treat them as interchangeable.
+Closing it needs the bridge vendored or the function re-homed.
+
+### Witness refresh NOT run — deliberately
+
+Per this bean's standing rule and `qou-jjge`: the six named consumers now return
+values that differ in the last ~20 digits, so their committed witnesses are
+stale. Not regenerated here — in this corpus a producer IS its side effect, and
+a precision fix must not carry a multi-producer regeneration.
+
+### Also this round: `he_nu_sdp_psd_count_test` is NOT a violation
+
+`qou-fd0e` had me note it as forbidden float64. Re-checked: it runs on **numpy**
+throughout (`hoefsmit_matrices_numpy`, `np.linalg.eigvalsh`) and its witness
+records `"engine": "numpy"`. An mpf `Q0` would be downcast at the first call.
+It belongs to this bean's **67 f64-by-construction** files, not the 49 fixable
+ones. My earlier note overstated it; corrected there.
+
+`docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py` is pure
+Python and genuinely fixable — still open, and it also holds a **superseded
+vintage** (B, while the canonical pin is now C), which is a second decision.

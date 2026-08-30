@@ -400,17 +400,24 @@ def load_chi_via_numerical_path(Z: int, N: int) -> tuple[list[dict], mp.mpf]:
     via global_wedderburn_sum_q_hecke_seminormal.  All partitions of
     n = 3A included (no partial cache concerns)."""
     from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
-    q0_float = float(Q_MP)
+    # NOT float(Q_MP): global_wedderburn_sum_q_hecke_seminormal is an mpf
+    # kernel since qou-840k item 3, and a float64 cast here would throw away
+    # exactly the precision that rewire exists to keep.
+    q0_mp = mp.mpf(Q_MP)
     tr_M_total, terms = global_wedderburn_sum_q_hecke_seminormal(
-        Z=Z, N=N, q_val=q0_float
+        Z=Z, N=N, q_val=q0_mp
     )
     rows = []
     for term in terms:
         rows.append({
             "partition": term["partition"],
-            "y_at_q0": fmt(term["y_at_q0"]),
-            "chi_q_at_q0": fmt(term["chi_q_at_q0"]),
-            "contribution": fmt(term["y_at_q0"] * term["chi_q_at_q0"]),
+            # the breakdown now carries STRINGS (no float64 in witnesses),
+            # so lift before arithmetic — `str * str` would not raise here,
+            # it would raise only for some inputs, which is worse.
+            "y_at_q0": fmt(mp.mpf(term["y_at_q0"])),
+            "chi_q_at_q0": fmt(mp.mpf(term["chi_q_at_q0"])),
+            "contribution": fmt(mp.mpf(term["y_at_q0"])
+                                * mp.mpf(term["chi_q_at_q0"])),
         })
     return rows, mp.mpf(abs(tr_M_total))
 
