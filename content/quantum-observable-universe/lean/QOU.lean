@@ -1284,6 +1284,13 @@ import QOU.Mathlib.RothContradiction
 -- normalisations.  The worry that opened qou-ujl8 was unfounded; recording that they
 -- coincide is the fix, not a record reconciling them.
 import QOU.Mathlib.RothNormalisation
+-- O_K's replacement for "a non-zero integer has absolute value at least one".
+-- Over Z smallness at the one place forces vanishing; over O_K it does not -- an
+-- algebraic integer can be tiny at one place and enormous elsewhere with |N(x)| >= 1
+-- intact.  Vanishing needs smallness at phi_0 AND a bound at every other conjugate,
+-- so the O_K case has an input the Z case does not.  Not a generalisation: a
+-- different theorem with different hypotheses.
+import QOU.Mathlib.RothAlgebraicInteger
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
