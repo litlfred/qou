@@ -4,8 +4,22 @@ Three conventions on ONE construction (the retired script's typed nucleon):
   OLD  = retired script: z = 1/(sqrt q + 1/sqrt q), tr_M(e-) = z^3
   HALF = the bean's scratch: OLD's z and Gram, tr_M(e-) = h z^2 + z   <- trace only
   D    = live pyhecke.gram: z = q^3/(q^2+1),      tr_M(e-) = h z^2 + z
+
+## On float64 in this file
+
+This probe is deliberately binary64 throughout, and `probe-float64-guard`'s
+default advice (redo it in exact arithmetic) would destroy what it measures.
+The question Part 2 asks is *how singular the Gram matrix is under D* — the
+answer, lambda_min ~ 3e-16, is a statement about the float64 noise floor, and
+every margin below is reported as a ratio against that floor. Recomputing the
+spectrum exactly would return an exact zero and answer a different question:
+that the radical exists, which the closed form `(-1/q)^len(w)` already gives
+analytically on line 115. The numerical run is the cross-check on that closed
+form, so it has to stay numerical. Individual lines carry `# float64-ok:`.
 """
-import sys, numpy as np
+# This probe measures a float64 noise floor, so numpy's binary64 spectrum is
+# the instrument, not an approximation of one. See the module docstring.
+import sys, numpy as np  # float64-ok: see above
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "substrate"))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h
@@ -109,7 +123,10 @@ trm_D = [1, z_D, z_D, z_D**2, z_D**2, h*z_D**2 + z_D]
 G_D = build_gram(trm_D)
 w, V = np.linalg.eigh(G_D)
 null = V[:, 0]
-print(f"  smallest eigenvalue {w[0]:+.4e}; next {w[1]:+.4e}  -> ratio {w[1]/max(w[0],1e-300):.2e}")
+# The 1e-300 is a divide-by-zero floor, not a tolerance: w[0] is the near-null
+# eigenvalue and may legitimately underflow to exactly 0.0.
+spectral_gap = w[1] / max(w[0], 1e-300)  # float64-ok: guarding a float64 division at the float64 noise floor
+print(f"  smallest eigenvalue {w[0]:+.4e}; next {w[1]:+.4e}  -> ratio {spectral_gap:.2e}")
 print(f"  measured null vector : [{' '.join(f'{v:+.5f}' for v in null)}]")
 # The library's closed form: v_i = (-1/q)^len(w_i) over NF_BASIS.
 closed = np.array([(-1.0/q0)**len(b) for b in NF_BASIS])
@@ -123,13 +140,18 @@ print()
 p9, n9, tr_D, st_D = typed(z_D, trm_D, G_D)
 for nm, nf in (("proton", p9), ("neutron", n9)):
     x = np.array(nf)
-    comp = float(np.dot(x, closed))
+    # np.dot already returned a binary64 scalar; float() only unwraps the
+    # 0-d numpy value, so it introduces no precision loss of its own.
+    comp = float(np.dot(x, closed))  # float64-ok: see above
     x_q = x - comp * closed              # project OUT the radical
     gx, gx_q = G_D @ x, G_D @ x_q
     print(f"  {nm}: component along radical = {comp:+.6f}")
     print(f"     min(Gx)          = {gx.min():+.6f}")
     print(f"     min(Gx) on quot. = {gx_q.min():+.6f}   (change {abs(gx.min()-gx_q.min()):.2e})")
-    print(f"     margin / noise floor = {gx.min()/max(abs(w[0]),1e-300):.2e}")
+    # Same divide-by-zero floor as above; this ratio IS the reported quantity —
+    # how far the Frobenius margin sits above the singular-Gram noise floor.
+    margin_over_floor = gx.min() / max(abs(w[0]), 1e-300)  # float64-ok: the noise floor is the unit of measurement here
+    print(f"     margin / noise floor = {margin_over_floor:.2e}")
 print()
 
 # ══════════════════════════════════════════════════════════════

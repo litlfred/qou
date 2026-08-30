@@ -35,7 +35,6 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
-import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -257,15 +256,23 @@ def main() -> int:
         # expression, so they passed for any value including `inf` and `nan`,
         # which is precisely what a name ending `_finite` promises to exclude
         # (bean `qou-26f2`). The name already said what to check; it now does.
+        #
+        # Finiteness is decided in sympy, not by rounding to float64. The
+        # first draft of this fix used `math.isfinite(float(shift_p))`, which
+        # answers a different question: a shift too large for a double raises
+        # `OverflowError` instead of reporting False, so the check that is
+        # meant to catch a blow-up would crash on one. `.is_finite` returns
+        # None when sympy cannot decide, and `is True` sends that to a
+        # failure — unknown is not verified.
         .add_assertion(
             "shift_proton_h3_finite",
-            computed=math.isfinite(float(shift_p)),
+            computed=bool(sp.sympify(shift_p).is_finite is True),
             expected=True,
             source="canonical Markov trace via NF basis",
         )
         .add_assertion(
             "shift_neutron_h3_finite",
-            computed=math.isfinite(float(shift_n)),
+            computed=bool(sp.sympify(shift_n).is_finite is True),
             expected=True,
             source="canonical Markov trace via NF basis",
         )
