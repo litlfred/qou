@@ -47,10 +47,19 @@ tau2_num_b = sp.expand(3*(3*b**2 + 2) - 2*4*(b + 2))                # 9b²−8b�
 min_q = sp.solve(sp.numer(sp.together(sp.diff(tau, q))), q)
 min_q = [c for c in min_q if c.is_positive]
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 set_compute_dps()
 tau_f = sp.lambdify(q, tau, 'mpmath')
-q0 = mp.mpf('1.10997859555733471')
+# q0 RESOLVED, never a literal. Q1 ruling 2026-08-30: the lever1/z2bn
+# binding-period cluster is PROTON. It held pin A, which `fca08de7d2` RETIRED
+# on 2026-08-22 -- that value inverts to m_mu/m_e = 206.768282989315, matching
+# no published CODATA and contradicting the ratio its own defining witness
+# declared as input. Keeping the value was never an option; only the layer was
+# open. Archeology + ruling:
+# docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.
+q0 = mp.mpf(Q_50_DIGIT_STR)
 tau0 = tau_f(q0); lamp0 = (tau0 + mp.sqrt(tau0**2 - 4))/2
 
 assert det_M == 1 and qint_identity == 0 and bar_even == 0
@@ -68,7 +77,11 @@ out = {
   "qint_form_identity_residual": int(qint_identity), "tau_bar_even_residual": int(bar_even),
   "tau_minus_2_numer_over_qint2": str(tau2_num_b),
   "tau_gt_2_all_q": True, "tau_min": "21/8", "tau_min_at_q": "1",
-  "tau_at_q0": float(tau0), "lambda_plus_at_q0": float(lamp0), "lambda_minus_at_q0": float(1/lamp0),
+  # NO FLOAT64 (owner directive): these three ENTER THE WITNESS and are
+  # derived from q0, so they must carry mpmath precision. fmt() is handed the
+  # mpf itself -- fmt(float(x)) would short-circuit to str() and keep the f64.
+  "tau_at_q0": fmt(tau0), "lambda_plus_at_q0": fmt(lamp0),
+  "lambda_minus_at_q0": fmt(1/lamp0),
   "classical_PF_monodromy": "SL2(Z), parabolic trace 2 at I1 nodal fibres (Delta deg6 squarefree, #2755 Step1)",
   "exclusion": ("(b): tau not in Z (even tau(1)=21/8) => M not in SL2(Z) => M is NOT the topological PF "
                 "monodromy. M is a real/q-difference SL2(R) operator with bar-even trace tau([2]_q)."),

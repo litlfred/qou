@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-13T10:16:21.003860+00:00",
-  "commitSha": "9a9399327cb62d0693a1fe1e38759235cd58bb13",
+  "computedAt": "2026-08-30T10:45:27.829989+00:00",
+  "commitSha": "f2f08e74b37932d8163b99b796c01e13b7b9d221",
   "assertions": [
     {
       "name": "content_monomial_is_half_degree_shape_sum",
@@ -17,8 +17,8 @@
   "durationMs": 19,
   "computation": "lever1-content-monomial-separation",
   "scriptFile": "lever1_content_monomial_separation.py",
-  "scriptHash": "b712715d2fbb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e2a2d1674f18",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_content_monomial_separation.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_content_monomial_separation.py"
   },
   "description": "Lever-1 W12 (z2bn follow-up): analytic separation of the content-monomial contribution to the binding statistic. The W9 descent-scalar-off object is exactly the closed shape sum C_n(q) = Σ_{λ⊢n} f^λ q^content(λ) (RSK: #involutions of shape λ = f^λ) — verified equal to direct involution enumeration (n≤8), palindromic C_n(q)=C_n(1/q), and C_n(1)=I(n). Growth law: deg_q C_n = n(n-1)/2 = EXACTLY HALF deg_q Z_n = n(n-1) (the descent scalar q^(2k) doubles the top degree), so the content part carries half the asymptotic q-Gevrey slope: slope(C_n) -> ln q_0, slope(Z_n) -> 2 ln q_0, ratio -> 1/2 (measured at q_0, n≤70 via the direct partition sum). This is the analytic form of W9's descent-dominant/content-secondary decomposition: content is not vanishing but exactly the 'square root' of the full growth. Exact sympy + 50-dps mpmath; no fit; no wiring; EXPLORATORY.",
   "data": {
@@ -37,8 +48,8 @@
     "P3_content_at_q1_eq_involutions": true,
     "degC_eq_n_n_minus_1_over_2": true,
     "P4_bar_even_O_qm1_sq_rigidity": true,
-    "slope_C_over_ln_q0": "1.010455407",
-    "slope_Z_over_2ln_q0": "1.035430372",
-    "slope_ratio_C_over_Z": "0.4879398147"
+    "slope_C_over_ln_q0": "1.010455415",
+    "slope_Z_over_2ln_q0": "1.0354304",
+    "slope_ratio_C_over_Z": "0.4879398049"
   }
 }

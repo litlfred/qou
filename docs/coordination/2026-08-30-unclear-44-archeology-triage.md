@@ -283,7 +283,7 @@ retyping either is right under neither for long."
 
 | Q | Family | Files | Count |
 |---|---|---|---|
-| **Q1** | **lever1 / z2bn binding-period cluster** — was the binding period `a_D^(n)` / Plancherel-content work done on the ideal(muon) or experimental(proton) layer? | rows 22, 23, 24, 25 | **4** |
+| ~~**Q1**~~ | ~~**lever1 / z2bn binding-period cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded".** | rows 22, 23, 24, 25 | **4 ✅** |
 | ~~**Q2**~~ | ~~**qbeta c_k / rung-2 / stage-C cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded" below.** | rows 26–35 | **10 ✅** |
 | **Q3** | **`mmu_gap_a4_*` scratch scripts** — two undocumented ≤61-line evaluation scripts. A plausible answer is "these are scratch; delete rather than rule" | rows 36, 37 | **2** |
 | **Q4** | **`he_nu_sdp_*` probes** — the SDP saturation/PSD/barfold trio | rows 38, 39, 40 | **3** |
@@ -411,4 +411,36 @@ write-guard, and the resolved value is the proton pin
 at module scope for the 6 that expose it, and via module-scope reachability of
 the import for the 4 that build q₀ inside `main()`.
 
-### Q1, Q3, Q4, Q5, Q6 — still open (12 files).
+### Q1 — **PROTON** (owner, 2026-08-30). Closed.
+
+All 4 migrated: `lever1_content_monomial_separation.py`,
+`lever1_plancherel_content_separation.py`, `sw_period_growth_probe.py`,
+`substrate/z2bn_pf_monodromy_synthesis.py`. None was a two-anchor probe (each
+holds exactly one q₀ literal, no proton accessor, no vintage C, no muon
+language).
+
+**Row 24 needed more than a pin swap, and this is the part worth reading.** It
+held `q` AND a hardcoded `tau = 2.6423863133015`. Verified at 40 dps against
+the closed form in `z2bn_pf_monodromy_synthesis.py:34`,
+`tau = 3(3q⁴+8q²+3)/(4q(q+1)²)`: that constant is **exactly tau(pin A)** to all
+14 digits it carried. Migrating `q` alone would have paired a proton `q` with a
+pin-A `tau` inside one expression — an internal straddle, the very defect class
+this campaign removes. `tau` is now DERIVED from `q`, so it follows the pin and
+cannot go stale again.
+
+Confirmed after regeneration, independently: `z2bn`'s own `tau_at_q0` (which
+always computed tau from q₀ by lambdify) moved
+`2.642386313301486 → 2.6423863094488463948` — exactly the tau(proton) predicted
+by hand, with the old value exactly tau(pin A). The two files now agree.
+
+**Rows 22–23 lose digits (68 → 50), correctly**, for the same reason as row 35:
+the extra digits belonged to the retired anchor, and no 68-digit proton pin
+exists.
+
+Witnesses regenerated: 3. `sw_period_growth_probe` writes none — and it does
+not currently run at all, failing in `mp.polyroots` at line 52 on the symbolic
+discriminant's branch points. That is upstream of any q₀ use and independent of
+the pin (`zk` comes from `sp.discriminant(P, X)`), so it is a pre-existing
+defect, recorded not fixed.
+
+### Q3, Q4, Q5, Q6 — still open (8 files).

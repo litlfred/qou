@@ -37,6 +37,7 @@ import sympy as sp
 import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 z, X = sp.symbols('z X')
@@ -73,8 +74,27 @@ for n in range(2, 9):
 print("  → |coeff| ratio = (n-1/2) GROWS without bound ⇒ super-exponential period")
 
 # ---- compare to lw (the #1765 target) and to depth-2 (SL2) -------------------
-q = mp.mpf('1.1099785955573347')
-tau = mp.mpf('2.6423863133015')
+# q0 RESOLVED, never a literal. Q1 ruling 2026-08-30: the lever1/z2bn
+# binding-period cluster is PROTON. It held pin A, which `fca08de7d2` RETIRED
+# on 2026-08-22 -- that value inverts to m_mu/m_e = 206.768282989315, matching
+# no published CODATA and contradicting the ratio its own defining witness
+# declared as input. Keeping the value was never an option; only the layer was
+# open. Archeology + ruling:
+# docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.
+#
+# `tau` IS DERIVED HERE, not re-pinned. It was the literal 2.6423863133015,
+# which is EXACTLY tau(pin A) to all 14 digits it carried -- verified at 40 dps
+# against the closed form in substrate/z2bn_pf_monodromy_synthesis.py:34,
+#     tau = 3(3q^4 + 8q^2 + 3) / (4q(q+1)^2)
+# where that file computes tau FROM q0 by lambdify rather than freezing it.
+# Migrating q while leaving that constant would have paired a proton q with a
+# pin-A tau in one expression -- an internal straddle, and precisely the defect
+# class this campaign removes. Deriving it means tau follows the pin and cannot
+# go stale again. Measured: tau moves 2.6423863133014861 -> 2.6423863094488464,
+# a relative 1.458e-9.
+q = mp.mpf(Q_50_DIGIT_STR)
+tau = 3 * (3 * q**4 + 8 * q**2 + 3) / (4 * q * (q + 1)**2)
 def qint(k): return (q**k - q**(-k)) / (q - 1 / q)
 def qfac(n):
     r = mp.mpf(1)

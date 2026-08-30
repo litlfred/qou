@@ -74,9 +74,22 @@ for p in (str(HERE / "substrate"), str(HERE)):
 import mpmath as mp  # noqa: E402
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
-Q0_STR = "1.10997859555733471989976322048322502665620840878015368660798114614493"
+# q0 RESOLVED, never a literal. Q1 ruling 2026-08-30: the lever1/z2bn
+# binding-period cluster is PROTON. It held pin A, which `fca08de7d2` RETIRED
+# on 2026-08-22 -- that value inverts to m_mu/m_e = 206.768282989315, matching
+# no published CODATA and contradicting the ratio its own defining witness
+# declared as input. Keeping the value was never an option; only the layer was
+# open. Archeology + ruling:
+# docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.#
+# The literal here carried MORE digits than the proton pin has (68 vs 50).
+# That is not a precision loss: the extra digits belonged to the RETIRED
+# anchor, there is no 68-digit proton pin to migrate to, and `Q_MP` is built
+# from the same 50-digit string, so it offers nothing further.
+Q0_STR = Q_50_DIGIT_STR
 
 N_EXACT = 8      # sympy exact identity checks (P1-P4 + degrees)
 N_NUM = 40       # numeric growth-law slope via the direct partition sum (p(40)=37338)
