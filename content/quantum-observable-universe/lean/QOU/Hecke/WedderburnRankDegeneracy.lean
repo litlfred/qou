@@ -273,7 +273,7 @@ theorem yLambda_forced_one (n : ℕ) (WD : WedderburnDecomp (R := ℚ) n 1 ℚ)
     WD.y_lambda (lam0 n) = 1 := by
   have hdet := WedderburnDecomp.yLambda_determined (WD := WD) (lam0 n)
   rw [hpi, rankOne_blockDim_forced] at hdet
-  have h1 : (MarkovTrace.trace (R := ℚ) n 1) (1 : ℚ) = 1 := rfl
+  have h1 : (MarkovTrace.trace (R := ℚ) n 1) (1 : ℚ) = 1 := MarkovTrace.normalised
   rw [h1] at hdet
   simpa using hdet.symm
 
@@ -288,7 +288,7 @@ theorem yLambda_two_not_realisable (n : ℕ) (lam : Partition n)
   intro h2
   have hdet := WedderburnDecomp.yLambda_determined (WD := WD) lam
   rw [hpi, h2] at hdet
-  have h1 : (MarkovTrace.trace (R := ℚ) n 1) (1 : ℚ) = 1 := rfl
+  have h1 : (MarkovTrace.trace (R := ℚ) n 1) (1 : ℚ) = 1 := MarkovTrace.normalised
   rw [h1] at hdet
   rcases Nat.eq_zero_or_pos (blockDim lam) with h0 | hpos
   · rw [h0] at hdet; norm_num at hdet
