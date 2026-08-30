@@ -364,11 +364,18 @@ theorem universal_property_existence
       a follow-up lake-equipped session that can verify the tactic
       form. -/
 -- Ref: [kassel2008] Kassel & Turaev, "Braid Groups", Springer 2008, Ch. 4
-axiom universal_property
+theorem universal_property
     {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] (q : R)
     {A : Type w} [CommRing A] [Algebra R A]
     (f : W → A) (hf : IsHeckeAlgebraMap q f) :
-    ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s
+    ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s := by
+  obtain ⟨φ⟩ := universal_property_existence q f hf
+  refine ⟨φ.val, φ.property, ?_⟩
+  intro ψ hψ
+  refine QOU.IwahoriHecke.Quotient.hom_ext R q (Set.univ : Set W) ψ φ.val ?_
+  intro s
+  show ψ (T q s.val) = φ.val (T q s.val)
+  rw [hψ s.val, φ.property s.val]
 
 /-! ## Closure paths (downstream consumers gated on this infra)
 

@@ -213,4 +213,30 @@ theorem universal_property_hecke_quadratic
   rw [T]
   exact RingQuot.liftAlgHom_mkAlgHom_apply (S := R) f w (FreeAlgebra.ι R s)
 
+/-- **Uniqueness half of the universal property.** Two `R`-algebra maps out of
+`IwahoriHeckeQuot R q S` that agree on every generator `T s` are equal.
+
+Together with `universal_property_hecke_quadratic` (existence) this gives the full
+`∃!` statement. It was previously recorded as an `axiom` in `Defn.lean`, on the
+stated ground that the container had no `lake` binary and `elan` could not reach the
+Lean release server; that obstacle is gone, and the proof is three steps:
+
+`RingQuot.mkAlgHom` is surjective, so it suffices that the two composites with it
+agree. Those are algebra maps out of a *free* algebra, so `FreeAlgebra.hom_ext`
+reduces the question to agreement on the generators `ι s` — which is the hypothesis,
+since `T s` is by definition `mkAlgHom (ι s)`. -/
+theorem hom_ext {A : Type*} [Ring A] [Algebra R A]
+    (φ ψ : IwahoriHeckeQuot R q S →ₐ[R] A)
+    (h : ∀ s : S, φ (T R q S s) = ψ (T R q S s)) :
+    φ = ψ := by
+  have hcomp : φ.comp (RingQuot.mkAlgHom R (heckeRel R q S))
+      = ψ.comp (RingQuot.mkAlgHom R (heckeRel R q S)) := by
+    apply FreeAlgebra.hom_ext
+    funext s
+    simpa [T] using h s
+  apply AlgHom.ext
+  intro x
+  obtain ⟨y, rfl⟩ := RingQuot.mkAlgHom_surjective R (heckeRel R q S) x
+  exact congrArg (fun (α : FreeAlgebra R ↥S →ₐ[R] A) => α y) hcomp
+
 end QOU.IwahoriHecke.Quotient
