@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T10:04:31Z
+updated_at: 2026-08-30T11:03:56Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -104,3 +104,58 @@ decide it, and it must decide it before an effective bound can be aimed.
 
 That is the concrete handoff to A: do not target `-C n^2` until the form is
 settled, because the data does not support it and cannot be made to.
+
+
+## Leg A worked (2026-08-30): the target term is identified, and it is not the one the workplan aims at
+
+Not closed. What changed is WHICH average has to be bounded, and that the
+obvious analytic input is exactly critical rather than sufficient.
+
+`computations/deltalambda/wlambda_covariance_epic_M1_edge_ratio_decomposition.py`,
+6/6, witness committed, exact Fractions, n = 4..32.
+
+Splits the Fulman ratio at the `+1`:
+
+    N/P = S + Q,   S := 2 E_omega[(d_a - d_r)/(r - a)]   (SLOPE term)
+                   Q := 2 E_omega[1/(r - a)]             (SMALL-GAP term)
+
+**Measured:** `sqrt(n) * Q` is FLAT at 2.04..2.08 over n = 16..32 (spread
+1.96%), so `Q ~ 2.065/sqrt(n) -> 0`. The small-gap term VANISHES, and the
+slope term therefore carries the entire proved limit N/P -> 0.6605, i.e.
+`E_omega[slope] -> 0.33025`.
+
+**The consequence for the effective bound.** The natural limit-shape input is
+pointwise: `|Omega'| <= 1` gives `|dD/dc| <= 1/2`. That yields `S <= 1`, hence
+`N/P = S + Q <= 1 + Q > 1` -- it cannot prove `N/P < 1` at ANY finite n. The
+pointwise bound is exactly critical and useless alone. Strictness comes entirely
+from the omega-AVERAGE: 0.33025 against 0.5, a margin of ~1.51x. So the target
+is an error-controlled bound on `E_omega[|dD/dc|]`, not on `|dD/dc|`.
+
+## Two errors of mine, both caught by the measurement
+
+1. **Signed gap.** `r - a` is a difference of ABSOLUTE VALUES and both
+   orientations of every edge are enumerated, so it takes both signs, and
+   `Pterm > 0` either way (that is Fact A). Summing `Pterm/(r-a)` unoriented
+   cancels to EXACTLY ZERO. My `S + Q == N/P` control passed straight through
+   it -- the identity holds term-by-term whatever the orientation -- so the
+   control verified ALGEBRA, not MEANING. What caught it was Q = 0 being
+   implausible. Fixed by orienting each edge to r > a and re-measuring the
+   diagonal lengths in the source diagram of that orientation; the sign flip is
+   exact because `D_mu(cA) = D_lam(cA) + 1` and `D_mu(cB) = D_lam(cB) - 1`.
+
+2. **`d_a > d_r` is false in general.** I argued the added content is closer to
+   the main diagonal so its diagonal is longer. But `d_a = D_lam(c_A)` is
+   measured BEFORE the box is added, and an addable corner's diagonal can be
+   empty: `lambda = (9,)` adding at content -1 has `d_a = 0`, `d_r = 1`. That is
+   why S is NEGATIVE for n < 13 and only crosses zero at n = 13. The sign of S
+   at small n is a transient, not the asymptotic behaviour, and reading the
+   n <= 12 table alone would invert the conclusion.
+
+Also measured: the per-edge slope does NOT reach the discrete Lipschitz bound 1
+on omega-positive edges until n = 15, and exceeds it (max 2) thereafter --
+because `r - a` is a gap between ABSOLUTE contents, so opposite-sign contents
+give `|c_r - c_a| > r - a`. The Lean lemma `diagLen_lipschitz` bounds the slope
+across ADJACENT diagonals only; the structure probe's "d_a - d_r <= r - a" holds
+for SAME-SIGN contents, a qualifier I dropped when first quoting it.
+
+Gap qou-k5r5 stays OPEN. Nothing wired; no fit; L2 unchanged.
