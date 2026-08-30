@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-30T03:42:33Z
+updated_at: 2026-08-30T06:42:56Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -262,3 +262,55 @@ wrong by a large factor and I am not replacing it with a confident number the ot
 
 Probe: `computations/pieri_corner_node_identity_probe.py` (6 facts, exact sympy).
 Audit: `docs/audits/2026-08-30-pieri-corner-identity-and-the-substrate-question.md`.
+
+
+## 2026-08-30 (later) — RETRACTION: the q-FRT bridge was never open
+
+My entry above named the q-analogue of Frame-Robinson-Thrall as the one open piece. **It is proved,
+sorry-free, on main, and was before I wrote that.** Chain:
+
+  SYTHookFormulaBetaMonoid.rowHookProdF_mul_betaGapProdF   per-row FRT, ANY commutative monoid,
+                                                           arbitrary f : N -> M
+  SYTHookFormulaBetaProdMonoid.prodHooksF_mul_betaGapProdF whole-diagram assembly, same generality
+  SYTBetaGapVandermonde.prodHooksF_one_sub_pow_pair        the q-case, f n = 1 - Q^n
+
+Machine-checked: prodHooksF_one_sub_pow_pair is [propext, Classical.choice, Quot.sound], and all
+five files in that chain have ZERO sorry tokens.
+
+### Why I got it wrong, and the pattern
+
+I trusted `LagrangeCoeffSum`'s docstring, which names the q-FRT identity as its own open input and
+points at bean qou-j7ln. That docstring is stale -- qou-j7ln is completed and the identity landed
+after it was written. AGENTS.md's rule that a source file's `## Status` note is not authoritative
+applies to docstrings verbatim; I suspended it for a file whose Lean I had just read closely. Same
+failure mode as trusting a sibling's bean, one artifact type over.
+
+THREE TIMES this session the corpus already held what I was about to build: sum_eval_div_prod_eq_coeff,
+the hook-update rule (qou-j7ln), and the whole q-FRT chain. Common cause: my grep ran on TOPIC words
+(Pieri, telescope, Macdonald) while these files are named for their METHOD (SYTBetaGapVandermonde,
+LagrangeCoeffSum). None surfaces on a topic grep; all three surface on the SHAPE of the statement.
+
+### Landed this turn
+
+`QOU/Mathlib/QHookVandermonde.lean` (sorry-free, generic [CommRing R]): converts the pair-product
+form to a genuine Vandermonde in x_i = Q^{beta_i}, via the termwise
+    x_i - x_j = (-x_j)(1 - Q^{beta_i - beta_j})     (beta_j <= beta_i)
+The monomial/sign correction is left as the product prod_{i<j}(-x_j), NOT evaluated to
+(-1)^C(k,2) Q^{sum_j j beta_j}: the evaluated form is where sign errors live and no consumer needs
+it, since it cancels on both sides of any ratio. Also corrects the stale LagrangeCoeffSum docstring
+and the two artifacts of mine that repeated the false claim.
+
+### What is actually left
+
+WIRING, not identity-proving: discharge the `hw` hypothesis of sum_eq_one_of_corner_ratio_scaling
+by feeding it the box-addition ratio, which is a quotient of two instances of
+prodHooksF_one_sub_pow_vandermonde. No schedule -- my last two estimates on this front were both
+wrong, in opposite directions.
+
+### Literature
+
+Not needed and not available. The library (544 docs) has no Macdonald and no symmetric-functions
+text; `hdr` (Hecke algebras) has Schur elements but no hook products. Irrelevant anyway: a citation
+does not discharge a Lean goal, and the identity is proved in-corpus over a generality no textbook
+states (arbitrary f over a commutative monoid). Lit would only serve paper attribution, and would
+need ingesting first.
