@@ -1,133 +1,155 @@
-# The Ursell alternating-sign property, and what it says about the b₃ obstruction
+# The 3-body sign obstruction is a missing $(-1)^{n-1}$
 
 **Date.** 2026-08-30
-**Scope.** **(a)** — a literature identification and a question it raises. No
-derivation, no refutation, no magnitude. Nothing here is wired to production.
-**Sources.** The six-PDF cluster-expansion drop of commit `a12f83c4cd`, ingested
-into `library/` by PR #6152.
+**Scope.** **(a)** — an identification, not a derivation. It does not refute
+`MayerThreeBodySign` and does not close the magnitude.
+**Producer.** [`computations/probes/ursell_alternation_sign_identity_probe.py`](../../computations/probes/ursell_alternation_sign_identity_probe.py)
+→ `ursell-alternation-sign-identity.witness.json`, 6/6 assertions.
+**Source.** `library/s10955-022-02992-6/` — Jansen & Kolesnikov, *Cluster
+Expansions: Necessary and Sufficient Convergence Conditions*, J. Stat. Phys.
+**189**:33 (2022), ingested by PR #6152.
+**Bean.** `qou-rwhv`.
 
 ---
 
-## 1. The finding
+## 0. Correction — the first version of this document had the sign backwards
 
-`library/s10955-022-02992-6/` — Jansen & Kolesnikov, *Cluster Expansions:
-Necessary and Sufficient Convergence Conditions*, J. Stat. Phys. **189**:33
-(2022) — carries, in §3.1 *"Forest Partition Schemes: Alternating Sign
-Property"*, the classical **alternating-sign property of the Ursell functions**:
+**What it asserted (2026-08-30, first commit):** that the paper's Eq. (3.1),
+$\varphi^{T}_{n} = (-1)^{n}|\varphi^{T}_{n}|$, gives $\varphi^{T}_{3} \le 0$,
+"the same conclusion `MayerThreeBodySign.lt_of_b3_pos` reaches"; that the two
+results agree; and that the escape therefore requires an attractive component.
+
+**What is true:** the classical law is $(-1)^{n-1}\varphi^{T}_{n} \ge 0$, so
+**$\varphi^{T}_{3} \ge 0$** — the *opposite* sign, and the sign nature has. The
+two results do **not** agree; they differ by exactly the factor at issue.
+
+**How the exponent was settled.** Not by re-reading the scan. The OCR of Eq.
+(3.1) in `library/s10955-022-02992-6/sections/` does read `(−1)n`, but that is
+inconsistent with the paper's **own Corollary 3.3**, which gives sign $(-1)^k$
+for $\psi_{n,n+k}$ together with $\psi_{1,1+k} = \varphi^{T}_{1+k}$ — i.e. sign
+$(-1)^{m-1}$ for $\varphi^{T}_m$. The probe settles it by computing
+$\varphi^{T}_n$ directly from the paper's definitions (p. 5: Mayer
+$f = e^{-v}-1$, weight $w(G) = \prod_{\{i,j\}\in E(G)} f_{ij}$, $\varphi^{T}_n =
+\sum_{G\in C_n} w(G)$) in exact rational arithmetic. At $n = 2$,
+$\varphi^{T}_2 = f \le 0$, so the $(-1)^n$ reading fails immediately; measured,
+it fails on **0 of 200** trials across $n = 2,3,4,5$ while $(-1)^{n-1}$ holds on
+**200 of 200**. Treat the OCR'd exponent as a scanning artifact.
+
+**What the error contaminated, and its state.** The PR #6152 body (rewritten),
+bean `qou-rwhv` (rewritten), and §1–§5 of this document (rewritten below). It
+reached no Lean file, no witness, and no content block. The lesson is the
+ordinary one: **the excerpt I read was OCR of a superscript, and a superscript
+is exactly what OCR loses.** A sign quoted from a scan is not measured until it
+is recomputed from the definitions.
+
+---
+
+## 1. The identity
+
+Under the Boltzmann identification $f^{\text{corpus}} = e^{-v}$, so that the
+Mayer variable is $g = f^{\text{corpus}} - 1$, the corpus's connected 3-body
+cumulant is **exactly minus** the third Ursell function:
 
 $$
-  \varphi^{T}_{n}(x_1,\dots,x_n) \;=\; (-1)^{n}\,\bigl|\varphi^{T}_{n}(x_1,\dots,x_n)\bigr|
+  b_3^{\text{corpus}}(f_{12},f_{13},f_{23}) \;=\; -\,\varphi^{T}_{3}(f_{12}-1,\;f_{13}-1,\;f_{23}-1)
 $$
 
-valid for a **non-negative pair potential** — i.e. purely repulsive
-interactions. The paper cites it as its own ref `[8, Eq. (2.8)]` and proves the
-multi-rooted generalisation
-$(-1)^{k}\psi_{n,n+k}(x_1,\dots,x_{n+k}) \ge 0$ twice over: once from a
-forest-graph equality (Corollary 3.3), and once, in Remark 3.1, by reduction to
-the classical $n=1$ statement through Lemma 3.4.
+Measured in exact rational arithmetic (`fractions.Fraction`, no tolerance, no
+float) on **400/400** random non-uniform triples in $(0,1)^3$. It holds trivially
+at $n = 2$ as well: $W(2) = 1 - f = -(f-1) = -\varphi^{T}_2$.
 
-**At $n = 3$ this reads $\varphi^{T}_{3} \le 0$.**
+**It is a low-order identity and does not extend.** At $n = 4$ the corpus's `b4`
+matches **neither** $+\varphi^{T}_4$ nor $-\varphi^{T}_4$ — 200/200 mismatches
+against each. So the correspondence covers $n \le 3$, which happens to be the
+whole of the 3-body question, and nothing beyond it. Do not quote it as a
+general theorem.
 
-## 2. The corpus reaches the same conclusion by a different route
+## 2. The alternation
 
-`QOU.MassTheory.MayerThreeBodySign` (sorry-free, generic `CommRing`) proves, for
-the multiplicative assembly $W(K) = 1 - \prod_{i<j} f_{ij}$ and the Ursell
-inversion $b_2 = W(2)$, $b_3 = W(3) - 3b_2$:
+In the purely repulsive class — $v \ge 0$, i.e. $g \in (-1,0)$, i.e.
+$f^{\text{corpus}} \in (0,1)$, which is where **every** framework bond factor
+lives — the Ursell functions **alternate**:
 
-* `b3_eq` — $b_3 = 3f_{pn} - 2 - P_3$;
-* `b3_le_of_nonneg` — from $P_3 \ge 0$, $b_3 \le 3f_{pn} - 2$;
-* `lt_of_b3_pos` — therefore $b_3 > 0 \implies f_{pn} > 2/3$.
+$$(-1)^{n-1}\,\varphi^{T}_{n} \;\ge\; 0 \qquad\Longrightarrow\qquad \varphi^{T}_2 \le 0,\quad \varphi^{T}_3 \ge 0,\quad \varphi^{T}_4 \le 0.$$
 
-The framework's own $f_{pn} = z_D = 0.6126880\ldots < 2/3$, so $b_3 < 0$ is
-forced, **for every edge set** (the edge set enters only through $P_3 \ge 0$).
+## 3. The consequence — the obstruction is a missing sign
 
-Two results, two arguments, one conclusion: the connected three-body cumulant is
-non-positive, and the edge set is not what is doing it.
+The corpus carries a **uniform** minus at both orders: $b_n = -\varphi^{T}_n$
+for $n = 2$ and $n = 3$.
 
-## 3. What is NOT established — the shape check
+* At $n = 2$ that is **correct**. Binding is positive, $\varphi^{T}_2$ is
+  negative, so $b_2 = -\varphi^{T}_2 > 0$. ✓
+* At $n = 3$ the Ursell function has **already flipped sign on its own**. The
+  uniform minus therefore inverts the physical answer, and produces exactly the
+  negative $b_3$ that `MayerThreeBodySign` proves is forced.
 
-The two statements are **not** the same theorem, and this document does not
-claim they are. Per AGENTS.md §"Grep the claim SHAPE, not only the topic",
-the differences are exactly where a false identification would live:
+Restoring the alternation — $b_n = (-1)^{n-1}\varphi^{T}_n$, which reproduces
+$b_2 = -\varphi^{T}_2 > 0$ **and** gives $b_3 = +\varphi^{T}_3 > 0$ — yields the
+sign AME has, for **every** $f \in (0,1)$: no threshold, no $f_{pn} > 2/3$, no
+attractive component.
 
-| | classical $\varphi^{T}_{3}$ | corpus `b3` |
-|---|---|---|
-| **the object** | the third Ursell function of a grand-canonical **activity expansion** of a genuine pair potential | an inclusion–exclusion cumulant of a **binding functional**, $b_3 = \bar B(3) - 3b_2$ |
-| **the hypothesis** | $U \ge 0$ pointwise, on the **potential** | $P_3 \ge 0$, on a **product of bond factors** |
-| **the setting** | infinite-volume statistical mechanics with a convergent expansion | a finite 4-point combinatorial identity over a generic `CommRing` |
-| **what proves it** | forest-graph equality / Lemma 3.4 | a one-line bound on $3f_{pn} - 2 - P_3$ |
+**So `MayerThreeBodySign`'s $b_3 < 0$ is not a physical obstruction. It is a
+missing $(-1)^{n-1}$.**
 
-Nothing above licenses reading `MayerThreeBodySign` as an *instance* of the
-classical theorem. What it licenses is the question:
+## 4. Magnitude, at the framework's own bond factors
 
-> **Is the corpus's $b_3$ an Ursell function in the theorem's sense?**
+Measured at the canonical proton pin, convention D, uniform bonds, scale pinned
+at the deuteron ($\text{MeV}/W$-unit $= B_{\text{AME}}(D)/b_2$):
 
-and both answers are informative:
+| typing | $f_{pn}$ | corpus $b_3$ ($W$) | $\varphi^{T}_3$ ($W$) | $b_3$ restored (MeV) | ÷ AME avg 1.4262 | ÷ AME triton 1.8081 |
+|---|---|---|---|---|---|---|
+| χ ($f_{pn} = z_D$) | 0.6126880371 | −0.3919307866 | +0.3919307866 | **2.2511** | 1.578 | **1.245** |
+| probe-2 | 0.5082297894 | −0.6065851255 | +0.6065851255 | **2.7439** | 1.924 | 1.518 |
 
-* **If yes** — the obstruction is far broader than the $1 - \prod f$ assembly.
-  No change of assembly escapes it, `QOU.Mass.PairwiseCumulantVanishing` and
-  `MayerThreeBodySign` become two shadows of one classical fact, and the only
-  remaining escape is the **hypothesis**.
-* **If no** — then `MayerThreeBodySign`'s vocabulary ("Mayer", "Ursell") is
-  doing more work than its content, and the naming should be scoped to say so.
+Right sign, and within **1.25×–1.92×** of the AME target with **zero free
+parameters**. For calibration, the chirality-weighted-trace candidate family
+recorded in bean `qou-9v7t` sits **6–14× short** on the same quantity.
 
-## 4. Why the hypothesis is the interesting half either way
+**This is a postdiction of a magnitude, not a derivation of one**, and the
+over-shoot is real: 25 % against the triton anchor at the χ typing, 58 % against
+the isospin average. Which of those two is the right target is itself open — see
+`QOU.Mass.PairwiseCumulantVanishing`'s docstring and bean `qou-9v7t`, where the
+Coulomb asymmetry of the A = 3 doublet is flagged as unresolved.
 
-The classical theorem's escape route is documented and named: **the potential
-must fail to be non-negative**, i.e. carry an attractive component. And that is
-not a gap in the literature — it is the subject of the very paper that records
-the sign property. Jansen–Kolesnikov's own abstract:
+## 5. What is **not** established
 
-> "We prove a new convergence condition for the activity expansion of
-> correlation functions in equilibrium statistical mechanics with **possibly
-> negative pair potentials**. For non-negative pair potentials, the criterion is
-> an if and only if condition."
+* **`MayerThreeBodySign` is not refuted.** Every statement in it remains true of
+  the object it is about — `b3_le_of_nonneg`, `lt_of_b3_pos` and
+  `b3_neg_of_le` are correct. What is established is that **that object differs
+  from the classical one by a sign the classical theory does not carry.** The
+  same goes for `QOU.Mass.PairwiseCumulantVanishing`, whose pairwise-additive
+  vanishing is unaffected.
+* **The Boltzmann identification is an interpretation.** Nothing in the corpus
+  derives $f^{\text{corpus}} = e^{-v}$; the framework's bond factors are Markov
+  factors built from $z$. §1 is a pure algebraic identity and needs no such
+  reading, and §2–§3 need only $f \in (0,1)$, which is measured. But calling
+  $g = f - 1$ *"a Mayer function of a repulsive potential"* is a reading, and
+  the physical conclusion in §3–§4 inherits it. **Establishing or refuting that
+  identification is the load-bearing next step**, and it is what `qou-rwhv`
+  now asks.
+* **Nothing here supplies the extensive term.** The four sorry-free prunes
+  bounding the $\ge 3$-body scaling (`CoordinationSaturation`,
+  `ChainBondOrderDependence`, `BodyOrderRecurrenceDepth`, `MayerThreeBodySign`)
+  are untouched as *scaling* results; only the last one's *sign* reading changes.
 
-So the sign obstruction and the convergence theory for the class that escapes it
-are in the same 47 pages, and the corpus now holds them.
-
-**Where the framework sits.** The per-bond factors are $f_{pp} = z$,
-$f_{nn} = z - h$, $f_{pn} = z - h(1/2 - \delta/4)$ (bean `qou-9v7t`). At the
-canonical proton pin $z_D = 0.6126880\ldots$, and the two typed factors subtract
-from it, so **all three lie strictly in $(0,1)$**.
-
-> **⚠ The next step is an interpretation, and it is flagged as one rather than
-> asserted.** Under a Boltzmann reading $f = e^{-\beta U}$, $f < 1
-> \Leftrightarrow U > 0$, so every bond in the framework would be repulsive and
-> an attractive channel would show up as a bond factor **greater than 1** —
-> of which there is none. But the corpus's $f$ are Markov/bond factors built
-> from $z$, **not** exponentiated potentials, and no step in the corpus
-> identifies them with a Boltzmann factor. Establishing or refuting that
-> identification is the concrete next measurement, and until it is done this
-> paragraph is a suggestion about where to look, not a result.
-
-## 5. What would settle §3
+## 6. What would settle §5
 
 Exhibit the polymer / cluster model whose activity expansion has the corpus's
-$b_3$ as its third Ursell coefficient — i.e. name the polymer set, the weight,
-and the compatibility relation. With that in hand the classical theorem either
-applies (and the obstruction is structural, §3 first branch) or provably does
-not (second branch). Absent it, the agreement in §2 is a coincidence of
-conclusions and should be reported as one.
+$b_3$ as its third Ursell coefficient — name the polymer set, the weight, and
+the compatibility relation. With that, $f = e^{-v}$ is either derived or
+provably unavailable. `rebenko2022virial` is the relevant setting note: it works
+the **canonical** (fixed particle number) ensemble, which is what matches a
+nucleus, where the grand-canonical activity expansion does not.
 
-## 6. The other four sources in the drop, and what each is for
+## 7. The other four sources in the drop
 
 | ref | role |
 |---|---|
-| `procacci2016mayer` | Penrose's tree-graph identity with a minimum-spanning-tree partition scheme; improved convergence **radii** for Mayer and Virial series under a stable, tempered potential. A radius result — it says nothing about any cumulant's sign. |
-| `rebenko2022virial` | graph expansions of correlation functions in the **canonical** ensemble via Kirkwood–Salsburg. The canonical (fixed particle number) setting is the one that matches a nucleus; the grand-canonical activity expansion does not. Relevant to §5. |
-| `dousse2016ising` | weighted dependency graphs for the Ising model, with **cumulants** as the working object and CLTs for pattern counts. The bounding technique, not a sign result. |
-| `mann2021partition` | the **quantum** member of the drop — approximation algorithms for quantum partition functions on abstract-polymer / cluster-expansion machinery. Cite for the polymer-model formulation. |
+| `procacci2016mayer` | Penrose's tree-graph identity with a minimum-spanning-tree partition scheme; improved convergence **radii** for Mayer and Virial series under a stable, tempered potential. A radius result — no cumulant sign. |
+| `rebenko2022virial` | graph expansions of correlation functions in the **canonical** ensemble via Kirkwood–Salsburg. See §6. |
+| `dousse2016ising` | weighted dependency graphs for the Ising model, **cumulants** as the working object, CLTs for pattern counts. A bounding technique. |
+| `mann2021partition` | the **quantum** member of the drop — approximation algorithms for quantum partition functions on abstract-polymer / cluster-expansion machinery. |
 
-`library/ising/` is a later revision of `dousse2016ising` and is recorded in
-`docs/audits/library-duplicate-ledger.json`; two grep hits across the two
-directories are **one** source.
-
-## 7. What this does not do
-
-It does not supply the extensive term, it does not close the ⁴He magnitude, and
-it does not refute anything. The magnitude gap recorded in bean `qou-9v7t`
-(6–14× on `b3_sym`, depending on variant) is untouched. This is a relocation of
-the *sign* question from the assembly to the positivity hypothesis, plus the
-observation that the corpus now holds the convergence theory for the class on
-the other side of that hypothesis.
+`library/ising/` is a later revision of `dousse2016ising`, recorded in
+[`library-duplicate-ledger.json`](library-duplicate-ledger.json); two grep hits
+across the two directories are **one** source.
