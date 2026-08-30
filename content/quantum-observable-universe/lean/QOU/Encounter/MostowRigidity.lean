@@ -232,7 +232,7 @@ instance unknot : MostowRigidity Unknot where
 noncomputable instance figureEight : MostowRigidity FigureEight where
   -- EXACTIFIED 2026-08-30 (bean `qou-f8lit`).  This field used to be the decimal
   -- literal `2.02988321281930`, a 15-significant-digit TRUNCATION of the corpus's own
-  -- exact `VOL_4_1 = 2·Cl₂(π/3) = 2.029883212819307250011597804990…`.  The two differ
+  -- exact `VOL_4_1 = 2·Cl₂(π/3) = 2.029883212819307250042405108549…`.  The two differ
   -- at the 16th digit, so `volumeInvariant FigureEight ≠ VOL_4_1` -- while
   -- `figureEightTriangulation_volume : figureEightTriangulation.volume = VOL_4_1` is
   -- proved sorry-free.  Any bridge statement keyed on the literal was therefore

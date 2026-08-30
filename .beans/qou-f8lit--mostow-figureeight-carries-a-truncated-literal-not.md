@@ -315,3 +315,64 @@ to `norm_num` on literals.
 - A **third** carrier exists: `Archimedean/HyperbolicVolumeTranscendence.vol_4_1 :=
   figureEightEntry.volume.value`, its own registry entry, whose comment says it "uses the
   identical value". Not touched, not audited against the exact constant.
+
+---
+
+## 2026-08-30 — `VOL_4_1_decimal` was WRONG, and I had been quoting it as exact
+
+Chasing the third `Vol(4₁)` carrier turned up a defect worse in kind than the truncation
+this bean is named for.
+
+### The finding
+
+    canonical 2·Cl₂(π/3)  = 2.0298832128193072500424051085490…
+    VOL_4_1_decimal (was) = 2.029883212819307250011597804990     ← WRONG from sig fig 21
+    MassDerivation (24 d) = 2.029883212819307250042408           ← correct, err 2.9e-24
+
+`VOL_4_1_decimal` — the corpus's *designated approximation carrier*, the thing
+`abs_VOL_4_1_sub_decimal_lt` certifies against — presented **30 digits of which only 20
+were right**, error `3.08e-20`. Verified by three independent routes: `2·Cl₂(π/3)`,
+`6·Λ(π/3)`, `2·Im Li₂(e^{iπ/3})`, all agreeing to 30 places.
+
+**A truncated literal is correct but short; this was incorrect and long.** The extra
+digits invite exactly the trust a short value would not get — and the corpus disagreed
+with itself, since `MassDerivation.vol_figure_eight` carried the right value at 24
+digits all along.
+
+**Nothing in Lean was unsound.** `abs_VOL_4_1_sub_decimal_lt` bounds the gap by `1/10`,
+and `3.08e-20 < 1/10` comfortably, so the theorem held either way. That is the point
+worth keeping: **a coarse certified bound does not protect a decimal's digits.** The
+bound was doing its stated job and could not have caught this.
+
+### I propagated it
+
+I quoted `…011597804990` as "the exact value" in `MostowRigidity`'s new comment, the
+`FigureEightVolumeBridge` header, and this bean. All corrected. Corrected in
+`FigureEightVolume.lean` and `ClausenValueBounds.lean` too.
+
+**One near-miss worth recording:** my first pass was a blanket string replace, which also
+rewrote the *historical* note in `VOL_4_1`'s docstring recording what the definition used
+to be — the bad value. That falsified the record. Restored, with the old value left in
+place and annotated. A historical note that silently adopts a later correction stops
+being a record.
+
+### Prior art — the corpus knew about the family, not this instance
+
+Corpus-grepped before claiming novelty. Bean `qou-jgew` found **seven** wrong hand-typed
+`Vol(4₁)` values in one session and named this one "the bad 8-file literal";
+`docs/audits/2026-06-21-q0-clusterD-and-vol41-fixes.md` fixed one `.py` probe. **Neither
+drain reached the Lean carrier.** So this is a known family with a live member in the
+most authoritative place it could have been.
+
+(That audit calls the value "wrong at the 16th sig-fig". Measured here it is the **21st**,
+error 3.08e-20 not ~1e-16. The audit's figure was about a different file's variant.)
+
+### Still live, not fixed here
+
+Six `computations/` sites carry the sibling variant `2.0298832128193072500115970029`
+(`mmu_r9_two_rung_v2_probe.py`, `mmu_simpler_form_search_probe.py`,
+`mmu_categorical_correction_first_probe.py`, `mmu_categorical_correction_refined_probe.py`,
+`mmu_r9_two_rung_extension_probe.py`, `mmu_r9_consistency_check.py`) plus the committed
+witness `mmu-categorical-correction-first-probe.witness.json`. Fixing those needs producer
+re-runs and is out of this branch's scope. **Note the variant differs from the Lean one**
+(`…0115970029` vs `…011597804990`), so a grep for one does not find the other.
