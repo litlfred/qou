@@ -1,8 +1,8 @@
 {
-  "engine": "/home/user/qou/computations/probes/qgol_stability_region_convention_d.py",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:38:33.638197+00:00",
-  "commitSha": "0b314f4de5553d5813502bd489ee995529fd4708",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T08:18:06.334649+00:00",
+  "commitSha": "2c008899be19ddad07a2181a0a228648d2cd2519",
   "assertions": [
     {
       "name": "P77_D_positive_at_golden_threshold",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 6,
   "computation": "qgol-stability-region-convention-d",
   "scriptFile": "qgol_stability_region_convention_d.py",
-  "scriptHash": "8f766857cf49",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a3fa9a88cd30",
+  "scriptCommitSha": "b828037bb1d5ade1ef2649f8b2394f4af474e0c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

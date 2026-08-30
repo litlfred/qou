@@ -33,10 +33,15 @@ and those give opposite verdicts at q_0.  That choice changes the
 proposition and is the author's.  Bean qou-nmqd.
 """
 
-import sys
-import mpmath as mp
+# Bootstrap sys.path BEFORE importing _path_bridge: the bridge lives in
+# computations/, and a script in a cluster subdir has sys.path[0] set to its
+# own directory, so the import fails without this (AGENTS.md, bean qou-0e1t).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
 
-sys.path.insert(0, "/home/user/qou/tools/qou-substrate/python")
+import mpmath as mp  # noqa: E402
 
 from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
@@ -111,7 +116,7 @@ def main() -> int:
     print("  The proposition asserts q > 1 and places q_0 inside it. Under D that")
     print("  is the region where the q-AND is negative.")
 
-    w = WitnessBuilder("qgol-stability-region-convention-d", __file__)
+    w = WitnessBuilder("qgol-stability-region-convention-d", engine="mpmath")
     w.add_parameter("convention", "D (z = q^3/(q^2+1))")
     w.add_parameter("P_77_D", "q^3 (q^4+1) / (q^2+1)^2  [toffoli-lp-stability.md]")
     w.add_parameter(
