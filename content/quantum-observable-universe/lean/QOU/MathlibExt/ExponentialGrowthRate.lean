@@ -154,4 +154,68 @@ theorem tendsto_log_norm_div_of_tendsto_one {f : ℕ → ℂ} {ζ ω : ℂ} (hω
     field_simp
     ring
 
+/-! ## The squeeze skeleton
+
+Every positive-sum volume-conjecture proof in the corpus has the same skeleton:
+bound the sum between its largest term and `card × ` that term, take logs, divide by
+`N`, and observe that `log(card)/N → 0` closes the gap. The corpus has this argument
+written out for `4₁` (the `E5d` Riemann-sum squeeze in `FigureEightVolumeSqueeze`) and
+again in outline for the Borromean rings. It is the same argument both times.
+
+Stated once here, and stated so that the "card" is any sub-exponential factor rather
+than literally a cardinality — which is what lets it also absorb the *phase cost* of an
+oscillatory sum. That is the point of contact with
+`QOU.MathlibExt.HalfPlaneNonCancellation`: a half-plane bound supplies exactly a
+constant `c`, and a constant is sub-exponential. -/
+
+/-- **A sub-exponential sandwich does not move the growth rate.**
+
+If `m N ≤ S N ≤ c N · m N` with `m` positive and `log (c N)/N → 0`, then `S` and `m`
+have the same exponential growth rate.
+
+The hypotheses are stated `∀ᶠ` rather than `∀` because the interesting instances only
+sandwich for large `N` — a Kashaev sum has no useful bound at `N = 2`. -/
+theorem tendsto_log_div_of_sandwich {S m c : ℕ → ℝ} {L : ℝ}
+    (hm : ∀ᶠ N : ℕ in atTop, 0 < m N)
+    (hc : ∀ᶠ N : ℕ in atTop, 0 < c N)
+    (hlo : ∀ᶠ N : ℕ in atTop, m N ≤ S N)
+    (hhi : ∀ᶠ N : ℕ in atTop, S N ≤ c N * m N)
+    (hclog : Tendsto (fun N : ℕ => Real.log (c N) / (N : ℝ)) atTop (𝓝 0))
+    (hmlog : Tendsto (fun N : ℕ => Real.log (m N) / (N : ℝ)) atTop (𝓝 L)) :
+    Tendsto (fun N : ℕ => Real.log (S N) / (N : ℝ)) atTop (𝓝 L) := by
+  -- the upper envelope has to be named: it is not determined by the other arguments
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le'
+    (h := fun N : ℕ => Real.log (c N) / (N : ℝ) + Real.log (m N) / (N : ℝ))
+    hmlog ?_ ?_ ?_
+  · -- upper envelope tends to `0 + L`
+    simpa using hclog.add hmlog
+  · -- `log m ≤ log S`, then divide by `N > 0`
+    filter_upwards [hm, hlo, eventually_gt_atTop 0] with N hmN hloN hN0
+    have hN : (0 : ℝ) < (N : ℝ) := by exact_mod_cast hN0
+    -- `gcongr` closes this outright: `Real.log_le_log` is itself a `gcongr` lemma,
+    -- so the monotonicity of both `log` and `· / N` is handled in one step.
+    gcongr
+  · -- `log S ≤ log c + log m`
+    filter_upwards [hm, hc, hlo, hhi, eventually_gt_atTop 0] with N hmN hcN hloN hhiN hN0
+    have hN : (0 : ℝ) < (N : ℝ) := by exact_mod_cast hN0
+    have hSpos : 0 < S N := lt_of_lt_of_le hmN hloN
+    have key : Real.log (S N) ≤ Real.log (c N) + Real.log (m N) := by
+      calc Real.log (S N) ≤ Real.log (c N * m N) := Real.log_le_log hSpos hhiN
+        _ = Real.log (c N) + Real.log (m N) := Real.log_mul hcN.ne' hmN.ne'
+    have hsplit : Real.log (c N) / (N : ℝ) + Real.log (m N) / (N : ℝ)
+        = (Real.log (c N) + Real.log (m N)) / (N : ℝ) := by ring
+    rw [hsplit]
+    gcongr
+
+/-- The constant-factor case: a bound that costs only a fixed factor — an oscillatory
+sum kept inside a half-plane, say — costs nothing at all in the growth rate. -/
+theorem tendsto_log_div_of_sandwich_const {S m : ℕ → ℝ} {L c : ℝ} (hcpos : 0 < c)
+    (hm : ∀ᶠ N : ℕ in atTop, 0 < m N)
+    (hlo : ∀ᶠ N : ℕ in atTop, m N ≤ S N)
+    (hhi : ∀ᶠ N : ℕ in atTop, S N ≤ c * m N)
+    (hmlog : Tendsto (fun N : ℕ => Real.log (m N) / (N : ℝ)) atTop (𝓝 L)) :
+    Tendsto (fun N : ℕ => Real.log (S N) / (N : ℝ)) atTop (𝓝 L) :=
+  tendsto_log_div_of_sandwich hm (Eventually.of_forall fun _ => hcpos) hlo hhi
+    (by simpa using tendsto_const_div_natCast_atTop (Real.log c)) hmlog
+
 end QOU.MathlibExt
