@@ -44,8 +44,12 @@ completely regular — the excess over the triangular number grows by exactly
 
 i.e. the maximum of two branches with the **same quadratic leading term**
 whose linear parts differ by `2A − 52`, crossing exactly at A = 26.  And
-`deg(σ₀) = deg(γ) − 1` holds across the break as well as away from it, so
-this is not a reordering of which component dominates — both move together.
+`deg(σ₀) = deg(γ) − 1` holds **for A = 8…40**, across the break as well as
+away from it, so this is not a reordering of which component dominates — both
+move together.  **A = 7 is the sole exception**, at offset `+7`; it is the
+lower edge of the triangular window itself (the companion probe's window is
+7…26), so the regime has not settled there.  This was asserted over 7…40
+first, and the producer failed itself on it.
 
 ## What is NOT established
 
@@ -148,6 +152,7 @@ def main() -> int:
     ray = []
     branch_ok = True
     offset_ok = True
+    offset_exceptions = []
     for A in range(7, RAY_MAX + 1):
         nf, calls = build_atom_nf_lp(0, A)
         g, s0 = max(nf[0]), max(nf[1])
@@ -155,14 +160,25 @@ def main() -> int:
         ray.append({"A": A, "calls": calls, "deg_gamma": g, "deg_sigma0": s0,
                     "closed_form": pred, "triangular": A * (A + 1) // 2})
         branch_ok &= (g == pred)
-        offset_ok &= (s0 == g - 1)
+        # The -1 offset holds from A = 8, NOT from A = 7. A = 7 is the
+        # lower boundary of the triangular window itself (the companion
+        # probe's window is 7..26), so the regime has not settled there.
+        if A >= 8:
+            offset_ok &= (s0 == g - 1)
+        elif s0 != g - 1:
+            offset_exceptions.append({"A": A, "deg_gamma": g,
+                                      "deg_sigma0": s0, "offset": s0 - g})
         if A % 8 == 0:
             print(f"      A={A:>2} deg={g:<5} pred={pred:<5} "
                   f"({time.time() - t0:.0f}s elapsed)")
     chk(f"deg(gamma) = A(A+1)/2 + 2*max(0, A - 26) for every A = 7..{RAY_MAX}",
         branch_ok)
-    chk("deg(sigma0) = deg(gamma) - 1 across the break as well as away from it",
-        offset_ok)
+    chk(f"deg(sigma0) = deg(gamma) - 1 for A = 8..{RAY_MAX}, i.e. across the "
+        f"break as well as away from it", offset_ok)
+    chk(f"and A = 7 is the ONE exception, offset "
+        f"{offset_exceptions[0]['offset'] if offset_exceptions else 'n/a'} "
+        f"— the lower edge of the triangular window, not a stray",
+        [r["A"] for r in offset_exceptions] == [7])
     excess = [r["deg_gamma"] - r["triangular"] for r in ray]
     incs = {excess[i + 1] - excess[i] for i in range(len(excess) - 1)
             if ray[i]["A"] >= 27}
@@ -189,8 +205,10 @@ def main() -> int:
         "clean two-branch maximum: deg(gamma) = A(A+1)/2 + 2*max(0, A-26), "
         "verified A=7..40, two branches with the SAME quadratic leading term "
         "whose linear parts differ by 2A-52 and cross exactly at A=26; "
-        "deg(sigma0) = deg(gamma) - 1 holds across the break too, so it is "
-        "not a reordering of which component dominates. NOT DERIVED: no "
+        "deg(sigma0) = deg(gamma) - 1 holds for A=8..40, across the break "
+        "too, so it is not a reordering of which component dominates; A=7 is "
+        "the sole exception at offset +7 and is the lower edge of the "
+        "triangular window itself. NOT DERIVED: no "
         "mechanism for the coefficient 6, the constant -19, the Z >= 5 "
         "threshold, or the crossover at 26. These are fits to exact integer "
         "data over a STATED range, and the range is stated because the "
@@ -218,7 +236,10 @@ def main() -> int:
         "verified_range": f"A = 7..{RAY_MAX}",
         "crossover": 26,
         "branch_difference": "2A - 52 (same quadratic leading term)",
-        "sigma0_offset": "deg(sigma0) = deg(gamma) - 1, across the break too",
+        "sigma0_offset": ("deg(sigma0) = deg(gamma) - 1 for A = 8..40, "
+                          "across the break too; A = 7 is the sole "
+                          "exception at offset +7"),
+        "sigma0_offset_exceptions": offset_exceptions,
         "ray": ray,
     })
     w.add_data("not_established", {
@@ -230,7 +251,9 @@ def main() -> int:
     w.add_assertion("gap_law_holds_on_Z_ge_5_N_ge_5", law_ok, True)
     w.add_assertion("gap_law_is_independent_of_Z", z_independent, True)
     w.add_assertion("pure_neutron_two_branch_form_A_7_to_40", branch_ok, True)
-    w.add_assertion("sigma0_offset_survives_the_break", offset_ok, True)
+    w.add_assertion("sigma0_offset_survives_the_break_A_ge_8", offset_ok, True)
+    w.add_assertion("sigma0_offset_sole_exception_is_A_7",
+                    [r["A"] for r in offset_exceptions] == [7], True)
     w.add_assertion("excess_increment_is_exactly_2_past_the_break",
                     incs == {2}, True)
     w.save({
