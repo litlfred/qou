@@ -3970,3 +3970,53 @@ supply one, and any closure must come from outside them, as entry 14 concludes.
 
 Nothing here bears on entry 14's separate finding that the RULE fails at N=2;
 that is about the rule's authority, not about what the conditions force.
+## The z=1 exclusion is a WALL — measured, and it goes against the hypothesis (2026-08-30, PR #6144)
+
+I tested whether `one_not_root` is as strong as the framing treats it, expecting
+it to be weaker. It is not. Negative recorded.
+
+**The gap in the reasoning I was probing.** `AdmissibleRoots` defines admissible
+= the (1^3) weight VANISHES (the two-row cap), roots {q, z_D}, z=1 excluded. The
+2026-08-29 correction search measured that the augmentation base's required
+correction IS the trace's own z=q -> z=1 return to 0.17 %, and called that
+direction forbidden on the strength of `one_not_root`. That moves from a BINARY
+fact to a claim about a MAGNITUDE. `one_not_root` is an invariant about a SIGN:
+N(q,1) = (1-q)(q^2+1-q^3) < 0. It says the leak is nonzero, not that it is
+correction-sized.
+
+**MEASURED** (`qbeta_admissibility_is_a_magnitude_probe.py`, 4/4, exact sympy
+from the H_3 trace on the NF basis with the CORRECTED weight z(hz+1)):
+
+    y_(1^3) numerator == q^2 * wtNumer   EXACTLY  (independent Lean confirmation,
+                                         and it SURVIVES the qou-isu5 trace fix)
+    denominator = (q^2+1)(q^2-q+1)(q^2+q+1)
+
+    three-row share at z=1     1.4589 %
+    augmentation base needs   11.087 %   ->  leak 7.6x too small
+    tr_M base needs           75.924 %   ->  leak 52x too small
+
+**Two separate facts, neither dressed as the other:**
+1. The exclusion HOLDS, exactly as proved.
+2. The leak is the WRONG SIZE to be the correction, by 7.6x. So the 08-29
+   verdict is now quantitatively supported rather than merely defensible: the
+   near-coincidence net/aug = 0.8906 vs F_required = 0.88913 is NOT explained by
+   the admissibility violation being correction-sized.
+
+**Reference scale, because a verdict against a self-chosen threshold is not a
+measurement:** three-row share at other z. z=1 gives 1.459 %, the SECOND SMALLEST
+of seven sampled; generic z gives 3-33 %. So z=1 IS unusually close to two-row,
+just not close enough to matter. Worth knowing before anyone reaches for it again.
+
+LIMITATION: the leak is a weight SHARE, the correction a RATIO OF TRACE VALUES.
+Order-of-magnitude check, not a proof. 7.6x is outside what that could hide;
+1.2x would not have been.
+
+**What this does NOT do:** it does not derive F, does not readmit z=1, does not
+propose a correction. It closes off one way of rescuing the augmentation base
+and confirms the wall the 08-29 audit hit is real.
+
+**Also relevant to this bean from the same PR:** the scope-(a) negative published
+by `qbeta_c3_barodd_hs_matrix_resolvent_probe` is WITHDRAWN. Its trace vector was
+`z*z*z`; with the correct weight its finding 2 ("the pairing is bar-even") is
+falsified at mu=0 (BAR-ODD, 18.38 vs 6.86). Not a positive either -- still
+convention C, and inverting a now-singular Gram in float64. Re-run belongs here.
