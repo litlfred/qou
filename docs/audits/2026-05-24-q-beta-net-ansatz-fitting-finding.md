@@ -226,3 +226,99 @@ Possibilities, in order of physical plausibility:
 3. **q_0 = Re(complex observable)?**: see Q1 above. NOT currently formalized; would require either (iii)/(iv) projection rule OR a complex-valued `m_μ/m_e` observable (none in the current framework). Skein-mass-relation does NOT answer this — it states a real equation under the implicit (i) assumption.
 
 The fitting concern (b) is the dominant gap; the structural questions (Q1/Q3 fused) are now addressable via Path D.
+
+## Addendum (2026-08-27) — `net` is fully expressible in derived framework objects; step 8's postulate is narrower than it looks
+
+Bean `qou-xzrj`, PR #5869. Seven tranches, all exact-symbolic over $\mathbb{Q}(q)$
+with the Markov parameter $z$ carried as a free symbol.
+
+### What was shown
+
+`net` — the unweighted NF coordinate sum of step 6 — has an **exact
+representation** in objects this framework already derives:
+
+$$\mathrm{net}(x) \;=\; \sum_\lambda a_\lambda\,\chi^\lambda(x) \;+\; \mu\,\mathrm{tr}_M(x\,d_C),
+\qquad \mu \;=\; \frac{-\dim V_{(2,1)}}{c_{(2,1)}\,y_{(2,1)}(z)}$$
+
+exact on all six basis elements, where $d_C$ is $\Delta$'s commutator part.
+Every ingredient is a canonical invariant of one Wedderburn block:
+
+| ingredient | what it is | status |
+|---|---|---|
+| $\mathrm{net}(x) = \tau(x\,\Omega)$, $\Omega = \sum_w T_w$ | `net` is the symmetrizing trace against the **all-ones** element | derived (rank 6/6, unique) |
+| $1/c_{(2,1)}$ | the block's **Schur element**, from $\tau = \sum_\lambda \chi^\lambda/c_\lambda$; $c_{(2,1)} = [3]_q$, the hook formula | derived |
+| $\dim V_{(2,1)} = 2$ | the **regular-rep multiplicity**: $\chi_{\mathrm{reg}} = 2\chi^{(2,1)}$ on $[H,H]$ | derived |
+| $1/y_{(2,1)}(z)$ | the **pairing normalisation** on the block (Wedderburn) | derived |
+
+Why a *pairing* is needed at all: every trace annihilates $[H,H]$, and 7.67 % of
+$\varepsilon_{np}$ lives there. A trace is linear; $\langle x,y\rangle = \mathrm{tr}_M(xy)$
+is bilinear and is not. Under convention D the pairing is degenerate on $H_3$
+with radical the $(1^3)$ ideal — but $[H,H] = \mathfrak{sl}_2$ sits in the
+**two-row** $(2,1)$ block, so the pairing is degenerate exactly where the
+remainder is *not*.
+
+A by-product worth recording: $c_{(2,1)}\,y_{(2,1)}(z) = -(z^2 - hz - 1)$ — the
+**Hecke quadratic factorises** into the block's Schur element times its Markov
+weight.
+
+### Where the last constant comes from — and it is step 3, not a postulate
+
+The one identity the chain rests on is $\mathrm{comm}(\Omega) = -\dim V_{(2,1)}\cdot d_C$
+(ratio exactly $-2$). Varying **only** the mixed crossing $t$ in $\Delta$'s
+construction:
+
+| $t$ | proportional? | ratio |
+|---|---|---|
+| $h/2$ (corpus) | **yes** | $-2 = -\dim V_{(2,1)}$ |
+| $h/3$ | no | — |
+| $h$ | no | — |
+| $0$ | no | — |
+
+At any other $t$ the proportionality **fails outright**. So the identity is
+contingent on $t = h/2$ — which is **step 3** of the table above, marked
+✓ Derived, and its stated justification checks exactly:
+$\big(C(\mathfrak{u},\mathfrak{u};\sigma) + C(\mathfrak{d},\mathfrak{d};\sigma)\big)/2
+= (\sigma + (\sigma - h))/2 = \sigma - h/2$, the symmetric midpoint forced by
+$\mathfrak{u}\leftrightarrow\mathfrak{d}$ swap symmetry.
+
+**So the chain grounds out in derived material, not in an undischarged
+assumption.**
+
+### What this does NOT do
+
+It does **not** close step 8. Step 8 postulates that
+$Q_\beta = |\Delta(\mathrm{net})|\cdot\mathfrak{E}_0$ — that the unweighted NF sum
+*is* the leading-order mass difference. That is a claim about the **physical
+identification**, and nothing above touches it: showing `net` is expressible in
+derived algebraic objects says what `net` is, not that it is the right
+observable. Scope-(a) throughout; nothing is wired, no value is proposed.
+
+Related, and adverse, from the same branch's predecessor (PR #5864): the
+complete set of functionals that descend to the convention-D Temperley–Lieb
+quotient is **two**, and they bracket CODATA from $+12.470\%$ and $-43.157\%$,
+while $\varepsilon_{np}$ — which does *not* descend — gives $+0.168\%$.
+
+### Corrections to earlier statements in this investigation
+
+Recorded because they were published on the branch before being caught:
+
+1. **`t = h/2` is step 3, not step 4.** Step 3 defines the typed-crossing
+   operators; step 4 only assembles words from them.
+2. **Neither step is "chosen".** Both are marked ✓ Derived here. Bean
+   `qou-xzrj` *asks* whether the single-wrap presentation is forced; that is a
+   question, not a flag, and I quoted it as one.
+3. **The $y_0 \parallel d_C$ alignment was over-read**, across three tranches.
+   The set $\{x : \mathrm{comm}(x) \parallel d_C\}$ is a subspace of dimension
+   **4 of 6** — two thirds of the algebra. The content was never the
+   proportionality, only the ratio.
+4. **A mislabel:** $\Omega$'s *commutator part* is not its $(2,1)$-component;
+   $\chi^{(2,1)}(\Omega) = 2h \neq 0$.
+
+Probes: `qbeta_trace_invisible_is_pairing_representable_probe.py` (12/12),
+`qbeta_riesz_element_is_structurally_forced_probe.py` (9/9),
+`qbeta_mu_closed_form_and_delta_alignment_probe.py` (6/6),
+`qbeta_mu_normalisation_is_derived_probe.py` (5/5),
+`qbeta_mu_is_block_invariants_probe.py` (7/7),
+`qbeta_net_is_tau_against_all_ones_probe.py` (8/8),
+`qbeta_last_step_is_the_presentation_probe.py` (4/4).
+Lean: `QOU/QBeta/PairingSeesCommutator.lean`, 4 declarations, sorry-free.
