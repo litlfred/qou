@@ -314,3 +314,53 @@ artifact too.** This one escalated a decision to the owner, the decision was
 made by a sibling arc 48 hours later, and the escalation sat unqualified for
 three weeks. AGENTS.md's rule that a *completed* bean is the one that bites has
 a mirror: **an open bean's stated blocker is a claim with a date on it.**
+
+## 2026-08-30 (same day, CORRECTION) — both "adjacent findings" above are WRONG
+
+I wrote the two bullets above ("Two adjacent findings, neither drained here")
+by repeating this bean's older `ALSO FOUND` line **without opening either
+file.** Measured with `lean`-direct against the restored oleans, on `main` at
+`a6b12890c9`:
+
+| claim I made | measured |
+|---|---|
+| `chi-std-pernucleon-closed-form.lean` "is still red" | **EXIT 0.** Green, and **zero sorries.** |
+| ...and "still carries an unrouted ℤ-index bracket at line 104" | **Routed.** `qNum_eq_qIntBal` at line 114, sorry-free. |
+| `scratch.lean` "carries a q-integer definition" (implying unrouted) | **Routed** — `qNumberSym q n := qIntBalZ q n`, and green. |
+
+**The file says so itself**, in the docstring immediately under the site I
+called unrouted:
+
+> This site was the one the `qou-qint` drain could not reach *while the file
+> was red on `main`*; **it is migrated now** that the two closed-form theorems
+> above are proved.
+
+So this bean's own `ALSO FOUND: chi-std-pernucleon-closed-form.lean is RED ON
+MAIN` is **stale as well** — someone fixed the file and migrated the site, and
+neither this bean nor mine learned it. Both are corrected here.
+
+**Verified the check FIRES, not merely that it passes.** An `EXIT 0` with no
+output is the same shape as a check that examined nothing, which is why the
+green above is not asserted on the exit code alone: injecting
+`theorem deliberate_break_probe : (1:Nat) = 2 := rfl` produced
+`error: Not a definitional equality` at line 328 and `EXIT 1`. File restored;
+`git diff` clean.
+
+### This strengthens the finding above rather than weakening it
+
+`scratch.lean` is a **live consumer of `qIntBalZ`** — so the ℤ-index sibling
+is not merely present in the canonical module, it is already being used at a
+call site. The migration this bean calls blocked is not only unblocked, it has
+partly already happened.
+
+### And the failure is the one this arc exists to document
+
+I asserted "it is still red" **inside an addendum whose entire subject is that
+an open bean's stated blocker is a claim with a date on it**, and merged it to
+`main` (#6084). Reading a durable artifact's old text and restating it is
+exactly how the claim survived three weeks in the first place; doing it in the
+correction is how it would have survived three more.
+
+The rule that would have caught it costs one command: **open the file.** A
+bean, an audit ✅, a docstring and a sibling's finding are all secondary
+sources. `lean`-direct is the primary one.
