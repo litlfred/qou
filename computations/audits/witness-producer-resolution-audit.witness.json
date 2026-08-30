@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:46:18.166367+00:00",
-  "commitSha": "c45c632d96800b93fc0df1eb4dff88e8f7ec3de0",
+  "computedAt": "2026-08-30T14:22:48.405632+00:00",
+  "commitSha": "6b9463d82be9a0a6882c3220c2e2b7e13635acba",
   "assertions": [
     {
       "name": "scan_non_empty",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2896,
+  "durationMs": 3243,
   "computation": "witness-producer-resolution-audit",
   "scriptFile": "witness_producer_resolution_audit.py",
   "scriptHash": "f48586f7556e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2ec500b17e8ab593ca224aac5bca741acdcb9fc8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,9 +47,9 @@
   "description": "Does a witness name a producer that EXISTS, under ANY spelling? Decides by VALUE (does a field hold a .py path that resolves in the tree) rather than by KEY NAME, because the fields are polymorphic: `computation` is present on ~91% of witnesses and holds the witness ID, not a script, on almost all of them; `source` usually holds a literature PDF but sometimes a .py. Three prior orphan counts each keyed on one field (qou-tekx scriptFile, qou-bake computation, qou-agvb producer) and each OVER-reported orphans by calling provenanced witnesses unprovenanced. Does NOT check that the named script actually writes the witness -- that is witness_provenance_audit.py, which needs a scriptFile to start from and cannot see the witnesses this audit finds.",
   "data": {
     "totals": {
-      "live_witnesses": 2940,
-      "RESOLVED": 2707,
-      "FOUND_BY_CONVENTION": 188,
+      "live_witnesses": 2949,
+      "RESOLVED": 2714,
+      "FOUND_BY_CONVENTION": 190,
       "FOUND_BY_PRODUCER_CALL": 25,
       "NAMED_BUT_MISSING": 0,
       "PRODUCER_DEPRECATED_ONLY": 1,
@@ -65,15 +65,15 @@
     },
     "per_key": {
       "scriptFile": {
-        "carriers": 2642,
-        "names_a_real_py": 2635
+        "carriers": 2649,
+        "names_a_real_py": 2642
       },
       "scriptPath": {
         "carriers": 8,
         "names_a_real_py": 8
       },
       "computation": {
-        "carriers": 2679,
+        "carriers": 2686,
         "names_a_real_py": 46
       },
       "producer": {
@@ -81,7 +81,7 @@
         "names_a_real_py": 56
       },
       "source": {
-        "carriers": 51,
+        "carriers": 53,
         "names_a_real_py": 4
       }
     },
