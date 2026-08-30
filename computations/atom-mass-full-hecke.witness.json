@@ -1,40 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T19:45:03.748961+00:00",
-  "commitSha": "a3369e3349622dc42b4c31dfc71dfa1093c32555",
+  "computedAt": "2026-08-30T20:04:36.824824+00:00",
+  "commitSha": "7ffc2b2f69321198961df8f9330c63282c380f8e",
   "assertions": [
     {
       "name": "qdeformed_weights_normalised",
-      "computed": "1.0",
-      "expected": "1.0",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1.0e-25",
-      "source": "Σ_λ y_λ d_λ = tr_M(1) = 1"
+      "tolerance": "1e-25",
+      "source": "|Σ_λ y_λ d_λ − 1|, the residual of tr_M(1) = 1"
     },
     {
       "name": "alt_channel_vanishes_two_row_cap",
       "computed": "0.0",
-      "expected": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1.0e-40",
+      "tolerance": "1e-40",
       "source": "ŷ_(1^3) = 0 exactly under convention D (two-row cap, derived from the 2-dim mass fibre; qou-n1dj)"
     },
     {
       "name": "two_row_weights_carry_all_of_the_trace",
-      "computed": "1.0",
-      "expected": "1.0",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1.0e-40",
-      "source": "with ŷ_alt = 0, Σ_λ ŷ_λ = 1 is carried by (3) and (2,1) alone"
+      "tolerance": "1e-40",
+      "source": "|ŷ_(3) + ŷ_(2,1) − 1|; with ŷ_alt = 0 the two rows carry the whole trace"
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 27,
   "computation": "atom-mass-full-hecke",
   "scriptFile": "atom_mass_full_hecke_qdeformed.py",
-  "scriptHash": "beb8a933b084",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "0d211a7ea27e",
+  "scriptCommitSha": "f61deb33bfbed99c01893bf49e2affb1d63df1d4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
