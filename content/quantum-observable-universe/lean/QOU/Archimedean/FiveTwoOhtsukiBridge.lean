@@ -276,9 +276,9 @@ still carries its own hypotheses because Mathlib has no polylogarithm — but th
 theorem ohtsuki_sum_im_eq_three_blochWigner
     (Li₂ : ℂ → ℂ) (y : ℂ) (_hy : IsOhtsukiShape y)
     (_hinv : ∀ z : ℂ, z ≠ 0 → (Li₂ z).im + (Li₂ (1 / z)).im
-      = -(2 * (Complex.arg (1 - z)) * Real.log (Complex.abs z)))
+      = -(2 * (Complex.arg (1 - z)) * Real.log ‖z‖))
     (_hbw : ∀ z : ℂ, BlochWigner_lob z
-      = (Li₂ z).im + Complex.arg (1 - z) * Real.log (Complex.abs z))
+      = (Li₂ z).im + Complex.arg (1 - z) * Real.log ‖z‖)
     (_hone : (Li₂ 1).im = 0) :
     (ohtsukiSum Li₂ y).im = 3 * BlochWigner_lob y := by
   sorry
@@ -327,7 +327,7 @@ because it shows the volume-conjecture *conclusion* follows from the asymptotic
 theorem growth_rate_eq_two_pi_re_zeta
     (kashaev : ℕ → ℂ) (y ζ ω : ℂ) [OhtsukiAsymptotic kashaev y ζ ω] :
     Filter.Tendsto
-      (fun N : ℕ => (2 * Real.pi / N) * Real.log (Complex.abs (kashaev N)))
+      (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖kashaev N‖)
       Filter.atTop (nhds (2 * Real.pi * ζ.re)) := by
   sorry
 
@@ -345,7 +345,7 @@ theorem volume_conjecture_five_two
     (hzeta : 2 * Real.pi * ζ.re = 3 * BlochWigner_lob y)
     (hvol : vol = 3 * BlochWigner_lob y) :
     Filter.Tendsto
-      (fun N : ℕ => (2 * Real.pi / N) * Real.log (Complex.abs (kashaev N)))
+      (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖kashaev N‖)
       Filter.atTop (nhds vol) := by
   have h := growth_rate_eq_two_pi_re_zeta kashaev y ζ ω
   rwa [hvol, ← hzeta]

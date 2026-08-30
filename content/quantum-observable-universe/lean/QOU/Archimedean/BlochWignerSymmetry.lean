@@ -73,12 +73,18 @@ theorem inv_one_sub_mobius (z : ℂ) (hz : z ≠ 0) :
 /-- Under `w = 1 − 1/z`, the third shape parameter returns `1/(1−z)`.
 
 Note the shape of the proof: rewrite `1 − 1/z` as `(z−1)/z` **first**, so the
-nested division becomes a single quotient and `field_simp` has both non-vanishing
-facts it needs (`z ≠ 0` and `z − 1 ≠ 0`) already in hand. Trying to `field_simp`
-the nested form directly asks it to discharge `1 − 1/z ≠ 0` on its own. -/
+nested division becomes a single quotient and `field_simp` has the non-vanishing
+facts it needs already in hand. Trying to `field_simp` the nested form directly
+asks it to discharge `1 − 1/z ≠ 0` on its own.
+
+**Both** orientations of the non-vanishing fact have to be in context. `field_simp`
+matches hypotheses syntactically, so `z − 1 ≠ 0` does not discharge the `(1 − z)⁻¹`
+that the right-hand side contributes: with only that one, the goal reduces to
+`-1 = z * (1 - z)⁻¹ - (1 - z)⁻¹` and stalls there. -/
 theorem one_sub_inv_mobius (z : ℂ) (hz : z ≠ 0) (hz1 : z ≠ 1) :
     1 - 1 / (1 - 1 / z) = 1 / (1 - z) := by
   have hz1' : z - 1 ≠ 0 := sub_ne_zero.mpr hz1
+  have h1z : (1 : ℂ) - z ≠ 0 := sub_ne_zero.mpr (Ne.symm hz1)
   have hzm : (1 : ℂ) - 1 / z = (z - 1) / z := by field_simp
   rw [hzm, one_div_div]
   field_simp
