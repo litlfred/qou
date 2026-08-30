@@ -1,24 +1,55 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:21:42.380917+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:10:03.654405+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "hoefsmit_additivity_structural_lemma_recorded",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "vol_borromean_registry_matches_8G",
+      "computed": "2.2925868015e-50",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.0,
-      "unit": "boolean (lemma stated, citations attached)",
-      "source": "Thurston (geometrisation) for hyperbolic-volume additivity; computations/_li_2_q_util.py for VolDensity = Vol/ℏ_q² · linking_weight; this probe just composes them."
+      "tolerance": "1e-45",
+      "source": "|VOL_BORROMEAN_50DPS_STR − 8·G| = 2.29259e-50; the registry literal against mpmath's Catalan constant"
+    },
+    {
+      "name": "vol_4_1_registry_matches_2_clausen_pi_over_3",
+      "computed": "2.94666298404e-36",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-33",
+      "source": "|VOL_4_1_50DPS_STR − 2·Cl₂(π/3)| = 2.94666e-36. Gate 1e-33 rather than 1e-45 because the registry string is only correct to ~36 significant digits despite its _50DPS_ name — see the caveat; it is not loosened to hide that"
+    },
+    {
+      "name": "non_hyperbolic_knots_carry_zero_volume",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Vol(⊙) = Vol(3_1) = 0 — neither complement admits a hyperbolic structure; ⊙ being the additive identity is what makes Geom_ε(N·⊙) = N·ε meaningful at all"
+    },
+    {
+      "name": "disjoint_union_volumes_are_additive",
+      "computed": "6.29520766772e-16",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "max over the 5 recorded pairs of |tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = 6.29521e-16; gate 1e-15 is the float64 the table is serialised through, not a chosen band"
+    },
+    {
+      "name": "geom_epsilon_coefficient_is_linear_in_N",
+      "computed": "7.39021942997e-12",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "max over N ∈ [1, 2, 5, 10, 100, 1000] of |tabulated coefficient − N/ℏ_q²| = 7.39022e-12, with 1/ℏ_q² = 101.8621786045972 recomputed at substrate precision; gate 1e-9 covers the float64 the table stores at N = 1000"
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "casimir-hoefsmit-additivity-probe",
   "scriptFile": "casimir_hoefsmit_additivity_probe.py",
-  "scriptHash": "c05a5986a66e",
+  "scriptHash": "9dae6469ce08",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -34,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -142,5 +173,10 @@
       "implication": "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need refinement: dimensional analysis with the VolDensity = Vol/ℏ_q² normalisation suggests N⊙ ~ ε⁻² · A/d³, with the extra ε⁻¹ factor absorbing the ℏ_q² denominator.",
       "follow_up": "Recompute the conditional Casimir derivation under the ε⁻² scaling and confirm π²/(240 d⁴) still falls out."
     }
-  }
+  },
+  "caveats": [
+    "VOL_4_1_50DPS_STR in experimental_constants.py agrees with 2·Cl₂(π/3) only to ~36 significant digits (gap 2.95e-36): it reads …0854904057483004… where the true continuation is …0854904057188337…. VOL_BORROMEAN_50DPS_STR is good to 2.3e-50 by the same test. Nothing in this probe is affected at 1e-33, but the constant does not deliver the 50 dps its name promises. Reported rather than edited — the registry is shared."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

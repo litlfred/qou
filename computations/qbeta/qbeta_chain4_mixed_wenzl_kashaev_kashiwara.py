@@ -285,18 +285,33 @@ def witness_safe(r: dict) -> dict:
 
 
 # ───────────────────────── cross-checks ──────────────────────────────
-def self_check() -> None:
-    """Sanity cross-checks before the probe (fail loudly)."""
-    # Σ_λ (f^λ)² = n!
+def self_check() -> dict:
+    """Sanity cross-checks before the probe — MEASURED, not asserted.
+
+    These were two bare `assert`s (bean `qou-26f2`). A bare assert aborts
+    the run, so a failure produced no witness at all, and the witness's
+    `self_checks_passed = True/True` stood in for checks whose outcome it
+    could never actually carry. Returning the residuals lets `main` put them
+    in the witness, where a failure is recorded instead of vanishing.
+    """
+    out: dict = {"syt": [], "qdim": []}
+    # Σ_λ (f^λ)² = n! — the class equation for S_n; n! is a known constant.
     for n in (3, 4, 5):
         s = sum(num_syt(lam) ** 2 for lam in partitions_of(n))
-        assert s == mp.factorial(n), f"Σ(f^λ)² ≠ {n}! for n={n}: {s}"
+        out["syt"].append({"n": n, "sum": s, "n_factorial": mp.factorial(n),
+                           "gap": abs(s - mp.factorial(n)),
+                           "n_partitions": len(partitions_of(n))})
     # q→1 limit of qdim = f^λ
     q1 = mp.mpf(1) + mp.mpf("1e-30")
     for lam in partitions_of(4):
         qd = q_dim_fake_degree(lam, q1)
-        assert abs(qd - num_syt(lam)) < mp.mpf("1e-6"), \
-            f"qdim(λ={lam}) → f^λ failed: {qd} vs {num_syt(lam)}"
+        out["qdim"].append({"lam": lam, "qdim_at_q1": qd,
+                            "f_lambda": num_syt(lam),
+                            "gap": abs(qd - num_syt(lam))})
+    out["syt_max_gap"] = max(r["gap"] for r in out["syt"])
+    out["qdim_max_gap"] = max(r["gap"] for r in out["qdim"])
+    out["n_checks"] = len(out["syt"]) + len(out["qdim"])
+    return out
 
 
 def run_anchor(q: mp.mpf, label: str) -> tuple[dict, mp.mpf]:
@@ -311,8 +326,12 @@ def main() -> int:
     print("=" * 78)
     print("Q_β Chain 4 — Mixed chains: Wenzl × Kashaev × Kashiwara")
     print("=" * 78)
-    self_check()
-    print("✓ self-checks passed (Σ(f^λ)²=n!, qdim→f^λ at q→1)")
+    checks = self_check()
+    print(f"  self-checks (measured, not asserted): "
+          f"Σ(f^λ)²=n! max gap {mp.nstr(checks['syt_max_gap'], 6)} over "
+          f"n∈{{3,4,5}}; qdim→f^λ at q→1 max gap "
+          f"{mp.nstr(checks['qdim_max_gap'], 6)} over {len(checks['qdim'])} "
+          f"partitions of 4 ({checks['n_checks']} checks total)")
     print()
 
     hbar_p = h_q(Q_PROTON_50)
@@ -460,10 +479,49 @@ def main() -> int:
         "it is a NEAR-1PCT artifact (cf. the 1+q q-binomial artifact of "
         "PR #1787), not a closure.",
     )
+    # Was `computed=True, expected=True` (bean `qou-26f2`). The two checks its
+    # source names were bare `assert`s, so this could only ever be True: a
+    # failure aborted the run before any witness existed. They are measured
+    # now, and their residuals carried here.
+    w.add_data("self_checks", {
+        "syt": [{"n": r["n"], "sum": str(r["sum"]),
+                 "n_factorial": str(r["n_factorial"]),
+                 "n_partitions": r["n_partitions"]} for r in checks["syt"]],
+        "qdim": [{"lam": list(r["lam"]), "f_lambda": str(r["f_lambda"]),
+                  "gap": mp.nstr(r["gap"], 8)} for r in checks["qdim"]],
+    })
     w.add_assertion(
-        name="self_checks_passed",
-        computed=True, expected=True,
-        source="Σ_λ(f^λ)²=n! for n∈{3,4,5}; qdim(λ)→f^λ as q→1.",
+        name="syt_squares_sum_to_n_factorial",
+        computed=mp.nstr(checks["syt_max_gap"], 12),
+        expected="0",
+        tolerance="0",
+        source="max over n ∈ {3,4,5} of |Σ_{λ⊢n}(f^λ)² − n!| = "
+               + ", ".join(f"n={r['n']}: {r['sum']} vs {r['n_factorial']}"
+                           for r in checks["syt"])
+               + ". The class equation for S_n; 6, 24 and 120 are known "
+                 "independently of this module and pin num_syt / hook_lengths / "
+                 "partitions_of together",
+    )
+    w.add_assertion(
+        name="qdim_reduces_to_syt_count_at_q_one",
+        computed=mp.nstr(checks["qdim_max_gap"], 12),
+        expected="0",
+        tolerance="1e-6",
+        source=f"max over the {len(checks['qdim'])} partitions of 4 of "
+               f"|qdim(λ, q=1+1e-30) − f^λ| = "
+               f"{mp.nstr(checks['qdim_max_gap'], 6)}; the graded q-dimension "
+               "must degenerate to the SYT count at q→1, which is what makes "
+               "the closed-form hook specialisation a stand-in for the "
+               "unbuilt native hecke-engine",
+    )
+    w.add_assertion(
+        name="self_check_coverage",
+        computed=checks["n_checks"],
+        expected=3 + 5,
+        tolerance=0,
+        source="3 class-equation identities (n = 3,4,5) + one q→1 limit per "
+               "partition of 4 (p(4) = 5) = 8 checks actually performed; "
+               "guards against a silently shortened check list",
     )
     # Substantive negative: no GENUINE q-mixed product (q-dependent Wenzl
     # factor × Kashaev) reaches NEAR-1PCT. f^λ×Kashaev hits do not count —

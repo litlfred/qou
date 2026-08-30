@@ -1,24 +1,40 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:44:20.632036+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-08-30T09:50:11.703104+00:00",
+  "commitSha": "484e4cf6573453960a3ee46810996574178ddf85",
   "assertions": [
     {
-      "name": "scaffold_completed",
-      "computed": true,
-      "expected": true,
+      "name": "em_shape_is_two_term_hbar_q_series",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0,
-      "source": "Scaffold identifies the actual open derivation question."
+      "tolerance": "1e-70",
+      "source": "(3q²−1)/(2q²) − (1 + ℏ_q − ℏ_q²/2) with ℏ_q = 1 − 1/q at 80 dps; the docstring's stated truncation identity, checked against the ℏ_q route main() already built and never read"
+    },
+    {
+      "name": "em_shape_h0_truncation_is_unity",
+      "computed": "1.0e-40",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-39",
+      "source": "|(3q²−1)/(2q²) − 1| at q = 1+1e-40 = 1.0e-40; the h⁰ truncation returns the bare (α_em/π) unchanged, which is why the open item as posed is circular"
+    },
+    {
+      "name": "em_shape_departure_from_unity_at_q0",
+      "computed": "0.0941731228171",
+      "expected": "0.0941731228",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "(3q²−1)/(2q²) − 1 at q_0; nonzero, so the h⁰ truncation discards real q-dependence rather than the shape being flat"
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "bring-zero-mode-per-block-scaffold",
   "scriptFile": "bring_zero_mode_per_block_scaffold.py",
-  "scriptHash": "64d7bf39a16d",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "61b3238574ec",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bring_zero_mode_per_block_scaffold.py"
+    ],
+    "reproduce": "python3 -u computations/bring_zero_mode_per_block_scaffold.py"
   },
   "description": "Item B of PR #1654: scaffolds the Bring-zero-mode derivation of the bare per-block (α_em/π) at the sign-block of H_3. Identifies the open question is NOT 'derive α_em/π from Bring' (it's the standard QED bubble) but 'derive why EM couples to sign block'.",
   "parameters": {
@@ -40,8 +64,13 @@
   },
   "data": {
     "target": "0.002322819465771719295187741",
-    "verdict": "The 'Bring zero-mode derivation of bare per-block (α_em/π)' open item is structurally CIRCULAR as currently posed: the (α_em/π) IS the standard QED 1-loop coupling, not a Bring-specific derivation. The non-trivial derivation is WHY EM couples to the sign Wedderburn block of H_3 specifically. That requires: (a) substrate-level implementation of QCD color-singlet (Fermi-statistics → sign rep), and (b) categorical Wedderburn-projection of the EM coupling. Neither exists yet at the categorical level — this is the actual multi-session open work behind ProtonMassEMSignBlock."
+    "verdict": "The 'Bring zero-mode derivation of bare per-block (α_em/π)' open item is structurally CIRCULAR as currently posed: the (α_em/π) IS the standard QED 1-loop coupling, not a Bring-specific derivation. The non-trivial derivation is WHY EM couples to the sign Wedderburn block of H_3 specifically. That requires: (a) substrate-level implementation of QCD color-singlet (Fermi-statistics → sign rep), and (b) categorical Wedderburn-projection of the EM coupling. Neither exists yet at the categorical level — this is the actual multi-session open work behind ProtonMassEMSignBlock.",
+    "em_shape_at_q0": "1.094173122817120970933893",
+    "em_shape_h0_limit": "1.0"
   },
+  "caveats": [
+    "Test 2's printed line 'full at q_0 gives 1.16' is wrong: the line above it prints the same quantity as 1.09417312281712097, and assertion em_shape_departure_from_unity_at_q0 measures the departure as 0.0941731228, i.e. the shape is 1.0942 at q_0, not 1.16. The printed 1.16 has no route in this module. Reported rather than silently corrected."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

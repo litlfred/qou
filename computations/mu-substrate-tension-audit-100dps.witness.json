@@ -1,23 +1,55 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:33:33.443284+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-30T10:03:31.612458+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "audit_completed",
-      "computed": true,
-      "expected": true,
+      "name": "vol_4_1_agrees_across_clausen_and_dilog",
+      "computed": "1.1293528684e-56",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0,
-      "source": "m_μ substrate-tension audit completed at 100 dps."
+      "tolerance": "1e-40",
+      "source": "2·Cl₂(π/3) vs 2·Im[Li₂(e^{iπ/3})] for the figure-eight volume; guards the 2·Λ(π/3) confusion (that form is Vol(4_1)/3 = 0.6766…) that this file's header still carries"
+    },
+    {
+      "name": "vol_4_1_matches_known_value",
+      "computed": "2.02988321281930725004240510854904057188337862",
+      "expected": "2.02988321281930725004240510854904057188337861506",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "the figure-eight knot's hyperbolic volume to 45 places, a known constant independent of this substrate"
+    },
+    {
+      "name": "m_mu_q_sensitivity_analytic_matches_numeric",
+      "computed": "4.59011268861e-56",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "source": "hand-derived −2/(ℏ_q·q²) = -16.3835223444 vs mp.diff of ln(m_e·Vol/ℏ_q²) at q_0"
+    },
+    {
+      "name": "h1_propagated_shift_reproduces_observed_residual",
+      "computed": "4.11794151034e-8",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "|observed − propagated| / observed = 4.11794e-8 (211.1649144 ppb vs 211.1649057 ppb); the linear Δq_0 propagation accounts for the m_μ miss, leaving no room for a missing categorical correction"
+    },
+    {
+      "name": "substrate_tension_dominates_inversion_residual",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "tension/residual = 5156.6403× (-11.611809 ppb physical vs -0.0022518167 ppb precision floor), gate 100×. Below 1× would mean q_canonical is muon-anchored and this audit measures nothing"
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 39,
   "computation": "mu-substrate-tension-audit-100dps",
   "scriptFile": "mu_substrate_tension_audit_100dps.py",
-  "scriptHash": "ebc01d3fe4c0",
+  "scriptHash": "834f6a95d10f",
   "scriptCommitSha": "5385452aa95ea01d5988ad84204a79af93825540",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -68,8 +100,12 @@
     },
     "propagated_q0_effect_on_m_mu_ppb": "211.164905665",
     "h1_substrate_tension_consistent_with_q0_shift": true,
-    "interpretation": "H1 SUPPORTED: the 210 ppb m_μ residual IS the q_0 re-pin shift propagated through Vol(4_1)/ℏ_q². No missing categorical correction to the muon formula. The substrate is fundamentally OVER-DETERMINED — q_0 cannot simultaneously match m_p AND m_μ at sub-ppb precision."
+    "interpretation": "H1 SUPPORTED: the 210 ppb m_μ residual IS the q_0 re-pin shift propagated through Vol(4_1)/ℏ_q². No missing categorical correction to the muon formula. The substrate is fundamentally OVER-DETERMINED — q_0 cannot simultaneously match m_p AND m_μ at sub-ppb precision.",
+    "vol_4_1_precision_floor_50_vs_100_dps": "1.1293528684e-56"
   },
+  "caveats": [
+    "This file's header says 'Vol(4_1) = 2·Λ(π/3)'. That is wrong by a factor of 3 — 2·Λ(π/3) = Cl₂(2π/3) = 0.6766… = Vol(4_1)/3 — as vol_4_1_mathlib's own docstring already records. The computation uses the correct 2·Cl₂(π/3); only the header is stale. Separately, that helper quotes the SnapPy value as 2.02988321281930725004240510854658…, which is wrong from the 33rd digit; the correct continuation is …5490405718833786150…, as the vol_4_1_matches_known_value assertion records."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

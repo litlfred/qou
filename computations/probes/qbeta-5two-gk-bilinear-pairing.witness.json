@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:26:38.880330+00:00",
-  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
+  "computedAt": "2026-08-30T10:34:38.459481+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
   "assertions": [
     {
       "name": "splus_reproduces_committed_a2",
@@ -13,20 +13,36 @@
       "source": "in-probe S⁺ assembly = the committed A2 witness matrix (consistency gate)"
     },
     {
-      "name": "confrontation_completed",
+      "name": "confrontation_count_matches_structural_recount",
       "computed": 440,
       "expected": 440,
       "passed": true,
+      "tolerance": 0,
+      "source": "440 comparisons accumulated in the loops vs 4·68 + 12·14 = 440 from the assembly shapes; 4 of 72 entries fell below the 1e-30 floor and were skipped"
+    },
+    {
+      "name": "coincidence_budget_stays_below_1e_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
       "tolerance": "0.5",
-      "source": "pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded"
+      "source": "440 parameter-free comparisons × gate 1.0e-6 = 0.00044 expected coincidental hits"
+    },
+    {
+      "name": "parameter_free_hits_against_habiro_faces",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "0 hit(s) and 0 near-miss(es) at gate 1.0e-6 across 440 comparisons; the NO-MATCH verdict below depends on the hit count being 0"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-gk-bilinear-pairing",
   "scriptFile": "qbeta_5two_gk_bilinear_pairing_probe.py",
-  "scriptHash": "28c21ba0c470",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "21916c7b50d4",
+  "scriptCommitSha": "281ed4bc07834efcda18d1fab1358b3da4a49e49",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -210,12 +226,15 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-stokes-barodd-index.witness.json",
-        "sha256": "845a5af6ecc8f849fe4949c8ad3b5d4157cb3947c94b555b83c03641d8f72a61",
-        "size_bytes": 6526,
-        "commitSha": "80bd9ad75cd025ccb05177289a22b62020530d06",
-        "scriptCommitSha": "c4df210824c148c3fc6c9f1ad2c7a5aca10aa864",
-        "computedAt": "2026-07-18T17:52:55.488437+00:00"
+        "sha256": "8c5deb785ce1348487c92be520651311e4005fa8e4b952b380628278d3696fd6",
+        "size_bytes": 6901,
+        "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
+        "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+        "computedAt": "2026-08-29T11:27:48.906476+00:00"
       }
     ]
-  }
+  },
+  "caveats": [
+    "The docstring pre-registers '~300 parameter-free comparisons ⇒ coincidence budget ~3e-4 at the gate'. The probe actually runs 440, for a budget of 0.00044 — same order, but the stated count is understated by ~47%. The verdict is unaffected (0 hits). Reported, not silently corrected."
+  ]
 }

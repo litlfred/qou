@@ -73,13 +73,19 @@ def compute_implied_c2(dps: int = 50) -> "mp.mpf":
     return (target_lw - mp.mpf("2.5")) / h2
 
 
+# Series cut for the L- and Λ-value catalog entries.  Hoisted from the two
+# literal `5001`s below so the truncation-error bound asserted at the end
+# tracks the cut actually used, instead of restating a number.
+N_SERIES_TRUNC = 5000
+
+
 def dirichlet_L_at_2(chi_period: int, chi_values: dict[int, int]) -> "mp.mpf":
     """L(2, χ) = Σ_{n=1}^∞ χ(n) / n² for a Dirichlet character χ.
 
     chi_values maps n mod chi_period to χ(n) ∈ {-1, 0, +1}.
     """
     total = mp.mpf(0)
-    for n in range(1, 5001):  # truncate; series converges quickly
+    for n in range(1, N_SERIES_TRUNC + 1):  # truncate; converges quickly
         residue = n % chi_period
         chi_n = chi_values.get(residue, 0)
         if chi_n != 0:
@@ -326,18 +332,84 @@ def main() -> int:
            "multiple contributions.")
     ))
 
-    has_match_1ppm = len(matches_1ppm) > 0
+    # Was `computed=True, expected=True` named `closed_form_search_completed`
+    # (bean `qou-26f2`): reaching this line was the whole test, so the search
+    # read PASS with an empty catalog, a NaN c_implied, or a hit it never
+    # reported.  `has_match_1ppm` was computed on the line above and never
+    # used — the module already had the verdict and discarded it.
+
+    # (1) c_implied by a second algebraic route.  The first builds
+    # Vol(B₃)/ℏ_q² and divides; this one uses ℏ_q = h/(q+1) to write
+    # target_lw = m_p·h²/(8·G·m_e·(q+1)²) — equal algebraically, different
+    # arithmetic, so a typo or a precision loss in either shows up here.
+    _q = mp.mpf(Q_50_DIGIT_STR)
+    _h = _q - 1 / _q
+    c_implied_route2 = (
+        (mp.mpf(M_P_MEV) * _h ** 2)
+        / (8 * mp.catalan * mp.mpf(M_E_MEV) * (_q + 1) ** 2)
+        - mp.mpf("2.5")
+    ) / _h ** 2
+    c_implied_route_gap = abs(c_implied - c_implied_route2)
     w.add_assertion(
-        name="closed_form_search_completed",
-        computed=True,
-        expected=True,
+        name="c_implied_agrees_across_two_algebraic_routes",
+        computed=mp.nstr(c_implied_route_gap, 12),
+        expected="0",
+        tolerance="1e-45",
+        source="(target_lw−5/2)/h² with target_lw = m_p/(m_e·8G/ℏ_q²) vs "
+               "m_p·h²/(8·G·m_e·(q+1)²), using ℏ_q = h/(q+1); two arithmetic "
+               "paths to the number the whole catalog is scanned against",
+    )
+
+    # (2) The catalog's own L-value machinery, checked against a classical
+    # identity it does not otherwise use: Catalan's constant IS L(2, χ_4).
+    # mp.catalan is exact to working precision, the catalog entry is the
+    # series cut at N, so the gap must BE the tail — which for the χ_4 pairs
+    # (4k+1, 4k+3) sums to 1/(2N²).  Asserting the size, not an inequality,
+    # so a changed cut is visible rather than silently absorbed.
+    l_chi4 = dirichlet_L_at_2(4, {1: 1, 3: -1})
+    l_chi4_gap = abs(l_chi4 - mp.catalan)
+    l_chi4_tail_bound = mp.mpf(1) / (2 * mp.mpf(N_SERIES_TRUNC) ** 2)
+    w.add_assertion(
+        name="dirichlet_L_chi4_equals_catalan_at_truncation_tail",
+        computed=mp.nstr(l_chi4_gap, 12),
+        expected=mp.nstr(l_chi4_tail_bound, 12),
+        tolerance="1e-9",
+        source=f"|L(2,χ_4) − G| = {mp.nstr(l_chi4_gap, 6)} against the tail "
+               f"1/(2N²) = {mp.nstr(l_chi4_tail_bound, 6)} for N = "
+               f"{N_SERIES_TRUNC}; validates dirichlet_L_at_2 against the "
+               "classical identity G = L(2,χ_4) and pins how accurate every "
+               "series-built catalog entry actually is",
+    )
+
+    # (3) The search's actual finding, which nothing asserted.
+    w.add_assertion(
+        name="candidates_within_1ppm_of_c_implied",
+        computed=len(matches_1ppm),
+        expected=1,
         tolerance=0,
-        source=(
-            f"Catalog of {len(candidates)} closed-form constants "
-            f"searched against c_implied at 50 dps. Found "
-            f"{len(matches_1ppm)} match(es) within 1 ppm. "
-            f"(Sanity check: search completed without error.)"
-        ),
+        source=f"{len(matches_1ppm)} of {len(candidates)} candidates fall "
+               f"within 1 ppm ({mp.nstr(one_ppm, 6)}) of c_implied; the hit is "
+               f"'{matches_1ppm[0][1] if matches_1ppm else '—'}'. See the "
+               "caveat: it is a tuned-denominator catalog entry, not a "
+               "structural identity",
+    )
+    w.add_data("n_candidates_within_1ppm", len(matches_1ppm))
+    w.add_data("has_match_1ppm", bool(matches_1ppm))
+    w.add_caveat(
+        "The module docstring states c_implied = -0.91628187612727488…; the "
+        "computed value is -0.91629380906856612…, differing by 1.19e-5 — far "
+        "outside the 1 ppm gate the search uses. The docstring literal is "
+        "stale. Reported, not silently corrected."
+    )
+    w.add_caveat(
+        "The docstring anticipates that NO candidate matches to 1 ppm; one "
+        "does — '-G - π²/(6·5000)' at Δ=7.72e-7 against a 9.16e-7 gate. It "
+        "is not a structural identity: the catalog also carries "
+        "'-9163/10000', '-91628/100000', '-G·(1 + 1/3000)' and '-23/25.1', "
+        "i.e. entries with denominators tuned to c_implied itself, so a "
+        "1 ppm hit from this catalog carries no evidential weight. The "
+        "conclusion string calls it a STRUCTURAL IDENTITY candidate; that "
+        "reading is not supported."
     )
 
     out = w.save()

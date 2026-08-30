@@ -1,16 +1,16 @@
 ---
 # qou-f8lit
-title: 'MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)'
-status: todo
+title: MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)
+status: in-progress
 type: task
 priority: high
-parent: qou-8mtd
 tags:
     - hyperbolic-volume
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-29T19:10:00Z
+updated_at: 2026-08-30T10:40:13Z
+parent: qou-8mtd
 ---
 
 ## The defect
@@ -635,3 +635,45 @@ confirming `EXIT 1` at the right line, then restoring. Same discipline
 Both items I listed as "next" are **closed as non-issues**, and the second one
 *strengthens* `qou-qint`: `scratch.lean` is a live consumer of `qIntBalZ`, so
 the ℤ-index migration is not merely unblocked but partly already done.
+
+## CORRECTION + WIDENING 2026-08-30 — there are THREE values, and none is exact
+
+This bean says the corpus "records the exact value one directory over" at
+`QOU/Knot/FigureEightVolume.lean:88`. **That carrier is an approximation too.**
+Measured against `2·Cl₂(π/3)` at 80 dps:
+
+| carrier | value | good digits |
+|---|---|---|
+| `2 * Cl_2 (π/3)` (symbolic) | — | **exact** |
+| `QOU/Encounter/MostowRigidity.lean:235` | `2.02988321281930` | **14** |
+| `QOU/Knot/FigureEightVolume.lean:88` `VOL_4_1_decimal` | `2.029883212819307250011597804990` | **20** |
+| `qou-mass/.../experimental_constants.py` `VOL_4_1_50DPS_STR` | `2.02988321281930725004240510854904057483004159909893` | **36** |
+
+So the defect is not one bad literal beside a good one. It is a **ladder of
+three decimal carriers at 14, 20 and 36 digits**, each named as though it were
+authoritative — `_decimal`, `_50DPS_STR` — and none agreeing with the exact
+value or with each other past its own truncation point.
+
+`VOL_4_1_50DPS_STR` is the sharpest of the three because its *name states a
+precision it does not have*: it diverges at **2.95e-36** under a name promising
+50 dps. Its sibling in the same file is genuinely good —
+`VOL_BORROMEAN_50DPS_STR` agrees with `8·Catalan` to **2.29e-50** — so this is
+not a house convention where `_50DPS_` loosely means "long"; one constant meets
+the name and the other does not.
+
+### Why this widens the bean rather than just annotating it
+
+The fix this bean proposes is to replace the 15-digit Lean literal with the
+corpus's recorded value. Done literally, that swaps a 14-digit carrier for a
+20-digit one and leaves `figureEightTriangulation.volume = VOL_4_1` still
+false, just further out. The `_50DPS_STR` is better but still not exact, so
+pointing Lean at *that* only moves the disagreement to digit 36.
+
+The only carrier that discharges `= VOL_4_1` is the **symbolic** `2 * Cl_2
+(π/3)`. Any decimal, at any length, reintroduces the same trap — which is this
+bean's own closing lesson ("the constants can carry the same defect") applied
+one level further than it was written.
+
+Found while draining `qou-26f2` in `mu_substrate_tension_audit_100dps.py`,
+whose header also miscites Vol(4₁) as `2·Λ(π/3)` — wrong by 3x, and already
+flagged in the helper's own docstring. Not edited: shared registry.

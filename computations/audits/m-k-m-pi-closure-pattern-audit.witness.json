@@ -1,24 +1,41 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T09:56:56.087699+00:00",
-  "commitSha": "55b29b8a2c8c34fe7395c526b99fb842e69b7306",
+  "computedAt": "2026-08-30T09:47:51.991304+00:00",
+  "commitSha": "738f2c10d0cc0f91df3a9bb4f6dafeb2570146f6",
   "assertions": [
     {
-      "name": "audit_completed",
-      "computed": true,
-      "expected": true,
+      "name": "closure_catalog_covers_five_dashboard_observables",
+      "computed": 5,
+      "expected": 5,
       "passed": true,
       "tolerance": 0,
-      "source": "Closure pattern audit completed at 50 dps."
+      "source": "well-formed rows (all 7 keys) = 5; obs set matches the five the description names (m_K/m_π MET + 4 missing)"
+    },
+    {
+      "name": "m_k_m_pi_full_series_residual_ratio_ppb",
+      "computed": "51.4279471463",
+      "expected": "51.4",
+      "passed": true,
+      "tolerance": "0.1",
+      "unit": "ppb",
+      "source": "(√(base+EM) − m_K/m_π|PDG)/(m_K/m_π|PDG) with EM = (α_em/π)(1+log(1+ℏ_q)); header comment states the full series 'sits at 51.4 ppb on the ratio' (2-term form gives 23.4)"
+    },
+    {
+      "name": "m_k_m_pi_still_meets_l2_on_full_series",
+      "computed": "5.1265062888",
+      "expected": "5.13",
+      "passed": true,
+      "tolerance": "0.05",
+      "source": "L2 target = σ_exp/100 = 263.64569 ppb from m_K 493.677±0.013, m_π 139.57039±0.00018 MeV; header comment states 5.13× margin on the full series (was 11.27× at 2 terms)"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "m-k-m-pi-closure-pattern-audit",
   "scriptFile": "m_k_m_pi_closure_pattern_audit.py",
-  "scriptHash": "9746e19d95da",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "92424e0c271e",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +49,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/m_k_m_pi_closure_pattern_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/m_k_m_pi_closure_pattern_audit.py"
   },
   "description": "Audits whether the m_K/m_π closure pattern (additive missing categorical EM correction) transfers to the 4 still-missing L2 dashboard observables (m_μ, Q_β, m_n, Δm_pn). Catalogs each observable's closure-blocker type. Finds NO transfer of the additive-correction pattern — each missing observable has a structurally different blocker. The META-lesson (identify specific categorical missing pieces, not fits) does transfer.",
   "parameters": {
@@ -87,6 +111,14 @@
         "fix_pattern": "INTRINSIC (gated on flavor-split refinement)"
       }
     ],
-    "transferability_verdict": "The m_K/m_π additive-EM-correction pattern does NOT directly transfer to m_μ (over-determined), Q_β (truncation/Habiro), or m_n / Δ_pn (flavor-split intrinsic residual). Each closure blocker has a structurally distinct type. The META-lesson (specific categorical missing pieces, not coefficient fits) DOES transfer: m_μ has no formula correction (Probe A confirms); Q_β needs Habiro identification (Probe B framing); m_n / Δ_pn need flavor-split refinement (gated separately)."
-  }
+    "transferability_verdict": "The m_K/m_π additive-EM-correction pattern does NOT directly transfer to m_μ (over-determined), Q_β (truncation/Habiro), or m_n / Δ_pn (flavor-split intrinsic residual). Each closure blocker has a structurally distinct type. The META-lesson (specific categorical missing pieces, not coefficient fits) DOES transfer: m_μ has no formula correction (Probe A confirms); Q_β needs Habiro identification (Probe B framing); m_n / Δ_pn need flavor-split refinement (gated separately).",
+    "m_K_m_pi_residual_ratio_ppb_full_series": "51.4279471463",
+    "m_K_m_pi_sigma_exp_ratio_ppb": "26364.5694465",
+    "m_K_m_pi_l2_margin": "5.1265062888"
+  },
+  "caveats": [
+    "closure_pattern_catalog's m_K/m_π row still reads residual_ppb '23.4', the 2-term (3q²−1)/(2q²) figure. This module computes the full series the owner directed on 2026-08-09, which lands at 51.4 ppb — see assertion m_k_m_pi_full_series_residual_ratio_ppb. The row is stale, not the computation; status MET is unaffected (5.13× margin). Left as-is rather than silently corrected."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

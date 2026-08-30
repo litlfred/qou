@@ -105,7 +105,12 @@ def main() -> int:
 
     # ── Test 2: m_K/m_π template projection at h⁰ ──
     print(f"\n[Test 2: m_K/m_π template `(3q²−1)/(2q²)` at h⁰ order]")
-    em_shape = (3 * q ** 2 - 1) / (2 * q ** 2)
+    # One definition of the shape, evaluated at both q_0 and the h⁰ limit
+    # below, so that changing it moves BOTH assertions rather than only one.
+    def em_shape_at(z):
+        return (3 * z ** 2 - 1) / (2 * z ** 2)
+
+    em_shape = em_shape_at(q)
     print(f"  (3q² − 1)/(2q²) at q_0 = {mp.nstr(em_shape, 18)}")
     print(f"  at q=1: (3-1)/(2) = 1 (h⁰ leading term)")
     print(f"  → Truncation at h⁰ gives 1; full at q_0 gives 1.16")
@@ -116,6 +121,25 @@ def main() -> int:
     print(f"  ")
     print(f"  This is TAUTOLOGICAL — the h⁰ truncation of any of these")
     print(f"  q-shapes is the bare (α_em/π) by construction.")
+
+    # The two facts the "structurally CIRCULAR" verdict below rests on, made
+    # checkable.  `hbar_q` / `hbar_q_sq` are built at the top of main() and
+    # were never read by anything — they are the second route the docstring
+    # names ("(3q²−1)/(2q²) is a truncation of 1 + ℏ_q − ℏ_q²/2"), so use them.
+    em_shape_series = 1 + hbar_q - hbar_q_sq / 2
+    em_shape_series_residual = abs(em_shape - em_shape_series)
+    # h⁰ limit: q → 1, i.e. ℏ_q → 0.  Evaluated at a real q, not by reading the
+    # leading term off the algebra, so a changed shape moves it.
+    q_h0 = 1 + mp.mpf("1e-40")
+    em_shape_h0 = em_shape_at(q_h0)
+    em_shape_h0_gap = abs(em_shape_h0 - 1)
+    em_shape_departure_at_q0 = em_shape - 1
+    print(f"  ")
+    print(f"  cross-check vs 1 + ℏ_q − ℏ_q²/2: residual "
+          f"{mp.nstr(em_shape_series_residual, 6)}")
+    print(f"  h⁰ limit (q=1+1e-40): {mp.nstr(em_shape_h0, 20)}  "
+          f"|gap| {mp.nstr(em_shape_h0_gap, 6)}")
+    print(f"  departure at q_0:     {mp.nstr(em_shape_departure_at_q0, 12)}")
 
     # ── Test 3: Sign-block channel identification ──
     print(f"\n[Test 3: WHY sign rep?]")
@@ -162,12 +186,59 @@ def main() -> int:
     w.add_data("target", mp.nstr(target, 25))
     w.add_data("verdict", verdict)
 
+    w.add_data("em_shape_at_q0", mp.nstr(em_shape, 25))
+    w.add_data("em_shape_h0_limit", mp.nstr(em_shape_h0, 25))
+
+    # Was `computed=True, expected=True` named `scaffold_completed` (bean
+    # `qou-26f2`): it asserted that main() reached save(), so the scaffold
+    # read PASS whatever the substrate did.  The verdict it should have been
+    # guarding — that the m_K/m_π template is CIRCULAR for the per-block
+    # coupling — rests on exactly two arithmetic facts, so assert those.
+
+    # (1) The template shape really is the docstring's two-term ℏ_q series.
+    # If it were not, "truncating it at h⁰" would not mean what Test 2 says.
     w.add_assertion(
-        name="scaffold_completed",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Scaffold identifies the actual open derivation question.",
+        name="em_shape_is_two_term_hbar_q_series",
+        computed=mp.nstr(em_shape_series_residual, 12),
+        expected="0",
+        tolerance="1e-70",
+        source="(3q²−1)/(2q²) − (1 + ℏ_q − ℏ_q²/2) with ℏ_q = 1 − 1/q at 80 "
+               "dps; the docstring's stated truncation identity, checked "
+               "against the ℏ_q route main() already built and never read",
+    )
+
+    # (2) …and its h⁰ truncation is exactly the identity factor.  This is the
+    # whole circularity: (α_em/π)·1 = (α_em/π) returns the input, so no
+    # Bring-zero-mode content is being derived at h⁰ order.  A shape whose
+    # q→1 limit were anything but 1 would break the verdict, not the code.
+    w.add_assertion(
+        name="em_shape_h0_truncation_is_unity",
+        computed=mp.nstr(em_shape_h0_gap, 12),
+        expected="0",
+        tolerance="1e-39",
+        source=f"|(3q²−1)/(2q²) − 1| at q = 1+1e-40 = "
+               f"{mp.nstr(em_shape_h0_gap, 6)}; the h⁰ truncation returns the "
+               "bare (α_em/π) unchanged, which is why the open item as posed "
+               "is circular",
+    )
+
+    # (3) The shape is not identically 1 — the triviality is the truncation's,
+    # not the shape's.  Anchored on the value, so a q_0 re-pin moves it.
+    w.add_assertion(
+        name="em_shape_departure_from_unity_at_q0",
+        computed=mp.nstr(em_shape_departure_at_q0, 12),
+        expected="0.0941731228",
+        tolerance="1e-9",
+        source="(3q²−1)/(2q²) − 1 at q_0; nonzero, so the h⁰ truncation "
+               "discards real q-dependence rather than the shape being flat",
+    )
+    w.add_caveat(
+        "Test 2's printed line 'full at q_0 gives 1.16' is wrong: the line "
+        "above it prints the same quantity as 1.09417312281712097, and "
+        "assertion em_shape_departure_from_unity_at_q0 measures the "
+        "departure as 0.0941731228, i.e. the shape is 1.0942 at q_0, not "
+        "1.16. The printed 1.16 has no route in this module. Reported "
+        "rather than silently corrected."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")
