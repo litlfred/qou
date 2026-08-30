@@ -221,4 +221,82 @@ theorem selection_rule_c1_real {K : Type*} [Field K] [LinearOrder K]
     (dimQ q [2] + dimQ q [1, 1]) / 2 = 1 :=
   selection_rule_c1_from_hooks q (qInt_ne_zero hq (by norm_num)) (by norm_num)
 
+/-! ## c = 3: the partitions of 4
+
+The proton anchor.  Five shapes, five hook multisets, and the one non-trivial
+ratio `[4]_q/[2]_q`.  Added so `prop:selection-rule-anchors-c1-c3` rests on the
+hook-length formula for BOTH its anchors rather than only for c=1 — half a
+derivation would have left its "derivation-tight" claim still half-asserted. -/
+
+theorem hooks_four : hooks [4] = [4, 3, 2, 1] := by decide
+theorem hooks_three_one : hooks [3, 1] = [4, 2, 1, 1] := by decide
+theorem hooks_two_two : hooks [2, 2] = [3, 2, 2, 1] := by decide
+theorem hooks_two_one_one : hooks [2, 1, 1] = [4, 1, 2, 1] := by decide
+theorem hooks_one_four : hooks [1, 1, 1, 1] = [4, 3, 2, 1] := by decide
+
+@[simp] theorem qFact_four (q : R) : qFact q 4 = qInt q 4 * (qInt q 3 * qInt q 2) := by
+  simp [qFact, qInt_one]
+
+/-- `[4]_q = (q² + q⁻²)·[2]_q`.  Stated as a product rather than the quotient
+`[4]/[2]` so it needs no non-vanishing hypothesis of its own. -/
+theorem qInt_four_eq (q : R) (hq : q ≠ 0) :
+    qInt q 4 = (q ^ 2 + (q ^ 2)⁻¹) * qInt q 2 := by
+  simp [qInt, Finset.sum_range_succ, zpow_neg]
+  field_simp
+  ring
+
+theorem dimQ_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
+    (h4 : qInt q 4 ≠ 0) : dimQ q [4] = 1 := by
+  simp [dimQ, hooks_four, qFact_four, qInt_one]
+  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+
+theorem dimQ_one_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
+    (h4 : qInt q 4 ≠ 0) : dimQ q [1, 1, 1, 1] = 1 := by
+  simp [dimQ, hooks_one_four, qFact_four, qInt_one]
+  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+
+theorem dimQ_three_one (q : R) (h2 : qInt q 2 ≠ 0) (h4 : qInt q 4 ≠ 0) :
+    dimQ q [3, 1] = qInt q 3 := by
+  simp [dimQ, hooks_three_one, qFact_four, qInt_one]
+  field_simp
+
+theorem dimQ_two_one_one (q : R) (h2 : qInt q 2 ≠ 0) (h4 : qInt q 4 ≠ 0) :
+    dimQ q [2, 1, 1] = qInt q 3 := by
+  simp [dimQ, hooks_two_one_one, qFact_four, qInt_one]
+  field_simp
+
+/-- **`dim_q V_{(2,2)} = [4]_q/[2]_q = q² + q⁻²`** — the one H₄ dimension that is
+not `1` or `[3]_q`, and the reason the c=3 anchor has a `3/4 h²` in it. -/
+theorem dimQ_two_two (q : R) (hq : q ≠ 0) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
+    dimQ q [2, 2] = q ^ 2 + (q ^ 2)⁻¹ := by
+  simp [dimQ, hooks_two_two, qFact_four, qInt_one, qInt_four_eq q hq]
+  field_simp
+
+/-- **c = 3 anchor, derived.**  `(1/4) Σ_{λ⊢4} dim_q V_λ = 5/2 + (3/4)h²`, over
+the real q-dimensions of the five partitions of 4. -/
+theorem selection_rule_c3_from_hooks (q : R) (hq : q ≠ 0) (h2 : qInt q 2 ≠ 0)
+    (h3 : qInt q 3 ≠ 0) (h4 : qInt q 4 ≠ 0) (four_ne : (4 : R) ≠ 0) :
+    (dimQ q [4] + dimQ q [3, 1] + dimQ q [2, 2] + dimQ q [2, 1, 1]
+       + dimQ q [1, 1, 1, 1]) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 := by
+  rw [dimQ_four q h2 h3 h4, dimQ_one_four q h2 h3 h4, dimQ_three_one q h2 h4,
+    dimQ_two_one_one q h2 h4, dimQ_two_two q hq h2 h3, qInt_three q hq]
+  -- `(2 : R) ≠ 0` is not free in a general field: without it `field_simp`
+  -- leaves a `2⁻¹` that `ring` cannot clear.  It follows from `four_ne`
+  -- because `4 = 2 * 2`.
+  have two_ne : (2 : R) ≠ 0 := fun hc =>
+    four_ne (by rw [show (4 : R) = 2 * 2 by norm_num, hc]; ring)
+  field_simp
+  ring
+
+/-- **The c=3 anchor over `ℝ_{>0}`, with nothing assumed.** -/
+theorem selection_rule_c3_real {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [4] + dimQ q [3, 1] + dimQ q [2, 2] + dimQ q [2, 1, 1]
+       + dimQ q [1, 1, 1, 1]) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 :=
+  selection_rule_c3_from_hooks q (ne_of_gt hq)
+    (qInt_ne_zero hq (by norm_num)) (qInt_ne_zero hq (by norm_num))
+    (qInt_ne_zero hq (by norm_num)) (by norm_num)
+
 end QOU.Mass

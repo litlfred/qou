@@ -433,6 +433,7 @@ import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
