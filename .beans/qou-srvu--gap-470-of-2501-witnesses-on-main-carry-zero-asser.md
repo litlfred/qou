@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T09:45:49Z
-updated_at: 2026-08-30T12:55:53Z
+updated_at: 2026-08-30T13:01:27Z
 ---
 
 Surfaced while draining `qou-3e5m`, and this bean exists because **that drain
@@ -158,3 +158,44 @@ question is closed by `qou-vfy1`. What remains is ordinary draining, one
 witness at a time, and the two entries this branch added stay in the baseline
 as legitimate cases (`casimir_q_factorial_probe` lost its only assertion
 BECAUSE asserting it would have encoded an open conjecture).
+
+
+## The drain is a contributor, but a SMALL one — measured
+
+My entries above imply the `qou-3e5m` / `qou-26f2` drain is a significant
+driver of this population. Measured, it is not.
+
+Of the 420 live vacuous-green witnesses, a producer could be located by name
+for **185**. Of those 185, **7 cite `qou-26f2` or `qou-3e5m`** — so the drain
+campaign accounts for roughly 4 % of what is locatable, and the population
+overwhelmingly **predates** it. (235 producers were not locatable by the
+filename heuristic and are unmeasured, not counted as either.)
+
+### The worked example is a sibling's, and it is better evidence than mine
+
+`computations/audits/braid_encoding_audit.py`. A sibling removed three
+`add_assertion(computed=True, expected=True)` calls under `qou-26f2` and
+recorded what they documented as **data**, with this reasoning in the source:
+
+> *"they passed by construction and contributed to `allPassed` without checking
+> anything ... Each documents a finding this audit made by reading; none of the
+> three is a computation this script performs, so the remedy is to record them
+> as findings rather than dress them as checks."*
+
+That disposition is exactly right. And the witness it produces has
+`assertions: 0` and `allPassed: true`.
+
+**So a correctly-drained producer lands in this population by default**, because
+`allPassed` is emitted regardless of whether anything was asserted. It is not
+that the drain is careless — it is that the two mechanisms are independent, and
+nothing connects "I removed the fake check" to "so stop claiming green".
+
+This is the sharpest statement of the gap: **the defect is not created by bad
+drains, it is created by `save()` emitting a verdict for a run that reached no
+verdict.** `qou-vfy1` already measured the consequential subset and withdrew
+the `allPassed: null` fix for a good reason (~12 producers hand-roll
+`return 0 if wit["allPassed"] else 1`, and `None` is falsy). So the remedy has
+to be something else — a per-witness opt-out, a separate field, or leaving the
+detection to the two audits and never gating on `allPassed` for an empty list.
+Not proposed here; recorded so the next attempt starts from the constraint
+rather than rediscovering it.
