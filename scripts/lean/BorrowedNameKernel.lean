@@ -64,6 +64,58 @@ def defeqCollapse (type : Expr) : MetaM Bool := do
       | none            => pure false
   catch _ => pure false
 
+/-- Is `c` a field projection of a structure/class -- `C.field`, the function
+    Lean generates for reading one field out of an instance?
+
+    Asked by NAME rather than through `getProjectionFnInfo?`, because the latter
+    is a `CoreM` query and this predicate runs inside the per-constant loop where
+    only `Environment` is to hand.  `isStructure` + `getStructureFields` is the
+    same information: `C.f` is a projection exactly when `C` is a structure and
+    `f` is one of its fields. -/
+def isFieldProjection (env : Environment) (c : Name) : Bool :=
+  match c with
+  | .str parent field =>
+      isStructure env parent && (getStructureFields env parent).contains (.mkSimple field)
+  | _ => false
+
+/-- Does the proof READ ITS CONCLUSION OUT OF ITS OWN HYPOTHESES and derive
+    nothing else from this file?
+
+    True when every constant the proof term uses **from this module** is a field
+    projection.  The proof may still call foreign packaging (`And.intro`,
+    `Iff.intro`, `Exists.intro`) and Mathlib lemmas -- what it may not do is
+    invoke another declaration of its own file, because that would be a
+    derivation step rather than a field read.
+
+    This is the check batch 8 established the kernel pass was MISSING.
+    `defeqCollapse` asks about the STATEMENT; the self-assuming projection
+    (AGENTS.md 3b-cond rule 5) leaves the statement opaque -- `s.total` versus
+    `s.smooth + s.oscillating` are two class-field applications and nothing
+    reduces -- and puts the whole defect in the VALUE.  Measured 2026-08-30: over
+    ten modules selected for exactly that family, `defeqCollapse` fired on 0 of
+    the 5 it could see, in 117 theorems.
+
+    Like `defeqCollapse`, a CANDIDATE signal and not a verdict.  A conditional
+    theorem that legitimately discharges its goal from a stated hypothesis looks
+    identical from here; what separates the two is whether the class carries the
+    conclusion or its inputs, and that is a reading, not a computation.  The
+    non-emptiness guard keeps out proofs that touch no local constant at all
+    (`by norm_num`, a pure Mathlib citation), which are a different question.
+
+    TRAP, measured 2026-08-30 and worth stating because the first version of this
+    predicate reported ZERO on five modules chosen for containing the defect.
+    Field access on an instance leaves BOTH the projection AND THE STRUCTURE
+    ITSELF in `getUsedConstants`: `s.split_identity` yields
+    `[CommRing, GradedTraceResidueSplit, GradedTraceResidueSplit.split_identity]`.
+    So `ls.all isFieldProjection` is always false whenever the structure is local,
+    which is exactly the case this is for.  The structure name must be admitted
+    alongside its fields, and the non-emptiness guard moved onto the PROJECTIONS
+    so that merely mentioning a local structure type is not enough to fire. -/
+def valueOnlyProjects (env : Environment) (self : Name) (v : Expr) : Bool :=
+  let ls := localConsts env self v
+  let projs := ls.filter (isFieldProjection env)
+  !projs.isEmpty && ls.all fun c => isFieldProjection env c || isStructure env c
+
 /-- Is the proof term a reflexivity proof, after stripping lambdas? -/
 partial def valueIsRfl : Expr -> Bool
   | .lam _ _ b _  => valueIsRfl b
@@ -90,6 +142,7 @@ structure Row where
   valueForeign : Array Name
   defeq        : Bool
   isRfl        : Bool
+  onlyProjects : Bool
 
 /-- Analyse SEVERAL modules in ONE pass over the environment.
 
@@ -118,8 +171,12 @@ def analyzeModules (mods : List Name) : MetaM (Array (Name × Array Row)) := do
       | none   => #[]
     let dq <- withOptions (·.setNat `maxHeartbeats 20000) <| defeqCollapse ci.type
     let rf := match ci.value? with | some v => valueIsRfl v | none => false
+    let op := match ci.value? with
+      | some v => valueOnlyProjects env self v
+      | none   => false
     let row : Row := { decl := n, typeForeign := tf, typeLocal := tl,
-                       valueForeign := vf, defeq := dq, isRfl := rf }
+                       valueForeign := vf, defeq := dq, isRfl := rf,
+                       onlyProjects := op }
     acc := acc.insert self ((acc.getD self #[]).push row)
   return mods.toArray.map fun m => (m, acc.getD m #[])
 
@@ -142,8 +199,12 @@ def analyzeModule (self : Name) : MetaM (Array Row) := do
       | none   => #[]
     let dq <- withOptions (·.setNat `maxHeartbeats 20000) <| defeqCollapse ci.type
     let rf := match ci.value? with | some v => valueIsRfl v | none => false
+    let op := match ci.value? with
+      | some v => valueOnlyProjects env self v
+      | none   => false
     rows := rows.push { decl := n, typeForeign := tf, typeLocal := tl,
-                        valueForeign := vf, defeq := dq, isRfl := rf }
+                        valueForeign := vf, defeq := dq, isRfl := rf,
+                        onlyProjects := op }
   return rows
 
 def esc (s : String) : String := s.replace "\"" "\\\""
@@ -157,7 +218,8 @@ def render (self : Name) (rows : Array Row) : String :=
     "\"local_only\":" ++ (if r.typeForeign.isEmpty && !r.typeLocal.isEmpty
                           then "true" else "false") ++ "," ++
     "\"defeq_collapse\":" ++ (if r.defeq then "true" else "false") ++ "," ++
-    "\"value_is_rfl\":" ++ (if r.isRfl then "true" else "false") ++ "}"
+    "\"value_is_rfl\":" ++ (if r.isRfl then "true" else "false") ++ "," ++
+    "\"value_only_projects\":" ++ (if r.onlyProjects then "true" else "false") ++ "}"
   "{\"module\":\"" ++ esc self.toString ++ "\",\"decls\":[" ++
     String.intercalate "," items.toList ++ "]}"
 
