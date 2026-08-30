@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T14:39:21Z
+updated_at: 2026-08-30T14:42:31Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -288,3 +288,51 @@ of the unlabelled geometry is exchange-symmetric by construction with no
 transformation law required. Recorded so the mirror route is not re-attempted
 as though it had been checked. If someone does want it, the open question is the
 sign of `μ̄₁₂₃` under mirror image — worth a `library/` read, not a memory.
+
+
+## SCOPE AUDIT of the chirality obstruction, same day — it is REAL but INERT for this bean's target
+
+Immediately after recording `exchange_symmetry_forces_agreement_on_pm_one` above
+I checked the one thing that decides whether it constrains 4-B at all: **does the
+`κ(A)` target need a sign?**
+
+Measured, from the committed witnesses rather than from the beans:
+
+| source | statistic | value |
+|---|---|---|
+| `em-linking-mirror-series.witness.json` | 31 `κ` values | min **1.4020251**, max **3.2135068** |
+| — | any negative | **no** |
+| — | any zero | **no** |
+| `em-linking-invariant-scoping.witness.json` | `kappa_min` / `kappa_max` | 2.1057468712 / 3.21350728299 |
+| — | `kappa_a3` / `kappa_high_A_mean` | 3.21350728299 / 2.24616992054 |
+
+(The two series are different populations and must not be conflated — the
+scoping one is the `3.2 → 2.1–2.3` profile this bean's GATE names, and its
+`kappa_a3` / `kappa_high_A_mean` reproduce that profile exactly. The mirror
+series runs lower, to 1.40. **Both are strictly positive throughout.**)
+
+**So the target is single-signed, and a channel that cannot carry a chirality
+loses nothing it was being asked for.** The obstruction I proved this morning
+stands as stated — it *is* a scope-(b) exclusion of sign-carrying constructions
+— but it does **not** narrow route (2)'s access to `κ(A)`. Recorded because a
+(b)-scope exclusion left in the corpus without this check reads as a live
+constraint on the front, and it is not one. That is the over-narrowing failure
+AGENTS.md §"Before declaring refuted" exists to prevent, and I nearly committed
+it against my own result.
+
+### Two places it still bites, so it is not merely decorative
+
+1. **Signed intermediates.** The endpoint being positive does not make the
+   *construction* sign-free. The ³He mirror residual is a **difference**, and
+   `E_EM = Σ_{i<j} q_i q_j w_ij` carries signed charge products for p–n pairs.
+   Any route through such an intermediate is still subject to the theorem;
+   only the two-like-charge sector is manifestly positive.
+2. **The inversion, which is the useful reading.** Since the channel cannot
+   supply a sign, **`κ`'s uniform positivity across all 31 measured points is
+   not explained by the μ̄₁₂₃ channel.** It has to be automatic, or come from
+   elsewhere. That is a real question this bean did not previously have: *what
+   makes κ > 1 everywhere?* — and it is now known that the answer is not in the
+   triple-linking sign.
+
+**Net:** route (2)'s ranking is unchanged; the obstruction narrows *how* it may
+be built, not *whether* it can reach the target.
