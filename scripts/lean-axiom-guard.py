@@ -149,10 +149,25 @@ QOU.Mathlib.SYTBetaGapVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_p
 QOU.Mathlib.QHookVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_vandermonde | clean
 # The general-X Macdonald hook telescope -- the goal of bean qou-dsif -- and the
 # general-r branching it rests on. Pinned because until 2026-08-30 this theorem was
-# UNVERIFIABLE: its import cone was red on main (QOU.Mass.QIntegerBarParity opened a
-# namespace that never existed), so `grep -c sorry` returned 0 while `#print axioms`
+# UNVERIFIABLE: its import cone was red on main. `QOU.Mass.QIntegerBarParity` opened
+# `QOU.Mass.QHookDimension`, which 1646b5d6d3 removed (it had been declared nested,
+# as `namespace QOU.Mass` then `namespace QHookDimension`); `QIntegerCanonical` named
+# the same path and broke with it. So `grep -c sorry` returned 0 while `#print axioms`
 # could not run at all. A registry row is a claim a machine re-checks; a sorry count
 # is not.
+#
+# An earlier draft of this comment said the namespace "never existed". That was wrong,
+# and it was wrong for an instructive reason: the grep behind it matched only the
+# fully-qualified `namespace QOU.Mass.QHookDimension` and so could not see the nested
+# spelling. One spelling of a two-spelling construct -- the blind-spot class in
+# docs/audits/2026-08-15-detector-blindness-taxonomy.md. Caught in review by Copilot
+# after the same error had already been corrected in the bean and the commit message
+# but not here, which is the contamination-spread failure AGENTS.md warns about.
+#
+# Measured on origin/main bf08fd156f9, whole-corpus lean-direct with keep-going:
+# up-to-date 1718, ok 379, blocked 210, error 1. All 210 blocked trace to the single
+# error, and 179 of them carry ZERO sorry tokens -- sorry-free on the screen, no
+# verdict available from the proof term.
 QOU.MathlibExt.MacdonaldTelescopeGeneralX | QOU.MathlibExt.MacdonaldTelescopeGeneralX.telescope_generalX | clean
 QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_schurPrincipal_addCellOrSelf | clean
 QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_wenzlWeight_addCellOrSelf | clean
