@@ -911,6 +911,30 @@
       "line_at_adjudication": 131,
       "scope": "main",
       "rationale": "`z_naive` is one of the two PARAMETER-FREE magnitudes the probe fixes BEFORE comparison under its stated anti-fit discipline (the other is g_reeb); it is the object under study, named 'naive' precisely to mark it as the unrefined candidate being tested against the derived reeb magnitude and the 1/sqrt(5) ceiling. Substituting z_D would test a different candidate and invalidate the recorded comparison. Adjacent finding recorded in the source, not migrated: the companion `z_bar_even` assertion is VACUOUS -- z_bar differs from z_naive only by commuting the addition, so the difference is exactly 0 and the assertion cannot fail. The claim is true (z is bar-even) but the symmetry is syntactic, so no formulation of that test can be non-vacuous; g_bar_even by contrast is a genuine algebraic identity check. Labelled in situ so the witness's two assertions are not read as equally strong."
+    },
+    {
+      "path": "computations/probe3qrv_zpin.py",
+      "target": "z_C",
+      "source_hash": "fb43b1fe0f92",
+      "line_at_adjudication": 73,
+      "scope": "<module>",
+      "rationale": "The probe's entire subject is the C-vs-D selection: its docstring states the test as 'ONE equation in ONE unknown -- if it has a unique solution z_D, and the weight vector at z_D equals the Jones-closure vector, then convention D is [selected]', and :71 records the result, 'NOT a root of y_(1^3) = 0 while z_D is -- i.e. the two-row forcing selects D'. z_C is the arm being tested AGAINST and its exclusion is the finding. Binding z_D deletes the comparison that produced the corpus's own evidence for D."
+    },
+    {
+      "path": "computations/probes/casimir_phi_q_markov_probe.py",
+      "target": "z_M_v1",
+      "source_hash": "8bb7d434c4a1",
+      "line_at_adjudication": 125,
+      "scope": "main",
+      "rationale": "One of THREE tabulated convention variants, declared as such in the source: :123 'Markov parameter -- multiple conventions; tabulate them', and the witness description at :220 records 'candidates z_M (three convention variants), and mixed'. The probe exists to tabulate the variants side by side; keeping only one defeats the tabulation."
+    },
+    {
+      "path": "computations/lw2_c2_independent_hopf_test_attempt.py",
+      "target": "z",
+      "source_hash": "0a4acf4fc781",
+      "line_at_adjudication": 96,
+      "scope": "main",
+      "rationale": "The z of the CORPUS CLOSED FORM being cross-checked, not residual C. The probe verifies tr_M(σ₁²) = (q-q⁻¹)z + 1 against the closed form of trm-hopf-sigma1-sq-closed-form.md, which is proved over ℚ(q^{1/2}) WITH z = 1/(√q + 1/√q); it then cross-checks a second, independent q-Schur Plancherel decomposition of the same object. Measured: the quantity is NOT C/D-invariant -- z_C gives 1.1043880582592 and matches the closed form, z_D gives 1.1280887441144 and does not -- so substituting z_D would test the closed form against a value it was never proved to equal. ALSO LABELLED IN SITU: the adjacent comment 'Identical in Wenzl and q-Schur conventions at H₂' is true but is about the WENZL-vs-Q-SCHUR axis, not C-vs-D; sitting one line above this binding it reads as a convention-safety clearance it does not provide."
     }
   ]
 }
