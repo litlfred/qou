@@ -226,12 +226,48 @@ def main() -> int:
         "gap_closed_form": str(GAP),
     }
 
+    # ---- what each (NF, convention) cell implies for the required N=1 factor
+    REQ = mp.mpf("0.99839767")          # bean entry (8)
+    zCv, zDv = mp.sqrt(q0) / (q0 + 1), q0**3 / (q0**2 + 1)
+    cells = {}
+    for nfn, v in (("single_wrap", SW), ("typed", TYPED)):
+        for cn, zv in (("C", zCv), ("D", zDv)):
+            a = (ep(v) - tr(v)) / 2
+            av = mp.mpf(str(sp.N(a.subs({h: sp.Float(str(hm), 50),
+                                         z: sp.Float(str(zv), 50)}), 50)))
+            cells[f"{nfn}_{cn}"] = {
+                "alpha": mp.nstr(av, 12),
+                "cos_alpha": mp.nstr(mp.cos(av), 12),
+                "unexplained_fraction_of_required_correction":
+                    mp.nstr((mp.cos(av) - REQ) / (1 - REQ), 8),
+            }
+    checks.append((
+        "all_four_cells_undercorrect",
+        all(mp.mpf(c["unexplained_fraction_of_required_correction"]) > 0
+            for c in cells.values()),
+        "every (NF, convention) cell leaves part of the required 0.160% "
+        "correction unexplained — none overshoots",
+    ))
+    checks.append((
+        "canonical_choices_are_the_worst_cell",
+        (mp.mpf(cells["typed_D"]["unexplained_fraction_of_required_correction"])
+         == max(mp.mpf(c["unexplained_fraction_of_required_correction"])
+                for c in cells.values())),
+        "typed NF (what the live mass compute uses) + convention D (the "
+        "2026-08-15 owner ruling) is the WORST of the four cells",
+    ))
+    numeric_cells = cells
+
     npass = sum(1 for _, ok, _ in checks if ok)
     for n, ok, why in checks:
         print(f"  [{'PASS' if ok else 'FAIL'}] {n}: {why}")
     print(f"\n{npass}/{len(checks)} assertions pass")
     for k, v in numeric.items():
         print(f"  {k} = {v}")
+    print("\n  cell            alpha           cos(alpha)      unexplained")
+    for k, v in numeric_cells.items():
+        print(f"  {k:<15} {v['alpha']:>14} {v['cos_alpha']:>15} "
+              f"{v['unexplained_fraction_of_required_correction']:>13}")
 
     w = WitnessBuilder("qbeta-nf-counit-gap-order",
                        engine="python+sympy+mpmath", output_dir=HERE,
@@ -260,6 +296,7 @@ def main() -> int:
     w.add_data("checks", [{"name": n, "pass": ok, "why": why}
                           for n, ok, why in checks])
     w.add_data("numeric_at_proton_pin", numeric)
+    w.add_data("nf_convention_cells_vs_required_N1", numeric_cells)
     w.add_data("verdict", (
         "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with "
         "coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 "

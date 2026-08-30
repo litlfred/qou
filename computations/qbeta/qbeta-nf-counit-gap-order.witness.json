@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:48:28.153925+00:00",
-  "commitSha": "0d414e780fe168670f57ad7c37d214cf251ed157",
+  "computedAt": "2026-08-30T11:53:25.687926+00:00",
+  "commitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
   "assertions": [
     {
       "name": "gap_closed_form",
@@ -105,14 +105,26 @@
       "computed": "pass",
       "expected": "pass",
       "passed": true
+    },
+    {
+      "name": "all_four_cells_undercorrect",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "canonical_choices_are_the_worst_cell",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-nf-counit-gap-order",
   "scriptFile": "qbeta_nf_counit_gap_order_probe.py",
-  "scriptHash": "e38fb70659ea",
-  "scriptCommitSha": "0d414e780fe168670f57ad7c37d214cf251ed157",
+  "scriptHash": "e7bb4ed393a7",
+  "scriptCommitSha": "27150b73fc9b58ba28bd50d7560627ff7d586fcd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -141,8 +153,8 @@
     "q0_anchor": "proton (physical_proton pin)"
   },
   "data": {
-    "assertions_passed": 17,
-    "assertions_total": 17,
+    "assertions_passed": 19,
+    "assertions_total": 19,
     "checks": [
       {
         "name": "gap_closed_form",
@@ -228,6 +240,16 @@
         "name": "reproduces_audit_ratio_1_00579",
         "pass": true,
         "why": "matches docs/audits/2026-05-11-q-beta-residual-decomposition.md §1"
+      },
+      {
+        "name": "all_four_cells_undercorrect",
+        "pass": true,
+        "why": "every (NF, convention) cell leaves part of the required 0.160% correction unexplained — none overshoots"
+      },
+      {
+        "name": "canonical_choices_are_the_worst_cell",
+        "pass": true,
+        "why": "typed NF (what the live mass compute uses) + convention D (the 2026-08-15 owner ruling) is the WORST of the four cells"
       }
     ],
     "numeric_at_proton_pin": {
@@ -238,6 +260,28 @@
       "ratio_typed_over_single_wrap": "1.0057872078299556552",
       "relative_gap": "0.0057872078299556551719",
       "gap_closed_form": "h**3*(h**4 + 2*h**3 + 2*h**2 + 2*h - 1)/4"
+    },
+    "nf_convention_cells_vs_required_N1": {
+      "single_wrap_C": {
+        "alpha": "-0.0523361202682",
+        "cos_alpha": "0.998630777833",
+        "unexplained_fraction_of_required_correction": "0.14548054"
+      },
+      "single_wrap_D": {
+        "alpha": "-0.0404857773406",
+        "cos_alpha": "0.999180562854",
+        "unexplained_fraction_of_required_correction": "0.48859652"
+      },
+      "typed_C": {
+        "alpha": "-0.0354101077057",
+        "cos_alpha": "0.999373127642",
+        "unexplained_fraction_of_required_correction": "0.6087745"
+      },
+      "typed_D": {
+        "alpha": "-0.0298326307505",
+        "cos_alpha": "0.999555040073",
+        "unexplained_fraction_of_required_correction": "0.72230444"
+      }
     },
     "verdict": "GATE STANDS. The counit gap is O(t^3) but the ALPHA gap is O(t) with coefficient 1/8 in both conventions, because alpha = (eps - tr_M)/2 and tr_M weights by z^#cr where eps sets z^k -> 1. The bean was right and this probe's first conclusion was wrong. Surviving: the exact closed form; that the 1.00579 is NOT a basis change (eps is canonical, so different eps => different ELEMENTS); and that the typed NF is worse, destroying single-wrap C's t^2 match rather than repairing t^3."
   }
