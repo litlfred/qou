@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T15:59:47Z
+updated_at: 2026-08-30T17:50:09Z
 ---
 
 ## Context
@@ -137,3 +137,16 @@ loopValue_gt_one (the substrate is never at the exceptional δ=1), physicalBindi
 subtraction), and spuriousPerNucleon_lt_log/_mono (per component it rises to the CONSTANT log δ —
 it saturates rather than washing out, which is the shape of a plateau). Does NOT touch the empirical
 B/A, which comes from AME masses, not from a closure-normalised trace.
+
+
+
+**And the artefact is REMOVABLE — the standard normalisation is what removes it (2026-08-30).**
+MarkovMoves.normFactor is c^writhe · d^level. The writhe slot c is what survives stabilisation
+(normFactor_stab); the LEVEL slot d is what absorbs the closure normalisation, since
+closureNorm δ k t = t/δ^k is exactly a factor δ^(-level). With d = δ it cancels:
+closureNorm_absorb, freeEnergy_absorb, and spuriousBinding_absorbed_eq_zero — the same
+non-interacting assembly that registered m·log δ registers exactly 0 once the level factor is
+restored. So the artefact is a defect of the UNNORMALISED convention, not an obstruction, and it
+explains why a Jones-style normalisation carries a level factor at all: it is the closure
+bookkeeping, not decoration. Does NOT assert that any particular corpus computation makes that
+choice — a binding read off closureNorm without δ^level still carries the artefact.
