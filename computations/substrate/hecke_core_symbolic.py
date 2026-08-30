@@ -90,6 +90,7 @@ import sympy as sp
 import mpmath as mp
 
 from q_parameter import q_at  # final-step substitution only
+from laurent_q import LaurentQ  # sparse Z[q,q^{-1}] kernel (P17)
 
 
 # ══════════════════════════════════════════════════════════════
@@ -125,6 +126,91 @@ two_q = q + q_inv
 
 ONE = sp.Integer(1)
 HALF = sp.Rational(1, 2)
+
+
+# ══════════════════════════════════════════════════════════════
+# Laurent kernel — the coefficient ring the NF fold actually lives in
+# ══════════════════════════════════════════════════════════════
+#
+# MEASURED (2026-08-30): the sympy-`Expr` fold below was not merely slow, it
+# was exponential.  `hm_sym` never canonicalises, so `r[ti] + nf[si]*co`
+# accumulates an unevaluated `Add`/`Mul` tree that grows ×2.62 per step:
+# `sp.count_ops` over the 6-vector went 3450 → 14278 → 60146 → 157334 →
+# 411816 → 1078144 → 2821786 across steps 12..20 of the 24-step deuteron
+# fold, which was still unfinished at 240 s.  A cProfile of a 19-step prefix
+# (6.24 s, 13.4 M calls) puts the cost in `Mul.flatten`, `_expand_hint` and
+# the assumption engine (`assumptions._ask`, 99 903 `random.shuffle` calls
+# inside `deduce_all_facts`) re-interrogating `Symbol("q", positive=True)` at
+# every node — i.e. generic-`Expr` overhead on a tree that never collapses.
+#
+# The tree was representing a **23-term Laurent polynomial**.  `hm_sym` only
+# ever multiplies by `1`, `0`, `-h`, `-h/2` and `c·h`, and under convention D
+# (`z = q³/(q²+1)`, canonical since the owner ruling of 2026-08-15) `z` never
+# enters this fold at all.  So every NF coefficient lies in `ℤ[q, q⁻¹]` — a
+# sparse dict of ~2·deg entries — and the whole computation is O(steps · deg).
+#
+# This is P17 of `local/compute-audit` ("wrong number kernel"), and
+# `pyhecke.laurent_q.LaurentQ` is the kernel that skill points at.  Its own
+# docstring records the same finding from the GS-reduction side ("1.9 M cache
+# lookups per reduce on tritium per the cProfile data").
+#
+# Two committed witnesses carry the OLD, half-right diagnosis and should be
+# read with this note beside them:
+#   * `crystal_shift_nf_atomic.py` — "Replaces the abandoned symbolic-q path
+#     … each hm_sym doubles the monomial count in (q, √q).  After 25 ops
+#     sp.cancel cannot canonicalise ~10⁷ terms."
+#   * `compound_shift_nf.py` (a witness `add_caveat`, so published) —
+#     "intractably slow at A≥2 due to expression fan-out … without
+#     intermediate canonicalization."
+# The *tree* doubles; the *polynomial* does not (23 terms at A=2, not 10⁷).
+# And "(q, √q)" is convention-C-era wording: there is no √q in this fold.
+# Neither claim is deleted here — the numerical results they report stand;
+# only the "abandoned / intractable" scoping was wrong.
+
+_L_ONE = LaurentQ.one()
+_L_ZERO = LaurentQ.zero()
+# h = q - q⁻¹ and the two scalings the atom fold uses.
+_L_H = LaurentQ({1: sp.Integer(1), -1: sp.Integer(-1)})
+_L_MH = LaurentQ({1: sp.Integer(-1), -1: sp.Integer(1)})
+_L_MH2 = LaurentQ({1: sp.Rational(-1, 2), -1: sp.Rational(1, 2)})
+
+
+def hm_laurent(nf: Sequence[LaurentQ], c: LaurentQ, d: LaurentQ,
+               gen: int) -> list[LaurentQ]:
+    """`LaurentQ` mirror of :func:`hm_sym` — identical dispatch tables.
+
+    Same 6-dimensional NF multiplication by ``(c·σ_gen + d·I)``, with the
+    coefficient algebra carried as sparse ``ℤ[q, q⁻¹]`` dicts instead of
+    ``sympy.Expr``.  Every arithmetic step is O(deg); nothing is ever
+    ``expand``-ed, ``cancel``-ed or ``simplify``-ed because the sparse dict
+    *is* the canonical form.
+    """
+    r = [_L_ZERO] * 6
+    ch = c * _L_H
+    if gen == 0:
+        tables = [
+            (0, [(1, c), (0, d)]),
+            (1, [(1, ch), (0, c), (1, d)]),
+            (2, [(3, c), (2, d)]),
+            (3, [(3, ch), (2, c), (3, d)]),
+            (4, [(5, c), (4, d)]),
+            (5, [(5, ch), (4, c), (5, d)]),
+        ]
+    else:
+        tables = [
+            (0, [(2, c), (0, d)]),
+            (1, [(4, c), (1, d)]),
+            (2, [(2, ch), (0, c), (2, d)]),
+            (3, [(5, c), (3, d)]),
+            (4, [(4, ch), (1, c), (4, d)]),
+            (5, [(5, ch), (3, c), (5, d)]),
+        ]
+    for si, tgts in tables:
+        if not nf[si]:
+            continue
+        for ti, co in tgts:
+            r[ti] = r[ti] + nf[si] * co
+    return r
 
 
 def q_int_sym(n: int) -> sp.Expr:
@@ -349,54 +435,83 @@ def atom_V_full_sym(Z: int, N: int) -> tuple[sp.Expr, sp.Expr]:
 # build_atom_nf — symbolic NF coefficients
 # ══════════════════════════════════════════════════════════════
 
-def build_atom_nf_sym(Z: int, N: int) -> list[sp.Expr]:
-    """Symbolic mirror of ``hecke_core.build_atom_nf``.
+def build_atom_nf_laurent(Z: int, N: int) -> list[LaurentQ]:
+    """Atom NF vector with coefficients as sparse ``LaurentQ`` (``ℤ[q, q⁻¹]``).
 
-    Returns a 6-element NF vector with coefficients in
-    ``ℚ(q, √q)``.  Use ``evalf_at_q0`` per-component to obtain
-    f64/mpmath numerical values at the end.
+    Structurally identical to :func:`build_atom_nf_sym` — same ordering, same
+    crossing sequence, same dispatch tables — but every coefficient is a
+    sparse exponent→``Rational`` dict rather than a ``sympy.Expr`` tree.  This
+    is the canonical entry point; :func:`build_atom_nf_sym` is a thin sympy
+    wrapper over it.
+
+    Measured against the previous pure-``Expr`` fold (see the Laurent-kernel
+    note above): the deuteron (A=2, 24 steps) went from **unfinished at 240 s**
+    to **0.024 s**, with the six components identical as sympy expressions.
     """
     A = Z + N
     if A == 0:
-        return [ONE, sp.Integer(0), sp.Integer(0), sp.Integer(0), sp.Integer(0), sp.Integer(0)]
+        return [_L_ONE, _L_ZERO, _L_ZERO, _L_ZERO, _L_ZERO, _L_ZERO]
 
     ordering = _ground_state_ordering(Z, N)
-    nf: list[sp.Expr] = [ONE, sp.Integer(0), sp.Integer(0), sp.Integer(0), sp.Integer(0), sp.Integer(0)]
+    nf: list[LaurentQ] = [_L_ONE, _L_ZERO, _L_ZERO, _L_ZERO, _L_ZERO, _L_ZERO]
 
     for k in range(A):
         kind = ordering[k]
         if kind == "p":
             for _ in range(3):
-                nf = hm_sym(nf, ONE, sp.Integer(0), 0)   # σ₀
-                nf = hm_sym(nf, ONE, -h, 1)              # σ₁⁻¹
-            nf = hm_sym(nf, ONE, sp.Integer(0), 0)       # uu
-            nf = hm_sym(nf, ONE, -h * HALF, 0)           # ud mixed
-            nf = hm_sym(nf, ONE, -h * HALF, 1)           # ud mixed
-            nf = hm_sym(nf, ONE, sp.Integer(0), 0)       # gluon 1
-            nf = hm_sym(nf, ONE, sp.Integer(0), 0)       # gluon 2
+                nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)   # σ₀
+                nf = hm_laurent(nf, _L_ONE, _L_MH, 1)     # σ₁⁻¹
+            nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)       # uu
+            nf = hm_laurent(nf, _L_ONE, _L_MH2, 0)        # ud mixed
+            nf = hm_laurent(nf, _L_ONE, _L_MH2, 1)        # ud mixed
+            nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)       # gluon 1
+            nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)       # gluon 2
         else:
             for _ in range(3):
-                nf = hm_sym(nf, ONE, sp.Integer(0), 0)
-                nf = hm_sym(nf, ONE, -h, 1)
-            nf = hm_sym(nf, ONE, -h * HALF, 0)
-            nf = hm_sym(nf, ONE, -h * HALF, 0)
-            nf = hm_sym(nf, ONE, -h, 1)
-            nf = hm_sym(nf, ONE, sp.Integer(0), 0)
-            nf = hm_sym(nf, ONE, sp.Integer(0), 0)
+                nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)
+                nf = hm_laurent(nf, _L_ONE, _L_MH, 1)
+            nf = hm_laurent(nf, _L_ONE, _L_MH2, 0)
+            nf = hm_laurent(nf, _L_ONE, _L_MH2, 0)
+            nf = hm_laurent(nf, _L_ONE, _L_MH, 1)
+            nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)
+            nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)
 
         for prev in range(k):
             ti, tj = ordering[prev], ordering[k]
             if ti == "p" and tj == "p":
-                nf = hm_sym(nf, ONE, sp.Integer(0), 0)
+                nf = hm_laurent(nf, _L_ONE, _L_ZERO, 0)
             elif ti == "n" and tj == "n":
-                nf = hm_sym(nf, ONE, -h, 0)
+                nf = hm_laurent(nf, _L_ONE, _L_MH, 0)
             else:
-                nf = hm_sym(nf, ONE, -h * HALF, 0)
+                nf = hm_laurent(nf, _L_ONE, _L_MH2, 0)
 
     for _ in range(Z):
-        nf = hm_sym(nf, ONE, -h, 1)
+        nf = hm_laurent(nf, _L_ONE, _L_MH, 1)
 
     return nf
+
+
+def build_atom_nf_sym(Z: int, N: int) -> list[sp.Expr]:
+    """Symbolic mirror of ``hecke_core.build_atom_nf``.
+
+    Returns a 6-element NF vector of ``sympy.Expr``.  Coefficients live in
+    ``ℤ[q, q⁻¹]`` — Laurent polynomials, **not** ``ℚ(q, √q)``: this docstring
+    said ``√q`` until 2026-08-30, which was convention-C-era wording.  Under
+    convention D (`z = q³/(q²+1)`) `z` never enters this fold, and `hm_sym`
+    only ever multiplies by `1`, `0`, `-h`, `-h/2` and `c·h`, so no half-power
+    and no denominator can arise.
+
+    Computed via :func:`build_atom_nf_laurent` and converted back at the
+    boundary, so the result is returned in expanded (canonical) form.  The
+    *value* is unchanged from the previous pure-``Expr`` implementation —
+    verified at A=1, where the old fold completes, by
+    ``sp.simplify(sp.expand(old - new)) == 0`` on all six components for both
+    (Z=1,N=0) and (Z=0,N=1); and at A=2/A=3 against an
+    ``sp.expand``-every-step fold of the untouched :func:`hm_sym`.
+
+    Use ``evalf_at_q0`` per-component to obtain mpmath numerical values.
+    """
+    return [c.to_sympy(q) for c in build_atom_nf_laurent(Z, N)]
 
 
 # ══════════════════════════════════════════════════════════════
