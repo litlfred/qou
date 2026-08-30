@@ -119,4 +119,47 @@ theorem spuriousPerNucleon_mono {δ : ℝ} (hδ : 1 < δ) (m : ℕ) :
   rw [div_le_div_iff₀ h1 h2]
   nlinarith
 
+/-! ## The artefact is removable — and the standard normalisation is exactly what removes it
+
+`QOU.MathlibExt.MarkovMoves.normFactor` is `c^{writhe} · d^{level}`. The writhe slot `c` is what makes
+the invariant survive stabilisation (`normFactor_stab`); the **level slot `d` is what absorbs the
+closure normalisation**, since `closureNorm δ k t = t / δ^k` is precisely a factor `δ^{-level}`.
+Choosing `d = δ` cancels it exactly, and the spurious binding above drops to zero.
+
+That is worth stating for two reasons. It explains *why* a Jones-style normalisation carries a level
+factor at all — it is not decoration, it is the closure bookkeeping — and it shows the artefact is a
+convention defect rather than an obstruction: it is removable, by a normalisation the corpus already
+has. What it does NOT say is that any particular corpus computation makes that choice; the artefact
+is present in any binding read off `closureNorm` without the `δ^{level}` factor restored. -/
+
+/-- **Absorbing the closure normalisation.** Multiplying by `δ^{level}` — the `d^{level}` slot of
+`MarkovMoves.normFactor` with `d = δ` — recovers the unnormalised trace exactly. -/
+theorem closureNorm_absorb {δ : ℝ} (hδ : δ ≠ 0) (k : ℕ) (t : ℝ) :
+    δ ^ k * closureNorm δ k t = t := by
+  unfold closureNorm
+  field_simp
+
+/-- The free energy of the absorbed amplitude is that of the bare trace. -/
+theorem freeEnergy_absorb {δ : ℝ} (hδ : δ ≠ 0) (k : ℕ) (t : ℝ) :
+    freeEnergy (δ ^ k * closureNorm δ k t) = freeEnergy t := by
+  rw [closureNorm_absorb hδ]
+
+/-- **With the level factor restored, the spurious binding is exactly zero.** The same
+non-interacting assembly that registered `m · log δ` in `spuriousBinding_eq` registers nothing once
+the `δ^{level}` normalisation is applied. So the artefact is a defect of the *unnormalised*
+convention, not of the physics — and the fix is the normalisation the framework already uses for the
+writhe. -/
+theorem spuriousBinding_absorbed_eq_zero {δ : ℝ} (hδ : δ ≠ 0) (s : Finset ι) (k : ι → ℕ)
+    {t : ι → ℝ} (ht : ∀ i ∈ s, 0 < t i) (m : ℕ) :
+    (∑ i ∈ s, freeEnergy (δ ^ (k i) * closureNorm δ (k i) (t i)))
+        - freeEnergy (δ ^ ((∑ i ∈ s, k i) + m)
+            * closureNorm δ ((∑ i ∈ s, k i) + m) (∏ i ∈ s, t i))
+      = 0 := by
+  have hl : ∀ i ∈ s, freeEnergy (δ ^ (k i) * closureNorm δ (k i) (t i)) = freeEnergy (t i) :=
+    fun i _ => freeEnergy_absorb hδ (k i) (t i)
+  rw [Finset.sum_congr rfl hl, closureNorm_absorb hδ]
+  unfold freeEnergy
+  rw [Real.log_prod s t (fun i hi => ne_of_gt (ht i hi))]
+  ring
+
 end QOU.Mass.SpuriousClosureBinding
