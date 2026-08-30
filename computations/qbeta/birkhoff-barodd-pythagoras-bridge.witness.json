@@ -1,7 +1,7 @@
 {
  "computation": "birkhoff-barodd-pythagoras-bridge",
  "scriptFile": "birkhoff_barodd_pythagoras_bridge_probe.py",
- "computedAt": "2026-08-29T04:32:32.423851+00:00",
+ "computedAt": "2026-08-30T15:34:13.538681+00:00",
  "engine": "mpmath mpf/mpc (structural demonstration; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -118,8 +118,8 @@
  "notes": "Companion to BirkhoffBarOddPythagorasBridge.lean (sorry-free). The modulus reading is a structure hypothesis with NO instance; the Pythagorean consequence is conditional. Nothing wired to production.",
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
- "scriptHash": "08533d7824bc",
- "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
- "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+ "scriptHash": "25fb94877eeb",
+ "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+ "commitSha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
  "durationMs": 0
 }

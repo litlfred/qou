@@ -131,5 +131,47 @@ The stamp lives in the SOURCE. Those 47 witnesses do not carry a corrected
 anchor until each producer is re-run — they will get one on next regeneration,
 not now. No witness was regenerated here.
 
-- [ ] Regenerate the 47 so their witnesses carry the anchor the source now
-      resolves (qou-jjge).
+- [x] Regenerate the 47 so their witnesses carry the anchor the source now
+      resolves (qou-jjge). Batch run 2026-08-30; see below — partially blocked
+      by `qou-ya1e`.
+
+
+## 2026-08-30 — regeneration batch run, and it surfaced a bigger blocker
+
+43 producers, serial, 600s cap each:
+
+| outcome | count |
+|---|---|
+| rc=0 | 21 |
+| rc=1 | 20 |
+| rc=124 (timeout) | 2 |
+
+**The restamp demonstrably works where a producer can run.** Verified on
+`alpha_em_perloop_integer_forcedness_probe`: its witness went from
+`q0Anchor: None`, `q0Value: None` to `proton` /
+`1.1099785827513808075916…`. `toffoli-lp-stability` moved
+`independent → proton` — it had claimed q₀-independence while holding a literal.
+
+Only 5 witnesses changed on disk. That is expected, not a failure:
+`WitnessBuilder` leaves a witness untouched when the content is unchanged, and
+most of these already resolved to the same anchor by another route.
+
+**16 of the 20 failures are one defect and it is not this bean's** — the
+provenance stamp imports `qou_substrate`, which is not on `sys.path`. Filed as
+`qou-ya1e` (high). Those producers were already unrunnable before the restamp;
+`142b183be` only changed `False` → `None`.
+
+I tried to audit anchor coverage across all 43 afterwards and the measurement
+was **inconclusive** — witness filenames do not uniformly follow
+`stem.replace("_","-")`, so 25 of 43 were not located. Recorded as inconclusive
+rather than reported as a number.
+
+### Process note
+
+I ran one producer manually to spot-check it **while the batch was running the
+same producer**, racing two writers on one output file. Harmless here (it just
+needed re-running) but it is the second concurrency slip this session; the
+earlier one was two validator processes competing, which made a 2-minute job
+look like a 50-minute hang.
+
+- [ ] Re-run the 16 once `qou-ya1e` is fixed.

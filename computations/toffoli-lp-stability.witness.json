@@ -2,8 +2,8 @@
   "computation": "toffoli-lp-stability",
   "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), \u03a6(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q\u22c6 = 1/\u03c6\u00b2.",
   "label": "prop:toffoli-lp-stability",
-  "timestamp": "2026-08-29T08:35:02.124870+00:00",
-  "git_sha": "e111288a19a646d9715517796f7e5a8ee04b41eb",
+  "timestamp": "2026-08-30T15:41:12.949598+00:00",
+  "git_sha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
   "constants": {
     "phi_golden": "1.61803398874989484820458683436563811772030917980576286213545",
     "q_star": "0.381966011250105151795413165634361882279690820194237137864551",
@@ -340,12 +340,12 @@
     }
   },
   "scriptFile": "toffoli-lp-stability.py",
-  "scriptHash": "8dae681fbc57",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "e111288a19a646d9715517796f7e5a8ee04b41eb",
+  "scriptHash": "e0f19d19c93c",
+  "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+  "commitSha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
   "engine": "python",
-  "computedAt": "2026-08-29T08:35:02.270238+00:00",
+  "computedAt": "2026-08-30T15:41:12.973249+00:00",
   "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

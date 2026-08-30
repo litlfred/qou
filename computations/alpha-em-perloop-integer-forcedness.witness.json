@@ -3,12 +3,12 @@
   "description": "Scope-(a) forcedness measurement of the \u03b1_EM per-loop-measure denominator: solve D from the fixed-point cubic against CODATA, test whether 8=dim H\u00b9(Bring) is uniquely data-selected. NOT a derivation of 1/(8\u03c0).",
   "audit_only": true,
   "tier": "numerical (forcedness measurement)",
-  "computedAt": "2026-08-23T08:53:44.334345+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T15:42:46.751917+00:00",
+  "commitSha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "alpha_em_perloop_integer_forcedness_probe.py",
-  "scriptHash": "718ea23f76af",
+  "scriptHash": "dbbb968b56a3",
   "assertions": [
     {
       "name": "neighbours_excluded_gt3sigma",
@@ -50,5 +50,9 @@
     "identification_tested": "1/(8\u03c0) = 1/(\u03c0\u00b7dim H\u00b9(M_Bring)), dim H\u00b9=2g=8",
     "status": "D* solved from CODATA = the FIT; derivation of 1/(\u03c0\u00b7dim H\u00b9) still open",
     "derivation_target": "RT/heat-kernel zero-mode measure on Jac(Bring)~E\u2074"
-  }
+  },
+  "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

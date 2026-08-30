@@ -98,7 +98,13 @@
     "computations/qbeta-closed-form-wiring-n4-to-n10.witness.json",
     "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json"
   ],
+  "scriptFile": "ck_qgevrey_slope_probe.py",
+  "scriptHash": "3215cd71face",
+  "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+  "commitSha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
+  "engine": "python",
+  "computedAt": "2026-08-30T15:41:12.362238+00:00",
+  "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): anchors.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

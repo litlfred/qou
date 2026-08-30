@@ -1,68 +1,68 @@
 {
-  "computation": "a3-branching-asymmetry-vs-required",
-  "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
-  "computedAt": "2026-08-29T04:24:29.909402+00:00",
-  "engine": "mpmath mpf (0 free params; structural)",
-  "free_parameters": 0,
-  "inputs": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "q0_pin": "proton (experimental pin, resolved)",
-    "q0_precision_note": "RESOLVED from substrate.q_parameter at run time, not frozen. It was a 17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal cannot follow an anchor move, which is how this witness came to record the superseded muon pin under the label \"muon\".",
-    "mu3_MeV": "0.4708",
-    "c3_single_trace_MeV": "0.297",
-    "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
-    "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
-    "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
-    "chi_(3)_borr": 1,
-    "chi_(1,1,1)_borr": 1,
-    "note_equal_characters": "both 1-dim characters = 1 on the Borromean braid (A3OffBlockDerivation Part 1)"
-  },
-  "results": {
-    "x_required": "0.764973976802600249855439542506195794962292100341331384212894",
-    "x2_required": "0.585185185185185185185185185185185185185185185185185185185185",
-    "branching_rows": [
-      {
-        "weight": "symmetric Wedderburn d_q\u00b2/[n]!",
-        "x": "0.0",
-        "x2": "0.0",
-        "r_star_1_plus_x2": "1.00000000000000000000000000000000000000000000000000000000000",
-        "abs_err_vs_rstar": "0.585185185185185185185185185185185185185185185185185185185185"
-      },
-      {
-        "weight": "content c=3 (bare H\u2083)",
-        "x": "0.303183968018654917933423377169431711024694780421580876805567",
-        "x2": "0.0919205184635367680838873245914805900321827070932617070636824",
-        "r_star_1_plus_x2": "1.09192051846353676808388732459148059003218270709326170706368",
-        "abs_err_vs_rstar": "0.493264666721648417101297860593704595153002478091923478121503"
-      },
-      {
-        "weight": "content c=6",
-        "x": "0.555322412010850665010388736664456552932664564355686613906545",
-        "x2": "0.308382981281548978930863893535445369690292315705195878057057",
-        "r_star_1_plus_x2": "1.30838298128154897893086389353544536969029231570519587805706",
-        "abs_err_vs_rstar": "0.276802203903636206254321291649739815494892869479989307128128"
-      },
-      {
-        "weight": "content c=9 (\u2248H\u2089 cabling scale)",
-        "x": "0.734793055665526874381046863202118262243421808616680157534638",
-        "x2": "0.539920834654282075865027337944308852344289635268678789136273",
-        "r_star_1_plus_x2": "1.53992083465428207586502733794430885234428963526867878913627",
-        "abs_err_vs_rstar": "0.0452643505309031093201578472408763328408955499165063960489124"
-      }
-    ],
-    "max_branching_x2": "0.539920834654282075865027337944308852344289635268678789136273",
-    "content_c_that_would_be_needed": "9.66159220503700912889654491577035997449102444402045776799323",
-    "branching_supplies_required": false
-  },
-  "verdict": "scope-(a): BARE H\u2083 (content c=3) gives x\u00b2\u22480.09, r*\u22481.09 \u2014 ~6\u00d7 short in x\u00b2 of the required x\u00b2=0.5852; symmetric weight gives x=0, r*=1. BUT the CABLED content c\u22489 (the H\u2089 strand scale at which c\u2083 is actually computed) gives x\u00b2\u22480.54, r*\u22481.54 \u2014 only ~3% short of 1.585 (exact needs c\u22489.66). So the Pythagorean transverse leg 2x is NOT the bare-branching slope; it lives at the CABLED/transverse (H\u2089 Birkhoff/Stokes surface-curvature, qou-prjo) level, where it NEARLY closes. A near-miss lead, not a closure \u2014 the 9\u21929.66 residual is the open fine structure.",
-  "scope": "scope-(a): confirms the Lean Pythagorean structure (1+x\u00b2)\u00b2=(1\u2212x\u00b2)\u00b2+(2x)\u00b2 and reports that the branching's own x is too small. r*/\u03bc\u2083/c\u2083/x never inverted to fit.",
-  "lean": "QOU.QBeta.A3BranchingModulusReflection",
-  "wired": false,
-  "notes": "Honest negative on 'derive s from the branching': the branching cannot; s is transverse.",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptHash": "b064d7109d7b",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
-  "durationMs": 0
+ "computation": "a3-branching-asymmetry-vs-required",
+ "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
+ "computedAt": "2026-08-30T15:34:13.339522+00:00",
+ "engine": "mpmath mpf (0 free params; structural)",
+ "free_parameters": 0,
+ "inputs": {
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_pin": "proton (experimental pin, resolved)",
+  "q0_precision_note": "RESOLVED from substrate.q_parameter at run time, not frozen. It was a 17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal cannot follow an anchor move, which is how this witness came to record the superseded muon pin under the label \"muon\".",
+  "mu3_MeV": "0.4708",
+  "c3_single_trace_MeV": "0.297",
+  "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
+  "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
+  "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
+  "chi_(3)_borr": 1,
+  "chi_(1,1,1)_borr": 1,
+  "note_equal_characters": "both 1-dim characters = 1 on the Borromean braid (A3OffBlockDerivation Part 1)"
+ },
+ "results": {
+  "x_required": "0.764973976802600249855439542506195794962292100341331384212894",
+  "x2_required": "0.585185185185185185185185185185185185185185185185185185185185",
+  "branching_rows": [
+   {
+    "weight": "symmetric Wedderburn d_q\u00b2/[n]!",
+    "x": "0.0",
+    "x2": "0.0",
+    "r_star_1_plus_x2": "1.00000000000000000000000000000000000000000000000000000000000",
+    "abs_err_vs_rstar": "0.585185185185185185185185185185185185185185185185185185185185"
+   },
+   {
+    "weight": "content c=3 (bare H\u2083)",
+    "x": "0.303183968018654917933423377169431711024694780421580876805567",
+    "x2": "0.0919205184635367680838873245914805900321827070932617070636824",
+    "r_star_1_plus_x2": "1.09192051846353676808388732459148059003218270709326170706368",
+    "abs_err_vs_rstar": "0.493264666721648417101297860593704595153002478091923478121503"
+   },
+   {
+    "weight": "content c=6",
+    "x": "0.555322412010850665010388736664456552932664564355686613906545",
+    "x2": "0.308382981281548978930863893535445369690292315705195878057057",
+    "r_star_1_plus_x2": "1.30838298128154897893086389353544536969029231570519587805706",
+    "abs_err_vs_rstar": "0.276802203903636206254321291649739815494892869479989307128128"
+   },
+   {
+    "weight": "content c=9 (\u2248H\u2089 cabling scale)",
+    "x": "0.734793055665526874381046863202118262243421808616680157534638",
+    "x2": "0.539920834654282075865027337944308852344289635268678789136273",
+    "r_star_1_plus_x2": "1.53992083465428207586502733794430885234428963526867878913627",
+    "abs_err_vs_rstar": "0.0452643505309031093201578472408763328408955499165063960489124"
+   }
+  ],
+  "max_branching_x2": "0.539920834654282075865027337944308852344289635268678789136273",
+  "content_c_that_would_be_needed": "9.66159220503700912889654491577035997449102444402045776799323",
+  "branching_supplies_required": false
+ },
+ "verdict": "scope-(a): BARE H\u2083 (content c=3) gives x\u00b2\u22480.09, r*\u22481.09 \u2014 ~6\u00d7 short in x\u00b2 of the required x\u00b2=0.5852; symmetric weight gives x=0, r*=1. BUT the CABLED content c\u22489 (the H\u2089 strand scale at which c\u2083 is actually computed) gives x\u00b2\u22480.54, r*\u22481.54 \u2014 only ~3% short of 1.585 (exact needs c\u22489.66). So the Pythagorean transverse leg 2x is NOT the bare-branching slope; it lives at the CABLED/transverse (H\u2089 Birkhoff/Stokes surface-curvature, qou-prjo) level, where it NEARLY closes. A near-miss lead, not a closure \u2014 the 9\u21929.66 residual is the open fine structure.",
+ "scope": "scope-(a): confirms the Lean Pythagorean structure (1+x\u00b2)\u00b2=(1\u2212x\u00b2)\u00b2+(2x)\u00b2 and reports that the branching's own x is too small. r*/\u03bc\u2083/c\u2083/x never inverted to fit.",
+ "lean": "QOU.QBeta.A3BranchingModulusReflection",
+ "wired": false,
+ "notes": "Honest negative on 'derive s from the branching': the branching cannot; s is transverse.",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "scriptHash": "3273bb151c0f",
+ "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+ "commitSha": "c5eb968fb7653be64f932e7dbf8729fb02eafb31",
+ "durationMs": 0
 }
