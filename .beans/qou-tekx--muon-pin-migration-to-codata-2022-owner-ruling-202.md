@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T14:45:12Z
+updated_at: 2026-08-30T19:49:32Z
 ---
 
 ## The ruling
@@ -277,3 +277,48 @@ no producer** anywhere in the tree. `lambda_scale_alt_g_skein_polynomial_direct.
 — absent. Same class as `qou-imkb`. These are worth their own triage: a live
 producer importing a module that was never committed is a stronger defect than a
 stale pin.
+
+
+## STEP 1 MEASURED (2026-08-30, PR #6317) — the plan above is over-scoped, and its premise is stale
+
+**The scoping premise is wrong.** This bean says *"Only the anchor-defining
+witness is frozen at A: computations/q-pinning-50-digit.witness.json."* It is
+not frozen: `fca08de7d29` (2026-08-28) migrated it, it holds **C** on the
+current tree, and `witness._q0_value_for_anchor("muon")` returns C. So **step 3
+is moot** — the circle it describes (an anchor witness whose own producer
+hard-fails on an inconsistent anchor) was already broken, by derivation rather
+than by re-pinning.
+
+**Step 1, answered by measurement** over all 3546 tracked witnesses
+(`computations/audits/muon_pin_A_residual_surface_audit.py`, 4/4):
+
+    carrying the A literal at all   40
+      COMPUTED at A (own q0Value)    4
+        live (not _deprecated)       1   <- hadron-knot-table.witness.json
+        deprecated mirror            3
+      quoting A, computed elsewhere 36
+
+The 36 is why a literal grep over-counts the surface ~10x: audits ABOUT the pin,
+cross-anchor swing probes, and proton-pinned witnesses quoting A as their
+comparison arm. All correct as recorded. Agrees with the corpus's own
+`Q0_FLIP = 1`, reached independently by classifying on `q0Value`.
+
+**Step 4 (consumer migration) is one producer re-run with NO edit.**
+`hadron_knot_table` is listed `ideal_muon` in `q0_anchor_manifest.json`, so a
+re-run resolves the muon anchor to C and writes C.
+
+**But it cannot be done, and the reason belongs to a different bean.** Per
+AGENTS.md's own measurement, that producer clears the three A=1 atoms in seconds
+and then ran **50 minutes on deuterium — the first bound atom of nineteen —
+before being killed by its own timeout** (exit 124, zero tracebacks). It does
+not crash; it does not finish. The last A-pinned witness in the corpus is blocked
+on a **long-compute** problem, not on the anchor migration.
+
+**Recommendation (my judgement, not a finding):** re-scope this bean to closed on
+the migration and open a separate one for `hadron_knot_table`'s cost. Keeping a
+long-compute blocker inside a migration plan is what made this look like
+four-stage work when it is one re-run.
+
+**Unchanged and still binding:** do NOT turn this into a sweep. Re-pinning the
+anchor witness inside a bulk pass took main red on 2026-08-19 (262 flips,
+Q0_OK 654 -> 392); `q0_repin_sweep.py`'s ANCHOR_DEFINING exclusion stays.
