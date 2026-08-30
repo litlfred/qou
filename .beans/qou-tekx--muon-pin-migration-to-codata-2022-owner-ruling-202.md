@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T12:01:48Z
+updated_at: 2026-08-30T12:37:24Z
 ---
 
 ## The ruling
@@ -219,3 +219,15 @@ Also: `keystone_wrt_schurweyl_higher_colour_foreclosure_probe.py` writes
 which is **untracked** — never committed. Its fresh output was deleted rather
 than committed here: adding a first-ever witness computed at a just-changed pin,
 with no baseline to diff, should be a deliberate act, not a side effect.
+
+
+## CORRECTION to this bean's own triage (2026-08-30)
+
+The "producer not found — 11" bucket above was read off `scriptFile`. For the
+five keystone witnesses that was **the wrong field**: all five name their
+producer in `computation`. The producers are known; what is missing is that
+**none of them writes a witness at all** (all print-only), so these five are
+hand-transcribed. Full evidence and the fix in bean `qou-bake`.
+
+Re-check the other 6 of that bucket against `computation` before treating them
+as unattributable — the same read error may cover them.
