@@ -567,8 +567,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837"
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -585,8 +585,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837"
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad"
       }
     ],
     "detangler-archimedean-wall": [
@@ -676,8 +676,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837"
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -711,10 +711,10 @@
           "version": "v1",
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
-          "deps_hash": "3dd46dc4cd8a"
+          "deps_hash": "0992c20fb9c6"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837",
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -731,10 +731,10 @@
           "version": "v1",
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
-          "deps_hash": "3dd46dc4cd8a"
+          "deps_hash": "0992c20fb9c6"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837",
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -751,10 +751,10 @@
           "version": "v1",
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
-          "deps_hash": "3dd46dc4cd8a"
+          "deps_hash": "0992c20fb9c6"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837",
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -771,10 +771,10 @@
           "version": "v1",
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
-          "deps_hash": "3dd46dc4cd8a"
+          "deps_hash": "0992c20fb9c6"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837",
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1175,8 +1175,8 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-30T06:30:27.962Z",
-        "reviewed_sha": "a512a2105f4f7c2a3286f11df912b07ec8f60837"
+        "reviewed_at": "2026-08-30T09:07:33.543Z",
+        "reviewed_sha": "601c5019aaf86b72f23c295809428e6a6af38cad"
       }
     ],
     "trap-negation-contrast": [
@@ -1539,6 +1539,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-30T06:30:27.962Z",
+  "updated_at": "2026-08-30T09:07:33.543Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
