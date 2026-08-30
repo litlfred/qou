@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:51:01Z
-updated_at: 2026-08-23T17:51:28Z
+updated_at: 2026-08-29T20:04:44Z
 ---
 
 Exposed by the 236-block pin-bump sweep on PR #5561 (they were its only two
@@ -49,3 +49,13 @@ denominator. Small, but it means "N sidecars" is not "N blocks".
 
 Not urgent. The fix is a decision (restore the `.ts` vs delete the leftovers),
 not a sweep.
+
+
+## Corrected + partly closed 2026-08-29
+
+**This bean named the wrong block.** `mass-theory/q-clt-jsj-mass-scaling` **gained its `.ts`** in
+`6d4bb17ccc` ("restore two manifests the bulk import dropped") — fixed by a sibling. The surviving
+`.md`-without-`.ts` case is `lean/AUDIT-REPORT`, which I dismissed at the time as a stray
+non-block path; it is the same orphan class.
+
+Remaining: 4 × `*/section-title-audit` (neither sibling) + `lean/AUDIT-REPORT`. See [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md) §4.

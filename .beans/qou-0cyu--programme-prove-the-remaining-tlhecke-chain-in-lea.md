@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-08-24T20:31:35Z
+updated_at: 2026-08-29T20:07:02Z
 ---
 
 
@@ -319,3 +319,53 @@ Also measured: `H_2(q)` at `q > 1` is concretely semisimple
 (`h2_isSemisimpleRing_of_one_lt`, axiom-clean), and its Wedderburn decomposition
 is already explicit in `Machinery/HeckeH2Wedderburn.lean` — so the `n = 2`
 specialisation of the new bridge is redundant and was dropped rather than landed.
+
+
+## 2026-08-29 — Mathlib infra: three `proof_wanted`s closed
+
+Owner directive *"build out mathlib infra"*. `RingTheory/SimpleModule` carries
+**six** of Mathlib's 29 `proof_wanted`s. Three are now proved, sorry-free and
+axiom-clean, each with an acceptance test that fails to synthesise without it:
+
+| `proof_wanted` | closed by | PR |
+|---|---|---|
+| `IsSemisimpleRing.matrix` (general semisimple base) | `MathlibExt/MatrixSemisimpleGeneral.lean` | #6069 |
+| `IsSemisimpleRing.module_end` (any finite semisimple module) | `MathlibExt/EndSemisimpleGeneral.lean` | #6070 |
+| `isSemisimpleRing_iff_pi_matrix_divisionRing` (AW as an **iff**) | `MathlibExt/WedderburnArtinCharacterisation.lean` | #6072 |
+
+**They are siblings, not a stack** — I expected the first to be load-bearing for
+the other two and it is not. #6070 goes through Schur, which lands every block
+on a division ring; #6072 needs only the converse over division rings. Both rest
+on `MatrixSemisimple.instIsSemisimpleRing_matrix`, which predates this session.
+
+New general lemma worth knowing about: `matrixPiRingEquiv`,
+`Matrix m m (Π i, Sᵢ) ≃+* Π i, Matrix m m (Sᵢ)`. Mathlib has
+`Matrix.compRingEquiv` for matrices *of* matrices but nothing for matrices over
+a `Pi`.
+
+### The trap in that lemma, recorded because it fails silently
+
+`Matrix m m α` is a **type synonym** for `m → m → α`. A bare `fun a b => …`
+therefore elaborates with the **Pi** multiplication *even under a
+`: Matrix m m (S i)` ascription*; `Matrix.mul_apply` then cannot fire while
+`Pi.mul_apply` can, rewriting the product pointwise to `M a b i * N a b i`. The
+result is an unprovable goal, not a type error. `Matrix.of` pins the matrix
+structure. Cost: three attempts.
+
+### Still open in that file
+
+`IsSemisimpleRing.mulOpposite` and the two
+`LinearMap.isSemisimpleModule_of_{injective,surjective}`. Not scoped.
+
+### Measurement correction affecting this whole catalogue
+
+`QOU/Mathlib` is **169 files, 0 real `sorry`s, 2 real `axiom`s** (both in
+`ParallelogramContour.lean`). A naive `grep -c sorry` reports **30** — every one
+inside a comment, mostly the phrase *"sorry-free"*, once *"the only
+sorry/instance the chain depends on"*. Tree-wide there are 22 real `axiom`
+declarations. Use a comment-stripping scan, not `grep -c`.
+
+Also measured: the RSK/Burnside keystone `Σ_{λ ⊢ n} (dim SYT λ)² = n!` is
+**proved** (`QOU.Mathlib.rskBurnsideHolds`, epic `qou-nrex`) and is no longer an
+axiom — so the partition-indexed dimension count this bean's `Partition n` gap
+sits next to has landed since 2026-08-24.
