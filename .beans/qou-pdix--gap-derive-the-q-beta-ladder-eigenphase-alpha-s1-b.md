@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T11:50:03Z
+updated_at: 2026-08-30T12:12:21Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -788,3 +788,75 @@ other than `qbeta-nf-counit-gap-order.witness.json`, which is regenerated.
 
 PROBE: qbeta_nf_counit_gap_order_probe.py, now 17/17 with the retraction and the
 entry-6 reproduction as assertions.
+
+
+## 2026-08-30 (14) — the gate is not 0.58%: THREE builders, three alphas, spanning a SIGN CHANGE
+
+Entry (11) gates branch 3 on the NF being "unsettled at 0.58%". That figure is
+the COUNIT ratio 1.00579 between two builders. Measured on the PHASE, across
+the three builders the tree actually contains (convention C, proton pin,
+against the required N=1 factor 0.99839767):
+
+    builder                       alpha        cos(alpha)    unexplained
+    single-wrap                -0.0523361      0.99863078       +14.5%
+    build_nucleon_nf (9 cr)    -0.0354101      0.99937313       +60.9%
+    build_atom_nf (gluon)      +0.2355793      0.97237929       -1624%
+
+The two bare-nucleon builders UNDER-correct; the gluon-complete one
+OVER-corrects by an order of magnitude, with the opposite sign of residual.
+**No choice among them is a small perturbation of another.**
+
+### They are three different SYSTEMS, not three bases — read this before using the table
+
+  single-wrap       bare A=1 nucleon. What the Q_beta counit chain is built on.
+  build_nucleon_nf  bare nucleon, B_3 + quark crossings, 9 crossings. **Its own
+                    docstring declares it DEFECTIVE**: "NO GLUON TERM -- and
+                    this is a DEFECT, not a convention ... 6 (B_3) + 3 (quarks)
+                    + 2 (gluon) = 11 is the SDP-consistent budget. Use
+                    build_atom_nf." So the "typed" leg of entries (12)-(13) was
+                    a known-defective builder.
+  build_atom_nf     gluon-complete AND includes electrons (sigma_1^-1 per Z), so
+                    `(0,1) - (1,0)` is neutron minus HYDROGEN -- the
+                    atomic-mass convention beta^- decay actually uses, arguably
+                    the physically right object, but a different object from
+                    the bare-nucleon difference the other two compute.
+
+So this is **not a convention to be picked**. It is a modelling question about
+which system the Q_beta channel describes, and the answer moves the phase by
+more than the phase. Choosing by which one fits best is exactly what the
+anti-fit discipline forbids.
+
+### A docstring defect found on the way — in tools/pyhecke, not fixed here
+
+`pyhecke/atom.py:218` — `build_atom_nf`'s docstring still carries *"No separate
+gluon dressing -- B_3 IS the gluon structure"*, the exact sentence
+`build_nucleon_nf` retracts as unbacked **while redirecting to
+build_atom_nf**. There it is not merely unbacked but **FALSE ABOUT ITS OWN
+FUNCTION**: lines 252-253 and 264-265 apply `hm(nf, 1, 0, 0)` twice per
+nucleon, commented "gluon 1"/"gluon 2". A prior agent corrected one docstring
+and left its twin, and the redirect points at the uncorrected one. Code is
+right, redirect is sound, only the line is stale. Wants its own change in
+tools/pyhecke.
+
+### Two errors of mine here, both caught by reading the body not the docstring
+
+1. I hypothesised the two NFs were not competing, because "a free neutron is
+   A=1 and has no nucleon pairs". **Wrong** — `build_nucleon_nf(quarks)` pairs
+   are QUARK pairs within one nucleon (uu/dd/ud), so it does apply.
+2. I then read the retraction as evidence that `build_atom_nf` has no gluon
+   term either, on the strength of line 218. **Wrong** — the code adds two.
+   Reading the docstring instead of the body is the same error that line causes
+   in others.
+
+### Consequence for the route table
+
+Routes 1-4 stay closed; route 5 stays the only live one, and it is **more**
+gated than entry (13) left it, not less. Before any holonomy construction can
+be tested, the corpus has to say which of the three systems the Q_beta channel
+is describing. That is an author-level modelling question, not a measurement I
+can settle — and I have deliberately not settled it by picking the best-fitting
+one.
+
+PROBE: computations/qbeta/qbeta_three_nucleon_nf_alpha_spread_probe.py (5/5,
+exact Fractions from build_atom_nf_exact carried into mpmath at 50 dps).
+Gates: NEW dirty witnesses 0 on both ratchets.
