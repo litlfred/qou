@@ -52,6 +52,7 @@ Without it the induction fails at `|i| = |n|`: the surviving term is `f(γ_j)·f
 and costs one hypothesis instead of a second induction.
 -/
 import QOU.Mathlib.RothRationalIndex
+import QOU.Mathlib.WronskianHeight
 
 namespace MvPolynomial
 
@@ -370,5 +371,113 @@ theorem abs_coeff_translate_add_le_prod (α γ : Fin m → ℝ) {G : Fin m → �
   exact mul_le_mul_of_nonneg_left (abs_translateMatrix_le_prod γ hG0 hG1 hγ n i) (abs_nonneg _)
 
 end PerCoordinate
+
+section Budget
+
+variable {m : ℕ}
+
+/-- The total degree of a multi-index, as a sum over all coordinates. -/
+theorem finsuppSum_eq_sum_univ (n : Fin m →₀ ℕ) : (n.sum fun _ e => e) = ∑ h, n h :=
+  Finsupp.sum_fintype _ _ (fun _ => rfl)
+
+/-- **The height budget for a translate.**  `|coeff n (translate α P)| ≤ #box · H · (2B)^{Σ r}`
+— the multivariate analogue of `WronskianHeight`'s budget, and the second of the four inputs
+the smallness hypothesis of `le_index_of_abs_lt` needs. -/
+theorem abs_coeff_translate_le (α : Fin m → ℝ) {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, |α h| ≤ B)
+    {P : MvPolynomial (Fin m) ℝ} {r : Fin m → ℕ} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H : ℝ} (hH : ∀ k, |coeff k P| ≤ H) (n : Fin m →₀ ℕ) :
+    |coeff n (translate α P)|
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) := by
+  classical
+  have hH0 : 0 ≤ H := le_trans (abs_nonneg _) (hH 0)
+  have hB0 : (0:ℝ) ≤ 2 * B := by linarith
+  have hB1' : (1:ℝ) ≤ 2 * B := by linarith
+  have hterm : ∀ k ∈ P.support,
+      |coeff k P * translateMatrix α n k| ≤ H * (2 * B) ^ (∑ h, r h) := by
+    intro k hk
+    have hkr : ∀ h, k h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hk) (hdeg h)
+    have hksum : (k.sum fun _ e => e) ≤ ∑ h, r h := by
+      rw [finsuppSum_eq_sum_univ]
+      exact Finset.sum_le_sum (fun h _ => hkr h)
+    have h1 : |translateMatrix α n k| ≤ (2 * B) ^ (k.sum fun _ e => e) :=
+      seminorm_translateMatrix_le submultSeminorm_abs_real α hB1 hα _ k rfl n
+    have h2 : (2 * B) ^ (k.sum fun _ e => e) ≤ (2 * B) ^ (∑ h, r h) :=
+      pow_le_pow_right₀ hB1' hksum
+    rw [abs_mul]
+    exact mul_le_mul (hH k) (le_trans h1 h2) (abs_nonneg _) hH0
+  calc |coeff n (translate α P)|
+      = |∑ k ∈ P.support, coeff k P * translateMatrix α n k| := by
+        rw [coeff_translate_eq_sum]
+    _ ≤ ∑ k ∈ P.support, |coeff k P * translateMatrix α n k| :=
+        Finset.abs_sum_le_sum_abs _ _
+    _ ≤ (P.support.card : ℝ) * (H * (2 * B) ^ (∑ h, r h)) := by
+        rw [← nsmul_eq_mul]
+        exact Finset.sum_le_card_nsmul _ _ _ hterm
+    _ ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) := by
+        refine mul_le_mul_of_nonneg_right ?_ (by positivity)
+        exact_mod_cast card_support_le_prod_succ hdeg
+
+/-- **The Taylor tail with every budget folded in.**  Everything step 2 needs except the
+arithmetic of the exponents: the index hypothesis at `α` restricts the sum, the degree bound
+counts it, the height bound sizes each term, and `S` is whatever uniform bound the caller can
+prove on `∏_h G_h^{n_h−i_h}` over the surviving multi-indices.
+
+Producing `S` is the one genuinely remaining piece, and it is where the logarithms live: under
+`r_h·log q_h ≈ L` and `G_h ≤ q_h^{−(2+δ)}`, `∑_h (n_h−i_h)/r_h ≥ μ − idxWeight r i` gives
+`S ≈ exp(−(2+δ)·L·(μ − idxWeight r i))`.  Stating it as a hypothesis keeps that bookkeeping out
+of the estimate and gives it a fixed target. -/
+theorem abs_coeff_translate_add_le_index (r : Fin m → ℕ) (α γ : Fin m → ℝ)
+    {G : Fin m → ℝ} (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1) (hγ : ∀ h, |γ h| ≤ G h)
+    {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, |α h| ≤ B)
+    {P : MvPolynomial (Fin m) ℝ} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H : ℝ} (hH : ∀ k, |coeff k P| ≤ H)
+    {μ : ℚ} (hidx : ((μ : ℚ) : WithTop ℚ) ≤ index r α P)
+    (i : Fin m →₀ ℕ) {S : ℝ} (hS0 : 0 ≤ S)
+    (hS : ∀ n : Fin m →₀ ℕ, (∀ h, n h ≤ r h) → μ ≤ idxWeight r n →
+      (∏ h, (G h) ^ (n h - i h)) ≤ S) :
+    |coeff i (translate (fun j => α j + γ j) P)|
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ)
+        * ((((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)))
+            * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+  classical
+  have hH0 : 0 ≤ H := le_trans (abs_nonneg _) (hH 0)
+  have hB0 : (0:ℝ) ≤ 2 * B := by linarith
+  have hdegT : ∀ h, degreeOf h (translate α P) ≤ r h := by
+    intro h
+    rw [degreeOf_translate_eq]
+    exact hdeg h
+  set CH : ℝ := ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) with hCH
+  have hCH0 : 0 ≤ CH := by rw [hCH]; positivity
+  have hterm : ∀ n ∈ (translate α P).support,
+      |coeff n (translate α P)| * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h))
+        ≤ CH * ((2 : ℝ) ^ (∑ h, r h) * S) := by
+    intro n hn
+    have hnr : ∀ h, n h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hn) (hdegT h)
+    have hnsum : (n.sum fun _ e => e) ≤ ∑ h, r h := by
+      rw [finsuppSum_eq_sum_univ]
+      exact Finset.sum_le_sum (fun h _ => hnr h)
+    have hμn : μ ≤ idxWeight r n := by
+      have := (le_index_iff r α P _).mp hidx n hn
+      exact_mod_cast this
+    have h1 : |coeff n (translate α P)| ≤ CH := abs_coeff_translate_le α hB1 hα hdeg hH n
+    have h2 : (2:ℝ) ^ (n.sum fun _ e => e) ≤ (2:ℝ) ^ (∑ h, r h) :=
+      pow_le_pow_right₀ (by norm_num) hnsum
+    have h3 : (∏ h, (G h) ^ (n h - i h)) ≤ S := hS n hnr hμn
+    have h4 : (0:ℝ) ≤ ∏ h, (G h) ^ (n h - i h) :=
+      Finset.prod_nonneg (fun h _ => pow_nonneg (hG0 h) _)
+    refine mul_le_mul h1 ?_ (by positivity) hCH0
+    exact mul_le_mul h2 h3 h4 (by positivity)
+  calc |coeff i (translate (fun j => α j + γ j) P)|
+      ≤ ∑ n ∈ (translate α P).support, |coeff n (translate α P)|
+          * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) :=
+        abs_coeff_translate_add_le_prod α γ hG0 hG1 hγ P i
+    _ ≤ ((translate α P).support.card : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+        rw [← nsmul_eq_mul]
+        exact Finset.sum_le_card_nsmul _ _ _ hterm
+    _ ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+        refine mul_le_mul_of_nonneg_right ?_ (by positivity)
+        exact_mod_cast card_support_le_prod_succ hdegT
+
+end Budget
 
 end MvPolynomial

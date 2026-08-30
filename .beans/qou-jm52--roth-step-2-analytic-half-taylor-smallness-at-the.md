@@ -100,3 +100,22 @@ Item 3 of the remaining list is unchanged and is now the only real obstacle: tur
 index gap into prod_h q_h^{-(2+delta)(n_h - i_h)} under r_h log q_h ~ L. Items 1-2 (height budget,
 term count) remain elementary and unblocked.
 
+## 2026-08-30 -- items 1 and 2 done; only the logarithms remain
+
+abs_coeff_translate_le -- the height budget for a translate: |coeff n (translate alpha P)| <=
+prod_h (r_h + 1) * H * (2B)^{sum r_h}, the multivariate analogue of WronskianHeight's budget.
+That subsumed item 2 (the term count) rather than needing it separately: the count enters as
+card_support_le_prod_succ, which existed for MvPolynomial sigma Z and is now generalised to an
+arbitrary CommSemiring -- nothing in its proof was arithmetic, it is a statement about which
+multi-indices can occur. All seven dependent modules rebuilt clean.
+
+abs_coeff_translate_add_le_index -- everything folded in: the index hypothesis at alpha restricts
+the sum, the degree bound counts it, the height bound sizes each term, and S is a uniform bound
+on prod_h G_h^{n_h - i_h} over the surviving multi-indices, taken as a hypothesis.
+
+WHAT IS LEFT is exactly one thing: produce S. Under r_h log q_h ~ L and G_h <= q_h^{-(2+delta)},
+sum_h (n_h - i_h)/r_h >= mu - idxWeight r i gives S ~ exp(-(2+delta) L (mu - idxWeight r i)).
+That is the only piece of step 2 that needs real logarithms, and it is where the parameter
+record shared with RothGammaProducer should live. Then S is compared against
+1/prod q_h^{r_h} and fed to le_index_of_abs_lt, and step 2 closes.
+
