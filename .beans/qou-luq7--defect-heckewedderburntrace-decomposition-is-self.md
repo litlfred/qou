@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-30T06:48:57Z
+updated_at: 2026-08-30T07:24:28Z
 ---
 
 
@@ -242,3 +242,61 @@ Note for whoever takes item 2: the exclusion `rankOne_finrank_ne_factorial`
 still has to be argued from `Module.finrank Q Q /= n!` rather than from the
 class, precisely because `SpechtDimension` supplies no dimension count. Closing
 item 2 should let that argument come from the class instead.
+
+
+---
+
+## 2026-08-30 — ITEM 2 DONE. blockDim is a function of lambda; y_lambda is DETERMINED
+
+PR #6119 (item 1 was #6097, merged).
+
+`blockDim` is no longer a field of `WedderburnDecomp`:
+
+    def blockDim {n : N} (lam : Partition n) : N :=
+      QOU.BraidKnot.IdentityI.dimHLF lam.parts
+
+the Frame-Robinson-Thrall hook-length dimension n!/prod_c h_c, computed from the
+partition alone. A witness has no `d` left to choose.
+
+**`rankOneWedderburnDim` can no longer be WRITTEN**, and that is the result --
+nothing was weakened to retire it. `yLambda_residual_freedom` goes with it.
+Replaced by:
+
+  * `rankOne_blockDim_forced` : blockDim (lam0 n) = 1  (lam0 is the single column)
+  * `yLambda_forced_one`      : pi_lam = 1 -> y_lam = 1, over an ARBITRARY
+    decomposition on this carrier, not over a witness
+
+Ledger, now complete:
+
+  before #6097:  y_lam ranges over ALL of Q-nonzero
+  after  #6097:  y_lam ranges over {1/d : d >= 1}
+  after  #6119:  DETERMINED
+
+Supporting mathematics, added to `QOU/Mathlib/SYTHookFormulaRows.lean` beside
+the existing one-row and two-row cases: `colLen_column`, `prodHooks_column`
+(= n!), `dimHLF_column` (= 1). The corpus already had `dimHLF`/`prodHooks`/
+`numSYTenum` in `QOU.BraidKnot.IdentityI` -- found by corpus-grep, so this PR
+USES them rather than defining a second hook-length function. Mathlib at the
+pinned rev has no Combinatorics/Young and no hookLength/StandardYoungTableau,
+confirming the "not in Mathlib" half.
+
+## What the class NOW commits to -- do not read this as more than it is
+
+That `dimHLF lam` IS `#SYT(lam)` is Frame-Robinson-Thrall. In this corpus it is
+proved for one-row, two-row and (this PR) one-column shapes; the general theorem
+`numSYTenum l = dimHLF l` is OPEN here, validated in aggregate by
+`dim_validated_le12`. **The class uses the FRT formula; it does not prove FRT.**
+Written into blockDim's docstring, not left implicit. That is the honest
+residue of qou-luq7 and it is a different KIND of gap from what item 1 and item
+2 closed -- a cited classical theorem, not a free parameter.
+
+## Third instance of the 1646b5d6d3 fallout, found by the cone check
+
+`QOU.MathlibExt.QIntegerCanonical.qIntGeo` -- the corpus's CANONICAL geometric
+q-integer alias -- had a body naming `QOU.Mass.QHookDimension.qIntPoly`, deleted
+by 1646b5d6d3. Retargeted to `QHookDimensionBalanced.qIntPoly`. Consumers reach
+it through a three-hop chain (`QOU.BraidKnot.qInt` -> `qIntGeo` -> dead name), so
+`qIntPoly` appears nowhere in the failing file -- a grep of the consumer finds
+nothing. Same shape as the miss that let #6097's break sit six days, with an
+alias hop in place of an instance. Verified pre-existing: reproduces against
+main's own oleans with this branch off the LEAN_PATH.
