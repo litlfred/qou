@@ -69,6 +69,14 @@ theorem altProd_two {A : Type*} [Monoid A] (a b : A) : altProd a b 2 = a * b := 
 theorem altProd_three {A : Type*} [Monoid A] (a b : A) : altProd a b 3 = a * (b * a) := by
   simp [altProd]
 
+/-- An alternating product of a single element is just a power. -/
+theorem altProd_const {A : Type*} [Monoid A] (a : A) :
+    ∀ n : ℕ, altProd a a n = a ^ n := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ k ih => rw [altProd_succ, ih, pow_succ']
+
 /-- Any multiplicative map transports an alternating product.
 
 Stated through `MonoidHomClass` rather than for a bare `A →* B`, so that it applies
@@ -184,5 +192,41 @@ theorem exists_unique_lift {A : Type w} [Ring A] [Algebra R A] (f : B → A)
   refine ⟨lift R q M f hq hb, fun i => lift_T R q M f hq hb i, ?_⟩
   intro ψ hψ
   exact hom_ext R q M ψ _ (fun i => by rw [hψ i, lift_T])
+
+/-! ## Non-vacuity
+
+A quotient can collapse. `HeckeAlgebra R q M` is built by imposing relations on a free
+algebra, and nothing so far rules out those relations forcing `0 = 1` — in which case
+every theorem above would be true and empty. This section rules it out.
+
+The witness is the **index representation** `T_i ↦ q`, the one-dimensional
+representation sending every generator to the parameter. It needs `M` symmetric, which
+every Coxeter matrix is (and `CoxeterMatrix` carries as a field), but the construction
+above never required it, so it is taken as a hypothesis here rather than globally. -/
+
+/-- **The index representation** `T_i ↦ q`.
+
+Both relations are immediate: the quadratic factor `(q − q)` vanishes, and with every
+generator sent to the same scalar each side of a braid relation is a power of `q`, so
+symmetry of `M` is exactly what makes the two exponents agree. -/
+noncomputable def indexRep (hM : ∀ i j, M i j = M j i) : HeckeAlgebra R q M →ₐ[R] R :=
+  lift R q M (fun _ => q)
+    (fun i => by simp)
+    (fun i j => by rw [altProd_const, altProd_const, hM i j])
+
+@[simp] theorem indexRep_T (hM : ∀ i j, M i j = M j i) (i : B) :
+    indexRep R q M hM (T R q M i) = q :=
+  lift_T R q M _ _ _ i
+
+/-- **The Hecke algebra does not collapse.** Over a nontrivial base ring with a
+symmetric Coxeter matrix, `0 ≠ 1` in `HeckeAlgebra R q M`.
+
+Without this every theorem in this file would be vacuously true of the zero ring. -/
+theorem nontrivial_of_symm [Nontrivial R] (hM : ∀ i j, M i j = M j i) :
+    Nontrivial (HeckeAlgebra R q M) := by
+  refine ⟨0, 1, fun h => ?_⟩
+  have h' := congrArg (indexRep R q M hM) h
+  rw [map_zero, map_one] at h'
+  exact zero_ne_one h'
 
 end QOU.MathlibExt.IwahoriHecke

@@ -72,6 +72,12 @@ theorem typeAMatrix_eq_An (N : ℕ) (i j : Fin N) :
       ↔ ((j : ℕ) + 1 = (i : ℕ) ∨ (i : ℕ) + 1 = (j : ℕ)) := by omega
   simp only [typeAMatrix, CoxeterMatrix.Aₙ, Matrix.of_apply, Fin.ext_iff, hiff]
 
+/-- The type-A matrix is symmetric — needed for the non-vacuity witness below. -/
+theorem typeAMatrix_symm (i j : ℕ) : typeAMatrix i j = typeAMatrix j i := by
+  have h1 : (i = j) ↔ (j = i) := by omega
+  have h2 : (j = i + 1 ∨ i = j + 1) ↔ (i = j + 1 ∨ j = i + 1) := by omega
+  simp only [typeAMatrix, h1, h2]
+
 /-! ## The type-A Hecke algebra -/
 
 /-- **The type-A Iwahori–Hecke algebra** at corpus parameter `q`, built at the Iwahori
@@ -131,6 +137,14 @@ noncomputable def typeAHeckeGenerators (q : R) (hq : q ≠ 0) :
     abel
   braid := fun i => braid_of_scaled q⁻¹ (typeAT q i) (typeAT q (i + 1)) (typeAT_braid q i)
   far := fun i j hij => far_of_scaled q⁻¹ (typeAT q i) (typeAT q j) (typeAT_far q hij)
+
+/-- **The type-A Hecke algebra does not collapse.**
+
+Without this the `HeckeGenerators` instance below would be inhabited but vacuous — every
+theorem the arc transports would hold of the zero ring. The witness is the index
+representation `T_i ↦ q²`, which exists because `typeAMatrix` is symmetric. -/
+instance instNontrivialTypeAHecke (q : R) : Nontrivial (TypeAHecke R q) :=
+  nontrivial_of_symm R (q * q) typeAMatrix typeAMatrix_symm
 
 /-! ## What this closes
 
