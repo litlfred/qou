@@ -717,6 +717,22 @@ generators do not commute and nothing is reordered.
 - the kernel against an **independent** explicit mpmath matrix product at
   dim=16: `-1.972272446151549689048234878` from both, differing by 2.5e-70.
 
+### WALL CLOCK, measured 2026-08-30 — the op count holds up
+
+The first two A/B attempts were both killed at 600s: their "collapse off" arm at
+dim ~2000 IS the slow case, so the experiment could not finish for the same
+reason the optimisation exists. Re-run at sizes where **both** arms complete:
+
+    shape        dim   off      on       speedup   |diff|
+    (3,2,1)      16    0.012s   0.005s   2.40x     5.1e-70
+    (2,2,1,1)     9    0.004s   0.002s   2.09x     6.2e-70
+    (4,1,1)      10    0.005s   0.002s   2.14x     1.5e-70
+
+**2.09x - 2.40x measured**, against a predicted operation count of 2.30x at
+A=2 — so the saving is real time, not just fewer calls, and the results are
+identical to machine zero in every case. The earlier "operation count, not a
+timing" caveat is now discharged.
+
 ### What is measured and what is not
 
 The **factor-count** reduction is exact and measured (47 -> 21). The
