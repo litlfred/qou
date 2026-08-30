@@ -22,6 +22,54 @@
       "adjudicated_by": "claude (session 2b6a2d13)",
       "date": "2026-08-29",
       "bean": "qou-1jny"
+    },
+    {
+      "path": "computations/markov_z_full_bar_condition_probe.py",
+      "target": "z_C",
+      "source_hash": "9f57e5bdffd0",
+      "line_when_adjudicated": 102,
+      "scope": "main",
+      "source": "z_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))   # EXCISED \u2014 kept as the comparison arm",
+      "verdict": "comparison",
+      "rationale": "MEASURED, not asserted. This probe's content is a two-sided contrast: it asserts bar(z) = z - h holds for z_D and FAILS for any bar-even z, hence for z_C. z_C is a quantified CANDIDATE here, not a convention the file computes in. Setting z_C := z_D drops the probe from 5/5 to 2/5 -- C_is_coefficient_half_invariant, C_fails_full_bar_condition and verdict_reverses_between_conditions all flip to FAIL. The file itself says this result 'is one of the reasons the ruling reads the way it does', so migrating the site would delete the evidence for the D ruling.",
+      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
+      "date": "2026-08-30"
+    },
+    {
+      "path": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+      "target": "z_C_expr",
+      "source_hash": "9f4926015933",
+      "line_when_adjudicated": 127,
+      "scope": "main",
+      "source": "z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # EXCISED (attribution stale)",
+      "verdict": "comparison",
+      "rationale": "Same shape, symbolic arm. The module docstring states the probe's purpose as 'noting that z_C is bar-invariant where z_D is not' and concludes that z_C's bar-invariance is NOT a tiebreaker in D's favour. The z_C binding is the object that claim is about; the neighbouring z_D_expr is labelled CANONICAL and is what the rank-2 check tests against. Removing or migrating z_C leaves the docstring's claim unevaluable.",
+      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
+      "date": "2026-08-30"
+    },
+    {
+      "path": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+      "target": "z_C_num",
+      "source_hash": "5ed8916e2173",
+      "line_when_adjudicated": 156,
+      "scope": "main",
+      "source": "z_C_num = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))",
+      "verdict": "comparison",
+      "rationale": "The numeric arm of the same comparison as z_C_expr in this file: the symbolic claim is re-checked at q0. Migrating it would make the numeric arm agree with the D arm by construction and the comparison vacuous.",
+      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
+      "date": "2026-08-30"
+    },
+    {
+      "path": "computations/h2s_chiral_residue_bar_antisymmetric.py",
+      "target": "z_c",
+      "source_hash": "93961016fd23",
+      "line_when_adjudicated": 95,
+      "scope": "main",
+      "source": "z_c = mp.sqrt(q) / (q + 1)                    # convention C, for the comparison only",
+      "verdict": "comparison",
+      "rationale": "The file's own docstring states the contrast it exists to test: 'z_C(1/q)/z_C(q) = 1  bar-even'  vs  'z_D(1/q)/z_D(q) = q^-4  NOT bar-even', and the scope computes bar_ratio_D beside this binding. z_c is the bar-even reference the D ratio is measured against; with it migrated both ratios would be D's and the bar-parity contrast would vanish.",
+      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
+      "date": "2026-08-30"
     }
   ]
 }
