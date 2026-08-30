@@ -318,13 +318,29 @@ So for every `k ≥ 1` the odd branch sits at a non-unit evaluation, and by fact
 no node of its even-subtree can admit a further odd-preimage. **No two chained
 odd-preimages occur in the backward tree**, hence no `v = 0` block there.
 
-**Scope — what is and is not established.** Facts 1–3 are proved below. The
-*measured* inputs are the norm formula `1 + 6k + 12k²` and the claim that every
-tree node lies on the main chain or in one of its `k ≥ 1` branches; both are
-verified computationally over the range stated, not proved here, so the
-tree-level conclusion is **argued, not formalized**. And even fully formalized it
-would settle `v = 0` for the backward *tree* only — the step to all of `D∞` is
-the convergence conjecture itself (`qcz7` A1). -/
+**Scope — what is and is not established.** Facts 1–3 are proved below.
+
+The two arithmetic inputs — the order-6 congruence with its closed form, the
+norm formula `1 + 6k + 12k²`, and the tree-structure induction — were originally
+*measured only*, over the finite ranges stated. They are now proved in
+`QOU.AppendixSurreals.CollatzEisenstein`:
+
+* `alpha_pow_six` — `(w+1)⁶ = 1`, the source of the 6;
+* `chainData_snd` / `chainData_at_six_mul` — the closed form, and that it gives
+  `P'(w) = (-6k, -6k-1)` at the `n = 6k` nodes;
+* `branch_norm` — `N(Q_k(w)) = 1 + 6k + 12k²`, and `branch_norm_eq_one_iff` /
+  `branch_norm_ge` that it exceeds `1` for every `k ≥ 1`;
+* `branch_subtree_no_oddPreimage` — feeding that non-unit into fact 3: no node
+  of any `k ≥ 1` branch admits a further odd-preimage, so each branch is a bare
+  even chain.
+
+Those proofs carry one hypothesis on the ambient ring — that `1` and `w` are
+`ℤ`-independent — which holds in `ℤ[ω]` and fails in, say, `ZMod 3`. It is a
+condition on the ring, not a conjecture; nothing is axiomatized.
+
+**What is still not established.** This settles `v = 0` for the backward *tree*
+only. The step to all of `D∞` is the convergence conjecture itself (`qcz7` A1)
+and is not claimed. -/
 
 /-- `w³ = 1` for a primitive cube root. -/
 theorem cubeRoot_pow_three {R : Type*} [CommRing R] (w : R)
