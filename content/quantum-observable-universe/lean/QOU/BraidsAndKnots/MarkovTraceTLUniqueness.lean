@@ -65,14 +65,36 @@ any faithful normalised Markov trace whose parameter satisfies `z·[2]_q ≠ q²
 has `y_(1³) ≠ 0`, i.e. does **not** factor through Temperley–Lieb. This is the
 structural separation of convention C from convention D.
 
-## What this does NOT establish
+## What this file does NOT establish — and where the premise WAS established
 
-The premise. Nothing here shows that the *mass* fibre functor lands in
-`Rep(SU_q(2)) ≃ TL` rather than in the full `H₃(q)`. That is the categorical
-input the forcing argument consumes, and it is exactly the point on which the
-corpus is currently inconsistent — see
-[`docs/audits/2026-08-08-borromean-trace-convention-forcing.md`]. "Conditional-
-proved ≠ premise-established" (AGENTS): this file proves the implication.
+This file proves the implication only. The premise — that the *mass* fibre
+functor lands in `Rep(SU_q(2)) ≃ TL` rather than in the full `H₃(q)` — is not
+shown here.
+
+**It is shown in the file next to this one.** `FibreDimensionForcesTL.lean`
+(same directory, sorry-free, `lean`-direct exit 0) proves the chain from the
+fibre dimension instead of assuming the cap:
+
+* `ocneanu_param_eq_of_fibre_qdim` — `z·[N]_q = q^N`: the fibre's quantum
+  dimension DETERMINES the Ocneanu parameter, leaving no residual freedom;
+* `ocneanu_param_of_two_dim_fibre` — `N = 2 ⟹ z(q+q⁻¹) = q²`, i.e. `z_D`;
+* `threeRow_eq_zero_of_jones_ocneanu` — `z_D ⟹ y_(1³) = 0`, the cap itself;
+* `twoDimFibre_pins_h3_weights` — the composite.
+
+And `dim = 2` is not an extra assumption: `lem:feynman-eigenbasis-decomposition`
+states the mass channel's decomposition as
+`V^⊗n ≅ ⊕_{λ⊢n, ℓ(λ)≤2} V_λ ⊗ S_λ` with `V` the fundamental of `SU_q(2)` — the
+row cap is already in its index set, so `(1³)` is absent at `n = 3` by
+construction. Bean `qou-n1dj`, resolved 2026-08-08; analysis in
+[`docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md`].
+
+The paragraph this replaces said the premise was unestablished and the corpus
+inconsistent, and pointed only at
+[`docs/audits/2026-08-08-borromean-trace-convention-forcing.md`] — the audit that
+POSED the question. That audit's §5 ("What would close it") was answered the same
+day by the file in this directory, and the note here was never updated. It was
+read as current by at least one later session (2026-08-30), which spent an arc
+concluding "the cap is a ruling, not a derivation" on the strength of it.
 -/
 
 namespace QOU.BraidsAndKnots
