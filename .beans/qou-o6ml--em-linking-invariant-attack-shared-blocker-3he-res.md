@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T14:46:53Z
+updated_at: 2026-08-30T14:55:58Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -391,3 +391,80 @@ that **no per-isotope hyperbolic geometry beyond A = 3 exists** in the corpus
 (`binding-link-volumes.witness.json` holds A = 2 and 3 only). So the next
 blocker on route (2) is *data*, not formalisation — and it is the same data gap
 that stopped the kernel contest from being adjudicable.
+
+
+## SCOPING THE DATA GAP 2026-08-30 — two corrections, one of them to my own last entry
+
+I closed the previous entry saying the next step was to *"scope what it would
+take to get per-isotope link geometry past A = 3"*, on the grounds that it is
+the shared blocker. Scoped it. **Both halves of that framing were wrong**, and
+the second is the useful one.
+
+### Correction 1 — the volume endomorphism has ZERO supporting rows, not one
+
+`computations/binding-link-volumes.witness.json` records
+`B = m_e · Vol(K_bind) · Δtr` against AME:
+
+| isotope | link | Vol | vol_eff used | err |
+|---|---|---|---|---|
+| ²H | Hopf (L2a1) | **0** (Seifert-fibred) | **7.3277** (= Vol(𝓑₃) = 8G) | −6.32 % |
+| ³H | 8₁₁ | 8.2863 | 8.2863 | −55.64 % |
+| ³He | L6a4 | 7.3277 | 7.3277 | −56.68 % |
+
+The producer is scrupulous about this — the substitution is labelled at every
+appearance (`binding_link_volumes.py:150`, `v_eff = v if
+vols[iso]["hyperbolic"] else VOL_B3`), the docstring calls it *"the Hopf →
+Vol(𝓑₃) substitution, since Vol(Hopf) = 0"*, and the file even carries the
+**Lean-backed** fact that the vanishing is identical rather than numerical
+(`QOU.Knot.FlatTet.BlochWigner_lob_ofReal`). Nothing is hidden.
+
+**What changed is the ruling, not the code.** Owner Ruling A —
+*"the deuteron binding is **NOT** a hyperbolic-volume term (Bloch volume leg
+proved 0)"* — landed in
+`docs/audits/2026-08-29-deuteron-knot-owner-decision.md` at **2026-08-30
+02:29:49 UTC**. The producer was last touched at **2026-08-29 17:32 UTC**, ~9 h
+earlier. It could not have known, and this is staleness created downstream, not
+an authoring defect.
+
+But the consequence is real: under the ruling, the ²H row assigns the deuteron a
+hyperbolic volume it does not have, so **the −6.32 % is not a result about the
+deuteron.** The endomorphism's score is therefore **0 supporting rows out of 3**,
+not 1-of-3. That strengthens the producer's own "HONEST NEGATIVE" rather than
+contradicting it — and the witness has **8 consumers** (`he4_vol4_prediction_test_probe`,
+`alpha_cluster_volume_additivity_probe`, `bk_crossing_coordination`,
+`theta_wn_jetfilt_linkvolume`, `theta_mn_multiplicity`,
+`binding_volume_difference_probe`, `he4_link_volume_braid_closure`, and the
+producer), so the 1-of-3 reading can propagate.
+
+### Correction 2 — closing the volume gap would NOT unblock route (2), and my last entry implied it would
+
+Route (2) does not want *a single binding-link volume*; it wants the **pairwise**
+O'Hara energy, which is a double integral decomposed over component pairs. Those
+are different objects and they need different data:
+
+- the volume route needs **one hyperbolic volume per isotope** — a number per A;
+- route (2) needs **ambient pairwise distances along the components** — an
+  *embedding* per isotope, from which the integrand
+  `1/|γ(s)−γ(t)|² − 1/D(s,t)²` is evaluated.
+
+**So route (2)'s data requirement is strictly larger than the volume gap, not a
+subset of it.** Getting `Vol` past A = 3 would not help it at all. I stated the
+opposite last entry; that is retracted.
+
+### The one genuinely encouraging thing, and it is in the producer's own text
+
+`binding_link_volumes.py` names what the failure needs:
+
+> closing A ≥ 3 needs additional structure (**per-pair sum over the JSJ
+> decomposition**, or a different trace object) — NOT a rescaling of Δtr by
+> hand-chosen factors (cf. retracted PR #1383).
+
+**A per-pair sum is exactly what route (2) is.** So the witness that records the
+single-volume negative also names route (2)'s shape as the structure that would
+close it. That is a corpus endorsement written before this front was framed, and
+it was not previously connected to 4-B.
+
+**Net for the front:** route (2) is the right *shape* by the corpus's own
+reckoning and is now formalisable, but its data requirement is an embedding per
+isotope, which nothing in the corpus supplies at any A. That is the real blocker
+and it should be stated at that size rather than as "geometry past A = 3".
