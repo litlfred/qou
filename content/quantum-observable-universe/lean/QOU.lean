@@ -1250,6 +1250,12 @@ import QOU.Mathlib.RothAuxiliaryPolynomial
 import QOU.Mathlib.RothHouseBound
 import QOU.Mathlib.RothAuxiliaryConstruction
 import QOU.Mathlib.RothAuxiliary
+-- Roth's theorem step 2, arithmetic half: a translated coefficient at a rational
+-- point has denominator dividing prod q_h^{r_h}, so any bound below its reciprocal
+-- forces it to vanish -- which is a lower bound on the index there, the statement
+-- Roth's Lemma (step 3) contradicts.  The analytic half (Taylor expansion about
+-- alpha) is deliberately left as a hypothesis; see the module header.
+import QOU.Mathlib.RothRationalIndex
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
