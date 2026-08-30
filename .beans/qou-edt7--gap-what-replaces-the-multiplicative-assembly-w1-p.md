@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T10:55:11Z
+updated_at: 2026-08-30T11:25:27Z
 parent: qou-mhj9
 ---
 
@@ -393,3 +393,45 @@ I twice named `qou-brng` as 'the Milnor bean'. It is not: qou-brng is the
 hbar_q^2 saturated-binding-fraction bean whose surviving route is the
 linking-vs-self-energy AMPLITUDE question. Adjacent, not the same, and untouched
 by this work.
+
+
+## THE TWO-TERM PAIRING I PROPOSED IS DEGENERATE (2026-08-30)
+
+Lean: `QOU/Mass/SaturationInvisibleToCumulants.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/two_term_structure_degeneracy_probe.py` (2/2).
+
+I proposed pairing a CONVEX s-shell term with the corpus's SATURATING bounded-
+degree term. **The saturating half is inert where the data is.**
+
+A degree cap at k gives bond count f_k(A) = A*min(A-1,k)/2. For A <= k+1 the cap
+DOES NOT BIND, so f_k is identically C(A,2) there — and C(A,2) contributes
+exactly zero to b3 and b4. Measured:
+
+    k=1: b3-contrib -1.5, b4 +2.0   (pure dimer; wrong sign)
+    k=2: b3-contrib  0.0, b4 -2.0
+    k>=3: b3 0.0, b4 0.0  — the cap never binds below A=5
+
+Every (saturating, convex) pair gave a SINGULAR 2x2 system, and the singularity
+IS this fact. Not a contradiction with the two-term necessity theorem — the terms
+act in DISJOINT REGIMES, not together.
+
+### What replaces the target, and it is sharper
+With the saturating half inert, ONE term carries b2, b3 AND b4: three constraints
+on one coefficient, and scaling cancels in a ratio, so TWO PARAMETER-FREE
+predictions —
+
+    isospin average     b3/b2 = 0.6411228   b4/b2 = 4.1551403
+    Coulomb-corrected   b3/b2 = 0.8127866   b4/b2 = 3.4684851
+
+Nothing tested is close: dim[1^A] (-2.333, 3.5), A^3 (0.375, 0.5), A! (0, 6),
+indicator (-2, 3), k=1 dimer (-1.5, 2), 2^A (-1, 2).
+
+**This is real progress on the epistemics even though no magnitude is derived.**
+The old target was ONE ratio inside a 9.4% convention band, which many candidates
+sit in and hitting which is not evidence. The fingerprint is TWO numbers with
+ZERO free parameters — the discriminator the earlier work said it needed.
+
+### SCOPE
+Refutes the SPECIFIC pairing as an explanation of the cumulants. Does NOT touch
+CoordinationSaturation (a statement about A -> infinity, unaffected by having no
+A <= 4 signature), and does NOT refute two-term structures generally.
