@@ -9,7 +9,7 @@ tags:
     - mathlib-gap
     - hyperbolic-volume
 created_at: 2026-08-09T19:45:00Z
-updated_at: 2026-08-30T18:15:00Z
+updated_at: 2026-08-30T19:30:00Z
 ---
 
 Inventory of what Mathlib does **not** have that the volume lane needs, with what
@@ -305,3 +305,61 @@ Mathlib has none (Gap 1 extension).
 - [ ] Prove (B). This is the real target and it is a dilogarithm problem.
 - [ ] Prove (C). Elementary; Mathlib has what it needs.
 - [ ] Leave (A) cited. Proving it is the steepest-descent programme.
+
+### Gap 4, second follow-through (2026-08-30) — the unblock is SMALLER than the gap
+
+Owner: "add in missing mathlib infra so we can unblock". Investigated what the
+`5₂` shrink actually needs, and the answer reverses the earlier framing.
+
+**No polylogarithm is required.** `FiveTwoOhtsukiBridge` originally took `Li₂`
+as a parameter with hypotheses, because Mathlib has none (Gap 1 extension). But
+`BlochWigner_lob` is *not* defined via `Li₂` — the sibling module defines it as
+
+    D(z) = Λ(arg z) + Λ(arg (1/(1−z))) + Λ(arg (1 − 1/z))
+
+a sum of Lobachevsky values at the three dihedral angles. Verified numerically:
+this Lobachevsky form agrees with the `Li₂` form to `0.0` at `y₀` and to
+`2.3e-41` at `x₀`. So `D` is already available without any dilogarithm.
+
+Reducing (B) through `Im Li₂(z) = D(z) − arg(1−z)·log|z|` and `D(1/z) = −D(z)`
+leaves exactly two obligations:
+
+* **(i) `D(x₀) = D(y₀)` where `x₀ = 1 − 1/y₀`** — measured `1.1e-41`;
+* **(ii) the `arg`–`log` corrections cancel** — measured sum `2.9e-42`.
+
+**(i) is now proved**, in `QOU/Archimedean/BlochWignerSymmetry.lean`, and the
+proof is combinatorial. `z ↦ 1 − 1/z` is the order-3 Möbius rotation of the
+ideal tetrahedron; under it the three angle-arguments are *permuted*, because of
+three field identities
+
+    1 − w = 1/z        1/(1 − w) = z        1 − 1/w = 1/(1 − z)
+
+verified exactly, and provable by `field_simp`/`ring`. So `D(1 − 1/z) = D(z)` is
+a reordering of a three-term sum. No analysis, no dilogarithm, no steepest
+descent — **nothing Mathlib lacks**.
+
+`tetAngle₁ (1 − 1/z) = tetAngle₃ z` is even `rfl`: both sides are literally
+`(1 − 1/z).arg`.
+
+### Revised conclusion for this gap
+
+Gap 4 said the steepest-descent absence blocks upgrading the literature-cited
+instances. That stands **for proving Ohtsuki's expansion**. It does *not* block
+the volume-carrying half, which is what the shrink isolated. The infra actually
+needed to unblock was eight elementary lemmas about a Möbius 3-cycle, now
+written, not a polylogarithm library and not steepest descent.
+
+What is still open in (B) is obligation (ii), the `arg`–`log` cancellation, plus
+`D(x₀y₀) = D(y₀)/2`. Both are elementary in kind; neither needs new Mathlib
+theory.
+
+**Still genuinely missing from Mathlib, and still upstreamable** (unchanged):
+`Cl₂`, `Λ`, `Li₂`, and steepest descent. The point of this entry is only that
+the `5₂` bridge does not depend on them.
+
+**Not type-checked** — same container limitation (no Mathlib oleans; the
+toolchain ships no `libLean.a`, so `lake` cannot build `cache:exe`). One bug was
+caught by re-reading before commit: the first draft proved a `≠ 0` side
+condition with `linarith` on a **ℂ**-valued hypothesis, and `linarith` does not
+work over ℂ. Rewritten to rewrite `1 − 1/z` as `(z−1)/z` first so `field_simp`
+has both non-vanishing facts in hand.

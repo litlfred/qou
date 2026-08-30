@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Archimedean.BlochWignerLobachevsky
+import QOU.Archimedean.BlochWignerSymmetry
 
 /-!
 # QOU.Archimedean.FiveTwoOhtsukiBridge — shrinking the `5₂` volume-conjecture axiom
@@ -111,13 +112,22 @@ manifold, no triangulation, and no asymptotics.
    `Li₂(x₀y₀)` with `Li₂(1/(x₀y₀))` and `Li₂(y₀)` with `−Li₂(1/y₀)`.
 3. The remaining correction terms are `arg`–`log` products at `y₀`, `x₀` and
    `x₀y₀`; they cancel using `x₀ = 1 − 1/y₀` together with the cubic.
-4. What survives is `3·D(y₀)`, using the measured coincidences
-   `D(x₀) = D(y₀)` and `D(x₀y₀) = D(y₀)/2` — each of which should itself fall
-   out of the five-term relation applied to the cubic, not be assumed.
+4. What survives is `3·D(y₀)`, using `D(x₀) = D(y₀)` and
+   `D(x₀y₀) = D(y₀)/2`.
 
-Steps 1–3 are Bloch–Wigner bookkeeping the corpus already supports. Step 4 is
-the mathematical content and is where a five-term relation is needed; Mathlib
-has no `Li₂`, so the `Li₂` parameter carries its own hypotheses. -/
+**Step 4's first half is now PROVED**, and cheaply. `x₀ = 1 − 1/y₀` is exactly
+the order-3 Möbius rotation of the ideal tetrahedron, under which the three
+dihedral angles are *permuted*; so `D(x₀) = D(y₀)` is a reordering of a sum, not
+a computation. See `QOU.Archimedean.BlochWigner_lob_mobius_cycle` in
+`BlochWignerSymmetry.lean` — no dilogarithm, no analysis, nothing Mathlib
+lacks.
+
+What remains for this theorem is therefore narrower than it looked: the
+`arg`–`log` correction terms must cancel (measured: their sum is `2.9e-42`), and
+`D(x₀y₀) = D(y₀)/2` must come from the cubic. Neither needs steepest descent.
+The `Li₂` parameter still carries its own hypotheses because Mathlib has no
+polylogarithm — but the *volume-carrying* half of the argument turned out not to
+need one. -/
 theorem ohtsuki_sum_im_eq_three_blochWigner
     (Li₂ : ℂ → ℂ) (y : ℂ) (_hy : IsOhtsukiShape y)
     (_hinv : ∀ z : ℂ, z ≠ 0 → (Li₂ z).im + (Li₂ (1 / z)).im
