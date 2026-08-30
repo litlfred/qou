@@ -7,9 +7,25 @@ Turns the per-module TSV into the numbers a corpus survey actually needs:
   present, which still failed) — a hard lower bound on genuine reds;
 * the **blocked** count (never compiled, because an upstream module was red) —
   status genuinely *unknown*, so `error + blocked` is the upper bound;
-* per-subtree breakdown and the distinct error shapes.
+* per-subtree breakdown and the distinct error shapes;
+* the **sorry-free illusion** count — modules that never type-checked yet carry
+  zero `sorry` tokens, so every source-level audit reads them as clean.
+
+That last one is the number this tool exists to surface. `grep -c sorry` is a
+**screen**; the proof term is the **verdict**. A module behind a blocked cone
+never produces a proof term at all, so the screen reads green and the verdict is
+simply unavailable — and nothing else in the repo distinguishes the two.
+
+Measured on 2026-08-30: one broken module (`QOU.MathlibExt.QIntegerCanonical`)
+blocked **210** modules, **179** of which carried zero sorry tokens. Fixing it
+revealed two more errors that had been hidden behind it, and fixing *those*
+revealed a third in the root aggregator. So the count is a **lower bound that
+moves**: a blocked cone hides not only unverified modules but other errors, and
+this class must be swept **iteratively** rather than measured once. Beans
+`qou-lksc`, `qou-dsif`.
 
 Usage: scripts/lean_cone_triage.py /tmp/qou-cone-all.tsv [--log-dir DIR]
+                                   [--lean-root DIR]
 """
 
 from __future__ import annotations
@@ -50,6 +66,27 @@ ENV_GAP_RE = re.compile(r"object file '[^']*' of module ((?!QOU\b)[\w.]+) does n
 ERR_LINE_RE = re.compile(r"^\S*?:\d+:\d+: error(?:\([^)]*\))?: (.*)$", re.M)
 
 
+SORRY_TOKEN = re.compile(r"\bsorry\b")
+
+
+def sorry_tokens(path: Path) -> int | None:
+    """Count real `sorry` tokens in a source file.
+
+    `None` when the file is absent. The phrase "sorry-free" is excluded: this
+    corpus writes it constantly in prose, and counting it inverts the verdict on
+    exactly the files most likely to claim cleanliness.
+    """
+    if not path.is_file():
+        return None
+    n = 0
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        for m in SORRY_TOKEN.finditer(line):
+            if line[m.end():m.end() + 5] in ("-free", "_free"):
+                continue
+            n += 1
+    return n
+
+
 def error_lines(text: str) -> list[str]:
     """Only the compiler's own `error:` payloads — matching against the whole log
     lets file paths and docstrings ('...ObservableUniverse...') hit the shape
@@ -79,6 +116,10 @@ def main() -> None:
     ap.add_argument("tsv")
     ap.add_argument("--log-dir", default="/tmp/lean-cone-logs")
     ap.add_argument("--top", type=int, default=15)
+    ap.add_argument("--lean-root",
+                    default="content/quantum-observable-universe/lean",
+                    help="root the module names resolve against, for the "
+                         "sorry-free-illusion cross-check")
     args = ap.parse_args()
 
     rows = []
@@ -162,6 +203,41 @@ def main() -> None:
     for s, n in shapes.most_common():
         print(f"  {n:5d}  {s}")
     print()
+
+    # --- the sorry-free illusion -------------------------------------------
+    #
+    # Every module that never type-checked, split by whether a source-level
+    # audit would call it clean. The second group is the one that misleads:
+    # `grep -c sorry` reads 0 and `#print axioms` cannot run at all.
+    lean_root = Path(args.lean_root)
+    unchecked = [r for r in rows
+                 if r["status"] in ("error", "blocked", "missing-source", "env-gap")]
+    illusion, honest, absent = [], [], []
+    for r in unchecked:
+        n = sorry_tokens(lean_root / (r["module"].replace(".", "/") + ".lean"))
+        if n is None:
+            absent.append(r)
+        elif n == 0:
+            illusion.append(r)
+        else:
+            honest.append(r)
+
+    print("sorry-free illusion (never type-checked, yet reads clean):")
+    print(f"  {len(illusion):5d}  zero sorry tokens   <- THE ILLUSION: screen green, no verdict")
+    print(f"  {len(honest):5d}  carries a sorry     <- honestly marked as incomplete")
+    if absent:
+        print(f"  {len(absent):5d}  source not found    <- module name did not resolve under --lean-root")
+    print()
+    if illusion:
+        print("  modules reading sorry-free that were never verified:")
+        for r in sorted(illusion, key=lambda r: r["module"])[:args.top]:
+            why = r["status"]
+            if why == "blocked":
+                why = f"blocked by {r['blocker']}"
+            print(f"    {r['module']}  ({why})")
+        if len(illusion) > args.top:
+            print(f"    … and {len(illusion) - args.top} more")
+        print()
 
     print("every genuine red (module | shape | first error line):")
     for r in sorted(bad, key=lambda r: (r.get("shape", ""), r["module"])):
