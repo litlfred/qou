@@ -118,7 +118,7 @@ The bar-involution split (dashboard Table 4) is live here too: the
 entanglement-augmented $B_{\mathrm{sym+ent}}$ improves ²H (0.79 → 0.56 err
 direction) and ³H (1.38 → 1.06) but leaves ⁴He at 2.57.
 
-## 4. Fusion channels — D + T → ⁴He + n, and why the sign comes out wrong
+## 4. Fusion processes — D + T → ⁴He + n, and why the sign comes out wrong
 
 **No reaction/channel model exists on main** (the only reaction-shaped compute,
 `borromean-qvalue.py`, is deprecated). Fusion Q-values are therefore pure
@@ -137,7 +137,7 @@ central structural fact: **a fusion Q-value is a small difference of same-order
 bindings, so it amplifies per-isotope binding error without mercy.** D+T comes
 out *endothermic* in every current form because ⁴He is under-bound 3.26× —
 the entire +17.6 MeV lives in the magic-closure physics the production forms
-miss. Until the ⁴He row closes, every fusion channel involving it will have
+miss. Until the ⁴He row closes, every fusion process involving it will have
 the wrong sign; this is the single highest-leverage number in the light-nuclei
 program. (The SU(4) occupancy form $B_{\mathrm{gate}}$ — parameter-free
 $E_0\ln(1/W_\lambda)$ — fixes ⁴He specifically, err 0.94, but over-binds ²H
@@ -150,7 +150,7 @@ and would be new research; the ingredients (per-isotope duals) are all present.
 
 ### 4b. First cross-witness channel read (probe, 2026-08-30)
 
-[`fusion_channel_sdp_comparison_probe.py`](../../computations/probes/fusion_channel_sdp_comparison_probe.py)
+[`fusion_process_sdp_comparison_probe.py`](../../computations/probes/fusion_process_sdp_comparison_probe.py)
 (bean `qou-dpy1`) compares the two sides of D + T → ⁴He + n across the four
 committed real-SDP witnesses — no new solve; conclusions at float64
 resolution (the LP-dual witnesses carry raw float64 by construction, bean
@@ -171,10 +171,71 @@ bar involution being isospin conjugation (§6); (iv) the channel's dual-price
 shift $\Delta y_0^* = +0.4225$ is dominated by the free neutron
 (+0.4206) — the final state pays almost its whole net-constraint price on
 the emitted nucleon, which is the SDP-side shadow of the channel's kinetic
-release; (v) one anomaly for follow-up: the **deuteron is the only subject
-whose $n_{\mathrm{target}}$ (0.38773) differs from its own witness
-$\mathrm{tr}_M$ (0.38836)** — the other three are bit-identical — worth a
-provenance check on which atom word the deuteron solve targeted.
+release; (v) the $n_{\mathrm{target}} \ne \mathrm{tr}_M$ "anomaly" is **resolved at
+the producer** (2026-08-30): `nucleus_real_sdp.py` defines
+$n_{\mathrm{target}} := \sum t_\lambda$ over the **positive-norm**
+(bar-fold representative) blocks only, and the deuteron is the only
+subject of the four whose witness records *any* negative-norm blocks
+(3, carrying $\mathrm{tr}_M - n_{\mathrm{target}} = 6.25\times10^{-4}$;
+the other three record zero). Two readings, deliberately kept apart: the
+deuteron's $6.2\times10^{-4}$ bar-odd-fold weight is **measured**; the
+zeros for ³H/⁴He may reflect their *partial* character tables rather
+than a true absence of negative-norm content — settling which requires
+completing those tables (the known Phase-B gap), not a probe.
+
+**(vi) LR support conservation (probe, 2026-08-30, bean `qou-89xc`).**
+[`fusion_process_lr_support_probe.py`](../../computations/probes/fusion_process_lr_support_probe.py)
+induces each side's SDP active sets into the common frame $H_{15}$ by
+Littlewood–Richardson (exact integer combinatorics, no tolerance):
+$|S_{\mathrm{init}}| = 79$, $|S_{\mathrm{fin}}| = 23$ of the 176
+partitions of 15, and $S_{\mathrm{fin}} \subsetneq S_{\mathrm{init}}$
+**strictly** — every $H_{15}$ block the final state (⁴He + n) can reach
+is already reachable from the initial state (D + T), and the channel
+contracts the induced support $79 \to 23$. So there is no LR-level
+obstruction to an $H_{15}$ channel model built on these active sets, and
+the channel's structural signature is *support contraction* — consistent
+with fusion concentrating trace weight (the $\mathrm{tr}_M$ products move
+$0.089 \to 0.982$ across the same channel). Necessary-not-sufficient: the
+supports say which blocks a joint model may use, nothing about magnitudes;
+the joint solve itself (constraint transfer, Phase-B LR constraints)
+remains the open research under `qou-dpy1`.
+
+### 4c. The joint $H_{15}$ solve (2026-08-30, beans `qou-t37g`/`qou-dpy1`)
+
+Two corrections and a result. **First, the "blocked on ³H/⁴He character
+tables" framing above was stale**: re-measured, all four subjects' block
+tables are complete ($p(6)=11$, $p(9)=30$, $p(12)=77$, $p(3)=3$ entries) —
+the "partial" flag was legacy truncation lore. **Second, the joint solve is
+therefore cheap**: for a split element of the parabolic
+$H_a \times H_b \subset H_{15}$ the block characters branch by
+Littlewood–Richardson,
+$\chi^\nu(x \otimes y) = \sum c^\nu_{\lambda\mu}\, \chi^\lambda(x)\chi^\mu(y)$,
+so both sides' $H_{15}$ cost vectors come from the existing per-subject
+tables plus the cached LR tables — no new character computation.
+[`fusion_process_joint_h15_lp.py`](../../computations/fusion_process_joint_h15_lp.py)
+(witness `fusion-process-joint-h15-lp.witness.json`, 4/4 assertions, both
+solves clarabel with duality gaps $\le 2.6\times10^{-43}$) solves the
+bar-fold operator-selection LP for both sides in the one frame:
+
+| side | pos-blocks | $n_{\mathrm{target}}$ | $y_0^*$ | active |
+|---|---|---:|---:|---|
+| D + T | 8/176 | +0.13189 | +0.0016948 | 7 |
+| ⁴He + n | 8/176 | +0.98208 | +0.0007731 | 7 |
+
+**Result: the two sides select the *same* seven active $H_{15}$ channels**
+(overlap = union; asserted in the witness) — the canonical $T_w$ active
+support is invariant across the fusion process, sharpening §4b(vi)'s
+containment into same-frame equality of the *selected* channels. The
+same-frame dual-price shift is $\Delta y_0^* = -9.217\times10^{-4}$. The
+final side exhibits exact split multiplicativity —
+$\mathrm{tr}_{15}(^4\mathrm{He} \otimes n) = \mathrm{tr}(^4\mathrm{He})\cdot\mathrm{tr}(n)$
+to $2.5\times10^{-9}$, the f64 accumulation floor of the branching sum —
+while the initial side exposes a **committed-witness inconsistency**: the
+deuteron χ table (`iterative-lp-dual-h6-deuteron.witness.json`) implies
+$\mathrm{tr}_{H_6} = 0.5752$ against the SDP witness's $0.38836$ — the
+known `tr_m_atom_via_transfer` import-cone drift pair. Which deuteron word
+is canonical is a staleness adjudication, not a solve question; flagged in
+the witness caveat.
 
 ## 5. The electron layer — ¹H's 13.6 eV is imported
 
@@ -267,7 +328,7 @@ currently carrying.
    contradiction logged in `topological-field-ansatz-table-data.qa.json`.
 3. `/dashboard-low` re-run at head (proton pin); output archived in the PR.
    Fusion bookkeeping table (§4) computed from it.
-4. Follow-up beans: fusion-channel SDP comparison (research), e-layer
+4. Follow-up beans: fusion-process SDP comparison (research), e-layer
    promotion (G4), plus the pre-existing q₀-drain and Δ_λ tracks.
 
 Validation note: the folio-assistant pipeline is not available in this

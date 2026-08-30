@@ -89,8 +89,9 @@ Pin: PROTON / experimental (`q₀ ≈ 1.1099785827513808`), 2026-08-07 owner
 directive.  q₀ is taken from the package constant
 `qou_substrate.constants.Q_50_DIGIT_STR`, never from a witness, and the LIVE
 `y_lambda_at_q0_mpmath` is used rather than `wedderburn_jones_markov.
-y_lambda_at`, which silently serves a muon-built cache when handed
-`q_parameter.Q`.  No float64 enters any serialized value.
+y_lambda_at`.  (That choice used to be justified by `y_lambda_at` silently
+serving a muon-built cache when handed `q_parameter.Q`. CORRECTED 2026-08-29: that mechanism is dead. `y_lambda_at`'s live body reads no file at all -- it delegates to `y_lambda_su_n` at whatever q it is handed. The `1e-12` cache gate survives only inside `_y_lambda_at_convention_C_HISTORICAL` (dead, convention C, excised 2026-08-09), and the cache FILE was re-derived to convention D and re-pinned to proton in the same cascade. Verified by reading the body, not inferred. This file's CHOICE is unaffected; only the reason was stale.)
+No float64 enters any serialized value.
 """
 from __future__ import annotations
 

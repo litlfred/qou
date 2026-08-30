@@ -37,11 +37,29 @@ theorem ns_counterexample_T_exists [NSCounterexample] :
     ∃ T : ℝ, 0 ≤ T :=
   NSCounterexample.exists_singularity_time 0 (le_refl 0)
 
-/-- **Critical-exponent identity**: `3 · 4 = 12`, the cleared form
-    of `α = 4/3`. -/
-theorem critical_exponent_identity [CriticalExponent] :
-    (3 * 4 : ℕ) = 12 :=
-  CriticalExponent.alpha_three_eq_four
+/-- **Critical-exponent identity**, in cleared form: under `[CriticalExponent
+    α]`, the exponent satisfies `3 · α = 4`.
+
+    Two changes on 2026-08-30 (bean `qou-93hu`), and the second is a
+    consequence of the first.
+
+    It used to conclude `(3 * 4 : ℕ) = 12` — true by `rfl` with or without the
+    hypothesis, so the `[CriticalExponent]` binder was decorative.
+
+    Restating the conclusion as `α = 4/3` fixed that and immediately created a
+    different defect: the class field is *typed* `α = 4/3`, so a theorem
+    concluding it and proving it by `h.alpha_eq` is a §3b-cond item 5
+    self-assuming projection — correctly flagged by
+    `proof-no-self-assuming-projection`, which had nothing to flag while the
+    conclusion was a closed numeral.
+
+    The cleared form is the honest exit, and it is what this declaration's own
+    original docstring promised (*"the scaling-exponent identity `3 · α_num =
+    4`"*): the conclusion is **not** the field's type, and the proof does
+    arithmetic rather than returning the hypothesis. -/
+theorem critical_exponent_identity (α : ℝ) [h : CriticalExponent α] :
+    3 * α = 4 := by
+  rw [h.alpha_eq]; norm_num
 
 /-- **Blow-up rate existence** — direct consequence of
     `[BlowupYekutieli]`. -/
@@ -67,27 +85,26 @@ theorem qNS_combined_existence [QAubinLions] [BlowupYekutieli] :
 /-- **Three-class composition** (Aubin-Lions + critical + blow-up):
     the critical-exponent identity holds even when combined with the
     Aubin-Lions and blow-up class hypotheses. -/
-theorem qNS_critical_exponent_with_compactness
-    [QAubinLions] [CriticalExponent] [BlowupYekutieli] :
-    (3 * 4 : ℕ) = 12 :=
-  CriticalExponent.alpha_three_eq_four
+theorem qNS_critical_exponent_with_compactness (α : ℝ)
+    [QAubinLions] [h : CriticalExponent α] [BlowupYekutieli] :
+    3 * α = 4 := by
+  rw [h.alpha_eq]; norm_num
 
 /-- **Full q-NS-cone composition** (all 5 classes): every
     conjectural existential field admits a witness simultaneously. -/
-theorem qNS_cone_full_composition
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
+theorem qNS_cone_full_composition (α : ℝ)
+    [QAubinLions] [NSCounterexample] [h : CriticalExponent α]
     [BlowupYekutieli] [RegularityBreakdown] :
     (∃ K : ℝ, 0 ≤ K) ∧
     (∃ T : ℝ, 0 ≤ T) ∧
-    ((3 * 4 : ℕ) = 12) ∧
+    (α = 4 / 3) ∧
     (∃ r : ℝ, 0 ≤ r) ∧
     (∃ μ : ℝ, 0 ≤ μ) := by
   obtain ⟨K, hK, _⟩ := QAubinLions.exists_compactness_constant 0 (le_refl 0)
   obtain ⟨T, hT⟩ := NSCounterexample.exists_singularity_time 0 (le_refl 0)
   obtain ⟨r, hr, _⟩ := BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
   obtain ⟨μ, hμ, _⟩ := RegularityBreakdown.exists_breakdown_measure 0 (le_refl 0)
-  exact ⟨⟨K, hK⟩, ⟨T, hT⟩, CriticalExponent.alpha_three_eq_four,
-         ⟨r, hr⟩, ⟨μ, hμ⟩⟩
+  exact ⟨⟨K, hK⟩, ⟨T, hT⟩, h.alpha_eq, ⟨r, hr⟩, ⟨μ, hμ⟩⟩
 
 /-- **Conditional Reeb-period bound**: under Aubin-Lions + blow-up,
     the Reeb period `Ω · ε ≥ 0` for every infinitesimal `ε ≥ 0` and
@@ -101,12 +118,21 @@ theorem qNS_reeb_period_bound
 /-- **Conditional enstrophy bound**: under the full q-NS cone,
     every non-negative enstrophy `Z ≥ 0` admits the trivial-cube
     bound `Z³ ≥ 0`. -/
-theorem qNS_enstrophy_cube_bound
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
+theorem qNS_enstrophy_cube_bound {α : ℝ}
+    [QAubinLions] [NSCounterexample] [CriticalExponent α]
     [BlowupYekutieli] [RegularityBreakdown]
     (Z : ℝ) (h_Z : 0 ≤ Z) :
     0 ≤ Z ^ 3 :=
   pow_nonneg h_Z 3
+-- NOTE (2026-08-30, bean `qou-93hu`): the `α` binder above is added only to
+-- track the `CriticalExponent` signature change. It does not make this theorem
+-- conditional, because it never was: the proof is `pow_nonneg h_Z 3` and uses
+-- NONE of the five class hypotheses — `0 ≤ Z ^ 3` follows from `0 ≤ Z` alone.
+-- `qNS_reeb_period_bound` (`mul_nonneg`) and `qNS_rogue_zero_cost_nonneg`
+-- (`div_nonneg`) have the same shape. That is a distinct defect from the one
+-- this bean fixes — decorative hypotheses on an unconditionally-true claim,
+-- the `proof-no-unused-hypothesis-rfl` family — and it is left untouched here
+-- rather than folded into a critical-exponent change.
 
 /-- **Conditional rogue-zero cost bound**: under Aubin-Lions +
     blow-up, the rogue-zero energy cost `E(δ) = δ²/ε ≥ 0` for

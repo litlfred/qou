@@ -62,12 +62,31 @@ class NSCounterexample : Prop where
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`.
 
     The critical exponent of the q-NS scaling regime is exactly
-    `α = 4/3`.  Concrete content: the scaling-exponent identity
-    `3 · α_num = 4` (cleared form of `α = 4/3`). -/
+    `α = 4/3`.  The exponent is carried as the class **parameter**, and the
+    field pins its value.
+
+    **What this encodes, and what it does not** (bean `qou-93hu`). The field
+    constrains the `α` it is applied to: `CriticalExponent α` is false for
+    every `α ≠ 4/3`, so a downstream `[CriticalExponent α]` hypothesis is a
+    real assumption about `α`. What is *not* encoded is the link between `α`
+    and the q-NS scaling regime — nothing here says this `α` is that
+    exponent, because saying so needs the scaling definition, which is open.
+    So this is the conjecture's **value** claim, stated conditionally on
+    naming the exponent; it is not the whole conjecture.
+
+    **History.** Until 2026-08-30 the single field read
+    `alpha_three_eq_four : (3 * 4 : ℕ) = 12` — a closed numeral identity with
+    the values already substituted in, containing **no exponent variable at
+    all**. `rfl` proved it whatever the physics, so the class constrained
+    nothing and every `[CriticalExponent]`-conditional theorem was vacuous in
+    its critical-exponent leg. Unlike the four sibling carriers in this file,
+    that field was not even the right *shape*: no quantifier, no free
+    variable. Note `Prop` classes cannot carry data, which is why `α` is a
+    parameter rather than a field. -/
 -- Ref: [manuscript] conj:critical-exponent
-class CriticalExponent : Prop where
-  /-- The cleared critical-exponent identity. -/
-  alpha_three_eq_four : (3 * 4 : ℕ) = 12
+class CriticalExponent (α : ℝ) : Prop where
+  /-- The critical exponent takes the value `4/3`. -/
+  alpha_eq : α = 4 / 3
 
 /-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`.
 
@@ -95,27 +114,49 @@ class RegularityBreakdown : Prop where
   exists_breakdown_measure :
     ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
 
-/-- **Canonical instance bundle**: provides simultaneous instances
-    of all five q-NS-cone conjecture classes via the trivial-zero
-    discharger.  Each existential is witnessed by `⟨0, …⟩`; the
-    `K ≤ 2·E`, `r ≤ 1+T`, `μ ≤ s` bounds hold trivially since the
-    upper bounds are non-negative when `E, T, s ≥ 0`. -/
-instance qAubinLions_canonical : QAubinLions where
-  exists_compactness_constant := fun E hE =>
-    ⟨0, le_refl 0, by linarith⟩
+/-! ## The "canonical instance bundle" — REMOVED 2026-08-30 (bean `qou-rq9n`)
 
+This file used to close with five **unconditional global instances**, one per
+carrier above, introduced as the *"canonical instance bundle … via the
+trivial-zero discharger"*:
+
+```lean
 instance ns_counterexample_canonical : NSCounterexample where
   exists_singularity_time := fun _ _ => ⟨0, le_refl 0⟩
 
 instance critical_exponent_canonical : CriticalExponent where
   alpha_three_eq_four := rfl
+```
 
-instance blowup_yekutieli_canonical : BlowupYekutieli where
-  exists_blowup_rate := fun T hT =>
-    ⟨0, le_refl 0, by linarith⟩
+AGENTS.md §3b-tax is explicit that this is the one thing not to do: *"An
+unproved primary is honestly represented by a content-bearing class with no
+instance (the open state); do not fabricate a trivial instance to 'close' it."*
 
-instance regularity_breakdown_canonical : RegularityBreakdown where
-  exists_breakdown_measure := fun s hs =>
-    ⟨0, le_refl 0, hs⟩
+**What the instances cost.** This is an importable library module, so an
+unconditional instance makes every `[C]`-conditional theorem in the cone
+unconditional — the q-NS results in `ConditionalCorollaries.lean` were
+conditional in their signatures and dischargeable by zero in fact. That is the
+`conditional-proved ≠ premise-established` failure with the premise supplied by
+the file itself.
+
+**What they bought: nothing, measured.** Every consumer takes the carriers as
+explicit `[C]` hypotheses — all nine theorems in `ConditionalCorollaries.lean`
+and `surreal_rate_calculus_conditional` in `SurrealRateCalculus.lean`, the only
+two modules that import this one — and **no declaration anywhere in the corpus
+applies any of those conditional corollaries** (0 external references to each of
+the nine). Nothing resolved these instances and nothing needed them. Removing
+them is behaviour-preserving for every consumer and restores the conditional
+theorems to genuinely conditional.
+
+**This does not make the carriers honest, only unclosed.** Their fields still
+assert far less than their docstrings claim — `NSCounterexample` binds `D₀` and
+never mentions it again; `CriticalExponent`'s entire content is a closed numeral
+identity with no exponent variable in it. Encoding what the q-Aubin–Lions
+compactness claim, the blow-up bound and the critical exponent actually say is
+mathematics, tracked per-carrier under `qou-rq9n`. Do **not** re-add an instance
+to make a downstream result typecheck: with no instance, an attempt to use one
+of these conditionally-proved theorems fails loudly, which is the correct
+behaviour for an open conjecture.
+-/
 
 end QOU.AlgebraicSubstrate

@@ -286,6 +286,10 @@ def main() -> int:
     print(f"  Σ y_λ · χ^λ(1) = {sum_check}   (must equal 1)")
 
     # Apply to the proton internal braid (canonical markov_peel word).
+    from canonical_trm_reference import tr_m_nucleon
+    _ref_p = tr_m_nucleon("proton")
+    _ref_n = tr_m_nucleon("neutron")
+
     proton = atom_braid_word_3A_to_crossings(1, 0, include_inter=False)
     print()
     print(f"Proton canonical braid (markov_peel): {len(proton)} crossings")
@@ -298,7 +302,7 @@ def main() -> int:
     print(f"  closed form: {trM_p}")
     val_q0 = sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
-    print(f"  markov_peel ref : 1.0653062286131670")
+    print(f"  markov_peel ref : {_ref_p}")
 
     # Same for neutron (canonical markov_peel word).
     neutron = atom_braid_word_3A_to_crossings(0, 1, include_inter=False)
@@ -309,7 +313,7 @@ def main() -> int:
     print(f"  closed form: {trM_n}")
     val_n = sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
-    print(f"  markov_peel ref : 0.9232332971861535")
+    print(f"  markov_peel ref : {_ref_n}")
 
     # Witness JSON.
     out = HERE / "markov_weights_symbolic.witness.json"
@@ -336,14 +340,26 @@ def main() -> int:
         },
         "tr_M_proton_closed_form": str(trM_p),
         "tr_M_proton_at_q0": str(val_q0),
-        # The reference stays at the precision it was recorded with: it comes
-        # from markov_peel, which returns a double. Serializing it through a
-        # 50-digit formatter would pad 17 real digits with 33 invented ones —
-        # exactly the fake precision the padding ratchet exists to catch.
-        "tr_M_proton_markov_peel_reference": "1.0653062286131670",
+        # CONVENTION FIX (2026-08-30, bean qou-46ab). This was the literal
+        # "1.0653062286131670", which is CONVENTION C — 7.55% from the
+        # canonical D value. The defect was visible in this very witness: the
+        # computed `tr_M_proton_at_q0` above read 1.14575969245730086968… (D,
+        # correct) while the field named `..._reference` beside it read the C
+        # value, so anyone comparing the two saw the COMPUTATION as wrong.
+        #
+        # It survived the `.work/convention-c-regen` sweep, which logs this
+        # producer as "ok, 5.2s": re-running a producer updates a computed
+        # field and cannot touch a literal.
+        #
+        # The old comment here justified keeping 17 digits because markov_peel
+        # returns a double. That premise no longer applies — the reference now
+        # comes from the 50-dps witness via `canonical_trm_reference`, selected
+        # by the artifact's own recorded q0, so the digits are real rather than
+        # padded and there is no fake precision to avoid.
+        "tr_M_proton_markov_peel_reference": str(_ref_p),
         "tr_M_neutron_closed_form": str(trM_n),
         "tr_M_neutron_at_q0": str(val_n),
-        "tr_M_neutron_markov_peel_reference": "0.9232332971861535",
+        "tr_M_neutron_markov_peel_reference": str(_ref_n),
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)

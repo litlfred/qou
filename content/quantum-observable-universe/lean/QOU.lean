@@ -106,6 +106,7 @@ import QOU.MathlibExt.BraidedTensorDual
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.TwistedQuantumDimension
+import QOU.MathlibExt.SphericalCategory
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
@@ -646,6 +647,7 @@ import QOU.QBeta.BarOddLadderShape
 -- them and no CI run would have caught a regression in any of them.
 import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
+import QOU.QBeta.PairingSeesCommutator
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate

@@ -1335,7 +1335,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1371,8 +1371,35 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
-   characters are searchable this way.
+   and re-deriving one. **536** document directories are searchable this
+   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
+   low by 62 %, not merely old).
+
+   **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
+   (added 2026-08-30).** Some documents were ingested with their text in
+   `library/<doc-id>/ocr/page-*.txt` and only a **stub** in `sections/`, so
+   the command on the line above cannot see their mathematics at all:
+
+   ```sh
+   grep -rln <topic> library/*/ocr/     # the tier the three above miss
+   ```
+
+   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   of the eleven single-`sections/`-file directories hold **under 15 %** of
+   their OCR bytes in `sections/`, six of them under 3 %. The worked case is
+   the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
+   Ricca 1992, _Helicity and the Calugareanu invariant_**, whose `sections/`
+   is **1,916 bytes of JSTOR download banner** against **46,511 bytes** of
+   real text in `ocr/` (4.1 %). A `sections/` grep for *helicity* returns
+   several other documents and **not this one** — the single most on-point
+   held source for the mass/binding self-vs-mutual linking question, invisible
+   to the documented path. `1992evansberger` (*A Hierarchy of Linking
+   Integrals*, 2.2 %) is hidden the same way.
+
+   So a clean `sections/` grep is **not** evidence the library lacks a topic.
+   Run the `ocr/` tier before concluding a source is not held — the whole
+   point of path 5 is to catch a citation, and this is exactly where the
+   citations that matter have been hiding.
 
    This path exists only because the sources were sectioned into text.
    Before that they were 339 PDFs and grep could not see them, which is
@@ -1946,6 +1973,49 @@ object — pairwise cap `ρ_A ≤ C(A,2)` proved in
 seventh fit-based ansatz for the MAGNITUDE** — the three-calibration
 discipline review will catch it. Full framing:
 [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
+
+> **🟧 Extensive-term frontier + deuteron ruling (2026-08-29/30).** The "separate
+> super-pairwise additive extensive object" above is the arc's one real open
+> problem. It is now bounded by four sorry-free formalize-first results — the
+> *scaling* is pruned from four directions; the *coefficient/mechanism* stays
+> open (`qou-brng`). Do not re-attempt the excluded routes.
+>
+> - **Complete-graph coordination is excluded by saturation.**
+>   `QOU.Mass.CoordinationSaturation` (lean-direct sorry-free): the complete
+>   graph `M = C(A,2)` (the `z = A−1` law) gives `B/A = ε·(A−1)/2`, **unbounded**
+>   (no plateau); bounded-degree gives `B/A = ε·k/2`, constant. Observed
+>   saturation *forces* bounded degree and refutes `z = A−1` **structurally**
+>   (not merely at ⁴He). Audit:
+>   [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](docs/audits/2026-08-30-coordination-saturation-formalized.md).
+> - **Linear-chain coordination is excluded by arrangement-dependence.**
+>   `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` — the chain
+>   bond sum is arrangement-invariant iff `L_pp = L_pn = L_nn`; a nucleus has no
+>   arrangement (scope-(b), bean `qou-m07y`). The saturation lemma's uniform-`ε`
+>   is exactly that order-independent (physical) regime.
+> - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
+>   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
+> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
+>   wrong against AME**, independent of the bond set
+>   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+>
+> **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
+> canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
+> NOT a hyperbolic-volume term** (Bloch volume leg proved 0, PR #5242). The 6₂
+> census assignment (`Vol = 4.40`) is retired; `qou-e5jf` unblocked. Sourcing the
+> binding from the **Gram/Frobenius pairing (⟨g,g⟩) + confinement SDP** was tested
+> (`deuteron_real_sdp.py`, H₆) and is a **scope-(a) negative**: the diagonal Gram
+> SDP is degenerate and 0 of 6 off-diagonal encodings derive the binding — the
+> only non-zero result (`2.22456607`) is the AME value fed in as the constraint
+> (circular). Same intensive/extensive gap. Audits:
+> [`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`](docs/audits/2026-08-29-deuteron-knot-owner-decision.md),
+> [`docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md`](docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md).
+>
+> **Open positive target (`qou-brng`):** the linking-vs-self-energy amplitude
+> assignment — why the binding multiplier is the *mutual* (coordination) linking
+> count while the mass multiplier is the *self*-linking weight `lw`. The
+> exact-`ℏ_q²` saturated-fraction value is **suspect numerology** (volume-defect
+> route refuted); do not chase it. Consolidated arc ledger:
+> [`docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md`](docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md).
 
 > **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
 > The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:

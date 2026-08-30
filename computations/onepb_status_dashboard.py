@@ -60,6 +60,43 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+# LP-dual numeric fields that the clarabel-MPFR backend also emits as
+# full-precision decimal STRINGS under `<field>_str`.
+_LP_DUAL_PRECISE_FIELDS = (
+    "x_star", "y0_star", "y_star", "primal_obj", "dual_obj", "duality_gap",
+)
+
+
+def _promote_lp_full_precision(entry: dict) -> dict:
+    """Carry each LP-dual value at the precision its solver actually produced.
+
+    `solve_operator_selection_lp` emits every dual twice: a float64 convenience
+    mirror `<field>`, and — ONLY on the clarabel-MPFR backend — the
+    full-precision decimal string `<field>_str` (the upstream
+    `lp-confinement-nf-forcing` solve ran at `precision_bits = 167`). Copying
+    the entry verbatim published the float64 mirror while the real value sat one
+    key away: 48 of this witness's raw-float64 fields were that, and they are
+    excused corpus-wide by the audit's LP-dual carve-out rather than drained.
+
+    So promote `<field>_str` into the canonical name. The `_str` keys are kept
+    so existing readers of either spelling still resolve.
+
+    Where NO `_str` exists (the scipy-highs float64 backend), the float is left
+    EXACTLY as it is — deliberately. Serialising it as a 50-digit string would
+    manufacture digits the solve never computed, which is the float64-padding
+    defect the sibling ratchet exists to catch. `backend` / `precision_bits` on
+    the same entry record which case applies.
+    """
+    out = dict(entry)
+    for field in _LP_DUAL_PRECISE_FIELDS:
+        if field not in out:
+            continue
+        precise = entry.get(f"{field}_str")
+        if precise is not None:
+            out[field] = precise
+    return out
+
+
 def load(name: str) -> dict | None:
     base = Path(__file__).parent
     path = base / name
@@ -141,7 +178,10 @@ def main() -> None:
         ],
     }
     # Per-compound LP dual variables (y0_star, y_star, primal/dual obj).
-    lp_summary["dual_values"] = lp_data.get("lp_dual_summary", [])
+    lp_summary["dual_values"] = [
+        _promote_lp_full_precision(entry)
+        for entry in lp_data.get("lp_dual_summary", [])
+    ]
 
     # ── Layer 2: Markov-trace consistency (Hoefsmit vs markov_peel) ─
     # cross-check-trM-1ppb was originally hand-rolled (no `data`
@@ -165,33 +205,53 @@ def main() -> None:
         tolerance_float = float(tolerance)
     except (TypeError, ValueError):
         tolerance_float = 1e-9
-    # Per-atom relative delta.  The key is `rel_delta_max` -- the max over
-    # the method PAIRS compared for that atom.  This read `rel_delta`, a key
-    # NO delta entry has ever carried, so `.get(..., 0)` returned 0 for every
-    # atom and `max_rel_delta` was 0.0 by key-miss rather than by measurement.
-    # That fed the GATING `markov_trace_max_rel_delta` assertion below
-    # (expected 0.0, tolerance 1e-9), so the L1 Markov-trace gate could not
-    # fail whatever the cross-check found.  Legacy names kept as fallbacks.
-    _DELTA_KEYS = ("rel_delta_max", "rel_delta", "peel_rel_delta")
+    # Per-atom relative delta.  L1 GATES ON THE COLOR-WEIGHTED EXACT METHODS
+    # (`exact_method_rel_delta` = markov_peel vs chi-cache) — the two float-clean
+    # methods the 1 ppQ certification explicitly rests on.  It must NOT gate on
+    # `rel_delta_max`, the max over ALL method pairs: that includes the
+    # color-blind (sign-only) Hoefsmit/Habiro legs, which the cross-check itself
+    # declares "informational, not gated" and which diverge by the color
+    # weighting (e.g. ⁴He rel_delta_max ≈ 4.6 while its color-weighted delta is
+    # ≈ 6e-50, certified). Gating on rel_delta_max held L1 red on a leg that was
+    # never part of the certification (qou-wgaw, 2026-08-30).
+    #
+    # History: this once read `rel_delta`, a key NO delta entry carries, so
+    # max_rel_delta was 0.0 by key-miss and the gate could not fail; then it was
+    # "fixed" to `rel_delta_max`, which over-corrected onto the informational
+    # legs. `exact_method_rel_delta` is the right quantity. Legacy names kept as
+    # fallbacks for older cross-check witnesses that predate the exact-method key.
+    _DELTA_KEYS = ("exact_method_rel_delta", "rel_delta_max", "rel_delta",
+                   "peel_rel_delta")
 
     def _rel_delta(d: dict):
-        """Largest relative delta recorded for one atom, as mpf.
+        """The L1-gated relative delta for one atom, as mpf.
+
+        Returns the FIRST present key in `_DELTA_KEYS` priority order
+        (`exact_method_rel_delta` — the color-weighted certification quantity —
+        first), NOT the max over keys: a max would re-pick `rel_delta_max`, which
+        includes the informational color-blind legs the gate must ignore.
 
         mpf, not float(): these arrive as 50-digit decimal STRINGS under the
         NO-FLOAT64 discipline, and this value is recorded in the witness and
         asserted against -- an argument, not a display.
         """
-        vals = [mp.mpf(str(d[k])) for k in _DELTA_KEYS
-                if d.get(k) is not None]
-        return max(vals) if vals else None
+        for k in _DELTA_KEYS:
+            if d.get(k) is not None:
+                return mp.mpf(str(d[k]))
+        return None
 
     _deltas = trm.get("deltas", []) or []
     _rds = [v for v in (_rel_delta(d) for d in _deltas) if v is not None]
     trm_summary = {
         "atoms_compared": trm.get("atoms_compared", 0),
         "any_diverge": trm.get("any_diverge", None),
-        "tolerance_relative": tolerance_float,
-        "tolerance_relative_raw": tolerance,
+        # Serialized as decimal strings, not float64. The tolerance is an exact
+        # SPEC constant (1e-9), so a decimal string is its faithful form — this
+        # is not float64-padding (no measured digits are invented). The float
+        # `tolerance_float` is kept for in-process comparison only, never
+        # published. Drains 2 of this witness's 5 baselined raw-float64 fields.
+        "tolerance_relative": str(tolerance),
+        "tolerance_relative_raw": str(tolerance),
         "max_rel_delta": max(_rds) if _rds else None,
         "max_rel_delta_source_key": next(
             (k for k in _DELTA_KEYS
@@ -308,8 +368,10 @@ def main() -> None:
     print(f"  GB NF maximizer in active set: "
           f"{lp_summary['n_compounds_maximizer_in_active']}/"
           f"{lp_summary['n_compounds_total']}")
-    print(f"  duality gap (max across compounds): "
-          f"{max((d.get('duality_gap', 0) for d in lp_summary['dual_values']), default=0)}")
+    _max_gap_display = max(
+        (mp.mpf(str(d.get("duality_gap", 0)))
+         for d in lp_summary["dual_values"]), default=mp.mpf(0))
+    print(f"  duality gap (max across compounds): {_max_gap_display}")
     print(f"  active sets: "
           f"{[c['active_set_size'] for c in lp_summary['compounds']]}")
     print()
@@ -348,7 +410,11 @@ def main() -> None:
     # LP duality gap (structural): must be exactly 0 across all
     # compounds for strong duality to hold.
     if lp_summary["dual_values"]:
-        max_gap = max(d.get("duality_gap", 0) for d in lp_summary["dual_values"])
+        # `duality_gap` now arrives as the solver's full-precision decimal
+        # string (see `_promote_lp_full_precision`), so compare as mpf rather
+        # than as float64 -- `max()` over strings would order lexically.
+        max_gap = max(mp.mpf(str(d.get("duality_gap", 0)))
+                      for d in lp_summary["dual_values"])
         builder.add_assertion(
             name="lp_max_duality_gap",
             # Serialized, not passed raw: `duality_gap` reaches here as a
@@ -359,7 +425,7 @@ def main() -> None:
             # already a string for the same reason. Fixed 2026-08-29; the
             # regression came in with 755ab8a5b7 (0.0 -> 7.31e-50).
             computed=fmt(max_gap),
-            expected=0.0,
+            expected="0",
             tolerance=1e-9,
             source="prop:operator-selection-lp strong duality",
         )
@@ -372,10 +438,14 @@ def main() -> None:
     if trm_summary["max_rel_delta"] is not None:
         builder.add_assertion(
             name="markov_trace_max_rel_delta",
-            computed=trm_summary["max_rel_delta"],
-            expected=0.0,
-            tolerance=1e-9,
-            source="cross-check-trM-1ppb (Hoefsmit vs markov_peel)",
+            # Strings, per `add_assertion`'s drained convention. `expected` and
+            # `tolerance` are exact spec constants (0 and 1e-9), so a decimal
+            # string is faithful, not float64-padding. `computed` is already an
+            # mpf carried from the 50-digit source.
+            computed=fmt(trm_summary["max_rel_delta"]),
+            expected="0",
+            tolerance="1e-9",
+            source="cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)",
         )
     builder.add_data("summary", summary)
     builder.add_data("framing_note",

@@ -1,0 +1,79 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T06:26:29.947284+00:00",
+  "commitSha": "56dfb5b7f7b7ef16da8a53ccead188e3f082983e",
+  "assertions": [
+    {
+      "name": "the_markov_pairing_on_HH_IS_the_block_trace_form_times_y_2_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W_system_restricted_to_sl2_has_FULL_rank_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W_is_z_FREE_so_all_convention_dependence_sits_in_the_normalisation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "W_is_parallel_to_dC_with_ratio_minus_two_over_bracket_three",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "MU_SPLITS_derived_normalisation_times_z_free_identified_constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "qbeta-mu-normalisation-is-derived",
+  "scriptFile": "qbeta_mu_normalisation_is_derived_probe.py",
+  "scriptHash": "c5995414c94a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_mu_normalisation_is_derived_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_mu_normalisation_is_derived_probe.py"
+  },
+  "description": "qou-xzrj: mu = (-2/[3]_q) / y_(2,1)(z) splits into a DERIVED factor and a z-free identified constant. On [H,H] the Markov pairing is the (2,1) block's trace form scaled by that block's own Markov weight (verified on all 9 ordered pairs), so the 1/y_(2,1) is forced by Wedderburn rather than identified. The residual -2/[3]_q is z-free. Consequence: ALL of mu's convention-dependence is derived; what remains identified is a pure-q constant. Scope-(a); step 8 not closed.",
+  "data": {
+    "W_over_dC": "-2*q**2/(q**4 + q**2 + 1)",
+    "y_2_1_of_z": "-q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+    "mu": "2*q/((-q + z)*(q*z + 1))",
+    "W_rank_in_sl2": "3",
+    "mu_at_proton_pin_conventionD": "-2.65709364274164636659432759352368272748207526586690000000000"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

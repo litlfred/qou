@@ -49,11 +49,16 @@ def main():
     # amount of re-running would have fixed it while the read stayed here.
     #
     # `y_lambda_at_q0_mpmath` is the experimental-anchor path per AGENTS.md
-    # §"q₀ anchor convention": `wedderburn_jones_markov.y_lambda_at` serves
-    # the MUON-built cache whenever `|q - q_parameter.Q| < 1e-12`, a gate
-    # satisfied trivially by passing `Q` itself. At n=18 that cache has no
-    # entry so both routes compute live and agree to ~1e-16, but the direct
-    # call is the one that stays correct if n=18 is ever cached.
+    # §"q₀ anchor convention". This comment used to justify the choice by
+    # saying `wedderburn_jones_markov.y_lambda_at` serves the MUON-built cache
+    # whenever `|q - q_parameter.Q| < 1e-12`, a gate satisfied trivially by
+    # passing `Q` itself.
+    #
+    # CORRECTED 2026-08-29: that mechanism is dead. `y_lambda_at`'s live body reads no file at all -- it delegates to `y_lambda_su_n` at whatever q it is handed. The `1e-12` cache gate survives only inside `_y_lambda_at_convention_C_HISTORICAL` (dead, convention C, excised 2026-08-09), and the cache FILE was re-derived to convention D and re-pinned to proton in the same cascade. Verified by reading the body, not inferred. This file's CHOICE is unaffected; only the reason was stale.
+    #
+    # The direct call remains the right choice — it is the documented
+    # experimental-anchor route — and the n=18 observation still holds: both
+    # routes compute live and agree to ~1e-16.
     # Kept as mpmath.mpf, NOT float()-ed. The live closed form returns ~50
     # significant digits and a `float()` here would throw them away at the
     # point of entry, which is exactly what the raw-float64 gate objects to:

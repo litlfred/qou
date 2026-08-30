@@ -1,0 +1,426 @@
+{
+  "computation": "chi-tritium-h9-at-q0-50dps",
+  "description": "Numerical χ^λ_q(β_atomic(1, 2)) = tritium per partition λ ⊢ 9, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-tritium-h9.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
+  "convention": "colour-weighted-averaged-crossing",
+  "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "n_partitions_total": 30,
+  "partial": false,
+  "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "dps": 50,
+  "n_strands": 9,
+  "atom": "tritium",
+  "Z": 1,
+  "N": 2,
+  "n_partitions": 30,
+  "compute_time_sec": "0.73",
+  "tr_M_at_q0": "0.22931014748345889421700928536590074425610047177447",
+  "by_partition": [
+    {
+      "partition": [
+        9
+      ],
+      "dim": 1,
+      "y_lambda": "0.022122276615756767204721690744324177153461306145471",
+      "chi_lambda": "1.5769142892553383567688690793832267033300545171114",
+      "contribution": "0.034884934106246074512625933492310182179980423080348",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "dim": 8,
+      "y_lambda": "0.016638174104595807217551362725675332810329614277659",
+      "chi_lambda": "3.7407472951493324214041693832666840023347713119304",
+      "contribution": "0.062239204777990431744180176324418246675400549854057",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        7,
+        2
+      ],
+      "dim": 27,
+      "y_lambda": "0.011881263262923690809560079950761685696524923378567",
+      "chi_lambda": "3.1908429176994305938857540187253449120498023443606",
+      "contribution": "0.037911244735822486551282485656189353767268865671092",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1
+      ],
+      "dim": 28,
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.57895207069852404689748640961654742931460544892044",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        6,
+        3
+      ],
+      "dim": 48,
+      "y_lambda": "0.0076436375070721038100619626926435753294828041647235",
+      "chi_lambda": "10.168596153847869935728316202721026166306800356552",
+      "contribution": "0.077725062955820715538464488269922235585185808763054",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        1
+      ],
+      "dim": 105,
+      "y_lambda": "0.0",
+      "chi_lambda": "-6.3397892712008245033024390144478473920274858460558",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1,
+        1
+      ],
+      "dim": 56,
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.0294873657748109679564781062391846484456744701979",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        5,
+        4
+      ],
+      "dim": 42,
+      "y_lambda": "0.0037400862406922890550897866555432388272036725834576",
+      "chi_lambda": "4.4249516836049856033788529790151736048614328962683",
+      "contribution": "0.016549700907579185870456201623060726048264824405916",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        1
+      ],
+      "dim": 162,
+      "y_lambda": "0.0",
+      "chi_lambda": "2.0749846228129870268506661799223624294572593100341",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2
+      ],
+      "dim": 120,
+      "y_lambda": "0.0",
+      "chi_lambda": "-9.3712726305626945760123435822964574798879657018143",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1,
+        1
+      ],
+      "dim": 189,
+      "y_lambda": "0.0",
+      "chi_lambda": "-5.9751361802080023251322959987887091269901526712781",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 70,
+      "y_lambda": "0.0",
+      "chi_lambda": "6.044648392262186755135701142502659389057976393996",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        1
+      ],
+      "dim": 84,
+      "y_lambda": "0.0",
+      "chi_lambda": "-2.6077729716473085825768334572065864546406170339013",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2
+      ],
+      "dim": 168,
+      "y_lambda": "0.0",
+      "chi_lambda": "7.0271642650384206700089066156010849846191049480846",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "dim": 216,
+      "y_lambda": "0.0",
+      "chi_lambda": "-3.744935752352549797125891044266386141978404378319",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "dim": 216,
+      "y_lambda": "0.0",
+      "chi_lambda": "-2.1720591009700842195916670804995005595807635166812",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "dim": 189,
+      "y_lambda": "0.0",
+      "chi_lambda": "3.758977515547785772799508519563095961571426713212",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 56,
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.31053561352356017077534394793136527358925926817911",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3
+      ],
+      "dim": 42,
+      "y_lambda": "0.0",
+      "chi_lambda": "9.4515185005331886196844124623359759485665122693113",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "dim": 168,
+      "y_lambda": "0.0",
+      "chi_lambda": "-2.2182487949785817706832911404252163011846180720708",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1,
+        1
+      ],
+      "dim": 120,
+      "y_lambda": "0.0",
+      "chi_lambda": "3.3701956051398233828374201165364969463189861144691",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "dim": 84,
+      "y_lambda": "0.0",
+      "chi_lambda": "2.8649453691870622859789556088912429142297469148291",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "dim": 162,
+      "y_lambda": "0.0",
+      "chi_lambda": "3.3811448616540546702550853593886591061242705079948",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 105,
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.0489462155256042180183088602346975726596313728346",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 28,
+      "y_lambda": "0.0",
+      "chi_lambda": "-2.2454504282630388585312263823288338598201908521581",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "dim": 42,
+      "y_lambda": "0.0",
+      "chi_lambda": "8.6491946451791297977370012646178784376752805517056",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "dim": 48,
+      "y_lambda": "0.0",
+      "chi_lambda": "-5.1133539971756907032893867821777168016693551196348",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 27,
+      "y_lambda": "0.0",
+      "chi_lambda": "-1.8833506491046779894095093509750015389265131352146",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 8,
+      "y_lambda": "0.0",
+      "chi_lambda": "2.6617181668146722561021563258527933159744284424942",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.68427258577569685537798944950894503893597343634712",
+      "contribution": "0.0",
+      "compute_time_sec": "0.00"
+    }
+  ],
+  "scriptHash": "815a026e9591",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "6da4b4e42954ab1e86fa83232bb51e026a9d57cf",
+  "engine": "python+mpmath",
+  "computedAt": "2026-08-30T03:40:49.502671+00:00",
+  "durationMs": 0,
+  "engineVersion": "python 3.11 + mpmath 1.3.0",
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+}
