@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T14:00:47Z
+updated_at: 2026-08-30T14:06:33Z
 parent: qou-mhj9
 ---
 
@@ -734,3 +734,104 @@ especially that `PairwiseCumulantVanishing` is **orthogonal** to the typed
 classification, not stronger: it fixes the complete pair set and varies the
 bond *function*, while this varies the *edge set and typing* at fixed
 pairwise shape. Neither subsumes the other.
+
+## THE GATE CLOSES ONE ROUTE, NOT THE FRONT (2026-08-30, PR #6227)
+
+Lean: `QOU/Mass/CumulantTurnoverLowerBound.lean` (sorry-free, lean-direct exit 0,
+6 decls, axioms clean). Probe:
+`computations/probes/deuteron_deficit_off_gate_probe.py` (6/6).
+Audit: `docs/audits/2026-08-30-deuteron-deficit-off-gate.md`.
+
+### THE SCOPE CORRECTION -- the main finding
+
+#6197 concluded the deuteron-deficit route "terminates at the q0 gate rather than
+at a wall in the mathematics". Correct for the route it tested; does NOT
+generalise. Three things get called the gate:
+
+  G1  derive q0's VALUE from the substrate      FORBIDDEN (qou-eic1, permanent)
+  G2  derive F, EVALUATE at the calibrated q0   ROUTINE -- every framework
+                                                prediction does this
+  G3  explain WHY q0 is near 1                  = G1, correctly gated
+
+The near-unitarity route needs G3, because NEARNESS is a claim about q0's value.
+The DEFICIT needs only G2. **So the front is an ordinary open derivation problem
+and must not be recorded as gated.**
+
+Measured, not asserted: every target quantity (b2, b3, b4, w(1..3), the deficit
+fraction, B(4)/B(2)) is AME2020-only. The probe reads and prints q0 and uses it
+NOWHERE below; that absence is the test.
+
+### TURNOVER PINNED FROM BOTH SIDES, parameter-free
+
+b3 > 0 AND b4 > 0 give w(1) < w(2) < w(3) -- the coordination weight rises
+THROUGH z=3, so the turnover is at A >= 4. A LOWER bound, from measured cumulant
+signs with no representation theory in it (`max_at_three`). The corpus's Wigner
+SU(4) support bound dim[1^n] = C(4,n) = 0 for n >= 5 is an UPPER bound from the
+opposite direction. **Independent inputs, opposite directions, meeting at A = 4.
+Neither alone pins the location; together they do.**
+
+    isospin avg   b3 = 1.42622016  b4 = 9.24338456
+    Coulomb-corr  b3 = 1.80809760  b4 = 7.71587480
+    w(1..3), w(5) = 2.2245662, 2.69997292, 4.715943733, 2.13293248
+
+### THE ABSENT CHANNEL CARRIES AT LEAST THE WHOLE DEFICIT
+
+Every closed mechanism is saturating, hence non-increasing in w -- which is why
+each lands at b3 <= 0. Split w = u + v with u that background and v absent at
+z=1. Then b3 <= 3*v(2) (`b3_le_three_mul_channel`):
+
+    v(2) >= 0.47540672 MeV/pair  (21.37% of w(1))   isospin avg
+    v(2) >= 0.60269920 MeV/pair  (27.09% of w(1))   Coulomb-corrected
+
+**Not a perturbative correction on a background that nearly works.** The deficit
+is an ABSENCE at z=1, not a suppression of something the background supplies.
+
+### THE TARGET IS KNOWN TO ~21%, AND THAT IS A PROPERTY OF THE TARGET
+
+Of four fingerprint coordinates exactly ONE is convention-independent, and it is
+the one that never touches A=3 -- where the deficit lives:
+
+    b3/b2             0.641122822 vs 0.812786601   26.775%
+    b4/b2             4.15514025  vs 3.46848514    19.797%
+    deficit fraction  0.176078329 vs 0.213173903   21.068%
+    f(4)=B(4)/B(2)    12.7196315  vs 12.7196315     0.0%
+
+So no derivation of the deficit can be VALIDATED better than ~21% until the A=3
+convention is settled. A single-number near-match is uninformative BY
+CONSTRUCTION.
+
+This strengthens #6197's refusal of h = 0.2090603 rather than repeating it.
+#6197 argued from CANDIDATE DENSITY (3 of 8 small parameters land in the band) --
+an argument about the candidates, answerable by finding a sparser family. The
+argument here is about the TARGET: the band exists because the quantity is only
+defined to 21%, so NO candidate can be discriminated against it, however sparse.
+
+**NAMED NEXT STEP, and it is cheap.** Settle the A=3 convention -- a Coulomb
+correction on 3He and its own shift on 4He. That narrows the target from ~21% to
+the few-percent level, at which a zero-parameter candidate becomes testable. It
+is a data-convention question, not a derivation.
+
+### A RETRACTION OF MY OWN, made before anything was built on it
+
+I framed this front mid-session as: H2(q) is commutative for every q
+(`TrefoilSurfaceStateSum.commutator_zero`), so a binding channel on the
+non-commutative part vanishes identically at A=2, q-independently. **WITHDRAWN.**
+
+The deuteron's mass/binding-frame braid word is the 3A-STRAND word
+(`mass_at_3A_proper.atom_braid_word_3A(1,1)`), so A=2 sits in H6(q), which is
+NON-abelian -- `docs/audits/2026-08-21-deuteron-two-adjudications-reconciled.md`
+and `deuteron_frame_arity_reconciliation.py`, whose finding 3 records that frame
+1 does not descend to the coordination frame. H2 commutativity is a KNOT-LEVEL
+fact about the 2-strand trefoil, and the 2026-08-02 audit that states it says so,
+naming "the non-abelian H6 interface braid" as where a deuteron commutator charge
+would live.
+
+Same failure mode as the SU(4) Casimir lead (two-body object for a three-body
+role) and the Milnor mu-bar lead (normalised invariant asked to carry a
+magnitude): **right structure, wrong type.** Caught by corpus-grep path 3.
+
+### STILL OPEN
+The magnitude. Nothing here proposes a mechanism and the constraint list above
+stands unchanged. What changed is that the front is not closed by the ruling, the
+turnover is pinned from both sides, the missing channel has a proved lower bound
+equal to the whole deficit, and the target's own 21% width is now measured.
