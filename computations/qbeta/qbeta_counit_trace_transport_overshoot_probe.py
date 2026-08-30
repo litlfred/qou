@@ -46,8 +46,14 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 import datetime, hashlib, json, os, subprocess, sys
-sys.path.insert(0, "/home/user/qou/computations")
-sys.path.insert(0, "/home/user/qou/computations/substrate")
+# Repo-root-relative (bean qou-c7g8). This line hardcoded
+# "/home/user/qou/..." -- an absolute path into a DIFFERENT machine's
+# checkout. It resolves to nothing in this repo (or any clone not at
+# that exact path), so the insert silently did nothing and the import
+# below survived only because `_path_bridge` happened to cover it.
+_COMP = _Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_COMP))
+sys.path.insert(0, str(_COMP / "substrate"))
 
 import mpmath as mp
 from mpmath import mpf, sqrt

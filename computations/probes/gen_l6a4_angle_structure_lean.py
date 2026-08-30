@@ -6,8 +6,15 @@ orbit chains cannot drift from what the probe measured.
 """
 import sys, snappy
 from collections import deque
-sys.path.insert(0, "/home/user/qou/computations/probes")
-sys.path.insert(0, "/home/user/qou/computations")
+# Repo-root-relative (bean qou-c7g8). This line hardcoded
+# "/home/user/qou/..." -- an absolute path into a DIFFERENT machine's
+# checkout. It resolves to nothing in this repo (or any clone not at
+# that exact path), so the insert silently did nothing and the import
+# below survived only because `_path_bridge` happened to cover it.
+from pathlib import Path as _P
+_HERE = _P(__file__).resolve().parent
+sys.path.insert(0, str(_HERE))
+sys.path.insert(0, str(_HERE.parent))
 from borromean_angle_structure_lp_probe import gluing, ga_equalities
 
 M, N, r, edge_rows, _ = gluing(snappy, "L6a4")
@@ -236,6 +243,10 @@ src = "\n".join(L)
 # Lean uses ∧ / ∀ / ∈ ; emit them after assembling to keep the generator ASCII.
 src = (src.replace("@A@", "∧").replace("@O@", "∨").replace("forall ", "∀ ")
           .replace(" in (", " ∈ (").replace("Real", "ℝ"))
-out = "/home/user/qou/content/quantum-observable-universe/lean/QOU/Knot/L6a4AngleStructure.lean"
+# Repo-root-relative (bean qou-c7g8): this was an absolute path into a
+# DIFFERENT machine's checkout, so the generator wrote nowhere reachable
+# here and died with FileNotFoundError before emitting the Lean file.
+out = str(_HERE.parents[1] / "content" / "quantum-observable-universe"
+          / "lean" / "QOU" / "Knot" / "L6a4AngleStructure.lean")
 open(out, "w").write(src + "\n")
 print("wrote", out, "-", len(src.splitlines()), "lines")

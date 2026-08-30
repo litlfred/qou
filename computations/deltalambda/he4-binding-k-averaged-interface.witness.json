@@ -2,7 +2,7 @@
  "computation": "he4-binding-k-averaged-interface",
  "description": "Stage 1.5 of the A=4 binding-K search: the canonical AVERAGED interface operator on the naive {3,6,9} placement, via linearity (8 plain GP words, exact q-Laurent, 50 dps). Captures 96.2% of the canonical 4He trace (rel 3.8%, vs 14.7% plain); the residual is the measured woven color-tube structure. Scope-(a); no fit.",
  "audit_only": true,
- "computedAt": "2026-08-23T09:03:02.907600+00:00",
+ "computedAt": "2026-08-30T18:36:15.591660+00:00",
  "engine": "pyhecke_native(GP)+mpmath",
  "dps": 50,
  "canonical_target": "0.16097414544240738183",
@@ -27,5 +27,12 @@
    "passed": false
   }
  ],
- "allPassed": false
+ "allPassed": false,
+ "scriptFile": "he4_binding_k_averaged_interface_probe.py",
+ "scriptHash": "da9dd4f084ca",
+ "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
+ "commitSha": "2029d033ef33f640c60ffcc84d973de710343b36",
+ "durationMs": 0,
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

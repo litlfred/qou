@@ -64,7 +64,12 @@ COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 sys.path.insert(0, str(COMP / "substrate"))
 sys.path.insert(0, str(COMP / "markov"))
-sys.path.insert(0, "/home/user/qou/tools/qou-substrate/python")
+# Repo-root-relative (bean qou-c7g8). This line hardcoded
+# "/home/user/qou/..." -- an absolute path into a DIFFERENT machine's
+# checkout. It resolves to nothing in this repo (or any clone not at
+# that exact path), so the insert silently did nothing and the import
+# below survived only because `_path_bridge` happened to cover it.
+sys.path.insert(0, str(COMP.parent / "tools" / "qou-substrate" / "python"))
 import _path_bridge  # noqa: E402, F401
 
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402

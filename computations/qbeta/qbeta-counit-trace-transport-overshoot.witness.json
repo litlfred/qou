@@ -53,15 +53,15 @@
   "verdict": "OVERSHOOT (scope-(a)). Under KC19 the counit->trace transport IS just moving the loop weight w from 1 to z along an affine line. Solving the one linear equation L(w*) = F_required puts w* within ~0.15% of the COUNIT (w = 1), i.e. the data wants only ~0.3% of the counit->trace distance under C and ~0.4% under D -- the completed transport overshoots by ~300x and ~270x respectively. So 'the ladder transports the evaluation from the counit to the Markov trace' is NOT supported as stated: whatever the ladder does, it moves the evaluation a tiny fraction of the way. Separately (G2) the ladder factor is AFFINE in w while the ladder asserts a COSINE -- two different functional forms, agreeing only at isolated points. w* is a MEASUREMENT of what the current parameterisation demands, not a value; it is resolved no better than ce (1.45%), so no closed form may be quoted for it. Nothing wired.",
   "witness": {
     "scriptPath": "computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py",
-    "scriptHash": "9c3fdf284acd",
-    "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
-    "generatedAt": "2026-08-30T16:10:06.130930+00:00"
+    "scriptHash": "c864338c7213",
+    "commitSha": "2029d033ef33f640c60ffcc84d973de710343b36",
+    "generatedAt": "2026-08-30T18:38:06.456985+00:00"
   },
   "scriptFile": "qbeta_counit_trace_transport_overshoot_probe.py",
-  "scriptHash": "9c3fdf284acd",
+  "scriptHash": "c864338c7213",
   "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
-  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
-  "computedAt": "2026-08-30T16:10:06.139573+00:00",
+  "commitSha": "2029d033ef33f640c60ffcc84d973de710343b36",
+  "computedAt": "2026-08-30T18:38:06.473755+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
