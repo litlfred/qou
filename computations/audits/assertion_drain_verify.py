@@ -129,6 +129,29 @@ def classify(before, after) -> tuple[str, str]:
         return "NOT-DRAINED", "still a JSON number after the edit"
 
     if b_num == a_num and _sig_digits(after) <= _sig_digits(str(before)):
+        # Two very different things land here and the witness alone cannot
+        # separate them, so do not assert the stronger one.
+        #
+        #   (a) a COMPUTED value that is float64 in fact -- `fmt()` short-
+        #       circuited a Python float to `str()` (its docstring says it
+        #       does), so the producer's dps raise never reached it and the
+        #       producer is misfiled as bucket A;
+        #   (b) an AUTHOR-TYPED constant, e.g. `expected=2.358`. Nothing
+        #       computed it, nothing is misfiled, and stringifying it is a
+        #       small fidelity WIN: the witness then records what the author
+        #       wrote instead of the binary64 nearest it (2.35799999...).
+        #
+        # A short decimal is characteristic of (b) -- a double that came out
+        # of real arithmetic almost never prints in 6 digits. Characteristic,
+        # not decisive: check the source before acting.
+        if _sig_digits(after) <= 6:
+            return "LITERAL-ONLY", (
+                f"{after!r} — no digits to recover. Reads as an AUTHOR-TYPED "
+                "constant, where stringifying is a fidelity fix (the witness "
+                "records what was written, not the binary64 nearest it). If "
+                "it is in fact computed, the producer is float64 there. The "
+                "witness cannot tell — read the source."
+            )
         return "DRAIN-NO-OP", (
             "value byte-identical, only the JSON type changed — `fmt()` "
             "short-circuited a Python float to `str()` (see its docstring). "
@@ -199,6 +222,12 @@ def verify(baseline: dict, after: dict) -> int:
                         ("VALUE-MOVED", "NOT-DRAINED", "NON-NUMERIC", "DROPPED")):
         print("\n  VERDICT: REVERT — this is not a serialization change.")
         return 1
+    if counts.get("LITERAL-ONLY") and not counts.get("GAIN") \
+            and not counts.get("DRAIN-NO-OP"):
+        print("\n  VERDICT: REVIEW — nothing was recovered, and the changed "
+              "fields read as author-typed constants. Keeping is defensible as "
+              "a fidelity fix; say that is the reason. Check the source.")
+        return 2
     if counts.get("DRAIN-NO-OP") and not counts.get("GAIN"):
         print("\n  VERDICT: REVERT — the edit changed the JSON type and nothing "
               "else. These fields are float64 in fact; the producer is MISFILED "
@@ -241,6 +270,9 @@ def selftest() -> int:
         # the bean's 55/302 class: exact, honest, and recovers nothing
         ("ulp-residual", classify(float(ulp), mp.nstr(ulp, 60)),
          "NO-DIGITS-RECOVERED"),
+        # an author-typed reference constant must NOT be reported as evidence
+        # that the producer is misfiled -- the witness cannot know that
+        ("author-typed-literal", classify(2.358, "2.358"), "LITERAL-ONLY"),
     ]
 
     ok = True
