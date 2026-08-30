@@ -747,3 +747,65 @@ Do not repeat it as a measured runtime until that A/B lands.
 **no `main`, no `__main__` guard and zero write operations** — it is a library
 module, not a producer, and emits no witness. It needs no regeneration and the
 list of six is really five.
+
+
+## 2026-08-30 — python-flint: implemented, verified CORRECT, measured SLOWER, reverted
+
+Both remaining levers were approved: add python-flint, and flip the
+`QOU_H3A_MPF` default. Flint went first, because whether it makes A=4 tractable
+decides whether flipping the default is safe. **It does not.**
+
+### The headline benchmark was real and did not transfer
+
+    dense 200x200 multiply @ ~70 digits
+      mpmath   8.736s
+      flint    0.013s      660x, results agreeing
+
+That is a true measurement of the wrong thing. This kernel multiplies dense x
+**SPARSE** at O(d*nnz) with nnz ~ 2d; `arb_mat` is dense at O(d^3). At d=768
+that is ~380x more arithmetic, and 660x of speed does not cover it.
+
+    shape         dim    mpmath     flint      speedup
+    (3,3)           5     0.001s     0.001s     1.41x
+    (4,2)           9     0.002s     0.002s     0.91x
+    (4,3,2,1)     768    12.668s    32.151s     0.39x   <- 2.6x SLOWER
+
+**Reverted.** The implementation was correct — it agreed with the mpmath path to
+1e-70..1e-68 on every shape tested — and it is still a net loss where it counts.
+Correct and slower is not worth shipping, and keeping it "for large dim" would
+be worse: large dim is exactly where it loses.
+
+Two structural reasons, for whoever revisits this:
+1. `arb_mat` is dense-only, so the sparsity that makes the mpmath path viable
+   has to be thrown away to use it.
+2. Building the matrix costs O(d^2) **Python** object constructions — 590k arb
+   objects at d=768, 4M at d=2000 — before FLINT does any arithmetic. An
+   n=12 shape did not even finish.
+
+A flint path could still win, but only via a sparse representation or a C-level
+matrix build. That is a different piece of work, not a dependency swap.
+
+**mpmath 1.4.1 has no flint backend** (`BACKEND: gmpy`, zero flint hooks), so
+installing python-flint changes nothing on its own — the earlier note calling it
+"the next big lever" was too optimistic and is corrected here.
+
+### One bug worth recording, because the test that missed it looked fine
+
+`_mpf_to_arb` used mpmath's `man_exp`, whose mantissa is **UNSIGNED**. The sign
+lives elsewhere in the mpf, so every negative value converted to its absolute
+value: sigma's -0.900918 diagonal came back +0.900918 and chi was 5.13 instead
+of 1.53. My conversion test had checked `mpf(3)/7` — positive — and reported
+"delta: 0.0". **A conversion test that never passes a negative number is not a
+conversion test.**
+
+### The default flip is NOT done, and should not be
+
+`QOU_H3A_MPF=1` still cannot complete A=4: the run was killed at 850s against
+75.6s for float64, and flint does not rescue it. Flipping the default would
+hand ~20 consumers a path that does not finish at the sizes they use. The
+approval was given on my statement that flint might make A=4 tractable; it does
+not, so the premise for flipping is gone.
+
+**What would unblock it:** a completed A=4 measurement under the flag. That is
+one long unattended run, and it is the only thing standing between here and the
+flip.
