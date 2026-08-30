@@ -161,3 +161,24 @@ there is **no further miss** of this shape in the advisory tier.
 
 New findings carry `cone_only: true` when the admission is visible only via the
 `--` comments, so the delta stays separable from counts already quoted.
+
+### The one new CRITICAL was already adjudicated, under another category
+
+Not new coverage — corroboration. `b3_nf_wedderburn_uniqueness` is already in
+`docs/audits/lean-vacuity-review-ledger.json` under **`proof-borrowed-name`**,
+verdict **`genuine`**, disposition `state-the-real-proposition`, with the
+evidence *"the name claims uniqueness of the H3(q) normal form under
+Wedderburn-Artin; the proof is a table lookup"* (`file_sha` `2f1fc03ae00a`,
+still current, so the verdict is fresh).
+
+So the declaration was never invisible to the corpus; it was invisible to
+**this** detector. What this change buys is a *second, independent* signal
+reaching the same verdict from the opposite direction — borrowed-name reads
+the NAME against the proof, definition-collapsed reads the PROSE against the
+proof — which is worth more as calibration of the detector than as a finding.
+
+Deliberately **not** seeded as a second ledger entry. The key is
+`<file>::<decl>::<category>`, so a `definition-collapsed` row would be a
+distinct key carrying a duplicate verdict on one declaration, and the
+`definition-collapsed` audit has no `--review-ledger` seeding path to keep it
+fresh afterwards. One adjudication, one row.
