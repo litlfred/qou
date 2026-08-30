@@ -130,6 +130,29 @@ def main() -> int:
                 sp.simplify(sp.diff(sp.simplify(bV * V), q)) == 0),
         }
 
+    # Which q-power makes Vhat bar-INVARIANT? An affine reflection has a fixed
+    # POINT; a multiplicative action has a WEIGHT, so the two answer differently.
+    inv = {}
+    for nm, zv in (("C", z_C), ("D", z_D)):
+        V = zv * h + 1
+        powers = [k for k in (-2, -1, sp.Rational(-1, 2), 0,
+                              sp.Rational(1, 2), 1, 2)
+                  if sp.simplify(bar(V * q**k) - V * q**k) == 0]
+        inv[nm] = {"q_powers_giving_invariance": [str(k) for k in powers]}
+    Y = sp.simplify((z_D * h + 1) / q)          # the D invariant
+    two_q = q + 1 / q                            # [2]_q
+    closed = sp.simplify(Y - (two_q + h**2 * z_D / q**2) / 2)
+    inv["D"]["invariant"] = str(sp.factor(Y))
+    inv["D"]["invariant_is_constant"] = bool(sp.simplify(sp.diff(Y, q)) == 0)
+    inv["D"]["closed_form"] = "Vhat_D/q = ([2]_q + h^2 z_D/q^2)/2,  [2]_q = q + 1/q"
+    inv["D"]["closed_form_verified"] = bool(closed == 0)
+    VC = z_C * h + 1
+    inv["C"]["invariant"] = str(sp.simplify((VC + bar(VC)) / 2))
+    inv["C"]["invariant_is_constant"] = bool(
+        sp.simplify(sp.diff(sp.simplify((VC + bar(VC)) / 2), q)) == 0)
+    inv["C"]["note"] = ("an affine reflection has a FIXED POINT, not a weight, "
+                        "so no q-power works; the invariant is the centre 1")
+
     # the offset that WOULD restore bar-oddness under D
     c = sp.Symbol("c")
     V_D = z_D * h + 1
@@ -171,6 +194,13 @@ def main() -> int:
             "from the group action rather than by search. Naming the form "
             "still needs the D-frame M_beta spectrum on V_(2,1)."
         ),
+        "bar_invariant_of_the_traced_volume": inv,
+        "the_sharpest_statement": (
+            "cos works under C because bar has a FIXED CENTRE (the constant 1) "
+            "to resum around. Under D the bar-invariant is Vhat/q, which is NOT "
+            "constant — there is no fixed centre, so no additive resummation "
+            "has anything to be centred on."
+        ),
         "no_ck_wired": True,
         "context": {"beans": ["qou-cds1"],
                     "prior": ["Step 4 (cos justification fails)",
@@ -206,6 +236,22 @@ def main() -> int:
     print("  bar-symmetrisation of Vhat is CONSTANT (=2) — bar acts affinely.")
     print("  Under D bar acts MULTIPLICATIVELY, so no additive form (cosine")
     print("  included) can be the minimal invariant.")
+    print()
+    print("  === which q-power makes Vhat bar-INVARIANT? ===")
+    print(f"    C: {inv['C']['q_powers_giving_invariance'] or 'NONE'}"
+          f"   (affine reflection -> fixed point, not weight)")
+    print(f"       invariant = {inv['C']['invariant']}   "
+          f"constant: {inv['C']['invariant_is_constant']}")
+    print(f"    D: {inv['D']['q_powers_giving_invariance']}"
+          f"   -> invariant = {inv['D']['invariant']}")
+    print(f"       constant: {inv['D']['invariant_is_constant']}")
+    print(f"       closed form {inv['D']['closed_form']}")
+    print(f"       verified: {inv['D']['closed_form_verified']}")
+    print()
+    print("  SHARPEST STATEMENT: cos works under C because bar has a FIXED")
+    print("  CENTRE (the constant 1) to resum around. Under D the invariant is")
+    print("  Vhat/q, NOT constant — no fixed centre, so no additive resummation")
+    print("  has anything to be centred on.")
     print(f"\n  witness -> {out}")
     return 0
 

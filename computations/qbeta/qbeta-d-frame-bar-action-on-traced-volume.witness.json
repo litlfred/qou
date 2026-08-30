@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy (exact in q)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:12:21.808227+00:00",
-  "commitSha": "8edcd495faf2aacd38b82058025bfbccbea79eb7",
+  "computedAt": "2026-08-30T10:15:44.062586+00:00",
+  "commitSha": "a1042b4fc8f757233fac1d887c7bc1535c87b01d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-d-frame-bar-action-on-traced-volume",
   "scriptFile": "qbeta_d_frame_bar_action_on_traced_volume.py",
-  "scriptHash": "74823188f1db",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6757219e6270",
+  "scriptCommitSha": "a1042b4fc8f757233fac1d887c7bc1535c87b01d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,6 +71,24 @@
   },
   "result": "cos(alpha) = (e^{i alpha} + e^{-i alpha})/2 is the ADDITIVE symmetrisation. Under C the additive bar-symmetrisation of the traced volume is CONSTANT (= 2) — the bar action is affine, so additive symmetrisation is the invariant and the cosine is its trigonometric realisation. Under D the action is multiplicative, so no additive form, cosine included, can be the minimal invariant.",
   "does_not_establish": "the replacement FORM. This fixes the CLASS it must lie in (multiplicative in the bar action) and closes the additive route, from the group action rather than by search. Naming the form still needs the D-frame M_beta spectrum on V_(2,1).",
+  "bar_invariant_of_the_traced_volume": {
+    "C": {
+      "q_powers_giving_invariance": [],
+      "invariant": "1",
+      "invariant_is_constant": true,
+      "note": "an affine reflection has a FIXED POINT, not a weight, so no q-power works; the invariant is the centre 1"
+    },
+    "D": {
+      "q_powers_giving_invariance": [
+        "-1"
+      ],
+      "invariant": "(q**4 + 1)/(q*(q**2 + 1))",
+      "invariant_is_constant": false,
+      "closed_form": "Vhat_D/q = ([2]_q + h^2 z_D/q^2)/2,  [2]_q = q + 1/q",
+      "closed_form_verified": true
+    }
+  },
+  "the_sharpest_statement": "cos works under C because bar has a FIXED CENTRE (the constant 1) to resum around. Under D the bar-invariant is Vhat/q, which is NOT constant — there is no fixed centre, so no additive resummation has anything to be centred on.",
   "no_ck_wired": true,
   "context": {
     "beans": [
