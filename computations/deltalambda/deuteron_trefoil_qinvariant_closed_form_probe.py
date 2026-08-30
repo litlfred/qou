@@ -63,6 +63,15 @@ mp.mp.dps = 60
 # proton unless for an explicit reason ... otherwise pin proton").
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 q0 = mp.mpf(_Q0_RESOLVED)
 A = mp.sqrt(q0)                      # skein variable sqrt(q)
 z = q0 ** 3 / (q0 ** 2 + 1)          # Markov parameter, convention D
@@ -78,7 +87,7 @@ def qint_q(n):
 
 # CODATA / AME  (diagnostic only)
 m_e = mp.mpf("0.51099895069")        # MeV
-B_D = mp.mpf("2.22452")              # MeV, AME2020 deuteron binding
+B_D = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)              # MeV, AME2020 deuteron binding
 S_D = mp.mpf("0.7438")               # committed |S(D)| Wenzl-signed Markov sum
 first_order = m_e * S_D              # = 0.38008 MeV (DT-count derived, #4601)
 

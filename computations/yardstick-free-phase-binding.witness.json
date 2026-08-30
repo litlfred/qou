@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:58:22.878429+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-08-30T07:02:36.038639+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "yardstick-free-phase-binding",
   "scriptFile": "yardstick_free_phase_binding_probe.py",
-  "scriptHash": "3ad2fe76d3a2",
+  "scriptHash": "2205963b006b",
   "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -42,30 +42,30 @@
     "rows": [
       {
         "atom": "T",
-        "B_AME_MeV": "8.481798",
+        "B_AME_MeV": "8.4817962",
         "B_joint_model_MeV": "3.7193957",
-        "gap_MeV": "4.7624023",
+        "gap_MeV": "4.7624005",
         "sum_abs_dtheta_rad": "8.2233",
-        "ratio_MeV_per_rad": "0.57913518"
+        "ratio_MeV_per_rad": "0.57913496"
       },
       {
         "atom": "3He",
-        "B_AME_MeV": "7.718043",
+        "B_AME_MeV": "7.7180413",
         "B_joint_model_MeV": "3.7376987",
-        "gap_MeV": "3.9803443",
+        "gap_MeV": "3.9803427",
         "sum_abs_dtheta_rad": "8.4937",
-        "ratio_MeV_per_rad": "0.46862314"
+        "ratio_MeV_per_rad": "0.46862294"
       },
       {
         "atom": "4He",
-        "B_AME_MeV": "28.295674",
+        "B_AME_MeV": "28.295662",
         "B_joint_model_MeV": "4.6874996",
-        "gap_MeV": "23.608174",
+        "gap_MeV": "23.608163",
         "sum_abs_dtheta_rad": "17.2334",
-        "ratio_MeV_per_rad": "1.3699081"
+        "ratio_MeV_per_rad": "1.3699074"
       }
     ],
-    "mean_ratio_MeV_per_rad": "0.80588881",
+    "mean_ratio_MeV_per_rad": "0.80588843",
     "full_spread_pct": "111.837",
     "verdict": "NOISY (>40%) -- total gap mixes in 3-body; pairwise object was cleaner"
   },

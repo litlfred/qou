@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:56:07.705559+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:01:07.521181+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [
     {
       "name": "full_tower_overshoots_A_ge_5",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "binding-wn-multianchor-tower-refute",
   "scriptFile": "binding_wn_multianchor_tower_refute.py",
-  "scriptHash": "8acac47f0655",
+  "scriptHash": "66ab05ab9e24",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -44,8 +44,8 @@
   "description": "EXPLORATORY: refutes (scope-a) the full-tower jet-filtration binding B=Σ_{n=2}^A m_e a_D^(n) w_n summed to the nucleon count A. Multi-anchor (D..12C, Coulomb-corrected B_strong), single global scale. Every amplifying/quadratic w_n (n², [n]_q²) overshoots for A≥5 (⁶Li~+920%..¹²C~+2e6%). Structural: a_D super-exp vs B/A→const. Redirects to few-body truncation. No fit beyond one scale.",
   "data": {
     "worst_abs_err_pct": {
-      "n^2": 2263587.450266978,
-      "[n]_q^2": 3481062.544169662
+      "n^2": 2263587.558789516,
+      "[n]_q^2": 3481062.711058688
     }
   }
 }

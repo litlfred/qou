@@ -66,10 +66,18 @@ from mass_endomorphism import HA as HA_VAL, z_mark
 # H_12 Phase-1 A-operator extract).
 from mass_tower_operator_valued import mass_from_tower
 from pyhecke.gram import atom_per_generator_volumes
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 — full-precision m_p for E_0 anchor
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 
 E_0_CAL_MEV = float(M_P_MEV_VALIDATION) / 1178995.5254  # proton tower → m_p MeV
-B_AME_D_MEV = 2.22452  # deuteron AME2020
+B_AME_D_MEV = AME_B_DEUTERON_MEV_VALIDATION  # deuteron AME2020
 
 
 # ── Parameterize pn crossing in atom_per_generator_volumes ──────

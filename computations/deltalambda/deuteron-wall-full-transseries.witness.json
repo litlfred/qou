@@ -2,12 +2,12 @@
  "computation": "deuteron-wall-full-transseries",
  "description": "FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period a_D^(n)=I(n)/n for the Hopf-deuteron (perturbative Vol=0), parameter-free at the substrate coupling. Undershoots B_D by ~40\u00d7 (m_e\u00b7ReP \u2264 0.06 MeV vs 2.225); reaches B_D only at the Borel singularity 1/\u221a2 (not a substrate qty). The full alien calculus of the dualized entanglement energy does NOT close the deuteron parameter-free; distinct-mechanism (q-rotational) route indicated. Scope-(a) negative; no fit.",
  "audit_only": true,
- "computedAt": "2026-08-23T09:02:20.216661+00:00",
+ "computedAt": "2026-08-30T07:52:03.720009+00:00",
  "engine": "mpmath",
  "engineVersion": "mpmath 1.4.1",
  "borel_singularity": "1/sqrt(2)",
  "borel_level": "1/2 (Gevrey-1/2)",
- "target_B_D_over_m_e": "4.353277",
+ "target_B_D_over_m_e": "4.3533675",
  "resummation_by_coupling": {
   "hbar_q^2": {
    "x": "0.00981719",
@@ -37,10 +37,10 @@
    "x": "0.5",
    "m_e_ReP_MeV": "0.423446",
    "alien_jump": "0.519071",
-   "pct_of_B_D": "19.04"
+   "pct_of_B_D": "19.03"
   }
  },
- "verdict": "Scope-(a) NEGATIVE (no fit): the FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period, evaluated parameter-free at the substrate coupling, gives m_e\u00b7ReP \u2264 0.05974 MeV (\u2264 2.69% of B_D=2.2245), undershooting by ~37\u00d7; the alien jump is smaller still. It reaches B_D only as the coupling \u2192 the Borel radius 1/\u221a2 (the singularity), which is not a substrate quantity \u2014 so a match would require tuning the coupling (a fit). The FULL alien calculus of the dualized entanglement energy therefore does NOT close the deuteron parameter-free; the wall is a distinct-mechanism problem. The working deuteron channel is the separate q-rotational \u03bc\u2080\u00b7\u210f_q\u00b7J_q\u00b2 route (B_D to \u22129%, 0 params). This closes the resummation hypothesis for the deuteron negatively. No fit; no wiring; no tier change.",
+ "verdict": "Scope-(a) NEGATIVE (no fit): the FULL level-1/2 Borel\u2013Laplace median resummation of the Gevrey-1/2 binding period, evaluated parameter-free at the substrate coupling, gives m_e\u00b7ReP \u2264 0.05974 MeV (\u2264 2.69% of B_D=2.2246), undershooting by ~37\u00d7; the alien jump is smaller still. It reaches B_D only as the coupling \u2192 the Borel radius 1/\u221a2 (the singularity), which is not a substrate quantity \u2014 so a match would require tuning the coupling (a fit). The FULL alien calculus of the dualized entanglement energy therefore does NOT close the deuteron parameter-free; the wall is a distinct-mechanism problem. The working deuteron channel is the separate q-rotational \u03bc\u2080\u00b7\u210f_q\u00b7J_q\u00b2 route (B_D to \u22129%, 0 params). This closes the resummation hypothesis for the deuteron negatively. No fit; no wiring; no tier change.",
  "scope": "(a) \u2014 full median Borel-Laplace undershoots B_D at every substrate coupling; closes the resummation hypothesis for the deuteron negatively",
  "assertions": [
   {
@@ -49,9 +49,9 @@
   }
  ],
  "allPassed": true,
- "scriptHash": "8cb404b240bb",
+ "scriptHash": "11ea6467609c",
  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
- "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+ "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",

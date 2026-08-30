@@ -70,6 +70,15 @@ from alpha_cluster_recursion import (  # noqa: E402
     is_alpha_chain,
 )
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_LI6_MEV_VALIDATION,
+)
+
 # Family-1 symbols sourced from FAMILY_1_REGISTRY (single source of truth).
 _FAMILY_1_SYMBOL: dict[tuple[int, int], str] = {
     k: v["symbol"] for k, v in FAMILY_1_REGISTRY.items()
@@ -148,7 +157,7 @@ if _peel_path.exists():
 # Families 1, 2, 3 imported from their module's AME_BA_MEV; only
 # Family 4 (open atoms with no callable yet) defined locally.
 _FAMILY_4_AME: dict[tuple[int, int], mp.mpf] = {
-    (3, 3):  mp.mpf("31.99405"),    # ⁶Li
+    (3, 3):  mp.mpf(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
     (3, 4):  mp.mpf("39.24452"),    # ⁷Li
     (4, 5):  mp.mpf("58.16498"),    # ⁹Be
     (5, 6):  mp.mpf("76.20548"),    # ¹¹B

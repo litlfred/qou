@@ -63,10 +63,13 @@ H = Q_0 - 1 / Q_0
 MU_0 = M_E_MEV / (D(3) * H / D(2))
 
 # AME2020 binding energies (MeV), same source as v7/v8/v9.
+# str() first: this file is a decimal.Decimal pipeline (getcontext().prec = 40)
+# and Decimal(mpf) raises TypeError. The registry constants are mpf, so they
+# reach Decimal the same way the string literals they replaced did.
 AME_MeV = {
-    "D": D(AME_B_DEUTERON_MEV_VALIDATION),
-    "T": D(AME_B_TRITIUM_MEV_VALIDATION),
-    "3He": D(AME_B_HE3_MEV_VALIDATION),
+    "D": D(str(AME_B_DEUTERON_MEV_VALIDATION)),
+    "T": D(str(AME_B_TRITIUM_MEV_VALIDATION)),
+    "3He": D(str(AME_B_HE3_MEV_VALIDATION)),
 }
 
 

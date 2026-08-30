@@ -62,6 +62,16 @@ from alpha_blend_tower import (  # noqa: E402
 )
 from wedderburn_Mi_constructor_test import chains_for, orderings  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
+
 MP_, MN_, ME_ = (mp.mpf(str(x)) for x in (M_P_MEV, M_N_MEV, M_E_MEV))
 
 # CODATA hydrogen ionization energy, MeV -- the H-1 binding the published
@@ -70,9 +80,9 @@ H1_BINDING_MEV = mp.mpf("13.598434599702") * mp.mpf("1e-6")
 
 # (Z, element, A, m_pred, m_obs) verbatim from tbl:mass-table-z1-20-table-data
 ROWS = [
-    (1, "H", 1, "938.910", "938.783"),      (2, "He", 4, "3734.624", "3728.401"),
+    (1, "H", 1, "938.910", "938.783"),      (2, "He", 4, "3734.624", M_HE4_ATOMIC_MEV_VALIDATION),
     (3, "Li", 7, "6534.188", "6535.367"),   (4, "Be", 9, "8378.704", "8394.794"),
-    (5, "B", 11, "10237.301", "10255.103"), (6, "C", 12, "11168.874", "11177.929"),
+    (5, "B", 11, "10237.301", "10255.103"), (6, "C", 12, "11168.874", M_C12_ATOMIC_MEV_VALIDATION),
     (7, "N", 14, "13029.983", "13043.782"), (8, "O", 16, "14890.701", "14899.169"),
     (9, "F", 19, "17690.792", "17696.901"), (10, "Ne", 20, "18615.219", "18622.835"),
     (11, "Na", 23, "21418.256", "21414.830"), (12, "Mg", 24, "22342.658", "22341.908"),

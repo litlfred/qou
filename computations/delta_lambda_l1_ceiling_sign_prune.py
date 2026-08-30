@@ -66,6 +66,18 @@ import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
 _T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -118,10 +130,10 @@ def witness_provenance(path: str) -> dict:
 M_E_MEV = 0.51099895069
 ISOTOPES = {
     # name : (chi witness, n=3A key, B_AME MeV, Z, N, A)
-    "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566, 1, 1, 2),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798, 1, 2, 3),
-    "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043, 2, 1, 3),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673, 2, 2, 4),
+    "D":   ("atom-chi-rust-d.witness.json",   "6",  AME_B_DEUTERON_MEV_VALIDATION, 1, 1, 2),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION, 1, 2, 3),
+    "3He": ("atom-chi-rust-3he.witness.json", "9",  AME_B_HE3_MEV_VALIDATION, 2, 1, 3),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION, 2, 2, 4),
 }
 
 

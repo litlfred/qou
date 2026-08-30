@@ -32,7 +32,17 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 
 try:
     from mass_at_3A_proper import (
@@ -88,7 +98,7 @@ def main():
     from mpmath import catalan
     VOL_B3 = 8 * catalan
 
-    AME = {"2H": mpf("2.22452"), "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
+    AME = {"2H": mpf(AME_B_DEUTERON_MEV_VALIDATION), "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 
     print("=" * 70)
     print("PER-BOND BINDING DECOMPOSITION (H_{3A} chain)")

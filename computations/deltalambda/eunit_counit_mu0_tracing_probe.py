@@ -64,10 +64,19 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 Q0_STR = "1.10997859555733471"
 M_E_STR = "0.51099895"
 E_UNIT_STR = "0.995940"          # 5g-form external unit (reeb §2f)
-B_AME_2H = "2.224566"
+B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def qint(q, n):

@@ -65,6 +65,18 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 
 M_E = M_E_MEV
 Q0 = _Q_CANONICAL
@@ -227,10 +239,10 @@ if __name__ == "__main__":
 
     # ─── Isotope sweep ────────────────────────────────────────
     ISOTOPES = [
-        ("D",   1, 1,  2.22457),
-        ("T",   1, 2,  8.48180),
-        ("3He", 2, 1,  7.71806),
-        ("4He", 2, 2, 28.29569),
+        ("D",   1, 1,  AME_B_DEUTERON_MEV_VALIDATION),
+        ("T",   1, 2,  AME_B_TRITIUM_MEV_VALIDATION),
+        ("3He", 2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print(f"{'iso':>5} {'A':>3}  {'|tr_free|':>14} {'|tr_atom|':>14} "
           f"{'B_pred (MeV)':>12} {'B_AME':>8} {'err%':>8} "

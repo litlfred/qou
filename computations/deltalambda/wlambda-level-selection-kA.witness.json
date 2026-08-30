@@ -4,10 +4,10 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "wlambda_level_selection_kA_probe.py",
-  "commitSha": "e1d833da5a02c3887ac391be577be47aae754b23",
-  "scriptHash": "62ba2ffb97d0",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
+  "scriptHash": "fc33a40ed0b9",
   "description": "Scale-free k(A) form test: inverting exact w_std(k) against AME B(A) ratios (ref=2H), k_implied is strongly sub-linear in A -> falsifies naive k~A and k~bond-count; best-fitting named form is logarithmic. Constrains GAP-A-3 to a log-type rule; no scale, no wiring, no closure.",
-  "generated": "2026-07-18T09:55:42.497576+00:00",
+  "generated": "2026-08-30T07:51:42.450392+00:00",
   "assertions": [
     {
       "name": "k_implied_strongly_sublinear_in_A",
@@ -60,13 +60,13 @@
       "6Li": {
         "A": 6,
         "bonds": 15,
-        "B": 31.994,
+        "B": "31.9939872",
         "k_implied": 7.0661
       },
       "7Li": {
         "A": 7,
         "bonds": 21,
-        "B": 39.245,
+        "B": "39.2450807",
         "k_implied": 7.2885
       },
       "9Be": {
@@ -89,10 +89,10 @@
       }
     },
     "R2_by_form": {
-      "k ~ A (mass)": 0.6720900078298108,
-      "k ~ bond count": 0.48533671322091343,
-      "k ~ log A": 0.8633006408557132,
-      "k ~ log(bond count)": 0.8911999388285234
+      "k ~ A (mass)": 0.6720899506969369,
+      "k ~ bond count": 0.4853366253513751,
+      "k ~ log A": 0.8633006384041636,
+      "k ~ log(bond count)": 0.8911999419391118
     },
     "best_form": "k ~ log(bond count)",
     "verdict": "k(A) FORM CONSTRAINED (scale-free, no closure): inverting the exact tower weight w_std(k) against AME B(A) ratios (ref=2H), the implied level k_implied(A) is STRONGLY SUB-LINEAR in A (A x8, k only x2.8) \u2014 so the naive k~A and k~bond-count candidates are FALSIFIED (a-scope). The best-fitting named form is 'k ~ log(bond count)' (R^2=0.891); k~log A (R^2=0.863) clearly beats linear. NOTE log A and log(bond-count) are statistically INDISTINGUISHABLE here (both ~0.87-0.89, near-collinear for these nuclei) \u2014 the robust claim is LOG-TYPE, not log-A-vs-log-bonds. This is the arithmetic consequence of w_std growing super-geometrically while B is ~extensive: the jet level grows ~log(mass). GAP-A-3 is thereby constrained to a LOG-TYPE k(A). Sets no scale, wires nothing, lands no magnitude; the open piece is WHY k(A)~log from the drivers. Light nuclei are below saturation so residual scatter (R^2~0.88, not ~1) is expected."
@@ -103,7 +103,9 @@
     "scope": "FORM of k(A) only; scale-free; no absolute magnitude; no fit search; no closure",
     "AME_source": "AME2020 binding energies (light nuclei)"
   },
-  "scriptCommitSha": "494d31587a638430adb78e587033fb3d0b94f422",
-  "computedAt": "2026-07-18T09:55:42.671649+00:00",
-  "durationMs": 0
+  "scriptCommitSha": "c86e55ec9f547271b135371823248cac0a4b1560",
+  "computedAt": "2026-08-30T07:51:42.661123+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

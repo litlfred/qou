@@ -51,7 +51,16 @@ from habiro_coefficients_interpolate import (  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 — CAL-1
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -71,7 +80,7 @@ BOND_ZN = {"pn": (1, 1), "pp": (2, 0), "nn": (0, 2)}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 # Only "D" is routed (byte-exact). T / 3He / 4He are 5-figure roundings and
 # routing them would change values -- UNSAFE, a decision not a sweep.
-AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": "8.4818", "3He": "7.7180", "4He": "28.29566"}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": "7.7180", "4He": AME_B_HE4_MEV_VALIDATION}
 
 _ydict = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
           for k, v in y_lambda_at(6, q0).items()}

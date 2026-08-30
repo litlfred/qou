@@ -32,7 +32,17 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 
 q0 = mp.mpf(str(Q0)); q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
@@ -44,9 +54,9 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
 set_compute_dps()
 
 ATOMS = {  # name: (Z, N, n_strands, B_AME_MeV, sum_abs_dtheta_rad)
-    "T":   (1, 2, 9,  mp.mpf("8.481798"),  mp.mpf("8.2233")),
-    "3He": (2, 1, 9,  mp.mpf("7.718043"),  mp.mpf("8.4937")),
-    "4He": (2, 2, 12, mp.mpf("28.295674"), mp.mpf("17.2334")),
+    "T":   (1, 2, 9,  mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),  mp.mpf("8.2233")),
+    "3He": (2, 1, 9,  mp.mpf(AME_B_HE3_MEV_VALIDATION),  mp.mpf("8.4937")),
+    "4He": (2, 2, 12, mp.mpf(AME_B_HE4_MEV_VALIDATION), mp.mpf("17.2334")),
 }
 _YCACHE = {}
 

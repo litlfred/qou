@@ -162,7 +162,20 @@ def make_qdim(q: mp.mpf):
                 for i in range(len(shape)) for j in range(shape[i])]
 
     @lru_cache(maxsize=None)
-    def dim_q(shape: tuple) -> mp.mpf:
+    def dim_q(shape: tuple, q_expected: mp.mpf = None) -> mp.mpf:
+        """q-dimension at the factory's q.
+
+        c86e55ec9 changed four call sites to `dim_q(s, Q0_PROTON)` and added the
+        import, but never gave dim_q the parameter — this producer has raised
+        TypeError on every run since, after ~80 minutes of compute. The argument
+        is redundant by construction (dim_q is closed over make_qdim's q), so it
+        is accepted and CHECKED rather than ignored: if the factory is ever built
+        with a q other than the pin the call names, that should fail loudly, not
+        silently use the wrong one.
+        """
+        if q_expected is not None and q_expected != q:
+            raise ValueError(f"dim_q called with q={q_expected} but the factory "
+                             f"was built with q={q}")
         num = qfact(sum(shape))
         den = mp.mpf(1)
         for hk in hooks(shape):

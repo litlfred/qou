@@ -91,7 +91,18 @@ def delta_sign(lam) -> int:
 def make_dim_q(q0):
     def qint(k):
         return (q0**k - q0**(-k)) / (q0 - 1 / q0)
-    def dim_q(lam):
+    def dim_q(lam, q_expected=None):
+        """q-dimension at the factory's q0.
+
+        Same half-finished edit as fr_pullback_borromean_h3a_test and
+        deltalambda_binding_cross_isotope: c86e55ec9 changed the call site to
+        `dim_q(lam, Q0_PROTON)` without giving dim_q the parameter. Redundant by
+        construction (dim_q closes over make_dim_q's q0), so accept and CHECK it
+        rather than ignore it.
+        """
+        if q_expected is not None and q_expected != q0:
+            raise ValueError(f"dim_q called with q={q_expected} but the factory "
+                             f"was built with q0={q0}")
         n = sum(lam)
         num = mp.mpf(1)
         for k in range(1, n + 1):

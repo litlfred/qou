@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:00:18.133206+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:01:21.789620+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 266,
+  "durationMs": 350,
   "computation": "delta-lambda-qdim-route-probe",
   "scriptFile": "delta_lambda_qdim_route_probe.py",
-  "scriptHash": "a5c3eea06313",
+  "scriptHash": "d6f0cb18390c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -47,52 +47,52 @@
     "rows": [
       {
         "atom": "D",
-        "B_AME_MeV": 2.224566,
-        "target_units_m_e": 4.353367060727183,
+        "B_AME_MeV": "2.2245662",
+        "target_units_m_e": 4.3533674521174195,
         "ceiling_over_target": {
-          "classic": 0.5661375028190097,
-          "balanced": 0.597464284460285,
-          "unbalanced": 0.7296312928436759,
-          "fake_degree": 0.8589882665421585
+          "classic": 0.5661373458683627,
+          "balanced": 0.5974641180745552,
+          "unbalanced": 0.7296310861968409,
+          "fake_degree": 0.8589880208566973
         }
       },
       {
         "atom": "T",
-        "B_AME_MeV": 8.481798,
-        "target_units_m_e": 16.59846461239707,
+        "B_AME_MeV": "8.4817962",
+        "target_units_m_e": 16.598461089884943,
         "ceiling_over_target": {
-          "classic": 0.3604123816658089,
-          "balanced": 0.4586840705400347,
-          "unbalanced": 0.7971969392822685,
-          "fake_degree": 1.077199276839094
+          "classic": 0.3604124051868872,
+          "balanced": 0.45868410067578774,
+          "unbalanced": 0.7971969924690109,
+          "fake_degree": 1.0771993492391077
         }
       },
       {
         "atom": "3He",
-        "B_AME_MeV": 7.718043,
-        "target_units_m_e": 15.10383336321602,
+        "B_AME_MeV": "7.71804132",
+        "target_units_m_e": 15.103830075538037,
         "ceiling_over_target": {
-          "classic": 0.6924903128282978,
-          "balanced": 0.8781239513609734,
-          "unbalanced": 1.516525991510155,
-          "fake_degree": 2.037612216775865
+          "classic": 0.6924903588350351,
+          "balanced": 0.8781240096394684,
+          "unbalanced": 1.516526092336814,
+          "fake_degree": 2.037612351870146
         }
       },
       {
         "atom": "4He",
-        "B_AME_MeV": 28.295673,
-        "target_units_m_e": 55.37325069218333,
+        "B_AME_MeV": "28.2956624",
+        "target_units_m_e": 55.373229948500814,
         "ceiling_over_target": {
-          "classic": 0.43347413162271514,
-          "balanced": 0.7861735529184121,
-          "unbalanced": 2.045958057068908,
-          "fake_degree": 3.103356425483748
+          "classic": 0.4334742302624999,
+          "balanced": 0.7861737314030353,
+          "unbalanced": 2.0459585202562702,
+          "fake_degree": 3.103357126448631
         }
       }
     ],
     "ceiling_span_across_conventions": [
-      0.3604123816658089,
-      3.103356425483748
+      0.3604124051868872,
+      3.103357126448631
     ],
     "some_convention_overshoots_target": true
   },

@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:25:17.429920+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T07:51:44.027010+00:00",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "assertions": [
     {
       "name": "E0_improves_deuteron",
-      "computed": 11.821420804986538,
+      "computed": "11.81909848720556630268943382255145466699026481123614003131047560347802",
       "expected": 0,
       "passed": true,
-      "tolerance": 79.06622552280942,
+      "tolerance": "79.0666602774059958818021540979892410143640898830775161185528796889141",
       "source": "E₀ scale beats Q_β scale for deuteron"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "binding-energy-scale-probe",
   "scriptFile": "binding_energy_scale_probe.py",
-  "scriptHash": "46b4a5880e40",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "c7b3d38691dc",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_energy_scale_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_energy_scale_probe.py"
   },
   "description": "Probe E₀ vs Q_β as binding energy scale. E₀ = m_e/(q₀(q₀-1)) closes deuteron from -79% to +12%. Residual +12% candidates tested.",
   "data": {
@@ -42,28 +51,28 @@
     "isotope_results": {
       "D": {
         "B_E0": 2.4874898700910864,
-        "err_E0_pct": 11.821420804986538,
-        "err_Qbeta_pct": -79.06622552280942
+        "err_E0_pct": "11.81909848720556630268943382255145466699026481123614003131047560347802",
+        "err_Qbeta_pct": "-79.0666602774059958818021540979892410143640898830775161185528796889141"
       },
       "T": {
         "B_E0": 3.3597747222332073,
-        "err_E0_pct": -60.388516589208365,
-        "err_Qbeta_pct": -92.58444531951868
+        "err_E0_pct": "-60.3884054390129383435793078710055128136360158686818459143653255075916",
+        "err_Qbeta_pct": "-92.5844245114024310904622596930888100260719283680719003929672084299743"
       },
       "3He": {
         "B_E0": 3.515415108134228,
-        "err_E0_pct": -54.45197086132971,
-        "err_Qbeta_pct": -91.47308124860716
+        "err_E0_pct": "-54.45197865131113090731825535186195545649342263979837110361863584009582",
+        "err_Qbeta_pct": "-91.47308270694772593492829685188291524538845484381869549623049178416041"
       },
       "4He": {
         "B_E0": 3.811119555493556,
-        "err_E0_pct": -86.53109993570204,
-        "err_Qbeta_pct": -97.47852500556621
+        "err_E0_pct": "-86.5310820378831061117083856110500744213079701034517003080814263364843",
+        "err_Qbeta_pct": "-97.47852165496574478551363190642393941136186020703642738454123556869199"
       }
     },
     "deuteron_corrections": {
       "best_correction": "1-hbar_q",
-      "best_err_pct": 0.7419625411213104
+      "best_err_pct": "0.7398703225712777070643521874787815892651884640476277451053237660191347"
     },
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",

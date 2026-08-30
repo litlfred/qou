@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:14.644020+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:51:42.287446+00:00",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "assertions": [
     {
       "name": "preflight_det_closed_forms_verified",
@@ -44,7 +44,7 @@
   "durationMs": 5,
   "computation": "deltalambda-icosahedral-smatrix-magnitude",
   "scriptFile": "deltalambda_icosahedral_smatrix_magnitude_probe.py",
-  "scriptHash": "7af66aeef746",
+  "scriptHash": "b53d2691e8a6",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -60,7 +60,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -77,10 +77,10 @@
     "preflight_det_closed_forms_verified": true,
     "he4_spectrum_pm_sqrt5_pm1_verified": true,
     "data_ratios_AME2020": {
-      "rho_4": "12.719899",
-      "rho_3He": "3.4695305",
-      "rho_3H": "3.8128675",
-      "mirror_3H_over_3He": "1.0989578"
+      "rho_4": "12.719632",
+      "rho_3He": "3.469459",
+      "rho_3H": "3.8127866",
+      "mirror_3H_over_3He": "1.0989571"
     },
     "candidates": {
       "ceiling_1_over_sqrt5": {
@@ -99,14 +99,14 @@
           "mirror_3H_over_3He": "1.94908"
         },
         "rel_err_vs_AME": {
-          "rho_4": 0.30062,
-          "rho_3He": 0.27573,
-          "rho_3H": 0.28454,
+          "rho_4": 0.30061,
+          "rho_3He": 0.27571,
+          "rho_3H": 0.28457,
           "mirror_3H_over_3He": 0.77357
         },
         "coherent_all4_within_5pct": false,
         "best_single_ratio": "rho_3He",
-        "best_single_rel_err": 0.27573
+        "best_single_rel_err": 0.27571
       },
       "S00_MTC_zeta2_1_over_sqrt(5-sqrt5)": {
         "value": "0.6015009550075457",
@@ -124,14 +124,14 @@
           "mirror_3H_over_3He": "1.48917"
         },
         "rel_err_vs_AME": {
-          "rho_4": 0.45598,
-          "rho_3He": 0.24526,
-          "rho_3H": 0.02273,
+          "rho_4": 0.45597,
+          "rho_3He": 0.24524,
+          "rho_3H": 0.02276,
           "mirror_3H_over_3He": 0.35508
         },
         "coherent_all4_within_5pct": false,
         "best_single_ratio": "rho_3H",
-        "best_single_rel_err": 0.02273
+        "best_single_rel_err": 0.02276
       },
       "S00_E8_zeta2_1_over_sqrt(10-2sqrt5)": {
         "value": "0.42532540417602",
@@ -144,14 +144,14 @@
           "mirror_3H_over_3He": "2.42232"
         },
         "rel_err_vs_AME": {
-          "rho_4": 0.00394,
-          "rho_3He": 0.28885,
-          "rho_3H": 0.56752,
+          "rho_4": 0.00396,
+          "rho_3He": 0.28883,
+          "rho_3H": 0.56755,
           "mirror_3H_over_3He": 1.2042
         },
         "coherent_all4_within_5pct": false,
         "best_single_ratio": "rho_4",
-        "best_single_rel_err": 0.00394
+        "best_single_rel_err": 0.00396
       },
       "A1_mark1_2_over_sqrt5_sin(pi/5)": {
         "value": "0.5257311121191336",
@@ -179,14 +179,14 @@
           "mirror_3H_over_3He": "2.01738"
         },
         "rel_err_vs_AME": {
-          "rho_4": 0.26961,
-          "rho_3He": 0.27831,
-          "rho_3H": 0.32482,
+          "rho_4": 0.2696,
+          "rho_3He": 0.2783,
+          "rho_3H": 0.32484,
           "mirror_3H_over_3He": 0.83573
         },
         "coherent_all4_within_5pct": false,
         "best_single_ratio": "rho_4",
-        "best_single_rel_err": 0.26961
+        "best_single_rel_err": 0.2696
       }
     },
     "any_candidate_coherent_all4": false,
@@ -194,14 +194,14 @@
       "candidate_best_for_rho4": "S00_E8_zeta2_1_over_sqrt(10-2sqrt5)",
       "m": "0.425325404176",
       "rho_4_model": "12.770003",
-      "rho_4_AME": "12.719899",
-      "rho_4_rel_err": 0.00394,
+      "rho_4_AME": "12.719632",
+      "rho_4_rel_err": 0.00396,
       "mirror_model": "2.4223233",
-      "mirror_AME": "1.0989578",
+      "mirror_AME": "1.0989571",
       "mirror_rel_err": 1.2042,
       "rho_3H_model": "5.9767518",
-      "rho_3H_AME": "3.8128675",
-      "rho_3H_rel_err": 0.56752
+      "rho_3H_AME": "3.8127866",
+      "rho_3H_rel_err": 0.56755
     },
     "small_m_structural_limits": {
       "rho_4_limit_m0": 6,

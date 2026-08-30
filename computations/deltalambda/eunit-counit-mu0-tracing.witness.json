@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:02:20.611375+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T06:59:57.828251+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [
     {
       "name": "counit_3crossing_matches_table",
@@ -33,7 +33,7 @@
   "durationMs": 0,
   "computation": "eunit-counit-mu0-tracing",
   "scriptFile": "eunit_counit_mu0_tracing_probe.py",
-  "scriptHash": "4cda48dd432f",
+  "scriptHash": "9fcca9db7a32",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -76,7 +76,7 @@
     },
     "deuteron_5g_form": {
       "B_5g_E_unit_ladder_MeV": "2.22456679",
-      "err_pct": "3.536e-5",
+      "err_pct": "2.637e-5",
       "E_unit_external_MeV": "0.99594",
       "note": "+0.4% (6-dig match) but E_unit external/scale-free (§2h.2)."
     },

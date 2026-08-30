@@ -59,6 +59,16 @@ from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
 # one definition; the import is hard on purpose, because a fallback would
 # silently compute the blind convention while reporting success.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
 TWO_Q = q0 + qi
 
 
@@ -215,11 +225,11 @@ print()
 
 isotopes = [
     (1, 0, "H",   938.783),
-    (2, 2, "He",  3728.401),
+    (2, 2, "He",  M_HE4_ATOMIC_MEV_VALIDATION),
     (3, 4, "Li",  6535.367),
     (4, 5, "Be",  8394.794),
     (5, 6, "B",  10255.103),
-    (6, 6, "C",  11177.930),
+    (6, 6, "C",  M_C12_ATOMIC_MEV_VALIDATION),
     (7, 7, "N",  13043.781),
     (8, 8, "O",  14899.169),
     (9, 10,"F",  17696.901),

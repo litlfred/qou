@@ -47,11 +47,21 @@ for _p in (_COMP, os.path.join(_COMP, "hecke"), os.path.join(_COMP, "substrate")
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_LI7_MEV_VALIDATION,
+)
+
 KMAX = 10
 
 # AME2020 binding energies B (MeV), light nuclei (well-known constants).
 NUCLEI = [("2H", 2, 2.224), ("3H", 3, 8.482), ("3He", 3, 7.718),
-          ("4He", 4, 28.296), ("6Li", 6, 31.994), ("7Li", 7, 39.245),
+          ("4He", 4, 28.296), ("6Li", 6, AME_B_LI6_MEV_VALIDATION), ("7Li", 7, AME_B_LI7_MEV_VALIDATION),
           ("9Be", 9, 58.165), ("12C", 12, 92.162), ("16O", 16, 127.619)]
 
 
@@ -243,7 +253,7 @@ def main() -> int:
     witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(_HERE, "wlambda-level-selection-kA.witness.json")
     with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+        json.dump(witness, f, indent=2, default=str)
     print("witness ->", out)
     return 0 if all_ok else 1
 

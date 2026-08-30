@@ -86,7 +86,19 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from codata_constants import AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from mass_at_3A_proper import E_0_CALIBRATION_MEV
 from _li_2_q_util import load_q_50dps, li_2_q
 
@@ -98,10 +110,10 @@ from _li_2_q_util import load_q_50dps, li_2_q
 set_compute_dps()
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
+    "D":   mp.mpf(AME_B_DEUTERON_MEV_VALIDATION),
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION),
+    "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION),
     "6Li": AME_B_LI6_MEV_VALIDATION,
     "7Li": mp.mpf("39.2453"),
     "9Be": mp.mpf("58.165"),

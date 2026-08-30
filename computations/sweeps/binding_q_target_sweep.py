@@ -46,6 +46,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 from mpmath import mp, mpf  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 # ─────────────────────────────────────────────────────────────────────────
 # AME 2020 binding energies + per-atom uncertainties
 # (from binding-K-direct.witness.json's reference data, sourced from
@@ -53,11 +66,11 @@ from mpmath import mp, mpf  # noqa: E402
 # ─────────────────────────────────────────────────────────────────────────
 BINDING_AME = {
     # atom: (Z, N, B_AME_MeV, σ_B_MeV)
-    "D":   (1, 1,  mpf("2.22456612"),  mpf("1.0e-6")),  # PDG: 2.22456612(5)
-    "T":   (1, 2,  mpf("8.48179800"),  mpf("1.0e-6")),  # AME 2020
-    "3He": (2, 1,  mpf("7.71803751"),  mpf("1.0e-6")),
-    "4He": (2, 2, mpf("28.29569127"),  mpf("1.0e-6")),
-    "6Li": (3, 3, mpf("31.99404550"),  mpf("5.0e-6")),  # AME 2020
+    "D":   (1, 1,  mpf(AME_B_DEUTERON_MEV_VALIDATION),  mpf("1.0e-6")),  # PDG: 2.22456612(5)
+    "T":   (1, 2,  mpf(AME_B_TRITIUM_MEV_VALIDATION),  mpf("1.0e-6")),  # AME 2020
+    "3He": (2, 1,  mpf(AME_B_HE3_MEV_VALIDATION),  mpf("1.0e-6")),
+    "4He": (2, 2, mpf(AME_B_HE4_MEV_VALIDATION),  mpf("1.0e-6")),
+    "6Li": (3, 3, mpf(AME_B_LI6_MEV_VALIDATION),  mpf("5.0e-6")),  # AME 2020
     "7Li": (3, 4, mpf("39.24470100"),  mpf("5.0e-6")),
 }
 

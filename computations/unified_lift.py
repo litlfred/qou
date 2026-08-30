@@ -44,7 +44,16 @@ TO that baseline.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 — full-precision m_p per-nucleon scale
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 import sys
 import math
 from pathlib import Path
@@ -218,8 +227,8 @@ if __name__ == "__main__":
     from datetime import datetime, timezone
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
+        ("T",    1, 2,  AME_B_TRITIUM_MEV_VALIDATION),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
     ]
     print("=" * 110)
     print("TASK B — UNIFIED MARKOV-STAB + KÄHLER LIFT")

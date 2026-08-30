@@ -80,6 +80,18 @@ from hecke_core_symbolic import (          # the canonical symbolic core
     h as _H_SYM,                           # q − q⁻¹  (symbolic)
 )
 from q_parameter import Q as _Q0           # canonical substrate q₀
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 try:
     from experimental_constants import M_E_MEV as _ME   # CAL-1 electron mass
 except Exception:                           # pragma: no cover
@@ -380,8 +392,8 @@ def self_test() -> None:
 # ── CLI dashboard ─────────────────────────────────────────────────────
 
 _LADDER = [
-    ("2H", 1, 1, "2.224566"), ("3H", 1, 2, "8.481798"),
-    ("3He", 2, 1, "7.718043"), ("4He", 2, 2, "28.295673"),
+    ("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION), ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
+    ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION), ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
     ("6Li", 3, 3, "31.99463"), ("7Li", 3, 4, "39.24454"),
     ("9Be", 4, 5, "58.16498"), ("12C", 6, 6, "92.16175"),
     ("16O", 8, 8, "127.6193"), ("40Ca", 20, 20, "342.0521"),

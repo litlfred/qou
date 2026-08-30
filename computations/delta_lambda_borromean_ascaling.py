@@ -31,9 +31,21 @@ sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE / "substrate"))
 
 from borromean_binding_recompute import borromean_binding  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 # AME2020 totals (MeV) — comparison target only.
-AME = {"D": (1, 1, 2.224573), "T": (1, 2, 8.481821), "3He": (2, 1, 7.718058),
-       "4He": (2, 2, 28.295673), "6Li": (3, 3, 31.994564),
+AME = {"D": (1, 1, AME_B_DEUTERON_MEV_VALIDATION), "T": (1, 2, AME_B_TRITIUM_MEV_VALIDATION), "3He": (2, 1, AME_B_HE3_MEV_VALIDATION),
+       "4He": (2, 2, AME_B_HE4_MEV_VALIDATION), "6Li": (3, 3, 31.994564),
        "12C": (6, 6, 92.161728), "16O": (8, 8, 127.619), "56Fe": (26, 30, 492.254)}
 
 # canonical flat sgn(w₀)·dim net/target (classic q-dim), read from the

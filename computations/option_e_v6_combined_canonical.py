@@ -43,6 +43,17 @@ from _precision import set_compute_dps  # noqa: E402
 # literal rounded there cannot be recovered by raising dps afterwards.
 mp.dps = 50
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 
 M_E_MEV = mpf("0.51099895069")
 # ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
@@ -58,8 +69,8 @@ H = Q_0 - 1 / Q_0
 HBAR_Q = 1 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
-AME_MeV = {"D": mpf("2.224566"), "T": mpf("8.481798"),
-           "3He": mpf("7.71806")}
+AME_MeV = {"D": mpf(AME_B_DEUTERON_MEV_VALIDATION), "T": mpf(AME_B_TRITIUM_MEV_VALIDATION),
+           "3He": mpf(AME_B_HE3_MEV_VALIDATION)}
 N_STRANDS = {"D": 6, "T": 9, "3He": 9}
 
 
@@ -299,7 +310,7 @@ def main() -> int:
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=False)
-        json.dump(witness, f, indent=2)
+        json.dump(witness, f, indent=2, default=str)
     print(f"\nWrote {out_path}")
     return 0
 

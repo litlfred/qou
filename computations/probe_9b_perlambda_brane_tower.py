@@ -95,10 +95,22 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 # AME2020 totals (MeV) — comparison target only (same list as
 # borromean_binding_recompute.py).
-ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821),
-       ("3He", 2, 1, 7.718058), ("4He", 2, 2, 28.295673),
+ISO = [("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION), ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
+       ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION), ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
        ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
        ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619),
        ("56Fe", 26, 30, 492.254)]

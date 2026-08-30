@@ -42,10 +42,24 @@ from datetime import datetime, timezone
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
 from hecke_core import atom_per_generator_volumes, w_sym, w_std, w_alt, Phi_q
-from codata_constants import (
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
     M_E_MEV as _M_E_MEV,
-    M_P_MEV_VALIDATION as _M_P_MEV,
     M_N_MEV_VALIDATION as _M_N_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV,
 )
 
 HBAR_Q = (q0 - 1.0) / q0
@@ -131,10 +145,10 @@ if __name__ == "__main__":
     print("=" * 100)
 
     ATOMS = [
-        ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("D",    1, 1,  AME_B_DEUTERON_MEV_VALIDATION),
+        ("T",    1, 2,  AME_B_TRITIUM_MEV_VALIDATION),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
         ("6Li",  3, 3, 32.0),
         ("12C",  6, 6, 92.161728),
     ]

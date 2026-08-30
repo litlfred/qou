@@ -12,9 +12,9 @@
    "bonds_C_A_2": 1,
    "tree_A_minus_1": 1,
    "B_base_MeV": 0.36661385763455323,
-   "B_AME_MeV": 2.22452,
-   "err_pct": -83.51941732892699,
-   "mu_ext_target": 6.0677466322547975,
+   "B_AME_MeV": "2.2245662",
+   "err_pct": -83.51975959921745,
+   "mu_ext_target": 6.067872650404515,
    "dominant_lambda": [
     5,
     1
@@ -75,7 +75,7 @@
   }
  },
  "extensivity_multipliers_target": {
-  "D": 6.0677466322547975,
+  "D": 6.067872650404515,
   "T": 6.706068807035398,
   "3He": 4.905447611852874,
   "4He": 290.0066501195608
@@ -99,10 +99,10 @@
  ],
  "allPassed": false,
  "scriptFile": "deltalambda_extensivity_gap_synthesis_probe.py",
- "scriptHash": "8c4c2337531f",
- "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
- "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
- "computedAt": "2026-08-30T03:40:10.700389+00:00",
+ "scriptHash": "f04af0811757",
+ "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
+ "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
+ "computedAt": "2026-08-30T07:51:49.159068+00:00",
  "durationMs": 0,
  "q0Anchor": "independent",
  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T03:39:39.256212+00:00",
+  "computedAt": "2026-08-30T07:51:48.308624+00:00",
   "computation": "delta-lambda-multi-atom-crosscheck",
   "scriptFile": "delta_lambda_multi_atom_crosscheck.py",
   "description": "Multi-atom cross-validation of the signed-dim_q \u0394_\u03bb ansatz. Tests whether \u0394_\u03bb = C \u00d7 (-1)^{n(\u03bb)} \u00d7 dim_q(\u03bb) gives consistent C_knot across D, T, \u00b3He. Uses q-Schur y_\u03bb closed form.",
@@ -13,8 +13,8 @@
       "sum_dimq": 0.03967472908197183,
       "sum_yc": 0.022654970408742234,
       "B_naive_MeV": 0.009260269888012039,
-      "B_AME_MeV": 2.22452,
-      "C_knot_needed": 240.22194027841147
+      "B_AME_MeV": 2.2245662,
+      "C_knot_needed": 240.2269293338665
     },
     "T": {
       "n_strands": 9,
@@ -44,9 +44,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "cfe37ace5f9d",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "scriptHash": "c977fd835a40",
+  "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -27,7 +27,19 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_LI7_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -132,8 +144,8 @@ def main():
         ("T", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("³He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("⁴He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("⁶Li", 3, 3, 31.994),
-        ("⁷Li", 3, 4, 39.245),
+        ("⁶Li", 3, 3, AME_B_LI6_MEV_VALIDATION),
+        ("⁷Li", 3, 4, AME_B_LI7_MEV_VALIDATION),
         ("⁹Be", 4, 5, 58.165),
         ("¹²C", 6, 6, 92.163),
         ("¹⁶O", 8, 8, 127.621),

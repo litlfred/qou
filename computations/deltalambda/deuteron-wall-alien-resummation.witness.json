@@ -2,7 +2,7 @@
  "computation": "deuteron-wall-alien-resummation",
  "description": "LEADING-term test of the deuteron-wall closure via the m=1 level-1/2 alien term of the Gevrey-1/2 binding period (derived \u03c9\u2080=1/\u221a2, A_\u03c9=4\u221a2 e^-3/8, scale m_e, no tuning): ceiling m_e\u00b7A_\u03c9=1.987 MeV < B_D=2.225 MeV, so the LEADING term undershoots (~0.21 MeV at substrate). NOT a refutation: the full alien-calculus trans-series \u03a3_m S_m A_\u03c9^m e^{-m\u03c9\u2080/\u221ax} \u03a6_m (dualized entanglement energy of the 2-nucleon bipartition) is unbounded by A_\u03c9 and OPEN. Scope-(a); no fit.",
  "audit_only": true,
- "computedAt": "2026-08-23T09:02:03.392200+00:00",
+ "computedAt": "2026-08-30T07:51:49.729311+00:00",
  "engine": "mpmath",
  "engineVersion": "mpmath 1.4.1",
  "derived_constants": {
@@ -11,13 +11,13 @@
   "A_omega_num": "3.88789527736"
  },
  "ceiling_m_e_A_omega_MeV": "1.986710407",
- "B_D_MeV": "2.22452",
+ "B_D_MeV": "2.2245662",
  "leading_alien_at_substrate_couplings_MeV": {
   "hbar_q^2": "0.0015803296",
   "hbar_q": "0.21015167",
   "t=ln q0": "0.2225548"
  },
- "verdict": "Scope-(a), LEADING-TERM ONLY (not a refutation of the route): the single m=1 level-1/2 alien term (derived \u03c9\u2080=1/\u221a2, A_\u03c9=4\u221a2 e^-3/8, scale m_e) has ceiling m_e\u00b7A_\u03c9=1.9867 MeV < B_D=2.2245 MeV and gives ~0.21 MeV at the substrate coupling, so the leading alien term alone UNDERSHOOTS. The FULL alien-calculus trans-series \u03a3_m S_m A_\u03c9^m e^{-m\u03c9\u2080/\u221ax} \u03a6_m (bridge equation) is NOT bounded by A_\u03c9 and is OPEN \u2014 the leading ceiling does not exclude it. Physical frame: B_D is the dualized entanglement energy of the 2-nucleon bipartition, carried by the dual channel where the alien calculus lives; the perturbative Vol face is 0 (Hopf). Next: compute S_m/\u03a6_m for the bipartition dual. No fit; no wiring.",
+ "verdict": "Scope-(a), LEADING-TERM ONLY (not a refutation of the route): the single m=1 level-1/2 alien term (derived \u03c9\u2080=1/\u221a2, A_\u03c9=4\u221a2 e^-3/8, scale m_e) has ceiling m_e\u00b7A_\u03c9=1.9867 MeV < B_D=2.2246 MeV and gives ~0.21 MeV at the substrate coupling, so the leading alien term alone UNDERSHOOTS. The FULL alien-calculus trans-series \u03a3_m S_m A_\u03c9^m e^{-m\u03c9\u2080/\u221ax} \u03a6_m (bridge equation) is NOT bounded by A_\u03c9 and is OPEN \u2014 the leading ceiling does not exclude it. Physical frame: B_D is the dualized entanglement energy of the 2-nucleon bipartition, carried by the dual channel where the alien calculus lives; the perturbative Vol face is 0 (Hopf). Next: compute S_m/\u03a6_m for the bipartition dual. No fit; no wiring.",
  "scope": "(a) \u2014 leading m=1 alien term undershoots; full alien-calculus trans-series (dualized entanglement energy) open",
  "assertions": [
   {
@@ -26,9 +26,9 @@
   }
  ],
  "allPassed": true,
- "scriptHash": "c449a745165b",
+ "scriptHash": "6c59e89f3bb7",
  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
- "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+ "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",

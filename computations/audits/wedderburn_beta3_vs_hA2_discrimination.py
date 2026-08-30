@@ -46,6 +46,16 @@ from mpmath import mp, mpf
 
 mp.dps = 50
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
+
 # --- recorded parameters (witness `parameters` block, verbatim) ---------------
 P = {
     "q0": "1.10998",
@@ -64,11 +74,11 @@ CODATA_M_N = "939.56542052"
 # --- recorded table: atom, Z, N, Phi1, Phi2, Phi3, M_pred, M_obs -------------
 ROWS = [
     ("1H",    1,  0,  "-0.007015", "-0.0",      "1.04342",   "938.91",    "938.78313"),
-    ("4He",   2,  2,  "-5.558902", "0.04347",   "-0.626052", "3734.624",  "3728.4013"),
+    ("4He",   2,  2,  "-5.558902", "0.04347",   "-0.626052", "3734.624",  M_HE4_ATOMIC_MEV_VALIDATION),
     ("7Li",   3,  4,  "-9.838642", "0.130411",  "-1.878156", "6534.188",  "6535.367"),
     ("9Be",   4,  5,  "-18.272718","0.217351",  "-2.921576", "8378.704",  "8394.7937"),
     ("11B",   5,  6,  "-22.803608","0.326027",  "-4.17368",  "10237.301", "10255.103"),
-    ("12C",   6,  6,  "-24.310734","0.391232",  "-4.382364", "11168.874", "11177.9292"),
+    ("12C",   6,  6,  "-24.310734","0.391232",  "-4.382364", "11168.874", M_C12_ATOMIC_MEV_VALIDATION),
     ("14N",   7,  7,  "-27.961737","0.53251",   "-5.843152", "13029.983", "13043.7816"),
     ("16O",   8,  8,  "-31.574308","0.695523",  "-7.512624", "14890.701", "14899.1693"),
     ("19F",   9, 10,  "-34.397752","0.97808",   "-11.268936","17690.792", "17696.901"),
@@ -224,7 +234,7 @@ def main() -> int:
     }
 
     out["results"] = rows_out
-    print(json.dumps(out, indent=2))
+    print(json.dumps(out, indent=2, default=str))
     return 0
 
 

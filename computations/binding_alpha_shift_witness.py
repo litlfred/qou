@@ -48,14 +48,26 @@ from pathlib import Path
 # script in computations/ (on sys.path[0]); it is pure literals — no
 # witness-file loading — so the import is cheap and dependency-free.
 from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 M_E_MEV = float(_M_E_MEV)
 
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
-    "D":   2.224566,
-    "T":   8.481798,
-    "³He": 7.718058,
-    "⁴He": 28.295674,
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "³He": AME_B_HE3_MEV_VALIDATION,
+    "⁴He": AME_B_HE4_MEV_VALIDATION,
 }
 
 # Map nucleus label -> (Z, N) for the magic_A dispatch. The Candidate
@@ -287,7 +299,7 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
     witness["scriptFile"] = _os.path.basename(__file__)
-    out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False, default=str) + "\n")
     print(f"witness emitted: {out_path}")
 
     if args.print:

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:39:52.736364+00:00",
-  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "computedAt": "2026-08-30T07:52:19.877663+00:00",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "assertions": [
     {
       "name": "defect_structure_fixes_sign_all_isotopes",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "rho-k-counit-defect-form",
   "scriptFile": "rho_k_counit_defect_form.py",
-  "scriptHash": "0943c1e60367",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "3c5787c06246",
+  "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,11 +56,11 @@
         "atom": "D",
         "counit_defect_sum_dchi": "-30.2941543142",
         "counit_defect_sign_negative": true,
-        "counit_defect_abs_ratio": "6.95893",
+        "counit_defect_abs_ratio": "6.95879",
         "trM_defect_sum_y_dchi": "-0.556544660404",
         "trM_defect_sign_negative": true,
-        "trM_defect_abs_ratio": "0.127845",
-        "target_minus_B_over_me": "-4.353277041"
+        "trM_defect_abs_ratio": "0.127842",
+        "target_minus_B_over_me": "-4.353367452"
       },
       {
         "atom": "T",
@@ -97,25 +97,25 @@
       "counit Δ=1/y (Σ dχ)": {
         "value": "-30.29415431",
         "sign_negative": true,
-        "abs_miss": "25.9409",
+        "abs_miss": "25.9408",
         "within_tol": false
       },
       "trM Δ=1 (Σ y dχ)": {
         "value": "-0.5565446604",
         "sign_negative": true,
-        "abs_miss": "3.79673",
+        "abs_miss": "3.79682",
         "within_tol": false
       },
       "coCasimir Δ=1/dim_q (Σ y dχ/dim_q)": {
         "value": "-0.07602120319",
         "sign_negative": true,
-        "abs_miss": "4.27726",
+        "abs_miss": "4.27735",
         "within_tol": false
       },
       "OptionE Δ=sgn·f^λ (Σ y·sgn·f dχ)": {
         "value": "-1.936177646",
         "sign_negative": true,
-        "abs_miss": "2.4171",
+        "abs_miss": "2.41719",
         "within_tol": false
       }
     },

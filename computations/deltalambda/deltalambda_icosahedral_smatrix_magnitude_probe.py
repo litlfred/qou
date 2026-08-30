@@ -78,14 +78,31 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 COMP = str(_COMP)
 
 # AME2020 binding energies (MeV) — the same values used by b4_value_cumulant_target_probe.py.
 B_AME = {
-    "D": mp.mpf("2.22452"),
-    "3H": mp.mpf("8.48180"),
-    "3He": mp.mpf("7.71804"),
-    "4He": mp.mpf("28.29567"),
+    "D": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION),
+    "3H": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
+    "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION),
+    "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION),
 }
 
 

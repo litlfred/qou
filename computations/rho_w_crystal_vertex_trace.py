@@ -62,6 +62,15 @@ from canonical_braid_crossings import (  # noqa: E402
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 
 # ----------------------------------------------------------------------------
 # Substrate constants.
@@ -82,7 +91,7 @@ Q0_STR_FALLBACK = "1.1099785827513808075916690956107688798744991218736"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.
-B_D_AME_MEV_STR = "2.224566"
+B_D_AME_MEV_STR = AME_B_DEUTERON_MEV_VALIDATION
 
 
 # ----------------------------------------------------------------------------
@@ -491,7 +500,7 @@ def main() -> int:
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, engine=None, q0_anchor=None)
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    out_path.write_text(json.dumps(witness, indent=2, default=str) + "\n")
     print(f"\n[rho_w] closure_status = {closure_status}")
     print(f"[rho_w] witness -> {out_path}")
     print(f"[rho_w] done in {time.time()-t0:.1f}s")

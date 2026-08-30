@@ -3,12 +3,12 @@
   "description": "Cross-isotope check REFUTES the block-trace magnitude \u0394_\u03bb=sgn\u00b7dim_q\u00b2: it matches the deuteron (~101%) by coincidence and blows up 40-450x for T/\u00b3He/\u2074He. The DERIVED sign is validated cross-isotope (right sign all four). Binding magnitude returns to open; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-block-trace.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-08-23T09:01:12.703973+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T07:51:48.897252+00:00",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_binding_cross_isotope_probe.py",
-  "scriptHash": "88abb820bf91",
+  "scriptHash": "87b652571ceb",
   "assertions": [
     {
       "name": "deuteron_dimq2_near_100",
@@ -33,32 +33,32 @@
         "iso": "d",
         "n": 6,
         "npart": 11,
-        "ratio_dimq2": 0.33139995056924326,
-        "ratio_dim2": 0.35192690446576563,
+        "ratio_dimq2": 0.3313934551616367,
+        "ratio_dim2": 0.3519199217820075,
         "right_sign": true
       },
       {
         "iso": "t",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 12.783148653188045,
-        "ratio_dim2": 7.602869236632956,
+        "ratio_dimq2": 12.783153562407502,
+        "ratio_dim2": 7.602872170604092,
         "right_sign": true
       },
       {
         "iso": "3he",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 19.542091262119346,
-        "ratio_dim2": 11.49071012392136,
+        "ratio_dimq2": 19.542086387443085,
+        "ratio_dim2": 11.490707282538335,
         "right_sign": true
       },
       {
         "iso": "4he",
         "n": 12,
         "npart": 77,
-        "ratio_dimq2": -26.66759362457424,
-        "ratio_dim2": -7.519143805778336,
+        "ratio_dimq2": -26.66759670675961,
+        "ratio_dim2": -7.51914451583153,
         "right_sign": false
       }
     ],
@@ -70,5 +70,9 @@
     "survives": "the derived sign (-1)^{n(\u03bb)} \u2014 right sign for all four isotopes (#3542)",
     "counit_predecessor": "rho-k-counit-isotope-systematics.witness.json (ratio grows with A)",
     "open": "the binding magnitude (block trace refuted) \u2014 DERIVE, do not fit; nothing wired"
-  }
+  },
+  "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

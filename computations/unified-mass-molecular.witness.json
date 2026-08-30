@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T14:15:46.121591+00:00",
-  "commitSha": "e8f6e7fb4186eed4928ed3ff49dcd1e726326622",
+  "computedAt": "2026-08-30T07:11:34.823444+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [
     {
       "name": "H2",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
-  "scriptHash": "a38fa1bfab4f",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "3fa2ccd6f46e",
+  "scriptCommitSha": "f7df6dfc39b87efefafc00a7f7ff4046834fc2cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,10 +100,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -119,10 +121,10 @@
     "w_d": 0.6690772299327864,
     "w_a": 0.16546138503360688,
     "E_mol_eV": 6.729338426152079,
-    "kappa_MeV": 0.51099895069
+    "kappa_MeV": "0.51099895069"
   },
   "data": {
-    "mass_mae_pct": 0.7677277566849037,
+    "mass_mae_pct": 0.7677276503862455,
     "molecular_mae_pct": 58.41415214939467,
     "mass_H": {
       "Z": 1,
@@ -137,8 +139,8 @@
       "N": 2,
       "Phi1": -2.327641872562393,
       "M_pred": 3755.5075977869187,
-      "M_obs": 3728.401,
-      "error_pct": 0.7270301071939119
+      "M_obs": "3728.40133075258",
+      "error_pct": 0.7270211715343308
     },
     "mass_Li": {
       "Z": 3,
@@ -169,8 +171,8 @@
       "N": 6,
       "Phi1": -11.755964808687807,
       "M_pred": 11264.083775342551,
-      "M_obs": 11177.93,
-      "error_pct": 0.770748925271056
+      "M_obs": "11177.92924464",
+      "error_pct": 0.7707557349574721
     },
     "mass_N": {
       "Z": 7,

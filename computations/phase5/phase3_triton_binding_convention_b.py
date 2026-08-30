@@ -95,13 +95,24 @@ from hecke_core_legacy import (  # noqa: E402
 from derivation_chain import E_0_CONVENTIONS  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 OUT = HERE / "phase3-triton-binding-convention-b.witness.json"
 
 AME_2020_BINDING_MEV = {
-    "D":    2.22456612,
-    "T":    8.481798,
+    "D":    AME_B_DEUTERON_MEV_VALIDATION,
+    "T":    AME_B_TRITIUM_MEV_VALIDATION,
     "3He":  7.71810,
-    "4He": 28.29567,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 

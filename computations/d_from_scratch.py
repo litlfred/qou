@@ -85,7 +85,9 @@ TWO_Q            = Q0 + QI0  # [2]_q
 
 def load_habiro_tr_M(label: str) -> mp.mpf:
     """Load tr_M(label, q_0) from habiro-coefficients-atomic witness."""
-    path = Path(__file__).parent / "habiro-coefficients-atomic.witness.json"
+    # The witness lives in computations/habiro/, not beside this file. Reading
+    # the bare parent has been a FileNotFoundError since it moved.
+    path = Path(__file__).parent / "habiro" / "habiro-coefficients-atomic.witness.json"
     with open(path) as f:
         d = json.load(f)
     for key, r in d.get("results", {}).items():

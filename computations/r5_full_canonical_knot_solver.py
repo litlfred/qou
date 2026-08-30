@@ -81,6 +81,16 @@ from klr_canonical_basis_filter import (  # noqa: E402
     build_cemetery_fingerprints as _build_cemetery_generic,
 )
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+)
+
 Q0 = float(Q_FLOAT)
 
 
@@ -99,7 +109,7 @@ R5_FULL_SUBSTRATE_REGISTRY = [
         "strand_count_n_0": 3,         # B_3 (Hecke H_3)
         "ell": 2,                       # confinement level
         "flavour": ["uud", "udd"],     # constituents (proton, neutron)
-        "B_AME_MeV": 2.224566,
+        "B_AME_MeV": AME_B_DEUTERON_MEV_VALIDATION,
     },
     {
         "name": "he3",
@@ -107,7 +117,7 @@ R5_FULL_SUBSTRATE_REGISTRY = [
         "strand_count_n_0": 3,         # B_3 (Hecke H_3)
         "ell": 2,
         "flavour": ["uud", "uud", "udd"],  # (p, p, n)
-        "B_AME_MeV": 7.71806,
+        "B_AME_MeV": AME_B_HE3_MEV_VALIDATION,
     },
     # tritium (³H, B_5 / 8_11) deferred — Hoefsmit at H_5 not in this
     # prototype; matches existing joint_tower_sdp_solver_v2.py posture.

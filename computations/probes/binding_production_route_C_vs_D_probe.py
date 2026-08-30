@@ -66,11 +66,23 @@ from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf, _chi_lambda_of_word_mpf,
 )
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 T0 = time.time()
 
 AME_B_MEV = {
-    "deuteron": "2.224566", "tritium": "8.481821",
-    "helium-3": "7.718043", "helium-4": "28.295673",
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION, "tritium": AME_B_TRITIUM_MEV_VALIDATION,
+    "helium-3": AME_B_HE3_MEV_VALIDATION, "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 ATOMS = {"deuteron": (1, 1), "tritium": (1, 2),
          "helium-3": (2, 1), "helium-4": (2, 2)}

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:40:05.324394+00:00",
-  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "computedAt": "2026-08-30T07:52:20.105372+00:00",
+  "commitSha": "c06f78b2d1b86b837a8e4172771eeb9729bee16a",
   "assertions": [
     {
       "name": "sign_systematically_wrong_all_isotopes",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "rho-k-counit-isotope-systematics",
   "scriptFile": "rho_k_counit_isotope_systematics.py",
-  "scriptHash": "30128aa8244f",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "68aee43b742c",
+  "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,8 +58,8 @@
         "n_partitions": 11,
         "n_interfaces": 1,
         "counit_sum_chi": "4.9292101409",
-        "target_minus_B_over_me": "-4.35327704097",
-        "abs_ratio": "1.1322987",
+        "target_minus_B_over_me": "-4.35336745212",
+        "abs_ratio": "1.1322752",
         "right_sign": false
       },
       {
@@ -94,7 +94,7 @@
       }
     ],
     "magnitude_ratio_is_fixed": false,
-    "magnitude_ratio_spread_max_over_min": "2.6305158700614952",
+    "magnitude_ratio_spread_max_over_min": "2.630570465554664",
     "sign_systematically_wrong": true,
     "verdict": "The deuteron 13% match is COINCIDENTAL: |Σχ|/|target| grows with A (1.13, 1.63, 2.98, 2.72) — not a fixed missing factor — and the sign is systematically wrong (Σχ>0 vs target<0) for all four. Counit ALONE refuted across the mass range (scope-(a)). BUT the error scales with A alongside the inter-nucleon interface count (D:1, T/³He:3, ⁴He:6), consistent with a missing interface-vortex (Hopf/L±) contribution — the counit+vortex lead, now with an A-scaling signature."
   },

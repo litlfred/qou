@@ -59,11 +59,20 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 
 def main() -> int:
     q0 = q_at(40)
     me = mp.mpf('0.51099895069')
-    B_D = mp.mpf('2.22452')
+    B_D = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
     target = B_D / me
     omega0 = 1 / mp.sqrt(2)                                  # proved
     A_omega = 4 * mp.sqrt(2) * mp.e ** (mp.mpf(-3) / 8)      # derived Stokes constant

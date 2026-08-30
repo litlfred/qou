@@ -63,7 +63,19 @@ set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
-from codata_constants import M_E_MEV as m_e
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV as m_e,
+)
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 G = mp.catalan
 
@@ -89,12 +101,12 @@ VOLS = {
 # Per-isotope leading order
 ISOTOPES = [
     # label, Z, N, B_AME, leading_formula, leading_value (MeV)
-    ("D",   1, 1,  2.22456612, "1·m_e·Vol(6_2)",         m_e * VOLS["6_2"]),
-    ("T",   1, 2,  8.481798,   "2·m_e·Vol(8_11)",        2 * m_e * VOLS["8_11"]),
-    ("³He", 2, 1,  7.718058,   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
-    ("⁴He", 2, 2, 28.29566,    "2·m_e·4·Vol(L6a4)",      2 * m_e * 4 * VOLS["L6a4"]),
+    ("D",   1, 1,  AME_B_DEUTERON_MEV_VALIDATION, "1·m_e·Vol(6_2)",         m_e * VOLS["6_2"]),
+    ("T",   1, 2,  AME_B_TRITIUM_MEV_VALIDATION,   "2·m_e·Vol(8_11)",        2 * m_e * VOLS["8_11"]),
+    ("³He", 2, 1,  AME_B_HE3_MEV_VALIDATION,   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
+    ("⁴He", 2, 2, AME_B_HE4_MEV_VALIDATION,    "2·m_e·4·Vol(L6a4)",      2 * m_e * 4 * VOLS["L6a4"]),
     # ⁶Li, ⁷Li — try various ansätze
-    ("⁶Li", 3, 3, 31.99405,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
+    ("⁶Li", 3, 3, AME_B_LI6_MEV_VALIDATION,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
     ("⁷Li", 3, 4, 39.24452,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
 ]
 
@@ -193,5 +205,5 @@ with open(out_path, "w") as fp:
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         out, script_path=__file__, engine=None, q0_anchor=None)
-    json.dump(out, fp, indent=2)
+    json.dump(out, fp, indent=2, default=str)
 print(f"\nWitness: {out_path}")

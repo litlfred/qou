@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:51:44.713782+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T07:01:33.028235+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
@@ -81,8 +81,8 @@
   "durationMs": 16,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
-  "scriptHash": "9b24bdac0958",
-  "scriptCommitSha": "b7df510f2a3d529278a3ae33d305846556349fc9",
+  "scriptHash": "7f53c65d24ac",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -165,121 +165,121 @@
       "2H": {
         "Z": 1,
         "N": 1,
-        "B_AME": 2.224573,
+        "B_AME": "2.224566199999999999999999999999999999999999999999997340954056611765576",
         "scalar_jones": {
           "B_can0": 1.6166217381550836,
           "B_tower": 2.063076949816325,
-          "errT_AME_over_B": 1.0782792179409755
+          "errT_AME_over_B": 1.0782759218932927
         },
         "perl_jones": {
           "B_can0": 1.6166217381550836,
           "B_tower": 2.0630766338738735,
-          "errT_AME_over_B": 1.0782793830701682
+          "errT_AME_over_B": 1.0782760870219807
         },
         "scalar_wenzl": {
           "B_can0": 1.6166217381550836,
           "B_tower": 2.063076949816325,
-          "errT_AME_over_B": 1.0782792179409755
+          "errT_AME_over_B": 1.0782759218932927
         },
         "perl_wenzl": {
           "B_can0": 1.6166217381550836,
           "B_tower": 2.0630766338738735,
-          "errT_AME_over_B": 1.0782793830701682
+          "errT_AME_over_B": 1.0782760870219807
         },
         "ambient_h6": {
           "B_can0": 1.6166217381550836,
           "B_tower": 2.063076820778841,
-          "errT_AME_over_B": 1.0782792853831742
+          "errT_AME_over_B": 1.0782759893352853
         }
       },
       "3H": {
         "Z": 1,
         "N": 2,
-        "B_AME": 8.481821,
+        "B_AME": "8.481796200000000000000000000000000000000000000000009585209925309324894",
         "scalar_jones": {
           "B_can0": 3.137225560748612,
           "B_tower": 4.741966424926435,
-          "errT_AME_over_B": 1.7886716690811624
+          "errT_AME_over_B": 1.7886664391833147
         },
         "perl_jones": {
           "B_can0": 3.137225560748612,
           "B_tower": 4.7419653230216054,
-          "errT_AME_over_B": 1.7886720847202102
+          "errT_AME_over_B": 1.788666854821147
         },
         "scalar_wenzl": {
           "B_can0": 3.137225560748612,
           "B_tower": 4.741966424926435,
-          "errT_AME_over_B": 1.7886716690811624
+          "errT_AME_over_B": 1.7886664391833147
         },
         "perl_wenzl": {
           "B_can0": 3.137225560748612,
           "B_tower": 4.7419653230216054,
-          "errT_AME_over_B": 1.7886720847202102
+          "errT_AME_over_B": 1.788666854821147
         },
         "ambient_h6": {
           "B_can0": 3.137225560748612,
           "B_tower": 4.74196597488021,
-          "errT_AME_over_B": 1.7886718388387983
+          "errT_AME_over_B": 1.7886666089404542
         }
       },
       "3He": {
         "Z": 2,
         "N": 1,
-        "B_AME": 7.718058,
+        "B_AME": "7.718041319999999999999999999999999999999999999999995711041411183331376",
         "scalar_jones": {
           "B_can0": 2.6033579456523555,
           "B_tower": 3.94272358063608,
-          "errT_AME_over_B": 1.9575447890655437
+          "errT_AME_over_B": 1.9575405584874523
         },
         "perl_jones": {
           "B_can0": 2.6033579456523555,
           "B_tower": 3.9427226328087257,
-          "errT_AME_over_B": 1.9575452596577387
+          "errT_AME_over_B": 1.9575410290786304
         },
         "scalar_wenzl": {
           "B_can0": 2.6033579456523555,
           "B_tower": 3.94272358063608,
-          "errT_AME_over_B": 1.9575447890655437
+          "errT_AME_over_B": 1.9575405584874523
         },
         "perl_wenzl": {
           "B_can0": 2.6033579456523555,
           "B_tower": 3.9427226328087257,
-          "errT_AME_over_B": 1.9575452596577387
+          "errT_AME_over_B": 1.9575410290786304
         },
         "ambient_h6": {
           "B_can0": 2.6033579456523555,
           "B_tower": 3.942723193523628,
-          "errT_AME_over_B": 1.9575449812651795
+          "errT_AME_over_B": 1.9575407506866729
         }
       },
       "4He": {
         "Z": 2,
         "N": 2,
-        "B_AME": 28.295673,
+        "B_AME": "28.2956623999999999999999999999999999999999999999999915823563342238137",
         "scalar_jones": {
           "B_can0": 3.531353053597401,
           "B_tower": 6.475459552758949,
-          "errT_AME_over_B": 4.3696779772092444
+          "errT_AME_over_B": 4.369676340259787
         },
         "perl_jones": {
           "B_can0": 3.531353053597401,
           "B_tower": 6.475457503026765,
-          "errT_AME_over_B": 4.369679360380948
+          "errT_AME_over_B": 4.369677723430972
         },
         "scalar_wenzl": {
           "B_can0": 3.531353053597401,
           "B_tower": 6.475459552758949,
-          "errT_AME_over_B": 4.3696779772092444
+          "errT_AME_over_B": 4.369676340259787
         },
         "perl_wenzl": {
           "B_can0": 3.531353053597401,
           "B_tower": 6.475457503026765,
-          "errT_AME_over_B": 4.369679360380948
+          "errT_AME_over_B": 4.369677723430972
         },
         "ambient_h6": {
           "B_can0": 3.531353053597401,
           "B_tower": 6.475458715600271,
-          "errT_AME_over_B": 4.369678542128889
+          "errT_AME_over_B": 4.36967690517922
         }
       },
       "6Li": {
@@ -441,11 +441,11 @@
     "upstream_witness_hashes": [
       {
         "path": "borromean-binding-recompute.witness.json",
-        "sha256": "61769e5a2df581c8c933e136db452658813a2ffe6c5633098213b2d06f4f6a67",
-        "size_bytes": 2937,
-        "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
-        "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
-        "computedAt": "2026-08-25T01:19:55.168022+00:00"
+        "sha256": "706eacb6751af6d39cea212c087a594b2c35125b0745516948ec7fd144742f77",
+        "size_bytes": 3090,
+        "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
+        "scriptCommitSha": "9951c2d6e3f3da63f6fae3255761d3b79d743a5d",
+        "computedAt": "2026-08-30T07:01:09.983071+00:00"
       }
     ]
   },

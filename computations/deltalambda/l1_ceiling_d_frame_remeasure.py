@@ -78,13 +78,25 @@ sys.path.insert(0, str(REPO / "computations"))
 
 mp.dps = 60
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 M_E_MEV = mp.mpf("0.51099895069")
 
 ATOMS = {
-    "deuteron": ("chi-deuteron-h6-at-q0-50dps.witness.json", 6, "2.224566"),
-    "tritium": ("chi-tritium-h9-at-q0-50dps.witness.json", 9, "8.481798"),
-    "helium-3": ("chi-helium-3-h9-at-q0-50dps.witness.json", 9, "7.718043"),
-    "helium-4": ("chi-helium-4-h12-at-q0-50dps.witness.json", 12, "28.295673"),
+    "deuteron": ("chi-deuteron-h6-at-q0-50dps.witness.json", 6, AME_B_DEUTERON_MEV_VALIDATION),
+    "tritium": ("chi-tritium-h9-at-q0-50dps.witness.json", 9, AME_B_TRITIUM_MEV_VALIDATION),
+    "helium-3": ("chi-helium-3-h9-at-q0-50dps.witness.json", 9, AME_B_HE3_MEV_VALIDATION),
+    "helium-4": ("chi-helium-4-h12-at-q0-50dps.witness.json", 12, AME_B_HE4_MEV_VALIDATION),
 }
 
 
@@ -208,7 +220,7 @@ def main() -> int:
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         out, script_path=__file__, engine=None, q0_anchor=None)
-    o.write_text(json.dumps(out, indent=2) + "\n")
+    o.write_text(json.dumps(out, indent=2, default=str) + "\n")
     print(f"\nwrote {o.relative_to(REPO)}")
     return 0
 

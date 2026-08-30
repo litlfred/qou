@@ -44,16 +44,27 @@ from mpmath import mp, mpf, catalan
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 
 # canonical tr_M (free constituents, bound atom) from binding-canonical
 # (H_{3A} Wedderburn sum); AME binding energies.
 ATOMS = {
     # name: (Z, N, tr_M_free, tr_M_atom, B_AME_MeV) — all from binding-canonical
-    "D":   (1, 1, "0.9835261819186453", "0.38828647154771295", "2.224566"),
-    "T":   (1, 2, "0.9080241197853626", "0.10405211867552604", "8.481798"),
-    "3He": (2, 1, "1.0477565675816238", "0.20654085856226245", "7.718043"),
-    "4He": (2, 2, "0.9673237505194684", "0.05534834587669799", "28.295673"),
+    "D":   (1, 1, "0.9835261819186453", "0.38828647154771295", AME_B_DEUTERON_MEV_VALIDATION),
+    "T":   (1, 2, "0.9080241197853626", "0.10405211867552604", AME_B_TRITIUM_MEV_VALIDATION),
+    "3He": (2, 1, "1.0477565675816238", "0.20654085856226245", AME_B_HE3_MEV_VALIDATION),
+    "4He": (2, 2, "0.9673237505194684", "0.05534834587669799", AME_B_HE4_MEV_VALIDATION),
 }
 
 

@@ -36,7 +36,15 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV,
+)
 
 
 def main():
@@ -49,7 +57,7 @@ def main():
     # Deuteron trace difference from binding_canonical (H₆ Wedderburn)
     # Computed via tr_M_via_wenzl_bridge_mpfr — sub-ppb precision
     delta_tr_D = mpf("0.5952397103674884")  # |tr_free| - |tr_atom|
-    B_AME = mpf("2.22452")
+    B_AME = mpf(AME_B_DEUTERON_MEV_VALIDATION)
 
     B_pred = m_e * VOL_B3 * delta_tr_D
     err_pct = float(fabs(B_pred - B_AME) / B_AME * 100)

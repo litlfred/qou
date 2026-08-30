@@ -55,10 +55,22 @@ except Exception:
     q = mp.mpf("1.10997859555733471")
 
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402 — CAL-1 registry (single source)
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 M_E = mp.mpf(str(_M_E_MEV))  # CODATA-2022 m_e (full precision; prior literal was 8 sig figs)
 # AME2020 total binding (MeV), Z, A
-ISO = {"D": (2.224566, 1, 2), "T": (8.481821, 1, 3), "3He": (7.718058, 2, 3),
-       "4He": (28.295661, 2, 4), "6Li": (31.99464, 3, 6), "7Li": (39.24454, 3, 7),
+ISO = {"D": (AME_B_DEUTERON_MEV_VALIDATION, 1, 2), "T": (AME_B_TRITIUM_MEV_VALIDATION, 1, 3), "3He": (AME_B_HE3_MEV_VALIDATION, 2, 3),
+       "4He": (AME_B_HE4_MEV_VALIDATION, 2, 4), "6Li": (31.99464, 3, 6), "7Li": (39.24454, 3, 7),
        "9Be": (58.16497, 4, 9), "12C": (92.16172, 6, 12)}
 
 

@@ -44,7 +44,15 @@ Symbolic q-derivative implementation:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 — full-precision m_p per-nucleon scale
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 import sys
 import math
 from pathlib import Path
@@ -356,7 +364,7 @@ if __name__ == "__main__":
     canon_MeV = r_canon.get("B_MeV", 0)
     print(f"  canonical B = {canon_MeV:+.6f} MeV  ({time.time()-t0:.1f}s)")
 
-    B_AME = 2.22452
+    B_AME = AME_B_DEUTERON_MEV_VALIDATION
     print(f"\n{'lift':<40}{'B_canon':>10}{'B_tower':>10}"
           f"{'B_total':>10}{'|Δm/m|%':>10}{'ε':>12}")
     for lift_name, V_a_lift, V_f_lift, eps_order in [

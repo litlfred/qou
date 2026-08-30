@@ -74,6 +74,17 @@ from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
 
@@ -108,7 +119,7 @@ REGISTRY = [
         "constituent_offsets": [0, 3],             # p strands 1..3, n strands 4..6
         "binding_link_name": "L_H (Hopf)",
         "observed_rho": 1,
-        "B_AME_MeV": 2.224566,
+        "B_AME_MeV": AME_B_DEUTERON_MEV_VALIDATION,
     },
     {
         "name": "tritium",
@@ -120,7 +131,7 @@ REGISTRY = [
         "constituent_offsets": [0, 3, 6],
         "binding_link_name": "8_11-class link",
         "observed_rho": 2,
-        "B_AME_MeV": 8.481798,
+        "B_AME_MeV": AME_B_TRITIUM_MEV_VALIDATION,
     },
     {
         "name": "he3",
@@ -132,7 +143,7 @@ REGISTRY = [
         "constituent_offsets": [0, 3, 6],
         "binding_link_name": "L6a4 (3-component link)",
         "observed_rho": 2,
-        "B_AME_MeV": 7.71806,
+        "B_AME_MeV": AME_B_HE3_MEV_VALIDATION,
     },
 ]
 

@@ -60,16 +60,26 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 # AME here is a measurement/comparison reference -- what a `_VALIDATION`
 # constant is for -- not a prediction input, which would be the 3-cal
 # violation fvxq warns about.
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
     ("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
-    ("3H", 1, 2, mp.mpf("8.4817977")),
-    ("3He", 2, 1, mp.mpf("7.7180213")),
-    ("4He", 2, 2, mp.mpf("28.295662")),
+    ("3H", 1, 2, mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)),
+    ("3He", 2, 1, mp.mpf(AME_B_HE3_MEV_VALIDATION)),
+    ("4He", 2, 2, mp.mpf(AME_B_HE4_MEV_VALIDATION)),
 ]
 SIGN = {"pp": mp.mpf(1), "nn": mp.mpf(-1), "pn": mp.mpf(1)}
 

@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:27:11.904323+00:00",
-  "commitSha": "1c768a5ad3dddbb5c86fe78fdc53ce98a6faef2d",
+  "computedAt": "2026-08-30T07:01:37.469395+00:00",
+  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
-      "computed": 7.162229445453156,
+      "computed": 7.162226762370407,
       "expected": 7.16,
       "passed": true,
       "tolerance": "0.5",
@@ -26,8 +26,8 @@
   "durationMs": 4,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "ce596ada2659",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "358cfda6d032",
+  "scriptCommitSha": "fa94034954eea81399e33561c6242180c688c208",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +42,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -64,22 +64,22 @@
           "2H": {
             "A": 2,
             "B_tower": 2.063076949816325,
-            "net_over_target": 0.9274035735470695
+            "net_over_target": 0.9274064084118175
           },
           "3H": {
             "A": 3,
             "B_tower": 4.741966424926435,
-            "net_over_target": 0.559074097994574
+            "net_over_target": 0.5590757326763446
           },
           "3He": {
             "A": 3,
             "B_tower": 3.94272358063608,
-            "net_over_target": 0.5108439947764165
+            "net_over_target": 0.5108450987971751
           },
           "4He": {
             "A": 4,
             "B_tower": 6.475459552758949,
-            "net_over_target": 0.22884981575659816
+            "net_over_target": 0.2288499014873371
           },
           "6Li": {
             "A": 6,
@@ -107,7 +107,7 @@
             "net_over_target": 1.639074888998437
           }
         },
-        "spread": 7.162229445453156
+        "spread": 7.162226762370407
       },
       "w_chirality_1_minus_h2::both": {
         "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
@@ -115,22 +115,22 @@
           "2H": {
             "A": 2,
             "B_tower": 1.979457592917592,
-            "net_over_target": 0.8898146264103682
+            "net_over_target": 0.8898173463741345
           },
           "3H": {
             "A": 3,
             "B_tower": 4.490040801727197,
-            "net_over_target": 0.5293722658998813
+            "net_over_target": 0.5293738137361986
           },
           "3He": {
             "A": 3,
             "B_tower": 3.7340069639777598,
-            "net_over_target": 0.48380136090941006
+            "net_over_target": 0.4838024064864374
           },
           "4He": {
             "A": 4,
             "B_tower": 6.08341652111121,
-            "net_over_target": 0.2149945866674106
+            "net_over_target": 0.21499466720776292
           },
           "6Li": {
             "A": 6,
@@ -158,7 +158,7 @@
             "net_over_target": 1.5796314175808877
           }
         },
-        "spread": 7.347307865125574,
+        "spread": 7.347305112709564,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chirality_1_minus_h2::atom_only": {
@@ -167,22 +167,22 @@
           "2H": {
             "A": 2,
             "B_tower": 2.204451717351873,
-            "net_over_target": 0.9909549910710385
+            "net_over_target": 0.9909580201982181
           },
           "3H": {
             "A": 3,
             "B_tower": 4.8943993134223085,
-            "net_over_target": 0.5770458152114161
+            "net_over_target": 0.5770475024408519
           },
           "3He": {
             "A": 3,
             "B_tower": 4.138365475672871,
-            "net_over_target": 0.5361925857091085
+            "net_over_target": 0.5361937445124836
           },
           "4He": {
             "A": 4,
             "B_tower": 6.71178428648815,
-            "net_over_target": 0.23720179005772898
+            "net_over_target": 0.23720187891724884
           },
           "6Li": {
             "A": 6,
@@ -210,7 +210,7 @@
             "net_over_target": 1.7314162695179958
           }
         },
-        "spread": 7.299338968296202,
+        "spread": 7.299336233850088,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::both": {
@@ -219,22 +219,22 @@
           "2H": {
             "A": 2,
             "B_tower": 0.13630622178587706,
-            "net_over_target": 0.06127298217944615
+            "net_over_target": 0.061273169477211814
           },
           "3H": {
             "A": 3,
             "B_tower": 0.1776483535803755,
-            "net_over_target": 0.02094460064417482
+            "net_over_target": 0.020944661884280538
           },
           "3He": {
             "A": 3,
             "B_tower": 0.14956062052541924,
-            "net_over_target": 0.01937801199802065
+            "net_over_target": 0.019378053877200447
           },
           "4He": {
             "A": 4,
             "B_tower": 0.25266355904963933,
-            "net_over_target": 0.008929406239944862
+            "net_over_target": 0.008929409585040828
           },
           "6Li": {
             "A": 6,
@@ -262,7 +262,7 @@
             "net_over_target": 0.13194184277675453
           }
         },
-        "spread": 14.776104841834282,
+        "spread": 14.776099306475173,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::atom_only": {
@@ -271,22 +271,22 @@
           "2H": {
             "A": 2,
             "B_tower": 5.247638063801956,
-            "net_over_target": 2.3589417222100404
+            "net_over_target": 2.358948932965877
           },
           "3H": {
             "A": 3,
             "B_tower": 7.866515621049408,
-            "net_over_target": 0.9274559815692182
+            "net_over_target": 0.927458693366083
           },
           "3He": {
             "A": 3,
             "B_tower": 7.838427887994452,
-            "net_over_target": 1.015595877615127
+            "net_over_target": 1.015598072490554
           },
           "4He": {
             "A": 4,
             "B_tower": 11.56837939976886,
-            "net_over_target": 0.4088391677331322
+            "net_over_target": 0.40883932089071223
           },
           "6Li": {
             "A": 6,
@@ -314,7 +314,7 @@
             "net_over_target": 3.878098076754795
           }
         },
-        "spread": 9.485632451160367,
+        "spread": 9.485628897694648,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::both": {
@@ -323,22 +323,22 @@
           "2H": {
             "A": 2,
             "B_tower": 1.2340432842341098,
-            "net_over_target": 0.55473265396735
+            "net_over_target": 0.5547343496606708
           },
           "3H": {
             "A": 3,
             "B_tower": 2.4381636298596283,
-            "net_over_target": 0.2874575671733261
+            "net_over_target": 0.28745840767308556
           },
           "3He": {
             "A": 3,
             "B_tower": 2.0326375931039156,
-            "net_over_target": 0.2633612747019931
+            "net_over_target": 0.263361843870501
           },
           "4He": {
             "A": 4,
             "B_tower": 3.1144904477815496,
-            "net_over_target": 0.11006949535293081
+            "net_over_target": 0.11006953658669429
           },
           "6Li": {
             "A": 6,
@@ -366,7 +366,7 @@
             "net_over_target": 1.0577779745304134
           }
         },
-        "spread": 9.6100919799688,
+        "spread": 9.610088379878603,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::atom_only": {
@@ -375,22 +375,22 @@
           "2H": {
             "A": 2,
             "B_tower": 3.4549599500314923,
-            "net_over_target": 1.5530890422708052
+            "net_over_target": 1.553093789715717
           },
           "3H": {
             "A": 3,
             "B_tower": 6.1956193805926985,
-            "net_over_target": 0.7304586338939124
+            "net_over_target": 0.7304607696884651
           },
           "3He": {
             "A": 3,
             "B_tower": 5.790093343836986,
-            "net_over_target": 0.7502008074877108
+            "net_over_target": 0.7502024287992521
           },
           "4He": {
             "A": 4,
             "B_tower": 8.753803393172445,
-            "net_over_target": 0.30936897642167566
+            "net_over_target": 0.3093690923161581
           },
           "6Li": {
             "A": 6,
@@ -418,7 +418,7 @@
             "net_over_target": 2.5747371332180338
           }
         },
-        "spread": 8.322544694037514,
+        "spread": 8.322541576282594,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::both": {
@@ -427,22 +427,22 @@
           "2H": {
             "A": 2,
             "B_tower": 0.0001931837475535075,
-            "net_over_target": 8.684082183569947e-05
+            "net_over_target": 8.68410872886172e-05
           },
           "3H": {
             "A": 3,
             "B_tower": 0.00018409286183260228,
-            "net_over_target": 2.170440307955123e-05
+            "net_over_target": 2.1704466541250105e-05
           },
           "3He": {
             "A": 3,
             "B_tower": 0.0001560655524647876,
-            "net_over_target": 2.022083177721489e-05
+            "net_over_target": 2.022087547787158e-05
           },
           "4He": {
             "A": 4,
             "B_tower": 0.0003448341655362748,
-            "net_over_target": 1.2186816179854596e-05
+            "net_over_target": 1.2186820745227539e-05
           },
           "6Li": {
             "A": 6,
@@ -470,7 +470,7 @@
             "net_over_target": 0.00019009678217632212
           }
         },
-        "spread": 15.598559900375081,
+        "spread": 15.598554056911489,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::atom_only": {
@@ -479,22 +479,22 @@
           "2H": {
             "A": 2,
             "B_tower": 5.46382323838277,
-            "net_over_target": 2.4561222483518277
+            "net_over_target": 2.4561297561667392
           },
           "3H": {
             "A": 3,
             "B_tower": 8.038259112646573,
-            "net_over_target": 0.9477044036471145
+            "net_over_target": 0.9477071746485223
           },
           "3He": {
             "A": 3,
             "B_tower": 8.038231085337205,
-            "net_over_target": 1.0414836329731139
+            "net_over_target": 1.0414858837963834
           },
           "4He": {
             "A": 4,
             "B_tower": 11.902544213970378,
-            "net_over_target": 0.42064891737935967
+            "net_over_target": 0.4206490749610576
           },
           "6Li": {
             "A": 6,
@@ -522,7 +522,7 @@
             "net_over_target": 4.043882634673475
           }
         },
-        "spread": 9.613438826532207,
+        "spread": 9.613435225188228,
         "verdict": "FAIL (monotone rescale)"
       }
     },
@@ -540,8 +540,8 @@
     "upstream_witness_hashes": [
       {
         "path": "y-lambda-at-q0.witness.json",
-        "sha256": "e4f26334a3bc2c699e2ad3f6b6faae0adfbf5292b3dc3b83201b999070f8506e",
-        "size_bytes": 47239,
+        "sha256": "0d463dbf72e4c1d5e72f141c1527f547e5df4ea74963e8b81f8d1cea5d5027f9",
+        "size_bytes": 47562,
         "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
         "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
         "computedAt": "2026-08-10T19:03:52.564561+00:00"

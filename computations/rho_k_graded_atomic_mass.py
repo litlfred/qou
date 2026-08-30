@@ -49,7 +49,16 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401,E402
 
-from codata_constants import M_E_MEV  # noqa: E402 — CAL-1 anchor
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 — CAL-1 anchor
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_E_MEV,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
 from canonical_mass import proton_mass_mev, neutron_mass_mev  # noqa: E402
 from hecke_core import atom_per_generator_volumes  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -97,11 +106,11 @@ def atom_mass_graded(Z: int, N: int) -> dict:
 # formula).
 OBS_TABLE = [
     (1, "H", 1, 938.783),
-    (2, "He", 4, 3728.401),
+    (2, "He", 4, M_HE4_ATOMIC_MEV_VALIDATION),
     (3, "Li", 7, 6535.367),
     (4, "Be", 9, 8394.794),
     (5, "B", 11, 10255.103),
-    (6, "C", 12, 11177.929),
+    (6, "C", 12, M_C12_ATOMIC_MEV_VALIDATION),
     (7, "N", 14, 13043.782),
     (8, "O", 16, 14899.169),
     (9, "F", 19, 17696.901),

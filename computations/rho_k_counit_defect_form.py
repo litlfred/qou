@@ -53,7 +53,13 @@ from mpmath import mp, mpf, fabs  # noqa: E402
 # built from, so routing them is not the 3-cal violation that routing a
 # prediction INPUT would be. Values MOVE: each literal was a rounding of
 # the vendored AME2020 value that commit 03c25e8db made canonical.
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
 from codata_constants import (  # noqa: E402  single source of truth (CODATA)
+    AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
@@ -63,12 +69,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 HERE = str(_HERE)
 m_e = mpf(str(M_E_MEV))
-# NOTE: 'D' is NOT routed. The literal 2.22452 is 2.1e-5 from
-# AME_B_DEUTERON_MEV_VALIDATION (2.2245662) -- four times the band that
-# counts as a rounding of it, so routing it would change a value on a
-# guess about where it came from. Reconciliation is bean qou-e2cf.
 B_AME = {
-    "D": mpf("2.22452"),
+    "D": mpf(AME_B_DEUTERON_MEV_VALIDATION),
     "T": mpf(AME_B_TRITIUM_MEV_VALIDATION),
     "3He": mpf(AME_B_HE3_MEV_VALIDATION),
     "4He": mpf(AME_B_HE4_MEV_VALIDATION),

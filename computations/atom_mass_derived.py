@@ -87,6 +87,16 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from witness_base import WitnessBuilder
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_C12_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+)
+
 
 # ══════════════════════════════════════════════════════════════
 # §1  HECKE ENGINE (numerical at q₀)
@@ -368,8 +378,8 @@ ELEMENTS = {
 
 # AME2020 observed atomic masses (MeV)
 AME2020_MASS = {
-    (1, 0): 938.783,     (2, 2): 3728.401,   (3, 4): 6535.367,
-    (4, 5): 8394.794,    (5, 6): 10255.103,  (6, 6): 11177.930,
+    (1, 0): 938.783,     (2, 2): M_HE4_ATOMIC_MEV_VALIDATION,   (3, 4): 6535.367,
+    (4, 5): 8394.794,    (5, 6): 10255.103,  (6, 6): M_C12_ATOMIC_MEV_VALIDATION,
     (7, 7): 13043.781,   (8, 8): 14899.169,  (9, 10): 17696.901,
     (10, 10): 18622.835,
 }

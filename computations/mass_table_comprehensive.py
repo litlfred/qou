@@ -60,9 +60,28 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
 from codata_constants import (  # noqa: E402
-    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_E_MEV,
-    M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_D_MEV_VALIDATION,
+    M_E_MEV,
+    M_HE4_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    M_T_MEV_VALIDATION,
     Q_BETA_MEV,
 )
 from _li_2_q_util import (  # noqa: E402
@@ -127,8 +146,8 @@ def _fmt_or_none(x):
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
 AME_BINDING = {
     "p": 0.0, "n": 0.0,
-    "D": 2.22452, "T": 8.481821, "3He": 7.71804,
-    "4He": 28.2957, "6Li": 31.994, "7Li": 39.2445,
+    "D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION, "6Li": AME_B_LI6_MEV_VALIDATION, "7Li": 39.2445,
     "9Be": 58.165, "10B": 64.751, "11B": 76.205,
     "12C": 92.162, "13C": 97.108, "14N": 104.659, "15N": 115.492,
     "16O": 127.619, "17O": 131.763, "18O": 139.808,
@@ -547,7 +566,11 @@ def main() -> int:
             m_observed = (
                 Z * M_P_MEV_VALIDATION
                 + N * M_N_MEV_VALIDATION
-                - mp.mpf(repr(B_AME))
+                # str, not repr: B_AME now comes from the registry as an
+                # mpf, and repr(mpf) is "mpf('31.9939872')", which
+                # mp.mpf() cannot parse. str() is the numeric string for
+                # both an mpf and the floats still in this table.
+                - mp.mpf(str(B_AME))
             )
 
         # Errors against Observed

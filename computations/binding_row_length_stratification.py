@@ -42,16 +42,31 @@ from decimal import Decimal, getcontext
 from math import factorial
 from pathlib import Path
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 getcontext().prec = 60
 
 HERE = Path(__file__).resolve().parent
 
 M_E_MEV = Decimal("0.51099895069")
 AME_B = {
-    "deuteron":  Decimal("2.224566"),
-    "tritium":   Decimal("8.481821"),
-    "helium-3":  Decimal("7.718043"),
-    "helium-4":  Decimal("28.295673"),
+    # str() first: these are decimal.Decimal pipelines and Decimal(mpf)
+    # raises TypeError. The registry constants are mpf, so they reach
+    # Decimal the same way the string literals they replaced did.
+    "deuteron":  Decimal(str(AME_B_DEUTERON_MEV_VALIDATION)),
+    "tritium":   Decimal(str(AME_B_TRITIUM_MEV_VALIDATION)),
+    "helium-3":  Decimal(str(AME_B_HE3_MEV_VALIDATION)),
+    "helium-4":  Decimal(str(AME_B_HE4_MEV_VALIDATION)),
 }
 WITNESS = {
     "deuteron":  "chi-deuteron-h6-at-q0-50dps.witness.json",
@@ -197,7 +212,7 @@ def main() -> None:
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         out, script_path=__file__, engine=None, q0_anchor=False)
-    p.write_text(json.dumps(out, indent=2) + "\n")
+    p.write_text(json.dumps(out, indent=2, default=str) + "\n")
     print(f"\nwrote {p.name}")
 
 

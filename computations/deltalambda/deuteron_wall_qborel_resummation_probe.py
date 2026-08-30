@@ -80,6 +80,15 @@ from qou_substrate.constants import q_at  # noqa: E402
 
 mp.mp.dps = 60
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 
 # ---------- exact transfer-operator Z_n(q) (mirrors lever1 W6/W9) ----------
 
@@ -145,7 +154,7 @@ def main() -> int:
     q0 = q_at(30)                       # proton pin (owner default 2026-08-07)
     lnq = mp.log(q0)
     me = mp.mpf("0.51099895069")
-    B_D = mp.mpf("2.22452")
+    B_D = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
     target = B_D / me
     N, L, KM = 30, 15, 40
 

@@ -99,6 +99,34 @@ def _literals(txt: str):
 
 
 
+
+def _is_rounding(lit: str, reg: str) -> bool:
+    """Is `lit` the registry value written to fewer digits, or a DIFFERENT number?
+
+    This is the split that makes the UNSAFE tail workable. Both halves are
+    "near a registry value and not byte-exact", but they need opposite handling:
+
+      2.224566   vs 2.2245662     -- the registry value at 6dp. Same number,
+                                     written short. Routing is a precision gain.
+      8.481821   vs 8.4817962     -- disagrees at the 6th decimal, a digit it
+                                     does print. A different measurement, near
+                                     certainly an older AME evaluation. Routing
+                                     silently updates the data, which is a
+                                     provenance decision, not a refactor.
+
+    Rounding the registry value to the literal's own decimal count answers it
+    exactly, with no tolerance to tune.
+    """
+    from decimal import Decimal, InvalidOperation
+    try:
+        d_lit, d_reg = Decimal(lit), Decimal(reg)
+    except InvalidOperation:
+        return False
+    nd = -d_lit.as_tuple().exponent
+    if nd < 0:
+        return False
+    return d_reg.quantize(Decimal(1).scaleb(-nd)) == d_lit
+
 def _fixture_lines(txt: str) -> set[int]:
     """Line numbers inside a self-test, where routing needs its own ruling.
 
@@ -464,6 +492,12 @@ def main() -> int:
     print(f"  IN-SELF-TEST (routing needs a per-test ruling): "
           f"{n_fixture} in {len(fixture)} files")
     print(f"  UNSAFE (near, value-change — decision needed): {n_unsafe} in {len(unsafe)} files")
+    _rnd = {(f, l) for f, v in unsafe.items() for l, _n, r in v if _is_rounding(l, r)}
+    _div = {(f, l) for f, v in unsafe.items() for l, _n, r in v if not _is_rounding(l, r)}
+    print(f"    ROUNDING   {len(_rnd):>4} sites in {len({f for f, _ in _rnd}):>3} files   "
+          f"the registry value at fewer digits — routing is a precision gain")
+    print(f"    DIVERGENT  {len(_div):>4} sites in {len({f for f, _ in _div}):>3} files   "
+          f"disagrees at a printed digit — a provenance ruling, not a refactor")
 
     # Role split. SAFE/UNSAFE says whether routing moves a VALUE; role says
     # whether the site may be routed AT ALL. A prediction INPUT must not be,
@@ -494,6 +528,8 @@ def main() -> int:
             "value-reconciliation decisions that must precede any route."
         ),
         "registry_value_strings": REG,
+        "rounding_sites": sorted(f"{f}:{l}" for f, l in _rnd),
+        "divergent_sites": sorted(f"{f}:{l}" for f, l in _div),
         "fixture_sites": {k: sorted(v) for k, v in fixture.items()},
         "safe_routes": {fn: sorted([list(t) for t in v]) for fn, v in sorted(safe.items())},
         "unsafe_near_matches": {fn: sorted([list(t) for t in v]) for fn, v in sorted(unsafe.items())},

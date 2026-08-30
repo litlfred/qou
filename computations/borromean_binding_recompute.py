@@ -82,13 +82,24 @@ import mpmath as mp  # noqa: E402
 # computed at dps=50. This module produces the dashboard's canonical mass
 # m_can, so the cap reached the headline mass table.
 from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: E402
-from codata_constants import M_E_MEV as M_E  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV as M_E,
+)
 from _li_2_q_util import li_2_q  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402
 
 # AME2020 totals (MeV) — comparison target only.
-ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
-       ("4He", 2, 2, 28.295673), ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
+ISO = [("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION), ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION), ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION),
+       ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION), ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
        ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619), ("56Fe", 26, 30, 492.254)]
 
 
