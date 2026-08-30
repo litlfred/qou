@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T18:27:21Z
+updated_at: 2026-08-30T18:48:18Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3649,3 +3649,46 @@ this probe does not attempt, and entry 10's summary now says so rather than the
 blanket "NOT uniqueness" it carried before.
 
 Probe **12/12**.
+
+
+## Entry 10c — the functional equation SETTLES uniqueness, in the negative
+
+Entry 10b left full uniqueness open. It is now settled — as a **proof**, not a
+failure to find one.
+
+Under bar, `a -> delta - a`. Seek every `F(a, delta)` with (i) bar-invariance,
+(ii) the log-separable form **entry 3** requires (`F = phi(a - c(delta)) *
+K(delta)`), and (iii) the C limit `F(a, 0) = cos a`. Then (iii) gives
+`phi = cos`, `c(0) = 0`, `K(0) = 1`, and (i) demands
+`cos(a - c) = cos(delta - a - c)` for all `a`. The `+` branch gives `2a = delta`
+— not an identity in `a`. The `-` branch gives
+
+    c(delta) = delta / 2          ← THE PHASE SHIFT IS FORCED
+
+and **`K(delta)` is left FREE** apart from `K(0) = 1` — verified symbolically
+for an arbitrary `K`.
+
+**So uniqueness does not follow from the three conditions**, and the arc's
+choice of `K = cos(delta/2)` comes from the **entry-2 bar-midpoint rule**, not
+from the conditions.
+
+### That distinction is quantitative, not pedantic
+
+    |1 - K| at both pins = 5.96942e-5 = 59694 ppb
+    Q_beta 100x target   =                7.797 ppb
+    ratio                =              7656x
+
+The residual freedom the conditions leave open is **~7656× the accuracy
+target**. The rule is doing real work, and had the arc stopped at "three
+conditions met" the leading factor would carry that ambiguity.
+
+### The three results together
+
+| claim | status |
+|---|---|
+| phase re-centring by `delta/2` | **FORCED** by (i)+(ii)+(iii) |
+| the rival `G` (geometric mean) | **EXCLUDED** by (c), on pole structure |
+| the constant `K(delta)` | **FREE** — selected by the entry-2 rule alone |
+
+**Not claimed:** that the bar-midpoint rule is itself forced. It is the arc's
+own rule applied consistently — parsimony, not derivation. Probe **14/14**.
