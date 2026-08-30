@@ -176,3 +176,56 @@ review bot's finding is a bug report to verify, and the verification here was
 cheap and decisive. Rewriting two working proofs to satisfy a speculative
 comment would have been the same failure as widening a baseline to make a gate
 green.
+
+---
+
+## Candidate (2) is REFUTED — added 2026-08-30, second session
+
+This file weighs three candidates and picks none. One of them can now be
+closed, on evidence this file did not have.
+
+**Candidate (2) was:** *"Copilot reviews on its own trigger, never on
+`request_copilot_review`"* — sourced from an unrequested review, with the
+quota wording noted as weakening it "without settling it — the request may be
+accepted and still not be what schedules the review."
+
+**Two independent lines settle it.**
+
+**A. A request produced a direct bot response in ~1 second.** Both of my
+`request_copilot_review` calls on `qou#6132` drew a reply from
+`copilot-pull-request-reviewer[bot]` (app 175728472):
+
+| review id | submitted | body |
+|---|---|---|
+| 5060275190 | 07:56:07Z | *"unable to review … reached their quota limit"* |
+| 5060276153 | 07:56:40Z | same |
+
+An ignored request produces no response at all. This one produced two, each
+within a second of the call. The request path is unambiguously live.
+
+**B. Reviews followed requests on PRs that had sat unreviewed for hours.**
+This is the part (A) alone cannot give, since a refusal proves receipt but not
+scheduling:
+
+| PR | created | I requested | review submitted | had sat |
+|---|---|---|---|---|
+| `#6104` | 04:51Z | ~07:36Z | **07:40:25Z** | **2 h 45 m** |
+| `#6116` | 06:57Z | ~07:31Z | **07:36:45Z** | **34 m** |
+
+Neither received an unrequested review in that window. Both received one
+within ~4–5 minutes of an explicit request. Under (2) — reviews fire only on
+Copilot's own trigger — that coincidence has to happen twice, on two PRs, at
+two different ages, in a nine-minute window. Reject.
+
+**What this leaves.** (3) **quota is an active gate** — now confirmed twice
+over, and it is the gate that was hit. (1) *availability changed* is neither
+confirmed nor needed: quota alone produces intermittent zeros, so the
+historical n=5 no longer requires a separate mechanism. It is **not
+established** that quota explains those five — that would need quota state
+from 2026-08-23, which is not recoverable from this repo — but (1) is no
+longer load-bearing.
+
+**Operational consequence, unchanged and now better grounded:** requests work,
+and they are the thing that spends the ration. Do not re-request after every
+push. Five successful reviews across two repos exhausted it in ~30 minutes,
+and the sixth through eighth calls returned refusals.
