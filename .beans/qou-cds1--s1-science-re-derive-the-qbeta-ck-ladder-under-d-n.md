@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T04:56:26Z
+updated_at: 2026-08-30T06:18:46Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2484,3 +2484,58 @@ instance says nothing about the family, and I have exactly one instance.
 
 Not run yet — 'the n=4 Hoefsmit b' needs defining before it can be tested,
 and that definition is itself the work. Nothing wired; nothing claimed.
+
+## 2026-08-30 (later) — the lead above is RETRACTED; what replaces it (PR #6103)
+
+**The lead is dead, and I killed it.** b^2 = [3]_q z_D^2/q^4 is a RESTATEMENT.
+In quantum integers:
+
+    b   = sqrt([3]_q)/[2]_q      (Hoefsmit off-diagonal, axial distance 2)
+    z_D = q^2/[2]_q
+    z_C = 1/[2]_sqrt(q)
+
+Substituting z_D = q^2/[2]_q returns b^2 = [3]_q/[2]_q^2, which IS b's own
+definition. Zero information about b. The objection I attached to the lead
+this morning was the right one and it was fatal: two independently defined
+objects sharing a cyclotomic factor. Probe
+qbeta_ladder_convention_dependence_is_one_phase_probe, 7/7, carries the
+retraction as a control rather than deleting it.
+
+**What is actually true, and it is the opposite of the lead:** b is a HOEFSMIT
+constant, built from the H_3 seminormal representation with NO Markov
+parameter in it. So b is convention-INDEPENDENT — neither C nor D.
+
+## The sharpening, which is the real gain
+
+Measured over the whole published formula: Q_A, hbar_q, b and ALL FOUR RUNGS
+are z-free. alpha = (z-1)h/2 is the ONLY z.
+
+That creates a tension worth naming, because both halves are corpus positions:
+
+  (i) the published ladder's only z-dependence is one phase, so a
+      z-substitution changes the phase and NOTHING ELSE; and
+  (ii) AGENTS.md + QOU.QBeta.decayLadder_zC_threeRow_ne_zero say the D-frame
+      ladder must be RE-DERIVED and that a z-swap is invalid.
+
+Both cannot be the whole story. The only resolution: the RUNGS' DERIVATION
+used the three-row C-frame trace at a step that has been integrated out of the
+final formula. Under D the trace is two-row (y_(1^3)(z_D) = 0, Lean-proved in
+qou-06wh and reproduced here from the regular representation).
+
+**LOCATING THAT STEP IS THE RE-DERIVATION.** That is a sharper statement of
+this bean's open problem than it carried before, and it is where the next
+session should start: find where b^2 hbar^4, 2b^3 hbar^6, 2b^8 hbar^8 and
+(b^2+1/2)b^5 hbar^10 come from, and check which of them used three rows.
+
+## Reproduced, NOT new — verified as not new
+
+The D-frame H_3 weights recomputed here match
+computations/y-lambda-symbolic-witness.json (markov_convention: D) exactly:
+y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0. Corpus-grep
+found this AFTER I computed them, so treat my run as an independent check on
+that committed witness, not as a contribution.
+
+Newly recorded (vocabulary, not mathematics): y_(2,1)(z_D) = 1/[2]_q^2 and
+tr_M^D(T_e) = 1 exactly, so the D-frame trace closes as
+
+    tr_M^D = ( [2]_{q^2} chi^(3) + chi^(2,1) ) / [2]_q^2 ,  [2]_q^2 = [2]_{q^2} + 2.
