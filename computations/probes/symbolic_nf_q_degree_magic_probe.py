@@ -235,7 +235,7 @@ def profile(Z: int, N: int) -> dict:
         "n_terms": sum(len(c) for c in nf),
         "degree_profile": per,
         "support_size": len(support),
-        "wall_seconds": round(time.time() - t0, 3),
+        "wall_ms": int(round((time.time() - t0) * 1000)),
     }
 
 
@@ -300,7 +300,7 @@ def main() -> int:
             print(f"  Z={Z},N={A-Z:<2} {tag:<13} "
                   f"deg [{r['min_degree']:>4}, {r['max_degree']:>4}] "
                   f"span {r['degree_span']:>4}  terms {r['n_terms']:>5}  "
-                  f"support {r['support_size']:>4}  [{r['wall_seconds']}s]",
+                  f"support {r['support_size']:>4}  [{r['wall_ms']}ms]",
                   flush=True)
 
     print("\n=== magic vs neither, per level ===", flush=True)
