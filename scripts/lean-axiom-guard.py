@@ -667,6 +667,15 @@ QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.deriv_Lob_neg 
 QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.strictAntiOn_Lob | clean
 QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_sub_Lob_add_pos | clean
 
+# FiveTwoAngleSum translates VOL_5_2 (a Bloch-Wigner value) into the ANGLE
+# functional Rivin concavity is stated for. The corpus already had fiveTwoTet
+# and volume_eq_lob_sum; only the composition was missing.
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle_sum | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₁_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₂_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₃_pos | clean
+QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.VOL_5_2_eq_three_mul_lob_sum | clean
+
 """
 
 
