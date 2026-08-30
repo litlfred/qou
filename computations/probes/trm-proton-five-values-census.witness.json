@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T16:55:19.073774+00:00",
+  "commitSha": "89f1137463e5ca45bde90cf49fe0473c3585e003",
+  "assertions": [
+    {
+      "name": "the option-b value IS the canonical Jones-Markov trace",
+      "computed": "5.1738026498081750046040373900665734255900258242142e-16",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.00000000000001",
+      "source": "recomputed from y_lambda * chi^lambda at the proton pin"
+    },
+    {
+      "name": "the content block tracks it to its quoted 6 significant figures",
+      "computed": "0.00000028272542646444026923087395476137521429947003608908",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.00001",
+      "source": "content block quotes 6 sig figs"
+    },
+    {
+      "name": "TR_M_AT_Q0['p'] does NOT match, and is live",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "13.33% off; imported by build_markov_trace_assembly_neutron_chain and phase5/phase2_proton_m_e_hecke_diagnostic. Recorded as a STANDING discrepancy, not a target -- see bean qou-soj6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "trm-proton-five-values-census",
+  "scriptFile": "trm_proton_five_values_census.py",
+  "scriptHash": "0f1990b7b384",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/trm_proton_five_values_census.py"
+    ],
+    "reproduce": "python3 -u computations/probes/trm_proton_five_values_census.py"
+  },
+  "description": "Census of the five distinct values the corpus calls tr_M(p, q_0). Recomputes the canonical Jones-Markov trace from first principles and shows the option-b full-chain value reproduces it to 5.17e-16. Rules out pin, convention C, braid word, normalisation and weight family as explanations for the other three. The operationally live outlier is TR_M_AT_Q0['p'] = 1.63315, 13.33% off and imported by live producers. No value is changed here.",
+  "data": {
+    "canonical_trM_proton": "1.8843194672549750250902947231081562634724974417719",
+    "claims": {
+      "option_b_full_chain": {
+        "value": "1.884319467254976",
+        "rel_to_canonical": "5.1738026498081750046040373900665734255900258242142e-16"
+      },
+      "axiomatic_content_block": {
+        "value": "1.88432",
+        "rel_to_canonical": "0.00000028272542646444026923087395476137521429947003608908"
+      },
+      "TR_M_AT_Q0_p": {
+        "value": "1.6331535640480814257473330892701240938276544598183",
+        "rel_to_canonical": "0.13329263300176227861418461395913194466445526204743"
+      },
+      "assembly_chain_derivation": {
+        "value": "1.0653062285923893",
+        "rel_to_canonical": "0.43464670025178998577324614655788832482156423145601"
+      },
+      "deprecated_producer_docstring": {
+        "value": "2.12258",
+        "rel_to_canonical": "0.12644381002554539828247148258705469209041052887467"
+      }
+    },
+    "tier": "structural"
+  }
+}
