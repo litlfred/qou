@@ -1,11 +1,11 @@
 ---
 # qou-nmqd
 title: q-GoL proof cites the wrong stability threshold (1/phi^2 belongs to P_77, not Phi) and asserts unitarity the Hecke eigenvalues forbid
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:07Z
-updated_at: 2026-08-29T18:08:34Z
+updated_at: 2026-08-30T03:49:15Z
 ---
 
 Found by adversarial review of the q-GoL blocks on `main` (owner asked for a
@@ -156,3 +156,80 @@ but no such identification is derived. Observation, labelled as one.
 
 All five findings in this bean are now either fixed in content (1, 3, 4, 5) or
 resolved by ruling (2, and this). Nothing left open on it.
+
+
+## REOPENED 2026-08-30 — my own fix was convention-C, and it is refuted under D
+
+The merge from `main` brought in sibling bean `qou-3j5m` (PR #6033), which
+derived the two Toffoli amplitudes in convention D. Against those, the fix
+recorded above is wrong in its conclusion, not merely under-scoped.
+
+**The merge was textually clean and that is the trap.** `qou-3j5m` touched
+`toffoli-*.md`; I touched `q-game-of-life*.md`. Disjoint file sets, no
+conflict, no signal. The contradiction is visible only by reading what my
+proof **cites** — the two edits do not collide, they disagree.
+
+**What I had written.** The proof reads the region off three operator zeros —
+`q_⋆ = 1/φ² ≈ 0.3820` for `P_77`, a phase reversal at `q_Φ ≈ 0.4656`, and
+`q = 1` — and concludes the common region is `q > 1`, with `q₀` safely inside.
+
+**All three are convention-C.** Under `z_D = q³/(q²+1)`:
+
+    P_77^D(q) = q³(q⁴+1)/(q²+1)²
+    Φ^D(q)    = −(q−1)(q+1)(q⁶+q⁴+2q²+1) / (2q(q²+1)²)
+
+`P_77^D` has **no positive root** — numerator and denominator are positive for
+every `q > 0` — so the golden-ratio threshold is a property of the excised
+frame, not of the gate. `Φ^D` carries its sign entirely in `−(q−1)`, the
+sextic having no positive real root, so `Φ^D > 0` **exactly on `0 < q < 1`**.
+
+**So the stability region is `0 < q < 1`, not `q > 1`, and the substrate is
+where the q-AND is NEGATIVE:** `Φ^D(q₀) = −0.143769370004`, reproducing main's
+`−0.1438`. Verified at 60 dps against the proton pin,
+[`computations/probes/qgol_stability_region_convention_d.py`](../computations/probes/qgol_stability_region_convention_d.py),
+5/5 assertions. The convention change does not move the arithmetic — it moves
+which **side** of `q = 1` the amplitude is positive on.
+
+Corrected at four sites, not the two that named a number: the statement's
+stability condition, the proof, the interpretation's summary, and the
+statement's reversibility item (which said invertibility "holds throughout the
+stable regime" — true, but now ambiguous, since it holds for every `q > 0` and
+does not depend on the amplitude signs at all).
+
+### 🟡 Open, and it is the author's — stated as open in the block
+
+**The decision.** The stability condition is written as *both amplitudes
+strictly positive*. Is strict positivity what a reversible cellular automaton
+actually requires, or is non-vanishing?
+
+- **What it means.** `Φ > 0` vs `Φ ≠ 0` as the condition on the q-AND
+  amplitude — the number that says how strongly the two control strands flip
+  the target.
+- **Why it matters here and nowhere else.** The two agree everywhere except in
+  sign, and the substrate is exactly where they disagree: `Φ^D(q₀) < 0`, so
+  non-vanishing **holds** at `q₀` (it holds for every `q ≠ 1`) and positivity
+  **fails**. Opposite verdicts on the same point.
+- **The corpus already uses both.** The universality argument in
+  `rem:toffoli-q-and` turns on `P_{7,6}(q) ≠ 0` — *"since `P_{7,6}(q) ≠ 0` for
+  every `q ≠ 1`, the substrate's braiding dynamics ... is computationally
+  universal away from the classical limit"*. `prop:q-game-of-life` uses
+  positivity. They are not the same condition and cannot both be the criterion.
+- **Cost of each.** Neither is a compute job; both are one paragraph. Adopting
+  non-vanishing restores the substrate to the stable regime and makes the
+  q-GoL proposition consistent with the universality claim. Keeping positivity
+  means the automaton is stable only in `0 < q < 1`, i.e. **not** at the
+  physical substrate, which is a substantive statement about the framework and
+  would want saying plainly.
+- **Blast radius.** `q-game-of-life.md`, `-proof.md`, `-interpretation.md`, and
+  whatever cites the "stable regime". No compute consumer: the region is prose,
+  not a wired number.
+- **Default if you say nothing.** Nothing breaks. The blocks now state the
+  measured D-frame facts and mark the choice open, so the corpus is honest
+  either way; it simply does not assert a stability regime.
+
+**My judgement, not a finding:** non-vanishing. It is what the universality
+argument three files away already uses, and it is the condition that makes the
+automaton's own reversibility argument — which needs invertibility, and `Toff_q`
+is invertible for every `q > 0` — line up with the stability claim. But
+positivity may encode something about the amplitude's interpretation that I do
+not have, which is why I did not just pick it.
