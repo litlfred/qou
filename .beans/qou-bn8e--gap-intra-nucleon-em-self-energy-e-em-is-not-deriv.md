@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T09:34:26Z
+updated_at: 2026-08-30T09:41:18Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -743,3 +743,51 @@ earlier figures are off by ~17× on the residual and ~18× on the ratio; I canno
 reconstruct what they were computed from, so they should be treated as
 unsourced and not reused. **The verdict they supported — that the 3.0 MeV target
 was wrong — stands, and is now stronger, not weaker.**
+
+
+---
+
+## 🛑 RETRACTING THE CORRECTION ABOVE — the figures were sourced, and the real finding is better
+
+The block immediately above says my `0.638 %` / `0.008255 MeV` / `121×` figures
+were "wrong" and "unsourced". **That is itself wrong, and it is the same error
+one level up: I measured *a* quantity and asserted it was *the* quantity.**
+
+Both figures are sourced and both are correct. They describe **two different
+constructions of Δ_pn inside this framework**:
+
+| construction | source | `Δ_pn` | residual vs CODATA | implied `A+B` |
+|---|---|---|---|---|
+| traced-volume `Δm = α·\|ΔΦ\|` | [`docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md`](../docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md) line 41 | `1.301589` | `0.008256` MeV = **0.638 %** | `0.0248` MeV |
+| production `Δm = Q_β + m_e` | `m-p-substrate-identity-50dps.witness.json` | `1.29380364` | `0.000471` MeV = **0.0364 %** | `0.00141` MeV |
+
+`computations/probes/em_selfenergy_coupling_target_probe.py:29` cites the first,
+by name and with the audit path, and its `121×` reproduces exactly. My
+"correction" measured the second and declared the first unsourced without
+grepping for it. One `git grep` would have found it — the same discipline this
+bean's own history is a record of failing.
+
+### The actual finding, which is worth more than either number
+
+**The framework carries two constructions of `Δ_pn` that disagree by `0.00779`
+MeV, and the EM target they imply differs by `17.5×`.** That is a corpus
+inconsistency, not an arithmetic slip, and it is directly load-bearing for this
+bean: *"what residual does the EM term owe?"* has no single answer until the
+corpus says which construction EM is meant to correct.
+
+Note the two are not interchangeable. `Q_β + m_e` is what
+`canonical_mass.proton_mass_mev()` / `neutron_mass_mev()` actually serve, so it
+is the **production** route. `α·|ΔΦ|` is a separate traced-volume closed form,
+whose own audit already labels its verdict **scope-limited**. Which of them the
+EM correction attaches to is unresolved here and should not be guessed.
+
+### What survives all of this, unchanged
+
+**The `A+B ≈ 3.0 MeV` reading from BMW's `+1.00 MeV` is wrong under BOTH
+constructions** — by `121×` against the traced-volume residual and by `2123×`
+against the production one. That verdict never depended on which is canonical,
+which is why it held through three passes of me getting the supporting numbers
+wrong in different directions.
+
+**Do not quote a single "the framework over-predicts by X" figure for `Δ_pn`.**
+State the construction, or the number is meaningless.
