@@ -60,7 +60,7 @@ comfortable for rational brackets on an algebraic quantity.
     a_min > 2π/9   ⟺   Im(z)/Re(z) > tan(2π/9),   z = (y₁−1)/y₁,  Re(z) > 0
 
 and `tan(2π/9)` is algebraic: with `θ = 2π/9`, `3θ = 2π/3` and `tan(2π/3) = −√3`, the
-triple-angle formula gives `τ³ − 3√3·τ² − 3τ + √3 = 0`. So **both** sides are roots of
+triple-angle formula gives `τ³ + 3√3·τ² − 3τ − √3 = 0`. So **both** sides are roots of
 cubics (one over `ℚ`, one over `ℚ(√3)`) and admit rational brackets — `nlinarith` with
 `Real.sq_sqrt 3` territory, not special-function territory.
 
@@ -192,7 +192,7 @@ The route, with each prerequisite checked against Mathlib rather than assumed:
     tan_three_mul                                           **DOES NOT EXIST**
 
 So the one genuinely missing piece is a **triple-angle step for `tan`**, derived
-from `tan_two_mul` + `tan_add`, used to pin `τ` by `τ³ − 3√3τ² − 3τ + √3 = 0`
+from `tan_two_mul` + `tan_add`, used to pin `τ` by `τ³ + 3√3τ² − 3τ − √3 = 0`
 (from `tan(3·2π/9) = tan(2π/3) = −√3`) and then bracket it rationally.
 
 That is a real tranche, not arithmetic. Naming it precisely so the next attempt
@@ -207,3 +207,35 @@ starts from the gap rather than rediscovering it.
 5. Chord from `strictConcaveOn_tetVolLine`; conclude via `VOL_5_2_eq_three_mul_lob_sum`.
 
 Steps 4 and 5 are done or one-liners. **1 and 2 are the work.**
+
+## 2026-08-30 — the cubic I recorded for `tan(2π/9)` was WRONG BY TWO SIGNS
+
+Corrected above, in two places, and in the #6141 body.
+
+    RECORDED   τ³ − 3√3τ² − 3τ + √3   evaluates to  −3.85299750422
+    CORRECT    τ³ + 3√3τ² − 3τ − √3   evaluates to  −6.9e−41   (i.e. exact)
+
+From `tan(3θ) = (3t − t³)/(1 − 3t²) = tan(2π/3) = −√3`:
+
+    3t − t³ = −√3(1 − 3t²) = −√3 + 3√3 t²   ⟹   t³ + 3√3 t² − 3t − √3 = 0
+
+I dropped the sign when moving the terms across. **I asserted this in three
+durable artifacts — this bean twice and the PR body — without ever evaluating
+it**, which is the defect class this whole arc exists to document, and the
+fourth instance of it today. A hand-derived identity is a claim; one line of
+`mpmath` is the check.
+
+### It also turns out not to be needed for the bound
+
+Pinning `τ` by its cubic is one route. The chord only needs an UPPER bound on
+`τ` beneath `Im(z)/Re(z)`, and there is rational room:
+
+    τ = tan(2π/9)  = 0.8390996312
+    21/25          = 0.84             ← any rational in between works
+    Im(z)/Re(z)    = 0.8489044917
+
+So `τ < 21/25 < Im/Re` suffices, and `21/25` has 0.6 % clearance on the left
+and 0.6 % on the right. The cubic is still the natural way to *establish*
+`τ < 21/25` in Lean (sign-check at a rational, as `FiveTwoShapeBounds` does for
+`realRoot`) — but the target is now a single rational inequality rather than a
+full bracket, which is strictly less work than the checklist above assumed.
