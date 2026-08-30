@@ -1150,3 +1150,67 @@ It also records what happens if nobody rules: nothing breaks, but the 44 stay
 pinned to a vintage the corpus has left, invisible to the manifest, each
 reporting proton while holding a muon-family value — and the next pin audit
 re-derives this same list from scratch.
+
+## 2026-08-30 — seven detectors were blind to the LIVE muon pin (fixed)
+
+Measured by feeding all four pin values to each detector: every one of them
+recognised the two SUPERSEDED muon vintages (A, A') and classified vintage C —
+**the pin actually in use** — as not-muon (`None`, `''`, or `AMBIGUOUS`).
+
+    tr_m_wenzl_bridge_mpfr.anchor_of_q0        q0_producer_pin_classifier
+    q0_anchor_payload_recovery                 q0_witness_read_dataflow_audit
+    q0_cross_layer_fallback_scan               chi_dual_path_xref_audit
+    stamp_joint_tower_witness
+
+Each was spelled with an A/A'-only prefix (`1.10997859555` or longer), written
+when the corpus had two vintages; C leaves both at the 10th digit. Widened to
+`1.109978595`, the prefix all three share — proton diverges a digit earlier at
+`1.109978582`, so it stays unambiguous. `witness_regen_classify.py` and
+`consumer_control_arm_audit.py` already used this width and never had the bug.
+
+**100 witnesses** carry vintage C and no superseded vintage, so no detector
+could see them at all — including every `-muon` chi-cache sibling,
+`canonical-tr-m-via-chi-cache-muon` and `muon-pin-stored-vs-live`.
+
+Two sites needed more than a widening:
+- `q0_anchor_payload_recovery`: `_SUPERSEDED_MUON` had to widen WITH the
+  prefix. The label names the CURRENT value, so when C became the pin, A
+  joined A' as superseded; widening the prefix alone would have proposed
+  `q0Anchor: "muon"` for A-valued payloads, which the consistency audit reads
+  as flips — the exact 74-flip defect guard 1 exists to prevent.
+- `tr_m_wenzl_bridge_mpfr` is the COMPUTE path. `anchor_of_q0 -> None` for
+  today's muon pin sent callers down the off-anchor branch, bypassing the
+  muon cache and the straddle guard; and since that guard reads the TABLE's
+  declared pin, the muon y_lambda cache could not have been regenerated at
+  the live pin at all without raising. Latent only because it is still at A.
+
+NOT touched: `tools/qou-substrate/witness.py:278` has the MIRROR bug (muon
+recognised ONLY as C, so A/A' are unlabelled). It STAMPS; changing it
+restamps corpus-wide and is not a unilateral call.
+
+## 2026-08-30 — did the convention-C sweeps flip witnesses proton -> A?
+
+Raised by the `option_b_h3_h4_bratteli` review, which found `.work/convention-c-
+regen*.jsonl` logging that producer's witness moving
+`lambda_A_at_q0  2.53277965639939149205… -> 2.53277966367467598266…`
+under `kind: "q0_refresh"`. Confirmed independently: evaluating
+`lambda_A(q) = (3q^2+4+3q^-2)/4` at 60 dps gives the "before" as **exactly**
+lambda_A(proton) to all 50 digits and the "after" as **exactly** lambda_A(pin A).
+So that witness held proton values until a sweep re-ran the producer against
+its hardcoded pin-A literal and overwrote them, logged as a benign refresh.
+
+Scope, measured across all eight regen logs: 2890 `q0_refresh` field deltas
+over **44 witnesses / 43 producers**, median relative move **1.154e-08** — the
+11.54 ppb mu-p tension. 25 of those witnesses still hold the sweep's output.
+
+**The class does NOT generalise.** Cross-tabbing sweep-output witnesses against
+producers holding a pin-A literal, evaluated at `9faabdc38` (before this
+session's migrations): **exactly 1 — bratteli itself**, now migrated. Today the
+count is 0. The mechanism is benign in general because the sweep re-ran each
+producer and each landed on whatever pin its OWN source resolved to; only a
+producer with a hardcoded pin-A literal could be moved away from proton.
+
+BOUND ON THIS RESULT: it covers only the 44 witnesses these sweeps logged with
+`q0_refresh` deltas. Most of the 189-producer A-literal population's witnesses
+do not appear in these logs, so this bounds the SWEEP-INDUCED variant, not the
+campaign.
