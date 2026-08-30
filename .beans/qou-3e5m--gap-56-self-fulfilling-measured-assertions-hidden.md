@@ -1,11 +1,11 @@
 ---
 # qou-3e5m
 title: 'GAP: 56 self-fulfilling MEASURED assertions, hidden by a positional-only detector'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T03:40:45Z
+updated_at: 2026-08-30T04:18:30Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -67,3 +67,51 @@ new row for the detector-blindness taxonomy
 (`docs/audits/2026-08-15-detector-blindness-taxonomy.md`): calling-form
 blindness, where the detector is correct on the shape it reads and simply does
 not read the shape the corpus uses.
+
+
+## First one fixed: habiro_tr_M_proton_matches_direct (56 -> 55)
+
+`computations/habiro/habiro_exact_qbeta.py:197`. `expected` repeated the
+`computed` expression verbatim, so the ratio was compared to itself. Now
+`expected="1"` — the target the NAME states — and it passes:
+
+    computed 1.000000000000001672503680645958090545156   expected 1   tol 0.01
+
+The guard `float(tr_M_p_direct) != 0` is also now exact (`tr_M_p_direct != 0`):
+an mpf underflowing a double would have read as zero and silently substituted
+0 for the ratio.
+
+### An observation the fix exposes, NOT a claim about its cause
+
+The two routes agree to **1.7e-15** against a tolerance of **1e-2** — the check
+is ~13 orders of magnitude looser than the agreement it certifies. A tolerance
+that loose is only marginally better than the self-comparison it replaced: the
+routes could diverge by 1% and it would still pass.
+
+I did NOT tighten it. Picking the right tolerance is a claim about what the two
+routes are supposed to guarantee, and I could not establish that. If the Habiro
+series genuinely TERMINATES at M=8 (as the producer's own `method` field says),
+two exact routes should agree at compute precision, ~1e-40, not 1e-15. Either
+M=8 is a truncation rather than a termination, or something else limits one
+route. Worth someone's attention; not settled here.
+
+### Correcting a hypothesis of mine mid-investigation
+
+I first proposed the 1.7e-15 was float64 ingress via the upstream, on the
+strength of sibling witnesses — `habiro-coefficients-boron-12` and
+`-beryllium-9` DO store `tr_M_at_q0` as 16-digit JSON floats. **Wrong for this
+producer.** The upstream it actually reads,
+`habiro/habiro-coefficients-atomic.witness.json`, stores the proton value as a
+**29-significant-digit STRING**. So the disagreement is real arithmetic, not a
+serialization artifact, which makes it more interesting rather than less.
+
+Generalising from sibling witnesses of other isotopes was the error. Read the
+upstream the producer names.
+
+### Work-order note for the remaining 55
+
+This one was unusually clean: the assertion's NAME stated the target ("matches
+direct" -> ratio should be 1), so the intended second value was recoverable
+from the name alone. Expect that to be the exception. Where the name does not
+state a target, the honest fallback is demotion to `add_data`, not invention of
+an expected value.
