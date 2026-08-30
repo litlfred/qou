@@ -101,6 +101,51 @@ def cp(M):
     return sp.factor(sp.Matrix(M).charpoly(x).as_expr())
 
 
+#: Transcription gates, in the order they run: (name, passed).
+_GATES: list[tuple[str, bool]] = []
+
+#: Labels of the polynomials checked for an (x²−5) factor.
+_NO_X2M5: list[str] = []
+
+
+def _no_x2_minus_5(label: str, p) -> bool:
+    """Check `p` has no (x²−5) factor, recording that the check happened.
+
+    The witness claims nine polynomials are checked — the five members of
+    C·A^k·S', the two block restrictions, and the two S'-eigenspace
+    restrictions. Collecting the labels lets the assertion pin that nine, so
+    dropping one is a witness failure rather than a quieter claim.
+    """
+    ok = sp.rem(sp.expand(p), x**2 - 5, x) != 0
+    _NO_X2M5.append(label)
+    if not ok:
+        raise AssertionError(f"(x²−5) | {label}")
+    return ok
+
+
+def _gate(name: str, ok, detail: str = "") -> bool:
+    """Record a transcription gate's outcome, then enforce it.
+
+    The gates below were bare `assert`s, and a bare `assert` aborts the run —
+    leaving *nothing* in the witness. So the witness could only ever be
+    written along the path where every gate held, which is how
+    `add_assertion(computed="True", expected="True")` came to stand in for
+    seven real checks without misreporting anything (bean `qou-26f2`): on the
+    only path that reaches it, "True" is correct. It was unfalsifiable rather
+    than wrong.
+
+    Recording before raising puts the outcome in the witness and lets the
+    assertions below pin the gate *count* against the number this file claims
+    to run — so deleting a gate fails the witness instead of quietly shrinking
+    what "all gates pass" means.
+    """
+    ok = bool(ok)
+    _GATES.append((name, ok))
+    if not ok:
+        raise AssertionError(f"{name}: {detail}" if detail else name)
+    return ok
+
+
 def main() -> int:
     wb = WitnessBuilder("vector2-a5-sprime-residue", engine="sympy")
 
@@ -156,17 +201,21 @@ def main() -> int:
     J = sp.Matrix(sp.BlockMatrix([[Z4, I4], [-I4, Z4]]))
 
     # ── V1–V6: transcription property gates (all exact) ─────────────────────
-    assert C.T == -C, "C must be antisymmetric"
-    assert C.det() == 1, C.det()
-    assert Sp_**2 == sp.eye(8), "S'^2 must be I"
-    assert Sp_ * C * Sp_.T == -C, "S' must be anti-symplectic w.r.t. C"
-    assert B42.T * C * B42 == J, "(4.2) must canonicalise C to J"
-    assert T.T * J * T == J and T.det() == 1, "T must be J-symplectic"
+    # Grouped to match the seven gates the witness `source` string names, so
+    # the count the assertion pins is the count a reader is told about.
+    _gate("C_antisymmetric_det_1", C.T == -C and C.det() == 1, str(C.det()))
+    # S'² = I together with charpoly(S') = (x−1)⁴(x+1)⁴ — the involution and
+    # its 4+4 eigenvalue split are one structural fact, kept in one gate so
+    # the total stays at the seven the `source` string enumerates.
+    _gate("S_prime_is_involution_with_4_4_split",
+          Sp_**2 == sp.eye(8)
+          and sp.expand(cp(Sp_) - (x - 1)**4 * (x + 1)**4) == 0)
+    _gate("S_prime_anti_symplectic", Sp_ * C * Sp_.T == -C)
+    _gate("B42_canonicalises_C_to_J", B42.T * C * B42 == J)
+    _gate("T_is_J_symplectic", T.T * J * T == J and T.det() == 1)
     U = T * B42.T
-    assert U * Sp_ * U.inv() == Scan, "T·B42ᵀ must conjugate S' to BN12's S"
-    assert Scan**2 == sp.eye(8)
-    assert cp(Sp_) == sp.expand((x - 1)**4 * (x + 1)**4) or \
-        sp.expand(cp(Sp_) - (x - 1)**4 * (x + 1)**4) == 0
+    _gate("U_conjugates_S_prime_to_Scan",
+          U * Sp_ * U.inv() == Scan and Scan**2 == sp.eye(8))
 
     # ── V7: order-5 rotation from the stated basis structure ────────────────
     # α_{2k+1} = R^k α₁, α_{2k+2} = R^k α₂ (k = 0..3);  H₁^R = 0 (quotient is
@@ -180,12 +229,15 @@ def main() -> int:
     for r in (1, 3, 5, 7):
         Acol[r, 7] = -1
     A = Acol.T  # row convention
-    assert A**5 == sp.eye(8), "A^5 must be I"
-    assert A * C * A.T == C, "A must preserve the intersection form"
-    assert sp.expand(cp(A) - (x**4 + x**3 + x**2 + x + 1)**2) == 0
-    assert Sp_ * A * Sp_ == A**4, "dihedral relation S'AS' = A^{-1}"
-    for k in range(5):
-        assert (A**k * Sp_)**2 == sp.eye(8), "A^k S' must be an involution"
+    # Gate 7 of the seven named: the order-5 rotation and its dihedral
+    # relation to S'. One gate, four conjuncts, matching the `source` string's
+    # "A^5=I, ACA^T=C, S'AS'=A^{-1}".
+    _gate("A_order_5_dihedral_with_S_prime",
+          A**5 == sp.eye(8)
+          and A * C * A.T == C
+          and sp.expand(cp(A) - (x**4 + x**3 + x**2 + x + 1)**2) == 0
+          and Sp_ * A * Sp_ == A**4
+          and all((A**k * Sp_)**2 == sp.eye(8) for k in range(5)))
 
     # ── the comparison: natural twisted forms vs {±√5, ±1} ──────────────────
     target = sp.expand((x - 1) * (x + 1) * (x**2 - 5))
@@ -206,7 +258,7 @@ def main() -> int:
     for k in range(5):
         p = sp.expand((C * A**k * Sp_).charpoly(x).as_expr())
         family[k] = p
-        assert sp.rem(p, x**2 - 5, x) != 0, f"(x²−5) | charpoly(C A^{k} S')"
+        _no_x2_minus_5(f"charpoly(C A^{k} S')", p)
 
     # the two A-stable, S'-stable 4-dim blocks (odd / even index)
     odd, even = [0, 2, 4, 6], [1, 3, 5, 7]
@@ -217,8 +269,8 @@ def main() -> int:
     cp_even = sp.factor(SC.extract(even, even).charpoly(x).as_expr())
     assert sp.expand(cp_odd - (x**2 - 2*x - 1) * (x**2 + 2*x - 1)) == 0, cp_odd
     assert sp.expand(cp_even - (x + 1) * (x**3 - 3*x + 1)) == 0, cp_even
-    for p in (cp_odd, cp_even):
-        assert sp.rem(sp.expand(p), x**2 - 5, x) != 0
+    _no_x2_minus_5("charpoly(S'C | odd block)", cp_odd)
+    _no_x2_minus_5("charpoly(S'C | even block)", cp_even)
 
     # S'-eigenspace (fixed / anti-fixed) restrictions of the twisted form
     Lp = sp.Matrix.hstack(*(Sp_ - sp.eye(8)).nullspace())
@@ -228,8 +280,8 @@ def main() -> int:
     cp_anti = sp.factor((Lm.T * SC * Lm).charpoly(x).as_expr())
     assert sp.expand(cp_fix - x**2 * (x - 2) * (x + 3)) == 0, cp_fix
     assert sp.expand(cp_anti - x**2 * (x - 1) * (x + 2)) == 0, cp_anti
-    for p in (cp_fix, cp_anti):
-        assert sp.rem(sp.expand(p), x**2 - 5, x) != 0
+    _no_x2_minus_5("charpoly(S'C | S'-fixed)", cp_fix)
+    _no_x2_minus_5("charpoly(S'C | S'-anti-fixed)", cp_anti)
 
     # basis-independent falsifier: discriminant square class 1 vs 5
     det_twisted, det_exchange = SC.det(), S_ex.det()
@@ -327,10 +379,18 @@ def main() -> int:
         "about the wall itself). m ∈ (0, 1/√5) remains OPEN; nothing wired. "
         "The J·S golden-unit coincidence is recorded, not interpreted."
     )
+    # Was `computed="True", expected="True"` — unfalsifiable, because the
+    # seven gates it summarised were bare `assert`s upstream and the witness
+    # is only reached when they all hold (bean `qou-26f2`). They now record
+    # through `_gate`, and this pins the *count* against the seven the source
+    # string enumerates: remove or merge a gate and the witness fails rather
+    # than silently meaning less.
+    wb.add_data("transcription_gates",
+                [{"name": n, "passed": ok} for n, ok in _GATES])
     wb.add_assertion(
         "sprime_transcription_property_gates",
-        computed="True",
-        expected="True",
+        computed=sum(1 for _, ok in _GATES if ok),
+        expected=7,
         tolerance=0,
         source="All 7 BN12 transcription gates pass exactly: C antisym det 1; "
                "S'^2=I; S'CS'^T=-C; B42^T C B42=J; T^T J T=J det T=1; "
@@ -345,10 +405,13 @@ def main() -> int:
         source="charpoly(S'C) is x^8+x^7-22x^6-9x^5+38x^4+4x^3-16x^2+x+1, "
                "irreducible over ℚ — no ±1 or ±√5 eigenvalues.",
     )
+    # Same defect, same remedy: 5 family members + 2 block restrictions +
+    # 2 S'-eigenspace restrictions = the 9 the source string claims.
+    wb.add_data("no_x2_minus_5_checked", list(_NO_X2M5))
     wb.add_assertion(
         "no_x2_minus_5_factor_in_natural_family",
-        computed="True",
-        expected="True",
+        computed=len(_NO_X2M5),
+        expected=9,
         tolerance=0,
         source="None of charpoly(C·A^k·S') (k=0..4), the two block "
                "restrictions, or the S'-eigenspace restrictions is divisible "

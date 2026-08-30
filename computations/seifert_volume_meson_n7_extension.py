@@ -541,21 +541,40 @@ def main():
     })
 
     # Assertions
-    wb.add_assertion("torus_knots_not_hyperbolic",
-                     computed=1, expected=1, tolerance=0,
-                     source="Structural: T(2,k) are Seifert-fibered, Vol=0")
+    # `torus_knots_not_hyperbolic` was `computed=1, expected=1` — a premise
+    # this script states and uses, not a result it computes, so no value of
+    # anything could have made it fail (bean `qou-26f2`). Recorded as the
+    # standing assumption it is.
+    wb.add_data("structural_premise", {
+        "claim": "torus knots T(2,k) are Seifert-fibered, so Vol = 0",
+        "role": "premise — the 'Seifert volume' in this file is the effective "
+                "character ratio, NOT a hyperbolic volume",
+        "computed_here": False,
+    })
 
     wb.add_assertion("kaon_reference_under_500ppm",
                      computed=kaon_err_ppm, expected=0, tolerance=500,
                      source="Kaon base formula reproduces m_K/m_pi to 290 ppm")
 
-    wb.add_assertion("best_eta_computed",
-                     computed=1, expected=1, tolerance=0,
-                     source=f"Best eta formula: {best_eta_label}")
+    # Both were `computed=1, expected=1` — they announced that a best had been
+    # picked without checking the pick was right (bean `qou-26f2`). Selection
+    # is `candidates[0]` after `.sort(key=lambda x: x[2])` above; that pairing
+    # is what these now verify, so decoupling the sort from the index — or
+    # sorting on the wrong tuple slot — fails here instead of quietly
+    # reporting a non-minimal formula as "best".
+    wb.add_assertion("best_eta_is_minimum_error_candidate",
+                     computed=best_eta_err,
+                     expected=min(err for _, _, err in eta_candidates),
+                     tolerance=0,
+                     source=f"Best eta formula: {best_eta_label} "
+                            f"({len(eta_candidates)} candidates)")
 
-    wb.add_assertion("best_phi_computed",
-                     computed=1, expected=1, tolerance=0,
-                     source=f"Best phi formula: {best_phi_label}")
+    wb.add_assertion("best_phi_is_minimum_error_candidate",
+                     computed=best_phi_err,
+                     expected=min(err for _, _, err in phi_candidates),
+                     tolerance=0,
+                     source=f"Best phi formula: {best_phi_label} "
+                            f"({len(phi_candidates)} candidates)")
 
     witness_path = wb.save()
     print(f"  Witness: {witness_path}")
