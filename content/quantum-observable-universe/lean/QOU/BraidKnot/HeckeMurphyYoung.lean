@@ -185,4 +185,39 @@ theorem murphyIndex_card_eq_finrank :
   rw [QOU.Hecke.TwBasis.finrank_eq_factorial K q n]
   exact QOU.Mathlib.rskBurnsideHolds (n + 1)
 
+/-! ## The Murphy index as a type — making (C1) a `Basis` statement
+
+`murphyIndex_card_eq_finrank` above compares a *sum* to a dimension. To state (C1) as what it
+actually is — `Module.Basis I K (H_n q)` — the index must be a **type**, and its cardinality
+must be the same `n!`.
+
+`MurphyIndex n` is that type: a partition together with an **ordered pair** of standard tableaux
+of its shape, which is exactly the `(s,t)` that `murphyM` consumes. Its cardinality is the RSK
+sum, so (C1) can now be written down as a basis claim over a type of known size.
+-/
+
+/-- **The Murphy index**: a partition of `n`, with an ordered pair of standard tableaux of that
+shape. Exactly the data `murphyM` takes. -/
+def MurphyIndex (n : ℕ) : Type :=
+  Σ p : Nat.Partition n,
+    QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape p) ×
+      QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape p)
+
+instance (n : ℕ) : Finite (MurphyIndex n) := by
+  unfold MurphyIndex; infer_instance
+
+/-- **`#MurphyIndex n = n!`** — the index type has exactly the dimension of `H_{n-1}(q)`.
+
+`Nat.card` of a sigma of pairs is `∑_p (#SYT p)²`, which is the RSK/Burnside identity. So the
+Murphy family is indexed by a type of exactly the right size, and (C1) — `Module.Basis
+(MurphyIndex (n+1)) K (H_n q)` — is a well-posed claim whose two halves each imply the other. -/
+theorem murphyIndex_card (n : ℕ) : Nat.card (MurphyIndex n) = n.factorial := by
+  have h : Nat.card (MurphyIndex n)
+      = ∑ p : Nat.Partition n, (QOU.Mathlib.dimSYT p) ^ 2 := by
+    unfold MurphyIndex QOU.Mathlib.dimSYT QOU.Mathlib.numStandardYoungTableaux
+    rw [Nat.card_sigma]
+    exact Finset.sum_congr rfl fun p _ => by rw [Nat.card_prod, sq]
+  rw [h]
+  exact QOU.Mathlib.rskBurnsideHolds n
+
 end QOU.BraidKnot.HeckeMurphyYoung
