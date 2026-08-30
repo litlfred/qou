@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T09:51:42Z
+updated_at: 2026-08-30T15:16:54Z
 ---
 
 ## What is ESTABLISHED (two independent proofs)
@@ -191,3 +191,32 @@ finding 2 ("the pairing is bar-even") is falsified at mu=0 (BAR-ODD, 18.38 vs
 6.86); finding 3's test goes degenerate because the correct Gram is singular.
 Not a positive result either -- that probe is still convention C and inverts a
 singular Gram in float64. Re-run belongs to qou-cds1.
+
+
+## 2026-08-30 — the fix has a DOWNSTREAM population this PR has not re-run
+
+Surfaced by the import-cone audit, not by the z³ work itself.
+
+`computations/substrate/hecke_core_symbolic.py` carries the corrected constant:
+
+    -TR_M_SYM = [ONE, z, z, z**2, z**2, z**3]
+    +TR_M_SYM = [ONE, z, z, z**2, z**2, h * z**2 + z]        (6b149f4379)
+
+That is a **value change in a symbolic constant**, not a comment. Measured:
+**11 direct importers**, and `witness_import_cone_staleness_audit` flags
+**121 committed witnesses** whose producer cone reaches it.
+
+**None of those 121 has been re-run.** The z³ tranche fixed the 12 source sites
+and verified them; it did not follow the witnesses computed against the old
+constant. They are import-cone stale — the class SELF and UPSTREAM cannot see,
+so nothing else will report them either.
+
+**Do not bulk-refresh.** AGENTS.md caps witness refreshes per idle pass, several
+of the 11 importers are long-compute, and `qou-a2q5` measured that ~77 % of a
+cone-stale population can be false positives resolved by reading one module
+diff. Here the diff is read and the constant genuinely moved, so the false-
+positive argument does NOT apply — but the *cost* argument still does. This
+needs a scoped pass with the long-compute members identified first.
+
+Recorded rather than done, and stated on PR #6144 so it is not silently
+inherited by whoever merges it.
