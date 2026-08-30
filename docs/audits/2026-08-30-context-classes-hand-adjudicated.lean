@@ -43,6 +43,8 @@ import QOU.Archimedean.MassTowerOpenProblemsClasses
 import QOU.BraidKnot.spectral_sequence_h3_explicit
 import QOU.BraidKnot.terms_2_6_higher_operations
 import QOU.BraidKnot.sorting_color_energy
+import QOU.BraidKnot.UnstableAtom.decay_channel
+import QOU.BraidKnot.schur_weyl_mass_decomposition
 
 /-! ## Inhabited with no hypotheses
 
@@ -142,3 +144,38 @@ example : QOU.BraidKnot.SortingColorEnergyContext ℚ where
   sym_eigenvalue := ((1 : ℚˣ) : ℚ)
   wedge_eigenvalue := -(((1 : ℚˣ)⁻¹ : ℚˣ) : ℚ)
   claim_eigenvalues := ⟨rfl, rfl⟩
+
+/-- Uniqueness of the decay channel "off the boundary variety" is vacuous when
+the boundary predicate is everything: `on_boundary := fun _ => True` discharges
+`claim_ii` by `absurd`, and the phase-crossing existential is witnessed at the
+degenerate interval `[0,0]`.  Nothing ties `on_boundary` to the energy `E_λ`. -/
+example : QOU.BraidKnot.UnstableAtom.DecayChannelContext where
+  Z := 1
+  N := 0
+  q := 0
+  PartitionIdx := Unit
+  lam_star := ()
+  E_lambda := 1
+  claim_i_well_defined := by norm_num
+  on_boundary := fun _ => True
+  lam_alt := ()
+  claim_ii_unique_off_boundary := by intro h; exact absurd trivial h
+  q_1 := 0
+  q_2 := 0
+  claim_iii_phase_boundary_crossing := by
+    intro _; exact ⟨0, le_refl 0, le_refl 0, trivial⟩
+
+/-- The Schur–Weyl decomposition `tr_M(𝒜) = Σ_λ s_λ χ_λ / H_q(λ)` holds over
+the EMPTY partition set: `partitions` is a context field and no claim requires
+it to be the partitions of `3A`, so `Z` and `N` are inert.  The sum identity is
+`0 = 0`. -/
+example : QOU.BraidKnot.SchurWeylMassContext ℚ 1 0 where
+  q := 0
+  Partition := Unit
+  partitions := ∅
+  schurFunction := fun _ => 0
+  qHookProduct := fun _ => 1
+  chi_atomic := fun _ => 0
+  trM_atomic := 0
+  qHookProduct_ne_zero := by intro _; norm_num
+  claim_schur_weyl_sum := by simp
