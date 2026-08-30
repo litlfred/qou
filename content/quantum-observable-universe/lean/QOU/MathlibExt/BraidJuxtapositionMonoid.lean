@@ -46,7 +46,9 @@ it, to its abelianisation (the writhe), to a Hecke-type quotient, and to the wor
   monoid homomorphism `F m × F n →* F (m + n)`, and each block includes as a submonoid.
 * `juxLeft_commute_juxRight` — **the two blocks do not interact**: their images commute inside
   `F (m + n)`. This is the algebraic content of far commutation `σᵢσⱼ = σⱼσᵢ` for distant `i, j`,
-  and it is *derived* from the interchange law, not assumed.
+  and it is *derived* from the interchange law, not assumed. It is checked against a model whose
+  ambient monoid is **not** commutative (see Non-vacuity below), so it is not true merely because
+  every witness happens to commute.
 * `const_interchange_iff_commutative` — the interchange law has real content: on the constant
   family it holds **iff** the fibre monoid is commutative. So `JuxtaposableMonoid` is a genuine
   restriction, not a bookkeeping tautology.
@@ -71,7 +73,7 @@ where a cast is needed and where it is not.
 
 ## Non-vacuity
 
-Two concrete models, both verified:
+Three concrete models, all verified:
 
 * `Const M` (constant family, `jux = (*)`) for a commutative monoid `M`. At `M = Multiplicative ℤ`
   this is the **writhe model** — the exponent sum of a juxtaposed braid is the sum of the exponent
@@ -79,12 +81,24 @@ Two concrete models, both verified:
   is not degenerate.
 * `WordFamily α` (words of length `n`, `jux =` concatenation) — a genuinely *dependent* family, so
   it exercises the cast the constant model does not. `wordEquiv` identifies its juxtaposition
-  monoid with `FreeMonoid α`, on the nose.
+  monoid with `FreeMonoid α`, on the nose. It witnesses `Juxtaposable` only: `WordFamily α n`
+  carries no monoid structure of its own, so `JuxtaposableMonoid` cannot even be *stated* for it.
+* `TupleFamily M` (tuples `Fin n → M`, `jux =` concatenation, pointwise multiplication) — dependent
+  **and** with noncommutative fibres whenever `M` is noncommutative, while still satisfying the
+  interchange law for *any* monoid `M`.
 
-`WordFamily` witnesses `Juxtaposable` only, not `JuxtaposableMonoid`, and that is not a gap in the
-development: `WordFamily α n` carries no monoid structure of its own, and by
-`const_interchange_iff_commutative` a free (noncommutative) multiplication could not satisfy the
-interchange law in any case.
+The third model exists because the first two leave `juxLeft_commute_juxRight` weaker than it looks.
+`Const M` is a `JuxtaposableMonoid` only for **commutative** `M`, so in that model every pair of
+elements of `F (m + n)` commutes and the theorem asserts nothing specific about the two blocks. With
+`TupleFamily` the ambient monoid genuinely fails to commute — `tuple_free_noncommutative` exhibits a
+non-commuting pair over `FreeMonoid Bool` — while `tuple_free_blocks_commute` still holds. That pair
+of facts is what makes the commutation theorem content-bearing rather than an artefact of a
+commutative witness.
+
+It also shows that commutativity of the *fibre* is not what the interchange law demands in general:
+`const_interchange_iff_commutative` forces it only for the constant family, where `jux` **is** the
+multiplication, and does not generalise to models whose `jux` moves the two arguments onto disjoint
+coordinates.
 
 ## Scope — read this before citing it
 
@@ -401,5 +415,84 @@ is `FreeMonoid α`, on the nose. In particular the juxtaposition monoid is in ge
 noncommutative and infinite, so `Juxtaposable` is very far from vacuous. -/
 noncomputable def wordEquiv (α : Type u) : (Σ n, WordFamily α n) ≃* FreeMonoid α :=
   MulEquiv.ofBijective (wordTotal α) ⟨wordTotal_injective α, wordTotal_surjective α⟩
+
+/-! ## Non-vacuity, model 3: tuples — a dependent family with *noncommutative* fibres
+
+The two models above leave `juxLeft_commute_juxRight` weaker than it looks. `Const M` is the only
+`JuxtaposableMonoid` witness so far, and there `M` is commutative, so *every* pair in `F (m + n)`
+commutes and the theorem says nothing specific about the two blocks; `WordFamily` cannot help,
+since its fibres carry no multiplication at all. This section removes that weakness with a model
+that is dependent, satisfies the interchange law over an arbitrary monoid, and has genuinely
+noncommutative fibres.
+-/
+
+/-- Tuples of length `n` in a monoid `M`, multiplied pointwise (`Pi.monoid`). Like `WordFamily`
+this really depends on the index; unlike `Const M` its fibres need not be commutative. -/
+abbrev TupleFamily (M : Type u) (n : ℕ) : Type u := Fin n → M
+
+/-- Transport for the tuple family: an index equality together with a value equality modulo the
+induced `Fin.cast` assemble into an equality in `Σ n, Fin n → M`, with no `HEq`. -/
+private theorem sigma_fun_eq {M : Type u} {i j : ℕ} (h : i = j) {a : Fin i → M} {b : Fin j → M}
+    (hab : a = b ∘ Fin.cast h) : (⟨i, a⟩ : Σ n, TupleFamily M n) = ⟨j, b⟩ := by
+  subst h
+  exact congrArg (Sigma.mk i) hab
+
+/-- **Concatenation of tuples is a juxtaposition.** The three laws are `Fin.append_assoc`,
+`Fin.elim0_append` and `Fin.append_elim0`; only the first two need the index transport, since
+`n + 0` reduces. -/
+instance instJuxtaposableTuple (M : Type u) : Juxtaposable (TupleFamily M) where
+  jux a b := Fin.append a b
+  empty := Fin.elim0
+  jux_assoc a b c := sigma_fun_eq (Nat.add_assoc _ _ _) (Fin.append_assoc a b c)
+  empty_jux a := sigma_fun_eq (Nat.zero_add _) (Fin.elim0_append a)
+  jux_empty a := Fin.append_elim0 a
+
+@[simp]
+theorem tuple_jux_left (M : Type u) {m n : ℕ} (a : TupleFamily M m) (b : TupleFamily M n)
+    (i : Fin m) : jux a b (Fin.castAdd n i) = a i := Fin.append_left a b i
+
+@[simp]
+theorem tuple_jux_right (M : Type u) {m n : ℕ} (a : TupleFamily M m) (b : TupleFamily M n)
+    (i : Fin n) : jux a b (Fin.natAdd m i) = b i := Fin.append_right a b i
+
+/-- **The tuple model satisfies the interchange law over an arbitrary monoid** — commutativity of
+the fibre is *not* required, because the two blocks occupy disjoint coordinates. Contrast
+`instJuxtaposableMonoidConst`, where `jux` *is* the multiplication and therefore, by
+`const_interchange_iff_commutative`, the fibre is forced to commute. -/
+instance instJuxtaposableMonoidTuple (M : Type u) [Monoid M] :
+    JuxtaposableMonoid (TupleFamily M) where
+  jux_one := by
+    intro m n
+    funext i
+    refine Fin.addCases (fun l => ?_) (fun r => ?_) i <;> simp
+  jux_mul a a' b b' := by
+    funext i
+    refine Fin.addCases (fun l => ?_) (fun r => ?_) i <;> simp
+
+/-- **The tuple fibres are noncommutative when `M` is.** So in this model the ambient monoid in
+which `juxLeft_commute_juxRight` asserts a commutation is itself not commutative. -/
+theorem tuple_noncommutative {M : Type u} [Monoid M] {x y : M} (hxy : x * y ≠ y * x) {N : ℕ}
+    (hN : N ≠ 0) : ∃ u v : TupleFamily M N, u * v ≠ v * u :=
+  ⟨fun _ => x, fun _ => y, fun hc => hxy (congrFun hc ⟨0, Nat.pos_of_ne_zero hN⟩)⟩
+
+/-- A concrete noncommutative monoid, so that `tuple_noncommutative` has an actual witness and is
+not left conditional on an unmet hypothesis. -/
+theorem freeMonoidBool_noncommutative :
+    FreeMonoid.of true * FreeMonoid.of false ≠ FreeMonoid.of false * FreeMonoid.of true := by
+  intro h
+  simpa using congrArg FreeMonoid.toList h
+
+/-- **The commutation theorem is not vacuously true.** Over `FreeMonoid Bool` the ambient tuple
+monoid on `1 + 1` strands genuinely fails to be commutative … -/
+theorem tuple_free_noncommutative :
+    ∃ u v : TupleFamily (FreeMonoid Bool) (1 + 1), u * v ≠ v * u :=
+  tuple_noncommutative freeMonoidBool_noncommutative (by norm_num)
+
+/-- … and yet the images of the two block inclusions still commute there. Together with
+`tuple_free_noncommutative` this is the precise sense in which `juxLeft_commute_juxRight` is a
+statement about the *blocks*, not an artefact of a commutative witness. -/
+theorem tuple_free_blocks_commute (a b : TupleFamily (FreeMonoid Bool) 1) :
+    Commute (juxLeft 1 1 a) (juxRight 1 1 b) :=
+  juxLeft_commute_juxRight a b
 
 end QOU.MathlibExt.BraidJuxtaposition

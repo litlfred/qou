@@ -76,6 +76,22 @@ What *is* proved is the **algebraic descent**: given the moves as stated, an inv
 well defined on the quotient. That is the half a link invariant needs from this side; the other half
 — that the quotient is the set of links — is the cited topological input.
 
+Four smaller things are also **not** established here, and each is load-bearing if the file is cited:
+
+* `BraidTower` is **data**. Nothing proves that any `B n` *is* the Artin braid group, that `incl` is
+  the strand-adding inclusion, or that `gen n` is a braid generator. The moves are defined relative
+  to whatever tower is supplied, and the only tower constructed below is the abelianisation.
+* **No `BraidTower` on the Artin groups exists in this corpus.** The stabilisation homomorphism
+  `BraidGroup n →* BraidGroup (n+1)` it would need is not defined anywhere, so `Framing` is not
+  instantiable there either — see the `Framing` docstring.
+* **No Markov trace is constructed here**, and nothing claims the Iwahori–Hecke tower carries one;
+  that is the Jones/Ocneanu theorem, cited and not formalised. `IsScaledMarkov` is a *hypothesis*
+  about a given `f`.
+* The **solvability** of `c·d·a = 1` and `d·b = c` is a hypothesis of
+  `IsScaledMarkov.normalise_isMarkovInvariant`, not a theorem. Eliminating `d` gives `c² = b·a⁻¹`,
+  which over a general `CommRing` need not have a root — the classical square root in Jones'
+  normalising factor is exactly this obstruction.
+
 Ground types: a generic family `{B : ℕ → Type*} [∀ n, Group (B n)]` and, for the normalised descent,
 a generic `[CommRing K]` with the scalars taken in `Kˣ` (§7c — this is pure algebra; no ordering,
 no `Real.sqrt`, no archimedean content anywhere).
@@ -90,6 +106,13 @@ elements at *different* levels) this pins the relation strictly between the iden
 relation, so neither the relation nor the descent theorem is vacuous.
 `writheScaled_isScaledMarkov` does the same for the scaled/normalised interface, with non-trivial
 scalars `a = A * D`, `b = A⁻¹ * D`.
+
+**One limit of the witness, stated because it is easy to overread.** Running the normalisation chain
+end to end on this tower yields the *constant* functional `1` — `writheScaled_normalise_eq_one`,
+proved, not conceded. So `writheScaled_normalise_isMarkovInvariant` shows the hypotheses of
+`IsScaledMarkov.normalise_isMarkovInvariant` are satisfiable; it does **not** exhibit a non-trivial
+normalised invariant, and no file below constructs one. The non-constant invariant here is
+`writheParity`, which is unnormalised.
 -/
 
 namespace QOU.MathlibExt.MarkovMoves
@@ -241,8 +264,15 @@ classical repair multiplies by a power of the writhe and a power of the level. T
 out that repair abstractly. -/
 
 /-- **A framing** on a tower: an exponent-sum (writhe) homomorphism to `Multiplicative ℤ`,
-compatible with stabilisation and sending the new generator to `1`. For the Artin tower this is the
-homomorphism `QOU.MathlibExt.Braid.exponentSum`. -/
+compatible with stabilisation and sending the new generator to `1`.
+
+**A framing is supplied as data; none is constructed here for the Artin groups.** The `w` field is
+the writhe, which for the Artin presentation is `QOU.MathlibExt.Braid.exponentSum` (a different
+file, not importable here under the Mathlib-only constraint). The other two fields are *not*
+available for that tower even in principle at present: `w_incl` and `w_gen` are compatibilities
+with `BraidTower.incl` and `BraidTower.gen`, and the corpus carries **no** stabilisation
+homomorphism `BraidGroup n →* BraidGroup (n+1)` and hence no `BraidTower` on the Artin groups at
+all. The only tower and framing exhibited in this file are the abelianised ones below. -/
 structure Framing (T : BraidTower B) where
   /-- The writhe homomorphism at each level. -/
   w : ∀ n, B n →* Multiplicative ℤ
@@ -377,7 +407,13 @@ theorem writheTower_markovEquiv_cross_level :
 
 /-- **A genuine Markov invariant on the writhe tower**: writhe plus level, read mod 2. Positive
 stabilisation raises both by one (sum unchanged mod 2); negative stabilisation lowers the writhe and
-raises the level (sum unchanged mod 2); move I is invisible because the group is abelian. -/
+raises the level (sum unchanged mod 2); move I is invisible because the group is abelian.
+
+**Not a new result — it is used here only as a non-vacuity witness.** The corpus already carries
+this parity on a concrete `(writhe, level)` pair model, and carries it further than this file does:
+`QOU.StandardModel.LevelParity.markovPair_parity` proves the same invariance and
+`markovPair_of_even` proves the parity is *complete* for that model (any two pairs of equal parity
+are Markov-related). No completeness claim is made here. -/
 def writheParity : Tot (fun _ : ℕ => Multiplicative ℤ) → ZMod 2
   | ⟨n, x⟩ => ((Multiplicative.toAdd x + (n : ℤ) : ℤ) : ZMod 2)
 
@@ -411,10 +447,12 @@ theorem not_markovEquiv_of_writheParity_ne {p q : Tot fun _ : ℕ => Multiplicat
     (h : writheParity p ≠ writheParity q) : ¬ MarkovEquiv writheTower p q :=
   fun he => h (writheParity_isMarkovInvariant.descends he)
 
-/-- **`MarkovEquiv` is a proper relation** — not everything is equivalent to everything. The unknot
-and the one-crossing braid at level `0` have different writhe parity, so no sequence of Markov moves
-connects them. Together with `writheTower_markovEquiv_cross_level` this places the relation strictly
-between equality and the total relation, so neither it nor `IsMarkovInvariant.descends` is vacuous. -/
+/-- **`MarkovEquiv` is a proper relation** — not everything is equivalent to everything. The two
+elements of writhe `0` and writhe `1` at level `0` have different writhe parity, so no sequence of
+Markov moves connects them. Together with `writheTower_markovEquiv_cross_level` this places the
+relation strictly between equality and the total relation, so neither it nor
+`IsMarkovInvariant.descends` is vacuous. (Both sides are elements of `Multiplicative ℤ`; no
+topological reading of them is intended or available here.) -/
 theorem writheTower_not_markovEquiv :
     ¬ MarkovEquiv writheTower (⟨0, 1⟩ : Tot fun _ : ℕ => Multiplicative ℤ)
         ⟨0, Multiplicative.ofAdd (1 : ℤ)⟩ := by
@@ -465,11 +503,31 @@ theorem writheScaled_normalisation_solvable (A D : Kˣ) :
   · rw [mul_comm A⁻¹ D, ← mul_assoc, inv_mul_cancel, one_mul]
 
 /-- The normalised writhe functional is therefore a Markov invariant — the full chain
-(`IsScaledMarkov` ⇒ normalise ⇒ `IsMarkovInvariant` ⇒ descent) instantiated end to end. -/
+(`IsScaledMarkov` ⇒ normalise ⇒ `IsMarkovInvariant` ⇒ descent) instantiated end to end.
+
+**Read with `writheScaled_normalise_eq_one`, which is the honest scope of this instance.** On this
+tower the normalisation cancels the functional exactly, so the resulting invariant is the *constant*
+`1`. That is the correct mathematics — the abelianised tower retains only the writhe, which is
+precisely what the framing correction removes — but it means this theorem witnesses only that the
+hypothesis set of `normalise_isMarkovInvariant` is non-empty, **not** that a non-trivial normalised
+invariant has been produced. Non-constant satisfiability of `IsMarkovInvariant` is carried by
+`writheParity_isMarkovInvariant`, and non-triviality of `MarkovEquiv` by
+`writheTower_not_markovEquiv`; neither is a corollary of this one. -/
 theorem writheScaled_normalise_isMarkovInvariant (A D : Kˣ) :
     IsMarkovInvariant writheTower
       (normalise writheFraming A⁻¹ D⁻¹ (writheScaled A D)) :=
   (writheScaled_isScaledMarkov A D).normalise_isMarkovInvariant writheFraming
     (writheScaled_normalisation_solvable A D).1 (writheScaled_normalisation_solvable A D).2
+
+/-- **The normalised witness above is the constant function `1`** — stated so that the limit of what
+`writheScaled_normalise_isMarkovInvariant` witnesses is machine-checked rather than left to prose.
+`c^{writhe} · d^{level}` at `c = A⁻¹, d = D⁻¹` is the exact inverse of `writheScaled A D`. -/
+theorem writheScaled_normalise_eq_one (A D : Kˣ) (p : Tot fun _ : ℕ => Multiplicative ℤ) :
+    normalise writheFraming A⁻¹ D⁻¹ (writheScaled A D) p = 1 := by
+  obtain ⟨n, x⟩ := p
+  simp only [normalise, normFactor, writheScaled, writheFraming, MonoidHom.id_apply]
+  rw [← Units.val_mul]
+  norm_cast
+  simp [mul_comm, mul_assoc, mul_left_comm]
 
 end QOU.MathlibExt.MarkovMoves
