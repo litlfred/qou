@@ -491,4 +491,77 @@ theorem sum_drop_diagLen :
   rw [Finset.range_eq_Ico, sum_drop_eq _ (Nat.zero_le _), diagLen_rowLen_zero]
   simp
 
+/-! ## The reduction skeleton: what a Lean proof of `M₁ > 0` would still need
+
+Asked directly: can the finite-`n` crossover be closed in Lean? On the current
+route, **no**, and the obstruction is worth writing down precisely so nobody
+re-derives it.
+
+1. **Mathlib has none of the analytic input.** Its entire Young theory is two
+   files — `Combinatorics.Young.YoungDiagram` and `.SemistandardTableau`. There
+   is no RSK/Schensted correspondence, no Plancherel measure, no semicircle law,
+   no VKLS limit shape, no hook-length formula. Every analytic ingredient this
+   route uses would have to be built first.
+
+2. **The margin shrinks exactly where the error terms grow.** Measured, the
+   finite-`n` budget rises monotonically toward its limit:
+
+       n         100      200      400      800     limit
+       total   0.8799   0.9181   0.9413   0.9597   0.99953
+       margin   12 %     8.2 %    5.9 %    4.0 %    0.047 %
+
+   So `M₁ > 0` has comfortable room at every `n` reached, and the route is
+   *tightest in the limit*. An effective limit-shape estimate would have to be
+   accurate to better than `5·10⁻⁴` relative — in the asymptotic regime, which is
+   where such estimates are weakest.
+
+3. **The finite range is not kernel-checkable.** Exact verification reaches
+   `n = 60`; the next level has `p(61) = 1121505` partitions carrying ~40-digit
+   dimensions.
+
+What IS possible, and is done below, is to formalise the REDUCTION, so that the
+missing analytic input is a single named hypothesis rather than prose spread
+across a dozen probes. `sum_lt_of_weighted_bound` says: per-edge bounds plus one
+aggregate inequality give `N < P`, hence `M₁ > 0`. Every per-edge bound it needs
+is already proved in this file — `diagLen_sub_nonneg_le` for same-sign edges and
+`diagLen_sub_transpose_le_refined` for opposite-sign ones. What is NOT proved,
+and is exactly hypothesis `hagg`, is that the bounds' own weighted average stays
+below the total weight. That is the whole remaining gap, in one line. -/
+
+section Reduction
+
+variable {ι : Type*}
+
+/-- **The reduction, with the analytic input isolated.** If every edge's ratio is
+bounded by `b e`, and the weights are nonnegative, and the BOUNDS' weighted total
+falls short of the total weight, then so does the ratio's — i.e. `N < P`, i.e.
+`M₁ > 0`. Everything except `hagg` is per-edge and already proved. -/
+theorem sum_lt_of_weighted_bound (E : Finset ι) (w r b : ι → ℚ)
+    (hw : ∀ e ∈ E, 0 ≤ w e)
+    (hrb : ∀ e ∈ E, r e ≤ b e)
+    (hagg : ∑ e ∈ E, w e * b e < ∑ e ∈ E, w e) :
+    ∑ e ∈ E, w e * r e < ∑ e ∈ E, w e :=
+  lt_of_le_of_lt
+    (Finset.sum_le_sum fun e he => mul_le_mul_of_nonneg_left (hrb e he) (hw e he))
+    hagg
+
+/-- The same reduction with the two edge classes separated, which is the shape
+the route actually has: same-sign edges are bounded by the DENSITY reading, and
+opposite-sign ones by the refined telescoping bound. `S` is the same-sign class. -/
+theorem sum_lt_of_split_bound [DecidableEq ι] (E S : Finset ι) (w r bs bo : ι → ℚ)
+    (hS : S ⊆ E) (hw : ∀ e ∈ E, 0 ≤ w e)
+    (hsame : ∀ e ∈ S, r e ≤ bs e)
+    (hopp : ∀ e ∈ E \ S, r e ≤ bo e)
+    (hagg : (∑ e ∈ S, w e * bs e) + (∑ e ∈ E \ S, w e * bo e) < ∑ e ∈ E, w e) :
+    ∑ e ∈ E, w e * r e < ∑ e ∈ E, w e := by
+  refine lt_of_le_of_lt ?_ hagg
+  rw [← Finset.sum_sdiff hS (f := fun e => w e * r e), add_comm]
+  exact add_le_add
+    (Finset.sum_le_sum fun e he =>
+      mul_le_mul_of_nonneg_left (hsame e he) (hw e (hS he)))
+    (Finset.sum_le_sum fun e he =>
+      mul_le_mul_of_nonneg_left (hopp e he) (hw e (Finset.mem_sdiff.mp he).1))
+
+end Reduction
+
 end QOU.BraidKnot.M1EdgeCalculus

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T18:03:03Z
+updated_at: 2026-08-30T18:18:49Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -687,3 +687,50 @@ quadrature, `min(r,D0) − max(0, a−(λ₁−D0)) = min(D0, λ₁−a) − max
 **STILL OPEN.** qou-k5r5 OPEN. The asymptotic margin is 0.047% and the finite-n
 crossover (n ≥ 61) is untouched — that is now the *only* thing between this and
 M₁ > 0.
+
+
+---
+
+## Leg A, 2026-08-30 (ninth) — can Lean close the finite-n crossover? No, and here is exactly why
+
+**1. Mathlib has none of the analytic input.** Its entire Young theory is **two
+files** — `Combinatorics.Young.YoungDiagram` and `.SemistandardTableau`. Checked:
+no RSK/Schensted, no Plancherel measure, no semicircle law, no free probability,
+no VKLS limit shape. Every analytic ingredient this route uses would have to be
+built first.
+
+**2. The margin shrinks exactly where the error terms grow.** Measured:
+
+| n | 100 | 200 | 400 | 800 | limit |
+|---|---|---|---|---|---|
+| total | 0.8799 | 0.9181 | 0.9413 | 0.9597 | 0.99953 |
+| margin | 12% | 8.2% | 5.9% | 4.0% | **0.047%** |
+
+The budget *rises* toward its limit, so the route is **tightest in the limit** —
+the opposite of the usual situation. An effective limit-shape estimate would have
+to be accurate to better than `5·10⁻⁴` relative, in the asymptotic regime, which
+is where such estimates are weakest.
+
+**3. The finite range is not kernel-checkable.** Exact verification reaches
+n = 60; the next level has `p(61) = 1,121,505` partitions with ~40-digit
+dimensions.
+
+### What IS possible, and is now done
+
+`sum_lt_of_weighted_bound` and `sum_lt_of_split_bound` (sorry-free, standard
+axioms) formalise the **reduction**: per-edge bounds plus **one** aggregate
+inequality give `N < P`, hence `M₁ > 0`. The split version has exactly the route's
+shape — same-sign edges bounded by the density reading, opposite-sign by the
+refined telescoping bound.
+
+Every per-edge bound it consumes is already proved in this file
+(`diagLen_sub_nonneg_le`, `diagLen_sub_transpose_le_refined`). What is **not**
+proved is precisely the hypothesis `hagg`: that the bounds' own weighted average
+stays below the total weight. **That is the whole remaining gap, now one named
+Lean hypothesis instead of prose spread across a dozen probes.**
+
+`M1EdgeCalculus.lean`: **26 theorems**, up from 8 at the start of this arc.
+
+**STILL OPEN.** qou-k5r5 OPEN, and on this route it stays open until Mathlib
+grows an effective limit-shape theory — or until someone finds a bound with more
+than 0.047% of room.
