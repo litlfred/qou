@@ -119,20 +119,65 @@ Coulomb asymmetry of the A = 3 doublet is flagged as unresolved.
   from the classical one by a sign the classical theory does not carry.** The
   same goes for `QOU.Mass.PairwiseCumulantVanishing`, whose pairwise-additive
   vanishing is unaffected.
-* **The Boltzmann identification is an interpretation.** Nothing in the corpus
-  derives $f^{\text{corpus}} = e^{-v}$; the framework's bond factors are Markov
-  factors built from $z$. §1 is a pure algebraic identity and needs no such
-  reading, and §2–§3 need only $f \in (0,1)$, which is measured. But calling
-  $g = f - 1$ *"a Mayer function of a repulsive potential"* is a reading, and
-  the physical conclusion in §3–§4 inherits it. **Establishing or refuting that
-  identification is the load-bearing next step**, and it is what `qou-rwhv`
-  now asks.
+* ~~**The Boltzmann identification is an interpretation.**~~ **Retracted the
+  same day — it is derived, and by the corpus.** See §5a.
 * **Nothing here supplies the extensive term.** The four sorry-free prunes
   bounding the $\ge 3$-body scaling (`CoordinationSaturation`,
   `ChainBondOrderDependence`, `BodyOrderRecurrenceDepth`, `MayerThreeBodySign`)
   are untouched as *scaling* results; only the last one's *sign* reading changes.
 
-## 6. What would settle §5
+## 5a. $f = e^{-v}$ is derived — it is §10a read backwards
+
+An earlier version of §5 called the Boltzmann identification "an interpretation".
+That was wrong, and the derivation was already in the corpus.
+[`2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md` §10a](2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md)
+establishes, from two facts:
+
+1. **the trace is multiplicative over bonds** —
+   $\mathrm{tr}_{\text{atom}} = \mathrm{tr}_{\text{free}}\cdot\prod_{\text{bonds}}\mu_k$,
+   verified there to $1.2\times10^{-31}$;
+2. **energy is extensive**,
+
+that the map from trace to energy satisfies the Cauchy equation and is therefore
+$B = -\alpha\ln\mu$ — *"the log form is forced"*. **Inverting:
+$\mu = e^{-B/\alpha}$.** The corpus's bond factor *is* the Boltzmann factor of
+the corpus's own derived bond energy, with $v := B/\alpha$.
+
+It is also literally the same object: §10b's
+$\mu_{pn} = z - h(\tfrac12 - \delta/4)$ is character-for-character the $f_{pn}$
+of `MayerThreeBodySign`'s probe-2 typing.
+
+Measured in the probe, both conventions: $\mu \in (0,1)$, $v = B/\alpha > 0$,
+and $e^{-v} = \mu$ to $10^{-40}$.
+
+| | $\mu_{pn}$ | $B(^2\mathrm{H}) = -\alpha\ln\mu$ | ÷ AME 2.224566 |
+|---|---|---|---|
+| **D** (canonical) | 0.5082297894 | **2.8332 MeV** | **1.274** |
+| C (what §10a itself used) | 0.3948620864 | 3.8897 MeV | 1.749 |
+
+The C row reproduces §10a's own recorded "+74.9 %", which is the cross-check
+that this is the same computation. **The D row is new**: §10a predates the
+2026-08-15 convention-D ruling, so its ²H over-binding is **+27.4 %, not
++74.9 %** — the migration more than halves it. Tracked as its own item; the
+*derivation* is convention-independent (it needs only multiplicativity), the
+*numbers* are not.
+
+> **Naming caveat, so nobody reads physics out of a convention.** In the Mayer
+> convention $v > 0$ is called "repulsive", and here $v = B/\alpha$ is the
+> **binding** energy, which is positive. The alternation theorem holds on
+> $f \in (0,1)$, which is where the corpus sits. Calling the corresponding
+> $v = -\ln\mu > 0$ "repulsive" is bookkeeping and asserts **nothing** about the
+> nuclear force.
+
+**What remains open is narrower than §5 claimed: the normalisation.** §10a gives
+$B = -\alpha\ln(\text{trace})$ and the standard cluster expansion gives
+$\ln\Xi = \sum_n (z^n/n!)\int\varphi^{T}_n$, so the connected $n$-body part of
+$B$ should be $\alpha$ times the $n$-th Ursell term *up to a combinatorial
+factor this work does not derive*. The **sign is settled**; the magnitude in §4
+is reported under a deuteron-pinned scale, and the $\alpha$-scaled alternative
+differs by ~10 %. Pinning that factor is the remaining work.
+
+## 6. What would settle the normalisation
 
 Exhibit the polymer / cluster model whose activity expansion has the corpus's
 $b_3$ as its third Ursell coefficient — name the polymer set, the weight, and

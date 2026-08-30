@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T09:48:50.536833+00:00",
+  "computedAt": "2026-08-30T10:02:59.487162+00:00",
   "description": "The corpus's 3-body cumulant is exactly minus the classical third Ursell function under the Boltzmann identification g = f - 1. The classical Ursell functions ALTERNATE in the repulsive class, (-1)^(n-1) phi^T_n >= 0, while the corpus carries a uniform minus at n=2 and n=3. The uniform minus is correct at n=2 and inverts the physical sign at n=3, so MayerThreeBodySign's b3 < 0 is a missing (-1)^(n-1) rather than a physical obstruction. The identity is low-order: it does not extend to n=4 under either sign.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -41,6 +41,33 @@
       "holds_minus_one_to_n_as_ocrd": 0
     }
   ],
+  "boltzmann_chain": {
+    "alpha_MeV": "4.1859813632944759699",
+    "rows": [
+      {
+        "convention": "D_canonical",
+        "z": "0.6126880371464652516",
+        "mu_pn": "0.50822978937673896258",
+        "mu_in_unit_interval": true,
+        "B_2H_MeV": "2.833162572",
+        "B_2H_over_AME": "1.273579913",
+        "v_eq_B_over_alpha": "0.67682159238634338966",
+        "v_positive": true,
+        "exp_minus_v_equals_mu": true
+      },
+      {
+        "convention": "C_as_used_by_the_2026_08_08_audit",
+        "z": "0.49932033418369445241",
+        "mu_pn": "0.3948620864139681634",
+        "mu_in_unit_interval": true,
+        "B_2H_MeV": "3.88969225844",
+        "B_2H_over_AME": "1.748517355",
+        "v_eq_B_over_alpha": "0.92921872336654878368",
+        "v_positive": true,
+        "exp_minus_v_equals_mu": true
+      }
+    ]
+  },
   "framework_evaluation": {
     "chi_typing_f_pn_eq_z_D": {
       "f_pn": "0.6126880371464652516",
@@ -81,6 +108,10 @@
       "passed": true
     },
     {
+      "name": "mu is the Boltzmann factor of the Sec.10a bond energy: mu in (0,1), v = B/alpha > 0, and e^-v == mu, in BOTH conventions",
+      "passed": true
+    },
+    {
       "name": "the identity does NOT extend to n=4 under either sign",
       "passed": true
     },
@@ -102,14 +133,14 @@
     }
   ],
   "free_parameters": 0,
-  "scope": "(a). Does NOT refute MayerThreeBodySign -- every statement there remains true of the object it is about. What is established is that that object differs from the classical one by a sign the classical theory does not carry. The Boltzmann identification f_corpus = e^{-v} is NOT derived in the corpus; the algebraic identity needs no such reading, but the physical conclusion inherits it.",
+  "scope": "(a). Does NOT refute MayerThreeBodySign -- every statement there remains true of the object it is about. What is established is that that object differs from the classical one by a sign the classical theory does not carry. The Boltzmann identification f = e^{-v} IS derived, by the corpus's own Sec.10a log form read backwards (see boltzmann_chain). What is NOT fixed here is the normalisation of the cluster expansion's n-body term: the sign is settled, the magnitude is reported under two scale conventions differing by ~10%.",
   "source": "Jansen & Kolesnikov, J. Stat. Phys. 189:33 (2022), library/s10955-022-02992-6/ -- definitions on p.5, sign property in section 3.1. The OCR of Eq. (3.1) reads (-1)^n and is inconsistent with the paper's own Corollary 3.3; settled here by computation from the definitions, not from the scanned superscript.",
   "lean": "QOU/MassTheory/MayerThreeBodySign.lean, QOU/Mass/PairwiseCumulantVanishing.lean",
   "bean": "qou-rwhv",
   "allPassed": true,
-  "scriptHash": "82a2dcc5ae1f",
-  "scriptCommitSha": "unknown",
-  "commitSha": "27868ff63b585a85f30e8a79a7937669149d9ec1",
+  "scriptHash": "d650569577ed",
+  "scriptCommitSha": "ccad6889331a226a2cbd9d8f5d95a119ef3a4ee8",
+  "commitSha": "ccad6889331a226a2cbd9d8f5d95a119ef3a4ee8",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

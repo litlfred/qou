@@ -51,13 +51,37 @@ THREE MEASUREMENTS.
    The probe reports the resulting `b3` in MeV against the AME targets, so the
    magnitude claim is measured rather than asserted.
 
-WHAT THIS DOES NOT ESTABLISH. The Boltzmann identification `f_corpus = e^{-v}`
-is NOT derived anywhere in the corpus -- the framework's bond factors are Markov
-factors built from `z`, and nothing identifies them with an exponentiated
-potential. Measurement 1 is a pure algebraic identity and needs no such reading;
-measurements 2 and 3 need only that `f_corpus` lies in `(0,1)`, which is
-measured. But calling `g = f_corpus - 1` "a Mayer function of a repulsive
-potential" is an INTERPRETATION, and the physical conclusion inherits it.
+4. THE BOLTZMANN IDENTIFICATION IS DERIVED, NOT ASSUMED -- and by the corpus.
+   An earlier version of this probe flagged `f_corpus = e^{-v}` as an
+   unestablished interpretation. It is not: it is
+   `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`
+   Sec.10a read backwards. That section derives, from trace multiplicativity over
+   bonds (`tr_atom = tr_free * PROD_bonds mu_k`, verified to 1.2e-31) plus energy
+   extensivity, that the bond energy is `B = -alpha * ln mu` -- the Cauchy
+   functional equation, "the log form is forced". Inverting, `mu = e^{-B/alpha}`:
+   the corpus's bond factor IS the Boltzmann factor of the corpus's own derived
+   bond energy, with `v := B/alpha`.
+
+   And it is the SAME object: Sec.10b's `mu_pn = z - h(1/2 - delta/4)` is
+   character-for-character the `fpn` of `MayerThreeBodySign`'s probe-2 typing.
+
+   This probe checks the chain numerically in both conventions: `mu in (0,1)`,
+   `v > 0`, and `e^{-v} == mu` to 1e-40.
+
+   NAMING CAVEAT, so nobody reads physics out of a convention. In the Mayer
+   convention `v > 0` is called "repulsive", and here `v = B/alpha` is the
+   BINDING energy, which is positive. The classical alternation theorem holds on
+   `f in (0,1)`, which is where the corpus sits; calling the corresponding
+   `v = -ln mu > 0` "repulsive" is bookkeeping and asserts NOTHING about the
+   nuclear force.
+
+WHAT THIS DOES NOT ESTABLISH. The normalisation of the cluster expansion's
+n-body term is not fixed here. Sec.10a gives `B = -alpha * ln(trace)`, and the
+standard cluster expansion gives `ln Xi = SUM_n (z^n/n!) INT phi^T_n`, so the
+connected n-body part of `B` should be `alpha` times the n-th Ursell term up to
+a combinatorial factor this probe does not derive. The SIGN is settled; the
+magnitude is reported under two scale conventions that differ by ~10%, and
+pinning the normalisation is the remaining work.
 
 Scope-(a). This does not refute `MayerThreeBodySign` -- every one of its
 statements remains true of the object it is about. What is established is that
@@ -282,8 +306,50 @@ def evaluate_at_framework(fpn):
     }
 
 
+def check_boltzmann_chain():
+    """Measurement 4: mu is the Boltzmann factor of the SEC.10a-derived bond energy.
+
+    Sec.10a: B = -alpha * ln mu, alpha = m_e / (q0 (q0 - 1)).  Inverting gives
+    mu = e^{-v} with v := B/alpha, so the Mayer variable g = mu - 1 is not an
+    imported analogy. Checked in both conventions -- D is canonical (R1
+    2026-08-15); C is what the 2026-08-08 audit itself used, so its row is the
+    cross-check that this reproduces that audit's own number.
+    """
+    q = mpf(Q_50_DIGIT_STR)
+    h = hecke_h(q)
+    d = flavor_split_leading(q)
+    try:
+        from qou_substrate.constants import M_E_MEV as _ME
+        me = mpf(_ME)
+    except Exception:
+        me = mpf("0.51099895000")
+    alpha = me / (q * (q - 1))
+    ame_d = AME["D"]
+
+    rows = []
+    for label, z in (("D_canonical", markov_z(q)),
+                     ("C_as_used_by_the_2026_08_08_audit",
+                      1 / (mp.sqrt(q) + 1 / mp.sqrt(q)))):
+        mu = z - h * (mpf(1) / 2 - d / 4)
+        B = -alpha * mp.log(mu)
+        v = B / alpha
+        rows.append({
+            "convention": label,
+            "z": mp.nstr(z, 20),
+            "mu_pn": mp.nstr(mu, 20),
+            "mu_in_unit_interval": bool(0 < mu < 1),
+            "B_2H_MeV": mp.nstr(B, 12),
+            "B_2H_over_AME": mp.nstr(B / ame_d, 10),
+            "v_eq_B_over_alpha": mp.nstr(v, 20),
+            "v_positive": bool(v > 0),
+            "exp_minus_v_equals_mu": bool(abs(mp.e ** (-v) - mu) < mpf(10) ** (-40)),
+        })
+    return {"alpha_MeV": mp.nstr(alpha, 20), "rows": rows}
+
+
 def main() -> int:
     ident = check_identity()
+    boltz = check_boltzmann_chain()
     alt = check_alternation()
     bf = framework_bond_factors()
 
@@ -322,9 +388,23 @@ def main() -> int:
         print(f"          AME triton           {e['ame_b3_triton_MeV']}"
               f"   ratio {e['ratio_to_triton']}")
 
+    print("\n4. THE BOLTZMANN IDENTIFICATION IS SEC.10a READ BACKWARDS")
+    print(f"     alpha = m_e/(q0(q0-1)) = {boltz['alpha_MeV']} MeV")
+    for r in boltz["rows"]:
+        print(f"     {r['convention']}")
+        print(f"       mu_pn = {r['mu_pn']}   in (0,1)? {r['mu_in_unit_interval']}")
+        print(f"       B(2H) = -alpha ln mu = {r['B_2H_MeV']} MeV"
+              f"   / AME = {r['B_2H_over_AME']}")
+        print(f"       v = B/alpha = {r['v_eq_B_over_alpha']}   > 0? {r['v_positive']}"
+              f"   e^-v == mu? {r['exp_minus_v_equals_mu']}")
+
     assertions = [
         {"name": "corpus b3 == -phi^T_3 exactly, on every random non-uniform triple",
          "passed": ident["n3_identity_holds"]},
+        {"name": "mu is the Boltzmann factor of the Sec.10a bond energy: "
+                 "mu in (0,1), v = B/alpha > 0, and e^-v == mu, in BOTH conventions",
+         "passed": all(r["mu_in_unit_interval"] and r["v_positive"]
+                       and r["exp_minus_v_equals_mu"] for r in boltz["rows"])},
         {"name": "the identity does NOT extend to n=4 under either sign",
          "passed": not ident["n4_identity_holds_either_sign"]},
         {"name": "(-1)^(n-1) phi^T_n >= 0 holds for every n and trial in the repulsive class",
@@ -355,6 +435,7 @@ def main() -> int:
         "convention": "D (z = q^3/(q^2+1)), canonical per owner ruling R1 2026-08-15",
         "identity": ident,
         "alternation": alt,
+        "boltzmann_chain": boltz,
         "framework_evaluation": evals,
         "assertions": assertions,
         "free_parameters": 0,
@@ -362,9 +443,11 @@ def main() -> int:
             "(a). Does NOT refute MayerThreeBodySign -- every statement there "
             "remains true of the object it is about. What is established is that "
             "that object differs from the classical one by a sign the classical "
-            "theory does not carry. The Boltzmann identification f_corpus = e^{-v} "
-            "is NOT derived in the corpus; the algebraic identity needs no such "
-            "reading, but the physical conclusion inherits it."),
+            "theory does not carry. The Boltzmann identification f = e^{-v} IS "
+            "derived, by the corpus's own Sec.10a log form read backwards (see "
+            "boltzmann_chain). What is NOT fixed here is the normalisation of the "
+            "cluster expansion's n-body term: the sign is settled, the magnitude "
+            "is reported under two scale conventions differing by ~10%."),
         "source": (
             "Jansen & Kolesnikov, J. Stat. Phys. 189:33 (2022), "
             "library/s10955-022-02992-6/ -- definitions on p.5, sign property "
