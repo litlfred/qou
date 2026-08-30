@@ -249,12 +249,28 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
 # ──────────────────────────────────────────────────────────────────────
 
 def tr_m_weights_mp(dps: int = 50) -> list:
-    """Markov-trace weights TR_M = [1, z, z, z², z², z³] in mpmath."""
+    """Markov-trace weights TR_M = [1, z, z, z², z², h·z² + z] in mpmath.
+
+    The last entry is for NF_BASIS[5] = (0,1,0) = σ₀σ₁σ₀ (`e⁻`). It is
+    **h·z² + z**, from the Markov recursion — NOT z³.
+
+    z³ is the 2026-05-19 TR_M[5] bug
+    (docs/audits/2026-05-19-trm5-markov-bug.md). That fix landed in
+    `pyhecke/gram.py`; this file carried the same error until 2026-08-29,
+    despite the comment at NF_BASIS saying it "matches pyhecke.gram". At the
+    substrate the two differ by 4.4x — z³ = 0.124490943 against
+    h·z² + z = 0.551443414 — so this was not a rounding-scale defect.
+
+    The correction is convention-INDEPENDENT: the Markov recursion gives
+    h·z² + z for any z. (This function is separately convention C; that is a
+    different question, tracked in the comparison ledger.)
+    """
     with mp.workdps(dps + 5):
         q0 = q_at(dps + 5)
         sq = mp.sqrt(q0)
         z = mp.mpf(1) / (sq + mp.mpf(1) / sq)
-        out = [mp.mpf(1), z, z, z ** 2, z ** 2, z ** 3]
+        h = q0 - mp.mpf(1) / q0
+        out = [mp.mpf(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
         # Round inside the workdps block (Gemini review on PR #658).
         with mp.workdps(dps):
             return [+v for v in out]
