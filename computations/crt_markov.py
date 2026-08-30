@@ -53,6 +53,10 @@ import _path_bridge  # noqa: F401, E402 — ensure substrate/ on path for direct
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from q_parameter import Q as _Q_CANONICAL
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 def markov_trace_at_q(W_crossings_per_gen, n_strands, q_val):
     """Compute tr_M of atom braid at a specific q value.
@@ -68,7 +72,7 @@ def markov_trace_at_q(W_crossings_per_gen, n_strands, q_val):
     q = q_val
     qi = 1 / q
     h = q - qi
-    z_mark = 1 / (q ** 0.5 + qi ** 0.5)
+    z_mark = q**3 / (q**2 + 1)
 
     tr_M = 1.0  # Will hold product of V_s over generators
     for gen in range(n_strands - 1):
@@ -134,7 +138,7 @@ def _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h):
             elif pair == ('n', 'n'):
                 base = (mpmath.mpf(1), -h); m_this = m_nn
             else:
-                base = (mpmath.mpf(1), -h / 2); m_this = m_pn
+                base = (mpmath.mpf(1), _pn_d(h)); m_this = m_pn
             crossings[3 * k + 2] = [base] * m_this
     for i in range(n_strands - 1):
         crossings.setdefault(i, [])
@@ -211,7 +215,7 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
 
     qi = 1 / q
     h = q - qi
-    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+    z = q**3 / (q**2 + 1)
     crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
 
     tr_M = mpmath.mpf(1)
@@ -239,7 +243,7 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     q = mpmath.mpf(str(q_val))
     qi = 1 / q
     h = q - qi
-    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+    z = q**3 / (q**2 + 1)
 
     # H_3 Wedderburn weights (additive Wedderburn, per mass_endomorphism)
     def qint(k):
@@ -666,5 +670,14 @@ if __name__ == "__main__":
         "results": final_results,
     }
     out = Path(__file__).parent / "crt-markov.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

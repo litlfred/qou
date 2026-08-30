@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T07:32:16.726297+00:00",
-  "commitSha": "5ec185ed14b610723d763683b37ae6ebede47c26",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T08:03:47.525985+00:00",
+  "commitSha": "7cfd7ffc53dc1d948bd547835942ed52cdc88a63",
   "assertions": [
     {
       "name": "candidates_evaluated",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 14,
   "computation": "m-tau-hecke-energy-route",
   "scriptFile": "m_tau_hecke_energy_route.py",
-  "scriptHash": "4e17c90a3308",
-  "scriptCommitSha": "509368b5cee77e3e9b88cf51698d293e2654b559",
+  "scriptHash": "c3bcd6ba9fb9",
+  "scriptCommitSha": "6fec1f0d2dc0a19feefbdac4b90234a51c39e430",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY scoping of the muon-anchored Hecke-energy route to m_tau (bean qou-se9w), after the census route closed. Tests a CLOSED pre-declared list of candidates for the dimensionless factor F_tau = m_tau/m_mu = 16.8170, each built only from corpus-canonical objects (chi_(2,1), Seifert volumes, quantum integers, hbar_q). All residuals reported, matches and misses alike. NOT a fit and NOT wired: a near-match here is a candidate requiring independent structural derivation, not a result.",
   "contentBlock": "rem:m-tau-knot-prediction",
@@ -73,80 +72,83 @@
         "candidate": "(chi7/chi5)/hbar_q",
         "value": "14.74207425",
         "rel_error": "-0.123384",
-        "abs_rel_error_pct": 12.338416235687413,
+        "abs_rel_error_pct": "12.338416",
         "rationale": "character ratio with one substrate amplification (muon-anchor shape)"
       },
       {
         "candidate": "[7]_q/[5]_q / hbar_q",
         "value": "14.74207425",
         "rel_error": "-0.123384",
-        "abs_rel_error_pct": 12.338416235687413,
+        "abs_rel_error_pct": "12.338416",
         "rationale": "quantum-integer ratio, one amplification"
       },
       {
         "candidate": "(V_S7/V_S5)^2/hbar_q",
         "value": "14.30368404",
         "rel_error": "-0.149452",
-        "abs_rel_error_pct": 14.94523941327676,
+        "abs_rel_error_pct": "14.945239",
         "rationale": "kaon-style squared Seifert ratio, one amplification"
       },
       {
         "candidate": "chi7/chi5 * (V_S7/V_S5)^2 / hbar_q",
         "value": "20.89296238",
         "rel_error": "0.242369",
-        "abs_rel_error_pct": 24.236938441486092,
+        "abs_rel_error_pct": "24.236938",
         "rationale": "kaon form with one amplification"
       },
       {
         "candidate": "(V_S7/V_S5)/hbar_q",
         "value": "12.01509459",
         "rel_error": "-0.28554",
-        "abs_rel_error_pct": 28.554001107152477,
+        "abs_rel_error_pct": "28.554001",
         "rationale": "Seifert ratio with one amplification"
       },
       {
         "candidate": "chi7/chi5 * (V_S7/V_S5)^2",
         "value": "2.070110566",
         "rel_error": "-0.876904",
-        "abs_rel_error_pct": 87.69039094313266,
+        "abs_rel_error_pct": "87.690391",
         "rationale": "exact kaon form (character x squared Seifert ratio)"
       },
       {
         "candidate": "chi7/chi5",
         "value": "1.460670015",
         "rel_error": "-0.913143",
-        "abs_rel_error_pct": 91.3143398494744,
+        "abs_rel_error_pct": "91.31434",
         "rationale": "bare Hecke character ratio, the kaon derivation's algebraic factor"
       },
       {
         "candidate": "[7]_q/[5]_q",
         "value": "1.460670015",
         "rel_error": "-0.913143",
-        "abs_rel_error_pct": 91.3143398494744,
+        "abs_rel_error_pct": "91.31434",
         "rationale": "quantum-integer ratio (nucleon F_Bor uses [n]_q!)"
       },
       {
         "candidate": "Vol(4_1)/hbar_q^2 * chi7/chi5 / (m_tau/m_e/(m_tau/m_mu))",
         "value": "1.460669599",
         "rel_error": "-0.913143",
-        "abs_rel_error_pct": 91.31434232338172,
+        "abs_rel_error_pct": "91.314342",
         "rationale": "consistency check of the muon anchor against CODATA (should be ~chi ratio)"
       },
       {
         "candidate": "(V_S7/V_S5)",
         "value": "1.19047619",
         "rel_error": "-0.92921",
-        "abs_rel_error_pct": 92.92100782520048,
+        "abs_rel_error_pct": "92.921008",
         "rationale": "Seifert-volume ratio alone (= 25/21)"
       },
       {
         "candidate": "(chi7/chi5)/hbar_q^2",
         "value": "148.78703",
         "rel_error": "7.8474",
-        "abs_rel_error_pct": 784.7402655516715,
+        "abs_rel_error_pct": "784.74027",
         "rationale": "character ratio with the CAL-2 exponent"
       }
     ],
-    "verdict": "No pre-declared candidate reaches 1% of the target; the best is (chi7/chi5)/hbar_q at 12.34% . The muon-anchored Hecke route does NOT close m_tau with the corpus's existing factor vocabulary — an honest negative. Closing it requires a new structural ingredient (e.g. a genuine Markov trace of the tau braid in a higher-strand algebra, or the lepton-sector analogue of the nucleon's -6*m_e binding subtraction), not another combination of these factors."
-  }
+    "verdict": "No pre-declared candidate reaches 1% of the target; the best is (chi7/chi5)/hbar_q at 12.338416% . The muon-anchored Hecke route does NOT close m_tau with the corpus's existing factor vocabulary \u2014 an honest negative. Closing it requires a new structural ingredient (e.g. a genuine Markov trace of the tau braid in a higher-strand algebra, or the lepton-sector analogue of the nucleon's -6*m_e binding subtraction), not another combination of these factors."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808076",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.target.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

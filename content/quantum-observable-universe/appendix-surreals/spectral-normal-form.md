@@ -64,8 +64,8 @@ Specialise to two main-paper operators:
 **Categorical transfer matrix $T(c, d)$** (braiding eigenvalues):
 - Eigenvalues are $q$ and $-q^{-1}$ at every Hecke-level step.
 - At $q = 1 + \varepsilon$: leading terms $1 + \varepsilon$ and
-  $-(1 - \varepsilon + \varepsilon^2 - \cdots) = -1 + \varepsilon
-  - \varepsilon^2 + \cdots$.
+  $-(1 - \varepsilon + \varepsilon^2 - \cdots) = -1 + \varepsilon -
+  \varepsilon^2 + \cdots$.
 - Gap $\Delta = q - (-q^{-1}) = q + q^{-1}$, which equals $2 + O(\varepsilon^2)$
   at $q = 1 + \varepsilon$. $\ordw(\Delta - 2) = -2$, so no
   closure; the classical limit preserves the binary splitting.

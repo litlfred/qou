@@ -1,0 +1,100 @@
+{
+  "probe": "qbeta_5two_route30_envelope_wiring",
+  "bean": "qou-trns",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoBranchPinned.lean",
+    "QOU/QBeta/FiveTwoEnvelopeWiring.lean",
+    "QOU/QBeta/FiveTwoBranchPinnedB.lean"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "dVdx = [-log(1 - x y) + log(1 - y/x)] / x and dVdy = [-log(1-y) - log(1 - x y) - log(1 - y/x) + 2 log(-y)] / y really ARE the partials of V = Li2(y) + Li2(xy) + Li2(y/x) + log(-y)^2, checked against numerical differentiation of mpmath's independently-implemented polylog. These are the closed forms Lean's `hasDerivAt_deformedV_path` produces",
+      "worst_dVdx_residual": "7.300921882e-71",
+      "worst_dVdy_residual": "1.53036854e-70",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "CORRECTS A CLAIM THIS LANE ALMOST SHIPPED. `deformed_saddle_iff_curve` gives the EXPONENTIATED saddle on the curve, and an earlier draft concluded from it that dVdy = 0 there, i.e. that the envelope hypothesis is free. It is not. dVdy = 0 at the two roots other than the positive real one, but at the positive real root t it is exactly 2 pi i / t -- because -t is a NEGATIVE REAL and sits on log's cut, so log(-t) = log t + i pi and the 2 log(-y) term leaves a bare 2 pi i. Exponentiating is necessary, not sufficient: the branch integers have to line up too",
+      "n_points": 399,
+      "worst_exponentiated_saddle_residual": "2.173440107e-70",
+      "worst_dVdy_at_other_two_roots": "9.790252878e-71",
+      "worst_dVdy_minus_2pi_i_over_t_at_real_root": "1.682990938e-70",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "`dV_collect`: the four chain-rule outputs sum to dVdx*x' + dVdy*y'. Checked with the logarithms replaced by ARBITRARY constants, exactly as the Lean statement has them -- which is the point: field_simp rewrites 1 - y/x to (x-y)/x, and inside a logarithm that changes the branch. That bug happened once in this lane already",
+      "worst_residual": "1.61992912e-70",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "sum_j log(1 - x y_j) = log x on the open arc -- `logSumA_eq_log`, the first pinned sum. Vieta gives exp(A - log x) = 1; the new step is taking imaginary parts (`exists_int_im_eq`) and feeding the sector bound",
+      "n_points": 399,
+      "worst_residual": "7.416896864e-71",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "sum_j log(1 - y_j/x) = -log x -- `logSumB_eq_neg_log`, the second pinned sum, which `sum_dVdx_of_pinned` also needs and which nobody had noticed was missing. Proved by MIRRORING the sector argument, not by the conjugation identity of Route 27 G5 (that would need the root multiset to be conjugation-closed as a permutation)",
+      "n_points": 399,
+      "worst_residual": "6.242201337e-71",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "THE PAYOFF, stated as it actually holds: per root Re(d/dphi V(x(phi), y(phi))) = Re(dVdx * i x). The UNREDUCED difference is NOT zero -- it reaches 2.47, the 2 pi i t'/t leak from G2 -- but that leak is purely imaginary because t and t' are real, so Re kills it, and S = sum_j Re V takes real parts. Lean: `hasDerivAt_re_deformedV_envelope`, whose hypothesis is Re(dVdy * y') = 0 rather than the false dVdy = 0. And summing over the three roots, Re sum_j dVdx*(i x) = 2 phi EXACTLY -- which is dS/dphi",
+      "n_root_paths_checked": 21,
+      "worst_Re_envelope_collapse": "3.622271632e-71",
+      "worst_UNREDUCED_difference": "2.473000949",
+      "worst_dS_dphi_minus_2phi": "1.811135816e-71",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "NON-VACUITY with teeth: `logSumA_eq_log` has FIFTEEN hypotheses, which is enough to be worth suspecting of vacuity. Every one of them is checked to hold SIMULTANEOUSLY at every arc point, and then the conclusion is checked too",
+      "n_points": 399,
+      "violations": {
+        "x_ne_0": 0,
+        "b1_ne_0": 0,
+        "b2_ne_0": 0,
+        "b3_ne_0": 0,
+        "vieta1": 0,
+        "vieta2": 0,
+        "vieta3": 0,
+        "x_im_pos": 0,
+        "x_norm": 0,
+        "t_in_01": 0,
+        "im_xy3_nonpos": 0,
+        "im_xy2_when_big": 0,
+        "phi_range": 0,
+        "x_arg_eq_phi": 0,
+        "conclusion": 0
+      },
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "the same for `logSumB_eq_neg_log` (sixteen hypotheses). Note the labelling: y2 is chosen so that Im(x y3) <= 0, and then Im(y2/x) > 0 comes out positive without being asked for -- the mirror the Lean proof exploits",
+      "n_points": 399,
+      "violations": {
+        "c1_ne_0": 0,
+        "c2_ne_0": 0,
+        "c3_ne_0": 0,
+        "im_y2_div_pos": 0,
+        "im_y3_div_when_big": 0,
+        "conclusion": 0
+      },
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "what_it_closes": "three joins that were being called assembly: taking imaginary parts of the Vieta exp-identity; instantiating the envelope theorem at the actual V; and the SECOND pinned log-sum, which `sum_dVdx_of_pinned` needs and which only became visible once the first was written.",
+    "the_payoff": "G6: per root the envelope collapses, and summing over the three roots gives Re sum_j dVdx*(i x) = 2 phi exactly -- dS/dphi.",
+    "what_is_still_not_written": "S(phi) itself is not defined in Lean as sum_j Re V(x phi, y_j phi) with a differentiable root labelling, so `envelope_integrate` is not yet applied to it. That needs the IFT output (`exists_hasDerivAt_root`) threaded through, which is the next join -- and it is a join, so it will be written rather than called assembly.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

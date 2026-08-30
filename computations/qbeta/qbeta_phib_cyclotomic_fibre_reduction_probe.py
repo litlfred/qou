@@ -26,7 +26,8 @@ decomposes into S₅ irreps indexed by **partitions of 5**. The natural fibre
 modulus for Bring is therefore `N = 5` (`ζ₅`), and the finite state-sum's terms
 `{x·ζ₅^k : k=0..4}` are organized by the S₅ Young tableaux (Nekrasov
 localization: the integral localizes at fixed points classified by Young
-tableaux — `bring_tetraplectic.md`). This probe verifies the finite reduction for
+tableaux — `conj:tetraplectic-sw-localisation-bridge`). This probe verifies the
+finite reduction for
 `N = 2..8` and highlights `N = 5`.
 
 ## Gates (exact, symbolic — no floats, no fit)
@@ -56,8 +57,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def cyclotomic_collapse(N):

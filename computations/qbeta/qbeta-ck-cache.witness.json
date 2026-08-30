@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:27:31.687109+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-26T04:10:20.104822+00:00",
+  "commitSha": "6cd4da390a0e600d63eb1b23e8a4b2110e587e91",
   "assertions": [
     {
       "name": "c2_extraction_matches_lean_proved_value",
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "c_2 = -1 is Lean-proved (Kashiwara f̃₁²) AND empirically the Taylor coefficient at canonical q₀"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "qbeta-ck-cache",
   "scriptFile": "qbeta_ck_cache.py",
-  "scriptHash": "88cb1da28b5e",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "3b976565b5ee",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,12 +29,23 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ck_cache.py",
+      "--historical-convention-C"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ck_cache.py --historical-convention-C"
   },
   "description": "Cache of Q_β c_k Taylor coefficients at canonical q₀. c_2 is the only Lean-proved Taylor-exact coefficient (Kashiwara f̃₁², N2_factor). c_3..c_7 are extracted from CODATA Q_β recursively (each c_k computed as (Q_codata/Q_{N_{k-1}} − 1)/u^k). The witness records each c_k's label (lean-proved vs codata-extracted) and the closest structural-conjecture form with its residual %. Production reads c_2 only; higher c_k are documented for future Lean-formalization work. NO structural form is wired as derivation without a Lean theorem closing it to Taylor precision. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md.",
   "data": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "u_substrate": "0.0085172363404849214399331129022993960823890422302815",
+    "markov_convention": "C",
+    "markov_convention_note": "Convention C (z = sqrt(q)/(1+q)), reached only via --historical-convention-C. C was excised by owner ruling (2026-08-09, re-affirmed 2026-08-15 and 2026-08-26); this artifact is retained because 10 consumers read it, including the L2 dashboard per_observable_100x_status.py. The DEFAULT (convention D) path REFUSES: no D-frame ladder has been derived, so there is no D-frame c_k to emit (bean qou-cds1). Substituting z_D into alpha = (z-1)h/2 is proved invalid by QOU.QBeta.decayLadder_zC_threeRow_ne_zero and QOU.QBeta.eigenphase_bar_defect_of_fullBar.",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "u_substrate": "0.0085172345501561421892555736033092029691942216116301",
     "Q_codata": "0.7823334099999999999999999999999999999999999999999994098296040398407753",
     "rows": [
       {
@@ -45,12 +56,12 @@
         "q0_dependent": false,
         "structural_form": "-1 (Kashiwara f̃₁²)",
         "lean_theorem": "qou:QOU.BraidKnot.N2_factor + q_beta_categorical_precision_ladder",
-        "Q_pred_after_this_rung_MeV": "0.782334386518171884757306583578",
-        "err_ppb_after_this_rung": 1248.212283155282
+        "Q_pred_after_this_rung_MeV": "0.782334410277840137760143636388",
+        "err_ppb_after_this_rung": 1278.5825421130362
       },
       {
         "k": 3,
-        "c_k": "-2.02018812814143945582016855395",
+        "c_k": "-2.06934257711516783787971951725",
         "label": "cal-anchored",
         "tier": "cal-anchored",
         "q0_dependent": true,
@@ -60,30 +71,30 @@
           {
             "name": "J_Hopf(q=1)",
             "value": "-2.0",
-            "err_pct": 0.999319214889774
+            "err_pct": 3.350947198498039
           },
           {
             "name": "J_Hopf − ℏ_q²",
-            "value": "-2.00981718851398598439370648689",
-            "err_pct": 0.5133650417495855
+            "value": "-2.00981718645427507381056905718",
+            "err_pct": 2.876536312507328
           },
           {
             "name": "J_Hopf − 6·ℏ_q²",
-            "value": "-2.05890313108391590636223892136",
-            "err_pct": 1.916405823951357
+            "value": "-2.05890311872565044286341434308",
+            "err_pct": 0.5044818825537747
           }
         ],
-        "closest_structural": "J_Hopf − ℏ_q²",
-        "closest_structural_err_pct": 0.5133650417495855,
+        "closest_structural": "J_Hopf − 6·ℏ_q²",
+        "closest_structural_err_pct": 0.5044818825537747,
         "Q_pred_after_this_rung_MeV": "0.78233341",
         "err_ppb_after_this_rung": 0.0
       }
     ],
     "Q_beta_tiers": {
       "derived": {
-        "value_MeV": "0.782334386518171884757306583578",
+        "value_MeV": "0.782334410277840137760143636388",
         "rungs": "Form A · cos(α−bℏ²/2) · (1+c_2 u²), c_2 Taylor-exact",
-        "err_ppb_vs_codata": 1248.212283155282,
+        "err_ppb_vs_codata": 1278.5825421130362,
         "use": "L2 dashboard headline; a genuine prediction (no Q_codata input beyond CAL-3 anchoring of the scale)."
       },
       "cal_anchored": {
@@ -102,6 +113,6 @@
       "to_promote_cal_anchored_to_derived": "future agent must provide a Lean theorem closing the c_k structural form to Taylor precision at canonical q₀ (not a near-match); then set tier='derived'."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

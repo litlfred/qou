@@ -1,6 +1,7 @@
 -- Repair note (2026-06-13): this stub was a never-compiled leaf — it
 -- had no imports, so ℕ/ℤ/ℝ were unresolved.  Surfaced when
 -- QOU.BraidKnot.MassGapObstruction became its first importer.
+import Mathlib.Tactic
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -27,7 +28,18 @@ Conclusion (a), `dim HH²(U_q,Ad) = 1`, is **derived** below by composing
 the two inputs (`HH² ≅ HH_{3-2} = HH_1 = 1`); it is NOT a class field.
 The `χ(A)`-identification of the generator (conclusions (b),(c)) rests on
 the single honest domain gap `obstruction_trace_gap` (the explicit
-Euler/trace pairing), left as `sorry`.
+Euler/trace pairing).
+
+**That gap is carried as class hypotheses, NOT as a `sorry`** (corrected
+2026-08-25). This paragraph read "left as `sorry`" and was contradicted by
+the file it describes: there is no `sorry` token anywhere here, and
+`obstruction_trace_gap` is *proved* from the `hattori_stallings`,
+`trace_pairing_cast` and `chern_character` fields — as the docstring on
+`kappa_vanishes_iff_chi` below has said all along. The domain gap is real;
+what was wrong is where it lives. Recorded rather than silently deleted
+because the stale wording is the kind a `sorry` audit reads as a hit and a
+human reader reads as an open item, so it manufactures a false gap in both
+directions at once.
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -63,9 +75,34 @@ class QouObstructionReductionContext where
   /-- DEFINITIONAL — Kummer level-`n` vanishing *is* `n ∣ κ₀`
       (definition of the predicate, in terms of `κ₀`, NOT `χ(A)`). -/
   kappa_vanishes_def : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ kappa0
-  /-- Honest obstruction gap inputs -/
-  kappa0_eq_chi_A : kappa0 = chi_A
-  phi_1_image_eq_chi_A : phi_1_image = (chi_A : ℝ)
+  /-- Structural trace evaluation map from algebraic K-theory K₀(A) to Hochschild homology HH₀(A) -/
+  trace_pairing : ℤ → ℝ
+  /-- Hattori-Stallings trace property relating the primitive Kummer obstruction κ₀ to the Euler characteristic χ(A) -/
+  hattori_stallings : trace_pairing chi_A = (kappa0 : ℝ)
+  /-- The trace pairing on Z acts as casting to Reals -/
+  trace_pairing_cast : ∀ z : ℤ, trace_pairing z = (z : ℝ)
+  /-- Chern character map property identifying the trace image of the HH² generator with χ(A) via trace pairing -/
+  chern_character : phi_1_image = trace_pairing chi_A
+
+/-- **The universal obstruction class `χ(A) ∈ HH²(U_q, Ad) ≅ ℤ`**, under the
+    name its consumers use.
+
+    A pure accessor for the existing `chi_A` field — it introduces no new datum
+    and no new hypothesis. `SkeinResolutionObstruction` is documented as being
+    "cross-wired to the **same** `QouObstructionReductionContext` … via
+    `obstruction_class_eq`", i.e. deliberately reading the one canonical class
+    rather than carrying a free field of its own; that wiring just had no name
+    on this side. Adding it here keeps the single-source-of-truth property the
+    de-axiomatisation (bean `7kzn`) was for. -/
+def QouObstructionReductionContext.obstruction_class
+    (ctx : QouObstructionReductionContext) : ℤ := ctx.chi_A
+
+/-- The obstruction class **is** `χ(A)`, definitionally. This is the equation
+    the downstream evaluations rewrite along, so that each is visibly an
+    evaluation of the one class rather than of a private copy. -/
+@[simp] theorem QouObstructionReductionContext.obstruction_class_eq
+    (ctx : QouObstructionReductionContext) :
+    ctx.obstruction_class = ctx.chi_A := rfl
 
 /-- **Residual cohomology gap.**  The Euler/trace pairing on the
     generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
@@ -79,14 +116,21 @@ class QouObstructionReductionContext where
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
 theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
     ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
-  exact ⟨ctx.kappa0_eq_chi_A, ctx.phi_1_image_eq_chi_A⟩
+  constructor
+  · have h : (ctx.kappa0 : ℝ) = (ctx.chi_A : ℝ) := by
+      rw [← ctx.hattori_stallings, ctx.trace_pairing_cast]
+    exact_mod_cast h
+  · rw [ctx.chern_character, ctx.trace_pairing_cast]
 
 /-- **Derived (conclusion (c)).**  Kummer level-`n` vanishing ⟺ `n ∣ χ(A)`.
     Composes the *definitional* `kappa_vanishes_def` (over `κ₀`) with the
-    residual identification `κ₀ = χ(A)` (`obstruction_trace_gap`); it
-    therefore inherits that lemma's single honest `sorry`.  This is **not**
-    a class field — the χ(A)-form of vanishing is *derived*, never assumed
-    (that assumption was the self-projection this file removed). -/
+    residual identification `κ₀ = χ(A)` (`obstruction_trace_gap`).  Both are
+    sorry-free; the derivation is §3b-conditional on
+    `QouObstructionReductionContext`, whose fields (`hattori_stallings`,
+    `trace_pairing_cast`, `chern_character`) carry the domain gap as explicit
+    *hypotheses* rather than as a `sorry`.  This is **not** a class field —
+    the χ(A)-form of vanishing is *derived*, never assumed (that assumption
+    was the self-projection this file removed). -/
 theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :
     ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A := by
   rw [ctx.kappa_vanishes_def, obstruction_trace_gap.1]

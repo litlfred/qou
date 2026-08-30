@@ -1,8 +1,8 @@
 # Whitehead 4G third instance: route decision (W2, bean qou-5wq0)
 
 **Date**: 2026-08-02 · **Milestone**: qou-k49o (PR #4400) · **Sources**:
-`uploads/0611181v2.pdf` (van der Veen, arXiv:math/0611181 v2, read in
-full), `uploads/1172-3.pdf` (Habiro, RIMS Kōkyūroku 1172). Transcription
+`library/arxiv-math-0611181v2/0611181v2.pdf` (van der Veen, arXiv:math/0611181 v2, read in
+full), `library/1172-3/1172-3.pdf` (Habiro, RIMS Kōkyūroku 1172). Transcription
 + 4-anchor verification: `computations/whitehead_vdv_lemma1.py`,
 `computations/whitehead-vdv-lemma1.witness.json` (all anchors PASS).
 

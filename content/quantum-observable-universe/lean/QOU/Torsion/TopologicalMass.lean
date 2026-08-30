@@ -1,5 +1,7 @@
 import QOU.Torsion.MassIdentity
+import QOU.Torsion.ArchimedeanMassIdentity
 import QOU.Torsion.Descent
+import QOU.MathlibExt.QIntegerCanonical
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
@@ -21,6 +23,20 @@ namespace QOU.Torsion
 noncomputable def qNumber (q : ℝ) (n : ℕ) : ℝ :=
   if q = 1 then n
   else (q ^ n - 1) / (q - 1)
+
+/-- **Bridge to the canonical guarded geometric bracket.**
+
+`qNumber` is kept rather than aliased: its proofs below (`qNumber_pos`) need the
+closed form `(qⁿ−1)/(q−1)` syntactically, and swapping the body for
+`qIntGeoCl`'s `Finset.sum` makes them fail. Consolidation here is this equation,
+not a substitution — the two are the same function, and that is now proved
+rather than left to a comment. -/
+theorem qNumber_eq_canonical (q : ℝ) (n : ℕ) :
+    qNumber q n = QOU.QInteger.qIntGeoCl q n := by
+  unfold qNumber
+  by_cases h : q = 1
+  · simp [h]
+  · rw [if_neg h, QOU.QInteger.qIntGeoCl_eq_closed_form h]
 
 /-- The q-number `[n]_q` is positive for `q > 0` and `n ≥ 1`. -/
 theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
@@ -45,7 +61,7 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
 /-- **Topological Decomposition of Mass** (data).
     LaTeX: `\label{thm:topological-mass}` -/
 structure TopologicalMassDecomposition (M : Type*) where
-  mi : MassIdentity M
+  mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)
   bb : BraneBoundary M
   numBlowups : ℕ
@@ -184,7 +200,7 @@ structure DimensionOneReduction (M : Type*) where
     LaTeX: `\label{rem:descent-reduction-zero}` -/
 structure DimensionZeroReduction (M : Type*) where
   dim : ℕ := 0
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   curvature : M → ℝ
   curvature_vanishes : ∀ (p : M), curvature p = 0
 
@@ -196,7 +212,7 @@ theorem qNumber_at_one (n : ℕ) : qNumber 1 n = ↑n := by
 
 /-- Mass at dimension 0 is pointwise. -/
 theorem mass_dim_zero_pointwise {M : Type*}
-    (mi : MassIdentity M)
+    (mi : ArchimedeanMassIdentity M)
     (p : M) (hp : p ∈ mi.vortexCycle) :
     0 ≤ mi.connectionGradient p * mi.leviCurvatureCoupling p :=
   mi.integrand_nonneg p hp

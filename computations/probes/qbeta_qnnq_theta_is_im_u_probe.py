@@ -249,12 +249,12 @@ def main() -> int:
     wb.add_data("any_reading_matches_r", bool(any_hit))
     wb.add_data("verdict", verdict)
     wb.add_assertion("quantized_theta_fails_the_a_free_curve",
-                     computed=0.0 if any_hit else 1.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="0" if any_hit else "1", expected="1",
+                     tolerance="0.5",
                      source="no (k_mu, k_p) row reproduces r = S_mu/S_p within 1e-3")
     wb.add_assertion("some_quantized_row_straddles",
-                     computed=1.0 if straddlers else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if straddlers else "0", expected="1",
+                     tolerance="0.5",
                      source="the k_mu = 0 rows satisfy theta_mu < ln q0 < theta_p — "
                             "the necessary condition every measured reading failed")
     wb.save()

@@ -3,7 +3,7 @@
 *Step 1: Orthogonality (a).*
 The Frobenius form $\int_A$ induces, via the
 [snake identities](#def:frobenius-pairing)
-(pairing\_snake\_left, pairing\_snake\_right), a categorical
+(`pairing_snake_left`, `pairing_snake_right`), a categorical
 trace $\mathrm{tr}_A(f) = \int_A \circ f$.  The matrix
 coefficient $D^j_{mn}$ is the $(m,n)$ entry of the
 representation morphism $\rho_j \colon A \to \mathrm{End}(V_j)$.
@@ -29,7 +29,7 @@ The result uses only Schur's lemma (which holds in
 any semisimple abelian category) and the Frobenius trace.
 
 *Step 2: Completeness (b).*
-This is the key step.  We use the **Tannaka--Krein
+We use the **Tannaka--Krein
 reconstruction**.  The fibre functor
 $\tau \colon \mathbf{C} \to R\text{-Mod}$ is faithful and exact
 (axiom of QOU).  By the Tannaka--Krein theorem, $A$ is

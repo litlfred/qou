@@ -1,0 +1,53 @@
+Asymptotics of the quantum invariants for the figure 8 knot 3
+
+The AEC, Conjecture 1, however offers in a sense a converse point of view, where
+one seeks to derive the final output of perturbation theory after all cancellations
+have been made (ie. collect all terms with the same Chern—Simons value). This
+seems actually rather reasonable in this case, since the exact invariant is known
+explicitly.
+
+The AEC was proved by Andersen in [1] in the case of mapping tori of finite
+order diffeomorphisms of orientable surfaces of genus at least two using the gauge-
+theoretic approach to the quantum invariants. Later on the AEC was proved by
+Hansen in [9] for all Seifert manifolds with orientable base by supplementing the
+work of Rozansky [31] with the required analytic estimates. In [10] the AEC is
+futher proved for the Seifert manifolds with nonorientable base of even genus.
+
+Using the approach of Reshetikhin and Turaev to the quantum invariants, the
+AEC has not yet been proved for any hyperbolic 3—-manifold. It is therefore partic-
+ular interesting to consider surgeries on the figure 8 knot. Let Mp/, be the manifold
+obtained by (rational) Dehn surgery on the figure 8 knot with surgery coefficient
+p/q. Then M,/q has a hyperbolic structure if and only if |p| > 4 or |q| > 1, see e.g.
+[25, Theorem 10.5.10] or [33]. (It is well-known that for |q| = 1 and |p| € {1,2,3}
+My/q is a Seifert manifold, and M4 are obtained by gluing together the comple-
+ment of the trefoil knot and the non-trivial J—bundle over the Klein bottle, see e.g.
+[15, p. 95]. The manifold Mo is a mapping torus of a torus, see Appendix C.) We
+use here the convention of Rolfsen for surgery coefficients, cf. [30, Chap. 9].
+particular Dehn surgery on a knot K in S® with surgery coefficient f € Z is equal
+to the boundary of the compact 4—manifold obtained by attaching a 2-handle to
+the 4-ball using the knot K with framing f, see [30, p. 261]. As usual M)/, is given
+the orientation induced by the standard right-handed orientation of $°.
+
+The advantage of working with surgeries on the figure 8 knot K is that the
+(normalized) colored Jones polynomial Jj,(A) is known explicitly. In fact
+
+m
+
+Tie(A) = vena -&)1-e"),
+
+m=0
+
+where € = exp(27i/r) (and the product is 1 for m = 0). The colors X are here di-
+mensions of irreducible representations of the quantum group associated to sl2(C)
+and the root of unity €, so A = 1,2,...,r. By the above expression for Jj,(A) we
+have an explicit formula for the quantum invariant 7,(Mp/,) (see formula (2.17)).
+Although this formula is completely explicit, it is not clear from it what the leading
+order large r asymptotics of 7,(M,/,) is. In order to study this asymptotics, we ob-
+serve (generalizing from Kashaev’s work) that the product in the expression for the
+colored Jones polynomial can be expressed in terms of a quotient of two evaluations
+of Faddeev’s quantum dilogarithm Sy (y = 7/r):
+
+Eom — m) —7)
+-¥ (1—®) S,(-4 + 2y(A+m) +7) (4)
+
+m=0

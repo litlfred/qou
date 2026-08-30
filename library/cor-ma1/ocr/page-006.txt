@@ -1,0 +1,53 @@
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 5
+
+Definition 2.1. The successive ranks of an overpartition can be defined from its Frobenius representation.
+If an overpartition has Frobenius representation
+
+@y a2 *'* Gn
+by bp +++) bN
+then its ith successive rank r; is a; — b; minus the number of non-overlined parts in {bj41,...,bn}.
+
+This definition is an extension of Lovejoy’s definition of the rank Bd. For example, the successive ranks
+
+74 2 0
+of G 301 3) are (2,0, 1,0).
+
+We say that the generalized Durfee square of an overpartition \ has size N if N is the largest integer such
+that the number of overlined parts plus the number of non-overlined parts greater or equal to N is greater
+than or equal to N (see Figure B).
+
+FIGURE 3. The generalized Durfee square of A = (7, 4,3, 3, 2,1) has size 4.
+
+Proposition 2.2. There exists a bijection between overpartitions whose Frobenius representation has N
+columns and whose bottom line has j overlined parts and overpartitions with generalized Durfee square of
+size N and N — 9 overlined parts.
+
+Proof. An overpartition with generalized Durfee square of size N can be decomposed into a partition a into
+at most N parts (the conjugate of the partition under the generalized Durfee square) and an overpartition
+y into N parts whose non-overlined parts are > N (the rest). For example, the overpartition on Figure B
+gives a = (2,2, 1) and y = (7,4,3,1). An overpartition whose Frobenius representation has N columns can
+be decomposed into a partition 3 into N distinct parts (@ is obtained by adding 1 to each part of the top
+line), a partition 6 into distinct parts which lie between 0 and N — 1 and a partition a into at most N parts.
+6 and a are obtained from the bottom line as follows: we first initialize a to the bottom line, then if the ith
+part of the bottom line is overlined, we take off its overline, we decrease the first (¢ — 1) parts of a by 1 and
+add a part i—1 to 0.
+
+Now there exists a bijection between ordered pairs (3,5) and overpartitions y. This bijection is defined
+as follows: we overline all the parts of 3, then for each part i in 6, we add i to (;41 and we remove the
+overlining. We then reorder the parts, which gives us y. This is easily invertible and is very similar to the
+Algorithm Z fi.
+
+The decompositions of the first paragraph and the bijection of the second paragraph show that there is
+indeed a bijection between overpartitions whose Frobenius representation has N columns and overpartition
+with generalized Durfee square of size N. If there are j overlined parts in the bottom line of the Frobenius
+symbol, there are j parts in 6 and by the bijection, there are N — j overlined parts in y. The proposition is
+thus established. O
+
+75 4 2 0 , . . . . .
+6743 +): We thus have N = 5 and j = 2 in this example. By adding
+1 to each part of the top line, we get @ = (8,6,5,3,1). From the bottom line, we get 6 = (4,1) and
+a = (4,3,3,2,1). By applying the bijection described in the second paragraph of the above proof, we get
+7 = (8,7,5,5,3). Since a = (4,3,3,2,1), the resulting overpartition is \ = (8,7,5,5,5,4,3,3,1). It has
+N — j =3 overlined parts and its generalized Durfee square is of size 5.
+
+Example 2.3. Let v = (

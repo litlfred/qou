@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T20:50:32.215417+00:00",
-  "commitSha": "84c7b53b9916fca208f220689c16a8bfc3acd45e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-16T10:51:34.635195+00:00",
+  "commitSha": "7859043ba743d0c34bc31cd233ba03d1dbc11960",
   "assertions": [
     {
       "name": "writhe_T(2,2)_eq_2m",
@@ -42,18 +42,18 @@
     },
     {
       "name": "trM_sigma1sq_closedform_eq_hecke",
-      "computed": "1.10438933682157198406914438457635798569533972539372935316082",
-      "expected": "1.10438933682157198406914438457635798569533972539372935316082",
+      "computed": "1.12809062732387500975802305108205672814206658147009123223094",
+      "expected": "1.12809062732387500975802305108205672814206658147009123223094",
       "passed": true,
-      "tolerance": 1e-50
+      "tolerance": "1e-50"
     }
   ],
   "allPassed": true,
-  "durationMs": -1780344027025,
+  "durationMs": 5,
   "computation": "knot-operator-census-group-actions",
   "scriptFile": "knot_operator_census_group_actions.py",
-  "scriptHash": "0d1cacfe2ffa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "da8a4b037778",
+  "scriptCommitSha": "1fdce2fb1db954f73cd9f904beeb77b7709771e2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "EXPLORATORY census of QOU knot/link operators: writhe (U(1)_framing), Markov-stabilization scaling (B_n->B_{n+1} bridge), Hopf n-independence. All RAW @ 60 dps; no tuning to any observable.",
@@ -80,61 +81,71 @@
         "strands_B_n": 1,
         "writhe": 0,
         "note": "identity / vacuum; genus 0",
-        "u1_framing_nontrivial": false
+        "u1_framing_nontrivial": false,
+        "writhe_minus_level_parity": 1
       },
       "Hopf_T(2,2)=sigma1^2": {
         "strands_B_n": 2,
         "writhe": 2,
         "note": "positive Hopf link; diquark; writhe +2",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 0
       },
       "trefoil_T(2,3)=sigma1^3": {
         "strands_B_n": 2,
         "writhe": 3,
         "note": "electron e^-; lepton gen 1",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "cinquefoil_T(2,5)=sigma1^5": {
         "strands_B_n": 2,
         "writhe": 5,
         "note": "muon; lepton gen 2",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "septafoil_T(2,7)=sigma1^7": {
         "strands_B_n": 2,
         "writhe": 7,
         "note": "tau; lepton gen 3 (sym-broken)",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "T(2,9)=sigma1^9": {
         "strands_B_n": 2,
         "writhe": 9,
         "note": "genus-4 saturation; sym-broken",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "T(3,4)=(s1 s2)^4": {
         "strands_B_n": 3,
         "writhe": 8,
         "note": "Hopf^2 color binding; H^{0,1}",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "T(3,5)=(s1 s2)^5": {
         "strands_B_n": 3,
         "writhe": 10,
         "note": "weak mediator; alpha_EM index",
-        "u1_framing_nontrivial": true
+        "u1_framing_nontrivial": true,
+        "writhe_minus_level_parity": 1
       },
       "borromean=(s1^-1 s2)^3": {
         "strands_B_n": 3,
         "writhe": 0,
         "note": "nucleon/baryon; writhe 0",
-        "u1_framing_nontrivial": false
+        "u1_framing_nontrivial": false,
+        "writhe_minus_level_parity": 1
       },
       "figure8_4_1": {
         "strands_B_n": 3,
         "writhe": 0,
         "note": "Higgs/pion-half; hyperbolic; writhe 0",
-        "u1_framing_nontrivial": false
+        "u1_framing_nontrivial": false,
+        "writhe_minus_level_parity": 1
       }
     },
     "torus_T2_2m_writhe": {
@@ -159,9 +170,9 @@
         "formula_2m": 10
       }
     },
-    "markov_stabilization_factor_z_at_q0": "0.499320317568204964024944445995218639688185643945922657514302",
-    "z_inverse_at_q0": "2.00272243050355023591756017974562486504321616463230642464323",
-    "trM_sigma1_sq_at_q0": "1.10438933682157198406914438457635798569533972539372935316082",
+    "markov_stabilization_factor_z_at_q0": "0.612689520407518608334394786879969336448434467949914067024152",
+    "z_inverse_at_q0": "1.63214804022577259368086359765182212412478380060851557253534",
+    "trM_sigma1_sq_at_q0": "1.12809062732387500975802305108205672814206658147009123223094",
     "operator_strand_counts": {
       "unknot_T(1,0)": 1,
       "Hopf_T(2,2)=sigma1^2": 2,
@@ -176,10 +187,11 @@
     },
     "fiber_action_strand_count": 5,
     "borromean_trace_strand_count": 3,
-    "two_destabilization_factor_z_inv_sq_at_q0": "4.01089713364204760446134164579541973729256382997891853907278"
+    "two_destabilization_factor_z_inv_sq_at_q0": "2.66390722521283019257484907688692449394370161405810190799805"
   },
   "caveats": [
     "Markov de-stabilization H_5 -> H_3 is only valid when the removed strands are DISJOINT from the closure (Markov axiom 3). The Borromean braid (s1^-1 s2)^3 uses BOTH generators of B_3 non-trivially and is Brunnian (every 2-sublink is trivial) -- so a strand cannot be removed without changing the link type. Therefore plain Markov de-stabilization does NOT give a derived H_5(fiber) -> H_3(Borromean) functor. The 5-strand fiber object and the 3-strand trace remain in different rep rings. The bridge is OPEN: a derived map requires either (a) a cabling/satellite operation (2-cabling a 3-strand pattern -> 6 strands, NOT 5), or (b) an explicit branching functor Res^{H_5}_{H_3} composed with the fiber decoration -- neither is supplied by the current framework. No fit attempted.",
-    "U(1)_framing: writhe is nonzero (+2m) for the torus knots T(2,2m) and for the Hopf (sigma_1^2, w=+2), but ZERO for the Borromean baryon and the figure-eight. So a nonzero-writhe operator (e.g. a T(2,2m) color-tube operator) WOULD carry a nontrivial U(1)_framing phase q^{w.c}. This is a RAW structural observation; mapping writhe -> hypercharge Y is NOT derived and is NOT attempted. The production nucleon uses the writhe-0 Borromean, so the framing U(1) is trivial there -- consistent with the s5-so3 audit."
+    "U(1)_framing, STATED PER LEVEL (the writhe is a property of the braid word, not of its closure: Markov-I invariant, but Markov-II stabilization shifts it by +-1 while presenting the same link, so a level must be named). AT LEVEL n=2 (B_2): writhe is nonzero (+2m) for the torus knots T(2,2m), including the Hopf sigma_1^2 (w=+2), and for every T(2,odd) lepton carrier. AT LEVEL n=3 (B_3): writhe is ZERO for the Borromean baryon and for the figure-eight, and nonzero for T(3,4) (w=+8) and T(3,5) (w=+10). So a nonzero-writhe operator (e.g. a T(2,2m) color-tube operator) WOULD carry a nontrivial U(1)_framing phase q^{w.c} AT ITS OWN LEVEL. This is a RAW structural observation; mapping writhe -> hypercharge Y is NOT derived and is NOT attempted. The production nucleon uses the writhe-0 Borromean at n=3, so the framing U(1) is trivial there -- consistent with the s5-so3 audit. Under the owner ruling (states are Groebner-Shirshov normal forms; the observable is the trace at the lowest level of the tower, the braid index) these canonical words ARE the states, so the census compares states and the per-level readings above stand as written.",
+    "LEVEL-INDEPENDENT COMPANION: writhe_minus_level_parity = (w - n) mod 2 is emitted per row, computed from the stored (writhe, strands_B_n) pair. It is the COMPLETE invariant of the Markov-II action (w, n) -> (w +- 1, n + 1) (QOU/StandardModel/WritheLevelParity.lean: markovPair_parity soundness, markovPair_of_even completeness) and equals the component parity of the closure. In this census only the Hopf link comes out EVEN (0): it is the one 2-component closure; every other operator here is odd (1). It carries exactly ONE BIT and therefore cannot substitute for a magnitude, for Q = w/2, or for I_3; its fermion/boson reading is separately REFUTED (the gluon unit sigma_1 sigma_2^{-1} closes to a single component, hence odd, yet is a boson). Use it ONLY as a consistency check on level-crossing claims. NOT wired. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md."
   ]
 }

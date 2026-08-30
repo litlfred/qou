@@ -2,8 +2,8 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.HeckeAlgebra.JonesMarkovWenzl
@@ -38,6 +38,32 @@ three were opaque `axiom`s, which left the identification an equation between
 two unconstrained functions — no content whatsoever, while the module header
 advertised "the Wenzl 1988 §3 closed form".
 
+## Base ring (AGENTS.md §7c) — `ℝ` here is required, not a gratuitous specialisation
+
+Every `q` in this module carries a **half-integer exponent**: the q-integer is
+`[k]_q = (q^{k/2} − q^{−k/2}) / (q^{1/2} − q^{−1/2})` and the Markov parameter is
+`z = 1/(q^{1/2} + q^{−1/2})`.  A square root of `q` does not exist in a generic
+`CommRing`, so these are `Real.rpow` applications (hence the
+`Mathlib.Analysis.SpecialFunctions.Pow.Real` import) and the module is
+archimedean by construction — it sits on the observation side of the
+substrate→archimedean wall.
+
+**The generic content is not missing; it lives elsewhere and this module is its
+archimedean realisation.** The base-ring-generic q-integer is
+`QOU.QInteger.qIntBal` in `QOU.MathlibExt.QIntegerCanonical`, and the bridge is
+proved here as `qInteger_eq_canonical`:
+
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k     (for 0 ≤ q)
+
+i.e. this file is exactly `qIntBal` instantiated at the **real** square root of
+the substrate parameter.  Rewriting it over `{R : Type*} [CommRing R]` would be
+unfaithful — there is no `√q` to instantiate at, and the Wenzl closed form would
+have to be restated in a variable meaning `q^{1/2}`, which is what `qIntBal`
+already is.
+
+Recorded so §7c sweeps stop re-flagging this file: a bare grep sees ~26 `ℝ`s in
+a `HeckeAlgebra` module and scores it a base-ring candidate, which it is not.
+
 ## Categorical content
 
 The Wenzl closed form is one half of the q-Hecke / q-Plancherel
@@ -66,7 +92,7 @@ type-level interface; concrete computation is deferred.
 
 namespace QOU.HeckeAlgebra.JonesMarkovWenzl
 
-open QOU.HeckeAlgebra QOU.HeckeAlgebra.MarkovTrace QOU.HeckeAlgebra.QSubstrate
+open QOU.HeckeAlgebra QOU.HeckeAlgebra.QSubstrate
 
 /-- The q-integer `[k]_q := (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})`.
     Equivalent to the standard `[k]_q = 1 + q + q² + ... + q^{k-1}`
@@ -75,6 +101,40 @@ noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
   if k = 0 then 0
   else (q ^ ((k : ℝ) / 2) - q ^ (-(k : ℝ) / 2)) /
        (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2))
+
+/-- **Bridge to the canonical balanced bracket — this is not a third
+convention.**
+
+The half-powers make this site look like a separate `[k]` from both `qIntBal`
+and `qIntGeo`, and an earlier census set it aside on exactly that reading.  It
+is not: substituting `v = q^{1/2}` gives `v^k = q^{k/2}` and
+`v⁻¹ = q^{-1/2}`, so the whole expression is the *balanced* bracket in the
+half-power variable.
+
+That makes it the mirror of `qIntegerRescaled`: one site is the canonical
+bracket at `q²`, this one at `q^{1/2}`, and both are instances of the single
+twist `qIntBal_eq_twist_canonical` rather than new conventions.  Here the `k = 0`
+guard is again redundant — `qIntBal v 0 = 0` already.
+
+`0 ≤ q` is the real content of the hypothesis: it is what lets `rpow` powers
+compose (`(q^{1/2})^k = q^{k/2}`), and it is the file's own standing assumption
+("Defined for real `q > 0`"). -/
+theorem qInteger_eq_canonical (q : ℝ) (hq : 0 ≤ q) (k : ℕ) :
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k := by
+  have hv : ∀ m : ℕ, (q ^ ((1 : ℝ) / 2)) ^ m = q ^ ((m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_natCast (q ^ ((1 : ℝ) / 2)) m, ← Real.rpow_mul hq]
+    ring_nf
+  have hinv : ∀ m : ℕ, ((q ^ ((1 : ℝ) / 2))⁻¹) ^ m = q ^ (-(m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_neg hq, ← Real.rpow_natCast (q ^ (-((1 : ℝ) / 2))) m,
+      ← Real.rpow_mul hq]
+    ring_nf
+  unfold qInteger
+  rw [QOU.QInteger.qIntBal_def]
+  split_ifs with h
+  · subst h; simp
+  · rw [hv k, hinv k, show (-1 : ℝ) / 2 = -((1 : ℝ) / 2) by ring, Real.rpow_neg hq]
 
 /-- `[1]_q = 1` whenever the denominator `q^{1/2} - q^{-1/2}` is
     non-zero (i.e. for `q ≠ 1`).  At `q = 1` the formula gives
@@ -196,17 +256,28 @@ noncomputable def wenzlClosedForm {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : 
   have : partsList lam = [] := by simp [partsList]
   simp [wenzlClosedForm, this]
 
-/-- **Identification** (Wenzl 1988 Lemma 3.2): the abstract
-    `JonesMarkovCoefficient` from `QOU.HeckeAlgebra.MarkovTrace` is given by
-    the closed form above.
+/-! ## Identification with the abstract Jones-Markov coefficient
 
-    This is a genuine external input — Wenzl's lemma, which Mathlib does not
-    have. It was previously *vacuous*: both sides were opaque axioms, so the
-    equation constrained nothing. With `wenzlClosedForm` now defined, it says
-    something that could be false. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (identification y_λ = wenzlClosedForm)
-axiom JonesMarkovCoefficient_eq_wenzl :
-    ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
-    JonesMarkovCoefficient lam q = wenzlClosedForm lam q
+`QOU.HeckeAlgebra.MarkovTrace.JonesMarkovCoefficient` is now **defined** to be
+`wenzlClosedForm`, so the Wenzl 1988 Lemma 3.2 identification is definitional
+rather than an axiom. It is recorded as a `rfl` theorem at the definition site
+(`MarkovTrace.jonesMarkovCoefficient_eq_wenzlClosedForm`) rather than here,
+because `MarkovTrace` imports this module and not the other way round.
+
+History, because the shape is worth recognising: this used to be
+`axiom JonesMarkovCoefficient_eq_wenzl`, and before `wenzlClosedForm` was
+defined it was *vacuous* — both sides were opaque, so the equation constrained
+nothing. Commit `fa0aa1c5c8` correctly deleted the axiom, but left this comment
+attached to nothing, which is a PARSE ERROR: a `/-- -/` doc comment must be
+followed by a declaration. The module has not compiled from source since.
+
+It went unnoticed for the reason documented in
+`docs/audits/2026-08-26-live-axiom-surface-recheck.md` §4 — a stale `.olean`
+(this one dated 2026-07-02) kept satisfying every `import`, so nothing that
+merely *used* the module ever noticed it could not be *built*. That is the
+same class of defect one step worse: not a wrong axiom verdict, an unbuildable
+module hidden behind a cache.
+-/
+
 
 end QOU.HeckeAlgebra.JonesMarkovWenzl

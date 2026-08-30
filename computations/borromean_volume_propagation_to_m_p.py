@@ -8,8 +8,10 @@ Finding from `borromean_volume_100dps.py`:
   Audit / production script Vol = 7.327722906465      (stale, ~10 dps)
   Δ = 1.85e-6 absolute = 0.252 ppm relative
 
-The m_p_borromean_verification_50dps.py production script uses the
-stale Vol(𝓑₃) value AND a hardcoded λ_p_scale = 2.4599527869 — and
+The m_p_borromean_verification_50dps.py script — described as the
+production script when this probe was written, since deprecated for
+absolute mass by the 2026-06-24 ruling and imported by nothing — uses
+the stale Vol(𝓑₃) value AND a hardcoded λ_p_scale = 2.4599527869 — and
 together they close m_p to 250 ppb. The HYPOTHESIS this script tests:
 
   If the hardcoded λ_p_scale was originally calibrated against
@@ -34,6 +36,7 @@ if str(HERE) not in sys.path:
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
@@ -154,7 +157,7 @@ def main() -> int:
     delta_8G_ppm = mp.fabs(delta_8G / M_P_CODATA * mp.mpf("1e6"))
     w.add_assertion(
         "m_p residual via exact 8·G Vol(𝓑₃) drops below 2 ppb",
-        computed=float(delta_8G_ppm * mp.mpf("1e3")),  # in ppb
+        computed=fmt(delta_8G_ppm * mp.mpf("1e3")),  # in ppb
         expected=0.0,
         tolerance=2.0,
         unit="ppb",

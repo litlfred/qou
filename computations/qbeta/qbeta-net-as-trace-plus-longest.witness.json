@@ -1,0 +1,249 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T22:42:32.285195+00:00",
+  "commitSha": "4df598b769fb242d5dab12a182f56d87aa6321fb",
+  "assertions": [
+    {
+      "name": "net_sends_every_basis_element_to_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "trM_at_z_one_is_one_except_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_equals_trM_at_z_one_minus_h_times_the_longest_coefficient",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_functionals_DO_differ_exhibited_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_longest_coefficient_functional_is_NOT_a_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_reproduces_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_has_ZERO_coordinate_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "epsNPq_equals_the_trace_at_the_trivial_loop_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_phase_is_a_transport_WITHIN_the_markov_family",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_floor_is_MINUS_h_times_the_longest_coefficient_of_dC",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_longest_coefficient_of_dC_EQUALS_a_two_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "hence_the_floor_is_minus_h_times_a_two_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "and_chi_two_one_of_delta_vanishes_CROSS_REFERENCE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_longest_coefficient_functional_has_a_chi_expansion_on_the_centre",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "markov_weights_at_the_trivial_loop_value_solve_uniquely",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "a_lambda_EQUALS_y_lambda_at_one_minus_h_times_b_lambda",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "b_two_one_is_what_makes_the_floor",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "b_two_one_VANISHES",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "a_two_one_IS_the_markov_weight_at_the_trivial_loop_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "THE_FLOOR_IS_MINUS_h_TIMES_y_two_one_AT_z_EQUALS_ONE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1976,
+  "computation": "qbeta-net-as-trace-plus-longest",
+  "scriptFile": "qbeta_net_as_trace_plus_longest_probe.py",
+  "scriptHash": "6426f4dd100c",
+  "scriptCommitSha": "eec9be12cbec979f33e1973d17605c47be5abf46",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_net_as_trace_plus_longest_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_net_as_trace_plus_longest_probe.py"
+  },
+  "description": "`net` equals the Ocneanu trace at z=1 corrected by -h on the longest element alone; Delta's support explains their agreement; and the z-free commutator floor is exactly -h*a_(2,1).",
+  "data": {
+    "floor_symbolic": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
+    "a_2_1_symbolic": "(q**3 - q)/(q**4 + q**2 + 1)",
+    "longest_coefficient_of_dC_symbolic": "q*(q - 1)*(q + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+    "floor_at_q0": "-0.0143595358875304501085086097144759087768871011997172248968326",
+    "a_2_1_at_q0": "0.0686860966441418312478759582739277630635695490069608206573360",
+    "h_at_q0": "0.209060298795639315430846213129674943859757495263061811021371",
+    "minus_h_times_a_2_1_at_q0": "-0.0143595358875304501085086097144759087768871011997173084207298",
+    "net_minus_trM_z1_on_the_longest_element": "-q + 1/q",
+    "y_(3)_at_z_equals_one": "(q + 1)*(q**3 + q + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+    "b_(3)_longest_functional_on_centre": "q**3/(q**6 + 2*q**4 + 2*q**2 + 1)",
+    "y_(2,1)_at_z_equals_one": "(q**3 - q)/(q**4 + q**2 + 1)",
+    "b_(2,1)_longest_functional_on_centre": "0",
+    "y_(1,1,1)_at_z_equals_one": "q**2*(q**4 - 2*q**3 + q**2 - q + 1)/(q**6 + 2*q**4 + 2*q**2 + 1)",
+    "b_(1,1,1)_longest_functional_on_centre": "-q**3/(q**6 + 2*q**4 + 2*q**2 + 1)",
+    "markov_convention": "convention-free — the results hold for every z, and the floor contains no Markov parameter at all",
+    "assertion_notes": [
+      {
+        "assertion": "trM_at_z_one_is_one_except_on_the_longest_element",
+        "note": "(tr(T_0T_1T_0) = z(hz+1) -> 1+h at z=1)"
+      },
+      {
+        "assertion": "net_equals_trM_at_z_one_minus_h_times_the_longest_coefficient",
+        "note": "(exact on all six basis elements, hence as functionals)"
+      },
+      {
+        "assertion": "the_two_functionals_DO_differ_exhibited_on_the_longest_element",
+        "note": "(so 'they agree precisely when z=1' is about Delta, not the functionals — on T_{w_0} they differ by h at every z)"
+      },
+      {
+        "assertion": "the_longest_coefficient_functional_is_NOT_a_trace",
+        "note": "(which is exactly why `net` fails cyclicity)"
+      },
+      {
+        "assertion": "delta_has_ZERO_coordinate_on_the_longest_element",
+        "note": "(so eps(Delta) = tr_M^{z=1}(Delta) follows from SUPPORT, not from a numerical coincidence)"
+      },
+      {
+        "assertion": "the_phase_is_a_transport_WITHIN_the_markov_family",
+        "note": "(2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta), symbolic in z)"
+      },
+      {
+        "assertion": "the_floor_is_MINUS_h_times_the_longest_coefficient_of_dC",
+        "note": "(tr_M^{z=1} kills [H,H], so the rank-one term is all that survives)"
+      },
+      {
+        "assertion": "the_longest_coefficient_of_dC_EQUALS_a_two_one",
+        "note": "(both = q*(q - 1)*(q + 1)/((q**2 - q + 1)*(q**2 + q + 1)))"
+      },
+      {
+        "assertion": "and_chi_two_one_of_delta_vanishes_CROSS_REFERENCE",
+        "note": "(so the 2-dim block contributes NOTHING to the trace-visible part of the phase and EVERYTHING to the trace-invisible part)"
+      },
+      {
+        "assertion": "a_lambda_EQUALS_y_lambda_at_one_minus_h_times_b_lambda",
+        "note": "(so every object in the block-resolved identity is now built from the Ocneanu trace plus the single rank-one term)"
+      },
+      {
+        "assertion": "b_two_one_is_what_makes_the_floor",
+        "note": "(floor = -h*(y_(2,1)(1) - h*b_(2,1)); b_(2,1) = 0)"
+      },
+      {
+        "assertion": "b_two_one_VANISHES",
+        "note": "(the longest-coefficient functional has no (2,1) component on the centre — so a_(2,1) is not merely equal to a Markov weight by arithmetic, it IS one)"
+      },
+      {
+        "assertion": "THE_FLOOR_IS_MINUS_h_TIMES_y_two_one_AT_z_EQUALS_ONE",
+        "note": "(net(dC) = -h * y_(2,1)(1): the z-free part of the ladder phase, in the Ocneanu family alone)"
+      }
+    ],
+    "verdict": "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, ON H_3(q) -- it FAILS at n = 4 (11 of 24; see qbeta_rank_one_identity_is_n3_only_probe), so it is an n=3 fact and not a characterisation of the functionals; the conclusions below are unaffected because each is evaluated on Delta in H_3(q). Measured on all six basis elements. That sharpens the corpus's 'genuinely distinct functionals' to a single rank-one difference supported on w_0, and turns its companion 'they agree precisely when z=1' into a statement about Delta's SUPPORT -- Delta has zero w_0 coordinate -- rather than about the functionals, which differ by h on T_{w_0} at EVERY z. Consequences: the ladder phase is a transport WITHIN one family, 2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta); and since tr_M^{z=1} annihilates [H,H], the whole z-free floor is the rank-one term. Chasing that through gives the closed form the identity was missing: b_(2,1) = 0, so a_(2,1) IS the Markov weight y_(2,1)(1), and     net(dC) = -h * y_(2,1)(1)  -- exact, and stated entirely inside the Ocneanu family with no `net`-specific object left in it. Read with chi^(2,1)(Delta) = 0 from the block resolution: the 2-dimensional block contributes nothing to the trace-visible part of the phase and everything to the trace-invisible part. Its contribution was never absent -- it was in the sector no trace can see. Scope-(a): derives no correction, proposes no value, wires nothing."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

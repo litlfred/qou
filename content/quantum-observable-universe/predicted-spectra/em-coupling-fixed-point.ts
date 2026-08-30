@@ -6,7 +6,6 @@ export default proposition({
     "$\\alpha_{EM}$ as the root of the self-consistent fixed-point cubic $-h^2H\\alpha^3 + H\\alpha^2 + T\\alpha - 1 = 0$ (conditional on the $B_3(\\mathbb{C})$ $\\mathcal{O}(\\alpha^2)$ normalization)",
   uses: [
     "prop:em-coupling-projection",
-    "prop:alpha-em-categorical-trace-ratio",
     "prop:em-coupling-bring-zero-mode",
     "prop:photon-ir-zero-mode-bring",
   ],

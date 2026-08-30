@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:18:29.496022+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-26T14:29:25.095282+00:00",
+  "commitSha": "e9fb5ae64a40ba9fdfeb211391cc4440bd8a6cbc",
   "assertions": [
     {
       "name": "W_sym equals W_alt",
-      "computed": 0.16546138476803504,
-      "expected": 0.16546138476803504,
+      "computed": 0.16546138503360688,
+      "expected": 0.16546138503360688,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Wedderburn-Artin: dim_q((3))=dim_q((1,1,1))=1"
     },
@@ -18,26 +18,26 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-14,
+      "tolerance": "1e-14",
       "unit": "dimensionless",
       "source": "W_sym·χ_sym + W_alt·χ_alt = W_sym·(χ_sym+χ_alt) = 0"
     },
     {
-      "name": "V_pn = W_std*(z-h/2)",
-      "computed": 0.26414511558914494,
-      "expected": 0.26414511558914494,
+      "name": "V_pn = W_std*(z+d_pn)",
+      "computed": 0.34004497964551195,
+      "expected": 0.34004497964551195,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Standard rep carries all pn binding"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "confined-knot-binding",
   "scriptFile": "confined_knot_binding.py",
-  "scriptHash": "00043dba54e8",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "03f50203d20e",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,18 +48,26 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/confined_knot_binding.py"
+    ],
+    "reproduce": "python3 -u computations/confined_knot_binding.py"
   },
   "description": "Validates prop:confined-knot-binding. Key result: for symmetric crossings (pn nuclear force), the sym and alt Wedderburn channels cancel exactly (W_sym = W_alt). Binding is carried entirely by the standard representation: V_pn = W_std × (z - H_A/2). The character ratio at each jet level gives the knot factor — no fitting required.",
   "contentBlock": "prop:confined-knot-binding",
   "parameters": {
-    "q": 1.1099785955573347,
-    "h": 0.20906032199559366,
-    "z": 0.49932033403356124,
-    "W_sym": 0.16546138476803504,
-    "W_std": 0.66907723046393,
-    "W_alt": 0.16546138476803504,
-    "V_pn": 0.26414511558914494
+    "q": 1.1099785827513808,
+    "h": 0.20906029879563937,
+    "z": 0.6126880371464652,
+    "W_sym": 0.16546138503360688,
+    "W_std": 0.6690772299327864,
+    "W_alt": 0.16546138503360688,
+    "V_pn": 0.34004497964551195
   },
   "data": {
     "crossing_types": [
@@ -67,50 +75,50 @@
         "name": "pp (σ)",
         "c": 1,
         "d": 0,
-        "chi_sym": 1.1099785956,
-        "chi_alt": -0.9009182736,
-        "chi_std": 0.499320334,
-        "V_full": 0.3686752766,
+        "chi_sym": 1.1099785828,
+        "chi_alt": -0.900918284,
+        "chi_std": 0.6126880371,
+        "V_full": 0.4445270213,
         "sym_alt_cancel": false
       },
       {
         "name": "nn (σ⁻¹)",
         "c": 1,
-        "d": -0.20906032199559366,
-        "chi_sym": 0.9009182736,
-        "chi_alt": -1.1099785956,
-        "chi_std": 0.290260012,
-        "V_full": 0.1596149546,
+        "d": -0.20906029879563937,
+        "chi_sym": 0.900918284,
+        "chi_alt": -1.1099785828,
+        "chi_std": 0.4036277384,
+        "V_full": 0.2354667225,
         "sym_alt_cancel": false
       },
       {
-        "name": "pn (½(σ+σ⁻¹))",
+        "name": "pn (colour-weighted)",
         "c": 1,
-        "d": -0.10453016099779683,
-        "chi_sym": 1.0054484346,
-        "chi_alt": -1.0054484346,
-        "chi_std": 0.394790173,
-        "V_full": 0.2641451156,
-        "sym_alt_cancel": true
+        "d": -0.10445824776972631,
+        "chi_sym": 1.005520335,
+        "chi_alt": -1.0053765317,
+        "chi_std": 0.5082297894,
+        "V_full": 0.3400687735,
+        "sym_alt_cancel": false
       },
       {
         "name": "pe (σ₁⁻¹)",
         "c": 1,
-        "d": -0.20906032199559366,
-        "chi_sym": 0.9009182736,
-        "chi_alt": -1.1099785956,
-        "chi_std": 0.290260012,
-        "V_full": 0.1596149546,
+        "d": -0.20906029879563937,
+        "chi_sym": 0.900918284,
+        "chi_alt": -1.1099785828,
+        "chi_std": 0.4036277384,
+        "V_full": 0.2354667225,
         "sym_alt_cancel": false
       },
       {
         "name": "gluon (σ₀)",
         "c": 1,
         "d": 0,
-        "chi_sym": 1.1099785956,
-        "chi_alt": -0.9009182736,
-        "chi_std": 0.499320334,
-        "V_full": 0.3686752766,
+        "chi_sym": 1.1099785828,
+        "chi_alt": -0.900918284,
+        "chi_std": 0.6126880371,
+        "V_full": 0.4445270213,
         "sym_alt_cancel": false
       }
     ],
@@ -125,76 +133,76 @@
         "name": "²H",
         "Z": 1,
         "N": 1,
-        "atom_product": 1.7544370607,
-        "free_product": 0.6709330554,
-        "ratio": 2.6149211856
+        "atom_product": 1.7893238512,
+        "free_product": 0.7768007219,
+        "ratio": 2.3034528686
       },
       {
         "name": "³H",
         "Z": 1,
         "N": 2,
-        "atom_product": 2.9117910206,
-        "free_product": 0.4687143671,
-        "ratio": 6.2122930825
+        "atom_product": 2.8917144657,
+        "free_product": 0.5899127289,
+        "ratio": 4.9019360392
       },
       {
         "name": "³He",
         "Z": 2,
         "N": 1,
-        "atom_product": 4.0787977165,
-        "free_product": 0.6443610813,
-        "ratio": 6.3299876959
+        "atom_product": 4.0391752965,
+        "free_product": 0.7945863391,
+        "ratio": 5.083368663
       },
       {
         "name": "⁴He",
         "Z": 2,
         "N": 2,
-        "atom_product": 7.8684287126,
-        "free_product": 0.4501511649,
-        "ratio": 17.4795253836
+        "atom_product": 7.6635502441,
+        "free_product": 0.6034193615,
+        "ratio": 12.7002060796
       },
       {
         "name": "⁶Li",
         "Z": 3,
         "N": 3,
-        "atom_product": 39.6879081898,
-        "free_product": 0.3020212964,
-        "ratio": 131.4076479288
+        "atom_product": 38.0379133154,
+        "free_product": 0.4687365957,
+        "ratio": 81.1498689614
       },
       {
         "name": "⁷Li",
         "Z": 3,
         "N": 4,
-        "atom_product": 73.7298816952,
-        "free_product": 0.2109923184,
-        "ratio": 349.4434407442
+        "atom_product": 70.4368626042,
+        "free_product": 0.3559647622,
+        "ratio": 197.8759418815
       },
       {
         "name": "⁹Be",
         "Z": 4,
         "N": 5,
-        "atom_product": 398.580093879,
-        "free_product": 0.1415617208,
-        "ratio": 2815.5923194783
+        "atom_product": 379.7834375738,
+        "free_product": 0.2765136843,
+        "ratio": 1373.4706785527
       },
       {
         "name": "¹²C",
         "Z": 6,
         "N": 6,
-        "atom_product": 6310.7542713242,
-        "free_product": 0.0912168635,
-        "ratio": 69184.0744012257
+        "atom_product": 6009.2136883864,
+        "free_product": 0.2197139961,
+        "ratio": 27350.163370068
       },
       {
         "name": "¹⁶O",
         "Z": 8,
         "N": 8,
-        "atom_product": 189711.7711556342,
-        "free_product": 0.0410613774,
-        "ratio": 4620199.889703663
+        "atom_product": 180670.5212503643,
+        "free_product": 0.1325796793,
+        "ratio": 1362731.6211750363
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

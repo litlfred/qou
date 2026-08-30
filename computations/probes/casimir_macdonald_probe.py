@@ -68,9 +68,11 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
 from q_parameter import Q  # noqa: E402
+from _precision import json_safe_float  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 # ── Partition utilities ────────────────────────────────────────────
@@ -196,7 +198,14 @@ def main() -> int:
         for n in range(1, 6):  # |λ| = 1..5
             for lam in partitions(n):
                 norm = macdonald_norm(lam, q, t_val)
-                per_partition[str(lam)] = float(norm)
+                # `macdonald_norm` returns mpf("inf") as a DELIBERATE pole
+                # sentinel: the arm-leg denominator 1 - q^a t^(l+1) vanishes for
+                # every arm-0 cell at t = 1 (Hall-Littlewood). The value is
+                # correct; writing it as a bare JSON `Infinity` was not — JSON
+                # has no such token, so this witness did not parse under a
+                # strict loader. json_safe_float keeps the fact ("inf") and
+                # makes the file valid.
+                per_partition[str(lam)] = json_safe_float(float(norm))
         norms_table[t_name] = per_partition
 
     # ─── Cherednik q-zeta candidates per (n, t) ───
@@ -329,7 +338,12 @@ def main() -> int:
     schur_norms = norms_table["t=q  (Schur)"]
     for n in range(1, 5):
         for lam in partitions(n):
-            print(f"  λ = {lam:<14} ⟨P_λ⟩_{{q,t=q}} = {schur_norms[str(lam)]:.6e}")
+            # `{lam:<14}` on a tuple is a TypeError — this print has never
+            # run, and the probe has always exited 1 AFTER writing its witness.
+            # The norm may also be the "inf" pole marker rather than a number.
+            _v = schur_norms[str(lam)]
+            _vs = _v if isinstance(_v, str) else f"{_v:.6e}"
+            print(f"  λ = {str(lam):<14} ⟨P_λ⟩_{{q,t=q}} = {_vs}")
     print()
     print(f"─── Best DIRECT candidate ───")
     print(f"  form:       {best_direct['form']}")

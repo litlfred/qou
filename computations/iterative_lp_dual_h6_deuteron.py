@@ -44,7 +44,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import numpy as np
 import mpmath as mp
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
@@ -293,7 +294,7 @@ def main() -> int:
 
     w.add_assertion(
         "tr_M_cross_validation_within_1e-6",
-        computed=float(err_rel),
+        computed=err_rel,
         expected=0.0,
         tolerance=1e-6,
     )

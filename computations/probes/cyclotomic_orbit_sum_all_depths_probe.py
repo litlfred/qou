@@ -42,6 +42,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpc, mpf, polylog, exp, pi, zeta  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _clausen(n: int, theta: "mpf") -> "mpf":
@@ -64,7 +65,7 @@ def main() -> int:
         "cyclotomic-orbit-sum-all-depths-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     results = []
     max_residue = mpf(0)
@@ -109,7 +110,7 @@ def main() -> int:
         .add_data("per_N_per_n_results", results)
         .add_assertion(
             name="clausen_orbit_sum_closed_form_all_N_n",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

@@ -1,0 +1,70 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "0510388v1",
+ "source_sha256": "c83c0f6a2eaa74f3",
+ "brief": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 10 sections: Magnetic fields in R; Vector-valued Green’s operators in; IN LEFT-TRANSLATION FORMAT",
+ "extended": "**ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE**\n\n*Dennis DeTurck and Herman Gluck*\n\n108 pp, 10 sections.\n\n**Outline.** 3 Magnetic fields in R; 6 Vector-valued Green’s operators in R; 3 IN LEFT-TRANSLATION FORMAT; C PROOFS ON S; 3 IN PARALLEL TRANSPORT FORMAT; 14 Geodesics in S; 15 The vector triple product in R; 16 Explicit formula for parallel transport in ; 17 The method of moving frames in S; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 113
+ },
+ "sections": [
+  {
+   "id": "sec-000-3-magnetic-fields-in-r",
+   "title": "Magnetic fields in R",
+   "pages": "8-17"
+  },
+  {
+   "id": "sec-001-6-vector-valued-greens-operators-in-r",
+   "title": "Vector-valued Green’s operators in R",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-002-3-in-left-translation-format",
+   "title": "IN LEFT-TRANSLATION FORMAT",
+   "pages": "22-34"
+  },
+  {
+   "id": "sec-003-c-proofs-on-s",
+   "title": "PROOFS ON S",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-004-3-in-parallel-transport-format",
+   "title": "IN PARALLEL TRANSPORT FORMAT",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-005-14-geodesics-in-s",
+   "title": "Geodesics in S",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-006-15-the-vector-triple-product-in-r",
+   "title": "The vector triple product in R",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-007-16-explicit-formula-for-parallel-transport-in-s",
+   "title": "Explicit formula for parallel transport in S",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-008-17-the-method-of-moving-frames-in-s",
+   "title": "The method of moving frames in S",
+   "pages": "40-107"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "107-108"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

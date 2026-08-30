@@ -1,0 +1,874 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0203060v11",
+ "source": {
+  "file": "0203060v11.pdf",
+  "sha256": "fa7e21ceab3e9933f7fe22e13dbfb4678d092edfd062f2ac48e94463f7f15124",
+  "bytes": 619370,
+  "pages": 50,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0203060",
+   "version": "11",
+   "primary_class": null,
+   "stamp_date": "28 Apr 2017"
+  },
+  "doi": null,
+  "title": "ON FUSION CATEGORIES",
+  "authors_raw": "PA VEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK",
+  "title_lines": [
+   "ON FUSION CATEGORIES"
+  ],
+  "abstract": "Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in characteristic zero. W e show tha t the global dimen- sion of a fusion category is always positive, and that the S-m atrix of any (not necessarily hermitian) modular category is unitary. W e als o show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functo rs between them are undeformable (generalized Ocneanu rigidity). In parti cular the number of such categories (functors) realizing a given fusion datum i s \ufb01nite. Finally, we develop the theory of Frobenius-Perron dimensions in an arb itrary fusion cat- egory. At the end of the paper we generalize some of these resu lts to positive characteristic.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220321073001-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Squared norms and global dimensions",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Results on pivotal, spherical, and modular categories",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Module categories, the dual category, the Drinfeld center",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Multi-fusion categories",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Results on weak Hopf algebras",
+   "page": 7,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Vanishing of the Yetter cohomology",
+   "page": 9,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Ocneanu rigidity",
+   "page": 9,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "Fusion categories over C",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.3",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 2.9",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 2.12 and properties of modular categories",
+   "page": 12,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Weak Hopf algebras and their integrals",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Definition of a weak Hopf algebra",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Integrals",
+   "page": 15,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.6",
+   "page": 16,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Canonical integrals",
+   "page": 16,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Sufficient conditions for semisimplicity",
+   "page": 17,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Tr(S2) and the global dimension",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.24",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.15",
+   "page": 19,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.16",
+   "page": 19,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "A refinement of Theorem 2.24",
+   "page": 19,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 2.17",
+   "page": 20,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.18",
+   "page": 20,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "Surjective and injective functors",
+   "page": 20,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 2,
+   "title": "The induction functor and the class equation for fusion categories",
+   "page": 21,
+   "source": "outline",
+   "number": "5.8"
+  },
+  {
+   "level": 2,
+   "title": "Graded categories",
+   "page": 22,
+   "source": "outline",
+   "number": "5.9"
+  },
+  {
+   "level": 2,
+   "title": "Deformations of weak Hopf algebras",
+   "page": 22,
+   "source": "outline",
+   "number": "5.10"
+  },
+  {
+   "level": 2,
+   "title": "Sphericity of pivotalization",
+   "page": 22,
+   "source": "outline",
+   "number": "5.11"
+  },
+  {
+   "level": 1,
+   "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+   "page": 24,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The definition",
+   "page": 24,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "The vanishing theorem for cohomology",
+   "page": 25,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
+   "page": 27,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The definition",
+   "page": 27,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Comparison of two complexes",
+   "page": 28,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 2.27 and Theorem 2.30",
+   "page": 28,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Frobenius-Perron dimensions",
+   "page": 29,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Definition of the Frobenius-Perron dimensions",
+   "page": 29,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Frobenius-Perron dimension of a fusion category",
+   "page": 31,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparison of the global and Frobenius-Perron dimensions",
+   "page": 34,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "Pseudo-unitary categories",
+   "page": 34,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 2,
+   "title": "Fusion categories with integer Frobenius-Perron dimension",
+   "page": 35,
+   "source": "outline",
+   "number": "8.5"
+  },
+  {
+   "level": 2,
+   "title": "Fusion categories of Frobenius-Perron dimension pn",
+   "page": 36,
+   "source": "outline",
+   "number": "8.6"
+  },
+  {
+   "level": 2,
+   "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+   "page": 37,
+   "source": "outline",
+   "number": "8.7"
+  },
+  {
+   "level": 2,
+   "title": "Group-theoretical fusion categories",
+   "page": 39,
+   "source": "outline",
+   "number": "8.8"
+  },
+  {
+   "level": 2,
+   "title": "A question",
+   "page": 40,
+   "source": "outline",
+   "number": "8.9"
+  },
+  {
+   "level": 2,
+   "title": "Cyclotomicity of dimension functions",
+   "page": 41,
+   "source": "outline",
+   "number": "8.10"
+  },
+  {
+   "level": 2,
+   "title": "Module categories over products",
+   "page": 42,
+   "source": "outline",
+   "number": "8.11"
+  },
+  {
+   "level": 1,
+   "title": "Fusion categories in positive characteristic",
+   "page": 43,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "List of modifications",
+   "page": 43,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Lifting theorems",
+   "page": 44,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Faithfulness of lifting",
+   "page": 45,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Some applications of lifting",
+   "page": 47,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix: Galois properties of S-matrix",
+   "page": 48,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6801,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-001-2-results-on-squared-norms-global-dimensions-wea",
+   "number": "2",
+   "title": "Results on squared norms, global dimensions, weak Hopf algebras, and Ocneanu rigidity",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2163,
+   "n_words": 366
+  },
+  {
+   "id": "sec-002-21-squared-norms-and-global-dimensions",
+   "number": "2.1",
+   "title": "Squared norms and global dimensions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3876,
+   "n_words": 772
+  },
+  {
+   "id": "sec-003-22-results-on-pivotal-spherical-and-modular-cate",
+   "number": "2.2",
+   "title": "Results on pivotal, spherical, and modular categories",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4378,
+   "n_words": 798
+  },
+  {
+   "id": "sec-004-24-multi-fusion-categories",
+   "number": "2.4",
+   "title": "Multi-fusion categories",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1852,
+   "n_words": 357
+  },
+  {
+   "id": "sec-005-25-results-on-weak-hopf-algebras",
+   "number": "2.5",
+   "title": "Results on weak Hopf algebras",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5227,
+   "n_words": 936
+  },
+  {
+   "id": "sec-006-27-ocneanu-rigidity",
+   "number": "2.7",
+   "title": "Ocneanu rigidity",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2203,
+   "n_words": 355
+  },
+  {
+   "id": "sec-007-31-proof-of-theorem-23",
+   "number": "3.1",
+   "title": "Proof of Theorem 2.3",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1259,
+   "n_words": 229
+  },
+  {
+   "id": "sec-008-3-fusion-categories-over-c",
+   "number": "3",
+   "title": "Fusion categories over C",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4491,
+   "n_words": 964
+  },
+  {
+   "id": "sec-009-32-proof-of-proposition-29",
+   "number": "3.2",
+   "title": "Proof of Proposition 2.9",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 398,
+   "n_words": 75
+  },
+  {
+   "id": "sec-010-33-proof-of-proposition-212-and-properties-of-mo",
+   "number": "3.3",
+   "title": "Proof of Proposition 2.12 and properties of modular categories",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3343,
+   "n_words": 629
+  },
+  {
+   "id": "sec-011-4-weak-hopf-algebras-and-their-integrals",
+   "number": "4",
+   "title": "Weak Hopf algebras and their integrals",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4672,
+   "n_words": 889
+  },
+  {
+   "id": "sec-012-42-integrals",
+   "number": "4.2",
+   "title": "Integrals",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3024,
+   "n_words": 563
+  },
+  {
+   "id": "sec-013-43-proof-of-theorem-26",
+   "number": "4.3",
+   "title": "Proof of Theorem 2.6",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 482,
+   "n_words": 89
+  },
+  {
+   "id": "sec-014-44-canonical-integrals",
+   "number": "4.4",
+   "title": "Canonical integrals",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3731,
+   "n_words": 697
+  },
+  {
+   "id": "sec-015-5-trs2-and-the-global-dimension",
+   "number": "5",
+   "title": "Tr(S2) and the global dimension",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-016-51-proof-of-theorem-224",
+   "number": "5.1",
+   "title": "Proof of Theorem 2.24",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1417,
+   "n_words": 277
+  },
+  {
+   "id": "sec-017-52-proof-of-theorem-215",
+   "number": "5.2",
+   "title": "Proof of Theorem 2.15",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 771,
+   "n_words": 145
+  },
+  {
+   "id": "sec-018-53-proof-of-theorem-216",
+   "number": "5.3",
+   "title": "Proof of Theorem 2.16",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2215,
+   "n_words": 423
+  },
+  {
+   "id": "sec-019-55-proof-of-proposition-217",
+   "number": "5.5",
+   "title": "Proof of Proposition 2.17",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 727,
+   "n_words": 137
+  },
+  {
+   "id": "sec-020-56-proof-of-theorem-218",
+   "number": "5.6",
+   "title": "Proof of Theorem 2.18",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 496,
+   "n_words": 85
+  },
+  {
+   "id": "sec-021-57-surjective-and-injective-functors",
+   "number": "5.7",
+   "title": "Surjective and injective functors",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1577,
+   "n_words": 316
+  },
+  {
+   "id": "sec-022-58-the-induction-functor-and-the-class-equation",
+   "number": "5.8",
+   "title": "The induction functor and the class equation for fusion categories",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2792,
+   "n_words": 548
+  },
+  {
+   "id": "sec-023-59-graded-categories",
+   "number": "5.9",
+   "title": "Graded categories",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 973,
+   "n_words": 202
+  },
+  {
+   "id": "sec-024-510-deformations-of-weak-hopf-algebras",
+   "number": "5.10",
+   "title": "Deformations of weak Hopf algebras",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 950,
+   "n_words": 178
+  },
+  {
+   "id": "sec-025-511-sphericity-of-pivotalization",
+   "number": "5.11",
+   "title": "Sphericity of pivotalization",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3985,
+   "n_words": 739
+  },
+  {
+   "id": "sec-026-6-the-co-hochschild-complex-of-a-cosemisimple-un",
+   "number": "6",
+   "title": "The co-Hochschild complex of a cosemisimple unimodular weak Hopf algebra and its subcomplex of invariants",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2149,
+   "n_words": 455
+  },
+  {
+   "id": "sec-027-62-the-vanishing-theorem-for-cohomology",
+   "number": "6.2",
+   "title": "The vanishing theorem for cohomology",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3880,
+   "n_words": 850
+  },
+  {
+   "id": "sec-028-7-the-yetter-cohomology-of-a-tensor-category-and",
+   "number": "7",
+   "title": "The Yetter cohomology of a tensor category and Ocneanu rigidity",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3366,
+   "n_words": 616
+  },
+  {
+   "id": "sec-029-72-comparison-of-two-complexes",
+   "number": "7.2",
+   "title": "Comparison of two complexes",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1719,
+   "n_words": 345
+  },
+  {
+   "id": "sec-030-73-proof-of-theorem-227-and-theorem-230",
+   "number": "7.3",
+   "title": "Proof of Theorem 2.27 and Theorem 2.30",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2643,
+   "n_words": 488
+  },
+  {
+   "id": "sec-031-8-frobenius-perron-dimensions",
+   "number": "8",
+   "title": "Frobenius-Perron dimensions",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 34,
+   "n_chars": 15330,
+   "n_words": 2827
+  },
+  {
+   "id": "sec-032-84-pseudo-unitary-categories",
+   "number": "8.4",
+   "title": "Pseudo-unitary categories",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 39,
+   "n_chars": 14352,
+   "n_words": 2636
+  },
+  {
+   "id": "sec-033-87-categories-with-integer-frobenius-perron-dime",
+   "number": "8.7",
+   "title": "Categories with integer Frobenius-Perron dimensions of simple objects",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1304,
+   "n_words": 226
+  },
+  {
+   "id": "sec-034-88-group-theoretical-fusion-categories",
+   "number": "8.8",
+   "title": "Group-theoretical fusion categories",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 4031,
+   "n_words": 735
+  },
+  {
+   "id": "sec-035-89-a-question",
+   "number": "8.9",
+   "title": "A question",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2081,
+   "n_words": 376
+  },
+  {
+   "id": "sec-036-810-cyclotomicity-of-dimension-functions",
+   "number": "8.10",
+   "title": "Cyclotomicity of dimension functions",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 3036,
+   "n_words": 597
+  },
+  {
+   "id": "sec-037-811-module-categories-over-products",
+   "number": "8.11",
+   "title": "Module categories over products",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1776,
+   "n_words": 335
+  },
+  {
+   "id": "sec-038-9-fusion-categories-in-positive-characteristic",
+   "number": "9",
+   "title": "Fusion categories in positive characteristic",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 3946,
+   "n_words": 668
+  },
+  {
+   "id": "sec-039-92-lifting-theorems",
+   "number": "9.2",
+   "title": "Lifting theorems",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 47,
+   "n_chars": 10357,
+   "n_words": 1959
+  },
+  {
+   "id": "sec-040-94-some-applications-of-lifting",
+   "number": "9.4",
+   "title": "Some applications of lifting",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1557,
+   "n_words": 289
+  },
+  {
+   "id": "sec-041-10-appendix-galois-properties-of-s-matrix",
+   "number": "10",
+   "title": "Appendix: Galois properties of S-matrix",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1882,
+   "n_words": 355
+  },
+  {
+   "id": "sec-042-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 6648,
+   "n_words": 1015
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 57,
+  "sections": 43,
+  "chars_total": 143860
+ }
+}

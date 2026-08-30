@@ -33,59 +33,89 @@ distinct roots is `−(q−1)/q²` uses `s = −t`, and it is the determinant th
 independently predicts that value.  A sign error in the Newton polygon, or a
 wrong `a₀`, would break it.
 
-## What this settles, and what it does not
+## What this settles, and what it does NOT
 
-**Settled: C1's `∞` exponent data is fully determined.**  The pair is
-`t± = ±√(q−1)/q` — the edge equation fixes `t²`, the determinant fixes the
-product, and `dilationLift_unique_up_to_sign` fixes the remaining freedom as
-exactly the deck sign.  There is nothing left to choose.
+**Settled: the two ends are mutually consistent.**  A single object — `a₀/a₂` —
+reproduces two exponent pairs computed from different data.  That is what this
+file proves, and it is all it proves.
 
-**Not settled: the Stokes multiplier, which is not exponent data.**  Local
-exponents are the *diagonal* of the local structure; the Stokes multiplier is
-*off-diagonal* connection data between sectors, invisible to any determinant or
-Vieta relation.  So this sharpens the open item rather than closing it: what
-remains is not "which exponents" — that is now answered — but the transition
-between sectors, which still needs the analytic q-Borel/Laplace construction
-(bean `qou-vkg5`).
+> ### 🛑 The `∞` roots here are `T_edge`, NOT the sector parameter
+>
+> An earlier version of this docstring said *"C1's `∞` exponent data is fully
+> determined: the pair is `±√(q−1)/q`"*.  **That gloss is wrong**, and
+> `computations/qbeta/c3_w2_c1_theta_canonical.py` carries a section headed
+> *"The convention finding — read this before citing `B = ±sqrt(q-1)/q`"*
+> warning against exactly it:
+>
+> | object | value | what it is |
+> |---|---|---|
+> | `T_edge` | `±√(q−1)/q` | root of the Newton **edge polynomial**. What `edge_roots_mul` below is about. |
+> | `T_theta` | `±√(q−1)/q^{3/4}` | parameter indexing the theta-normalised canonical solutions, **hence the Stokes sectors** |
+>
+> They differ by `q^{1/4}`, and the edge root **provably does not satisfy the
+> indicial equation**.  Both are correct statements about their own objects; what
+> is not interchangeable is the interpretation.  Calling `T_edge` "the exponent
+> data indexing the sectors" carries a silent `q^{1/4}` — the failure mode that
+> script names as *"an object computed correctly, then given a name whose meaning
+> it does not have."*
+
+**Not settled: the connection-matrix Stokes multipliers.**  Those are global
+`0`↔`∞` data, functions of the invariant `χ = P₀₀P₁₁/(P₀₁P₁₀)`, and are being
+worked under bean `qou-wgnx` — where the connection matrix and `χ` are already
+built.  No determinant or Vieta relation reaches them.  (Distinct from the
+*local isoformal* moduli at `∞`, which are dimension `0` because C1 is pure
+isoclinic there — see `QOU.MathlibExt.RSZ.c1_infinity_isoformalDim_eq_zero`.
+Two different objects share the name; only the local one is empty.)
+
+## Provenance
+
+The `0`-side indicial polynomial and its Vieta relations are **not** introduced
+here.  They predate this file in
+[`C1ZeroSideExponents.lean`](C1ZeroSideExponents.lean) (bean `qou-wgnx`), which
+also proves the exponents are a conjugate pair for `1 < q < 5` and that
+`|t|² = q−1` — neither of which is reproved here.  An earlier version of this
+file carried its own copies; they are retired and the results are now derived
+from `C1ZeroSide.vieta`.  What is genuinely new here is the `det A` cross-check
+tying the two ends.
 
 §7c: a generic field `K` — pure algebra, no ordering, nothing archimedean.
 Sorry-free.  No fit, nothing wired, no Stokes multiplier computed.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
 -- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.Tactic
+import QOU.QBeta.C1ZeroSideExponents
 
 namespace QOU.QBeta
 
 variable {K : Type*} [Field K]
 
-/-- The indicial polynomial of `L1` at the Fuchsian point `0`, as a function of
-the multiplicative exponent `t = q^α`: `t² + (q−1)t + (q−1)`. -/
-def indicialAt (q t : K) : K := t ^ 2 + (q - 1) * t + (q - 1)
+/-- The indicial polynomial at `0`.  **Not redefined here** — this is
+`QOU.QBeta.C1ZeroSide.zeroSideIndicial`, which predates this file (bean
+`qou-wgnx`).  An earlier version of this file defined its own copy under the name
+`indicialAt`; that was duplication and is retired. -/
+abbrev indicialAt (q t : K) : K := C1ZeroSide.zeroSideIndicial q t
 
 /-- `det A` of C1's companion system: `a₀/a₂ = −(q−1)/(q²x − 1)`. -/
 noncomputable def detA (q x : K) : K := -(q - 1) / (q ^ 2 * x - 1)
 
 /-! ### The Fuchsian end -/
 
-/-- **Vieta, sum.**  Two distinct roots of the indicial equation sum to `−(q−1)`. -/
-theorem indicial_roots_add {q t s : K} (ht : indicialAt q t = 0)
-    (hs : indicialAt q s = 0) (hne : t ≠ s) : t + s + (q - 1) = 0 := by
-  have h : (t - s) * (t + s + (q - 1)) = 0 := by
-    unfold indicialAt at ht hs
-    linear_combination ht - hs
-  rcases mul_eq_zero.mp h with h | h
-  · exact absurd (sub_eq_zero.mp h) hne
-  · exact h
+/-- **Vieta, sum** — derived from the pre-existing `C1ZeroSide.vieta` rather
+than reproved.  An earlier version of this file carried its own proof; that
+duplicated `qou-wgnx` work and is retired. -/
+theorem indicial_roots_add {q t s : K}
+    (hfac : ∀ u : K, indicialAt q u = (u - t) * (u - s)) :
+    t + s + (q - 1) = 0 := by
+  have := (C1ZeroSide.vieta q t s).mp hfac
+  linear_combination this.1
 
-/-- **Vieta, product.**  Two distinct roots of the indicial equation multiply to
-`q − 1` — the constant term. -/
-theorem indicial_roots_mul {q t s : K} (ht : indicialAt q t = 0)
-    (hs : indicialAt q s = 0) (hne : t ≠ s) : t * s = q - 1 := by
-  have hsum := indicial_roots_add ht hs hne
-  unfold indicialAt at ht
-  linear_combination -ht + t * hsum
+/-- **Vieta, product** — likewise derived from `C1ZeroSide.vieta`. -/
+theorem indicial_roots_mul {q t s : K}
+    (hfac : ∀ u : K, indicialAt q u = (u - t) * (u - s)) :
+    t * s = q - 1 :=
+  ((C1ZeroSide.vieta q t s).mp hfac).2
 
 /-- `det A` at the Fuchsian point: `det A(0) = q − 1`. -/
 @[simp] theorem detA_zero (q : K) : detA q 0 = q - 1 := by
@@ -95,10 +125,11 @@ theorem indicial_roots_mul {q t s : K} (ht : indicialAt q t = 0)
 /-- **The `0`-end check.**  The product of the two local exponents equals
 `det A(0)`.  Vieta's constant term and `a₀/a₂` at `x = 0` were computed from
 different data and agree. -/
-theorem fuchsian_end_consistent {q t s : K} (ht : indicialAt q t = 0)
-    (hs : indicialAt q s = 0) (hne : t ≠ s) : t * s = detA q 0 := by
+theorem fuchsian_end_consistent {q t s : K}
+    (hfac : ∀ u : K, indicialAt q u = (u - t) * (u - s)) :
+    t * s = detA q 0 := by
   rw [detA_zero]
-  exact indicial_roots_mul ht hs hne
+  exact indicial_roots_mul hfac
 
 /-! ### The irregular end -/
 
@@ -143,9 +174,9 @@ theorem irregular_end_consistent {q t s : K} (hq : q ≠ 0)
 statement because the point is that a *single* object — `a₀/a₂` — reproduces two
 independently computed exponent pairs.  Neither end was fitted to the other. -/
 theorem both_ends_consistent_with_detA {q t s t' s' : K} (hq : q ≠ 0)
-    (ht : indicialAt q t = 0) (hs : indicialAt q s = 0) (hne : t ≠ s)
+    (hfac : ∀ u : K, indicialAt q u = (u - t) * (u - s))
     (ht' : q ^ 2 * t' ^ 2 = q - 1) (hs' : q ^ 2 * s' ^ 2 = q - 1) (hne' : t' ≠ s') :
     t * s = detA q 0 ∧ q ^ 2 * (t' * s') = -(q - 1) :=
-  ⟨fuchsian_end_consistent ht hs hne, edge_roots_mul hq ht' hs' hne'⟩
+  ⟨fuchsian_end_consistent hfac, edge_roots_mul hq ht' hs' hne'⟩
 
 end QOU.QBeta

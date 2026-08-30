@@ -1,0 +1,98 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2402.08782v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "30311f0bd815f93f253a60438c999770726ebcf838e361d5741b564b313389a1",
+  "file": "2402.08782v1.pdf"
+ },
+ "provenance": {
+  "title": "Hecke\u2013Farey coordinates for Bring\u2019s surface",
+  "authors": "Doha Kattan 1 and David Singerman 2",
+  "arxiv": {
+   "id": "2402.08782",
+   "version": "1",
+   "primary_class": "math.GR",
+   "stamp_date": "13 Feb 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "theorem": 3,
+   "example": 1,
+   "definition": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.1",
+   "name": null,
+   "statement": "There is a unique regular map of type {5, 4} of genus 4 with",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "(3.2) \u00b5q(n) =|Hq : (Hq)(n)| =",
+   "section_file": "sections/sec-001-3-the-congruence-subgroups-of-the-hecke-groups.md",
+   "section_title": "The congruence subgroups of the Hecke groups",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": null,
+   "statement": "H/H4(5) is Bring\u2019s surface.",
+   "section_file": "sections/sec-001-3-the-congruence-subgroups-of-the-hecke-groups.md",
+   "section_title": "The congruence subgroups of the Hecke groups",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "5.1",
+   "name": null,
+   "statement": "n = 5. The Farey fractions mod 5 are",
+   "section_file": "sections/sec-002-4-universal-q-gonal-maps.md",
+   "section_title": "Universal q-gonal maps",
+   "pages": "4-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "9.2",
+   "name": null,
+   "statement": "A Farey circuitis a collection of pointsv0,v 1,\u00b7\u00b7\u00b7 vn each with",
+   "section_file": "sections/sec-004-8-poles.md",
+   "section_title": "Poles",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

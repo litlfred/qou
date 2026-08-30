@@ -9,4 +9,4 @@ $$
 
 The canonical atom-braid populates a fermion Fock-space subalgebra of $H_{3A}(q)$. Each interface between adjacent strands contributes one binary degree of freedom. The proton count $Z$ enforces dimension reduction (removing one degree of freedom per proton) and a grade shift (offsetting the filtration bound).
 
-This exterior structure restricts the active dimension profoundly. For $^4\mathrm{He}$, the dimension collapses from the $12!$ standard Wedderburn basis to exactly $2^{10} = 1024$. The restriction governs the computational complexity of the canonical solver.
+This exterior structure restricts the active dimension. For $^4\mathrm{He}$, the dimension collapses from the $12!$ standard Wedderburn basis to exactly $2^{10} = 1024$. The restriction governs the computational complexity of the canonical solver.

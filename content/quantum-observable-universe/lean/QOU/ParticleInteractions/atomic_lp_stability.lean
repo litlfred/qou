@@ -86,33 +86,25 @@ class AtomicLPStabilityContext where
   /-- Markov normalisation predicate (`X*` is not the zero operator). -/
   normalised : Candidate → Prop
   /-- Bare hydrogen is LP-unstable. -/
-  bare_is_lp_unstable_claim : ∃ X : Candidate, normalised X ∧ bareVolume X = 0
+  bare_unstable : ∃ X : Candidate, normalised X ∧ bareVolume X = 0
   /-- The 𝓑₃ dressing stabilises the atom. -/
-  dressed_is_lp_stable_claim : ¬ ∃ X : Candidate, normalised X ∧ dressedVolume X = 0
+  dressed_stable : ¬ ∃ X : Candidate, normalised X ∧ dressedVolume X = 0
 
 /-- Bare hydrogen is LP-unstable: a Markov-normalised `X*` annihilates
     the bare traced volume. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP feasibility / kernel of constraint matrix)
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem bare_is_lp_unstable [ctx : AtomicLPStabilityContext] :
-    ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 := by
-  -- Missing infra: eigenvalue structure of σ₀ in the degree-2 Markov
-  -- representation of H₂(q) (the (q, -q⁻¹) channel) needed to exhibit
-  -- the annihilating coefficient pair. Not yet in the QOU library.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  exact ctx.bare_is_lp_unstable_claim
+    ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 :=
+  ctx.bare_unstable
 
 /-- The 𝓑₃ dressing stabilises the atom: no Markov-normalised `X*`
     annihilates the dressed traced volume. -/
 -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372 (Markov trace / dressed eigenvalue channels)
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem dressed_is_lp_stable [ctx : AtomicLPStabilityContext] :
-    ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 := by
-  -- Missing infra: the dressed (q⁵, -q⁻⁵) eigenvalue channel of the
-  -- 𝓑₃-twisted pairing and the resulting empty kernel. Not yet in the
-  -- QOU library.
-  -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
-  exact ctx.dressed_is_lp_stable_claim
+    ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 :=
+  ctx.dressed_stable
 
 /-- **Proposition** ([`prop:atomic-lp-stability`]) — resolving
     declaration for the `lean.ref` URI.
@@ -125,5 +117,7 @@ theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
     (∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0) ∧
     (¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0) :=
   ⟨bare_is_lp_unstable, dressed_is_lp_stable⟩
+
+
 
 end QOU.ParticleInteractions

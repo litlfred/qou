@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1701.06567v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c1610b50f5a7e22c4d5bc359cd5b8f6a7e8c121b3eae079bd2a1e41a2956c8da",
+  "file": "1701.06567v2.pdf"
+ },
+ "provenance": {
+  "title": "BPS spectra and 3-manifold invariants",
+  "authors": "Sergei Gukov 1, Du Pei 1,2, Pavel Putrov 3, Cumrun Vafa 4",
+  "arxiv": {
+   "id": "1701.06567",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "24 May 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "conjecture": 4,
+   "proposition": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.1",
+   "name": null,
+   "statement": "The WRT invariant can be decomposed into the following form:",
+   "section_file": "sections/sec-006-22-d2s1-partition-function-of-t-m3-and-wrt-invar.md",
+   "section_title": "D2\u00d7S1 partition function of T [M3] and WRT invariant",
+   "pages": "7-14",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.2",
+   "name": null,
+   "statement": "For \u02c6Za(q) as in Conjecture 2.1, the following holds",
+   "section_file": "sections/sec-009-25-superconformal-index-of-t-m3-and-its-factoriz.md",
+   "section_title": "Superconformal index of T [M3] and its factorization",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2.3",
+   "name": null,
+   "statement": "Let G be a compact Lie group (not necessarily of ADE type) and LG its",
+   "section_file": "sections/sec-014-210-langlands-duality-and-\ufb02at-connections.md",
+   "section_title": "Langlands duality and \ufb02at connections",
+   "pages": "24-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": null,
+   "statement": ", as summarized in the following.",
+   "section_file": "sections/sec-021-322-topologically-twisted-index-of-t-lp-1.md",
+   "section_title": "Topologically twisted index of T [L(p, 1)]",
+   "pages": "34-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "4.1",
+   "name": null,
+   "statement": "The WRT invariant of M3 with a knot K colored by representationR can",
+   "section_file": "sections/sec-067-41-links-in-m3-and-line-operators-in-t-m3.md",
+   "section_title": "Links in M3 and line operators in T [M3]",
+   "pages": "56-60",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

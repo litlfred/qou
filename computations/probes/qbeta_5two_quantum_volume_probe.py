@@ -5,7 +5,7 @@ the Neumann–Zagier saddle, deformed to the substrate meridian at both anchors
 quantum volume — the one object the Lean-proved anchor-invariance prune does not
 exclude — carries the c₃ bar-odd swing.
 
-Construction (Hikami math/0604094 §4.2, uploads/0604094v1.pdf): 5₂ = three ideal
+Construction (Hikami math/0604094 §4.2, library/arxiv-math-0604094v1/0604094v1.pdf): 5₂ = three ideal
 tetrahedra, shapes (z₁,z₂,z₃) = (y/x, 1/y, 1/y). Saddle/hyperbolicity eq (4.13):
     m²x − y = xy ,   (m²y − 1)(y − 1) = m²(m²x − y).
 At the complete structure m=1 the geometric root is
@@ -39,8 +39,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 Q = {"muon": mp.mpf("1.10997859555733471"),
      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
@@ -148,7 +149,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("vol_5_2_validates",
-                     computed=float(abs(abs(vol1) - VOL_5_2)), expected=0.0,
+                     computed=abs(abs(vol1) - VOL_5_2), expected=0.0,
                      tolerance=1e-6,
                      source="Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 "
                             "(Hikami eq 4.12 / SnapPy) — validates the NZ saddle")

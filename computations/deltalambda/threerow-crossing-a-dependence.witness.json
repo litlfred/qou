@@ -1,0 +1,682 @@
+{
+  "engine": "mpmath+f64-seminormal",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T00:59:42.155232+00:00",
+  "commitSha": "ad136327b51af6d25caee17931fafebc55d298b3",
+  "assertions": [
+    {
+      "name": "verdict_does_not_claim_a_crossing_in_a_vanishing_object",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a located crossing is an existence claim; an object below the noise floor at every sampled q supports none"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "threerow-crossing-a-dependence",
+  "scriptFile": "threerow_crossing_a_dependence_probe.py",
+  "scriptHash": "d58f0dfcee92",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_crossing_a_dependence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_crossing_a_dependence_probe.py"
+  },
+  "description": "UNIT 2 of bean qou-prjo follow-up to #4829. Determines whether the deuteron ≥3-row sign crossing of F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ is SPECIAL to n=6 or A-DEPENDENT with the n=9 crossing lying ABOVE the substrate q₀. Sweeps a DIAGNOSTIC RAY q ∈ (1, 4.0]; every q > q₀ field is prefixed 'diagnostic_' and is a STRUCTURAL diagnostic of the analytic object, NOT a physical claim (the substrate modulus is q₀ ≈ 1.10998, experimental proton anchor). Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (proton anchor, NOT the muon cache); χ^λ via the q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure. 0 free parameters; AME not used.",
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_λ",
+    "q_lo_combinatorial_surrogate": "1.0001",
+    "diagnostic_ray_max_q": "4.0",
+    "diagnostic_ray_npts": 25,
+    "free_parameters": 0,
+    "chi_precision": "f64 Hoefsmit seminormal (no mpfr kernel in sandbox)"
+  },
+  "data": {
+    "delta_stratum_ordering": {
+      "6": {
+        "count_l_ge_3": 7,
+        "max_abs_delta": 16,
+        "top5": [
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "delta": 16
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "delta": -10
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "delta": 10
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "delta": -9
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "delta": 5
+          }
+        ],
+        "top_abs_multiplicity": 1,
+        "top_is_signed_cancelling_pair": false
+      },
+      "9": {
+        "count_l_ge_3": 25,
+        "max_abs_delta": 216,
+        "top5": [
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "delta": 216
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "delta": -216
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "delta": -189
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "delta": -189
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2
+            ],
+            "delta": -168
+          }
+        ],
+        "top_abs_multiplicity": 2,
+        "top_is_signed_cancelling_pair": true
+      }
+    },
+    "isotopes": {
+      "D": {
+        "n_strands": 6,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982",
+          "2.2810884055126934"
+        ],
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
+        "diagnostic_ray_max_q": "4.0",
+        "diagnostic_n_crossings_on_ray": 2
+      },
+      "T": {
+        "n_strands": 9,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982",
+          "2.1696373954770069",
+          "2.2810884055126934"
+        ],
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
+        "diagnostic_ray_max_q": "4.0",
+        "diagnostic_n_crossings_on_ray": 3
+      },
+      "3He": {
+        "n_strands": 9,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982",
+          "1.6679071357698280",
+          "2.2810884055126934"
+        ],
+        "diagnostic_first_crossing_above_q0": "1.5378214048144982",
+        "diagnostic_ray_max_q": "4.0",
+        "diagnostic_n_crossings_on_ray": 3
+      }
+    },
+    "n9_per_partition_decomposition": {
+      "T": {
+        "q_lo": {
+          "q": "1.0001",
+          "dominant_partition": [
+            7,
+            1,
+            1
+          ],
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
+          "top4": [
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "q0": {
+          "q": "1.1099785827513808075916690956107688798744991218736",
+          "dominant_partition": [
+            7,
+            1,
+            1
+          ],
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
+          "top4": [
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "diag_below_cross": {
+          "q": "1.4916867626700632702649887783056306250402229965568",
+          "dominant_partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dominant_delta": -189,
+          "dominant_term": "-1.2287860278476678e-47",
+          "total": "-1.4546690873241535e-47",
+          "top4": [
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": "-1.2287860278476678e-47"
+            },
+            {
+              "partition": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "delta": 216,
+              "term": "6.6609609028447409e-48"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "-4.5260730135047607e-48"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "3.9598130782796333e-48"
+            }
+          ],
+          "beyond_substrate": true
+        },
+        "diag_above_cross": {
+          "q": "1.5839560469589331632710705584070098389602367901583",
+          "dominant_partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dominant_delta": -189,
+          "dominant_term": "2.3820740515993032e-46",
+          "total": "1.9644825558102666e-46",
+          "top4": [
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": "2.3820740515993032e-46"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "-1.3603216943075918e-46"
+            },
+            {
+              "partition": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "delta": 216,
+              "term": "-1.2254599101893575e-46"
+            },
+            {
+              "partition": [
+                4,
+                4,
+                1
+              ],
+              "delta": 84,
+              "term": "7.0097606989195824e-47"
+            }
+          ],
+          "beyond_substrate": true
+        }
+      },
+      "3He": {
+        "q_lo": {
+          "q": "1.0001",
+          "dominant_partition": [
+            7,
+            1,
+            1
+          ],
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
+          "top4": [
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "q0": {
+          "q": "1.1099785827513808075916690956107688798744991218736",
+          "dominant_partition": [
+            7,
+            1,
+            1
+          ],
+          "dominant_delta": -28,
+          "dominant_term": "0.0",
+          "total": "0.0",
+          "top4": [
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": "0.0"
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "0.0"
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "diag_below_cross": {
+          "q": "1.4916867626700632702649887783056306250402229965568",
+          "dominant_partition": [
+            5,
+            3,
+            1
+          ],
+          "dominant_delta": -162,
+          "dominant_term": "-6.8352072806009905e-47",
+          "total": "-3.0347581082130851e-47",
+          "top4": [
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "-6.8352072806009905e-47"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "4.7418997541071746e-47"
+            },
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "-4.8194462342888723e-48"
+            },
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": "-3.9501940074232043e-48"
+            }
+          ],
+          "beyond_substrate": true
+        },
+        "diag_above_cross": {
+          "q": "1.5839560469589331632710705584070098389602367901583",
+          "dominant_partition": [
+            5,
+            3,
+            1
+          ],
+          "dominant_delta": -162,
+          "dominant_term": "1.4551118057787238e-45",
+          "total": "4.6118723810346767e-46",
+          "top4": [
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": "1.4551118057787238e-45"
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": "-1.1356798202458235e-45"
+            },
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": "8.7478629318896877e-47"
+            },
+            {
+              "partition": [
+                4,
+                4,
+                1
+              ],
+              "delta": 84,
+              "term": "-5.5330416273127576e-47"
+            }
+          ],
+          "beyond_substrate": true
+        }
+      }
+    },
+    "character_free_companion": {
+      "6": {
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.281088405512693401518964971020498741009823189621"
+        ]
+      },
+      "9": {
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.281088405512693401518964971020498741009823189621"
+        ]
+      },
+      "12": {
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          "1.5378214048144982167680296683563202320002298933575",
+          "2.1696373954770069350851352151943160431734025274144",
+          "2.281088405512693401518964971020498741009823189621"
+        ]
+      }
+    },
+    "verdict": "structural_zero_no_crossing_exists",
+    "verdict_text": "STRUCTURAL ZERO under convention D. F_K(q) = 0 identically — the Wenzl level is r = 2, so y_lambda = 0 for ell(lambda) > 2 at EVERY q, on the ray as well as on the physical interval. The question 'is the crossing A-dependent' has no answer because there is no crossing: every located q is a sign change of cancellation residue, which is why all three isotopes and both objects share the same locations. The #4829 convention-C result is out of frame, not refuted.",
+    "structural_zero_under_convention_D": true,
+    "q_above_floor_on_ray": [],
+    "diagnostic_first_crossing_by_isotope": {
+      "D": "1.5378214048144982",
+      "T": "1.5378214048144982",
+      "3He": "1.5378214048144982"
+    },
+    "diagnostic_first_crossing_is_isotope_INDEPENDENT": true,
+    "D_sign_at_q0_measured": 0,
+    "D_sign_at_qlo_measured": 0,
+    "T_sign_at_q0_measured": 0,
+    "T_sign_at_qlo_measured": 0,
+    "3He_sign_at_q0_measured": 0,
+    "3He_sign_at_qlo_measured": 0
+  },
+  "caveats": [
+    "BEYOND-SUBSTRATE DIAGNOSTIC. Every 'diagnostic_' field reports F_K at q > q₀. The substrate modulus is q₀ ≈ 1.10998 (experimental proton anchor); q > q₀ is NOT a physical regime and no value on the ray is a prediction. The ray exists solely to distinguish 'the object has no zero' from 'the zero is above q₀', which are different structural statements about the same analytic function.",
+    "χ^λ(β_K;q) is f64-precision (pure-Python Hoefsmit seminormal; no mpfr Rust kernel in this sandbox — disk quota, documented, not a proof gap). y_λ(q) is full 50-dps mpmath. Decisive for a SIGN question away from a crossing (|F| = O(1)–O(10¹) at the sampled points); a located crossing q carries only f64 resolution.",
+    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only). This probe tests only the SIGN structure of the ≥3-row trace weighting. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo).",
+    "Scope: a LOCATED crossing is a positive existence statement (bracketed sign change of a continuous function). 'No crossing' statements are scope-(a) — about the swept interval only — never scope-(b); no invariant is proved to forbid a zero anywhere."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.n9_per_partition_decomposition.3He.q0.q, data.n9_per_partition_decomposition.T.q0.q, parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

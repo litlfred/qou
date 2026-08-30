@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T14:55:48.485823+00:00",
-  "commitSha": "001914e2b71c983824322de1839357792dc1f1fc",
+  "computedAt": "2026-08-23T09:48:27.879115+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "low_order_recurrence_on_corrected_ck",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-ck-recurrence-on-corrected-crosscheck",
   "scriptFile": "qbeta_ck_recurrence_on_corrected_crosscheck.py",
-  "scriptHash": "ee09301d9643",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1d4f61a9226f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ck_recurrence_on_corrected_crosscheck.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ck_recurrence_on_corrected_crosscheck.py"
   },
   "description": "Task-1 cross-check (kernel deepening): applies the Step-2 (#1823) Hankel-rank + over-determined recurrence method to #1824's bias-corrected c_2..c_10. Result: no low-order C-finite recurrence (Hankel non-collapse; no constant-coeff fit ≤ d=4) — INDEPENDENTLY confirms #1824 probe 6.c (sliding-window depth-2 α/β unstable). Two methods agree ⇒ the no-low-order-kernel result is robust to de-biasing, NOT extraction noise (resolves the Step-2 caveat). The kernel R is genuinely higher-order; per the Lean grounding the keystone needs canonical c_11+ or the categorical Q_A·cos α_eff derivation. Diagnostic-only; sourced c_k pinned from #1824 probe 6.a.",
   "data": {

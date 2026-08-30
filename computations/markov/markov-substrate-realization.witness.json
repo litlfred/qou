@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-22T14:29:36.190609+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-23T15:43:14.069730+00:00",
+  "commitSha": "1c4ce77cb80b24f3ef762be8bc775d564b6f08b7",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -75,14 +75,50 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(2)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(3)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(5)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(7)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(11)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(13)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 20,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
-  "scriptHash": "23130ffe0ffc",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "55d9b24a8cf4",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,14 +128,23 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/markov/markov_substrate_realizer.py"
+    ],
+    "reproduce": "python3 -u computations/markov/markov_substrate_realizer.py"
   },
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "finite_places": [
       2,
       3,
@@ -126,54 +171,54 @@
         "atom": "p (proton, A=1)",
         "Z": 1,
         "N": 0,
-        "deg_p_u": 40,
+        "deg_p_u": 44,
         "realizations": [
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552171373528,
-            "tr_M_at_q0": 1.065306228613167
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "1.14575969245730086968908159577411930594372806194352229672576"
           },
           {
             "place": "finite(2)",
             "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "u**40 + u**39 + u**36 + u**35 + u**33 + u**31 + u**29 + u**27 + u**23 + u**21 + u**19 + u**17 + u**13 + u**11 + u**9 + u**7 + u**5 + u**4 + u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 + u**28 + u**20 + u**16 + u**8 + u**4 + 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(3)",
             "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**24 + u**23 + u**21 - u**19 - u**17 - u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 - u**36 - u**32 - u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(5)",
             "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 + 2*u**36 + 2*u**32 - 2*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(7)",
             "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(11)",
             "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(13)",
             "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+            "deg": 44,
             "tail_in_ideal_mod_p": true
           }
         ]
@@ -182,54 +227,110 @@
         "atom": "n (neutron, A=1)",
         "Z": 0,
         "N": 1,
-        "deg_p_u": 40,
+        "deg_p_u": 36,
         "realizations": [
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552171373528,
-            "tr_M_at_q0": 0.9232332971861534
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "0.987743688115809571634020165501294982055048759062789717292928"
           },
           {
             "place": "finite(2)",
             "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "u**40 + u**39 + u**36 + u**35 + u**33 + u**31 + u**29 + u**27 + u**25 + u**21 + u**19 + u**15 + u**13 + u**11 + u**9 + u**7 + u**5 + u**4 + u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 + u**32 + u**16 + u**12 + u**4 + 1",
+            "deg": 36,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(3)",
             "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 - u**32 - u**28 + u**24 + u**20 + u**8 + u**4 - 1",
+            "deg": 36,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(5)",
             "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 - u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 - u**32 + 2*u**28 - 2*u**24 - u**20 + 2*u**16 - 2*u**12 - 2*u**8 + u**4 - 1",
+            "deg": 36,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(7)",
             "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 - 3*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 - u**32 + 2*u**28 - 2*u**24 - 3*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+            "deg": 36,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(11)",
             "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+            "deg": 36,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(13)",
             "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
-            "deg": 40,
+            "p_in_u_mod_p": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+            "deg": 36,
+            "tail_in_ideal_mod_p": true
+          }
+        ]
+      },
+      {
+        "atom": "D (deuteron, A=2)",
+        "Z": 1,
+        "N": 1,
+        "deg_p_u": 100,
+        "realizations": [
+          {
+            "place": "infty",
+            "target": "ℝ",
+            "u_0": "1.05355521105985746417046869867071918258388297317047921653686",
+            "tr_M_at_q0": "0.575172243917771870826535343986180889152494352892844837018008"
+          },
+          {
+            "place": "finite(2)",
+            "target": "𝔽_2[u]",
+            "p_in_u_mod_p": "u**100 + u**96 + u**92 + u**88 + u**72 + u**64 + u**60 + u**56 + u**40 + u**32 + u**4 + 1",
+            "deg": 100,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(3)",
+            "target": "𝔽_3[u]",
+            "p_in_u_mod_p": "u**100 + u**98 + u**96 + u**92 + u**90 + u**88 - u**84 - u**82 - u**80 + u**76 + u**74 - u**70 + u**68 - u**66 + u**62 - u**60 + u**58 - u**56 + u**54 - u**50 + u**46 + u**44 - u**40 - u**38 - u**36 + u**28 + u**26 - u**24 + u**22 + u**20 + u**16 + u**14 + u**12 + u**4 + u**2 + 1",
+            "deg": 100,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(5)",
+            "target": "𝔽_5[u]",
+            "p_in_u_mod_p": "u**100 - 2*u**98 + 2*u**96 + u**92 - 2*u**90 + 2*u**84 + u**82 + 2*u**80 - 2*u**76 - u**74 - 2*u**72 + 2*u**70 + 2*u**68 + 2*u**66 + u**64 - u**62 - 2*u**60 - u**56 - u**54 + 2*u**52 + u**50 + u**48 + 2*u**46 + u**40 + 2*u**36 - u**34 - 2*u**32 - u**26 + u**24 - u**22 + u**20 + u**16 - u**14 - 2*u**12 + u**8 + u**4 - 2*u**2 + 1",
+            "deg": 100,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(7)",
+            "target": "𝔽_7[u]",
+            "p_in_u_mod_p": "u**100 - 2*u**98 + u**92 - 2*u**90 - 3*u**88 + 2*u**84 + 3*u**82 - u**80 - 2*u**76 - 3*u**74 + 2*u**72 + 2*u**70 - u**68 + 2*u**66 - u**64 - 3*u**62 - 2*u**60 + 3*u**58 - 2*u**56 - 3*u**54 - u**52 + 3*u**50 + 3*u**48 - u**46 + 2*u**44 - u**40 - 3*u**38 + 3*u**36 + u**34 - 2*u**32 - u**28 - 3*u**26 - 2*u**24 - 3*u**22 + 2*u**16 - 3*u**14 - 2*u**12 - u**8 + u**4 - 2*u**2 + 1",
+            "deg": 100,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(11)",
+            "target": "𝔽_11[u]",
+            "p_in_u_mod_p": "u**100 - 2*u**98 - 4*u**96 + u**92 - 2*u**90 + 3*u**88 + 2*u**84 - 4*u**82 - 4*u**80 - 2*u**76 + 4*u**74 + 5*u**72 + 2*u**70 + 3*u**68 + 2*u**66 + u**64 + 4*u**62 - 4*u**60 - u**58 + u**56 + 4*u**54 - u**52 - 4*u**50 + 3*u**46 - 3*u**40 + u**38 + 5*u**34 + 5*u**28 + 4*u**26 + 4*u**24 + 4*u**22 - 3*u**20 + 5*u**16 + 4*u**14 - 2*u**12 - 5*u**8 + u**4 - 2*u**2 + 1",
+            "deg": 100,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(13)",
+            "target": "𝔽_13[u]",
+            "p_in_u_mod_p": "u**100 - 2*u**98 - 6*u**96 + u**92 - 2*u**90 - u**88 + 2*u**84 - 4*u**82 - 3*u**80 - 2*u**76 + 4*u**74 + 2*u**72 + 2*u**70 + 5*u**68 + 2*u**66 - 6*u**64 + 4*u**62 + 2*u**60 - 3*u**58 - 2*u**56 + 4*u**54 - 4*u**50 + u**48 + 5*u**46 - 6*u**44 + 2*u**40 + 3*u**38 + 3*u**36 - 6*u**34 - 6*u**32 + 2*u**28 + 4*u**26 + 4*u**22 - u**20 + 3*u**16 + 4*u**14 - 2*u**12 + 6*u**8 + u**4 - 2*u**2 + 1",
+            "deg": 100,
             "tail_in_ideal_mod_p": true
           }
         ]

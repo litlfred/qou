@@ -1,0 +1,372 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2312.00624v1",
+ "source": {
+  "file": "2312.00624v1.pdf",
+  "sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
+  "bytes": 1986072,
+  "pages": 43
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2312.00624",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "1 Dec 2023"
+  },
+  "doi": null,
+  "title": "On the structure of wave functions in complex Chern–Simons theory",
+  "authors_raw": "Marcos Mariño and Claudia Rella",
+  "abstract": "We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20231204014717Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_lines": [
+   "On the structure of wave functions in",
+   "complex Chern–Simons theory"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Complex Chern–Simons theory and the A-polynomial",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Classical and quantum A-polynomials",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The case of SL(2,C) gauge group",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The structure of the wave function",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "General conjectures",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cancellation of singularities",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The wave function in the rational case, I",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The wave function in the rational case, II",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Solving a second-order q-difference equation",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Solving a third-order q-difference equation",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The figure-eight knot",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The three-twist knot",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The wave function from the state integral",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Evaluation at rational points",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Factorization and two special subcases",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Computing the -expansions",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "An alternative way of obtaining the integer sequences",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Faddeev's quantum dilogarithm and other special functions",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6536,
+   "n_words": 1039
+  },
+  {
+   "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
+   "number": null,
+   "title": "Complex Chern–Simons theory and the A-polynomial",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 656,
+   "n_words": 110
+  },
+  {
+   "id": "sec-002-classical-and-quantum-a-polynomials",
+   "number": null,
+   "title": "Classical and quantum A-polynomials",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 12293,
+   "n_words": 2123
+  },
+  {
+   "id": "sec-003-the-structure-of-the-wave-function",
+   "number": null,
+   "title": "The structure of the wave function",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 501,
+   "n_words": 81
+  },
+  {
+   "id": "sec-004-general-conjectures",
+   "number": null,
+   "title": "General conjectures",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6284,
+   "n_words": 1118
+  },
+  {
+   "id": "sec-005-cancellation-of-singularities",
+   "number": null,
+   "title": "Cancellation of singularities",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4394,
+   "n_words": 834
+  },
+  {
+   "id": "sec-006-the-wave-function-in-the-rational-case-i",
+   "number": null,
+   "title": "The wave function in the rational case, I",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5822,
+   "n_words": 1137
+  },
+  {
+   "id": "sec-007-the-wave-function-in-the-rational-case-ii",
+   "number": null,
+   "title": "The wave function in the rational case, II",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 674,
+   "n_words": 115
+  },
+  {
+   "id": "sec-008-solving-a-second-order-q-difference-equation",
+   "number": null,
+   "title": "Solving a second-order q-difference equation",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 4744,
+   "n_words": 840
+  },
+  {
+   "id": "sec-009-solving-a-third-order-q-difference-equation",
+   "number": null,
+   "title": "Solving a third-order q-difference equation",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5047,
+   "n_words": 921
+  },
+  {
+   "id": "sec-010-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 486,
+   "n_words": 75
+  },
+  {
+   "id": "sec-011-the-figure-eight-knot",
+   "number": null,
+   "title": "The figure-eight knot",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 7159,
+   "n_words": 1297
+  },
+  {
+   "id": "sec-012-the-three-twist-knot",
+   "number": null,
+   "title": "The three-twist knot",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 29,
+   "n_chars": 8757,
+   "n_words": 1587
+  },
+  {
+   "id": "sec-013-the-wave-function-from-the-state-integral",
+   "number": null,
+   "title": "The wave function from the state integral",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 634,
+   "n_words": 107
+  },
+  {
+   "id": "sec-014-evaluation-at-rational-points",
+   "number": null,
+   "title": "Evaluation at rational points",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 9618,
+   "n_words": 1831
+  },
+  {
+   "id": "sec-015-factorization-and-two-special-subcases",
+   "number": null,
+   "title": "Factorization and two special subcases",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 3916,
+   "n_words": 714
+  },
+  {
+   "id": "sec-016-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 5271,
+   "n_words": 921
+  },
+  {
+   "id": "sec-017-an-alternative-way-of-obtaining-the-integer-sequ",
+   "number": null,
+   "title": "An alternative way of obtaining the integer sequences",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 43,
+   "n_chars": 11470,
+   "n_words": 2038
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 18,
+  "chars_total": 94262
+ }
+}

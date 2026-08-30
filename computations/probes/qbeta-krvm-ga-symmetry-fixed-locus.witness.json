@@ -1,40 +1,40 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-08T01:35:48.455784+00:00",
-  "commitSha": "5bb26f9251233cc1f7a3c839f269de45c063e135",
+  "computedAt": "2026-08-08T08:38:25.787847+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
   "assertions": [
     {
       "name": "m004_symmetry_group_nontrivial",
-      "computed": 4.0,
-      "expected": 4.0,
+      "computed": "4",
+      "expected": "4",
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exhaustive over all 720 coordinate permutations"
     },
     {
       "name": "m004_symmetric_point_NOT_unique_hypothesis_ii_fails",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "fixed locus is the line (t, 1-2t, t, 1-2t, t, t)"
     },
     {
       "name": "L6a4_symmetric_point_IS_unique_hypothesis_ii_holds",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "fixed locus is the single regular ideal octahedron point (1/4, 1/4, 1/2 per tetrahedron)"
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 60,
   "computation": "qbeta-krvm-ga-symmetry-fixed-locus",
   "scriptFile": "qbeta_krvm_ga_symmetry_fixed_locus_probe.py",
-  "scriptHash": "70618517b3ab",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2af4d722fde5",
+  "scriptCommitSha": "53daa3eebb90bc14a9f40f6c75f05f3f963fc124",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,6 +43,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

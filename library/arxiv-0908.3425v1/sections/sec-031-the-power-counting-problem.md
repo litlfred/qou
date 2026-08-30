@@ -1,0 +1,300 @@
+---
+doc_id: arxiv-0908.3425v1
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+section_id: sec-031-the-power-counting-problem
+section_title: "The power-counting problem"
+section_number: null
+pages: 54-57
+source_pdf: 0908.3425v1.pdf
+source_sha256: 5e88d45bbc1c1b9b
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+---
+In the mesonic sector, the combination of dimensional regul arization and the modiﬁed minimal sub-
+traction scheme ~MS [see Eq. (141)] leads to a straightforward correspondenc e between the chiral and
+loop expansions. By studying the one-loop contributions of Fig. 14 to the nucleon self energy, we will
+see that this correspondence, at ﬁrst sight, seems to be lost in the baryonic sector.
+In the following we will calculate the mass mN of the nucleon up to and including O(q3). As in the
+case of the Goldstone bosons, the physical mass is deﬁned thr ough the pole of the full propagator, but
+here at /p =mN . In terms of the nucleon self energy Σ( /p) we will solve the equation
+mN −m − Σ( mN ) = 0, (194)
+where m denotes the nucleon mass in the chiral limit.
+According to the power counting speciﬁed above, we need to ca lculate the two types of one-loop
+contributions shown in Fig. 14 together with the correspond ing counter-term contribution and a tree-
+level contribution. After renormalization, we would like t o have the orders D =n · 1 − 2 · 1 − 1 · 1 + 2· 1 =
+n − 1 for the ﬁrst loop diagram and n · 1 − 2 · 1 + 1 · 1 = n − 1 for the second loop diagram.
+The basic interaction Lagrangian obtained from expanding L(1)
+πN up to and including two pion ﬁelds
+reads
+L(1)
+int = −1
+2
+gA
+F
+¯Ψ γµγ5∂µφiτiΨ − 1
+4F 2
+¯Ψ γµ⃗φ ×∂µ⃗φ ·⃗ τΨ .
+The corresponding Feynman rules are given by
+54
+/A1
+/D4
+/CZ /BN /CP
+/D4
+/BC
+/BD
+− gA
+2F /kγ5τa, (195)
+/A1
+/D4
+/CZ /BN /CP
+/D4
+/BC
+/CZ
+/BC
+/BN /CQ
+/BD
+1
+4F 2 (/k +/k′)ǫabcτc. (196)
+From the next-to-leading-order πN Lagrangian L(2)
+πN we only need one term, namely,
+L(2)
+πN =c1 Tr(χU † +Uχ †) ¯ΨΨ + · · ·, (197)
+resulting in the constant tree-level contribution
+Σ tree
+2 = −4c1M 2. (198)
+Moreover, there are no tree-level contributions from the La grangian L(3)
+πN . The second diagram of Fig. 14
+is zero, because the contraction ǫaac = 0 in the Feynman rule of Eq. (196) vanishes. In dimensional
+regularization, the ﬁrst diagram of Fig. 14 generates the co ntribution
+−iΣ loop(/p) = −i 3g2
+A
+4F 2 iµ4−n
+∫ dnk
+(2π)n
+/k(/p −m −/k)/k
+[(p −k)2 −m2 +i0+](k2 −M 2 +i0+). (199)
+Using {γµ,γ ν} = 2gµν, the numerator of the integrand is written as
+−(/p +m)k2 + (p2 −m2)/k −
+[
+(p −k)2 −m2
+]
+/k,
+yielding the intermediate result
+Σ loop(/p) = 3g2
+A
+4F 2
+{
+−(/p +m)µ4−ni
+∫ dnk
+(2π)n
+1
+(p −k)2 −m2 +i0+
+−(/p +m)M 2µ4−ni
+∫ dnk
+(2π)n
+1
+[(p −k)2 −m2 +i0+](k2 −M 2 +i0+)
++(p2 −m2)µ4−ni
+∫ dnk
+(2π)n
+/k
+[(p −k)2 −m2 +i0+](k2 −M 2 +i0+)
+−µ4−ni
+∫ dnk
+(2π)n
+/k
+k2 −M 2 +i0+
+}
+. (200)
+The last term in Eq. (200) vanishes since the integrand is odd in k. We use the following convention
+for scalar loop integrals,
+IN ···π···(p1, · · ·,q 1, · · ·) = µ4−ni
+∫ dnk
+(2π)n
+1
+[(k +p1)2 −m2 +i0+] · · · [(k +q1)2 −M 2 +i0+] · · ·. (201)
+The vector integral in the third line of Eq. (200) is determin ed using the ansatz
+µ4−ni
+∫ dnk
+(2π)n
+kµ
+[(p −k)2 −m2 +i0+](k2 −M 2 +i0+) =pµC. (202)
+55
+/A1
+/D4
+/D4 /A0 /CZ
+/CZ
+/D4
+/BD /BD
+/B7
+/A1
+/D4 /D4
+/A2
+Figure 15: Renormalized one-loop self-energy diagram.
+Multiplying Eq. (202) by pµ, one obtains for C,
+C = 1
+2p2
+[
+IN −Iπ + (p2 −m2 +M 2)IN π(−p, 0)
+]
+. (203)
+In terms of the above convention for the scalar loop integral s the loop contribution to the nucleon self
+energy reads
+Σ loop(/p) = − 3g2
+A
+4F 2
+{
+(/p +m)IN + (/p +m)M 2IN π(−p, 0)
+−(p2 −m2) /p
+2p2
+[
+IN −Iπ + (p2 −m2 +M 2)IN π(−p, 0)
+] }
+. (204)
+The explicit expressions for the integrals are given by
+Iπ = M 2
+16π2
+[
+R + ln
+(
+M 2
+µ2
+)]
+, I N = m2
+16π2
+[
+R + ln
+(
+m2
+µ2
+)]
+,
+IN π(p, 0) = 1
+16π2
+[
+R + ln
+(
+m2
+µ2
+)
+− 1 + p2 −m2 −M 2
+p2 ln
+(M
+m
+)
++ 2mM
+p2 F (Ω)
+]
+, (205)
+where R is given in Eq. (135), Ω is deﬁned as
+Ω = p2 −m2 −M 2
+2mM ,
+and
+F (Ω) =
+
+
+
+
+
+
+
+√
+Ω 2 − 1 ln
+(
+−Ω −
+√
+Ω 2 − 1
+)
+, Ω ≤ −1,√
+1 − Ω 2 arccos(−Ω) , −1 ≤ Ω ≤ 1,√
+Ω 2 − 1 ln
+(
+Ω +
+√
+Ω 2 − 1
+)
+−iπ
+√
+Ω 2 − 1, 1 ≤ Ω .
+Because of the terms proportional to R, the result for the self energy contains divergences as n → 4, so
+it has to be renormalized. The counter-term Lagrangian must produce structures which precisely cancel
+the divergences, because otherwise the result for the nucle on mass will not be ﬁnite. For convenience,
+we choose the renormalization parameter µ =m.
+In the modiﬁed minimal subtraction scheme ~MS all the contributions proportional to R are canceled
+by corresponding contributions generated by the counter-t erm Lagrangian of Eq. (193), but also by
+counter-term Lagrangians resulting from higher-order ter ms of Eq. (187). Operationally this means
+that we simply drop all terms proportional to R and indicate the renormalized coupling constants
+by a subscript r. Again, this is possible, because we include in the Lagrangi an all of the inﬁnite
+number of interactions allowed by symmetries [Weinberg, 19 95]. The renormalized diagram is depicted
+in Fig. 15, where the cross generically denotes counter-ter m contributions. The ~MS-renormalized self-
+energy contribution then reads
+Σ loop
+r (/p) = −3g2
+Ar
+4F 2
+{
+(/p +m)M 2I r
+N π(−p, 0) − (p2 −m2) /p
+2p2
+[
+(p2 −m2 +M 2)I r
+N π(−p, 0) −I r
+π
+] }
+, (206)
+56
+where the superscript r on the integrals means that the terms proportional to R have been dropped.
+Writing/p +m = 2m + (/p −m) and comparing the ﬁrst term of Eq. (204) with Eq. (206), we no te that
+among other terms, the ~MS renormalization involves (even in the chiral limit) an in ﬁnite renormalization
+yielding the relation between the bare and the renormalized mass [Gasser et al., 1988]
+mB =m + 3g2
+Ar
+32π2F 2m3R + · · ·.
+Using
+I r
+N π(−p, 0) = − 1
+16π2 + · · ·,
+we see that the ~MS-renormalized self energy produces a contribution of O(q2) which is in conﬂict with
+the power counting assigned above. For a long time this was in terpreted as the absence of a systematic
+power counting in the relativistic formulation of ChPT.
+We can now solve Eq. (194) for the nucleon mass,
+mN =m + Σ tree
+2r (mN ) + Σ loop
+r (mN ) = m − 4c1rM 2 + Σ loop
+r (mN ). (207)
+We have for the diﬀerence mN −m = O(q2). Since our calculation is only valid up to O(q3), it is
+suﬃcient to determine Σ loop
+r (mN ) to that order. In fact, using arccos ( −Ω) = π
+2 + · · ·, the expansion of
+I r
+N π is given by
+I r
+N π = 1
+16π2
+(
+−1 + πM
+m + · · ·
+)
+, (208)
+from which we obtain for the nucleon mass in the ~MS scheme [Gasser et al., 1988],
+mN =m − 4c1rM 2 + 3g2
+ArM 2
+32π2F 2m − 3g2
+ArM 3
+32π2F 2. (209)
+The solution to the power-counting problem is the observati on that the term violating the power count-
+ing, namely, the third on the right-hand side of Eq. (209), is analytic in the quark mass and can thus
+be absorbed in counter terms. In addition to the ~MS scheme we have to perform an additional ﬁnite
+renormalization. For that purpose we rewrite
+c1r =c1 +δc1, δc 1 = 3mg2
+A
+128π2F 2 + · · · (210)
+in Eq. (209) which then gives the ﬁnal result for the nucleon m ass at O(q3):
+mN =m − 4c1M 2 − 3g2
+AM 3
+32π2F 2. (211)
+To summarize, we have shown that the validity of a power-coun ting scheme is intimately connected
+with a suitable renormalization condition. In the case of th e nucleon mass, the ~MS scheme alone
+does not suﬃce to bring about a consistent power counting. We will shortly outline two methods, the
+infrared renormalization [Becher and Leutwyler, 1999] and the extended on-mass-shell renormalization
+[Fuchs et al., 2003a], which both produce a systematic power counting in a manifestly Lorentz-invariant
+framework.

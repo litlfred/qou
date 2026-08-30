@@ -23,8 +23,10 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from whitehead_weightblock_numeric import reduced_at_root  # noqa: E402
 from whitehead_c0_mpmath import fig8_exact_logJ, fit_c0, VOL_WHITEHEAD, VOL_4_1  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 OUT = Path(__file__).resolve().parent / "whitehead-factor-hi.witness.json"
 # EXACT-root anchors (mpmath) from the merged whitehead-c0-mpmath tower; the
 # float64 δ-extrap tower (N≥16) carries ~1e-3, so these anchor the low-N scale.
@@ -63,6 +65,15 @@ def write(vals, note):
         "factor": factor, "nearest_factor": nearest, "note": note,
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    w.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, engine=None, q0_anchor=False)
     OUT.write_text(json.dumps(w, indent=2))
     print(f"  [{note}] N={Nw[-1] if Nw else '-'}  c0={c0:.4f}±{spread:.4f}  factor={factor:.3f}->{nearest}", flush=True)
 

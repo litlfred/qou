@@ -1,0 +1,99 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/helium_four_body_cluster_probe.py",
+  "computation": "helium-four-body-cluster",
+  "description": "Route-3: does the DERIVED Borromean-cluster recipe (#4360 sign / #4364 magnitude lift) extend to A=4 (\u2074He)? The A=4 residual target is FORWARD-derived (AME \u2212 model, exact 0-parameter simplex solve): \u03bc\u2082=0, \u03bc\u2083=+0.4708, \u03bc\u2084=\u22124.591 \u2014 the genuinely-4-body coefficient \u03bc\u2084 is NEGATIVE (closed [1\u2074] SU(4) \u03b1-cluster SATURATION, \u03bc\u2084=s\u2084\u2212g\u2084). A trace-deficit-against-the-unlink realization of the 4-component Brunnian cluster c\u2084=E\u2080\u00b7(1\u2212\u03c4_L4) is a BINDING object: whenever \u03c4\u22641 it is \u22650 (the #4360 shape). This probe validates the machinery on the bare A=3 Borromean (deficit +, O(h\u2074)) and measures the width-3 cabled 4-block linking-word deficit sign + leading h-order + delete-one-block sub-link profile at H\u2081\u2082. Result feeds the (scope-(b), conditional-on-\u03c4\u22641) Lean sign wall QOU.MassTheory.HeliumFourBodyCluster.mu4_ne_brunnian4Cluster: a non-negative Brunnian deficit c\u2084\u22650 \u2260 the derived \u03bc\u2084<0 \u2014 the recipe walls on SIGN at A=4 (mirror of #4354; a sign SWAP). STRICT anti-fit: 0 free params, \u03bc\u2084 never inverted, no cabling tuned to a target, nothing wired; the 4-Brunnian link is non-unique and the block-word is the direct A=3-analog, reported with its sub-link profile, not claimed canonical.",
+  "timestamp": "2026-08-08T21:52:43.921947+00:00",
+  "parameters": {
+    "free_parameters": 0,
+    "q0": "1.10997858275138080759166909561",
+    "h": "0.209060298795639315430846213128",
+    "E0_MeV": "4.18598136329447589694506215879",
+    "level_a4": "H\u2081\u2082 perblock \u03a3_{\u03bb\u22a212} y_\u03bb|\u03c7_\u03bb|, four width-3 nucleon cables",
+    "note": "\u03bc\u2084=\u22124.591 forward AME\u2212model target only; SAME E\u2080+y_\u03bb norm as #4364."
+  },
+  "results": {
+    "a4_residual_target": {
+      "mu2_edge": "0.0",
+      "mu3_triangle": "0.47076896",
+      "mu4_tetra": "-4.591048",
+      "mu4_sign": "negative",
+      "M": {
+        "2": "0.0",
+        "3": "0.47076896",
+        "4": "-2.7079721"
+      },
+      "derivation": "forward AME \u2212 graded model; exact 0-param simplex solve."
+    },
+    "a3_borromean_validation": {
+      "deficit_1_minus_tau": "0.0016333774",
+      "sign": "+",
+      "leading_h_order": "4.053",
+      "c3_bare_MeV": "0.00683729",
+      "closed_form_h4_ref": "0.0014378362",
+      "note": "reproduces #4360: positive deficit, O(h\u2074), matches \u03bc\u2083>0 sign."
+    },
+    "a4_candidates": {
+      "P1_(AB\u00b7BC\u207b\u00b9\u00b7CD)\u00b3": {
+        "n_tokens": 9,
+        "n_crossings": 81,
+        "deficit_1_minus_tau": "0.92247618",
+        "sign": "+",
+        "tau_vs_unlink": "below (\u03c4<1, deficit +)",
+        "c4_MeV": "3.86147",
+        "leading_h_order": "-0.01941",
+        "sublink_deficits": {
+          "drop_AB": "0.0494258",
+          "drop_CD": "0.0494258"
+        },
+        "sign_compatible_with_mu4_neg": false
+      },
+      "P2_(AB\u00b7BC\u207b\u00b9\u00b7CD\u00b7BC\u207b\u00b9)\u00b3": {
+        "n_tokens": 12,
+        "n_crossings": 108,
+        "deficit_1_minus_tau": "-3.2097251",
+        "sign": "-",
+        "tau_vs_unlink": "above (\u03c4>1, deficit \u2212)",
+        "c4_MeV": "-13.4358",
+        "leading_h_order": "2.47",
+        "sublink_deficits": {
+          "drop_AB": "0.44769",
+          "drop_CD": "0.44769"
+        },
+        "sign_compatible_with_mu4_neg": true
+      },
+      "P3_(AB\u00b7BC\u207b\u00b9)\u00b3(BC\u00b7CD\u207b\u00b9)\u00b3": {
+        "n_tokens": 12,
+        "n_crossings": 108,
+        "deficit_1_minus_tau": "0.10261941",
+        "sign": "+",
+        "tau_vs_unlink": "below (\u03c4<1, deficit +)",
+        "c4_MeV": "0.429563",
+        "leading_h_order": "4.117",
+        "sublink_deficits": {
+          "drop_AB": "0.986675",
+          "drop_CD": "-0.259286"
+        },
+        "sign_compatible_with_mu4_neg": false
+      }
+    },
+    "verdict": {
+      "classification": "MIXED: at least one 4-block linking word gives a NEGATIVE deficit (\u03c4>1 excess), sign-COMPATIBLE with \u03bc\u2084<0 \u2014 the sign wall is construction-dependent; the magnitude test becomes live for that word. Reported honestly; nothing tuned.",
+      "all_deficits_positive": false,
+      "any_deficit_negative": true,
+      "mu4_sign": "negative",
+      "brunnian_deficit_sign_at_q0": "mixed",
+      "sign_wall": false,
+      "is_fit": false,
+      "wired": false,
+      "free_param_count": 0,
+      "scope": "scope-(a) sign wall (if all deficits +): the derived Borromean-deficit BINDING recipe gives c\u2084\u22650, sign-incompatible with the forward-derived \u03bc\u2084<0. Elevated to scope-(b) by the Lean mu4_ne_brunnian4Cluster CONDITIONAL on \u03c4\u22641 (measured here). The A=4 \u03b1-cluster residual is a SATURATION object, not a binding cluster \u2014 a sign SWAP vs A=3 (mirror of #4354's \u03bc\u2083>0 wall).",
+      "anti_fit": "\u03bc\u2084 forward AME\u2212model, never inverted; no cabling/level tuned to any target; 4-Brunnian link non-unique, block-word is the direct A=3-analog with reported sub-link profile; nothing wired."
+    }
+  },
+  "scriptHash": "d46a439b5f9c7186",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

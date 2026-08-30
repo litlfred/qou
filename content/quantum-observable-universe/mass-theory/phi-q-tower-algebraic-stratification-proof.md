@@ -10,10 +10,10 @@
 2. **The mass formula sums over levels.** Per the
    [mass endomorphism tower](#prop:mass-endomorphism-tower)
    formula, the categorical mass equals
-   \$\bigl\lvert\prod\_i \hat V\_i\bigr\rvert + \sum\_{i} \Phi\_q(|\hat V\_i|)
-   * z^2 \sum\_{(i,j)} \Phi\_q(|\hat V\_i \hat V\_j|)$.
-     The first term corresponds to $\beta\_\emptyset$(level 0); the
-     singleton sum to$\beta\_{{i}}$(level 1); the pair sum to$\beta\_{{i,j}}\$ (level 2). Identification term-by-term. *Direct.*
+   $\bigl\lvert\prod_i \hat V_i\bigr\rvert + \sum_i \Phi_q(|\hat V_i|) + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i \hat V_j|)$.
+   The first term corresponds to $\beta_\emptyset$ (level 0); the
+   singleton sum to $\beta_{\{i\}}$ (level 1); the pair sum to
+   $\beta_{\{i,j\}}$ (level 2). Identification term-by-term. *Direct.*
 
 3. **No level $\geq 3$ contribution at fixed jet level $n$.** Per
    pentagon ascension

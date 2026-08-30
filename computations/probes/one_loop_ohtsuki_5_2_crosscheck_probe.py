@@ -19,7 +19,7 @@ single manifold, in a quadratic trace field, measured in-house.
 
 This probe adds an INDEPENDENT, PUBLISHED, RIGOROUS `c = 1` data point on a
 different manifold: Ohtsuki's asymptotic expansion of the Kashaev invariant of
-the `5_2` knot (`uploads/ki52.pdf`, Theorem 1.1). His
+the `5_2` knot (`library/ki52/ki52.pdf`, Theorem 1.1). His
 
     <5_2>_N = e^{N zeta} N^{3/2} omega (1 + sum_i kappa_i (2 pi i/N)^i + O(N^{-d-1}))
 
@@ -66,7 +66,7 @@ Audit-only. No float64 enters the witness.
 
 -- Ref: [ohtsuki-5_2] T. Ohtsuki, On the asymptotic expansion of the Kashaev
         invariant of the 5_2 knot, Quantum Topol. 7 (2016) 669, Theorem 1.1;
-        uploads/ki52.pdf
+        library/ki52/ki52.pdf
 -- Ref: [garoufalidis-yoon] arXiv:2411.03801 Thm 1.1 (1-loop = adjoint torsion
         for two-bridge knots; 5_2 is two-bridge)
 -- Ref: [dimofte-garoufalidis2013] arXiv:1202.6268, Defn 1.2
@@ -193,6 +193,15 @@ def main() -> int:
     }
     out = (Path(__file__).resolve().parent.parent
            / "one-loop-ohtsuki-5-2-crosscheck.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWitness: {out.name}")
     return 0 if ok else 1

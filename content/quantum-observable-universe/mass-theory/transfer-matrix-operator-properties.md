@@ -2,8 +2,7 @@ The [transfer matrix](#def:transfer-matrix-operator)
 $T_{K_1, K_2}(q)$ acts on the Gröbner--Shirshov-reduced Hecke chain,
 generates a non-commutative operator algebra under composition, and
 catalogues every particle interaction together with its $\Delta$
-operator and composition rules. These actions, catalogues, and rules
-are collected below.
+operator and composition rules.
 
 ## Action on the Gröbner--Shirshov ideal
 

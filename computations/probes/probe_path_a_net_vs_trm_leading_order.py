@@ -142,7 +142,7 @@ def main() -> int:
 
     # leading-order (h→0, i.e. q→1) limits
     lim_ratio = sp.limit(ratio, q, 1)
-    z_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_expr = q**3 / (q**2 + 1)
     z_at_1 = sp.limit(z_expr, q, 1)
 
     # numeric at q0

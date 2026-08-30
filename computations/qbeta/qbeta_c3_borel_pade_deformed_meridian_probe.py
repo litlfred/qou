@@ -51,8 +51,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)
 IM_V_U0_RESUMMED = mp.mpf("0.05545")     # #3692 (u=0 reference)
 ODD_PARTIAL_3691 = mp.mpf("0.0567896600197945")  # t·κ̃₁ − t³·κ̃₃ (#3691 witness)

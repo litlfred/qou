@@ -20,7 +20,7 @@ invalidates the derived witness independently of the canonical one.
 CLI:
 
     python3 -u low_isotope_mass_table.py [--method M] [--target-dps N]
-                                         [--no-rerun-canonical]
+                                         [--rerun-canonical]
 
 `--method` defaults to `auto`, which routes per-atom (the low-isotope
 set mixes free nucleons and composites, and no single method spans
@@ -30,9 +30,20 @@ combiner whose χ^λ goes through the Rust MPFR kernel). Both sub-paths
 are MPFR and Rust-backed. Passes through to
 canonical_mass_table_extended.py.
 
-`--no-rerun-canonical` skips the canonical re-run and projects from
-the existing canonical-mass-table-extended.witness.json (faster but
-relies on the canonical witness already being fresh).
+By default this projects from the existing
+canonical-mass-table-extended.witness.json and does NOT touch it — a
+projection should not rewrite its own source. `--rerun-canonical` opts
+into refreshing the canonical table first, at full coverage.
+
+That is the reverse of how it behaved until 2026-08-28 (bean
+`qou-7e1t`), when the re-run was the default and this wrapper's own
+narrower arguments — `--target-dps 11` against a committed 60 —
+silently replaced the canonical artifact with a coarser one. Note
+`--target-dps` is the active-set pruning threshold, not a formatting
+knob, so that rewrite changed which Wedderburn blocks entered the sum.
+
+`--no-rerun-canonical` is still accepted, means exactly what it said,
+and is now simply the default.
 
 ## Why a wrapper rather than reuse the canonical witness directly
 
@@ -90,14 +101,36 @@ CANONICAL_WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json
 
 
 def run_canonical(method: str, target_dps: int) -> None:
-    """Invoke canonical_mass_table_extended.py end-to-end."""
+    """Invoke canonical_mass_table_extended.py end-to-end, at FULL coverage.
+
+    Deliberately does **not** pass `--atoms` (bean `qou-xwet`).
+
+    This used to restrict the canonical run to `LOW_ISOTOPE_ATOMS` as a speed
+    optimisation. That was destructive and redundant at the same time:
+
+    * **Destructive** — the canonical script's output filename is fixed, so the
+      restricted run overwrote `canonical-mass-table-extended.witness.json`
+      with a five-row table. On `main` that dropped 4He and every A >= 5 row,
+      and silently repointed `registry.ts`'s positional `B_2H_AME_MeV` pin
+      (`data.rows.2.B_AME_MeV`) at a different nuclide.
+    * **Redundant** — `project_to_low_isotope()` below already filters to
+      `A <= LOW_ISOTOPE_A_MAX`, so restricting the *upstream* run bought
+      nothing this wrapper needs.
+
+    Full coverage is slower. That is the correct trade for a shared committed
+    artifact, and `--no-rerun-canonical` remains available when the canonical
+    witness is already fresh. The canonical script now also refuses a partial
+    write outright, so this call could not silently regress again.
+    """
     cmd = [
         sys.executable, "-u",
         str(HERE / "canonical_mass_table_extended.py"),
-        "--atoms", ",".join(LOW_ISOTOPE_ATOMS),
         "--method", method,
-        "--target-dps", str(target_dps),
     ]
+    # Omit --target-dps entirely when unset, so the canonical script uses its
+    # OWN default (OUTPUT_DPS) rather than inheriting this wrapper's.
+    if target_dps is not None:
+        cmd += ["--target-dps", str(target_dps)]
     print(f"$ {' '.join(cmd)}", flush=True)
     t0 = time.time()
     rc = subprocess.run(cmd).returncode
@@ -144,17 +177,56 @@ def main() -> int:
             "in one run, all-MPFR and all Rust-backed."
         ),
     )
-    parser.add_argument("--target-dps", type=int, default=11)
+    # Default None = INHERIT the canonical script's own default, and record
+    # what the projected witness was actually built at.
+    #
+    # This used to default to 11, and that number is the mechanism of the whole
+    # defect: it is what the wrapper passed down when the re-run was the
+    # default, and it is what replaced a committed 60 with a coarser table.
+    # It also mislabelled the projection — the committed witness records
+    # `parameters.target_dps: 11` while holding data a 60-dps run produced, a
+    # setting that was never applied to the numbers in the file.
+    #
+    # An explicit `--target-dps` is still passed through, so a deliberate
+    # coarser run is still expressible; `canonical_mass_table_extended` then
+    # refuses the downgrade unless `--allow-precision-downgrade` is given.
+    parser.add_argument("--target-dps", type=int, default=None)
+    parser.add_argument(
+        "--rerun-canonical",
+        action="store_true",
+        help=(
+            "Also re-run canonical_mass_table_extended.py first, at FULL "
+            "coverage, before projecting. Off by default: this script is a "
+            "projection, and a projection should not rewrite its own source."
+        ),
+    )
     parser.add_argument(
         "--no-rerun-canonical",
         action="store_true",
-        help=(
-            "Skip the canonical re-run and project from the existing "
-            "canonical-mass-table-extended.witness.json. Useful when "
-            "canonical is already fresh."
-        ),
+        help=argparse.SUPPRESS,   # accepted, now the default; see below
     )
     args = parser.parse_args()
+
+    # The re-run is OPT-IN as of 2026-08-28 (bean `qou-7e1t`, option 1). It was
+    # the default, which made "project the low-isotope view" silently rewrite
+    # the canonical table it projects FROM — with this script's own narrower
+    # arguments, `--target-dps 11` against a committed 60. `--target-dps` is not
+    # a formatting knob: it is the active-set pruning threshold, so the rewrite
+    # changed which Wedderburn blocks were summed, not just how many digits
+    # were printed.
+    #
+    # `--no-rerun-canonical` is still accepted and still means what it said, so
+    # every existing invocation and doc line keeps working; it is simply the
+    # default now, and hidden from --help rather than removed. Passing both is
+    # not a contradiction — they agree.
+    #
+    # This was NOT safe to do until the canonical table carried p and n. Until
+    # then a light reproject dropped them and the paper's 5-atom low-isotope
+    # set silently became 3 — which is why the 2026-06-14 triage audit called
+    # this change architecturally significant rather than small. The preceding
+    # commit (option 3, `--method` default -> `auto`) is what removed that
+    # objection: canonical is 9 rows now, so the projection is 5 again.
+    rerun = args.rerun_canonical and not args.no_rerun_canonical
 
     # Stamp start time BEFORE the canonical subprocess so `durationMs`
     # in the emitted witness reflects true end-to-end wall time
@@ -163,12 +235,12 @@ def main() -> int:
     # the wrapper would self-report ~9ms total — misleading for audit.
     t0 = time.monotonic()
 
-    if not args.no_rerun_canonical:
+    if rerun:
         run_canonical(args.method, args.target_dps)
     else:
         print(
-            "  --no-rerun-canonical: projecting from existing "
-            f"{CANONICAL_WITNESS.name} (may be stale)",
+            f"  projecting from the existing {CANONICAL_WITNESS.name} "
+            "(may be stale; pass --rerun-canonical to refresh it first)",
             flush=True,
         )
 
@@ -192,7 +264,14 @@ def main() -> int:
         .add_parameter("method", args.method)
         .add_parameter("atoms_requested", ",".join(LOW_ISOTOPE_ATOMS))
         .add_parameter("A_max", LOW_ISOTOPE_A_MAX)
-        .add_parameter("target_dps", args.target_dps)
+        # The value the projected DATA was built at, not the flag this process
+        # happened to carry. When --target-dps is unset those differ, and the
+        # witness must describe the numbers it holds.
+        .add_parameter(
+            "target_dps",
+            args.target_dps if args.target_dps is not None
+            else src.get("parameters", {}).get("target_dps"),
+        )
         .add_data("rows", projected["rows"])
         .add_data("n_atoms", projected["n_atoms"])
         .add_data("derived_from", {
@@ -203,7 +282,30 @@ def main() -> int:
             "commitSha": src.get("commitSha"),
         })
     )
-    out = builder.save()
+    # Declare the q0 pin, INHERITED from the witness this projects.
+    #
+    # `builder.save()` was called bare, so the emitted witness carried
+    # `q0Anchor: null` and `q0Value: null` — it could not say which anchor
+    # layer its numbers belonged to. AGENTS.md: "Say which pin you used."
+    #
+    # That is not a cosmetic gap. A witness that does not declare its layer is
+    # the enabling condition for comparing across layers and reading the
+    # difference as a defect — which is exactly the mistake retracted in bean
+    # `qou-4e5k` on this arc (a ~7.8e-08 "second discrepancy" between this
+    # table and a MUON-anchored one, where the gap was the layer separation
+    # itself, not an error).
+    #
+    # Inherited rather than re-derived: this producer computes nothing. It is a
+    # thin projection of `canonical-mass-table-extended.witness.json` restricted
+    # to A <= LOW_ISOTOPE_A_MAX, so its rows are that witness's rows and its
+    # layer is that witness's layer by construction. Reading `q_parameter`
+    # directly here would be worse — it would declare the pin this process
+    # happens to import rather than the pin the numbers were computed at, and
+    # the two can differ precisely when the source witness is stale.
+    out = builder.save({
+        "q0Anchor": src.get("q0Anchor"),
+        "q0Value": src.get("q0Value"),
+    })
     print()
     print(f"  Wrote {out.name} ({projected['n_atoms']} atoms)")
     return 0

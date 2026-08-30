@@ -65,9 +65,50 @@ Per [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe
 |---|---|---|
 | [`joint_tower_sdp_solver.py`](./joint_tower_sdp_solver.py) | Phase 3a: H_3 verifier for {quark, electron, proton, neutron} | `joint-tower-sdp-h3.witness.json` |
 | [`joint_tower_sdp_solver_v2.py`](./joint_tower_sdp_solver_v2.py) | Phase 3b: H_3 SDP feasibility for ²H, ³He | `joint-tower-sdp-h6-h9.witness.json` |
-| (Rust) [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) | Production R1+R2+R3+R4+R5min in Rust | `joint-tower-sdp-rust.witness.json` |
+| (Rust) [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) | R1+R2+R3+R4+R5min in Rust — **not a production consumer**, see below | `joint-tower-sdp-rust.witness.json` |
 
 H_5+ blocked on Clarabel-rs algorithmic bug (PR #444 `R5_5_BUG_REPORT.md`).
+
+> **The Rust row said "Production" and that was measured wrong (2026-08-29, bean
+> `qou-ia6f`).** It meant *production-grade implementation*, as against the
+> Python prototypes above it — but read as a placement on the
+> production-vs-exploratory decision tree, which is how a reader arrives at this
+> table, it is false in both directions.
+>
+> - **Nothing downstream is production.** Its five live consumers are all probes
+>   or demos: `probe_4_li6_rectangular_conjecture`,
+>   `probe_1_project_4he_on_dominant`, `categorical_bypass_volmatch_demo`,
+>   `alpha/alpha_star_dominant_partitions`, `alpha/alpha_star_vs_binding_gap`.
+>   Two name `mass-table-ppb`, but both **read** it for comparison rather than
+>   feed it, and `categorical_bypass`'s own docstring records that its formula
+>   does *not* reproduce those predictions.
+> - **The header edge above is one-way.** The witness declares
+>   `consumed_by: "prop:atom-knot-mass-derivation"`, but all five blocks in that
+>   proposition family cite `d_from_scratch.py` and different witnesses, and the
+>   proposition's own `computation` block is `status: "not_run"`. The
+>   declaration is producer-side only; nothing on the other end reads it.
+> - **Its numbers are shape checks, not values.** The Wedderburn PSD evaluation
+>   runs at `q_0 = 1.1097`, which is **251 ppm** from the canonical proton pin
+>   `1.1099785827513808` — five orders of magnitude coarser than the L2 ppb
+>   targets. The witness carries `precision_tier: "float64"` and a `deprecated`
+>   block stating this. Do not quote an eigenvalue, `psd_cone_alpha_star` or
+>   `psd_cone_gap` from it as a value.
+> - **What IS trustworthy here is the exact half:** the filtration certificates,
+>   jet logs, Wedderburn shapes and every `coefficient_in_q`, carried as ℚ(q)
+>   strings and unaffected by any of the above. Grepped 2026-08-29, no Python
+>   consumer reads it — it is recorded, not consumed.
+>
+> Regenerate with the thresholds the committed witness was made at:
+>
+> ```sh
+> cargo run --release --bin joint-tower-sdp -- \
+>   --max-n 12 --truncate-for-repo \
+>   --output ../../computations/joint-tower-sdp-rust.witness.json
+> ```
+>
+> Drop `--truncate-for-repo` for the full-fidelity ~13 MB form (same numbers,
+> plus every `jet_log` event and `by_grade` term). The `truncation` block in the
+> witness records which was used.
 
 ## Bypass / "no fits" demonstrations
 

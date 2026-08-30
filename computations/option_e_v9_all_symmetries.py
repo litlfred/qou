@@ -29,6 +29,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp, fabs, acos, sqrt
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -38,6 +40,13 @@ mp.dps = 50
 
 M_E_MEV = mpf("0.51099895069")
 M_PI_MEV = mpf("139.57039")
+# ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
+# both live pins. NOT migrated on purpose — these files ARE the record
+# of the v1..v9 progression that docs/coordination/option-e.md tracks
+# ("DO NOT REPEAT failed paths"), and option_e_probe1_derive_1plusq_over_2
+# exists specifically to show the published 0.11 %% near-match was obtained
+# at THIS stale q0. Re-pinning would silently alter a recorded historical
+# result and delete that probe's subject. Do not read it as a live pin.
 Q_0 = mpf("1.1097090249")
 H_Q = 1 - 1 / Q_0
 H = Q_0 - 1 / Q_0
@@ -96,7 +105,7 @@ def load_y(repo_root, atom_label):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     repo_root = Path(__file__).resolve().parent.parent
 
     cf_T, ca_T = load_chi(repo_root, "T")
@@ -240,6 +249,15 @@ def main() -> int:
     out = (repo_root / "computations"
            / "option-e-v9-all-symmetries.witness.json")
     with out.open("w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"\nWrote {out}")
     print(f"\nBest: {sorted_results[0][0]} (err {sorted_results[0][1]['err_pct']:+.2f}%)")

@@ -1,0 +1,164 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9711057v2",
+ "source": {
+  "file": "9711057v2.pdf",
+  "sha256": "acf5cdd7fe848f43b32d96d9b344fc222b0c7d3d1fa8950ce39495e2076237bb",
+  "bytes": 202929,
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9711057",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "30 Apr 1998"
+  },
+  "doi": null,
+  "title": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
+  "authors_raw": "T. Wilke1, T. Guhr1, and T. Wettig2",
+  "title_lines": [
+   "The microscopic spectrum of the QCD Dirac operator with finite quark masses"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-th/9711057v2  30 Apr 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181031110744-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+   "page": 2,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "CALCULATION OF OBSERVABLES",
+   "page": 6,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "INf (\u2212m1) \u00b7 \u00b7 \u00b7 mNf",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(z)",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "DISCUSSION",
+   "page": 9,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 10,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 8212,
+   "n_words": 1372
+  },
+  {
+   "id": "sec-001-ii-random-matrix-theory-for-finite-quark-masses",
+   "number": "II",
+   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 10671,
+   "n_words": 2076
+  },
+  {
+   "id": "sec-002-iii-calculation-of-observables",
+   "number": "III",
+   "title": "CALCULATION OF OBSERVABLES",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2116,
+   "n_words": 419
+  },
+  {
+   "id": "sec-003-1-inf-m1-mnf",
+   "number": "1",
+   "title": "INf (\u2212m1) \u00b7 \u00b7 \u00b7 mNf",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 720,
+   "n_words": 149
+  },
+  {
+   "id": "sec-004-1-z",
+   "number": "1",
+   "title": "(z)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6919,
+   "n_words": 1379
+  },
+  {
+   "id": "sec-005-iv-discussion",
+   "number": "IV",
+   "title": "DISCUSSION",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3907,
+   "n_words": 609
+  },
+  {
+   "id": "sec-006-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2717,
+   "n_words": 449
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 35262
+ }
+}

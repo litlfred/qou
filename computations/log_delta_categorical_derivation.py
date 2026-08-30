@@ -43,6 +43,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -64,6 +65,12 @@ CHI_FILES = {
     "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
 }
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 B_AME = {
     "D":   mp.mpf("2.22456607"),
     "T":   mp.mpf("8.481798"),
@@ -80,7 +87,7 @@ def depth(lam: list[int]) -> int:
 def alpha_k(k: int) -> mp.mpf:
     """Structural prefactor α_k per prop:unified-curvature-rank-mass-formula
     + prop:plancherel-term-7-formulation."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k == 0: return mp.mpf(1)
     if k == 1: return mp.mpf(1)
@@ -156,7 +163,7 @@ def main() -> int:
     )
     builder.add_parameter("q0", str(Q0))
     builder.add_parameter("hbar_q", str(HBAR_Q))
-    builder.add_parameter("z_mark", str(1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))))
+    builder.add_parameter("z_mark", str(Q0 ** 3 / (Q0 ** 2 + 1)))  # convention D
     builder.add_parameter("catalan_G", str(mp.catalan))
 
     results = {}
@@ -217,7 +224,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) AME MeV",

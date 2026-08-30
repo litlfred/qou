@@ -69,4 +69,4 @@ solver helpers are exposed as
 *The active dual variables $y^*_i > 0$ name the "most receptive
 sub-braids" — they are the structural identifiers of the
 saturated Wedderburn blocks. Solving only the primal loses this
-information; the dual emission is **required**, not optional.*
+information; the dual emission is **required**.*

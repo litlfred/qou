@@ -47,7 +47,7 @@ transcription (Garoufalidis–Le arXiv:math/0508100 v6 App A).
 
 -- Ref: [manuscript] docs/audits/2026-07-24-borromean-index-bridge-invariant.md
 
-THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], uploads/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
+THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], library/arxiv-2411.03801v2/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
 
 ⚠ FOLLOW-UP DELIVERED 2026-08-08 (bean qou-fl4t).  The bounded follow-up named
 above — "computing tau(B3) from the octahedral Neumann-Zagier data" — now exists:
@@ -243,6 +243,15 @@ def main() -> int:
         },
     }
     out = script_path.with_name("borromean-jones-1loop-torsion.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nwitness → {out.name}")
     return 0

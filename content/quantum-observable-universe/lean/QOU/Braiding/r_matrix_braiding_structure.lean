@@ -44,7 +44,16 @@ class RMatrixBraidingContext where
 /-- **Yang–Baxter equation for the universal `R`-matrix**
     ([`prop:r-matrix-braiding-structure`]).
 
-    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
+    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`.
+
+    **Assumed, not derived here.** The body projects
+    `RMatrixBraidingContext.claim_yang_baxter`, so this declaration restates
+    the hypothesis rather than proving it. Drinfeld is cited for where the
+    property is established for the object this abstract context models — the
+    universal `R`-matrix of a quantised enveloping algebra — which this
+    development never constructs. The statement is genuinely conditional:
+    `comp`, `R12`, `R13`, `R23` are arbitrary context data and YBE fails for a
+    general assignment, so it may not be strengthened to a global `axiom`. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang-Baxter equation, 1985
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
 def r_matrix_braiding_structure

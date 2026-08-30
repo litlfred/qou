@@ -30,6 +30,7 @@ Run:  python3 -u computations/complex_volume_witness.py 2>&1 | tee /tmp/cv.log
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — substrate/ subdir bridge
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import math
 import sys
 
@@ -40,7 +41,7 @@ from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 # substrate inputs (CAL-1 m_e, CAL-2 q₀) — pure canonical, no fit
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV as _ME  # noqa: E402
 
 # canonical energy scale α = E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (derived,
@@ -53,6 +54,13 @@ ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # AME binding ground truth (MeV) for the Re cross-check
 B_AME = {"2H": float(AME_B_DEUTERON_MEV_VALIDATION), "3H": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def complex_volume(Z: int, N: int):
     """𝔙 = 𝔈_bind + i·𝔔_β for the (Z,N) bound knot. Im is the single
@@ -74,11 +82,22 @@ def complex_volume(Z: int, N: int):
     # and DIFFER at the real anchor q₀ (q̄₀=q₀≠q₀⁻¹).
     ta, tf = float(ta), float(tf)
     mass_mod_usual = abs(ta)                             # |tr_M(q₀)|
-    # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹. The canonical
-    # color-weighted atom word BAKES q₀ into its crossing values, so it cannot
-    # re-lift at q⁻¹ (a q-parameterised word builder is required — see
-    # tr_m_atom_via_transfer docstring). Guarded: the bar-norm is the
-    # principled mass-modulus but is not yet computable for this convention.
+    # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹.
+    #
+    # CORRECTED 2026-08-19 (bean `qou-e58e`). This comment used to say the
+    # word "BAKES q₀ into its crossing values, so it cannot re-lift at q⁻¹",
+    # citing the tr_m_atom_via_transfer docstring — which was itself stale and
+    # is fixed in the same commit. The re-lift WORKS: tr_M(q₀⁻¹) computes in
+    # milliseconds, and the try/except below has never been the thing that
+    # fires. What fires is `bar_prod > 0` in the next line, because the
+    # product is NEGATIVE (deuteron: −8.5e-4; free: −3.3e-3). So the bar-norm
+    # is not "not yet computable" — as a real number it DOES NOT EXIST for
+    # this word, which is a stronger and different statement.
+    #
+    # What the bar image does carry is a mirror law: q ↦ 1/q exchanges
+    # (Z,N) ↔ (N,Z) up to one universal offset δ(q), measured to 22–30 digits
+    # over A = 2..6. See
+    # `computations/substrate/bar_involution_is_isospin_probe.py`.
     ta_i = None
     mass_mod_bar = None
     try:
@@ -146,9 +165,13 @@ def main() -> int:
         rt_s = f"{rt:.4f}" if rt is not None else "—"
         print(f"| {name} | {cv['tr_M_atom']:.6f} | {ti_s} "
               f"| {cv['mass_mod_usual']:.6f} | {bn_s} | {rt_s} |")
-    print("  *bar-norm not computable here: the color-weighted word bakes q₀ "
-          "and cannot re-lift at q⁻¹ (needs a q-parameterised word builder — "
-          "the follow-up).")
+    print("  *bar-norm n/a here because tr_M(q₀)·tr_M(q₀⁻¹) is NEGATIVE, so it "
+          "has no real square root — NOT because the re-lift fails. The q₀⁻¹ "
+          "column above is computed for every row. Corrected 2026-08-19 (bean "
+          "`qou-jqjc`); the old wording claimed the word could not re-lift at "
+          "q⁻¹, which the same table disproves. As a real number the bar-norm "
+          "does not EXIST for those words, which is stronger than 'not yet "
+          "computable' and means the claim should be retired, not repaired.")
 
     print(f"\n  Im channel: Q_β,pred = {im_pred:.6f} MeV vs CODATA "
           f"{qbeta_codata:.6f} MeV  (err {im_err*100:.3f}%)")
@@ -177,6 +200,40 @@ def main() -> int:
     w.add_data("im_qbeta_pred_MeV", str(im_pred))
     w.add_data("im_qbeta_rel_err", str(im_err))
     w.add_data("fibre_caveat", "Im(q_0)=0; complex structure is fibre-level (pre-tau)")
+
+    # Assertions (bean `qou-jqjc`). This witness previously emitted NONE, so a
+    # consumer reading `allPassed` saw a pass over zero checks — the producer's
+    # prose was honest but its machine surface was not. Values are passed as
+    # STRINGS, the drained convention (qou-t0rf), so adding them does not put
+    # new raw float64 into the witness.
+    #
+    # Only what is actually checked is asserted. In particular there is NO Re
+    # assertion: the log-trace binding sits 22–69% from AME (see re_rel_err per
+    # isotope in the data), which is a recorded gap, not a passing test. Nor is
+    # the single-frakV descent asserted — it is the open conjecture.
+    w.add_assertion(
+        "im_qbeta_matches_codata",
+        computed=str(im_pred), expected=str(qbeta_codata),
+        tolerance=str(0.002 * qbeta_codata), unit="MeV",
+        source="CODATA neutron beta-decay Q-value")
+    im_spread = max(abs(r[3]["im_qbeta_MeV"] - im_pred) for r in rows)
+    w.add_assertion(
+        "im_channel_isotope_independent",
+        computed=str(im_spread), expected="0", tolerance="1e-30", unit="MeV",
+        source="Im is the single n->p decay Q-value, so it cannot vary by isotope")
+    w.add_caveat(
+        "Re channel is NOT asserted: the log-trace binding is 22-69% from AME "
+        "across 2H/3H/3He/4He (re_rel_err per isotope). Recorded, not checked.")
+    w.add_caveat(
+        "The single-frakV descent (conj:binding-qbeta-complex-volume) is NOT "
+        "tested here. Im is ASSIGNED from q_beta_substrate, not derived from a "
+        "trace; that the two channels descend from one fibre object is the open "
+        "conjecture. `allPassed` refers to the two assertions above and to "
+        "nothing else.")
+    w.add_caveat(
+        "Bar-norm sqrt(tr_M(q0)*tr_M(q0^-1)) is n/a for 2H and 3H because the "
+        "product is NEGATIVE, not because the re-lift fails; as a real number it "
+        "does not exist for those words.")
     for name, Z, N, cv, b_ame, re_err in rows:
         w.add_data(f"V_{name}", {
             "re_binding_MeV": cv["re_binding_MeV"],

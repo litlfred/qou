@@ -11,7 +11,7 @@ both:
 
 This probe verifies both relations on every partition λ ⊢ n for
 n = 2, …, 6, evaluated at q = q_0 via the canonical builder
-`build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical`.
+`build_hoefsmit_mpfr` from `hoefsmit_mpfr`.
 
 A failure here would invalidate every probe that uses canonical
 Hoefsmit downstream (the entire H_n cluster of PR #818 and beyond).
@@ -42,9 +42,10 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _partitions_of(n: int):
@@ -68,7 +69,7 @@ def main() -> int:
         "hoefsmit-seminormal-form-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q = Q_MP
     h = q - 1 / q
@@ -148,7 +149,7 @@ def main() -> int:
         .add_data("per_irrep_results", results)
         .add_assertion(
             name="hecke_quadratic_all_irreps_n_2_to_6",
-            computed=float(max_hecke_residue),
+            computed=max_hecke_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over partitions λ ⊢ n (2 ≤ n ≤ 6) and generators "
@@ -162,7 +163,7 @@ def main() -> int:
         )
         .add_assertion(
             name="braid_relation_all_irreps_n_3_to_6",
-            computed=float(max_braid_residue),
+            computed=max_braid_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over partitions λ ⊢ n (3 ≤ n ≤ 6) and adjacent "

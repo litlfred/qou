@@ -79,8 +79,14 @@ q0 = mp.mpf(q0_str)
 block_invertibility = []
 all_invertible = True
 for pname, pdata in h6["blocks"].items():
-    dets = [mp.mpf(repr(d)) for d in pdata["sigma_k_dets"]]
-    conds = [mp.mpf(repr(c)) for c in pdata["sigma_k_conds"]]
+    # `str`, not `repr`: BOTH `sigma_k_dets` and `sigma_k_conds` are now
+    # serialized numeric STRINGS (exact via `mp.det` / `mp.svd_r` -- bean
+    # `qou-k6b3`), and `repr` of a str would wrap it in quotes. `str` is the
+    # identity on a str and the shortest round-trip on a float, so it reads
+    # both the new and any older witness. The conds were left on `repr` when
+    # the dets were fixed, and would have raised the moment the SVD landed.
+    dets = [mp.mpf(str(d)) for d in pdata["sigma_k_dets"]]
+    conds = [mp.mpf(str(c)) for c in pdata["sigma_k_conds"]]
     min_abs_det = min(abs(d) for d in dets)
     max_cond = max(conds)
     invertible = min_abs_det > mp.mpf("1e-12")
@@ -104,7 +110,12 @@ half_one_plus_q_target = (1 + q0) / 2  # ≈ 1.0549893
 for pname, pdata in h6["blocks"].items():
     sig1 = pdata["sigma_k_at_q0_re"][0]  # 0-indexed → σ_1
     dim = pdata["dim"]
-    trace = sum(mp.mpf(repr(sig1[i][i])) for i in range(dim))
+    # `str`, not `repr`, for the same reason as the dets/conds above:
+    # `_c` in the producer serializes every matrix entry with `mp.nstr`, so
+    # these are STRINGS -- and have been since before this probe was
+    # written. `repr` of a str wraps it in quotes and `mp.mpf` then raises
+    # `invalid literal for int()`, which is what this probe did on `main`.
+    trace = sum(mp.mpf(str(sig1[i][i])) for i in range(dim))
     half = (1 + trace) / 2
     sigma_1_traces.append({
         "partition": pname,
@@ -119,8 +130,8 @@ w0_diagonals = []
 for pname, pdata in h6["blocks"].items():
     w0 = pdata["w0_matrix_at_q0_re"]
     dim = pdata["dim"]
-    diag = [str(mp.mpf(repr(w0[i][i]))) for i in range(dim)]
-    diag_sum = sum(mp.mpf(repr(w0[i][i])) for i in range(dim))  # = χ_λ(w_0)
+    diag = [str(mp.mpf(str(w0[i][i]))) for i in range(dim)]
+    diag_sum = sum(mp.mpf(str(w0[i][i])) for i in range(dim))  # = χ_λ(w_0)
     w0_diagonals.append({
         "partition": pname,
         "dim": dim,
@@ -131,7 +142,7 @@ for pname, pdata in h6["blocks"].items():
 
 # ── χ_λ(w_0) cross-check residual propagation ─────────────────────
 max_chi_residual = max(
-    mp.mpf(repr(pdata["cross_check_residual"]))
+    mp.mpf(str(pdata["cross_check_residual"]))
     for pdata in h6["blocks"].values()
 )
 chi_cross_check_ok = max_chi_residual < mp.mpf("1e-12")

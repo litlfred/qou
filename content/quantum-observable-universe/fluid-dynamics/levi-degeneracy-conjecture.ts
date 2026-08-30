@@ -20,6 +20,28 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-14",
+      body:
+        "**Two lock-side facts landed since the per-channel reading.** (1) The " +
+        "second-order stretching correction vanishes on approach: " +
+        "$V_2/V_1 \\to 0$ as $\\tau \\to 0^+$, owner-proved sorry-free " +
+        "(`kappa_squared_tends_to_zero`, `townsend-biot-savart-strain.lean`, " +
+        "2026-08-10) — the two-regime model's phase-1 leading order is now on " +
+        "Lean footing. (2) The \"$\\Gamma$ growth during collision\" caveat on " +
+        "the lock's uniformity is **closed in-model**: reparametrizing by " +
+        "consumed circulation eliminates $\\Gamma(t)$ from the phase-plane " +
+        "race, so the overlap cutoff engages at $d^2 = (V_{1,0} d_0)^{2/3} > 0$ " +
+        "for every positive circulation history " +
+        "(`overlap_at_small_separation`, `pair_phase1_riccati.lean`, PR #5019). " +
+        "The surviving lock-uniformity caveat is model-to-PDE fidelity (bean " +
+        "`qou-ohaz`). Phase-1 self-amplification is also theorem-grade: the " +
+        "pair channel satisfies the GP5 Riccati-lower-bound hypothesis with " +
+        "uniform $c' = \\Gamma/(\\pi d_0^2 \\Omega_0)$ " +
+        "(`discrete_riccati_lower`).",
+      see: "../../../../docs/audits/2026-07-25-qns-surreal-bridge-campaign-ledger.md",
+    },
+    {
       kind: "caveat",
       date: "2026-07-25",
       body:

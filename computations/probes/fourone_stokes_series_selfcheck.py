@@ -42,7 +42,7 @@ What this probe establishes
 
 All arithmetic is exact (fractions.Fraction over Q[[q]] truncated at order N),
 so there is no floating-point tolerance and nothing is fitted.  The muon anchor
-of the QOU framework is the figure-eight knot 4_1 (via Vol(4_1) = 2 Lambda(pi/3)
+of the QOU framework is the figure-eight knot 4_1 (via Vol(4_1) = 2*Cl_2(pi/3) = 6*Lambda(pi/3)
 ~ 2.0299, the *hyperbolic volume* -- a distinct object from these E_1 integer
 q-series), so reproducing a published integer sequence for 4_1 is a
 production-adjacent literature self-check.  Nothing here is wired to any QOU
@@ -298,6 +298,15 @@ def main() -> int:
     }
 
     out_path = script_path.with_name("fourone-stokes-series-selfcheck.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out_path.write_text(json.dumps(witness, indent=2) + "\n")
 
     # -- Console summary. ---------------------------------------------------

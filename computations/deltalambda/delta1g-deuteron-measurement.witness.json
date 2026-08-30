@@ -1,0 +1,68 @@
+{
+  "engine": "pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T16:00:03.933158+00:00",
+  "commitSha": "81da8a0d4931874387acb1e9c273bda90752e34c",
+  "assertions": [
+    {
+      "name": "deuteron_is_single_bond_so_delta1g_needs_no_fabrication",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "delta1g_measured_nonzero",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "c_knot_identification_unbridged_under_multiplicative_reading",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "delta1g-deuteron-measurement",
+  "scriptFile": "delta1g_deuteron_measurement_probe.py",
+  "scriptHash": "4f586fd6363d",
+  "scriptCommitSha": "36dab9bcc7ea98ba0e4c7bcab49a6d4264da5cde",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Measures Δ¹g — the bare first-order per-bond amplitude declared the surviving open magnitude object by docs/audits/2026-08-02-mu3-submodularity-vacuous-at-deuteron.md (bean qou-i4pz) — directly at the deuteron (A=2, H₆, convention D). Two contributions. (1) Δ¹g IS measurable: the audit's 'no numerical probe is run' is correct for Δ²g (an A=2 second interface would have to be fabricated) but does not apply to Δ¹g, a single-bond object; and the corpus already contained the measurement in gap10_tjon_correlation_probe.py (merged #4406) as M_op(2), uncited by the successor work. (2) The identification `Δ¹g = the fitted C_knot = 5.853` is dimensionally UNBRIDGED: C_knot = B_AME/B_cat is a fitted ratio of MeV binding energies under the SIGNED master functional B_cat = m_e·|Σ_λ y_λ χ^λ·sgn f^λ|, whereas Δ¹g is an additive difference in the UNSIGNED functional g = Σ_λ y_λ|χ_λ|. Different functionals, different dimensions; under the obvious multiplicative reading the measured magnitude falls short. Precedent for treating this as a real hazard rather than a quibble: a3_units_consistency_probe.py found precisely this MeV-vs-dimensionless pun on precisely this C_knot, and repairing it swung the reported gap from a 1.66× overshoot to a 3.53× undershoot across the full unpinned factor. SCOPE-(a) on the IDENTIFICATION only: this does NOT refute Δ¹g as the open object and does NOT disturb the μ₃-vacuity result, which rests on the independent proved identity Δ²g ≡ 0 on single-bond configs. Convention D throughout (owner ruling 2026-08-09). No Δ_λ, no C_knot fitted, nothing wired. VERDICT: Δ¹g measured at the deuteron (convention D, H₆) = -0.556544660; it is a single-bond object so no fabricated interface is needed and the audit's 'no numerical probe' — correct for Δ²g — does not apply. The corpus already contained this measurement in gap10_tjon_correlation_probe (merged #4406, uncited by the successor work). The `Δ¹g = C_knot = 5.854` identification is NOT bridged: C_knot is a fitted ratio of MeV from the SIGNED functional m_e·|Σ y_λ χ^λ sgn f^λ|, while Δ¹g is an additive difference in the UNSIGNED functional Σ y_λ|χ_λ|; under the obvious multiplicative reading the measured |Δ¹g| falls short by 10.5×. Precedent: a3_units_consistency_probe found this exact MeV-vs-dimensionless pun on this exact C_knot, swinging 1.66× overshoot to 3.53× undershoot. Scope-(a) on the IDENTIFICATION only — Δ¹g remains the open object and the μ₃ vacuity result is untouched.",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "data": {
+    "delta1g_deuteron": {
+      "convention": "D (SU(2)/Temperley-Lieb, y_lambda_at since 2026-08-09)",
+      "n_strands": 6,
+      "n_interface_bonds": 1,
+      "g_empty": "1.13171690432221412785182591834778694967346964615000003073090",
+      "g_a": "0.575172243917774020960046050623038172501169475659999768247376",
+      "delta1g": "-0.556544660404440106891779867724748777172300170490000262483525",
+      "B_AME_deuteron_MeV": "2.22460000000000000000000000000003975858962313899499275111969",
+      "B_cat_deuteron_MeV": "0.379999999999999999999999999999996055695473894940972941357174",
+      "C_knot_fitted_ratio": "5.85421052631578947368421052631614321552170963266221620670401",
+      "abs_delta1g": "0.556544660404440106891779867724748777172300170490000262483525",
+      "multiplicative_shortfall": "10.5188513030769967827721354790392136143583819553398187767551",
+      "C_knot_functional": "m_e·|Σ_λ y_λ χ^λ·sgn f^λ|  (SIGNED, MeV ratio)",
+      "delta1g_functional": "Σ_λ y_λ|χ_λ|  (UNSIGNED, additive difference)",
+      "precedent": "a3_units_consistency_probe.py — same MeV-vs-dimensionless pun on the same C_knot; repair swung 1.66x overshoot to 3.53x undershoot",
+      "verdict": "Δ¹g measured at the deuteron (convention D, H₆) = -0.556544660; it is a single-bond object so no fabricated interface is needed and the audit's 'no numerical probe' — correct for Δ²g — does not apply. The corpus already contained this measurement in gap10_tjon_correlation_probe (merged #4406, uncited by the successor work). The `Δ¹g = C_knot = 5.854` identification is NOT bridged: C_knot is a fitted ratio of MeV from the SIGNED functional m_e·|Σ y_λ χ^λ sgn f^λ|, while Δ¹g is an additive difference in the UNSIGNED functional Σ y_λ|χ_λ|; under the obvious multiplicative reading the measured |Δ¹g| falls short by 10.5×. Precedent: a3_units_consistency_probe found this exact MeV-vs-dimensionless pun on this exact C_knot, swinging 1.66× overshoot to 3.53× undershoot. Scope-(a) on the IDENTIFICATION only — Δ¹g remains the open object and the μ₃ vacuity result is untouched."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

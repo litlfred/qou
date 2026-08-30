@@ -41,6 +41,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from canonical_braid_marshalling import marshal_to_chi_lambda_braid  # noqa: E402
+from legacy_marshalled_frame import legacy_nucleon_tau_M_H3  # noqa: E402
 from hecke_core import _PROTON_G0, _PROTON_G1  # noqa: E402
 
 # Same q sweep as Phase 5k.2 for direct comparison.  q_0 uses the
@@ -49,35 +50,13 @@ from hecke_core import _PROTON_G0, _PROTON_G1  # noqa: E402
 Q_VALUES = ["1.05", "1.08", Q_50_DIGIT_STR, "1.13", "1.17"]
 
 
-def marshal_intra(chain_g0, chain_g1, h_val: float):
-    """Marshal a nucleon's intra braid word (H_3) for chi_lambda_braid.
-
-    Per Gemini PR #854 review: delegates to the shared
-    `canonical_braid_marshalling.marshal_to_chi_lambda_braid` utility.
-    The intra-chain format `(c, d)` (no gen_idx) is adapted by
-    enumerating with gen=0,1 (0-indexed) so the utility's 1-indexing
-    produces gen_1based=1,2 (= σ_1 and σ_2 for H_3).
-    """
-    chain_with_gens = (
-        [(c, d, 0) for c, d in chain_g0]
-        + [(c, d, 1) for c, d in chain_g1]
-    )
-    return marshal_to_chi_lambda_braid(chain_with_gens, h_val)
-
-
-def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
-    """tr_M^3(𝓑_p, q) at H_3.  The proton H_3 braid is intra-only:
-    g0 chain + g1 chain, no atomic embedding."""
-    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
-    word = marshal_intra(_PROTON_G0, _PROTON_G1, h_val)
-    q_str = mp.nstr(q_val, dps, strip_zeros=False)
-    total = mp.mpf(0)
-    for lam in partitions_of(3):
-        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word, q_value=q_str,
-                                precision="mpfr_50dps")
-        total += y * mp.mpf(str(chi))
-    return total
+# LEGACY frame, deliberately — see `legacy_marshalled_frame`. This script
+# compares rho_constit against the empirical slow path, which is bound to
+# `chi_lambda_braid`, so both sides must sit in one frame. Do NOT re-point at
+# the canonical `closed_form_tau_M` helper (fixed 2026-08-26, `qou-qu2w`).
+# `marshal_intra` here was a verbatim duplicate of the one in
+# `closed_form_tau_M_verification_phase5q`; both now share one named
+# implementation (bean `qou-iu3m`).
 
 
 def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
@@ -117,7 +96,7 @@ def main() -> int:
     for q_str in Q_VALUES:
         q_val = mp.mpf(q_str)
         t0 = time.time()
-        tau_p_H3 = compute_tau_M_proton_H3(q_val)
+        tau_p_H3 = legacy_nucleon_tau_M_H3(_PROTON_G0, _PROTON_G1, q_val)
         tau_D = compute_tau_M_constit(1, 1, q_val)
         tau_3He = compute_tau_M_constit(2, 1, q_val)
         rho = tau_3He / tau_D

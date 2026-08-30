@@ -1,0 +1,277 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1204.4824v2",
+ "source_sha256": "bf01cbaa5a8712c8",
+ "brief": "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules.",
+ "extended": "**Spectral networks**\n\n*Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3*\n\n87 pp, 51 sections.\n\n**Abstract.** We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensionalN = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems.\n\n**Outline.** 1 Introduction and summary; 2 A brief review of theories of class S; 3 Geometric description of BPS states; 3.1 4d BPS states; 3.2 Solitons; 3.3 Framed 2d-4d BPS states; 3.4 Enhanced degeneracies; 3.5 A problem of signs; 4 Basics of framed 2d-4d indices; 4.1 Generating functions of framed 2d-4d indic; 4.2 Formal products and composition; 4.3 The spectral network W; 5.1 Walls as trajectories; 5.2 Joints and wall-crossing for; 5.6 Homotopy invariance; 6 Varying; 6.1 Endpoints crossing S-walls; 6.2 K-walls and the degenerate spectral networ\n\n**Extracted claims (proposals, not verified).**\n- Theorem: F(·,W) descends to a homomorphism",
+ "tokens": {
+  "brief": 44,
+  "extended": 417
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-summary",
+   "title": "Introduction and summary",
+   "pages": "4-11"
+  },
+  {
+   "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
+   "title": "A brief review of theories of class S",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-002-3-geometric-description-of-bps-states",
+   "title": "Geometric description of BPS states",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-003-31-4d-bps-states",
+   "title": "4d BPS states",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-004-32-solitons",
+   "title": "Solitons",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-005-33-framed-2d-4d-bps-states",
+   "title": "Framed 2d-4d BPS states",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-006-34-enhanced-degeneracies",
+   "title": "Enhanced degeneracies",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-007-35-a-problem-of-signs",
+   "title": "A problem of signs",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-008-4-basics-of-framed-2d-4d-indices",
+   "title": "Basics of framed 2d-4d indices",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
+   "title": "Generating functions of framed 2d-4d indices",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-010-42-formal-products-and-composition",
+   "title": "Formal products and composition",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-011-43-the-spectral-network-w",
+   "title": "The spectral network W",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-012-51-walls-as-trajectories",
+   "title": "Walls as trajectories",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-013-52-joints-and-wall-crossing-for",
+   "title": "Joints and wall-crossing for",
+   "pages": "23-30"
+  },
+  {
+   "id": "sec-014-56-homotopy-invariance",
+   "title": "Homotopy invariance",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-015-6-varying",
+   "title": "Varying",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-016-61-endpoints-crossing-s-walls",
+   "title": "Endpoints crossing S-walls",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-017-62-k-walls-and-the-degenerate-spectral-networks",
+   "title": "K-walls and the degenerate spectral networks Wc",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-018-64-4d-bps-degeneracies",
+   "title": "4d BPS degeneracies",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-019-65-wall-crossing-formula",
+   "title": "Wall-crossing formula",
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-020-66-proof-of-the-k-wall-formula",
+   "title": "Proof of the K-wall formula",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-021-7-examples-of-k-walls",
+   "title": "Examples of K-walls",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-022-71-saddle-connections",
+   "title": "Saddle connections",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-023-72-closed-loops",
+   "title": "Closed loops",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-024-73-three-string-webs",
+   "title": "Three-string webs",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-025-74-the-setting-sun",
+   "title": "The setting sun",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-026-8-some-bps-spectra",
+   "title": "Some BPS spectra",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-027-81-the-pentagon-theory-revisited",
+   "title": "The pentagon theory revisited",
+   "pages": "48-52"
+  },
+  {
+   "id": "sec-028-83-the-theory-of-9-free-hypermultiplets",
+   "title": "The theory of 9 free hypermultiplets",
+   "pages": "52-54"
+  },
+  {
+   "id": "sec-029-9-general-spectral-networks-and-path-lifting",
+   "title": "General spectral networks and path lifting",
+   "pages": "54-56"
+  },
+  {
+   "id": "sec-030-92-canonical-examples-the-w",
+   "title": "Canonical examples: the W",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-031-93-soliton-content",
+   "title": "Soliton content",
+   "pages": "56-59"
+  },
+  {
+   "id": "sec-032-94-path-lifting",
+   "title": "Path lifting",
+   "pages": "59-61"
+  },
+  {
+   "id": "sec-033-101-nonabelianization",
+   "title": "Nonabelianization",
+   "pages": "61-65"
+  },
+  {
+   "id": "sec-034-103-the-nonabelianization-map",
+   "title": "The nonabelianization map",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-035-104-holomorphic-symplectic-structures",
+   "title": "Holomorphic symplectic structures",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-036-105-dimension-counts",
+   "title": "Dimension counts",
+   "pages": "67-68"
+  },
+  {
+   "id": "sec-037-106-equivalence-of-spectral-networks",
+   "title": "Equivalence of spectral networks",
+   "pages": "68-70"
+  },
+  {
+   "id": "sec-038-107-a-picture-of-the-set-of-all-spectral-network",
+   "title": "A picture of the set of all spectral networks",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-039-108-coordinate-systems-and-a-cluster-conjecture",
+   "title": "Coordinate systems and a cluster conjecture",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-040-109-wkb-asymptotics",
+   "title": "WKB asymptotics",
+   "pages": "72-74"
+  },
+  {
+   "id": "sec-041-a-joint-rules-for-two-way-streets",
+   "title": "A Joint rules for two-way streets",
+   "pages": "74-74"
+  },
+  {
+   "id": "sec-042-a1-rules-for-soliton-degeneracies",
+   "title": "A.1 Rules for soliton degeneracies",
+   "pages": "74-76"
+  },
+  {
+   "id": "sec-043-a2-joint-rules-for-soliton-sets",
+   "title": "A.2 Joint rules for soliton sets",
+   "pages": "76-78"
+  },
+  {
+   "id": "sec-044-b-a-categorical-approach",
+   "title": "B A categorical approach",
+   "pages": "78-78"
+  },
+  {
+   "id": "sec-045-b1-the-ring-of-a-category",
+   "title": "B.1 The ring of a category",
+   "pages": "78-79"
+  },
+  {
+   "id": "sec-046-b2-categories-of-paths",
+   "title": "B.2 Categories of paths",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-047-b3-the-winding-ideal",
+   "title": "B.3 The winding ideal",
+   "pages": "79-80"
+  },
+  {
+   "id": "sec-048-b4-formal-parallel-transport-for-the-path-groupo",
+   "title": "B.4 Formal parallel transport for the path groupoid",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-049-b5-cocycles",
+   "title": "B.5 Cocycles",
+   "pages": "80-82"
+  },
+  {
+   "id": "sec-050-c-convention-convention",
+   "title": "C Convention convention",
+   "pages": "82-87"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

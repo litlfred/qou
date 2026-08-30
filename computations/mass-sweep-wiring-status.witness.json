@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T11:12:18.669851+00:00",
-  "commitSha": "b4e08da801707f834026feab2747afed9f7d60e0",
+  "computedAt": "2026-08-29T09:30:56.085824+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 5,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
-  "scriptHash": "c45a51f28cd0",
-  "scriptCommitSha": "8e43287ac32516de7bca862b321c5871fd314906",
+  "scriptHash": "51d1e0e7dc13",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,15 +31,23 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_sweep_wiring_status.py"
+    ],
+    "reproduce": "python3 -u computations/mass_sweep_wiring_status.py"
   },
   "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
-    "q_0": 1.1099785955573347,
-    "h_q0": 0.20906032199559368,
-    "h_sq_q0": 0.04370621823290131,
-    "h_4_q0": 0.001910233512221995,
+    "q_0": 1.1099785827513808,
+    "h_q0": 0.2090602987956393,
+    "h_sq_q0": 0.04370620853252199,
+    "h_4_q0": 0.001910232664288298,
     "klr_positivity": "Khovanov-Lauda-Rouquier categorical positivity: framework's |tr_M|·Vol(K) prediction is a LOWER BOUND on observed binding. Over-predictions (B_pred > B_AME) indicate the formula has a mistake — wrong knot, wrong ν_SDP, or missing restriction."
   },
   "data": {
@@ -124,7 +132,7 @@
         "A": 6,
         "Z": 3,
         "N": 3,
-        "B_AME_MeV": 31.993987199999996,
+        "B_AME_MeV": 31.9939872,
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
@@ -307,8 +315,18 @@
       "alpha-cluster": 6
     },
     "klr_violations_count": 8,
-    "fully_canonically_wired_atoms": []
+    "fully_canonically_wired_atoms": [],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+      }
+    ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

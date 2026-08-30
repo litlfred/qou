@@ -31,7 +31,7 @@ derived_masses), so the map is exactly the chain that lands the masses.
 DISCIPLINE (AGENTS.md): no fit; nothing wired to production; this is a diagnostic
 map + honest scope-(a) assessment. The μ–p tension is NOT resolved here.
 
-# Ref: [thurston1979] The geometry and topology of three-manifolds  (Vol(4₁)=2Cl₂(π/3))
+# Ref: [thurston1978] The geometry and topology of three-manifolds  (Vol(4₁)=2Cl₂(π/3))
 # Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716  (Habiro ring / root rigidity)
 """
 from __future__ import annotations
@@ -118,7 +118,7 @@ def q_beta(q):
     """Q_β production near-match (derived_masses.q_beta_kashiwara_n2_mev), q-only."""
     Q_A = q_beta_QA(q)
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbq = (q - 1) / q
     alpha = (z - 1) * h / 2
     q_sq = q ** 2

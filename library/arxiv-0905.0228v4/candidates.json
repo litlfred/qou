@@ -1,0 +1,177 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0905.0228v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
+  "file": "0905.0228v4.pdf"
+ },
+ "provenance": {
+  "title": "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS",
+  "authors": "JOHANN CIGLER AND JIANG ZENG",
+  "arxiv": {
+   "id": "0905.0228",
+   "version": "4",
+   "primary_class": "math.CO",
+   "stamp_date": "17 Jun 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "lemma": 2,
+   "theorem": 5,
+   "remark": 3,
+   "proposition": 1
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "The moments of the measure of the orthogonal polynomials {Pn(x)} are the gen-",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "The q-Hermite polynomials Hn(x, s |q), de\ufb01ned as moments Fx, 0, \u2212s(zn), have the",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "It should be noted that the method of Varvak [16] (see also [10 ]) can also be applied",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "The matrices (c(i, j, q ))n\u22121",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "If we set q = 0 then (2.9) reduces to the well-known Catalan triangle (se e [2, Chap.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "The generating function of hn(x, s ; q) has the continued fraction expansion:",
+   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+   "section_title": "The rescaled discrete q-Hermite polynomials II",
+   "pages": "7-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "Let Ln(x) := hn(x, (1 \u2212 q)s; q). Then",
+   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+   "section_title": "The rescaled discrete q-Hermite polynomials II",
+   "pages": "7-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8",
+   "name": null,
+   "statement": "Let Tn(x, s ) = ( x + (1 \u2212 q)sDq)n \u00b7 1. Then",
+   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+   "section_title": "The rescaled discrete q-Hermite polynomials II",
+   "pages": "7-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Instead of the contraction formula (3.22), we can also proce ed as follows. De\ufb01ne a",
+   "section_file": "sections/sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+   "section_title": "The rescaled discrete q-Hermite polynomials II",
+   "pages": "7-12",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "16",
+   "name": null,
+   "statement": "The continuous q-Hermite polynomials \u02dcHn(x, s |q) de\ufb01ned by (1.9), i.e.,",
+   "section_file": "sections/sec-004-51-some-well-known-facts.md",
+   "section_title": "Some well-known facts",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "and the orthogonality of the continuous q-Hermite polynomials. Clearly Theorem 5",
+   "section_file": "sections/sec-005-52-a-second-proof-of-proposition-14.md",
+   "section_title": "A second proof of Proposition 14",
+   "pages": "17-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

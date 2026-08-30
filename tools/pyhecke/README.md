@@ -16,7 +16,7 @@ Rust `tools/hecke-engine/` binaries stays intact.
 
 | Module | Purpose |
 |--------|---------|
-| `pyhecke.gram` | Gram matrix `G`, inverse `G_INV`, NF multiplication |
+| `pyhecke.gram` | Gram matrix `G`, quotient inverse `G_PINV`, `RADICAL`, NF multiplication (trace **convention D**, `z = q³/(q²+1)`; the form is singular, so there is no `G_INV`) |
 | `pyhecke.wedderburn` | Partition utilities, q-dimension, Wedderburn weights |
 | `pyhecke.partition` | Young partitions, q-hook, LP shadow prices |
 | `pyhecke.trace` | Markov trace (numeric + mpmath arbitrary precision) |

@@ -43,6 +43,7 @@ from mpmath import (  # noqa: E402
 )
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _zeta_K(K: int) -> "mpc":
@@ -67,7 +68,7 @@ def main() -> int:
         "jonquiere-cyclotomic-tate-rationality-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     results = []
     max_residue = mpf(0)
@@ -126,7 +127,7 @@ def main() -> int:
         .add_data("per_K_per_n_results", results)
         .add_assertion(
             name="jonquiere_master_identity_all_K_n",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

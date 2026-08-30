@@ -1,0 +1,191 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1112.0030v2",
+ "source": {
+  "file": "1112.0030v2.pdf",
+  "sha256": "745f143c2df4734b84589187ebafae38f8df4c1fc71fddee4a5d5a88b30f834a",
+  "bytes": 608631,
+  "pages": 46
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1112.0030",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "15 Mar 2012"
+  },
+  "doi": null,
+  "title": "Homological algebra of knots and BPS states",
+  "authors_raw": "Sergei Gukov and Marko Stoˇ sić",
+  "abstract": "It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existen ce of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a li st of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “m irror symmetry” between these triply-graded theories.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022064014-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Homological algebra of knots and BPS states"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Setting the stage",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Algebra of BPS states and its representations",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "B-model and matrix factorizations",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Colored HOMFLY homology",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Mirror symmetry for knots",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Unreduced colored HOMFLY homology",
+   "page": 30,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Notations",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Kauffman and S2 homologies of the knots 819 and 942",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. H3 homology of the figure-eight knot",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix D. Computation of the unreduced homology of the unknot",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-setting-the-stage",
+   "number": "1",
+   "title": "Setting the stage",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 16089,
+   "n_words": 2863
+  },
+  {
+   "id": "sec-001-2-algebra-of-bps-states-and-its-representations",
+   "number": "2",
+   "title": "Algebra of BPS states and its representations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 7127,
+   "n_words": 1324
+  },
+  {
+   "id": "sec-002-3-b-model-and-matrix-factorizations",
+   "number": "3",
+   "title": "B-model and matrix factorizations",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 25,
+   "n_chars": 38017,
+   "n_words": 7030
+  },
+  {
+   "id": "sec-003-5-mirror-symmetry-for-knots",
+   "number": "5",
+   "title": "Mirror symmetry for knots",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 36,
+   "n_chars": 26369,
+   "n_words": 4919
+  },
+  {
+   "id": "sec-004-appendix-a-notations",
+   "number": null,
+   "title": "Appendix A. Notations",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 42,
+   "n_chars": 13714,
+   "n_words": 2536
+  },
+  {
+   "id": "sec-005-appendix-d-computation-of-the-unreduced-homology",
+   "number": null,
+   "title": "Appendix D. Computation of the unreduced homology of the unknot",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 2811,
+   "n_words": 732
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 7922,
+   "n_words": 1114
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 7,
+  "chars_total": 112049
+ }
+}

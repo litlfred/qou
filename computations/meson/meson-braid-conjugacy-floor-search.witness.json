@@ -1,0 +1,180 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T21:40:35.353758+00:00",
+  "commitSha": "3f057ab89ea120a45a049c3dc570538e755e3504",
+  "assertions": [
+    {
+      "name": "reproduces_all_three_ito_stated_floors",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "Includes the conjugation pair Ito uses to show the floor is not a conjugacy invariant -- the property this whole probe turns on."
+    },
+    {
+      "name": "positive_control_reaches_the_hypothesis",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "Delta^6 s1 s2^-1. Without this a null result elsewhere would be uninterpretable -- it could mean the search is broken."
+    },
+    {
+      "name": "search_raises_floors_by_conjugation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "Ito's Delta^2 s2 s1^-1 has floor 0 as written and a floor-1 conjugate. Searching from the LOW side shows the search finds increases and does not merely re-report."
+    },
+    {
+      "name": "hyperbolic_figure_eight_never_meets_the_hypothesis",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "Searched 118097 conjugates in B_3. 4_1 IS hyperbolic (Vol 2.0299) and IS a knot, so Theorem 2 would apply to it if the floor condition could be met. A SEARCH result: no bound on the class supremum is computed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "meson-braid-conjugacy-floor-search",
+  "scriptFile": "meson_braid_conjugacy_floor_search_probe.py",
+  "scriptHash": "d31534b30370",
+  "scriptCommitSha": "98256a125e352546a2defba0defc486476bd8b6a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/meson_braid_conjugacy_floor_search_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/meson_braid_conjugacy_floor_search_probe.py"
+  },
+  "description": "Link-level successor to the Dehornoy floor probe: searches the conjugacy class (the Markov-I orbit, which is what the closure -- and hence Vol(K) -- actually depends on) for a representative meeting Ito's Theorem 2 hypothesis [beta]_D >= 3. A SEARCH over freely-reduced conjugators of length <= 10, not a proof: no bound on the supremum of the floor over a conjugacy class is computed or cited. Carries a positive control (a class that does reach 3) and a raising control (Ito's own pair, searched from the low side) so that a null result is readable as a fact about the class rather than about the search.",
+  "auditOnly": "docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md",
+  "data": {
+    "validation_against_ito": [
+      {
+        "braid": "(s1 s2)^4",
+        "computed": 1,
+        "ito_states": 1,
+        "agrees": true
+      },
+      {
+        "braid": "Delta^2 s1 s2^-1",
+        "computed": 1,
+        "ito_states": 1,
+        "agrees": true
+      },
+      {
+        "braid": "Delta^2 s2 s1^-1",
+        "computed": 0,
+        "ito_states": 0,
+        "agrees": true
+      }
+    ],
+    "search_parameters": {
+      "group": "B_3",
+      "conjugator_words": "freely reduced over {s1^+-1, s2^+-1}",
+      "max_conjugator_length": 10,
+      "why_B_3": "Ito states (s1 s2)^4 has floor 1 in B_3 and 0 in B_4: Delta_n^2 lengthens with n, the bracketing interval widens, and the floor can only fall. So the floor is maximised at minimal braid index and B_3 is the best case. This rests on that single stated example, not on a theorem verified here."
+    },
+    "link_level_search": [
+      {
+        "braid": "4_1 figure-eight (s1 s2^-1)^2",
+        "closure_kind": "knot",
+        "geometry": "HYPERBOLIC, Vol 2.0299 (muon carrier)",
+        "crossings_as_written": 4,
+        "floor_as_written": 0,
+        "max_floor_over_sampled_conjugates": 0,
+        "conjugator_achieving_max": [],
+        "conjugates_sampled": 118097,
+        "ito_thm2_hypothesis_met_by_some_sample": false,
+        "ito_thm2_applies_by_hypothesis": true
+      },
+      {
+        "braid": "Borromean (s1 s2^-1)^3",
+        "closure_kind": "3-component link",
+        "geometry": "HYPERBOLIC, Vol 7.3277 (proton carrier)",
+        "crossings_as_written": 6,
+        "floor_as_written": 0,
+        "max_floor_over_sampled_conjugates": 0,
+        "conjugator_achieving_max": [],
+        "conjugates_sampled": 118097,
+        "ito_thm2_hypothesis_met_by_some_sample": false,
+        "ito_thm2_applies_by_hypothesis": false
+      },
+      {
+        "braid": "meson M = (s1 s2)^2 s2 s1",
+        "closure_kind": "knot T(2,5)",
+        "geometry": "torus, Vol 0",
+        "crossings_as_written": 6,
+        "floor_as_written": 1,
+        "max_floor_over_sampled_conjugates": 1,
+        "conjugator_achieving_max": [],
+        "conjugates_sampled": 118097,
+        "ito_thm2_hypothesis_met_by_some_sample": false,
+        "ito_thm2_applies_by_hypothesis": true
+      },
+      {
+        "braid": "Delta^6 s1 s2^-1",
+        "closure_kind": "control (positive)",
+        "geometry": "expected floor >= 3",
+        "crossings_as_written": 20,
+        "floor_as_written": 3,
+        "max_floor_over_sampled_conjugates": 3,
+        "conjugator_achieving_max": [],
+        "conjugates_sampled": 118097,
+        "ito_thm2_hypothesis_met_by_some_sample": true,
+        "ito_thm2_applies_by_hypothesis": false
+      },
+      {
+        "braid": "Delta^2 s2 s1^-1",
+        "closure_kind": "control (raising)",
+        "geometry": "floor 0 as written; conjugate has 1",
+        "crossings_as_written": 8,
+        "floor_as_written": 0,
+        "max_floor_over_sampled_conjugates": 1,
+        "conjugator_achieving_max": [
+          -1
+        ],
+        "conjugates_sampled": 118097,
+        "ito_thm2_hypothesis_met_by_some_sample": false,
+        "ito_thm2_applies_by_hypothesis": false
+      }
+    ],
+    "finding": {
+      "claim": "No sampled representative of the figure-eight knot's conjugacy class in B_3 reaches [beta]_D >= 3, so Ito's Theorem 2 cannot certify the hyperbolicity of 4_1 -- a knot that IS hyperbolic, with the volume the corpus's muon carrier uses.",
+      "scope": "(a) scope-limited negative: this construction, searched this far, does not meet the hypothesis. NOT (b): no invariant is proved to forbid it, and the supremum over the full conjugacy class is not computed.",
+      "what_it_replaces": "the word-level 'load-bearing' claim retracted in docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md, which read a floor off one chosen spelling as a fact about the link",
+      "borromean_caveat": "the Borromean row is a 3-COMPONENT LINK; Ito's Theorem 2 is stated for braids whose closure is a KNOT, so the theorem does not apply to it by hypothesis regardless of its floor. Reported for scale only.",
+      "corrects_a_sibling_conjecture": {
+        "where": "docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md, Addendum 2026-08-25, item 2 (landed on main as b437d3bb7e, and scoped by its author as a conjecture rather than a result)",
+        "conjectured": "small floor is 'precisely the regime where a word admits many closed-braid representatives and closures tend to be torus or composite'",
+        "what_the_paper_states": "the implication runs the other way. Ito Prop 4: non-braided satellite closure => [beta]_D < 3. Ito Remark 4, citing Menasco-Nakamura: composite closure => [beta]_D < 2. So composite => small floor.",
+        "what_this_measurement_adds": "the converse fails. 4_1 is PRIME and HYPERBOLIC and has floor 0 across 118097 conjugates. A small floor is a fact about SCALE, shared by hyperbolic and non-hyperbolic small links alike.",
+        "what_is_NOT_affected": "their primary conclusion. The atom words' non-hyperbolicity rests on monotonicity, which never touches the floor -- and Prop 4 read FORWARDS supports them: composite closures are exactly what must have small floor."
+      },
+      "not_computed": "sup over the conjugacy class (Malyutin's quantity). That paper is not in library/; no bound from it is invoked here."
+    }
+  }
+}

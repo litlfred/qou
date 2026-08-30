@@ -85,7 +85,13 @@ HERE = Path(__file__).resolve().parent
 WITNESS = HERE / "awzero-asymptotics.witness.json"
 
 Q_MUON = "1.10997859555733471"      # computations/ layer canonical q₀ (muon pin)
-Q_PROTON = "1.10997861"             # proton-pinned spot value (package layer)
+Q_PROTON = "1.10997858275138081"    # proton pin (package layer), 17 dp like Q_MUON
+# Was "1.10997861", commented "proton-pinned spot value" — but that literal is
+# +24.5 ppb from the proton pin, i.e. 2.1x the ~11.5 ppb mu-p substrate tension
+# this very probe measures. A muon-vs-proton comparison run against it was
+# comparing the muon pin to a point 2 tensions past proton, so the quantity it
+# reported as the mu-p difference was wrong by more than the difference itself.
+# The comparison is deliberate and correct; only the proton value was not.
 
 t0 = time.time()
 results: dict = {}
@@ -663,6 +669,15 @@ def main() -> None:
                               "zero_finding_dps": "n²·log₁₀(1/w) + 120, per case"},
         "data": results,
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n✓ Witness: {WITNESS.name}  (5 assertion blocks, all passed)")
 

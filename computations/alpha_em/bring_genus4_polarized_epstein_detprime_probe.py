@@ -43,8 +43,16 @@ import sys
 
 import mpmath as mp
 import numpy as np
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 20
+set_compute_dps()
 
 
 # ---------- shared with the 2026-07-18 sibling (identical conventions) ----------
@@ -263,7 +271,7 @@ def main():
                         "(full genus-4 Epstein det'Δ at Im τ₀=0.187, was Siegel-reduction-blocked)",
             "structure_source": "τ_B=τ₀·M, M=[[4,1,-1,1],[1,4,1,-1],[-1,1,4,1],[1,-1,1,4]] "
                                 "(Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12) + Prop 4.6 "
-                                "diag(5,5,5,1); PDF uploads/2208.13692v1.pdf",
+                                "diag(5,5,5,1); PDF library/arxiv-2208.13692v1/2208.13692v1.pdf",
             "method": "Fincke–Pohst exact norm-cutoff (Q=14, tail<8.5e-20) + Chowla–Selberg "
                       "heat-kernel split identical to the 2026-07-18 sibling",
             "scope_guard": "no q₀, no 8π manufactured, nothing wired, no tier change; scope-(a)",
@@ -271,6 +279,15 @@ def main():
     }
     out = os.path.join(_here, "bring-genus4-polarized-epstein-detprime.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0 if all_passed else 1

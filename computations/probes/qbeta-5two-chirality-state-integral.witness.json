@@ -9,7 +9,7 @@
       "computed": 1.0966730746646413e-19,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "quadrature of ∫Φ₁²e^{−πiv²} matches the exact GK closed form (e^{πi/6}/√3)·2sinh(V/2π), V = Vol(4₁)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.4041802397701307e-14,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Z_5₂(iβ) by bent-contour quadrature = the GGM/Peacock H-series factorization (independent evaluations)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.4004393044605273e-31,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Ẑ = even + i·odd with even = R^{1/8}H⁺₁H⁻₁, odd = −(R^{1/8}/2)(βH⁺₂H⁻₀ − (1/β)H⁺₀H⁻₂)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Im Ẑ ≠ 0 at the substrate — the 5₂ chirality-odd channel is live in the state integral"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|d ln(odd)/dq| ≪ 3.84e6 — derived odd ingredient, not the swing (SRigidityPrune)"
     }
   ],

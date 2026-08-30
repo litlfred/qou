@@ -144,10 +144,20 @@ def main() -> int:
         script_path=__file__, engine="python+mpmath",
         output_dir=os.path.join(COMP, "probes"), start_time=t0,
     )
+    # I1/I2 are EXACT identities, so their residual is the arithmetic floor,
+    # not a physical quantity — it is never bit-identically 0.0 at finite dps.
+    # Both carried tolerance=None, which makes Assertion.passed fall back to
+    # STRING equality ("7.2445e-71" == "0.0" -> False), so they read as failures
+    # the moment the residual stopped landing on a bare zero. Give them the same
+    # structural-exactness bar the sibling I3 already uses below (10**-45);
+    # the residuals sit 26+ orders of magnitude beneath it, so the threshold is
+    # the file's own convention rather than one fitted to these values. Passed
+    # as a string per the drained no-float64 convention (qou-t0rf).
     wb.add_assertion("I1_polynomial_identity", computed=mp.nstr(i1_lhs - i1_rhs, 5),
-                     expected="0.0")
+                     expected="0.0", tolerance="1e-45")
     wb.add_assertion("I2_g_equals_inverse_deformed_eig",
-                     computed=mp.nstr(abs(g_landed - 1 / mu_max), 5), expected="0.0")
+                     computed=mp.nstr(abs(g_landed - 1 / mu_max), 5), expected="0.0",
+                     tolerance="1e-45")
     wb.add_assertion("I3_g_equals_sin_arctan_z",
                      computed=str(bool(abs(g_landed - g_i3) < mp.mpf(10) ** (-45))),
                      expected="True")

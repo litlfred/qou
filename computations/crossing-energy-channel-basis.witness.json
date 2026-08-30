@@ -1,0 +1,162 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T19:13:38.892364+00:00",
+  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
+  "assertions": [
+    {
+      "name": "n_zero_entries_in_change_of_basis",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "corrected_split_residual",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "old_pairing_residual",
+      "computed": "2*m/q",
+      "expected": "2*m/q",
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "checks_failed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 675,
+  "computation": "crossing-energy-channel-basis",
+  "scriptFile": "crossing_energy_channel_basis_probe.py",
+  "scriptHash": "e79c4b86daea",
+  "scriptCommitSha": "d28dec3a4f00d2e1151f6855e0c11c71f9aafc81",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Change of basis between the Hecke eigenvalue pair {q, -1/q} and the bar-parity pair {cosh L, sinh L} spanning the crossing-energy channels; settles bean qou-yfro.",
+  "contentBlock": "obs:crossing-energy-decomposition",
+  "parameters": {
+    "q_0_pin": "experimental/proton",
+    "uses_muon_built_cache": false,
+    "dps": 50
+  },
+  "data": {
+    "checks": {
+      "cosh_is_cosh_ln_q": true,
+      "sinh_is_sinh_ln_q": true,
+      "split_residual_zero": true,
+      "old_pairing_residual_is_2m_over_q": true,
+      "change_of_basis_matches": true,
+      "change_of_basis_has_no_zero_entry": true,
+      "change_of_basis_invertible": true,
+      "equal_magnitude_on_antisym_eigenvalue": true,
+      "trace_is_h": true,
+      "det_is_minus_one": true,
+      "disc_is_bracket2_squared": true,
+      "bar_odd_weight_is_half_trace": true,
+      "bar_even_weight_is_half_sqrt_disc": true,
+      "canonical_form_residual_zero": true,
+      "e_minus_kills_sym_eigenvalue": true,
+      "e_minus_fixes_antisym_eigenvalue": true
+    },
+    "change_of_basis_parity_from_eigenvalues": [
+      [
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "n_zero_entries_in_change_of_basis": 0,
+    "numerics_at_q0": {
+      "q_0": "1.10997858275138080759166909561",
+      "cosh_lambda": "1.00544843335356114987624598905",
+      "sinh_lambda": "0.104530149397819657715423106565",
+      "bracket_2_q": "2.01089686670712229975249197809",
+      "h": "0.209060298795639315430846213130",
+      "tanh_ln_q": "0.103963710052410145676652858536"
+    },
+    "multiplicity_table": [
+      {
+        "n_plus": 1,
+        "n_minus": 0,
+        "Q": "1/2",
+        "crossings": 1,
+        "channel_total_ratio": "0.103963710052",
+        "per_crossing_ratio": "0.103963710052"
+      },
+      {
+        "n_plus": 3,
+        "n_minus": 0,
+        "Q": "3/2",
+        "crossings": 3,
+        "channel_total_ratio": "0.103963710052",
+        "per_crossing_ratio": "0.103963710052"
+      },
+      {
+        "n_plus": 2,
+        "n_minus": 1,
+        "Q": "1/2",
+        "crossings": 3,
+        "channel_total_ratio": "0.311891130157",
+        "per_crossing_ratio": "0.103963710052"
+      },
+      {
+        "n_plus": 5,
+        "n_minus": 2,
+        "Q": "3/2",
+        "crossings": 7,
+        "channel_total_ratio": "0.242581990122",
+        "per_crossing_ratio": "0.103963710052"
+      },
+      {
+        "n_plus": 3,
+        "n_minus": 3,
+        "Q": "0",
+        "crossings": 6,
+        "channel_total_ratio": "undefined (Q=0)",
+        "per_crossing_ratio": "0.103963710052"
+      }
+    ],
+    "canonical_form": "E_cross = Q*[2]_q + (c/2)*h",
+    "basis_identification": {
+      "bar_even_weight": "cosh(ln q) = [2]_q/2 = sqrt(disc(sigma))/2",
+      "bar_odd_weight": "sinh(ln q) = h/2 = tr(sigma)/2",
+      "bar_even_multiplicity": "n_+ - n_- = writhe w = 2Q",
+      "bar_odd_multiplicity": "n_+ + n_- = crossing number c"
+    },
+    "interpretation": {
+      "channels_are_not_hecke_eigenchannels": "Every entry of the change of basis from {q,-1/q} to {cosh,sinh} is +-1/2; no parity vector is proportional to a Hecke eigenvalue, and both weight -1/q with equal magnitude 1/2. Structural exclusion (scope b) of the route 'crossing-energy channel = e_- eigen-channel' -- the route prop:em-coupling-projection uses to carry EM.",
+      "corrected_split_residual_zero": "PR #4764's corrected pairing reconstructs E_cross exactly; the old pairing leaves 2*n_-/q.",
+      "parity_weights_are_symmetric_functions_of_sigma": "bar-odd weight = tr(sigma)/2 = h/2; bar-even weight = sqrt(disc(sigma))/2 = [2]_q/2, with disc = h^2+4 = [2]_q^2."
+    }
+  },
+  "caveats": [
+    "This is a structural (scope-b) exclusion of the e_- route only. It does not exclude an electromagnetic reading of either channel reached by some other, stated route; no such route is currently in the corpus. Physical relabelling remains an author call.",
+    "notation-register-table3-data calls h = q - 1/q 'the Hecke-relation discriminant'. The discriminant of sigma^2 - h*sigma - 1 is h^2 + 4 = [2]_q^2, not h; h is the trace. Flagged, not edited here."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

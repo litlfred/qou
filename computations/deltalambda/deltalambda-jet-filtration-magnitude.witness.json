@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T20:13:38.910974+00:00",
-  "commitSha": "f387d531daea9dd764a26e684106bc1708c9d646",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T04:17:50.991160+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "W_A_is_length_gen_func_not_determinant",
@@ -58,8 +58,8 @@
   "durationMs": 0,
   "computation": "deltalambda-jet-filtration-magnitude",
   "scriptFile": "deltalambda_jet_filtration_magnitude_probe.py",
-  "scriptHash": "f3b38466b1a8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b57aad2e81d8",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,13 +71,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py"
   },
   "description": "Non-determinant Δ_λ binding-magnitude object: the jet-filtration graded dimension W_A(q)=[A]_q!=Σ_{w∈S_A}q^{ℓ(w)} (coinvariant Poincaré / graded dim of the principal filtration on H_A). Escapes the C(A,2) determinant cap q-independently (A!/2!={3,12}, 12>6) and can reach ρ_4=13.03, but does NOT land both {3.81,13.03} at a single parameter-free q₀ (undershoots A=3, overshoots A=4 growth). Scope-(a) honest negative + escape advance; no fit; nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
   "parameters": {
-    "q0": "1.10997859555733471",
-    "q0_convention": "muon-canonical (computations/ layer)"
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_convention": "proton (experimental pin, resolved via substrate.q_parameter; owner directive 2026-08-15)"
   },
   "data": {
     "strong_targets": {
@@ -104,14 +113,14 @@
         "target_rho": 3.8127980918525233,
         "C_A_2_cap": 3.0,
         "classical_A!/2!": 3.0,
-        "graded_q0_ratio": 3.342031078152768
+        "graded_q0_ratio": 3.342031036918145
       },
       {
         "A": 4,
         "target_rho": 13.03157458024245,
         "C_A_2_cap": 6.0,
         "classical_A!/2!": 12.0,
-        "graded_q0_ratio": 15.739572625603149
+        "graded_q0_ratio": 15.739572135410121
       }
     ],
     "graded_step_A3_to_A4": {
@@ -131,5 +140,7 @@
     "The ESCAPE (graded dim > C(A,2) cap) is proved q-independently (A!/2!=12>6) — a structural advance, not a numerical near-match.",
     "No fit: q₀ fixed from substrate BEFORE comparison; the q_forcing_rho3 solve is shown ONLY to demonstrate no single q lands both — it is NOT wired."
   ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": "docs/audits/2026-07-18-deltalambda-jet-filtration-magnitude.md"
 }

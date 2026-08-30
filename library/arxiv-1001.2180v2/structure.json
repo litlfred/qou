@@ -1,0 +1,525 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1001.2180v2",
+ "source": {
+  "file": "1001.2180v2.pdf",
+  "sha256": "f4225d7b024940aa3f6c183ce1aefeac7b1675c5272732c6c1827a4cd813d52f",
+  "bytes": 459178,
+  "pages": 27,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1001.2180",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "27 Oct 2010"
+  },
+  "doi": null,
+  "title": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+  "authors_raw": "V ALENTIN F\u00c9RAY AND PIERRE-LO\u00cfC M\u00c9LIOT",
+  "title_lines": [
+   "ASYMPTOTICS OF q-PLANCHEREL MEASURES"
+  ],
+  "abstract": "In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The \ufb01rst lines of such diagrams are typically of order n, so it does not \ufb01t in the context of the work of P. Biane and P. \u015aniady. Using the theory of polynomial func tions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the \ufb01rst- and se cond-order asymptotics of the length of the \ufb01rst rows. Our method also works for other measures, for e xample those coming from Schur-W eyl representations.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181024195003-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Background",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Results",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Tools",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Some open questions",
+   "page": 4,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Outline of the paper",
+   "page": 5,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "The q-Plancherel measure",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Definition",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Link with representation of the Hecke algebras",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Interpretation in the representation theory of GLn(Fq)",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Observables of diagrams",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Power sums of Frobenius coordinates",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Normalized characters",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Normalized conjugacy classes in symmetric group algebras",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Products of normalized characters",
+   "page": 10,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Another product",
+   "page": 11,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "q-characters",
+   "page": 12,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "First order asymptotics",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Convergence of power sums",
+   "page": 14,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Convergence of row lengths",
+   "page": 15,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Link with the representation theory of the infinite symmetric group",
+   "page": 16,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Second order asymptotics",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Bound for cumulants",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Computation of covariances",
+   "page": 21,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Fluctuations of rows",
+   "page": 22,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Schur-Weyl representations",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Decomposition of tensor representations",
+   "page": 23,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic shape of the diagrams",
+   "page": 24,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-background",
+   "number": "1.1",
+   "title": "Background",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1134,
+   "n_words": 203
+  },
+  {
+   "id": "sec-002-12-results",
+   "number": "1.2",
+   "title": "Results",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9006,
+   "n_words": 1688
+  },
+  {
+   "id": "sec-003-14-some-open-questions",
+   "number": "1.4",
+   "title": "Some open questions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2222,
+   "n_words": 392
+  },
+  {
+   "id": "sec-004-2-the-q-plancherel-measure",
+   "number": "2",
+   "title": "The q-Plancherel measure",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 82,
+   "n_words": 18
+  },
+  {
+   "id": "sec-005-15-outline-of-the-paper",
+   "number": "1.5",
+   "title": "Outline of the paper",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 209,
+   "n_words": 38
+  },
+  {
+   "id": "sec-006-13-tools",
+   "number": "1.3",
+   "title": "Tools",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4022,
+   "n_words": 803
+  },
+  {
+   "id": "sec-007-22-link-with-representation-of-the-hecke-algebra",
+   "number": "2.2",
+   "title": "Link with representation of the Hecke algebras",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2209,
+   "n_words": 413
+  },
+  {
+   "id": "sec-008-23-interpretation-in-the-representation-theory-o",
+   "number": "2.3",
+   "title": "Interpretation in the representation theory of GLn(Fq)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3442,
+   "n_words": 647
+  },
+  {
+   "id": "sec-009-32-normalized-characters",
+   "number": "3.2",
+   "title": "Normalized characters",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2895,
+   "n_words": 603
+  },
+  {
+   "id": "sec-010-33-normalized-conjugacy-classes-in-symmetric-gro",
+   "number": "3.3",
+   "title": "Normalized conjugacy classes in symmetric group algebras",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1464,
+   "n_words": 289
+  },
+  {
+   "id": "sec-011-34-products-of-normalized-characters",
+   "number": "3.4",
+   "title": "Products of normalized characters",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2895,
+   "n_words": 616
+  },
+  {
+   "id": "sec-012-35-another-product",
+   "number": "3.5",
+   "title": "Another product",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1412,
+   "n_words": 283
+  },
+  {
+   "id": "sec-013-36-q-characters",
+   "number": "3.6",
+   "title": "q-characters",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 4855,
+   "n_words": 985
+  },
+  {
+   "id": "sec-014-4-first-order-asymptotics",
+   "number": "4",
+   "title": "First order asymptotics",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 100,
+   "n_words": 24
+  },
+  {
+   "id": "sec-015-41-convergence-of-power-sums",
+   "number": "4.1",
+   "title": "Convergence of power sums",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 2621,
+   "n_words": 549
+  },
+  {
+   "id": "sec-016-42-convergence-of-row-lengths",
+   "number": "4.2",
+   "title": "Convergence of row lengths",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 4256,
+   "n_words": 856
+  },
+  {
+   "id": "sec-017-43-link-with-the-representation-theory-of-the-in",
+   "number": "4.3",
+   "title": "Link with the representation theory of the infinite symmetric group",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2696,
+   "n_words": 556
+  },
+  {
+   "id": "sec-018-5-second-order-asymptotics",
+   "number": "5",
+   "title": "Second order asymptotics",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1152,
+   "n_words": 211
+  },
+  {
+   "id": "sec-019-51-bound-for-cumulants",
+   "number": "5.1",
+   "title": "Bound for cumulants",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 7872,
+   "n_words": 1604
+  },
+  {
+   "id": "sec-020-52-computation-of-covariances",
+   "number": "5.2",
+   "title": "Computation of covariances",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2960,
+   "n_words": 576
+  },
+  {
+   "id": "sec-021-53-fluctuations-of-rows",
+   "number": "5.3",
+   "title": "Fluctuations of rows",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2690,
+   "n_words": 533
+  },
+  {
+   "id": "sec-022-6-schur-weyl-representations",
+   "number": "6",
+   "title": "Schur-Weyl representations",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 313,
+   "n_words": 65
+  },
+  {
+   "id": "sec-023-61-decomposition-of-tensor-representations",
+   "number": "6.1",
+   "title": "Decomposition of tensor representations",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1936,
+   "n_words": 378
+  },
+  {
+   "id": "sec-024-62-asymptotic-shape-of-the-diagrams",
+   "number": "6.2",
+   "title": "Asymptotic shape of the diagrams",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 5861,
+   "n_words": 1163
+  },
+  {
+   "id": "sec-025-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 565,
+   "n_words": 91
+  },
+  {
+   "id": "sec-026-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 6095,
+   "n_words": 927
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 27,
+  "chars_total": 74964
+ }
+}

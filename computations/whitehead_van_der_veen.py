@@ -3,7 +3,7 @@
 Volume-Conjecture growth → Vol(Whitehead) = 4G.
 
 Reference: Roland van der Veen, "Proof of the volume conjecture for Whitehead
-chains", arXiv:math/0611181 (Alg. Geom. Topol.), Lemma 1 (uploads/0611181v2.pdf).
+chains", arXiv:math/0611181 (Alg. Geom. Topol.), Lemma 1 (library/arxiv-math-0611181v2/0611181v2.pdf).
 The Whitehead link is the chain W_{a,b,c,d} with (a,b,c,d) = (0,1,1,0)
 (b=1 ⇒ hyperbolic).  For b=1:
 
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     wit = {
         "description": "Whitehead link colored Jones via van der Veen's positive-sum formula (arXiv:math/0611181, Lemma 1), validated against the independent [Kas95] §3 state sum, and its Volume-Conjecture growth → Vol(Whitehead)=4G. Positive-sum form (S_{n,k}>0) toward the squeeze proof (bean qou-x76e/qou-t2sc).",
         "computation": "whitehead_van_der_veen", "audit_only": True,
-        "reference": "van der Veen, Proof of the volume conjecture for Whitehead chains, arXiv:math/0611181 (uploads/0611181v2.pdf), Lemma 1",
+        "reference": "van der Veen, Proof of the volume conjecture for Whitehead chains, arXiv:math/0611181 (library/arxiv-math-0611181v2/0611181v2.pdf), Lemma 1",
         "whitehead_abcd": list(WHITEHEAD_ABCD),
         "state_sum_agreement": bool(ok),
         "vol_4G": VOL_4G,
@@ -126,5 +126,14 @@ if __name__ == "__main__":
     from _kashaev_prov import add_provenance
     add_provenance(wit, __file__, engine="python")
     out = Path(__file__).resolve().parent / "whitehead-van-der-veen.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

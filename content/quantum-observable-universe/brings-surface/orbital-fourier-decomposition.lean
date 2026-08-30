@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 -- Ref: [manuscript] Ch. 2
 -- Quantum numbers from Fourier decomposition of normal-bundle sections.
@@ -27,8 +28,7 @@ open Finset Real
    encode — `[ℓ]_q[ℓ+1]_q ≤ [n-1]_q[n]_q ⟺ ℓ ≤ n-1` — is captured at
    `q = 1` by the live `mode_cutoff_iff` in §4 below.
 
-   def qInt (q : R_q) (ℓ : ℕ) : R_q :=
-     (q ^ (ℓ : R_q) - q ^ (-(ℓ : R_q))) / (q - q⁻¹)
+   noncomputable abbrev qInt (q : R_q) (ℓ : ℕ) : R_q := QOU.QInteger.qIntBal q ℓ
 
    theorem qInt_zero (q : R_q) : qInt q 0 = 0 := by simp [qInt]
    theorem qInt_one  (q : R_q) : qInt q 1 = 1 := by

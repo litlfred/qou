@@ -16,7 +16,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_3·(1−h_q·q^3) = 1 at 50 dps"
     },
     {
@@ -31,7 +31,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_4·(1−h_q·q^4) = 1 at 50 dps"
     },
     {
@@ -46,7 +46,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_9·(1−h_q·q^9) = 1 at 50 dps"
     },
     {
@@ -61,7 +61,7 @@
       "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_10·(1−h_q·q^10) = 1 at 50 dps"
     },
     {

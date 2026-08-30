@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2507.19896v1",
+ "source_sha256": "a3f23d5a08b397ee",
+ "brief": "Generalized Markov traces and Jucys-Murphy elements — WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups.",
+ "extended": "**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 9 sections.\n\n**Abstract.** WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups. In typesB and D it is new, and generalizes a known construction in typeA employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Coxeter groups.; Introduction.; Iwahori-Hecke algebras.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; Geometric Markov traces.",
+ "tokens": {
+  "brief": 46,
+  "extended": 169
+ },
+ "sections": [
+  {
+   "id": "sec-000-coxeter-groups",
+   "title": "Coxeter groups.",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction.",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-iwahori-hecke-algebras",
+   "title": "Iwahori-Hecke algebras.",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-acknowledgments",
+   "title": "Acknowledgments.",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-iwahori-hecke-algebras-and-multiplicative-jucys",
+   "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-005-some-central-elements-in-the-classical-iwahori-h",
+   "title": "Some central elements in the classical Iwahori-Hecke algebras.",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-markov-traces",
+   "title": "Markov traces.",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-007-markov-traces-via-jucys-murphy-elements",
+   "title": "Markov traces via Jucys-Murphy elements.",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-008-geometric-markov-traces",
+   "title": "Geometric Markov traces.",
+   "pages": "9-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

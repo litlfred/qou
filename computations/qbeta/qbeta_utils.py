@@ -32,8 +32,38 @@ def chi_block_111(q: mpf) -> mpf:
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
 
 
-def markov_parameter(q: mpf) -> mpf:
-    """The canonical Markov parameter z(q) = √q / (1 + q).
+#: The variable the Q_β `c_k` rungs are currently expanded in.
+#:
+#: `"u"` — the committed frame, `u = b·ℏ_q²`.
+#: `"h"` — the migration target, `h = q − 1/q` (bean `qou-cwin`).
+#:
+#: The two are NOT interchangeable labels for one ladder: `u ∼ h²`, so the
+#: same function has different rungs in each, and `u → h` reversion needs
+#: `√u`. A `c_k` value is meaningless without knowing which frame it is in —
+#: which is the whole reason this constant exists rather than being implied.
+LADDER_FRAME = "u"
+
+
+def markov_parameter_convention_C(q: mpf) -> mpf:
+    """The Q_β channel's **convention-C** Markov parameter z(q) = √q/(1 + q).
+
+    **NOT canonical.** This docstring read "the canonical Markov parameter"
+    until 2026-08-16; convention C was excised by owner ruling 2026-08-09 and
+    re-affirmed 2026-08-15, and the canonical parameter is D's q³/(q²+1).
+
+    The value is deliberately still C and this function is deliberately not
+    migrated: the registry records `channels.qbeta-decay` as
+    `agreed-migration-pending` — convention settled to D, code not yet moved —
+    and `evaluators.z` registers this symbol as C so that **R9 calls it and
+    asserts z_C numerically on every validator run**. Flipping it before the
+    ladder is re-derived would put the registry in contradiction with its own
+    evaluator, and the re-derivation is bean `qou-cds1`, not a z-swap:
+    `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) proves the C-frame
+    ladder and the two-row forcing are mutually exclusive.
+
+    So "C" here is a recorded, gated state — not drift. What was wrong was
+    calling it canonical, which is the label defect the C→D campaign kept
+    finding: a description that outlived the ruling it predates.
 
     Mirrors `markov_parameter` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
@@ -85,7 +115,7 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
     NOT THE canonical Wenzl–Markov instance (which is open math). See
     `QBetaCanonicalMarkovWeightsInstance.lean`.
     """
-    z = markov_parameter(q)
+    z = markov_parameter_convention_C(q)
     return (
         z * chi_block_3(q)
         + (mpf("0.5") - z) * chi_block_21(q)
@@ -105,11 +135,77 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
 #   Q_N2(q) = m_e · Q_A(q) · cos(α(q) − b(q)·ℏ_q(q)²/2) · (1 + c_2·u(q)²),
 #   c_2 = −1 (Lean-proved Taylor-exact).
 
-def substrate_ladder_quantities(q: mpf) -> dict:
+
+class _ConventionGuardedQuantities(dict):
+    """Ladder quantities whose CONVENTION-CARRYING keys must be asked for.
+
+    `h`, `hbar_q`, `b`, `u`, `Q_A_over_me` are convention-free and are always
+    present -- measured 2026-08-26: 35 of the 48 in-repo consumers use only
+    those, and they are untouched by this guard.
+
+    `z` and `alpha` are the ONLY places a Markov convention enters the entire
+    Q_beta ladder, so they are withheld unless the caller names a convention.
+    Convention C was excised by owner ruling (2026-08-09, re-affirmed
+    2026-08-15 and 2026-08-26); the point of this guard is that nobody can
+    pick up a C `z` from this helper WITHOUT SAYING SO. A consumer that needs
+    the C arm for a deliberate comparison passes `convention="C"` and is then
+    visible to `grep`, which an inline `sqrt(q)/(1+q)` never was.
+
+    Raises on the withheld keys rather than returning None, because a silent
+    `None` reaching mpmath arithmetic is exactly the failure mode this exists
+    to prevent.
+    """
+
+    _WITHHELD = ("z", "alpha")
+
+    def __missing__(self, key):
+        if key in self._WITHHELD:
+            raise KeyError(
+                f"{key!r} withheld: it carries the Markov convention, and this "
+                "helper will not hand one out unnamed. Call "
+                "substrate_ladder_quantities(q, convention='D') for the "
+                "canonical parameter, or convention='C' for the EXCISED "
+                "convention -- permitted only as a deliberate comparison arm, "
+                "and registered as such in "
+                "docs/coordination/trace-convention-registry.json. "
+                "Under D the c_k ladder is NOT derived (bean qou-cds1): "
+                "substituting z_D into alpha = (z-1)h/2 is proved invalid by "
+                "QOU.QBeta.decayLadder_zC_threeRow_ne_zero and "
+                "QOU.QBeta.eigenphase_bar_defect_of_fullBar."
+            )
+        raise KeyError(key)
+
+    def get(self, key, default=None):
+        # Override so a withheld key cannot be swallowed into a silent None.
+        if key in self._WITHHELD and key not in self:
+            return self[key]          # -> __missing__, raises
+        return super().get(key, default)
+
+
+def substrate_ladder_quantities(q: mpf, *, convention: str | None = None) -> dict:
     """Return the Q_β-ladder substrate quantities at substrate value `q`.
 
-    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`.
+    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`, `ladder_frame`.
     Mirrors the opening block of `qbeta_ck_cache.py::main`.
+
+    `ladder_frame` names the variable the `c_k` rungs are expanded in. It is
+    currently `"u"`, and it is emitted so that every witness built from these
+    quantities can DECLARE its frame rather than leave a reader to infer it.
+
+    Why the field exists (bean `qou-cwin`, T0). The owner authorised
+    re-expressing the ladder in `h = q − 1/q` instead of `u = b·ℏ_q²`, which
+    changes every `c_k` number. The convention C→D campaign taught what
+    happens when artifacts do not declare their frame: PR #5210's own
+    impact tool could only report *"0 of 12 declare `markov_convention`, so
+    the count is a lower bound"* — a migration whose artifacts are silent
+    about their frame cannot be measured, only guessed at. Measured here
+    before any number moved: of 278 `c_k`-bearing witnesses under
+    `computations/qbeta/`, **0** declared a frame.
+
+    Adding this key is safe for the 102 in-repo consumers: none iterates the
+    returned dict (checked by resolving each `x = substrate_ladder_quantities(...)`
+    binding and searching for `x.items()` / `x.values()`), so a non-numeric
+    value cannot reach arithmetic or a numeric serializer.
 
     Precondition: `q > 0` and `q ≠ 1`. At `q = 1` the substrate degenerates
     (`hbar_q = 0` ⇒ `u = 0`), which makes downstream consumers like
@@ -121,16 +217,48 @@ def substrate_ladder_quantities(q: mpf) -> dict:
     hbar_q = (q - 1) / q
     b = mpsqrt((h ** 2 + 3) / (h ** 2 + 4))
     u = b * hbar_q ** 2
-    z = 1 / (sq + 1 / sq)
-    alpha = (z - 1) * h / 2
+    # DELIBERATELY convention C, exactly as `markov_parameter` above — see its
+    # docstring for the full reason. Restated HERE because this is a SECOND,
+    # independent inline spelling of the same value: a reader who arrives at
+    # this function alone sees a bare C `z` with no note, and the standing
+    # instruction is to migrate C to D. Doing that here would be WRONG.
+    # `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C-frame ladder and
+    # the mass channel's three-row forcing mutually exclusive, so substituting
+    # z_D into this ladder is not a valid move — the ladder must be RE-DERIVED
+    # (bean `qou-cds1`), which is research, not cleanup.
+    #
+    # Not replaced by a call to `markov_parameter(q)` either, tempting as that
+    # is for keeping one documented site: the two spellings are algebraically
+    # equal but NOT bit-equal — `1/(√q + 1/√q)` against `√q/(1+q)` differ by
+    # 1.6e-61 relative at 60 dps — and this is the one ladder that must not be
+    # perturbed by a substitution, however small.
     Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
-    return {
-        "h": h, "hbar_q": hbar_q, "b": b, "u": u,
-        "z": z, "alpha": alpha, "Q_A_over_me": Q_A_over_me,
-    }
+    out = _ConventionGuardedQuantities(
+        h=h, hbar_q=hbar_q, b=b, u=u,
+        Q_A_over_me=Q_A_over_me, ladder_frame=LADDER_FRAME,
+    )
+    if convention is None:
+        return out                      # z / alpha withheld; see the guard
+    if convention == "C":
+        # EXCISED convention, reachable only by asking for it BY NAME. The two
+        # spellings are algebraically equal but NOT bit-equal -- `1/(√q + 1/√q)`
+        # against `√q/(1+q)` differ by 1.6e-61 relative at 60 dps -- and this is
+        # the one ladder that must not be perturbed by a substitution, however
+        # small, so the original spelling is kept verbatim.
+        z = 1 / (sq + 1 / sq)
+    elif convention == "D":
+        z = q ** 3 / (q ** 2 + 1)
+    else:
+        raise ValueError(
+            f"unknown Markov convention {convention!r}; expected 'C' or 'D'")
+    out["z"] = z
+    out["alpha"] = (z - 1) * h / 2
+    out["markov_convention"] = convention
+    return out
 
 
-def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
+def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf, *,
+                 convention: str = "C") -> mpf:
     """Empirical (CAL-anchored) c_3 target at substrate `q`.
 
     **Precondition: `q > 0` and `q ≠ 1`.** At the classical point `q = 1`
@@ -154,7 +282,12 @@ def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
     cross-anchor swing of this target is the discriminator the f-map
     search uses to separate a true closure from a single-anchor near-match.
     """
-    sub = substrate_ladder_quantities(q)
+    # Defaults to the EXCISED convention C so every committed c_3 target this
+    # helper has produced stays reproducible to the digit. It is NOT a
+    # recommendation: under D no ladder is derived (qou-cds1), so there is no
+    # D-frame c_3 target to default to. Named explicitly rather than inherited
+    # silently, which is the whole point of the guard above.
+    sub = substrate_ladder_quantities(q, convention=convention)
     if sub["u"] == 0:
         raise ValueError(
             f"c3_target_at: substrate u(q) = b·ℏ_q² is zero at q={q!s} "

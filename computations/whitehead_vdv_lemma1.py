@@ -5,7 +5,7 @@ first corpus transcription (bean qou-tc7p, brick W1 of milestone qou-k49o).
 Source (do NOT cite from memory — this is the verified transcription):
   R. van der Veen, "Proof of the volume conjecture for Whitehead
   chains", arXiv:math/0611181 v2, uploaded 2026-08-01 as
-  uploads/0611181v2.pdf (owner commit 8ffce0a1).  Two layers are
+  library/arxiv-math-0611181v2/0611181v2.pdf (owner commit 8ffce0a1).  Two layers are
   transcribed:
 
   (1) The generic-t tangle formula (p. 4, after Lemma 1; conventions
@@ -52,7 +52,7 @@ Correctness anchors (no fit; every claim machine-checked below):
       against each other through the 0/0 resolution at the root.
   A2  external: the Borromean specialization W_{0,1,1,1} matches the
       corpus's independent GL2011/Habiro cyclotomic transcription
-      (habiro_borromean_colored_jones.py, uploads/0508100v6.pdf) in
+      (habiro_borromean_colored_jones.py, library/arxiv-math-0508100v6/0508100v6.pdf) in
       magnitude at the same near-root point — two unrelated published
       formulas, two independent transcriptions.
   A3  formula-free volume target: the growth rate (2pi/N) log|J_N|
@@ -358,11 +358,20 @@ def main() -> int:
         "computation": "whitehead_vdv_lemma1",
         "audit_only": True,
         "precision_dps": 60,
-        "source": "uploads/0611181v2.pdf (owner commit 8ffce0a1); Habiro cross-ref uploads/1172-3.pdf",
+        "source": "library/arxiv-math-0611181v2/0611181v2.pdf (owner commit 8ffce0a1); Habiro cross-ref library/1172-3/1172-3.pdf",
         **results,
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).with_name("whitehead-vdv-lemma1.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=1) + "\n")
     print(f"witness -> {out.name}")
     print("ALL ANCHORS PASSED" if results["all_ok"] else "ANCHOR FAILURE — do not proceed to W2")

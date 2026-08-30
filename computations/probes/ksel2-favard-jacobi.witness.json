@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T09:52:52.953565+00:00",
-  "commitSha": "ad859fb62f6bd67726d25024fa2c2d9b4c0aa75b",
+  "computedAt": "2026-08-29T07:37:56.947035+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "k1_carrier_jacobi_closed_form_symbolic",
@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "60 dps, q0 muon + proton pins + q = 1.2, both frames: Jacobi beta_k > 0 (k <= 11), moment reproduction rel < 1e-25 (measured < 1e-59)"
     },
     {
@@ -49,16 +49,16 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "theta-translate reindex identity exact (sympy) + numeric u-independence (q = 1.2, u in {1, 1.3}, k <= 8, rel < 1e-59) + support offset 0.878 of a q̃-step: a CONTINUUM of representing measures for the balanced moments at q != 1 (rep-jackson R4) => INDETERMINATE => minimal Jacobi operator has deficiency (1,1); extension circle = relocated kernel convention"
     }
   ],
   "allPassed": true,
-  "durationMs": 12546,
+  "durationMs": 11722,
   "computation": "ksel2-favard-jacobi",
   "scriptFile": "ksel2_favard_jacobi_probe.py",
-  "scriptHash": "14954fc89c7a",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "a7501447d2f6",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,7 +72,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ksel2_favard_jacobi_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ksel2_favard_jacobi_probe.py"
   },
   "description": "KSel-2 (bean qou-mee2; audit-only, scope-(a), NO FIT, nothing wired): GNS/spectral-measure route to binding-kernel canonicity, via Favard/Jacobi. K1-K2: the two canonical moment functionals — the balanced kernel moments m_k = q^(-k(k-1)/4)[k]_q! and the Lean-proved C1 carrier numerators S_q(n) — each determine a UNIQUE Jacobi matrix; the carrier data has the verified-range closed form alpha_k = q^k, beta_k = q^(k-1)[k]_q (a q-deformed Gaussian N(1,1)); the kernel data has beta_1 = q^(1/2)+q^(-1/2)-1 = 1+(r-1/r)^2 — exact SOS positivity, the Wenzl quantity. K3-K4: Favard positivity (Hankel + beta > 0) EXACT at r=21/20 and q=6/5, 60-dps at both q0 pins; monic-Jacobi moment reproduction (M^n)_00 = m_n exact — the canonical positive operator EXISTS with the binding data as moments, in both frames, Stieltjes-supported in the kernel frame. K5: at q = 1 both frames are Carleman-determinate (Laguerre alpha=2k+1, beta=k^2; Gaussian alpha=1, beta=k, exact) — the canonical kernel e^(-s)ds is DERIVED, zero convention. K3/K6-K7: at q != 1 beta grows geometrically (Carleman unavailable) and the theta-translate reindex identity (exact) gives a continuum of representing measures — the moment problem is INDETERMINATE, the minimal Jacobi operator has deficiency (1,1), and the kernel choice REAPPEARS as the self-adjoint-extension circle. Verdict: PARTIAL — the operator is canonical and derived, the measure is not; the remaining identification is the extension choice (Friedrichs/Krein distinguished; audit doc section 5). Nothing here proves or refutes any conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel2-gns-favard-canonicity.md",
@@ -140,19 +147,19 @@
       "muon": {
         "kernel": {
           "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
-          "moment_repro_rel": "2.56699e-60",
+          "moment_repro_rel": "3.1893e-60",
           "beta_ratio_last": "1.362358695",
           "beta_ratio_over_q": "1.227373843",
           "beta_ratio_over_q2": "1.105763524"
         },
         "carrier": {
           "beta_pos": "beta_k > 0, k <= 11 (60 dps)",
-          "moment_repro_rel": "2.02248e-60",
+          "moment_repro_rel": "1.08903e-60",
           "beta_ratio_last": "1.298437629",
           "beta_ratio_over_q": "1.169786187",
           "beta_ratio_over_q2": "1.053881752"
         },
-        "q0": "1.10997859555733..."
+        "q0": "1.10997859564273..."
       },
       "proton": {
         "kernel": {
@@ -184,18 +191,18 @@
       "conclusion": "distinct-support measures with identical moments; multiplicative convolution with the fixed Jackson factor multiplies moments (independent-product law), so the balanced sequence m_k has a CONTINUUM of representing measures at q != 1 (rep-jackson R4, re-verified) => INDETERMINATE => minimal Jacobi operator NOT essentially self-adjoint, deficiency (1,1); self-adjoint extensions form a circle ([simon1998]; Akhiezer Ch. 4). The GNS route RELOCATES the kernel convention into the extension choice; Friedrichs/Krein are the distinguished candidates (Stieltjes case, K3)."
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
     },
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   }

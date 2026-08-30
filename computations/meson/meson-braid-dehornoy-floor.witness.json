@@ -1,0 +1,167 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T19:27:24.192449+00:00",
+  "commitSha": "5442cf6d08d942e9b783650de4910b84db86a5cb",
+  "assertions": [
+    {
+      "name": "reproduces_all_three_ito_stated_floors",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "Includes the conjugation pair Ito uses to show the floor is not a conjugacy invariant, so the implementation is pinned on the subtle case and not only the easy one."
+    },
+    {
+      "name": "no_corpus_braid_meets_ito_hypothesis",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "Maximum corpus floor is 1; Theorem 2 needs >= 3."
+    },
+    {
+      "name": "threshold_is_18_crossings_not_24",
+      "computed": 18,
+      "expected": 18,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "crossings",
+      "source": "Delta^6 = (s1 s2)^9 has floor 3. The prior audit estimated 24 by misreading the bracketing power as the required braid."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "meson-braid-dehornoy-floor",
+  "scriptFile": "meson_braid_dehornoy_floor_probe.py",
+  "scriptHash": "d325f5df387a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/meson_braid_dehornoy_floor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/meson_braid_dehornoy_floor_probe.py"
+  },
+  "description": "Dehornoy floors of the corpus's braid words, computed by handle reduction, so that Ito's Theorem 2 hypothesis [beta]_D >= 3 can actually be checked rather than estimated. Validated against all three values Ito states himself before use. Integer arithmetic throughout.",
+  "auditOnly": "docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md",
+  "data": {
+    "validation_against_ito": [
+      {
+        "braid": "(s1 s2)^4",
+        "computed": 1,
+        "ito_states": 1,
+        "agrees": true
+      },
+      {
+        "braid": "Delta^2 s1 s2^-1",
+        "computed": 1,
+        "ito_states": 1,
+        "agrees": true
+      },
+      {
+        "braid": "Delta^2 s2 s1^-1",
+        "computed": 0,
+        "ito_states": 0,
+        "agrees": true
+      }
+    ],
+    "corpus_floors": [
+      {
+        "braid": "meson M = (s1 s2)^2 s2 s1",
+        "role": "def:categorical-meson",
+        "crossings": 6,
+        "dehornoy_floor": 1,
+        "ito_thm2_applies": false
+      },
+      {
+        "braid": "figure-eight (s1 s2^-1)^2",
+        "role": "muon carrier, Vol 2.0299",
+        "crossings": 4,
+        "dehornoy_floor": 0,
+        "ito_thm2_applies": false
+      },
+      {
+        "braid": "Borromean (s1 s2^-1)^3",
+        "role": "proton carrier, Vol 7.3277",
+        "crossings": 6,
+        "dehornoy_floor": 0,
+        "ito_thm2_applies": false
+      },
+      {
+        "braid": "trefoil s1^3",
+        "role": "-",
+        "crossings": 3,
+        "dehornoy_floor": 0,
+        "ito_thm2_applies": false
+      },
+      {
+        "braid": "T(2,5) s1^5",
+        "role": "the meson braid's closure",
+        "crossings": 5,
+        "dehornoy_floor": 0,
+        "ito_thm2_applies": false
+      }
+    ],
+    "scale_delta_powers": [
+      {
+        "braid": "Delta^2 = (s1 s2)^3",
+        "crossings": 6,
+        "dehornoy_floor": 1
+      },
+      {
+        "braid": "Delta^4 = (s1 s2)^6",
+        "crossings": 12,
+        "dehornoy_floor": 2
+      },
+      {
+        "braid": "Delta^6 = (s1 s2)^9",
+        "crossings": 18,
+        "dehornoy_floor": 3
+      },
+      {
+        "braid": "Delta^8 = (s1 s2)^12",
+        "crossings": 24,
+        "dehornoy_floor": 4
+      }
+    ],
+    "threshold": {
+      "first_power_reaching_floor_3": "Delta^6 = (s1 s2)^9",
+      "crossings_required": 18,
+      "max_floor_among_corpus_braids": 1
+    },
+    "corrects_prior_estimate": {
+      "where": "docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md",
+      "prior_claim": "[beta]_D >= 3 'means clearing Delta^8 = (s1 s2)^12 -- 24 crossings'.",
+      "computed": "Delta^6 = (s1 s2)^9 already HAS floor 3, so the threshold is 18 crossings, not 24.",
+      "why_the_estimate_was_wrong": "I read Definition 1's interval bound Delta^{2m+2} at m = 3 as the braid that must be cleared. It is the bracketing power, not the smallest braid of that floor. The conclusion is unchanged in direction and the margin is still wide -- 18 against a corpus maximum of 6 crossings -- but the number was mine, not measured, and it was wrong."
+    },
+    "resolves_the_contradiction": {
+      "what": "The Ito audit inferred that the corpus meson braid must have [beta]_D < 3, because it is pseudo-Anosov (|tr| = 3 in PSL(2,Z)) yet its closure was MEASURED as T(2,5) with Vol = 0 -- which Theorem 2 forbids.",
+      "now_computed": "[M]_D = 1. The inference was right and is now a computation."
+    },
+    "scope": {
+      "class": "(a) a hypothesis check, not a result about any meson",
+      "claimed": "No braid word the corpus currently uses satisfies Ito's hypothesis; the maximum floor among them is 1, against a required 3.",
+      "NOT_claimed": "That a candidate cannot exist, that longer braids work, or anything about the mass law. Obstruction A is untouched. The floor is also NOT a conjugacy invariant (Ito's own example, reproduced in the validation above), so these are statements about these WORDS, not about the link types they close to."
+    },
+    "verdict": "Computed rather than estimated. Corpus floors: meson 1, muon 0, proton 0, trefoil 0, T(2,5) 0 -- maximum 1 against Ito's required 3. The threshold is first reached at Delta^6 = (s1 s2)^9, 18 crossings, which CORRECTS the prior audit's estimate of 24. [M]_D = 1 also turns the audit's inferred resolution of the pseudo-Anosov/T(2,5) contradiction into a computed one. Nothing derived; Obstruction A open."
+  }
+}

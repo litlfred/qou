@@ -1,0 +1,73 @@
+{
+  "computation": "qbeta-single-wrap-element-cannot-exist",
+  "description": "No difference of typed-crossing words has counit epsNPq -- proved by a norm argument in Z[sqrt2] at the silver ratio. Side B (chi_block_*) confirmed symbolically.",
+  "engine": "sympy-exact",
+  "markov_convention": "n/a (counit only)",
+  "assertions": [
+    {
+      "name": "typed_crossing_counits_are_q_qinv_bracket2over2",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "eps_beta_p_is_q3_bracket2over2_sq",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "eps_beta_n_is_q1_bracket2over2_sq",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "SYMBOLIC_side_B_eps_of_word_difference_equals_chi_block_3",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "epsNPq_equals_h_times_h_minus_2_over_2",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "epsNPq_vanishes_at_the_silver_ratio",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "bracket2over2_equals_sqrt2_at_the_silver_ratio",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "norm_of_silver_unit_is_one_and_of_sqrt2_is_two",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "CONTROL_chi_block_3_does_not_vanish_at_silver_ratio",
+      "passed": true,
+      "note": "(= -12 - 8*sqrt(2))"
+    },
+    {
+      "name": "CONTROL_chi_block_3_is_exhibited_as_q1b2sq_minus_q3b2sq",
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "data": {
+    "eps_typed_word_normal_form": "q^m * ([2]_q/2)^c",
+    "eps_beta_p": "q^3 * ([2]_q/2)^2",
+    "eps_beta_n": "q^1 * ([2]_q/2)^2",
+    "epsNPq": "h(h-2)/2 = (q^2-1)(q^2-2q-1)/(2q^2)",
+    "silver_ratio_root_of": "q^2 - 2q - 1",
+    "bounded_sweep": "m in [-14,14], c in [0,9]: 84100 pairs, 3 generic q -> 0 solutions for epsNPq, 1 solution for chi_block_3"
+  },
+  "verdict": "EXCLUDED, scope-(b), by a proved invariant. eps of any typed-crossing word is q^m*([2]_q/2)^c. epsNPq carries the factor (q^2-2q-1), so it vanishes at the SILVER RATIO q = 1+sqrt2, where [2]_q/2 = sqrt2 exactly. A typed-word difference vanishing there forces (1+sqrt2)^(m1-m2) = (sqrt2)^(c2-c1); absolute norms in Z[sqrt2] (|N(1+sqrt2)|=1, |N(sqrt2)|=2) force c1=c2 then m1=m2, making the difference identically zero -- which epsNPq is not. So NO difference of typed-crossing words has counit epsNPq, and the corpus's description of Delta is inconsistent with its own asserted counit. Either the prose is wrong (Delta is not such a difference, and the real element is still unexhibited) or epsNPq is wrong (and with it Q_A and the ladder phase). NOT adjudicated here. The control confirms the argument does not prove too much: chi_block_3 IS such a difference and correctly survives. Excludes ONLY this class -- colour-weighted crossings fall outside the normal form, and A=1 nucleon words carry none.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_single_wrap_element_cannot_exist_probe.py",
+    "scriptHash": "c4b4d2806567",
+    "commitSha": "976a6bcada335aa588bf27abcc564ec3bd75c793",
+    "generatedAt": "2026-08-26T07:07:00.992616+00:00"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T20:53:18.071193+00:00",
-  "commitSha": "7f78acabad4c7a6781b4ed561ffecd94e889241b",
+  "computedAt": "2026-08-24T13:33:45.075530+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "multiwinding_leading_sum_diverges",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-c3-magnitude-multiwinding-sum",
   "scriptFile": "qbeta_c3_magnitude_multiwinding_sum_probe.py",
   "scriptHash": "0a8b13082bd7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b36cdb06b739f678622a5031d920419fb1e9dc4d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,15 +32,24 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_magnitude_multiwinding_sum_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_magnitude_multiwinding_sum_probe.py"
   },
   "description": "Two honest obstructions on the c₃ magnitude |S_p/S_m|≈4.075 (follow-up to the single-pair MISS #4497). (1) The multi-winding even-channel exponential-bridge SUM Σ e^{−Re𝔙/ℏ_q} DIVERGES in the leading NZ truncation: cross-form N=(2m+ℓ)ℓ is unbounded above ⇒ Re𝔙→−∞ ⇒ terms→+∞ (partial sums + max term grow monotonically in box radius). A convergent realisation needs the full (non-truncated) 𝔙₄₁ or a cutoff (fit) — leading-form sum is not a parameter-free magnitude source (scope-(a), ingredient survives). (2) The resurgent one-instanton ratio is CIRCULAR: at near-identical anchor q₀ the e^{−Re𝔙/πℏ} prefactors cancel, so |S_p/S_m|≈|sin(Im𝔙_p/πℏ)/sin(Im𝔙_m/πℏ)| with Im𝔙=S itself — reduces to the open u(q₀), confirming #4246. Magnitude stays open. No fit; nothing wired; no instance fabricated.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "obstruction_readout": {
-      "target_ratio_Sp_over_Sm": "4.075127003",
+      "target_ratio_Sp_over_Sm": "3.936920509",
       "sum_partial_R1": "1.1736679e-8",
       "sum_partial_Rlast": "0.0013542608",
       "maxterm_R1": "1.4332164e-9",

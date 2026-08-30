@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T22:58:48.123987+00:00",
-  "commitSha": "a7f18cf3e4e77cdc0cf9c87cace9d54d4de97167",
+  "computedAt": "2026-08-26T19:14:24.651267+00:00",
+  "commitSha": "41828a862c6825ecee8310ed40a6411816c9c6e5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 222,
+  "durationMs": 265,
   "computation": "defect-weighted-zero-point-probe",
   "scriptFile": "defect_weighted_zero_point_probe.py",
-  "scriptHash": "374410e7d064",
-  "scriptCommitSha": "798930c851139bc2d40c4ab99bb06862130971dd",
+  "scriptHash": "67c640d228c1",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,7 +21,14 @@
     "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/defect_weighted_zero_point_probe.py"
+    ],
+    "reproduce": "python3 -u computations/defect_weighted_zero_point_probe.py"
   },
   "description": "Defect-weighted zero-point probe: channel-information energy (E0/2)*sum |w|/Z * ln dim_q under the actual convolution-defect channel weights w = y*(chi_free - chi_atom) from the production transfer path, vs per-isotope binding residuals.",
   "audit_only": true,
@@ -32,47 +39,47 @@
   },
   "source_witness": "binding-bar-even-odd-probe.witness.json",
   "constants": {
-    "q_0": "1.1099785955573347",
-    "E0_MeV": "4.1859808275828917468"
+    "q_0": "1.1099785827513808076",
+    "E0_MeV": "4.1859813632944758969"
   },
   "isotopes": {
     "2H": {
       "Z": 1,
       "N": 1,
       "strands": 6,
-      "E_defect_info_MeV": "4.5409704648251587018488953082931054824860148556017",
-      "residual_raw_MeV": "-1.6651256848777578716788349901286904168228941411387",
-      "ratio": "-2.727103729204997318781675165190596385755405989282754406643961423259694"
+      "E_defect_info_MeV": "4.2331289612049112139953447809685306761522253165081",
+      "residual_raw_MeV": "-0.6085963720045237703378158014935521408338594482441",
+      "ratio": "-6.955560624297388771092228422672083393957522749648496161115378839239538"
     },
     "3H": {
       "Z": 1,
       "N": 2,
       "strands": 9,
-      "E_defect_info_MeV": "8.8223596603106823732727088028332547902700866831133",
-      "residual_raw_MeV": "-0.5858625654747559914455993769344525091882076929292",
-      "ratio": "-15.05875299126075612455682885148045288189449252927954585368469438783808"
+      "E_defect_info_MeV": "7.5265227732123038534626122816716615671701345120198",
+      "residual_raw_MeV": "1.8508506928531229005383582136537612956779948743776",
+      "ratio": "4.066520763816999380269618121569902108865158049059209774259669405863855"
     },
     "3He": {
       "Z": 2,
       "N": 1,
       "strands": 9,
-      "E_defect_info_MeV": "8.9045798608425187779926260760014385111989204055705",
-      "residual_raw_MeV": "0.9211546182947958730704133323333279547814389851846",
-      "ratio": "9.66675917809142228750758327344213997731264505718773066215592846129214"
+      "E_defect_info_MeV": "7.5666439842974203828616203010369768443552944303646",
+      "residual_raw_MeV": "2.8341690556140425440312263636228367362702732886175",
+      "ratio": "2.669792745534741594078040984452496519637227062965087013379459866410837"
     },
     "4He": {
       "Z": 2,
       "N": 2,
       "strands": 12,
-      "E_defect_info_MeV": "14.751424824664369366758386574266869174427664500901",
-      "residual_raw_MeV": "16.320808817697797753303648945527565862416125433395",
-      "ratio": "0.90384153073764118569462252617209859918707450221409466230386596147241"
+      "E_defect_info_MeV": "11.802621070716435903899752057680602723744847611623",
+      "residual_raw_MeV": "19.614007200471689214907400378768008225567270285087",
+      "ratio": "0.6017445058566410391833338093549893656793133100556046175888382498071035"
     }
   },
   "verdict": {
     "defect_weighted_info_tracks_raw_residual": false
   },
-  "timestamp": "2026-07-03T22:58:48+00:00",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "timestamp": "2026-08-26T19:14:24+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

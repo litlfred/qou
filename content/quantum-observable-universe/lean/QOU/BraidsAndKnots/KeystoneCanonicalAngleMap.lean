@@ -64,7 +64,7 @@ Base ring (§7c): the determination is pure finite combinatorics over the induct
 `IcoClass` (`decide`-verifiable); the only `ℝ` appears in the optional `BringFiberAction`-shaped
 furnishing at the end, where the SO(3) rotation angle is intrinsically real.
 
--- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring's quintic, A₅ ≅ I).
+-- Ref: [klein1888] Klein, Lectures on the Icosahedron (Bring's quintic, A₅ ≅ I).
 -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7 (A₅ character table).
 -/
 
@@ -89,7 +89,7 @@ instance : Fintype A5Irrep where
   complete := fun x => by cases x <;> decide
 
 /-- The icosahedral rotation angle (in degrees) of each conjugacy class. -/
-def angle : IcoClass → ℕ
+def IcoClass.angle : IcoClass → ℕ
   | .e => 0 | .c2 => 180 | .c3 => 120 | .c5a => 72 | .c5b => 144
 
 /-- **The A₅ character zero pattern** (`charVanishes λ C = true ⟺ χ_λ(C) = 0`): `T₁,T₂` vanish on

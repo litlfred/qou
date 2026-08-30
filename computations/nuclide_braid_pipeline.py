@@ -57,6 +57,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 import sys
+from _precision import set_compute_dps  # noqa: E402
 
 sys.path.insert(0, str(HERE))
 
@@ -126,7 +127,7 @@ def main() -> int:
 
     # Import the heavy engine lazily so --help stays fast.
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_characters import partitions_of
     from char_fast import chi_lambda_fast
@@ -187,8 +188,14 @@ def main() -> int:
         total += contrib
         per_partition.append({
             "partition": list(shape), "dim": f_dim,
-            "y_lambda": mp.nstr(y, 50), "chi_lambda": mp.nstr(chi_re, 50),
-            "contribution": mp.nstr(contrib, 50),
+            # NO FLOAT64 (bean qou-65qv): width follows the path actually
+            # taken. The `use_mp` branch is exact; the else-branch is an
+            # explicit double-precision fallback, and printing its result at
+            # 50 digits claimed 34 it never had.
+            "y_lambda": mp.nstr(y, 50),
+            "chi_lambda": mp.nstr(chi_re, 50 if use_mp else 17),
+            "contribution": mp.nstr(contrib, 50 if use_mp else 17),
+            "chi_precision": "mpmath" if use_mp else "float64-fallback",
         })
         if (idx + 1) % 10 == 0 or idx == len(shapes) - 1:
             el = time.time() - t0
@@ -222,10 +229,19 @@ def main() -> int:
             "max_dim_cap": args.max_dim,
             "per_partition": per_partition,
             "tr_M": total,
-            "wall_seconds": time.time() - t0,
+            "wall_seconds": f"{time.time() - t0:.3f}",
         },
     }
     out = HERE / f"nuclide-braid-{sym}.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
     print(f"  tr_M = {total:.10f}   ({time.time() - t0:.1f}s, "
           f"{len(per_partition)}/{len(shapes)} partitions"

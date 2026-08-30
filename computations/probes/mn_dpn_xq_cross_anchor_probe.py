@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
-# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
-# probe's historical / cross-anchor / pinned comparison value. The CURRENT
-# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
-# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
+# ANCHOR NOTE — CORRECTED 2026-08-23. The 2026-06-22 boilerplate that stood
+# here had the two anchors INVERTED, in all 13 files carrying it. Measured:
+#   • 1.10997858275… is NOT "the RETIRED pre-2026-05-28 proton anchor" — it is
+#     the CURRENT proton pin. q_at() returns 1.10997858275138…
+#   • "the CURRENT canonical proton q0 is ≈ 1.1099785955573347" named the MUON
+#     value; q_at() never returns it.
+#   • "q_muon_at() ≈ 1.10997859555418" named the SUPERSEDED (CODATA-2018) muon
+#     value; q_muon_at() returns 1.10997859564274… See
+#     computations/audits/muon_pin_three_values_probe.py for the three values.
+# An agent trusting it would read the two-layer discipline backwards.
+#
+# What is true: the 1.10997858275… occurrences below ARE the current proton
+# pin, and this probe is preserved as-is by design — its cross-anchor
+# comparison is the point, so it must NOT be migrated.
 """mn_dpn_xq_cross_anchor_probe.py — cross-anchor verdict on X(q)
 refinement candidates from flavor_split_xq_refinement.py.
 
@@ -92,7 +101,7 @@ def _candidates_at(q):
         ("(d2) 1 - ℏ_q²/24", 1 - hbar_q ** 2 / 24),
         ("(e1) (3q²-1)/(2q²)",
          (3 * q ** 2 - 1) / (2 * q ** 2)),
-        ("(f1) 1 + m_e/m_p", 1 + mp.mpf(repr(M_E_MEV)) / mp.mpf(repr(M_P_MEV))),
+        ("(f1) 1 + m_e/m_p", 1 + mp.mpf(M_E_MEV) / mp.mpf(M_P_MEV)),
         ("(f2) 1 - α_em·ℏ_q", 1 - alpha_em * hbar_q),
         # New cross-anchor focused candidates: q-fibre-structure ones
         ("(g1) 1 + ℏ_q²·[2]_q/2", 1 + hbar_q ** 2 * q2 / 2),
@@ -105,9 +114,9 @@ def _candidates_at(q):
 
 def _residual_at(q, factor):
     """Compute (X_pred - delta_target)/delta_target at given q."""
-    M_e = mp.mpf(repr(M_E_MEV))
-    M_p = mp.mpf(repr(M_P_MEV))
-    Q_n = mp.mpf(repr(Q_NEUTRON_MEV))
+    M_e = mp.mpf(M_E_MEV)
+    M_p = mp.mpf(M_P_MEV)
+    Q_n = mp.mpf(Q_NEUTRON_MEV)
     M_n = M_p + M_e + Q_n
     M_N_avg = (M_p + M_n) / 2
     delta_target = (M_n - M_p) / M_N_avg

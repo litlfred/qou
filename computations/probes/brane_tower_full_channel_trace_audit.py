@@ -47,14 +47,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # q₀ (proton-pinned, 50 dps) — same literal as zhabiro_physical_z_pin.py.
-Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 QI = 1 / Q0
 H = Q0 - QI
-ZM = 1 / (mp.sqrt(Q0) + mp.sqrt(QI))  # Markov parameter z = 1/(q^½+q^-½)
+ZM = Q0**3 / (Q0**2 + 1)  # Markov parameter z = 1/(q^½+q^-½)
 
 
 def nucleon_chains(quarks: tuple[str, str, str]) -> tuple[list, list]:
@@ -245,7 +259,21 @@ def main() -> None:
             "content/quantum-observable-universe/observations/atom-mass-full-hecke.md",
         ],
     }
+    # Hand-rolled write: this payload never reaches `WitnessBuilder.build()`,
+    # so it never picked up the `q0Anchor` provenance stamp and no number of
+    # re-runs would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out_path = self_path.parent.parent / "brane-tower-full-channel-trace-audit.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nwrote {out_path}")
 

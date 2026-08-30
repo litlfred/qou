@@ -1,0 +1,24 @@
+[
+ {
+  "doc_id": "arxiv-2406.05311v1",
+  "prefer": "arxiv-2406.05311v1",
+  "note": "Two uploads of the same work landed in the 2026-08-26 Murnaghan-Nakayama drop: 2406.05311v1.pdf and A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf. Same arXiv stamp, same 34 pp; both PDFs kept in this one directory. Two grep hits here are ONE source.",
+  "recorded": "2026-08-26",
+  "adjudicated_by": "ingest"
+ },
+ {
+  "doc_id": "arxiv-math-0203060v11",
+  "prefer": "arxiv-math-0203060v11",
+  "duplicate_of": "arxiv-math-0203060v10",
+  "note": "Etingof-Nikshych-Ostrik, 'On fusion categories', ingested TWICE from the 2026-08-26 sphericality drop at two arXiv versions: math/0203060v10 and v11. Same work, same title, separate library directories, and scripts/library-find-duplicates.py did NOT propose them - both carry their own INDEX.md row and neither section set carries duplicate_of. Two grep hits here are ONE source; prefer v11 as the later version. Recorded by hand because the detector missed it: its scoring compares extracted text, and two versions of a paper differ enough in revision to fall below its threshold while being the same work.",
+  "recorded": "2026-08-26",
+  "adjudicated_by": "agent"
+ },
+ {
+  "doc_id": "s0894-0347-00-00337-4",
+  "prefer": "arxiv-math-9905032v2",
+  "note": "Published twin of the Borodin-Okounkov-Olshanski paper 'Asymptotics of Plancherel measures for symmetric groups'. s0894-0347-00-00337-4 is the JAMS 13(2000) 481-515 version; arxiv-math-9905032v2 is the arXiv preprint already in the library and cited across the corpus (the descent-DPP / discrete Bessel kernel source). Same work; two grep hits are ONE source. Prefer the arXiv stem for citations.",
+  "recorded": "2026-08-29",
+  "adjudicated_by": "ingest"
+ }
+]

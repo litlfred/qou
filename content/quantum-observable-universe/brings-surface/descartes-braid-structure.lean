@@ -63,10 +63,27 @@ theorem s3_order : Nat.factorial 3 = 6 := by decide
 -- Ref: [manuscript] Chapter 6, §Braid structure
 theorem s5_order : Nat.factorial 5 = 120 := by decide
 
-/-- The number of copies of S₃ inside S₅ corresponding to colour sectors
-    is 3 (one per colour: red, green, blue). -/
+/-- The number of colour sectors — copies of S₃ inside S₅, one per colour
+    (red, green, blue).  A **named constant** of the model, not a theorem.
+
+    Replaced `theorem colour_sector_count : (3 : ℕ) = 3 := rfl`
+    (2026-08-21; vacuity ledger, `reflexive-tautology-ascribed-literal`).
+    That statement held whatever the number of colour sectors happened to
+    be — no definition of the sector set appeared in it, so nothing tied
+    the `3` to the corpus.  Per Strict Lean Discipline §8 a claim with no
+    falsifiable content is notation, so it is a `def`; the one falsifiable
+    thing its docstring asserted is stated below. -/
 -- Ref: [manuscript] Chapter 6, §Braid structure
-theorem colour_sector_count : (3 : ℕ) = 3 := rfl
+def colourSectorCount : ℕ := 3
+
+/-- The colour sectors account for 18 elements of S₅: `colourSectorCount`
+    copies of S₃, each of order `3! = 6`.  (This is the count the section
+    docstring above records; the copies are subgroups, so they are not
+    disjoint as sets.) -/
+-- Ref: [manuscript] Chapter 6, §Braid structure
+theorem colour_sectors_account_for_eighteen :
+    colourSectorCount * Nat.factorial 3 = 18 := by
+  decide
 
 /-- The invertibility requirement: 30 must be invertible in the base ring.
     30 = 2 · 3 · 5, which is |S₅| / |Dic₃| · (correction factors).

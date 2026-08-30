@@ -6,7 +6,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 15).
 
 SOURCE ([26] = GZ "Knots, Perturbative Series and Quantum Modularity",
-SIGMA 20 (2024) 055, uploads/2111.06645v3.pdf, §9 end):
+SIGMA 20 (2024) 055, library/arxiv-2111.06645v3/2111.06645v3.pdf, §9 end):
 
 1. For 4_1: sqrt(3)*Phi(h)*Phi(-h) = -sqrt(-3)*Phi^(1)(h)*Phi^(2)(h)
    lies in Z[1/3][[e^{-h}-1]]; "we expect, and have checked
@@ -50,6 +50,7 @@ verifying them against independent data remains open on qou-xx9f.
 """
 
 import json
+import pathlib
 import sys
 
 import sympy as sp
@@ -132,8 +133,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-xx9f", "qou-9p9y"],
     "source": (
-        "GZ SIGMA 20 (2024) 055 §9 end (uploads/2111.06645v3.pdf); "
-        "GSWZ (282) (uploads/2412.04241v2.pdf)"
+        "GZ SIGMA 20 (2024) 055 §9 end (library/arxiv-2111.06645v3/2111.06645v3.pdf); "
+        "GSWZ (282) (library/arxiv-2412.04241v2/2412.04241v2.pdf)"
     ),
     "checks": checks,
     "norm_series_coeffs": [str(c) for c in coeffs],
@@ -153,7 +154,16 @@ witness = {
         "recorded for xx9f; C_r value extraction open"
     ),
 }
-with open("computations/probes/gswz_52_galois_norm.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_52_galois_norm.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

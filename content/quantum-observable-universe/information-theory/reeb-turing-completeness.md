@@ -11,7 +11,7 @@ Second, the first-return map functions as a Toffoli action. The horizontal distr
 Third, undecidability establishes an observational horizon. No finite QOU observer can predict arbitrary orbits or resolve every section of $\mathcal{S}$.
 
 **Consequences for the QOU.**
-The Reeb derivation is a rigorous geometric flow. Universal computation is native to every contact 3-manifold possessing sufficient periodic-orbit structure. The QOU inherits this inherently. Tao's hydrodynamic universality program mirrors this conclusion.
+The Reeb derivation is a rigorous geometric flow. Universal computation is native to every contact 3-manifold possessing sufficient periodic-orbit structure. The QOU inherits this. Tao's hydrodynamic universality program mirrors this conclusion.
 
 **Location of the conjectural part.**
 The Cardona et al. result establishes universality at a fixed classical metric. The QOU extends this geometrically: universality survives the $q$-deformation of the ambient space. We conjecture that the continuous parameter family $q \in (1, \infty)$ supports a continuous family of universal Reeb flows, with discrete roots-of-unity specializations recovering the universal quantum computer. Thus, while the $q=1$ limit stands as a classical theorem, its $q$-deformed lift to arbitrary substrate parameters remains conjectural.

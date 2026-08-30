@@ -1,0 +1,893 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T06:22:30.327457+00:00",
+  "commitSha": "fc1ab875cb4c12b5209f0569d7c48a15387e09dc",
+  "assertions": [
+    {
+      "name": "helper_performs_no_search",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "helper_is_alternating_ordering",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "prop_formula_inapplicable_when_Z_gt_N",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "ordering_cache_rust_path_absent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "fast_mirror_certified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_sorted_is_phi_argmin",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_helper_is_not_phi_argmin",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "tritium_helper_and_sorted_agree",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "deuteron_ordering_control",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "helper_not_universal_phi_argmin",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "no_objective_makes_helper_universally_optimal",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "atom_chain_mirror_certified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "atom_V_is_ordering_independent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "hecke_nf_is_ordering_dependent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "phi1_is_ordering_dependent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "helper_fix_would_move_published_values",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "transfer_factors_commute",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_nucleon_level_is_exactly_degenerate",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "n_e_crossing_coefficient_undefined",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "p_e_crossing_coefficient_defined",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_he4_reference_data_is_provisioned",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_he4_absent_but_he5_present_in_witness",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "missing_rows_are_generator_filter",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "dropped_rows_are_not_duplicates",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "he3_and_he4_are_dropped",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "a_le_4_assertion_ranges_over_filtered_rows",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "ground-state-ordering-a3",
+  "scriptFile": "ground_state_ordering_a3_probe.py",
+  "scriptHash": "2e71d9e92b64",
+  "scriptCommitSha": "86fafe035c3d50f85a26293122ef060d649915af",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Two diagnostics on the nucleon-ordering degree of freedom (bean qou-48is, loose ends of PR #4851). (1) hecke_core_symbolic._ground_state_ordering returns `pnp` for 3He while prop:ground-state-ordering rule (iii) says sorted `ppn` wins for A <= 3. Computing the proposition's own objective Phi_q = sum_i log|V_i| over EVERY arrangement at the experimental proton anchor shows the argmin at (Z,N)=(2,1) is `ppn`: the PROPOSITION is right and the HELPER is wrong. The helper performs no variational search (it is a fixed interleaving generator identical to _alternating_ordering_sym), is not the Phi_q argmin across an exhaustive A <= 14 sweep, and is not the extremum of any other objective the corpus states -- so the disagreement is a defect, not a definitional difference. The fix is NOT applied: it moves atom_V_full_sym / build_atom_nf_sym and hence published witness values, which is outside this session's scope bar. (2) 3He (2,1) and 4He (2,2) are absent from mass-table-comprehensive.witness.json because of a dedup guard `if a > 4:  # Avoid duplicates with explicitly added H, He isotopes` whose premise is false -- the explicit ISOTOPES list contains only H-chain entries (p, n, D, T, all Z <= 1), so no Z >= 2 grid row can duplicate it. The guard drops exactly 6 unique (Z, N) rows, of which 3He and 4He are the only bound nuclides. free_parameters = 0; no AME/CODATA quantity selects anything; nothing is wired; no published number changed. Sharpening: on the BARE NUCLEON chain the two 3He arrangements are EXACTLY degenerate -- the transfer factors T(d) = S + d.1 all commute, so the readout depends on the crossing coefficients only as a multiset (proved sorry-free over a generic CommRing in QOU/MassTheory/TransferFactorCommute.lean). Rule (iii)'s 'sorted BEATS interleaving' is thus a TIE at 3He, strict only after the electron tail is appended -- and that separation is produced by the UNDEFINED (n, e) crossing coefficient, which _phi1_from_ordering_sym silently skips. Both readings put sorted at the optimum; neither supports the helper's pnp.",
+  "auditOnly": true,
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
+    "q0_pin": "experimental/proton (q_parameter.q_at; owner directive 2026-08-07) -- layer-pure, no muon-built cache read",
+    "free_parameters": 0,
+    "dps": 50,
+    "objective": "Phi_q = sum_i log|V_i| via hecke_core_symbolic._phi1_from_ordering_sym"
+  },
+  "data": {
+    "part0_provenance": {
+      "helper_source": "def _ground_state_ordering(Z: int, N: int) -> list[str]:\n    \"\"\"Match hecke_core.build_atom_nf \u2014 interleaved p/n ordering.\"\"\"\n    A = Z + N\n    ordering = []\n    pc, nc = 0, 0\n    for k in range(A):\n        if (k % 2 == 0 and pc < Z) or nc >= N:\n            ordering.append(\"p\"); pc += 1\n        else:\n            ordering.append(\"n\"); nc += 1\n    return ordering\n",
+      "helper_search_tokens": [],
+      "helper_equals_alternating_ordering": true,
+      "prop_formula_inapplicable_cases": [
+        {
+          "Z": 2,
+          "N": 1,
+          "formula": "npn",
+          "protons_placed": 1,
+          "protons_required": 2
+        },
+        {
+          "Z": 3,
+          "N": 1,
+          "formula": "npnp",
+          "protons_placed": 2,
+          "protons_required": 3
+        },
+        {
+          "Z": 3,
+          "N": 2,
+          "formula": "npnpn",
+          "protons_placed": 2,
+          "protons_required": 3
+        },
+        {
+          "Z": 4,
+          "N": 1,
+          "formula": "npnpn",
+          "protons_placed": 2,
+          "protons_required": 4
+        }
+      ],
+      "ordering_cache": {
+        "rust_path_available": false,
+        "python_fallback_for_2_1": "ppn",
+        "committed_cache_2_1": "ppn",
+        "committed_cache_2_2": "nppn"
+      }
+    },
+    "mirror_certification": {
+      "chains_checked": 64,
+      "worst_abs_delta": "8.5338573e-55",
+      "tolerance": "1.0e-40"
+    },
+    "part1_A3": {
+      "D": {
+        "Z": 1,
+        "N": 1,
+        "helper": "pn",
+        "sorted": "pn",
+        "cache": "pn",
+        "argmin_phi_nuc": "pn",
+        "argmin_phi_nuc_ties": [
+          "pn",
+          "np"
+        ],
+        "argmin_phi_full": "np",
+        "argmin_phi_full_ties": [
+          "np"
+        ],
+        "rows": [
+          {
+            "ordering": "pn",
+            "phi_nuc": "-0.92940083296317624301",
+            "phi_full": "-0.030810738195657412254"
+          },
+          {
+            "ordering": "np",
+            "phi_nuc": "-0.92940083296317624301",
+            "phi_full": "-2.1663789169846338178"
+          }
+        ],
+        "helper_is_argmin_phi_full": false,
+        "sorted_is_argmin_phi_full": false
+      },
+      "T": {
+        "Z": 1,
+        "N": 2,
+        "helper": "pnn",
+        "sorted": "pnn",
+        "cache": "pnn",
+        "argmin_phi_nuc": "pnn",
+        "argmin_phi_nuc_ties": [
+          "pnn"
+        ],
+        "argmin_phi_full": "pnn",
+        "argmin_phi_full_ties": [
+          "pnn"
+        ],
+        "rows": [
+          {
+            "ordering": "pnn",
+            "phi_nuc": "-1.2261107953530004416",
+            "phi_full": "-2.4630888793744580164"
+          },
+          {
+            "ordering": "npn",
+            "phi_nuc": "-0.96021157115883365526",
+            "phi_full": "-0.061621476391314824508"
+          },
+          {
+            "ordering": "nnp",
+            "phi_nuc": "-0.96021157115883365526",
+            "phi_full": "-2.1971896551802912301"
+          }
+        ],
+        "helper_is_argmin_phi_full": true,
+        "sorted_is_argmin_phi_full": true
+      },
+      "3He": {
+        "Z": 2,
+        "N": 1,
+        "helper": "pnp",
+        "sorted": "ppn",
+        "cache": "ppn",
+        "argmin_phi_nuc": "ppn",
+        "argmin_phi_nuc_ties": [
+          "ppn",
+          "pnp"
+        ],
+        "argmin_phi_full": "ppn",
+        "argmin_phi_full_ties": [
+          "ppn"
+        ],
+        "rows": [
+          {
+            "ordering": "ppn",
+            "phi_nuc": "-0.87852329731820400569",
+            "phi_full": "-2.3751981083965832545"
+          },
+          {
+            "ordering": "pnp",
+            "phi_nuc": "-0.87852329731820400569",
+            "phi_full": "-1.7173200470580595479"
+          },
+          {
+            "ordering": "npp",
+            "phi_nuc": "-0.68364014825344721268",
+            "phi_full": "-1.9832192712522263342"
+          }
+        ],
+        "helper_is_argmin_phi_full": false,
+        "sorted_is_argmin_phi_full": true
+      }
+    },
+    "part2_sweep": {
+      "rows": [
+        {
+          "Z": 1,
+          "N": 1,
+          "n_arrangements": 2,
+          "helper": "pn",
+          "helper_phi": "-0.0308107381956574123",
+          "argmin": "np",
+          "argmin_phi": "-2.16637891698463382",
+          "helper_is_optimal": false,
+          "helper_rank": 2,
+          "helper_gap": "2.13556817879",
+          "sorted": "pn",
+          "sorted_phi": "-0.0308107381956574123",
+          "sorted_is_optimal": false,
+          "cache": "pn",
+          "cache_phi": "-0.0308107381956574123",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 1,
+          "N": 2,
+          "n_arrangements": 3,
+          "helper": "pnn",
+          "helper_phi": "-2.46308887937445802",
+          "argmin": "pnn",
+          "argmin_phi": "-2.46308887937445802",
+          "helper_is_optimal": true,
+          "helper_rank": 1,
+          "helper_gap": "0.0",
+          "sorted": "pnn",
+          "sorted_phi": "-2.46308887937445802",
+          "sorted_is_optimal": true,
+          "cache": "pnn",
+          "cache_phi": "-2.46308887937445802",
+          "cache_is_optimal": true
+        },
+        {
+          "Z": 2,
+          "N": 1,
+          "n_arrangements": 3,
+          "helper": "pnp",
+          "helper_phi": "-1.71732004705805955",
+          "argmin": "ppn",
+          "argmin_phi": "-2.37519810839658325",
+          "helper_is_optimal": false,
+          "helper_rank": 3,
+          "helper_gap": "0.657878061339",
+          "sorted": "ppn",
+          "sorted_phi": "-2.37519810839658325",
+          "sorted_is_optimal": true,
+          "cache": "ppn",
+          "cache_phi": "-2.37519810839658325",
+          "cache_is_optimal": true
+        },
+        {
+          "Z": 2,
+          "N": 2,
+          "n_arrangements": 6,
+          "helper": "pnpn",
+          "helper_phi": "-3.6013089037495837",
+          "argmin": "pnpn",
+          "argmin_phi": "-3.6013089037495837",
+          "helper_is_optimal": true,
+          "helper_rank": 1,
+          "helper_gap": "0.0",
+          "sorted": "ppnn",
+          "sorted_phi": "-3.20933006660522678",
+          "sorted_is_optimal": false,
+          "cache": "nppn",
+          "cache_phi": "-3.6013089037495837",
+          "cache_is_optimal": true
+        },
+        {
+          "Z": 2,
+          "N": 3,
+          "n_arrangements": 10,
+          "helper": "pnpnn",
+          "helper_phi": "-3.65304265405844811",
+          "argmin": "pnnpn",
+          "argmin_phi": "-4.04502149120280503",
+          "helper_is_optimal": false,
+          "helper_rank": 2,
+          "helper_gap": "0.391978837144",
+          "sorted": "ppnnn",
+          "sorted_phi": "-3.65304265405844811",
+          "sorted_is_optimal": false,
+          "cache": null,
+          "cache_phi": null,
+          "cache_is_optimal": null
+        },
+        {
+          "Z": 3,
+          "N": 2,
+          "n_arrangements": 10,
+          "helper": "pnpnp",
+          "helper_phi": "-7.99239344579044351",
+          "argmin": "pnpnp",
+          "argmin_phi": "-7.99239344579044351",
+          "helper_is_optimal": true,
+          "helper_rank": 1,
+          "helper_gap": "0.0",
+          "sorted": "pppnn",
+          "sorted_phi": "-5.46484642985711019",
+          "sorted_is_optimal": false,
+          "cache": null,
+          "cache_phi": null,
+          "cache_is_optimal": null
+        },
+        {
+          "Z": 3,
+          "N": 3,
+          "n_arrangements": 20,
+          "helper": "pnpnpn",
+          "helper_phi": "-0.822541644256295722",
+          "argmin": "npnpnp",
+          "argmin_phi": "-9.63140609040100787",
+          "helper_is_optimal": false,
+          "helper_rank": 20,
+          "helper_gap": "8.80886444614",
+          "sorted": "pppnnn",
+          "sorted_phi": "-3.61598788438379583",
+          "sorted_is_optimal": false,
+          "cache": "npnppn",
+          "cache_phi": "-6.40943412451129595",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 3,
+          "N": 4,
+          "n_arrangements": 35,
+          "helper": "pnpnpnn",
+          "helper_phi": "-11.04594572016015",
+          "argmin": "pnpnpnn",
+          "argmin_phi": "-11.04594572016015",
+          "helper_is_optimal": true,
+          "helper_rank": 1,
+          "helper_gap": "0.0",
+          "sorted": "pppnnnn",
+          "sorted_phi": "-7.86052064288829297",
+          "sorted_is_optimal": false,
+          "cache": "pnpnpnn",
+          "cache_phi": "-11.04594572016015",
+          "cache_is_optimal": true
+        },
+        {
+          "Z": 4,
+          "N": 3,
+          "n_arrangements": 35,
+          "helper": "pnpnpnp",
+          "helper_phi": "-4.93267097463226782",
+          "argmin": "ppnpnpn",
+          "argmin_phi": "-11.1030181214207404",
+          "helper_is_optimal": false,
+          "helper_rank": 31,
+          "helper_gap": "6.17034714679",
+          "sorted": "ppppnnn",
+          "sorted_phi": "-10.0166143343200049",
+          "sorted_is_optimal": false,
+          "cache": null,
+          "cache_phi": null,
+          "cache_is_optimal": null
+        },
+        {
+          "Z": 4,
+          "N": 4,
+          "n_arrangements": 70,
+          "helper": "pnpnpnpn",
+          "helper_phi": "-12.3605547970423232",
+          "argmin": "nppnpnpn",
+          "argmin_phi": "-13.4469585841430588",
+          "helper_is_optimal": false,
+          "helper_rank": 7,
+          "helper_gap": "1.0864037871",
+          "sorted": "ppppnnnn",
+          "sorted_phi": "-8.23693561150513158",
+          "sorted_is_optimal": false,
+          "cache": null,
+          "cache_phi": null,
+          "cache_is_optimal": null
+        },
+        {
+          "Z": 4,
+          "N": 5,
+          "n_arrangements": 126,
+          "helper": "pnpnpnpnn",
+          "helper_phi": "-12.422538477151047",
+          "argmin": "pnpnnpnpn",
+          "argmin_phi": "-17.9350075626009959",
+          "helper_is_optimal": false,
+          "helper_rank": 30,
+          "helper_gap": "5.51246908545",
+          "sorted": "ppppnnnnn",
+          "sorted_phi": "-12.422538477151047",
+          "sorted_is_optimal": false,
+          "cache": "pnpnpnpnn",
+          "cache_phi": "-12.422538477151047",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 5,
+          "N": 5,
+          "n_arrangements": 252,
+          "helper": "pnpnpnpnpn",
+          "helper_phi": "-1.14527691376298233",
+          "argmin": "npnpnpnpnp",
+          "argmin_phi": "-26.5196713954378849",
+          "helper_is_optimal": false,
+          "helper_rank": 252,
+          "helper_gap": "25.3743944817",
+          "sorted": "pppppnnnnn",
+          "sorted_phi": "-12.2446384794679314",
+          "sorted_is_optimal": false,
+          "cache": "npnpnpnppn",
+          "cache_phi": "-23.3440000451728805",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 5,
+          "N": 6,
+          "n_arrangements": 462,
+          "helper": "pnpnpnpnpnn",
+          "helper_phi": "-27.8765373081544639",
+          "argmin": "pnpnpnpnpnn",
+          "argmin_phi": "-27.8765373081544639",
+          "helper_is_optimal": true,
+          "helper_rank": 1,
+          "helper_gap": "0.0",
+          "sorted": "pppppnnnnnn",
+          "sorted_phi": "-12.6535565569123231",
+          "sorted_is_optimal": false,
+          "cache": "pnpnpnpnpnn",
+          "cache_phi": "-27.8765373081544639",
+          "cache_is_optimal": true
+        },
+        {
+          "Z": 6,
+          "N": 6,
+          "n_arrangements": 924,
+          "helper": "pnpnpnpnpnpn",
+          "helper_phi": "-16.1424200504704611",
+          "argmin": "npnpnnpnpnpp",
+          "argmin_phi": "-22.3256656133271945",
+          "helper_is_optimal": false,
+          "helper_rank": 374,
+          "helper_gap": "6.18324556286",
+          "sorted": "ppppppnnnnnn",
+          "sorted_phi": "-12.6895773423400539",
+          "sorted_is_optimal": false,
+          "cache": "npnpnpnpnppn",
+          "cache_phi": "-16.1424200504704611",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 6,
+          "N": 7,
+          "n_arrangements": 1716,
+          "helper": "pnpnpnpnpnpnn",
+          "helper_phi": "-16.1714184150709966",
+          "argmin": "nnpnpnnpnpnpp",
+          "argmin_phi": "-22.35466397792773",
+          "helper_is_optimal": false,
+          "helper_rank": 726,
+          "helper_gap": "6.18324556286",
+          "sorted": "ppppppnnnnnnn",
+          "sorted_phi": "-16.1714184150709966",
+          "sorted_is_optimal": false,
+          "cache": "pnpnpnpnpnpnn",
+          "cache_phi": "-16.1714184150709966",
+          "cache_is_optimal": false
+        },
+        {
+          "Z": 7,
+          "N": 7,
+          "n_arrangements": 3432,
+          "helper": "pnpnpnpnpnpnpn",
+          "helper_phi": "-0.876282489988606698",
+          "argmin": "npnpnpnpnpnpnp",
+          "argmin_phi": "-32.8177957763479405",
+          "helper_is_optimal": false,
+          "helper_rank": 3432,
+          "helper_gap": "31.9415132864",
+          "sorted": "pppppppnnnnnnn",
+          "sorted_phi": "-15.7865413242219704",
+          "sorted_is_optimal": false,
+          "cache": "npnpnpnpnpnppn",
+          "cache_phi": "-30.6968001584553341",
+          "cache_is_optimal": false
+        }
+      ],
+      "helper_optimal_count": 5,
+      "cases": 16,
+      "cache_optimal_count": 5,
+      "cache_cases": 12
+    },
+    "part3_alternative_objectives": {
+      "phi_full (production, nucleons+electrons)": {
+        "helper_optimal": 5,
+        "cases": 16
+      },
+      "phi_nuc (bare nucleon chain)": {
+        "helper_optimal": 10,
+        "cases": 16
+      },
+      "-phi_full (maximiser)": {
+        "helper_optimal": 5,
+        "cases": 16
+      },
+      "|phi_full| (magnitude)": {
+        "helper_optimal": 5,
+        "cases": 16
+      }
+    },
+    "part4_fix_impact": {
+      "mirror_certification": {
+        "dV0": "8.8871815e-56",
+        "dV1": "7.7140342e-56"
+      },
+      "wedderburn_volumes": {
+        "rows": [
+          {
+            "Z": 2,
+            "N": 1,
+            "helper": "pnp",
+            "candidate": "ppn",
+            "V0_helper": "4.3249672275224306534",
+            "V0_candidate": "4.3249672275224306534",
+            "V1_helper": "1.4859513861095698194",
+            "V1_candidate": "1.4859513861095698194",
+            "rel_delta_V0": "1.438858366e-61",
+            "rel_delta_V1": "0.0"
+          },
+          {
+            "Z": 2,
+            "N": 2,
+            "helper": "pnpn",
+            "candidate": "nppn",
+            "V0_helper": "6.6582260611305607714",
+            "V0_candidate": "6.6582260611305607714",
+            "V1_helper": "2.0988216688294367273",
+            "V1_candidate": "2.0988216688294367273",
+            "rel_delta_V0": "0.0",
+            "rel_delta_V1": "0.0"
+          },
+          {
+            "Z": 3,
+            "N": 3,
+            "helper": "pnpnpn",
+            "candidate": "npnppn",
+            "V0_helper": "21.770780779216297514",
+            "V0_candidate": "21.770780779216297514",
+            "V1_helper": "-4.5314512815210815425",
+            "V1_candidate": "-4.5314512815210815425",
+            "rel_delta_V0": "2.286740321e-61",
+            "rel_delta_V1": "1.373294093e-61"
+          }
+        ],
+        "moves": false
+      },
+      "hecke_nf": {
+        "rows": [
+          {
+            "Z": 2,
+            "N": 1,
+            "helper": "pnp",
+            "candidate": "ppn",
+            "nf_helper": [
+              "-0.040590603799124283696",
+              "-0.10242172897059593002",
+              "0.29079303220890320946",
+              "0.060156816102872976485",
+              "1.1116645663963559198",
+              "0.24938275969899715123"
+            ],
+            "nf_candidate": [
+              "-0.040040168282709405844",
+              "-0.097446549363866117751",
+              "0.29041428562397607695",
+              "0.061152318835207506763",
+              "1.1110555023590745881",
+              "0.24490140089072389786"
+            ],
+            "worst_rel_delta": "0.04857543079"
+          },
+          {
+            "Z": 2,
+            "N": 2,
+            "helper": "pnpn",
+            "candidate": "nppn",
+            "nf_helper": [
+              "1.1309727012658124512",
+              "0.52646756704684026973",
+              "0.0058441976384567774064",
+              "-0.0063183217988240677919",
+              "0.051227787557687561812",
+              "0.1601746773324478788"
+            ],
+            "nf_candidate": [
+              "1.100006275632344132",
+              "0.39613651168340266468",
+              "0.020550222058849028092",
+              "0.001279640836730412865",
+              "0.051777072094636497744",
+              "0.2693258580799274019"
+            ],
+            "worst_rel_delta": "2.516346183"
+          },
+          {
+            "Z": 3,
+            "N": 3,
+            "helper": "pnpnpn",
+            "candidate": "npnppn",
+            "nf_helper": [
+              "-0.017805605425247201598",
+              "0.14960891573772228891",
+              "0.51791645266581128382",
+              "0.19126573258607842085",
+              "1.3073599707802128976",
+              "0.21733300687203642813"
+            ],
+            "nf_candidate": [
+              "-0.015519284617414065248",
+              "0.26863779156913069561",
+              "0.51356480695026989809",
+              "0.18114155896376717066",
+              "1.3390723531737710591",
+              "0.1031337556673976901"
+            ],
+            "worst_rel_delta": "0.7956001502"
+          }
+        ],
+        "moves": true
+      },
+      "phi1_moves": true,
+      "would_move_published_values": true,
+      "consumers": [
+        "hecke_core_symbolic.atom_gen_chains_sym -> atom_V_full_sym (ordering-INDEPENDENT, 4a)",
+        "hecke_core_symbolic.build_atom_nf_sym (ordering-DEPENDENT, 4b)",
+        "hecke_core_symbolic.compute_phi1_full_sym via _alternating_ordering_sym (ordering-DEPENDENT, 4c)",
+        "compound_shift_nf.build_atom_nf_mp (own transcription, line ~197)",
+        "channel_binding.py (BOND_CROSSING self-test source of truth)",
+        "crystal_shift_nf_atomic.py, atomic_tr_m_mpfr_50dps.py (downstream)"
+      ],
+      "action_taken": "NONE -- diagnostic only; filed as a bean."
+    },
+    "part6_mechanism": {
+      "transfer_commutator_gap": "1.6704779e-52",
+      "lean": "content/quantum-observable-universe/lean/QOU/MassTheory/TransferFactorCommute.lean",
+      "he3_phi_nuc_ppn": "-0.87852329731820400569",
+      "he3_phi_nuc_pnp": "-0.87852329731820400569",
+      "he3_phi_nuc_gap": "0.0",
+      "crossing_coeff_p_e": "-q + 1/q",
+      "crossing_coeff_n_e": "None",
+      "he3_phi1_ppn": "-2.3751981083965832545",
+      "he3_phi1_pnp": "-1.7173200470580595479",
+      "he3_phi1_separation": "0.657878061339",
+      "reading": "At the nucleon level the objective is EXACTLY degenerate between ppn and pnp (commuting transfer factors => multiset dependence only). The production Phi_1 separates them in favour of sorted, but only through the electron tail, whose (n, e) coupling is undefined and therefore skipped."
+    },
+    "part5_missing_rows": {
+      "guard": "if a > 4:  # Avoid duplicates with explicitly added H, He isotopes",
+      "guard_location": "computations/mass_table_comprehensive.py:153",
+      "explicit_isotopes": [
+        [
+          "p",
+          1,
+          0
+        ],
+        [
+          "n",
+          0,
+          1
+        ],
+        [
+          "D",
+          1,
+          1
+        ],
+        [
+          "T",
+          1,
+          2
+        ]
+      ],
+      "explicit_Z_values": [
+        0,
+        1
+      ],
+      "grid_size": 14974,
+      "kept": 14968,
+      "dropped": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "dropped_labels": {
+        "2,0": "2He (diproton, unbound)",
+        "2,1": "3He (BOUND)",
+        "2,2": "4He (BOUND)",
+        "3,0": "3Li (unbound)",
+        "3,1": "4Li (unbound)",
+        "4,0": "4Be (unbound)"
+      },
+      "genuine_duplicates_among_dropped": [],
+      "reference_data_provisioned": {
+        "AME_BINDING['3He']": true,
+        "AME_BINDING['4He']": true,
+        "CODATA_MASS['3He']": true,
+        "CODATA_MASS['4He']": true,
+        "ATLAS_TAG['3He']": true,
+        "ATLAS_TAG['4He']": true,
+        "imports M_HE4_MEV_VALIDATION": true
+      },
+      "he3_he4_absent_from_committed_witness": true,
+      "classification": "GENERATOR BUG -- false-premise dedup guard. No He isotope is in the explicit list, so no Z >= 2 grid row can duplicate it; `a > 4` drops 6 unique rows. UNINTENDED: the same module provisions AME_BINDING, CODATA_MASS and ATLAS_TAG entries for 3He and 4He and imports M_HE4_MEV_VALIDATION solely for CODATA_MASS['4He'], all of which the guard renders unreachable.",
+      "collateral": "the witness's sole assertion `all_A_leq_4_masses_computed` is evaluated over the post-filter row set {p, n, D, T} and so passes without ever seeing 3He or 4He.",
+      "action_taken": "NONE -- regenerating the table changes published numbers, which is outside this session's scope bar."
+    },
+    "references": {
+      "prop:ground-state-ordering": "content/quantum-observable-universe/mass-theory/ground-state-ordering.md",
+      "predecessor_audit": "docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md",
+      "companion_audit": "docs/audits/2026-08-09-ordering-loose-ends-a3-helper-and-missing-he-rows.md"
+    }
+  },
+  "caveats": [
+    "SCOPE-(a) throughout. Loose end 1 is a measured statement about ONE objective (Phi_q, the functional prop:ground-state-ordering names) at ONE anchor (experimental proton) over a finite sweep (A <= 14): the helper's output is not its argmin at 3He and at several larger (Z, N). That identifies a defect in the helper relative to the objective its own name invokes. It does NOT prove prop:ground-state-ordering -- the proposition remains stated-not-proved (`def ... : Prop` with no discharging instance), and its A > 14 extrapolation is untested here. Nothing is excluded structurally, so no scope-(b) claim is made.",
+    "NO PRODUCTION CHANGE. This probe is diagnostic. The helper is NOT fixed (Part 4 measures that a fix would move atom_V_full_sym / build_atom_nf_sym and every witness downstream), the mass table is NOT regenerated, and the production A >= 3 binding convention (sorted, closed_form_tau_M.py:290) is untouched. Reconciling the two live conventions remains an owner decision.",
+    "The Phi_q objective evaluated here is the PRODUCTION form -- the nucleon arrangement plus the Z-electron tail, as compute_phi1_full_sym builds it. The bare-nucleon Phi is reported alongside because the proposition's prose speaks of the nucleon ordering; at 3He the two differ (the bare-nucleon objective ties `ppn` with `pnp`, the production objective separates them in favour of `ppn`), which is itself part of the finding."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

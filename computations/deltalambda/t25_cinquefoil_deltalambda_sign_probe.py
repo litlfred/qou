@@ -40,6 +40,14 @@ import subprocess
 import sys
 
 import sympy as sp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))   # computations/deltalambda -> repo root
@@ -156,7 +164,7 @@ def word_matrix(gens, word):
 
 def main():
     import mpmath as mp
-    mp.mp.dps = 40
+    set_compute_dps()
 
     assertions = []
 
@@ -203,9 +211,18 @@ def main():
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(40)))
         q0_src = "qou_substrate.q_at(40)"
-    except Exception:                              # noqa: BLE001  (substrate optional in sandbox)
-        q0 = mp.mpf("1.10997859555733471")         # canonical muon-q_0 (q-pinning witness)
-        q0_src = "q-pinning-50-digit.witness (muon q_0)"
+    except Exception as _exc:                      # noqa: BLE001
+        # Was: silently fall back to the MUON literal 1.10997859555733471.
+        # That is a CROSS-LAYER fallback -- the primary path is proton
+        # (`q_at`), so on any import hiccup this probe would compute at the
+        # ideal pin while every label around it said proton, with nothing
+        # signalling the switch. AGENTS.md §q0-anchor: "never straddle the two
+        # layers inside one quantity". A fallback to the *other layer* is worse
+        # than no fallback, so this now fails loudly.
+        raise RuntimeError(
+            "q_at unavailable and there is no same-layer fallback; refusing to "
+            "substitute the muon q_0 into a proton-pinned probe "
+            f"(AGENTS.md q0-anchor). Original error: {_exc!r}") from _exc
 
     rows, sign_match = [], True
     for lam in parts:
@@ -343,6 +360,25 @@ def main():
     }
     out = os.path.join(_HERE, "t25-cinquefoil-deltalambda-sign.witness.json")
     os.makedirs(_HERE, exist_ok=True)
+    # Stamp the q0 pin from the producer itself. This witness writes with a raw
+    # json.dump rather than WitnessBuilder.save(), so neither build()'s stamping
+    # nor save()'s preserve-forward ever runs -- its previous `q0Anchor: proton`
+    # had been BACKFILLED by a sweep, and the first regeneration silently
+    # dropped it (which is exactly what happened here on 2026-08-08). 436
+    # producers write directly this way; 14 pinned witnesses are one rerun away
+    # from the same loss (bean qou-pin5). stamp_staleness_metadata is the
+    # documented helper for precisely this case.
+    try:
+        # `qou_substrate.witness` directly, not the `witness_base` shim: this
+        # module only puts tools/qou-substrate/python on sys.path, not
+        # computations/, so the shim is not importable from here.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(witness, script_path=__file__,
+                                     engine="mpmath")
+    except Exception as _exc:  # noqa: BLE001
+        print(f"  [warn] could not stamp staleness/q0 metadata: {_exc!r}")
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)
     print("witness ->", out)

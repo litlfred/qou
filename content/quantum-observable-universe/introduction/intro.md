@@ -22,4 +22,4 @@ In $\gamma\gamma$ pair production, the photon terms multiply out algebraically t
 
 Because only finitely many knots embed within a surface of fixed genus, this basis strictly closes at exactly six fundamental operations. No seventh operation is topologically possible. This finiteness bound stems directly from the measuring frame—a strict limit on what an internal observer can distinguish.
 
-An exact obstruction class measures the failure of local data to extend globally. This single class governs whether a fluid remains smooth, whether a computation admits a shortcut, and where the zeros of a zeta function must fall. The framework precisely unifies these diverse phenomena as instances of topological incompleteness at the computational horizon.
+An exact obstruction class measures the failure of local data to extend globally. This single class governs whether a fluid remains smooth, whether a computation admits a shortcut, and where the zeros of a zeta function must fall. These diverse phenomena are instances of topological incompleteness at the computational horizon.

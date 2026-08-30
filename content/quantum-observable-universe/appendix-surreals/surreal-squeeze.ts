@@ -8,7 +8,7 @@ export default lemma({
     ref: "qou:QOU.AlgebraicSubstrate.surreal_squeeze",
     validation: "not_checked",
   },
-  uses: ["rem:millennium-unification"],
+  uses: [],
   tags: [
     "surreal",
     "squeeze",

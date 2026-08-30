@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T06:36:14.500614+00:00",
+  "commitSha": "31f7400b35f742f45a681175bbfb584fd8e51c01",
+  "assertions": [
+    {
+      "name": "headline_matches_no_published_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "nearest_row_has_opposite_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "sign_alone_does_not_explain_the_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "no_pin_choice_recovers_the_headline_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "everything_here_is_C_frame",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-ladder-headline-residual-provenance",
+  "scriptFile": "qbeta_ladder_headline_residual_provenance_probe.py",
+  "scriptHash": "86444cd6207a",
+  "scriptCommitSha": "5c9b54e367fc2588464afc68179dada895a95eaf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_headline_residual_provenance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_headline_residual_provenance_probe.py"
+  },
+  "description": "Attributes the q-beta ladder block's headline -0.0066 ppm residual. It matches NO row of the block's own table 2; the nearest (N=3, +6.02 ppb) differs in SIGN and ~10 percent in magnitude, so a sign convention is necessary but not sufficient to explain it. C-frame; scope (a); nothing wired.",
+  "data": {
+    "R1_ppb": "6.02000000000000000000000000000000000000000000000000000000000",
+    "R2_ppb": "-0.570000000000000000000000000000000000000000000000000000000000",
+    "R3_ppb": "7.13393664139533734366747321112833652086929876447809796346755",
+    "R4_ppb": "37.7074898557493246572264919369599095480546476060268930180124",
+    "headline_ppb": "-6.60000000000000000000000000000000000000000000000000000000000",
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon": "1.10997859564273904668179512938000175270006556102901155697405"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

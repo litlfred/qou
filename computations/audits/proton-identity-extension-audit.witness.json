@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:52:38.727977+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:31:14.716805+00:00",
+  "commitSha": "51c09a755fb1d8c7cb19825303c4ca6a7b537b8c",
   "assertions": [
     {
       "name": "N_proton_near_integer_12",
-      "computed": 0.00038778482691637366,
+      "computed": "0.0003902701549161378741312838594632249789359015606802399384531671163139336",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "N_proton solving the identity should be near integer 12 (0.24 ppm match)."
     },
     {
       "name": "N_neutron_NOT_clean_integer",
-      "computed": 1.0,
+      "computed": true,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "N_neutron should NOT be close to any integer (off by ~0.47), confirming the identity is proton-specific."
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "proton-identity-extension-audit",
   "scriptFile": "proton_identity_extension_audit.py",
-  "scriptHash": "41eb10667d2a",
-  "scriptCommitSha": "c0dd5c86f8d6a3f8c2cd3bef58ae4f99ba099930",
+  "scriptHash": "d1e97c46b6db",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/proton_identity_extension_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/proton_identity_extension_audit.py"
   },
   "description": "Tests whether the proton mass substrate identity m_p = 2·m_μ·F_Bor − 12·m_e generalises to the neutron and ⁴He. Result: the identity is specific to β_Bor + H_3.  For the neutron, N_neutron ≈ 9.469 is NOT a clean integer; the neutron derivation uses m_p + canonical Δm_pn (Hecke-skein flavor-split) instead.  ⁴He uses H_12 / different braid, so the identity's ingredients (|tr_M(β_Bor)|, [3]_q!, q^3) don't directly apply.  The identity is one element of a categorical chain, not a universal mass formula.",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
@@ -47,10 +55,10 @@
     "q0": "1.109978582751380807591669"
   },
   "data": {
-    "N_proton": "11.99961221517308362635959",
-    "N_neutron": "9.468623925953275874429118",
-    "Delta_npn_over_m_e": "2.530988289219807751930474",
-    "N_diff_minus_Delta_pn": "-1.086681489459205484101094e-70",
+    "N_proton": "11.99960972984508386212587",
+    "N_neutron": "9.468621147082598972687475",
+    "Delta_npn_over_m_e": "2.530988582762484889438394",
+    "N_diff_minus_Delta_pn": "-1.448908652612273978801459e-70",
     "identity_is_proton_specific": true,
     "neutron_via_flavor_split_not_own_identity": true
   },

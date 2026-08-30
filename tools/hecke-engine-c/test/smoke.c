@@ -111,10 +111,14 @@ int main(void) {
     }
 
     /* 11. tr_m_atomic_mpfr: 3-strand single positive crossing, 20-dps.
-     *     Returns z = 1/(q^{1/2} + q^{-1/2}) at q_0 (canonical Markov trace
-     *     of a single Hecke generator on B_3). status=0 + first chars
-     *     start with "4.99..." (z ≈ 0.4993). n=3 chosen over n=2 because
-     *     B_2 trips an upstream edge case in tr_m_word_lq's recursion. */
+     *     Returns z = q^3/(q^2 + 1) at q_0 -- trace convention D
+     *     (SU(2)/Temperley-Lieb), the canonical Markov trace of a single
+     *     Hecke generator on B_3. status=0 + first chars start with
+     *     "6.12..." (z = 0.6126895204 at q = 1.10998). Was "4.99..."
+     *     (convention C, z = 0.4993203176) until the excision of
+     *     2026-08-09; see docs/coordination/trace-convention-registry.md.
+     *     n=3 chosen over n=2 because B_2 trips an upstream edge case in
+     *     tr_m_word_lq's recursion. */
     {
         const int8_t   signs[1] = {1};
         const int32_t  gens[1]  = {1};

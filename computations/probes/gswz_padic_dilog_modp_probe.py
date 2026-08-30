@@ -51,6 +51,7 @@ precision, and for D5 on non-root-of-unity arguments like the printed
 """
 
 import json
+import pathlib
 import sys
 
 D = 6
@@ -172,7 +173,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_padic_dilog_modp_probe",
     "beans": ["qou-dugz", "qou-1hlh"],
-    "source": "GSWZ arXiv:2412.04241v2 §3.1 Prop 3.2, eqns (174)/(177)/(273); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §3.1 Prop 3.2, eqns (174)/(177)/(273); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5",
     "checks": checks,
     "computed_rhs_mod5": {
@@ -182,7 +183,16 @@ witness = {
     },
     "scope": "scope-(a): mod-p dilog layer (finite polylog + Prop 3.2) vs printed (273); full Coleman Li2 queued",
 }
-with open("computations/probes/gswz_padic_dilog_modp.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_padic_dilog_modp.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

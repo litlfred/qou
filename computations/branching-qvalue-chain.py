@@ -47,7 +47,7 @@ except Exception:
 # ── Symbolic setup ──────────────────────────────────────────────
 q = sp.Symbol('q', positive=True)
 h = q - 1/q  # HA = q - q⁻¹
-z_sym = 1 / (sp.sqrt(q) + 1/sp.sqrt(q))
+z_sym = q**3 / (q**2 + 1)
 
 print("=" * 70)
 print("  BRANCHING Q-VALUE CHAIN")

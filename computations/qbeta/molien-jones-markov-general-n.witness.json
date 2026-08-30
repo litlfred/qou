@@ -1,0 +1,66 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T09:56:28.614047+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
+  "assertions": [
+    {
+      "name": "n4_markov_normalisation_is_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum_lambda f^lambda y_lambda = 1 exact symbolic in z"
+    },
+    {
+      "name": "n4_two_row_cap_at_zD",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "y_(2,1,1), y_(1^4) -> 0 at z=z_D"
+    },
+    {
+      "name": "n4_survivors_match_su2_qdims",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "predicted y(q0,zD) == corpus y_lambda_su_n(4,q0,2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "molien-jones-markov-general-n",
+  "scriptFile": "molien_jones_markov_general_n_probe.py",
+  "scriptHash": "1cdc13c92d2f",
+  "scriptCommitSha": "09e05aa6da534f1ae68e68efd7b763ef06010974",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/molien_jones_markov_general_n_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/molien_jones_markov_general_n_probe.py"
+  },
+  "description": "bean qou-3quc: the Jones-Markov weights y_lambda ARE the Webster-Williamson S_n Molien series -- general n. y_lambda = M_nu(u=q^2, t=qz/(q^2-qz-1)) * (1+qz-q^2)^(n-1). Verified exact at n=3 (companion probe/Lean) and at n=4: Sum f^lam y_lam = 1 exact symbolic; at z=z_D the >=3-row weights vanish (two-row cap) and survivors reproduce the corpus SU(2) q-dims. Normaliser is a power of ONE linear form (Poincare/Molien shape), not [n]_q!. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-molien-jones-markov-n3-identification.md",
+  "data": {
+    "general_n_formula": "y_lambda = M_nu(q^2, qz/(q^2-qz-1)) * (1+qz-q^2)^(n-1)",
+    "n4_normalisation": "1",
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: EXACT SYMBOLIC in q and z (sp.symbols), as this file's own docstring states. q_0 is reachable through the Hecke machinery it imports but is never evaluated at -- nothing substitutes a pin, and no q_0 value reaches the payload."
+}

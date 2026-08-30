@@ -30,6 +30,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from host_info import host_info, summary_line  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def representative_zn(A: int) -> tuple[int, int]:
@@ -39,7 +40,7 @@ def representative_zn(A: int) -> tuple[int, int]:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     cap = float(sys.argv[1]) if len(sys.argv) > 1 else 600.0
     print(f"host: {summary_line()}", flush=True)
     A_list = [6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 20, 24]

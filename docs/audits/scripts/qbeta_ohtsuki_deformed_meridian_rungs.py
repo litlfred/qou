@@ -142,7 +142,12 @@ def log_jones_deformed(N, u):
         else:
             s += mp.exp(logP - ref)
     logJ = ref + mp.log(s)
-    loss = float((peak - mp.re(logJ)) / mp.log(10))
+    # NOT float(): the emission at "runs" serializes via `_n(vv) if
+    # isinstance(vv, (mp.mpf, mp.mpc))`, so downcasting here makes that guard
+    # fall through and the value reaches the witness as raw float64. The
+    # quantity is already exact-in-mpmath above; keeping it mpf is what lets
+    # the file's own serializer do its job. Bean qou-irzg.
+    loss = (peak - mp.re(logJ)) / mp.log(10)
     return logJ, loss
 
 
@@ -254,7 +259,7 @@ def run_ladder(u, Ns, label):
     for i, N in enumerate(Ns):
         lj, loss = log_jones_deformed(N, u)
         if loss > mp.mp.dps - 40:
-            print(f"    [{label}] N={N} loss={loss:.1f}d exceeds dps−40 "
+            print(f"    [{label}] N={N} loss={float(loss):.1f}d exceeds dps−40 "
                   f"headroom — truncating ladder here ({len(kept)} pts kept)",
                   flush=True)
             break
@@ -263,7 +268,7 @@ def run_ladder(u, Ns, label):
         losses.append(loss)
         el = time.time() - t0
         eta = el / (i + 1) * (len(Ns) - i - 1)
-        print(f"    [{label}] {i + 1}/{len(Ns)} N={N:7d} loss={loss:5.2f}d "
+        print(f"    [{label}] {i + 1}/{len(Ns)} N={N:7d} loss={float(loss):5.2f}d "
               f"elapsed={el:6.1f}s eta={eta:6.1f}s", flush=True)
     if len(kept) < 6:
         raise RuntimeError(f"ladder at u={mp.nstr(u, 8)} kept only {len(kept)} "
@@ -413,8 +418,8 @@ def main():
     # precision headroom: worst-case ladder loss must leave ≥ 30 working digits
     max_loss = max(r["max_loss_digits"] for r in list(runs.values()) + [run_mu])
     v6_ok = (mp.mp.dps - max_loss) >= 30
-    print(f"\n[V6] precision headroom: dps {mp.mp.dps} − max loss {max_loss:.1f}d "
-          f"= {mp.mp.dps - max_loss:.1f}d ok={v6_ok}")
+    print(f"\n[V6] precision headroom: dps {mp.mp.dps} − max loss {float(max_loss):.1f}d "
+          f"= {float(mp.mp.dps - max_loss):.1f}d ok={v6_ok}")
 
     assertions = [
         {"name": "V1_u0_reproduces_kappa1_exact", "passed": bool(v1_ok)},
@@ -479,7 +484,7 @@ def main():
                 "b_quadratic": mp.nstr(b_quad, 12),
                 "b_status": "unidentified (mixes Im-S u^2 with Re-S u terms); no fit",
             },
-            "max_loss_digits": max_loss,
+            "max_loss_digits": _n(max_loss),
             "physics": {
                 "t_ln_q0": _n(t_p),
                 "kappa1_sub_re": _n(run_p["kappa1_re"]),

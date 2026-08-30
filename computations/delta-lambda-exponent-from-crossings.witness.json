@@ -1,8 +1,8 @@
 {
   "engine": "python+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T14:50:54.820397+00:00",
-  "commitSha": "a04c070792bfcfdf1fba1ae5f2ceeb825285c906",
+  "computedAt": "2026-08-11T00:47:17.715873+00:00",
+  "commitSha": "c758bac90f5d94c96847ef49d34a4bad78880552",
   "assertions": [
     {
       "name": "closed_forms_sigma_inv_avg_exact",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 124,
+  "durationMs": 417,
   "computation": "delta-lambda-exponent-from-crossings",
   "scriptFile": "delta_lambda_exponent_from_crossings.py",
-  "scriptHash": "963bca7e60ca",
-  "scriptCommitSha": "2fb24ddeca64e9445e2c0ef4962ea9374e403dff",
+  "scriptHash": "885e0cf89e14",
+  "scriptCommitSha": "b2d94df75a85abb27b1790defaaa7ec7dccb5820",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,6 +41,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

@@ -1,0 +1,506 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T15:53:07.257952+00:00",
+  "commitSha": "5518a024e5f7fec88f742faadc60263c48dd8f19",
+  "assertions": [
+    {
+      "name": "closed_form_matches_Q_N_on_every_chain",
+      "computed": "20",
+      "expected": "20",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|Q_inf| = 2^{-n/2} sqrt(2/|A|) against Q_N computed directly from van der Veen's Lemma 1, Richardson-extrapolated"
+    },
+    {
+      "name": "lemma2a_cross_term_is_signed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "log(S_{n,k}/S~_N) on the opposite-sign corner, against the signed and absolute-value readings of Lemma 2a"
+    },
+    {
+      "name": "tau_dg_prediction_exact_on_corpus_values",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|tau_DG| = 2^{2n-2} sqrt(n^2+m^2) against the corpus's independently computed values at L5a1 and L6a4"
+    },
+    {
+      "name": "Q_inf_phase_is_psi_plus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "complex Q_N at N = 0 mod 16 against exp(+i pi(4a+3c-3d)/4) 2^{-n/2} sqrt(2/A), on 12 chains"
+    },
+    {
+      "name": "cs_coefficient_flips_c_minus_d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the N-linear phase arg(R_{N+1}/R_N) against the main theorem's stated CS and the derived one, on 7 chains"
+    },
+    {
+      "name": "tau_dg_preregistered_predictions_confirmed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "L8n5, L10n100, L10n103: predicted before the manifolds were located, then computed with one_loop_torsion.py"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "one-loop-vdv-constant-closed-form",
+  "scriptFile": "one_loop_vdv_constant_closed_form_probe.py",
+  "scriptHash": "a94eb8c8b602",
+  "scriptCommitSha": "5518a024e5f7fec88f742faadc60263c48dd8f19",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Closes the bridge from van der Veen's constant E to this corpus's c_sigma, for the whole b=1 Whitehead-chain family. Derives c_sigma = 2^{1/2-n}(n^2+m^2)^{-1/4} (n = c+d, m = 4a-c+d) from his Lemmas 1-4, correcting three slips in the published proof, and verifies it against Q_N computed directly from Lemma 1 on 20 chains. RETRACTS this probe's earlier orthant-probability closed form, which was downstream of an unchecked premise. Implies |tau_DG| = 2^{2n-2} sqrt(n^2+m^2), confirmed to 18 digits at L5a1, L6a4 and - pre-registered - L8n5, L10n100, L10n103. Makes the constant k = 2^{-1/2} derived rather than calibrated on the link side. Moduli only; the phase of E is not checked. Nothing fitted.",
+  "auditOnly": "docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md",
+  "data": {
+    "source": {
+      "paper": "van der Veen, Proof of the volume conjecture for Whitehead chains, Algebr. Geom. Topol. 8 (2008) 603-624",
+      "arxiv": "math/0611181",
+      "local": "library/arxiv-math-0611181v2/0611181v2.pdf",
+      "what_he_proves": "the volume conjecture for the family, D = 3 pi for b = 1",
+      "what_he_leaves": "E, as a (c+d+1)-dim Gaussian integral; he shows only that it is nonzero, which is all his theorem needs",
+      "sequel_status": "no sequel exists; his later work moves to spin networks, and no other author has published this constant for a multi-cusped link in this setting"
+    },
+    "retraction": {
+      "what_was_claimed": "Step 6 reduces E to a Gaussian-against-erfc^n integral, an (n+1)-dim orthant probability, with elementary closed forms arctan(sqrt A)/(pi sqrt(A/2)) at n=1 and an arcsin form at n=2",
+      "why_it_was_wrong": "the erfc factors come from folding the Step-4 Gaussian onto an orthant, which is an artifact of Lemma 2a being stated in the DISTANCES |n'|,|k'| rather than the signed offsets its own Taylor expansion supplies",
+      "why_the_old_checks_missed_it": "both the 1e-25 quadrature check and the independent Step-5 cross-check were downstream of that integrand; they tested the reduction, never the premise. Nothing was compared against J_N itself, which is the only check that could have caught it",
+      "superseded_values": {
+        "abs_Q_inf_n1": "0.48214876774041381",
+        "abs_Q_inf_n2": "0.21634689593878546"
+      },
+      "corrected_values": {
+        "abs_Q_inf_n1": "0.8408964152537145430311255",
+        "abs_Q_inf_n2": "0.5"
+      }
+    },
+    "corrections_to_published_proof": {
+      "lemma_2a_absolute_values": {
+        "printed": "exp(-(pi/N)(n'^2 + 2 n' k' + 2 k'^2)), n',k' distances",
+        "correct": "the same form in the SIGNED offsets n - floor(N/2), k - floor(N/4)",
+        "signed_form_wins_on_every_sample": true,
+        "consequence": "the Step-4 integral is over R^(n+1), so it is elementary for every n, not only n <= 2"
+      },
+      "step3_coefficient_A": {
+        "printed": "A = (c+d) - (4a+c-d) i",
+        "correct": "A = (c+d) - (4a-c+d) i, matching chi^(4a-c+d) in Lemma 1",
+        "chains_that_discriminate": [
+          "W_{1,1,1,0}",
+          "W_{1,1,2,1}",
+          "W_{1,1,0,2}",
+          "W_{2,1,2,0}",
+          "W_{1,1,3,0}",
+          "W_{2,1,0,3}"
+        ]
+      },
+      "main_theorem_b_ge_2_sign": {
+        "printed": "E = 2 pi (c+d) log 2 + (4a+3c-3d)/4 * 2 pi^2 i",
+        "correct_real_part": "-2 pi (c+d) log 2, as his Lemma 5 gives",
+        "verified": true,
+        "cases": {
+          "W_{0,2,1,0}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          },
+          "W_{0,2,1,1}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          },
+          "W_{0,3,2,0}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          }
+        }
+      },
+      "lemma_3_is_correct_as_printed": true
+    },
+    "closed_form": {
+      "notation": "n := c+d,  m := 4a-c+d,  A := n - m i",
+      "Q_inf": "psi * 2^{-n/2} * sqrt(2/A)",
+      "c_sigma": "2^{1/2-n} * (n^2 + m^2)^{-1/4}",
+      "tau_dg_implied": "2^{2n-2} * sqrt(n^2 + m^2)",
+      "Q_inf_resolved": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
+      "Re_E": "2 pi [ (1/2 - n) log 2 - (1/4) log(n^2 + m^2) ]",
+      "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+      "scope": "modulus AND phase; see the phase_resolution block. c_sigma depends on the modulus only, so the corpus's results are unaffected by the phase either way",
+      "chains": {
+        "W_{0,1,1,0}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": -1,
+          "abs_Q_inf_closed_form": "0.8408964152537145430311255",
+          "c_sigma_closed_form": "0.59460355750136053335875",
+          "tau_dg_predicted": "1.414213562373095048801689",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,0,1}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.8408964152537145430311255",
+          "c_sigma_closed_form": "0.59460355750136053335875",
+          "tau_dg_predicted": "1.414213562373095048801689",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 0,
+          "abs_Q_inf_closed_form": "0.5",
+          "c_sigma_closed_form": "0.25",
+          "tau_dg_predicted": "8.0",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,0}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": -2,
+          "abs_Q_inf_closed_form": "0.4204482076268572715155627",
+          "c_sigma_closed_form": "0.2102241038134286357577814",
+          "tau_dg_predicted": "11.31370849898476039041351",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,0,2}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 2,
+          "abs_Q_inf_closed_form": "0.4204482076268572715155627",
+          "c_sigma_closed_form": "0.2102241038134286357577814",
+          "tau_dg_predicted": "11.31370849898476039041351",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,1}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": -1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,1,2}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,1,0}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": 3,
+          "abs_Q_inf_closed_form": "0.562341325190349080394951",
+          "c_sigma_closed_form": "0.3976353643835253325869338",
+          "tau_dg_predicted": "3.162277660168379331998894",
+          "discriminates_A_sign": true
+        },
+        "W_{1,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 4,
+          "abs_Q_inf_closed_form": "0.3343701524882110120016165",
+          "c_sigma_closed_form": "0.1671850762441055060008083",
+          "tau_dg_predicted": "17.88854381999831757127339",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,2,1}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 3,
+          "abs_Q_inf_closed_form": "0.2427458858536617101418603",
+          "c_sigma_closed_form": "0.08582363099612990649292822",
+          "tau_dg_predicted": "67.88225099390856234248106",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,3,0}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": -3,
+          "abs_Q_inf_closed_form": "0.2427458858536617101418603",
+          "c_sigma_closed_form": "0.08582363099612990649292822",
+          "tau_dg_predicted": "67.88225099390856234248106",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,2}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": 0,
+          "abs_Q_inf_closed_form": "0.1767766952966368811002111",
+          "c_sigma_closed_form": "0.04419417382415922027505277",
+          "tau_dg_predicted": "256.0",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 8,
+          "abs_Q_inf_closed_form": "0.2462395302527261632522124",
+          "c_sigma_closed_form": "0.1231197651263630816261062",
+          "tau_dg_predicted": "32.98484500494128439857128",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,0,2}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 6,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.1405853312975872700987378",
+          "tau_dg_predicted": "25.29822128134703465599115",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,4,0}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": -4,
+          "abs_Q_inf_closed_form": "0.1486508893753401333396875",
+          "c_sigma_closed_form": "0.03716272234383503333492187",
+          "tau_dg_predicted": "362.0386719675123324932323",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,2,0}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 6,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.1405853312975872700987378",
+          "tau_dg_predicted": "25.29822128134703465599115",
+          "discriminates_A_sign": true
+        },
+        "W_{1,1,3,0}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,3,1}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": -2,
+          "abs_Q_inf_closed_form": "0.1671850762441055060008083",
+          "c_sigma_closed_form": "0.04179626906102637650020207",
+          "tau_dg_predicted": "286.2167011199730811403742",
+          "discriminates_A_sign": false
+        },
+        "W_{3,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 12,
+          "abs_Q_inf_closed_form": "0.2027307249193849309631583",
+          "c_sigma_closed_form": "0.1013653624596924654815791",
+          "tau_dg_predicted": "48.66210024238575751199747",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,0,3}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 11,
+          "abs_Q_inf_closed_form": "0.1480758268005812296703671",
+          "c_sigma_closed_form": "0.05235271063024785057724581",
+          "tau_dg_predicted": "182.4280680158620766617678",
+          "discriminates_A_sign": true
+        }
+      },
+      "chains_tested": 20,
+      "mismatches": 0,
+      "worst_relative_error_below": "1e-5",
+      "verification_method": "Q_N from Lemma 1 in log space, Richardson-extrapolated from N = 1600, 3200; float64 is adequate because every term is normalised by S~_N, and only the verdict reaches this witness"
+    },
+    "bridge_to_c_sigma": {
+      "L5a1": {
+        "chain": "W_{0,1,1,0}",
+        "cusps": 2,
+        "c_sigma_derived": "0.59460355750136053335875",
+        "c_sigma_measured_in_corpus": "0.5946035575013605333606037",
+        "c_sigma_rel_diff": "3.11756e-21",
+        "tau_dg_predicted": "1.414213562373095048801689",
+        "tau_dg_computed_in_corpus": "1.414213562373095048801689",
+        "tau_dg_rel_diff": "1.85269e-61"
+      },
+      "L6a4": {
+        "chain": "W_{0,1,1,1}",
+        "cusps": 3,
+        "c_sigma_derived": "0.25",
+        "c_sigma_measured_in_corpus": "0.2508724811292303805497315",
+        "c_sigma_rel_diff": "0.00347779",
+        "tau_dg_predicted": "8.0",
+        "tau_dg_computed_in_corpus": "8.0",
+        "tau_dg_rel_diff": "0.0"
+      }
+    },
+    "tau_dg_preregistered_predictions": {
+      "L8n5": {
+        "chain": "W_{0,1,2,0}",
+        "cusps": 3,
+        "tau_dg_predicted": "11.31370849898476039041351",
+        "tau_dg_computed": "11.31370849898476039041351",
+        "rel_diff": "1.81114e-71"
+      },
+      "L10n100": {
+        "chain": "W_{0,1,2,1}",
+        "cusps": 4,
+        "tau_dg_predicted": "50.5964425626940693119823",
+        "tau_dg_computed": "50.5964425626940693119823",
+        "rel_diff": "2.7167e-71"
+      },
+      "L10n103": {
+        "chain": "W_{0,1,3,0}",
+        "cusps": 4,
+        "tau_dg_predicted": "67.88225099390856234248106",
+        "tau_dg_computed": "67.88225099390856234248106",
+        "rel_diff": "1.81114e-71"
+      }
+    },
+    "phase_resolution": {
+      "Q_inf": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
+      "psi_sign": "+, i.e. the sign in his Lemma 5, NOT the one this probe's retracted version used",
+      "measured_at": "N = 0 mod 16, where his CS factor e^{(4a+7c-7d)N pi i/8} is exactly 1, so no convention is imported",
+      "corroboration": "his own b>=2 main-theorem constant has imaginary part (4a+3c-3d)/4 * 2 pi^2 i, agreeing exactly",
+      "chains": {
+        "W_{0,1,1,0}": {
+          "err_psi_plus": "1.111e-6",
+          "err_psi_minus": "1.189",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,0,1}": {
+          "err_psi_plus": "1.111e-6",
+          "err_psi_minus": "1.189",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,1,1}": {
+          "err_psi_plus": "8.166e-7",
+          "err_psi_minus": "8.166e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        },
+        "W_{0,1,2,0}": {
+          "err_psi_plus": "5.563e-7",
+          "err_psi_minus": "0.8409",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,0,2}": {
+          "err_psi_plus": "5.563e-7",
+          "err_psi_minus": "0.8409",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,2,1}": {
+          "err_psi_plus": "8.482e-7",
+          "err_psi_minus": "0.3976",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,1,2}": {
+          "err_psi_plus": "8.482e-7",
+          "err_psi_minus": "0.3976",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{1,1,1,0}": {
+          "err_psi_plus": "1.053e-6",
+          "err_psi_minus": "0.7953",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{1,1,1,1}": {
+          "err_psi_plus": "3.97e-7",
+          "err_psi_minus": "3.97e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        },
+        "W_{1,1,2,1}": {
+          "err_psi_plus": "6.486e-7",
+          "err_psi_minus": "0.3433",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,3,0}": {
+          "err_psi_plus": "6.486e-7",
+          "err_psi_minus": "0.3433",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,2,2}": {
+          "err_psi_plus": "8.902e-7",
+          "err_psi_minus": "8.902e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        }
+      },
+      "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+      "cs_coefficient": {
+        "note": "q in CS = -q/8 * 2 pi^2, measured from the N-linear phase arg(R_{N+1}/R_N) -> -q pi/8",
+        "derived": "4a-c+d if c+d=1 else 4a+7c-7d",
+        "stated_in_main_theorem": "4a+c-d if c+d=1 else 4a-7c+7d",
+        "relation": "the same (c-d) sign flip as slip 2 — indeed (4a+c-d) IS the expression Step 3 reuses for A. The branch difference is phi_N, defined differently in the two cases and contributing a linear phase -8(c-d) in the second",
+        "lemma4_proof_is_correct": "his Q_N definition uses (4a+7c-7d), the right one, so Q_inf is well defined",
+        "chains": {
+          "W_{0,1,1,0}": {
+            "q_measured": "-1.0000",
+            "q_derived": -1,
+            "q_stated": 1,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,0,1}": {
+            "q_measured": "1.0000",
+            "q_derived": 1,
+            "q_stated": -1,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{1,1,1,0}": {
+            "q_measured": "3.0000",
+            "q_derived": 3,
+            "q_stated": 5,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,2,0}": {
+            "q_measured": "-2.0000",
+            "q_derived": 14,
+            "q_stated": -14,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,2,1}": {
+            "q_measured": "7.0000",
+            "q_derived": 7,
+            "q_stated": -7,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,3,0}": {
+            "q_measured": "5.0000",
+            "q_derived": 21,
+            "q_stated": -21,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{1,1,0,2}": {
+            "q_measured": "6.0000",
+            "q_derived": -10,
+            "q_stated": 18,
+            "derived_agrees": true,
+            "stated_agrees": false
+          }
+        }
+      }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "one-loop-c-sigma-percusp-dissolution.witness.json",
+        "sha256": "9a148a00706c1b3b38e6dd398eee4adad241da8740231a7c2eb0447523ea94e8",
+        "size_bytes": 4345,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
+      }
+    ]
+  }
+}

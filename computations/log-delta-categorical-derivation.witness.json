@@ -1,128 +1,153 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T06:18:52.452257+00:00",
-  "commitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
+  "computedAt": "2026-08-29T11:05:16.890910+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "data_loaded",
-      "computed": 2.22456607,
+      "computed": "2.22456607",
       "expected": 2.22456607,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "B(D) AME MeV",
       "source": "AME 2020"
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 31,
   "computation": "log-delta-categorical-derivation",
   "scriptFile": "log_delta_categorical_derivation.py",
-  "scriptHash": "d510d3833a7f",
-  "scriptCommitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
+  "scriptHash": "22264ba8c7f5",
+  "scriptCommitSha": "2b48a3bf718539b8f05027e54e402f42f6e3245a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/log_delta_categorical_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/log_delta_categorical_derivation.py"
+  },
   "description": "Categorical-derivation test for the log-Δ form (PR #787 Phase 2 5.22× residual). Applies prop:unified-curvature-rank-mass-formula with structural α_k and tests three Wedderburn-weighting forms (y_λ, w_λ, identity) on D, T, ³He, ⁴He.",
   "parameters": {
-    "q0": "1.1099785955541805",
-    "hbar_q": "0.09908172643569887",
-    "z_mark": "0.499320334033598",
-    "catalan_G": "0.915965594177219"
+    "q0": "1.1099785827513808",
+    "hbar_q": "0.09908171604425853",
+    "z_mark": "0.6126880371464652",
+    "catalan_G": "0.915965594177219015054603514932384110774149374281672134266498119621763"
   },
   "data": {
     "unified_formula_per_weight_form": {
       "y_lambda": {
         "D": {
-          "m_predicted": "0.352379744271894",
+          "m_predicted": "0.4416718600368591169672059019316883252422695722760319043253396873698756",
           "B_AME": "2.22456607",
-          "ratio": 0.15840381143271404,
-          "log_abs_ratio": -1.842607737816084
+          "ratio": 0.1985429275368113,
+          "log_abs_ratio": -1.616749942604344
         },
         "T": {
-          "m_predicted": "0.101329415733448",
+          "m_predicted": "0.1864286533318145128509621040211016688519666938447454689110256306398375",
           "B_AME": "8.481798",
-          "ratio": 0.011946690516969135,
-          "log_abs_ratio": -4.427300983147424
+          "ratio": 0.021979850655699948,
+          "log_abs_ratio": -3.8176291245838874
         },
         "3He": {
-          "m_predicted": "0.117016552488048",
+          "m_predicted": "0.2208586778647082780125516808585761335887620012133912941290211599780097",
           "B_AME": "7.7180428",
-          "ratio": 0.015161428294754732,
-          "log_abs_ratio": -4.189000688512253
+          "ratio": 0.028615891824894813,
+          "log_abs_ratio": -3.5537930572640857
         },
         "4He": {
-          "m_predicted": "0.021588833130623",
+          "m_predicted": "0.06541135810099621658073060905867063511135850951118581626837530469492423",
           "B_AME": "28.295674",
-          "ratio": 0.0007629729240810079,
-          "log_abs_ratio": -7.1782880134418265
+          "ratio": 0.0023117087827982546,
+          "log_abs_ratio": -6.069768295102802
         },
         "__stats__": {
-          "max_over_min": 207.61393547944,
-          "mean_log_abs_ratio": -4.409299355729397
+          "max_over_min": 85.88578674537067,
+          "mean_log_abs_ratio": -3.76448510488878
         }
       },
       "w_lambda": {
         "D": {
-          "m_predicted": "1.64531911647041",
+          "m_predicted": "1.83967169107687006919861792610534770188294107062358537582905430512955",
           "B_AME": "2.22456607",
-          "ratio": 0.7396135087461847,
-          "log_abs_ratio": -0.3016275147006194
+          "ratio": 0.8269800191085671,
+          "log_abs_ratio": -0.18997474494129077
         },
         "T": {
-          "m_predicted": "9.67177870981398",
+          "m_predicted": "9.871846937297916800406855289660976636545609034466688249637515206961485",
           "B_AME": "8.481798",
-          "ratio": 1.140298166711113,
-          "log_abs_ratio": 0.1312897779548223
+          "ratio": 1.163886116752358,
+          "log_abs_ratio": 0.15176450668119543
         },
         "3He": {
-          "m_predicted": "9.72530433307125",
+          "m_predicted": "9.934926298943674686714837039678149062385357374809963474097606597545924",
           "B_AME": "7.7180428",
-          "ratio": 1.260073905404003,
-          "log_abs_ratio": 0.2311703743257867
+          "ratio": 1.287233895482372,
+          "log_abs_ratio": 0.25249564907336686
         },
         "4He": {
-          "m_predicted": "0.820408631864678",
+          "m_predicted": "28.65788832217591442749463610827835832343313217148458826469130155060518",
           "B_AME": "28.295674",
-          "ratio": 0.028994136413385236,
-          "log_abs_ratio": -3.5406616620812392
+          "ratio": 1.0128010494528568,
+          "log_abs_ratio": 0.012719808596867388
         },
         "__stats__": {
-          "max_over_min": 43.45961153794827,
-          "mean_log_abs_ratio": -0.8699572561253124
+          "max_over_min": 1.5565477590013963,
+          "mean_log_abs_ratio": 0.056751304852534726
         }
       },
       "identity": {
         "D": {
-          "m_predicted": "21.9792735720392",
+          "m_predicted": "22.97023024849069422056278718462334539331255206482015598309781667566346",
           "B_AME": "2.22456607",
-          "ratio": 9.880252094305833,
-          "log_abs_ratio": 2.290538027052258
+          "ratio": 10.325712757315719,
+          "log_abs_ratio": 2.3346371686500267
         },
         "T": {
-          "m_predicted": "269.732635311423",
+          "m_predicted": "274.8393293661945501913010420952289220519747648621854495385550891138867",
           "B_AME": "8.481798",
-          "ratio": 31.801351000274153,
-          "log_abs_ratio": 3.45950877316905
+          "ratio": 32.403427830537176,
+          "log_abs_ratio": 3.4782642144409524
         },
         "3He": {
-          "m_predicted": "268.83116211991",
+          "m_predicted": "274.1375462646107354978181563715345925909271974102581981626751898904003",
           "B_AME": "7.7180428",
-          "ratio": 34.8315199962237,
-          "log_abs_ratio": 3.5505227238570374
+          "ratio": 35.51904976020744,
+          "log_abs_ratio": 3.570069165519709
         },
         "4He": {
-          "m_predicted": "212.445839163222",
+          "m_predicted": "1610.682604877424842423391211003996274206837506941609477528255948092911",
           "B_AME": "28.295674",
-          "ratio": 7.508067811469063,
-          "log_abs_ratio": 2.015978150578662
+          "ratio": 56.92328109510397,
+          "log_abs_ratio": 4.041704415536127
         },
         "__stats__": {
-          "max_over_min": 4.639212227547583,
-          "mean_log_abs_ratio": 2.8291369186642514
+          "max_over_min": 5.5127701528181765,
+          "mean_log_abs_ratio": 3.3561687410367043
         }
       }
     },
     "canonical_status": "canonical-with-empirical-assignment",
-    "best_weight_form": "identity",
-    "best_max_over_min": 4.639212227547583,
-    "verdict": "IMPROVES — identity gives max/min = 4.64 (better than Phase 2's 5.22×)"
-  }
+    "best_weight_form": "w_lambda",
+    "best_max_over_min": 1.5565477590013963,
+    "verdict": "PROMISING — w_lambda gives max/min = 1.56 (close to constant)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

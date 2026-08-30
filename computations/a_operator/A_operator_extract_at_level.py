@@ -10,9 +10,25 @@
    They are also rank-deficient min-norm fits (suspect per
    ``docs/audits/2026-06-16-unjustified-least-squares-fitting-audit.md``). The
    correct, non-fitted replacement is the closed-form **categorical** interface
-   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``
-   (``a_operator_categorical.py`` / ``a_operator_gauge_align.py``, verified exact
-   at 1e-49). Only the H_6 deuteron extract is full-rank/correct and live (A=2).
+   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``. **It is implemented at
+   ``a_operator_gauge_align.gauge_aligned_A_combiner_general(lam, n_inner,
+   n_block, q_str, dps)``** — which takes ``q_str``, so unlike the frozen
+   extracts here it can be built at ANY q (verified at q₀, at the bar image and
+   at q = 1.5). The closure-b design doc records the deuteron categorical A as
+   DONE, exact, 891/891 PASS at 1e-25.
+
+   NAVIGATION WARNING (bean ``qou-8chw``, 2026-08-24). Do NOT look for it at
+   ``a_operator_categorical.categorical_A_interface``: that is a **stale**
+   ``raise NotImplementedError`` stub with zero callers whose docstring still
+   calls the construction "the crux ~500 LOC". I read that stub, concluded the
+   replacement did not exist, and shipped a PR saying so — it took re-reading
+   the design doc to find the working function under a different name. The
+   stub should be removed or made to delegate.
+
+   Separately: the "1e-49" this paragraph used to quote is a *different*
+   result — the combiner identity at λ⊢12 / A=4 in ``a_operator_recursive.py``
+   — not a verification of the interface operator. The interface figure is the
+   1e-25 above. Only the H_6 deuteron extract is full-rank/correct and live (A=2).
    See ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
 
 Generalization of `sublemma_2_1_A_operator_extract_h9.py` (H_9-specific)
@@ -110,18 +126,33 @@ if str(HERE) not in sys.path:
 from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q_FLOAT  # noqa: E402
+from canonical_braid_crossings import d_for_ctype  # noqa: E402
 
 Q0 = float(Q_FLOAT)
 H = Q0 - 1.0 / Q0   # h = q − q⁻¹ at q_0
 
-# Per the standard atomic-braid convention (mass_at_3A_proper.atom_braid_word_3A):
-#   pp: σ at gen 3k+2 (positive, d=0)
-#   nn: σ + (-h)·I (Hecke negative, d=-h)
-#   pn: σ + (-h/2)·I (averaged, d=-h/2)
+# Interface coefficients, DERIVED from the canonical classifier rather than
+# typed here. The comment above this table used to say it followed "the standard
+# atomic-braid convention (mass_at_3A_proper.atom_braid_word_3A)" while `pn` read
+# `-H/2` — and that had stopped being true: the canonical builder emits
+# `averaged_weighted` at a p-n boundary, `d = -h(1/2 - δ/4)`, which is
+# 7.190163e-05 away from `-h/2`.
+#
+# This was a THIRD private ctype vocabulary, keyed pp/nn/pn. Both existing
+# detectors are structurally blind to it: `test_ctype_consumer_coverage` Part B
+# looks for the {sigma, sigma_inv, averaged, averaged_weighted} vocabulary, and
+# Part F looks for a `pn_convention=` kwarg. This table has neither, while being
+# the thing that actually sets the interface in the mass-table path. Bean
+# `qou-cds4`.
+#
+# The pp and nn rows were already exactly right — verified against
+# `atom_canonical_crossings`, which emits `sigma` at a p-p boundary and
+# `sigma_inv` at n-n, whose `d` values match `0.0` and `-H` to the bit. Only
+# `pn` was wrong, which is why this is a one-row correction and not a rewrite.
+_IFACE_CTYPE = {"pp": "sigma", "nn": "sigma_inv", "pn": "averaged_weighted"}
 INTERFACE_COEFS: dict[str, tuple[float, float]] = {
-    "pp": (1.0, 0.0),
-    "nn": (1.0, -H),
-    "pn": (1.0, -H / 2),
+    iface: (1.0, float(d_for_ctype(ct, H)))
+    for iface, ct in _IFACE_CTYPE.items()
 }
 
 
@@ -439,6 +470,34 @@ def main() -> int:
         .add_data("n_consistent", n_consistent)
         .add_data("n_underdetermined", n_underdet)
         .add_data("results_per_lambda", results_per_lambda)
+        .add_data("precision_tier", "float64")
+        .add_data("deprecated", {
+            "reason":
+                "np.linalg.lstsq on dense complex systems, residual ~1e-14. "
+                "A genuine float64 COMPUTATION, not a float64 exit -- there "
+                "is no higher-precision value being cast away here. An "
+                "mpmath rewrite is not available at any budget: mp.qr_solve "
+                "at 50 dps measures 2.62 / 8.91 / 21.32 / 76.65 s at "
+                "n_unknowns 64 / 96 / 128 / 192, a fitted exponent of 3.07, "
+                "and the largest real block is 3,390 unknowns -- ~145 h for "
+                "one block, ~17,000 h across 30 blocks x 4 witnesses. Robust "
+                "to the exponent: even at n^2 it is ~500 h. Bean qou-1lr8.",
+            "not_production":
+                "Reachability established by reading the CONTROL FLOW, not by "
+                "grep and not by import cone -- both of those gave wrong "
+                "answers first, in opposite directions (qou-1lr8 records "
+                "them). canonical_tr_m_via_branching sets n = 3*A and returns "
+                "via the fine-Bratteli transfer for A >= 3 BEFORE the extract "
+                "load, so the load is reached only at A == 2 where n is "
+                "always 6. NO H_9 entry is reachable from it, and the "
+                "canonical mass table reaches these witnesses only through "
+                "that function. The two real consumers -- "
+                "sublemma_2_1_h9_tritium_verify.py and "
+                "sublemma_2_1_h12_helium_4_framework.py -- are ANCHOR-ONLY: "
+                "neither contains q_val, q0, Q_MP or Q_50_DIGIT anywhere, so "
+                "the hybrid-off-anchor failure mode qou-8chw fixed for the "
+                "deuteron cannot arise. Closes that bean's surviving item.",
+        })
     )
     out = builder.save()
     print(f"  Witness: {out.name}")

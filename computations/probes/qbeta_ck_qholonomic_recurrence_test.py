@@ -207,7 +207,7 @@ def extract_empirical_ladder(q0):
 
     q = q0
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q = (q - 1) / q
     hq2 = hbar_q ** 2
     alpha = (z - 1) * h / 2
@@ -570,6 +570,15 @@ def main():
 
     out = HERE / "qbeta-ck-qholonomic-recurrence-test.witness.json"
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
     print(f"\n  witness -> {out}")
     return 0

@@ -67,8 +67,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
 with mp.workdps(50):
@@ -203,7 +204,7 @@ def main() -> int:
            ("mu=lambda_min-eps", lambda sub, ev: ev[0] - mp.mpf("1e-6"))]
 
     def at(q):
-        sub = substrate_ladder_quantities(q)
+        sub = substrate_ladder_quantities(q, convention="C")
         G = gram(q)
         ev = eigs(G)
         O = left_reg_operator(q, FIG8)

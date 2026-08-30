@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Φ(q)=Q/m_e root matches S(q)=0 root q*=1.109978593031523288402328 to |Δ|=2.44e-72"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Vol(4₁)=2·Cl₂(π/3)=2·Im Li₂(e^{iπ/3}); the sole transcendental constant in Φ is a Bloch–Wigner dilog value"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "dq*/dQ_β=1/(m_e·Φ'(q*)) residual 0.0; Φ'(q*)=-3.630941≠0"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Φ' sign-definite on a nbhd of q* ⇒ StrictMono ⇒ q* strictly monotone in R=Q_codata/m_e ⇒ NOT an experiment-independent constant (scope-(b) exclusion invariant)"
     }
   ],

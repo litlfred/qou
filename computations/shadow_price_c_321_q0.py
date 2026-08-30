@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Compute C_{[3,2,1]} at q_0 — the BW shadow-price coefficient for
@@ -68,6 +69,13 @@ def trace_per_dim_321(q):
     """tr(σ_g) / dim for self-conjugate λ = h/2 (Wigner-2 proposition)."""
     return (q - 1 / q) / 2
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 if __name__ == "__main__":
     print("BW SHADOW PRICE C_{[3,2,1]} AT q_0")
@@ -170,5 +178,14 @@ if __name__ == "__main__":
         ),
     }
     out = Path(__file__).parent / "shadow-price-c-321-q0.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

@@ -18,10 +18,24 @@
 
 ## TL;DR
 
+> **🛑 Absolute mass EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The
+> framework no longer claims/targets/scores **absolute** nucleon or atomic mass
+> in MeV (m_p, m_n, m_⁴He). Absolute mass = `m_e · (dimensionless ratio)`, and
+> m_e (CAL-1) sets the MeV scale *by fiat* — so the only content is the ratio;
+> reporting m_p in MeV double-counts the calibration. The L2 scorecard below is
+> therefore reframed to the **dimensionless / differential** predictions only
+> (`m_μ/m_e`, `m_K/m_π`, `Q_β`, `Δ_pn`, `B(K)`); the absolute `m_p`/`m_n` rows —
+> perpetual ~400× misses that were only ever met by fitting — are **removed, not
+> carried**. No proved result or compute is deleted; the MeV numbers remain
+> derivable as `m_e × ratio`, they are simply no longer a claim. Full ruling:
+> [`audits/2026-08-11-excise-absolute-mass-notion.md`](audits/2026-08-11-excise-absolute-mass-notion.md).
+> The "N/7 meet" figures below are retained for historical continuity but are
+> **superseded** by the reframed (absolute-mass-free) scorecard.
+
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **CERTIFIED (2026-07-13) — 6/6 production atoms** (p, n, D, T, ³He, ⁴He). `cross_check_trM_1ppb.py` reports `allPassed=True` (`all_atoms_within_1ppQ`, `character_engine_matches_closed_form`); worst closed-form χ-anchor \|Δ\| = **5.6e-50** (proton 9.3e-50, neutron 3.3e-50), no float64 in the hot path. The last gap (⁴He, H₁₂) closed by building `pyhecke-native` from source. See [`audits/2026-07-13-l1-4he-certification-complete.md`](audits/2026-07-13-l1-4he-certification-complete.md). **Supersedes** the 2026-06-17 gap ([`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md)): the float64-limited `markov_peel` witness and the Habiro-divergence were replaced by the mpf / native-Rust path. *(The aggregate `onepb-status-dashboard.witness.json`, dated 2026-07-06, is stale and predates this certification.)* |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **1/5 scoreable meet** — **`m_K/m_π` alone**, the only genuine prediction to meet. (Corrected 2026-08-18: this read "2/7 meet — one calibration anchor (m_e) + m_K/m_π". `m_e` is the CAL-1 **input** that fixes the MeV unit — error *defined* zero, not measured — so it is not scoreable, on the same grounds the dashboard already excludes `m_p`. Quote `beats_100x_scoreable`/`scoreable_total`.) `m_K/m_π` meets (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat RESOLVED 2026-08-09, owner directive; LANDED IN CODE 2026-08-22, PR #5467 — for 13 days this ruling lived only in this sentence, and every producer, the dashboard, the tracker and the content block kept shipping the truncation** — the EM factor is now the **full series** `1 + log(1+ℏ_q)`, not the two-term truncation `(3q²−1)/(2q²)`. The truncation scored better (46.80 vs 102.86 ppb on the ratio², i.e. 23.40 vs 51.43 ppb on the ratio) but was not converging on anything: 3 terms gives 107.00 ppb and 4 terms 102.53 ppb, so the series converges to ~102.9 and the 2-term stop lands closer only because under-counting the EM term partially cancels the model's own positive residual. A truncation chosen because it matches is a fit. **It still MEETS L2**: σ_exp(m_K/m_π) = 26364.6 ppb ⇒ target 263.6 ppb, and the full series sits at 51.43 ppb — 5.13× margin (was 11.27×). So the caveat is retired at no cost to the scorecard, and `qou-v6oz`'s question ("why is `(3q²−1)/(2q²)` the physical object?") is **dissolved rather than answered** — it is not the physical object, it was where the series happened to be stopped; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_scoreable=1`, `scoreable_total=5`; the legacy `beats_100x_count=2` counts the two calibration inputs and is not an accuracy result). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -118,6 +132,21 @@ to be validated, not a result. Harness:
 > [`audits/2026-05-28-mu-p-tension-substrate-floor.md`](audits/2026-05-28-mu-p-tension-substrate-floor.md).
 > The μ-p 240 ppb is the floor of the *current low-order shell*; it is
 > *derivable-below* (lower N residual), but *not fittable-below*.
+>
+> **The floor is CONVENTION-INDEPENDENT — do not spend a tranche
+> re-deriving it (proved 2026-08-24).** The C→D migration moved the Markov
+> parameter `z` by **+22.70 %** and moved α\* by 14.741 %, so re-deriving the
+> two q₀ pins under D looks like obvious due diligence. It is a **no-op**:
+> the **muon** pin `q = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` contains no Markov
+> parameter at all, and the **proton** pin's closed-form trace
+> `|tr_M(β_Bor)| = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` is **already convention D** —
+> `raw_Ocneanu(z = q³/(q²+1)) − closed_form ≡ 0` exactly, symbolically, for
+> all `q`, while convention C leaves a nonzero residual carrying half-integer
+> powers of `q`. So 11.537118 ppb in q₀ / ~240 ppb in m_p *is* the D-frame
+> number. This makes the tension a **more** robust target, not less: it
+> cannot be explained away as an artifact of a superseded trace convention.
+> Proof + method:
+> [`audits/2026-08-24-mu-p-tension-is-already-convention-d.md`](audits/2026-08-24-mu-p-tension-is-already-convention-d.md).
 
 ## L1 — compute precision (default 1 ppQ)
 
@@ -173,6 +202,15 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
+> **Anchor correction 2026-08-08.** The Q_β / m_n / Δ_pn rows previously read
+> 1247 / 2.39 / 755 ppb. Those came from a `qbeta-ck-cache` built at the **muon**
+> q₀ and consumed by a **proton**-pinned dashboard — a layer straddle worth
+> 29.96 ppb on Q_β. The cache is now regenerated at the proton pin and the rows
+> above are the layer-consistent values, which is why they now agree with the
+> 1279 ppb / 164.0× figure already quoted in §"Key distinctions" below. No
+> prediction improved or degraded; the numbers were mislabelled, not wrong.
+> Detail: [`audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md`](audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md).
+
 > **Table updated 2026-07-04 (m_p de-fitted; post q₀ re-pin #1422 +
 > de-fitting #1416).** Only m_e meets trivially (scale anchor, err 0);
 > **all five genuine predictions miss** the 100× target, and m_p — the
@@ -186,15 +224,20 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
 |---|---|---:|---:|---:|---|
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
-| m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 1.35 ppb (de-fitted round-trip) | **misses ~437×** (documented-pin round-trip; the 0.0004 ppb was a dropped fitted tower, 2026-07-04) |
-| m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
-| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
-| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.39 ppb | **misses ~416×** (rides on m_p; +1.35 ppb after the tower drop) |
-| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
-| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
+| ~~m_p~~ (absolute) | ~~CAL-2 numerical anchor~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; the ratio `m_p/m_e` remains the CAL-2 pin, a calibration *input*, not a scored prediction) |
+| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) — ratio, retained |
+| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) — decay Q-value, retained |
+| ~~m_n~~ (absolute) | ~~prediction (Path C)~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; content lives in `Δ_pn` below + the m_e scale) |
+| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** — splitting, retained |
+| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) — ratio, retained |
 
-**Honest summary: 2/7 "meet" — 1 calibration anchor (m_e)
-plus m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
+**Honest summary: 1/5 SCOREABLE meet — `m_K/m_π` alone.** (Corrected
+2026-08-18. This line previously read "2/7 'meet' — 1 calibration anchor
+(m_e) plus m_K/m_π", which named the anchor and then counted it. `m_e` is
+the CAL-1 input that fixes the MeV unit; its error is *defined* zero, not
+measured, so it is not a prediction and does not belong in an accuracy
+score — the same grounds on which the dashboard already excludes `m_p`.)
+m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
 in PR #1442; was previously listed as missing by ~1098× pre-merge).
 m_K/m_π is the first genuine prediction to meet the 100× target; the
 other 5 (m_p, m_μ, Q_β, m_n, Δ_pn) still miss it.** (Was 3/7 through
@@ -256,6 +299,25 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 > **L2 binding-energy targets remain presently unreachable** — not because
 > of compute precision, and no longer because of the per-partition value,
 > but because the super-pairwise extensive **magnitude** term is open R&D.
+>
+> **ℓ¹-ceiling sharpening (2026-08-07, `free_parameters = 0`).** The "magnitude
+> is open" statement is now a *proved quantitative bound*, not an inference. The
+> ℓ¹ norm `Σ_λ |y_λ χ^λ Δ_λ|` — the absolute ceiling reachable with **perfect
+> constructive interference and zero cancellation** — is only `[0.36, 0.59]` of
+> the AME target across **all four** atoms (D 0.516 · T 0.358 · ³He 0.592 ·
+> ⁴He 0.406). So **no re-signing, no re-weighting, and no `Δ_λ` re-derivation
+> can close the deficit** — the entire "find a better `Δ_λ`" family (where all
+> six-plus prior ansätze lived) is foreclosed as scope-(a). A genuinely **new
+> additive term is required**, and the ℓ¹ ceiling is the quantitative bar it
+> must clear: it must supply **41–64 % of each target on its own**. The ≥3-body
+> sector is the coherent one (`ℓ(λ)=3` cancellation ratio 0.98–1.00 at T/³He),
+> and ⁴He's two-row sector is suppressed ~29,000× (a *strong, unproved*
+> coincidence at the doubly-magic `[1⁴]` SU(4) singlet — not a proved selection
+> rule). Current identified candidate for the new term: the He4-local ≥4-body
+> cumulant `b₄ = −ln det(I + m·S)` (`eig(S) = {±√5, ±1}`), whose lone open scalar
+> `m ∈ (0, 1/√5)` must be **derived forward**, not selected by AME (fit trap:
+> no Σ(2,3,5) object is structurally forced below the ceiling). Full probe:
+> [`docs/audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`](audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md).
 
 | Atom | B_AME (MeV) | σ_B / B | 100× target |
 |---|---:|---:|---:|
@@ -393,15 +455,47 @@ derivation lands"* — points at a route the owner **permanently gated** on
 read as *unfixable*, which is precisely the over-narrowing the refuted-scope
 discipline exists to prevent.
 
-**Open compute levers** (unchanged, plus the current state of the first): (i) the
-c₃ D-ladder resummation — the two-variable form `log R = E(ũ) + h·D(ũ)` holds
-exactly and the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`), so closing
-it needs genuine Écalle/Φ_b resummation; numerical extraction of the instanton
-action is **length-blocked at k=41** (growth form unresolved), and the
-fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**, not the
-substrate meridian (see `qou-qb8e`); and (ii) the α_EM per-loop theta-factor
-(#3911). The listed dead ends stay dead as **scope-(a)** results
-(fixed-order/anchor-invariant resummation; geometric q₀; ratio-based W_λ).
+**Open compute levers**: (i) **WITHDRAWN 2026-08-09 — the c₃ D-ladder
+resummation was never a lever.** The two-variable form `log R = E(ũ) + h·D(ũ)`
+still holds exactly, but the ladder is **convergent**, with radius
+
+    ρ = ũ(q*) = 0.14279999664468968890572088577932032058109273315046
+    q*        = 1.4898947996883652482253115227781736826531279179281
+
+`q*` being the unique real root > 1 of the irreducible degree-12 factor of the
+`Δ_net` numerator — a **zero of `Q_b`**, where `log R` has a plain logarithmic
+branch point. The 2026-07-12 singularity search covered the sqrt branch points,
+the `ũ′ = 0` folds, the `Q_A` zeros and the `cos α_eff` zeros, but **not the
+`Q_b` zeros**; all three nearest singularities are `Q_b` zeros. Closed form
+`D(w) = φ(w)·log(1 − w/ρ) + ψ(w)` with `φ(ρ) = 1/(2h*)`, `h* = q* − 1/q* =
+0.818706471352`, giving `d_k = −(1/(2h*))·ρ^{−k}/k·(1 + O(1/k))` with no free
+parameters.
+
+There is therefore **nothing to resum**: Écalle/Φ_b resummation, the instanton
+action, and the Stokes ambiguity were answering an ill-posed question. The old
+text read "the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`) … numerical
+extraction of the instanton action is **length-blocked at k=41** … the
+fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**". Each
+clause is superseded: `C` is a spurious parameter decaying like `1/log k`; the
+k=41 wall was tooling cost, not information (k ≤ 21 already suffices); the
+Stokes probe's "structural threshold `r* = 0.147`" is the ratio-test estimate of
+`ρ` itself, and "ambiguity unsuppressed on the fibre" is the series diverging
+outside its disk. The discriminator that settles it on the committed k ≤ 21
+data: **`k²Δ²log|d_k| → 1` while `kΔ² → 0`, i.e. `κ = 0`.**
+
+Practical consequence, and it is a gain: at the CAL-2/muon pin `ũ₀ = 0.0094540`
+sits **15.10× inside `ρ`**, so `h·D(ũ₀) = −0.003486063636129187405605313929674524979867`
+is pinned to 38 digits by the already-committed ladder with a rigorous tail
+bound. **This does not derive c₃, does not change its `cal-anchored` tier, and
+does not close L2** — the μ–p anchor swing remains 29.96 ppb = 3.84× the target,
+and the carrier is still anchor-blind (spread 1.23e-9). The real gate is
+unchanged: the map from a bar-odd, anchor-blind fibre object to an
+anchor-*dependent* number.
+[`docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md).
+
+Remaining lever: (ii) the α_EM per-loop theta-factor (#3911). The listed dead
+ends stay dead as **scope-(a)** results (fixed-order/anchor-invariant
+resummation; geometric q₀; ratio-based W_λ).
 
 This is a *ceiling record*, not a target change: the L2 targets stand. Full
 analysis: [`docs/audits/2026-07-18-1ppq-action-plan.md`](audits/2026-07-18-1ppq-action-plan.md);
@@ -464,10 +558,12 @@ When reading dashboards:
 - **L1 dashboards** (`onepb-status-dashboard`) → cross-method identity at
   fixed compounds. Currently 0.0 / 92.79 ppb (publication rounding floor).
 - **L2 dashboards** (`per-observable-100x-status`) → predicted vs CODATA.
-  Currently **2/7** (m_e anchor + m_K/m_π prediction); the 5 remaining
-  (m_p, m_μ, Q_β, m_n, Δ_pn) miss the 100× target by ~159× to ~964×
-  (witness `beats_100x_count=2`; m_p dropped from "meet" 2026-07-04 with
-  the fitted Habiro tower — de-fitted round-trip +1.35 ppb, ~437×).
+  Currently **1/5 scoreable** (`m_K/m_π` alone); `m_p` and `m_e` are
+  calibration **inputs**, not predictions, and are excluded. The four
+  failing predictions (m_μ, Q_β, m_n, Δ_pn) miss by ~152× to ~970×.
+  Quote `beats_100x_scoreable` / `scoreable_total` from the witness;
+  `beats_100x_count=2` counts the inputs and must not be quoted as an
+  accuracy result (corrected 2026-08-18).
 - **Mass-table sweep** (`mass-table-ppb`) → 10/16 with zero-param rule;
   mean |err| 6.80%. This is downstream of Borromean per-isotope extension.
 

@@ -1,0 +1,107 @@
+{
+  "schema": "qou-audit-probe/v1",
+  "question": "Does the q-deformed Wedderburn weight dim_q(lambda)^2/[n]_q! sum to 1 over partitions of n, as three corpus blocks assert?",
+  "verdict": "no",
+  "anchor": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "source": "qou_substrate.constants.Q_50_DIGIT_STR",
+    "layer": "experimental (proton)"
+  },
+  "dps": 65,
+  "rows": [
+    {
+      "n": 3,
+      "sum_q_deformed": "0.987440229773687729117875218676",
+      "sum_q_deformed_unbalanced_convention": "0.914969211487761030677043749998",
+      "sum_classical": "1",
+      "deviation_from_one": "-0.0125597702263"
+    },
+    {
+      "n": 4,
+      "sum_q_deformed": "0.982165323835610783872076092738",
+      "sum_q_deformed_unbalanced_convention": "0.882874426584878286626012830157",
+      "sum_classical": "1",
+      "deviation_from_one": "-0.0178346761644"
+    },
+    {
+      "n": 5,
+      "sum_q_deformed": "0.982224148283254053452615576238",
+      "sum_q_deformed_unbalanced_convention": "0.868254573820813799901099473116",
+      "sum_classical": "1",
+      "deviation_from_one": "-0.0177758517167"
+    },
+    {
+      "n": 6,
+      "sum_q_deformed": "0.991079523637350140711333719064",
+      "sum_q_deformed_unbalanced_convention": "0.874641716552580792168835153656",
+      "sum_classical": "1",
+      "deviation_from_one": "-0.00892047636265"
+    },
+    {
+      "n": 7,
+      "sum_q_deformed": "1.01242608790563518029852827402",
+      "sum_q_deformed_unbalanced_convention": "0.902133810410289414146776029007",
+      "sum_classical": "1",
+      "deviation_from_one": "0.0124260879056"
+    },
+    {
+      "n": 8,
+      "sum_q_deformed": "1.05056014759204468186051942894",
+      "sum_q_deformed_unbalanced_convention": "0.956369477431072174201313249066",
+      "sum_classical": "1",
+      "deviation_from_one": "0.050560147592"
+    }
+  ],
+  "q_to_one_control": {
+    "3": "1.0",
+    "4": "1.0",
+    "5": "1.0"
+  },
+  "control_note": "The q -> 1 limit returns exactly 1, so the deviations below are the q-deformation, not an implementation error.",
+  "census": {
+    "defines_q_deformed": [
+      "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.md",
+      "content/quantum-observable-universe/mass-theory/confined-knot-binding-proof.md",
+      "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.md",
+      "content/quantum-observable-universe/mass-theory/feynman-categorical-trace.md",
+      "content/quantum-observable-universe/mass-theory/feynman-markov-identification-proof.md",
+      "content/quantum-observable-universe/mass-theory/feynman-markov-identification.md",
+      "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-proof.md",
+      "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+      "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md",
+      "content/quantum-observable-universe/mass-theory/hook-weight-derivation-proof.md",
+      "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou-proof.md",
+      "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md",
+      "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price-proof.md",
+      "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification-proof.md",
+      "content/quantum-observable-universe/mass-theory/plancherel-term-7-formulation-proof.md",
+      "content/quantum-observable-universe/mass-theory/plancherel-term-7-formulation.md",
+      "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof.md",
+      "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse-proof.md",
+      "content/quantum-observable-universe/mass-theory/universal-braid-branching-proof.md",
+      "content/quantum-observable-universe/mass-theory/wedderburn-trace-identity-context.md",
+      "content/quantum-observable-universe/models-of-qous/symmetric-point-resolution-loss.md",
+      "content/quantum-observable-universe/notation/notation-collisions.md",
+      "content/quantum-observable-universe/notation/notation-register-table3-data.md",
+      "content/quantum-observable-universe/observations/magic-numbers-from-q-computation.md",
+      "content/quantum-observable-universe/observations/magic-numbers-from-q.md",
+      "content/quantum-observable-universe/predicted-spectra/gram-kappa-spectral-interpretation.md"
+    ],
+    "defines_classical": [
+      "content/quantum-observable-universe/mass-theory/chirality-residue-mass-term-proof.md",
+      "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+      "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md",
+      "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification-proof.md",
+      "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.md",
+      "content/quantum-observable-universe/mass-theory/plancherel-term-7-formulation-proof.md",
+      "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md",
+      "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof.md",
+      "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse-proof.md",
+      "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula-table-data.md",
+      "content/quantum-observable-universe/notation/notation-collisions.md",
+      "content/quantum-observable-universe/notation/notation-register-table3-data.md"
+    ],
+    "q_deformed_and_claims_sums_to_one": []
+  },
+  "corroborates": "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse-proof.md, which states the q-deformed weights do not sum to 1 at q != 1"
+}

@@ -18,5 +18,5 @@ export default proposition({
   lean: { ref: "qou:QOU.braiding_eigenvalue_extraction",
     validation: "not_checked",
   },
-  uses: ["prop:tannaka-krein-reconstruction"],
+  uses: [],
 });

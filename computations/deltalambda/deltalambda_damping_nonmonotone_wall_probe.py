@@ -187,6 +187,21 @@ witness = {
 }
 
 OUT = HERE / "deltalambda-damping-nonmonotone-wall.witness.json"
+# Provenance stamp (bean qou-4un2): this producer writes its
+# witness directly, so nothing else records which script made
+# it -- and a re-run of an unstamped producer DELETES the
+# scriptFile a downstream pass had added. This producer DOES read q0 (from
+# the jet-filtration witness), so the anchor is resolved and stamped.
+from qou_substrate.witness import WitnessBuilder as _WB
+import os as _os  # noqa: E402 -- provenance stamp
+witness.setdefault("scriptFile", _os.path.basename(__file__))
+# q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+# Untrue: q0 is read from the jet-filtration witness at module scope and every
+# q-integer below is a function of it. The false declaration DELETED the anchor
+# stamp on every run, converting a visible Q0_FLIP into a silent
+# Q0_ANCHOR_MISSING (bean qou-1c4y).
+_WB.stamp_staleness_metadata(
+    witness, script_path=__file__, engine=None)
 OUT.write_text(json.dumps(witness, indent=1, ensure_ascii=False))
 print(f"\nwrote {OUT.relative_to(ROOT)}  allPassed={all_passed}")
 sys.exit(0 if all_passed else 1)

@@ -1,0 +1,112 @@
+{
+  "target": "per-partition Hecke character chi^lambda(beta_atomic(Z,N); q_0) in the AVERAGED (colour-weighted) crossing convention",
+  "target_value": "chi^lambda(beta; q) = tr rho^lambda_Hoefsmit(beta) with each crossing carried as a colour-weighted pair (c, d) rather than a bare sign; evaluated at the substrate anchor q_0",
+  "target_tolerance": 0.0,
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for the per-lambda Hecke character caches at q_0 in the AVERAGED (colour-weighted) crossing convention -- the other of the corpus's two chi conventions, companion to chi-at-q0-sign-only-atomic.derivation.json. Covers eight nuclides: proton, neutron, deuteron, dineutron, diproton, tritium, helium-3, helium-4. Trust profile: one AXIOM entrypoint (the per-crossing Hecke energy), one MATHLIB_CITED step (Hoefsmit seminormal reps), three DERIVED steps, one SCRIPT_CITED frontier. Symbolic chain -- the target is the character identity, not a single number.\n\nSCOPE. This is the averaged convention ONLY. The canonical convention corpus-side is sign-only (chi-convention-audit.witness.json, canonical_reconciliation; docs/audits/2026-06-09-binding-trace-convention-split.md), so these caches are the OFF-CANONICAL member of the split and are consumed by the binding-trace path, not by the Jones-Markov path. They are a different object from the sign-only caches, not a lower-precision version of them -- the deuteron differs by a factor of ~7 on lambda=(6).\n\nRESOLVED 2026-08-23: a SECOND producer, compute_atom_chi_rust.py, emits four witnesses in this same convention (atom-chi-rust-{d,t,3he,4he}). They disagreed with this family by up to 8e-7 and are now regenerated and in agreement to ~1e-49. Both producers are claimed by this chain; the cross-backend agreement is step 7.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0. The eigenvalues q and -q^{-1} are the symmetric and antisymmetric crossing channels; their separation (q - q^{-1}) is the per-crossing Hecke energy scale, the AXIOM entrypoint of every Hecke-side chain.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1;  [k]_q := (q^k - q^{-k}) / (q - q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Hoefsmit seminormal representation rho^lambda of H_n(q)",
+      "operation": "Wedderburn-decompose H_n(q) over the partitions lambda |- n and realise each block by the Hoefsmit seminormal form: an explicit dim V_lambda x dim V_lambda matrix per generator, entries rational in q, determined by the axial distances of the standard Young tableaux. Semisimplicity holds because q_0 is not a root of unity.",
+      "inputs": [
+        "hecke_relation",
+        "Wedderburn",
+        "Schur"
+      ],
+      "output_name": "rho_lambda",
+      "output_value": "rho^lambda : H_n(q) -> End(V_lambda),  one block per lambda |- n",
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitSeminormal",
+      "citation": "kassel1995",
+      "notes": "Identical to step 2 of the sign-only chain -- the representation is shared. The two conventions diverge only at the next step, in how a crossing of the braid word is turned into an element of H_n(q)."
+    },
+    {
+      "name": "Colour-weighted crossing: the (c, d) pair replaces the bare sign",
+      "operation": "Read each crossing of the canonical nucleus braid word on n = 3A strands as a PAIR (c, d) rather than a sign, and map it to the algebra element c*sigma_g + d*1. A same-colour crossing carries d = 0 and reduces to the sign-only case; the proton-neutron interface crossings carry d != 0, weighting the crossing by per-colour factors. Because the map is linear in the generator, the colour weighting expands by linearity through the representation.",
+      "inputs": [
+        "rho_lambda",
+        "Cat.Action"
+      ],
+      "output_name": "beta_averaged",
+      "output_value": "beta_atomic(Z,N) = prod_j (c_j sigma_{g_j} + d_j),  n = 3(Z+N)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:atomic-braid-recipe",
+      "notes": "This step IS the convention. Setting every d_j = 0 recovers the sign-only convention of chi-at-q0-sign-only-atomic.derivation.json; the two chains share steps 1-2 and diverge here. The corpus canon is sign-only (bean b0vf); this family is the other member of the split, retained because the binding-trace path consumes it."
+    },
+    {
+      "name": "Block character chi^lambda(beta) := tr rho^lambda(beta)",
+      "operation": "Define the per-block character as the matrix trace of the represented braid word. Cyclicity makes it a class function on the braid, hence a function of the conjugacy class rather than of the chosen word.",
+      "inputs": [
+        "beta_averaged",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "chi_lambda",
+      "output_value": "chi^lambda(beta; q) = tr rho^lambda(beta)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995"
+    },
+    {
+      "name": "The one-row closed form does NOT survive colour weighting",
+      "operation": "On lambda = (n) every generator acts by the scalar q, so a sign-only word gives chi^(n) = q^{writhe}. Under colour weighting the one-row block instead evaluates prod_j (c_j q + d_j), which is not a power of q whenever any d_j is nonzero. This is the sharpest available test that a given cache is in this convention rather than the sign-only one.",
+      "inputs": [
+        "chi_lambda"
+      ],
+      "output_name": "one_row_no_power_law",
+      "output_value": "chi^(n)(beta; q) = prod_j (c_j q + d_j),  NOT q^{w}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "Measured on the deuteron: this family gives chi^(6) = 1.5598701995641515927061, while the sign-only cache gives 11.021374980910484719107 = q_0^23 exactly (23 = the crossing count recorded in atomic-braid-recipe-d.derivation.json). A factor of ~7 apart -- the two conventions are different objects, not different precisions of one object. Scope-(a): this distinguishes the conventions, it does not rank them."
+    },
+    {
+      "name": "Numerical evaluation at q_0 -- and a second producer that disagrees",
+      "operation": "Evaluate chi^lambda(beta_atomic(Z,N); q) at the substrate anchor for every lambda |- 3A, via the Hoefsmit mpfr path at 50 dps, for proton, neutron, deuteron, dineutron, diproton, tritium, helium-3 and helium-4.",
+      "inputs": [
+        "chi_lambda",
+        "one_row_no_power_law"
+      ],
+      "output_name": "chi_caches_averaged",
+      "output_value": "chi-{atom}-h{n}-at-q0-50dps caches for p, n, D, nn, pp, T, 3He, 4He",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "script: computations/chi_at_q0_via_hoefsmit_mpfr.py -- the frontier step. Anchor: these witnesses declare q_0 inline at 50 dps and are PROTON-pinned (1.1099785827513808075916690956107688798744991218736)."
+    },
+    {
+      "name": "Cross-backend agreement at the arithmetic floor -- two independent implementations",
+      "operation": "Compare this family against the SECOND independent implementation of the same object, compute_atom_chi_rust.py (Rust chi_cd_mpfr -> pyhecke_native.chi_lambda_all_partitions_mpfr), on every nuclide both cover: deuteron, tritium, helium-3, helium-4. Adjudicate both against a third, backend-free reference: on lambda = (n) every generator acts by the scalar q, so chi^(n) = prod_j (c_j q + d_j) is computable straight from the braid word.",
+      "inputs": [
+        "chi_caches_averaged"
+      ],
+      "output_name": "cross_backend_agreement",
+      "output_value": "worst relative difference 4.64e-50 (deuteron, 11 partitions) and 3.92e-49 (helium-4, 77 partitions); both backends match the closed form to ~1e-49",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "kassel1995",
+      "notes": "script: computations/compute_atom_chi_rust.py -- the second implementation, now claimed by this chain.\n\nTHIS STEP EXISTS BECAUSE THE TWO BACKENDS ONCE DISAGREED, and the record of how that resolved is worth more than the agreement. The committed atom-chi-rust-* witnesses were off by 6.96e-8 to 7.99e-7 -- eleven orders above the 50-dps floor both claim. Three hypotheses were tested and all came back NEGATIVE: the chi_cd_mpfr bridge's float() calls are template CLASSIFICATION only (the word's d values match the bridge's templates to 1e-61, so nothing is silently overridden); the inputs are identical (same braid word, same colour weights, same include_inter, same dps, both proton-pinned); and the native kernel is exact to ~1e-50 on every primitive -- sigma, sigma^-1, sigma^2, s1 s2 s1, and the sign-0 averaged crossing against (q+1/q)/2.\n\nThe code was correct; the ARTIFACTS were stale, produced by an older pipeline and never regenerated. Re-running reproduces the closed form to 5.9e-50. A stale witness is indistinguishable from a wrong producer until you re-run: the residual's shape -- both one-dimensional blocks off by EXACTLY the same 6.956e-8 while higher-dimensional blocks were off by up to 11x more -- read as a matrix-product defect and was a version difference. Bean qou-chib.\n\nResidual, not fixed here: the atom-chi-rust-* witnesses record NO q_0, contrary to the AGENTS.md rule that a witness must say which pin it used, and the producer emits three raw float64 fields (compute_time_sec x2, assertions[0].computed). Both are already in the ratchet baseline; NEW dirty 0, REGRESSED 0 after the regeneration."
+    }
+  ]
+}

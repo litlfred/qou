@@ -46,11 +46,35 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 # canonical computations-layer q0 (muon-pinned 50-digit string); the A=2/A=4
 # det signs and the ~5.85x deficit are invariant to the ~11.5 ppb proton-pin
 # difference (this is a magnitude-class probe, not a precision probe).
-Q0_STR = "1.10997859555733471"
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 ME_MEV = mp.mpf("0.51099895069")        # CODATA electron mass
 B_AME_2H = mp.mpf("2.2245662")          # AME2020 deuteron binding (diagnostic only)
@@ -64,7 +88,7 @@ def q_int(n: int, q: mp.mpf) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
     two_v = v + 1 / v
@@ -213,6 +237,20 @@ def main() -> int:
         "results": result,
     }
     outpath = Path(__file__).with_name("deuteron-naive-z-physical-but-does-not-close.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. This producer DOES read q0, so the
+    # anchor is resolved and stamped rather than suppressed (qou-1c4y).
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+    # Untrue: this producer reads q0 and records it, so the false declaration
+    # DELETED the anchor stamp on every run, converting a visible Q0_FLIP into a
+    # silent Q0_ANCHOR_MISSING (bean qou-1c4y). Resolving is the default.
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None)
     outpath.write_text(json.dumps(out, indent=1) + "\n")
     print("wrote", outpath.name)
     print("verdict:", verdict[:120], "...")

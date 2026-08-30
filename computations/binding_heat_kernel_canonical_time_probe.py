@@ -52,8 +52,10 @@ sys.path.insert(0, str(HERE / "substrate"))
 from binding_heat_kernel_weight_probe import (  # noqa: E402
     CHI, AME_B, A_GROWTH_TARGET, q0, dim_classical, content_casimir, load_y)
 from witness_base import WitnessBuilder  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HBAR = 1 - 1 / q0                      # ℏ_q = (q−1)/q — the corpus convention
 S_STAR = HBAR                          # canonical Reeb time
 H_OLD = q0 - 1 / q0                    # what the parent probe used (≈ 2·ℏ)
@@ -212,7 +214,12 @@ def main() -> int:
                            "every τ ≥ 0: damping only shrinks A-growth and even the undamped "
                            "τ→0 supremum (3.658) falls short of the 12.72 target — so no τ, "
                            "canonical or fitted, works. Forecloses τ-tuning as a fit escape.")})
-    wb.add_assertion("canonical_tau_kernel_evaluated_zero_fit", "1", "1")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    wb.add_parameter("canonical_tau_kernel_evaluated_zero_fit", "1 (METHOD declaration: the kernel was evaluated, not fitted)")
     wb.add_assertion("exponential_kernel_family_excluded_all_tau",
                      str(bool(family_excluded)), "True")
     wb.add_assertion("canonical_tau_differs_from_parent_h",

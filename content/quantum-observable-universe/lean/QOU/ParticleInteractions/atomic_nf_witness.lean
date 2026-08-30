@@ -57,8 +57,8 @@ class AtomicNfWitnessContext (R : Type*) [Field R] [LinearOrder R]
   /-- The `tr_alt(q_0)` and `net(q_0)` values from the certificate. -/
   trAlt : R
   net : R
-  /-- The atomic NF witness claim (conclusion). -/
-  atomic_nf_witness_claim : (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
+  /-- External theorem / missing input: atomic NF certificate facts. -/
+  atomic_nf_witness_field : (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
     (∀ p : ℕ, Phi_1_electron electron_pos_star ≤
                 Phi_1_electron p) ∧
     (∀ k : ℕ, gb_converges k) ∧
@@ -103,8 +103,7 @@ theorem atomic_nf_witness (ctx : AtomicNfWitnessContext R) :
                 ctx.Phi_1_electron p) ∧
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
-    ctx.F_Pauli = |ctx.trAlt / ctx.net| := by
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-  exact ctx.atomic_nf_witness_claim
+    ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
+  ctx.atomic_nf_witness_field
 
 end QOU.ParticleInteractions

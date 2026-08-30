@@ -3,7 +3,8 @@
 #
 #   Sets (exported):  REPO_ROOT  LEAN_DIR  PATH (+ elan, /usr/local/bin)
 #   Defines:          has()  lean_toolchain_slug()  lean_leanpath()
-#                     lean_mathlib_url_fix()
+#                     lean_mathlib_url_fix()  mathlib_local_path()
+#                     mathlib_local_available()  mathlib_enable_local_redirect()
 #
 # Safe under `set -u`; idempotent (re-sourcing does not double-prepend
 # PATH). Referenced by scripts/lean-build-bg.sh, scripts/lean-verify.sh,
@@ -79,4 +80,68 @@ lean_mathlib_url_fix() {
   [ -d "$mdir/.git" ] || return 0
   git -C "$mdir" remote set-url origin \
     https://github.com/leanprover-community/mathlib4 2>/dev/null || true
+}
+
+# ── mathlib_local_path — configured local mathlib clone, absolute ─────
+#    Reads `lean.local_mathlib_path` from lean-mcp.config.json (default
+#    `../mathlib4`, relative to REPO_ROOT). Prints nothing and returns 1
+#    if the config is unreadable.
+mathlib_local_path() {
+  local raw
+  if has python3 && [ -f "$REPO_ROOT/lean-mcp.config.json" ]; then
+    raw=$(python3 -c 'import json,sys
+try:
+    d = json.load(open(sys.argv[1]))
+except Exception:
+    sys.exit(1)
+print(d.get("lean", {}).get("local_mathlib_path", "../mathlib4"))'       "$REPO_ROOT/lean-mcp.config.json" 2>/dev/null) || raw="../mathlib4"
+  else
+    raw="../mathlib4"
+  fi
+  [ -n "$raw" ] || return 1
+  case "$raw" in
+    /*) printf '%s' "$raw" ;;
+    *)  printf '%s' "$(cd "$REPO_ROOT" && cd "$(dirname "$raw")" 2>/dev/null \
+          && pwd)/$(basename "$raw")" ;;
+  esac
+}
+
+# ── mathlib_upstream_url — the URL the redirect replaces ──────────────
+mathlib_upstream_url() {
+  local raw
+  if has python3 && [ -f "$REPO_ROOT/lean-mcp.config.json" ]; then
+    raw=$(python3 -c 'import json,sys
+try:
+    d = json.load(open(sys.argv[1]))
+except Exception:
+    sys.exit(1)
+print(d.get("lean", {}).get("mathlib_git_url",
+      "https://github.com/leanprover-community/mathlib4"))'       "$REPO_ROOT/lean-mcp.config.json" 2>/dev/null)       || raw="https://github.com/leanprover-community/mathlib4"
+  else
+    raw="https://github.com/leanprover-community/mathlib4"
+  fi
+  printf '%s' "$raw"
+}
+
+# ── mathlib_local_available — true iff the local clone is usable ──────
+#    False (silently) when no clone is present, which is the common case
+#    in a fresh container. Callers must treat that as "feature off", not
+#    as an error.
+mathlib_local_available() {
+  local p
+  p="$(mathlib_local_path)" || return 1
+  [ -n "$p" ] && [ -d "$p/.git" ]
+}
+
+# ── mathlib_enable_local_redirect — point lake's fetch at the clone ───
+#    `insteadOf` makes every `lake` fetch of mathlib resolve to the local
+#    clone instead of GitHub, which is the difference between reusing a
+#    checkout and recompiling Mathlib from source. Idempotent: git
+#    replaces an existing value for the same key. No-op without a clone.
+mathlib_enable_local_redirect() {
+  local p url
+  mathlib_local_available || return 0
+  p="$(mathlib_local_path)" || return 0
+  url="$(mathlib_upstream_url)"
+  git config --global "url.file://${p}.insteadOf" "$url" 2>/dev/null || return 1
 }

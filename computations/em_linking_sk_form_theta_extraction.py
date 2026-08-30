@@ -102,7 +102,7 @@ def main() -> None:
             entries.append({
                 "A": r["A"],
                 "theta": (mp.nstr(th, 8) if th is not None else "IMAGINARY"),
-                "theta_over_ln_q0": (float(th / ln_q0)
+                "theta_over_ln_q0": (mp.nstr(th / ln_q0, 8)
                                      if th is not None else None),
             })
         families[f"theta_3 = {frac} * ln q0"] = {
@@ -119,18 +119,19 @@ def main() -> None:
     near_mono = all(thetas[i] <= thetas[i + 1] * mpf("1.05")
                     for i in range(len(thetas) - 1))
     # Does theta follow a simple power of A?  theta ~ c * A^p.
-    powers = {}
+    powers, scatter = {}, {}
     for p in ("1/6", "1/4", "1/3", "1/2"):
         num, den = p.split("/")
         pe = mpf(num) / mpf(den)
         ratios = [t / (a ** pe) for t, a in zip(thetas[1:], As[1:])]  # skip A=3 (theta=0)
         m, sd = stats(ratios)
         powers[f"theta ~ A^({p})"] = {"coefficient": mp.nstr(m, 8),
-                                      "rel_scatter": float(sd)}
-    best_p = min(powers, key=lambda k: powers[k]["rel_scatter"])
+                                      "rel_scatter": mp.nstr(sd, 8)}
+        scatter[f"theta ~ A^({p})"] = sd     # mpf kept for ordering/printing
+    best_p = min(scatter, key=lambda k: scatter[k])
 
     th_max = max(thetas)
-    wall_frac = float(th_max / ln_q0)
+    wall_frac = th_max / ln_q0
 
     wb = WitnessBuilder("em-linking-sk-theta-extraction", engine="mpmath")
     wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
@@ -159,7 +160,7 @@ def main() -> None:
         "monotone_increasing": bool(monotone),
         "monotone_within_5pct": bool(near_mono),
         "theta_max": mp.nstr(th_max, 8),
-        "theta_max_over_ln_q0": wall_frac,
+        "theta_max_over_ln_q0": mp.nstr(wall_frac, 8),
         "power_law_scan": powers,
         "best_power_law": best_p,
     })
@@ -170,7 +171,8 @@ def main() -> None:
         "flips across the series -- exactly what "
         "`binding_sign_from_angular` requires of a physical "
         "configuration. The extracted theta grows smoothly with A, "
-        f"reaching {wall_frac:.1%} of ln q0 at the top of the series."
+        f"reaching {mp.nstr(wall_frac * 100, 3)}% of ln q0 at the top of "
+        "the series."
         if families["theta_3 = 0.0 * ln q0"]["all_real"]
         and families["theta_3 = 0.0 * ln q0"]["all_boost_dominated"]
         else "The S_K form FAILS: extracted theta values are imaginary "
@@ -246,13 +248,13 @@ def main() -> None:
     for e in ref:
         tv = e["theta_over_ln_q0"]
         print(f"  A={e['A']:2d}  theta={e['theta']:>12}  "
-              f"theta/ln q0 = {tv:.4f}" if tv is not None
+              f"theta/ln q0 = {mp.nstr(mpf(tv), 5)}" if tv is not None
               else f"  A={e['A']:2d}  IMAGINARY")
     print(f"\nmonotone (5% tol): {near_mono}   "
-          f"max theta/ln q0 = {wall_frac:.4f}")
+          f"max theta/ln q0 = {mp.nstr(wall_frac, 5)}")
     print("power-law scan (lower scatter = better):")
-    for k, v in sorted(powers.items(), key=lambda kv: kv[1]["rel_scatter"]):
-        print(f"  {v['rel_scatter']*100:6.2f}%  {k}")
+    for k in sorted(scatter, key=lambda k: scatter[k]):
+        print(f"  {mp.nstr(scatter[k] * 100, 4):>7}%  {k}")
     print(f"witness -> {out}")
 
 

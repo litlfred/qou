@@ -106,3 +106,48 @@ Rogers functional equations, both of which are within reach.
 * `qou-b7cy` (Route 9), `qou-8v3k` (Route 8), parent `qou-0yqu`
 * `qou-ph1k`, `qou-gkco` — the existing complex-`Li₂` Mathlib-gap beans
 * PR #4658
+
+---
+
+## ⚠ CORRECTION 2026-08-07 — the survey's conclusion was too broad
+
+The counts above are right: Mathlib has **no** `Li₂`, no Bloch group, no Borel
+regulator. But I drew a wider conclusion than the data supported — that the
+`B₂`-Fourier half of Route 10 therefore needed new infrastructure. **It does not.
+Mathlib already has it**, and searching for `Polylog`/`dilog` was the wrong query.
+
+`Mathlib/NumberTheory/ZetaValues.lean`:
+
+```lean
+theorem hasSum_one_div_nat_pow_mul_cos {k : ℕ} (hk : k ≠ 0) {x : ℝ}
+    (hx : x ∈ Icc (0:ℝ) 1) :
+    HasSum (fun n : ℕ => 1 / (n:ℝ) ^ (2*k) * Real.cos (2*π*n*x))
+      ((-1)^(k+1) * (2*π)^(2*k) / 2 / (2*k)! *
+        (Polynomial.map (algebraMap ℚ ℝ) (Polynomial.bernoulli (2*k))).eval x)
+```
+
+At `k = 1` the constants collapse to exactly `π²`:
+
+    (−1)²·(2π)²/2/2! = 4π²/4 = π²,   so   Σₙ cos(2πnx)/n² = π²·B₂(x)
+
+which **is** `Re Li₂(ζ₇^k) = π²·B₂(k/7)` — Route 10's gate G2 — with `x = k/7 ∈ [0,1]`.
+
+### Why this matters
+
+`Re Li₂` on the unit circle **is** that cosine series, so this half of Route 10
+is formalizable **today, from Mathlib, without any `Li₂` at all**. It does not
+depend on `qou-clx8`, `qou-ph1k`, or `qou-gkco`.
+
+### The methodological lesson, worth more than the fact
+
+The original survey searched for the **objects** (`Polylog`, `dilog`, `Rogers`,
+`Bloch`) and concluded from their absence. But Mathlib often has the **content**
+under a different name — here, a Fourier/Bernoulli theorem in `NumberTheory`,
+nowhere near a file about polylogarithms. **Search for the statement you need,
+not for the name you would have given it.** The zero-counts above remain
+accurate; treat them as "these names are absent", not "this mathematics is
+absent".
+
+`Mathlib.NumberTheory.ZetaValues` is, incidentally, already an import of
+`QOU/Archimedean/DilogReflection.lean` — so it is in the corpus's dependency
+cone already.

@@ -87,10 +87,10 @@ def main() -> int:
         ("|A_5| = 60",        60),
         ("|PSL(2,7)| = 168",  168),
         ("Mathieu M_11 = 7920", 7920),
-        ("[5]_q! ≈ 192.0",   float(qint(1)*qint(2)*qint(3)*qint(4)*qint(5))),
+        ("[5]_q! ≈ 192.0",   qint(1)*qint(2)*qint(3)*qint(4)*qint(5)),
         ("|S_4|·5 = 120",    120),       # alias
         ("|GL(2,F_3)|=48",   48),
-        ("|S_5|·[2]_q = 241.4", float(120 * qint(2))),
+        ("|S_5|·[2]_q = 241.4", 120 * qint(2)),
     ]
     rows_pass1 = []
     for name, factor in factor_candidates:
@@ -99,12 +99,14 @@ def main() -> int:
         frac = L_exact - L_floor
         rows_pass1.append({
             "factor_name": name,
-            "factor_value": float(factor),
+            "factor_value": (factor if isinstance(factor, int)
+                             else mpmath.nstr(factor, 14)),
             "L_exact": mpmath.nstr(L_exact, 14),
             "L_floor": L_floor,
             "L_frac": mpmath.nstr(frac, 12),
         })
-        print(f"  {name:<30}  {factor:>10}  {mpmath.nstr(L_exact, 16):>22}  "
+        fac_disp = factor if isinstance(factor, int) else mpmath.nstr(factor, 10)
+        print(f"  {name:<30}  {fac_disp:>10}  {mpmath.nstr(L_exact, 16):>22}  "
               f"{mpmath.nstr(frac, 8):>12}")
 
     # Pass 2: focus on factor=120 (the existing best candidate); refine L
@@ -164,6 +166,16 @@ def main() -> int:
     print("    open per the audit doc.")
 
     out = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        # NOTE: the audit doc moved to `_deprecated/`; the committed witness
+        # still pointed at the pre-move path, so this pointer was DANGLING.
+        # Nothing checks `auditOnly` resolves. Corrected here.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/_deprecated/2026-05-05-nv-categorical-impasse.md",
         "computation": "nv-categorical-derivation-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
@@ -189,6 +201,15 @@ def main() -> int:
         ],
     }
     out_path = Path(__file__).parent / "nv-categorical-derivation-probe.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print()
     print(f"Wrote: {out_path}")

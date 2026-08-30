@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T22:04:17.933839+00:00",
-  "commitSha": "df64bef3a049dc43e31a4ceffe3adda29c5f6dc1",
+  "computedAt": "2026-08-24T13:33:39.378215+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "leading_coefficient_validated",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "qbeta-c3-exact-volume-boost-enhancement",
   "scriptFile": "qbeta_c3_exact_volume_boost_enhancement_probe.py",
   "scriptHash": "a4c8932e983d",
-  "scriptCommitSha": "870bd2f1238d9d660376d90e9286041cdcf2a62d",
+  "scriptCommitSha": "2122fd9a05834173ed9a3efad3023937c62ca012",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,21 +32,30 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_exact_volume_boost_enhancement_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_exact_volume_boost_enhancement_probe.py"
   },
   "description": "Direction 1 (direct assault on qou-iyj5). Integrates the EXACT figure-8 complex volume Im 𝔙₄₁(u)=½∫₀^u arg(−L(M)) du' (L = validated A-polynomial branch; convention fixed by the proved √3/4 leading, reproduced to 0.18% at u=ln q₀). Result: Im 𝔙₄₁(real boost u=ln q₀)=0.0047229, A(real boost)=1.002 — the exact potential's higher terms are negligible (radius 0.96≫u), so it does NOT reach S(muon)=0.009683 (A=2.054). Reaching A=2.05 needs Re u=c·ln q₀, c=1.4305 (exact solve; leading-quadratic proxy √A=1.4332), NOT √2. Since a spin part Im u≠0 only decreases Im 𝔙₄₁=(√3/4)(Re²−Im²), the gap is UNAMBIGUOUSLY a boost-rapidity enhancement, not a spin part or higher volume terms. Deriving c is the open content. No fit; nothing wired; no instance.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "boost_enhancement_readout": {
-      "ImV_exact_real_boost": "0.004722782069",
-      "leading_sqrt3_4_u2": "0.00471420423",
+      "ImV_exact_real_boost": "0.004722782076",
+      "leading_sqrt3_4_u2": "0.004714204237",
       "A_real_boost_exact": "1.0018196",
-      "S_muon_target": "0.009682977798",
-      "A_target": "2.0540005",
-      "boost_enhancement_c": "1.430509838",
-      "sqrt_A": "1.433178457",
+      "S_muon_target": "0.01002290095",
+      "A_target": "2.1261066",
+      "boost_enhancement_c": "1.455307206",
+      "sqrt_A": "1.4581175",
       "sqrt_2": "1.414213562",
       "c_is_not_sqrt2": true,
       "exact_potential_does_not_close_gap": true,

@@ -1,0 +1,60 @@
+192 T.A. Springer
+
+5.2. Remarks. (a) Q; can already be defined if t’ contains strongly regular
+elements, namely by using formula (3) of no. 4. However, for the proofs of the
+results of this no. we need stronger assumptions.
+
+(b) If there exists a G*-equivariant bijection of the unipotent set of G* onto
+the nilpotent set of g* (which is the case, for example if G= GL, or if G is semisimple
+and simply connected, and p is good, see [24]), then we can transfer the Green
+function to a function on the unipotent set of G’.
+
+It was shown by Kazhdan in [15], using the results of this paper, that if p
+and q are sufficiently large, one thus recovers the Green functions of [10, § 4].
+4.4 can then be interpreted as a description of values of the Green function Q,, ¢(u)
+of [10] in terms of the geometry of the variety BS of Borel subgroups containing u.
+That the Q, ,(u) can be related to the trigonometric sums S%(A, 4’) is in ac-
+cordance with a conjecture made in [25, p. 152].
+
+First a simple lemma. Let f: G— G, be a surjective k-morphism whose kernel
+is central. Put f T=T,.
+
+5.3. Lemma. We have Q7,¢=Qr,,¢,° df in the following cases:
+(a) fis separable and (t’)’ contains a strongly regular element,
+
+(b) fis the morphism onto the adjoint group and (t')’ contains a strongly regular
+element A’ such that (df) A’ is also strongly regular.
+
+The proof is trivial, taking into account 2.7 for case (a). The condition of case (b)
+is satisfied if we are in the situation of 2.8 and q is sufficiently large.
+
+5.4. Let T be as in 5.1. Assume that T is contained in an F-stable proper
+parabolic subgroup P. Let L be the (F-stable) Levi subgroup of P containing T
+and U the unipotent radical of P. Denote the projection P — L by x. We identify,
+as we may, the toral subspace t’ with the corresponding subspace of the dual I’ of
+the Lie algebra of L. In these circumstances Q, , and Q,,, are defined.
+
+5.5. Proposition.
+Q7,c(A)=IPFI' YL Qr,1(m Ad (g) A).
+
+geGF
+Ad(g) Aep
+
+Let A’e(t’)’ be strongly regular. Then
+S9(A, A)=|T* |“! LWA, Ad’(g)A>)=|T*|"" |U*|"* ¥ W(<A, Ad’(gu) A).
+= se
+Now Ad’(U) A'=A'+p* (see the proof of 3.5 for a similar fact). Hence the last
+sum equals
+
+Y W(KA, Ad'(g)(4’'+X))=|U"] YK, Ad'(g) 4°)
+
+yeGF geGF
+X’e(ptyF Ad (g)~! Aep
+=|UTIPFI-t YY W(<Ad(g) A, Ad'‘(y) 4’).
+geGF, yePF
+
+: . Ad (g) A
+The assertion now easily follows. Meese
+
+If T and T, are two maximal tori of G, put
+No(T, T,)= {ge Glad(g) T= T,}.

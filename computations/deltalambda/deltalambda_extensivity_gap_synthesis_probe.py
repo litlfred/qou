@@ -28,8 +28,16 @@ import math
 from pathlib import Path
 
 from mpmath import mp, mpf, fabs
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent      # computations/
 
@@ -171,6 +179,15 @@ def main():
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "deltalambda-extensivity-gap-synthesis.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(wit, open(out, 'w'), indent=1)
     print("\nwitness ->", out.name, "  allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1

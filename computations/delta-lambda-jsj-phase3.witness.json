@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:19:36.526375+00:00",
-  "commitSha": "c930a8b42d278b6eb36bf8b4f6fc092711124a5a",
+  "computedAt": "2026-08-15T20:41:56.678257+00:00",
+  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
   "assertions": [
     {
       "name": "snappy_available",
@@ -15,15 +15,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2821,
+  "durationMs": 784,
   "computation": "delta-lambda-jsj-phase3",
   "scriptFile": "delta_lambda_jsj_phase3.py",
-  "scriptHash": "775664dc0a48",
-  "scriptCommitSha": "unknown",
-  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form Δ_λ(K) = Σ_P c_λ^(P) · Vol_hyp(P) on D, T, ³He, ⁴He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |Δ_λ*|.",
+  "scriptHash": "032039ea55be",
+  "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form \u0394_\u03bb(K) = \u03a3_P c_\u03bb^(P) \u00b7 Vol_hyp(P) on D, T, \u00b3He, \u2074He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |\u0394_\u03bb*|.",
   "parameters": {
     "snappy_version": "3.3.2",
-    "q0": "1.1099785955541805"
+    "q0": "1.1099785827513808"
   },
   "data": {
     "braids": {
@@ -49,9 +64,9 @@
         "word_length": 23,
         "n_strands": 6,
         "n_components": 2,
-        "hyperbolic_volume": 12.776095278687214,
+        "hyperbolic_volume": 12.776095504236459,
         "n_tetrahedra": 20,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "T": {
         "word_length": 35,
@@ -59,45 +74,58 @@
         "n_components": 3,
         "hyperbolic_volume": 12.776095552543637,
         "n_tetrahedra": 31,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "3He": {
         "word_length": 35,
         "n_strands": 9,
         "n_components": 1,
-        "hyperbolic_volume": 12.554085624045491,
+        "hyperbolic_volume": 12.554080052250034,
         "n_tetrahedra": 30,
-        "simplification": "global→level→global→level→global"
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       },
       "4He": {
         "word_length": 47,
         "n_strands": 12,
         "n_components": 2,
-        "hyperbolic_volume": 12.554075323566847,
-        "n_tetrahedra": 49,
-        "simplification": "global→level→global→level→global"
+        "hyperbolic_volume": 12.554074507253288,
+        "n_tetrahedra": 44,
+        "simplification": "global\u2192level\u2192global\u2192level\u2192global"
       }
     },
     "empirical_best_abs_delta": {
-      "D": 22.95944766931559,
-      "T": 366.32690098133276,
-      "3He": 210.97082881830084,
-      "4He": 3451.1436910977163
+      "D": 22.956407323087852,
+      "T": 366.2845899608697,
+      "3He": 210.943396230587,
+      "4He": 3451.1436864376496
     },
     "delta_over_vol_ratios": {
-      "D": 1.797062965522495,
-      "T": 28.67283666396808,
-      "3He": 16.804953792430528,
-      "4He": 274.90226099083037
+      "D": 1.7968249623271584,
+      "T": 28.66952493071679,
+      "3He": 16.80277609770221,
+      "4He": 274.9022784948189
     },
     "ratio_stats": {
-      "mean": 80.54427860318788,
-      "min": 1.797062965522495,
-      "max": 274.90226099083037,
-      "max_over_min": 152.97308233765904,
-      "rel_std": 1.3981880552546044,
+      "mean": 80.54285112139127,
+      "min": 1.7968249623271584,
+      "max": 274.9022784948189,
+      "max_over_min": 152.99335453286398,
+      "rel_std": 1.398222006615652,
       "n_valid": 4
     },
-    "verdict": "MISS — rel_std = 1.398, V(K) = Vol(K) insufficient"
-  }
+    "verdict": "MISS \u2014 rel_std = 1.398, V(K) = Vol(K) insufficient",
+    "upstream_witness_hashes": [
+      {
+        "path": "delta-lambda-empirical-tabulation.witness.json",
+        "sha256": "6293e276ecfe9b05cd10baef5d869adc9640d2ea5ce18a1fe5aaf153ed98d15d",
+        "size_bytes": 32120,
+        "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+        "computedAt": "2026-07-05T11:19:13.300674+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

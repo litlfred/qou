@@ -431,7 +431,7 @@ def main():
                 "(isoclinicity: no module map bridges C1 and GGM; NON-module "
                 "maps left as the only carve-out)",
             ],
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "hypotheses": {
                 "option1": "an m-dependent q^{alpha m} twist (fixed scalar alpha) "
                            "shifts the sub-leading LINEAR-in-m theta term while "
@@ -454,6 +454,15 @@ def main():
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "qlift_doorIII_followup_twist_crossterm_probe.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"witness written: {out}")
 

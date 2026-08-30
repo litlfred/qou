@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "disc(x³−2x²+3x−1) = −23 exact; Vieta at dps"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "GGM/Peacock printed exact values = reconstructed (a,b,c) integer-exact in the {1,ξ,ξ²} basis"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-100,
+      "tolerance": "1e-100",
       "source": "P_k(ξ̄₁) = conj(P_k(ξ₁)) numerically at dps 260"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-100,
+      "tolerance": "1e-100",
       "source": "σ₀ (real embedding) series is real"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 24.0,
       "expected": 24.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "every order k ≤ 24 reconstructs as an exact K-element, verified by re-evaluation at all 3 embeddings at dps 320"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "outside {2,3,5,23} the denominators obey the measured Ohtsuki/Habiro-type law v_p(den_k) ≤ ⌊k/(p−2)⌋ for every prime p ≥ 7 (first run: saturated at every (k,p), p ≤ 19)"
     }
   ],

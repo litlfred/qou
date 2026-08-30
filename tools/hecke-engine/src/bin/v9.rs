@@ -799,7 +799,13 @@ fn main() {
     // 2-adic normalization: the pn_count denominator is 2^891 for ⁶⁰Co.
     // Many polynomial coefficients are divisible by large powers of 2.
     // Factor these out to reduce effective coefficient size.
-    let q0: f64 = 1.10998;
+    // Substrate anchor. WAS the 5-significant-digit literal `1.10998`, which
+    // is 1277 ppb from the proton pin -- 111x the muon/proton gap the
+    // 2026-08-15 re-pin was about, and it silently set the accuracy of every
+    // `*_f64` field in the 35 certificates this binary produced. The exact
+    // symbolic `tr_alt`/`net` polynomials are unaffected (they are exact in
+    // q); only the evaluations at q0 were.
+    let q0: f64 = hecke_engine::gram::Q_0;
     let t0_val = q0.sqrt();
 
     // 2-adic normalization: find common factors of 2
@@ -879,7 +885,12 @@ fn main() {
 
     // Print jet bundle decomposition
     eprintln!("\n  Jet bundle (net by word length):");
-    let q0_val: f64 = 1.10998;
+    // The canonical proton anchor, not the 5-digit 1.10998 literal this used
+    // to carry (1277 ppb off — the distance `classify_pin` calls
+    // "truncated-5-digit"). Safe to change: this value reaches only the
+    // stderr jet-bundle diagnostic below, never the emitted certificate, so
+    // the committed certificates are unaffected.
+    let q0_val: f64 = hecke_engine::gram::Q_0;
     let t0_f64 = q0_val.sqrt();
     let denom_f64 = 2.0_f64.powi(elem.pn_count as i32);
     for (k, jet) in total.net_by_len.iter().enumerate() {
@@ -909,6 +920,7 @@ fn main() {
             commit: option_env!("GIT_SHA").unwrap_or("unknown").to_string(),
             binary: "hecke-bigint (v9)".to_string(),
         },
+        generation: Some(hecke_engine::provenance::Generation::capture(q0)),
         tr_alt: SparsePoly::from_btree(&total.tr_alt.terms),
         net: SparsePoly::from_btree(&total.net.terms),
         observable: {

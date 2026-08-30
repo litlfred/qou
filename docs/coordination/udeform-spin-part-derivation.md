@@ -225,7 +225,7 @@ why, in four facts (all evaluated at q₀ per the sharpened method):
   unit modulus — structurally not a magnitude.
 - **[A3] Only forced numeric period misses.** SW periods `a_D^{(n)}` are abstract ℂ
   fields (no numeric realisation; jet degree ≠ winding power). The one forced numeric
-  period — hyperbolic volume `8G/2Λ(π/3)=3.610` — misses by **11.4 %**; every
+  period — hyperbolic volume `8G/(2·Cl₂(π/3))=3.610` — misses by **11.4 %**; every
   q₀-boost candidate (sinh/cosh at `ln q₀` or `ln φ`, `φⁿ`, Lucas/Fib) misses ≫0.1 %
   (closest `φ³` at 3.95 %, a non-forced coincidence, not adopted).
 - **[A4] Structural wall.** A q₀-evaluated period is smooth ⇒ its w³/w² value is

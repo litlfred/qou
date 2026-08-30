@@ -1,0 +1,55 @@
+574 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+Theorem 7. The number of (m,n,k)-Gog trapezoids with bottom row by,...,b,% is the
+constant term of
+
+k n
+[[ G4 2)"2""" Il (Lt aj)mthttpontink Il (aj — xj )(1 +a; + 2425).
+i=l i=k+1 1si<j<n
+
+Ifm = 0, then the bottom row is necessarily 1,2,...,k, and so the number of (0,n, k)-Gog
+
+trapezoids is the constant term of
+
+k
+
+n
+[[G+ «0 ptt Il (L+a,)Ptape tik Il (aj — aj )(1+ xj + aya).
+i=l i=k+1 1si<j<n
+
+We are interested in the refined enumeration of (m,n, k)-Gog trapezoids with respect
+to four parameters.
+
+3.1. Inversion numbers
+
+The two inversion numbers are defined in the obvious way: Suppose M = (m,,;) is an
+(m,n, k)-Gog trapezoid, then
+
+inv(M) = #{miy mig = Migr yi},
+
+inv’ (M) = #{mij : mij = mis1,j}-
+
+So, in order for the entry m;,; to contribute to inv(A), it must have a SE neighbor in the
+(m, n, k)-Gog trapezoid and this neighbor must be equal to m;,;; however, m;,; need not
+to have a SW neighbor. Similar for the complementary inversion number. Corollary 6
+
+implies the following.
+
+Theorem 8. The generating function of (m,n,k)-Gog trapezoids with bottom row
+bi,...,b% wrt. inv and inv’ is the constant term of
+
+k n
+[Ia tains htt Il (1 +ajyrrta + uxj)’tas ti
+i=l i=k+1
+
+x Il (aj — xj)(1+ (1 — va; + ula; + 242;)) (3.1)
+1si<j<n
+
+IN L1,..., 4.
+
+n
+The additional factor [] ih is caused by the fact that the u-weight should not
+i=k+1 .
+
+take into account the entries in the k-th NE-diagonal that are equal to their upper bound.
+

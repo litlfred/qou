@@ -31,9 +31,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
-VOL_4_1 = mp.mpf("2.029883212819307250042405108549291367")  # 2·Im Li₂(e^{iπ/3})
+set_compute_dps()
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 37 digits, correct to 30 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 
 
 def main() -> int:
@@ -72,11 +74,11 @@ def main() -> int:
     wb.add_data("torsion_modulus", float(abs(Vpp)))
     wb.add_data("im_V_saddle", float(mp.im(V(zc))))
     wb.add_data("vol_4_1_over_4pi", float(band_val))
-    wb.add_assertion("hessian_is_sqrt3_torsion", computed=float(torsion_err), expected=0.0,
+    wb.add_assertion("hessian_is_sqrt3_torsion", computed=torsion_err, expected=0.0,
                      tolerance=1e-20, source="−V''(z*) = −3/2 + i√3/2, |−V''| = √3")
-    wb.add_assertion("im_V_is_vol_4_1", computed=float(vol_err), expected=0.0,
+    wb.add_assertion("im_V_is_vol_4_1", computed=vol_err, expected=0.0,
                      tolerance=1e-20, source="Im V(z*) = Vol(4_1)")
-    wb.add_assertion("vol_over_4pi_in_odd_band", computed=float(in_band), expected=1.0,
+    wb.add_assertion("vol_over_4pi_in_odd_band", computed=in_band, expected=1.0,
                      tolerance=0.5, source="Vol(4_1)/(4π)=0.16153 ∈ [0.147,0.168] (#3810)")
     wb.save()
     ok = torsion_err < 1e-20 and vol_err < 1e-20 and in_band

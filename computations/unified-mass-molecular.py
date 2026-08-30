@@ -40,7 +40,7 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
-z = 1.0/(q0**0.5+qi**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # Wedderburn weights (q-deformed, from paper)
 q2 = q0**2
@@ -51,6 +51,14 @@ w_a = q2 / denom_w
 
 # Molecular energy scale
 from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 TWO_Q = q0 + qi
 
 
@@ -62,7 +70,7 @@ def crossing_coeff(ti, tj):
     """Crossing coefficient d for pair (ti, tj). c=1 always."""
     if ti == 'p' and tj == 'p': return 0.0        # pp: σ
     if ti == 'n' and tj == 'n': return -h          # nn: σ⁻¹
-    if (ti,tj) in (('p','n'),('n','p')): return -h/2  # pn: mixed
+    if (ti,tj) in (('p','n'),('n','p')): return _pn_d(h)  # pn: colour-weighted
     if (ti,tj) in (('p','e'),('e','p')): return -h     # pe: EM attraction
     if ti == 'e' and tj == 'e': return 0.0              # ee: EM repulsion
     return None  # ne: identity (skip)

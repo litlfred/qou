@@ -95,4 +95,146 @@ theorem exists_unique_missed_cell (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p 
     ∃ c, (cells l) \ (armF l p ∪ legF l p) = {c} :=
   Finset.card_eq_one.mp (card_sdiff_hookUnion_eq_one l hs p hp heq)
 
+/-! ## Membership criteria, and the first step of the depth-1 case analysis -/
+
+/-- Membership in the arm, unfolded. -/
+theorem mem_armF_iff (l : List ℕ) (p q : ℕ × ℕ) :
+    q ∈ armF l p ↔ q.1 = p.1 ∧ p.2 ≤ q.2 ∧ q.2 < l.getD p.1 0 := by
+  constructor
+  · intro hq
+    obtain ⟨j', hj', rfl⟩ := Finset.mem_image.mp hq
+    exact ⟨rfl, (Finset.mem_Ico.mp hj').1, (Finset.mem_Ico.mp hj').2⟩
+  · rintro ⟨h1, h2, h3⟩
+    refine Finset.mem_image.mpr ⟨q.2, Finset.mem_Ico.mpr ⟨h2, h3⟩, ?_⟩
+    exact Prod.ext h1.symm rfl
+
+/-- Membership in the strict leg, unfolded. -/
+theorem mem_legF_iff (l : List ℕ) (p q : ℕ × ℕ) :
+    q ∈ legF l p ↔ q.2 = p.2 ∧ p.1 < q.1 ∧ q.1 < (conj l).getD p.2 0 := by
+  constructor
+  · intro hq
+    obtain ⟨i', hi', rfl⟩ := Finset.mem_image.mp hq
+    exact ⟨rfl, (Finset.mem_Ioo.mp hi').1, (Finset.mem_Ioo.mp hi').2⟩
+  · rintro ⟨h1, h2, h3⟩
+    refine Finset.mem_image.mpr ⟨q.1, Finset.mem_Ioo.mpr ⟨h2, h3⟩, ?_⟩
+    exact Prod.ext rfl h1.symm
+
+/-- **The corner is outside every hook but its own.** The hook of `p` meets row `p.1` only from
+column `p.2` rightward and column `p.2` only strictly below row `p.1`, so it contains `(0,0)`
+exactly when `p = (0,0)`. This is the pivot of the depth-1 case analysis: for any other carrier the
+corner is *the* missed cell, which then forces every other cell into the hook. -/
+theorem origin_not_mem_hookUnion (l : List ℕ) (p : ℕ × ℕ) (hp : p ≠ (0, 0)) :
+    ((0, 0) : ℕ × ℕ) ∉ armF l p ∪ legF l p := by
+  intro hmem
+  rcases Finset.mem_union.mp hmem with harm | hleg
+  · obtain ⟨h1, h2, _⟩ := (mem_armF_iff l p (0, 0)).mp harm
+    exact hp (Prod.ext h1.symm (by simpa using Nat.le_zero.mp h2))
+  · obtain ⟨_, h2, _⟩ := (mem_legF_iff l p (0, 0)).mp hleg
+    exact absurd h2 (Nat.not_lt_zero p.1)
+
+/-- **The carrier lies on the first row or the first column.** If both coordinates were positive
+the hook would miss *two* distinct cells — the corner `(0,0)` and `(0, p.2)` — contradicting
+`card_sdiff_hookUnion_eq_one`. Combined with the corner lemma this is the case split that pins the
+depth-1 carriers. -/
+theorem carrier_fst_or_snd_eq_zero (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p + 1 = l.sum) : p.1 = 0 ∨ p.2 = 0 := by
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨h1, h2⟩ := hcon
+  have hpc : p.2 < l.getD p.1 0 := by rw [mem_cells] at hp; exact hp
+  have hilen : p.1 < l.length := by
+    by_contra hcon2
+    rw [List.getD_eq_default _ _ (le_of_not_gt hcon2)] at hpc
+    exact Nat.not_lt_zero p.2 hpc
+  have hhead : l.getD p.1 0 ≤ l.getD 0 0 := by
+    rw [getD_zero_eq_headD]
+    refine mem_le_headD l hs _ ?_
+    rw [List.getD_eq_getElem _ _ hilen]
+    exact List.getElem_mem hilen
+  have hlt0 : p.2 < l.getD 0 0 := lt_of_lt_of_le hpc hhead
+  obtain ⟨c, hc⟩ := exists_unique_missed_cell l hs p hp heq
+  have hA : ((0 : ℕ), (0 : ℕ)) ∈ (cells l) \ (armF l p ∪ legF l p) := by
+    refine Finset.mem_sdiff.mpr ⟨?_, origin_not_mem_hookUnion l p ?_⟩
+    · rw [mem_cells]; dsimp only; omega
+    · intro hpe; exact h1 (congrArg Prod.fst hpe)
+  have hB : ((0 : ℕ), p.2) ∈ (cells l) \ (armF l p ∪ legF l p) := by
+    refine Finset.mem_sdiff.mpr ⟨by rw [mem_cells]; exact hlt0, ?_⟩
+    intro hmem
+    rcases Finset.mem_union.mp hmem with harm | hleg
+    · exact h1 ((mem_armF_iff l p (0, p.2)).mp harm).1.symm
+    · exact absurd ((mem_legF_iff l p (0, p.2)).mp hleg).2.1 (Nat.not_lt_zero p.1)
+  rw [hc, Finset.mem_singleton] at hA hB
+  exact h2 (congrArg Prod.snd (hA.trans hB.symm)).symm
+
+/-- **The depth-1 carrier is one of three cells**: `(0,0)`, `(0,1)` or `(1,0)`.
+
+`carrier_fst_or_snd_eq_zero` puts it on row 0 or column 0; pushing further out along either
+axis produces a *second* missed cell — `(0,1)` in the row case, `(1,0)` in the column case —
+contradicting the singleton. These are exactly the carriers of the second-instance audit's three
+shapes: two-corner `(a,2,1^c)` at `(0,0)`, row `(n)` at `(0,1)`, column `(1^n)` at `(1,0)`. -/
+theorem carrier_mem_three (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (heq : hookLen l p + 1 = l.sum) :
+    p = (0, 0) ∨ p = (0, 1) ∨ p = (1, 0) := by
+  have hpc : p.2 < l.getD p.1 0 := by rw [mem_cells] at hp; exact hp
+  obtain ⟨c, hc⟩ := exists_unique_missed_cell l hs p hp heq
+  have hmissed : ∀ q : ℕ × ℕ, q ∈ cells l → q ∉ armF l p ∪ legF l p → q = c := by
+    intro q hq hnot
+    have hqs : q ∈ (cells l) \ (armF l p ∪ legF l p) := Finset.mem_sdiff.mpr ⟨hq, hnot⟩
+    rw [hc, Finset.mem_singleton] at hqs
+    exact hqs
+  rcases carrier_fst_or_snd_eq_zero l hs p hp heq with h1 | h2
+  · rw [h1] at hpc
+    by_cases hp2 : p.2 ≤ 1
+    · have hcase : p.2 = 0 ∨ p.2 = 1 := by omega
+      rcases hcase with h | h
+      · exact Or.inl (Prod.ext h1 h)
+      · exact Or.inr (Or.inl (Prod.ext h1 h))
+    · exfalso
+      push_neg at hp2
+      have hne : p ≠ (0, 0) := by
+        intro he
+        have hz : p.2 = 0 := congrArg Prod.snd he
+        omega
+      have h00 : ((0 : ℕ), (0 : ℕ)) ∈ cells l := by rw [mem_cells]; dsimp only; omega
+      have h01 : ((0 : ℕ), (1 : ℕ)) ∈ cells l := by rw [mem_cells]; dsimp only; omega
+      have hnot01 : ((0 : ℕ), (1 : ℕ)) ∉ armF l p ∪ legF l p := by
+        intro hmem
+        rcases Finset.mem_union.mp hmem with harm | hleg
+        · have := ((mem_armF_iff l p (0, 1)).mp harm).2.1
+          omega
+        · exact absurd ((mem_legF_iff l p (0, 1)).mp hleg).2.1 (Nat.not_lt_zero p.1)
+      have hA := hmissed (0, 0) h00 (origin_not_mem_hookUnion l p hne)
+      have hB := hmissed (0, 1) h01 hnot01
+      have hcontra : (0 : ℕ) = 1 := congrArg Prod.snd (hA.trans hB.symm)
+      omega
+  · rw [h2] at hpc
+    by_cases hp1 : p.1 ≤ 1
+    · have hcase : p.1 = 0 ∨ p.1 = 1 := by omega
+      rcases hcase with h | h
+      · exact Or.inl (Prod.ext h h2)
+      · exact Or.inr (Or.inr (Prod.ext h h2))
+    · exfalso
+      push_neg at hp1
+      have hcount : p.1 < l.countP (fun x => decide (0 < x)) :=
+        (lt_countP_iff l hs 0 p.1).mpr hpc
+      have h10 : ((1 : ℕ), (0 : ℕ)) ∈ cells l := by
+        rw [mem_cells]; exact (lt_countP_iff l hs 0 1).mp (by omega)
+      have h00 : ((0 : ℕ), (0 : ℕ)) ∈ cells l := by
+        rw [mem_cells]; exact (lt_countP_iff l hs 0 0).mp (by omega)
+      have hne : p ≠ (0, 0) := by
+        intro he
+        have hz : p.1 = 0 := congrArg Prod.fst he
+        omega
+      have hnot10 : ((1 : ℕ), (0 : ℕ)) ∉ armF l p ∪ legF l p := by
+        intro hmem
+        rcases Finset.mem_union.mp hmem with harm | hleg
+        · have := ((mem_armF_iff l p (1, 0)).mp harm).1
+          omega
+        · have := ((mem_legF_iff l p (1, 0)).mp hleg).2.1
+          omega
+      have hA := hmissed (0, 0) h00 (origin_not_mem_hookUnion l p hne)
+      have hB := hmissed (1, 0) h10 hnot10
+      have hcontra : (0 : ℕ) = 1 := congrArg Prod.fst (hA.trans hB.symm)
+      omega
+
 end QOU.BraidsAndKnots.HookArmLeg

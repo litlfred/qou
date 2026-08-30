@@ -6,8 +6,8 @@
   "auditOnly": true,
   "computation": {
     "script": "computations/alpha_em/alpha_em_reciprocal_form_probe.py",
-    "scriptCommitSha": "bc4cf7f1aeb33865bb166c057c61dde3bb4fda57",
-    "scriptHash": "2c9b772dde81"
+    "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+    "scriptHash": "c10e6b118f53"
   },
   "inputs": {
     "genus": 4,
@@ -78,12 +78,14 @@
   "verdict": "RECIPROCAL-FORM wall CONSOLIDATED (scope-(a) partial + one scope-(b) exclusion) \u2014 NOT closed. New structural input: Vol(J_Bring) = \u221a|det Q| = 1 (intersection form UNIMODULAR, Poincar\u00e9 duality, #3895). Consequences: (1) the 1-loop photon determinant on the moduli = heat-kernel (4\u03c0)^{-1} \u00d7 Vol(J)=1 = DERIVED 1/(4\u03c0), a factor 2 LARGER than the data 1/(8\u03c0); (2) this SELECTS reading (H) [(4\u03c0)\u00b72, heat-kernel base \u00d7 residual 2] over reading (P) [bare-\u03c0-per-sector], which #3920 left unselected \u2014 the determinant has the heat-kernel base, Vol=1 undresses it; (3) scope-(b) EXCLUSION: the residual factor 2 is NOT a Jacobian/lattice covolume (Vol(J)=1, unimodular); (4) the ENTIRE underived residual is a single factor 1/2, located precisely between the derived 1/(4\u03c0) and the data 1/(8\u03c0). The 1/2 origin (photon polarizations / real\u2295complex #3920; \u03b8-graph symmetry; Gaussian \u00bd) is enumerated but NOT derived \u2014 a factor of 2 is trivially fittable, so it is claimed OPEN. This does NOT derive 1/(8\u03c0); it consolidates the wall to a located 1/2 and excludes the covolume route. No CODATA read; no convention tuned; no \u03b1_k wired; no fit; 1/(8\u03c0) stays a phase-4 identification.",
   "scope": "(a) partial + (b) exclusion \u2014 wall consolidated to a located 1/2; covolume route excluded; 1/2 origin open",
   "antiLaundering": "no CODATA read; no convention tuned to 8\u03c0; Vol(J)=1 is Poincar\u00e9 duality, not chosen; 1/2 residual stated open",
-  "scriptHash": "2c9b772dde81",
-  "scriptCommitSha": "bc4cf7f1aeb33865bb166c057c61dde3bb4fda57",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "scriptHash": "c10e6b118f53",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy",
-  "computedAt": "2026-07-18T17:41:53.378170+00:00",
+  "computedAt": "2026-08-23T08:50:12.568870+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "alpha_em_reciprocal_form_probe.py"
 }

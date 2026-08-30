@@ -1,0 +1,166 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T13:41:36.943150+00:00",
+  "commitSha": "20317af8008fb5b6089ce2bb262f1fc3da554695",
+  "assertions": [
+    {
+      "name": "skein_makes_sigma_minus_sigma_inv_a_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "eps(sigma) - eps(sigma^-1) = h; and sigma - sigma^-1 = h in the algebra"
+    },
+    {
+      "name": "epsNPq_is_a_scalar_in_Qq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "epsNPq = (q - 1)*(q + 1)*(q**2 - 2*q - 1)/(2*q**2) — so eps(epsNPq * 1) = epsNPq trivially"
+    },
+    {
+      "name": "epsNPq_vanishes_at_silver",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the factor q^2 - 2q - 1 is what vanishes"
+    },
+    {
+      "name": "h_is_exactly_two_at_silver",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "averaged_counit_is_sqrt2_at_silver",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "[2]_q/2 = sqrt(2)"
+    },
+    {
+      "name": "colour_weighted_counit_at_silver",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "w = -16/3 + 5*sqrt(2) = 1.73773447853"
+    },
+    {
+      "name": "norm_sigma_is_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "1 + sqrt2 is the fundamental unit"
+    },
+    {
+      "name": "norm_averaged_is_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "norm_colour_weighted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|N(w)| = 194/9 = 2 * 97 / 3^2"
+    },
+    {
+      "name": "sigma_inv_is_the_inverse_of_sigma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "so sigma^-1 shifts M by -1 rather than adding a generator"
+    },
+    {
+      "name": "norm_equation_forces_C_and_K_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "97^K = 1 => K = 0; then 2^C = 1 => C = 0"
+    },
+    {
+      "name": "silver_ratio_is_not_a_root_of_unity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "1 + sqrt2 > 1, so (1+sqrt2)^M = 1 forces M = 0"
+    },
+    {
+      "name": "norm_w_carries_an_odd_prime",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|N(w)| = 194/9; odd primes in numerator: [97], denominator 9. Had this been a pure power of 2 the exclusion would NOT follow."
+    },
+    {
+      "name": "sweep_finds_no_epsNPq_representation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "m in [-6,6], c in [0,3], k in [0,2] at three generic q — 0 hits"
+    },
+    {
+      "name": "sweep_finds_the_chi_block_3_control",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "control found at [(1, 2, 0, 3, 2, 0)] — the argument does not prove too much"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-epsnpq-colour-weighted-exclusion",
+  "scriptFile": "qbeta_epsnpq_colour_weighted_exclusion_probe.py",
+  "scriptHash": "7550b02bc83f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_epsnpq_colour_weighted_exclusion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_epsnpq_colour_weighted_exclusion_probe.py"
+  },
+  "description": "Extends the qou-avt6 scope-(b) exclusion to the colour-weighted crossing template, closing the carve-out avt6 named. No difference of two words over ALL FOUR templates has counit epsNPq.",
+  "data": {
+    "markov_convention": "not applicable — no z enters this computation",
+    "q0_anchor": "none — symbolic in q; delta uses the exact closed form flavor_split_leading(q), never the q0-pinned cache",
+    "colour_weighted_counit_at_silver": "-16/3 + 5*sqrt(2)",
+    "absolute_norms_in_Q_sqrt2": {
+      "sigma": "1",
+      "averaged": "2",
+      "averaged_weighted": "194/9"
+    }
+  },
+  "caveats": [
+    "scope-(b) on a proved invariant (unique factorisation of absolute norms in Q(sqrt2)), fenced to the class 'difference of TWO words over the four d_for_ctype templates'. It says nothing about elements outside that class, and it does not adjudicate qou-99qc."
+  ]
+}

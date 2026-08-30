@@ -1,0 +1,73 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T01:49:07.522715+00:00",
+  "commitSha": "8ec121f43cb1d03681d3e6e202f62ed60971dfa0",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 3324,
+  "computation": "qbeta-delta-bar-parity",
+  "scriptFile": "qbeta_delta_bar_parity_probe.py",
+  "scriptHash": "b1ba709ba34b",
+  "scriptCommitSha": "8ec121f43cb1d03681d3e6e202f62ed60971dfa0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_bar_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_bar_parity_probe.py"
+  },
+  "description": "qou-bg3w: the admissible-root criterion picks the FUNCTIONAL but not the ELEMENT (neither Delta has vanishing (1^3) component). A different canonical criterion -- the Kazhdan-Lusztig bar involution bar(q)=1/q, bar(T_s)=T_s^-1 -- DOES separate them: Delta_S is exactly bar-odd, identically in q; Delta_L is neither bar-odd nor bar-even. Scope-(a): a structural measurement, not an adjudication of the fork.",
+  "data": {
+    "bar_sends_the_generator_to_its_inverse": true,
+    "bar_is_an_involution_on_every_basis_element": true,
+    "bar_is_independent_of_the_reduced_word": true,
+    "chi_(3)_short": "-0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(3)_long": "-0.260387641790120802073285342788008683395823953848067973302616",
+    "chi_(2,1)_short": "0.0",
+    "chi_(2,1)_long": "-0.106814457651578049623631258921144907521837554045085817350151",
+    "chi_(1,1,1)_short": "0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(1,1,1)_long": "-0.171538643776599505671840531694425115158778702109077408139793",
+    "neither_element_lies_in_the_two_row_quotient": true,
+    "the_fork_survives_descent": true,
+    "no_rescaling_identifies_the_two_models": true,
+    "net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes": true,
+    "short_model_is_exactly_bar_odd": true,
+    "long_model_is_neither_bar_odd_nor_bar_even": true,
+    "short_bar_parity": "odd",
+    "long_bar_parity": "indefinite",
+    "long_model_has_a_nonzero_bar_even_part": true,
+    "long_models_bar_odd_part_is_not_the_short_model": true,
+    "bar_reduces_the_symmetric_family_to_two_scalar_equations": true,
+    "the_corpus_crossing_coefficient_is_bar_odd": true,
+    "bar_oddness_forces_the_bar_even_part_of_c_to_h2_over_2": true,
+    "the_forced_coefficient_is_the_one_the_ladder_uses": true,
+    "tr_short_at_q": "-0.210199349900502936568794845696942029965574442560286053602574",
+    "tr_long_at_q": "-0.260387641790120802073285342788008683395823953848067973302616",
+    "tr_short_at_zD": "-0.106235639848092790892141987160551894399375838398475952284352",
+    "tr_long_at_zD": "-0.158016004341491298055061430272824323888679302880732650728172",
+    "the_two_models_are_separated_at_both_admissible_parameters": true,
+    "scope": "a",
+    "adjudicates_the_fork": false,
+    "wires_anything": false,
+    "checks_passed": 15,
+    "checks_total": 15
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

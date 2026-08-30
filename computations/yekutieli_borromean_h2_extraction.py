@@ -27,6 +27,7 @@ This script computes that coefficient and compares to −G (Catalan).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
@@ -134,8 +135,10 @@ def main() -> int:
 
     # Compute at q near 1 and at substrate q_0
     import json
-    q0 = mp.mpf(json.load(open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
-
+    # q₀ from q_parameter (proton pin, AGENTS.md 2026-08-07 directive).
+    # Was a direct read of q-pinning-50-digit.witness.json, which is the
+    # MUON anchor’s definition and bypasses the manifest entirely.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     tr_q0 = borromean_markov_trace_at_q(q0)
     print(f"  tr_M(β_Borromean, q_0) = {mp.nstr(tr_q0, 20)}")
     print(f"  |tr_M| at q_0          = {mp.nstr(abs(tr_q0), 15)}")
@@ -212,8 +215,8 @@ def main() -> int:
 
     w.add_assertion(
         "kappa_computed",
-        computed=float(kappa),
-        expected=float(-G),
+        computed=kappa,
+        expected=-G,
         tolerance=max(abs(float(kappa)), abs(float(G))) * 2,
         unit="h² coefficient",
         source="d²(tr_M(Borromean))/dh² / 2 vs −G",

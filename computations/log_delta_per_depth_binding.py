@@ -31,6 +31,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -54,6 +55,12 @@ CHI_FILES = {
     "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
 }
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 B_AME = {
     "p":   mp.mpf(0), "n":   mp.mpf(0),
     "D":   mp.mpf("2.22456607"),
@@ -67,7 +74,7 @@ ZN = {"p": (1, 0), "n": (0, 1), "D": (1, 1), "T": (1, 2),
 
 
 def alpha_k(k):
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3): return mp.mpf(1)
     if k == 2: return z_mark ** 2
@@ -209,7 +216,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) MeV",

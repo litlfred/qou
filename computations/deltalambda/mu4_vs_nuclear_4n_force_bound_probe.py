@@ -61,7 +61,7 @@ Corpus-grep before declaring: `Tjon`, `four-nucleon force`, `4N force` return
 ZERO hits across content/, docs/ and computations/ — this connection is new to
 the corpus. `C(A,k) basis` appears once (the κ ledger) with no critique attached.
 
-Papers on disc under uploads/ (owner upload 41930f2a): 0409040v2, 0610105v2,
+Papers on disc under library/ (owner upload 41930f2a): 0409040v2, 0610105v2,
 0811.1338v1, 0905.1873v2, plus Klein's 2018 Bonn thesis (50067518). The original
 Tjon reference (PRC 20, 340, 1979) is paywalled and pre-arXiv; it is NOT needed —
 it is the empirical observation, and Platter–Hammer–Meißner both states and
@@ -80,8 +80,16 @@ sys.path[:0] = [str(HERE.parent), str(HERE.parent / "substrate")]
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 25
+set_compute_dps()
 
 B_D = mp.mpf("2.224566")       # deuteron binding, MeV (AME2020)
 B_4HE = mp.mpf("28.295662")    # 4He binding, MeV (AME2020)

@@ -1,0 +1,51 @@
+OVERPARTITIONS, LATTICE PATHS, AND ROGERS-RAMANUJAN IDENTITIES 13
+
+e The sequence t is an overpartition (where the first occurrence of a part can be overlined). We need
+to prove that for all z, t; — ti41 > 0 if tj41 is overlined and t; — ti41 > 0 otherwise. The fact that
+we always have t; — t;41 > 0 is proved in the same way as with the s;. If ti41 is overlined, then it
+corresponds to a NESE peak, so we have x; — xj41 > 2 and uj41 = u;. By considering the expression
+of t; — t;41 in the four cases (the peaks i and i + 1 are both of type 0, both of type 1, of type 0 and
+of type 1, or of type 1 and of type 0), the result is easily shown.
+
+O
+Si 82 - sn\. . . as . .
+Therefore i tL is the Frobenius representation of an overpartition whose weight is
+1 tg -+: tn
+N N
+Misi +t +) = doa
+i=l i=l
+
+i.e. the major index of the corresponding path.
+As an example, the path in Figure A corresponds to the overpartition
+
+14 11 6 4 2
+7 6 5B 4 38)
+
+(6, 4,0) (22, 4,1)
+(9,3,0) (12,3, 1)
+(18, 2,1)
+
+FIGuRE 8. Illustration of the correspondence between paths and successive ranks. The
+values of x, y and u are given for each peak.
+
+The peaks all have height at least one, thus for a peak (x,y) which is preceded by an even number of East
+steps, we have:
+l<y=a+1l4+t—stu<k-1
+ea-k+2<s—-t-uK<a
+<> the corresponding successive rank is > a—k+2and<a
+and if the peak is preceded by an odd number of East steps, we have:
+l<y=s-t—-u-a<k-1l
+eSati<s—-t-u<k+a-1
+< the corresponding successive rank is >a +1 and <k+a-—1.
+Thus, given a Frobenius representation of an overpartition and a nonnegative integer a, there is a unique
+corresponding path which starts at (0, a).
+In our paths, a = k —i, therefore in the first case the successive rank r € [—i +2, k — i] and in the second
+case r € [k —i+1,2k—i- 1].
+The map is easily reversible. This proves Proposition fed}
+
+5. PATHS AND MULTIPLICITIES
+In this section we prove the case By,i(n,j) = Ex,i(n,j) of Theorem ‘We even prove a refinement:
+
+Proposition 5.1. There exists a one-to-one correspondence between the paths counted by Exi(n,j) and the
+overpartitions counted by Byi(n,j). This correspondence is such that the paths have N peaks if and only if
+the length of the multiplicity sequence of the overpartition is N (see Section for the definition).

@@ -1,0 +1,50 @@
+256 M. Geck and R. Rouquier
+
+Let us go back to the case where H is any finite dimensional algebra
+over K. From now, we assume that K is perfect (one could as well work
+with the weaker assumption that given any simple H-module V, then
+Z(Endy(V)) is a separable extension of K).
+
+A basis for Ro(H) (resp. Ko(#)) is given by the images of a complete
+set of representatives of isomorphism classes of simple (resp. projective
+indecomposable) modules. Hence, one has an isomorphism Ro(H) >
+Ko(H) given by sending the class of a simple module to the class of one
+of its projective covers.
+
+An irreducible character of H is defined as the character of a simple
+H-module and we denote by Irr(H) the set of irreducible characters of H.
+
+If K’ is a field extension of K, then the canonical maps tk? : Ko(H) >
+Ko(K'H) and tf? : Ro(H) + Ro(K'H) are injective. There exists a finite
+Galois extension K’ of K such that K’H is split, i.e., such that for every
+simple K’H-module V, the canonical map K’ — Endx:4(V) given by
+multiplication is an isomorphism; we call such a field K’ a neutralizing
+field for H. Let V be asimple H-module. Then, there are non-isomorphic
+simple K’H-modules V,,...,V; and an integer my (the Schur indez of
+V) such that
+
+KV ~(YV@---@V,)"”.
+
+Note that we have [Ky : Z(Kv)] = m?, where Ky = Endy(V). Let
+V’ be another simple H-module, with K’V’ ~ (V/ ®--- @VZ)™v" where
+the modules Vj are simple and V/ % Vj for i # j. Then, if V 4 V’,
+we have V; # Vj, for all i,j. Let Py be a projective cover of V. Then,
+Homxey (K'Py, K'V') ~ K’ @ Homy(Py,V’) ~ K' @ Homy(V,V’) ~
+Hom xy(K'V, K'V’). Hence, K'Py is a projective cover of K’V, i.e.,
+denoting by P, a projective cover of V;, we have
+
+K'Py = (AO OP)”.
+
+We then define Ro(H) as the subgroup of Ro(K’H) with basis
+{za7[V]} where V runs over the simple H-modules (cf [Se, §12.1]). Simi-
+larly, we define Ko(H) as the subgroup of Ko(K'H) with basis {-[Py]}
+where V runs over the simple H-modules. Note that the group Ro(H)
+(resp. K(H)) is a subgroup of finite index offfo(H) (resp. Ko(H)). In
+particular, rank Ro(H) = rankRo(H) and rank Ko(H) = rankKo(H).
+
+It is clear that cx,,(-,-)x and (-,-)« extend to maps Ko(H) — Ro(H),
+Ko(H) x Ro(H) — Z and Ko(H) x CF(H) — K compatible with the
+extension to K’. Furthermore, we define R{(H) as Ro(H)N RE (K'H).
+
+Proposition 2.5 Recall that K is assumed to be perfect. Then the map
+px: Rf (H) > Maps(H, K[X]) is an injection.

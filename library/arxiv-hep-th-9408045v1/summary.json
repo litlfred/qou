@@ -1,0 +1,51 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9408045v1",
+ "source_sha256": "a9786c0f44a4e659",
+ "brief": "Constrained analysis of topologically massive gravity — We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method.",
+ "extended": "**Constrained analysis of topologically massive gravity**\n\n*J. Barcelos-Neto ∗ and T.G. Dargam*\n\n15 pp, 6 sections.\n\n**Abstract.** We quantize the Einstein gravity in the formalism of weak gra vitational ﬁelds by using the constrained Hamiltonian method. Special emphasis is gi ven to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term i s added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce. ufrj.br 1\n\n**Outline.** Abstract; I Introduction; II Hilbert-Einstein theory in a weak gravitati; III Topologically massive gravitation; IV Conclusion; References",
+ "tokens": {
+  "brief": 44,
+  "extended": 162
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation",
+   "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-003-iii-topologically-massive-gravitation",
+   "title": "Topologically massive gravitation",
+   "pages": "7-14"
+  },
+  {
+   "id": "sec-004-iv-conclusion",
+   "title": "Conclusion",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "15-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

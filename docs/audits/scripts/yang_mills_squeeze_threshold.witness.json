@@ -1,0 +1,103 @@
+{
+  "schema": "qou-audit-probe/v1",
+  "block": "rem:yang-mills-surreal-bound",
+  "lemma_hypothesis": "delta > 0 a STANDARD REAL (lem:surreal-squeeze)",
+  "questions": {
+    "holds_for_standard_real_delta": true,
+    "delta_zero_is_within_lemma_hypothesis": false,
+    "asserted_gap_eps3_is_within_lemma_hypothesis": false,
+    "degenerates_to_equality_at_delta_zero": false,
+    "marginal_equality_exists_at": "delta = eps^2",
+    "asserted_gap_eps3_passes_the_inequality": false
+  },
+  "threshold": "|delta| > eps^2",
+  "asserted_gap": "Delta_q ~ eps^3",
+  "finding": "The squeeze's threshold is eps^2; the block's asserted gap is eps^3, smaller by a factor of eps. An excitation at the asserted gap fails the squeeze. Scope-(a): the squeeze as written does not support the eps^3 gap. Not a refutation of the mass gap, and not a claim that no squeeze supports it.",
+  "order_driven": true,
+  "rows": [
+    {
+      "eps": "1e-6",
+      "delta": "delta = 0",
+      "note": "the block says 'degenerates to marginal equality' here",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-6",
+      "delta": "delta = eps^3",
+      "note": "the block's own asserted mass gap Delta_q",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-6",
+      "delta": "delta = eps^2",
+      "note": "the true marginal case",
+      "relation": "delta^2/eps = eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-6",
+      "delta": "delta = 1",
+      "note": "a standard real",
+      "relation": "delta^2/eps > eps^3",
+      "holds": true
+    },
+    {
+      "eps": "1e-12",
+      "delta": "delta = 0",
+      "note": "the block says 'degenerates to marginal equality' here",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-12",
+      "delta": "delta = eps^3",
+      "note": "the block's own asserted mass gap Delta_q",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-12",
+      "delta": "delta = eps^2",
+      "note": "the true marginal case",
+      "relation": "delta^2/eps = eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-12",
+      "delta": "delta = 1",
+      "note": "a standard real",
+      "relation": "delta^2/eps > eps^3",
+      "holds": true
+    },
+    {
+      "eps": "1e-24",
+      "delta": "delta = 0",
+      "note": "the block says 'degenerates to marginal equality' here",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-24",
+      "delta": "delta = eps^3",
+      "note": "the block's own asserted mass gap Delta_q",
+      "relation": "delta^2/eps < eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-24",
+      "delta": "delta = eps^2",
+      "note": "the true marginal case",
+      "relation": "delta^2/eps = eps^3",
+      "holds": false
+    },
+    {
+      "eps": "1e-24",
+      "delta": "delta = 1",
+      "note": "a standard real",
+      "relation": "delta^2/eps > eps^3",
+      "holds": true
+    }
+  ]
+}

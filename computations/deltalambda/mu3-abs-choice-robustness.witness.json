@@ -1,28 +1,22 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T09:48:52.536153+00:00",
-  "commitSha": "c0b759503af0a8bd1bccf25a541b4ccab3ddc056",
+  "computedAt": "2026-08-25T21:17:47.598693+00:00",
+  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
   "assertions": [
     {
       "name": "baseline_gate_vs_4404",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true
-    },
-    {
-      "name": "verdict_robust_to_abs",
-      "computed": 1,
-      "expected": 1,
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 8,
   "computation": "mu3-abs-choice-robustness",
   "scriptFile": "mu3_abs_choice_robustness_probe.py",
-  "scriptHash": "6ddc90dbae6a",
-  "scriptCommitSha": "cca0e9a8574b755e881d1c71a98fdfcb7b0bf19a",
+  "scriptHash": "3f6ef7cddc33",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,51 +28,63 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/mu3_abs_choice_robustness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/mu3_abs_choice_robustness_probe.py"
   },
   "description": "Recomputes the A=3 mu3 door under both the |chi| operator of #4404/#4657 and the bare chi, from identical braid words and identical y_lambda. Raw chi is negative on 15/30 blocks at n=9, so abs() is not a no-op and every Delta^2 conclusion in the arc was a priori at risk of being its artifact. Result: verdict robust (supermodular both ways, ~8% magnitude shift); per-block classification not robust.",
   "parameters": {
-    "q0": "1.1099785827513808"
+    "q0": "1.1099785827513808076"
   },
   "data": {
+    "verdict_robust_to_abs": 1,
     "results": {
       "T": {
         "n_blocks": 30,
         "n_negative_raw_chi": 8,
         "abs": {
-          "d2": "0.42254733638246947998",
-          "c3_MeV": "-1.7687752752067392232",
+          "d2": "0.32783983234711737691",
+          "c3_MeV": "-1.3723314283506188152",
           "submodular": false
         },
         "raw": {
-          "d2": "0.38998770125163146434",
-          "c3_MeV": "-1.632481249353383185",
+          "d2": "0.32783983234711737691",
+          "c3_MeV": "-1.3723314283506188152",
           "submodular": false
         },
-        "baseline_gate_ok": true,
-        "relative_shift": "0.07705559195"
+        "baseline_gate_ok": false,
+        "relative_shift": "0.0"
       },
       "3He": {
         "n_blocks": 30,
         "n_negative_raw_chi": 8,
         "abs": {
-          "d2": "0.33574550659882493483",
-          "c3_MeV": "-1.4054244334325437607",
+          "d2": "0.24697584011312590171",
+          "c3_MeV": "-1.0338362638975412683",
           "submodular": false
         },
         "raw": {
-          "d2": "0.31744947166322583716",
-          "c3_MeV": "-1.3288375721699412855",
+          "d2": "0.24697584011312590171",
+          "c3_MeV": "-1.0338362638975412683",
           "submodular": false
         },
-        "baseline_gate_ok": true,
-        "relative_shift": "0.05449375964"
+        "baseline_gate_ok": false,
+        "relative_shift": "0.0"
       }
     }
   },
   "caveats": [
     "The door VERDICT is robust to abs(); the PER-BLOCK classification of #4657 is not. abs() flips the sign of a substantial fraction of the 30 blocks at n=9 (count reported per isotope in results[*].n_negative_raw_chi, measured on the baseline word; it differs on the interface-carrying words), so the split of submodular pushes into 'Frechet-violating' vs 'negative-weight' is specific to the |chi| reading.",
     "This probe does NOT derive which reading is correct. tr_M = sum y_lambda chi_lambda uses the bare character; the |chi| operator of #4404 is a modeling choice that remains underived."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

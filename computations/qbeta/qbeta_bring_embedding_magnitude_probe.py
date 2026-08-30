@@ -36,7 +36,7 @@ RESULT PREVIEW (honest negative — a WIN per the discipline):
       numeric realisation, and jet degree n is a Reeb/vertical order, NOT the
       braid winding power.
     - the only FORCED numeric period of these two knots is the hyperbolic complex
-      volume Vol(4₁)=2Λ(π/3), Vol(Bor)=8G; its ratio 3.610 is q₀-independent and
+      volume Vol(4₁)=2·Cl₂(π/3), Vol(Bor)=8G; its ratio 3.610 is q₀-independent and
       misses 4.075 by 11.4% ([A3]).
   * STRUCTURAL WALL ([A4]): a period "evaluated at q₀" is by construction a SMOOTH
     function of q₀; between the two anchors (Δq ≈ 1.3e-8) any smooth q₀-period
@@ -70,7 +70,7 @@ mp.mp.dps = 60
 ME = mp.mpf(str(C.M_E_MEV))
 QCOD = mp.mpf(str(C.Q_BETA_MEV))
 with mp.workdps(60):
-    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))       # Vol(4₁) = 2Λ(π/3), forced period
+    VOL41 = +(2 * mp.clsin(2, mp.pi / 3))       # Vol(4₁) = 2·Cl₂(π/3), forced period
     VOL_BOR = +(8 * mp.catalan)                  # Vol(Borromean) = 8G, forced period
 
 # canonical braid words (corpus `fundamental-knots-operator-basis`,
@@ -141,7 +141,7 @@ def main() -> int:
 
     candidates = {
         # -- the only genuinely FORCED numeric period of these two knots --------
-        "Vol(Bor)/Vol(4₁) = 8G / 2Λ(π/3)  [forced, q₀-indep]": VOL_BOR / VOL41,
+        "Vol(Bor)/Vol(4₁) = 8G / 2·Cl₂(π/3)  [forced, q₀-indep]": VOL_BOR / VOL41,
         "mass ratio m(Bor)/m(4₁) [= Vol ratio; ρ,ℏ_q cancel]": VOL_BOR / VOL41,
         # -- X5 categorical weight (unit modulus) ------------------------------
         "|ζ₅^-3| / |ζ₅^-2|  [X5 phase, U(1)]": x5_ratio,
@@ -218,7 +218,7 @@ def main() -> int:
         "content.md): |ζ₅⁻³|/|ζ₅⁻²|=1, a phase not a magnitude. [A3] The SW periods a_D^(n) "
         "(sw-period-residue-sum.lean, jet-sw-tau-decomposition.lean) are abstract ℂ fields with no "
         "numeric realisation and jet degree≠winding power; the only FORCED numeric period of the two "
-        "knots is the hyperbolic complex volume ratio 8G/2Λ(π/3)=3.610, q₀-independent, missing 4.075 "
+        "knots is the hyperbolic complex volume ratio 8G/(2·Cl₂(π/3))=3.610, q₀-independent, missing 4.075 "
         "by 11.4%; every q₀-evaluated boost candidate (sinh/cosh at ln q₀ or ln φ, φ^n, Lucas/Fib) "
         "misses by ≫0.1%. [A4] Structural wall: a q₀-evaluated period is smooth ⇒ its w³/w² value is "
         "identical at the two anchors to ~1e-9 (a factor≈1), so it cannot be a factor-4 hypersensitive "
@@ -232,7 +232,7 @@ def main() -> int:
             f"q*={mp.nstr(q_star,16)} the S-zero; residual {mp.nstr(a1_resid,4)} (local curvature)"),
         "dS_dq_hypersensitivity": mp.nstr(dSdq, 6),
         "x5_weight_ratio": f"|ζ₅⁻³|/|ζ₅⁻²| = {mp.nstr(x5_ratio,6)} (categorical U(1) phase, not a magnitude)",
-        "forced_volume_period_ratio": f"8G/2Λ(π/3) = {mp.nstr(VOL_BOR/VOL41,10)} (misses 4.075 by {mp.nstr(rr(VOL_BOR/VOL41),4)}%)",
+        "forced_volume_period_ratio": f"8G/(2·Cl₂(π/3)) = {mp.nstr(VOL_BOR/VOL41,10)} (misses 4.075 by {mp.nstr(rr(VOL_BOR/VOL41),4)}%)",
         "best_candidate_miss": f"{best_k} at {mp.nstr(best_m,4)}%",
         "smooth_period_anchor_spread": f"{mp.nstr(anchor_spread,4)} (≈1e-9; a q₀-period is ≈identical at both pins)",
         "sw_periods_status": "abstract ℂ fields (sw-period-residue-sum.lean); no numeric realisation; jet degree ≠ braid winding power",

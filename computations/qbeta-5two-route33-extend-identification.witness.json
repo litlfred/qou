@@ -1,0 +1,125 @@
+{
+  "probe": "qbeta_5two_route33_extend_identification",
+  "bean": "qou-rstq",
+  "cross_ref": "qou-trns",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/MathlibExt/ComplexDilogarithmLanden.lean",
+    "QOU/MathlibExt/AlternatingZetaTwo.lean",
+    "QOU/Archimedean/LiTwoNegOne.lean"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "extend(pi^2/6, rogersL)(x) = Re of the analytic Rogers L, at the SIX arguments Lean's `extended_sum` actually uses -- the level-7 orbit {1/(1-x), x, (x-1)/x} and its negatives, x the root of X^3-2X^2-X+1 in (1/2,1). These are the values the level-7 bridge (Route 32) needs, not a generic sample",
+      "root_x": "0.55495813208737119142",
+      "per_argument": [
+        {
+          "x": "2.24697960371746706",
+          "extend": "2.5436751008015963",
+          "Re_L": "2.5436751008015963",
+          "regime": "x>1"
+        },
+        {
+          "x": "0.554958132087371191",
+          "extend": "0.898741033953369867",
+          "Re_L": "0.898741033953369867",
+          "regime": "0<=x<=1"
+        },
+        {
+          "x": "-0.801937735804838252",
+          "extend": "-0.746193032894856569",
+          "Re_L": "-0.746193032894856569",
+          "regime": "x<0"
+        },
+        {
+          "x": "-2.24697960371746706",
+          "extend": "-1.09251032497178555",
+          "Re_L": "-1.09251032497178555",
+          "regime": "x<0"
+        },
+        {
+          "x": "-0.554958132087371191",
+          "extend": "-0.622529163015149423",
+          "Re_L": "-0.622529163015149423",
+          "regime": "x<0"
+        },
+        {
+          "x": "0.801937735804838252",
+          "extend": "1.25739548481139508",
+          "Re_L": "1.25739548481139508",
+          "regime": "0<=x<=1"
+        }
+      ],
+      "worst_difference": "3.622271632e-71",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the same identification across ALL THREE regimes of `extend`, 81 points each -- so the agreement is not an accident of the six arguments. On (0,1) the two agree identically (both are the series); the content is in x > 1 (inversion) and x < 0 (Landen)",
+      "sweeps": [
+        {
+          "regime": "0 < x < 1",
+          "worst": "0.0",
+          "at_x": "0 everywhere"
+        },
+        {
+          "regime": "x > 1",
+          "worst": "7.244543263e-71",
+          "at_x": "1.369"
+        },
+        {
+          "regime": "x < 0",
+          "worst": "3.622271632e-71",
+          "at_x": "-7.70075"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "d/dz [Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2] = 0 -- the analytic core of the Landen leg, and exactly what Lean's `hasDerivAt_landenCombo` proves. Sampled OFF the real axis as well, since the Lean statement is complex",
+      "n_points": 39,
+      "worst_abs_derivative": "3.399756682e-80",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the constant that zero derivative leaves undetermined is 0 -- i.e. Landen holds outright. Pinning it needs one special value, Li2(-1) = -pi^2/12 at the base point z = -1. AN EARLIER DRAFT OF THIS GATE SAID LEAN DID NOT HAVE IT; that is now false and is corrected: `QOU.Archimedean.LiTwo_neg_one` and `cLiTwo_neg_one` prove it, from `hasSum_alternating_zeta_two` -- a Mathlib gap filled here, since Mathlib has hasSum_zeta_two (pi^2/6) but no alternating analogue. What remains for Landen is only the connectedness step from zero derivative to the identity",
+      "n_points": 39,
+      "worst_abs_value": "3.733752135e-71",
+      "value_at_z_eq_minus_1": "4.527839539e-72",
+      "LiTwo_minus_one": "-0.82246703342411321824",
+      "minus_pi_sq_over_12": "-0.82246703342411321824",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "WHAT LEAN STILL NEEDS, named per regime rather than left in prose. (0,1): nothing -- `cLiTwo_ofReal` already bridges the corpus's LiTwo to cLiTwo. x < 0 (Landen): the analytic core AND the base value Li2(-1) = -pi^2/12 are both proved; what remains is only the connectedness step from zero derivative to the identity. x > 1 (inversion): HARDER, and not attempted -- x > 1 lies ON cLiTwoExt's cut (notCut excludes real x >= 1), so it needs a BOUNDARY value from off the cut, not merely a constant of integration. Exactly one of the six arguments is in that regime, and it is unavoidable: it is w_1 = 2.24698",
+      "arguments_needing_the_cut_regime": [
+        "2.24697960371746706"
+      ],
+      "notCut_definition": "{w : Im w != 0 or Re w < 1}",
+      "landen_remaining": "only the zero-derivative-to-identity connectedness step; the analytic core and the base value Li2(-1) = -pi^2/12 are both proved",
+      "inversion_remaining": "boundary values of Li2 on [1, inf) -- new analytic infrastructure",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "ADVERSARIAL on the Lean hypothesis: `hasDerivAt_landenCombo` requires 1 - z in slitPlane, and that is load-bearing, not decoration. At z = 3 the point 1 - z = -2 is a negative real, on log's cut, and log(1 - z/(z-1)) = -log(1-z) FAILS by exactly 2 pi i -- so the cancellation the theorem turns on would break. Dropping the hypothesis does not weaken the theorem, it falsifies it",
+      "z": "3",
+      "lhs": "(-0.69314718055995 + 3.1415926535898j)",
+      "rhs": "(-0.69314718055995 - 3.1415926535898j)",
+      "difference": "(0.0 + 6.2831853071796j)",
+      "two_pi_i": "(0.0 + 6.2831853071796j)",
+      "fails_by_2_pi_i": true,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "extend(pi^2/6, rogersL) = Re of the analytic Rogers L, to 1e-50, at the six arguments `extended_sum` uses and across all three regimes.",
+    "proved_this_round": "the analytic core of the Landen leg -- the combination Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2 has zero derivative, with the branch condition isolated and shown load-bearing.",
+    "still_open": "(a) for Landen, only the connectedness step -- its analytic core AND its base value Li2(-1) = -pi^2/12 are both now proved; (b) the INVERSION leg for x > 1, which needs boundary values of Li2 ON its cut -- new analytic infrastructure, and the sharper of the two. Exactly one of the six arguments needs it, w_1 = 2.24698, and it cannot be avoided.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

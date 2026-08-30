@@ -1,0 +1,1009 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "zagier-the-dilogarithm-function-copy-b",
+ "source": {
+  "file": "zagier-the-dilogarithm-function-copy-b.pdf",
+  "sha256": "c584944a501ef0c568841f8cbd9b1939b128a65ce72eff32f908bb79cad50484",
+  "bytes": 784831,
+  "pages": 63
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "The Dilogarithm Function Don Zagier",
+  "authors_raw": "Max-Planck-Institut für Mathematik, Vivatsgasse 7, D-53111 Bonn, Germ any",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "PyPDF2",
+   "Title": "The dilogarithm function.",
+   "Author": "Don Zagier, Don Zagier"
+  },
+  "title_lines": [
+   "The Dilogarithm Function",
+   "Don Zagier"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The dilogarithm function in geometry and number theory 5",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "The Bloch-Wigner function D(z) and its generalizations . . . . . . . . . . . . 10",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Volumes of hyperbolic 3-manifolds ... ........................... 1 3",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Dilogarithms and modular functions: the Nahm equation . . . . . . . . . . . 41",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 2,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "This paper is a revised version of a lecture which was given in Bonn on the",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 4,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Special values",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 6,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Li2",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Li2(1) − 1",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Functional equations",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 8,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "The Bloch-Wigner function D(z)",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 10,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(z1,z 2)=",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(z1,z 2)= 1",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 12,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 14,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 16,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "(F )o f K3(F ). The exact deﬁnition of K ind",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(F ) is not relevant here. What",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(F ) with BF this mapping",
+   "page": 16,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "It should be mentioned that the deﬁnition of BF w h i c hw eg a v ef o rF = C or",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(F )a n d",
+   "page": 17,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 18,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 20,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Variants of the dilogarithm function",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L(1) − L(1/x)i f x> 1,",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Z, just like its complex ana-",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 22,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 24,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "The double logarithm. In recent years there has been a resurgence of",
+   "page": 24,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 26,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Don Zagier",
+   "page": 28,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "(x)=",
+   "page": 29,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(x), and the corresponding higher p-adic",
+   "page": 29,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Dilogarithm identities",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Q2 , 1 − Q2 = Q1 Q2 (19)",
+   "page": 35,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Dilogarithm identities from triangulated 3-manifolds. Finally, we",
+   "page": 37,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Dilogarithms and modular functions",
+   "page": 39,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "L(1) for both ξQ0 and",
+   "page": 43,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "L(1),",
+   "page": 44,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Rh,1 −Q2 = Q3R,1 −Q3 = Q2R−1 with R =( Qh",
+   "page": 46,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "BtA−1B − r",
+   "page": 48,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic calculations. In this subsection we study the asymptotic",
+   "page": 48,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "An2+Bn+C",
+   "page": 48,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An2+Bn",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A+B FA,B+A(q) (37)",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A+B)ε HA,B+A(ε)",
+   "page": 50,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An2+Bn+C)",
+   "page": 51,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An2+Bn x−n",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An2+Bn x−n =",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Higher polylogarithms",
+   "page": 56,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "L3(1). For r2 > 0, however, the correct A3(F )",
+   "page": 58,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "If we observe that D(x′",
+   "page": 60,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-4-don-zagier",
+   "number": "4",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 159,
+   "n_words": 22
+  },
+  {
+   "id": "sec-001-i-the-dilogarithm-function-in-geometry-and-numbe",
+   "number": "I",
+   "title": "The dilogarithm function in geometry and number theory 5",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 194,
+   "n_words": 65
+  },
+  {
+   "id": "sec-002-3-the-bloch-wigner-function-dz-and-its-generaliz",
+   "number": "3",
+   "title": "The Bloch-Wigner function D(z) and its generalizations . . . . . . . . . . . . 10",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-volumes-of-hyperbolic-3-manifolds-1-3",
+   "number": "4",
+   "title": "Volumes of hyperbolic 3-manifolds ... ........................... 1 3",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 519,
+   "n_words": 139
+  },
+  {
+   "id": "sec-004-3-dilogarithms-and-modular-functions-the-nahm-eq",
+   "number": "3",
+   "title": "Dilogarithms and modular functions: the Nahm equation . . . . . . . . . . . 41",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5363,
+   "n_words": 962
+  },
+  {
+   "id": "sec-005-1-this-paper-is-a-revised-version-of-a-lecture-w",
+   "number": "1",
+   "title": "This paper is a revised version of a lecture which was given in Bonn on the",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 189,
+   "n_words": 29
+  },
+  {
+   "id": "sec-006-6-don-zagier",
+   "number": "6",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1038,
+   "n_words": 184
+  },
+  {
+   "id": "sec-007-1-special-values",
+   "number": "1",
+   "title": "Special values",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 720,
+   "n_words": 173
+  },
+  {
+   "id": "sec-008-2-li2",
+   "number": "2",
+   "title": "Li2",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 997,
+   "n_words": 255
+  },
+  {
+   "id": "sec-009-8-don-zagier",
+   "number": "8",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 991,
+   "n_words": 256
+  },
+  {
+   "id": "sec-010-2-li21-1",
+   "number": "2",
+   "title": "Li2(1) − 1",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 67,
+   "n_words": 27
+  },
+  {
+   "id": "sec-011-2-functional-equations",
+   "number": "2",
+   "title": "Functional equations",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 1995,
+   "n_words": 434
+  },
+  {
+   "id": "sec-012-10-don-zagier",
+   "number": "10",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-3-the-bloch-wigner-function-dz",
+   "number": "3",
+   "title": "The Bloch-Wigner function D(z)",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2688,
+   "n_words": 560
+  },
+  {
+   "id": "sec-014-12-don-zagier",
+   "number": "12",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1715,
+   "n_words": 399
+  },
+  {
+   "id": "sec-015-2-z1z-2",
+   "number": "2",
+   "title": "(z1,z 2)=",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 737,
+   "n_words": 167
+  },
+  {
+   "id": "sec-016-2-z1z-2-1",
+   "number": "2",
+   "title": "(z1,z 2)= 1",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1218,
+   "n_words": 221
+  },
+  {
+   "id": "sec-017-14-don-zagier",
+   "number": "14",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4430,
+   "n_words": 839
+  },
+  {
+   "id": "sec-018-16-don-zagier",
+   "number": "16",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4417,
+   "n_words": 975
+  },
+  {
+   "id": "sec-019-18-don-zagier",
+   "number": "18",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2018,
+   "n_words": 386
+  },
+  {
+   "id": "sec-020-3-f-o-f-k3f-the-exact-deﬁnition-of-k-ind",
+   "number": "3",
+   "title": "(F )o f K3(F ). The exact deﬁnition of K ind",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-3-f-is-not-relevant-here-what",
+   "number": "3",
+   "title": "(F ) is not relevant here. What",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 363,
+   "n_words": 65
+  },
+  {
+   "id": "sec-022-3-f-with-bf-this-mapping",
+   "number": "3",
+   "title": "(F ) with BF this mapping",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 542,
+   "n_words": 99
+  },
+  {
+   "id": "sec-023-2-it-should-be-mentioned-that-the-deﬁnition-of-b",
+   "number": "2",
+   "title": "It should be mentioned that the deﬁnition of BF w h i c hw eg a v ef o rF = C or",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2177,
+   "n_words": 425
+  },
+  {
+   "id": "sec-024-3-f-a-n-d",
+   "number": "3",
+   "title": "(F )a n d",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 962,
+   "n_words": 185
+  },
+  {
+   "id": "sec-025-20-don-zagier",
+   "number": "20",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 236,
+   "n_words": 56
+  },
+  {
+   "id": "sec-026-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3315,
+   "n_words": 569
+  },
+  {
+   "id": "sec-027-22-don-zagier",
+   "number": "22",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1609,
+   "n_words": 269
+  },
+  {
+   "id": "sec-028-1-variants-of-the-dilogarithm-function",
+   "number": "1",
+   "title": "Variants of the dilogarithm function",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1945,
+   "n_words": 346
+  },
+  {
+   "id": "sec-029-2-l1-l1xi-f-x-1",
+   "number": "2",
+   "title": "L(1) − L(1/x)i f x> 1,",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 430,
+   "n_words": 88
+  },
+  {
+   "id": "sec-030-2-z-just-like-its-complex-ana",
+   "number": "2",
+   "title": "Z, just like its complex ana-",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 892,
+   "n_words": 177
+  },
+  {
+   "id": "sec-031-24-don-zagier",
+   "number": "24",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 5169,
+   "n_words": 1022
+  },
+  {
+   "id": "sec-032-26-don-zagier",
+   "number": "26",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1751,
+   "n_words": 324
+  },
+  {
+   "id": "sec-033-c-the-double-logarithm-in-recent-years-there-has",
+   "number": "C",
+   "title": "The double logarithm. In recent years there has been a resurgence of",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 2816,
+   "n_words": 580
+  },
+  {
+   "id": "sec-034-28-don-zagier",
+   "number": "28",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 4486,
+   "n_words": 908
+  },
+  {
+   "id": "sec-035-30-don-zagier",
+   "number": "30",
+   "title": "Don Zagier",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3082,
+   "n_words": 626
+  },
+  {
+   "id": "sec-036-2-x",
+   "number": "2",
+   "title": "(x)=",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 369,
+   "n_words": 67
+  },
+  {
+   "id": "sec-037-2-x-and-the-corresponding-higher-p-adic",
+   "number": "2",
+   "title": "(x), and the corresponding higher p-adic",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4273,
+   "n_words": 737
+  },
+  {
+   "id": "sec-038-2-dilogarithm-identities",
+   "number": "2",
+   "title": "Dilogarithm identities",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 35,
+   "n_chars": 11499,
+   "n_words": 2249
+  },
+  {
+   "id": "sec-039-1-q2-1-q2-q1-q2-19",
+   "number": "1",
+   "title": "Q2 , 1 − Q2 = Q1 Q2 (19)",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 4157,
+   "n_words": 898
+  },
+  {
+   "id": "sec-040-c-dilogarithm-identities-from-triangulated-3-man",
+   "number": "C",
+   "title": "Dilogarithm identities from triangulated 3-manifolds. Finally, we",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 4785,
+   "n_words": 1063
+  },
+  {
+   "id": "sec-041-3-dilogarithms-and-modular-functions",
+   "number": "3",
+   "title": "Dilogarithms and modular functions",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 43,
+   "n_chars": 11399,
+   "n_words": 2236
+  },
+  {
+   "id": "sec-042-5-l1-for-both-ξq0-and",
+   "number": "5",
+   "title": "L(1) for both ξQ0 and",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 706,
+   "n_words": 157
+  },
+  {
+   "id": "sec-043-5-l1",
+   "number": "5",
+   "title": "L(1),",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 3453,
+   "n_words": 815
+  },
+  {
+   "id": "sec-044-1-rh1-q2-q3r1-q3-q2r1-with-r-qh",
+   "number": "1",
+   "title": "Rh,1 −Q2 = Q3R,1 −Q3 = Q2R−1 with R =( Qh",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 3470,
+   "n_words": 1031
+  },
+  {
+   "id": "sec-045-2-bta1b-r",
+   "number": "2",
+   "title": "BtA−1B − r",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 305,
+   "n_words": 63
+  },
+  {
+   "id": "sec-046-c-asymptotic-calculations-in-this-subsection-we",
+   "number": "C",
+   "title": "Asymptotic calculations. In this subsection we study the asymptotic",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 566,
+   "n_words": 116
+  },
+  {
+   "id": "sec-047-2-an2bnc",
+   "number": "2",
+   "title": "An2+Bn+C",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 2558,
+   "n_words": 541
+  },
+  {
+   "id": "sec-048-2-an2bn",
+   "number": "2",
+   "title": "An2+Bn",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 12,
+   "n_words": 4
+  },
+  {
+   "id": "sec-049-2-ab-fabaq-37",
+   "number": "2",
+   "title": "A+B FA,B+A(q) (37)",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 74,
+   "n_words": 14
+  },
+  {
+   "id": "sec-050-2-abε-habaε",
+   "number": "2",
+   "title": "A+B)ε HA,B+A(ε)",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 2887,
+   "n_words": 683
+  },
+  {
+   "id": "sec-051-2-an2bnc",
+   "number": "2",
+   "title": "An2+Bn+C)",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 2039,
+   "n_words": 499
+  },
+  {
+   "id": "sec-052-2-an2bn-xn",
+   "number": "2",
+   "title": "An2+Bn x−n",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 394,
+   "n_words": 74
+  },
+  {
+   "id": "sec-053-2-an2bn-xn",
+   "number": "2",
+   "title": "An2+Bn x−n =",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 56,
+   "n_chars": 9682,
+   "n_words": 1979
+  },
+  {
+   "id": "sec-054-4-higher-polylogarithms",
+   "number": "4",
+   "title": "Higher polylogarithms",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 6324,
+   "n_words": 1228
+  },
+  {
+   "id": "sec-055-5-l31-for-r2-0-however-the-correct-a3f",
+   "number": "5",
+   "title": "L3(1). For r2 > 0, however, the correct A3(F )",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 4061,
+   "n_words": 844
+  },
+  {
+   "id": "sec-056-2-if-we-observe-that-dx",
+   "number": "2",
+   "title": "If we observe that D(x′",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 10588,
+   "n_words": 1788
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 57,
+  "sections": 57,
+  "chars_total": 142831
+ },
+ "duplicate_of": "zagier-the-dilogarithm-function",
+ "duplicate_note": "Same work as library/zagier-the-dilogarithm-function/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

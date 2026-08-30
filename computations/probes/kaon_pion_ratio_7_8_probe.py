@@ -43,7 +43,9 @@ from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs, catalan
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 q0 = mpf(Q_50_DIGIT_STR)

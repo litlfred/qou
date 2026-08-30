@@ -18,17 +18,8 @@
         ]
       ],
       "nu_canonical": 1,
-      "bounded_support": [
-        [
-          [
-            3,
-            2,
-            1
-          ],
-          0.38828647155941004
-        ]
-      ],
-      "bounded_support_size": 1,
+      "bounded_support": [],
+      "bounded_support_size": 0,
       "bounded_subset_self_conj": true,
       "feasible": true
     },
@@ -77,27 +68,16 @@
         ]
       ],
       "nu_canonical": 2,
-      "bounded_support": [
-        [
-          [
-            5,
-            1,
-            1,
-            1,
-            1
-          ],
-          0.20654085860587656
-        ]
-      ],
-      "bounded_support_size": 1,
+      "bounded_support": [],
+      "bounded_support_size": 0,
       "bounded_subset_self_conj": true,
       "feasible": true
     }
   ],
   "bounded_support_sizes": {
-    "D": 1,
+    "D": 0,
     "T": 0,
-    "3He": 1
+    "3He": 0
   },
   "verdict": "REFUTED",
   "weaker_fact": "bounded (non-rail) bar-fold support ⊆ self-conjugate blocks (D,T,³He)",
@@ -109,10 +89,12 @@
     "computations/y_lambda_wenzl_bridge.py, computations/hoefsmit_numpy.py"
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptHash": "69f3243ddc7c",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:17.668299+00:00",
+  "scriptFile": "he_nu_sdp_barfold_h9_test.py",
+  "scriptHash": "5e71f7c3f5fc",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-29T07:36:33.950340+00:00",
   "durationMs": 0,
-  "scriptFile": "he_nu_sdp_barfold_h9_test.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

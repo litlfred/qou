@@ -77,10 +77,17 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 SIGN_ONLY = "sign-only-crossings"
 AVERAGED = "averaged-crossings"
+# The colour-weighted averaged p-n crossing, d = -h(1/2 - delta/4). Distinct
+# from AVERAGED (colour-blind, d = -h/2) by ~7e-5 in d and ~1.8e-4 in tr_M.
+# Added because `chi_convention_from_values_audit` measured that the deuteron,
+# tritium and helium-3 caches HOLD colour-weighted values while declaring
+# AVERAGED; the labels have been repaired, and without this entry the repair
+# would read as `unknown-convention` here.
+COLOUR_WEIGHTED = "colour-weighted-averaged-crossing"
 
 # Convention strings recognised as valid for a chi value-witness. A
 # `convention` field outside this set is flagged `unknown-convention`.
-KNOWN_CONVENTIONS = {SIGN_ONLY, AVERAGED}
+KNOWN_CONVENTIONS = {SIGN_ONLY, AVERAGED, COLOUR_WEIGHTED}
 
 # ---- Canonical reconciliation (per docs/canonical-derivation-cheat-sheet.md
 # §Phase 5q + docs/audits/2026-06-09-binding-trace-convention-split.md) ----
@@ -121,8 +128,43 @@ PRODUCER_CONVENTION: dict[str, str] = {
     "rust-chi-q-via-gp-lossless": SIGN_ONLY,
     "matrix-m-chi-q-via-gp": SIGN_ONLY,
     # averaged / Hoefsmit full atom_braid_word_3A
-    "chi_at_q0_via_hoefsmit_mpfr.py": AVERAGED,
-    "chi_at_q_inv_via_native_mpfr.py": AVERAGED,
+    # WORD-DEPENDENT, so a single constant cannot express it: this producer
+    # substitutes the colour-weighted crossing only where a p-n interface
+    # exists. A=1 atoms (proton, neutron, and every `-free-` word) have none and
+    # are honestly AVERAGED; A>=2 atoms carry exactly one and are
+    # COLOUR_WEIGHTED. The producer now derives its own label by counting them.
+    # Asserting AVERAGED here is what made this gate agree with a wrong string
+    # for the whole A>=2 family, so both are accepted and the discrimination is
+    # left to `chi_convention_from_values_audit`, which measures rather than
+    # asserts.
+    "chi_at_q0_via_hoefsmit_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
+    # Same word-dependence as the Hoefsmit producer above, for the same
+    # reason, plus a second axis: as of bean qou-1oxx this producer emits BOTH
+    # frames on every run -- `chi-{atom}-h{n}-at-qinv-50dps` (colour-blind, the
+    # bar-symmetriser) and `...-colour-weighted` (canonical, R3) -- so a single
+    # constant cannot express it either. Asserting AVERAGED here flagged all
+    # three new colour-weighted witnesses as CRITICAL mismatches against a
+    # label the producer had DERIVED by counting weighted crossings in the
+    # word. Both are accepted.
+    #
+    # The deferral this MIRRORS is now real. It was NOT when the acceptance
+    # was first widened: `chi_convention_from_values_audit` hardcoded
+    # `chi-{atom}-h{n}-at-q0-50dps` and never opened an `-at-qinv-` witness,
+    # so for a while this file asserted a coverage that did not exist. Closed
+    # by bean qou-awwk -- that audit now takes `--point {q0,qinv}` (default
+    # both) and measures BOTH qinv variants, blind and colour-weighted.
+    #
+    # Measured there, the discrimination at the bar point is DECISIVE: the
+    # matching convention lands at ~1e-49 against ~1e-2 for the other, six to
+    # seven orders apart, so the extension is a real check and not a vacuous
+    # pass. All nine rows for D/T/3He AGREE.
+    #
+    # helium-4 stays out of that audit's DEFAULT set, as it always has: H_12
+    # costs a kernel run per convention per witness, ~11 min each. Run it
+    # explicitly with `--atom helium-4` when a helium-4 label is in question.
+    # The `-colour-weighted` suffix is also why COMPUTATION_PATTERNS does not
+    # catch these: its qinv regex is `$`-anchored on `-at-qinv-50dps`.
+    "chi_at_q_inv_via_native_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
     # symbolic + numeric catalogue (same full-canonical-word as Hoefsmit):
     # value-confirmed averaged — deuteron symbolic χ^(6) @q0 = 1.5598
     # matches the averaged numerical cache (1.5599), NOT sign-only (11.02).
@@ -159,9 +201,18 @@ COMPUTATION_PATTERNS: list[tuple[re.Pattern, str]] = [
     (re.compile(r"^chi-at-q0-matrix-m-"), SIGN_ONLY),
     (re.compile(r"rust-lossless"), SIGN_ONLY),
     # Hoefsmit q_0 family (incl. the FREE-config LR partner): plain
-    # -at-q0-50dps, NOT -matrix-m. Free caches are the averaged free
-    # character (LR product of the averaged nucleon caches).
-    (re.compile(r"^chi-.*-at-q0-50dps$"), AVERAGED),
+    # -at-q0-50dps, NOT -matrix-m.
+    #
+    # WORD-DEPENDENT, so both are accepted. This family substitutes the
+    # colour-weighted crossing only where a p-n interface exists: A=1 atoms and
+    # every `-free-` word have none and are honestly AVERAGED, while A>=2 atoms
+    # carry exactly one and are COLOUR_WEIGHTED. Asserting AVERAGED alone is
+    # what made this gate agree with a label that
+    # `chi_convention_from_values_audit` then measured to be wrong for the
+    # deuteron, tritium and helium-3 caches. Discrimination belongs to that
+    # audit, which recomputes; this gate only rejects strings outside the
+    # vocabulary.
+    (re.compile(r"^chi-.*-at-q0-50dps$"), {AVERAGED, COLOUR_WEIGHTED}),
     # native bar-image q_0^{-1} family (incl. free): -at-qinv-50dps.
     (re.compile(r"^chi-.*-at-qinv-50dps$"), AVERAGED),
     # symbolic catalogue `chi-{atom}-h{n}` with no producer field (the he4
@@ -219,7 +270,9 @@ def classify(path: Path) -> dict:
     if declared is not None:
         if declared not in KNOWN_CONVENTIONS:
             status = "unknown-convention"
-        elif expected is not None and declared != expected:
+        elif expected is not None and not (
+                declared == expected if isinstance(expected, str)
+                else declared in expected):
             status = "mismatch"
         else:
             status = "ok"
@@ -230,7 +283,14 @@ def classify(path: Path) -> dict:
         "path": path.name,
         "computation": comp,
         "declared": declared,
-        "expected": expected,
+        # SORTED when it is a set. A bare `set` reprs in iteration order, which
+        # is not stable across runs, so this field churned the witness on every
+        # run with no change of meaning -- one diff line per multi-convention
+        # producer, purely from hash ordering. Two producers now carry sets
+        # (Hoefsmit q0, and the qinv driver as of bean qou-1oxx), so the churn
+        # was about to double.
+        "expected": (sorted(expected) if isinstance(expected, (set, frozenset))
+                     else expected),
         "expected_basis": basis,
         "producer": _producer_field(w),
         "status": status,

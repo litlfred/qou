@@ -9,7 +9,7 @@ $$
 \bigl(\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2)\bigr)\Bigr),
 $$
 
-*where $A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu,\nu}}$ constructs the operator-valued coefficient encoding the multiplicities given by the Littlewood–Richardson coefficients $c^\lambda_{\mu,\nu}$, and $\rho_\lambda, \rho_\mu, \rho_\nu$ construct the Hoefsmit seminormal representations of $H_\bullet(q)$.*
+*where $A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu,\nu}}$ is the operator-valued coefficient encoding the multiplicities given by the Littlewood–Richardson coefficients $c^\lambda_{\mu,\nu}$, and $\rho_\lambda, \rho_\mu, \rho_\nu$ are the Hoefsmit seminormal representations of $H_\bullet(q)$.*
 
 ## Corollary (the case used downstream)
 

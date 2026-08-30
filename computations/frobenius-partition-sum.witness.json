@@ -1,0 +1,651 @@
+{
+  "computation": "frobenius-partition-sum",
+  "description": "\u03a3_{\u03bb\u22a2n} 1/dim_q(\u03bb) via Frobenius / self-dual trace on H_n(q), tracked by GB filtration levels (= height of Young diagram - 1). Self-duality: \u03bb and its conjugate \u03bb' give identical 1/dim_q contributions.  Level 0 and top level (antisymmetric) are always paired conjugates contributing 1 each; middle levels carry the q-dependent part.",
+  "reference_blocks": [
+    "prop:partition-sum-proton-residual",
+    "def:confinement-level",
+    "prop:gb-residue-spectral-sum"
+  ],
+  "combinatorial_identity": "\u03a3_{\u03bb\u22a2n} 1/dim_q(\u03bb) = (1/[n]!_q) \u00b7 \u03a3 H_q(\u03bb)   (derivable from q-hook-length formula dim_q = [n]!/H_q)",
+  "frobenius_interpretation": "tr_M(C_Frob) where C_Frob = \u03a3_\u03bb ([n]!_q/(dim_q(\u03bb)\u00b2\u00b7dim(\u03bb))) \u00b7 p_\u03bb is the Frobenius co-Casimir of H_n(q) under the Markov-trace pairing.",
+  "timestamp": "2026-08-23T19:54:55.963482+00:00",
+  "parameters": {
+    "q_0": "1.1099785827513808",
+    "engine": "sympy symbolic"
+  },
+  "results_by_n": {
+    "n=3": {
+      "n": 3,
+      "total_symbolic": "q/(q**2 + 1) + 2",
+      "total_at_q0": "2.4972905456049155563494411746642578796988097543057",
+      "classical_sum": "5/2",
+      "level_sums": {
+        "0": "1",
+        "1": "q/(q**2 + 1)",
+        "2": "1"
+      },
+      "by_level": {
+        "0": [
+          {
+            "partition": [
+              3
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "dim_q": "q + 1/q",
+            "inv_dim_q": "q/(q**2 + 1)",
+            "inv_at_q0": "0.49729054560491555634944117466425787969880975430573",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q/(q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q}{q^{2} + 1}",
+              "value_at_q0": "0.49729054560491555634944117466425787969880975430573"
+            },
+            "conjugate": [
+              2,
+              1
+            ],
+            "self_dual": true
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              3
+            ],
+            "self_dual": false
+          }
+        ]
+      }
+    },
+    "n=4": {
+      "n": 4,
+      "total_symbolic": "(2*q**8 + 5*q**6 + 5*q**4 + 5*q**2 + 2)/(q**8 + q**6 + 2*q**4 + q**2 + 1)",
+      "total_at_q0": "3.14640076321961733928196651516943977010734118454",
+      "classical_sum": "19/6",
+      "level_sums": {
+        "0": "1",
+        "1": "q**2/(q**4 + q**2 + 1) + q**2/(q**4 + 1)",
+        "2": "q**2/(q**4 + q**2 + 1)",
+        "3": "1"
+      },
+      "by_level": {
+        "0": [
+          {
+            "partition": [
+              4
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              3,
+              1
+            ],
+            "dim_q": "q**2 + 1 + q**(-2)",
+            "inv_dim_q": "q**2/(q**4 + q**2 + 1)",
+            "inv_at_q0": "0.32854682137082318391790213651757556025624434046401",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**2/(q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{2}}{q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.32854682137082318391790213651757556025624434046401"
+            },
+            "conjugate": [
+              2,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              2,
+              2
+            ],
+            "dim_q": "(q**4 + 1)/q**2",
+            "inv_dim_q": "q**2/(q**4 + 1)",
+            "inv_at_q0": "0.48930712047797097144616224213428864959485250361198",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**2/(q**4 + 1)",
+              "polynomial_q_latex": "\\frac{q^{2}}{q^{4} + 1}",
+              "value_at_q0": "0.48930712047797097144616224213428864959485250361198"
+            },
+            "conjugate": [
+              2,
+              2
+            ],
+            "self_dual": true
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              2,
+              1,
+              1
+            ],
+            "dim_q": "q**2 + 1 + q**(-2)",
+            "inv_dim_q": "q**2/(q**4 + q**2 + 1)",
+            "inv_at_q0": "0.32854682137082318391790213651757556025624434046401",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**2/(q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{2}}{q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.32854682137082318391790213651757556025624434046401"
+            },
+            "conjugate": [
+              3,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              4
+            ],
+            "self_dual": false
+          }
+        ]
+      }
+    },
+    "n=5": {
+      "n": 5,
+      "total_symbolic": "2*q**4/(q**8 + q**6 + q**4 + q**2 + 1) + q**4/(q**4*(q**4 + q**2 + 2) + q**2 + 1) + 2*q**3/(q**6 + q**4 + q**2 + 1) + 2",
+      "total_at_q0": "3.0305252850370715360096234954028764911684588286839",
+      "classical_sum": "46/15",
+      "level_sums": {
+        "0": "1",
+        "1": "q**4/(q**8 + q**6 + q**4 + q**2 + 1) + q**3/(q**6 + q**4 + q**2 + 1)",
+        "2": "q**4/(q**8 + q**6 + q**4 + q**2 + 1) + q**4/(q**4*(q**4 + q**2 + 2) + q**2 + 1)",
+        "3": "q**3/(q**6 + q**4 + q**2 + 1)",
+        "4": "1"
+      },
+      "by_level": {
+        "0": [
+          {
+            "partition": [
+              5
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              4,
+              1
+            ],
+            "dim_q": "q**3 + q + 1/q + q**(-3)",
+            "inv_dim_q": "q**3/(q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.24332780491086033389431631044500545028150253989351",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**3/(q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{3}}{q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.24332780491086033389431631044500545028150253989351"
+            },
+            "conjugate": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              3,
+              2
+            ],
+            "dim_q": "(q**8 + q**6 + q**4 + q**2 + 1)/q**4",
+            "inv_dim_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.19155468805410154034636538444807625063342279287446",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{4}}{q^{8} + q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.19155468805410154034636538444807625063342279287446"
+            },
+            "conjugate": [
+              2,
+              2,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              3,
+              1,
+              1
+            ],
+            "dim_q": "q**4 + q**2 + 2 + q**(-2) + q**(-4)",
+            "inv_dim_q": "q**4/(q**4*(q**4 + q**2 + 2) + q**2 + 1)",
+            "inv_at_q0": "0.16076029910714778752826010561671308933860816314797",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**4/(q**4*(q**4 + q**2 + 2) + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{4}}{q^{4} \\left(q^{4} + q^{2} + 2\\right) + q^{2} + 1}",
+              "value_at_q0": "0.16076029910714778752826010561671308933860816314797"
+            },
+            "conjugate": [
+              3,
+              1,
+              1
+            ],
+            "self_dual": true
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1
+            ],
+            "dim_q": "(q**8 + q**6 + q**4 + q**2 + 1)/q**4",
+            "inv_dim_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.19155468805410154034636538444807625063342279287446",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{4}}{q^{8} + q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.19155468805410154034636538444807625063342279287446"
+            },
+            "conjugate": [
+              3,
+              2
+            ],
+            "self_dual": false
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "q**3 + q + 1/q + q**(-3)",
+            "inv_dim_q": "q**3/(q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.24332780491086033389431631044500545028150253989351",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**3/(q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{3}}{q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.24332780491086033389431631044500545028150253989351"
+            },
+            "conjugate": [
+              4,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              5
+            ],
+            "self_dual": false
+          }
+        ]
+      }
+    },
+    "n=6": {
+      "n": 6,
+      "total_symbolic": "(2*q**22 + 8*q**20 + 20*q**18 + 42*q**16 + q**15 + 70*q**14 + 2*q**13 + 90*q**12 + 3*q**11 + 90*q**10 + 2*q**9 + 70*q**8 + q**7 + 42*q**6 + 20*q**4 + 8*q**2 + 2)/(q**22 + 4*q**20 + 9*q**18 + 15*q**16 + 20*q**14 + 23*q**12 + 23*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+      "total_at_q0": "3.2021340012217462551163558354813473799471264323688",
+      "classical_sum": "473/144",
+      "level_sums": {
+        "0": "1",
+        "1": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1) + q**6/(q**12 + q**8 + q**6 + q**4 + 1) + q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+        "2": "q**7/(q**8*(q**6 + 2*q**4 + 2*q**2 + 3) + 3*q**6 + 2*q**4 + 2*q**2 + 1) + q**6/(q**12 + q**8 + q**6 + q**4 + 1) + q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+        "3": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1) + q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+        "4": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+        "5": "1"
+      },
+      "by_level": {
+        "0": [
+          {
+            "partition": [
+              6
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "1": [
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "dim_q": "(q**8 + q**6 + q**4 + q**2 + 1)/q**4",
+            "inv_dim_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.19155468805410154034636538444807625063342279287446",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{4}}{q^{8} + q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.19155468805410154034636538444807625063342279287446"
+            },
+            "conjugate": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "dim_q": "(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)/q**6",
+            "inv_dim_q": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)",
+            "inv_at_q0": "0.1034227955629796209358065368560893588823108555645",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{12} + q^{10} + 2 q^{8} + q^{6} + 2 q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.10342279556297962093580653685608935888231085556450"
+            },
+            "conjugate": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "dim_q": "(q**12 + q**8 + q**6 + q**4 + 1)/q**6",
+            "inv_dim_q": "q**6/(q**12 + q**8 + q**6 + q**4 + 1)",
+            "inv_at_q0": "0.1835331499306039418321912809719373870418148991792",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**12 + q**8 + q**6 + q**4 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{12} + q^{8} + q^{6} + q^{4} + 1}",
+              "value_at_q0": "0.18353314993060394183219128097193738704181489917920"
+            },
+            "conjugate": [
+              2,
+              2,
+              2
+            ],
+            "self_dual": false
+          }
+        ],
+        "2": [
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "dim_q": "q**6 + q**4 + 2*q**2 + 2 + 2/q**2 + q**(-4) + q**(-6)",
+            "inv_dim_q": "q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+            "inv_at_q0": "0.09372907282580840922872933161748109978220994412713",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{6} \\left(q^{6} + q^{4} + 2 q^{2} + 2\\right) + 2 q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.093729072825808409228729331617481099782209944127130"
+            },
+            "conjugate": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "dim_q": "q**7 + 2*q**5 + 2*q**3 + 3*q + 3/q + 2/q**3 + 2/q**5 + q**(-7)",
+            "inv_dim_q": "q**7/(q**8*(q**6 + 2*q**4 + 2*q**2 + 3) + 3*q**6 + 2*q**4 + 2*q**2 + 1)",
+            "inv_at_q0": "0.057654588474759230430170767694179187267609448878199",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**7/(q**8*(q**6 + 2*q**4 + 2*q**2 + 3) + 3*q**6 + 2*q**4 + 2*q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{7}}{q^{8} \\left(q^{6} + 2 q^{4} + 2 q^{2} + 3\\right) + 3 q^{6} + 2 q^{4} + 2 q^{2} + 1}",
+              "value_at_q0": "0.057654588474759230430170767694179187267609448878199"
+            },
+            "conjugate": [
+              3,
+              2,
+              1
+            ],
+            "self_dual": true
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "dim_q": "(q**12 + q**8 + q**6 + q**4 + 1)/q**6",
+            "inv_dim_q": "q**6/(q**12 + q**8 + q**6 + q**4 + 1)",
+            "inv_at_q0": "0.1835331499306039418321912809719373870418148991792",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**12 + q**8 + q**6 + q**4 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{12} + q^{8} + q^{6} + q^{4} + 1}",
+              "value_at_q0": "0.18353314993060394183219128097193738704181489917920"
+            },
+            "conjugate": [
+              3,
+              3
+            ],
+            "self_dual": false
+          }
+        ],
+        "3": [
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "q**6 + q**4 + 2*q**2 + 2 + 2/q**2 + q**(-4) + q**(-6)",
+            "inv_dim_q": "q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+            "inv_at_q0": "0.09372907282580840922872933161748109978220994412713",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**6*(q**6 + q**4 + 2*q**2 + 2) + 2*q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{6} \\left(q^{6} + q^{4} + 2 q^{2} + 2\\right) + 2 q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.093729072825808409228729331617481099782209944127130"
+            },
+            "conjugate": [
+              4,
+              1,
+              1
+            ],
+            "self_dual": false
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim_q": "(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)/q**6",
+            "inv_dim_q": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)",
+            "inv_at_q0": "0.1034227955629796209358065368560893588823108555645",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**6/(q**12 + q**10 + 2*q**8 + q**6 + 2*q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{6}}{q^{12} + q^{10} + 2 q^{8} + q^{6} + 2 q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.10342279556297962093580653685608935888231085556450"
+            },
+            "conjugate": [
+              4,
+              2
+            ],
+            "self_dual": false
+          }
+        ],
+        "4": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "(q**8 + q**6 + q**4 + q**2 + 1)/q**4",
+            "inv_dim_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+            "inv_at_q0": "0.19155468805410154034636538444807625063342279287446",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "q**4/(q**8 + q**6 + q**4 + q**2 + 1)",
+              "polynomial_q_latex": "\\frac{q^{4}}{q^{8} + q^{6} + q^{4} + q^{2} + 1}",
+              "value_at_q0": "0.19155468805410154034636538444807625063342279287446"
+            },
+            "conjugate": [
+              5,
+              1
+            ],
+            "self_dual": false
+          }
+        ],
+        "5": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim_q": "1",
+            "inv_dim_q": "1",
+            "inv_at_q0": "1.0",
+            "inv_at_q0_polynomial_q": {
+              "polynomial_q": "1",
+              "polynomial_q_latex": "1",
+              "value_at_q0": "1.0000000000000000000000000000000000000000000000000"
+            },
+            "conjugate": [
+              6
+            ],
+            "self_dual": false
+          }
+        ]
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

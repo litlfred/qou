@@ -45,7 +45,15 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 30
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 _HERE = Path(__file__).resolve().parent
 _COMP = _HERE.parent
 for _p in (str(_COMP), str(_COMP / "substrate")):
@@ -53,6 +61,10 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 import closed_form_tau_M as C  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 COMP = str(_COMP)
 
@@ -62,7 +74,7 @@ def main() -> int:
     z = C.markov_z(q)
     h = q - 1 / q
     g_pp = g_nn = z
-    g_pn = z - h / 2
+    g_pn = z + _pn_d(h)
 
     G = mp.matrix([
         [0, g_pp, g_pn, g_pn],

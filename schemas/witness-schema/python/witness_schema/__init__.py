@@ -51,7 +51,12 @@ class ComputationAssertion(BaseModel):
     computed: Union[float, str]
     expected: Union[float, str]
     passed: Optional[bool] = None
-    tolerance: Optional[float] = None
+    # `number | string`, exactly like computed/expected above. 693 committed
+    # assertions across 136 witnesses already carry a string tolerance: draining
+    # raw float64 at the producer (qou-t0rf) serialises the declared threshold as
+    # its literal, so the narrower `Optional[float]` rejected the files that had
+    # done the right thing. Widened 2026-08-28.
+    tolerance: Union[float, str, None] = None
     unit: Optional[str] = None
     source: Optional[str] = None
 

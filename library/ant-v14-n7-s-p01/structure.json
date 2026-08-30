@@ -1,0 +1,260 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p01",
+ "source": {
+  "file": "ant-v14-n7-s-p01.pdf",
+  "sha256": "976199bfca4ac08637d4b6e7feb7ebc0d953381cf9ffe54fbce5bfa95c4ae139",
+  "bytes": 533727,
+  "pages": 42
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1669",
+  "title": "p-adic Asai L-functions of Bianchi modular forms",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  },
+  "title_prev": "p-adic Asai L-functions of Bianchi modular forms David Loefflerand Chris Williams The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the tensor induction to Q of its associated Galois representation. When 9 is ordinary at p we construct a",
+  "title_lines": [
+   "p-adic Asai L-functions of Bianchi modular forms",
+   "David Loefflerand Chris Williams",
+   "The Asai (or twisted tensor) L-function of a Bianchi modular form9 is the L-function attached to the",
+   "tensor induction to Q of its associated Galois representation. When 9 is ordinary at p we construct a"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries and notation",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(YQ,1(m2N), Z), H2(YF,1(m2n), Z)∼= HBM",
+   "page": 17,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(YF,1(m2n), Z), (3-3)",
+   "page": 17,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(YQ,1(m2N), Z) and HBM",
+   "page": 17,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Y∗",
+   "page": 17,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proving the norm relations (Theorem 3.13)",
+   "page": 19,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Asai–Eisenstein elements in higher weights",
+   "page": 24,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The p-adic Asai L-function",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Interpolation of critical L-values",
+   "page": 30,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 41,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 41,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 10559,
+   "n_words": 1753
+  },
+  {
+   "id": "sec-001-2-preliminaries-and-notation",
+   "number": "2",
+   "title": "Preliminaries and notation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 14,
+   "n_chars": 24929,
+   "n_words": 4373
+  },
+  {
+   "id": "sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme",
+   "number": "3",
+   "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 6831,
+   "n_words": 1244
+  },
+  {
+   "id": "sec-003-1-yq1m2n-z-h2yf1m2n-z-hbm",
+   "number": "1",
+   "title": "(YQ,1(m2N), Z), H2(YF,1(m2n), Z)∼= HBM",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-1-yf1m2n-z-3-3",
+   "number": "1",
+   "title": "(YF,1(m2n), Z), (3-3)",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 56,
+   "n_words": 9
+  },
+  {
+   "id": "sec-005-2-yq1m2n-z-and-hbm",
+   "number": "2",
+   "title": "(YQ,1(m2N), Z) and HBM",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-3-y",
+   "number": "3",
+   "title": "(Y∗",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3297,
+   "n_words": 581
+  },
+  {
+   "id": "sec-007-4-proving-the-norm-relations-theorem-313",
+   "number": "4",
+   "title": "Proving the norm relations (Theorem 3.13)",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 24,
+   "n_chars": 9205,
+   "n_words": 1748
+  },
+  {
+   "id": "sec-008-5-asaieisenstein-elements-in-higher-weights",
+   "number": "5",
+   "title": "Asai–Eisenstein elements in higher weights",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 8018,
+   "n_words": 1396
+  },
+  {
+   "id": "sec-009-6-the-p-adic-asai-l-function",
+   "number": "6",
+   "title": "The p-adic Asai L-function",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 7265,
+   "n_words": 1364
+  },
+  {
+   "id": "sec-010-7-interpolation-of-critical-l-values",
+   "number": "7",
+   "title": "Interpolation of critical L-values",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 41,
+   "n_chars": 21575,
+   "n_words": 4173
+  },
+  {
+   "id": "sec-011-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 200,
+   "n_words": 33
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 4586,
+   "n_words": 700
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 96521
+ }
+}

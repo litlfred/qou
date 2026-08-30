@@ -1,0 +1,84 @@
+{
+  "probe": "qbeta_5two_route21_cut_avoidance_proved",
+  "bean": "qou-trns",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "pairs_with_lean": "QOU/QBeta/FiveTwoCutAvoidance.lean (xy_neg, eliminant, quintic_pos)",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "on |x| = 1 the GGM cubic in y has REAL coefficients: its roots coincide with those of Y^3 - 2c Y^2 + (1+2c) Y - 1, c = cos(phi). This is the observation that removes the complex analysis from the whole question",
+      "n_points": 49,
+      "worst": "3.6222716e-71",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "hre and him as stated in Lean's `xy_neg` really are the real and imaginary parts of P(t*(c - i*s)) -- i.e. the hypotheses are the substitution they claim to be, not a transcription of something else",
+      "n_checks": 69,
+      "worst": "1.8211974e-70",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the Bezout cofactors are right: A*I + B*II = t^3 (t-1)^4 (t^5 - t^3 + 1) with A = -t^4 (t-1)^4 (2c^2 t^2 + c - t^2), B = -t^3 (t-1)^4 (2c t^2 + 1). Lean checks this by `linear_combination`, so the resultant is verified, not trusted",
+      "n_points": 5,
+      "worst": "1.186946e-66",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "t^5 - t^3 + 1 > 0 for every t > 0 -- the factor that kills the last branch of the eliminant. Minimum 0.814 at t = sqrt(3/5); Lean proves it by a two-case split that needs neither the critical point nor its value",
+      "critical_point": "0.774596669241",
+      "min_value": "0.814096799382",
+      "positive_real_roots": [],
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "VACUITY CHECK -- the hypotheses of `xy_neg` are satisfiable, so the theorem is not about an empty set. Where phi + theta = pi the product x*y IS real, and the conclusion holds: t < 0, so 1 - x*y exceeds 1. Better, the value attained is EXACTLY the unique real root of t^5 - t^3 + 1 -- the eliminant is sharp, not merely a bound: its one real root is realised on the arc, and it is negative, which is the whole reason the cut is missed",
+      "phi_star_over_pi": "0.453289155972",
+      "real_t_values": [
+        "-1.23650570339"
+      ],
+      "one_minus_t": [
+        "2.23650570339"
+      ],
+      "quintic_real_root": [
+        "-1.23650570339"
+      ],
+      "sharpness_deviation": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the t = 1 branch of the eliminant dies for a reason: I(1, c) = -2c, so t = 1 forces c = 0; and II(1, 0) = -1 != 0. (t = 1 matters because 1 - x*y = 0 is the endpoint of the cut, so it would be a contact too)",
+      "I_at_t1_for_c_in_0_half_neghalf": [
+        "0.0",
+        "-1.0",
+        "1.0"
+      ],
+      "II_at_t1_c0": "-1.0",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "at phi = pi we have s = 0, so `xy_neg` does NOT apply -- and indeed the contact is there: t = w_1 = 2.2469796 >= 1, giving 1 - x*y = 1 - w_1 < 0. The theorem's s != 0 hypothesis is exactly what excludes the one real contact",
+      "w1": "2.2469796037174670611",
+      "t_values_at_pi": [
+        "2.24697960372",
+        "0.554958132087",
+        "-0.801937735805"
+      ],
+      "largest_t": "2.2469796037174670611",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "outcome": "Cut avoidance on 0 < phi < pi is now real algebra and is PROVED in Lean: if x*y is real then it is NEGATIVE, so 1 - x*y > 1. Route 20's measured margin is no longer the evidence for the interior of the arc.",
+    "the_mechanism": "on |x| = 1 all three elementary symmetric functions of the GGM curve are real, so the cubic in y has real coefficients. That collapses a complex-analytic question to elimination between two real polynomials, whose resultant is 64 t^3 (t-1)^4 (t^5-t^3+1).",
+    "vacuity": "G5 exhibits a phi in (0,pi) where x*y is genuinely real and checks the conclusion there. A no-solution theorem with unsatisfiable hypotheses would prove nothing, and this is the gate that would have caught it.",
+    "still_not_proved": "the passage from 'F is continuous' to 'no factor meets the cut' -- Log's continuity off (-inf,0] composed with continuity of the root multiset -- is NOT formalised; nor is the one-sided limit at phi = pi, where the arc genuinely touches the cut. So hcont is not yet a theorem end to end.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

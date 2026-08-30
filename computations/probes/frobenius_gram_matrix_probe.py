@@ -54,6 +54,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from markov_trace_recursive import (  # noqa: E402
     markov_trace_of_word, q as Q_SYM,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 # NF basis as 1-indexed signed words.  The proposition uses
@@ -80,10 +81,10 @@ def main() -> int:
         "frobenius-gram-matrix-probe",
         engine="sympy+mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q_sympy = sp.Float(Q_50_DIGIT_STR, 50)
-    z_sym = 1 / (sp.sqrt(Q_SYM) + 1 / sp.sqrt(Q_SYM))
+    z_sym = Q_SYM**3 / (Q_SYM**2 + 1)
     h_sym = Q_SYM - 1 / Q_SYM
     z = _eval_at_q0(z_sym)
     h = _eval_at_q0(h_sym)
@@ -182,7 +183,7 @@ def main() -> int:
         })
         .add_assertion(
             name="single_element_traces_match_closed_forms",
-            computed=float(max_single_residue),
+            computed=max_single_residue,
             expected=0.0, tolerance=1e-30,
             unit=(
                 "max over {𝟙, σ_0, σ_1, L_+, L_-, e^-} of "
@@ -192,7 +193,7 @@ def main() -> int:
         )
         .add_assertion(
             name="gram_matrix_symmetric",
-            computed=float(symmetry_resid),
+            computed=symmetry_resid,
             expected=0.0, tolerance=1e-30,
             unit="max over (i,j) of |G_{ij} − G_{ji}|",
             source="Cyclicity of the Markov trace tr_M(ab) = tr_M(ba).",

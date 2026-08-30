@@ -1,9 +1,26 @@
 #!/usr/bin/env python3
-# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
-# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
-# probe's historical / cross-anchor / pinned comparison value. The CURRENT
-# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
-# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
+# ANCHOR NOTE — CORRECTED 2026-08-23. The 2026-06-22 version of this note
+# had the two anchors INVERTED, and every one of its three claims was wrong:
+#
+#   it said                                    | truth (measured)
+#   -------------------------------------------|--------------------------------
+#   1.10997858275… is the RETIRED proton anchor | it IS the CURRENT proton pin:
+#                                               | q_at() = 1.10997858275138…
+#   the current proton q0 is 1.1099785955573347 | that is the MUON value, and
+#                                               | q_at() does not return it
+#   q_muon_at() ≈ 1.10997859555418              | that is the SUPERSEDED muon
+#                                               | value; q_muon_at() returns
+#                                               | 1.10997859564274…
+#
+# An agent trusting it would have believed the live proton pin was retired and
+# that proton ≈ the muon value — the two-layer discipline read backwards.
+#
+# What is actually true: the `1.10997858275…` occurrences below ARE the current
+# proton pin, and the `1.1099785955541805` in the body is the SUPERSEDED muon
+# value, kept deliberately as this probe's cross-anchor comparison. The probe is
+# preserved as-is by design and must NOT be migrated — the superseded value is
+# its subject, not a stale input. (The body's own two bullet values were right
+# all along; only this header was inverted.)
 """c_3_categorical_derivation_attempt.py — hard structural attempt to
 promote the Q_β precision-ladder coefficient c_3 from "q₀-dependent
 near-match" to "Taylor-exact / proved".
@@ -182,9 +199,18 @@ def J_hopf(q: mpf) -> mpf:
 
 # Hopf-link Markov trace (the framework's actual usage)
 def trM_hopf(q: mpf) -> mpf:
-    """tr_M(σ_1²) per the closed-form proposition (Hecke quadratic +
-    Markov axioms). Independent of n ≥ 2."""
-    return 1 + (q - 1) / mp_sqrt(q)
+    """tr_M(σ_1²) = h·z + 1 per the closed-form proposition (Hecke quadratic
+    + Markov axioms). Independent of n >= 2.
+
+    Written in terms of z. The body was 1 + (q-1)/q^{1/2}, which is this same
+    identity evaluated at z_C -- and this file had ALREADY migrated its z to
+    q**3/(q**2+1) at two other sites, so the module was internally split: the
+    production z was D while the Hopf closed form derived from it stayed C.
+    The producer audit keys on a target named z and could not see it; the
+    square root was z_C's, not the identity's.
+    """
+    from closed_form_tau_M import trM_sigma1_sq as _canonical
+    return _canonical(q)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -203,7 +229,7 @@ def hecke2_blocks(q: mpf):
     σ_1² eigenvalues in the (1)/(1,1) Wedderburn blocks:
         trivial channel:  σ_1 = q   → σ_1² = q²
         sign channel:     σ_1 = −1/q → σ_1² = 1/q²
-    Weights satisfying tr_M(1) = 1, tr_M(σ_1) = z = 1/(q^(1/2)+q^(−1/2)):
+    Weights satisfying tr_M(1) = 1, tr_M(σ_1) = z = q³/(q²+1):
         w_trivial = q / (q + 1)
         w_sign    = 1 / (q + 1)
     (Solving  w_t · q + w_s · (−1/q) = z  and  w_t + w_s = 1.)
@@ -228,7 +254,7 @@ def trM_sigma1_sq_sigma2_sq(q: mpf) -> mpf:
         ⟹ tr_M(σ_1²·σ_2²) = h²·z² + 2·h·z + 1 = (h·z + 1)².
     """
     h = q - 1 / q
-    z = 1 / (mp_sqrt(q) + 1 / mp_sqrt(q))
+    z = q**3 / (q**2 + 1)
     return (h * z + 1) ** 2
 
 
@@ -240,7 +266,7 @@ def trM_sigma1_cubed(q: mpf) -> mpf:
     tr_M = (h²+1)·z + h.
     """
     h = q - 1 / q
-    z = 1 / (mp_sqrt(q) + 1 / mp_sqrt(q))
+    z = q**3 / (q**2 + 1)
     return (h * h + 1) * z + h
 
 
@@ -420,7 +446,7 @@ def main() -> int:
     # trace at q₀ removes the q-swing and gives exactly −2". Apply the
     # bar involution to the simplest q-dependent candidate (tr_M(σ_1²)):
     #   (tr_M(σ_1²; q) + tr_M(σ_1²; q⁻¹)) / 2
-    # Closed form via trM_hopf(q) = 1 + (q − 1)/q^{1/2}:
+    # Closed form via trM_hopf(q) = h·z + 1 (convention D):
     #   bar-sym = 1 + ((q − 1)/q^{1/2} + (1/q − 1)·q^{1/2}) / 2
     #           = 1 + ((q − 1) − (q − 1)) / (2·q^{1/2})  for the simplest term
     # The result is q-dependent in general, so the hypothesis can be

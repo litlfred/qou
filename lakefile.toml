@@ -23,6 +23,32 @@
 
 name = "folio"
 
+# A BARE `lake build` HERE BUILDS NOTHING. Name the targets.
+#
+# The root package declares no `lean_lib` of its own — it exists only to
+# aggregate the per-paper packages below — so its default target set is empty
+# and `lake build` exits 0 with "Build completed successfully (0 jobs)" having
+# examined not one Lean file. The comment further down told readers to add each
+# paper's library "to `defaultTargets` above"; there was no such key, and there
+# cannot usefully be one: Lake's `defaultTargets` names targets of *this*
+# package only, and both `["QOU", ...]` and `["qou/QOU", ...]` are rejected with
+# `package 'folio' has no target ...`.
+#
+# Nor would a root aggregator module fix it. `import QOU` pulls only QOU's root
+# closure, while `qou`'s library is declared with `globs = ["QOU", "QOU.+"]` —
+# the whole tree, most of which no root module imports (that is bean qou-rc7b).
+# A glob library is built by naming the library target, and no other way.
+#
+# So the build command for the whole folio is, and has to be:
+#
+#     lake build QOU UGB Fred2005
+#
+# This matters because `.claude/commands/prepare-merge.md` §4 named a bare
+# `lake build` here as the 100%-Lean gate for every merge, describing it as "the
+# standardized root Lake workspace builds every paper package in one pass". It
+# did not, and it reported success while doing so. That command has been
+# corrected alongside this comment.
+
 [leanOptions]
 autoImplicit = false
 profiler = true
@@ -43,7 +69,8 @@ rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 #   1. Creating content/<paper-dir>/lean/ with a paper-local lakefile.toml
 #      following the qou/ugb/fred2005 template.
 #   2. Adding a `[[require]]` stanza below.
-#   3. Adding the paper's default library name to `defaultTargets` above.
+#   3. Adding the paper's library name to the `lake build QOU UGB Fred2005`
+#      command line above (there is no `defaultTargets` — see the note there).
 #   4. Adding the package → paper-dir mapping to
 #      content/schema/lean-packages.ts (consumed by the schema + MCP
 #      server for resolving `lean.ref` URIs).

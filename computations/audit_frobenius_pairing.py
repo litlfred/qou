@@ -193,7 +193,7 @@ def classify(script: Path) -> dict:
         ok, missing, opted_out = _witness_has_required(w)
         witness_status.append(
             {
-                "witness": str(w.relative_to(script.parent.parent.parent)),
+                "witness": str(w.relative_to(Path(__file__).resolve().parents[1])),
                 "ok": ok,
                 "missing_fields": missing,
                 "opted_out_raw_trace": opted_out,
@@ -223,7 +223,7 @@ def main() -> int:
     args = parser.parse_args()
 
     here = Path(__file__).resolve()
-    repo_root = here.parents[2]
+    repo_root = here.parents[1]
     scan_dir = (repo_root / args.root).resolve()
     out_path = (repo_root / args.report).resolve()
 
@@ -265,6 +265,15 @@ def main() -> int:
     }
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    summary.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        summary, script_path=__file__, engine=None, q0_anchor=False)
     out_path.write_text(json.dumps(summary, indent=2))
 
     print(f"Scanned {len(scripts)} scripts under {args.root}")

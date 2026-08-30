@@ -85,6 +85,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
 # S1: the validated exact Milnor/Magnus machinery (import, do not re-derive)
 from binding_mn_milnor_linking import mu, BORROMEAN  # noqa: E402
+from bond_extensivity_equal_weight import f_bonds  # noqa: E402 — convention-D closed forms
 # B_pp provenance: the canonical per-block H₆ route of the derived-Coulomb probe
 from habiro_coefficients_interpolate import (  # noqa: E402
     chi_lambda_numerical, atomic_braid_to_crossings,
@@ -123,12 +124,27 @@ def per_block(Z: int, N: int, inter: bool) -> mp.mpf:
 
 def eps_bonds():
     """#2089 fibre-derived per-bond energies ε = log(1/f_bond) (E₀=1 units) —
-    the bond_extensivity_equal_weight.py closed forms, for the S2 check."""
-    z = mp.sqrt(q0) / (q0 + 1)
-    f_pp = z
-    f_nn = (q0 ** mp.mpf("1.5") - q0 ** 3 - q0 ** 2 + q0 + 1) / (q0 * (q0 + 1))
-    f_pn = (q0 ** mp.mpf("1.5") - (q0 + 1) * (q0 ** 2 - 1) / 2) / (q0 * (q0 + 1))
-    return {k: mp.log(1 / v) for k, v in {"pp": f_pp, "pn": f_pn, "nn": f_nn}.items()}
+    the bond_extensivity_equal_weight.py closed forms, for the S2 check.
+
+    The factors are now IMPORTED from that module rather than re-spelled here.
+    This block held a stale hand-copy: it carried the convention-C EXPANSION
+
+        f_pp = sqrt(q)/(q+1)                                      = z_C
+        f_nn = (q^1.5 - q^3 - q^2 + q + 1)/(q(q+1))               = z_C - h
+        f_pn = (q^1.5 - (q+1)(q^2-1)/2)/(q(q+1))                  = z_C - h/2
+
+    while the module it names had migrated to convention D — its own comment
+    says these lines "previously carried the C-substituted EXPANSION of exactly
+    that, which is where the q^{3/2} came from".  The structural kernel
+    {z, z-h, z-h/2} was never in dispute; only which z.  Substituting z_D into
+    the expansion above would NOT have been the fix (the audit's second tier
+    flags exactly that: a half-integer power of q surviving in a migrated
+    file), because under D every factor is rational — D never leaves Q(q).
+    Importing removes the expansion and the copy at once, so this cannot drift
+    a third time.  Same pin on both sides: q0 = mpf(Q_50_DIGIT_STR) here and in
+    the source module, so no layer is straddled.
+    """
+    return {k: mp.log(1 / v) for k, v in f_bonds().items()}
 
 
 def main() -> int:
@@ -253,7 +269,7 @@ def main() -> int:
                         "channel is structurally zero for the Borromean A=3 link"))
             wb.add_assertion(
                 name="one_third_datum_within_0p3pct",
-                computed=float(3 * r), expected=1.0, tolerance=0.005,
+                computed=3 * r, expected=1.0, tolerance=0.005,
                 source=("split·3/B_pp with B_pp recomputed per-block (H₆) and split "
                         "from AME2020 codata_constants — the guarded datum, 0.23% off"))
             wb.add_assertion(
@@ -264,7 +280,7 @@ def main() -> int:
                         "the 1/3 route would have to SUPERSEDE the derived ratio"))
             wb.add_assertion(
                 name="tanh_ln_sqrt2_equals_one_third_exactly",
-                computed=float(id_err), expected=0.0, tolerance=1e-40,
+                computed=id_err, expected=0.0, tolerance=1e-40,
                 source=("numerology-guard datum: tanh(ln √2)=(2−1)/(2+1)=1/3 exact; "
                         "√2 = 1/x* (target-2 Borel coupling). Reported, not identified."))
             out = wb.save()

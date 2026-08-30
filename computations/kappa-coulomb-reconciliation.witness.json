@@ -1,0 +1,84 @@
+{
+  "engine": "python-stdlib+mpmath(via coulomb_energy)",
+  "computedAt": "2026-08-10T19:24:44.940895+00:00",
+  "computation": "kappa-coulomb-reconciliation",
+  "scriptFile": "probe_kappa_coulomb_reconciliation.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "The two discordant anchors of the original kappa fit reconcile once the Coulomb energy of 3He's pp pair is restored. What survives is an excess-INDEPENDENT offset of order 0.2 MeV, same sign at both anchors despite opposite excess, so it cannot be an excess-proportional coupling. The published kappa was un-subtracted Coulomb.",
+  "parameters": {
+    "published_kappa_MeV": "-1.07079075032658570000000000000000000000000000000000000000000",
+    "alpha_em_hbar_c_MeV_fm": "1.43996521992482043319461632141185151214646181563919718450161",
+    "alpha_em_provenance": "derived from q_0 in coulomb_energy, not CODATA",
+    "radius_models": [
+      {
+        "r0_fm": "1.41381693076303648646392691171816600928033517711027389118853",
+        "name": "derived (reduced pion Compton wavelength)"
+      },
+      {
+        "r0_fm": "1.20000000000000000000000000000000000000000000000000000000000",
+        "name": "empirical heavy-nucleus saturation constant"
+      },
+      {
+        "r0_fm": "1.76000000000000000000000000000000000000000000000000000000000",
+        "name": "implied by the measured 3He charge radius"
+      }
+    ],
+    "source_witness": "computations/_deprecated/interface-type-resolved-coupling-probe.witness.json"
+  },
+  "data": {
+    "by_radius_model": [
+      {
+        "r0_fm": "1.41381693076303648646392691171816600928033517711027389118853",
+        "radius_model": "derived (reduced pion Compton wavelength)",
+        "coulomb_MeV": "0.847421839291869824177896292167166365599349233636200899497282",
+        "he3_residual_corrected_MeV": "-0.223368911034715836623119072828525559687897470465361600502718",
+        "t_residual_MeV": "-0.20230947338869443",
+        "same_sign": true,
+        "gap_MeV": "0.0210594376460214092027434406190550641062705783755178505027179"
+      },
+      {
+        "r0_fm": "1.20000000000000000000000000000000000000000000000000000000000",
+        "radius_model": "empirical heavy-nucleus saturation constant",
+        "coulomb_MeV": "0.998416119907665459654083321237925982420668101806286562505801",
+        "he3_residual_corrected_MeV": "-0.0723746304189202011469320437577659428665786022952759374941991",
+        "t_residual_MeV": "-0.20230947338869443",
+        "same_sign": true,
+        "gap_MeV": "0.129934842969774226273443588451704552715048289794567812505801"
+      },
+      {
+        "r0_fm": "1.76000000000000000000000000000000000000000000000000000000000",
+        "radius_model": "implied by the measured 3He charge radius",
+        "coulomb_MeV": "0.680738263573408267945965900844040442559546433049740838072137",
+        "he3_residual_corrected_MeV": "-0.390052486753177392855049464151651482727700271051821661927863",
+        "t_residual_MeV": "-0.20230947338869443",
+        "same_sign": true,
+        "gap_MeV": "0.187743013364482965434673831942180987146073378961977911927863"
+      }
+    ],
+    "he4_residual_MeV": "0.022252911108739757",
+    "finding": "The published kappa ~ -1.0708 MeV was un-subtracted Coulomb. Removing it leaves an excess-independent offset that cannot be a coupling to the p/n asymmetry, and that is 3-15x smaller than the published value. This diagnoses both earlier negatives: the mirror-split test found no room because the coefficient is zero, and the original fit refuted itself because it was fitting electrostatics with a categorical form."
+  },
+  "assertions": [
+    {
+      "name": "corrected_residuals_share_a_sign_under_every_radius_model",
+      "passed": true,
+      "detail": "the anchors carry excess +1 and -1; an excess-proportional term must flip sign between them. After Coulomb removal both residuals are negative under all three radius models, so the surviving quantity is not proportional to the excess"
+    },
+    {
+      "name": "derived_radius_reconciles_the_anchors_to_the_4He_noise_floor",
+      "passed": true,
+      "detail": "gap 0.0211 MeV vs the 4He residual 0.0223 MeV, measured where the excess vanishes identically and no kappa term exists by construction"
+    },
+    {
+      "name": "surviving_offset_is_far_smaller_than_the_published_kappa",
+      "passed": true,
+      "detail": "published |kappa| = 1.0708 MeV; the corrected 3He residual is 0.07-0.39 MeV, 3-15x smaller, under every radius model"
+    },
+    {
+      "name": "the_3He_arm_was_dominated_by_coulomb",
+      "passed": true,
+      "detail": "the derived Coulomb energy 0.8474 MeV is 79% of the published kappa -- the fitted 'coupling' is mostly electrostatics"
+    }
+  ],
+  "allPassed": true
+}

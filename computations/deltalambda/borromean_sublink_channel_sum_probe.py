@@ -59,8 +59,9 @@ import mpmath as mp  # noqa: E402
 from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 qs = sp.Symbol("q", positive=True, real=True)
 
 
@@ -309,9 +310,18 @@ def main():
                            "deficit against the unlink baseline is exactly 0.",
         "anti_fit": "μ₃/c₃ reported as target context only; no free parameter "
                     "tuned; nothing wired.",
-        "wall_seconds": round(time.time() - t_start, 2),
+        "wall_seconds": f"{time.time() - t_start:.2f}",
     }
     out = HERE / "borromean-sublink-channel-sum.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(wit, indent=2))
     _log(f"witness → {out}")
     _log(f"VERDICT: {verdict}  closes={closes}  wall={wit['wall_seconds']}s")

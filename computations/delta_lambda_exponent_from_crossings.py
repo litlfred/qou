@@ -31,6 +31,28 @@ derived not fitted**; and it is A-only precisely because the Z,N dependence
 cancels in `σ+σ⁻¹`. (T and ³He share `σ+σ⁻¹ = 28` ⇒ identical leading exponent
 25, as `q₀^(10A−5)` demands.)
 
+## Level of definition of the writhe rows (framing note, no number changes)
+
+The writhe is a property of the **braid word**, not of its closure: it is
+invariant under Markov I (conjugation, `writhe_conj`) but shifts by `±1` under
+Markov II (`β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1}`, `writhe_stabilize`), which presents
+the *same* link. So the `writhe = 4Z` rows below each carry a level, and the
+four rows do not share one:
+
+    D   Z1N1  n = 3A =  6   w = 4Z = 4
+    T   Z1N2  n = 3A =  9   w = 4Z = 4
+    ³He Z2N1  n = 3A =  9   w = 4Z = 8
+    ⁴He Z2N2  n = 3A = 12   w = 4Z = 8
+
+`n(K) = 3(Z+N)` is the **braid index** of the atom (`atom-knot.md`), i.e. the
+lowest level of the substrate tower. Under the owner ruling — states are
+Gröbner–Shirshov normal forms and the observable is the trace at the lowest
+level — these canonical words **are** the states, so comparing `w` across
+isotopes compares distinct *states*, not two presentations of one state. There
+is no invariance to violate and **the comparisons below stand exactly as
+written**. What the numbers are not is properties of the *closures*.
+Ref: `docs/audits/2026-08-10-writhe-level-of-definition.md` §5d.
+
 ## The proton-excess Z-correction — SOURCE derived
 
 `Z − N = (p-p interfaces) − (n-n interfaces) = (Z−1) − (N−1)`. p-p interfaces are
@@ -107,6 +129,12 @@ NEUTRON_INTRA_WRITHE = 1
 
 def writhe_decomposition(Z, N):
     """writhe = 4Z = intra (3Z+N) + interface (Z−N), bar-ODD ⇒ Z-only.
+
+    LEVEL: this w is a property of the canonical word at n = 3(Z+N) strands
+    (D 6, T 9, ³He 9, ⁴He 12 — the braid index), not of the closure; w is
+    Markov-I invariant but Markov-II shifts it by ±1. See the module
+    docstring §"Level of definition" — the cross-isotope rows compare states,
+    so they stand as written.
 
     intra    = proton(+3)·Z + neutron(+1)·N           = 3Z + N
     interface= (Z−1) p-p σ(+1) − (N−1) n-n σ⁻¹(−1)     = Z − N   (mirror splitter)

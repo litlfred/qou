@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T11:17:33.157812+00:00",
-  "commitSha": "09145f168191a3607c090e24b554eae32a30f4d9",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T14:56:59.174827+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "all second-row angles (sp/sp²/sp³, single+double bonds) within 1°",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3841,
+  "durationMs": 6559,
   "computation": "molecular-angle-master-table",
   "scriptFile": "molecular_angle_master_table.py",
   "scriptHash": "f57a47f11b90",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,9 +25,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -35,7 +35,7 @@
   "description": "Master molecular bond-angle table. One rule: symmetric-block domain weight = q^ℓ (single σ→q, double σ²→q², lone e⁻→q³). Per-molecule inputs: AX_nE_m domain counts + hybridisation base (active-set membership of the self-dual s-channel, set by central-atom size). CH₄/NH₃/H₂O/C₂H₄/CO₂ (2nd-row sp/sp²/sp³) within ~0.6°; H₂S (3rd-row pure-p) within 2.1°. No angle fitted.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": 1.1099785827513808
   },
   "data": {
     "table": {
@@ -58,9 +58,9 @@
         "lones": "1× e⁻(ℓ3,q³)",
         "active_set": "{s,p}",
         "base": "sp³ 109.47°",
-        "predicted_deg": 106.88023248186619,
+        "predicted_deg": 106.88023340839622,
         "observed_deg": 107.0,
-        "miss_deg": -0.1197675181338127,
+        "miss_deg": -0.11976659160377778,
         "angle": "X–A–X"
       },
       "H2O": {
@@ -70,9 +70,9 @@
         "lones": "2× e⁻(ℓ3,q³)",
         "active_set": "{s,p}",
         "base": "sp³ 109.47°",
-        "predicted_deg": 104.71945940624632,
+        "predicted_deg": 104.71945838553091,
         "observed_deg": 104.5,
-        "miss_deg": 0.21945940624631533,
+        "miss_deg": 0.21945838553091335,
         "angle": "X–A–X"
       },
       "C2H4": {
@@ -82,9 +82,9 @@
         "lones": "—",
         "active_set": "{s,p}",
         "base": "sp² 120°",
-        "predicted_deg": 117.23219168996549,
+        "predicted_deg": 117.23219000906707,
         "observed_deg": 116.6,
-        "miss_deg": 0.6321916899654951,
+        "miss_deg": 0.6321900090670738,
         "angle": "H–C–H"
       },
       "CO2": {
@@ -112,8 +112,8 @@
         "angle": "X–A–X"
       }
     },
-    "second_row_max_abs_miss_deg": 0.6321916899654951
+    "second_row_max_abs_miss_deg": 0.6321900090670738
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

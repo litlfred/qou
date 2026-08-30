@@ -119,7 +119,7 @@ def main() -> None:
     print()
 
     # Test 3: cos(α - b·ℏ_q²/2) — the N=1 factor itself
-    z = 1 / (mp.sqrt(Q_0) + 1 / mp.sqrt(Q_0))
+    z = Q_0**3 / (Q_0**2 + 1)
     alpha = (z - 1) * h / 2
     cos_alpha = mp.cos(alpha)
     cos_n1 = mp.cos(alpha - b * hbar_q_sq / 2)

@@ -102,6 +102,12 @@ Q0_PROTON = "1.1099785827513808075916690956107688798744991218736"
 T5_TARGET = -10          # t₅(τ₀) = −10 exactly (rational root of the sextic)
 J5_TARGET = mpf(-25) / 2  # Fricke companion j(5τ₀) = 5³/(−10) = −25/2
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # ── tolerance ladder (pre-stated; see module docstring) ────────────────────
 TOL_PASS_T5 = mpf("1e-3")   # matches bring_hauptmodul_gate_probe.py
 TOL_PASS_J5 = mpf("1.0")    # matches bring_hauptmodul_gate_probe.py j check
@@ -304,14 +310,14 @@ def main():
     )
     wb.add_assertion(
         "control_tau0_passes",
-        computed=float(abs(t5_ref - T5_TARGET)),
+        computed=abs(t5_ref - T5_TARGET),
         expected=0.0,
         tolerance=float(TOL_PASS_T5),
         source="|t5(tau0)+10| at BDH22 6-d.p. tau0 (truncation-limited ~2e-5).",
     )
     wb.add_assertion(
         "gamma0_5_invariance",
-        computed=float(inv_dev),
+        computed=inv_dev,
         expected=0.0,
         tolerance=1e-30,
         source="max |t5(gamma tau0) - t5(tau0)| over gamma in {T, [[1,0],[5,1]]} "
@@ -319,7 +325,7 @@ def main():
     )
     wb.add_assertion(
         "fricke_involution",
-        computed=float(fricke_dev),
+        computed=fricke_dev,
         expected=0.0,
         tolerance=1e-25,
         source="|t5(-1/(5 tau0)) - 5^3/t5(tau0)|; image ~ -25/2 = j(5 tau0).",

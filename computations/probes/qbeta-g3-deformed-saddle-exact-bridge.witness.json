@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(119) identity, (38) reduction, gamma^2, and iota(u=0) = Vol/pi all exact"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "scope-(a) structural finding: the fixed-x saddle difference (0.4495) is NOT the corpus meridian-frame tower singularity (0.6310+0.0210i) — different double-scaling limits; part-2 redirect to the Kashaev limit of the block factorization"
     }
   ],
@@ -44,7 +44,7 @@
   "description": "A_omega tranche B part 1: closed-form deformed Borel singularity iota~(u) = (V_sigma1 - V_sigma2)/(2 pi i) from the GGM sec-5.1 saddle data (curve re-derived from (115) with self-checks), compared against the corpus's measured deformed-meridian Borel-Pade pole and resummed Im V_b (#3819 witness, loaded).",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
-    "source": "uploads/2012.00062v3.pdf (GGM) eqs 113-121 + corpus witness qbeta-c3-borel-pade-deformed-meridian",
+    "source": "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 113-121 + corpus witness qbeta-c3-borel-pade-deformed-meridian",
     "curve": "x*y^2 + (x^2-x-1)*y + 1 = 0  [(115)-derived; minus sign restored vs the (116) glyph]",
     "controls": {
       "identity_119": true,

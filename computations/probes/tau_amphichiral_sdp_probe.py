@@ -70,10 +70,11 @@ import mpmath as mp
 from experimental_constants import MU_OVER_E, TAU_OVER_E
 from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Canonical substrate from Q_50_DIGIT_STR (the single 50-dps pin).
     q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -82,10 +83,15 @@ def main() -> int:
     hbar_q = mp.mpf(1) - qi  # ℏ_q = 1 - q⁻¹  (per substrate definition)
     hbar_q_sq = hbar_q * hbar_q
     # Vol(4_1) recovered identity: Vol(4_1) = (m_μ/m_e) · ℏ_q²
-    cal2_target = mp.mpf(repr(MU_OVER_E))
+    cal2_target = mp.mpf(MU_OVER_E)
     cal_tau_e = mp.mpf(repr(TAU_OVER_E))
     Vol_4_1 = cal2_target * hbar_q_sq  # for the muon sanity check below
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # A convention-C `z` was bound here and NEVER READ -- `z` occurred
+    # exactly once in this file, in its own assignment. Excised by
+    # deletion rather than converted to z_D: a dead binding of the
+    # canonical convention is still dead, and leaving one would keep this
+    # file in the convention-C site list for no reason. Verified: witness
+    # diff 0 fields, stdout identical apart from a provenance line.
 
     # Amphichiral hyperbolic knots (SnapPy census; cross-checked w/ knot-volumes.py)
     amphichiral_knots = [

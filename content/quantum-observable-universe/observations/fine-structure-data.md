@@ -1,6 +1,7 @@
 **Existing data sets.**
 
-* **CODATA 2018** (NIST): $\alpha^{-1} \approx 137.035999084(21)$ (relative uncertainty $1.5 \times 10^{-10}$). Derived from electron $g - 2$ and tenth-order QED.
+* **CODATA 2022** (NIST, current recommended): $\alpha^{-1} \approx 137.035999177(21)$ (relative uncertainty $1.5 \times 10^{-10}$). Derived from electron $g - 2$ and tenth-order QED. This is the value the comparison table below uses.
+* **CODATA 2018** (NIST, superseded): $\alpha^{-1} \approx 137.035999084(21)$. Kept as the **comparison vintage** only: several superseded figures elsewhere in the corpus are recorded against it and stay legible that way. It is never the current value. The $2018 \to 2022$ shift is $9.3 \times 10^{-8}$, or $0.679\;\mathrm{ppb}$.
 * **Cs-133 recoil** (Parker et al., 2018): $\alpha^{-1} \approx 137.035999046(27)$. Independent of $g - 2$.
 * **Rb-87 recoil** (Morel et al., 2020): $\alpha^{-1} \approx 137.035999206(11)$. The most precise determination to date.
 
@@ -14,7 +15,7 @@ The bare coupling $q \cdot [9]_q \cdot [10]_q = 136.823$ captures the base holon
 | $T_{3,5}$ (weak)   | $\pi^2 \cdot 16/15$    | $10.528$ |
 | Sum                | $\pi^2 (10/9 + 16/15)$ | $21.494$ |
 
-The correction enters as a geometric tower whose ratio carries the Gram-determinant factor $\kappa$, the $J^2$ self-dual damping of the Chern--Simons pairing:
+The correction enters as a geometric tower whose ratio carries the Gram-determinant factor $\kappa$, the $J^2$ self-dual damping of the Chern--Simons pairing $G_{\mathrm{CS}}$ (defined in [EM coupling Chern-Simons](#rem:em-coupling-chern-simons); see the disambiguation below for which matrix that is):
 
 $$
   \alpha^{-1}_{\mathrm{CS}}
@@ -25,7 +26,18 @@ $$
   \approx 137.0359351
 $$
 
-where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdot ([2]_q/2) \cdot \hbar_q^2 / \alpha^{-1}_{\mathrm{bare}} \approx 0.0015506$ and $\kappa = \det G_{\mathrm{cl}} / \det G_q \approx 1.7216$ is the ratio of the classical to the $q$-deformed Gram determinant of that pairing.
+where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdot ([2]_q/2) \cdot \hbar_q^2 / \alpha^{-1}_{\mathrm{bare}} \approx 0.0015506$ and $\kappa = \det G^{\mathrm{cl}}_{\mathrm{CS}} / \det G^{q}_{\mathrm{CS}} \approx 1.7216$ is the ratio of the classical to the $q$-deformed Gram determinant **of the Chern--Simons pairing** ([Gram-determinant Plancherel ratio](#prop:gram-determinant-plancherel-ratio)). The structural closure of $\kappa$ is an open problem; the identification is unproved ([EM coupling Chern-Simons](#rem:em-coupling-chern-simons), [open problems](#rem:alpha-em-derivation-open-problems)).
+
+**Which Gram matrix $G_{\mathrm{CS}}$ is — and which it is not (disambiguation, 2026-08-09).** Earlier text wrote this ratio as $\det G_{\mathrm{cl}} / \det G_q$, with no subscript. Unsubscripted $\det G$ elsewhere in the corpus means a *different* matrix, so the symbol is now qualified at every use site. $G_{\mathrm{CS}}$ is the $2 \times 2$ Chern--Simons pairing Gram of the force-carrier pair $(T_{2,9}, T_{3,5})$ on Bring's surface --- diagonal $\mathrm{CS}_i + \pi^2 s_i^2 / c_i^2$, off-diagonal $\pi^2 \ell^2 / (c_1 c_2)$, with the $q$-deformation replacing $m, n$ by $[m]_q, [n]_q$. It is **not** the $6 \times 6$ Markov--Gram matrix $G_{ij} = \mathrm{tr}_M(b_i b_j)$ of the $H_3(q)$ normal-form basis ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)). At $q_0$:
+
+| matrix | $\det$ at $q_0$ | carries the Markov parameter $z$? |
+| ------ | --------------- | --------------------------------- |
+| $G^{q}_{\mathrm{CS}}$ (this block) | $35.21703297433989011$ | no |
+| $G^{\mathrm{cl}}_{\mathrm{CS}}$ (this block) | $60.630144110670241284$ | no |
+| Markov--Gram, trace convention C (excised) | $-0.18920521914403668$ | yes |
+| Markov--Gram, trace convention D (production) | $0$ exactly --- the form is **singular**, $G^{-1}$ does not exist | yes |
+
+$G_{\mathrm{CS}}$ is built from $\pi$, the torus-knot data $(m_i, n_i)$ and the quantum integers $[2]_q, [3]_q, [5]_q, [9]_q$ alone; no Markov parameter $z$ enters it, and none enters $\hbar_q = 1 - q^{-1}$ either. **The $\alpha^{-1}$ figure above therefore does not sit downstream of the Markov--Gram determinant and is untouched by the excision of trace convention C** ([trace-convention registry](../../../docs/coordination/trace-convention-registry.md)). Reproduced at 60 dps from `alpha_em_inv_sym_exact` in `computations/substrate/hecke_core_symbolic.py`: bare $136.82320885358258431$, $\delta_{\mathrm{CS}} = 0.0015506021328500969$, $\kappa = 1.721614201708788213$, resummed $\alpha^{-1} = 137.03593509397560466$, i.e. $-0.4676\;\mathrm{ppm}$ against CODATA 2022 --- matching every published digit in this block.
 
 The tower is geometric with ratio $\delta_{\mathrm{CS}}\kappa \approx 2.7 \times 10^{-3}$, so it sums in closed form: there is no truncation order, and the closed form is exact to all orders.
 

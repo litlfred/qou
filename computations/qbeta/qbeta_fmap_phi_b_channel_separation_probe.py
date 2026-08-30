@@ -3,7 +3,7 @@
 
 Fibre-side spec for the z→c_k f-map keystone (handed to PR #3458). NOT a c_3
 construction — a structural confirmation, on the VALIDATED Faddeev Φ_b
-(phi_b_evaluator.py, literature-verified against uploads/0604094v1.pdf, Hikami
+(phi_b_evaluator.py, literature-verified against library/arxiv-math-0604094v1/0604094v1.pdf, Hikami
 math/0604094), that the fibre-saddle object separates cleanly into a FLAT
 magnitude channel and a VARYING phase channel.
 
@@ -62,6 +62,12 @@ with mp.workdps(DPS):
         ("zeta_4 (b^2 = 1/4, q = i)", +(mp.mpf(1) / 4)),
         ("zeta_6 (b^2 = 1/6, q = e^{iπ/3})", +(mp.mpf(1) / 6)),
     ]
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Small real base points + a finite-difference step for the z-derivatives.
 Z_BASE = [mp.mpf("0.10"), mp.mpf("0.20")]
 DZ = mp.mpf("1e-6")

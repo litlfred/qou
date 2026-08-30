@@ -67,6 +67,7 @@ computation of the CGZ map on this class.
 """
 
 import json
+import pathlib
 import math
 import sys
 
@@ -412,8 +413,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ "
-        "arXiv:2412.04241v2 eqn (275) (uploads/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ "
+        "arXiv:2412.04241v2 eqn (275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
         "base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)"
     ),
     "fields": detail,
@@ -427,7 +428,16 @@ witness = {
         "eps_m(xi) data for the harness"
     ),
 }
-with open("computations/probes/gswz_epsm_kummer_level.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_epsm_kummer_level.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

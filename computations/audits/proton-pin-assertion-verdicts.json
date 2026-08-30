@@ -1,0 +1,105 @@
+{
+  "schema": "proton-pin-assertion-verdicts/v1",
+  "producedBy": "computations/audits/proton_pin_assertion_check.py",
+  "generatedAt": "2026-08-29T18:34:24.269765+00:00",
+  "manifestBaseline": "origin/main q0_anchor_manifest.json, ideal_muon = 21 stems",
+  "READ_THIS_FIRST": "A verdict is sound ONLY for a producer QOU_Q0_ANCHOR actually reaches. The reachability test was WRONG IN BOTH DIRECTIONS in the first version and the count hid it: bare-name matching gave 15 of 21 on 2026-08-29, the corrected test also gives 15, over a DIFFERENT SET. It falsely refused rho_f_categorical_probe (names the producer in a docstring, never reads the witness) and falsely RAN qbeta_jacobi_anger_tower_general (reaches muon via q_muon_at(), never mentions the file) \u2014 the second being a false pass, the dangerous direction. A matching count is not agreement.",
+  "verdicts": {
+    "aoperator_a5_crosscheck": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 22,
+      "timeout": 7200,
+      "measured_at": "2026-08-25T09:xxZ",
+      "detail": "physical allPassed=True failing=[]; ideal allPassed=False failing=['a5_per_lambda_max_abs_diff']. Works at PROTON, fails at muon \u2014 the reverse of my first recommendation.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "block_swap_binding": {
+      "verdict": "UNKNOWN",
+      "seconds": 7200.333912006,
+      "timeout": 7200,
+      "measured_at": "2026-08-25T12:40:30Z",
+      "detail": "exceeded 7200s. Row 1 (sigma=id) completed in <=19s; row 2 did not finish in the remaining 7181s \u2014 a >378x step, so the budget is not the lever.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "gram_norm_binding_probe": {
+      "verdict": "PENDING",
+      "seconds": null,
+      "timeout": 7200,
+      "measured_at": null,
+      "detail": "interrupted by container reclaim at ~2100s while on 3H (n=9); 2H (n=6) had taken 0.8s. Checkpoint holds in_flight, so a restart recovers the tree and re-runs it. NOT a verdict.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "alpha_5_lp_dual_crystal": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 3,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_c4even_ladder_reconstruction_probe": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 4,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "rho_f_categorical_probe": {
+      "verdict": "NO-ASSERTIONS",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "writes a witness but asserts nothing, so running it at proton establishes nothing. Only measurable at all because the reachability false positive was fixed.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_hoefsmit_tbeta_matrix_build_probe": {
+      "verdict": "BROKEN-AT-BOTH",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "TypeError: unsupported format string passed to mpf.__format__, IDENTICALLY at both pins. NOT a hold \u2014 a pre-existing producer defect (the mpf-formatting class). Fix the producer; the anchor question is unanswered until then.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    }
+  },
+  "reachability": {
+    "measured_at": "2026-08-29",
+    "criterion": [
+      "q-pinning-50-digit.witness.json",
+      "q_muon_at",
+      "_q0_value_for_anchor",
+      "load_q_50dps"
+    ],
+    "A_measurable": [
+      "alpha_5_lp_dual_crystal",
+      "hadron_knot_table",
+      "qbeta_c4even_ladder_reconstruction_probe",
+      "qbeta_hoefsmit_tbeta_matrix_build_probe",
+      "rho_f_categorical_probe"
+    ],
+    "B_refused": [
+      "atomic_tr_m_mpfr_50dps",
+      "cross_check_trM_1ppb",
+      "cross_check_trM_cw_seminormal_leg",
+      "frakV_askey_wilson_recurrence_tie_probe",
+      "he4_binding_k_stage2_probe",
+      "he4_stage2_ranking_seminormal_xcheck",
+      "lambda_scale_substrate_probe",
+      "q0_anchor_consistency_audit",
+      "q1_mass_gap_probe",
+      "q_pinning_50_digit",
+      "qbeta_decay_sdp_extended_ck",
+      "qbeta_fsc_g_pattern_comparison",
+      "qbeta_jacobi_anger_tower_general",
+      "qbeta_physics",
+      "qbeta_symbolic_sdp_strict_complementarity"
+    ]
+  }
+}

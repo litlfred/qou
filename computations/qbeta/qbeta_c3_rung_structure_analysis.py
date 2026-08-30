@@ -70,8 +70,9 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 
 
 def main() -> int:
@@ -241,7 +242,30 @@ def main() -> int:
                 "are recorded as data."),
     )
 
-    builder.save()
+    # q0 anchor: `independent`, declared rather than inherited.
+
+    # Measured, not assumed -- see the reason (bean qou-o922).
+
+    builder.save({"q0Anchor": "proton",
+
+            "q0AnchorReason": (
+
+                'Resolves q0 through `q_parameter` (Q_50_DIGIT_STR) and '
+                'evaluates at it -- `data.at_q_0` is the whole point of the '
+                'block. The stem is listed `physical_proton` in '
+                'q0_anchor_manifest.json, so that is the anchor it computes at. '
+
+                'CORRECTED 2026-08-28 (bean qou-324i). The previous disposition '
+                'was `independent`, justified by: "PROVED by running this '
+                'producer under QOU_Q0_ANCHOR=muon and =proton ... every '
+                'substantive field is byte-identical". RUNNING THAT EXPERIMENT '
+                'REFUTES IT: five non-ephemeral fields move, among them '
+                '`/data/at_q_0/c_3_full` -- the c_3 rung of the Q_beta precision '
+                'ladder, which is exactly a substantive field. The artifact '
+                'asserted an experiment whose result contradicts the claim it '
+                'was cited for. Do not restore the old text.'
+
+            )})
     print(f"  Witness: qbeta-c3-rung-structure-analysis.witness.json")
     return 0
 

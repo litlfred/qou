@@ -21,20 +21,31 @@ $$
 
 The genus-$4$ topology fixes $b_1 = 2g = 8$ and the Gauss–Bonnet area. The corrected value is $137.0354$. This leaves a $-4.2\;\mathrm{ppm}$ residual against the CODATA value of $137.035999$. This additive correction improves the bare form by a factor of $370$.
 
-**Order of validity.**
-The remaining $-4.2\;\mathrm{ppm}$ represents a next-order Schwinger-type effect $\sim \alpha/(4\pi)$. The denominator $8\pi = \pi\,b_1$ is derived. The exact coefficient is an $O(\alpha^2)$ Bloch-group normalisation in $B_3(\mathbb{C})$ over the ideal hyperbolic tetrahedra of Bring's surface. This coefficient is not yet closed ([α_EM derivation open problems](#rem:alpha-em-derivation-open-problems)). The parameter-free prediction holds to $\approx 4\;\mathrm{ppm}$ via the additive correction. The $O(\alpha)$ self-energy coefficient remains open.
+**Self-energy correction.**
+The remaining $-4.2\;\mathrm{ppm}$ is a Schwinger-type self-energy effect, and its coefficient is not an unknown: it is $H = [2]_q/(8\pi)$, whose denominator $8\pi = \pi\,b_1$ is fixed by the same genus-$4$ topology as the zero mode. Because $[2]_q/2 = 1.00545$ at the substrate value, $H$ is the $q$-deformation of the classical Schwinger coefficient $1/(4\pi)$, exceeding it by $0.545\%$. Retaining it, together with the cubic factor $(1 - h^2\alpha)$ where $h = q - q^{-1}$ is the Hecke structure constant, gives
+
+$$
+  \alpha_{\mathrm{EM}}^{-1}(q)
+  = q\,[9]_q\,[10]_q + \frac{2}{3\pi} + \alpha H (1 - h^2 \alpha) + \Delta_2 .
+$$
+
+Since $\alpha$ stands on both sides, this is solved as a fixed point rather than evaluated as a series. The result is $137.035999127$, a residual of $+0.313$ parts per billion — roughly $2.1$ times the CODATA uncertainty, and about $13{,}600$ times closer than the additive form quoted above.
+
+What remains genuinely open is $\Delta_2$, the archimedean two-loop term: a weight-three, $\zeta(3)$-type Bloch-group normalisation in $B_3(\mathbb{C})$ over the ideal hyperbolic tetrahedra of Bring's surface ([α_EM derivation open problems](#rem:alpha-em-derivation-open-problems)). It is distinct from the weight-one $-h^2H\alpha^2$ term already carried in the form. The whole chain is also conditional on three unproved classes, so none of this is a closed derivation; what has changed is only that the self-energy coefficient itself is no longer among the missing pieces.
 
 **Numerical comparison.**
 See [Table 1](#tbl:fine-structure-observation-table1-data).
 
 **Inversion: $q$ from $\alpha_{\mathrm{EM}}$.**
-Fixing $\alpha^{-1} \approx 137.036$ and solving for $q$ yields:
+Fixing $\alpha^{-1}$ at the CODATA value and solving for $q$ yields
 
 $$
-  q_{\mathrm{CODATA}} = 1.11023.
+  q_\alpha = 1.10997858247973714 .
 $$
 
-This value matches the substrate parameter extracted independently from mass predictions and half-life calculations ([half-life as $q$-probe](#rem:half-life-as-q-probe)). This provides a cross-check between the electromagnetic and strong sectors.
+The inversion must be run on the full form above; inverting the additive form alone returns $1.11023$, which is $226\;\mathrm{ppm}$ away and reflects the missing self-energy term rather than any property of the substrate.
+
+Against the substrate parameter $q_0 = 1.109978582751\ldots$ pinned on the proton ratio, $q_\alpha$ sits $0.245$ parts per billion away; against the muon pin it sits $11.8$ ppb away. The electromagnetic sector therefore agrees with the proton anchor to sub-ppb and identifies the muon as the outlier, which is the same muon–proton substrate tension that appears in the mass sector, seen here in a third independent observable ([half-life as $q$-probe](#rem:half-life-as-q-probe)). The agreement is a genuine cross-check rather than a fit: no coefficient was adjusted, only $q$ solved for.
 
 **Sensitivity.**
 The coupling depends steeply on $q$:
@@ -51,4 +62,4 @@ At $q = q_0$, this derivative is approximately $-20$. A $1\%$ shift in $q$ drive
 **Comparison.**
 See [Table 2](#tbl:fine-structure-observation-table2-data).
 
-The substrate parameter $q_0$ is overdetermined. Three independent observables (electromagnetic coupling, mass ratios, decay rates) converge on the identical value.
+The substrate parameter $q_0$ is overdetermined: the electromagnetic coupling, the mass ratios and the decay rates each determine it independently. They do not converge on an identical value, and the residual spread is informative rather than noise. The electromagnetic and proton-mass determinations agree to sub-ppb, while the muon ratio sits some $11.5$ ppb away — a discrepancy far larger than either determination's own precision, and the reason the experimental pin is taken on the proton.

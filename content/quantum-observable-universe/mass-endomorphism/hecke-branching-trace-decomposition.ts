@@ -15,7 +15,7 @@ export default proposition({
   cites: [
     "wenzl1988",
     "hoefsmit1974",
-    "halverson-1998-markov-weights",
+    "orellana1998",
   ],
   tags: [
     "hecke",

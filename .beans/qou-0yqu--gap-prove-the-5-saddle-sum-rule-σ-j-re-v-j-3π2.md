@@ -4,7 +4,7 @@ title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
 status: in-progress
 type: task
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-08-07T15:12:04Z
+updated_at: 2026-08-08T13:55:00Z
 ---
 
 
@@ -244,7 +244,7 @@ search enormously but did not itself close the proof.
 ## 2026-08-07 (b) — Broadhurst READ. The volume side is classical; ours is not.
 
 Owner uploaded the non-paywalled sources (`uploads/9811173v1.pdf`,
-`uploads/2304.12545v1.pdf`, `uploads/fulltext.pdf`; commit `3a551a05`).
+`uploads/2304.12545v1.pdf`, `uploads/zagier-the-dilogarithm-function.pdf`; commit `3a551a05`).
 
 **Broadhurst hep-th/9811173 eq (73)** states, for the D = −23 field:
 
@@ -460,7 +460,7 @@ observation, and `b` is demystified.
 ## 2026-08-07 (night) — Route 6 tried and REFUTED (scope-a): Zagier's enhanced dilogarithm
 
 Owner supplied Zagier, *The Dilogarithm Function* (2007) as
-`uploads/fulltext.pdf`. §II.1 B defines the **enhanced dilogarithm**
+`uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B defines the **enhanced dilogarithm**
 
     D̃(ẑ) = Li₂(z) + ½·u·v    on   X̃ = {(u,v) ∈ ℂ² : eᵘ + eᵛ = 1}
 
@@ -692,3 +692,440 @@ question, not a transcendence question.**
 
 **Route count 9 tried; 7 refuted, 2 reductions. Status: verified to 80 dps,
 unproved.**
+
+---
+
+## 2026-08-08 — the cyclotomic side is CLOSED in Lean. Two links remain.
+
+`Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2` is now a **theorem** about the corpus's own
+dilogarithm, not a numerical observation:
+
+```lean
+QOU/QBeta/FiveTwoAbelFiveTerm.extended_sum
+  {x : ℝ} (hx : x^3 - 2x^2 - x + 1 = 0) (hlo : 1/2 < x) (hhi : x < 1) :
+    (2*E (1/(1-x)) + E (-(1/(1-x)))) + (2*E x + E (-x))
+      + (2*E ((x-1)/x) + E (-((x-1)/x))) = Real.pi^2/2
+```
+
+`E = extend (π²/6) rogersL`, the Rogers dilogarithm extended off `[0,1]`.
+Sorry-free, `[propext, Classical.choice, Quot.sound]`, `lake build` green,
+and `exists_root_in_Ioo` shows the hypothesis is satisfiable.
+
+The chain of Lean files, bottom to top:
+
+| file | content |
+|---|---|
+| `FiveTwoCyclotomicBloch` | Vieta products, `bloch_key` |
+| `FiveTwoRogersReflection` | `rogersL`, reflection, **`hasDerivAt_rogersL`** |
+| `FiveTwoRogersExtend` | the extension; inversion + Landen by construction |
+| `FiveTwoAbelFiveTerm` | **Abel's five-term relation**, the numerators, the sum |
+| `FiveTwoFiveTermArguments` | `hA/hB/hC` are five-term instances, and follow from Abel |
+| `FiveTwoLevelSevenLadder` | the `(17,5,−1)` certificate |
+
+Five beans closed by this: `qou-abel`, `qou-rhyp`, `qou-fivt`, and earlier
+`qou-r7ml`, `qou-g2wr`.
+
+### What is still missing — and it is NOT the dilogarithm any more
+
+**The 5₂ sum rule is `Σⱼ Re Vⱼ = −3π²/2`. What is proved is `Σₖ (2L(wₖ)+L(−wₖ))
+= +π²/2`.** Those are different statements, and the two links between them are
+both open:
+
+1. **`qou-trns` — the transport `x = 1 → x = −1`.** The branch integer is pinned
+   by the base point; the **envelope theorem is confirmed numerically and not
+   formalized**. This is the weakest link and it is analytic, not arithmetic.
+2. **`qou-rstq` item 4 — `E` is not identified with `Re` of the analytic Rogers
+   `L` in Lean.** Route 15 closed this **on paper** and showed it reduces to
+   `Li₂` inversion and `Li₂` Landen; neither is in Mathlib, and the corpus has no
+   `Li₂` off `[−1,1]` (`qou-ph1k`, `qou-gkco`, `qou-clx8`).
+
+Link 2 matters more than it looks. `E` is *defined* piecewise, so `extended_sum`
+is a theorem about a piecewise function that **provably agrees** with the Rogers
+dilogarithm at every point checked and is **not proved to be it**. Anyone
+quoting `extended_sum` as "the cyclotomic identity is proved" should say which
+of those two they mean.
+
+**Standing status, unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
+
+---
+
+## ⚠ 2026-08-08 (later) — the transport is OPEN again, and worse than recorded
+
+`qou-trns` sub-gap 1 was marked **closed** ("`k = 0` is PINNED by the base
+point"). **It is reopened.** Its step 2 — "the three branches are continuous and
+never collide on the arc, `min |disc| = 0.348`" — is false.
+
+**The discriminant vanishes on the arc**, at `θ = 137.9206708879635°`, where two
+of the three `y`-branches collide exactly. `min |disc| = 0`. The `0.348` was a
+**grid minimum from an ~N=360 scan**, quoted as if it were the true minimum.
+
+Proved without numerics: `disc` is palindromic, `disc(x)/x⁴ = Q(x + 1/x)`,
+`Q(u) = u⁴ − 6u³ + 7u² + 6u − 31`, and `Q(−2) = +49 > 0 > Q(−1) = −23` in
+integers, so IVT gives a root with `u ∈ [−2,2]` — i.e. a point of `|x| = 1`.
+`qbeta_5two_route16_discriminant_vanishes_probe.py`, 6 gates.
+
+### The chain, corrected
+
+| link | status |
+|---|---|
+| cyclotomic identity `Σₖ(2L(wₖ)+L(−wₖ)) = π²/2` | ✅ **proved in Lean**, sorry-free |
+| transport `x = 1 → x = −1` | ❌ **OPEN** — branch point on the arc |
+| `extend` ≡ `Re` analytic Rogers `L` in Lean | ❌ open (`qou-rstq` item 4) |
+
+So the arithmetic half is done and **both remaining links are analytic** — one of
+them harder than this bean previously recorded.
+
+The likely repair: `Σⱼ Vⱼ` is **symmetric** in the roots, and symmetric functions
+stay analytic across a branch point even though the branches do not. Rewriting
+the transport symmetrically, or deforming the path off `|x| = 1` around `x₀`,
+should recover it. **Neither is written, and neither is assumed.**
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the integral, examined: residues ruled out, and a caution on the disc −23 lead
+
+Route 24, 6 gates, exit 0, 120 dps. Nothing evaluated; the difficulty is located
+and one route is closed off.
+
+### What the integral is
+
+    I := −∫₀¹ log P(z)/z dz,   P(z) = 1 − 2z + 3z² − z³ = ∏ⱼ(1 − yⱼz)
+
+    I = 0.97173068146864825912777416993855050011200599…
+
+`P` is the reciprocal of the 5₂ cubic, an integer cubic, positive on `[0,1]`
+(min `0.6180…`, at `z = 1`).
+
+### Evaluating it IS the sum rule — derived here, not assumed
+
+This bean states the equivalence; Route 24 G2 derives it independently and
+checks it to 120 dps:
+
+    3·Σⱼ Li₂(yⱼ) + Σⱼ Re log²(−yⱼ) = −3π²/2
+
+which is `Σⱼ Re Vⱼ = −3π²/2` at `x = 1`, since `Vⱼ = 3Li₂(yⱼ) + log(−yⱼ)²` there.
+So "evaluate the integral" is not a separable subproblem — it is the whole thing.
+
+### The closed form is MINIMAL
+
+PSLQ at 120 dps, with `L = log y₃` and `θ = arg y₁`:
+
+    6·I = 3π² − 3L² + 4θ² − 8πθ
+
+and **no sub-basis of `{π², L², θ²}` supports any relation at all** — all four
+terms are needed. The `πL` and `θL` coefficients come out zero, so this is
+exactly the `−π²/6 − ½L² + (2/3)(θ−π)²` recorded above.
+
+### ⚠ Residues do not touch it — demonstrated, not argued
+
+This bean warns that expanding `log P = Σ log(1−yⱼz)` is circular. The residue
+route is **the same circle traversed the other way**, and G3 runs it to the end:
+
+1. IBP: `I = ∫₀¹ log z · P′(z)/P(z) dz` — rational apart from `log z`.
+2. `P′/P` is a **logarithmic derivative with simple roots**, so **every residue
+   is exactly 1**. Residues carry only where the roots are; no arithmetic.
+3. The transcendence is in `log z`, which is not meromorphic. Its branch cut
+   contributes `∫₀¹ log z/(z−r) dz = Li₂(1/r)` at each pole.
+4. Summing returns `Σⱼ Li₂(yⱼ) = I`. Circular, to 1e-51.
+
+Worth recording as closed: contour methods relocate this difficulty, they do not
+remove it.
+
+### ⚠ CAUTION: the disc −23 literature lead may point at the wrong invariant
+
+This bean says disc −23 is "*the* classical worked example in the
+dilogarithm-ladder / Zagier-conjecture literature … a lookup in a well-trodden
+one". That machinery computes `ζ_F(2)` via the **Bloch–Wigner** function `D` —
+the *imaginary-part* invariant. Two measurements (G5):
+
+* **`Σⱼ D(yⱼ) = 0` automatically here**, because `P` is real: `D(y₃) = 0` and
+  `D(ȳ₁) = −D(y₁)`. It carries no information about this problem.
+* **`D(y₁) = 0.9427…` is PSLQ-independent** of the whole `{π², L², θ², πθ, θL}`
+  basis, while `I` lies *inside* it — and `D` enters the relation for `I` with
+  coefficient **0**.
+
+So `D` and `I` are different invariants, and the `ζ_F(2)` route governs the one
+this problem does not need. Not a refutation of the literature lead, but it
+means "look it up" is under-specified: what would have to be found is a
+real-part ladder, not a zeta value.
+
+### Where the attack should go instead
+
+`∏ⱼ yⱼ = 1` **and** `∏ⱼ(1 − yⱼ) = 1`, so `y` and `1−y` are units. A complex
+cubic field has unit rank `r₁ + r₂ − 1 = 1`, so `⋀²(O_F^× ⊗ ℚ)` is **zero** and
+the wedge obstruction `y ∧ (1−y)` vanishes **identically** — the structural
+reason a weight-2 ladder should exist here at all.
+
+That points at explicit **five-term functional equations**, and this branch
+already has `rogersL_fiveTerm` as a sorry-free Lean theorem. The level-7 ladder
+was found exactly that way. Note the level-7 cubic lives in a *different* field
+(disc 49, totally real), so the proved ladder cannot supply this one — but the
+method transfers.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later) — the sum rule as ONE trace equal to π²/2
+
+Route 25, 6 gates, exit 0, 120 dps. Following Route 24's own pointer at
+five-term equations, this reformulates the target into the shape they act on.
+**Nothing is proved.**
+
+### The reformulation
+
+The saddle condition `(1−y)³ = y²` is already Lean (`cubic_iff_sq_eq_cube`), so
+`log(1−y) = (2/3)log y + (2πi/3)m` per embedding. Feed that into Rogers `L` and
+trace over the three embeddings. At `m = −2`:
+
+    Σ_σ [ Li₂(σy) + ½ log(σy) · log(ω_σ(1 − σy)) ]  =  π²/2
+
+exactly — difference `0.0` at 120 dps, PSLQ `[−2, 1]`, and unique in `m` (the
+trace moves by `(2/3)πθ` per step). **One equation where Route 24's `Li₂` form
+needed four terms**: `π²`, `L²`, `θ²`, `πθ` all vanish into the trace.
+
+### ⚠ What the object is, and is not
+
+**It is not Rogers `L`.** The principal branch of `log(1−y₁)` has `m = −1`, so
+legitimate branches are `m = −1 + 3k` — and `−2` is not of that form. Measured:
+at `m = −2`, `exp(lg)/(1−y₁)` is a primitive **cube root of unity**, `arg = −2π/3`.
+
+So this is Rogers `L` with `1−y` twisted by `ω`. The twist is not arbitrary —
+solving `(1−y)³ = y²` for `1−y` determines it only up to a cube root of unity,
+and the clean value picks one of the three. But it must be named honestly:
+*"the Rogers-L trace is π²/2" would be FALSE*. With genuine Rogers `L` the trace
+is `π²/2 − (2/3)πθ` (G2) — already a simplification from four terms to two, but
+still θ-dependent.
+
+### Why a trace at all — the negative result that forces it
+
+**The identity does not split.** At the real root alone, `L(y₃)` is *not* a
+rational multiple of `π²` (PSLQ to coefficient 1e10 at 120 dps finds nothing),
+and `Li₂(y₃) ∉ span_ℚ{π², L²}`. So there is no root-by-root ladder; the identity
+is irreducibly a sum over embeddings. `L(y₃)/π² = 0.073505600048…`, not a
+low-height rational.
+
+### What this does NOT do
+
+G5: expanding the trace in the `{π², L², θ², πθ}` basis returns Route 24's
+`6I = 3π² − 3L² + 4θ² − 8πθ` **identically**. It is a repackaging and proves
+nothing. Its value is the *shape*: a single trace equal to `π²/2` is what
+five-term functional equations produce, and `rogersL_fiveTerm` is already
+sorry-free Lean on this branch.
+
+### A coincidence, flagged and not claimed
+
+`π²/2` is exactly the value of the corpus's **proved** level-7 identity
+`extended_sum` (`Σₖ(2L(wₖ) + L(−wₖ)) = π²/2`). The fields differ — disc `−23`
+here, disc `49` (totally real, cyclotomic) there — so it cannot be the same
+identity and the proved one cannot supply this one. Recorded because a shared
+constant is worth a look, not because it is evidence.
+
+### Suggested next step
+
+Search for an explicit ℚ-combination of five-term relations whose arguments are
+built from the `yⱼ` and that reduces `Σ_σ [yⱼ]` to torsion. That is how the
+level-7 numerators `(17, 5, −1)` were found on this branch, and the machinery
+is already Lean-proved. The cube-root twist says the search should probably run
+in the field `F(ω)`, not `F`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 40 — the distribution (Kubert) family: mapped, and bounded by a rank argument
+
+Probe `computations/probes/qbeta_5two_route40_distribution_factors_probe.py`
+(8 gates, all pass, dps 40/50/60). Lean: `FiveTwoSaddleSumRule.lean` §7d —
+twelve theorems, sorry-free, `lake build` exit 0, standard axioms only.
+
+### A retraction first — a claim drafted here and never committed
+
+An earlier draft asserted the distribution family is **vacuous** on the Galois
+sum: that `Li₂(z^n) = n·Σₖ Li₂(ζᵏz)` summed over the orbit degenerates to
+`A = A`, closing Route 4 as a no-go family. **That claim is false.** Two
+independent errors produced it, both now gated against:
+
+1. The generating polynomial was built by **reversing** the coefficient list.
+   For monic `R` of degree `d`, `∏(1 − Xᵢz) = z^d·R(1/z)` — the highest-first
+   list read low-to-high, already in the right order. Reversing computes a
+   different polynomial. G1 gates the convention *and* gates that the reversed
+   one fails.
+2. Granting the change of variables `u = z^n` — which **is** true, `S_n = A/n`,
+   G8 — the step "so the relation says `A = A`" assumed `S_n` is one atomic new
+   unknown. It is not.
+
+### What is true: the tower is the powers of ONE generator
+
+Let `c` be a root of `X³+X²−1` (`c = 1/ρ`, `ρ` the plastic number `ρ³=ρ+1`),
+and `C_m = Σ Li₂(cᵢ^m)` over the three conjugates. Exact integer Newton
+identities (G3) give
+
+| power | minimal polynomial | role |
+|---|---|---|
+| `c¹` | `X³+X²−1` | `C₁` |
+| `c²` | `X³−X²+2X−1` = `Q` | **`B = C₂`** |
+| `c³` | `X³−2X²+3X−1` = `P` | **`A = C₃`** |
+| `c⁵` | `X³−4X²+5X−1` | `C₅`, the reflection (`1−c = c⁵`) |
+
+every discriminant `−23·square` — one cubic field throughout. So the two
+sum-rule unknowns are two rungs of a single ladder, not unrelated quantities.
+
+`X⁹−2X⁶+3X³−1` and `X⁶−X⁴+2X²−1` are both **reducible** (G4, exact):
+`= (X³+X²−1)(X⁶−X⁵+X⁴−2X³+X²+1)` and `= (X³−X²+1)(X³+X²−1)`; both cubic
+factors have discriminant `−23`. That reducibility is exactly what refutes the
+retracted reading.
+
+Four relations, all verified numerically (G5 at two precisions, G6):
+
+* `C₂ + C₃ = π²/2 − Σ log y log(1−y)` — reflection at `y = c³`, since `1−c³ = c²`
+* `C₁ + C₅ = ` same over the `c`-orbit — reflection at `c`, since `1−c = c⁵`
+* `C₂ = 2(C₁ + D)` — duplication, `D = Σ Li₂(−cᵢ)`
+* `C₃ = 3(C₁ + E)` — triplication, `E` over the sextic factor
+
+Both reflections close with **principal** logs, no branch correction.
+
+### The no-go, with a proof this time
+
+Six unknowns `(C₁, C₂, C₃, C₅, D, E)`, four relations. The functional reading
+off `A = C₃` lies in the row space iff stacking it leaves the rank unchanged.
+**It does not: rank 4 → 5** (G7), solution family dimension 2. So distribution
+plus reflection over this tower *provably* cannot determine `A`. Unlike the
+retracted claim, this is a rank computation over an explicit matrix.
+
+### What this does NOT close
+
+The five-term relation, Landen (Route 3), and any relation using a root **not**
+of the form `c^m` are all untouched. This strengthens rather than weakens the
+suggested next step above — the five-term search in `F(ω)` — by removing the
+distribution family from contention as a way of avoiding it. Note the search
+now has a much smaller natural alphabet than "the `yⱼ`": the powers `c^m`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 41 — the five-term ladder search, and why the machinery cannot see `A`
+
+Probe `computations/probes/qbeta_5two_route41_ladder_rank_probe.py` (5 gates,
+all pass, dps 40). No Lean; nothing here is provable-and-unproved, it is a
+bound on a family plus two corrections.
+
+### Two corrections, both caught by checks rather than by review
+
+1. **The Li₂-form five-term RHS used in the first draft is WRONG.** The
+   argument set `[x, y, (1−x)/(1−xy), 1−xy, (1−y)/(1−xy)]` is right — it is the
+   Rogers-L pentagon — but the identity is a statement about
+   `L(z) = Li₂(z) + ½log z·log(1−z)` summing to `π²/2`, not about `Li₂` plus a
+   log product. G1 gates the correct form to 40 dps **and** gates the wrong one
+   failing at the same generic real points, by an amount that varies with the
+   point. Caught by evaluating off the configuration it was to be used on.
+2. **"`Σ_σ D(σx) = 0` is a feature of the disc −23 field" is WRONG — it is
+   general.** `D(z̄) = −D(z)`, complex embeddings come in conjugate pairs, real
+   embeddings give `D = 0`. True in every number field. The quartic intended as
+   a *negative control* refused to be one, and that is what exposed it.
+
+### The result
+
+Over a set `S` of Galois orbits in `K = ℚ(c)` closed under `x ↦ 1−x` and
+`x ↦ 1/x`, with **every** Euler-reflection, inversion and pentagon relation
+that closes in `S`, the functional reading off `A` is not in the row space:
+
+| `|S|` orbits | relations | rank | rank + target |
+|---|---|---|---|
+| 82 | 55 | 46 | 47 |
+| 168 | 316 | 153 | 154 |
+
+The gap stays exactly 1 as `S` doubles.
+
+**And the reason, which subsumes Routes 1–5 and 40:** the Bloch-Wigner
+regulator vanishes identically on a Galois sum. The invariant the whole ladder
+/ Bloch-group apparatus computes is *zero here by symmetry*, so it carries no
+information about `A`. Those routes were not unlucky; they were the wrong
+instrument. Any future attempt that reduces to a Bloch-group computation can be
+predicted to fail without running it.
+
+### ⚠ The limit on the rank result — do not quote it without this
+
+The rows are **Bloch-group** statements (relations modulo torsion). Turning one
+into a statement about `Σ Li₂` needs the pentagon summed over the three
+embeddings to have an elementary right-hand side, and G4 measures that it does
+not: at `x = y = c` the sum is `8.3326…` against `3π²/2 = 14.8044…`, a gap of
+`6.4718…`. The pentagon's validity region is the real one; the two complex
+embeddings carry branch corrections that are **not** accounted for. So the
+bound on the family is only as good as that bookkeeping, which is the obvious
+next thing to do if this line is picked up again.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 42 — the volume anchor, the structural obstruction, and two corrections
+
+Probe `computations/probes/qbeta_5two_route42_extended_bloch_anchor_probe.py`
+(5 gates, all pass, dps 50). Follows Routes 40 and 41.
+
+### The anchor: this is the 5₂ trace field, and the volume sits on these roots
+
+    Vol(5₂) = 3·D(y₁)    y₁ the complex root of y³−2y²+3y−1
+    Vol(5₂) = 6·D(c₁)    c₁ the complex root of X³+X²−1  (c = 1/ρ)
+
+with `D` Bloch–Wigner, checked against a **published** volume so it identifies
+`y₁` as the tetrahedron shape rather than restating a definition (G1). The
+reference constant's ~18 digits, not the identity, bound the gate — and the test
+is **relative**, since the inherited deviation scales with the ratio (the same
+2.0e-18 shows as 6.0e-18 at 3 and 1.2e-17 at 6; an absolute tolerance passes one
+and fails the other for no mathematical reason).
+
+### Why every ladder route failed — measured, replacing "did not close"
+
+`D(y₁)` alone carries the **entire** volume. Summed over the Galois orbit it
+cancels **identically**: `y₂ = ȳ₁` with `D(z̄) = −D(z)`, and the real root gives
+`D = 0` (G4). `D` is exactly the regulator the ordinary Bloch group computes, so
+that whole apparatus evaluates to zero on a Galois-summed dilogarithm and can
+carry **no** information about `A`. General, by conjugate symmetry, in every
+number field. Routes 1–5, 40 and 41 were not unlucky — they could not have
+closed.
+
+And the sum rule lives entirely in what `D` discards (G3):
+
+| | value |
+|---|---|
+| `Σ Re(Vⱼ)` | `−3π²/2` — the sum rule |
+| `Σ Im(Vⱼ)` | `2π·log(y₃)` exactly — elementary |
+
+Both halves elementary; the volume is absent from the Galois sum.
+
+### ⚠ Two corrections, recorded because the wrong values were asserted first
+
+1. **`V_j`'s branch integers are `b = (−1, +1, +1)`** — the **real** root carries
+   `+1`, not `0`. Assuming `0` gives `−30.822` against a target of `−14.804`.
+2. **`Σ Im(Vⱼ)` is not zero**, it is `2π·log(y₃)`. A scan over `b ∈ {−2..2}³`
+   that demanded `Im = 0` therefore **rejected the correct assignment** and
+   reported no solution at all. The sum rule is a statement about `Re` only.
+
+Both are gated, including the failing assignment as a negative control.
+
+### What this points at — and it is not another ladder
+
+The `bⱼ` are **flattening data**. The extended Bloch group (Neumann) is built
+from flattenings `(log z + p·πi, log(1−z) + q·πi)`, its regulator is the complex
+volume `Vol + i·CS` rather than `Vol` alone, and the Rogers dilogarithm is well
+defined on it — it retains precisely what `D` throws away. That is where a proof
+should be attempted.
+
+**Ordered next steps.**
+1. Finish Route 41's gated `G4` branch bookkeeping (pentagon over the three
+   embeddings missed `3π²/2` by 6.4718). Cheapest, and prerequisite — until it is
+   done Route 41's rank result is a Bloch-group statement, not a `Σ Li₂` one.
+2. Redo the computation in `ℬ̂(ℂ)`: show `Σ_σ [y_σ; p_σ, q_σ]` is torsion.
+3. Coordinate with sibling **#4824** (`claude/extended-bloch-tetrahedron-wx3mc4`),
+   already in extended-Bloch territory.
+
+**Do not retry:** distribution (rank 4→5) or the ordinary five-term/Bloch ladder
+over the `c^m` orbits (46→47, 153→154). Anything reducing to an ordinary
+Bloch-group computation is blind here for the reason in G4.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

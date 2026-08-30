@@ -12,5 +12,9 @@ export default remark({
     "frobenius-pairing",
     "vertex-operator",
   ],
-  uses: ["prop:hecke-mass-trace"],
+  uses: [
+    "def:crossing-energy",
+    "prop:hecke-mass-trace",
+    "def:frobenius-pairing",
+  ],
 });

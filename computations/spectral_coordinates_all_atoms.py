@@ -22,7 +22,9 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings, d_for_ctype,
+)
 
 
 def spectral_coordinates(Z, N):
@@ -46,14 +48,13 @@ def spectral_coordinates(Z, N):
     gen_products = {}
     for gen, ctype in crossings:
         sigma = sigma0 if gen % 2 == 0 else sigma1
-        if ctype == "sigma":
-            M = sigma
-        elif ctype == "sigma_inv":
-            M = sigma - h * np.eye(2)
-        elif ctype == "averaged":
-            M = sigma - (h / 2) * np.eye(2)
-        else:
-            M = np.eye(2)
+        # Every ctype resolves through the canonical `d_for_ctype`. The
+        # private if/elif this replaces had `else: M = eye(2)`, which did not
+        # approximate an unrecognised crossing -- it DELETED it. When
+        # `averaged_weighted` was added for the colour-weighted p-n interface
+        # (qou-gdtb), every Z>=1,N>=1 atom silently lost its one interface
+        # crossing from the spectral coordinate, with no error raised.
+        M = sigma + float(d_for_ctype(ctype, h)) * np.eye(2)
 
         if gen not in gen_products:
             gen_products[gen] = np.eye(2)

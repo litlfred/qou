@@ -34,8 +34,15 @@ from whitehead_colored_jones import (  # noqa: E402
 )
 
 mp.mp.dps = 60
-VOL_WHITEHEAD = mp.mpf("3.663862376708876060218414")   # 4G
-VOL_4_1 = mp.mpf("2.029883212819307250011597804990")
+# Both of these have closed forms and neither needs a literal. dps is
+# raised above, so these evaluate exactly (bean qou-ckbv).
+#   VOL_WHITEHEAD: the old literal said "# 4G" in a comment while
+#     writing 25 digits by hand -- correct, but transcribed.
+#   VOL_4_1: the old literal printed 31 digits and was correct to 20:
+#       was    2.02988321281930725001 1597804990
+#       exact  2.02988321281930725004 2405108549040571883378615...
+VOL_WHITEHEAD = 4 * mp.catalan            # = 8*Lambda(pi/4), one ideal octahedron
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)      # = 2*Cl_2(pi/3) = 6*Lambda(pi/3)
 WHITEHEAD = [1, -2, 1, -2, 1]
 EXTEND_N12 = "--n12" in sys.argv
 
@@ -151,10 +158,19 @@ def main() -> int:
         "nearest_factor": nearest,
         "excludes_factor_1_and_4": bool(excl),
         "verdict": f"FACTOR {nearest}: c0={c0_mean:.3f}±{c0_spread:.3f} (mpmath-only)",
-        "wall_seconds": time.monotonic() - t0,
+        "wall_seconds": f"{time.monotonic() - t0:.3f}",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-c0-mpmath.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\n  Witness: {out}  ({time.monotonic()-t0:.0f}s)")
     return 0

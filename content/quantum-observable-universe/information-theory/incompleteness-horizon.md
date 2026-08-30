@@ -52,4 +52,4 @@ The argument is linear:
 5. The computational horizon is structurally identical to the jet horizon $\mathcal{H}$ ([dictionary](#rem:p-vs-np-event-horizon)).
 6. Therefore, a Turing-complete universe necessarily manifests horizons.
 
-The black hole does not stand as an accident of general relativity. It follows inevitably from a universe expressive enough to encode arithmetic. Any universe with $q \neq 1$ — where Toffoli gates command non-zero amplitude — must host regions where degree-$0$ truth remains inaccessible. The event horizon constitutes the geometry of incompleteness.
+The black hole is not an accident of general relativity: it follows from any universe expressive enough to encode arithmetic. Any universe with $q \neq 1$ — where Toffoli gates carry non-zero amplitude — must host regions where degree-$0$ truth remains inaccessible.

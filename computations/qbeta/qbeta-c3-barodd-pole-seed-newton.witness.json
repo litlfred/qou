@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T23:05:08.112493+00:00",
-  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "computedAt": "2026-08-26T15:28:26.351176+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "complete_convention_vol_cs",
-      "computed": 4.591774807899561e-41,
+      "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Σ rogers at m=1: Im=Vol(4₁), Re−π²/6=CS=0 (amphichiral)"
     },
     {
@@ -17,24 +17,24 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp"
     },
     {
       "name": "branch_bar_parity_swap",
-      "computed": 1.857987377871281e-40,
+      "computed": "3.13697925231327879494342183906761885127522305665701035093283e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS); Lean-proved"
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 45,
   "computation": "qbeta-c3-barodd-pole-seed-newton",
   "scriptFile": "qbeta_c3_barodd_pole_seed_newton_probe.py",
-  "scriptHash": "29c1f08cb134",
-  "scriptCommitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "scriptHash": "af9a66d545b0",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,21 +45,29 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py"
   },
   "description": "Seeds Thurston's figure-8 gluing Newton with the real substrate pole q0^{-k}. Result: flows to the GOLDEN branch (z²−z−1=0, φ=1.618, real, Vol=0), NOT the cusp (z²−z+1=0, e^{iπ/3}). Bar-parity roles swap (Lean CuspShapeBarParity): cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS). Full Rogers-dilog CS at substrate scale ~1e-5 ≪ |S| — confirms landed geometry-side clean-negative (1a4894b8). Phase φ(q0) is the branch selector (open conj:agde). Scope-(a); C14; m(q0) NOT fitted; no c_k wired.",
   "contentBlock": "conj:algebraic-geometric-dilog-equivalence",
   "data": {
     "complete_convention": {
       "Vol": "2.02988321281930725",
-      "CS": "4.5917748079e-41"
+      "CS": "1.81113581577e-71"
     },
     "pole_seed_branch": {
       "golden_phi": "1.6180339887498948482",
       "result": "real pole q0^{-k} -> golden branch (real, Vol=0), not cusp"
     },
     "branch_bar_parity": {
-      "cusp_barOdd_sq": "(-3.0 - 1.98829681605e-41j)",
+      "cusp_barOdd_sq": "(-3.0 - 3.13697925231e-71j)",
       "golden_barEven_sq": "5.0",
       "lean": "QOU.QBeta.CuspShapeBarParity (cuspShape_barOdd_sq=−3, goldenShape_barEven_sq=+5)"
     },

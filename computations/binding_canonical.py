@@ -21,8 +21,16 @@ validity audit) into the atom braid-word binding calculation:
 where tr_M is the Markov-axioms-satisfying trace matching
 prop:categorical-mass-markov's explicit values table — NOT the
 Plancherel-weighted form used in hecke_core.atom_markov_trace and
-mass_at_3A_proper.binding_3A (both deviate from the prop's z =
-1/(q^{1/2} + q^{-1/2}) ≈ 0.499).
+mass_at_3A_proper.binding_3A (both deviate from the prop's z).
+
+TRACE CONVENTION: **convention D** (SU(2)/Temperley-Lieb, Jones),
+z = q^3/(q^2+1) ≈ 0.612688, y_(1^3) = 0. This module holds no z of its
+own — it inherits the default of `markov_trace_canonical.tr_M_element`
+(l.318-319 call it without `z`), which is `hecke_symbolic.z_markov`,
+switched C -> D on 2026-08-09 (bean qou-wgta item 4). This prose said
+"the prop's z = 1/(q^{1/2} + q^{-1/2}) ≈ 0.499" — convention C, excised
+by owner ruling the same day. Registry:
+docs/coordination/trace-convention-registry.md.
 
 Result is compared to:
   • binding_3A (Plancherel)         — current best H_{3A} path
@@ -50,7 +58,11 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-from q_parameter import Q as q0, HA as h_q  # canonical aliases per AGENTS.md §7
+# 50-dps sources. `h_q` is only used in _D_HECKE_TOL (1e-9) comparisons and `q0`
+# in a sympy subst cast to complex, so neither NEEDS full precision — but
+# reading the f64 name is what the NO FLOAT64 directive forbids, and the
+# _MP family is a drop-in in both positions.
+from q_parameter import Q_MP as q0, HA_MP as h_q  # canonical aliases per AGENTS.md §7
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the
@@ -63,7 +75,41 @@ from codata_constants import (
     AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    ame_binding_mev,
 )
+
+
+# Tolerance for float-to-symbolic conversion of the Hecke `d` coefficient.
+# 1e-6 was too coarse to separate the colour-weighted p-n interface (which sits
+# 7.190163e-05 from -h/2) from a genuine miss, and there was no branch for it in
+# any case. 1e-9 mirrors `atom_nf_symbolic_D._D_HECKE_TOL` and leaves ~7 orders
+# of margin on both sides of every target.
+_D_HECKE_TOL = 1e-9
+
+
+def _flavor_split_leading_sym(q):
+    """Symbolic δ, LEADING term only:  δ(q) = (q−1)²(1−q⁻⁴)/3.
+
+    Deliberately the leading term alone, matching
+    `canonical_braid_crossings._avg_color_delta` — which builds the numeric
+    crossing this must reproduce — and NOT
+    `tr_m_algebraic_q.flavor_split_leading_sym`, which multiplies by a posited
+    subleading (1 + ℏ³) and so disagrees by ℏ³ ≈ 9.727e-04 relative at q_0
+    (bean `qou-4e5k`).
+    """
+    return (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
+
+
+def _d_weighted_at_q0() -> float:
+    """Numeric `d` of the colour-weighted p-n crossing at q_0.
+
+    Sourced from `canonical_braid_crossings.d_for_ctype`, the module that owns
+    ctype knowledge, so this file never carries a second definition of the
+    weighting — the `qou-4e5k` failure mode of two copies of one dispatch
+    disagreeing about the same crossing.
+    """
+    from canonical_braid_crossings import d_for_ctype
+    return float(d_for_ctype("averaged_weighted", h_q))
 
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
@@ -98,6 +144,22 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
     def _factor_from(c_f: float, d_f: float, g: int
                       ) -> SymbolicHeckeElement:
+        """Hecke factor c·T_g + d·I as a symbolic element.
+
+        The colour-weighted p-n interface carries d = -h(1/2 - δ/4), which sits
+        h·δ/4 = 7.190163e-05 from the colour-BLIND -h/2. This function used to
+        have no branch for it at all: with the ±h and ±h/2 windows at 1e-6, the
+        weighted crossing missed both and fell through to `sp.nsimplify(d_f)`,
+        which freezes a q_0 float into a rational and destroys the q-dependence
+        the symbolic path exists to carry.
+
+        That gap is why the closed-form path below was pinned to
+        `strict_averaged` — not a considered choice between conventions, but
+        the only one this builder could express. It is placed STRUCTURALLY here,
+        as in `atom_nf_symbolic_D._factor_from`, which carries the same fix for
+        the sibling failure mode (bean `qou-4e5k`: a 1e-3 window that swallowed
+        the weighting instead of missing it).
+        """
         if abs(c_f) < 1e-12:
             c = sp.Integer(0)
         else:
@@ -106,9 +168,12 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
             d = sp.Integer(0)
         elif abs(d_f - 1.0) < 1e-12:
             d = sp.Integer(1)
-        elif abs(d_f + h_q) < 1e-6:
+        elif abs(d_f + h_q) < _D_HECKE_TOL:
             d = -H_SYMB
-        elif abs(d_f + h_q / 2) < 1e-6:
+        elif abs(d_f - _d_weighted_at_q0()) < _D_HECKE_TOL:
+            # Colour-weighted p-n interface: -h(1/2 - δ/4), δ = flavour split.
+            d = -H_SYMB * (sp.Rational(1, 2) - _flavor_split_leading_sym(q_sym) / 4)
+        elif abs(d_f + h_q / 2) < _D_HECKE_TOL:
             d = -H_SYMB / 2
         else:
             d = sp.nsimplify(d_f)
@@ -145,8 +210,12 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     B = Q_β(n) · (tr_M(W_free) − tr_M(W_atom)),   [SIGNED categorical
     difference — see the in-body note; the double-modulus form was a
     non-archimedean misuse]
-    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3
-    per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, the **CAL-2
+    proxy** — NOT CAL-3; CAL-3 is 𝔇_π, exactly as line 69 of this file
+    already states. `precision-goals.md` scores Q_β as a *prediction*
+    carrying 1248–1279 ppb, not as a calibration input, and
+    `three-calibration-inputs-context` forbids "a second hadronic scale".
+    Per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
     **Naming note (2026-05-17, this branch).** This binding-scale
     parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
@@ -184,6 +253,14 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     A = Z + N
     n_strands = 3 * A
 
+    # Hoisted to function scope. Two of the three branches below used to
+    # `import mpmath as mp` locally, which makes `mp` a function-LOCAL name
+    # for the whole body — so the shared tail could reach it on one route and
+    # raise `UnboundLocalError` on another. The tail now needs it on every
+    # route (it carries the trace through as `mpf` rather than collapsing to
+    # binary64), so the import belongs here.
+    import mpmath as mp
+
     # ── Fast path: fine-Bratteli transfer matrix (DEFAULT) ───────
     # Lossless Σ_{λ ⊢ 3A} y_λ χ^λ over ALL p(3A) partitions via the
     # monotone-word transfer matrix — no d_λ wall, no native dep, full
@@ -218,7 +295,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "tr_M_atom": mp.nstr(tr_atom_mp, mp.mp.dps),
             "tr_M_free": mp.nstr(tr_free_mp, mp.mp.dps),
             "Q_beta_n_MeV": Q_beta_n_mev,
-            "B_MeV": float(B),
+            # mpf, not `float(B)` — see the note on the shared tail's exit.
+            "B_MeV": B,
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -267,21 +345,43 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 _nucleon_word(_NEUTRON_G0, _NEUTRON_G1),
                 3, Q_50_DIGIT_STR, dps=50,
             )
-            # `strict_averaged` matches the symbolic path's literal
-            # σ - h/2 factor for p-n interfaces (the convention in
-            # `_factor_from` inside build_atom_symbolic). The default
-            # `chi_lambda_braid` convention treats averaged as σ (the
-            # production marshalling for chi_lambda_braid) which
-            # gives a different numerical value here.
+            # `bring_color_weighted` is canonical (owner ruling 2026-08-15,
+            # R3). This call was pinned to `strict_averaged`, justified as
+            # matching the symbolic path's literal σ - h/2 factor — a circular
+            # justification, since that path could not express the weighting
+            # (see `_factor_from` above, now fixed).
+            #
+            # Verified against an independent path rather than assumed: at the
+            # deuteron this returned 0.575090871629810316751633 under
+            # `strict_averaged`, which is exactly the colour-BLIND value bean
+            # `qou-4e5k` identifies as wrong, and returns
+            # 0.575172243917771870826535 under the canonical convention, which
+            # is exactly that bean's bridge/peel value. Uniform 1.415e-04
+            # relative shift across (Z,N) = (1,1), (1,2), (2,1), (2,2), (3,4).
             tr_atom_mp = closed_form_tau_M(
                 Z, N, q_val, tau_p, tau_n,
-                pn_convention="strict_averaged",
+                pn_convention="bring_color_weighted",
             )
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
             dt = time.time() - t0
-            tr_atom = complex(float(tr_atom_mp), 0.0)
-            tr_free = complex(float(tr_free_mp), 0.0)
+            # KEEP the mpf. `complex(float(tr_atom_mp), 0.0)` collapsed a
+            # value that `closed_form_tau_M` had just computed at 50 dps
+            # down to binary64 — ~34 significant digits discarded one line
+            # after they were produced, on the path that
+            # `mass_table_comprehensive` and `binding_factor_f_*` take.
+            # Both traces are real here by construction (Im(q_0) = 0), so
+            # there is nothing a `complex` was carrying: the cast bought
+            # only the type the legacy symbolic branch below happens to
+            # produce. The shared tail is polymorphic over mpf / mpc /
+            # complex (`.real` and `.imag` exist on all three), so the two
+            # branches no longer have to agree on a type — only on the
+            # interface. `binding_factor_f_sequence.py` documents the
+            # downstream cost of the collapse at length: a 16-digit
+            # `tr_M_*` string is the double 0.98352601518469637…, not the
+            # datum.
+            tr_atom = tr_atom_mp
+            tr_free = tr_free_mp
             atom_n_terms = -1  # not computed in closed-form path
             free_n_terms = -1
             tr_atom_sym = None
@@ -349,14 +449,30 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # silent collapse) and works uniformly for float / Python-complex /
     # mpmath.mpc (the latter does NOT subclass Python `complex`, so an
     # isinstance guard would be fragile — per Gemini review on PR #1738).
-    B = Q_beta_n_mev * delta_tr.real
+    # `Q_beta_n_mev` arrives as a Python float from most callers. Promote it
+    # through its DECIMAL repr, not its binary value, when the trace is exact
+    # — matching the transfer path's `mp.mpf(str(Q_beta_n_mev))` — so the two
+    # exact routes multiply by the same number. On the legacy symbolic route
+    # `delta_tr` is genuinely binary64 (`complex(sp.N(...))` upstream), so the
+    # product stays a float and `B_MeV` keeps float64's honest 17 digits
+    # rather than being dressed in 50 it does not have.
+    _exact = isinstance(delta_tr, (mp.mpf, mp.mpc))
+    B = (mp.mpf(str(Q_beta_n_mev)) if _exact else Q_beta_n_mev) * delta_tr.real
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": str(tr_atom_r),
         "tr_M_free": str(tr_free_r),
         "Q_beta_n_MeV": Q_beta_n_mev,
-        "B_MeV": float(B),
+        # NOT `float(B)`. On the closed-form route this is an mpf carrying the
+        # full trace precision; casting it here re-imposed exactly the binary64
+        # collapse the branch above stopped doing. `mpf` is drop-in for every
+        # reader in the corpus — it does mixed arithmetic with `float`, formats
+        # under `f"{B:.4f}"`, and survives `float(...)` — but it is NOT
+        # JSON-serializable, so a caller writing it to a witness must route it
+        # through `_precision.fmt` (that is a feature: the cast is now visible
+        # at the point where precision is actually being given up).
+        "B_MeV": B,
         "n_atom_terms": atom_n_terms,
         "n_free_terms": free_n_terms,
         "use_closed_form": use_closed_form,
@@ -440,28 +556,37 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
 
 
 if __name__ == "__main__":
-    # AME 2020 binding-energy comparison targets imported from the
-    # central codata_constants registry (validation-only; not CAL inputs).
-    # Previously hardcoded inline: (2.22452, 8.481821, 7.71804, 28.295674);
-    # the tritium value was a typo (correct AME 2020 = 8.481798). Now
-    # loaded from `ame-2020-binding-energies.witness.json` via the
-    # AME_B_*_MEV_VALIDATION constants (PR #1105).
+    # AME 2020 binding-energy comparison targets, every one read from the
+    # vendored AME2020 table via `codata_constants.ame_binding_mev(Z, A)`
+    # (validation-only; not CAL inputs).
+    #
+    # PR #1105 routed the first four through the AME_B_*_MEV_VALIDATION
+    # constants after finding the inline tritium value was a typo
+    # (8.481821 for 8.481798). The last three stayed as literals and were
+    # each ~500 eV off — a larger error than the typo that prompted the
+    # first fix:
+    #     6Li  31.994526  vs  31.9939872   (-538.8 eV)
+    #     7Li  39.244531  vs  39.2450807   (+549.7 eV)
+    #     7Be  37.600350  vs  37.6008409   (+490.9 eV)
+    # A hand-typed reference value drifts silently; an accessor call cannot.
+    # (2026-08-19, alongside the ame-2020-binding-energies witness becoming
+    # producer-backed rather than hand-entered.)
     ATOMS = [
         ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
         ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("6Li",  3, 3, 31.994526),
+        ("6Li",  3, 3, float(ame_binding_mev(3, 6))),
         # A=7 mirror pair — the SECOND proton-excess test after T/³He (the
         # Z-correction slope test, per the 9b workplan). ⁷Be (Z>N) is the
         # proton-rich member; ⁷Li (N>Z) its mirror. AME2020 binding (MeV).
-        ("7Li",  3, 4, 39.244531),
-        ("7Be",  4, 3, 37.600350),
+        ("7Li",  3, 4, float(ame_binding_mev(3, 7))),
+        ("7Be",  4, 3, float(ame_binding_mev(4, 7))),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
+    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-2 proxy)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -504,7 +629,8 @@ if __name__ == "__main__":
             f"tr_M_atom) [SIGNED categorical difference; the double-"
             f"modulus |·|−|·| was a non-archimedean misuse] with "
             f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
-            "neutron β-decay Q-value, CAL-3 calibration input — "
+            "neutron β-decay Q-value, the CAL-2 proxy — NOT CAL-3, "
+            "which is 𝔇_π; Q_β is a scored prediction, not an input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
             "than AME because Q_β is the wrong energy scale; the "

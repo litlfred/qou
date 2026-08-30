@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def young_contents(partition):
@@ -65,13 +67,13 @@ def parse_rows(chi_data):
     return rows
 
 
-# AME binding energies (MeV)
-AME_MeV = {
-
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
 mp.dps = 50
+
+# AME binding energies (MeV)
+AME_MeV = {
     "deuteron":  mpf("2.224566"),
     "tritium":   mpf("8.481798"),
     "helium-3":  mpf("7.71806"),
@@ -104,7 +106,7 @@ def evaluate_rule_per_atom(atom_name, rows, rule_fn):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     repo_root = Path(__file__).resolve().parent.parent
 
     atom_data = {
@@ -140,9 +142,12 @@ def main() -> int:
             atom_name, rows, rule_content_sum_negated
         )
 
-    # Per-knot residuals
+    # Per-knot residuals. NOT float()-ed: this dict is stringified into the
+    # witness as `per_knot_residuals_MeV`, and `leading_order_results` already
+    # carries the same numbers at 49 digits. Truncating the duplicate to float64
+    # made the two fields of the same witness disagree from the 17th digit.
     per_knot_residuals = {
-        atom: float(leading_order_results[atom]["signed_residual_MeV"])
+        atom: leading_order_results[atom]["signed_residual_MeV"]
         for atom in ["deuteron", "tritium", "helium-3"]
     }
 
@@ -211,9 +216,11 @@ def main() -> int:
 
     # Find best offset family (smallest max rel_error across 3 atoms)
     best_offset = None
-    best_max_err = float("inf")
+    best_max_err = float("inf")  # float64-ok: written to the witness as a JSON number
     for offset_name, per_atom in candidate_offset_results.items():
-        max_err = max(float(per_atom[a]["rel_error_pct"]) for a in per_atom)
+        # a percentage compared against a 10% threshold, then serialised as a
+        # JSON number — mpf is not JSON-serialisable there
+        max_err = max(float(per_atom[a]["rel_error_pct"]) for a in per_atom)  # float64-ok: JSON number, 2-dp threshold
         if max_err < best_max_err:
             best_max_err = max_err
             best_offset = offset_name
@@ -229,6 +236,15 @@ def main() -> int:
         / "option-e-multi-isotope-delta-lambda-probe-v3.witness.json"
     )
     with out.open("w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
 
     # Print summary
@@ -236,18 +252,29 @@ def main() -> int:
     print("=== Leading order: content_sum_negated (no per-knot correction) ===")
     for atom in ["deuteron", "tritium", "helium-3"]:
         r = leading_order_results[atom]
-        print(f"  {atom:10s}  B_pred={float(r['B_pred_MeV']):+8.4f} MeV  "
-              f"target={float(r['B_target_MeV']):+8.4f}  "
-              f"residual={float(r['signed_residual_MeV']):+8.4f}  err={float(r['rel_error_pct']):6.2f}%")
+        # console formatting only; the witness carries the full-precision
+        # strings and is untouched by these four conversions
+        bp = float(r["B_pred_MeV"])            # float64-ok: console formatting only
+        bt = float(r["B_target_MeV"])          # float64-ok: console formatting only
+        rs = float(r["signed_residual_MeV"])   # float64-ok: console formatting only
+        er = float(r["rel_error_pct"])         # float64-ok: console formatting only
+        print(f"  {atom:10s}  B_pred={bp:+8.4f} MeV  target={bt:+8.4f}  "
+              f"residual={rs:+8.4f}  err={er:6.2f}%")
 
     # Check shape consistency
-    signs = [float(leading_order_results[a]["B_pred_MeV"]) < 0 for a in ["deuteron", "tritium", "helium-3"]]
-    targets_neg = all(float(leading_order_results[a]["B_pred_MeV"]) < 0 for a in ["deuteron", "tritium", "helium-3"])
+    # float64-ok: `leading_order_results[...]` holds DECIMAL STRINGS, so this is
+    # a string parse for a sign test, not an mpf truncation. Dropping the
+    # float() here does not tighten precision, it raises TypeError.
+    signs = [float(leading_order_results[a]["B_pred_MeV"]) < 0  # float64-ok: sign test on a decimal string
+             for a in ["deuteron", "tritium", "helium-3"]]
+    targets_neg = all(float(leading_order_results[a]["B_pred_MeV"]) < 0  # float64-ok: sign test on a decimal string
+                      for a in ["deuteron", "tritium", "helium-3"])
     print(f"\nShape check: all B_pred negative (correct sign)?  {targets_neg}")
 
     print("\n=== Per-knot offset candidates ===")
     for offset_name, per_atom in candidate_offset_results.items():
-        errs = [float(per_atom[a]["rel_error_pct"]) for a in ["deuteron", "tritium", "helium-3"]]
+        errs = [float(per_atom[a]["rel_error_pct"])  # float64-ok: console formatting only
+                for a in ["deuteron", "tritium", "helium-3"]]
         print(f"  {offset_name:30s}  errs D/T/³He = {errs[0]:6.2f}% / {errs[1]:6.2f}% / {errs[2]:6.2f}%  max={max(errs):6.2f}%")
 
     print(f"\nBest offset family: {witness['best_offset']['name']}")

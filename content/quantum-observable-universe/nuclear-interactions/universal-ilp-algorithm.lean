@@ -38,13 +38,17 @@ def universal_ilp (q : ℝ) (state : Fin 6 → ℝ) : KnotOperator q → Prop :=
   fun K => K.is_knot ∧ K.crossing_number > 0 ∧
     frobenius_positive q (fun i => state i + K.coeffs i)
 
-/-- The LP selects the minimum-crossing feasible knot operator. -/
+/-- **The LP selects the minimum-crossing feasible knot operator**, as a
+    predicate: `K` is feasible (`universal_ilp q state K`) and no feasible
+    operator has strictly fewer crossings. This names the LP's optimality
+    condition (§3b). The previous
+    `(hmin : K.cr ≤ K'.cr) : K.cr ≤ K'.cr := hmin` self-assumingly
+    re-projected the given comparison and asserted nothing about the LP. -/
 -- Ref: [manuscript] Ch 11 §8
-theorem universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
-    (K : KnotOperator q) (hK : universal_ilp q state K)
-    (K' : KnotOperator q) (hK' : universal_ilp q state K')
-    (hmin : K.crossing_number ≤ K'.crossing_number) :
-    K.crossing_number ≤ K'.crossing_number :=
-  hmin
+def universal_ilp_selects_minimum (q : ℝ) (state : Fin 6 → ℝ)
+    (K : KnotOperator q) : Prop :=
+  universal_ilp q state K ∧
+    ∀ K' : KnotOperator q, universal_ilp q state K' →
+      K.crossing_number ≤ K'.crossing_number
 
 end QOU.Interactions

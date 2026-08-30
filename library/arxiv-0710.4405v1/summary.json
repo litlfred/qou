@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0710.4405v1",
+ "source_sha256": "af6234179a134532",
+ "brief": "Instituto de F´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia — 4 sections: Introduction; Status and Prospects; O(p4)",
+ "extended": "**Instituto de F´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia**\n\n*Apt. Correus 22085, E-46071 Val` encia, Spain*\n\n8 pp, 4 sections.\n\n**Outline.** Introduction; Status and Prospects; O(p4); O(p6)",
+ "tokens": {
+  "brief": 31,
+  "extended": 51
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-status-and-prospects",
+   "title": "Status and Prospects",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-002-op4",
+   "title": "O(p4)",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-op6",
+   "title": "O(p6)",
+   "pages": "5-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

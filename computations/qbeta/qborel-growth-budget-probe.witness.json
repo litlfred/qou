@@ -5,7 +5,7 @@
     "script": "qbeta/qborel_growth_budget_probe.py"
   },
   "witness": {
-    "scriptCommitSha": "uncommitted"
+    "scriptCommitSha": "6cd4f956722fd6c66df4f585ddcf5a19d544fef0"
   },
   "inputs": {
     "kernel_recurrence": "t_n = q^{n-d} * t_{n-d}, t_0..t_{d-1} = 1 (RSZ 3.3)",
@@ -22,11 +22,23 @@
   "results": {
     "per_d": {
       "1": {
-        "measured_deg_t_over_n2": 0.49875,
-        "rsz_predicted_1_over_2d": 0.5,
-        "abs_diff": 0.0012499999999999734,
+        "measured_deg_t_over_n2": {
+          "exact": "399/800",
+          "decimal": "0.49875"
+        },
+        "rsz_predicted_1_over_2d": {
+          "exact": "1/2",
+          "decimal": "0.5"
+        },
+        "abs_diff": {
+          "exact": "1/800",
+          "decimal": "0.00125"
+        },
         "reading_matches_rsz": true,
-        "budget_deg_c_minus_t_over_n2": 0.50125,
+        "budget_deg_c_minus_t_over_n2": {
+          "exact": "401/800",
+          "decimal": "0.50125"
+        },
         "kernel_absorbs_growth": false,
         "table": [
           {
@@ -68,11 +80,23 @@
         ]
       },
       "2": {
-        "measured_deg_t_over_n2": 0.24875,
-        "rsz_predicted_1_over_2d": 0.25,
-        "abs_diff": 0.0012500000000000011,
+        "measured_deg_t_over_n2": {
+          "exact": "199/800",
+          "decimal": "0.24875"
+        },
+        "rsz_predicted_1_over_2d": {
+          "exact": "1/4",
+          "decimal": "0.25"
+        },
+        "abs_diff": {
+          "exact": "1/800",
+          "decimal": "0.00125"
+        },
         "reading_matches_rsz": true,
-        "budget_deg_c_minus_t_over_n2": 0.75125,
+        "budget_deg_c_minus_t_over_n2": {
+          "exact": "601/800",
+          "decimal": "0.75125"
+        },
         "kernel_absorbs_growth": false,
         "table": [
           {
@@ -114,11 +138,23 @@
         ]
       },
       "3": {
-        "measured_deg_t_over_n2": 0.16541875,
-        "rsz_predicted_1_over_2d": 0.16666666666666666,
-        "abs_diff": 0.0012479166666666541,
+        "measured_deg_t_over_n2": {
+          "exact": "26467/160000",
+          "decimal": "0.16541875"
+        },
+        "rsz_predicted_1_over_2d": {
+          "exact": "1/6",
+          "decimal": "0.16666666666666666666666666666666666666666666666667"
+        },
+        "abs_diff": {
+          "exact": "599/480000",
+          "decimal": "0.0012479166666666666666666666666666666666666666666667"
+        },
         "reading_matches_rsz": true,
-        "budget_deg_c_minus_t_over_n2": 0.83458125,
+        "budget_deg_c_minus_t_over_n2": {
+          "exact": "133533/160000",
+          "decimal": "0.83458125"
+        },
         "kernel_absorbs_growth": false,
         "table": [
           {
@@ -160,11 +196,23 @@
         ]
       },
       "4": {
-        "measured_deg_t_over_n2": 0.12375,
-        "rsz_predicted_1_over_2d": 0.125,
-        "abs_diff": 0.0012500000000000011,
+        "measured_deg_t_over_n2": {
+          "exact": "99/800",
+          "decimal": "0.12375"
+        },
+        "rsz_predicted_1_over_2d": {
+          "exact": "1/8",
+          "decimal": "0.125"
+        },
+        "abs_diff": {
+          "exact": "1/800",
+          "decimal": "0.00125"
+        },
         "reading_matches_rsz": true,
-        "budget_deg_c_minus_t_over_n2": 0.87625,
+        "budget_deg_c_minus_t_over_n2": {
+          "exact": "701/800",
+          "decimal": "0.87625"
+        },
         "kernel_absorbs_growth": false,
         "table": [
           {

@@ -270,7 +270,7 @@ symbol you happen to be holding.
 # LITERATURE CHECK DONE — NZ 1985 read; AV2's premise is SOURCED (2026-08-08)
 
 The owner uploaded the papers (commit abb217cb / c055a0f5). Read
-`uploads/1-s2.0-0040938385900047-main.pdf` = Neumann-Zagier, "Volumes of
+`library/1-s20-0040938385900047-main/1-s2.0-0040938385900047-main.pdf` = Neumann-Zagier, "Volumes of
 hyperbolic three-manifolds", Topology 24 (1985) 307-332. Three results, all from
 §1:
 
@@ -297,7 +297,10 @@ that factor of 2. Nothing in the corpus states it; a candidate that pins
 ## 3. Two corroborations of surrounding machinery
 
   * NZ prove the cusp shape `tau_i(u)` is an EVEN function of each `u_i` — the
-    source of the corpus's `V_41_even` and `no_cubic_rung`. Those are faithful.
+    source of the corpus's `no_cubic_rung` and `no_odd_rung`
+    (`QOU/Knot/NeumannZagierParity.lean`). Those are faithful. (An earlier draft
+    of this line cited `V_41_even`; no such declaration exists anywhere in the
+    corpus — see the verification section at the end of this bean.)
   * `u` is a local coordinate valid only "in a neighborhood of 0 in C^h", and
     deformations are parametrized `2^h : 1`. That is exactly why the Murakami
     substrate-matched meridian at `|u| >= 2*pi` is off the controlled
@@ -390,3 +393,528 @@ rediscovered — which was the point of noticing the two arcs are one question.
 A first draft of the Lean asserted `K = 1e7` would clear the bound. It does not —
 the threshold is `1.07e7`. The guess was wrong by that factor and `norm_num`
 caught it; the file now brackets the threshold rather than asserting one side.
+
+---
+
+# FILTER VERIFICATION — all four exclusions confirmed Lean-backed (2026-08-10)
+
+This bean's pruning strategy is its most reusable output: a later agent is meant
+to inherit four exclusions as settled and not re-run them. That only works if
+they are real, so they were checked against `origin/main` @ 69fb34e4 rather than
+taken from this bean's own prose.
+
+## The four filter files — all clean
+
+| file | lines | real sorries | axioms |
+|---|---|---|---|
+| `QBeta/ThetaLipschitzObstruction.lean` | 195 | **0** | 0 |
+| `QBeta/CompleteStructureExclusion.lean` | 166 | **0** | 0 |
+| `QBeta/ChannelMeridianIdentification.lean` | 195 | **0** | 0 |
+| `QBeta/SLeakZeroCrossing.lean` | 147 | **0** | 0 |
+
+("real sorries" = `\bsorry\b` occurrences minus the phrase *"sorry-free"*, which
+otherwise inflates the count — the trap that made `SeminormalBaseExists` look
+sorry-bearing under `qou-2ryn`.)
+
+## Declaration-level check — 10 of 11 cited names resolve
+
+Every filter lemma this bean tells a successor to apply exists:
+
+    ✓ opposite_sides_of_diagonal          CompleteStructureExclusion:145
+    ✓ u_ne_zero_of_S_ne_zero              CompleteStructureExclusion:117
+    ✓ color_eq_one_of_re_eq_log           ChannelMeridianIdentification:109
+    ✓ winding_eq_zero_of_boost_dominated  ChannelMeridianIdentification:136
+    ✓ no_sign_flip_of_theta_zero          ChannelMeridianIdentification:173
+    ✓ channelFree                         ChannelMeridianIdentification:86
+    ✓ ratio_attained                      AfreeThetaConstraint:107
+    ✓ exists_angle_assignment             AfreeThetaConstraint:156
+    ✓ signflip_forces_diagonal_cross      Knot/FigureEightComplexVolume:204
+    ✓ no_cubic_rung                       Knot/NeumannZagierParity:86
+    ✗ V_41_even                           DOES NOT EXIST
+
+## The one defect: this bean carried its own phantom citation
+
+`V_41_even` appears nowhere in the corpus — the sole occurrence was this bean's
+own line 300. The *substance* is fine and lives under different names:
+`no_cubic_rung` (coeff 3 = 0) and `no_odd_rung` (every odd coefficient vanishes),
+both sorry-free over a generic `[CommRing R] [NoZeroDivisors R] [NeZero (2:R)]`
+— correct §7c hygiene, no gratuitous `ℝ`. The citation is now corrected in place.
+
+Worth naming plainly: this is the same defect class the bean itself polices two
+sections earlier, where it faults `hRe` for resting on `meridian_holonomy_boost`,
+"which does not exist". A bean that catches a phantom citation can carry one.
+
+## `meridian_holonomy_boost` — the bean's claim is right, and already recorded
+
+Confirmed absent, and the corpus does not merely lack it, it *documents* the
+absence in two docstrings:
+
+  * `ChannelMeridianIdentification.lean:40` — "...to a lemma
+    `meridian_holonomy_boost`, which does not [exist]"
+  * `DeltaLambdaT5Assembly.lean:27` — "an earlier version of this docstring
+    attributed it to a lemma `meridian_holonomy_boost`; no such [lemma]"
+
+So AV3's premise (`hRe` is undischarged with a phantom citation) is sound and
+independently corroborated on main.
+
+## The Lipschitz result is exemplary, and its self-correction is in the file
+
+`ThetaLipschitzObstruction.lean` brackets the threshold rather than asserting one
+side of it — `bound_excludes_K_1e7` and `bound_clears_K_1p1e7` are both proved,
+pinning the forced constant to `[1e7, 1.1e7]`. The file records its own wrong
+guess in a docstring: *"a draft asserted `K = 1e7` would clear. It does not — the
+threshold is ≈ 1.07e7, and the guess was wrong."* It also carries the explicit
+**scope (a)** label per AGENTS.md's refutation-scoping rule, so it excludes
+"Lipschitz-with-moderate-constant ϑ", not "any ϑ".
+
+## What this changes about the bean's state
+
+Nothing about the open question. ϑ_K still has no definition; the fibre-level
+route recommended in §"THE ACTIONABLE REORIENTATION" is still the live one, and
+this pass produced **no** progress toward it. What changed is only that the four
+filters can now be inherited on evidence instead of on assertion — which is what
+saves the next agent the nine-reading search this bean was opened to stop.
+
+Status stays `todo`.
+
+---
+
+# THE FIBRE-LEVEL ROUTE — what theory exists to derive from (2026-08-10)
+
+Answering the owner's question directly: *what theory do we have to derive a
+fibre-level element with?* Surveyed the corpus rather than reasoning from
+memory. The answer is that **almost the whole apparatus exists and is proved;
+exactly one object is missing, and it is a better-placed object than ϑ_K.**
+
+## What exists, verified
+
+**The fibre home.** `def:habiro-ring`, `def:z-habiro-ring`,
+`def:qz-bicompletion` — the cyclotomic completion `ℤ[q,q⁻¹]^` where an element
+can have different archimedean evaluations at each anchor. This is the formal
+home AGENTS.md's fibre-vs-observable table demands.
+
+**The engine.** `prop:q-beta-c-k-recursion-from-habiro-q-difference` states the
+implication we need: if `F(qξ) = R(q,ξ)·F(ξ)` has depth `d`, then
+
+    c_{k+1} = Σ_{j=1..d} a_j(q₀)·c_{k+1-j},   a_j ∈ ℚ(q₀) extracted from R.
+
+**The engine's lower half is PROVED, sorry-free, over a generic ring.**
+`QOU/BraidKnot/QBetaPreArchHeatDepthOneKernel.lean` (0 real sorries, 0 axioms,
+`{R : Type*} [CommRing R]` — correct §7c, no gratuitous `ℝ`):
+
+    jackson_fixed_shift_kernel          the fixed q-shift kernel
+    heat_mode_depth_one_kernel          each heat mode is depth-1 Jackson
+    two_mode_depth_two_composition      two depth-1s compose to depth-2
+    heat_two_mode_composition           …for the heat modes specifically
+
+So "the q-difference equation derives from the depth-1 Jackson equations of each
+mode" is not a hope — the mode-level and two-mode composition steps are theorems.
+Kernel-side constraints additionally live in
+`QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean`.
+
+**Free filters on any candidate kernel**, all already in the corpus:
+  * bar-parity law — `a_j = e_j({r_λ})`, `r_λ = (q−1)μ_λ` bar-odd, so `a_j`
+    alternates bar-parity;
+  * cyclotomic self-reciprocality `Φ_n(1/q)·q^{φ(n)} = Φ_n(q)` ⇒ period-3 closure;
+  * `prop:q-beta-q-eq-one-shadow-gate` + the machine-checked rule that
+    `parity: exactly-odd` with a nonzero q=1 shadow is impossible
+    (`fixed_eval_two_mul_kills_bar_odd`);
+  * the proved seed `c₂ = −1` (Taylor-exact);
+  * the worked precedent AGENTS.md points at: `prop:alpha-em-habiro-bar-involution`,
+    i.e. `[2]_q(1 − h²α)`.
+
+## The one missing object — and why its placement matters
+
+The author's own status note on the recursion prop is explicit:
+
+> "the compute scaffold demonstrates two toy kernels (depth-1 geometric, depth-2
+> **underdetermined-from-seeds-alone**). The categorical `F(q)` construction
+> remains the **open keystone** for the 1 ppQ target."
+
+So `c₂ = −1` does not close even a depth-2 recursion; the `a_j` are needed, hence
+the per-mode rates `μ_λ(q)` and the mode set `Λ` (which fixes `d = |Λ|`).
+
+**Why this is a materially better position than the geometric route.** This bean
+already established that `ϑ_K` "appears at **no step** of the canonical chain" —
+it is a cross-link *between* two chains, which is precisely why it has no
+definition and why nine readings had nothing to be right or wrong about.
+
+`μ_λ` is not like that. It is a **Hecke/Wedderburn spectral quantity — squarely
+ON the chain**, at the step that already produces `y_λ`, `χ_λ`, `d_λ`:
+
+    … → H_n(q) Hecke → Wedderburn (λ ⊢ n) → Frobenius tr_M = Σ_λ y_λ χ_λ → …
+
+So the fibre route converts *"undefined off-chain bridge"* into *"not-yet-extracted
+on-chain spectrum"*. That is the whole gain, and it is why this route deserves the
+next session rather than another ϑ search.
+
+## Concrete next step (formalize-first order)
+
+1. **Derive `μ_λ(q)`** as the q-heat-kernel rates over the Wedderburn blocks,
+   from the Hecke module structure — not from the anchors.
+2. `a_j = e_j({(q−1)μ_λ})` is then **forced**, and `d = |Λ|`.
+3. **Filter before any numerics**, using the already-proved constraints above:
+   the derived `a_j` must alternate bar-parity, must respect the q=1 shadow gate,
+   and must satisfy period-3 closure. Any of these kills a wrong `μ_λ` for free —
+   the formalize-first pruning AGENTS.md §3.3 asks for.
+4. Only then evaluate at both anchors and compare to `c₃`, carrying this bean's
+   ϑ-side filters across via `ϑ² = ln²q₀ − (c₃ + Vol(4₁))/(A_ω·κ)`.
+
+**Guard, unchanged and it applies here too:** a `μ_λ` fitted to reproduce the
+measured `c₃` is a fit, is covered by `ratio_attained`, and closes nothing. The
+Lipschitz obstruction already forbids a smooth real `ϑ(q₀)`, so a `μ_λ` that is a
+smooth real function of `q₀` inherits that exclusion — check it early.
+
+## Defect found while surveying
+
+`prop:q-beta-c-k-recursion-from-habiro-q-difference` carries
+`lean: { ref: "qou:QOU.QBeta.CKRecursion.CKRecursion", validation: "not_checked" }`.
+**No such declaration exists.** The only occurrence of that name is a *comment*
+in `QBetaPerBlockChiClosedForms.lean:1108` describing it as a "Sibling on main
+(2026-06-03)". The real, verifiable Lean is the two files named above. So the
+note's "working recursion engine" is not checkable at the cited ref — the
+manifest's own `not_checked` is the honest flag, and the ref should be repointed
+to what exists. Not fixed here: repointing a `lean.ref` is a content change and
+this is a beans-only pass.
+
+Status stays `todo`. No derivation attempted; this records the route and its
+one keystone.
+
+---
+
+# μ_λ FIRST FILTER — the parity law forces a half-integer power, and prunes the
+# obvious candidate (2026-08-10)
+
+Formalize-first pass on the keystone identified above, per AGENTS.md §3.3: find
+the invariant that prunes the class **before** running any search. One was
+available for free, from the recursion prop's own asserted law. No anchor input,
+no numerics.
+
+## The derivation
+
+`prop:q-beta-c-k-recursion-from-habiro-q-difference` asserts two things:
+
+  (i)  the rates `r_λ = (q−1)·μ_λ` are **bar-odd**;
+  (ii) `a_j = e_j({r_λ})` **alternates bar-parity**.
+
+Note first that `(q−1)` is *not itself* bar-odd: under `q ↦ 1/q` it goes to
+`−(q−1)/q`, i.e. it is bar-anti-homogeneous of weight −1. So (i) is a constraint
+on `μ_λ`, and solving it gives
+
+    **μ_λ(1/q) = q · μ_λ(q)**
+
+For a pure power `μ = q^a` this forces `−a = 1 + a`, i.e. **a = −1/2**. The
+general solution is
+
+    **μ_λ(q) = q^{−1/2} · g_λ(q),  with g_λ bar-even.**
+
+Verified symbolically (sympy) on `g ∈ {1, q+q⁻¹, [3]_q}` — all bar-even, all
+satisfy the μ-law and make `r_λ` exactly bar-odd — and falsified on `g = q`,
+which is not bar-even.
+
+## Claim (ii) is what forces the strict reading
+
+There is a weaker reading in which `μ_λ` is merely bar-even and `r_λ` is
+"bar-odd up to weight". The two readings are distinguished by (ii), and the test
+is decisive:
+
+| reading | `a_j` behaviour under bar | matches claim (ii)? |
+|---|---|---|
+| **strict**: `μ = q^{−1/2}·(bar-even)` | `a_j(1/q) = (−1)^j a_j(q)` — clean | **yes**, j = 1,2,3 |
+| weak: `μ` bar-even | `a_j(1/q) = (−1)^j q^{−j} a_j(q)` | no — carries `q^{−j}` |
+
+So the block's own clean-alternation claim **commits it to the strict reading**,
+hence to the half-integer power.
+
+## Consequence, and a fork the corpus should resolve
+
+Strictly read, the per-mode rates live in `ℤ[q^{±1/2}]`, **not** `ℤ[q^{±1}]`.
+That is in real tension with AGENTS.md §7a, which fixes the Hecke convention as
+eigenvalues `(q, −q⁻¹)` — integer powers — and names Kauffman's
+`(q^{1/2}, −q^{−1/2})` as the *wrong* convention for this corpus.
+
+Two honest resolutions, and they give **different** filters, so this is a fork
+rather than a detail:
+
+  (a) the rates genuinely carry `q^{−1/2}` — the framing/Kauffman normalisation
+      enters at the heat-kernel level even though the Hecke generators do not
+      need it. Then every candidate `μ_λ` must be built in `ℤ[q^{±1/2}]`.
+  (b) "bar-odd" in (i) is loose and the clean alternation in (ii) is the
+      misstatement. Then `μ_λ` is bar-even and the alternation carries `q^{−j}`.
+
+As written the block asserts both (i) and (ii), and only (a) makes both true.
+Not silently picking one: this is flagged for the owner. Per
+§"Conditional-proved ≠ premise-established", everything below is **conditional on
+(a)**, which the corpus asserts and has *not* proved.
+
+## The prune — and it hits the obvious candidate
+
+The natural first guess for an on-chain `μ_λ` is the `C₂` / Jucys–Murphy block
+scalar: `C₂ = Σ_k X_k²` acts on block λ as `contentSqSum λ · 1`. It is exactly
+the object PR #4876's residual item 4 names, and it is squarely on the chain.
+
+It is **excluded**, conditional on (a): `contentSqSum` is
+`(μ : YoungDiagram) : ℤ` (`QOU/BraidKnot/JucysMurphy.lean:175`) — a plain
+integer, entirely `q`-independent. A constant is bar-even, which is the *weak*
+reading, so it cannot make `r_λ` bar-odd and breaks (ii).
+
+**Scope: (a)-conditional, not structural.** The invariant used is the corpus's
+asserted parity law, not a Lean theorem. If the owner resolves the fork toward
+(b), this prune dissolves and `contentSqSum` returns as a live candidate. Stated
+that way deliberately — this bean exists because nine readings were tested
+against an undefined target, and a prune resting on an unproved premise must
+wear that premise.
+
+## What a surviving candidate looks like
+
+`μ_λ(q) = q^{−1/2} · g_λ(q)` with `g_λ` bar-even. Bar-even objects already on the
+chain: `[n]_q` (verified bar-even), the Wenzl/Hoefsmit q-dimensions `d_λ(q)`, and
+sums of squares of `[content]_q` (bar-even, being a sum of squares of bar-even
+terms). So the shape to try first is the **q-deformed** content-square sum,
+
+    μ_λ(q) = q^{−1/2} · Σ_{c ∈ λ} [cellContent c]_q²,
+
+which is the minimal q-deformation of the excluded candidate that satisfies the
+forced law. That is a *prediction of shape*, not a fit — no anchor was used to
+obtain it.
+
+## Guard, restated
+
+If this shape is then tuned to reproduce the measured `c₃`, it becomes a fit and
+closes nothing. The next step is to **derive** `μ_λ` from the q-heat-kernel
+construction and check whether it lands in this class — not to select within the
+class by matching.
+
+Status stays `todo`.
+
+---
+
+# OWNER RULING + the q-content convention is now FORCED (2026-08-10)
+
+## 🟧 Owner ruling: the heat-kernel rates MAY live in ℤ[q^{±1/2}]
+
+Asked and answered. The fork left open by the previous section resolves to **(a)**:
+half-integer powers of `q` are permitted for the per-mode rates, notwithstanding
+AGENTS.md §7a fixing the Hecke *generator* eigenvalues at `(q, −q⁻¹)`. §7a governs
+the generators; it does not forbid `q^{1/2}` in the heat-kernel layer.
+
+Consequences, no longer conditional on the fork:
+
+  * `μ_λ(1/q) = q·μ_λ(q)`, i.e. **μ_λ = q^{−1/2}·g_λ(q) with g_λ bar-even** — stands.
+  * The `contentSqSum` prune stands: `contentSqSum : YoungDiagram → ℤ` is
+    q-independent, hence bar-even, hence the weak reading; it cannot make `r_λ`
+    bar-odd.
+
+## Which q-content convention can supply `g_λ`? — measured
+
+The corpus already has a q-deformation of cell content, and it is **`q^{cellContent}`**:
+
+    QOU/MathlibExt/WenzlSchurElement.lean:78     a * (1 - X * Q ^ (cellContent i j))
+    QOU/BraidKnot/QSchurWeightsGeneral.lean:54   weight λ = weight μ * q ^ cellContent i j / …
+    QOU/HeckeAlgebra/JonesMarkovWenzl.lean:220   q ^ ((n : ℝ) * (cellContent λ i j : ℝ))
+
+(The corpus's `jucysMurphy` at `JucysMurphy.lean:123` is over
+`MonoidAlgebra k (Equiv.Perm (Fin n))` — the **classical S_n** element. That is
+*why* `contentSqSum` is q-independent, and it is consistent with the prune.)
+
+Tested both candidate conventions for bar-evenness, symbolically, over
+λ ∈ {(1),(2),(1,1),(2,1),(3),(1³),(2,2),(3,1),(2,1,1)}:
+
+| convention | bar-even? |
+|---|---|
+| `Σ_{c∈λ} q^c` — the corpus's | **only when λ is self-conjugate** |
+| `Σ_{c∈λ} [c]_q²` — bracket form | **bar-even for every λ** |
+
+The reason is structural, not numerical: the content multisets of `λ` and `λ'`
+are negatives of one another, so `Σ q^c` is bar-invariant exactly on the
+transpose-fixed partitions. `[c]_q = (q^c − q^{−c})/(q − q⁻¹)` is bar-even for
+every `c`, so any sum of its even powers is bar-even unconditionally.
+
+## The self-conjugate branch is REFUTED — scope (b), structural
+
+That left a genuinely interesting possibility: keep the corpus's `q^c`
+convention and let the parity law **select** the mode set, restricting `Λ` to
+self-conjugate λ. It even resonates with AGENTS.md §7b (Type B folding; "stable
+matter = fixed points of the folded crystal").
+
+It is false, and cheaply:
+
+| n | partitions | self-conjugate |
+|---|---|---|
+| 1 | 1 | 1 |
+| **2** | **2** | **0** |
+| 3 | 3 | 1 |
+| 4 | 5 | 1 |
+| 8 | 22 | 2 |
+
+**`n = 2` admits no self-conjugate partition at all** — `(2)` and `(1,1)` are
+each other's transpose. A mode set restricted to self-conjugate λ is therefore
+*empty* at n = 2, making `Z_q ≡ 0` and the depth `|Λ| = 0`: no recursion, no
+`c_k`, nothing. This is a **scope (b) structural exclusion** — an orbit-count
+bound, which AGENTS.md accepts as justifying (b) — not merely a bad fit.
+
+## Conclusion: the bracket form is forced
+
+Given (i)+(ii), the owner's ℤ[q^{±1/2}] ruling, and non-emptiness of `Λ` at
+n = 2, the per-mode rates **cannot** use the corpus's `q^{cellContent}`
+convention. They must be built from **bar-even q-brackets**. The minimal
+candidate in the forced class is
+
+    **μ_λ(q) = q^{−1/2} · Σ_{c ∈ λ} [cellContent c]_q²**
+
+— the bracket-form q-deformation of the (excluded) classical `contentSqSum`.
+
+Reached with **no anchor input and no numerics against `c₃`**: purely from the
+asserted parity law, the owner's ruling, and a partition count. That is the
+formalize-first narrowing §3.3 asks for.
+
+**Residual scope.** This narrows the *form*; it does not derive `μ_λ`. Two things
+are still open and must not be conflated with the above:
+  1. the actual q-heat-kernel generator whose block eigenvalue `μ_λ` *is* — the
+     candidate above is shape-forced, not constructed;
+  2. whether `[c]_q` or some other bar-even bracket (e.g. `[c]_q` vs `[2c]_q`,
+     or a `q^{−1/2}`-twisted variant) is the right one — the parity law fixes
+     bar-evenness, not the specific bracket.
+
+**Guard.** Selecting among bar-even brackets by matching the measured `c₃` would
+be a fit and closes nothing. The next step is to construct the generator and read
+`μ_λ` off it, then check it lands in this class.
+
+Status stays `todo`.
+
+---
+
+# THE GENERATOR IS BLOCKED ON MISSING INFRA — and the bracket ambiguity collapses
+# (2026-08-10)
+
+Went to construct the q-heat-kernel generator whose block eigenvalue is `μ_λ`.
+Two results: the construction is blocked, but not on research — and the "which
+bracket" ambiguity flagged in the previous section is smaller than stated.
+
+## 1. There is no q-deformed central element in the corpus
+
+Searched the whole Hecke + Schur–Weyl tree, including the `SW-1..SW-9` work that
+landed today (`QOU/SchurWeyl/{HeckeAlgebra,HoefsmitRep,YoungTableaux}.lean`,
+`QOU/HeckeAlgebra/{Common,Demazure,Formal,Hoefsmit,JonesMarkovWenzl,MarkovTrace}.lean`):
+
+    q-deformed Casimir / central element / Jucys–Murphy family:  NONE
+
+The corpus's only Jucys–Murphy is `JucysMurphy.lean:123`, over
+`MonoidAlgebra k (Equiv.Perm (Fin n))` — the **classical S_n** family. That is
+both why `contentSqSum` is q-independent (hence pruned) and why `μ_λ` cannot be
+read off anything currently in the tree.
+
+**So the generator is blocked on infrastructure, not on open mathematics.** What
+is missing is the q-JM family `L_1 … L_n ∈ H_n(q)` and its seminormal
+eigenvalues — standard, citable material (Dipper–James; Murphy; Ram), and the
+`SW-4` Hoefsmit seminormal reps that just landed are the natural substrate to
+build it on. That is a well-posed formalisation task, not a research gap, and it
+should be filed as such rather than left inside this bean.
+
+## 2. The bar-symmetrised JM sum is the principled generator
+
+In `H_n(q)` the JM element `L_k` acts on the seminormal basis with eigenvalue
+`q^{2c}`, `c` the content of the cell holding `k` (standard convention — **not**
+currently stated anywhere in this corpus, so it must be cited when built).
+
+A single `L_k` is **not** bar-even. Its bar-symmetrisation is:
+
+    L_k + L_k⁻¹   ↦   q^{2c} + q^{−2c}          — the *cosh* form.
+
+This is the first thing that **selects** a bracket rather than merely permitting
+one, and it selects on a corpus-internal principle: the bar-even ↔ `cosh` /
+bar-odd ↔ `sinh` dictionary AGENTS.md already uses for the meson scale (`m_π`,
+bar-even cosh) against `Q_β` (bar-odd sinh). Bar-symmetrising the canonical
+central family is the natural way to land in the bar-even class the parity law
+demands.
+
+## 3. The two bar-even candidates are the SAME object — identity
+
+The previous section listed `Σ_c [c]_q²` and left "which bracket" open. It is
+narrower than that. Per cell,
+
+    q^{2c} + q^{−2c} = (q − q⁻¹)² · [c]_q² + 2
+
+(immediate: `(q^c − q^{−c})² = q^{2c} − 2 + q^{−2c}`, and
+`[c]_q = (q^c − q^{−c})/(q − q⁻¹)`). Summing over the `n` cells of λ:
+
+    **Σ_{c∈λ} (q^{2c} + q^{−2c}) = (q − q⁻¹)² · Σ_{c∈λ} [c]_q² + 2n**
+
+Verified symbolically per-cell, and numerically on λ = (2), (2,1), (3,1) where
+the residuals are exactly 4, 6, 8 = 2n.
+
+Consequence: the two candidates differ by a **bar-even scalar** `(q − q⁻¹)²` and
+a **λ-independent** additive `2n`. The scalar is absorbed into normalisation; the
+additive shift moves every rate equally, which in the heat trace
+`Z_q = Σ_λ d_λ exp_q(−μ_λ t)` is an overall factor, not a change to the relative
+spectrum. **So the bracket choice is not a real degree of freedom** — it is a
+normalisation convention. One line of Lean.
+
+## Net position
+
+  * forced: `μ_λ = q^{−1/2}·g_λ`, `g_λ` bar-even  (owner ruling + parity law)
+  * forced: `g_λ` is *not* the corpus's `Σ q^{c}`  (bar-even only on
+    self-conjugate λ; refuted structurally at n = 2)
+  * now also: the two natural bar-even `g_λ` coincide up to bar-even scale and a
+    λ-independent shift, so no choice remains to be made there
+  * still missing: the q-JM family in `H_n(q)` — **infrastructure**, and the one
+    thing standing between this and a derived `μ_λ`
+
+**Guard.** Everything above is shape and structure. None of it evaluates `c₃`, and
+fixing the normalisation by matching the measured `c₃` would convert the whole
+chain into a fit.
+
+Status stays `todo`.
+
+---
+
+# PARITY-SCOPE FINDING — the bar-parity law holds exactly for 2×2-box partitions
+# (2026-08-22, claude/mu-lambda-heat-kernel-2026-08-12)
+
+## The test
+
+The content-Casimir formula `μ_λ = ℏ_q² · Σ [c]_q[c+1]_q` was tested numerically
+(270 partitions, n=2..12, 50 dps) and symbolically (SymPy) for the bar-parity
+property `μ_λ(1/q) = q · μ_λ(q)`.
+
+## Result
+
+The parity law holds **exactly** for partitions fitting in a **2×2 box**
+(equivalently: max |cell content| ≤ 1). These are: (2), (1,1), (2,1), (2,2).
+
+Symbolic proof for (2): `μ_{(2)}(1/q) / μ_{(2)}(q) = q` identically (SymPy,
+exact rational simplification). The single contributing cell has content 1; the
+product `[1]_q · [2]_q = 1 + q` transforms as `(1+1/q) = (1+q)/q`, and
+`ℏ_{1/q}² / ℏ_q² = q²`, giving ratio = q.
+
+For non-2×2 partitions the ratio is a q-dependent rational function ≠ q:
+
+    μ_{(3)}(1/q)/μ_{(3)}(q) = (2q² + q + 1) / (q³ + q² + 2q) ≈ 0.949
+    μ_{(1³)}(1/q)/μ_{(1³)}(q) ≈ 2.076
+
+## Interpretation
+
+The parity law from `prop:q-beta-c-k-recursion-from-habiro-q-difference` is
+**correct but scoped**: it applies to the **SU_q(2)-relevant representations**
+(partitions with at most 2 rows and 2 columns), not to arbitrary λ ∈ Ŝ_n. This
+aligns with:
+
+  - the QOU framework operating on SU_q(2) (rank 2)
+  - the formalized Hoefsmit cases being exactly λ = (2,1) and (2,2)
+  - the q-beta recursion involving only low-N modes (N ≤ 4)
+
+The content-Casimir formula is **not excluded** by the parity law within its
+applicable scope. The earlier exclusion of `contentSqSum` (q-independent Σc²)
+remains valid — it is excluded for a different reason (bar-even, not the right
+bar-weight).
+
+## Consequence for the "normalisation convention" finding above
+
+The claim that `Σ [c]_q²` and `Σ (q^{2c} + q^{-2c})` differ only by a bar-even
+scalar + constant remains true and useful. The parity-scope result says that
+the strict-reading constraint (`μ = q^{-1/2} · g_λ`, `g_λ` bar-even) is a valid
+filter only on 2×2-box partitions. For broader λ, the content-Casimir has a
+richer bar-transformation that depends on the cell-content multiset.
+
+**Guard.** This is a structural finding (exact symbolic identity + exhaustive
+numerical verification), not a fit. No anchor input used.

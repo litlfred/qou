@@ -4,8 +4,8 @@
 uploads from the SM batch (`5d1385d1`), each targeted at the
 appendix-standard-model gap ledger. Reads performed by four parallel
 agents (pypdf extraction); per-paper section references below are to
-the PDFs in `uploads/`. Registry:
-[`uploads/sm-uploads-intake.json`](../../uploads/sm-uploads-intake.json).
+the PDFs in `library/`. Registry:
+[`library/sm-uploads-intake.json`](../../library/sm-uploads-intake.json).
 Prior round: `docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md`.
 
 ## 1. Bilson-Thompson–Markopoulou–Smolin, `0603022v2` [bilsonthompson2007]
@@ -114,16 +114,17 @@ eq. 4.1); connected form U(3)×SO(3); equivalently
   (τ/3 + w/2 + Y/2 ∈ ℤ) the strand-twist battery implements. Two
   independent derivations of the battery's ℤ₆, one geometric, one
   representation-theoretic.
-- **Gap:** the explicit algebraic hypercharge operator Y is NOT in
-  this paper — it is constructed in the companion
-  Todorov–Dubois-Violette, arXiv:1806.09450 (u(1) commutant of
-  su(3)⊕su(2) in the stabilizer). Follow-up read filed as a bean.
+- **Gap/correction:** the explicit algebraic hypercharge operator Y is NOT in
+  this paper, and the prior companion-pointer was wrong. The group-level
+  `U(1)`/`Z6` geometry is DV/Todorov; the explicit weak-hypercharge generator
+  is instead in C. Furey, arXiv:1806.00612, eq. (43), with arXiv:1611.09182 as
+  the longer derivation background.
 
 ## Consequences for the gap ledger
 
 | gap | movement |
 |---|---|
-| hypercharge Y (`qou-q377`) | Twist conservation has literature precedent (noiseless-subsystem commutation), but no published twist-valued *invariant* — the QOU `TwistDatum` lemmas are that statement. Categorical home identified: abelian-H crossed module with t = 0; emergence mechanism candidate: level-k string extension above the proved SU(2). Y-operator formula: fetch 1806.09450. |
+| hypercharge Y (`qou-q377`) | Twist conservation has literature precedent (noiseless-subsystem commutation), but no published twist-valued *invariant* — the QOU `TwistDatum` lemmas are that statement. Categorical home identified: abelian-H crossed module with t = 0; emergence mechanism candidate: level-k string extension above the proved SU(2). Literature operator source corrected: Furey 1806.00612 eq. (43) (with 1611.09182 as background), not DV/Todorov 1806.09450. |
 | colour action (`qou-ni4b`) | Concrete faithful candidate module found: M₃(ℂ) column action (DV–T Sec. 3). Constructing the ℚ-form of 𝕆 = ℂ⊕ℂ³ at the corpus's fixed imaginary unit and exhibiting Φ on ℂ³ is now a *derivation route*, not a search. |
 | ℤ₆ battery | Doubly grounded: geometric (F₄ stabilizer) + representation-kernel (trivial-action subgroup) derivations agree. |
 | truncation freeze-out | No movement — all four papers either postulate the embedding or admit the dynamics gap (BT–M–S §VIII.C explicitly). |

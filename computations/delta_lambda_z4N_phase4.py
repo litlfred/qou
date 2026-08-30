@@ -49,7 +49,8 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0
+from q_parameter import Q_MP as Q0
+from _precision import set_compute_dps  # noqa: E402
 
 PHASE3_WITNESS = _pb.witness_path("delta-lambda-jsj-phase3.witness.json", HERE)
 EMP_WITNESS = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)
@@ -66,7 +67,7 @@ ZN = {
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("delta-lambda-z4N-phase4")
     builder.set_description(
         "Phase 4 of the closed-forms-first-principles workplan: tests "
@@ -79,7 +80,7 @@ def main() -> int:
     )
 
     q = mp.mpf(str(Q0))
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     inv_z = mp.sqrt(q) + 1 / mp.sqrt(q)
     builder.add_parameter("q0", str(q))
     builder.add_parameter("z", str(z))
@@ -249,7 +250,7 @@ def main() -> int:
     })
     builder.add_assertion(
         "alpha_cosh_h_z_step_correction_rel_err",
-        computed=float(alpha_cosh_rel_err),
+        computed=alpha_cosh_rel_err,
         expected=0.0,
         tolerance=0.001,  # 0.1% — much tighter than Phase 4 zero-parameter form
         unit="rel_err",
@@ -264,8 +265,8 @@ def main() -> int:
 
     builder.add_assertion(
         "per_N_factor_matches_inv_z_to_4",
-        computed=float(max(abs(per_N_emp["T_over_D"]    - per_N_pred) / per_N_pred,
-                           abs(per_N_emp["He4_over_He3"] - per_N_pred) / per_N_pred)),
+        computed=max(abs(per_N_emp["T_over_D"]    - per_N_pred) / per_N_pred,
+                           abs(per_N_emp["He4_over_He3"] - per_N_pred) / per_N_pred),
         expected=0.0,
         tolerance=0.025,   # 2.5% — the larger of the two empirical errors is 1.7%
         unit="rel_err",
@@ -273,7 +274,7 @@ def main() -> int:
     )
     builder.add_assertion(
         "two_factor_rel_std_below_phase3_baseline",
-        computed=float(relstd_full),
+        computed=relstd_full,
         expected=0.0,
         tolerance=0.1,
         unit="rel_std",
@@ -285,7 +286,7 @@ def main() -> int:
     )
     builder.add_assertion(
         "zero_param_closure_max_rel_err",
-        computed=float(max_rel_err),
+        computed=max_rel_err,
         expected=0.0,
         tolerance=0.03,   # 3% — the empirical α≈[3]_q² has rel.err 2.17%
         unit="rel_err",

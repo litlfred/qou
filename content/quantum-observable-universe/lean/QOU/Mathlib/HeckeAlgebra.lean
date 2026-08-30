@@ -143,12 +143,34 @@ class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)
   bridge_identity : Prop
   bridge_holds : bridge_identity
 
-/-- **Trivial canonical instance** — every class field is filled
-    with the structurally-trivial value (`carrier := PUnit`,
-    `trace := constant 0`, etc.).  Discharges the §3b-cond
-    hypothesis at the audit level; genuine instances at
-    `R = ℚ(q)` arrive when Mathlib's Iwahori–Hecke library lands. -/
-instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+/-- **Trivial model of the Hecke class** — every field is filled with the
+    structurally-trivial value (`carrier := PUnit`, all three relations
+    `:= True`).  Genuine models at `R = ℚ(q)` arrive when Mathlib's
+    Iwahori–Hecke library lands.
+
+    **A `def`, not an `instance`, since 2026-08-23.**  It was declared
+    `instance`, and its docstring said so plainly: *"Discharges the §3b-cond
+    hypothesis at the audit level."*  That is what §3b-tax forbids — *"an
+    unproved primary is honestly represented by a content-bearing class with
+    **no** instance; do not fabricate a trivial instance to 'close' it."*
+
+    The defect was not the placeholder but its **globality**.  Being an
+    `instance`, typeclass resolution supplied it for **every** `R`, `n`, `q`,
+    so every downstream `[IwahoriHeckeAlgebra R n q]` was discharged silently
+    with `carrier = PUnit` and the author of that theorem never learned the
+    hypothesis was free.  Measured before the change:
+
+        #synth IwahoriHeckeAlgebra ℤ 3 1                     -- triv_hecke ℤ 3 1
+        (inferInstance : IwahoriHeckeAlgebra ℤ 3 1).carrier = PUnit  -- rfl
+
+    As a `def` the trivial model stays available to anyone who deliberately
+    wants it (`letI := triv_hecke R n q`), and nothing is discharged behind
+    a caller's back.  Blast radius of the demotion, measured: **one** error,
+    `triv_wedderburn` below, fixed in place.  Nothing else in the corpus
+    depended on the global resolution.
+
+    Probe: `docs/audits/2026-08-23-trivial-global-instance-probe.lean`. -/
+def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     IwahoriHeckeAlgebra R n q where
   carrier := PUnit
   carrier_addCommGroup := by infer_instance
@@ -162,10 +184,32 @@ instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   far_commute := True
   far_commute_holds := True.intro
 
-/-- Trivial Wedderburn decomposition over the trivial Hecke carrier. -/
-instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+/-- Trivial Wedderburn decomposition over the trivial Hecke carrier.
+
+    Demoted from `instance` to `def` alongside `triv_hecke`, for the same
+    reason and with the same evidence — before the change,
+    `#synth WedderburnDecomposition ℤ 3 1` answered `triv_wedderburn ℤ 3 1`,
+    so this step of the canonical derivation chain also had an inert Lean
+    hypothesis.
+
+    The instance binder is what the demotion cost: `WedderburnDecomposition
+    R n q` takes an `[IwahoriHeckeAlgebra R n q]`, which resolution used to
+    supply from the global `triv_hecke`. It is now a hypothesis, so a caller
+    wanting the fully-trivial pair writes `triv_wedderburn R n q
+    (self := triv_hecke R n q)` and the dependence is visible at the use site
+    rather than inferred behind it.
+
+    (A `letI := triv_hecke R n q` in the *type* does not work: it binds for the
+    ascription but not for the `where` fields, which elaborate against the
+    class and need the instance again.) -/
+def triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R)
+    [self : IwahoriHeckeAlgebra R n q] :
     WedderburnDecomposition R n q where
-  block_proj _ := PUnit.unit
+  -- Was `PUnit.unit`, which only type-checked while the carrier was pinned to
+  -- `PUnit` by the global `triv_hecke`. Over an arbitrary Hecke model the
+  -- projector must land in `self.carrier`, and its unit is the only element
+  -- the class provides — which is the honest reading of "trivial projector".
+  block_proj _ := self.one
   blocks_sum_to_one := True
   blocks_sum_holds := True.intro
   blocks_orthogonal := True
@@ -201,12 +245,12 @@ instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     `Mathlib.LinearAlgebra.Matrix.PEquiv` over the basis
     `{1, σ_1}`. -/
 def H2_instance_hook (R : Type u) [CommRing R] (q : R)
-    [I : IwahoriHeckeAlgebra R 2 q] : Prop :=
+    [IwahoriHeckeAlgebra R 2 q] : Prop :=
   ∃ (basis_size : ℕ), basis_size = 2
 
 /-- **Hook for n=3 instance**: 6-dimensional carrier (= |S_3|). -/
 def H3_instance_hook (R : Type u) [CommRing R] (q : R)
-    [I : IwahoriHeckeAlgebra R 3 q] : Prop :=
+    [IwahoriHeckeAlgebra R 3 q] : Prop :=
   ∃ (basis_size : ℕ), basis_size = 6
 
 /-- For any `n`, the basis size of `H_n(q)` should be `n!` (the
@@ -242,6 +286,14 @@ theorem Hn_basis_dimension_four : Hn_basis_dimension 4 = 24 := rfl
 /-- Concrete `H_2(q)` carrier: pair representing `a · 1 + b · σ_1`. -/
 abbrev H2Carrier (R : Type u) := R × R
 
+-- These three are addressed as `H2.one` / `H2.sigma` / `H2.mul` at every one of
+-- their 9 call sites, but were declared at file scope — so the names did not
+-- exist and this module never compiled. Nothing caught it because `lake build`
+-- only reached the import closure of `QOU.lean`, and this module is outside it
+-- (bean qou-rc7b). The namespace also disambiguates them from the `one` / `mul`
+-- / `sigma` *fields* of the `HeckeAlgebra` class above.
+namespace H2
+
 /-- The unit `1 ∈ H_2(q)` as a concrete element. -/
 def one (R : Type u) [CommRing R] : H2Carrier R := (1, 0)
 
@@ -254,6 +306,8 @@ def mul {R : Type u} [Field R] (q : R)
     (x y : H2Carrier R) : H2Carrier R :=
   (x.1 * y.1 + x.2 * y.2,
    x.1 * y.2 + x.2 * y.1 + x.2 * y.2 * (q - q⁻¹))
+
+end H2
 
 /-- Identity: `1 · σ_1 = σ_1`. -/
 theorem one_mul_sigma {R : Type u} [Field R] (q : R) :
@@ -327,7 +381,7 @@ theorem blockSum_eq_one (q : ℝ) (hne : q + q⁻¹ ≠ 0) :
     (H2.blockSym q).2 + (H2.blockAlt q).2 = 0 := by
   refine ⟨?_, ?_⟩
   · show q⁻¹ / (q + q⁻¹) + q / (q + q⁻¹) = 1
-    rw [div_add_div_same]
+    rw [← add_div]
     have : q⁻¹ + q = q + q⁻¹ := by ring
     rw [this]
     exact div_self hne
@@ -352,30 +406,30 @@ theorem blockSum_eq_one (q : ℝ) (hne : q + q⁻¹ ≠ 0) :
 abbrev H3Carrier (R : Type u) := R × R × R × R × R × R
 
 /-- The unit `1 ∈ H_3(q)`. -/
-def one (R : Type u) [CommRing R] : H3Carrier R := (1, 0, 0, 0, 0, 0)
+def H3.one (R : Type u) [CommRing R] : H3Carrier R := (1, 0, 0, 0, 0, 0)
 
 /-- The generator `σ_1 ∈ H_3(q)`. -/
-def sigma1 (R : Type u) [CommRing R] : H3Carrier R := (0, 1, 0, 0, 0, 0)
+def H3.sigma1 (R : Type u) [CommRing R] : H3Carrier R := (0, 1, 0, 0, 0, 0)
 
 /-- The generator `σ_2 ∈ H_3(q)`. -/
-def sigma2 (R : Type u) [CommRing R] : H3Carrier R := (0, 0, 1, 0, 0, 0)
+def H3.sigma2 (R : Type u) [CommRing R] : H3Carrier R := (0, 0, 1, 0, 0, 0)
 
 /-- The basis element `σ_1 σ_2`. -/
-def sigma1Sigma2 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma1Sigma2 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 1, 0, 0)
 
 /-- The basis element `σ_2 σ_1`. -/
-def sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 0, 1, 0)
 
 /-- The basis element `σ_1 σ_2 σ_1 = σ_2 σ_1 σ_2` (longest
     element of `S_3`). -/
-def sigma1Sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma1Sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 0, 0, 1)
 
 /-- The 6 basis elements of `H_3(q)` are pairwise distinct
     (each has a single non-zero coordinate at a unique position). -/
-theorem basis_distinct (R : Type u) [CommRing R] [Nontrivial R] :
+theorem H3.basis_distinct (R : Type u) [CommRing R] [Nontrivial R] :
     H3.one R ≠ H3.sigma1 R ∧
     H3.sigma1 R ≠ H3.sigma2 R ∧
     H3.sigma2 R ≠ H3.sigma1Sigma2 R ∧
@@ -398,14 +452,14 @@ noncomputable def H3.markovTrace (q : ℝ) (x : H3Carrier ℝ) : ℝ :=
   + x.2.2.2.2.2 * z ^ 3
 
 /-- Markov-trace normalisation on `H_3(q)`: `tr_M(1) = 1`. -/
-theorem markovTrace_one (q : ℝ) :
+theorem H3.markovTrace_one (q : ℝ) :
     H3.markovTrace q (H3.one ℝ) = 1 := by
   show 1 + (0 + 0) * (1 / (q + q⁻¹))
     + (0 + 0) * (1 / (q + q⁻¹)) ^ 2 + 0 * (1 / (q + q⁻¹)) ^ 3 = 1
   ring
 
 /-- Markov-trace on `σ_1`: `tr_M(σ_1) = z`. -/
-theorem markovTrace_sigma1 (q : ℝ) :
+theorem H3.markovTrace_sigma1 (q : ℝ) :
     H3.markovTrace q (H3.sigma1 ℝ) = 1 / (q + q⁻¹) := by
   show 0 + (1 + 0) * (1 / (q + q⁻¹))
     + (0 + 0) * (1 / (q + q⁻¹)) ^ 2 + 0 * (1 / (q + q⁻¹)) ^ 3
@@ -429,13 +483,13 @@ theorem markovTrace_sigma1 (q : ℝ) :
     + a₆·σ_1σ_2σ_1` and `y` arbitrary. -/
 
 /-- Componentwise addition on `H3Carrier R`. -/
-def add {R : Type u} [CommRing R] (x y : H3Carrier R) : H3Carrier R :=
+def H3.add {R : Type u} [CommRing R] (x y : H3Carrier R) : H3Carrier R :=
   (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1,
    x.2.2.2.1 + y.2.2.2.1, x.2.2.2.2.1 + y.2.2.2.2.1,
    x.2.2.2.2.2 + y.2.2.2.2.2)
 
 /-- Scalar multiplication on `H3Carrier R`. -/
-def smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
+def H3.smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
   (a * x.1, a * x.2.1, a * x.2.2.1,
    a * x.2.2.2.1, a * x.2.2.2.2.1, a * x.2.2.2.2.2)
 
@@ -448,7 +502,7 @@ def smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
     - `σ_1 · σ_2 σ_1 = σ_1 σ_2 σ_1` (basis position 6).
     - `σ_1 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_2 σ_1`
       (positions 5, 6). -/
-def mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.1,
    x.1 + x.2.1 * (q - q⁻¹),
@@ -467,7 +521,7 @@ def mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     - `σ_2 · σ_2 σ_1 = (q-q⁻¹) σ_2 σ_1 + σ_1` (positions 2, 5).
     - `σ_2 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_1 σ_2`
       (positions 4, 6). -/
-def mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.2.1,
    x.2.2.2.2.1,
@@ -480,21 +534,21 @@ def mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
 
     Concrete carrier form: `σ_1² = (q - q⁻¹) σ_1 + 1` translates
     to position values `(1, q - q⁻¹, 0, 0, 0, 0)`. -/
-theorem sigma1_sq_eq (q : ℝ) :
+theorem H3.sigma1_sq_eq (q : ℝ) :
     H3.mulSigma1 q (H3.sigma1 ℝ) = (1, q - q⁻¹, 0, 0, 0, 0) := by
   unfold H3.mulSigma1 H3.sigma1
   simp
 
 /-- **Hecke relation on σ_2**: `H3.mulSigma2 σ_2 = (q - q⁻¹) · σ_2 + 1`.
     Carrier form: positions `(1, 0, q - q⁻¹, 0, 0, 0)`. -/
-theorem sigma2_sq_eq (q : ℝ) :
+theorem H3.sigma2_sq_eq (q : ℝ) :
     H3.mulSigma2 q (H3.sigma2 ℝ) = (1, 0, q - q⁻¹, 0, 0, 0) := by
   unfold H3.mulSigma2 H3.sigma2
   simp
 
 /-- **Braid relation**: `σ_1 σ_2 σ_1 = σ_2 σ_1 σ_2`.  Both sides
     reduce to basis position 6 (the longest element of `S_3`). -/
-theorem braid_relation (q : ℝ) :
+theorem H3.braid_relation (q : ℝ) :
     H3.mulSigma1 q (H3.mulSigma2 q (H3.sigma1 ℝ))
       = H3.mulSigma2 q (H3.mulSigma1 q (H3.sigma2 ℝ)) := by
   unfold H3.mulSigma1 H3.mulSigma2 H3.sigma1 H3.sigma2
@@ -505,7 +559,7 @@ theorem braid_relation (q : ℝ) :
     + a₃·σ_2 + a₄·σ_1σ_2 + a₅·σ_2σ_1 + a₆·σ_1σ_2σ_1`, with
     each basis-element-times-y computed by iterated generator
     action. -/
-def mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
+def H3.mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
     H3Carrier R :=
   let c1 := H3.smul x.1 y                                    -- 1 · y
   let c2 := H3.smul x.2.1 (H3.mulSigma1 q y)                 -- σ_1 · y
@@ -520,11 +574,81 @@ def mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
   H3.add c1 (H3.add c2 (H3.add c3 (H3.add c4 (H3.add c5 c6))))
 
 /-- Identity law: `1 · y = y`. -/
-theorem one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
+theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
     H3.mul q (H3.one R) y = y := by
   unfold H3.mul H3.one H3.smul H3.add
   obtain ⟨_, _, _, _, _, _⟩ := y
   simp
+
+/-- Identity law on the other side: `x · 1 = x`.  Unlike `H3.one_mul`, which is
+immediate from the basis decomposition, this needs the six generator-action maps
+to send `1` to the right basis vector — which is exactly what makes the basis
+*ordering* above correct. -/
+theorem H3.mul_one {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+    H3.mul q x (H3.one R) = x := by
+  obtain ⟨a1, a2, a3, a4, a5, a6⟩ := x
+  simp only [H3.mul, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul, H3.add,
+    Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-- **Associativity of `H3.mul`.**  Each of the six output coefficients is a
+polynomial in the eighteen input coefficients and `q - q⁻¹`, so `ring` settles it
+componentwise.
+
+That it *is* an identity is the content: it fails for an arbitrary pair of `6 × 6`
+matrices, and holds here because `H3.mulSigma1` and `H3.mulSigma2` are a faithful
+transcription of left multiplication by `σ₁` and `σ₂` subject to the Hecke and
+braid relations.
+
+This is a statement about *this* table.  The tree's other `H₃(q)` —
+`QOU.Machinery.HeckeH3AlgebraInstance.H3A`, which is where the `Ring`, the
+`Algebra`, `wedderburn₃`, and the `QOU.Hecke.HeckeAlgebra` instance live — is a
+different normal-form basis with its own `mulNF₃_assoc`.  Neither implies the
+other without a change of basis. -/
+theorem H3.mul_assoc {R : Type u} [Field R] (q : R) (x y z : H3Carrier R) :
+    H3.mul q (H3.mul q x y) z = H3.mul q x (H3.mul q y z) := by
+  obtain ⟨a1, a2, a3, a4, a5, a6⟩ := x
+  obtain ⟨b1, b2, b3, b4, b5, b6⟩ := y
+  obtain ⟨c1, c2, c3, c4, c5, c6⟩ := z
+  simp only [H3.mul, H3.mulSigma1, H3.mulSigma2, H3.smul, H3.add, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-! ### The H_3 relations in `H3.mul` form, over an arbitrary field
+
+`H3.sigma1_sq_eq`, `H3.sigma2_sq_eq` and `H3.braid_relation` above are stated over
+`ℝ` and in *generator-action* form (`H3.mulSigma1 q (H3.sigma1 ℝ) = …`).  These
+three are their counterparts over an arbitrary field and as equations in the
+multiplication — the form a ring-level statement of the presentation asks for.
+
+They come from the retired `QOU.Hecke.InstanceH3` (bean qou-ti7p), which used
+them to discharge the relation fields of a `HeckeAlgebra` instance on a type
+synonym for `H3Carrier R`.  That carrier is gone —
+`QOU.Hecke.InstanceOnH3A.instHeckeAlgebraH3A` puts the class on `H3A`, where
+`IsHeckeOfFullRank K 3` holds of the same carrier — but the relations are about
+`H3.mul`, so they belong here. -/
+
+theorem H3.sigma1_sq_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.sigma1 R) (H3.sigma1 R)
+      = (q - q⁻¹) • H3.sigma1 R + H3.one R := by
+  simp only [H3.mul, H3.sigma1, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.smul_mk, smul_eq_mul, Prod.mk_add_mk, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+theorem H3.sigma2_sq_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.sigma2 R) (H3.sigma2 R)
+      = (q - q⁻¹) • H3.sigma2 R + H3.one R := by
+  simp only [H3.mul, H3.sigma2, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.smul_mk, smul_eq_mul, Prod.mk_add_mk, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-- **The braid relation** `σ₁σ₂σ₁ = σ₂σ₁σ₂` as an equation in `H3.mul`: both
+sides are the longest element of `S₃`, basis position 6. -/
+theorem H3.braid_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.mul q (H3.sigma1 R) (H3.sigma2 R)) (H3.sigma1 R)
+      = H3.mul q (H3.mul q (H3.sigma2 R) (H3.sigma1 R)) (H3.sigma2 R) := by
+  simp only [H3.mul, H3.sigma1, H3.sigma2, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
 
 /-! ### H_3 Wedderburn block decomposition (3 blocks)
 
@@ -562,24 +686,27 @@ theorem one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
     `{0, 1, 1, 2, 2, 3}`).  Correct normalizer for the
     trivial-representation idempotent `e_[3]`; the sign
     idempotent `e_[1,1,1]` uses `P(q⁻¹)`. -/
-noncomputable def H3.poincare (q : ℝ) : ℝ :=
+noncomputable def H3.poincare {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) : K :=
   1 + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6
 
 /-- `P(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients): the Poincaré normalizer is unconditionally
     non-zero — no genericity hypothesis needed. -/
-theorem poincare_pos (q : ℝ) : 0 < H3.poincare q := by
+theorem H3.poincare_pos {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    0 < H3.poincare q := by
   unfold H3.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)]
 
 /-- The Poincaré normalizer never vanishes (any real `q`). -/
-theorem poincare_ne_zero (q : ℝ) : H3.poincare q ≠ 0 :=
+theorem H3.poincare_ne_zero {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3.poincare q ≠ 0 :=
   ne_of_gt (H3.poincare_pos q)
 
 /-- The symmetric Wedderburn projector `e_[3]` for `H_3(q)`
     over `ℝ`.  Coefficient list `(1, q, q, q², q², q³) / P(q)`
     with `P = H3.poincare` the S_3 Poincaré polynomial. -/
-noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
+noncomputable def H3.blockSym3 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3Carrier K :=
   let z := H3.poincare q
   (1 / z, q / z, q / z, q ^ 2 / z, q ^ 2 / z, q ^ 3 / z)
 
@@ -587,7 +714,8 @@ noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
     `H_3(q)` over `ℝ`.  Coefficient list `(1, -q⁻¹, -q⁻¹, q⁻²,
     q⁻², -q⁻³) / P(q⁻¹)` — the sign block is normalized by the
     Poincaré polynomial evaluated at `q⁻¹`. -/
-noncomputable def H3.blockAlt3 (q : ℝ) : H3Carrier ℝ :=
+noncomputable def H3.blockAlt3 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3Carrier K :=
   let z := H3.poincare q⁻¹
   (1 / z, -q⁻¹ / z, -q⁻¹ / z, q⁻¹ ^ 2 / z, q⁻¹ ^ 2 / z, -q⁻¹ ^ 3 / z)
 
@@ -606,7 +734,7 @@ noncomputable def H3.blockMixed21 (q : ℝ) : H3Carrier ℝ :=
     componentwise.  Stated as the **first-component** version
     for demonstration; the analogous componentwise theorems
     follow by parallel `ring` arguments. -/
-theorem blockSum_first_component (q : ℝ) :
+theorem H3.blockSum_first_component (q : ℝ) :
     (H3.blockSym3 q).1 + (H3.blockAlt3 q).1 + (H3.blockMixed21 q).1
       = (H3.one ℝ).1 := by
   -- `e_[2,1]`'s first component is definitionally
@@ -636,16 +764,16 @@ abbrev H4Carrier (R : Type u) := Fin 24 → R
 
 /-- The unit element `1 ∈ H_4(q)` as a function-valued carrier:
     coefficient `1` at the identity (index 0), `0` elsewhere. -/
-def one (R : Type u) [CommRing R] : H4Carrier R :=
+def H4.one (R : Type u) [CommRing R] : H4Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor: `H4.basis i` is the coefficient
     function with `1` at position `i` and `0` elsewhere. -/
-def basis {R : Type u} [CommRing R] (i : Fin 24) : H4Carrier R :=
+def H4.basis {R : Type u} [CommRing R] (i : Fin 24) : H4Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 24 elements. -/
-theorem basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
+theorem H4.basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-! ### H_4 Wedderburn projector definitions
@@ -680,19 +808,39 @@ theorem basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
     `1,3,5,6,5,3,1` over `ℓ = 0..6`; coefficient sum `24 = 4!`).
     Correct normalizer for the trivial idempotent `e_[4]`; the
     sign idempotent `e_[1⁴]` uses `P₄(q⁻¹)`. -/
-noncomputable def H4.poincare (q : ℝ) : ℝ :=
+noncomputable def H4.poincare {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) : K :=
   1 + 3 * q ^ 2 + 5 * q ^ 4 + 6 * q ^ 6 + 5 * q ^ 8 + 3 * q ^ 10 + q ^ 12
 
 /-- `P₄(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients) — unconditionally non-zero, like `H3.poincare_pos`. -/
-theorem poincare_pos (q : ℝ) : 0 < H4.poincare q := by
+theorem H4.poincare_pos {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    0 < H4.poincare q := by
   unfold H4.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3),
              sq_nonneg (q ^ 4), sq_nonneg (q ^ 5), sq_nonneg (q ^ 6)]
 
 /-- The `S_4` Poincaré normalizer never vanishes (any real `q`). -/
-theorem poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
+theorem H4.poincare_ne_zero {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4.poincare q ≠ 0 :=
   ne_of_gt (H4.poincare_pos q)
+
+/-! ### The Poincaré normalizers are not tied to `ℝ` (bean qou-yax5)
+
+`H3.poincare` and `H4.poincare` used to be declared over `ℝ`, and
+`QOU/Machinery/HeckeH4AlgebraLaws.lean`, `HeckeH4StabilizationRung.lean` and
+`HeckeH4Wedderburn.lean` all state the §7c convention explicitly — generic base
+ring, "no `ℝ`, no ordering, no archimedean construct". Only these normalizers and
+the block projectors were pinned.
+
+Nothing archimedean is needed: the coefficients are positive and the powers even,
+so `nlinarith` proves positivity over any ordered field. The examples below are
+the point of the change — exact `y_λ` arithmetic over `ℚ`, with `ℝ` unaffected. -/
+
+example : H3.poincare (2 : ℚ) ≠ 0 := H3.poincare_ne_zero 2
+example : H4.poincare (2 : ℚ) ≠ 0 := H4.poincare_ne_zero 2
+example : (0 : ℚ) < H4.poincare (-3 / 7 : ℚ) := H4.poincare_pos _
+example : H4.poincare (2 : ℝ) ≠ 0 := H4.poincare_ne_zero 2
+
 
 open QOU.Mathlib.PermutationEnumeration in
 /-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over `ℝ`:
@@ -703,7 +851,8 @@ open QOU.Mathlib.PermutationEnumeration in
     invariant statement (sums, traces, length fibers) is
     enumeration-independent.  Normalizer forced by
     `T_w e_[4] = q^{ℓ(w)} e_[4]` (cf. `H3.blockSym3`). -/
-noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockSym4 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4Carrier K :=
   fun i =>
     q ^ (lengthFn 4 i) / H4.poincare q
 
@@ -712,16 +861,35 @@ open QOU.Mathlib.PermutationEnumeration in
     `i ↦ (-q⁻¹)^{ℓ(i)} / P₄(q⁻¹)` — sign-block weights at the
     `-q⁻¹` Hecke eigenvalue, normalized by the Poincaré
     polynomial at `q⁻¹` (cf. `H3.blockAlt3`). -/
-noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockAlt4 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4Carrier K :=
   fun i =>
     (-q⁻¹) ^ (lengthFn 4 i) / H4.poincare q⁻¹
+
+/-! **Over `ℚ` the H₄ Wedderburn projector is available and exact** — the point of
+generalising the normalizers off `ℝ` (bean qou-yax5).
+
+Stated as the defining identity rather than at a fixed index: per-index values
+depend on the noncomputable basis enumeration, as `blockSym4`'s docstring says, so
+`blockSym4 q 0 = 1 / P(q)` would silently assume the identity permutation sits at
+index `0`. It does not follow from anything here. -/
+open QOU.Mathlib.PermutationEnumeration in
+example :
+    H4.blockSym4 (2 : ℚ) = fun i => (2 : ℚ) ^ (lengthFn 4 i) / H4.poincare (2 : ℚ) :=
+  rfl
+
+open QOU.Mathlib.PermutationEnumeration in
+example :
+    H4.blockSym4 (2 : ℝ) = fun i => (2 : ℝ) ^ (lengthFn 4 i) / H4.poincare (2 : ℝ) :=
+  rfl
+
 
 open QOU.Mathlib.PermutationEnumeration in
 /-- **`S_4` length distribution**: the number of permutations at
     Coxeter length `0,…,6` is `1, 3, 5, 6, 5, 3, 1` (the
     coefficient row of `P₄`; total `24 = 4!`).  Evaluated by
     `decide` over the 24 permutations. -/
-theorem s4_length_card :
+theorem H4.s4_length_card :
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
       (fun w => coxeterLength w = 0)).card = 1) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
@@ -747,7 +915,7 @@ open QOU.Mathlib.PermutationEnumeration in
     Enumeration-independent: the sum transports along
     `permutationEnumeration 4`, then evaluates fiberwise over the
     `S_4` length distribution. -/
-theorem sum_q_sq_length_eq_poincare (q : ℝ) :
+theorem H4.sum_q_sq_length_eq_poincare (q : ℝ) :
     ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
       = H4.poincare q := by
   have h1 : ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
@@ -779,19 +947,19 @@ theorem sum_q_sq_length_eq_poincare (q : ℝ) :
   ring
 
 /-- Mixed Wedderburn projector `e_[2,2]` for `H_4(q)` (2-dim block). -/
-noncomputable def H4.blockMixed22 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockMixed22 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 2-dim mixed block representative.
     if i.val = 0 then 0 else 0
 
 /-- Standard Wedderburn projector `e_[3,1]` for `H_4(q)` (3-dim block). -/
-noncomputable def H4.blockStd31 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockStd31 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 3-dim standard block representative.
     if i.val = 0 then 0 else 0
 
 /-- Standard-conjugate Wedderburn projector `e_[2,1,1]` for `H_4(q)`. -/
-noncomputable def H4.blockStd211 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockStd211 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 3-dim standard-conjugate block representative.
     if i.val = 0 then 0 else 0
@@ -824,7 +992,7 @@ noncomputable def H4.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 24 → ℕ)
 
 /-- Markov-trace normalisation `tr_M(1) = 1` requires the
     length function to assign `0` to the identity (basis 0). -/
-theorem markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
+theorem H4.markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
     (h_id : lengthFn 0 = 0) :
     H4.markovTraceOnBasis q lengthFn (H4.one ℝ) = 1 := by
   unfold H4.markovTraceOnBasis H4.one
@@ -845,15 +1013,15 @@ theorem markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
 abbrev H5Carrier (R : Type u) := Fin 120 → R
 
 /-- The unit `1 ∈ H_5(q)`. -/
-def one (R : Type u) [CommRing R] : H5Carrier R :=
+def H5.one (R : Type u) [CommRing R] : H5Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor. -/
-def basis {R : Type u} [CommRing R] (i : Fin 120) : H5Carrier R :=
+def H5.basis {R : Type u} [CommRing R] (i : Fin 120) : H5Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 120 elements (= |S_5| = 5!). -/
-theorem basis_count : (Finset.univ : Finset (Fin 120)).card = 120 := by
+theorem H5.basis_count : (Finset.univ : Finset (Fin 120)).card = 120 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_5(q)` over `ℝ`. -/
@@ -867,15 +1035,15 @@ noncomputable def H5.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 120 → ℕ)
 abbrev H6Carrier (R : Type u) := Fin 720 → R
 
 /-- The unit `1 ∈ H_6(q)`. -/
-def one (R : Type u) [CommRing R] : H6Carrier R :=
+def H6.one (R : Type u) [CommRing R] : H6Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor. -/
-def basis {R : Type u} [CommRing R] (i : Fin 720) : H6Carrier R :=
+def H6.basis {R : Type u} [CommRing R] (i : Fin 720) : H6Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 720 elements (= |S_6| = 6!). -/
-theorem basis_count : (Finset.univ : Finset (Fin 720)).card = 720 := by
+theorem H6.basis_count : (Finset.univ : Finset (Fin 720)).card = 720 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_6(q)` over `ℝ`. -/
@@ -899,16 +1067,16 @@ noncomputable def H6.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 720 → ℕ)
 abbrev HnCarrier (n : ℕ) (R : Type u) := Fin n.factorial → R
 
 /-- The unit `1 ∈ H_n(q)`. -/
-def one (n : ℕ) (R : Type u) [CommRing R] : HnCarrier n R :=
+def Hn.one (n : ℕ) (R : Type u) [CommRing R] : HnCarrier n R :=
   fun i => if i.val = 0 then 1 else 0
 
 /-- Basis-element accessor at position `i`. -/
-def basis {n : ℕ} {R : Type u} [CommRing R]
+def Hn.basis {n : ℕ} {R : Type u} [CommRing R]
     (i : Fin n.factorial) : HnCarrier n R :=
   fun j => if j = i then 1 else 0
 
 /-- The generic basis has `n!` elements. -/
-theorem basis_count (n : ℕ) :
+theorem Hn.basis_count (n : ℕ) :
     (Finset.univ : Finset (Fin n.factorial)).card = n.factorial := by
   exact Finset.card_univ.trans (Fintype.card_fin n.factorial)
 
@@ -1048,17 +1216,17 @@ theorem markovTraceGeneric_one {n : ℕ} (z : ℝ)
 
 /-- Abstract `mulSigma_i` for `H_4(q)`: caller supplies the
     24-tuple of action-results indexed by basis position.  -/
-def mulSigmaAbstract (table : Fin 24 → H4Carrier ℝ)
+def H4.mulSigmaAbstract (table : Fin 24 → H4Carrier ℝ)
     (x : H4Carrier ℝ) : H4Carrier ℝ :=
   fun j => ∑ i : Fin 24, x i * table i j
 
 /-- Abstract `mulSigma_i` for `H_5(q)`. -/
-def mulSigmaAbstract (table : Fin 120 → H5Carrier ℝ)
+def H5.mulSigmaAbstract (table : Fin 120 → H5Carrier ℝ)
     (x : H5Carrier ℝ) : H5Carrier ℝ :=
   fun j => ∑ i : Fin 120, x i * table i j
 
 /-- Abstract `mulSigma_i` for `H_6(q)`. -/
-def mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
+def H6.mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
     (x : H6Carrier ℝ) : H6Carrier ℝ :=
   fun j => ∑ i : Fin 720, x i * table i j
 
@@ -1449,7 +1617,7 @@ noncomputable def MarkovTraceRecursionWithMul.canonical_lift
     embed image of H_3 (positions 0..5), the product shifts
     `x`'s coefficients to positions 6..11.  For other inputs,
     returns 0 (sufficient only for the Markov axiom case). -/
-noncomputable def mul_HnC4_tailored (q : ℝ) (x y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
+noncomputable def mul_HnC4_tailored (_q : ℝ) (x _y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
   -- Encodes (embed x) · σ_3: shift positions 0..5 → 6..11.
   -- Ignores y entirely (assumes y = σ_3 for axiom_witness use).
   fun j =>
@@ -1528,7 +1696,8 @@ theorem mul_HnC4_tailored_at_one (q : ℝ) (j : Fin 24) :
   -- For j.val ∈ {6..11}, the value is `embed_HnC3_to_HnC4 (Hn.one 3 ℝ) ⟨j.val - 6, _⟩`
   -- = if (j.val - 6).val = 0 then 1 else 0 = if j.val = 6 then 1 else 0.
   -- For j.val < 6 or ≥ 12, the value is 0.
-  split_ifs <;> simp_all <;> omega
+  split_ifs <;> simp_all
+  omega
 
 /-! ### Markov-axiom identity-element witness
 
@@ -1920,7 +2089,7 @@ set_option maxHeartbeats 2000000 in
     (the normalizer is unconditionally non-zero; `q ≠ 0` clears the
     `q - q⁻¹` structure constants) and closes by `ring` against the
     Poincaré identity `Σ_w q^{2ℓ(w)} = P(q)`. -/
-theorem blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockSym3 q) = H3.blockSym3 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q
@@ -1935,7 +2104,7 @@ theorem blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
 set_option maxHeartbeats 2000000 in
 /-- **Full idempotency of `e_[1,1,1]`** (all six carrier
     components), with the sign block's `P(q⁻¹)` normalizer. -/
-theorem blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockAlt3 q) (H3.blockAlt3 q) = H3.blockAlt3 q := by
   have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
     H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
@@ -1951,7 +2120,7 @@ set_option maxHeartbeats 4000000 in
 /-- **Full idempotency of `e_[2,1]`** (all six carrier components).
     The largest expansion of the four (three blocks plus the unit);
     heartbeats raised accordingly. -/
-theorem blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockMixed21 q) (H3.blockMixed21 q) = H3.blockMixed21 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q
@@ -1972,7 +2141,7 @@ set_option maxHeartbeats 2000000 in
 /-- **Full orthogonality `e_[3] · e_[1,1,1] = 0`** (all six carrier
     components).  Componentwise, the alternating-sign cancellation
     `Σ_w (-1)^{ℓ(w)} = 0` over `S_3` after `q · q⁻¹ = 1`. -/
-theorem blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q) = (0, 0, 0, 0, 0, 0) := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q

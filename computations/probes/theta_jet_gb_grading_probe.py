@@ -52,8 +52,33 @@ from mpmath import mp, mpf, log
 
 mp.dps = 60
 
-Q0 = mpf("1.10997859555733471989976322048322502665620840878015")  # muon-q0 canonical
 M_MAX = 200
+# Q0 is bound BELOW, after the path bridge -- it is read from the anchor now
+# rather than frozen as a literal, and q_parameter is not importable until the
+# bridge has run. See the note at its assignment.
+
+
+# Path bridge — keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
+from witness_base import WitnessBuilder  # noqa: E402
+
+# Was `Q0 = mpf("1.109978595557334…")  # muon-q0 canonical` above the bridge.
+# That literal is the SUPERSEDED pin A, and the comment calling it "canonical"
+# is what made it look maintained. This producer's stem is listed `ideal_muon`,
+# so q_parameter rebinds q_at to the muon closure; reading it here keeps the
+# arithmetic and the witness stamp on the same pin, and follows the next CODATA
+# revision automatically. Bean qou-3f7a.
+from q_parameter import q_at  # noqa: E402
+Q0 = mpf(str(q_at(mp.dps)))
+
+import time as _time  # noqa: E402
+_T0 = _time.monotonic()
 
 
 def qint(k, q):
@@ -211,7 +236,11 @@ def main():
                        "Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the "
                        "theta-order is constant across m (intrinsic) or jet-graded, "
                        "and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
-        "computation": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m "
+        # `computation` is RESERVED by WitnessBuilder.wrap_legacy, which
+        # overwrites it with the witness stem ("filename already encodes
+        # this"). That is true for a name and false for this field, which
+        # is a METHOD description. Renamed so the text survives the wrap.
+        "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m "
                        "seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); "
                        "bridge=theta_m/(m(m-1)/4); involution effective Gevrey order "
                        "2 log I(m)/log(m!); flatness via window means/drift.",
@@ -263,10 +292,13 @@ def main():
                           "(C1 = binding module is the standing keystone conjecture)",
         },
     }
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       "theta_jet_gb_grading_probe.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "theta_jet_gb_grading_probe",
+        witness,
+        script_path=__file__,
+        engine="python+mpmath",
+        start_time=_T0,
+    ).save()
     print(f"witness written: {out}")
 
 

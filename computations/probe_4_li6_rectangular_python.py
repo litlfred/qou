@@ -25,6 +25,7 @@ Bound to `conj:atom-braid-exterior-algebra`. Audit-only.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 import time
@@ -40,6 +41,13 @@ from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from hecke_characters import standard_young_tableaux
 from mass_at_3A_proper import atom_braid_word_3A
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def build_seminormal_fast(shape, q: float):
     """Hash-lookup version of build_seminormal_matrices.
@@ -113,9 +121,17 @@ def apply_T_w(v: np.ndarray, sigmas, word, h: float) -> np.ndarray:
     """
     out = v.copy()
     # T_w = M_1 · M_2 · ... · M_71; applied as M_1 (M_2 (... (M_71 v))).
+    # `c`/`d` arrive as mpmath.mpf since the exact-word change (PR #5745),
+    # whose own comment directs "consumers needing f64 (the numpy validation
+    # paths) cast at their own boundary, where the loss is visible". This IS
+    # that boundary: `sigmas` are scipy float64 CSR built by
+    # build_seminormal_fast, so an mpf coefficient makes `out` dtype=object
+    # and scipy refuses the next matvec outright. Casting here loses nothing
+    # the float64 σ had not already lost.
     for (c, d, g) in reversed(word):
+        cf, df = float(c), float(d)
         # M_g = c · σ_g + d · I.
-        out = c * (sigmas[g] @ out) + d * out
+        out = cf * (sigmas[g] @ out) + df * out
     return out
 
 
@@ -125,8 +141,10 @@ def apply_T_w_T(v: np.ndarray, sigmas_T, word, h: float) -> np.ndarray:
     Apply LEFTMOST FIRST (in original word).
     """
     out = v.copy()
+    # Same float64 boundary as apply_T_w above.
     for (c, d, g) in word:
-        out = c * (sigmas_T[g] @ out) + d * out
+        cf, df = float(c), float(d)
+        out = cf * (sigmas_T[g] @ out) + df * out
     return out
 
 
@@ -167,7 +185,7 @@ def compute_extreme_eigs(shape, word, h, q, k=2, dps_label="?"):
         "max_eig_lanczos": float(max(w_max)),
         "top_eigs_LA": [float(x) for x in sorted(w_max, reverse=True)],
         "bot_eigs_SA": [float(x) for x in sorted(w_min)],
-        "build_time_s": t1 - t0,
+        "build_time_s": f"{t1 - t0:.3f}",
         "max_eig_time_s": t3 - t2,
         "min_eig_time_s": t5 - t4,
     }

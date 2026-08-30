@@ -102,6 +102,12 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact comparisons
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL_NUM = mpf("1e-25")   # mpmath numeric identity checks (30 dps compute)
 PIN_SHIFT_MIN = mpf("1e-10")  # pre-stated: a per-step unit is "pin-dependent"
                               # iff its c_eff shifts > 1e-10 relative between pins
@@ -141,7 +147,7 @@ def block2_bar_fold(wb: WitnessBuilder):
     err_even = abs(I_full - 2 * I_half)
     assert err_even < TOL_NUM, f"bar-even fold: |I_full − 2·I_half| = {err_even}"
     wb.add_assertion(
-        "bar_even_fold_half", computed=float(err_even), expected=0.0,
+        "bar_even_fold_half", computed=err_even, expected=0.0,
         tolerance=float(TOL_NUM),
         source="∫₀^∞ f dt/t − 2·∫₁^∞ f dt/t for bar-even f(t)=exp(−(t+1/t)) "
                "(exact by t↦1/t substitution; verified 30 dps): the bar "
@@ -152,7 +158,7 @@ def block2_bar_fold(wb: WitnessBuilder):
     I_odd = quad(lambda t: g(t) / t, [0, 1, mp.inf])
     assert abs(I_odd) < TOL_NUM, f"bar-odd control not zero: {I_odd}"
     wb.add_assertion(
-        "bar_odd_channel_zero", computed=float(abs(I_odd)), expected=0.0,
+        "bar_odd_channel_zero", computed=abs(I_odd), expected=0.0,
         tolerance=float(TOL_NUM),
         source="∫₀^∞ (t−1/t)e^{−(t+1/t)} dt/t = 0 (bar-odd): the "
                "falsifier — bar-symmetrization gives ½ ONLY in bar-even "
@@ -179,7 +185,7 @@ def block3_theta_not_bar_even(wb: WitnessBuilder):
     assert min_uneven > mpf("0.1"), \
         f"trace unexpectedly bar-even: {min_uneven}"
     wb.add_assertion(
-        "theta8_weight4_reflection", computed=float(worst_refl),
+        "theta8_weight4_reflection", computed=worst_refl,
         expected=0.0, tolerance=float(TOL_NUM),
         source="Θ_{Z⁸}(1/s) − s⁴·Θ_{Z⁸}(s) at s ∈ {0.7, 1.37} (Jacobi "
                "θ³-type Poisson, b₁ = 8 unimodular lattice): the raw heat "

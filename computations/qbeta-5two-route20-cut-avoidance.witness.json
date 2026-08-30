@@ -1,0 +1,104 @@
+{
+  "probe": "qbeta_5two_route20_cut_avoidance",
+  "bean": "qou-trns",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "pairs_with_lean": "QOU/Archimedean/BranchIntegerPinning.lean (eq_zero_of_continuousOn_of_exp_eq_one)",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "hexp: exp(F) = prod_j(1 - x*y_j)/x = 1 on the arc (and prod_j(1 - y_j/x) = 1/x) -- ALREADY Lean-proved as prod_one_sub_x_mul / prod_x_sub; measured only to confirm the instantiation is the one the lemma expects",
+      "n_points": 41,
+      "worst": "4.5278395e-71",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "h0: F(0) = Sum_j Log(1 - y_j) = 0 at the base point x = 1 -- this is what selects the integer 0 rather than merely showing it is constant",
+      "value": "9.0556791e-72",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the ONLY contact with the cut on the whole arc is at the endpoint phi = pi, and it is TRANSVERSAL. (a) On [0, pi-0.2] the margin has an interior minimum of 0.337 at phi/pi = 0.542 -- a real local minimum, bounded well away from zero, so nothing crosses the cut inside. (b) On [0, pi-delta] for delta <= 0.05 the minimum moves to the right endpoint and equals w_1*delta, ratio -> 1 over 3 further orders of magnitude: linear collapse, not tangential",
+      "w1_largest_root_of_watson_cubic": "2.2469796037174670611",
+      "interior_min": "0.33652286",
+      "interior_argmin_over_pi": "0.54190563",
+      "endpoint_ladder": [
+        {
+          "delta": "0.05",
+          "min_margin": "0.1121254",
+          "ratio_to_w1_delta": "0.99800994"
+        },
+        {
+          "delta": "0.01",
+          "min_margin": "0.022468007",
+          "ratio_to_w1_delta": "0.99992039"
+        },
+        {
+          "delta": "0.001",
+          "min_margin": "0.0022469778",
+          "ratio_to_w1_delta": "0.9999992"
+        },
+        {
+          "delta": "0.0001",
+          "min_margin": "0.00022469796",
+          "ratio_to_w1_delta": "0.99999999"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the factor that lands on the cut is exactly 1 - w_1 = -(w_1 - 1) = -1.2469796..., with w_1 the largest root of the level-7 ladder's own cubic w^3 - 2w^2 - w + 1. The arc's endpoint sitting on the cut is structural, not coincidental -- and x = -1 is on the cut as well",
+      "touching_factor": "-1.2469796037174670611",
+      "one_minus_w1": "-1.2469796037174670611",
+      "deviation": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the branch point is invisible to the cut margin -- margin ~0.77 at phi_0, nowhere near zero. The cut condition and the collision condition are independent, which is exactly why the symmetric repair survives a branch point that killed the per-root argument",
+      "phi_0_over_pi": "0.766225949378",
+      "margins_near_phi0": [
+        "0.74073695",
+        "0.76423874",
+        "0.7753914",
+        "0.76886742",
+        "0.75489593"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "ORIENTATION IS LOAD-BEARING, and this is the mechanism behind the three spurious 2*pi's recorded on qou-trns. Rising to phi = pi the factor reaches -(w_1-1) from ABOVE, arg -> +pi, matching the principal branch's value ON the cut: F is continuous, hcont holds. Descending to phi = -pi it arrives from BELOW, arg -> -pi, while principal Log still returns +pi: a genuine 2*pi*i discontinuity at the endpoint",
+      "upward_|F(pi-eps) - F(pi)|": [
+        "2.7167037e-71",
+        "4.5278395e-71",
+        "4.5278395e-71"
+      ],
+      "downward_|F(-pi+eps) - F(-pi)|": [
+        "6.2831853",
+        "6.2831853",
+        "6.2831853"
+      ],
+      "two_pi": "6.2831853",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "conclusion (this is what the lemma OUTPUTS, recorded so the instantiation is seen to close): F = Sum_j Log(1 - x*y_j) - i*phi vanishes on the arc -- branch integer 0, endpoint included",
+      "n_points": 41,
+      "worst": "4.5278395e-71",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "outcome": "The branch-integer step is now a Lean theorem with its hypotheses separated: exp(F)=1 and F(0)=0 are already theorems (Vieta), and the only open input is continuity of F on [0, pi].",
+    "the_finding": "the transport arc ENDS ON THE BRANCH CUT, twice over: x = -1 is on it, and the factor 1 - x*y_1 equals -(w_1 - 1) = -1.2469796 there, with w_1 the largest root of the level-7 ladder's cubic. The first version of this probe tested 'no factor touches the cut' and failed at 9.3e-43; the condition was too strong, but the failure was real information.",
+    "why_hcont_still_holds": "continuity forbids CROSSING the cut, not touching it. The contact is transversal (margin = w_1*(pi-phi), G3) and one-sided from above, and the principal branch's value on the cut is the limit from above. So F is continuous on [0, pi] and the lemma applies.",
+    "cause_of_the_recurring_2pi": "G6. Rising through the endpoint the principal branch is continuous; descending through it, it jumps by 2*pi*i. qou-trns records three spurious 2*pi's and calls them the most reliable false alarm in this work; this is their mechanism, and it is structural.",
+    "still_not_proved": "hcont is MEASURED, not proved. Proving it means showing from the curve that no factor 1 - x*y_j meets (-inf, 0] for phi in [0, pi), a real-algebraic statement, plus the one-sided limit at the endpoint. NOT written. Until it is, hcont is an assumption and the transport is open.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

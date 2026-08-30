@@ -64,6 +64,74 @@ set_compute_dps()
 Q0 = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
+OUT_BY_ANCHOR = {
+    "ideal": OUT,
+    "proton": HERE / "atomic-tr-m-mpfr-50dps-proton.witness.json",
+}
+
+
+def q0_for(anchor: str) -> str:
+    """50-dps q₀ for one layer. `ideal` from the q-pinning witness (the
+    canonical muon source `q_parameter` itself reads), `proton` from
+    `q_parameter.Q_50_DIGIT_STR`. No fallback between them.
+
+    `--anchor proton` alone is NOT enough and this refuses rather than let it
+    look like it worked. `q_parameter` resolves its pin at IMPORT time, from
+    the running script's stem — and this script's stem is in
+    `q0_anchor_manifest.json` `ideal_muon`, so `Q_50_DIGIT_STR` is bound to the
+    MUON value here unless the environment overrides the manifest. argparse
+    runs long after that import, so the flag cannot change it.
+
+    Without this check the run "succeeds" and writes muon numbers into the
+    proton-named witness — a mislabelled layer, which is worse than the
+    straddle it was meant to fix, because the filename then lies about which
+    pin the contents carry.
+    """
+    if anchor == "ideal":
+        # SYMMETRIC GUARD. The check below covers only the proton direction.
+        # The reverse -- an `ideal` run while `q_parameter` resolved PROTON --
+        # was unguarded, and it does not fail: it returns the muon string from
+        # the witness, so the trace is evaluated at muon while everything in
+        # this producer's cone that reads the MODULE CONSTANT rather than this
+        # returned `q_str` computes at proton. One quantity, two layers.
+        #
+        # Measured, and the measurement is why this exists: moving this
+        # script's stem from `ideal_muon` to `physical_proton` in
+        # `q0_anchor_manifest.json` -- a ONE-LINE manifest change, no code
+        # touched -- moved tr_M from 1.145759781719936507366644 to
+        # 1.145759828319992770436796 (~40.7 ppb) and degraded this producer's
+        # own `abs_diff_vs_bridge` from 5.67e-10 to 4.60e-08. Moving the entry
+        # back restored both exactly. Bisected to `3bcbbf401c`; bean qou-ibbr.
+        #
+        # The 80x gap between the pin's own effect (5.7e-10, both legs moving
+        # together) and this (4.6e-8, one leg only) is the straddle signature.
+        # Do not read a small pin delta as evidence a straddle is excluded.
+        from q_parameter import Q_50_DIGIT_STR as _resolved
+        if not str(_resolved).startswith("1.10997859564"):
+            raise SystemExit(
+                "--anchor ideal, but q_parameter resolved to the PROTON pin "
+                f"({str(_resolved)[:24]}…). This producer's ideal leg needs "
+                "its stem under `ideal_muon` in q0_anchor_manifest.json; "
+                "under `physical_proton` the returned q is muon while its "
+                "cone computes at proton — a layer straddle inside one "
+                "quantity, which AGENTS.md §q₀ rule 4 forbids regardless of "
+                "size. Refusing rather than writing a straddled witness.")
+        return json.load(open(Q0))["derived_50_digit"]["q"]
+    if anchor != "proton":
+        raise SystemExit(f"unknown anchor {anchor!r}: expected 'ideal' or 'proton'")
+    from q_parameter import Q_50_DIGIT_STR
+    q = str(Q_50_DIGIT_STR)
+    if not q.startswith("1.10997858275"):
+        raise SystemExit(
+            "--anchor proton, but q_parameter resolved to the MUON pin "
+            f"({q[:24]}…). This script's stem is in q0_anchor_manifest.json "
+            "`ideal_muon`, and that binding happens at import, before "
+            "argparse. Re-run as:\n"
+            "    QOU_Q0_ANCHOR=proton python3 "
+            "computations/atomic_tr_m_mpfr_50dps.py --anchor proton\n"
+            "Refusing to write muon values into the proton-named witness.")
+    return q
+
 from codata_constants import M_E_MEV  # CODATA 2022 — centralised
 
 # Published Jones polynomials (from Kawauchi tables / KnotInfo).
@@ -165,8 +233,22 @@ def _rust_canonical_tr_M(Z: int, N: int, label: str):
             dt)
 
 
-def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
-    q_str = json.load(open(Q0))["derived_50_digit"]["q"]
+def main(also_symbolic: bool = False, method: str = "canonical-rust",
+         anchor: str = "ideal") -> int:
+    # One witness per q0 LAYER, never one shared. This producer's stem is in
+    # `q0_anchor_manifest.json` `ideal_muon`, so its q0 comes from the
+    # q-pinning witness and `ideal` stays the default here — the 2026-08-07
+    # "default to proton" directive governs NEW compute, and explicitly does
+    # not redefine the ideal CAL-2 layer this producer belongs to.
+    #
+    # The proton counterpart exists because the experimental layer needs its
+    # own bridge: `markov_peel_atomic_witness` is NOT in the manifest, so it
+    # re-anchors to proton on its own, and then cross-checks itself against
+    # THIS witness. With only the muon bridge available that comparison
+    # straddles the layers, and its `abs_diff_vs_bridge` blew up to 6.73e-04.
+    global OUT
+    OUT = OUT_BY_ANCHOR[anchor]
+    q_str = q0_for(anchor)
     q_0 = mpf(q_str)
     q_sym = sp.Symbol("q")  # match sympify default
     print(f"  q_0 (50 dps) = {q_str}")
@@ -230,16 +312,20 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
                         "abs_delta": fmt(delta),
                         "rel_diff": fmt(rel),
                         "agree_at_25dps": agree_25,
-                        "python_wall_sec": float(bridge_t_python),
+                        # Wall-clock timings, not measurements. Written as
+                        # fixed-precision STRINGS: it keeps raw float64 out of
+                        # the witness, and it stops a timing jitter in the 16th
+                        # digit from rewriting the file on every run.
+                        "python_wall_sec": f"{bridge_t_python:.4f}",
                         "speedup_vs_python":
-                            float(bridge_t_python / bridge_t_rust)
+                            f"{bridge_t_python / bridge_t_rust:.1f}"
                             if bridge_t_rust > 0 else None,
                     }
                     print(f"    [crosscheck] python = {tr_python}  "
                           f"({bridge_t_python:.2f}s)")
                     print(f"    [crosscheck] |Δ| = {fmt(delta)}  "
                           f"rel = {fmt(rel)}  "
-                          f"speedup = {rust_crosscheck['speedup_vs_python']:.1f}×")
+                          f"speedup = {rust_crosscheck['speedup_vs_python']}×")
                     # Enforce the gate (Copilot PR #895 review fix):
                     # cross-check mode is a verification mode, so a
                     # failing agreement must surface as a hard error.
@@ -289,12 +375,29 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
                 diff = abs(tr_sym_mpf - tr_at_q0_mpf)
                 print(f"    [sympy] tr_M(q_0) = {tr_sym_mpf}  ({dt_sym:.2f}s)")
                 print(f"    |bridge - sympy|   = {diff}")
+                # `abs_diff_vs_bridge` USED TO BE RECORDED WITHOUT A THRESHOLD.
+                # It was computed, printed, stored as a field, and compared to
+                # nothing — so `recomputed-low-isotope-mass-table.md`'s claim
+                # that three production paths "agree to machine epsilon" rested
+                # on a check that could not fail. Worse, this path sits behind
+                # `also_symbolic` and had never been enabled: the committed
+                # witness carries no `abs_diff_vs_bridge` for any of the five
+                # atoms. Had it run before the `_D_HECKE_TOL` fix it would have
+                # reported 8.14e-05 on the deuteron and still passed. Bean
+                # `qou-4e5k`.
+                sym_tol = mpf("1e-40")
+                sym_ok = diff < sym_tol
                 symbolic_check = {
                     "nf_terms": stats["n_terms_nf"],
-                    "elapsed_sec": dt_sym,
+                    "elapsed_sec": f"{dt_sym:.4f}",
                     "tr_M_at_q0_50dps": fmt(tr_sym_mpf),
                     "abs_diff_vs_bridge": fmt(diff),
+                    "tolerance": fmt(sym_tol),
+                    "passed": bool(sym_ok),
                 }
+                if not sym_ok:
+                    print(f"    [sympy] MISMATCH: |bridge - sympy| = {diff} "
+                          f"exceeds {sym_tol}")
             except Exception as exc:
                 print(f"    [sympy] FAILED ({type(exc).__name__}: {exc})")
                 symbolic_check = {"error": f"{type(exc).__name__}: {exc}"}
@@ -322,7 +425,7 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
             print(f"    [peel]  tr_M(q_0) = {tr_peel_mpf}  ({dt_peel:.2f}s)")
             print(f"    |bridge - peel|    = {diff_peel}")
             peel_check = {
-                "elapsed_sec": dt_peel,
+                "elapsed_sec": f"{dt_peel:.4f}",
                 "tr_M_at_q0_50dps": fmt(tr_peel_mpf),
                 "abs_diff_vs_bridge": fmt(diff_peel),
             }
@@ -366,22 +469,30 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
             "n_crossings_canonical": n_crossings_canonical,
             "tr_M_at_q0_50dps": fmt(tr_at_q0_mpf),
             "term1_b_pred_mev_50dps": fmt(b_term1),
-            "bridge_elapsed_sec": bridge_t,
+            "bridge_elapsed_sec": f"{bridge_t:.4f}",
             # `method` is the user-requested kernel; `effective_method`
             # reflects what actually produced `tr_M_at_q0_50dps` after
             # any fallback (Copilot PR #895 review).
             "method": method,
             "effective_method": effective_method,
-            "rust_canonical_chi_elapsed_sec": bridge_t_rust,
-            "python_hoefsmit_elapsed_sec": bridge_t_python,
+            "rust_canonical_chi_elapsed_sec":
+                None if bridge_t_rust is None else f"{bridge_t_rust:.6f}",
+            "python_hoefsmit_elapsed_sec":
+                None if bridge_t_python is None else f"{bridge_t_python:.4f}",
             "rust_crosscheck": rust_crosscheck,
             "symbolic_cross_check": symbolic_check,
             "peel_cross_check": peel_check,
             "historical_K_comparison": comparison,
         })
 
+    stem = ("atomic-tr-m-mpfr-50dps" if anchor == "ideal"
+            else "atomic-tr-m-mpfr-50dps-proton")
     out = {
-        "computation": "atomic-tr-m-mpfr-50dps",
+        "computation": stem,
+        # Self-declared layer, so a reader never has to infer the pin by
+        # string-matching q0 — that inference is what let the two layers be
+        # mistaken for one another.
+        "q0Anchor": "muon" if anchor == "ideal" else "proton",
         "description":
             "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid "
             "convention for proton, neutron, deuteron, tritium, ³He, "
@@ -413,6 +524,15 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
             "at q = q_0.",
         "y_lambda_witness": "y-lambda-mpfr-witness.json",
         "q_0_50dps": q_str,
+        # Same value under the key `q0_anchor_consistency_audit` actually
+        # reads. Without it the audit cannot check the pin against the
+        # anchor declared above and files the witness Q0_VALUE_MISSING —
+        # which is exactly how a genuine flip stayed invisible here for
+        # four days: the muon-labelled witness carried the PROTON value
+        # (read from the pin file while 9a9c6b31c7 had it corrupted) and
+        # the audit could not see it to say so. `q_0_50dps` is kept for
+        # existing consumers.
+        "q0Value": q_str,
         "symbolic_cross_check_enabled": also_symbolic,
         "precision_caveat": (
             "y-lambda-mpfr-witness.json was computed with q at f64 "
@@ -428,7 +548,7 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     out_path = (
         WitnessBuilder.wrap_legacy(
-            "atomic-tr-m-mpfr-50dps", out,
+            stem, out,
             script_path=__file__, engine="mpmath",
         )
         .set_audit_only(
@@ -462,5 +582,13 @@ if __name__ == "__main__":
              "`rust-with-python-crosscheck`: run both kernels and "
              "assert agreement at 25 dps (uses Python wall time + "
              "Rust speedup gain).")
+    parser.add_argument(
+        "--anchor", choices=("ideal", "proton"), default="ideal",
+        help="q0 layer. Default `ideal` (muon): this producer's stem is in "
+             "q0_anchor_manifest.json `ideal_muon`. `proton` writes the "
+             "separate experimental-layer witness the proton markov-peel "
+             "cross-checks against; neither anchor ever rewrites the other's "
+             "file.")
     args = parser.parse_args()
-    sys.exit(main(also_symbolic=args.symbolic, method=args.method))
+    sys.exit(main(also_symbolic=args.symbolic, method=args.method,
+                  anchor=args.anchor))

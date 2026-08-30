@@ -1215,18 +1215,13 @@ noncomputable def n8_dimq_at (q : ℝ) (i : Fin 22) : ℝ :=
     The intermediate non-trivial entries give the per-partition
     `dim_q(λ)` values via the closed-form hook formula. -/
 
-/-- Index-existence check at n=6: every Fin 11 index is a
-    valid n6_dimq access. -/
-theorem n6_dimq_at_well_defined (q : ℝ) (i : Fin 11) :
-    ∃ y : ℝ, n6_dimq_at q i = y := ⟨n6_dimq_at q i, rfl⟩
-
-/-- Index-existence check at n=7. -/
-theorem n7_dimq_at_well_defined (q : ℝ) (i : Fin 15) :
-    ∃ y : ℝ, n7_dimq_at q i = y := ⟨n7_dimq_at q i, rfl⟩
-
-/-- Index-existence check at n=8. -/
-theorem n8_dimq_at_well_defined (q : ℝ) (i : Fin 22) :
-    ∃ y : ℝ, n8_dimq_at q i = y := ⟨n8_dimq_at q i, rfl⟩
+/-! The "index-existence checks" `n{6,7,8}_dimq_at_well_defined` used to
+    stand here as `∃ y : ℝ, n6_dimq_at q i = y := ⟨n6_dimq_at q i, rfl⟩`
+    and were removed 2026-08-21.  The index bound they claimed to check is
+    already discharged where it is actually needed — inside `n6_dimq_at`
+    itself, by `n6_dimq_list_length` — and `Fin 11` carries the rest.  An
+    existential over a total function's own value holds for every function
+    and so could not have failed had the bound been wrong. -/
 
 /-! ### Hook-formula SYT count (`d_λ`) helper
 

@@ -55,8 +55,16 @@ from he3_brane_tower_structural_gap import (  # noqa: E402
     Q0, VHAT, Z_N, B_AME, neg_li2q_neg,
 )
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1, never inline (P31)
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def main() -> int:

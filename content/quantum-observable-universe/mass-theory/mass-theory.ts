@@ -64,10 +64,10 @@ export default chapter({
         "calibration-algebraic-mass-intro",
         "mass-element-nf",
         "calibration-inputs",
-        "two-tier-scaling-pq",
         "three-calibration-inputs",
         "three-calibration-inputs-proof",
         "three-calibration-inputs-context",
+        "two-tier-scaling-pq",
         "three-parameters-wedderburn",
         "three-parameters-wedderburn-context",
         "wedderburn-trace-identity",
@@ -127,16 +127,15 @@ export default chapter({
           title: "Transfer matrices and Skein mass",
           label: "sec:mass-algebraic-transfer-skein",
           blocks: [
-            "pentagon-uv-commutation",
             "transfer-matrix-operator",
             "transfer-matrix-operator-properties",
-            "transfer-matrix-identities",
-            "transfer-matrix-identities-context",
-            "transfer-matrix-identities-proof",
             "skein-polynomial-transfer-matrix",
             "skein-polynomial-transfer-matrix-proof",
             "beta-decay-transfer-matrix",
             "beta-decay-transfer-matrix-proof",
+            "transfer-matrix-identities",
+            "transfer-matrix-identities-context",
+            "transfer-matrix-identities-proof",
             "ground-state-ordering",
             "ground-state-ordering-derivation",
             "skein-generation",
@@ -178,6 +177,18 @@ export default chapter({
             // fixed point; consumes the Borromean Markov-trace closed form.
             "unit-modulus-eigenvalue",
             "unit-modulus-eigenvalue-proof",
+            // Decision 7: convention D IS Temperley–Lieb. The characterisation
+            // comes first, then the metric consequence it explains — a reader
+            // who meets "the radical blocks the Connes sup" before "the radical
+            // is the TL ideal" reads the quotient as an ad-hoc amputation.
+            "convention-d-kills-antisymmetriser",
+            "convention-d-kills-antisymmetriser-proof",
+            "markov-branching-three-term",
+            "hecke-radical-is-temperley-lieb",
+            "markov-gram-star-positive",
+            "markov-gram-bilinear-vs-star",
+            "gram-degeneracy-blocks-connes",
+            "finite-connes-forces-trivial-kernel",
           ],
         }),
         section({
@@ -193,6 +204,7 @@ export default chapter({
             "q-beta-categorical-precision-ladder-context",
             "q-beta-c3-hopf-three-fold-markov",
             "q-beta-c3-hopf-three-fold-markov-context",
+            "q-beta-c3-continuum-geometry",
             "ck-extraction-from-algebraic-rules",
             "typed-b3-sub-braid-extraction",
             "cl3-zeta5-geometric-realization",
@@ -212,7 +224,10 @@ export default chapter({
             "hq-bi-filtration",
             "joint-galois-braid-action",
             "adelic-substrate",
+            "archimedean-realization-functor",
+            "archimedean-realization-functor-interpretation",
             "adelic-substrate-integration",
+            "q-clt-jsj-mass-scaling",
           ],
         }),
       ],
@@ -226,10 +241,11 @@ export default chapter({
         "operator-selection-lp",
         "operator-selection-lp-proof",
         "operator-selection-lp-interpretation",
+        "confinement-sdp",
+        "confinement-sdp-proof",
         "sdp-degeneracy-at-metallic-coincidence",
         "universal-braid-branching",
         "universal-braid-branching-proof",
-        "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
         "algebraic-quantum-volume",
         "algebraic-quantum-volume-structure",
@@ -309,6 +325,7 @@ export default chapter({
             "bond-order-eq-jet-degree-context",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "delta-lambda-dt-index-unification",
             "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
             "jet-filtration-binding-extensive",
@@ -469,9 +486,9 @@ export default chapter({
         "hecke-markov-interpretation",
         "hecke-markov-interpretation-table-data",
         "markov-lambda-knot-operations",
-        "markov-chain-fluctuations",
         "q-gaussian-obstruction-at-q0",
         "q-gaussian-obstruction-at-q0-proof",
+        "markov-chain-fluctuations",
       ],
     }),
     section({
@@ -505,19 +522,21 @@ export default chapter({
         "canonical-braid-interface-composition-table1-data",
         "prop-rigid-monoidal-structural-gap-invariance",
         "prop-rigid-monoidal-structural-gap-invariance-proof",
-        "qz-bicompletion",
-        "qz-bicompletion-properties",
         "quantum-dilogarithm-stratified",
         "quantum-dilogarithm-stratified-proof",
+        "qz-bicompletion",
+        "qz-bicompletion-properties",
         "q-pochhammer-partial-product",
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-interpretation",
         "phi-q-categorical-truncation-proof",
         // Re-homed from the geometric-bridges collection: the pentagon
         // identities belong with the quantum dilogarithm.
-        "pachner-pentagon-borromean",
+        "quantum-bloch-group",
+        "quantum-bloch-group-framework-connection",
         "q-rogers-pentagon-archimedean",
         "q-rogers-pentagon-archimedean-proof",
+        "pachner-pentagon-borromean",
       ],
     }),
     section({
@@ -525,8 +544,6 @@ export default chapter({
       label: "sec:archimedean-realization-kashaev",
       blocks: [
         "intro-archimedean-realization-kashaev",
-        "archimedean-realization-functor",
-        "archimedean-realization-functor-interpretation",
         "archimedean-image-table",
         "archimedean-image-table-table2-data",
         "archimedean-image-table-table1-data",
@@ -561,7 +578,11 @@ export default chapter({
         "geom-bridge-status",
         "tau-all-orders-bridge",
         "dim-master-pentagon",
+        "nuclear-knot-classification",
+        "nuclear-knot-classification-proof",
         "geometric-invariant-piecewise",
+        "geom-yekutieli-alignment",
+        "hoefsmit-scattering-pipeline",
         "hopf-link-non-magic",
         "p-from-braid-mirror",
         "poincare-lefschetz-borromean",
@@ -579,6 +600,20 @@ export default chapter({
       blocks: [
                 "mass-geometric-face-intro",
 "thurston-volume-additivity",
+        "flat-tetrahedron-zero-volume",
+        "gluing-equations-do-not-detect-hyperbolicity",
+        "gluing-certification-mechanical-reach",
+        "hyperbolic-knot-shape-fields",
+        // thm:five-two-saddle-sum-rule retired 2026-08-24 (bean qou-h1p7):
+        // it duplicated prop:fivetwo-saddle-sum-rule in appendix-qvalues,
+        // down to the same lean.ref, which lean-ref-owns-decl flags. The
+        // appendix block survives (three consumers to this one's none) and
+        // absorbed this one's cites, uses edge and two prose passages.
+        "kummer-bloch-wigner-identity",
+        "rivin-concavity-one-tetrahedron",
+        "ideal-tetrahedron-relabelling-invariance",
+        "ideal-tetrahedron-law-of-sines",
+        "birthday-axioms-underdetermine",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
@@ -590,6 +625,9 @@ export default chapter({
         "jet-tower-convergence",
         "jet-tower-convergence-proof",
         "jet-tower-convergence-context",
+        "vhat-pair-commutation-trace",
+        "vhat-pair-commutation-trace-proof",
+        "pentagon-uv-commutation",
         "delta-max-uniform-bound",
         "delta-max-uniform-bound-context",
         "mass-tower-syt-cells",
@@ -618,11 +656,9 @@ export default chapter({
         "pieri-photon-shift-interpretation",
         "phi-q-tower-jsj-bridge",
         "dilogarithm-archimedean-limit",
-        "phi-q-wkb-greens-function",
         "algebraic-geometric-dilog-equivalence",
+        "phi-q-wkb-greens-function",
         "shared-denominator-cusp-holonomy",
-        "quantum-bloch-group",
-        "quantum-bloch-group-framework-connection",
         "degree-two-baryon-weight",
         "degree-two-baryon-weight-proof",
         // Re-homed from the weak-spectral/isospin collection: the Borromean
@@ -675,11 +711,19 @@ export default chapter({
             "rem-c3-s-imq-decay-projection",
             "rem-qstar-decay-sector-q0",
             "rem-ohtsuki-tower-bar-parity",
+            // Provenance of the 1-loop prefactor law c_sigma = k |tau|^p: the
+            // FORM is DGLZ eq (2.3) for a general M, the exponent -1/2 is
+            // normalisation-invariant and was already measured by the k_c
+            // checks, and the constant k -- which cannot be lifted out of
+            // DGLZ's conventions -- is instead DERIVED on the link side from
+            // van der Veen's colored-Jones asymptotic (bean qou-vdvS).
+            "one-loop-prefactor-provenance",
             // A_ω=3 closed-sector conditional adoption (bean qou-ujmw): the
             // resurgent-Stokes = DT/BPS bridge (GGM Conj 3(d) + GPPV) and the
             // conditional theorem deriving A_ω(4₁)=3 as a BPS/DT count.
             "stokes-dt-bps-bridge",
             "aomega-fourone-dt-count",
+            "dt-spectrum-bar-eigenspace",
           ],
         }),
         section({
@@ -687,13 +731,13 @@ export default chapter({
           label: "sec:phi-q-schur-weyl-positivity",
           blocks: [
             "schur-weyl-mass-decomposition",
-            "gb-residue-spectral-sum",
             "categorical-mass-positivity",
             "mass-spectrum-generating-function",
             "graded-markov-trace-from-gs-filtration",
             "graded-markov-trace-from-gs-filtration-proof",
             "residue-at-root",
             "residue-at-root-proof",
+            "gb-residue-spectral-sum",
           ],
         }),
       ],
@@ -704,8 +748,6 @@ export default chapter({
       label: "sec:phi-q-markov-residue-habiro",
       blocks: [
         "phi-q-markov-residue-habiro-intro",
-        "vhat-pair-commutation-trace",
-        "vhat-pair-commutation-trace-proof",
         "tower-pair-equality-fixed-level",
         "tower-pair-equality-fixed-level-proof",
         "jet-tower-uniform-delta-max",
@@ -805,9 +847,6 @@ export default chapter({
         // behind the ²H reeb-flow tier (owner ruling: NEAR-MATCH label).
         "reeb-pn-magnitude-criticality",
         "reeb-linking-cwf-normalization",
-        "unified-iterative-correction",
-        "unified-iterative-correction-proof",
-        "unified-iterative-correction-table-data",
         "knot-factor-frobenius-pairing",
         "wedderburn-weight-canonical",
         "hook-weight-derivation",
@@ -816,6 +855,9 @@ export default chapter({
         "wigner-coefficient-derivation-proof",
         "mass-coefficient-shadow-price",
         "mass-coefficient-shadow-price-proof",
+        "unified-iterative-correction",
+        "unified-iterative-correction-proof",
+        "unified-iterative-correction-table-data",
         "frobenius-self-duality-forces-lp-dual-extraction",
         "frobenius-self-duality-forces-lp-dual-extraction-proof",
         "frobenius-self-duality-forces-lp-dual-extraction-interpretation",
@@ -830,7 +872,23 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
-        "spin-involution",
+        // Piece A of Identity I, promoted 2026-08-24 from two unregistered
+        // .md drafts that had sat at the paper root since the 52c68267f2
+        // bulk import (bean qou-cauj listed them as "probably not blocks";
+        // the owner ruled otherwise). The Specht/JM trace pair reads the
+        // JM prop directly above; the corner induction is the alternative
+        // route to the same identity.
+        "piece-a-hook-content-identity",
+        "piece-a-specht-character-trace",
+        "piece-a-specht-character-trace-proof",
+        "piece-a-corner-removal-obligation",
+        "piece-a-corner-removal-obligation-proof",
+        // def:spin-involution relocated to knots-particles-confinement §7
+        // (2026-08-09, decision 5): three of its four consumers are the
+        // EW-triplet charge/spin blocks there, and it has `uses: []` so it
+        // drags no dependency forward. The lp-dual-invariance arc below is
+        // the fourth consumer and now reads BACKWARD into Ch 8 for the
+        // definition.
         "spin-involution-lp-dual-invariance",
         "spin-involution-lp-dual-invariance-proof",
         "spin-involution-lp-dual-invariance-interpretation",
@@ -905,13 +963,13 @@ export default chapter({
         "alpha-em-categorical-trace",
         "plancherel-term-7-formulation",
         "plancherel-term-7-formulation-proof",
+        "unified-curvature-rank-mass-formula",
+        "unified-curvature-rank-mass-formula-proof",
+        "unified-curvature-rank-mass-formula-table-data",
         "plancherel-weight-boundedness",
         "plancherel-weight-boundedness-proof",
         "plancherel-weight-boundedness-interpretation",
         "plancherel-weight-boundedness-table-data",
-        "unified-curvature-rank-mass-formula",
-        "unified-curvature-rank-mass-formula-proof",
-        "unified-curvature-rank-mass-formula-table-data",
         "chirality-residue-mass-term",
         "chirality-residue-mass-term-proof",
         "chirality-residue-mass-term-interpretation",
@@ -958,8 +1016,6 @@ export default chapter({
       label: "sec:alpha-k-procedure",
       blocks: [
         "intro-alpha-k-procedure",
-        "confinement-sdp",
-        "confinement-sdp-proof",
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
         "flavor-mass-splitting-bound-proof",
@@ -1063,9 +1119,6 @@ export default chapter({
         "frobenius-codim-universal-interpretation",
         "frobenius-limits-substrate-cost",
         "knot-mass-formula-unified",
-        "nuclear-knot-classification",
-        "nuclear-knot-classification-proof",
-        "geom-yekutieli-alignment",
         "content-scaling-correspondence",
       ],
     }),
@@ -1177,6 +1230,7 @@ export default chapter({
         "crystal-basis-resolves-mass-tower-open-problems",
         "crystal-basis-resolves-mass-tower-open-problems-context",
         "mass-tower-deeper-fillers",
+        "complex-mass-constituent-functional",
       ],
     }),
 
@@ -1240,9 +1294,9 @@ export default chapter({
             "qmn-recursive-memoized",
             "sigma-shell-from-beta-chain-derivation",
             "sigma-shell-from-beta-chain-derivation-table-data",
+            "staircase-partition",
             "staircase-corner-hook",
             "staircase-corner-hook-proof",
-            "staircase-partition",
             "symbolic-character-table",
             "outro-mass-theory",
             // Re-homed: staircase-ew-residual ->

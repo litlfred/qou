@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T11:12:42.657999+00:00",
-  "commitSha": "187cebfed4e56ad8e6f4ab827b4e6bf157802653",
+  "computedAt": "2026-08-09T04:16:50.783442+00:00",
+  "commitSha": "13a5ebfaddf4b37a3d3aa9253acdd71db6287a4e",
   "assertions": [
     {
       "name": "s1_base_p_rewrite_exact",
@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "symbolic: m_k = G_k J_k with G_k = LN(-L/2, L) moments = the classical SW weight at t_sw = e^(-L) = 1/qtilde pushed by s -> s qtilde^(-3/2) (exact); numeric: the Jackson atomic measure (p;p)_oo sum p^m/(p;p)_m delta_{p^m/(1-p)} has moments (p;p)_k/(1-p)^k via Euler's q-exponential (rel < 1e-30 at q = 1.2 + both pins, k <= 8) — support in (0, 1/(1-p)] compact => determinate. Balanced = SW(base qtilde) (*) Jackson: the indeterminacy core IS Stieltjes' 1894 example."
     },
     {
@@ -41,16 +41,16 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "exact: the alpha=0 q-Laguerre weight 1/(-x;p)_oo satisfies w(px) = (1+x)w(x) => nu_{k+1} = p^(-(k+1))(1-p^(k+1)) nu_k (quadrature cross-check rel < 1e-20 at p = 5/6 + both pins, k <= 6) => rho_k = p^(-k(k+1)/2)(p;p)_k; symbolic k <= 12: [k]_q! = rho_k (p/(1-p))^k — the ONE-SIDED normalizer family IS the q-Laguerre (Moak) family under the exact scaling s -> (p/(1-p)) s; balanced = one-sided deconvolved by exactly one SW Gaussian LN(-L/2, L)"
     }
   ],
   "allPassed": true,
-  "durationMs": 235131,
+  "durationMs": 276610,
   "computation": "ksel2id-sw-identification",
   "scriptFile": "ksel2id_sw_identification_probe.py",
-  "scriptHash": "3783ebb940f5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ef7a4644fbf7",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "KSel-2-ID (bean qou-0ms0; audit-only, scope-(a), NO FIT, nothing wired): literature identification of the balanced binding-kernel moment family m_k = q^(-k(k-1)/4)[k]_q! against the classical Stieltjes-Wigert / q-Laguerre indeterminate families. S1: exact base-p rewrite (Gaussian factor at base qtilde x Pochhammer factor at base q). S2-S3: SW-proper (log-normal) moment sequences are log-quadratic, a property invariant under every affine-in-log map s -> c s^a; the balanced family is exactly NOT log-quadratic (Delta^2 ln m_k = ln qtilde + ln((1-p^(k+2))/(1-p^(k+1))), strictly increasing) => NO-MATCH to SW-proper, scope-(b) with cited invariant. S4: the SW structure IS present as an exact tensor factor: balanced = SW(t = 1/qtilde, scaled) (*) Jackson (determinate, compact support) — the indeterminacy core is Stieltjes' 1894 log-normal example at base sqrt(q), = the ksel3 Gaussian. S5: the ONE-SIDED normalizer [k]_q! is EXACTLY the alpha=0 q-Laguerre (Moak/generalized-SW) moment family under s -> (p/(1-p)) s (weight functional equation derivation + quadrature cross-check); the balanced member sits exactly one SW-Gaussian convolution away — the bar-symmetric half-dressed point. Nothing here proves or refutes any conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md",
@@ -117,6 +120,16 @@
       "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon); qou_substrate.constants.Q_50_DIGIT_STR (proton)"
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+        "size_bytes": 5551,
+        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+      }
+    ]
   }
 }

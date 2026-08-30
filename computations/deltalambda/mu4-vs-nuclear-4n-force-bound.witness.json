@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-28T22:51:14.816273+00:00",
-  "commitSha": "263d3ded20d4e9f38cd6478941350f0bf310f3ac",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:05:24.396541+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "mu4_decomposition_reproduces_witness",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 88,
+  "durationMs": 5,
   "computation": "mu4-vs-nuclear-4n-force-bound",
   "scriptFile": "mu4_vs_nuclear_4n_force_bound_probe.py",
-  "scriptHash": "892dd50fa7d0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e6f725ebaf2e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py"
   },
   "description": "Tests whether the residual-simplex target μ₄ = −4.591 is a physical four-body quantity, by converting it to MeV and comparing against the nuclear-physics literature bounds on the genuine four-nucleon content of ⁴He. In units of B(D) = 2.224566 MeV the target is −10.21 MeV, i.e. 36% of the ⁴He binding energy (28.296 MeV). Jurgenson–Navrátil–Furnstahl (PRL 103, 082501 / arXiv:0905.1873) measure the SRG-induced four-body force at λ=2 fm⁻¹ as 'about 50 keV net' (0.18%) and quote the N³LO long-range 4N estimate as 'of order a few hundred keV' (~1.1%); the QOU μ₄ exceeds these by ~34× and ~204× respectively. Decomposed with the corpus's own unbalanced [n]_q, μ₄ = s₄ − g₄ with s₄ = +3.7804 (+8.41 MeV) and g₄ = +8.3706 (+18.62 MeV), so the large negative value is the ρ_grad = [A]_q!/[2]_q! reference OVER-SUBTRACTING. Note s₄ alone is 30% of B(⁴He), also far too large for a 4N force — the inflation is in the C(A,k) simplex basis, which has no saturation mechanism and attributes all departure from pairwise additivity to high-body coefficients, not specifically in ρ_grad. Pionless EFT (Platter–Hammer–Meißner, arXiv:nucl-th/0409040) explains the empirical Tjon B(³H)↔B(⁴He) correlation by the ABSENCE of a four-nucleon force at leading order, so there is no independent four-body scale for μ₄ to measure. CONSEQUENCE: matching μ₄ is not equivalent to reproducing 4-body physics; GAP-8's flat operator hierarchy (|μ₄/μ₃| = 1.02 vs 9.75) is not by itself evidence against the operator, and the bean qou-pve2 question 'what supplies ~10× per-order growth' is chasing a basis artifact. Honest reformulation: test the operator against the Tjon correlation, which is convention-free. SCOPE-(a): this constrains the TARGET's physical interpretation; it does NOT show ρ_grad is wrong and does NOT show the block-trace operator is right. Corpus-grep before declaring: 'Tjon', 'four-nucleon force', '4N force' return ZERO hits across content/, docs/, computations/. No Δ_λ, no μ fitted, nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",

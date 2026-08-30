@@ -9,7 +9,7 @@ the limit is needed: the inequality is already exact in the ordered
 field.
 
 **Downstream.** Every millennium-problem remark in this chapter and
-Chapter~7 ([fluid dynamics](#chap:fluid-dynamics))
+Chapter 7 ([fluid dynamics](#chap:fluid-dynamics))
 reduces to this lemma.  See:
 
 * [RH surreal bound](#rem:rh-surreal-bound);

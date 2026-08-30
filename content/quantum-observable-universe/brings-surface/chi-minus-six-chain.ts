@@ -6,8 +6,10 @@ export default example({
   interprets: "def:archimedean-condition",
   uses: [
     "def:archimedean-condition",
+    "def:motivic-substrate",
     "prop:euler-char-stability",
     "rem:kummer-tower",
+    "thm:motivic-perpetual-obstruction",
   ],
   tags: ["descartes", "chi", "derivation", "example", "motivic-galois"],
 });

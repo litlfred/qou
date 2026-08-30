@@ -5,7 +5,7 @@ Executes the deferred "Next compute" of the m(q₀) unified-boundary memo
 (PR #3660, docs/scope/2026-07-12-mq0-unified-boundary-selection.md §5):
 implement the BRANCH-TRACKED complex volume 𝔙(u) = Vol(u) + i·CS(u) for the
 figure-eight 4₁ from Murakami–Yokota's THEOREM-GRADE formula
-(uploads/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
+(library/arxiv-math-0401084v3/0401084v3.pdf = math/0401084, Thm 2.1/2.2), cross-check it against
 the merged gluing Newton solver on the real slice and against the
 Neumann–Zagier / Hikami leading series, then push the eight NAMED candidates
     (N, k) ∈ {3, 6, 60, 120} × {1, 2}
@@ -60,11 +60,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # ---- canonical constants (no fit) ---------------------------------------
-VOL_4_1 = mp.mpf("2.02988321281930725417066550300100495")   # 2·Λ(π/3)
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 36 digits, correct to 17 (qou-ckbv)
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)                      # complete shape
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}
 A_PRIME = mp.mpf("2.37")                                     # G3 numerator slope
@@ -213,16 +215,16 @@ def _validate(wb):
     # V3 — Murakami gluing equations hold on a mid-range real point.
     zt, wt = shapes_explicit(mp.mpf("0.15"))
     e_glue = gluing_residual(zt, wt, mp.mpf("0.15"))
-    wb.add_assertion("v1_complete_recovers_vol_4_1", computed=float(e_vol),
+    wb.add_assertion("v1_complete_recovers_vol_4_1", computed=e_vol,
                      expected=0.0, tolerance=1e-10,
                      source="V_of_u(u→0) Re = Vol(4₁); Im = 0")
-    wb.add_assertion("v1_complete_im_zero", computed=float(e_im0),
+    wb.add_assertion("v1_complete_im_zero", computed=e_im0,
                      expected=0.0, tolerance=1e-20,
                      source="Im 𝔙(u→0) = 0 (complete = amphichiral, CS=0)")
-    wb.add_assertion("v2_nz_leading_slope_2sqrt_minus_3", computed=float(e_slope),
+    wb.add_assertion("v2_nz_leading_slope_2sqrt_minus_3", computed=e_slope,
                      expected=0.0, tolerance=1e-6,
                      source="dv/du|₀ = 2√−3 (Hikami 2v = −2πi + 4√3 i u + …)")
-    wb.add_assertion("v3_murakami_gluing_residual", computed=float(e_glue),
+    wb.add_assertion("v3_murakami_gluing_residual", computed=e_glue,
                      expected=0.0, tolerance=1e-20,
                      source="Murakami gluing eqns log w+log(1−z)=u, Σ log = 0")
     return max(float(e_vol), float(e_slope), float(e_glue))
@@ -286,7 +288,7 @@ def main() -> int:
     print(f"\n[substrate contrast] merged Ohtsuki route: 2πb²=i·t, |·|={float(t):.4f} (SMALL)")
     print(f"    leading odd rung Im[κ₁·i·t] = {float(im_v_substrate):.5f}  "
           f"(Borel–Padé smooth Im 𝔙≈0.055) — target |S|~0.01–0.04 ORDER ✓")
-    wb.add_assertion("substrate_ohtsuki_kappa1_right_order", computed=float(im_v_substrate),
+    wb.add_assertion("substrate_ohtsuki_kappa1_right_order", computed=im_v_substrate,
                      expected=0.055, tolerance=0.02,
                      source="Im[κ₁·(2πb²)] at 2πb²=i·t, κ₁=11√3π/108 (rem:ohtsuki-tower-bar-parity)")
 

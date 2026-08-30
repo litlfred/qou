@@ -14,6 +14,6 @@ export default proposition({
     "exchange-property",
     "reflection-cocycle",
   ],
-  uses: ["def:hecke-normal-form"],
+  uses: [],
   cites: ["kassel1995", "jones1987"],
 });

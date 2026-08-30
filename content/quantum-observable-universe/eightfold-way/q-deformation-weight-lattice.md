@@ -20,7 +20,7 @@ Gaussian binomial $[2]_q = q + q^{-1}$:
 $$
   e_i^2 e_j - [2]_q\, e_i e_j e_i + e_j e_i^2 = 0.
 $$
-The Cartan entry $a_{ii} = 2$ is \emph{untouched}.  The angle
+The Cartan entry $a_{ii} = 2$ is *untouched*.  The angle
 $\cos\theta = -1/2$ does not become $\cos\theta_q = -(q + q^{-1})/2$.
 These are two different mathematical objects that coincide numerically
 at $q = 1$: one is a binomial coefficient, the other is a normalization
@@ -28,73 +28,68 @@ constant.
 
 **What is $q$-independent — machine-checked.**
 The following are proved sorry-free in
-\texttt{QOU/Eightfold/WeylInvarianceQDeformation.lean}:
-\begin{itemize}
-\item The off-diagonal entry $a_{12} = -1$ and the Serre exponent
-  $1 - a_{12} = 2$ (\texttt{cartan\_A2\_offdiag},
-  \texttt{serre\_exponent\_A2}).
-\item The $q$-Serre coefficient $[2]_q$ genuinely \emph{moves} with $q$ ---
-  witnessed at $q = 2$, where the framed binomial is $5$ and the framed
-  Cartan diagonal is $4$ (\texttt{qSerre\_not\_constant}) --- while the
-  Cartan datum does not (\texttt{cartanMatrixAt\_const}).  The conjunction
-  of the two is the ``two $2$s'' separation
-  (\texttt{cartan\_fixed\_while\_qSerre\_moves}), and it is the conjunction,
-  not either half alone, that carries the content: constancy of the Cartan
-  datum is true \emph{by construction} and is compatible with both sides
-  being constant, which is exactly the confusion at issue.
-\item For $(q-1)^2 \neq 0$ the two differ
-  (\texttt{qSerre\_neq\_cartan\_diag}); they agree at $q = 1$
-  (\texttt{qSerre\_eq\_cartan\_at\_classical}).
-\item The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
-  (\texttt{root\_angle\_ratio\_A2}).
-\end{itemize}
+`QOU/Eightfold/WeylInvarianceQDeformation.lean`:
 
-\textbf{What the Lean does not establish.}
+- The off-diagonal entry $a_{12} = -1$ and the Serre exponent
+  $1 - a_{12} = 2$ (`cartan_A2_offdiag`, `serre_exponent_A2`).
+- The $q$-Serre coefficient $[2]_q$ genuinely *moves* with $q$ ---
+  witnessed at $q = 2$, where the framed binomial is $5$ and the framed
+  Cartan diagonal is $4$ (`qSerre_not_constant`) --- while the
+  Cartan datum does not (`cartanMatrixAt_const`).  The conjunction
+  of the two is the "two $2$s" separation
+  (`cartan_fixed_while_qSerre_moves`), and it is the conjunction,
+  not either half alone, that carries the content: constancy of the Cartan
+  datum is true *by construction* and is compatible with both sides
+  being constant, which is exactly the confusion at issue.
+- For $(q-1)^2 \neq 0$ the two differ
+  (`qSerre_neq_cartan_diag`); they agree at $q = 1$
+  (`qSerre_eq_cartan_at_classical`).
+- The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
+  (`root_angle_ratio_A2`).
+
+**What the Lean does not establish.**
 That Drinfeld--Jimbo quantisation leaves the root datum invariant is a
-theorem of Lusztig/Kashiwara, cited here and \emph{not} formalised in this
-corpus; it belongs to the ``standard, but not formalised'' list below, not
+theorem of Lusztig/Kashiwara, cited here and *not* formalised in this
+corpus; it belongs to the "standard, but not formalised" list below, not
 to the machine-checked list above.  What is machine-checked is the
-\emph{arithmetic} of the separation on the $A_2$ datum, which is a weaker
+*arithmetic* of the separation on the $A_2$ datum, which is a weaker
 statement and should not be cited for the stronger one.
 
 **What is $q$-independent — standard, but not formalised here.**
 These follow from the Drinfeld--Jimbo construction and are cited here, not
 machine-checked:
-\begin{itemize}
-\item The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
+
+- The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
   \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =
   \mathbb{Z}\omega_1 \oplus \mathbb{Z}\omega_2$.
-\item The Weyl group $W(A_2) \cong S_3$.
-\item Weight multiplicities: for generic $q$ the representation category
+- The Weyl group $W(A_2) \cong S_3$.
+- Weight multiplicities: for generic $q$ the representation category
   $\mathrm{Rep}\,\mathcal{U}_q(\mathfrak{g})$ is tensor-equivalent to
   $\mathrm{Rep}\,\mathfrak{g}$.  Crystal bases exist precisely because
   the weight combinatorics is $q$-independent (the $q \to 0$ limit
   retains the same lattice).
-\end{itemize}
 
 **What $q$ does deform.**
-\begin{itemize}
-\item The braiding: the $R$-matrix of $\mathcal{U}_q(\mathfrak{sl}_3)$
+
+- The braiding: the $R$-matrix of $\mathcal{U}_q(\mathfrak{sl}_3)$
   depends on $q$ and governs the braid group action on tensor products.
-\item The quantum dimensions: $\dim_q(V_\lambda) = \prod_{\alpha > 0}
+- The quantum dimensions: $\dim_q(V_\lambda) = \prod_{\alpha > 0}
   [\langle \lambda + \rho, \alpha^\vee \rangle]_q /
   [\langle \rho, \alpha^\vee \rangle]_q$.
-\item The Markov trace: $\tau_q(\beta)$ on $H_n(q)$ varies with $q$,
+- The Markov trace: $\tau_q(\beta)$ on $H_n(q)$ varies with $q$,
   producing $q$-dependent link invariants (Jones polynomial, HOMFLY-PT).
-\item The crossing energy: $\mathfrak{E}_\times(q) =
+- The crossing energy: $\mathfrak{E}_\times(q) =
   \tfrac{1}{2}(q - q^{-1})$, which governs mass splittings in the
   framework.
-\end{itemize}
 
 **Consequence for the eightfold way.**
 The hexagonal weight lattice of $A_2$ is rigid under $q$-deformation.
-The octet and decuplet patterns do not ``bend'' or become hyperbolic
-at $q = q_0$.  What changes is the \emph{dynamics on} the lattice:
+The octet and decuplet patterns do not "bend" or become hyperbolic
+at $q = q_0$.  What changes is the *dynamics on* the lattice:
 transition amplitudes, mass splittings, and mixing angles all depend
 on $q_0$ through the Hecke algebra representations, while the
 classification pattern itself --- which states go where on the
 hexagon --- is $q$-independent.
 
-This separation is a feature: the classification is universal (it holds
-for any $q$), while the quantitative predictions (mass ratios, decay
-rates) are specific to $q = q_0$.
+The classification thus holds for any $q$, while the quantitative
+predictions (mass ratios, decay rates) are specific to $q = q_0$.

@@ -274,7 +274,7 @@ def main():
                         "(step 3, Route B)",
             "audit_doc": "docs/audits/2026-07-20-qlift-ggm-gauge-prune.md "
                          "(diagonal prune; non-diagonal 2x2 left live -> this probe)",
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "scope-(a) vocabulary per AGENTS.md; pre-stated "
                           "discrimination criterion; no AME data; sanity check is "
                           "by-construction, growth class is the only measurement",
@@ -283,6 +283,15 @@ def main():
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "qlift_routeB_connection_matrix_probe.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"witness written: {out}")
 

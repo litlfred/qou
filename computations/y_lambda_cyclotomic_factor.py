@@ -44,8 +44,13 @@ t = sp.symbols("r", positive=True)
 q = t ** 2  # q = r²
 Q = q ** 2  # Q = q² = r⁴
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) = 1/(r + 1/r) = r/(r²+1)
-z = t / (t ** 2 + 1)
+# Markov parameter, trace convention D (SU(2)/Temperley-Lieb, Jones):
+#   z = q^3/(q^2+1),  and with t = q^{1/2} that is t^6/(t^4+1).
+# Owner ruling 2026-08-09 excised convention C, which in this same
+# half-argument variable read z = t/(t^2+1) -- note how close the two look
+# here: same silhouette, different exponents. Still a rational function of
+# t, so the cyclotomic factorisation below is unaffected in kind.
+z = t ** 6 / (t ** 4 + 1)
 
 # X = Q^ℓ = (q · z) / (1 - Q + q · z)  (Wenzl level expressed in r)
 qz = q * z  # = r² · r/(r²+1) = r³/(r²+1)
@@ -172,7 +177,14 @@ for n in [2, 3, 4]:
 # Save witness
 out_path = Path(__file__).parent / "y-lambda-cyclotomic-factor.witness.json"
 with open(out_path, "w") as fp:
-    json.dump({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "computation": "y-lambda-cyclotomic-factor",
         "description": (
             "Factor y_λ closed forms over Q in r = q^{1/2} to identify "
@@ -183,6 +195,14 @@ with open(out_path, "w") as fp:
         "X_in_r": str(X_factored),
         "results": results,
         "precision": "symbolic_q",
-        "truncation_eps": 0.0,
-    }, fp, indent=2, default=str)
+        # String, not 0.0: this computation is exact and symbolic in q, so
+        # there is no truncation at all.  Emitting it as a float put the
+        # only raw float64 in the witness — an exact zero that nonetheless
+        # tripped the raw-float64 ratchet.
+        "truncation_eps": "0",
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+    json.dump(_prov_payload, fp, indent=2, default=str)
 print(f"Witness: {out_path}")

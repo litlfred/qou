@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T15:26:58.042117+00:00",
-  "commitSha": "94d47b0ce9a15850ff6716ab34cb561d075d4f00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T04:05:26.408475+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "exact_dk_reproduce_committed_witness",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 37,
   "computation": "qbeta-dladder-ecalle-acceleration",
   "scriptFile": "qbeta_dladder_ecalle_acceleration_probe.py",
   "scriptHash": "bae3e7cf7732",
-  "scriptCommitSha": "94d47b0ce9a15850ff6716ab34cb561d075d4f00",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py",
+      "43"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_dladder_ecalle_acceleration_probe.py 43"
   },
   "description": "Jackson q-Borel / Ecalle acceleration machinery for the bar-odd Q_beta D-ladder (odd-channel singularity locator; unowned item #1 of the 2026-07-17 1ppQ reassessment). Arm 1: Borel-Leroy s-scan + conformal dlog-Pade (core imported from the merged even-channel probe) with a pre-stated 15% estimator-consistency gate (dlog-Pade vs root-test radius) — the honest fix for the prior 0.156-vs-0.32 gap. Arm 2: Jackson q-Borel b_k = d_k/q0^{t k(k-1)/2} at substrate q0, same gate. Arm 3: parity-split acceleration in w = zeta^2 per the 2-adic Z/2 grading. Exact d_k at committed ORD 43 (k<=21); core API takes any-length exact (a_k, b_k) pairs so the extension arm's k~31 terms plug in. Scope-(a); no instanton action claimed without the gate; no c_k wired; no fit; no tier change.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -58,7 +69,7 @@
     "KMAX": 21,
     "gate_tolerance": 0.15,
     "parity_tolerance": 0.25,
-    "q0": "1.1099785955573347198997632204832250266562084087802"
+    "q0": "1.109978595642739046681795129380001752700065561029"
   },
   "data": {
     "arm1_borel_leroy_scan": [
@@ -373,7 +384,7 @@
       {
         "t": 0.4,
         "root_slope": "-0.0378806",
-        "rho_rt": "0.24958191",
+        "rho_rt": "0.24958192",
         "rho_dlog": "0.11734165",
         "gap": "0.5298",
         "n_conv": 3,
@@ -405,7 +416,7 @@
       "rho_min": "0.1149913752",
       "rho_max": "0.1149926403",
       "gap": "0.4572376437",
-      "spread": "1.100194609e-5",
+      "spread": "1.100194611e-5",
       "n_conv": 8,
       "gate": false,
       "details": {
@@ -479,11 +490,11 @@
         "consistent_within_spread": null
       },
       "u_substrate=b*hbar_q^2": {
-        "value": "0.00851723634",
+        "value": "0.008517236352",
         "consistent_within_spread": null
       },
       "u_tilde_substrate=q0*u": {
-        "value": "0.009453950031",
+        "value": "0.009453950045",
         "consistent_within_spread": null
       },
       "abs_S_muon_KC21": {
@@ -507,5 +518,5 @@
     "Committed-order run (ORD 43, k<=21) — the ORD-63 / k~31 extension is the running sibling arm; rerun this probe on its exact pairs when it lands (the core API is any-length)."
   ],
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

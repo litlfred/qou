@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:43:45.665710+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:08:35.537432+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 23,
   "computation": "habiro-taylor-extraction",
   "scriptFile": "habiro_exact_taylor_extraction.py",
-  "scriptHash": "67d063ec3310",
-  "scriptCommitSha": "35f094e9969675234f9a0cc5dd46c15c6d4de452",
+  "scriptHash": "c9e1f46bafc6",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_exact_taylor_extraction.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_exact_taylor_extraction.py"
   },
   "description": "Exact Taylor extraction of Habiro correction series. Verifies the Habiro cyclotomic expansion equals tr_M as a rational function (basis change only), and identifies the source of the 136.07 vs 1.065 discrepancy.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",

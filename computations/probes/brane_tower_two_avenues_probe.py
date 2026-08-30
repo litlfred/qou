@@ -165,7 +165,7 @@ def tr_M_global_at_q(chains, q_val: mp.mpf) -> mp.mpf:
     prod = mp.mpf(1)
     qi_val = 1 / q_val
     h_q = q_val - qi_val
-    z_q = 1 / (mp.sqrt(q_val) + 1 / mp.sqrt(q_val))
+    z_q = q_val**3 / (q_val**2 + 1)
     for ch in chains:
         if not ch:
             continue
@@ -343,6 +343,15 @@ def main() -> int:
         "codata_T_minus_3He_MeV": 0.019,
     }
     out = HERE / "brane-tower-two-avenues-probe.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Witness: {out}")
     return 0

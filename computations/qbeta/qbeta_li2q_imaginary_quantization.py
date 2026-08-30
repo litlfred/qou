@@ -73,7 +73,7 @@ os.environ.setdefault("QOU_OUTPUT_DPS", "60")
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(70)
-mp.mp.dps = 45
+set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -208,7 +208,7 @@ def main() -> int:
     })
     builder.add_assertion(
         "im_li2q_is_z_independent_above_q0",
-        computed=float(spread),
+        computed=spread,
         expected=0.0,
         tolerance=1e-12,
         source=("Im Li_2^q(z) is identical (spread < 1e-12) for all z>q₀ — "
@@ -218,7 +218,7 @@ def main() -> int:
     )
     builder.add_assertion(
         "im_equals_pi_residue",
-        computed=float(match),
+        computed=match,
         expected=0.0,
         tolerance=1e-6,
         source=("Im Li_2^q(z>q₀) = π·Res to converging precision — the "

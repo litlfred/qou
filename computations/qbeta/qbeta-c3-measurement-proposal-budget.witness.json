@@ -1,0 +1,112 @@
+{
+  "computation": "qbeta-c3-measurement-proposal-budget",
+  "description": "Option D: the c_3 front's deliverable as a measurement budget. Every c_3 claim is gated by sigma(Q_beta) amplified by dc_3/dQ_beta = 1/(Q_N2 u^3) ~ 2.07e6 per MeV, giving sigma(c_3) = +/-1.26 against |c_3| ~ 2.02 \u2014 a 62%-uncertain target. Makes the ask concrete two ways: (1) Q_beta is reachable both directly (CAL-3) and as m_n - m_p - m_e, and this probe computes both sigmas from committed values so the cheaper route is visible; (2) the mass-difference variance is dominated by the NEUTRON mass, so a programme not touching m_n cannot deliver the factors. Reports required sigma(Q_beta) for the zero-location test and for the c_3 ~ -Vol(4_1) comparison at each anchor. Explicitly does NOT assess experimental feasibility \u2014 outside what this repo can judge. Scope-(a); no fit, no c_k wired, no claim about (H1).",
+  "audit_only": true,
+  "tier": "error propagation on committed values (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-24T13:34:20.611165+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_c3_measurement_proposal_budget.py",
+  "scriptHash": "f43ee18143c0",
+  "assertions": [
+    {
+      "name": "lever_is_one_over_QN2_u_cubed",
+      "passed": true
+    },
+    {
+      "name": "sigma_c3_exceeds_half_of_abs_c3",
+      "passed": true,
+      "detail": "target is 60.983% uncertain"
+    },
+    {
+      "name": "neutron_mass_dominates_the_variance",
+      "passed": true,
+      "detail": "73.259% of variance"
+    },
+    {
+      "name": "all_targets_need_improvement",
+      "passed": true
+    },
+    {
+      "name": "massdiff_route_needs_both_masses_improved",
+      "passed": true,
+      "detail": "sigma(m_p) = 0.29 eV alone exceeds every target"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "u_at_q0": "0.008517234550156142",
+    "inv_u_cubed": "1618468.22929",
+    "lever_dc3_dQbeta_per_MeV": "2068767.79039",
+    "Qbeta_quoted": "0.78233341(61) MeV (PDG 2024 / AME 2020 cross-check)",
+    "sigma_Qbeta_direct_eV": "0.61",
+    "sigma_Qbeta_massdiff_eV": "0.56080302",
+    "smaller_route_in_quadrature": "mass-difference",
+    "massdiff_is_lower_bound_only": "AME2020 is a global least-squares adjustment; m_n, m_p, Q_beta are correlated and the covariance is not carried here. Factors are quoted against the direct sigma.",
+    "factor_baseline_sigma_eV": "0.61",
+    "sigma_m_n_eV": "0.48",
+    "sigma_m_p_eV": "0.29",
+    "sigma_m_e_eV": "0.00016",
+    "neutron_variance_share_pct": "73.2591",
+    "proton_variance_share_pct": "26.7409",
+    "sigma_c3_today": "1.26194835214",
+    "sigma_c3_over_abs_c3_pct": "60.9831",
+    "budget": [
+      {
+        "target": "zero-location test resolves at mu-p scale",
+        "required_sigma_Qbeta_eV": "0.0239187",
+        "improvement_factor": "25.503"
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (proton)",
+        "required_sigma_Qbeta_eV": "0.0190738",
+        "improvement_factor": "31.981"
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (muon)",
+        "required_sigma_Qbeta_eV": "0.00484487",
+        "improvement_factor": "125.906"
+      }
+    ],
+    "per_measurement_requirement": [
+      {
+        "target": "zero-location test resolves at mu-p scale",
+        "required_sigma_eV": "0.0239187",
+        "factor_direct_Qbeta": "25.503",
+        "factor_m_n": "20.068",
+        "factor_m_p": "12.1244",
+        "massdiff_route_needs_both": true
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (proton)",
+        "required_sigma_eV": "0.0190738",
+        "factor_direct_Qbeta": "31.981",
+        "factor_m_n": "25.1653",
+        "factor_m_p": "15.2041",
+        "massdiff_route_needs_both": true
+      },
+      {
+        "target": "c_3 ~ -Vol(4_1) at 1 sigma (muon)",
+        "required_sigma_eV": "0.00484487",
+        "factor_direct_Qbeta": "125.906",
+        "factor_m_n": "99.074",
+        "factor_m_p": "59.8572",
+        "massdiff_route_needs_both": true
+      }
+    ],
+    "sigma_m_p_exceeds_every_target": true
+  },
+  "context": {
+    "axis": "front (a)/(e) triage, option D \u2014 the measurement ask",
+    "inputs": [
+      "computations/cal-3-q-beta.witness.json (direct sigma)",
+      "computations/substrate/codata_constants.py (M_N/M_P/M_E validation masses + errors, CODATA-2022)",
+      "docs/audits/scripts/qbeta-qstar-experimental-budget.witness.json (dq*/dQ_beta)"
+    ],
+    "not_claimed": "experimental feasibility, technique, or cost of any target \u2014 outside what this repository can assess",
+    "scope": "Scope-(a). No fit; no claim about (H1) in either direction."
+  }
+}

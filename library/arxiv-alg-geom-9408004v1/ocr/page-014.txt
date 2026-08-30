@@ -1,0 +1,47 @@
+A first guess for an antidifferential 7 of o might be simply 7 (pulled back
+by i, but we suppress this), but 7 is not invariant under translations: if the
+cycle 7 corresponds, as in Step HI of the proof of Theorem 3, to a 1-form €
+on M, then translating by changes 7 by addition of 7*€, where 7: V — M
+is the projection. To correct this discrepancy, we consider the tautological
+function f € T(Oy) whose value at a point (X,s,v) € V (with (X,s) © M
+and v € F?H°(X)*) is given by
+
+(6) f(X, 8,v) = v(s).
+
+Now f is fiber-linear, so df is constant on fibers, and therefore translation
+by y changes df by a* of a 1-form on M, and this 1-form is immediately
+seen to be €. We conclude that + — df is a global 1-form on V which is
+invariant under translation by each 7, hence descends to a 1-form 7 on TF
+which satisfies dr = 0, as required.
+
+Q.ED
+
+Remarks.
+
+(1) Another way to see the exactness of o is to note that it is the sym-
+plectification of a contact structure k on J. In general, a contact manifold
+(J, «) determines an exact symplectic structure on the natural C*-bundle
+TF over J. Conversely, according to [AG], page 78, a symplectic structure
+o ona manifold 7 with a C*-action p is the symplectification of a contact
+structure on the quotient J if and only if o is homogeneous of degree 1 with
+respect to p. In our case, there are two independent C*-actions on the total
+space of V = T*M: the C*-action on M lifts to an action p! on T*M, and
+there is also the action p” which commutes with the projection to M and is
+linear on the fibers. The symplectic form ¢ is homogeneous of weight 0 with
+respect to p’_and of weight 1 with respect to p”. Neither of these actions
+descends to J, but their product p := p’@p" does. The symplectic form o on
+Tis homogeneous of weight 1 with respect to p, so it is the symplectification
+of a contact structure on J, and in particular it is exact.
+
+In the notation of the proof, the actions are given, for t € C*, by :
+
+po :(X,s,v) © (X, ts, tv)
+p” :(X,s,v) & (X, 8, — tv)
+p :(X,s,v) - (xX, ts, v).
+
+The corresponding vector fields on V are taken by o to the 1-forms —df,7,
+and tT = 7 — df, respectively. Of these, only 7 descends to a closed 1-form
+on J. (Another description of this contact structure is in Remark (2) to
+Theorem 4.)
+
+14

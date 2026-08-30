@@ -190,46 +190,99 @@ def main() -> None:
     print(f"  R(q_0)    = {mp.nstr(R_q0, 18)}")
     print()
 
+    # ── Residual-floor detection (added 2026-08-10, bean qou-8ofm) ──
+    #
+    # `c_k := (R_k - 1)/u^k` is a valid extraction only while `R_k - 1` IS the
+    # rung-k contribution. Once the residual stops shrinking it is a FLOOR --
+    # the model's accuracy limit -- and dividing a fixed floor by an
+    # ever-smaller `u^k` manufactures `c_k ~ floor/u^k`, i.e. a spurious
+    # geometric blow-up with ratio exactly `1/u`. That is what the committed
+    # witness recorded: `|c_k u^k|` flat at 7.34e-09 for k=6..10 and ratio
+    # 117.4 against `1/u = 117.409`.
+    #
+    # A genuinely contributing rung drops the residual by ~`1/u` (~117x).
+    # `MIN_RESIDUAL_DROP` is deliberately far more permissive than that, so
+    # only an unambiguous stall is rejected.
+    u_ladder = b * hbar_q_sq            # the ladder variable, c_k multiplies u^k
+    MIN_RESIDUAL_DROP = mpf(10)
+    residual: dict[int, mpf] = {}       # |R_k - 1| at each rung
+    resolved: dict[int, bool] = {}
+
+    def _record(k: int, R_at_rung: mpf) -> None:
+        """Log the residual `|R-1|` as it stands *before* rung `k` is divided out."""
+        residual[k] = abs(R_at_rung - 1)
+
+    def _settle_resolution() -> None:
+        """Decide, per rung, whether imposing THAT rung's factor bought anything.
+
+        Attribution matters and is easy to get backwards (it was, in the first
+        version of this guard, 2026-08-10). `residual[k]` is the residual
+        *before* rung `k` is applied, so the reduction achieved BY rung `k` is
+        `residual[k] / residual[k+1]` — not `residual[k-1] / residual[k]`, which
+        is what the *previous* rung bought. Crediting a rung with its
+        predecessor's drop marks one rung too many as resolved.
+
+        The final rung has no successor, so there is no evidence either way and
+        it is recorded unresolved.
+        """
+        ks = sorted(residual)
+        for k in ks:
+            nxt = residual.get(k + 1)
+            if nxt is None or nxt == 0:
+                resolved[k] = False     # no successor ⇒ no evidence
+                continue
+            resolved[k] = (
+                residual[k] / nxt >= MIN_RESIDUAL_DROP
+                and resolved.get(k - 1, True)   # a floor never un-floors
+            )
+
     # ── Replay k=2..7 to advance R sequentially ─────────────────
     c_k: dict[int, mpf] = {}
 
     # c_2
     c_k[2] = (R_q0 - 1) / (b ** 2 * hbar_q_sq ** 2)
+    _record(2, R_q0)
     # Apply canonical c_2 = -1
     R = R_q0 / N2
 
     # c_3
     c_k[3] = (R - 1) / (b ** 3 * hbar_q_sq ** 3)
+    _record(3, R)
     # Apply canonical c_3 = -2
     N3 = 1 + mpf(-2) * b ** 3 * hbar_q_sq ** 3
     R = R / N3
 
     # c_4
     c_k[4] = (R - 1) / (b ** 4 * hbar_q_sq ** 4)
+    _record(4, R)
     # Apply canonical c_4 = -2·b⁴
     N4 = 1 + (mpf(-2) * b ** 4) * b ** 4 * hbar_q_sq ** 4
     R = R / N4
 
     # c_5
     c_k[5] = (R - 1) / (b ** 5 * hbar_q_sq ** 5)
+    _record(5, R)
     # Apply canonical c_5 = -(b² + 1/2)
     N5 = 1 + (-(b ** 2 + mpf(1) / 2)) * b ** 5 * hbar_q_sq ** 5
     R = R / N5
 
     # c_6
     c_k[6] = (R - 1) / (b ** 6 * hbar_q_sq ** 6)
+    _record(6, R)
     # Apply canonical c_6 = 4·b²
     N6 = 1 + (mpf(4) * b ** 2) * b ** 6 * hbar_q_sq ** 6
     R = R / N6
 
     # c_7
     c_k[7] = (R - 1) / (b ** 7 * hbar_q_sq ** 7)
+    _record(7, R)
     # Apply canonical c_7 = -8
     N7 = 1 + mpf(-8) * b ** 7 * hbar_q_sq ** 7
     R = R / N7
 
     # ── NEW: c_8 ─────────────────────────────────────────────────
     c_k[8] = (R - 1) / (b ** 8 * hbar_q_sq ** 8)
+    _record(8, R)
     # No canonical closed form yet — try the natural pattern
     # continuation c_8 = c_3²·b⁴ = 4·b⁴ to advance the ladder
     canon_c8 = mpf(4) * b ** 4
@@ -238,12 +291,16 @@ def main() -> None:
 
     # ── NEW: c_9 ─────────────────────────────────────────────────
     c_k[9] = (R - 1) / (b ** 9 * hbar_q_sq ** 9)
+    _record(9, R)
     canon_c9 = mpf(-8) * b ** 2
     N9 = 1 + canon_c9 * b ** 9 * hbar_q_sq ** 9
     R = R / N9
 
     # ── NEW: c_10 ────────────────────────────────────────────────
     c_k[10] = (R - 1) / (b ** 10 * hbar_q_sq ** 10)
+    _record(10, R)
+
+    _settle_resolution()
 
     # Print summary
     print("Sequential c_k extraction (k=2..10, 50dps):")
@@ -261,8 +318,39 @@ def main() -> None:
         10: "** NEW — terminal extraction",
     }
     for k in range(2, 11):
-        print(f"{k:>3} {mp.nstr(c_k[k], 15):>26} {notes[k]:>40}")
+        flag = "" if resolved[k] else "  ⟵ UNRESOLVED (residual floor)"
+        print(f"{k:>3} {mp.nstr(c_k[k], 15):>26} {notes[k]:>40}{flag}")
     print()
+
+    # ── Residual-floor report (bean qou-8ofm) ────────────────────
+    print("=" * 78)
+    print("Residual per rung — is the extraction still resolving anything?")
+    print("=" * 78)
+    print(f"  ladder variable u = b·ℏ_q² = {mp.nstr(u_ladder, 12)}   "
+          f"1/u = {mp.nstr(1 / u_ladder, 12)}")
+    print(f"  a contributing rung should drop the residual by ~1/u; "
+          f"threshold is {mp.nstr(MIN_RESIDUAL_DROP, 3)}x")
+    print()
+    print(f"{'k':>3} {'|R_k - 1|':>14} {'drop BY c_k':>14} {'resolved':>10}")
+    print("-" * 78)
+    for k in range(2, 11):
+        nxt = residual.get(k + 1)
+        drop = "—" if not nxt else f"{float(residual[k] / nxt):.3g}x"
+        print(f"{k:>3} {float(residual[k]):>14.4g} {drop:>14} "
+              f"{'yes' if resolved[k] else 'NO':>10}")
+    print()
+
+    last_resolved = max((k for k in range(2, 11) if resolved[k]), default=None)
+    n_unresolved = sum(1 for k in range(2, 11) if not resolved[k])
+    if n_unresolved:
+        print(f"  ⚠ {n_unresolved} rung(s) unresolved. The residual stops "
+              f"dropping after k={last_resolved}: from there it is the model's")
+        print(f"    accuracy FLOOR, not a rung contribution. Dividing a fixed "
+              f"floor by u^k manufactures c_k ~ floor/u^k — a spurious")
+        print(f"    geometric blow-up with ratio exactly 1/u. Those rungs are "
+              f"emitted as null, with the raw quotient kept under")
+        print(f"    `c_k_unresolved_raw_quotient` so nothing is hidden.")
+        print()
 
     # ── Test Pell-Lucas / averaging-resonance prediction ─────────
     print("=" * 78)
@@ -364,12 +452,52 @@ def main() -> None:
     w.add_parameter("hbar_q_sq_50dps", mp.nstr(hbar_q_sq, 50))
     w.add_data("R_q0_50dps", mp.nstr(R_q0, 50))
 
-    # Full c_k extraction (k=2..10) at 50dps
+    # c_k extraction, RESOLVED RUNGS ONLY (bean qou-8ofm, 2026-08-10).
+    #
+    # Previously every rung k=2..10 was emitted here as if it were data. It is
+    # not: the residual stops dropping after the last resolved rung, so the
+    # later "values" are a fixed floor divided by u^k — a spurious blow-up with
+    # ratio 1/u. Unresolved rungs are now null; the raw quotient is preserved
+    # separately under an unmistakable key so the record is complete without
+    # being consumable.
     w.add_data("c_k_extracted_50dps", {
-        f"c_{k}": mp.nstr(v, 50) for k, v in c_k.items()
+        f"c_{k}": (mp.nstr(v, 50) if resolved[k] else None)
+        for k, v in c_k.items()
     })
     w.add_data("c_k_extracted_float", {
-        f"c_{k}": float(v) for k, v in c_k.items()
+        f"c_{k}": (float(v) if resolved[k] else None)
+        for k, v in c_k.items()
+    })
+    w.add_data("c_k_resolution", {
+        "ladder_variable_u": mp.nstr(u_ladder, 50),
+        "one_over_u": mp.nstr(1 / u_ladder, 20),
+        "min_residual_drop_threshold": mp.nstr(MIN_RESIDUAL_DROP, 3),
+        "expected_drop_if_rung_contributes": "~1/u",
+        "last_resolved_rung": last_resolved,
+        "n_unresolved": n_unresolved,
+        "per_rung": {
+            f"c_{k}": {
+                "residual_abs_R_minus_1": mp.nstr(residual[k], 20),
+                "drop_vs_prev": (
+                    None if residual.get(k - 1) is None
+                    else mp.nstr(residual[k - 1] / residual[k], 12)
+                ),
+                "resolved": bool(resolved[k]),
+            }
+            for k in range(2, 11)
+        },
+        "why_unresolved_rungs_are_null": (
+            "c_k := (R_k - 1)/u^k is a valid extraction only while R_k - 1 IS "
+            "the rung-k contribution. Once the residual stops dropping it is "
+            "the model's accuracy floor; dividing a fixed floor by an "
+            "ever-smaller u^k manufactures c_k ~ floor/u^k, a geometric "
+            "blow-up with ratio exactly 1/u and flat |c_k u^k|. Emitting "
+            "those as numbers is what let them read as data."
+        ),
+    })
+    w.add_data("c_k_unresolved_raw_quotient", {
+        f"c_{k}": mp.nstr(c_k[k], 50)
+        for k in range(2, 11) if not resolved[k]
     })
 
     # New rungs only — silver-ratio Pell-Lucas test
@@ -419,22 +547,22 @@ def main() -> None:
     # Assertions (low tolerance — these are 50dps reproducibility checks)
     w.add_assertion(
         "c_8_extracted_finite",
-        computed=float(abs(c_k[8])),
-        expected=float(abs(c_k[8])),
+        computed=abs(c_k[8]),
+        expected=abs(c_k[8]),
         tolerance=1e-10,
         source="c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization",
     )
     w.add_assertion(
         "c_9_extracted_finite",
-        computed=float(abs(c_k[9])),
-        expected=float(abs(c_k[9])),
+        computed=abs(c_k[9]),
+        expected=abs(c_k[9]),
         tolerance=1e-10,
         source="c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization",
     )
     w.add_assertion(
         "c_10_extracted_finite",
-        computed=float(abs(c_k[10])),
-        expected=float(abs(c_k[10])),
+        computed=abs(c_k[10]),
+        expected=abs(c_k[10]),
         tolerance=1e-10,
         source="c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization",
     )

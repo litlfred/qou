@@ -9,7 +9,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.035,
+      "tolerance": "0.035",
       "source": "B_AME(2H) vs rho·m_e·Vol(6_2) — reproduces the conj table's claimed quality"
     },
     {
@@ -17,7 +17,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "B_AME(2H) vs rho·m_e·Vol(6_1) — orphan volume fails the same law"
     },
     {
@@ -25,7 +25,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.035,
+      "tolerance": "0.035",
       "source": "B_AME(3H) vs rho·m_e·Vol(8_11) — reproduces the conj table's claimed quality"
     },
     {
@@ -33,7 +33,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "B_AME(3H) vs rho·m_e·Vol(8_1) — orphan volume fails the same law"
     },
     {
@@ -41,7 +41,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.035,
+      "tolerance": "0.035",
       "source": "B_AME(3He) vs rho·m_e·Vol(L6a4) — reproduces the conj table's claimed quality"
     },
     {
@@ -49,7 +49,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "B_AME(3He) vs rho·m_e·Vol(6^3_1) — orphan volume fails the same law"
     },
     {
@@ -57,7 +57,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "Vol(6_1) cannot match B_AME(2H) under B=rho·m_e·Vol for any integer rho ≤ 4 — the orphan set fails regardless of multiplicity choice"
     }
   ],

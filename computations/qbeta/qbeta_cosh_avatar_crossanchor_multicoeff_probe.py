@@ -115,6 +115,12 @@ from qbeta_utils import substrate_ladder_quantities  # noqa: E402
 # expansion).
 TOL_PPM = 100
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Floor scale used to keep the ppm comparison dimensionally consistent
 # when a target is (near-)zero.  Misses are always computed as
 # `|pred - tgt| / max(|tgt|, ZERO_FLOOR) * 1e6`, i.e. RELATIVE-to-scale
@@ -138,7 +144,7 @@ def ck_target_at(q: mpf, q_codata: mpf, m_e: mpf, k_max: int = 5) -> list[mpf]:
     Precondition (inherited from substrate_ladder_quantities):
     `q > 0` and `q ≠ 1` (else u = 0 ⇒ division by zero).
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     if sub["u"] == 0:
         raise ValueError(f"ck_target_at: u(q) = 0 at q={q!s}")
     Q_A = m_e * sub["Q_A_over_me"]
@@ -163,7 +169,7 @@ def make_candidates(q: mpf) -> dict[str, Callable[[mpf], mpf]]:
     pre-enumerated; α(q) is a closed-form function of the categorical
     scalars (h, η, b, ℏ_q, z, [n]_q) — no free parameters.
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     h, eta, b, hbar_q, z = (
         sub["h"], log(q), sub["b"], sub["hbar_q"], sub["z"],
     )

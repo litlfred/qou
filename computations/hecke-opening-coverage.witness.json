@@ -1,0 +1,270 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-23T07:52:51.709266+00:00",
+  "commitSha": "67ffcd9e1f192e14bde4ffc7935ce1132b13ec7c",
+  "assertions": [
+    {
+      "name": "cases_where_the_two_applications_do_not_fit",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_five-stretch_decomposition_does_not_close",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_engine_order_does_NOT_force_a_three-term_loop",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_V_loop_m_is_not_one_more_than_the_U_loop_m",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_trailing_trio_is_not_BS(jp,jpp,j1)_Y(j1,jp)_Q(j1)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_V_loop_is_not_one_level_deeper_than_the_U_loop",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "hecke-opening-coverage",
+  "scriptFile": "hecke_opening_coverage.py",
+  "scriptHash": "7034c6dc817d",
+  "scriptCommitSha": "4c97299f4fb0741a96b6f83dfae2c1e8d1275b68",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_opening_coverage.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_opening_coverage.py"
+  },
+  "description": "Does the planned lemma set cover the a <= b opening phase? Plan: s1/s2 carry V0 to V2 (both j2-independent, already in the corpus), then loopTwoGen carries U0 at m = a-4, with k = i1 and e = jppp as hecke-prefix-loop-fit solved them. Measured against the chain: whether the first two steps really are V0's and land on V2, whether the next stretch is U0's alone, whether it ends on loopTwoGen's own target formula, and HOW MANY of the a^2-3a+9 opening steps that accounts for. The remainder is the point -- it says what else the opening needs. Measured: s1/s2 and the loop DO fit, but the contiguous U-run continues past the loop's endpoint by exactly 3 steps (a bare Bokut-Shiao, then the Yang-Baxter and quadratic pair that §4al's quadPair covers), so the loop's endpoint must be LOCATED rather than read off the end of the run -- the first version of this probe assumed the latter and reported a false negative in all six cases, the same wrong-index bug the tail's collision check had. With that fixed the phase decomposes EXACTLY into five stretches: s1/s2, the U loop, three trailing U steps, the V loop one level deeper, and three trailing V steps -- 2L+9 = a^2-3a+9, asserted per case. Every stretch is covered by a lemma that already exists.",
+  "parameters": {
+    "m": "a - 4 (so a = 3 would need m = -1: no loop pass)",
+    "loop_levels": "k = i1 down to e = jppp",
+    "opening_phase_decomposition": "2 (s1, s2: V0 -> V2) + L (U loop, A = [s_{i-1}], S = [s_i]) + 3 (U bare Bokut-Shiao, then quadPair) + (L+1) (V loop, A = [s_{i-2}, s_{i-1}], S = []; one level deeper because the V side has descended one further) + 3 (the same trailing trio) = 2L + 9, which is a^2-3a+9 exactly",
+    "scheduling_constraint": "loopTwoGen is stated for a TWO-term element; quadPair takes general L1/L2 and tolerates any number of bystanders. Under the engine's deg-lex order the U trio -- whose quadratic step SPLITS U in two -- runs BEFORE the V loop, so the V loop would face three terms and loopTwoGen could not be applied at all. Measured per case. Both loops must therefore precede both trios, which is legal because steps on different terms commute. Same lesson as the tail: the engine's schedule is an accident, not a constraint on the Lean.",
+    "V_loop": "loopTwoGen with A = [s_{i-2}], k = i, S = [], m = a-3 -- one level MORE than the U loop's a-4, which is what 'one level deeper' means concretely",
+    "trailing_trio": "bokutShiaoRelation jp jpp j1, then Yang-Baxter at (j1, jp), then the quadratic at j1 -- uniform in a AND b, and the last two are exactly quadPair's redex [s_jp, s_j1, s_jp] ++ (s_j1 :: R). So each lineage's trio is one bsStep followed by quadPair; no new lemma."
+  },
+  "data": {
+    "cases_checked": 6,
+    "cases": [
+      {
+        "a": 4,
+        "b": 4,
+        "i": 9,
+        "n": 11,
+        "opening_phase_steps": 13,
+        "m_predicted": 0,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 5,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 2,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 4,
+        "steps_remaining_in_opening": 9,
+        "V_side_resumes_at_step": 7,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 9,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 1,
+        "U_loop_m": 0,
+        "U_splits_at_step": 6,
+        "V_loop_completes_at_step": 9,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 3,
+        "decomposition_total": 13,
+        "decomposition_closes": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "i": 10,
+        "n": 12,
+        "opening_phase_steps": 13,
+        "m_predicted": 0,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 5,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 2,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 4,
+        "steps_remaining_in_opening": 9,
+        "V_side_resumes_at_step": 7,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 9,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 1,
+        "U_loop_m": 0,
+        "U_splits_at_step": 6,
+        "V_loop_completes_at_step": 9,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 3,
+        "decomposition_total": 13,
+        "decomposition_closes": true
+      },
+      {
+        "a": 5,
+        "b": 5,
+        "i": 11,
+        "n": 13,
+        "opening_phase_steps": 19,
+        "m_predicted": 1,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 8,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 5,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 7,
+        "steps_remaining_in_opening": 12,
+        "V_side_resumes_at_step": 10,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 15,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 2,
+        "U_loop_m": 1,
+        "U_splits_at_step": 9,
+        "V_loop_completes_at_step": 15,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 6,
+        "decomposition_total": 19,
+        "decomposition_closes": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "i": 12,
+        "n": 14,
+        "opening_phase_steps": 19,
+        "m_predicted": 1,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 8,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 5,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 7,
+        "steps_remaining_in_opening": 12,
+        "V_side_resumes_at_step": 10,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 15,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 2,
+        "U_loop_m": 1,
+        "U_splits_at_step": 9,
+        "V_loop_completes_at_step": 15,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 6,
+        "decomposition_total": 19,
+        "decomposition_closes": true
+      },
+      {
+        "a": 6,
+        "b": 6,
+        "i": 13,
+        "n": 15,
+        "opening_phase_steps": 27,
+        "m_predicted": 2,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 12,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 9,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 11,
+        "steps_remaining_in_opening": 16,
+        "V_side_resumes_at_step": 14,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 23,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 3,
+        "U_loop_m": 2,
+        "U_splits_at_step": 13,
+        "V_loop_completes_at_step": 23,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 10,
+        "decomposition_total": 27,
+        "decomposition_closes": true
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "i": 14,
+        "n": 16,
+        "opening_phase_steps": 27,
+        "m_predicted": 2,
+        "first_two_are_V0_landing_on_V2": true,
+        "U_stretch_steps": 12,
+        "loopTwoGen_target_reached": true,
+        "loop_steps": 9,
+        "U_steps_after_the_loop": 3,
+        "steps_covered_by_s1_s2_and_loop": 11,
+        "steps_remaining_in_opening": 16,
+        "V_side_resumes_at_step": 14,
+        "V_loop_A_rel_i": [
+          2,
+          1
+        ],
+        "V_loop_target_at_step": 23,
+        "trailing_trio_is_BS_jp_jpp_j1__Y_j1_jp__Q_j1": true,
+        "V_loop_m": 3,
+        "U_loop_m": 2,
+        "U_splits_at_step": 13,
+        "V_loop_completes_at_step": 23,
+        "engine_order_forces_a_three_term_loop": true,
+        "V_loop_steps": 10,
+        "decomposition_total": 27,
+        "decomposition_closes": true
+      }
+    ]
+  },
+  "caveats": [
+    "a >= 4 only. a = 3 has no loop pass (m would be -1) and needs its own treatment (`prefixChain3`); a = 2 has no loop pass either, for the opposite reason -- `descWord i j1` is three letters, so `U0` already carries quadPair's redex and the loop's output pre-exists. Its prefix is nonetheless the same 11 = a^2+a+5 steps and the same lemmas: `prefixChain2`, measured in hecke_small_a_decomposition.py. a = 1 is measured there too and is genuinely different (6 steps, and its cancellation word is not WStar); it is not yet proved.",
+    "The 3 steps after the loop are the bare Bokut-Shiao step plus the Y-then-Q pair; §4al's quadPair covers the latter two, so the U side needs one more named step beyond loop + quadPair.",
+    "Fitting the applications is not assembling the phase. The remainder column says how much is left, and the collision hypotheses are discharged here by head separation rather than checked lemma by lemma."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
+}

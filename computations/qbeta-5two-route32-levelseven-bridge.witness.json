@@ -1,0 +1,163 @@
+{
+  "probe": "qbeta_5two_route32_levelseven_bridge",
+  "bean": "qou-trns",
+  "dps": 70,
+  "pairs_with_lean": "QOU/QBeta/FiveTwoLevelSevenBridge.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "S(0) = sum_j Re V(1, y_j) equals -3 pi^2 / 2 -- i.e. S(0) IS the 5_2 sum rule. The transport is therefore not a step TOWARDS the sum rule, it is a reformulation OF it: S(pi) - S(0) = pi^2 turns the sum rule into a statement about the endpoint x = -1",
+      "S_at_0": "-14.8044066016340379282517",
+      "minus_3_pi_sq_over_2": "-14.8044066016340379282517",
+      "residual": "1.0e-30",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "S(pi) = -pi^2/2, checked against the EXACT eps-shifted value rather than a rounded one. Note S(0) = 3 * S(pi) exactly -- the 3 in -3 pi^2/2 is the number of saddles, which is the kind of structure the resurgence picture would explain",
+      "S_at_pi_minus_eps": "-4.93480220054468559260255",
+      "exact_expected": "-4.93480220054468559260255",
+      "residual": "7.244543263e-71",
+      "S0_over_Spi": "3.0",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "at x = -1 the curve's y-cubic IS the level-7 cubic y^3 + 2y^2 - y - 1, and the ladder arguments are w_k = -y_j EXACTLY -- w_1 = 2.24698 is the same value that left Li2's disc of convergence and falsified hinv1 (correction 1 of this branch)",
+      "roots_y": [
+        "-2.24697960371746706",
+        "-0.554958132087371191",
+        "0.801937735804838252"
+      ],
+      "w_from_minus_y": [
+        "2.24697960371746706",
+        "0.554958132087371191",
+        "-0.801937735804838252"
+      ],
+      "w_as_roots_of_Y3_minus_2Y2_minus_Y_plus_1": [
+        "2.24697960371746706",
+        "0.554958132087371191",
+        "-0.801937735804838252"
+      ],
+      "worst_w_mismatch": "0.0",
+      "worst_curve_vs_levelSeven": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "sum_j Re[2 L(-y_j) + L(y_j)] = +pi^2/2 with the ANALYTIC Rogers L. This is the shape of Lean's `extended_sum`, with the multiplicities matching once w = -y. \u26a0 Lean's theorem is about the corpus's piecewise `extend`, NOT this L -- see G9",
+      "value": "4.934802200544679309417",
+      "pi_sq_over_2": "4.934802200544679309417",
+      "residual": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the gap between sum_j Re V(-1, y_j) and sum_j Re[2L(-y_j)+L(y_j)] is exactly -pi^2, and it equals the log-bilinear sum_j corr(y_j) -- a quantity with NO dilogarithms in it. That is the whole remaining arithmetic of the bridge, and Lean's `corr_sum_eq_neg_pi_sq` proves it",
+      "sum_Re_V": "-4.934802200544679309417",
+      "sum_Re_Rogers": "4.934802200544679309417",
+      "gap": "-9.869604401089358618834",
+      "minus_pi_sq": "-9.869604401089358618834",
+      "gap_residual": "1.448908653e-70",
+      "sum_corr": "-9.869604401089358618834",
+      "corr_matches_gap": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "WHY it collapses. Splitting corr into its log-times-log part and its pi^2 part: the log-log part vanishes at EVERY root, because 2 log|y| = 2 log|1+y| + log(1-y) is equivalent to y^2 = (1+y)^2 (1-y), which IS the cubic. The entire -pi^2 is the pi^2 coefficient -1 at the UNIQUE POSITIVE root, from arg(-t) = pi. One argument, at one root. Lean: `sq_eq_of_root`, `log_rel_of_root`, `corr_of_pos_root`, `corr_of_neg_root`",
+      "per_root": [
+        {
+          "y": "-2.24697960371746706",
+          "log_log_part": "0.0",
+          "pi_sq_coefficient": "0.0"
+        },
+        {
+          "y": "-0.554958132087371191",
+          "log_log_part": "4.527839539e-72",
+          "pi_sq_coefficient": "0.0"
+        },
+        {
+          "y": "0.801937735804838252",
+          "log_log_part": "4.527839539e-72",
+          "pi_sq_coefficient": "-1.0"
+        }
+      ],
+      "worst_log_log_part": "4.527839539e-72",
+      "total_pi_sq_coefficient": "-1.0",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "y^2 - (1+y)^2 (1-y) = y^3 + 2y^2 - y - 1 IDENTICALLY in y, not just at the roots -- checked at 61 rational points off the roots, so the identity is not being confirmed by the very thing it is used to prove. Lean: `sq_eq_of_root`",
+      "n_points": 61,
+      "worst_residual": "2.318253844e-69",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "GAP A, re-priced: |dp/dy| at the positive real root never drops below 1.75 on the arc, so the REAL root never collides -- only the other two do, at phi_0. So t(phi) is globally differentiable with NO exceptional point, and y_2 + y_3 = 2c - t and y_2 y_3 = 1/t are too. The obstruction is confined to splitting one quadratic whose coefficients are smooth",
+      "min_abs_dp_dy_at_real_root": "1.75000001712",
+      "at_phi_over_pi": "0.23",
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "THE LINK THIS GATE GUARDED IS NOW CLOSED, and the gate is rewritten rather than left passing on a drifted claim. It used to assert that `extend` = Re of the analytic Rogers L held ON PAPER ONLY (qou-rstq item 4), with pass hardcoded True, and said it would fail if the lane closed it quietly. The lane closed it openly: `extend_eq_re_cRogersL` in QOU/QBeta/FiveTwoExtendIdentification.lean proves it for every real x != 0, 1 -- all three regimes, all six arguments. So G4's use of the analytic L above is now backed by a Lean theorem, not by Route 15's paper argument. This gate now MEASURES the identification at the six arguments instead of declaring anything",
+      "was": "assertion that the gap EXISTS, pass hardcoded True",
+      "now": "measurement of the identification the Lean theorem states",
+      "lean_theorem": "QOU.QBeta.FiveTwoExtendIdentification.extend_eq_re_cRogersL",
+      "per_argument": [
+        {
+          "x": "2.24697960371746706",
+          "difference": "3.6222716e-71",
+          "regime": "x>1 inversion"
+        },
+        {
+          "x": "0.554958132087371191",
+          "difference": "0.0",
+          "regime": "0<=x<=1 identity"
+        },
+        {
+          "x": "-0.801937735804838252",
+          "difference": "0.0",
+          "regime": "x<0 Landen"
+        },
+        {
+          "x": "-2.24697960371746706",
+          "difference": "0.0",
+          "regime": "x<0 Landen"
+        },
+        {
+          "x": "-0.554958132087371191",
+          "difference": "0.0",
+          "regime": "x<0 Landen"
+        },
+        {
+          "x": "0.801937735804838252",
+          "difference": "0.0",
+          "regime": "0<=x<=1 identity"
+        }
+      ],
+      "worst_difference": "3.622271632e-71",
+      "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "WHAT ITEM 4's CLOSURE DOES NOT BUY, stated because the temptation to overread is the reason G9 existed. Item 4 was ONE INPUT to this bridge. Still open: (a) GAP A, a globally differentiable root labelling -- the one remaining hypothesis in the transport, re-priced in G8; (b) ASSEMBLING S(pi) = sum_j Re V(-1, y_j) in Lean and composing corr_sum_eq_neg_pi_sq with extended_sum, which item 4 unblocks but does not perform. And the headline is untouched: S(0) = -3 pi^2/2 IS the sum rule (G1), so the transport REFORMULATES it rather than approaching it. Closing item 4 moved a link, not the headline",
+      "still_open": [
+        "Gap A -- global root labelling (qou-glbl)",
+        "assembling S(pi) and wiring the bridge to extended_sum (qou-asem)"
+      ],
+      "headline_unchanged": "S(0) = -3 pi^2/2 IS the sum rule; the transport reformulates it",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "the_map": "S(0) = -3 pi^2/2 IS the sum rule; the transport turns it into S(pi) = -pi^2/2; at x = -1 the cubic is the level-7 one with w = -y; the proved cyclotomic identity gives +pi^2/2; and the difference is a log-bilinear -pi^2 which is ONE argument at ONE root.",
+    "what_is_proved_here": "corr_sum_eq_neg_pi_sq -- the -pi^2, from the cubic itself.",
+    "closed_since_this_probe_was_written": "qou-rstq item 4 -- the identification of `extend` with Re of the analytic Rogers L, which sits ON this bridge, is now PROVED in Lean for all three regimes (extend_eq_re_cRogersL). G9 is rewritten accordingly.",
+    "what_is_still_open": "(a) the global root labelling for the transport (Gap A, re-priced in G8, bean qou-glbl); (b) assembling S(pi) = sum_j Re V(-1, y_j) in Lean and composing corr_sum_eq_neg_pi_sq with extended_sum (bean qou-asem) -- unblocked by item 4, not performed by it.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

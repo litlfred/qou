@@ -40,6 +40,10 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
 from coulomb_energy import coulomb_energy_mev  # noqa: E402 — canonical Z(Z−1), r₀=1.2
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -53,10 +57,19 @@ E0 = M_E_MEV / (q * (q - 1))
 
 
 def f_bonds():
-    z = mp.sqrt(q) / (q + 1)
+    # Convention D: z = q^3/(q^2+1). The kernel is STRUCTURAL --
+    # f_pp = z, f_nn = z - h, f_pn = z - h/2 (#2089) -- and these lines
+    # previously carried the C-substituted EXPANSION of exactly that, which is
+    # where the q^{3/2} came from. Writing the structural form instead both
+    # migrates the convention and removes the expansion: under D every factor
+    # is rational, because D never leaves Q(q).
+    #
+    #     f_pp = q^3/(q^2+1)      f_nn = 1/(q^3+q)      f_pn = (q^4+1)/(2q(q^2+1))
+    z = q ** 3 / (q ** 2 + 1)
+    h = q - 1 / q
     f_pp = z
-    f_nn = (q ** mp.mpf("1.5") - q ** 3 - q ** 2 + q + 1) / (q * (q + 1))
-    f_pn = (q ** mp.mpf("1.5") - (q + 1) * (q ** 2 - 1) / 2) / (q * (q + 1))
+    f_nn = z - h
+    f_pn = z + _pn_d(h)
     return f_pp, f_pn, f_nn
 
 
@@ -71,7 +84,14 @@ NUCLEI = {
 
 
 def strong(bonds, fmap):
-    return float(E0 * mp.fsum(n * mp.log(1 / fmap[b]) for b, n in bonds.items()))
+    # Stays mpf.  This used to `float(...)` the result, which cost the whole
+    # 50-dps computation and then handed a float64 back into mpf arithmetic
+    # (`b1 - ec`, with `coulomb_energy_mev` returning mpf).  The product is an
+    # mpf carrying nothing but a float64's exact binary expansion, and the
+    # witness serializes it at 50 dps — 2.833754824119470328014358528889715…,
+    # of which only the first 17 digits are a measurement.  That is the
+    # float64-padding defect, caught by `witness_float64_padding_audit.py`.
+    return E0 * mp.fsum(n * mp.log(1 / fmap[b]) for b, n in bonds.items())
 
 
 def main() -> int:
@@ -82,7 +102,7 @@ def main() -> int:
           f"f_nn={float(f_nn):.4f}  (isoscalar = f_pn)\n")
 
     def row(nm, Z, A, bonds):
-        ame = float(_ame_binding_mev(Z, A))
+        ame = _ame_binding_mev(Z, A)   # mpf from the AME string — keep it
         ec = coulomb_energy_mev(Z, A)
         b1 = strong(bonds, broken)                 # broken, no Coulomb
         b2 = b1 - ec                               # broken + Coulomb (double-count)
@@ -136,7 +156,7 @@ def main() -> int:
                 "(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run "
                 "charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring."
                 % (split('symm_c'), split('broken'), split('broken_c'), ame_split))
-            wb.add_data("E0_MeV", float(E0))
+            wb.add_data("E0_MeV", E0)      # mpf: m_e/(q(q−1)), not a float64
             wb.add_data("nuclei", {nm: R[nm] for nm in NUCLEI})
             wb.add_data("mirror_split", {"AME": ame_split, "broken": split('broken'),
                                          "broken_plus_coulomb": split('broken_c'),

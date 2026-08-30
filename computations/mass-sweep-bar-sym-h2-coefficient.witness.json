@@ -1,25 +1,25 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:32:47.207873+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-08-29T12:25:04.622085+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "single_coefficient_hypothesis",
-      "computed": 1.9453547247491605,
+      "computed": "1.945354724749158283726328796249840091016516635219054084334394371919308",
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "unit": "dimensionless",
       "source": "(1 - B_AME/B_prod) / h² uniformity check"
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "mass-sweep-bar-sym-h2-coefficient",
   "scriptFile": "mass_sweep_bar_sym_h2_coefficient_hunt.py",
-  "scriptHash": "62ceb262cb8d",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "af4d46f727ff",
+  "scriptCommitSha": "52ce4583dde51262d737e5654bdbab2732e78097",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py"
+    ],
+    "reproduce": "python3 -u computations/mass_sweep_bar_sym_h2_coefficient_hunt.py"
   },
   "description": "Bug-hunt: derive the bar-symmetric h² correction coefficient per KLR-violating atom in the mass-table sweep. Tests whether a SINGLE c (canonical structural correction) reproduces AME for all atoms, or whether c varies (α-cluster recursion wrong). Uses paper-side identity Q_borromean(h)=0 (PR #1211) + ⋈_K bar-symmetric (commit 68e51f80e) to argue any h² correction must be a single canonical factor.",
   "parameters": {
@@ -40,9 +48,9 @@
     "h": 0.2090602987956393,
     "h_squared": 0.04370620853252199,
     "verdict": "VARYING — α-cluster recursion is structurally wrong; each atom needs different bar-symmetric h² correction",
-    "c_4He": 1.2679136990285371,
-    "nu_canonical_4He": 1.889168598938035,
-    "max_deviation_from_c_4He": 1.9453547247491605
+    "c_4He": 1.267913699028538,
+    "nu_canonical_4He": 1.8891685989380347,
+    "max_deviation_from_c_4He": 1.9453547247491583
   },
   "data": {
     "per_atom_c_values": [
@@ -52,9 +60,9 @@
         "rule": "magic",
         "B_AME_MeV": 28.2956624,
         "B_prod_MeV": 29.95567723908384,
-        "diff_MeV": 1.6600148390838407,
-        "c_h2_coefficient": 1.2679136990285371,
-        "c_times_h2_fraction": 0.05541570053098256
+        "diff_MeV": 1.660014839083842,
+        "c_h2_coefficient": 1.267913699028538,
+        "c_times_h2_fraction": 0.0554157005309826
       },
       {
         "atom": "8Be",
@@ -124,70 +132,82 @@
       },
       {
         "atom": "8Be",
-        "c_atom_over_c_4He": 1.690199769712722
+        "c_atom_over_c_4He": 1.690199769712721
       },
       {
         "atom": "12C",
-        "c_atom_over_c_4He": 0.9262055443096296
+        "c_atom_over_c_4He": 0.926205544309629
       },
       {
         "atom": "16O",
-        "c_atom_over_c_4He": 0.9084649453266214
+        "c_atom_over_c_4He": 0.9084649453266207
       },
       {
         "atom": "20Ne",
-        "c_atom_over_c_4He": 1.3896745367379255
+        "c_atom_over_c_4He": 1.3896745367379244
       },
       {
         "atom": "24Mg",
-        "c_atom_over_c_4He": 1.4929678632204497
+        "c_atom_over_c_4He": 1.4929678632204486
       },
       {
         "atom": "40Ca",
-        "c_atom_over_c_4He": 2.9453547247491603
+        "c_atom_over_c_4He": 2.9453547247491585
       }
     ],
     "closed_form_candidates_for_c_4He": [
       {
         "candidate": "5/2",
         "value": 2.5,
-        "rel_diff_to_c_4He": -0.9717430310244896
+        "rel_diff_to_c_4He": -0.9717430310244881
       },
       {
         "candidate": "5/2 · (1 - h²/2)",
         "value": 2.4453672393343475,
-        "rel_diff_to_c_4He": -0.9286543249812379
+        "rel_diff_to_c_4He": -0.9286543249812365
       },
       {
         "candidate": "1/h",
         "value": 4.783308958041433,
-        "rel_diff_to_c_4He": -2.7725824413020828
+        "rel_diff_to_c_4He": -2.77258244130208
       },
       {
         "candidate": "A/2 (= 2)",
         "value": 2.0,
-        "rel_diff_to_c_4He": -0.5773944248195916
+        "rel_diff_to_c_4He": -0.5773944248195905
       },
       {
         "candidate": "A (= 4)",
         "value": 4.0,
-        "rel_diff_to_c_4He": -2.1547888496391834
+        "rel_diff_to_c_4He": -2.154788849639181
       },
       {
         "candidate": "(A+1)/2 (= 5/2)",
         "value": 2.5,
-        "rel_diff_to_c_4He": -0.9717430310244896
+        "rel_diff_to_c_4He": -0.9717430310244881
       },
       {
         "candidate": "ln(2)/h²",
         "value": 15.85923839731308,
-        "rel_diff_to_c_4He": -11.508137114903224
+        "rel_diff_to_c_4He": -11.508137114903215
       },
       {
         "candidate": "π²/24",
         "value": 0.4112335167120566,
-        "rel_diff_to_c_4He": 0.6756612717197238
+        "rel_diff_to_c_4He": 0.675661271719724
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

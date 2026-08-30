@@ -1,8 +1,7 @@
 At the symmetric point the two Hecke channels $\sigma$ and
 $\sigma^{-1}$ become indistinguishable — their eigenvalues merge — so
 their symmetric average carries no more information than a single
-generator; the two-line computation below makes this collapse
-explicit.
+generator.
 
 **Proof.** From $s^2 = 1$ the element $s$ is invertible with
 $s^{-1} = s$.  Substituting, $(s + s^{-1})/2 = (s + s)/2 = s$. $\square$

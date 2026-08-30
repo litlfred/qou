@@ -140,7 +140,7 @@ def main() -> int:
         # Cross-check assertions.
         w.add_assertion(
             name="mu_d_minus_mu_u_MeV",
-            computed=float(mu_d_minus_u),
+            computed=mu_d_minus_u,
             expected=1.286,
             tolerance=1e-3,
             unit="MeV",
@@ -151,8 +151,8 @@ def main() -> int:
         )
         w.add_assertion(
             name="substrate_identity_holds",
-            computed=float(sub_factor),
-            expected=float(sub_factor_identity),
+            computed=sub_factor,
+            expected=sub_factor_identity,
             tolerance=1e-40,
             source=(
                 "(q−1)²(1−q⁻⁴)/3 = (1/3)·ℏ_q²·h_q·[2]_q "
@@ -161,7 +161,7 @@ def main() -> int:
         )
         w.add_assertion(
             name="substrate_bound_MeV",
-            computed=float(bound),
+            computed=bound,
             expected=3.88,
             tolerance=1e-2,
             unit="MeV",
@@ -172,8 +172,8 @@ def main() -> int:
         )
         w.add_assertion(
             name="slack_ratio_one_third_times_skein",
-            computed=float(slack_ratio),
-            expected=float(slack_closed),
+            computed=slack_ratio,
+            expected=slack_closed,
             tolerance=1e-40,
             source=(
                 "slack ratio = (μ_d−μ_u)/(M_N·ℏ²·h·[2]) = "

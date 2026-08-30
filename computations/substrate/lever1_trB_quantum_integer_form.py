@@ -54,7 +54,8 @@ from itertools import permutations
 import sympy as sp
 import mpmath as mp
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 # Canonical substrate q₀ (50-digit), identical literal to lever1_trB_geometric_target.py.
 Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
 

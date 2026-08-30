@@ -66,7 +66,7 @@ hbar = (q - 1) / q
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     print("=" * 70)
     print("  Phase 2c: DERIVE the correction tower (not fit)")

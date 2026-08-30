@@ -9,7 +9,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "r2 / (b*hbar^2)^2 = -1 exactly"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0038526149487923783,
       "expected": 0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "%",
       "source": "c_3 = J - hbar^2 model"
     },

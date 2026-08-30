@@ -49,12 +49,16 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from mpmath import mp, mpf, acos  # noqa: E402
 
 # Substrate constants — canonical, B_AME-independent.
-from qou_substrate.constants import Q, HA, Q_INV  # noqa: E402
-from _li_2_q_util import vol_density_borromean  # noqa: E402
+from qou_substrate.constants import (  # noqa: E402
+    Q_50_DIGIT_STR, HA, Q_INV)
+from _li_2_q_util import per_knot_density_borromean  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
-Q0 = mpf(str(Q))
+# Q_50_DIGIT_STR, not Q: `Q` is the f64 solve, and mpf(str(Q)) keeps only its
+# 17 digits while looking exact at every later inspection (NO FLOAT64).
+Q0 = mpf(Q_50_DIGIT_STR)
 QI0 = mpf(1) / Q0
 H = Q0 - QI0  # h = q − q⁻¹
 HBAR_Q = 1 - QI0  # ℏ_q
@@ -257,7 +261,7 @@ def fmt(x, dps=20):
 def candidate_1_archimedean() -> tuple[dict, str]:
     """Archimedean per-block: does m_e·VolDensity restricted to block λ give M_λ?
 
-    FINDING (from _li_2_q_util.vol_density_borromean): VolDensity is a SINGLE
+    FINDING (from _li_2_q_util.per_knot_density_borromean): VolDensity is a SINGLE
     knot-level SCALAR (Vol(𝓑₃)/ℏ_q² × linking_weight), m(K)=m_e·VolDensity.
     It has NO per-block decomposition — the only per-block object in that file
     is the EXPLORATORY spectral correction, which uses χ^(2,1) of ONE block.
@@ -267,7 +271,7 @@ def candidate_1_archimedean() -> tuple[dict, str]:
     scaled by the knot-level VolDensity (i.e. w_λ = VolDensity · χ^λ), which is
     the most charitable reading of 'archimedean per-block'. We test that."""
     nuc = load_nucleon_blocks()
-    g = vol_density_borromean(Q0, QI0)
+    g = per_knot_density_borromean(Q0, QI0)
     weights = {lam: g * nuc[lam]["chi"] for lam in H3_BLOCKS}
     return weights, ("VolDensity is a knot-level scalar (no per-block split); "
                      "tested w_λ = VolDensity·χ^λ as the charitable reading")
@@ -460,6 +464,15 @@ def main() -> int:
         "design_note": "docs/audits/2026-06-01-e0-lambda-tryall-results.md",
     }
     out = HERE / "e0-lambda-tryall.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n{'=' * 90}")
     print("SUMMARY: " + "  ".join(f"{r['candidate']}={r['verdict']}"

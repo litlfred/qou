@@ -18,4 +18,4 @@ This sublocus consists of $q$-local systems $\mathcal{L}_q$ whose $q$-monodromy 
    $$
    Here, $\mathcal{D}_q^{(n)}$ consists of $q$-$\mathcal{D}$-modules whose Hecke eigenvalues have $n$-divisible monodromy.
 3. The sublocus $\mathrm{LocSys}_{\check{G}_q}^{(n)}$ admits lifts through the brane tower only when $n \mid \chi(A)$ ([obstruction calculation](#prop:q-gl-obstruction-calc)). At levels $n \nmid \chi(A)$, the perpetual obstruction prevents full lifting.
-4. The $q$-GL equivalence $\mathbb{L}_q$ is well-defined as a $\mathbb{G}_m$-family on $\mathbb{G}_m^{\mathrm{nt}} = \mathbb{G}_m \setminus \mu_\infty$. The correspondence is intrinsically a non-torsion phenomenon.
+4. The $q$-GL equivalence $\mathbb{L}_q$ is well-defined as a $\mathbb{G}_m$-family on $\mathbb{G}_m^{\mathrm{nt}} = \mathbb{G}_m \setminus \mu_\infty$.

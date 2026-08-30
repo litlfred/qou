@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-27T03:21:14.951288+00:00",
-  "commitSha": "320302f36ea599ee9e5aab5c2203c418f3c4c78f",
+  "computedAt": "2026-08-23T09:49:03.237551+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "imV41_equals_disc12_norm_form",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-cusp-lattice-geodesic",
   "scriptFile": "qbeta_cusp_lattice_geodesic_probe.py",
-  "scriptHash": "28513def9f1f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "366feb9e34d6",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_cusp_lattice_geodesic_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_cusp_lattice_geodesic_probe.py"
   },
   "description": "SP2/W of the u(q₀) spin-part derivation (#4401): the braid word's closed geodesic on the 4₁ cusp torus (author steering — braid word ↦ geodesic flow, odd/even channels, sinh/cosh alignment). Combining two proved corpus inputs — meridian log-holonomy = ln q₀ (meridian-holonomy-boost) and cusp shape ω = e^{iπ/3} (cusp-shape-bar-parity) — the (m,ℓ) winding geodesic has u = ln q₀·(m+ℓω) and Im 𝔙₄₁ = (√3/16)(ln q₀)²·[(2m+ℓ)²−3ℓ²], the norm form of ℤ[√3] (disc 12), matching the cusp's own √−3. The form never vanishes (√3 irrational): every geodesic is strictly boost- or spin-dominated. The sinh/cosh alignment is exact: G=1 is the Pell equation whose units (2+√3)ⁿ give (x,y)=(cosh nρ, sinh nρ/√3), ρ=arccosh 2, and (barEven,barOdd)=(2x,2√3y) satisfies the PROVED holonomy hyperbola barEven²−barOdd²=4 — the proved boost identity IS the Pell equation of the winding lattice. The longitude (0,1) gives G=−2<0: the spin-dominated regime SP1 called unreachable IS reached (SP1's wall was an artifact of its off-lattice fibre ansatz; the 60° cusp angle gives Im/Re=√3>1 free of q₀). So the sign of Im 𝔙₄₁ is a discrete ARITHMETIC invariant of the winding, not a q₀-hypersensitivity — the first derivable non-smooth candidate for the SP2 crux. HONEST NEGATIVE (scope-(a)): at the derived scale the magnitudes are not reproduced — S_muon/B ≈ 8.2, S_proton/B ≈ −33.5 are not G values and the canonical meridian/longitude pair predicts ratio −1/2 vs observed ≈ −4.08; moreover many G-pairs match that ratio within 1% by chance, so ratio-matching is a fit trap. Sign mechanism only; no (m,ℓ) adopted. No fit, no c_k, no instance.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
@@ -58,18 +70,18 @@
       "cusp_shape_omega": "e^{iπ/3} (primitive Φ₆ root; cusp-shape-bar-parity, proved)",
       "u_geodesic": "u_{m,ℓ} = ln q₀ · (m + ℓ ω)",
       "imV41_form": "(√3/16)(ln q₀)² · [(2m+ℓ)² − 3ℓ²]  (norm form of ℤ[√3], disc 12)",
-      "quantum_B": "0.00117855105739",
+      "quantum_B": "0.00117855105919",
       "no_null_geodesic": "G ≠ 0 on every lattice class (√3 irrational)",
       "spin_sector_slope_window": "m/ℓ ∈ (-1.36603, 0.366025); integer slopes [-1, 0]",
       "pell_fundamental_rapidity": "ρ = arccosh 2 = ln(2+√3) = 1.31695789692",
       "pell_units": "[(1, 2, 1), (2, 7, 4), (3, 26, 15), (4, 97, 56), (5, 362, 209), (6, 1351, 780)]",
       "meridian_1_0_G": "+4  (boost-dominated, Im 𝔙₄₁ > 0; reproduces #4391)",
       "longitude_0_1_G": "−2  (SPIN-dominated, Im 𝔙₄₁ < 0; diagonal CROSSED)",
-      "S_muon_over_B": "8.216001961",
-      "S_proton_over_B": "-33.48125145",
-      "observed_S_ratio": "-4.075127003",
+      "S_muon_over_B": "8.504426573",
+      "S_proton_over_B": "-33.4812514",
+      "observed_S_ratio": "-3.936920509",
       "canonical_lattice_ratio": "−1/2 (longitude/meridian)",
-      "fit_trap_pairs_within_1pct": "1833",
+      "fit_trap_pairs_within_1pct": "1898",
       "verdict": "sign mechanism DERIVED and non-smooth (arithmetic in the winding, no q₀ dependence); sinh/cosh alignment exact via Pell = proved holonomy hyperbola; SP1's diagonal wall falls on the lattice; magnitudes NOT reproduced at scale ln q₀ (scope-(a)), left open, no (m,ℓ) fitted"
     }
   }

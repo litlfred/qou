@@ -155,6 +155,12 @@ def one_loop_torsion(name: str):
     return abs(det), det, z
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 if __name__ == "__main__":
     mp.mp.dps = int(sys.argv[1]) if len(sys.argv) > 1 else 40
 
@@ -258,5 +264,14 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-c-sigma-torsion.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

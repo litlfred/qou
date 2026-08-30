@@ -1,1 +1,1 @@
-**Remark.** The proposition links the internal Reeb flow to the boundary observable. The $S_3$ Galois action of the algebraic braid-group representation is read directly from the monodromy of the ramified-disc cover at the foundry boundary. This establishes the correspondence mapping a Reeb trajectory to its boundary Galois permutation.
+**Remark.** The proposition links the internal Reeb flow to the boundary observable. The $S_3$ Galois action of the algebraic braid-group representation is read directly from the monodromy of the ramified-disc cover at the foundry boundary.

@@ -45,6 +45,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 __all__ = [
     "kappa_41", "A_OMEGA_41", "S_ANCHORS", "ANCHORS",
@@ -173,7 +174,7 @@ PROVENANCE = {
 
 
 if __name__ == "__main__":  # pragma: no cover - manual inspection aid
-    mp.mp.dps = 50
+    set_compute_dps()
     print(f"q0        = {mp.nstr(q0(), 20)}   (canonical proton pin)")
     print(f"ln q0     = {mp.nstr(ln_q0(), 20)}")
     print(f"L         = {mp.nstr(L(), 20)}")

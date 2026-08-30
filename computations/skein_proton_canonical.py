@@ -10,9 +10,15 @@ formula.md)):
 
     m_p = m_e · [Vol(𝓑₃)/ℏ_q² · λ_p_scale + S(p)]
 
-The production script `m_p_borromean_verification_50dps.py` ASSUMES
-S(p) = 0 (no compute artifact). This script provides three
-independent Skein evaluations:
+⚠ That absolute-mass form is DEPRECATED (owner ruling 2026-06-24): the
+canonical route is the muon-anchored m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV
+via `canonical_mass.py`. What this script settles — whether the Skein
+correction S(p) vanishes — is a question about the braid evaluation and is
+unaffected by which absolute-mass assembly consumes it.
+
+`m_p_borromean_verification_50dps.py` (itself deprecated for absolute mass,
+and imported by nothing) ASSUMES S(p) = 0 (no compute artifact). This script
+provides three independent Skein evaluations:
 
   1. V(𝓑₃, t) — closed-form Jones polynomial of the topological
      Borromean rings, V(t) = -t⁻³ + 3t⁻² - 2t⁻¹ + 4 - 2t + 3t² - t³
@@ -281,7 +287,7 @@ def main() -> int:
     # ── Headline assertions ──────────────────────────────────
     w.add_assertion(
         "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
-        computed=float(rel_diff),
+        computed=rel_diff,
         expected=0.0,
         tolerance=1e-12,
         unit="relative",
@@ -297,7 +303,7 @@ def main() -> int:
     # (which was a CAL-4 tautology).
     w.add_assertion(
         "Family_A_m_p_gap_within_5pct_of_CODATA",
-        computed=float(abs((m_p_pred_S0 - M_P_CODATA) / M_P_CODATA)),
+        computed=abs((m_p_pred_S0 - M_P_CODATA) / M_P_CODATA),
         expected=0.0,
         tolerance=5e-2,  # 5 % ceiling, matches m_p_borromean_verification
         unit="relative",

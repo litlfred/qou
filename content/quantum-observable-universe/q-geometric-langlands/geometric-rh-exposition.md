@@ -11,7 +11,7 @@ $\mathrm{SU}(2)$ is compact, the holonomy of a flat connection lies
 in $\mathrm{U}(1) \subset \mathrm{SU}(2)$: any closed loop yields
 a pure phase $e^{i\phi}$. The Frobenius eigenvalues are
 $\alpha = q^{1/2} e^{i\phi}$, with $|\alpha| = q^{1/2}$ by
-construction --- the critical-line property is visibly forced by the
+construction. The critical-line property is forced by the
 compactness of the gauge group.
 
 With this concrete picture in mind, the general mechanism unfolds

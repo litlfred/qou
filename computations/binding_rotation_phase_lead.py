@@ -45,6 +45,7 @@ from codata_constants import (  # noqa: E402
     AME_B_HE4_MEV_VALIDATION,
 )
 from mass_at_3A_proper import (  # noqa: E402
+    Q0_PROTON,
     atom_braid_word_3A, chi_lambda_of_word, _cached_seminormal,
 )
 from sympy.utilities.iterables import partitions as _sympy_partitions  # noqa: E402
@@ -74,7 +75,7 @@ def strong_channel_rho(Z, N, ydict, ame, acos_fn, clamp_fn):
     w_d0 = [(c, 0.0 if (k % 3 == 2) else d, k) for (c, d, k) in w_atom]
     S = mpf(0)
     for lam in _parts(n):
-        sig, dim, _ = _cached_seminormal(lam)
+        sig, dim, _ = _cached_seminormal(lam, Q0_PROTON)
         if dim == 0:
             continue
         cf = mpf(str(chi_lambda_of_word(sig, dim, w_free, ng)))

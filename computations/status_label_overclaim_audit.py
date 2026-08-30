@@ -20,7 +20,15 @@ A block is flagged when BOTH hold:
       - `.ts` has `validation: "not_checked"|"stub"` or `status:
         "experimental"|"draft"|"wip"`
       - the block `kind` is `conjecture`
-      - a sibling `.qa.json` records a `result: "fail"` on any criterion
+
+A sibling `.qa.json` `result: "fail"` is deliberately NOT a signal: stale
+bib/cite criteria made it too noisy, so the reader is the four hard
+signals above and nothing here consults a QA sidecar.  This matters for a
+freshness audit -- 19.9% of latest-per-criterion verdicts carry no
+`field_hash` and so record no block version -- but only for consumers that
+actually read them.  This one does not.  The `qa_has_fail()` helper that
+did was dead (zero call sites) and is removed rather than left to imply a
+QA read that never happens.
 
 Report-only by default (exit 0). `--strict` exits 1 on any hit.
 
@@ -68,23 +76,6 @@ def _strip_lean_comments(src: str) -> str:
     return src
 
 
-def qa_has_fail(qa_path) -> bool:
-    if not os.path.exists(qa_path):
-        return False
-    try:
-        doc = json.load(open(qa_path))
-    except Exception:
-        return False
-    for crit, entries in (doc.get("criteria") or {}).items():
-        if crit.startswith("da-"):
-            continue  # don't let the watcher's own findings self-trigger
-        if entries and isinstance(entries, list):
-            last = entries[-1]
-            if last.get("result") == "fail":
-                return True
-    return False
-
-
 def audit_block(ts_path) -> dict | None:
     base = ts_path[:-3]
     md, ts = read(base + ".md"), read(ts_path)
@@ -106,9 +97,7 @@ def audit_block(ts_path) -> dict | None:
     is_conj = bool(KIND_CONJ.search(ts))
     if is_conj:
         signals.append("kind:conjecture")
-    # qa:fail intentionally NOT a signal — stale bib/cite criteria make it
-    # too noisy; the hard signals above (lean sorry/:True/stub, conjecture,
-    # not_checked) are the actionable class-2 pattern.
+    # qa:fail intentionally NOT a signal — see the module docstring.
 
     if not signals:
         return None

@@ -34,6 +34,20 @@ from pathlib import Path
 
 import sympy as sp
 from mpmath import mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). The literal below was the
+# SUPERSEDED muon pin A (1.10997859555733471...), retired as the muon anchor by
+# PR #5500's re-derivation to CODATA-2022. A frozen literal cannot follow an
+# anchor move. Resolves PROTON per the owner directive of 2026-08-15.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
 
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
@@ -60,7 +74,7 @@ def ser_mul(a, bb):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.dps = 50
+    set_compute_dps()
 
     print("=" * 76)
     print(" c4^even — EXACT-rational s-series of the net-route ladder (bean 9fnm)")
@@ -73,8 +87,11 @@ def main() -> int:
 
     d_wit = json.loads((ROOT / "free-neutron-decay.witness.json").read_text())
     params = d_wit.get("parameters")
+    # The `else` is NOT a rare fallback -- free-neutron-decay.witness.json carries
+    # `parameters: null`, so it fires on EVERY run and the literal was the
+    # producer's real pin. It was the superseded muon value A (bean qou-1c4y).
     q0 = mp.mpf(str(params["q"])) if params and "q" in params else \
-        mp.mpf("1.1099785955573347198997632204832250266562084087802")
+        mp.mpf(_Q0_RESOLVED)
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     dn_mine = dnet_f(q0)
@@ -85,12 +102,24 @@ def main() -> int:
     hbar = (q - 1) / q
     b = sp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     u = b * hbar**2
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)
     Qb_over_me = sgn * dnet_reg / q
-    Rq = Qb_over_me / (QA_over_me * sp.cos(alpha_eff))
+    # cos(alpha_eff) is expanded to a FINITE Taylor polynomial before it ever
+    # reaches sp.series.  Exact, not an approximation: alpha_eff(q=1) = 0 (so
+    # alpha_eff = O(s)), and sp.series(..., 0, NS+1) needs terms only through
+    # s^NS, so a cos polynomial of degree >= NS cannot affect a retained
+    # coefficient.  A LIVE cos node makes sympy's nseries call trigsimp, whose
+    # futrig hands an expression carrying sqrt(q**4+q**2+1) to polys.factor --
+    # factoring over an algebraic extension.  Profiled on the c_3 twin: 3
+    # factor() calls = 97.8% of a 1200s run, and the live-cos route could not
+    # complete even at series order 3 within 420s (bean qou-uz7q).
+    _kmax = NS // 2                      # degree 2*_kmax >= NS
+    cos_alpha_eff = sum((-1) ** k * alpha_eff ** (2 * k) / sp.factorial(2 * k)
+                        for k in range(_kmax + 1))
+    Rq = Qb_over_me / (QA_over_me * cos_alpha_eff)
 
     R1 = sp.simplify(Rq.subs(q, 1))
     print(f"  R(q=1) exact = {R1}")

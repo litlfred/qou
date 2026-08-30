@@ -4,7 +4,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 # Typed interface to the cited RSZ isoformal-classification statements
 
 Ramis–Sauloy–Zhang, *Local analytic classification of q-difference equations*
-(Astérisque 355, `uploads/0903.0853v3.pdf`), §3.3.
+(Astérisque 355, `library/arxiv-0903.0853v3/0903.0853v3.pdf`), §3.3.
 
 **Why this file exists.** Prose citations do not typecheck. The corpus carried,
 from 2026-08-01, the chain
@@ -38,7 +38,7 @@ This file does **not** re-prove RSZ and claims no Stokes multiplier. It fixes th
 §7c: `ℤ`-valued slopes and ranks; pure arithmetic, nothing archimedean.
 Sorry-free.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853 (§3.3, Thm 3.3.5)
 -- Ref: [manuscript] docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
@@ -114,5 +114,46 @@ description of the corpus could have applied. -/
 theorem rszIsoformalDim_two (r μ : Fin 2 → ℤ) :
     rszIsoformalDim 2 r μ = r 0 * r 1 * rszLevel (μ 0) (μ 1) := by
   simp [rszIsoformalDim, Fin.sum_univ_two]
+
+/-- **C1's `∞` has NO Stokes data — the instance, not just the general lemma.**
+
+`L1`'s Newton polygon at `∞` has a single edge `(r,d) = (2,1)`: slope `½` with
+multiplicity `2`, pure isoclinic.  After the ramified pullback `ζ² = x` — which
+`QOU.QBeta.ramified_qBorel_budget` showed is the only pairing with sub-quadratic
+leftover — the data is `k = 1`, rank `2`, slope `1`.  The isoformal space is a
+**point**.
+
+So there is no **local isoformal** q-Stokes multiplier at C1's `∞` to compute.
+Independently: RSZ's Stokes matrices are unipotent automorphisms inducing the
+identity on `gr M₀` (§4.4, Thm 5.5.7), and with one slope there is no
+strictly-upper-triangular part — the Stokes group is trivial.
+
+**Do not read this as "C1 has no Stokes multipliers".**  Two different objects
+share the name, and only the first is zero-dimensional:
+
+* *local isoformal moduli at `∞`* — `F(P₁,…,P_k)` at a single point.  **This
+  lemma. Dimension 0.**
+* *the connection-matrix Stokes multipliers* — the data in `P = Y₀⁻¹Y_∞` between
+  the theta-normalised solutions at `0` and at `∞`, functions of the invariant
+  `χ = P₀₀P₁₁/(P₀₁P₁₀)`.  **Global, live, and open** (bean `qou-wgnx`; the
+  connection matrix and `χ` are already built).  A dimension count at one point
+  says nothing about it.
+
+**This instance exists because the general lemma above was not enough.**
+`rszIsoformalDim_one`'s docstring already said "no Stokes data to extract", and I
+still wrote "the Stokes multiplier is the remaining open item" three times across
+PRs #4771 and #4783.  A lemma naming C1 is harder to walk past than a lemma about
+an abstract `k = 1`.  Retraction:
+[`2026-08-08-c1-infinity-has-no-stokes-multiplier.md`](../../../../../docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md). -/
+theorem c1_infinity_isoformalDim_eq_zero :
+    rszIsoformalDim 1 (fun _ => 2) (fun _ => 1) = 0 :=
+  rszIsoformalDim_one _ _
+
+/-- The same conclusion for **any** rank and slope, so it cannot be read as an
+artefact of the particular numbers `(2, 1)`: what kills the Stokes data is `k = 1`
+alone. -/
+theorem isoformalDim_eq_zero_of_pure (r μ : Fin 1 → ℤ) :
+    rszIsoformalDim 1 r μ = 0 :=
+  rszIsoformalDim_one r μ
 
 end QOU.MathlibExt.RSZ

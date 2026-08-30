@@ -3,14 +3,27 @@
 Route 3 of the bar-odd-S program: the EXPERIMENTAL budget for the decay-sector
 substrate determination q*.
 
-#3636 established (merged): the S=0 point q* is a third, decay-sector
-determination of q₀, and its precision limit is the measured neutron
-Q_β (dq*/dQ_β ≈ −0.539 per MeV), not theory ("a better neutron Q_β directly
-sharpens everything"). This probe quantifies that lever as a concrete budget:
+WITHDRAWN PREMISE (2026-08-15, PR #5074, bean qou-kh7e, registry §9f).
+This header previously read: "#3636 established (merged): the S=0 point q* is a
+third, decay-sector determination of q₀". It is not one. q* is root-found on
+S(q) = c₃(q) + Vol(4₁) where c₃ = (Q_β^exp/Q_N2 − 1)/u³ is EXTRACTED FROM
+EXPERIMENTAL Q_β, so locating q* presupposes (H1) c₃^even = −Vol(4₁). It is
+independent of the two MASS pins only — weaker, and a different statement.
+
+WHAT SURVIVES, AND IT IS THE WHOLE ARITHMETIC OF THIS PROBE: the precision limit
+on q* is the measured neutron Q_β (dq*/dQ_β ≈ −0.539 per MeV), not theory. That
+derivative is real and the error propagation below is unchanged. Only the
+INTERPRETATION of the first threshold moves: a sharper Q_β sharpens the OFFSET
+test (does c₃^even equal −Vol(4₁)?), it does not adjudicate the substrate
+modulus, because the quantity being sharpened already assumes the answer.
+
+This probe quantifies that lever as a concrete budget:
 
   * σ(q*) TODAY from the canonical CAL-3 uncertainty Q_β = 0.78233341(61) MeV;
-  * the improvement factor in σ(Q_β) needed for q* to ARBITRATE the μ–p
-    substrate tension (σ(q*) ≤ |q_proton − q_muon|, the two-pin spread);
+  * the improvement factor in σ(Q_β) needed for σ(q*) to fall below the two-pin
+    spread |q_proton − q_muon| — read as "the (H1)-conditional offset test
+    resolves structure at the scale of the μ–p tension", NOT as "q* arbitrates
+    the tension";
   * the factor needed for q* to be COMPETITIVE with each mass pin itself
     (muon ratio 22 ppb; proton ratio 0.06 ppb — the current precision pin).
 
@@ -34,7 +47,11 @@ import sys
 
 import mpmath as mp
 
-mp.mp.dps = 50
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, os.path.join(ROOT, "computations", "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 
 def _repo_root():
@@ -99,7 +116,10 @@ def main():
           f"({mp.nstr(rel_ppb, 5)} ppb)")
 
     # --- budget thresholds ---
-    # (1) arbitrate the μ–p tension: σ(q*) ≤ |Δq|
+    # (1) resolve at the μ–p scale: σ(q*) ≤ |Δq|.  NOT "arbitrate the tension":
+    #     q* presupposes (H1) (see the withdrawn premise in the module docstring),
+    #     so this threshold measures when the (H1)-conditional OFFSET test becomes
+    #     sharper than the two-pin spread — not when q* can adjudicate the modulus.
     f_arbitrate = sigma_qstar / spread
     sigma_qb_needed_arb = spread / abs(dqstar_dQ)
     # (2) competitive with the muon pin (22 ppb on q via the mass-ratio pin)
@@ -112,7 +132,8 @@ def main():
     sigma_qb_needed_p = sigma_q_proton_pin / abs(dqstar_dQ)
 
     rows = [
-        ("arbitrate μ–p tension (σ(q*) ≤ |Δq|)", spread, f_arbitrate, sigma_qb_needed_arb),
+        ("resolve at μ–p scale, (H1)-conditional (σ(q*) ≤ |Δq|)",
+         spread, f_arbitrate, sigma_qb_needed_arb),
         ("competitive with muon pin (22 ppb)", sigma_q_muon_pin, f_muon, sigma_qb_needed_mu),
         ("competitive with proton pin (0.06 ppb)", sigma_q_proton_pin, f_proton, sigma_qb_needed_p),
     ]
@@ -128,8 +149,12 @@ def main():
     verdict = (
         f"Today σ(q*) = {mp.nstr(sigma_qstar, 4)} ({mp.nstr(rel_ppb, 4)} ppb) from "
         f"σ(Q_β) = {mp.nstr(sigma_qb * mp.mpf(10) ** 6, 3)} eV. A ~{mp.nstr(f_arbitrate, 3)}× "
-        f"sharper neutron Q_β makes q* an arbiter of the μ–p substrate tension "
-        f"(needs σ(Q_β) ≈ {mp.nstr(sigma_qb_needed_arb * mp.mpf(10) ** 6, 3)} eV); "
+        f"sharper neutron Q_β brings σ(q*) below the μ–p spread "
+        f"(needs σ(Q_β) ≈ {mp.nstr(sigma_qb_needed_arb * mp.mpf(10) ** 6, 3)} eV) — which "
+        f"sharpens the (H1)-conditional OFFSET test, NOT the substrate modulus: q* is "
+        f"the zero of c₃ + Vol(4₁) with c₃ extracted from experimental Q_β, so it "
+        f"presupposes (H1) and is not an independent determination of q₀ "
+        f"(WITHDRAWN 2026-08-15, registry §9f); "
         f"~{mp.nstr(f_muon, 3)}× makes it competitive with the muon pin; the proton "
         f"pin needs ~{mp.nstr(f_proton, 3)}× ({mp.nstr(sigma_qb_needed_p * mp.mpf(10) ** 6, 3)} eV — "
         f"beyond current technique). Pure error propagation on committed values; "

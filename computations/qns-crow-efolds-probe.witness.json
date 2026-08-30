@@ -1,0 +1,78 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T00:28:00.150347+00:00",
+  "commitSha": "82c809a6151e03db1c9314d72a3bbef69eb36b08",
+  "assertions": [
+    {
+      "name": "Closed form N_e = (s*/2)ln(d0^2/d^2_ov) matches direct integration",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Simpson n=200001 across the sweep; max rel err 1.03e-14"
+    },
+    {
+      "name": "Crow amplification during approach is FINITE and power-law (A = (d0^2/V1_0)^(s*/3)); no finite-time linear 3D runaway before the overlap cutoff engages",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "log e-folds; exponent = s*/3 exactly; scope (a): Crow linear theory + phase-1 approach law, constant s*, alone"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 461,
+  "computation": "qns-crow-efolds-probe",
+  "scriptFile": "qns_crow_efolds_probe.py",
+  "scriptHash": "aaab023b1d01",
+  "scriptCommitSha": "debe683c63e96046de2808625c6a97901869ca5e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "U3 (bean qou-7fi2): quantifies the named 3D escape of the two-regime pair model — the Crow instability — during the phase-1 approach. sigma = s* Gamma/(2 pi d^2) along d^2 = d0^2 - (Gamma/pi) t integrates to N_e = (s*/2) ln(d0^2/d^2_ov); with the strain-race overlap d^2_ov = d0^2 rho^(2/3) the amplification is the power law A = rho^(-s*/3) (~rho^-0.27 classically) — bounded for every finite core ratio, logarithmic e-folds, no linear finite-time runaway. Sweeps s* in {0.5, 0.8, 1.2} and rho in {1e-2..1e-8}; viscous-overlap engagement (pair_viscous_core_race) taken when earlier. Honest caveats: s* held constant (classically it depends on the evolving core/separation ratio); linear theory only (nonlinear saturation / reconnection not modeled); scope (a) throughout. The 2D reduction degrades only polynomially in the core ratio before the cutoff engages — the 3D escape requires large seed perturbations or the nonlinear regime, which remain the open content of qou-ohaz U3.",
+  "data": {
+    "s0.5_rho1e-02_efolds": 0.7675283643313485,
+    "s0.5_rho1e-02_amplification": 2.154434690031884,
+    "s0.5_rho1e-04_efolds": 1.0973047752717686,
+    "s0.5_rho1e-04_amplification": 2.9960800230806077,
+    "s0.5_rho1e-06_efolds": 1.0973047752717686,
+    "s0.5_rho1e-06_amplification": 2.9960800230806077,
+    "s0.5_rho1e-08_efolds": 1.0973047752717686,
+    "s0.5_rho1e-08_amplification": 2.9960800230806077,
+    "s0.8_rho1e-02_efolds": 1.2280453829301576,
+    "s0.8_rho1e-02_amplification": 3.4145488738336014,
+    "s0.8_rho1e-04_efolds": 1.7556876404348298,
+    "s0.8_rho1e-04_amplification": 5.787426042140142,
+    "s0.8_rho1e-06_efolds": 1.7556876404348298,
+    "s0.8_rho1e-06_amplification": 5.787426042140142,
+    "s0.8_rho1e-08_efolds": 1.7556876404348298,
+    "s0.8_rho1e-08_amplification": 5.787426042140142,
+    "s1.2_rho1e-02_efolds": 1.8420680743952365,
+    "s1.2_rho1e-02_amplification": 6.309573444801932,
+    "s1.2_rho1e-04_efolds": 2.6335314606522444,
+    "s1.2_rho1e-04_amplification": 13.922851187943785,
+    "s1.2_rho1e-06_efolds": 2.6335314606522444,
+    "s1.2_rho1e-06_amplification": 13.922851187943785,
+    "s1.2_rho1e-08_efolds": 2.6335314606522444,
+    "s1.2_rho1e-08_amplification": 13.922851187943785,
+    "power_law_exponent": 0.26666666666666666,
+    "max_rel_err_closed_vs_numeric": 1.0306249798788257e-14,
+    "precision_tier": "float64-integrator",
+    "tier": "exploratory",
+    "s_star_sweep": [
+      0.5,
+      0.8,
+      1.2
+    ]
+  }
+}

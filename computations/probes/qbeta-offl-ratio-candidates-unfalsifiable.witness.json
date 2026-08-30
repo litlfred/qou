@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-07T22:09:57.295609+00:00",
-  "commitSha": "5f56a66402e3d982c838d3ce68ed06cbe0cd4979",
+  "computedAt": "2026-08-08T08:38:27.747958+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
   "assertions": [
     {
       "name": "ratio_map_is_bijection",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "rho(A) monotone decreasing, ->1 as A->infinity and ->infinity as A->A_crit+, hence onto (1, infinity)"
     },
     {
       "name": "inversion_roundtrip_exact",
-      "computed": 1.2796761219871605e-69,
-      "expected": 0.0,
+      "computed": "1.2796761219871603781e-69",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "A_forced_by_ratio inverts theta_pair on the U1 sample at full precision (relative error)"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 15,
   "computation": "qbeta-offl-ratio-candidates-unfalsifiable",
   "scriptFile": "qbeta_offl_ratio_candidates_unfalsifiable_probe.py",
-  "scriptHash": "7812536f8b72",
-  "scriptCommitSha": "45490b16ed8aac1713ab44571faa4b14da7c4769",
+  "scriptHash": "7027b78746d5",
+  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,10 +36,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Bean qou-offl: a formalize-first design constraint on the cone-manifold route, derived before running any geometry. The channel has 2 anchor equations in 3 unknowns, so one extra scalar (a ratio theta_p/theta_mu) closes it with zero residual and cannot be tested. Established concretely: rho(A) is a monotone bijection from A in (A_crit, infinity) onto rho in (1, infinity), so every ratio above 1 is attained by exactly one A and no ratio candidate is refutable — it only names an A. Plausible geometric ratios moreover cluster into A in [2.5, 4], making a 'match near 3' near-guaranteed. Consequence: qou-offl must supply BOTH theta values absolutely, from a normalization fixed in advance. Derives no A_omega; endorses no candidate; wires nothing.",
   "contentBlock": "conj:im-q-physical-role",

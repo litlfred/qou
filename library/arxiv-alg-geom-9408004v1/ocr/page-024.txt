@@ -1,0 +1,49 @@
+(i) Which normal functions in D arise from effective curves?
+(ii) Which of these arise from irreducible curves?
+
+(iii) Which of these arise from rational curves?
+
+We note that a given normal function v might arise from many different
+curves. The simplest example is that of complete intersection curves: a given
+family of such curves is parametrized by a (usually positive dimensional)
+projective space on each CY in the family, and all such curves have the same
+Abel-Jacobi image since they are rationally equivalent. In fact, the Corollary
+to Theorem 5 says that all curves in any connected family on the generic
+CY give rise to the same v.
+
+The above remark suggests that we need not only decide which normal
+functions vy come from rational curves, but to determine a multiplicity or
+weight of v accounting for all its realizations in terms of rational curves. Now
+this seems rather special; one can just as well hope for a weight function w,
+counting all curves, of all genera, corresponding to v, through an expansion
+such as w, = > N,,g\9~!, where A is a dummy variable and the coefficients
+Ny g account for the curves.
+
+A master partition function F, accounting for curves of all genera on a
+CY, has recently been proposed in [BCOV]. It can be written:
+
+F = DFA
+YT Neg aAt!
+= Lug’,
+
+where the g* are as in (10), the F, are the genus-g partition functions (they
+depend on the q*), and the coefficients N,,, are certain combinations of
+the “numbers” nz, of curves of genus g and fundamental class k. [A rigid
+non-singular curve of class k and genus g contributes a term of 1- \9~1,
+but also makes contributions to higher-genus terms, because of multiple
+(branched) coverings. The situation is more complicated for continuous fam-
+ilies of curves, where the basic contribution involves the Euler characteristic
+of the base, but there are other terms corresponding, e.g., to singular curves
+in the family.] This F is a function of the variables q and 4. Via the mirror
+correspondence (11), it is carried to a function on M, whose leading term
+is the Yukawa coupling. The genus-0 partition function Fo is recovered as a
+residue of F in the A direction.
+
+In order to recover the partition function Fo, or F for that matter, we
+need a refinement of the BCOV coefficients: to each Lagrangian normal
+function v we want to associate a weight function
+
+“1
+Wy = » Nygr?
+
+24

@@ -18,8 +18,10 @@ import os
 import sys
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_SUBSTRATE = mp.mpf("1.1097")  # substrate q₀ (display value; identity is q-independent)
 QS = [Q_SUBSTRATE, mp.mpf("1.5"), mp.mpf("2"), mp.mpf("0.7")]

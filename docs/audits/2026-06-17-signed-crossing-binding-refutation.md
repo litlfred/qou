@@ -1,5 +1,39 @@
 # Signed-crossing (ILP-with-chirality) binding construction — refuted (2026-06-17)
 
+> **🛑 CORRECTED 2026-08-23 — the blanket "refuted" does NOT survive convention D.**
+> Every number below was computed with `z = √q/(q+1)` — **convention C**, which
+> the kernel line in §Context states outright and which the 2026-08-09 owner
+> ruling excised. Re-run under canonical D (`z = q³/(q²+1)`) at the proton pin,
+> the probe returns **1/4**, not 0/4, and its own verdict field changes
+> `signed-ILP-pure-chirality-refuted` → `signed-ILP-pure-chirality-partial`:
+>
+> | atom | miss under C | miss under D | ≤5 % under D |
+> |---|---|---|---|
+> | D | 74.9 % | 27.4 % | ✗ |
+> | T | 39.0 % | 11.6 % | ✗ |
+> | ³He | 36.9 % | **0.013 %** | **✓** |
+> | ⁴He | 16.4 % | 39.3 % | ✗ |
+>
+> **What is retracted:** the word *refuted*, and the "0/4" that carried it. The
+> C-frame table below stands **as a record of what C gives** and is kept for
+> that reason, not deleted.
+>
+> **What still holds, re-scoped to (a):** the construction *alone* does not
+> reproduce the numbers — three of four still miss by 12–39 %, which is not a
+> closure by any reading. The honest statement is "this construction, alone,
+> does not reproduce the binding as-is", not "signed chirality is excluded".
+>
+> **What is NOT claimed:** that ³He at 0.013 % is evidence the construction
+> works. One near-match among four, with the other three missing by an order of
+> magnitude more, is exactly the shape a coincidence takes; it is a lead to
+> probe, not a result. Do not wire it, and do not cite this banner as support
+> for the signed-crossing kernel.
+>
+> Migration + full context:
+> [`2026-08-23-convention-c-float64-migration.md`](2026-08-23-convention-c-float64-migration.md).
+
+
+
 **Branch:** `claude/binding-edge-set-sdp-probe-2026-06-17`
 **Probe:** [`computations/probes/signed_crossing_feasibility_probe.py`](../../computations/probes/signed_crossing_feasibility_probe.py)
 · witness `computations/signed-crossing-feasibility.witness.json`

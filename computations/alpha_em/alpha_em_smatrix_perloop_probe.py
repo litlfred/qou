@@ -104,8 +104,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # REUSE #3822's machine-validated genuine Σ(2,3,5) S-matrix — do NOT rebuild it.
 import keystone_valuemap_genuine_smatrix_s013 as genuine  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 B1 = 8  # dim H¹(M_Bring) = 2g, g = 4  (the target mode count)
 

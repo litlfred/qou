@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2304.07001v3",
+ "source_sha256": "b6c0d7f50b6407f1",
+ "brief": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al",
+ "extended": "**RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES**\n\n*SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSW AMI, ROBERT OSBURN*\n\n20 pp, 6 sections.\n\n**Abstract.** We prove resurgence properties for the Borel transform of a f ormal power series associated to elements in the Habiro ring that come from radi al limits of partial theta series via strange identities. As an application, we prove a conjectur e in quantum topology due to Costin and Garoufalidis for two families of torus knots.\n\n**Outline.** 1 Introduction; 2 Proof of Theorem 1.2; 3 Proof of Theorem 1.4 and Corollary 1.5; 4 Concluding Remarks; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: Let s and t be coprime positive integers and (n, m)∈ D(s, t). For 0⁄= α∈ Q,\n- Proposition 3.3: For all k∈ Z, and (n, m)∈ D(s, t), we have\n- Proposition: s (1) and (2) of Conjecture 1.1 follow from Theorem 1.2 parts (1) and (2), namely the\n- Corollary 1.5: Let u, k∈ Z≥1. Conjecture 1.1 is true for the families of torus knots T (2, 2u+1)\n- Corollary 1.5: generalizes Theorems 2.5 and 3.1 in [ 13] and upon taking either u = 1 or k = 1\n- Corollary 1.5: In Section 4, we make some concluding remarks.",
+ "tokens": {
+  "brief": 49,
+  "extended": 297
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-2-proof-of-theorem-12",
+   "title": "Proof of Theorem 1.2",
+   "pages": "7-13"
+  },
+  {
+   "id": "sec-002-3-proof-of-theorem-14-and-corollary-15",
+   "title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17"
+  },
+  {
+   "id": "sec-003-4-concluding-remarks",
+   "title": "Concluding Remarks",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-004-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "18-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

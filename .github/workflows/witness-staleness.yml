@@ -8,11 +8,43 @@
 #
 # NOTE: this branch predates the CI reorg on `main`. At merge, reconcile
 # with `main`'s witness-pipeline rather than duplicating this job.
+#
+# THE PRECISION STEPS HERE DO NOT PROTECT `main`, AND CANNOT.
+# Every gate in the precision family below is strict and correct. None of them
+# has run on a push since 2026-06-30, because the trigger is `workflow_dispatch`
+# only (owner directive, Actions billing — see `on:` below). Three witnesses
+# carrying raw float64 reached `main` in that window, from three different
+# sessions (bean `qou-mnrd`).
+#
+# The enforcing copy is therefore agent-side: `scripts/precision-gates.sh` runs
+# the same family, in the same order, and is required before every commit that
+# touches a witness or a `computations/` script (AGENTS.md §"QA is agent-owned")
+# and again at `/prepare-merge` step 4b. KEEP THE TWO LISTS IN SYNC — if you add,
+# remove or re-scope a precision step here, edit the `GATES` array in that script
+# in the same change. Re-enabling this workflow's push trigger is an owner
+# decision about billing, not an agent one; do not flip it unasked.
 name: witness-staleness
 
 on:
   # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch: {}
+
+# EVERY STRICT GATE IN THIS FILE FAILED OPEN.
+#
+# The steps below all run `python3 <audit>.py --strict | tee /tmp/x.txt`. The
+# default shell for a `run:` block on Linux is `bash -e {0}` — `-e` but NOT
+# `-o pipefail` — so the exit status of that pipeline is `tee`'s, which is
+# always 0. A red audit printed its own failure into the step summary and the
+# step passed anyway. Verified: `bash -e -c 'false | tee /dev/null'` exits 0.
+#
+# Naming `shell: bash` explicitly (as opposed to leaving the default) runs
+# `bash --noprofile --norc -eo pipefail {0}`, which makes all seven real in
+# one line. Checked before turning it on rather than after: six of the seven
+# were already green, and the seventh is marked at its own step below rather
+# than left to red-wall the whole job by surprise.
+defaults:
+  run:
+    shell: bash
 
 jobs:
   staleness:
@@ -77,6 +109,75 @@ jobs:
             echo '## mpf(<float>) source audit (baseline zero)';
             echo '```';
             head -14 /tmp/mpfsrc.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: import-time dps ratchet (strict on NEW constants built at dps=15)
+        # The third member of the float64 family, and the one the other two
+        # structurally cannot see. `mp.mpf("2.22456607")` is exactly the
+        # COMPLIANT form the source audit above tells you to write — but at
+        # module scope it runs at IMPORT time, when mp.dps is still mpmath's
+        # default 15. The value is rounded to ~53 bits before set_compute_dps()
+        # is ever called, and raising dps afterwards cannot recover it. Printed
+        # at 50 dps it yields the binary64 expansion, i.e. padding:
+        #   mp.mpf("2.22456607") -> 2.2245660699999998399789546965621411800384…
+        #
+        # So string-sourcing is NECESSARY BUT NOT SUFFICIENT; the timing matters
+        # too. The fix is one line: call the idempotent set_compute_dps() at
+        # module scope ABOVE the constant.
+        #
+        # WIRED 2026-08-10 (bean qou-j6gb). The audit was written 2026-08-07 and
+        # belonged to no gate list — not here, not in scripts/precision-gates.sh
+        # — so nothing ran it, and its defect class landed five more times in the
+        # interim, each caught by a different gate reacting to a downstream
+        # symptom rather than the cause.
+        #
+        # Ratchet: 91 files / 185 proven-lossy / 103 position-risky are baselined
+        # and tolerated so the gate can run today; anything new fails. `literal`
+        # and `expr` counts are compared SEPARATELY so a statically-proven defect
+        # cannot hide behind an unproven one drained from the same file. A file
+        # the audit CANNOT PARSE is never baselined and always fails — that is
+        # "no information", not "no findings", and conflating the two is the bug
+        # bean qou-brkp records this audit having had once already.
+        run: |
+          python3 computations/mpf_import_time_dps_audit.py --self-test
+          python3 computations/mpf_import_time_dps_audit.py --strict | tee /tmp/impdps.txt
+          {
+            echo '## import-time dps ratchet (strict on NEW)';
+            echo '```';
+            head -16 /tmp/impdps.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: never-raises-dps ratchet (strict on NEW producers stuck at 15 dps)
+        # The blind spot the other three float64 gates SHARE, rather than a gap
+        # in any one of them. Each of those asks whether a value got in before
+        # precision was raised — so all three assume it was raised somewhere. A
+        # producer that never calls set_compute_dps(), never assigns mp.dps and
+        # never opens a workdps block runs its whole computation at mpmath's
+        # default 15, and its numbers are then HONESTLY float64: no padding to
+        # detect, no constant built too early. It passes all three cleanly.
+        #
+        # Reported by #4899, which found it the hard way — markov_trace_recursive.py
+        # was "float64 wearing 60 digits", exposed only by tightening a comparison
+        # until three assertions failed at digit 17 with dyadic tails.
+        #
+        # RUNNABLE producers only (a __main__ guard). mp.dps is GLOBAL state, so
+        # an imported helper legitimately inherits its caller's precision —
+        # _li_2_q_util.py builds 40 mpmath values, raises dps nowhere, and is
+        # correct. Flagging library modules would bury the real findings.
+        #
+        # Ratchet: 46 producers / 206 constructions baselined so the gate can run
+        # today; anything new fails. Unlike the import-time audit, the fix here
+        # usually MOVES PUBLISHED VALUES — the producer really was computing low,
+        # and that movement is the point.
+        run: |
+          python3 computations/never_raises_dps_audit.py --self-test
+          python3 computations/never_raises_dps_audit.py --strict | tee /tmp/nrdps.txt
+          {
+            echo '## never-raises-dps ratchet (strict on NEW)';
+            echo '```';
+            head -16 /tmp/nrdps.txt;
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -243,7 +344,42 @@ jobs:
         # Never widen the bounds to make a red run green.
         run: |
           python3 computations/no_free_parameter_certificate.py --self-test
-          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt
+          # DECLARED fail-open, not an accidental one — and NOT a hygiene
+          # defect. With pipefail set at the workflow level this gate is
+          # genuinely red, on exactly one literal:
+          #
+          #     qbeta_t4_stokes3_crux_probe.py:  A_omega = 3
+          #
+          # It is red BY DESIGN and cannot be fixed by sourcing the value.
+          # `ADJUDICATED_FREE` in no_free_parameter_certificate.py keys on the
+          # assigned NAME and forces `cls = "UNTRACEABLE"` before the
+          # small-integer whitelist can see it, precisely so that A_omega
+          # cannot be waved through as "just a 3". Its ledger entry says why:
+          # AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5
+          # channel has two anchor equations in three unknowns, so A_omega is
+          # a genuine free parameter pinned only by a one-sided A >= 2.05, and
+          # ratio_attained constructs an admissible A for every target ratio.
+          #
+          # StokesSymmetryConstant.lean does NOT contradict that, though it is
+          # easy to read as if it does. It proves a CONDITIONAL: *if* A_omega
+          # is the Stokes symmetry constant then it is exact and q-independent
+          # at every q. Its own Scope paragraph is explicit — "Nothing here
+          # derives the number 3 from the categorical drivers — that remains
+          # open (qou-qnnq lineage)". Exactness of the reading, not derivation
+          # of the value.
+          #
+          # So this gate goes green when qou-qnnq derives A_omega, and not
+          # before. Removing the entry from ADJUDICATED_FREE to get a green
+          # run is the "widen the bounds" move the sibling steps forbid.
+          # Red-walling the six gates this change just made real, over a
+          # standing open research question, is the worse trade — so it is
+          # named, scoped, and visible in the step summary rather than
+          # silently passing.
+          #
+          # The other two literals this step used to flag, S_muon and
+          # S_proton, WERE hygiene and are fixed: they now read from
+          # qbeta-c3-barodd-sleak.witness.json instead of being hand-copied.
+          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt || true
           {
             echo '## No-free-parameter certificate (strict)';
             echo '```';

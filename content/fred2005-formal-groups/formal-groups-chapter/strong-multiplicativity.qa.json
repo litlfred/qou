@@ -8,15 +8,15 @@
     "lean": "content/fred2005-formal-groups/formal-groups-chapter/strong-multiplicativity.lean"
   },
   "source_hashes": {
-    "md": "dac68c44ef76",
     "ts": "3c0ebb53f18c",
+    "md": "dac68c44ef76",
     "lean": "9f098a0b5f31"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -310,134 +310,121 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"formal-groups-chapter\",\"expected\":null}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "dac68c44ef76",
           "ts": "3c0ebb53f18c",
+          "md": "dac68c44ef76",
           "lean": "9f098a0b5f31"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1078,7 +1065,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1093,7 +1080,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1108,7 +1095,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1123,7 +1110,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1138,7 +1125,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1153,7 +1140,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1168,7 +1155,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1186,7 +1173,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1204,7 +1191,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1237,7 +1224,359 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.342Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.381Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 55 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.420Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 55 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.460Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.503Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.543Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.589Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.628Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.302Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "Block-final sentence read 'This is the critical result ensuring that the comultiplication ... survives the passage from characteristic p to characteristic 0.' 'the critical result' is a maximum-strength qualifier attached without qualification, and it is attached to a claim the resolved Lean explicitly disclaims.",
+        "notes": "FIX APPLIED (pure register, no meaning change): 'This is / the critical result ensuring that the comultiplication' -> 'This / ensures that the comultiplication'; paragraph rewrapped to the file's ~72-col style. Math delimiters re-checked and balanced."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "dac68c44ef76",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.646Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5dfe2b59a7a6",
+          "ts": "3c0ebb53f18c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.668Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:strong-multiplicativity, judged on all ten categories; the superlative was the only trap and is recorded as a separate fail entry with the fix applied.",
+        "notes": "NOT A TRAP, reported separately: the .md's opening claim - 'the Frobenius relation is preserved under the Groebner-Shirshov deformation at every filtration degree' - is precisely the framing the resolved Lean (Fred2005.strong_multiplicativity_holds) says was removed as misleading; its docstring records that the theorem is now only an accessor for G's own comul_hom axiom, that the gsb hypotheses were dropped as unused, and that 'at every filtration degree' needs a filtered-deformation structure the model does not carry. The .md also lists def:grobner-shirshov-basis in uses[] though the Lean statement no longer mentions it."
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-22T04:07:15.668Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

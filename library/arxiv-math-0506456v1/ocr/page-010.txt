@@ -1,0 +1,51 @@
+10 Asymptotics of the quantum invariants for the figure 8 knot
+
+work. He was supported by the European Commission, the Danish Natural Science
+Research Council and the Max—Planck—Institut fiir Mathematik, Bonn.
+
+2. The RT-invariant for surgeries on the figure 8 knot
+
+This section is primarily intended to introduce notation. Moreover, we present some
+preliminary formulas for the colored Jones polynomial of the figure 8 knot and for
+the RT-invariants of the 3—manifolds M,/q.
+
+Let t = exp(27V—1/(4r)), r an integer > 2, and let U; be the modular Hopf
+algebra considered in [27, Sec. 8], i.e. U; is a finite-dimensional factor of the quantum
+group U¢(slz(C)), € = t*. (In [27], and in most literature on the subject, € is denoted
+q, but we use in this paper g to mean something different.) For an integer k we let
+
+(K] = 12k — 472k _ sin(tk/r)
+?—t-? sin(a/r) ”
+sometimes called a quantum integer. For a knot K in S$? we denote by K° the knot
+K considered as a framed knot with framing zero. The colored Jones polynomial
+associated to U; of a framed oriented knot K with color A € {1,2,..., r} is denoted
+J«(A), and for an oriented knot K in $° we let Jig(A) = Jxo(A)/[A]. Here the
+colors are the dimensions (as complex vector spaces) of irreducible U;-modules.
+
+Let Ny be the 3-manifold obtained by surgery on S$? along K with surgery
+
+coefficient f € Z. By [16] or [27] the RT-invariant (at level r — 2) of Ny is
+
+r-1
+tr(Ny) = 0 SEDER)? Tic(R), (2.12)
+k=1
+
+where K is given an arbitrary orientation. Here a = csign(p-2, where
+
+© = ep (zte=0),
+
+r
+
+We use here the normalization of [34]. This is D~! times the normalization of [16]
+and C~'\\r)D-! times the normalization of [27], where bi(Ny) is the first Betti
+number of Ny, see [8, Appendix A]. (In the notation of [34], C = AD~!.)
+
+Let us next generalize to arbitrary rational surgery. Let p,q be a pair of coprime
+integers with q 0, and let N,/, be the 3-manifold obtained by surgery along K
+with surgery coefficient p/q. Choose c,d € Z such that B = ( , ) € SL(2,Z).
+
+Then (see e.g. [8, Theorem 5.1 and the proofs of Corollary 8.3 and Theorem 8.4]),
+
+. in \\ 2(2)-3818N(p2) rol
+Np/q) = (Few (-)) y2sin(Z )S NJ (A) Ba,
+r=1

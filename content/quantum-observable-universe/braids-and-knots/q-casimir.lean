@@ -4,6 +4,7 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Order.Filter.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -604,8 +605,8 @@ theorem QCasimir_central (qs : QuantumSu2) (d : QCasimirData qs)
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-noncomputable def qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
-  (q ^ n - q ^ (-n)) / (q - q⁻¹)
+noncomputable abbrev qNumberSym {K : Type*} [Field K] (q : K) (n : ℤ) : K :=
+  QOU.QInteger.qIntBalZ q n
 
 /-- Eigenvalue of the q-Casimir on the integer-spin irreducible `V_j`.
 
@@ -624,7 +625,7 @@ noncomputable def QCasimirEigenvalue {K : Type*} [Field K] (q : K) (j : ℤ) : K
 /-- Sanity check: `[0]_q = 0` in the symmetric convention. -/
 -- Ref: [kassel1995]
 theorem qNumberSym_zero {K : Type*} [Field K] (q : K) : qNumberSym q 0 = 0 := by
-  unfold qNumberSym; simp
+  simp only [qNumberSym, QOU.QInteger.qIntBalZ]; simp
 
 /-- Sanity check: the eigenvalue on the trivial representation `V_0`
     vanishes — exactly the normalisation chosen in `QCasimir`. -/
@@ -639,7 +640,7 @@ theorem QCasimirEigenvalue_zero {K : Type*} [Field K] (q : K) :
 -- Ref: [kassel1995] §VI.4
 theorem qNumberSym_neg {K : Type*} [Field K] (q : K) (n : ℤ) :
     qNumberSym q (-n) = -qNumberSym q n := by
-  unfold qNumberSym
+  simp only [qNumberSym, QOU.QInteger.qIntBalZ]
   have : q ^ (-(-n)) = q ^ n := by rw [neg_neg]
   rw [this]
   ring

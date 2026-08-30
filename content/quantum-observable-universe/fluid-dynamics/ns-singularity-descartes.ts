@@ -5,9 +5,12 @@ export default theorem({
   lean: { ref: "qou:QOU.FluidDynamics.ns_singularity_descartes", validation: "not_checked" },
   title:
     "The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup",
+  // `prop:ns-kummer-specialisation` removed 2026-08-15 to break an editorial
+  // cycle: it lists this theorem in its own `uses[]`, and its narrative links
+  // here while this one never links there. The dependency runs
+  // specialisation -> theorem, not both ways.
   uses: [
     "thm:observability-q-independent",
-    "prop:ns-kummer-specialisation",
   ],
   tags: [
     "theorem",

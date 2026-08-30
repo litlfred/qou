@@ -33,8 +33,9 @@ from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VAL
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 import numpy as np
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 q0_str = Q_50_DIGIT_STR
@@ -234,5 +235,14 @@ witness = {
 }
 
 with open(HERE / "delta-lambda-bar-involution.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness: delta-lambda-bar-involution.witness.json")

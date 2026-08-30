@@ -30,6 +30,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp, acos
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -121,7 +123,7 @@ def evaluate_variant(name, rows, atom_name, include_chi_factor):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     repo_root = Path(__file__).resolve().parent.parent
 
     files = {
@@ -190,6 +192,15 @@ def main() -> int:
         / "option-e-q-reeb-phase-probe-v4.witness.json"
     )
     with out.open("w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
 
     print(f"Wrote {out}\n")

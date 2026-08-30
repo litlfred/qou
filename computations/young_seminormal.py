@@ -36,6 +36,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 
 @lru_cache(maxsize=64)
@@ -150,7 +155,7 @@ def _self_test() -> int:
     from lr_coefficients import partitions_of
     from mass_at_3A_proper import atom_braid_word_3A
     from q_parameter import Q_50_DIGIT_STR
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     word = atom_braid_word_3A(1, 1)  # deuteron H_6 word (color-weighted pn)
     max_rel = mp.mpf(0)
@@ -165,7 +170,7 @@ def _self_test() -> int:
           f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
     # also a non-atom braid word, all λ⊢6, to exercise σ_i⁻¹ / averaged
     h = float(q - 1 / q)
-    probe = [(1.0, 0.0, 0), (1.0, -h, 1), (1.0, -h / 2, 2),
+    probe = [(1.0, 0.0, 0), (1.0, -h, 1), (1.0, _pn_d(h), 2),
              (1.0, 0.0, 3), (1.0, -h, 4)]
     max_rel2 = mp.mpf(0)
     for lam in partitions_of(6):

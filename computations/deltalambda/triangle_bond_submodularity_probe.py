@@ -60,10 +60,14 @@ import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
@@ -105,7 +109,7 @@ def main() -> int:
         # derive the p–n template from the isotope's own word
         d_by_gen = {g: float(ifaces[g][1]) for g in ifaces}
         pn_d = min((d for d in d_by_gen.values() if d != 0.0),
-                   key=lambda d: abs(abs(d) - H / 2), default=-H / 2)
+                   key=lambda d: abs(abs(d) - abs(_pn_d(H))), default=_pn_d(H))
         band = band_word(1.0, pn_d)
         print(f"\n {name}: adjacent templates {[(g, round(d_by_gen[g],6)) for g in sorted(d_by_gen)]}"
               f"  → p–n d = {pn_d:.6f}  (0↔2 bond is p–n)")

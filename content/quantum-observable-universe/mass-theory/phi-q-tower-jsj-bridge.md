@@ -10,6 +10,6 @@ $$
   \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S).
 $$
 
-*Summing over all subsets perfectly reconstructs the continuous JSJ piecewise sum.*
+*Summing over all subsets reconstructs the continuous JSJ piecewise sum.*
 
-This conjecture aligns the algebraic discrete evaluation with the geometric continuous evaluation. The dilogarithm pipeline and the hyperbolic-volume pipeline compute the identical archimedean target through entirely different convergence regimes. It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.
+This conjecture aligns the algebraic discrete evaluation with the geometric continuous evaluation. The dilogarithm pipeline and the hyperbolic-volume pipeline compute the identical archimedean target through different convergence regimes. It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.

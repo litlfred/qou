@@ -1,0 +1,1530 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0203273v3",
+ "source_sha256": "824715d110e34305",
+ "brief": "Nilpotence, radicaux et structures monoïdales — 302 sections: YVES ANDR ´E ET BRUNO KAHN; Introduction; YVES ANDR ´E ET BRUNO KAHN",
+ "extended": "**Nilpotence, radicaux et structures monoïdales**\n\n146 pp, 302 sections.\n\n**Outline.** 2 YVES ANDR ´E ET BRUNO KAHN; Introduction; 4 YVES ANDR ´E ET BRUNO KAHN; 6 YVES ANDR ´E ET BRUNO KAHN; I Radicaux et nilpotence; 1 I D ´EAUX ET RADICAUX; 8 YVES ANDR ´E ET BRUNO KAHN; 1.1.1 Remarque. La terminologie varie suivant ; 1.1.2 D´eﬁnition. Une sous-cat´ egorie pleineB; 1.1.3 Sorite. SoientA,B deuxK-cat´egories etT,; 1.2 Compl´etions. ´Etant donn´ e uneK-cat´ ego; 1.2.3 Propri´et´es universelles. Les deux cons; 1.2.1 Sorite. a) Pour tout couple de petitesK-; 1.3 Alg`ebres `a plusieurs objets. Dans cet ar; 1.3.1 Exemple. SiX est un ensemble d’objets de; 10 YVES ANDR ´E ET BRUNO KAHN; 1.3.2 Lemme. SupposonsAK-lin´eaire. SoientI,J ; 1.3.4 D´eﬁnition. SoitA∈A . UnA-id´eal `a gauc",
+ "tokens": {
+  "brief": 32,
+  "extended": 195
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-4-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-6-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-i-radicaux-et-nilpotence",
+   "title": "Radicaux et nilpotence",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-1-i-d-eaux-et-radicaux",
+   "title": "I D ´EAUX ET RADICAUX",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-8-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-111-remarque-la-terminologie-varie-suivant-les-a",
+   "title": "Remarque. La terminologie varie suivant les auteurs. Ainsi, Saavedra [53,",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-112-deﬁnition-une-sous-cat-egorie-pleineb-dunek",
+   "title": "D´eﬁnition. Une sous-cat´ egorie pleineB d’uneK-cat´ egorieA est",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-113-sorite-soientab-deuxk-categories-ettt-deuxk",
+   "title": "Sorite. SoientA,B deuxK-cat´egories etT,T ′ deuxK-foncteurs deA vers",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-12-completions-etant-donn-e-unek-cat-egoriea-on",
+   "title": "Compl´etions. ´Etant donn´ e uneK-cat´ egorieA, on peut former son enveloppe",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-123-proprietes-universelles-les-deux-constructio",
+   "title": "Propri´et´es universelles. Les deux constructions ci-dessus ont des propri´ et´ es",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-121-sorite-a-pour-tout-couple-de-petitesk-catego",
+   "title": "Sorite. a) Pour tout couple de petitesK-cat´egories (A,B), avecBK-lin´eaire,",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-013-13-algebres-a-plusieurs-objets-dans-cet-article",
+   "title": "Alg`ebres `a plusieurs objets. Dans cet article, nous adoptons le point de vue",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-014-131-exemple-six-est-un-ensemble-dobjets-dea-stab",
+   "title": "Exemple. SiX est un ensemble d’objets deA, stable par biproduit, la famille",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-015-10-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-016-132-lemme-supposonsak-lineaire-soientij-deux-ide",
+   "title": "Lemme. SupposonsAK-lin´eaire. SoientI,J deux id´eaux deA. Supposons",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-017-134-deﬁnition-soitaa-una-ideal-a-gauche-dea-est",
+   "title": "D´eﬁnition. SoitA∈A . UnA-id´eal `a gauche deA est la donn´ ee, pour tout",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-018-135-d-eﬁnition-un-objet-x-dune-cat-egoriec-est-c",
+   "title": "D ´eﬁnition. Un objet X d’une cat´ egorieC est compact si le foncteur Y ↦→",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-019-136-proposition-a-pour-toutaa-et-toutmmoda-lhomo",
+   "title": "Proposition. a) Pour toutA∈A et toutM∈Mod–A, l’homomorphisme",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-020-12-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-021-138-proposition-soita-une-cat-egorie-ab-elienne",
+   "title": "Proposition. SoitA une cat ´egorie ab ´elienne stable par limites inductives",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-022-139-corollaire-cf-57-p-140-soit-f-ab-un-k-foncte",
+   "title": "Corollaire (cf. [57, p. 140]) . Soit F :A→B un K-foncteur. AlorsF∗ :",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-023-14-radical-on-d-emontre-30-que",
+   "title": "Radical. On d´ emontre [30] que",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-024-14-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-025-142-remarque-un-autre-radical-a-et-e-introduit-d",
+   "title": "Remarque. Un autre radical a ´ et´ e introduit dans la th` ese de Gabriel [16]",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-026-143-lemme-soit-h-a-projf-l-un-foncteur-k-lineair",
+   "title": "Lemme. Soit H :A→ Projf L un foncteur K-lin´eaire deA vers la ca-",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-027-144-proposition-a-le-radical-est-le-plus-grand-i",
+   "title": "Proposition. a) Le radical est le plus grand id ´eal rad(A) tel que",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-028-145-corollaire-les-radicaux-des-categoriesaaa-et",
+   "title": "Corollaire. Les radicaux des cat´egoriesA,A⊕,A♮ etA⊕♮ se correspondent",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-029-146-deﬁnition-soitt-ab-unk-foncteur-entre-deux-k",
+   "title": "D´eﬁnition. SoitT :A→B unK-foncteur entre deux K-cat´ egories. Alors",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-030-147-lemme-sit-est-plein-il-est-radiciel-dautre-p",
+   "title": "Lemme. SiT est plein, il est radiciel. D’autre part, siT est conservatif, on",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-031-148-mise-en-garde-a-sit-est-conservatif-linclusi",
+   "title": "Mise en garde. a) SiT est conservatif, l’inclusionT−1(rad(B))⊂ rad(A)",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-032-149-lemme-soita-une-k-categorie-et-soit-s-un-obj",
+   "title": "Lemme. SoitA une K-cat´egorie, et soit S un objet deA tel queA(S,S )",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-033-2-cat-egories-de-wedderburn",
+   "title": "CAT ´EGORIES DE WEDDERBURN",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-034-211-deﬁnition-unek-cat-egorie-est-ditesemi-simpl",
+   "title": "D´eﬁnition. UneK-cat´ egorie est ditesemi-simple si toutA-module ` a gauche",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-035-16-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-036-212-proposition-soita-une-petite-categoriek-line",
+   "title": "Proposition. SoitA une (petite) cat´egorieK-lin´eaire. Les conditions suivan-",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-037-213-lemme-toute-sous-categorie-pleine-b-dunek-ca",
+   "title": "Lemme. Toute sous-cat´egorie pleine B d’uneK-cat´egorie semi-simpleA",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-038-214-mise-en-garde-dans-le-lemme-213-si-a-est-mon",
+   "title": "Mise en garde. Dans le lemme 2.1.3, si A est mono¨ ıdale et siB est une",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-039-215-lemme-soita-unek-categorie-telle-quearada-so",
+   "title": "Lemme. SoitA uneK-cat´egorie telle queA/rad(A) soit semi-simple. Pour",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-040-216-proposition-soita-une-petite-categorie-abeli",
+   "title": "Proposition. SoitA une petite cat´egorie ab´elienne semi-simple, o`uK est un",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-041-217-proposition-soiti-un-ideal-dea-alors",
+   "title": "Proposition. SoitI un id´eal deA. Alors :",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-042-221-proposition-soit-a-une-k-algebre-associative",
+   "title": "Proposition. Soit A une K-alg`ebre (associative unitaire). Les conditions",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-043-18-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-044-222-deﬁnition-unek-alg-ebrea-est-dite-separable",
+   "title": "D´eﬁnition. UneK-alg` ebreA est dite s´eparable (ou absolument semi-simple)",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-045-223-remarque-nous-nous-ecartons-ici-l-eg-erement",
+   "title": "Remarque. Nous nous ´ ecartons ici l´ eg` erement de la terminologie de Bour-",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-046-224-lemme-toute-algebre-de-dimension-ﬁnie-sans-r",
+   "title": "Lemme. Toute alg`ebre de dimension ﬁnie sans radical sur un corps parfait",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-047-226-d-eﬁnition-une-cat-egoriek-lin-eairea-est-di",
+   "title": "D ´eﬁnition. Une cat´ egorieK-lin´ eaireA est dite s´eparable (ou absolument",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-048-227-proposition-sik-est-parfait-une-k-categoriea",
+   "title": "Proposition. SiK est parfait, une K-cat´egorieA est s´eparable si et seule-",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-049-231-deﬁnition-unek-cat-egoriea-est-semi-primaire",
+   "title": "D´eﬁnition. UneK-cat´ egorieA est semi-primaire si",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-050-233-lemme-cf-51-1128-soit-n-un-nil-id-eal-dun-an",
+   "title": "Lemme (cf. [51, 1.1.28]). Soit N un nil-id ´eal d’un anneau A. Alors tout",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-051-234-proposition-a-sia-est-semi-primaire-il-en-es",
+   "title": "Proposition. a) SiA est semi-primaire, il en est de m ˆeme deA/I pour tout",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-052-20-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-053-235-proposition-soita-une-categorie-abelienne-do",
+   "title": "Proposition. SoitA une cat´egorie ab´elienne dont tout objet est de longueur",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-054-241-deﬁnition-unek-cat-egoriea-est-dite-de-wedde",
+   "title": "D´eﬁnition. UneK-cat´ egorieA est dite de Wedderburn si",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-055-242-mise-en-garde-il-est-clair-quune-k-cat-egori",
+   "title": "Mise en garde. Il est clair qu’une K-cat´ egorie de Wedderburn est semi-",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-056-243-remarque-dans-le-cas-dun-seul-objet-les-alg",
+   "title": "Remarque. Dans le cas d’un seul objet, les alg` ebres correspondantes sont",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-057-244-proposition-a-la-notion-dek-categorie-de-wed",
+   "title": "Proposition. a) La notion deK-cat´egorie de Wedderburn est stable par pas-",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-058-22-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-059-3-r-adical-infini-et-nilpotence-renforc-ee",
+   "title": "R ADICAL INFINI ET NILPOTENCE RENFORC ´EE",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-060-311-deﬁnition-le-radical-inﬁni-dea-est-lid-ealra",
+   "title": "D´eﬁnition. Le radical inﬁni deA est l’id´ ealradω(A) =",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-061-312-lemme-sit-ab-est-unk-foncteur-radiciel-entre",
+   "title": "Lemme. SiT :A→B est unK-foncteur radiciel entreK-cat´egories, alors",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-062-314-contre-exemple-consid-erons-la-cat-egoriea-s",
+   "title": "Contre-exemple. Consid´ erons la cat´ egorieA suivante :",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-063-32-cas-des-cat-egories-de-modules-prenons-a-pr-e",
+   "title": "Cas des cat ´egories de modules. Prenons ` a pr´ esent pourA la cat´ egorie des",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-064-321-th-eoreme-56-31-aa-est-de-type-de-repr-esent",
+   "title": "Th ´eor`eme ([56], [31]). a)A est de type de repr ´esentation ﬁni (i.e. il n’y a",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-065-322-remarque-un-exemple-remarquable-de-cat-egori",
+   "title": "Remarque. Un exemple remarquable de cat´ egorie strictement de Wedder-",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-066-4-r-adical-et-extension-des-scalaires",
+   "title": "R ADICAL ET EXTENSION DES SCALAIRES",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-067-41-il-est-connu-que-le-radical-dune-alg-ebre-se",
+   "title": "Il est connu que le radical d’une alg` ebre se comporte “mal” par extension des",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-068-411-proposition-1-soitlk-une-extension-de-corps",
+   "title": "Proposition. 1) SoitL/K une extension de corps. Soit A uneK-alg`ebre de",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-069-24-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-070-412-remarque-la-condition-que-radakl-radakl-est",
+   "title": "Remarque. La condition que rad(A⊗KL)⊂ rad(A)⊗KL est n´ ecessaire :",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-071-413-mise-en-garde-sia-est-pseudo-ab-elienne-il-n",
+   "title": "Mise en garde. SiA est pseudo-ab´ elienne, il n’en est pas de mˆ eme deAL",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-072-414-corollaire-soita-une-categorie-de-wedderburn",
+   "title": "Corollaire. SoitA une cat´egorie de Wedderburn. Alors, pour toute extension",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-073-415-theoreme-soientk-un-corps-l-une-extension-de",
+   "title": "Th´eor`eme. SoientK un corps, L une extension de K,V unL-espace vec-",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-074-417-corollaire-soientk-un-corps-parfait-inﬁni-l",
+   "title": "Corollaire. SoientK un corps parfait inﬁni, L une extension de K,A une",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-075-26-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-076-l-alors",
+   "title": "Alors :",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-077-418-remarque-la-conclusion-a-vaut-encore-si-au-l",
+   "title": "Remarque. La conclusion a) vaut encore si, au lieu d’un L et d’unH, on",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-078-419-exemple-comme-nous-le-verrons-en-821-le-coro",
+   "title": "Exemple. Comme nous le verrons en 8.2.1, le corollaire pr´ ec´ edent s’applique",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-079-5-e-xtensions-des-scalaires-na-ive-et-non-na-ive",
+   "title": "E XTENSIONS DES SCALAIRES NA ¨IVE ET NON NA ¨IVE",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-080-511-deﬁnition-soienta-unek-cat-egorie-etl-unek-a",
+   "title": "D´eﬁnition. SoientA uneK-cat´ egorie etL uneK-alg` ebre (commutative uni-",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-081-512-lemme-a-lak-structure-deal-senrichit-en-unel",
+   "title": "Lemme. a) LaK-structure deA(L) s’enrichit en uneL-structure par la loi",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-082-52-sur-lextension-des-scalairesa-la-saavedra-not",
+   "title": "Sur l’extension des scalaires`a la Saavedra. Notre but est de comparerAL ` a",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-083-521-lemme-cf-53-prop-ii1511-a-soientaa-etv-vec-k",
+   "title": "Lemme (cf. [53, prop. II.1.5.1.1]). a) SoientA∈A etV ∈Vec K. Le fonc-",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-084-28-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-085-522-lemme-lhomomorphisme52-est-un-isomorphisme-d",
+   "title": "Lemme. L’homomorphisme(5.2) est un isomorphisme dans les cas suivants :",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-086-523-hypoth-eses-a-partir-de-maintenant-on-suppos",
+   "title": "Hypoth `eses. `A partir de maintenant, on suppose que A est additive (c’est-",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-087-524-lemme-sous-les-hypotheses-523",
+   "title": "Lemme. Sous les hypoth`eses 5.2.3,",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-088-525-lemme-53-ii152-le-foncteur-53-est-adjoint-a",
+   "title": "Lemme ([53, II.1.5.2]). Le foncteur (5.3) est adjoint `a gauche au foncteur",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-089-531-proposition-soientab-deux-objets-dea-si-dimk",
+   "title": "Proposition. SoientA,B deux objets deA. Si dimKL =∞, supposons que",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-090-532-theoreme-le-foncteur",
+   "title": "Th´eor`eme. Le foncteur",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-091-533-exemple-prenons-pour-a-la-cat-egorierepkg-de",
+   "title": "Exemple. Prenons pour A la cat´ egorieRepKG des K-repr´ esentations de",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-092-30-yves-andr-e-et-bruno-kahn",
+   "title": "YVES ANDR ´E ET BRUNO KAHN",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-093-ii-radical-et-rigidite",
+   "title": "Radical et rigidit´e",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-094-6-g-en-eralit-es",
+   "title": "G ´EN ´ERALIT ´ES",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-095-61-ideaux-monoıdaux-duaux-soit-k-un-anneau-commu",
+   "title": "Id´eaux mono¨ıdaux, duaux. Soit K un anneau commutatif unitaire, et soit",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-096-611-deﬁnition-un-id-ealj-dea-est-dit-monoıdal13",
+   "title": "D´eﬁnition. Un id´ ealJ deA est dit mono¨ıdal13 s’il est stable par les trans-",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-097-612-lemme-a-sij-est-monoıdal-il-est-stable-par-p",
+   "title": "Lemme. a) SiJ est mono¨ıdal, il est stable par produit mono¨ıdal`a gauche et",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-098-613-deﬁnition-on-dit-que-a-est-rigide-si-tout-ob",
+   "title": "D´eﬁnition. On dit que (A,•) est rigide si tout objet a un dual ` a droite et est",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-099-614-sorite-sia-est-rigide-il-en-est-de-mˆeme-dea",
+   "title": "Sorite. SiA est rigide, il en est de mˆeme deA⊕,A♮ et deA⊕♮ (notations du",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-100-615-lemme-tout-ideal-monoıdalj-veriﬁe",
+   "title": "Lemme. Tout id´eal mono¨ıdalJ v´eriﬁe",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-101-616-lemme-soiti-un-1-ideal-a-gauche-dea-deﬁnitio",
+   "title": "Lemme. SoitI un 1-id´eal `a gauche deA (d´eﬁnition 1.3.4). La formule",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-102-62-le-cas-sym-etrique-on-suppose-d-esormais-quea",
+   "title": "Le cas sym ´etrique. On suppose d´ esormais queA (qui rappelons-le, est sup-",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-103-63-interpretation-pour-expliciter-le-sens-des-le",
+   "title": "Interpr´etation. Pour expliciter le sens des lemmes 6.1.5 et 6.2.1, notons :",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-104-631-exemple-sia-est-la-cat-egorie-mono-ıdale-des",
+   "title": "Exemple. SiA est la cat´ egorie mono¨ ıdale des motifs de Grothendieck pour",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-105-7-t-races",
+   "title": "T RACES",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-106-71-traces-et-idealn-rappelons-que-latrace-dun-en",
+   "title": "Traces et id´ealN . Rappelons que latrace d’un endomorphismeh∈A (C,C )",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-107-711-lemme-la-formule",
+   "title": "Lemme. La formule",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-108-712-exemple-dans-le-cas-de-lexemple-631-motifs-l",
+   "title": "Exemple. Dans le cas de l’exemple 6.3.1 (motifs), l’id´ eal mono¨ ıdalN cor-",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-109-713-lemme-on-suppose-que-k-est-un-corps-soit-f1f",
+   "title": "Lemme. On suppose que K est un corps. Soit f1,...,f n ∈ A(A,A )",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-110-714-proposition-on-suppose-quek-est-un-corps-soi",
+   "title": "Proposition. On suppose queK est un corps. SoitA un cat´egorieK-lin´eaire",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-111-715-corollaire-lidealn-ne-depend-pas-du-choix-du",
+   "title": "Corollaire. L’id´ealN ne d´epend pas du choix du tressage (sym´etrique)R.□",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-112-716-proposition-sous-les-mˆemes-hypotheses-les-c",
+   "title": "Proposition. Sous les mˆemes hypoth`eses, les conditions suivantes sont ´equi-",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-113-718-exemple-revenons-a-lexemple-de-la-cat-egorie",
+   "title": "Exemple. Revenons ` a l’exemple de la cat´ egorie mono¨ ıdale sym´ etrique rigide",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-114-719-remarque-la-compatibilit-e-den-vis--a-vis-de",
+   "title": "Remarque. La compatibilit´ e deN vis-` a-vis de l’extension des scalaires",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-115-72-traces-et-puissances-exterieures-cette-partie",
+   "title": "Traces et puissances ext´erieures. Cette partie est inspir´ ee par [14, 7.2] et par",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-116-721-proposition-on-a",
+   "title": "Proposition. On a",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-117-722-corollaire-supposonsa1-an-a-etf1-fn-f-alors",
+   "title": "Corollaire. SupposonsA1 =··· =An =A etf1 =··· =fn =f. Alors",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-118-723-deﬁnition-soitn-un-entier-naturel-tel-que-n",
+   "title": "D´eﬁnition. Soitn un entier naturel tel que n! soit inversible dansK, et soit",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-119-724-proposition-cf-14-72-soita-un-objet-dea-et-s",
+   "title": "Proposition (cf. [14, 7.2]). SoitA un objet deA, et soitf un endomorphisme",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-120-725-corollaire-sous-les-hypotheses-de-la-proposi",
+   "title": "Corollaire. Sous les hypoth`eses de la proposition 7.2.4,",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-121-726-proposition-pour-toutσ-sn-notonsℓ1σ-la-longu",
+   "title": "Proposition. Pour toutσ∈ Sn, notonsℓ1(σ) la longueur du cycle σ1 deσ",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-122-1-1-fσ11f1",
+   "title": "(1)◦···◦ fσ1(1)◦f1,",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-123-727-proposition-soita-0-un-objet-dea-on-suppose",
+   "title": "Proposition. SoitA⁄= 0 un objet deA. On suppose qu’il existe un entier",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-124-728-lemme-nagata-higman-soientn-un-entier-0-etk",
+   "title": "Lemme (Nagata-Higman). Soientn un entier> 0 etK un anneau commu-",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-125-73-trace-des-endomorphismes-nilpotents-nous-igno",
+   "title": "Trace des endomorphismes nilpotents. Nous ignorons si un endomorphis-",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-126-731-proposition-supposons-quea-soit-pseudo-abeli",
+   "title": "Proposition. Supposons queA soit pseudo-ab´elienne et que la dimension",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-127-732-lemme-supposons-quek-soit-un-corps-quea-soit",
+   "title": "Lemme. Supposons queK soit un corps, queA soit pseudo-ab´elienne et que",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-128-733-proposition-cf-10-143-supposons-quil-existe",
+   "title": "Proposition (cf. [10, 1.4.3]). Supposons qu’il existe un foncteur mono¨ıdal sy-",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-129-734-remarque-dans-731-contrairement-a-733-on-ne",
+   "title": "Remarque. Dans 7.3.1, contrairement ` a 7.3.3, on ne peut remplacer “trace",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-130-741-deﬁnition-soitj-un-id-eal-mono-ıdal-dea-le-r",
+   "title": "D´eﬁnition. SoitJ un id´ eal mono¨ ıdal deA. Le⊗-radical deJ est d´ eﬁni par :",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-131-743-exemple-dans-le-cas-de-lexemple-631-motifs-l",
+   "title": "Exemple. Dans le cas de l’exemple 6.3.1 (motifs), l’id´ eal mono¨ ıdal",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-132-744-remarque-la-compatibilit-e-de",
+   "title": "Remarque. La compatibilit´ e de",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-133-8-t-h-eor-emes-de-structure",
+   "title": "T H ´EOR `EMES DE STRUCTURE",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-134-811-proposition-on-suppose-quil-existe-un-foncte",
+   "title": "Proposition. On suppose qu’il existe un foncteurF :A→ Vec L vers la ca-",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-135-812-remarques-1-la-preuve-de-a-est-une-variante",
+   "title": "Remarques. 1) La preuve de a) est une variante abstraite de la preuve clas-",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-136-813-proposition-on-suppose-quea-est-pseudo-abeli",
+   "title": "Proposition. On suppose queA est pseudo-ab´elienne et que les dimensions",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-137-821-theoreme-on-supposek-de-caracteristique-null",
+   "title": "Th´eor`eme. On supposeK de caract´eristique nulle etA munie d’un foncteur",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-138-822-theoreme-a-on-suppose-quil-existe-un-foncteu",
+   "title": "Th´eor`eme. a) On suppose qu’il existe un foncteur mono¨ıdal sym´etriqueH de",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-139-823-remarques-1-sia-est-tannakienne-et-quek-est",
+   "title": "Remarques. 1) SiA est tannakienne et queK est de caract´ eristique nulle, on",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-140-825-remarques-1-la-propri-et-ea-pr-esente-lavant",
+   "title": "Remarques. 1) La propri´ et´ ea) pr´ esente l’avantage sur les suivantes d’ˆ etre",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-141-83-variante-z2-graduee-en-th-eorie-des-motifs-la",
+   "title": "Variante Z/2-gradu´ee. En th´ eorie des motifs, la cat´ egorie mono¨ ıdale des mo-",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-142-831-proposition-supposonsk-de-caracteristique-nu",
+   "title": "Proposition. SupposonsK de caract´eristique nulle, et soitL uneK-alg`ebre",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-143-9-l-e-pair-et-l-impair",
+   "title": "L E PAIR ET L ’IMPAIR",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-144-911-deﬁnition-a-un-objet-aa-est-pairement-de-dim",
+   "title": "D´eﬁnition. a) Un objet A∈A est pairement de dimension ﬁnie au sens de",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-145-912-notation-sia-est-pairement-resp-impairement",
+   "title": "Notation. SiA est pairement (resp. impairement) de dimension ﬁnie au sens",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-146-914-proposition-a-toute-somme-directe-tout-facte",
+   "title": "Proposition. a) Toute somme directe, tout facteur direct d’un objet pairement",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-147-915-lemme-a-soit-aa-pairement-de-dimension-ﬁnie",
+   "title": "Lemme. a) Soit A∈A , pairement de dimension ﬁnie. Alors dimA est un",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-148-917-th-eoreme-a-soit-a-apairement-de-dimension-ﬁ",
+   "title": "Th ´eor`eme. a) Soit A ∈ Apairement de dimension ﬁnie. Alors kimA =",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-149-918-corollaire-a-si-a-etb-sont-pairement-de-dime",
+   "title": "Corollaire. a) Si A etB sont pairement de dimension ﬁnie, alors kim(A⊕",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-150-919-proposition-soienta-respa-un-objet-dea-paire",
+   "title": "Proposition. SoientA+ (resp.A−) un objet deA pairement (resp. impaire-",
+   "pages": "51-52"
+  },
+  {
+   "id": "sec-151-9110-proposition-soita-un-objet-de-dimension-ﬁni",
+   "title": "Proposition. SoitA un objet de dimension ﬁnie au sens de Kimura, et sup-",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-152-9111-lemme-soitaa-et-soit-a-aa-une-decomposition",
+   "title": "Lemme. SoitA∈A , et soit A = A+⊕A− une d´ecomposition en somme",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-153-9112-proposition-32-prop-69-tout-facteur-direct",
+   "title": "Proposition ([32, prop. 6.9]). Tout facteur direct d’un objet de dimension",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-154-9113-deﬁnition-soita-un-objet-de-dimension-ﬁnie",
+   "title": "D´eﬁnition. SoitA un objet de dimension ﬁnie au sens de Kimura. On d´ eﬁnit",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-155-9115-remarque-on-pourrait-aussi-utiliser-le-rais",
+   "title": "Remarque. On pourrait aussi utiliser le raisonnement de la d´ emonstration",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-156-9116-deﬁnition-une-categorie-de-kimura16-sur-un",
+   "title": "D´eﬁnition. Une cat´egorie de Kimura16 sur un corps de caract´ eristique nulle",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-157-921-theoreme-supposons-que",
+   "title": "Th´eor`eme. Supposons que",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-158-0-ceci-permet-de-renforcer-la-proposition-9110-e",
+   "title": "Ceci permet de renforcer la proposition 9.1.10 en l’´ enonc´ e suivant : siA∈A kim,",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-159-922-theoreme-toute-categorie-de-kimuraa-est-de-w",
+   "title": "Th´eor`eme. Toute cat´egorie de KimuraA est de Wedderburn. Son radicalR",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-160-9114-pour-le-reste-on-se-ram-ene-au-th-eor-eme-9",
+   "title": "Pour le reste, on se ram` ene au th´ eor` eme 9.2.1 en quotientant par",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-161-0-cf-le",
+   "title": "(cf. le",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-162-923-remarque-etant-donn-e-une-cat-egorie-de-kimu",
+   "title": "Remarque. ´Etant donn´ e une cat´ egorie de KimuraA, le th´ eor` eme 9.2.2 nous",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-163-924-exemple-kimura-32-71-conjecture-que-tout-mot",
+   "title": "Exemple. Kimura [32, 7.1] conjecture que tout motif de Chow est de dimen-",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-164-10-e-xemples-et-compl-ements",
+   "title": "E XEMPLES ET COMPL ´EMENTS",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-165-101-trois-contre-exemples-v-oici-trois-exemples",
+   "title": "Trois contre-exemples. V oici trois exemples de cat´ egories mono¨ ıdalesK-",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-166-1011-contre-exemple-partons-ded-kεε-2-0-vue-comm",
+   "title": "Contre-exemple. Partons deD =K[ε],ε 2 = 0, vue comme super-alg` ebre",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-167-1012-contre-exemple-k-est-maintenant-suppos-e-de",
+   "title": "Contre-exemple. K est maintenant suppos´ e de caract´ eristiquep> 0, et on",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-168-102-complement-lalgebre-commutative-hh-0a-soient",
+   "title": "Compl´ement : l’alg`ebre commutative HH 0(A). SoientA une petite K-",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-169-1021-exemple-supposonsa-tannakienne-semi-simple",
+   "title": "Exemple. SupposonsA tannakienne semi-simple neutre sur un corps K",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-170-iii-sections",
+   "title": "Sections",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-171-11-c-ohomologie-de-hochschild--mitchell",
+   "title": "C OHOMOLOGIE DE HOCHSCHILD -MITCHELL",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-172-111-produit-tensoriel-de-k-categories-ici-k-d-es",
+   "title": "Produit tensoriel de K-cat´egories. Ici, K d´ esigne de nouveau un anneau",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-173-1111-deﬁnition-cf-3811-soientab-deuxk-cat-egorie",
+   "title": "D´eﬁnition. (cf. [38,§11]). SoientA,B deuxK-cat´ egories. Leproduit ten-",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-174-1113-lemme-supposons-seulement-que-lesk-categori",
+   "title": "Lemme. Supposons seulement que lesK-cat´egoriesA etB soient de Wed-",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-175-1114-proposition-on-suppose-que-k-est-un-corps-u",
+   "title": "Proposition. On suppose que K est un corps. Une K-cat´egorieA est de",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-176-112-complexe-de-hochschild-mitchell-soita-une-pe",
+   "title": "Complexe de Hochschild-Mitchell. SoitA une petiteK-cat´ egorie, telle que",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-177-1121-remarque-homologie-de-hochschild-sim-etn-so",
+   "title": "Remarque. (Homologie de Hochschild) SiM etN sont deuxA-bimodules,",
+   "pages": "60-60"
+  },
+  {
+   "id": "sec-178-12-u-n-th-eor-eme-de-wedderburn-a-plusieurs-obje",
+   "title": "U N “TH ´EOR `EME DE WEDDERBURN `A PLUSIEURS OBJETS ”",
+   "pages": "60-60"
+  },
+  {
+   "id": "sec-179-121-existence-et-unicit-e-de-sections-le-th-eor",
+   "title": "Existence et “unicit ´e” de sections. Le th´ eor` eme de structure fondamental",
+   "pages": "60-63"
+  },
+  {
+   "id": "sec-180-1212-lemme-supposonsa-pseudo-abelienne-soit-s-un",
+   "title": "Lemme. SupposonsA pseudo-ab´elienne. Soit s une section de πA. Les",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-181-1213-remarque-supposonsk-alg-ebriquement-clos-so",
+   "title": "Remarque. SupposonsK alg´ ebriquement clos. SoitA un objet ind´ ecom-",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-182-1221-proposition-soit-t-b-aun-k-foncteur-radicie",
+   "title": "Proposition. Soit T : B → Aun K-foncteur radiciel entre deux pe-",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-183-1222-corollaire-sous-les-hypoth-eses-du-th-eorem",
+   "title": "Corollaire. Sous les hypoth `eses du th ´eor`eme 12.1.1, supposons donn ´ee",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-184-13-s-ections-mono-idales",
+   "title": "S ECTIONS MONO ¨IDALES",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-185-132-existence-et-unicit-e-de-sections-mono-ıdale",
+   "title": "Existence et “unicit ´e” de sections mono ¨ıdales. Apr` es ces pr´ eliminaires,",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-186-1331-sorite-soit-s-s-b-a-un-foncteur-monoıdal-et",
+   "title": "Sorite. Soit (s, ˜s) : (B,⊤)→ (A,•) un foncteur mono¨ıdal, et soitu :s⇒t",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-187-1332-sorite-soient-a-aπa-comme-dans-le-th-eoreme",
+   "title": "Sorite. Soient (A,•), ¯A,πA comme dans le th ´eor`eme 13.2.1. Alors le th ´e-",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-188-134-categories-monoıdales-strictes-une-petite-ca",
+   "title": "Cat´egories mono¨ıdales strictes. Une petite cat´ egorie mono¨ ıdale(B,⊤) est",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-189-1341-remarque-soitaa-la-cat-egorie-des-endofonct",
+   "title": "Remarque. SoitAA la cat´ egorie des endofoncteurs additifs deA. Munie",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-190-1341-la-construction-de-mac-lane36-xi-3-a-toute",
+   "title": "La construction de Mac Lane[36, XI 3]. `A toute petite cat´ egorie mono¨ ıdale",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-191-1342-proposition-soient-a-aπa-comme-dans-le-th-e",
+   "title": "Proposition. Soient (A,•), ¯A,πA comme dans le th ´eor`eme 13.2.1. Si en",
+   "pages": "67-68"
+  },
+  {
+   "id": "sec-192-1351-lemme-la-proposition-1342-decoule-de-lenonc",
+   "title": "Lemme. La proposition 13.4.2 d´ecoule de l’´enonc´e correspondant pour la",
+   "pages": "68-69"
+  },
+  {
+   "id": "sec-193-136-au-cœur-du-probl-eme-d-emonstration-de-la-pr",
+   "title": "Au cœur du probl `eme : d ´emonstration de la proposition 13.4.2. Compte",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-194-1361-debut-de-la-preuve-de-c-soits-une-section-k",
+   "title": "D´ebut de la preuve de c). Soits une section K-fonctorielle mono¨ ıdale de",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-195-1361-lemme-il-existe-une-famille-double-ur",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-196-1362-une-relation-de-cocycle-i-supposons-r-1-et",
+   "title": "Une relation de cocycle, I. Supposons r≥ 1 et trouv´ ee une familleu(r)",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-197-1363-une-relation-de-cocycle-ii-la-congruence-13",
+   "title": "Une relation de cocycle, II. La congruence (13.4) fait penser ` a une relation",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-198-1364-une-relation-de-cocycle-iii-ﬁn-de-la-preuve",
+   "title": "Une relation de cocycle, III – ﬁn de la preuve de c). Nous sommes main-",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-199-1365-debut-de-la-preuve-de-a-soits-une-sectionk",
+   "title": "D´ebut de la preuve de a). Soits une sectionK-fonctorielle deπA. L’exis-",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-200-1362-lemme-il-existe-une-famille-double-ur",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-201-1366-une-relation-de-cocycle-i-supposons-r-1-et",
+   "title": "Une relation de cocycle, I. Supposons r≥ 1 et trouv´ ee une familleu(r)",
+   "pages": "72-73"
+  },
+  {
+   "id": "sec-202-1367-une-relation-de-cocycle-ii-pour-interpr-ete",
+   "title": "Une relation de cocycle, II. Pour interpr´ eter (13.6) comme une relation de",
+   "pages": "73-74"
+  },
+  {
+   "id": "sec-203-1368-une-relation-de-cocycle-iii---ﬁn-de-la-preu",
+   "title": "Une relation de cocycle, III - ﬁn de la preuve de a). De mˆ eme que pour",
+   "pages": "74-74"
+  },
+  {
+   "id": "sec-204-1369-preuve-de-b-soientss-deux-sections-mono-ıda",
+   "title": "Preuve de b). Soients,s′ deux sections mono¨ ıdales strictes deπA. Il s’agit",
+   "pages": "74-74"
+  },
+  {
+   "id": "sec-205-1363-lemme-il-existe-une-famille-double-ur",
+   "title": "Lemme. Il existe une famille double (u(r)",
+   "pages": "74-76"
+  },
+  {
+   "id": "sec-206-1371-proposition-soit-b-une-autre-cat-egorie-mon",
+   "title": "Proposition. Soit (B,•) une autre cat ´egorie mono¨ıdale v´eriﬁant les hy-",
+   "pages": "76-77"
+  },
+  {
+   "id": "sec-207-1372-corollaire-dans-la-situation-de-la-proposit",
+   "title": "Corollaire. Dans la situation de la proposition 12.2.1, supposons A,B",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-208-1373-proposition-sous-les-hypotheses-du-theoreme",
+   "title": "Proposition. Sous les hypoth`eses du th´eor`eme 13.2.1, supposons donn´ee en",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-209-1381-proposition-sous-les-hypoth-eses-du-th-eore",
+   "title": "Proposition. Sous les hypoth `eses du th ´eor`eme 13.2.1, soit v une structure",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-210-1382-lemme-il-existe-une-famille-double-urr1-dau",
+   "title": "Lemme. Il existe une famille double (u(r))r≥1 d’automorphismes deIdA,",
+   "pages": "77-78"
+  },
+  {
+   "id": "sec-211-1383-remarque-siab-admettent-des-duaux-a-droite",
+   "title": "Remarque. SiA,B admettent des duaux ` a droite (cf. 6), les isomorphismes",
+   "pages": "78-78"
+  },
+  {
+   "id": "sec-212-14-r-epr-esentabilit-e",
+   "title": "R EPR ´ESENTABILIT ´E",
+   "pages": "78-79"
+  },
+  {
+   "id": "sec-213-1411-le-cas-non-monoıdal-soita-une-petitek-cat-e",
+   "title": "Le cas non mono¨ıdal. SoitA une petiteK-cat´ egorie de Wedderburn. Con-",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-214-1411-sorite-la-constructionag-a-deﬁnit-un-2-fonc",
+   "title": "Sorite. La constructionA↦→G (A) d´eﬁnit un 2-foncteur 1-contravariant et",
+   "pages": "79-80"
+  },
+  {
+   "id": "sec-215-1412-sorite-pour-toutek-categorie-de-wedderburna",
+   "title": "Sorite. Pour touteK-cat´egorie de WedderburnA, les foncteurs",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-216-1412-le-cas-monoıdal-supposons-maintenant-quea-s",
+   "title": "Le cas mono¨ıdal. Supposons maintenant queA soit mono¨ ıdale, et que son",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-217-1413-sorite-la-constructionaga-deﬁnit-un-2-fonct",
+   "title": "Sorite. La constructionA↦→G⊗(A) d´eﬁnit un 2-foncteur 1-contravariant",
+   "pages": "80-81"
+  },
+  {
+   "id": "sec-218-1413-objets-compacts-duaux-et-limites-inductives",
+   "title": "Objets compacts, duaux et limites inductives. SupposonsA stable par lim-",
+   "pages": "81-81"
+  },
+  {
+   "id": "sec-219-1414-extension-des-scalaires-silk-est-une-extens",
+   "title": "Extension des scalaires. SiL/K est une extension, on a des foncteurs “ex-",
+   "pages": "81-81"
+  },
+  {
+   "id": "sec-220-1421-objets-en-cat-egories-et-en-groupo-ıdes-soi",
+   "title": "Objets en cat ´egories et en groupo ¨ıdes. SoitX une cat´ egorie avec limites",
+   "pages": "81-82"
+  },
+  {
+   "id": "sec-221-1422-objets-en-actions-de-groupe-un-objet-en-gro",
+   "title": "Objets en actions de groupe. Un objet en groupes dansX est un couple",
+   "pages": "82-83"
+  },
+  {
+   "id": "sec-222-1423-actions-de-groupe-et-groupoıdes-pour-obteni",
+   "title": "Actions de groupe et groupo¨ıdes. Pour obtenir un groupo¨ ıdeΓ , il sufﬁt de se",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-223-1421-exemple-x-schk-est-la-cat-egorie-des-k-sch",
+   "title": "Exemple. X = Sch/K est la cat´ egorie des K-sch´ emas (dans notre",
+   "pages": "83-83"
+  },
+  {
+   "id": "sec-224-143-representabilite-algebrique-soienta-unek-cat",
+   "title": "Repr´esentabilit´e alg´ebrique. SoientA uneK-cat´ egorie de Wedderburn et",
+   "pages": "83-84"
+  },
+  {
+   "id": "sec-225-1431-th-eoreme-soit-wedfk-la-sous--2-categorie-1",
+   "title": "Th ´eor`eme. Soit Wedf{K} la sous- 2-cat´egorie 1-pleine et 2-pleine de",
+   "pages": "84-85"
+  },
+  {
+   "id": "sec-226-1432-exemple-le-th-eor-eme-1431-montre-que-pour",
+   "title": "Exemple. Le th´ eor` eme 14.3.1 montre que, pour deuxK-cat´ egories de Wed-",
+   "pages": "85-85"
+  },
+  {
+   "id": "sec-227-1433-th-eoreme-soit-wedfk-la-sous--2-categorie-1",
+   "title": "Th ´eor`eme. Soit Wedf⊗{K} la sous- 2-cat´egorie 1-pleine et 2-pleine de",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-228-15-s-ections-et-tressages",
+   "title": "S ECTIONS ET TRESSAGES",
+   "pages": "86-86"
+  },
+  {
+   "id": "sec-229-151-tressages-on-renvoie-a-27-pour-les-notions-d",
+   "title": "Tressages. On renvoie ` a [27] pour les notions de tressage et de foncteurmo-",
+   "pages": "86-87"
+  },
+  {
+   "id": "sec-230-152-sorites-le-sorite-suivant-compl-ete-le-sorit",
+   "title": "Sorites. Le sorite suivant compl` ete le sorite 13.3.1 :",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-231-1521-sorite-soit-s-s-br-as-un-foncteur-mono-ıdal",
+   "title": "Sorite. Soit (s, ˜s) : ( B,⊤,R ) → (A,•,S ) un foncteur mono ¨ıdal tress´e",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-232-1522-sorite-tout-tressager-satisfait-les-identit",
+   "title": "Sorite. Tout tressageR satisfait les identit´es",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-233-1523-sorite-notonsasym-la-categorie-symetrique-d",
+   "title": "Sorite. NotonsAsym la cat´egorie sym´etrique deA (mˆemes objets, m ˆemes",
+   "pages": "87-87"
+  },
+  {
+   "id": "sec-234-1524-sorite-soient-br-une-categorie-monoıdale-tr",
+   "title": "Sorite. Soient (B,⊤,R ) une cat´egorie mono¨ıdale tress´ee, (A,•) une cat´ego-",
+   "pages": "87-88"
+  },
+  {
+   "id": "sec-235-153-sections-reprenons-maintenant-les-notations",
+   "title": "Sections. Reprenons maintenant les notations et hypoth` eses du th´ eor` eme 13.2.1,",
+   "pages": "88-88"
+  },
+  {
+   "id": "sec-236-1531-proposition-a-il-existe-un-automorphisme-no",
+   "title": "Proposition. a) Il existe un automorphisme (non mono¨ıdal)u des tel que,",
+   "pages": "88-89"
+  },
+  {
+   "id": "sec-237-1533-proposition-pour-une-section-mono-ıdale-s-s",
+   "title": "Proposition. Pour une section mono ¨ıdale (s, ˜s), les conditions suivantes",
+   "pages": "89-90"
+  },
+  {
+   "id": "sec-238-1534-d-eﬁnition-une-structure-balanc-ee-sur-une",
+   "title": "D ´eﬁnition. Une structure balanc ´ee sur une cat´ egorie mono¨ ıdale tress´ ee",
+   "pages": "90-90"
+  },
+  {
+   "id": "sec-239-1535-theoreme-soit-ar-une-categorie-monoıdale-tr",
+   "title": "Th´eor`eme. Soit (A,•,R ) une cat´egorie mono¨ıdale tress´ee. On suppose que",
+   "pages": "90-90"
+  },
+  {
+   "id": "sec-240-1536-exemple-consid-erons-la-quantiﬁcation-de-dr",
+   "title": "Exemple. Consid´ erons la quantiﬁcation de Drinfeld-Cartier ¯A[[h]] d’une",
+   "pages": "90-91"
+  },
+  {
+   "id": "sec-241-1537-remarque-il-est-probable-que-les-parties-b",
+   "title": "Remarque. Il est probable que les parties b) et c) du th´ eor` eme sont fausses",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-242-154-complements-pour-ﬁnir-examinons-de-plus-pr-e",
+   "title": "Compl´ements. Pour ﬁnir, examinons de plus pr` es le d´ efaut de validit´ e des",
+   "pages": "91-91"
+  },
+  {
+   "id": "sec-243-1541-proposition-a-lelemente-er-n-et-les-element",
+   "title": "Proposition. a) L’´el´emente = e(R)∈ N∪{∞} et les ´el´ements ¯nA,B de",
+   "pages": "91-92"
+  },
+  {
+   "id": "sec-244-1542-remarque-les-identit-es-159-et-1510-ne-sont",
+   "title": "Remarque. Les identit´ es (15.9) et (15.10) ne sont autres que les relations",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-245-16-p-remi-ere-application-cat-egories-de-kimura",
+   "title": "P REMI `ERE APPLICATION : CAT ´EGORIES DE KIMURA",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-246-161-rappelons-d-eﬁnition-9116-quune-cat-egorie-d",
+   "title": "Rappelons (d´ eﬁnition 9.1.16) qu’une cat´ egorie de Kimura sur un corps de",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-247-1611-theoreme-soita-une-categorie-de-kimura-de-r",
+   "title": "Th´eor`eme. SoitA une cat´egorie de Kimura, de radicalR. Alors",
+   "pages": "92-92"
+  },
+  {
+   "id": "sec-248-0-cf-th-eoreme-921-par-ailleurs-soit-π",
+   "title": "(cf. th ´eor`eme 9.2.1). Par ailleurs, soit π+",
+   "pages": "92-94"
+  },
+  {
+   "id": "sec-249-17-l-e-cas-non-mono-idal-enveloppes-pro--semi--s",
+   "title": "L E CAS NON MONO ¨IDAL : ENVELOPPES PRO -SEMI -SIMPLES",
+   "pages": "94-94"
+  },
+  {
+   "id": "sec-250-171-enveloppes-pro-semi-simples-soienta-une-peti",
+   "title": "Enveloppes pro-semi-simples. SoientA une petiteK-cat´ egorie etπA :A→",
+   "pages": "94-94"
+  },
+  {
+   "id": "sec-251-1711-lemme-sia-est-proﬁnie-le-quotient-a-dea-par",
+   "title": "Lemme. SiA est proﬁnie, le quotient ¯A deA par son radical est semi-simple",
+   "pages": "94-96"
+  },
+  {
+   "id": "sec-252-172-lien-avec-lalgebre-dauslander-lalg-ebre-daus",
+   "title": "Lien avec l’alg`ebre d’Auslander. L’alg` ebre d’Auslander d’uneK-alg` ebre",
+   "pages": "96-97"
+  },
+  {
+   "id": "sec-253-173-cas-des-algebres-hereditaires-rappelons-quun",
+   "title": "Cas des alg`ebres h´er´editaires. Rappelons qu’uneK-alg` ebre est diteh´er´edi-",
+   "pages": "97-98"
+  },
+  {
+   "id": "sec-254-1731-remarque-dans-le-cas-des-alg-ebres-de-chemi",
+   "title": "Remarque. Dans le cas des alg` ebres de cheminsA =K⃗∆ , un avatar deAs",
+   "pages": "98-98"
+  },
+  {
+   "id": "sec-255-18-s-ections-mono-idales-et-foncteurs-fibres",
+   "title": "S ECTIONS MONO ¨IDALES ET FONCTEURS FIBRES",
+   "pages": "98-98"
+  },
+  {
+   "id": "sec-256-1811-theoreme-soientk-un-corps-de-caract-eristiq",
+   "title": "Th´eor`eme. SoientK un corps de caract ´eristique nulle et L une extension",
+   "pages": "98-99"
+  },
+  {
+   "id": "sec-257-182-le-cas-tannakien-neutralis-e-ce-sous-paragra",
+   "title": "Le cas tannakien neutralis ´e. Ce sous-paragraphe est pr´ eparatoire au para-",
+   "pages": "99-99"
+  },
+  {
+   "id": "sec-258-1821-lemme-soientb-une-petite-categoriek-lineair",
+   "title": "Lemme. SoientB une (petite) cat´egorieK-lin´eaire mono¨ıdale sym´etrique",
+   "pages": "99-100"
+  },
+  {
+   "id": "sec-259-1822-lemme-lhomomorphismes-est-un-monomorphisme",
+   "title": "Lemme. L’homomorphismes♯ est un monomorphisme (i.e. une immersion",
+   "pages": "100-100"
+  },
+  {
+   "id": "sec-260-1823-remarque-le-foncteur",
+   "title": "Remarque. Le foncteur",
+   "pages": "100-101"
+  },
+  {
+   "id": "sec-261-1824-proposition-on-a-un-foncteur-canoniquetg-du",
+   "title": "Proposition. On a un foncteur canoniqueTG du groupo¨ıde connexeG⊗",
+   "pages": "101-101"
+  },
+  {
+   "id": "sec-262-1826-proposition-pour-tout-epimorphisme-ϕ-gs-h-l",
+   "title": "Proposition. Pour tout ´epimorphisme ϕ : Gs→ →H, le centralisateur de",
+   "pages": "101-102"
+  },
+  {
+   "id": "sec-263-1827-proposition-a-pour-toute-sections-comme-ci",
+   "title": "Proposition. a) Pour toute sections comme ci-dessus, tout homomorphisme",
+   "pages": "102-103"
+  },
+  {
+   "id": "sec-264-1828-lemme-soient-fg-homgh-o-u-g-et-h-sont-deux",
+   "title": "Lemme. Soient f,g ∈ Hom(G,H ), o `u G et H sont deux K-groupes",
+   "pages": "103-103"
+  },
+  {
+   "id": "sec-265-1829-proposition-soientg-unk-groupe-afﬁnest-deux",
+   "title": "Proposition. SoientG unK-groupe afﬁnes,t deux sections mono¨ıdales de",
+   "pages": "103-103"
+  },
+  {
+   "id": "sec-266-18210-scolie-avec-les-notations-de-102-on-a",
+   "title": "Scolie. Avec les notations de 10.2, on a",
+   "pages": "103-104"
+  },
+  {
+   "id": "sec-267-19-a-u-del-a-de-jacobson--morozov-enveloppes-pro",
+   "title": "A U-DEL `A DE JACOBSON -MOROZOV : ENVELOPPES PRO -R ´EDUCTIVES",
+   "pages": "104-104"
+  },
+  {
+   "id": "sec-268-191-groupes-a-conjugaison-pr-es-soit-gaﬀ-k-la-ca",
+   "title": "Groupes `a conjugaison pr `es. Soit Gaﬀ K la cat´ egorie dont les objets sont",
+   "pages": "104-104"
+  },
+  {
+   "id": "sec-269-1911-d-eﬁnition-a-soient-gh-deux-k-groupes-afﬁne",
+   "title": "D ´eﬁnition. a) Soient G,H deux K-groupes afﬁnes. On note H 1",
+   "pages": "104-105"
+  },
+  {
+   "id": "sec-270-192-exactitude-peu-de-limites-inductives-existen",
+   "title": "Exactitude. Peu de limites inductives existent dans Gaﬀ K et dans Gaﬀ K. Il",
+   "pages": "105-105"
+  },
+  {
+   "id": "sec-271-1921-deﬁnition-a-soient-f-g1-g2-etg-g2-g3-deux-m",
+   "title": "D´eﬁnition. a) Soient f : G1→ G2 etg : G2→ G3 deux morphismes de",
+   "pages": "105-105"
+  },
+  {
+   "id": "sec-272-1922-lemme-a-un-morphisme-f-g1-g2-dek-groupes-af",
+   "title": "Lemme. a) Un morphisme f : G1→ G2 deK-groupes afﬁnes est faible-",
+   "pages": "105-106"
+  },
+  {
+   "id": "sec-273-1931-theoreme-le-foncteur-dinclusion-ι-gredk-gaﬀ",
+   "title": "Th´eor`eme. Le foncteur d’inclusion ¯ι : GredK→ Gaﬀ K admet un adjoint",
+   "pages": "106-106"
+  },
+  {
+   "id": "sec-274-1932-deﬁnition-lek-groupe-a-conjugaison-pr-espre",
+   "title": "D´eﬁnition. LeK-groupe ` a conjugaison pr` espRed(G) (muni de l’injection",
+   "pages": "106-106"
+  },
+  {
+   "id": "sec-275-1933-remarques-a-si-f-g-h-est-un-morphisme-nous",
+   "title": "Remarques. a) Si f : G → H est un morphisme, nous ignorons si",
+   "pages": "106-107"
+  },
+  {
+   "id": "sec-276-1934-proposition-supposons-k-algebriquement-clos",
+   "title": "Proposition. Supposons K alg´ebriquement clos. `A isomorphisme unique",
+   "pages": "107-107"
+  },
+  {
+   "id": "sec-277-1935-remarque-nous-ignorons-si-lhypoth-ese-quek",
+   "title": "Remarque. Nous ignorons si l’hypoth` ese queK est alg´ ebriquement clos",
+   "pages": "107-107"
+  },
+  {
+   "id": "sec-278-1942-proposition-sig-est-pro-unipotent-predg-est",
+   "title": "Proposition. SiG est pro-unipotent, pRed(G) est pro-semi-simple simple-",
+   "pages": "107-108"
+  },
+  {
+   "id": "sec-279-1944-proposition-a-soitg2g1-un-morphisme-faiblem",
+   "title": "Proposition. a) SoitG2→G1 un morphisme faiblement ´epi deK-sch´emas",
+   "pages": "108-109"
+  },
+  {
+   "id": "sec-280-1945-corollaire-siu-est-le-radical-unipotent-deg",
+   "title": "Corollaire. SiU est le radical unipotent deG et siGred =G/U, on a une",
+   "pages": "109-109"
+  },
+  {
+   "id": "sec-281-1946-lemme-soitf-g-h-un-homomorphisme-de-k-group",
+   "title": "Lemme. Soitf : G→ H un homomorphisme de K-groupes afﬁnes. Sup-",
+   "pages": "109-109"
+  },
+  {
+   "id": "sec-282-1947-proposition-a-pour-toutg-algebrique-on-a-un",
+   "title": "Proposition. a) Pour toutG alg´ebrique, on a une suite exacte",
+   "pages": "109-110"
+  },
+  {
+   "id": "sec-283-1949-proposition-pour-toutk-groupeg-et-toutk-gro",
+   "title": "Proposition. Pour toutK-groupeG et toutK-groupe pro-r´eductifH, on a",
+   "pages": "110-110"
+  },
+  {
+   "id": "sec-284-195-le-cas-du-groupe-additif-a-titre-dexemple-em",
+   "title": "Le cas du groupe additif. `A titre d’exemple embl´ ematique, calculons",
+   "pages": "110-111"
+  },
+  {
+   "id": "sec-285-1951-th-eoreme-on-a-puga-ga-et-predga-sl2-plus-p",
+   "title": "Th ´eor`eme. On a pU(Ga) = Ga et pRed(Ga) = SL2. Plus pr ´ecis´ement,",
+   "pages": "111-111"
+  },
+  {
+   "id": "sec-286-1952-remarque-lespace-des-ga-homomorphismes-smv",
+   "title": "Remarque. L’espace des Ga-homomorphismes SmV → SnV est de di-",
+   "pages": "111-112"
+  },
+  {
+   "id": "sec-287-196-extension-des-scalaires-si-lon-fait-varier-l",
+   "title": "Extension des scalaires. Si l’on fait varier le corps de baseK (toujours sup-",
+   "pages": "112-113"
+  },
+  {
+   "id": "sec-288-197-enveloppes-pro-reductives-des-groupes-pro-un",
+   "title": "Enveloppes pro-r´eductives des groupes pro-unipotents. Si G est un K-",
+   "pages": "113-114"
+  },
+  {
+   "id": "sec-289-1971-th-eoreme-soit-g-un-k-groupe-pro-unipotent",
+   "title": "Th ´eor`eme. Soit G un K-groupe pro-unipotent. Les propri ´et´es suivantes",
+   "pages": "114-115"
+  },
+  {
+   "id": "sec-290-1972-question-pour-quels-groupes-alg-ebriques-li",
+   "title": "Question. Pour quels groupes alg´ ebriques lin´ eairesG l’enveloppe pro-r´ e-",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-291-20-a-pplications-aux-groupes-alg-ebriques-et-aux",
+   "title": "A PPLICATIONS AUX GROUPES ALG ´EBRIQUES ET AUX REPR ´ESENTATIONS",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-292-2011-proposition-cf-40-soith-un-sous-groupe-redu",
+   "title": "Proposition (cf. [40]). SoitH′ un sous-groupe r´eductif ferm´e d’un groupe",
+   "pages": "115-115"
+  },
+  {
+   "id": "sec-293-2012-deﬁnition-on-appelle-enveloppe-reductive-de",
+   "title": "D´eﬁnition. On appelle enveloppe r´eductive de f tout sous-groupe r´ eductif",
+   "pages": "115-116"
+  },
+  {
+   "id": "sec-294-2013-th-eoreme-a-deux-enveloppes-r-eductives-de",
+   "title": "Th ´eor`eme. a) Deux enveloppes r ´eductives de f sont conjugu ´ees par un",
+   "pages": "116-116"
+  },
+  {
+   "id": "sec-295-2014-contre-exemple-on-pourrait-se-demander-si-l",
+   "title": "Contre-exemple. On pourrait se demander si la propri´ et´ e c)caract´erise les",
+   "pages": "116-116"
+  },
+  {
+   "id": "sec-296-2015-remarque-pour-toute-enveloppe-r-eductiveh-d",
+   "title": "Remarque. Pour toute enveloppe r´ eductiveH′ de G dans GL(V ), il suit",
+   "pages": "116-116"
+  },
+  {
+   "id": "sec-297-202-applications-aux-representations-indecomposa",
+   "title": "Applications aux repr´esentations ind´ecomposables. SoitV une repr´ esen-",
+   "pages": "116-117"
+  },
+  {
+   "id": "sec-298-2021-theoreme-sig-est-simplement-connexe-akgv-es",
+   "title": "Th´eor`eme. SiG est simplement connexe, aK(G,V ) est un anneau de poly-",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-299-2022-remarque-siv-est-une-repr-esentation-ﬁd-ele",
+   "title": "Remarque. SiV est une repr´ esentation ﬁd` ele deG. D’apr` es 10.2, 10.2.1,",
+   "pages": "117-117"
+  },
+  {
+   "id": "sec-300-2023-theoreme-les-conditions-suivantes-sont-equi",
+   "title": "Th´eor`eme. Les conditions suivantes sont ´equivalentes :",
+   "pages": "117-132"
+  },
+  {
+   "id": "sec-301-v-further-h-acts-on-the-associated-graded-grµv-t",
+   "title": "Further H acts on the associated graded GrµV through M, and µ induces an",
+   "pages": "132-146"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

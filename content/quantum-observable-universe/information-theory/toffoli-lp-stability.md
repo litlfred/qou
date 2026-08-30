@@ -12,13 +12,13 @@ where $\varphi = (1 + \sqrt{5})/2$ is the golden ratio.
 
 2. **(Three operator thresholds.)** Each zero corresponds to a vanishing Hecke amplitude:
 See [Table 1](#tbl:toffoli-lp-stability-table1-data).
-At $q_\star$, the diagonal amplitude $P_{7,7}$ vanishes. At $q_\Phi$, the q-AND amplitude $\Phi$ reverses sign. At $q = 1$, the q-AND vanishes. The classical reversible Toffoli has trivial amplitude here.
+At $q_\star$, the diagonal amplitude $P_{7,7}$ vanishes **in the convention-$C$ frame**; under the canonical $z_D = q^3/(q^2+1)$ the diagonal is $q^3(q^4+1)/(q^2+1)^2$, strictly positive for every $q > 0$, so this threshold is a property of the excised frame rather than of the gate. At $q_\Phi$, the q-AND amplitude $\Phi$ reverses sign. At $q = 1$, the q-AND vanishes. The classical reversible Toffoli has trivial amplitude here.
 
 3. **(Dual shadow prices.)** For $q > 1$, the LP dual admits bounded shadow prices $y_i^*(q)$ satisfying:
 $$
   |y_i^*(q)| \leq \kappa(\mathrm{G}(q)) \cdot \|t(q)\|,
 $$
-where $\kappa(\mathrm{G}(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$ is the Gram condition number. At the physical substrate value $q_0 \approx 1.110$, $\kappa(G(q_0)) \approx 3.03$. All shadow prices remain bounded in Skein units.
+where $\kappa(\mathrm{G}(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$. **Open (2026-08-09).** The figure previously quoted here, $\kappa(G(q_0)) \approx 3.03$, is withdrawn. It came from a Gram matrix built with the naive length rule $\mathrm{tr}_M(T_w) = z^{\ell(w)}$ — the pre-2026-05-19 $\mathrm{tr}_M(e^-) = z^3$ bug — under the excised convention C, in float64, at a superseded 17-digit $q_0$; it corresponds to no convention in the registry. Under the production convention D the Markov–Gram form is **singular**, so $\lambda_{\max}/\lambda_{\min}$ in the ordinary sense is infinite and the bound above is not available on the full six-dimensional NF span. Whether the shadow-price bound is to be re-posed on the quotient by the radical is the same decision as for Term 4 of the six-term mass identity and is reserved for the owner. The replacement value must be read off a regenerated `toffoli-lp-stability.witness.json`; it is not to be hand-edited, and the producer needs three fixes (convention, trace rule, precision) before it can be re-run.
 
 4. **(Physical-substrate stability.)** At $q_0 \approx 1.110$:
 $$

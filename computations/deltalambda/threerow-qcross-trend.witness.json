@@ -1,0 +1,180 @@
+{
+  "engine": "mpmath50",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T19:27:32.175959+00:00",
+  "commitSha": "9d73d6eb518e6d5664f5b7b9341a5edcb48219de",
+  "assertions": [
+    {
+      "name": "wenzl_level_is_constant_two",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "no_pole_on_positive_reals",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "three_row_stratum_is_structural_zero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "reported_crossings_are_n_independent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "dual_cauchy_identity_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "threerow-qcross-trend",
+  "scriptFile": "threerow_qcross_trend_probe.py",
+  "scriptHash": "57ef57881ba2",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_qcross_trend_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_qcross_trend_probe.py"
+  },
+  "description": "Records why the q_cross(n) trend question is convention-C-only. The probe straddled two conventions inside one computation: _D_wenzl / U_STAR / Q_STAR and the level-integer ladder were convention C hardcoded in the file, while level_r() read the corpus's convention-D _wenzl_constants. Under D, Q^r = Q^2 exactly, so the level is the constant 2, there is no pole (the live function is regular at C's q*), no real-level branch and no ladder; and the l(lam) >= 3 stratum is a structural zero, so the crossings previously reported were round-off, shown by their n-independence. BG-1, the dual-Cauchy normaliser identity, is convention-independent and is re-verified. Supersedes the 2026-08-09 C-frame witness.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "Q": "1.23205245416676393126980451354",
+    "QR_live": "1.51795324981834593754711018278",
+    "wenzl_level_r": "2 (convention D)",
+    "q_star_conventionC_pole": "1.27844957657969315917801065461"
+  },
+  "data": {
+    "by_n": [
+      {
+        "n": 3,
+        "partitions": 3,
+        "ell_ge_3": 1,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "5.05404e-43",
+        "is_structural_zero": true
+      },
+      {
+        "n": 4,
+        "partitions": 5,
+        "ell_ge_3": 2,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.19263e-43",
+        "is_structural_zero": true
+      },
+      {
+        "n": 5,
+        "partitions": 7,
+        "ell_ge_3": 4,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.94277e-43",
+        "is_structural_zero": true
+      },
+      {
+        "n": 6,
+        "partitions": 11,
+        "ell_ge_3": 7,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.15324e-43",
+        "is_structural_zero": true
+      },
+      {
+        "n": 7,
+        "partitions": 15,
+        "ell_ge_3": 11,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "6.72799e-44",
+        "is_structural_zero": true
+      },
+      {
+        "n": 8,
+        "partitions": 22,
+        "ell_ge_3": 17,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.87604e-44",
+        "is_structural_zero": true
+      },
+      {
+        "n": 9,
+        "partitions": 30,
+        "ell_ge_3": 25,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "2.21223e-44",
+        "is_structural_zero": true
+      },
+      {
+        "n": 10,
+        "partitions": 42,
+        "ell_ge_3": 36,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.25369e-44",
+        "is_structural_zero": true
+      },
+      {
+        "n": 11,
+        "partitions": 56,
+        "ell_ge_3": 50,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "7.06611e-45",
+        "is_structural_zero": true
+      },
+      {
+        "n": 12,
+        "partitions": 77,
+        "ell_ge_3": 70,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.96576e-45",
+        "is_structural_zero": true
+      }
+    ],
+    "convention_c_record": {
+      "convention": "C",
+      "computed_at": "2026-08-09T18:11:26Z",
+      "level_at_q0": "2.5995",
+      "q_star_real_level_branch_end": "1.27844957657969...",
+      "assertions_as_committed": {
+        "q_cross_sequence_monotone": false,
+        "crossings_exist_for_all_n": false,
+        "q0_position_informative": false,
+        "dual_cauchy_identity_holds": true,
+        "q0_on_real_level_branch": true
+      },
+      "note": "Correct for convention C. Under D `q0_on_real_level_branch` asserts a structure that does not exist -- there is no pole, so no branch to be on or off. The three False results remain False under D but for an entirely different reason: the object is identically zero, so there are no crossings at all. Green, but vacuous. Do not read these as live."
+    }
+  },
+  "caveats": [
+    "RETIRED AS A LIVE PROBE. This witness no longer reports a q_cross trend. Under convention D the l(lam) >= 3 stratum is a structural zero, so G_n and F_K vanish identically there and the crossings the previous sweep reported were round-off sign flips -- demonstrated by their being IDENTICAL across n, which an n-dependent object cannot be.",
+    "The superseded witness asserted `q0_on_real_level_branch: True`. Under D there is no pole, hence no branch to be on or off, so that assertion named a structure that does not exist. Its three False results stay False under D but for a different reason -- no crossings at all, rather than an unstructured sequence of them. Green, but vacuous.",
+    "Scope-(a), about this probe. The Q^r = u^3/D(u) family is a legitimate object and is NOT refuted; the finding is that this file was not computing it -- its branch geometry was convention C hardcoded while its level function read convention D from the corpus. Re-pinning to C and registering an off-canon comparison was the alternative disposition, not taken: C is excised by owner ruling (2026-08-15) and the question concerns a stratum carrying no weight in the canonical convention."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

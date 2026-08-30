@@ -91,7 +91,7 @@ theorem isSigmaUnitary_one {R : Type*} [CommRing R] (σ : R →+* R) :
   simp [IsSigmaUnitary]
 
 /-- σ-unitaries are closed under multiplication. -/
-theorem mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
+theorem IsSigmaUnitary.mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
     (hu : IsSigmaUnitary σ u) (hv : IsSigmaUnitary σ v) :
     IsSigmaUnitary σ (u * v) := by
   unfold IsSigmaUnitary at hu hv ⊢
@@ -101,7 +101,7 @@ theorem mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
 
 /-- **Bar-even unitaries are involutions.** If `u` is σ-unitary and σ-fixed
     (bar-even), then `u² = 1`. -/
-theorem sq_eq_one_of_bar_even {R : Type*} [CommRing R]
+theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
     {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (heven : σ u = u) :
     u * u = 1 := by
   have h : σ u * u = 1 := hu
@@ -120,10 +120,20 @@ theorem not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
 
 The fibre-side spec for the `c_k` evaluation map (handed to the z→c_k f-map
 keystone, PR #3458). The observed cross-anchor `c_3` swing
-(`c_3(q_p) = −2.0693` proton vs `−2.0097` muon; `Δq = 1.28×10⁻⁸`) demands a
-slope `dc_3/dq ≈ 4.66×10⁶`, which for a **smooth real function of `q`** requires
-a singularity within `≈ 4.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
-#1821 — no categorical object supplies such a pole). The lemmas below record
+(`c_3(q_p) = −2.0693` proton vs `−2.02020024` muon; `Δq = 1.28×10⁻⁸`) demands a
+slope `dc_3/dq ≈ 3.84×10⁶`, which for a **smooth real function of `q`** requires
+a singularity within `≈ 5.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
+#1821 — no categorical object supplies such a pole).
+
+All three numbers were corrected on 2026-08-29 (bean `qou-kt8o`) from
+`−2.0097` / `4.66×10⁶` / `4.4×10⁻⁷`. The muon `c_3` was the **pre-#1422
+superseded** value, and the other two are its arithmetic consequences: the
+stale pair gives a secant of `4.65958×10⁶` and `|c_3|/slope = 4.44×10⁻⁷`,
+reproducing the old figures to every digit shown, while the live pair gives
+`3.83925×10⁶` and `5.39×10⁻⁷`. **The impossibility is unaffected** — `3.84×10⁶`
+is as impossible for a smooth real `f` as `4.66×10⁶`, and a pole within
+`5.4×10⁻⁷` is as unavailable as one within `4.4×10⁻⁷`. Only the magnitudes
+were wrong. The lemmas below record
 the algebraic reason the impossibility is a **magnitude-channel** bound only:
 between two σ-unitaries (the fibre-saddle `|Φ_b| = 1`), the entire connecting
 factor is again σ-unitary — a *pure phase*. The magnitude channel is flat, so
@@ -132,12 +142,12 @@ smooth-real magnitude bound is silent. -/
 
 /-- The σ-conjugate `σ u` is the two-sided inverse of a σ-unitary `u`
     (commutative form of `u·ū = 1`). -/
-theorem mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
+theorem IsSigmaUnitary.mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
     {u : R} (hu : IsSigmaUnitary σ u) : u * σ u = 1 := by
   rw [mul_comm]; exact hu
 
 /-- The σ-inverse of a σ-unitary is σ-unitary. -/
-theorem inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
+theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
     (hu : IsSigmaUnitary σ u) (hσ : Function.Involutive σ) :
     IsSigmaUnitary σ (σ u) := by
   unfold IsSigmaUnitary

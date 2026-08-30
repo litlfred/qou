@@ -78,8 +78,8 @@ H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
 VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
-M_E = mp.mpf(repr(M_E_MEV))
-M_P = mp.mpf(repr(M_P_MEV))
+M_E = mp.mpf(M_E_MEV)
+M_P = mp.mpf(M_P_MEV)
 LAM_P_TARGET = (M_P / M_E) * HBAR_Q**2 / VOL_B3
 C4_EMPIRICAL = (mp.mpf(5)/2 - H**2 * G - LAM_P_TARGET) / H**4
 
@@ -109,7 +109,7 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     h = q - 1/q
-    z_markov = 1/(sp.sqrt(q) + 1/sp.sqrt(q))
+    z_markov = q**3 / (q**2 + 1)
 
     # ── H_3 Wedderburn-block Markov-trace weights ───────────────
     # H_3(q) has 3 blocks: V_(3), V_(2,1), V_(1,1,1)

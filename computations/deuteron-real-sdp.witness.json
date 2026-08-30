@@ -1,12 +1,12 @@
 {
   "engine": "deuteron_real_sdp",
   "engineVersion": "0.1.0",
-  "computation": "Deuteron real per-nucleus SDP (Phase A cost + Phase C dual solve) — replaces the abstract empty-constraint SDP. operator-selection-lp / lp-dual.",
+  "computation": "Deuteron real per-nucleus SDP (Phase A cost + Phase C dual solve) \u2014 replaces the abstract empty-constraint SDP. operator-selection-lp / lp-dual.",
   "scriptFile": "deuteron_real_sdp.py",
   "lean_uniqueness_ref": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
   "data": {
     "n_strands": 6,
-    "nucleus": "deuteron (²H, Z=1, N=1, A=2)",
+    "nucleus": "deuteron (\u00b2H, Z=1, N=1, A=2)",
     "partitions": [
       "(6,)",
       "(5, 1)",
@@ -34,67 +34,63 @@
       1
     ],
     "cost_t_lambda": [
-      0.09231856042608326,
-      0.18961112440391817,
-      0.0674259024909456,
-      -0.004764670071606156,
-      0.060000574814738604,
-      -0.014437996946183564,
-      0.00033579303278878317,
-      -0.002704269630851237,
-      0.00028038523619067305,
-      0.0002126007302405848,
-      8.419588525696766e-06
+      0.17989082376310217,
+      0.25393778300524394,
+      0.07707649023917293,
+      -0.0,
+      0.06426714876225478,
+      -0.0,
+      -0.0,
+      -0.0,
+      -0.0,
+      0.0,
+      -0.0
     ],
     "frobenius_gram_diag": [
-      0.05918772109163174,
-      0.29480341772966556,
-      0.3625594911113074,
-      0.1013346251896993,
-      0.07060437132227686,
-      0.11709525690135474,
-      -0.006853090066213158,
-      0.003865933139840229,
-      -0.0030784664472558935,
-      0.0004931780191769845,
-      -1.2437991483744833e-05
+      0.11532422621662046,
+      0.39476481327043655,
+      0.41429191056703024,
+      0.0,
+      0.07561904994591277,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
-    "frobenius_gram_indefinite": true,
-    "forbidden_blocks_negative_norm": [
-      "(3, 1, 1, 1)",
-      "(2, 2, 1, 1)",
-      "(1, 1, 1, 1, 1, 1)"
-    ],
-    "n_target": 0.38828642407479047,
-    "tr_M_beta_D": 0.38828642407479047,
-    "tr_M_rel_err_vs_witness": 1.4296444013856497e-16,
+    "frobenius_gram_indefinite": false,
+    "forbidden_blocks_negative_norm": [],
+    "n_target": 0.5751722457697739,
+    "tr_M_beta_D": 0.5751722457697739,
+    "tr_M_rel_err_vs_witness": 1.9302444316298764e-16,
     "lp": {
       "x_star": [
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        3000000.388286424,
-        -1000000.0,
-        -0.0,
-        -1000000.0,
-        -0.0,
-        -1000000.0
+        4.40128518814995e-43,
+        8.668734160826411e-44,
+        1.771676665712795e-42,
+        0.08216746368139627,
+        2.0197790742940868e-42,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627
       ],
-      "y0_star": -0.014437996946183564,
+      "y0_star": 2.008979179942452e-48,
       "y_star": [
-        1.8036943373270138,
-        0.6921531742118898,
-        0.2257943908355624,
-        0.09545924560799289,
-        1.0543054256675402,
-        0.0,
-        0.0,
-        3.035160436276261,
-        0.0,
-        29.706509833656146,
-        0.0
+        1.5598701995641606,
+        0.643263468447179,
+        0.18604391800380654,
+        0.16842649060054837,
+        0.8498804045835335,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837
       ],
       "active_set": [
         0,
@@ -102,48 +98,154 @@
         2,
         3,
         4,
+        5,
+        6,
         7,
-        9
+        8,
+        9,
+        10
       ],
-      "primal_obj": -43938.59430213405,
-      "dual_obj": -0.005606078205036361,
-      "duality_gap": 43938.58869605584,
-      "feasible": true
+      "primal_obj": 3.675483346202144e-43,
+      "dual_obj": 1.155509066632219e-48,
+      "duality_gap": 3.675471791111477e-43,
+      "feasible": true,
+      "backend": "clarabel-mpfr",
+      "precision_bits": 167,
+      "x_star_str": [
+        "4.401285188149950283822262063039972003249474259198565e-43",
+        "8.668734160826411260128931430310006192206286048992671e-44",
+        "1.771676665712795113960926883808271781027070266698590e-42",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "2.019779074294086713634521219744906782780388738172256e-42",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081184402024e-2"
+      ],
+      "y0_star_str": "2.0089791799424522108322001399058966878240278043348e-48",
+      "y_star_str": [
+        "1.5598701995641606979449375198689525978238808950509",
+        "0.64326346844717892030592674823766581661848133485654",
+        "0.18604391800380654916423845088799844480610308976279",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.84988040458353360582026138057446921048662801645263",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382"
+      ],
+      "primal_obj_str": "3.6754833462021430953282668103542570623704232484799e-43",
+      "dual_obj_str": "1.1555090666322189472726730866549136339497179635451e-48",
+      "duality_gap_str": "3.6754717911114767731387940836233905132340837513002e-43"
     },
     "sdp": {
       "X_star": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        4.40128518814995e-43,
+        8.668734160826411e-44,
+        1.771676665712795e-42,
+        0.08216746368139627,
+        2.0197790742940868e-42,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627,
+        0.08216746368139627
       ],
-      "Z_star": [],
-      "primal_obj": null,
-      "dual_obj": null,
-      "duality_gap": null,
-      "eigenvalues": [],
-      "feasible": false
+      "Z_star": [
+        2.008979179942452e-48,
+        1.5598701995641606,
+        0.643263468447179,
+        0.18604391800380654,
+        0.16842649060054837,
+        0.8498804045835335,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837,
+        0.16842649060054837
+      ],
+      "primal_obj": 3.675483346202144e-43,
+      "dual_obj": 1.155509066632219e-48,
+      "duality_gap": 3.675471791111477e-43,
+      "eigenvalues": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.422111222289693e-44,
+        5.075748086820658e-44,
+        1.5273377469875401e-43,
+        7.339913107451795e-43
+      ],
+      "feasible": true,
+      "backend": "clarabel-mpfr",
+      "precision_bits": 167,
+      "X_star_str": [
+        "4.401285188149950283822262063039972003249474259198565e-43",
+        "8.668734160826411260128931430310006192206286048992671e-44",
+        "1.771676665712795113960926883808271781027070266698590e-42",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "2.019779074294086713634521219744906782780388738172256e-42",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081164739764e-2",
+        "8.216746368139627142857142857142857142857081184402024e-2"
+      ],
+      "Z_star_str": [
+        "2.0089791799424522108322001399058966878240278043348e-48",
+        "1.5598701995641606979449375198689525978238808950509",
+        "0.64326346844717892030592674823766581661848133485654",
+        "0.18604391800380654916423845088799844480610308976279",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.84988040458353360582026138057446921048662801645263",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382",
+        "0.16842649060054838725356907429192474820894301666382"
+      ],
+      "primal_obj_str": "3.6754833462021430953282668103542570623704232484799e-43",
+      "dual_obj_str": "1.1555090666322189472726730866549136339497179635451e-48",
+      "duality_gap_str": "3.6754717911114767731387940836233905132340837513002e-43",
+      "eigenvalues_str": [
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "0.0",
+        "3.42211122228969272588693178204657289769476007465400549308823e-44",
+        "5.07574808682065810468511473447956944672682837580020497721442e-44",
+        "1.52733774698754002562133186121656608100186040522481809905867e-43",
+        "7.33991310745179644163066048603368711509063164475775345229866e-43"
+      ]
     },
-    "y0_star": -0.014437996946183564,
+    "y0_star": 2.008979179942452e-48,
     "y_star": [
-      1.8036943373270138,
-      0.6921531742118898,
-      0.2257943908355624,
-      0.09545924560799289,
-      1.0543054256675402,
-      0.0,
-      0.0,
-      3.035160436276261,
-      0.0,
-      29.706509833656146,
-      0.0
+      1.5598701995641606,
+      0.643263468447179,
+      0.18604391800380654,
+      0.16842649060054837,
+      0.8498804045835335,
+      0.16842649060054837,
+      0.16842649060054837,
+      0.16842649060054837,
+      0.16842649060054837,
+      0.16842649060054837,
+      0.16842649060054837
     ],
     "active_set": [
       0,
@@ -151,8 +253,12 @@
       2,
       3,
       4,
+      5,
+      6,
       7,
-      9
+      8,
+      9,
+      10
     ],
     "active_blocks": [
       "(6,)",
@@ -160,181 +266,311 @@
       "(4, 2)",
       "(4, 1, 1)",
       "(3, 3)",
+      "(3, 2, 1)",
+      "(3, 1, 1, 1)",
       "(2, 2, 2)",
-      "(2, 1, 1, 1, 1)"
+      "(2, 2, 1, 1)",
+      "(2, 1, 1, 1, 1)",
+      "(1, 1, 1, 1, 1, 1)"
     ],
-    "primal_obj": -43938.59430213405,
-    "dual_obj": -0.005606078205036361,
-    "duality_gap": 43938.58869605584,
-    "strong_duality_holds": false,
-    "real_sdp_well_posed_without_constraints": false,
-    "diagnostic": "Real SDP UNBOUNDED at q_0 — Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program.",
+    "primal_obj": 3.675483346202144e-43,
+    "dual_obj": 1.155509066632219e-48,
+    "duality_gap": 3.675471791111477e-43,
+    "y0_star_str": "2.0089791799424522108322001399058966878240278043348e-48",
+    "y_star_str": [
+      "1.5598701995641606979449375198689525978238808950509",
+      "0.64326346844717892030592674823766581661848133485654",
+      "0.18604391800380654916423845088799844480610308976279",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.84988040458353360582026138057446921048662801645263",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.16842649060054838725356907429192474820894301666382",
+      "0.16842649060054838725356907429192474820894301666382"
+    ],
+    "primal_obj_str": "3.6754833462021430953282668103542570623704232484799e-43",
+    "dual_obj_str": "1.1555090666322189472726730866549136339497179635451e-48",
+    "duality_gap_str": "3.6754717911114767731387940836233905132340837513002e-43",
+    "backend": "clarabel-mpfr",
+    "precision_bits": 167,
+    "strong_duality_holds": true,
+    "real_sdp_well_posed_without_constraints": true,
+    "diagnostic": "Real SDP bounded; strong duality holds.",
     "symmetry_conjugate_pairing": [
       {
         "block": "(6,)",
         "conjugate": "(1, 1, 1, 1, 1, 1)",
         "self_conjugate": false,
-        "trM": 0.05918772109163174,
-        "trM_conjugate": -1.2437991483744833e-05,
-        "sign_flip_under_conjugation": true
+        "trM": 0.11532422621662046,
+        "trM_conjugate": 0.0,
+        "sign_flip_under_conjugation": false
       },
       {
         "block": "(5, 1)",
         "conjugate": "(2, 1, 1, 1, 1)",
         "self_conjugate": false,
-        "trM": 0.29480341772966556,
-        "trM_conjugate": 0.0004931780191769845,
+        "trM": 0.39476481327043655,
+        "trM_conjugate": 0.0,
         "sign_flip_under_conjugation": false
       },
       {
         "block": "(4, 2)",
         "conjugate": "(2, 2, 1, 1)",
         "self_conjugate": false,
-        "trM": 0.3625594911113074,
-        "trM_conjugate": -0.0030784664472558935,
-        "sign_flip_under_conjugation": true
+        "trM": 0.41429191056703024,
+        "trM_conjugate": 0.0,
+        "sign_flip_under_conjugation": false
       },
       {
         "block": "(4, 1, 1)",
         "conjugate": "(3, 1, 1, 1)",
         "self_conjugate": false,
-        "trM": 0.1013346251896993,
-        "trM_conjugate": -0.006853090066213158,
-        "sign_flip_under_conjugation": true
+        "trM": 0.0,
+        "trM_conjugate": 0.0,
+        "sign_flip_under_conjugation": false
       },
       {
         "block": "(3, 3)",
         "conjugate": "(2, 2, 2)",
         "self_conjugate": false,
-        "trM": 0.07060437132227686,
-        "trM_conjugate": 0.003865933139840229,
+        "trM": 0.07561904994591277,
+        "trM_conjugate": 0.0,
         "sign_flip_under_conjugation": false
       },
       {
         "block": "(3, 2, 1)",
         "conjugate": "(3, 2, 1)",
         "self_conjugate": true,
-        "trM": 0.11709525690135474,
-        "trM_conjugate": 0.11709525690135474,
+        "trM": 0.0,
+        "trM_conjugate": 0.0,
         "sign_flip_under_conjugation": false
       },
       {
         "block": "(3, 1, 1, 1)",
         "conjugate": "(4, 1, 1)",
         "self_conjugate": false,
-        "trM": -0.006853090066213158,
-        "trM_conjugate": 0.1013346251896993,
-        "sign_flip_under_conjugation": true
+        "trM": 0.0,
+        "trM_conjugate": 0.0,
+        "sign_flip_under_conjugation": false
       },
       {
         "block": "(2, 2, 2)",
         "conjugate": "(3, 3)",
         "self_conjugate": false,
-        "trM": 0.003865933139840229,
-        "trM_conjugate": 0.07060437132227686,
+        "trM": 0.0,
+        "trM_conjugate": 0.07561904994591277,
         "sign_flip_under_conjugation": false
       },
       {
         "block": "(2, 2, 1, 1)",
         "conjugate": "(4, 2)",
         "self_conjugate": false,
-        "trM": -0.0030784664472558935,
-        "trM_conjugate": 0.3625594911113074,
-        "sign_flip_under_conjugation": true
+        "trM": 0.0,
+        "trM_conjugate": 0.41429191056703024,
+        "sign_flip_under_conjugation": false
       },
       {
         "block": "(2, 1, 1, 1, 1)",
         "conjugate": "(5, 1)",
         "self_conjugate": false,
-        "trM": 0.0004931780191769845,
-        "trM_conjugate": 0.29480341772966556,
+        "trM": 0.0,
+        "trM_conjugate": 0.39476481327043655,
         "sign_flip_under_conjugation": false
       },
       {
         "block": "(1, 1, 1, 1, 1, 1)",
         "conjugate": "(6,)",
         "self_conjugate": false,
-        "trM": -1.2437991483744833e-05,
-        "trM_conjugate": 0.05918772109163174,
-        "sign_flip_under_conjugation": true
+        "trM": 0.0,
+        "trM_conjugate": 0.11532422621662046,
+        "sign_flip_under_conjugation": false
       }
     ],
     "self_conjugate_blocks": [
       "(3, 2, 1)"
     ],
-    "sign_flip_conjugate_pairs": [
-      [
-        "(1, 1, 1, 1, 1, 1)",
-        "(6,)"
+    "sign_flip_conjugate_pairs": [],
+    "symmetry_note": "CONVENTION D (2026-08-26). This field used to read: 'Every negative-norm forbidden block is the conjugate lambda -> lambda' of a dominant positive block with tr_M(P_lambda) sign-flipped -- the S7b bar-involution / Type-B-folding signature.' That was a convention-C statement and it does not survive: under D there are NO negative-norm blocks, so sign_flip_conjugate_pairs is empty and the claimed signature has no instances. What conjugation does under D is map the entire support (the two-row partitions) into the kernel, since a two-row lambda of n >= 6 has lambda_1 >= 3 hence ell(lambda') >= 3. (3,2,1) remains the self-conjugate partition of 6, and under D its weight is zero -- it sits in the kernel, not at a fixed point of a sign flip.",
+    "kernel_blocks_zero_weight": [
+      "(4, 1, 1)",
+      "(3, 2, 1)",
+      "(3, 1, 1, 1)",
+      "(2, 2, 2)",
+      "(2, 2, 1, 1)",
+      "(2, 1, 1, 1, 1)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "phase_B_kernel_free_lunch_open": "CLOSED, with a NEGATIVE result (bean qou-6tcn). Each encoding below now carries `result` (full space) AND `result_support_projected`, plus a per-row `projection_row_report`. Read the projected one. MEASURED: all six are INFEASIBLE once projected. The reason is structural, not numerical. On the support G is strictly positive, so Gx >= 0 IS x >= 0 there; on the kernel G = 0, so Gx >= 0 imposes nothing and x may go NEGATIVE. That is what the kernel actually bought -- not merely absorbing the net constraint at zero cost, but supplying signed occupations. Remove it and the objective is bounded by max(t)*n_target = 0.146058, against B_D(AME2020) = 2.224566: short by 15.2x. Two rows also degenerate to 0 = b, one of them (5_lr_branching_canonical row 2, mu = (1,1,1)) infeasibly -- and that encoding is the production default. SCOPE (a): this bounds THIS cost on THIS program with non-negative occupations of the D-supported blocks. It refutes no binding conjecture and says nothing about a different cost, a different Wenzl level, or a program that admits signed occupations for a stated reason. See computations/meson/deuteron_support_reachability_probe.py (6 assertions).",
+    "support_blocks": [
+      "(6,)",
+      "(5, 1)",
+      "(4, 2)",
+      "(3, 3)"
+    ],
+    "support_restricted": {
+      "blocks": [
+        "(6,)",
+        "(5, 1)",
+        "(4, 2)",
+        "(3, 3)"
       ],
-      [
-        "(2, 2, 1, 1)",
+      "n_blocks": 4,
+      "rationale": "Convention D zeroes y_lambda for ell(lambda) > 2, so the kernel blocks carry zero cost AND a vacuous positivity constraint. The net constraint is a PLAIN SUM (Sum x = n_target), so those blocks can absorb the whole requirement for free: the full-space optimum is ~0 (3.7e-43), achieved on blocks contributing nothing to tr_M, with y_star a uniform 0.168 of filler. Restricting to the support removes that escape. The optimum CHANGES (to 0.0370) and that is the correct value; the full-space one is an artifact of carrying null directions.",
+      "active_blocks": [
+        "(6,)",
+        "(5, 1)",
         "(4, 2)"
       ],
-      [
-        "(3, 1, 1, 1)",
-        "(4, 1, 1)"
-      ]
-    ],
-    "symmetry_note": "Every negative-norm forbidden block is the conjugate λ↦λ' of a dominant positive block with tr_M(P_λ) sign-flipped — the §7b bar-involution (q↦q⁻¹) / Type-B-folding signature. (3,2,1) is the self-conjugate fixed point.",
+      "lp": {
+        "x_star": [
+          1.773255445692862e-42,
+          1.1240716569908488e-42,
+          1.7215817336142523e-41,
+          0.5751722457697739
+        ],
+        "y0_star": 0.06426714876225478,
+        "y_star": [
+          1.0025965817768805,
+          0.4804648942028526,
+          0.03091863768082352,
+          1.6695684443133247e-41
+        ],
+        "active_set": [
+          0,
+          1,
+          2
+        ],
+        "primal_obj": 0.03696468028280623,
+        "dual_obj": 0.03696468028280623,
+        "duality_gap": 1.3648726245612145e-42,
+        "feasible": true,
+        "backend": "clarabel-mpfr",
+        "precision_bits": 167,
+        "x_star_str": [
+          "1.773255445692861848630344346386731075659929296700012e-42",
+          "1.124071656990848785757918574558136230780695136737862e-42",
+          "1.721581733614252220575517097844661619595768360289248e-41",
+          "5.751722457697738999999999999999999999999798866818207e-1"
+        ],
+        "y0_star_str": "0.064267148762254779999999999999999999999998737548939",
+        "y_star_str": [
+          "1.0025965817768805772090290204931842978717954107715",
+          "0.48046489420285260230542771823485210574275719252568",
+          "0.030918637680823522369455861962648688751643027216987",
+          "1.6695684443133246520057470220380547277413954772606e-41"
+        ],
+        "primal_obj_str": "0.036964680282806226819182134794242000000000638745812",
+        "dual_obj_str": "0.036964680282806226819182134794241999999999273873188",
+        "duality_gap_str": "1.3648726245612144025840937796044497992171352383012e-42"
+      },
+      "sdp": {
+        "X_star": [
+          1.773255445692862e-42,
+          1.1240716569908488e-42,
+          1.7215817336142523e-41,
+          0.5751722457697739
+        ],
+        "Z_star": [
+          0.06426714876225478,
+          1.0025965817768805,
+          0.4804648942028526,
+          0.03091863768082352,
+          1.6695684443133247e-41
+        ],
+        "primal_obj": 0.03696468028280623,
+        "dual_obj": 0.03696468028280623,
+        "duality_gap": 1.3648726245612145e-42,
+        "eigenvalues": [
+          2.0449931215893776e-43,
+          4.4374393777458264e-43,
+          7.132373856163487e-42,
+          0.04349397878036735
+        ],
+        "feasible": true,
+        "backend": "clarabel-mpfr",
+        "precision_bits": 167,
+        "X_star_str": [
+          "1.773255445692861848630344346386731075659929296700012e-42",
+          "1.124071656990848785757918574558136230780695136737862e-42",
+          "1.721581733614252220575517097844661619595768360289248e-41",
+          "5.751722457697738999999999999999999999999798866818207e-1"
+        ],
+        "Z_star_str": [
+          "0.064267148762254779999999999999999999999998737548939",
+          "1.0025965817768805772090290204931842978717954107715",
+          "0.48046489420285260230542771823485210574275719252568",
+          "0.030918637680823522369455861962648688751643027216987",
+          "1.6695684443133246520057470220380547277413954772606e-41"
+        ],
+        "primal_obj_str": "0.036964680282806226819182134794242000000000638745812",
+        "dual_obj_str": "0.036964680282806226819182134794241999999999273873188",
+        "duality_gap_str": "1.3648726245612144025840937796044497992171352383012e-42",
+        "eigenvalues_str": [
+          "2.04499312158937736761716374227281220243321808862401925909345e-43",
+          "4.43743937774582624490390316546729841257086096346666521830972e-43",
+          "7.13237385616348659274877781757190143800986262779977942702899e-42",
+          "0.0434939787803673474862287120227029999999984790499880214780014"
+        ]
+      }
+    },
     "phase_B_interim": {
       "positive_norm_blocks": [
         "(6,)",
         "(5, 1)",
         "(4, 2)",
-        "(4, 1, 1)",
-        "(3, 3)",
-        "(3, 2, 1)",
-        "(2, 2, 2)",
-        "(2, 1, 1, 1, 1)"
+        "(3, 3)"
       ],
-      "n_target": 0.3876618262172853,
+      "n_target": 0.5751722457697739,
       "bounded": true,
       "strong_duality_holds": true,
       "active_blocks": [
         "(6,)",
         "(5, 1)",
-        "(4, 2)",
-        "(4, 1, 1)",
-        "(3, 3)",
-        "(2, 2, 2)",
-        "(2, 1, 1, 1, 1)"
+        "(4, 2)"
       ],
       "lp": {
         "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          0.3876618262172853,
-          -0.0,
-          -0.0
+          1.773255445692862e-42,
+          1.1240716569908488e-42,
+          1.7215817336142523e-41,
+          0.5751722457697739
         ],
-        "y0_star": -0.014437996946183564,
+        "y0_star": 0.06426714876225478,
         "y_star": [
-          1.8036943373270138,
-          0.6921531742118898,
-          0.2257943908355624,
-          0.09545924560799289,
-          1.0543054256675402,
-          0.0,
-          3.035160436276261,
-          29.706509833656146
+          1.0025965817768805,
+          0.4804648942028526,
+          0.03091863768082352,
+          1.6695684443133247e-41
         ],
         "active_set": [
           0,
           1,
-          2,
-          3,
-          4,
-          6,
-          7
+          2
         ],
-        "primal_obj": -0.005597060263077108,
-        "dual_obj": -0.005597060263077108,
-        "duality_gap": 0.0,
-        "feasible": true
+        "primal_obj": 0.03696468028280623,
+        "dual_obj": 0.03696468028280623,
+        "duality_gap": 1.3648726245612145e-42,
+        "feasible": true,
+        "backend": "clarabel-mpfr",
+        "precision_bits": 167,
+        "x_star_str": [
+          "1.773255445692861848630344346386731075659929296700012e-42",
+          "1.124071656990848785757918574558136230780695136737862e-42",
+          "1.721581733614252220575517097844661619595768360289248e-41",
+          "5.751722457697738999999999999999999999999798866818207e-1"
+        ],
+        "y0_star_str": "0.064267148762254779999999999999999999999998737548939",
+        "y_star_str": [
+          "1.0025965817768805772090290204931842978717954107715",
+          "0.48046489420285260230542771823485210574275719252568",
+          "0.030918637680823522369455861962648688751643027216987",
+          "1.6695684443133246520057470220380547277413954772606e-41"
+        ],
+        "primal_obj_str": "0.036964680282806226819182134794242000000000638745812",
+        "dual_obj_str": "0.036964680282806226819182134794241999999999273873188",
+        "duality_gap_str": "1.3648726245612144025840937796044497992171352383012e-42"
       }
     },
     "B_D_AME_MeV": 2.22456607,
@@ -346,60 +582,154 @@
     },
     "phase_B_full_methods": {
       "1_bar_involution_fold": {
-        "description": "x_λ = x_λ' (bar-involution/Type-B fold, §7b) — symmetry regulariser",
+        "description": "x_\u03bb = x_\u03bb' (bar-involution/Type-B fold, \u00a77b) \u2014 symmetry regulariser",
         "ansatz_flag": false,
         "result": {
           "status": 0,
           "feasible": true,
-          "primal_obj": -0.005606078205036361,
+          "primal_obj": 0.0,
           "x_star": [
             -0.0,
             -0.0,
             -0.0,
+            500000.28758612287,
             -0.0,
-            -0.0,
-            0.38828642407479047,
-            -0.0,
+            -1000000.0,
+            500000.28758612287,
             -0.0,
             -0.0,
             -0.0,
             -0.0
           ],
           "duality_gap": 0.0,
+          "backend": "scipy-highs",
           "eq_duals": [
-            -0.014437996946183564,
-            -0.01444641653470926,
-            0.20404912135010173,
-            -0.014718382182374236,
-            -0.014773789978972347,
-            0.07443857176092217
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
           ],
           "ineq_duals": [
-            -2.047772268834868,
+            -1.5598701995641606,
+            -0.643263468447179,
+            -0.18604391800380654,
             -0.0,
-            -0.2663901621316326,
-            -0.2412513670207448,
+            -0.8498804045835336,
             -0.0,
             -0.0,
             -0.0,
-            -22.290167977353022,
             -0.0,
-            -443.4498508094338,
+            -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 3,
+            "weight_on_support": 0.0,
+            "weight_on_kernel": 2.0,
+            "fraction_dropped": 1.0,
+            "degenerate_under_projection": true,
+            "verdict": "vacuous (0 = 0)"
+          },
+          {
+            "row": 4,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "2_character_projection_colorflavor": {
-        "description": "per-pair χ^λ projection rows + AME-apportioned RHS",
+        "description": "per-pair \u03c7^\u03bb projection rows + AME-apportioned RHS",
         "ansatz_flag": true,
-        "ansatz_warning": "UN-VETTED: pair→block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
+        "ansatz_warning": "UN-VETTED: pair\u2192block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
         "result": {
           "status": 2,
           "feasible": false,
           "primal_obj": null,
           "x_star": null,
-          "duality_gap": null
-        }
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 21.399969653503966,
+            "weight_on_kernel": 20.16257072150279,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 42.79993930700793,
+            "weight_on_kernel": 40.32514144300558,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 10.699984826751983,
+            "weight_on_kernel": 10.081285360751394,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 3,
+            "weight_on_support": 21.399969653503966,
+            "weight_on_kernel": 20.16257072150279,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "3_conservation_laws": {
         "description": "baryon (net) + charge (sign-weighted) conservation rows",
@@ -407,31 +737,32 @@
         "result": {
           "status": 0,
           "feasible": true,
-          "primal_obj": -22531.533531451536,
+          "primal_obj": 0.0,
           "x_star": [
             -0.0,
             -0.0,
             -0.0,
-            1000000.0,
+            -1000000.0,
             -0.0,
+            -1000000.0,
+            -1000000.0,
+            999999.7875861229,
             1000000.0,
-            -1000000.0,
-            999999.694143212,
-            -1000000.0,
-            0.6941432120511308,
-            -1000000.0
+            0.7875861228676513,
+            1000000.0
           ],
           "duality_gap": 0.0,
+          "backend": "scipy-highs",
           "eq_duals": [
-            -0.0012458344503053261,
-            0.001458435180545911
+            -0.0,
+            -0.0
           ],
           "ineq_duals": [
-            -1.5561666845264817,
-            -0.6424570146854806,
-            -0.18538558059722735,
+            -1.5598701995641606,
+            -0.643263468447179,
+            -0.18604391800380654,
             -0.0,
-            -0.8468027257348288,
+            -0.8498804045835336,
             -0.0,
             -0.0,
             -0.0,
@@ -439,31 +770,50 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 4.0,
+            "weight_on_kernel": 7.0,
+            "fraction_dropped": 0.6363636363636364,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "4_ame_binding_equality": {
-        "description": "t·x = B_D_AME (physical binding-energy target)",
+        "description": "t\u00b7x = B_D_AME (physical binding-energy target)",
         "ansatz_flag": false,
         "production_default": false,
         "non_default_reason": "imposes the AME binding as an equality (consumes the experimental answer); a validation anchor, not a substrate derivation.",
         "result": {
           "status": 0,
           "feasible": true,
-          "primal_obj": 2.2245660699963015,
+          "primal_obj": 2.22456607,
           "x_star": [
-            237140.48622573985,
+            12.366200918227635,
             -0.0,
             -0.0,
-            1000000.0,
-            -0.0,
-            1000000.0,
-            -1000000.0,
-            762859.9020606843,
             -1000000.0,
             -0.0,
-            -1000000.0
+            -1000000.0,
+            -1000000.0,
+            -11.79102867245786,
+            1000000.0,
+            1000000.0,
+            1000000.0
           ],
           "duality_gap": 0.0,
+          "backend": "scipy-highs",
           "eq_duals": [
             -0.0,
             1.0
@@ -481,44 +831,63 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 0.5751722457697739,
+            "weight_on_kernel": 0.0,
+            "fraction_dropped": 0.0,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "5_lr_branching_canonical": {
-        "description": "Littlewood-Richardson H_6⊃H_3×H_3 branching rows: Σ_λ[Σ_ν c^λ_{μν} χ^ν(n)] x_λ = χ^μ(p)·tr_M_neutron, tr_M_neutron = Σ_ν y_ν χ^ν(n) (canonical, no fit).",
+        "description": "Littlewood-Richardson H_6\u2283H_3\u00d7H_3 branching rows: \u03a3_\u03bb[\u03a3_\u03bd c^\u03bb_{\u03bc\u03bd} \u03c7^\u03bd(n)] x_\u03bb = \u03c7^\u03bc(p)\u00b7tr_M_neutron, tr_M_neutron = \u03a3_\u03bd y_\u03bd \u03c7^\u03bd(n) (canonical, no fit).",
         "ansatz_flag": false,
         "canonical": true,
         "production_default": true,
-        "tr_M_neutron": 0.9232333051313026,
+        "tr_M_neutron": 0.9877436881158096,
         "result": {
           "status": 0,
           "feasible": true,
-          "primal_obj": -2780.481512442597,
+          "primal_obj": 0.0,
           "x_star": [
             -0.0,
             -0.0,
             -0.0,
-            -0.0,
-            -0.0,
-            0.5285244948718549,
-            -0.4143821044411781,
             1000000.0,
+            -0.0,
+            -619460.5343691376,
+            -289327.26305444614,
             -1000000.0,
-            999999.9047801977,
-            -999999.630636164
+            1000000.0,
+            -608896.6392953522,
+            517685.01189118164
           ],
           "duality_gap": 0.0,
+          "backend": "scipy-highs",
           "eq_duals": [
-            -0.0005972694796068979,
-            -0.004357794526575131,
-            -0.001466170153593484,
-            -0.0006650353560872991
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0
           ],
           "ineq_duals": [
-            -1.6524667470777024,
-            -0.6925144564619895,
-            -0.2329664543794093,
-            -0.04106238814877611,
-            -0.9628518251959525,
+            -1.5598701995641606,
+            -0.643263468447179,
+            -0.18604391800380654,
+            -0.0,
+            -0.8498804045835336,
             -0.0,
             -0.0,
             -0.0,
@@ -526,62 +895,109 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 7.890204498663975,
+            "weight_on_kernel": 3.401777212254086,
+            "fraction_dropped": 0.30125599733879793,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 5.64599085545903,
+            "weight_on_kernel": 10.628020850861054,
+            "fraction_dropped": 0.6530670520983842,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 0.0,
+            "weight_on_kernel": 9.047768067713115,
+            "fraction_dropped": 1.0,
+            "degenerate_under_projection": true,
+            "verdict": "infeasible (0 = b, b != 0)"
+          }
+        ]
       },
       "6_scalar_9pair_ratio_fitted": {
         "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
         "ansatz_flag": true,
         "production_default": false,
-        "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
+        "discipline_label": "near-match / exploratory \u2014 NOT substrate-canonical (CAL-4)",
         "result": {
           "status": 0,
           "feasible": true,
-          "primal_obj": -20236.25701587163,
+          "primal_obj": 0.0,
           "x_star": [
             -0.0,
             -0.0,
             -0.0,
-            519121.2295513709,
-            -0.0,
-            1000000.0,
-            -1000000.0,
-            1000000.0,
             -1000000.0,
             -0.0,
-            -519120.8412649468
+            -589688.2978685042,
+            1000000.0,
+            1000000.0,
+            -410311.1269592501,
+            1000000.0,
+            -1000000.0
           ],
           "duality_gap": 0.0,
+          "backend": "scipy-highs",
           "eq_duals": [
-            -0.005220354784547893,
-            -0.005200440115425444
+            -0.0,
+            -0.0
           ],
           "ineq_duals": [
-            -1.7363008355162801,
-            -0.6704506648044396,
-            -0.2030363574103727,
+            -1.5598701995641606,
+            -0.643263468447179,
+            -0.18604391800380654,
             -0.0,
-            -0.991406391052772,
-            -0.0,
-            -0.0,
+            -0.8498804045835336,
             -0.0,
             -0.0,
-            -0.8262794345768469,
+            -0.0,
+            -0.0,
+            -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 2.6523014029692096,
+            "weight_on_kernel": 4.477442059641017,
+            "fraction_dropped": 0.6279948336320377,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       }
     },
     "production_default_encoding": "5_lr_branching_canonical",
-    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding — that closure is the open Δ_λ gate (AGENTS.md); production reports the honest canonical result, not a fit.",
+    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding \u2014 that closure is the open \u0394_\u03bb gate (AGENTS.md); production reports the honest canonical result, not a fit.",
     "phase_A_cost": "done",
     "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
-    "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
+    "phase_C_dual_solve": "bounded on the full space under convention D; read the dual from support_restricted (the full-space y_star is filler on the seven zero-Gram null directions)",
     "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)"
-  },
-  "scriptHash": "b4f4b385bd87",
-  "scriptCommitSha": "unknown",
-  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
-  "computedAt": "2026-07-18T23:59:54.684921+00:00",
-  "durationMs": 0,
-  "q0Anchor": "ambiguous"
+  }
 }

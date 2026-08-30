@@ -66,8 +66,10 @@ from binding_canonical import build_atom_symbolic  # noqa: E402
 from markov_trace_canonical import tr_M_element  # noqa: E402
 from hecke_symbolic import SymbolicHeckeDivision, q as q_sym  # noqa: E402
 from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 DIV = SymbolicHeckeDivision()
 
 # Isotope set: light + a few doubly-magic. (Z, N). max(Z,N) sets the power-sum

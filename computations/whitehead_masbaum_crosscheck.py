@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Cross-check the U_q(sl₂) R-matrix engine against Masbaum's exact twist-knot
-colored-Jones formula (uploads/Download.pdf, Masbaum, AGT 3 (2003) 537).
+colored-Jones formula (library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf, Masbaum, AGT 3 (2003) 537).
 
 Masbaum eq (49):  J'_{K_p}(N) = Σ_{n≥0} f_{K_p,n} · ∏_{j=1}^n {N+j}{N-j},
 with {m} = a^m − a^{-m}, and (his examples)
@@ -27,8 +27,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from whitehead_colored_jones import (  # noqa: E402
     r_check_braiding, closure_invariant, qint,
 )
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def masbaum_twist(N, f_coeff, a):
@@ -113,7 +115,7 @@ def main() -> int:
     import json
     from datetime import datetime, timezone
     wit = {
-        "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (uploads/Download.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
+        "description": "R-matrix engine cross-check vs Masbaum's exact twist-knot colored Jones (library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf). Validates the engine on a CHIRAL knot (trefoil) after the fig-8 (amphichiral) leg.",
         "computation": "whitehead_masbaum_crosscheck",
         "audit_only": True,
         "convention": "Masbaum a = my balanced q; framing factor q^{-writhe*(N^2-1)/2}",
@@ -126,6 +128,15 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-masbaum-crosscheck.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2))
     print(f"  Witness: {out}")
     return 0 if verdict else 1

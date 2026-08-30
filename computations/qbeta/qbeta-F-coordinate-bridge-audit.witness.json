@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T19:02:07.586884+00:00",
+  "commitSha": "da5a308d7508a748fa4f683aebf4d287aa0fd1b0",
+  "assertions": [
+    {
+      "name": "bridge_and_cos_factor_differ_by_more_than_four_orders",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|rel(bridge_exact_C)| = 0.0536332 vs |rel(cos_model_C)| = 1.27858e-6. The two are not variants of one correction; treating the cos factor as a resummation of the bridge conflates objects of different size."
+    },
+    {
+      "name": "exact_bridge_is_not_closer_to_F_required_than_truncated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Adopting the exact bridge in place of its O(h) truncation does not move the cos-role sites toward the required correction — it is marginally further away. The discrepancy there is not a truncation error, so it cannot be fixed by de-truncating."
+    },
+    {
+      "name": "F_required_slope_sign_opposes_every_candidate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "dF_required/dq = 2.3355461 > 0 while every candidate slope is negative. The curves cross rather than track, reproducing in the smooth coordinate what the phase coordinate showed — so that finding is not an artifact of the arccos."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-F-coordinate-bridge-audit",
+  "scriptFile": "qbeta_F_coordinate_bridge_audit_probe.py",
+  "scriptHash": "ba1bde78d5bf",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py"
+  },
+  "description": "Measures every proposed Q_β multiplicative correction in the coordinate F = Q_β/Q_A, which is smooth (unlike the phase α, whose square-root branch point 0.062% above q₀ is an artifact of the cos parameterisation). Establishes that the Form-A/Form-B bridge and the ladder's cos factor are DIFFERENT objects: the bridge sits ~5e-2 from what the data requires and the cos factor ~1e-6, because 1+α differs from 1 by α while cos α differs by α²/2 — a size change of 2/|α| ≈ 38. Consequence for 'use the exact bridge everywhere': in the bridge role the exact form is already in use with its truncation error Lean-proved (bridge_first_order_remainder, sorry-free); in the cos role the exact bridge is ~5% wrong, so substituting it would be a regression. The exact bridge is also NOT closer to F_required than the truncation. No fit; nothing wired; nothing derived.",
+  "data": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "F_required": "0.998325241673246588884133709366744904990942384746367165695273",
+    "one_minus_F_required": "0.00167475832675341111586629063325509500905761525363283430472734",
+    "candidates": {
+      "bridge_truncated_C": "0.947663879731771161201135473110065829386951682993608660537157",
+      "bridge_exact_C": "0.944781820460398209598868329440675580185348422724381499754206",
+      "cos_model_C": "0.998326518114471943074890314185015297217584227642539423445998",
+      "bridge_truncated_D": "0.959514222659357235081152720934785552711862661746092105127251",
+      "bridge_exact_D": "0.956743913779728868168670104459311316223911816145870955575504",
+      "cos_model_D": "0.998926665895947518006143600205629172635487327079179190234668"
+    },
+    "relative_error_vs_F_required": {
+      "bridge_truncated_C": "-0.0507463498133777234355438767286135891581359212763336410688598",
+      "bridge_exact_C": "-0.0536332439347188465561648188733528811021745490261334220332520",
+      "cos_model_C": "0.00000127858254211303610775920717688493177173470749725401538840770",
+      "bridge_truncated_D": "-0.0388761271315147823881002518206479455791958346497796180538304",
+      "bridge_exact_D": "-0.0416510833922471874056368704748204032293284122425364797965752",
+      "cos_model_D": "0.000602433152639624642090511760492826856324850496209590569259515"
+    },
+    "slopes_dF_dq": {
+      "F_required": "2.33554609601609226869207945178506845238755334529162358056191",
+      "bridge_truncated_C": "-0.454754578384879846528748618810670526833961948452639571469417",
+      "bridge_exact_C": "-0.506076121379112213893123980059565415662545701630093064180114",
+      "cos_model_C": "-0.0320524923618306048464221384657984697513666502389892956999599",
+      "bridge_truncated_D": "-0.241438669987036316938119097431294786587633908544618195750324",
+      "bridge_exact_D": "-0.288664863425095754146086064210470182778770416328535347991861",
+      "cos_model_D": "-0.0163042107608635346390354881305428867616800067630805197816549"
+    },
+    "cos_vs_linear_magnifier": "38.2145254510606100148875750313676409184245688955066392470369"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

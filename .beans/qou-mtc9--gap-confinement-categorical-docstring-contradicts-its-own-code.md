@@ -1,7 +1,7 @@
 ---
 # qou-mtc9
 title: 'GAP: confinement_categorical docstring contradicts its own code (self-assuming projection)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags: [lean, proof-integrity, 3b-cond, vacuity]
@@ -75,3 +75,26 @@ end up describing the code.
 inherited `R` in this file (the proposition's own statement names that ring:
 `E_∞^{0,0} = Z(A) = ⊕_λ R·e_λ`). That change is orthogonal to this gap and does
 not affect it — the projection was there before and is there after.
+
+---
+
+## 2026-08-08 — option 1 applied (the minimum), option 2 still open
+
+Done: `confinement_ident` **deleted** from the class, so it no longer carries the
+theorem's conclusion; the theorem body is an honest `sorry` + `-- Ref:`. The
+docstring now describes the code — including the history of the merge-not-removal
+— and states the invariant a future reader can check: `#print axioms` **must**
+report `sorryAx`, and if it stops doing so without the docstring changing, the
+projection has returned.
+
+Nothing consumed `confinement_ident` (grepped across `content/`), so the deletion
+is contained to this file. `lean -DautoImplicit=false` compiles; the only
+diagnostic is the expected `declaration uses 'sorry'`.
+
+**Still open — the target.** The §3b-cond restructure: class carries the genuine
+inputs (semisimple Hochschild vanishing `HH^k(A)=0` for `k ≥ 1`, Whitehead's
+lemma, the Wedderburn decomposition), theorem *derives* the three clauses. Not
+attempted, because it needs the Hochschild input this file names as absent from
+Mathlib, and inventing a plausible-looking substitute would reproduce the exact
+defect this bean exists to record. Bean stays open at `in-progress`.
+

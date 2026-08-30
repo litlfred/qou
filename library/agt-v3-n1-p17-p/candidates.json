@@ -1,0 +1,171 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "agt-v3-n1-p17-p",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "df196f0a732ad6b9381a6cd7a1030bc7454984b1e818e265f17264f2536d9bc1",
+  "file": "agt-v3-n1-p17-p.pdf"
+ },
+ "provenance": {
+  "title": "Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "theorem": 4,
+   "remark": 6,
+   "example": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": null,
+   "statement": "is equivalent to Habiro\u2019s one from [H3]. (The results of Section 2",
+   "section_file": "sections/sec-002-1-habiros-formula-for.md",
+   "section_title": "Habiro\u2019s formula for !",
+   "pages": "2-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.2",
+   "name": null,
+   "statement": "The skein element ! =!+ is related to, but di",
+   "section_file": "sections/sec-002-1-habiros-formula-for.md",
+   "section_title": "Habiro\u2019s formula for !",
+   "pages": "2-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "Although it might be hard to guess formula (22), once one knows",
+   "section_file": "sections/sec-003-2-a-proof-using-orthogonal-polynomials.md",
+   "section_title": "A proof using orthogonal polynomials",
+   "pages": "5-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": null,
+   "statement": "The coe\u000ecients cn;p of !p in (23) are given by",
+   "section_file": "sections/sec-004-3-graphical-calculus-and-a-formula-for-p.md",
+   "section_title": "Graphical calculus and a formula for !p",
+   "pages": "9-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "The coe\u000ecient Cn;n was computed by a di",
+   "section_file": "sections/sec-005-4-another-formula-for-the-coecients-of-p.md",
+   "section_title": "Another formula for the coe\u000ecients of !p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.4",
+   "name": null,
+   "statement": "In the case p =1 ,w eh a v e",
+   "section_file": "sections/sec-005-4-another-formula-for-the-coecients-of-p.md",
+   "section_title": "Another formula for the coe\u000ecients of !p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.5",
+   "name": "Habiro [H3]",
+   "statement": "Forp\u0015 1, the coe\u000ecients c0",
+   "section_file": "sections/sec-005-4-another-formula-for-the-coecients-of-p.md",
+   "section_title": "Another formula for the coe\u000ecients of !p",
+   "pages": "12-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.7",
+   "name": null,
+   "statement": "In [H3], Habiro has obtained a similar formula using the quantum",
+   "section_file": "sections/sec-005-4-another-formula-for-the-coecients-of-p.md",
+   "section_title": "Another formula for the coe\u000ecients of !p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Assume p = 2. We may write k =(k;n\u2212k). Then",
+   "section_file": "sections/sec-005-4-another-formula-for-the-coecients-of-p.md",
+   "section_title": "Another formula for the coe\u000ecients of !p",
+   "pages": "12-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "The colored Jones polynomial of the twist knot Kp is given by",
+   "section_file": "sections/sec-006-5-the-colored-jones-polynomial-of-twist-knots.md",
+   "section_title": "The colored Jones polynomial of twist knots",
+   "pages": "17-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.2",
+   "name": null,
+   "statement": "Here is another expression for J0",
+   "section_file": "sections/sec-006-5-the-colored-jones-polynomial-of-twist-knots.md",
+   "section_title": "The colored Jones polynomial of twist knots",
+   "pages": "17-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

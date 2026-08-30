@@ -183,7 +183,15 @@ class HeckeDivision:
         self.inv_const = -(q_val - self.q_inv)   # = −HA
 
         # Markov trace parameter
-        self.z_markov = 1.0 / (self.q_half + self.q_half_inv)
+        # CONVENTION D (owner ruling 2026-08-15 R1).  This read
+        #     1.0 / (q_half + q_half_inv)   ==  sqrt(q)/(q+1)  ==  z_C,
+        # excised convention C, and with a float64 literal.  z_C(q0) =
+        # 0.4993203..., z_D(q0) = 0.6126880...  Reached live only by
+        # t35-weak-vertex.py via markov_trace; every other live `.z_markov`
+        # in the corpus is hecke_symbolic.z_markov, which has been D since
+        # 2026-08-09 (bean qou-wgta).  `skein_amp` above legitimately keeps
+        # the sqrt(q) skein variable -- that is not the Markov parameter.
+        self.z_markov = self.q ** 3 / (self.q ** 2 + 1)
 
         # Enriched ideal: named patterns for sub-word matching
         self._named_patterns = {}
@@ -959,5 +967,14 @@ if __name__ == '__main__':
 
     out = Path(__file__).parent / 'hecke-division.witness.json'
     with open(out, 'w') as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2, default=str)
     print(f"\nWitness: {out}")

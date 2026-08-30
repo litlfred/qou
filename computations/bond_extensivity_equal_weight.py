@@ -12,9 +12,13 @@ Bond-extensivity is NOT re-derived here — it is the merged #2089 result
 the connected/log-trace form (log of a product of bond factors = sum over bonds).
 The per-bond Markov factors are fibre-derived closed forms (δ→0):
 
-    z = √q/(q+1),   f_pp = z,
-    f_nn = (q^{3/2} − q³ − q² + q + 1)/(q(q+1)),
-    f_pn = (q^{3/2} − (q+1)(q²−1)/2)/(q(q+1)).
+    z = q³/(q²+1),   h = q − 1/q        (convention D)
+    f_pp = z = q³/(q²+1),   f_nn = z − h = 1/(q³+q),
+    f_pn = z − h/2 = (q⁴+1)/(2q(q²+1)).
+
+The kernel is the STRUCTURAL triple (z, z−h, z−h/2); the half-integer powers
+this block used to carry were the convention-C substitution of exactly that,
+expanded. Under D every factor is rational — D never leaves ℚ(q).
 
 CONTRIBUTION of this probe (not a duplication of #2089 / #3548 / #3534):
 the *coordination-number* reading of the merged 𝓑_K thread —
@@ -58,10 +62,19 @@ q = mp.mpf(Q_50_DIGIT_STR)
 
 # ── derived per-bond Markov factors (#2089 closed forms, δ→0) ──────────────────
 def f_bonds():
-    z = mp.sqrt(q) / (q + 1)
+    # Convention D: z = q^3/(q^2+1). The kernel is STRUCTURAL --
+    # f_pp = z, f_nn = z - h, f_pn = z - h/2 (#2089) -- and these lines
+    # previously carried the C-substituted EXPANSION of exactly that, which is
+    # where the q^{3/2} came from. Writing the structural form instead both
+    # migrates the convention and removes the expansion: under D every factor
+    # is rational, because D never leaves Q(q).
+    #
+    #     f_pp = q^3/(q^2+1)      f_nn = 1/(q^3+q)      f_pn = (q^4+1)/(2q(q^2+1))
+    z = q ** 3 / (q ** 2 + 1)
+    h = q - 1 / q
     f_pp = z
-    f_nn = (q ** mp.mpf("1.5") - q ** 3 - q ** 2 + q + 1) / (q * (q + 1))
-    f_pn = (q ** mp.mpf("1.5") - (q + 1) * (q ** 2 - 1) / 2) / (q * (q + 1))
+    f_nn = z - h
+    f_pn = z - h / 2
     return {"pp": f_pp, "pn": f_pn, "nn": f_nn}
 
 

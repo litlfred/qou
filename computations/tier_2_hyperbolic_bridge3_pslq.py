@@ -49,6 +49,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 import mpmath
 from mpmath import mp, mpf, pslq, pi as mp_pi
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ── Tier-1 basis values (re-used at the same precision) ────────
@@ -77,12 +78,12 @@ def _tier1_basis() -> tuple[mpf, ...]:
 # Literature values (KnotInfo, ~15 dps). Production runs should
 # replace with SnapPy-computed 50+ dps values for matched-precision
 # PSLQ. The current script auto-promotes via SnapPy when available.
-TIER2_LITERATURE = {
-
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
 mp.dps = 50
+
+TIER2_LITERATURE = {
     "8_5":  mpf("7.686421374717877"),
     "8_10": mpf("6.488388036445232"),
     "8_15": mpf("9.935434679720660"),
@@ -121,7 +122,7 @@ def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
 def main() -> int:
     # 50 dps suffices when the basis is at literature precision (~15 dps);
     # if SnapPy promotes to 100+ dps, raise this.
-    mp.dps = 50
+    set_compute_dps()
 
     target = 2 / (3 * mp_pi)
     tier1 = _tier1_basis()

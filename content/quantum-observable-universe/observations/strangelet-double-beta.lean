@@ -53,19 +53,16 @@ def trefoil_crossings : ℕ := 3
 -- Ref: [manuscript] Ch. 7, §strangelet-double-beta
 def figure_eight_crossings : ℕ := 4
 
-/-- The strangelet double beta proposition: the interaction descends
-    through two Skein smoothings from the degree-2 fiber (cinquefoil)
-    through the figure-eight intermediate to the degree-1 fiber
-    (trefoil), with rate proportional to s⁴.
-
-    The Skein amplitude s equals the EM/strong ratio tanh(ln q),
-    making this a parameter-free prediction: the suppression factor
-    s⁴ ≈ 10⁻⁴ is determined entirely by q₀. -/
+/-- **Definitional unfolding** of the strangelet double-beta rate. The physical model — the
+    interaction descends through two Skein smoothings (cinquefoil → figure-eight → trefoil)
+    with rate proportional to `s⁴`, `s = skein_amplitude q = tanh(ln q)` the EM/strong ratio —
+    is *encoded in the definition* `double_beta_rate q := (skein_amplitude q) ^ 4`; this lemma
+    only exposes that definition (the earlier `1 < q` hypothesis was unused and is dropped).
+    The descent derivation and the parameter-free `s⁴ ≈ 10⁻⁴` reading are narrative
+    (`.md` / Ch. 7), NOT a Lean consequence of this equation. -/
 -- Ref: [manuscript] Ch. 7, §strangelet-double-beta
-theorem strangelet_double_beta (q : ℝ) (hq : 1 < q) :
-    double_beta_rate q = (skein_amplitude q) ^ 4 := by
-  unfold double_beta_rate
-  rfl
+theorem strangelet_double_beta (q : ℝ) :
+    double_beta_rate q = (skein_amplitude q) ^ 4 := rfl
 
 /-- The descent path goes cinquefoil → figure-eight → trefoil:
     5 → 4 → 3 crossings. -/

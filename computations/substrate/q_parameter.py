@@ -47,11 +47,19 @@ from pathlib import Path
 try:
     import qou_substrate.constants as _qs_constants  # noqa: F401
 except ImportError:
-    _QOU_SUBSTRATE_PYTHON = (
-        Path(__file__).resolve().parent.parent.parent.parent  # was: ...parent.parent.parent (pre-Phase-6 — substrate moved into substrate/, added one more .parent to reach repo root)
-        / "tools" / "qou-substrate" / "python"
-    )
-    if _QOU_SUBSTRATE_PYTHON.is_dir() and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
+    # SEARCH upward rather than counting `.parent`s. A fixed count cannot be
+    # right for both layouts this shim lives in: 3 up in computations/substrate/,
+    # 5 up once the vendor sync flattens it into qou-mass/.../_internal/. The
+    # hardcoded 4 was wrong in BOTH, so the fallback never fired anywhere; it
+    # only stayed invisible because `import _path_bridge` normally puts the
+    # substrate on sys.path first — and the vendor sync STRIPS that import.
+    _QOU_SUBSTRATE_PYTHON = None
+    for _anc in Path(__file__).resolve().parents:
+        _cand = _anc / "tools" / "qou-substrate" / "python"
+        if _cand.is_dir():
+            _QOU_SUBSTRATE_PYTHON = _cand
+            break
+    if _QOU_SUBSTRATE_PYTHON is not None and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
         sys.path.insert(0, str(_QOU_SUBSTRATE_PYTHON))
 
 from qou_substrate.constants import *  # noqa: F401,F403,E402
@@ -108,10 +116,34 @@ if _anchor in ("ideal", "muon", "canonical"):
     import math as _math
     from pathlib import Path as _P
 
+    # ── Owner ruling 2026-08-22: "A --> CODATA 2022" ────────────────────
+    # The ideal/muon anchor IS the CODATA-2022 muon derivation, taken LIVE
+    # from `q_muon_at()`, not read back out of q-pinning-50-digit.witness.json.
+    #
+    # Why the read is gone rather than re-pointed at a newer literal: the
+    # witness is written by q_pinning_50_digit.py, which is itself listed
+    # `ideal_muon`, so this branch rebound `q_at` for that very producer and it
+    # wrote back the value it had just read -- the anchor certified itself.
+    # Inverting the stored value gave m_mu/m_e = 206.768282989315, which matches
+    # no published CODATA and disagrees by 1.4 ppb with the ratio the same
+    # witness DECLARES ("206.7682827", CODATA 2022). Deriving closes that loop:
+    # the witness now records a value it did not choose.
+    #
+    # `constants.MASS_RATIO_MU_E_STR` reads the NIST table (PR #5149), so this
+    # follows the next CODATA revision without anyone editing a digit -- which
+    # is what q_pinning_50_digit.py's own header says was intended. The old
+    # frozen literal was CODATA-2018-era and had drifted 0.077 ppb from the
+    # 2022 derivation.
+    #
+    # The witness is no longer the SOURCE, so the old startswith() guard is
+    # gone from here; the committed artifact is checked against this derivation
+    # by tests/test_muon_anchor_codata_2022.py instead. An import-time raise
+    # would deadlock regeneration (the producer needs this module to run).
+    import mpmath as _mp_anchor
+
     _QPIN = _P(__file__).resolve().parent.parent / "q-pinning-50-digit.witness.json"
-    _d = _json.loads(_QPIN.read_text(encoding="utf-8"))["derived_50_digit"]
-    if not _d["q"].startswith("1.109978595557"):
-        raise ValueError(f"q-pinning witness q={_d['q'][:16]} not canonical muon")
+    with _mp_anchor.workdps(90):
+        _d = {"q": _mp_anchor.nstr(q_muon_at(70), 70)}  # noqa: F405 (import *)
 
     # ── f64 family ──
     # Take ONLY q from the witness (its f64 IS bit-identical to the committed

@@ -1,5 +1,5 @@
 **Remark (geometric interpretation of $G/3$).**
-*The blending parameter approximates $G/3$. This fraction carries a strict geometric meaning:*
+*The blending parameter approximates $G/3$. This fraction carries a geometric meaning:*
 
 $$
   \frac{G}{3} \;=\; \frac{\mathrm{Vol}(B_3)}{24} \;=\; \frac{\mathrm{Vol}(B_3)}{|S_4|}.

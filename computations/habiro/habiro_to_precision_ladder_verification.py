@@ -65,7 +65,7 @@ def eval_habiro_poly(coeffs, u):
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)
@@ -141,7 +141,7 @@ def main():
     )
     wb.add_assertion(
         "habiro_sum_nonzero",
-        computed=float(mp.fabs(habiro_sum)),
+        computed=fmt(mp.fabs(habiro_sum)),
         expected=2.0,
         tolerance=1.0,
     )

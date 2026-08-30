@@ -299,7 +299,11 @@ theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) (hq : q ≠ 0) :
     For any abstract b_arg with `b_arg² = b_sq q`, the matrix-product
     trace identity reduces to a rational equation in q alone — no
     `Real.sqrt` required. -/
-theorem chi_v21_closed_form_u_coord (q : ℝ) (hq : q ≠ 0) :
+-- Dropped the unused hypothesis `hq : q ≠ 0` (2026-08-22; vacuity ledger,
+-- `proof-no-unused-hypothesis-rfl`).  The right-hand side is the definitional
+-- unfolding of `chi_V21_difference_factored`, so the identity is a `rfl` that
+-- holds for every `q`; `hq` was never consumed.
+theorem chi_v21_closed_form_u_coord (q : ℝ) :
     chi_V21_difference_factored q
       = -(q^4 + 1) * (q^2 - 1) / (4 * q^3) := by
   unfold chi_V21_difference_factored

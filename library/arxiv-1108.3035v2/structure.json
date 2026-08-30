@@ -1,0 +1,193 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1108.3035v2",
+ "source": {
+  "file": "1108.3035v2.pdf",
+  "sha256": "935bf1bd3e13821bced6a5f488f30e5d70554a99d189637bc3755aee8eb0f9ce",
+  "bytes": 514480,
+  "pages": 27,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1108.3035",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "2 Nov 2011"
+  },
+  "doi": null,
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE \u2013 GUE Transition",
+  "authors_raw": "Gernot Akemann1 and Taro Nagao2",
+  "title_lines": [
+   "Random Matrix Theory for the Hermitian Wilson Dirac Operator",
+   "and the chGUE \u2013 GUE Transition"
+  ],
+  "abstract": "We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + \u03bd) \u00d7 (2n+\u03bd) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of \ufb02avours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfa\ufb03an structure. In the quenched case with \u03bd = 0, 1 we derive all spectral correlations functions in our model for \ufb01nite-n, given in terms of skew-orthogonal polynomials. The latter are expressed as Gaussian integrals over standard Laguerre polynomials. In the weakly non-chiral microscopic limit this yields all corresponding quenched eigenvalue correlation functions of the Hermitian Wilson operator.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20220430092758-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Random Matrix Model",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The eigenvalue picture",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "All density correlation functions for finite-N",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The microscopic weakly non-chiral large-N limit",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "A Equivalence to the partition function of WchPT",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Alternative representation of Nf=1 WchPT",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Consistency checks of the partition function and factorisation",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 The GUE limit a1 for =0",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2 The chGUE limit a0 and factorisation",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C Skew-orthogonal polynomials",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C.1 Expectation value of a single characteristic polynomial",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C.2 The odd polynomials R2j+1(x)",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 6870,
+   "n_words": 1132
+  },
+  {
+   "id": "sec-001-2-the-random-matrix-model",
+   "number": "2",
+   "title": "The Random Matrix Model",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5456,
+   "n_words": 1095
+  },
+  {
+   "id": "sec-002-3-the-eigenvalue-picture",
+   "number": "3",
+   "title": "The eigenvalue picture",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 15,
+   "n_chars": 17418,
+   "n_words": 3738
+  },
+  {
+   "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+   "number": "5",
+   "title": "The microscopic weakly non-chiral large-N limit",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 6232,
+   "n_words": 1319
+  },
+  {
+   "id": "sec-004-6-conclusions",
+   "number": "6",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 27,
+   "n_chars": 25408,
+   "n_words": 4695
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 5,
+  "chars_total": 61384
+ }
+}

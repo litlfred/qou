@@ -117,7 +117,7 @@ than one boundary condition.
 
 * parent `qou-0yqu`; siblings `qou-r7ml` (refuted), `qou-g2wr` (lit closed)
 * `QOU/QBeta/FiveTwoSaddleCurve.lean` — the curve, sorry-free, already on `main`
-* GGM `uploads/2012.00062v3.pdf` §6.1, eq (234)–(236), eq (306) palindromy
+* GGM `library/arxiv-2012.00062v3/2012.00062v3.pdf` §6.1, eq (234)–(236), eq (306) palindromy
 * PR #4658
 
 ---
@@ -169,3 +169,17 @@ claim. It is still not Lean.
 Not in (1), (2) or (4). It is **entirely in (5)** — the cyclotomic identity is
 verified to `9.2e-41` and unproved, exactly as the sum rule itself is. Route 8
 moved the difficulty; it did not remove it.
+
+---
+
+## ⚠ 2026-08-08 — this bean quotes a REFUTED constant
+
+Any statement here resting on `min |disc| = 0.348` on the arc is **wrong**. The
+discriminant **vanishes** on `|x| = 1` at `θ = 137.9206708879635°`, where two of
+the three `y`-branches collide. Proved in integer arithmetic (palindromic
+reduction `Q(u) = u⁴−6u³+7u²+6u−31`, `Q(−2) = +49 > 0 > Q(−1) = −23`, IVT).
+
+See `qou-trns` and `qbeta_5two_route16_discriminant_vanishes_probe.py`. The
+transport is **open** again: the branch-labelled formulation presumes a labelling
+that does not survive the arc. `Σⱼ Vⱼ` is symmetric in the roots, so the repair
+is probably to work symmetrically or deform off the circle — neither is written.

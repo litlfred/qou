@@ -5,7 +5,7 @@
 $$
   \Delta\theta_{\mathrm{H_2S}}
   \;=\;
-  \arg \operatorname{Res}_{q=\zeta_\ell}\!\Bigl[\,\Phi_q \cdot
+  \arg \mathrm{Res}_{q=\zeta_\ell}\!\Bigl[\,\Phi_q \cdot
         \mathrm{tr}_{M,(2,1)}\bigl(\beta_{3p_z}\bigr)\Bigr].
 $$
 

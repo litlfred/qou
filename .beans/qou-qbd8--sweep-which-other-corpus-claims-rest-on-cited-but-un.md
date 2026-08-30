@@ -27,10 +27,10 @@ theorem whose hypotheses were never written down?
 
 **Deliverable:** a short table of at-risk citations with a verdict each
 (checked-OK / hypothesis-dropped / symbol-misread / unable-to-check-no-source).
-"Unable to check because the PDF is not in uploads/" is a legitimate and useful
+"Unable to check because the PDF is not in library/" is a legitimate and useful
 verdict -- record it rather than guessing.
 
-**Note.** Several sources ARE local (`uploads/` has 0903.0853v3, 2410.20973v1,
+**Note.** Several sources ARE local (`library/` has 0903.0853v3, 2410.20973v1,
 Equations_aux_q-differences, and many more) and this sandbox has no pdftotext,
 but text extracts fine straight from the FlateDecode streams -- see the method
 used in `qou-qbp5`. So "no PDF tooling" is not a reason to skip a check.

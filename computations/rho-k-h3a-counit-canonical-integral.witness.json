@@ -1,15 +1,34 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T18:43:59.696379+00:00",
-  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
-  "assertions": [],
+  "computedAt": "2026-08-14T19:49:02.375251+00:00",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "assertions": [
+    {
+      "name": "counit_distinct_from_six_refuted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "counit_wrong_sign_vs_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "counit_does_not_close_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-h3a-counit-canonical-integral",
   "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
-  "scriptHash": "4c6fe10c8fc9",
-  "scriptCommitSha": "4be46bc2c015423543eaff4dac24df592362e28c",
+  "scriptHash": "879f3f94d6b8",
+  "scriptCommitSha": "e5797d6ddb125f7f7856f6393e3e4e20953e46b7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +37,11 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Δ_λ counit/canonical-integral candidate (Δ_λ=1/y_λ, ω=G^{-1}𝟙) tested at the deuteron. Parameter-free; genuinely distinct from all six refuted ansätze; REFUTED on sign (vortex-blind), but first candidate in the correct magnitude regime. audit_only; no new anchor, no fit.",
   "audit_only": true,
@@ -28,45 +50,48 @@
     "candidate": "counit / canonical-integral, Δ_λ = 1/y_λ (ω = G^{-1}·𝟙)",
     "free_parameters": 0,
     "distinct_from_six_refuted": true,
-    "target_signed_m_e": "-4.35336728187014866",
+    "target_signed_m_e": "-4.35336500592839429",
     "tol_m_e": 1,
-    "trM_mass_reading_sum_y_chi": "0.388286471547713279",
-    "counit_sum_chi": "4.92667821914229699",
-    "magnitude_ratio_abs_counit_over_abs_target": "1.1316936753",
+    "trM_mass_reading_sum_y_chi": "0.575090871629810317",
+    "counit_sum_chi": "10.6984666642114289",
+    "blocks_excluded_zero_weight": 7,
+    "blocks_summed": 4,
+    "sum_domain": "H_n/rad (blocks with y_lambda != 0); under convention D the l(lambda) >= 3 blocks are the radical and the counit weight 1/y_lambda is undefined there",
+    "magnitude_ratio_abs_counit_over_abs_target": "2.45751657618",
     "right_sign": false,
-    "signed_miss_vs_target": "9.28004550101",
+    "signed_miss_vs_target": "15.0518316701",
     "closes_deuteron_gate": false,
-    "sign_flipped_reading_miss_B_eq_minus_eps": "0.573310937272",
-    "verdict": "REFUTED (parameter-free, on SIGN). Counit Σ_λ χ^λ(β_D) = +4.92668 > 0 > target −4.35337; same vortex-blind failure as co-Casimir. First candidate in the correct magnitude regime (13%, 30× closer than co-Casimir) — residual localised to the vortex (Hopf/L±) sign-content. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close (c=−0.884) would be the barred 7th fit-based ansatz.",
+    "sign_flipped_reading_miss_B_eq_minus_eps": "6.34510165828",
+    "verdict": "REFUTED (parameter-free, on SIGN). Counit Σ_λ χ^λ(β_D) = 10.698467 vs target -4.353365; signs DISAGREE — the same vortex-blind failure as co-Casimir. Magnitude ratio |counit|/|target| = 2.45752. Sum is over the 4 non-radical block(s); 7 block(s) excluded because under convention D their y_λ = 0 and the counit weight 1/y_λ does not exist. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close would be the barred 7th fit-based ansatz.",
     "per_lambda": [
       {
         "partition": [
           6
         ],
-        "y_lambda": "0.0591877169321486317",
-        "chi_lambda_beta_D": "1.55975873941806135",
-        "Delta_lambda_counit_inv_y": "16.8953974208",
-        "contribution_signed": "1.55975873941806135"
+        "y_lambda": "0.115324224902066166",
+        "chi_lambda_beta_D": "1.5597586581034162",
+        "Delta_lambda_counit_inv_y": "8.67120503822",
+        "contribution_signed": "1.5597586581034162"
       },
       {
         "partition": [
           5,
           1
         ],
-        "y_lambda": "0.0589606814014537308",
-        "chi_lambda_beta_D": "3.21589143393868731",
-        "Delta_lambda_counit_inv_y": "16.9604552768",
-        "contribution_signed": "3.21589143393868731"
+        "y_lambda": "0.078952962475926679",
+        "chi_lambda_beta_D": "3.21589087847330514",
+        "Delta_lambda_counit_inv_y": "12.6657691952",
+        "contribution_signed": "3.21589087847330514"
       },
       {
         "partition": [
           4,
           2
         ],
-        "y_lambda": "0.0402843869659352112",
-        "chi_lambda_beta_D": "1.6737481247387005",
-        "Delta_lambda_counit_inv_y": "24.823512912",
-        "contribution_signed": "1.6737481247387005"
+        "y_lambda": "0.0460324346920204269",
+        "chi_lambda_beta_D": "1.67374772222473273",
+        "Delta_lambda_counit_inv_y": "21.7238129308",
+        "contribution_signed": "1.67374772222473273"
       },
       {
         "partition": [
@@ -74,20 +99,21 @@
           1,
           1
         ],
-        "y_lambda": "0.0101334634920729347",
-        "chi_lambda_beta_D": "-0.470191480004721442",
-        "Delta_lambda_counit_inv_y": "98.6829429822",
-        "contribution_signed": "-0.470191480004721442"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-0.470191710156981236",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
           3,
           3
         ],
-        "y_lambda": "0.0141208740049752873",
-        "chi_lambda_beta_D": "4.24907029262365059",
-        "Delta_lambda_counit_inv_y": "70.8171462792",
-        "contribution_signed": "4.24907029262365059"
+        "y_lambda": "0.0151238100980233193",
+        "chi_lambda_beta_D": "4.2490694054099748",
+        "Delta_lambda_counit_inv_y": "66.1209042906",
+        "contribution_signed": "4.2490694054099748"
       },
       {
         "partition": [
@@ -95,10 +121,11 @@
           2,
           1
         ],
-        "y_lambda": "0.00731845435228573078",
-        "chi_lambda_beta_D": "-1.9728210551001285",
-        "Delta_lambda_counit_inv_y": "136.640874133",
-        "contribution_signed": "-1.9728210551001285"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-1.97282073802140162",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
@@ -107,10 +134,11 @@
           1,
           1
         ],
-        "y_lambda": "-0.000685308885514466785",
-        "chi_lambda_beta_D": "-0.489988138291705525",
-        "Delta_lambda_counit_inv_y": "-1459.19602261",
-        "contribution_signed": "-0.489988138291705525"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-0.489987771274594715",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
@@ -118,10 +146,11 @@
           2,
           2
         ],
-        "y_lambda": "0.000773186736905380122",
-        "chi_lambda_beta_D": "-3.4975646652884291",
-        "Delta_lambda_counit_inv_y": "1293.34862106",
-        "contribution_signed": "-3.4975646652884291"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-3.49756389082687373",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
@@ -130,10 +159,11 @@
           1,
           1
         ],
-        "y_lambda": "-0.000342051770885401226",
-        "chi_lambda_beta_D": "-0.819715955891046803",
-        "Delta_lambda_counit_inv_y": "-2923.53405279",
-        "contribution_signed": "-0.819715955891046803"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-0.819715650292522574",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
@@ -143,10 +173,11 @@
           1,
           1
         ],
-        "y_lambda": "0.0000986355761098033752",
-        "chi_lambda_beta_D": "2.15541598752643784",
-        "Delta_lambda_counit_inv_y": "10138.3297938",
-        "contribution_signed": "2.15541598752643784"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "2.1554157117076284",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       },
       {
         "partition": [
@@ -157,10 +188,11 @@
           1,
           1
         ],
-        "y_lambda": "-0.0000124379869743011551",
-        "chi_lambda_beta_D": "-0.676925064527209226",
-        "Delta_lambda_counit_inv_y": "-80398.8621363",
-        "contribution_signed": "-0.676925064527209226"
+        "y_lambda": "0.0",
+        "chi_lambda_beta_D": "-0.676925091699912086",
+        "Delta_lambda_counit_inv_y": null,
+        "contribution_signed": null,
+        "excluded": "radical block: y_lambda = 0 under convention D, so the counit weight 1/y_lambda does not exist"
       }
     ]
   },

@@ -68,7 +68,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
@@ -78,7 +78,24 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 # `float(mp.mpf(...))` cast was THE textbook L1 precision destroyer
 # flagged by the `compute_no_mpf_to_float_cast` critical QA criterion
 # (author 2026-06-09: "float64 is EVIL").
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q = mp.mpf(_Q50_PROTON)
 H = Q - mp.mpf(1) / Q
 
 # Add tools/pyhecke to sys.path
@@ -157,8 +174,14 @@ def solve_atom_lp(atom: str) -> dict:
     G = gram_matrix()
     n_target = tr_M_atom
 
-    # Pin scipy: committed-witness producer → byte-deterministic.
-    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-
+    # deterministic too (6 identical solves, 1 output hash), so that reason
+    # never distinguished the two. The real concern was `backend="auto"`
+    # silently choosing by whether the Rust binary happened to be built;
+    # pinning `clarabel` answers it, and QOU_REQUIRE_CLARABEL=1 makes a
+    # missing binary an error instead of a changed answer. Bean `qou/ftuv`.
+    result = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     blocks = assign_wedderburn_dominant_block()
 
     per_basis = []
@@ -172,6 +195,12 @@ def solve_atom_lp(atom: str) -> dict:
             "self_conjugate": sc,
             "x_star": result.x_star[i],
             "y_star": result.y_star[i],
+            # The per-basis SLICE needs its own companion; the row-level
+            # vectors are shadowed but re-slicing them drops the digits again.
+            **({"x_star_str": result.x_star_str[i]}
+               if result.x_star_str is not None else {}),
+            **({"y_star_str": result.y_star_str[i]}
+               if result.y_star_str is not None else {}),
             "is_active": i in result.active_set,
         })
 
@@ -181,7 +210,14 @@ def solve_atom_lp(atom: str) -> dict:
     # u_0^* shadow price of net constraint
     u0 = result.y0_star
 
-    aK_chi_active = 1.0 + chi_y_sum / abs(u0) if abs(u0) > 1e-12 else float("nan")
+    # u0 is the shadow price of the net constraint and DIVIDES the chirality
+    # sum, so when it vanishes numerically the ratio is undefined — which the
+    # guard below already recognised. It recorded that as float("nan"), and
+    # json.dump writes a bare NaN token, which is not valid JSON; the residual
+    # below then inherited it. null, because undefined-by-a-zero-denominator is
+    # a MISSING value, not a pole of a-K itself.
+    _u0_ok = abs(u0) > 1e-12
+    aK_chi_active = (1.0 + chi_y_sum / abs(u0)) if _u0_ok else None
     aK_C = 1.0  # proton / neutron: A=1, closed form trivially 1
 
     return {
@@ -196,12 +232,20 @@ def solve_atom_lp(atom: str) -> dict:
         "dual_obj": result.dual_obj,
         "duality_gap": result.duality_gap,
         "feasible": result.feasible,
+        # Solver, precision, and the full-precision decimals behind the f64
+        # fields above — otherwise the row cannot say which backend made it.
+        **provenance(result),
         "u0_star": u0,
         "self_conjugate_y_sum": sc_y_sum,
         "chirality_y_sum": chi_y_sum,
         "a_K_chi_active": aK_chi_active,
         "a_K_C_closed": aK_C,
-        "chi_vs_C_residual": aK_chi_active - aK_C,
+        "chi_vs_C_residual": (aK_chi_active - aK_C
+                              if aK_chi_active is not None else None),
+        "a_K_chi_active_undefined_reason": (
+            None if _u0_ok else
+            "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12)"
+            " — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined"),
         "per_basis": per_basis,
     }
 
@@ -222,8 +266,13 @@ def main() -> int:
         "factorisation per audit §7d (H_6 = 720, H_9 = 360K elements)."
     )
     w.set_content_block("prop:mass-coefficient-shadow-price")
-    w.add_parameter("q0", repr(Q))
-    w.add_parameter("h", repr(H))
+    # `mp.nstr`, not `repr`: repr(mpf) serialises as the STRING "mpf('1.1099...')",
+    # which is not a number and which `_q0_anchor_from_payload` cannot read. With
+    # no payload evidence and an unlisted stem, neither staleness test could fire
+    # and the witness inherited the SUPERSEDED muon value A from its previous run
+    # while computing at C -- a Q0_FLIP no re-run could clear (bean qou-1c4y).
+    w.add_parameter("q0", mp.nstr(Q, 50))
+    w.add_parameter("h", mp.nstr(H, 50))
     w.add_parameter("basis_size", 6)
     w.add_parameter("hecke_level", 3)
     w.add_parameter("lp_method", "scipy linprog highs (f64)")
@@ -236,6 +285,14 @@ def main() -> int:
     # Top-level LP-dual fields per AGENTS.md §LP/SDP duals infra.
     w.add_data("y0_star", [r["y0_star"] for r in rows])
     w.add_data("y_star", [r["y_star"] for r in rows])
+    # Companions for the aggregates; the rows already carry them.
+    for _k in ("y0_star", "y_star", "primal_obj", "dual_obj"):
+        _sk = _k + "_str"
+        if any(_sk in r for r in rows):
+            w.add_data(_sk, [r.get(_sk) for r in rows])
+    _wm = max(rows, key=lambda r: r.get("duality_gap") or 0)
+    if "duality_gap_str" in _wm:
+        w.add_data("duality_gap_str", _wm["duality_gap_str"])
     w.add_data("active_set", [r["active_set"] for r in rows])
     w.add_data("primal_obj", [r["primal_obj"] for r in rows])
     w.add_data("dual_obj", [r["dual_obj"] for r in rows])
@@ -252,16 +309,30 @@ def main() -> int:
             unit="absolute", source="primal_obj = dual_obj",
         )
 
-    out = w.save()
+    # DECLARED muon with the value actually used. Q is read from
+    # q-pinning-50-digit.witness.json's `derived_50_digit.q` (line 81), i.e. the
+    # canonical MUON anchor, so an auto-resolved stamp would say PROTON (the stem
+    # is unlisted) over muon arithmetic.
+    # PROTON, matching `Q` above. The qou-cds3 migration (2026-08-29) switched
+    # the VALUE to the proton pin -- see the banner at the top of this file --
+    # and left this label reading "muon", so the witness stamped a muon anchor
+    # over a proton value: one of the two live Q0_FLIPs. Re-running under the
+    # muon anchor would be the WRONG fix; the value is correct and deliberate,
+    # the label was the leftover.
+    out = w.save({"q0Anchor": "proton", "q0Value": mp.nstr(Q, 50)})
     print(f"Witness emitted: {out.name}")
     print()
     for r in rows:
         active_names = [NF_NAMES[i] for i in r["active_set"]]
-        print(f"  {r['atom']:8s}  tr_M={r['tr_M_atom']:.6f}  "
-              f"u0*={r['u0_star']:.6f}  active={active_names}")
-        print(f"    sc_y_sum={r['self_conjugate_y_sum']:.6f}  "
-              f"chi_y_sum={r['chirality_y_sum']:.6f}  "
-              f"a_K^chi_active={r['a_K_chi_active']:.6f}  "
+        # float() at DISPLAY only: these carry mpmath.mpf, which has no
+        # __format__ for '.6f' and raises TypeError. The stored values are
+        # untouched — this is the print, not the compute.
+        print(f"  {r['atom']:8s}  tr_M={float(r['tr_M_atom']):.6f}  "
+              f"u0*={float(r['u0_star']):.6f}  active={active_names}")
+        print(f"    sc_y_sum={float(r['self_conjugate_y_sum']):.6f}  "
+              f"chi_y_sum={float(r['chirality_y_sum']):.6f}  "
+              f"a_K^chi_active="
+              f"{'n/a' if r['a_K_chi_active'] is None else format(float(r['a_K_chi_active']), '.6f')}  "
               f"a_K^C={r['a_K_C_closed']}")
     return 0
 

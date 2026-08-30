@@ -65,8 +65,19 @@ from triangle_bond_submodularity_probe import (  # noqa: E402
     E0, H, atom_braid_word_3A, band_word, perblock)
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 SIMPLEX = HERE / "deltalambda-kappa-interface-residual-simplex.witness.json"
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+mp.mp.dps = 50
 
 def derived_moments():
     """Read μ₃, μ₄ from the committed residual-simplex witness (forward, 0 fit)."""
@@ -96,7 +107,7 @@ def main() -> int:
         ga, gb = sorted(ifaces)
         d_by_gen = {g: float(ifaces[g][1]) for g in ifaces}
         pn_d = min((d for d in d_by_gen.values() if d != 0.0),
-                   key=lambda d: abs(abs(d) - H / 2), default=-H / 2)
+                   key=lambda d: abs(abs(d) - abs(_pn_d(H))), default=_pn_d(H))
         band = band_word(1.0, pn_d)
 
         def g_of(subset):

@@ -64,8 +64,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from q_parameter import Q_MP  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 HERE = Path(__file__).parent
 
@@ -77,7 +80,11 @@ def delta_n(n: int) -> mp.mpf:
 PHI = delta_n(1)
 DELTA_SILVER = delta_n(2)
 DELTA_BRONZE = delta_n(3)
-Q0 = mp.mpf("1.1099785955541805")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:
@@ -378,6 +385,15 @@ def main() -> None:
     }
 
     out_json = HERE / "two-quark-hopf-vs-borromean-sdp.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out_json.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"Saved witness: {out_json}", file=sys.stderr)
 

@@ -43,24 +43,33 @@ from datetime import datetime, timezone
 from math import comb
 from pathlib import Path
 
+import mpmath as mp  # noqa: E402
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()  # before the constants are multiplied together, not after
+
 sys.path.insert(0, str(Path(__file__).parent))
 from magic_A_formula import M_E_MEV, VOL_BORROMEAN, magic_A_binding  # noqa: E402
 # Whitehead-link Vol(7²_1) now sourced from canonical knot_volumes
 # module (mpmath 50dps SnapPy HP literature) instead of the legacy
 # f64-hardcoded literal here AND in low_isotope_binding_sweep.py.
 # See PR #781 knot-vol propagation in coordination ledger.
-from knot_volumes import VOL_7_SQ_1 as VOL_7_2_1  # noqa: E402
+#
+# `_MPF`, not the back-compat f64 alias: `M_E_MEV` is an mpf, so an f64
+# volume would cap c_αα at ~16 honest digits while `fmt` printed 50.
+from knot_volumes import VOL_7_SQ_1_MPF as VOL_7_2_1  # noqa: E402
 
-C_ALPHA_ALPHA_MEV: float = M_E_MEV * VOL_7_2_1  # ≈ 2.4269 MeV
+C_ALPHA_ALPHA_MEV: mp.mpf = M_E_MEV * VOL_7_2_1  # ≈ 2.4269 MeV
 
 # AME2020 reference values (full atomic binding energies, MeV)
-AME_BA_MEV = {
-    ( 4,  4): 56.49951,    # ⁸Be   (n_α = 2)
-    ( 6,  6): 92.16175,    # ¹²C   (n_α = 3)
-    ( 8,  8): 127.61929,   # ¹⁶O   (n_α = 4)
-    (10, 10): 160.64486,   # ²⁰Ne  (n_α = 5)
-    (12, 12): 198.2569,    # ²⁴Mg  (n_α = 6)
-    (20, 20): 342.05212,   # ⁴⁰Ca  (n_α = 10)
+AME_BA_MEV: dict[tuple[int, int], mp.mpf] = {
+    ( 4,  4): mp.mpf("56.49951"),   # ⁸Be   (n_α = 2)
+    ( 6,  6): mp.mpf("92.16175"),   # ¹²C   (n_α = 3)
+    ( 8,  8): mp.mpf("127.61929"),  # ¹⁶O   (n_α = 4)
+    (10, 10): mp.mpf("160.64486"),  # ²⁰Ne  (n_α = 5)
+    (12, 12): mp.mpf("198.2569"),   # ²⁴Mg  (n_α = 6)
+    (20, 20): mp.mpf("342.05212"),  # ⁴⁰Ca  (n_α = 10)
 }
 
 # Atom-symbol map (single source of truth for Family 3 atoms; consumed
@@ -133,8 +142,20 @@ def alpha_cluster_binding(
     if B_AME is not None:
         out["B_AME_MeV"] = B_AME
         out["err_MeV"] = B_pred - B_AME
-        out["err_pct"] = 100.0 * (B_pred - B_AME) / B_AME
+        out["err_pct"] = mp.mpf(100) * (B_pred - B_AME) / B_AME
     return out
+
+
+def _mpf_default(o):
+    """`json.dumps(default=…)` hook: mpmath values at output precision.
+
+    Everything numeric here descends from `M_E_MEV` and the `_MPF` knot
+    volumes, so it arrives as an mpf that `json` cannot encode. Serialize
+    with `_precision.fmt`, never `float(...)`.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 
 def main() -> int:
@@ -174,7 +195,14 @@ def main() -> int:
     print("  confirming this is the recursive-on-4He formula in callable form.")
     print()
     out_path = Path(__file__).parent / "alpha-cluster-recursion.witness.json"
-    out_path.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "computation": "alpha-cluster-recursion",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
@@ -193,7 +221,11 @@ def main() -> int:
             "B_4He_anchor_MeV": magic_A_binding(2, 2)["B_pred_MeV"],
         },
         "rows": rows,
-    }, indent=2, ensure_ascii=False) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out_path.write_text(json.dumps(_prov_payload, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
     print(f"Wrote: {out_path}")
     return 0
 

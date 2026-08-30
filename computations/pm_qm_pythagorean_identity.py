@@ -42,6 +42,7 @@ import subprocess
 from pathlib import Path
 
 import sympy as sp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main():
@@ -125,7 +126,7 @@ def main():
         print("Numerically at q_0:")
         from mpmath import mpf, mp
         from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-        mp.mp.dps = 30
+        set_compute_dps()
         q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
         bracket_inv = 1 / (q_0 + 1 / q_0) ** 2
         print(f"  1/[2]_q² at q_0 = 1/(q_0 + q_0⁻¹)² = {float(bracket_inv):.10f}")
@@ -213,6 +214,15 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / "pm-qm-pythagorean-identity.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 

@@ -1,0 +1,160 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "equations-aux-q-differences",
+ "source_sha256": "357d4e0b546b27e6",
+ "brief": "Équations aux q-différences — 28 sections: Di Vizio, J-P. Ramis, J. Sauloy ∗,; Introduction; L. DI VIZIO, J.-P. RAMIS, J. SAULO",
+ "extended": "**Équations aux q-différences**\n\n*L. Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n g†*\n\n30 pp, 28 sections.\n\n**Outline.** L Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n; 1 Introduction; 22 L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHA; 24 L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHA; 2 Br´eviaire; 2.4 Transformation de jauge. Pour un syst`eme ; 26 L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHA; 2.5 Modules aux q-diﬀ´erences. Les solutions d; 2.6 Prolongement m´eromorphe. Un des buts de l; 3 Classiﬁcation et conﬂuence; 3.1 R´esolution et classiﬁcation locale; 28 L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHA; 30 L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHA; 3.2 Conﬂuence des solutions locales; 3.3 Classiﬁcation globale; 3.4 Remarquons que les composantes eq,A(0) et ; 3.4 Conﬂuence de la matrice de connexion; 3.5 Classiﬁcation locale des ´ equations irr´e",
+ "tokens": {
+  "brief": 31,
+  "extended": 213
+ },
+ "sections": [
+  {
+   "id": "sec-000-l-di-vizio-j-p-ramis-j-sauloy-c-z-h-a-n-g",
+   "title": "Di Vizio, J-P. Ramis, J. Sauloy ∗,C .Z h a n g†",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-22-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-24-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-2-breviaire",
+   "title": "Br´eviaire",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-24-transformation-de-jauge-pour-un-systeme-diﬀer",
+   "title": "Transformation de jauge. Pour un syst`eme diﬀ´erentiel δX = AX,o n",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-26-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-25-modules-aux-q-diﬀerences-les-solutions-du-sys",
+   "title": "Modules aux q-diﬀ´erences. Les solutions du syst` eme (2.3.1) sont",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-26-prolongement-meromorphe-un-des-buts-de-la-the",
+   "title": "Prolongement m´eromorphe. Un des buts de la th´eorie est la classi-",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-3-classiﬁcation-et-conﬂuence",
+   "title": "Classiﬁcation et conﬂuence",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-31-resolution-et-classiﬁcation-locale",
+   "title": "R´esolution et classiﬁcation locale",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-28-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-012-30-l-di-vizio-j-p-ramis-j-sauloy-c-zhang",
+   "title": "L. DI VIZIO, J.-P. RAMIS, J. SAULOY, C. ZHANG",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-013-32-conﬂuence-des-solutions-locales",
+   "title": "Conﬂuence des solutions locales",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-014-33-classiﬁcation-globale",
+   "title": "Classiﬁcation globale",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-015-34-remarquons-que-les-composantes-eqa0-et-eqa-de",
+   "title": "Remarquons que les composantes eq,A(0) et eq,A(∞) des solutions locales",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-016-34-conﬂuence-de-la-matrice-de-connexion",
+   "title": "Conﬂuence de la matrice de connexion",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-017-35-classiﬁcation-locale-des-equations-irregulier",
+   "title": "Classiﬁcation locale des ´ equations irr´eguli`eres",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-018-4-sommabilite-des-solutions-formelles-dequations",
+   "title": "Sommabilit´e des solutions formelles d’´equations aux",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-019-41-quelques-generalites",
+   "title": "Quelques g´en´eralit´es",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-020-2-χlog-q122",
+   "title": "(χ/log q+1/2)2",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-021-2-logqξx122",
+   "title": "(logq(ξ/x)+1/2)2",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-022-48-cas-ou-λ-qz-et-yλ-1",
+   "title": "Cas o`u λ ⁄∈ qZ et yλ = 1",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-023-43-sommations-de-borel-laplace-q-analogues",
+   "title": "Sommations de Borel-Laplace q-analogues",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-024-44-la-serie",
+   "title": "La s´erie (∑",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-025-3-cela-signiﬁe-que-pour-tous-m1m2-z-tels-que-qm1",
+   "title": "Cela signiﬁe que pour tous m1,m2 ∈ Z tels que qm1",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-026-4-pour-simpliﬁer-les-notations-mais-cela-ne-simp",
+   "title": "Pour simpliﬁer les notations (mais cela ne simpliﬁe pas les d´ emonstrations !) nous ne",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-027-6-references",
+   "title": "R´ef´erences",
+   "pages": "28-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -3,13 +3,13 @@
   "description": "Cross-anchor scan of Faddeev Phi_b readouts at substrate-canonical arguments vs the c3 bar-odd S-leak (S and un-levered r = S*u^3). Exploratory measurement; no wiring.",
   "auditOnly": true,
   "tier": "exploratory-scan (registry untouched; flip-flop guard section 8 respected)",
-  "computedAt": "2026-07-11T17:56:29.640194+00:00",
-  "commitSha": "0090da76ace9e7065128239008360f688f3327ea",
+  "computedAt": "2026-08-23T09:46:12.811117+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_c3_phib_argument_scan.py",
-  "scriptHash": "7bc7492b3b4c",
-  "precision_dps": 50,
+  "scriptHash": "67b5ca93f396",
+  "precision_dps": 70,
   "assertions": [
     {
       "name": "S_lever_slope_impossible_for_smooth_readout",
@@ -29,11 +29,11 @@
   ],
   "allPassed": true,
   "result": {
-    "S_muon": "0.0096829777980520786601",
+    "S_muon": "0.010022900945301786549",
     "S_proton": "-0.039459364295860587837",
-    "r_muon": "5.9828075259019479048e-9",
+    "r_muon": "6.1928353776133439261e-9",
     "r_proton": "-2.4380685132795464488e-8",
-    "dS_dq": "3838405.894",
+    "dS_dq": "3838405.878",
     "dr_dq": "2.371629113",
     "n_readouts": 60,
     "gate": 0.0001,
@@ -86,7 +86,7 @@
         "readout": "Re_Lodd[z=z_markov-1/2]",
         "target": "S",
         "max_anchor_ratio_err": 1.0655009720919355,
-        "slope_ratio_err": 0.9999999912940067
+        "slope_ratio_err": 0.9999999912940066
       },
       {
         "readout": "Im_Lodd[z=z_markov-1/2]",
@@ -98,7 +98,7 @@
         "readout": "Re_Lodd[z=c_b*u]",
         "target": "S",
         "max_anchor_ratio_err": 1.0747853997414716,
-        "slope_ratio_err": 0.9999999873860471
+        "slope_ratio_err": 0.999999987386047
       }
     ],
     "verdict": "NO zero-parameter candidate under 1e-04 among the 60 substrate-canonical \u03a6_b readouts scanned (best: Re_Lodd[z=u*e^(i pi/4)] vs S, err 1.00e+00). 0 slope-match(es) recorded (1-parameter tier, weaker). Scope-(a): THIS menu alone, as-is, does not reproduce the S-leak \u2014 no structural exclusion of \u03a6_b readouts implied; the menu is finite and the c_b-lattice / complex-argument space is mostly unexplored. The un-levered target r = S\u00b7u\u00b3 (slope \u2248 \u22122.4, smooth) is the well-posed search space; S itself is smoothness-killed (lever = \u00f7u\u00b3)."

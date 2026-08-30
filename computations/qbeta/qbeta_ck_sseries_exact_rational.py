@@ -17,7 +17,7 @@ against convention drift):
     Qb/m_e  = sgn * [Delta(net)/(q-1)] / q          (regularised, finite at q=1)
     QA/m_e  = (2q+1-q^2)(q+1)/(2q^3)
     hbar    = (q-1)/q,   b = sqrt(q^4+q^2+1)/(q^2+1),   u = b*hbar^2
-    z       = sqrt(q)/(q+1),   h = q - 1/q
+    z       = q^3/(q^2+1),     h = q - 1/q      (convention D)
     alpha_eff = (z-1)h/2 - u/2                       (alpha_eff(1) = 0)
     R(q)    = (Qb/m_e) / [(QA/m_e) * cos(alpha_eff)],  R(1) = 1
 
@@ -402,8 +402,14 @@ def main() -> int:
         "no production wiring; c_k>=3 use owner-gated (registry §8)",
     ])
     wb.add_assertion("validate_delta_net", bool(val_ok), True)
-    wb.add_assertion("alpha_eff_vanishes_at_q1", True, True)
-    wb.add_assertion("R_equals_1_at_q1", True, True)
+    # These two were add_assertion(name, True, True) -- `x == x`. Both facts ARE
+    # verified, by bare `assert`s where alpha and R are built, but only their
+    # conclusions reached the witness as literals: removing those asserts would have
+    # left both reporting "passed". Carry the measured leading coefficients.
+    wb.add_assertion("alpha_eff_at_q1", str(alpha[0]), "0",
+                     source="alpha_eff = (z-1)h/2 - u/2; leading series coefficient")
+    wb.add_assertion("R_minus_1_at_q1", str(simp(R[0] - 1)), "0",
+                     source="R = Qb/[QA cos(alpha_eff)]; leading series coefficient")
     if gate_ok is not None:
         wb.add_assertion("c2_gate_vs_predecessor", bool(gate_ok), True)
     out = wb.save()

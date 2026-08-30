@@ -1,0 +1,260 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-29T19:06:50.165383+00:00",
+  "description": "The multiplicative assembly W = 1 - PROD f cannot yield a positive 3-body Ursell cumulant while fpn <= 2/3. Bound b3 <= 3*fpn - 2 follows from P3 >= 0 alone, so it is independent of the edge set, the like-pair factors, and the energy scale.",
+  "q0_pin": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "threshold": "0.66666666666666666667",
+  "results": [
+    {
+      "convention": "D",
+      "pn_typing": "probe2",
+      "z": "0.6126880371464652516",
+      "h": "0.20906029879563931543",
+      "fpn": "0.50822978937673896258",
+      "threshold_two_thirds": "0.66666666666666666667",
+      "fpn_below_threshold": true,
+      "margin_below_threshold": "0.15843687728992770409",
+      "cap_3fpn_minus_2": "-0.47531063186978311227",
+      "cap_negative": true,
+      "edge_sets": [
+        {
+          "edge_set": "triangle",
+          "n_edges": 3,
+          "P3_isospin_avg": "0.13125592156916726152",
+          "b3_W_units": "-0.60656655343895037379",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.25826097626062271067",
+          "b3_W_units": "-0.73357160813040582294",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-02",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.28484191544126005024",
+          "b3_W_units": "-0.7601525473110431625",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-02-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.23171657962928710849",
+          "b3_W_units": "-0.70702721149907022076",
+          "b3_negative": true,
+          "respects_cap": true
+        }
+      ]
+    },
+    {
+      "convention": "D",
+      "pn_typing": "chi",
+      "z": "0.6126880371464652516",
+      "h": "0.20906029879563931543",
+      "fpn": "0.6126880371464652516",
+      "threshold_two_thirds": "0.66666666666666666667",
+      "fpn_below_threshold": true,
+      "margin_below_threshold": "0.053978629520201415071",
+      "cap_3fpn_minus_2": "-0.16193588856060424521",
+      "cap_negative": true,
+      "edge_sets": [
+        {
+          "edge_set": "triangle",
+          "n_edges": 3,
+          "P3_isospin_avg": "0.19075567742811181618",
+          "b3_W_units": "-0.3526915659887160614",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.3113422588052114912",
+          "b3_W_units": "-0.47327814736581573642",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-02",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.375386630862388384",
+          "b3_W_units": "-0.53732251942299262921",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-02-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.3113422588052114912",
+          "b3_W_units": "-0.47327814736581573642",
+          "b3_negative": true,
+          "respects_cap": true
+        }
+      ]
+    },
+    {
+      "convention": "C",
+      "pn_typing": "probe2",
+      "z": "0.49932033418369445241",
+      "h": "0.20906029879563931543",
+      "fpn": "0.3948620864139681634",
+      "threshold_two_thirds": "0.66666666666666666667",
+      "fpn_below_threshold": true,
+      "margin_below_threshold": "0.27180458025269850327",
+      "cap_3fpn_minus_2": "-0.81541374075809550981",
+      "cap_negative": true,
+      "edge_sets": [
+        {
+          "edge_set": "triangle",
+          "n_edges": 3,
+          "P3_isospin_avg": "0.061554133015397442071",
+          "b3_W_units": "-0.87696787377349295188",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.15588767606030655249",
+          "b3_W_units": "-0.9713014168184020623",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-02",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.1765393681159427408",
+          "b3_W_units": "-0.99195310887403825061",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-02-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.13526437523155587294",
+          "b3_W_units": "-0.95067811598965138275",
+          "b3_negative": true,
+          "respects_cap": true
+        }
+      ]
+    },
+    {
+      "convention": "C",
+      "pn_typing": "chi",
+      "z": "0.49932033418369445241",
+      "h": "0.20906029879563931543",
+      "fpn": "0.49932033418369445241",
+      "threshold_two_thirds": "0.66666666666666666667",
+      "fpn_below_threshold": true,
+      "margin_below_threshold": "0.16734633248297221425",
+      "cap_3fpn_minus_2": "-0.50203899744891664276",
+      "cap_negative": true,
+      "edge_sets": [
+        {
+          "edge_set": "triangle",
+          "n_edges": 3,
+          "P3_isospin_avg": "0.098429403174854201988",
+          "b3_W_units": "-0.60046840062377084475",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.19712676699972548778",
+          "b3_W_units": "-0.69916576444864213054",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-01-02",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.2493207961293163067",
+          "b3_W_units": "-0.75135979357823294946",
+          "b3_negative": true,
+          "respects_cap": true
+        },
+        {
+          "edge_set": "chain-02-12",
+          "n_edges": 2,
+          "P3_isospin_avg": "0.19712676699972548778",
+          "b3_W_units": "-0.69916576444864213054",
+          "b3_negative": true,
+          "respects_cap": true
+        }
+      ]
+    }
+  ],
+  "cross_check_2026_08_29_MeV": [
+    {
+      "convention": "D",
+      "pn_typing": "probe2",
+      "b2_MeV": "2.224566",
+      "b3_MeV": "-2.7438574"
+    },
+    {
+      "convention": "D",
+      "pn_typing": "chi",
+      "b2_MeV": "2.224566",
+      "b3_MeV": "-2.02572019827"
+    },
+    {
+      "convention": "C",
+      "pn_typing": "probe2",
+      "b2_MeV": "2.224566",
+      "b3_MeV": "-3.22384843403"
+    },
+    {
+      "convention": "C",
+      "pn_typing": "chi",
+      "b2_MeV": "2.224566",
+      "b3_MeV": "-2.66793656564"
+    }
+  ],
+  "ame_b3_MeV": "1.4262225",
+  "assertions": [
+    {
+      "name": "every measured fpn is strictly below 2/3",
+      "passed": true
+    },
+    {
+      "name": "the cap 3*fpn-2 is negative in every combination",
+      "passed": true
+    },
+    {
+      "name": "b3 < 0 for EVERY edge set, every typing, every convention",
+      "passed": true
+    },
+    {
+      "name": "b3 respects the Lean cap b3 <= 3*fpn-2 everywhere",
+      "passed": true
+    },
+    {
+      "name": "AME's own b3 is POSITIVE (+1.426222 MeV), so the sign fails",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(b) on the conjunction {multiplicative assembly, fpn <= 2/3}; invariant = positivity of a product of positive bond factors. Does NOT exclude the bond picture and does NOT close the magnitude.",
+  "lean": "QOU/MassTheory/MayerThreeBodySign.lean (sorry-free)",
+  "related": [
+    "probes/he4-body-order-shortfall-location.witness.json",
+    "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md"
+  ],
+  "owner_ruling": "R1 2026-08-15 \u2014 convention D canonical, C excised",
+  "allPassed": true,
+  "scriptHash": "5c115ece6e67",
+  "scriptCommitSha": "unknown",
+  "commitSha": "4d38ae39ab7f13f63d9d3800e468c6141cde5e3f",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "mayer_threebody_sign_threshold_probe.py"
+}

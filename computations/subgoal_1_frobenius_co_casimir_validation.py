@@ -28,6 +28,12 @@ Ref: docs/audits/2026-06-02-subgoal-1-sdp-canonical-knot-run.md
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import sys
 from pathlib import Path
 
@@ -38,7 +44,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from murnaghan_nakayama import dim_q_lambda  # noqa: E402
 
@@ -121,8 +127,8 @@ def main() -> int:
         w.add_data(f"m_e_times_sum_n{n}_MeV", mp.nstr(frob, 30))
         w.add_assertion(
             name=f"frobenius_co_casimir_n{n}_matches_documented",
-            computed=float(frob),
-            expected=float(doc),
+            computed=frob,
+            expected=doc,
             tolerance=1e-3,
             source=f"knot-mass-formula-unified.md (n={n}, A={A})",
         )

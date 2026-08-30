@@ -21,4 +21,8 @@ export default remark({
     "rem:information-theoretic-time-julia-microscopic",
     "rem:information-theoretic-time-arrow",
   ],
+  foreshadows: [
+    "rem:information-theoretic-time-julia-microscopic",
+    "rem:information-theoretic-time-arrow",
+  ],
 });

@@ -8,7 +8,7 @@ democratic braiding data exactly.
 
 Established inputs: brick 3 (merged): at the democratic points q = +-i the
 semisimplified braiding sigma_ss = +-i squares to -1 (J-type), transpose fixes
-each point, bar exchanges them. Braden-Disney-Hogg (uploads/2208.13692v1.pdf):
+each point, bar exchanges them. Braden-Disney-Hogg (library/arxiv-2208.13692v1/2208.13692v1.pdf):
 the Bring vertices are the permutations of [1:i:-1:-i:0] (Prop 3.9, fixed points
 of order-4 automorphisms); B/<4-cycle> is elliptic with j = -25/2 = j(5*tau0)
 (SS4.3, Weber's T).
@@ -161,7 +161,7 @@ def main():
         "context": {
             "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at "
                          "the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in "
-                         "uploads/)",
+                         "library/)",
             "remaining": "the functorial statement tau(braiding) = the order-4 automorphism action; its "
                          "classical limit inherits the conformal structure J defines, hence a0 (Clause A)",
             "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4",
@@ -169,6 +169,15 @@ def main():
     }
     out = os.path.join(_here, "alpha-em-sigmaJ-geometric-carrier.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0 if all_passed else 1

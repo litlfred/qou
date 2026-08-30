@@ -69,7 +69,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    Q0 = 1.1099785955573347198997632204832250266562084087802
+    # Was a BARE FLOAT literal of the superseded muon pin A -- two defects in
+    # one line: a stale pin, and a float64 input to a file that runs at
+    # mp.dps = 65, so 49 of its digits were noise. Read the anchor as mpf.
+    # Bean qou-3f7a.
+    from q_parameter import q_at  # noqa: E402
+    Q0 = mp.mpf(str(q_at(mp.mp.dps)))
 
     t0 = time.monotonic()
     builder = WitnessBuilder(
@@ -97,14 +102,20 @@ def main() -> int:
     print()
 
     # Word format for chi_lambda_braid: list of (sign, generator) pairs.
+    # GENERATORS ARE 1-BASED.  hecke_characters.chi_lambda_braid documents
+    # `[(sign, generator_1based), ...]` with `generator in {1, ..., n-1}`, and
+    # the Rust panics on 0: 'invalid generator index 0 for n = 3 (valid range:
+    # 1..=2)'.  This probe passed 0-based indices, so it could not run at all.
+    # sigma_0 sigma_1 sigma_0 in the 0-based naming of the docstring above is
+    # generators 1,2,1 here.
     # Electron knot (free-neutron-decay PARTICLE_KNOT): (0,1,0)
     # = σ_0 σ_1 σ_0 (all positive crossings)
-    electron_word = [(1, 0), (1, 1), (1, 0)]
+    electron_word = [(1, 1), (1, 2), (1, 1)]
     # Identity (no crossings) — the "before" state for Hopf-link
     # intermediate trace
     identity_word = []
     # Intermediate Hopf word (0,1)
-    hopf_word = [(1, 0), (1, 1)]
+    hopf_word = [(1, 1), (1, 2)]
 
     print(f"  Per-block Markov-trace components at q_0 = {Q0:.16f}:")
     print(f"  {'λ':<10} {'dim_q':>10} {'χ(1)':>14} {'χ(σ₀σ₁)':>14} "

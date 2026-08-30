@@ -55,6 +55,7 @@ import numpy as np  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as q0, Q_INV as qi, HA as h  # noqa: E402
 from mass_at_3A_proper import (  # noqa: E402
+    Q0_PROTON,
     atom_braid_word_3A,
     _cached_seminormal,
     partitions_of,
@@ -66,13 +67,18 @@ UNIT_TOL = 1e-9           # |λ| within this of 1 counts as unit-modulus
 
 def block_operator(word, shape):
     """Seminormal operator Π (c σ_g + d I) on the λ-block; eigen-data."""
-    sigmas, dim, _ = _cached_seminormal(shape)
+    sigmas, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     if dim == 0:
         return None
     P = np.eye(dim)
     I = np.eye(dim)
+    # `c`/`d` arrive as mpmath.mpf since the exact-word change (PR #5745).
+    # np.linalg.eigvals is LAPACK, i.e. float64 only — an mpf coefficient
+    # makes `P` dtype=object and `_assert_finite` rejects it before any
+    # decomposition runs. Everything this function returns is float() anyway,
+    # so casting at the boundary is where the loss belongs and is visible.
     for (c, d, g) in word:
-        P = P @ (c * sigmas[g] + d * I)
+        P = P @ (float(c) * sigmas[g] + float(d) * I)
     ev = np.linalg.eigvals(P)
     return {
         "dim": int(dim),

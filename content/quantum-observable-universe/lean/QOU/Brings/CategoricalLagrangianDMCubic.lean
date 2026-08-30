@@ -21,7 +21,8 @@ the Bring hyperkähler geometry and only *then* match it to the kernel.  This
 file scaffolds that independent side.
 
 **The 4-form → 2-form correction (documented, load-bearing).**  The Bring cone
-`C(𝓑) ⊂ ℂ⁵` is a **real-4-dimensional** manifold (`bring_tetraplectic.md` §1;
+`C(𝓑) ⊂ ℂ⁵` is a **real-4-dimensional** manifold
+(`def:bring-cone-tetraplectic-structure`;
 `QOU.Tetraplectic.BringCone`).  A tetraplectic 4-form on a `4m`-manifold needs
 `Ω^m` non-degenerate; at `m = 1` the 4-form degenerates to a mere volume form
 and carries **no** Lagrangian-fibration data.  The structure that actually
@@ -101,7 +102,9 @@ substrate→archimedean wall.
   SW base is generally **not** a Frobenius manifold — do not claim it is; the
   genuine fact used is "cubic = 3-jet of the prepotential").
 - [manuscript] `def:categorical-lagrangian`, `rem:wavefront-propagation`,
-  `bring_tetraplectic.md` §1/§4, `conj:categorical-lagrangian-dm-cubic`;
+  `def:bring-cone-tetraplectic-structure`,
+  `lem:bring-cone-reeb-quaternionic-twist`,
+  `conj:categorical-lagrangian-dm-cubic`;
   QDM-3 tautology audit
   `docs/audits/2026-07-20-qprolongation-definitional-sharpening.md`.
 -/
@@ -173,8 +176,8 @@ structure BringHKData (R : Type*) [CommRing R] where
 
     No instance is supplied — the honest open state of the cubic-condition
     conjecture. -/
--- Ref: [donagi-markman1996cubics] https://arxiv.org/abs/alg-geom/9408004 §1
--- Ref: [donagi1997swintegrable] https://arxiv.org/abs/alg-geom/9705010
+-- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
+-- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
 class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     (F : QLagrangianFibration R) : Prop where
@@ -210,7 +213,8 @@ class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     exactly "the wavefront is a Lagrangian submanifold of `(·, Ω_ℂ)`".  No
     instance is supplied — the honest open state. -/
 -- Ref: [manuscript] def:categorical-lagrangian, rem:wavefront-propagation,
---      bring_tetraplectic.md §1/§4
+--      def:bring-cone-tetraplectic-structure,
+--      lem:bring-cone-reeb-quaternionic-twist
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
 class BringHolomorphicSymplectic {R : Type*} [CommRing R]
     (D : BringHKData R) : Prop where
@@ -246,7 +250,7 @@ class BringHolomorphicSymplectic {R : Type*} [CommRing R]
     modulo the two named, class-axiomatised conjectural inputs.  It does **NOT**
     identify `c` with the binding kernel — that is the separate open target
     `QCubicEqBindingKernel` below. -/
--- Ref: [donagi-markman1996cubics] https://arxiv.org/abs/alg-geom/9408004 §1
+-- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
 theorem categorical_lagrangian_dm_cubic {R : Type*} [CommRing R]
     (F : QLagrangianFibration R) (D : BringHKData R)
@@ -292,7 +296,7 @@ theorem categorical_lagrangian_dm_cubic {R : Type*} [CommRing R]
     here.  The earlier `symbol D_q = recurrenceKernelLead κ` is a tautological
     re-encoding of the recurrence; nothing above supplies the independent
     geometric side, and this class must NOT be discharged by a fit. -/
--- Ref: [donagi1997swintegrable] https://arxiv.org/abs/alg-geom/9705010
+-- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
 -- Ref: [grassi-gu-marino2019qsw] https://doi.org/10.1007/JHEP07(2020)106
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic;
 --      QOU.Machinery.QProlongation.recurrenceKernelLead;

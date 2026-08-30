@@ -41,9 +41,11 @@ import mpmath as mp
 
 # Reuse Plancherel + seminormal infrastructure from mass_at_3A_proper
 from mass_at_3A_proper import (
+    Q0_PROTON,
     partitions_of, dim_q, qfac, _cached_seminormal,
 )
 from q_parameter import Q as Q0_FLOAT
+from _precision import set_compute_dps  # noqa: E402
 
 
 def per_generator_V_hat_general(
@@ -76,21 +78,28 @@ def per_generator_V_hat_general(
         if 0 <= g < n_gens:
             word_by_gen[g].append((float(c), float(d)))
 
-    nfac = qfac(n_strands)
+    # Pin the anchor EXPLICITLY. `qfac`/`dim_q` default to the module-level q of
+    # `hecke_characters`, which imports the SHIM's Q — rebound to muon whenever
+    # the entry-point stem is manifest-listed. That is what made this function's
+    # output a function of its CALLER: xi_ell_phi_q_probe and
+    # t6_tau_h5_embedding_probe both derive their own q inline from the muon
+    # ratio, never touch the manifest, and still moved 36 / 15 fields under an
+    # anchor flip. The Plancherel weights below were the carrier. Bean qou-wee5.
+    nfac = qfac(n_strands, Q0_PROTON)
     V_hat = [0.0] * n_gens
 
     # Plancherel weights
     weight_table: list[tuple[tuple[int, ...], float]] = []
     if weight_scheme == "plancherel":
         for shape in partitions_of(n_strands):
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weight_table.append((shape, (dq * dq) / nfac))
     else:
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")
 
     # Character sum per Wedderburn block
     for (shape, w_lam) in weight_table:
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         I_lam = np.eye(dim)
@@ -157,16 +166,19 @@ def per_braid_mass_li2q(V_hats: list[float], q: mp.mpf, z: mp.mpf) -> dict:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
     q0_f = float(q0)
     h_f = float(h)
 
@@ -295,6 +307,15 @@ def main() -> int:
 
     here = Path(__file__).resolve().parent
     out = here / "per-generator-V-hat-general.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nWitness: {out}")
     return 0

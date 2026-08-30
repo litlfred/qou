@@ -38,6 +38,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 from pathlib import Path
@@ -56,7 +57,11 @@ from q_parameter import Q as Q0, HBAR_Q
 def load_atom_braids() -> dict:
     """Build canonical braid words for D, T, ³He, ⁴He via the
     he4_compositional_braids helper + per-atom analogues."""
-    from probe_he4_jsj_topology import (
+    # Repointed 2026-08-09: these helpers moved to the live module
+    # `atom_braid_words` when `probe_he4_jsj_topology` was deprecated.
+    # `_path_bridge` skips `_deprecated/`, so the old import raised
+    # ImportError here at call time. Bodies are unchanged.
+    from atom_braid_words import (
         _proton_braid_word,
         _neutron_braid_word,
         he4_compositional_braids,
@@ -112,6 +117,13 @@ def compute_jsj_vol(braid_word: list[int], simplify_passes: int = 5):
 
     return vol, n_components, n_tet, "→".join(simplify_log)
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-jsj-phase3")

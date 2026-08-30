@@ -265,6 +265,39 @@ theorem hadamard_factorization_statement_satisfiable_for_exp :
   · exact multipliable_empty
   · simp
 
+/-- **The `0 ≤ ρ` hypothesis of `hadamard_factorization` is necessary** — without
+    it the statement is FALSE (machine-proved, no `sorry`).
+
+    `IsEntireOfOrderLE f ρ` is satisfiable at negative `ρ`: for `ρ < 0` the
+    exponent `‖z‖^ρ` is bounded above on `‖z‖ ≥ 1` and Mathlib's `rpow` sends
+    `0 ^ ρ` to `0`, so the constant function `1` satisfies it with `A = C = 1`.
+    But the conclusion demands `(p : ℝ) ≤ ρ` for a natural number `p`, and
+    `(p : ℝ) ≥ 0 > ρ`. So the existential cannot be met.
+
+    Classically the order of a nonzero entire function is `≥ 0` by construction,
+    which is why the hypothesis is invisible in the textbooks; here the predicate
+    takes `ρ` as an input, so it has to be said. Same for `(g.natDegree : ℝ) ≤ ρ`.
+    Axioms `[propext, Classical.choice, Quot.sound]`. -/
+theorem hadamard_factorization_needs_nonneg_order :
+    ¬ ∀ (f : ℂ → ℂ) (ρ : ℝ), IsEntireOfOrderLE f ρ → f 0 ≠ 0 →
+        ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+          (p : ℝ) ≤ ρ ∧
+          (g.natDegree : ℝ) ≤ ρ ∧
+          (∀ i, a i ≠ 0) ∧
+          (∀ i, f (a i) = 0) ∧
+          (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+                f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
+  intro h
+  have hone : IsEntireOfOrderLE (fun _ => (1 : ℂ)) (-1) := by
+    refine ⟨differentiable_const 1, 1, 1, one_pos, fun z => ?_⟩
+    have hnn : (0 : ℝ) ≤ ‖z‖ ^ (-1 : ℝ) := Real.rpow_nonneg (norm_nonneg z) _
+    have h0 : Real.exp 0 ≤ Real.exp (1 * ‖z‖ ^ (-1 : ℝ)) :=
+      Real.exp_le_exp.mpr (by linarith)
+    simpa using h0
+  obtain ⟨p, -, -, -, -, hp, -⟩ := h _ (-1) hone (by norm_num)
+  have : (0 : ℝ) ≤ (p : ℝ) := Nat.cast_nonneg p
+  linarith
+
 /-- **Hadamard factorization theorem** (the stated-open core, PI-5). An entire
     function `f` of finite order `ρ` with `f(0) ≠ 0` factors as
     `f(z) = exp(g(z)) · ∏ₙ Eₚ(z/aₙ)`, where `(aₙ)` enumerates the zeros of `f`
@@ -277,19 +310,34 @@ theorem hadamard_factorization_statement_satisfiable_for_exp :
     NOTE (honest, non-vacuous): the product equation `f z = exp(g z)·∏ₙ Eₚ(z/aₙ)`
     already forces each `aₙ` to be a zero of `f` (via `weierstrassFactor_eq_zero_iff`)
     and forces completeness of the zero enumeration (no other zeros on either
-    side), so the theorem is stated in full strength, not weakened. -/
-theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
-    (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) :
+    side), so the theorem is stated in full strength, not weakened.
+
+    NOTE (`0 ≤ ρ`): `IsEntireOfOrderLE` takes `ρ` as an input and is satisfiable
+    at negative `ρ` (the constant `1`), where `(p : ℝ) ≤ ρ` is unsatisfiable for
+    `p : ℕ`.  Without the hypothesis the statement is false —
+    `hadamard_factorization_needs_nonneg_order` proves it.  The classical theorem
+    hides this because the order of a nonzero entire function is `≥ 0` by
+    construction. -/
+class HasHadamardFactorization where
+  factorization : ∀ {f : ℂ → ℂ} {ρ : ℝ},
+    IsEntireOfOrderLE f ρ → f 0 ≠ 0 → 0 ≤ ρ →
     ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
       (p : ℝ) ≤ ρ ∧
       (g.natDegree : ℝ) ≤ ρ ∧
       (∀ i, a i ≠ 0) ∧
       (∀ i, f (a i) = 0) ∧
       (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
-            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
-  -- Ref: [manuscript] Ahlfors §5.3.2, Hadamard's Theorem; Conway XI.§3,
-  --      Theorem 3.4 (Hadamard's factorization theorem).
-  -- SORRY: needs full Hadamard factorization theorem (Jensen formula, counting zeros, Weierstrass canonical product)
-  sorry
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i))
+
+theorem hadamard_factorization [HasHadamardFactorization] {f : ℂ → ℂ} {ρ : ℝ}
+    (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) (hρ : 0 ≤ ρ) :
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+      (p : ℝ) ≤ ρ ∧
+      (g.natDegree : ℝ) ≤ ρ ∧
+      (∀ i, a i ≠ 0) ∧
+      (∀ i, f (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) :=
+  HasHadamardFactorization.factorization hf hf0 hρ
 
 end QOU.Mathlib.HadamardFactorization

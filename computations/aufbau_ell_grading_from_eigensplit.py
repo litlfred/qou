@@ -64,7 +64,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 NMAX = 7  # shells 1..7 -> orbitals up to 7s..  (covers Z<=110, past Rn=86)
 NOBLE = [2, 10, 18, 36, 54, 86]       # Ne/Ar/Kr/Xe/Rn closures + He
@@ -112,7 +113,7 @@ def crossover_sign(a, n=3):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q = mp.mpf(str(Q0))
     tr = q - 1 / q
     disc = mp.sqrt(tr * tr + 4)
@@ -197,8 +198,12 @@ def main() -> int:
     w.add_data("ell_coefficient_values_hitting_noble_zero_param", a_hits_noble)
     w.add_assertion("lambda_plus_eq_q", mp.nstr(lp, 20), mp.nstr(q, 20),
                     tolerance=1e-18, source="roots of x^2-(q-1/q)x-1")
-    w.add_assertion("structural_ell_coeff_is_negative_two", -2, -2,
-                    source="ln|lambda_-/lambda_+| / ln(lambda_+) = -2")
+    # Was add_assertion(name, -2, -2) -- `x == x`, with a source giving the very
+    # formula the assertion did not evaluate. lp and lm are in scope, so compute it.
+    _ell_coeff = mp.log(abs(lm / lp)) / mp.log(lp)
+    w.add_assertion("structural_ell_coeff_is_negative_two",
+                    mp.nstr(_ell_coeff, 20), "-2.0", tolerance="1e-18",
+                    source="ln|lambda_-/lambda_+| / ln(lambda_+), evaluated")
     w.add_caveat(
         "Mechanical gap-detection closure detector (gap_factor=1.5x median); "
         "the noble-gas set is quantitative and Madelung itself is only an "

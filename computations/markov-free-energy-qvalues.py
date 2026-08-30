@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, LN_Q
 from experimental_constants import M_E_MEV, Q_TRITIUM_MEV, Q_NEUTRON_MEV
 
-z = 1.0 / (q**0.5 + q**(-0.5))
+z = q**3 / (q**2 + 1)
 ln_q = LN_Q  # ln(q₀) ≈ 0.1044
 
 print("MARKOV CHAIN FREE ENERGY Q-VALUES")

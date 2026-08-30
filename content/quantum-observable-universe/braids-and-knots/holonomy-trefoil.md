@@ -12,4 +12,4 @@ with $T$ the geometric torsion scalar and $\varTheta$ a branch angle. The holono
 
 The fundamental group of the trefoil-knot complement has the presentation $\langle x,y\mid xyx=yxy\rangle \cong B_3$. The mapping $x\mapsto H_1$, $y\mapsto H_2$ forms an isomorphism $\pi_1(S^3\setminus K_{3,2})\xrightarrow{ \sim } \langle H_1,H_2\rangle$. Thus, the monodromy group of the branched cover is exactly the trefoil-knot group.
 
-The composite holonomy $H_1 H_2\colon\mathbf{w}\mapsto(w_3,w_4,w_1,w_2)$ acts as the $3$-cycle $\alpha$ and satisfies $(H_1 H_2)^3=\mathrm{id}$ on $\mathrm{SO}(3)$.
+The composite holonomy $H_1 H_2$ acts as a $3$-cycle in the symmetric-group holonomy $S_3$ — the order-$3$ generator built in [the $\mathrm{SU}(2)$ generators](#def:su2-generators) — and satisfies $(H_1 H_2)^3=\mathrm{id}$ on $\mathrm{SO}(3)$.

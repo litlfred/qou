@@ -36,16 +36,44 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
 
-mp.mp.dps = 50
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# Proton pin per the standing 2026-08-07 directive: any probe that is
+# WRITTEN OR MODIFIED defaults to the experimental layer.  This was a
+# hardcoded MUON literal (…9555573347…), i.e. the ideal/CAL-2 layer.
+Q0 = Q_MP
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))
 qi = 1 / Q0
 h = Q0 - qi
-z = mp.sqrt(Q0) / (Q0 + 1)
+# Convention D via the canonical helper.  This was `mp.sqrt(Q0)/(Q0+1)`
+# — convention C, excised by the 2026-08-09 ruling.  Note the witness
+# `_provenance` already CLAIMED `z=q^3/(q^2+1)`, so the file documented D
+# while computing C.  Calling `markov_z` rather than re-spelling z inline
+# is deliberate: every convention detector keys on how z is WRITTEN, and
+# an inline spelling is how a site goes blind (this one was missed by two
+# independent detectors).
+z = markov_z(Q0)
 
 q2 = Q0 ** 2
 denom = Q0 ** 4 + 4 * q2 + 1
@@ -56,7 +84,7 @@ w_alt = q2 / denom
 # bond (c, d)
 BONDS = {"pp": (mp.mpf(1), mp.mpf(0)),
          "nn": (mp.mpf(1), -h),
-         "pn": (mp.mpf(1), -h / 2)}
+         "pn": (mp.mpf(1), _pn_d(h))}   # colour-weighted
 
 AME_D = mp.mpf("2.224566")   # only the deuteron is a bound 2-nucleon system
 

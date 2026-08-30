@@ -1,0 +1,682 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0906.1500v4",
+ "source": {
+  "file": "0906.1500v4.pdf",
+  "sha256": "9a586f6d134ca47fc357e1a8197e401828d6680ac1ddf378ce4ad0a84ed52b1f",
+  "bytes": 353769,
+  "pages": 29
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0906.1500",
+   "version": "4",
+   "primary_class": "math.GT",
+   "stamp_date": "16 Jan 2012"
+  },
+  "doi": null,
+  "title": "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds",
+  "authors_raw": "JÉR ÔME DUBOIS AND YOSHIKAZU YAMAGUCHI",
+  "abstract": "W e study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non–abelian Reidemeiste r torsion) considered by J. Porti for complete hyperbolic three–dimensional manifold s with cusps. The derivative of the twisted Alexander invariant for a hyperbolic knot ext erior gives the hyperbolic torsion. W e prove such a derivative formula of the twisted Al exander invariant for hyperbolic link exteriors like the Whitehead link exterior . W e provide the framework for the derivative formula to work, which consists of assump tions on the topology of the manifold and on the representations involved in the de ﬁnition of the twisted Alexander invariant, and prove derivative formula in that c ontext. W e also explore the symmetry properties (with sign) of the twisted Alexande r invariant and prove that it is in fact a polynomial invariant, like the usual Alex ander polynomial.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210806042511-04'00'",
+   "Creator": "dvips(k) 5.991 Copyright 2011 Radical Eye Software",
+   "Title": "arXiv:0906.1500v4  [math.GT]  16 Jan 2012"
+  },
+  "title_prev": "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS",
+  "title_lines": [
+   "TWISTED ALEXANDER INVARIANT AND NON–ABELIAN",
+   "REIDEMEISTER TORSION FOR HYPERBOLIC",
+   "THREE–DIMENSIONAL MANIFOLDS WITH CUSPS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Jeﬀrey and J. Weitsman [JW93] and J. Park [Par97]. Furthermore , J. Porti [Por97]",
+   "page": 1,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 3,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Blanchet and V. Maillot for several helpful comments. Our thank s also go to T. Mori-",
+   "page": 3,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Reidemeister torsion. We review the basic notions and results about the",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The Multiplicativity Lemma for torsions. In this section, we brieﬂy review",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Definition of the polynomial torsion",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(M ) /greaterorequalslantb. Thus C∗(M ; sl2(C)ρ) is never acyclic for",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "T echnical assumptions. In this subsection, we give some suﬃcient conditions on",
+   "page": 7,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Topological assumption for M . Let b be the number of components of ∂M . We",
+   "page": 7,
+   "source": "inferred",
+   "number": "3.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Assumption on ϕ. We suppose that",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Assumption on SL2(C)-representations. It is required for an SL 2(C)-representation",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Acyclicity. This subsection is devoted to prove the acyclicity of C∗(M ; sl2(t)ρ),",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "The acyclicity of local system for manifolds with tori–boun dary. In this section",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Examples of computations",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The ﬁgure eight knot exterior. We consider the ﬁgure eight knot K as in Fig-",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Whitehead link exterior. Let L be the Whitehead link and choose the",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Change of coefficients",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A derivative formula",
+   "page": 15,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Bridge from the polynomial torsion to the non–abelian Reide meister tor-",
+   "page": 15,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 5. We begin by introducing the complexes needed in the proof",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "(M ) is endowed with h1 = c′1 = {[ [P ρ",
+   "page": 18,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(M ) is endowed with h2 = c′2 =",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Example: the non-abelian Reidemeister torsion of the White head link",
+   "page": 19,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Dual surfaces of ϕ with rank one. Using the universal coeﬃcient theorem, a",
+   "page": 20,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "A suﬃcient condition to be a polynomial. Under some additional assumptions",
+   "page": 20,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 12. The proof is divided into two main steps: we ﬁrst consider",
+   "page": 21,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "Proof for one variable. We cut the manifold M along S = Sϕ and obtain the",
+   "page": 21,
+   "source": "inferred",
+   "number": "7.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof from one variable to two variables. Suppose that ϕ : π1(M ) → Z ⊕ Z. A",
+   "page": 22,
+   "source": "inferred",
+   "number": "7.3.2"
+  },
+  {
+   "level": 1,
+   "title": "Reciprocality of the polynomial torsion (with sign)",
+   "page": 23,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Reciprocality properties. The Alexander polynomial ∆ K(t) of a knot K ⊂ S3 is",
+   "page": 23,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 14. The proof is essentially based on the Multiplicativity",
+   "page": 23,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 3,
+   "title": "Computation of the sign ν. By our assumption on M and ∂M , we observe that",
+   "page": 24,
+   "source": "inferred",
+   "number": "8.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Computation of ∆ ϕ⊗Ad◦ρ",
+   "page": 24,
+   "source": "inferred",
+   "number": "8.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Computation of ∆ ϕ⊗Ad◦ρ",
+   "page": 24,
+   "source": "inferred",
+   "number": "8.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Conclusion. Substituting ν = 1, s(H∗(M ; R)) = b + 1 and Equation (37) into",
+   "page": 25,
+   "source": "inferred",
+   "number": "8.2.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 28,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 431,
+   "n_words": 67
+  },
+  {
+   "id": "sec-001-l-jeﬀrey-and-j-weitsman-jw93-and-j-park-par97-fu",
+   "number": "L",
+   "title": "Jeﬀrey and J. Weitsman [JW93] and J. Park [Par97]. Furthermore , J. Porti [Por97]",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6398,
+   "n_words": 1102
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 168,
+   "n_words": 29
+  },
+  {
+   "id": "sec-003-c-blanchet-and-v-maillot-for-several-helpful-com",
+   "number": "C",
+   "title": "Blanchet and V. Maillot for several helpful comments. Our thank s also go to T. Mori-",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 515,
+   "n_words": 86
+  },
+  {
+   "id": "sec-004-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-21-the-reidemeister-torsion-we-review-the-basic",
+   "number": "2.1",
+   "title": "The Reidemeister torsion. We review the basic notions and results about the",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4597,
+   "n_words": 957
+  },
+  {
+   "id": "sec-006-22-the-multiplicativity-lemma-for-torsions-in-th",
+   "number": "2.2",
+   "title": "The Multiplicativity Lemma for torsions. In this section, we brieﬂy review",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2062,
+   "n_words": 461
+  },
+  {
+   "id": "sec-007-3-definition-of-the-polynomial-torsion",
+   "number": "3",
+   "title": "Definition of the polynomial torsion",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1480,
+   "n_words": 262
+  },
+  {
+   "id": "sec-008-1-m-greaterorequalslantb-thus-cm-sl2cρ-is-never",
+   "number": "1",
+   "title": "(M ) /greaterorequalslantb. Thus C∗(M ; sl2(C)ρ) is never acyclic for",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2690,
+   "n_words": 555
+  },
+  {
+   "id": "sec-009-31-t-echnical-assumptions-in-this-subsection-we",
+   "number": "3.1",
+   "title": "T echnical assumptions. In this subsection, we give some suﬃcient conditions on",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 664,
+   "n_words": 122
+  },
+  {
+   "id": "sec-010-311-topological-assumption-for-m-let-b-be-the-nu",
+   "number": "3.1.1",
+   "title": "Topological assumption for M . Let b be the number of components of ∂M . We",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2498,
+   "n_words": 529
+  },
+  {
+   "id": "sec-011-312-assumption-on-ϕ-we-suppose-that",
+   "number": "3.1.2",
+   "title": "Assumption on ϕ. We suppose that",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1356,
+   "n_words": 277
+  },
+  {
+   "id": "sec-012-313-assumption-on-sl2c-representations-it-is-req",
+   "number": "3.1.3",
+   "title": "Assumption on SL2(C)-representations. It is required for an SL 2(C)-representation",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4340,
+   "n_words": 811
+  },
+  {
+   "id": "sec-013-32-acyclicity-this-subsection-is-devoted-to-prov",
+   "number": "3.2",
+   "title": "Acyclicity. This subsection is devoted to prove the acyclicity of C∗(M ; sl2(t)ρ),",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 668,
+   "n_words": 163
+  },
+  {
+   "id": "sec-014-321-the-acyclicity-of-local-system-for-manifolds",
+   "number": "3.2.1",
+   "title": "The acyclicity of local system for manifolds with tori–boun dary. In this section",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 5296,
+   "n_words": 1216
+  },
+  {
+   "id": "sec-015-4-examples-of-computations",
+   "number": "4",
+   "title": "Examples of computations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1395,
+   "n_words": 245
+  },
+  {
+   "id": "sec-016-41-the-ﬁgure-eight-knot-exterior-we-consider-the",
+   "number": "4.1",
+   "title": "The ﬁgure eight knot exterior. We consider the ﬁgure eight knot K as in Fig-",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1517,
+   "n_words": 353
+  },
+  {
+   "id": "sec-017-42-the-whitehead-link-exterior-let-l-be-the-whit",
+   "number": "4.2",
+   "title": "The Whitehead link exterior. Let L be the Whitehead link and choose the",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2646,
+   "n_words": 593
+  },
+  {
+   "id": "sec-018-5-change-of-coefficients",
+   "number": "5",
+   "title": "Change of coefficients",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1391,
+   "n_words": 270
+  },
+  {
+   "id": "sec-019-6-a-derivative-formula",
+   "number": "6",
+   "title": "A derivative formula",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 904,
+   "n_words": 195
+  },
+  {
+   "id": "sec-020-61-bridge-from-the-polynomial-torsion-to-the-non",
+   "number": "6.1",
+   "title": "Bridge from the polynomial torsion to the non–abelian Reide meister tor-",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1258,
+   "n_words": 279
+  },
+  {
+   "id": "sec-021-62-proof-of-theorem-5-we-begin-by-introducing-th",
+   "number": "6.2",
+   "title": "Proof of Theorem 5. We begin by introducing the complexes needed in the proof",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6276,
+   "n_words": 1356
+  },
+  {
+   "id": "sec-022-1-m-is-endowed-with-h1-c1-p-ρ",
+   "number": "1",
+   "title": "(M ) is endowed with h1 = c′1 = {[ [P ρ",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 44,
+   "n_words": 17
+  },
+  {
+   "id": "sec-023-2-m-is-endowed-with-h2-c2",
+   "number": "2",
+   "title": "(M ) is endowed with h2 = c′2 =",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2562,
+   "n_words": 541
+  },
+  {
+   "id": "sec-024-63-example-the-non-abelian-reidemeister-torsion",
+   "number": "6.3",
+   "title": "Example: the non-abelian Reidemeister torsion of the White head link",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1881,
+   "n_words": 386
+  },
+  {
+   "id": "sec-025-71-dual-surfaces-of-ϕ-with-rank-one-using-the-un",
+   "number": "7.1",
+   "title": "Dual surfaces of ϕ with rank one. Using the universal coeﬃcient theorem, a",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 918,
+   "n_words": 172
+  },
+  {
+   "id": "sec-026-72-a-suﬃcient-condition-to-be-a-polynomial-under",
+   "number": "7.2",
+   "title": "A suﬃcient condition to be a polynomial. Under some additional assumptions",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2136,
+   "n_words": 408
+  },
+  {
+   "id": "sec-027-73-proof-of-theorem-12-the-proof-is-divided-into",
+   "number": "7.3",
+   "title": "Proof of Theorem 12. The proof is divided into two main steps: we ﬁrst consider",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 470,
+   "n_words": 89
+  },
+  {
+   "id": "sec-028-731-proof-for-one-variable-we-cut-the-manifold-m",
+   "number": "7.3.1",
+   "title": "Proof for one variable. We cut the manifold M along S = Sϕ and obtain the",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2853,
+   "n_words": 602
+  },
+  {
+   "id": "sec-029-732-proof-from-one-variable-to-two-variables-sup",
+   "number": "7.3.2",
+   "title": "Proof from one variable to two variables. Suppose that ϕ : π1(M ) → Z ⊕ Z. A",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2501,
+   "n_words": 474
+  },
+  {
+   "id": "sec-030-8-reciprocality-of-the-polynomial-torsion-with-s",
+   "number": "8",
+   "title": "Reciprocality of the polynomial torsion (with sign)",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-81-reciprocality-properties-the-alexander-polyno",
+   "number": "8.1",
+   "title": "Reciprocality properties. The Alexander polynomial ∆ K(t) of a knot K ⊂ S3 is",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2515,
+   "n_words": 461
+  },
+  {
+   "id": "sec-032-82-proof-of-theorem-14-the-proof-is-essentially",
+   "number": "8.2",
+   "title": "Proof of Theorem 14. The proof is essentially based on the Multiplicativity",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 820,
+   "n_words": 174
+  },
+  {
+   "id": "sec-033-821-computation-of-the-sign-ν-by-our-assumption",
+   "number": "8.2.1",
+   "title": "Computation of the sign ν. By our assumption on M and ∂M , we observe that",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 14,
+   "n_words": 5
+  },
+  {
+   "id": "sec-034-822-computation-of-ϕadρ",
+   "number": "8.2.2",
+   "title": "Computation of ∆ ϕ⊗Ad◦ρ",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2600,
+   "n_words": 515
+  },
+  {
+   "id": "sec-035-824-conclusion-substituting-ν-1-shm-r-b-1-and-eq",
+   "number": "8.2.4",
+   "title": "Conclusion. Substituting ν = 1, s(H∗(M ; R)) = b + 1 and Equation (37) into",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 8076,
+   "n_words": 1849
+  },
+  {
+   "id": "sec-036-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 4242,
+   "n_words": 634
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 38,
+  "sections": 37,
+  "chars_total": 80182
+ }
+}

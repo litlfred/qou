@@ -24,15 +24,16 @@
 
   Unconditional, sorry-free; does not depend on `BringFiberAction`.
 
-  -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron
+  -- Ref: [klein1888] Klein, Lectures on the Icosahedron
 -/
 import QOU.BraidsAndKnots.S5SO3FiberAction
 
 namespace QOU.BraidsAndKnots
+open A5Irrep
 
 /-- First angular-momentum level at which each A₅ irrep appears in the SO(3)
     tower, read off `icosBranchingMult` (A@0, T₁@1, H@2, T₂@3, G@3). -/
-def firstEll : A5Irrep → ℕ
+def A5Irrep.firstEll : A5Irrep → ℕ
   | .A => 0 | .T₁ => 1 | .H => 2 | .T₂ => 3 | .G => 3
 
 /-- The `firstEll` value is grounded in `icosBranchingMult`: each irrep's
@@ -48,11 +49,11 @@ theorem firstEll_appears :
 
 /-- Reeb-spin Casimir at first appearance: `ℓ(ℓ+1)` (classical limit of the
     content-Casimir `μ_λ`). -/
-def reebCasimir (r : A5Irrep) : ℕ := r.firstEll * (r.firstEll + 1)
+def A5Irrep.reebCasimir (r : A5Irrep) : ℕ := r.firstEll * (r.firstEll + 1)
 
 /-- Chirality of each A₅ irrep: the T₁/T₂ pair (the self-conjugate (3,1,1)
     split) carries `±1`; the others are chirality-neutral. -/
-def chirality : A5Irrep → ℤ
+def A5Irrep.chirality : A5Irrep → ℤ
   | .T₁ => 1 | .T₂ => -1 | _ => 0
 
 /-- **The Reeb level alone does NOT separate the five irreps.**  T₂ and G both
@@ -64,7 +65,7 @@ theorem reebCasimir_not_injective :
   exact absurd this (by decide)
 
 /-- The composite key: (Reeb-Casimir level, chirality). -/
-def reebChiralityKey (r : A5Irrep) : ℕ × ℤ := (r.reebCasimir, r.chirality)
+def A5Irrep.reebChiralityKey (r : A5Irrep) : ℕ × ℤ := (r.reebCasimir, r.chirality)
 
 /-- **Reeb level ⊕ chirality SEPARATES the five A₅ irreps** (the composite key
     is injective).  The chirality `±1` breaks the T₂/G Casimir-12 degeneracy

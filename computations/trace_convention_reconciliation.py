@@ -43,6 +43,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from mass_at_3A_proper import (  # noqa: E402
+    Q0_PROTON,
     atom_braid_word_3A, chi_lambda_of_word,
     normalized_plancherel_weights_3A, _cached_seminormal,
 )
@@ -53,7 +54,7 @@ def tr_plancherel(word, A, n_gens):
     """Σ_λ y_λ^Plancherel · χ_λ(W) at H_{3A}."""
     tot = mpf(0)
     for shape, w in normalized_plancherel_weights_3A(A):
-        sig, dim, _ = _cached_seminormal(shape)
+        sig, dim, _ = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         chi = chi_lambda_of_word(sig, dim, word, n_gens)
@@ -133,7 +134,7 @@ def main():
 
     wb.add_assertion(
         "wenzl_matches_binding_canonical",
-        computed=float(fact_match),
+        computed=fact_match,
         expected=0,
         tolerance=1e-10,
         source="Wenzl-bridge joint-word Δtr = binding_canonical Δtr to 11 "
@@ -143,7 +144,7 @@ def main():
     )
     wb.add_assertion(
         "conventions_differ",
-        computed=float(fabs(dtr_wenzl - dtr_planck)),
+        computed=fabs(dtr_wenzl - dtr_planck),
         expected=0.171,
         tolerance=0.01,
         source="Wenzl JM (0.5952) ≠ Plancherel (0.4241): per-block weight difference",

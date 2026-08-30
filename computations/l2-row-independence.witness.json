@@ -1,0 +1,89 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T19:30:19.686746+00:00",
+  "commitSha": "7da9e893d78d34819bf2aaa589a693a6565931e4",
+  "assertions": [
+    {
+      "name": "predictions_for_m_n_and_delta_pn_add_no_framework_content",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = both Delta_pn == Q_beta + m_e and m_n == m_p + Q_beta + m_e hold on the PREDICTION side to the dashboard's serialization granularity). Residuals are ~1e-11 MeV. This is the load-bearing claim: the framework has two independent quantities on the fail list, not five."
+    },
+    {
+      "name": "targets_are_no_longer_redundant_after_the_codata_fix",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = the TARGET side is no longer an exact identity). Pre-fix it was, because the neutron target was constructed from the proton and Q_beta. Repointing it at the independent CODATA direct determination is a gain in information content — asserted so a regression back to the constructed target would fail here rather than pass silently."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "l2-row-independence",
+  "scriptFile": "l2_row_independence_probe.py",
+  "scriptHash": "f3f59b1d0dae",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/l2_row_independence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/l2_row_independence_probe.py"
+  },
+  "description": "Separates prediction-side from target-side redundancy on the L2 dashboard. The PREDICTIONS for m_n and Delta_pn are exactly Q_beta/m_p plus m_e, so the framework has only two independent quantities on the fail list (Q_beta, m_mu) once m_p is recognised as an unscored anchor round-trip. The TARGETS stopped being redundant on 2026-08-09 when the CODATA vintage fix repointed the neutron at the independent direct determination — a gain in the dashboard's information content that does not add a third lever. Audit-only.",
+  "auditOnly": "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
+  "parameters": {
+    "compute_dps": 70,
+    "identity_tolerance_MeV": "0.00000001"
+  },
+  "data": {
+    "residual_pred_Delta_pn_MeV": "2.0e-12",
+    "residual_target_Delta_pn_MeV": "1.4931e-7",
+    "residual_pred_m_n_MeV": "3.2e-11",
+    "residual_target_m_n_MeV": "1.4931e-7",
+    "predictions_redundant": true,
+    "targets_redundant": false,
+    "independent_framework_levers": [
+      "Q_beta",
+      "m_mu"
+    ],
+    "prediction_redundant_rows": [
+      "m_n",
+      "Delta_pn"
+    ],
+    "anchor_roundtrip_rows": [
+      "m_p"
+    ],
+    "caveat": "Prediction-redundant does not mean wrong to publish — m_n in MeV is a useful number. It means the row is not an independent test OF THE FRAMEWORK, so L2 planning must not count it as a separate front.",
+    "target_side_change_2026_08_09": "Pre-fix the neutron target was M_N_MEV_AME_DERIVED, constructed as M_P + M_E + Q_BETA, so the target side was redundant too and the m_n row tested nothing new. It now points at M_N_MEV_CODATA_DIRECT, so ~0.16 ppb of independent experimental information enters."
+  },
+  "upstream": [
+    {
+      "path": "per-observable-100x-status.witness.json",
+      "sha256": "334ebf1737714619de98bc4d0c64cb1f3b9c7eef5a5a472243a46e5f12802fa1",
+      "size_bytes": 11832,
+      "commitSha": "b9b87e05051cb1a6607623dc2675a6e328778dca",
+      "scriptCommitSha": "4fe2715ad3aab1fc1b03986991d98c2bbae8ad7c",
+      "computedAt": "2026-08-22T19:24:38.835296+00:00"
+    }
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

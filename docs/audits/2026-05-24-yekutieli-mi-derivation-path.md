@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Source:** Yekutieli, "Nonabelian Multiplicative Integration on Surfaces"
-(arXiv:1007.1250v4, uploaded as `uploads/1007.1250v4.pdf`)
+(arXiv:1007.1250v4, uploaded as `library/arxiv-1007.1250v4/1007.1250v4.pdf`)
 **Status:** Derivation path identified; computation scaffolded.
 
 ## The Yekutieli machinery (from the paper)
@@ -140,7 +140,7 @@ combinatorics on the 8 ideal octahedral cells of 𝓑₃.
 
 ## Cross-references
 
-- [`uploads/1007.1250v4.pdf`](../../uploads/1007.1250v4.pdf) — Yekutieli 2015 (arXiv:1007.1250v4)
+- [`library/arxiv-1007.1250v4/1007.1250v4.pdf`](../../library/arxiv-1007.1250v4/1007.1250v4.pdf) — Yekutieli 2015 (arXiv:1007.1250v4)
 - [`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — Geom(K) uniqueness
 - [`prop:s4-s3-half-symmetric-projection`](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md) — branching factor 2/5
 - [`docs/audits/2026-05-23-canonical-compute-pipeline-audit.md`](2026-05-23-canonical-compute-pipeline-audit.md) — pipeline audit

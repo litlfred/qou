@@ -133,7 +133,7 @@ end ChordDiagram
 degree-1 chord diagram and witnesses that `ChordDiagram 1` is inhabited. -/
 
 /-- The unique degree-1 chord diagram: the single chord on `Fin 2`. -/
-def oneChord : ChordDiagram 1 where
+def ChordDiagram.oneChord : ChordDiagram 1 where
   pairing := Equiv.swap (0 : Fin 2) 1
   involutive := fun x => Equiv.swap_apply_self 0 1 x
   fixedPointFree := by

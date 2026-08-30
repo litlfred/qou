@@ -46,7 +46,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # (per repo convention; avoids P31 hard-coded CODATA literal flag)
 import mpmath as _mp_for_neutron  # noqa: E402
 
-M_N_MEV = M_P_MEV + M_E_MEV + _mp_for_neutron.mpf(repr(_ec.Q_NEUTRON_MEV))
+M_N_MEV = M_P_MEV + M_E_MEV + _mp_for_neutron.mpf(_ec.Q_NEUTRON_MEV)
 
 
 def main() -> int:

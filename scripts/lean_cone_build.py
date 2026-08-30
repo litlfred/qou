@@ -36,7 +36,51 @@ import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
-IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)", re.M)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lean_freshness import (  # noqa: E402
+    dirty_paths,
+    olean_is_current,
+    record_source_sha,
+    sidecar_path,
+)
+
+IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)")
+
+
+def qou_imports(text: str) -> list[str]:
+    """QOU modules imported by `text`, read from the header only.
+
+    Lean requires every `import` to precede all other content, so the header is
+    exactly the leading run of imports, comments and blank lines — and stopping
+    there is not merely an optimisation.  Scanning the whole file (which this
+    did, via `re.M`) treats an `import` line written flush-left inside a
+    docstring as a real dependency.  A module whose docstring *documents* an
+    import cycle then appears to have one, and `topo` aborts the entire build
+    with a bogus `IMPORT CYCLE`.  Observed 2026-08-23 on `QOU/GroundRingCore.lean`,
+    whose docstring quotes the two-line import that demonstrates bean `qou-kfcl`.
+    """
+    out: list[str] = []
+    in_block_comment = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        if in_block_comment:
+            if "-/" in stripped:
+                in_block_comment = False
+            continue
+        if stripped.startswith("/-"):
+            if "-/" not in stripped:
+                in_block_comment = True
+            continue
+        if not stripped or stripped.startswith("--"):
+            continue
+        m = IMPORT_RE.match(line)
+        if m:
+            out.append(m.group(1))
+            continue
+        if stripped.startswith("import "):
+            continue  # a non-QOU import; still part of the header
+        break  # first real declaration — the header is over
+    return out
 
 # Extra `lean` flags, e.g. the package's `moreLeanArgs = ["-s", "65536"]`.
 EXTRA_ARGS = os.environ.get("LEAN_CONE_EXTRA_ARGS", "").split()
@@ -64,7 +108,7 @@ def scan(leandir: Path) -> dict[str, dict]:
             continue
         mods[module_of(leandir, p)] = {
             "src": p,
-            "imports": sorted(set(IMPORT_RE.findall(text))),
+            "imports": sorted(set(qou_imports(text))),
         }
     return mods
 
@@ -99,6 +143,10 @@ def main() -> int:
     ap.add_argument("targets", nargs="*", help="QOU module names (default: --all)")
     ap.add_argument("--all", action="store_true", help="build every QOU module")
     ap.add_argument("-k", "--keep-going", action="store_true")
+    ap.add_argument("-B", "--force", action="store_true",
+                    help="recompile every module in the cone even if its olean looks "
+                         "fresh. Needed when a consumer judges freshness differently -- "
+                         "see `fresh` below and bean qou-5v24.")
     ap.add_argument("-j", "--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 1))
     ap.add_argument("--report", help="write TSV report here (JSON at <report>.json)")
     ap.add_argument("--log-dir", default="/tmp/lean-cone-logs")
@@ -155,13 +203,39 @@ def main() -> int:
 
     ready = [m for m in order if remaining[m] == 0]
     t0 = time.time()
+    # One `git status` for the whole run; per-file commit times are cached.
+    dirty = dirty_paths(leandir)
 
     def fresh(m: str) -> bool:
         """olean usable as-is: newer than source, newer than every dep olean,
-        and no dep was rebuilt in this run."""
+        and no dep was rebuilt in this run.
+
+        "Newer than source" is `lean_freshness.effective_source_time` — the SAME
+        rule `scripts/lean-axiom-guard.py` gates on, which for a clean file is the
+        **commit time** of the last commit touching it, not the mtime.
+
+        This used to be a raw mtime test, and the two tools then disagreed in one
+        exact case: you BUILD, then COMMIT.  The olean was newer than the source
+        mtime (skip) and older than its commit time (guard rc=2), so the compose
+        the guard's own docstring recommends looped forever — measured 2026-08-26,
+        source mtime 06:45:09, olean 06:45:12, commit 06:47:15, hit three times in
+        one session because verify-then-commit is the natural order.
+
+        Sharing the rule also stops this builder recompiling a correctly-restored
+        cache, where every source carries the checkout time: see bean `qou-5v24`
+        and the `lean_freshness` docstring for the 2026-08-15 measurement.
+
+        `--force` remains as a manual override; it is no longer needed to break the
+        deadlock, because there is no longer a deadlock to break.
+        """
+        if args.force:
+            return False
         ol = olean_of(m)
         src = mods[m]["src"]
-        if not ol.is_file() or ol.stat().st_mtime <= src.stat().st_mtime:
+        # conservative=True: without a hash stamp the olean must beat BOTH clocks.
+        # Rebuilding more than needed costs seconds; serving a stale olean is a
+        # wrong verdict. See lean_freshness.olean_is_current.
+        if not olean_is_current(src, ol, dirty, conservative=True):
             return False
         for d in deps[m]:
             if d in rebuilt:
@@ -185,6 +259,12 @@ def main() -> int:
             capture_output=True, text=True,
         )
         outtxt = (proc.stdout or "") + (proc.stderr or "")
+        if proc.returncode == 0:
+            # Stamp the olean with the hash of the source it was built from, so
+            # every later freshness question about this module is answered by
+            # content rather than by a clock. See lean_freshness.olean_is_current
+            # for the two ways a clock gets it wrong, both measured.
+            record_source_sha(ol, mods[m]["src"])
         if proc.returncode != 0:
             # Logs are written for FAILURES ONLY, and capped: classifying an
             # error shape needs the first errors, not a module's entire output.
@@ -202,6 +282,11 @@ def main() -> int:
                     ol.unlink()
                 except OSError:
                     pass
+            # and its hash stamp, so a leftover stamp can never outlive the olean
+            try:
+                sidecar_path(ol).unlink(missing_ok=True)
+            except OSError:
+                pass
         return m, proc.returncode, outtxt, time.time() - t
 
     # Incremental report: a row is appended the moment a module settles, so a

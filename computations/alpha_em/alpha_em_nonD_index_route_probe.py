@@ -75,8 +75,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 B1 = 8  # dim H¹(M_Bring) = 2g, g = 4  (Jac(Bring) ~ E⁴, J(M) = T^{b₁})
 
@@ -217,7 +218,7 @@ def main() -> int:
     })
     wb.add_assertion(
         "index_trace_equals_b1_exact",
-        computed=float(trace_index), expected=float(B1), tolerance=1e-6,
+        computed=trace_index, expected=B1, tolerance=1e-6,
         source="Tr_{H1}(1)=-zeta_{Delta1}(0)=-b1*E_L(0)=2g=8, integer/area-free/q-independent "
                "(Epstein E_L(0)=-1 machinery, merged #3834)")
     wb.add_assertion(

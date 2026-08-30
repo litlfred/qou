@@ -1,0 +1,215 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-physics-0203048v1",
+ "source": {
+  "file": "0203048v1.pdf",
+  "sha256": "47204f32280e91a36b4822807acf6d0bd7ccac42b400750746366c3e4782951b",
+  "bytes": 312729,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "physics/0203048",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "15 Mar 2002"
+  },
+  "doi": null,
+  "title": "Towards a third-order topological invariant for magnetic fields",
+  "authors_raw": "Gunnar Hornig and Christoph Mayer",
+  "abstract": "An expression for a third-order link integral of three magne tic ﬁelds is presented. It is a topological invariant and therefore an in variant of ideal magnetohydrodynamics. The integral generalizes existing expressions for third- order invariants which are obtained from the Massey triple p roduct, where the three ﬁelds are restricted to isolated ﬂux tubes. The deriva tion and interpretation of the invariant shows a close relationship with the well-kn own magnetic helicity, which is a second-order topological invariant. Using gauge ﬁelds with an SU (2) symmetry, helicity and the new third-order invariant origi nate from the same identity, an identity which relates the second Chern class a nd the Chern-Simons three-form. W e present an explicit example of three magneti c ﬁelds with non- disjunct support. These ﬁelds, derived from a vacuum Yang-M ills ﬁeld with a non-vanishing winding number, possess a third-order link age detected by our invariant.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181106104420-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:physics/0203048v1  [physics.plasm-ph]  15 Mar 2002"
+  },
+  "title_prev": "Towards a third-order topological invariant for magnetic ﬁelds",
+  "title_lines": [
+   "Towards a third-order topological invariant for",
+   "magnetic fields"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Magnetic helicity",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A third-order invariant from the Chern-Simons three-for m",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Interpretation of the invariant",
+   "page": 6,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Example of three magnetic ﬁelds with a third-order linkag e",
+   "page": 7,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Yang-Mills potentials of a vacuum ﬁeld with non-vanish ing winding number",
+   "page": 7,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Magnetic ﬁelds constructed from Yang-Mills potential s",
+   "page": 8,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 11,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2253,
+   "n_words": 389
+  },
+  {
+   "id": "sec-001-2-magnetic-helicity",
+   "number": "2",
+   "title": "Magnetic helicity",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5962,
+   "n_words": 1117
+  },
+  {
+   "id": "sec-002-3-a-third-order-invariant-from-the-chern-simons",
+   "number": "3",
+   "title": "A third-order invariant from the Chern-Simons three-for m",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5671,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-003-4-interpretation-of-the-invariant",
+   "number": "4",
+   "title": "Interpretation of the invariant",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2607,
+   "n_words": 478
+  },
+  {
+   "id": "sec-004-5-example-of-three-magnetic-ﬁelds-with-a-third-o",
+   "number": "5",
+   "title": "Example of three magnetic ﬁelds with a third-order linkag e",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1313,
+   "n_words": 244
+  },
+  {
+   "id": "sec-005-51-yang-mills-potentials-of-a-vacuum-ﬁeld-with-n",
+   "number": "5.1",
+   "title": "Yang-Mills potentials of a vacuum ﬁeld with non-vanish ing winding number",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1292,
+   "n_words": 258
+  },
+  {
+   "id": "sec-006-52-magnetic-ﬁelds-constructed-from-yang-mills-po",
+   "number": "5.2",
+   "title": "Magnetic ﬁelds constructed from Yang-Mills potential s",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 7420,
+   "n_words": 1499
+  },
+  {
+   "id": "sec-007-6-conclusions",
+   "number": "6",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1279,
+   "n_words": 226
+  },
+  {
+   "id": "sec-008-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5811,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1922,
+   "n_words": 318
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 35530
+ }
+}

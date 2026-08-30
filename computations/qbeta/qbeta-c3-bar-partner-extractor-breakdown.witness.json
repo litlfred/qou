@@ -1,0 +1,90 @@
+{
+  "computation": "qbeta-c3-bar-partner-extractor-breakdown",
+  "description": "qou-qb8g obstacle 1 made quantitative. The c_3 extractor c_3 = (Q_beta^exp/Q_N2(q) - 1)/u(q)^3 is an explicit function of q and CAN be evaluated at the bar-partner 1/q0, but Q_beta^exp is held fixed while q moves ~21%, so away from the anchor the numerator is O(1) rather than O(u^3) and the 1/u^3 inversion returns O(1e5). Measured: c_3^extr(q0) = -2.069, c_3^extr(1/q0) = -352600 (1.7e5x). The u shift itself is tame \u2014 u(1/q) = q^2 u(q) exactly \u2014 so the blow-up is entirely the fixed-Q_beta artifact. Consequently the extractor's 'bar-even part' is -176301, about 8.7e4 x Vol(4_1), and is not a bar split. Separately, (H1) c_3^even = -Vol(4_1) DEMANDS c_3(1/q0) = -2 Vol(4_1) - c_3(q0), an O(1) number. That demand is NOT new information \u2014 it equals the anchor datum transported by (H1) (the implied bar-odd part is identically S_leak(q0)) \u2014 so it must not be reported as an out-of-sample test. What is gained is methodological: a fibre carrier converges at 1/q0 and not at q0 (PR #5084), so at 1/q0 the carrier can be compared to (H1) without evaluating on the divergent side. The comparison becomes possible, not sharper. Arithmetic on committed values; no fit, no c_k wired.",
+  "audit_only": true,
+  "tier": "exact arithmetic on the committed extractor (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T10:37:31.895806+00:00",
+  "commitSha": "0d3adfaa5fa732c5e42ef6168e80bebbf6c063a9",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_c3_bar_partner_extractor_breakdown.py",
+  "scriptHash": "dffe3de86dae",
+  "assertions": [
+    {
+      "name": "u_shift_is_tame_q_squared",
+      "passed": true,
+      "detail": "u(1/q) = q^2 u(q) exactly; rel.err 1.263e-61"
+    },
+    {
+      "name": "extractor_at_bar_partner_blows_up",
+      "passed": true,
+      "detail": "|c_3^extr(1/q0)| = 352599.717"
+    },
+    {
+      "name": "extractor_at_anchor_is_O1",
+      "passed": true
+    },
+    {
+      "name": "H1_demand_at_bar_partner_is_O1",
+      "passed": true,
+      "detail": "c_3(1/q0) required = -1.99042384852"
+    },
+    {
+      "name": "cal3_band_cannot_bridge_the_gap",
+      "passed": true,
+      "detail": "gap is >100x the +/-1.262 band"
+    },
+    {
+      "name": "H1_demand_is_the_anchor_datum_transported_not_new_info",
+      "passed": true,
+      "detail": "implied bar-odd == S_leak(q0) identically; difference 0.0"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "q0": "1.109978582751380807592",
+    "inv_q0": "0.9009182839557414921608",
+    "vol_4_1": "2.029883212819307",
+    "per_point": {
+      "q0": {
+        "q": "1.109978582751380807592",
+        "u": "0.008517234550156142",
+        "inv_u_cubed": "1618468.22929",
+        "numerator_Qcod_over_QN2_minus_1": "-1.27858090734e-6",
+        "c3_extractor": "-2.069342577115168"
+      },
+      "inv_q0": {
+        "q": "0.9009182839557414921608",
+        "u": "0.01049367973023383",
+        "inv_u_cubed": "865399.388806",
+        "numerator_Qcod_over_QN2_minus_1": "-0.407441606166",
+        "c3_extractor": "-352599.7169500625"
+      }
+    },
+    "u_ratio_measured": "1.232052454166764",
+    "u_ratio_predicted_q0_squared": "1.232052454166764",
+    "numerator_blowup_factor": "318667.050185",
+    "extractor_bar_even": "-176300.8931463198",
+    "extractor_bar_odd": "176298.8238037427",
+    "extractor_bar_even_over_vol41": "86852.7273061",
+    "c3_at_inv_q0_required_by_H1": "-1.990423848523447",
+    "c3_at_inv_q0_from_extractor": "-352599.7169500625",
+    "discrepancy_factor": "177148.056788",
+    "c3_cal3_band_at_anchor": "1.262",
+    "implied_bar_odd_at_q0": "-0.03945936429586059",
+    "s_leak_at_q0": "-0.03945936429586059",
+    "tautology_residual": "0.0"
+  },
+  "context": {
+    "axis": "qou-qb8g \u2014 c_3 bar-parity; the bar-partner evaluation point",
+    "inputs": [
+      "computations/qbeta/qbeta_utils.py::c3_target_at",
+      "tools/qou-substrate/.../constants.py::q_at (proton pin)",
+      "substrate.codata_constants (m_e, Q_beta)"
+    ],
+    "companion": "PR #5084 QOU.QBeta.HabiroEvaluationTrichotomy \u2014 a fibre carrier written as a q-series converges at 1/q0 < 1 and NOT at q0 > 1, so the bar-even combination cannot be formed from a single series. Domain obstruction, complementary to the numerical one here.",
+    "scope": "Scope-(a) throughout. This does NOT refute (H1) \u2014 it shows the EXTRACTOR cannot test it at the bar-partner, and states what a fibre carrier must return there instead. No invariant is named forbidding a 4_1-volume ingredient in c_3's bar-even part."
+  }
+}

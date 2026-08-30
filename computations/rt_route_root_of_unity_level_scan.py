@@ -29,7 +29,8 @@ from pathlib import Path
 import mpmath as mp
 from mpmath import mpc, mpf
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Constants — m_e from canonical source (CAL-1)
 from codata_constants import M_E_MEV  # noqa: E402  # CODATA validation constant
@@ -216,6 +217,15 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / "rt-route-root-of-unity-level-scan.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 

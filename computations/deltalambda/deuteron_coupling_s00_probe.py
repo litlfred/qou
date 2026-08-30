@@ -72,8 +72,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
 import mpmath as mp  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 
 
 def main() -> int:
@@ -96,8 +104,12 @@ def main() -> int:
     x_c1 = 1 / mp.sqrt(q0 + 1 / q0)                  # 1/sqrt([2]_{q0})
 
     # C4: Markov trace parameter z = 1/[2]_v, v = sqrt(q0); fusion g; constants.
+    # Convention D (canonical, owner ruling 2026-08-15 R1, re-affirmed by the
+    # owner 2026-08-29). This read `1/(v + 1/v)` with `v = sqrt(q0)` = z_C — unannounced, and
+    # invisible to scripts/convention-c-producer-audit.py, whose matcher does
+    # not see the sqrt-variable spelling. Found by convention-c-value-audit.py.
     v = mp.sqrt(q0)
-    z = 1 / (v + 1 / v)
+    z = q0 ** 3 / (q0 ** 2 + 1)
     x_c4 = mp.sqrt(z)
     g_fusion = 1 / mp.sqrt(1 + (v + 1 / v) ** 2)     # = 1/sqrt(5) at q=1
     hbar = 1 - 1 / q0

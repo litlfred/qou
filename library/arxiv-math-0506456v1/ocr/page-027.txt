@@ -1,0 +1,54 @@
+Asymptotics of the quantum invariants for the figure 8 knot 27
+
+difficult since higher order terms in the Taylor expansion of U(x + as, yo + Bt) need
+to be involved, and it is likely that the analysis can not be carried through in this
+case.) For that reason we make the following definition.
+
+Definition 1. A critical point (x,y) of the phase function W is called positive
+definite if (x,y) is non-degenerate and there exists (a,8) € S! x $1 such that
+Im(A) is positive definite, where
+
+A = diag(o, 8) Hdiag(a, 8),
+
+where H is the Hessian of W in (x,y).
+
+Assume that (2x9, yo) is positive definite and let (a, 8) € $! x $1 such that Im(A)
+is positive definite. Then the main contribution to the integral K(2o, yo) in the limit
+of large r is given by
+
+8 8
+. nna (
+Kyyain(“o, yo) = af sin (Ze = 2nd) 2m ¥(x0,40) [ e t t dsdt,
+q 2
+
+and this integral can be evaluated using the results of [12, Sec. 3.4]. In fact,
+
+“al F)( 4) : 7
+[ e dsdt = = (det(—iA))~'””,
+R2 r
+
+where A is independent of r. Note here that the set S of complex symmetric 2 x 2-
+matrices B with Re(B) positive definite is an open convex set in the 3-dimensional
+complex vector space of symmetric 2 x 2—matrices. It follows that their is a unique
+analytic branch of B +> (det(B))’/? on § such that (det(B))’/? > 0 for B real. We
+have used that branch in the above result. We note that det(—iA) = —(a8)? det(H).
+In conclusion we can state the following result.
+
+Theorem 4. Let 5/1", be the set of critical points of 2 in ey: IF Conjec-
+ture 3 is true and if all the critical points of &¢ in Cen are positive definite,
+k,l = 0,1, (a,b) € Fra, wv € {£1}, n € Z/|q\Z, then the leading order large r
+
+asymptotics of the quantum invariant is given by
+
+7(Myjq) ~ Se enon s > > > pv
+
+Ayal n€Z/|qlZ (k,l) €{0,1}? (a,b)eF ir (HVE {+1}?
+
+x So (Het (Ayx,y 4) 1”?
+
+(emeser ay
+
+x sin (Fe = 2nd) arin" (ey)
+qd
+
+where Hayy 0%? is the Hessian of ®%? in (x,y).

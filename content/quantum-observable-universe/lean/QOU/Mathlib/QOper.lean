@@ -66,7 +66,7 @@ structure QConnection2 where
   a₂₂ : K → K
 
 /-- The determinant of a rank-2 q-connection at a point x. -/
-def det (A : QConnection2 K) (x : K) : K :=
+def QConnection2.det (A : QConnection2 K) (x : K) : K :=
   A.a₁₁ x * A.a₂₂ x - A.a₁₂ x * A.a₂₁ x
 
 /-- A rank-2 q-connection is **non-degenerate** at x if its determinant is nonzero. -/
@@ -89,10 +89,10 @@ structure QOper2 extends QConnection2 K where
   oper_zero : a₂₂ = fun _ => 0
 
 /-- The trace function of a q-oper. -/
-def trace (A : QOper2 K) : K → K := A.a₁₁
+def QOper2.trace (A : QOper2 K) : K → K := A.a₁₁
 
 /-- The quantum Wronskian (negative of the (1,2) entry). -/
-def quantumWronskian (A : QOper2 K) : K → K := fun x => -(A.a₁₂ x)
+def QOper2.quantumWronskian (A : QOper2 K) : K → K := fun x => -(A.a₁₂ x)
 
 /-- **The determinant of a q-oper is minus the quantum Wronskian.** -/
 theorem det_eq_wronskian (A : QOper2 K) (x : K) :

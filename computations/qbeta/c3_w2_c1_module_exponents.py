@@ -2,7 +2,7 @@
 """W2: local exponents of the C1 q-difference module (Birkhoff-matrix, 0-side).
 
 Bean `qou-xufp` (W2, symbol extraction). Following the DRSZ Birkhoff-matrix recipe
-(`uploads/Equations_aux_q-differences.pdf` §3.3), the connection matrix
+(`library/equations-aux-q-differences/Equations_aux_q-differences.pdf` §3.3), the connection matrix
 `P(x) = (X^∞)⁻¹ X^0` of a q-difference module needs the local canonical solutions at 0
 and ∞, each built from the q-characters `e_{q,c}` of the *exponents* (eigenvalues of the
 companion `A(0)`, `A(∞)`).
@@ -93,6 +93,15 @@ def main() -> None:
         "scope": "0-side Fuchsian exponent data only; inf-side Stokes is the residual. No fit.",
     }
     out = script_path.with_suffix(".witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nverdict: {witness['verdict']}\nwitness: {out}")
 

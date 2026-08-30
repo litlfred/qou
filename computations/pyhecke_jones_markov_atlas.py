@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 import time
@@ -61,6 +62,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
 Q0_MPF = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 Q0_F64 = float(Q0_MPF)
 
@@ -105,7 +113,7 @@ def solve_jones_markov_h_n(n: int, q: float = Q0_F64, verbose: bool = False) -> 
     shapes = partitions_of_descending(n)
     P = len(shapes)
 
-    z_mark = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_mark = q**3 / (q**2 + 1)
 
     if verbose:
         print(f"  H_{n}(q): {P} partitions, building {P}×{P} χ-matrix (rayon-parallel)...")

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-21T21:50:21.863979+00:00",
-  "commitSha": "b00f813a65559fced8f1b65a910f0a12a7087251",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T08:14:43.838967+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "real_demazure_d_i_wiring",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 5,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "d9d2714a4e83",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "3d37b6fe15c6",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,18 +27,28 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_chain4_demazure_fund_weights.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_chain4_demazure_fund_weights.py"
   },
   "description": "Step 5 of Chain 4 — Demazure characters at fundamental weights ω_j of sl_n for n ∈ {3, 4, 5}, j = 1..n−1. REAL D_i wiring via Kashiwara-crystal subset model: starting from the highest-weight subset {1,...,j}, applies f̃_i-string closure along reduced Weyl-group words (one per permutation, since Demazure characters depend only on the permutation by Demazure's theorem). Evaluation at proton-pinned q_0 via principal q-specialisation. 564 candidates total. Best: D_s1(ω_1)_sl3 → NEAR-FUZZY (ratio 1.01846). Anti-pattern guards respected: TIERED; cross-anchor in witness; NO ansatz.",
   "data": {
     "residue_target_A": "0.000000000000001804",
-    "prefactor_target_proton": "2.0717327773613738302527359154788178225948053571385",
-    "prefactor_target_muon": "2.071729518192513231320075931161121943800806056265",
-    "h_q_substrate_proton": "0.099081716044258507839177117518281999748464888241219",
-    "h_q_substrate_muon": "0.099081726435698885820014342688412528468474023957784",
+    "prefactor_target_proton": "2.071732777361373830252735915478817822594805357138621776464328795917553",
+    "prefactor_target_muon": "2.071729495648478303329109973875040848087836497510453632917939608426456",
+    "h_q_substrate_proton": "0.09908171604425850783917711751828199974846488824121838490576573249117677",
+    "h_q_substrate_muon": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
     "q_proton": "1.10997858275138080759166909561",
-    "q_muon": "1.1099785955541805752815940796095093779932822799587",
+    "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "step5_results_top10": {
       "D_s1(ω_1)_sl3": {
         "value": "2.10998",
@@ -104,5 +114,7 @@
       "candidate_count": 564
     },
     "next_step": "Step 6 cross-anchor if any NEAR-1PCT survives at proton anchor"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

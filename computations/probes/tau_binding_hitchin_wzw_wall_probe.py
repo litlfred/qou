@@ -51,8 +51,16 @@ import os
 import subprocess
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def _repo_root():
@@ -191,7 +199,7 @@ def main() -> int:
             "axis": "τ=tr B geometric derivation — Hitchin route (ATTACK 2 of "
                     "qou-do3a; beans qou-oduj/qou-1gdc/z2bn)",
             "paper": "Laszlo–Pauly–Sorger, On the monodromy of the Hitchin "
-                     "connection (uploads/MonodromyHitchinY.pdf)",
+                     "connection (library/monodromyhitchiny/MonodromyHitchinY.pdf)",
             "corpus": "BindingTauAnchorClosure.lean (τ closed form); s5-so3 keystone "
                       "(bwS0_eq_hecke, archimedean continuation, owner-gated)",
             "correction": "τ is NOT an open number — it has a Lean-proved closed "
@@ -201,6 +209,15 @@ def main() -> int:
     out = os.path.join(os.path.dirname(__file__),
                        "tau-binding-hitchin-wzw-wall.witness.json")
     with open(out, "w") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, fh, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

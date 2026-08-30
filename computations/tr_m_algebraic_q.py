@@ -3,7 +3,7 @@
 
 Resolves the "B_sym is really B_arch — the algebraic object is missing"
 observation. The production atom braid word (`atom_braid_word_3A`) bakes the
-colour split `flavor_split_subleading(q₀)` **numerically** into the p-n
+colour split `flavor_split_leading(q₀)` **numerically** into the p-n
 interface crossing, so the symbolic trace via `build_atom_symbolic` carries an
 ugly numerical fraction (e.g. `104458189399543/16000000000000000`) instead of a
 clean Laurent object. This module keeps the colour δ **symbolic** (its closed
@@ -14,7 +14,7 @@ is what the mass-binding dashboard reports as the (archimedean) `B_sym`.
 The atom word uses only:
   * intra-nucleon crossings  c = 1, d ∈ {0, −h/2, −h}   (h = q − q⁻¹)
   * p-p interface  (1, 0) · n-n interface  (1, −h)
-  * p-n interface  (1, −h·(½ − δ(q)/4)),  δ(q) = flavor_split_subleading(q)
+  * p-n interface  (1, −h·(½ − δ(q)/4)),  δ(q) = flavor_split_leading(q)
 so every factor is `σ_g + d·I` with d a symbolic element of ℚ(q): no q₀ bake.
 
 Verified (see __main__ / witness): `tr_M_algebraic(Z,N).subs(q, q₀)` reproduces
@@ -39,15 +39,36 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 
-def flavor_split_subleading_sym(q):
-    """Symbolic `flavor_split_subleading(q)` (colour δ), matching
-    `_li_2_q_util.flavor_split_subleading` at any q:
+def flavor_split_leading_sym(q):
+    """Symbolic `flavor_split_leading(q)` (colour δ):
 
-        δ(q) = leading·(1 + ℏ³),  leading = (q−1)²(1−q⁻⁴)/3,  ℏ = (q−1)/q.
+        δ(q) = (q−1)²(1−q⁻⁴)/3
+
+    This is the LEADING term alone, which is what
+    `_li_2_q_util.flavor_split_leading` computes and what
+    `canonical_braid_crossings._avg_color_delta` — the source of the numeric
+    colour-weighted crossing — carries.
+
+    IT USED TO MULTIPLY BY THE POSITED SUBLEADING (1 + ℏ³), while its docstring
+    claimed it matched `_li_2_q_util.flavor_split_leading` "at any q".  It did
+    not: the two disagreed by exactly ℏ³ = 9.727037e-04 relative at q_0.  Per
+    AGENTS.md the leading term is the proven one and `(1 + ℏ³)` is the *posited*
+    subleading correction, carried separately as
+    `_li_2_q_util.flavor_split_subleading`; conflating them here silently gave
+    every consumer the posited quantity under the proven one's name.
+
+    Measured cost, deuteron `tr_M`: `build_atom_symbolic_q` sat 7.92e-08 from
+    the bridge/peel value, and `atom_nf_symbolic_D` (which this now feeds
+    correctly) closes to 3.44e-25.  The repo's own witness recorded the
+    collision — `tr-m-algebraic-q.witness.json` has carried
+    `symbolic_delta_matches_li2q  computed=1.338e-06  tol=1e-12  passed=False`
+    since 2026-08-09, with `allPassed: false`, and nothing read it.  Bean
+    `qou-4e5k`.
+
+    Callers wanting the subleading form should compose it explicitly rather
+    than reintroduce it here.
     """
-    leading = (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
-    hbar = (q - 1) / q
-    return leading * (1 + hbar ** 3)
+    return (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
 
 
 def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
@@ -67,7 +88,7 @@ def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
     if q is None:
         q = sp.Symbol("q", positive=True)
     h = q - 1 / q
-    delta = flavor_split_subleading_sym(q)
+    delta = flavor_split_leading_sym(q)
     h_num = float(_h_num)
 
     def _intra_d(dn: float):
@@ -157,16 +178,16 @@ def main() -> int:
               f"tr_free {tf0:.9f} vs {tf_ref:.9f} (Δ={d_free:.1e})")
 
     # δ symbolic matches the production helper at q0
-    from _li_2_q_util import flavor_split_subleading
-    d_delta = abs(float(flavor_split_subleading_sym(q).subs(q, q0))
-                  - float(flavor_split_subleading(Q0)))
+    from _li_2_q_util import flavor_split_leading
+    d_delta = abs(float(flavor_split_leading_sym(q).subs(q, q0))
+                  - float(flavor_split_leading(Q0)))
     print(f"  δ(q₀): symbolic vs _li_2_q_util  Δ={d_delta:.1e}")
 
     if WitnessBuilder is not None:
         w = WitnessBuilder("tr-m-algebraic-q", engine="sympy")
         w.set_description(
             "Algebraic q-parameterized Markov trace tr_M(q) ∈ ℚ(q): the atom "
-            "braid word with the colour split flavor_split_subleading(q) kept "
+            "braid word with the colour split flavor_split_leading(q) kept "
             "SYMBOLIC (vs the production q₀-baked float), so the trace is a clean "
             "Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the "
             "canonical transfer value tr_m_atom_zn(Z,N) to ~1e-8 for D/T(/³He) "
@@ -177,13 +198,23 @@ def main() -> int:
         worst = max([r["abs_diff_atom"] for r in rows]
                     + [r["abs_diff_free"] for r in rows])
         w.add_assertion(name="algebraic_q0_matches_transfer",
-                        computed=worst, expected=0.0, tolerance=1e-7,
+                        computed=worst, expected=0.0, tolerance=1e-9,
                         source="max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), "
-                               "atom & free words; ~1e-8 float64-eval floor of the "
-                               "exact ℚ(q) form vs the 50-dps transfer")
+                               "atom & free words")
+        # TOLERANCE WAS 1e-7, AND ITS `source` EXPLAINED AWAY A REAL DEFECT.
+        # It read "~1e-8 float64-eval floor of the exact ℚ(q) form vs the
+        # 50-dps transfer", and the committed value was 6.88e-08 — 69% of a
+        # budget sized to accommodate it. That residual was NOT an evaluation
+        # floor: it was `flavor_split_leading_sym` carrying the posited
+        # (1 + ℏ³) (see its docstring). With δ corrected the deuteron closes to
+        # 3.44e-25, so the "floor" was ~17 orders above the real one. The
+        # sibling assertion `symbolic_delta_matches_li2q` had been reporting
+        # exactly this since 2026-08-09 at tol 1e-12, failing, unread. A
+        # tolerance chosen to fit an unexplained gap converts a detector into a
+        # rationalisation. Bean `qou-4e5k`.
         w.add_assertion(name="symbolic_delta_matches_li2q",
                         computed=d_delta, expected=0.0, tolerance=1e-12,
-                        source="flavor_split_subleading_sym(q₀) vs _li_2_q_util")
+                        source="flavor_split_leading_sym(q₀) vs _li_2_q_util")
         out = w.save()
         print(f"  witness: {out}")
     return 0

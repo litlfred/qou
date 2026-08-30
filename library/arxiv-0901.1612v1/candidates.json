@@ -1,0 +1,98 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0901.1612v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b4f3efcadd1e5caff0aa26ee0210329756a330fe228727e1d895fb08dc6f2392",
+  "file": "0901.1612v1.pdf"
+ },
+ "provenance": {
+  "title": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS",
+  "authors": "AND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS",
+  "arxiv": {
+   "id": "0901.1612",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "12 Jan 2009"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "theorem": 3,
+   "remark": 1,
+   "proposition": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A. The pairwise linking numbers p, q and r of the link L are",
+   "section_file": "sections/sec-000-1-statement-of-results.md",
+   "section_title": "Statement of results",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Milnor\u2019s\u00b5-invariant, typically denoted\u00b5123, is descriptive of a single three-",
+   "section_file": "sections/sec-000-1-statement-of-results.md",
+   "section_title": "Statement of results",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "B. If the pairwise linking numbers p, q and r of the three com-",
+   "section_file": "sections/sec-000-1-statement-of-results.md",
+   "section_title": "Statement of results",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "s A and B above give a similar formulation of Milnor\u2019s triple linking number",
+   "section_file": "sections/sec-001-2-background-and-motivation.md",
+   "section_title": "Background and motivation",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "The fundamental solution of the scalar Laplacian on the 3-torus T 3 is",
+   "section_file": "sections/sec-005-61-the-fundamental-solution-of-the-laplacian.md",
+   "section_title": "The fundamental solution of the Laplacian",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

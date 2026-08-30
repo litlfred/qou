@@ -38,17 +38,37 @@ from math import comb
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 # ── Substrate constants (q0, m_e → E_0; derived f_bond) ──────────────
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# Proton pin per the standing 2026-08-07 directive: any probe that is
+# WRITTEN OR MODIFIED defaults to the experimental layer.  This was a
+# hardcoded MUON literal (…9555573347…), i.e. the ideal/CAL-2 layer.
+Q0 = Q_MP
 M_E_MEV = mp.mpf("0.51099895069")          # CAL-1
 E0 = M_E_MEV / (Q0 * (Q0 - 1))             # ≈ 4.186 MeV (calibration-fixed)
 
 h = Q0 - 1 / Q0
-z = mp.sqrt(Q0) / (Q0 + 1)                 # Markov parameter z = √q/(q+1)
+# Convention D via the canonical helper.  This was `mp.sqrt(Q0)/(Q0+1)`
+# — convention C, excised by the 2026-08-09 ruling.  Note the witness
+# `_provenance` already CLAIMED `z=q^3/(q^2+1)`, so the file documented D
+# while computing C.  Calling `markov_z` rather than re-spelling z inline
+# is deliberate: every convention detector keys on how z is WRITTEN, and
+# an inline spelling is how a site goes blind (this one was missed by two
+# independent detectors).
+z = markov_z(Q0)
 delta = mp.mpf("0.00137705")               # color split
 
 # Derived per-bond kernels (fibre-level, no fit) — see prearchimedean_bond_factor.py
@@ -171,14 +191,23 @@ def main() -> int:
             "verdict": ("signed-ILP-pure-chirality-refuted"
                         if n_close_pure == 0
                         else "signed-ILP-pure-chirality-partial"),
+            # The bond count is INTERPOLATED from d_ratio, never retyped. It
+            # read "0.572" until 2026-08-25 — the convention-C value, left in
+            # prose when this file's z migrated to D and so sitting in the same
+            # witness dict as the correctly-recomputed 0.7852 one key above it.
+            # It did not stay local: `pauli_young_spin_isospin_delta_lambda_probe`
+            # adopted 0.572 as a cross-check TARGET and, being itself still in C,
+            # reproduced it to 0.015% — a self-consistent C-frame loop reading as
+            # confirmation.
             "note": ("pure chirality (signs only, canonical graph fixed) closes "
                      f"{n_close_pure}/4; adding edge absence (= edge selection, the "
                      f"fitting freedom) closes {n_close_absence}/4 — only 3He, via "
-                     "selection not signs. Deuteron needs 0.572 pn bonds (fractional)."),
+                     f"selection not signs. Deuteron needs {mp.nstr(d_ratio, 4)} pn "
+                     "bonds (fractional; convention D)."),
         },
         "atoms": rows,
         "_provenance": {
-            "kernel": "f_pp=z, f_nn=z-h, f_pn=z-h(1/2-delta/4), z=sqrt(q)/(q+1)",
+            "kernel": "f_pp=z, f_nn=z-h, f_pn=z-h(1/2-delta/4), z=q^3/(q^2+1)",
             "E0": "m_e/(q0(q0-1))",
             "binding_form": "B = E0 * sum_crossings sign * log(1/f_bond)",
             "graph": "canonical complete graph: n_pp=C(Z,2), n_pn=Z*N, n_nn=C(N,2)",
@@ -187,6 +216,15 @@ def main() -> int:
         },
     }
     out = HERE.parent / "signed-crossing-feasibility.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    w.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(w, indent=2))
     print(f"\n  Witness: {out}")
     return 0

@@ -1,0 +1,466 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "invariant-eigendistributions-2",
+ "source": {
+  "file": "Invariant_eigendistributions_2.pdf",
+  "sha256": "ee43c3ebeff9526549f27b92244b135534e92c95b0025cd13d0ff822253c1987",
+  "bytes": 286346,
+  "pages": 33
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "CreationDate": "D:20030713101716",
+   "Producer": "Acrobat Distiller 4.05 for Windows"
+  },
+  "title_prev": "REPRESENTATIONSOFWEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1",
+  "title_lines": [
+   "REPRESENTATIONSOFWEYL GROUPS 1",
+   "Invariant eigendistributions on a semisimple Lie algebra",
+   "and homology classes on the conormal variety II:",
+   "representations of Weyl groups",
+   "W. ROSSMANN1"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Construction of Weyl group representations",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Specialization",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Springer theory",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Coherent families of eigendistributions",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Character contours and characteristic cycles",
+   "page": 1,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics at zero",
+   "page": 1,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Harmonic polynomials",
+   "page": 1,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Univalence",
+   "page": 1,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Nilpotent orbital integrals",
+   "page": 1,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "A conjecture of Joseph",
+   "page": 1,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "Appendix: comparison with the Kazhdan-Lusztig construction",
+   "page": 1,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Supported bya grant from NSERC Canada",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . In top dimension the W -map",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Theorem. The map",
+   "page": 9,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
+   "page": 11,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Theorem. For any nilpotent Go-orbit O in igo∗ and any 2n-cycle Γ∈H2n(S( ¯O)) over ¯O,",
+   "page": 13,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. TheWo-representation of type χO occurs with multiplicity one in degree eo =eo(O)",
+   "page": 20,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the",
+   "page": 21,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. The map",
+   "page": 21,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Addendum to theorem 8.2. The polynomials cΓ and pO are given by",
+   "page": 23,
+   "source": "inferred",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Theorem. LetO be a nilpotent Go-orbit in igo∗. Then",
+   "page": 26,
+   "source": "inferred",
+   "number": "10.1"
+  },
+  {
+   "level": 1,
+   "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+   "page": 28,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-construction-of-weyl-group-representations",
+   "number": "2",
+   "title": "Construction of Weyl group representations",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-3-specialization",
+   "number": "3",
+   "title": "Specialization",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-springer-theory",
+   "number": "4",
+   "title": "Springer theory",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-5-coherent-families-of-eigendistributions",
+   "number": "5",
+   "title": "Coherent families of eigendistributions",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-6-character-contours-and-characteristic-cycles",
+   "number": "6",
+   "title": "Character contours and characteristic cycles",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-7-asymptotics-at-zero",
+   "number": "7",
+   "title": "Asymptotics at zero",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-8-harmonic-polynomials",
+   "number": "8",
+   "title": "Harmonic polynomials",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-9-univalence",
+   "number": "9",
+   "title": "Univalence",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-10-nilpotent-orbital-integrals",
+   "number": "10",
+   "title": "Nilpotent orbital integrals",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-11-a-conjecture-of-joseph",
+   "number": "11",
+   "title": "A conjecture of Joseph",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-12-appendix-comparison-with-the-kazhdan-lusztig",
+   "number": "12",
+   "title": "Appendix: comparison with the Kazhdan-Lusztig construction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2298,
+   "n_words": 365
+  },
+  {
+   "id": "sec-012-1-supported-bya-grant-from-nserc-canada",
+   "number": "1",
+   "title": "Supported bya grant from NSERC Canada",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6994,
+   "n_words": 1107
+  },
+  {
+   "id": "sec-013-31-lemma-the-inclusion-bν-b-induces-a-w-map-hbν",
+   "number": "3.1",
+   "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2078,
+   "n_words": 361
+  },
+  {
+   "id": "sec-014-32-corollary-in-top-dimension-the-w--map",
+   "number": "3.2",
+   "title": "Corollary . In top dimension the W -map",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6204,
+   "n_words": 997
+  },
+  {
+   "id": "sec-015-51-theorem-the-map",
+   "number": "5.1",
+   "title": "Theorem. The map",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5781,
+   "n_words": 947
+  },
+  {
+   "id": "sec-016-61-theorem-the-character-contour-cm-of-a-gk--mod",
+   "number": "6.1",
+   "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2825,
+   "n_words": 444
+  },
+  {
+   "id": "sec-017-71-theorem-for-any-nilpotent-go-orbit-o-in-igo-a",
+   "number": "7.1",
+   "title": "Theorem. For any nilpotent Go-orbit O in igo∗ and any 2n-cycle Γ∈H2n(S( ¯O)) over ¯O,",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 20,
+   "n_chars": 11032,
+   "n_words": 1913
+  },
+  {
+   "id": "sec-018-81-lemma-thewo-representation-of-type-χo-occurs",
+   "number": "8.1",
+   "title": "Lemma. TheWo-representation of type χO occurs with multiplicity one in degree eo =eo(O)",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 910,
+   "n_words": 149
+  },
+  {
+   "id": "sec-019-82-theorem-let-γ-h2ns-o-be-a-2ncycle-γ-over-o-on",
+   "number": "8.2",
+   "title": "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2252,
+   "n_words": 390
+  },
+  {
+   "id": "sec-020-91-lemma-the-map",
+   "number": "9.1",
+   "title": "Lemma. The map",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2662,
+   "n_words": 466
+  },
+  {
+   "id": "sec-021-93-addendum-to-theorem-82-the-polynomials-cγ-and",
+   "number": "9.3",
+   "title": "Addendum to theorem 8.2. The polynomials cΓ and pO are given by",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 2904,
+   "n_words": 505
+  },
+  {
+   "id": "sec-022-101-theorem-leto-be-a-nilpotent-go-orbit-in-igo",
+   "number": "10.1",
+   "title": "Theorem. LetO be a nilpotent Go-orbit in igo∗. Then",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 5243,
+   "n_words": 939
+  },
+  {
+   "id": "sec-023-12-appendix-comparison-with-the-kazhdan-lusztig",
+   "number": "12",
+   "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 4727,
+   "n_words": 840
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 4206,
+   "n_words": 589
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 25,
+  "chars_total": 60116
+ }
+}

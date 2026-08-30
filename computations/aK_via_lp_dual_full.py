@@ -54,13 +54,30 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q = mp.mpf(_Q50_PROTON)
 H = Q - mp.mpf(1) / Q
 
 ATOM_CHI = {
@@ -95,6 +112,29 @@ def a_K_closed(A: int) -> float:
     if A == 3: return 1.0 - h * h
     if A == 4: return (1.0 - h * h) ** 2
     return float("nan")
+
+
+
+def _dual_sum_companions(per_partition) -> dict:
+    """50-dps companions for the two `u_lambda_star` sums, when available."""
+    if not any("u_lambda_star_str" in r for r in per_partition):
+        return {}
+    with mp.workdps(50):
+        chi = mp.mpf(0)
+        sc = mp.mpf(0)
+        for r in per_partition:
+            s = r.get("u_lambda_star_str")
+            if s is None or not r.get("is_active"):
+                continue
+            v = mp.mpf(s)
+            if r.get("self_conjugate"):
+                sc += v
+            else:
+                chi += v
+        return {
+            "chirality_dual_sum_str": mp.nstr(chi, 50),
+            "self_conjugate_dual_sum_str": mp.nstr(sc, 50),
+        }
 
 
 def solve_atom_lp(atom: str) -> dict:
@@ -138,8 +178,14 @@ def solve_atom_lp(atom: str) -> dict:
     G = np.diag([abs(c) for c in contribs])
     n_target = tr_M_atom
 
-    # Pin scipy: committed-witness producer → byte-deterministic.
-    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-
+    # deterministic too (6 identical solves, 1 output hash), so that reason
+    # never distinguished the two. The real concern was `backend="auto"`
+    # silently choosing by whether the Rust binary happened to be built;
+    # pinning `clarabel` answers it, and QOU_REQUIRE_CLARABEL=1 makes a
+    # missing binary an error instead of a changed answer. Bean `qou/ftuv`.
+    result = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
 
     # Map LP dual back to partition labels.
     per_partition = []
@@ -153,6 +199,16 @@ def solve_atom_lp(atom: str) -> dict:
             "contribution": contribs[i],
             "x_star": result.x_star[i],
             "u_lambda_star": result.y_star[i],
+            # The per-partition SLICE needs its own companion. The row-level
+            # `x_star`/`y_star` are shadowed by `provenance()` above, but
+            # re-slicing them per partition drops the digits again — the same
+            # truncation one level deeper, and 308 of this witness's carved
+            # f64s were exactly this. `x_star_str`/`y_star_str` hold the
+            # solver's 50-dps decimals, so the slice is free.
+            **({"x_star_str": result.x_star_str[i]}
+               if result.x_star_str is not None else {}),
+            **({"u_lambda_star_str": result.y_star_str[i]}
+               if result.y_star_str is not None else {}),
             "is_active": (i in result.active_set),
         })
 
@@ -169,10 +225,42 @@ def solve_atom_lp(atom: str) -> dict:
     )
     u0_star = result.y0_star
 
-    aK_via_dual = 1.0 + chirality_dual_sum / abs(u0_star) if abs(u0_star) > 1e-12 else float("nan")
+    # `a_K` is recovered by normalising the chirality dual sum by the net
+    # constraint's shadow price, so it exists only while that price is nonzero.
+    #
+    # Under convention D it is not. Every `ℓ(λ) ≥ 3` weight vanishes
+    # identically (`qou-u2jg`), so the blocks this LP was posed over collapse
+    # and the solve returns the trivial point: `primal_obj = 0`,
+    # `dual_obj = 0`, `y0_star = -0.0`. The guard below then fires on EVERY
+    # row, where under convention C it fired on none.
+    #
+    # That is a finding, not a formatting problem, and it is the same shape as
+    # the two other convention-D degeneracies: the Gram form going singular
+    # (`tools/pyhecke/python/pyhecke/gram.py`) and `y-lambda-sdp`'s positivity
+    # question changing its answer. The probe is posed over the full partition
+    # set; under D the live content is the two-row block, so the LP needs
+    # re-posing on the quotient rather than reporting a degenerate solve.
+    # Tracked as a bean; NOT silently repaired here, because inventing a
+    # nonzero normaliser would manufacture an `a_K` the data does not support.
+    #
+    # Emitted as `null`, never `float("nan")`. Bare NaN is not valid JSON
+    # (RFC 8259) — `json.dump` writes the bare token `NaN`, which Python reads
+    # back but strict parsers reject, so it was a landmine for every non-Python
+    # consumer of this witness. It also poisons any downstream comparison: the
+    # impact report scored this file at 2.1e21 ppm purely from differencing
+    # against NaN. `null` says "no value" to every reader, and the reason lives
+    # in `a_K_dual_status` beside it instead of in a magic float.
+    degenerate = abs(u0_star) <= 1e-12
+    aK_via_dual = None if degenerate else 1.0 + chirality_dual_sum / abs(u0_star)
+    aK_dual_status = (
+        "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; "
+        "under convention D the l(lambda)>=3 blocks vanish identically, so this "
+        "LP needs re-posing on the two-row quotient"
+        if degenerate else "ok"
+    )
     aK_C = a_K_closed(A)
     dual_vs_C_ppm = float((aK_via_dual / aK_C - 1) * 1e6) if (
-        aK_C and not (aK_C != aK_C)  # not NaN
+        aK_via_dual is not None and aK_C and not (aK_C != aK_C)  # not NaN
     ) else None
 
     return {
@@ -188,11 +276,22 @@ def solve_atom_lp(atom: str) -> dict:
         "dual_obj": result.dual_obj,
         "duality_gap": result.duality_gap,
         "feasible": result.feasible,
+        # Which solver, at what precision, and the full-precision decimals
+        # behind the f64 fields above. Without this the row is silent about
+        # its own provenance, so a clarabel-MPFR solve is indistinguishable
+        # from a scipy one in the committed artifact.
+        **provenance(result),
         # Item B extraction
         "u0_star": u0_star,
         "chirality_dual_sum": chirality_dual_sum,
         "self_conjugate_dual_sum": sc_dual_sum,
+        # Both sums are over `u_lambda_star`, which carries a 50-dps
+        # companion per partition, so the sum has one too — summing the f64
+        # view and recording only that would drop the digits at the last step
+        # for a quantity whose inputs still have them. Bean `qou/ftuv`.
+        **_dual_sum_companions(per_partition),
         "a_K_via_lp_dual": aK_via_dual,
+        "a_K_dual_status": aK_dual_status,
         "a_K_C_closed": aK_C,
         "dual_vs_C_ppm": dual_vs_C_ppm,
         "per_partition": per_partition,
@@ -260,6 +359,20 @@ def main() -> int:
         "duality_gap",
         max((r.get("duality_gap") or 0) for r in rows if "duality_gap" in r),
     )
+    # The aggregates re-list values the rows already carry companions for.
+    # Re-listing without them is the same truncation as re-slicing, one level
+    # up: the digits are in `rows`, and dropping them here is what left these
+    # top-level mirrors bare. `duality_gap` takes the companion of whichever
+    # row supplied the max, so the pair still describes one solve.
+    for _k in ("y0_star", "y_star", "primal_obj", "dual_obj"):
+        _sk = _k + "_str"
+        if any(_sk in r for r in rows):
+            w.add_data(_sk, [r.get(_sk) for r in rows])
+    _gap_rows = [r for r in rows if "duality_gap" in r]
+    if _gap_rows:
+        _wm = max(_gap_rows, key=lambda r: r.get("duality_gap") or 0)
+        if "duality_gap_str" in _wm:
+            w.add_data("duality_gap_str", _wm["duality_gap_str"])
 
     for r in rows:
         if "error" in r:
@@ -295,9 +408,23 @@ def main() -> int:
             continue
         ppm = r['dual_vs_C_ppm']
         ppm_s = f"{ppm:+.4e}" if ppm is not None else "n/a"
-        print(f"  {r['atom']:12s} {r['A']:>2d}  {r['tr_M_atom']:>10.6f}  "
-              f"{r['n_active']:>7d}  {r['y0_star']:>10.4f}  "
-              f"{r['a_K_via_lp_dual']:>10.4f}  {r['a_K_C_closed']:>10.4f}  "
+        # `a_K^dual` is None on a degenerate solve (see the extraction above),
+        # so it cannot go through `:.4f`. Printed as `degen` rather than
+        # `n/a`: the distinction is the point, since a degenerate LP is a
+        # result about convention D and not a missing datum.
+        ak = r['a_K_via_lp_dual']
+        ak_s = f"{float(ak):10.4f}" if ak is not None else f"{'degen':>10s}"
+        # Coerced through float() for display ONLY. These fields arrive as
+        # mpmath.mpf (the witness carries them at full precision, which is the
+        # point), and `mpf.__format__` does not accept an `f` presentation
+        # type — the summary table crashed with `unsupported format string
+        # passed to mpf.__format__` AFTER `w.save()` had already written the
+        # witness, so the producer exited 1 having actually succeeded. The
+        # harness records that as a producer failure and the witness gets
+        # re-run forever. Nothing here feeds the witness; it is a console table.
+        print(f"  {r['atom']:12s} {r['A']:>2d}  {float(r['tr_M_atom']):>10.6f}  "
+              f"{r['n_active']:>7d}  {float(r['y0_star']):>10.4f}  "
+              f"{ak_s}  {float(r['a_K_C_closed']):>10.4f}  "
               f"{ppm_s:>12s}")
     return 0
 

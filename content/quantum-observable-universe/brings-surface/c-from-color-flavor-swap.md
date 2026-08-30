@@ -21,7 +21,7 @@ $$
 | **P** | mirror reflection of braid diagram | writhe / signed-crossing classification ([`bar-involution-table3-data`](../stochastic-mechanics/bar-involution-table3-data.md)) |
 | **T** | Markov-trace word reversal | trace-cyclicity dual |
 
-The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the **composite CPT** in this categorisation, not as C alone. This conjecture locates the C-component on the color sheets—orthogonal to P (braid-diagram mirror) and T (trace reversal).
+The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the **composite CPT** in this categorisation, not as C alone. This conjecture locates the C-component on the color sheets, orthogonal to P (braid-diagram mirror) and T (trace reversal).
 
 ## The conjectural content
 
@@ -31,7 +31,7 @@ The proposition relies on the color-sheet flavor structure established in [`conj
 2. **C is an involution.** Each color sheet flips back to its original flavor under two applications.
 3. **C commutes with bar-involution on the algebraic side.** This forces $\mathrm{CP} \cdot \mathrm{T}$ and $\mathrm{C} \cdot \mathrm{PT}$ to reduce to the bar-involution identity classified in [`bar-involution.md`](../braids-and-knots/bar-involution.md) §Bar-symmetric.
 
-When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order—three commuting Z/2 actions on the color-tube structure.
+When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry on the color-sheet flavor data. The CPT composite of [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density) factors as $\mathrm{CPT} = C \cdot P \cdot T$ in the natural order, as three commuting Z/2 actions on the color-tube structure.
 
 ## Structural position
 

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-12T23:46:00.849388+00:00",
-  "commitSha": "998cd87fdeb2b499929a2db65c5983d86a7bc964",
+  "computedAt": "2026-08-26T07:07:47.758514+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [
     {
       "name": "valid_orders_over_determined",
@@ -23,7 +23,13 @@
       "passed": true
     },
     {
-      "name": "super_exponentially_divergent",
+      "name": "root_test_still_rising_in_window",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "singularity_at_qb_zero_reproduces_rho",
       "computed": true,
       "expected": true,
       "passed": true
@@ -42,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 19,
   "computation": "qbeta-dladder-generating-function-structure",
   "scriptFile": "qbeta_dladder_generating_function_structure_probe.py",
-  "scriptHash": "166faaf4f51e",
-  "scriptCommitSha": "cb728ce6e26d14cffcfb30b6dde33b60d7c2b15c",
+  "scriptHash": "ab7215729f13",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,10 +61,21 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
-  "description": "Route 2: structure hunt of the exact D-ladder generating function D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: (1) exact parity structure (odd k → √3-part carries the small denominator, even k → rational part); (2) 3-smooth simple-denominators (Ohtsuki/Habiro factorial normalization); (3) super-exponentially DIVERGENT (radius → 0): root test rises without plateau, C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k (super-exp ≫ geometric) — the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow (corrected 2026-07-12); (4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 deg≤5); (5) no finite singularity near 0.143 (corroborates radius → 0). No elementary closed form at 15–27 terms. Scope-(a); no wiring.",
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_dladder_generating_function_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_dladder_generating_function_structure_probe.py"
+  },
+  "description": "Route 2: structure hunt of the exact D-ladder generating function D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: (1) exact parity structure (odd k → √3-part carries the small denominator, even k → rational part); (2) 3-smooth simple-denominators (Ohtsuki/Habiro factorial normalization); (3) in the accessible window the root test is still rising with C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k — CONSISTENT WITH the finite radius rather than evidence against it, since d_k = −(1/(2h*_ρ))ρ^(−k)/k approaches |dₖ|^(1/k) → 1/ρ from below and has not arrived by k=21; (4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 deg≤5) — which does NOT imply divergence; (5) the finite singularity IS present, at the Q_b zero q*_ρ≈1.48989, whose image under this probe's own ũ map reproduces the published ρ=0.142799996644689… . RE-SCOPED 2026-08-14: the 2026-07-12 'super-exponentially divergent (radius→0)' reading rested on an INCOMPLETE singularity search that omitted this root; see docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md. The exact d_k, the parity structure, the 3-smooth denominators and the non-holonomicity are all UNAFFECTED. Scope-(a); no wiring.",
   "data": {
     "ORD": 43,
     "n_terms": 21,
@@ -187,15 +204,28 @@
     },
     "superexp_C_klogk_coeff": "0.061737",
     "superexp_vs_geometric_ssr_ratio": "0.00280188",
-    "super_exponentially_divergent": true,
-    "contrast_kappa_tower": "CORRECTED 2026-07-12: D-ladder is super-exponentially divergent (radius→0), SAME resurgent family as the divergent κ-tower — NOT a convergent contrast. The earlier 'convergent ρ≈0.143' was a finite-n shadow.",
+    "root_test_still_rising_in_window": true,
+    "contrast_kappa_tower": "RE-SCOPED 2026-08-14. The D-ladder is CONVERGENT (ρ = ũ(q*_ρ) = 0.142799996644689…, κ = 0; 2026-08-09 correction), so it is NOT in the κ-tower's family: the κ-tower is genuinely Gevrey-1 divergent (Borel singularity A≈0.7), this ladder is not. The 2026-07-12 claim of a shared divergent family is withdrawn. A divergent and a convergent series cannot be equated term-by-term — the corpus already carries that as a proved scope-(b) result.",
     "no_low_order_p_recurrence": true,
-    "no_finite_singularity_near_spurious_rho": "0.77492262",
-    "verdict": "D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_21 exact ℚ(√3)): [1] exact parity structure (odd k → √3-part small-denominator, even k → rational part); [2] simple-denominator sequence is 3-smooth (Ohtsuki/Habiro factorial normalization; primes [2, 3, 5, 7, 11, 13]); [3] super-exponentially DIVERGENT (radius → 0): root test rises without plateau (→5.91 at k=21) and C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k (SSR 0.0028× the geometric law) — the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow; [4] no P-finite recurrence (order≤3, deg≤4); [5] no closed form emerges at 21 terms. Scope-(a); no c_k wired; no fit.",
+    "non_holonomic_does_not_imply_divergent": "The order≤3/deg≤4 negative in [4] constrains the ALGEBRAIC class only. φ(w)log(1−w/ρ)+ψ(w) with algebraic φ,ψ is convergent AND not low-order P-finite, so no growth-class conclusion follows from it.",
+    "singularity_at_qb_zero": {
+      "q_star_rho": "1.48989479968836524822531",
+      "utilde_q_star_rho": "0.142799996644689688905721",
+      "published_rho": "0.142799996644689688905721",
+      "relative_difference": "2.24314e-30",
+      "note": "the root the 2026-07-12 singularity search omitted; its image under this probe's own ũ map IS the radius"
+    },
+    "other_singularity_candidates_checked": {
+      "utilde_q_1_plus_sqrt2": "0.77492262",
+      "utilde_sqrt_branch_point": "→0 (folds to origin)",
+      "note": "these two alone were the 2026-07-12 search; both land far from ρ, which is why that search concluded 'no finite singularity'"
+    },
+    "verdict": "D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_21 exact ℚ(√3)): [1] exact parity structure (odd k → √3-part small-denominator, even k → rational part); [2] simple-denominator sequence is 3-smooth (Ohtsuki/Habiro factorial normalization; primes [2, 3, 5, 7, 11, 13]); [3] in the accessible window the root test is still rising (→5.91 at k=21) with C=0.0617>0 in log|dₖ|=A+Bk+C·k·log k (SSR 0.0028× the geometric law) — this is CONSISTENT WITH the finite radius, not evidence against it: d_k = −(1/(2h*_ρ))ρ^(−k)/k means |dₖ|^(1/k) → 1/ρ = 7.0028 from below and has not arrived by k=21; [4] no P-finite recurrence (order≤3, deg≤4) — which does NOT imply divergence (φ(w)log(1−w/ρ)+ψ(w) is convergent and not P-finite); [5] the finite singularity IS present, at the Q_b zero q*_ρ=1.48989479969: |ũ(q*_ρ)|=0.142799996644689689 reproduces the published ρ to rel 2.24e-30 — the 2026-07-12 'no singularity near 0.143 ⇒ radius→0' followed from an INCOMPLETE search that omitted this root. RE-SCOPED 2026-08-14 per the 2026-08-09 convergence correction. Scope-(a); no c_k wired; no fit.",
     "scope": "(a) — exact ℚ(√3) ladder + corpus growth-class diagnostic; no wiring",
     "caveats": [
-      "C (the k·log k coefficient) drifts down with the fit window (0.077→0.048, k up to 27) ⇒ q-Gevrey at q₀, not a fixed classical Gevrey index; report 'super-exponentially divergent, C≈0.05–0.08 shadow', not a pinned index.",
-      "corrects PR #3716's 'convergent radius 0.143' finite-n shadow; corpus-corroborated (Lean-backed alien-calculus Gevrey/q-Gevrey audit).",
+      "C (the k·log k coefficient) drifts DOWN with the fit window (0.077→0.048, k up to 27). Read 2026-07-12 as a q-Gevrey shadow; re-scoped 2026-08-14 — a drift toward 0 is what a CONVERGENT ladder does to this diagnostic, since the k·log k term is absorbing the −log k of a ρ^(−k)/k law rather than a genuine super-exponential factor.",
+      "PR #3716's 'convergent radius 0.143' was called a finite-n shadow on 2026-07-12; that call is WITHDRAWN — 0.1428 is the true radius, the image of the Q_b zero (2026-08-09 correction). #3716's reading was right for the wrong stated reason, and the 2026-07-12 rebuttal was wrong for a checkable one.",
+      "UNAFFECTED by the re-scope: the exact ℚ(√3) d_k, the parity structure, the 3-smooth denominators, and the non-holonomicity in [4]. Only the growth-class verdict changed.",
       "no c_k wired; no fit; no tier change."
     ]
   }

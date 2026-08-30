@@ -1,5 +1,28 @@
 # The exact D-ladder: no coupled ℚ(√3) recurrence + a crisp 2-adic parity grading
 
+> ## ⚠ PARTIALLY SUPERSEDED 2026-08-09 — the results stand; the *resurgent reading* does not
+>
+> **This document's own findings are untouched and remain correct**: no coupled
+> `ℚ(√3)` P-recurrence, no q-holonomic recurrence in base `3`/`1/3`/`k`
+> (prime-certified), and the 2-adic parity grading. Those are exact linear
+> algebra and are unaffected by anything below.
+>
+> What does not survive is the *interpretation* layered on top — that these
+> negatives "tighten the q-Gevrey / resurgent reading", and that `D(ũ)`'s closed
+> form is therefore "transcendental / resurgent (Écalle acceleration chain)".
+> **`D(ũ)` is CONVERGENT** (`ρ = 0.142799996644689…`, `κ = 0`;
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)),
+> and **only a divergent series can be resurgent**.
+>
+> The inference is invalid on its own terms, independently of that correction:
+> **non-holonomic does not imply divergent.** The counterexample is this very
+> object — KC22's closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, with algebraic
+> `φ`,`ψ` over a degree-12 field, is convergent *and* provably not low-order
+> P-finite. A non-holonomicity result constrains the *algebraic* class; it says
+> nothing about the *growth* class.
+>
+> Banner added 2026-08-14 (`qou-arvu`); text below preserved verbatim.
+
 **Date:** 2026-07-13 · **Branch:** `claude/faddeev-phi-b-construction-wp7xau` ·
 **PR:** #3737 · **Tier:** exact-arithmetic (rational linear algebra + p-adic
 valuation; no floats, no PSLQ, no fit) · **Scope:** (a) — no `c_k` wired, no
@@ -46,7 +69,9 @@ window: **no coupled ℚ(√3) P-recurrence** for order `r ≤ 2` through degree
 `D ≤ 4`, `r = 3` through `D ≤ 3`, and `r = 4` through `D ≤ 2` (all exact,
 over-determined). This **extends** #3716's "not P-finite (separated)" to the
 coupled ℚ(√3) case,
-tightening the corpus's q-Gevrey / resurgent reading of the bar-odd S-leak: the
+~~tightening the corpus's q-Gevrey / resurgent reading of the bar-odd S-leak~~
+**[WITHDRAWN 2026-08-09 — see banner; the negative below stands, the resurgent
+reading does not]**: the
 D-ladder is not (q-)holonomic of low order even as a coupled ℚ(√3) object.
 
 *(This is the right refinement to run, not a re-open of a settled frontier: a
@@ -77,11 +102,14 @@ q-holonomic recurrence** in base `3` or `1/3` (nor classical `k`) through
 `r ≤ 3`, `E ≤ 3` (12 prime-certified full-rank cells per base).
 
 So `D(ũ)` is **not (q-)holonomic even in the base its own denominators pointed
-at** — the strongest form of the negative yet, and a genuine tightening of the
-resurgent reading: the 3-adic structure is real (Result 2) but it is *not* the
-signature of a q-difference equation. `D(ũ)`'s closed form, if any, is
+at** — the strongest form of the negative yet, ~~and a genuine tightening of the
+resurgent reading~~ **[WITHDRAWN 2026-08-09]**: the 3-adic structure is real (Result 2) but it is *not* the
+signature of a q-difference equation. ~~`D(ũ)`'s closed form, if any, is
 transcendental / resurgent (Écalle acceleration chain, per the corpus's
-q-Gevrey verdict), not (q-)holonomic.
+q-Gevrey verdict), not (q-)holonomic.~~ **[WITHDRAWN 2026-08-09 — `D(ũ)` is
+convergent; its closed form is `φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`,`ψ`,
+which is not resurgent and not (q-)holonomic. Non-holonomicity constrains the
+algebraic class, not the growth class.]**
 
 ## Resummation note — the singularity is Jackson q-Borel territory, not plain Borel (deferred)
 

@@ -8,7 +8,14 @@ factor that maps the H₃ per-block Markov trace tr_M to the production
 GLOBAL scalar linking_weight = (3q²+4+3q⁻²)/4, at ALL orders in
 h = q − q⁻¹?
 
-  Production (m_p path):   m = m_e · Vol(𝓑₃)/ℏ_q² · linking_weight
+  Vol·ρ form (m_p path):   m = m_e · Vol(𝓑₃)/ℏ_q² · linking_weight
+                           — called "production" when this script was
+                           written; DEPRECATED for absolute mass by the
+                           2026-06-24 ruling (canonical: the muon-anchored
+                           m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV via
+                           `canonical_mass.py`). The tr_M-vs-global-scalar
+                           question below is about the dimensionless
+                           modulation factor and stands either way.
   Paper Stage-4:           m = m_e · Geom(K) · Σ_{λ⊢3} w_λ χ_λ(β)/dim λ
                            Geom(K) = Vol(K)/ℏ_q²
 
@@ -59,6 +66,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
     y_lambda_wenzl_bridge_symbolic,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 h = sp.Symbol("h")  # h = q − q⁻¹
@@ -349,7 +357,7 @@ def main():
     # exact 50-dps value from the at-q0 cache (no symbolic y_λ slowdown) and
     # reconstruct the bare-Borromean closed form for the order-by-order test.
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(json.load(open(_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE)))
                 ["q_0_50dps"])
     trM = {}
@@ -500,6 +508,15 @@ def main():
 
     print(f"\nElapsed: {time.time() - t0:.1f}s")
     outpath = HERE / "yekutieli-volume-join.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(witness, open(outpath, "w"), indent=2)
     print("Witness →", outpath)
     return witness

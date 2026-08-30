@@ -50,6 +50,8 @@ them out by destructuring the conjunction.
 
 namespace QOU.Mathlib.Summary
 
+universe u
+
 open QOU.Mathlib.SpectralSequence
 open QOU.Mathlib.HeckeAlgebra
 open QOU.Mathlib.WenzlBridgeConcrete
@@ -69,19 +71,33 @@ open QOU.Mathlib.UpstreamSubstrateBridge
 theorem master_upstream_complete (R : Type u) [CommRing R]
     (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G) :
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
-    (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
-    (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
-    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
-    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
-    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
+    (∃ _W2 : WedderburnIsomorphism R 2 q, True) ∧
+    (∃ _W3 : WedderburnIsomorphism R 3 q, True) ∧
+    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z,
+      MarkovAxiomHolds ℝ z M1.trace_n M1.trace_succ M1.mul_succ
+        M1.sigma_n M1.embed) ∧
+    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z,
+      MarkovAxiomHolds ℝ z M2.trace_n M2.trace_succ M2.mul_succ
+        M2.sigma_n M2.embed) ∧
+    (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
+      Y.trace n = z_G ^ n) ∧
     (q_zero > 1) :=
   complete_upstream_discharge R q q_ℝ z G z_G
 
 /-- **Sanity inventory** — confirms the 8 upstream files
     contribute interlocking content.  This theorem is a
     documentation handle: every named class / instance below
-    is in scope and consumable. -/
-theorem inventory_check (R : Type u) [CommRing R] (q : R) :
+    is in scope and consumable.
+
+    Conditional on `[IwahoriHeckeAlgebra R 2 q]` (§3b-cond): the trivial
+    global `IwahoriHeckeAlgebra` instance was deliberately removed on
+    2026-08-23 (anti-laundering — a content-free `carrier = PUnit` instance
+    must not be fabricated to close it), so `Nonempty (IwahoriHeckeAlgebra
+    R 2 q)` is honestly available only *given* the class. `WedderburnIsomorphism
+    R 2 q` and `GBFiltrationCollapsesAtE2 R` carry real instances (`wedderburn_n2`,
+    `canonical`) and stay unconditional. -/
+theorem inventory_check (R : Type u) [CommRing R] (q : R)
+    [IwahoriHeckeAlgebra R 2 q] :
     -- Spectral sequence
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
     -- Hecke algebra

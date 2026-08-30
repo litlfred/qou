@@ -54,6 +54,10 @@ sys.path.insert(0, str(_REPO / "tools" / "qou-substrate" / "python"))
 from qou_substrate.constants import M_E_MEV, q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 DPS = 50
 mp.mp.dps = DPS + 15
 
@@ -79,7 +83,16 @@ def main():
 
     # ── N=0 reduction content (two functionals) ───────────────────────
     eps = h ** 2 / 2 - h               # ε(Δ): Frobenius counit
-    z_sub = mp.sqrt(q) / (q + 1)       # substrate Markov loop value
+    # Convention D: z = q³/(q²+1). Was `mp.sqrt(q)/(q+1)`, which is convention
+    # C in disguise — `√q/(q+1)` is exactly `1/(√q + 1/√q)`, and the square root
+    # is the tell: C must leave ℚ(q), D never does.
+    #
+    # Safe as a one-line change here, unlike the other independent C site found
+    # with it (`bond_extensivity_equal_weight.f_bonds`), because everything
+    # downstream is generic in z: `trM_zsub` is `h²/2 − h·z` and the recorded
+    # gap identity `h·(z − 1)` holds for any Markov parameter. Nothing here
+    # depends on z's closed form.
+    z_sub = q ** 3 / (q ** 2 + 1)      # substrate Markov loop value
     trM_zsub = h ** 2 / 2 - h * z_sub  # tr_M(Δ) at the substrate loop
     gap = eps - trM_zsub               # exact gap = h·(z_sub − 1)
 
@@ -152,7 +165,7 @@ def main():
     # Counit residual reproduces the merged +0.17 % at the live anchor.
     w.add_assertion(
         "counit_residual_pct",
-        computed=float(counit_res),
+        computed=counit_res,
         expected=0.17,
         tolerance=0.02,
         unit="percent",
@@ -161,7 +174,7 @@ def main():
     # Trace-at-substrate reproduces the merged −56 % wrong-tool signature.
     w.add_assertion(
         "trace_substrate_residual_pct",
-        computed=float(trace_res),
+        computed=trace_res,
         expected=-56.0,
         tolerance=1.0,
         unit="percent",

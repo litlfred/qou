@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T16:53:00.529018+00:00",
-  "commitSha": "aabd632356982d9938b3bc54571613ba703a2b73",
+  "computedAt": "2026-08-24T14:24:31.742778+00:00",
+  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "assertions": [
     {
       "name": "genuine_smatrix_validated_and_bwS0_identification_refuted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "keystone-valuemap-genuine-smatrix-s013",
   "scriptFile": "keystone_valuemap_genuine_smatrix_s013.py",
-  "scriptHash": "9199fa6f48b5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0e028e1e1c3c",
+  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_valuemap_genuine_smatrix_s013.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_valuemap_genuine_smatrix_s013.py"
   },
   "description": "s013 step 3: the GENUINE Sigma(2,3,5) S-matrix from the primary literature (Hikami math-ph/0405028, owner-uploaded commit ece271823). Transcribes chi^(l1,l2,l3) (3.1), tau_N (2.11), phi=181/30 (2.12), Eichler limit (4.2), S-matrix (3.8, normalization sqrt(32/P)), Corollary 12 (5.8) -- and machine-validates ALL of it: Theorem 10 is an EXACT finite-N identity verified to ~1e-30 at N=3,5,7,11; S^2=1; the vacuum row equals Cor 12's flat-connection weights (2/sqrt5)(sin pi/5, sin 2pi/5) with CS=-1/120,-49/120; Cor 12 asymptotic residuals decrease in N. Cross-validation: Hikami chi^(111)/chi^(112) EQUAL the round-2 sympy-derived alpha=1/alpha=2 characters (eq. 5.6 is that identity), and the colored family spans exactly D=2 components (alpha=4=alpha=1, alpha=3=alpha=2). VERDICT: the genuine vacuum row is 2-dimensional with golden-ratio phi ratio (icosahedral/Fibonacci; magnitudes = sqrt(Reidemeister torsion), Thm 14); the keystone target bwS0=d_q/D at n=5 has 4 classes with ratios (1,4.110,5.220,6.220): type mismatch (2!=4) + value mismatch (phi not in targets) REFUTE the identification 'bwS0 = vacuum row of the Sigma(2,3,5) false-theta S-matrix' -- scope (a), this specific geometric object. The 3190 4<->4 correspondence is support-level only. No fit; nothing wired.",
   "data": {
@@ -38,7 +48,7 @@
       3,
       5
     ],
-    "q0": 1.1099785955541805,
+    "q0": 1.1099785827513808,
     "chi_111": {
       "1": -1,
       "11": -1,
@@ -67,10 +77,10 @@
     "phi_235": 6.033333333333333,
     "phi_equals_181_over_30": true,
     "theorem10_residuals": {
-      "3": 2.5568623508337472e-39,
-      "5": 4.2802139649491824e-39,
-      "7": 5.62899903519033e-39,
-      "11": 9.890201217143237e-39
+      "3": 2.8681777786081937e-69,
+      "5": 8.789067227297671e-69,
+      "7": 1.1889389327351644e-68,
+      "11": 1.0385921383153507e-68
     },
     "theorem10_exact": true,
     "S_matrix": [
@@ -104,9 +114,9 @@
     "cor12_residuals_decrease": true,
     "bwS0_class_ratios": {
       "(5)": 1.0,
-      "(4,1)": 4.109682435637709,
-      "(3,2)": 5.220441324664574,
-      "(3,1,1)": 6.220441324664574
+      "(4,1)": 4.109682411207941,
+      "(3,2)": 5.220441275326898,
+      "(3,1,1)": 6.220441275326898
     },
     "verdict_type_mismatch": {
       "genuine_row_dim": 2,
@@ -116,9 +126,9 @@
       "genuine_row_ratio": 1.618033988749895,
       "bwS0_ratios": [
         1.0,
-        4.109682435637709,
-        5.220441324664574,
-        6.220441324664574
+        4.109682411207941,
+        5.220441275326898,
+        6.220441275326898
       ]
     }
   }

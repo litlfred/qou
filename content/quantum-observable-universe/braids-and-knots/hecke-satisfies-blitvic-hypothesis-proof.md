@@ -2,7 +2,9 @@
 to a pair-partition sum by induction on word length.
 
 **Setup.** Let $\tilde\sigma_i := \sigma_i - z \cdot 1$ where
-$z = 1/(q^{1/2}+q^{-1/2}) = \mathrm{tr}_M(\sigma_i)$, so that
+$z = q^3/(q^2+1) = \mathrm{tr}_M(\sigma_i)$ (**convention D**; under the
+excised convention C the shift $\sigma_i - z\cdot 1$ was not centred at all,
+leaving $\mathrm{tr}_M(\tilde\sigma_i) = 0.1134$ rather than $0$), so that
 $\mathrm{tr}_M(\tilde\sigma_i) = 0$. The argument uses only joint
 $\mathrm{tr}_M$-moments of the $\tilde\sigma_i$; no adjoint structure
 is required. (Note that
@@ -15,8 +17,8 @@ Blitvić's hypothesis is a moment condition and does not need it.)
 $\tilde\sigma_{i_1} \tilde\sigma_{i_2} \cdots \tilde\sigma_{i_k}$
 via the Hecke relation leaves at least one unmatched single
 $\tilde\sigma_i$ factor; by Markov property applied at that factor,
-$\mathrm{tr}_M(x \cdot \tilde\sigma_i) = \mathrm{tr}_M(x \cdot \sigma_i)
-- z \mathrm{tr}_M(x) = z \mathrm{tr}_M(x) - z \mathrm{tr}_M(x) = 0$.
+$\mathrm{tr}_M(x \cdot \tilde\sigma_i) = \mathrm{tr}_M(x \cdot \sigma_i) -
+z \mathrm{tr}_M(x) = z \mathrm{tr}_M(x) - z \mathrm{tr}_M(x) = 0$.
 The entire word vanishes under $\mathrm{tr}_M$.
 
 **Even length reduces to pair-partitions.** For $k$ even, proceed

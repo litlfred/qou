@@ -12,7 +12,7 @@ self-calibrating ratio; the owner flagged that heuristic ("colored jones gate
 maybe from erroneous probes. be critical"). This probe answers the challenge
 with the AUTHORITATIVE reference: G. Masbaum, "Skein-theoretical derivation of
 some formulas of Habiro", Algebr. Geom. Topol. 3 (2003) 537–556
-[masbaum2003, DOI 10.2140/agt.2003.3.537], now on main (uploads/agt-v3-n1-p17-p.pdf).
+[masbaum2003, DOI 10.2140/agt.2003.3.537], now on main (library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf).
 
 MASBAUM Theorem 4.5 (Habiro [H3]) + Theorem 5.1 + Remark 5.2, specialised p=2:
   c'_{n,2}   = (-1)^n a^{(5n²+7n)/2} Σ_{k=0}^n a^{k²-2k-3nk} [n,k]_a   (a-binomial)
@@ -244,7 +244,7 @@ def main() -> int:
             "axis": "b3ix odd-locus — authoritative 5₂ coefficient (continuation "
                     "of #3970/#3993; answers 'be critical' colored-jones gate)",
             "reference": "masbaum2003 (DOI 10.2140/agt.2003.3.537); "
-                         "uploads/agt-v3-n1-p17-p.pdf",
+                         "library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf",
             "lean": "QOU.QBeta.HabiroCyclotomicOddLocus (c52_1/c52_2/c52_3, "
                     "sorry-free)",
             "supports": "#3966 b3ix",
@@ -253,6 +253,15 @@ def main() -> int:
     out = os.path.join(os.path.dirname(__file__),
                        "qbeta-5two-masbaum-cyclotomic.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

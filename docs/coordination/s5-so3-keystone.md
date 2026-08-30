@@ -46,7 +46,7 @@ See the 2026-06-22 update banner below.
 > - **q-deformed projector-weight shift REFUTED as the 210 ppb mechanism** ([#2584](https://github.com/litlfred/qou/pull/2584), merged). The E_λ-projected H₅ Markov trace gives `δ = T_μ − T_e = 0.2075` — non-null, so the q-deformed home-block weighting *does* break the (2,1) symmetry classical multiplicity preserved — but it is 6–7 orders too large for the 209.8 ppb gap and **bar-mixed** (fails the bar-even precondition). The Markov-trace surface (multiplicity / home-block weight / projected trace) is now **exhausted**; any surviving q-closure must leave the trace-weighting entirely. ([`2026-06-22-keystone-qdeform-projector-shift.md`](../audits/2026-06-22-keystone-qdeform-projector-shift.md))
 > - **No compact Sasakian / compact MTC can host `W_λ`** at the substrate anchor: `q₀ ≈ 1.10998` is real `> 1` (growth regime, `[m]_q = sinh(mη)/sinh(η)`, `η = log q₀` real), not a root of unity. The `W_λ`-producing structure is the non-compact `SU_q(2) → E_q(2)` contraction whose matrix coefficients are **Hahn–Exton q-Bessel** functions (already named in the corpus, `2026-06-13-reeb-phase-qbessel-identification.md`). ([`2026-06-22-keystone-modular-category-identification.md`](../audits/2026-06-22-keystone-modular-category-identification.md))
 > - **Sharpened open object:** pin the **colored Σ(2,3,5) WRT / Habiro-ring q-series** whose evaluation at `q₀` reproduces the `W_λ` family — reached from the convergent WRT series via the `q ↦ q⁻¹` bar involution (`q₀ ↔ 1/q₀ ≈ 0.901`, inside the disk). The bare `Σ(2,3,5)` Lawrence–Zagier false-theta `Ψ(1/q₀) = 2.32958` is operational but is **one** number vs a **λ-family** (type mismatch — *not* claimed equal to `W_λ`; the numerology trap the discipline forbids). ([`2026-06-22-keystone-habiro-wrt-s3-2i.md`](../audits/2026-06-22-keystone-habiro-wrt-s3-2i.md), [`2026-06-22-keystone-geometric-level-route-reduction.md`](../audits/2026-06-22-keystone-geometric-level-route-reduction.md))
-> - **Falsifiable, `q₀`-free sub-target:** any index realizing `W_λ` must reproduce the heat-kernel defect coefficient `144·C(n) = −n(n−1)(2n−13)` exactly (the `n = 7` sign change). The algebra is Lean-proved sorry-free ([`WLambdaDefectClosedForm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean), `n144C_closed_form` / `n144C_pos` / `n144C_neg`); the one carried representation-theoretic input is **Identity I** `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c} h_c² = n(3n−1)/2`. **Status (corrected 2026-07-11 — the earlier "held as a `def twoM`, multi-session infra fill" wording is stale):** Identity I is **conditional-proved sorry-free** (#2709, `IdentityIPlancherelConditional`, on a `class PlancherelSnData n` axiomatising the two standard `ℂ[S_n]` facts (i) `Σ_λ dim(λ)²=n!` and (ii) the Jucys–Murphy content-square mean) and **unconditional for `n=3..12`** via explicit `decide` instances (#2760, `IdentityIPlancherelInstances.lean`) — covering the deuteron `n=3`, keystone `n=5`, and defect sign-flip `n=7`. The `def twoM` is **eliminated** at those `n` (`n144C_eq_twelve_plancherel` / `defect_closedform_plancherel` re-express `n144C` via the genuine Plancherel squared-hook sum). The per-partition combinatorial half `Σh²=Σc²+n²` (`sumSqHooks_eq_sumSqContents_add_sq`, all `n`) and the JM core (`jm_identity_coeff_two`) are sorry-free. Only the **general-`n`** discharge (axioms (i)/(ii) for all `n` — Specht / RSK `RSKBurnsideHolds` / hook-length / representation theory) remains open, scoped as the P1–P5 program ([`2026-06-24-identity-i-plancherel-snrep-infra-program.md`](../scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md)). ([`2026-06-20-keystone-wlambda-C-n-closed-form.md`](../audits/2026-06-20-keystone-wlambda-C-n-closed-form.md))
+> - **Falsifiable, `q₀`-free sub-target:** any index realizing `W_λ` must reproduce the heat-kernel defect coefficient `144·C(n) = −n(n−1)(2n−13)` exactly (the `n = 7` sign change). The algebra is Lean-proved sorry-free ([`WLambdaDefectClosedForm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean), `n144C_closed_form` / `n144C_pos` / `n144C_neg`); the one carried representation-theoretic input is **Identity I** `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c} h_c² = n(3n−1)/2`. **Status (corrected 2026-07-11 — the earlier "held as a `def twoM`, multi-session infra fill" wording is stale):** Identity I is **conditional-proved sorry-free** (#2709, `IdentityIPlancherelConditional`, on a `class PlancherelSnData n` axiomatising the two standard `ℂ[S_n]` facts (i) `Σ_λ dim(λ)²=n!` and (ii) the Jucys–Murphy content-square mean) and **unconditional for `n=3..12`** via explicit `decide` instances (#2760, `IdentityIPlancherelInstances.lean`) — covering the deuteron `n=3`, keystone `n=5`, and defect sign-flip `n=7`. The `def twoM` is **eliminated** at those `n` (`n144C_eq_twelve_plancherel` / `defect_closedform_plancherel` re-express `n144C` via the genuine Plancherel squared-hook sum). The per-partition combinatorial half `Σh²=Σc²+n²` (`sumSqHooks_eq_sumSqContents_add_sq`, all `n`) and the JM core (`jm_identity_coeff_two`) are sorry-free. ~~Only the **general-`n`** discharge (axioms (i)/(ii) for all `n` — Specht / RSK `RSKBurnsideHolds` / hook-length / representation theory) remains open, scoped as the P1–P5 program.~~ **CLOSED — measured 2026-08-25.** The general-`n` discharge is complete and carries **no hypothesis**: `PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general` / `twoM_eq_plancherel_hook_sum_general` take no class argument, `plancherelSnDataGeneral` builds the datum for every `n`, and the §3b-cond carrier `SnIsotypicSpechtSplit` is inhabited by `SnIsotypicSpechtSplitInstance`. `#print axioms` on all of them, and on `identityB_general` and `seminormalVector_base_exists`, is `[propext, Classical.choice, Quot.sound]` — verified against a cone **rebuilt from source** (119 modules, 0 failures), per the phantom-`sorryAx` caveat in bean `sv8b`. The P1–P5 program ([`2026-06-24-identity-i-plancherel-snrep-infra-program.md`](../scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md)) is complete for this target. Measurement: [`2026-08-25-ov-general-n-chain-is-closed.md`](../audits/2026-08-25-ov-general-n-chain-is-closed.md). ([`2026-06-20-keystone-wlambda-C-n-closed-form.md`](../audits/2026-06-20-keystone-wlambda-C-n-closed-form.md))
 >
 > **Active open work (unmerged — this ledger reports merged facts; the live geometric frontier is these PRs, consistent with the E_q(2)/colored-WRT reframing above since WRT(S³/2I) = colored Σ(2,3,5) WRT is the same object):** [#2524](https://github.com/litlfred/qou/pull/2524) supplies a candidate **index mechanism** — `W_λ` as the MTC Plancherel measure `d_q²/D²` from **Beasley–Witten non-abelian Chern–Simons localization** on the Seifert 3-manifold `S³/2I` (Reeb = Seifert `S¹`) — and proposes the C1 normalization answer `d_q²/D²` (Σ = 1). [#2503](https://github.com/litlfred/qou/pull/2503) is the formalize-first DG attack plan (a *finite-dimensional* Sasakian is ruled out ⇒ the construction is infinite-dimensional WRT(S³/2I) = Lawrence–Zagier). [#2603](https://github.com/litlfred/qou/pull/2603)/[#2608](https://github.com/litlfred/qou/pull/2608) work the λ-coloured WRT colour-resolution + Schur–Weyl.
 >
@@ -96,6 +96,114 @@ is its *geometric origin*.
 > **superseded** — at the substrate anchor `q₀ ≈ 1.10998` (real `> 1`, growth regime) **no** compact Sasakian /
 > MTC hosts `W_λ`; the arena is the non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction and the
 > sharpened object is the colored Σ(2,3,5) WRT q-series. See the 2026-06-22 update banner above.
+
+## Literature scoping — the WRT domain question (2026-08-10, PR #4952)
+
+**UPGRADED TO READ TIER 2026-08-10** — the owner supplied three of the six papers
+([`95accb15`](https://github.com/litlfred/qou/commit/95accb153a132df290605fd2ad27930b2a47b8f9)),
+and the domain finding below is now confirmed by direct quotation + measurement.
+The reading list and route table remain a plan; math/0605314, 1411.6062 and
+2412.04241 are still unread.
+
+Counting `references.ts`: the corpus is deep on the q-Bessel/`E_q(2)` side
+(Koelink 12, Woronowicz 12, Hahn 12, Exton 8) and on quantum modularity
+(Garoufalidis 48, Habiro 29, Zagier 24), but thin exactly where the open object
+lives — WRT 4, Brieskorn 4, Seifert 3, and **Beliakova 0**. Beliakova at zero is
+the signal: a principal author of the *unified WRT* programme, and Σ(2,3,5) is a
+Brieskorn sphere.
+
+Two search-tier findings, the second load-bearing:
+
+1. The unified-WRT programme (Habiro; extended by Beliakova, Le, Blanchet,
+   Buehler) covers **Seifert fibered spaces**, with Brieskorn spheres
+   `Σ(p₁,p₂,p₃)` studied in that context — the keystone's manifold family has an
+   existing named construction.
+2. Its **native domain is the roots of unity**: a Habiro-ring element is "a
+   function whose domain is the set of roots of unity", quantum invariants being
+   "analytic functions defined on the set of roots of unity". If that holds as
+   stated, the substrate anchor `q₀ ≈ 1.10998` (real, `>1`) is **off** that domain
+   — so the archimedean continuation this ledger names is not a gap a better
+   construction closes, it is a request to leave the object's native domain, and
+   the analytic route (state integrals / Faddeev `Φ_q`) is a different literature
+   from the Habiro one.
+
+Actionable consequence *if* (2) survives reading: the framework already carries
+`Φ_q` (cheat-sheet §4 sorts it against `Li₂^q`), and `Φ_q` is the state-integral
+kernel — so the question would become *which* state integral, not how to continue
+a Habiro element.
+
+**CONFIRMED (read tier).** Beliakova–Le arXiv:1106.6298 §1 defines
+`Ẑ[q] := lim←_k Z[q]/((q;q)_k)` and states verbatim: *"Every element f(q) ∈ Ẑ[q]
+can be considered as a function whose domain is the set of roots of unity"*, with
+`J_M` evaluating at any root of unity to the WRT value. Dimofte–Garoufalidis
+arXiv:1511.05628 §1 defines a quantum modular form on *"the set of complex roots
+of unity"* with formal `φ_ζ(ℏ) ∈ C[[ℏ]]` — asymptotics near, not values at
+`|q|>1`. Lovejoy–Osburn–Störzer arXiv:2605.15740 (2026) recasts unified WRT as *"an
+identity for a q-hypergeometric series at roots of unity"*, covering Hikami's
+**Brieskorn** cases — the keystone's own family, still at roots of unity.
+
+**And the mechanism is sharper than "native domain."** An element is
+`Σ_k f_k(q)·(q;q)_k`, so `(q;q)_k` decides convergence. Measured at the canonical
+q₀ ([`habiro_domain_substrate_anchor_probe.py`](../../computations/probes/habiro_domain_substrate_anchor_probe.py)):
+at a 5th root of unity it is **exactly 0 for k ≥ 5** (the sum terminates — that is
+*why* the domain is what it is); at `1/q₀ ≈ 0.9009` it converges to `1.109e-6`; at
+the substrate `q₀ ≈ 1.10998` it **diverges super-exponentially**, `|(q₀;q₀)_80| ≈
+7.3e140`. The `(q;q)_k`-adic completion that makes roots of unity evaluable is the
+same one that makes real `q>1` diverge — so continuing a unified-WRT element to q₀
+is not a harder evaluation, it asks for something the object does not have.
+Scope-(a) on this route; nothing excluded elsewhere, and nothing said about state
+integrals.
+
+**LEAD, not a route (do not record it as one).** `1/q₀ < 1` is in the convergent
+regime and the framework already threads `q ↔ q⁻¹` (bar-even/odd, the proved
+`θ_{λ′}=θ_λ⁻¹`, the Q_β cosh/sinh split). But bounded `(q;q)_k` is **necessary, not
+sufficient** — convergence also needs the `f_k`, which nothing here bounds. Needs
+a specific Σ(2,3,5) series before it counts.
+
+**ROUTE SELECTED (2026-08-10, all six papers read).** The two candidate routes
+separate cleanly, in opposite directions:
+
+* **Habiro / unified WRT — cannot reach q₀, structurally.** Confirmed above, and
+  *strengthened* by the newest extension: 2412.04241 (Garoufalidis–Scholze–
+  Wheeler–Zagier) still defines elements as "collections of power series at each
+  complex root of unity", and the convergence it adds is **p-adic** on
+  `{q ∈ C_p : |q|_p = 1}`. On the complex side it says the series are
+  "**factorially divergent series over the complex numbers**". The substrate
+  anchor is archimedean and real, so this is the wrong analytic world entirely.
+* **State integrals — the anchor IS in the domain.** 1411.6062 §1.1 states
+  `I_{A,B}(b) = ∫ Φ_b(x)^B e^{−Aπix²} dx` is "an absolutely convergent integral
+  ... for b with `b² ∉ ℝ≤0`". Mapping `q₀` through `q = e^{2πiτ}`, `τ = b²` gives
+  `b² = −0.0166063414046 i`, purely imaginary ⇒ **converges**
+  ([probe](../../computations/probes/state_integral_domain_substrate_anchor_probe.py)).
+
+⇒ **Attack the keystone's archimedean continuation on the analytic/state-integral
+side, not the Habiro side.** The corpus already holds the kernel (Faddeev `Φ_q`,
+cheat-sheet §4). Caveats that keep this from being more than route selection:
+convergence ≠ identification of `W_λ`; the paper's *evaluation* theorem is at
+rational `b²` (roots of unity again) and does not transfer to our purely-imaginary
+`b²`; and `τ = b²` is the standard convention, inferred rather than quoted.
+
+Carried as a question, NOT a correspondence: the paper's headline 4₁ identity is
+`I_{1,2}(1) = (e^{iπ/6}/√3)·2·sinh(V/2π)` with `V` verified to be the corpus's own
+`Vol(4₁) = 2·Cl₂(π/3)` (the CAL-2 anchor) to 3.9e-31 — the anchor volume appearing
+inside a **sinh**, next to a framework that carries a bar-odd sinh / bar-even cosh
+split. At `b=1`, not the anchor, matched to nothing. Anti-numerology applies.
+
+Ordered reading list (all six now read), the domain claim first because everything turned on it:
+[math/0605314](https://arxiv.org/abs/math/0605314),
+[1106.6298](https://arxiv.org/abs/1106.6298),
+[1511.05628](https://arxiv.org/abs/1511.05628),
+[1411.6062](https://arxiv.org/abs/1411.6062),
+[2412.04241](https://arxiv.org/abs/2412.04241) (Dec 2024 — most likely to have
+relaxed the domain restriction, if anything has),
+[2605.15740](https://arxiv.org/abs/2605.15740).
+
+Full scoping + what must not be concluded:
+[`2026-08-10-keystone-literature-scoping-wrt-domain.md`](../audits/2026-08-10-keystone-literature-scoping-wrt-domain.md).
+
+**Tooling:** `mcp__paper-search-mcp__search_arxiv` returned empty for every query
+including the control "knot theory" — broken/blocked, not a null result. Use
+`WebSearch` with `allowed_domains: ["arxiv.org"]`.
 
 ## Refutations not to re-walk (canonical-no-negative-result discipline)
 
@@ -394,7 +502,7 @@ geometric object). The 2026-06-30 "4↔4" correspondence survives at SUPPORT lev
 Hikami's χ^{(111)}/χ^{(112)} equal the 2026-07-02 sympy-derived colored characters
 exactly (eq. 5.6 = the derived identity) — the two independent validations agree.
 Consequence: the geometric route cannot close on S³/2I itself; redirects = larger-D
-Seifert data / colored Ẑ-blocks (Murakami now in uploads/) / non-geometric
+Seifert data / colored Ẑ-blocks (Murakami now in library/) / non-geometric
 `BWVacuumRowIsHecke`. Audit:
 [`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`](../audits/2026-07-02-keystone-valuemap-genuine-smatrix.md);
 probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the round-2
@@ -469,7 +577,7 @@ Two machine-verified facts consolidate the whole refutation series. **(1)** bwS0
 at n=5 is *exactly* the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced
 q-integers [1],[4],[5] (Laurent polynomials in q₀) + the product [4][3]/[2] = the
 Verlinde ratio S₀λ/S₀₀. **(2)** The owner-uploaded Murakami GPPV paper
-(`uploads/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
+(`library/arxiv-2205.01282v2/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
 Σ(2,3,5) homological block is the undecorated D=2 golden false theta (already refuted).
 
 **Type argument (why every geometric route failed):** the target is compact-algebraic
@@ -491,7 +599,7 @@ probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
 
 ## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
 
-Owner uploaded `uploads/014-026.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+Owner uploaded `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
 q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
 but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
 Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0
@@ -511,7 +619,7 @@ contained). Audit:
 ## LAST disciplined q-Bessel form REFUTED — E_q(2) q-Hankel vacuum row, fully sourced (2026-07-04, bean s013)
 
 Owner uploaded the decisive source: Koornwinder–Swarttouw 1992 (arXiv:1208.2521 =
-TAMS 333), `uploads/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
+TAMS 333), `library/arxiv-1208.2521v1/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
 + Hansen–Lommel orthogonality (roots μ_j of C_α(q;μ)=0 = the Plancherel nodes).
 This is the one form #3292 named as still-testable. Probe
 `keystone_qhankel_eq2_vacuum_row.py` (α∈{0,½,1,2}, 112-candidate parameter-free

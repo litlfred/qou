@@ -1,4 +1,4 @@
-The Iwahori--Hecke algebra where normal-form computations occur is not an algebra with a free parameter. Instead, it is the quotient of the braid-group algebra by the minimal polynomial of the categorical braiding. 
+The Iwahori--Hecke algebra where normal-form computations occur is the quotient of the braid-group algebra by the minimal polynomial of the categorical braiding.
 
 The endomorphism $\sigma = \tau(c_{V,V})$ satisfies the Hecke relation:
 $$

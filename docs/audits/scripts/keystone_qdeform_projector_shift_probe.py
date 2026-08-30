@@ -41,10 +41,16 @@ the shift is bar-even (a precondition for being a sub-ppm correction candidate).
 
 Tool: pyhecke_native v0.9.0 (built in-sandbox, PR #2511 recipe).
 """
+import sys
+from pathlib import Path
+
 import pyhecke_native as ph
 from mpmath import mp, mpf, mpmathify
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = "1.1099785955541805"          # tools/hecke-engine/src/gram.rs::Q_0
 DPS = 50
 BORROMEAN = [(-1, 1), (1, 2)] * 3   # β = (σ₁⁻¹ σ₂)³, generators 1,2 only

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T12:04:44.751767+00:00",
-  "commitSha": "dbf31e461dd707482f744388ebd7240310575c99",
+  "computedAt": "2026-08-29T07:33:59.591897+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "moment_identity_gamma",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11176,
+  "durationMs": 8664,
   "computation": "borel-propertime-moment-attack",
   "scriptFile": "borel_propertime_moment_attack_probe.py",
-  "scriptHash": "4c9e3bab5a0b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a8a9057f08c5",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,8 +92,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/borel_propertime_moment_attack_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/borel_propertime_moment_attack_probe.py"
   },
   "description": "Attacks A + E on the conjecture 'binding Borel variable = loop proper time' (beans qou-7gu9 + qou-zfl0, epic qou-q04o; audit-only, scope-(a), NO FIT, nothing wired). ATTACK A (moment-determinacy reduction): the keystone-forced normalizer N(n) = (n−1)! is exactly the n-th ds/s-moment of the unit Schwinger kernel e^(−s)·ds/s (A1); the kernel is an infinite measure at s = 0, so determinacy lives on the shifted finite measure e^(−s)·ds with moments {k!} (A2); Carleman's condition holds exactly for {k!} (Stirling limit e^(−1/2); minorant k! ≤ k^(2k) ⇒ terms ≥ 1/k; harmonic divergence) so the Stieltjes problem is DETERMINATE (A3), Hankel-consistent (A4); with kernel c·e^(−s)·ds/s the proved n·N(n) = n! forces c = 1 (A5). REDUCTION: the conjecture reduces to two named open hypotheses — positivity + (n−1)!-representability of the binding resummation kernel; determinacy then forces the kernel to BE e^(−s)·ds. Binding-side status (A6): coefficient positivity Lean-proved; the C1 carrier is NOT a moment sequence (log-convexity fails at m = 2); the raw periods I(n)/n pass log-convexity to n = 39 (necessary condition only); kernel positivity/representability OPEN. ATTACK E (falsifier): the one-sided q-Borel normalizer is bar-COVARIANT with exact weight q^(−(n−1)(n−2)/2) while loop proper time is bar-invariant — the unbalanced identification FAILS at q ≠ 1 (E1), reproduced at moment level by the exact first-order pattern mismatch quadratic-vs-{0, linear} (E3); the balanced normalizer q^(−(n−1)(n−2)/4)·[n−1]_q! is exactly bar-invariant with vanishing first-order correction — the identification SURVIVES with the balanced-kernel (bar-projection) caveat (E2), next falsifier at q²-order Σ(k²−1)/24. Pin numerics recorded at both q₀ pins (E4).",
   "auditOnly": "docs/audits/2026-07-25-borel-propertime-attack-a-e.md",
@@ -125,10 +135,10 @@
     "pin_numerics": {
       "muon": {
         "n": 6,
-        "first_order_defect_estimate": "0.5498929777866735995",
-        "bar_weight_q0^{-(n-1)(n-2)/2}": "0.35225239870279079494",
-        "Nq_over_factorial_unbalanced": "1.72347903921915682308815006997",
-        "Nq_over_factorial_balanced": "1.02289954520247525558882487652"
+        "first_order_defect_estimate": "0.54989297821369523341",
+        "bar_weight_q0^{-(n-1)(n-2)/2}": "0.35225239843175963203",
+        "Nq_over_factorial_unbalanced": "1.7234790399396484549810664777",
+        "Nq_over_factorial_balanced": "1.02289954523657188539916564162"
       },
       "proton": {
         "n": 6,
@@ -137,13 +147,23 @@
         "Nq_over_factorial_unbalanced": "1.72347893118502434187172880944",
         "Nq_over_factorial_balanced": "1.02289954008985551282907635796"
       },
-      "balanced_ratio_pin_shift_rel": "4.9981641e-9",
+      "balanced_ratio_pin_shift_rel": "5.0314974e-9",
       "note": "O(1) unbalanced defect at q₀ (≈0.55 at n = 6): the E1/E3 discrepancy is NOT a small correction at the substrate value — the unbalanced identification fails grossly away from q = 1; recorded, not scored (the falsifier verdicts are the exact symbolic E1/E3)"
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+      }
+    ]
   }
 }

@@ -80,7 +80,7 @@ def row_invariants(q0_str: str) -> dict:
     """Compute the 6 per-basis-element structural invariants at q0."""
     q = mp.mpf(q0_str)
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     # [n]_q for n=1..3 (used for Wedderburn dim_q comparisons)
     qbr = lambda n: (q**n - q**(-n)) / (q - 1/q)
     # Quantum dimensions of H_3(q) Wedderburn blocks (partitions of 3):
@@ -212,8 +212,8 @@ def main() -> int:
     print()
 
     # ── Candidate observable ratios at canonical q₀ ──
-    me = mp.mpf(repr(M_E_MEV))
-    mp_p = mp.mpf(repr(M_P_MEV))
+    me = mp.mpf(M_E_MEV)
+    mp_p = mp.mpf(M_P_MEV)
     alpha_em = mp.mpf("0.0072973525693")  # CODATA 2018 fine-structure
     pi = mp.pi
     me_over_mp = me / mp_p

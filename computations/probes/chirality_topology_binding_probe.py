@@ -47,8 +47,16 @@ sys.path.insert(0, str(HERE))
 
 # Reuse the canonical channel construction (no duplication) — PR #2461/#2481.
 from hecke_channel_binding_probe import channels, BONDS, E0, Q0  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Low isotopes (closed form ⇒ no feasibility wall; extend freely).
 NUC = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
@@ -174,7 +182,29 @@ def main() -> int:
         "chirality-topology-binding", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(HERE.parent),
-    ).save()
+    ).save({"q0Anchor": "proton",
+         "q0AnchorReason": (
+            'Experimental (proton) pin, the standing default. Q0 = Q_MP, '
+            'imported transitively via hecke_channel_binding_probe, and Q_MP '
+            'DOES track QOU_Q0_ANCHOR. '
+            'CORRECTED 2026-08-26 (bean qou-1c4y). This previously declared '
+            '`independent`, on the stated ground that running under '
+            'QOU_Q0_ANCHOR=muon and =proton and diffing the witness showed '
+            '"the only non-ephemeral leaves that differ are q0Anchor and '
+            'q0Value THEMSELVES -- every substantive field is byte-identical". '
+            'That experiment was re-run and REFUTES the claim: 43 '
+            'non-ephemeral leaves differ, among them /E0_MeV and every entry '
+            'of /channel_values_at_q0 for pp, nn and pn. Those are physics '
+            'fields, not labels, so `independent` was false and the committed '
+            'witness held the MUON value for q0. '
+            'The CONCLUSION is unaffected: Pauli-complete is the best model '
+            'under both anchors and the RMS values move by ~1e-8 relative, '
+            'consistent with the 11.5 ppb muon-proton separation -- a '
+            'correctness/hygiene re-pin, not a results-changing one, exactly '
+            'as qou-1c4y predicts for this class. '
+            'The earlier `muon` label was indeed a false claim; the fix is '
+            'the honest pin, not a claim of independence.'
+         )})
     print(f"\n  witness: {out}")
     return 0
 

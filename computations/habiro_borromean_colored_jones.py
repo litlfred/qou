@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Habiro's cyclotomic formula for the colored Jones of the Borromean
 rings — first corpus transcription.  Bean n920 (was deferred on PDF
-access; source landed 2026-07-06 as uploads/0508100v6.pdf).
+access; source landed 2026-07-06 as library/arxiv-math-0508100v6/0508100v6.pdf).
 
 Source (do NOT cite from memory — this is the verified transcription):
   Garoufalidis-Le, "Asymptotics of the colored Jones function of a
@@ -192,7 +192,7 @@ def main() -> int:
         "computation": "habiro-borromean-colored-jones",
         "audit_only": True,
         "source": {
-            "pdf": "uploads/0508100v6.pdf",
+            "pdf": "library/arxiv-math-0508100v6/0508100v6.pdf",
             "location": "Appendix A, p. 26 (Theorem A.1 proof)",
             "references": ["garoufalidis-le-2011", "habiro2000"],
         },
@@ -211,6 +211,15 @@ def main() -> int:
         "all_ok": bool(ok),
     }
     out = Path(__file__).with_name("habiro-borromean-colored-jones.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness → {out.name}\n  ALL OK: {ok}")
     return 0 if ok else 1

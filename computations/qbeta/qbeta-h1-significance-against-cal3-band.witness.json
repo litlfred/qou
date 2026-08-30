@@ -1,0 +1,105 @@
+{
+  "computation": "qbeta-h1-significance-against-cal3-band",
+  "description": "Front (e): the stated evidence for (H1) c_3^even = -Vol(4_1) has no discriminating power at present resolution. The corpus quotes 'c_3 agrees with -Vol(4_1) to ~0.48%' (0.07% muon), which compares CENTRAL VALUES while omitting sigma(c_3) = +/-1.262 CAL-3 propagated \u2014 62% of |c_3|. Derived here as sigma(Q_beta)/(Q_N2 u^3) from the committed CAL-3 input rather than quoted, reproducing 1.262. In sigma the agreements are 0.031 (proton) and 0.008 (muon): not strong evidence but NO evidence, since every candidate within the band agrees as well. The 1-sigma acceptance is 51x wider than the 0.0491 genericity window the 7/7-constants result used, so that result understates the problem by ~51x. Testability needs 32x (proton) / 130x (muon) sharper Q_beta, bracketing the 25.68x the zero-location test needs \u2014 same lever. Scope-(a): does NOT refute (H1).",
+  "audit_only": true,
+  "tier": "error propagation on committed values (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-29T08:22:58.288190+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "scriptFile": "qbeta_h1_significance_against_cal3_band.py",
+  "scriptHash": "c19b9eb1a1f3",
+  "assertions": [
+    {
+      "name": "sigma_c3_derived_matches_quoted_1262",
+      "passed": true,
+      "detail": "derived sigma(c_3) vs quoted 1.262, rel.err 4.093e-5"
+    },
+    {
+      "name": "proton_agreement_below_one_tenth_sigma",
+      "passed": true
+    },
+    {
+      "name": "muon_agreement_below_one_tenth_sigma",
+      "passed": true
+    },
+    {
+      "name": "acceptance_much_wider_than_genericity_window",
+      "passed": true,
+      "detail": "51.3589x"
+    },
+    {
+      "name": "quoted_048pct_is_the_muon_not_the_substrate_anchor",
+      "passed": false,
+      "detail": "muon 0.4962% vs proton 1.907% \u2014 the headline quotes the muon figure"
+    },
+    {
+      "name": "H1_not_refuted_only_unsupported",
+      "passed": true,
+      "detail": "scope-(a): no invariant forbids a 4_1-volume ingredient; the 0.031-sigma proton figure is not evidence against (H1) either"
+    }
+  ],
+  "allPassed": false,
+  "result": {
+    "vol_4_1": "2.029883212819307",
+    "sigma_Qbeta_MeV": "6.1e-7",
+    "Qbeta_quoted": "0.78233341(61) MeV (PDG 2024 / AME 2020 cross-check)",
+    "per_anchor": {
+      "proton": {
+        "q": "1.109978582751380807592",
+        "u": "0.0085172345501561",
+        "c3": "-2.0693425771152",
+        "Q_N2": "0.78233441027784",
+        "dc3_dQbeta": "2068767.79039",
+        "sigma_c3": "1.26194835214"
+      },
+      "muon": {
+        "q": "1.109978595642739046682",
+        "u": "0.0085172363524248",
+        "c3": "-2.019860311874",
+        "Q_N2": "0.78233438635972",
+        "dc3_dQbeta": "2068766.54037",
+        "sigma_c3": "1.26194758962"
+      }
+    },
+    "significance": {
+      "proton": {
+        "discrepancy": "0.0394593642959",
+        "relative_pct": "1.90686",
+        "n_sigma": "0.0312686"
+      },
+      "muon": {
+        "discrepancy": "0.0100229009453",
+        "relative_pct": "0.496218",
+        "n_sigma": "0.00794241"
+      }
+    },
+    "sigma_c3_over_abs_c3_pct": "60.9831",
+    "one_sigma_acceptance_lo": "0.807394224975",
+    "one_sigma_acceptance_hi": "3.33129092926",
+    "one_sigma_acceptance_width": "2.52389670428",
+    "genericity_window_width": "0.0491423421",
+    "acceptance_over_genericity_window": "51.3589014366",
+    "Qbeta_improvement_for_1sigma_proton": "31.98096",
+    "Qbeta_improvement_for_1sigma_muon": "125.90642",
+    "Qbeta_improvement_for_zero_location_test": "25.679447 (PR #5084)"
+  },
+  "context": {
+    "axis": "(H1) c_3^even = -Vol(4_1) \u2014 significance of the stated evidence",
+    "inputs": [
+      "computations/cal-3-q-beta.witness.json (sigma(Q_beta))",
+      "computations/qbeta/qbeta_utils.py::c3_target_at",
+      "computations/probes/aomega_o2_stokes_to_observable_mechanism.py (the +/-1.262 band, cross-checked not assumed)",
+      "computations/qbeta/sleak_offset_genericity_check.py (window width)"
+    ],
+    "scope": "Scope-(a). Does NOT refute (H1); no invariant is named forbidding a 4_1-volume ingredient in c_3's bar-even part. What it shows is that the EVIDENCE cited for (H1) does not discriminate at present resolution, and that the '0.48%' phrasing overstates it by omitting an error bar 32x the discrepancy.",
+    "sites_to_rescope": [
+      "docs/coordination/ck-dk-canonical-registry.md (the surviving-fact line)",
+      "content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md (same phrasing)"
+    ]
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0
+}

@@ -1,31 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T12:44:59.442701+00:00",
-  "commitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "computedAt": "2026-08-25T22:21:40.219876+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "lambda_plus_eq_q",
-      "computed": "1.1099785955573347",
-      "expected": "1.1099785955573347",
+      "computed": "1.1099785827513808076",
+      "expected": "1.1099785827513808076",
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "roots of x^2-(q-1/q)x-1"
     },
     {
       "name": "structural_ell_coeff_is_negative_two",
-      "computed": -2,
-      "expected": -2,
+      "computed": "-2.0",
+      "expected": "-2.0",
       "passed": true,
-      "source": "ln|lambda_-/lambda_+| / ln(lambda_+) = -2"
+      "tolerance": "1e-18",
+      "source": "ln|lambda_-/lambda_+| / ln(lambda_+), evaluated"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "aufbau-ell-grading-from-eigensplit",
   "scriptFile": "aufbau_ell_grading_from_eigensplit.py",
-  "scriptHash": "b95994c8ed45",
-  "scriptCommitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "scriptHash": "61cae9a80577",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +35,26 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/aufbau_ell_grading_from_eigensplit.py"
+    ],
+    "reproduce": "python3 -u computations/aufbau_ell_grading_from_eigensplit.py"
   },
   "description": "Tests whether the lambda_+/lambda_- eigenvalue split that yields the 2(2l+1) shell capacity also supplies the l-graded penetration screening the noble-gas filling order needs. Zero-parameter structural key K(n,l)=n-2l (l-coeff fixed by |lambda_-|/lambda_+=1/q0^2). Formalize-first prediction (wrong-sign l-grading, not noble gases) is CONFIRMED.",
   "parameters": {
-    "q0": "1.1099785955573347",
-    "lambda_plus": "1.1099785955573347",
-    "lambda_minus": "-0.900918273561741057069617740224",
-    "eigenvalue_ratio_abs": "0.811653735637468095332261925782",
+    "q0": "1.10997858275138080759166909561",
+    "lambda_plus": "1.10997858275138080759166909561",
+    "lambda_minus": "-0.900918283955741492160822882481",
+    "eigenvalue_ratio_abs": "0.811653754365758058132214822142",
     "structural_ell_coefficient": -2
   },
   "data": {
@@ -137,6 +150,6 @@
     "Mechanical gap-detection closure detector (gap_factor=1.5x median); the noble-gas set is quantitative and Madelung itself is only an approximation, so the discriminating result is the SIGN of the structural l-coefficient (a=-2), not the precise closure set.",
     "NULL/structural-constraint result: the eigenvalue split does NOT derive penetration. Any positive tuned c*l reproducing [2,10,18,36] would be a fit."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

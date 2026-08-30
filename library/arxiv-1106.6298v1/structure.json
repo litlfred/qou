@@ -1,0 +1,441 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1106.6298v1",
+ "source": {
+  "file": "1106.6298v1.pdf",
+  "sha256": "23b0754067873a045774878d26073722bbc8d527e4209057d37b5bdf7f80b6d4",
+  "bytes": 251672,
+  "pages": 18
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1106.6298",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "30 Jun 2011"
+  },
+  "doi": null,
+  "title": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS",
+  "authors_raw": "ANNA BELIAKOVA AND THANG LE",
+  "abstract": "In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s. In a series of papers together with Irmgard B¨ uhler and Christian Blanchet we ex tended his construc- tion to a larger class of 3–manifolds. The uniﬁed invariants provide a s trong tool to study properties of the whole collection of WRT invariants, e.g. their integrality, and hence, their categoriﬁcation. In this paper we give a survey on ideas and techniques used in the con struction of the uniﬁed invariants.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181123172218-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "ON THE UNIFICATION OF QUANTUM3–MANIFOLD INVARIANTS",
+  "title_lines": [
+   "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Background",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Unified invariants of integral homology 3–spheres",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Unified invariants of rational homology 3–spheres",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum (WRT) invariants",
+   "page": 5,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Notations and conventions",
+   "page": 5,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "The colored Jones polynomial",
+   "page": 6,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Kirby moves",
+   "page": 6,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Evaluation and Gauss sums",
+   "page": 7,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Definition of the WRT invariants",
+   "page": 7,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+   "page": 8,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 1,
+   "title": "Main Results",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Strategy of the proof",
+   "page": 10,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Laplace transform",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Definition of the unified invariant: diagonal case",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Diagonalization using lens spaces",
+   "page": 11,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Cyclotomic completions of polynomial rings",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "On cyclotomic polynomials",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Habiro's results",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Taylor expansion",
+   "page": 13,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Splitting of Sp and evaluation",
+   "page": 14,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "On the Ohtsuki series at roots of unity",
+   "page": 14,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Laplace transform, Andrews identity and Frobenius maps",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Laplace transform",
+   "page": 15,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Andrews identity",
+   "page": 16,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Frobenius isomorphism",
+   "page": 16,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Integrality",
+   "page": 17,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-background",
+   "number": null,
+   "title": "Background",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 10307,
+   "n_words": 1850
+  },
+  {
+   "id": "sec-002-13-kirby-moves",
+   "number": "1.3",
+   "title": "Kirby moves",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 440,
+   "n_words": 72
+  },
+  {
+   "id": "sec-003-1-quantum-wrt-invariants",
+   "number": "1",
+   "title": "Quantum (WRT) invariants",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-11-notations-and-conventions",
+   "number": "1.1",
+   "title": "Notations and conventions",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1078,
+   "n_words": 218
+  },
+  {
+   "id": "sec-005-12-the-colored-jones-polynomial",
+   "number": "1.2",
+   "title": "The colored Jones polynomial",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2349,
+   "n_words": 438
+  },
+  {
+   "id": "sec-006-14-evaluation-and-gauss-sums",
+   "number": "1.4",
+   "title": "Evaluation and Gauss sums",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4113,
+   "n_words": 853
+  },
+  {
+   "id": "sec-007-2-main-results",
+   "number": "2",
+   "title": "Main Results",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1416,
+   "n_words": 291
+  },
+  {
+   "id": "sec-008-22-laplace-transform",
+   "number": "2.2",
+   "title": "Laplace transform",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1089,
+   "n_words": 204
+  },
+  {
+   "id": "sec-009-21-strategy-of-the-proof",
+   "number": "2.1",
+   "title": "Strategy of the proof",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2052,
+   "n_words": 454
+  },
+  {
+   "id": "sec-010-24-diagonalization-using-lens-spaces",
+   "number": "2.4",
+   "title": "Diagonalization using lens spaces",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1193,
+   "n_words": 222
+  },
+  {
+   "id": "sec-011-3-cyclotomic-completions-of-polynomial-rings",
+   "number": "3",
+   "title": "Cyclotomic completions of polynomial rings",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 238,
+   "n_words": 40
+  },
+  {
+   "id": "sec-012-31-on-cyclotomic-polynomials",
+   "number": "3.1",
+   "title": "On cyclotomic polynomials",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3007,
+   "n_words": 656
+  },
+  {
+   "id": "sec-013-33-taylor-expansion",
+   "number": "3.3",
+   "title": "Taylor expansion",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 496,
+   "n_words": 105
+  },
+  {
+   "id": "sec-014-34-splitting-of-sp-and-evaluation",
+   "number": "3.4",
+   "title": "Splitting of Sp and evaluation",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 763,
+   "n_words": 172
+  },
+  {
+   "id": "sec-015-35-on-the-ohtsuki-series-at-roots-of-unity",
+   "number": "3.5",
+   "title": "On the Ohtsuki series at roots of unity",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 813,
+   "n_words": 168
+  },
+  {
+   "id": "sec-016-4-laplace-transform-andrews-identity-and-frobeni",
+   "number": "4",
+   "title": "Laplace transform, Andrews identity and Frobenius maps",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3048,
+   "n_words": 657
+  },
+  {
+   "id": "sec-017-43-frobenius-isomorphism",
+   "number": "4.3",
+   "title": "Frobenius isomorphism",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 743,
+   "n_words": 147
+  },
+  {
+   "id": "sec-018-44-integrality",
+   "number": "4.4",
+   "title": "Integrality",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1370,
+   "n_words": 319
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2953,
+   "n_words": 451
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 20,
+  "chars_total": 37468
+ }
+}

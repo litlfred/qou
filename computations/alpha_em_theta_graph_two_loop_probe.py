@@ -49,6 +49,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 CODATA_INV_ALPHA = "137.035999084"
@@ -80,7 +81,7 @@ def theta(a, b, c):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.mp.dps = 50
+    set_compute_dps()
     print("=" * 78)
     print(" 2-loop categorical calculation — theta-graph in the graph-measure grammar")
     print("=" * 78)
@@ -200,7 +201,7 @@ def main() -> int:
                      computed=1.0 if ok_L1 else 0.0, expected=1.0, tolerance=0.5,
                      source="L=1 grammar term (circle bare eval [2]_q over 8pi) is identically the working form-B H")
     wb.add_assertion("dictated_candidate_ratio_recorded",
-                     computed=float(best_ratio), expected=1.12, tolerance=0.05,
+                     computed=best_ratio, expected=1.12, tolerance=0.05,
                      source="-[3]_q/(8pi)^2 vs required TOTAL O(alpha^2): ratio ~1.12 (near-miss, outside 2 sigma) — "
                             "recorded as the constrained-class benchmark, not a derivation")
     wb.save()

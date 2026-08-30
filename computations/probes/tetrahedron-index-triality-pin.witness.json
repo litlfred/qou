@@ -9,7 +9,7 @@
       "computed": 49.0,
       "expected": 49.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(-q^½)^m·I_Δ(-e-m,m) reproduces I_Δ on grid"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 49.0,
       "expected": 49.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I_Δ(-e,-m) reproduces I_Δ on grid (no prefactor)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.61012178719941e-54,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "C³ prefactors multiply to 1, returns I_Δ(m,e)"
     }
   ],

@@ -26,4 +26,4 @@ The decomposition follows from the idempotent splitting $\mathrm{End}_{\mathbf{C
 
 For the archimedean realisation---where the descended trace yields the holonomy $\mathrm{Hol}_{\nabla_A}$ and each transient trace yields the quantum dilogarithm $\Phi_q(z_i)$---see [archimedean proof](#prf:topological-mass).
 
-**Archimedean specialisation.** The categorical mass $\mathrm{categoricalMass} : R \to \mathbb{R}$ forms the post-$\tau$ archimedean realisation of the generic mass decomposition over a normed ground ring. It constitutes an $R\to\mathbb{R}$ norm evaluation at $q_0$, intrinsically wall-crossing, acknowledged here.
+**Archimedean specialisation.** The categorical mass $\mathrm{categoricalMass} : R \to \mathbb{R}$ forms the post-$\tau$ archimedean realisation of the generic mass decomposition over a normed ground ring. It constitutes an $R\to\mathbb{R}$ norm evaluation at $q_0$ and is intrinsically wall-crossing.

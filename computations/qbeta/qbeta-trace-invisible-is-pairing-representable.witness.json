@@ -1,0 +1,135 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T05:22:21.430682+00:00",
+  "commitSha": "16b4b2346a4227b1ef29fb84c7bd77544d35e622",
+  "assertions": [
+    {
+      "name": "delta_rebuilt_from_typed_crossing_words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "dim_commutator_3_and_centre_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "commutator_part_is_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "CONTROL_every_markov_trace_annihilates_the_commutator_part",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_PAIRING_sees_what_every_trace_cannot",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "riesz_system_is_solvable",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "riesz_representative_is_UNIQUE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "y0_lies_in_the_commutator_subspace_sl2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "CONTROL_trace_part_equals_net_on_the_centre_projection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "EXACT_decomposition_holds_on_all_six_basis_elements",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "pairing_term_vanishes_on_the_CENTRE_so_no_double_counting",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "numeric_agreement_at_the_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 404,
+  "computation": "qbeta-trace-invisible-is-pairing-representable",
+  "scriptFile": "qbeta_trace_invisible_is_pairing_representable_probe.py",
+  "scriptHash": "4f9ed49e497b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_trace_invisible_is_pairing_representable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_trace_invisible_is_pairing_representable_probe.py"
+  },
+  "description": "qou-xzrj: the 7.67 % trace-invisible remainder of epsNPq is invisible to every linear Markov trace but visible to the Markov PAIRING, whose radical under convention D is the (1^3) block while [H,H] = sl_2 sits in the (2,1) block. Nondegeneracy there makes net|_[H,H] Riesz-representable by a UNIQUE element y0 in sl_2, giving an exact decomposition net = sum_lambda a_lambda chi^lambda + tr_M(.*y0) on all of H_3. Scope-(a): a representation, not a derivation of net.",
+  "data": {
+    "y0_coords": [
+      "0",
+      "(-q**4 + q**2)/(-q**6*z + q**5*z**2 - q**5 + q**3*z**2 - q**3 + q*z**2 - q + z)",
+      "(-q**4 + q**2)/(-q**6*z + q**5*z**2 - q**5 + q**3*z**2 - q**3 + q*z**2 - q + z)",
+      "(-q**5 + 2*q**3 - q)/(-q**6*z + q**5*z**2 - q**5 + q**3*z**2 - q**3 + q*z**2 - q + z)",
+      "(-q**5 + 2*q**3 - q)/(-q**6*z + q**5*z**2 - q**5 + q**3*z**2 - q**3 + q*z**2 - q + z)",
+      "2*q**2*(1 - q**2)/(q**6*z - q**5*z**2 + q**5 - q**3*z**2 + q**3 - q*z**2 + q - z)"
+    ],
+    "pair_dC_dC": "(q**6*z - q**5*z**2 + q**5 - 3*q**4*z + 2*q**3*z**2 - 2*q**3 + 3*q**2*z - q*z**2 + q - z)/(2*q*(q**4 + q**2 + 1))",
+    "net_dC_at_proton_pin": "-0.0143595358875304501085086097144759087768871011997170000000000",
+    "pairing_dC_y0_at_proton_pin": "-0.0143595358875304501085086097144759087768871011997170000000000",
+    "riesz_rank": "6"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

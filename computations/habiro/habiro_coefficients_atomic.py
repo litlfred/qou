@@ -39,6 +39,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 del _sys, _Path, _bridge
 
 import json
@@ -79,7 +80,7 @@ _ATOM_CHI_LABEL_BY_ZN: dict[tuple[int, int, bool], str] = {
 }
 
 
-def markov_trace_symbolic(Z, N, q, include_inter=True):
+def _markov_trace_via_partition_sum(Z, N, q, include_inter=True):
     """tr_M(T_w(Z,N), q) = Σ_{λ ⊢ 3A} y_λ(q) · χ^λ_q(T_w).
 
     Canonical Wenzl-bridge convention: y_λ via Wenzl Schur principal
@@ -155,6 +156,94 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     return total_u.subs(u_int, sp.sqrt(q))
 
 
+def _markov_trace_via_peel(Z, N, q, include_inter=True):
+    """Same object, via the Markov-axiom recursive ascent.
+
+    `markov_peel.tr_M_atomic` reduces the braid word in the Hecke normal-form
+    basis and traces by recursive ascent, never forming the partition sum. It
+    returns an UNREDUCED fraction, hence the `cancel`, which is load-bearing:
+    without it the deuteron carries a spurious `(q²+1)²` and every downstream
+    Habiro coefficient is wrong while `reconstruction_matches` still reports
+    True (bean `qou-lrnd`).
+    """
+    from markov.markov_peel import tr_M_atomic
+
+    expr = tr_M_atomic(Z, N, include_inter=include_inter)
+    own_q = next((t for t in expr.free_symbols if str(t) == "q"), None)
+    if own_q is not None and own_q != q:
+        expr = expr.subs(own_q, q)
+    return sp.cancel(sp.together(expr))
+
+
+#: Which route `markov_trace_symbolic` takes by default.
+#:
+#: The two are the SAME rational function -- `sp.cancel(peel - partition) == 0`
+#: exactly, asserted for the proton and the deuteron in
+#: `habiro_coefficients_via_peel.py::assert_routes_agree`. They differ only in
+#: cost, and by orders of magnitude:
+#:
+#:     deuteron (A=2)   peel 0.79 s     partition  33.5 s     42x
+#:     A=3              peel 1.8 s      partition  ~18 DAYS
+#:
+#: The deuteron figures are COLD -- one route per fresh process. Measuring
+#: both in one process gives anywhere from 42x to 173x depending on what
+#: sympy's cache already holds, and a naive back-to-back timing can even show
+#: the partition route as FASTER, because by then it is fully cached. If you
+#: re-measure, use one route per process.
+#:
+#: The partition route is kept reachable (`route="partition"`) because it is
+#: the independent second computation: it is what makes the agreement check
+#: meaningful, and a self-check that calls the same route twice proves nothing.
+DEFAULT_TRACE_ROUTE = "peel"
+
+
+def markov_trace_symbolic(Z, N, q, include_inter=True, route=None):
+    """tr_M(T_w(Z,N), q) as a sympy expression in `q`.
+
+    `route="peel"` (the default) uses `markov_peel.tr_M_atomic`;
+    `route="partition"` uses the Wedderburn sum over partitions of 3A.
+    They are symbolically identical -- see `DEFAULT_TRACE_ROUTE`.
+
+    Pass `route` explicitly in any code that COMPARES the two. Leaving it
+    defaulted there would silently compare a route against itself.
+    """
+    route = DEFAULT_TRACE_ROUTE if route is None else route
+    if route == "peel":
+        return _markov_trace_via_peel(Z, N, q, include_inter=include_inter)
+    if route == "partition":
+        return _markov_trace_via_partition_sum(
+            Z, N, q, include_inter=include_inter)
+    raise ValueError(
+        f"markov_trace_symbolic: unknown route {route!r} "
+        '(expected "peel" or "partition")')
+
+
+# The canonical output symbol for anything this module SERIALIZES (bean
+# qou-0ndb). The witness fields are named `p_in_u` / `denom_in_u`, so their
+# strings must say `u` — regardless of which symbol the caller happened to
+# compute with. Before this, the name in the string was a property of the CALL
+# SITE: `_habiro_coefficient_extract` passes `u`, `analyse_atomic_braid` passes
+# `check_q`, and the same two field names therefore carried two different
+# symbols. Every consumer then had to know which producer wrote the file, and
+# the ones that guessed wrong failed SILENTLY — `sympify` mints a fresh symbol,
+# `.subs` no-ops, and the expression stays symbolic until something far away
+# tries to make a number of it. Four instances (bean qou-0ndb), the worst of
+# which published `phi_8_mult: 0` for a documented scaling law (bean qou-s41x).
+U_CANONICAL = sp.Symbol('u', positive=True, real=True)
+
+
+def str_in_u(expr, sym) -> str:
+    """Serialize `expr` (written in `sym`) as a string in the canonical `u`.
+
+    Use this for ANY expression leaving this module as text. Keeping the
+    in-memory expression in the caller's symbol is fine and intended — only the
+    SERIALIZED form is normalised, which is what consumers parse.
+    """
+    if sym == U_CANONICAL:
+        return str(expr)
+    return str(sp.sympify(expr).subs(sym, U_CANONICAL))
+
+
 def to_u_polynomial(expr_in_q, q, check_q):
     """Substitute q → u² and clear ALL check_q-denominators (including any
     cyclotomic / Markov-normalisation factors).  Returns
@@ -185,11 +274,13 @@ def to_u_polynomial(expr_in_q, q, check_q):
     # Determine min and max exponent
     monoms = poly.monoms()
     if not monoms:
-        return Integer(0), 0, str(den)
+        return Integer(0), 0, str_in_u(den, check_q)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
     p_shifted = sp.expand(p_expanded * check_q ** shift)
-    return p_shifted, shift, str(sp.expand(den))
+    # The EXPRESSION keeps the caller's symbol (callers go on computing with
+    # it); only the serialized denom is normalised to `u`. See str_in_u.
+    return p_shifted, shift, str_in_u(sp.expand(den), check_q)
 
 
 def cyclotomic_expansion(p_in_u, check_q, max_m=20):
@@ -223,8 +314,12 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
         quotient, a_m = sp.div(current, next_factor, check_q)
         a_m_expr = a_m.as_expr()
         coeffs.append({
+            # Normalised to the canonical `u` (bean qou-0ndb). This is THE field
+            # the breakage rode on: `reconstruct` and every `load_a_m` parse it,
+            # and until now its variable name depended on which symbol this
+            # function was handed.
             "m": m,
-            "a_m": str(a_m_expr),
+            "a_m": str_in_u(a_m_expr, check_q),
             "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
             "integral": all(c.is_Integer for c in a_m.all_coeffs())
                           if a_m.as_expr() != 0 else True,
@@ -239,16 +334,265 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
 
 
 def reconstruct(coeffs_data, check_q, max_m=20):
-    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify."""
+    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify.
+
+    `max_m` is VESTIGIAL — the loop iterates `coeffs_data`, not `range(max_m)`.
+    Kept only because callers pass it positionally. Do not read it as a bound.
+
+    BOTH symbol names, and that is the whole bug this function had (bean
+    qou-s41x; root cause is bean qou-0ndb). `cyclotomic_expansion` renders its
+    `a_m` strings using WHATEVER SYMBOL the caller handed it, so the name in the
+    string is a property of the call site:
+
+        habiro_coefficients_atomic.analyse_atomic_braid  passes `check_q`
+        _habiro_coefficient_extract.analyse_atom         passes `u`
+
+    Sympifying with only `check_q` in `locals` therefore left the `u`-rendered
+    strings referring to a FRESH `Symbol('u')` — same name, but no assumptions,
+    so not the caller's `Symbol('u', positive=True, real=True)`. The two never
+    cancel:
+
+        sympify("8 - 3*u**2", locals={"check_q": u}) - (8 - 3*u**2)
+            ->  -3*u**2 + 3*u**2          # not 0
+
+    which made `diff == 0` false for EVERY atom regardless of size, and so
+    `reconstruction_matches` false corpus-wide. Mapping both names onto the
+    caller's symbol is the fix; it cannot misfire, because a given string uses
+    one name or the other and both resolve to the same object.
+    """
     total = Integer(0)
     for entry in coeffs_data:
         m = entry["m"]
-        a_m = sp.sympify(entry["a_m"], locals={"check_q": check_q})
+        a_m = sp.sympify(entry["a_m"], locals={"u": check_q, "check_q": check_q})
         poch = Integer(1)
         for k in range(1, m + 1):
             poch *= 1 - check_q ** k
         total += sp.expand(a_m * poch)
     return sp.expand(total)
+
+
+class HabiroReconstructionFailed(RuntimeError):
+    """A witness was asked for its coefficients while flagging its own
+    reconstruction check as failed."""
+
+
+def load_a_m(slug, sym, witness_dir=None, *, allow_failed_reconstruction=False):
+    """Load `habiro-coefficients-<slug>.witness.json` as {m: a_m expression}.
+
+    REFUSES a witness whose own `reconstruction_matches` is false (owner
+    ruling, bean qou-s41x). That flag is the producer's statement that the
+    coefficients it is handing you do not rebuild the polynomial they came
+    from; a reader that takes them anyway is building on something the
+    producer already disowned. Every previous reader ignored it — three
+    verbatim copies of this function, none of which looked at the flag,
+    while 21 of 25 witnesses advertised a failed self-check.
+
+    Refuse rather than warn: the consumers compose these into a mirror
+    difference and read off a cyclotomic multiplicity, and a warning on
+    stderr in a long batch run is indistinguishable from no warning at all.
+    That is how `phi_8_mult: 0` stayed published against a documented
+    scaling law.
+
+    `allow_failed_reconstruction=True` is the deliberate override, for
+    diagnosing a bad witness rather than computing with it. It exists so
+    that the escape hatch has to be written down at the call site.
+
+    Both symbol names are mapped onto `sym` for the reason in `reconstruct`
+    above: whether a string says `u` or `check_q` is a property of which
+    producer wrote the file, not of the format (bean qou-0ndb).
+    """
+    import json
+    from pathlib import Path
+
+    base = Path(witness_dir) if witness_dir is not None else Path(__file__).resolve().parent
+    path = Path(base) / f"habiro-coefficients-{slug}.witness.json"
+    if not path.exists():                       # cluster subdir layout
+        alt = Path(base).parent / f"habiro-coefficients-{slug}.witness.json"
+        if alt.exists():
+            path = alt
+    data = json.loads(path.read_text())
+
+    matches = data.get("reconstruction_matches")
+    if matches is False and not allow_failed_reconstruction:
+        raise HabiroReconstructionFailed(
+            f"{path.name} carries reconstruction_matches: false — its own "
+            f"check says these coefficients do not rebuild p(u). Refusing to "
+            f"hand them to a caller. Regenerate the witness from its "
+            f"producer; pass allow_failed_reconstruction=True only to "
+            f"diagnose the file, not to compute with it."
+        )
+
+    out = {}
+    for c in data.get("habiro_coefficients", []):
+        out[c["m"]] = sp.sympify(
+            c["a_m"].replace("^", "**"), locals={"u": sym, "check_q": sym}
+        )
+    return out
+
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
+def mirror_trace_diff_numerator(slug_x, slug_y, sym, witness_dir=None,
+                                *, allow_failed_reconstruction=False):
+    """Numerator of `tr_X - tr_Y`, in `sym` (= u, with q -> sym**2).
+
+    THE THING NOT TO DO is subtract Habiro coefficients. `p = d * t` is the
+    denominator-cleared numerator of a trace, so
+
+        Sum d_a_m (sym;sym)_m  =  p_X - p_Y  =  d_X*t_X - d_Y*t_Y
+
+    which is proportional to `t_X - t_Y` only when the denominators agree AT
+    THE EVALUATION POINT. Proved in
+    `QOU/Habiro/MirrorPairNormalisation.lean` (sorry-free):
+
+        coeffDiff_at_coincidence : dX*t - dY*t = (dX - dY)*t
+
+    so where the traces coincide the coefficient-difference collapses to the
+    denominator GAP times the common value, and vanishes iff dX = dY there.
+
+    Measured: under convention C, dX(1) = dY(1) on all seven canonical mirror
+    pairs, so the shortcut was accidentally valid and the published C results
+    stand as computed. Under convention D they differ by exactly a factor of 4
+    on all seven, and every cyclotomic multiplicity collapses to 0 — including
+    Phi_1, which MUST divide a true mirror difference because the halves
+    coincide at q = 1.
+
+    This helper is convention-agnostic: it differences the traces themselves,
+    over a common denominator, which is correct in C and D alike (qou-0ndb).
+    """
+    import json
+    from pathlib import Path
+
+    q_local = sp.Symbol('q', positive=True, real=True)
+    # Build in the CANONICAL positive `u`, not in whatever `sym` the caller
+    # passed, and map to `sym` only at the end. An atomic tr_M lives in
+    # Z[q^{1/2}, q^{-1/2}] (module docstring), so q -> sym**2 produces
+    # (sym**2)**(k/2) for odd k; sympy denests that to sym**k ONLY when the
+    # symbol is known positive. Against a bare Symbol('u') it stays nested and
+    # every downstream Poly call dies with
+    #     PolynomialError: (u**2)**(3/2) contains an element of the set of
+    #     generators
+    # Both callers construct their `u` with sp.symbols('u') — assumption-free —
+    # so the helper cannot rely on the caller's symbol carrying the assumption.
+    # This is the same defect class as qou-0ndb itself (a symbol that prints
+    # identically but is a different sympy object), which is why the fix is the
+    # same shape as `str_in_u` above: normalise inside, translate at the edge.
+    def _load(slug):
+        base = Path(witness_dir) if witness_dir is not None else Path(__file__).resolve().parent
+        path = Path(base) / f"habiro-coefficients-{slug}.witness.json"
+        if not path.exists():
+            alt = Path(base).parent / f"habiro-coefficients-{slug}.witness.json"
+            if alt.exists():
+                path = alt
+        d = json.loads(path.read_text())
+        if d.get("reconstruction_matches") is False and not allow_failed_reconstruction:
+            raise HabiroReconstructionFailed(
+                f"{path.name} carries reconstruction_matches: false — refusing."
+            )
+        return d["tr_M_in_q"]
+
+    return trace_diff_numerator(_load(slug_x), _load(slug_y), sym,
+                                label=f"{slug_x} - {slug_y}")
+
+
+def am_difference_is_valid(tr_x, tr_y, sym=None):
+    """Is subtracting two witnesses' a_m a valid way to form their difference?
+
+    Only when the two denominators AGREE. A witness's a_m expand its own
+    denominator-cleared numerator `p = d*t`, so `Sum (a_m^X - a_m^Y)(u;u)_m` is
+    `d_X*t_X - d_Y*t_Y`; that is proportional to `t_X - t_Y` iff `d_X = d_Y`
+    (`QOU/Habiro/MirrorPairNormalisation.lean`, `coeffDiff_of_common_denom` /
+    `coeffDiff_at_coincidence`, sorry-free).
+
+    Whether it holds is a property of the CONVENTION, not of the code, which is
+    why this is a runtime check rather than a rule anyone can apply by reading:
+
+        convention C   d_p = d_n = 4u^19(u^2+1)          IDENTICAL -> valid
+        convention D   d_p = 4u^18(u^4+1)^2, d_n = 4u^18  DIFFER   -> invalid
+
+    So the same script is correct under C and wrong under D with no edit in
+    between. Under C the atomic-STEP pairs (D-n, 3He-D, 4He-3He) already
+    differed and were never valid. Measured, bean qou-lnog.
+    """
+    u_can = U_CANONICAL
+    q_local = sp.Symbol('q', positive=True, real=True)
+
+    def _den(tr_str):
+        tr = sp.sympify(tr_str, locals={"q": q_local})
+        tr_s = sp.powdenest(sp.expand(tr.subs(q_local, u_can ** 2)), force=True)
+        return sp.fraction(sp.together(tr_s))[1]
+
+    return sp.simplify(_den(tr_x) - _den(tr_y)) == 0
+
+
+def require_am_differenceable(tr_x, tr_y, *, label="pair"):
+    """Raise unless `am_difference_is_valid`. Preflight for a_m-differencing.
+
+    Fails loudly instead of returning a plausible wrong polynomial. Nothing
+    raises on its own here: the coefficient difference factors, carries
+    cyclotomic content, and prints fine -- it is simply not the pair's. The
+    honest fix at a call site that trips this is `trace_diff_numerator`.
+    """
+    if not am_difference_is_valid(tr_x, tr_y):
+        raise AmDifferenceInvalid(
+            f"{label}: the two witnesses' denominators differ, so subtracting "
+            f"their a_m builds d_X*t_X - d_Y*t_Y, not the pair difference. "
+            f"Use trace_diff_numerator(tr_x, tr_y, sym) and expand THAT "
+            f"(bean qou-0ndb / qou-lnog)."
+        )
+
+
+class AmDifferenceInvalid(ValueError):
+    """Raised when a_m-differencing would silently build the wrong object."""
+
+
+def trace_diff_numerator(tr_x, tr_y, sym, *, label="pair"):
+    """Numerator of `tr_x - tr_y` over a common denominator, in `sym`.
+
+    Core of `mirror_trace_diff_numerator`, taking the two `tr_M_in_q` STRINGS
+    directly so it also serves callers reading the combined atomic witness
+    (`habiro-coefficients-atomic.witness.json`, whose entries are nested under
+    `results` rather than living in per-slug files).
+    """
+    q_local = sp.Symbol('q', positive=True, real=True)
+    # Build in the CANONICAL positive `u`, not in whatever `sym` the caller
+    # passed, and map to `sym` only at the end. An atomic tr_M lives in
+    # Z[q^{1/2}, q^{-1/2}] (module docstring), so q -> sym**2 produces
+    # (sym**2)**(k/2) for odd k; sympy denests that to sym**k ONLY when the
+    # symbol is known positive. Against a bare Symbol('u') it stays nested and
+    # every downstream Poly call dies with
+    #     PolynomialError: (u**2)**(3/2) contains an element of the set of
+    #     generators
+    # Every caller builds its `u` with sp.symbols('u') — assumption-free — so
+    # the helper cannot rely on the caller's symbol carrying the assumption.
+    # This is the same defect class as qou-0ndb itself (a symbol that prints
+    # identically but is a different sympy object), which is why the fix has the
+    # same shape as `str_in_u` above: normalise inside, translate at the edge.
+    u_can = U_CANONICAL
+
+    def _num_den(tr_str):
+        tr = sp.sympify(tr_str, locals={"q": q_local})
+        tr_s = sp.powdenest(sp.expand(tr.subs(q_local, u_can ** 2)), force=True)
+        return sp.fraction(sp.together(tr_s))
+
+    nx, dx = _num_den(tr_x)
+    ny, dy = _num_den(tr_y)
+    out = sp.expand(sp.expand(nx * dy) - sp.expand(ny * dx))
+    if out.has(sp.Rational(1, 2)) or any(
+        not e.is_Integer for e in out.atoms(sp.Pow)
+        if e.base == u_can and not e.exp.is_Integer
+    ):
+        raise ValueError(
+            f"{label}: half-integer powers of u survived denesting; "
+            "the difference is not in Z[u, u^-1] and the cyclotomic expansion "
+            "would be meaningless"
+        )
+    return out.subs(u_can, sym) if sym != u_can else out
 
 
 def analyse_atomic_braid(label, Z, N, include_inter, q):
@@ -298,7 +642,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
         "tr_M_in_q": str(p_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        "p_in_u": str_in_u(p_u, check_q),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "all_integral": all(c["integral"] for c in coeffs),
@@ -369,9 +713,19 @@ if __name__ == "__main__":
         try:
             _prior = json.loads(_out_path.read_text()).get("results", {})
             for _label, _entry in _prior.items():
-                if _label not in results and "error" not in _entry:
+                # A FAILED case was not computed, so it must not win. The guard
+                # was `_label not in results`, but a failing atom IS in `results`
+                # -- carrying an `error` -- so a good prior entry lost to the
+                # error record. Measured 2026-08-25: one run in a container
+                # without numpy replaced ALL THREE atoms (32 exact coefficients)
+                # with error stubs, `n_coeffs` 9/9/14 -> 0/0/0. Recovered only
+                # because the file was tracked. See bean `qou-lrnd`.
+                _fresh = results.get(_label)
+                _fresh_failed = _fresh is None or "error" in _fresh
+                if _fresh_failed and "error" not in _entry:
                     results[_label] = _entry
-                    print(f"  [merge-preserve] kept prior witness entry: {_label}")
+                    _why = "not recomputed" if _fresh is None else "recompute FAILED"
+                    print(f"  [merge-preserve] kept prior witness entry: {_label} ({_why})")
         except (json.JSONDecodeError, OSError):
             pass  # corrupt/unreadable prior — fall back to a fresh write
 
@@ -393,7 +747,23 @@ if __name__ == "__main__":
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(_Q_CANONICAL),
+            # STRING, not float(): `float(_Q_CANONICAL)` put a raw float64
+            # into the witness -- the one dirty field the qou-mass
+            # raw-float64 ratchet flags.
+            #
+            # This is NOT a 50-digit anchor stringified down, and it is not
+            # the "stringify the float" move the rule forbids. This producer
+            # computes at a SIXTEEN-DIGIT q by construction: see
+            # `q0 = Rational(int(_Q_CANONICAL * 10**16), 10**16)` above, which
+            # builds an exact rational from 16 decimal digits. The string
+            # below is that rational's exact decimal form, so the witness now
+            # records precisely the value the computation used.
+            #
+            # The 16-digit q IS a real precision limitation of this producer,
+            # and it is NOT fixed here: raising it changes the committed a_m
+            # coefficients, which is a canonical-value change and wants its
+            # own decision. Recorded rather than silently widened.
+            "q_0": mp.nstr(_Q_CANONICAL, 17),
             "engine": "sympy Poly + sequential cyclotomic division",
         },
         "results": results,

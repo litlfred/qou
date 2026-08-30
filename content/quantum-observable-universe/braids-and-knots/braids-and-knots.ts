@@ -103,6 +103,7 @@ export default chapter({
             "dark-vision-strand-bandwidth",
             "markov-moves-brane-tower",
             "markov-trace-ambient-s3",
+            "chi-sym-alt-closed-form",
           ],
         }),
         section({
@@ -180,10 +181,12 @@ export default chapter({
         "knot-complement-group",
         "kronheimer-mrowka",
         "reducible-reps",
-        // Ledger §5 orphan integration (2026-07-12): JSJ additivity of
-        // nucleon braids — conjecture on the geometric decomposition of
-        // atomic knot complements.
-        "jsj-decomposition-linearity",
+        // conj:jsj-decomposition-linearity relocated to
+        // knots-particles-confinement §9 sec:atom-isotope-knots (2026-08-09,
+        // decision 5). It landed here as a 2026-07-12 Ledger §5 orphan
+        // integration, i.e. its home here was recent and incidental; its
+        // statement is over isotopes (Z, N) and its dep def:atom-knot lives
+        // in that section, so the CONSUMER moved rather than the definition.
       ],
     }),
 

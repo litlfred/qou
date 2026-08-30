@@ -44,6 +44,49 @@ Note: the npm package named `beans` is an unrelated abandoned tool — do **not*
    `beans create "<Task Title>" --type task`
    `beans update <child-id> --parent <session-id>`
 3. **No manual `.md` checklists:** Never use `session-beans.md` or raw Markdown `- [ ]` checklists to track global tasks. Always use the `beans` CLI to prevent namespace pollution and maintain the official project tracking.
+4. **Check before you create:** `beans create` is **not** idempotent. Run the existence check below before every `beans create` — no exceptions, including the session milestone.
+
+## Check before you create — `beans create` is not idempotent (STRICT)
+
+`beans create` mints a **fresh random ID on every call** and dedupes on
+nothing. Re-running a work-plan step is therefore *not* a no-op — it creates a
+second bean. **Before every `beans create`, check whether the bean exists:**
+
+```bash
+T="Prove Foo.bar"
+beans list --json --search "title:\"$T\"" | python3 -c '
+import json, sys
+t = sys.argv[1]
+m = [b for b in json.load(sys.stdin) if b["title"] == t]
+print(f"{len(m)} exact match(es)")
+[print(" ", b["id"], b["status"]) for b in m]' "$T"
+```
+
+- **≥ 1 match** → do **not** create. Claim the existing bean instead:
+  `beans update <id> --status in-progress --body-append "Claimed by <branch>"`
+- **0 matches** → `beans create "$T" --type task`
+
+`--search` is a fuzzy Bleve query, so the exact-title comparison inside the
+pipe is load-bearing — do not drop it and trust `--search` alone.
+
+**Why this is STRICT.** On 2026-08-04 one agent context re-ran its 15-bean
+session work-plan ~980 times back-to-back (median 19 s per cycle, ~16 h wall).
+Because `create` is unconditional, that produced **14,688 duplicate beans** —
+92 % of every open bean in the repo. The damage was not just clutter:
+
+- the session-start sweep and the idle-backlog policy (§4 of the AGENTS.md
+  work-plan policy) were reading mostly noise;
+- 980 copies of an already-proved core sat at `todo`
+  (`JucysMurphy.seminormalVector_base_exists`, discharged in
+  `SeminormalBaseExists.lean`);
+- the duplicates **collided with the IDs of 15 real beans**, making
+  `beans update <id>` ambiguous for those;
+- they corrupted a later agent's own corpus-grep — 4,928 `.beans` files
+  matched "specht" across just 36 titles, inflating 14 real corpus files into
+  an apparent 54 and nearly landing a false correction in a PR body.
+
+The runaway loop is not something a doc can prevent; an unguarded `create`
+is. Cleanup + full triage: bean `qou-2ryn`.
 
 ## Working with Beans
 
@@ -59,6 +102,40 @@ You can map out sequence blockers using:
 - When starting work: `beans update <id> --status in-progress`
 - When completed: `beans update <id> --status completed`
 - To add notes or discussion: `beans update <id> --body-append "Your note"`
+
+## Stalled-claim takeover — a claim is not forever (STRICT scope)
+
+Agents stall: containers get reclaimed, sessions die, a branch is abandoned
+mid-task. **Standing policy** (AGENTS.md work-plan §2, 2026-08-15): a bean at
+`in-progress` whose **backing branch has had no commit for > 3 h** is presumed
+abandoned and may be taken over. This is the sole exception to "never
+resolve/claim a sibling's bean".
+
+**Scope — read this or you will clobber live work.** The > 3 h rule applies
+ONLY to the branch backing a *live in-progress bean*. It is NOT a licence to
+resurrect the thousands of long-idle `claude/*` branches — most are months old
+and permanently stale; age alone makes none of them a takeover target.
+
+**Detect** (the claimed branch is recorded in the bean's claim note):
+
+```bash
+beans show <id>                                 # find "branch `claude/...`" in the body
+git fetch origin <branch>
+git log -1 --format='%cI %h' origin/<branch>    # last-commit ISO time + sha
+# stale iff (now − that time) > 3h. A running CI/lake build is NOT a stall —
+# check the PR for an in-flight job or a recent comment before deciding.
+```
+
+**Take over safely:**
+
+- Re-claim, recording the handoff:
+  `beans update <id> --status in-progress --body-append "Taken over <date> by <yourbranch>; prior claim <oldbranch> stale since <time> (last <sha>)."`
+- Continue from the stale branch's tip if its partial work is worth keeping
+  (`git checkout -b <yourbranch> origin/<oldbranch>`); otherwise branch from `main`.
+- **Never force-push the sibling's branch.** Open your own branch and leave
+  theirs as the record; if they resume, the bean body shows the handoff.
+- For high-blast-radius work, drop a one-line note on the sibling PR that you
+  have taken it over (per the AGENTS.md sibling-coordination rules).
 
 ## Status Display Format
 

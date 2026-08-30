@@ -23,39 +23,47 @@ FINDINGS (scope-(a); no c_k wired; no fit; no tier change):
      k≈7, 7 near k≈10, 11/13 near k≈16–21; p_max(k) ≲ 2k), the signature of a
      factorial / q-factorial (Ohtsuki–Habiro) normalization.
 
-  3. **D(ũ) is super-exponentially DIVERGENT (radius → 0).** CORRECTED
-     2026-07-12 (was: "convergent radius ρ≈0.143" — a finite-n shadow; see
-     docs/audits/2026-07-12-dladder-divergence-correction.md). A Domb–Sykes
-     1/k radius fit gives a spurious finite ρ≈0.143, but there is NO
-     singularity of log R(q(ũ)) at that |ũ| (nearest is 0.45–0.78), the root
-     test |dₖ|^{1/k} rises without plateau (4.4→6.1 through k=27), and
-     log|dₖ| = A + B·k + C·k·log k fits with C ≈ 0.05–0.08 > 0 (super-
-     exponential, ~50–300× tighter than a constant-radius law). This is the
-     corpus's q-Gevrey / radius→0 class-change at the real substrate q₀
-     (Lean-backed alien-calculus audit). So the D-ladder is in the SAME
-     divergent family as the κ-tower — the two bar-odd-S routes share a
-     resurgent growth class (C drifts with the window ⇒ q-Gevrey, not a fixed
-     classical index).
+  3. **Growth diagnostic in the accessible window — NOT a divergence verdict.**
+     The root test |dₖ|^{1/k} is still rising at the top of the window
+     (4.4→6.1 through k=27) and log|dₖ| = A + B·k + C·k·log k fits with
+     C ≈ 0.05–0.08 > 0. **RE-SCOPED 2026-08-14:** this is *consistent with* a
+     finite radius, not evidence against one. With the true behaviour
+     d_k = −(1/(2h*_ρ))·ρ^{−k}/k·(1+O(1/k)), the 1/k factor gives
+     |dₖ|^{1/k} = (1/ρ)·k^{−1/k}(1+o(1)), which approaches 1/ρ ≈ 7.0 **from
+     below and monotonically** — so "still rising at k=21" is exactly what the
+     law predicts here. The k·log k term absorbs that same −log k, which is why
+     C > 0 outfits a pure geometric law on 21 terms. That C **drifts down**
+     with the window (0.077→0.048) is the tell: a genuine super-exponential
+     index would not.
 
   4. **No low-order holonomic recurrence.** No P-finite recurrence of order ≤ 3
      and polynomial degree ≤ 4 fits a_k or b_k (the ORD-43 21-term run rules out
      order ≤ 4, degree ≤ 5 too). D(ũ) is not hypergeometric / P-finite at
-     accessible order; its generating function is a non-elementary
-     algebraic-branch-point object.
+     accessible order. **This carries no growth-class information:** non-holonomic
+     does not imply divergent, and φ(w)log(1−w/ρ)+ψ(w) with algebraic φ,ψ is
+     convergent *and* not low-order P-finite. This negative is UNAFFECTED by the
+     re-scope and still stands.
 
-  5. **No finite singularity (corroborates radius → 0).** No singularity of
-     log R(q(ũ)) sits near the spurious 0.143: the sqrt branch points q⁴+q²+1=0
-     and the ũ'(q)=0 folds all map to ũ=0, and the nearest singularity of any
-     kind (a QA zero / a complex fold) is at |ũ|=0.45–0.78. The absence of any
-     finite singularity where a radius-0.143 series would demand one is the
-     analytic-side confirmation of the radius→0 growth diagnosis in [3].
+  5. **The finite singularity IS there — at the Q_b zero.** The 2026-07-12
+     reading concluded "no singularity near 0.143" from a search over the real
+     special value q=1+√2 (|ũ|≈0.775) and the sqrt branch points q⁴+q²+1=0
+     (which fold to ũ=0). That search was **incomplete**: it omitted the **Q_b
+     zero**, the real root > 1 of the irreducible degree-12 factor of the Δ_net
+     numerator, q*_ρ ≈ 1.4898948. Under this probe's own ũ map,
+     |ũ(q*_ρ)| = 0.142799996644689…, reproducing the published radius to ~1e-30.
+     The singularity was there; the search did not look where it lives.
 
-CONCLUSION: the D-ladder generating function has an exact parity + factorial-
-smooth-denominator arithmetic and is super-exponentially DIVERGENT (radius → 0,
-q-Gevrey at q₀) — in the SAME resurgent family as the κ-tower, NOT a convergent
-contrast to it (the earlier "radius ≈ 0.143" was a finite-n shadow, corrected
-2026-07-12). No elementary / P-finite closed form emerges at 15–27 terms.
-Nothing wired.
+CONCLUSION (re-scoped 2026-08-14): the D-ladder generating function has an exact
+parity + factorial-smooth-denominator arithmetic, is **CONVERGENT** with radius
+ρ = ũ(q*_ρ) = 0.142799996644689… (the image of a Q_b zero), and admits no
+low-order P-finite recurrence — the last of which is an algebraic statement and
+implies nothing about growth. It is therefore **NOT** in the κ-tower's family:
+that ladder is genuinely Gevrey-1 divergent, this one is not. The 2026-07-12
+"super-exponentially divergent (radius → 0)" reading, and its dismissal of
+PR #3716's ρ≈0.143 as a finite-n shadow, are **WITHDRAWN**; see
+docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md and
+docs/audits/2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md.
+No elementary closed form emerges at 15–27 terms. Nothing wired.
 """
 from __future__ import annotations
 
@@ -66,6 +74,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _pb  # noqa: E402, F401
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 import json  # noqa: E402
 import sympy as sp  # noqa: E402
@@ -99,8 +108,10 @@ def build_d_ladder():
     O/h through the valuation-aware ser_div)."""
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    q0 = mp.mpf(json.load(open(_pb.witness_path(
-        "q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
+    # q₀ from q_parameter (proton pin, AGENTS.md 2026-08-07 directive).
+    # Was a direct read of q-pinning-50-digit.witness.json, which is the
+    # MUON anchor’s definition and bypasses the manifest entirely.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
     Qb = rat_series(sp.Integer(sgn) * dnet_reg / q)
     QA = rat_series((2 * q + 1 - q**2) * (q + 1) / (2 * q**3))
@@ -223,21 +234,33 @@ def main() -> int:
     print(f"      3-adic valuations v₃(den s_k) = {v3}")
     smooth = factorial_smooth
 
-    # ---- 3. growth class: super-exponentially DIVERGENT (radius → 0) ----
-    # CORRECTED (2026-07-12): a Domb–Sykes 1/k radius fit gives a spurious finite
-    # ρ≈0.143, but the corpus diagnostic (root test rising + C>0) shows radius→0.
-    print("\n  [3] growth class (corpus diagnostic: root test rising + k·log k term):")
+    # ---- 3. growth diagnostic in the accessible window (NOT a divergence verdict) ----
+    # HISTORY. 2026-07-12 read this diagnostic as "super-exponentially DIVERGENT
+    # (radius → 0)" and called the Domb–Sykes ρ≈0.143 a finite-n shadow.
+    # RE-SCOPED 2026-08-14: the ladder is CONVERGENT with ρ = ũ(q*_ρ) (see [5]),
+    # and the numbers below do not contradict that.  With the true behaviour
+    #     d_k = −(1/(2h*_ρ))·ρ^(−k)/k·(1+O(1/k)),
+    # the 1/k factor makes |d_k|^(1/k) = (1/ρ)·k^(−1/k)(1+o(1)) approach 1/ρ ≈ 7.0
+    # from BELOW and monotonically — so "still rising at k=21" is exactly what a
+    # ρ^(−k)/k law predicts in this window, not evidence against a finite radius.
+    # Likewise the k·log k term absorbs that same −log k, which is why C > 0 fits
+    # better than a pure geometric law on 21 terms.  The measurement stands; only
+    # the verdict drawn from it was wrong.
+    print("\n  [3] growth diagnostic in the accessible window (k ≤ %d — NOT a divergence verdict):" % K)
     lo = 10 if K >= 14 else 6
     root_rising, C, ssr_ratio, root = growth_diagnostic(dk, lo)
     rk = sorted(root)
     print(f"      root test |dₖ|^(1/k): {mp.nstr(root[rk[0]], 5)} → {mp.nstr(root[rk[-1]], 5)} "
           f"(k={rk[0]}..{rk[-1]}); still rising at top: {root_rising}")
-    print(f"      log|dₖ| = A+B·k+C·k·log k fit: C = {mp.nstr(C, 5)} "
-          f"({'>0 super-exponential' if C > 0 else 'not super-exp'}); "
-          f"SSR(super-exp)/SSR(geom) = {mp.nstr(ssr_ratio, 4)} (≪1 ⇒ super-exp wins)")
-    divergent = bool(root_rising and C > 0 and ssr_ratio < mp.mpf("0.3"))
-    print(f"      => super-exponentially DIVERGENT (radius → 0): {divergent}")
-    print("      same resurgent family as the κ-tower; q-Gevrey at q₀ (corpus alien-calculus audit)")
+    print(f"      log|dₖ| = A+B·k+C·k·log k fit: C = {mp.nstr(C, 5)}; "
+          f"SSR(k·log k)/SSR(geom) = {mp.nstr(ssr_ratio, 4)}")
+    root_test_rising_in_window = bool(root_rising and C > 0 and ssr_ratio < mp.mpf("0.3"))
+    print(f"      => root test still rising in-window: {root_test_rising_in_window}")
+    # the finite-radius prediction the window is compared against
+    _rho_pub = mp.mpf("0.142799996644689688905720885779")
+    print(f"      1/ρ = {mp.nstr(1 / _rho_pub, 6)} — the value |dₖ|^(1/k) is approaching "
+          f"from below; at k={rk[-1]} it is {mp.nstr(root[rk[-1]], 5)}, still short, as ρ^(−k)/k predicts")
+    print("      CONSISTENT with a finite radius; see [5] for the singularity itself")
 
     # ---- 4. holonomic recurrence search ----
     print("\n  [4] holonomic P-recurrence search (order ≤ 3, deg ≤ 4):")
@@ -246,15 +269,44 @@ def main() -> int:
           f"b_k: {'FOUND ' + str(resb) if resb else 'none'}")
     no_prec = (resa is None) and (resb is None)
 
-    # ---- 5. singularity origin: simple real special values map far / to 0 ----
+    # ---- 5. singularity origin: the Q_b zero IS the radius (CORRECTED 2026-08-09) ----
+    # This section previously searched only the real special value q=1+√2 and the
+    # sqrt branch points q⁴+q²+1=0, found nothing near 0.143, and concluded "no
+    # finite singularity ⇒ radius → 0".  The search was incomplete: it omitted the
+    # **Q_b zero**, the real root > 1 of the irreducible degree-12 factor of the
+    # Δ_net numerator.  Its image under this function's own ũ map is 0.14279999…,
+    # i.e. exactly the radius.  The singularity was there; the search did not look
+    # where it lives.  See docs/audits/2026-08-09-dladder-is-convergent-radius-is-
+    # the-qb-zero.md.
     def u_of_q(qq):
         qq = mp.mpc(qq)
         return qq * (mp.sqrt(qq**4 + qq**2 + 1) / (qq**2 + 1)) * ((qq - 1) / qq) ** 2
     u_QAplus = abs(u_of_q(mp.mpf(1) + mp.sqrt(2)))     # nearest real special value
     u_bp = abs(u_of_q(mp.expjpi(sp.Rational(1, 3))))   # sqrt branch point q^4+q^2+1=0
-    print("\n  [5] no finite singularity (corroborates radius → 0):")
+
+    # the omitted candidate: irreducible degree-12 factor of the Δ_net numerator
+    QB_POLY = [1, 2, -4, -8, 6, 16, -10, -16, 6, 8, -4, -2, 1]
+
+    def _qb_deg12(x):
+        acc = mp.mpf(0)
+        for c in QB_POLY:
+            acc = acc * x + c
+        return acc
+
+    q_star_rho = mp.findroot(_qb_deg12, mp.mpf("1.49"))   # real root > 1
+    u_qb = abs(u_of_q(q_star_rho))
+    rho_published = mp.mpf("0.142799996644689688905720885779")
+    rho_rel = abs(u_qb - rho_published) / rho_published
+    singularity_at_rho = bool(rho_rel < mp.mpf("1e-20"))
+
+    print("\n  [5] the finite singularity IS there — at the Q_b zero (CORRECTED 2026-08-09):")
     print(f"      |ũ(q=1+√2)| = {mp.nstr(u_QAplus, 6)};  |ũ(q⁴+q²+1=0)| = {mp.nstr(u_bp, 4)} (→0, folds to origin)")
-    print("      no singularity anywhere near the spurious 0.143 ⇒ consistent with radius → 0")
+    print(f"      Q_b zero q*_ρ = {mp.nstr(q_star_rho, 20)}  (deg-12 factor of the Δ_net numerator)")
+    print(f"      |ũ(q*_ρ)|     = {mp.nstr(u_qb, 24)}")
+    print(f"      published ρ   = {mp.nstr(rho_published, 24)}   rel diff = {mp.nstr(rho_rel, 4)}")
+    print(f"      => the singularity sits exactly at ρ: {singularity_at_rho}")
+    print("      the earlier 'no singularity near 0.143' followed from an INCOMPLETE")
+    print("      search (q=1+√2 and the folds only); this root was never tested.")
 
     d5_ai81 = sp.Rational(-252241, 243) * R3 - sp.Rational(836891, 139345920)
     d5_ok = sp.simplify(dk[5] - d5_ai81) == 0
@@ -263,14 +315,21 @@ def main() -> int:
         f"D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_{K} exact ℚ(√3)): "
         f"[1] exact parity structure (odd k → √3-part small-denominator, even k → "
         f"rational part); [2] simple-denominator sequence is 3-smooth "
-        f"(Ohtsuki/Habiro factorial normalization; primes {primes}); [3] super-"
-        f"exponentially DIVERGENT (radius → 0): root test rises without plateau "
-        f"(→{mp.nstr(root[rk[-1]], 4)} at k={rk[-1]}) and C={mp.nstr(C, 3)}>0 in "
+        f"(Ohtsuki/Habiro factorial normalization; primes {primes}); [3] in the "
+        f"accessible window the root test is still rising "
+        f"(→{mp.nstr(root[rk[-1]], 4)} at k={rk[-1]}) with C={mp.nstr(C, 3)}>0 in "
         f"log|dₖ|=A+Bk+C·k·log k (SSR {mp.nstr(ssr_ratio, 3)}× the geometric law) — "
-        f"the SAME resurgent family as the κ-tower (q-Gevrey at q₀, corpus alien-"
-        f"calculus audit); the earlier 'convergent ρ≈0.143' was a finite-n shadow; "
-        f"[4] no P-finite recurrence (order≤3, deg≤4); [5] no closed form emerges at "
-        f"{K} terms. Scope-(a); no c_k wired; no fit."
+        f"this is CONSISTENT WITH the finite radius, not evidence against it: "
+        f"d_k = −(1/(2h*_ρ))ρ^(−k)/k means |dₖ|^(1/k) → 1/ρ = "
+        f"{mp.nstr(1 / rho_published, 5)} from below and has not arrived by k={rk[-1]}; "
+        f"[4] no P-finite recurrence (order≤3, deg≤4) — which does NOT imply "
+        f"divergence (φ(w)log(1−w/ρ)+ψ(w) is convergent and not P-finite); "
+        f"[5] the finite singularity IS present, at the Q_b zero q*_ρ="
+        f"{mp.nstr(q_star_rho, 12)}: |ũ(q*_ρ)|={mp.nstr(u_qb, 18)} reproduces the "
+        f"published ρ to rel {mp.nstr(rho_rel, 3)} — the 2026-07-12 'no singularity "
+        f"near 0.143 ⇒ radius→0' followed from an INCOMPLETE search that omitted "
+        f"this root. RE-SCOPED 2026-08-14 per the 2026-08-09 convergence "
+        f"correction. Scope-(a); no c_k wired; no fit."
     )
     print(f"\n  VERDICT: {verdict}")
     print(f"  ({time.monotonic() - t0:.1f}s)")
@@ -281,14 +340,20 @@ def main() -> int:
         "D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: "
         "(1) exact parity structure (odd k → √3-part carries the small "
         "denominator, even k → rational part); (2) 3-smooth simple-denominators "
-        "(Ohtsuki/Habiro factorial normalization); (3) super-exponentially "
-        f"DIVERGENT (radius → 0): root test rises without plateau, C={mp.nstr(C, 3)}>0 "
-        "in log|dₖ|=A+Bk+C·k·log k (super-exp ≫ geometric) — the SAME resurgent "
-        "family as the κ-tower (q-Gevrey at q₀, corpus alien-calculus audit); the "
-        "earlier 'convergent ρ≈0.143' was a finite-n shadow (corrected 2026-07-12); "
+        "(Ohtsuki/Habiro factorial normalization); (3) in the accessible window "
+        f"the root test is still rising with C={mp.nstr(C, 3)}>0 in "
+        "log|dₖ|=A+Bk+C·k·log k — CONSISTENT WITH the finite radius rather than "
+        "evidence against it, since d_k = −(1/(2h*_ρ))ρ^(−k)/k approaches "
+        "|dₖ|^(1/k) → 1/ρ from below and has not arrived by k=21; "
         "(4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 "
-        "deg≤5); (5) no finite singularity near 0.143 (corroborates radius → 0). "
-        "No elementary closed form at 15–27 terms. Scope-(a); no wiring."
+        "deg≤5) — which does NOT imply divergence; (5) the finite singularity IS "
+        "present, at the Q_b zero q*_ρ≈1.48989, whose image under this probe's own "
+        "ũ map reproduces the published ρ=0.142799996644689… . RE-SCOPED "
+        "2026-08-14: the 2026-07-12 'super-exponentially divergent (radius→0)' "
+        "reading rested on an INCOMPLETE singularity search that omitted this "
+        "root; see docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-"
+        "zero.md. The exact d_k, the parity structure, the 3-smooth denominators "
+        "and the non-holonomicity are all UNAFFECTED. Scope-(a); no wiring."
     )
     wb.add_data("ORD", ORD)
     wb.add_data("n_terms", K)
@@ -303,32 +368,62 @@ def main() -> int:
     wb.add_data("root_test_values", {str(k): mp.nstr(root[k], 8) for k in sorted(root)})
     wb.add_data("superexp_C_klogk_coeff", mp.nstr(C, 6))
     wb.add_data("superexp_vs_geometric_ssr_ratio", mp.nstr(ssr_ratio, 6))
-    wb.add_data("super_exponentially_divergent", divergent)
+    wb.add_data("root_test_still_rising_in_window", root_test_rising_in_window)
     wb.add_data("contrast_kappa_tower",
-                "CORRECTED 2026-07-12: D-ladder is super-exponentially divergent (radius→0), "
-                "SAME resurgent family as the divergent κ-tower — NOT a convergent contrast. "
-                "The earlier 'convergent ρ≈0.143' was a finite-n shadow.")
+                "RE-SCOPED 2026-08-14. The D-ladder is CONVERGENT (ρ = ũ(q*_ρ) = "
+                "0.142799996644689…, κ = 0; 2026-08-09 correction), so it is NOT in the "
+                "κ-tower's family: the κ-tower is genuinely Gevrey-1 divergent (Borel "
+                "singularity A≈0.7), this ladder is not. The 2026-07-12 claim of a shared "
+                "divergent family is withdrawn. A divergent and a convergent series cannot "
+                "be equated term-by-term — the corpus already carries that as a proved "
+                "scope-(b) result.")
     wb.add_data("no_low_order_p_recurrence", no_prec)
-    wb.add_data("no_finite_singularity_near_spurious_rho", mp.nstr(u_QAplus, 8))
+    wb.add_data("non_holonomic_does_not_imply_divergent",
+                "The order≤3/deg≤4 negative in [4] constrains the ALGEBRAIC class only. "
+                "φ(w)log(1−w/ρ)+ψ(w) with algebraic φ,ψ is convergent AND not low-order "
+                "P-finite, so no growth-class conclusion follows from it.")
+    wb.add_data("singularity_at_qb_zero", {
+        "q_star_rho": mp.nstr(q_star_rho, 24),
+        "utilde_q_star_rho": mp.nstr(u_qb, 24),
+        "published_rho": mp.nstr(rho_published, 24),
+        "relative_difference": mp.nstr(rho_rel, 6),
+        "note": "the root the 2026-07-12 singularity search omitted; its image under "
+                "this probe's own ũ map IS the radius",
+    })
+    wb.add_data("other_singularity_candidates_checked", {
+        "utilde_q_1_plus_sqrt2": mp.nstr(u_QAplus, 8),
+        "utilde_sqrt_branch_point": "→0 (folds to origin)",
+        "note": "these two alone were the 2026-07-12 search; both land far from ρ, which "
+                "is why that search concluded 'no finite singularity'",
+    })
     wb.add_data("verdict", verdict)
     wb.add_data("scope", "(a) — exact ℚ(√3) ladder + corpus growth-class diagnostic; no wiring")
     wb.add_data("caveats", [
-        "C (the k·log k coefficient) drifts down with the fit window (0.077→0.048, "
-        "k up to 27) ⇒ q-Gevrey at q₀, not a fixed classical Gevrey index; report "
-        "'super-exponentially divergent, C≈0.05–0.08 shadow', not a pinned index.",
-        "corrects PR #3716's 'convergent radius 0.143' finite-n shadow; corpus-"
-        "corroborated (Lean-backed alien-calculus Gevrey/q-Gevrey audit).",
+        "C (the k·log k coefficient) drifts DOWN with the fit window (0.077→0.048, "
+        "k up to 27). Read 2026-07-12 as a q-Gevrey shadow; re-scoped 2026-08-14 — a "
+        "drift toward 0 is what a CONVERGENT ladder does to this diagnostic, since the "
+        "k·log k term is absorbing the −log k of a ρ^(−k)/k law rather than a genuine "
+        "super-exponential factor.",
+        "PR #3716's 'convergent radius 0.143' was called a finite-n shadow on "
+        "2026-07-12; that call is WITHDRAWN — 0.1428 is the true radius, the image of "
+        "the Q_b zero (2026-08-09 correction). #3716's reading was right for the wrong "
+        "stated reason, and the 2026-07-12 rebuttal was wrong for a checkable one.",
+        "UNAFFECTED by the re-scope: the exact ℚ(√3) d_k, the parity structure, the "
+        "3-smooth denominators, and the non-holonomicity in [4]. Only the growth-class "
+        "verdict changed.",
         "no c_k wired; no fit; no tier change.",
     ])
     wb.add_assertion("valid_orders_over_determined", odd_ok, True)
     wb.add_assertion("parity_structure_holds", parity_ok, True)
     wb.add_assertion("factorial_smooth_denominators", smooth, True)
-    wb.add_assertion("super_exponentially_divergent", divergent, True)
+    wb.add_assertion("root_test_still_rising_in_window", root_test_rising_in_window, True)
+    wb.add_assertion("singularity_at_qb_zero_reproduces_rho", singularity_at_rho, True)
     wb.add_assertion("no_low_order_p_recurrence", no_prec, True)
     wb.add_assertion("d5_reproduces_ai81_witness", bool(d5_ok), True)
     out = wb.save()
     print(f"  Witness: {out}")
-    return 0 if (parity_ok and smooth and divergent and no_prec and odd_ok and d5_ok) else 1
+    return 0 if (parity_ok and smooth and singularity_at_rho and no_prec
+                 and odd_ok and d5_ok) else 1
 
 
 if __name__ == "__main__":

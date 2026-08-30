@@ -45,8 +45,16 @@ import sys
 
 import mpmath as mp
 import numpy as np
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 20
+set_compute_dps()
 
 
 def _pts(n, R):
@@ -194,7 +202,7 @@ def main():
             "corrects": "#3864 2026-07-18 update — the per-factor product m(5τ₀)³·m(τ₀)≈8.226 is NOT "
                         "the T⁸ boson measure (genus-2 shows measure≠product by ×1.35); retracted",
             "structure_source": "Jac(Bring)≅E_5τ₀³×E_τ₀, period τ₀·M (Braden–Disney-Hogg Thm 2.12 + "
-                                "Prop 4.6; PDF uploads/2208.13692v1.pdf)",
+                                "Prop 4.6; PDF library/arxiv-2208.13692v1/2208.13692v1.pdf)",
             "deferred": "full genus-4 Epstein det'Δ at the thin Bring modulus (Im τ₀=0.187) — needs "
                         "Siegel reduction for numerical convergence",
             "scope_guard": "no q₀, no 8π manufactured, nothing wired, no tier change; scope-(a)",
@@ -202,6 +210,15 @@ def main():
     }
     out = os.path.join(_here, "bring-polarized-epstein-determinant.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0 if all_passed else 1

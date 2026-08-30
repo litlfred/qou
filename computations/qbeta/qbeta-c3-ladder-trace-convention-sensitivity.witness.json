@@ -1,0 +1,120 @@
+{
+  "computation": "qbeta-c3-ladder-trace-convention-sensitivity",
+  "description": "Validity audit of the c_3 refutation chain against the 2026-08-09 C->D Markov-trace convention flip. The Q_beta N=1 rung consumes z through alpha=(z-1)h/2 (qbeta_utils.py:124-125); the Q_beta channel is NOT registered in trace-convention-registry.json. Measured: the C-frame extraction reproduces the committed c_3 values; re-extracting with z_D shifts c_3 by ~972 (to ~ -974), so every ~ -2 value-level near-match ((H1) -Vol(4_1), [3]_q/25, J-hbar^2, S_leak, q*_S) is conditional on convention C; the anchor swing is convention-immune (ratio 1.005), so the REFUTED-as-real-q verdict SURVIVES; bar(z_D) = q^-4 z_D exactly, so KC13's bar-even z is convention-C-scoped; the implied c_2 under D is ~ -9.3 and the rung convergence disappears, so c_2 = -1 (Taylor-exact) is likewise a C-frame statement and the C->D excision does not mechanically transfer to the Q_beta channel. Scope-(a): adjudicates no convention; wires nothing.",
+  "audit_only": true,
+  "tier": "convention-provenance audit (exact symbolic + 60-dps measurement; no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T22:16:49.685442+00:00",
+  "commitSha": "08b6ff7e7de3e8c2db5246d3647b42e1ea71b855",
+  "engine": "mpmath+sympy",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_c3_ladder_trace_convention_sensitivity_probe.py",
+  "scriptHash": "1f28c719f07a",
+  "assertions": [
+    {
+      "name": "C_frame_regression_matches_committed_corpus_values",
+      "passed": true,
+      "detail": "probe's C ladder == qbeta_utils.c3_target_at == registry values"
+    },
+    {
+      "name": "zC_bar_even_exact",
+      "passed": true
+    },
+    {
+      "name": "zD_bar_twist_is_q_minus_4_exact_and_not_invariant",
+      "passed": true,
+      "detail": "bar(z_D) = q^-4 z_D exactly; KC13's bar-even z is z_C only"
+    },
+    {
+      "name": "conventions_coincide_at_q1_shadow_immune",
+      "passed": true
+    },
+    {
+      "name": "D_reextraction_shifts_c3_by_more_than_100",
+      "passed": true,
+      "detail": "shift ~ -972.363 \u2014 all ~ -2 near-matches are C-conditional"
+    },
+    {
+      "name": "h1_volume_proximity_does_not_survive_D_reextraction",
+      "passed": true,
+      "detail": "|c_3_D + Vol(4_1)| ~ 972 vs C-frame 0.0097-0.0395"
+    },
+    {
+      "name": "anchor_swing_mechanism_convention_immune",
+      "passed": true,
+      "detail": "swing_D/swing_C = 1.0052221 \u2014 the REFUTED-as-real-q pillar (cross-anchor rigidity / 1/u^3) stands under BOTH conventions"
+    },
+    {
+      "name": "implied_c2_is_minus1_in_C_frame_only",
+      "passed": true,
+      "detail": "c_2 = -1 (proved) is a C-frame ladder statement; D implies ~ -9.3"
+    },
+    {
+      "name": "ladder_rung_convergence_C_frame_only",
+      "passed": true,
+      "detail": "N2 improves N1 58x under C, 1.12x under D \u2014 the ladder is C-built"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "z_at_q0": {
+      "C": "0.49932033418369445241",
+      "D": "0.6126880371464652516"
+    },
+    "c3": {
+      "C_proton": "-2.069342577115168",
+      "C_muon": "-2.020200235021255",
+      "D_proton": "-974.4318877467484",
+      "D_muon": "-974.3824887778012"
+    },
+    "n1_residual": {
+      "C": "-7.3821773e-5",
+      "D": "-0.00067457005"
+    },
+    "n2_residual": {
+      "C": "-1.2785809e-6",
+      "D": "-0.00060207045"
+    },
+    "c2_implied": {
+      "C": "-1.017623798",
+      "D": "-9.298862871"
+    },
+    "swing": {
+      "C": "0.0491423420939",
+      "D": "0.0493989689472",
+      "ratio_D_over_C": "1.00522211279"
+    },
+    "extraction_shift_D_minus_C": {
+      "proton": "-972.36254517",
+      "muon": "-972.362288543"
+    },
+    "h1_distance_under_D": {
+      "proton": "972.402004534",
+      "muon": "972.352605565"
+    },
+    "vol_4_1": "2.029883212819307",
+    "bar_parity_exact": {
+      "zC_bar_minus_zC": "0",
+      "zD_bar_minus_qminus4_zD": "0",
+      "zD_bar_minus_zD_simplified": "-q + 1/q"
+    }
+  },
+  "context": {
+    "axis": "c_3 refutation-chain validity vs post-probe convention changes",
+    "convention_sites": [
+      "computations/qbeta/qbeta_utils.py:124-125 (z_C in alpha; the extractor)",
+      "computations/qbeta/qbeta_ck_sseries_exact_rational.py:20,248 (z_C in the KC21/KC22 D-ladder core)",
+      "content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean:59-79 (KC13 bar-even z is z_C = s/(1+s^2), s = sqrt(q))",
+      "docs/coordination/trace-convention-registry.json (channels: mass, binding, borromean only \u2014 Q_beta channel MISSING)"
+    ],
+    "convention_immune_pillars": [
+      "cross-anchor swing / dc_3/dq ~ 4.6e6 / capstone 1/u^3 (measured: swing ratio D/C = 1.005)",
+      "P4 entropy bound (sigma(c_3) = sigma(Q_beta)/(Q_N2 u^3); Q_N2 moves 6e-4 relative under D)",
+      "q->1 shadows (z_C(1) = z_D(1) = 1/2, exact)",
+      "KC20 zeta_4/cubic certificate (Delta_net numerator is z-free: even powers of q only)"
+    ],
+    "scope": "Scope-(a). No convention is adjudicated for the Q_beta channel; C's excision from mass/binding (owner 2026-08-09) is untouched; whether the two-row forcing transfers to the decay channel is an OPEN item (new bean). No c_k wired; no tier change."
+  },
+  "durationMs": 290
+}

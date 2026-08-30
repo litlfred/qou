@@ -358,7 +358,7 @@ after division by a gluing series determined by an element of the **Bloch
 group** B(K). Applied to the Q_β element F(q):
 
 1. **The field is forced, not chosen.** The framework's CAL-2 anchor is
-   Vol(4₁) = 2Λ(π/3); the 4₁ trace field is ℚ(√−3) and its Bloch-group
+   Vol(4₁) = 2·Cl₂(π/3); the 4₁ trace field is ℚ(√−3) and its Bloch-group
    element is the class of the 4₁ shape parameter [ζ₆] ∈ B(ℚ(√−3)). If F
    lives in the GSWZ module for ℚ(√−3), its expansions at *all* roots of
    unity are determined by (i) the single q=1 series — i.e. the c_k data —

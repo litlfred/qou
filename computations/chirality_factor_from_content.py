@@ -30,7 +30,8 @@ import mpmath as mp  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # atom knots; empirical first-order chirality coefficient (coeff of h in a_K)
 ISO = [("D", 1, 1, 1), ("3H", 1, 2, 0), ("3He", 2, 1, 0), ("4He", 2, 2, 0)]
@@ -43,7 +44,28 @@ def content_sum(lam) -> int:
 
 def writhe(word) -> int:
     """Net writhe of the braid word: σ (d≈0) → +1, σ⁻¹ (d≈−h) → −1,
-    averaged/color-pn (d≈−h/2-ish) → 0 (sign-balanced)."""
+    averaged/color-pn (d≈−h/2-ish) → 0 (sign-balanced).
+
+    LEVEL OF DEFINITION (framing note; no number here changes). The writhe is a
+    property of the BRAID WORD, not of its closure: Markov-I (conjugation)
+    invariant, but Markov-II stabilisation β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1} shifts
+    it by ±1 while presenting the same link. The four rows of `ISO` sit at
+    n = 3(Z+N) strands (`atom-knot.md`), and not at a common one:
+
+        D  n = 6      ³H  n = 9      ³He n = 9      ⁴He n = 12
+
+    n(K) is the braid index — the lowest level of the substrate tower. Under the
+    owner ruling (states are Gröbner–Shirshov normal forms; the observable is the
+    trace at the lowest level) these canonical words ARE the states, so comparing
+    w across isotopes compares distinct states rather than two presentations of
+    one state: the table below stands as written. What w is not is a property of
+    the closure.
+
+    This note is bookkeeping only and explains nothing about the result. The four
+    ✗ rows are a genuine ribbon-vs-empirical mismatch measured at the levels the
+    framework itself assigns; the level accounting neither causes them nor
+    softens them. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
+    """
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     w = 0
     for _c, d, _g in word:
@@ -57,7 +79,7 @@ def writhe(word) -> int:
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q0 = mp.mpf(str(Q0)); h = q0 - 1 / q0
     print("\n  CHIRALITY FACTOR FROM THE RIBBON EIGENVALUE  a_K = 1 + w·h·⟨κ⟩")
     print(f"  q₀={float(q0):.6f}  h={float(h):.6f}\n")
@@ -82,7 +104,7 @@ def main() -> int:
               f"| {coeff:.4f} | {emp} | {match} |")
     print("\n  Reading: the ribbon first-order coeff is w·⟨κ⟩. Empirically the "
           "pn-crossing rule gives coeff +1 (D, one +crossing) and 0 (T/³He/⁴He, "
-          "writhe-balanced). A ✓ means the Lean-proved ribbon eigenvalue "
+          "writhe-balanced). A ✓ means the AXIOMATIZED full-twist eigenvalue "
           "reproduces the empirical chirality; ✗ quantifies the open gap "
           "(full-braid writhe + ⟨κ⟩ vs the pn-only empirical rule).")
     return 0

@@ -4,7 +4,7 @@ QUANTUM SADDLE of Hikami's 4₁ state integral at the substrate b-map, and the
 derived effective meridian m_eff(q₀) run through the falsification kit.
 EXPLORATORY MEASUREMENT — the candidate is DERIVED (no fit); the kit decides.
 
-Source (uploads/0604094v1.pdf, Hikami math/0604094 §4.1 — the same paper the
+Source (library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094 §4.1 — the same paper the
 Φ_b evaluator was validated against):
   Z_γ(M_u) = (1/4πγ) ∫ dx Φ_γ(x+iπ+iγ)/Φ_γ(−x−2u−iπ−iγ) · e^{−4u(u+x)/(2iγ)}
 with meridian m = e^u; γ→0 saddle = gluing eq x/(m²(1−x)(1−m²x)) = 1 (4.5);

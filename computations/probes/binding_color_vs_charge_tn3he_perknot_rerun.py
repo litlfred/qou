@@ -21,7 +21,7 @@ The bond energies B0 themselves were ALREADY per-block Hecke traces at H_6
 
 the density base cancels ALGEBRAICALLY in the ratio: the color weight is
 (1 + δ·asym + δ²·sym) regardless of whether the base is the fitted global
-λ_A or the canonical per-knot tr_M(K) (`vol_density_per_block`).  This rerun
+λ_A or the canonical per-knot tr_M(K) (`per_knot_density_per_block`).  This rerun
 verifies that cancellation numerically: it computes the T−³He color split
 under (a) the pre-swap λ_A-normalized weights and (b) the per-knot /
 base-free weights (the form committed in 2af340cd), on identical per-block
@@ -58,9 +58,9 @@ from schur_weyl_symbolic import partitions_of  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     bring_color_weighted_linking_weight as bw,
     linking_weight_family_a,
-    flavor_split_subleading,
+    flavor_split_leading,
 )
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -91,7 +91,7 @@ def color_weight_perknot(Z: int, N: int) -> mp.mpf:
     """Base-free color weight (1 + δ·asym + δ²·sym) — the per-knot form
     committed in 2af340cd (any per-knot density base cancels identically,
     exactly as λ_A does)."""
-    delta = flavor_split_subleading(q0)
+    delta = flavor_split_leading(q0)
     A = Z + N
     asym = mp.mpf(N - Z) / (3 * A)
     sym = mp.mpf(2 * (2 * Z + N) * (Z + 2 * N)) / (9 * A * A)
@@ -116,7 +116,7 @@ def split_report(name: str, w: dict, B0: dict, need: mp.mpf) -> dict:
 
 
 def main() -> int:
-    delta = flavor_split_subleading(q0)
+    delta = flavor_split_leading(q0)
     lam_A = linking_weight_family_a(q0)
     print("=" * 88)
     print("  COLOR vs CHARGE (T−³He) — per-knot density re-run (bean x5az)")
@@ -187,7 +187,7 @@ def main() -> int:
     wb.data["verdict"] = verdict
     wb.data["refutation_scope"] = "scope-limited negative (a) per AGENTS.md"
     wb.add_assertion("density_base_cancels_splits_identical",
-                     computed=float(diff), expected=0.0, tolerance=1e-20)
+                     computed=diff, expected=0.0, tolerance=1e-20)
     wb.add_assertion("color_too_small_under_perknot_base",
                      computed=1 if too_small else 0, expected=1, tolerance=0)
     wb.save()

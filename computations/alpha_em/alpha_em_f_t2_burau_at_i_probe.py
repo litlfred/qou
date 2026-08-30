@@ -12,14 +12,14 @@ locus, the McMullen route would not reproduce the framework's Jordan-block
 module and the F-construction would be dead. It is not: the specializations
 line up exactly.
 
-LITERATURE (now in uploads/): McMullen, "Braid groups and Hodge theory"
-(uploads/mcmullen-braids-hodge-2013.pdf) — the braid-monodromy/Hodge
+LITERATURE (now in library/): McMullen, "Braid groups and Hodge theory"
+(library/mcmullen-braids-hodge-2013/mcmullen-braids-hodge-2013.pdf) — the braid-monodromy/Hodge
 dictionary for cyclic branched covers; Squier
-(uploads/squier-burau-unitary-1984.pdf) — the hermitian form on Burau at
-|q| = 1; Gambaudo-Ghys (uploads/gambaudo-ghys-braids-signatures-2005.pdf)
+(library/squier-burau-unitary-1984/squier-burau-unitary-1984.pdf) — the hermitian form on Burau at
+|q| = 1; Gambaudo-Ghys (library/gambaudo-ghys-braids-signatures-2005/gambaudo-ghys-braids-signatures-2005.pdf)
 — signatures of Burau at roots of unity, whose JUMP LOCUS is exactly the
 degenerate specialization found here; Deligne-Mostow
-(uploads/deligne-mostow-1986.pdf) — the eigenspace local systems.
+(library/deligne-mostow-1986/deligne-mostow-1986.pdf) — the eigenspace local systems.
 
 VERIFICATION (V1-V4, sympy-exact):
   V1. PARAMETER DICTIONARY: the unreduced Burau sigma_B(q_B) of B_2 has
@@ -177,15 +177,24 @@ def main():
         },
         "context": {
             "bean": "qou-yuff (T2) of milestone qou-a46k; T1 merged #4039",
-            "literature": "uploads/mcmullen-braids-hodge-2013.pdf; uploads/squier-burau-unitary-"
-                          "1984.pdf; uploads/gambaudo-ghys-braids-signatures-2005.pdf; "
-                          "uploads/deligne-mostow-1986.pdf",
+            "literature": "library/mcmullen-braids-hodge-2013/mcmullen-braids-hodge-2013.pdf; library/squier-burau-unitary-"
+                          "1984.pdf; library/gambaudo-ghys-braids-signatures-2005/gambaudo-ghys-braids-signatures-2005.pdf; "
+                          "library/deligne-mostow-1986/deligne-mostow-1986.pdf",
             "scope_guard": "local model only (disk around the two branch points); global "
                            "monodromy = T3/T5; no fit; nothing wired; 1/(8pi) stays phase-4",
         },
     }
     out = os.path.join(_here, "alpha-em-f-t2-burau-at-i.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0 if all_passed else 1

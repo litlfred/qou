@@ -1,4 +1,5 @@
 import QOU.BraidKnot.AJFigureEight
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.AJTrefoil
@@ -54,6 +55,14 @@ variable {K : Type*} [Field K]
 
 /-- Quantum integer `[k]_v = (v^k − v^{−k})/(v − v⁻¹)`. -/
 def qInt (v : K) (k : ℕ) : K := (v ^ k - (v ^ k)⁻¹) / (v - v⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.** The alias was refused —
+a proof below needs this literal body — so the consolidation is this
+equation: same function, one canonical meaning, no proof touched. -/
+theorem qInt_eq_canonical (v : K) (k : ℕ) :
+    qInt v k = QOU.QInteger.qIntBal v k := by
+  simp [qInt, QOU.QInteger.qIntBal, QOU.QInteger.qIntBalCl,
+    QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow, zpow_neg, zpow_natCast]
 
 /-- Twist eigenvalue of the braiding on the `V_{2j}` summand of
     `V_n ⊗ V_n`, at `w = q^{1/4}`:

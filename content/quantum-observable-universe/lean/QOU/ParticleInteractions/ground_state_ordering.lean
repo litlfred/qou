@@ -41,7 +41,21 @@ class GroundStateOrderingContext (R : Type*) [Ring R] where
       `0` = neutron. -/
   ordering : ℕ → ℕ
 
-/-- **Proposition statement** (from manuscript):
+/-- **REFUTED — retained only as the historical statement** (bean `qou-48is`,
+    2026-08-09).  The two ordering conjuncts below are **false**: an
+    exhaustive `Φ_q` sweep over every `C(A,Z)` arrangement for `A ≤ 16` at
+    the experimental (proton) anchor shows the interleaved + tail-packed
+    arrangement is not the minimiser for `A ≥ 4` (it is the strict
+    *maximiser* at `A = 5, Z = 1`), and the `A ≤ 3` conjunct fails as stated
+    at `A = 2`.  The counterexample is proved sorry-free, for an interval of
+    `q` containing the anchor, in
+    `QOU.MassTheory.GroundStateOrderingRefutation.prescribed_not_minimiser_A5`;
+    the third conjunct (`λ₊ · λ₋ = -1`) survives and is proved there as
+    `transferEigen_vieta`.  This `def` names the historical claim and is not
+    asserted; **do not** attempt to discharge it.  See
+    `docs/audits/2026-08-09-ground-state-ordering-truth-value.md`.
+
+    **Original proposition statement** (from manuscript):
 
 The nuclear ground state ordering for a nucleus with $Z$ protons
 and $N$ neutrons ($A = Z + N$) is determined by:*

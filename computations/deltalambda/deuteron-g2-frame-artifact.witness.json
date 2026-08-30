@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T20:55:56.837877+00:00",
-  "commitSha": "2f675c595336f3fdadab7d19b2f51e7fff6992c6",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:02:01.760269+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "BD_predicted_within_0p04pct",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-g2-frame-artifact",
   "scriptFile": "deuteron_g2_frame_artifact_probe.py",
-  "scriptHash": "d3c1d9624fc3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "70c4750d0645",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_g2_frame_artifact_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_g2_frame_artifact_probe.py"
   },
   "description": "Answers the owner's 'is g₂ fitted to AME / larger context?' question. g₂ is NOT a tuned parameter, but r = g₂−1 is a FRAME ARTIFACT: across equally-valid O(t²) conventions for removing the same bar-odd tier, r swings over [−3.4%, +7.4%] — a spread ≈12× the signal |r|≈0.87%, so r is ~90% convention, not physics. Structurally, Ω_{k≥2}=0 exactly for the deuteron σ₁³ (single generator), so the bar-even h² correction is a character/frame projection, NOT a dynamical Magnus term — g₂=1 is near-definitional and r is the frame residual. The REAL robust result is the tier convergence: B(deuteron) predicted to 0.036% (360 ppm) from q₀ via three derived tiers (rotational, bar-odd t, bar-even h² unit). Larger context: the well-defined open problem is B(deuteron) below ~0.04% (the Δ_λ closure), NOT the frame-dependent r. scope-(a), audit-only, nothing wired; no fit, no AME inversion.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

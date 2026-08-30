@@ -4,7 +4,7 @@ The Skein amplitude $s \approx 0.104$ is numerically
 indistinguishable from the EM/strong ratio
 $\tanh(\ln q) \approx 0.104$
 ([crossing energy decomposition](#prop:crossing-energy-decomposition)).
-This is not a coincidence: both measure the **antisymmetric
+The agreement is structural: both measure the **antisymmetric
 channel** of the $R$-matrix braiding.  Each crossing change
 couples the degree-$2$ fiber to the degree-$1$ fiber through
 the antisymmetric (electromagnetic) channel.  The double beta
@@ -70,7 +70,7 @@ The double beta decay of a strangelet interaction produces:
 
 The $2.3$ MeV endpoint and the $s^4 \approx 10^{-4}$
 suppression place this in the regime of **rare, low-energy
-electron pair events** — detectable in underground
+electron pair events**, detectable in underground
 experiments designed for double beta decay searches
 (GERDA, MAJORANA, nEXO, LEGEND).  The distinctive prediction:
 the electron pair spectrum has a **parity-symmetric angular

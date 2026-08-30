@@ -1,7 +1,7 @@
 The categorical [braid-group action](#prop:braid-action-tensor) possesses a direct hydrodynamic interpretation on the brane fluid.
 
 **Arnold's geodesic framework.**
-Arnold demonstrated that the Euler equation on $(M, g)$ behaves exactly as the geodesic equation over $\mathrm{SDiff}(M)$ acting under the $L^2$ metric: $\nabla_{\dot\phi}\dot\phi = 0$. The velocity vector $v = \dot\phi \circ \phi^{-1}$ reliably solves $\partial_t v + \nabla_v v = -\nabla p$.
+Arnold demonstrated that the Euler equation on $(M, g)$ behaves exactly as the geodesic equation over $\mathrm{SDiff}(M)$ acting under the $L^2$ metric: $\nabla_{\dot\phi}\dot\phi = 0$. The velocity vector $v = \dot\phi \circ \phi^{-1}$ solves $\partial_t v + \nabla_v v = -\nabla p$.
 
 **$q$-deformed diffeomorphisms.**
 The [state bundle](#ex:c-quantum-observable-universe) promotes the classical $\mathrm{SDiff}(M)$ group to $\mathrm{SDiff}_q(\mathcal{S})$. This imposes two structural shifts:
@@ -27,4 +27,4 @@ $$
 relies entirely on the substrate parameter. This ratio establishes the fluid-dynamical source mechanism for the [skein crossing asymmetry](#rem:skein-crossing-asymmetry).
 
 **Helicity as Markov trace.**
-The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ operates as the **topological helicity** governing the vortex tangle. This categorical metric comprehensively refines classical helicity $H = \int v \cdot \omega \, dV$, successfully distinguishing topological states utterly invisible to $H$ (separating the trefoil from the unknot).
+The [Jones polynomial](#thm:jones-markov-trace) $J_L(q)$ operates as the **topological helicity** governing the vortex tangle. This categorical metric refines classical helicity $H = \int v \cdot \omega \, dV$, distinguishing topological states invisible to $H$ (separating the trefoil from the unknot).

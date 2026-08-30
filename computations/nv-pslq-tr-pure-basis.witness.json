@@ -1,18 +1,20 @@
 {
-  "computedAt": "2026-05-05T22:49:09.677700+00:00",
-  "computation": "nv-pslq-tr-pure-basis",
-  "description": "Re-run of constrained PSLQ for N_v using bar-self-dual cell-content trace tr_pure(σ_1^4 σ_3^6 σ_5^8) as the structural input, replacing the demoted Plancherel-weighted N_sym from the prior basis. Tests three ansatz shapes B1/B2/B3 against CODATA-G_F precision.",
+  "scriptFile": "nv_pslq_tr_pure_basis.py",
+  "engine": "python",
   "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
+  "computation": "nv-pslq-tr-pure-basis",
+  "computedAt": "2026-08-29T00:58:05.120666+00:00",
+  "description": "Re-run of constrained PSLQ for N_v using bar-self-dual cell-content trace tr_pure(σ_1^4 σ_3^6 σ_5^8) as the structural input, replacing the demoted Plancherel-weighted N_sym from the prior basis. Tests three ansatz shapes B1/B2/B3 against CODATA-G_F precision.",
   "reference_blocks": [
     "conj:hoefsmit-ew-cell-content",
     "conj:weak-spectral-completeness",
     "prop:weak-symmetric-normalization"
   ],
   "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md",
-  "ratio_target": "481839.8163817402432227908",
-  "N_v_target": "1445519.449145220729668372",
-  "q_0": "1.1099785955541805169583001889887986763787613849839",
-  "tr_pure_q0": "41.69490029979508210491531",
+  "ratio_target": "481839.815731113714822941",
+  "N_v_target": "1445519.447193341144468823",
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "tr_pure_q0": "41.69489429928368337353802",
   "tolerance_codata": "5e-7",
   "ansatz_B1_pureProduct_tr_pure": {
     "form": "INT · ([4][6][8]/[2]) · tr_pure^a",
@@ -33,7 +35,10 @@
   },
   "verdict": "no-conclusive-closed-form",
   "conclusion": "Bar-self-duality of tr_pure imposes a strong structural constraint. The bar-symmetric ansatz B3 yields a smaller basis (lower FDR) than the prior monomial search. Any hit found is suggestive but still requires categorical authoring of the F-shape, not just numerical confirmation.",
-  "engine": "python",
-  "scriptFile": "nv_pslq_tr_pure_basis.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "scriptHash": "2aa563d2b35e",
+  "scriptCommitSha": "12c69f9586b5c98344a3417304de0b16be5636c9",
+  "commitSha": "07cc5ee67781228dcc45440e2926f3be75666cf0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

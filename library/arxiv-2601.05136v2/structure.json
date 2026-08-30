@@ -1,0 +1,316 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2601.05136v2",
+ "source": {
+  "file": "2601.05136v2.pdf",
+  "sha256": "cee15456257d3028d54a86f851f3bc714779023b88b5d98c57206a784e73ede3",
+  "bytes": 649597,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2601.05136",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "15 May 2026"
+  },
+  "doi": null,
+  "title": "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
+  "authors_raw": null,
+  "abstract": "Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K,ρ,µ ) of a knotK, a representationρ: π1(S3\\K)→ SL2(C), andalogarithm µofameridianeigenvalueof ρ. Itcanbeinterpretedasa geometrictwistoftheKashaevinvariantorasaquantizationofthe SL2(C) Chern-Simonsinvariantandisdeﬁnedviaadiscretestate-suminvolving quantumdilogarithms. Inthispaperweshowhowtoexpress Zψ N(K,ρ,µ ) asasumovercontourintegralsinaspaceparametrizinghyperbolicstruc- tures on the knot complement. Such state integral presentations are an importantstepindeterminingtheasymptoticsofquantuminvariantsas predictedbytheVolumeConjecture. Wediscussthisperspectiveandthe remainingobstaclestoestablishingexponentialgrowthof Zψ N.",
+  "docinfo": {
+   "Author": "Calvin McPhail-Snyder",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "State integrals for the quantized SL_2(ℂ) Chern-Simons invariant"
+  },
+  "title_lines": [
+   "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant",
+   "CalvinMcPhail-Snyder",
+   "DepartmentofMathematics,DukeUniversity",
+   "calvin@sl2.site"
+  ],
+  "title_prev": "Stateintegralsforthequantized SL2(C)Chern-Simonsinvariant CalvinMcPhail-Snyder DepartmentofMathematics,DukeUniversity calvin@sl2.site"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Background and motivation",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Our results",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cyclic and principal type invariants",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Diagrams and colorings",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Gauge transformations and nondegeneracy",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Segment equations",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "State integrals for the quantized Chern-Simons invariant",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum dilogarithms",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The action and state sums",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "State integrals",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Formal asymptotics",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Classical dilogarithms",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The classical action",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Barriers to moving the contour",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1057,
+   "n_words": 102
+  },
+  {
+   "id": "sec-001-background-and-motivation",
+   "number": null,
+   "title": "Background and motivation",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4431,
+   "n_words": 274
+  },
+  {
+   "id": "sec-002-our-results",
+   "number": null,
+   "title": "Our results",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4298,
+   "n_words": 447
+  },
+  {
+   "id": "sec-003-cyclic-and-principal-type-invariants",
+   "number": null,
+   "title": "Cyclic and principal type invariants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2379,
+   "n_words": 116
+  },
+  {
+   "id": "sec-004-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 606,
+   "n_words": 41
+  },
+  {
+   "id": "sec-005-diagrams-and-colorings",
+   "number": null,
+   "title": "Diagrams and colorings",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3177,
+   "n_words": 280
+  },
+  {
+   "id": "sec-006-gauge-transformations-and-nondegeneracy",
+   "number": null,
+   "title": "Gauge transformations and nondegeneracy",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4507,
+   "n_words": 360
+  },
+  {
+   "id": "sec-007-segment-equations",
+   "number": null,
+   "title": "Segment equations",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2128,
+   "n_words": 133
+  },
+  {
+   "id": "sec-008-quantum-dilogarithms",
+   "number": null,
+   "title": "Quantum dilogarithms",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 716,
+   "n_words": 97
+  },
+  {
+   "id": "sec-009-the-action-and-state-sums",
+   "number": null,
+   "title": "The action and state sums",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4061,
+   "n_words": 458
+  },
+  {
+   "id": "sec-010-state-integrals",
+   "number": null,
+   "title": "State integrals",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1494,
+   "n_words": 200
+  },
+  {
+   "id": "sec-011-classical-dilogarithms",
+   "number": null,
+   "title": "Classical dilogarithms",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 698,
+   "n_words": 98
+  },
+  {
+   "id": "sec-012-asymptotics",
+   "number": null,
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 281,
+   "n_words": 31
+  },
+  {
+   "id": "sec-013-the-classical-action",
+   "number": null,
+   "title": "The classical action",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 6838,
+   "n_words": 548
+  },
+  {
+   "id": "sec-014-barriers-to-moving-the-contour",
+   "number": null,
+   "title": "Barriers to moving the contour",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 9402,
+   "n_words": 828
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 15,
+  "chars_total": 46073
+ }
+}

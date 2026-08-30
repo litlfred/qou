@@ -34,6 +34,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def young_contents(partition):
@@ -46,7 +48,7 @@ def young_contents(partition):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
 
     repo_root = Path(__file__).resolve().parent.parent
     chi_path = (
@@ -231,6 +233,15 @@ def main() -> int:
     )
     with out_path.open("w") as f:
         witness["lean_uniqueness_ref"] = lean_uniqueness_ref("deuteron (²H)")
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
 
     print(f"Wrote {out_path}")

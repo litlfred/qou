@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0401084v3",
+ "source_sha256": "f56bbd4cee4f3418",
+ "brief": "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine",
+ "extended": "**Some limits of the colored Jones polynomials of the figure-eight knot**\n\n*FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES*\n\n17 pp, 6 sections.\n\n**Abstract.** W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtain ed by Dehn surgeries along it.\n\n**Outline.** 1 Introduction; 2 Main result; 3 Limits of the colored Jones polynomials; 4 Proof of the main theorem; Appendix. Optimistic limit; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Let E be the ﬁgure-eight knot and r a irrational number satisfying\n- Theorem 2.1: Put λ(γ) := length( γ) + √−1 torsion(γ). Then we\n- Theorem 2.2: Let E be the ﬁgure-eight knot. There exists a neighborhood U of 0\n- Theorem 3.4: Let Γ : [ a, b] → C be a C1 curve. Let\n- Theorem 3.8: Let E be the ﬁgure-eight knot. There exists a neighborhood U of 0\n- Corollary 2.4: Let Eu be the three-manifold obtained from the ﬁgure-eight knot by",
+ "tokens": {
+  "brief": 49,
+  "extended": 260
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-main-result",
+   "title": "Main result",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-3-limits-of-the-colored-jones-polynomials",
+   "title": "Limits of the colored Jones polynomials",
+   "pages": "4-14"
+  },
+  {
+   "id": "sec-003-4-proof-of-the-main-theorem",
+   "title": "Proof of the main theorem",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-004-appendix-optimistic-limit",
+   "title": "Appendix. Optimistic limit",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "16-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

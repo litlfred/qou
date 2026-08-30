@@ -52,8 +52,10 @@ from fractions import Fraction
 from pathlib import Path
 
 from mpmath import mp, mpf, log, sqrt
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # --- q_0: experimental (proton) pin, per AGENTS 2026-08-07 owner directive ---
 Q0_PROTON_STR = "1.1099785827513808"
@@ -165,8 +167,15 @@ def check_jones_vector(q) -> dict:
 
 
 def check_convention_c(q) -> dict:
-    """`z_C = 1/(q^(1/2)+q^(-1/2))` reproduces the corpus's C weights."""
-    z_c = 1 / (sqrt(q) + 1 / sqrt(q))
+    """`z_C = 1/(q^(1/2)+q^(-1/2))` reproduces the corpus's C weights.
+
+    Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15).
+    This check is an audit *of* C, not a use of it: it confirms that the C
+    weights the corpus once quoted are the ones z_C actually produces, which is
+    what makes the C-era numbers identifiable wherever they survive. Deleting it
+    would remove the ability to recognise them.
+    """
+    z_c = 1 / (sqrt(q) + 1 / sqrt(q))   # EXCISED — audited here, not used
     y = markov_weights(q, z_c)
     # The C vector as quoted in bean qou-n1dj / h3-markov-wenzl-weights-context.
     quoted = (mpf("0.415396"), mpf("0.280930"), mpf("0.022745"))
@@ -294,7 +303,24 @@ def main() -> int:
         ),
     }
 
-    path = Path("computations/ocneanu-param-from-fibre-dimension.witness.json")
+    # Anchored to THIS FILE, not to the caller's cwd. The literal
+    # `Path("computations/…")` only resolves when the producer happens to be
+    # invoked from the repo root; the regeneration harness runs every producer
+    # from its own directory, so this became
+    # `computations/computations/ocneanu-…` and died with FileNotFoundError.
+    # That reads in the journal as a producer failure and the witness is never
+    # migrated — the same cwd-assumption class as the `parents[2]` bug fixed in
+    # 12 scripts on this branch.
+    path = Path(__file__).resolve().parent / "ocneanu-param-from-fibre-dimension.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=False)
     path.write_text(json.dumps(out, indent=2) + "\n")
 
     for c in checks:

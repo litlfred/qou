@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1301.4504v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
+  "file": "1301.4504v4.pdf"
+ },
+ "provenance": {
+  "title": "Prepared for submission to JHEP DEDICATED TO JOHN PRESKILL ON THE OCCASION OF HIS 60 TH BIRTHDAY Quantum Computation vs. Firewalls Daniel Harlowa Patrick Haydenb aPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA",
+  "authors": null,
+  "arxiv": {
+   "id": "1301.4504",
+   "version": "4",
+   "primary_class": "hep-th",
+   "stamp_date": "6 Apr 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "conjecture": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": ", Phys.Rev. D55 (1997) 5112\u20135128, [ hep-th/9610043].",
+   "section_file": "sections/sec-021-a-the-absorption-probability-for-a-nambu-goto-st.md",
+   "section_title": "A The Absorption Probability for a Nambu-Goto String",
+   "pages": "59-66",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

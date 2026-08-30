@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T17:58:41.888319+00:00",
-  "commitSha": "00e8a66b22a0b6abe4d5fc2dfe28c687b68de4c3",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T15:08:46.389594+00:00",
+  "commitSha": "a1019fbc334e971d44b685eba0ce16487a7237d4",
   "assertions": [
     {
       "name": "coordination_multiplier_is_equal_weight_limit_exact_alpha_coincidence_nucleon",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "nucleon bond energies have a derived 1.78× spread ⇒ equal-weight (coordination counting) fails there; it is exact only for identical α–α bonds. The mirror split ε_nn−ε_pp=0.542 that equal-weight drops is the isospin carrier Vol, giving w_n=M·Vol."
+      "source": "nucleon bond energies have a derived 1.85× spread ⇒ equal-weight (coordination counting) fails there; it is exact only for identical α–α bonds. The mirror split ε_nn−ε_pp=0.417 that equal-weight drops is the isospin carrier Vol, giving w_n=M·Vol."
     }
   ],
   "allPassed": true,
   "durationMs": 6,
   "computation": "bond-extensivity-equal-weight",
   "scriptFile": "bond_extensivity_equal_weight.py",
-  "scriptHash": "d06aca383524",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "971b33c85bef",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,27 +27,39 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bond_extensivity_equal_weight.py"
+    ],
+    "reproduce": "python3 -u computations/bond_extensivity_equal_weight.py"
   },
   "description": "The coordination-number binding multiplier is the EQUAL-WEIGHT limit of the derived log-trace bond-extensivity B=E₀·Σ log(1/f_bond) (#2089). Equal-weight is exact for identical α–α bonds (α-cluster contact counting derived) but fails at the nucleon level (derived ε_pp:ε_pn:ε_nn spread 1.78×); the nucleon z=A−1 is a composition coincidence. The split ε_nn−ε_pp equal-weight drops is the isospin carrier Vol, so w_n=M·Vol = (equal-weight coordination)·(isospin bond asymmetry). Answers 'why multiplier=coordination'; not a closure. Scope-(a).",
   "data": {
     "q0": 1.1099785827513808,
     "f_bond": {
-      "pp": 0.4993203341836944,
-      "pn": 0.3947901847858748,
-      "nn": 0.2902600353880551
+      "pp": 0.6126880371464652,
+      "pn": 0.5081578877486456,
+      "nn": 0.40362773835082594
     },
     "eps_bond": {
-      "pp": 0.6945074369219043,
-      "pn": 0.9294008329631762,
-      "nn": 1.2369780840214575
+      "pp": 0.48989938425513485,
+      "pn": 0.6769630770379808,
+      "nn": 0.9072622655332129
     },
-    "nucleon_spread": 1.7810868800826862,
+    "nucleon_spread": 1.8519359172346286,
     "A3_mirror": {
-      "B_3H": 3.09577974994781,
-      "B_3He": 2.5533091028482566,
-      "equal_weight": 2.860886353906538,
-      "mirror_split_eps_nn_minus_pp": 0.5424706470995533
+      "B_3H": 2.2611884196091743,
+      "B_3He": 1.8438255383310964,
+      "equal_weight": 2.0741247268263283,
+      "mirror_split_eps_nn_minus_pp": 0.417362881278078
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -238,7 +238,7 @@ def main():
         }
         print(f"  [{pin:6s}] q̃ = {mp.nstr(qt, 25)}")
         print(f"           t5(iy) = {mp.nstr(mp.re(t5_direct), 35)}   (rel dev vs cusp form: {mp.nstr(rel, 4)})")
-    mp.dps = 50
+    set_compute_dps()
 
     # ══════════════════════════════════════════════════════════════════════
     # TASK 2 — bar ↔ Fricke candidate class (structure-enumerated, no tuning)
@@ -475,8 +475,8 @@ def main():
     })
     wb.add_data("task3_spin_data", {
         "source_papers": {
-            "BN12": "uploads/sigma12-065.pdf (Braden-Northover, SIGMA 8 (2012) 065)",
-            "BDH22": "uploads/2208.13692v1.pdf (Braden-Disney-Hogg)",
+            "BN12": "library/sigma12-065/sigma12-065.pdf (Braden-Northover, SIGMA 8 (2012) 065)",
+            "BDH22": "library/arxiv-2208.13692v1/2208.13692v1.pdf (Braden-Disney-Hogg)",
         },
         "K_Q": "(1/10)(3,2,-2,-3) + Im(tau0)*(1,-2,-2,1)*i (BN12 Thm 3 = BDH22 "
                "Prop 5.13, verbatim cross-paper agreement; RR92 homology basis)",
@@ -524,7 +524,7 @@ def main():
     )
     wb.add_assertion(
         "cusp_form_matches_eta_product_both_pins",
-        computed=float(max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results)),
+        computed=max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results),
         expected=0.0,
         tolerance=1e-60,
         source="t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at "
@@ -533,14 +533,14 @@ def main():
     )
     wb.add_assertion(
         "fricke_fixed_point_exact_value",
-        computed=float(fix_dev),
+        computed=fix_dev,
         expected=0.0,
         tolerance=1e-40,
         source="|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125).",
     )
     wb.add_assertion(
         "w5_circle_family_excluded",
-        computed=float(circle_dev),
+        computed=circle_dev,
         expected=0.0,
         tolerance=1e-40,
         source="||t5|^2 - 125| on the bar<->Fricke-equivariant circle family "

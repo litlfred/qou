@@ -84,7 +84,7 @@ def main():
 
     order = 8
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     from codata_constants import (  # registry (no inline CODATA literals)
         M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu,
         M_P_MEV_VALIDATION as m_p_codata, M_N_MEV_VALIDATION as m_n_codata,
@@ -103,7 +103,10 @@ def main():
         if ck != 0:
             print(f"    h^{k}: {ck}")
 
-    X_at_h0 = float(flavor_split_X(h).subs(h, float(h0)).evalf())
+    # NO FLOAT64 (bean qou-65qv): same double constriction as F_Bor below --
+    # float(h0) into the substitution, float(...evalf()) on the way out.
+    # Delta_pn and m_n_MeV are built from this and serialized at 14/18.
+    X_at_h0 = sp.N(flavor_split_X(h).subs(h, sp.Float(str(h0), 50)), 50)
     print(f"  X(h₀) = {X_at_h0:.15e}")
     print()
 
@@ -135,7 +138,11 @@ def main():
             print(f"    h^{k}: {ck}")
 
     # Evaluate Δ_pn numerically
-    m_p_pred = 2 * m_mu * mp.mpf(str(float(F_Bor(h).subs(h, float(h0)).evalf()))) - 12 * m_e
+    # NO FLOAT64 (bean qou-65qv): this constricted TWICE -- float(h0) put a
+    # double into the symbolic substitution, and float(...evalf()) collapsed
+    # the result again -- before m_p_MeV was serialized at 18 digits.
+    _F_bor_at_h0 = sp.N(F_Bor(h).subs(h, sp.Float(str(h0), 50)), 50)
+    m_p_pred = 2 * m_mu * mp.mpf(str(_F_bor_at_h0)) - 12 * m_e
     Delta_pred = m_p_pred * mp.mpf(str(X_at_h0)) / (1 - mp.mpf(str(X_at_h0)) / 2)
     m_n_pred = m_p_pred + Delta_pred
     Q_beta_pred = m_n_pred - m_p_pred - m_e
@@ -260,7 +267,7 @@ def main():
 
     w.add_assertion(
         name="m_n_residual_within_5ppm",
-        computed=float(abs((m_n_pred - m_n_codata)/m_n_codata * 1e6)),
+        computed=abs((m_n_pred - m_n_codata)/m_n_codata * 1e6),
         expected=0.0,
         tolerance=5.0,
         unit="ppm",

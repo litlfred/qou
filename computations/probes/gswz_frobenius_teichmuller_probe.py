@@ -6,7 +6,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 4).
 
 CONTEXT. The GSWZ gluing (arXiv:2412.04241v2 Def 1.1, uploaded at
-uploads/2412.04241v2.pdf) is Frobenius-twisted: f_m(x + zeta_pm -
+library/arxiv-2412.04241v2/2412.04241v2.pdf) is Frobenius-twisted: f_m(x + zeta_pm -
 zeta_m) = (phi_p f_pm)(x). Testing membership of a candidate
 Habiro-module element over a number field therefore REQUIRES the
 Frobenius endomorphism phi_p of R_p^wedge in executable form. GSWZ
@@ -40,6 +40,7 @@ corrections) is NOT implemented here and stays queued on bean qou-1hlh.
 """
 
 import json
+import pathlib
 import sys
 
 D = 6
@@ -171,13 +172,22 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_frobenius_teichmuller_probe",
     "beans": ["qou-1hlh"],
-    "source": "GSWZ arXiv:2412.04241v2 §4.4 eqns (263)-(267), (272); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §4.4 eqns (263)-(267), (272); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, precision 5^6",
     "checks": checks,
     "zeta24_coords_const_alpha_alpha2": [c0, c1, c2],
     "scope": "scope-(a): Frobenius/Teichmuller layer verified vs printed Example 4.3; p-adic dilog layer queued on qou-1hlh",
 }
-with open("computations/probes/gswz_frobenius_teichmuller.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_frobenius_teichmuller.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

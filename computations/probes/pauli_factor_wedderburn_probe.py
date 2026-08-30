@@ -63,9 +63,10 @@ from mpmath import mp, mpc, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
-from probe_staircase_ew_k3_categorical import (  # noqa: E402
+from hoefsmit_mpfr import (  # noqa: E402
     build_hoefsmit_mpfr,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _evaluate_word(shape, word_signed, q):
@@ -108,7 +109,7 @@ def main() -> int:
         "pauli-factor-wedderburn-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
     q = Q_MP
 
     BRAIDS = [
@@ -191,7 +192,7 @@ def main() -> int:
         .add_data("per_braid_results", results)
         .add_assertion(
             name="pauli_factor_equals_neg1_L_times_q_minus_2w",
-            computed=float(max_ratio_residue),
+            computed=max_ratio_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over 8 B_3 braids of "
@@ -205,7 +206,7 @@ def main() -> int:
         )
         .add_assertion(
             name="universal_1d_closed_form_cross_check",
-            computed=float(max_closed_form_residue),
+            computed=max_closed_form_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over 8 braids and 2 1d-irreps of |Hoefsmit "

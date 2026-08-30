@@ -10,7 +10,5 @@ export default proposition({
     script: "computations/qbeta/toroidal_harmonics.py",
     status: "verified"
   },
-  uses: [
-    "prop:interface-knot-markov-z"
-  ]
+  uses: []
 });

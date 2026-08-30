@@ -12,7 +12,7 @@ q₀ = 1.10997859555733471:
 
   (B) chi-cache convention — the dim-λ-NORMALISED per-block trace consumed by
       the per-knot density / binding path:
-          tr_M(K) = Σ_λ y_λ · χ^λ(β_K) / dim λ      (_li_2_q_util.vol_density_per_block)
+          tr_M(K) = Σ_λ y_λ · χ^λ(β_K) / dim λ      (_li_2_q_util.per_knot_density_per_block)
       ⇒ tr_M(p) ≈ 1.0653, tr_M(n) ≈ 0.9232  (excision ledger precision;
         docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md).
 
@@ -24,7 +24,7 @@ showed convention freedom is a hidden DOF spanning 0.41→5.62 on the ⁴He ceil
 PIN (this gate's ruling, compute-checked below):
   • (B) the dim-λ-normalised chi-cache tr_M(K) is CANONICAL for ρ(K)/binding —
     it is p≠n distinct (15.4% asymmetric), which is the binding signal, and is
-    the object `vol_density_per_block` already consumes.
+    the object `per_knot_density_per_block` already consumes.
   • (A) the F_Bor unnormalised+[3]_q!/q³ convention is reserved for the
     muon-anchored ABSOLUTE-mass facade (canonical_mass.py), where the framing
     normalisation is part of the dimensionless dressing factor.
@@ -59,7 +59,17 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 from m_p_substrate_identity_50dps import F_Bor  # noqa: E402
 
 COMP = str(_COMP)
-Q0 = "1.10997859555733471"
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0 = _Q0_RESOLVED
 
 # chi-cache per-knot traces (dim-λ-normalised) at ledger precision — the
 # scoping note reproduces every §1 value from first principles EXCEPT these,
@@ -128,7 +138,7 @@ def main() -> int:
             "axis": "GAP-A-4 per-knot density ρ(K) — trace-convention gate (I-6)",
             "scoping_note": "docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md §I-6",
             "lean": "qou:QOU.MassTheory.TraceConventionGate",
-            "facade": "computations/canonical_mass.py (F_Bor); _li_2_q_util.vol_density_per_block (chi-cache)",
+            "facade": "computations/canonical_mass.py (F_Bor); _li_2_q_util.per_knot_density_per_block (chi-cache)",
         },
     }
     wb = WitnessBuilder.wrap_legacy(

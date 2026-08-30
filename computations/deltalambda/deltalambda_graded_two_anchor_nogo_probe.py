@@ -43,7 +43,8 @@ mp.mp.dps = 60
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 
-# --- substrate q0 (muon-canonical computations layer) + DERIVED-ELSEWHERE targets ---
+# --- substrate q0 + DERIVED-ELSEWHERE targets; the jet-filtration witness now
+# --- RESOLVES its pin (proton) instead of freezing the superseded muon literal ---
 # q0 and the strong targets are read from the committed jet-filtration witness, not
 # recomputed, so this probe consumes the SAME numbers the escape Lean was built on.
 JET_WITNESS = HERE / "deltalambda-jet-filtration-magnitude.witness.json"
@@ -233,6 +234,21 @@ witness = {
 }
 
 OUT = HERE / "deltalambda-graded-two-anchor-nogo.witness.json"
+# Provenance stamp (bean qou-4un2): this producer writes its
+# witness directly, so nothing else records which script made
+# it -- and a re-run of an unstamped producer DELETES the
+# scriptFile a downstream pass had added. This producer DOES read q0 (from
+# the jet-filtration witness), so the anchor is resolved and stamped.
+from qou_substrate.witness import WitnessBuilder as _WB
+import os as _os  # noqa: E402 -- provenance stamp
+witness.setdefault("scriptFile", _os.path.basename(__file__))
+# q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+# Untrue: q0 is read from the jet-filtration witness at module scope and every
+# q-integer below is a function of it. The false declaration DELETED the anchor
+# stamp on every run, converting a visible Q0_FLIP into a silent
+# Q0_ANCHOR_MISSING (bean qou-1c4y).
+_WB.stamp_staleness_metadata(
+    witness, script_path=__file__, engine=None)
 OUT.write_text(json.dumps(witness, indent=1, ensure_ascii=False))
 print(f"\nwrote {OUT.relative_to(ROOT)}  allPassed={all_passed}")
 sys.exit(0 if all_passed else 1)

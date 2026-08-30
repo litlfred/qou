@@ -1,0 +1,370 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-21T20:55:32.348001+00:00",
+  "commitSha": "f8c3a8d85d61e7e0394cd2d6261c2708e6b480ea",
+  "assertions": [
+    {
+      "name": "block_transitions_blockPass_does_not_fit",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 125,
+  "computation": "hecke-tail-assembly-fit",
+  "scriptFile": "hecke_tail_assembly_fit.py",
+  "scriptHash": "34c4a67a9c6b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "First direct test of the a <= b inventory: does blockPass's ACTUAL Lean source and target -- written in the same descWord formulas the lemma uses -- reproduce the chain's measured block transition? The left context A and tail T are solved for by searching splits, and both source and target must come out right under the SAME (A, T). A lemma matching its source under one context and its target under another would not compose, and this catches that.",
+  "parameters": {
+    "blockPass_source": "A ++ descWord i jppp ++ [s_jp, s_jpp, s_j1] ++ [s_jp] ++ descWord jm j2 ++ T",
+    "blockPass_target": "A ++ descWord jp j2 ++ descWord i jppp ++ descWord jpp jp ++ T"
+  },
+  "data": {
+    "cases_checked": 8,
+    "cases": [
+      {
+        "a": 3,
+        "b": 4,
+        "block1_word_before": [
+          1,
+          0,
+          2,
+          1,
+          3,
+          2,
+          4,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          0,
+          1,
+          2,
+          0
+        ],
+        "solved_A_rel_i": [
+          1
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 3,
+        "b": 5,
+        "block1_word_before": [
+          1,
+          0,
+          2,
+          1,
+          3,
+          2,
+          4,
+          5,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          2,
+          0
+        ],
+        "solved_A_rel_i": [
+          1
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 4,
+        "b": 5,
+        "block1_word_before": [
+          1,
+          2,
+          0,
+          1,
+          3,
+          2,
+          4,
+          3,
+          5,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 4,
+        "b": 6,
+        "block1_word_before": [
+          1,
+          2,
+          0,
+          1,
+          3,
+          2,
+          4,
+          3,
+          5,
+          6,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 5,
+        "b": 6,
+        "block1_word_before": [
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          4,
+          3,
+          5,
+          4,
+          6,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0,
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2,
+          3
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "block1_word_before": [
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          4,
+          3,
+          5,
+          4,
+          6,
+          7,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2,
+          3
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 6,
+        "b": 7,
+        "block1_word_before": [
+          1,
+          2,
+          3,
+          4,
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          6,
+          5,
+          7,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      },
+      {
+        "a": 6,
+        "b": 8,
+        "block1_word_before": [
+          1,
+          2,
+          3,
+          4,
+          0,
+          1,
+          2,
+          3,
+          5,
+          4,
+          6,
+          5,
+          7,
+          8,
+          0
+        ],
+        "block1_word_after": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "solved_A_rel_i": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "solved_T_rel_i": [
+          0
+        ],
+        "blockPass_fits": true,
+        "chain_ends_at_zero": true
+      }
+    ]
+  },
+  "caveats": [
+    "A pass means blockPass is APPLICABLE at the transition the engine performs, with the contexts it actually has -- more than the inventory claimed. It does NOT mean the tail assembles: the hpark collision hypotheses are properties of the OTHER term and are not tested here, and the Lean chain may order its steps differently from the engine.",
+    "Off-diagonal only (b > a). blockPass itself does not cover b = a -- that is what blockPassFromTwo is for -- so the diagonal needs its own fit check, not yet written."
+  ]
+}

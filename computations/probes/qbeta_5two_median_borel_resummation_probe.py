@@ -61,7 +61,9 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (H_num)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 Q0_MUON = mp.mpf("1.10997859555733471")
 # Canonical GGM saddle values — computed, not hardcoded (bean qou-ty28).
@@ -214,7 +216,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("pade_locates_zeta12",
-                     computed=float(d12), expected=0.0, tolerance=0.1,
+                     computed=d12, expected=0.0, tolerance=0.1,
                      source="Borel–Padé [11/12] pole within 10% of ζ₁₂ = i(V₁−V₂)")
     wb.add_assertion("substrate_resummation_consistent",
                      computed=1.0 if g2 else 0.0, expected=1.0, tolerance=0.5,

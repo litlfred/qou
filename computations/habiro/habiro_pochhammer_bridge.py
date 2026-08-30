@@ -57,7 +57,7 @@ def q_factorial(n, q):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     u = mp.sqrt(q)  # spinor rate \check{q} = q^{1/2} (Habiro lit: u)
     hbar_q = (q - 1) / q

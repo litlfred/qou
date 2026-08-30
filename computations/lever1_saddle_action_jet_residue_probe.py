@@ -44,8 +44,10 @@ for p in (str(HERE / "substrate"), str(HERE)):
 
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 Xs, zs = sp.symbols('X z')
 PXZ = Xs ** 3 + (zs + 1) * Xs ** 2 + (zs ** 2 + zs + 1) * Xs + (zs ** 3 + zs ** 2 + zs + 1)
 

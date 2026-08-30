@@ -3,7 +3,7 @@
 
 Lead
 ----
-Zagier, *The Dilogarithm Function* (2007), §II.1 B (`uploads/fulltext.pdf`):
+Zagier, *The Dilogarithm Function* (2007), §II.1 B (`library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`):
 the **enhanced dilogarithm** is
 
     D̃(ẑ) = F(v) + u·v/2,     F(v) = Li₂(1 − e^v),
@@ -53,7 +53,7 @@ G4  What the residual actually is, in closed form — and why the reading fails.
 No fitting: the branch scan ranges over integers only, every candidate is
 reported, and a MISS is reported as a MISS.
 
--- Ref: [manuscript] bean qou-0yqu; uploads/fulltext.pdf (Zagier 2007) §II.1 B
+-- Ref: [manuscript] bean qou-0yqu; library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf (Zagier 2007) §II.1 B
 """
 
 from __future__ import annotations
@@ -62,8 +62,16 @@ import json
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 TWO_PI_I = 2j * mp.pi
 B_CORPUS = (-1, +1, +1)
@@ -256,7 +264,7 @@ def main() -> None:
     result = {
         "probe": "qbeta_5two_enhanced_dilog_probe",
         "dps": mp.mp.dps,
-        "source": "uploads/fulltext.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
+        "source": "library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
         "gates": [g1, g2, g3, g4],
         "verdict": verdict,
         "scope": (
@@ -267,6 +275,15 @@ def main() -> None:
     }
     print(json.dumps(result, indent=2))
     out = Path(__file__).resolve().parents[1] / "qbeta-5two-enhanced-dilog.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    result.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        result, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(result, indent=2) + "\n")
     print(f"\nwrote {out}")
 

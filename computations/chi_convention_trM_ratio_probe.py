@@ -4,9 +4,9 @@ AVERAGED (B) χ cache a bug? (b0vf follow-up / #3047 ⚠ finding resolution)
 
 The #3047 chi-convention audit flagged that `canonical_tr_m_via_chi_cache.py`
 (consumed by the mass / vol-density / per-knot path, incl.
-`_li_2_q_util.vol_density_per_block`) loads the **averaged-crossings (B)** χ
+`_li_2_q_util.per_knot_density_per_block`) loads the **averaged-crossings (B)** χ
 cache, while the canonical *binding* path (`binding_canonical.py`) uses the
-Jones–Markov trace (C). Since `vol_density_per_block = [Vol(K)/ℏ_q²]·tr_M_K`
+Jones–Markov trace (C). Since `per_knot_density_per_block = [Vol(K)/ℏ_q²]·tr_M_K`
 is LINEAR in tr_M_K, the production delta from switching to the sign-only (A)
 cache is exactly the ratio tr_M_A / tr_M_B.
 
@@ -25,7 +25,7 @@ Two facts settle it:
      mass path needs (cheat-sheet §"Bring color-tube weighted averaging":
      the averaging reproduces Δm_{n-p}).
   2. **The documented canonical-for-mass values ARE the averaged ones.**
-     `_li_2_q_util.py` (the vol_density_per_block docstring) states
+     `_li_2_q_util.py` (the per_knot_density_per_block docstring) states
      "the H₃ Markov trace tr_M(𝓑₃) ≈ 1.065 (proton) / 0.923 (neutron)" —
      exactly the averaged (B) values, not sign-only's 1.633/1.633.
 
@@ -58,8 +58,9 @@ sys.path.insert(0, str(HERE / "substrate"))
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # atom → (Z, N, n_strands). Only atoms with BOTH a complete averaged and a
 # complete sign-only cache give a trustworthy ratio; he4's averaged cache is

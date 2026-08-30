@@ -1,4 +1,4 @@
-Magic-number lookup for the ${}^{210}\mathrm{Bi}\,(Z = 83,\ N = 127) \to {}^{210}\mathrm{Po}$ decay of Example 8. The parent proton and neutron counts each sit one above a magic number ($82$ and $126$), so both carry $n_{\mathrm{out}} = 1$; the daughter's neutron count $N' = 126$ lands exactly on the highest magic number, closing the shell — the concluding $n_{\mathrm{out}} = 0$ cell.
+Magic-number lookup for the ${}^{210}\mathrm{Bi}\,(Z = 83,\ N = 127) \to {}^{210}\mathrm{Po}$ decay of Example 8. The parent proton and neutron counts each sit one above a magic number ($82$ and $126$), so both carry $n_{\mathrm{out}} = 1$; the daughter's neutron count $N' = 126$ lands exactly on the highest magic number, closing the shell ($n_{\mathrm{out}} = 0$).
 
 | Nucleon count | $m_{\leq}$ | $n_{\mathrm{out}}$ | Shell size |
 |:---:|:---:|:---:|:---:|

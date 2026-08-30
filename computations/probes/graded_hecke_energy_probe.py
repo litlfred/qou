@@ -59,7 +59,7 @@ from y_lambda_wenzl_bridge import (
     partitions_of,
     y_lambda_wenzl_bridge_numeric,
 )
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q_MP as Q0_FLOAT
 
 
 # Canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0;
@@ -262,8 +262,8 @@ def main() -> int:
         target = mp.mpf(r["target_tr_M"])
         w.add_assertion(
             f"cumulative_at_max_grade_matches_target[{atom}]",
-            computed=float(last_cum),
-            expected=float(target),
+            computed=last_cum,
+            expected=target,
             tolerance=1e-10,
         )
 

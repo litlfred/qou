@@ -12,8 +12,8 @@ nothing wired to production.
 + [`2026-07-24-tau-dictionary-hauptmodul-gate-wiring.md`](2026-07-24-tau-dictionary-hauptmodul-gate-wiring.md)
 (W8: the corpus's one concrete dictionary, the exact nome map $\tau = i\,|\ln q_0|/(2\pi)$,
 FAILs the Bring gate $t_5(\tau_0) = -10$ with $t_5 \approx 1.7\times 10^{-31}$).
-**Sources for Task 3:** BN12 = `uploads/sigma12-065.pdf` (Braden–Northover, SIGMA 8 (2012) 065);
-BDH22 = `uploads/2208.13692v1.pdf` (Braden–Disney-Hogg). Idea ledger:
+**Sources for Task 3:** BN12 = `library/sigma12-065/sigma12-065.pdf` (Braden–Northover, SIGMA 8 (2012) 065);
+BDH22 = `library/arxiv-2208.13692v1/2208.13692v1.pdf` (Braden–Disney-Hogg). Idea ledger:
 [`2026-07-18-uploaded-papers-binding-mass-gap-ideas.md` §A6](2026-07-18-uploaded-papers-binding-mass-gap-ideas.md).
 
 The owner asked two follow-ups on the W8 FAIL: **(Q1)** "is there a zero we can factor

@@ -155,3 +155,78 @@ STILL NOT MIGRATED: ~40 balanced duplicates + the 10 geometric sites.
 
 ALSO DO NOT FORGET (guard, unchanged): Interactions/HeckeEnergyPositivity's
 qIntegerRescaled = sum q^(2j) is geometric IN q^2 and CORRECT. Do not convert.
+
+
+---
+
+# *** SURGERY COST REFINED (2026-08-08) — it is mechanical after all ***
+
+The three files I reverted last round are now MIGRATED. The "~60% need proof
+surgery" figure stands, but the surgery turned out to be a UNIFORM ONE-LINE
+SUBSTITUTION, not per-site reasoning:
+
+    unfold <local>   ->   simp only [<local>, QOU.Mass.QHookDimensionBalanced.qIntBal]
+
+Verified empirically (three candidate tactics tested on the 1-site file; only
+this one and an explicit `show` worked -- `unfold <local> <canonical>` FAILS,
+because unfold reduces through the alias and the canonical name is no longer
+present in the goal).
+
+Applied to 8 sites across 3 files:
+  QOU/MassComputationChainRoadmap.lean    qInt       1 site
+  information-theory/quantum-volume.lean  qInteger   1 site
+  QOU/GaugeFieldFluidDynamics.lean        qInteger   6 sites
+All three lean-direct EXIT 0.
+
+SO THE REVISED BUDGET IS BETTER THAN FEARED: ~60% of migrations need an edit,
+but the edit is the single substitution above. Plan the remaining ~50 sites as
+mechanical, not as per-file proof work.
+
+A TRAP TO AVOID (cost me a cycle): if the migration comment mentions
+"QIntegerCanonical", a naive `if "QIntegerCanonical" not in text` guard will
+think the import is already present and SKIP inserting it. Check for the literal
+import line, not the bare filename.
+
+
+---
+
+# *** THE CEILING, MEASURED (2026-08-08) — "43 duplicates" was WRONG ***
+
+Pushed into the varied-signature batch to drain it. It does not drain: the 43
+balanced definitions are NOT 43 duplicates of qIntBal. They are 43
+balanced-CONVENTION definitions with genuinely DIFFERENT TYPES.
+
+Method: attempted mechanical migration on every plausible candidate with
+AUTO-REVERT, and let Lean adjudicate interchangeability rather than reasoning
+about defeq. 3 kept, 2 refused, 4 skipped as type-incompatible up front.
+
+MIGRATED THIS ROUND (lean-direct EXIT 0):
+  predicted-spectra/em-coupling-fixed-point.lean    qIntReal
+  predicted-spectra/skein-finiteness-bound.lean     qInt
+  brings-surface/orbital-fourier-decomposition.lean qInt
+RUNNING TOTAL: 8 of 55 consolidated onto the canonical definition.
+
+WHY THE REST ARE NOT DRAINABLE (this is the ceiling, not a backlog):
+  GUARDED     11   `if q = 1 then n else ...` -- a DIFFERENT function. Migrating
+                   changes behaviour at q=1. Not a duplicate.
+  Z-INDEX      6   (k : Z). qIntBal takes N. Needs a Z sibling in the canonical
+                   module before any of these can move.
+  RING-INDEX   3   exponent lives in the ring/reals, not N (q ^ (rho : R)).
+                   A different function again.
+  SHORTHAND    7   [2]_q = q + q^-1, [3]_q = q^2+1+q^-2 written out. Arguably
+                   fine as-is; consolidating buys little.
+  CTX-BOUND    1   q comes from a structure field (ctx.q).
+  PROOF-FORM   2   defeq-equal, but downstream proofs need the literal
+                   syntactic body (HabiroMagnitudeA3: (q^n)^-1 vs q^-1^n;
+                   bar-involution-invariance: Z-cast exponent). Lean refused
+                   both; auto-revert kept them intact.
+
+SO: the honest consolidation ceiling on the CURRENT canonical signature is
+roughly what has been done. To go further you must first EXTEND the canonical
+module -- add a Z-index sibling and decide a policy for the guarded variants
+(either a guarded canonical form, or leave them and document that they are
+deliberately different functions). That is a design decision, not a sweep.
+
+ALSO FOUND: braids-and-knots/chi-std-pernucleon-closed-form.lean is RED ON MAIN
+(pre-existing, unrelated to this work) -- another instance of the class in
+qou-orph / qou-k448 where nothing checks a file.

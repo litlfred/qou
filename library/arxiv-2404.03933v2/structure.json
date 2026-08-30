@@ -1,0 +1,308 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2404.03933v2",
+ "source": {
+  "file": "2404.03933v2.pdf",
+  "sha256": "48aff6e97e1f126731c0e133d99d6b8616275d9de5f2f0e9b16ee251d1cc4dc0",
+  "bytes": 855403,
+  "pages": 44,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2404.03933",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "29 Jul 2024"
+  },
+  "doi": null,
+  "title": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY",
+  "authors_raw": "ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV",
+  "title_lines": [
+   "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN",
+   "ROOTS OF UNITY"
+  ],
+  "abstract": "We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums of tilting modules. We derive a combinatorial formula for multiplicity of tilting modules in the N-th tensor power of two dimensional irreducible representations, interpret it in terms of lattice paths and find its asymptotic behavior when N \u2192 \u221e . We also describe the limit of character and Plancherel measures when N \u2192 \u221e. We consider both Uq(sl2) with divided powers and the small quantum sl2.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240730004952Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Algebra Uq(sl2) and its representations",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Decomposition of tensor powers of T(1) over Uq(sl2)",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Restriction from Uq(sl2) to uq(sl2)",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Multiplicities and lattice paths",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Integral formula for multiplicities",
+   "page": 18,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Probabilistic measures on the tensor product decomposition",
+   "page": 21,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
+   "page": 23,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic of probability measures for uq(sl2)",
+   "page": 28,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Gaussian binomial coefficients",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Proof of Theorem 6.3",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix D. Proof of Theorem 9.4",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9606,
+   "n_words": 1606
+  },
+  {
+   "id": "sec-001-2-algebra-uqsl2-and-its-representations",
+   "number": "2",
+   "title": "Algebra Uq(sl2) and its representations",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 11,
+   "n_chars": 15111,
+   "n_words": 2883
+  },
+  {
+   "id": "sec-002-4-restriction-from-uqsl2-to-uqsl2",
+   "number": "4",
+   "title": "Restriction from Uq(sl2) to uq(sl2)",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2952,
+   "n_words": 529
+  },
+  {
+   "id": "sec-003-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
+   "number": "5",
+   "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1271,
+   "n_words": 271
+  },
+  {
+   "id": "sec-004-6-multiplicities-and-lattice-paths",
+   "number": "6",
+   "title": "Multiplicities and lattice paths",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 6651,
+   "n_words": 1300
+  },
+  {
+   "id": "sec-005-7-integral-formula-for-multiplicities",
+   "number": "7",
+   "title": "Integral formula for multiplicities",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 5263,
+   "n_words": 847
+  },
+  {
+   "id": "sec-006-8-probabilistic-measures-on-the-tensor-product-d",
+   "number": "8",
+   "title": "Probabilistic measures on the tensor product decomposition",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3343,
+   "n_words": 618
+  },
+  {
+   "id": "sec-007-9-the-asymptotic-of-the-character-and-plancherel",
+   "number": "9",
+   "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 28,
+   "n_chars": 10541,
+   "n_words": 2045
+  },
+  {
+   "id": "sec-008-10-the-asymptotic-of-probability-measures-for-uq",
+   "number": "10",
+   "title": "The asymptotic of probability measures for uq(sl2)",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 4719,
+   "n_words": 827
+  },
+  {
+   "id": "sec-009-appendix-a-gaussian-binomial-coefficients",
+   "number": null,
+   "title": "Appendix A. Gaussian binomial coefficients",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1546,
+   "n_words": 346
+  },
+  {
+   "id": "sec-010-appendix-b-proof-of-theorem-63",
+   "number": null,
+   "title": "Appendix B. Proof of Theorem 6.3",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 38,
+   "n_chars": 9357,
+   "n_words": 1917
+  },
+  {
+   "id": "sec-011-appendix-c-proof-of-theorems-91-92-93",
+   "number": null,
+   "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 4631,
+   "n_words": 1002
+  },
+  {
+   "id": "sec-012-appendix-d-proof-of-theorem-94",
+   "number": null,
+   "title": "Appendix D. Proof of Theorem 9.4",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 774,
+   "n_words": 155
+  },
+  {
+   "id": "sec-013-appendix-e-proof-of-theorems-95-and-96",
+   "number": null,
+   "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1538,
+   "n_words": 296
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 4768,
+   "n_words": 675
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 15,
+  "chars_total": 82071
+ }
+}

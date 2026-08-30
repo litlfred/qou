@@ -401,3 +401,152 @@ basis and read its quasi-periodicity. The `0`-side recurrence is explicit:
 `bₙ[q^{2n} + (q−1)qⁿ + (q−1)] = q^{2n}b_{n−1}`.
 
 Closing is a human action — leaving status as-is.
+
+## RETRACTED 2026-08-08 — there is no Stokes multiplier at `∞`; I mis-stated the item
+
+The scoreboard row above reading **"Stokes multiplier — OPEN, the only remaining
+item"** is **wrong**. That object does not exist for C1.
+
+C1 at `∞` is **pure isoclinic** (single Newton edge `(r,d) = (2,1)`, slope ½
+mult 2). RSZ Thm 3.3.5 gives `dim F = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ)`, empty at `k = 1`; and
+independently the q-Stokes matrices are unipotent automorphisms inducing the
+identity on `gr M₀` (§4.4, Thm 5.5.7), which with one slope has no
+strictly-upper-triangular part. **The Stokes group is trivial — not hard to
+compute, nonexistent.**
+
+**This was already in the corpus and in my own landed work.**
+[`2026-07-20-qlift-routeA-rsz-invariants.md` §2](../docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md)
+established the pure-isoclinic single edge three weeks earlier, machine-checked;
+[`2026-07-20-qlift-doorI-analytic-summation.md` §1](../docs/audits/2026-07-20-qlift-doorI-analytic-summation.md)
+records the Stokes-sheaf reading from RSZ; and `rszIsoformalDim_one`'s docstring,
+which I wrote in #4721, says verbatim *"A pure isoclinic module has no isoformal
+moduli, hence no Stokes data to extract."* I then stated the opposite three times.
+
+Cause: a framing error, not a computation error, and the same shape as the one
+#4721 fixed. #4721 killed the *derivation* of "two Stokes multipliers" but I kept
+the *noun* as the name of the residual and never re-asked whether the object
+survived its own refutation. The corpus-grep would have caught it — I grepped for
+`{0,1,∞}`, for beans, for declaration collisions, but never for `pure isoclinic`,
+the phrase that decides it (6 hits, 3 prior audits).
+
+### Corrected state — the `∞` local story is CLOSED
+
+| item | status |
+|---|---|
+| formal class at `∞` | pure isoclinic `E(2,1,c)`, slope ½ mult 2 |
+| class parameter `c` | **determined** — edge equation + `det A` + deck sign |
+| weight lattice | `q^{½ℤ}` up to deck sign |
+| analytic moduli in that class | **a point, `dim = 0` — no Stokes data** |
+
+The "residual freedom" I described in #4771/#4783 as constraining an unknown
+multiplier is in fact the *entire* local invariant, and it is computed.
+
+### What remains — stated as questions, not as open items
+
+1. **Global connection data between `0` and `∞`** (Birkhoff / q-monodromy,
+   theta-valued). Not local Stokes data, not excluded by the above, not started —
+   and not shown to be needed by anything downstream.
+2. **Whether the `q^{½ℤ}` lattice or the deck sign feeds any downstream Q_β / c_k
+   object at all.** Unexamined.
+
+Neither is promoted to a tracked open item here. Per AGENTS.md §"Before declaring
+'open'" that needs the corpus-grep checklist first — the step whose omission
+caused this retraction.
+
+Landed: `c1_infinity_isoformalDim_eq_zero` (the C1 *instance*, since the general
+lemma was already there and got restated wrongly anyway) + audit
+[`2026-08-08-c1-infinity-has-no-stokes-multiplier.md`](../docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md).
+
+## 2026-08-08 (final) — corpus-grep on the two "questions": BOTH already worked
+
+The owner asked me to check the two items I had recorded as questions. Neither is
+open, and the check turned up three corrections to my own work.
+
+**Q1 — global `0`↔`∞` connection data: NOT open. Built, under bean `qou-wgnx`.**
+Theta-normalised canonical solutions at `∞` (residual `1e-62`); the connection
+matrix `P = Y₀⁻¹Y_∞`; the pole divisor; and the **basis-invariant** cross-ratio
+`χ = P₀₀P₁₁/(P₀₁P₁₀)` in closed form (worst deviation `5.3e-63`), shape confirmed
+against Lin–Ma–Xu arXiv:2412.02281 Thm 1.2. Lean: `C1ConnectionPoles.lean`,
+`C1ZeroSideExponents.lean`, sorry-free. `qou-wgnx`'s open item #1 is the Stokes
+multipliers proper — functions of `χ`, remaining step convention-dependent.
+
+**Q2 — the `q^{½ℤ}` lattice: the gloss was wrong, and the corpus had warned.**
+`c3_w2_c1_theta_canonical.py` carries a section headed *"The convention finding —
+read this before citing `B = ±sqrt(q-1)/q`"*, recorded 2026-08-07:
+
+| object | value | what it is |
+|---|---|---|
+| `T_edge` | `±√(q−1)/q` | Newton **edge polynomial** root |
+| `T_theta` | `±√(q−1)/q^{3/4}` | indexes the canonical solutions, **hence the Stokes sectors** |
+
+They differ by `q^{1/4}`; the edge root **provably does not satisfy the indicial
+equation**. I cited `±√(q−1)/q` as "the ∞ exponent data indexing the sectors" in
+#4783 — the exact string that warning names. So #4771's gloss "C1's `∞` weight
+lies in `q^{½ℤ}`" does not follow (`q^{3/4} ∉ q^{½ℤ}`); the *algebra* about the
+**dilation lift** stands and has been re-scoped in place.
+
+**Q3 (unasked, found anyway) — #4771/#4783 duplicated `C1ZeroSideExponents.lean`.**
+That file already had the indicial polynomial, Vieta as an iff over a generic
+`CommRing`, and the `(q−1)(q−5)` factorisation — plus `conjugate_pair_iff` and
+`|t|² = q−1`, which I do not have. My copies are retired; the results are now
+derived from `C1ZeroSide.vieta`. What survives as genuinely new: the `det A`
+two-end cross-check and the non-square proof.
+
+**And #4790's framing was dangerous.** "There is no Stokes multiplier at C1's ∞"
+would read as voiding `qou-wgnx`'s live open item. Two objects share the name:
+*local isoformal moduli at `∞`* (dim 0, genuinely empty — what #4790 retracts)
+and *the connection-matrix multipliers* (global, open, being worked). #4790 now
+distinguishes them explicitly, in the audit and in the Lean docstring.
+
+### Root cause, same in all three
+
+Not the mathematics — the search. I grepped for names I had invented rather than
+for concepts, so never reached `qou-wgnx`, the `c3_w2_c1_*` scripts, or
+`C1ZeroSideExponents.lean`. The phrase that would have found all of them on day
+one is `pure isoclinic`; the phrase that would have caught the `q^{1/4}` is
+`sqrt(q-1)/q`.
+
+**This bean is subordinate to `qou-wgnx` on the C1 `∞` axis.** Anyone picking up
+C1 connection/Stokes work should start there, not here.
+
+## 2026-08-08 — #4790's second row was wrong too; and the triviality is now 4×-confirmed
+
+Read `qou-wgnx` properly (1179 lines). Two things.
+
+**1. My #4790 "read this first" table has a wrong status.** It says the
+connection-matrix Stokes multipliers are *"OPEN and live"*. They are not — they
+are **trivial**, by the same pure-isoclinic argument, and `qou-wgnx` entries 21,
+22 and 23 all say so. I read that bean's **top summary**, which was headed "read
+this first" and was itself stale from entry ~18, listing them as open item #1.
+
+The *distinction* #4790 draws is real — local isoformal moduli at `∞` and
+connection-matrix data are genuinely different objects. What is wrong there is
+the second one's **status**.
+
+**2. The triviality now has four independent confirmations**, and mine adds one
+genuinely distinct route:
+
+| route | source |
+|---|---|
+| isoclinicity invariant, RSZ Thms 2.2.1 / 2.2.4 / 5.5.7 cited by number | corpus, **2026-07-20**, `conj:qdifference-kernel-prolongation-symbol` author notes |
+| `Λ_I(M)` trivial ⇒ `H¹(E_q, Λ_I(M₀))` a point (RSZ §5) | `qou-wgnx` entry 21 |
+| DVRSZ survey: *pur ⟺ une seule pente*; `T±` are two **exponents at one slope** | `qou-wgnx` entry 22 |
+| **RSZ Thm 3.3.5's dimension formula**, `Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ)` empty at `k = 1` | this bean / PR #4790, Lean `c1_infinity_isoformalDim_eq_zero` |
+
+The fourth is a *different theorem* from the first three, so it is corroboration
+rather than repetition — but it is corroboration of something already settled,
+not a new result, and #4790 should not have presented it as resolving anything.
+
+**3. The same process failure, twice, one day apart.** `qou-wgnx` entry 23 is the
+prior agent owning this exact miss and writing the standing lesson: *"grep the
+corpus first, especially when the target is phrased as 'open'."* I then repeated
+it — and missed the bean containing the lesson.
+
+That lesson has a hole, now patched: it is defeated when the **summary at the top
+of the bean is itself the stale thing**. `qou-wgnx`'s "read this first" block said
+the multipliers were open while its own entries 21–23 said the opposite. Fixed
+there, with the staleness recorded rather than silently overwritten.
+
+**This bean is subordinate to `qou-wgnx`.** Live follow-ons there are `qou-c1ln`
+(discharge the numerics in Lean) and `qou-c1wr` (the C1 work is invisible to the
+manifest graph; its natural home is a leaf block). Neither is a Stokes multiplier.

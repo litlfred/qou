@@ -1,7 +1,7 @@
 The previous chapter established the knot-particle dictionary: each
 observable particle corresponds to a specific braid configuration in the
 Iwahori--Hecke algebra $H_n(q)$, and the confinement hierarchy organises
-these configurations into shells.  The question this chapter settles is:
+these configurations into shells.  The question this chapter takes up is:
 *why do these particles fall into octets and decuplets?*
 
 The candidate answer lies in the representation theory of three-strand
@@ -18,7 +18,8 @@ about the substrate, and nothing is derived from it.
 
 The $A_2$ that the eightfold way needs is a *different* one: the Lie
 algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which in quantum
-Schur--Weyl duality \cite{jimbo1986} (\S\ref{sec:baryon-multiplets}) is
+Schur--Weyl duality \cite{jimbo1986}
+([the baryon-multiplet section](#sec:baryon-multiplets)) is
 the partner acting
 on the *fibre* $V$, and which appears only when $\dim V = N = 3$.  The two
 $A_2$s coincide in name --- and in this chapter's diagrams --- solely
@@ -26,40 +27,49 @@ because we have set $n = 3$ and would like $N = 3$.  Setting $n = 3$ does
 not make $N = 3$.
 
 This distinction is the chapter's central honesty constraint, and the
-reason \S\ref{sec:baryon-multiplets} records the $N = 3$ problem as the
-chapter's principal open problem rather than as a solved step: the
-single-fibre construction of
-Chapter~\ref{chap:braids-and-knots} yields a quantum form of
+reason [that section](#sec:baryon-multiplets) records the $N = 3$ problem
+as the chapter's principal open problem rather than as a solved step: the
+single-fibre construction of the
+[braiding chapter](#chap:path-integrals-braiding) yields a quantum form of
 $\mathrm{SU}(2)$, with $\dim V = 2$, and no choice of $q$ raises it.
 Every flavour-$\mathrm{SU}(3)$ statement below is therefore *conditional
 on $N = 3$*, and is marked as such.
 
-\S\ref{sec:a2-root-system} derives the $A_2$ root system from the Hecke
+[The root-system section](#sec:a2-root-system) derives the $A_2$ root
+system from the Hecke
 relations of $H_3(q)$ and identifies the hexagonal weight lattice.
-\S\ref{sec:flavor-representations} constructs the flavor triplet and
+[The flavour-representations section](#sec:flavor-representations)
+constructs the flavor triplet and
 antitriplet from unknot configurations and assigns the charge quantum
 numbers (isospin $I_3$, hypercharge $Y$).
-\S\ref{sec:meson-octet} derives the meson octet via the tensor
+[The meson-octet section](#sec:meson-octet) derives the meson octet via
+the tensor
 decomposition $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus
 \mathbf{1}$, realised through the $\bowtie_K$ product.
-\S\ref{sec:baryon-multiplets} extends to baryons: $\mathbf{3} \otimes
+[The baryon-multiplet section](#sec:baryon-multiplets) extends to baryons:
+$\mathbf{3} \otimes
 \mathbf{3} \otimes \mathbf{3} = \mathbf{10} \oplus \mathbf{8} \oplus
 \mathbf{8} \oplus \mathbf{1}$, with the symmetric channel yielding the
-decuplet and the Borromean baryon (Definition~\ref{def:borromean-baryon})
+decuplet and the Borromean baryon
+([Definition](#def:borromean-baryon))
 providing the structural realisation.
-\S\ref{sec:color-algebra} derives the color $\mathrm{SU}(3)$ gauge
+[The colour-algebra section](#sec:color-algebra) derives the color
+$\mathrm{SU}(3)$ gauge
 algebra from octonionic stabilisation.
-\S\ref{sec:q-deformed-eightfold} develops the $q$-deformation of the
+[The $q$-deformation section](#sec:q-deformed-eightfold) develops the
+$q$-deformation of the
 hexagonal weight lattice and connects it to the hyperbolic geometry of
 knot complements.
-\S\ref{sec:knot-particle-force-dictionary} consolidates the complete
+[The dictionary section](#sec:knot-particle-force-dictionary) consolidates
+the complete
 knot--particle--force dictionary.
-\S\ref{sec:eightfold-open-problems} records the open problems.
+[The open-problems section](#sec:eightfold-open-problems) records the open
+problems.
 
 **Epistemic tiers.**
 Each statement below is marked with one of four tiers, used in the same
-sense as in the Standard-Model appendix
-(Appendix~\ref{chap:appendix-standard-model}):
+sense as in the
+[Standard-Model appendix](#app:standard-model):
 *proved* (machine-checked Lean, sorry-free);
 *derived* (obtained from framework structure without fitted parameters);
 *standard* (a theorem of the ambient mathematics --- Coxeter theory,
@@ -77,4 +87,5 @@ applied, but true of any $\mathrm{SU}(3)$ and not evidence for the
 framework.  What the chapter contributes is the placement of the braid
 dictionary against that classification, one derived entry ($I_3$ on the
 nucleon doublet), and a sharpened statement of what is missing.  The
-consolidated ledger is \S\ref{sec:eightfold-open-problems}.
+consolidated ledger is
+[the open-problems section](#sec:eightfold-open-problems).

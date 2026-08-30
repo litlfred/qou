@@ -31,7 +31,11 @@ import sys
 
 import mpmath as mp
 
-mp.mp.dps = 40
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, os.path.join(ROOT, "computations", "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 
 def _find_repo_root():
@@ -87,9 +91,9 @@ def main():
 
     # --- Part B: classical-𝔙 identification search (exploratory) ------------
     # Framework-canonical hyperbolic volumes (real part of 𝔙).
-    lam_pi3 = mp.mpf("0.5074708")  # Λ(π/3), Lobachevsky
+    cl2_pi3 = mp.clsin(2, mp.pi / 3)  # Cl₂(π/3) = 3Λ(π/3), one ideal tetrahedron
     vols = {
-        "Vol(4_1)=2Λ(π/3)": 2 * lam_pi3,          # figure-eight (lepton/muon knot)
+        "Vol(4_1)=2·Cl₂(π/3)": 2 * cl2_pi3,       # figure-eight (lepton/muon knot)
         "Vol(Borromean)":   mp.mpf("7.327724753"), # 6^3_2 (nucleon)
         "Vol(5_2)":         mp.mpf("2.828122088"),
         "Vol(6_1)":         mp.mpf("3.163963228"),

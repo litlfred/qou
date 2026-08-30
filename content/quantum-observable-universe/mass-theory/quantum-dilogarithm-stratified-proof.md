@@ -1,24 +1,68 @@
 **Proof of [partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).**
 
 *Step 1 (Frobenius dual decomposition of $Z(A)$).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+— **together with the partition-vs-word identification this proof itself
+flags as unestablished at Step 3 below, and which is not supplied by that
+proposition** —
 the centre $Z(A) = \bigoplus_{\lambda \vdash n} R \cdot e_\lambda$
 admits the GB-depth grading
 $Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
 $\langle a, b \rangle = \int_A a \cdot b$ restricts to $Z(A)$ as a
 non-degenerate bilinear form, and the depth strata $Z^{(k)}(A)$ are
 mutually orthogonal under this pairing
-([Frobenius duality of strata](#prop:spectral-sequence-collapse)
+([Frobenius duality of strata](#prf:spectral-sequence-collapse)
 "§Frobenius duality of strata"):
 
 $$
   \langle Z^{(k)}(A),\, Z^{(\ell)}(A) \rangle \;=\; 0
-  \qquad \text{whenever } k + \ell \neq N,
+  \qquad \text{whenever } k \neq \ell .
 $$
 
-where $N$ is the maximal GB-depth in $Z(A)$. The self-dual pairing
-$Z^{(k)} \times Z^{(N-k)} \to R$ is the **Poincaré duality of
-curvature-rank strata**.
+> **Corrected, and the correction *repairs* Step 4 rather than breaking
+> it.** This displayed condition read
+> "whenever $k + \ell \neq N$", followed by *"the self-dual pairing
+> $Z^{(k)} \times Z^{(N-k)} \to R$ is the **Poincaré duality of
+> curvature-rank strata**"* — an **anti-diagonal** duality, imported
+> from [`prf:spectral-sequence-collapse`](#prf:spectral-sequence-collapse)
+> "§Frobenius duality of strata", where the same claim has now been
+> refuted in place.
+>
+> The strata here are spans of central primitive idempotents, and
+> distinct idempotents **annihilate each other**: for any linear
+> functional $\varphi$,
+> $\varphi(e_\lambda e_\mu) = \varphi(\delta_{\lambda\mu} e_\lambda)$.
+> So the pairing on that basis is $\mathrm{diag}(\tau(e_\lambda))$ —
+> **diagonal**, with every stratum self-dual and every *distinct* pair
+> annihilating. Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the
+> corpus's own idempotents: all six off-diagonal entries identically
+> $0$, diagonal nonzero, completeness self-test
+> $\sum_\lambda \tau(e_\lambda) = 1$
+> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+>
+> **Step 4 needs the diagonal form and does not follow from the
+> anti-diagonal one.** It argues that $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$
+> pairs to zero with any $T_w$ whose $Z^{(k)}$-projection vanishes. That
+> is precisely $\langle Z^{(k)}, Z^{(\ell)}\rangle = 0$ for
+> $k \neq \ell$. Under the old anti-diagonal condition the pairing was
+> licensed to be **non**-zero at $\ell = N - k$, so Step 4's truncation
+> did not follow from Step 1 as written whenever $N - k \leq
+> k_\star(T_w)$. The correction closes that hole.
+>
+> **Still open, and not repaired here:** Step 4 pairs a central
+> $\phi_q^{(k)}$ against a general $T_w \in A$, not against a central
+> element, so "$T_w$ has zero projection on $Z^{(k)}$" has to be read as
+> a statement about $T_w$'s Wedderburn *blocks*. That reading is
+> plausible — $e_\lambda$ central idempotent gives
+> $\tau(e_\lambda a) = \tau(e_\lambda a e_\lambda)$ — but it is not
+> stated in the block, and it is a different question from the one
+> corrected here. Analysis:
+> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+
+where $N$ is the maximal GB-depth in $Z(A)$, retained below only as the
+top of the depth range. The pairing $Z^{(k)} \times Z^{(k)} \to R$ is
+non-degenerate on each stratum separately — each stratum is **self**-dual,
+and there is no Poincaré-type pairing across distinct strata.
 
 *Step 2 (existence of $\phi_q^{(k)}(z_i)$).* By
 [cor: quantum dilogarithm](#cor:quantum-dilogarithm), the level-$i$
@@ -45,8 +89,8 @@ depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
 (a) The q-deformed Wedderburn-block weight is
-$\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
-classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
+$w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
+classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
 where
@@ -56,13 +100,19 @@ integer
 ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)).
 
 (b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
-the partition's depth in the GB filtration: by
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
-Step 3, the GB-depth of $\lambda$ is
+the partition's depth in the GB filtration. Here
 $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
-(the partition's **maximum hook length**), which is the minimal
-number of $R_H, R_{YB}$ rewrites required to express any element of
-the $\lambda$-isotypic component in NF.
+(the partition's **maximum hook length**) is a *definition* — it is
+`QOU.BraidKnot.gbDepth`, the supremum of the hook length over the
+cells of $\lambda$ — not a consequence of
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of
+**words** and mentions no partition. The two are different indexings of
+depth, and the reading of $\mathrm{depth}_{\mathrm{GB}}(\lambda)$ as
+the minimal number of $R_H, R_{YB}$ rewrites needed to put any element
+of the $\lambda$-isotypic component in NF is the identification of the
+partition grading with the word filtration, which that proposition does
+not supply.
 
 (c) Therefore $\dim_q V_\lambda$ has a factor of $[k]_q$ in its
 hook-length expansion exactly when $\lambda$ contains a box with
@@ -151,7 +201,10 @@ identification (a)–(f) reduces the cyclotomic-factor / depth-stratum
 correspondence to the standard $q$-content / hook-length formula plus
 [curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
 (GB-depth = max hook length), so the structural identification is now
-explicit. The remaining open piece in Step 3 is **(d)'s product
+explicit — **but "explicit" here means *written down*, not *established*.
+The citation does not supply the identification; the passage above, at
+"not a consequence of [curvature-rank stratification] ... which ... mentions no
+partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of
 $\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in

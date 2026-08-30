@@ -79,14 +79,44 @@ degree) both reduce to the argument principle, which is sorry-free in its
 elementary bricks. If canonical products are needed for a *different* target,
 that target should be named — the current one does not hold.
 
+## ADDENDUM 2026-08-08 — the target got named, and it is the halves
+
+The line below — "good infrastructure with no current consumer" — **is no longer
+true**, and this addendum is the correction rather than a silent edit.
+
+Restating `qou-cons` (see the bean) produced the consumer. Route B's remaining
+gap is not `hratio` at all; it is a *selection principle* picking `Φ_b` out of
+`Φ_b · {elliptic}`, and the divisor-plus-order form of that principle closes
+through Hadamard applied to `numProd` and `denProd`:
+
+```
+N_Ψ = N_Φ·e^g ,  D_Ψ = D_Φ·e^h      (Hadamard, on the entire halves)
+  ⇒  Ψ/Φ = e^(g−h)                  entire, nowhere zero
+  ⇒  constant                        (hper + const_of_doublyPeriodic)
+```
+
+So routes A and B are not rivals; B needs a brick that only A supplies. What
+stays retracted is the **target**: Hadamard applies to `numProd`/`denProd`, which
+are proved entire, and never to `phiBProd`, which is not. That distinction was
+the actual content of this audit and it survives intact — only the "no consumer"
+disposal was wrong.
+
 ## Recommended action
 
 1. Fix `HadamardFactorization.lean`'s motivation to point at route B, so the
    next agent does not resume PI-4/PI-5 believing it discharges
    `uniqueUpToScalar`. (Done in this change.)
-2. Put effort on `qou-cons` and `qou-rp5f`, the two live inputs, not on PI-5.
-3. Keep the Hadamard bricks; they are good infrastructure with no current
-   consumer. Do not delete, do not finish on the current justification.
+2. Put effort on `qou-cons` **as restated** — T2a/T2b first, which are cheap and
+   establish that the route closes, before T2c (PI-4/PI-5), which is the hard
+   analytic core and now has a legitimate reason to be worked.
+3. Keep the Hadamard bricks. ~~They are good infrastructure with no current
+   consumer.~~ Superseded by the addendum above: they are the mechanism the
+   restated `qou-cons` runs on. Still do not finish them on the *original*
+   justification, which remains retracted.
+4. **Check first whether `numProd`/`denProd` have finite order**, and what ρ is.
+   Nothing in the corpus computes it, and the whole route above is conditional
+   on it. If the order is infinite the route dies and only a pinned-divisor
+   argument survives — so this is cheap insurance against a wasted PI-5.
 
 ## The pattern, since it is the third instance in two sessions
 

@@ -1,4 +1,6 @@
 import QOU.Archimedean.HyperbolicVolumeTranscendence
+import QOU.Archimedean.CatalanClausenBridge
+import QOU.Knot.Clausen
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic
@@ -106,17 +108,79 @@ noncomputable def lobachevsky (θ : ℝ) : ℝ :=
     addition formula, and integrate term-by-term against the Catalan
     series.  Established literature fact (Lewin 1981 §4.2 eq. 4.2.21).
 
-    **Why this is an `axiom`, not a `theorem`.**  A Lean proof would
-    require Mathlib's full polylogarithm machinery (Clausen function
-    `Cl_2`, dilogarithm `Li_2`, substitution-in-`intervalIntegral` over
-    an improper integrand) — none of which is currently upstream.  We
-    record the literature identity as an axiom; downstream consumers
-    rewrite with it unchanged.
+    **PROVED 2026-08-26 — this was an `axiom` until today.**  The reasons
+    recorded below for keeping it an axiom were both wrong, and the way they
+    were wrong is worth keeping.
+
+    The original text said a proof "would require Mathlib's full polylogarithm
+    machinery (Clausen function `Cl_2`, dilogarithm `Li_2`, substitution-in-
+    `intervalIntegral` over an improper integrand) — none of which is currently
+    upstream".  A 2026-08-25 revision narrowed that to one residual obstruction,
+    "the Clausen *integral representation* `Cl_2' θ = -log|2 sin(θ/2)|` ... genuine
+    analysis over an improper integrand", and classified it External.
+
+    **That residual obstruction was already discharged, in this repository, and
+    had been since before the note was written.**  `QOU.Knot.clausen_eq_series`
+    proves `∫₀^θ -log(2 sin(t/2)) dt = Cl_2 θ` on `(0, 2π)`, sorry-free, by pinning
+    the constant between `hasDerivAt_clausen` (FTC) and `hasDerivAt_Cl_2_series`
+    (Abel limit + locally-uniform convergence).  Both halves of the "missing"
+    analysis — the log-sine integrability at the endpoint, via
+    `MeromorphicOn.intervalIntegrable_log`, and the boundary behaviour of the log
+    power series, via `Mathlib.Analysis.Complex.AbelLimit` — are upstream and were
+    already being used there.  The gap was in the search, not in the mathematics:
+    the note was written from what a single import cone made visible rather than
+    from the corpus (AGENTS.md §"Before declaring 'open'").
+
+    **The proof.**  Three steps, no new analysis:
+
+    1. `|2 sin t| = 2 sin t` on `[0, π/4]`, so the absolute value comes off.
+    2. Rescaling `t = 2s` (`intervalIntegral.integral_comp_mul_left`) turns
+       `-∫₀^{π/4} log(2 sin t) dt` into `clausen(π/2)/2`, because `clausen` is
+       defined with the half-angle `sin(t/2)`.
+    3. `clausen(π/2) = Cl_2(π/2)` (`QOU.Knot.clausen_eq_series`) and
+       `Cl_2(π/2) = catalan_G`
+       (`QOU.Archimedean.catalan_G_eq_Cl_2_pi_div_two`).
+
+    Downstream consumers are unaffected: the name and statement are unchanged, so
+    `WhiteheadVolumeCatalan.vol_L5a1_eq_8_lobachevsky` and the Borromean volume
+    chain now hold unconditionally rather than modulo this axiom.
 
     -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
-            North-Holland (1981), eq. 4.2.21. -/
-axiom lobachevsky_pi_div_four_eq_half_catalan :
-    lobachevsky (π / 4) = catalan_G / 2
+            North-Holland (1981), eq. 4.2.21 — the classical statement.  The Lean
+            proof is via the Zagier series-integral bridge, not via Lewin. -/
+theorem lobachevsky_pi_div_four_eq_half_catalan :
+    lobachevsky (π / 4) = catalan_G / 2 := by
+  have hpi := Real.pi_pos
+  have hle : (0:ℝ) ≤ π / 4 := by linarith
+  -- (1) drop the absolute value: `sin ≥ 0` on `[0, π/4]`
+  have hA : (∫ t in (0:ℝ)..(π / 4), Real.log |2 * Real.sin t|)
+      = ∫ t in (0:ℝ)..(π / 4), Real.log (2 * Real.sin t) := by
+    refine intervalIntegral.integral_congr ?_
+    intro t ht
+    rw [Set.uIcc_of_le hle] at ht
+    have hs : 0 ≤ Real.sin t :=
+      Real.sin_nonneg_of_nonneg_of_le_pi ht.1 (by linarith [ht.2])
+    simp only []
+    rw [abs_of_nonneg (by linarith : (0:ℝ) ≤ 2 * Real.sin t)]
+  -- (2) rescale `t = 2s` onto the half-angle integrand that defines `clausen`
+  have hhalf : ∀ x : ℝ, 2 * x / 2 = x := fun x => by ring
+  have hB := intervalIntegral.integral_comp_mul_left
+      (a := (0:ℝ)) (b := π / 4) (fun t => -Real.log (2 * Real.sin (t / 2)))
+      (by norm_num : (2:ℝ) ≠ 0)
+  simp only [hhalf, mul_zero, smul_eq_mul] at hB
+  have h24 : 2 * (π / 4) = π / 2 := by ring
+  rw [h24] at hB
+  have hcl : (∫ x in (0:ℝ)..(π / 2), -Real.log (2 * Real.sin (x / 2)))
+      = QOU.Knot.clausen (π / 2) := rfl
+  rw [hcl] at hB
+  -- (3) the Zagier bridge, then the Catalan bridge
+  have hser : QOU.Knot.clausen (π / 2) = QOU.Archimedean.Cl_2 (π / 2) :=
+    QOU.Knot.clausen_eq_series ⟨by linarith, by linarith⟩
+  rw [hser, ← catalan_G_eq_Cl_2_pi_div_two] at hB
+  rw [intervalIntegral.integral_neg] at hB
+  unfold lobachevsky
+  rw [hA]
+  linarith [hB]
 
 /-! ## §4  Borromean rings volume = 8·G (Adams 1985) -/
 

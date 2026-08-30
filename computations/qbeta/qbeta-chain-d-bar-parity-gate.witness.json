@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T15:20:35.437071+00:00",
-  "commitSha": "cd22a3164a7d02df76ed3a0280c8e7ed2f15e720",
+  "computedAt": "2026-08-23T09:47:50.513029+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "c3_not_bar_invariant",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qbeta-chain-d-bar-parity-gate",
   "scriptFile": "qbeta_chain_d_bar_parity_gate.py",
-  "scriptHash": "0110d6ac80b8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff4b21fcc943",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,25 +35,35 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_chain_d_bar_parity_gate.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_chain_d_bar_parity_gate.py"
   },
   "description": "Bar-parity gate for Q_β chain D (Type-B folded crystal). Type-B content is bar-involution invariant; tests whether the c_k are. c₂ even/constant (bar-invariant ✓); c₃ = -2 - ℏ_q² is bar-MIXED (invariant -2 Jones core + bar-covariant -ℏ_q² tail), so a uniformly bar-invariant Type-B crystal cannot reproduce c₃. REFUTE D as the single kernel; the ladder is parity-split (crystal even rungs × Jones-Hopf odd rungs). No fit.",
   "parameters": {
-    "q0": "1.1099785955573347"
+    "q0": "1.109978582751380807591669095610768879874"
   },
   "data": {
     "hbar_sq_is_bar_covariant_times_q2": true,
     "c2_bar_invariant": true,
-    "c3_q0": "-2.00981718851398598119302644534",
-    "c3_bar_image": "-2.01209529148076379981211496782",
+    "c3_q0": "-2.00981718645427507381056905718",
+    "c3_bar_image": "-2.01209528866400231608646632231",
     "c3_bar_invariant": false,
-    "c3_bar_swing_pct": 0.11334876524079272,
+    "c3_bar_swing_pct": 0.11334872768932165,
     "verdict": "REFUTE-D-as-single-kernel; ladder is parity-split (crystal even × Jones-Hopf odd)"
   },
   "caveats": [
     "c₄ even-rung is flagged a normalisation artifact (PR #1786); the gate rests on c₂ (constant) and c₃ (= -2-ℏ_q², fully determined, no Hoefsmit b). The c₁=cos rung needs α(q) and is not tested here.",
     "Structural-constraint (prune) result: refutes Type-B as the c₃ kernel and redirects to a parity-split kernel. Nothing wired; c_k stay cal-anchored."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -14,8 +14,15 @@ where each interface contributes a Markov-axiom factor f_i(q):
   - **averaged** (σ_g - (h/2)·I, the canonical p-n
     form in `mass_at_3A_proper.atom_braid_word_3A`): f = z(q) - h(q)/2
 
-with `z(q) = 1/(q^{1/2} + q^{-1/2})` (Markov parameter) and
-`h(q) = q - q^{-1}` (Hecke skein parameter).
+with `z(q) = q^3 / (q^2 + 1)` (Markov parameter, registry convention **D**)
+and `h(q) = q - q^{-1}` (Hecke skein parameter).
+
+OWNER RULING 2026-08-09 excised convention **C**, `z = 1/(q^{1/2} +
+q^{-1/2})`, which this header documented until 2026-08-15. Reading C off
+this docstring rather than off `markov_z` below is a **23% error**
+(0.4993203 vs 0.6126880 at q_0). `markov_z`'s own docstring carries the
+forcing argument and the registry pointers — it is authoritative; this
+header is a summary of it.
 
 Combined with Phase 5l (`prop:constit-factor-tau-M-proton-identity`)
   tr_M(𝓑_K^vac) = tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N
@@ -61,7 +68,8 @@ CODATA via the Bring-surface integration.  This is at the MASS level
 
 **At the substrate H_{3A} level (where this module operates)**: the
 substrate quark-flavor split δ = (m_n − m_p) / M_N is available via
-`flavor_split_subleading(q)` (PR #690, prop:flavor-split-substrate).
+`flavor_split_leading(q)` (PR #690, prop:flavor-split-substrate; the
+2026-06-29 de-wire moved this off the POSITED subleading form).
 The `pn_convention` choices are:
 
   - "bring_color_weighted" (DEFAULT, 2026-06-01): quaternionic
@@ -125,20 +133,92 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-InterfaceKind = Literal["positive", "negative", "averaged"]
+InterfaceKind = Literal["positive", "negative", "averaged", "averaged_weighted"]
 PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weighted"]
 
 
 def markov_z(q: mp.mpf) -> mp.mpf:
-    """Markov parameter z(q) = 1 / (q^{1/2} + q^{-1/2})."""
+    """Markov parameter z(q) = q^3 / (q^2 + 1) — registry convention **D**.
+
+    OWNER RULING 2026-08-09: convention C excised. This returned C's
+    `1/(q^{1/2} + q^{-1/2}) = 0.4993203` until then; it now returns D's
+    `q^3/(q^2+1) = 0.6126880`.
+
+    The selection is FORCED, not stipulated. `lem:feynman-eigenbasis-
+    decomposition` puts the row cap `ell(lambda) <= 2` in the mass channel's own
+    decomposition (V = the fundamental of SU_q(2)), so `y_(1^3) = 0`; given that,
+    `QOU.BraidsAndKnots.MarkovTraceTLUniqueness.
+    markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) makes the faithful
+    normalised Markov trace unique and equal to `q^3/(q^2+1)`. The competing root
+    `z = q` is degenerate (`y_(2,1) = 0`, not faithful on TL_3).
+
+    NOT decided by which value matches experiment. For the record it does NOT
+    flatter the binding table: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves
+    37.39% -> 43.85%. It does fix 2H (+74.85% -> +27.36%) and, structurally, the
+    deuteron stops being unreachable — under C, AME sits 30.4% below the whole
+    admissible band; under D it is inside it.
+
+    Registry: docs/coordination/trace-convention-registry.md.
+    Forcing: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md.
+    """
     q = mp.mpf(q)
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    return q ** 3 / (q ** 2 + 1)
 
 
 def hecke_h(q: mp.mpf) -> mp.mpf:
     """Hecke skein parameter h(q) = q - q^{-1}."""
     q = mp.mpf(q)
     return q - 1 / q
+
+
+def trM_sigma1_sq(q: mp.mpf) -> mp.mpf:
+    """tr_M(sigma_1^2) = h*z + 1, for any n >= 2.
+
+    Follows from the Hecke quadratic sigma^2 = h*sigma + 1 and tr_M(sigma) = z;
+    it holds for ANY Markov parameter, which is exactly why it belongs here in
+    terms of `markov_z` rather than being written out.
+
+    ## Why this function exists
+
+    This identity was copy-pasted, specialised to convention C, into at least
+    five places:
+
+        knot_operator_census_group_actions.trM_sigma1_sq   1 + (q-1)/sqrt(q)
+        c_3_categorical_derivation_attempt.trM_hopf        1 + (q-1)/sqrt(q)
+        lepton_t2n_torus_tower.trM_hopf_census_form        1 + (q-1)/sqrt(q)
+        inter_nucleon_linked_channel.census_hopf           1 + (Q0-1)/sqrt(Q0)
+        tools/sage-examples/.../hecke_surface.trace_weights (via a local z)
+
+    `1 + (q-1)/q^{1/2}` IS `h*z + 1` evaluated at z_C -- the square root is
+    z_C's, not the identity's. So when z moved to D every copy silently went on
+    describing the excised convention, and the sage example's guard
+    (`assert abs(TR_M[1] - z) < 1e-9`) started failing while the rest just
+    returned wrong numbers quietly.
+
+    A local copy of a library value is the whole defect class. One definition,
+    gated by R11 in the trace-convention registry, is the fix.
+    """
+    q = mp.mpf(q)
+    return hecke_h(q) * markov_z(q) + 1
+
+
+def wenzl_weights_h2(q: mp.mpf) -> tuple:
+    """H_2(q) Wedderburn weights (y_(2), y_(1,1)), solved from the axioms.
+
+    tr_M(1) = y_(2) + y_(1,1) = 1 and tr_M(sigma_1) = y_(2)*q - y_(1,1)/q = z
+    give y_(2) = (q*z + 1)/(q^2 + 1) and y_(1,1) = 1 - y_(2), for any z.
+
+    The convention-C specialisation of this is
+    `(q^{3/2} + q + 1)/(q^3 + q^2 + q + 1)`, which is what
+    `lepton_t2n_torus_tower.wenzl_weights` hardcoded (twice -- once numerically
+    and once in sympy, and the two were migrated separately, so for one commit
+    they disagreed and the file's own symbolic-vs-numeric assertion caught it).
+    The q^{3/2} is z_C's square root showing through a formula that has none of
+    its own.
+    """
+    q = mp.mpf(q)
+    y2 = (q * markov_z(q) + 1) / (q ** 2 + 1)
+    return y2, 1 - y2
 
 
 def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
@@ -163,6 +243,8 @@ def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
 def canonical_interface_kinds(
     Z: int, N: int,
     pn_convention: PnConvention = "bring_color_weighted",
+    *,
+    weighted_labels: bool = False,
 ) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
@@ -170,7 +252,7 @@ def canonical_interface_kinds(
 
       - "bring_color_weighted" (DEFAULT, 2026-06-01 — canonical/derived):
           Quaternionic color-tube weighting using the substrate-derived
-          δ = (m_n − m_p) / M_N from `flavor_split_subleading(q)`
+          δ = (m_n − m_p) / M_N from `flavor_split_leading(q)`
           (PR #690, prop:flavor-split-substrate — substrate-pure,
           no fitted quark masses).  Net p-n interface factor (applied
           downstream in `closed_form_ratio` / `closed_form_tau_M`):
@@ -226,6 +308,21 @@ def canonical_interface_kinds(
         # consumers (witness metadata, symbolic Habiro extraction
         # using chi_lambda_braid marshalling) do not crash on the
         # new default.
+        #
+        # THAT DEFAULT IS A TRAP FOR ANY CONSUMER THAT APPLIES ITS OWN
+        # FACTOR. Asking for the canonical convention and then mapping the
+        # returned labels through a three-kind {positive, negative,
+        # averaged} dispatch yields z - h/2 — the colour-BLIND factor —
+        # while the caller believes it is canonical. It cannot be caught by
+        # an equality test against "averaged_weighted", because that label
+        # is never emitted; it fails by returning a slightly smaller number
+        # rather than by raising. Measured live in
+        # `probes/binding_closed_form_C_vs_D_probe.py::interface_factor`.
+        #
+        # `weighted_labels=True` opts into the full vocabulary, emitting
+        # "averaged_weighted" for the p-n interface so such a consumer either
+        # handles the weighting or raises on an unknown kind. It is opt-in
+        # precisely so the label-only consumers above keep working.
         A = Z + N
         if A < 2:
             return []
@@ -238,7 +335,8 @@ def canonical_interface_kinds(
             elif nuc == "n" and next_nuc == "n":
                 kinds_weighted.append("negative")
             else:  # p-n: asymmetric averaging (δ-aware factor applied in closed_form_ratio)
-                kinds_weighted.append("averaged")
+                kinds_weighted.append(
+                    "averaged_weighted" if weighted_labels else "averaged")
         return kinds_weighted
     A = Z + N
     if A < 2:
@@ -270,7 +368,7 @@ def closed_form_ratio(
 
     For pn_convention="bring_color_weighted": the p-n interface
     factor is z - h·(1/2 - δ/4) where δ = Δm/M_N (substrate-pure
-    from flavor_split_subleading). This replaces the uniform
+    from flavor_split_leading). This replaces the uniform
     z - h/2 with a quaternionically-weighted per-color-tube
     asymmetry.
     """
@@ -313,13 +411,18 @@ def closed_form_tau_M(
 ) -> mp.mpf:
     """Full closed-form tr_M(𝓑_K) at q.
 
-    TRACE CONVENTION: **convention C** — the full-Hecke Ocneanu / Wenzl
-    z-trace, z = 1/(q^{1/2}+q^{-1/2}) (`markov_z` below), weights from
-    `y_lambda_wenzl_bridge_numeric`, y_(1^3) != 0. This is the binding
-    channel's trace. It is NOT convention D (SU(2)/Temperley-Lieb, Jones
-    weights, z = q^3/(q^2+1)), which the production *mass* channel uses via
-    `m_p_substrate_identity_50dps.trM_borromean`; the two differ by 195.8 ppm
-    on beta_Bor. Registry: docs/coordination/trace-convention-registry.md.
+    TRACE CONVENTION: **convention D** — SU(2)/Temperley-Lieb (Jones),
+    z = q^3/(q^2+1) (`markov_z` above), weights from
+    `y_lambda_wenzl_bridge_numeric`, y_(1^3) = 0. Both the binding and the
+    mass channel are now D; convention C (the full-Hecke Ocneanu / Wenzl
+    z-trace, z = 1/(q^{1/2}+q^{-1/2}), y_(1^3) != 0) was excised by owner
+    ruling 2026-08-09. Registry:
+    docs/coordination/trace-convention-registry.md.
+
+    This docstring said **C** until 2026-08-09 while `markov_z` had already
+    returned D since 33a6c7aa, and `y_lambda_wenzl_bridge_numeric` was still
+    C until bean qou-wgta item 3 — so the declaration, the interface and the
+    constituent were three different answers. All three are D now.
 
     Inputs are the two H_3 Markov-trace building blocks:
       - tr_M^3(𝓑_p, q) — the proton's H_3 trace
@@ -353,23 +456,53 @@ def compute_tau_M_nucleon_H3(
     (last two via thin wrappers; the verification script now imports).
 
     Compute path:
-      1. Marshal _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain to (sign, gen)
-         via the standard `canonical_braid_marshalling` helper.
-      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions).
+      1. Take the _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain as (c, d, gen),
+         carrying `d` through unchanged.
+      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions),
+         with χ via the d-preserving `chi_monotone_transfer.chi_all_lambda`.
 
     At mpfr-50-dps this is cheap (sub-second per nucleon, no H_n>3
     machinery involved).
+
+    🛑 **This used to marshal through `marshal_to_chi_lambda_braid` and was
+    WRONG by 15.3 % (proton) / 27.3 % (neutron)** — fixed 2026-08-26, bean
+    `qou-qu2w`. That marshaller "emits signs and drops `d` entirely" (its own
+    docstring) and maps `averaged → sign=+1`. Each nucleon chain carries TWO
+    `averaged` crossings — intra-nucleon, nothing to do with a p-n interface.
+    Censused with `canonical_braid_crossings.classify_crossing`, which is the
+    module that owns the ctype vocabulary (this file deliberately does not
+    re-list it; its own `InterfaceKind` is a separate, interface-level
+    vocabulary — see `interface_factor`):
+
+        proton   6 positive, 2 averaged, 3 inverse
+        neutron  5 positive, 2 averaged, 4 inverse
+
+    so the flattening replaced that crossing's Markov factor `z − h/2` by `z`
+    at two sites per nucleon. The marshaller's defence — "equally lossy for
+    both variants, which is why the collapse is correct *here*" — is about
+    `averaged` vs `averaged_weighted` and does not license `averaged → sigma`.
+
+    **This was not a convention question, which is why it survived every
+    convention audit.** Both paths are convention D, and A=1 has no p-n
+    interface, so no `pn_convention` argument reaches this site — this
+    function correctly takes none. Anything keyed on `pn_convention` is
+    structurally blind here.
+
+    The fixed values reproduce `habiro-coefficients-atomic.witness.json`
+    (τ_p = 1.14575969245730087, τ_n = 0.987743688115809572) to ~1e-50; the
+    old ones missed it by the factors above, and squared into the 2.157×
+    disagreement between `habiro-coefficients-helium-4` and
+    `atomic-tr-m-helium4-canonical`. Measured in
+    `probes/nucleon_h3_marshalling_divergence_probe.py`.
     """
-    import mpmath as mp_local  # noqa: F401 (already imported above)
     # Imports kept local to avoid top-level cycle if a consumer of
     # closed_form_tau_M is itself imported by hecke_characters.
-    from hecke_characters import chi_lambda_braid, partitions_of
+    from hecke_characters import partitions_of
     from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
-    from canonical_braid_marshalling import marshal_to_chi_lambda_braid
+    from chi_monotone_transfer import chi_all_lambda
     from hecke_core import (
         _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
     )
-    from q_parameter import Q as Q0
 
     if nucleon == "p":
         g0, g1 = _PROTON_G0, _PROTON_G1
@@ -378,30 +511,29 @@ def compute_tau_M_nucleon_H3(
     else:
         raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
 
-    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
-    chain_with_gens = (
-        [(c, d, 0) for c, d in g0]
-        + [(c, d, 1) for c, d in g1]
-    )
-    word = marshal_to_chi_lambda_braid(chain_with_gens, h_val)
-    q_str = mp.nstr(q_val, dps, strip_zeros=False)
-    # Per Copilot PR #1080 review: dps is authoritative — derive the
-    # chi_lambda_braid precision tag from it instead of hardcoding
-    # "mpfr_50dps", so a caller requesting (say) dps=100 gets a fully
-    # 100-dps pipeline.  chi_lambda_braid requires dps >= 50 in mpfr
-    # mode; enforce that bound here.
     if dps < 50:
         raise ValueError(
             f"compute_tau_M_nucleon_H3 requires dps >= 50 (got {dps}); "
-            f"chi_lambda_braid mpfr mode is calibrated at 50+ dps."
+            f"the character path is calibrated at 50+ dps."
         )
-    precision_tag = f"mpfr_{dps}dps"
+
+    # The chain is (c, d, gen) and MONOTONE (all gen 0, then all gen 1),
+    # which is what `chi_all_lambda` requires. `d` is carried through as
+    # mpf: it IS the crossing, and dropping it is the defect this function
+    # used to have (see the note above).
+    word = [(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0] + \
+           [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1]
+
+    # `q=q_val` explicitly: the trace and the representation are then built
+    # at ONE q. The previous implementation classified crossing signs against
+    # the module-level `q_parameter.Q` while tracing at the caller's `q_val`
+    # — a pin straddle that was harmless only because every caller happened
+    # to pass the same value.
+    chi = chi_all_lambda(word, 3, dps=dps, q=mp.mpf(q_val))
     total = mp.mpf(0)
     for lam in partitions_of(3):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word, q_value=q_str,
-                                precision=precision_tag)
-        total += y * mp.mpf(str(chi))
+        total += y * chi.get(tuple(lam), mp.mpf(0))
     return total
 
 

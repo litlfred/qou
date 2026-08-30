@@ -84,11 +84,34 @@ Q0_PROTON = mp.mpf(_Q_PROTON_STR)
 # Muon pin: the canonical 3-CAL computations-layer value (task-given).
 Q0_MUON = mp.mpf("1.1099785955573347198997632204832250266562084087802")
 
-# Empirical c_3 targets (registry ≈ −2.01 muon / −2.07 proton):
+# Empirical c_3 targets (registry ≈ −2.02 muon / −2.07 proton):
 #   proton: qbeta_root_of_unity_probe.py / c3-rigidity audit (proton-pinned)
-#   muon:   qbeta_multiblock_order_audit.py C3_EMP_MUON
+#   muon:   extracted AT this file's own Q0_MUON (:85) — see below
+#
+# 🛑 THE MUON VALUE WAS -2.0097 (corrected 2026-08-29, bean `qou-t39x`), taken
+# from `qbeta_multiblock_order_audit.py C3_EMP_MUON` per the old comment here.
+# Two things were wrong with that provenance:
+#
+#   1. -2.0097 is the pre-#1422 value and matches NO anchor now in use.
+#   2. The file it was copied from defines `Q0_MUON_PIN = Q_50_DIGIT_STR`,
+#      which is the PROTON pin — so it could not have been a muon readout.
+#
+# There is no single "muon c_3". Re-running c_3 = (Q_codata/Q_N2 - 1)/u^3:
+#
+#     frozen pin  (…5557…)   -2.02018813   <- this file's Q0_MUON
+#     CODATA-2018 (…5554…)   -2.02020024
+#     CODATA-2022 (…5642…)   -2.01986031
+#
+# `Q0_MUON` above is 1.10997859555733471…, the frozen pin, so the value below is
+# the one extracted there. Verified by reproducing the corpus PROTON value
+# -2.06934257712 to 12 digits with the same routine.
 C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")
-C3_EMP_MUON = mp.mpf("-2.0097")
+C3_EMP_MUON = mp.mpf("-2.02018812814")
+
+# Exactness tolerance for the c_2 = -1 assertion. An mpf, not the bare `1e-35`
+# float literal it replaces — the literal was serialized into the witness as a
+# raw float64.
+C2_TOL = mp.mpf("1e-35")
 
 # C13 reference values (habiro-mode-to-ladder-bridge.witness.json) for the
 # extends-C13 comparison: linear seed of the ATOMIC Δtr_M even-in-ℏ data.
@@ -218,8 +241,15 @@ def main():
     print(f"    predicted cross-anchor swing: {mp.nstr(pred_swing, 8)} "
           f"({float(pred_swing) * 100:.2e}%)   empirical swing: "
           f"{float(emp_swing) * 100:.2f}%")
-    anchor_constant = float(pred_swing) < 1e-4  # ≪ empirical 2.9% swing
-    within_1pct_both = float(err_p) < 0.01 and float(err_m) < 0.01
+    # mpf comparisons, not float64 ones (AGENTS.md §PROBES ARE NOT EXEMPT: a
+    # `float(x)` outside an f-string is a computation, not a display).
+    anchor_constant = pred_swing < mp.mpf("1e-4")  # ≪ the empirical swing
+    within_1pct_both = err_p < mp.mpf("0.01") and err_m < mp.mpf("0.01")
+    # The empirical swing, spelled once and interpolated everywhere below. It
+    # was hardcoded "2.9%" at three sites — the pre-#1422 stale-c_3 figure,
+    # which no longer matched the value this very function computes two lines
+    # up (2.38%). Deriving it means the number cannot go stale again.
+    emp_swing_pct = f"{mp.nstr(emp_swing * 100, 3)}%"
     print(f"    ⇒ prediction is anchor-{'CONSTANT' if anchor_constant else 'VARYING'} "
           f"(C13's was anchor-constant)")
 
@@ -235,7 +265,8 @@ def main():
         overall = "NEGATIVE"
     summary = (
         f"Exponentiated per-block seeding (U1) gives c_3 ≈ {mp.nstr(c3_p, 8)} at both "
-        f"anchors — anchor-constant (swing {float(pred_swing):.1e} vs empirical 2.9%) and "
+        f"anchors — anchor-constant (swing {float(pred_swing):.1e} vs empirical "
+        f"{emp_swing_pct}) and "
         f"{float(err_p) * 100:.1f}% (proton) / {float(err_m) * 100:.1f}% (muon) from the "
         "empirical c_3 — exactly the C13 failure mode. Two structural collapses make this "
         "unsurprising: (i) uniform weights collapse exp(Σ_λ g_λ) to exp(g_total); "
@@ -307,8 +338,9 @@ def main():
                 "prediction_is_anchor_constant": bool(anchor_constant),
                 "note": ("b(q0) differs only at ~1e-8 relative between the two pins, "
                          "so any c_k = rational/b^m prediction is anchor-constant to "
-                         "~1e-8 — it cannot track the 2.9% empirical swing (the C13 "
-                         "diagnostic, reproduced here for the exponentiated seed)."),
+                         f"~1e-8 — it cannot track the {emp_swing_pct} empirical swing "
+                         "(the C13 diagnostic, reproduced here for the exponentiated "
+                         "seed)."),
             },
             "structural_collapses": {
                 "uniform_weights_collapse": (
@@ -337,10 +369,15 @@ def main():
             },
             {
                 "name": "scale_fix_c2_minus1_solvable_and_exact",
-                "computed": float(results["proton"]["c"][2]),
-                "expected": -1.0,
-                "passed": bool(abs(results["proton"]["c"][2] + 1) < mp.mpf("1e-35")),
-                "tolerance": 1e-35,
+                # mpmath.mpf carried end-to-end and serialized as a decimal
+                # string. `float(...)` here truncated a 35-digit agreement to a
+                # double, and the bare `1e-35` tolerance literal put a raw
+                # float64 into the witness (AGENTS.md §PROBES ARE NOT EXEMPT;
+                # caught by witness_raw_float64_audit, bean qou-t39x).
+                "computed": mp.nstr(results["proton"]["c"][2], 40),
+                "expected": "-1",
+                "passed": bool(abs(results["proton"]["c"][2] + 1) < C2_TOL),
+                "tolerance": mp.nstr(C2_TOL, 5),
                 "source": "c_2 = -1 is the one proved rung (Lean N2_factor); the single scale d.o.f.",
             },
             {
@@ -366,6 +403,15 @@ def main():
 
     wout = os.path.join(HERE, "qbeta-exponentiated-per-block.witness.json")
     with open(wout, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(out, f, indent=2)
     print(f"\n  witness -> {wout}")
     return out

@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-ph-9612303v1",
+ "source_sha256": "5311d7faf2b3e005",
+ "brief": "Klein-Kreisler & Ruiz-Altaba, The q-deformed quark model: quantum isospin and q-hadrons (1996) — treats SU(2) isospin as a quantum group and builds π-meson and nucleon wavefunctions from a q-quark…",
+ "extended": "**The q-deformed quark model: quantum isospin and q-hadrons** — M. Klein-Kreisler and M. Ruiz-Altaba, Instituto de Física, UNAM. arXiv:hep-ph/9612303, preprint IFUNAM FT96-13, December 1996.\n\nConsiders that the SU(2) isospin symmetry — exact in strong interactions but only approximate in nature — is in fact a quantum group. Using a doublet of q-quarks, builds the wavefunctions of π-mesons, nucleons and other hadrons.\n\n**Why it may bear here.** This is the closest thing in the library to this corpus's own move: deforming a hadronic symmetry by q and reading physical states off the deformed structure. Whether the two constructions agree, conflict, or are unrelated is not assessed here — that would need the corpus-grep checklist, and this note is a pointer for attention only.",
+ "tokens": {
+  "brief": 49,
+  "extended": 195
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-2-the-quantum-isospin-group-and-its-possible-rel",
+   "title": "The quantum isospin group and its possible relevance to ph ysics",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-002-1-do-not-confuse-the-baryons-etc-with-the-coprod",
+   "title": "Do not confuse the baryons ∆ ++, ∆ +, etc. with the coproducts ∆ and ∆ ′ = P ◦ ∆!",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-6-conclusions-and-outlook",
+   "title": "Conclusions and outlook",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "9-9"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

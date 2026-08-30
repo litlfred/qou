@@ -160,6 +160,14 @@ def main() -> int:
 
     witness = {
         "computation": "q0-consistency-audit",
+        # This witness is the OUTPUT OF AN AUDIT -- a scan over the tree -- not
+        # a computed quantity. `derivation_gap_categorize.py` reads `auditOnly`
+        # as a DECLARED flag and cannot infer it, so without this line the file
+        # lands in the production tier and is counted as owing a derivation
+        # chain: the "category error to chain" that tool's own legend warns
+        # about. Bean qou-akdup / dgpc.
+        "auditOnly": True,
+        "scriptFile": "computations/audits/q0_consistency_audit.py",
         "description": (
             "Scans compute scripts for stale pre-habiro q₀ literals "
             "(10997858275 / 858275) and stale-A tr_M leaf values "
@@ -179,6 +187,15 @@ def main() -> int:
         "hits": all_hits,
     }
     out = HERE / "q0-consistency-audit.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nWitness: {out}")
 

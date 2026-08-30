@@ -54,8 +54,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 import qbeta_5two_n3_cable_arbitration_probe as c3  # noqa: E402
 from qbeta_5two_n5_cable_qstar_probe import Jp  # noqa: E402
 import qbeta_5two_colored_tower_barodd_qstar_probe as tower  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 BRAID_5_2 = [1, 1, 1, 2, -1, 2]
 BRAID_4_1 = [1, -2, 1, -2]

@@ -1,0 +1,696 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "phys-rep09",
+ "source": {
+  "file": "phys-rep09.pdf",
+  "sha256": "cd345d3df9358efc2e69758c1b5fcb5045ff1486472d3843a0b681996cbf18e7",
+  "bytes": 6455804,
+  "pages": 88
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1016/j.physrep.2008.11.001",
+  "title": "The Magnus expansion and some of its applications",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.3",
+   "CreationDate": "D:20090113103546+05'30'",
+   "Creator": "Elsevier"
+  },
+  "title_prev": "PhysicsReports470(2009)151–238 PhysicsReports TheMagnusexpansionandsomeofitsapplications S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗ aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain",
+  "title_lines": [
+   "PhysicsReports470(2009)151–238",
+   "PhysicsReports",
+   "TheMagnusexpansionandsomeofitsapplications",
+   "S.Blanes a,F.Casas b,J.A.Oteo c,J.Ros c,d,∗",
+   "aInstitutodeMatemáticaMultidisciplinar,UniversidadPolitécnicadeValencia,E-46022Valencia,Spain"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The Magnus expansion and some of its applications",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Motivation, overview and history",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Mathematical preliminaries and notations",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Magnus expansion (ME)",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A proof of Magnus' Theorem",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Formulae for the first terms in Magnus expansion",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus expansion generator",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus expansion and time-dependent perturbation theory",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Graph theoretical analysis of Magnus expansion",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Time-symmetry of the expansion",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Convergence of the Magnus expansion",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "On the existence of  Ω (t)",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Convergence of the Magnus series",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "An improved radius of convergence",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Further discussion",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus expansion and the BCH formula",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Preliminary linear transformations",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Exponential product representations",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Fer method",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Wilcox method",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Wei--Norman factorization",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The continuous BCH formula",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Generalizations of the Magnus expansion",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Voslamber iterative method",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Floquet--Magnus expansion",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus expansions for nonlinear matrix equations",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Treatment of general nonlinear equations",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Treatment of Hamiltonian systems",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus expansion and the Chen--Fliess series",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Illustrative examples",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "ME in the Interaction Picture",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Linearly forced harmonic oscillator",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Two-level quantum systems",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "ME in the Adiabatic Picture",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Linearly forced harmonic oscillator",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Rosen--Zener model",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Fer and Wilcox infinite-product expansions",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Linearly forced harmonic oscillator",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Two-level quantum system: Rectangular step",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Voslamber iterative method",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Linear periodic systems: Floquet--Magnus formalism",
+   "page": 47,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Numerical integration methods based on the Magnus expansion",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Introduction",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Runge--Kutta methods",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Preservation of qualitative properties",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus integrators for linear systems",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "From Magnus to Fer and Cayley methods",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Fer based methods",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Cayley-transform methods",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Numerical illustration: The Rosen--Zener model revisited",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Computing the exponential of a matrix",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Scaling and squaring with Padé approximation",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Chebyshev approximation",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Krylov space methods",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Splitting methods",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Additional numerical examples",
+   "page": 64,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Modified Magnus integrators",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Variations on the basic algorithm",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Commutator-free Magnus integrators",
+   "page": 67,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnus integrators for nonlinear differential equations",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Nonlinear matrix equations in Lie groups",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "The general nonlinear problem",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Some applications of the numerical integrators based on ME",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Case study: Numerical treatment of the Schrödinger equation",
+   "page": 72,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Time-dependent Schrödinger equation",
+   "page": 72,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Time-independent Schrödinger equation",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Sturm--Liouville problems",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The differential Riccati equation",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Stochastic differential equations",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Physical applications",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Nuclear, atomic and molecular physics",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum field theory and high energy physics",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Electromagnetism",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Optics",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "General Relativity",
+   "page": 83,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Search of periodic orbits",
+   "page": 83,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Geometric control of mechanical systems",
+   "page": 83,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusions",
+   "page": 84,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 84,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 85,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 48,
+   "n_chars": 120254,
+   "n_words": 6409
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 79,
+   "n_chars": 99119,
+   "n_words": 4386
+  },
+  {
+   "id": "sec-002-stochastic-differential-equations",
+   "number": null,
+   "title": "Stochastic differential equations",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 82,
+   "n_chars": 12858,
+   "n_words": 253
+  },
+  {
+   "id": "sec-003-electromagnetism",
+   "number": null,
+   "title": "Electromagnetism",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 1811,
+   "n_words": 64
+  },
+  {
+   "id": "sec-004-optics",
+   "number": null,
+   "title": "Optics",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 84,
+   "n_chars": 7001,
+   "n_words": 200
+  },
+  {
+   "id": "sec-005-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 84,
+   "n_chars": 1257,
+   "n_words": 15
+  },
+  {
+   "id": "sec-006-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 1063,
+   "n_words": 14
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 88,
+   "n_chars": 28313,
+   "n_words": 569
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 82,
+  "sections": 8,
+  "chars_total": 271676
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T20:46:39.946016+00:00",
-  "commitSha": "5f0bd03da72f45434371546eda69d315f360694f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T13:19:03.238960+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "cross_check_mu_ext_reproduced",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "perknot-additive-sk-vs-kA-extensivity",
   "scriptFile": "perknot_additive_sk_vs_kA_extensivity.py",
-  "scriptHash": "3faaf9273c8b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "48920c46e27c",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Bean qou-cqqs (PR #3205 verdict #5 salvage). Tests whether the per-knot additive S(K)/tr_M structure — regularised on the canonical base (S/(A m_e) uniform to ×1.73, no sign flip) — informs the single open Delta_lambda gate gap: the DERIVED extensivity multiplier k(A)=mu_ext=B_AME/B_base (5.853/4.444/3.292/9.313 for D/T/3He/4He, NON-MONOTONE, 4He max, D 2nd). Parameter-free candidates vs mu_ext by rank order, Spearman, and mean-aligned rel-err, calibrated against junk controls (A, C(A,2)). No fit, no BW, no rescaler-as-closure. EXPLORATORY, scope-(a).",
   "auditOnly": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
@@ -427,6 +429,24 @@
       "any_real_D_at_rank2": true
     },
     "verdict_tag": "PRUNE",
-    "verdict": "PRUNE (scope-(a)). Cross-check: B_AME/B_base reproduces mu_ext_target for all four isotopes (True). mu_ext is NON-MONOTONE (order 4He/D/T/3He, spread ×2.83, deuteron 2nd-largest from its tiny B_base). NO parameter-free per-knot reading of the additive S(K)/tr_M structure reproduces that shape: every candidate that has 4He as the max (S/m_e, S/(A m_e), 1/tr_M, constit_sum/tr_M) puts the DEUTERON SMALLEST (rank 4), the exact opposite of mu_ext's D-at-rank-2 — the per-knot S/(A m_e) family is monotone/compressed (spread ×1.14 across the four) and cannot supply mu_ext's ×2.83 non-monotone range, as the formalize-first uniformity argument predicts. tr_M(K) itself is anti-shaped (4He MIN, not max). JUNK CONTROL: the best real candidate (S/(A*m_e), Spearman +0.40) does NOT beat the best junk control (JUNK:A, Spearman +0.32) by a meaningful n=4 margin (beats_by_>0.25=False) — so any apparent partial match is within look-elsewhere noise. CONCLUSION: the per-knot additive S(K) structure does NOT inform the derived k(A) extensivity multiplier; it is pruned as a source of the non-monotone k(A). Scope-limited negative (a): constrains the per-knot S(K)/tr_M single-quantity reading only; NOT a structural exclusion of tr_M in a richer multi-term / operator-valued branching combiner (GAP-A-3/GAP-A-4 remain the open derived directions). No fit, no BW, no rescaler-as-closure."
+    "verdict": "PRUNE (scope-(a)). Cross-check: B_AME/B_base reproduces mu_ext_target for all four isotopes (True). mu_ext is NON-MONOTONE (order 4He/D/T/3He, spread ×2.83, deuteron 2nd-largest from its tiny B_base). NO parameter-free per-knot reading of the additive S(K)/tr_M structure reproduces that shape: every candidate that has 4He as the max (S/m_e, S/(A m_e), 1/tr_M, constit_sum/tr_M) puts the DEUTERON SMALLEST (rank 4), the exact opposite of mu_ext's D-at-rank-2 — the per-knot S/(A m_e) family is monotone/compressed (spread ×1.14 across the four) and cannot supply mu_ext's ×2.83 non-monotone range, as the formalize-first uniformity argument predicts. tr_M(K) itself is anti-shaped (4He MIN, not max). JUNK CONTROL: the best real candidate (S/(A*m_e), Spearman +0.40) does NOT beat the best junk control (JUNK:A, Spearman +0.32) by a meaningful n=4 margin (beats_by_>0.25=False) — so any apparent partial match is within look-elsewhere noise. CONCLUSION: the per-knot additive S(K) structure does NOT inform the derived k(A) extensivity multiplier; it is pruned as a source of the non-monotone k(A). Scope-limited negative (a): constrains the per-knot S(K)/tr_M single-quantity reading only; NOT a structural exclusion of tr_M in a richer multi-term / operator-valued branching combiner (GAP-A-3/GAP-A-4 remain the open derived directions). No fit, no BW, no rescaler-as-closure.",
+    "upstream_witness_hashes": [
+      {
+        "path": "deltalambda-extensivity-gap-synthesis.witness.json",
+        "sha256": "a5e111cffb8b26c8ee3bdd5d4e6808ced566b4999061e0cab8dc0ba90baba43c",
+        "size_bytes": 3968,
+        "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-18T19:19:17.146991+00:00"
+      },
+      {
+        "path": "gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
+        "sha256": "71c75c6ab9c7087be1dd825d98a873a3e74501a59e0ba079564682b97fff0d1a",
+        "size_bytes": 19624,
+        "commitSha": "074dfccb4a1090f3dad12759867a0a386851c795",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-17T20:37:38.495303+00:00"
+      }
+    ]
   }
 }

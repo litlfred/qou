@@ -1,0 +1,58 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T09:56:35.486992+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
+  "assertions": [
+    {
+      "name": "n3_wenzl_eq_molien",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Wenzl weights == Molien weights, exact Q(q,z), n=3"
+    },
+    {
+      "name": "n4_wenzl_eq_molien",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Wenzl weights == Molien weights, exact Q(q,z), n=4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "molien-wenzl-weight-identity",
+  "scriptFile": "molien_wenzl_weight_identity_probe.py",
+  "scriptHash": "8bec7405ed73",
+  "scriptCommitSha": "bc79d174ea171857b96e0b14af1d0db627950cda",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/molien_wenzl_weight_identity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/molien_wenzl_weight_identity_probe.py"
+  },
+  "description": "bean qou-3quc/qou-idwf: the Molien-predicted Jones-Markov weights EQUAL the INDEPENDENT Wenzl Schur-principal weights y_lambda = s_lambda/Z as rational functions of (q,z), verified exact at n=3 and n=4. Supplies the independent general-z H_4 weight the n=4 full-identity Lean (n4_full_identity) needed; the two families share no inputs. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-molien-jones-markov-n3-identification.md",
+  "data": {
+    "wenzl_formula": "y_lambda = s_lambda/Z, s_lambda = Q^n(lam) prod(1-R Q^c)/prod(1-Q^h), R=qz/(1-q^2+qz)",
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's entire import cone. The Wenzl weight identity is an algebraic identity in the formal parameter, not a substrate evaluation."
+}

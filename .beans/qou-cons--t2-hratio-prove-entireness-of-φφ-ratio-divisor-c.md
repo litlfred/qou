@@ -84,3 +84,95 @@ pinned divisor, is still a live candidate — a much smaller claim than the one
 retracted, and proved nowhere yet.
 
 RESTATE THIS BEAN before working it. As written it is the theorem, not a step.
+
+---
+
+## 2026-08-08 — RESTATED. The bean is now "supply the selection principle".
+
+The two notes above diagnose this correctly and both end by saying the statement
+must change before anyone works it. Here is the changed statement.
+
+**OLD (do not work):** *prove `hratio` — that `Ψ/Φ` is entire.* Dead twice over:
+unprovable from `FaddeevPhi`'s three fields (no regularity), and — given `hper`
+— identical to the conclusion (`RigidityReductionScope.hratio_iff_conclusion`).
+
+**NEW:** *supply the hypothesis that selects `Φ_b` from `Φ_b · {elliptic}`, in the
+divisor-plus-order form, and close the argument with the bricks already proved.*
+
+### The route, with every existing piece named
+
+`phiBProd b z = (∏' numFactor b z k) / (∏' denFactor b z k)`
+(`QOU.MathlibExt.PhiBProd`) — a ratio of two entire products. `phiBProd` itself
+is NOT entire (`QOU.Mathlib.HadamardApplicability.denFactor_eq_zero` exhibits a
+denominator zero), which is what killed the previous aim. **Its halves are**, and
+that is proved: `differentiable_numProd`, `differentiable_denProd`.
+
+So write a competing solution the same way, `Ψ = N_Ψ / D_Ψ`, and assume:
+
+    H1  same divisor : N_Ψ and N_Φ share their zeros with multiplicity,
+                       and likewise D_Ψ and D_Φ
+    H2  finite order : all four are entire of order ≤ ρ
+
+Then Hadamard factorization applied to each pair — to the HALVES, which are
+entire, not to `phiBProd`, which is not — gives
+
+    N_Ψ = N_Φ · e^g ,   D_Ψ = D_Φ · e^h ,   g, h polynomials of degree ≤ ρ
+
+whence
+
+    Ψ/Φ = e^(g−h)      entire, and nowhere zero.
+
+Now `hper` closes it with nothing further assumed. `Ψ/Φ` is doubly periodic
+(`QOU.Mathlib.FaddeevRatioPeriodic.ratio_periodic_b` / `ratio_periodic_binv`,
+both sorry-free, bean qou-rp5f, discharged), so
+`DoublyPeriodicLiouville.const_of_doublyPeriodic` applies directly to `e^(g−h)`
+— it is differentiable and doubly periodic, so it is constant. No auxiliary
+"`e^p` periodic ⇒ `p` constant" lemma is needed; the general Liouville statement
+already covers it.
+
+    uniqueUpToScalar  ⟸  H1 + H2  +  hper (done)  +  Hadamard-on-the-halves
+
+**Why this is a real reduction and the old one was not.** H1/H2 are hypotheses
+about the COMPETING solution's divisor and growth. They are not restatements of
+the conclusion: a doubly-periodic multiplier `E` with `Φ·E` still a `FaddeevPhi`
+solution (`FaddeevSolutionSet.faddeevPhi_mul_latticeIndicator` constructs one)
+generally violates H1 — multiplying by `E` moves zeros. That is exactly the
+class of counterexample the bean's own diagnosis says must be excluded, and
+H1/H2 exclude it by naming the divisor rather than by assuming the answer.
+
+### This gives the Hadamard bricks their consumer back
+
+`qou-v4if`'s motivation was retracted for aiming at `phiBProd`
+(`docs/audits/2026-08-08-hadamard-vs-liouville-route.md`), and the audit
+recorded the bricks as "good infrastructure with no current consumer". That
+second half is now wrong and should be corrected when this is worked:
+`WeierstrassFactorEstimate` (PI-2), `multipliable_canonicalProduct` (PI-3) and
+`BorelCaratheodory` are exactly what the step above needs. What stays retracted
+is the TARGET — Hadamard applies to `numProd`/`denProd`, never to `phiBProd`.
+
+The earlier note already said "a growth argument aimed at the two entire HALVES
+… is still a live candidate". This is that argument written down.
+
+### Sub-tasks, in dependency order
+
+1. **T2a** — state H1/H2 in Lean: a structure over a `FaddeevPhi` solution
+   carrying the num/den splitting plus divisor equality and an order bound.
+   Cheap; no analysis.
+2. **T2b** — the closing lemma `H1 + H2 + hper ⇒ ∃ c, ∀ z, Ψ z = c · Φ z`,
+   assuming Hadamard as a hypothesis. Also cheap: it is bookkeeping plus
+   `const_of_doublyPeriodic`. **Do this before T2c** — it makes the payoff
+   real before the expensive part, and it is the step that proves the route
+   closes at all.
+3. **T2c** — discharge Hadamard for the two halves. This is the genuinely hard
+   analytic core (PI-4/PI-5 in `QOU.Mathlib.HadamardFactorization`), and the
+   one legitimate reason to work it.
+
+### What is still NOT established
+
+That `Φ_b` itself satisfies H2, i.e. that `numProd`/`denProd` have finite order,
+and what ρ is. Nothing in the corpus computes it. Until that is settled the
+route is conditional on a property of the target, which is a weaker position
+than it looks — check it early, because if the order is infinite the whole
+route dies and only a pinned-divisor argument survives.
+
+Status stays `todo`: restated and now workable, not started.

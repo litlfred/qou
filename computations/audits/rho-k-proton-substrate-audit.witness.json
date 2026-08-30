@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "The simple form `ρ_K = m_p / (m_e · |tr_M|)` and the linking_weight form `ρ_K = linking_weight · (Vol/ℏ_q²) / |tr_M|` MUST agree by algebra. This assertion confirms they do."
     },
     {

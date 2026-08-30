@@ -114,7 +114,7 @@
       "computed": 1.583530407934892e-30,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341)"
     },
     {

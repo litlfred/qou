@@ -1,200 +1,302 @@
-/-
-  QOU.Mass — F1 q-lift, first brick: the q-hook dimension and its q = 1 collapse.
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
-  The binding q-deformation of the na-Stokes period is
-  `S(n) = Σ_{λ ⊢ n} dim_q(λ)`, whose q = 1 shadow is the involution
-  (telephone) number `I(n)` (OEIS A000085) via the Frobenius–Schur / RSK
-  identity `Σ_{λ ⊢ n} f^λ = I(n)`. See
-  `content/quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.md`
-  and `binding-period-involution-statistic.md`; the q = 1 shadow `I(n)` is
-  formalized in `QOU.Mass.involutionNumber` (PR #4294,
-  `card_involutions_eq_involutionNumber`).
+/-!
+# The q-dimensions the selection rule runs on, derived rather than substituted
 
-  This file builds the reusable q-combinatorics machinery those blocks
-  invoke only implicitly (the sibling `binding-period-involution-statistic.lean`
-  works with explicit polynomials, not reusable `qInt`/`qFact`/`dimQ`
-  functions) and proves the load-bearing q = 1 SPECIALIZATIONS, which are the
-  facts that make `S(n)|_{q=1}` collapse:
+`prop:selection-rule-anchors-c1-c3` and `prop:selection-rule-c2-prediction` state
+the per-component selection rule
 
-  * `qIntPoly q n = Σ_{i<n} q^i` — the polynomial (Gaussian) q-integer
-    `[n]_q = (q^n − 1)/(q − 1)`, over a generic `CommRing`;
-  * `qFactPoly q n = ∏_{i<n} qIntPoly q (i+1)` — the q-factorial `[n]_q!`;
-  * `dimQ q n hooks = qFactPoly q n / ∏_{h ∈ hooks} qIntPoly q h` — the
-    q-hook dimension of a shape of size `n` with hook multiset `hooks`, over
-    a `Field`;
-  * their q = 1 collapses: `qIntPoly 1 n = n`, `qFactPoly 1 n = n!`,
-    `dimQ 1 n hooks = n! / ∏_{h ∈ hooks} h` — the ordinary hook-length value
-    `f^λ = n! / ∏ h(c)`.
+    lw(c)(q) := (1/(c+1)) · Σ_{λ ⊢ c+1} dim_q V_λ
 
-  ## Normalization note (why the polynomial, not the balanced, q-integer)
+and give closed forms at c = 1, 2, 3.  Their `.md` calls those "derivation-tight
+(not a fit; both follow from the q-deformed hook-length formula)".
 
-  Corpus canon (`binding-period-involution-statistic.md`) uses the BALANCED
-  quantum integer `[k]_bal = (q^k − q^{−k})/(q − q^{−1})`. At literal `q = 1`
-  the balanced form is the `0/0` indeterminate (Lean's junk division makes it
-  `0`, not `k`), so its q = 1 shadow is only a q → 1 LIMIT statement. The
-  polynomial form `qIntPoly q k = Σ_{i<k} q^i` used here is the standard
-  rescaling `[k]_bal = q^{−(k−1)} · qIntPoly (q^2) k`; it agrees with the
-  balanced form up to an overall `q`-monomial twist (which cancels in the
-  hook-length RATIO `dimQ`) and, unlike the balanced form, has a clean LITERAL
-  value `qIntPoly 1 k = k` at `q = 1`. This is exactly the collapse the brick
-  needs, so the reusable machinery is stated in the polynomial normalization
-  and the balanced/twist relation is recorded here in prose.
+**Their Lean did not follow from the hook-length formula, because it never
+mentioned it.**  What those files prove is, in full:
 
-  ## The documented RSK gap (NOT a sorry — a genuinely open Lean gap)
+    selection_rule_c1_eq_one          ((1 : R) + 1) / 2 = 1
+    selection_rule_c2_prediction      (1 + (q + q⁻¹) + 1) / 3 = (q+1)^2 / (3*q)
+    selection_rule_c3_eq_family_a     (1 + (q²+1+q⁻²) + (q²+q⁻²) + (q²+1+q⁻²) + 1) / 4
+                                        = 5/2 + (3/4)(q - q⁻¹)^2
 
-  This brick does NOT prove `Σ_{λ ⊢ n} f^λ = I(n)`. That identity is the
-  Frobenius–Schur / RSK theorem (involutions of `Sₙ` ↔ standard Young tableaux
-  of size `n`), which requires a partitions-of-`n` `Fintype` and the RSK
-  bijection — machinery ABSENT from Mathlib. It is stated here in prose only;
-  there is no `sorry`-claimed theorem asserting it. Likewise the `Σ_{λ ⊢ n}`
-  sum over all partitions of `n` needs that same partitions `Fintype`; the
-  brick therefore works on a single explicitly-given shape (its hook multiset)
-  and on an explicitly-given LIST of shapes, leaving the intrinsic
-  `Σ_{λ ⊢ n}` and the RSK count as the documented next bricks.
+Every one is an arithmetic identity over literals typed in by hand.  No
+partition, no Young diagram, no hook length and no `dim_q` occurs in any
+statement; the hook-length computation was done in a docstring and only its
+*output* reached the Lean.  The c=1 case is the clearest: `(1+1)/2 = 1` is true
+of the numeral `1`, and its own docstring concedes the `q` argument "is
+genuinely unused".  That is the `sorry-free ≠ derived` failure AGENTS.md
+legislates against, and Strict Lean Discipline §8's test catches it — *could
+this be wrong?*  No: not because the mathematics is sound, but because the
+statement does not mention the objects it claims to be about.
 
-  ## References
-  - [stanley1999] Enumerative Combinatorics 2 (q-hook / fake degrees)
-  - [sagan2001] The Symmetric Group (RSK, hook-length formula)
-  - [manuscript] §mass-theory/cyclotomic-boundary-at-keystone,
-    §mass-theory/binding-period-involution-statistic
+This file supplies the missing half.  `dimQ` is built from the shape:
 
-  Ground ring (§7c): `qIntPoly`/`qFactPoly` are pure polynomial combinatorics
-  over a generic `CommRing`; `dimQ` carries a hook-length division and so uses
-  a generic `Field` (algebraic inverse — NOT archimedean; no `ℝ` appears).
+    shape (a `List ℕ`)  →  conjugate  →  hook lengths  →  q-hook-length formula
+
+so `dimQ_two_one` and friends are *computed*, and the selection-rule sums below
+are consequences of the hook-length formula rather than restatements of a
+docstring.  The originals are not wrong and are not deleted — they remain true
+arithmetic, and `selection_rule_c2_from_hooks` closes the gap by deriving their
+left-hand sides.
+
+## Conventions
+
+`qInt` is the **balanced** q-integer `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`, matching
+`mass_at_3A_proper.qint` in `computations/`, so `[2]_q = q + q⁻¹` and
+`[3]_q = q² + 1 + q⁻²`.  It is written as an explicit `zpow` sum rather than as
+that quotient so it is defined at `q = 1` too and needs no `q ≠ ±1` side
+condition; `qInt_two` and `qInt_three` below check it against the closed forms.
 -/
 
-import Mathlib.Algebra.Ring.GeomSum
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Data.Nat.Factorial.Basic
-import Mathlib.Tactic.Ring
-
 namespace QOU.Mass
-namespace QHookDimension
 
 open Finset
 
-/-! ## The polynomial q-integer `[n]_q = Σ_{i<n} q^i` -/
+variable {R : Type*} [Field R]
 
-/-- The polynomial (Gaussian) q-integer `[n]_q = Σ_{i<n} q^i = 1 + q + … + q^{n−1}`.
-Over a generic commutative ring. -/
-def qIntPoly {R : Type*} [CommRing R] (q : R) (n : ℕ) : R :=
-  ∑ i ∈ Finset.range n, q ^ i
+/-- Balanced q-integer `[n]_q = q^{-(n-1)} + q^{-(n-3)} + ⋯ + q^{n-1}`.
 
-@[simp] theorem qIntPoly_zero {R : Type*} [CommRing R] (q : R) :
-    qIntPoly q 0 = 0 := by simp [qIntPoly]
+Written as a sum of `zpow`s rather than as `(qⁿ − q⁻ⁿ)/(q − q⁻¹)` so that it is
+total: no `q ≠ ±1` hypothesis is needed anywhere downstream. -/
+def qInt (q : R) (n : ℕ) : R :=
+  ∑ i ∈ range n, q ^ (2 * (i : ℤ) - ((n : ℤ) - 1))
 
-@[simp] theorem qIntPoly_one {R : Type*} [CommRing R] (q : R) :
-    qIntPoly q 1 = 1 := by simp [qIntPoly]
+@[simp] theorem qInt_zero (q : R) : qInt q 0 = 0 := by simp [qInt]
 
-/-- Numerator identity: `(q − 1) · [n]_q = q^n − 1`. This is the standard
-geometric-sum relation `[n]_q = (q^n − 1)/(q − 1)` in multiplicative form
-(valid over any commutative ring, no division). -/
-theorem sub_one_mul_qIntPoly {R : Type*} [CommRing R] (q : R) (n : ℕ) :
-    (q - 1) * qIntPoly q n = q ^ n - 1 := by
-  unfold qIntPoly
-  rw [mul_comm]
-  exact geom_sum_mul q n
+@[simp] theorem qInt_one (q : R) : qInt q 1 = 1 := by simp [qInt]
 
-/-- **q = 1 collapse of the q-integer**: `[n]_1 = n`. Since `Σ_{i<n} 1^i = n`,
-the polynomial q-integer specializes to the ordinary integer at `q = 1` — the
-load-bearing fact that collapses every `[m]_q` inside `S(n)|_{q=1}`. -/
-@[simp] theorem qIntPoly_one_eq {R : Type*} [CommRing R] (n : ℕ) :
-    qIntPoly (1 : R) n = (n : R) := by
-  simp [qIntPoly]
+/-- No `q ≠ 0` needed: at `q = 0` both sides are `0`, since Lean sends `0⁻¹`
+to `0`. -/
+theorem qInt_two (q : R) : qInt q 2 = q + q⁻¹ := by
+  simp [qInt, Finset.sum_range_succ, zpow_neg, zpow_one]
+  ring
 
-/-! ## The q-factorial `[n]_q! = ∏_{i<n} [i+1]_q` -/
+theorem qInt_three (q : R) (hq : q ≠ 0) : qInt q 3 = q ^ 2 + 1 + (q ^ 2)⁻¹ := by
+  have h2 : (2 : ℤ) - 2 = 0 := by norm_num
+  simp [qInt, Finset.sum_range_succ, zpow_neg]
+  field_simp
+  ring
 
-/-- The q-factorial `[n]_q! = [1]_q · [2]_q · … · [n]_q = ∏_{i<n} [i+1]_q`.
-Over a generic commutative ring. -/
-def qFactPoly {R : Type*} [CommRing R] (q : R) (n : ℕ) : R :=
-  ∏ i ∈ Finset.range n, qIntPoly q (i + 1)
+/-- q-factorial `[n]_q! = ∏_{k=1}^{n} [k]_q`. -/
+def qFact (q : R) : ℕ → R
+  | 0 => 1
+  | (n + 1) => qInt q (n + 1) * qFact q n
 
-@[simp] theorem qFactPoly_zero {R : Type*} [CommRing R] (q : R) :
-    qFactPoly q 0 = 1 := by simp [qFactPoly]
+/-- The conjugate (transpose) of a partition given as a weakly-decreasing list of
+row lengths: column `j` of `λ` is as long as there are rows exceeding `j`. -/
+def conjugate (l : List ℕ) : List ℕ :=
+  (List.range (l.headI)).map fun j => (l.filter fun r => j < r).length
 
-theorem qFactPoly_succ {R : Type*} [CommRing R] (q : R) (n : ℕ) :
-    qFactPoly q (n + 1) = qFactPoly q n * qIntPoly q (n + 1) := by
-  unfold qFactPoly
-  rw [Finset.prod_range_succ]
+/-- Hook length at cell `(i, j)`: arm + leg + 1. -/
+def hookAt (l : List ℕ) (i j : ℕ) : ℕ :=
+  (l.getD i 0 - j - 1) + ((conjugate l).getD j 0 - i - 1) + 1
 
-/-- **q = 1 collapse of the q-factorial**: `[n]_1! = n!`. Follows from the
-q-integer collapse `[i+1]_1 = i+1` term-by-term; the product of `1..n`
-is the ordinary factorial. -/
-@[simp] theorem qFactPoly_one_eq {R : Type*} [CommRing R] (n : ℕ) :
-    qFactPoly (1 : R) n = ((Nat.factorial n : ℕ) : R) := by
-  induction n with
-  | zero => simp
-  | succ k ih =>
-      rw [qFactPoly_succ, ih, qIntPoly_one_eq, Nat.factorial_succ, Nat.cast_mul]
-      ring
+/-- Every hook length of the diagram, row by row. -/
+def hooks (l : List ℕ) : List ℕ :=
+  (List.range l.length).flatMap fun i =>
+    (List.range (l.getD i 0)).map fun j => hookAt l i j
 
-/-! ## The q-hook dimension `dim_q(λ) = [n]_q! / ∏_{c} [h(c)]_q` -/
+/-- **The q-hook-length formula.**  `dim_q V_λ = [n]_q! / ∏_{cells} [hook]_q`. -/
+noncomputable def dimQ (q : R) (l : List ℕ) : R :=
+  qFact q l.sum / ((hooks l).map (qInt q)).prod
 
-/-- The q-hook dimension of a shape of size `n` with hook-length multiset
-`hooks`: `dim_q(λ) = [n]_q! / ∏_{h ∈ hooks} [h]_q`. Over a `Field` (the
-hook-length ratio needs an inverse; §7c algebraic, not archimedean).
+/-! ## The hook multisets, computed from the shapes
 
-For a genuine partition `λ ⊢ n`, `hooks` is the multiset of hook lengths of
-its cells and `hooks.card = n`, so the q → 1 limit reproduces the ordinary
-hook-length formula `f^λ = n! / ∏ h(c)`. This brick states `dimQ` on the hook
-multiset directly (leaving the intrinsic construction of the hook multiset
-from a Young diagram, and the sum over all `λ ⊢ n`, as documented next
-bricks). -/
-noncomputable def dimQ {R : Type*} [Field R] (q : R) (n : ℕ) (hooks : Multiset ℕ) : R :=
-  qFactPoly q n / (hooks.map (qIntPoly q)).prod
+`decide` settles these: they are equalities of concrete `List ℕ`, so nothing is
+assumed about which hooks a shape has — the shape determines them. -/
 
-/-- Multiplicative form of the q-hook dimension, valid when the hook product
-is nonzero (e.g. `q` not a root of the relevant cyclotomic factors):
-`dim_q(λ) · ∏_{h} [h]_q = [n]_q!`. -/
-theorem dimQ_mul_prod_hooks {R : Type*} [Field R] (q : R) (n : ℕ)
-    (hooks : Multiset ℕ) (hne : (hooks.map (qIntPoly q)).prod ≠ 0) :
-    dimQ q n hooks * (hooks.map (qIntPoly q)).prod = qFactPoly q n := by
-  unfold dimQ
-  exact div_mul_cancel₀ _ hne
+theorem hooks_two : hooks [2] = [2, 1] := by decide
+theorem hooks_one_one : hooks [1, 1] = [2, 1] := by decide
+theorem hooks_three : hooks [3] = [3, 2, 1] := by decide
+theorem hooks_two_one : hooks [2, 1] = [3, 1, 1] := by decide
+theorem hooks_one_one_one : hooks [1, 1, 1] = [3, 2, 1] := by decide
 
-/-- **q = 1 collapse of the q-hook dimension**: `dim_1(λ) = n! / ∏_{h} h`,
-the ordinary hook-length-formula value `f^λ`. Derived purely from the
-q-integer / q-factorial collapses `[h]_1 = h`, `[n]_1! = n!` — NOT axiomatized.
-No nonzero hypothesis is needed: it is a term-by-term substitution `q ↦ 1`. -/
-@[simp] theorem dimQ_one_eq {R : Type*} [Field R] (n : ℕ) (hooks : Multiset ℕ) :
-    dimQ (1 : R) n hooks = ((Nat.factorial n : ℕ) : R) / (hooks.map (fun (h : ℕ) => (h : R))).prod := by
-  unfold dimQ
-  rw [qFactPoly_one_eq]
-  have hmap : hooks.map (qIntPoly (1 : R)) = hooks.map (fun (h : ℕ) => (h : R)) := by
-    refine Multiset.map_congr rfl ?_
-    intro h _
-    exact qIntPoly_one_eq h
-  rw [hmap]
+/-! ## The q-dimensions, derived
 
-/-! ## The period sum `S` over an explicit list of shapes, and its q = 1 collapse
+Each is now `[n]_q!` over the product of the computed hooks.
 
-The intrinsic `S(n) = Σ_{λ ⊢ n} dim_q(λ)` needs a partitions-of-`n` `Fintype`
-(a documented next brick). Here `S` sums `dimQ` over an explicitly-supplied
-list of shapes (each given by its hook multiset) of a common size `n`, which
-suffices to exhibit the period-sum shape and prove its q = 1 collapse. -/
+The non-vanishing hypotheses are not decoration.  `dimQ` divides by the product
+of the hooks' q-integers, and Lean's division sends a zero denominator to `0`,
+so at `[2]_q = 0` (that is, `q² = −1`) the claim `dimQ q [2] = 1` is genuinely
+FALSE rather than merely unproved.  Carrying `qInt q 2 ≠ 0` explicitly is what
+makes each statement true as written; `qInt_pos` below discharges it for every
+real `q > 0`, which is the regime the selection rule is stated in. -/
 
-/-- The q-deformed period sum over an explicit list of shapes of size `n`
-(each a hook multiset): `S = Σ_{λ ∈ shapes} dim_q(λ)`. -/
-noncomputable def periodSum {R : Type*} [Field R] (q : R) (n : ℕ)
-    (shapes : List (Multiset ℕ)) : R :=
-  (shapes.map (dimQ q n)).sum
+@[simp] theorem qFact_one (q : R) : qFact q 1 = 1 := by
+  simp [qFact, qInt_one]
 
-/-- **q = 1 collapse of the period sum**: each summand collapses to the
-ordinary `f^λ = n! / ∏ h`, so `S|_{q=1} = Σ_{λ} f^λ`.
+@[simp] theorem qFact_two (q : R) : qFact q 2 = qInt q 2 := by
+  simp [qFact, qInt_one]
 
-The remaining identity `Σ_{λ ⊢ n} f^λ = I(n)` (involution / telephone number)
-is the Frobenius–Schur / RSK theorem — NOT proved here (Mathlib lacks the
-partitions `Fintype` and the RSK bijection); see the module docstring. -/
-@[simp] theorem periodSum_one_eq {R : Type*} [Field R] (n : ℕ)
-    (shapes : List (Multiset ℕ)) :
-    periodSum (1 : R) n shapes
-      = (shapes.map (fun hooks => ((Nat.factorial n : ℕ) : R) / (hooks.map (fun (h : ℕ) => (h : R))).prod)).sum := by
-  unfold periodSum
-  congr 1
-  refine List.map_congr_left ?_
-  intro hooks _
-  exact dimQ_one_eq n hooks
+@[simp] theorem qFact_three (q : R) : qFact q 3 = qInt q 3 * qInt q 2 := by
+  simp [qFact, qInt_one]
 
-end QHookDimension
+theorem dimQ_two (q : R) (h2 : qInt q 2 ≠ 0) : dimQ q [2] = 1 := by
+  simp [dimQ, hooks_two, qFact_two, qInt_one]
+  exact div_self h2
+
+theorem dimQ_one_one (q : R) (h2 : qInt q 2 ≠ 0) : dimQ q [1, 1] = 1 := by
+  simp [dimQ, hooks_one_one, qFact_two, qInt_one]
+  exact div_self h2
+
+theorem dimQ_three (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
+    dimQ q [3] = 1 := by
+  simp [dimQ, hooks_three, qFact_three, qInt_one]
+  exact div_self (mul_ne_zero h3 h2)
+
+theorem dimQ_one_one_one (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
+    dimQ q [1, 1, 1] = 1 := by
+  simp [dimQ, hooks_one_one_one, qFact_three, qInt_one]
+  exact div_self (mul_ne_zero h3 h2)
+
+/-- **`dim_q V_{(2,1)} = [2]_q`** — the one non-trivial H₃ dimension, and the
+value the c=2 selection rule turns on.  Hooks `[3,1,1]` against `[3]_q!`:
+the `[3]` cancels and the `[1]`s are 1, leaving `[2]_q`. -/
+theorem dimQ_two_one (q : R) (h3 : qInt q 3 ≠ 0) :
+    dimQ q [2, 1] = qInt q 2 := by
+  simp [dimQ, hooks_two_one, qFact_three, qInt_one]
+  field_simp
+
+/-! ## The selection rule, now resting on the formula
+
+`selection_rule_c1_from_hooks` and `selection_rule_c2_from_hooks` state the sums
+over the *actual* `dimQ` of the *actual* partitions, and derive the closed forms
+the original blocks assert.  These are the statements the `.md` claimed. -/
+
+/-- **c = 1 anchor, derived.**  `(1/2) Σ_{λ⊢2} dim_q V_λ = 1`, over the real
+q-dimensions rather than over the literal `1`s. -/
+theorem selection_rule_c1_from_hooks (q : R) (h2 : qInt q 2 ≠ 0)
+    (two_ne : (2 : R) ≠ 0) :
+    (dimQ q [2] + dimQ q [1, 1]) / 2 = 1 := by
+  rw [dimQ_two q h2, dimQ_one_one q h2]
+  rw [show (1 : R) + 1 = 2 by ring]
+  exact div_self two_ne
+
+/-- **c = 2 prediction, derived.**  `(1/3) Σ_{λ⊢3} dim_q V_λ = (q+1)²/(3q)`,
+with the three q-dimensions computed from their hook multisets. -/
+theorem selection_rule_c2_from_hooks (q : R) (hq : q ≠ 0)
+    (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
+    (dimQ q [3] + dimQ q [2, 1] + dimQ q [1, 1, 1]) / 3
+      = (q + 1) ^ 2 / (3 * q) := by
+  rw [dimQ_three q h2 h3, dimQ_one_one_one q h2 h3, dimQ_two_one q h3,
+    qInt_two q]
+  field_simp
+  ring
+
+/-! ## Discharging the hypotheses at real `q > 0`
+
+The selection rule is stated over `ℝ_{>0}`, where every balanced q-integer is a
+sum of positive powers and so is positive.  That is what makes the hypotheses
+above cost nothing in the regime the blocks use, while keeping the statements
+true over a general field. -/
+
+theorem qInt_pos {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K] {q : K} (hq : 0 < q)
+    {n : ℕ} (hn : 0 < n) : 0 < qInt q n := by
+  refine Finset.sum_pos (fun i _ => zpow_pos hq _) ⟨0, Finset.mem_range.mpr hn⟩
+
+theorem qInt_ne_zero {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K] {q : K} (hq : 0 < q)
+    {n : ℕ} (hn : 0 < n) : qInt q n ≠ 0 :=
+  ne_of_gt (qInt_pos hq hn)
+
+/-- **The c=2 prediction over `ℝ_{>0}`, with nothing assumed.**  This is the
+statement `prop:selection-rule-c2-prediction` describes: the q-dimensions are
+those of the partitions of 3, computed from their hook lengths, and the closed
+form follows. -/
+theorem selection_rule_c2_real {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K] {q : K}
+    (hq : 0 < q) :
+    (dimQ q [3] + dimQ q [2, 1] + dimQ q [1, 1, 1]) / 3
+      = (q + 1) ^ 2 / (3 * q) :=
+  selection_rule_c2_from_hooks q (ne_of_gt hq)
+    (qInt_ne_zero hq (by norm_num)) (qInt_ne_zero hq (by norm_num))
+
+/-- **The c=1 anchor over `ℝ_{>0}`, with nothing assumed.** -/
+theorem selection_rule_c1_real {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [2] + dimQ q [1, 1]) / 2 = 1 :=
+  selection_rule_c1_from_hooks q (qInt_ne_zero hq (by norm_num)) (by norm_num)
+
+/-! ## c = 3: the partitions of 4
+
+The proton anchor.  Five shapes, five hook multisets, and the one non-trivial
+ratio `[4]_q/[2]_q`.  Added so `prop:selection-rule-anchors-c1-c3` rests on the
+hook-length formula for BOTH its anchors rather than only for c=1 — half a
+derivation would have left its "derivation-tight" claim still half-asserted. -/
+
+theorem hooks_four : hooks [4] = [4, 3, 2, 1] := by decide
+theorem hooks_three_one : hooks [3, 1] = [4, 2, 1, 1] := by decide
+theorem hooks_two_two : hooks [2, 2] = [3, 2, 2, 1] := by decide
+theorem hooks_two_one_one : hooks [2, 1, 1] = [4, 1, 2, 1] := by decide
+theorem hooks_one_four : hooks [1, 1, 1, 1] = [4, 3, 2, 1] := by decide
+
+@[simp] theorem qFact_four (q : R) : qFact q 4 = qInt q 4 * (qInt q 3 * qInt q 2) := by
+  simp [qFact, qInt_one]
+
+/-- `[4]_q = (q² + q⁻²)·[2]_q`.  Stated as a product rather than the quotient
+`[4]/[2]` so it needs no non-vanishing hypothesis of its own. -/
+theorem qInt_four_eq (q : R) (hq : q ≠ 0) :
+    qInt q 4 = (q ^ 2 + (q ^ 2)⁻¹) * qInt q 2 := by
+  simp [qInt, Finset.sum_range_succ, zpow_neg]
+  field_simp
+  ring
+
+theorem dimQ_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
+    (h4 : qInt q 4 ≠ 0) : dimQ q [4] = 1 := by
+  simp [dimQ, hooks_four, qFact_four, qInt_one]
+  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+
+theorem dimQ_one_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
+    (h4 : qInt q 4 ≠ 0) : dimQ q [1, 1, 1, 1] = 1 := by
+  simp [dimQ, hooks_one_four, qFact_four, qInt_one]
+  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+
+theorem dimQ_three_one (q : R) (h2 : qInt q 2 ≠ 0) (h4 : qInt q 4 ≠ 0) :
+    dimQ q [3, 1] = qInt q 3 := by
+  simp [dimQ, hooks_three_one, qFact_four, qInt_one]
+  field_simp
+
+theorem dimQ_two_one_one (q : R) (h2 : qInt q 2 ≠ 0) (h4 : qInt q 4 ≠ 0) :
+    dimQ q [2, 1, 1] = qInt q 3 := by
+  simp [dimQ, hooks_two_one_one, qFact_four, qInt_one]
+  field_simp
+
+/-- **`dim_q V_{(2,2)} = [4]_q/[2]_q = q² + q⁻²`** — the one H₄ dimension that is
+not `1` or `[3]_q`, and the reason the c=3 anchor has a `3/4 h²` in it. -/
+theorem dimQ_two_two (q : R) (hq : q ≠ 0) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
+    dimQ q [2, 2] = q ^ 2 + (q ^ 2)⁻¹ := by
+  simp [dimQ, hooks_two_two, qFact_four, qInt_one, qInt_four_eq q hq]
+  field_simp
+
+/-- **c = 3 anchor, derived.**  `(1/4) Σ_{λ⊢4} dim_q V_λ = 5/2 + (3/4)h²`, over
+the real q-dimensions of the five partitions of 4. -/
+theorem selection_rule_c3_from_hooks (q : R) (hq : q ≠ 0) (h2 : qInt q 2 ≠ 0)
+    (h3 : qInt q 3 ≠ 0) (h4 : qInt q 4 ≠ 0) (four_ne : (4 : R) ≠ 0) :
+    (dimQ q [4] + dimQ q [3, 1] + dimQ q [2, 2] + dimQ q [2, 1, 1]
+       + dimQ q [1, 1, 1, 1]) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 := by
+  rw [dimQ_four q h2 h3 h4, dimQ_one_four q h2 h3 h4, dimQ_three_one q h2 h4,
+    dimQ_two_one_one q h2 h4, dimQ_two_two q hq h2 h3, qInt_three q hq]
+  -- `(2 : R) ≠ 0` is not free in a general field: without it `field_simp`
+  -- leaves a `2⁻¹` that `ring` cannot clear.  It follows from `four_ne`
+  -- because `4 = 2 * 2`.
+  have two_ne : (2 : R) ≠ 0 := fun hc =>
+    four_ne (by rw [show (4 : R) = 2 * 2 by norm_num, hc]; ring)
+  field_simp
+  ring
+
+/-- **The c=3 anchor over `ℝ_{>0}`, with nothing assumed.** -/
+theorem selection_rule_c3_real {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [4] + dimQ q [3, 1] + dimQ q [2, 2] + dimQ q [2, 1, 1]
+       + dimQ q [1, 1, 1, 1]) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 :=
+  selection_rule_c3_from_hooks q (ne_of_gt hq)
+    (qInt_ne_zero hq (by norm_num)) (qInt_ne_zero hq (by norm_num))
+    (qInt_ne_zero hq (by norm_num)) (by norm_num)
+
 end QOU.Mass

@@ -1,0 +1,297 @@
+{
+  "engine": "static-scan",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T22:21:50.145351+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "convention-frame-staleness-audit",
+  "scriptFile": "convention_frame_staleness_audit.py",
+  "scriptHash": "a94fcd22b947",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/convention_frame_staleness_audit.py"
+    ],
+    "reproduce": "python3 -u computations/convention_frame_staleness_audit.py"
+  },
+  "parameters": {
+    "d_migration_date": "2026-08-10",
+    "detector": "D-form bound to a Markov-named variable",
+    "scan_completed": "1 (reached-this-line flag: no witness is written unless the scan completes, so it can never be false)"
+  },
+  "data": {
+    "producers_with_d_form": 155,
+    "witnesses_examined": 157,
+    "suspect_count": 47,
+    "dropped_producer_unchanged": 0,
+    "confirmed_by_decisive_test": [
+      {
+        "witness": "computations/wedderburn-lp-ew-wiring.witness.json",
+        "bean": "qou-h4ab",
+        "c_frame_reproduces_to": "2.1e-16 / 5.7e-16"
+      },
+      {
+        "witness": "computations/fr-pullback-cosh-h.witness.json",
+        "bean": "qou-g49k-followup",
+        "committed": "1.537500801376956",
+        "convention_D": "1.488319082475366",
+        "convention_C": "1.537500801376956 (exact)"
+      }
+    ],
+    "candidates": [
+      {
+        "witness": "computations/garside-irrep-qvalues.witness.json",
+        "producer": "computations/garside-irrep-qvalues.py",
+        "computedAt": "2026-04-12"
+      },
+      {
+        "witness": "computations/free-neutron-decay.witness.json",
+        "producer": "computations/derived_masses.py",
+        "computedAt": "2026-04-14"
+      },
+      {
+        "witness": "computations/probes/brane-tower-two-avenues-probe.witness.json",
+        "producer": "computations/probes/brane_tower_two_avenues_probe.py",
+        "computedAt": "2026-05-03"
+      },
+      {
+        "witness": "computations/log-delta-full-mass-subtract.witness.json",
+        "producer": "computations/log_delta_full_mass_subtract.py",
+        "computedAt": "2026-05-19"
+      },
+      {
+        "witness": "computations/log-delta-per-depth-binding.witness.json",
+        "producer": "computations/log_delta_per_depth_binding.py",
+        "computedAt": "2026-05-19"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-eigenphase-taylor-in-u.witness.json",
+        "producer": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
+        "computedAt": "2026-06-01"
+      },
+      {
+        "witness": "computations/lambda-scale-rd-c4-categorical.witness.json",
+        "producer": "computations/lambda_scale_rd_c4_categorical.py",
+        "computedAt": "2026-06-02"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-residue-categorical-id-probe.witness.json",
+        "producer": "computations/qbeta/qbeta_residue_categorical_id_probe.py",
+        "computedAt": "2026-06-03"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-sa-qa-chain-gamma.witness.json",
+        "producer": "computations/qbeta/qbeta_sa_qa_chain_gamma.py",
+        "computedAt": "2026-06-03"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json",
+        "producer": "computations/qbeta/qbeta_alpha_eff_ladder_reconciliation_probe.py",
+        "computedAt": "2026-06-06"
+      },
+      {
+        "witness": "computations/binding-depth-stratified-lr.witness.json",
+        "producer": "computations/binding_depth_stratified_lr.py",
+        "computedAt": "2026-06-22"
+      },
+      {
+        "witness": "computations/binding-depth-stratified.witness.json",
+        "producer": "computations/binding_depth_stratified.py",
+        "computedAt": "2026-06-22"
+      },
+      {
+        "witness": "computations/binding-depth-stratified-rust.witness.json",
+        "producer": "computations/binding_depth_stratified_rust.py",
+        "computedAt": "2026-06-22"
+      },
+      {
+        "witness": "computations/binding-depth-stratified-knot-weighted.witness.json",
+        "producer": "computations/binding_depth_stratified_knot_weighted.py",
+        "computedAt": "2026-06-22"
+      },
+      {
+        "witness": "computations/binding-depth-stratified-selfconj.witness.json",
+        "producer": "computations/binding_depth_stratified_selfconj.py",
+        "computedAt": "2026-06-22"
+      },
+      {
+        "witness": "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
+        "producer": "computations/probes/b_pred_mirror_slope_closed_form.py",
+        "computedAt": "2026-07-02"
+      },
+      {
+        "witness": "computations/probes/binding-depth-stratified-derived-alpha-probe.witness.json",
+        "producer": "computations/probes/binding_depth_stratified_derived_alpha_probe.py",
+        "computedAt": "2026-07-02"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3even-exact-sseries.witness.json",
+        "producer": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+        "computedAt": "2026-07-02"
+      },
+      {
+        "witness": "computations/unified-mass-molecular.witness.json",
+        "producer": "computations/unified-mass-molecular.py",
+        "computedAt": "2026-07-05"
+      },
+      {
+        "witness": "computations/demazure-markov-trace.witness.json",
+        "producer": "computations/demazure_markov_trace.py",
+        "computedAt": "2026-07-05"
+      },
+      {
+        "witness": "computations/electron-m_e-derivation.witness.json",
+        "producer": "computations/derive_m_e_hecke_path_a.py",
+        "computedAt": "2026-07-05"
+      },
+      {
+        "witness": "computations/markov/markov-trace-atomic-proton-full.witness.json",
+        "producer": "computations/markov/markov_trace_atomic_proton_full.py",
+        "computedAt": "2026-07-05"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-rung2-hyp-a-markov-3strand-test.witness.json",
+        "producer": "computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py",
+        "computedAt": "2026-07-05"
+      },
+      {
+        "witness": "computations/atom-mass-derived.witness.json",
+        "producer": "computations/atom_mass_derived.py",
+        "computedAt": "2026-07-07"
+      },
+      {
+        "witness": "computations/probes/phi-q-regularization-probe.witness.json",
+        "producer": "computations/probes/phi_q_regularization_probe.py",
+        "computedAt": "2026-07-07"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-per-block-symbolic-decomposition.witness.json",
+        "producer": "computations/qbeta/qbeta_per_block_symbolic.py",
+        "computedAt": "2026-07-07"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-ck-local-taylor-around-u0-probe.witness.json",
+        "producer": "computations/qbeta/qbeta_ck_local_taylor_around_u0_probe.py",
+        "computedAt": "2026-07-07"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-symbolic-tbeta-ck4-8-probe.witness.json",
+        "producer": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+        "computedAt": "2026-07-07"
+      },
+      {
+        "witness": "computations/probes/qbeta-ck-basis-constrained-pslq.witness.json",
+        "producer": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
+        "computedAt": "2026-07-11"
+      },
+      {
+        "witness": "computations/probes/qbeta-ck-qholonomic-recurrence-test.witness.json",
+        "producer": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
+        "computedAt": "2026-07-11"
+      },
+      {
+        "witness": "computations/probes/qbeta-habiro-integrality-kill-test.witness.json",
+        "producer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
+        "computedAt": "2026-07-11"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-h4-route-a-gate.witness.json",
+        "producer": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+        "computedAt": "2026-07-13"
+      },
+      {
+        "witness": "computations/q-beta-c3-wenzl-decomposition.witness.json",
+        "producer": "computations/probe_q_beta_wenzl_projectors.py",
+        "computedAt": "2026-07-18"
+      },
+      {
+        "witness": "computations/mu-p-pin-sensitivity-map.witness.json",
+        "producer": "computations/mu_p_pin_sensitivity_map.py",
+        "computedAt": "2026-07-18"
+      },
+      {
+        "witness": "computations/pentagon-to-borromean-h4-probe.witness.json",
+        "producer": "computations/probes/pentagon_to_borromean_h4_probe.py",
+        "computedAt": "2026-07-18"
+      },
+      {
+        "witness": "computations/alpha-k-jones-markov-h3.witness.json",
+        "producer": "computations/alpha/alpha_k_jones_markov_h3.py",
+        "computedAt": "2026-07-18"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c4even-exact-sseries.witness.json",
+        "producer": "computations/qbeta/qbeta_c4even_exact_sseries_probe.py",
+        "computedAt": "2026-07-18"
+      },
+      {
+        "witness": "computations/q-beta-spectral-bridge.witness.json",
+        "producer": "computations/q_beta_spectral_bridge_witness.py",
+        "computedAt": "2026-08-06"
+      },
+      {
+        "witness": "computations/fr-pullback-k1-k2.witness.json",
+        "producer": "computations/fr_pullback_k1_k2_test.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/bond-edge-set-selection.witness.json",
+        "producer": "computations/bond_edge_set_selection_probe.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/markov-z-full-bar-condition.witness.json",
+        "producer": "computations/markov_z_full_bar_condition_probe.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/constit-factor-and-volhyp.witness.json",
+        "producer": "computations/constit_factor_and_volhyp_test.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/fr-pullback-cosh-h.witness.json",
+        "producer": "computations/fr_pullback_cosh_h_test.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
+        "producer": "computations/phase5/phase2_proton_m_e_hecke_diagnostic.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/alpha/alpha-em-yekutieli-h2-extraction.witness.json",
+        "producer": "computations/alpha/alpha_em_yekutieli_h2_extraction.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-ck-cache.witness.json",
+        "producer": "computations/qbeta/qbeta_ck_cache.py",
+        "computedAt": "2026-08-08"
+      },
+      {
+        "witness": "computations/markov-z-fibre-rank-bar-covariance.witness.json",
+        "producer": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+        "computedAt": "2026-08-09"
+      }
+    ]
+  }
+}

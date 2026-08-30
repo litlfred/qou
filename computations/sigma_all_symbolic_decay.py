@@ -27,6 +27,7 @@ With symbolic formula: ANY A — no cancellation, no precision concern.
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 from q_parameter import Q_50_DIGIT_STR
 from datetime import datetime, timezone
@@ -68,6 +69,13 @@ def sig_all_symbolic(par: str, dau: str) -> sp.Expr:
         s += d_me - p_me
     return sp.cancel(s)
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def main():
     chains = [
@@ -171,6 +179,15 @@ def main():
     }
     out_path = Path(__file__).parent / "sigma-all-symbolic-decay.witness.json"
     with open(out_path, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(out, f, indent=2, ensure_ascii=False, default=str)
     print(f"\n→ wrote {out_path}")
 

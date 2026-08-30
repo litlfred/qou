@@ -52,8 +52,9 @@ from mpmath import mpf, mpc  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 import keystone_valuemap_genuine_smatrix_s013 as s013  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 PVEC = s013.PVEC          # (2, 3, 5)
 P = s013.P                # 30
 Q0 = s013.Q0
@@ -122,7 +123,7 @@ def main() -> int:
         anchor = max(anchor, abs(tau_N_colored(N, 1) - s013.tau_N(N)))
     print(f"\n[anchor] max_N |τ_N^(α=1) − bare τ_N| = {float(anchor):.2e}  "
           f"(must be ~0)")
-    wb.add_assertion("alpha1_reproduces_bare_tauN", computed=float(anchor),
+    wb.add_assertion("alpha1_reproduces_bare_tauN", computed=anchor,
                      expected=0.0, tolerance=1e-25,
                      source="colour α=1 on p=5 fibre == uncoloured s013.tau_N")
     if anchor > mpf("1e-25"):
@@ -165,7 +166,7 @@ def main() -> int:
                             "(all nonzero marks give the icosahedral weight; escape "
                             "would need 4) — the pre-registered D-collapse (K2)")
     wb.add_assertion("alpha5_split_node_vanishes",
-                     computed=float(s0[5]), expected=0.0, tolerance=1e-30,
+                     computed=s0[5], expected=0.0, tolerance=1e-30,
                      source="mark α=5 on p₃=5 fibre: sin(6·5π/5)=sin(6π)=0 (split node)")
 
     # K1 — ratio vector vs the d_ζ(λ)/D target (the spec-§2 identity)

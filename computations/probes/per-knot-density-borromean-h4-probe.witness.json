@@ -1,21 +1,21 @@
 {
   "baseline_family_a": {
     "candidate": "5/2 + (3/4)\u00b7h\u00b2",
-    "gap_vs_codata_pct": 2.960520232102139,
+    "gap_vs_codata_pct": 2.960520231766939,
     "linking_weight_at_q0": 2.5327796563993914,
-    "m_p_pred_MeV": 966.049823162144
+    "m_p_pred_MeV": 966.0498244665976
   },
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "per_knot_density_borromean_h4_probe",
-  "computedAt": "2026-07-18T17:45:54.484048+00:00",
+  "computedAt": "2026-08-23T09:26:06.110386+00:00",
   "description": "h\u2074 probe for Borromean linking weight. Per docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md, the exact Markov trace closed form has h\u00b2 = 0 and h\u2074 = \u22123/4. This probe (1) solves c_4 such that 5/2 + c_4\u00b7h\u2074 is q-local at q_0, and (2) tests the structural candidate 5/2 \u00b7 tr_M(\u03b2_Bor, q) directly.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "parameters": {
-    "G_catalan": "0.91596559417721901505460351493238411077414937428167",
-    "M_E_MEV": "0.51099895",
-    "M_P_CODATA_MEV": "938.27208816",
+    "G_catalan": "0.915965594177219015054603514932384110774149374281672134266498119621763",
+    "M_E_MEV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_CODATA_MEV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 50,
     "precision": "mpfr",
@@ -27,86 +27,88 @@
     "tolerance_ppm_per_q": 100000.0
   },
   "probe_1_solve_for_c_4": {
-    "c_4_solved": 413.7493619670661,
+    "c_4_solved": 413.74936196798757,
     "candidate": "5/2 + 0\u00b7h\u00b2 + c_4\u00b7h\u2074",
     "closest_natural_value": "\u22123/4 \u00b7 5/2 = \u221215/8  (Markov trace h\u2074 scaled by 5/2)",
-    "closest_relative_difference_pct": 22166.632638243525,
-    "gap_vs_codata_pct": 33.756966910163094,
-    "linking_weight_at_q0": 3.290357546057932,
-    "m_p_pred_MeV": 1255.0042864874674,
+    "closest_relative_difference_pct": 22166.63263829267,
+    "gap_vs_codata_pct": 33.75696690979919,
+    "linking_weight_at_q0": 3.2903575460596923,
+    "m_p_pred_MeV": 1255.0042881827665,
     "natural_values_cross_check": {
       "+3/4 (Family A's h\u00b2 coefficient, lifted to h\u2074 slot)": {
-        "abs_diff": 412.9993619670661,
-        "relative_diff_pct": 55066.58159560881,
+        "abs_diff": 412.99936196798757,
+        "relative_diff_pct": 55066.58159573167,
         "value": 0.75
       },
       "\u22122G  (Yekutieli k=2 doubled-cell)": {
-        "abs_diff": 415.5812931554205,
-        "relative_diff_pct": 22685.420489441156,
+        "abs_diff": 415.581293156342,
+        "relative_diff_pct": 22685.420489491455,
         "value": -1.831931188354438
       },
       "\u22123/4 (bare Markov trace h\u2074 unscaled)": {
-        "abs_diff": 414.4993619670661,
-        "relative_diff_pct": 55266.58159560881,
+        "abs_diff": 414.49936196798757,
+        "relative_diff_pct": 55266.58159573167,
         "value": -0.75
       },
       "\u22123/4 \u00b7 5/2 = \u221215/8  (Markov trace h\u2074 scaled by 5/2)": {
-        "abs_diff": 415.6243619670661,
-        "relative_diff_pct": 22166.632638243525,
+        "abs_diff": 415.62436196798757,
+        "relative_diff_pct": 22166.63263829267,
         "value": -1.875
       },
       "\u2212G   (Yekutieli k=1 scaled to h\u2074)": {
-        "abs_diff": 414.6653275612433,
-        "relative_diff_pct": 45270.84097888231,
+        "abs_diff": 414.6653275621648,
+        "relative_diff_pct": 45270.84097898291,
         "value": -0.915965594177219
       },
       "\u2212G/2 (Yekutieli k=1 halved)": {
-        "abs_diff": 414.2073447641547,
-        "relative_diff_pct": 90441.68195776462,
+        "abs_diff": 414.2073447650762,
+        "relative_diff_pct": 90441.68195796582,
         "value": -0.4579827970886095
       }
     },
     "verification_slopes_at_solved_c_4": [
       {
         "delta": 0.001,
-        "slope_ppm_per_q": -3921954.9683961067
+        "slope_ppm_per_q": -3921954.9684153404
       },
       {
         "delta": 0.01,
-        "slope_ppm_per_q": -3860451.7380730025
+        "slope_ppm_per_q": -3860451.7380921245
       },
       {
         "delta": 0.05,
-        "slope_ppm_per_q": -2376474.1240089796
+        "slope_ppm_per_q": -2376474.1240253905
       }
     ]
   },
   "probe_2_structural_markov_trace": {
     "candidate": "5/2 \u00b7 (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076) / (h\u00b2 + 4)",
-    "gap_vs_codata_pct": 1.4818636245758254,
+    "gap_vs_codata_pct": 1.4818636242454393,
     "linking_weight_at_q0": 2.496405409591968,
-    "m_p_pred_MeV": 952.1760009339911,
+    "m_p_pred_MeV": 952.1760022197108,
     "q_locality_slopes": [
       {
         "delta": 0.001,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -16194183.099890316
+        "slope_ppm_per_q": -16194183.099942876
       },
       {
         "delta": 0.01,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -16184008.878805486
+        "slope_ppm_per_q": -16184008.878858013
       },
       {
         "delta": 0.05,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -15936219.269058043
+        "slope_ppm_per_q": -15936219.269109735
       }
     ]
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "per_knot_density_borromean_h4_probe.py",
-  "scriptHash": "4f1076a135dd",
+  "scriptHash": "fc4cce2b5af6",
   "status": "exploratory",
   "tags": [
     "h4-coefficient",

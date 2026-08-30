@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "0310280v4",
+ "source_sha256": "1e146ee4ebc157f2",
+ "brief": "Stabilization in the braid groups II: Transversal simplicity of knots — 9 sections: Introduction and description of re; The MTWS and transversal isotopies; Block-strand diagrams, templates a",
+ "extended": "**Stabilization in the braid groups II: Transversal simplicity of knots**\n\n28 pp, 9 sections.\n\n**Outline.** 1 Introduction and description of results; 2 The MTWS and transversal isotopies; 2.1 Block-strand diagrams, templates and the M; 2.2 The construction of transversal clasp annu; 2.3 Braid foliations on transversal clasp annu; 2.4 A weak transversal MTWS; 3 Transversal simplicity and its failure; 3.1 The failure of transversal simplicity for ; 3.2 Future work and some open problems\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: , a simpliﬁed version of the MTWS. The full statement, and the proof, are to\n- Theorem 1: Its proof is in [6]. After that, we will redo some parts of the proof which\n- Theorem 2: LetTX be a transversal oriented knot\n- Theorem 3: There exist inﬁnitely many transversal knot types of braid index 3 which\n- Theorem 1: of [13] asserts that two closed 3–braids are isotopic in the complement of the\n- Proposition 1: Given any pair of transversal closed braids (TX+, TX−) of the same",
+ "tokens": {
+  "brief": 47,
+  "extended": 257
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-description-of-results",
+   "title": "Introduction and description of results",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-the-mtws-and-transversal-isotopies",
+   "title": "The MTWS and transversal isotopies",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-block-strand-diagrams-templates-and-the-mtws",
+   "title": "Block-strand diagrams, templates and the MTWS",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-003-22-the-construction-of-transversal-clasp-annuli",
+   "title": "The construction of transversal clasp annuli",
+   "pages": "8-13"
+  },
+  {
+   "id": "sec-004-23-braid-foliations-on-transversal-clasp-annuli",
+   "title": "Braid foliations on transversal clasp annuli",
+   "pages": "13-20"
+  },
+  {
+   "id": "sec-005-24-a-weak-transversal-mtws",
+   "title": "A weak transversal MTWS",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-006-3-transversal-simplicity-and-its-failure",
+   "title": "Transversal simplicity and its failure",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-007-31-the-failure-of-transversal-simplicity-for-cer",
+   "title": "The failure of transversal simplicity for certain closed 3–braids",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-008-32-future-work-and-some-open-problems",
+   "title": "Future work and some open problems",
+   "pages": "26-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

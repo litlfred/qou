@@ -1,0 +1,239 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1704.00850v3",
+ "source": {
+  "file": "1704.00850v3.pdf",
+  "sha256": "09dd9c99453ba251bf59236fd6af5f5061182c60f2bd752e82688dbd04680b31",
+  "bytes": 445459,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1704.00850",
+   "version": "3",
+   "primary_class": "math.ST",
+   "stamp_date": "4 Apr 2019"
+  },
+  "doi": null,
+  "title": "Estimating the spectral gap of a trace-class Markov operator",
+  "authors_raw": "Qian Qin, James P. Hobert and Kshitij Khare",
+  "title_lines": [
+   "Estimating the spectral gap of a trace-class Markov operator"
+  ],
+  "abstract": "The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding Markov operator. However, calculating (and even approximating) the spectral gaps of practical Monte Carlo Markov chains in statistics has proven to be an extremely dif\ufb01cult and often insurmountable task, especially when these chains move on continuous state spaces. In this paper, a method for accurate estimation of the spectral gap is developed for general state space Markov chains whose operators are non-negative and trace-class. The method is based on the fact that the second largest eigenvalue (and hence the spectral gap) of such operators can be bounded above and below by simple functions of the power sums of the eigenvalues. These power sums often have nice integral representations. A classical Monte Carlo method is proposed to estimate these integrals, and a simple suf\ufb01cient condition for \ufb01nite variance is provided. This leads to asymptotically valid con\ufb01dence intervals for the second largest eigenvalue (and the spectral gap) of the Markov operator. In contrast with previously existing techniques, our method is not based on a near-stationary version of the Markov chain, which, paradoxically, cannot be obtained in a principled manner without bounds on the spectral gap. On the other hand, it can be quite expensive from a computational standpoint. The ef\ufb01ciency of the method is studied both theoretically and empirically.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20190408003555Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Markov operators",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Power sums of eigenvalues",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Data augmentation operators and an integral representation of sk",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Classical Monte Carlo",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Efficiency of the algorithm",
+   "page": 15,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 17,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Gaussian chain",
+   "page": 17,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Bayesian probit regression",
+   "page": 19,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Bayesian linear regression model with non-Gaussian errors",
+   "page": 23,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "A Proof of Theorem 2",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Proof of Proposition 9",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3213,
+   "n_words": 502
+  },
+  {
+   "id": "sec-001-2-markov-operators",
+   "number": "2",
+   "title": "Markov operators",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6050,
+   "n_words": 1025
+  },
+  {
+   "id": "sec-002-3-power-sums-of-eigenvalues",
+   "number": "3",
+   "title": "Power sums of eigenvalues",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2879,
+   "n_words": 558
+  },
+  {
+   "id": "sec-003-4-data-augmentation-operators-and-an-integral-re",
+   "number": "4",
+   "title": "Data augmentation operators and an integral representation of sk",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4895,
+   "n_words": 870
+  },
+  {
+   "id": "sec-004-5-classical-monte-carlo",
+   "number": "5",
+   "title": "Classical Monte Carlo",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 17,
+   "n_chars": 12370,
+   "n_words": 2217
+  },
+  {
+   "id": "sec-005-7-examples",
+   "number": "7",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 343,
+   "n_words": 55
+  },
+  {
+   "id": "sec-006-71-gaussian-chain",
+   "number": "7.1",
+   "title": "Gaussian chain",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3770,
+   "n_words": 742
+  },
+  {
+   "id": "sec-007-72-bayesian-probit-regression",
+   "number": "7.2",
+   "title": "Bayesian probit regression",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 7965,
+   "n_words": 1483
+  },
+  {
+   "id": "sec-008-73-bayesian-linear-regression-model-with-non-gau",
+   "number": "7.3",
+   "title": "Bayesian linear regression model with non-Gaussian errors",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 6801,
+   "n_words": 1265
+  },
+  {
+   "id": "sec-009-a-proof-of-theorem-2",
+   "number": null,
+   "title": "A Proof of Theorem 2",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 5731,
+   "n_words": 1013
+  },
+  {
+   "id": "sec-010-b-proof-of-proposition-9",
+   "number": null,
+   "title": "B Proof of Proposition 9",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 6486,
+   "n_words": 1066
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 11,
+  "chars_total": 60503
+ }
+}

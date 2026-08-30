@@ -41,7 +41,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from hecke_characters import specht_dim  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -148,7 +148,7 @@ def main() -> int:
     print(f"\n  PREFLIGHT (B_pred ≡ residual-audit table): max|Δ|="
           f"{float(maxpref):.2e} → {'PASS' if pref_ok else 'CHECK'}")
     w.add_assertion("B_pred_matches_residual_audit_table",
-                    computed=float(maxpref), expected=0.0, tolerance=1e-3,
+                    computed=maxpref, expected=0.0, tolerance=1e-3,
                     source="E₀·(|tr_free|−|tr_atom|) vs 2026-06-09 residual audit")
     # is e_pred ≈ 10A−5 (preflight on the residual law itself)?
     print("  READ: e_pred≈10A−5 confirms the residual law. If e_late≈0 (or "

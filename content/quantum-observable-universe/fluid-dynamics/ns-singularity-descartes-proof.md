@@ -15,8 +15,8 @@ Kummer tower.
 The [perpetual obstruction](#thm:qu-to-qou) (item 3) says
 $\kappa_0$ and the jet corrections $\delta_n$ live in
 complementary subgroups of $H^2(\mathcal{S}, \mathcal{B})$.
-The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma
-+ \delta_n|_\Sigma$ is nonzero because the topological term
+The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma +
+\delta_n|_\Sigma$ is nonzero because the topological term
 $\kappa_0|_\Sigma \neq 0$ cannot be cancelled by the analytic
 term $\delta_n|_\Sigma$.
 
@@ -31,4 +31,4 @@ Non-degenerate Levi form implies bounded core aspect ratio,
 which gives the [vorticity lower
 bound](#prop:vorticity-lower-bound)
 $\|\omega\|_\infty \geq c/(T^*-t)$, which gives
-[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\inftydt = \infty$.
+[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty \, dt = \infty$.

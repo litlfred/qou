@@ -30,8 +30,8 @@ export default chapter({
         "ecalle-borel-resummation",
         "ecalle-borel-resurgence-vocabulary",
         "habiro-tail-archimedean-action",
-        "st-is-median-resummation",
         "standard-part-functor",
+        "st-is-median-resummation",
         "standard-part-classical-limit",
         "archimedean-functor-trace-commutativity",
       ],
@@ -41,6 +41,7 @@ export default chapter({
       label: "sec:surreals-archimedean-speculative",
       blocks: [
         "diophantine-birthday",
+        "diophantine-birthday-trajectory",
         "infinitesimal-frobenius",
         "surreal-limit-transfer",
       ],

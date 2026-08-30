@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate the recurrence-hunt pipeline end-to-end on the figure-eight,
-using Takata's fast O(n²) 2-bridge colored-Jones formula (uploads/KMJ-48-2-255.pdf).
+using Takata's fast O(n²) 2-bridge colored-Jones formula (library/kmj-48-2-255/KMJ-48-2-255.pdf).
 
 Takata Corollary 5, family S(4p₁+1, 2p₁+1): at p₁=1 this is S(5,3) = the
 figure-eight 4₁ (a 2-bridge knot).  As a double sum it is O(n²) per n —
@@ -118,7 +118,7 @@ def main() -> int:
           f"  → hunt pipeline {'VALIDATED end-to-end' if found else 'not yet validated'}")
 
     wit = {
-        "description": "Recurrence-hunt pipeline validation on 4₁ via Takata's fast O(n²) 2-bridge colored Jones (uploads/KMJ-48-2-255.pdf). Fixes the N-reach wall for the knot case.",
+        "description": "Recurrence-hunt pipeline validation on 4₁ via Takata's fast O(n²) 2-bridge colored Jones (library/kmj-48-2-255/KMJ-48-2-255.pdf). Fixes the N-reach wall for the knot case.",
         "computation": "takata_fig8_recurrence_hunt", "audit_only": True,
         "takata_formula": "Corollary 5 eq(14), S(5,3)=4_1, p1=1; validated J(2)=q^2-q+1-q^-1+q^-2 (4_1 Jones)",
         "Nmax": Nmax, "grid_results": res,
@@ -128,6 +128,15 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "takata-fig8-recurrence-hunt.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")
     return 0

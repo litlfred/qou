@@ -4,28 +4,28 @@
   "discipline": "no fit; symbolic + mpmath 50dps; numerology guard -- the golden tau=3 (lambda=phi^2, icosahedral) is TESTED against the wired seed and REFUTED, not forced; (b)-exclusion of all integer/topological tau, invariant = integrality of SL2(Z) traces + the wired-anchor constraint.",
   "auditOnly": "docs/audits/2026-06-24-lever1-lambda-sw-no-shortcut.md",
   "results": {
-    "tau_seed_forced_by_wired_anchors": "2.642386313301486",
+    "tau_seed_forced_by_wired_anchors": "2.642386309448846",
     "tau_seed_is_integer": false,
     "nearest_integer": 3,
     "golden_tau_phi2": "3.0",
     "integer_tau_predictions_vs_wired_FamilyA": {
       "2": {
-        "predicted_aD4": "1.673931246",
-        "wired_FamilyA_aD4": "2.532779664",
+        "predicted_aD4": "1.673931244",
+        "wired_FamilyA_aD4": "2.532779656",
         "rel_miss": "0.3391"
       },
       "3": {
-        "predicted_aD4": "3.010896869",
-        "wired_FamilyA_aD4": "2.532779664",
+        "predicted_aD4": "3.010896867",
+        "wired_FamilyA_aD4": "2.532779656",
         "rel_miss": "0.1888"
       },
       "4": {
-        "predicted_aD4": "4.347862492",
-        "wired_FamilyA_aD4": "2.532779664",
+        "predicted_aD4": "4.347862489",
+        "wired_FamilyA_aD4": "2.532779656",
         "rel_miss": "0.7166"
       }
     },
-    "theta_seed": "0.781453946017",
+    "theta_seed": "0.781453943786",
     "theta_golden_tau3": "0.962423650119"
   },
   "assertions": {
@@ -37,11 +37,13 @@
   "allPassed": true,
   "verdict": "NO TOPOLOGICAL/INTEGER/GOLDEN SHORTCUT. The seed tau=2.6424 is forced by the wired anchors (1, lw(2), Family-A), is non-integer, and no integer tau (incl. the icosahedral golden tau=3, lambda=phi^2) reproduces the wired Family-A (golden predicts a_D^(4)=3.01 vs 2.53, 19% miss). So the binding 2x2 object is NOT a topological SL2(Z) monodromy and the golden hypothesis is REFUTED by the seed (numerology guard held). The genuine 2.6424-producing object is the owner-gated abelianised lambda_SW REAL connection holonomy on the color E_q -- no algebraic shortcut. Concrete owner-gated next step: integrate the SW differential lambda_SW = x dz on E_q and its Gauss-Manin prolongation to recover the real-holonomy 2x2 B with tr=2.6424. No fit; nothing wired.",
   "scriptHash": "02f2c8a84449",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
-  "commitSha": "0220fdf924b1bb13b50fc87488a49b858e67ae23",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
   "engine": "sympy",
-  "computedAt": "2026-06-30T23:52:55.532977+00:00",
+  "computedAt": "2026-08-14T19:49:34.598768+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "lever1_lambda_sw_no_shortcut.py"
 }

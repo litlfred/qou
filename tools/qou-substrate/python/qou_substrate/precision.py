@@ -159,7 +159,11 @@ def str_at_true_precision(value: Any) -> str:
 
     See ``docs/audits/2026-08-07-producer-repadding-empirical-sweep.md``.
     """
+    # float64-intentional: this IS the representability test -- the whole
+    # point is to detect a value that carries no more than 53 bits and
+    # render it short. Measuring the nearest double is the function.
     if isinstance(value, mpf) and value == mpf(float(value)):
+        # float64-intentional: measuring the nearest double IS this function.
         return fmt(float(value))   # float branch of fmt == natural repr
     return str(value)
 
@@ -188,6 +192,60 @@ def fmt(value: Any, dps: int | None = None, strip_zeros: bool = False) -> str:
     if isinstance(value, (mpf, mpc)):
         return mp.nstr(value, dps, strip_zeros=strip_zeros)
     return str(value)
+
+# ── JSON-safe non-finite serialization ───────────────────────────
+#
+# WHY THIS EXISTS. `json.dump` writes bare `NaN`, `Infinity` and `-Infinity`
+# by default. **JSON has no such tokens** — RFC 8259 numbers are finite
+# decimals — so a witness containing one is not valid JSON and a strict
+# parser rejects the whole file. Python's own `json.load` accepts them, which
+# is why it goes unnoticed: the producer round-trips its own output happily.
+#
+# A 2026-08-09 sweep found 24 witnesses under `computations/` carrying one.
+# The causes split cleanly in two, and they want DIFFERENT fixes:
+#
+#   1. A swallowed failure. `_habiro_coefficient_extract` wrote `float('nan')`
+#      from a bare `except Exception`, hiding a real bug (a sympify `locals`
+#      mapping the wrong name, so `.subs` silently no-opped). Fix the bug; do
+#      NOT serialize the NaN.
+#   2. A DELIBERATE sentinel for a genuine mathematical pole —
+#      `casimir_macdonald_probe.macdonald_norm` returns `mpf("inf")` when the
+#      arm-leg denominator vanishes (every arm-0 cell at t = 1,
+#      Hall-Littlewood). The value is correct and meaningful; only the
+#      serialization is invalid.
+#
+# Case 2 is what this helper is for, and its absence is the structural reason
+# these literals kept appearing: a producer with a legitimate infinity had no
+# sanctioned way to write it, so it wrote the bare literal.
+
+NONFINITE_MARKERS = {"nan": "nan", "inf": "inf", "-inf": "-inf"}
+
+
+def json_safe_float(value: Any) -> Any:
+    """Return `value` unchanged if finite, else an explicit marker STRING.
+
+    ``float('inf') -> "inf"``, ``float('-inf') -> "-inf"``, ``NaN -> "nan"``.
+
+    Deliberately a marker rather than ``None``: a pole and a missing value are
+    different facts, and ``null`` conflates them. Deliberately not ``1e999``
+    either — that is how a non-finite becomes a silently wrong finite number.
+
+    Use this ONLY where the non-finite is a real result (a pole, a divergent
+    norm). If it came from a swallowed exception, fix the exception: a NaN
+    standing in for "this computation failed" should be recorded as null
+    ALONGSIDE the reason, not laundered into a marker that reads like a value.
+    """
+    import math as _math
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return value
+    if isinstance(value, int):
+        return value
+    if _math.isnan(value):
+        return NONFINITE_MARKERS["nan"]
+    if _math.isinf(value):
+        return NONFINITE_MARKERS["inf" if value > 0 else "-inf"]
+    return value
+
 
 # ── Audit / Precision Guard (qou-opm1) ───────────────────────────
 # Expose mpmath aliases to prevent silent downcasting to float64 via `math`

@@ -44,7 +44,27 @@ except ImportError:
     tr_m_atom_zn = _Q0 = _ME_MEV = None  # keep names defined for static analysis
     _HAS_SUBSTRATE = False
 
-AHC = 1.43996  # alpha_EM * hbar*c  [MeV.fm]  (= e^2/4 pi eps0)
+# alpha_EM * hbar*c  [MeV.fm]  (= e^2/4 pi eps0), from the CANONICAL module.
+#
+# Was `AHC = 1.43996`, the CODATA value as a float64 literal. The framework
+# DERIVES alpha_EM from q0 (Bring zero-mode / q[9]_q[10]_q), and bean qou-usft
+# routed `coulomb_energy.py` onto the derived value; this file kept the CODATA
+# copy. Flagged INPUT by `audits/derived_alpha_em_usage_audit.py`, undrained.
+# The shift is 3.6 ppm - far below this file's ~13 % r0 spread, so no conclusion
+# here moves. The CLAIM moves: a mirror-split analysis that fed on CODATA
+# alpha_EM was not parameter-free, however small the difference.
+#
+# Currency note, and it runs the other way for the LENGTH: `substrate_length()`
+# below (2026-06-15) is where the corpus first identified the fitted Coulomb r0
+# as the pion Compton wavelength hbar_c/m_pi, i.e. CAL-3. `coulomb_energy.py`
+# adopted exactly that as its default R0 on 2026-08-09. This file's conclusion
+# is upstream of that module's implementation - they agree, and the fallback
+# below only exists so the symbolic proof still runs without the substrate.
+try:
+    from coulomb_energy import alpha_em_hbar_c_mev_fm as _ahc  # noqa: E402
+    AHC = float(_ahc())
+except ImportError:  # substrate absent (see the _HAS_SUBSTRATE note above)
+    AHC = 1.4399652199  # derived value, hard-copied for the no-substrate path
 
 # mirror pairs as ((Z,N) of the n-rich member, (Z,N) of the p-rich member, A, name)
 PAIRS = [((1, 2), (2, 1), 3, "3H/3He"), ((3, 4), (4, 3), 7, "7Li/7Be"),
@@ -103,8 +123,17 @@ def substrate_length_check():
     candidate scales. Answer: r0 ~ the pion Compton wavelength hbar c / m_pi, NOT a
     length built from E0 — i.e. the textbook 'nuclear size ~ pion range'. Since
     m_pi is CAL-3, this is consistent with the calibration, not a new derivation."""
-    hbarc = 197.3269804  # MeV.fm
-    me, m_pi, q0, alpha = M_E_MEV, 139.57039, 1.1097, 1.0 / 137.035999
+    from q_parameter import Q as _Q0  # noqa: PLC0415
+    from experimental_constants import ALPHA_EM_INV as _ALPHA_INV  # noqa: PLC0415
+
+    hbarc = 197.3269804  # MeV.fm (exact in SI since 2019)
+    # alpha and q0 were re-typed here (1.0 / 137.035999, and q0 rounded to
+    # 1.1097) in a file that already imports M_E_MEV from the registry.
+    # Read both. This is an order-of-magnitude check, so neither shift
+    # moves the answer -- which is the reason to fix it now rather than
+    # when it does.
+    me, m_pi = M_E_MEV, 139.57039
+    q0, alpha = float(_Q0), 1.0 / _ALPHA_INV
     E0 = me / (q0 * (q0 - 1.0))
     print("\n[substrate-length] is r0 ~ 1.5 fm a framework length?")
     for name, v in (("hbar c / E0", hbarc / E0),

@@ -50,6 +50,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _pb  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import json  # noqa: E402
@@ -69,6 +71,13 @@ ORD = core.ORD
 HERE = Path(__file__).resolve().parent
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
 def main() -> int:
     t0 = time.monotonic()
     print("=" * 78)
@@ -78,9 +87,10 @@ def main() -> int:
     # ---- rebuild E, O, u~ exactly as the 08ds / 0zr0 probes (same conventions) ----
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    with open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE),
-              encoding="utf-8") as fh:
-        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+    # q₀ from q_parameter (proton pin, AGENTS.md 2026-08-07 directive).
+    # Was a direct read of q-pinning-50-digit.witness.json, which is the
+    # MUON anchor’s definition and bypasses the manifest entirely.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
     Qb = rat_series(sp.Integer(sgn) * dnet_reg / q)
     QA = rat_series((2 * q + 1 - q**2) * (q + 1) / (2 * q**3))

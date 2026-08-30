@@ -65,7 +65,7 @@ def main() -> int:
     b_sq = (h ** 2 + 3) / (h ** 2 + 4)
     b = sqrt(b_sq)
     u = b * hbar_q ** 2
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
     alpha = (z - 1) * h / 2
 
     # Substrate quantities (Form A and Kashiwara cos)

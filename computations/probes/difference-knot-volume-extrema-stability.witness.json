@@ -9,7 +9,7 @@
       "computed": 2.357617226530009,
       "expected": 2.358,
       "passed": true,
-      "tolerance": 0.6,
+      "tolerance": "0.6",
       "source": "modal B_AME/Vol spread from default-simplify volumes; reproduces the committed audit 2.358 and stays ≫ 1.1, so AT THE MODAL TRIANGULATION the constant-ρ closure is refuted. HONEST CAVEAT: all difference links return degenerate-triangulation volumes (raw envelope >2×), so the volumes are not rigorously pinned; the Sage rigorous interval volume is genuinely warranted for airtightness — this REFINES the prune audit's 'expect it to confirm, do not prioritise Sage' to 'Sage is warranted'."
     }
   ],

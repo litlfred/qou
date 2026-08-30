@@ -1,0 +1,66 @@
+{
+ "schema": "witness/v1",
+ "engine": "mpmath",
+ "scriptFile": "c3_w2_c1_stokes_pair_prony.py",
+ "commitSha": "a8c8f2de07dd02062f1d640d04a0b4aa39a5f5cf",
+ "description": "C1 infinity step 3 (bean qou-odh5). Two-pole Prony resolves the q-Borel singularity structure into an EXACT ANTIPODAL PAIR xi = +/- 2.36510358..., sum zero to 21 digits, branch-independent to 2.2e-29. This corrects step 2's reading of a 3.7e-4 'branch spread' as two nearby singularities: that was a single-pole ratio test blending one antipodal pair. The +/- matches the leading blocks B = +/- sqrt(q-1)/q. |xi| is normalisation-dependent and is NOT identified; xi_2/xi_1 = -1 is the canonical datum. Multipliers not extracted.",
+ "computation": {
+  "script": "computations/qbeta/c3_w2_c1_stokes_pair_prony.py",
+  "scriptCommitSha": "a8c8f2de07dd02062f1d640d04a0b4aa39a5f5cf",
+  "scriptHash": "e5ddaeccae16"
+ },
+ "results": {
+  "method": "two-pole Prony / Hankel on c_m = b_m q^{m(m-1)/4}",
+  "dps": 600,
+  "n_terms": 1200,
+  "xi_1": "2.3651035824525764564",
+  "xi_2": "-2.3651035824525764564",
+  "xi_ratio": "-1.0",
+  "pair_sum_relative": "9.00563e-22",
+  "branch_agreement_relative": "2.16531e-29",
+  "leading_blocks_B": "0.298771701454444",
+  "abs_xi_is_normalisation_dependent": true,
+  "corrects": "step 2 (c3-w2-c1-qborel-singularity.witness.json) read the 3.7e-4 branch spread as two nearby singularities; it is one antipodal pair blended by a single-pole estimator"
+ },
+ "assertions": [
+  {
+   "name": "exact_antipodal_pair",
+   "computed": "9.006e-22",
+   "expected": "<1e-15",
+   "passed": true
+  },
+  {
+   "name": "ratio_is_minus_one",
+   "computed": "-1.0",
+   "expected": "-1",
+   "passed": true
+  },
+  {
+   "name": "branch_independent_module_invariant",
+   "computed": "2.165e-29",
+   "expected": "<1e-20",
+   "passed": true
+  }
+ ],
+ "verdict": "MIXED. CONFIRMED numerically: the q-Borel singularities form an exact antipodal pair, branch-independent to 2.2e-29 -- superseding step 2's 'two nearby singularities' reading. WITHDRAWN: the interpretation of that pair as the two Stokes sectors. The diagnostic shows b_(m+1)/b_m -> 9.3e-24, so the recurrence is effectively two-step, and a two-step recurrence has characteristic roots +/- sqrt(lam) -- it manufactures an antipodal pair with no Stokes content. The match to the +/- of the leading blocks was circular (even/odd decoupling and ramification index 2 are the same structure). SCOPE-(a) NEGATIVE on the Prony/ratio route to the multipliers: the alternating component is suppressed by ~1e-24, so sector information is not visible in the raw b_m. Reaching the multipliers needs theta-normalised canonical solutions in the ramified picture, which this method does not build.",
+ "two_step_diagnostic": {
+  "b_ratio_by_m": [
+   {
+    "m": 200,
+    "b_m1_over_b_m": "1.2433108e-5"
+   },
+   {
+    "m": 600,
+    "b_m1_over_b_m": "1.0756158e-14"
+   },
+   {
+    "m": 1000,
+    "b_m1_over_b_m": "9.3054493e-24"
+   }
+  ],
+  "two_step_regime_dominant": true,
+  "sector_interpretation_withdrawn": true
+ },
+ "scope": "Separates and characterises the singularity pair. Does NOT extract the Stokes multipliers. |xi| deliberately not identified (normalisation-dependent). Numerical, no fit, nothing wired.",
+ "durationMs": 1114
+}

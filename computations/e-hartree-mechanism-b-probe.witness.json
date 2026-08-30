@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:18:59.124491+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:16.753211+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "binding vanishes at eps=0 (decoupled = separated atoms): |B(0)| ~ 0",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 12,
   "computation": "e-hartree-mechanism-b-probe",
   "scriptFile": "e_hartree_mechanism_b_probe.py",
-  "scriptHash": "22c5dd6ae383",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "969926cd611a",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,16 +41,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "conj:e-hartree Mechanism B probe (item 1): tests the single remaining gap — is the separated-atom point a SMOOTH facet of the binding LP (dual y_cov ~ eps^2, no linear term, alpha^2 Hartree scaling structural) or a KINK (constraint activation, generic O(eps) term)?  Faithful to h2-molecular-binding.py: interpolate every inter-atomic (covalent-channel) crossing toward identity by eps in [0,1] ((c,d)->(eps*c, 1+eps(d-1))), so eps=0 = two separated atoms, eps=1 = molecule; B(eps)=Phi_1(H2;eps)-Phi_1(2H).  Extract the leading power p in B~A*eps^p via log-log slope + B/eps, B/eps^2 ratios at q_0 (60 dps); also test whether the LP-optimal strand ordering is stable as eps->0 (ordering change = kink signature).  p~2 ⇒ Mechanism B holds; p~1 ⇒ fails as stated.  Archimedean numerical answer, not a symbolic proof; does not supply the m_e c^2 transport; no experimental comparison.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
-    "q0": "1.1099785955573347",
-    "phi_separated": "-1.91940669860084986652712559743052344163628458637535613259301",
-    "phi_full": "-2.60641921716388564770537821466630615908763006647456058717676",
-    "binding_full": "-0.687012518563035781178252617235782717451345480099204454583753",
+    "q0": "1.1099785827513808",
+    "phi_separated": "-2.62134489967441488536959849705089069874485800914354863518647",
+    "phi_full": "-2.74981762655563661385050952060189846034294572230764255474814",
+    "binding_full": "-0.128472726881221728480911023551007761598087713164093919561675",
     "ordering_separated": [
       0,
       1,
@@ -63,42 +65,42 @@
       1,
       2
     ],
-    "leading_power_p": "1.00000061799229838105042157846582567683405205964779461456789",
-    "B_over_eps_1e7": "-9.11838217530018980879665196107211715399861356067578011348485",
-    "B_over_eps2_1e7": "-91183821.7530018980879665196107211715399861356067578011348485",
+    "leading_power_p": "1.00000076437217768996177001392025019246607895789372546266582",
+    "B_over_eps_1e7": "-10.3419344083774334718892020635806997665463094235737162859925",
+    "B_over_eps2_1e7": "-103419344.083774334718892020635806997665463094235737162859925",
     "active_set_stable": false,
     "grid": [
       {
         "eps": "0.1",
-        "B": "-1.1078506714719063793397312552631830464665918457851365035143"
+        "B": "-1.33809747641291255892327512133808922461251560140969787339849"
       },
       {
         "eps": "0.01",
-        "B": "-0.0926622562877559411135635769911410758035669607933886872420393"
+        "B": "-0.10550620989694371610068190931818609388986903976839865644577"
       },
       {
         "eps": "0.001",
-        "B": "-0.00913283343410665229764291932333164176846228329669527642637333"
+        "B": "-0.0103622192060879239697927492948871286552102287201064829028183"
       },
       {
         "eps": "0.0001",
-        "B": "-0.000911982278445407648667753662594083098820281755613688809553435"
+        "B": "-0.00103439554610458805194082120084672531799527113159250535551122"
       },
       {
         "eps": "0.00001",
-        "B": "-0.000091185249065938479810565372508110433672108375972546120462907"
+        "B": "-0.000103421346375706064273095900525925834672614063227116217119807"
       },
       {
         "eps": "0.000001",
-        "B": "-0.00000911839515058355663164660363696616076474224821360627881109355"
+        "B": "-0.0000103419526105287645731101936243516915833396190150300623966248"
       },
       {
         "eps": "0.0000001",
-        "B": "-0.000000911838217530018980879665196107211715399861356067578011348485"
+        "B": "-0.00000103419344083774334718892020635806997665463094235737162859925"
       }
     ],
-    "finding": "Mechanism B verdict: LINEAR — Mechanism B FAILS as stated (kink; binding has an O(alpha) term).  Leading power p=1.0; B/eps=-9.118, B/eps^2=-9.118e+7 at eps=1e-7; active-set stable as eps->0: False.  This is the archimedean LP-functional answer to the single remaining e-hartree gap; the m_e c^2 unit transport is unaffected."
+    "finding": "Mechanism B verdict: LINEAR — Mechanism B FAILS as stated (kink; binding has an O(alpha) term).  Leading power p=1.0; B/eps=-10.34, B/eps^2=-1.034e+8 at eps=1e-7; active-set stable as eps->0: False.  This is the archimedean LP-functional answer to the single remaining e-hartree gap; the m_e c^2 unit transport is unaffected."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

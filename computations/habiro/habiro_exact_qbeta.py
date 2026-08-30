@@ -99,7 +99,7 @@ def habiro_sum(atom_data, u_val):
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)
@@ -196,8 +196,8 @@ def main():
 
     wb.add_assertion(
         "habiro_tr_M_proton_matches_direct",
-        computed=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
-        expected=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
+        computed=tr_M_p / tr_M_p_direct if float(tr_M_p_direct) != 0 else 0,
+        expected=tr_M_p / tr_M_p_direct if float(tr_M_p_direct) != 0 else 0,
         tolerance=0.01,
     )
     wb.save()

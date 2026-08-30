@@ -61,7 +61,8 @@ def main() -> int:
     mp.mp.dps = 60
 
     # Substrate at q_0 (canonical 50-dps pinning, same as q_pinning_50_digit)
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target
@@ -69,7 +70,9 @@ def main() -> int:
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
 
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
 
     print("=== Substrate at q_0 ===")
     print(f"  q_0 = {float(q0):.15f}")

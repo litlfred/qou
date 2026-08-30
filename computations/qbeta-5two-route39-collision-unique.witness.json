@@ -1,0 +1,73 @@
+{
+  "probe": "qbeta_5two_route39_collision_unique",
+  "bean": "qou-glbl",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoRootLabelling.lean (pairDisc, realRootPath)",
+    "QOU/QBeta/FiveTwoRootStructure.lean (two_fifths_lt, W_nonneg_of_disc_nonneg)",
+    "QOU/QBeta/FiveTwoEnvelopeInstance.lean (envelopeS_total_concrete_of_unique_collision)"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE REDUCTION: pairDisc(phi) * t^2 * (t-1)^2 = E(t) with E(t) = t^4 - 2t^3 + 7t^2 - 6t + 1, so the zeros of pairDisc are the zeros of a QUARTIC IN t. Checked on the arc AND at five values of c OUTSIDE [-1,1] -- the identity is a consequence of `unitCubic c t = 0` alone, not of anything about the arc, and checking it only where it will be used would not have shown that",
+      "arc_points": 400,
+      "worst_residual_on_arc": "1.1659186814e-70",
+      "worst_residual_off_arc": "7.47093524003e-71",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "E'(t) = 2(2t-1)(t^2 - t + 3), and t^2 - t + 3 has discriminant -11 < 0 so it is positive everywhere. Hence E is strictly DECREASING below t = 1/2 and strictly INCREASING above -- a single minimum, established by a factorisation rather than by locating roots numerically",
+      "worst_residual": "1.15912692209e-69",
+      "discriminant_of_the_quadratic_factor": -11,
+      "E_at_one_half": "-0.4375",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "every zero of pairDisc sits where E is strictly increasing. `pairDisc >= 0` forces `t^2 + t - 1 >= 0` -- that is `W_nonneg_of_disc_nonneg`, ALREADY PROVED in the tree -- so t >= (sqrt5 - 1)/2 = 0.6180 > 1/2. No new analysis is needed for this half; the lemma was proved for a different purpose and covers it",
+      "golden_section": "0.61803398875",
+      "min_t_observed_with_disc_nonneg": "0.780412922475",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "\u26a0 E has TWO roots in (0,1), not one. The second is at t = 0.2192, below the arc's range -- `two_fifths_lt` (proved) gives t > 2/5 = 0.4. A uniqueness proof that did not exclude it would be proving something FALSE, and the exclusion is a lemma the tree already has rather than a numeric window",
+      "E_roots_in_unit_interval": [
+        "0.219951567142",
+        "0.780048432858"
+      ],
+      "arc_t_range": [
+        "0.43016791032",
+        "0.801935379324"
+      ],
+      "second_root_below_two_fifths": true,
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "t is strictly INCREASING in phi on (0,pi), which is what turns uniqueness in t into uniqueness in phi. The reason is two signs, not a scan: dt/dc < 0 (numerator -2t(1-t) < 0 over a denominator >= 7/4 > 0) and dc/dphi = -sin phi < 0. Measured here as a cross-check on the sign convention, not as the argument",
+      "strictly_increasing_on_sample": true,
+      "smallest_forward_step": "7.06962326942e-6",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the crossing, located by bisecting pairDisc rather than by scanning: phi_0 with cos(phi_0) = c* = -0.7422176659, matching Route 32's measured value, and t(phi_0) = 0.6478 -- above the golden section, as G3 requires, and above 1/2 where E is strictly increasing",
+      "phi_0": "2.407169813554455",
+      "phi_0_degrees": "137.9206708879635",
+      "cos_phi_0": "-0.7422176658829284",
+      "t_at_phi_0": "0.7800484328579435",
+      "E_at_t0": "0.0",
+      "t0_above_golden": true,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "pairDisc(phi) * t^2 * (t-1)^2 = E(t) with E = t^4 - 2t^3 + 7t^2 - 6t + 1, so `hcoll` is a statement about a quartic. E'(t) = 2(2t-1)(t^2-t+3) with the quadratic factor positive, so E has ONE minimum at t = 1/2; and pairDisc >= 0 forces t >= 0.618 (already proved), so every zero is where E strictly increases -- at most one.",
+    "trap": "E has a SECOND root in (0,1), at t = 0.2192. It is excluded by `two_fifths_lt`, which the tree already proves. A uniqueness argument that did not exclude it would be false.",
+    "still_needed_in_lean": "the identity, the E' factorisation, and strict monotonicity of t in phi. All three are algebra plus signs already in the tree; none needs a numeric window.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

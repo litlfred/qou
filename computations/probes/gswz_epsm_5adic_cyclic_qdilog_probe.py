@@ -305,6 +305,9 @@ print(f"{npass}/{len(checks)} checks pass")
 
 import subprocess
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 _sha = subprocess.run(
     ["git", "rev-parse", "HEAD"], capture_output=True, text=True
 ).stdout.strip()
@@ -316,8 +319,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (uploads/1712.04887v3.pdf); "
-        "GSWZ arXiv:2412.04241v2 eqns (16)/(275) (uploads/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21) (library/arxiv-1712.04887v3/1712.04887v3.pdf); "
+        "GSWZ arXiv:2412.04241v2 eqns (16)/(275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
         "finite-field validation: cgz_cyclic_qdilog_unit_probe.py (merged #4490)"
     ),
     "place": "Q_25 component of K_5, ring (Z/5^8)[y]/(y^2+py+r) Hensel-split",
@@ -335,8 +338,17 @@ witness = {
     ),
 }
 with open(
-    "computations/probes/gswz_epsm_5adic_cyclic_qdilog.witness.json", "w"
+    _HERE_W / "gswz_epsm_5adic_cyclic_qdilog.witness.json", "w"
 ) as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

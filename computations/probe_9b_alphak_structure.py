@@ -76,6 +76,12 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL = mp.mpf("1e-40")  # 50-dps identity tolerance (≫ 1e-25 floor)
 
 
@@ -97,7 +103,7 @@ def symbolic_2a() -> dict:
     """
     q = sp.Symbol("q", positive=True)
     h = q - 1 / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     a = h / (1 - q**4)
     ap = h / (1 - q**-4)
@@ -402,17 +408,17 @@ def main() -> int:
     )
     wb.add_assertion(
         "numeric_z_series_depth_le2",
-        computed=float(devs["z_series"]), expected=0.0, tolerance=1e-40,
+        computed=devs["z_series"], expected=0.0, tolerance=1e-40,
         source="tr_M(T_w) = z^{ℓ(w)} at 50 dps for all depth ≤ 2 basis words",
     )
     wb.add_assertion(
         "numeric_tr_T121_closed_form",
-        computed=float(devs["t121"]), expected=0.0, tolerance=1e-40,
+        computed=devs["t121"], expected=0.0, tolerance=1e-40,
         source="tr_M(T_Δ) = z + h·z² at 50 dps (Wenzl-bridge y × seminormal χ)",
     )
     wb.add_assertion(
         "alpha3_value_not_derived_near_match_10pc",
-        computed=float(devs["rel_dev_alpha3"]), expected=0.104,
+        computed=devs["rel_dev_alpha3"], expected=0.104,
         tolerance=0.01,
         source="collapsed depth-3/depth-1 weight 1+q^{1/2}−q^{-1/2} deviates "
                "from the assigned α_3 = 1 by ≈10.4% at q₀ (exact only at q→1) "

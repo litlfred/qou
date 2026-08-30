@@ -16,6 +16,7 @@ export default proposition({
     ],
   },
   uses: [
+    "conj:q-integer-mass-formula",
     "def:co-molecular-braid",
     "prop:h2-lp-dual-binding",
   ],

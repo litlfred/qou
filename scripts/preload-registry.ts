@@ -11,9 +11,9 @@
  * reached via `../folio-assistant/`.
  */
 
-import { configureValueRegistry } from "../../folio-assistant/content/pipeline/value-registry-di.ts";
+import { configureValueRegistry } from "../folio-assistant/content/pipeline/value-registry-di";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../content/values/registry";
-import { configureLeanPackages } from "../../folio-assistant/schemas/lean-packages";
+import { configureLeanPackages } from "../folio-assistant/schemas/lean-packages";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
 
 configureValueRegistry({

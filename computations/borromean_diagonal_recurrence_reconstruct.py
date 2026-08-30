@@ -399,10 +399,19 @@ def main() -> int:
         "parameters": {"r": R_ORD, "W": W_WIN, "samples": len(kept),
                        "verify_range": f"n=1..{NVER}"},
         "result": result,
-        "wall_seconds": round(time.time() - t0, 1),
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     out = script_path.with_name(
         "borromean-diagonal-recurrence-reconstruct.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness → {out.name}   wall {witness['wall_seconds']}s")
     print(f"  VERIFIED: {all_ok}")

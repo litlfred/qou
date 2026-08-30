@@ -70,9 +70,17 @@ for _p in (str(_COMP), str(_COMP / "substrate"),
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import NF_NAMES, TR_M, gram_matrix  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # NF-basis Wedderburn dominant blocks (from aK_via_lp_dual_hecke_basis.py):
 # self-conjugate (charge-symmetric / strong) = (2,1) = L₊,L₋; the rest
@@ -94,7 +102,14 @@ def main() -> int:
     n_target = mp.mpf(_load_json("chi-proton-h3-at-q0-50dps.witness.json")["tr_M_at_q0"])
     t = np.asarray([float(x) for x in TR_M], dtype=float)
     G = np.asarray(gram_matrix(), dtype=float)
-    res = solve_operator_selection_lp(t, G, float(n_target), backend="scipy")
+    # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
+    # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-deterministic
+    # too (6 identical solves, 1 output hash), so that reason never distinguished
+    # the two. The real concern was `backend="auto"` choosing silently by whether
+    # the Rust binary happened to be built; pinning `clarabel` answers it, and
+    # QOU_REQUIRE_CLARABEL=1 makes a missing binary an error rather than a
+    # changed answer. Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, float(n_target), backend="clarabel")
     y_star = list(res.y_star)
     chi_y = sum(y for y, sc in zip(y_star, SELF_CONJUGATE) if not sc)
     sc_y = sum(y for y, sc in zip(y_star, SELF_CONJUGATE) if sc)
@@ -219,8 +234,13 @@ def main() -> int:
         ),
         "parameters": {
             "q_0_50dps": mp.nstr(Q0, 50),
-            "lp_backend": "scipy linprog (f64) — canonical aK_via_lp_dual pattern; "
-                          "exhibits degeneracy only, not a precision-critical value",
+            # REPORTED, not asserted. This was the literal string "scipy
+            # linprog (f64) — … exhibits degeneracy only, not a
+            # precision-critical value". When the solve moved to clarabel-MPFR
+            # (2026-08-23) the literal did not, so the witness declared a
+            # backend it had not used. Read it off the result instead, so it
+            # cannot drift again. Bean `qou/ftuv`.
+            "lp_backend": f"{res.backend} @ {res.precision_bits} bits",
             "n_target_proton": mp.nstr(n_target, 50),
             "nf_basis": list(NF_NAMES),
         },
@@ -273,6 +293,15 @@ def main() -> int:
         ],
     }
     out = _COMP / "he3-pairknot-composite-lp.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"\nwrote {out}   allPassed={all_passed}")

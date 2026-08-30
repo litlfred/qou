@@ -1,0 +1,245 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
+ "source": {
+  "file": "mod-phi-convergence-approximation-of-discrete-measures-and-20yc5c6q3n.pdf",
+  "sha256": "c563cc999000e75d982dc2cef2d16fd41d36c9e7d1066ccd946c16d88bc92a3e",
+  "bytes": 933348,
+  "pages": 84,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "ANNALES DE L\u2019INSTITUT FOURIER Universit\u00e9 Grenoble Alpes Les Annales de l\u2019institut Fourier sont membres du Centre Mersenne pour l\u2019\u00e9dition scientifique ouverte www.centre-mersenne.org",
+  "authors_raw": "Reda C/h.sc/h.sc/a.sc/i.sc/b.sc/i.sc, F/r.sc/e.sc/d.sc/d.sc/y.sc D/e.sc/l.sc/b.sc/a.sc/e.sc/n.sc",
+  "title_lines": [
+   "ANNALES DE",
+   "L\u2019INSTITUT FOURIER",
+   "Universit\u00e9 Grenoble Alpes",
+   "Les Annales de l\u2019institut Fourier sont membres du",
+   "Centre Mersenne pour l\u2019\u00e9dition scientifique ouverte",
+   "www.centre-mersenne.org"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "PyPDF2",
+   "Title": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
+   "Author": "Reda Chhaibi, Freddy Delbaen, Pierre-Lo\u00efc M\u00e9liot, Ashkan Nikeghbali"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": null,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Poisson approximation of lattice-valued random variables",
+   "page": null,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Infinitely divisible distributions and distances between probability measures",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Mod-phi convergent sequences of random variables",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "The Wiener algebra and the general scheme of approximation",
+   "page": 7,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Outline of the paper",
+   "page": 11,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Concentration inequalities in the Wiener algebra",
+   "page": 12,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Deconvolution residues in the Wiener algebra",
+   "page": 13,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Estimates of norms in the Wiener algebra",
+   "page": 15,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics of distances for a general scheme of approximation",
+   "page": 20,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The local distance",
+   "page": 21,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The Kolmogorov distance",
+   "page": 24,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The total variation distance",
+   "page": 26,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Derived scheme of approximation with constant residue",
+   "page": 32,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "One-dimensional applications",
+   "page": 35,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Poisson approximation of a sum of independent Bernoulli variables",
+   "page": 35,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Poisson approximation schemes and formal alphabets",
+   "page": 38,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Number of disjoint cycles of a random permutation",
+   "page": 42,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+   "page": 45,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Number of distinct prime divisors of a random integer",
+   "page": 53,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "The multi-dimensional case",
+   "page": 55,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The multi-dimensional Wiener algebra",
+   "page": 57,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of distances in the multi-dimensional setting",
+   "page": 66,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Cycle-type of random coloured permutations",
+   "page": 69,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Distinct prime divisors counted according to their residue classes",
+   "page": 75,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-poisson-approximation-of-lattice-valued-rando",
+   "number": "1.1",
+   "title": "Poisson approximation of lattice-valued random variables",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 84,
+   "n_chars": 139123,
+   "n_words": 27356
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 26,
+  "sections": 2,
+  "chars_total": 139123
+ }
+}

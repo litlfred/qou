@@ -3,9 +3,9 @@
 Bean qou-9p9y (T3 of the Habiro attack plan) — THE previously-missing
 ingredient, now available: Besser-de Jeu, "Li(p)-service? An algorithm
 for computing p-adic polylogarithms", Math. Comp. 77 (2008) 1105-1134
-(uploads/S0025-5718-07-02027-3.pdf), supplemented by Besser,
-"Finite and p-adic polylogarithms" (uploads/0006051v1.pdf) and
-Besser-de Jeu arXiv:0707.3682 (uploads/0707.3682v2.pdf).
+(library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf), supplemented by Besser,
+"Finite and p-adic polylogarithms" (library/arxiv-math-0006051v1/0006051v1.pdf) and
+Besser-de Jeu arXiv:0707.3682 (library/arxiv-0707.3682v2/0707.3682v2.pdf).
 Scope-(a); no fit; nothing wired; audit:
 docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 8).
@@ -192,6 +192,9 @@ checks = {}
 
 # (1) 5-integrality of g_2 coefficients + proven tail bound at N
 import math
+
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
 
 checks["g2_coeffs_5_integral"] = all(c.denominator % 5 != 0 for c in g2)
 c25 = (
@@ -384,8 +387,8 @@ witness = {
     "beans": ["qou-9p9y"],
     "source": (
         "Besser-de Jeu Math. Comp. 77 (2008) 1105-1134 Props 4.2/4.3/6.1 "
-        "(uploads/S0025-5718-07-02027-3.pdf); GSWZ arXiv:2412.04241v2 "
-        "Example 4.3 eqns (271)/(273)/(274) (uploads/2412.04241v2.pdf)"
+        "(library/s0025-5718-07-02027-3/S0025-5718-07-02027-3.pdf); GSWZ arXiv:2412.04241v2 "
+        "Example 4.3 eqns (271)/(273)/(274) (library/arxiv-2412.04241v2/2412.04241v2.pdf)"
     ),
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5",
     "parameters": {"working_precision": f"5^{W}", "series_terms": N},
@@ -409,8 +412,17 @@ witness = {
     ),
 }
 with open(
-    "computations/probes/gswz_coleman_li2_full_precision.witness.json", "w"
+    _HERE_W / "gswz_coleman_li2_full_precision.witness.json", "w"
 ) as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

@@ -32,6 +32,15 @@ C1's `0`-side weights are
 
     t = ( −(q−1) ± √((q−1)(q−5)) ) / 2 ,     discriminant  (q−1)² − 4(q−1) = q² − 6q + 5.
 
+**Provenance.**  The indicial polynomial, its Vieta relations, and the
+factorisation `(q−1)² − 4(q−1) = (q−1)(q−5)` are **not** introduced here — they
+predate this file in [`C1ZeroSideExponents.lean`](C1ZeroSideExponents.lean)
+(bean `qou-wgnx`), over a generic `CommRing` rather than the `ℚ[X]` used here,
+and that file additionally proves the exponents are a **conjugate pair** for
+`1 < q < 5` (so the substrate `q₀ ≈ 1.11` is inside) and that `|t|² = q−1`.
+Neither is reproved here.  What is genuinely new below is only the
+**non-square** proof.
+
 This file proves the one structural fact that makes them interesting: **the
 discriminant is not a square in `ℚ[q]`**, so the two weights at `0` are *not*
 rational functions of `q` — they generate a quadratic extension, just as the `∞`
@@ -53,7 +62,7 @@ multiplier.
 §7c: `ℚ[X]` throughout — pure algebra over a domain, no ordering, nothing
 archimedean.  Sorry-free.
 
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853
+-- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
 -- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas

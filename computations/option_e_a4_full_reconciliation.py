@@ -31,8 +31,10 @@ import pyhecke_native
 from kl_betti_smoothness_pruned import (
     partitions, dim_sn, canonical_Q, syt_shape, inverse_rsk,
 )
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 N = 12
 m_e = mpf("0.51099895069")
@@ -179,6 +181,15 @@ def main():
         "assertions": [{"label": "chi 77/77", "passed": len(chi) == 77}],
         "allPassed": len(chi) == 77,
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     (HERE / "option-e-a4-full-reconciliation.witness.json").write_text(
         json.dumps(witness, indent=2, default=str), encoding="utf-8")
     print("Witness: option-e-a4-full-reconciliation.witness.json")

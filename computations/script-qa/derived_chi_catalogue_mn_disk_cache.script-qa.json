@@ -3,7 +3,7 @@
   "script_path": "computations/derived_chi_catalogue_mn_disk_cache.py",
   "language": "python",
   "source_hash": "b1d28203faee",
-  "updated_at": "2026-06-09T03:47:37.719Z",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
   "criteria": {
     "compute_no_mpf_to_float_cast": [
       {
@@ -35,6 +35,23 @@
         },
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be"
+      }
+    ],
+    "resume-cache-unvalidated": [
+      {
+        "field_hash": {
+          "py": "4d1ac3538815"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "major",
+        "evidence": "line 74: loads its own prior output when the file exists | reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
       }
     ]
   }

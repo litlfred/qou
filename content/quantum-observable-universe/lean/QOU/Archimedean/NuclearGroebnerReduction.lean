@@ -85,15 +85,13 @@ def isReduced (w : BraidWord) : Prop :=
     w[i]! = w[i+2]! → (w[i]! : Int) - w[i+1]! ≠ 1 ∧
     (w[i]! : Int) - w[i+1]! ≠ -1 ∨ w[i]! ≤ w[i+1]!)
 
-/-- The normal form exists and is unique (main theorem of the
-    Gröbner basis theory). -/
--- Ref: [manuscript] §6/nuclear-groebner-reduction
--- Ref: [manuscript] unital-groebner-bases/main-theorem
-axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
-    (word : BraidWord) :
-    ∃! (nf : HeckeElement),
-    -- The normal form consists entirely of reduced words
-    ∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1
+/- REMOVED (2026-08-25): `normal_form_exists_unique` was formally defective —
+    the bound variables `q`, `hq`, `A`, `word` did not appear in the conclusion
+    `∃! nf, ∀ wb ∈ nf, isReduced wb.1`, making the statement provably false
+    (both `[]` and `[([], 1.0)]` satisfy the predicate). The axiom had zero
+    consumers in the codebase. A correct formulation of Gröbner confluence
+    would need the word and parameters to appear in the conclusion.
+    See `nuclear_groebner_reduction` above for the working (non-unique) version. -/
 
 /-- The maximum word length of a reduced word with no duplicate
     generators and all generators in {0, ..., A-2} is A-1.

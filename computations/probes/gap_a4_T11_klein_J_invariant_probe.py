@@ -54,6 +54,7 @@ import _path_bridge as _bridge  # noqa: F401
 del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
+from _precision import json_safe_float  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
@@ -191,9 +192,15 @@ def test_J_invariant_orbits() -> dict:
         "J_at_z0": str(J_vertex),
         "J_at_z0_is_zero": j_at_vertex,
         "orbit_J_values": {
+            # J = 0 at the 12 vertices, 1 at the 20 faces, and ∞ at the 30
+            # edges — the standard normalisation of the Klein J-invariant on
+            # the icosahedral orbits. The ∞ is the RESULT, not a failure; it
+            # was written as `float("inf")`, which json.dump emits as a bare
+            # `Infinity` token, and JSON has no such token, so this witness
+            # did not parse under a strict loader. The marker keeps the fact.
             "vertex": 0,
             "face": 1,
-            "edge": float("inf"),
+            "edge": json_safe_float(float("inf")),
         },
         "riemann_hurwitz_lift": rh_check,
         "riemann_hurwitz_branching_sum": rh_sum,
@@ -245,7 +252,7 @@ def test_h_deformation_open() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T11-klein-J-invariant-probe",
                        engine="mpmath")
     w.set_audit_only(
@@ -351,7 +358,19 @@ def main():
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
-    out_path = w.save()
+    # q₀-independent, declared at the producer (bean qou-y98b). This probe is
+    # pure structure -- polynomial degrees, the Klein syzygy, orbit values,
+    # Riemann-Hurwitz -- and its import cone reaches `_precision` and nothing
+    # that resolves q₀. The manifest lists the stem `ambiguous`, which means
+    # "depends on q₀ but the pin is undetermined"; that is not this probe, and
+    # a producer's own declaration outranks the manifest.
+    out_path = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "structural probe: Klein J-invariant degrees, syzygy, orbit "
+            "values and Riemann-Hurwitz; no q0 in the import cone"
+        ),
+    })
     print()
     print(f"  Wrote witness: {out_path}")
 

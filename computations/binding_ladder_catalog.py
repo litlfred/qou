@@ -45,6 +45,12 @@ per isotope.
 Target: each isotope ≤ 100 ppb (using 3-cal calibration framework).
 """
 from __future__ import annotations
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import sys, json, warnings
 from pathlib import Path
 from datetime import datetime, timezone
@@ -178,5 +184,14 @@ out = {
 }
 out_path = Path(__file__).parent / "binding-ladder-catalog.witness.json"
 with open(out_path, "w") as fp:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(out, fp, indent=2)
 print(f"\nWitness: {out_path}")

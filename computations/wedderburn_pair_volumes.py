@@ -45,12 +45,17 @@ from hecke_core import (  # noqa: E402
 # LP-dual emission deps (witness __main__ path). Imported at module
 # level right after the sys.path setup per repo import convention —
 # hecke_core's own bootstrap has already put pyhecke on sys.path.
+import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import (  # noqa: E402
     TR_M as _TR_M, gram_matrix as _gram_matrix,
     nf_of_word as _nf_of_word, nf_net as _nf_net,
 )
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 
 def atom_per_generator_full_matrices(
@@ -139,7 +144,7 @@ def atom_per_generator_full_matrices(
                 base_cross = (1.0, -h)
                 m_this = m_nn if m_nn is not None else crossings_per_pair
             else:
-                base_cross = (1.0, -h / 2)
+                base_cross = (1.0, _pn_d(h))
                 m_this = m_pn if m_pn is not None else crossings_per_pair
             for _ in range(m_this):
                 apply_crossing(i, *base_cross)
@@ -176,7 +181,7 @@ def wedderburn_pair_volumes(
     )
 
     # H_3 Wedderburn weights (match hecke_core convention)
-    z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    z_mark = q0**3 / (q0**2 + 1)
     qdim_sym = 1.0
     qdim_std = q_int(2)
     qdim_alt = 1.0
@@ -225,8 +230,13 @@ if __name__ == "__main__":
     print(f"  n_pairs = {n}")
     print(f"  first 3 pairs:")
     for p in pairs[:3]:
-        print(f"    ({p['i']}, {p['j']}): sym={p['sym']:.4f}  std={p['std']:.4f}  "
-              f"alt={p['alt']:.4f}  full={p['full']:.4f}")
+        # mp.nstr, not an f-string :.4f -- these are mpmath.mpf and mpf has no
+        # __format__ for the float presentation types, so `:.4f` raises
+        # TypeError. AGENTS.md permits float(x) only inside an f-string for
+        # display and prefers mp.nstr; this is display, so mp.nstr it is.
+        print(f"    ({p['i']}, {p['j']}): "
+              f"sym={mp.nstr(p['sym'], 5)}  std={mp.nstr(p['std'], 5)}  "
+              f"alt={mp.nstr(p['alt'], 5)}  full={mp.nstr(p['full'], 5)}")
 
     # ── Witness emission ─────────────────────────────────────────
     from witness_base import WitnessBuilder  # noqa: E402
@@ -301,7 +311,12 @@ if __name__ == "__main__":
     _G = _gram_matrix()
     _b3_nf = _nf_of_word([0, 1, 0, 1, 0, 1])
     _n_target = float(_nf_net(_b3_nf))
-    _lp = solve_operator_selection_lp(_t, _G, _n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    _lp = solve_operator_selection_lp(_t, _G, _n_target, backend="clarabel")
     _lp_rec = _lp.to_dict()
     # Merge the validator-required dual fields at top level (the
     # lp_dual_witness_validator scans for them there).

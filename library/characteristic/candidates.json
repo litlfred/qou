@@ -1,0 +1,186 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "characteristic",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "42bd31da2754488ff0cf30260bd1af7524dad89655d910d1cdd33c4f54968806",
+  "file": "characteristic.pdf"
+ },
+ "provenance": {
+  "title": "gure eight knots",
+  "authors": "We also propose a geometric relation between the peripheral subgroup of the knot group, and basic",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "conjecture": 2,
+   "corollary": 1,
+   "remark": 5,
+   "proposition": 1,
+   "lemma": 3
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1",
+   "name": null,
+   "statement": "(The Characteristic equals Deformation Variety Conjecture) For every knot in S 3, the",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.3",
+   "name": null,
+   "statement": "If a knot has nontrivial deformation variety (eg. the knot is hyperbolic), then it has nontrivial",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.4",
+   "name": null,
+   "statement": "Despite our improved understanding of the geometry of 3-manifolds, it is unknown at present",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1.5",
+   "name": null,
+   "statement": "Conjectures 1 and 2 are true for the trefoil and Figure 8 knots.",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.6",
+   "name": null,
+   "statement": "Conjecture 1 may be translated as an equality of two polynomials with two commuting variables",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.7",
+   "name": null,
+   "statement": "Both Conjecture 1 and the Hyperbolic Volume Conjecture state a relationship between the",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1.8",
+   "name": null,
+   "statement": "Conjecture 1 reveals a close relation between the colored Jones function of a knot and its",
+   "section_file": "sections/sec-001-14-the-conjecture-recall-that-every-ane-subvarie.md",
+   "section_title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+   "pages": "3-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "2",
+   "name": null,
+   "statement": "(The AJ Conjecture)1 For every knot in S3, A(K)(L; M) = \u000fAq(K)(L; M 2).",
+   "section_file": "sections/sec-004-22-a-noncommutative-version-of-the-a-polynomial.md",
+   "section_title": "A noncommutative version of the A-polynomial. In this section we de",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.3",
+   "name": null,
+   "statement": "Conjecture 2 implies Conjecture 1.",
+   "section_file": "sections/sec-004-22-a-noncommutative-version-of-the-a-polynomial.md",
+   "section_title": "A noncommutative version of the A-polynomial. In this section we de",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.4",
+   "name": null,
+   "statement": "Conjecture 2 is consistent with the behavior of the colored Jones function and the A-polynomial",
+   "section_file": "sections/sec-004-22-a-noncommutative-version-of-the-a-polynomial.md",
+   "section_title": "A noncommutative version of the A-polynomial. In this section we de",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "For every knot K, \u000fAq(K)(1; 1) = 0.",
+   "section_file": "sections/sec-006-3-proof-of-the-conjecture-for-the-trefoil-and-fi.md",
+   "section_title": "Proof of the conjecture for the Trefoil and Figure 8 knots",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3",
+   "name": null,
+   "statement": "If M is a q-holonomic Ar module, then dim",
+   "section_file": "sections/sec-007-4-higher-rank-groups.md",
+   "section_title": "Higher rank groups",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

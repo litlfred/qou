@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T00:01:26.542458+00:00",
-  "commitSha": "0df9d60932948c370cf9dcd038eec6e3f27fd28c",
+  "computedAt": "2026-08-26T07:08:06.530821+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [
     {
       "name": "rungs_grow_finite_radius",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19204,
+  "durationMs": 18066,
   "computation": "qbeta-eta-singularity",
   "scriptFile": "qbeta_eta_singularity_probe.py",
-  "scriptHash": "a09e26bd4e63",
-  "scriptCommitSha": "0c55eb3e888bcccb93cff99b96b96945c50cf3c3",
+  "scriptHash": "cfb0da20a749",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,8 +25,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eta_singularity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eta_singularity_probe.py"
   },
   "description": "0zr0 follow-up: identify the nearest t-plane singularity of the descent function E(t). LEG 1: Domb-Sykes + Pade t_c from the exact rungs. LEG 2: closed-form net route — locate zeros of O (cbrt branch points of eta), zeros of O' (critical points of t), net-route zeros (log branch) in the s-annulus; match |t|-images against t_c; root-of-unity check on the winner.",
   "data": {

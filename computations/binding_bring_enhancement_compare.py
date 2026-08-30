@@ -9,7 +9,7 @@ Re-runs the binding-shell-enhancement analysis at q_0 with
 the substrate-pure formula
 
     f_pn = z - h · (1/2 - δ/4),   δ = Δm_{n-p}/M_N ≈ 1.37e-3
-                                   (`_li_2_q_util.flavor_split_subleading`,
+                                   (`_li_2_q_util.flavor_split_leading`,
                                     PROVED PR #690/#942)
 
 per `closed_form_tau_M.py::closed_form_ratio` and the categorical
@@ -40,10 +40,11 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _li_2_q_util import flavor_split_subleading  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 from closed_form_tau_M import closed_form_ratio  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # AME2020 binding energies (MeV)
@@ -56,9 +57,9 @@ AME = {
 
 
 def build_witness() -> dict:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
-    delta = flavor_split_subleading(q)
+    delta = flavor_split_leading(q)
 
     # Vol(𝓑₃) = 8G (Catalan)
     vol_b3 = 8 * mp.catalan
@@ -142,7 +143,7 @@ def build_witness() -> dict:
         "inputs": {
             "q_0_50dps": Q_50_DIGIT_STR,
             "m_e_MeV": float(M_E_MEV),
-            "delta_flavor_split_subleading": float(delta),
+            "delta_flavor_split_leading": float(delta),
             "vol_borromean_8G": float(vol_b3),
             "AME": AME,
         },
@@ -178,7 +179,7 @@ def main() -> int:
     print(f"witness emitted: {out_path}")
     if args.print:
         print()
-        print(f"  δ = Δm/M_N = {witness['inputs']['delta_flavor_split_subleading']:.6e}")
+        print(f"  δ = Δm/M_N = {witness['inputs']['delta_flavor_split_leading']:.6e}")
         print()
         hdr = f"  {'atom':>4} {'arc-comp':<10} {'τ_M strict':>11} {'τ_M Bring':>11} {'Δ (ppm)':>9} {'f strict':>10} {'f Bring':>10}"
         print(hdr)

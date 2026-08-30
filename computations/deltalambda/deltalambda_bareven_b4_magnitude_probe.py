@@ -311,8 +311,8 @@ def main() -> int:
     wb.add_assertion("z_naive_bar_even", computed=str(bool(z_bar_even)), expected="True")
     wb.add_assertion("writhe_det_matches_closed_form", computed=str(bool(preflight)), expected="True")
     wb.add_assertion("A4_writhe_det_even_in_m", computed=str(bool(a4_writhe_even)), expected="True")
-    wb.add_assertion("rho_strong_3_is_3p81", computed=float(rho_strong_3), expected=3.8128, tolerance=1e-3)
-    wb.add_assertion("rho_strong_4_is_13p03", computed=float(rho_strong_4), expected=13.032, tolerance=2e-2)
+    wb.add_assertion("rho_strong_3_is_3p81", computed=rho_strong_3, expected=3.8128, tolerance=1e-3)
+    wb.add_assertion("rho_strong_4_is_13p03", computed=rho_strong_4, expected=13.032, tolerance=2e-2)
     # The coherence gate FAILS: forcing WRITHE rho4=13.03 leaves rho3 >5% off target.
     _r3f = mp.mpf(steelman.get("writhe_fix_rho4", {}).get("rho3_forced", "0"))
     wb.add_assertion(

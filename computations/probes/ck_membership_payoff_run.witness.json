@@ -1,0 +1,60 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "ck_membership_payoff_run_probe",
+ "engine": "python3-sympy-exact",
+ "scriptFile": "ck_membership_payoff_run_probe.py",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "beans": [
+  "qou-9p9y",
+  "qou-1hlh"
+ ],
+ "source": "corpus c_3 candidates (computations/c3_hopf_habiro_analysis.py; docs/coordination/1ppq-qbeta.md); alpha_EM element PR #1511; binding tails (habiro_tail_membership_gate_probe.py); GSWZ gates (library/arxiv-2412.04241v2/2412.04241v2.pdf); CGZ (library/arxiv-1712.04887v3/1712.04887v3.pdf)",
+ "checks": {
+  "c3_two_forms_identical": true,
+  "J_hopf_c3_candidate_signature_as_predicted": true,
+  "two_q_alphaEM_factor_signature_as_predicted": true,
+  "binding_tail_D4_signature_as_predicted": true,
+  "FAIL_swing_fit_2p98pct_signature_as_predicted": true,
+  "FAIL_denom7_signature_as_predicted": true,
+  "D4_bar_even": true
+ },
+ "gate_table": {
+  "J_hopf_c3_candidate": {
+   "g1": true,
+   "g2": true,
+   "g3": true,
+   "g4": true
+  },
+  "two_q_alphaEM_factor": {
+   "g1": true,
+   "g2": true,
+   "g3": true,
+   "g4": true
+  },
+  "binding_tail_D4": {
+   "g1": true,
+   "g2": true,
+   "g3": true,
+   "g4": true
+  },
+  "FAIL_swing_fit_2p98pct": {
+   "g1": false,
+   "g2": true,
+   "g3": false,
+   "g4": false
+  },
+  "FAIL_denom7": {
+   "g1": false,
+   "g2": true,
+   "g3": true,
+   "g4": true
+  }
+ },
+ "gates": {
+  "g1": "integer Laurent (global classical membership)",
+  "g2": "bar-even symmetrization 3-integral (GSWZ pattern)",
+  "g3": "F(zeta_8)^2 == F(zeta_4) mod 2 in Z[zeta_8] (p=2 Frobenius edge)",
+  "g4": "F(zeta_5)^5 == F(1) mod 5 in Z[zeta_5] (TWISTED p=5 leg)"
+ },
+ "scope": "scope-(a): the named corpus fibre-level c_k candidates pass all four gates; the fitted-shape controls fail with the predicted PER-PRIME signature (swing-fit fails g1/g3/g4, passes g2; denom-7 fails only g1) \u2014 the gates encode integrality away from a prime set, the refutation-grade structure U2 promised. VALUE-level c_3 verdicts (near-match, cross-anchor swing) are untouched: this is element-level arithmetic only."
+}
