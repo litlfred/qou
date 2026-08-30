@@ -32,6 +32,23 @@ Two-stage by design, because the parser alone is not trustworthy here:
 
 The verdict is the compiler's. Treat the propose stage as a candidate list.
 
+SCOPE — what this does NOT see. The scan walks
+`content/quantum-observable-universe/lean/QOU/` only. Content-block `.lean`
+siblings under `content/<paper>/<chapter>/` are a separate surface: they
+compile standalone, cannot import one another, and win **candidate 1** of
+`lean.ref` resolution ahead of anything in the Lake tree. So a clean run here
+is not evidence that a name is unambiguous in the corpus.
+
+That surface is not hypothetical and it overlaps this one. `QOU.Archimedean.T_pp`
+is declared three times: `lean/QOU/Archimedean/TransferMatrix.lean` (10
+importers), `lean/QOU/Archimedean/beta_decay_transfer_matrix.lean` (0), and
+`mass-theory/beta-decay-transfer-matrix.lean` — a content sibling in the SAME
+namespace, drifted from the library copy (97 vs 195 lines; `Matrix (Fin 2)
+(Fin 2) ℝ` vs a bespoke `TM`). Draining a pair by renaming in the library file
+would push a drifted mirror further apart rather than closer, so co-ordinate
+with the mirror-drift population (bean `qou-u87j`, `check-mirror-drift.ts`)
+before renaming anything that has a content sibling.
+
 Usage:
     python3 scripts/lean-duplicate-fqn-audit.py                 # propose
     python3 scripts/lean-duplicate-fqn-audit.py --verify        # compiler check

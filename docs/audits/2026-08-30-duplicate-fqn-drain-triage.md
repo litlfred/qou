@@ -50,6 +50,34 @@ module pair.
 paper may still resolve declarations from it. Check before deleting anything —
 this triage recommends renaming, not deletion, for exactly that reason.
 
+## Do not start the drain without checking for a content sibling
+
+**The audit scans `lean/QOU/` only.** Content-block `.lean` siblings under
+`content/<paper>/<chapter>/` are a separate surface — they compile standalone,
+cannot import one another, and win **candidate 1** of `lean.ref` resolution
+ahead of anything in the Lake tree. A clean run of the audit is therefore not
+evidence that a name is unambiguous in the corpus.
+
+The very first pair I opened is an instance. `QOU.Archimedean.T_pp` exists in
+**three** places:
+
+| file | kind | note |
+|---|---|---|
+| `lean/QOU/Archimedean/TransferMatrix.lean` | library | 10 importers |
+| `lean/QOU/Archimedean/beta_decay_transfer_matrix.lean` | library | 0 importers; the collision |
+| `mass-theory/beta-decay-transfer-matrix.lean` | **content sibling** | same namespace `QOU.Archimedean`, 195 lines vs the library's 97, `TM` vs `Matrix (Fin 2) (Fin 2) ℝ` |
+
+The content sibling and the library file are a **drifted mirror pair**, and the
+block's `.ts` carries `lean: { ref: "qou:QOU.Archimedean.beta_decay_transfer_matrix",
+validation: "not_checked" }` — so the sibling is what the block's checkers
+actually audit. Renaming inside the library file to drain the collision would
+push that mirror further apart, not closer.
+
+So the drain is entangled with the mirror-drift population (bean `qou-u87j`,
+`check-mirror-drift.ts`, 141 same-FQN pairs / 35 drifted per AGENTS.md). Check
+each pair for a content sibling **before** renaming. This is why the 21
+"mechanical" renames below are not in fact safe to batch blind.
+
 ---
 
 ## `QOU.Archimedean.BraidWord` — bodies DIFFER
