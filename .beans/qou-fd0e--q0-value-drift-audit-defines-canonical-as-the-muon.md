@@ -1113,3 +1113,40 @@ Not 189 edits. It is **10 proton-intent** producers (mechanical), **39
 muon-intent** (safe only now that the generator recognises C), **44 unclear**
 needing a ruling — two of which say in their own comments that the intent
 question is open and cite this bean — and **76 that must not be touched at all**.
+
+
+## 2026-08-30 — RULING REQUEST written for the 44 UNCLEAR
+
+`docs/coordination/2026-08-30-a-literal-unclear-ruling-request.md`.
+
+The 44 are not one question. They split three ways, and only two of the three
+need the owner:
+
+- **~20 have no anchor language at all** — a bare literal feeding real
+  arithmetic, no comment, no second pin, no declaring witness. These cluster
+  into families (`lever1_*`, `he_nu_sdp_*`, the `mmu_gap_a4_*` scratch scripts,
+  the τ-binding probes), and **one answer per family would settle most of the
+  group**. That is the ask.
+- **2 have the question written into their own source**, both from this
+  campaign: `he_nu_sdp_psd_count_test.py:56-59` and
+  `substrate/unified_tau_odd_partner_solve.py:53-57` each say *"whether muon is
+  INTENDED is open (bean qou-fd0e)"*, having had a false label corrected to
+  match their value. They need a yes/no, not analysis.
+- **~22 are anchor-immaterial** and need no ruling at all — dead assignments
+  (`a4_option_e_color_tube_closure.py:23`, `a4_interface_kl_subpath_closure.py:27`
+  assign `Q0_STR` and never read it — deletion, not migration); both sides of a
+  comparison sharing the pin so it cancels; a matplotlib tick label; a
+  precision-loss test fixture; assertions at 6 significant figures against an
+  11.5 ppb gap. Documenting them is the whole fix.
+
+The document states plainly why these cannot be decided mechanically: all 44 are
+undeclared, so the manifest is silent; and the `q0Anchor` stamp is worthless
+here because `resolve_q0_anchor` defaults undeclared stems to `proton` while
+`_Q0_PREFIXES` recognises muon only as pin C — so **every one of the 44 reports
+`proton` by construction**, whatever it computes. In one batch, 40 of 42
+producers' witnesses carry no `q0Anchor`/`q0Value` at all.
+
+It also records what happens if nobody rules: nothing breaks, but the 44 stay
+pinned to a vintage the corpus has left, invisible to the manifest, each
+reporting proton while holding a muon-family value — and the next pin audit
+re-derives this same list from scratch.
