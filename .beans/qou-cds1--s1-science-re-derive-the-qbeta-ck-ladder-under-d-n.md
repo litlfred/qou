@@ -3314,3 +3314,26 @@ series is the wrong instrument for an obstruction that is `h^2/2` and sits
 outside it. The next question is whether the multiplicative/log form (3) plus
 the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
 exists that reaches it.
+## Step 9 (2026-08-30) — Steps 6-8 are now LEAN-PROVED, sorry-free
+
+`content/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
+
+Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Convention C is carried in the square-root variable `u` (`q = u²`), which keeps it algebraic in the same generic setting.
+
+| theorem | content |
+|---|---|
+| `bridgePhase_eq_recentred_tracedVolume` | `α = (V̂ − 1 − h)/2` for EVERY z — no hypothesis; this is why the phase formula is convention-independent |
+| `hq_bar` | `h(q⁻¹) = −h(q)` |
+| `zD_bar` | `z_D(q⁻¹) = z_D(q)/q⁴` — weight −4 |
+| `tracedVolume_D` | `V̂_D = (q⁴+1)/(q²+1)` |
+| **`tracedVolume_D_bar`** | **`V̂(q⁻¹) = V̂(q)/q²`** — the D action is MULTIPLICATIVE |
+| **`tracedVolume_C_bar`** | **`V̂(u⁻¹) = 2 − V̂(u)`** — the C action is an AFFINE REFLECTION |
+| `tracedVolume_D_invariant` | `V̂/q` is bar-invariant |
+| `tracedVolume_D_invariant_closed_form` | `V̂_D/q = ([2]_q + h²z_D/q²)/2` |
+| `bridgePhase_C_bar_odd` | α IS bar-odd under C — the cos-resummation's stated hypothesis |
+| `bridgePhase_D_bar_defect` | defect `= (q−1)²(q+1)²/(2q²)` under D |
+| `bridgePhase_D_not_bar_odd` | that defect is NONZERO for q ≠ ±1 |
+
+**The hypotheses are genuine, not bookkeeping.** `q ≠ 0` and `q²+1 ≠ 0` are both needed — over a field where −1 is a square (ℂ at q = i) the denominators vanish — and `CharZero` is needed wherever the construction divides by 2, since in characteristic 2 neither the phase nor the closed form is well posed. Proving it forced those out into the open; the Python probes had them implicitly.
+
+**On the M_β spectrum question.** The spectrum claim `{e^{+iα}, e^{−iα}}` on V_(2,1) is the content block's (`q-beta-cos-resummation`), not mine, and I have not re-derived it. What Steps 6-9 establish is that the *phase* α is generic in z (so the spectrum formula carries to D unchanged) and that what fails under D is the *trace symmetrisation* `tr_M(M_β) = cos α` — because bar stops being an affine reflection. So the spectrum is not the open part; the resummation is.
