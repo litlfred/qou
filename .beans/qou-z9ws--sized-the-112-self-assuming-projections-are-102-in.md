@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T13:59:30Z
+updated_at: 2026-08-30T14:15:34Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -118,3 +118,59 @@ prop:r-matrix-braiding-structure resolves to under the §0a sibling-first rule.
 
 Ledger 372 -> 371 (the removed tautology is no longer a candidate); gate exit 0,
 all 162 candidates carry a fresh verdict.
+
+## Drain batch 1 — 7 removed, and a near-miss worth recording
+
+Removed 7 self-assuming projections from 6 library files (no `.md`/`.ts`
+sibling, so nothing but the agent checks them), each with **zero references
+anywhere in the corpus** including its own file:
+
+  BranchingConvergence      branching_convergence            := hi.bound
+  QHookBound                convergence_rate                 := hi.bound
+  QHookBound                wedderburn_weight_perturbation   := hi.bound
+  SkewSYT                   knot_invariant_convergence       := hi.bound
+  Cl3Zeta5PslqIndependence  pslq_independence                := ctx.claim_pslq_independence
+  KnotIndexedConvolutionGrid grid_placement                  := ctx.claim_placement_well_defined
+  QHeckeSeminormalCharacterClosure character_closure_holds   := ctx.claim_paths_agree
+
+Content is not lost: it stays in the class field each projected, which asserts
+the same proposition under the same hypotheses. Only the restatement goes —
+the ledger's own recorded disposition, with no use sites to update.
+
+Genuine `proof-no-self-assuming-projection` 111 -> 103.
+
+## 🛑 TRAP: my first attempt destroyed 767 lines and I nearly shipped it
+
+The bulk edit used a regex `<decl>[\s\S]*?:=[^\n]*\n` to find "the declaration
+and its term body". Non-greedy still runs to the FIRST `:=` after the match
+start, and when the docstring-anchored start landed earlier in the file than
+intended it swallowed everything in between. On `QHookBound.lean` that deleted
+**767 lines** — `qIntReal`, `qIntReal_eq_canonical`, `qInt_pos`,
+`qInt_ratio_bound_m2` and more, all real proofs — while reporting a cheerful
+"removed convergence_rate".
+
+Caught only because the follow-up `grep` for the second declaration came back
+EMPTY, which was inconsistent with the script's own success message. Reverted
+with `git checkout --`; nothing was committed or pushed.
+
+**The rule this establishes for any bulk Lean edit:** never delimit a
+declaration by regex-to-the-next-token. Delimit by LINES, ending at the next
+column-0 top-level construct (`/--`, `/-!`, `@[`, `theorem`, `def`, `end`, …),
+and put a SIZE GUARD on it. The rewritten extractor aborts above 60 lines; the
+seven real spans measured 7-13 lines each, so the guard has three-sigma of
+headroom and would have caught the 767-line span instantly.
+
+Second-order lesson: a script that reports success is not evidence it did what
+you meant. `git diff --stat` before committing is what should have been the
+first check, not the last.
+
+## And the gate caught a second slip
+
+After the removals, three UNTOUCHED declarations in the same two files went
+stale (the ledger keys freshness on the whole file hash). I refreshed their
+`file_sha`, `reviewed_at`, `reviewer` and `evidence` — the evidence text
+literally says *"It remains a `genuine` field-projection"* — and never set the
+`verdict` field, leaving them `needs-agent`. The gate failed, correctly, twice
+in a row until I read the entry rather than my own intention.
+
+Their bodies were verified byte-identical to `origin/main` before refreshing.

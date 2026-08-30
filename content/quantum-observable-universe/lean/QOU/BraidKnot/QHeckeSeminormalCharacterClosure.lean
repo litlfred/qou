@@ -27,12 +27,20 @@ class QHeckeSeminormalCharacterClosureContext where
       for the Markov trace on the same braid `β`. -/
   claim_paths_agree : tr_M_partition_sum = tr_M_axiom_reducer
 
-/-- **Proposition (`prop:q-hecke-seminormal-character-closure`).**
-    The two compute paths for `tr_M` agree. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md
-def character_closure_holds
-    [ctx : QHeckeSeminormalCharacterClosureContext] :
-    ctx.tr_M_partition_sum = ctx.tr_M_axiom_reducer :=
-  ctx.claim_paths_agree
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `character_closure_holds` — body was `ctx.claim_paths_agree`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot.QHeckeSeminormalCharacterClosure
