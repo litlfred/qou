@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:57:32Z
+updated_at: 2026-08-30T14:30:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3299,6 +3299,57 @@ A repair, a replacement phase, or any `c_k`. Naming an obstruction is not
 removing it. Steps 7 and 8 untouched. Scope (a).
 
 ### Where the arc stands — six entries
+## D's bar-odd slot is EMPTY OF CONTENT — no cos-type phase can express it (PR #6244)
+
+Closes the follow-up the previous entry left open: can the log form absorb the
+`h^2/2` defect? **No**, and for a structural reason rather than a failed search.
+Probe: `computations/qbeta/qbeta_d_odd_content_is_structure_free_probe.py`,
+5/5, sympy exact.
+
+    odd(log Vhat_D) = log q                     EXACTLY
+    odd(log Vhat_C) = z-dependent, NOT log q
+
+Under D the log frame DOES supply a bar-odd object — but it is `theta = log q`,
+carrying no `z`, no Markov data, nothing convention-specific. ALL of D's
+structure sits in the bar-EVEN part (the cosh-ratio `[2]_{q^2}/[2]_q`).
+
+Under C the position is reversed: `Vhat_C - 1 = 2 sinh(theta/2)` is a bar-ODD
+eigenvector AND carries the convention's data.
+
+### The consequence
+
+`cos(phase)` is bar-invariant only when the phase is bar-ODD.
+
+  * **C**: such a phase exists and carries structure — a cosine has something
+    to resum.
+  * **D**: every bar-odd object available from `Vhat` is structure-free. So NO
+    bar-odd phase can carry D's structure, and therefore no cos-type
+    resummation of a phase can express it, **whatever offset is chosen**.
+
+Stronger than Step 7 ("the offset must be q-dependent") and than Step 8 ("no
+fixed centre"): those say the additive repair is awkward. This says the bar-odd
+slot is EMPTY OF CONTENT, so there is nothing for a phase to be.
+
+### Honesty about what is new
+
+`odd(log Vhat) = log q` is EQUIVALENT to Step 7's `bar(Vhat) = Vhat/q^2` — take
+logs of both sides. A restatement in log coordinates, NOT an independent
+discovery; the probe asserts it as such. Only the consequence is new.
+
+### A discarded test, recorded so it is not repeated
+
+I first substituted a generic CONSTANT `zz` for `z` to find which `z` collapses
+the odd part to `log q`. That test is MEANINGLESS: it treats `z` as
+bar-invariant when `z` is a function of `q` and `bar` acts on it. Any conclusion
+from a constant-`z` substitution here is void. Dropped before it reached a claim.
+
+### Not claimed
+
+That no D-frame resummation exists — only that no cos-of-a-bar-odd-phase one
+does. The multiplicative/log route and the `u*Vhat` invariant are untouched by
+this negative. No `c_k`. Scope (a).
+
+### Where the arc stands — seven entries
 
   1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
   2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
@@ -3337,3 +3388,17 @@ Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Conventio
 **The hypotheses are genuine, not bookkeeping.** `q ≠ 0` and `q²+1 ≠ 0` are both needed — over a field where −1 is a square (ℂ at q = i) the denominators vanish — and `CharZero` is needed wherever the construction divides by 2, since in characteristic 2 neither the phase nor the closed form is well posed. Proving it forced those out into the open; the Python probes had them implicitly.
 
 **On the M_β spectrum question.** The spectrum claim `{e^{+iα}, e^{−iα}}` on V_(2,1) is the content block's (`q-beta-cos-resummation`), not mine, and I have not re-derived it. What Steps 6-9 establish is that the *phase* α is generic in z (so the spectrum formula carries to D unchanged) and that what fails under D is the *trace symmetrisation* `tr_M(M_β) = cos α` — because bar stops being an affine reflection. So the spectrum is not the open part; the resummation is.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — so no cos-type phase can work at all.
+
+Read together, (5)–(7) are a converging negative: the C ladder's instrument
+(a cosine of a bar-odd phase, corrected by a series in `u`) fails under D in
+BOTH of its parts — the series cannot reach the defect, and the phase slot has
+no content to carry. That is a much sharper statement of the obstruction than
+"the naive z-swap gives c_3 -> -974".
+
+**The surviving positive lead is (3)+(4)**: the multiplicative/log form, and the
+bar-invariant `u*Vhat`. Nothing in (5)–(7) touches either — they close the
+ADDITIVE/phase family specifically. Whether `u*Vhat` or `log(u*Vhat)` admits an
+expansion whose coefficients reproduce the rung structure is still open, and is
+now the only live route this arc has identified.
