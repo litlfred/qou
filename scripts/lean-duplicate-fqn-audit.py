@@ -88,6 +88,14 @@ NS = re.compile(r"^\s*namespace\s+([\w.]+)")
 SEC = re.compile(r"^\s*section\b")
 END = re.compile(r"^\s*end\b")
 IMP = re.compile(r"^import\s+([\w.]+)")   # column 0: a docstring may indent one
+LINE_CMT = re.compile(r"--.*$")
+# Terminates a declaration body: the next top-level form. Shared with
+# scripts/lean-name-surface-audit.py, which compares bodies across surfaces.
+STOP = re.compile(
+    r"^\s*(?:@\[|namespace\b|end\b|open\b|section\b|variable\b|theorem\b|lemma\b|"
+    r"instance\b|structure\b|class\b|inductive\b|example\b|attribute\b|"
+    r"(?:private\s+|protected\s+|noncomputable\s+)*(?:def|abbrev)\b)"
+)
 
 
 def strip_block_comments(text: str) -> str:
