@@ -1,11 +1,11 @@
 ---
 # qou-nmqd
 title: q-GoL proof cites the wrong stability threshold (1/phi^2 belongs to P_77, not Phi) and asserts unitarity the Hecke eigenvalues forbid
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:07Z
-updated_at: 2026-08-30T03:49:15Z
+updated_at: 2026-08-30T09:41:24Z
 ---
 
 Found by adversarial review of the q-GoL blocks on `main` (owner asked for a
@@ -233,3 +233,49 @@ automaton's own reversibility argument — which needs invertibility, and `Toff_
 is invertible for every `q > 0` — line up with the stability claim. But
 positivity may encode something about the amplitude's interpretation that I do
 not have, which is why I did not just pick it.
+
+
+## RESOLVED 2026-08-30 — owner ruling: NON-VANISHING, not positivity
+
+Owner picked **`Φ ≠ 0`** from the three framed options. The well-definedness
+region is therefore `q ≠ 1`, which contains the substrate.
+
+**Why this is the coherent choice, recorded so the next reader does not
+re-litigate it.** The corpus was using two different criteria for the same
+object: `rem:toffoli-q-and` argues computational universality from
+`P_{7,6}(q) ≠ 0`, while `prop:q-game-of-life` demanded `Φ > 0`. They give
+**opposite verdicts at the substrate** — non-vanishing holds for every `q ≠ 1`,
+positivity only below 1 — so they could not both be it. Non-vanishing is also
+what invertibility of the tick actually requires, and reversibility (the
+property a reversible CA needs) holds for every `q > 0` independently of
+either.
+
+**What the excluded point now means.** `Φ^D` has exactly one zero on `q > 0`,
+at `q = 1`. That is the classical limit — precisely where the `q`-Toffoli
+degenerates to the ordinary Toffoli and the deformation contributes nothing.
+The criterion excludes the one point at which the framework's content
+vanishes, which is the right shape for it to have.
+
+**What did NOT change.** Both measured facts stand under either criterion and
+are unaffected by the ruling:
+
+- `P_77^D(q) = q³(q⁴+1)/(q²+1)²` has **no positive root**, so the golden-ratio
+  threshold `q_⋆ = 1/φ²` does not survive the convention change — it is a
+  property of the excised frame, not of the gate.
+- `Φ^D(q₀) = −0.143769370004`. The sign is real; it is simply not the
+  criterion.
+
+Landed: `q-game-of-life{,-proof,-interpretation}.md` restated around
+non-vanishing, "Stability condition" retitled **Well-definedness condition**,
+and `qgol_stability_region_convention_d.py` reframed from "open question" to
+the record of why the question had to be asked (its five assertions and both
+closed forms are byte-identical — no number moved).
+
+**A red-team note I raised and the ruling did not need to settle.** Under
+convention C the positivity condition yielded `q > 1`, containing the
+substrate; under D the same condition yields `q < 1`, excluding it. A
+criterion whose endorsed side of `q = 1` flips with the Markov parameter, and
+whose C-frame answer happened to be the one the framework needed, has the
+shape of something reverse-engineered. That is judgement, not a finding, and
+adopting non-vanishing makes it moot — but it is why the question was worth
+asking rather than patching.

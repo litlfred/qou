@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T08:18:06.334649+00:00",
-  "commitSha": "2c008899be19ddad07a2181a0a228648d2cd2519",
+  "computedAt": "2026-08-30T09:40:50.921261+00:00",
+  "commitSha": "adf471d341bd71714db2e1460cf7085f10329bd2",
   "assertions": [
     {
       "name": "P77_D_positive_at_golden_threshold",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qgol-stability-region-convention-d",
   "scriptFile": "qgol_stability_region_convention_d.py",
-  "scriptHash": "a3fa9a88cd30",
-  "scriptCommitSha": "b828037bb1d5ade1ef2649f8b2394f4af474e0c0",
+  "scriptHash": "386939c6fd2e",
+  "scriptCommitSha": "b60e3ec99c196748dbf7c878d660adf1e6571b49",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
     ],
     "reproduce": "python3 -u computations/probes/qgol_stability_region_convention_d.py"
   },
-  "description": "Measures the sign of the two convention-D Toffoli amplitudes over the stability region asserted by prop:q-game-of-life. P_77^D has no positive root, so the golden-ratio threshold the q-GoL proof cites is a convention-C artifact; Phi^D is positive exactly on 0 < q < 1, so the region where both are strictly positive is 0 < q < 1 and the substrate q_0 sits where the q-AND is negative. Scope (a): what is excluded is the condition AS WRITTEN. Whether strict positivity or non-vanishing is the right condition is the author's call and is not settled here.",
+  "description": "Measures the sign of the two convention-D Toffoli amplitudes across the region prop:q-game-of-life asserts. P_77^D has no positive root, so the golden-ratio threshold the q-GoL proof once cited is a convention-C artifact; Phi^D has a single zero on q > 0, at q = 1. SETTLED 2026-08-30 (owner ruling, bean qou-nmqd): the criterion is NON-VANISHING (Phi != 0), not strict positivity, so the well-definedness region is q != 1 and contains the substrate. Strict positivity would have given 0 < q < 1 and excluded it; these signs are the record of why the question had to be asked.",
   "parameters": {
     "convention": "D (z = q^3/(q^2+1))",
     "P_77_D": "q^3 (q^4+1) / (q^2+1)^2  [toffoli-lp-stability.md]",

@@ -51,14 +51,16 @@ $$
   \frac{q \eta_q}{3  (q - 1)^2  |\mathcal{L}|}.
 $$
 
-**Stability condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ and the q-AND amplitude $\Phi(q)$ are strictly positive. In the canonical convention $z_D = q^3/(q^2+1)$ the two amplitudes are
+**Well-definedness condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ is positive and the q-AND amplitude $\Phi(q)$ is **non-zero**. In the canonical convention $z_D = q^3/(q^2+1)$ the two amplitudes are
 
 $$
   P_{7,7}^{D}(q) \,=\, \frac{q^{3}\bigl(q^{4}+1\bigr)}{\bigl(q^{2}+1\bigr)^{2}},
   \qquad
-  \Phi^{D}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}},
+  \Phi^{D}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}}.
 $$
 
-the first having no positive root and the second carrying its sign entirely in the factor $(q-1)$, the sextic having no positive real root. The region on which both are strictly positive is therefore $0 < q < 1$, and the substrate value $q_0 \approx 1.110$ lies outside it: there $\Phi^{D}(q_0) \approx -0.1438$. The regime $q > 1$ previously named here, and the golden-ratio threshold $q_\star = 1/\varphi^{2}$ from which it was read off, are both artifacts of the excised convention $C$ (see [Toffoli LP-stability](#prop:toffoli-lp-stability) and [Toffoli q-AND](#rem:toffoli-q-and)).
+For $q > 0$ the first is strictly positive, having no positive root. The second vanishes exactly at $q = 1$: the factor $(q+1)$ is positive there, and the sextic $q^{6}+q^{4}+2q^{2}+1$ has no positive real root, so the whole zero set on $q > 0$ is carried by $(q-1)$. The condition therefore holds on $q \neq 1$, which contains the substrate value $q_0 \approx 1.110$.
 
-Whether strict positivity is the condition a reversible automaton actually requires is a separate question, and it is open. The universality argument of [Toffoli q-AND](#rem:toffoli-q-and) turns on $\Phi \neq 0$ rather than $\Phi > 0$, and the two conditions give opposite verdicts at the substrate: non-vanishing holds for every $q \neq 1$, strict positivity only below $1$. Which one governs is not settled here.
+**Non-vanishing, not positivity.** The criterion is that the q-AND does not degenerate, not that it carry a particular sign. This is the same condition the universality argument of [Toffoli q-AND](#rem:toffoli-q-and) uses — it turns on $P_{7,6}(q) \neq 0$ — and it is what invertibility of the tick requires. At $q = 1$ the q-AND vanishes and the braiding ceases to act: that is the classical limit, where the $q$-Toffoli degenerates to the ordinary Toffoli, and it is the one point the condition excludes.
+
+Strict positivity would be a different and stronger requirement. Under $z_D$ it holds only on $0 < q < 1$, since $\Phi^{D}(q_0) \approx -0.1438$, and would place the substrate outside the well-defined regime. It is not the criterion in force here. The regime $q > 1$ this block once named, and the golden-ratio threshold $q_\star = 1/\varphi^{2}$ from which it was read off, were both artifacts of the excised convention $C$ (see [Toffoli LP-stability](#prop:toffoli-lp-stability)); under $z_D$ the diagonal has no zero at all and $q_\star$ does not exist.
