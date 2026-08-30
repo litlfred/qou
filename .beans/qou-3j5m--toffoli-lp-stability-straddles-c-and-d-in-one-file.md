@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T07:50:07Z
+updated_at: 2026-08-30T09:49:28Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -749,3 +749,42 @@ VERIFIED: lean-direct exit 0 against the real 15-module import cone;
 #print axioms clean on all six theorems, no sorryAx; render preflight clean
 on all nine .md; qa-sweep re-run on 11 sidecars; re-verified after rebasing
 onto main (124 commits), branch-only diff byte-identical across the rebase.
+
+
+## CORRECTION 2026-08-30 — my "the corpus settles it" was an over-claim
+
+The prepare-merge rebase surfaced sibling bean qou-nmqd, which reached the same
+convention-D derivation independently and landed first. Its body states, of
+positivity vs non-vanishing: "They are not the same condition and cannot both
+be the criterion."
+
+I had written that the corpus settles the question outright, in the PR body and
+in the entry above. That is too strong and is corrected. What the corpus settles
+is narrower, per-property:
+
+  LP FEASIBILITY -> positivity.  prop:operator-selection-lp's Frobenius
+                    constraint is the INEQUALITY sum_j G_ij x_j >= 0, and the
+                    LP proof states the amplitude condition as positivity twice.
+  UNIVERSALITY   -> non-vanishing.  rem:toffoli-q-and needs the flip channel to
+                    FIRE, and says P_76(q) != 0 for every q != 1.  A NEGATIVE
+                    amplitude fires; universality is untouched at q0.
+
+So the two are not rivals -- each is right for its own property, which is where
+I disagree with the sibling. But the sibling is right that something is still
+open, and it is not what either of us first said it was: what is open is WHICH
+OF THE TWO PROPERTIES the phrase "the evolution is well-defined" is asserting.
+prop:q-game-of-life has historically meant both at once and they have now come
+apart at the substrate.
+
+Both readings are now stated in q-game-of-life.md with the open item named in
+those terms, so the corpus is honest under either.
+
+A SECOND GAP, upstream of the choice and surfaced by neither branch: the LP
+proof reduces feasibility to positivity of P_77 * W_std "with the appropriate
+sign from" the off-diagonal amplitude, and that clause is derived NOWHERE. The
+first factor survives (P_77 * W_std = +0.4624 at q0, positive for all q > 0).
+Deciding the property above does not close this; it is prior to it.
+
+FILED SEPARATELY while running prepare-merge: qou-cr3v, two scratch_*.lean
+files on main duplicating real modules (6 un-importable FQN collisions, gate at
+63 vs baseline 57). Not this arc's, not this branch's regression.
