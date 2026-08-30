@@ -1,4 +1,4 @@
-import QOU.Mathlib.YoungLatticeDifferential
+import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.SchenstedPartitionShape
 import QOU.Mathlib.SYTBranchingRule
 
@@ -7,9 +7,9 @@ import QOU.Mathlib.SYTBranchingRule
 
 The rank-level consequence of the two ingredients already proved:
 
-* `cornerAddEquiv` (`YoungDiagramAddCell`) — the pointwise exchange
+* `sizedCornerAddEquiv` (`YoungLatticeExchange`, on the `YoungDiagramAddable` API) — the pointwise exchange
   `(λ, removable corner) ≃ (λ ∖ c, that corner as an addable one)`;
-* `card_addableCells_eq_card_cornerCells_add_one` (`YoungLatticeDifferential`) —
+* `card_addableCells_eq_card_cornerCells_succ` (`YoungDiagramAddable`) —
   `a(μ) = r(μ) + 1`.
 
 Summing the first over a whole rank gives
@@ -54,21 +54,21 @@ noncomputable instance fintypeSizedDiagram (n : ℕ) :
     Fintype {μ : YoungDiagram // μ.cells.card = n} :=
   Fintype.ofEquiv (Nat.Partition n) (partitionShapeEquiv n)
 
-/-- `CornerPair n` regrouped as a sigma over the diagram. -/
-def cornerPairSigma (n : ℕ) :
-    CornerPair n ≃ Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1},
+/-- `SizedCornerPair n` regrouped as a sigma over the diagram. -/
+def sizedCornerPairSigma (n : ℕ) :
+    SizedCornerPair n ≃ Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1},
         {c : ℕ × ℕ // c ∈ cornerCells μ.1} where
-  toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, mem_cornerCells_of_isCornerCell p.2.2⟩⟩
-  invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, isCornerCell_of_mem_cornerCells q.2.2⟩⟩
+  toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, (mem_cornerCells _ _).mpr p.2.2⟩⟩
+  invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, (mem_cornerCells _ _).mp q.2.2⟩⟩
   left_inv _ := rfl
   right_inv _ := rfl
 
-/-- `AddPair n` regrouped as a sigma over the diagram. -/
-def addPairSigma (n : ℕ) :
-    AddPair n ≃ Σ ν : {ν : YoungDiagram // ν.cells.card = n},
+/-- `SizedAddPair n` regrouped as a sigma over the diagram. -/
+def sizedAddPairSigma (n : ℕ) :
+    SizedAddPair n ≃ Σ ν : {ν : YoungDiagram // ν.cells.card = n},
         {s : ℕ × ℕ // s ∈ addableCells ν.1} where
-  toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, mem_addableCells_of_isAddableCell p.2.2⟩⟩
-  invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, isAddableCell_of_mem_addableCells q.2.2⟩⟩
+  toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, (mem_addableCells _ _).mpr p.2.2⟩⟩
+  invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, (mem_addableCells _ _).mp q.2.2⟩⟩
   left_inv _ := rfl
   right_inv _ := rfl
 
@@ -83,9 +83,9 @@ theorem sum_cornerCells_succ_eq_sum_addableCells (n : ℕ) :
              {c : ℕ × ℕ // c ∈ cornerCells μ.1})
          ≃ (Σ ν : {ν : YoungDiagram // ν.cells.card = n},
              {s : ℕ × ℕ // s ∈ addableCells ν.1}) :=
-    (cornerPairSigma n).symm.trans ((cornerAddEquiv n).trans (addPairSigma n))
+    (sizedCornerPairSigma n).symm.trans ((sizedCornerAddEquiv n).trans (sizedAddPairSigma n))
   have hcard := Fintype.card_congr e
-  simpa [Fintype.card_sigma, Fintype.card_coe] using hcard
+  simpa [Fintype.card_sigma, Fintype.card_coe, -mem_cornerCells, -mem_addableCells] using hcard
 
 /-- **The differential form of the rank exchange.** Feeding `a(ν) = r(ν) + 1` into the
 right-hand side: the corner count at size `n+1` exceeds that at size `n` by exactly the
@@ -96,7 +96,7 @@ theorem sum_cornerCells_succ (n : ℕ) :
         + Fintype.card {ν : YoungDiagram // ν.cells.card = n} := by
   classical
   rw [sum_cornerCells_succ_eq_sum_addableCells]
-  simp only [card_addableCells_eq_card_cornerCells_add_one]
+  simp only [card_addableCells_eq_card_cornerCells_succ]
   rw [Finset.sum_add_distrib]
   simp [Finset.card_univ]
 
@@ -113,20 +113,20 @@ counterpart already exists as `SYTBranchingRule.fintypeCorners`; there is no com
 instance for the addable side.) -/
 instance fintypeAddableSubtype (ν : YoungDiagram) :
     Fintype {s : ℕ × ℕ // IsAddableCell ν s} :=
-  Fintype.ofFinset (addableCells ν) (fun _ => mem_addableCells_iff)
+  Fintype.ofFinset (addableCells ν) (fun _ => mem_addableCells _ _)
 
-/-- `CornerPair n` as a sigma, indexed by the branching theorem's corner subtype. -/
-def cornerPairSigma' (n : ℕ) :
-    CornerPair n ≃ Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1},
+/-- `SizedCornerPair n` as a sigma, indexed by the branching theorem's corner subtype. -/
+def sizedCornerPairSigma' (n : ℕ) :
+    SizedCornerPair n ≃ Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1},
         {c : ℕ × ℕ // IsCornerCell μ.1 c} where
   toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, p.2.2⟩⟩
   invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, q.2.2⟩⟩
   left_inv _ := rfl
   right_inv _ := rfl
 
-/-- `AddPair n` as a sigma, indexed by `IsAddableCell`. -/
-def addPairSigma' (n : ℕ) :
-    AddPair n ≃ Σ ν : {ν : YoungDiagram // ν.cells.card = n},
+/-- `SizedAddPair n` as a sigma, indexed by `IsAddableCell`. -/
+def sizedAddPairSigma' (n : ℕ) :
+    SizedAddPair n ≃ Σ ν : {ν : YoungDiagram // ν.cells.card = n},
         {s : ℕ × ℕ // IsAddableCell ν.1 s} where
   toFun p := ⟨⟨p.1.1, p.2.1⟩, ⟨p.1.2, p.2.2⟩⟩
   invFun q := ⟨(q.1.1, q.2.1), ⟨q.1.2, q.2.2⟩⟩
@@ -139,7 +139,7 @@ so that the weight-matching step can unfold it. -/
 def rankExchange (n : ℕ) :
     (Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1}, {c : ℕ × ℕ // IsCornerCell μ.1 c})
       ≃ (Σ ν : {ν : YoungDiagram // ν.cells.card = n}, {s : ℕ × ℕ // IsAddableCell ν.1 s}) :=
-  (cornerPairSigma' n).symm.trans ((cornerAddEquiv n).trans (addPairSigma' n))
+  (sizedCornerPairSigma' n).symm.trans ((sizedCornerAddEquiv n).trans (sizedAddPairSigma' n))
 
 @[simp] theorem rankExchange_fst_fst (n : ℕ)
     (x : Σ μ : {μ : YoungDiagram // μ.cells.card = n + 1}, {c : ℕ × ℕ // IsCornerCell μ.1 c}) :
@@ -217,8 +217,8 @@ theorem sum_numSYT_succ_split (n : ℕ) :
   have h : ∀ ν : {ν : YoungDiagram // ν.cells.card = n},
       Fintype.card {s : ℕ × ℕ // IsAddableCell ν.1 s} = (cornerCells ν.1).card + 1 := by
     intro ν
-    rw [Fintype.card_of_subtype (addableCells ν.1) (fun _ => mem_addableCells_iff),
-        card_addableCells_eq_card_cornerCells_add_one]
+    rw [Fintype.card_of_subtype (addableCells ν.1) (fun _ => mem_addableCells _ _),
+        card_addableCells_eq_card_cornerCells_succ]
   calc ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
           numStandardYoungTableaux ν.1 * Fintype.card {s : ℕ × ℕ // IsAddableCell ν.1 s}
       = ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
@@ -273,7 +273,7 @@ theorem sum_numSYT_mul_corners_of_upOperator (h : UpOperatorIdentity) (n : ℕ) 
             (addCell (rankExchange n x).1.1 (rankExchange n x).2.1 (rankExchange n x).2.2) := by
     intro x
     congr 1
-    exact (addCell_eraseCorner x.2.1 x.2.2 (isAddableCell_eraseCorner x.2.1 x.2.2)).symm
+    exact (addCell_eraseCorner' x.2.1 x.2.2 (isAddableCell_eraseCorner' x.2.1 x.2.2)).symm
   calc ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
           numStandardYoungTableaux ν.1 * Fintype.card {c : ℕ × ℕ // IsCornerCell ν.1 c}
       = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},

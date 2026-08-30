@@ -1,11 +1,11 @@
 ---
 # qou-dup1
 title: 'YoungLatticeDifferential DUPLICATES YoungDiagramAddable (my error, root cause: head -20 on a corpus-grep) + a pre-existing IsAddableCell collision on main'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T04:57:36Z
-updated_at: 2026-08-30T04:57:36Z
+updated_at: 2026-08-30T09:03:02Z
 ---
 
 ## What happened
@@ -79,3 +79,34 @@ folded into a PR about the SW period.
 DEFAULT IF NOTHING HAPPENS: PR #6052 carries a ~310-line duplicate module. It is
 correct and sorry-free, so nothing breaks, but it is dead weight and a second copy of
 a definition the corpus already standardises elsewhere.
+
+
+## RESOLVED 2026-08-30 — consolidated onto YoungDiagramAddable
+
+YoungLatticeDifferential.lean is DELETED. Replacement:
+QOU/Mathlib/YoungLatticeExchange.lean, built on YoungDiagramAddable, carrying only what
+Addable does NOT already have:
+
+  isCornerCell_addCell' / eraseCorner_addCell' /
+  isAddableCell_eraseCorner' / addCell_eraseCorner'   the four round-trips
+  SizedCornerPair / SizedAddPair / sizedCornerAddEquiv the exchange
+  card_cornerCells_eq_card_subtype                    bridge to branching's index type
+  card_subtype_corners_add_one
+  addableCells_nonempty / cornerCells_nonempty        structural non-vacuity
+
+Everything Addable already proved (cornerRows, addableRows, cornerCells, addableCells,
+mem_*, card_*, card_addableCells_eq_card_cornerCells_succ) is now CONSUMED, not
+re-proved. YoungLatticeCornerCount retargeted onto the new module.
+
+Names deliberately differ from YoungDiagramAddCell's (SizedCornerPair vs CornerPair) so
+this module does not re-create the collision it works around.
+
+Verified: all three modules lean-direct exit 0; QOU.lean's two imports restored and the
+four-way co-import (Exchange + CornerCount + Addable + SWPeriodSuperExponential) checks
+clean; #print axioms clean on every capstone.
+
+STILL OPEN, and NOT this branch's to fix: YoungDiagramAddCell and YoungDiagramAddable
+remain mutually exclusive on main (both declare QOU.Mathlib.IsAddableCell / addCell).
+Main is unaffected today because QOU.lean's cone contains only Addable -- verified: none
+of the AddCell consumers (YoungDiagramCornerReindex, HookLengthAddCell, and their
+importers) is in that cone. It is a latent trap for the next module that needs both.
