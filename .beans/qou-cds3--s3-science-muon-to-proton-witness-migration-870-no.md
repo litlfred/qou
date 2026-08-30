@@ -608,3 +608,58 @@ main's judgement and my stamp-only reasoning, and are left for the owner.
 `q0_declaration_bindability_audit.py` and `q0_literal_label_vs_value_audit.py`
 are not on `main`. They are what found the durable 7 and the 8, and nothing on
 main asks either question.
+
+
+## 2026-08-30 — the 7 disputed stems: RESOLVED, main is right, and neither analysis was wrong
+
+The open item was: of the 32 stems I declared `ideal_muon` on 2026-08-24, main's
+2026-08-29 sweep placed **7** in `physical_proton`. I took main's manifest
+wholesale at the merge rather than union the sets, and left the disagreement for
+a ruling. It does not need one — it is decidable.
+
+| stem | bindability now |
+|---|---|
+| `audit_delta_S_chain` | **bindable / direct** |
+| `c_k_beta_decay_witness` | bindable / direct |
+| `derive_m_e_hecke_path_a` | bindable / direct |
+| `ksel2id_tropical_transport_probe` | bindable / direct |
+| `probe_inter_knot_decoupling` | bindable / direct |
+| `q_beta_spectral_bridge_witness` | bindable / direct |
+| `vassiliev_magnitude_a3_probe` | bindable / direct |
+
+**All seven import `q_parameter`, so their declaration GOVERNS their compute.**
+Declaring them `ideal_muon` would not have been a stamp fix — it would have
+moved every value they produce to the muon layer.
+
+### But my 2026-08-24 triage was not wrong either
+
+At my declaration commit `5c333b61bf`, `audit_delta_S_chain.py` contained
+**zero** `from q_parameter` imports — measured, not remembered. It was
+ungoverned then, exactly as the triage recorded, and declaring it really was
+stamp-only *at that moment*.
+
+What changed is main, on 2026-08-29:
+
+    1ee659d7e  migrate(qou-cds3): 20 producers off the anchor-defining witness
+               onto the proton pin
+    2caa0ad00  migrate(qou-1c4y): 12 frozen muon literals resolved at the source
+               — 27 -> 15 flips
+
+Those migrations are what made these stems governed. So the dispute is not
+"whose analysis was right": **mine was right on 24 Aug, main's is right now, and
+the migration is what moved between them.**
+
+### The safety consequence, stated plainly
+
+Had my 32 declarations survived the merge as a set union, **7 of them would now
+be silently flipping their producers' compute to the muon layer** — because a
+declaration that was inert when written became live five days later, under
+someone else's commit. That is the argument for taking main's manifest wholesale
+rather than merging sets, and it is now evidence rather than caution.
+
+It also generalises: **an "inert" declaration is only inert against today's
+source.** A stamp-only justification has an expiry date that nothing in the
+manifest records. Worth remembering before the next batch of stamp-only
+declarations.
+
+**Nothing to change. The dispute is closed in main's favour.**
