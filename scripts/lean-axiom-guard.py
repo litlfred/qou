@@ -718,6 +718,10 @@ QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.angle₁_lt_pi_div_two |
 QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₂ | clean
 QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.all_angles_gt_two_pi_div_nine | clean
 
+# FiveTwoVolumeChord assembles the Rivin chord: VOL_4_1 < VOL_5_2. Only the
+# public theorem is pinned; the rest of the module is `private` scaffolding.
+QOU.Knot.FiveTwoVolumeChord | QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2 | clean
+
 """
 
 
