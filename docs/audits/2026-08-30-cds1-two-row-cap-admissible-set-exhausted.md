@@ -147,3 +147,45 @@ must satisfy, and that the natural candidates fail. It does not prove no `z`
 exists. A candidate presented in future should be checked against **both** rows
 of the table above — passing the value alone is what `z_C` already does, and is
 not evidence.
+
+## Red-team of the filter's own load-bearing number
+
+The slope above is a **secant over `dq = 1.29e-8`, from exactly two points**. Two
+points cannot distinguish a derivative from an artifact, and the whole ×34,144
+claim rests on it — so it was checked before being left in place.
+
+`α_required` has a closed form (`qbeta_eigenphase_branch_and_barodd_projection_probe.py:91`):
+
+    alpha_required = -arccos( Q_codata / (Q_A * (1 - u^2)) )
+
+with `Q_A` and `u` functions of `q`. Reconstructed independently and
+differentiated exactly:
+
+    witness secant (2 anchors)   41.388615
+    my secant (same 2 anchors)   41.31873053
+    my EXACT derivative at q0    41.31853588
+
+Three routes, agreeing to **0.17 %**. The slope is a genuine derivative.
+
+**Caveat on the reconstruction, stated rather than hidden:** my `α_required`
+sits a *constant* −0.004259 from the witness at BOTH anchors, so my `Q_A` or
+`m_e` differs slightly from the producer's. A constant offset leaves the
+derivative intact — which is why the slopes agree while the values do not — but
+it means the absolute figures here are the witness's, not mine. Quote the slope
+as **≈ +41.3–41.4**, not to six digits.
+
+**Smoothness**, exact derivative at increasing offsets from `q₀`:
+
+    q0        41.31853588
+    q0+1e-8   41.31883786
+    q0+1e-6   41.34876716
+    q0+1e-4   44.71506597
+
+Slowly varying near the anchor; the two-anchor secant is a fair estimate.
+
+**Independent corroboration of a separate `qou-cds1` claim.** At `q₀ + 1e-3`
+(~0.09 %) the reconstruction returns a COMPLEX α (`0.0 − 0.0384j`) — the arccos
+argument has left `[−1,1]`. That reproduces, from a different direction, the
+bean's note that *"past ±0.1 % in q the ladder has no real phase at all"*. Two
+independent constructions landing on the same window is worth more than either
+alone.
