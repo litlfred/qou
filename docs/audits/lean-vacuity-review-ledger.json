@@ -4504,6 +4504,156 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "agent_date": "2026-08-30"
       }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/DTBehrendParityObstruction.lean::dtCount_single::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 145,
+      "verdict": "legit",
+      "evidence": "A base-case unfolding lemma, named as one and used as one. `dtCount` is a fold over strata (`p :: t => p.1 * p.2 + dtCount t`), so on a singleton `simp [dtCount]` gives `n * chiEuS + 0`; the docstring claims exactly that and no more. It feeds the file's real result, the constant-Behrend-weight obstruction (`3` is unreachable over `chi_eu = -2`). Unfolding a recursion at its base case is infrastructure, not the AGENTS.md 1a shape -- nothing is disguised, and the statement does not outrun the definition.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "4db95528ff15",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtVector_eq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 127,
+      "verdict": "advisory",
+      "evidence": "Value-recording: `dtVector := (dtMax fourOne, dtMax fiveTwo)` and the theorem reads `(3,4)` off the hand-entered `dtMax` table by `decide`. It cannot fail given the table and it establishes nothing about knots. Advisory rather than genuine because it is honest setup -- it pins the target vector for `no_menu_invariant_hits_dt_vector` eight lines below, which IS the substantive claim -- and because the file's siblings label these numbers 'imported ... not derived'.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "25a6006b0796",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::no_menu_invariant_hits_dt_vector::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 136,
+      "verdict": "legit",
+      "evidence": "A real exclusion, and correctly scoped. Each of the eight-plus menu entries is a COMPUTED value-vector over `(4_1, 5_2)` -- Hecke block count, Wedderburn Euler total, AJ recursion order, crossing number, and the classical control set -- and the theorem asserts none equals `(3,4)`. That could fail for any of them and does not. The docstring claims the exclusion over 'the QOU driver menu (nor in the classical control set)', i.e. over the enumerated list, which is what is proved -- a scope-(a) negative in the AGENTS.md sense, not an unlicensed structural exclusion.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "25a6006b0796",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtDatum_fiveTwo_two_distinct::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 152,
+      "verdict": "advisory",
+      "evidence": "Reads the def's own literal: `dtDatum fiveTwo = [4, 3]`, and the theorem asserts `4` and `3` are members and differ. Given the def this cannot fail. Advisory, not genuine: it is the two-element premise that the scalar-impossibility argument needs stated somewhere (a scalar invariant yields one value per knot, so it cannot equal a two-element datum), and the file states it plainly rather than smuggling it.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "25a6006b0796",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_grading::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 240,
+      "verdict": "legit",
+      "evidence": "Better than the sibling value-lemmas because the pair is EXTRACTED, not typed: `dtPair52 := (Splus0 0 1, Sminus0 0 2)` reads two entries out of the two reconstructed Stokes matrices, and the theorem then computes `(barEven, barOdd) = (4+3, 4-3) = (7,1)`. Small, but the arithmetic is over derived quantities rather than over literals, and the bar-grading is the object the chirality argument uses.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "f20c01a4db60",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fourOne::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 157,
+      "verdict": "advisory",
+      "evidence": "A def-arm restatement -- `dtOffDiagMax : KKnot -> Nat | fourOne => 3 | fiveTwo => 4`, and the theorem reads the first arm by `decide`. What keeps it out of `genuine` is that the def's docstring says so itself, in the words this audit would otherwise have to supply: '**Imported** DT / BPS off-diagonal count ... Recorded to contrast with `recursionOrder`; **not derived**.' A value recorded as imported, labelled as imported, is bookkeeping.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "5c929caf08b1",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fiveTwo::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 158,
+      "verdict": "advisory",
+      "evidence": "The second arm of the same imported table, same reasoning as `dtOffDiagMax_fourOne`. The pair exists to be contrasted with `recursionOrder` in the file's actual result (the DT count strictly exceeds the recursion order per knot), and the def is explicitly labelled 'not derived'.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "5c929caf08b1",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::dt_spectrum_three_four::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 85,
+      "verdict": "advisory",
+      "evidence": "Reads six arms of the transcribed `DT` matrix by `decide`; given the def it cannot fail. The claim it records -- that the eq-(98) off-diagonal constants are exactly +-3 and +-4 -- is a transcription, and the file's own `minus_nine_is_derived` is where that transcription gets tested. Bookkeeping, honestly placed.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "536e09d5b6e6",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::minus_nine_is_derived::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 122,
+      "verdict": "legit",
+      "evidence": "The methodological high point of this cluster, and worth naming as such. `SplusRecon` is the eq-(96) PRODUCT of elementary Stokes factors built from `DT`, and the theorem checks two things at once: that its `(2,1)` entry equals `DT(2,0)*DT(0,1) + DT(2,1)` and that this is `-9`. So `-9` is an OUTPUT of the reconstruction rather than a number typed in, which is exactly what the docstring claims -- 'the entry a transcription error would most likely corrupt, and it is an output of the reconstruction'. A transcription that cross-checks its own most fragile entry against a product is the honest way to use hand-entered literature data.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "536e09d5b6e6",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::chirality_split_from_reconstruction::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 145,
+      "verdict": "legit",
+      "evidence": "Real computation on both sides: `SplusRecon 0 1 = 4` and `SminusRecon 0 2 = 3` are entries of two INDEPENDENT matrix products (the eq-(96) and eq-(97) reconstructions), and the theorem asserts they differ -- which is the substantive claim, that the `5_2` datum is a genuine two-element chirality split rather than one number read twice. Not a restatement of either def.",
+      "reviewed_at": "2026-08-30T04:43:37Z",
+      "file_sha": "536e09d5b6e6",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     }
   }
 }
