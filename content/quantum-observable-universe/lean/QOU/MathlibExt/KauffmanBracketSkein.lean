@@ -90,6 +90,16 @@ Everything below is proved from K1–K3; there is no `sorry` and no new axiom.
   in some relation; that the relation is realised by resolving a crossing in a
   planar diagram is a *reading imposed from outside*, exactly as in
   `QOU.MathlibExt.SkeinRelation`.
+* **No orientation, and therefore no writhe.** `bracket_kink_left` and
+  `bracket_kink_right` are distinguished only by *which of the two smoothings
+  carries the extra circle*. Neither is labelled the positive or the negative
+  curl, because signing a curl needs an orientation and `D` has none; the writhe
+  correction `(-A³)^{-w}` that would convert these factors into an invariant is
+  correspondingly absent.
+* **Homogeneity is not a uniqueness statement.** `smul_skein` and `smul_loop` say
+  rescaling carries solutions of K1–K2 to solutions. They do *not* say that any
+  two solutions differ by a scalar — that is false, and
+  `scale_eq_one_of_normalised` records the counterexample.
 * **No topological invariance is proved, and none is true as stated.** The
   bracket specified here is deliberately *not* a link invariant: `bracket_kink_*`
   shows R1 fails by the factor `-A^{∓3}`, and `exists_kink_bracket_ne` exhibits a
@@ -145,8 +155,9 @@ variable {R : Type*} [CommRing R]
 explicit stand-in `Ainv` for `A⁻¹` so that the base ring stays a `CommRing`. -/
 def loopValue (A Ainv : R) : R := -(A ^ 2 + Ainv ^ 2)
 
-/-- The loop value is symmetric in `A` and `A⁻¹`: the mirror image of a diagram
-has the same loop value. -/
+/-- The loop value is symmetric under the swap `A ↔ A⁻¹` — the substitution that
+mirroring induces on the bracket variable. (Mirroring itself is not defined here;
+`D` carries no structure.) -/
 theorem loopValue_symm (A Ainv : R) : loopValue A Ainv = loopValue Ainv A := by
   simp only [loopValue]; ring
 
@@ -291,15 +302,22 @@ A curl (a Reidemeister-I kink) is a crossing one of whose smoothings is the
 original diagram and the other of which is that diagram with a trivial circle
 adjoined. K1 and K2 then force the bracket to change by `-A^{∓3}`. -/
 
-/-- **Positive kink.** If `k` is a crossing whose `A`-smoothing is `d` and whose
-`B`-smoothing is `d` with a trivial circle adjoined, then
-`⟨k⟩ = -A⁻³ ⟨d⟩`. -/
+/-- **Kink with the circle on the `B`-smoothing.** If `k` is a crossing whose
+`A`-smoothing is `d` and whose `B`-smoothing is `d` with a trivial circle
+adjoined, then `⟨k⟩ = -A⁻³ ⟨d⟩`.
+
+Deliberately *not* called the positive curl: signing a curl requires an
+orientation and a writhe, and `D` carries neither. On the usual convention it is
+the other case, `bracket_kink_right`, that is the positive one. -/
 theorem bracket_kink_left {k d : D} (h : S.Smoothing k d (S.addCircle d)) :
     S.bracket k = -(S.Ainv ^ 3) * S.bracket d := by
   rw [S.skein h, S.bracket_addCircle, δ, loopValue]
   linear_combination (-(S.A * S.bracket d)) * S.A_mul_Ainv
 
-/-- **Negative kink.** With the two smoothings exchanged, `⟨k⟩ = -A³ ⟨d⟩`. -/
+/-- **Kink with the circle on the `A`-smoothing.** With the two smoothings
+exchanged, `⟨k⟩ = -A³ ⟨d⟩`. This is the factor the usual convention attaches to a
+*positive* curl — but, as in `bracket_kink_left`, nothing here fixes that
+assignment, because there is no writhe. -/
 theorem bracket_kink_right {k d : D} (h : S.Smoothing k (S.addCircle d) d) :
     S.bracket k = -(S.A ^ 3) * S.bracket d := by
   rw [S.skein h, S.bracket_addCircle, δ, loopValue]
@@ -307,9 +325,10 @@ theorem bracket_kink_right {k d : D} (h : S.Smoothing k (S.addCircle d) d) :
 
 variable (S)
 
-/-- The two kink factors are mutually inverse. This is why the writhe correction
-`(-A³)^{-w}` is well defined: cancelling a positive against a negative curl
-returns the original bracket. -/
+/-- The two kink factors are mutually inverse. This is the algebraic fact
+underlying the well-definedness of the writhe correction `(-A³)^{-w}`: cancelling
+one kink against the opposite one returns the original bracket. The correction
+itself is *not* formalised here — it needs a writhe, hence an oriented diagram. -/
 theorem kinkFactor_mul_kinkFactor_inv :
     (-(S.A ^ 3)) * (-(S.Ainv ^ 3)) = 1 := by
   have := cube_mul_cube S.A_mul_Ainv
@@ -317,7 +336,7 @@ theorem kinkFactor_mul_kinkFactor_inv :
 
 variable {S}
 
-/-- A positive kink followed by a negative kink restores the bracket. -/
+/-- One kink followed by the opposite kink restores the bracket. -/
 theorem bracket_kink_pair {d k₁ k₂ : D}
     (h₁ : S.Smoothing k₁ d (S.addCircle d))
     (h₂ : S.Smoothing k₂ (S.addCircle k₁) k₁) :
@@ -341,9 +360,15 @@ theorem smul_loop (c : R) (d : D) :
   rw [S.bracket_addCircle]; ring
 
 /-- K3 is exactly what pins the scale: the only rescaling of a normalised
-bracket that is again normalised is the identity. Together with `smul_skein` and
-`smul_loop` this says the normalisation is a genuine normalisation — K1 and K2
-alone determine the bracket only up to one overall scalar. -/
+bracket that is again normalised is the identity. Read with `smul_skein` and
+`smul_loop`: rescaling carries solutions of K1–K2 to solutions, so K1 and K2
+never pin a bracket by themselves, and K3 picks out `c = 1` within each such
+rescaling family.
+
+This does **not** say that any two solutions of K1–K2 differ by a scalar, which
+is false. Take `Smoothing` empty, so that K1 holds vacuously, and `D := R × R`
+with `addCircle := (δ • ·)`; both coordinate projections satisfy K2, and they are
+not scalar multiples of one another. -/
 theorem scale_eq_one_of_normalised {c : R} (hc : c * S.bracket S.unknot = 1) :
     c = 1 := by
   rwa [S.normalisation, mul_one] at hc
