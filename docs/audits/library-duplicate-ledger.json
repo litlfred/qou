@@ -1,24 +1,32 @@
 [
- {
-  "doc_id": "arxiv-2406.05311v1",
-  "prefer": "arxiv-2406.05311v1",
-  "note": "Two uploads of the same work landed in the 2026-08-26 Murnaghan-Nakayama drop: 2406.05311v1.pdf and A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf. Same arXiv stamp, same 34 pp; both PDFs kept in this one directory. Two grep hits here are ONE source.",
-  "recorded": "2026-08-26",
-  "adjudicated_by": "ingest"
- },
- {
-  "doc_id": "arxiv-math-0203060v11",
-  "prefer": "arxiv-math-0203060v11",
-  "duplicate_of": "arxiv-math-0203060v10",
-  "note": "Etingof-Nikshych-Ostrik, 'On fusion categories', ingested TWICE from the 2026-08-26 sphericality drop at two arXiv versions: math/0203060v10 and v11. Same work, same title, separate library directories, and scripts/library-find-duplicates.py did NOT propose them - both carry their own INDEX.md row and neither section set carries duplicate_of. Two grep hits here are ONE source; prefer v11 as the later version. Recorded by hand because the detector missed it: its scoring compares extracted text, and two versions of a paper differ enough in revision to fall below its threshold while being the same work.",
-  "recorded": "2026-08-26",
-  "adjudicated_by": "agent"
- },
- {
-  "doc_id": "s0894-0347-00-00337-4",
-  "prefer": "arxiv-math-9905032v2",
-  "note": "Published twin of the Borodin-Okounkov-Olshanski paper 'Asymptotics of Plancherel measures for symmetric groups'. s0894-0347-00-00337-4 is the JAMS 13(2000) 481-515 version; arxiv-math-9905032v2 is the arXiv preprint already in the library and cited across the corpus (the descent-DPP / discrete Bessel kernel source). Same work; two grep hits are ONE source. Prefer the arXiv stem for citations.",
-  "recorded": "2026-08-29",
-  "adjudicated_by": "ingest"
- }
+  {
+    "doc_id": "arxiv-2406.05311v1",
+    "prefer": "arxiv-2406.05311v1",
+    "note": "Two uploads of the same work landed in the 2026-08-26 Murnaghan-Nakayama drop: 2406.05311v1.pdf and A_quantum_Murnaghan--Nakayama_rule_for_the_flag_ma.pdf. Same arXiv stamp, same 34 pp; both PDFs kept in this one directory. Two grep hits here are ONE source.",
+    "recorded": "2026-08-26",
+    "adjudicated_by": "ingest"
+  },
+  {
+    "doc_id": "arxiv-math-0203060v11",
+    "prefer": "arxiv-math-0203060v11",
+    "duplicate_of": "arxiv-math-0203060v10",
+    "note": "Etingof-Nikshych-Ostrik, 'On fusion categories', ingested TWICE from the 2026-08-26 sphericality drop at two arXiv versions: math/0203060v10 and v11. Same work, same title, separate library directories, and scripts/library-find-duplicates.py did NOT propose them - both carry their own INDEX.md row and neither section set carries duplicate_of. Two grep hits here are ONE source; prefer v11 as the later version. Recorded by hand because the detector missed it: its scoring compares extracted text, and two versions of a paper differ enough in revision to fall below its threshold while being the same work.",
+    "recorded": "2026-08-26",
+    "adjudicated_by": "agent"
+  },
+  {
+    "doc_id": "s0894-0347-00-00337-4",
+    "prefer": "arxiv-math-9905032v2",
+    "note": "Published twin of the Borodin-Okounkov-Olshanski paper 'Asymptotics of Plancherel measures for symmetric groups'. s0894-0347-00-00337-4 is the JAMS 13(2000) 481-515 version; arxiv-math-9905032v2 is the arXiv preprint already in the library and cited across the corpus (the descent-DPP / discrete Bessel kernel source). Same work; two grep hits are ONE source. Prefer the arXiv stem for citations.",
+    "recorded": "2026-08-29",
+    "adjudicated_by": "ingest"
+  },
+  {
+    "doc_id": "ising",
+    "prefer": "arxiv-1610.05082v3",
+    "duplicate_of": "arxiv-1610.05082v3",
+    "note": "Dousse & Feray, 'Weighted dependency graphs and the Ising model', ingested TWICE in the 2026-08-30 cluster-expansion drop: 1610.05082v3.pdf carries the arXiv v3 stamp on page 1, ising.pdf carries none. Same title, same authors, both 24 pp, separate library directories. Two grep hits here are ONE source. scripts/library-find-duplicates.py did NOT propose them and neither section set carries duplicate_of -- the same detector gap the arxiv-math-0203060 entry above records, where two revisions of one paper differ enough in text to fall below the same-work threshold. Recorded by hand. WHICH TEXT IS FULLER: ising is the LATER revision -- it cites four 2017 items against v3's two, has no arXiv stamp, and sections to 21 sections / 66 kc against v3's 15 / 64 kc. So read ising for the text and cite arxiv-1610.05082v3 for the stable stem, per the s0894-0347-00-00337-4 precedent above.",
+    "recorded": "2026-08-30",
+    "adjudicated_by": "agent"
+  }
 ]

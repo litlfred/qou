@@ -1,0 +1,139 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T11:08:05.437881+00:00",
+  "commitSha": "0a6178b61f1ce40eb2c5c5c8981853b4fb9340f5",
+  "assertions": [
+    {
+      "name": "all_su_n_antisym_casimirs_are_two_body",
+      "computed": "1.89911354915195974949464845391239143084419316672398899325596e-65",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "unit": "worst |Delta^3| over N = 2,3,4,5,6,8,10",
+      "source": "Delta^3 = 0 for every N, so no antisymmetric-column quadratic Casimir can contribute to b3 -- includes SU(3), the eightfold way. Lean: AntisymmetricCasimirIsTwoBody.pairSum_eq"
+    },
+    {
+      "name": "every_tier3_candidate_refuted_standalone",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "candidates with b4/b3 <= 0",
+      "source": "a standalone term gamma*f gives b4/b3 = Delta^4 f / Delta^3 f, independent of gamma; all five are <= 0 against a measured +6.481"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "b3-candidate-space-enumeration",
+  "scriptFile": "b3_candidate_space_enumeration_probe.py",
+  "scriptHash": "b93b21612bae",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b3_candidate_space_enumeration_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b3_candidate_space_enumeration_probe.py"
+  },
+  "description": "Enumerates the b3 candidate space by the decision procedure b3 = Delta^3 B(0): a term f(A) can contribute iff Delta^3 f != 0. Tier 1 closed by arity (all SU(N) antisymmetric quadratic Casimirs, proved), Tier 2 by type (normalised invariants), Tier 3 passes arity and is refuted by the sign gate b4/b3 <= 0 against a measured +6.481. Does NOT enumerate non-A-functions or multi-term combinations.",
+  "data": {
+    "polynomial_vs_truncation": [
+      {
+        "N": 2,
+        "d3_poly": "0.0",
+        "d3_truncated": "2.25000000000000000000000000000000000000000000000000000000000",
+        "cutoff_at": 3,
+        "cutoff_in_window": true
+      },
+      {
+        "N": 3,
+        "d3_poly": "0.0",
+        "d3_truncated": "0.0",
+        "cutoff_at": 4,
+        "cutoff_in_window": true
+      },
+      {
+        "N": 4,
+        "d3_poly": "0.0",
+        "d3_truncated": "0.0",
+        "cutoff_at": 5,
+        "cutoff_in_window": false
+      },
+      {
+        "N": 5,
+        "d3_poly": "1.89911354915195974949464845391239143084419316672398899325596e-65",
+        "d3_truncated": "1.89911354915195974949464845391239143084419316672398899325596e-65",
+        "cutoff_at": 6,
+        "cutoff_in_window": false
+      },
+      {
+        "N": 6,
+        "d3_poly": "0.0",
+        "d3_truncated": "0.0",
+        "cutoff_at": 7,
+        "cutoff_in_window": false
+      }
+    ],
+    "tier3_sign_gate": [
+      {
+        "candidate": "dim_[1^n]_=_C(4,n)",
+        "d3": "-3.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "refuted_standalone": true
+      },
+      {
+        "candidate": "su4_cubic_anomaly",
+        "d3": "2.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "0.0",
+        "b4_over_b3": "0.0",
+        "refuted_standalone": true
+      },
+      {
+        "candidate": "partition_count",
+        "d3": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "2.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "refuted_standalone": true
+      },
+      {
+        "candidate": "A_cubed",
+        "d3": "6.00000000000000000000000000000000000000000000000000000000000",
+        "d4": "0.0",
+        "b4_over_b3": "0.0",
+        "refuted_standalone": true
+      },
+      {
+        "candidate": "su2_C2_support_truncated",
+        "d3": "2.25000000000000000000000000000000000000000000000000000000000",
+        "d4": "-3.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b3": "-1.33333333333333333333333333333333333333333333333333333333333",
+        "refuted_standalone": true
+      }
+    ],
+    "what_is_not_enumerated": {
+      "not_functions_of_A_alone": [
+        "6j symbols / monoidal associator",
+        "Vassiliev invariants at degree 4",
+        "content of the S^(2,1) block, absent at n=2",
+        "hyperbolic volume of the 3-component complement"
+      ],
+      "multi_term_combinations": "Tier 3 refutes each candidate STANDALONE; two Tier-3 terms with opposite-sign coefficients reproduce any (b3,b4), so the multi-term space is not bounded by this procedure",
+      "honest_verdict": "the single-term space of functions of A is enumerated and exhausted; the space as a whole is NOT. 'No candidate remains' would be the absence-of-evidence over-claim"
+    }
+  }
+}

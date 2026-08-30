@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T07:43:34Z
+updated_at: 2026-08-30T10:55:11Z
 parent: qou-mhj9
 ---
 
@@ -134,3 +134,262 @@ table before any b4 statement is machine-checked.
 
 THE GATE IS STILL OPEN. Both assemblies are now excluded on main; nothing
 proposes a replacement.
+
+
+## RESOLVED (2026-08-30): the ⁴He AME literal discrepancy is a KNOWN, already-fixed defect
+
+#6088 flagged `28.295673` (in `he4_body_order_shortfall_location_probe.py:90`) against
+`28.2956624` (used in the #6101 writeup) — 1.06e-5 MeV apart — and deliberately left it
+unresolved. It is settled, and the corpus settled it before either of us:
+
+**28.2956624 is correct. 28.295673 is a hand-typed legacy literal.**
+
+The producer `computations/ame_2020_binding_energies.py` names this exact pair in its own
+docstring (lines 14-24), as one of six entries where a hand-typed witness disagreed with the
+vendored AME2020 publication table:
+
+    B_he4   28.295673   vs  28.2956624   (+10.6 eV)
+
+and records that AME's own uncertainty on B(⁴He) is 0.8 eV, so "a 10.6 eV gap is ~13 sigma —
+not a rounding artifact".
+
+Independent confirmation, three ways:
+1. Mass-excess route by hand: 2*7288.971064 + 2*8071.31806 - 2424.91587 = 28295.662378 keV.
+2. `computations/ame-2020-binding-energies.witness.json` carries
+   `B_he4_MeV = 28.2956624` and `B_he4_MeV_mass_excess_route = 28.295662378`, and the
+   producer asserts the per-A and mass-excess columns agree for every nuclide.
+3. `codata_constants.ame_binding_mev(2, 4)` returns `28.2956624` (run at 50 dps).
+
+**The fix already exists as a function call** — `AME_B_HE4_MEV_VALIDATION = _ame_binding_mev(2, 4)`
+in `computations/substrate/codata_constants.py:315`. What never happened is the consumer
+migration: **82 live (non-`_deprecated/`) files still hardcode `28.295673` or `28.295674`**,
+including 11 under `computations/deltalambda/` and 20 under `computations/probes/`.
+
+Magnitude: 3.7e-7 relative. It cannot move any conclusion in this arc — the assembly defect
+is 30 %+ — so the trilemma above stands unchanged with either literal. Recording it as a
+separate stale-literal class rather than sweeping it here; a sweep touches long-compute
+producers and would need its own scope. Tracked separately.
+
+
+## SUCCESSOR QUESTION — a reframing, not a functional (2026-08-30, e04728dc09)
+
+Lean: `QOU/Mass/CoordinationWeightDifferences.lean` (sorry-free, lean-direct exit 0,
+11 decls, axioms clean). Probe:
+`computations/probes/body_order_is_finite_difference_of_coordination_weight_probe.py` (5/5).
+Audit: `docs/audits/2026-08-30-body-order-cumulants-are-finite-differences-of-w.md`.
+
+**This proposes no functional.** The bean forbids choosing one because it lands
+b3 > 0, and that prohibition is respected. It changes variables.
+
+### The identity
+
+Write B(A) = C(A,2) * w(A-1), with w(z) the mean binding per nucleon pair at
+coordination z = A-1. A DEFINITION, not a model — the formula recovers any B.
+Under it the Ursell cumulants are exactly
+
+    b_n = C(n,2) * Delta^{n-2} w(1)
+
+term-by-term via C(n,k)C(k,2) = C(n,2)C(n-2,k-2). Lean-proved at n = 3, 4;
+symbolically verified n = 2..8 against an arbitrary w; NOT claimed proved in general.
+
+### THE TWO WALLS ARE ONE WALL
+
+- w constant       => b3 = 0  — the pairwise wall, recovered as the Delta w = 0 case
+- w non-increasing => b3 <= 0 — `b3_nonpos_of_le`
+
+So the Mayer sign is **not a separate obstruction**. ANY saturating assembly has a
+non-increasing w and lands at b3 <= 0. That is why this bean's own constraint list
+found edge set, like-pair typing and energy scale all failed to move the sign:
+none of them changes whether w RISES.
+
+### The whole content of b3 > 0
+
+    w(1) < w(2)
+
+i.e. the mean binding per pair is larger at coordination 2 than at coordination 1.
+Measured w(1) = 2.2245662, w(2) = 2.6999729 MeV/pair, rise 0.4754. That single
+inequality is the falsifiable form (`lt_of_b3_pos`). Similarly b4 > 0 <=> w convex
+at z = 1.
+
+### The new constraint, and it is a pincer
+
+Measured w rises to a SHARP MAXIMUM AT THE ALPHA PARTICLE (4.7159 at z = 3) then
+decays monotonically (2.133 at 6Li, 1.063 at 16O, 0.320 at 56Fe). And:
+
+- b3 > 0                     <=> w rises at z = 1
+- saturation of B/A          <=> z*w(z) bounded, so w -> 0
+
+**=> w MUST BE NON-MONOTONE.** Any derivation producing a monotone coordination
+weight is refuted at one end or the other. That is a genuine prune on the search
+space and it did not exist before.
+
+### The A>=5 blow-up gets a cause
+
+High forward differences of a peaked function grow and alternate; the tower
+multiplies by a growing C(n,2). Measured at z=1: D^0..D^4 w = 2.225, 0.475, 1.541,
+-5.639, 11.321, giving b_2..b_6 = 2.225, 1.426, 9.243, -56.39, +169.8. The series
+expands a peaked w around z = 1, THREE STEPS BELOW ITS MAXIMUM. The divergence is
+an expansion-point defect, not evidence against the assembly — which reframes it
+from 'the framework fails at A>=5' to 'this is the wrong series', a much cheaper
+problem.
+
+### SCOPE — do not over-cite this
+
+The identity is a REPARAMETERISATION and is tautologically available. **It derives
+no magnitude and cannot**: w is defined by inverting B, so fitting w to AME is
+fitting B to AME with extra steps. THE MAGNITUDE GATE IS NOT CLOSED and this is
+not progress toward closing it by derivation — it is progress on knowing what a
+derivation has to produce.
+
+### STILL OPEN — now one question instead of a tower
+
+Derive w(z). Specifically: why does w rise from z = 1 to z = 2, and why does it
+turn over at the alpha particle? The corpus has a coordination story already
+(`CoordinationSaturation`, `bk-coordination-multiplicity`) whose contact with this
+is unexamined — that is the next place I would look, marked as judgement.
+
+
+## THE NEGATIVE HALF IS CLOSED (2026-08-30, PR #6173)
+
+Lean: `QOU/Mass/UniformBondSimpleGraphExclusion.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/coordination_weight_rise_and_turnover_probe.py` (4/4).
+Audit: `docs/audits/2026-08-30-why-w-rises-the-negative-half-is-closed.md`.
+
+**PROVED — the rise is NOT about which pairs bind.** For a uniform bond weight over
+a SIMPLE GRAPH, b3 = eps*(e3 - 3*e2) <= 0 always: a simple graph on 3 vertices has
+at most 3 edges, a bonded pair at least 1. No monotonicity, no cap, no relation
+between mass numbers. Case-(b) exclusion (the invariant is a proved counting bound).
+
+**Strictly stronger than CoordinationSaturation**, which checked two endpoints. In
+the w coordinate, a degree function gives w(z) = eps*d(z+1)/z, so complete => w
+constant => b3 = 0; bounded-degree => w ~ 1/z => b3 < 0; chain => b3 = -eps. An
+intermediate profile cannot rise at the bottom because d(3) <= 2 on any simple
+graph. **THE WHOLE COORDINATION-MULTIPLICITY FAMILY IS EXCLUDED** as a source of
+b3 > 0 — which answers the 'unexamined contact with CoordinationSaturation' I named
+as the next place to look. The contact exists and it is negative.
+
+**So the rise is non-transferability, and it is one number:**
+eps(2)/eps(1) = 1.2137076 — the bond is 21.4% stronger at coordination 2.
+
+**REFUTED — single-ratio (Markov-power) scaling, for EVERY r.** tr_{n+1} = z*tr_n
+makes a bond n-dependent, which is the right kind of mechanism; its simplest form
+eps(z) = eps(1)*r^(z-1) requires eps(2)/eps(1) = eps(3)/eps(2). Measured 1.2137 vs
+1.7467, **43.9% apart**. Convention-independent: a single ratio of ANY value cannot
+produce two ratios 44% apart. Scope-(a) — kills the family, not the mechanism.
+
+**REFUTED — same-orbital pair fraction** beyond A=7: <8% at A=5,6,7 with one
+normalisation, then 29.7% at A=9, 166% at A=16. Scope-(a).
+
+**SURVIVES — the turnover LOCATION.** Wigner SU(4)'s [1^n] has dim = C(4,n), which
+VANISHES for n >= 5, so the maximally-symmetric regime ends at A=4, where the peak
+is. Parameter-free. Caveats asserted in the witness: it LOCATES without SIZING, and
+rests on Wigner's symmetry-to-binding assumption, not derived here. NOTE this is a
+SUPPORT bound (C(4,n)=0), not the C(4,n)>0 positivity argument an earlier probe of
+mine made about a SIGN — that was wrong and is not reused.
+
+### STILL OPEN — one number
+Why eps(2)/eps(1) = 1.2137 (and eps(3)/eps(1) = 2.1200). Nothing tested predicts
+either. No magnitude is derived here; what changed is that a large family is gone
+from the search and the remainder is a single sharply stated quantity.
+
+
+## beta CANNOT BE DERIVED — and the answer RETRACTS the lead (2026-08-30)
+
+Lean: `QOU/Mass/SU4CasimirIsAffineInPairCount.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/su4_casimir_beta_derivation_probe.py` (3/3).
+
+**The SU(4) Casimir of [1^n] is AFFINE IN THE PAIR COUNT:**
+
+    C2([1^n]) = (5/8)n(4-n) = (15/8)n - (5/4)C(n,2)
+
+and the sum a two-body SU(4)-invariant interaction actually contributes,
+S(n) = (1/2)[C2 - n*C2(fund)] with C2(fund) = 15/8, is EXACTLY proportional to
+the pair count:
+
+    S(n) = -(5/8) C(n,2)      for every n, exactly (verified n=2..12, dev 0.0)
+
+So such an interaction contributes a CONSTANT PER PAIR => w constant => b3 = 0.
+That is the pairwise wall reached from group theory instead of from the counting
+bound in UniformBondSimpleGraphExclusion; the two agree, which checks both.
+
+**Therefore the fitted w = alpha - beta*C2 is NOT the SU(4) prediction**, and
+there is no coupling for beta to be. The lead is retracted as a derivation route.
+
+### What the fit actually was
+C2 = 2.5, 1.875, 0 at A=2,3,4, so fitting the endpoints and predicting the middle
+is a FIXED interpolation with zero remaining freedom: lambda = 3/4 EXACTLY, i.e.
+
+    w(3) = (3/4)w(2) + (1/4)w(4)   <=>   B(4) = 8B(3) - 18B(2)
+
+Two consequences:
+1. It IS better than the corpus simplex baseline mu4=0 (B(4)=4B(3)-6B(2)), which
+   misses B(4) by 32.7%; this misses by 1.7% on the Coulomb-corrected convention.
+   Real, and why the fit looked good.
+2. The residual is variable-dependent. SAME convention: 0.71% on B(3), 1.709% on
+   B(4), amplification 8*B(3)/B(4) = 2.4. I quoted the smaller.
+
+### A correction to my own scratch output
+A scratch run printed '18x' for that amplification. It was hardcoded prose, not
+computed, AND it crossed two conventions (0.71% from 3H against 12.5% from the
+isospin average). The computed factor is 2.4, consistent across conventions.
+
+### UNTOUCHED
+The SUPPORT bound dim[1^n] = C(4,n) = 0 for n >= 5 still locates the turnover at
+A=4. It uses the VANISHING OF THE REPRESENTATION, not its Casimir, so this result
+does not reach it. Wigner SU(4) as physics is not refuted; one route is closed.
+
+### STILL OPEN
+The rise itself. Both SU(4) routes to the MAGNITUDE are now shut (two-body: no
+Casimir term; single-ratio Markov: refuted under all three conventions), and
+closed-form guessing is entropically dead at the target's 1-2 significant digits.
+What is left needs a genuine three-body operator, and the corpus's own candidate
+is the Milnor triple linking number (all pairwise linking zero, mu-bar_123 != 0)
+-- the topological object with exactly the required structure. That is qou-brng.
+
+
+## MILNOR CANNOT CARRY THE MAGNITUDE EITHER (2026-08-30)
+
+Lean: `QOU/Mass/MilnorCarriesOrderNotMagnitude.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/milnor_order_not_magnitude_probe.py` (1/1).
+
+I proposed Milnor mu-bar_123 as the last candidate — 'three-body by construction',
+since a Brunnian link has all PAIRWISE linking zero while mu-bar(123) != 0. Right
+about the SHAPE, wrong about the TYPE, and **the corpus already said so**:
+`QOU.KnotTheory.Vassiliev.brunnian_exact_leadingOrder` states the A-component
+Brunnian link's first non-vanishing Vassiliev invariant sits at degree
+leadingOrder A = 2(A-1) and takes the value **+-1**.
+
+**mu-bar is NORMALISED. It has no size.** If b_A = c_A * mu-bar then |b_A| = |c_A|
+— the magnitude is entirely c_A's. Same category error as the SU(4) Casimir: right
+structure, wrong type.
+
+**And the order law it does suggest is REFUTED.** mu-bar supplies the DEGREE
+2(A-1); the minimal quantitative reading b_A = s_A g^{2(A-1)} with |s_A| = 1 gives
+a division-free test with g eliminated:
+
+    b3^2 = b2 * b4
+
+Measured it is out by **10.11x** (isospin average) and **5.25x** (Coulomb-
+corrected). Scope-(a): the single-coupling family falls, not Milnor's involvement.
+
+**NOT claimed**: MilnorParitySignLaw predicts sign(1-tau_A) = (-1)^(A-1) = -,+,-
+while the measured cumulant signs are +,+,+. 1-tau_A is NOT b_A and no relation
+between them is established — flagging it as a non-conflict rather than reporting
+a refutation I have not earned.
+
+### WHERE THIS LEAVES THE FRONT
+Three mechanism families are now closed by proof or measurement: uniform-bond
+simple-graph (proved), SU(4) two-body (proved), single-coupling Markov/Milnor
+order laws (refuted under every convention). Closed-form guessing is entropically
+dead at the target's 1-2 significant digits.
+
+What survives is one shape: **a multi-term closure in which a topological
+invariant fixes each term's SIGN and ORDER while separate coefficients carry the
+SIZES.** Nothing tested supplies those coefficients, and I am not proposing a
+candidate — proposing one because it would fit is the anti-fit violation.
+
+### A BEAN MIS-NAMING OF MINE, CORRECTED
+I twice named `qou-brng` as 'the Milnor bean'. It is not: qou-brng is the
+hbar_q^2 saturated-binding-fraction bean whose surviving route is the
+linking-vs-self-energy AMPLITUDE question. Adjacent, not the same, and untouched
+by this work.

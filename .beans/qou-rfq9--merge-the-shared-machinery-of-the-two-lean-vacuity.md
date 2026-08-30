@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-27T11:56:04Z
-updated_at: 2026-08-27T15:35:20Z
+updated_at: 2026-08-30T10:13:22Z
 ---
 
 Measured 2026-08-27. Two text-level detectors now exist for the same defect
@@ -115,3 +115,45 @@ published tier this change leaves untouched, so it deserves its own decision.
 
 Still open from this bean: whether `--strict` belongs in CI. CI is
 dispatch-only here, so it would not fire on push anyway.
+
+
+## Follow-up 1 closed 2026-08-30 (PR #6168) — and its diagnosis was half wrong
+
+The recorded follow-up said signal B should read `--` comment blocks, naming
+`b3_nf_wedderburn_uniqueness` as the miss. Implemented and measured:
+
+| change | CRITICAL | findings |
+|---|---|---|
+| baseline | 2 | 2255 |
+| comment cone only | **2** | **2255** |
+| cone + vocabulary | 3 | 2255 |
+
+**The comment cone alone is a NO-OP.** Zero findings move, zero severities
+flip, `cone_only` = 0. The second, unnamed defect is `DOC_OPEN`'s vocabulary:
+the declaration says "Full proof **requires** Wedderburn-Artin" and "The formal
+proof **needs:** Wedderburn", and the pattern had `needs the` / `unproved` and
+nothing for `requires` (`needs the` does not match `needs:`). Jointly
+necessary, individually insufficient.
+
+Vocabulary stayed narrow on measurement: a bare `needs|requires` net matches 29
+of the 2252 advisory cones and hand-adjudicating all 29 gives **0** proof-
+absence admissions — all ordinary prose about hypotheses. 29 FP for 0 TP.
+
+**The +1 is corroboration, not new coverage.** That declaration is already in
+the review ledger under `proof-borrowed-name`, verdict `genuine`, `file_sha`
+`2f1fc03ae00a` still current. Borrowed-name reads the NAME against the proof;
+definition-collapsed reads the PROSE against the proof. Two independent signals,
+one verdict, one ledger row.
+
+Follow-up 2 (`--strict` in CI) remains moot while CI is `workflow_dispatch`-only.
+
+
+
+Merged 2026-08-30 as `7123c5b47`..`26fd0bf71` (PR #6168, rebase). Post-merge on
+main: `lean_decl_scan selftest OK (17 regression cases)`,
+`definition-collapsed audit: 3 CRITICAL, 2257 advisory` — CRITICAL is the
+published tier and is the 2 -> 3 this PR argues for; the advisory denominator
+moved 2252 -> 2257 from main gaining Lean files, not from this change.
+
+Follow-up 2 (`--strict` in CI) stays open and stays moot while CI is
+`workflow_dispatch`-only (`qou-gwe9`).

@@ -3,7 +3,7 @@
   "kind": "exploratory-probe",
   "description": "Tests whether ν_SDP = #{non-trivial Wedderburn blocks λ≠(n) with ρ_λ(T_w) PSD} reproduces the confirmed D/T/³He = 1,2,2. Canonical orthogonal Hoefsmit form. REFUTED: matches D,³He (B₃) but T (8_11,H₅) gives 1≠2. The per-block-PSD shortcut is not ν_SDP; the operator-selection SDP is needed. No fit.",
   "engine": "python",
-  "q0": 1.1099785955573347,
+  "q0": 1.1099785827513808,
   "candidate_definition": "nu = #{ lambda != (n) : rho_lambda(T_w) sym-part PSD }",
   "atoms": [
     {
@@ -25,7 +25,7 @@
             3
           ],
           "dim": 1,
-          "min_eig_sym": 1.2320524825954347,
+          "min_eig_sym": 1.2320524541667655,
           "psd": true,
           "trivial": true
         },
@@ -35,7 +35,7 @@
             1
           ],
           "dim": 2,
-          "min_eig_sym": -0.8333695613510896,
+          "min_eig_sym": -0.8333695270533861,
           "psd": false,
           "trivial": false
         },
@@ -46,7 +46,7 @@
             1
           ],
           "dim": 1,
-          "min_eig_sym": 0.8116537356374702,
+          "min_eig_sym": 0.8116537543657598,
           "psd": true,
           "trivial": false
         }
@@ -83,7 +83,7 @@
             1
           ],
           "dim": 2,
-          "min_eig_sym": 0.980803520439746,
+          "min_eig_sym": 0.9808035272657385,
           "psd": true,
           "trivial": false
         },
@@ -94,7 +94,7 @@
             1
           ],
           "dim": 1,
-          "min_eig_sym": 1.0000000000000024,
+          "min_eig_sym": 1.0000000000000022,
           "psd": true,
           "trivial": false
         }
@@ -129,7 +129,7 @@
             5
           ],
           "dim": 1,
-          "min_eig_sym": 0.6587817865742589,
+          "min_eig_sym": 0.6587818169760323,
           "psd": true,
           "trivial": true
         },
@@ -139,7 +139,7 @@
             1
           ],
           "dim": 4,
-          "min_eig_sym": -1.032133879682817,
+          "min_eig_sym": -1.0321338540588911,
           "psd": false,
           "trivial": false
         },
@@ -149,7 +149,7 @@
             2
           ],
           "dim": 5,
-          "min_eig_sym": -0.8322199230178681,
+          "min_eig_sym": -0.8322199130399291,
           "psd": false,
           "trivial": false
         },
@@ -160,7 +160,7 @@
             1
           ],
           "dim": 6,
-          "min_eig_sym": -1.185992493637586,
+          "min_eig_sym": -1.1859924056960953,
           "psd": false,
           "trivial": false
         },
@@ -171,7 +171,7 @@
             1
           ],
           "dim": 5,
-          "min_eig_sym": -1.3595467647037978,
+          "min_eig_sym": -1.3595466802753327,
           "psd": false,
           "trivial": false
         },
@@ -183,7 +183,7 @@
             1
           ],
           "dim": 4,
-          "min_eig_sym": -1.32438794892842,
+          "min_eig_sym": -1.3243878758179308,
           "psd": false,
           "trivial": false
         },
@@ -196,7 +196,7 @@
             1
           ],
           "dim": 1,
-          "min_eig_sym": 1.5179533198695794,
+          "min_eig_sym": 1.517953249818354,
           "psd": true,
           "trivial": false
         }
@@ -214,10 +214,10 @@
     "computations/lp_dual_solver.py (operator-selection SDP)"
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptHash": "8c1a5bdeacb7",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
-  "computedAt": "2026-08-29T07:36:36.272251+00:00",
+  "scriptHash": "b54ecdb30a74",
+  "scriptCommitSha": "df5a7ee4e5afd270a076f40e49f4f5dc78d65bfe",
+  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "computedAt": "2026-08-30T11:37:37.427125+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Polynomial.Laurent
+import QOU.Archimedean.GroundRing
 
 /-!
 # QOU.Archimedean.ParticleKnots
@@ -41,8 +42,14 @@ blocks carried that form before it was corrected.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over `ℤ`). -/
-abbrev R_q := LaurentPolynomial ℤ
+/-! `R_q = ℤ[q, q⁻¹]` is **not** redeclared here. It is `QOU.Archimedean.GroundRing`'s,
+and this file imports it.
+
+Until 2026-08-30 both modules declared `abbrev R_q := LaurentPolynomial ℤ` — same name,
+same namespace, same body, and neither importing the other. Each compiled alone; they
+collided only where something imported both, which is the root aggregator `QOU.lean`:
+`import QOU.Archimedean.ParticleKnots failed, environment already contains
+'QOU.Archimedean.R_q' from QOU.Archimedean.GroundRing`. Bean `qou-lksc`. -/
 
 /-- The formal parameter `q` of the ground ring. -/
 noncomputable def q_param : R_q := LaurentPolynomial.T 1

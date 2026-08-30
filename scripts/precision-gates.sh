@@ -438,22 +438,59 @@ fi
 # a gate that reports failure without examining anything is not a gate either.
 # So: check the imports up front, and exit 2 with a different message, so
 # "cannot evaluate" can never be read as "found a defect".
+#
+# MEASURED AGAIN 2026-08-30, and the list above was INCOMPLETE — which cost
+# exactly what this block exists to prevent. On a container with `mpmath`
+# present but `qou_substrate` absent, the preflight passed and the run reported
+#
+#   RED: q0-anchor flip  q0-anchor refill ratchet  mpf(<float>) source
+#        float64-padding ratchet  raw-float64 ratchet  q0-value drift ratchet
+#        mixed mpf/f64 -> serializer  witness scriptFile provenance
+#
+# Eight blocking failures. Installing `qou_substrate` alone took it to SIX:
+# `mpf(<float>) source` and `mixed mpf/f64 -> serializer` were phantoms, dying
+# on `ModuleNotFoundError: No module named 'qou_substrate'` before examining
+# anything. The remaining six are real and each names a specific witness
+# (diagnosed in bean qou-hah0).
+#
+# The second half of the trap: `qou_substrate` is NOT on PyPI (AGENTS.md
+# §Project structure — it 404s, as do pyhecke, pyhecke-native and qou-mass), so
+# the old `pip install $missing` hint would itself have failed with a confusing
+# not-found. An in-repo package needs an editable install of its source tree,
+# so the hint is now per-module.
 missing=$(python3 - <<'PREFLIGHT_PY'
 import importlib.util
-# Third-party modules the gate scripts import. Extend when a gate gains a dep.
-need = ["mpmath"]
-print(" ".join(m for m in need if importlib.util.find_spec(m) is None))
+# Modules the gate scripts import that are NOT in the standard library and NOT
+# in-repo siblings resolved by a sys.path bootstrap. Measured by an AST walk
+# over every gate script and its import cone, not guessed. Extend when a gate
+# gains a dep — and give it the command that actually installs it.
+NEED = {
+    "mpmath": "pip install mpmath",
+    # In-repo package, NOT on PyPI: only an editable install of the source tree
+    # works. Consumed by mpf_float_source_audit, witness_float64_padding_audit,
+    # q0_value_drift_audit and mpf_mixed_arithmetic_audit, among others.
+    "qou_substrate": "pip install -e tools/qou-substrate",
+}
+for mod, how in NEED.items():
+    try:
+        found = importlib.util.find_spec(mod) is not None
+    except Exception:
+        found = False          # a broken partial install is also unusable
+    if not found:
+        print(f"{mod}\t{how}")
 PREFLIGHT_PY
 )
 if [ -n "$missing" ]; then
   echo "PREFLIGHT FAILED — the precision gates could not be evaluated."
-  echo "  missing Python module(s): $missing"
+  echo
+  printf '%s\n' "$missing" | while IFS=$'\t' read -r mod how; do
+    echo "  missing: $mod"
+    echo "      $how"
+  done
   echo
   echo "  This is NOT a gate failure. Nothing was examined, so nothing is known"
   echo "  about the tree's precision hygiene. Do not report it as red, and do"
   echo "  not go looking for a producer to fix."
-  echo
-  echo "    pip install $missing"
   exit 2
 fi
 
