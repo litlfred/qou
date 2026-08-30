@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T13:37:23Z
+updated_at: 2026-08-30T14:49:14Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -568,3 +568,53 @@ its first substantive PR will produce the datapoint for free.
 Recorded because the alternative was leaving it in a chat transcript, which is
 this corpus's documented way of losing a measurement — and because this bean
 already tells future agents to write exactly this observation down.
+
+
+## THE REQUESTED DATAPOINT, 2026-08-30 14:45Z — recharge > 5 h 40 m, with one honesty caveat
+
+This bean's own closing instruction — *"the next session that requests a review
+on its first substantive PR will produce the datapoint for free"* — is now
+discharged. It did, and here it is.
+
+| | |
+|---|---|
+| PR | [`qou#6157`](https://github.com/litlfred/qou/pull/6157) |
+| request fired | **2026-08-30 13:36:43Z**, via `request_copilot_review` |
+| PR content | 1 Lean file (3 sorry-free defect fixes), 1 new probe + witness, 3 bean bodies — substantive, not a beans-only change |
+| merged | 14:25Z (rebase-merge, `85959c78c0`) |
+| `get_reviews` at 13:45Z | `[]` |
+| `get_reviews` at **14:45Z** | **`[]`** |
+| elapsed since request | **≥ 1 h 09 m** |
+| elapsed since exhaustion (07:56:40Z) | **5 h 40 m** |
+
+**So the recharge lower bound moves from `> ~2 h 13 m` to `> 5 h 40 m`**, and
+unlike the four rows above this one **is** a requested PR, so it bears on the
+quota reading rather than only on the push trigger.
+
+### 🛑 The caveat, and it is load-bearing
+
+**I did not record the `request_copilot_review` response body verbatim.** The
+call returned without raising and I read that as "not quota-blocked" — but that
+was an *inference*, and this bean's earlier entries note that quota refusals
+arrive as a message (*"the user who requested the review has reached their quota
+limit"*) rather than as an error. So I cannot rule out that the request was
+refused in its payload and I did not look.
+
+What is solid either way: **no review existed at ≥ 1 h 09 m after a request
+attempt on a substantive PR.** The two readings — request accepted and unserved,
+or request refused on quota — differ on *why*, not on the observation. Only the
+first tightens the recharge bound; the second would instead be direct evidence
+the ration was still spent at 13:36Z, which is also useful and also new.
+
+**Instruction for the next agent, because this is a cheap fix:** when you fire
+`request_copilot_review`, **paste its response body into this bean**. It costs
+one line and it is the difference between a datapoint that discriminates and one
+that does not. I lost that distinction here for no reason.
+
+### A second, weaker row now accruing
+
+[`qou#6254`](https://github.com/litlfred/qou/pull/6254) was created 14:34Z and
+has taken three pushes since, **with no review requested**. That is the same
+censored-negative configuration as `fa#156` / `#6189` above and will bear on the
+push trigger once the window is long enough to matter — at ~16 min it is not yet
+worth anything. Noted so it is checked rather than re-derived.
