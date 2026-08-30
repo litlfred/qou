@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T14:46:07Z
+updated_at: 2026-08-30T18:17:33Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3537,3 +3537,71 @@ absorb the `h^2/2` defect of (6) — three conditions, all stated, none yet met.
 That is a better-posed question than the one this arc started with, and it is
 the honest end of what I can derive without either a new structural input or a
 fit.
+
+
+## Entry 10 — the N=1 factor IS a bar-midpoint. The single open item is answered.
+
+Probe: `computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py`, **8/8**.
+
+The arc closed with one open item and three conditions on any candidate. All
+three are met, by **re-applying the arc's own entry-2 rule one slot over**.
+
+### The move introduces no new freedom
+
+Entry 2 established `offset := the bar-midpoint of Vhat`, and showed that rule
+DERIVES convention C's offset of `1` rather than assuming it. It was applied to
+the **offset**. It had not been applied to the **N=1 factor**. Applying it:
+
+    N=1 factor := ( cos(alpha) + bar(cos alpha) ) / 2
+
+No fitted quantity, no new structure — the same rule, one slot over.
+
+### Why C could use a bare cosine, which is what makes the rest work
+
+Under C, `alpha_C` is bar-ODD and cosine is EVEN, so
+`bar(cos a_C) = cos(-a_C) = cos(a_C)`: **the C-frame N=1 factor is already its
+own bar-midpoint.** The rule is *vacuous* in C.
+
+That is a sharper statement of entry 7 than "the bar-odd slot is empty" — it
+says why the C form was available at all, and why its unavailability under D is
+structural rather than a gap in the search.
+
+Under D, `bar(a_D) = h^2/2 - a_D` — a **reflection about `h^2/4`**, not about 0.
+So `cos(a_D)` is not bar-invariant, which is the arc's blocker restated.
+
+### The result
+
+    M := (cos(a_D) + cos(h^2/2 - a_D))/2  =  cos(a_D - h^2/4) * cos(h^2/4)
+
+| condition (set by the arc) | verdict | how |
+|---|---|---|
+| (a) bar-invariant | **PASS** | exact symbolic identity, `bar(M) - M = 0` |
+| (b) reduces to `cos(alpha_eff)` in C | **PASS** | exact symbolic identity |
+| (c) absorbs the `h^2/2` defect | **PASS** | as a phase re-centring by `h^2/4` **times a u-independent constant** `cos(h^2/4)` |
+
+(c) lands in exactly the multiplicative/log frame **entry 3** requires, with the
+**u-independence entry 5** established for the defect. Size at the proton pin:
+phase shift `h^2/4 = 0.0109265521331`, constant `cos(h^2/4) = 0.99994030582315`.
+
+### 🛑 A CAS trap that nearly cost the result
+
+`sympy.simplify` does **not** reduce
+`(cos A + cos B)/2 - cos((A+B)/2)cos((A-B)/2)` to 0 for these arguments — it
+returns a non-zero residual of two uncombined cosines. **That is a
+non-simplification, not a refutation.** Re-checked numerically at 60 dps across
+five values of q including both pins: worst `|diff| = 7.779e-62`, i.e. mpmath's
+floor. Reading the CAS residual as a negative would have retired a correct
+identity, and I was one step from doing so.
+
+### Scope — what this does NOT claim
+
+- **NOT uniqueness.** Other bar-invariant functions exist. The argument is that
+  this one adds no freedom, being the arc's own rule re-applied.
+- **NOT a D-frame Q_beta.** Rungs above `k=2` are still `cal-anchored`
+  (extracted from experiment), so no D-frame number is computable and none is
+  quoted here. The arc's entry-9 blocker on *testing* against Q_beta stands.
+- **NOT wired.** Nothing downstream consumes it.
+
+Scope (a). What changes is that the arc's terminus — *"it refines a leading term
+that does not exist"* — no longer holds: the leading term now has a derived
+candidate form.
