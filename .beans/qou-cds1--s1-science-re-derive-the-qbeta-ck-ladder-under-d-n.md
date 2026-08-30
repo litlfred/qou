@@ -4830,3 +4830,46 @@ Search for a bar-INVARIANT single generator (not bar-odd), test any candidate
 against the already-formalized `c_2*c_4 = c_3^2` Hankel condition, and check its
 `c_k` weights are all 0. Three gates, all pre-existing or derived here, none
 requiring a fit.
+
+
+
+## Correction: parity is a FILTER not a selector, and the Hankel gate is VACUOUS (PR #6282)
+
+Two corrections to the method I proposed in the previous entry. Probe:
+`computations/qbeta/qbeta_d_parity_is_a_filter_not_a_selector_probe.py`, 7/7.
+
+**1. Parity is a filter, not a selector.** The corpus's `quantumInt` is the
+SYMMETRIC convention `(q^n - q^-n)/(q - q^-1)`, and every symmetric q-integer is
+bar-invariant — `[2]_q`, `[3]_q`, `[4]_q`, `[5]_q` all have bar-ratio 1. So the
+parity condition admits the ENTIRE q-integer family at once. It rules out the
+bar-ODD "sinh partner" reading (that result stands) but does **not** pick a
+member. Reading the previous entry as "parity identifies the generator" would be
+over-reading it.
+
+**2. The Hankel gate is vacuous for rank-1 candidates.** I listed
+`c_2*c_4 = c_3^2` as a gate on candidates. But rank-1 gives `c_3 = rho*c_2` and
+`c_4 = rho^2*c_2`, so the condition holds IDENTICALLY for every `rho`. It
+excludes non-rank-1 menus — which is what the corpus uses it for, against the
+fitted menu — but cannot discriminate BETWEEN single generators. Listing it as a
+candidate gate was my error.
+
+**So of the three gates I named: one is a class filter, one is vacuous, and one
+(the C-limit reduction) survives** — joined by the numerical value of
+`c_3 = rho*c_2`, which I had not listed.
+
+### A worked non-candidate, so it is not mistaken for a refutation
+
+`habiroT25 = [3]_q/25` (`MmuR9V9Closure.lean:76`) IS bar-invariant and passes
+the parity filter; with `c_2 = -1` it gives `c_3 = -0.1217` at the proton pin
+against the extracted `-2.0693`. NOT a match — but `habiroT25` belongs to the
+m_mu R9/V9 closure, NOT the Q_beta ladder. It refutes nothing; it is a different
+object sharing a name. Recorded because it shows the shape of how the surviving
+gates work: parity passes it, the value test rejects it.
+
+### Honest status of the "where to look" answer
+
+The place is named (the Habiro element, `QBetaSingleHabiroGenerator`, open with
+no instance). The parity is now derived (bar-invariant, not bar-odd). What is
+NOT available is a way to select the generator without either a new structural
+input or a fit — the surviving gates test a candidate once you have one; they do
+not produce one. That is the honest boundary of this arc.
