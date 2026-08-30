@@ -38,7 +38,7 @@ question.
 | 18 | **the EXEMPTION's SCOPE** — co-binding checked within one scope | a two-arm comparison written as SIBLING `def z_C` / `def z_D`, so neither scope contains the other's binding | 16 of the 42 "solo" sites, i.e. 38 % of what looked like residue (qou-t9r1) |
 | 19 | **the EXEMPTION's SHAPE, other side** — the D arm assumed to be a Markov parameter | a C-vs-D comparison whose D side is a derived closed form in `h`, never a `z` at all | `probe_convention_d_vs_c_borromean.py`, whose D is `tau_pipe = (4+h^2-3h^4-h^6)/(h^2+4)` (qou-t9r1) |
 | 20 | **the EXEMPTION's LANGUAGE** — both arms assumed to be in the same file, hence the same language | a C-vs-D comparison whose D arm is a **Lean declaration**, so no Python-side pairing test can ever see it | `probe_h3_central_idempotents_exact.py` computes the C arm; its D counterpart is Lean `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D ≠ C sorry-free (qou-t9r1) |
-| 21 | **the GUARD's TYPE** — the anti-invisibility helper is mpmath-only | a SYMBOLIC (sympy) consumer cannot call `markov_parameter_convention_C` (`TypeError: cannot create mpf from q`), so it MUST inline `sqrt(q)/(1+q)` — invisible to the very mechanism built to make deliberate C visible | `probes/qbeta_fmap_power_class_prune.py`; helper made polymorphic 2026-08-30 (qou-t9r1) |
+| 21 | **the GUARD's TYPE** — the anti-invisibility helper is mpmath-only (SCOPE: 1 measured site, NOT a wide class — see note below) | a SYMBOLIC (sympy) consumer cannot call `markov_parameter_convention_C` (`TypeError: cannot create mpf from q`), so it MUST inline `sqrt(q)/(1+q)` — invisible to the very mechanism built to make deliberate C visible | `probes/qbeta_fmap_power_class_prune.py`; helper made polymorphic 2026-08-30 (qou-t9r1) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -655,3 +655,41 @@ Every count here is from a committed instrument, not a hand survey:
 R11's negative test injected the historical `TR_M[5] = z³` bug and confirmed the
 gate fires; the three published miscounts and one retraction in the table above
 are recorded in `qou-2ixd` and `qou-76a6` rather than quietly fixed.
+
+## Row 21's scope — a measured NEGATIVE (2026-08-30, qou-t9r1)
+
+Row 21 is a real defect (`markov_parameter_convention_C` raised
+`TypeError: cannot create mpf from q` on a sympy Symbol, so a symbolic
+consumer could not call the guard built to make deliberate C greppable), but
+it is **narrow**, and the obvious follow-up hypothesis — *"then many symbolic
+consumers must have inlined C for the same reason"* — was tested and is
+**FALSE**.
+
+Surface searched: every `.py` under `computations/` and `tools/` that imports
+sympy AND contains a C-shaped `sqrt(q)/(1+q)` text match — 46 files. Against
+the value audit's four buckets (BLOCKING 30, ADJUDICATED 61, UNRESOLVED 2,
+NOT C 3) and the ledger:
+
+| | count |
+|---|---|
+| sympy-importing files with a C-shaped TEXT match | 46 |
+| of those, BLOCKING in the value audit | 30 |
+| of those, adjudicated in the ledger | 18 |
+| of those, in neither | 16 |
+| **of those 16, actual convention-C BINDINGS** | **0** |
+
+The 16 break down as **15 comment/docstring mentions** and **1 tuple of
+string-literal search tokens** (`gswz_program_convention_immunity_probe.py:88`,
+`Z_TOKENS = ("z_C", "z_D", "sqrt(q)/(q + 1)", ...)`).
+
+**So the value audit has no symbolic blind spot of this kind, and the count
+that looked like one was an artifact of grepping TEXT where the audit
+evaluates BINDINGS.** Recorded because the wrong version of this finding — "16
+files invisible to the audit" — was one commit away from entering the corpus,
+in the document whose subject is detectors that mis-measure. The distinguishing
+observation is cheap and should be run before any similar claim: strip
+comments, require an assignment, and check whether the right-hand side is an
+expression rather than a string.
+
+Only **one** site was ever affected by row 21
+(`probes/qbeta_fmap_power_class_prune.py`), and it is fixed.
