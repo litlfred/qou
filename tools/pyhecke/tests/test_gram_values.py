@@ -94,8 +94,12 @@ def test_gram_shape_and_determinant():
     """Under **convention D** the Markov-Gram form is SINGULAR.
 
     Pin history: -0.36080112 (convention C with the pre-2026-05-19
-    `TR_M[5] = z**3` bug -- still what tools/hecke-engine/src/gram.rs
-    produces, since the fix was never ported there) -> -0.1892052191440367
+    `TR_M[5] = z**3` bug. This docstring said that was "still what
+    tools/hecke-engine/src/gram.rs produces, since the fix was never
+    ported there"; that is STALE -- gram.rs:146 `trace_weights` returns
+    `[1, z, z, z*z, z*z, h*z*z + z]`, the correct value, and its own
+    line 152 names `z^3` as the pre-2026-05-19 bug.)
+    -> -0.1892052191440367
     (convention C with the correct `h*z^2 + z`) -> 0 EXACTLY (convention
     D). Degeneracy proved in QOU/QBeta/GramSignature.lean.
 
