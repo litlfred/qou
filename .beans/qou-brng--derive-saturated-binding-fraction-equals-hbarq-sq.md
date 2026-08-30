@@ -226,3 +226,31 @@ juxtaposition (≈2.10 for ⁴He), and additivity holds only up to that factor
 excluded for q>1). The R2 lift therefore stands as "log turns a multiplicative amplitude into an
 additive free energy" — which is `Real.log_mul` — but NOT as a discharge of the multiplicativity
 input; see the retraction on `qou-301d`.
+---
+**Update 2026-08-30 (convergence note) — R3's verdict now has TWO independent
+structural arguments, from opposite directions.**
+
+A sibling landed `QOU.Mass.SaturationPeakStructure` on main (`3109e09818`,
+sorry-free — verified directly, 0 sorry / 0 axiom, hypotheses `0 < a_S`,
+`0 ≤ a_C`, `0 < u`, not vacuous). For the volume−surface−Coulomb shape
+`f(u) = a_V − a_S/u − a_C·u²` in `u = A^{1/3}` it proves `perNucleon_lt_volume`
+(the curve is strictly below `a_V` for EVERY `u > 0`) and `peak_is_not_bulk`, so
+the empirical B/A peak is an interior maximum of a surface/Coulomb competition —
+*"matching any constant to it is a category error, whatever the constant."*
+
+That is the DATA-side argument. PR #6271 (this session, merged) is the same
+conclusion from the MODEL side: `B_model/A` is strictly increasing along `N = Z`
+and bounded above by its limit, so it can never turn over; multiplying by any
+positive constant preserves monotonicity; therefore the model can only CROSS the
+peaked curve, and the 0.06 % agreement of `3×model` at ⁴⁰Ca/⁵⁶Fe is that
+crossing, not evidence.
+
+Neither derives the other and neither was aware of the other while running.
+Together they say: the peak is not a bulk quantity (sibling), and a monotone
+model's near-match to it is an artifact (mine). Both point at the same missing
+ingredient — the sibling's `a_C·u²` Coulomb term with `u = A^{1/3}`, which is
+exactly the `Z(Z−1)` multiplicity plus `A^{1/3}` geometry #6271 named as the
+live target, and which `CrossingCountAffine.no_crossing_combination_is_protonPairs`
+proves the crossing counts cannot supply.
+
+No number moved; nothing wired. Recorded so the corroboration is not lost.
