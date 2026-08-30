@@ -93,7 +93,30 @@ The two numbers differ by 27 % for that reason and not because either is wrong;
 they are different conventions for the same order.
 
 **No theorem here depends on which convention is used**: `not_isPairwise_of_b3_ne_zero`
-needs only `b₃ ≠ 0`, and `1.426222` and `1.808100` are both nonzero. -/
+needs only `b₃ ≠ 0`, and `1.426222` and `1.808100` are both nonzero.
+
+**Prior art — this re-derives a result the corpus already held.** Bean `qou-9v7t`
+(2026-08-29, PR #5990, `computations/b3-charge-decomposition-a3.witness.json`)
+had already split the A = 3 doublet into its charge-symmetric and
+charge-antisymmetric parts and named them: `b3_sym = 1.4262225` — *"the strong
+channel's obligation"*, the figure above — against `b3_asym = 0.3818775`, half
+the mirror splitting, *"the EM channel's"*. The identification here is that
+result reached again from the other end; it is recorded because the **docstring**
+carried the number without it, not because the number was unknown.
+
+**One question that bean leaves open, and this docstring should not paper over.**
+The symmetric/antisymmetric split is exact bookkeeping, but it is *not* the same
+as a Coulomb correction: ³H has a single proton and so no `pp` pair at all, while
+³He has one. So the Coulomb energy is not charge-antisymmetric about the mean —
+removing it moves the **mean**, not only the difference, and it moves it toward
+the triton value. Whether the strong-channel obligation is `1.426` or nearer
+`1.81` is therefore a live 27 % question on the very quantity the magnitude gate
+is short by 6–14×, and the bean's own "live successor" note says the EM channel
+at A = 3 is unaddressed. External precedent points the same way: Platter, Hammer
+and Meißner fix their **SU(4)-symmetric** three-nucleon parameter from
+`B(³H) = 8.48` MeV — the triton alone (`platter2005tjon`, and
+`mba-remark-tjon-universality-external`). Nothing here settles it; it is flagged
+so the average is not read as adjudicated. -/
 def b3 (i j k : Fin 4) : R :=
   M.triple i j k - (M.pair i j + M.pair i k + M.pair j k)
 
