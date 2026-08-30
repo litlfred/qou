@@ -129,6 +129,37 @@ def main() -> int:
     # are in `atomic-mass-via-rho-k.witness.json`.
     here = Path(__file__).parent
     witness_path = here / "atomic-braid-mass-table.witness.json"
+    if not witness_path.exists():
+        raise FileNotFoundError(
+            "atomic-braid-mass-table.witness.json is missing.\n\n"
+            + """THE INPUT WAS DELIBERATELY REMOVED, AND THIS SCRIPT CANNOT BE REPOINTED.
+
+`atomic-braid-mass-table.witness.json` was deleted on 2026-05-19 by commit
+7f30a57924d, on an explicit repo-owner directive -- "get rid of/fix what led
+you astray. it should be removed." It was one of 11 legacy mass-compute
+artifacts removed together because they MISLED: that witness carried the
+six-term formula at 24-54% error and an off-main commitSha, and agents were
+citing its values as canonical. Its producer `atomic_braid_mass_table.py` was
+deleted in the same commit.
+
+That commit repointed two CONTENT files to the canonical pipeline
+(`canonical-mass-table-extended.witness.json`). It did not repoint the Python
+consumers, and this is one of them.
+
+REPOINTING IS NOT AVAILABLE HERE. This script needs the six-term decomposition
+fields (`term1_atomic_total` and siblings). The canonical witness does not have
+them -- measured: `term1_atomic_total`, `term1` and `six_term` are all absent
+from it -- because, as this file's own header says, the resolved formula
+`M(K) = rho_K * m_e * |tr_M(K)|` HAS NO ADDITIVE SIX-TERM STRUCTURE. The fields
+are legacy-only by construction, not merely missing.
+
+So this script is dead by construction: its only possible input was removed on
+purpose, and reconstructing it would mean resurrecting the 24-54%-error table
+the owner ordered removed. Do NOT do that.
+
+For mass predictions use the canonical witness. Disposition of this file
+(deprecate to computations/_deprecated/, or delete) is an owner decision;
+tracked as bean `qou-s1yn`.""")
     with open(witness_path) as f:
         mtw = json.load(f)
 

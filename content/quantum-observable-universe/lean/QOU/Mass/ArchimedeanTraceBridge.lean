@@ -7,9 +7,18 @@ Arc context (bk-crossing mass-binding; bean `qou-brng`, residual R2 — the one 
 audit left genuinely open). `QOU.Mass.SelfMutualPartition` proved, at the ADDITIVE crossing-energy
 granularity, that mass = self part and binding = −(mutual part). It *assumed* the energy is additive.
 The mass observable, however, carries the q-dimension Markov self-trace
-`lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1)` — a MULTIPLICATIVE object: the Markov/Jones trace factorises under
-connected sum, `J(K₁ # K₂) = J(K₁)·J(K₂)` (Jones). The residual was: how does the multiplicative
-trace at the categorical (fibre) level become the additive energy the partition needs?
+`lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1)` — a MULTIPLICATIVE object. The residual was: how does the
+multiplicative trace at the categorical (fibre) level become the additive energy the partition needs?
+
+🛑 WHICH multiplicative structure — an earlier version of this docstring conflated two (bean
+`qou-bsfg`). For the normalised Jones polynomial the CONNECTED SUM is exactly multiplicative,
+`J(K₁ # K₂) = J(K₁)·J(K₂)`, while the DISJOINT UNION carries the loop value,
+`J(K₁ ⊔ K₂) = δ·J(K₁)·J(K₂)`, `δ = [2]_q`. The proved matrix statement
+(`QOU.MathlibExt.MarkovTraceMultiplicative`, Kronecker product) models the DISJOINT UNION. So the
+`log`-additivity below is exact for a connected sum and holds only up to `log δ` per juxtaposition
+otherwise — quantified in `QOU.Mass.ClosureNormalisationDefect`. The lemma name
+`freeEnergy_connectedSum` is accurate for the connected-sum reading and is retained (a sibling file
+depends on it); what was wrong was inferring it from the Kronecker result.
 
 The bridge is the **archimedean functor τ = logarithm** (the free energy of a partition-function-like
 amplitude). This file proves that multiplicativity of the categorical amplitude *forces* additivity of

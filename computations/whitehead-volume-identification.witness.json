@@ -1,22 +1,495 @@
 {
-  "description": "Whitehead link (L5a1) braid word identified formula-free by the Kashaev/colored-Jones volume test: Vol -> 4G (regular ideal octahedron). Reconstruction of a lost stalled session.",
-  "computation": "whitehead_volume_search",
-  "audit_only": true,
-  "method": "normalized colored Jones raw/[N] via validated U_q(sl2) R-matrix machinery; (2pi/N)log|norm| at q=e^{i pi(1-1e-6)/N} -> Vol, Richardson in (logN)/N",
-  "whitehead_braid_word": "sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1} sigma_1 = [1,-2,1,-2,1] in B_3",
-  "vol_target_4G": "3.663862376708876060218414",
-  "volume_estimates": {
-    "N6": "6.171",
-    "N8": "5.812(raw); 3.399(rich)",
-    "N10": "5.568(raw); 3.681(rich)",
-    "N12": "5.385(raw); 3.744(rich)"
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T15:06:26.026631+00:00",
+  "commitSha": "78ffb9359d28d494459514bea7ad618d88047278",
+  "assertions": [
+    {
+      "name": "at_least_one_word_identifies_as_4G",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "torus_control_reads_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 91576,
+  "computation": "whitehead-volume-identification",
+  "scriptFile": "whitehead_volume_search.py",
+  "scriptHash": "65c1ae9e0095",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  "controls": {
-    "[1,1,2,2,-1]": "Vol~0 (L4a1 torus link, non-hyperbolic)",
-    "[1,1,-2,-1,-2]": "divergent (float noise / wrong closure)"
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
-  "validation": "machinery V1 (sl2 relations+braid relation) + V2 (figure-eight raw/[N]=Habiro-Le J at q^2, err<1e-29)",
-  "verdict": "IDENTIFIED: volume converges toward 4G, well-separated from torus(0) and Borromean(7.33)",
-  "reconstruction_of": "lost uncommitted session, branch claude/whitehead-habiro-kashaev-lupmgo",
-  "timestamp": "2026-07-25T18:38:39+00:00"
+  "invocation": {
+    "argv": [
+      "computations/whitehead_volume_search.py"
+    ],
+    "reproduce": "python3 -u computations/whitehead_volume_search.py"
+  },
+  "description": "Whitehead link (L5a1) braid word identified FORMULA-FREE by the Kashaev/colored-Jones volume test: Vol -> 4G (regular ideal octahedron). No colored-Jones form is assumed; the volume is read off the near-root growth rate. Discriminants: torus/split Vol 0, Whitehead 4G = 3.66386, Borromean 2Vol(oct) = 7.32772. PRODUCER ADDED 2026-08-30 (bean qou-nro6): this script computed these numbers and only PRINTED them, so the committed witness was a hand-transcription with no provenance -- the qou-bake pattern. It now emits. Verified before wiring: the Richardson values for the recorded word [1,-2,1,-2,1] reproduce the committed witness exactly where they overlap (N8 -> 3.399, N10 -> 3.681).",
+  "data": {
+    "method": "normalized colored Jones raw/[N] via validated U_q(sl2) R-matrix machinery; (2pi/N)log|norm| at q = e^{i pi (1-1e-6)/N} -> Vol, Richardson in (log N)/N",
+    "vol_target_4G": "3.663862376708876045228180",
+    "curated_candidates": [
+      {
+        "word": [
+          1,
+          1,
+          2,
+          -1,
+          2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "3.810779",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "2.602197",
+            "richardson": "-4.925173"
+          },
+          {
+            "N": 8,
+            "raw": "2.239765",
+            "richardson": "-0.194747"
+          },
+          {
+            "N": 10,
+            "raw": "2.298661",
+            "richardson": "2.755703"
+          }
+        ],
+        "vol": "2.755703",
+        "kind": null
+      },
+      {
+        "word": [
+          1,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "6.708018",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "6.170854",
+            "richardson": "2.825253"
+          },
+          {
+            "N": 8,
+            "raw": "5.811685",
+            "richardson": "3.399088"
+          },
+          {
+            "N": 10,
+            "raw": "5.568483",
+            "richardson": "3.681184"
+          }
+        ],
+        "vol": "3.681184",
+        "kind": "whitehead-4G"
+      },
+      {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "6.708018",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "6.170854",
+            "richardson": "2.825253"
+          },
+          {
+            "N": 8,
+            "raw": "5.811685",
+            "richardson": "3.399088"
+          },
+          {
+            "N": 10,
+            "raw": "5.568477",
+            "richardson": "3.681130"
+          }
+        ],
+        "vol": "3.681130",
+        "kind": "whitehead-4G"
+      },
+      {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          -2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "6.708018",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "6.170854",
+            "richardson": "2.825251"
+          },
+          {
+            "N": 8,
+            "raw": "5.811678",
+            "richardson": "3.399032"
+          },
+          {
+            "N": 10,
+            "raw": "5.568553",
+            "richardson": "3.681857"
+          }
+        ],
+        "vol": "3.681857",
+        "kind": "whitehead-4G"
+      },
+      {
+        "word": [
+          1,
+          1,
+          2,
+          2,
+          -1
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "2.177586",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "1.876326",
+            "richardson": "-0.000000"
+          },
+          {
+            "N": 8,
+            "raw": "1.633191",
+            "richardson": "0.000011"
+          },
+          {
+            "N": 10,
+            "raw": "1.446776",
+            "richardson": "0.000160"
+          }
+        ],
+        "vol": "0.000160",
+        "kind": "torus-split-vol0"
+      },
+      {
+        "word": [
+          1,
+          2,
+          -1,
+          2,
+          2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "2.177586",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "1.876326",
+            "richardson": "-0.000000"
+          },
+          {
+            "N": 8,
+            "raw": "1.633189",
+            "richardson": "-0.000002"
+          },
+          {
+            "N": 10,
+            "raw": "1.446742",
+            "richardson": "-0.000132"
+          }
+        ],
+        "vol": "-0.000132",
+        "kind": "torus-split-vol0"
+      },
+      {
+        "word": [
+          1,
+          1,
+          -2,
+          -1,
+          -2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "-19.357461",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "-12.572115",
+            "richardson": "29.688803"
+          },
+          {
+            "N": 8,
+            "raw": "-8.733125",
+            "richardson": "17.054022"
+          },
+          {
+            "N": 10,
+            "raw": "-4.856046",
+            "richardson": "25.230905"
+          }
+        ],
+        "vol": "25.230905",
+        "kind": null
+      },
+      {
+        "word": [
+          -1,
+          -1,
+          2,
+          1,
+          2
+        ],
+        "components": 2,
+        "ladder": [
+          {
+            "N": 4,
+            "raw": "-19.356627",
+            "richardson": null
+          },
+          {
+            "N": 6,
+            "raw": "-12.534230",
+            "richardson": "29.957455"
+          },
+          {
+            "N": 8,
+            "raw": "-8.609511",
+            "richardson": "17.753488"
+          },
+          {
+            "N": 10,
+            "raw": "-5.897385",
+            "richardson": "15.149289"
+          }
+        ],
+        "vol": "15.149289",
+        "kind": null
+      }
+    ],
+    "bounded_search": {
+      "space": "2-component 3-braid words of length 5, no adjacent cancellation",
+      "searched": 324,
+      "within_0.3_of_4G": 20,
+      "top": [
+        {
+          "word": [
+            1,
+            -2,
+            1,
+            -2,
+            1
+          ],
+          "vol": "3.399088"
+        },
+        {
+          "word": [
+            1,
+            1,
+            -2,
+            1,
+            -2
+          ],
+          "vol": "3.399088"
+        },
+        {
+          "word": [
+            1,
+            -2,
+            1,
+            1,
+            -2
+          ],
+          "vol": "3.399087"
+        },
+        {
+          "word": [
+            -2,
+            1,
+            -2,
+            1,
+            1
+          ],
+          "vol": "3.399087"
+        },
+        {
+          "word": [
+            -2,
+            1,
+            1,
+            -2,
+            1
+          ],
+          "vol": "3.399086"
+        },
+        {
+          "word": [
+            -1,
+            2,
+            2,
+            -1,
+            2
+          ],
+          "vol": "3.399083"
+        },
+        {
+          "word": [
+            -1,
+            2,
+            -1,
+            2,
+            2
+          ],
+          "vol": "3.399082"
+        },
+        {
+          "word": [
+            2,
+            -1,
+            2,
+            2,
+            -1
+          ],
+          "vol": "3.399081"
+        },
+        {
+          "word": [
+            2,
+            2,
+            -1,
+            2,
+            -1
+          ],
+          "vol": "3.399081"
+        },
+        {
+          "word": [
+            2,
+            -1,
+            2,
+            -1,
+            2
+          ],
+          "vol": "3.399080"
+        },
+        {
+          "word": [
+            -1,
+            -1,
+            2,
+            -1,
+            2
+          ],
+          "vol": "3.399078"
+        },
+        {
+          "word": [
+            2,
+            -1,
+            -1,
+            2,
+            -1
+          ],
+          "vol": "3.399078"
+        },
+        {
+          "word": [
+            2,
+            -1,
+            2,
+            -1,
+            -1
+          ],
+          "vol": "3.399075"
+        },
+        {
+          "word": [
+            -1,
+            2,
+            -1,
+            -1,
+            2
+          ],
+          "vol": "3.399074"
+        },
+        {
+          "word": [
+            -1,
+            2,
+            -1,
+            2,
+            -1
+          ],
+          "vol": "3.399073"
+        }
+      ]
+    },
+    "ladder_scope": {
+      "N_computed": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "N12_in_committed_witness": "5.385(raw); 3.744(rich)",
+      "note": "the committed witness also recorded N12; this ladder stops at N10. The absence is recorded rather than the old value copied forward -- copying it would be the transcription this change exists to end."
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "a hyperbolic-volume identification by colored-Jones growth; it never reads the substrate q0."
 }

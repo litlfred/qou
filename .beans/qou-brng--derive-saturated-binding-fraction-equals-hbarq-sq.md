@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T10:51:23Z
+updated_at: 2026-08-30T15:52:00Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -211,3 +211,18 @@ crossing counts. This narrows the arc; it does not open anything.
 
 Probe: computations/probes/assembly_shortfall_shape_probe.py (8/8, no float64, mpmath 65 dps,
 AME read as exact decimal text).
+
+
+---
+**🛑 CORRECTION 2026-08-30 (bean `qou-bsfg`) — the R2-lift entry above overstates.**
+That entry says "Markov/Jones trace multiplicative under connected sum ⇒ free energy additive ⇒ the
+additivity SelfMutualPartition assumed is DERIVED; binding = −log I, =0 ⟺ independence". Two fixes:
+(a) the proved matrix theorem (Kronecker) models the DISJOINT UNION, which carries the loop value
+`δ = [2]_q` — `J(K₁⊔K₂) = δ·J·J` — not the connected sum, for which `J(K₁#K₂) = J·J` is exact; the
+connected-sum reading was not licensed by what was proved. (b) consequently "=0 ⟺ independence" is
+wrong as physics: an independent assembly has `I = δ`, so it carries `log δ ≈ 0.699` per
+juxtaposition (≈2.10 for ⁴He), and additivity holds only up to that factor
+(`QOU.Mass.ClosureNormalisationDefect.freeEnergy_closureNorm_additive_iff`: additivity iff δ=1,
+excluded for q>1). The R2 lift therefore stands as "log turns a multiplicative amplitude into an
+additive free energy" — which is `Real.log_mul` — but NOT as a discharge of the multiplicativity
+input; see the retraction on `qou-301d`.
