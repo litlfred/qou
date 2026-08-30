@@ -29,7 +29,7 @@ See `GroundRingAnnotations.lean`.
 namespace QOU.Archimedean
 
 /-- The quantum Planck constant ℏ_q = (q - 1)/q. -/
-noncomputable def hbar_q (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The quantum dilogarithm volume of a nuclear link:
     Φ_q(N(Z,N)) = Σᵢ log|V̂ᵢ| = log Π|V̂ᵢ|.
@@ -41,7 +41,7 @@ noncomputable def quantumDilogarithmVolume (markovFactors : List ℝ) : ℝ :=
 
 /-- The nuclear binding energy from the quantum dilogarithm volume. -/
 noncomputable def bindingEnergy (q : ℝ) (markovFactors : List ℝ) : ℝ :=
-  quantumDilogarithmVolume markovFactors / (hbar_q q) ^ 2
+  quantumDilogarithmVolume markovFactors / (hbarQ q) ^ 2
 
 /-- **Quantum dilogarithm volume** (Proposition):
 
@@ -66,7 +66,7 @@ noncomputable def bindingEnergy (q : ℝ) (markovFactors : List ℝ) : ℝ :=
 theorem quantum_dilogarithm_volume
     (q : ℝ) (markovFactors : List ℝ)
     : bindingEnergy q markovFactors =
-      quantumDilogarithmVolume markovFactors / (hbar_q q) ^ 2 := by
+      quantumDilogarithmVolume markovFactors / (hbarQ q) ^ 2 := by
   unfold bindingEnergy
   rfl
 
@@ -79,7 +79,7 @@ theorem beta_decay_qvalue
     (parentFactors daughterFactors : List ℝ)
     : bindingEnergy q parentFactors - bindingEnergy q daughterFactors =
       (quantumDilogarithmVolume parentFactors -
-       quantumDilogarithmVolume daughterFactors) / (hbar_q q) ^ 2 := by
+       quantumDilogarithmVolume daughterFactors) / (hbarQ q) ^ 2 := by
   unfold bindingEnergy
   -- Ref: [manuscript] §5/quantum-dilogarithm-volume
   -- a/c - b/c = (a - b)/c
@@ -88,8 +88,8 @@ theorem beta_decay_qvalue
 /-- At q = 1 (classical limit), ℏ_q = 0, reflecting that the
     classical regime has no binding energy (degenerate configurations). -/
 -- Ref: [manuscript] §5/quantum-dilogarithm-volume
-theorem classical_limit_no_binding : hbar_q 1 = 0 := by
-  unfold hbar_q
+theorem classical_limit_no_binding : hbarQ 1 = 0 := by
+  unfold hbarQ
   norm_num
 
 end QOU.Archimedean

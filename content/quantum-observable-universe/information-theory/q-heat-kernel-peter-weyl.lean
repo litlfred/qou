@@ -39,7 +39,7 @@ def jacksonInt (q : ℝ) (k : ℤ) : ℝ :=
 
 /-- Quantum Planck constant ℏ_q = (q - 1)/q. -/
 -- Ref: [manuscript] §9
-def hbar_q (q : ℝ) : ℝ := (q - 1) / q
+def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- Classical content-sum for a partition: Σ c(c+1). -/
 -- Ref: [manuscript] §9
@@ -60,14 +60,14 @@ def contentSumQCasimir (q : ℝ) (lam : YoungDiagram) : ℝ :=
     on the spatial mode, not on the partition λ. -/
 -- Ref: [manuscript] §9
 def muLambda (q : ℝ) (lam : YoungDiagram) : ℝ :=
-  (hbar_q q)^2 * contentSumQCasimir q lam
+  (hbarQ q)^2 * contentSumQCasimir q lam
 
 /-- **At q = 1** (classical limit): μ_λ reduces to the classical
     content sum (the spin term vanishes because ℏ_q = 0). -/
 -- Ref: [manuscript] §9
 theorem muLambda_classical (lam : YoungDiagram) :
     muLambda 1 lam = 0 := by
-  unfold muLambda hbar_q
+  unfold muLambda hbarQ
   simp
 
 /-- The single-cell Young diagram λ = (1), i.e. cells `{(0,0)}`. The
@@ -135,7 +135,7 @@ theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
 theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram)
     (hq : q ≠ 1) (hq0 : q ≠ 0) :
     muLambda q lam =
-    (hbar_q q) ^ 2 * ∑ cell ∈ lam.cells,
+    (hbarQ q) ^ 2 * ∑ cell ∈ lam.cells,
       (q * jacksonInt q (cell.2 - cell.1) ^ 2 + jacksonInt q (cell.2 - cell.1)) := by
   unfold muLambda contentSumQCasimir
   congr 1

@@ -51,7 +51,7 @@ namespace MuOverDetermination
 noncomputable section
 
 /-- The q-deformed Planck constant ℏ_q := 1 - 1/q. -/
-def hbarQ (q : ℝ) : ℝ := 1 - 1 / q
+def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- ℏ_q² for convenience. -/
 def hbarQSq (q : ℝ) : ℝ := (hbarQ q) ^ 2
@@ -71,6 +71,8 @@ theorem hbarQ_pos (q : ℝ) (hq : 1 < q) : 0 < hbarQ q := by
   have h_inv : 1 / q < 1 := by
     rw [div_lt_one hq_pos]
     exact hq
+  -- `hbarQ` is `1 - q⁻¹`; `one_div` bridges the two spellings for linarith.
+  rw [one_div] at h_inv
   linarith
 
 /-- `ℏ_q² > 0` for `q > 1`. -/
@@ -90,6 +92,8 @@ theorem hbarQ_strictMono (q₁ q₂ : ℝ) (hq₁ : 1 < q₁) (hq : q₁ < q₂)
   -- 1/q₂ < 1/q₁ since q₁ < q₂ and both positive
   have h_inv_lt : 1 / q₂ < 1 / q₁ := by
     apply one_div_lt_one_div_of_lt hq₁_pos hq
+  -- `hbarQ` is `1 - q⁻¹`; `one_div` bridges the two spellings for linarith.
+  rw [one_div, one_div] at h_inv_lt
   linarith
 
 /-- **Strict monotonicity of `muRatio` on q > 1** (for positive vol_4_1).
