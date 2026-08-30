@@ -138,6 +138,59 @@ theorem T_braid (i j : B) :
   have h := RingQuot.mkAlgHom_rel R (Rel.braid (R := R) (q := q) (M := M) i j)
   rwa [map_altProd, map_altProd] at h
 
+/-! ### The generators are invertible
+
+This is what makes the Hecke algebra a quotient of the **braid group** algebra rather
+than merely of the free algebra, which is how AGENTS.md §7a frames it: `σ_i` is a
+positive crossing and `σ_i⁻¹` a negative one, and the skein relation comes from
+multiplying the quadratic relation through by `σ_i⁻¹`. That step needs the inverse to
+exist, and nothing above supplied it. -/
+
+/-- The quadratic relation, rearranged: `T_i (T_i − (q−1)) = q`.
+
+This is the whole content of invertibility — over any ring in which `q` is a unit it
+exhibits `q⁻¹(T_i − (q−1))` as an inverse. The only step beyond expanding is that
+`algebraMap` is central. -/
+theorem T_mul_sub (i : B) :
+    T R q M i * (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1))
+      = algebraMap R (HeckeAlgebra R q M) q := by
+  have h := T_quadratic (R := R) (q := q) (M := M) i
+  have hc := Algebra.commutes (A := HeckeAlgebra R q M) q (T R q M i)
+  have key : (T R q M i - algebraMap R (HeckeAlgebra R q M) q) * (T R q M i + 1)
+      = T R q M i * (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1))
+        - algebraMap R (HeckeAlgebra R q M) q := by
+    simp only [map_sub, map_one, sub_mul, mul_add, mul_sub, mul_one]
+    rw [hc]
+    abel
+  rw [key] at h
+  exact sub_eq_zero.mp h
+
+/-- The same product in the other order. -/
+theorem sub_mul_T (i : B) :
+    (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1)) * T R q M i
+      = algebraMap R (HeckeAlgebra R q M) q := by
+  have h := T_mul_sub (R := R) (q := q) (M := M) i
+  have hc := Algebra.commutes (A := HeckeAlgebra R q M) q (T R q M i)
+  have key : (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1)) * T R q M i
+      = T R q M i * (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1)) := by
+    simp only [map_sub, map_one, sub_mul, mul_sub, one_mul, mul_one]
+    rw [hc]
+  rw [key]
+  exact h
+
+/-- **Each generator is a unit**, whenever the parameter is.
+
+So the presentation really does factor through the braid group: every `T_i` has a
+two-sided inverse, and `σ_i⁻¹` in the skein dictionary denotes an actual element. -/
+theorem isUnit_T (hq : IsUnit q) (i : B) : IsUnit (T R q M i) := by
+  obtain ⟨u, hu⟩ := hq
+  have hinv : (↑u⁻¹ : R) * q = 1 := by rw [← hu, Units.inv_mul]
+  refine ⟨⟨T R q M i,
+      algebraMap R (HeckeAlgebra R q M) (↑u⁻¹ : R)
+        * (T R q M i - algebraMap R (HeckeAlgebra R q M) (q - 1)), ?_, ?_⟩, rfl⟩
+  · rw [← mul_assoc, ← Algebra.commutes, mul_assoc, T_mul_sub, ← map_mul, hinv, map_one]
+  · rw [mul_assoc, sub_mul_T, ← map_mul, hinv, map_one]
+
 /-! ## Universal property -/
 
 variable (R q M)
