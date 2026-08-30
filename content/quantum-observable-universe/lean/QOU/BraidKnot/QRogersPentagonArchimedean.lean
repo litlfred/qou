@@ -216,15 +216,6 @@ instance : RogersCorrectionLeadingOrderH4 where
   leading_h_order := 4
   leading_h_order_eq_four := rfl
 
-/-- The Rogers correction's first non-trivial contribution to the
-    h-expansion is at h⁴ order. This is a conditional-class
-    statement; the substantive theorem (Pentagon → -3/4
-    coefficient) requires the explicit Borromean braid lifting in
-    the q-shuffle Hopf algebra, which is structurally open. -/
-theorem rogers_correction_leading_h_order [c : RogersCorrectionLeadingOrderH4] :
-    c.leading_h_order = 4 :=
-  c.leading_h_order_eq_four
-
 /-- The product u·v factors through the pentagon: if u, v < 1 then
     α(u, v) and β(u, v) are also < 1 in absolute value (provided
     the denominator 1 - uv is non-zero).  Stated as a positivity
@@ -237,5 +228,19 @@ theorem rogersAlpha_bounded_under_convergence
   rw [div_le_iff₀ hden]
   -- u·(1−v) ≤ u·(1−u·v)  ⇔  u·v·(1−u) ≥ 0
   nlinarith [mul_nonneg (mul_nonneg hu hv) (by linarith : (0:ℝ) ≤ 1 - u)]
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `rogers_correction_leading_h_order` — body was `c.leading_h_order_eq_four`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot
