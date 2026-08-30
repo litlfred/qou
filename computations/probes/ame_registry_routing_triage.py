@@ -463,6 +463,7 @@ def main() -> int:
     unsafe: dict[str, set] = {}
     fixture: dict[str, set] = {}
     roles: dict[str, str] = {}
+    site_roles: dict[str, str] = {}
     for p in files:
         fn = p.name
         txt = p.read_text(encoding="utf-8")
@@ -482,6 +483,13 @@ def main() -> int:
                         break
         if fn in unsafe and fn not in roles:
             roles[fn] = _role_for(txt, {l for l, _n, _r in unsafe[fn]})
+            # PER-SITE roles as well. A file-level role cannot say WHICH literal
+            # earns it, and acting on the file-level answer is how a 4He literal
+            # feeding `B_pred` in low_isotope_binding_sweep got routed while two
+            # files whose INPUT role came from entirely different literals were
+            # held back. Route decisions are per site, so the role must be too.
+            for _l, _n, _r in unsafe[fn]:
+                site_roles[f"{fn}:{_l}"] = _role_for(txt, {_l})
 
     n_safe_routes = sum(len(v) for v in safe.values())
     n_unsafe = sum(len(v) for v in unsafe.values())
@@ -528,6 +536,12 @@ def main() -> int:
             "value-reconciliation decisions that must precede any route."
         ),
         "registry_value_strings": REG,
+        # The INPUT role is the one classification that must NEVER be acted against:
+        # it marks a name reaching a scale/calibration or predicted quantity, where
+        # routing a _VALIDATION constant violates the 3-cal rule. It was printed but
+        # not witnessed, so a consumer reading the roadmap could not see it.
+        "roles": dict(sorted(roles.items())),
+        "site_roles": dict(sorted(site_roles.items())),
         "rounding_sites": sorted(f"{f}:{l}" for f, l in _rnd),
         "divergent_sites": sorted(f"{f}:{l}" for f, l in _div),
         "fixture_sites": {k: sorted(v) for k, v in fixture.items()},

@@ -1,7 +1,7 @@
 {
   "name": "low-isotope-binding-sweep",
   "description": "Low-isotope (Z = 1..10) binding-energy sweep using the mass-volume factorization framework (Ch 11 \u00a78).  Three strategies applied in order: (A) census-knot match for A \u2264 3, (B) \u03b1-cluster unfolding for Z = N, A = 4n, (C) partial-shell linear interpolation for odd-A and non-N=Z atoms.  Zero free parameters per strategy.",
-  "timestamp": "2026-08-30T09:07:34.365493+00:00",
+  "timestamp": "2026-08-30T09:22:43.844053+00:00",
   "framework_refs": [
     "conj:mass-volume-factorization",
     "conj:crossing-graded-mass-expansion",
@@ -18,7 +18,7 @@
     "VOL_6_2": 4.400832516123046,
     "VOL_8_11": 8.286316817806593,
     "VOL_7_2_1": 4.749499981874439,
-    "B_4HE_MEV": 28.2956624,
+    "B_4HE_MEV": 28.29566,
     "c_alpha_alpha_MEV": 2.4269895070400125
   },
   "rows": [
@@ -49,10 +49,10 @@
       "Z": 1,
       "N": 2,
       "A": 3,
-      "B_AME_MeV": 8.4817962,
+      "B_AME_MeV": 8.4818,
       "B_pred_MeV": 8.468598397968139,
-      "residual_MeV": -0.013197802031861272,
-      "error_pct": -0.15560149902990209,
+      "residual_MeV": -0.01320160203186127,
+      "error_pct": -0.15564623112854903,
       "strategy": "census:8_11,\u03c1=2m_e"
     },
     {
@@ -71,8 +71,8 @@
       "Z": 2,
       "N": 2,
       "A": 4,
-      "B_AME_MeV": 28.2956624,
-      "B_pred_MeV": 28.2956624,
+      "B_AME_MeV": 28.29566,
+      "B_pred_MeV": 28.29566,
       "residual_MeV": 0.0,
       "error_pct": 0.0,
       "strategy": "\u03b1-cluster:n_\u03b1=1,pairs=0"
@@ -83,9 +83,9 @@
       "N": 3,
       "A": 6,
       "B_AME_MeV": 31.9941,
-      "B_pred_MeV": 43.656988353520006,
-      "residual_MeV": 11.662888353520007,
-      "error_pct": 36.45324717219739,
+      "B_pred_MeV": 43.65698475352001,
+      "residual_MeV": 11.662884753520007,
+      "error_pct": 36.45323592012279,
       "strategy": "partial-shell:f=0.500 from A=4\u21928"
     },
     {
@@ -94,9 +94,9 @@
       "N": 4,
       "A": 7,
       "B_AME_MeV": 39.2446,
-      "B_pred_MeV": 51.33765133028001,
-      "residual_MeV": 12.093051330280012,
-      "error_pct": 30.81456131615563,
+      "B_pred_MeV": 51.33764713028001,
+      "residual_MeV": 12.093047130280013,
+      "error_pct": 30.814550614046297,
       "strategy": "partial-shell:f=0.750 from A=4\u21928"
     },
     {
@@ -105,9 +105,9 @@
       "N": 4,
       "A": 8,
       "B_AME_MeV": 56.4995,
-      "B_pred_MeV": 59.018314307040015,
-      "residual_MeV": 2.5188143070400173,
-      "error_pct": 4.458117871910401,
+      "B_pred_MeV": 59.018309507040016,
+      "residual_MeV": 2.518809507040018,
+      "error_pct": 4.458109376259999,
       "strategy": "\u03b1-cluster:n_\u03b1=2,pairs=1"
     },
     {
@@ -116,9 +116,9 @@
       "N": 5,
       "A": 9,
       "B_AME_MeV": 58.1651,
-      "B_pred_MeV": 67.30572466056003,
-      "residual_MeV": 9.140624660560029,
-      "error_pct": 15.714964232091114,
+      "B_pred_MeV": 67.30571926056002,
+      "residual_MeV": 9.140619260560022,
+      "error_pct": 15.714954948173427,
       "strategy": "partial-shell:f=0.250 from A=8\u219212"
     },
     {
@@ -127,9 +127,9 @@
       "N": 6,
       "A": 10,
       "B_AME_MeV": 64.9775,
-      "B_pred_MeV": 75.59313501408003,
-      "residual_MeV": 10.615635014080027,
-      "error_pct": 16.337401429848832,
+      "B_pred_MeV": 75.59312901408003,
+      "residual_MeV": 10.615629014080028,
+      "error_pct": 16.337392195883233,
       "strategy": "partial-shell:f=0.500 from A=8\u219212"
     },
     {
@@ -138,9 +138,9 @@
       "N": 5,
       "A": 10,
       "B_AME_MeV": 64.7512,
-      "B_pred_MeV": 75.59313501408003,
-      "residual_MeV": 10.841935014080036,
-      "error_pct": 16.74399086670214,
+      "B_pred_MeV": 75.59312901408003,
+      "residual_MeV": 10.841929014080037,
+      "error_pct": 16.743981600464608,
       "strategy": "partial-shell:f=0.500 from A=8\u219212"
     },
     {
@@ -149,9 +149,9 @@
       "N": 6,
       "A": 11,
       "B_AME_MeV": 76.2054,
-      "B_pred_MeV": 83.88054536760004,
-      "residual_MeV": 7.675145367600038,
-      "error_pct": 10.071655509452137,
+      "B_pred_MeV": 83.88053876760004,
+      "residual_MeV": 7.675138767600046,
+      "error_pct": 10.071646848648582,
       "strategy": "partial-shell:f=0.750 from A=8\u219212"
     },
     {
@@ -160,9 +160,9 @@
       "N": 6,
       "A": 12,
       "B_AME_MeV": 92.1617,
-      "B_pred_MeV": 92.16795572112005,
-      "residual_MeV": 0.0062557211200555685,
-      "error_pct": 0.006787766631969211,
+      "B_pred_MeV": 92.16794852112005,
+      "residual_MeV": 0.006248521120056694,
+      "error_pct": 0.00677995427607856,
       "strategy": "\u03b1-cluster:n_\u03b1=3,pairs=3"
     },
     {
@@ -171,9 +171,9 @@
       "N": 7,
       "A": 13,
       "B_AME_MeV": 97.1081,
-      "B_pred_MeV": 101.06211345140005,
-      "residual_MeV": 3.9540134514000584,
-      "error_pct": 4.071764818176917,
+      "B_pred_MeV": 101.06210565140006,
+      "residual_MeV": 3.9540056514000668,
+      "error_pct": 4.071756785891257,
       "strategy": "partial-shell:f=0.250 from A=12\u219216"
     },
     {
@@ -182,9 +182,9 @@
       "N": 7,
       "A": 14,
       "B_AME_MeV": 104.6589,
-      "B_pred_MeV": 109.95627118168007,
-      "residual_MeV": 5.297371181680063,
-      "error_pct": 5.061558244621397,
+      "B_pred_MeV": 109.95626278168007,
+      "residual_MeV": 5.297362781680064,
+      "error_pct": 5.061550218548126,
       "strategy": "partial-shell:f=0.500 from A=12\u219216"
     },
     {
@@ -193,9 +193,9 @@
       "N": 8,
       "A": 15,
       "B_AME_MeV": 115.4919,
-      "B_pred_MeV": 118.85042891196008,
-      "residual_MeV": 3.3585289119600787,
-      "error_pct": 2.9080211789398898,
+      "B_pred_MeV": 118.85041991196007,
+      "residual_MeV": 3.358519911960073,
+      "error_pct": 2.908013386185588,
       "strategy": "partial-shell:f=0.750 from A=12\u219216"
     },
     {
@@ -204,9 +204,9 @@
       "N": 8,
       "A": 16,
       "B_AME_MeV": 127.6193,
-      "B_pred_MeV": 127.74458664224008,
-      "residual_MeV": 0.12528664224008423,
-      "error_pct": 0.09817217477300395,
+      "B_pred_MeV": 127.74457704224008,
+      "residual_MeV": 0.12527704224008573,
+      "error_pct": 0.09816465239982176,
       "strategy": "\u03b1-cluster:n_\u03b1=4,pairs=6"
     },
     {
@@ -215,9 +215,9 @@
       "N": 9,
       "A": 17,
       "B_AME_MeV": 131.7629,
-      "B_pred_MeV": 137.2454917492801,
-      "residual_MeV": 5.48259174928009,
-      "error_pct": 4.1609525513479815,
+      "B_pred_MeV": 137.2454815492801,
+      "residual_MeV": 5.482581549280098,
+      "error_pct": 4.160944810170464,
       "strategy": "partial-shell:f=0.250 from A=16\u219220"
     },
     {
@@ -226,9 +226,9 @@
       "N": 10,
       "A": 18,
       "B_AME_MeV": 139.8074,
-      "B_pred_MeV": 146.74639685632013,
-      "residual_MeV": 6.938996856320131,
-      "error_pct": 4.96325434585017,
+      "B_pred_MeV": 146.7463860563201,
+      "residual_MeV": 6.93898605632009,
+      "error_pct": 4.963246620937153,
       "strategy": "partial-shell:f=0.500 from A=16\u219220"
     },
     {
@@ -237,9 +237,9 @@
       "N": 10,
       "A": 19,
       "B_AME_MeV": 147.8013,
-      "B_pred_MeV": 156.24730196336014,
-      "residual_MeV": 8.446001963360146,
-      "error_pct": 5.714430091859914,
+      "B_pred_MeV": 156.2472905633601,
+      "residual_MeV": 8.445990563360112,
+      "error_pct": 5.714422378801887,
       "strategy": "partial-shell:f=0.750 from A=16\u219220"
     },
     {
@@ -248,9 +248,9 @@
       "N": 10,
       "A": 20,
       "B_AME_MeV": 160.6449,
-      "B_pred_MeV": 165.74820707040016,
-      "residual_MeV": 5.103307070400149,
-      "error_pct": 3.1767625803247714,
+      "B_pred_MeV": 165.74819507040013,
+      "residual_MeV": 5.103295070400122,
+      "error_pct": 3.176755110433087,
       "strategy": "\u03b1-cluster:n_\u03b1=5,pairs=10"
     },
     {
@@ -259,9 +259,9 @@
       "N": 11,
       "A": 21,
       "B_AME_MeV": 167.406,
-      "B_pred_MeV": 175.85585955420015,
-      "residual_MeV": 8.449859554200145,
-      "error_pct": 5.047524912010409,
+      "B_pred_MeV": 175.85584695420016,
+      "residual_MeV": 8.449846954200154,
+      "error_pct": 5.047517385398465,
       "strategy": "partial-shell:f=0.250 from A=20\u219224"
     },
     {
@@ -270,35 +270,35 @@
       "N": 12,
       "A": 22,
       "B_AME_MeV": 177.77,
-      "B_pred_MeV": 185.96351203800018,
-      "residual_MeV": 8.193512038000165,
-      "error_pct": 4.609052167407417,
+      "B_pred_MeV": 185.96349883800016,
+      "residual_MeV": 8.193498838000153,
+      "error_pct": 4.609044742082552,
       "strategy": "partial-shell:f=0.500 from A=20\u219224"
     }
   ],
   "stats_by_strategy": {
     "census": {
       "n": 3,
-      "mean_abs_err_pct": 1.4044721746952213,
+      "mean_abs_err_pct": 1.4044870853947702,
       "max_abs_err_pct": 2.968135269717278
     },
     "\u03b1-cluster": {
       "n": 5,
-      "mean_abs_err_pct": 1.5479680787280292,
-      "max_abs_err_pct": 4.458117871910401
+      "mean_abs_err_pct": 1.5479618186737973,
+      "max_abs_err_pct": 4.458109376259999
     },
     "partial-shell": {
       "n": 14,
-      "mean_abs_err_pct": 11.619455631190098,
-      "max_abs_err_pct": 36.45324717219739
+      "mean_abs_err_pct": 11.619447032525315,
+      "max_abs_err_pct": 36.45323592012279
     }
   },
   "scriptFile": "low_isotope_binding_sweep.py",
-  "scriptHash": "57af728185c8",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "scriptHash": "d7069e72f6b9",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
+  "commitSha": "0345a5efcacbd78f40d15a7c73ea61a4867973cb",
   "engine": "python",
-  "computedAt": "2026-08-30T09:07:34.592746+00:00",
+  "computedAt": "2026-08-30T09:22:43.855655+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
