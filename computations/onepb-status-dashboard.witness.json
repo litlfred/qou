@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T06:26:41.471711+00:00",
-  "commitSha": "b490ead7ca6b30529d3f528ca2e80a884d59ffaf",
+  "computedAt": "2026-08-30T06:47:36.266222+00:00",
+  "commitSha": "28e85a52bc8f02b92eba9d10e3fb084265296309",
   "assertions": [
     {
       "name": "lp_max_duality_gap",
@@ -14,18 +14,18 @@
     },
     {
       "name": "markov_trace_max_rel_delta",
-      "computed": "0.0000000058067802039347020555435114918730891993353592409104",
+      "computed": "1.2081923737401556789822358585641308828579587062926e-49",
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-09",
-      "source": "cross-check-trM-1ppb (Hoefsmit vs markov_peel)"
+      "source": "cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 326,
+  "allPassed": true,
+  "durationMs": 26,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
-  "scriptHash": "3eeb5bd7ad07",
+  "scriptHash": "9d0730d31460",
   "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -365,8 +365,8 @@
         "any_diverge": false,
         "tolerance_relative": 1e-09,
         "tolerance_relative_raw": 1e-09,
-        "max_rel_delta": "0.0000000058067802039347020555435114918730891993353592409104",
-        "max_rel_delta_source_key": "rel_delta_max",
+        "max_rel_delta": "1.2081923737401556789822358585641308828579587062926e-49",
+        "max_rel_delta_source_key": "exact_method_rel_delta",
         "n_atoms_with_rel_delta": 6,
         "all_within_1ppb": true,
         "all_within_1ppQ": true,
