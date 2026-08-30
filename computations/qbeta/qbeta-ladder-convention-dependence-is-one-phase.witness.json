@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T06:16:13.434889+00:00",
-  "commitSha": "d818814fa18f9290c146de0e49e21efb2a146078",
+  "computedAt": "2026-08-30T06:36:15.262833+00:00",
+  "commitSha": "31f7400b35f742f45a681175bbfb584fd8e51c01",
   "assertions": [
     {
       "name": "b_is_the_hoefsmit_constant_sqrt3_over_2",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 429,
+  "durationMs": 406,
   "computation": "qbeta-ladder-convention-dependence-is-one-phase",
   "scriptFile": "qbeta_ladder_convention_dependence_is_one_phase_probe.py",
   "scriptHash": "1e18bdc3ddbc",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "5622c946e47d95f54d2431df0ce526af671e4a39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,5 +88,7 @@
     "y_2_1_at_zD": "q**2/(q**2 + 1)**2",
     "y_3_at_zD": "(q**4 + 1)/(q**2 + 1)**2",
     "y_1_1_1_at_zD": "0"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
