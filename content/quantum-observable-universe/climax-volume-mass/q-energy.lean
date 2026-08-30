@@ -25,9 +25,9 @@ real-exponent bracket `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)`, where `q ^ n` at 
 statement. Both sit below the substrate→archimedean wall and say `ℝ`.
 
 This file previously opened with `abbrev R_q := ℝ`,
-`def q_param : R_q := 1.1097` and `def hbar_q (q : R_q) : R_q`, all inside
+`def q_param : R_q := 1.1097` and `def hbarQ_q (q : R_q) : R_q`, all inside
 `namespace QOU.Archimedean`, where `R_q` canonically means
-`LaurentPolynomial ℤ`, `q_param` the indeterminate `T 1`, and `hbar_q` the
+`LaurentPolynomial ℤ`, `q_param` the indeterminate `T 1`, and `hbarQ_q` the
 element `1 - q_inv` of that ring (`QOU/Archimedean/GroundRing.lean`,
 `QOU/Archimedean/ParticleKnots.lean`). Three names, each meaning two
 different things depending on which copy a reader or a checker reached. The
@@ -62,10 +62,10 @@ variable {R : Type*} [Field R]
 
 /-- `ℏ_q = 1 - q⁻¹`, the quantum Planck constant, over any field.
 
-Distinct from the library's `QOU.Archimedean.hbar_q`, which is the *element*
+Distinct from the library's `QOU.Archimedean.hbarQ_q`, which is the *element*
 `1 - q_inv` of the Laurent ground ring rather than this function of `q`. -/
 -- Ref: [manuscript] §6/q-energy
-def hbar (q : R) : R := 1 - 1 / q
+def hbarQ (q : R) : R := 1 - q⁻¹
 
 /-- The crossing energy at a single positive crossing. -/
 -- Ref: [manuscript] §6/q-energy
@@ -79,8 +79,8 @@ def crossingEnergyNeg (q : R) : R := 1 / q
 `p_q² ℏ_q / (2 [n]_q)`, and the action `S_q`. -/
 -- Ref: [manuscript] §6/q-energy
 def total (E : QEnergy R) : R :=
-  E.qNumber E.q E.j * E.qNumber E.q (E.j + 1) * hbar E.q
-  + E.p_q ^ 2 * hbar E.q / (2 * E.qNumber E.q E.n_strands)
+  E.qNumber E.q E.j * E.qNumber E.q (E.j + 1) * hbarQ E.q
+  + E.p_q ^ 2 * hbarQ E.q / (2 * E.qNumber E.q E.n_strands)
   + E.S_q
 
 /-- **At rest the q-energy is the action.** With `j = 0` the rotational term
