@@ -104,3 +104,31 @@ disagreement. The manifest is authoritative, so it renders in
       owner
 - [ ] Put `baryon-product-from-alt`'s chapter contradiction to the owner
 - [ ] Leave the report-only six recorded here rather than guessed at
+
+## Correction (2026-08-24, later the same day)
+
+My first pass here reported that "there is **no** `archimedean-universe`
+chapter — no directory, no manifest entry, and this was the only block naming
+one". **That is wrong**, and the shallow clone is why: `git log` over the path
+returned nothing because the history is truncated, and I read absence of
+history as absence of the thing.
+
+The chapter existed. The top manifest still carries the plan —
+
+> Phase 4+5 (TBD) will split braids-and-knots and **archimedean-universe**
+> into focused destination chapters.
+
+— and `e32d978dbf` (2026-05-25) carried it out: **"restructure phase 5: split
+archimedean-universe into brings-surface + predicted-spectra"**. The manifest
+annotates `predicted-spectra` as *"split from archimedean-universe"*.
+
+**The fix is unchanged and was right for a better reason.** The block is
+already in one of the two destinations; the declaration is a pre-split
+leftover, not a pointer at something imaginary. It survived because `chapter:`
+is on no schema — the key is stripped before anything sees it, so no rename
+pass and no validator ever touched it during the restructure.
+
+That also makes the remaining ten `chapter:` declarations worth a second look
+rather than dismissing them as merely redundant: any of them could be
+pre-restructure too, and agreeing with today's manifest is not the same as
+having been maintained.
