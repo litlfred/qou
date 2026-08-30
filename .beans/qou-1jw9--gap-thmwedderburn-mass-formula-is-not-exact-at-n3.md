@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
-title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: todo
+title: 'GAP (closed): thm:wedderburn-mass-formula''s three invariants were carried — Phi_2/Phi_3 now derived, Phi_1 recomputed under convention D, D table adopted'
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T19:04:51Z
+updated_at: 2026-08-30T03:46:06Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -931,3 +931,69 @@ ARC STATUS
 
 NEXT: the owner call above (adopt the D table or keep C-frame with documented
 provenance). No research question is blocking.
+
+
+
+=== THE D TABLE IS ADOPTED (owner, 2026-08-29: "adopt the convention-D table") ===
+
+The entry immediately above says "NOT DONE — OWNER DECISION: replacing the
+published table. This producer stands BESIDE the convention-C one rather than
+overwriting it." THAT IS NOW FALSE and is the reason for this entry: the owner
+took the decision and the swap is done. A reader who stops at the previous
+section will conclude the C table is still published.
+
+WHAT CHANGED, on branch claude/arc-workplan-review-2026-08-29 (PR #6043):
+  - mass-table-z1-20-table-data.ts  -> script/witness rewired to
+    computations/wedderburn_mass_table_convention_d.py and its witness.
+  - mass-table-z1-20-table-data.md  -> REGENERATED from the D witness. It is
+    generated, never transcribed; do not hand-edit a row.
+  - mass-table-z1-20.md             -> two new sections: what convention D
+    costs (with the C->D and base-mass changes SEPARATED, not quoted together)
+    and what is now derived vs carried.
+  - wedderburn_mass_table_convention_d.py -> emits a witness via WitnessBuilder
+    (it previously printed and saved nothing, so the .ts had nothing to cite).
+
+THE ACCURACY LOSS IS PUBLISHED, NOT BURIED. mean |Delta|/m 0.0746 % -> 0.1827 %,
+max 0.1909 % -> 0.3214 %. The block states this as measured and explicitly says
+it is not an improvement.
+
+THE TWO CHANGES WERE SEPARATED, because quoting them together would have
+misattributed the loss:
+    published, conv C, recorded base masses ....... 0.0746 %
+    conv C -> D, base masses held fixed ........... 0.1787 %
+    base masses recorded -> CODATA, D held ........ 0.1827 %
+The convention accounts for nearly all of it. Note the direction of the last
+row: using the CORRECT CODATA base masses makes agreement slightly WORSE, which
+is what you expect if the formula had been absorbing part of the input error.
+I nearly published a wrong D-vs-C attribution by comparing the D producer
+(CODATA base masses) against the C table (recorded ones) in one step.
+
+LEAN. The algebra the two derived invariants rest on is proved, sorry-free,
+axiom-clean, in QOU/BraidKnot/HeckeLinearReduction.lean: detT_zero / detT_full /
+detT_id / detT_half (the |det| = 1 dichotomy that collapses Phi_2 to one term
+per p-n pair), one_add_hSq_div_four, symAltRatio_zero / _full / _half, and
+chiralityCount_collapse. All over a generic CommRing or Field with h free — no
+q, no z, no anchor — which is WHY Phi_2 and Phi_3 are convention-independent.
+A tautology I wrote to dodge CommRing division (detT_half_four_mul: A = B - (A - A'))
+was DELETED, not kept: it is the vacuous pattern AGENTS.md 1a bans.
+
+TITLE. This bean's title asserted "unfalsifiable as written" until now. I
+retracted that claim (see the RETRACTION entries above): "all strands j > i"
+means ALL-PAIRS, and I had tested four variants of one misreading without ever
+testing the plain one. The filename still carries the older "is not exact at
+n=3" phrasing — beans files are named at creation and it cannot be renamed
+without minting a new ID. Read the title, not the filename.
+
+ARC STATUS
+  Phi_2 ..... DERIVED, convention-free, Lean-proved algebra, 19/19
+  Phi_3 ..... DERIVED, convention-free, Lean-proved algebra, 19/19
+  Phi_1 ..... RECOMPUTED under D and PUBLISHED; costs 2.4x accuracy
+  item 1 .... CLOSED. Nothing is carried.
+  item 2 .... CLOSED. The D producer uses CODATA base masses.
+
+WHAT IS ACTUALLY LEFT, and it is not a research question: the owner's judgement
+on whether a 2.4x accuracy loss is acceptable now that it is visible in the
+published block. If the answer is no, the honest move is to document the C-frame
+provenance and revert the adoption — NOT to re-fit Phi_1. Still prohibited,
+unchanged: no seventh Delta_lambda ansatz, no parameter beyond CAL-1/2/3, and
+sign agreement remains one bit.
