@@ -120,6 +120,25 @@ not an unlocalised limit — and blind to whether the bound was **true**. Worth
 the taxonomy row: a docstring/statement mismatch has two independent directions,
 and a detector for either one is silent on the other.
 
+Run both, and do not read a clean pass from either as a clean bill.
+
+**Measured effect of the Tannaka–Krein fix on this detector**, branch vs
+`origin/main`, same tool, same day:
+
+| family | main | branch |
+|---|---|---|
+| `overclaim-structure` | 80 | 78 |
+| `contentless-carrier` | 39 | 39 |
+| `empty-carrier` | 9 | 9 |
+| `overclaim-independent-binders` | 4 | 3 |
+| **`opaque-type-axiom`** | **2** | **0** |
+| total | 134 | 129 |
+
+The `opaque-type-axiom` family is **eliminated**, and the attribution is checked
+rather than assumed: its two hits on `main` are `RepLoc` and `ComodH` in
+`tannaka-krein-isomorphism.lean`, the two axioms that fix removed. The other −3
+is the rest of the branch, not that change; do not credit it there.
+
 A fourth axiom, `qLog_tendsto_log_axiom`, is a *different* and simpler failure:
 false against a definition three lines above it. No instantiation trick was
 needed. That one argues for reading each axiom against its own file before
