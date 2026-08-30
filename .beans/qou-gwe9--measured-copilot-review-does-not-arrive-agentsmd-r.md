@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:54:56Z
+updated_at: 2026-08-30T07:58:22Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -180,3 +180,39 @@ and prepare-merge-auto Phase 1b from "does not arrive" to "arrives in ~3-4
 min; wait for it". Left out of the audit deliberately — it belongs with a
 revisit of the 15-minute poll duration, and this file is the measurement that
 justifies it.
+
+
+
+## 🛑 QUOTA — the mechanism, found the hard way (2026-08-30 07:56Z)
+
+Third request on #6122 returned, from the same bot:
+
+> *"Copilot was unable to review this pull request because the user who
+> requested the review has reached their **quota limit**."*
+
+**Copilot review is RATIONED, not binary available/unavailable.** Five requests
+across two repos in ~30 min — three of them fired while chasing this very
+measurement — exhausted it. That is my own error and nothing in the repo's docs
+warns of it.
+
+**Candidate, NOT established, explanation for the historical zeros.** Signature
+mismatch: today's exhaustion ANNOUNCES ITSELF as a posted review, whereas this
+bean recorded `get_check_runs total_count: 0` with nothing enqueued and no
+message at all. Either the older exhaustion was silent and the message is new,
+or they are different failure modes. Cannot tell from here, and it matters:
+"over quota all along" and "off, then back" imply different operating rules.
+
+**Actionable now:** request Copilot ONCE per PR, when the branch is actually
+ready, and wait ~3-4 min. Not after every push.
+
+## Footnote: 5 of 6 findings real, 1 false — and the false one mattered
+
+Copilot's second #6122 review claimed the refutation proofs "leave goals
+unsolved" because `norm_num at h` does not close `False`. **It does**, when
+`h` reduces to `False`. Verified: lean-direct exit 0, 0 errors, 0 sorry, and
+`#print axioms` on both named proofs shows only propext / Classical.choice /
+Quot.sound — no sorryAx.
+
+The correct handling was NOT to apply the suggested fix. Rewriting two working
+proofs to satisfy a speculative comment is the same failure as widening a
+baseline to make a gate green.
