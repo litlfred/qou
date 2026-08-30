@@ -868,15 +868,18 @@ class A4BettiTraceFactorization where
   trace_factorization_closure :
     target_binding_gap = raw_structural_scale * betti_sum
 
-/-- **Main statement: A=4 Magnitude Factorization.**
-    
-    Under the conjectural `A4BettiTraceFactorization`, the Option E mass 
-    closure is achieved by restricting the representation weight to the 
-    canonical left cell $C_\\lambda$ (generated via inverse RSK), separating 
-    the topology (raw trace) from the geometric dimension (Betti sum). -/
-theorem a4_betti_magnitude_closure [fac : A4BettiTraceFactorization] :
-    fac.target_binding_gap = fac.raw_structural_scale * fac.betti_sum :=
-  fac.trace_factorization_closure
 
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `a4_betti_magnitude_closure` — body was `fac.trace_factorization_closure`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidsAndKnots

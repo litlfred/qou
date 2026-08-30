@@ -158,11 +158,18 @@ structure VolThroughTau (C : Type*) [Category C] (Arch : ArchimedeanCategory) wh
   /-- Factorization equation: `knotVol = τ_arch(algVol)`. -/
   factors : knotVol = τ.archRestriction algVol
 
-/-- The factorization is by definition: extracting the `factors`
-    field of a `VolThroughTau` immediately yields the equation. -/
-theorem factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
-    (v : VolThroughTau C Arch) :
-    v.knotVol = v.τ.archRestriction v.algVol :=
-  v.factors
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `factors_def` — body was `v.factors`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidsKnots

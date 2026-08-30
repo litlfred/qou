@@ -1,11 +1,26 @@
 /-
-  LP-dual stability of the q-Toffoli braid.
+  The golden-ratio threshold and the convention-C Toffoli diagonal.
 
-  The q-Toffoli diagonal numerator is P₇₇(q) = q + q^(1/2) - 1
-  (up to a positive denominator (q+1)). Its real zero in (0, ∞)
-  is q⋆ = 1/φ² = (3 - √5)/2 (golden-ratio threshold).
+  SCOPE CORRECTED 2026-08-30 (bean qou-3j5m).  This file used to be
+  titled "LP-dual stability of the q-Toffoli braid" and to state that
+  the q-Toffoli diagonal numerator is P₇₇(q) = q + q^(1/2) - 1, whose
+  zero q⋆ = 1/φ² = (3 - √5)/2 is the stability threshold.  That
+  numerator belongs to the EXCISED convention C (z_C = √q/(q+1)).
+  Under the canonical convention D (z_D = q³/(q²+1)) the diagonal is
 
-  The stability iff:   q > q⋆   ↔   q + √q - 1 > 0.
+      P₇₇(q) = q³(q⁴+1)/(q²+1)²,
+
+  strictly positive on q > 0 with NO positive zero — so the golden
+  threshold is a property of the excised frame, not of the gate, and
+  LP-stability is not equivalent to the positivity below.  See
+  content/quantum-observable-universe/information-theory/
+  toffoli-lp-stability.md items 1-2 and the derivation probe
+  computations/probes/toffoli_trio_rederivation.py.
+
+  What survives, and is what this file actually proves, is the real
+  analysis:      q > q⋆   ↔   q + √q - 1 > 0.
+  It is a true and self-contained fact about f(q) = q + √q - 1; only
+  the identification of f with a live Toffoli amplitude is withdrawn.
 
   Proof structure:
     1. Golden-ratio identity: (√5 - 1)/2 squared equals q⋆, so
@@ -17,11 +32,13 @@
     4. For q ≤ 0, Real.sqrt returns 0, so f(q) = q - 1 ≤ -1 < 0,
        and q⋆ > 0 > q, so both sides false.
 
-**Ground ring**: R_q = ℤ[q, q⁻¹]. The diagonal numerator is a
-stub at this level; the true expression involves q^(1/2) which
-lives in the extension R_q[q^(1/2)].
+**Ground ring**: R_q = ℤ[q, q⁻¹]. Under convention D the diagonal
+numerator is q³(q⁴+1) = q⁷ + q³, an honest element of R_q — no
+q^(1/2) and hence no extension is needed. The convention-C numerator
+q + q^(1/2) - 1 was what required R_q[q^(1/2)].
 -/
 import QOU.QuantumObservableUniverse
+import QOU.GroundRingCore
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Sqrt
@@ -30,12 +47,14 @@ namespace QOU.Information
 
 noncomputable section
 
-/-- Stub for the Toffoli diagonal numerator in the base ring `R_q`.
-    The true numerator is `(q + q^(1/2) - 1)`, but the term `q^(1/2)`
-    lives in the extension `R_q[q^(1/2)]`, which is not yet implemented
-    here. Accordingly, this placeholder is `q - 1` and does **not**
-    coincide with the true numerator. -/
-def toffoli_diag_numerator : R_q := q_param - 1
+/-- The Toffoli diagonal numerator in the base ring `R_q`, under the
+    canonical convention D: `P₇₇(q) = q³(q⁴+1)/(q²+1)²` has numerator
+    `q³(q⁴+1) = q⁷ + q³`.  This is exact, not a stub — the convention-D
+    diagonal is a Laurent polynomial over a positive denominator, so
+    unlike its convention-C predecessor `q + q^(1/2) - 1` it needs no
+    square-root extension of `R_q`. -/
+def toffoli_diag_numerator : QOU.GroundRing.R_q :=
+  QOU.GroundRing.q_param ^ 7 + QOU.GroundRing.q_param ^ 3
 
 /-- The golden ratio `φ = (1 + √5) / 2`. -/
 noncomputable def phi_golden : ℝ := (1 + Real.sqrt 5) / 2
@@ -92,10 +111,16 @@ theorem f_strict_mono {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) :
     Real.sqrt_le_sqrt (le_of_lt hab)
   linarith
 
-/-- **LP-stability of the q-Toffoli braid.**
-    The stability threshold is the golden-ratio value
-    q⋆ = (3 - √5) / 2 = 1 / φ². Stability is equivalent to
-    positivity of the Toffoli diagonal numerator q + q^(1/2) - 1.
+/-- **The golden-ratio threshold of `f(q) = q + √q - 1`.**
+    `f` is positive exactly above q⋆ = (3 - √5) / 2 = 1 / φ².
+
+    SCOPE (2026-08-30): this is a statement about the real function `f`
+    and nothing else.  `f` is the numerator of the **convention-C**
+    Toffoli diagonal, which is excised; the canonical convention-D
+    diagonal `q³(q⁴+1)/(q²+1)²` is positive for every `q > 0` and has
+    no threshold.  So this theorem no longer establishes LP-stability
+    of the q-Toffoli, and must not be cited for it — see the file
+    header.  The proof below is unchanged and remains correct.
     Label: prop:toffoli-lp-stability
     Ref: [manuscript] Chapter 8, prop:toffoli-transfer-matrix
     Ref: [manuscript] Chapter 4, prop:lp-dual-stability -/
@@ -126,14 +151,86 @@ theorem toffoli_lp_stable (q : ℝ) :
       rw [heq] at hf
       linarith [f_at_q_star]
 
-/-- **Dual shadow prices are bounded for q > q⋆.**
-    At the physical substrate value q₀ ≈ 1.110 the Gram condition
-    number κ(G) = λ_max/|λ_min| ≈ 3.03 — verified numerically in
-    `toffoli-lp-stability.witness.json`. -/
-theorem toffoli_shadow_bounded :
-    ∃ (κ : ℝ), 0 < κ ∧ κ < 10 := by
-  -- Ref: [manuscript] Chapter 4, prop:lp-dual-stability
-  exact ⟨(303 : ℝ) / 100, by norm_num, by norm_num⟩
+/-  REMOVED 2026-08-30 (bean qou-3j5m): `toffoli_shadow_bounded`.
+
+    It read `∃ κ : ℝ, 0 < κ ∧ κ < 10`, discharged by `⟨303/100, …⟩`.
+    Two independent reasons it had to go.
+
+    (1) It was vacuous in the sense of AGENTS.md §"No trivial trues":
+        the statement mentions no Toffoli, no Gram matrix and no q, so
+        it is provable without any hypothesis about the objects it
+        claims to be about.  Exhibiting 3.03 proves that 3.03 lies in
+        (0, 10), nothing more.
+
+    (2) The number itself is withdrawn.  κ(G(q₀)) ≈ 3.03 came from a
+        Gram matrix built with the retracted naive length rule
+        tr_M(T_w) = z^ℓ(w) under the excised convention C, in float64,
+        at a superseded q₀; under convention D the Markov–Gram form is
+        singular, so λ_max/|λ_min| is not a condition number at all.
+        The content block withdrew the figure on 2026-08-09
+        (toffoli-lp-stability.md item 3); this file kept it.
+
+    There is nothing to restate here: a real shadow-price bound needs
+    the radical-quotient ruling first.
+-/
+
+/-!
+## The flip amplitude and the LP cone coordinate carry opposite signs
+
+Settles the open item of bean `qou-0pnj`.  `prop:toffoli-lp-stability`'s proof
+reduces feasibility of `G·t ≥ 0` to "the positivity of `P₇₇ · W_std` with the
+appropriate sign from" the flip amplitude.  The two quantities that step
+relates carry **exactly opposite** signs of the same factor `ħ = q - q⁻¹`,
+identically in `q` — so the reduction cannot inherit the amplitude's sign.
+
+* the derived flip amplitude is `P₇₆ = -(q-1)(q+1)·S / (2q(q²+1)²)`,
+* the q-Toffoli, all-proton ordering, is `T_q = σ₁ + ħ·σ₀σ₁`, so its NF
+  coordinate on the word `(0,1)` is `+ħ`.
+
+Since `ħ = (q-1)(q+1)/q`, the amplitude is `-ħ` times a strictly positive
+cofactor, giving `P₇₆ · ħ ≤ 0` on `q > 0`.  Scope (b): this excludes any
+reduction in which the cone condition inherits the amplitude's sign.  It does
+**not** exclude one carrying a negative proportionality.
+
+Symbolic cross-check: `computations/probes/toffoli_sign_inversion_is_structural.py`, 7/7.
+-/
+
+/-- The sextic cofactor `S(q) = q⁶ + q⁴ + 2q² + 1`. -/
+noncomputable def toffoliSextic (q : ℝ) : ℝ := q ^ 6 + q ^ 4 + 2 * q ^ 2 + 1
+
+/-- The derived convention-D target-flip amplitude `P₇₆`. -/
+noncomputable def toffoliFlipAmplitude (q : ℝ) : ℝ :=
+  -((q - 1) * (q + 1) * toffoliSextic q) / (2 * q * (q ^ 2 + 1) ^ 2)
+
+/-- The NF coordinate of `T_q` on the word `(0,1)`, namely `ħ = q - q⁻¹`. -/
+noncomputable def toffoliConeCoord (q : ℝ) : ℝ := q - 1 / q
+
+/-- `S(q) > 0` for every real `q`: every exponent is even, every coefficient
+    positive, and the constant term is `1`. -/
+theorem toffoliSextic_pos (q : ℝ) : 0 < toffoliSextic q := by
+  unfold toffoliSextic; positivity
+
+/-- **The factorisation.** `P₇₆ = -ħ · S / (2(q²+1)²)`. -/
+theorem toffoliFlipAmplitude_eq (q : ℝ) (hq : q ≠ 0) :
+    toffoliFlipAmplitude q
+      = -(toffoliConeCoord q) * (toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2)) := by
+  unfold toffoliFlipAmplitude toffoliConeCoord
+  have h1 : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Opposite signs, identically.** On `q > 0` the flip amplitude and the LP
+    cone coordinate never share a sign: their product is non-positive.  This is
+    the invariant that excludes a sign-inheriting reduction. -/
+theorem toffoliFlip_mul_coneCoord_nonpos (q : ℝ) (hq : 0 < q) :
+    toffoliFlipAmplitude q * toffoliConeCoord q ≤ 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  rw [toffoliFlipAmplitude_eq q hq0]
+  have hS : 0 < toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2) := by
+    have := toffoliSextic_pos q
+    positivity
+  nlinarith [sq_nonneg (toffoliConeCoord q), hS,
+             mul_nonneg (le_of_lt hS) (sq_nonneg (toffoliConeCoord q))]
 
 end
 

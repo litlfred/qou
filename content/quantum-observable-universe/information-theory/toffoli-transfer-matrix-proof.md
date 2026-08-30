@@ -41,7 +41,7 @@ $$
 
 The chain at $\sigma_0$ contains two crossings: $(0,1)$ and $(0,2)$. The target flip changes the $(0,2)$ crossing type but leaves the $(0,1)$ crossing unchanged. Chain reduction gives $\hat{V}_0 = z \cdot a_0 + b_0$, where $a_0, b_0$ depend on both crossings. The difference $\Delta_0$ factors. The unchanged $(0,1)$ crossing contributes its coefficient $c_{01}$ as a **prefactor**. The changing $(0,2)$ crossing contributes the same core difference regardless of the $(0,1)$ type.
 
-Therefore, $P_{\mathrm{flip}} = c_{01} \cdot \Phi(q)$, where $c_{01}$ is the crossing coefficient of the control–control pair and $\Phi(q)$ is universal.
+Therefore $P_{\mathrm{flip}} = c_{01} \cdot \Delta_{02}(q)$, where $c_{01}$ is the crossing coefficient of the control–control pair and $\Delta_{02}$ is the core difference at the changing crossing. **Open (2026-08-30).** This step used to name that core difference $\Phi(q)$ and call it universal. The identification is withdrawn: $\Phi$ is not in the image of the construction under any indexing or convention, and the derived flip amplitude is $P_{7,6}(q) = -(q-1)(q+1)(q^6+q^4+2q^2+1)/2q(q^2+1)^2$ under the canonical convention $D$. The factorisation itself — a prefactor from the unchanged crossing times a common core from the changing one — is what the argument above establishes and is unaffected; only the closed form assigned to the core is retired.
 
 **The $S_3$ orbit.**
 The three choices of target strand in the ordering $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]$ give:

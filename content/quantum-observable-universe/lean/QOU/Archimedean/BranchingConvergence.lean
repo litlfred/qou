@@ -347,13 +347,6 @@ instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)
   simp only [sub_self, abs_zero]
   positivity
 
-/-- Per-instance form. -/
-theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
-    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
-    [hi : BranchingConverges k hk f_k f_inf C_q hC] :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
-  hi.bound
-
 /-- **Convergence at finite k** (the practically useful version).
 
     For k = 4, ..., 12 (the BW formula range), the branching
@@ -390,5 +383,21 @@ instance finiteKWitness_refl (k k' : ℕ) (hk : 4 ≤ k) (hk' : 4 ≤ k')
     FiniteKWitness k k' hk hk' hkbd hkbd' f f tol htol := by
   refine ⟨?_⟩
   simp [htol]
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `branching_convergence` — body was `hi.bound`: the conclusion was the projected
+  field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content is not lost: it stays in the class field each
+declaration projected, which asserts the same proposition under the same
+hypotheses. Only the restatement goes. That is the disposition the vacuity
+ledger records for this category — *"drop the pseudo-theorem and project the
+field at use sites"* — and there were no use sites: each had **zero references
+anywhere in the corpus**, including in this file. A caller wanting the fact
+writes the projection directly, which is what the removed body did.
+Bean `qou-z9ws`.
+-/
 
 end QOU.Archimedean.BranchingConvergence
