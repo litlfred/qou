@@ -275,11 +275,42 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
+# The CURRENT value of each anchor. `muon` is vintage C (CODATA-2022, owner
+# ruling 2026-08-22); `proton` is the tower-free solve. Deliberately NOT
+# widened to the muon family prefix -- see `_Q0_SUPERSEDED_PREFIXES`.
 _Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859564"))
+
+# SUPERSEDED muon vintages: A (1.10997859555733...) and A' (1.10997859555418...),
+# which share this 13-char prefix. Both are the muon ANCHOR; neither is the
+# muon VALUE any more.
+#
+# Why these are a separate tuple rather than folded into `_Q0_PREFIXES`
+# (2026-08-30). The two callers of `_q0_anchor_from_payload` want opposite
+# things, and one prefix list cannot serve both:
+#
+#   * `q0_anchor_for_payload` (the payload-first resolver) STAMPS from this
+#     evidence, and stamps `_q0_value_for_anchor(evidence)` -- the anchor's
+#     CURRENT value, not the payload's own. Recognising a pin-A payload as
+#     "muon" there would write `q0Value: <vintage C>` onto a witness whose
+#     `parameters.q_0` is vintage A: an internally inconsistent witness, and
+#     strictly worse than the unlabelled state it replaced. So that caller
+#     keeps the current-value prefixes only.
+#   * the staleness guard in `build()` uses the evidence to DROP a label that
+#     the payload contradicts. There, blindness to A/A' means a witness
+#     stamped `proton` over a muon-A payload -- i.e. exactly the stale case --
+#     returns None and the false label SURVIVES. That caller passes
+#     `include_superseded=True`.
+#
+# Dropping a contradicted label is the conservative direction: it yields
+# Q0_ANCHOR_MISSING, which this module already calls "a tolerated, visible
+# state", against "a defaulted pin is a silent claim".
+_Q0_SUPERSEDED_PREFIXES = (("muon", "1.10997859555"),)
 _Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
 
 
-def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
+def _q0_anchor_from_payload(
+    payload: Mapping, *, include_superseded: bool = False,
+) -> Optional[str]:
     """The anchor a payload's own q₀ VALUES imply, or None if it records none.
 
     Evidence only — used to refuse carrying a stale `q0Anchor` across a
@@ -289,6 +320,9 @@ def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
     one asserted over it.
     """
     seen = set()
+    _prefixes = _Q0_PREFIXES + (
+        _Q0_SUPERSEDED_PREFIXES if include_superseded else ()
+    )
 
     def _as_text(v) -> Optional[str]:
         """The decimal text of a q₀ field, whatever type it still is.
@@ -336,7 +370,7 @@ def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
                 if k in _Q0_FIELDS:
                     text = _as_text(v)
                     if text is not None:
-                        for name, pre in _Q0_PREFIXES:
+                        for name, pre in _prefixes:
                             if text.strip().startswith(pre):
                                 seen.add(name)
                 if isinstance(v, (dict, list)):
@@ -2074,9 +2108,15 @@ class WitnessBuilder:
             _recorded = existing.get("q0Anchor")
             _stale = False
             if _recorded == "independent":
-                _stale = _q0_anchor_from_payload(witness) is not None
+                _stale = _q0_anchor_from_payload(
+                    witness, include_superseded=True) is not None
             if _recorded in ("muon", "proton"):
-                _actual = _q0_anchor_from_payload(witness)
+                # include_superseded: a payload still on muon vintage A/A'
+                # is the STALE case by definition. Without this the guard
+                # reads it as "no q0 recorded" and preserves a label the
+                # payload contradicts.
+                _actual = _q0_anchor_from_payload(
+                    witness, include_superseded=True)
                 if _actual is not None and _actual != _recorded:
                     _stale = True                      # (1) payload evidence
                 if not _stale:                         # (2) declared re-anchor

@@ -644,3 +644,54 @@ def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
     w.WitnessBuilder.stamp_staleness_metadata(
         payload, script_path=str(script), q0_anchor=False)
     assert payload["engine"] == "python"
+
+
+# ── superseded muon vintages: the guard sees them, the stamper must not ──
+#
+# Regression cover for the 2026-08-30 mirror-bug fix (bean qou-fd0e).
+# `_Q0_PREFIXES` recognised muon ONLY as the current vintage C, so a payload
+# still on vintage A or A' read as "no q0 recorded at all".
+
+_MUON_A = "1.1099785955573347198997632204832250266562084087802"
+_MUON_A_PRIME = "1.1099785955541805752815940796095093779932822799587"
+
+
+def test_superseded_muon_is_not_stamping_evidence():
+    """A pin-A payload must NOT resolve to `muon` in the stamping path.
+
+    `q0_anchor_for_payload` stamps `_q0_value_for_anchor(evidence)` — the
+    anchor's CURRENT value. Treating vintage A as positive muon evidence there
+    would write `q0Value: <vintage C>` over a payload whose own `q_0` is
+    vintage A, producing an internally inconsistent witness. Unlabelled is
+    strictly better than wrong.
+    """
+    for stale in (_MUON_A, _MUON_A_PRIME):
+        assert w._q0_anchor_from_payload({"parameters": {"q_0": stale}}) is None
+
+
+def test_superseded_muon_IS_staleness_evidence():
+    """The same payload must resolve to `muon` for the staleness guard.
+
+    A witness stamped `proton` whose payload is muon-A is the stale case by
+    definition. Before the fix the guard read it as "no q0 recorded" and the
+    contradicted label survived.
+    """
+    for stale in (_MUON_A, _MUON_A_PRIME):
+        assert w._q0_anchor_from_payload(
+            {"parameters": {"q_0": stale}}, include_superseded=True) == "muon"
+
+
+def test_current_vintages_unaffected_by_the_superseded_flag():
+    for value, expect in ((_MUON, "muon"), (_PROTON, "proton")):
+        payload = {"parameters": {"q_0": value}}
+        assert w._q0_anchor_from_payload(payload) == expect
+        assert w._q0_anchor_from_payload(
+            payload, include_superseded=True) == expect
+
+
+def test_cross_anchor_protection_survives_the_superseded_flag():
+    """A payload spanning layers must still assert neither pin — including
+    when the muon arm is a SUPERSEDED vintage, which is the common shape for a
+    cross-anchor probe frozen at pin A."""
+    both = {"a": {"q0": _MUON_A}, "b": {"q_0": _PROTON}}
+    assert w._q0_anchor_from_payload(both, include_superseded=True) is None
