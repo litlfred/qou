@@ -129,6 +129,7 @@ def rel_of(r, i):
 
 
 def main():
+    _ok: list[bool] = []
     started = time.monotonic()
     rows, mismatch = [], 0
     for a in range(2, 8):
@@ -139,7 +140,8 @@ def main():
             retune(n)
             steps = chain(i, a, b)
             qidx = [k for k, s in enumerate(steps) if s[0][0] == "Q"]
-            assert len(qidx) == 2, f"a={a} b={b}: {len(qidx)} quadratic steps"
+            _ok.append(bool(len(qidx) == 2))
+            assert _ok[-1], f'a={a} b={b}: {len(qidx)} quadratic steps'
             for which, k in enumerate(qidx):
                 (rule, w, pos, left, right) = steps[k]
                 z = rule[1]                       # absolute index of the quad rule
@@ -192,7 +194,7 @@ def main():
     w.add_assertion("quad_steps_not_matching_the_measured_shape",
                     computed=str(mismatch), expected="0")
     w.add_assertion("cases_without_exactly_two_quadratic_steps",
-                    computed="0", expected="0")
+                    computed=all(_ok), expected=True)
     w.add_data("cases_checked", len(rows))
     w.add_data("occurrences", rows)
     w.add_caveat(

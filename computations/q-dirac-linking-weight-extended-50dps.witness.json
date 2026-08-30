@@ -1,29 +1,45 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:41:37.054672+00:00",
-  "commitSha": "193f561e21bc87a95617b7e750acca2bc12e0d6a",
+  "computedAt": "2026-08-30T07:50:16.648552+00:00",
+  "commitSha": "b4ce741ab7e44a02e03d4033b876ac988fff5ab0",
   "assertions": [
     {
       "name": "extended_prescreen_completed",
-      "computed": true,
-      "expected": true,
+      "computed": 48,
+      "expected": 48,
       "passed": true,
       "tolerance": 0,
-      "source": "Tested 36 variants; 0 within 1%."
+      "source": "12x4 = 48 combinations: 36 produced a fit, 3 had too few q samples, 9 had degenerate a_0, 0 errored; 0 within 1%."
     }
   ],
   "allPassed": true,
-  "durationMs": 195,
+  "durationMs": 187,
   "computation": "q-dirac-linking-weight-extended-50dps",
   "scriptFile": "q_dirac_linking_weight_extended_50dps.py",
-  "scriptHash": "483fcb0c8723",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "14bc1fa5816b",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_dirac_linking_weight_extended_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/q_dirac_linking_weight_extended_50dps.py"
   },
   "description": "Extended q-Dirac variants — 12 weighting+normalization schemes at H_4 (50 dps). Follows breakthrough where scheme 6 of parent probe gave NEGATIVE h² coefficient (-0.79 vs target -G = -0.916). Searches for variant matching -G more precisely.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
@@ -201,6 +217,15 @@
       }
     ],
     "within_1pct_count": 0,
-    "verdict": "Tested 36 weight/norm combinations. 0 within 1% of -G. Closest: '1+D_q2' / 'ΣW' at |Δ| = 0.035521051. Negative-a_2 achievable via Dirac weighting, but no exact -G match in this catalog. Suggests linking_weight involves additional structure beyond simple Dirac-weighted Wedderburn sums."
+    "verdict": "Tested 36 weight/norm combinations. 0 within 1% of -G. Closest: '1+D_q2' / 'ΣW' at |Δ| = 0.035521051. Negative-a_2 achievable via Dirac weighting, but no exact -G match in this catalog. Suggests linking_weight involves additional structure beyond simple Dirac-weighted Wedderburn sums.",
+    "prescreen_coverage": {
+      "grid": 48,
+      "weights": 12,
+      "normalizations": 4,
+      "succeeded": 36,
+      "skipped_too_few_samples": 3,
+      "skipped_degenerate_a0": 9,
+      "errored": 0
+    }
   }
 }

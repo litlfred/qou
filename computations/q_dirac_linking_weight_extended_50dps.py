@@ -170,12 +170,28 @@ def main():
         }
 
     results = []
-    for w_name in [
+    # Hoisted so the sweep's size is a value rather than a literal buried in
+    # the loop header, and so the coverage assertion at the end can check
+    # against it (bean `qou-26f2`). The grid is 12 x 4 = 48 combinations, not
+    # the "~12 variants" the module docstring says.
+    WEIGHT_NAMES = [
         "D_q2", "1+D_q2", "[c]_q", "|c|·[c]_q²",
         "D_q2/d_lam", "D_q2·d_lam", "1/(ε+D_q2)", "exp(-D_q2)",
         "D_q2 excl kernel", "[c]_q · d_lam", "c²", "D_q2 · [c]_q",
-    ]:
-        for n_name in ["ΣW", "5 (|parts|)", "4 (Family A)", "Σd_λ²=24"]:
+    ]
+    NORM_NAMES = ["ΣW", "5 (|parts|)", "4 (Family A)", "Σd_λ²=24"]
+    # Every combination leaves by exactly one of these three doors or lands in
+    # `results`, so the four together sum to the grid. `results` alone counts
+    # only successes, which is why "Tested {len(results)} variants" was never
+    # the whole story. (The |N| < 1e-40 guard further down is per-q-sample,
+    # not per-combination, so it is deliberately not in this tally — it feeds
+    # the "too few samples" exit instead.)
+    _skipped_too_few_samples = 0   # fewer than 3 usable q samples
+    _skipped_degenerate_a0 = 0     # |a_0| < 1e-30
+    _errored = 0                   # exception swallowed below
+
+    for w_name in WEIGHT_NAMES:
+        for n_name in NORM_NAMES:
             try:
                 # Compute lw at each q
                 vals = []
@@ -188,11 +204,13 @@ def main():
                         continue
                     vals.append(num / Nf)
                 if len(vals) < 3:
+                    _skipped_too_few_samples += 1
                     continue
                 coeffs = fit_h(vals, h_vals, max_order=4)
                 a0 = coeffs[0]
                 a2 = coeffs[2]
                 if abs(a0) < mp.mpf("1e-30"):
+                    _skipped_degenerate_a0 += 1
                     continue
                 a2_norm = a2 * mp.mpf("2.5") / a0
                 delta = a2_norm - target
@@ -206,6 +224,7 @@ def main():
                     "abs_delta": abs(delta),
                 })
             except Exception:
+                _errored += 1
                 continue
 
     # Sort by |delta|
@@ -278,12 +297,40 @@ def main():
            "additional structure beyond simple Dirac-weighted Wedderburn sums.")
     ))
 
+    # Was `computed=True, expected=True` (bean `qou-26f2`). "Completed" is not
+    # established by reaching this line: the sweep loop has three `continue`
+    # exits and an `except Exception: continue`, so a run where every one of
+    # the 48 combinations threw would have arrived here with `results` empty
+    # and reported the same `True`.
+    #
+    # The source also read "Tested {len(results)} variants", and `results`
+    # holds only the *successes* — so the number it reported was the count of
+    # combinations that worked, described as the count that was tried.
+    #
+    # Coverage over the full grid is the falsifiable form: every combination
+    # must have landed in exactly one of the four buckets.
+    _grid = len(WEIGHT_NAMES) * len(NORM_NAMES)
+    _accounted = (len(results) + _skipped_too_few_samples
+                  + _skipped_degenerate_a0 + _errored)
+    w.add_data("prescreen_coverage", {
+        "grid": _grid,
+        "weights": len(WEIGHT_NAMES),
+        "normalizations": len(NORM_NAMES),
+        "succeeded": len(results),
+        "skipped_too_few_samples": _skipped_too_few_samples,
+        "skipped_degenerate_a0": _skipped_degenerate_a0,
+        "errored": _errored,
+    })
     w.add_assertion(
         name="extended_prescreen_completed",
-        computed=True,
-        expected=True,
+        computed=_accounted,
+        expected=_grid,
         tolerance=0,
-        source=f"Tested {len(results)} variants; {len(within_1pct)} within 1%.",
+        source=f"{len(WEIGHT_NAMES)}x{len(NORM_NAMES)} = {_grid} combinations: "
+               f"{len(results)} produced a fit, "
+               f"{_skipped_too_few_samples} had too few q samples, "
+               f"{_skipped_degenerate_a0} had degenerate a_0, "
+               f"{_errored} errored; {len(within_1pct)} within 1%.",
     )
 
     out = w.save()

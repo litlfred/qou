@@ -21,12 +21,14 @@ Scope discipline
 - This probe emits no witness and wires nothing to production; its
   conclusions live in docs/audits/2026-08-29-mass-provenance-breakdown-
   and-gap-map.md §4 and bean qou-dpy1.
-- RESOLVED (2026-08-30, bean qou-nnu3): the deuteron's n_target != tr_M is
-  not an anomaly — nucleus_real_sdp.py defines n_target as the POSITIVE-
-  NORM-restricted cost sum, and the deuteron is the only subject of the
-  four whose witness records any negative-norm blocks (3, carrying
-  6.25e-4). The 0s for 3H/4He may be partial-character-table coverage
-  rather than physics; kept apart in the audit.
+- ADJUDICATED (2026-08-30, beans qou-nnu3 + qou-lzgv, two rounds): the
+  deuteron n_target != tr_M gap was first explained as the positive-norm
+  restriction over 3 negative-norm blocks — but those blocks were an
+  artifact of the STALE deuteron solve (tr_M 0.38836, pre-import-cone
+  drift). The witness was regenerated from the live trace (tr_M 0.57517):
+  the live deuteron has ZERO negative-norm blocks and n_target = tr_M
+  bit-identical, like the other three subjects. Both sides of the process
+  are split-multiplicative.
 """
 from __future__ import annotations
 

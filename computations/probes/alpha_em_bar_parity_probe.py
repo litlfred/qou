@@ -22,9 +22,11 @@ dressed. Under the bar involution q -> 1/q:
     maps to q^2*hbar_q^2); the corrected coupling's even/odd split is
     reported numerically.
 
-Scope: this derives the bar decomposition of the COUPLING OBJECT. The bar
-parity of the EM sector's primary *observable* remains open; the taxonomy's
-`parity .electromagnetic = none` is unchanged (see the block's .md).
+Scope (extended, bean qou-z2xz): coupling AND observable level. alpha
+carries e^-lambda and alpha^2 (the Hartree q-dependence) e^-2lambda; under
+nondegeneracy the coupling is provably NEITHER bar-even NOR bar-odd (Lean:
+emCouplingBare_not_bar_even/odd). The taxonomy's `parity .electromagnetic
+= none` now means "provably no pure channel", not "unmeasured".
 mpmath end-to-end at 60 dps; no witness (probe); conclusions in the
 interaction-sector-taxonomy block + bean qou-pibu.
 """
@@ -106,8 +108,23 @@ def main() -> int:
     print(f"  corrected 1/alpha: at q0 {mp.nstr(ai, 14)}  at 1/q0 {mp.nstr(aib, 14)}")
     print(f"  corrected odd/even = {mp.nstr(od / ev, 10)}  (bare tanh = {mp.nstr(mp.tanh(lam), 10)})")
 
-    print(f"\nRESULT: {'PASS' if ok else 'FAIL'} — EM coupling = e^lambda * (bar-even B): "
-          "an exact cosh+sinh mix, not a pure channel")
+    # 4. observable level (bean qou-z2xz): alpha carries the CONJUGATE
+    #    exponential e^-lambda; the Hartree scale alpha^2 the doubled e^-2lambda
+    A, Abar = 1 / C, 1 / Cbar
+    aev, aod = (A + Abar) / 2, (A - Abar) / 2
+    print(f"  alpha odd/even = {mp.nstr(aod / aev, 12)}   -tanh(ln q0) = {mp.nstr(-mp.tanh(lam), 12)}")
+    ok &= abs(aod / aev + mp.tanh(lam)) < mpf("1e-55")
+    A2, A2bar = A ** 2, Abar ** 2
+    a2ev, a2od = (A2 + A2bar) / 2, (A2 - A2bar) / 2
+    print(f"  alpha^2 odd/even = {mp.nstr(a2od / a2ev, 12)}   -tanh(2 ln q0) = {mp.nstr(-mp.tanh(2 * lam), 12)}")
+    ok &= abs(a2od / a2ev + mp.tanh(2 * lam)) < mpf("1e-55")
+    # not-pure numerically: C(1/q) differs from both C(q) and -C(q),
+    # measured RELATIVE to |C| (no arbitrary magnitude; Copilot, PR #6129)
+    ok &= abs(Cbar - C) > mpf("1e-40") * abs(C) and abs(Cbar + C) > mpf("1e-40") * abs(C)
+
+    print(f"\nRESULT: {'PASS' if ok else 'FAIL'} — EM coupling = e^lambda * (bar-even B), "
+          "alpha = e^-lambda/B, alpha^2 = e^-2lambda/B^2: provably mixed parity, "
+          "no pure channel (Lean: EmCouplingBarParity)")
     return 0 if ok else 1
 
 

@@ -371,7 +371,7 @@ def main() -> int:
                      source="the 18 printed GGM H-tables reproduced by the "
                             "basis generator at the probe truncation")
     wb.add_assertion("solve_family_completed",
-                     computed=len(results), expected=len(results),
+                     computed=len(results) > 0, expected=True,
                      tolerance=0.5,
                      source="all 21 pre-registered exact solves completed "
                             "and recorded")

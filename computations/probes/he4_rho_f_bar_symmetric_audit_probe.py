@@ -209,8 +209,8 @@ def main() -> int:
 
     builder.add_assertion(
         name="bar_symmetric_rho_F_candidates_enumerated",
-        computed=len(results),
-        expected=len(results),
+        computed=len(results) > 0,
+        expected=True,
         tolerance=0.0,
         source="Enumeration of structurally-motivated bar-symmetric candidates",
     )

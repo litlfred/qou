@@ -178,6 +178,24 @@ QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagr
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux | sorryAx-free-expected-clean-alias
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_le_numSYT | clean
 
+# --- known-BAD: the RSK identity and everything reindexed from it ---
+# The real gap is upstream (RegularRepBlockTrace's sorry on the specialised
+# lemma, plus the Specht-core cone: 16 of 23 modules carry sorry).
+QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | sorryAx
+QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+
+# --- fibration exactness (bean qou-de7r, item 2 of qou-pan0) ---
+# Measured 2026-08-24. The topological half of the homotopy LES, and only the
+# MIDDLE spot: exactness of pi_N(F) -> pi_N(E) -> pi_N(B) at pi_N(E), from a
+# stationary-relative homotopy lifting hypothesis. There is no connecting map
+# and no exactness at the other two spots, so `clean` here is NOT a claim about
+# the long exact sequence.
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.homotopyGroupMap_eq_const_iff | clean
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.range_homotopyGroupHom_eq_ker | clean
+# The witness that the lifting hypothesis above is satisfiable at all.
+QOU.Mathlib.HomotopyLifting | QOU.Mathlib.HomotopyLifting.Prod.hasHomotopyLiftingPropertyRel_fst | clean
 # --- the RSK identity: WAS known-BAD, MEASURED CLEAN 2026-08-25 ---
 # These four were recorded `sorryAx` with the note "the real gap is upstream
 # (RegularRepBlockTrace's sorry ... plus the Specht-core cone: 16 of 23 modules carry

@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:58:22Z
+updated_at: 2026-08-30T08:02:14Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -216,3 +216,34 @@ Quot.sound — no sorryAx.
 The correct handling was NOT to apply the suggested fix. Rewriting two working
 proofs to satisfy a speculative comment is the same failure as widening a
 baseline to make a gate green.
+
+**Independent corroboration (second session, same day):** PR #6124 (check run enqueued, in_progress) and PR #6129 (full review submitted ~4 min after request: 4 substantive inline comments, all verified-real, addressed same session). Matches the reopened record above; and the quota mechanism explains that session's later thread-resolution 'rate limit' errors.
+
+## Addendum (session tender-keller, PR #6119): one review arrived UNREQUESTED
+
+Not a separate finding — the sections above are the measurement, and this is one
+more row for their table. Recording it only because it differs in the variable
+their two rows hold fixed:
+
+  qou#6119   push 07:25:09Z   review 07:27:31Z   ~2.5 min   NOT REQUESTED
+
+I never called `request_copilot_review` on that push. Both rows in the table
+above are explicit requests, so this says the trigger is not solely a request —
+a push alone can draw one.
+
+**Bearing on the open mechanism question.** The QUOTA section asks whether the
+historical zeros were "over quota all along" or "off, then back", and notes the
+two imply different operating rules. An unrequested review consumes quota that
+nobody spent deliberately, which fits "over quota all along" more comfortably
+than the request-only reading does — but it does not settle it, and I am not
+claiming it does. One observation, offered as a constraint on the candidates.
+
+The finding itself was correct and substantive (two `rfl` proofs of
+`tr_M(1) = 1` that should have used the `MarkovTrace.normalised` axiom, since
+the enclosing theorems quantify over an arbitrary decomposition). Fixed,
+thread resolved.
+
+**My own AGENTS.md correction is SUPERSEDED and was dropped**, not merged: it
+was n=1, request-agnostic, and had none of the quota mechanism or the
+self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
+stay that way.

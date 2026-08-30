@@ -3,10 +3,23 @@ import QOU.MassEndomorphism.MassEndomorphismConjecture
 /-!
 # Trivial witness for `MassEndomorphism`
 
-A zero-mass instance over `ℤ` for an arbitrary braid type `β`.  All
-fields are zero; `vol_eq` reduces to `0 = 0 - 0`.  The instance
-witnesses **inhabitability** of the class and shows the conditional
-theorems (`fullMass_eq_volume`, etc.) are discharged non-vacuously.
+A zero-mass model over `ℤ` for an arbitrary braid type `β`.  All fields
+are zero; `vol_eq` reduces to `0 = 0 - 0`.  It witnesses
+**inhabitability** of the class, and nothing more.
+
+**A `def`, not an `instance`, since 2026-08-24**, alongside
+`MassEndomorphismConjecture.canonical`, for the same reason: as an
+`instance` it made every `[MassEndomorphism ℤ β]` binder resolvable, so
+`fullMass_eq_volume` at `R = ℤ` proved `0 = 0` rather than anything
+conditional.  The file docstring used to state the opposite — that the
+instance *"shows the conditional theorems … are discharged
+non-vacuously"*.  It shows the reverse: a global trivial witness is
+exactly what makes them vacuous.  The partial mitigation that was in
+place (`QOU/MassEndomorphism.lean` deliberately does not import this
+module, so the pollution was scoped to direct importers) is retained but
+is no longer what is doing the work.
+
+Callers wanting the zero model name it: `letI := trivial_int_zero β`.
 
 This is **not** a closed-form mass endomorphism for any non-trivial
 braid.  The principal open item (GAP 18a in the
@@ -22,10 +35,11 @@ LaTeX label: scoping for `conj:mass-endomorphism`
 
 namespace QOU.MassEndomorphism
 
-/-- Trivial witness: zero-mass instance over `ℤ`. -/
+/-- Zero-mass model of `MassEndomorphism ℤ β`.  Not an `instance` — see
+    the module docstring. -/
 -- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 1
 --      (the flat case `tr_transient = 0`)
-instance trivial_int_zero (β : Type*) :
+def trivial_int_zero (β : Type*) :
     MassEndomorphism ℤ β where
   q := 0
   N := 0

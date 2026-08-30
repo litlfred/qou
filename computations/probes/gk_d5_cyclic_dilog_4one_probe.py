@@ -164,6 +164,7 @@ def state_integral(b, A=1, B=2):
 
 
 def main() -> int:  # noqa: PLR0915
+    _ok: list[bool] = []
     wb = WitnessBuilder("gk-d5-cyclic-dilog-4one", engine="sympy")
     mp.mp.dps = 60
 
@@ -178,7 +179,8 @@ def main() -> int:  # noqa: PLR0915
     D5zx = sp.prod([(1 - z5x**k * (z5x * xx)) ** k for k in range(1, 5)])
     fe = sp.expand(D5zx * (1 - xx**5) - D5x * (1 - xx) ** 5)
     fe_red = sp.expand(sp.rem(sp.Poly(fe, z5x).as_expr(), Phi5, z5x))
-    assert fe_red == 0, "D₅ functional equation must hold in ℚ(ζ₅)[x]"
+    _ok.append(bool(fe_red == 0))
+    assert _ok[-1], 'D₅ functional equation must hold in ℚ(ζ₅)[x]'
     # /D₅ = (1 − x q⁵) D₅ = (1 − x) D₅ at q = ζ₅ (q⁵ = 1) — definitional.
 
     # ── the 4₁ data at b² = 1/5 ─────────────────────────────────────────────
@@ -189,46 +191,59 @@ def main() -> int:  # noqa: PLR0915
     Gp, Gm = G5plus(th_p), G5plus(th_m)
 
     # ── E2 + E3: reality and exact minimal polynomials ──────────────────────
-    assert sp.expand(conj(P5p) - P5p) == 0, "(/D₅(θ₊))⁵ must be real"
-    assert sp.expand(conj(P5m) - P5m) == 0, "(/D₅(θ₋))⁵ must be real"
-    assert sp.expand(conj(Gp) - Gp) == 0, "G₅⁺(θ₊) must be real"
-    assert sp.expand(conj(Gm) - Gm) == 0, "G₅⁺(θ₋) must be real"
+    _ok.append(bool(sp.expand(conj(P5p) - P5p) == 0))
+    assert _ok[-1], '(/D₅(θ₊))⁵ must be real'
+    _ok.append(bool(sp.expand(conj(P5m) - P5m) == 0))
+    assert _ok[-1], '(/D₅(θ₋))⁵ must be real'
+    _ok.append(bool(sp.expand(conj(Gp) - Gp) == 0))
+    assert _ok[-1], 'G₅⁺(θ₊) must be real'
+    _ok.append(bool(sp.expand(conj(Gm) - Gm) == 0))
+    assert _ok[-1], 'G₅⁺(θ₋) must be real'
 
     mp_P5p = sp.minimal_polynomial(red(P5p).subs(t, Z30_NUM), x)
     mp_P5m = sp.minimal_polynomial(red(P5m).subs(t, Z30_NUM), x)
     mp_Gp = sp.minimal_polynomial(red(Gp).subs(t, Z30_NUM), x)
     mp_Gm = sp.minimal_polynomial(red(Gm).subs(t, Z30_NUM), x)
-    assert sp.expand(mp_P5p - (x**4 - 46 * x**3 - 94 * x**2 + 79 * x + 1)) == 0
-    assert sp.expand(mp_P5m - (x**4 + 29 * x**3 - 69 * x**2 + 29 * x + 1)) == 0
-    assert sp.expand(mp_Gp - (x**4 - 60 * x**3 + 960 * x**2 - 5175 * x + 6525)) == 0
-    assert sp.expand(mp_Gm - (x**4 - 60 * x**3 + 885 * x**2 - 4500 * x + 6525)) == 0
+    _ok.append(bool(sp.expand(mp_P5p - (x ** 4 - 46 * x ** 3 - 94 * x ** 2 + 79 * x + 1)) == 0))
+    assert _ok[-1]
+    _ok.append(bool(sp.expand(mp_P5m - (x ** 4 + 29 * x ** 3 - 69 * x ** 2 + 29 * x + 1)) == 0))
+    assert _ok[-1]
+    _ok.append(bool(sp.expand(mp_Gp - (x ** 4 - 60 * x ** 3 + 960 * x ** 2 - 5175 * x + 6525)) == 0))
+    assert _ok[-1]
+    _ok.append(bool(sp.expand(mp_Gm - (x ** 4 - 60 * x ** 3 + 885 * x ** 2 - 4500 * x + 6525)) == 0))
+    assert _ok[-1]
     # degree 4 = [ℚ(ζ₃₀)⁺:ℚ] ⇒ NOT in ℚ(√5) (degree 2); but each factors over
     # ℚ(√5) into quadratics (ℚ(√5) is the quadratic subfield of ℚ(ζ₃₀)⁺):
     for mpol in (mp_P5p, mp_P5m, mp_Gp, mp_Gm):
-        assert sp.Poly(mpol, x).degree() == 4
+        _ok.append(bool(sp.Poly(mpol, x).degree() == 4))
+        assert _ok[-1]
         facs = sp.factor_list(mpol, extension=sp.sqrt(5))[1]
-        assert len(facs) == 2 and all(sp.Poly(f, x).degree() == 2
-                                      for f, _ in facs), sp.factor(
-            mpol, extension=sp.sqrt(5))
+        _ok.append(bool(len(facs) == 2 and all((sp.Poly(f, x).degree() == 2 for f, _ in facs))))
+        assert _ok[-1], sp.factor(mpol, extension=sp.sqrt(5))
 
     # ── E4: ζ₅-branch invariance (GK Remarks 1.4/1.5), exact ────────────────
     for th, P_, G_ in ((th_p, P5p, Gp), (th_m, P5m, Gm)):
         th_shift = red(t**6 * th)
         lhs = red(red(G5plus(th_shift) ** 5) * red(P_**2))
         rhs = red(red(G_**5) * red(slashD5_pow5(th_shift) ** 2))
-        assert sp.expand(lhs - rhs) == 0, "branch invariance must hold exactly"
+        _ok.append(bool(sp.expand(lhs - rhs) == 0))
+        assert _ok[-1], 'branch invariance must hold exactly'
 
     # ── E5: Cor 1.3 (N = 1) machinery, exact + 40-digit Rogers branches ─────
     zp = sp.exp(sp.I * sp.pi / 3)
     zm = sp.exp(-sp.I * sp.pi / 3)
     # (1−z₊) = e^{−iπ/3}, (1−z₋) = e^{iπ/3}; (A+Bz/(1−z)) = (1+z)/(1−z) = ±i√3
     simp0 = lambda e: sp.simplify(sp.expand_complex(e)) == 0  # noqa: E731
-    assert simp0(1 - zp - sp.exp(-sp.I * sp.pi / 3))
-    assert simp0((1 + zp) / (1 - zp) - sp.I * sp.sqrt(3))
+    _ok.append(bool(simp0(1 - zp - sp.exp(-sp.I * sp.pi / 3))))
+    assert _ok[-1]
+    _ok.append(bool(simp0((1 + zp) / (1 - zp) - sp.I * sp.sqrt(3))))
+    assert _ok[-1]
     lhs_p = sp.exp(-sp.I * sp.pi / 6) / (sp.I * sp.sqrt(3))
     lhs_m = sp.exp(sp.I * sp.pi / 6) / (-sp.I * sp.sqrt(3))
-    assert simp0(lhs_p - sp.exp(-2 * sp.pi * sp.I / 3) / sp.sqrt(3))
-    assert simp0(lhs_m - sp.exp(2 * sp.pi * sp.I / 3) / sp.sqrt(3))
+    _ok.append(bool(simp0(lhs_p - sp.exp(-2 * sp.pi * sp.I / 3) / sp.sqrt(3))))
+    assert _ok[-1]
+    _ok.append(bool(simp0(lhs_m - sp.exp(2 * sp.pi * sp.I / 3) / sp.sqrt(3))))
+    assert _ok[-1]
     # Rogers with GK branches log z₊ = iπ/3, log z₋ = 10iπ/6 (Li₂ principal):
     V = 2 * mp.im(mp.polylog(2, mp.e**(1j * mp.pi / 3)))
     Rp = (mp.polylog(2, mp.e**(1j * mp.pi / 3))
@@ -239,15 +254,18 @@ def main() -> int:  # noqa: PLR0915
           - mp.pi**2 / 6)
     err_Rp = abs(Rp - (-mp.pi**2 / 12 + 1j * V / 2))
     err_Rm = abs(Rm - (-5 * mp.pi**2 / 12 - 1j * V / 2))
-    assert err_Rp < mp.mpf(10) ** (-40), err_Rp
-    assert err_Rm < mp.mpf(10) ** (-40), err_Rm
+    _ok.append(bool(err_Rp < mp.mpf(10) ** (-40)))
+    assert _ok[-1], err_Rp
+    _ok.append(bool(err_Rm < mp.mpf(10) ** (-40)))
+    assert _ok[-1], err_Rm
     # Cor 1.3's printed values e^{iR/π} = e^{∓C}·(roots of unity), C = V/2π:
     eq_ = lambda a, b: mp.e**(2j * mp.pi * mp.mpf(a) / mp.mpf(b))  # noqa: E731
     err13p = abs(mp.e**(1j * Rp / mp.pi)
                  - mp.e**(-V / (2 * mp.pi)) * eq_(-1, 24))
     err13m = abs(mp.e**(1j * Rm / mp.pi)
                  + mp.e**(V / (2 * mp.pi)) * eq_(-1, 24) * eq_(1, 3))
-    assert err13p < mp.mpf(10) ** (-40) and err13m < mp.mpf(10) ** (-40)
+    _ok.append(bool(err13p < mp.mpf(10) ** (-40) and err13m < mp.mpf(10) ** (-40)))
+    assert _ok[-1]
 
     # ── assemble Cor 1.2 at N = 5 (50-dps principal branches) ───────────────
     i = mp.mpc(0, 1)
@@ -277,15 +295,18 @@ def main() -> int:  # noqa: PLR0915
                         * (mp.e**(V / (2 * mp.pi)) - mp.e**(-V / (2 * mp.pi))))
     got_N1 = state_integral(1.0)
     err_N1 = abs(got_N1 - target_N1)
-    assert err_N1 < 5e-7, err_N1      # validates the quadrature itself (eq (2))
+    _ok.append(bool(err_N1 < 5e-07))
+    assert _ok[-1], err_N1
     got_N5 = state_integral(1 / np.sqrt(5))
     err_N5 = abs(complex(I_assembled) - got_N5)
-    assert err_N5 < 5e-7, err_N5      # validates the whole Cor 1.2 assembly
+    _ok.append(bool(err_N5 < 5e-07))
+    assert _ok[-1], err_N5
 
     # ── the B4 answer: field identification + vacuum-row comparison ─────────
     # exact: |c±|¹⁰ = G¹⁰ / (3⁵ (P⁵)⁴) ∈ ℚ(ζ₃₀)⁺;  √5 = 1 + 2(ζ₅+ζ₅⁻¹) in-field
     sqrt5 = red(1 + 2 * (t**6 + t**24))
-    assert sp.expand(red(sqrt5**2) - 5) == 0
+    _ok.append(bool(sp.expand(red(sqrt5 ** 2) - 5) == 0))
+    assert _ok[-1]
     vacuum_match = {}
     c10 = {}
     for name, G_, P_ in (("+", Gp, P5p), ("-", Gm, P5m)):
@@ -295,7 +316,8 @@ def main() -> int:  # noqa: PLR0915
             tgt = red(red((5 + sgn * sqrt5) * inv(sp.Integer(10))) ** 5)
             vacuum_match[f"c{name}_vs_{tgt_name}"] = \
                 sp.expand(red(c10[name] - tgt)) == 0
-    assert not any(vacuum_match.values()), vacuum_match  # exact NO match
+    _ok.append(bool(not any(vacuum_match.values())))
+    assert _ok[-1], vacuum_match
 
     abs_cp = abs(c_p)
     abs_cm = abs(c_m)
@@ -304,7 +326,8 @@ def main() -> int:  # noqa: PLR0915
     # 40-digit separation from both vacuum-row entries
     for c_ in (abs_cp, abs_cm):
         for tg in (tgt1, tgt2):
-            assert abs(c_ - tg) > 1, (c_, tg)
+            _ok.append(bool(abs(c_ - tg) > 1))
+            assert _ok[-1], (c_, tg)
 
     # ── report ──────────────────────────────────────────────────────────────
     print("=" * 74)
@@ -407,8 +430,8 @@ def main() -> int:  # noqa: PLR0915
     )
     wb.add_assertion(
         "D5_functional_equation_exact",
-        computed="0",
-        expected="0",
+        computed=all(_ok),
+        expected=True,
         tolerance=0,
         source="D₅(ζ₅x)⁵(1−x⁵) − D₅(x)⁵(1−x)⁵ ≡ 0 in ℚ(ζ₅)[x] (GK eq after "
                "(9)), exact polynomial identity.",

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-28T15:42:06Z
+updated_at: 2026-08-30T07:56:33Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -737,3 +737,17 @@ Scope upgrade landed since: **PR #5894** gives `det G_TL(n)` in closed form at
 n = 3, 4, 5 with every irreducible factor root-free on `(0,∞)` by exact Sturm
 counting — so the quotient form is non-singular for **every real q > 0** at those
 n, not merely non-singular over ℚ(q).
+
+## 2026-08-30 (PR #6110) — the positive half is DONE
+
+`computations/probes/gram_h3_quotient_nondegeneracy_probe.py`. What replaces `gramMatrix_det_ne_zero` under D:
+
+    det( G_D | H_3/rad ) = -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4 / (q^2+1)^10
+
+in the complement basis e_0..e_4. Every factor is real-rootless, so the degree-20 numerator has **zero real roots** (sympy.real_roots, not sampling): the induced form is **nondegenerate for every real q**, strictly stronger than the q > 1 the substrate needs. So the D successor is the same strength as the C theorem, about the quotient instead of the whole algebra.
+
+Determinant is NEGATIVE throughout (−0.16223009063 at proton), so the quotient form is nondegenerate and **INDEFINITE** — a D successor to the positive-definiteness reading must say `nondegenerate`, never `positive`.
+
+Basis note: the VALUE is basis-dependent (changes by the square of a change-of-basis determinant); the NONVANISHING is not, and that is what replaces the theorem.
+
+Remaining: Lean. Ready to formalise, but `GramMatrixH3Symbolic.lean` also carries the C entries, so it is the wider file migration (qou-zf9n), not a one-theorem edit.

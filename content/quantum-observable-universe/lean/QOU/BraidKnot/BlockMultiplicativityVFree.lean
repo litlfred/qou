@@ -101,12 +101,30 @@ class BlockMultiplicativityVFree (R : Type*) [CommSemiring R] where
   q_schur_duality_holds_at : R → Prop
   q_schur_duality_classical : q_schur_duality_holds_at 1
 
-/-- Default instance: at q = 1 (the classical-limit case), the
-    q-Schur duality reduces to Plancherel duality for symmetric
-    groups (provable in Mathlib via Specht-module branching when
-    the API is available). -/
-instance (R : Type*) [CommSemiring R] : BlockMultiplicativityVFree R where
-  v_p := 1  -- placeholder; concrete instances supply substrate values
+/-- **Unit-factor model with the predicate read as its own witness.**
+    The block factors are both `1`, and — the part worth reading
+    carefully — `q_schur_duality_holds_at` is *defined* to be
+    `fun q => q = 1`.  So the conjectural field
+    `q_schur_duality_classical : q_schur_duality_holds_at 1` unfolds to
+    `1 = 1` and closes by `rfl`.  Nothing about q-Schur duality or
+    Plancherel duality is encoded; the class field is satisfied by
+    choosing the predicate to be the equation the field asserts.
+
+    That the reduction at `q = 1` *is* Plancherel duality for symmetric
+    groups, provable via Specht-module branching once Mathlib's API
+    lands, remains true and remains unformalised.
+
+    **A `def`, not an `instance`, since 2026-08-24**, and given a name:
+    it was anonymous, so resolution supplied it for every
+    `CommSemiring` under the generated name
+    `instBlockMultiplicativityVFree`, and `t1_free_eq_block_product`
+    below — the module's one conditional result — took
+    `[h : BlockMultiplicativityVFree R]` that no caller had to satisfy.
+
+    Callers name it: `letI := blockMultiplicativityVFree_unitFactors R`. -/
+def blockMultiplicativityVFree_unitFactors (R : Type*) [CommSemiring R] :
+    BlockMultiplicativityVFree R where
+  v_p := 1  -- placeholder; concrete models supply substrate values
   v_n := 1
   q_schur_duality_holds_at q := q = 1
   q_schur_duality_classical := rfl

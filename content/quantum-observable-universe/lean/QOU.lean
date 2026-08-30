@@ -331,6 +331,11 @@ import QOU.Mass.BondChannelClassSelection
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
 -- conditional theorem that logarithmic k(A) follows (k∝A / k∝bond-count excluded).
 import QOU.Mass.LevelSelectionLogarithmic
+-- 3D-realizability cap on max-contact coordination: a pairwise-equidistant family
+-- has at most finrank members, so the complete contact graph K_A is realizable in
+-- ℝ³ only for A ≤ 4. Replaces the EMPIRICAL premise ("saturation is observed")
+-- that CoordinationSaturation's complete-graph exclusion rested on.
+import QOU.Mass.EquidistantCoordinationCap
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -872,7 +877,6 @@ import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
-import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
@@ -1313,6 +1317,7 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+import QOU.Mathlib.KazhdanLusztigBasis
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar

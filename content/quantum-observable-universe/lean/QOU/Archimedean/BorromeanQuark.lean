@@ -64,66 +64,44 @@ def borromean_volume : ℝ := 7.32772
 def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
   borromean_volume / (1 - 1/q)^2
 
--- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
+-- ── The mass calibration, as what it is ───────────────────────
 
-/-- **Conjecture class.** An instance asserts that the Borromean
-    link `B_3` is the canonical baryon model: nucleons (proton,
-    neutron) are realised as Borromean-linked three-quark
-    configurations with hyperbolic volume `borromean_volume ≈
-    7.32772` (the topological mass scale).
+/-- **The mass calibration, stated as an identity rather than as a
+    discharged hypothesis** (bean `qou-znut`, resolved 2026-08-24).
 
-    The single conjectural field is the **mass calibration**:
-    * `volume_calibrates_mass` — the bare baryon mass is
-      `borromean_volume / (1 − 1/q)²`, calibrating the
-      topological-mass formula at q = q₀.
+    This was a `class BorromeanQuark` with a `topological_mass : ℝ → ℝ`
+    field and a `volume_calibrates_mass` field asserting that field
+    equals `borromean_volume / (1 - 1/q)²`, plus an unguarded
+    `instance canonical` supplying the right-hand side as the field's
+    value so the assertion closed by `rfl`.
 
-    **On the baryon-realisation claim.** The physical content of
-    `conj:borromean-quark` — that every observed baryon *is* a
-    Borromean three-quark configuration — is **not** encoded as a Lean
-    field. It cannot be: any `is_baryon_realisation : Prop` field is a
-    self-assuming projection (the instance picks the `Prop` and proves
-    its own choice), which passes the type checker while asserting
-    nothing (AGENTS.md §3b-tax / §3b-cond item 5). The explicit
-    `proton_partition` / `neutron_partition` data above record the
-    color/orientation assignments, but *exhibiting a `BorromeanBaryon`
-    value* is trivially possible and does not establish that the
-    physical nucleon is one. That identification stays an **open**
-    conjectural interpretation in the narrative.
+    The reading recorded here is that this is **definitional and that is
+    correct**: `topological_mass` never was an independent functional
+    that had to be shown to agree with a volume formula. It *is* the
+    volume formula. The instance's docstring said so — "the
+    mass-calibration identity holds definitionally" — and the class
+    docstring already conceded the part that is genuinely open, that
+    exhibiting a Borromean configuration "does not establish that the
+    physical nucleon is one" and that identification "stays an **open**
+    conjectural interpretation in the narrative".
 
-    `sorry` in any concrete instance is understood as **conjecture**,
-    not missing proof. Downstream blocks may take `[BorromeanQuark]`
-    as an explicit hypothesis to remain `theorem`/`proposition` per
-    AGENTS.md §3b-cond.
+    What the typeclass added was the appearance of a hypothesis. A
+    reader meeting `theorem baryon_mass_from_volume [BorromeanQuark]`
+    takes it for a derivation of baryon mass from hyperbolic volume,
+    discharged by an instance; it is a rewriting of a definition, and
+    `baryon_mass` below was already that definition. Since the reading
+    is that there was nothing to discharge, the honest shape is the one
+    without the binder — a `def` and a `theorem … := rfl`. Dropping the
+    class changes no proof: `baryon_mass_from_volume`'s content is
+    unchanged, and it now says as much in its type.
 
-    Ref: [manuscript] Ch. 6 §3, conj:borromean-quark -/
-class BorromeanQuark where
-  /-- The baryon topological mass functional (depends on q). -/
-  topological_mass : ℝ → ℝ
-  /-- The mass functional evaluates to `borromean_volume / (1 − 1/q)²`
-      at every q > 1. -/
-  volume_calibrates_mass :
-    ∀ q : ℝ, q > 1 → topological_mass q = borromean_volume / (1 - 1/q)^2
-
-/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
-    Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
-    equals `borromean_volume / (1 − 1/q)²`. Fully verified by Lean
-    once an instance is fixed. -/
-theorem baryon_mass_from_volume [inst : BorromeanQuark]
-    (q : ℝ) (hq : q > 1) :
-    inst.topological_mass q = borromean_volume / (1 - 1/q)^2 :=
-  inst.volume_calibrates_mass q hq
-
-/-- **Faithful instance.**  Defines `topological_mass` literally as the
-    topological-volume formula `borromean_volume / (1 - 1/q)²`, so
-    `volume_calibrates_mass` closes by `rfl`.  This is genuine content
-    — the mass-calibration identity holds definitionally — not a
-    vacuous discharge.  (The former `is_baryon_realisation` field was
-    removed: it was a self-assuming projection carrying no content;
-    see the class docstring.) -/
--- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
-instance canonical : BorromeanQuark where
-  topological_mass := fun q => borromean_volume / (1 - 1/q)^2
-  volume_calibrates_mass := fun _ _ => rfl
+    **What is NOT claimed here, and was not claimed before.** That the
+    physical nucleon mass is `borromean_volume / (1 - 1/q)²`. That is
+    `conj:borromean-quark`, it lives in the narrative, and no Lean
+    declaration in this file asserts it. -/
+theorem baryon_mass_from_volume (q : ℝ) (hq : q > 1) :
+    baryon_mass q hq = borromean_volume / (1 - 1/q)^2 :=
+  rfl
 
 end QOU.Archimedean
 
