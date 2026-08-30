@@ -1,11 +1,11 @@
 ---
 # qou-l64i
 title: 'GAP: multiplicativity of the twisted quantum dimension, dim(X tensor Y) = dim X * dim Y'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T04:41:33Z
+updated_at: 2026-08-30T06:35:59Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -918,3 +918,65 @@ SIXTH superseded plan of mine on this bean. The pattern is now unmistakable and 
 plainly for whoever picks this up: my predictions about WHICH REWRITE WILL FIRE have been wrong
 essentially every time, while my measurements of what DID fire have all held. Trust the printed goal;
 do not trust a plan — including this entry's.
+
+
+## CLOSED 2026-08-30 — `qTrWith_tensor_monodromy` proved, sorry-free
+
+Commit `85f590a1a8` on `claude/qtr-tensor-monodromy-2026-08-27`. The lemma is
+proved unconditionally (braided + two exact pairings; no rigidity, no balancing),
+and `qDimTwistedWith_tensor_of_monodromy` is now discharged into the
+unconditional `qDimTwistedWith_tensor` — multiplicativity of the twisted quantum
+dimension over `tensorExactPairing`.
+
+**The blocker was a prime, not the mathematics.** `η_` / `ε_` notation
+elaborates to `ExactPairing.coevaluation` / `.evaluation`; the goal, after
+`simp only [ExactPairing.coevaluation, ExactPairing.evaluation]`, is in the
+**primed** `coevaluation'` form. Every hand-written `have` in this bean's history
+used the notation and therefore never matched — `rw` said "did not find an
+occurrence" and `simp only` said "no progress" against goal terms that **print
+identically**. That is why 33 tactic approaches all failed and why the mechanism
+stayed unknown: the failures were not about coherence, `monoidalComp`, or the
+hexagons at all.
+
+Fix, one line: `simp only [ExactPairing.coevaluation, ExactPairing.evaluation] at <have>`.
+Found by extracting the hypothesis and the goal under `set_option pp.explicit true`
+and diffing them character by character. **That diff is the diagnostic to reach
+for whenever a rewrite fails against a goal it visibly matches** — the pretty
+printer showed `ExactPairing.coevaluation'` on both sides.
+
+### Proof shape (all steps machine-checked)
+
+1. `hpre` — normalise the `⊗≫`-padded cup to `η_X ≫ X ◁ u ≫ (α).inv`, by `monoidal`.
+2. `braiding_naturality_left` + `braiding_tensor_left_hom` — move `(g ⊗ h)` past
+   the block braiding and hexagon-split `β_{X⊗Y, Y'⊗X'}`.
+3. `hrec` (from `braiding_tensor_right_hom`) — recombine the X-half.
+4. `braiding_naturality_right` — detach the X-strand onto the cup; both sides now
+   open `η_X ≫ β_{X,X'}`, peeled with `congrArg`.
+5. `braiding_naturality` + `tensorHom_def'` + `whisker_exchange` — carry `g` to
+   the front and `h` back into the Y-cup; peel `g` with `congrArg`.
+6. `hsl` — `braiding_slide_cap_right` (QOU.MathlibExt.BraidedSlide) whiskered by
+   `Y'`, bridged in and out by `monoidal`. This is the only genuinely
+   knot-theoretic step: one strand crossing a cap.
+7. `hfin` — assemble, `whisker_exchange` + `unitors_inv_equal` to finish.
+
+### Why the monodromy is load-bearing (unchanged, now machine-checked)
+
+`tensorExactPairing` nests the pairs in **opposite orders at its two ends** — cup
+`X, Y, Y', X'`, cap `Y', X', X, Y`. The nested closure therefore links the
+X-loop with the Y-loop, and `β_{X,Y} ≫ β_{Y,X}` is exactly the crossing that
+unlinks them. The statement is false without it. This is the same asymmetry that
+made the earlier `ptrWith` factorisation false, and that retraction stands.
+
+### Verification (CI is `workflow_dispatch`-only; agent verification is the gate)
+
+- `lean`-direct on `QOU/MathlibExt/TwistedQuantumDimension.lean`: **exit 0**, no warnings.
+- `#print axioms` on both new declarations: `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.
+- `scripts/check-sidecars.sh`: clean; no §7c flags (file stays generic over `C`, no `ℝ`).
+- Only consumer is the `QOU.lean` aggregator; nothing downstream to re-verify.
+
+### Standing caveat, re-confirmed
+
+Across this bean my predictions about **which rewrite would fire** were wrong
+essentially every time; my **measurements of what did fire** all held. The final
+unlock came from a measurement (`pp.explicit` diff), not a plan. Print the goal
+after every simp-set change.
