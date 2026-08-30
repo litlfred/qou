@@ -1,4 +1,5 @@
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.AlgebraicSubstrate.ReebSpectrum
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
@@ -229,5 +230,93 @@ theorem spectral_half_line_is_fixed_locus
     (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
     ∀ i, (ρ i).re = 1 - (ρ i).re := fun i =>
   (critical_line_iff_fixed (ρ i)).mp (spectral_half_line Z hq ρ spectral_coord hw i)
+
+/-! ## The Reeb spectrum on the critical line
+
+`spectral_half_line` concludes `Re(ρᵢ) = 1/2` for *any* exponents with
+`αᵢ = q^{ρᵢ}`, and `exists_spectral_coord` shows such exponents always exist —
+so on its own it is a statement about arbitrary complex numbers, not about the
+Reeb derivation. `QOU.AlgebraicSubstrate.ReebSpectrum` supplies the missing
+object and `HasReebSpectralCoords` the missing identification, as a named
+hypothesis with no instance (bean `qou-qspc`).
+
+With both, the arc's intended statement is available and is a theorem: **the
+Reeb spectrum lies on the critical line**, conditional on the identification and
+on the Hasse–Weil bound. The conditionality is visible in the type, which is the
+point — the identification is unproved, and nothing here pretends otherwise. -/
+
+/-- **The Reeb spectrum lies on the critical line**, given the identification
+    `αᵢ = q^{ρᵢ}` and the Hasse–Weil magnitude bound.
+
+    This is what `cor:spectral-half-line` was always meant to say. What it said
+    before was the same conclusion about unnamed exponents; the `ρ` here are the
+    eigenvalues of an actual operator, carried by `R`. -/
+theorem reeb_spectrum_on_critical_line
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    ∀ i, (R.spec i).re = 1 / 2 :=
+  spectral_half_line Z hq R.spec HasReebSpectralCoords.coords hw
+
+/-- The same, as the symmetry statement: each Reeb eigenvalue is fixed by the
+    functional equation's involution on real parts. -/
+theorem reeb_spectrum_fixed_by_involution
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    ∀ i, (R.spec i).re = 1 - (R.spec i).re := fun i =>
+  (critical_line_iff_fixed (R.spec i)).mp
+    (reeb_spectrum_on_critical_line Z hq R hw i)
+
+
+/-! ## Is the hypothesis satisfiable?
+
+`reeb_spectrum_on_critical_line` is conditional on `HasReebSpectralCoords`. A
+conditional theorem is worthless if its hypothesis is unsatisfiable — that is
+exactly the defect the `False`-proving axioms in `hasse-weil-bound.lean` had, and
+the reason they were removed. `reebSpectrumExample` does **not** settle it: that
+witness has every `spec i = 1`, which would force `αᵢ = q` for all `i`, false for
+any `Z` with distinct eigenvalues.
+
+So it is proved below, and the proof is a construction: diagonalise. -/
+
+/-- The diagonal operator on `Fin 8 → ℂ` with entries `ρ`. -/
+def diagOp (ρ : Fin 8 → ℂ) : (Fin 8 → ℂ) →ₗ[ℂ] (Fin 8 → ℂ) where
+  toFun v := fun i => ρ i * v i
+  map_add' := by intro x y; funext i; simp [mul_add]
+  map_smul' := by intro c x; funext i; simp [Pi.smul_apply]; ring
+
+/-- **The identification is a consistent hypothesis.** For every `Z` with `q > 1`
+    there is a `ReebSpectrum` satisfying `HasReebSpectralCoords Z`.
+
+    Hence `reeb_spectrum_on_critical_line` is not vacuously true: its hypothesis
+    can be met.
+
+    **What this does not establish**, and the distinction is the whole point:
+    satisfiability says *some* operator has the Frobenius exponents as its
+    spectrum — here a diagonal operator built from them, which is no more than
+    bookkeeping. The arc's claim is that the framework's Reeb derivation `ξ_q` is
+    such an operator. That is a statement about a *particular* operator and is
+    untouched by this. What the result buys is the elimination of one way the arc
+    could have been empty, and a sharper location for the open part: everything
+    now rests on the choice of operator, nothing on the shape of the hypothesis. -/
+theorem hasReebSpectralCoords_satisfiable (Z : LocalQZetaFunction) (hq : Z.q > 1) :
+    ∃ R : ReebSpectrum (Fin 8 → ℂ), HasReebSpectralCoords Z R := by
+  obtain ⟨ρ, hρ⟩ := exists_spectral_coord Z hq
+  refine ⟨{ op := diagOp ρ
+            mode := fun i => Pi.single i 1
+            spec := ρ
+            mode_ne_zero := ?_
+            is_eigen := ?_ }, ⟨hρ⟩⟩
+  · intro i hi
+    have h1 := congrFun hi i
+    simp at h1
+  · intro i
+    funext j
+    by_cases hji : j = i
+    · subst hji; simp [diagOp]
+    · simp [diagOp, Pi.single_eq_of_ne hji]
 
 end QOU.AlgebraicSubstrate
