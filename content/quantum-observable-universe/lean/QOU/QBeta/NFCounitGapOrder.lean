@@ -1,31 +1,53 @@
 /-
-# The single-wrap/typed NF counit gap is `O(h³)`
+# The single-wrap/typed NF **counit** gap is `O(h³)` — and that does NOT free the phase
 
-Bean `qou-pdix` (child of `qou-cds1`), following its last entry, which made the
-NF question the gate on branch 3: *"A 0.16% phase cannot be derived from an
-object whose NF convention is unsettled at 0.58%."*
+Bean `qou-pdix` (child of `qou-cds1`).
 
-`docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 labels the 1.00579
-factor a **"basis-change typed-vs-single-wrap"**.  Its own §2 proves the
-dual-basis identity `G⁻¹·t = e_γ`, i.e. that the framework's net **is** the
-Frobenius counit.  Those cannot both be about one element: `ε` is a canonical
-algebra map, hence basis-independent, so one element has one `ε`.  The two NFs
-give different polynomials, so they expand **different elements** — the §1 label
-is a category error against §2 of the same document.
+## Read the scope before reusing these theorems
 
-What is proved here is the quantitative half: the gap's exact closed form and
-its **order**.  The two NFs agree through `O(h²)` and first differ at `O(h³)`,
-so the ambiguity contributes nothing at order `t¹` or `t²` in `q = 1 + t`.
+Every theorem below is about the **counit** `ε`, and each is correct. The
+docstring first attached to them drew a conclusion about the **phase** `α`, and
+that conclusion is **RETRACTED**. They are different functionals:
 
-Bean entry (6) states the branch-3 acceptance test as *reproduce `α` through
-order `t²`*, with the coefficient pinned at `t¹` so `t²` is a prediction.
-**An `O(t³)` ambiguity cannot move that test.**  The bean's magnitude argument
-is untouched and remains correct for the absolute 0.160 % target; a magnitude
-at `q₀` and an order in the expansion are different claims, and only the latter
-governs which Taylor coefficients an ambiguity can reach.
+    α = (ε(n−p) − tr_M(n−p)) / 2                    [bean entry (9)]
 
-Companion probe: `computations/qbeta/qbeta_nf_counit_gap_order_probe.py` (8/8,
-exact ℚ(h), reproducing the audit's 1.00579 at the proton pin).
+Measured, first nonzero order in `t` with `q = 1 + t`, the same in **both**
+conventions:
+
+    ε      gap   t³   (coeff −2)
+    tr_M   gap   t¹   (coeff −1/4)
+    **α**  gap   **t¹**  (coeff **1/8**)
+
+So the NF choice moves the phase at **first** order, and the bean's gate on
+branch 3 **stands exactly as written**. The bean was right; the correction of it
+was not.
+
+**Why the two halves differ, which is the part worth keeping.** The counit sets
+every `z^k ↦ 1`; the Markov trace weights by `z^{#cr}`. The two NFs differ
+precisely in the `L₊/L₋/e⁻` coefficients, whose crossing numbers are 2, 2, 3 —
+so under `ε` those differences cancel down to `O(h³)`, and under `tr_M` they
+survive at `O(t)`. **The NF sensitivity of the phase lives entirely in the
+crossing-number grading**, not in the algebra, so no re-basing of the counit can
+remove it.
+
+## What these theorems do establish
+
+The exact closed form of the counit gap, reproducing the 1.00579 factor of
+`docs/audits/2026-05-11-q-beta-residual-decomposition.md` §1 to six digits.
+
+That audit labels the factor a **"basis-change typed-vs-single-wrap"**, while
+its own §2 proves the dual-basis identity `G⁻¹·t = e_γ` — *"the net **is** the
+Frobenius counit"*. Those cannot both be about one element: `ε` is a canonical
+algebra map, hence basis-independent, so one element has one `ε`. The two NFs
+give different polynomials (`epsTyped_ne_epsSingleWrap`), so they expand
+**different elements**, and §1's label is a category error against §2 of the
+same document. That much is unaffected by the retraction above, and it reframes
+the open question as *"which braid element is the canonical nucleon pair"*
+rather than a convention to be picked.
+
+Companion probe: `computations/qbeta/qbeta_nf_counit_gap_order_probe.py`
+(17/17, exact ℚ(h); reproduces both the audit's 1.00579 and bean entry (6)'s
+independently-computed `α` coefficients).
 -/
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic

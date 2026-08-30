@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T11:41:13Z
+updated_at: 2026-08-30T11:50:03Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -712,3 +712,79 @@ reproducing 1.00579 at the proton pin).
 Unchanged: routes 1-4 closed, route 5 (transcendental/holonomy) still the only
 live one. What changes is that its acceptance test is **no longer gated on the
 NF question**, so it can be attempted now.
+
+
+## 2026-08-30 (13) — RETRACTION of entry (12): the gate STANDS. I applied an eps result to alpha.
+
+Entry (12) concluded *"the NF gate is NOT a gate on the entry-6 test: the gap is
+O(t^3)"*. **Wrong.** I proved a statement about the COUNIT and applied it to the
+PHASE. They are different functionals — this bean's own entry (9) says so:
+
+    alpha = (eps(n-p) - tr_M(n-p)) / 2
+
+and only the `eps` half is insensitive. Measured, first nonzero order in `t`,
+identical in BOTH conventions:
+
+    eps    gap   t^3   (coeff -2)
+    tr_M   gap   t^1   (coeff -1/4)
+    ALPHA  gap   t^1   (coeff  1/8)
+
+**The NF choice moves the phase at FIRST order. The gate stands exactly as
+entry (11) wrote it.** The bean was right; my correction of it was not.
+
+### Why the two halves differ — the part worth keeping
+
+The counit sets every `z^k -> 1`; the Markov trace weights by `z^{#cr}`. The two
+NFs differ precisely in the `L_+/L_-/e^-` coefficients, whose crossing numbers
+are 2, 2, 3 — so under `eps` those differences cancel to `O(h^3)`, and under
+`tr_M` they survive at `O(t)`.
+
+**The NF sensitivity of the phase lives entirely in the CROSSING-NUMBER
+GRADING, not in the algebra.** That is a sharper statement of the gate than
+"unsettled at 0.58%": it says where the sensitivity is, and why no re-basing of
+the counit can remove it. A derivation of alpha must fix the crossing-number
+grading of the nucleon element, not merely pick a normal form.
+
+### The typed NF is WORSE, not better — the hypothesis that motivated (12)
+
+I went in expecting the typed NF to repair the `t^3` mismatch, since entry (6)
+found single-wrap C matches `c*ln q` at `t^2` and fails at `t^3`, and the counit
+gap first bites at `t^3`. It does the opposite — it destroys the `t^2` match:
+
+    C single-wrap  [-1/2,  1/4, -5/16]    vs pred [-1/2,  1/4, -1/6]
+    C typed        [-3/8, 11/16, -71/32]  vs pred [-3/8,  3/16, -1/8]
+    D single-wrap  [-1/2,  5/4, -1/2]     vs pred [-1/2,  1/4, -1/6]
+    D typed        [-3/8, 19/16, -45/16]  vs pred [-3/8,  3/16, -1/8]
+
+**Single-wrap C remains the only combination matching through `t^2`**, and
+entry (6)'s recorded tension with the D ruling is unchanged. The first two rows
+reproduce entry (6) exactly from an independent construction, which is what
+established that the machinery is right rather than merely self-consistent.
+
+### What SURVIVES entry (12)
+
+1. **The closed form.** `eps_typed - eps_sw = h^3(h^4+2h^3+2h^2+2h-1)/4`,
+   leading `-h^3/4`, reproducing the audit's 1.00579 to six digits. The seven
+   Lean theorems are statements about `eps` only and are **all correct**; only
+   the docstring's conclusion about `alpha` was wrong, and it is fixed in place.
+
+2. **It is NOT a change of basis — it is two different ELEMENTS.** `eps` is a
+   canonical algebra map, hence basis-independent, so one element has one `eps`;
+   different `eps` => different elements. The 2026-05-11 audit's §1 label
+   "basis-change" is a category error against its own §2 (which proves the net
+   IS the counit). Unaffected. The open question is *"which braid element is the
+   canonical nucleon pair"*, not which basis.
+
+3. **The alpha-gap leading coefficient is 1/8 in BOTH conventions** — the NF
+   sensitivity is convention-independent at leading order.
+
+### Contamination check
+
+Entry (12), commit `0d414e780f`, and that commit's message all carry the wrong
+claim. All three are corrected here / in the amended probe and Lean docstring.
+The claim did NOT reach the PR body of #6180 (which is about the M_beta spectrum
+and was written before this work) or any content block, audit doc, or witness
+other than `qbeta-nf-counit-gap-order.witness.json`, which is regenerated.
+
+PROBE: qbeta_nf_counit_gap_order_probe.py, now 17/17 with the retraction and the
+entry-6 reproduction as assertions.
