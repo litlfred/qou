@@ -91,3 +91,12 @@ would violate the anti-laundering discipline ("Axiomatization is NOT a Proof"). 
 of the TL machinery (to discharge the instance for real) is the remaining **formalization** work — a
 substantial but mechanical task, not a mathematical gap. The recursion is proved; its Lean witness is
 future work.
+
+**Update — the field-algebra core is now Lean-formalized (sorry-free).**
+`QOU.MassTheory.DeficitRecursionReduction.deficit_recursion_of_reduction` proves, over a generic
+`[Field K]`, that identity (I) `G_n=[2]^n(1+h²)−h²Q_n` **plus** the 2-term Q-recursion
+`Q_{n+1}=[2]^{n+1}(1+u h²)−u h²[2]Q_n` imply `D_{n+1}=−h²(h²+2)D_n` (lean-direct exit 0; axioms
+`{propext, Classical.choice, Quot.sound}`, no `sorryAx`). This isolates the remaining Lean obligation
+to exactly the **two TL facts** (I) and the Q-recursion for the concrete Markov trace — the passage
+from them to the deficit recursion is now checked in Lean. The `BrunnianDeficitRecursion` instance is
+still not fabricated; only the genuinely-open TL premises remain to be formalized.
