@@ -58,3 +58,37 @@ justification was previously mistaken for an established one.
   non-RSK route; that says nothing about the other RSK-family targets.
 * Do not remove the containment guard on fDimSkew to simplify the sum -- it is what makes the
   statement true.
+
+## Scale of the one open input, MEASURED (2026-08-30)
+
+The skew branching rule is not a finishing touch. The straight-case machinery it must mirror
+is ~443 lines across four files:
+
+    172  QOU/Mathlib/SYTInsertMax.lean         insertMax: re-insert |mu| at a corner
+    111  QOU/Mathlib/SYTEraseMax.lean          eraseMax: delete the max-value corner
+     67  QOU/Mathlib/SYTBranchingBijection.lean  insertMax/eraseMax mutually inverse
+     93  QOU/Mathlib/SYTBranchingRule.lean     Nat.card_congr + Nat.card_sigma
+
+and the skew analogue is HARDER than a transliteration, for a specific reason: the two
+structures certify their filling differently.
+
+    StandardYoungTableau      bijOn : Set.BijOn entry mu.cells (Set.Icc 1 |mu|)
+    SkewStandardYoungTableau  content : (outer.cells \ inner.cells).image (entry) = range card
+
+`Set.BijOn` gives injectivity and surjectivity as separate, directly usable facts. The skew
+`content` field gives a Finset image EQUALITY, from which both must be re-derived (card of
+the image = card of the set forces injectivity on the skew region). Every step of insertMax /
+eraseMax that currently cites bijOn needs that derivation first.
+
+Note also the skew entries are 0-based (`range card`) while the straight ones are 1-based
+(`Icc 1 card`); do not port index arithmetic without re-checking it.
+
+Shape of the target:
+
+    fDimSkew lam mu = sum over {c : IsCornerCell lam c, c not in mu} of fDimSkew (lam - c) mu
+
+with the side condition that `mu <= lam - c` iff `c not in mu` (so the guard on fDimSkew keeps
+the summand meaningful). Then G(mu,k) is a straightforward induction on top of upSum_eq.
+
+Estimate: 300-500 lines of new Lean. Budget it as its own tranche; do NOT open it alongside
+other work and do NOT land it with sorries (AGENTS.md zero-sorry default).
