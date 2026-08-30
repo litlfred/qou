@@ -1385,9 +1385,19 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **536** document directories are searchable this
-   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
-   low by 62 %, not merely old).
+   and re-deriving one. **542** document directories, holding **10,922**
+   section files, are searchable this way (this read *"332 documents /
+   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+
+   **Say which count you mean, or the next reader will "correct" you.**
+   Three numbers describe this library and they are all different:
+   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   *index rows*, because the 23 known duplicate copies deliberately get no
+   row of their own; and `summarize-library.py` prints that 518 as
+   "documents". A grep-coverage claim wants the 542; a "how many distinct
+   works do we hold" claim wants the 518. Quoting one against the other
+   reads as staleness when it is a category difference.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1398,7 +1408,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &

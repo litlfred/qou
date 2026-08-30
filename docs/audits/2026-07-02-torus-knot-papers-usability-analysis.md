@@ -14,11 +14,11 @@ Two papers were uploaded to `uploads/` (commits `9e2c2d2a`, `1088902c`):
 
 1. **Murakami, H.** *Asymptotic behaviors of the colored Jones polynomials of a
    torus knot* (arXiv:math/0405126; Internat. J. Math. 15 (2004) 547–555) —
-   [uploads/0405126v1.pdf](../../uploads/0405126v1.pdf). Bib key
+   [library/arxiv-math-0405126v1/0405126v1.pdf](../../library/arxiv-math-0405126v1/0405126v1.pdf). Bib key
    `murakami-torus-2004` (added by this audit).
 2. **Avrin, J. S.** *Knots on a Torus: A Model of the Elementary Particles*
    (Symmetry 2012, 4(1), 39–115, doi:10.3390/sym4010039) —
-   [uploads/symmetry-04-00039-v3.pdf](../../uploads/symmetry-04-00039-v3.pdf).
+   [library/symmetry-04-00039-v3/symmetry-04-00039-v3.pdf](../../library/symmetry-04-00039-v3/symmetry-04-00039-v3.pdf).
    Bib key `avrin-2012` (already present in `content/schema/references.ts`;
    the upload supplies the in-repo source for the bib-human-review ladder).
 
