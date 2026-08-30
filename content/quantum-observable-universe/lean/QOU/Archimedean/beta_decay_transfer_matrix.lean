@@ -21,7 +21,21 @@ from the explicit entries by `Matrix.trace_fin_two` / `Matrix.det_fin_two`
 and `ring`, not projected from an opaque context field.
 -/
 
-namespace QOU.Archimedean
+-- Declarations here are nested one namespace deeper than `QOU.Archimedean`
+-- so this module and `QOU.Archimedean.TransferMatrix` can be imported
+-- together. Both declared `T_pp`, `T_nn` and `T_mix` at the same
+-- fully-qualified names, and Lean rejects the second import with
+-- "environment already contains" (bean `qou-kfcl`).
+--
+-- They are NOT rival definitions. `TransferMatrix.transferMatrix c d`
+-- is `!![c * HA_t + d, c; c, d]` over `ℤ[t, t⁻¹]` with `HA_t = q - q⁻¹`;
+-- `betaTransfer q c d` here is `!![c * (q - q⁻¹) + d, c; c, d]` over `ℝ`.
+-- One formula, two ground rings — the symbolic one and its archimedean
+-- specialisation, which is exactly the §7c layering. Consolidating them
+-- onto a single generic `transferMatrix (q c d : R)` over `[CommRing R]`
+-- is the right end state and is NOT done here; it changes the signature
+-- of a declaration seven modules consume. Measured and left to `qou-u87j`.
+namespace QOU.Archimedean.BetaDecayTransfer
 
 open Matrix
 
@@ -94,4 +108,4 @@ theorem beta_decay_transfer_matrix (q : ℝ) :
    ⟨det_T_pp q, det_T_nn q⟩,
    universal_delta_beta q⟩
 
-end QOU.Archimedean
+end QOU.Archimedean.BetaDecayTransfer
