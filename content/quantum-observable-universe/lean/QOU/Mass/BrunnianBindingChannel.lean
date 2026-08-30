@@ -43,6 +43,8 @@ Ground ring `ℝ` (§7c: archimedean — uses `q⁻¹`, division, and the substr
 matching `crossing-energy.lean`. `n₊`, `n₋` are crossing multiplicities (`ℕ`). No fit.
 -/
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Real.Archimedean
 import Mathlib.Tactic
 
 namespace QOU.Mass.BrunnianBindingChannel
@@ -120,5 +122,97 @@ theorem brunnian_channels_strict_mono (m : ℕ) (q : ℝ) (hq : 1 < q) :
   calc (m : ℝ) * (q - q⁻¹)
       < ((m : ℝ) + 1) * (q - q⁻¹) := by nlinarith
     _ = (((m + 1 : ℕ) : ℝ)) * (q - q⁻¹) := by push_cast; ring
+
+/-! ## Sub-question 1 — the crossing count → coordination count map (bean `qou-brng` (1))
+
+Each pair inside the Borromean carrier `L6a4` is a *minimal Brunnian bond*: two inter-component
+crossings of opposite sign (`n₊ = n₋ = 1`, pairwise linking number 0). Its count-channel
+multiplicity `½(n₊+n₋) = 1` — one unit of coordination per bonded pair. A fully-bonded `A`-nucleon
+cluster then carries `C(A,2)` coordination units and per-nucleon `z = A−1`. Which pairs actually
+bond is the coordination-graph question — saturation-limited for heavy `A`
+(`QOU.Mass.CoordinationSaturation`). -/
+
+/-- **A minimal Brunnian bond carries exactly one coordination unit.** The pair `n₊ = n₋ = 1`
+(the pairwise crossing pattern inside `L6a4`, linking number 0) has count channel `q − q⁻¹`, i.e.
+count multiplicity `½(n₊+n₋) = 1`. -/
+theorem minimal_brunnian_bond (q : ℝ) : countChannel 1 1 q = q - q⁻¹ := by
+  unfold countChannel
+  norm_num
+
+/-- **Coordination count of a fully-bonded cluster.** If every one of the `C(A,2)` pairs is a
+minimal Brunnian bond (one unit each), the total coordination count is `C(A,2) = A(A−1)/2`,
+i.e. per-nucleon `z = A−1`. This is the `n₊+n₋ → z` map for the canonical carriers; the graph
+structure (which pairs bond) is `QOU.Mass.CoordinationSaturation`. -/
+theorem cluster_coordination_count (A : ℕ) :
+    (A.choose 2 : ℝ) = (A : ℝ) * ((A : ℝ) - 1) / 2 := by
+  rw [Nat.cast_choose_two]
+
+/-! ## Sub-question 2 — bar-parity: the assignment is FORCED, not chosen (bean `qou-brng` (2))
+
+Why does the binding/mutual multiplier enter as a bare integer count while the mass/self multiplier
+keeps the full q-dimension self-trace `lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1)`? Because the two live in
+complementary **bar-parity** sectors of the bar-involution `q ↦ q⁻¹`:
+
+* the mass/self multiplier is **bar-even** — a quantum-dimension self-trace, and every quantum
+  dimension satisfies `dim_q = dim_{q⁻¹}` (e.g. `[2]_q = q + q⁻¹`), so `lw` is invariant under
+  `q ↦ q⁻¹` (the cosh sector);
+* the mutual/binding count channel `∝ (q − q⁻¹)` is **bar-odd** — it changes sign under
+  `q ↦ q⁻¹` (the sinh sector).
+
+A nonzero bar-even function is never bar-odd, so a mass-type multiplier can never *be* a binding-type
+one: the assignment is forced by parity. This is the same cosh/sinh split the corpus uses elsewhere
+(`Q_β` is the bar-odd sinh partner of the bar-even cosh meson scale `m_π`; the crossing-energy
+strong channel is `q+q⁻¹`, the Coulomb channel `q−q⁻¹`). What stays open is the *Hamiltonian-level*
+claim that rest mass IS the closed self-trace and binding IS the open mutual pairing — the parity
+distinction is proved here; its dynamical origin is not. -/
+
+/-- `f` is **bar-even**: invariant under the bar-involution `q ↦ q⁻¹` (on `q ≠ 0`). -/
+def BarEven (f : ℝ → ℝ) : Prop := ∀ q : ℝ, q ≠ 0 → f q = f q⁻¹
+
+/-- `f` is **bar-odd**: it changes sign under the bar-involution `q ↦ q⁻¹` (on `q ≠ 0`). -/
+def BarOdd (f : ℝ → ℝ) : Prop := ∀ q : ℝ, q ≠ 0 → f q = - f q⁻¹
+
+/-- The signed (strong / cosh) channel is **bar-even** — its `q + q⁻¹` factor is `q ↦ q⁻¹`
+invariant. -/
+theorem signedChannel_barEven (np nn : ℕ) : BarEven (signedChannel np nn) := by
+  intro q hq
+  unfold signedChannel
+  rw [inv_inv]
+  ring
+
+/-- The unsigned (Coulomb / sinh) count channel is **bar-odd** — its `q − q⁻¹` factor flips sign
+under `q ↦ q⁻¹`. -/
+theorem countChannel_barOdd (np nn : ℕ) : BarOdd (countChannel np nn) := by
+  intro q hq
+  unfold countChannel
+  rw [inv_inv]
+  ring
+
+/-- The quantum dimension of the fundamental, `[2]_q = q + q⁻¹`, is bar-even (`dim_q = dim_{q⁻¹}`).
+`lw` is a positive average of such quantum dimensions, hence bar-even — the mass multiplier sits in
+the sector complementary to the binding count channel. -/
+theorem quantumDim2_barEven : BarEven (fun q => q + q⁻¹) := by
+  intro q hq
+  show q + q⁻¹ = q⁻¹ + (q⁻¹)⁻¹
+  rw [inv_inv]
+  ring
+
+/-- **The bar sectors are orthogonal:** a function that is both bar-even and bar-odd vanishes on
+`q ≠ 0`. -/
+theorem barEven_barOdd_eq_zero {f : ℝ → ℝ} (he : BarEven f) (ho : BarOdd f) :
+    ∀ q : ℝ, q ≠ 0 → f q = 0 := by
+  intro q hq
+  have h1 := he q hq
+  have h2 := ho q hq
+  linarith
+
+/-- **The binding multiplier is not a mass multiplier — forced by bar-parity.** The nonzero
+bar-odd count (binding) channel cannot be bar-even, so it can never coincide with a bar-even
+mass/self-trace multiplier. The linking-vs-self-energy assignment is a parity fact, not a modelling
+choice. -/
+theorem binding_not_mass_sector (np nn : ℕ) (q : ℝ) (hq : q ≠ 0)
+    (hne : countChannel np nn q ≠ 0) : ¬ BarEven (countChannel np nn) := by
+  intro he
+  exact hne (barEven_barOdd_eq_zero he (countChannel_barOdd np nn) q hq)
 
 end QOU.Mass.BrunnianBindingChannel
