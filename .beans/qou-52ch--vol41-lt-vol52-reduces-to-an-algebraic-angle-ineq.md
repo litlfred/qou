@@ -1,11 +1,11 @@
 ---
 # qou-52ch
-title: 'Vol(4_1) < Vol(5_2) reduces to an ALGEBRAIC angle inequality — no certified transcendental needed'
-status: todo
+title: Vol(4_1) < Vol(5_2) reduces to an ALGEBRAIC angle inequality — no certified transcendental needed
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T08:45:00Z
-updated_at: 2026-08-30T08:45:00Z
+updated_at: 2026-08-30T14:17:41Z
 ---
 
 Follows `qou-f8lit` (#6084, #6138). **Correcting my own characterisation first:**
@@ -582,3 +582,33 @@ by hand) and `z³ = z − 1` (which turned a degree-15 identity into `(z−1)³`
 
 **`FiveTwoVolumeBridge` can now be upgraded from equivalence to inequality** —
 left for a follow-up, since it touches a merged module.
+
+
+---
+
+## 2026-08-30 — CLOSED. `VOL_4_1 < VOL_5_2` is proved and merged (#6141).
+
+`QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2`, sorry-free, axiom-clean
+(`propext, Classical.choice, Quot.sound`), `lean`-direct exit 0. 47 declarations across
+`Archimedean/LobMonotonicity.lean`, `Knot/FiveTwoAngleSum.lean`,
+`Knot/FiveTwoNinthPower.lean` and `Knot/FiveTwoVolumeChord.lean`.
+
+**The route, for whoever needs it next.** Rivin strict concavity of the ideal-tetrahedron
+volume along the line from the regular shape `(π/3, π/3, π/3)` to the 5₂ shape; the
+`Cl₂(π/3)` terms cancel against `VOL_4_1 = 2·Cl₂(π/3)`, leaving a domain-membership
+condition at chord parameter `s = 3`, which is exactly `aᵢ > 2π/9` for all three angles.
+That in turn came from `Im(z⁹) > 0` for `z := 1 − y₁⁻¹` (the Landen image, satisfying
+`z³ = z − 1`), reduced to `Re z < 2/3` and closed by `3/7 < realRoot`. `s₀ = 3` is forced
+from both sides with no slack — the chord weight needs `3(1 − 1/s) ≥ 2`, and domain
+membership at `s = 3` *is* the `2π/9` bound.
+
+**No certified transcendental was needed anywhere**, which is what this bean's opening
+correction predicted and is worth restating: the earlier "blocked on certified Λ at
+angles that are not rational multiples of π" was a claim about a surface that had not
+been walked.
+
+**Downstream, same day (#6234):** `Encounter/FiveTwoVolumeBridge.lean` upgraded from its
+deliberate equivalence to a real inequality (`vol_lt_of_realises`) and gained positivity
+(`VOL_5_2_pos`, `vol_pos_of_realises`, `vol_ne_zero_of_realises`) — via comparison
+against `Cl_2_pi_div_three_pos`, with no Bloch–Wigner positivity statement in the proof.
+General `0 < D(z)` on the upper half plane stays open (`qou-f8lit` item 3).
