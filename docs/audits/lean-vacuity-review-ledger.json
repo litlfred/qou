@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T14:21:18Z",
+  "updated_at": "2026-08-30T14:38:20Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -35,17 +35,6 @@
         "agent_date": "2026-08-21"
       },
       "reviewed_at": "2026-08-21T15:40:59.000Z"
-    },
-    "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean::markov_gns_embedding::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "tuple-projection",
-      "line": 89,
-      "verdict": "genuine",
-      "file_sha": "d2b73a071ad8",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HasMarkovGnsEmbedding` carries field `repr` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `repr` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean::knot_eigenbasis_density::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -306,98 +295,53 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::adjoint_vanishing_propagation::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 109,
-      "verdict": "genuine",
-      "file_sha": "8192c1c775c1",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "RE-VERIFIED 2026-08-30 by reading the declaration (recorded file sha not reproducible from this clone's history; cause undetermined). Verdict unchanged, and the binder is the tell: the theorem takes `(k : N)` and the CONCLUSION never mentions `k` -- `Subsingleton ((1_C) --> jgcs.adjointObj)` is level-independent by construction. So the 'propagation' the name claims (level 0 implies all levels) is not stated in the type at all; the body is the bare projection `jgcs.adjoint_vanishing`. A bound-and-discarded index is the same shape Lean warns about as an unused variable.",
-      "reviewed_at": "2026-08-30T04:30:08Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "stale_prev_verdict": "genuine"
-    },
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 122,
       "verdict": "genuine",
-      "file_sha": "abb0d27becd7",
+      "file_sha": "b8ac9b55ece6",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
+      "reviewed_at": "2026-08-30T14:38:20Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_split_hypotheses::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "tuple-projection",
-      "line": 132,
-      "verdict": "genuine",
-      "file_sha": "abb0d27becd7",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `M_N_pos` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `M_N_pos` is outside CONCLUSION_FIELD."
+      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD.",
+      "stale_prev_verdict": "needs-agent"
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::proton_pair_skein_approx::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 443,
       "verdict": "genuine",
-      "file_sha": "6b14ab644145",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "file_sha": "650b115d793a",
+      "reviewer": "agent",
+      "reviewed_at": "2026-08-30T14:38:20Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Projection `:= hi.bound`, and this one carries an ANTI-LAUNDERING concern beyond the shape: the assumed field is a NUMERICAL PHYSICS claim \u2014 `|proton_from_pair_skein - proton_topological| < 0.5` MeV \u2014 so a 0.5-MeV empirical agreement is asserted as a class axiom and then re-exported under a name that reads as a proved result. Per AGENTS \u00a7Axiomatization is NOT a Proof, assuming the agreement is not establishing it. Fix: either compute both sides and derive the bound (the docstring cites mpmath / calculations.json, so the numbers exist), or state it honestly as a conjecture.",
-      "stale_prev_verdict": "genuine"
+      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Projection `:= hi.bound`, and this one carries an ANTI-LAUNDERING concern beyond the shape: the assumed field is a NUMERICAL PHYSICS claim \u2014 `|proton_from_pair_skein - proton_topological| < 0.5` MeV \u2014 so a 0.5-MeV empirical agreement is asserted as a class axiom and then re-exported under a name that reads as a proved result. Per AGENTS \u00a7Axiomatization is NOT a Proof, assuming the agreement is not establishing it. Fix: either compute both sides and derive the bound (the docstring cites mpmath / calculations.json, so the numbers exist), or state it honestly as a conjecture.",
+      "stale_prev_verdict": "needs-agent"
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::neutron_pair_skein_approx::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 470,
       "verdict": "genuine",
-      "file_sha": "6b14ab644145",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "file_sha": "650b115d793a",
+      "reviewer": "agent",
+      "reviewed_at": "2026-08-30T14:38:20Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Same shape and same anti-laundering concern as `proton_pair_skein_approx` (its docstring says so: 'same witness'). A 0.5-MeV numerical agreement assumed as `NeutronPairSkeinApprox.bound` and re-exported. Fix the pair together.",
-      "stale_prev_verdict": "genuine"
+      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Same shape and same anti-laundering concern as `proton_pair_skein_approx` (its docstring says so: 'same witness'). A 0.5-MeV numerical agreement assumed as `NeutronPairSkeinApprox.bound` and re-exported. Fix the pair together.",
+      "stale_prev_verdict": "needs-agent"
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::skein_mass_relation_holds::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 611,
       "verdict": "genuine",
-      "file_sha": "6b14ab644145",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "file_sha": "650b115d793a",
+      "reviewer": "agent",
+      "reviewed_at": "2026-08-30T14:38:20Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "`SkeinMassRelationHolds.identity` IS the conclusion; theorem is `:= hi.identity`. The assumed content is a mass identity at the substrate q relating proton, neutron and deuteron masses \u2014 again a physical claim carried as an axiom and re-exported as a theorem. Note the downstream `skein_mass_relation_proton_neutron` builds a `SkeinMassRelation` structure from the same instance, so the assumption propagates. Fix: derive from the mass definitions, or demote to conjecture.",
-      "stale_prev_verdict": "genuine"
+      "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: `SkeinMassRelationHolds.identity` IS the conclusion; theorem is `:= hi.identity`. The assumed content is a mass identity at the substrate q relating proton, neutron and deuteron masses \u2014 again a physical claim carried as an axiom and re-exported as a theorem. Note the downstream `skein_mass_relation_proton_neutron` builds a `SkeinMassRelation` structure from the same instance, so the assumption propagates. Fix: derive from the mass definitions, or demote to conjecture.",
+      "stale_prev_verdict": "needs-agent"
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean::pair_skein_mass_formula::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
