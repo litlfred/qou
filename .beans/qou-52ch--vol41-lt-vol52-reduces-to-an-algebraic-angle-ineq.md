@@ -404,3 +404,27 @@ probably easier, since the other two are nowhere near the bound.
 
 That, plus assembling the chord itself, is what stands between here and
 `VOL_4_1 < VOL_5_2`.
+
+## 2026-08-30 — the "NOT proved" item is closed: ALL THREE angles exceed `2π/9`
+
+The entry above left the ordering open — that `angle₃` is the smallest, which
+the chord bound needs. **The ordering does not have to be proved.** Both other
+angles clear the bound by a cheaper route: they exceed `π/4`, and
+`π/4 > 2π/9` because `1/4 > 2/9`.
+
+    angle₁ > π/4    ⟸ Im(y₁) > Re(y₁), which reduces to 2t² + 4 > 0 —
+                      unconditional, given Re(y₁) > 0 (from t < 1)
+    angle₁ < π/2    ⟸ Re(y₁) > 0
+    angle₃ < π/4    already proved (zz_arg_lt_pi_div_four)
+    angle₂ > π/4    ⟸ angle_sum minus the two above
+
+`all_angles_gt_two_pi_div_nine` therefore holds, and the chord hypothesis is
+satisfied for the minimum whichever it is.
+
+Module now **32 declarations**, all `#print axioms` clean, guard 32/32.
+
+**What actually remains for `VOL_4_1 < VOL_5_2`** is only the chord assembly
+itself: instantiate `strictConcaveOn_tetVolLine` on the segment from the regular
+point, discharge the far point at `s ≈ 3.02` with `LobMonotonicity` +
+`Lob_nonneg_of_lt_pi_div_two`, and read off through
+`VOL_5_2_eq_three_mul_lob_sum`. Every input to that is now proved.
