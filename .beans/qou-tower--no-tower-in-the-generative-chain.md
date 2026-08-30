@@ -231,3 +231,49 @@ the bypass was meant to supply, and the bypass may rest on other grounds.
 So δ²Φ's parity structure is **not an artifact of the K=10 truncation**. It
 persists at every level the new extractor opens up, and the local maxima stay
 at 4 and 12 — neither magic. The `qou-pz4m` finding holds at K=11 and K=12.
+
+## 🛑 Scoping the A=4 walk — THREE objects, and I had conflated two
+
+Before building the tower walk I re-scoped it, having mis-estimated twice
+already. There are three distinct objects and the "5.6 MB" figure belongs to
+the first, not the one the walk needs:
+
+| # | object | size at n=12 |
+|---|---|---|
+| 1 | **generator block structure** (what `hoefsmit_blocks_direct` builds) | `Σd_λ` = 140,152 → **measured 1.4 s, 92 MB** |
+| 2 | **evolving algebra element** (the honest tower state) | `Σd²` = `n!` = **3.83 GB** |
+| 3 | trace via matvecs (memory-cheap route) | 5.6 MB storage but ~**9.6e10** scalar ops |
+
+Object 2 is what a tower walk actually carries. Each `σ_i` is 2×2-block
+structured **in the seminormal basis**, but *different* generators have
+*different* block structures, so a product of them is a general matrix — the
+trick `nuclear_character_fast` uses works precisely because the H₃ code only
+ever touches two generators. **So the A=4 walk is not 5.6 MB.** Object 3 keeps
+the memory but costs ~1e11 scalar ops — out of reach in Python, plausible in
+the Rust `hecke-engine`.
+
+### But the first magic number is reachable *now*, at A=3
+
+Magic-ness is a property of **Z or N separately**, so the first magic number
+does not require the doubly-magic nucleus:
+
+| A | n | `Σd²` = n! | size | nuclei |
+|---|---|---|---|---|
+| 2 | 6 | 720 | trivial | **²H** (Z=1,N=1) — neither magic |
+| 3 | 9 | 362,880 | **2.9 MB** | **³He** (Z=2,N=1) **Z MAGIC** ; **³H** (Z=1,N=2) **N MAGIC** |
+| 4 | 12 | 479,001,600 | 3.83 GB | **⁴He** — doubly magic; borderline in a 16 GB box |
+| 5 | 15 | 1.3e12 | 10.5 TB | out |
+
+So the **exact** magic-vs-non-magic contrast — ²H (neither) against ³He (Z=2)
+and ³H (N=2) — costs **2.9 MB** and is fully tractable in Python today. That is
+the experiment, and it does not need ⁴He.
+
+⁴He at 3.83 GB is worth attempting afterwards (the container has ~12 GB
+available), but it is the *second* step, not the gate.
+
+### Correction to my own "next" from the previous entry
+
+The previous entry said the A=4 walk was "affordable" on the strength of the
+5.6 MB figure. That was object 1. The corrected plan is: do A ≤ 3 exactly,
+which already contains the first magic number on both the Z and N axes, then
+attempt A=4 separately.
