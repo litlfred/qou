@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 35 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 37 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 9 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 11 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **35** (26 machine + 9 hand) |
-| still undecided — INCONCLUSIVE, see method below | 44 |
+| **INHABITED with no hypotheses** | **37** (26 machine + 11 hand) |
+| still undecided — INCONCLUSIVE, see method below | 42 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -250,7 +250,7 @@ commit message and a PR body, and only then measured it.
 
 ### So the method is per-class hand construction — and it is fast
 
-Having refuted the tool route, I applied the only method shown to work. Nine of
+Having refuted the tool route, I applied the only method shown to work. Eleven of
 the undecided classes hand-adjudicated in one sitting, all **inhabited**, all
 `lean`-direct exit 0, in
 [`2026-08-30-context-classes-hand-adjudicated.lean`](2026-08-30-context-classes-hand-adjudicated.lean):
@@ -258,18 +258,19 @@ the undecided classes hand-adjudicated in one sitting, all **inhabited**, all
 `EwInterfaceKnotContext`, `FermionBosonKnotLinkContext`,
 `AtomicLPStabilityContext`, `ZHabiroConvergenceClass`,
 `SpectralSequenceH3ExplicitContext`, `Terms26HigherOperationsContext`,
-`SortingColorEnergyContext`, `DecayChannelContext`, `SchurWeylMassContext`.
+`SortingColorEnergyContext`, `DecayChannelContext`, `SchurWeylMassContext`,
+`ConfinementFrobeniusReciprocityContext`, `EInfinityIdentificationsContext`.
 
-**Floor: 26 → 35.**
+**Floor: 26 → 37.**
 
-**The rate is the useful number, not the count.** Nine classes in roughly
-forty minutes of working time, several minutes of which is `lean` startup on a
-cold import rather than thought. At that rate the remaining ~44 undecided are
+**The rate is the useful number, not the count.** Eleven classes in roughly
+an hour of working time, several minutes of which is `lean` startup on a
+cold import rather than thought. At that rate the remaining ~42 undecided are
 **hours, not the week** the sizing audit projected — its estimate assumed each
 one needed the mathematics the class was standing in for, and so far not one
 has.
 
-Two of the nine say something sharper than "inhabited":
+Several say something sharper than "inhabited":
 
 - **`SchurWeylMassContext`** — the Schur–Weyl decomposition
   `tr_M(𝒜) = Σ_λ s_λ χ_λ / H_q(λ)` holds over the **empty** partition set.
@@ -281,7 +282,18 @@ Two of the nine say something sharper than "inhabited":
   ties the boundary predicate to the energy `E_λ` it is supposed to be the
   vanishing locus of.
 
-Both are §3b-cond item 5 in a form a syntactic checker cannot see: the *shape*
+- **`ConfinementFrobeniusReciprocityContext`** — the master reciprocity formula
+  `⟨O⟩_T = Σ_{i,j∈A*} u*ᵢ (G⁻¹)_{ij} ⟨O,bⱼ⟩` holds with the physical expectation
+  and the Frobenius pairing both zero, since both are context fields and nothing
+  relates them. Separately worth noting: `strong_duality : primal_obj = dual_obj`
+  is a **field**, so LP strong duality is assumed here rather than derived —
+  consistent with `HasFiniteLPDuality` doing the same, and the honest reading of
+  what the class provides.
+- **`EInfinityIdentificationsContext`** — all six `E_∞`-page identifications hold
+  at `n_pages := 0`, which makes the six-term sum empty and the "unified mass
+  formula" claim `0 = 0 + 0 + 0`.
+
+These are §3b-cond item 5 in a form a syntactic checker cannot see: the *shape*
 is right, and the constraint is missing between fields rather than within one.
 
 The `--selftest` pins the five classes inhabited by hand before the script
