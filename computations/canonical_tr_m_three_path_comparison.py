@@ -69,6 +69,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mpmath import mp
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -101,8 +102,14 @@ def main() -> int:
     # correctly (as visible in stdout) but the witness write fails.
     # Inline the printed-to-stdout values from the actual run.
     peel_map = {
-        "proton":  "1.0653062286131670",  # matches bridge to all digits
-        "neutron": "0.9232332971861535",  # matches bridge
+        # CONVENTION FIX (2026-08-30, bean qou-46ab). These were the
+        # convention-C literals, and the comments "matches bridge to all
+        # digits" / "matches bridge" were FALSE: the bridge computes
+        # 1.14575969245730086968… under convention D, 7.55% away. Those
+        # comments are why this mattered — they asserted an agreement that
+        # had silently stopped holding.
+        "proton":  str(tr_m_nucleon("proton")),
+        "neutron": str(tr_m_nucleon("neutron")),
         "deuteron": "0.3882864715477132785110659223165687998713135876719",
         "tritium":  "0.10405211867552603688391599234819295816123485565186",
         "helium-3": "0.20654085856226245265787611060659401118755340576172",

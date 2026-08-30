@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path[:0] = [str(Path(__file__).resolve().parent),
                 str(Path(__file__).resolve().parent / "substrate")]
 import _path_bridge  # noqa: F401,E402
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
 from mpmath import mp  # noqa: E402
 
@@ -29,8 +30,13 @@ q0 = mp.mpf(_q0_value_for_anchor("muon"))
 m_e = mp.mpf('0.51099895000')
 Q_beta_codata = mp.mpf('0.78233341000')
 
-tr_M_p = mp.mpf('1.06530622861316626170946619823')
-tr_M_n = mp.mpf('0.923233297186152879199028120638')
+# CONVENTION FIX (2026-08-30, bean qou-46ab). These were convention-C
+# literals AND float64-laundered on top of it: '1.06530622861316626170…'
+# diverges from the exact C value '1.06530622861316705936…' at the 15th digit
+# (~7.5e-16) — the C number round-tripped through a double, then re-serialised
+# as if it carried 30 real digits. Two defects on one line.
+tr_M_p = tr_m_nucleon("proton")
+tr_M_n = tr_m_nucleon("neutron")
 
 delta_tr = tr_M_p - tr_M_n
 print(f"delta_tr (Habiro exact): {delta_tr}")

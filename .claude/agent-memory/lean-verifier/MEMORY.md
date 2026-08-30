@@ -210,6 +210,11 @@ prune the log, never the TRAPs.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
+- 2026-08-30 (torus-knots): restored `lake-cache/qou-v4-24-0` fresh (3407
+  mathlib oleans this seed — vs 6990 in the baseline; cone was sufficient),
+  verified new `QOU/Interactions/EmCouplingBarParity.lean` lean-direct exit 0
+  + `#print axioms` (std 3 only). One fix: `/-!` docstring preceded imports —
+  Lean rejects any `import` after a module doc; imports must be first.
 - 2026-08-30: found `QOU/Hecke/WedderburnRankDegeneracy.lean` red on `main` for
   six days behind a FALSE GREEN — my own #5710 removed a field its instance
   discharged. Rebuilt the 8-module reverse-import cone: ALL-GREEN after repair.

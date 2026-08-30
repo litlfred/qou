@@ -1335,7 +1335,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1371,8 +1371,35 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
-   characters are searchable this way.
+   and re-deriving one. **536** document directories are searchable this
+   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
+   low by 62 %, not merely old).
+
+   **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
+   (added 2026-08-30).** Some documents were ingested with their text in
+   `library/<doc-id>/ocr/page-*.txt` and only a **stub** in `sections/`, so
+   the command on the line above cannot see their mathematics at all:
+
+   ```sh
+   grep -rln <topic> library/*/ocr/     # the tier the three above miss
+   ```
+
+   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   of the eleven single-`sections/`-file directories hold **under 15 %** of
+   their OCR bytes in `sections/`, six of them under 3 %. The worked case is
+   the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
+   Ricca 1992, _Helicity and the Calugareanu invariant_**, whose `sections/`
+   is **1,916 bytes of JSTOR download banner** against **46,511 bytes** of
+   real text in `ocr/` (4.1 %). A `sections/` grep for *helicity* returns
+   several other documents and **not this one** — the single most on-point
+   held source for the mass/binding self-vs-mutual linking question, invisible
+   to the documented path. `1992evansberger` (*A Hierarchy of Linking
+   Integrals*, 2.2 %) is hidden the same way.
+
+   So a clean `sections/` grep is **not** evidence the library lacks a topic.
+   Run the `ocr/` tier before concluding a source is not held — the whole
+   point of path 5 is to catch a citation, and this is exactly where the
+   citations that matter have been hiding.
 
    This path exists only because the sources were sectioned into text.
    Before that they were 339 PDFs and grep could not see them, which is
