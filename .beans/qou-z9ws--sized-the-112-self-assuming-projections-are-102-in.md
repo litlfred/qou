@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T15:37:11Z
+updated_at: 2026-08-30T18:24:16Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -260,3 +260,51 @@ Artifacts: `scripts/lean-context-class-inhabitation-probe.py` (with
 
 Floor is soft in both directions: three generator fixes moved it 15 → 25 without
 touching a class, and 54 classes remain unmeasured rather than established hard.
+
+
+---
+
+## 2026-08-30 (later) — hand adjudication works, and one class is FALSE
+
+After refuting the "keep fixing the tool" route (yields 1 of 54, then 0 of 6),
+applied per-class hand construction. **Floor 26 → 35**, all `lean`-direct exit 0,
+in `docs/audits/2026-08-30-context-classes-hand-adjudicated.lean`.
+
+**Rate, which matters more than the count:** nine classes in ~40 min, much of
+that `lean` startup rather than thought. The remaining ~44 are **hours, not the
+week** the sizing audit projected.
+
+### The one that is not vacuous but FALSE
+
+`QOU.HadronicMass.SkeinMassRelationHolds` asserts
+`q·m_p − q⁻¹·m_n = (√q − 1/√q)·m_d` at the constants its own file defines.
+**LHS 194.5164, RHS 195.3202 — 0.41 % apart.** Refuted in Lean
+(`docs/audits/2026-08-30-skein-mass-relation-is-false.lean`).
+
+**Refutable is worse than vacuous.** A vacuous class makes its downstream
+conditional empty; a false one makes it *vacuously true* — it proves nothing and
+would equally "prove" the negation. Two consumers, and the second is the
+concern: `skein_mass_relation_proton_neutron [SkeinMassRelationHolds] :
+SkeinMassRelation` **constructs** the p/n/d Skein mass relation from the false
+hypothesis, so that object is unreachable and anything reasoning from it is
+vacuous.
+
+Not a claim that the Skein mass relation is wrong as mathematics — only that the
+equality *as written, at these constants* is false by 0.41 %, far outside what
+the same file treats as agreement (its `row1_proton_matches_CODATA` uses 1e-3
+MeV). The repair — approximate form with a stated tolerance, different
+constants, or a corrected relation — is authorial.
+
+Proof note: `norm_num` alone cannot close it (the two `rpow` terms survive);
+set `s = q^(1/2)`, supply `s*s = q`, rewrite the negative exponent via
+`Real.rpow_neg`, `field_simp`, `nlinarith`. The `norm_num at h` before the
+rewrite is load-bearing — without it the base is the decimal `1.1097` and the
+rewrite finds no occurrence.
+
+Two others say more than "inhabited": `SchurWeylMassContext`'s decomposition
+holds over the EMPTY partition set (so its `Z`/`N` parameters are inert), and
+`DecayChannelContext`'s "uniqueness off the boundary variety" is discharged by
+`on_boundary := fun _ => True`. Both are §3b-cond item 5 with the constraint
+missing BETWEEN fields rather than within one — invisible to a syntactic check.
+
+PR #6276.
