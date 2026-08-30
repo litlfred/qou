@@ -319,4 +319,79 @@ theorem roth_contradiction_selected [DecidableEq (K →+* ℂ)]
 
 end Assembly
 
+section Slack
+
+/-! ## The slack budget, in the product form this chain actually produces
+
+`RothNormalisation.slack_pos` balances the budget for the *additive* shape `K = (2+δ)L`,
+`L' = (1+η)L`.  The chain built here produces something slightly different: the two-sided
+normalisation gives `K = (2+δ)(1−η)·log N` and `L' = (1+η)·log N`, so `η` appears **twice, with
+opposite signs** — it inflates the denominators' total size and deflates the approximation
+exponent.  `slack_pos`'s form sees only the first.
+
+The budget is correspondingly tighter, and the threshold below is what it comes to: with all four
+slacks below a common `t`,
+
+    t·(16 + 5δ) < δ
+
+is enough, and the derivation is tight to it — the surplus works out to `t + t²(3+2δ)`.  In
+particular `t < δ/(16+5δ) < 1/5`, which is where the `1/2 − 2t > 0` that the whole estimate rests
+on comes from.
+-/
+
+/-- **The four slacks, against `δ`.**  Step 1's shortfall `ε`, the polynomial's share `θ`, the
+normalisation `η`, and Roth's `ν` measured against `m`, all below `t`, with `t(16+5δ) < δ`.
+
+Only the *upper* bounds are needed.  I wrote `0 ≤ ε`, `0 ≤ η`, `0 ≤ νm` and `t ≤ 1` as well and the
+linter reported all four unused, which is right: a negative slack is slack to spare on both sides,
+and `t < 1/5` already follows from `t(16+5δ) < δ` with `t, δ > 0`.  The stronger statement is
+kept. -/
+theorem fin_of_slack {δ ε θ η νm t : ℝ} (hδ : 0 < δ)
+    (ht0 : 0 < t) (htδ : t * (16 + 5 * δ) < δ)
+    (hεt : ε ≤ t) (hθ0 : 0 ≤ θ) (hθt : θ ≤ t) (hηt : η ≤ t) (hνmt : νm ≤ t) :
+    (1 + θ) * (1 + η) + (2 + δ) * (1 - η) * νm < (2 + δ) * (1 - η) * (1 / 2 - ε) := by
+  have hd0 : (0 : ℝ) < 2 + δ := by linarith
+  -- `t < δ/(16+5δ) < 1/5`, which is what keeps `1/2 − 2t` positive
+  have ht5 : t < 1 / 5 := by nlinarith
+  have hfac1 : (0 : ℝ) ≤ 1 - t := by linarith
+  have hfac2 : (0 : ℝ) ≤ 1 / 2 - 2 * t := by linarith
+  have h1 : (1 + θ) * (1 + η) ≤ (1 + t) * (1 + t) := by nlinarith
+  have h3 : (2 + δ) * ((1 - t) * (1 / 2 - 2 * t))
+      ≤ (2 + δ) * ((1 - η) * (1 / 2 - ε - νm)) :=
+    mul_le_mul_of_nonneg_left
+      (mul_le_mul (by linarith) (by linarith) hfac2 (by linarith)) (le_of_lt hd0)
+  -- the surplus is `t + t²(3+2δ)`
+  have h4 : (1 + t) * (1 + t) < (2 + δ) * ((1 - t) * (1 / 2 - 2 * t)) := by
+    nlinarith [sq_nonneg t, mul_pos ht0 hδ, mul_nonneg (mul_nonneg ht0.le ht0.le) hδ.le]
+  nlinarith [h1, h3, h4]
+
+/-- **The slack form is `hfin`.**  Dividing `roth_contradiction_selected`'s last hypothesis by `m`
+is what makes `ν` comparable with the other three slacks: on its own `ν` is not small — it is
+bounded below by `hgap` — and only `ν/m` is. -/
+theorem hfin_of_slack {δ ε θ η mR ν : ℝ} (hm : 0 < mR)
+    (h : (1 + θ) * (1 + η) + (2 + δ) * (1 - η) * (ν / mR)
+      < (2 + δ) * (1 - η) * (1 / 2 - ε)) :
+    (1 + θ) * (mR * (1 + η)) < (2 + δ) * (1 - η) * (mR * (1 / 2 - ε) - ν) := by
+  have hne : mR ≠ 0 := ne_of_gt hm
+  have hscale := mul_lt_mul_of_pos_right h hm
+  have key : ((1 + θ) * (1 + η) + (2 + δ) * (1 - η) * (ν / mR)) * mR
+      = (1 + θ) * (mR * (1 + η)) + (2 + δ) * (1 - η) * ν := by
+    field_simp
+  rw [key] at hscale
+  nlinarith [hscale]
+
+/-- **Such a `t` exists.**  Pure Archimedes: the threshold `δ/(16+5δ)` is positive. -/
+theorem exists_slack_bound {δ : ℝ} (hδ : 0 < δ) :
+    ∃ t : ℝ, 0 < t ∧ t ≤ 1 ∧ t * (16 + 5 * δ) < δ := by
+  refine ⟨min 1 (δ / (2 * (16 + 5 * δ))), lt_min zero_lt_one (by positivity), min_le_left _ _, ?_⟩
+  have hden : (0 : ℝ) < 16 + 5 * δ := by linarith
+  have hle : min 1 (δ / (2 * (16 + 5 * δ))) ≤ δ / (2 * (16 + 5 * δ)) := min_le_right _ _
+  calc min 1 (δ / (2 * (16 + 5 * δ))) * (16 + 5 * δ)
+      ≤ (δ / (2 * (16 + 5 * δ))) * (16 + 5 * δ) :=
+        mul_le_mul_of_nonneg_right hle (le_of_lt hden)
+    _ = δ / 2 := by field_simp
+    _ < δ := by linarith
+
+end Slack
+
 end MvPolynomial
