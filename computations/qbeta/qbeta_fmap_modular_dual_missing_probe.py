@@ -39,6 +39,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
@@ -64,7 +65,16 @@ def main() -> int:
     print("=" * 78)
 
     # (A) real substrate q₀ > 1 — the mass / real-q / Rogers saddle.
-    Q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015")
+    # q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
+    # PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
+    # RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
+    # matching no published CODATA and contradicting the ratio its own defining
+    # witness declared as input; the anchor had certified itself. So keeping the
+    # value was never an option here; only the layer was open, and it is proton.
+    # Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+    # (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
+    # at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
+    Q0 = mp.mpf(Q_50_DIGIT_STR)
     print("\n(A) REAL SUBSTRATE (mass / real-q face):")
     report("q₀ substrate", Q0)
     aA = mp.fabs(q_tilde_from_q(Q0))

@@ -61,9 +61,19 @@ os.environ.setdefault("QOU_COMPUTE_DPS", "70")
 from young_seminormal import seminormal_sigma, chi_young, standard_tableaux  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
-Q = mp.mpf("1.1099785955573347198997632204832250266562084087801536866079811461")
+# q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
+# PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
+# RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
+# matching no published CODATA and contradicting the ratio its own defining
+# witness declared as input; the anchor had certified itself. So keeping the
+# value was never an option here; only the layer was open, and it is proton.
+# Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+# (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
+# at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
+Q = mp.mpf(Q_50_DIGIT_STR)
 
 
 def partitions_of(n: int) -> list[tuple[int, ...]]:

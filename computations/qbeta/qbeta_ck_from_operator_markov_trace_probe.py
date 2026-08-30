@@ -75,6 +75,7 @@ import sympy as sp  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def main() -> int:
@@ -155,7 +156,16 @@ def main() -> int:
 
     # Substrate evaluation point + leading-order test below.
     print(f"  Substituting numerically at q_0 = 1.10997859556... :")
-    Q0_str = "1.1099785955573347198997632204832250266562084087802"
+    # q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
+    # PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
+    # RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
+    # matching no published CODATA and contradicting the ratio its own defining
+    # witness declared as input; the anchor had certified itself. So keeping the
+    # value was never an option here; only the layer was open, and it is proton.
+    # Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
+    # (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
+    # at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
+    Q0_str = Q_50_DIGIT_STR
     q0_sp = sp.Float(Q0_str, 50)
     u0 = sp.N(u_q.subs(q, q0_sp), 50)
     print(f"    u(q_0) = {u0}")

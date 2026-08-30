@@ -284,7 +284,7 @@ retyping either is right under neither for long."
 | Q | Family | Files | Count |
 |---|---|---|---|
 | **Q1** | **lever1 / z2bn binding-period cluster** — was the binding period `a_D^(n)` / Plancherel-content work done on the ideal(muon) or experimental(proton) layer? | rows 22, 23, 24, 25 | **4** |
-| **Q2** | **qbeta c_k / rung-2 / stage-C cluster** — same question for the `c_k` ladder and its Markov-trace, Taylor and Wenzl probes | rows 26–35 | **10** |
+| ~~**Q2**~~ | ~~**qbeta c_k / rung-2 / stage-C cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded" below.** | rows 26–35 | **10 ✅** |
 | **Q3** | **`mmu_gap_a4_*` scratch scripts** — two undocumented ≤61-line evaluation scripts. A plausible answer is "these are scratch; delete rather than rule" | rows 36, 37 | **2** |
 | **Q4** | **`he_nu_sdp_*` probes** — the SDP saturation/PSD/barfold trio | rows 38, 39, 40 | **3** |
 | **Q5** | **τ-binding / unified-τ** — and specifically: *was the original "proton-pinned" label right and the value wrong, or the reverse?* This is the ruling request's group (b), and it needs a yes/no, not analysis | rows 41, 42 | **2** |
@@ -359,3 +359,56 @@ payloads, so on the next regeneration of these three witnesses the contradicted
 — a visible unknown instead of a silent false claim. That is a defect being
 surfaced, not the ruling being pre-empted. Whichever way Q4 is answered, these
 three need regenerating afterwards (`qou-jjge`).
+
+
+---
+
+## Rulings recorded
+
+### Q2 — **PROTON** (owner, 2026-08-30). Closed.
+
+All 10 files migrated in the same session. Each now resolves through
+`q_parameter.Q_50_DIGIT_STR` and holds no q₀ literal of any vintage:
+
+| row | file |
+|-----|------|
+| 26 | `computations/qbeta/qbeta_c3_candidate_audit.py` |
+| 27 | `computations/qbeta/qbeta_c3_rung2_bracket_comparison.py` |
+| 28 | `computations/qbeta/qbeta_c_k_recursion_depth_sweep.py` |
+| 29 | `computations/qbeta/qbeta_ck_from_operator_markov_trace_probe.py` |
+| 30 | `computations/qbeta/qbeta_ck_local_taylor_around_u0_probe.py` |
+| 31 | `computations/qbeta/qbeta_rung2_hypA_markov_3strand_test.py` |
+| 32 | `computations/qbeta/qbeta_rung2_hypB_wenzl_p3_probe.py` |
+| 33 | `computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py` |
+| 34 | `computations/qbeta/qbeta_fmap_modular_dual_missing_probe.py` |
+| 35 | `computations/habiro/qbeta_h4_tower_branching_preflight.py` |
+
+**Checked before migrating, because the ruling does not license collapsing a
+deliberate comparison.** Every one of the 10 carries exactly ONE q₀ literal, no
+proton accessor, no vintage C and no cross-anchor language — so none was a
+two-sided probe. Two apparent exceptions were run down and both are false
+alarms:
+
+* Row 33 was flagged in the ruling request as "two-sided". It is not, in the q₀
+  sense: it holds a single pin. The caveat in the table above is discharged.
+* Row 34's literal sits under a comment reading `(A) real substrate q₀ > 1`,
+  which suggests a second anchor. `(B)` is a **root of unity**, `q = e^{4πi/5}`
+  — the decay/fibre face, not a second q₀ layer.
+* Row 30 contains the string "cross-anchor", in a `print` stating that a
+  `q_p` vs `q_μ` stability test **"is the next step"**. It does not perform one.
+
+**Row 35 loses digits, and that is correct.** It held the former anchor at 64
+significant digits; `Q_50_DIGIT_STR` supplies 50. The 14 dropped digits belonged
+to a *retired* value — there is no 64-digit proton pin to migrate to, and
+`Q_MP` is built from the same 50-digit string, so it offers nothing more.
+
+**Consequence.** q₀ moves +11.5371 ppb in all 10. Their witnesses are stale and
+must be regenerated (`qou-jjge`); that was **not** done in this change.
+
+**Verified after migrating:** all 10 parse, all 10 import cleanly under a
+write-guard, and the resolved value is the proton pin
+(`1.1099785827513808075916690956107688798744991218736`) in every one — checked
+at module scope for the 6 that expose it, and via module-scope reachability of
+the import for the 4 that build q₀ inside `main()`.
+
+### Q1, Q3, Q4, Q5, Q6 — still open (12 files).
