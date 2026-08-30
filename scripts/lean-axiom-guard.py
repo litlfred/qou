@@ -599,6 +599,16 @@ QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vo
 QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_eq_two_clausen_of_realises | clean
 QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_pos_of_realises | clean
 QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_ne_zero_of_realises | clean
+#
+# FiveTwoVolumeBridge: the SAME truncation defect at the second knot --
+# MostowRigidity.knot5_2.volume := 2.82812208833078 is a 15-digit truncation of
+# VOL_5_2 = 3*BlochWigner_lob(fiveTwoShape) = 2.8281220883307831627... These are keyed
+# on the exact constant. NOTE there is deliberately NO positivity here: the 4_1 proof
+# went through Cl_2_pi_div_three_pos (its shape is on the unit circle), and the 5_2
+# shape is not -- the corpus has no 0 < BlochWigner_lob z for 0 < z.im.
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_VOL_5_2_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_three_blochWigner_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_lt_iff_of_realises | clean
 
 """
 

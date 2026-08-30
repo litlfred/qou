@@ -78,3 +78,58 @@ finished when the relation is fixed; the constants can carry the same defect.**
    (`2.82812208833078`) is the obvious next one, and `VOL_5_2 := 3 * BlochWigner_lob
    fiveTwoShape` is exact in `Knot/FiveTwoVolumeConstant.lean`. Same shape of defect,
    unverified.
+
+---
+
+## 2026-08-30 — the `:leanval` audit, run. The defect class is BOUNDED.
+
+Follow-up item 3 ("audit the other `:leanval` literals") is done. **16 sites, 7 keys.**
+
+| key | sites | exact closed form in corpus? | verdict |
+|---|---|---|---|
+| `Vol_4_1` / `vol_4_1` | 7 | **yes** — `2·Cl₂(π/3)` | **DEFECT** (15- and 11-digit truncations) |
+| `vol_5_2` | 2 | **yes** — `3·BlochWigner_lob fiveTwoShape` | **DEFECT** (15-digit truncation) |
+| `m_p_MeV` | 1 | no — CODATA measurement | not a defect |
+| `m_e_MeV` | 3 | no — CODATA measurement | not a defect |
+| `q_0` | 2 | no — root of a transcendental eq; the 50-dps witness IS canonical | not a defect |
+| `mostow_gap_4_1` | 1 | no — a deliberate conservative under-approximation | not a defect |
+
+**The discriminator, stated so nobody "fixes" the wrong half:** a truncated literal is a
+defect only where the corpus **also** carries an exact closed form for the same quantity
+*and* something treats the two as interchangeable. A CODATA mass has no closed form to
+disagree with; truncation is the correct representation of a measurement. `mostow_gap`
+is deliberately loose. Only the two hyperbolic volumes qualify.
+
+**`vol_5_2` confirmed to carry the identical defect.** `MostowRigidity.knot5_2.volume
+:= 2.82812208833078` against exact `2.8281220883307831627638988092766…` — diverging at
+digit 16 — and `fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2` is
+proved sorry-free, so the unsatisfiability argument transfers verbatim.
+
+### Done: `QOU/Encounter/FiveTwoVolumeBridge.lean`
+
+`vol_eq_VOL_5_2_of_realises`, `vol_eq_three_blochWigner_of_realises`, and
+`vol_lt_iff_of_realises` — the last stated as an **equivalence**, not an inequality,
+because the corpus does not carry `VOL_4_1 < VOL_5_2` as a proved fact:
+`MostowRigidity`'s comparison discharges by `norm_num` on the two **truncated literals**,
+which is a statement about the decimals rather than about the constants.
+
+### ⚠ The 4₁ positivity was a SPECIAL CASE, not the start of a pattern
+
+`FigureEightVolumeBridge.vol_pos_of_realises` exists; the 5₂ analogue **does not, and
+that is the honest outcome**. The 4₁ proof went through `Cl_2_pi_div_three_pos`, which
+exists only because the 4₁ shape sits on the unit circle so its Bloch–Wigner value *is*
+a Clausen value. The 5₂ shape is a root of `X³ − 2X² + 3X − 1` and is not.
+
+Measured: the corpus has **no** `0 < BlochWigner_lob z` for `0 < z.im`. What it has is
+`BlochWigner_lob_real_eq_zero` — vanishing *on the reals*, the opposite boundary.
+
+So the general positivity `ManifoldVolumeBridge` declined to assume is still open.
+Recorded explicitly because "we proved it for 4₁" invites the assumption that 5₂
+follows.
+
+### Still open, unchanged
+
+1. Exactify both Mostow instances (`figureEight` and now `knot5_2`) — still needs real
+   bounds for the comparison theorems and a deliberate `:leanval` codemod decision.
+2. The inequalities as Lean facts (needs rigorous 16-digit bounds).
+3. General `0 < D(z)` on the upper half plane.
