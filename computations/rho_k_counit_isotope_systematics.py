@@ -121,9 +121,9 @@ def main():
     ).save()
 
     print("=== counit Σ_λ χ^λ across D/T/³He/⁴He ===")
-    print(f"{'atom':>4} {'n_int':>5} {'sum_chi':>12} {'-B/me':>12} {'ratio':>8} {'sign':>6}")
+    print(f"{'atom':>4} {'n_pair':>6} {'sum_chi':>12} {'-B/me':>12} {'ratio':>8} {'sign':>6}")
     for r in rows:
-        print(f"{r['atom']:>4} {r['n_interfaces']:>5} {float(r['counit_sum_chi']):>12.4f} "
+        print(f"{r['atom']:>4} {r['n_nucleon_pairs']:>6} {float(r['counit_sum_chi']):>12.4f} "
               f"{float(r['target_minus_B_over_me']):>12.4f} {float(r['abs_ratio']):>8.4f} "
               f"{'OK' if r['right_sign'] else 'WRONG':>6}")
     print(f"ratio spread max/min = {mp.nstr(ratio_spread,5)} (>1.1 => not a fixed factor)")
