@@ -148,11 +148,32 @@ def load_mpfr_witness() -> dict:
         with p.open() as f:
             data = json.load(f)
         tables = data.get("tables_by_n", {})
-        q_rec = next((t.get("q") for t in tables.values() if t.get("q")), None)
-        if q_rec is None or abs(mp.mpf(str(q_rec)) - want) > mp.mpf("1e-40"):
+        if not tables:
+            continue
+        # EVERY table must be at this pin, not just the first one that has a q.
+        # (Copilot, PR #6104.) The witness records `q` PER TABLE, so a
+        # partially-regenerated file can carry mixed pins across n — and
+        # matching on the first entry would accept it and then return all of
+        # them, silently reintroducing the straddle for the n that disagree.
+        # That is the same defect this function was written to close, one
+        # level down: a check that passes on a sample and generalises to the
+        # whole.
+        # Every table that RECORDS a q must match it — but a table with no q
+        # is not evidence of a different pin, and rejecting the file for one
+        # would be too strict: the proton witness legitimately has no q on
+        # n=13..18 (the tower extension beyond the cached range), so the
+        # literal "all tables must match" rule threw the whole file away and
+        # broke this function. Instead, verify what is verifiable and DROP the
+        # unverifiable tables, so nothing unchecked is ever returned.
+        recorded = [t.get("q") for t in tables.values() if t.get("q")]
+        if not recorded:
+            continue
+        if any(abs(mp.mpf(str(q)) - want) > mp.mpf("1e-40") for q in recorded):
             continue
         out = {}
         for n_str, table in tables.items():
+            if not table.get("q"):
+                continue          # unverifiable pin — omit rather than trust
             out[int(n_str)] = {
                 tuple(w["partition"]): mp.mpf(w["y_lambda"])
                 for w in table["weights"]

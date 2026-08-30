@@ -83,7 +83,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 # coefficients) were reported to derive these to ≤ 2e-15 at 50 dps. That
 # agreement was established for the CONVENTION-C values these entries used to
 # hold and has NOT been re-established for the convention-D values now here
-# (2026-08-30, bean qou-46ab) — do not cite it as current cross-validation. the Lean theorem
+# (2026-08-30, bean qou-46ab) — do not cite it as current cross-validation. The Lean theorem
 # `qou_markov_trace_is_jones_markov`
 # (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
 # sorry-free, axiomatising Wenzl / Jones Markov-trace uniqueness via a
@@ -130,7 +130,7 @@ TR_M_AT_Q0: dict[str, float] = {
 TR_M_AT_Q0_50DPS: dict[str, str] = {
     "p":  "1.14575969245730086968908159577411930594372806194352738498820",
     "n":  "0.987743688115809571634020165501294982055048759062827475627723",
-    "D":  "0.5751722439177718708265353439861808891524943",
+    "D":  "0.575172243917771870826535343986180889152494352892855072730158",
 }
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
