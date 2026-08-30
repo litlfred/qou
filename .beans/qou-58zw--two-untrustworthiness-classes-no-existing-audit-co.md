@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T20:36:02Z
+updated_at: 2026-08-30T21:50:02Z
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -301,3 +301,62 @@ witness — recorded rather than reverted.
 
 Class 1 (tolerance floor) is **drained**, after two criterion corrections.
 Class 2 (producers that SHRANK) remains **untouched**.
+
+
+---
+
+## CLASS 2 CLOSED 2026-08-30 — `witness_key_orphan_audit.py` (`466aec0e5d`)
+
+The check this bean specified — *"compare the key set a producer emits against
+the key set its committed witness holds"* — is built, static (no producer runs),
+and reports **3 files / 11 keys**, every one hand-verified.
+
+### The count moved five times, and each move was a finding about the corpus
+
+| count | what was wrong |
+|---|---|
+| **611 files / 6382 keys** | hand-written infra list. 20 % of the corpus — a broken detector, not a finding. Spot-checking **three** showed it was `/environment/*`, `/precisionMetadata`, `/q0Anchor`: keys the **builder** writes. Fixed by **deriving** the set from `witness.py`'s own literals; extending the hand list would have been the same defect one iteration later. |
+| **14 / 84** | keys named in an **imported module**, not the producer's own file — the same import-cone blindness AGENTS.md records for witness staleness. |
+| **4 / 21** | **keyword-argument keys.** `result(A_odd_...=v)` names a Python identifier and `ast.Constant(str)` never sees it. `qcollatz_backward_tree_structure_probe` was reported with three orphans sitting on **line 127 of its own file**. |
+| **5 / 40** | use the witness's own **`scriptFile`** instead of guessing from the stem. This **raised** the count — two files were audited against the wrong source. |
+| **3 / 11** | a key named **nowhere in `computations/`**. The class an import list cannot reach: `add_data("lp", solver.to_dict())` names `lp` and nothing beneath it. |
+
+Measured precision before that last gate: **10 genuine against ~30 false**.
+
+### An 18th detector-blind spelling, introduced by this audit itself
+
+**A key written as a keyword argument.** `A_odd_preimage_positions_on_main_chain=v`
+is an identifier, invisible to every string-literal scan. Candidate row 18 for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, alongside row 17 (a
+literal reaching an assertion through a list slot).
+
+### The 11 genuine orphans
+
+    deuteron-binding-interface-closure     C_knot_fitted_deficit, interface_amplification
+    per-irrep-pole-proton-h3               full_tr_M_u_pole, per_irrep_maximizer,
+                                           per_irrep_maximizer/ord_q_eq_0_negative,
+                                           per_irrep_pole_orders_at_q_eq_0
+    deltalambda/b1-kappa-window-extension  local_exponent_min_near, prior_reading,
+                                           secant_over_new_window, windowed_exponents,
+                                           parameters/track
+
+**`C_knot_fitted_deficit` deserves its own look**: a key with *fitted* in its
+name, recorded in a committed witness, whose producing code exists nowhere in
+the corpus.
+
+### A corroboration worth recording
+
+`per_irrep_pole_deuteron_h6.py`'s **own docstring** already documents this exact
+defect — *"230 deletions against 39 insertions … with no warning of any kind"* —
+and names `per_irrep_pole_atom.py` as the de-facto owner of both witnesses. A
+prior agent found the instance; this bean asked for the detector.
+
+### Bean status
+
+**Both classes now closed.** Class 1 (tolerance floor) drained 20 → 0 after two
+criterion corrections plus a serialization floor. Class 2 (producers that
+shrank) has a detector and 11 verified findings.
+
+**Not done here**: draining the 11. Each is a decision about whether to
+regenerate a witness (deleting recorded analysis) or restore the producing code,
+and `qou-58zw` explicitly declined to overwrite one for that reason.
