@@ -3,7 +3,7 @@
 **Date:** 2026-08-30
 **Arc:** bk-crossing mass-binding · **Bean:** `qou-brng` (the linking-vs-self-energy amplitude assignment — the open positive target)
 **Lean:** `content/quantum-observable-universe/lean/QOU/Mass/BrunnianBindingChannel.lean` (sorry-free; lean-direct exit 0; axioms propext/Classical.choice/Quot.sound)
-**Tier:** formalize-first partial — resolves ONE half of the amplitude assignment; two sub-questions stay open (below). No fit; no wiring.
+**Tier:** formalize-first — resolves the amplitude assignment's type question AND both sub-questions (up to two precisely-bounded residuals + the numerology-suspect saturation value; see below). No fit; no wiring.
 
 ## The question
 
@@ -88,27 +88,39 @@ coordination count z = 1 also, so signed and unsigned channels agree. The two in
 for a Hopf-bonded pair and diverge only at A ≥ 3 (Brunnian), where the unsigned count is the correct
 non-vanishing carrier.
 
-## What stays OPEN (do not read as closed)
+## The two sub-questions — now proved (with a precisely-bounded residual)
 
-This resolves *which type* of mutual invariant carries binding (unsigned count, not signed linking).
-It does **not** close:
+The 2026-08-30 follow-up (`brunnian_*` lemmas + `content/…/mass-theory/brunnian-binding-channel.md`)
+proves both sub-questions the type-resolution left open, up to one honestly-stated residual each.
 
-1. **The exact coefficient map** n₊ + n₋ → z = A−1. The proved lemma is about the channel; the exact
-   combinatorial map from the inter-component crossing count to the graph-degree coordination number
-   is a separate step, not derived here.
-2. **The bare-integer vs q-weight asymmetry.** Why the surviving count channel enters as a *bare
-   integer* coordination count while the self/mass channel keeps the *full q-dimension self-trace*
-   lw. The self channel is a closed quantum trace (sum over Wedderburn channels λ ⊢ c+1 → Σ dim_q =
-   lw); the mutual channel is a pairing between two fixed components with no internal channel sum.
-   That this is the reason is plausible but **not proved** — it is the precise surviving kernel of
-   `qou-brng`, and it is where a future attack should aim.
-3. **The exact saturation value ≈ ℏ_q²** (the B/A/m_N → ℏ_q² observation). The bean's 2026-08-21
-   verdict stands: with the volume-defect route refuted this is **numerology-suspect**; it is not
-   touched here and must not be forced.
+**Sub-question 1 — the crossing count → coordination count map.** PROVED for the canonical carriers.
+`minimal_brunnian_bond`: a minimal Brunnian bond (n₊ = n₋ = 1, the pairwise pattern inside L6a4)
+has count-channel multiplicity ½(n₊+n₋) = 1 — one coordination unit per bonded pair.
+`cluster_coordination_count`: a fully-bonded cluster then carries C(A,2) = A(A−1)/2 units, i.e.
+per-nucleon z = A−1. *Residual:* the exact map beyond the minimal-bond model (pairs with n₊+n₋ > 2)
+is not derived; which pairs bond is the coordination-graph question, saturation-limited for heavy A
+(`QOU.Mass.CoordinationSaturation`).
+
+**Sub-question 2 — bare integer vs q-dim self-trace.** PROVED as a bar-parity fact. Under the bar
+involution q ↦ q⁻¹ the count (binding) channel is bar-ODD (`countChannel_barOdd`) while the mass
+self-trace lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1) is bar-EVEN — every quantum dimension is bar-even
+(`quantumDim2_barEven`: [2]_q = q + q⁻¹). The two bar sectors are orthogonal
+(`barEven_barOdd_eq_zero`: a function that is both vanishes), so a binding multiplier can never be a
+mass multiplier (`binding_not_mass_sector`). The assignment is forced by parity, matching the
+corpus cosh/sinh split (Q_β the bar-odd partner of the bar-even meson scale). *Residual:* the
+*Hamiltonian-level* claim that rest mass **is** the closed self-trace and binding **is** the open
+mutual pairing — the parity distinction is proved, its dynamical origin is not.
+
+**Sub-question 3 (unchanged) — the exact saturation value ≈ ℏ_q².** The bean's 2026-08-21 verdict
+stands: with the volume-defect route refuted this is **numerology-suspect**; not touched here, and
+must not be forced.
 
 ## Verdict
 
-The linking-vs-self-energy assignment's *type question* — unsigned coordination count vs signed
-linking number — is resolved and machine-checked, reconciled with the Brunnian obstruction that
-would otherwise sink it, and cross-validated by the em-linking sibling thread. The *coefficient* and
-the *bare-integer/q-weight asymmetry* remain the honest open kernel of `qou-brng`.
+The linking-vs-self-energy assignment is resolved and machine-checked: the binding carrier is the
+unsigned coordination count (Brunnian channel), the mass carrier is the bar-even q-dim self-trace,
+the two are bar-orthogonal, and the minimal-bond count → z=A−1 map is proved — reconciled with the
+Brunnian obstruction and cross-validated by the em-linking sibling thread's independently-reached
+unsigned-invariant route. Two precisely-bounded residuals remain (the >minimal-bond coefficient and
+the Hamiltonian origin of the mass=self/binding=mutual identification), plus the untouched
+numerology-suspect ℏ_q² saturation value. Those are the surviving `qou-brng` kernel.
