@@ -1,0 +1,122 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:39:51.718277+00:00",
+  "commitSha": "db97735ebd1d14f8eaff40a4bbee2ef2dc02a964",
+  "assertions": [
+    {
+      "name": "y_(1^3) numerator is proportional to Lean wtNumer",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "y_(1^3) vanishes at z = q (augmentation)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "y_(1^3) vanishes at z = z_D",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "y_(1^3) does NOT vanish at z = 1 (Lean one_not_root, re-derived)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "qbeta-admissibility-is-a-magnitude",
+  "scriptFile": "qbeta_admissibility_is_a_magnitude_probe.py",
+  "scriptHash": "b88b1027af25",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py"
+  },
+  "description": "Measures the three-row (1^3) Ocneanu-weight leak at the EXCLUDED point z=1 and compares it to the multiplicative corrections the two admissible convention-D bases require. QOU.QBeta.AdmissibleRoots.one_not_root proves the leak is NONZERO (a sign fact); this asks how LARGE it is, which is a different question and the one the 2026-08-29 correction search implicitly answered without measuring. Scope-(a): proposes nothing, wires nothing, readmits nothing.",
+  "data": {
+    "y_111_symbolic": "q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+    "wtNumer_agreement": "q**2",
+    "weights_at_pin": {
+      "z=1 (coordinate sum / net)": {
+        "y_3": "0.876622593935",
+        "y_21": "0.0686860966441",
+        "y_111": "-0.0139947872229",
+        "three_row_share": "0.014588488"
+      },
+      "z=q (augmentation)": {
+        "y_3": "1",
+        "y_21": "0",
+        "y_111": "0",
+        "three_row_share": "0.0"
+      },
+      "z=z_D (Markov, convention D)": {
+        "y_3": "0.505404226504",
+        "y_21": "0.247297886748",
+        "y_111": "0",
+        "three_row_share": "0.0"
+      }
+    },
+    "leak_vs_required_correction": {
+      "augmentation base": {
+        "F_required": "0.88913",
+        "correction_size_pct": "11.087",
+        "leak_over_correction": "0.131582"
+      },
+      "tr_M base": {
+        "F_required": "1.75924",
+        "correction_size_pct": "75.924",
+        "leak_over_correction": "0.0192146"
+      }
+    },
+    "verdict": {
+      "exclusion_holds": "yes -- y_(1^3)(1) != 0, exactly as one_not_root proves",
+      "leak_is_too_small_to_BE_the_correction": "yes -- 1.45885 % leak against an 11.087 % required correction, a factor 7.6 short",
+      "is_z1_near_admissible": "z=1 sits at the LOW end of the sampled non-admissible values, so it is closer to two-row than a generic z -- but 'close' here is 1.5 %, not 0.1 %"
+    },
+    "three_row_share_scan_pct": {
+      "z=1": "1.4588488",
+      "z=z_C (excised)": "3.1631039",
+      "z=1/2": "3.1398703",
+      "z=2": "11.444044",
+      "z=0": "33.276339",
+      "z=q/2": "1.4323158",
+      "z=2q": "13.277996"
+    },
+    "scope": "(a) measured magnitude; one_not_root stands exactly as proved",
+    "q0Anchor": "proton",
+    "q0Value": "1.1099785827513808"
+  }
+}
