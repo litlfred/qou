@@ -62,12 +62,31 @@ class NSCounterexample : Prop where
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`.
 
     The critical exponent of the q-NS scaling regime is exactly
-    `α = 4/3`.  Concrete content: the scaling-exponent identity
-    `3 · α_num = 4` (cleared form of `α = 4/3`). -/
+    `α = 4/3`.  The exponent is carried as the class **parameter**, and the
+    field pins its value.
+
+    **What this encodes, and what it does not** (bean `qou-93hu`). The field
+    constrains the `α` it is applied to: `CriticalExponent α` is false for
+    every `α ≠ 4/3`, so a downstream `[CriticalExponent α]` hypothesis is a
+    real assumption about `α`. What is *not* encoded is the link between `α`
+    and the q-NS scaling regime — nothing here says this `α` is that
+    exponent, because saying so needs the scaling definition, which is open.
+    So this is the conjecture's **value** claim, stated conditionally on
+    naming the exponent; it is not the whole conjecture.
+
+    **History.** Until 2026-08-30 the single field read
+    `alpha_three_eq_four : (3 * 4 : ℕ) = 12` — a closed numeral identity with
+    the values already substituted in, containing **no exponent variable at
+    all**. `rfl` proved it whatever the physics, so the class constrained
+    nothing and every `[CriticalExponent]`-conditional theorem was vacuous in
+    its critical-exponent leg. Unlike the four sibling carriers in this file,
+    that field was not even the right *shape*: no quantifier, no free
+    variable. Note `Prop` classes cannot carry data, which is why `α` is a
+    parameter rather than a field. -/
 -- Ref: [manuscript] conj:critical-exponent
-class CriticalExponent : Prop where
-  /-- The cleared critical-exponent identity. -/
-  alpha_three_eq_four : (3 * 4 : ℕ) = 12
+class CriticalExponent (α : ℝ) : Prop where
+  /-- The critical exponent takes the value `4/3`. -/
+  alpha_eq : α = 4 / 3
 
 /-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`.
 
