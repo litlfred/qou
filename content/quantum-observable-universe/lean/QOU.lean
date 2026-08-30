@@ -1263,6 +1263,12 @@ import QOU.Mathlib.RothRationalIndex
 -- RothAuxiliaryPolynomial's (2B)^{|n|} is the wrong shape here: step 2's whole content
 -- is that gamma = beta - alpha is tiny, and that bound throws it away.
 import QOU.Mathlib.RothTaylorBound
+-- Produces the constant S the Taylor bound was left waiting on, and closes step 2.
+-- Two weightings meet here: the index gap is weighted by 1/r_h, the sizes by log q_h,
+-- and r_h * T_h >= K is exactly what converts one into the other.  That is Roth's
+-- normalisation r_h log q_h ~ L in the only form the estimate needs -- the same fact
+-- RothGammaProducer discharges for Gamma_m's growth clause.
+import QOU.Mathlib.RothIndexGap
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

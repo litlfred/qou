@@ -1,10 +1,11 @@
 ---
 # qou-jm52
 title: 'Roth step 2, analytic half: Taylor smallness at the rational point'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-30T03:33:40Z
-updated_at: 2026-08-30T03:33:40Z
+updated_at: 2026-08-30T06:20:42Z
 ---
 
 `le_index_of_abs_lt` (QOU/Mathlib/RothRationalIndex.lean) discharges the arithmetic half of
@@ -118,4 +119,46 @@ sum_h (n_h - i_h)/r_h >= mu - idxWeight r i gives S ~ exp(-(2+delta) L (mu - idx
 That is the only piece of step 2 that needs real logarithms, and it is where the parameter
 record shared with RothGammaProducer should live. Then S is compared against
 1/prod q_h^{r_h} and fed to le_index_of_abs_lt, and step 2 closes.
+
+## 2026-08-30 -- S produced; step 2 closes. QOU/Mathlib/RothIndexGap.lean
+
+Eight declarations, all axiom-clean, .olean deleted first.
+
+THE ONE CONVERSION. Two weightings meet and neither dominates the other on its own. The index
+gap is weighted by 1/r_h: idxWeight r n >= mu and idxWeight r i <= nu give
+sum_h (n_h - i_h)/r_h >= mu - nu, and NOTHING about sum_h (n_h - i_h). The sizes are weighted by
+log q_h: prod_h G_h^{n_h - i_h} = exp(-sum_h (n_h - i_h) T_h) with T_h = -log G_h. The hypothesis
+r_h * T_h >= K is exactly the bridge:
+
+  sum_h (n_h-i_h) T_h = sum_h [(n_h-i_h)/r_h] (r_h T_h) >= K sum_h (n_h-i_h)/r_h >= K(mu-nu).
+
+So S = exp(-K(mu-nu)) -- prod_pow_le_exp. This is Roth's normalisation r_h log q_h ~ L in the
+only form the estimate needs, and it is why the degrees must be chosen FROM the heights rather
+than freely; the same fact RothGammaProducer discharges for Gamma_m's growth clause.
+
+Truncated subtraction turned out to be free: translateMatrix's exponents are n_h - i_h truncated,
+truncation only RAISES them, and G_h <= 1 makes a larger exponent a smaller product. Worth
+recording because the opposite is easy to assume -- had the estimate needed an upper bound on the
+exponents, truncation would have been an obstruction rather than a convenience.
+
+le_index_rational_of_taylor is step 2 with ONE hypothesis left, and that hypothesis is a numeric
+inequality between explicit quantities -- no polynomial, no index, no expansion in it. The
+ZZ -> QQ -> RR transfer (coeff_translate_cast) is what lets the RR-side estimate feed the QQ-side
+denominator argument of le_index_of_abs_lt.
+
+NON-VACUITY CHECKED. le_index_rational_of_taylor_witness discharges all twelve hypotheses at
+m = 1, r = (1), P = x, alpha = 0, p/q = 0/1, K = 8, mu = 1, nu = 1/2, where hfinal comes down to
+16 e^{-4} < 1. Twelve hypotheses several of which are inequalities between constructed quantities
+is exactly the shape in which a theorem is true because nothing satisfies it.
+
+WHAT THE WITNESS DOES NOT SHOW: gamma = beta - alpha is 0 there, so the Taylor machinery is not
+exercised. A gamma /= 0 witness is NOT available at small m -- I checked: at m = 1 with
+P = 2x - 1, alpha = 1/2, beta = 0 the constants give 32 e^{-K(1-nu)} with K <= log 2, so the left
+side is >= 16 and never beats 1. The constants only fall below prod q_h^{-r_h} when m is large
+and the approximation exceptionally good, which IS Roth's inequality and hence step 4's business.
+Recorded rather than papered over.
+
+REMAINING for step 2 as a whole: only the coefficient ring. This file is ZZ-coefficient; the
+step-1 auxiliary polynomial is over O_K, where "small implies zero" is |N(x)| >= 1 for a non-zero
+algebraic integer and needs beta's conjugates. Tracked on qou-86j4, not conflated with this.
 
