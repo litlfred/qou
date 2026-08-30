@@ -1,15 +1,37 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T15:42:29.044297+00:00",
-  "commitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:05:59.030253+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "the_PAIRING_FORMULATION_reproduces_the_corpus_bare_element_claim",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "stable-atom-properties.md asserts the bare 9-crossing element violates Frobenius positivity. Computing (G x)_gamma directly as tr_M(e_gamma . T_w) gives exactly ONE negative channel, ['z_r4'], the two-dimensional lambda = (2,1) block. The formulation reproduces a corpus claim it was not fitted to, which is the evidence that reading (G x)_gamma this way is right -- and it sidesteps the decomposition, which provably does not exist over this basis"
+    },
+    {
+      "name": "NO_two_gluon_crossing_adjunction_restores_proton_stability",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "crossings <= 2 gives 0 feasible adjunctions; the minimum is THREE, realised by [(0, 1, 1, 0), (1, 0, 0, 1)] = sigma_1 L_+ and sigma_0 L_-. Two blocks assert two crossings suffice, and disagree with each other on the operator: stable-atom-properties.md says the ILP selects 'sigma_0 -> sigma_0 (2 gluon crossings)'; categorical-proton-properties.md says 'a single Hopf link L_- = sigma_1 sigma_0 is the minimum'. Under this predicate neither is feasible. Recorded as a measured TENSION at scope-(a), not a refutation: the predicate is my reading of (G x)_gamma, and one confirmed prediction does not make it the corpus's"
+    },
+    {
+      "name": "N_l_eq_84_is_NOT_reproduced_and_the_filtration_does_NOT_excuse_it",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "cumulative feasible counts are {0: 0, 1: 0, 2: 0, 3: 2, 4: 6, 5: 12, 6: 19}, continuing 9->65, 10->88, 11->124, 12->157, 13->211, 14->259 in a longer run. 84 falls strictly between the cap-9 and cap-10 values and is hit at no cap. I first recorded the missing confinement restriction as a gap that might explain this. It does not: E(lambda,q) = |d_q(lambda) - 1|/[k]_q! is a closed form, four of the five blocks at k <= 3 are one-dimensional with E = 0 EXACTLY, so there is one distinct nonzero energy, m = 1, and J^1 is the whole algebra. The filtration restricts NOTHING for the proton at k_max = 3, this enumeration was already over the right set, and the miss stands without excuse. Both readings of N_l have now failed: lattice points of decompositions (refuted by the span test) and feasible adjunctions (here)"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 1169,
+  "durationMs": 1453,
   "computation": "qbeta-adjunction-ilp",
   "scriptFile": "qbeta_adjunction_ilp_probe.py",
-  "scriptHash": "890709a55811",
-  "scriptCommitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
+  "scriptHash": "948f8e09e850",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
