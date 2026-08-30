@@ -262,8 +262,17 @@ def probe(name: str, path: Path, off: int) -> dict:
             return {"class": name, "status": "skipped", "reason": f"type: {e}"}
         if mod:
             src = f"import {mod}\n\n{inst}"
-        else:  # content-block sibling: no module, so probe against a copy
-            src = f"{text}\n\n{inst}"
+        else:
+            # Content-block sibling: no module, so probe against a copy of the
+            # file.  `import Mathlib.Tactic` is PREPENDED because the copy
+            # inherits the sibling's own imports, and most siblings import far
+            # less than the tactic block below needs -- `linarith` came back
+            # "unknown tactic" and `norm_num` could not close `0.99824 <= 10 *
+            # 0.99824`.  Without this every one of the ~21 sibling classes was
+            # judged against a crippled tactic set, and its `unproven` verdict
+            # was a fact about the harness.  Measured on DirectionSanityGateClass:
+            # unproven without the import, INHABITED with it.
+            src = f"import Mathlib.Tactic\n{text}\n\n{inst}"
         with tempfile.NamedTemporaryFile("w", suffix=".lean", delete=False) as fh:
             fh.write(src)
             tmp = fh.name
