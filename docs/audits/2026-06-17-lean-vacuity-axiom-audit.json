@@ -1,10 +1,10 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-30T11:11:37.688Z",
+  "generated": "2026-08-30T12:43:41.951Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3372,
-  "files_flagged": 156,
-  "total_defects": 71,
+  "scanned_files": 3377,
+  "files_flagged": 153,
+  "total_defects": 67,
   "total_exempt": 125,
   "total_promoted_from_exempt": 0,
   "categories": {
@@ -12,8 +12,7 @@
     "proof-docstring-sorry-mismatch": 12,
     "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1,
-    "proof-no-provable-axiom": 2,
-    "proof-dependent-conjecture-not-conditional": 4
+    "proof-no-provable-axiom": 2
   },
   "conjecture_graph": {
     "total": 310,
@@ -1730,15 +1729,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      },
-      {
-        "line": 31,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-unrecorded-dependency",
-        "snippet": "RootOfUnityTruncationContext",
-        "decl": "RootOfUnityTruncationContext",
-        "severity": "critical",
-        "detail": "the block's .md declares `prop:root-of-unity-truncation` conditional on `conj:regularity-breakdown`, which is absent from uses[] and unreachable from it (≤5 hops) — the dependency is claimed in prose only"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
@@ -3837,39 +3827,6 @@
         "snippet": "theorem QuantumObservableUniverse.exists_instance",
         "decl": "QuantumObservableUniverse.exists_instance",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean": [
-      {
-        "line": 294,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-unrecorded-dependency",
-        "snippet": "BorromeanQuark",
-        "decl": "BorromeanQuark",
-        "severity": "critical",
-        "detail": "the block's .md declares `prop:hecke-1d-irrep-closed-form-character` conditional on `conj:borromean-quark`, which is absent from uses[] and unreachable from it (≤5 hops) — the dependency is claimed in prose only"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean": [
-      {
-        "line": 70,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-unrecorded-dependency",
-        "snippet": "QIntegerMassFormula",
-        "decl": "QIntegerMassFormula",
-        "severity": "critical",
-        "detail": "the block's .md declares `prop:wigner-coefficient-derivation` conditional on `conj:q-integer-mass-formula`, which is absent from uses[] and unreachable from it (≤5 hops) — the dependency is claimed in prose only"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean": [
-      {
-        "line": 156,
-        "category": "proof-dependent-conjecture-not-conditional",
-        "pattern": "prose-conditional-unrecorded-dependency",
-        "snippet": "BorromeanQuark",
-        "decl": "BorromeanQuark",
-        "severity": "critical",
-        "detail": "the block's .md declares `prop:shell-structure-eigenvalues` conditional on `conj:borromean-quark`, which is absent from uses[] and unreachable from it (≤5 hops) — the dependency is claimed in prose only"
       }
     ]
   }

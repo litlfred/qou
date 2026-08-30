@@ -2166,32 +2166,41 @@ function usesGraph(): Map<string, string[]> {
   return g;
 }
 
-/** Is `target` reachable from `from` by walking `uses[]` edges?
+/** Is `target` reachable from `from` by walking `uses[]` edges? UNBOUNDED.
  *
- * Depth-bounded because `uses[]` carries IMMEDIATE NEIGHBOURS ONLY (AGENTS.md;
- * `prune-transitive-deps.ts` enforces it), so a genuine dependency is a short
- * walk away, while an unbounded search over a large graph would eventually
- * connect almost anything to anything. Measured on this corpus at the time of
- * writing: the two legitimate cases resolve at depth 1 and 2, and the one real
- * defect is unreachable at any depth. */
-const USES_REACH_MAX_DEPTH = 5;
+ * **It was bounded at 5, and that bound manufactured a false positive within
+ * the hour** (bean `qou-s3zd`). `prop:root-of-unity-truncation` reaches
+ * `conj:regularity-breakdown` at depth **6** — one hop past the cutoff — so
+ * the block was reported as claiming a dependency it does not record, and the
+ * verdict written against it said "unreachable at any depth" on the strength
+ * of a search that had only looked five deep. An absence measured under a
+ * bound is not an absence.
+ *
+ * The bound was there on the theory that an unbounded walk over a large graph
+ * would eventually connect almost anything to anything. **Measured, that is
+ * false here**: 3606 blocks joined by 4912 edges — barely more than one edge
+ * per block — and the transitive closures of the four blocks in question are
+ * 164, 110, 11 and 1. A `uses[]` graph is a reading order, not a mesh.
+ *
+ * Unbounded is also the semantics that matters. The question this answers is
+ * "would a direct edge here be redundant?", and `prune-transitive-deps.ts`
+ * strips a redundant edge at ANY depth, so any bound makes the checker
+ * disagree with the tool whose rule it is enforcing. Termination comes from
+ * `seen`, not from a depth counter. */
 function reachableInUses(from: string, target: string): boolean {
   const g = usesGraph();
   if (!g.has(from)) return false;
   const seen = new Set([from]);
-  let frontier = [from];
-  for (let d = 0; d < USES_REACH_MAX_DEPTH; d++) {
-    const next: string[] = [];
-    for (const n of frontier)
-      for (const c of g.get(n) ?? []) {
-        if (c === target) return true;
-        if (!seen.has(c)) {
-          seen.add(c);
-          next.push(c);
-        }
+  const queue = [from];
+  while (queue.length > 0) {
+    const n = queue.shift() as string;
+    for (const c of g.get(n) ?? []) {
+      if (c === target) return true;
+      if (!seen.has(c)) {
+        seen.add(c);
+        queue.push(c);
       }
-    if (next.length === 0) return false;
-    frontier = next;
+    }
   }
   return false;
 }
@@ -2391,7 +2400,7 @@ function classifyConjectures(files: string[]): {
           `the block's .md declares \`${own}\` conditional on ${unrecorded
             .map((l) => `\`${l}\``)
             .join(", ")}, which is absent from uses[] and unreachable from it ` +
-            `(≤${USES_REACH_MAX_DEPTH} hops) — the dependency is claimed in prose only`,
+            `at any depth — the dependency is claimed in prose only`,
         );
     }
   }
