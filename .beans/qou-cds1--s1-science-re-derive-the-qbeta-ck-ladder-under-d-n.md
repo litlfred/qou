@@ -3794,3 +3794,60 @@ A **negative**, scope (a). No `c_k` is produced, proposed or fitted; Q_β stays 
 not the tool, and that no sharpening of entry 11 will become one, because the
 quantity it would have to constrain is invariant under the symmetry it is built
 from. Closing `K` needs a genuinely different input.
+
+
+---
+
+## Entry 13 — `K(δ)` is NOT free in this arc; it is fixed by entry 2's rule
+
+`computations/qbeta/qbeta_d_n1_constant_rule_determined_probe.py` — **6/6**.
+
+Entries 10c and 12 read together suggest a 7656× residual with nothing in the arc
+to close it. **That reading is wrong**, and this entry corrects it.
+
+Entry 10 did **not** obtain `M` by searching the space of functions satisfying
+(a)+(b)+(c). It obtained `M` by applying a rule the arc had already established
+one slot over:
+
+| | rule |
+|---|---|
+| entry 2 | `offset := bar-midpoint of V̂` |
+| entry 10 | `N=1 factor := bar-midpoint of cos(α)` |
+
+The arithmetic bar-midpoint of `cos(a_D)` is not *some* function meeting the three
+conditions — it is a single determinate object,
+
+    M = (cos(a_D) + cos(delta - a_D))/2 = cos(a_D - delta/2) * cos(delta/2)
+
+whose constant factor is `cos(δ/2)`, **not** 1. So `K ≡ 1` is not an alternative
+the arc admits: it is what you get by **discarding the rule** and keeping only the
+three weaker conditions the rule happens to satisfy. Verified symbolically that
+`K ≡ 1` does satisfy (a) — which is exactly the point, since it shows the
+conditions are strictly weaker than the rule.
+
+### Where the rule's authority comes from, and where it does not
+
+- **Offset slot — non-vacuous and independently checked.** The rule *re-derives*
+  convention C's known offset `1` (as `cosh(0)`) and C's known `α` exactly,
+  rather than assuming them (entry 2). That is a genuine two-point validation.
+- **N=1 slot — vacuous under C.** `α_C` is bar-odd and cosine is even, so the
+  C-frame N=1 factor is already its own bar-midpoint. Verified here. The C limit
+  therefore says only `K(0) = 1` and **cannot discriminate `K` at δ ≠ 0**.
+
+### Status, stated precisely because it decides whether L2 may use it
+
+`K = cos(δ/2)` is **rule-determined and slot-untested**: strictly stronger than
+"free", strictly weaker than "derived". It is **not a fit** — nothing was
+inverted against Q_β, and the rule was fixed before this slot was considered.
+
+### What would settle it
+
+A **third slot** where the bar-midpoint rule is non-vacuous under C, so the rule
+can be tested somewhere other than where it was built. This probe does not find
+one; it states the requirement, which is the next concrete thing to look for.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb. The
+7656× figure of entry 12 is unchanged as a *measurement of the condition-set
+freedom*; what changes is that the arc does not actually sit at that freedom.
