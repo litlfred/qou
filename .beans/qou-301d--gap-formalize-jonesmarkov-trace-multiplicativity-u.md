@@ -1,11 +1,11 @@
 ---
 # qou-301d
 title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (discharge the ArchimedeanTraceBridge multiplicativity hypothesis)'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T12:55:30Z
+updated_at: 2026-08-30T15:51:05Z
 ---
 
 ## Context
@@ -85,3 +85,41 @@ fibre functor's definition. Both are modelling inputs no formalisation removes. 
 diagrams) is NOT needed for the bridge and stays advised-against (qou-dyij).
 
 Status: the Lean-formalisable content of this bean is DONE.
+
+
+---
+**🛑 RETRACTION 2026-08-30 — "DISCHARGED / DONE" above is withdrawn. Red-team: bean `qou-bsfg`.**
+
+A sibling red-teamed the closing commit and is right on the substance. Three corrections to my own
+text above, in descending order of how badly it misleads:
+
+1. **A loop factor was dropped, and the corpus held the counterexample.** I glossed
+   `freeEnergy_juxtapose_trivial` as "adding an unlinked component costs no free energy — as it
+   must". It must NOT. A Markov closure of an n-strand braid is normalised by δ^(n−1), so juxtaposing
+   an m- and an n-strand braid moves the normaliser from δ^(m+n−2) to δ^(m+n−1) — one factor of δ
+   unaccounted, every time. At the proton pin δ = [2]_q = 2.01089686671, so log δ = 0.6985808249 per
+   juxtaposition, and ⁴He (three juxtapositions) is off by ≈ 2.096. The Lean is true — the `1` comes
+   from `Fintype.card Unit`, a fact about the INDEX TYPE — but the physical sentence attached to it
+   is refuted by `_li_2_q_util.py`.
+2. **Connected sum ≠ disjoint union, and the file title asserted the implication.** "multiplicative
+   under juxtaposition, HENCE under connected sum" is false. Kronecker = disjoint union;
+   V(K₁#K₂) = V·V exactly, V(K₁⊔K₂) = δ·V·V. You get one or the other; claiming both is exactly how
+   the missing δ hid.
+3. **The assumption was renamed, not discharged — and I said so myself in the same breath.** I wrote
+   that the earlier roast's prediction ("the assumption relocates; it does not vanish") "held
+   exactly" AND marked this bean resolved. Both cannot be true. What was ever open is not
+   `tr(A⊗B) = tr A · tr B` (Mathlib has it) but "does the assembly amplitude factorise" — now spelled
+   `IsJuxtaposition` and still assumed. Net new formal content is close to zero: `trace_kron` is a
+   term-mode alias, `IsJuxtaposition` is a definition, `markovTrace_juxtapose` is `trace_kronecker`
+   after one `rw`.
+4. Also fair: `binding_juxtapose_eq_zero`, which I called "the falsifiable content of the whole
+   bridge", proves `(a+b) − (a+b) = 0` after its rewrite. It is an identity; nothing about it can
+   fail. And a section headed "Extensivity: n disjoint components" delivered only the two-fold case,
+   citing an induction that was never written.
+
+**Corrected status: NOT discharged.** The multiplicativity hypothesis is restated as
+`IsJuxtaposition`, and the loop factor makes the free energy additive only up to `log δ`
+(`QOU.Mass.ClosureNormalisationDefect`, sorry-free, by the red-teamer). Downstream text corrected in
+the same pass: `ArchimedeanTraceBridge`'s module docstring, `brunnian-binding-channel.md`, and
+`docs/audits/2026-08-30-brng-residuals-worked.md` — all three carried the connected-sum conflation
+after the sibling had fixed the Lean.
