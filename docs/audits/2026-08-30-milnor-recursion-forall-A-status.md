@@ -44,13 +44,32 @@ weight-system bridge the bean originally named as the blocker.
 `(★★)`'s LHS reduces, by the TL cap-cup identity `e_A X e_A = ⟨∩_A|X|∪_A⟩·e_A` and the Markov
 property `qtr_{A+1}(Y e_A) = qtr_A(Y)`, to
 
-    qtr_A( ρ(w_A) · F ),   F = ⟨∩_A| ρ(w_A)⁻¹ |∪_A⟩   (the TL cap-cup contraction of strand A).
+    qtr_A( ρ(w_A) · (F⊗1) ),   F = ⟨∩_A| ρ(w_A)⁻¹ |∪_A⟩   (the cap-cup contraction of strand A).
 
-`F` is the **partial closure of strand A** of the Brunnian braid `w_A⁻¹`. The Brunnian property
-(deleting any strand ⇒ unlink) is what should force `F` into the affine form that yields `(★★)`.
+**The cap-cup contraction is the μ⁻¹-weighted partial trace, and it lives at trace level, not
+matrix level** (probe `milnor_recursion_capcup_weight_probe.py`, verified A=3,4):
+
+- **Cap-cup weight is μ⁻¹, not μ.** The clean TL sub-lemma is `ptr_{μ⁻¹}(e) = 1` (identity);
+  `ptr_μ(e) = diag(q⁻², q²)` is a nontrivial diagonal. Contracting strand A of `ρ(w_A)⁻¹` uses the
+  cup `|∪⟩ = q^{-1/2}|01⟩ − q^{1/2}|10⟩`, whose weight is `μ⁻¹ = diag(1/q, q)` — the **inverse** of the
+  quantum-trace weight. Using `μ` (last session's error) makes `(★★)` fail.
+- **∀A index reduction** (pure linear algebra, holds ∀A):
+  `qtr_A(W₀·(F⊗1)) = qtr_{A-1}(P·F)` with `P := ptr_μ(W₀)`, `F := ptr_{μ⁻¹}(W₀⁻¹)`, `W₀ = ρ(w_A)`.
+- **Equivalent trace identity** `(†'')` (verified A=3,4):
+
+      qtr_{A-1}(P·F) = [2]^{A+1}(1−u) + u[2]·qtr_{A-1}(P),   P = ptr_μ(ρ(w_A)),  F = ptr_{μ⁻¹}(ρ(w_A)⁻¹).
+
+- **It is a genuine trace identity.** The tempting **matrix** form `P·F = [2]²(1−u)·1 + u[2]·P` is
+  **FALSE** at A=3,4 — the equality appears only after `qtr_{A-1}`. So the ∀A proof must be a
+  trace / Brunnian argument, **not** linear algebra on `P·F`.
+- **No affine collapse.** `P = ptr_μ(ρ(w_A))` is **not** in `span{1, ρ(w_{A-1}), ρ(w_{A-1})⁻¹}` (A=4):
+  the one-strand partial closure of a Brunnian braid does not reduce to a scalar × identity. This is
+  precisely why `(†'')` is Brunnian-specific yet still open — the Brunnian structure constrains the
+  closures without collapsing them.
+
 The recursive handle `E_A(w_A⁻¹) = E_A(b·w_{A-1}·b⁻¹)·w_{A-1}⁻¹` (`b = A_{A-1,A}`, verified A=4)
-gives an induction skeleton; the induction must be run with the **TL cap-cup** contraction, not
-the diagonal quantum partial trace (see the corrections below).
+gives an induction skeleton; the induction must be run against `(†'')` at **trace level** with the
+**μ⁻¹** cap-cup, not the diagonal μ-weighted partial trace.
 
 ## Two honest corrections made this session (verification caught both)
 
@@ -65,5 +84,11 @@ the diagonal quantum partial trace (see the corrections below).
 ## Status
 
 - Recursion: **verified exact A=3–6**; **reduced ∀A to `(★★)`** (3 of 4 qtr-terms proved ∀A).
-- `(★★)`: **verified A=3,4**; **NOT proved ∀A**. This is the open crux.
+- Clean algebra `(★★) ⟹ D_{A+1}=−h²(h²+2)D_A` is rigorous ∀A: with `G_A := qtr(ρ(w_A))`, the
+  A-independent terms give `G_A = [2]^A(1+h²) − h²Q_A` and `(★★)` gives `Q_A = [2]^A(1−u)+u[2]G_{A-1}`;
+  eliminating `Q_A` yields `1−D_A = 1 + h²u·D_{A-1}`, i.e. `D_A = −h²(h²+2)D_{A-1}`, exactly.
+- `(★★)` ⟺ the trace identity `(†'')` `qtr_{A-1}(P·F)=[2]^{A+1}(1−u)+u[2]qtr_{A-1}(P)`,
+  `P=ptr_μ(ρ(w_A))`, `F=ptr_{μ⁻¹}(ρ(w_A)⁻¹)`: **verified A=3,4**; **NOT proved ∀A**. The cap-cup weight
+  is `μ⁻¹` (clean sub-lemma `ptr_{μ⁻¹}(e)=1`); the identity is **trace-level only** (matrix form FALSE);
+  `P` has **no affine collapse**. This is the open crux.
 - No `BrunnianDeficitRecursion` instance exists — the honest open state is preserved.
