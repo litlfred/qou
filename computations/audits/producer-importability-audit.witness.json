@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:46:15.789323+00:00",
-  "commitSha": "7e816629fdda9991def30e02dbd330745b9885cc",
+  "computedAt": "2026-08-30T17:17:26.696397+00:00",
+  "commitSha": "da19c2ac4559bdd944da20895f992d6dfce38582",
   "assertions": [
     {
       "name": "in_repo_wiring_failures_are_reported_not_hidden",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "14 producers cannot import a module that lives in this repo; top causes {'other:AttributeError': 9, 'optional-dep:snappy': 7, 'in-repo-wiring:_path_bridge': 6, 'in-repo-wiring:q_parameter': 3}. Each one owns at least one committed witness that cannot be regenerated, so no staleness check can ever fire on it. Reported, not fixed."
+      "source": "1 producers cannot import a module that lives in this repo; top causes {'optional-dep:snappy': 7, 'other:NameError': 2, 'optional-dep:matplotlib': 1, 'other:FileNotFoundError': 1}. Each one owns at least one committed witness that cannot be regenerated, so no staleness check can ever fire on it. Reported, not fixed."
     },
     {
       "name": "optional_dependency_failures_are_carved_out_separately",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "producer-importability-audit",
   "scriptFile": "producer_importability_audit.py",
-  "scriptHash": "d390d5bb1b3b",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "11d5a8bd526d",
+  "scriptCommitSha": "1eb7bd340ba0c97168ba4aa21fd7cbc509cd6b11",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,119 +45,42 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/producer_importability_audit.py",
-      "--timeout",
-      "30"
+      "computations/audits/producer_importability_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/producer_importability_audit.py --timeout 30"
+    "reproduce": "python3 -u computations/audits/producer_importability_audit.py"
   },
   "description": "Detects committed witnesses whose PRODUCER cannot be imported, so the witness can never be refreshed and no staleness mechanism sees it. Every existing check (scriptHash drift, q0Anchor, the raw-float64 ratchet) presupposes the producer can run; when it cannot, the witness reports clean forever while its numbers age. Real instance: proton-residual-rootcause carried a convention-C z_markov = 0.49932033403356124 invisibly through the entire C->D campaign because its producer raised TypeError on every run (fixed in 179f030c2). Method: import the module by file location in a subprocess — these scripts guard work behind __main__, so an import exercises the whole top level without running the compute. Classes are reported separately because they are not the same defect: in-repo-wiring (a module that IS in this repo is not on sys.path — real and fixable), optional-dep (snappy/matplotlib etc — an environment fact, NOT a producer defect), other, and heavy-at-import (not a failure). Excludes _deprecated/. Loads by file location rather than `import <stem>` because hyphenated filenames make `import beta-decay-from-q` a syntax error in the IMPORT STATEMENT — a first pass reported 24 bogus SyntaxErrors that all parse cleanly under ast.parse, inflating 90 real findings to 109. This is a DETECTOR: it fixes nothing and does not claim every hit is a defect.",
   "data": {
     "producers_checked": 2378,
-    "unimportable_total": 36,
+    "unimportable_total": 13,
     "counts": {
-      "other": 14,
       "optional-dep": 8,
-      "in-repo-wiring": 14
+      "other": 4,
+      "in-repo-wiring": 1
     },
     "heavy_at_import": [
       "computations/hadron_knot_table.py",
+      "computations/inverse-markov-qvalues.py",
       "computations/level1-qvalues.py",
       "computations/probes/gswz_epsm_descent_m4to24_probe.py",
       "computations/probes/gswz_epsm_global_symbols_probe.py",
+      "computations/probes/gswz_epsm_kummer_level_probe.py",
+      "computations/probes/gswz_epsm_m3_one_two_relation_closure_probe.py",
+      "computations/substrate/lever1_binding_habiro_qexponential.py",
       "computations/substrate/lever1_binding_habiro_single_element_test.py",
       "computations/substrate/lever1_habiro_element_fit.py",
       "computations/substrate/lever1_qholonomic_kernel_fit.py",
       "computations/substrate/lever1_qholonomic_order3_fit.py"
     ],
     "causes": {
-      "other:AttributeError": 9,
       "optional-dep:snappy": 7,
-      "in-repo-wiring:_path_bridge": 6,
-      "in-repo-wiring:q_parameter": 3,
-      "in-repo-wiring:substrate": 2,
       "other:NameError": 2,
       "optional-dep:matplotlib": 1,
       "other:FileNotFoundError": 1,
-      "in-repo-wiring:canonical_braid_crossings": 1,
-      "other:": 1,
       "in-repo-wiring:lambda_scale_alt_g_skein_polynomial_direct": 1,
-      "other:ImportError": 1,
-      "in-repo-wiring:_precision": 1
+      "other:ImportError": 1
     },
     "findings": {
-      "other": [
-        {
-          "producer": "computations/binding_alpha_shift_witness.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/compound_shift_nf.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/crystal_basis.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/derivation_chain_validator.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/embeddable_knot_operator.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/gb_filtration_jet_order_reader.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/gb_filtration_jet_tracker.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/kashaev_link_statesum.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/probes/delta_lambda_bar_involution_probe.py",
-          "error": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/qou/computations/probes/atom-chi-rust-d.witness.json'",
-          "cause": "FileNotFoundError"
-        },
-        {
-          "producer": "computations/probes/gswz_287_nahm_efactor_probe.py",
-          "error": "NameError: name '__file__' is not defined. Did you mean: '__name__'?",
-          "cause": "NameError"
-        },
-        {
-          "producer": "computations/probes/gswz_program_convention_immunity_probe.py",
-          "error": "",
-          "cause": ""
-        },
-        {
-          "producer": "computations/probes/qbeta_g3_annihilator_certification.py",
-          "error": "ImportError: cannot import name 'tet_norm' from 'qbeta_g3_fourone_index_assembly' (/home/user/qou/computations/probes/qbeta_g3_fourone_index_assembly.py)",
-          "cause": "ImportError"
-        },
-        {
-          "producer": "computations/qbeta/qbeta_c_k_recursion_scaffold.py",
-          "error": "AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?",
-          "cause": "AttributeError"
-        },
-        {
-          "producer": "computations/universal-ilp.py",
-          "error": "NameError: name 'apply_atom_nf' is not defined. Did you mean: 'build_atom_nf'?",
-          "cause": "NameError"
-        }
-      ],
       "optional-dep": [
         {
           "producer": "computations/bring_chiral_fibre_figure.py",
@@ -200,76 +123,33 @@
           "cause": "snappy"
         }
       ],
+      "other": [
+        {
+          "producer": "computations/probes/delta_lambda_bar_involution_probe.py",
+          "error": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/qou/computations/probes/atom-chi-rust-d.witness.json'",
+          "cause": "FileNotFoundError"
+        },
+        {
+          "producer": "computations/probes/gswz_287_nahm_efactor_probe.py",
+          "error": "NameError: name '__file__' is not defined. Did you mean: '__name__'?",
+          "cause": "NameError"
+        },
+        {
+          "producer": "computations/probes/qbeta_g3_annihilator_certification.py",
+          "error": "ImportError: cannot import name 'tet_norm' from 'qbeta_g3_fourone_index_assembly' (/home/user/qou/computations/probes/qbeta_g3_fourone_index_assembly.py)",
+          "cause": "ImportError"
+        },
+        {
+          "producer": "computations/universal-ilp.py",
+          "error": "NameError: name 'apply_atom_nf' is not defined. Did you mean: 'build_atom_nf'?",
+          "cause": "NameError"
+        }
+      ],
       "in-repo-wiring": [
-        {
-          "producer": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py",
-          "error": "ModuleNotFoundError: No module named 'substrate'",
-          "cause": "substrate"
-        },
-        {
-          "producer": "computations/probes/body_order_is_finite_difference_of_coordination_weight_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/coordination_weight_rise_and_turnover_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/eps_ratio_target_precision_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/exact_rational_chi_gauge_probe.py",
-          "error": "ModuleNotFoundError: No module named 'canonical_braid_crossings'",
-          "cause": "canonical_braid_crossings"
-        },
-        {
-          "producer": "computations/probes/ksel2id_tropical_transport_probe.py",
-          "error": "ModuleNotFoundError: No module named 'substrate'",
-          "cause": "substrate"
-        },
         {
           "producer": "computations/probes/lambda_scale_homflypt_skein_recursion_probe.py",
           "error": "ModuleNotFoundError: No module named 'lambda_scale_alt_g_skein_polynomial_direct'",
           "cause": "lambda_scale_alt_g_skein_polynomial_direct"
-        },
-        {
-          "producer": "computations/probes/milnor_order_not_magnitude_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/qbeta_root_of_unity_probe.py",
-          "error": "ModuleNotFoundError: No module named 'q_parameter'",
-          "cause": "q_parameter"
-        },
-        {
-          "producer": "computations/probes/su4_casimir_beta_derivation_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/su4_casimir_coordination_weight_probe.py",
-          "error": "ModuleNotFoundError: No module named '_path_bridge'",
-          "cause": "_path_bridge"
-        },
-        {
-          "producer": "computations/probes/trefoil_complex_volume_probe.py",
-          "error": "ModuleNotFoundError: No module named 'q_parameter'",
-          "cause": "q_parameter"
-        },
-        {
-          "producer": "computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py",
-          "error": "ModuleNotFoundError: No module named 'q_parameter'",
-          "cause": "q_parameter"
-        },
-        {
-          "producer": "computations/qbeta/qbeta_counit_substrate_consistency.py",
-          "error": "ModuleNotFoundError: No module named '_precision'",
-          "cause": "_precision"
         }
       ]
     },
