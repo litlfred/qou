@@ -215,7 +215,12 @@ def build_atom_nf(Z, N):
                             (d = -h/2 only under `strict_averaged`)
       4. Apply pe crossings for electrons (σ₁⁻¹ per electron)
 
-    No separate gluon dressing — B₃ IS the gluon structure.
+    Per-nucleon gluon dressing IS applied: the σ₀² self-coupling, at the
+    "Gluon self-coupling: 2 σ₀" lines below. This docstring read "No separate
+    gluon dressing — B₃ IS the gluon structure", which contradicted the code
+    directly beneath it and is the same unsourced claim `build_nucleon_nf`
+    carried (both corrected 2026-08-30, bean qou-1qsw). B₃ is the Borromean
+    confinement; the σ₀² vertex is a separate H₂ SDP component.
     Generator 0 for inter-nucleon crossings (strong force channel).
     Generator 1 for pe crossings (EM channel).
     """
@@ -782,24 +787,30 @@ def build_nucleon_nf(quarks):
     Generator assignment: pair (i,j) uses gen = i (the lower quark index).
     For 3 quarks: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1.
 
-    ⚠️  NO GLUON TERM — and this is a DEFECT, not a convention.
+    Crossing budget: 6 (B₃) + 3 (quarks) + 2 (gluon σ₀²) = **11**.
 
-    This builder stops at B₃ + quarks = 9 crossings. The line that used to
-    stand here, "No separate gluon dressing — B₃ IS the gluon structure",
-    asserted that omission was deliberate. Nothing backs it: it cites no
-    proposition, no ILP, no SDP, and it contradicts the framework it sits in.
-    `computations/sdp_gamma_gamma_to_qqbar.py` decomposes the proton into FOUR
-    SDP components — H₃ for the Borromean B₃, H₃ per quark pair, **H₂ for the
-    2·σ₀ gluon self-coupling**, then LR cross-level embedding — so the gluon
-    term is a separate derived component, not something B₃ already contains.
-    `prop:mass-endomorphism-tower` carries the ILP derivation, cited at the
-    gluon lines of `build_atom_nf`.
+    GLUON TERM ADDED 2026-08-30 (owner ruling, bean qou-1qsw). This builder
+    previously stopped at 9, and the line that stood here — "No separate gluon
+    dressing — B₃ IS the gluon structure" — asserted the omission was
+    deliberate. Nothing backed it: no proposition, no ILP, no SDP, and it
+    contradicted the framework it sits in. Two independent arguments say the
+    gluon self-coupling is a real, separate component:
 
-    6 (B₃) + 3 (quarks) + 2 (gluon) = 11 is the SDP-consistent budget. Use
-    `build_atom_nf` / `build_atom_nf_exact`, which build it in braid order.
+    * `computations/sdp_gamma_gamma_to_qqbar.py` decomposes the proton into
+      FOUR SDP components — H₃ for the Borromean B₃, H₃ per quark pair, **H₂
+      for the 2·σ₀ gluon self-coupling**, then LR cross-level embedding.
+    * `QOU.QBeta.GluonVertexPsdParity.vertex_psd_iff_even` (sorry-free) proves
+      σ₀^k is PSD **iff k is even**, making σ₀² the minimal non-zero
+      admissible vertex. k = 1 is excluded; k = 2 is what is applied here.
 
-    Kept for the consumers that already read `PROTON_NF` / `NEUTRON_NF`;
-    do not build anything new on it. Bean qou-1qsw.
+    The term is the same 2·σ₀ that `build_atom_nf` applies, and adding it
+    makes the two agree: Δ_L(n−p) goes −0.18829060 → −0.22715971 at 50 dps,
+    against `build_atom_nf_exact`'s recorded −0.2272041. That agreement is a
+    cross-check, not a target — it was not tuned for.
+
+    The parity rule constrains k to be even; it does **not** force k > 0
+    (k = 0 is PSD too). That the vertex is present at all rests on the SDP
+    decomposition, not on parity.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³
@@ -817,6 +828,11 @@ def build_nucleon_nf(quarks):
             nf = hm(nf, 1, -h, gen)      # σ_gen⁻¹
         else:  # mixed u-d
             nf = hm(nf, 1, -h/2, gen)    # ½(σ + σ⁻¹)
+    # Gluon self-coupling: σ₀² — 2 crossings, even, hence PSD
+    # (QOU.QBeta.GluonVertexPsdParity.vertex_psd_iff_even). Same term
+    # build_atom_nf applies; see the docstring for why it is not optional.
+    nf = hm(nf, 1, 0, 0)                 # gluon 1
+    nf = hm(nf, 1, 0, 0)                 # gluon 2
     return nf
 
 
