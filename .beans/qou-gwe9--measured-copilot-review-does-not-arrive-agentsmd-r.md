@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T14:49:14Z
+updated_at: 2026-08-30T14:50:37Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -618,3 +618,46 @@ has taken three pushes since, **with no review requested**. That is the same
 censored-negative configuration as `fa#156` / `#6189` above and will bear on the
 push trigger once the window is long enough to matter — at ~16 min it is not yet
 worth anything. Noted so it is checked rather than re-derived.
+
+
+## FOLLOWING MY OWN INSTRUCTION, 14:50Z — the response body, verbatim
+
+Fired `request_copilot_review` on
+[`qou#6254`](https://github.com/litlfred/qou/pull/6254) at **2026-08-30 ~14:50Z**.
+Response body, verbatim and complete:
+
+```
+(mcp__github__request_copilot_review completed with no output)
+```
+
+**Empty. Not a quota message.** That is the discriminator this bean has been
+missing, and it is cheap: per the entries above, a quota refusal arrives as
+*text* (*"the user who requested the review has reached their quota limit"*),
+while an accepted request returns **nothing at all**. So the response body does
+distinguish the two readings, and recording it costs one line.
+
+### What this does and does not do to the 13:36Z row
+
+**It does not upgrade it.** Same tool, same session, same account, so the 13:36Z
+request very likely also returned empty — but that is an inference about an
+observation I did not make, and this bean has been burned by exactly that class
+of reasoning. The `qou#6157` row above stays as written: *no review at ≥ 1 h
+09 m after a request attempt*, cause undetermined between "accepted and unserved"
+and "refused on quota".
+
+**It does set up a clean one.** `#6254`'s request is now *known accepted* at
+14:50Z, which is **6 h 53 m** after exhaustion at 07:56:40Z. If no review
+arrives, the recharge lower bound becomes `> 6 h 53 m` on an **unambiguous**
+request — strictly better evidence than the `#6157` row, which cannot separate
+the two causes. If one does arrive, it bounds the recharge from **above** for
+the first time, which is the measurement this bean has never had.
+
+Either outcome is worth having, and neither costs another request. Check-in
+armed; result to be appended here.
+
+### Standing note for the tool, not just this bean
+
+`request_copilot_review` returning empty-on-success and text-on-refusal means
+**every** call site that fires it should record the body. An agent that reports
+"requested a review" without it has produced an observation that cannot be used
+for anything.
