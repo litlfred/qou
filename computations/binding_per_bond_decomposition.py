@@ -30,7 +30,7 @@ from mpmath import mp, mpf, fabs
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 
@@ -154,7 +154,11 @@ def main():
     dtr_canonical_2H = (fabs(mpf(str(_r2h["tr_M_free"])))
                         - fabs(mpf(str(_r2h["tr_M_atom"]))))
     dtr_h3a_2H = mpf(results["2H"]["delta_tr"])
-    method_gap_pct = float(fabs(dtr_canonical_2H - dtr_h3a_2H) / dtr_canonical_2H * 100)
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    method_gap_pct_exact_mpf = fabs(dtr_canonical_2H - dtr_h3a_2H) / dtr_canonical_2H * 100
+    method_gap_pct = float(method_gap_pct_exact_mpf)
 
     print()
     print(f"METHOD DISCREPANCY (²H): binding_canonical Δtr = {float(dtr_canonical_2H):.4f}"
@@ -181,8 +185,8 @@ def main():
     })
     wb.add_assertion(
         "method_discrepancy_recorded",
-        computed=method_gap_pct,
-        expected=method_gap_pct,
+        computed=fmt(method_gap_pct_exact_mpf),
+        expected=fmt(method_gap_pct_exact_mpf),
         tolerance=1,
         source="Diagnostic: records the binding_canonical vs H_{3A} Δtr gap",
     )
