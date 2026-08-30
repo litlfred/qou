@@ -530,3 +530,55 @@ guard 9/9 for the module.
 What remains is assembling them: instantiate `strictConcaveOn_tetVolLine` with
 `(u,v,w) = (a₁−π/3, a₂−π/3, a₃−π/3)`, apply the chord at `t = 1` between `0`
 and `3`, and read off. No new mathematics.
+
+## 2026-08-30 — **`VOL_4_1 < VOL_5_2` PROVED. The arc closes.**
+
+`QOU/Knot/FiveTwoVolumeChord.lean` — `VOL_4_1_lt_VOL_5_2`, sorry-free,
+`#print axioms` clean.
+
+    t=0   regular tetrahedron    f(0) = 3Λ(π/3) = Cl₂(π/3)
+    t=1   the 5₂ tetrahedron     3·f(1) = VOL_5_2
+    t=3   angles 3aᵢ − 2π/3      f(3) ≥ 0            (lob_sum_nonneg)
+
+    1 = (2/3)·0 + (1/3)·3, so StrictConcaveOn gives
+      f(1) > (2/3)·Cl₂(π/3)  ⟹  VOL_5_2 > 2·Cl₂(π/3) = VOL_4_1
+
+**`t = 3` is forced from both sides with no slack.** The chord weight needs
+`3(1 − 1/s) ≥ 2`, i.e. `s ≥ 3`. Domain membership at `s = 3` unfolds to
+`3aᵢ > 2π/3`, i.e. **`aᵢ > 2π/9`** — precisely the theorem this arc spent its
+length proving. The two constraints meet at one point. Strictness is free from
+`StrictConcaveOn`, so `f(3) ≥ 0` sufficed and no far-point positivity was needed.
+
+### Verified beyond the exit code
+
+An `example` restating the theorem in **full unabbreviated form** typechecks,
+so the statement is about the corpus's own `VOL_4_1` and `VOL_5_2` and not an
+artifact of this module's local abbreviations. Worth doing: the module defines
+`a₁ a₂ a₃ u v w` privately, and a headline theorem stated in terms of local
+shorthands is exactly the shape that reads stronger than it is.
+
+### Scope, unchanged
+
+`VOL_4_1` and `VOL_5_2` are the corpus's **defined** constants, `2·Cl₂(π/3)`
+and `3·D(y₁)`. That they are the hyperbolic volumes of `S³ ∖ 4₁` and `S³ ∖ 5₂`
+is Thurston hyperbolisation plus Mostow rigidity, which neither Mathlib nor QOU
+has. **This is an inequality between two real numbers, not between two
+manifolds.**
+
+What it does replace is the `norm_num`-on-truncated-decimals version
+`MostowRigidity` carried, which proved nothing about the exact constants at all
+(`qou-f8lit`, #6084) — the finding that started this whole arc.
+
+### Arc summary
+
+    #6084  the wrong-constant audit; FiveTwoVolumeBridge stated as an
+           EQUIVALENCE because the corpus could not prove the inequality
+    #6138  correcting a stale claim that landed inside that correction
+    #6141  the reduction, the angle theorem, and now the inequality itself
+
+Six scope corrections along the way, five to claims of mine. The two that
+mattered: the `z⁹` route (found only because a sign error forced re-derivation
+by hand) and `z³ = z − 1` (which turned a degree-15 identity into `(z−1)³`).
+
+**`FiveTwoVolumeBridge` can now be upgraded from equivalence to inequality** —
+left for a follow-up, since it touches a merged module.
