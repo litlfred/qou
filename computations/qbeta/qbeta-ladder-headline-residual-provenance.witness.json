@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T04:45:17.049543+00:00",
-  "commitSha": "9ce3ed2942163b6c62f6e57c5bc2e65538a39f2e",
+  "computedAt": "2026-08-30T06:36:14.500614+00:00",
+  "commitSha": "31f7400b35f742f45a681175bbfb584fd8e51c01",
   "assertions": [
     {
       "name": "headline_matches_no_published_row",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "qbeta-ladder-headline-residual-provenance",
   "scriptFile": "qbeta_ladder_headline_residual_provenance_probe.py",
   "scriptHash": "86444cd6207a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "5c9b54e367fc2588464afc68179dada895a95eaf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,5 +75,7 @@
     "headline_ppb": "-6.60000000000000000000000000000000000000000000000000000000000",
     "q0_proton": "1.1099785827513808075916690956107688798744991218736",
     "q0_muon": "1.10997859564273904668179512938000175270006556102901155697405"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
