@@ -56,7 +56,7 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
@@ -230,8 +230,11 @@ def main() -> int:
         "candidates_predicting_c3_neg_2_structurally":
             len(non_trivial_matches),
         "empirical_c3_target": -2,
+        # NO FLOAT64 (owner directive): this field ENTERS THE WITNESS, so it
+        # carries mpmath precision. fmt() is handed the mpf itself --
+        # fmt(float(x)) would short-circuit to str() and keep the float64.
         "j_hopf_q0_value":
-            float(-(mp.mpf(Q0_MP_PIN) ** 2 + 1 / mp.mpf(Q0_MP_PIN) ** 2)),
+            fmt(-(mp.mpf(Q0_MP_PIN) ** 2 + 1 / mp.mpf(Q0_MP_PIN) ** 2)),
     })
 
     # Assertion: NO non-trivial candidate predicts c_3 = -2 structurally.

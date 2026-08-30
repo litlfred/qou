@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-28T23:06:15.565655+00:00",
-  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:30:41.887754+00:00",
+  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
   "assertions": [
     {
       "name": "hypB_decisively_resolved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1734,
+  "durationMs": 283,
   "computation": "qbeta-rung2-hyp-b-wenzl-p3-probe",
   "scriptFile": "qbeta_rung2_hypB_wenzl_p3_probe.py",
-  "scriptHash": "71f052e2cb6c",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "65c670e9a969",
+  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_rung2_hypB_wenzl_p3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_rung2_hypB_wenzl_p3_probe.py"
   },
   "description": "Definitive test of Hyp-B: does rung_2 = hbar_q^3/[2]_q equal tr_M(Wenzl p_3) / TL_loop = [4]_q/[2]_q? By Wenzl-projector identity tr_M(p_k) = [k+1]_q, the Hyp-B prediction = q^2 + q^-2 = -J_Hopf. Classical-limit cross-check independently confirms verdict.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
@@ -49,8 +57,8 @@
     },
     "verdict": "REFUTED",
     "numerical_at_q0": {
-      "rung_2_actual": "0.0004837164956956220627765728",
-      "hypB_pred": "2.043706218232901310218245"
+      "rung_2_actual": "0.0004837163440454520352282205",
+      "hypB_pred": "2.043706208532521989402019"
     }
   }
 }

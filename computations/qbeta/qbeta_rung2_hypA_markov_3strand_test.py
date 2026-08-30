@@ -25,9 +25,18 @@ This probe tests Hyp-A precisely.
 In the QOU Markov-trace convention (per `_precision.py` and the
 operator-valued N=3 probe), the Markov trace on H_n(q) satisfies
 
-  tr_M(1) = z^(n-1)   where  z = 1 / (√q + 1/√q)
+  tr_M(1) = z^(n-1)   where  z = q³ / (q² + 1)
 
 (z = Markov-Jones parameter). So tr_M(1 ∈ H_3(q)) = z².
+
+CONVENTION, corrected 2026-08-30: this said z = 1/(√q + 1/√q), which is
+convention C. The code has computed convention D, z = q³/(q²+1), since the
+convention-D propagation; the prose simply never followed. Measured on this
+file's own recorded value: the committed witness held
+0.123984874514528677997915, which is exactly z²/[2]_q under convention C at
+pin A, while the live code returns 0.186676222474348152002243 — exactly
+convention D at the proton pin. The 50% gap between those two is the
+convention, not the pin; the pin accounts for 11.5 ppb of it.
 
 Hyp-A prediction:
   z² / [2]_q = [1 / (√q + 1/√q)]² · 1 / (q + 1/q)
@@ -70,7 +79,7 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
@@ -102,7 +111,8 @@ def main() -> int:
         "Definitive test of Hyp-A: does the rung 2 form ℏ_q³/[2]_q "
         "equal (3-strand Markov trace at identity) / dim_q(V_1)? "
         "Symbolic check using QOU Markov-trace convention "
-        "tr_M(1 ∈ H_n) = z^(n-1), z = 1/(√q+1/√q). Hyp-A confirmed "
+        "tr_M(1 ∈ H_n) = z^(n-1), z = q^3/(q^2+1) (convention D). "
+        "Hyp-A confirmed "
         "iff the difference simplifies to 0."
     )
     builder.set_content_block("prop:q-beta-c-2-eq-neg-one-structural")
@@ -125,7 +135,7 @@ def main() -> int:
 
     print(f"  Setup (QOU Markov-trace convention):")
     print(f"    tr_M on H_n(q): tr_M(1) = z^(n-1)")
-    print(f"    z = 1 / (√q + 1/√q) = Markov-Jones parameter")
+    print(f"    z = q³ / (q² + 1) = Markov-Jones parameter (convention D)")
     print(f"    dim_q(V_1) = [2]_q = q + q⁻¹ (fundamental rep)")
     print()
     print(f"  Hyp-A prediction:  rung 2 = tr_M(1 ∈ H_3) / dim_q(V_1)")
@@ -221,7 +231,10 @@ def main() -> int:
     builder.add_data("numerical_at_q0", {
         "rung_2_actual": mp.nstr(actual_q0, 25),
         "hypA_pred": mp.nstr(hypA_q0, 25),
-        "relative_gap": float(mp.fabs(actual_q0 - hypA_q0) / actual_q0),
+        # NO FLOAT64 (owner directive): this field ENTERS THE WITNESS, so it
+        # carries mpmath precision. fmt() is handed the mpf itself --
+        # fmt(float(x)) would short-circuit to str() and keep the float64.
+        "relative_gap": fmt(mp.fabs(actual_q0 - hypA_q0) / actual_q0),
     })
     builder.add_data("implications", (
         "Hyp-A as literally stated (tr_M(1 ∈ H_3) / dim_q(V_1)) "

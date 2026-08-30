@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:48:14.916095+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:29:19.181240+00:00",
+  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
   "assertions": [
     {
       "name": "stage_c_operator_data_assembled",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23957,
+  "durationMs": 19642,
   "computation": "qbeta-ck-from-operator-markov-trace-probe",
   "scriptFile": "qbeta_ck_from_operator_markov_trace_probe.py",
-  "scriptHash": "12244626bcb8",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "897edf431a20",
+  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -56,7 +56,7 @@
     },
     "tr_M_trefoil_q": "q**3*(q**4 + 1)/(q**2 + 1)**2",
     "tr_M_at_q_eq_1": "1/2",
-    "u_at_q_0": "0.0085172363404849214399331129022993960823890422302814",
+    "u_at_q_0": "0.0085172345501561421892555736033092029691942216116300",
     "u_q_leading_order_near_q1": "u(q) ~ (sqrt(3)/2)(q-1)^2 near q=1",
     "verdict": {
       "operator_data_assembled": true,
