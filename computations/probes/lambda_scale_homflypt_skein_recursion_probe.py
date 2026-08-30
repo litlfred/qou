@@ -92,10 +92,38 @@ from mpmath import mpf, pslq  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# Reuse Strategy G's Borromean HOMFLYPT closed form
-from lambda_scale_alt_g_skein_polynomial_direct import (  # noqa: E402
-    homflypt_borromean_at_az,
-)
+# Reuse Strategy G's Borromean HOMFLYPT closed form.
+#
+# THE MODULE THIS IMPORTS DOES NOT EXIST ANYWHERE IN THE REPOSITORY.
+# `lambda_scale_alt_g_skein_polynomial_direct.py` was moved to
+# `computations/_deprecated/strategy-spikes/` and then deleted from there as
+# well; `git ls-tree -r origin/main` returns no file of that name, and
+# `homflypt_borromean_at_az` is defined in NO file on main. So this probe has
+# been unrunnable -- not slow, not env-dependent, unrunnable -- since that
+# deletion, and it fails at import time before a single line of its own body
+# executes.
+#
+# It is not repointable by an import path fix: the function is gone, not moved.
+# Reviving it means re-deriving the Borromean HOMFLYPT closed form (or
+# recovering the deleted file from history and judging whether it was deleted
+# for cause). Neither is a mechanical change, and the deletion may well have
+# been deliberate.
+#
+# Raised explicitly rather than left as a bare ModuleNotFoundError, which reads
+# as a broken environment and sends the next agent hunting for a missing
+# install. Disposition is an owner decision; bean `qou-s1yn`.
+try:  # noqa: E402
+    from lambda_scale_alt_g_skein_polynomial_direct import (  # noqa: E402
+        homflypt_borromean_at_az,
+    )
+except ModuleNotFoundError as _exc:  # pragma: no cover
+    raise ModuleNotFoundError(
+        "lambda_scale_alt_g_skein_polynomial_direct is not in this repository "
+        "-- it was deleted, not moved, and `homflypt_borromean_at_az` is "
+        "defined in no file on main. This probe has been unrunnable since "
+        "then and cannot be fixed by adjusting sys.path. See the note above "
+        "this import and bean `qou-s1yn`."
+    ) from _exc
 
 
 def homflypt_trefoil(a: mpf, z: mpf) -> mpf:
