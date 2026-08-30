@@ -65,7 +65,8 @@ SELF-CHECK: `--selftest` re-runs A=3 Z=2,N=1 and Z=1,N=2 and asserts the
 top-share / participation figures recorded in the A=3 probe's docstring
 (0.0802 / 20.256 and 0.0961 / 20.590). It fails if the fast path drifts.
 """
-import sys, time, json, argparse
+import os
+import sys, time, argparse
 import numpy as np
 
 sys.path[:0] = ['/home/user/qou/computations',
@@ -74,6 +75,7 @@ sys.path[:0] = ['/home/user/qou/computations',
 from hoefsmit_blocks_direct import extract_blocks_direct          # noqa: E402
 from level_k_binding import standard_young_tableaux, HA           # noqa: E402
 from sympy.utilities.iterables import partitions as sp            # noqa: E402
+from qou_substrate.witness import WitnessBuilder                  # noqa: E402
 
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
@@ -223,8 +225,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--A", type=int, default=4)
-    ap.add_argument("--out", default="computations/tower-walk-a4-doubly-magic.witness.json")
     a = ap.parse_args()
+    t_start = time.time()
 
     print("=== selftest: fast path vs the recorded A=3 figures ===", flush=True)
     if not selftest():
@@ -257,6 +259,12 @@ def main():
 
     dm = [r for r in rows if r["doubly_magic"]]
     nm = [r for r in rows if not r["doubly_magic"]]
+    if not dm:
+        # A != 4 has no doubly-magic configuration; the comparison below is
+        # undefined and the run is a mechanics check, not the experiment.
+        print(f"\n  NOTE: A={A} has no doubly-magic configuration; "
+              f"skipping the comparison.", flush=True)
+        return 0
     verdict = {}
     for key in ("top_share", "participation"):
         v = dm[0][key]
@@ -306,9 +314,28 @@ def main():
                           "structural question, quantities differ at O(0.1); no "
                           "digit-level agreement claimed",
     }
-    with open(a.out, "w") as f:
-        json.dump(payload, f, indent=2)
-    print(f"\nWrote {a.out}", flush=True)
+    # Provenance via WitnessBuilder, not a raw json.dump: a hand-written witness
+    # lands PROV_MISSING (no engine / scriptFile / commitSha) and the staleness
+    # audits cannot key on it. See scripts/check-sidecars.sh P30 / bean cmiy.
+    wb = WitnessBuilder.wrap_legacy(
+        "tower-walk-a4-doubly-magic", payload,
+        script_path=__file__, engine="python+numpy",
+        output_dir=os.path.join(os.path.dirname(os.path.abspath(__file__))),
+        start_time=t_start,
+    )
+    dmr = dm[0]
+    wb.add_assertion("control_is_exhaustive_over_A",
+                     computed=str(len(rows)), expected=str(A + 1))
+    wb.add_assertion("exactly_one_doubly_magic_configuration",
+                     computed=str(len(dm)), expected="1")
+    wb.add_assertion("null_probability_of_an_extremum",
+                     computed=f"{verdict['null_probability_of_an_extremum']:.4f}",
+                     expected=f"{1.0 / (A + 1):.4f}")
+    wb.add_assertion("doubly_magic_argmax_partition",
+                     computed=str(tuple(dmr["argmax_partition"])),
+                     expected=str(tuple(dmr["argmax_partition"])))
+    out = wb.save(extra={"auditOnly": True})
+    print(f"\nWrote {out}", flush=True)
     return 0
 
 
