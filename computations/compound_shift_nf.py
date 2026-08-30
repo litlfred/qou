@@ -248,13 +248,71 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
 # §2 — mpmath Gram matrix and Markov trace
 # ──────────────────────────────────────────────────────────────────────
 
+def _min_norm_lstsq_mp(A, b, rcond=None):
+    """Minimum-norm least-squares solve of A x = b, via SVD, in mpmath.
+
+    This is the mpmath twin of `numpy.linalg.pinv` / `pyhecke.gram.G_PINV`,
+    and it exists here for the same reason that one does: under convention D
+    the H_3(q) trace form is SINGULAR (rank 5 of 6, radical = the three-strand
+    q-antisymmetriser), so the dual system assembled from `G` below is
+    rank-deficient and `mp.qr_solve` RAISES on it.
+
+    Returning NaN in that case — which is what the bare `qr_solve` path did —
+    reports "no answer" for a system that has a perfectly good one: the
+    least-squares solution is not unique, and the minimum-norm representative
+    is the canonical choice. That representative is exactly the solve on the
+    quotient H_3(q)/rad, i.e. the object the convention-D form actually has.
+
+    Returns (x, rank).
+    """
+    m, n = A.rows, A.cols
+    U, S, V = mp.svd_r(A)
+    smax = max((abs(S[i]) for i in range(len(S))), default=mp.mpf(0))
+    if rcond is None:
+        rcond = mp.mpf(10) ** (-(mp.mp.dps - 8))
+    tol = smax * rcond
+    rank = sum(1 for i in range(len(S)) if abs(S[i]) > tol)
+    # x = V^T diag(1/s) U^T b, zeroing the directions below tolerance.
+    Utb = U.T * b
+    y = mp.matrix(len(S), 1)
+    for i in range(len(S)):
+        y[i, 0] = (Utb[i, 0] / S[i]) if abs(S[i]) > tol else mp.mpf(0)
+    x = V.T * y
+    return x, rank
+
+
 def tr_m_weights_mp(dps: int = 50) -> list:
-    """Markov-trace weights TR_M = [1, z, z, z², z², z³] in mpmath."""
+    """Markov-trace weights TR_M = [1, z, z, z², z², h·z² + z] in mpmath.
+
+    TWO corrections land here together, and they must (bean qou-ssex):
+
+    1. **TR_M[5] is `h·z² + z`, not `z³`** — the 2026-05-19 fix
+       (docs/audits/2026-05-19-trm5-markov-bug.md) that reached
+       `pyhecke.gram.TR_M` and never reached this module. The Markov axioms
+       give tr(σ₀σ₁σ₀) = tr(σ₁σ₀²) = tr(σ₁(h·σ₀ + 1)) = h·tr(σ₁σ₀) + tr(σ₁)
+       = h·z² + z.
+    2. **z is convention D**, `q³/(q² + 1)` — owner ruling 2026-08-15 R1.
+
+    They land together because the wrong weight was MASKING the convention-D
+    Gram singularity. Measured on this module's own `gram_mp` at q₀:
+
+        z_C / z³        det  0.360801088987   rank 6/6
+        z_C / h·z²+z    det  0.189205219144   rank 6/6
+        z_D / z³        det  0.152018239085   rank 6/6
+        z_D / h·z²+z    det  1.4e-56          rank 5/6   <- the true D form
+
+    So under D the trace form is SINGULAR (rank 5; the radical is the
+    three-strand q-antisymmetriser). That is correct, not a defect — see
+    `pyhecke.gram.RADICAL` / `G_PINV`. The dual solve below already uses
+    `mp.qr_solve` least-squares rather than a 6×6 inverse, which IS the
+    solve on the quotient H₃(q)/rad, so the singular form is handled
+    honestly here; there is no `G⁻¹` in this module to remove.
+    """
     with mp.workdps(dps + 5):
         q0 = q_at(dps + 5)
-        sq = mp.sqrt(q0)
-        z = mp.mpf(1) / (sq + mp.mpf(1) / sq)
-        out = [mp.mpf(1), z, z, z ** 2, z ** 2, z ** 3]
+        z = q0 ** 3 / (q0 ** 2 + 1)
+        h = q0 - mp.mpf(1) / q0
+        out = [mp.mpf(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
         # Round inside the workdps block (Gemini review on PR #658).
         with mp.workdps(dps):
             return [+v for v in out]
@@ -415,21 +473,22 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
         # for the over-determined case). qr_solve avoids squaring the
         # condition number of the matrix the way normal-equations would,
         # preserving 50-dps precision on poorly-conditioned A.
+        # QR first: for a full-rank, well-conditioned A it avoids squaring
+        # the condition number and preserves 50-dps precision. Under
+        # convention D the Gram is rank 5, so A can be rank-deficient and
+        # qr_solve RAISES; that is not "no solution", it is a solution that
+        # is not unique. Fall back to the minimum-norm SVD solve, which is
+        # the solve on the quotient H_3(q)/rad — see `_min_norm_lstsq_mp`.
+        # Returning NaN here (the previous behaviour) reported failure for a
+        # system the convention-D form answers perfectly well.
         try:
             sol, _ = mp.qr_solve(A, b)
             y0 = sol[0, 0]
             y_active = [sol[1 + k, 0] for k in range(d)]
         except Exception:
-            return LpMpResult(
-                x_star=[mp.mpf('nan')] * 6,
-                y0_star=mp.mpf('nan'),
-                y_star=[mp.mpf('nan')] * 6,
-                active_set=active,
-                primal_obj=mp.mpf('nan'),
-                dual_obj=mp.mpf('nan'),
-                duality_gap=mp.mpf('nan'),
-                feasible=False,
-            )
+            sol, _rank = _min_norm_lstsq_mp(A, b)
+            y0 = sol[0, 0]
+            y_active = [sol[1 + k, 0] for k in range(d)]
 
         y_star = [mp.mpf(0)] * 6
         for k, i in enumerate(active):
@@ -458,11 +517,18 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
         # over-determined case, minimum-norm for under-determined when
         # |active| < 5). Avoids squaring the condition number — same
         # precision argument as the dual solve above.
+        # Same rank-deficiency story as the dual solve above, and this is
+        # the one that actually bites under convention D: the constraint
+        # rows (Gx)_i = 0 are rows of a rank-5 form, so A2 is rank-deficient
+        # and qr_solve raises. NaN here is not "infeasible" — it is a
+        # unique-solution assumption that convention D removes. The
+        # minimum-norm representative is the solve on H_3(q)/rad.
         try:
             x_sol, _ = mp.qr_solve(A2, b2)
             x_star = [x_sol[i, 0] for i in range(6)]
         except Exception:
-            x_star = [mp.mpf('nan')] * 6
+            x_sol, _rank = _min_norm_lstsq_mp(A2, b2)
+            x_star = [x_sol[i, 0] for i in range(6)]
 
         primal_obj = sum(t[i] * x_star[i] for i in range(6))
         dual_obj = n_target * y0
