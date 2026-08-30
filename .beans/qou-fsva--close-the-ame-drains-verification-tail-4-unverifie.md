@@ -1,10 +1,11 @@
 ---
 # qou-fsva
 title: 'Close the AME drain''s verification tail: 4 unverified producers, 6 stdout-only, fr_pullback deferred'
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-30T06:24:05Z
-updated_at: 2026-08-30T06:24:05Z
+updated_at: 2026-08-30T09:05:56Z
 ---
 
 
@@ -184,3 +185,41 @@ positive rate worth paying for a class that otherwise ships silently.
 The scan is `scratchpad/risky_scan.py <targets.json>`; it is a scratch tool, not
 committed, but the shape is written down here so the next round does not
 rediscover it by burning a sweep.
+
+## Summary of Changes
+
+All eleven uncovered producers are now verified, plus five more that surfaced
+while closing them.
+
+**fr_pullback_borromean_h3a_test** — the deferred item. It was not merely slow:
+it has raised `TypeError` on every run since c86e55ec9, which changed four call
+sites to `dim_q(s, Q0_PROTON)` and added the import but never gave `dim_q` the
+parameter. It computes for ~80 minutes before reaching the broken call, which
+is why nothing caught it. An AST arity audit over the whole corpus found the
+same half-finished edit in `probe_chirality_delta_lambda_the3_diagnostic` and
+(fixed earlier) `deltalambda_binding_cross_isotope_probe`; no other call/def
+mismatch exists. All three now accept the argument and CHECK it against the
+factory's q rather than ignoring it.
+
+**Four witnesses had no same-named producer** — the stem heuristic failed on
+case (`binding_sum_C_vs_D_per_isotope_probe.py` writes
+`binding-sum-c-vs-d-deut.witness.json`). Each witness records its own producer
+in `scriptFile`; that is the reliable mapping. All four re-run and compare
+clean: 0 unexplained leaves.
+
+**catalan_binding** is not an empty witness. It writes 11KB with 0 assertions,
+and its rc=1 is a pre-existing raw-float64 guard failure — 35 float64 fields
+entering the witness where the guard wants mpf carried through `_precision.fmt`.
+Symmetric at HEAD, unrelated to the drain, left alone.
+
+**pn_alpha_lp_dual cannot be verified by re-running at all.** It runs
+scipy.linprog and an SCS solve. HEAD against ITSELF — same code, two runs —
+differs in 2320 leaves, 402 of them beyond the drain bound, which is exactly the
+count that had been attributed to the routing. Its dual variables are not
+reproducible run-to-run.
+
+**A third of the baselines were stale.** 33 of 64 dirty witnesses were being
+compared against the COMMITTED copy rather than a same-container re-run — the
+unsoundness the whole exercise exists to avoid. `binding_per_bond_decomposition`
+looked like a real regression (a "29% gap" becoming "24%") purely because its
+HEAD witness predated the container.
