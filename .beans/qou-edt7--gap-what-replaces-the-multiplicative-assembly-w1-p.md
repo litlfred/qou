@@ -67,6 +67,22 @@ That is the honest next question, and it is a DERIVATION question, not a fit.
 
 ## HALF LANDED 2026-08-30 — the trilemma is now machine-checked
 
+> **SUPERSEDED 2026-08-30 (PR #6088, Copilot review) — the artifacts named in
+> this block DO NOT EXIST.** `QOU/MassTheory/PairwiseAdditiveCumulants.lean` and
+> its `pairwise_b3_eq_zero` / `pairwise_b4_eq_zero` / `ame_b3_pos` /
+> `no_pairwise_matches_ame` / `trilemma` were DELETED, not merged — #6101 landed
+> a strictly more general version. Read the "SUPERSEDED IN PART" section below
+> for the full account. The live artifacts are:
+>
+> | result | lives in | declarations |
+> |---|---|---|
+> | pairwise-additive => b3 = b4 = 0, every bond functional | `QOU/Mass/PairwiseCumulantVanishing.lean` | `b3_eq_zero_of_isPairwise`, `b4_eq_zero_of_isPairwise`, `b3_eq_zero_ofBondFunctional`, `not_isPairwise_of_b3_ne_zero` |
+> | the AME instantiation (b3 = 1.4262225, not pairwise) | `QOU/MassTheory/AmeBindingNotPairwise.lean` | `ameMap`, `ame_b3_eq`, `ame_not_isPairwise` |
+>
+> The block below is kept as the record of what this bean asked for and what was
+> built for it; it is not a pointer to live code.
+
+
 Lean: QOU/MassTheory/PairwiseAdditiveCumulants.lean, sorry-free, lean-direct
 exit 0, #print axioms clean on all 9 decls.
 

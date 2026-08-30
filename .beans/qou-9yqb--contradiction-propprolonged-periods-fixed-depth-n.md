@@ -80,6 +80,19 @@ the time. This bean records the verification I have since done.
 
 ## LANDED + a CORRECTION TO MY OWN ARGUMENT (2026-08-30)
 
+> **SUPERSEDED 2026-08-30 (PR #6088, Copilot review) — the artifacts named in
+> this block DO NOT EXIST.** `QOU/MassTheory/FixedDepthGrowthBound.lean` and its
+> `abs_le_geometric` / `not_factorial_growth` were DELETED, not merged — see the
+> two sections below. The live artifacts are:
+>
+> | result | lives in | declarations |
+> |---|---|---|
+> | constant-kernel recurrence => geometric bound; no super-exponential solution | `QOU/Mass/ConstantKernelGrowthBound.lean` | `exists_exponential_bound`, `not_isConstKernelRec_of_superExponential`, `not_superExponential_of_isConstKernelRec` |
+> | factorial => super-exponential (the bridge #6101 withdrew) | `QOU/MassTheory/FactorialSuperExponential.lean` | `superExponential_of_factorial_le`, `not_isConstKernelRec_of_factorial_le` |
+>
+> The block below is kept as the record of what was built and of the correction
+> it carries; it is not a pointer to live code.
+
 Lean: QOU/MassTheory/FixedDepthGrowthBound.lean, sorry-free, lean-direct exit 0,
 #print axioms clean on both decls.
 
