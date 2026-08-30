@@ -24,7 +24,7 @@
 
   The alpha-shift formula assumes a single hyperbolic force-carrier
   knot per nucleus. For doubly-magic Z, N the
-  prop:diagrammatic-double-magic-lr-fusion conjecture proves the
+  conj:diagrammatic-double-magic-lr-fusion conjecture proves the
   Littlewood-Richardson fusion of the Z-block and N-block collapses
   to a single self-conjugate Specht module — no Wedderburn channel
   for crossings, no hyperbolic knot, no per-rep Reeb phase. The
@@ -33,7 +33,7 @@
 
   Ref: [manuscript] prop:magic-A-binding-formula
        [manuscript] prop:binding-alpha-shift-extension
-       [manuscript] prop:diagrammatic-double-magic-lr-fusion
+       [manuscript] conj:diagrammatic-double-magic-lr-fusion
        [manuscript] prop:gravity-spectral-prefactor
        [manuscript] rem:strutinsky-from-graded-trace
        [audit] docs/audits/2026-05-31-binding-magic-A-wireup.md
@@ -145,7 +145,7 @@ theorem he4_is_doubly_magic : isDoublyMagic 2 2 := by
     - `DoublyMagic` — both `Z, N ∈ 𝔐`. The Littlewood–Richardson
       fusion of the Z-block and N-block collapses to a single
       self-conjugate Specht module
-      (`prop:diagrammatic-double-magic-lr-fusion`); there is no
+      (`conj:diagrammatic-double-magic-lr-fusion`); there is no
       Wedderburn channel, no hyperbolic force-carrier knot, no per-rep
       Reeb phase. Binding is set by the universal Borromean residue
       `8G` scaled by nucleon count via `MagicABindingFormula`.

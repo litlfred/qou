@@ -17,7 +17,7 @@ All nine observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$. No empiric
 
 ## Categorical interpretation
 
-Per [`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
+Per [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
 
 $$
   V_{\lambda_Z} \otimes V_{\lambda_N}
