@@ -266,10 +266,18 @@ discipline guard; we just can't test the Im hypothesis directly from
 the c_3 numerical data alone.
 """)
 
-    builder.add_data("candidate_1_im_delta", candidate_1)
-    builder.add_data("candidate_2_complex_q", candidate_2)
-    builder.add_data("candidate_3_re_im_via_bar_decomp", candidate_3)
-    builder.add_data("candidate_4_re_projection_minus_2", candidate_4)
+    # Keyed so the coverage assertion below can walk the very objects the
+    # witness publishes, rather than re-typing how many of them there are.
+    candidates = {
+        "candidate_1_im_delta": candidate_1,
+        "candidate_2_complex_q": candidate_2,
+        "candidate_3_re_im_via_bar_decomp": candidate_3,
+        "candidate_4_re_projection_minus_2": candidate_4,
+    }
+    for _key, _cand in candidates.items():
+        builder.add_data(_key, _cand)
+    with_verdict = [k for k, c in candidates.items()
+                    if str(c.get("verdict", "")).strip()]
     builder.add_data("q_proton", str(q_proton))
     builder.add_data("q_muon", str(q_muon))
     builder.add_data("q_anchor_gap_abs", str(abs(q_proton - q_muon)))
@@ -290,12 +298,23 @@ the c_3 numerical data alone.
         "relying on numerical c_3 extraction at near-identical anchors."
     ))
 
+    # Was `computed=4.0, expected=4.0` — the literal 4 on both sides, so it
+    # would have read "all 4 have verdicts" even if a candidate were dropped
+    # from the witness or left with an empty verdict. This probe reaches no
+    # number it could assert instead (the candidates are refuted in prose from
+    # printed comparisons), so what it can honestly assert is the coverage its
+    # name already claimed: every candidate this witness records carries a
+    # non-empty verdict. Drop one, or leave one undecided, and it goes red.
     builder.add_assertion(
-        name="all_4_candidates_have_verdicts",
-        computed=4.0,
-        expected=4.0,
-        tolerance=0.0,
-        source="Diagnostic probe enumerates 4 candidates with explicit verdicts",
+        name="all_candidates_have_verdicts",
+        # Counts, so ints: the old float form also tripped the raw-float64
+        # guard on all three fields.
+        computed=len(with_verdict),
+        expected=len(candidates),
+        tolerance=0,
+        source=f"candidates recorded with a non-empty verdict: "
+               f"{len(with_verdict)} of {len(candidates)} "
+               f"({', '.join(sorted(candidates))})",
     )
 
     out = builder.save()

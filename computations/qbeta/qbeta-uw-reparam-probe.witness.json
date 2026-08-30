@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T15:54:26.283320+00:00",
-  "commitSha": "b1d776b09dcefff755e54d11b827168193e7454b",
+  "computedAt": "2026-08-30T09:24:12.234962+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "u-leading-eps-coefficient-is-zero",
@@ -12,11 +12,11 @@
       "source": "u(1+ε) Taylor expansion ⇒ u is O(ε²), not a proper Taylor coord at q=1"
     },
     {
-      "name": "v-leading-eps-coefficient-nonzero",
+      "name": "v-leading-eps-coefficient-equals-sqrt-b-at-1",
       "computed": "sqrt(2)*3**(1/4)/2",
       "expected": "sqrt(2)*3**(1/4)/2",
       "passed": true,
-      "source": "v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper Taylor coord"
+      "source": "v(1+ε) = sqrt(b)·ℏ has leading coefficient √(b(1)) = √(√3/2) = 3^(1/4)/√2 ≈ 0.93060, non-zero ⇒ v is O(ε), proper Taylor coord"
     },
     {
       "name": "w-leading-eps-coefficient",
@@ -43,11 +43,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 18,
   "computation": "qbeta-uw-reparam-probe",
   "scriptFile": "qbeta_uw_reparam_probe.py",
-  "scriptHash": "bff2590482ac",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "189e3e46884b",
+  "scriptCommitSha": "92f4817ab8ca60384edd956b74562920780ca6d7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,7 +62,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

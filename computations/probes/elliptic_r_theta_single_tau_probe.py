@@ -47,6 +47,12 @@ C3_MUON = mp.mpf("-2.0202")           # muon (CAL-2) pin, q-beta-c3-continuum-ge
 C3_PROTON = mp.mpf("-2.06934257711516783787971951725")  # proton pin (mult), constants
 
 
+# The bound the θ-degeneration source string has always quoted ("verified to
+# <1e-40"). Named here so the printed table, the witness assertion and the
+# prose all read the same number instead of restating it.
+THETA_RESIDUAL_TOL = mp.mpf("1e-40")
+
+
 def trM_fig8(q: mp.mpf) -> mp.mpf:
     """tr M_{4₁}(q) = q⁴ − 2q² + 1 − 2q⁻² + q⁻⁴ (bar-even Laurent poly)."""
     return q**4 - 2 * q**2 + 1 - 2 / q**2 + 1 / q**4
@@ -61,13 +67,27 @@ def run() -> dict:
     out: dict = {}
 
     # (1) θ-degeneration identities the Lean brick proves (numeric sanity, q=e^u).
+    # The three residuals are named rather than inlined so `main()` can assert
+    # the WORST of them. Previously they were computed, rounded to 3 figures
+    # into the strings below, and then thrown away: `identities_hold` was the
+    # literal `True`, and the witness assertion was `computed=1, expected=1`.
+    # Nothing downstream could see a broken identity — the residuals were
+    # narration, not a check.
     u = mp.mpf("0.5") + 0j
     eu, emu = mp.e ** u, mp.e ** (-u)
+    r_even = abs((eu + emu) - 2 * mp.cosh(u))
+    r_odd = abs((eu - emu) - 2 * mp.sinh(u))
+    r_split = abs(eu - (mp.cosh(u) + mp.sinh(u)))
+    r_max = max(r_even, r_odd, r_split)
     out["theta_degeneration_check"] = {
-        "barEven q+q^-1 = 2 cosh u": mp.nstr(abs((eu + emu) - 2 * mp.cosh(u)), 3),
-        "barOdd  q-q^-1 = 2 sinh u": mp.nstr(abs((eu - emu) - 2 * mp.sinh(u)), 3),
-        "split   e^u = cosh+sinh":   mp.nstr(abs(eu - (mp.cosh(u) + mp.sinh(u))), 3),
-        "identities_hold": True,
+        "barEven q+q^-1 = 2 cosh u": mp.nstr(r_even, 3),
+        "barOdd  q-q^-1 = 2 sinh u": mp.nstr(r_odd, 3),
+        "split   e^u = cosh+sinh":   mp.nstr(r_split, 3),
+        # Full-width worst residual: the number the witness assertion reads.
+        # 3-figure strings above are for the printed table only.
+        "max_abs_residual": mp.nstr(r_max, 12),
+        "residual_tolerance": mp.nstr(THETA_RESIDUAL_TOL, 3),
+        "identities_hold": bool(r_max < THETA_RESIDUAL_TOL),
     }
 
     # (2) figure-eight bar-odd carrier: θ(q₀) and Δθ from amphichiral 2π/3.
@@ -174,10 +194,19 @@ def main() -> int:
     )
     for k, v in res.items():
         w.add_data(k, v)
+    # Was `computed=1, expected=1` — a pass for any state of the identities,
+    # including all three failing. The source string already named the real
+    # check ("verified to <1e-40"), so run it: the assertion now carries the
+    # worst of the three residuals against zero at exactly that bound. Break
+    # any of q+q⁻¹=2cosh u, q−q⁻¹=2sinh u, e^u=cosh u+sinh u and the residual
+    # jumps to O(1) and the witness goes red.
     w.add_assertion(
         "theta_degeneration_identities_hold",
-        computed=1, expected=1, tolerance=0,
-        source="q+q⁻¹=2cosh, q−q⁻¹=2sinh, e^u=cosh+sinh verified to <1e-40; the "
+        computed=res["theta_degeneration_check"]["max_abs_residual"],
+        expected="0",
+        tolerance=mp.nstr(THETA_RESIDUAL_TOL, 3),
+        source="max |residual| over q+q⁻¹−2cosh u, q−q⁻¹−2sinh u, "
+               "e^u−(cosh u+sinh u) at u=1/2, computed at the module dps; the "
                "trigonometric degeneration of θ_even/θ_odd proved in EllipticRTheta.lean.",
     )
     out = w.save()

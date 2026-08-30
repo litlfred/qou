@@ -234,12 +234,30 @@ def main() -> None:
         "c_5_kh_hopf_plus_borromean_q0": float(sum_5),
         "c_5_residual": float(empirical_c5 - sum_5),
     })
+    # Was `computed=-2, expected=-2` — the literal −2 typed on both sides, so
+    # it passed without ever touching `kh_hopf_pos`. Any error in the tabulated
+    # Hopf polynomial (or in `empirical_c3`) left it green. Both sides now come
+    # from the run: `kh_at_q1['Hopf+']` is the tabulation evaluated at q=1,
+    # t=−1, and the expected side rebuilds the same number by the *other*
+    # route the module documents — unreduced = (q+q⁻¹)·reduced, with the
+    # (q+q⁻¹) factor read off this run's own unknot entry rather than typed as
+    # 2. Perturb either tabulation and the assertion fails.
+    #
+    # Magnitude, not signed value, and that is deliberate. The source string
+    # claimed "J_Hopf(q=1) = −2"; this module's tabulations are in the
+    # sign-free bracket normalisation (`kh_hopf_pos` = (q+1/q)(q+q⁵t²)), which
+    # at q=1, t=−1 gives +4 unreduced / +2 reduced, never −2. The sign lives in
+    # the Jones variable convention, which nothing here computes, so |c_3| is
+    # the part of that claim these numbers can actually falsify.
     w.add_assertion(
-        "c_3_match_at_q1",
-        computed=-2,
-        expected=-2,
-        tolerance=0,
-        source="J_Hopf(q=1) = -2 ≡ c_3 exactly",
+        "kh_hopf_at_q1_reproduces_abs_c_3",
+        computed=mp.nstr(kh_at_q1["Hopf+"], 30),
+        expected=mp.nstr(kh_at_q1["unknot"] * abs(empirical_c3), 30),
+        tolerance=1e-30,
+        source="unreduced Kh(Hopf+)(q=1, t=−1) = (q+q⁻¹)·Kh^red, and "
+               "Kh^red(Hopf+)(1,−1) = |c_3| = 2; the (q+q⁻¹) factor is this "
+               "run's Kh(unknot)(1,−1). Bracket normalisation is sign-free, so "
+               "the empirical c_3 = −2 is matched in magnitude only.",
     )
     w.save()
 

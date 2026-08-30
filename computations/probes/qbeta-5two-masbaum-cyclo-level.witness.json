@@ -1,8 +1,8 @@
 {
   "engine": "exact-fraction-series",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T19:13:28.241498+00:00",
-  "commitSha": "0ffa02376fb96625ed9b3eb7fb39319569aa2627",
+  "computedAt": "2026-08-30T09:24:47.756408+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "printed_tables_regated",
@@ -26,15 +26,15 @@
       "expected": 165.0,
       "passed": true,
       "tolerance": "0.5",
-      "source": "all pre-registered (sign,j,λ)×shift combinations decided and recorded"
+      "source": "all 165 pre-registered (sign,j,λ)×shift combinations decided and recorded: |LAM_GRID| 11 × |J_RANGE| 3 × |SHIFTS| 5"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-masbaum-cyclo-level",
   "scriptFile": "qbeta_5two_masbaum_cyclo_level_probe.py",
-  "scriptHash": "24fd173a4f2a",
-  "scriptCommitSha": "0ffa02376fb96625ed9b3eb7fb39319569aa2627",
+  "scriptHash": "edb70e18b4ac",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_masbaum_cyclo_level_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_masbaum_cyclo_level_probe.py"
   },
   "description": "B1.4' (module map, arm 2): the cyclotomic LEVEL correspondence — is the n-th Masbaum term a fixed n-independent dressing of the (n+k)-th GGM block term? Decided by exact cross-multiplication T^Mas_n·T^H_{n+1+k} == T^Mas_{n+1}·T^H_{n+k} in the u-series ring at O(u^96), over the extended λ-grid (33 rows) × level shifts k ∈ −2..2, Masbaum levels 0..8; depth-limited pairs reported, never counted as matches. Per-level u-parity recorded; levels re-summed against the B1.3 u-even total as a consistency gate. No numerics in the decision. auditOnly; no c_k wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -94,6 +104,8 @@
     },
     "scan": {
       "n_combinations": 165,
+      "n_recorded": 165,
+      "n_pre_registered": 165,
       "n_leads": 0,
       "combos_with_any_match": [
         {

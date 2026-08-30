@@ -272,12 +272,18 @@ def main() -> None:
         tolerance=1e-50,
         source="max |G[:,0] - A| as polynomial in (q, b, y_3, y_21, y_111) — must be 0",
     )
-    wb.add_assertion(
-        name="S-at-q0-matches-sdp-witness",
-        computed=str(S_at_q0),
-        expected=str(S_at_q0),
-        source="S(q_0) loaded from qbeta-decay-sdp-knot-operator.witness.json tau_M_at_q0",
-    )
+    # `S-at-q0-matches-sdp-witness` removed here and folded into
+    # `step_4_pointer` below (bean `qou-26f2`). It read
+    # `computed=str(S_at_q0), expected=str(S_at_q0)`, and its own source
+    # string says why that was the only shape available: S(q_0) is LOADED
+    # from `qbeta-decay-sdp-knot-operator.witness.json` and nothing in this
+    # script recomputes τ_M(T_β)(q_0). "Matches the SDP witness" was
+    # therefore true by construction — a value cannot fail to equal itself —
+    # and as an assertion it added a guaranteed pass to `allPassed`. Step 4
+    # is explicitly a pointer step ("this script does NOT propose a new c_k
+    # value"), so the honest record is a datum with its provenance, not a
+    # check. The real check in this witness is `column-identity-symbolic`
+    # above, which is untouched.
     wb.add_data(
         "column_identity_residue",
         {
@@ -291,6 +297,9 @@ def main() -> None:
         "step_4_pointer",
         {
             "S_at_q0": str(S_at_q0),
+            "S_at_q0_source": ("qbeta-decay-sdp-knot-operator.witness.json "
+                               "data.tau_M_at_q0, loaded verbatim"),
+            "has_independent_expected_value": False,
             "structural_note": (
                 "Under Markov collapse T_β = S · I, the c_k Taylor "
                 "coefficients of Q_β(q)/E_0(q) are the w-Taylor "

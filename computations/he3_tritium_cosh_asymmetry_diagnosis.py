@@ -39,6 +39,7 @@ from mass_at_3A_proper import (  # noqa: E402
 )
 from sympy.utilities.iterables import partitions as _sympy_partitions  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -46,6 +47,31 @@ from witness_base import WitnessBuilder  # noqa: E402
 def _parts(n):
     for p in _sympy_partitions(n):
         yield tuple(sorted((v for k, v in p.items() for _ in range(k)), reverse=True))
+
+
+def intra_pn_d_difference_over_h():
+    """(Σd(proton uud) − Σd(neutron udd)) / h, read off the words themselves.
+
+    The whole diagnosis rests on this ratio being 1: the p/n intra-nucleon
+    distinction is a single linear-in-h term, hence bar-odd, hence it belongs
+    in the sinh channel that `strong_channel_rho` does not clear. It was
+    previously recorded as the literal 1.0 — the one form that cannot notice
+    if `atom_braid_word_3A` changes its intra-nucleon templates.
+
+    A single nucleon has no interface (`k < A−1` is false at A=1), so the word
+    is purely intra-nucleon; the `k % 3 != 2` filter states that rather than
+    relying on it. `h` is built from the SAME 50-digit q the word is built
+    from (`atom_braid_word_3A` reads `Q_50_DIGIT_STR` when `q is None`), not
+    from this module's 45-digit `Q_MP` — mixing the two leaves a spurious
+    ~4e-39 residual that has nothing to do with the claim.
+    """
+    q = mp.mpf(_Q50)
+    h = q - mp.mpf(1) / q
+    sum_p = sum((d for (_c, d, k) in atom_braid_word_3A(1, 0, include_inter=False)
+                 if k % 3 != 2), mp.mpf(0))
+    sum_n = sum((d for (_c, d, k) in atom_braid_word_3A(0, 1, include_inter=False)
+                 if k % 3 != 2), mp.mpf(0))
+    return (sum_p - sum_n) / h
 
 
 def char_profile(Z, N, mode):
@@ -106,7 +132,8 @@ def main() -> None:
         "sinh-removal; the entire split is bar-odd (sinh). Audit-only; no fit.")
     wb.data["q0"] = float(mp.mpf(str(Q0)))
     wb.data["per_mode_mirror_mismatch"] = rows
-    wb.data["intra_pn_d_difference_over_h"] = 1.0   # exact: Σd(p)−Σd(n) = +h
+    pn_over_h = intra_pn_d_difference_over_h()
+    wb.data["intra_pn_d_difference_over_h"] = mp.nstr(pn_over_h, 30)
     wb.data["verdict"] = (
         "The proton(uud)−neutron(udd) intra-nucleon d-difference is exactly +h "
         "(bar-odd/sinh). strong_channel_rho zeros only inter-nucleon d (k%3==2), "
@@ -116,9 +143,19 @@ def main() -> None:
         "the split: the entire ³H/³He split is bar-odd (sinh), per the cheat-sheet "
         "n−p rule. The residual is therefore a clean ~18% overshoot of the all-sinh "
         "q-Reeb phase at universal ρ, NOT a cosh/sinh mixing. No fit; no rewire.")
+    # Was `computed=1, expected=1` — a pass whatever the words contain, even
+    # though its source string ("ratio 1.000000") named a quantity this module
+    # can compute from `atom_braid_word_3A` in three lines. It is also the
+    # premise of every conclusion below it, so a silent change in the intra
+    # templates would have left the verdict prose intact and the witness green.
+    # Now the ratio is measured: the proton chain sums to −4h and the neutron
+    # chain to −5h, so the difference over h is 1 to the last digit carried.
     wb.add_assertion("intra_pn_difference_is_bar_odd_exact_h",
-                     computed=1, expected=1, tolerance=0,
-                     source="Σd(proton uud) − Σd(neutron udd) = +h exactly (ratio 1.000000)")
+                     computed=mp.nstr(pn_over_h, 30), expected="1", tolerance="1e-35",
+                     source="(Σd(proton uud) − Σd(neutron udd)) / h from "
+                            "atom_braid_word_3A(1,0) and (0,1), h = q−q⁻¹ at the "
+                            "same 50-digit q the word is built from; a single "
+                            "linear-in-h term ⇒ bar-odd (sinh)")
     wb.add_assertion("alld0_cosh_gives_identical_mirror",
                      computed=1 if identical else 0, expected=1, tolerance=0,
                      source="all-d-zeroed χ_λ(³H) == χ_λ(³He) → cosh asymmetry is an artifact")
