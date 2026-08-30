@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T14:04:46Z
+updated_at: 2026-08-30T15:34:28Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -400,3 +400,122 @@ dominance — and unlike the eigenvector property there is no algebraic shortcut
 argument of `sw`, so every later `sw i` elaborates as `sw (n := i)` with `i` read as the rank. The
 error surfaces far from the cause, as `Fin ↑i → Equiv.Perm (Fin (↑i + 1))` mismatches at the use
 sites. Bind `n` implicitly in the signature when a helper needs only some of the block's variables.
+
+
+---
+
+## 🛑 CORRECTION 2026-08-30 — the "remaining scope" I wrote above is WRONG (PR #6239)
+
+The entry above says the Murphy basis needs *"standard-tableau combinatorics and the dominance
+order"* and calls that the blocker, having said in the merged #6158 that **neither is in the
+corpus**. Both are in the corpus. I never ran the six-path check on that claim — I ran it on
+*"is the Murphy basis already done"*, which is a different question.
+
+**Present, measured on `main` at `23eb5aa296`:**
+
+- `StandardYoungTableau (μ : YoungDiagram)` — **twice**, in `QOU/BraidKnot/` and `QOU/Mathlib/`,
+  with a `Finite` instance, `numSYT`, `hookLength`, `hookProduct`, and roughly **seventy**
+  supporting files (`SYTEnumeration`, `SYTHookFormula*`, the Schensted group, `SYTBranching*`).
+  Mathlib has `YoungDiagram` and `SemistandardTableau` but **no** `StandardYoungTableau`, so this
+  is all local — which is part of why it reads as absent.
+- `partitionDom`, the **dominance order**, at `QOU/BraidKnot/SpechtClassification.lean`, with
+  `partitionDom_refl` and `partitionDom_antisymm` **proved**; `domRel` on tabloids in
+  `SpechtDominanceCore`; the classification direction `dom_of_intertwiner`.
+- `colSuperstandard (μ) : Specht.Tableau μ` and `colSuperstandardSYT` — the reference tableau
+  `t^λ` that `d(t)` is defined against. I did not even know to look for this one.
+
+**What IS missing, stated precisely so this entry does not repeat the error in the other
+direction:** the **`q`-deformation**. The entire 21-file Specht cluster is the **`q = 1`
+symmetric-group** theory — it works over `Representation k (Perm (Fin n))` and no file in it
+imports the Hecke algebra. Murphy's basis is the `q`-analogue over `H_n(q)`, and that does not
+exist.
+
+**And the cluster is not a settled base:** **310 `sorry`s** across those 21 files —
+`SpechtStandardBasisCore` 107, `SpechtIrreducible` 57, `SpechtDominanceCore` 51. So the inputs
+exist as definitions and partial theory, not as something to lean on unchecked.
+
+### Corrected remaining scope
+
+Only the `q`-analogue steps, and each one now names an existing object to build against:
+
+1. **`d(t)`** — the permutation with `t = t^λ · d(t)`, against `colSuperstandard`.
+2. **Index reconciliation** — `Perm (Fin (Specht.nOf μ))` (the Specht cluster) against
+   `Equiv.Perm (Fin (n+1))` (the Hecke `T_w` basis). This is bookkeeping but it is real, and it
+   is the join point between the two clusters.
+3. **(C1)** — that `m_{st} = T_{d(s)}^* x_λ T_{d(t)}` spans and is independent, using the
+   transported `basisTwOfSn`.
+4. **(C3)** — the filtration, against the **existing** `partitionDom` rather than a new order.
+
+(C2) is already proved (`antiAut`, #6158) and the eigenvector property `σ_i x_λ = q x_λ` is
+proved for general `λ` (`σ_mul_murphySum`, #6158).
+
+### The method note, which is the durable part
+
+The failure was not the fact, it was that I asserted an absence without checking it — and this
+is the **second** instance in one session. The first: I reported the `IwahoriHecke` cluster as
+"entirely self-contained" and a sibling (#6053) found two presentations I had missed, because I
+grepped for *consumers of names I already held* rather than for the concept as a class. Same
+shape both times — a search scoped to what I already knew about, reported as a fact about the
+corpus.
+
+Had the wording stood, it would have sent the next agent to rebuild seventy existing files.
+
+
+---
+
+## 2026-08-30 — (C1) route MEASURED: it is a PORT, not a from-scratch build
+
+#6239 merged (`03472c8e88`). (C1) is now both **statable** and **one-sided**, and — the finding
+that matters — the corpus already contains a **complete, sorry-free proof of its `q = 1`
+analogue**, by exactly the argument Murphy's basis needs.
+
+### What landed (#6158 + #6239)
+
+`QOU/BraidKnot/HeckeMurphyYoung.lean`, 12 declarations, all axiom-clean:
+
+- `youngSubgroup`, `σ_mul_murphySum_young` — `σ_i · x_λ = q · x_λ` for a real tableau's Young
+  subgroup (`Specht.rowStab`, re-indexed).
+- `dOf` + `dOf_colSuperstandard` + `colSuperstandard_trans_dOf` + `dOf_injective` — `d(t)`.
+- `antiAutTw` — cellular (C2) transported across `algEquiv` via Mathlib's `AlgEquiv.op`.
+- `dAt`, **`murphyM`** — Murphy's `m_{st}`, definable for the first time.
+- `murphyIndex_card_eq_finrank` — `∑_p (#SYT p)² = dim_K H_n(q)`.
+- `MurphyIndex` + `murphyIndex_card` — the index as a **type**, `Nat.card = n!`.
+
+So (C1) is writable as `Module.Basis (MurphyIndex (n+1)) K (QOU.Hecke.IwahoriHecke K q n)` over
+an index of provably correct size, and **proving either spanning or independence finishes it** —
+the other follows by dimension count.
+
+### The `q = 1` template, all sorry-free (verified by comment-stripped count)
+
+| declaration | file | what it gives |
+|---|---|---|
+| `standardPolytabloid_triangular` | `SpechtStandardBasis` | triangularity w.r.t. the dominance order |
+| `standardPolytabloid_linearIndependent` | `SpechtStandardBasis` | independence, **from** triangularity |
+| `standardPolytabloid_span` | `SpechtStandardBasisCore` | spanning, by **Garnir straightening** (`straightening_step_colMax`) |
+| `standardBasis` | `SpechtStandardBasis` | `Module.Basis (StandardYoungTableau μ) k (SpechtSubmodule μ)` |
+| `specht_finrank_eq_numSYT` | `SpechtStandardBasis` | `dim_k S^μ = #SYT μ` |
+
+Supporting machinery in `SpechtTriangularCore` (also sorry-free): `standardPolytabloid_dominance_order`,
+`leadTab_injective`, `standardPolytabloid_diag_unit`, `colStab_inf_rowStab_eq_one`.
+
+**This is the same argument, at `q = 1`.** It works over `Representation k (Perm (Fin n))`; nothing
+in the cluster imports the Hecke algebra. So (C1) is the `q`-deformation of a proof this corpus
+already owns end-to-end — a port with a worked reference, not a blank page.
+
+### Concrete next step
+
+Port `standardPolytabloid_triangular` to `H_n(q)`: show `m_{st}` expands in the `T_w` basis
+(`basisTwOfSn`, transported #6158) with a **unit** diagonal coefficient and strictly-dominance-lower
+off-diagonal terms. Independence then follows exactly as at `q = 1`
+(`Triangular.linearIndependent`), and `murphyIndex_card` upgrades it to a basis without needing
+Garnir straightening at all — which is the expensive half of the `q = 1` proof and is **avoidable
+here**, because the cardinality is already known.
+
+That last point is the payoff of `murphyIndex_card`: at `q = 1` both spanning and independence had
+to be proved; here only one does.
+
+### Scale note, stated honestly
+
+`SpechtStandardBasisCore` is 170 KB. The `q = 1` triangularity took that much. The port is a real
+tranche, not a session's tail — do not start it expecting a quick win, and do not pad it with a
+`sorry`-laden scaffold if it does not close.
