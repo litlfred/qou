@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T03:34:50Z
+updated_at: 2026-08-30T07:43:33Z
 parent: qou-mhj9
 ---
 
@@ -116,3 +116,27 @@ a_D^(n) = phi(M^n v_0) for a FIXED finite-rank M; or the n-independence of the
 kernel. Note I(n+2) = I(n+1) + (n+1)I(n) is depth 2 with an n-DEPENDENT
 coefficient, consistent with everything here and inconsistent with the
 proposition. Corpus judgement, not mine to make unilaterally.
+
+
+## SUPERSEDED ON MAIN 2026-08-30 — #6101 landed a stronger version
+
+My FixedDepthGrowthBound.lean was DELETED rather than merged. #6101 (merged
+06:42) landed QOU/Mass/ConstantKernelGrowthBound.lean:
+  exists_exponential_bound
+  not_isConstKernelRec_of_superExponential
+  not_superExponential_of_isConstKernelRec
+
+Theirs is strictly more general: it quantifies over a SuperExponential predicate
+rather than my factorial instance (n! <= a(2n)), and proves BOTH directions.
+Landing mine would have put a second copy of a general result into the corpus
+behind a weaker hypothesis -- the #3594 duplication class.
+
+The FINDING is unchanged and is now on main. The correction recorded above --
+that the contradiction rests on the factorial lower bound and NOT on
+involution_ratio_unbounded -- still stands and is still mine; #6101's own
+writeup reaches the same "does not decide which side gives" conclusion, and
+independently names the identification a_D^(n) = I(n)/n as the cheapest suspect.
+
+Coordination note: I flagged the duplicate to them at 04:24 on #6088 (their
+qou-9nt7). They had already written it. Flagging worked in the sense that the
+overlap is now visible and adjudicated; it did not arrive in time to prevent it.
