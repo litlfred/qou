@@ -161,6 +161,46 @@ quantity would anchor it on something itself truncation-fitted and
 sorry-conditional. **That option should stay closed on its own merits**, not
 only because the fitted-ideal layer is paused.
 
+## 4b · Convergence with #6152 — where the sign-indefinite companion actually is
+
+Added after the fact. [#6152](https://github.com/litlfred/qou/pull/6152) lands
+independently and answers the question §2 leaves open: *if a non-negative
+volume sum cannot supply a sign-changing residual, what can?*
+
+Its finding: the corpus carries a **uniform minus** at both `n = 2` and `n = 3`,
+while the Mayer/Ursell sign law is **alternating**, `(−1)^{n−1}` — settled not by
+re-reading the OCR but by computing `φᵀ_n` from the paper's own definitions in
+exact rational arithmetic (0/200 for the `(−1)^n` reading, 200/200 for
+`(−1)^{n−1}`). At `n = 2` the uniform minus is correct; at `n = 3` the Ursell
+function has already flipped on its own, so the uniform minus **inverts** the
+answer — producing exactly the negative `b₃` that `MayerThreeBodySign` proves is
+forced. Restoring the alternation gives `b₃ = +φᵀ₃ > 0` for **every**
+`f ∈ (0,1)`: no threshold, no `f_pn > 2/3`, no attractive component.
+
+**This is the companion.** A cluster expansion carrying `(−1)^{n−1}` is
+sign-alternating *in body order by construction*, so it is **not** a non-negative
+functional and #5812's exclusion — and the hinge proved in §2 — simply do not
+reach it. The two results are complementary rather than competing: §2 says the
+missing term is not a volume sum, and #6152 exhibits a structure that is not one.
+
+Their measured magnitude at `n = 3` is `2.2511 MeV` at the χ typing, **zero free
+parameters**, within `1.25×–1.92×` of the AME anchors — against `6–14×` short for
+the chirality-weighted-trace family. It is a postdiction with a real 25 %
+over-shoot at the triton anchor, and they say so.
+
+**Two limits of theirs that bound how far this can be carried**, both stated in
+that PR: the identity `b₃ = −φᵀ₃(f−1)` is **low-order** — it does not extend to
+`n = 4` (200/200 mismatches against both `±φᵀ₄`) — and `f_corpus = e^{−v}` is
+**derived nowhere in the corpus**, so the algebra stands while the physical
+reading inherits that gap. Neither weakens the sign structure, which needs only
+`f ∈ (0,1)`.
+
+**Consequence for ⁴He (§4).** The missing term must be non-monotone in `A`. An
+alternating body-order expansion is non-monotone in `A` *by construction*, which
+makes it the first candidate on the board that is not excluded by shape at the
+outset. Whether it survives at `A = 4` is open — and their own `n = 4` negative
+says the current identity does not reach there.
+
 ## 5 · What is NOT claimed
 
 That `conj:jsj-decomposition-linearity` is false (it remains **untested rather
