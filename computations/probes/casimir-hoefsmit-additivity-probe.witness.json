@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T10:10:03.654405+00:00",
-  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
+  "computedAt": "2026-08-30T10:52:32.860872+00:00",
+  "commitSha": "a95c80239e9c67ac63c5e7312e41b9466cda9db2",
   "assertions": [
     {
       "name": "vol_borromean_registry_matches_8G",
@@ -14,11 +14,11 @@
     },
     {
       "name": "vol_4_1_registry_matches_2_clausen_pi_over_3",
-      "computed": "2.94666298404e-36",
+      "computed": "4.15965021786e-52",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-33",
-      "source": "|VOL_4_1_50DPS_STR − 2·Cl₂(π/3)| = 2.94666e-36. Gate 1e-33 rather than 1e-45 because the registry string is only correct to ~36 significant digits despite its _50DPS_ name — see the caveat; it is not loosened to hide that"
+      "tolerance": "1e-45",
+      "source": "|VOL_4_1_50DPS_STR − 2·Cl₂(π/3)| = 4.15965e-52. Gated at 1e-45, the same as its Borromean sibling above. This ran at 1e-33 until 2026-08-30 because the registry string was correct to only ~36 significant digits despite its _50DPS_ name; that literal has since been corrected, so the loosened gate has no remaining reason to exist — left in place it would be green-by-omission across 12 orders of magnitude"
     },
     {
       "name": "non_hyperbolic_knots_carry_zero_volume",
@@ -49,8 +49,8 @@
   "durationMs": 5,
   "computation": "casimir-hoefsmit-additivity-probe",
   "scriptFile": "casimir_hoefsmit_additivity_probe.py",
-  "scriptHash": "9dae6469ce08",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "ae2fbac72980",
+  "scriptCommitSha": "e8b4dea4ee4b1a0469126f92d786d9647a3b1c61",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -175,7 +175,7 @@
     }
   },
   "caveats": [
-    "VOL_4_1_50DPS_STR in experimental_constants.py agrees with 2·Cl₂(π/3) only to ~36 significant digits (gap 2.95e-36): it reads …0854904057483004… where the true continuation is …0854904057188337…. VOL_BORROMEAN_50DPS_STR is good to 2.3e-50 by the same test. Nothing in this probe is affected at 1e-33, but the constant does not deliver the 50 dps its name promises. Reported rather than edited — the registry is shared."
+    "RESOLVED 2026-08-30 — kept as provenance, since this probe is where the defect surfaced. VOL_4_1_50DPS_STR in experimental_constants.py used to agree with 2·Cl₂(π/3) only to ~36 significant digits (gap 2.95e-36): it read …0854904057483004… where the true continuation is …0854904057188337…, under a name promising 50. It now carries the value qou-substrate computes (VOL_FIGURE_EIGHT_50_STR = nstr(2·clsin(2, π/3), 50) at 60 dps), gap 4.16e-52, and this probe's gate was tightened 1e-33 → 1e-45 to match its Borromean sibling. Why it stood: scripts/known-constant-literal-audit.py flags the old literal on sight, but its default roots are content/ computations/ scripts/ docs/ and the file is under qou-mass/ — never scanned. Fixing the string does not fix that gap in coverage."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

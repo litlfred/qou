@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T09:27:59.819159+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "computedAt": "2026-08-30T10:52:33.858130+00:00",
+  "commitSha": "a95c80239e9c67ac63c5e7312e41b9466cda9db2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "m-baryon-volume-form",
   "scriptFile": "derive_m_baryon_volume_form.py",
   "scriptHash": "ef763fe38f1c",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -40,8 +40,8 @@
     "hbar_q_50dps": "0.09908171604425850783917711751890606398525837338946307825521469634167789",
     "hbar_q_squared_50dps": "0.009817186454275073810569057179564252889049284575401366262467054677136015",
     "muon_cross_check": {
-      "Vol_4_1_50dps": "2.02988321281930725004240510854904057483004159909893",
-      "m_mu_over_m_e_via_volume_50dps": "206.7683263706738902896095864099026762386117157186257522342233527884741",
+      "Vol_4_1_50dps": "2.0298832128193072500424051085490405718833786150606",
+      "m_mu_over_m_e_via_volume_50dps": "206.7683263706738902896095864099026759384582045509579949149400319138343",
       "m_mu_over_m_e_codata": "206.7682827",
       "agreement_assertion": "Vol(4_1)/ℏ_q² PREDICTS CODATA m_μ/m_e at the ~2e-7 level (9.5σ cross-check, NOT the anchor): q_0 is proton-anchored per the 2026-05-28 re-pin (q-pinning-50-digit.witness.json).  Exact agreement held only under the pre-re-pin muon anchor."
     },

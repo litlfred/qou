@@ -235,11 +235,14 @@ def main() -> int:
         name="vol_4_1_registry_matches_2_clausen_pi_over_3",
         computed=mp.nstr(vol_4_1_gap, 12),
         expected="0",
-        tolerance="1e-33",
+        tolerance="1e-45",
         source=f"|VOL_4_1_50DPS_STR − 2·Cl₂(π/3)| = {mp.nstr(vol_4_1_gap, 6)}. "
-               "Gate 1e-33 rather than 1e-45 because the registry string is "
-               "only correct to ~36 significant digits despite its _50DPS_ "
-               "name — see the caveat; it is not loosened to hide that",
+               "Gated at 1e-45, the same as its Borromean sibling above. This "
+               "ran at 1e-33 until 2026-08-30 because the registry string was "
+               "correct to only ~36 significant digits despite its _50DPS_ "
+               "name; that literal has since been corrected, so the loosened "
+               "gate has no remaining reason to exist — left in place it "
+               "would be green-by-omission across 12 orders of magnitude",
     )
 
     # (2) The additive identity the disjoint-union argument runs on: the
@@ -297,13 +300,18 @@ def main() -> int:
                "N = 1000",
     )
     builder.add_caveat(
-        "VOL_4_1_50DPS_STR in experimental_constants.py agrees with "
-        "2·Cl₂(π/3) only to ~36 significant digits (gap 2.95e-36): it reads "
-        "…0854904057483004… where the true continuation is "
-        "…0854904057188337…. VOL_BORROMEAN_50DPS_STR is good to 2.3e-50 by "
-        "the same test. Nothing in this probe is affected at 1e-33, but the "
-        "constant does not deliver the 50 dps its name promises. Reported "
-        "rather than edited — the registry is shared."
+        "RESOLVED 2026-08-30 — kept as provenance, since this probe is where "
+        "the defect surfaced. VOL_4_1_50DPS_STR in experimental_constants.py "
+        "used to agree with 2·Cl₂(π/3) only to ~36 significant digits (gap "
+        "2.95e-36): it read …0854904057483004… where the true continuation is "
+        "…0854904057188337…, under a name promising 50. It now carries the "
+        "value qou-substrate computes (VOL_FIGURE_EIGHT_50_STR = nstr(2·"
+        "clsin(2, π/3), 50) at 60 dps), gap 4.16e-52, and this probe's gate "
+        "was tightened 1e-33 → 1e-45 to match its Borromean sibling. "
+        "Why it stood: scripts/known-constant-literal-audit.py flags the old "
+        "literal on sight, but its default roots are content/ computations/ "
+        "scripts/ docs/ and the file is under qou-mass/ — never scanned. "
+        "Fixing the string does not fix that gap in coverage."
     )
 
     out = builder.save()

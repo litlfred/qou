@@ -9,7 +9,7 @@ tags:
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T10:40:13Z
+updated_at: 2026-08-30T12:15:00Z
 parent: qou-8mtd
 ---
 
@@ -677,3 +677,74 @@ one level further than it was written.
 Found while draining `qou-26f2` in `mu_substrate_tension_audit_100dps.py`,
 whose header also miscites Vol(4₁) as `2·Λ(π/3)` — wrong by 3x, and already
 flagged in the helper's own docstring. Not edited: shared registry.
+
+---
+
+## 2026-08-30 — the 36-digit carrier is fixed; the two Lean carriers are not
+
+Owner directive: *"fix = VOL_4_1_50DPS_STR agrees with 2·Cl₂(π/3)"*. Done. The
+ladder is now **two** rungs, not three:
+
+| carrier | good digits | state |
+|---|---|---|
+| `2 * Cl_2 (π/3)` (symbolic) | exact | the only thing that discharges `= VOL_4_1` |
+| `MostowRigidity.lean:235` | 14 | **still open** |
+| `FigureEightVolume.lean:88` `VOL_4_1_decimal` | 20 | **still open** |
+| `VOL_4_1_50DPS_STR` | ~~36~~ → **50** | **fixed** (gap 2.947e-36 → 4.160e-52) |
+
+Not retyped: the new literal is byte-identical to
+`qou_substrate.constants.VOL_FIGURE_EIGHT_50_STR`, which is
+`nstr(2*clsin(2, pi/3), 50)` evaluated at 60 dps. So the constant is now
+*computed* upstream and *transcribed* here, rather than transcribed twice.
+
+### It was live on two import paths, not one
+
+The bean recorded this as living in `qou-mass/`. It also lived — as the same
+wrong digits — in `computations/substrate/experimental_constants.py`, which is
+the file every `computations/` probe actually imports. That one is the SOURCE;
+the `qou-mass/_internal/` copy is a generated mirror
+(`scripts/sync-qou-mass-vendor.py`, flatten + drop `_path_bridge`, nothing
+else). Fixed at the source and re-synced; hand-editing the mirror is what the
+staleness gate exists to catch, and it caught me doing it.
+
+### Blast radius, measured
+
+Three probes read the string straight into `mp.mpf(...)`:
+`casimir_hoefsmit_additivity_probe`, `casimir_grid_sweep_probe`,
+`derive_m_baryon_volume_form`. All three regenerated; no assertion added,
+removed, or flipped. `m-baryon-volume-form.witness.json:43` had been *storing*
+the propagated wrong value and now stores the right one.
+
+`casimir_hoefsmit_additivity_probe` gated this very comparison at `1e-33`
+"rather than 1e-45 because the registry string is only correct to ~36
+significant digits… it is not loosened to hide that" — an honest loosening
+whose reason is now gone. Tightened to `1e-45`, matching its Borromean
+sibling; left as-is it would have been green-by-omission over 12 orders of
+magnitude. Its `add_caveat` reporting the defect is kept, marked RESOLVED,
+because this probe is where it surfaced.
+
+### Why it stood — not the usual answer
+
+`scripts/known-constant-literal-audit.py` scans `computations/` **by default**
+and **has been reporting this exact line**, with the correct first-wrong-digit
+of 37. The detector was never blind and never mis-aimed. It was one of **90**
+candidates in that report and nobody worked the pile. A finding that is
+printed and unread fails in the same place as one never generated — worse,
+it fails while looking like coverage.
+
+(The `qou-mass/` mirror is separately outside the audit's default roots
+`content computations scripts docs`, so that copy was never scanned at all.
+Two independent reasons; only one of them is the interesting one.)
+
+Corpus effect: 90 → 88 wrong candidates. Every remaining hit in either
+registry copy is a pre-existing false positive of the class the audit's own
+preamble names (a comment recording a historical bad value; one artifact
+where abs err is 0.0). Writing the old literal into the fix comment would
+have added a 91st, so it is quoted in two pieces on purpose.
+
+### Still open on this bean
+
+The two Lean carriers at 14 and 20 digits. Nothing above touches them, and
+the bean's core point stands: only symbolic `2 * Cl_2 (π/3)` discharges
+`figureEightTriangulation.volume = VOL_4_1`. A better decimal still leaves
+that goal false, just further out.
