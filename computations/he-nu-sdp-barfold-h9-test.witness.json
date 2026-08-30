@@ -3,7 +3,7 @@
   "kind": "exploratory-probe",
   "description": "Decisive test of the self-conjugate ν_SDP candidate: does the bar-fold SDP support equal the self-conjugate blocks at H₉? REFUTED — |bounded support| = D:1, ³He:1, T:0 ≠ ν=1,2,2; the bar-fold regularises only the deuteron, rails at A≥3. The #self-conj match was coincidence. y_λ via Wenzl bridge, χ^λ via hoefsmit_numpy, no fit.",
   "engine": "numpy+scipy",
-  "q0": 1.1099785955573347,
+  "q0": 1.1099785827513808,
   "atoms": [
     {
       "atom": "D",
@@ -90,10 +90,10 @@
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
   "scriptFile": "he_nu_sdp_barfold_h9_test.py",
-  "scriptHash": "5e71f7c3f5fc",
+  "scriptHash": "ae80e1cd60e6",
   "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
-  "computedAt": "2026-08-29T07:36:33.950340+00:00",
+  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "computedAt": "2026-08-30T11:38:00.181928+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
