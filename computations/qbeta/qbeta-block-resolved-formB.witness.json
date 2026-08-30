@@ -1,0 +1,112 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T20:36:47.287459+00:00",
+  "commitSha": "db4beedfa0c951d25eef23bbab53da5c1f0465b9",
+  "assertions": [
+    {
+      "name": "markov_parameter_is_the_block_mean_symbolically",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy, exact over Q(q): sum_lambda y_lambda.chi_lambda(sigma) - q^3/(q^2+1) simplifies to 0, and sum_lambda f^lambda.y_lambda - 1 simplifies to 0, with the D weights (q^4+1)/(q^2+1)^2, q^2/(q^2+1)^2, 0 and characters q, h, -1/q. So z is the mean of the per-block loop values, not an independent parameter."
+    },
+    {
+      "name": "sign_block_weight_vanishes_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "p_(1^3) = f^(1^3).y_(1^3) = 0 under convention D, the n=3 case of the all-n WenzlWeightVanishing result (z_D is Wenzl level r=2, so every lambda with >=3 rows is annihilated). Under C the same weight is 0.02274494258, nonzero."
+    },
+    {
+      "name": "block_resolved_differs_from_mean_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "The Jensen gap is real and not a rounding artifact: blocks_full - mean_form = 0.002471312858 MeV. Evaluating at the mean is not the same as averaging the evaluation, so folding the cap in at the decomposition is a genuine change of functional form rather than a z-substitution — which is what decayLadder_zC_threeRow_ne_zero says is required."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "qbeta-block-resolved-formB",
+  "scriptFile": "qbeta_block_resolved_formB_probe.py",
+  "scriptHash": "4013966f9db8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Folds the convention-D Wenzl two-row cap into the Q_beta correction at the Wedderburn decomposition instead of through the phase alpha, which is the step bean qou-cds1 names as not yet done. Establishes symbolically that the Markov parameter z is the MEAN of the per-block loop values zeta_lambda = chi_lambda(sigma)/f^lambda under the probability weights p_lambda = f^lambda.y_lambda (sum = 1), exactly, with the D weights reproducing z_D = q^3/(q^2+1) and the sign block carrying weight zero. Form B therefore evaluates a nonlinear function AT the mean; the block-resolved object averages the function, a Jensen gap with no free parameter since the weights are Lean-proved rather than inverted from the measured Q-value. Reports both normalisations of the per-block form (the 1/z prefactor's per-block resolution is an assumption the corpus does not derive) and, as the formalize-first prune, the convex hull reachable under ANY weights. Scope-(a); nothing wired, nothing fitted, no c_k value proposed.",
+  "data": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q0_anchor": "proton",
+    "h": "0.209060298795639315430846213129674943859757495263024555381696",
+    "Q_A_MeV": "0.783645827374621213074939751341396890525736441030294877296054",
+    "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
+    "F_required": "0.998325241673246588884133709366744904990942384746367165695273",
+    "D_p_lambda": {
+      "(3,)": "0.505404226503930803187558703240472275660351197749809362652056",
+      "(2, 1)": "0.494595773496069196812441296759527724339648802250190637347944",
+      "(1, 1, 1)": "0.0"
+    },
+    "D_zeta_lambda": {
+      "(3,)": "1.10997858275138080759166909561076887987449912187357873607281",
+      "(2, 1)": "0.104530149397819657715423106564837471929878747631512277690848",
+      "(1, 1, 1)": "-0.900918283955741492160822882481093936014741626610554180691118"
+    },
+    "D_z_mean": "0.612688037146465251595829863945899248026308391545064759724287",
+    "D_forms_MeV": {
+      "mean_form": "0.823444617532488048999590688166589317844620701117650730046971",
+      "blocks_full": "0.825915930390510404967546230292480773931553099591452606353947",
+      "blocks_logonly": "0.793627065138723291753811021455264952353381027661750032525250"
+    },
+    "D_F": {
+      "mean_form": "1.05078670589136061150179420940503688558107453171315001389422",
+      "blocks_full": "1.05394031530481435912689698426599135216324378198091019425910",
+      "blocks_logonly": "1.01273692453329500925086191124971649431937481174695778338322"
+    },
+    "D_convex_hull_MeV": {
+      "lo": "0.786985113906580146333567895292985942587266422450097322186353",
+      "hi": "0.865697506066234663793733526203115669110266593553450936526656"
+    },
+    "C_p_lambda": {
+      "(3,)": "0.415395795360613401310437519725414460624966155518838280045102",
+      "(2, 1)": "0.561859262062039415556302612756442159190054986659057807749936",
+      "(1, 1, 1)": "0.0227449425773471831332598675181433801849788578221039122049620"
+    },
+    "C_zeta_lambda": {
+      "(3,)": "1.10997858275138080759166909561076887987449912187357873607281",
+      "(2, 1)": "0.104530149397819657715423106564837471929878747631512277690848",
+      "(1, 1, 1)": "-0.900918283955741492160822882481093936014741626610554180691118"
+    },
+    "C_z_mean": "0.499320334183694452413442680257666303751948164041532194568092",
+    "C_forms_MeV": {
+      "mean_form": "0.832395301834701717898709840281888270340327073744108187976330",
+      "blocks_full": "0.835364123450726501061368200184233507677130795803399021444279",
+      "blocks_logonly": "0.788748933206770989495066431266311681439054616646105793929388"
+    },
+    "C_F": {
+      "mean_form": "1.06220855488173978438136156339289998574280359875290424793098",
+      "blocks_full": "1.06599702859309860278952313737667923009135145049886169569803",
+      "blocks_logonly": "1.00651200536503366216576210206215431047951511422230427116284"
+    },
+    "C_convex_hull_MeV": {
+      "lo": "0.786985113906580146333567895292985942587266422450097322186353",
+      "hi": "0.969606940981312327483827635757831486850009012457909107702170"
+    }
+  }
+}
