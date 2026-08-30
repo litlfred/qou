@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-30T15:04:15Z
-updated_at: 2026-08-30T15:05:01Z
+updated_at: 2026-08-30T15:21:41Z
 ---
 
 Found while exactifying `MostowRigidity.knot5_2` (bean `qou-f8lit` item 1, PR #6263). Two
@@ -49,3 +49,70 @@ like remaining drain from the same arc and it is not.
 Different chapter, and these are content-block Lean with `.qa.json` sidecars — the fix is
 one character but its verification path is `qa-sweep` on the touched criteria, which is
 heavier than the change and unrelated to that PR's scope (strict `0 < D(z)`).
+
+
+---
+
+## 2026-08-30 (same day) — MEASURED. My assessment above was inferred, not checked, and it is wrong in its reasoning. There is also a larger defect I missed.
+
+I wrote that both sites are *"decimal constant tables … feeding numerical mass computations
+rather than exact comparisons"* after reading about twelve lines around each. Then I checked.
+
+### 1. `building-block-knots.lean` is NOT a table. It is the CAL-2 muon anchor.
+
+`vol_figure_eight` there feeds `muon_mass`, `muon_electron_ratio q = vol_figure_eight /
+(hbarQ q)²`, and a **proved theorem**:
+
+    theorem muon_electron_ratio_from_substrate :
+        |muon_electron_ratio q₀ - 206.768| < 1
+
+That is `m_μ/m_e = Vol(4₁)/ℏ_q²` — the CAL-2 pin of the canonical derivation chain, not an
+inert constant.
+
+### 2. The verdict "not the exactification defect class" SURVIVES, for a different reason.
+
+Not because it is a table, but because the consumer is a **tolerance bound**, not an
+equality. A 15-digit truncation differs from exact `2·Cl₂(π/3)` by ~1e-16, immaterial against
+a bound of ±1. The `MostowRigidity` defect was a literal keyed against a *sorry-free exact
+equality*, which made bridge statements unsatisfiable; nothing here is unsatisfiable.
+**Right answer, wrong reason — and the wrong reason would have misled the next agent about
+what to look for.**
+
+### 3. THE REAL DEFECT, which I missed entirely: the docstring overclaims by 4.5×.
+
+    /-- At the CODATA substrate parameter q₀, the muon-electron mass
+        ratio matches the experimental value 206.768 to within 0.001. -/
+    theorem muon_electron_ratio_from_substrate :
+        |muon_electron_ratio q₀ - 206.768| < 1
+
+Measured at `mp.dps = 40`, `q₀ = 1.10998`, `ℏ_q = 1 − 1/q₀`:
+
+    ratio           = 206.763525398207
+    |ratio − 206.768| = 0.0044746018
+
+So **0.001 is false** — the true deviation is 4.5× larger — and the theorem proves `< 1`,
+which is 1000× looser again. The prose claims a bound that is neither true nor proved.
+
+This is the same species as the `mostow_gap` defect found in the same session (`qou-f8lit`):
+**prose asserting more than the Lean carries, on a field or theorem where nothing checks the
+prose.** Two instances in one day suggests looking for the pattern rather than the instance.
+
+Fix is a choice, and it is the author's: either state `0.005` in the docstring (true, and
+still not what the theorem proves), or tighten the theorem to `< 0.005` and say so. Do **not**
+write `0.001` in either.
+
+### 4. Two of the three literals are DEAD.
+
+- `knots-particles-confinement/knot-particle-generation.lean:71` — `vol_figure_eight :=
+  2.0298832128`, declared and referenced **nowhere**, in that file or any other.
+- `mass-theory/terminal-resolution.lean:47` — `vol_figure_eight := 2.02988`, a **6-digit**
+  literal carrying **no `:leanval` tag at all**, so whatever syncs those tags cannot see it.
+  Also referenced nowhere.
+
+Only `building-block-knots.lean`'s is live. So the population is three, not two, the untagged
+one is the coarsest, and the drain here is mostly deletion rather than exactification.
+
+### Scope
+
+Still not fixed on #6263 — different chapter, sidecar verification path, and item 3 is now an
+author decision rather than a mechanical fix.
