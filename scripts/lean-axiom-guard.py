@@ -147,6 +147,15 @@ QOU.Mathlib.LagrangeCoeffSum | QOU.Mathlib.sum_eval_div_prod_eq_coeff | clean
 # nearly rebuilt the chain; a registry row is a claim a machine re-checks.
 QOU.Mathlib.SYTBetaGapVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_pair | clean
 QOU.Mathlib.QHookVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_vandermonde | clean
+# The general-X Macdonald hook telescope -- the goal of bean qou-dsif -- and the
+# general-r branching it rests on. Pinned because until 2026-08-30 this theorem was
+# UNVERIFIABLE: its import cone was red on main (QOU.Mass.QIntegerBarParity opened a
+# namespace that never existed), so `grep -c sorry` returned 0 while `#print axioms`
+# could not run at all. A registry row is a claim a machine re-checks; a sorry count
+# is not.
+QOU.MathlibExt.MacdonaldTelescopeGeneralX | QOU.MathlibExt.MacdonaldTelescopeGeneralX.telescope_generalX | clean
+QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_schurPrincipal_addCellOrSelf | clean
+QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_wenzlWeight_addCellOrSelf | clean
 # --- the (TAIL) first-instance chain (covariance-kernel epic qou-x631) ---
 # The SIGN is genuinely sorry-free and is the content of the (TAIL) instance.
 QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagramTailFirstInstance.nuV_top_nonneg | clean
