@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T04:18:30Z
+updated_at: 2026-08-30T04:23:47Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -115,3 +115,57 @@ direct" -> ratio should be 1), so the intended second value was recoverable
 from the name alone. Expect that to be the exception. Where the name does not
 state a target, the honest fallback is demotion to `add_data`, not invention of
 an expected value.
+
+
+## Second fixed, and the two together give the whole disposition rule (56 -> 54)
+
+    habiro_tr_M_proton_matches_direct   TWO routes exist -> supply expected=1
+    S-at-q0-matches-sdp-witness         ONE source only  -> demote to add_data
+
+**The discriminator is NOT the name.** Both names promise a comparison
+("matches X"). Only one producer has two things to compare. `S_at_q0` IS the
+SDP witness's `tau_M_at_q0`, loaded 40 lines above the assertion, so no
+expected value can be supplied honestly — demoted, with the value already
+present in `add_data` (0.186893667721512196644439995907, 30 digits) and
+verified still in the regenerated witness.
+
+So: read what the producer HAS, not what the assertion is called.
+
+## Classification of the remaining 54 (name-based, so approximate)
+
+     10  A. name states a target -> may be recoverable
+     22  B. documentary count dressed as an assertion
+     25  C. ambiguous — the source must be read
+
+(Buckets sum past 54 because the classifier also scans `tools/`; see the count
+note below.)
+
+**Bucket B is the big mechanical one** and it is a demotion batch, not a fix
+batch: `deuteron_scan_completed = len(candidates)` against itself,
+`h4_plancherel_scan_completed`, `alt_geometry_scan_completed`, and ~19 more of
+exactly that shape. A count of what a scan found is data, not a check. Note
+`add_assertion` cannot express `len(candidates) > 0` — it compares with a
+tolerance — which is plausibly WHY these were written as self-comparisons in
+the first place. Demote each to `add_data` and confirm the value survives.
+
+**Bucket A is smaller than it looks.** Several are "finite"/"nonzero" claims —
+`shift_neutron_h3_finite`, `c_8_extracted_finite`,
+`v-leading-eps-coefficient-nonzero`. `add_assertion` cannot express those
+either. The honest form is to compute the predicate and assert it equals 1, or
+demote. Do NOT fabricate a numeric expected for a predicate.
+
+**A structural observation worth carrying upstream:** three separate shapes
+here (a count, a finiteness claim, a nonzero claim) are all things
+`add_assertion` has no way to say. That is a gap in the WitnessBuilder API, and
+the self-comparison is the workaround authors reached for. Fixing the 54 one at
+a time treats the symptom; an `add_check(name, predicate, source)` would remove
+the incentive. Not proposed as work here — recorded so the next agent sees the
+pattern rather than 54 unrelated bugs.
+
+## Count note — reconciled, quote the detector
+
+My ad-hoc classifier reported 57 where the committed detector reports 55 (now
+54). Neither is wrong: `self_fulfilling_assertion_audit.py` has
+`ROOTS = ("computations",)` and does not scan `tools/`; my script did. Quote
+the detector for `computations/`, and note `tools/` is outside its scope —
+3 further self-comparisons live there, all LITERAL.
