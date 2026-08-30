@@ -1,0 +1,105 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T18:36:08.015668+00:00",
+  "commitSha": "4f52dc561cea16fc28cc83bddcc435704dc5ee42",
+  "assertions": [
+    {
+      "name": "the trace is affine in the weighted crossing's shift",
+      "computed": "1.81113581576534247350182385818e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "S(midpoint) vs the mean of the two endpoint sums"
+    },
+    {
+      "name": "the canonical Rust path lands on the colour-BLIND arm",
+      "computed": "1.90903555278784422174824380486e-18",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "Rust MPFR chi + witness y_lambda vs Python Hoefsmit + symbolic y_lambda"
+    },
+    {
+      "name": "colour weighting moves the deuteron trace by 1.41e-4 relative",
+      "computed": "0.000141494661062771899920928590957",
+      "expected": "1.41494661063e-4",
+      "passed": true,
+      "tolerance": "1e-14",
+      "source": "S(colour-weighted) - S(colour-blind), normalised by S(colour-blind)"
+    },
+    {
+      "name": "the committed deuteron witness sits on the colour-WEIGHTED arm",
+      "computed": "0.000000148213166973829107562178057181",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "atomic-tr-m-mpfr-50dps.witness.json primary = 0.57517232916588433221594741758; its residual is the known q_0 pin straddle"
+    },
+    {
+      "name": "its distance from the colour-blind arm IS the colour-weighting gap",
+      "computed": "1.0009058595633492519683909439",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "|witness - S(colour-blind)| / |S(colour-weighted) - S(colour-blind)|"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "colour-weighting-trace-magnitude",
+  "scriptFile": "colour_weighting_trace_magnitude_probe.py",
+  "scriptHash": "51d8f6dfcf6c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_weighting_trace_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_weighting_trace_magnitude_probe.py"
+  },
+  "parameters": {
+    "nucleus": "deuteron (Z=1, N=1)",
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "n_strands": 6,
+    "n_crossings": 23,
+    "n_averaged_weighted_crossings": 1
+  },
+  "data": {
+    "d_averaged": "-0.10453014939781965771542310656483747192987874763153",
+    "d_averaged_weighted": "-0.10445824776972628901783406629000564412800000062852",
+    "delta_flavour_split": "0.0013757108070270960085511092741065506222254760119377",
+    "tr_M_colour_blind": "0.57509087162981031675163288302552596606318116186846",
+    "tr_M_colour_weighted": "0.57517224391777187082653534398618088915249435289284",
+    "tr_M_midpoint_shift": "0.57513155777379109378908411350585342760783775738065",
+    "delta_absolute": "0.0000813722879615540749024609606549",
+    "delta_relative": "0.000141494661062771899920928590957",
+    "rust_canonical_tr_M": "0.57509087162981031565376396300046787027009654344329",
+    "rust_unavailable_reason": null,
+    "witness_primary_vs_colour_weighted_rel": "1.4821316697382910756e-7",
+    "witness_primary_vs_colour_blind_rel": "0.00014162283535465847288"
+  },
+  "caveats": [
+    "Scope-(a): measured on the deuteron only. The affine structure licenses reading the magnitude across T / 3He / 4He -- each carries exactly one weighted crossing -- but the linear coefficient is word-specific and is NOT measured for those three. Do not quote 1.41e-4 as their figure.",
+    "This does not say which arm is correct. Whether the p-n interface should carry the flavour weighting is a physical modelling choice (bean qou-fv0s); the probe prices it, it does not settle it.",
+    "The 1.48e-7 residual between the colour-weighted sum and the committed witness is the q_0 pin straddle decomposed in rho_k_h3a_residual_decomposition.py (8.34e-8 straddle + 1.85e-9 of witness self-inconsistency), not a further disagreement."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
