@@ -1,6 +1,61 @@
-# The 30 remaining self-fulfilling assertions, triaged by disposition
+# The remaining self-fulfilling assertions, triaged by disposition
 
 **Date:** 2026-08-30 · **Bean:** `qou-3e5m` · **PR:** #6060
+
+---
+
+## 🛑 CORRECTION, same day: 30 is now 11, and my headline was resolved better elsewhere
+
+Written before rebasing onto a `main` that had moved 990 commits. A sibling ran
+bean **`qou-26f2`** as a multi-batch campaign over the same population and got
+there first. Re-measured with the same detector against both trees:
+
+| tree | MEASURED |
+|---|---|
+| `main` when this file was written | 56 |
+| `main` now | **17** |
+| this branch on top of it | **11** |
+
+So the live count is **11**, not 30, and this branch's marginal contribution is
+**6**, not 26. Every disposition below still applies to the 11 that remain —
+they are `fr_pullback_borromean_h3a_test`, `phi0_normalization_disproof`,
+`intermediate_knot_detection`, `lambda_scale_all_c_i_family_a`,
+`probe_9b_manybody_expansion`, `probe_bring_residue_resolvent`,
+`casimir_q_factorial_probe`, `qbeta_5two_saddle_sum_rule_and_provenance_probe`,
+`qbeta_5two_v3_from_borel_poles_probe`, `qbeta_c3_phib_gluing_discriminant_probe`
+and `qbeta_uw_reparam_probe` — 7 class R, 3 class D, 1 class C.
+
+**The headline finding below is resolved, and not by me.** I wrote that
+`brundan_kleshchev_audit.py:189` asserts a theorem it never tests, called it the
+one entry needing an author decision, and recommended rename-and-demote. The
+sibling found the same thing and did better: they renamed it
+`partition_count_p_{n}`, gave it `expected=KNOWN_P_N[n]` — an independent table
+— and wrote the distinction into the source:
+
+> *"Note what IS and is NOT checked. This checks the enumerator against the
+> partition function, and it can fail. The identification of p(n) with
+> dim Z(H_n) is Brundan-Kleshchev's theorem, cited in `source` — nothing here
+> computes a centre dimension, and no assertion should imply it does."*
+
+That keeps a falsifiable check where my recommendation would have removed one.
+**Prefer their disposition to mine wherever the two differ**, and the same holds
+for `qbeta_5two_stokes_population_bridge_probe` (they derive the expected count
+from its three factors) and `qbeta_decay_sdp_extended_ck` (one loop over
+`mp.isfinite`, against my three copy-pasted flags and a hand-rolled helper).
+
+**What survives, and is worth more than the count.** Two agents partitioned the
+same 56 sites independently, from different starting points, and converged on
+compatible dispositions — including on the one case I singled out as needing
+human judgement. The four classes below and the discriminators between them are
+therefore not one agent's taxonomy; they are the second independent derivation
+of it. One place where the sibling's rule is sharper than mine and should be
+adopted: **assert `> 0` when finding nothing is the outcome the name exists to
+exclude; demote only when finding nothing is a legitimate result.** By that rule
+my demotion of `mn_flavor_split_h4_plancherel` was wrong and theirs is right,
+and my demotion of `alpha_em_4pi_q_hyperbolic_b3_pslq` (`pslq_executed…`, where
+finding no relation IS the answer) is right.
+
+---
 
 A triage, not a sweep. Each of the 30 `MEASURED` self-comparisons still live on
 `main` is read at its source and assigned one of four dispositions, with the
