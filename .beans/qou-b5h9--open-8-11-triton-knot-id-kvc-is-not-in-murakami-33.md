@@ -131,3 +131,38 @@ convention in the state sum that changes the modulus by a factor of three, and
 is therefore squarely on the volume side. The owner's instinct that
 "framing-type data" is where the trouble lives was right; my reply pointed at
 the wrong invariant and made the situation sound settled.
+
+## 2026-08-30 — 8₁₁ IS two-bridge (8, 27), and 17 of the corpus's 19 knots are
+
+Measured with SnapPy `Manifold(k).is_two_bridge()`:
+
+| knot | 2-bridge | role |
+|---|---|---|
+| 4₁ | (2, 5) | muon anchor — VC proven in-repo |
+| 5₂ | (−2, 7) | VC proven (Ohtsuki) |
+| 6₁ / 6₂ / 6₃ | (−2,9) / (3,11) / (5,13) | VC proven (Ohtsuki–Yokota); 6₂ is the ²H closure |
+| 7₂ / 7₃ / 7₄ | (2,11) / (−3,13) / (−4,15) | Tier-1 PSLQ basis |
+| 8₃ / 8₉ / **8₁₁** / 8₁₂ | (4,17) / (7,25) / **(8, 27)** / (12,29) | τ candidates; **8₁₁ is the ³H closure** |
+| 8₁₇, 8₁₈ | **no** | τ candidates |
+| 10₁₇ / 10₃₃ / 10₃₇ / 10₄₃ / 10₄₅ | (9,41) / (18,65) / (23,53) / (27,73) / (34,89) | τ candidates |
+
+**Why this matters now.** The owner has supplied Ohtsuki, *On the Kashaev
+invariant and the twisted Reidemeister torsion of **two-bridge** knots*
+(Geometry & Topology 19 (2015) 853–952) — `uploads/Download (1).pdf`. If its
+main theorem is an **unconditional** statement for all two-bridge knots, it
+reaches 8₁₁ directly, and this bean's load-bearing open VC instance closes.
+Every 10-crossing τ candidate would close with it.
+
+That is a large *if*, and the title argues against it: "twisted Reidemeister
+torsion" suggests the **subleading (1-loop) term**, which is normally studied
+*given* the asymptotic expansion rather than establishing it. The companion
+upload Garoufalidis–Yoon, *1-loop equals torsion for two-bridge knots* (2024,
+`uploads/2411.03801v2.pdf`) points the same way. So the likely reading is that
+these refine the expansion rather than prove the volume conjecture — but that
+is a prediction, and the papers are being read now rather than guessed at.
+
+**What is settled regardless:** 8₁₁'s two-bridge-ness is not the obstruction.
+Whatever blocks it is the strength of the available theorem, not the knot's
+position in the classification. And 8₁₇/8₁₈ are outside the two-bridge class
+entirely, so no two-bridge result will ever reach them — worth knowing before
+the τ search settles on a candidate.
