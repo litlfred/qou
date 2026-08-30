@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T18:21:32Z
-updated_at: 2026-08-30T18:45:09Z
+updated_at: 2026-08-30T19:24:12Z
 ---
 
 ## The canonical tr_M path structurally cannot honour owner ruling R3
@@ -120,3 +120,36 @@ does not settle it.
 do NOT quote 1.41e-4 for T / 3He / 4He.
 
 Probe: `computations/probes/colour_weighting_trace_magnitude_probe.py` (5/5).
+
+
+## RETRACTED — the `qou-gdtb` section above is WRONG (2026-08-30, same day)
+
+The section headed *"qou-gdtb IS MARKED COMPLETED WHILE ITS OWN NAMED RESIDUAL IS
+LIVE"* is retracted. I read `sign_for_ctype`'s docstring — which ends *"The
+representational gap itself stays open under bean qou-gdtb"* — saw that gdtb is
+`completed`, and concluded the bean closed early. I did not read the bean. It is
+closed, and closed CORRECTLY.
+
+Two different encodings, and only one is lossy:
+
+    pair form  (gen_idx, ctype)  -> d_for_ctype        EXACT (2.66e-16, f64 eps)
+    sign wire  {-1, 0, +1}       -> both averaged -> 0  LOSSY, by construction
+
+`qou-gdtb` item 1 was the PAIR form. It closed on a measurement plus a scope-(b)
+exclusion with the invariant cited: `I = sigma_g - (h/2)*1` is of the form
+`c*sigma_g + d*1` with d SCALAR, so the pair names the generator and
+`d_for_ctype` supplies d — an algebraic identity, verified symbolically-exact
+over all 11 partitions of 6, independent of lambda and of the representation.
+Nothing about that is stale.
+
+The gap the docstring describes is the SIGN wire — a different encoding — and it
+is THIS bean, `qou-fv0s`. The docstring was pointing at the wrong bean, and I
+followed the pointer instead of reading the target.
+
+**Do NOT reopen `qou-gdtb`.** Three sites carried the wrong pointer
+(`sign_for_ctype`, and two in `chi_via_rust_lossless`); all three retargeted to
+`qou-fv0s` in PR #6309, each with a note saying why, so the next reader does not
+correct it back.
+
+The rest of the section above stands — what gdtb closed IS what made this
+measurable, as it says.
