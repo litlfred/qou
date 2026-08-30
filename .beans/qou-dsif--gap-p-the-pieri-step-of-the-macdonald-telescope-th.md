@@ -1,11 +1,11 @@
 ---
 # qou-dsif
 title: 'GAP: (P), the Pieri step of the Macdonald telescope — the induction over addable corners'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-30T06:42:56Z
+updated_at: 2026-08-30T07:08:55Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -314,3 +314,56 @@ text; `hdr` (Hecke algebras) has Schur elements but no hook products. Irrelevant
 does not discharge a Lean goal, and the identity is proved in-corpus over a generality no textbook
 states (arbitrary f over a commutative monoid). Lit would only serve paper attribution, and would
 need ingesting first.
+
+
+## 2026-08-30 (later still) — CLOSED. The goal is proved, by the other route.
+
+`QOU.MathlibExt.MacdonaldTelescopeGeneralX.telescope_generalX` is the goal of this bean:
+
+    sum_{|nu|=n} f^nu * schurElement Q X0 nu.rowLens  =  ((1 - X0)/(1 - Q))^n
+
+for ARBITRARY X0, over Q > 1 not a root of unity. VERIFIED axiom-clean this turn:
+[propext, Classical.choice, Quot.sound], no sorryAx.
+
+It does NOT go through the Pieri step. It goes through the polynomial-identity route: both
+sides are eval X of polynomials of degree <= n; they agree at every X = Q^r by the proved
+principal specialisation; {Q^r} is infinite for Q > 1; Polynomial.eq_of_infinite_eval_eq.
+
+The Pieri route is proved too, and separately:
+  SchurWeyl.sum_schurPrincipal_addCellOrSelf  : sum_a s_{mu + box at a} = [r]_Q * s_mu
+  SchurWeyl.sum_wenzlWeight_addCellOrSelf     : sum_a w_{mu + box at a} = w_mu
+both axiom-clean, both assembled from sum_eq_bracket_mul_of_qratio_scaling with
+schurPrincipal_addCell_eq as the `hw` I twice named as the open remainder.
+
+## Why "sorry-free" was not enough, and the fix that made the check possible
+
+telescope_generalX had ZERO sorry tokens and was NOT VERIFIABLE. Its import cone was RED on
+main: QOU/Mass/QIntegerBarParity.lean:53 does `open QOU.Mass.QHookDimension (qIntPoly)` and
+that namespace HAS NEVER EXISTED -- QHookDimension.lean declares `QOU.Mass` only. Measured
+across history: the file was red on the day it landed (PR #5745), and QHookDimension has
+since dropped its own `def qIntPoly` as well, breaking QIntegerCanonical:117 the same way.
+
+One error blocked SIX modules: QIntegerCanonical, QPartitionCombinatorics, WenzlSchurElement,
+WenzlSchurElementBridge, WenzlJonesMarkovNormalisation, MacdonaldTelescopeGeneralX. Both
+consumers now point at QOU.Mass.QHookDimensionBalanced.qIntPoly -- the identical geometric
+`sum_{i<n} q^i`, in a file both already imported. Cone: 104 modules, ok, 0 error, 0 blocked.
+
+`grep -c sorry` is a screen; the proof term is the verdict. Here the screen said 0 and the
+verdict could not be taken at all.
+
+## Six duplications in one session
+
+sum_eval_div_prod_eq_coeff; the hook-update rule (qou-j7ln); the whole q-FRT chain;
+betaR_addCell (same name I chose, in QRatioBetaFactors); schurPrincipal_addCell_eq (the `hw`);
+and finally the telescope itself. My grep ran on TOPIC words -- Pieri, telescope, Macdonald --
+while these files are named for their METHOD: SYTBetaGapVandermonde, LagrangeCoeffSum,
+QRatioBetaFactors, VandermondeUpdateRatio, BranchingGenericity. Not one surfaces on a topic
+grep. Grep the SHAPE of the statement, and grep it BEFORE writing, not after compiling.
+
+## What my two PRs are worth now
+
+#6098's sum_prod_qratio_corner and #6108's QHookVandermonde are a PARALLEL route, not the
+critical path. They are new statements (nothing else sums the corner q-ratio to 1, and nothing
+else converts the pair product to a genuine Vandermonde), and AGENTS.md explicitly permits
+measured research overlap. But they do not close anything this bean needed, and the bean's
+goal was met before they were written.
