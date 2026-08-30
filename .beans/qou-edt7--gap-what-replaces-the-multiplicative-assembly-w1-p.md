@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T09:00:03Z
+updated_at: 2026-08-30T09:43:39Z
 parent: qou-mhj9
 ---
 
@@ -169,3 +169,81 @@ Magnitude: 3.7e-7 relative. It cannot move any conclusion in this arc — the as
 is 30 %+ — so the trilemma above stands unchanged with either literal. Recording it as a
 separate stale-literal class rather than sweeping it here; a sweep touches long-compute
 producers and would need its own scope. Tracked separately.
+
+
+## SUCCESSOR QUESTION — a reframing, not a functional (2026-08-30, e04728dc09)
+
+Lean: `QOU/Mass/CoordinationWeightDifferences.lean` (sorry-free, lean-direct exit 0,
+11 decls, axioms clean). Probe:
+`computations/probes/body_order_is_finite_difference_of_coordination_weight_probe.py` (5/5).
+Audit: `docs/audits/2026-08-30-body-order-cumulants-are-finite-differences-of-w.md`.
+
+**This proposes no functional.** The bean forbids choosing one because it lands
+b3 > 0, and that prohibition is respected. It changes variables.
+
+### The identity
+
+Write B(A) = C(A,2) * w(A-1), with w(z) the mean binding per nucleon pair at
+coordination z = A-1. A DEFINITION, not a model — the formula recovers any B.
+Under it the Ursell cumulants are exactly
+
+    b_n = C(n,2) * Delta^{n-2} w(1)
+
+term-by-term via C(n,k)C(k,2) = C(n,2)C(n-2,k-2). Lean-proved at n = 3, 4;
+symbolically verified n = 2..8 against an arbitrary w; NOT claimed proved in general.
+
+### THE TWO WALLS ARE ONE WALL
+
+- w constant       => b3 = 0  — the pairwise wall, recovered as the Delta w = 0 case
+- w non-increasing => b3 <= 0 — `b3_nonpos_of_le`
+
+So the Mayer sign is **not a separate obstruction**. ANY saturating assembly has a
+non-increasing w and lands at b3 <= 0. That is why this bean's own constraint list
+found edge set, like-pair typing and energy scale all failed to move the sign:
+none of them changes whether w RISES.
+
+### The whole content of b3 > 0
+
+    w(1) < w(2)
+
+i.e. the mean binding per pair is larger at coordination 2 than at coordination 1.
+Measured w(1) = 2.2245662, w(2) = 2.6999729 MeV/pair, rise 0.4754. That single
+inequality is the falsifiable form (`lt_of_b3_pos`). Similarly b4 > 0 <=> w convex
+at z = 1.
+
+### The new constraint, and it is a pincer
+
+Measured w rises to a SHARP MAXIMUM AT THE ALPHA PARTICLE (4.7159 at z = 3) then
+decays monotonically (2.133 at 6Li, 1.063 at 16O, 0.320 at 56Fe). And:
+
+- b3 > 0                     <=> w rises at z = 1
+- saturation of B/A          <=> z*w(z) bounded, so w -> 0
+
+**=> w MUST BE NON-MONOTONE.** Any derivation producing a monotone coordination
+weight is refuted at one end or the other. That is a genuine prune on the search
+space and it did not exist before.
+
+### The A>=5 blow-up gets a cause
+
+High forward differences of a peaked function grow and alternate; the tower
+multiplies by a growing C(n,2). Measured at z=1: D^0..D^4 w = 2.225, 0.475, 1.541,
+-5.639, 11.321, giving b_2..b_6 = 2.225, 1.426, 9.243, -56.39, +169.8. The series
+expands a peaked w around z = 1, THREE STEPS BELOW ITS MAXIMUM. The divergence is
+an expansion-point defect, not evidence against the assembly — which reframes it
+from 'the framework fails at A>=5' to 'this is the wrong series', a much cheaper
+problem.
+
+### SCOPE — do not over-cite this
+
+The identity is a REPARAMETERISATION and is tautologically available. **It derives
+no magnitude and cannot**: w is defined by inverting B, so fitting w to AME is
+fitting B to AME with extra steps. THE MAGNITUDE GATE IS NOT CLOSED and this is
+not progress toward closing it by derivation — it is progress on knowing what a
+derivation has to produce.
+
+### STILL OPEN — now one question instead of a tower
+
+Derive w(z). Specifically: why does w rise from z = 1 to z = 2, and why does it
+turn over at the alpha particle? The corpus has a coordination story already
+(`CoordinationSaturation`, `bk-coordination-multiplicity`) whose contact with this
+is unexamined — that is the next place I would look, marked as judgement.
