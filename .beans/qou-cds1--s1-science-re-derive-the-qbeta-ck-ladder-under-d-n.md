@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:45:53Z
+updated_at: 2026-08-30T13:53:36Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3189,3 +3189,67 @@ whether `log(u*Vhat)` or `u*Vhat` has a series whose coefficients reproduce the
 rung structure. That is a concrete symbolic expansion and it is the first
 version of the question that has a bar-invariant to expand ABOUT, which is what
 Step 8 said was missing.
+
+
+
+## `alpha_eff`'s bar-defect: D's is u-INDEPENDENT — the series is the wrong tool (PR #6223)
+
+A NEGATIVE on my own hypothesis, plus a sharpening. Both recorded so neither is
+re-walked. Probe:
+`computations/qbeta/qbeta_alpha_eff_bar_defect_order_probe.py`, 9/9, sympy exact.
+
+### The hypothesis, and its refutation
+
+Having found that `u` has bar-weight +2 while `Vhat` has −2, I guessed the
+ladder's `− u/2` term might be exactly the bar-correction repairing `alpha`
+under D. **It is not.**
+
+The ladder uses `alpha_eff = alpha − u/2`, not `alpha`
+(`Q_N1 = Q_A*cos(alpha_eff)`, `_h4_route_ladder_scan.py:26`):
+
+    convention   bar(alpha)+alpha       bar(alpha_eff)+alpha_eff
+    C            0       (bar-ODD)      -u*(q^2+1)/2
+    D            (q^2-1)^2/(2q^2)       (q^2-1)^2/(2q^2) - u*(q^2+1)/2
+
+### My first reading of that was ALSO wrong
+
+Seeing "`alpha_eff` is bar-odd in NEITHER frame", I took it to mean C's clean
+bar structure does not survive to the object the ladder actually evaluates —
+i.e. that Step 7 describes `alpha` but not the ladder. **Wrong.** Under C the
+residual is EXACTLY `−u*(q^2+1)/2`, a RATIONAL multiple of `u`: the bar-oddness
+fails precisely at the order of the correction term that caused it. That is what
+a truncated series does, and it is not a defect.
+
+### What is actually there
+
+The `− u/2` term's own bar-defect is CONVENTION-INDEPENDENT — the same
+`−u*(q^2+1)/2` in both frames. What differs is what it is added to:
+
+    C:  residual = O(u)                      vanishes with truncation order
+    D:  residual = (q^2-1)^2/(2q^2) - O(u)   carries a u-INDEPENDENT piece
+
+Verified by the surd: `residual/u` is rational in q under C (`−(q^2+1)/2`, no
+surd) and retains `sqrt(q^4+q^2+1)` under D — precisely because the D residual
+has a part not proportional to `u` at all.
+
+### The sharpening
+
+D's obstruction is **not** "the phase has a bar-defect" — C's does too,
+harmlessly. It is that **D's defect does not live in the series**, so no order
+of ladder correction removes it and the correction series is the wrong
+instrument. That takes Step 7 from a statement about `alpha` to one about the
+LADDER.
+
+It also explains, structurally, the sensitivity row this bean already records
+(`c_3 -> -974`, "no convergence"): fitting a series against a defect the series
+cannot represent is what that number looks like.
+
+### Symbol collision, worth flagging
+
+`alpha_eff` is OVERLOADED. `qbeta_multi_block_eigenphase_probe.py` uses it for a
+dimension-weighted block average — a different object. This probe means the
+ladder one (`alpha − b*hbar^2/2`).
+
+### Not claimed
+
+No `c_k`, no replacement phase. Steps 7 and 8 untouched. Scope (a).
