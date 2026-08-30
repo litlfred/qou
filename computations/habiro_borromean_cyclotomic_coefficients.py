@@ -243,6 +243,20 @@ def main() -> int:
     # skip recording provenance for a dependency the run actually consumed.
     _qp = script_path.with_name("q-pinning-50-digit.witness.json")
     _wb.add_upstream(_qp)
+    # `all_consistent` is printed as "n-independence: CONFIRMED" and is this
+    # script's EXIT CODE (`return 0 if all_consistent else 1`), yet it reached
+    # the witness only as the data field `n_independence_confirmed` while the
+    # witness shipped `allPassed: true` over an EMPTY assertion list (bean
+    # qou-srvu). The bar -- zero failing n -- is the over-determination check's
+    # own, not a fitted threshold: each C_l is fixed at n=l+1 and must rebuild
+    # J_{B,n} EXACTLY at every larger n.
+    _n_fail = sum(1 for _, ok in recon if not ok)
+    _wb.add_assertion(
+        "habiro_cyclotomic_n_independence_no_failures",
+        computed=str(_n_fail), expected="0", tolerance="0",
+        source="Habiro over-determination: sum_{l<n} C_l(q) B_l(n) == J_{B,n} exactly",
+    )
+    _wb.add_parameter("n_reconstructions_checked", len(recon))
     out = _wb.save()
     print(f"\n  written -> {out.name}")
     return 0 if all_consistent else 1
