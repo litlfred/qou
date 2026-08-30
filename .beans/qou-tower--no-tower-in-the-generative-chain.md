@@ -195,3 +195,39 @@ claim needs the direct-construction extractor written and measured first; until
 then the correct statement is **"the barrier as stated is not what blocks this,
 and what does block it is fixable"**, not "the bypass is unnecessary". Those are
 different claims and only the first is measured.
+
+## k=12 RUNS — 403 s — and it reproduces a witness the corpus already had
+
+With `extract_blocks_direct` swapped in for `_extract_blocks`, the level that
+OOM-killed the dense path completes:
+
+    k= 9:  30 parts,    8.1s
+    k=10:  42 parts,   27.8s
+    k=11:  56 parts,  103.4s     (dense: 129.4s)
+    k=12:  77 parts,  403.0s     (dense: OOM-KILLED at 12.6 GB)
+
+**Independent verification, stronger than the 186-pair check.** The K=12
+δ²Φ values reproduce `computations/_deprecated/shell-closure.witness.json`
+(`kmax: 12`) over all 26 overlapping Z. Max |diff| = **4.59e-05**, which is
+exactly my log's 4-decimal print precision — the underlying values agree.
+
+**So a k=12 result was already in the corpus.** `observations/k12-barrier-bypass.md`
+states that at `k ≥ 12` the partition growth *"blocks the matrix-evaluation
+approach from confirming saturation at {50, 82, 126}"* — and a committed
+(deprecated) witness carries exactly that computation. The barrier claim is
+contradicted from two directions now: by that witness, and by this 403 s run.
+
+Careful scoping, unchanged: this says the barrier **as stated** is false, and
+that the matrix-evaluation route reaches k=12. It does NOT establish that the
+homological bypass is unnecessary — that needs the k ≥ 13 saturation results
+the bypass was meant to supply, and the bypass may rest on other grounds.
+
+## The parity artifact survives every level now reachable
+
+    K=10:  parity exceptions NONE,  even-Z maxima [4, 12, 16],  none magic
+    K=11:  parity exceptions NONE,  even-Z maxima [4, 12],      none magic
+    K=12:  parity exceptions NONE,  even-Z maxima [4, 12],      none magic
+
+So δ²Φ's parity structure is **not an artifact of the K=10 truncation**. It
+persists at every level the new extractor opens up, and the local maxima stay
+at 4 and 12 — neither magic. The `qou-pz4m` finding holds at K=11 and K=12.
