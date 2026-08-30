@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:12:27.371516+00:00",
-  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
+  "computedAt": "2026-08-30T10:26:57.204417+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
       "name": "every_structural_test_recorded",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 369,
+  "durationMs": 344,
   "computation": "qbeta-habiro-depth15-interpretation",
   "scriptFile": "qbeta_habiro_depth15_interpretation.py",
-  "scriptHash": "f6ecfaeb5311",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "0703f1eb5123",
+  "scriptCommitSha": "0e196b9cfd65a55c44c4977edd1f733de907840a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -226,9 +226,10 @@
         14,
         15
       ],
+      "shared_exponents_are_contiguous_from_zero": false,
       "first_differing_exponent": 4,
       "is_first_diff_u15": false,
-      "interpretation_categorical": "u^15 is the FIRST u-exponent where the proton-numerator and neutron-numerator coefficients differ. The braid words β_p and β_n agree on every monomial in u^0..u^14 in their full tr_M expansions; the n−p split first appears at u^15, which is a structural property of the (β_p, β_n) braid pair, NOT an arithmetic coincidence. This is the categorical meaning."
+      "interpretation_categorical": "u^4 is the FIRST u-exponent where the proton-numerator and neutron-numerator coefficients differ. The braid words β_p and β_n agree on 13 exponent(s) (u^0, u^1, u^2, u^3, u^5, u^6…) in their full tr_M expansions; the n−p split first appears at u^4. Under convention D this is the u^4 factor of the p−n difference recorded in commit f392d75408e ('regen(D-only) … Φ_k structure does not survive'); the u^15 this module is named for was the convention-C answer."
     },
     "verdict": {
       "best_categorical_interpretation": "UNCLEAR",

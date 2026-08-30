@@ -453,27 +453,43 @@ def test_f_ladder_position(p_a: dict[int, sp.Expr],
         else:
             diffs.append(exp_)
 
-    # KEY: if matches = [0..14] and diffs starts at 15, this confirms
-    # "u^15 is where the first n vs p disagreement occurs in the
-    # u-expansion of the SHARED Habiro element".
+    # The narration below used to hardcode "u^15" while printing the computed
+    # `first_diff` on the line above it, and the returned
+    # `interpretation_categorical` was a fixed string asserting u^15 outright.
+    # Under convention D the answer is u^4, so the witness recorded
+    # `first_differing_exponent: 4`, `is_first_diff_u15: false` and a prose
+    # field insisting on 15 — all three in the same dict (bean `qou-saop`).
+    #
+    # This is a third species of the `qou-26f2` defect: not an assertion that
+    # cannot fail, but *narration that cannot disagree with its own numbers*.
+    # An AST-identity census cannot see it, since there is no assertion at all.
+    # Everything below is now derived from `first_diff`.
     first_diff = diffs[0] if diffs else None
+    _shared = ", ".join(f"u^{e}" for e in matches[:6]) + ("…" if len(matches) > 6 else "")
     print(f"\n  First exponent where p_in_u and n_in_u differ: u^{first_diff}")
-    print(f"  → u^15 = LOWEST u-exponent where proton and neutron Habiro")
-    print(f"    expansions actually disagree on a coefficient.")
+    print(f"  → u^{first_diff} = LOWEST u-exponent where proton and neutron")
+    print(f"    Habiro expansions actually disagree on a coefficient.")
     print(f"  → CATEGORICAL: the n vs p split first manifests at q-depth")
-    print(f"    u^15 = q^{15/2} in the substrate u-expansion.")
+    print(f"    u^{first_diff} = q^{first_diff / 2} in the substrate u-expansion.")
 
     return {
+        # Key kept for continuity; nothing outside this producer reads it. The
+        # contents are whichever exponents actually agree, which under D is a
+        # gapped set rather than the contiguous u^0..u^14 the name assumes.
         "shared_exponents_u0_to_u14": matches,
+        "shared_exponents_are_contiguous_from_zero":
+            matches == list(range(len(matches))),
         "first_differing_exponent": first_diff,
         "is_first_diff_u15": (first_diff == 15),
         "interpretation_categorical": (
-            "u^15 is the FIRST u-exponent where the proton-numerator and "
-            "neutron-numerator coefficients differ. The braid words β_p "
-            "and β_n agree on every monomial in u^0..u^14 in their full "
-            "tr_M expansions; the n−p split first appears at u^15, which "
-            "is a structural property of the (β_p, β_n) braid pair, NOT "
-            "an arithmetic coincidence. This is the categorical meaning."
+            f"u^{first_diff} is the FIRST u-exponent where the "
+            f"proton-numerator and neutron-numerator coefficients differ. "
+            f"The braid words β_p and β_n agree on {len(matches)} exponent(s) "
+            f"({_shared}) in their full tr_M expansions; the n−p split first "
+            f"appears at u^{first_diff}. Under convention D this is the u^4 "
+            f"factor of the p−n difference recorded in commit f392d75408e "
+            f"('regen(D-only) … Φ_k structure does not survive'); the u^15 "
+            f"this module is named for was the convention-C answer."
         ),
     }
 
