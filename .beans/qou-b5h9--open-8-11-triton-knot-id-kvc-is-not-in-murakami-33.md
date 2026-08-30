@@ -89,3 +89,45 @@ solver fix, so this is not caused by it. Either the docstring quotes a different
 variant (b(8,3) sum vs TN evaluator) or one of the two is stale. Worth an hour
 from whoever owns that comparison; it is cited as evidence the state sum is
 correct, so a mismatch there is load-bearing.
+
+## ROAST of my own "framing" answer (2026-08-30)
+
+Asked whether the saddle structure is "somehow framing data", I answered:
+
+> "Framing enters colored Jones as an overall q-power, so it shifts the phase
+> (the CS/imaginary part), not the volume. It is therefore a common twist
+> across saddles, not what indexes them."
+
+The first half is textbook-correct and the second half is right — saddles are
+indexed by boundary-parabolic PSL(2,ℂ) representations, not by framing. But the
+answer was **falsely reassuring**, in a way that matters for this bean.
+
+**I called the 8₁₁ blocker "framing-like" and then applied a theorem about
+framing to it.** They are not the same object:
+
+* **Framing proper** is a `q`-power / `e^{iπ…}` factor of modulus 1 at a root of
+  unity. It moves the phase. It cannot move `|⟨K⟩_N|`, hence cannot move the
+  volume. True.
+* **The 8₁₁ blocker** is the `deficit_face` / `outer_face` choice in
+  `kashaev_link_statesum`. Measured in this bean: 1200 (strand-pair, outer-face)
+  choices give **1184 distinct values spanning [5.205, 15.623]** at N = 7. That
+  is a **modulus** spread of a factor of three. It is a gauge/normalisation
+  ambiguity in the state sum, not a framing factor.
+
+So the sentence "framing only moves the phase" is true and irrelevant here, and
+putting it next to the 8₁₁ obstruction implied the obstruction was harmless in
+the same way. It is the opposite: the thing that is unpinned moves exactly the
+quantity the volume conjecture is about.
+
+Second, smaller: "shifts the phase" understates framing. The Chern–Simons
+invariant is only well-defined **modulo** a framing-dependent constant, so if
+`Im V` is ever used as data (it is — `fivetwo_stokes_matrix_zq` carries
+`V(σ₁) = Vol(5₂) + i·CS(5₂)`), the normalisation has to be pinned before the
+imaginary part means anything. Saying "it's just a phase" hides that.
+
+**Corrected statement.** Framing is a phase and does not index the saddles.
+The 8₁₁ obstruction is *not* framing — it is an unpinned diagram/gauge
+convention in the state sum that changes the modulus by a factor of three, and
+is therefore squarely on the volume side. The owner's instinct that
+"framing-type data" is where the trouble lives was right; my reply pointed at
+the wrong invariant and made the situation sound settled.

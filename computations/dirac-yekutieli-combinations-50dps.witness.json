@@ -1,24 +1,48 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:47:35.435680+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T13:55:52.785103+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "probe_completed",
-      "computed": true,
-      "expected": true,
+      "name": "family_a_h0_matches_classical_dimension_mean",
+      "computed": "2.5",
+      "expected": "2.5",
       "passed": true,
-      "tolerance": 0,
-      "source": "Dirac × Yekutieli combinations completed."
+      "tolerance": "1e-40",
+      "source": "Route A: h⁰ coefficient of the 3-point Vandermonde fit of (1/4)Σ dim_q V_λ at q ∈ {1.05, 1.08, 1.11}. Route B: the q→1 limit (Σ d_λ)/4 = 10/4 from the integer hook-length formula d_λ = 4!/Π hooks."
+    },
+    {
+      "name": "family_a_h2_matches_declared_three_quarters",
+      "computed": "0.75",
+      "expected": "0.75",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Route A: h² coefficient of the same Vandermonde fit. Route B: the 3/4 the repo's Reading B is written in terms of — '5/2 + (3/4 − G)·h²' (module docstring; audit 2026-05-23). Reading B's reported a_2 is only meaningful if Family A really carries that 3/4."
+    },
+    {
+      "name": "dirac_form_h0_matches_content_weighted_classical_mean",
+      "computed": "1.24705566313084781892694205384",
+      "expected": "1.24705882352941176470588235294",
+      "passed": true,
+      "tolerance": "1e-4",
+      "source": "Route A: h⁰ coefficient of the Vandermonde fit of (Σ(1+D_q²)dim_q)/(Σ(1+D_q²)). Route B: exact Fraction arithmetic at q=1, Σ(1+c_λ²)d_λ / Σ(1+c_λ²) = 106/85. Tolerance 1e-4 is the fit's extrapolation error for a non-quartic integrand (measured gap ≈ 3.2e-6), not a precision claim."
+    },
+    {
+      "name": "linear_combination_refit_h2_recovers_minus_catalan",
+      "computed": "-0.915965594177219015054603514932",
+      "expected": "-0.915965594177219015054603514932",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Route A: the 2×2 lu_solve in coefficient space that defines (a, b). Route B: re-sample a·FamilyA + b·Dirac at q ∈ {1.05, 1.08, 1.11} and re-fit. Expected value is -Catalan (mp.catalan), a known constant, not a value this producer computed."
     }
   ],
   "allPassed": true,
-  "durationMs": 150,
+  "durationMs": 292,
   "computation": "dirac-yekutieli-combinations-50dps",
   "scriptFile": "dirac_yekutieli_combinations_50dps.py",
-  "scriptHash": "ac51de066f3f",
-  "scriptCommitSha": "ed0bd7b2ce76ba460d322848d2af29aa3277d6eb",
+  "scriptHash": "ddf1788afe90",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +50,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/dirac_yekutieli_combinations_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/dirac_yekutieli_combinations_50dps.py"
   },
   "description": "Combines Dirac-weighted linking-weight candidates with Yekutieli per-cell additive structure to test for natural combinations matching Reading-A's -G·h² coefficient.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
@@ -87,13 +119,45 @@
       "delta_vs_target": "0.9789913985443047537636509"
     },
     "m_p_predictions_ppm": {
-      "Family A": "29605.204",
-      "Reading B (FA+Yek)": "13331.155",
-      "Dirac form alone": "636.93871",
-      "Dirac + Yek": "-31988.006",
-      "Linear a·FA+b·Dirac (exact)": "5.8327791",
-      "FA + per-cell Yek": "17399.667"
+      "Family A": "29605.202",
+      "Reading B (FA+Yek)": "13331.154",
+      "Dirac form alone": "636.93736",
+      "Dirac + Yek": "-31988.007",
+      "Linear a·FA+b·Dirac (exact)": "5.8314255",
+      "FA + per-cell Yek": "17399.666"
     },
-    "verdict": "None of the tested combinations naturally produce -G·h² exactly without fitting. Linear combination requires (a, b) = (-0.0217861, 2.0484) — not recognizable. Reading B (FA + Yek additive) gives -0.166 (Δ = 0.75). Dirac + Yek over-corrects. The structural identity for Reading-A remains unidentified; categorical proof still open."
-  }
+    "verdict": "None of the tested combinations naturally produce -G·h² exactly without fitting. Linear combination requires (a, b) = (-0.0217861, 2.0484) — not recognizable. Reading B (FA + Yek additive) gives -0.166 (Δ = 0.75). Dirac + Yek over-corrects. The structural identity for Reading-A remains unidentified; categorical proof still open.",
+    "classical_hook_length_dims": {
+      "(4,)": 1,
+      "(3, 1)": 3,
+      "(2, 2)": 2,
+      "(2, 1, 1)": 3,
+      "(1, 1, 1, 1)": 1
+    },
+    "dirac_form_classical_q1_value": {
+      "exact_rational": "106/85",
+      "decimal": "1.247058823529411764705882",
+      "fit_minus_classical": "-3.16039856395e-6"
+    },
+    "linear_combination_refit": {
+      "a_0": "2.5",
+      "a_2": "-0.9159655941772190150546035",
+      "route": "re-sampled a·FamilyA + b·Dirac on the same q grid and re-fitted, rather than combining the fitted coefficients"
+    },
+    "per_cell_yekutieli_cell_count": {
+      "per_partition": {
+        "(4,)": 1,
+        "(3, 1)": 1,
+        "(2, 2)": 2,
+        "(2, 1, 1)": 1,
+        "(1, 1, 1, 1)": 1
+      },
+      "total_cells_assigned": 6,
+      "denominator_used": 8,
+      "comment_in_source_claims": "2+4+2 = 8 cells"
+    }
+  },
+  "caveats": [
+    "Combination 5 divides each partition's Yekutieli share by 8 per the 2026-05-22 audit's '2+4+2 = 8 cells', but the per-partition cell_count in this file sums to 6, not 8. The scheme therefore assigns 6/8 = 0.75 of -G in total, so it CANNOT reach -G·h² even in principle, and the reported Δ = 0.979 is partly that shortfall rather than a statement about the structure. Left as-is: repairing it changes Combination 5's reported numbers, which is a content decision, not a tautology drain."
+  ]
 }
