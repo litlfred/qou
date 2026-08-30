@@ -1,7 +1,7 @@
 ---
 # qou-qexu
 title: 'q-RH: QExplicitFormula is uninhabitable — proved for empty spectrum, general case open'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T06:30:00Z
@@ -83,3 +83,55 @@ Zero Lean consumers of `explicit_formula` or `QExplicitFormula` outside the file
 Two content blocks cite `conj:explicit-formula` in `uses[]` —
 `rem:yekutieli-quantum-li` and `rem:unitary-stability` — and both are `remark`s,
 which make no logical claim, so nothing downstream is built on the refuted form.
+
+---
+
+## CLOSED 2026-08-30 — the general case is proved; the class is uninhabitable, full stop
+
+`not_qExplicitFormula (D : QZetaDatum) : ¬ QExplicitFormula D`. No hypothesis on
+the spectrum, the ideals, `Ω_q` or `q`. `#print axioms`
+`[propext, Classical.choice, Quot.sound]`; file `lean`-direct exit 0.
+
+Two supporting results, same argument as the empty-spectrum case plus the bound
+that was missing:
+
+- `spectral_term_norm_le` — each term is `≤ √2^{|Re ρ|} / ‖[ρ]_q‖` on
+  `X ∈ (1, √2]`. Crude by design: it needs to be `X`-independent, not sharp.
+- `spectralSum_norm_le` — the list sum, by the same induction as
+  `qChebyshev_abs_le`.
+
+**The blocker this bean named dissolved rather than being worked around.** It
+said the proof needs `‖(X:ℂ)^ρ‖ = X^{Re ρ}`, that `spectral-half-line.lean`
+already has it as `abs_cpow_ofReal_eq_rpow_re`, that §0a forbids importing it,
+and that the fix is to lift it to a library module — the `qou-sibdup` remedy.
+
+**Mathlib already had it**: `Complex.norm_cpow_eq_rpow_re_of_pos`. So no library
+module was needed and no new duplication was created. The corollary is worse for
+the corpus than it is good for this bean: **`abs_cpow_ofReal_eq_rpow_re` was a
+twelve-line hand-rolled reproof of a Mathlib lemma**, and I had proposed
+promoting it to a shared module. It is now a one-line wrapper around the Mathlib
+result, with its six call sites untouched.
+
+That is the prepare-merge §2a reuse question — *"did upstream introduce
+something this branch is reinventing?"* — which I had been applying to `main`'s
+new content and not to Mathlib. **Check Mathlib before lifting anything.**
+
+**The `[ρ]_q = 0` case needed no special handling**, as the bean warned it
+would: at `ρ = 0` the bracket vanishes, Lean's `x / 0 = 0` makes the term `0`,
+and the bound covers it. A proof assuming `[ρ]_q ≠ 0` would have been both
+unnecessary and false. The subsumption test includes `⟨0⟩` in the spectrum for
+exactly this reason.
+
+**Verified to subsume, not assumed to**: `not_qExplicitFormula` re-derives both
+earlier refutations (`not_qExplicitFormula_empty`, and
+`not_qExplicitFormula_of_nil_spectrum` with its hypothesis unused — Lean's
+unused-variable warning is the proof it is not needed), and additionally kills a
+datum with a **nonempty** spectrum `[⟨½ + i⟩, ⟨0⟩]` that neither could touch.
+
+Both earlier theorems are kept, with docstrings now saying they are subsumed:
+the empty-spectrum proof is the argument minus the spectral bound, which is
+where it is easiest to read, and the single-datum counterexample still guards
+the withdrawn axiom against reinstatement.
+
+**Unchanged: this refutes the formalisation, not the mathematics.** The repair
+is still an infinite sum with a specified summation order.
