@@ -2624,6 +2624,35 @@ muon; muon-anchor → ~4000σ on proton).
    > > proton vs muon results). otherwise pin proton"*
    > > *"fix all, even if not visible."*
    >
+   > **🟧 REAFFIRMED AND SHARPENED 2026-08-30, for the `qou-p77d` tranche
+   > specifically.** The 32 q-dependent producers of `qou-p77d` had been held
+   > as "an owner decision, 32 times". They are not. The owner ruled, in these
+   > words:
+   >
+   > > *"it should be proton unless it is an explicit comparison / discussion
+   > > on CAL 123 math ideal or so."*
+   >
+   > This is the 2026-08-15 directive restated, with the exception set made
+   > explicit. **Proton is the default; there are exactly two exceptions**, and
+   > a producer qualifies only if it can be shown to be one of them:
+   >
+   > - **(E1) An explicit proton-vs-muon comparison** — the producer's PURPOSE
+   >   is to measure the difference between the two pins (the μ–p substrate
+   >   tension). `mu_substrate_tension_audit_100dps` is the type case. Such a
+   >   producer needs BOTH pins and belongs under `physical_proton` with a
+   >   per-process override, per constraint 3 below.
+   > - **(E2) The ideal CAL-1/2/3 mathematical layer** — the producer is
+   >   *about* the canonical calibration triple as mathematics (CAL-2 = 𝔇_β
+   >   with proxy `m_μ/m_e`), not about evaluating an observable. The muon pin
+   >   is what that layer MEANS, so pinning it to proton would not migrate the
+   >   producer, it would misstate the calibration. `q_pinning_50_digit` is the
+   >   type case and is anchor-DEFINING besides (constraint 1).
+   >
+   > **The burden is on the exception, not on the default.** A producer is
+   > proton unless someone can name which of E1/E2 it is and why. "It has
+   > always been muon", "its witness says muon", and "it is in the
+   > `ideal_muon` list" are NOT reasons — that list is what is being migrated.
+   >
    > It is recorded **here** because the gate above asks for exactly that
    > and a chat transcript does not satisfy it. PR #5049 held the bulk
    > reclassification back on precisely this ground, and it was right to:
