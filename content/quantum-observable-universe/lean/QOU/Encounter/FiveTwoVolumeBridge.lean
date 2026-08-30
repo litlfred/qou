@@ -36,15 +36,19 @@
   `QOU.Knot.Cl_2_pi_div_three_pos`, which exists because the 4₁ shape sits on the unit
   circle, so its Bloch–Wigner value *is* a Clausen value.  The 5₂ shape is the root of
   `X³ − 2X² + 3X − 1`; it is not on the unit circle and there is no Clausen special case
-  to appeal to.  That is still true, and the corpus still has **no**
-  `0 < BlochWigner_lob z` for `0 < z.im` — the **strict** inequality, which is the one
-  `ManifoldVolumeBridge` declined to assume, remains open.
+  to appeal to.  **That reasoning is still correct.  Its conclusion is not.**
 
-  Say *strict*, though.  `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` gives
-  `0 ≤ D(z)` on the whole upper half plane, from Milnor's angle formula and
-  `LobMonotonicity.lob_sum_nonneg`, so an unqualified "the corpus has no positivity for
-  `D`" is now wrong.  Nonneg does not give what this file needs — `vol_ne_zero_of_realises`
-  wants `≠ 0` — which is why the comparison route below is still the one doing the work.
+  The corpus now has general positivity on the upper half plane, in both forms:
+  `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` (`0 ≤ D(z)`) and
+  `Archimedean.BlochWignerPositive.blochWigner_lob_pos` (`0 < D(z)`), the latter by Rivin
+  strict concavity along an interior chord.  Neither goes near a Clausen value, which is
+  why the absence of one at this shape never actually blocked them.
+
+  So the proofs below are **no longer the only route** to positivity at 5₂ —
+  `MathlibExt.ManifoldVolumePositive.vol_pos_of_realises` reaches it generically, for any
+  realised manifold with a nonempty triangulation.  They are kept as they are: the
+  comparison against `VOL_4_1` is sharper than positivity (it is an ordering, not a sign),
+  and it is what `vol_lt_of_realises` needs anyway.
 
   What closed it at 5₂ is `QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` (bean
   `qou-52ch`): Rivin's strict concavity of the ideal-tetrahedron volume, applied along

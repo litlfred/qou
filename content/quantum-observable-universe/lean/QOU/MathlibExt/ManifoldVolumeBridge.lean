@@ -90,13 +90,24 @@
   plane.  It is left open rather than assumed as a further class field, which would have
   been the easy and dishonest move.
 
-  **Sharpened 2026-08-30, because this paragraph said more than it should have.**  It
-  read "*that is not in the corpus -- only `Λ'' > 0` on `(π/2, π)` and the vanishing on
-  the reals are*", which is an absence claim about `D` with no qualifier.  The corpus now
-  carries `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` -- `0 ≤ D(z)` for every
-  `0 < z.im`, from Milnor's angle formula and `LobMonotonicity.lob_sum_nonneg`.  So the
-  **non-strict** half is closed and only the **strict** inequality is open, which is the
-  half this class actually needs.  Say `0 < D(z)`, not `positivity`, when recording it.
+  **BOTH HALVES ARE NOW PROVED, and the decision above still stands.**  This paragraph
+  originally said `0 < D(z)` "*is not in the corpus*"; then, sharpened the same day, that
+  only the strict half was open.  Both are now closed --
+  `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` (`0 ≤ D(z)`) and
+  `Archimedean.BlochWignerPositive.blochWigner_lob_pos` (`0 < D(z)`, by Rivin strict
+  concavity along an interior chord).
+
+  **This is a vindication of the class design, not a reason to change it.**  Declining to
+  assume positivity was right: it was derivable, so assuming it would have been assuming a
+  theorem.  The class keeps its three fields, and the consequence lives outside it, in
+  `MathlibExt/ManifoldVolumePositive.lean`:
+
+      vol_pos_of_realises : 0 < n → Realises T m → 0 < vol m
+
+  Note the `0 < n`.  It is not decoration -- `IdealTriangulation 0` is legitimate and its
+  volume is the empty sum `0`, so a bridge whose `Realises` holds only of the empty
+  triangulation genuinely has a zero-volume manifold.  That is the `realisable` field's
+  degenerate model one level down.
 
   -- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)

@@ -668,6 +668,15 @@ QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.lob_su
 QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.volume_pos | clean
 QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.blochWigner_lob_pos | clean
 #
+# ManifoldVolumePositive: 0 < vol m for a realised manifold -- the field
+# HyperbolicVolumeBridge deliberately does NOT carry. The class was right not to assume
+# it (it was derivable), so the consequence lives here rather than as a fourth field.
+# The 0 < n hypothesis is REAL: IdealTriangulation 0 is legitimate and its volume is the
+# empty sum 0.
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.triangulation_volume_pos | clean
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.vol_pos_of_realises | clean
+QOU.MathlibExt.ManifoldVolumePositive | QOU.MathlibExt.ManifoldVolumePositive.vol_ne_zero_of_realises | clean
+#
 # FiveTwoShapeBounds: the first numeric handle on fiveTwoShape, which was
 # Classical.choose on an IVT statement and had NO bracket on re/im/modulus -- only
 # fiveTwoShape_im_pos. Steps (i)-(ii) of the qou-f8lit route to VOL_4_1 < VOL_5_2.
