@@ -114,3 +114,63 @@ first (below), then delete the scratch, then lower the baseline.
 Still true and unchanged: 0 importers on both; both added in the same unrelated
 commit `b4a0dc7138`; the gate is red at 63 on `origin/main` itself, so no branch
 that merely rebases is responsible for it.
+
+---
+
+## SECOND CORRECTION 2026-08-30 — it is 8 colliding FQNs, not 3, and both my errors were the same mistake
+
+**Compile-verified**, as this bean's own closing paragraph demanded. Two-line
+modules importing each real module alongside its scratch twin:
+
+```
+import QOU.Substrate.ProtonMassSubstrateIdentity + import QOU.scratch_pmass
+  → error: environment already contains
+    'QOU.Substrate.ProtonMassSubstrateIdentity.F_Bor'
+import QOU.Torsion.skein_generation + import QOU.scratch_skein
+  → error: environment already contains 'QOU.Torsion.SkeinGenerationContext'
+```
+
+The collisions are real. But the **first** name Lean rejects is `F_Bor`, which
+my table did not list — so I counted again, and the count is **8**:
+
+| FQN | from |
+|---|---|
+| `…ProtonMassSubstrateIdentity.F_Bor` | `scratch_pmass` |
+| `…ProtonMassSubstrateIdentity.m_e_codata` | `scratch_pmass` |
+| `…ProtonMassSubstrateIdentity.m_mu_codata` | `scratch_pmass` |
+| `…ProtonMassSubstrateIdentity.m_p_codata` | `scratch_pmass` |
+| `…ProtonMassSubstrateIdentity.m_p_predicted` | `scratch_pmass` |
+| `…ProtonMassSubstrateIdentity.proton_mass_substrate_match` | `scratch_pmass` |
+| `QOU.Torsion.SkeinGenerationContext` | `scratch_skein` |
+| `QOU.Torsion.skein_generation` | `scratch_skein` |
+
+**The checker was right and my reading of it was wrong.** It reports all eight;
+I built the original three-row table from `tail -10` of its output, which shows
+only the last three FQNs. Nothing was wrong with the tool.
+
+**Both of my errors on this bean are the same mistake — reading a fragment of a
+tool's output as the whole of it.** The first was diffing nothing and taking the
+collision list as evidence the files were duplicates; the second was taking the
+tail of that list as the list. In a session that spent its length insisting on
+measuring before quoting, this is the failure mode arriving through the one door
+left open: *the measurement was run, and then only partly read.*
+
+## What this changes about the disposition
+
+The arithmetic in both earlier entries is void. Live figures:
+
+- duplicate-decls total on `main`: **63**, baseline **57** → 6 over.
+- these two files account for **8** of the 63.
+- deleting **`scratch_pmass` alone** drains 6 → **57**, exactly the baseline.
+- deleting **both** drains 8 → **55**, two *under* it, at which point the
+  baseline should be lowered to 55 and not left at 57.
+
+So the earlier "only 1 of 6 is safe today, 51 is not reachable" was wrong in
+both directions: the safe deletion is worth **6**, not 1, and the reachable
+floor is **55**, not 51.
+
+**Unchanged, and still the reason not to delete `scratch_skein` yet:** it states
+a *different* proposition from its twin (hadron-restricted, closer to the
+narrative), and the canonical module it collides with has its own defect —
+`qou-skgn`. Deleting `scratch_pmass` is safe now; `scratch_skein` waits on that
+bean.
