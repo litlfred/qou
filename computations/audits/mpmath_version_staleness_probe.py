@@ -197,7 +197,12 @@ def main() -> int:
     for f in _FAILURES:
         print(f"    FAILED: {f}")
     w.add_data("scope", "(a) scope-limited to the listed primitives")
-    out = w.save()
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's import cone -- it imports only stdlib, mpmath and WitnessBuilder, and neither q_parameter nor qou_substrate.constants appears anywhere in it. This is an ENVIRONMENT audit (mpmath version vs recorded), not a substrate evaluation. It was declared `ambiguous` in the manifest, which the builder can never stamp, so the witness went out unstamped. Bean qou-fl0a."
+        ),
+    })
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
 

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T18:04:28Z
-updated_at: 2026-08-29T18:13:18Z
+updated_at: 2026-08-29T19:37:00Z
 ---
 
 Found while running `/prepare-merge` on PR #6026. **Inherited from `main`, not
@@ -157,3 +157,58 @@ The corpus's own `q0_anchor_missing_cause_partition.py` would have said
 them (tested: re-ran `mpmath_version_staleness_probe`, witness came back with
 `q0Anchor` still absent). Three classifications, three wrong. The one that held
 was calling `resolve_q0_anchor()` and reading `build()`'s actual branch.
+
+
+---
+
+## The five are DETERMINED — 4 comparison, 1 proton, and NO straddles
+
+I said each of the five genuinely-two-pin producers needed a per-file ruling:
+deliberate cross-anchor probe (`comparison`) or accidental straddle (a DEFECT).
+Read them. The answer is settled and there is no defect among them.
+
+**`comparison` (4)** — each evaluates at BOTH pins on purpose, in its own code:
+
+  tau_dictionary_hauptmodul_validator  `res = {"muon-pin": gate(fmap(q0_mu)),
+                                        "proton-pin": gate(fmap(q0_p))}` (:242),
+                                       and asserts "q0-pin-independent (asserted
+                                       across muon/proton pins)" (:277).
+  tau_dictionary_fricke_spin_probe     `for pin, q0 in (("muon", q0_mu),
+                                        ("proton", q0_p))` (:222); already
+                                       records `q0_pins` as data (:507).
+  qbeta_ck_qholonomic_recurrence_test  `"muon": extract_empirical_ladder(Q0_MUON)`
+                                       (:328) — a real evaluation at the muon pin,
+                                       not a stored readout.
+  qbeta_habiro_integrality_kill_test   "Anchors (both pins of the ONE substrate
+                                       modulus)" (:105); computes
+                                       |c_3(proton) - c_3(muon)| (:59).
+
+**`proton` (1) — and this is the one that would have been mislabelled:**
+
+  qbeta_ck_basis_constrained_pslq      has NO Q0_MUON, no q0_mu, no pin loop. What
+                                       it has is C3_EMP_MUON_HOPF, a c_3 readout
+                                       explicitly marked SUPERSEDED (pre-#1422) and
+                                       "retained ... spread only", plus
+                                       PIN_REL_MUON = 22e-9, a PRECISION FIGURE.
+                                       It computes at proton and compares against
+                                       STORED NUMBERS. That is one anchor, not two.
+
+METHOD NOTE. Grepping for "muon" in the file would have put all five in
+`comparison`. The discriminator is whether the muon value is EVALUATED AT or
+merely MENTIONED — a superseded stored readout and a ppb precision figure both
+contain the word and neither is a pin. Same shape as
+qbeta_primitive_basis_overcomplete, which computes at one pin and mentions the
+other. Check the use, not the token.
+
+## Implementation, not yet done
+
+All five currently emit no q0Anchor, no q0Values, no q0Value. Each runs in well
+under a second (hauptmodul measured 0.77s), so cost is trivial. The four
+`comparison` ones need `q0_comparison(muon=..., proton=..., reason=...)` passed to
+save() — and note its contract: pass the values the producer ACTUALLY COMPUTED
+WITH, not the canonical constants, so the audit's per-leg re-check stays a real
+test rather than a tautology. The fifth moves manifest ambiguous ->
+physical_proton.
+
+That would take `ambiguous` 16 -> 11. Left as its own change rather than widened
+into #6062, whose body states these five are excluded.

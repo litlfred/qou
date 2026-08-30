@@ -192,7 +192,19 @@ def main() -> int:
     wb.add_assertion("em_channel_moment_decides_live",
                      computed=mp.mpf(1) if live else mp.mpf(0), expected=mp.mpf(1), tolerance=mp.mpf("0.5"),
                      source="EM-singlet moment of F_q nonzero at q0 => germ non-sterile in the EM channel => route LIVE")
-    wb.save()
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's import cone "
+            "-- sympy, mpmath, WitnessBuilder and set_compute_dps, with no "
+            "q_parameter or qou_substrate.constants anywhere, and it reads no "
+            "upstream witness. The germ Hol(q) = prod sigma_i(q) is symbolic IN q "
+            "by construction; the viability question is about whether a germ "
+            "exists at all, not about its value at any pin. Confirmed by payload: "
+            "no q_0 value of either anchor appears in it. Declared 2026-08-29 to "
+            "take the q0-anchor refill ratchet to NEW = 0; bean qou-fl0a."
+        ),
+    })
     print(f"\n  ({time.monotonic() - t0:.1f}s wall)")
     return 0
 
