@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T09:54:37Z
+updated_at: 2026-08-30T12:40:45Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -903,3 +903,62 @@ object is one geometric quantity — the intra-nucleon two-like-charge linking
 number — shared with front 4-B and the ³He mirror residual. That is a single
 named object, not two free parameters, and it is the same object `qou-m3vl`
 identified on 2026-08-01.
+
+
+---
+
+## C2 vs `qou-m3vl` RESOLVED — no conflict; they are different channels. Bean merged into `qou-o6ml`.
+
+The tension flagged two entries above is settled by reading C2's actual source,
+`computations/deltalambda/mirror_split_s3_em_functional_probe.py` axiom **(A1)**:
+
+> *"charge bilinearity, **NO self-term**. EM interaction energy is bilinear in
+> charges (Coulomb ∝ qᵢqⱼ); per-component self-terms `a·Σqᵢ²` **CANCEL
+> IDENTICALLY** in binding energy `B = Z·m_p + N·m_n − M`, because
+> single-component EM self-energy **lives in the free-nucleon masses** m_p, m_n.
+> So **a = 0 is DERIVED** from the definition of B, not assumed."*
+
+**Both stand. They are about different channels of the same functional.**
+
+| channel | my Lean name | C2 / A1 says | `m3vl` says |
+|---|---|---|---|
+| self `a·Σqᵢ²` | `chargeSelf` (`A`) | **cancels identically** in binding energy — `a = 0` **derived** | — |
+| pairwise `Σwᵢⱼ qᵢqⱼ` | `chargeInter` (`B`) | this is the whole mirror-split functional | **the shared open invariant** |
+
+C2 removed the **self** channel from the mirror split. `m3vl` identifies the
+**linking** channel as shared. Nothing contradicts.
+
+### The scope boundary this establishes — and it is not symmetric
+
+* **`B` / `wᵢⱼ` — the two-like-charge linking weight — MERGES into `qou-o6ml`.**
+  It is one object with the ³He mirror residual and the `m_d − m_u` extraction,
+  exactly as `m3vl` said on 2026-08-01.
+* **`A` does NOT merge, and A1 does not dispose of it.** A1's cancellation is a
+  statement about **binding energy** `B = Z·m_p + N·m_n − M`. But `m_n − m_p` is
+  a difference of **free** masses, not a binding energy — the self-energy that
+  "lives in m_p, m_n" is precisely what this bean is asking about. So A1 forces
+  `a = 0` for the mirror split and says **nothing** about `A` intra-nucleon.
+  Worth stating because the reverse reading is the obvious mistake.
+
+### A constraint on `o6ml`'s target that now closes
+
+Combining A3 with this branch's Lean, both proved:
+
+* **(A3)** for L6a4 (= the Borromean link) every pairwise `lk_ij = 0`, so the
+  pairwise-mediated part of `wᵢⱼ` vanishes and any nonzero `wᵢⱼ` is mediated by
+  the first non-vanishing invariant, `μ̄(123)` — the triple channel.
+* **`MilnorTripleLinkingMagnus.odd_symmetric_functional_vanishes`** (sorry-free):
+  any `F : ℤ → ℤ` that is **odd** and takes equal values on the Borromean and
+  swapped longitudes must vanish there — the hypothesis being exchange-symmetry
+  of a two-like-charge Coulomb self-energy. Its companion
+  `linear_coefficient_must_vanish` spells out that `E_EM = c·μ̄₁₂₃` forces `c = 0`.
+
+⟹ **`wᵢⱼ` must depend on `μ̄₁₂₃` EVENLY** — through `μ̄²` or `|μ̄|`, never linearly.
+That prunes the obvious first ansatz from `o6ml`'s route (1)
+(higher-order Milnor / third-order helicity) before it is tried.
+
+### Disposition
+
+**This bean is MERGED into `qou-o6ml`** for its shared content. What remains
+uniquely here is the intra-nucleon `A` question above, which no other bean owns
+and which A1 does not settle.
