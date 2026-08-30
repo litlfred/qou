@@ -596,4 +596,156 @@ theorem not_approximable_of_algebraic (α₀ : 𝓞 K) (ψ : K →+* ℝ) {δ : 
 
 end Roth
 
+section Scaling
+
+/-! ## Clearing denominators: what the height does under an integer multiple
+
+`not_approximable_of_algebraic` is stated for `ψ α₀` with `α₀` an algebraic *integer*.  Reaching an
+arbitrary real algebraic number goes through `IsAlgebraic.exists_integral_multiple`: some `n·x` is
+integral.  So the approximation hypothesis has to be transported along `κ ↦ n·κ`, and these lemmas
+are what that costs.
+
+The scaling is **two-sided and lossy in the same factor**: `H(nκ) ≤ n·H(κ)` and `H(κ) ≤ n·H(nκ)`.
+The first bounds the new height from above; the second is what keeps the transported heights
+unbounded, and it does not follow from the first — without it every `nκ` could have height 1.  Both
+come from one fact about an unreduced fraction, read in opposite directions.
+
+⚠ The factor `n` is why the exponent cannot be preserved.  `|nx − nκ| = n|x − κ| ≤ n·H(κ)^{-(2+δ)}`,
+and `n·H^{-(2+δ)} ≤ H^{-(2+δ')}` only once `H^{δ−δ'} ≥ n`.  The transported statement therefore
+holds at every `δ' < δ` and at no `δ' = δ`; the loss is real, not slack in the estimate. -/
+
+/-- **The height of any representation bounds the height.**  For `b ≠ 0`, reducing `a/b` divides the
+numerator and the denominator, so `H(a/b) ≤ max(|a|, |b|)` whether or not `a/b` was in lowest
+terms.  Both scaling bounds are this lemma at a different representation. -/
+theorem height_divInt_le {a b : ℤ} (hb : b ≠ 0) :
+    max (Rat.divInt a b).num.natAbs (Rat.divInt a b).den ≤ max a.natAbs b.natAbs := by
+  have hden : (Rat.divInt a b).den ≤ b.natAbs := by
+    have hdvd : (((Rat.divInt a b).den : ℤ)) ∣ b := Rat.den_dvd a b
+    have hle := Nat.le_of_dvd (Int.natAbs_pos.mpr hb) (Int.natAbs_dvd_natAbs.mpr hdvd)
+    rwa [Int.natAbs_natCast] at hle
+  refine max_le ?_ (le_trans hden (le_max_right _ _))
+  rcases eq_or_ne a 0 with rfl | ha
+  · simp
+  · exact le_trans (Nat.le_of_dvd (Int.natAbs_pos.mpr ha)
+      (Int.natAbs_dvd_natAbs.mpr (Rat.num_dvd a hb))) (le_max_left _ _)
+
+/-- **`H(nκ) ≤ n·H(κ)`**, from the representation `nκ = (n·κ.num)/κ.den`. -/
+theorem height_nsmul_le {n : ℕ} (hn : 0 < n) (κ : ℚ) :
+    max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den)
+      ≤ n * max κ.num.natAbs κ.den := by
+  have hden0 : ((κ.den : ℕ) : ℤ) ≠ 0 := Int.natCast_ne_zero.mpr κ.den_nz
+  have hrepr : ((n : ℚ) * κ) = Rat.divInt ((n : ℤ) * κ.num) ((κ.den : ℕ) : ℤ) := by
+    rw [Rat.divInt_eq_div]
+    conv_lhs => rw [← Rat.num_div_den κ]
+    push_cast
+    ring
+  rw [hrepr]
+  refine le_trans (height_divInt_le hden0) ?_
+  rw [Int.natAbs_mul, Int.natAbs_natCast, Int.natAbs_natCast]
+  refine max_le (Nat.mul_le_mul_left n (le_max_left _ _)) ?_
+  calc κ.den ≤ max κ.num.natAbs κ.den := le_max_right _ _
+    _ = 1 * max κ.num.natAbs κ.den := (one_mul _).symm
+    _ ≤ n * max κ.num.natAbs κ.den := Nat.mul_le_mul_right _ hn
+
+/-- **`H(κ) ≤ n·H(nκ)`**, from the representation `κ = (nκ).num / (n·(nκ).den)`.  This is the half
+that keeps the transported heights unbounded. -/
+theorem height_le_height_nsmul {n : ℕ} (hn : 0 < n) (κ : ℚ) :
+    max κ.num.natAbs κ.den ≤ n * max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) := by
+  have hn0 : (n : ℚ) ≠ 0 := Nat.cast_ne_zero.mpr hn.ne'
+  have hnZ : (n : ℤ) ≠ 0 := Int.natCast_ne_zero.mpr hn.ne'
+  have hD0 : (((((n : ℚ) * κ).den : ℕ)) : ℚ) ≠ 0 := by
+    exact_mod_cast ((n : ℚ) * κ).den_nz
+  have hd0 : ((n : ℤ) * ((((n : ℚ) * κ).den : ℕ) : ℤ)) ≠ 0 :=
+    mul_ne_zero hnZ (Int.natCast_ne_zero.mpr ((n : ℚ) * κ).den_nz)
+  have hrepr : κ = Rat.divInt (((n : ℚ) * κ).num) ((n : ℤ) * ((((n : ℚ) * κ).den : ℕ) : ℤ)) := by
+    have hAD := Rat.num_div_den ((n : ℚ) * κ)
+    rw [div_eq_iff hD0] at hAD
+    rw [Rat.divInt_eq_div]
+    push_cast
+    rw [hAD]
+    field_simp
+  conv_lhs => rw [hrepr]
+  refine le_trans (height_divInt_le hd0) ?_
+  rw [Int.natAbs_mul, Int.natAbs_natCast, Int.natAbs_natCast]
+  refine max_le ?_ (Nat.mul_le_mul_left n (le_max_right _ _))
+  calc (((n : ℚ) * κ).num).natAbs
+      ≤ max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) := le_max_left _ _
+    _ = 1 * max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) := (one_mul _).symm
+    _ ≤ n * max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) := Nat.mul_le_mul_right _ hn
+
+/-- **Every rational has height at least 1**, because its denominator does. -/
+theorem one_le_height (κ : ℚ) : 1 ≤ max κ.num.natAbs κ.den :=
+  le_trans κ.pos (le_max_right _ _)
+
+/-- **Approximability transports along an integer multiple, at a strictly smaller exponent.**  If
+`x` admits rational approximations of unbounded height to order `2 + δ`, then `n·x` admits them to
+order `2 + δ'` for every `δ' < δ`.
+
+The whole argument is linear once written in logarithms, which is why it is written that way here:
+the condition is `(3 + δ')·log n ≤ (δ − δ')·log H`, so the threshold fed to the hypothesis is
+`exp((3+δ')·log n / (δ−δ'))`, and both height bounds enter as `log H(nκ) ≤ log n + log H(κ)` and
+`H(κ) ≤ n·H(nκ)`.  Nothing here needs the monotonicity of `x ↦ x^c` for negative `c`. -/
+theorem approximable_nsmul {x : ℝ} {n : ℕ} (hn : 0 < n) {δ δ' : ℝ} (hδ'0 : 0 < δ') (hlt : δ' < δ)
+    (h : ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ))) :
+    ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+        |((κ : ℚ) : ℝ) - (n : ℝ) * x| ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ')) := by
+  intro N
+  have hnR : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hn1 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+  have hδd : (0 : ℝ) < δ - δ' := by linarith
+  obtain ⟨N₀, hN₀⟩ :=
+    exists_nat_gt (max (Real.exp ((3 + δ') * Real.log n / (δ - δ'))) ((n * N : ℕ) : ℝ))
+  obtain ⟨κ, hNκ, hclose⟩ := h N₀
+  refine ⟨(n : ℚ) * κ, ?_, ?_⟩
+  · -- the transported height is still at least `N`, via `H(κ) ≤ n·H(nκ)`
+    have hbig : n * N ≤ max κ.num.natAbs κ.den := by
+      have h1 : ((n * N : ℕ) : ℝ) < (N₀ : ℝ) := lt_of_le_of_lt (le_max_right _ _) hN₀
+      have h2 : n * N ≤ N₀ := by exact_mod_cast le_of_lt h1
+      exact le_trans h2 hNκ
+    have hmul := height_le_height_nsmul hn κ
+    have : n * N ≤ n * max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) :=
+      le_trans hbig hmul
+    exact Nat.le_of_mul_le_mul_left this hn
+  · -- the exponent, in logarithms
+    set Hk : ℝ := ((max κ.num.natAbs κ.den : ℕ) : ℝ) with hHk_def
+    set Hn : ℝ := ((max (((n : ℚ) * κ).num.natAbs) (((n : ℚ) * κ).den) : ℕ) : ℝ) with hHn_def
+    have hHk1 : (1 : ℝ) ≤ Hk := by rw [hHk_def]; exact_mod_cast one_le_height κ
+    have hHn1 : (1 : ℝ) ≤ Hn := by rw [hHn_def]; exact_mod_cast one_le_height ((n : ℚ) * κ)
+    have hHk0 : (0 : ℝ) < Hk := lt_of_lt_of_le zero_lt_one hHk1
+    have hHn0 : (0 : ℝ) < Hn := lt_of_lt_of_le zero_lt_one hHn1
+    -- `|nκ − nx| = n·|κ − x|`
+    have habs : |(((n : ℚ) * κ : ℚ) : ℝ) - (n : ℝ) * x| = (n : ℝ) * |((κ : ℚ) : ℝ) - x| := by
+      have hcast : (((n : ℚ) * κ : ℚ) : ℝ) = (n : ℝ) * ((κ : ℚ) : ℝ) := by push_cast; ring
+      rw [hcast, ← mul_sub, abs_mul, abs_of_pos hnR]
+    -- the threshold, in logarithms
+    have hHkN : (N₀ : ℝ) ≤ Hk := by rw [hHk_def]; exact_mod_cast hNκ
+    have hexp : Real.exp ((3 + δ') * Real.log n / (δ - δ')) < Hk :=
+      lt_of_lt_of_le (lt_of_le_of_lt (le_max_left _ _) hN₀) hHkN
+    have hlogHk : (3 + δ') * Real.log n / (δ - δ') < Real.log Hk := by
+      have hh := Real.log_lt_log (Real.exp_pos _) hexp
+      rwa [Real.log_exp] at hh
+    have hkey : (3 + δ') * Real.log n ≤ (δ - δ') * Real.log Hk := by
+      rw [div_lt_iff₀ hδd] at hlogHk
+      nlinarith [hlogHk]
+    -- `log H(nκ) ≤ log n + log H(κ)`
+    have hHnle : Hn ≤ (n : ℝ) * Hk := by
+      rw [hHn_def, hHk_def]; exact_mod_cast height_nsmul_le hn κ
+    have hlogHn : Real.log Hn ≤ Real.log n + Real.log Hk := by
+      calc Real.log Hn ≤ Real.log ((n : ℝ) * Hk) := Real.log_le_log hHn0 hHnle
+        _ = Real.log n + Real.log Hk := Real.log_mul (ne_of_gt hnR) (ne_of_gt hHk0)
+    -- assemble
+    rw [habs]
+    refine le_trans (mul_le_mul_of_nonneg_left hclose (le_of_lt hnR)) ?_
+    rw [hHk_def] at *
+    rw [Real.rpow_def_of_pos hHk0, Real.rpow_def_of_pos hHn0,
+      show (n : ℝ) = Real.exp (Real.log n) from (Real.exp_log hnR).symm, ← Real.exp_add]
+    refine Real.exp_le_exp.mpr ?_
+    have hneg : (-(2 + δ') : ℝ) ≤ 0 := by linarith
+    have hstep : Real.log Hn * (-(2 + δ')) ≥ (Real.log n + Real.log Hk) * (-(2 + δ')) :=
+      mul_le_mul_of_nonpos_right hlogHn hneg
+    nlinarith [hstep, hkey]
+
+end Scaling
+
 end MvPolynomial
