@@ -176,4 +176,91 @@ theorem diagLen_lipschitz (c : ℕ) :
   rw [abs_le]
   omega
 
+/-! ## Telescoping: the two-case per-edge bound
+
+`diagLen_lipschitz` bounds ONE step. What the `M₁ > 0` route needs is the SUM,
+and the sum telescopes exactly:
+
+    ∑_{t=0}^{λ₁-1} (D t − D (t+1))  =  D 0 − D λ₁  =  D 0.
+
+So the profile's total fall is `D 0` — no limit shape, no error term, no
+Berry–Esseen. Two consequences, one per edge type of the up-down chain, and
+between them they cover every edge:
+
+* **Same-sign contents** (`u ≤ v` on one side): `D u − D v` is the number of
+  drop sites in `[u, v)`, so it lies in `[0, v − u]` and the per-edge slope
+  `(D u − D v)/(v − u)` is a **density** in `[0, 1]`.
+* **Opposite-sign contents**: the two sides telescope to the *same* total
+  `D 0`, which cancels, leaving a difference of two counts each in `[0, D 0]`
+  — hence `|D_μ u − D_μᵀ v| ≤ D 0`. This is the case the slope is unbounded on
+  (it grows like `√(2n)`; see `..._edge_ratio_monotonicity.py`), so a bound
+  covering it at all is the point.
+
+Measured in `computations/deltalambda/wlambda_covariance_epic_M1_telescoping_route.py`:
+0 violations of either bound over every edge at every `n ≤ 46`, and the second
+is **sharp** — `max |slope| · g / D 0 = 1` exactly, attained. Neither closes
+`M₁ > 0`: the two bounds together still exceed 1, so averaging is still
+required. What they replace is an appeal to effective limit-shape asymptotics
+with elementary, deterministic, finite statements. -/
+
+/-- Diagonals only shrink outward. -/
+theorem diagLen_antitone : Antitone (diagLen μ) :=
+  antitone_nat_of_succ_le (diagLen_succ_le μ)
+
+/-- **The main diagonal is the longest.** `D c ≤ D 0` for every `c`. -/
+theorem diagLen_le_diagLen_zero (c : ℕ) : diagLen μ c ≤ diagLen μ 0 :=
+  diagLen_antitone μ (Nat.zero_le c)
+
+/-- **Telescoped Lipschitz.** Over `v − u` steps the profile falls by at most
+`v − u`, since each single step falls by at most one. -/
+theorem diagLen_le_add_sub {u v : ℕ} (h : u ≤ v) :
+    diagLen μ u ≤ diagLen μ v + (v - u) := by
+  induction v, h using Nat.le_induction with
+  | base => simp
+  | succ v hv ih =>
+    have := diagLen_le_succ_add_one μ v
+    omega
+
+/-- **Same-sign edges: the slope is a density.** For `u ≤ v` on one side of the
+main diagonal, `D u − D v` counts the drop sites in `[u, v)`, so it lies between
+`0` and `v − u`; equivalently `(D u − D v)/(v − u) ∈ [0, 1]`. -/
+theorem diagLen_sub_nonneg_le {u v : ℕ} (h : u ≤ v) :
+    0 ≤ (diagLen μ u : ℤ) - (diagLen μ v : ℤ) ∧
+      (diagLen μ u : ℤ) - (diagLen μ v : ℤ) ≤ (v : ℤ) - (u : ℤ) := by
+  have h1 : diagLen μ v ≤ diagLen μ u := diagLen_antitone μ h
+  have h2 := diagLen_le_add_sub μ h
+  omega
+
+/-- The main diagonal is transpose-invariant — it is cut out by `(i, i) ∈ μ`,
+and the range bounds are implied by membership rather than extra conditions. -/
+theorem diagLen_transpose_zero : diagLen μ.transpose 0 = diagLen μ 0 := by
+  unfold diagLen
+  congr 1
+  ext i
+  simp only [mem_diagIdx, Nat.add_zero, YoungDiagram.rowLen_transpose,
+    YoungDiagram.colLen_transpose]
+  constructor
+  · rintro ⟨-, h⟩
+    have hii : (i, i) ∈ μ := YoungDiagram.mem_iff_lt_colLen.mpr h
+    exact ⟨YoungDiagram.mem_iff_lt_colLen.mp
+             (μ.up_left_mem (le_refl i) (Nat.zero_le i) hii),
+           YoungDiagram.mem_iff_lt_rowLen.mp hii⟩
+  · rintro ⟨-, h⟩
+    have hii : (i, i) ∈ μ := YoungDiagram.mem_iff_lt_rowLen.mpr h
+    exact ⟨YoungDiagram.mem_iff_lt_rowLen.mp
+             (μ.up_left_mem (Nat.zero_le i) (le_refl i) hii),
+           YoungDiagram.mem_iff_lt_colLen.mp hii⟩
+
+/-- **Opposite-sign edges.** The two sides of the diagonal telescope to the same
+total `D 0`, which cancels; what is left is a difference of two drop-site
+counts, each in `[0, D 0]`. So `|D_μ u − D_μᵀ v| ≤ D 0`, hence the slope is at
+most `D 0 / g` where `g` is the content gap. This bound is sharp. -/
+theorem abs_diagLen_sub_transpose_le (u v : ℕ) :
+    |(diagLen μ u : ℤ) - (diagLen μ.transpose v : ℤ)| ≤ (diagLen μ 0 : ℤ) := by
+  have h1 := diagLen_le_diagLen_zero μ u
+  have h2 := diagLen_le_diagLen_zero μ.transpose v
+  have h3 := diagLen_transpose_zero μ
+  rw [abs_le]
+  omega
+
 end QOU.BraidKnot.M1EdgeCalculus

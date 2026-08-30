@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T13:56:24Z
+updated_at: 2026-08-30T14:16:28Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -283,3 +283,62 @@ limit-shape estimates" was standing in for.
 
 **STILL OPEN.** Monotonicity is observed on n = 9..60, not proved. qou-k5r5
 stays OPEN.
+
+
+---
+
+## Leg A, 2026-08-30 (second) — the telescoping route: half of it works, and three of my predictions were wrong
+
+**THE ROUTE.** Replace "prove N/P monotone" with "bound N/P", using an exact
+deterministic identity instead of an asymptotic one. Telescoping gives
+`Σ_{t≥0}(D(t) − D(t+1)) = D(0)` exactly — no limit shape, no error term.
+
+**WHAT SURVIVES: a two-case per-edge bound, elementary and deterministic.**
+Both sides of the diagonal telescope to the SAME total `D(0)`. Writing
+`N^σ(u)` for the drop-site count in `[0,u)` on side σ, so `D(±u) = D(0) − N^σ(u)`:
+
+- **same sign**: `d_a − d_r = N^σ(v) − N^σ(u)` = #drops in `[u,v)`, so
+  `0 ≤ slope ≤ 1` and the slope IS a density;
+- **opposite sign**: `d_a − d_r = N^τ(v) − N^σ(u)` — **the `D(0)` cancels** —
+  a difference of two counts each in `[0, D(0)]`, so `|slope| ≤ D(0)/g`.
+
+0 violations of either over every edge at every n ≤ 46, and case 2 is **SHARP**:
+`max |slope|·g/D(0) = 1` exactly. Control: the halved bound `D(0)/2g` fires.
+
+**Formalized, sorry-free** (6 theorems in `QOU/BraidKnot/M1EdgeCalculus.lean`,
+`#print axioms` = the standard three): `diagLen_antitone`,
+`diagLen_le_diagLen_zero` (the main diagonal is the longest),
+`diagLen_le_add_sub` (telescoped Lipschitz), `diagLen_sub_nonneg_le` (case 1),
+`diagLen_transpose_zero` (the main diagonal is transpose-invariant),
+`abs_diagLen_sub_transpose_le` (case 2).
+
+**THREE PREDICTIONS OF MINE, REFUTED BY THE MEASUREMENT.** All are recorded as
+refuted in the probe rather than rewritten:
+
+1. *"The identity says nothing about opposite-sign edges."* **False** — it
+   reaches them, via the D(0) cancellation above. I drafted the probe header
+   asserting this and the run disproved it.
+2. *"Their ω-weight vanishes, or S_opp is negative and helps."* **False on both
+   counts.** w_opp sits near **0.44** (peaks ~n=40, not shrinking); S_opp is
+   negative only below n≈18, then crosses and **saturates near 0.118** — about
+   36% of S at n=46. For n ≥ 19 it ADDS.
+3. *"λ₁ > 2·D(0)."* **False pointwise** — ~**10%** of ω-weight sits on diagrams
+   violating it, min margin **−6**. ω charges atypical diagrams and a square has
+   λ₁ = D(0). The pointwise form of the π/2 headroom argument is DEAD.
+
+**WHAT THE ROUTE STILL NEEDS.** Only the AVERAGED form survives:
+`E_ω[D(0)/λ₁] < 1/2`, measured 0.382 at n=46 and falling toward the VKLS
+`1/π = 0.3183` — holds uninterrupted on n = 5..46 (sole exception n=4 at 25/48,
+where λ=(2,2) has λ₁=D(0)). And the inflation
+`E[slope|same]/E[global density|same]` is **0.494 at n=46 against π/2 = 1.571`
+— comfortably inside, but *rising* (0.39 → 0.49 over n=27..46) and its limit is
+NOT determined by this range.
+
+**HONEST BOTTOM LINE.** The per-edge bounds do not close it: at n=46 the case-2
+bound `B_opp = 2E[D(0)/g ; opp]` is ~an order of magnitude above the true S_opp,
+and combined with the trivial same-sign bound `2·w_same` the total exceeds 1. So
+averaging is required on BOTH sides. What the route buys is that the *inputs*
+are now elementary and finite (a telescoping sum, a transpose symmetry) instead
+of Berry–Esseen-grade asymptotics; what it does not buy is the conclusion.
+
+**STILL OPEN.** qou-k5r5 OPEN. Monotonicity remains observed on n = 9..60.
