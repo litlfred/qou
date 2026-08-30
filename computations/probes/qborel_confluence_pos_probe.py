@@ -250,14 +250,16 @@ def rsz_theta_triple_product(z: mpf, qt: mpf, tail_dps: int = 42) -> mpf:
 def block_c1_structural(wb: WitnessBuilder) -> None:
     """C1: theta-measure mechanism (exact polynomial identity) + balanced
     = bar-geometric-mean identities."""
+    _ok: list[bool] = []
     # (a) reindex m = j + k: m·k − m(m+1)/2 == k(k−1)/2 − j(j+1)/2
     lhs = _mm * _kk - sp.Rational(1, 2) * _mm * (_mm + 1)
     rhs = sp.Rational(1, 2) * _kk * (_kk - 1) \
         - sp.Rational(1, 2) * _jj * (_jj + 1)
     d = sp.expand(lhs.subs(_mm, _jj + _kk) - rhs)
-    assert d == 0, d
+    _ok.append(bool(d == 0))
+    assert _ok[-1], d
     wb.add_assertion(
-        "theta_measure_mechanism", computed="0", expected="0",
+        "theta_measure_mechanism", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="exact polynomial identity m·k − m(m+1)/2 = k(k−1)/2 − "
                "j(j+1)/2 at m = j+k: the discrete measure with atoms q^m "
@@ -272,12 +274,14 @@ def block_c1_structural(wb: WitnessBuilder) -> None:
         m = n - 1
         Nb = balanced_normalizer(_q, n)
         d1 = sp.simplify(Nb ** 2 - qfact(_q, m) * qfact(1 / _q, m))
-        assert d1 == 0, n
+        _ok.append(bool(d1 == 0))
+        assert _ok[-1], n
         d2 = sp.simplify(
             Nb - _q ** (sp.Rational(m * (m - 1), 4)) * qfact(1 / _q, m))
-        assert d2 == 0, n
+        _ok.append(bool(d2 == 0))
+        assert _ok[-1], n
     wb.add_assertion(
-        "balanced_geometric_mean", computed="0", expected="0",
+        "balanced_geometric_mean", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="N^bal(n)² = N_q(n)·N_{q⁻¹}(n) and N^bal(n) = "
                "q^{+(n−1)(n−2)/4}·[n−1]_{q⁻¹}! exactly (n = 1..8): the "
@@ -291,6 +295,7 @@ def block_c1_structural(wb: WitnessBuilder) -> None:
 def block_c2_h2_exact(wb: WitnessBuilder) -> dict:
     """C2: THE decisive check — exact h² coefficient per n vs Attack E's
     target Σ(k²−1)/24, as exact rationals."""
+    _ok: list[bool] = []
     rows = {}
     for n in range(1, N_MOMENTS + 1):
         m = n - 1
@@ -303,18 +308,23 @@ def block_c2_h2_exact(wb: WitnessBuilder) -> dict:
         c3 = sp.expand(ser).coeff(_h, 3)
         pred = c2_target(n)
         closed = sp.Rational((n - 1) * (n - 2) * (2 * n + 3), 144)
-        assert c1 == 0, (n, c1)                       # balanced: no h¹
-        assert c3 == 0, (n, c3)                       # bar-parity: no h³
-        assert sp.simplify(c2 - pred) == 0, (n, c2, pred)   # THE test
-        assert pred == closed, (n, pred, closed)      # closed form
+        _ok.append(bool(c1 == 0))
+        assert _ok[-1], (n, c1)
+        _ok.append(bool(c3 == 0))
+        assert _ok[-1], (n, c3)
+        _ok.append(bool(sp.simplify(c2 - pred) == 0))
+        assert _ok[-1], (n, c2, pred)
+        _ok.append(bool(pred == closed))
+        assert _ok[-1], (n, pred, closed)
         rows[n] = str(pred)
     # closed form symbolically: Σ_{k=1}^{n−1}(k²−1)/24 = (n−1)(n−2)(2n+3)/144
     nsym = sp.symbols("n", positive=True, integer=True)
     S = sp.summation((_kk ** 2 - 1) / 24, (_kk, 1, nsym - 1))
     d = sp.simplify(S - (nsym - 1) * (nsym - 2) * (2 * nsym + 3) / 144)
-    assert d == 0, d
+    _ok.append(bool(d == 0))
+    assert _ok[-1], d
     wb.add_assertion(
-        "h2_coefficient_exact_match", computed="0", expected="0",
+        "h2_coefficient_exact_match", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="log(N^bal_{e^h}(n)/(n−1)!) = c₂(n)·h² + O(h⁴) with h¹ AND "
                "h³ coefficients exactly 0 (bar-invariance ⇒ even in h) and "
@@ -389,13 +399,15 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
     """C4: the manifestly positive balanced kernel at one q value —
     Jackson (C4a), theta (C4b), log-normal (C4c) factors; assembly (C4d);
     fibre-indeterminacy witness (C4e runs only for q_name == 'test')."""
+    _ok: list[bool] = []
     q0 = mpf(q_str)
     hh = mplog(q0)
     qt = mpsqrt(q0)
 
     # C4a — Jackson q-Gamma factor at p = 1/q
     atoms_j, masses_j, mom_j = jackson_factor(q0, N_MOMENTS)
-    assert min(masses_j) > 0
+    _ok.append(bool(min(masses_j) > 0))
+    assert _ok[-1]
     p = 1 / q0
     worst_a = mpf(0)
     for k in range(N_MOMENTS + 1):
@@ -403,16 +415,19 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
         for j in range(1, k + 1):
             tgt *= (1 - p ** j) / (1 - p)         # [k]_p!
         worst_a = max(worst_a, abs(mom_j[k] / tgt - 1))
-    assert worst_a < TOL_50, worst_a
+    _ok.append(bool(worst_a < TOL_50))
+    assert _ok[-1], worst_a
 
     # C4b — theta factor at q̃ = √q; masses = RSZ 1/θ values on the grid
     js, atoms_t, masses_t, mom_t = theta_factor(q0, N_MOMENTS)
-    assert min(masses_t) > 0
+    _ok.append(bool(min(masses_t) > 0))
+    assert _ok[-1]
     worst_b = mpf(0)
     for k in range(N_MOMENTS + 1):
         tgt = q0 ** (mpf(k * (k - 1)) / 4)
         worst_b = max(worst_b, abs(mom_t[k] / tgt - 1))
-    assert worst_b < TOL_50, worst_b
+    _ok.append(bool(worst_b < TOL_50))
+    assert _ok[-1], worst_b
     # cross-check masses against the RSZ eq-(1.2) triple product:
     # q̃^{−j(j+1)/2} = θ(1;q̃)/θ(q̃^j;q̃), and every triple-product factor > 0
     th1 = rsz_theta_triple_product(mpf(1), qt)
@@ -421,14 +436,18 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
         thj = rsz_theta_triple_product(qt ** j, qt)
         worst_th = max(worst_th,
                        abs((th1 / thj) / qt ** (-mpf(j * (j + 1)) / 2) - 1))
-    assert worst_th < TOL_QUAD, worst_th
+    _ok.append(bool(worst_th < TOL_QUAD))
+    assert _ok[-1], worst_th
     # positivity grid of the factorization itself
     for j in range(-8, 9):
         z = qt ** j
         for nfac in range(0, 120):
-            assert (1 - qt ** (-nfac - 1)) > 0
-            assert (1 + qt ** (-nfac) * z) > 0
-            assert (1 + qt ** (-nfac - 1) / z) > 0
+            _ok.append(bool(1 - qt ** (-nfac - 1) > 0))
+            assert _ok[-1]
+            _ok.append(bool(1 + qt ** (-nfac) * z > 0))
+            assert _ok[-1]
+            _ok.append(bool(1 + qt ** (-nfac - 1) / z > 0))
+            assert _ok[-1]
 
     # C4c — log-normal factor: σ² = h/2, μ̂ = −h/4, mass 1
     sig2 = hh / 2
@@ -440,11 +459,13 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
             / mpsqrt(2 * mppi * sig2), [-mp.inf, mp.inf])
         tgt = q0 ** (mpf(k * (k - 1)) / 4)
         worst_c = max(worst_c, abs(val / tgt - 1))
-    assert worst_c < TOL_QUAD, worst_c
+    _ok.append(bool(worst_c < TOL_QUAD))
+    assert _ok[-1], worst_c
     # density positivity grid (manifest — Gaussian)
     for u10 in range(-30, 31):
         u = mpf(u10) / 10
-        assert mpexp(-(u - muh) ** 2 / (2 * sig2)) > 0
+        _ok.append(bool(mpexp(-(u - muh) ** 2 / (2 * sig2)) > 0))
+        assert _ok[-1]
 
     # C4d — assembly: A(k)·B(k) == N^bal(k+1), both realizations
     worst_d = mpf(0)
@@ -455,7 +476,8 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
         for mom_B in (mom_t[k], q0 ** (mpf(k * (k - 1)) / 4)):
             got = mom_j[k] * mom_B
             worst_d = max(worst_d, abs(got / nbal - 1))
-    assert worst_d < TOL_50, worst_d
+    _ok.append(bool(worst_d < TOL_50))
+    assert _ok[-1], worst_d
 
     wb.add_assertion(
         f"pos_kernel_{q_name}", computed=mp.nstr(
@@ -482,7 +504,8 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
         # log-normal realization is absolutely continuous — two DISTINCT
         # positive measures, ALL moments equal (exact identities above).
         atom_mass = masses_t[js.index(0)] * masses_j[0]
-        assert atom_mass > 0
+        _ok.append(bool(atom_mass > 0))
+        assert _ok[-1]
         terms = []
         for k in range(1, 201):
             nb = mp_balanced_ratio(q0, k + 1)
@@ -491,9 +514,10 @@ def block_c4_pos_kernel(wb: WitnessBuilder, q_name: str, q_str: str) -> None:
             terms.append(nb ** (-1 / mpf(2 * k)))
         ratios = [terms[k] / terms[k - 1] for k in range(100, 200)]
         bound = q0 ** (-mpf(1) / 16)
-        assert max(ratios) < bound, (max(ratios), bound)
+        _ok.append(bool(max(ratios) < bound))
+        assert _ok[-1], (max(ratios), bound)
         wb.add_assertion(
-            "fibre_indeterminacy", computed="0", expected="0",
+            "fibre_indeterminacy", computed=all(_ok), expected=True,
             tolerance=TOL_EXACT,
             source="0 = #violations of [Carleman-term ratio "
                    f"N^bal(k+1)^(−1/(2k)) step < q^(−1/16) = "
@@ -520,6 +544,7 @@ def block_c5_cdf_confluence(wb: WitnessBuilder) -> None:
     """C5: kernel-level (CDF) confluence diagnostic — float64, LOSSY,
     diagnostic only (per compute-author §1.1 the f64 path is cross-check
     grade; the production-precision claims live in C2/C3/C4)."""
+    _ok: list[bool] = []
     s_points = [0.5, 1.0, 2.0]
     devs = {s: [] for s in s_points}
     for kk in range(1, 4):
@@ -545,14 +570,18 @@ def block_c5_cdf_confluence(wb: WitnessBuilder) -> None:
             devs[s].append(abs(F - (1 - math.exp(-s))))
     shrink = []
     for s in s_points:
-        assert devs[s][0] > devs[s][1] > devs[s][2], (s, devs[s])
-        assert devs[s][2] < 1e-6, (s, devs[s])
+        _ok.append(bool(devs[s][0] > devs[s][1] > devs[s][2]))
+        assert _ok[-1], (s, devs[s])
+        _ok.append(bool(devs[s][2] < 1e-06))
+        assert _ok[-1], (s, devs[s])
         shrink += [devs[s][0] / devs[s][1], devs[s][1] / devs[s][2]]
         # per-decade shrink ≈ ×100 ⇒ the CDF converges at ~O(h²) too
-        assert 50 < devs[s][0] / devs[s][1] < 200, (s, devs[s])
-        assert 50 < devs[s][1] / devs[s][2] < 200, (s, devs[s])
+        _ok.append(bool(50 < devs[s][0] / devs[s][1] < 200))
+        assert _ok[-1], (s, devs[s])
+        _ok.append(bool(50 < devs[s][1] / devs[s][2] < 200))
+        assert _ok[-1], (s, devs[s])
     wb.add_assertion(
-        "cdf_confluence_diagnostic", computed="0", expected="0",
+        "cdf_confluence_diagnostic", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="0 = #violations of [CDF deviation monotone ↓, < 1e−6 at "
                "q = 1.001, per-decade shrink in (50, 200)]; observed max "

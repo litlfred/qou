@@ -243,28 +243,35 @@ def monic_jacobi_pow00(alphas, betas, n, simp=_ID):
 # ------------------------------------------------------------- K1 carrier
 
 def block_k1_carrier_symbolic(wb: WitnessBuilder):
+    _ok: list[bool] = []
     ms = carrier_moments(_q, N_REPRO)
     # Hankels (symbolic, small k)
     dets = hankel_dets(ms, 3)
     dets = [sp.expand(d) for d in dets]
-    assert dets[0] == 1 and dets[1] == 1
-    assert sp.expand(dets[2] - _q * (1 + _q)) == 0, dets[2]
+    _ok.append(bool(dets[0] == 1 and dets[1] == 1))
+    assert _ok[-1]
+    _ok.append(bool(sp.expand(dets[2] - _q * (1 + _q)) == 0))
+    assert _ok[-1], dets[2]
     for k in range(4):
         expected = sp.prod([sp.factorial(i) for i in range(1, k + 1)])
-        assert sp.expand(dets[k].subs(_q, 1) - expected) == 0, k
+        _ok.append(bool(sp.expand(dets[k].subs(_q, 1) - expected) == 0))
+        assert _ok[-1], k
     # closed-form Jacobi data reproduces the moments symbolically
     KS = N_REPRO // 2 + 2
     al = [_q ** k for k in range(KS)]
     be = [sp.expand(_q ** (k - 1) * qint(_q, k)) for k in range(1, KS)]
     for n in range(N_REPRO + 1):
         v = monic_jacobi_pow00(al, be, n, simp=sp.expand)
-        assert sp.expand(v - ms[n]) == 0, (n, "carrier symbolic repro")
+        _ok.append(bool(sp.expand(v - ms[n]) == 0))
+        assert _ok[-1], (n, 'carrier symbolic repro')
     # q = 1 Gaussian limits
-    assert [a.subs(_q, 1) for a in al] == [1] * KS
-    assert [b.subs(_q, 1) for b in be] == list(range(1, KS))
+    _ok.append(bool([a.subs(_q, 1) for a in al] == [1] * KS))
+    assert _ok[-1]
+    _ok.append(bool([b.subs(_q, 1) for b in be] == list(range(1, KS))))
+    assert _ok[-1]
     wb.add_assertion(
-        "k1_carrier_jacobi_closed_form_symbolic", computed="0",
-        expected="0", tolerance=0,
+        "k1_carrier_jacobi_closed_form_symbolic", computed=all(_ok),
+        expected=True, tolerance=0,
         source="symbolic q: Hankel Delta_2 = q·[2]_q; q=1 Hankels = "
                "prod i! (Gaussian N(1,1)); the closed-form monic Jacobi "
                "data alpha_k = q^k, beta_k = q^(k-1)·[k]_q reproduces "
@@ -296,22 +303,28 @@ def block_k1_carrier_symbolic(wb: WitnessBuilder):
 # ------------------------------------------------------------- K2 kernel
 
 def block_k2_kernel_symbolic(wb: WitnessBuilder):
+    _ok: list[bool] = []
     ms = kernel_moments_r(_r, 8)
     dets = [sp.expand(d) for d in hankel_dets(ms, 3)]
     for k in range(4):
         expected = sp.prod([sp.factorial(i) ** 2 for i in range(1, k + 1)])
-        assert sp.expand(dets[k].subs(_r, 1) - expected) == 0, k
+        _ok.append(bool(sp.expand(dets[k].subs(_r, 1) - expected) == 0))
+        assert _ok[-1], k
     al, be = jacobi_from_hankel(ms, 4, simp=sp.cancel)
     # β₁ = q^{1/2} + q^{−1/2} − 1 = 1 + (r − 1/r)² — exact SOS positivity
     beta1_closed = _r ** 2 + _r ** (-2) - 1
-    assert sp.cancel(be[0] - beta1_closed) == 0, be[0]
-    assert sp.expand((beta1_closed - 1) - (_r - 1 / _r) ** 2) == 0
+    _ok.append(bool(sp.cancel(be[0] - beta1_closed) == 0))
+    assert _ok[-1], be[0]
+    _ok.append(bool(sp.expand(beta1_closed - 1 - (_r - 1 / _r) ** 2) == 0))
+    assert _ok[-1]
     # q = 1: monic Laguerre α_k = 2k+1, β_k = k²
-    assert [sp.cancel(a.subs(_r, 1)) for a in al] == [1, 3, 5, 7]
-    assert [sp.cancel(b.subs(_r, 1)) for b in be] == [1, 4, 9]
+    _ok.append(bool([sp.cancel(a.subs(_r, 1)) for a in al] == [1, 3, 5, 7]))
+    assert _ok[-1]
+    _ok.append(bool([sp.cancel(b.subs(_r, 1)) for b in be] == [1, 4, 9]))
+    assert _ok[-1]
     wb.add_assertion(
-        "k2_kernel_beta1_sos_positivity_symbolic", computed="0",
-        expected="0", tolerance=0,
+        "k2_kernel_beta1_sos_positivity_symbolic", computed=all(_ok),
+        expected=True, tolerance=0,
         source="symbolic r = q^(1/4): kernel Jacobi beta_1 = "
                "q^(1/2)+q^(-1/2)-1 = 1+(r-1/r)^2 (exact SOS, >= 1 for "
                "all q > 0, = 1 iff q = 1; the Wenzl positivity "
@@ -375,6 +388,7 @@ def _exact_leg(name, ms, wb_bucket, stieltjes: bool):
 
 
 def block_k3_exact(wb: WitnessBuilder):
+    _ok: list[bool] = []
     out = {}
     # kernel at r = 21/20 (q = (21/20)^4 = 194481/160000 ≈ 1.2155)
     rq = sp.Rational(21, 20)
@@ -389,15 +403,16 @@ def block_k3_exact(wb: WitnessBuilder):
     bucket = {"point": "q = 6/5"}
     al, be = _exact_leg("carrier", ms_c, bucket, stieltjes=False)
     for k in range(K_EXACT):
-        assert al[k] == qv ** k, (k, "alpha closed form @ 6/5")
+        _ok.append(bool(al[k] == qv ** k))
+        assert _ok[-1], (k, 'alpha closed form @ 6/5')
     for k in range(1, K_EXACT):
-        assert be[k - 1] == qv ** (k - 1) * qint(qv, k), \
-            (k, "beta closed form @ 6/5")
+        _ok.append(bool(be[k - 1] == qv ** (k - 1) * qint(qv, k)))
+        assert _ok[-1], (k, 'beta closed form @ 6/5')
     bucket["closed_form"] = (f"alpha_k = q^k, beta_k = q^(k-1)[k]_q "
                              f"exact at q = 6/5, k <= {K_EXACT - 1}")
     out["carrier_q_6_5"] = bucket
     wb.add_assertion(
-        "k3_favard_positivity_exact_Q", computed="0", expected="0",
+        "k3_favard_positivity_exact_Q", computed=all(_ok), expected=True,
         tolerance=0,
         source=f"exact rational arithmetic: Hankel Delta_k > 0 "
                f"(k <= {K_EXACT}), kernel Stieltjes shifted Hankels > 0 "
@@ -463,6 +478,7 @@ def _mp_jacobi(ms, K):
 
 
 def block_k4_pins(wb: WitnessBuilder):
+    _ok: list[bool] = []
     out = {}
     for tag, qs in (("test", "1.2"), ("muon", Q0_MUON_STR),
                     ("proton", Q0_PROTON_STR)):
@@ -471,12 +487,14 @@ def block_k4_pins(wb: WitnessBuilder):
         for frame, ms in (("kernel", _mp_kernel_moments(q0, 2 * K_PIN + 2)),
                           ("carrier", _mp_carrier_moments(q0, 2 * K_PIN + 2))):
             al, be = _mp_jacobi(ms, K_PIN)
-            assert all(b > 0 for b in be), (tag, frame, "beta @ pin")
+            _ok.append(bool(all((b > 0 for b in be))))
+            assert _ok[-1], (tag, frame, 'beta @ pin')
             worst = mpf(0)
             for n in range(1, 11):
                 v = monic_jacobi_pow00(al, be, n)
                 worst = max(worst, abs(v / ms[n] - 1))
-            assert worst < TOL_PIN, (tag, frame, worst)
+            _ok.append(bool(worst < TOL_PIN))
+            assert _ok[-1], (tag, frame, worst)
             ratios = [be[i + 1] / be[i] for i in range(len(be) - 1)]
             entry[frame] = {
                 "beta_pos": f"beta_k > 0, k <= {K_PIN - 1} (60 dps)",
@@ -488,7 +506,7 @@ def block_k4_pins(wb: WitnessBuilder):
         entry["q0"] = qs[:16] + ("..." if len(qs) > 16 else "")
         out[tag] = entry
     wb.add_assertion(
-        "k4_favard_positivity_at_q0_pins", computed="0", expected="0",
+        "k4_favard_positivity_at_q0_pins", computed=all(_ok), expected=True,
         tolerance=float(TOL_PIN),
         source=f"60 dps, q0 muon + proton pins + q = 1.2, both frames: "
                f"Jacobi beta_k > 0 (k <= {K_PIN - 1}), moment "
@@ -499,18 +517,23 @@ def block_k4_pins(wb: WitnessBuilder):
 # --------------------------------------------------- K5 q=1 determinacy
 
 def block_k5_q1_determinacy(wb: WitnessBuilder):
+    _ok: list[bool] = []
     ms = [sp.factorial(k) for k in range(2 * K_EXACT)]
     al, be = jacobi_from_hankel(ms, K_EXACT - 1, method="bareiss")
-    assert al == [2 * k + 1 for k in range(K_EXACT - 1)]
-    assert be == [k * k for k in range(1, K_EXACT - 1)]
+    _ok.append(bool(al == [2 * k + 1 for k in range(K_EXACT - 1)]))
+    assert _ok[-1]
+    _ok.append(bool(be == [k * k for k in range(1, K_EXACT - 1)]))
+    assert _ok[-1]
     I = [sp.Integer(1), sp.Integer(1)]
     for n in range(2 * K_EXACT):
         I.append(I[-1] + (n + 1) * I[-2])
     al2, be2 = jacobi_from_hankel(I, K_EXACT - 1, method="bareiss")
-    assert al2 == [1] * (K_EXACT - 1)
-    assert be2 == list(range(1, K_EXACT - 1))
+    _ok.append(bool(al2 == [1] * (K_EXACT - 1)))
+    assert _ok[-1]
+    _ok.append(bool(be2 == list(range(1, K_EXACT - 1))))
+    assert _ok[-1]
     wb.add_assertion(
-        "k5_q1_determinacy_exact", computed="0", expected="0",
+        "k5_q1_determinacy_exact", computed=all(_ok), expected=True,
         tolerance=0,
         source="exact: m_k = k! gives monic Laguerre (alpha = 2k+1, "
                "beta = k^2) and I(n) gives Gaussian N(1,1) (alpha = 1, "
@@ -539,14 +562,17 @@ def block_k5_q1_determinacy(wb: WitnessBuilder):
 
 def block_k7_indeterminacy(wb: WitnessBuilder):
     # exact reindex identity: exponent(j=i+k) − [k(k−1)/2 − i(i+1)/2] = 0
+    _ok: list[bool] = []
     expo = _jj * _kk - _jj * (_jj + 1) / 2
     lhs = expo.subs(_jj, _ii + _kk)
     rhs = _kk * (_kk - 1) / 2 - _ii * (_ii + 1) / 2
-    assert sp.expand(lhs - rhs) == 0
+    _ok.append(bool(sp.expand(lhs - rhs) == 0))
+    assert _ok[-1]
     # u^k·u^{−j}|_{j=i+k} = u^{−i}: the translate cancels into the
     # normalization
     upow = _u ** _kk * _u ** (-(_ii + _kk))
-    assert sp.simplify(upow - _u ** (-_ii)) == 0
+    _ok.append(bool(sp.simplify(upow - _u ** (-_ii)) == 0))
+    assert _ok[-1]
     # numeric cross-check at q = 1.2: normalized theta-translate moments
     q0 = mpf("1.2")
     qt = mpsqrt(q0)
@@ -564,12 +590,14 @@ def block_k7_indeterminacy(wb: WitnessBuilder):
         target = q0 ** (mpf(k * (k - 1)) / 4)
         for uv in (mpf(1), mpf("1.3")):
             worst = max(worst, abs(theta_mom(uv, k) / target - 1))
-    assert worst < TOL_30, worst
+    _ok.append(bool(worst < TOL_30))
+    assert _ok[-1], worst
     # support distinctness: frac(log_q̃ u) ∉ {0, 1}
     frac = mp.frac(mp.log(mpf("1.3")) / mp.log(qt))
-    assert mpf("1e-6") < frac < 1 - mpf("1e-6"), frac
+    _ok.append(bool(mpf('1e-6') < frac < 1 - mpf('1e-6')))
+    assert _ok[-1], frac
     wb.add_assertion(
-        "k7_fibre_indeterminacy_reverified", computed="0", expected="0",
+        "k7_fibre_indeterminacy_reverified", computed=all(_ok), expected=True,
         tolerance=float(TOL_30),
         source="theta-translate reindex identity exact (sympy) + "
                "numeric u-independence (q = 1.2, u in {1, 1.3}, "

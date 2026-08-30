@@ -396,3 +396,64 @@ The LP-stability assertion four lines below is the model and is left alone —
 That leaves `conj:casimir-epsilon-vacuum` (`status: experimental`) as the only
 tautology touching a content block, and an experimental status over an
 exploratory probe is not a false claim.
+
+
+---
+
+## Drain resumed 2026-08-30 — 228 → 159
+
+Two classes cleared mechanically. Tool kept at
+`scripts/drain-tautological-assertions.py`.
+
+**Class: `computed=len(X), expected=len(X)` — 16 sites.** Names ending
+`_completed` / `_scan` / `_prescreen`, passing when the scan found nothing,
+which is the one outcome those names exist to exclude. Now `len(X) > 0` against
+`True`. Unambiguous: the name states the predicate and the measured quantity is
+already there.
+
+**Class A: real `assert`s beside a constant assertion — 46 sites, 44 functions,
+16 files.** The `r2core` shape at scale. These scripts do the mathematics and
+check it properly with bare `assert`s, which abort on failure and leave
+**nothing in the witness**, so the assertion beside them recorded
+`computed="0", expected="0"`. Transformation per function: declare
+`_ok: list[bool] = []`, rewrite `assert X, m` to `_ok.append(bool(X))` +
+`assert _ok[-1], m` (X evaluated once, abort semantics preserved), and retarget
+the witness assertion to `all(_ok)` against `True`. `borel_propertime` alone
+carried 22 real checks behind one constant.
+
+12 of the 16 run clean; the other 4 are slow probes that time out here, with no
+errors.
+
+### Two bugs in my own transform, both caught by RUNNING it
+
+Recording these because both are the failure this bean is about, committed by
+the tool written to fix it.
+
+1. **Column shift.** `computed=X, expected=X` often sits on one line.
+   Replacing `computed`'s value first moves every later column, so the
+   `expected` edit landed inside the keyword and produced `expeTrued=`.
+   **`py_compile` accepted it** — `expeTrued=` is valid Python — and it failed
+   only at run time with `TypeError: unexpected keyword argument`. Fixed by
+   applying replacements right-to-left within a line.
+
+2. **Test fixtures are not tautologies.** The first run rewrote
+   `tools/qou-substrate/tests/test_declared_tolerance_literal.py`, where
+   `add_assertion("b", computed="1", expected="1")` is deliberately constructed
+   to exercise tolerance serialisation. Worse, `_ok.append` landed *after* the
+   call, so `all([])` → `True` silently changed what the test asserts.
+   Reverted; the tool now refuses `tests/`, `test_`, `conftest`, `fixtures/`.
+
+**Compiling is not running, and running one file is not running the batch.**
+Both bugs passed `py_compile` on all 16 files.
+
+### What is left: 159 sites, 141 files
+
+- ~104 where `computed` is a non-literal expression with no recoverable check
+- the remainder literal-vs-literal with no `assert` to carry in
+
+Neither class is mechanical. The honest remedy for most is **demote to data** —
+and note that is now known to be safe: nothing in the corpus reads witness
+assertions by name (every `.assertions` hit is inside `witness.py` itself), so
+converting an assertion to data breaks no reader. That was checked, not assumed.
+
+Still zero blocks claim `verified` on any of them.
