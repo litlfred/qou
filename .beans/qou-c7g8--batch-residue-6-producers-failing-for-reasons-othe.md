@@ -306,3 +306,54 @@ Chain, for the record:
       -> (b) hadron-knot-table.witness.json cannot be repinned by re-running,
              so it stays at retired pin A under a `muon` label and remains the
              corpus's single Q0_FLIP, stale since 2026-06-17
+
+### 🛑 CORRECTION: the "53 ms in June" figure was mine and it was WRONG
+
+I claimed above (and in commit `2a14302ba`) that `hadron_knot_table` ran all 19
+atoms in 53 ms on 2026-06-17 and had therefore regressed by six orders of
+magnitude. **That is not what `durationMs: 53` measures.**
+
+    computations/hadron_knot_table.py
+      line 222   for name, Z, N, quarks in ATOMS:      <- the whole computation
+      line 232   (loop ends)
+      line 239   w = WitnessBuilder("hadron-knot-table", engine="python")
+
+`WitnessBuilder` is constructed AFTER the loop and is passed no `start_time`, so
+it computes `durationMs = monotonic() - <its own construction>` — i.e. the
+witness ASSEMBLY time. 53 ms is how long it took to serialise the witness. It
+says nothing whatsoever about the 19-atom computation.
+
+So there is **no evidence of a regression**. This producer may always have been
+too slow to finish; its committed witness cannot tell us either way. Withdraw
+the six-orders-of-magnitude claim entirely.
+
+**Third instrumentation lesson from this bean** (after the stderr-regex
+classifier and the driver/child cap): `durationMs` is only a runtime if the
+producer passes `start_time` to `WitnessBuilder`. Where it does not, the field
+silently reports serialisation time and is worthless as a performance baseline —
+and it is indistinguishable from a real one in the witness. Worth a sweep.
+
+### What actually stands after the rebuild
+
+- The stale `pyhecke_native` wheel was REAL and is FIXED. `bash
+  scripts/build-pyhecke-native.sh` succeeded, the trace-convention gate passes
+  (`markov_z(q0) = 0.6126880371464652 == registry D`, difference 0.000e+00), the
+  new wheel loads from `/root/.local/...` shadowing the old
+  `/usr/local/...` one, and gram.py now emits **0 divergence warnings** where it
+  previously refused on every call. That defect stood on its own.
+- It was NOT sufficient. `hadron_knot_table` still does not finish: 100% CPU,
+  compute-bound (PID sampled at 3:38 CPU / 3:37 elapsed), no witness written.
+- Not caused by my q₀ work: this producer does not import
+  `tr_m_wenzl_bridge_mpfr` or `load_y_lambda_for_q0`, so the vintage guard I
+  widened today is not in its path. It uses `hecke_core`, `hecke_core_legacy`,
+  `pyhecke.gram`, `hecke_engine`.
+- "Stalls at atom #4 (deuterium, the first A=2)" was ALSO premature — stdout is
+  block-buffered while the stderr warning is not, so the visible atom count is
+  not a progress indicator. Do not read it as one.
+
+### Still open
+
+Why `hadron_knot_table` is compute-bound past 600 s, with the corrected baseline
+of *unknown* rather than 53 ms. The A-scaling hypothesis (ATOMS runs to ca40,
+A=40) is untested. Instrument the loop with per-atom timing before theorising —
+this bean has now produced three wrong inferences from uninstrumented output.
