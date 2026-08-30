@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:40:10Z
-updated_at: 2026-08-30T04:57:31Z
+updated_at: 2026-08-30T08:39:48Z
 ---
 
 Surfaced while draining `qou-p77d`. The detector
@@ -220,3 +220,55 @@ exact solves completed and recorded", the only place that description exists.
 Applied to six files and re-runs started before I noticed. It now emits
 `{'value': ..., 'source': ...}`. **A demotion must carry the prose, or it is a
 deletion wearing a demotion's commit message.**
+
+
+## 2026-08-30 — 26 of 56 resolved; the other 30 triaged, not applied
+
+**Attribution re-measured after rebasing onto `a917f3da1e`** (925 incoming
+commits). The only comparison that means anything is **this branch's fixed
+detector run against main's tree**, because main still carries the blind
+detector and reports 0 there:
+
+| tree | MEASURED | LITERAL | files |
+|---|---|---|---|
+| `origin/main` (fixed detector applied to it) | 56 | 189 | 183 |
+| this branch | **30** | 187 | 159 |
+
+So the 26 resolutions are this branch's and none was duplicated by the 925.
+
+**Triage of the remaining 30 is written up in full:**
+`docs/audits/2026-08-30-self-fulfilling-assertion-triage-of-the-remaining-30.md`.
+Partition is total and disjoint — 1 + 12 + 9 + 8 = 30.
+
+- **1 misnamed claim.** `audits/brundan_kleshchev_audit.py:189` asserts
+  `dim_centre_eq_pn_{n}` by computing `p(n)` and comparing it to `p(n)`. It
+  never computes a centre dimension and has no route to one. Five passing
+  assertions per run for a theorem that was not tested. **Author decision**;
+  recommendation is rename-and-demote.
+- **12 repairable** — the falsifiable claim is already in the assertion's own
+  name or `source`; only `expected` is wrong. `shift_from_nf_basis.py:256,262`
+  are outright deletable: lines 271-278 already check the same two shifts
+  against `expected=20` / `expected=16`.
+- **9 author-documented recordings** — the source says "recorded", "informational",
+  or, at `qbeta_singularity_cross_anchor_probe.py:303`, literally *"it does not
+  assert it"*, attached to an `add_assertion` call.
+- **8 counts and labels** — same shape as the 17 already demoted.
+  `hadron_knot_table.py` is the expensive one (>50 min per bound atom).
+
+**Not applied, and the reason is code-read rather than assumed.** The container
+was replaced mid-session and is strictly weaker than what the witnesses record
+(python 3.11.15 vs 3.13.12, mpmath 1.3.0 vs 1.4.1, `clarabel` absent). `save()`
+guards the environment only on the *preserve* path, gated on
+`_witnesses_substantively_equal` — and every disposition above changes the
+`assertions` array, so none is substantively equal, all take the rewrite path,
+and the weaker block lands under a warn-only check. The guard fires exactly
+when there was nothing to protect. **Do this work in a matching container.**
+
+**The API gap is the deeper fix.** 16 of 30 exist because nothing in
+`WitnessBuilder` says "measured result, not a check", nor expresses is-nonzero /
+is-finite / exceeds-threshold. Class R hand-rolls all three as 1/0 flags. Until
+a constructor exists this population regrows.
+
+Also landed: taxonomy **row 18 — calling-form blindness**
+(`docs/audits/2026-08-15-detector-blindness-taxonomy.md`), the first row in that
+file from outside the convention-C arc.
