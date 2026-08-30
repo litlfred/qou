@@ -43,6 +43,11 @@
             "type": "command",
             "command": "./scripts/precommit-precision-warn.sh",
             "timeout": 130
+          },
+          {
+            "type": "command",
+            "command": "./scripts/precommit-bean-id-warn.sh",
+            "timeout": 15
           }
         ]
       }

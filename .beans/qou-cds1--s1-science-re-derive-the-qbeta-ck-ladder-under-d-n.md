@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T06:57:23Z
+updated_at: 2026-08-30T08:09:08Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2742,3 +2742,28 @@ So the corrected status of the ladder above N=0:
 (D1).** The derivation exists, is exact and symbolic in both variables, and
 formalizing it would upgrade alpha from bare def to derived — which is exactly
 the formalize-first discipline this bean's own Discipline section asks for.
+## Step 2 (2026-08-30, PR #6110) — the bar-weight prune: the OFFSET is forced, not z
+
+`computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py`. This is the formalize-first prune this bean's Discipline section asks for, done before any numerical re-fit.
+
+**Two recorded forms are ONE fact.** This bean records `bar(z_D) = q^-4·z_D`; PR #6110 measured `bar(z_D) = z_D − h`. Both are correct and equal `1/(q³+q)`. Recorded because they read as competing parity claims.
+
+**z is bar-HOMOGENEOUS in BOTH conventions** — `bar(z_C)/z_C = 1` (weight 0), `bar(z_D)/z_D = q^-4` (weight −4). So "bar-even" is not something C has and D lacks; it is weight 0. The KC13 statement is the weight-0 instance of a two-case fact.
+
+**What breaks under D is the AFFINE OFFSET, not z.** With `h` bar-odd:
+
+    C:  bar(alpha)/alpha = -1                            bar-ODD, clean
+    D:  bar(alpha)/alpha = (q^3+q-1)/(q(q^3-q^2-1))      NOT an eigenvector
+
+`z_D` has weight −4, the constant `1` has weight 0, and a sum of two bar-weights is never an eigenvector. **The `−1` is the obstruction.** That is a structural explanation for this bean's own sensitivity row (`c_3 → −974`, "no convergence"): the naive swap keeps a weight-mismatched offset and destroys the grading the C ladder's convergence rests on.
+
+**THE PRUNE.** For `(z − c)h/2` to be bar-anti-homogeneous, `c` must carry z's bar-weight. For `c = q^n`, `bar(c)/c = q^{-2n}`:
+
+    C: weight  0 => n = 0 => c = 1     bar(alpha)/alpha = -1     <- DERIVES the existing ladder
+    D: weight -4 => n = 2 => c = q^2   bar(alpha)/alpha = -q^-4
+
+The rule reproduces C's offset rather than assuming it — the consistency check that makes it worth stating.
+
+**NOT established:** that `c = q²` IS the D offset. Only that bar-homogeneity FORCES weight −4, uniquely `q²` among monomials. What replaces `tr_M(1) = 1` in the D normalisation is open. A `q²` reached by search would be a fit; this is reached by grading. No `c_k` proposed, extracted or wired.
+
+Complements Step 1: that proved the ADDITIVE defect forms; this is the MULTIPLICATIVE (eigenvector) reading, and it is the one that prunes the offset class.

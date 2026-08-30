@@ -249,9 +249,30 @@ def markov_trace(n, q, hecke_cache):
 
 
 def markov_trace_s(n, s, hecke_by_level):
-    """tr values, exact in s (q = s^2, z = 1/(s + 1/s))."""
+    """tr values, exact in s (q = s^2, z = q^3/(q^2 + 1), convention D).
+
+    MIGRATED C -> D 2026-08-30 (bean qou-t9r1). This read z = 1/(s + 1/s),
+    which is z_C exactly and one of the sqrt-variable spellings the shape
+    audit cannot see.
+
+    qou-t9r1 flagged this file as needing its premise checked before any
+    swap, because the docstring named z_C as "the trace it solves weights
+    for" — so migrating might change the subject rather than the coordinate.
+    MEASURED symbolically, it does not. Solving the H_2 Wedderburn system
+    with z FREE,
+
+        w_(2)  = (qz + 1)/(q^2 + 1),   w_(11) = q(q - z)/(q^2 + 1)
+
+    the fitted a^2 at line ~454 and the closed form z/z_- at line ~459 are
+
+        a^2 = qz/(1 + qz - q^2)
+
+    from BOTH routes, so `a2 - a2_closed = 0` identically in (q, z) — not
+    merely at z_C. Verified to be 0 generically and at z_C and z_D alike.
+    The identification is convention-INDEPENDENT; only the coordinate moves.
+    """
     q = s * s
-    z = 1 / (s + 1 / s)
+    z = q ** 3 / (q ** 2 + 1)
     tr = {1: {(0,): Fraction(1)}}
     # represent perms at each level m as tuples of length m
     tr_level = {1: {tuple([0]): Fraction(1)}}
@@ -452,9 +473,12 @@ def main():
         w11 = weights_by_n[2][(1, 1)]
         r = w2 / w11
         a2 = (s ** (-2) - r * s ** 2) / (s ** 2 - r * s ** (-2))
-        # identified closed form: a^2 = z / z_-  with z_- = z - (q - q^{-1})
+        # identified closed form: a^2 = z / z_-  with z_- = z - (q - q^{-1}).
+        # Convention D (migrated 2026-08-30, qou-t9r1) — must match the z
+        # used by markov_trace_s above, or the "closed form" would be
+        # compared against weights solved for a different trace.
         q = s * s
-        z = 1 / (s + 1 / s)
+        z = q ** 3 / (q ** 2 + 1)
         z_neg = z - (q - 1 / q)
         a2_closed = z / z_neg
         sample = {

@@ -128,6 +128,16 @@ def bar_even(bfun, A, m):
 def main() -> int:
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
+    # CONVENTION C, DELIBERATE AND BLOCKED -- do not substitute z_D here.
+    # z_naive (below) and its bar image z_bar are convention C, z = sqrt(q)/(q+1).
+    # This probe's SUBJECT is bar-evenness, and only z_C has it: measured
+    # symbolically, bar(z_C) - z_C = 0, while bar(z_D) = 1/(q^3+q) and
+    # bar(z_D) - z_D = 1/q - q = -h, so z_D is bar-NEITHER. Swapping in z_D
+    # therefore flips this file's own assertion rather than re-coordinatising
+    # it. Registered in docs/coordination/trace-convention-registry.json under
+    # blocked_on_rederivation (both z_naive and z_bar), blocked on bean
+    # qou-pmkh: what replaces this under D is a D-frame bar decomposition
+    # built on bar(z_D) = z_D - h, which is real work, not a swap.
     z_naive = 1 / (v + 1 / v)                       # 1/[2]_v
     g_reeb = 1 / mp.sqrt(5 + (q0 - 1) ** 2 / q0)    # derived reeb magnitude
     ceiling = 1 / mp.sqrt(mp.mpf(5))

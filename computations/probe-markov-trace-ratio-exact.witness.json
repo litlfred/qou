@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:00:44.475703+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T07:42:15.530436+00:00",
+  "commitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
   "assertions": [
     {
       "name": "J_i/J_j == tr_M_i/tr_M_j for all pairs at n=2 (q0, <=1e-25)",
-      "computed": "0.0",
+      "computed": "1.60861e-86",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-25",
@@ -14,7 +14,7 @@
     },
     {
       "name": "J_i/J_j == tr_M_i/tr_M_j for all pairs at n=3 (q0, <=1e-25)",
-      "computed": "8.04306e-87",
+      "computed": "1.60861e-86",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-25",
@@ -22,7 +22,7 @@
     },
     {
       "name": "J_i/J_j == tr_M_i/tr_M_j for all pairs at n=4 (q0, <=1e-25)",
-      "computed": "3.21722e-86",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-25",
@@ -37,11 +37,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 22,
   "computation": "probe-markov-trace-ratio-exact",
   "scriptFile": "probe_markov_trace_ratio_exact.py",
-  "scriptHash": "e32df6c2814c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "4999b73c3601",
+  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,8 +53,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_markov_trace_ratio_exact.py"
+    ],
+    "reproduce": "python3 -u computations/probe_markov_trace_ratio_exact.py"
   },
   "description": "Numerical-exact + symbolic cross-check of prop:markov-trace-ratio-exact: Jones values J = C(n,q)*tr_M with C braid-word-independent, so J_i/J_j = tr_M_i/tr_M_j (the normalisation cancels). Canonical engine markov/markov_trace_canonical.tr_M_word; substrate q0.",
   "contentBlock": "prop:markov-trace-ratio-exact",
@@ -70,7 +78,7 @@
         "C_n_q_at_q0": "-2.00272236386053329050782023799163176253410508509069737348067",
         "n_braids": 3,
         "n_ordered_pairs_checked": 6,
-        "max_pair_residual": "0.0",
+        "max_pair_residual": "1.60861e-86",
         "braids": [
           {
             "braid": "1",
@@ -83,8 +91,8 @@
             "word": [
               0
             ],
-            "tr_M_at_q0": "0.49932033418369445241344268025766630375194816404153194527617",
-            "J_at_q0": "-1.0"
+            "tr_M_at_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+            "J_at_q0": "-1.22704403406303911843381524573248077520555802544110662013243"
           },
           {
             "braid": "sigma0^3",
@@ -93,8 +101,8 @@
               0,
               0
             ],
-            "tr_M_at_q0": "0.73020403162969488549829901137297301991441688219856091462543",
-            "J_at_q0": "-1.46239594432591416013454561517610960232467675032048704234308"
+            "tr_M_at_q0": "0.848526607059009556201749746812107080366428963274248507457824",
+            "J_at_q0": "-1.6993632122877774920918752587488644631120220729972270837779"
           }
         ]
       },
@@ -102,15 +110,15 @@
         "C_n_q_at_q0": "4.01089686670712229975249197809186281588924074848413692174479",
         "n_braids": 5,
         "n_ordered_pairs_checked": 20,
-        "max_pair_residual": "8.04306e-87",
+        "max_pair_residual": "1.60861e-86",
         "braids": [
           {
             "braid": "sigma0",
             "word": [
               0
             ],
-            "tr_M_at_q0": "0.49932033418369445241344268025766630375194816404153194527617",
-            "J_at_q0": "2.00272236386053329050782023799163176253410508509069737348067"
+            "tr_M_at_q0": "0.612688037146465251595829863945899248026308391545087014074774",
+            "J_at_q0": "2.45742852845969443446146424142743468090229820600722103464036"
           },
           {
             "braid": "sigma0sigma1",
@@ -118,8 +126,8 @@
               0,
               1
             ],
-            "tr_M_at_q0": "0.249320796129316306699798262239700847037557731631611259830156",
-            "J_at_q0": "1.0"
+            "tr_M_at_q0": "0.375386630862388383999372303379009911453307219880331354258806",
+            "J_at_q0": "1.50563706152969670436963877272148157559140356898842216586977"
           },
           {
             "braid": "sigma0sigma1sigma0 (Garside)",
@@ -128,8 +136,8 @@
               1,
               0
             ],
-            "tr_M_at_q0": "0.551443414318455993583364700049129359532952093397879480324892",
-            "J_at_q0": "2.21178266265617260593866645112130670639386258035376045173588"
+            "tr_M_at_q0": "0.691166478358444526147719530979046206614241118678141951155491",
+            "J_at_q0": "2.77219746242088120424939758973512000356577992811431841288121"
           },
           {
             "braid": "sigma1sigma0sigma1 (braid-equiv)",
@@ -138,8 +146,8 @@
               0,
               1
             ],
-            "tr_M_at_q0": "0.551443414318455993583364700049129359532952093397879480324892",
-            "J_at_q0": "2.21178266265617260593866645112130670639386258035376045173588"
+            "tr_M_at_q0": "0.691166478358444526147719530979046206614241118678141951155491",
+            "J_at_q0": "2.77219746242088120424939758973512000356577992811431841288121"
           },
           {
             "braid": "sigma0^2sigma1",
@@ -148,8 +156,8 @@
               0,
               1
             ],
-            "tr_M_at_q0": "0.551443414318455993583364700049129359532952093397879480324892",
-            "J_at_q0": "2.21178266265617260593866645112130670639386258035376045173588"
+            "tr_M_at_q0": "0.691166478358444526147719530979046206614241118678141951155491",
+            "J_at_q0": "2.77219746242088120424939758973512000356577992811431841288121"
           }
         ]
       },
@@ -157,7 +165,7 @@
         "C_n_q_at_q0": "-8.03271285409249427968529106995215882243913156325675538501673",
         "n_braids": 3,
         "n_ordered_pairs_checked": 6,
-        "max_pair_residual": "3.21722e-86",
+        "max_pair_residual": "0.0",
         "braids": [
           {
             "braid": "sigma0sigma1sigma2",
@@ -166,8 +174,8 @@
               1,
               2
             ],
-            "tr_M_at_q0": "0.12449094324223497257324804432371011369235088341456684088082",
-            "J_at_q0": "-1.0"
+            "tr_M_at_q0": "0.229994898034101453459148252105252872451725426501674174485846",
+            "J_at_q0": "-1.84748297381421928796633910968538033777061455287236539302291"
           },
           {
             "braid": "sigma0sigma2",
@@ -175,8 +183,8 @@
               0,
               2
             ],
-            "tr_M_at_q0": "0.249320796129316306699798262239700847037557731631611259830156",
-            "J_at_q0": "-2.00272236386053329050782023799163176253410508509069737348067"
+            "tr_M_at_q0": "0.375386630862388383999372303379009911453307219880331354258806",
+            "J_at_q0": "-3.01537301498278139331715069698957984714343053840067668802437"
           },
           {
             "braid": "sigma1sigma0sigma2sigma1",
@@ -186,14 +194,14 @@
               2,
               1
             ],
-            "tr_M_at_q0": "0.275346909920888925110575489326013988847828702568027279777084",
-            "J_at_q0": "-2.21178266265617260593866645112130670639386258035376045173588"
+            "tr_M_at_q0": "0.423469432966870231246214725718192631693164161613953979570834",
+            "J_at_q0": "-3.40160835750823836285243077985619273577195213967153222150957"
           }
         ]
       }
     },
     "symbolic_cancellation_exact": true,
-    "max_numerical_pair_residual_all_families": "3.21722e-86"
+    "max_numerical_pair_residual_all_families": "1.60861e-86"
   },
   "caveats": [
     "Numerical assertions are 50-dps numerical-exact EVIDENCE at q0 for the algebraic identity J_i/J_j = tr_M_i/tr_M_j proved sorry-free in qou:QOU.BraidsKnots.markov_trace_ratio_exact; the symbolic assertion establishes the cancellation as an exact Q(q) identity (not a q0 coincidence). Probe, not a proof."
