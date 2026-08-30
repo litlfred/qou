@@ -4238,3 +4238,38 @@ What establishes the admissible set for the DECAY channel without the ruling.
 Bar-parity + faithfulness pin z_D GIVEN the cap; nothing yet derives the cap
 for this channel. That is the same open item the registry names, now with the
 logical structure around it fully mapped.
+
+
+## Step 12 — the decay channel is BLIND to the cap (so it HAD to be a ruling)
+
+Lean sorry-free: `threeRow_undetermined_by_decay`, `cap_member_of_family`.
+
+tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3), so the decay pairing depends on the
+weights ONLY through the difference. With normalisation that is 2 constraints on
+3 unknowns:
+
+    y_3 = g + t,  y_21 = (1 - g - 2t)/2,  y_111 = t
+
+normalised, decay pairing g, for EVERY t. A one-parameter family all giving the
+same Q-value and sweeping every value of y_(1^3).
+
+**The cap is not merely un-derived for this channel — it is UNDETERMINABLE BY
+it.** No decay measurement at any precision can establish or refute
+y_(1^3) = 0. It selects one member of a family the channel cannot tell apart.
+
+So the cap had to arrive as a ruling: there was never a decay-side derivation to
+find. A derivation would have to come from another channel or a structural
+argument, never from Q_beta itself. This CLOSES the question Step 11 left open,
+with a negative, and retro-justifies the registry's "no corpus block derives the
+decay fibre".
+
+### Arc status after Steps 9-12
+
+  what the channel determines   g = y_3 - y_(1^3), one affine scalar; and the
+                                data fixes it exactly (z_required = 0.99850)
+  what it cannot determine      y_(1^3) separately — hence the cap, hence the
+                                admissible set, hence the exclusion of 0.99850
+  derived here                  the bar-parity iff (full-bar <=> definite parity)
+                                and faithfulness picking z_D within {q, z_D}
+  still open                    a cross-channel or structural derivation of the
+                                cap. NOT findable in Q_beta data.
