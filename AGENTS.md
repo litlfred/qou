@@ -2076,6 +2076,50 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🛑 OWNER RULING 2026-08-30 — the muon pin is CODATA 2022. The frozen value
+> is retired.** Verbatim: *"C."* then *"CODATA 2022 for muon"*, given against the
+> three-values measurement below.
+>
+> `computations/audits/muon_pin_three_values_probe.py` establishes that **three
+> different numbers are all called "the muon q₀"**, diverging at the 13th
+> significant digit — five orders of magnitude above the framework's own 1 ppQ L1
+> target, and inside the ~11.5 ppb μ–p separation the two-pin vocabulary exists to
+> keep straight. Re-derived independently 2026-08-30 at `mp.dps = 60`, with
+> `Vol(4₁) = 2·Cl₂(π/3) = 2.02988321281930725004240510855`:
+>
+> | | `m_μ/m_e` | `q₀ = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` |
+> |---|---|---|
+> | **A** frozen pin | *(none — see below)* | `1.1099785955573347…` |
+> | **B** CODATA 2018 | `206.7682830` | `1.10997859555418057528159407961` |
+> | **C** CODATA 2022 | `206.7682827` | `1.10997859564273904668179512938` |
+>
+> **The ruling's reason is the dataset constraint, and it is measured rather than
+> aesthetic: CAL-1, CAL-2 and CAL-3 must come from one experimental dataset.**
+> Inverting **A** through its own defining relation gives `m_μ/m_e =
+> 206.768282989315111`, which matches **neither published figure** — it sits
+> strictly between them (5.17e-11 relative from 2018, 1.40e-9 from 2022). So A is
+> not that derivation at *any* CODATA vintage and cannot be in a common dataset
+> with anything; the tempting reading *"A is just the older CODATA"* is
+> **measurably false**. Between B and C, the live table already decides:
+> `constants.py` serves `MASS_RATIO_MU_E_STR = 206.7682827  # CODATA 2022` from
+> the same `codata.py` that supplies `M_E_MEV` for CAL-1, so **C is the only
+> choice that does not also require rolling CAL-1 back**.
+>
+> **What is already true and needs no work:** the live derivation path computes C
+> today — `q_muon_at()` returns `1.10997859564274`. What is frozen at A is the
+> **anchor-defining witness** `computations/q-pinning-50-digit.witness.json`.
+>
+> **🛑 THIS RULING DOES NOT AUTHORISE THE SWEEP, and the reason is on the record.**
+> Re-pinning that witness is what took `main` red on 2026-08-19: both anchors
+> collapsed to one string, **262 correctly-stamped muon witnesses flipped to
+> `Q0_FLIP`** (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
+> including, circularly, the one that regenerates the anchor. `q0_repin_sweep.py`
+> carries an `ANCHOR_DEFINING` exclusion for exactly this; **do not remove it** and
+> do not re-pin that file as a step in a bulk pass. Note also that C is a **live**
+> derivation over a CODATA input, so unlike A it moves whenever that table is
+> updated — accepted deliberately as the price of reproducibility from a published
+> source. Migration scope and staging: bean `qou-tekx`.
+>
 > **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
 > canonical; colour weighting canonical.** Verbatim: *"convention D is
 > convention. excise convention C."* / *"similarly, use proton pin and color
