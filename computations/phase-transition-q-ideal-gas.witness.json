@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:45:54.335206+00:00",
-  "commitSha": "bd725815a3d480c9429425de5e82a4f44a1c6730",
+  "computedAt": "2026-08-30T10:38:44.127983+00:00",
+  "commitSha": "2e270ede36ffe8698525e1c5b99dd16fdc77e9ed",
   "assertions": [
     {
       "name": "Direct substitution of [2]_q over-predicts T_boil for every material",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "phase-transition-q-ideal-gas",
   "scriptFile": "phase_transition_q_ideal_gas.py",
-  "scriptHash": "a937e711c0c8",
-  "scriptCommitSha": "874431aeba03e32a808c289370c8fff1827472b8",
+  "scriptHash": "214c6af3fc9f",
+  "scriptCommitSha": "13483c9b488f7fe9c8abbf6fa9b2b376d8d3a035",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -44,31 +44,31 @@
   "description": "Attempts to derive absolute boiling and freezing temperatures strictly from the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), this over-predicts the temperatures by a factor of 6.4x to 10x. This demonstrates that the true entropy of vaporisation ΔS_vap requires a more sophisticated topological partition function (likely involving the full Reeb flow phase space) rather than just the bare dimension [2]_q. Result is recorded honestly as open.",
   "data": {
     "H2O_T_boil_pred": "2404.9551321782452417070341341456516166636023071182",
-    "H2O_T_boil_obs": 373.15,
-    "H2O_boil_ratio": "6.4450090638570156458517326693207768535606432752165",
+    "H2O_T_boil_obs": "373.15",
+    "H2O_boil_ratio": "6.4450090638570152531342198422769706998890588426054",
     "H2O_T_melt_pred": "376.47503637849746788082626476567986979056776992339",
-    "H2O_T_melt_obs": 273.15,
-    "H2O_melt_ratio": "1.3782721448965678170203426665994213601544514707863",
+    "H2O_T_melt_obs": "273.15",
+    "H2O_melt_ratio": "1.3782721448965677022911450293453409108203103420223",
     "HF_T_boil_pred": "1476.9561409572919147439937889046664819727557646976",
-    "HF_T_boil_obs": 293.15,
-    "HF_boil_ratio": "5.0382266449165684096878894285350381942695845583635",
+    "HF_T_boil_obs": "293.15",
+    "HF_boil_ratio": "5.0382266449165680189117986999988622956600913003499",
     "HF_T_melt_pred": "485.24924541563573313821973757149187152929826576963",
-    "HF_T_melt_obs": 189.6,
-    "HF_melt_ratio": "2.5593314631626358000334112552285145975338105873956",
+    "HF_T_melt_obs": "189.6",
+    "HF_melt_ratio": "2.5593314631626357233028467171492187316946111063799",
     "NH3_T_boil_pred": "1022.1059311757542277254895070119019370820309805252",
-    "NH3_T_boil_obs": 239.81,
-    "NH3_boil_ratio": "4.2621489144562537760497263139522999355966891028738",
+    "NH3_T_boil_obs": "239.81",
+    "NH3_boil_ratio": "4.2621489144562538164609044952750174599976272070607",
     "NH3_T_melt_pred": "335.80965479205941886202463254947490578399225117863",
-    "NH3_T_melt_obs": 195.4,
-    "NH3_melt_ratio": "1.7185755107065476412131723267530257812071104393257",
+    "NH3_T_melt_obs": "195.4",
+    "NH3_melt_ratio": "1.7185755107065476912079049772235153827225806099213",
     "boil_ratios": {
-      "H2O": 6.445009063857015,
-      "HF": 5.038226644916568,
-      "NH3": 4.262148914456254
+      "H2O": "6.4450090638570152531342198422769706998890588426054",
+      "HF": "5.0382266449165680189117986999988622956600913003499",
+      "NH3": "4.2621489144562538164609044952750174599976272070607"
     },
     "boil_ratio_range": {
-      "min": 4.262148914456254,
-      "max": 6.445009063857015,
+      "min": "4.2621489144562538164609044952750174599976272070607",
+      "max": "6.4450090638570152531342198422769706998890588426054",
       "claimed_band_in_assertion_name": "6-10x",
       "matches_claimed_band": false
     },

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-27T11:56:04Z
-updated_at: 2026-08-30T09:56:31Z
+updated_at: 2026-08-30T10:13:22Z
 ---
 
 Measured 2026-08-27. Two text-level detectors now exist for the same defect
@@ -146,3 +146,14 @@ definition-collapsed reads the PROSE against the proof. Two independent signals,
 one verdict, one ledger row.
 
 Follow-up 2 (`--strict` in CI) remains moot while CI is `workflow_dispatch`-only.
+
+
+
+Merged 2026-08-30 as `7123c5b47`..`26fd0bf71` (PR #6168, rebase). Post-merge on
+main: `lean_decl_scan selftest OK (17 regression cases)`,
+`definition-collapsed audit: 3 CRITICAL, 2257 advisory` — CRITICAL is the
+published tier and is the 2 -> 3 this PR argues for; the advisory denominator
+moved 2252 -> 2257 from main gaining Lean files, not from this change.
+
+Follow-up 2 (`--strict` in CI) stays open and stays moot while CI is
+`workflow_dispatch`-only (`qou-gwe9`).
