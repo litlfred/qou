@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-23T20:28:24Z
+updated_at: 2026-08-30T12:04:35Z
 ---
 
 
@@ -671,3 +671,117 @@ material, so deleting the wrongly-migrated copy removes the defect outright.
 Worth recording, because it is the seventh direction-shape and the first that
 resolves by deletion: **sibling wrong, library right, and the sibling should
 not exist at all.** The previous six all ended with two copies in agreement.
+
+
+## JOINED with qou-kfcl 2026-08-30 — the uncovered cell is bigger than this one
+
+`check-mirror-drift.ts` reads `structure`/`class` heads only (its own
+docstring says so), so **every `def` and `abbrev` is invisible to it**.
+`lean-duplicate-fqn-audit.py` covers library-vs-library for `def`/`abbrev`.
+Nobody covered sibling-vs-library for `def`/`abbrev`.
+
+Measured with `scripts/lean-name-surface-audit.py` (shares the calibrated
+parser):
+
+| collision | identical | DRIFTED |
+|---|---|---|
+| library ~ library | 0 (was 8, drained) | 7 (was 16) |
+| **library ~ sibling** | 74 | **54** |
+| sibling ~ sibling | 37 | 27 |
+
+Live `check-mirror-drift --package qou` on the same tree: 136 pairs / 103
+identical / **33 drifted** — so the population this bean tracks is **33**,
+and the uncovered `def`/`abbrev` population is **54**. It also reports
+`duplicatesInLibrary: 0`, which is true for structures and classes and
+was 26 for defs and abbrevs.
+
+Three of the 54 are not merely drift:
+
+- **`QOU.Archimedean.R_q` is declared in ELEVEN places**, and two siblings
+  (`climax-volume-mass/q-angular-momentum`, `q-energy`) say
+  `abbrev R_q := ℝ` where every other says `LaurentPolynomial ℤ`. One name,
+  two base rings, across the §7c wall.
+- **Two siblings are `:= trivial` stubs shadowing a real library definition**
+  — `signSequenceOfBraid` and `staircasePartition`. The first says so in its
+  own header ("Sibling stub … the compiled formalisation lives in
+  `QOU/AppendixSurreals/SignSequence.lean`"), which is exactly what
+  AGENTS.md §0a "No shadowing stubs (STRICT)" forbids: the block's `lean.ref`
+  resolves to the stub, not to the five-binder definition Lake compiles.
+- **`T_pp` / `T_nn` / `T_mix`** carry three different formulas across the two
+  library copies and the sibling.
+
+Note the checker lives on unmerged folio-assistant branch
+`claude/gracious-dijkstra-0ijp2l` and is NOT on `main`; running it needs a
+worktree of that branch (one file will not do — it imports
+`ARCHIMEDEAN_TYPE_RE` from `qa-checkers-voice.ts`, which main lacks).
+
+
+## RESOLVED: `R_q` — 11 sites, two rings, now one (2026-08-30)
+
+Owner direction: *"keep it as a general commutative ring as far as possible."*
+
+`QOU.Archimedean.R_q` was declared in **11** places — nine
+`LaurentPolynomial ℤ`, two `ℝ` (`climax-volume-mass/q-angular-momentum`,
+`q-energy`), all in the same namespace. Two further canonical names of that
+namespace were overloaded the same way in the **same two files**:
+`q_param` (the indeterminate `T 1` vs a numeric `1.1097`) and `hbar_q` (the
+ring element `1 - q_inv` vs a function of `q`).
+
+**Resolved by acting on what those two files' own docstrings already
+claimed** — *"the underlying combinatorial content stays generic to any
+commutative ring"* — and had never acted on:
+
+| layer | contents | ground |
+|---|---|---|
+| generic | the Casimir `[j]_q·[j+1]_q`, the energy total, the rest-energy theorem, `ℏ_q`, both crossing energies | `{R : Type*} [CommRing R]` / `[Field R]`, q-number carried as **data** on the structure |
+| archimedean | the real-exponent bracket (`q ^ n` at real `n` is `Real.rpow`) and the crossing asymmetry (an ordering claim) | `ℝ`, written as `ℝ` |
+
+So `abbrev R_q := ℝ` and `def q_param := 1.1097` are **gone, not renamed**:
+the generic layer carries no ground ring at all. Helpers moved into each
+block's own `QEnergy` / `QAngularMomentum` namespace, which cannot collide
+with the library's. Both `lean.ref` targets keep their names.
+
+**Measured after:** `R_q` **11 → 9 sites, all one ring**; `q_param` **8 → 6,
+all one meaning**. Verified: three files `lean`-direct exit 0; `#print
+axioms` on all six theorems gives the standard three and **no `sorryAx`**,
+and the generic `qCasimir_zero_of_qNumber_zero` **depends on no axioms at
+all**.
+
+Two facts the split had been hiding, now stated where they belong: the
+translational term needs no non-vanishing side condition on `[n]_q`, because
+`0 / x = 0` in any `DivisionRing`; and `1.1097` is a rounded illustration,
+not the substrate anchor (live pin `1.1099785827513808`), which
+`def q_param : R_q := 1.1097` read as.
+
+**Residual on this bean:** `hbar_q` still has **three bodies across three
+files** — the library's `1 - q_inv : R_q` against `(q - 1) / q : ℝ → ℝ` in
+`observations/eos-borromean-cfl` and
+`predicted-spectra/quantum-dilogarithm-volume`. Same value, different type
+and different form; a smaller version of the same defect.
+
+
+### Correction: `hbar_q` is NOT "a smaller instance of exactly what `R_q` was"
+
+I wrote that when recording the `R_q` fix. Measured, it is a different and
+much milder defect, and the difference is the part that matters:
+
+| | `R_q` | `hbar_q` |
+|---|---|---|
+| the two bodies denote | **two different rings** (`LaurentPolynomial ℤ`, `ℝ`) | **one quantity** — the library's own docstring reads "ℏ_q = (q − 1)/q = 1 − q⁻¹" |
+| both elaborate at a use site? | **yes** — both are types, so a wrong resolution is silent | **no** — the library's takes no argument, the siblings' takes `(q : ℝ)`; misuse is a type error |
+| named by a `.ts` `lean.ref`? | — | **no**; the two blocks ref `eos_borromean_cfl` and `quantum_dilogarithm_volume` |
+| visible together in one compilation? | — | never: siblings cannot be imported |
+
+Both sibling files (`observations/eos-borromean-cfl`,
+`predicted-spectra/quantum-dilogarithm-volume`) are archimedean throughout
+on their own merits — `3 ^ (2/3 : ℝ)` and `Real.log` respectively — so
+`hbar_q (q : ℝ) : ℝ` is the right type there and there is nothing to
+generalise.
+
+**Left as-is deliberately**, not overlooked. Renaming two files to move a
+count would be churn: nothing resolves to the wrong object, and no silent
+failure is possible. What remains is a readability point — the corpus now
+carries three spellings of one quantity (`1 - q_inv` in the ground ring,
+`(q - 1) / q` at `ℝ`, and the generic `QEnergy.hbar := 1 - 1 / q` added by
+the `R_q` fix) — worth a cross-reference if someone is in these files
+anyway, not worth a pass of its own.

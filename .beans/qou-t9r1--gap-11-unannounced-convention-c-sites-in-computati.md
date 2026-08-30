@@ -96,3 +96,74 @@ All enumerated sites dispositioned. **The header said 8; the list held 7.**
 
 1. **A live layer straddle**, pre-existing, now removed: `markov_stab_trace_axis_probe` hardcoded the frozen MUON literal while reading a PROTON-anchored y-lambda cache, and the two met in one quantity (`y_lam * f_lam`). Same shape as the μ₃ Fréchet incident.
 2. **The D radical, independently confirmed**: under D exactly the ℓ(λ) ≥ 3 Wenzl weights vanish, in exact rational arithmetic at every sampled s. Matches qou-fu8c by a completely different route.
+
+## CLOSED 2026-08-30 — 0 blocking, 0 unresolved, 99 adjudicated
+
+Drained across three PRs: #6058 (86 → 16), #6169 (16 → 11), #6224 (11 → 0).
+
+**What "0" means, precisely.** Every live convention-C binding the value audit
+can see is accounted for with a written reason. It does **not** mean convention C
+is gone from the corpus. Most of the surface persists **by design**:
+
+- the C arm of two-arm comparisons (deleting them deletes the evidence *for* the
+  D ruling);
+- C-frame ladder work, which `qou-cds1` blocks from migrating until the c_k
+  ladder is re-derived under D — and that is a re-derivation, not a z-swap
+  (`decayLadder_zC_threeRow_ne_zero` proves the C-frame ladder and the mass
+  channel's three-row forcing are mutually exclusive).
+
+**Four ways a site looks migratable and is not**, each found by reading rather
+than pattern-matching:
+
+1. it reproduces a **Lean-defined object** (`CanonicalMarkovWeightsH3.explicitInstance`);
+2. it reproduces a **published C-era artefact** (`toffoli_published_vs_construction_audit`);
+3. it reproduces a **corpus-proved closed form** (`trm-hopf-sigma1-sq`, proved over
+   ℚ(q^½) *with* z_C — measured NOT C/D-invariant);
+4. **z_C is the object of study**, and z_D breaks the probe's own check. Two
+   instances, both proved:
+   - `prearchimedean_z_recursion`: z_C satisfies the derived D-finite ODE
+     exactly; z_D leaves a nonzero residual.
+   - `z_bar_parity_fmap_class`: z_C is bar-even exactly; z_D is bar-**neither**
+     (`z_D(1/q) − z_D(q) = −q + 1/q`).
+
+**Detector findings, four:**
+
+- **taxonomy row 20** — the D arm can live in **Lean**, so no Python-side pairing
+  test can see it. First cross-language variety.
+- **taxonomy row 21** — the anti-invisibility guard was **mpmath-only**, so
+  symbolic consumers had to inline C and were invisible to the mechanism built to
+  make deliberate C visible. Scope measured and **narrow**: 1 site, not a class
+  (the "many symbolic inliners" hypothesis was tested and is FALSE — 0 of 16
+  apparent blind-spot files carried a real binding).
+- **name-fix ≠ value-fix** — a prior agent renamed a binding `z` → `z_C` so the
+  *shape* audit would read it as deliberate. That did nothing for the *value*
+  audit, which keys on the value. A fix aimed at one detector does not satisfy
+  the other.
+- **UNRESOLVED is invisible in both directions** — two confirmed C sites sat
+  there: not blocking (so a drain reads as finished) and not adjudicable (the
+  ledger matcher only reaches resolved rows, so an entry for them matched
+  nothing). Root cause: `_var_kind` triages the sqrt-variable disguise from a
+  hardcoded **name list**, inside an audit whose whole point is evaluating
+  **values**. Two names added, limitation recorded in source; the principled fix
+  is to resolve each variable at its binding.
+
+**Three live bugs found while reading, none of them convention issues:**
+
+- **TR_M[5] = z³ instead of h·z² + z**, three instances — `compound_shift_nf`
+  (`qou-looi`) and `qbeta_c3_barodd_hs_matrix_resolvent` (`qou-dbau`), after
+  `pyhecke/gram.py` was fixed 2026-05-19. The second **invalidates a recorded
+  scope-(a) refutation**: correcting it flips `pairing_is_bar_even` to FALSE,
+  which is what that probe's conclusion rests on.
+- **a vacuous assertion** in `deltalambda_bareven_b4` that cannot fail (labelled,
+  not "fixed" — the symmetry is syntactic, so no formulation of it can be
+  non-vacuous).
+- **6 raw float64 fields** landing in a witness that the raw-float64 ratchet does
+  not flag; cause left undetermined rather than guessed.
+
+**Successors:** `qou-dbau` (redo the bar-parity argument on the corrected Gram
+matrix), `qou-cds1` (the D-frame ladder re-derivation), and the binding-site
+variable resolver.
+
+Three entries are marked as resting on **inferred** rather than declared C-frame
+status (`eval_map_bar_decomposition`, `eta_singularity`, `t3_carrier`) so they can
+be re-examined specifically rather than trusted equally with the rest.

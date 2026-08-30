@@ -161,19 +161,6 @@ theorem padic_qou_lifts_from_finite_field
      frobenius_surjective := fun y => ⟨y, rfl⟩
      fv_comm := fun _ => rfl }, rfl⟩
 
-/-- The strong multiplicativity condition ([fred2005, Theorem 4.12])
-    ensures the Frobenius relation is preserved in the lifted p-adic QOU:
-    `F ∘ V ∘ F = F ∘ F ∘ V` on the underlying F-crystal carrier.
-
-    LaTeX: `\label{prop:skew-poisson-integration}`, item (3).
-    Reference: [fred2005, Theorem 4.12]. -/
-theorem padic_frobenius_relation_preserved
-    (pq : PAdicQOU) :
-    ∀ (x : pq.carrier),
-      pq.frobenius (pq.verschiebung (pq.frobenius x)) =
-      pq.frobenius (pq.frobenius (pq.verschiebung x)) :=
-  pq.fv_comm
-
 /-- The unit-root condition on the F-crystal is equivalent to
     integrability of the skewed-Poisson structure on the underlying
     formal group: the Frobenius is surjective.
@@ -184,5 +171,19 @@ theorem unit_root_iff_skew_poisson_integrable
     (pq : PAdicQOU) :
     (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) :=
   pq.frobenius_surjective
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `padic_frobenius_relation_preserved` — body was `pq.fv_comm`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.PAdicQuantumGroups

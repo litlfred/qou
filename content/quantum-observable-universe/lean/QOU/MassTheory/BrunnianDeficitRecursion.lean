@@ -34,6 +34,12 @@ proof. Fabricating the instance with `sorry` would violate the anti-laundering d
 cap-cup, Markov property) that would discharge the instance for real is the remaining
 **formalization** task — mechanical, not a mathematical gap.
 
+The **field-algebra core** of that proof — the step turning the two TL facts (identity (I)
+`G_n=[2]^n(1+h²)−h²Q_n` and the 2-term Q-recursion) into the deficit recursion — is now formalized
+sorry-free in `QOU.MassTheory.DeficitRecursionReduction.deficit_recursion_of_reduction`. So the
+outstanding Lean obligation is precisely: prove those two TL facts for the concrete Markov-trace
+`G`, `Q`; the passage to `D_{A+1}=−h²(h²+2)D_A` is then already checked.
+
 Base cases `k=0` (A=3) and `k=1` (A=4) are tied to the proved slices `borromean_deficit_factor`
 and `borromean4_deficit_factor`: `deficitClosed 0 = 1 − tauBorromean` and
 `deficitClosed 1 = 1 − tauL4`.

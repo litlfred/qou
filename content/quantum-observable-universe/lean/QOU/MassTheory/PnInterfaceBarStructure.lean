@@ -55,7 +55,13 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
 
-namespace QOU.MassTheory
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.MassTheory.AveragedLetterSpectrum
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.MassTheory.PnInterfaceBarStructure
 
 -- `CharZero` is required, not incidental: every statement here is about an
 -- AVERAGE of the two like-flavour factors, so `2` must be invertible.  In
@@ -163,4 +169,4 @@ theorem barEven_offset_insufficient (q ε : K) (hh : heckeH q ≠ 0) :
     exact (mul_eq_zero.mp h2).resolve_left hne
   · intro h; rw [h]; ring
 
-end QOU.MassTheory
+end QOU.MassTheory.PnInterfaceBarStructure

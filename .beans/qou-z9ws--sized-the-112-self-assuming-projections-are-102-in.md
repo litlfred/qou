@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T14:15:34Z
+updated_at: 2026-08-30T14:39:06Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -174,3 +174,47 @@ literally says *"It remains a `genuine` field-projection"* — and never set the
 in a row until I read the entry rather than my own intention.
 
 Their bodies were verified byte-identical to `origin/main` before refreshing.
+
+## Batch 3 — the mechanical class is now EMPTY. Drain closed at 112 -> 90.
+
+Removed the last three library zero-reference projections:
+
+  markov_gns_embedding          ⟨inst.repr, inst.repr_add, inst.repr_mul, inst.repr_faithful⟩
+  adjoint_vanishing_propagation jgcs.adjoint_vanishing
+  dressed_mass_split_hypotheses ⟨h.M_N_pos, h.q_gt_one⟩
+
+The first and third are tuple projections that batch 2's deliberately
+conservative single-field guard declined; the second is a single-field
+projection whose body line began with `--` comments, so the same guard read it
+as a proof. Both were guard conservatism, not new mathematics.
+
+**Extra finding on `adjoint_vanishing_propagation`, recorded in the file
+because it outlives the removal.** It bound `(k : ℕ)` — the jet level whose
+*propagation* it is named for — and its conclusion,
+`Subsingleton ((𝟙_ C) ⟶ jgcs.adjointObj)`, never mentions `k`. The statement
+was level-independent, so "the adjoint vanishing at level 0 implies at all
+levels" lived entirely in a comment and in the name. Encoding it needs the
+level-indexed adjoint object the abstract formulation does not provide.
+
+## Final position
+
+    genuine proof-no-self-assuming-projection   112 -> 90
+    ledger entries                              380 -> 348
+    gate                                        exit 0, all 139 fresh
+
+Composition of the remaining 90:
+
+    74  referenced elsewhere    — need the witness built or consumers rewritten
+    16  content-block siblings  — the .md claims them; removal is AUTHORIAL
+     0  library, zero-reference — exhausted
+
+**The mechanical seam is closed.** Everything left needs either mathematics
+that is open (constructing a witness for a context class that was standing in
+for it) or an authorial decision about what a content block claims. Neither is
+an agent's call, which is why this stops here rather than continuing.
+
+Four untouched declarations staled on their file hashes across this batch
+(`dressed_mass_from_substrate_split`, `proton_pair_skein_approx`,
+`neutron_pair_skein_approx`, `skein_mass_relation_holds`); each verified
+byte-identical to origin/main before its verdict was refreshed, verdict field
+included.

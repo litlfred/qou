@@ -26,7 +26,7 @@ def volBorromean : ℝ := 7.32772474
 
 /-- q-deformed Planck constant ℏ_q = (q − 1)/q.  Local copy
     (same provenance note as `volBorromean` above). -/
-def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- ℏ_q² for convenience. -/
 def hbarQSq (q : ℝ) : ℝ := (hbarQ q) ^ 2

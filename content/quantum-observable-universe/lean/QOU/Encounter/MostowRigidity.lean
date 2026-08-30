@@ -317,9 +317,18 @@ theorem figureEight_volume_lt_knot5_2_volume :
   -- the 5₂ value is ≈ 0.72, an order of magnitude wider than the 1/12 uncertainty the
   -- bracket leaves on `VOL_4_1`, so the existing coarse bound is comfortably enough.
   --
-  -- The 5₂ side is STILL a truncated literal and still carries the same defect; making
-  -- it exact needs a LOWER bound on `VOL_5_2`, which the corpus does not have (bean
-  -- `qou-f8lit`).  Exactifying one side is what makes this provable at all.
+  -- The 5₂ side is STILL a truncated literal and still carries the same defect.
+  --
+  -- This used to add "making it exact needs a LOWER bound on `VOL_5_2`, which the corpus
+  -- does not have".  A lower bound now exists — `QOU.Knot.FiveTwoVolumeChord`'s
+  -- `VOL_4_1_lt_VOL_5_2` (bean `qou-52ch`), by Rivin concavity along the chord from the
+  -- regular ideal shape — but note WHAT it bounds `VOL_5_2` below by: `VOL_4_1`.  That is
+  -- exactly the quantity on the left here, so it proves the exact-constant form of this
+  -- very comparison and nothing stronger; it does not license replacing the literal in
+  -- the `knot5_2` instance, which would need a bound separating `VOL_5_2` from the next
+  -- value up in the spectrum.  The exact-constant statement lives in `FiveTwoVolumeChord`
+  -- and in `Encounter.FiveTwoVolumeBridge.vol_lt_of_realises`; the `:leanval` codemod
+  -- decision for the instance itself is still open (bean `qou-f8lit`, item 1).
   have hb := QOU.Knot.abs_Cl_2_pi_div_three_sub_le
   have hs := QOU.Knot.sqrt_three_lt
   have hs0 := Real.sqrt_nonneg 3

@@ -326,6 +326,8 @@ import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mass.SumSYTEqInvolution
+import QOU.Mathlib.YoungLatticeUpOperator
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
@@ -447,6 +449,7 @@ import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.LobMonotonicity
+import QOU.Archimedean.BlochWignerNonneg
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
@@ -1262,6 +1265,96 @@ import QOU.Mathlib.RothOperatorFamily
 -- vector, one ordering) to the split form every operator-family result is written for.
 import QOU.Mathlib.RothVariableSplit
 import QOU.Mathlib.RothRealLadder
+import QOU.Mathlib.RothGammaProducer
+import QOU.Mathlib.RothAuxiliaryPolynomial
+import QOU.Mathlib.RothHouseBound
+import QOU.Mathlib.RothAuxiliaryConstruction
+import QOU.Mathlib.RothAuxiliary
+-- Roth's theorem step 2, arithmetic half: a translated coefficient at a rational
+-- point has denominator dividing prod q_h^{r_h}, so any bound below its reciprocal
+-- forces it to vanish -- which is a lower bound on the index there, the statement
+-- Roth's Lemma (step 3) contradicts.  The analytic half (Taylor expansion about
+-- alpha) is deliberately left as a hypothesis; see the module header.
+import QOU.Mathlib.RothRationalIndex
+-- The two facts step 2's smallness hypothesis is built from: Taylor's theorem in
+-- the form Roth needs (translating by alpha then gamma is translating by alpha+gamma,
+-- so the index at alpha deletes the low-weight terms of the expansion at alpha+gamma),
+-- and a translateMatrix bound that TRACKS the power of gamma the entry carries.
+-- RothAuxiliaryPolynomial's (2B)^{|n|} is the wrong shape here: step 2's whole content
+-- is that gamma = beta - alpha is tiny, and that bound throws it away.
+import QOU.Mathlib.RothTaylorBound
+-- Produces the constant S the Taylor bound was left waiting on, and closes step 2.
+-- Two weightings meet here: the index gap is weighted by 1/r_h, the sizes by log q_h,
+-- and r_h * T_h >= K is exactly what converts one into the other.  That is Roth's
+-- normalisation r_h log q_h ~ L in the only form the estimate needs -- the same fact
+-- RothGammaProducer discharges for Gamma_m's growth clause.
+import QOU.Mathlib.RothIndexGap
+-- Step 4: steps 2 and 3 collide.  Both bound the SAME number -- the index of the
+-- auxiliary polynomial at the rational point -- one from below, one from above, and
+-- Roth's theorem is that for the right parameters they cannot both hold.  Nothing was
+-- mathematically missing; what was missing is that the two had never been written in
+-- one place, so nothing forced their interfaces to agree (algebraMap vs Int.castRingHom,
+-- and Gamma_m's p,q against the numerators and denominators of the approximations, which
+-- are unrelated despite the shared letters).
+import QOU.Mathlib.RothContradiction
+-- The two-sided normalisation step 4's inequality needs -- and the finding that
+-- rothDegrees already satisfies it.  r_h = log_{H_h} N puts r_h log H_h within
+-- log H_h of log N on BOTH sides, so Gamma_m's growth clause (which consumes the
+-- lower half) and step 4's inequality (which needs both) were never using different
+-- normalisations.  The worry that opened qou-ujl8 was unfounded; recording that they
+-- coincide is the fix, not a record reconciling them.
+import QOU.Mathlib.RothNormalisation
+-- O_K's replacement for "a non-zero integer has absolute value at least one".
+-- Over Z smallness at the one place forces vanishing; over O_K it does not -- an
+-- algebraic integer can be tiny at one place and enormous elsewhere with |N(x)| >= 1
+-- intact.  Vanishing needs smallness at phi_0 AND a bound at every other conjugate,
+-- so the O_K case has an input the Z case does not.  Not a generalisation: a
+-- different theorem with different hypotheses.
+import QOU.Mathlib.RothAlgebraicInteger
+-- Step 2 over O_K, assembled: the Taylor bound at phi_0 and the height budget at
+-- the other d-1 conjugates meet the vanishing criterion.  The two enter the final
+-- inequality DIFFERENTLY -- phi_0 linearly, the conjugate bound raised to the d-1 --
+-- so slack in conjBound costs d-1 times as much, which is why it is named.  Over Z
+-- the asymmetry vanishes because d = 1; that is a fact about the shape, not a route
+-- from one vanishing criterion to the other.
+import QOU.Mathlib.RothAssembly
+-- ROUTE A: the auxiliary polynomial over Z, so that step 1 can reach step 3 at all.
+-- RothAuxiliary builds it over O_K (that is what Mathlib's number-field Siegel lemma
+-- produces) while Roth's Lemma requires MvPolynomial sigma Z through InRothPolySet, so
+-- those two never composed.  The join is made here on the Z side, which is cheaper:
+-- Siegel over Z is in Mathlib and everything from step 2 onward already works over Z.
+-- One O_K-linear vanishing condition is finrank Q K integer ones, so deg(alpha) comes
+-- back into the count and "take m large" becomes m > deg(alpha)/(4 eps^2).
+import QOU.Mathlib.RothAuxiliaryInt
+-- THE CHAIN CLOSES: steps 1 -> 2 -> 3 -> 4 with the coefficient rings agreeing.
+-- Two pieces of glue, both small enough to be invisible and large enough to be wrong:
+-- Siegel states its height bound over R while InRothPolySet wants an integer, so the
+-- ceiling is taken (the only direction that is a consequence rather than an assertion);
+-- and step 1 proves the index over K while step 2 consumes it over R, so it transports
+-- along a real embedding -- which is a real hypothesis, being the statement that the
+-- alpha_h are REAL algebraic numbers, and the composition refuses to typecheck without one.
+import QOU.Mathlib.RothIntegerChain
+-- THE PARAMETER SELECTION -- the one piece of the arc that CONSTRUCTS data rather
+-- than composing supplied hypotheses, and the only place the "infinitely many
+-- solutions" assumption is consumed.  Greedy recursion: pick a denominator past a
+-- threshold, raise it to a power, pick another past THAT.  The max against a floor is
+-- load-bearing -- without it a later height could land below the floor and Gamma_m's
+-- two_le would fail on every index but the first.  At floor 2^F it discharges clause 3
+-- as well, which is the clause that bites hardest (m = 2 needed H = 1024 for it).
+import QOU.Mathlib.RothSelection
+-- The two size estimates hbound's non-circularity rests on, and which RothSelection
+-- could only state: #box <= 2^{sum r_h} and ||auxMatrixInt|| <= c(K) (2B)^{sum r_h}.
+-- Both constants are inert in r, so log b is LINEAR in sum r_h -- which is what lets
+-- the log N on the two sides of b^{mq} <= H_0^{r_0 p} cancel.  The coordinate-vs-house
+-- comparison is Mathlib's basis_repr_norm_le_const_mul_house, so the arc assumes nothing.
+import QOU.Mathlib.RothSiegelBound
+-- The exchange between the two currencies the chain is stated in.  The selection produces
+-- heights and a threshold N; roth_contradiction_of_normalisation consumes real constants
+-- cH, theta, L' and one inequality.  Every conversion turns out to be a FLOOR on the heights
+-- or a POWER of them below N -- exactly the selection's own parameters.  The normalisation
+-- slack eta is 1/k from (H h)^k <= N, and height_le_mul_den is what makes a floor on the
+-- heights serve as a floor on the DENOMINATORS, which is what hpt actually constrains.
+import QOU.Mathlib.RothFinalAssembly
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

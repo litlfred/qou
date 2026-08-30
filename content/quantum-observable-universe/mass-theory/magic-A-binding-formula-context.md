@@ -9,7 +9,7 @@ regimes**:
 | Doubly-magic | $\mathfrak{B} = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Borromean residue prefactor $\times$ nucleon count, no per-knot evaluation |
 
 The dispatch is determined by the substrate:
-[`prop:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)
+[`conj:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)
 proves that at a doubly-magic level $A = Z + N$ with both $Z, N \in
 \mathfrak{M}$, the Littlewood–Richardson fusion of the $Z$-block and
 $N$-block collapses to a **single** self-conjugate Specht module —

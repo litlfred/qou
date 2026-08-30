@@ -494,8 +494,16 @@ signature, as an instance argument a caller has to produce.
 
 **No instance exists.** `RSKIdentitiesContext` has no instance anywhere in this
 corpus, degenerate or otherwise, so neither identity can be applied at a
-concrete `k` and nothing downstream is silently discharged. That is the intended
-state until the RSK program lands, not an oversight.
+concrete `k` and nothing downstream is silently discharged.
+
+**But one of the two fields is no longer open (2026-08-30).**
+`QOU.Mass.sum_dimSYT_eq_involution_keystone` proves `sum_dimSYT_eq_involution`'s exact
+statement, sorry-free and unconditionally — and *not* by RSK: Young's lattice is a
+`1`-differential poset, and that route reaches the involution recurrence with finite
+combinatorics on `YoungDiagram` (`QOU.Mathlib.upSum_eq`).  So the section heading above,
+and "until the RSK program lands", now overstate the gap: `branching_two_one` is the one
+field still genuinely open.  Dropping the discharged field from the class is a separate
+change (it moves every consumer's signature) and has not been made here.
 
 Their sibling `skew_le_straight` is stated here too but is no longer cited — it
 is proved above, unconditionally. They are siblings of the canonical

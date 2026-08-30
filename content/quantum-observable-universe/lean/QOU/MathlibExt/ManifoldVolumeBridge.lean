@@ -87,9 +87,16 @@
 
   The second thing not proved here, for the same class of reason: **positivity**.
   `0 < vol m` for a realised manifold would follow from `0 < D(z)` on the upper half
-  plane, and that is not in the corpus -- only `Λ'' > 0` on `(π/2, π)` and the vanishing
-  on the reals are.  So it is left open rather than assumed as a further class field,
-  which would have been the easy and dishonest move.
+  plane.  It is left open rather than assumed as a further class field, which would have
+  been the easy and dishonest move.
+
+  **Sharpened 2026-08-30, because this paragraph said more than it should have.**  It
+  read "*that is not in the corpus -- only `Λ'' > 0` on `(π/2, π)` and the vanishing on
+  the reals are*", which is an absence claim about `D` with no qualifier.  The corpus now
+  carries `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` -- `0 ≤ D(z)` for every
+  `0 < z.im`, from Milnor's angle formula and `LobMonotonicity.lob_sum_nonneg`.  So the
+  **non-strict** half is closed and only the **strict** inequality is open, which is the
+  half this class actually needs.  Say `0 < D(z)`, not `positivity`, when recording it.
 
   -- Ref: [thurston1978] Ch. 4 (hyperbolisation; the gluing-equation solution)
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)

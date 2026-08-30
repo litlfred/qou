@@ -17,7 +17,7 @@ under the categorical mass-ratio formula (per
   derivation Lean infra to compute it from first principles
   yet; the Python compute layer derives the 50-dps value).
 - `c_q : ℝ` — speed of light in cat units, `c_q = 1 / (q_0 - 1)`.
-- `hbar_q : ℝ` — Planck constant in cat units, `(q_0 - 1) / q_0`.
+- `hbarQ : ℝ` — Planck constant in cat units, `(q_0 - 1) / q_0`.
 - `markovParameter : ℝ` — `z = 1 / (q_0^{1/2} + q_0^{-1/2})`.
 - `eta_q : ℝ` — operational entropy, `(2q_0 - 1) / q_0³`.
 
@@ -91,17 +91,17 @@ theorem c_q_pos : 0 < c_q := by
   exact div_pos one_pos q_0_sub_one_pos
 
 /-- **Planck constant in cat units**: `ℏ_q := (q_0 - 1) / q_0`. -/
-noncomputable def hbar_q : ℝ := (q_0 - 1) / q_0
+noncomputable def hbarQ : ℝ := (q_0 - 1) / q_0
 
 /-- `ℏ_q > 0`. -/
-theorem hbar_q_pos : 0 < hbar_q := by
-  unfold hbar_q
+theorem hbarQ_pos : 0 < hbarQ := by
+  unfold hbarQ
   exact div_pos q_0_sub_one_pos (lt_trans one_pos q_0_gt_one)
 
 /-- `c_q · ℏ_q = 1 / q_0`.  Identity `(1 / (q_0 - 1)) · ((q_0 - 1) /
     q_0) = 1 / q_0`. -/
-theorem c_q_mul_hbar_q : c_q * hbar_q = 1 / q_0 := by
-  unfold c_q hbar_q
+theorem c_q_mul_hbar_q : c_q * hbarQ = 1 / q_0 := by
+  unfold c_q hbarQ
   field_simp [ne_of_gt q_0_sub_one_pos, q_0_ne_zero]
 
 /-- **Markov parameter**: `z := 1 / (q_0^{1/2} + q_0^{-1/2})`.  This

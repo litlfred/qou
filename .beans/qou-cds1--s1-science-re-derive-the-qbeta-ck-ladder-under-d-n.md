@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:19:27Z
+updated_at: 2026-08-30T13:57:32Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3128,3 +3128,212 @@ moving centre" (dissolved: the centre is the even factor's numerator). It is:
 `q^{2k}`-integer basis, and do they reproduce the ladder's rung structure?**
 That is a concrete symbolic expansion, and it is the first form of this question
 that does not presuppose an additive shape.
+
+
+
+## `u` and `Vhat` carry OPPOSITE bar-weights — `u*Vhat` is invariant (PR #6223)
+
+Follows the log-coordinate entry above. That one asked what `Vhat` does under
+bar; this asks what the LADDER'S OWN expansion variable does, which the corpus
+does not state anywhere. Probe:
+`computations/qbeta/qbeta_d_frame_u_vhat_bar_pairing_probe.py`, 8/8, sympy exact.
+
+    object      bar-weight   q-integer form
+    u            +2          sqrt([3]_{q^2})/[2]_q * hbar_q^2
+    Vhat_D       -2          q * [2]_{q^2}/[2]_q
+    u * Vhat_D    0          BAR-INVARIANT
+
+### The pieces, each verified
+
+* **`b = sqrt([3]_{q^2})/[2]_q`.** The Hoefsmit `b` is a RATIO OF q-INTEGERS:
+  `q^4+q^2+1 = q^2*[3]_{q^2}` and `q^2+1 = q*[2]_q`, so the powers of q cancel.
+  It is not written that way anywhere in the corpus — `_h4_route_ladder_scan.py:25`
+  carries it as `sqrt(q**4+q**2+1)/(q**2+1)`.
+* **`b` is bar-EVEN** — `[2]_x` and `[3]_x` are each invariant under `x -> 1/x`.
+* **`hbar_q` is a bar-eigenvector**: `bar(hbar) = -q*hbar`. So `hbar^2` carries
+  `q^2`, and with `b` even, `u` has bar-weight **+2** — exactly minus `Vhat`'s.
+* **The additive counterpart does NOT cancel**: `u + Vhat` is not invariant. The
+  cancellation is specifically MULTIPLICATIVE, matching the multiplicative
+  action Step 7 identified.
+* **`b` and `Vhat_D/q` share the `[2]_q` denominator**, so it cancels in their
+  ratio: `(Vhat_D/q)/b = [2]_{q^2}/sqrt([3]_{q^2})` — a pure q^2-object.
+
+### Why it matters
+
+A resummation needs a bar-invariant to organise around. Step 8 showed the D
+invariant `Vhat/q` is not CONSTANT, which is what closes the additive route.
+This exhibits a DIFFERENT invariant — one built from the ladder's own variable
+rather than from `Vhat` alone. The weights permit an organising object that
+`Vhat` by itself does not supply.
+
+### What it is NOT
+
+Not a resummation. No series exhibited, no `c_k` proposed, extracted or wired,
+and nothing here shows the ladder MUST be organised this way — only that the
+bar-weights permit it. **Step 8's closure of the ADDITIVE route is untouched and
+remains correct.** Under C the question does not arise: the action is affine
+there and weights are not what organises it. Scope (a).
+
+### Where this leaves the arc
+
+Four entries now, in one direction:
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` have opposite bar-weights; `u*Vhat` is invariant.
+
+Each is scope (a) and none proposes a `c_k`. The next question is whether the
+invariant in (4) is the thing the ladder's rungs actually expand in — i.e.
+whether `log(u*Vhat)` or `u*Vhat` has a series whose coefficients reproduce the
+rung structure. That is a concrete symbolic expansion and it is the first
+version of the question that has a bar-invariant to expand ABOUT, which is what
+Step 8 said was missing.
+
+
+
+## `alpha_eff`'s bar-defect: D's is u-INDEPENDENT — the series is the wrong tool (PR #6223)
+
+A NEGATIVE on my own hypothesis, plus a sharpening. Both recorded so neither is
+re-walked. Probe:
+`computations/qbeta/qbeta_alpha_eff_bar_defect_order_probe.py`, 9/9, sympy exact.
+
+### The hypothesis, and its refutation
+
+Having found that `u` has bar-weight +2 while `Vhat` has −2, I guessed the
+ladder's `− u/2` term might be exactly the bar-correction repairing `alpha`
+under D. **It is not.**
+
+The ladder uses `alpha_eff = alpha − u/2`, not `alpha`
+(`Q_N1 = Q_A*cos(alpha_eff)`, `_h4_route_ladder_scan.py:26`):
+
+    convention   bar(alpha)+alpha       bar(alpha_eff)+alpha_eff
+    C            0       (bar-ODD)      -u*(q^2+1)/2
+    D            (q^2-1)^2/(2q^2)       (q^2-1)^2/(2q^2) - u*(q^2+1)/2
+
+### My first reading of that was ALSO wrong
+
+Seeing "`alpha_eff` is bar-odd in NEITHER frame", I took it to mean C's clean
+bar structure does not survive to the object the ladder actually evaluates —
+i.e. that Step 7 describes `alpha` but not the ladder. **Wrong.** Under C the
+residual is EXACTLY `−u*(q^2+1)/2`, a RATIONAL multiple of `u`: the bar-oddness
+fails precisely at the order of the correction term that caused it. That is what
+a truncated series does, and it is not a defect.
+
+### What is actually there
+
+The `− u/2` term's own bar-defect is CONVENTION-INDEPENDENT — the same
+`−u*(q^2+1)/2` in both frames. What differs is what it is added to:
+
+    C:  residual = O(u)                      vanishes with truncation order
+    D:  residual = (q^2-1)^2/(2q^2) - O(u)   carries a u-INDEPENDENT piece
+
+Verified by the surd: `residual/u` is rational in q under C (`−(q^2+1)/2`, no
+surd) and retains `sqrt(q^4+q^2+1)` under D — precisely because the D residual
+has a part not proportional to `u` at all.
+
+### The sharpening
+
+D's obstruction is **not** "the phase has a bar-defect" — C's does too,
+harmlessly. It is that **D's defect does not live in the series**, so no order
+of ladder correction removes it and the correction series is the wrong
+instrument. That takes Step 7 from a statement about `alpha` to one about the
+LADDER.
+
+It also explains, structurally, the sensitivity row this bean already records
+(`c_3 -> -974`, "no convergence"): fitting a series against a defect the series
+cannot represent is what that number looks like.
+
+### Symbol collision, worth flagging
+
+`alpha_eff` is OVERLOADED. `qbeta_multi_block_eigenphase_probe.py` uses it for a
+dimension-weighted block average — a different object. This probe means the
+ladder one (`alpha − b*hbar^2/2`).
+
+### Not claimed
+
+No `c_k`, no replacement phase. Steps 7 and 8 untouched. Scope (a).
+
+
+
+## The un-removable defect IS `h^2/2` — and it is built from the ladder's own `b`
+
+Identifies the u-independent piece the previous entry left unnamed. Probe:
+`computations/qbeta/qbeta_d_bar_defect_is_h_squared_probe.py`, 8/8, sympy exact.
+
+    bar(alpha_D) + alpha_D  =  h^2/2  =  ([3]_{q^2} - 3)/2  =  ((b*[2]_q)^2 - 3)/2
+
+`alpha_C` has NO such defect (it is bar-odd), so this is D-specific.
+
+### The link
+
+The Hoefsmit `b` — which defines the ladder variable `u = b*hbar_q^2` — is
+`sqrt([3]_{q^2})/[2]_q` (established earlier in this arc). So
+`(b*[2]_q)^2 = [3]_{q^2}`, and the defect is `((b*[2]_q)^2 - 3)/2`.
+
+**The same q^2-integer governs both the ladder's expansion variable and the
+defect the ladder cannot remove.**
+
+### Why that matters
+
+The order result says the defect does not live in the series. One might then
+expect it to be something external to the construction. It is not: it is
+`h^2/2`, the most elementary invariant in the algebra, expressible in the
+ladder's own `b`. So D does not introduce an alien obstruction — the same
+ingredient enters at a place the correction series cannot reach. That is a
+sharper account of why the series is the wrong instrument than "the defect does
+not live in the series": it says WHICH object it is and where it comes from.
+
+### A notation trap, recorded because it caught me
+
+AGENTS.md writes `h_A^2 = [3]_q - 3`. With the symmetric convention
+`[3]_x = x + 1 + 1/x` that is **FALSE at argument q** (giving `q - 2 + 1/q`) and
+**TRUE at argument q^2**. My first test used the literal argument `q` and
+returned a false negative on the corpus's own identity. The corpus is right; the
+argument is `q^2`. The probe asserts both the true and the false form so the
+trap is on record rather than re-discovered.
+
+### Not claimed
+
+A repair, a replacement phase, or any `c_k`. Naming an obstruction is not
+removing it. Steps 7 and 8 untouched. Scope (a).
+
+### Where the arc stands — six entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the correction series cannot reach it.
+     (Includes two recorded wrong turns of mine.)
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+
+None proposes a `c_k`; all are scope (a). Taken together they say: the D-frame
+ladder fails not because a coefficient is wrong but because the correction
+series is the wrong instrument for an obstruction that is `h^2/2` and sits
+outside it. The next question is whether the multiplicative/log form (3) plus
+the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
+exists that reaches it.
+## Step 9 (2026-08-30) — Steps 6-8 are now LEAN-PROVED, sorry-free
+
+`content/quantum-observable-universe/lean/QOU/QBeta/DFrameBarAction.lean`. Eleven theorems, `lean`-direct **exit 0**, `#print axioms` clean on all eleven (`propext, Classical.choice, Quot.sound`; **zero sorryAx**). No `sorry`, no `axiom`, no `native_decide`, no `: True`.
+
+Stated over a generic `Field K` per §7c — no `ℝ`, no `Real.sqrt`. Convention C is carried in the square-root variable `u` (`q = u²`), which keeps it algebraic in the same generic setting.
+
+| theorem | content |
+|---|---|
+| `bridgePhase_eq_recentred_tracedVolume` | `α = (V̂ − 1 − h)/2` for EVERY z — no hypothesis; this is why the phase formula is convention-independent |
+| `hq_bar` | `h(q⁻¹) = −h(q)` |
+| `zD_bar` | `z_D(q⁻¹) = z_D(q)/q⁴` — weight −4 |
+| `tracedVolume_D` | `V̂_D = (q⁴+1)/(q²+1)` |
+| **`tracedVolume_D_bar`** | **`V̂(q⁻¹) = V̂(q)/q²`** — the D action is MULTIPLICATIVE |
+| **`tracedVolume_C_bar`** | **`V̂(u⁻¹) = 2 − V̂(u)`** — the C action is an AFFINE REFLECTION |
+| `tracedVolume_D_invariant` | `V̂/q` is bar-invariant |
+| `tracedVolume_D_invariant_closed_form` | `V̂_D/q = ([2]_q + h²z_D/q²)/2` |
+| `bridgePhase_C_bar_odd` | α IS bar-odd under C — the cos-resummation's stated hypothesis |
+| `bridgePhase_D_bar_defect` | defect `= (q−1)²(q+1)²/(2q²)` under D |
+| `bridgePhase_D_not_bar_odd` | that defect is NONZERO for q ≠ ±1 |
+
+**The hypotheses are genuine, not bookkeeping.** `q ≠ 0` and `q²+1 ≠ 0` are both needed — over a field where −1 is a square (ℂ at q = i) the denominators vanish — and `CharZero` is needed wherever the construction divides by 2, since in characteristic 2 neither the phase nor the closed form is well posed. Proving it forced those out into the open; the Python probes had them implicitly.
+
+**On the M_β spectrum question.** The spectrum claim `{e^{+iα}, e^{−iα}}` on V_(2,1) is the content block's (`q-beta-cos-resummation`), not mine, and I have not re-derived it. What Steps 6-9 establish is that the *phase* α is generic in z (so the spectrum formula carries to D unchanged) and that what fails under D is the *trace symmetrisation* `tr_M(M_β) = cos α` — because bar stops being an affine reflection. So the spectrum is not the open part; the resummation is.

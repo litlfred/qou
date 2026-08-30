@@ -173,7 +173,7 @@ noncomputable def crossing_energy (q : ℝ) : ℝ :=
   (1 / 2) * (q - q⁻¹)
 
 /-- The quantum Planck constant: ℏ_q = 1 - q⁻¹. -/
-noncomputable def hbar_q (q : ℝ) : ℝ := 1 - q⁻¹
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The electron mass as a function of q (in μ₀ units).
     The electron is the trefoil knot T_{2,3} with 3 crossings
@@ -186,23 +186,23 @@ noncomputable def electron_mass (q : ℝ) (μ₀ : ℝ) : ℝ :=
     and 4 crossings: m_μ = Vol(4₁)/ℏ_q² + 4 · E_×(q).
     The ratio m_μ/m_e = Vol(4₁)/ℏ_q² determines q₀. -/
 noncomputable def muon_mass (q : ℝ) (μ₀ : ℝ) : ℝ :=
-  (vol_figure_eight / (hbar_q q) ^ 2 + 4 * crossing_energy q) * μ₀
+  (vol_figure_eight / (hbarQ q) ^ 2 + 4 * crossing_energy q) * μ₀
 
 /-- The muon-electron mass ratio is Vol(4₁)/ℏ_q² (leading term),
     derived purely from q. At q₀ this matches CODATA 206.768. -/
 -- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release
 noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
-  vol_figure_eight / (hbar_q q) ^ 2
+  vol_figure_eight / (hbarQ q) ^ 2
 
 /-- At the CODATA substrate parameter q₀, the muon-electron mass
     ratio matches the experimental value 206.768 to within 0.001. -/
 -- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [manuscript] Ch. 7
 theorem muon_electron_ratio_from_substrate :
     |muon_electron_ratio q₀ - 206.768| < 1 := by
-  -- muon_electron_ratio q₀ = vol_figure_eight / (hbar_q q₀)²
+  -- muon_electron_ratio q₀ = vol_figure_eight / (hbarQ q₀)²
   -- = 2.02988321281931 / (1 - 1/1.10998)²
   -- Clearing denominators yields rational arithmetic that norm_num resolves.
-  simp only [muon_electron_ratio, vol_figure_eight, hbar_q, q₀, abs_lt]
+  simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt]
   constructor <;> norm_num
 
 /-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/

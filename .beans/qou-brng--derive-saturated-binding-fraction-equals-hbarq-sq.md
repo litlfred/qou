@@ -105,3 +105,60 @@ inputs remain (NOT open derivations): (1) substrate assembly amplitude = the mul
 trace (citable Jones, carried as hypothesis); (2) dressing m=m_e·Vol·lw/ℏ_q² (calibration+geometry).
 Net: type question, R1 coefficient, R2 additive+lift all PROVED; R3 = numerology. Audit:
 docs/audits/2026-08-30-brng-residuals-worked.md.
+
+---
+**Update 2026-08-30 (session link-vs-self, PR #6226) — a hidden hypothesis in R2, and a reframing of this bean's own question.**
+
+Adversarial read of the same-day closure (#6125 / #6145 ×2), not a new attack on the magnitude.
+Nothing here retracts any of it. Scope-(a) throughout; no number moved, nothing wired.
+
+**1. `SelfMutualPartition.binding_eq_neg_mutualEnergy` carries an unstated hypothesis.** Its
+`binding` is *defined* as `selfEnergy − assemblyEnergy`, justified in the docstring by "the self
+crossings are exactly those present in isolation". The mass-deficit definition is `B = (Σ ISOLATED
+masses) − assembled`; substituting `selfEnergy` presumes assembly changes no component's own
+self-crossing content. Now explicit, sorry-free, `lean`-direct exit 0, all 8 decls on
+propext/Classical.choice/Quot.sound — `QOU.Mass.SelfCrossingInvarianceGate`:
+
+    binding = −mutual + selfDefect          selfDefect := isolatedMassTotal − selfEnergy
+    binding = −mutual  ↔  selfDefect = 0    (the landed theorem is exactly this slice)
+
+`gate_has_content` is the falsifiable witness: one assembly (1 inter + 1 self crossing, unit
+energy) read two ways — self-crossing pre-existed vs created by assembly. **Mutual energy is 1 in
+both; binding is −1 vs −2.** So `binding_indep_of_self` is a consequence of the gate, not of the
+crossing partition. `binding_eq_neg_mutualEnergy_of_gate` recovers the landed result.
+
+**2. Why it is not free (the OCR tier did the work).** Călugăreanu–White–Pohl `SL = Wr + Tw` — only
+the SUM is the isotopy invariant. Moffatt & Ricca §1: writhe and twist jump by equal and opposite
+amounts through an inflexion; "any deformation whose projection on any plane involves a type I
+Reidemeister move … must involve passage through an inflexional configuration. General deformations
+(or 'ambient isotopies') do therefore **typically** involve such passage"; Pohl's `SL = W + T` is
+for **regular** isotopy. A type-I move is exactly creation/removal of a SELF-crossing. Formalized
+generic over `[AddCommGroup R]` (§7c). **This citation is invisible to corpus-grep path 5:**
+`library/procrsoclondona92/sections/` is 1,916 B of JSTOR banner vs 46,511 B in `ocr/`, so a
+`sections/` grep for *helicity* or *Călugăreanu* returns nothing on that document.
+
+**3. Applied the criterion to `lw` — it does NOT bite, deflating my own finding.**
+`computations/lw_is_framing_independent_probe.py`, 3/3 PASS, mpmath 65 dps + exact `Fraction`, no
+float64. `linking_weight_family_a` has signature `(q, q_inv=None) -> mpf` — **no knot, no diagram,
+no framing** (a type fact, inspected not measured). It is `(1/4)·Σ_{λ⊢4} dim_q V_λ`, verified
+IDENTICAL to `5/2 + (3/4)h²` over ℚ at 5 rational points (exact, not "to N digits");
+`lw(q₀) = 2.53277965639939149205151450176`. So `selfDefect = 0` holds for the mass multiplier and
+the assignment is safe from this objection.
+
+**4. What survives — a reframing of THIS BEAN's question.** `lw` is called a "linking weight" and
+is not a linking quantity. This bean asks *"why the binding multiplier is the mutual (coordination)
+linking count while the mass multiplier is the self-linking weight `lw`"* — presenting them as two
+readings of one linking notion. **They are not that:** `M` is a topological coordination count,
+`lw` is a representation-theoretic Wedderburn q-dimension sum. Two different kinds of object, so
+the question as written asks why one linking notion splits two ways when that is not the situation.
+A reframing, NOT an answer. Same name-vs-content class as `markovZ`/`markovZc`.
+
+**Open after this, and what I did NOT claim.** `lw`'s H₄ Wedderburn-count interpretation stays
+**posited** per its own producer docstring (at q₀ a CODATA-implied near-match to the λ ≈ 2.46 that
+round-trips m_p; five refuted paths in `2026-06-04-three-paths-refuted-roadmap-update.md`) —
+untouched. R1's topological input and `ArchimedeanTraceBridge`'s two named modelling inputs are
+unaffected. R3 stays numerology. **A possible author decision is framed in §8 of the audit**
+(rename `lw` / restate this bean's question / do nothing), with costs, risks and a recommendation
+of *do nothing now, restate when the arc is next worked* — the default is safe.
+
+Audit: `docs/audits/2026-08-30-self-crossing-invariance-gate.md`.
