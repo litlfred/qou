@@ -32,21 +32,24 @@ and the C8 corollary is `KeystoneC8SuperExpBound`-specific:
   (`involutionNumber` lives in the imported `KeystoneC8SuperExpBound`).
 * `c8_superexp` — a corollary of the sibling arithmetic core `c8_lower_bound`,
   expressed over the canonical `dimSYT` / `partitionShape`. All of its own arithmetic
-  is proved; its only gaps are the two RSK identities below, which it inherits as the
-  `[RSKIdentitiesContext]` hypothesis rather than as `sorry`s.
+  is proved; its only gap is `branching_two_one` below, which it inherits as the
+  `[RSKIdentitiesContext]` hypothesis rather than as a `sorry`.
 
-The two remaining gaps (`branching_two_one`, `sum_dimSYT_eq_involution`) are the
-classical Standard-Young-Tableau counting facts Mathlib cannot yet prove — siblings
-of the canonical `QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK
-correspondence (the open P1–P5 program
-`docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). Each states the
-real proposition and carries a `-- Ref:` to Sagan.
+The one remaining gap, `branching_two_one`, is a classical Standard-Young-Tableau
+counting fact Mathlib cannot yet prove — a sibling of the canonical
+`QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK correspondence (the open
+P1–P5 program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). It
+states the real proposition and carries a `-- Ref:` to Sagan.
 
-They are **not** `sorry`s, as this header used to say. Each is `§3b`-conditional on
-the `RSKIdentitiesContext` class and its body is the matching class field, so
-`#print axioms` on them is clean and the gap shows up in the signature instead. No
-instance of that class exists in this corpus, so neither identity — nor
-`c8_superexp`, which inherits the same hypothesis — can be applied at a concrete `k`.
+It is **not** a `sorry`, as this header used to say. It is `§3b`-conditional on the
+`RSKIdentitiesContext` class and its body is the matching class field, so `#print axioms`
+on it is clean and the gap shows up in the signature instead. No instance of that class
+exists in this corpus, so neither it — nor `c8_superexp`, which inherits the same
+hypothesis — can be applied at a concrete `k`.
+
+Its former companion `sum_dimSYT_eq_involution` was removed from the class on 2026-08-30
+and is now proved unconditionally; see the section below for why it was never actually
+blocked on RSK.
 
 The third, `skew_le_straight`, is **proved** (§"Skew ↪ straight"): it is an
 *inequality*, and an inequality between two counts needs only an injection, not a
@@ -80,6 +83,7 @@ import Mathlib.Combinatorics.Young.SemistandardTableau
 import Mathlib.SetTheory.Cardinal.Finite
 import QOU.Mathlib.RSKBurnsideTarget
 import QOU.BraidKnot.KeystoneC8SuperExpBound
+import QOU.Mass.SumSYTEqInvolution
 
 namespace QOU.BraidKnot.YoungTableauStandard
 
@@ -479,40 +483,43 @@ theorem involutionNumber_pos : ∀ n, 0 < involutionNumber n := by
         = involutionNumber (n + 1) + (n + 1) * involutionNumber n := rfl
     omega
 
-/-! ## The two remaining RSK-family identities (hypotheses, not `sorry`s)
+/-! ## The one remaining RSK-family identity (a hypothesis, not a `sorry`)
 
-These are the deep Standard-Young-Tableau counting facts that Mathlib does not
-prove (no hook-length formula, no RSK correspondence). Each states the real
-proposition over the canonical `dimSYT` / `partitionShape` / skew count.
+`branching_two_one` is the deep Standard-Young-Tableau counting fact Mathlib does not
+prove.  It states the real proposition over the canonical `dimSYT` / `partitionShape` /
+skew count.
 
-**How the gap is carried.** This section text used to say the fill "is `sorry`
-with a `-- Ref:` to Sagan". It is not: both are `§3b`-conditional on the
-`RSKIdentitiesContext` class below, and each theorem's body is the matching
-class field. Nothing here is axiomatised and nothing here is `sorry`, so
-`#print axioms` on either is clean — the gap is instead visible in the
-signature, as an instance argument a caller has to produce.
+**How the gap is carried.** This section text once said the fill "is `sorry` with a
+`-- Ref:` to Sagan". It is not: the identity is `§3b`-conditional on the
+`RSKIdentitiesContext` class below, and the theorem's body is the matching class field.
+Nothing here is axiomatised and nothing is `sorry`, so `#print axioms` is clean — the gap
+is visible in the *signature*, as an instance argument a caller has to produce.
 
-**No instance exists.** `RSKIdentitiesContext` has no instance anywhere in this
-corpus, degenerate or otherwise, so neither identity can be applied at a
-concrete `k` and nothing downstream is silently discharged.
+**No instance exists.** `RSKIdentitiesContext` has no instance anywhere in this corpus,
+degenerate or otherwise, so `branching_two_one` cannot be applied at a concrete `k` and
+nothing downstream is silently discharged.
 
-**But one of the two fields is no longer open (2026-08-30).**
-`QOU.Mass.sum_dimSYT_eq_involution_keystone` proves `sum_dimSYT_eq_involution`'s exact
-statement, sorry-free and unconditionally — and *not* by RSK: Young's lattice is a
-`1`-differential poset, and that route reaches the involution recurrence with finite
-combinatorics on `YoungDiagram` (`QOU.Mathlib.upSum_eq`).  So the section heading above,
-and "until the RSK program lands", now overstate the gap: `branching_two_one` is the one
-field still genuinely open.  Dropping the discharged field from the class is a separate
-change (it moves every consumer's signature) and has not been made here.
+**`sum_dimSYT_eq_involution` used to be the class's second field, and is now PROVED
+(2026-08-30).**  It has been removed from the class and the theorem is unconditional;
+`QOU.Mass.sum_dimSYT_eq_involution_keystone` is the proof.
 
-Their sibling `skew_le_straight` is stated here too but is no longer cited — it
-is proved above, unconditionally. They are siblings of the canonical
-`QOU.Mathlib.RSKBurnsideHolds` target — all discharged by the RSK correspondence
-(open P1–P5 program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). -/
+Worth recording *why* it sat here as long as it did, because the reason was wrong rather
+than merely out of date. This section said the identity needed the RSK correspondence,
+which Mathlib lacks. **It needs no RSK at all.** Young's lattice is a `1`-differential
+poset, and that route proves the identity with finite combinatorics on `YoungDiagram` — no
+insertion, no bumping, no permutation↔tableau-pair bijection (`QOU.Mathlib.upSum_eq` is the
+step it turns on). *"Mathlib lacks X, therefore blocked"* is sound only when `X` is actually
+required; here the textbook route was mistaken for the only route, and that mistake was
+recorded in this file, in beans `qou-jlam` / `qou-m3xr`, and in three other docstrings as
+though it were an infrastructure fact.
+
+Their sibling `skew_le_straight` is stated here too but is no longer cited — it is proved
+above, unconditionally. `branching_two_one` remains a sibling of the canonical
+`QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK correspondence (open P1–P5
+program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). -/
 
 class RSKIdentitiesContext where
   branching_two_one : ∀ (k : ℕ), 3 ≤ k → 3 * (∑ p : Nat.Partition k, dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k
-  sum_dimSYT_eq_involution : ∀ (k : ℕ), (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k
 
 /-- **Classical branching** `Σ_{λ⊢k} f^λ · f^{λ/(2,1)} = k! · f^{(2,1)} / |(2,1)|!`
 at `μ = (2,1)` (where `f^{(2,1)} = 2`, `|(2,1)|! = 6`, so the RHS is `k!/3`).
@@ -562,21 +569,24 @@ theorem skew_le_straight (k : ℕ) :
   · rw [fDimSkew_of_not_le h]
     exact Nat.zero_le _
 
-/-- **RSK for involutions.** `Σ_{λ⊢k} f^λ = I(k)`, the number of involutions in
-`S_k` — the `q = 1` value of the QOU na-Stokes period.
+/-- **RSK for involutions.** `Σ_{λ⊢k} f^λ = I(k)`, the number of involutions in `S_k` — the
+`q = 1` value of the QOU na-Stokes period.  **Unconditional**, and it needs no instance.
 
-This requires massive infrastructure (the RSK correspondence), and is **not** proved
-here. It is not a `sorry` either: the body is `ctx.sum_dimSYT_eq_involution`, the
-matching field of the `[RSKIdentitiesContext]` hypothesis, so the gap sits in the
-signature rather than in the term and `#print axioms` on this declaration is clean.
+Until 2026-08-30 this was a field of `RSKIdentitiesContext` and this docstring said the
+identity "requires massive infrastructure (the RSK correspondence)" and was "an open gap".
+**That was a mis-diagnosis, not merely a stale status note**: the identity does not need RSK
+at all.  Young's lattice is a `1`-differential poset, and that route proves it with finite
+combinatorics on `YoungDiagram` — no insertion, no bumping, no permutation↔tableau-pair
+bijection.  See `QOU.Mass.sum_dimSYT_eq_involution_keystone`, and `QOU.Mathlib.upSum_eq` for
+the up-operator step the whole argument turns on.
 
-**Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
-proves the standard permutation RSK identity (`∑ (dimSYT)² = n!`), not this specialization
-for involutions. This remains an open gap. No instance of `RSKIdentitiesContext` exists in
-this corpus, so this theorem cannot currently be applied at any `k`. -/
-theorem sum_dimSYT_eq_involution (k : ℕ) [ctx : RSKIdentitiesContext] :
+The lesson is worth keeping: *"Mathlib lacks X, therefore blocked"* is sound only when `X` is
+actually required.  Here the standard textbook route was mistaken for the only route, and that
+mistake was recorded in this file, in two beans and in three other docstrings as though it
+were an infrastructure fact. -/
+theorem sum_dimSYT_eq_involution (k : ℕ) :
     (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k :=
-  ctx.sum_dimSYT_eq_involution k
+  QOU.Mass.sum_dimSYT_eq_involution_keystone k
 
 /-! ## The unconditional C8 super-exponential corollary -/
 
