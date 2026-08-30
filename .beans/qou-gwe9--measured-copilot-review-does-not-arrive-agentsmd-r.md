@@ -316,3 +316,30 @@ instrument IS wrong -- Copilot produces no check run in any outcome, so a
 check-run poll cannot distinguish reviewed / refused / never-asked -- but the
 five PRs show nothing under get_reviews either, so the instrument was not what
 produced that reading. Two independent facts; I had collapsed them.
+
+## Second additive datum: exhausted quota is not always a refusal (2026-08-30, 09:08Z)
+
+Same PR (#6131), same account, same day, two `request_copilot_review` calls
+~63 minutes apart:
+
+| request | head sha | outcome | latency |
+|---|---|---|---|
+| 07:55Z | `44f0b7d0` | **refusal posted** ("reached their quota limit") | ~40 s |
+| 08:58Z | `38f674db` | **nothing** — `get_reviews` unchanged at 09:08Z | > 9 min, still silent |
+
+The first is 13x faster than the second is old, so the second is silence, not a
+slow refusal. **The same exhausted-quota state produces a refusal one hour and
+silence the next.**
+
+Consequence for the recommended poll: the sibling account above concludes a
+quota refusal is actionable while silence is not. That holds, but silence is now
+*less* informative than it looked -- it does not even distinguish "quota
+exhausted" from "never asked", because exhausted quota is one of the things that
+produces it. There is no instrument that separates those two states: check runs
+are `total_count: 0` in every outcome (established above), and `get_reviews` is
+`[]` in both. Budget the request, poll ~3 min, and on silence proceed on your
+own verification -- which is what rule 10 already says, for a reason that turns
+out to be sounder than its stated premise.
+
+Also: quota did not replenish within ~63 minutes, so a retry-after-an-hour
+strategy is not viable on the observed window.
