@@ -1,5 +1,6 @@
 import QOU.BraidKnot.HeckeMurphy
 import QOU.BraidKnot.Specht
+import QOU.BraidKnot.ColSuperstandardTableau
 
 /-!
 # QOU.BraidKnot.HeckeMurphyYoung — Murphy's `x_λ` over the *actual* Young subgroup
@@ -65,5 +66,46 @@ theorem σ_mul_murphySum_young {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf
     σ K q n i * murphySum K q n {w | w ∈ youngSubgroup n h t}
       = q • murphySum K q n {w | w ∈ youngSubgroup n h t} :=
   σ_mul_murphySum_subgroup K q n i _ hi
+
+
+/-! ## `d(t)`: the permutation carrying the reference tableau to `t`
+
+Murphy's `m_{st} = T_{d(s)}^* · x_λ · T_{d(t)}` needs, for each tableau `t`, the permutation
+`d(t)` with `t = t^λ · d(t)`, where `t^λ` is a fixed reference tableau of shape `λ`.
+
+Both exist already and the definition is a one-liner, because `Specht.Tableau μ` is *literally*
+an `Equiv`: `Fin (nOf μ) ≃ μ.cells`. So two tableaux of the same shape differ by a permutation
+of the labels, obtained by composing one with the other's inverse. The reference tableau is
+`ColSuperstandardTableau.colSuperstandard`.
+-/
+
+open QOU.BraidKnot.ColSuperstandardTableau in
+/-- **`d(t)`** — the permutation of labels carrying the column-superstandard reference tableau
+`t^λ` to `t`. A composite of two `Equiv`s, since a tableau *is* an `Equiv`. -/
+noncomputable def dOf {μ : YoungDiagram} (t : QOU.BraidKnot.Specht.Tableau μ) :
+    Equiv.Perm (Fin (QOU.BraidKnot.Specht.nOf μ)) :=
+  (colSuperstandard μ).trans t.symm
+
+open QOU.BraidKnot.ColSuperstandardTableau in
+/-- `d(t^λ) = 1`: the reference tableau is carried to itself by the identity. -/
+@[simp] theorem dOf_colSuperstandard (μ : YoungDiagram) :
+    dOf (colSuperstandard μ) = 1 :=
+  Equiv.ext fun _ => by simp [dOf]
+
+open QOU.BraidKnot.ColSuperstandardTableau in
+/-- **The defining property of `d(t)`**: transporting the reference tableau along `d(t)`
+recovers `t`. This is what makes `d` the right object to conjugate `x_λ` by. -/
+theorem colSuperstandard_trans_dOf {μ : YoungDiagram}
+    (t : QOU.BraidKnot.Specht.Tableau μ) :
+    (dOf t).symm.trans (colSuperstandard μ) = t :=
+  Equiv.ext fun _ => by simp [dOf]
+
+/-- `d` is injective: distinct tableaux of the same shape give distinct permutations. This is
+what will make the Murphy family indexed by *pairs of tableaux* rather than over-counted. -/
+theorem dOf_injective {μ : YoungDiagram} :
+    Function.Injective (dOf (μ := μ)) := by
+  intro s t h
+  have := congrArg (fun d => (Equiv.symm d).trans (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)) h
+  simpa [colSuperstandard_trans_dOf] using this
 
 end QOU.BraidKnot.HeckeMurphyYoung
