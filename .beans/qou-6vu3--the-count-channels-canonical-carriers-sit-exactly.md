@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:50:54Z
-updated_at: 2026-08-30T14:50:54Z
+updated_at: 2026-08-30T14:56:20Z
 ---
 
 Tests `qou-brng`'s **surviving route** — `QOU.Mass.BrunnianBindingChannel`'s
@@ -90,3 +90,35 @@ it is why a derived carrier assignment could in principle escape.
 
 `qou-brng` (the parent), `qou-w6vh` (pair-locality, the theorem this leans on),
 `qou-82mc` (the convexity dichotomy), `qou-bsfg`.
+
+
+---
+**STRENGTHENED same session — the other reading fails too, in the opposite direction.**
+
+Applying the *count channel* to the deuteron is already a stretch, and I should have
+said so in the first pass: the deuteron is a **Hopf clasp with `lk = ±1`, not
+Brunnian**, so its signed channel is live and `brunnian_energy_is_count_channel`
+does not apply to it. The honest alternative is the **full** mutual energy
+`pairEnergy n₊ n₋ q = n₊·q − n₋·q⁻¹` for both carriers.
+
+It is worse, and structurally so. Hopf `(2,0) ↦ 2q`, Borromean `(3,3) ↦ 3q − 3q⁻¹`:
+
+    b₃ = (3q − 3q⁻¹) − 3·(2q) = −3(q + q⁻¹) < 0   for every q > 0
+
+`fullEnergy_b3_closed_form` and `fullEnergy_b3_neg` (both sorry-free). So the wrong
+sign is **not a numerical accident at `q₀`** — no substrate modulus makes this
+reading positive.
+
+**The two readings bracket the measurement from below:**
+
+| reading | `b₃/b₂` |
+|---|---|
+| (a) count channel only | **0** exactly |
+| (b) full mutual energy | **−2.717480632** at `q₀`, negative ∀ `q > 0` |
+| **measured** | **+0.6411239316** |
+
+That is the part worth keeping. The failure is **not** a matter of having picked
+the wrong channel — both natural readings land at or below zero while the
+measurement is positive. Which sharpens the conclusion already recorded: the
+channel is not obstructed, but nothing in the canonical carrier assignment
+produces a positive `b₃`, under either way of reading the energy.
