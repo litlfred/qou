@@ -255,4 +255,44 @@ theorem murphyM_colSuperstandard_diag {μ : YoungDiagram}
           (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)} := by
   simp [murphyM]
 
+/-! ## Coefficients in the `T_w` basis
+
+The triangularity argument behind (C1) is entirely a statement about **coefficients**: `m_{st}`
+should expand in `{T_w}` with a unit diagonal entry and strictly-dominance-lower off-diagonal
+ones. So the first thing needed is the ability to read a coefficient off, and the first object
+whose coefficients are worth knowing is `x_λ` itself.
+
+They are as simple as possible — `x_λ` is a **sum of distinct basis vectors**, so its coordinate
+function is the indicator of the summation set. `coe_basisTwOfField` is what makes this immediate:
+the basis vectors *are* the `T_w`.
+-/
+
+/-- **The coordinates of `x_S` in the `T_w` basis are the indicator of `S`.**
+
+Immediate, because `x_S = ∑_{w ∈ S} T_w` is a sum of *distinct* basis vectors — but it is the
+computation every later coefficient argument starts from. -/
+theorem repr_murphySum (S : Finset (Equiv.Perm (Fin (n + 1))))
+    (w : Equiv.Perm (Fin (n + 1))) :
+    (QOU.Hecke.TwBasis.basisTwOfField K q n).repr (murphySum K q n S) w
+      = if w ∈ S then 1 else 0 := by
+  have hb : ∀ v : Equiv.Perm (Fin (n + 1)),
+      Tw K q n v = QOU.Hecke.TwBasis.basisTwOfField K q n v := by
+    intro v
+    rw [QOU.Hecke.TwBasis.coe_basisTwOfField]
+  simp only [murphySum, hb, map_sum, Finsupp.coe_finset_sum, Finset.sum_apply,
+    Module.Basis.repr_self, Finsupp.single_apply]
+  simp [Finset.sum_ite_eq, eq_comm]
+
+/-- **`T_1` appears in `x_S` with coefficient `1`** whenever `S` is a subgroup — in particular for
+a Young subgroup, since `1 ∈ S_λ`.
+
+This is the candidate leading term: every `x_λ` has a distinguished unit coefficient, which is
+what a triangularity argument needs at the diagonal. -/
+theorem repr_murphySum_one_of_subgroup
+    (H : Subgroup (Equiv.Perm (Fin (n + 1)))) [DecidablePred (· ∈ H)] :
+    (QOU.Hecke.TwBasis.basisTwOfField K q n).repr
+        (murphySum K q n {w | w ∈ H}) 1 = 1 := by
+  rw [repr_murphySum]
+  simp
+
 end QOU.BraidKnot.HeckeMurphyYoung
