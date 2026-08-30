@@ -40,6 +40,34 @@ Laurent form and comparing coefficient-by-coefficient, exactly (Fractions, no
 float anywhere). It runs at A=1 (p and n) and A=2, and the probe REFUSES to
 report a measurement if any coefficient disagrees.
 
+RESULT: the grading does NOT separate magic from non-magic, at any level the
+scan reaches -- A = 2..20, which covers Z = 2, 8 and 20, three magic numbers
+no numeric probe on this arc could test. All four observables report
+`interleaved` at every level; `ANY graded observable replicating across
+levels: False`; and `degree_span` separates magic from non-magic cleanly at
+**0 of 19** levels.
+
+So the retraction that motivated this probe is confirmed in both directions.
+The order structure IS real -- it survives the Groebner-Shirshov reduction,
+and it distinguishes the proton from the neutron (kernel-checked in
+`QOU.BraidKnot.LaurentWalk.proton_ne_neutron_degrees`, a distinction the
+numeric normal form at q_0 cannot express). It just carries no magic signal.
+
+THE ARTIFACT THAT WOULD HAVE FAKED A POSITIVE IS PARITY -- the sixth time on
+this arc. I first hypothesised the degree span was monotone in Z at fixed A;
+**that was wrong**, only 6 of 19 levels are monotone. What is actually there
+is an even/odd zigzag concentrated at low Z. At A = 20:
+
+    Z    4    3    2    1    0
+    span 562  596  458  560  420
+              ^         ^          odd Z sit ABOVE their even neighbours
+
+Local minima favour even Z on **13 of 17** levels. Every magic number is even,
+so a "magic Z has low degree span" test would have been measuring parity, not
+shell structure -- exactly the artifact that killed the delta^2-Phi result,
+the 4He NF collapse, and the A=3 participation split. The per-level control
+below reports `interleaved` and refuses it, which is what the control is for.
+
 WHAT IS MEASURED, per configuration (Z, N):
   * `max_degree` / `min_degree` -- the q-degree span of the NF
   * `n_terms` -- total monomials across the six coefficients
