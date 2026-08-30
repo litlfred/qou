@@ -46,7 +46,7 @@ del _sys, _Path, _bridge
 import sys  # noqa: E402
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from difference_knot_binding_probe import _difference_braid  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -185,7 +185,7 @@ def main() -> int:
     w.add_data("sage_script", SAGE_SCRIPT)
     w.add_assertion(
         "modal_spread_reproduces_audit_and_exceeds_1p1",
-        computed=float(modal_spread), expected=2.358, tolerance=0.6,
+        computed=fmt(modal_spread), expected=2.358, tolerance=0.6,
         source="modal B_AME/Vol spread from default-simplify volumes; reproduces the "
                "committed audit 2.358 and stays ≫ 1.1, so AT THE MODAL TRIANGULATION "
                "the constant-ρ closure is refuted. HONEST CAVEAT: all difference links "
