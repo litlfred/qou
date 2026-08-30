@@ -94,4 +94,49 @@ theorem bindingFreeEnergy_pos_iff (I : ℝ) (hI : 0 < I) :
   rw [neg_pos]
   exact Real.log_neg_iff hI
 
+/-! ## Discharging the positivity hypothesis for the framework's amplitude class
+
+The bridge above carries `0 < T` as a hypothesis because `log` needs a nonzero (here positive)
+argument. That hypothesis is **not** a genuine assumption for the amplitudes the framework actually
+uses: the categorical amplitudes are quantum dimensions, built from quantum integers `[n]_q`, and at
+the substrate modulus `q > 1` every quantum integer is strictly positive
+(`QOU.MathlibExt.qInt_pos`). So for the quantum-integer amplitude class the positivity follows from
+the substrate constraint `q > 1` and is discharged, not assumed. (The *multiplicativity* input — that
+the assembly amplitude factorises as `(∏ Tᵢ)·I` — is the separate, still-open item: the Jones trace
+is multiplicative under connected sum, `J(K₁#K₂)=J(K₁)·J(K₂)`, but that theorem is not yet formalised
+in Mathlib; bean `qou-301d`.) -/
+
+/-- The quantum integer `[n]_q = ∑_{i<n} qⁱ`, restated inline to keep this file Mathlib-only (the
+canonical form is `QOU.MathlibExt.qInt`, `= ∑ i ∈ range n, q^i`; `qInt_pos` there proves the same
+positivity). The Mass files in this arc are deliberately self-contained. -/
+noncomputable def qIntR (q : ℝ) (n : ℕ) : ℝ := ∑ i ∈ range n, q ^ i
+
+/-- **A quantum integer at `q > 1` is strictly positive** — a sum of positive powers. This is the
+positivity the framework's amplitudes carry (quantum dimensions are built from `[n]_q`), so `0 < T`
+is discharged by the substrate constraint `q > 1`, not assumed. -/
+theorem qIntR_pos {q : ℝ} (hq : 1 < q) {n : ℕ} (hn : 0 < n) : 0 < qIntR q n := by
+  unfold qIntR
+  apply Finset.sum_pos
+  · intro i _; exact pow_pos (lt_trans one_pos hq) i
+  · exact ⟨0, Finset.mem_range.mpr hn⟩
+
+/-- A finite product of quantum integers at `q > 1` is strictly positive. -/
+theorem qIntRProd_pos {ι : Type*} (s : Finset ι) (q : ℝ) (hq : 1 < q) (n : ι → ℕ)
+    (hn : ∀ i ∈ s, 0 < n i) : 0 < ∏ i ∈ s, qIntR q (n i) :=
+  Finset.prod_pos (fun i hi => qIntR_pos hq (hn i hi))
+
+/-- **The binding identity with the positivity hypothesis DISCHARGED**, for amplitudes drawn from
+the quantum-integer class (constituent self-amplitudes `Tᵢ = [nᵢ]_q`, interaction factor `[m]_q`).
+No `0 < T` is assumed: at the substrate `q > 1` positivity is a theorem (`qIntR_pos`). The
+mass-deficit binding equals the connected free energy `−log [m]_q`. Only the *multiplicativity* input
+— that the assembly amplitude factorises as `(∏ Tᵢ)·[m]_q` — remains carried by the shape of the
+statement; that is the Jones-connected-sum theorem, the open formalisation item. -/
+theorem binding_eq_qInt {ι : Type*} (s : Finset ι) (q : ℝ) (hq : 1 < q)
+    (nT : ι → ℕ) (hnT : ∀ i ∈ s, 0 < nT i) (nI : ℕ) (hnI : 0 < nI) :
+    (∑ i ∈ s, freeEnergy (qIntR q (nT i)))
+        - freeEnergy ((∏ i ∈ s, qIntR q (nT i)) * qIntR q nI)
+      = bindingFreeEnergy (qIntR q nI) :=
+  binding_eq_bindingFreeEnergy s (fun i => qIntR q (nT i)) (qIntR q nI)
+    (fun i hi => qIntR_pos hq (hnT i hi)) (qIntR_pos hq hnI)
+
 end QOU.Mass.ArchimedeanTraceBridge
