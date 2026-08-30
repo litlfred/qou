@@ -79,6 +79,109 @@ where `dim λ` is the `S_n` irrep dimension and **`D_λ(q)` the generic degree**
 Hecke algebra"** — the corpus's own setting: `H_n(q)`, Wedderburn blocks indexed
 by `λ`, weights `y_λ`.
 
+> **🛑 CORRECTED 2026-08-30 — the sentence that stood here was wrong, and the
+> lead it introduced is now CLOSED. Read this before the paragraph above.**
+>
+> **What I asserted:** *"Corpus-grep: `q-Plancherel` appears nowhere in
+> `computations/`, `content/` or `docs/`. This is a genuine gap, not a
+> re-derivation."*
+>
+> **What is true.** Measured with
+> `grep -ril "q-plancherel\|q_plancherel" computations/ content/ docs/`:
+> **202 live files**, plus 8 under `computations/_deprecated/` and 16 beans.
+> The corpus carries content blocks named
+> `prop:q-plancherel-asymptotic-skeleton` and
+> `conj:q-plancherel-asymptotic-skeleton`, and `computations/deltalambda/`
+> uses a weight it calls *"Ocneanu / q-Plancherel"* throughout. My grep was
+> too narrow. **An absence is a measurement, and I did not make it** — this is
+> the negative-result failure mode this repo's own §"Terse ≠ compressed"
+> names: *"I found no rationale"* and *"there is no rationale"* are different
+> claims and only one of them was measured.
+>
+> **What survives, and it is narrower but sharper.** The corpus's
+> *"q-Plancherel"* is a **DIFFERENT object** from the paper's — established
+> symbolically, not by inspection:
+>
+> | | corpus `W_λ` (s5-so3 keystone) | paper `M_{n,q}` (arxiv-1001.2180v2) |
+> |---|---|---|
+> | formula | `d_q(λ)²/[n]_q! = [n]_q!/∏[h]_q²` | `Q^{b(λ)}·dim λ/∏{h}_Q` |
+> | q-integer | balanced `[m]_q` | unbalanced `{m}_Q` |
+> | hooks | squared | first power |
+> | `dim λ` | absent | classical, in the numerator |
+> | `Σ_λ` | **not 1** (see below) | **1 exactly**, every `n`, every `Q` |
+> | `q → 1` | `(dim λ)²/n!` | `(dim λ)²/n!` |
+>
+> They are unequal at every partition for `n = 2,3,4`, and agree only at
+> `q = 1` — which is why both carry the name. So the paper's measure is
+> genuinely unused; the *name* is not free, and future work must say which
+> q-Plancherel it means.
+>
+> **A second measurement — and my first reading of it was ALSO wrong.**
+> `Σ_λ W_λ` at `q₀` is 0.99458 (n=2), 0.98744 (n=3), 0.98217 (n=4), 0.98222
+> (n=5), **1.11092 (n=9)** — not 1, not monotone. I first wrote that this made
+> the (C5) reference object "mis-normalized in the corpus" and that the right
+> denominator is `D² = Σ_μ d_q(μ)²`. **Both halves are retracted**, caught by
+> corpus-grep path 6 (the beans), which is exactly the path this repo added for
+> this failure:
+>
+> - **It is not a defect.** The owner ruled on 2026-08-16, in
+>   [`notation/notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md),
+>   that `Σ_λ w_λ(q) ≠ 1` at `q ≠ 1` **by design** — *"Never write a
+>   normalisation claim on bare `w_λ`"* — quoting **0.987 at n=3** and
+>   **1.051 at n=8**. My numbers reproduce the ruling's independently. The
+>   retracted claim would have broken that ruling in the opposite direction.
+> - **`Σ_μ d_q(μ)²` is not canonical either.** Bean `qou-sf1t` states that
+>   `QPlancherel.sum_measureOn_eq_one` is *"NOT evidence that `Σ_λ d_q(λ)²` is
+>   the canonical normaliser for the Ocneanu weights"* — it is one line from
+>   `Finset.sum_div`, true by construction for any self-normalised family. A
+>   sibling's 2026-08-29 `n = 3` result identifies the actual normaliser as the
+>   **Molien perfect square** `Z = (q² − qz − 1)²`, neither `[n]_q!` nor
+>   `Σ_μ d_q(μ)²`.
+>
+> **What replaces it is stronger than what it replaces.** `W_λ` is
+> conjugation-symmetric — `λ` and `λ'` share a hook multiset and `[n]_q!`, so
+> `W_λ = W_{λ'}` exactly (verified for `n = 2,3,4,5`). At `n = 2` that forces,
+> for **every** normalisation constant `c`,
+>
+>     z = c·[W_(2)·q + W_(1,1)·(−q⁻¹)] = c·(q²−1)/(q²+1) = c · 0.1039637101
+>
+> so reaching `m* = 0.4443787009` needs `c = 4.2743636`, i.e. a normaliser
+> under which `Σ_λ W_λ = 0.23395295` — about 4.3× away from any
+> probability-like normalisation, and in the wrong direction from both the raw
+> 0.99458 and the self-normalised 1. **So no choice of normaliser rescues the
+> `d_q²` weight**, and the live question of which normaliser is canonical does
+> not bear on this conclusion at all. That is a normalisation-independent
+> exclusion of the whole family, not a miss by two evaluated numbers.
+>
+> **And the lead itself is CLOSED.** Pushed through the corpus's own canonical
+> weights → parameter map `y_lambda_su_n.z_from_weights`:
+>
+> | weight system | implied `z` at `q₀` | verdict |
+> |---|--:|---|
+> | corpus `y_λ` (convention D, production) | 0.612688037 | **above** the `1/√5` ceiling — excluded, `det(I+G) < 0` |
+> | corpus `W_λ = d_q²/[n]_q!` (as used) | 0.103963710 | admissible, far below `m*` |
+> | corpus `W_λ` self-normalized (`Σ = 1`; **not** the canonical normaliser) | 0.104530149 | admissible, far below `m*` |
+> | paper `M_{n,q}` (generic degrees) | **0 exactly** | at the floor; `b4(0) = 0`, no binding |
+> | *needed for `\|μ₄\| = 4.591`* | *0.444378701* | *(C1): saturates the ceiling* |
+>
+> The paper's `z = 0` is not a numerical near-miss but a definitional
+> consequence: `M_{n,q}` decomposes the **regular** trace, and
+> `τ_q(T_σ) = 0` for every `σ ≠ id`; `σ₁ = T₁/q` is such an element. **The
+> same one-line argument excludes the entire regular-trace/Plancherel family**,
+> including classical Plancherel at `q → 1`, so the search restricts to Markov
+> traces and their deformations from the outset. That exclusion is worth more
+> than the lead was.
+>
+> Scope: **(a)** for the interface — this weight system does not supply `m`;
+> the gate's surjectivity wall is untouched and the magnitude stays open.
+> Measured in
+> [`computations/probes/q_plancherel_vs_y_lambda_probe.py`](../../computations/probes/q_plancherel_vs_y_lambda_probe.py),
+> witness `q-plancherel-vs-y-lambda.witness.json`, 23 checks, all exact
+> (sympy) — the discriminators are decided symbolically, never by comparing
+> floats to a tolerance. Bean `qou-ntck`.
+>
+> Superseded text follows.
+
 **Corpus-grep: `q-Plancherel` appears nowhere in `computations/`, `content/` or
 `docs/`.** This is a genuine gap, not a re-derivation.
 
