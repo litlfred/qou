@@ -428,3 +428,59 @@ itself: instantiate `strictConcaveOn_tetVolLine` on the segment from the regular
 point, discharge the far point at `s ≈ 3.02` with `LobMonotonicity` +
 `Lob_nonneg_of_lt_pi_div_two`, and read off through
 `VOL_5_2_eq_three_mul_lob_sum`. Every input to that is now proved.
+
+## 2026-08-30 — the chord assembly, planned out: `s₀ = 3` EXACTLY, and one input missing
+
+Worked the assembly while the merge was rate-limited. It lands on a pleasingly
+tight configuration, and on exactly one gap.
+
+### `s₀ = 3` is forced, and it is the right value
+
+Chord from the regular point (`t = 0`) to a far point (`t = s₀`), with the 5₂
+triple at `t = 1`:
+
+    f(1) > (1 − 1/s₀)·f(0) + (1/s₀)·f(s₀)          [StrictConcaveOn]
+    f(0) = 3Λ(π/3) = Cl₂(π/3)                      [three_Lob_pi_div_three]
+    3·f(1) = VOL_5_2                               [VOL_5_2_eq_three_mul_lob_sum]
+    VOL_4_1 = 2·Cl₂(π/3)
+
+`3(1 − 1/s₀) ≥ 2 ⟺ s₀ ≥ 3`, so `s₀ = 3` is the smallest that works. And
+domain membership at `s₀ = 3` — `π/3 + 3(a₃ − π/3) > 0` — is **exactly**
+`3a₃ > 2π/3`, i.e. `a₃ > 2π/9`: the theorem just proved, with nothing to spare.
+The two conditions meet at the same point.
+
+Strictness is free: `StrictConcaveOn` gives `>`, so `f(3) ≥ 0` suffices — no
+need for `> 0`.
+
+### The one missing input: `f(3) ≥ 0`
+
+At `s = 3` the angles are `bᵢ = 3aᵢ − 2π/3`, numerically
+`(0.9957, 2.1288, 0.01718)`, summing to π, with `f(3) = 0.0841`. Proving
+`f(3) ≥ 0` needs one of:
+
+* **General nonnegativity of the Λ-sum** — `Λα + Λβ + Λγ ≥ 0` for
+  `α, β, γ > 0` summing to π. **Not in the corpus.** Grepped: only
+  `volChart_regular_pos` (the regular point) and the max theorems. The natural
+  proof uses the apparatus that *is* there — `volChart` continuous on the
+  compact `closedSimplex`, `= 0` on its boundary
+  (`volChart_eq_zero_of_not_mem`), concave inside — plus the fact that a
+  concave function on a convex compact set attains its **minimum at an extreme
+  point**, and the closed simplex's three vertices all sit on the boundary
+  where the value is 0. That last step is the piece to find or build in Mathlib.
+
+* **Or the specific route**, folding `b₂ > π/2` with `Lob_pi_sub` into
+  `(Λb₁ − Λ(b₁+b₃)) + Λb₃` and using `LobMonotonicity` + the corpus's
+  `Lob_nonneg_of_lt_pi_div_two`. That needs `b₁ > π/6`, i.e. **`a₁ > 5π/18`**
+  (50°) — and the bound proved here is `a₁ > π/4` (45°), which is **not
+  enough**. `5π/18` has no convenient tangent, so this route wants its own
+  argument.
+
+**The general lemma is the better target**: it is a real gap in the corpus
+(ideal tetrahedra having non-negative volume is not currently stated), it is
+reusable, and it avoids inventing a bound at 50°.
+
+### Everything else is in place
+
+Domain membership at `0` (trivial) and at `3` (the theorem above), the two
+endpoint values, the angle-form bridge, and strictness. So the assembly is
+**one lemma away**, and that lemma is about Λ in general, not about 5₂.
