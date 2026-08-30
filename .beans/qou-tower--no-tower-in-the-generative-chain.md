@@ -89,3 +89,47 @@ is the only place a shell degree of freedom could live in this construction.
 Note this is not the same as the `qou-mgq3` finding that `gram.py` is hardwired
 to H₃. That was about the LP's channel space; this is about the state itself
 being collapsed during production, upstream of any LP.
+
+## 🛑 CORRECTION — the tower is CHEAP at He-4, not infeasible. Mine.
+
+The section above closes with *"a real compute problem (dim H_{3A} = (3A)!)"*.
+**That is wrong, by ~3,400× at the nucleus that matters**, and it is the wrong
+number in the pessimistic direction — it made a tractable experiment look
+impossible.
+
+`(3A)!` is the dimension of the **regular representation**. The state is not
+carried that way. By Wedderburn `H_n(q) ≅ ⊕_λ M_{d_λ}`, and — as
+`shell_closure_compute._extract_blocks` already exploits — the Hoefsmit
+seminormal form has **gen 0 pure diagonal and gen 1 in 2×2 blocks**, so the
+per-partition cost is `O(d_λ)`, not `O(d_λ²)`:
+
+| A | n=3A | partitions | max d_λ | **Σ d_λ (what you carry)** | Σ d_λ² = n! |
+|---|---|---|---|---|---|
+| 2 (deuteron) | 6 | 11 | 16 | **76** | 720 |
+| 3 | 9 | 30 | 216 | **2,620** | 3.6e5 |
+| **4 (⁴He)** | 12 | 77 | 7,700 | **140,152 ≈ 5.6 MB** | 4.8e8 |
+| 5 | 15 | 176 | 292,864 | 10,349,536 ≈ 414 MB | 1.3e12 |
+| 6 | 18 | 385 | 1.6e7 | 9.97e8 ≈ 40 GB | 6.4e15 |
+
+**⁴He — the first doubly-magic nucleus, the exact object of interest — needs
+about 5.6 MB at 50 dps.** A=5 is borderline at 414 MB; A=6 is out at 40 GB.
+
+So the experiment is **reachable precisely up to the first doubly-magic
+nucleus, and one step past it**. The question "does structural behaviour change
+at the first magic number, with the tower intact" is computable now. It was
+never a compute wall; my estimate was.
+
+Note this also puts a measured number on where the tower genuinely ends: A=5
+borderline, A=6 out. So even a full-tower walk cannot reach Z=8 (A=16), let
+alone 20/28/50/82/126. The tower buys the **first** magic number, not the
+ladder.
+
+### It also collides with a corpus claim
+
+`observations/k12-barrier-bypass.md` states that at `k ≥ 12` the partition
+growth *"blocks the matrix-evaluation approach"*. The arithmetic above says
+`k = 12` is 77 partitions and 140k numbers, and the existing producer already
+does `k = 10` (42 partitions, max dim 768) in 37 s. A ~10–20× step is minutes,
+not a barrier. Being tested directly by running `shell_closure_compute.py
+--kmax 12`; if it completes, the k12-barrier framing needs re-scoping and the
+homological bypass it motivates loses its stated justification.
