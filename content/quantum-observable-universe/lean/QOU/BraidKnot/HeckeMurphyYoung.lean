@@ -1,6 +1,8 @@
 import QOU.BraidKnot.HeckeMurphy
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.ColSuperstandardTableau
+import QOU.BraidKnot.HeckeCellular
+import QOU.BraidKnot.HeckeTypeAPresentationEquiv
 
 /-!
 # QOU.BraidKnot.HeckeMurphyYoung — Murphy's `x_λ` over the *actual* Young subgroup
@@ -107,5 +109,46 @@ theorem dOf_injective {μ : YoungDiagram} :
   intro s t h
   have := congrArg (fun d => (Equiv.symm d).trans (QOU.BraidKnot.ColSuperstandardTableau.colSuperstandard μ)) h
   simpa [colSuperstandard_trans_dOf] using this
+
+/-! ## The anti-involution on the `T_w` side, and `m_{st}`
+
+`antiAut` (cellular axiom (C2), #6158) lives on the `IwahoriHeckeOfSn` presentation, while
+`Tw`, `murphySum` and `basisTwOfSn` live on `QOU.Hecke.IwahoriHecke`. Murphy's
+`m_{st} = T_{d(s)}^* · x_λ · T_{d(t)}` needs both at once, so the anti-involution has to be
+carried across `algEquiv`.
+
+Mathlib supplies the missing functor: `AlgEquiv.op : (A ≃ₐ[R] B) ≃ (Aᵐᵒᵖ ≃ₐ[R] Bᵐᵒᵖ)`. The
+transport is then a three-step composite, and it is the last piece needed before `m_{st}` is
+*definable* — which is what makes cellular axioms (C1) and (C3) statable at all.
+-/
+
+/-- **The cellular anti-involution, transported to the `T_w` presentation.**
+
+`H → HoS → HoSᵐᵒᵖ → Hᵐᵒᵖ`, the outer two steps being `algEquiv` and its `AlgEquiv.op`. -/
+noncomputable def antiAutTw :
+    QOU.Hecke.IwahoriHecke K q n →ₐ[K] (QOU.Hecke.IwahoriHecke K q n)ᵐᵒᵖ :=
+  ((AlgEquiv.op (QOU.BraidKnot.Hecke.algEquiv K q n)).toAlgHom).comp
+    ((QOU.BraidKnot.Hecke.antiAut K q n).comp
+      (QOU.BraidKnot.Hecke.algEquiv K q n).symm.toAlgHom)
+
+/-- `d(t)` at the Hecke algebra's index — `dOf t` transported along `μ.card = n + 1`, the same
+re-indexing `youngSubgroup` uses. -/
+noncomputable def dAt {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (t : QOU.BraidKnot.Specht.Tableau μ) : Equiv.Perm (Fin (n + 1)) :=
+  Equiv.permCongrHom (finCongr h) (dOf t)
+
+/-- **Murphy's `m_{st}`**, at last definable: `T_{d(s)}^* · x_λ · T_{d(t)}`, with `*` the
+transported cellular anti-involution and `x_λ` the Murphy element of `t`'s Young subgroup.
+
+This is a *definition*, not a theorem. That the `m_{st}` form a basis is cellular axiom (C1)
+and remains open; so does (C3). What has changed is that both can now be *written down* —
+every ingredient is a named object rather than something to be built first. -/
+noncomputable def murphyM {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (s t : QOU.BraidKnot.Specht.Tableau μ)
+    [DecidablePred (· ∈ youngSubgroup n h t)] :
+    QOU.Hecke.IwahoriHecke K q n :=
+  (antiAutTw K q n (Tw K q n (dAt n h s))).unop
+    * murphySum K q n {w | w ∈ youngSubgroup n h t}
+    * Tw K q n (dAt n h t)
 
 end QOU.BraidKnot.HeckeMurphyYoung
