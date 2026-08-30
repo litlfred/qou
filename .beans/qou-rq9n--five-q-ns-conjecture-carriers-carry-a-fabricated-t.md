@@ -1,11 +1,11 @@
 ---
 # qou-rq9n
 title: Five q-NS conjecture carriers carry a FABRICATED trivial-zero instance
-status: in-progress
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-08-29T19:45:34Z
-updated_at: 2026-08-30T09:05:52Z
+updated_at: 2026-08-30T13:07:33Z
 ---
 
 `lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean` declares five `Prop`
@@ -123,3 +123,5 @@ missing conjecture block, which is authorial mathematics, not encoding.
 
 I briefly closed qou-88nf by inventing an affine bound C*(1+T) off its
 docstring; that was retracted (see its body). Do not repeat it.
+
+All five carriers are done as of 2026-08-30. QAubinLions (qou-3ytx), NSCounterexample (qou-5nj1), RegularityBreakdown (qou-m7a2) and CriticalExponent (qou-93hu, later de-boxed by qou-4670) were re-encoded by transcription; BlowupYekutieli (qou-88nf) was REPLACED, its rate existential and the upstream obstruction statement being different propositions that shared a name. Refutations and satisfiability witnesses for all five in docs/audits/2026-08-30-qns-carriers-are-refutable.lean, lean-direct exit 0. The companion 'still vacuous' audit now records a finding of zero rather than being deleted.

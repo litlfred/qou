@@ -1,10 +1,13 @@
 /-
   Bean `qou-rq9n` — the gate for the q-NS carrier re-encoding.
 
-  Three of the five carriers in `ConditionalClasses.lean` were re-encoded on
-  2026-08-30 by transcribing the claim each docstring already made:
-  `QAubinLions` (`qou-3ytx`), `NSCounterexample` (`qou-5nj1`) and
-  `RegularityBreakdown` (`qou-m7a2`), joining `CriticalExponent` (`qou-93hu`).
+  ALL FIVE carriers in `ConditionalClasses.lean` were fixed on 2026-08-30.
+  Four by transcribing the claim each docstring already made — `QAubinLions`
+  (`qou-3ytx`), `NSCounterexample` (`qou-5nj1`), `RegularityBreakdown`
+  (`qou-m7a2`), `CriticalExponent` (`qou-93hu`, later de-boxed by `qou-4670`) —
+  and the fifth, `BlowupYekutieli` (`qou-88nf`), by REPLACEMENT: its rate
+  existential and the upstream obstruction statement are different
+  propositions that shared a name.
 
   COMPILATION IS NOT THE GATE. The previous fields compiled too, and AGENTS.md
   §3b-tax cited them as the model of a carrier "in the *shape* of the claim".
@@ -19,10 +22,10 @@
 
   WHAT THIS FILE SHOWS, EXACTLY — stated narrowly on purpose:
 
-    - refutations for all four re-encoded carriers (two for `CriticalExponent`,
-      one per field);
-    - satisfiability for `QAubinLions`, `RegularityBreakdown` and
-      `CriticalExponent`.
+    - refutations for all five carriers (two for `CriticalExponent`, one per
+      field);
+    - satisfiability for `QAubinLions`, `RegularityBreakdown`,
+      `CriticalExponent` and `BlowupYekutieli`.
 
   It does NOT exhibit a satisfiability witness for `NSCounterexample`, and the
   header said otherwise until review on PR #6122 caught it — an over-claim in a
@@ -45,27 +48,25 @@
   it. The witnesses below are now for the de-boxed carrier — positivity plus
   the divergence statement, both transcribed from upstream.
 
-  **Read that absence correctly.** A satisfiability witness for the blow-up
-  carrier needs a function unbounded on *every* left-neighbourhood of `T` (e.g.
+  **Read that absence correctly** — and note it is about `NSCounterexample`,
+  not about `BlowupYekutieli`, which now has two witnesses below. A
+  satisfiability witness for `NSCounterexample` needs a function unbounded on
+  *every* left-neighbourhood of `T` (e.g.
   `1/(1-t)` at `T = 1`) together with the ε-style argument picking `t` close
   enough to `T` for each `M` — a genuine analysis exercise, not a one-liner. Its
   absence here is a fact about this file's scope, **not** evidence that the
   class is uninhabitable. Forcing a fragile proof to make a header true would
   be the wrong trade.
 
-  `BlowupYekutieli` is absent deliberately: it was NOT re-encoded (bean
-  `qou-88nf`), because its docstring names "an explicit constant determined by
-  the substrate scale" and never says which, so any bound would be chosen by the
-  agent rather than transcribed. It remains inhabitable by zero. See
-  `2026-08-30-blowup-yekutieli-has-no-source.md` — the rate is not in the corpus
-  at all.
-
-  That companion audit ALSO said "its conjecture block does not exist", which is
-  true of the label `conj:blowup-yekutieli` and false of the corpus: the live
-  block is `prop:blowup-yekutieli` in `lifting-and-descent/`, carrying
-  `smooth ↔ ∀ n, obstruction n = 0` and a derived theorem. Corrected there
-  (bean `qou-4670`); the recommended disposition is now to transcribe THAT,
-  which needs no rate.
+  `BlowupYekutieli` IS NOW INCLUDED. It was absent while it stayed vacuous —
+  its docstring named "an explicit constant determined by the substrate scale"
+  and never said which, so any bound would have been chosen by an agent rather
+  than transcribed. It was **replaced** on 2026-08-30 (`qou-88nf`) by the
+  upstream `prop:blowup-yekutieli` obstruction statement, which needs no rate:
+  the earlier audit's "its conjecture block does not exist" was true of the
+  `conj:` label and false of the corpus, and the live block was one directory
+  over under `prop:`. **There is still no Yekutieli blow-up RATE in the
+  corpus**; that finding is unchanged and no bound was invented here.
 
   VERIFY (lean-direct, Mathlib oleans restored, no `lake build` — a build
   against a restored cache with `traces=0` evicts it):
@@ -113,7 +114,7 @@ example (α : ℝ) : ¬ CriticalExponent (fun _ => 0) α := by
   obtain ⟨q, _, _, hM⟩ := hdiv 1 1 one_pos
   norm_num at hM
 
-/-! ## Satisfiability — three of the four, per the header -/
+/-! ## Satisfiability — four of the five, per the header -/
 
 example : QAubinLions (fun E => 2 * E) := ⟨2, by norm_num, fun E _ => rfl⟩
 example : RegularityBreakdown (∅ : Set ℝ) := ⟨by simp⟩
@@ -148,3 +149,24 @@ example : CriticalExponent (fun q => (q - 1)⁻¹) 1 where
       rw [lt_inv_comm₀ hcpos hδpos]
       exact hδc
     exact lt_of_le_of_lt (le_max_left M 1) this
+
+/-- Every obstruction vanishing while `smooth` is `False` refutes the carrier:
+the iff would read `False ↔ True`. -/
+example : ¬ BlowupYekutieli (fun _ => 0) False := by
+  rintro ⟨h⟩
+  exact (h.mpr (fun _ => rfl)).elim
+
+/-- Satisfiable the trivial way: nothing obstructs, and `v` is smooth. -/
+example : BlowupYekutieli (fun _ => 0) True := ⟨by simp⟩
+
+/-- Satisfiable the SUBSTANTIVE way, which is the one worth having: an
+obstruction that is non-zero at level 3, against `smooth = False`. This is the
+blow-up case — the carrier admits a genuine failure to lift, not only the
+everything-vanishes model. -/
+example : BlowupYekutieli (fun n => if n = 3 then 1 else 0) False := by
+  refine ⟨?_⟩
+  constructor
+  · exact False.elim
+  · intro h
+    have := h 3
+    simp at this
