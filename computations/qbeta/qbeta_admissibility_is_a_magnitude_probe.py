@@ -58,7 +58,10 @@ import _path_bridge  # noqa: F401,E402
 from qbeta_net_trace_invariance_probe import (  # noqa: E402
     BASIS, N, basis_vec, reg_char, length, q, h,
 )
-from q_parameter import Q as Q0  # noqa: E402
+# q_at(dps) returns q0 as a 50+ digit mpf. `Q` is a FLOAT, so mp.mpf(str(Q))
+# would launder a float64 through a string into mpmath -- ~17 real digits
+# dressed as 60 dps. Caught by the f64-into-mpmath gate on this very file.
+from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 60
@@ -113,7 +116,7 @@ def main() -> int:
           sp.simplify(y111_at1) != 0, f"= {sp.factor(y111_at1)}")
 
     # ---- 4. THE MEASUREMENT: how big is the leak? ----
-    q0 = mp.mpf(str(Q0))
+    q0 = q_at(55)
     f = sp.lambdify(q, [y3, y21, y111], "mpmath")
     y_at = lambda zz: [sp.lambdify(q, sp.cancel(e.subs(z, zz)), "mpmath")(q0)
                        for e in (y3, y21, y111)]
@@ -208,7 +211,7 @@ def main() -> int:
     wb.add_data("three_row_share_scan_pct", scan)
     wb.add_data("scope", "(a) measured magnitude; one_not_root stands exactly as proved")
     wb.add_data("q0Anchor", "proton")
-    wb.add_data("q0Value", str(Q0))
+    wb.add_data("q0Value", mp.nstr(q0, 50))
     for c in checks:
         wb.add_assertion(c["name"],
                          computed=mp.mpf(1) if c["passed"] else mp.mpf(0),

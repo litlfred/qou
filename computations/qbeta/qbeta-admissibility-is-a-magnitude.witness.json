@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:39:51.718277+00:00",
-  "commitSha": "db97735ebd1d14f8eaff40a4bbee2ef2dc02a964",
+  "computedAt": "2026-08-30T11:00:20.801060+00:00",
+  "commitSha": "e81fc71e9e80de1edef60c9b4b1baafa46d5e1f4",
   "assertions": [
     {
       "name": "y_(1^3) numerator is proportional to Lean wtNumer",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 18,
   "computation": "qbeta-admissibility-is-a-magnitude",
   "scriptFile": "qbeta_admissibility_is_a_magnitude_probe.py",
-  "scriptHash": "b88b1027af25",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bf485873a481",
+  "scriptCommitSha": "ab3a5a1f080d30c0825cb71a969e68c93b28817b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -117,6 +117,6 @@
     },
     "scope": "(a) measured magnitude; one_not_root stands exactly as proved",
     "q0Anchor": "proton",
-    "q0Value": "1.1099785827513808"
+    "q0Value": "1.1099785827513808075916690956107688798744991218736"
   }
 }
