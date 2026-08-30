@@ -173,3 +173,60 @@ Not "re-derive one of the pair". Either **rewrite both narratives** to describe
 the linear-functional route the producer actually takes, or **retire them** —
 a derivation chain whose every step reads a crossing number off a
 non-braid-word documents a computation nobody performs.
+
+
+## REPAIRED 2026-08-30 (PR #6318) — the table is regenerated; the invalid narratives are still open
+
+The half of this bean that reaches the paper is fixed. The half about the
+derivation-chain documents is not, and is what remains.
+
+### Fixed
+
+`markov-trace-frobenius-selection.md` now carries the live proton-pin values,
+read from the two producers' committed witnesses rather than hand-computed:
+
+| atom | was (C) | now (D, proton pin) | change |
+|---|---|---|---|
+| proton | 1.0653061442544499 | 1.1457596924573009 | +7.55 % |
+| neutron | 0.9232332299116371 | 0.9877436881158096 | +6.99 % |
+| deuteron | 0.3882864240747888 | 0.5751722439177719 | **+48.13 %** |
+
+**The deuteron was wrong by half.** This bean opened on a 1.2e-7 disagreement
+between two chains and treated the tabulated value as approximately settled;
+the actual defect in the paper was five orders of magnitude larger and had a
+banner over it saying so since 2026-08-09.
+
+### Three prose claims were wrong too, and the banner covered none of them
+
+1. **"four independent paths agree to ≤ 2e-15"** — false. Hoefsmit and Habiro
+   are **colour-blind** and diverge by up to **3.24e-9**; the producer flags
+   this as `(cb≠)`. Certification rests on **two** paths.
+2. **"at the proton-pinned q₀"** — the named producer is **muon-canonical**
+   and refuses to run off the ideal pin, so it certifies 11.6 ppb away from
+   where the table is evaluated.
+3. **The error column** measured agreement among same-convention paths. Never
+   a bound on the quantity.
+
+Also: the block cited an **invented** registry id `markov-z-convention-d`. The
+registry uses single-letter ids; it is **D**.
+
+### Correction to this bean's own framing
+
+The section above headed *"the quoted uncertainty is off by ~1e8"* overstated
+by mis-reading the column. It is labelled *"error vs 4-way"* and honestly
+reports what it measures — spread among four paths of one chain family. The
+defect is that four-path spread is not independence, not that the label lied.
+The bean's ratio column (3.6e8×, 1.5e8×) compares two things the table never
+equated; do not quote it.
+
+### Still open — this is the remaining work
+
+Both narratives derive characters from a crossing number read off
+`atom_braid_word_3A`, which the corpus forbids for that object. The live path
+does not, so the numbers are safe and the **documents** are not. Corroborated
+independently while repairing: the peel witness records `word_length: 11` for
+**both** proton and neutron, against `n-tr-M-q0` step 4's *"5 crossings"* —
+the same contradiction reached from the witness rather than from the source.
+
+Either rewrite both to describe the seminormal linear-functional route, or
+retire them.
