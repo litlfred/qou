@@ -776,6 +776,14 @@
       "adjudicated_by": "claude (session 2b6a2d13), evidence: in-function docstring + refutation shape",
       "date": "2026-08-29",
       "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/probe_h3_central_idempotents_exact.py",
+      "target": "z_C",
+      "source_hash": "1f492232b19e",
+      "line_at_adjudication": 160,
+      "scope": "main",
+      "rationale": "Two-arm C-vs-D comparison whose D arm lives in LEAN, not in this file. The probe's A5 assertion checks tr_C(pi_lambda) = w_lambda(t)*d_lambda against the Markov-forced weights of the Lean `BorromeanCanonicalTraceDerivation` (`trC_borromean_derived`), which is the convention-C arm of a deliberately-maintained C/D pair; the D arm is `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D != C sorry-free. So z_C here is the object under comparison, not residual C: binding z_D would make the probe compare the D value against the Lean C weights and assert a known-false equality. RESOLVES the in-file note of 2026-08-10, which feared the reverse (that the Lean side had moved to D leaving this comparison mismatched). Evidence is the probe's own exact-symbolic PASS: because D != C is a THEOREM, a mismatched pairing could not pass, so the Lean weights it cites are necessarily C. Verified by running it (A5 traces: True, 4/4 assertions)."
     }
   ]
 }
