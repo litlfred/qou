@@ -73,6 +73,33 @@ def _is_literal(node) -> bool:
     return False
 
 
+def _call_parts(node: ast.Call):
+    """(name, computed, expected) for an add_assertion call, either calling form.
+
+    `add_assertion(name, computed, expected)` and
+    `add_assertion("name", computed=..., expected=...)` are the same call. This
+    audit read ONLY the positional form for its first year, and positional is
+    the minority form: measured on this corpus, 487 positional against 3300
+    keyword. So it was scanning 13% of the calls and reporting "MEASURED: 0"
+    while 58 measured self-comparisons sat in the keyword form, including
+    `habiro_tr_M_proton_matches_direct` — a name asserting a cross-check that
+    compares a value to itself and therefore cannot fail.
+    """
+    kw = {k.arg: k.value for k in node.keywords}
+    name = kw.get("name")
+    if name is None and node.args:
+        name = node.args[0]
+    computed = kw.get("computed")
+    expected = kw.get("expected")
+    if computed is None and len(node.args) >= 2:
+        computed = node.args[1]
+    if expected is None and len(node.args) >= 3:
+        expected = node.args[2]
+    if computed is None or expected is None:
+        return None
+    return name, computed, expected
+
+
 def scan(roots=ROOTS):
     hits, scanned, total = [], 0, 0
     for root in roots:
@@ -85,24 +112,28 @@ def scan(roots=ROOTS):
                 continue
             scanned += 1
             for node in ast.walk(tree):
-                if not (isinstance(node, ast.Call)
-                        and isinstance(node.func, ast.Attribute)
-                        and node.func.attr == "add_assertion"):
+                if not isinstance(node, ast.Call):
+                    continue
+                fn = node.func
+                if (getattr(fn, "attr", None) or getattr(fn, "id", None)) \
+                        != "add_assertion":
                     continue
                 total += 1
-                if len(node.args) < 3:
+                parts = _call_parts(node)
+                if parts is None:
                     continue
-                d_c, d_e = _dump(node.args[1]), _dump(node.args[2])
+                name_node, c_node, e_node = parts
+                d_c, d_e = _dump(c_node), _dump(e_node)
                 if d_c is None or d_c != d_e:
                     continue
-                name = (node.args[0].value
-                        if isinstance(node.args[0], ast.Constant) else "<dynamic>")
+                name = (name_node.value
+                        if isinstance(name_node, ast.Constant) else "<dynamic>")
                 hits.append({
                     "file": str(p),
                     "line": node.lineno,
                     "assertion": name,
-                    "expr": ast.unparse(node.args[1])[:80],
-                    "kind": "LITERAL" if _is_literal(node.args[1]) else "MEASURED",
+                    "expr": ast.unparse(c_node)[:80],
+                    "kind": "LITERAL" if _is_literal(c_node) else "MEASURED",
                 })
     return hits, scanned, total
 
@@ -115,15 +146,31 @@ def selftest() -> int:
     """
     src = ('w.add_assertion("a", d["x"], d["x"])\n'
            'w.add_assertion("b", 0, 0)\n'
-           'w.add_assertion("c", d["x"], d["y"])\n')
+           'w.add_assertion("c", d["x"], d["y"])\n'
+           # KEYWORD form — the majority of calls in this corpus, and entirely
+           # unscanned until 2026-08-30. The selftest used to exercise only the
+           # positional path, so it validated the one branch that worked.
+           'w.add_assertion(name="kw_measured", computed=d["x"], expected=d["x"])\n'
+           'w.add_assertion(name="kw_literal", computed=1836.152, '
+           'expected=1836.152)\n'
+           'w.add_assertion(name="kw_ok", computed=d["x"], expected=d["y"])\n'
+           # mixed: positional name, keyword values
+           'w.add_assertion("mixed", computed=d["x"], expected=d["x"])\n')
     tree = ast.parse(src)
     found = {}
     for node in ast.walk(tree):
-        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
-                and node.func.attr == "add_assertion" and len(node.args) >= 3):
-            if _dump(node.args[1]) == _dump(node.args[2]):
-                found[node.args[0].value] = (
-                    "LITERAL" if _is_literal(node.args[1]) else "MEASURED")
+        if not isinstance(node, ast.Call):
+            continue
+        fn = node.func
+        if (getattr(fn, "attr", None) or getattr(fn, "id", None)) != "add_assertion":
+            continue
+        parts = _call_parts(node)
+        if parts is None:
+            continue
+        name_node, c_node, e_node = parts
+        if _dump(c_node) == _dump(e_node) and isinstance(name_node, ast.Constant):
+            found[name_node.value] = (
+                "LITERAL" if _is_literal(c_node) else "MEASURED")
     if found.get("a") != "MEASURED":
         print("SELFTEST FAIL: a measured self-comparison was not caught as MEASURED")
         return 1
@@ -132,6 +179,19 @@ def selftest() -> int:
         return 1
     if "c" in found:
         print("SELFTEST FAIL: a genuine two-sided assertion was flagged")
+        return 1
+    if found.get("kw_measured") != "MEASURED":
+        print("SELFTEST FAIL: KEYWORD-form measured self-comparison missed "
+              "(the blind spot that hid 58 of them)")
+        return 1
+    if found.get("kw_literal") != "LITERAL":
+        print("SELFTEST FAIL: keyword-form literal self-comparison missed")
+        return 1
+    if found.get("mixed") != "MEASURED":
+        print("SELFTEST FAIL: positional-name + keyword-values form missed")
+        return 1
+    if "kw_ok" in found:
+        print("SELFTEST FAIL: a genuine keyword-form assertion was flagged")
         return 1
     print("SELFTEST OK")
     return 0
