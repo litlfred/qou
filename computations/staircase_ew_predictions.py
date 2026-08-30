@@ -40,6 +40,7 @@ invariants of the relevant partitions.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import math
 import sys
 import time
 from pathlib import Path
@@ -87,6 +88,23 @@ def conjugate_shape(shape: tuple[int, ...]) -> tuple[int, ...]:
 
 def is_self_conj(shape: tuple[int, ...]) -> bool:
     return conjugate_shape(shape) == shape
+
+
+def hook_length_dimension(shape: tuple[int, ...]) -> int:
+    """f^λ = n! / ∏ hooks — the Frame–Robinson–Thrall hook-length formula.
+
+    A route to the irrep dimension that is INDEPENDENT of the Hoefsmit
+    seminormal build in ``build_ew_matrix_numpy``: pure combinatorics on the
+    Young diagram, touching neither the generators nor q.  Used to check the
+    dimension the build reports (bean qou-26f2 — the assertion that consumed
+    it used to be computed=True/expected=True).
+    """
+    conj = conjugate_shape(shape)
+    prod = 1
+    for i, row in enumerate(shape):
+        for j in range(row):
+            prod *= (row - j - 1) + (conj[j] - i - 1) + 1
+    return math.factorial(sum(shape)) // prod
 
 
 # ── β_EW Δ_I^minimal braid word ────────────────────────────────────
@@ -441,6 +459,12 @@ def main() -> int:
     print(f"  shape={rho4}  n={n4}  h_corner={h4}  |word|={len(word4)}")
     print(f"  Attempting full spectrum (dim~768) …")
 
+    # Independent expected value for the assertion below: the Frame–Robinson–
+    # Thrall hook-length formula, pure combinatorics on the Young diagram, with
+    # no contact with the Hoefsmit seminormal build or with q.
+    dim4_expected = hook_length_dimension(rho4)
+    print(f"  hook-length f^λ = {dim4_expected}  (independent expected dim)")
+
     t_start = time.time()
     try:
         M4, dim4, t4 = build_ew_matrix_numpy(
@@ -448,11 +472,14 @@ def main() -> int:
         )
         r4 = eigenvalue_analysis(M4, h4, Q0, "rho_4 (4,3,2,1) FULL", wb)
         results["spectrum"].append(r4)
-        wb.add_assertion(
-            "rho4_full_spectrum_completed",
-            computed=True,
-            expected=True,
-        )
+        # `computed` is the dimension the build ACTUALLY produced — not the
+        # matrix's declared dim but the one the eigen-decomposition ran on, so
+        # a truncated or mis-shaped build cannot slip through.
+        dim4_built = int(M4.shape[0])
+        results["rho4_dimension"] = {
+            "built": dim4_built,
+            "hook_length_formula": dim4_expected,
+        }
     except Exception as exc:
         print(f"  ρ_4 full spectrum failed: {exc}")
         results["spectrum"].append({
@@ -460,12 +487,32 @@ def main() -> int:
             "error": str(exc),
             "elapsed_s": time.time() - t_start,
         })
-        wb.add_assertion(
-            "rho4_full_spectrum_completed",
-            computed=False,
-            expected=True,
-        )
+        results["rho4_dimension"] = {
+            "built": 0,
+            "hook_length_formula": dim4_expected,
+            "error": str(exc),
+        }
+        dim4_built = 0          # 0 != f^λ, so the assertion goes red
         r4 = None
+    # Was computed=True/expected=True on the success path (bean qou-26f2):
+    # green by construction, and it certified nothing about the spectrum it
+    # named. The dimension is the one property of a "full spectrum" that has a
+    # second route, so use it.
+    wb.add_assertion(
+        "rho4_full_spectrum_completed",
+        computed=dim4_built,
+        expected=dim4_expected,
+        tolerance=0,
+        unit="dimension",
+        source=(
+            f"The ρ_4=(4,3,2,1) seminormal build must span the whole irrep: the "
+            f"eigen-decomposition ran on a {dim4_built}-dimensional matrix, and "
+            f"the Frame–Robinson–Thrall hook-length formula gives "
+            f"f^(4,3,2,1) = 10!/∏hooks = {dim4_expected} independently of the "
+            "Hoefsmit construction and of q. A failed build records 0 here and "
+            "goes red rather than leaving the old computed=False/expected=True."
+        ),
+    )
 
     # ── ρ_4 corner generator eigenvalues ───────────────────────────
     print("\n  ρ_4 corner generator analysis …")

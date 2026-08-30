@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T10:27:51.373067+00:00",
-  "commitSha": "06c5cfb2fd69a523d341f0a1b329c3e6dc33c853",
+  "computedAt": "2026-08-30T10:01:37.922716+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
       "name": "variance_test_completed",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 25,
+      "expected": 25,
       "passed": true,
-      "tolerance": 0.0,
-      "unit": "boolean",
-      "source": "Variance test for 5² = 25 (K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed). Best variance: 1.4888 achieved by K_1* = 6_1, K_2* = unknot. Baseline (uniform Plancherel): 1.82."
+      "tolerance": 0,
+      "unit": "pairs",
+      "source": "COVERAGE: every one of the 5² = 25 (K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed) produced a finite max/min variance over all 4 atoms ['D', 'T', '3He', '4He']. Expected value is |K_candidates|² from the declared candidate list, independent of the sweep's own output. Goes red if an atom χ-witness is missing (WARN + continue above) or a pair degenerates to inf. Best variance: 1.4888 at K_1* = 6_1, K_2* = unknot. Baseline (uniform Plancherel): 1.82. NOTE the hypothesis under test is NOT confirmed — the lepton-generation assignment (3_1, 5_1) does not minimise the variance; see `lepton_generation_assignment_rank_by_variance` in data."
     }
   ],
   "allPassed": true,
-  "durationMs": 43200,
+  "durationMs": 22964,
   "computation": "k-star-variance-phase5d-5b",
   "scriptFile": "delta_lambda_k_star_variance_phase5d_5b.py",
-  "scriptHash": "54f7a116a41d",
+  "scriptHash": "d7e3184a2b79",
   "scriptCommitSha": "06c5cfb2fd69a523d341f0a1b329c3e6dc33c853",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -1144,7 +1144,16 @@
           "phi_3": "3.136778822096738875440814685857707527847209396177791994722201066340322"
         }
       }
-    }
+    },
+    "lepton_generation_assignment_rank_by_variance": 13,
+    "pairs_beating_lepton_generation_assignment": 12,
+    "pairs_fully_covered": 25,
+    "atoms_loaded": [
+      "3He",
+      "4He",
+      "D",
+      "T"
+    ]
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

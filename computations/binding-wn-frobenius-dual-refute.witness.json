@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:56:07.043758+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:58:22.516522+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
       "name": "frobenius_dual_refuted_scope_a",
-      "computed": "1",
-      "expected": "1",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "no Frobenius-dual reweighting of na-Stokes residues reproduces the decelerating w_n ratios; y_λ normalize tr_M → tr_M(1)=1 / constant self-pairings."
+      "unit": "candidates",
+      "source": "REFUTATION = zero of the 5 Frobenius-dual / na-Stokes reweightings lands within ±0.2 of the target w_n ratios (2.144, 1.706) at BOTH n=3/2 and n=4/3. The count is the script's own per-candidate match predicate (`matches_target` in data), so a single matching reweighting turns this red — which is what a scope-a refutation has to risk. Was computed=\"1\"/expected=\"1\", which passed at the value that refutes the claim (qou-26f2)."
     }
   ],
   "allPassed": true,
-  "durationMs": 48,
+  "durationMs": 12,
   "computation": "binding-wn-frobenius-dual-refute",
   "scriptFile": "binding_wn_frobenius_dual_probe.py",
-  "scriptHash": "ab7a3fcb3c43",
+  "scriptHash": "9b7f576fe060",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -48,35 +49,41 @@
       "n3": 1.3369656222357074,
       "n4": 2.5327796563993914,
       "ratio_3_2": 1.3369656222357074,
-      "ratio_4_3": 1.8944239210608975
+      "ratio_4_3": 1.8944239210608975,
+      "matches_target": false
     },
     "Σ dim_q² (self-dual)": {
       "n2": 2.0,
       "n3": 6.043706208532522,
       "n4": 24.705030034513218,
       "ratio_3_2": 3.021853104266261,
-      "ratio_4_3": 4.087728486807413
+      "ratio_4_3": 4.087728486807413,
+      "matches_target": false
     },
     "Σ y_λ dim_q = tr_M(𝟙)": {
       "n2": 1.0,
       "n3": 1.0026947721088464,
       "n4": 1.0108084530078616,
       "ratio_3_2": 1.0026947721088464,
-      "ratio_4_3": 1.0080918751395809
+      "ratio_4_3": 1.0080918751395809,
+      "matches_target": false
     },
     "Σ y_λ dim_q² (Frob self-dual)": {
       "n2": 1.0,
       "n3": 1.505404226503931,
       "n4": 2.2991396407005587,
       "ratio_3_2": 1.505404226503931,
-      "ratio_4_3": 1.5272573307701918
+      "ratio_4_3": 1.5272573307701918,
+      "matches_target": false
     },
     "Σ y_λ (total weight)": {
       "n2": 1.0,
       "n3": 0.7527021132519655,
       "n4": 0.5665604712939746,
       "ratio_3_2": 0.7527021132519655,
-      "ratio_4_3": 0.7527021132519655
-    }
+      "ratio_4_3": 0.7527021132519655,
+      "matches_target": false
+    },
+    "candidates_matching_target": 0
   }
 }

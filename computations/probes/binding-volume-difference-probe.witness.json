@@ -1,24 +1,25 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:28:27.989157+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T10:21:46.523401+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
       "name": "no_derived_volume_difference_closes_A3",
-      "computed": 1,
-      "expected": 1,
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "log refuted (−55..−90%); cosh degenerate (|tr|<2); SnapPy braid closures non-hyperbolic (Vol≈0). All derived volumes fail."
+      "unit": "observables",
+      "source": "Of the 2 of 3 observables that were actually EVALUATED, 0 close A≥3. (A) log|tr| volume: no derived ρ brings all four isotopes within a generous ±10% — the best is ~69% off on ⁴He; a generous window makes zero hits a stronger negative, not a weaker one. (B) cosh-inversion: 4/4 traces elliptic (|tr|<2), so no real length exists and the observable cannot close. (C) SnapPy: NOT EVALUATED — SnapPy is not installed, so this leg is absent from the count rather than counted as a refutation; see the caveat. Was computed=1/expected=1 (bean qou-26f2), which passed at the value that refutes the claim and hid C never having run."
     }
   ],
   "allPassed": true,
-  "durationMs": 33,
+  "durationMs": 19,
   "computation": "binding-volume-difference-probe",
   "scriptFile": "binding_volume_difference_probe.py",
-  "scriptHash": "0f4ddd601a7f",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "ee46301746f4",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,49 +31,58 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_volume_difference_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_volume_difference_probe.py"
   },
   "description": "Derive-or-refute: does B = ρ·[Vol(atom)−Vol(free)] close A≥3 binding, using DERIVED volumes (no census-knot fit)? Three observables all fail: (A) log|tr_M| volume — no derived ρ closes it (−55…−90%); (B) cosh-inversion — every |tr_M|<2 (elliptic), no real length; (C) SnapPy on the derived braid closure — non-hyperbolic (degenerate tetrahedra, Vol≈0). Hyperbolic volume needs complex-q (Kashaev N→∞), absent at the real substrate q₀; the only nonzero volumes come from hand-assigned census knots = a per-isotope fit. Converges with PR #1421 (no derived atom→knot rule).",
   "data": {
     "log_volume_errs_pct": {
       "m_e": {
-        "D": -78.65099045312317,
-        "T": -86.9483146343921,
-        "3He": -89.24836772021726,
-        "4He": -94.83344865999821
+        "D": -84.45291834813654,
+        "T": -90.45644141742217,
+        "3He": -92.27533035788662,
+        "4He": -96.25453807895336
       },
       "E_0": {
-        "D": 74.88598747091535,
-        "T": 6.916289409685979,
-        "3He": -11.925196152762714,
-        "4He": -57.6768453388239
+        "D": 27.357979816672742,
+        "T": -21.82144735867531,
+        "3He": -36.72135115770594,
+        "4He": -69.3180704632371
       },
       "m_e*8G": {
-        "D": 56.43966571760122,
-        "T": -4.360842072614806,
-        "3He": -21.21499800379071,
-        "4He": -62.14093385606527
+        "D": 13.924735063766885,
+        "T": -30.067429538751995,
+        "3He": -43.39574705151108,
+        "4He": -72.55428596816294
       }
     },
     "cosh_inversion": {
       "D": {
-        "abs_tr_free": "0.983526",
-        "abs_tr_atom": "0.388286",
+        "abs_tr_free": "1.13172",
+        "abs_tr_atom": "0.575172",
         "loxodromic": false
       },
       "T": {
-        "abs_tr_free": "0.908024",
-        "abs_tr_atom": "0.104052",
+        "abs_tr_free": "1.11785",
+        "abs_tr_atom": "0.22931",
         "loxodromic": false
       },
       "3He": {
-        "abs_tr_free": "1.04776",
-        "abs_tr_atom": "0.206541",
+        "abs_tr_free": "1.29668",
+        "abs_tr_atom": "0.403767",
         "loxodromic": false
       },
       "4He": {
-        "abs_tr_free": "0.967323",
-        "abs_tr_atom": "0.0553483",
+        "abs_tr_free": "1.28078",
+        "abs_tr_atom": "0.160974",
         "loxodromic": false
       }
     },
@@ -98,11 +108,34 @@
         "hyperbolic": false
       }
     },
+    "observables": {
+      "log_volume": {
+        "evaluated": true,
+        "closes_A3": false,
+        "closing_rho": []
+      },
+      "cosh_inversion": {
+        "evaluated": true,
+        "closes_A3": false,
+        "n_elliptic": 4,
+        "n_cases": 4
+      },
+      "snappy_braid_closure": {
+        "evaluated": false,
+        "closes_A3": false
+      }
+    },
+    "observables_evaluated": 2,
+    "observables_total": 3,
+    "snappy_available": false,
     "conclusion": {
       "log_volume": "refuted — no derived ρ closes (κ spans 313%)",
       "cosh_inversion": "degenerate — all |tr_M|<2 (elliptic regime)",
-      "snappy_braid_closure": "refuted — closures non-hyperbolic (Vol≈0)",
+      "snappy_braid_closure": "NOT EVALUATED — SnapPy not installed (was previously recorded as 'refuted', which it never was)",
       "interpretation": "hyperbolic volume needs complex-q Kashaev N→∞, absent at real q₀; nonzero vols only via census-knot fit. Linear truncation not repaired by any real-q volume difference — missing structure is in the archimedean (complex-q) step."
     }
-  }
+  },
+  "caveats": [
+    "Observable C (SnapPy hyperbolic volume of the derived braid closure) was NOT EVALUATED: SnapPy is not installed, and `_snappy_braid_vols` returns (None, None, False) on ImportError — indistinguishable at the call site from a genuine non-hyperbolic result. `vol_free` is null in the committed witness as well, so C has never been evaluated in this repo. The refutation recorded here therefore rests on observables A and B only; the 'triple refutation' in the description and the 'refuted — closures non-hyperbolic (Vol≈0)' conclusion overstate what ran (bean qou-26f2)."
+  ]
 }

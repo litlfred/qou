@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:16:41.992580+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:11:25.455775+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "correction_tower_converges",
-      "computed": 1,
-      "expected": 1,
+      "name": "correction_tower_convergent_term_ratios",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 0,
-      "source": "ℏ_q tower should converge at substrate q₀"
+      "unit": "ratios",
+      "source": "MEASURED convergence of the ℏ_q tower at q₀, replacing `correction_tower_converges` (computed=1/expected=1, green regardless of the numbers — bean qou-26f2). A convergent series evaluated at a point needs its successive TERM magnitudes to decrease; here 0 of the 2 successive ratios are < 1. Terms: |ℏ³| = 0.000972704, then |c₄ℏ⁴| = 115.335 (×118571.0) and |c₅ℏ⁵| = 115.335 (×1.0). So the tower DIVERGES at q₀ beyond the ℏ³ term and expected=0 records that honest negative — it goes red the moment a reconstruction actually produces decreasing terms, which is the alarm worth having. The ℏ³ term itself is genuine and is the module's one real result: it improves the residual from -1431.2717 ppm to -459.96026 ppm. The 2×2 ℏ⁴/ℏ⁵ solve is well conditioned (cond ≈ 300), so the ~1e6 coefficients are real, not numerical noise; see `two_term_fit.caveat`. computed = -1 means the 2×2 solve raised and the tower could not be measured at all — red, not a vacuous 0-of-0 pass; `two_term_fit.solve_error` then carries the reason."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "phase2a2-flavor-split-exact-correction",
   "scriptFile": "phase2a2_flavor_split_exact_correction.py",
-  "scriptHash": "80a8d8683c57",
+  "scriptHash": "5eefef90eae3",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -42,5 +43,38 @@
     "reproduce": "python3 -u computations/phase5/phase2a2_flavor_split_exact_correction.py"
   },
   "description": "Reconstructs the exact flavor-split correction tower: X = X_leading · (1 + ℏ_q³ + c₄ℏ⁴ + c₅ℏ⁵ + ...) where ℏ_q = (q-1)/q is the substrate Planck constant. Identifies the coefficient c₄ and checks for rational structure.",
-  "contentBlock": "prop:flavor-split-substrate"
+  "contentBlock": "prop:flavor-split-substrate",
+  "data": {
+    "hbar_q": "0.09908171604425850783917712",
+    "two_term_fit": {
+      "c4": "-1196702.7722865658495",
+      "c5": "12077985.721359203174",
+      "solve_error": null,
+      "sample_q_points": [
+        "1.1099785827513808076",
+        "1.1210783685788946157"
+      ],
+      "rhs_at_sample_points": [
+        "0.00046061952944030379183",
+        "14.658858600574772126"
+      ],
+      "caveat": "2 equations, 2 unknowns — the fit INTERPOLATES the two sample points exactly, so its residual at q₀ is ~0 by construction and is not evidence of convergence. The rhs moves from 4.6e-4 to 14.66 across a 9% change in ℏ_q, so the residual being fitted is not a smooth low-order polynomial in ℏ_q over that span."
+    },
+    "truncation_err_ppm": {
+      "X_leading only": "-1431.27173506",
+      "× (1 + ℏ³)": "-459.960257727",
+      "× (1 + ℏ³ + c₄ℏ⁴)": "-115170186.962",
+      "× (1 + ℏ³ + c₄ℏ⁴ + c₅ℏ⁵)": "7.95964253616e-64"
+    },
+    "tower_term_magnitudes": {
+      "ℏ³": "0.000972703680616",
+      "c₄ℏ⁴": "115.334802444",
+      "c₅ℏ⁵": "115.335263064"
+    },
+    "tower_term_ratios": [
+      "118571.364273",
+      "1.00000399376"
+    ],
+    "tower_term_ratios_examined": 2
+  }
 }

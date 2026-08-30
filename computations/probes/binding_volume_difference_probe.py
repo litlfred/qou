@@ -191,11 +191,22 @@ def main():
         else:
             print(f"  {iso:4s}: Vol_free={vf:.4g}  Vol_atom={va:.4g}  "
                   f"hyperbolic={hyp}")
-    if not any_hyp:
+    # `any_hyp` is False BOTH when SnapPy ran and found non-hyperbolic closures
+    # AND when SnapPy is simply not installed — so the unconditional
+    # "all closures NON-hyperbolic" below printed a refutation on the strength
+    # of a missing import.  SnapPy is not in this repo's provisioning set and
+    # `vol_free` is null in the committed witness too, so observable C has never
+    # actually been evaluated.  Distinguish the two (bean qou-26f2).
+    snappy_ran = any(C_res[iso]["vol_free"] is not None for iso, _, _ in cases)
+    if not snappy_ran:
+        print("  → SnapPy NOT INSTALLED: observable C was NOT EVALUATED."
+              "  This is not a refutation of C.")
+    elif not any_hyp:
         print("  → all closures NON-hyperbolic (Seifert-fibred / degenerate);"
               " no volume signal.")
 
-    print("\nTriple refutation: no DERIVED volume difference (log / cosh /")
+    print(f"\n{'Triple' if snappy_ran else 'Double (C not evaluated)'} "
+          "refutation: no DERIVED volume difference (log / cosh /")
     print("SnapPy) closes A≥3. Hyperbolic volume needs complex-q (Kashaev")
     print("N→∞), absent at the real substrate q₀; the only nonzero volumes")
     print("come from hand-assigned census knots = per-isotope fit (#1421).")
@@ -218,10 +229,60 @@ def main():
               "loxodromic": data[iso]["cosh_defined"]}
         for iso, _, _ in cases})
     wb.add_data("snappy_braid_closure_vols", C_res)
+    # Per-observable verdicts, COMPUTED rather than declared.  "Closes A≥3" is
+    # given a deliberately GENEROUS 10% window: making it easier for a candidate
+    # to count as closing makes finding none a STRONGER negative, not a weaker
+    # one.  (At 25% the answer is still none — the best ρ is 69% off on ⁴He.)
+    CLOSE_TOL_PCT = 10.0
+    rho_closing = sorted(
+        name for name, errs in A_res.items()
+        if max(abs(e) for e in errs.values()) <= CLOSE_TOL_PCT)
+    observables = {
+        "log_volume": {
+            "evaluated": True,
+            "closes_A3": bool(rho_closing),
+            "closing_rho": rho_closing,
+        },
+        "cosh_inversion": {
+            "evaluated": True,
+            # A cosh length exists only for a loxodromic trace; every case
+            # being elliptic is precisely why this observable cannot close.
+            "closes_A3": n_elliptic == 0,
+            "n_elliptic": n_elliptic,
+            "n_cases": len(cases),
+        },
+        "snappy_braid_closure": {
+            "evaluated": snappy_ran,
+            "closes_A3": bool(any_hyp),
+        },
+    }
+    n_evaluated = sum(1 for o in observables.values() if o["evaluated"])
+    n_closing = sum(1 for o in observables.values()
+                    if o["evaluated"] and o["closes_A3"])
+    wb.add_data("observables", observables)
+    wb.add_data("observables_evaluated", n_evaluated)
+    wb.add_data("observables_total", len(observables))
+    wb.add_data("snappy_available", snappy_ran)
+    if not snappy_ran:
+        wb.add_caveat(
+            "Observable C (SnapPy hyperbolic volume of the derived braid "
+            "closure) was NOT EVALUATED: SnapPy is not installed, and "
+            "`_snappy_braid_vols` returns (None, None, False) on ImportError — "
+            "indistinguishable at the call site from a genuine non-hyperbolic "
+            "result. `vol_free` is null in the committed witness as well, so C "
+            "has never been evaluated in this repo. The refutation recorded "
+            "here therefore rests on observables A and B only; the 'triple "
+            "refutation' in the description and the 'refuted — closures "
+            "non-hyperbolic (Vol≈0)' conclusion overstate what ran (bean "
+            "qou-26f2)."
+        )
     wb.add_data("conclusion", {
         "log_volume": "refuted — no derived ρ closes (κ spans 313%)",
         "cosh_inversion": "degenerate — all |tr_M|<2 (elliptic regime)",
-        "snappy_braid_closure": "refuted — closures non-hyperbolic (Vol≈0)",
+        "snappy_braid_closure": (
+            "refuted — closures non-hyperbolic (Vol≈0)" if snappy_ran
+            else "NOT EVALUATED — SnapPy not installed (was previously "
+                 "recorded as 'refuted', which it never was)"),
         "interpretation": "hyperbolic volume needs complex-q Kashaev N→∞, "
                           "absent at real q₀; nonzero vols only via census-"
                           "knot fit. Linear truncation not repaired by any "
@@ -230,11 +291,27 @@ def main():
     })
     wb.add_assertion(
         "no_derived_volume_difference_closes_A3",
-        computed=1,
-        expected=1,
+        computed=n_closing,
+        expected=0,
         tolerance=0,
-        source="log refuted (−55..−90%); cosh degenerate (|tr|<2); SnapPy "
-               "braid closures non-hyperbolic (Vol≈0). All derived volumes fail.",
+        unit="observables",
+        source=(
+            f"Of the {n_evaluated} of {len(observables)} observables that were "
+            f"actually EVALUATED, {n_closing} close A≥3. (A) log|tr| volume: no "
+            f"derived ρ brings all four isotopes within a generous ±"
+            f"{CLOSE_TOL_PCT:g}% — the best is ~69% off on ⁴He; a generous "
+            "window makes zero hits a stronger negative, not a weaker one. "
+            f"(B) cosh-inversion: {n_elliptic}/{len(cases)} traces elliptic "
+            "(|tr|<2), so no real length exists and the observable cannot "
+            "close. (C) SnapPy: "
+            + ("evaluated; hyperbolic=" + str(bool(any_hyp)) + "."
+               if snappy_ran else
+               "NOT EVALUATED — SnapPy is not installed, so this leg is absent "
+               "from the count rather than counted as a refutation; see the "
+               "caveat.")
+            + " Was computed=1/expected=1 (bean qou-26f2), which passed at the "
+            "value that refutes the claim and hid C never having run."
+        ),
     )
     wb.save()
 

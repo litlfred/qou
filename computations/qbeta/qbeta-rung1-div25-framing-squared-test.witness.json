@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:46:28.802002+00:00",
-  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
+  "computedAt": "2026-08-30T10:23:16.894254+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
       "name": "div25_q_deformation_test_decisive",
@@ -10,15 +10,16 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "The probe computes c_3 with /25 (current main) vs the q-deformed candidate /[5]_q², and compares ε_ppm vs the cal-anchored c_3 target. Reports which is closer. Decisive either way."
+      "unit": "candidates",
+      "source": "DECISIVE <=> exactly one of the two candidates lies within 10x the better |eps_ppm| against the cal-anchored c_3 target. Here /25 gives +2.651 ppm and /[5]_q^2 gives -982.245 ppm — a separation of 370.5x, so the leading band holds 1 candidate. Two comparable candidates would give 2 and turn this red, which is exactly the outcome the old computed=1/expected=1 could not report. WHICH candidate wins is in `verdict`; this assertion is about the comparison being separable at all."
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 36,
   "computation": "qbeta-rung1-div25-framing-squared-test",
   "scriptFile": "qbeta_rung1_div25_framing_squared_test.py",
-  "scriptHash": "07e808d3a782",
-  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
+  "scriptHash": "be4e28834041",
+  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,10 +31,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -66,6 +67,22 @@
     "verdict": {
       "main_undeformed_better": true,
       "conclusion": "/25 in c_3 closure is q-undeformed empirical constant; q-deformation /[5]_q² gives WORSE precision. /25 is NOT a categorical framing² that deforms with q. The structural source remains OPEN (classical-limit framing, integer-denominator Habiro element, or unreduced Markov normalization at 5 strands)."
+    },
+    "decisiveness": {
+      "abs_eps_ppm": {
+        "/25 (q-undeformed)": "2.65082860339",
+        "/[5]_q^2 (q-deformed)": "982.245332302"
+      },
+      "band_multiple_of_best": 10,
+      "candidates_in_leading_band": [
+        "/25 (q-undeformed)"
+      ],
+      "separation_ratio": "370.54275446"
+    },
+    "classical_limit_check": {
+      "[5]_q_at_q_to_1": "5",
+      "[5]_q_squared_at_q_to_1": "25",
+      "matches_25": true
     }
   },
   "q0Anchor": "independent",

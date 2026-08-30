@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:05:27.954331+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-08-30T10:16:48.449152+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -37,9 +37,12 @@
     },
     {
       "name": "rho4_full_spectrum_completed",
-      "computed": true,
-      "expected": true,
-      "passed": true
+      "computed": 768,
+      "expected": 768,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "dimension",
+      "source": "The ρ_4=(4,3,2,1) seminormal build must span the whole irrep: the eigen-decomposition ran on a 768-dimensional matrix, and the Frame–Robinson–Thrall hook-length formula gives f^(4,3,2,1) = 10!/∏hooks = 768 independently of the Hoefsmit construction and of q. A failed build records 0 here and goes red rather than leaving the old computed=False/expected=True."
     },
     {
       "name": "rho3_hook_ratio_hypothesis_falsified_30pct",
@@ -57,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 81450,
+  "durationMs": 40696,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
-  "scriptHash": "18b0513ae11f",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "45581c56e15f",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,8 +76,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/staircase_ew_predictions.py"
+    ],
+    "reproduce": "python3 -u computations/staircase_ew_predictions.py"
   },
   "description": "Staircase EW corner-hook falsification probe.  Tests P1: ρ_4 = (4,3,2,1) pure-SL stratum should NOT benefit from q^(1/7) correction.  Reproduces ρ_3 sanity check (0.127%). Also examines corner-generator eigenvalue structure and q-hook ratios for a derivation of why q^(1/h_corner) appears.",
   "contentBlock": "conj:weinberg-angle-categorical",
@@ -185,6 +196,10 @@
           "err_h_hm1_vs_cotw": 0.3452346372331361
         }
       ],
+      "rho4_dimension": {
+        "built": 768,
+        "hook_length_formula": 768
+      },
       "derivation_rho3": {
         "h_corner": 5,
         "q_int_h": 5.220441275326899,
