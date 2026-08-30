@@ -256,3 +256,63 @@ and `prepare-merge-auto` currently prescribes requesting on every run.
 historical `total_count: 0` with no message is a different signature from
 today's announced quota refusal. Silent-exhaustion and off-then-back remain
 distinguishable only by evidence nobody has yet.
+**My own AGENTS.md correction is SUPERSEDED and was dropped**, not merged: it
+was n=1, request-agnostic, and had none of the quota mechanism or the
+self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
+stay that way.
+
+## The historical zeros: one datum that CONSTRAINS the open question above
+## (session clinical-derivation-attack-vectors, PR #6131)
+
+The QUOTA section leaves a question open and says it cannot be settled from
+there: were the historical zeros "over quota all along", or "off, then back"?
+It notes the two imply different operating rules, and that today's exhaustion
+ANNOUNCES ITSELF as a posted review.
+
+Measured, on exactly the five PRs this bean's original n=5 was collected from:
+
+    get_reviews  #5474 []   #5495 []   #5411 []   #5459 []   #5482 []
+
+ZERO reviews. Not quota refusals -- nothing posted at all, by either instrument
+(get_check_runs was already recorded as total_count 0 on all five).
+
+BEARING ON THE QUESTION, and it is a constraint rather than a settlement: if
+those five had been quota exhaustion, and exhaustion announces itself as a
+posted review as it did on #6122 and #6131, then get_reviews should show a
+refusal on at least some of them. It shows nothing. That FAVOURS "off, then
+back" over "over quota all along".
+
+WHAT IT DOES NOT ESTABLISH, stated because the distinction is the whole point of
+the open question:
+  * the announcing behaviour may itself be new -- if the refusal message shipped
+    between 2026-08-23 and 2026-08-30, silent exhaustion then and announced
+    exhaustion now are perfectly consistent with "over quota all along". This
+    bean already names that possibility and I cannot exclude it either.
+  * five PRs from one day is a thin sample for a rationed resource.
+
+So: the observation removes the easy version of "over quota all along" (the one
+where refusals would have been visible), and leaves the harder version standing.
+Recorded as a constraint on the candidates, in the same spirit as the #6119
+unrequested-review row above.
+
+METHOD NOTE for whoever re-measures: this is cheap and non-consuming.
+get_reviews on a historical PR spends no quota, unlike a fresh
+request_copilot_review. Any PR from the original window can be checked the same
+way at no cost.
+
+## Superseded record, kept for the trail
+
+This session independently reached the quota mechanism (trial 2, #6131, 07:56Z,
+same refusal text) and independently reached the "check runs are the wrong
+instrument" point. BOTH ARE SUPERSEDED by the sections above, which are more
+thorough -- they carry the self-sealing diagnosis, four timing rows, the
+unrequested-review case and the 5-of-6 findings calibration, none of which I
+had. Only the five-PR datum above is additive, and it is why this append exists
+rather than a competing account.
+
+I also over-attributed once en route, and record it since the error is
+instructive: I blamed the check-run instrument for the n=5 result. The
+instrument IS wrong -- Copilot produces no check run in any outcome, so a
+check-run poll cannot distinguish reviewed / refused / never-asked -- but the
+five PRs show nothing under get_reviews either, so the instrument was not what
+produced that reading. Two independent facts; I had collapsed them.
