@@ -76,7 +76,7 @@ theorem strong_unique_bar_even :
 /-- The electromagnetic sector is exactly the one with no pure bar-parity
 assignment (and provably cannot have one — see the library module
 `QOU.Interactions.EmCouplingBarParity`). -/
-theorem em_parity_open :
+theorem em_no_pure_parity :
     ∀ s : Sector, parity s = none ↔ s = .electromagnetic := by
     intro s; cases s <;> decide
 

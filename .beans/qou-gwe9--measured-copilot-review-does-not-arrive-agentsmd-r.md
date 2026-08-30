@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:58:22Z
+updated_at: 2026-08-30T08:02:14Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -216,3 +216,5 @@ Quot.sound — no sorryAx.
 The correct handling was NOT to apply the suggested fix. Rewriting two working
 proofs to satisfy a speculative comment is the same failure as widening a
 baseline to make a gate green.
+
+**Independent corroboration (second session, same day):** PR #6124 (check run enqueued, in_progress) and PR #6129 (full review submitted ~4 min after request: 4 substantive inline comments, all verified-real, addressed same session). Matches the reopened record above; and the quota mechanism explains that session's later thread-resolution 'rate limit' errors.
