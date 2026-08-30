@@ -245,6 +245,32 @@ def main() -> None:
     for k, v in results.items():
         w.add_data(k, v)
     w.add_data("all_checks_passed", all_ok)
+    # `all_ok` was already computed as the conjunction of six checks and
+    # already stored, but only as data — so the witness claimed
+    # `allPassed: true` over an empty assertion list (bean `qou-srvu`).
+    # Asserting it makes the exclusion this script exists to establish
+    # testable. The Lagrange residual is asserted separately against
+    # `1e-40`, the bound the file itself declares at the `verified` flag,
+    # so a regression in the identity is distinguishable from a regression
+    # in the bend inequalities.
+    w.add_assertion(
+        "lagrange_identity_matches_direct_evaluation",
+        str(identity_err), "0", tolerance="1e-40",
+        source=(
+            "max |x(w)x(w+4) - x(w+2)^2 - c d g^w h^w (g^2-h^2)^2| over the "
+            f"{len(cases)} declared cases"
+        ),
+    )
+    w.add_assertion(
+        "additive_two_mode_exclusion_all_checks",
+        all_ok, True,
+        source=(
+            "lagrange_identity.verified AND sweep_respects_bound AND "
+            "never_above_one AND has_interior_minimum AND "
+            "sign_indefinite_escape.can_exceed_observed_bend AND "
+            "observed lepton bend > 1"
+        ),
+    )
     w.add_caveat(
         "Scope-(b) covers POSITIVE two-mode sums only. More than two modes "
         "is not formalised (the Lagrange identity generalises by "
