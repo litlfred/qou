@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:26Z",
+  "updated_at": "2026-08-30T07:02:27Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3942,6 +3942,94 @@
       "file_sha": "931cf6455a6e",
       "disposition": "no-change",
       "evidence": "`rw [sw.summands_count, hn]` -- the content is a FIELD of the `DescartesSchurWeyl` structure binder, so this is a conditional derivation from a stated assumption rather than something the file establishes. Legitimate as a projection; advisory because the name reads as the Schur-Weyl decomposition at n = 3 while the decomposition itself is assumed.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/three_parameters_wedderburn.lean::three_parameters_wedderburn::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 33,
+      "verdict": "genuine",
+      "file_sha": "bc64be621e4a",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def partitionCountOfThree : N := 3` and `theorem three_parameters_wedderburn : partitionCountOfThree = 3 := rfl`. The docstring claims TWO independently-motivated counts agree -- \"The number of calibration parameters equals the number of irreducible representations of H_3(R,q), which equals 3\" -- but the Lean carries only ONE literal and compares it to itself. It does not encode the calibration count, the Wedderburn block count, or any relation between them. Compare `kl_eigenvalue_at_one_eq_pairCount` (recorded genuine), which at least had two independently-entered `:= 2`s; this has one. CORRECTED BEFORE PUBLISHING: my first draft of this entry said \"AGENTS.md carries this alignment as a headline (3 calibrations = 3 H^1 DOF) and this file is that claim's Lean\". THAT IS WRONG. The headline claim's Lean is `QOU.Mass.calibrations_eq_cohomology` in mass-theory/calibration-cohomology-alignment.lean, which is a DIFFERENT and better-structured declaration: the three alignments (cal1 = hodgeScale, cal2 = hodgeModulus, cal3 = mesonScale) are FIELDS of a `CalibrationCohomologyAlignment` structure -- stated assumptions -- and the theorem composes them by `rw`, which is the sanctioned 3b-cond conditional pattern. `three_parameters_wedderburn` is a separate, weaker sibling that asserts the count match with one literal. The detector does not flag the alignment file at all. Caught by running the claim-SHAPE grep before committing -- the same arity/identity conflation already committed once this session on `frobenius_codim_trace_n5`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean::q_beta_c3_wenzl_decomposition_exact::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 35,
+      "verdict": "genuine",
+      "file_sha": "24f1aaac0c25",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def q_beta_c3_wenzl_coefficient q := -2 - (3/2) * wenzlAltWeight 4 q` and the theorem asserts exactly that, by `rfl`. The docstring DOES disclose the mechanism -- \"Here we formally ASSERT the Wenzl weight identity for the c_3 scalar\", and it calls the surrounding construction an ANSATZ -- so by the usual rubric (does the declaration say so?) this would be advisory. It is recorded genuine because the NAME says `_exact`, and the name is what a grep, a citation or a downstream reader sees. This sits in the c_k zone where AGENTS.md requires TIERED reporting (proved / near-match / fitted) after a four-session wire/un-wire flip-flop, and where the `-2` Hopf identification is on record as a near-match 3.4671 % from the extracted c_3. Calling a definitional restatement `_exact` there is the specific error the tiering rule exists to prevent.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean::habiroLeadingCoeff_eq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 420,
+      "verdict": "advisory",
+      "file_sha": "b7ac65c87340",
+      "disposition": "no-change",
+      "evidence": "`habiroLeadingCoeff A := 2 * borromeanOctahedra ^ A` restated as `= 2 * 8 ^ A` by `simp [habiroLeadingCoeff, borromeanOctahedra]` -- a definitional unfolding that inlines the named constant. General in A and honest; the docstring explains BOTH factors' provenance (8 is the per-nucleon octahedron count, 2 is dim V_(2,1) forced by the confinement-SDP interface block). Advisory only because the theorem cannot detect a wrong `borromeanOctahedra`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_provenance::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 118,
+      "verdict": "legit",
+      "file_sha": "11463c7f6278",
+      "disposition": "no-change",
+      "evidence": "A genuine two-route cross-check: `jonesHopfStd q := -sqrt q - (sqrt q)^5` evaluated at 1 against `classicalJonesAtOne c := loopValue 1 ^ (c-1)` at c = 2. Two DIFFERENT formulas, neither a table, both giving -2, related by rewriting through each route's own lemma. This is what a provenance check should look like.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::symmetrizedSeifertDet_eq_three::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 113,
+      "verdict": "advisory",
+      "file_sha": "4180b2166d2d",
+      "disposition": "no-change",
+      "evidence": "`def symmetrizedSeifertDet : Int := (-2)*(-2) - 1*1` -- the 2x2 determinant written out longhand, so `decide` does real arithmetic (4 - 1 = 3) rather than reading a literal. The Seifert matrix entries are hand-entered and unchecked, which is what keeps this advisory; the identification with the trefoil determinant is asserted in the docstring, not derived.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean::conventionD_ne_conventionC::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 151,
+      "verdict": "legit",
+      "file_sha": "a4fdddf45265",
+      "disposition": "no-change",
+      "evidence": "A genuine INEQUALITY proof, and a good one: it shows two rational functions differ by exhibiting a point (t = 2, where both denominators are nonzero) and discharging the universally-quantified claim by instantiation. Real content, and it is the negative result underpinning the trace-convention split registered under the 2026-08-15 convention-D ruling. Exactly the kind of work the audit should protect.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_sub_vHat::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 158,
+      "verdict": "legit",
+      "file_sha": "617c8fea8905",
+      "disposition": "no-change",
+      "evidence": "`vHat z ab := z * ab.1 + ab.2`; the theorem `vHat z' ab - vHat z ab = (z' - z) * ab.1` is real algebra general in z, z' and ab, closed by `ring`. It states the affine dependence on the Markov parameter -- changing convention moves V-hat by dz * alpha and by nothing else -- which is a substantive structural fact, not a restatement.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_margin::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 169,
+      "verdict": "legit",
+      "file_sha": "617c8fea8905",
+      "disposition": "no-change",
+      "evidence": "Genuine field manipulation with the nonzero hypothesis USED: `field_simp` needs `h_alpha : alpha != 0` to clear the denominator, and `ring` closes it. The result is the conditioning statement the docstring describes -- alpha is the amplification from how far the convention moved to how far the pole moved.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
