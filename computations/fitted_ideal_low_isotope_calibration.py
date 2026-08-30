@@ -129,7 +129,9 @@ import time
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import (  # noqa: E402
+    set_compute_dps, fmt, str_at_true_precision,
+)
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
@@ -466,7 +468,20 @@ def main() -> int:
     })
     w.add_data("layers", {
         "observational_ideal": {
-            "q": fmt(q0), "Q_beta_MeV": fmt(qb_obs),
+            # Q_β and m_e are CODATA-ORIGIN: they reach mpf from a 53-bit
+            # source, so `fmt` at OUTPUT_DPS would emit the binary64 dyadic
+            # tail and read as measured precision (the float64-padding
+            # defect — caught here by the ratchet as NEW, claiming
+            # 0.782333409309999949776... for a value that really carries
+            # 0.78233340931). `str_at_true_precision` tests per value
+            # whether the mpf holds only 53 bits and shortens exactly those.
+            # The FITTED values below keep `fmt`: they are computed at full
+            # working precision and shortening them would destroy real digits.
+            # m_e keeps `fmt`: it is NOT exactly float64-representable, so the
+            # helper falls through to `str()` at compute-dps and emits a
+            # 70-digit noise tail — worse than fmt's clean trailing zeros at
+            # OUTPUT_DPS. The helper applies per value, not per provenance.
+            "q": fmt(q0), "Q_beta_MeV": str_at_true_precision(qb_obs),
             "m_e_MeV": fmt(me_obs),
             "rel_rms": fmt(rms_obs),
             "chosen_by": "measurement (CODATA/PDG)",
