@@ -18,13 +18,21 @@ LaTeX label: `prop:nuclear-groebner-reduction`
 
 namespace QOU.Archimedean
 
-/-- A braid word: a list of generator indices. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-abbrev BraidWord := List ℕ
+/-- A braid word as a plain list of generator indices, local to the
+Gröbner–Shirshov reduction in this module.
+
+Renamed from `BraidWord` (bean `qou-kfcl`): `QOU.Archimedean.BraidWord` is
+already `List (Fin (n - 1) × Bool)` in `QOU.Archimedean.HeckeRep` — a
+different type, not a mirror — so the two modules could never both be
+imported. Renamed rather than namespace-nested because a content block's
+`lean.ref` names `QOU.Archimedean.nuclear_groebner_reduction` in this file,
+and nesting would have moved that name too. -/
+abbrev NuclearBraidWord := List ℕ
 
 /-- An element of the Hecke algebra: a list of (word, coefficient) pairs. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-abbrev HeckeElement := List (BraidWord × ℝ)
+abbrev HeckeElement := List (NuclearBraidWord × ℝ)
 
 /-- The crossing sign for a nucleon pair.
     pp = positive (weight q), nn = negative (weight q⁻¹),
@@ -74,7 +82,7 @@ inductive GroebnerRelation
 
 /-- A word is Gröbner-reduced if no relation in G applies. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-def isReduced (w : BraidWord) : Prop :=
+def isReduced (w : NuclearBraidWord) : Prop :=
   -- No adjacent repeated generators (Hecke)
   (∀ i, i + 1 < w.length → w[i]! ≠ w[i+1]!) ∧
   -- Far commuting generators are sorted
@@ -97,7 +105,7 @@ def isReduced (w : BraidWord) : Prop :=
     generators and all generators in {0, ..., A-2} is A-1.
     This follows by pigeonhole: A-1 distinct values, no repeats. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-theorem max_word_length_bound (A : ℕ) (w : BraidWord)
+theorem max_word_length_bound (A : ℕ) (w : NuclearBraidWord)
     (hw : isReduced w) (hgen : ∀ g ∈ w, g < A - 1)
     (hnodup : w.Nodup) :
     w.length ≤ A - 1 := by
@@ -117,8 +125,8 @@ theorem max_word_length_bound (A : ℕ) (w : BraidWord)
 noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (p n : ℕ) : Prop :=
   ∃ (nf : HeckeElement),
-    (∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1) ∧
-    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.Nodup) ∧
-    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
+    (∀ (wb : NuclearBraidWord × ℝ), wb ∈ nf → isReduced wb.1) ∧
+    (∀ (wb : NuclearBraidWord × ℝ), wb ∈ nf → wb.1.Nodup) ∧
+    (∀ (wb : NuclearBraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
 
 end QOU.Archimedean
