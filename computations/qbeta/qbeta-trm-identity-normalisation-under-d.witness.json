@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy+exact rationals",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:03:41.196276+00:00",
-  "commitSha": "f32f989b7ae1ba70d33464cb47c164d8437deeba",
+  "computedAt": "2026-08-30T09:10:06.810013+00:00",
+  "commitSha": "a4955556d480706da33c5994e69a1e16dbf38861",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-trm-identity-normalisation-under-d",
   "scriptFile": "qbeta_trm_identity_normalisation_under_d.py",
-  "scriptHash": "0d74169bbd6b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "672c80464ee1",
+  "scriptCommitSha": "a4955556d480706da33c5994e69a1e16dbf38861",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -134,9 +134,10 @@
     "step2_requirement": "offset must carry bar-weight -4 for alpha to be bar-homogeneous under D",
     "bar_weight_of_1": "1",
     "bar_weight_of_z_D": "q**(-4)",
-    "verdict": "weight 0 != weight -4, so IF the phase offset is the trace normalisation then no offset-reinterpretation makes the D phase bar-homogeneous. The natural repair is CLOSED; the D ladder must be rebuilt on another principle."
+    "verdict": "RETRACTED. The antecedent is false: the phase offset is NOT the trace normalisation but a single-wrap eigenphase artifact on V_(2,1). The weight-0 argument does not bind it. See link_settled_and_FALSE."
   },
-  "link_not_established": "the `1` in alpha = (z - 1)h/2 is a BARE LITERAL at computations/qbeta/qbeta_utils.py:255. That it IS tr_M(1) is the reading under which the verdict follows, and this probe does not prove it. Settle that provenance first — it is cheap and it decides which path the re-derivation takes.",
+  "link_settled_and_FALSE": "the `1` is NOT tr_M(1). q-beta-categorical-precision-ladder.md:21 states alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1) (prop:q-beta-spectral-bridge). So the weight-0 argument does not bind it and the 'offset repair is CLOSED' verdict is RETRACTED; the offset question is REOPENED. The tr_M(1) = 1 measurement is unaffected — it simply lacks the consequence Step 2 expected.",
+  "sharpened_next_step": "the phase factors as (z-1)*(h/2), and h/2 is Delta_beta = (h/2).I from beta-decay-transfer-matrix-proof.md — built from h alone, so z-free and convention-INDEPENDENT. All convention dependence sits in (z-1). The D phase therefore comes from re-deriving the single-wrap eigenphase on V_(2,1) under the D trace, not from substituting z_D and not from a weight -4 offset.",
   "context": {
     "beans": [
       "qou-cds1"

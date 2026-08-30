@@ -47,15 +47,40 @@ unavailable and **no offset-reinterpretation can make the D phase
 bar-homogeneous.** The most natural repair route is closed, and the D ladder
 must be rebuilt on a principle other than bar-homogeneity of this phase.
 
-## The one link NOT established
+## THE LINK IS FALSE — settled 2026-08-30, same session
 
-The `1` in `alpha = (z - 1)h/2` is a **bare literal** at
-`computations/qbeta/qbeta_utils.py:255`. That it IS `tr_M(1)` is an
-interpretation this probe does not prove — it is the reading under which the
-conclusion above follows. If the `1` has a different provenance, the weight-0
-argument does not apply to it and the offset question reopens. Whoever takes
-the next step should settle that provenance first; it is cheap and it decides
-which of two paths the re-derivation takes.
+The paragraph above flagged the `tr_M(1)` reading as unproved and said settling
+it would decide the path. It is now settled, and it goes the OTHER way.
+
+`content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md`
+line 21 states it outright:
+
+    alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1)
+    (per prop:q-beta-spectral-bridge)
+
+So the `1` is an artifact of an eigenphase computation on the 2-dimensional
+Wedderburn block, **not** the trace normalisation. The weight-0 argument does
+not bind it, and **the conclusion "the offset repair is CLOSED" DOES NOT
+FOLLOW.** That conclusion is retracted here; the offset question is REOPENED.
+
+What survives, unaffected: the measurement itself. `tr_M(1) = 1` is preserved
+exactly under D at all 12 rows, it is imposed rather than derived, and nothing
+replaces it. That answers the question Step 2 asked. It simply does not have
+the consequence Step 2's framing expected, because Step 2 mis-identified which
+`1` was in the phase.
+
+## The sharpened next step
+
+Structure visible from `beta-decay-transfer-matrix-proof.md`: the phase factors
+as `(z - 1) * (h/2)`, and the `h/2` is the beta-decay transfer-matrix shift
+`Delta_beta = (h/2) . I`, which is built from `h` alone — **z-free, hence
+convention-independent.** The entire convention dependence of the phase sits in
+the `(z - 1)` factor.
+
+So the D-frame ladder phase is obtained by re-deriving the single-wrap
+eigenphase on V_(2,1) under the D trace, from prop:q-beta-spectral-bridge —
+NOT by substituting z_D, and NOT by adjusting the offset to weight -4. That is
+the concrete open item, and it is narrower than "re-derive the ladder".
 
 Consistent with the corpus already treating this as unresolved:
 `qbeta_utils.py` WITHHOLDS `z` and `alpha` under convention D behind a guard
@@ -159,18 +184,27 @@ def main() -> int:
             "bar_weight_of_1": str(one_weight),
             "bar_weight_of_z_D": str(z_weight),
             "verdict": (
-                "weight 0 != weight -4, so IF the phase offset is the trace "
-                "normalisation then no offset-reinterpretation makes the D "
-                "phase bar-homogeneous. The natural repair is CLOSED; the D "
-                "ladder must be rebuilt on another principle."
+                "RETRACTED. The antecedent is false: the phase offset is NOT "
+                "the trace normalisation but a single-wrap eigenphase artifact "
+                "on V_(2,1). The weight-0 argument does not bind it. See "
+                "link_settled_and_FALSE."
             ),
         },
-        "link_not_established": (
-            "the `1` in alpha = (z - 1)h/2 is a BARE LITERAL at "
-            "computations/qbeta/qbeta_utils.py:255. That it IS tr_M(1) is the "
-            "reading under which the verdict follows, and this probe does not "
-            "prove it. Settle that provenance first — it is cheap and it "
-            "decides which path the re-derivation takes."
+        "link_settled_and_FALSE": (
+            "the `1` is NOT tr_M(1). q-beta-categorical-precision-ladder.md:21 "
+            "states alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1) "
+            "(prop:q-beta-spectral-bridge). So the weight-0 argument does not "
+            "bind it and the 'offset repair is CLOSED' verdict is RETRACTED; "
+            "the offset question is REOPENED. The tr_M(1) = 1 measurement is "
+            "unaffected — it simply lacks the consequence Step 2 expected."
+        ),
+        "sharpened_next_step": (
+            "the phase factors as (z-1)*(h/2), and h/2 is Delta_beta = (h/2).I "
+            "from beta-decay-transfer-matrix-proof.md — built from h alone, so "
+            "z-free and convention-INDEPENDENT. All convention dependence sits "
+            "in (z-1). The D phase therefore comes from re-deriving the "
+            "single-wrap eigenphase on V_(2,1) under the D trace, not from "
+            "substituting z_D and not from a weight -4 offset."
         ),
         "context": {
             "beans": ["qou-cds1"],
@@ -198,10 +232,18 @@ def main() -> int:
     print(f"    check, not a derivation")
     print(f"  bar-weight of the offset 1                          : {one_weight}  (weight 0)")
     print(f"  bar-weight of z_D                                   : {z_weight} (weight -4)")
-    print(f"  => Step 2's required weight -4 is UNAVAILABLE; the offset repair")
-    print(f"     is CLOSED and the D ladder needs another principle.")
-    print(f"\n  NOT established: that the `1` in alpha IS tr_M(1) — bare literal")
-    print(f"  at qbeta_utils.py:255. Settle that first.")
+    print(f"  => Step 2 expected weight -4 to close the offset repair. RETRACTED:")
+    print(f"     the `1` is NOT tr_M(1). It is the single-wrap EIGENPHASE on")
+    print(f"     V_(2,1) (q-beta-categorical-precision-ladder.md:21,")
+    print(f"     prop:q-beta-spectral-bridge), so the weight-0 argument does not")
+    print(f"     bind it. The offset question is REOPENED.")
+    print(f"\n  What survives: the measurement. tr_M(1) = 1 is preserved under D,")
+    print(f"  imposed not derived, and nothing replaces it — it simply lacks the")
+    print(f"  consequence Step 2's framing expected.")
+    print(f"\n  NEXT: the phase factors as (z-1)*(h/2); h/2 is Delta_beta = (h/2).I,")
+    print(f"  built from h alone, so z-FREE and convention-independent. All the")
+    print(f"  convention dependence is in (z-1). Re-derive the single-wrap")
+    print(f"  eigenphase on V_(2,1) under the D trace.")
     print(f"\n  witness -> {out}")
     return 0
 
