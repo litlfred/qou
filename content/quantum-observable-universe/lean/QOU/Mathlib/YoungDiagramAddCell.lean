@@ -1,4 +1,4 @@
-import QOU.Mathlib.YoungDiagramCorner
+import QOU.Mathlib.YoungDiagramAddable
 
 /-!
 # QOU.Mathlib.YoungDiagramAddCell — adjoining a corner, the inverse of `eraseCorner`
@@ -36,54 +36,25 @@ open YoungDiagram
 
 variable {μ : YoungDiagram}
 
-/-- An **addable cell** of `μ`: outside `μ`, but with its up- and left-neighbours present (or absent
-because it sits on the boundary).  Adjoining it yields a Young diagram. -/
-def IsAddableCell (μ : YoungDiagram) (s : ℕ × ℕ) : Prop :=
-  s ∉ μ ∧ (s.1 = 0 ∨ (s.1 - 1, s.2) ∈ μ) ∧ (s.2 = 0 ∨ (s.1, s.2 - 1) ∈ μ)
+/-! `IsAddableCell`, `addCell`, `mem_addCell` and `card_addCell` are **not redeclared
+here** — they come from `QOU.Mathlib.YoungDiagramAddable`, which this module now imports.
 
-/-- **Corner addition `μ + s`.** -/
-def addCell (μ : YoungDiagram) (s : ℕ × ℕ) (hs : IsAddableCell μ s) : YoungDiagram where
-  cells := insert s μ.cells
-  isLowerSet := by
-    obtain ⟨hs0, hs1, hs2⟩ := hs
-    intro a b hba ha
-    simp only [Finset.coe_insert, Set.mem_insert_iff] at ha ⊢
-    rcases ha with rfl | haμ
-    · by_cases hbs : b = a
-      · exact Or.inl hbs
-      · refine Or.inr ?_
-        have h1 : b.1 ≤ a.1 := hba.1
-        have h2 : b.2 ≤ a.2 := hba.2
-        have hstrict : b.1 < a.1 ∨ b.2 < a.2 := by
-          by_contra h
-          push_neg at h
-          exact hbs (Prod.ext_iff.mpr ⟨by omega, by omega⟩)
-        have hb : (b.1, b.2) ∈ μ := by
-          rcases hstrict with hlt | hlt
-          · rcases hs1 with h0 | hmem
-            · omega
-            · exact μ.up_left_mem (by omega) (by omega) hmem
-          · rcases hs2 with h0 | hmem
-            · omega
-            · exact μ.up_left_mem (by omega) (by omega) hmem
-        simpa using hb
-    · exact Or.inr (μ.isLowerSet hba haμ)
+They used to be defined in both files, with character-identical bodies, and the
+duplication made the two modules MUTUALLY EXCLUSIVE: no module could import both, since
+Lean rejects the second declaration of a name already in the environment. That is a real
+constraint, not a tidiness point — it is what stopped `YoungLatticeCornerCount` from
+reusing `YoungDiagramAddable`'s corner/addable API while needing `cornerAddEquiv` from
+here (bean `qou-dup1`).
 
-@[simp] theorem mem_addCell (s : ℕ × ℕ) (hs : IsAddableCell μ s) (x : ℕ × ℕ) :
-    x ∈ addCell μ s hs ↔ x = s ∨ x ∈ μ := by
-  show x ∈ insert s μ.cells ↔ _
-  rw [Finset.mem_insert]
-  tauto
-
-theorem card_addCell (s : ℕ × ℕ) (hs : IsAddableCell μ s) :
-    (addCell μ s hs).cells.card = μ.cells.card + 1 := by
-  show (insert s μ.cells).card = _
-  rw [Finset.card_insert_of_notMem hs.1]
+This file is now a proper EXTENSION of `YoungDiagramAddable`: it adds the `eraseCorner`
+round-trips and the outer exchange, and redeclares nothing. Measured before the change:
+`card_addCell` and `mem_addCell` have **zero** consumers outside this file, so the
+argument-order difference between the two former copies breaks nothing. -/
 
 /-- The added cell is a removable corner of the result. -/
 theorem isCornerCell_addCell (s : ℕ × ℕ) (hs : IsAddableCell μ s) :
     IsCornerCell (addCell μ s hs) s := by
-  refine ⟨(mem_addCell s hs s).mpr (Or.inl rfl), ?_, ?_⟩
+  refine ⟨(mem_addCell μ s s hs).mpr (Or.inl rfl), ?_, ?_⟩
   · rw [mem_addCell]
     rintro (h | h)
     · exact absurd h (by simp [Prod.ext_iff])
