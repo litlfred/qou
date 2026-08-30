@@ -1,11 +1,11 @@
 ---
 # qou-5wng
 title: 'GAP: atom_bond_dimension_measure.row_tail — premise false under D, float64 q0 cast, and it never ran'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-30T01:12:21Z
+updated_at: 2026-08-30T03:17:59Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to

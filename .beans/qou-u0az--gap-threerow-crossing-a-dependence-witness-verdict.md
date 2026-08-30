@@ -1,11 +1,11 @@
 ---
 # qou-u0az
 title: 'GAP: threerow-crossing-a-dependence witness verdict contradicted its own data three ways'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T01:00:36Z
-updated_at: 2026-08-30T01:01:22Z
+updated_at: 2026-08-30T03:17:59Z
 ---
 
 Parent: qou-5wng. Found by reading the highest-scoring remaining flagged file in
