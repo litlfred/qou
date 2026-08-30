@@ -165,3 +165,35 @@ rebuild came first).
 
 **Still open, unchanged:** hyperbolic 3-manifolds in Mathlib, Mostow
 hyperbolisation, Thurston. The bean stays open.
+
+
+---
+
+## 2026-08-29 (later still) — CORRECTION to this bean's own framing
+
+This bean says the volume of a 3-manifold is undefined and adds that Mathlib has no
+hyperbolic 3-manifolds. The second half is true of Mathlib and **misleading about this
+corpus**, and I wrote it. Measured on main, `QOU/Archimedean/` already carries:
+
+| module | state |
+|---|---|
+| `HyperbolicVolumeMeasure` | `upperHalfSpace`, `hypDensity = 1/z³`, `hypVolume` — **0 sorries** |
+| `IdealTetrahedronRegion` | chimney regions — **0 sorries** |
+| `TotallyGeodesicFaces` | vertical planes + hemispheres totally geodesic — **0 sorries** |
+| `HyperbolicMetric` | `dH` path metric, `IsDHIsometry` — 3 sorries |
+| `IdealTriangulation` | shape triple `param_prod = -1`, `param_im_pos`, `volume_rotate` — proved |
+
+Anyone reading this bean's wording would conclude the hyperbolic layer is absent and
+rebuild a good deal of it. **The gap was never "H³ is missing" — it was "no group is
+acting."** No discrete subgroup, no quotient, which is the whole distance between
+having H³ and having a hyperbolic 3-manifold. That is why `MostowRigidity.volume` is an
+entered literal and `HyperbolicVolumeBridge.vol` an assumed field: neither had anything
+to attach to.
+
+Addressed in child bean `qou-hq3m` (`QOU/Archimedean/HyperbolicQuotient.lean`), which
+supplies the acting group and derives a quotient volume instead of positing one.
+
+**This bean stays open**, and its genuinely open parts are unchanged and untouched:
+Mostow rigidity, Thurston hyperbolisation, and a route from a knot complement to a
+triangulation. `Vol(4₁)` is still not computable and the `figureEight` literal is still
+unverified.
