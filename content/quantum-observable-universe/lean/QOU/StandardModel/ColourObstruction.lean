@@ -53,7 +53,7 @@ Plus one piece of downstream machinery:
 
 5. `twist_surj_of_correction_trivial` — the abstract exact-triangle vanishing
    lemma. This is the bookkeeping of Seidel's long exact sequence
-   (`uploads/0105186v2.pdf`) **without** the Floer theory: if the correction
+   (`library/arxiv-math-0105186v2/0105186v2.pdf`) **without** the Floer theory: if the correction
    term of a three-term exact sequence vanishes, the twist map is onto.
    See the section docstring below for how it is meant to be used.
 
@@ -253,7 +253,7 @@ theorem g2_dim_split : 8 + 6 = 14 := by norm_num
 
 /-! ## 5. The exact-triangle vanishing lemma — Seidel's bookkeeping, no Floer
 
-    `uploads/0105186v2.pdf` (Seidel, *A long exact sequence for symplectic
+    `library/arxiv-math-0105186v2/0105186v2.pdf` (Seidel, *A long exact sequence for symplectic
     Floer cohomology*) gives, for `τ_L` the Dehn twist along a Lagrangian
     sphere `L`,
 

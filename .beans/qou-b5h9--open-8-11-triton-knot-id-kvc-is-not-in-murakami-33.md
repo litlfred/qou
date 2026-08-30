@@ -148,7 +148,7 @@ Measured with SnapPy `Manifold(k).is_two_bridge()`:
 
 **Why this matters now.** The owner has supplied Ohtsuki, *On the Kashaev
 invariant and the twisted Reidemeister torsion of **two-bridge** knots*
-(Geometry & Topology 19 (2015) 853–952) — `uploads/Download (1).pdf`. If its
+(Geometry & Topology 19 (2015) 853–952) — `library/download-1/Download (1).pdf`. If its
 main theorem is an **unconditional** statement for all two-bridge knots, it
 reaches 8₁₁ directly, and this bean's load-bearing open VC instance closes.
 Every 10-crossing τ candidate would close with it.
@@ -157,7 +157,7 @@ That is a large *if*, and the title argues against it: "twisted Reidemeister
 torsion" suggests the **subleading (1-loop) term**, which is normally studied
 *given* the asymptotic expansion rather than establishing it. The companion
 upload Garoufalidis–Yoon, *1-loop equals torsion for two-bridge knots* (2024,
-`uploads/2411.03801v2.pdf`) points the same way. So the likely reading is that
+`library/arxiv-2411.03801v2/2411.03801v2.pdf`) points the same way. So the likely reading is that
 these refine the expansion rather than prove the volume conjecture — but that
 is a prediction, and the papers are being read now rather than guessed at.
 
