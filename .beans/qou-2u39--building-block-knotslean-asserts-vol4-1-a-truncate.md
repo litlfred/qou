@@ -1,11 +1,11 @@
 ---
 # qou-2u39
 title: building-block-knots.lean asserts Vol(4_1) = a truncated decimal with an equals sign
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-30T15:04:15Z
-updated_at: 2026-08-30T15:26:51Z
+updated_at: 2026-08-30T15:35:44Z
 ---
 
 Found while exactifying `MostowRigidity.knot5_2` (bean `qou-f8lit` item 1, PR #6263). Two
@@ -159,3 +159,25 @@ exists to record. Option 3 (do nothing) leaves a Lean-refutable claim in the cor
 The direction matters and is worth stating: the ratio is **below** `206.768`
 (`206.763525398207`), which is why the refutation discharges on the `left` disjunct. An
 agent writing the negation with `right` gets `⊢ False` and may conclude the claim is true.
+
+
+---
+
+## 2026-08-30 — FIXED in #6280 (items 1 and 3); item 4 deliberately left
+
+- **The `=` → `≈`** on the `Vol(4₁)` docstring (AGENTS.md §7ab). Done.
+- **The overclaim.** `muon_electron_ratio_from_substrate` now states `< 0.00448` — the
+  measured bound to within 0.03 % — and the docstring says the same. The tightening cost
+  nothing; the tactic is unchanged.
+- **A regression guard.** `muon_electron_ratio_not_within_thousandth` proves the old `0.001`
+  claim FALSE, so it cannot silently return. Discharges on the `left` disjunct because the
+  ratio sits *below* `206.768`.
+- **The two dead literals: NOT removed.** Neither is referenced and neither `.md` sibling
+  mentions them, but deleting an expository constant from a content block is a judgement
+  about the exposition, not a cleanup — and `terminal-resolution.lean`'s sits immediately
+  above the CODATA constants in a file whose subject is `m(K) = Vol(K)/ℏ_q²`, where having
+  `Vol(4₁)` visible is plausibly deliberate. Left for the author. The `terminal-resolution`
+  one carries **no `:leanval` tag**, so it can drift from the canonical witness with nothing
+  syncing it; that is the part worth acting on if anyone does.
+
+Verified: `lean`-direct exit 0, `check-sidecars` clean, sidecar refreshed.
