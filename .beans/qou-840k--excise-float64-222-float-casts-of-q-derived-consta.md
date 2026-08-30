@@ -584,3 +584,77 @@ invite copying the wrong half, which is plausibly how the cap propagated in the
 first place. A note now records the split, that the live path uses 50, and that
 30 is kept **deliberately**: a historical path should reproduce its history, not
 be quietly improved.
+
+
+## Item 5 — RE-SCOPED 2026-08-30. The blocker was never the cache, and it was not cost
+
+Item 5 read: *"the real work is an mpf-capable block cache — a `BlockCacheMpf`
+beside `syt_prefix_cache.BlockCache` … lowest priority of the four."* Both
+halves are out of date, and the second is misleading.
+
+### The cache exists, and so does the whole mpf path
+
+`BlockCacheMP` is at **`computations/hoefsmit_mpmath.py:33`** (sibling branch
+`claude/sparse-mpf-character-2026-08-24`), and its docstring says it *"mirrors
+`pyhecke.syt_prefix_cache.BlockCache` exactly"* — same `__init__(q, h)`, same
+`get(rho) -> (a, a', b)`. More than that: `mass_at_3A_proper` **already carries
+a full mpf path behind `QOU_H3A_MPF`** (`:234`), gating `_q_pair`, the
+`V_hat` accumulator (`:874`) and the trace (`:949`), *off by default and
+deliberately so*. So item 5 was never "build the cache"; the cache and the
+wiring were both already there.
+
+### First measurement was wrong — recording it
+
+I measured `markov_trace_3A` and found the flag changed nothing: the total came
+back `float` either way, differing only in the last digit, with no time penalty.
+That would have supported "the flag does nothing". **It is the wrong function** —
+`markov_trace_3A` is marked `[DEPRECATED — Plancherel-weighted form]` and its
+`total = 0.0` is not gated at all. The gated function is
+`per_generator_V_hat_3A`, and there the flag is unmistakable:
+
+    QOU_H3A_MPF=0   'full': 0.6713858243916997                        float
+    QOU_H3A_MPF=1   'full': mpf('0.671385824391699572753287986942…')  mpf
+
+### The actual blocker: a hard failure, not a slow path
+
+    A=1  flag on: fine        A=2  flag on: fine (0.013s vs 0.007s — 1.9x, not 642x)
+    A=4  flag on: ValueError: scipy.sparse does not support dtype object
+
+`build_seminormal_matrices_cached` switches to a scipy sparse representation
+once **`dim > 500`** (`tools/pyhecke/python/pyhecke/syt_prefix_cache.py:154`),
+and scipy.sparse cannot hold a non-numeric dtype. Under the flag the entries are
+mpmath objects, so it raises. **A ≤ 2 never crosses dim > 500**, which is why
+every size the flag had been exercised at looked healthy.
+
+This is the same failure the *symbolic* branch already anticipated —
+`mass_at_3A_proper.py:335` forces `sparse=False` with a comment saying scipy
+"cannot hold sympy expressions". The mpf path hits the identical wall and was
+never given the identical treatment. Fixed by mirroring it at `:408`;
+`sparse=None` keeps the dim-based default for float64.
+
+A/B on one shape, which is the proof:
+
+    (4,3,2,1)  sparse=None  (old default)  -> ValueError: scipy.sparse … dtype object
+    (4,3,2,1)  sparse=False (the fix)      -> ok, dim=768
+
+### Where the cost actually is — NOT in the seminormal build
+
+Under the flag, with the fix, shapes well past the threshold build fast:
+
+    (4,3,2,1)  dim=768   0.2s
+    (5,4,3)    dim=2112  2.0s
+
+So the 642x is not construction. A full `per_generator_V_hat_3A(2,2)` under the
+flag **did not finish in 850s**, against **75.6s** for float64 — so the A=4 cost
+is **>11x and still unmeasured**; the earlier "642x at dim=162" figure is not
+reproduced here and should not be quoted as if it were. The expense is in the
+character multiplication over object-dtype arrays, not in building the matrices.
+
+### What is left, and it is a decision
+
+The blocker is gone; the flag now works above dim > 500. Remaining:
+- **measure A=4 to completion** under the flag (needs a long run; the mpf disk
+  cache also grew ~3 GB and had to be cleared twice during this work);
+- then the standing choice this flag exists to inform — flip the default, or
+  declare a float64 tier — which changes every value for ~20 consumers and is
+  explicitly not a change to make silently.

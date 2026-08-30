@@ -405,7 +405,19 @@ def _cached_seminormal(shape: tuple[int, ...], q):
         cache = _ensure_block_cache()
     else:
         cache = BlockCache(q, q - 1 / q)
-    data = build_seminormal_matrices_cached(shape, cache=cache)
+    # `sparse=False` under QOU_H3A_MPF, for the SAME reason the symbolic
+    # branch above forces it: `build_seminormal_matrices_cached` defaults to a
+    # scipy sparse representation once `dim > 500`
+    # (`syt_prefix_cache.py:154`), and scipy.sparse cannot hold a non-numeric
+    # dtype. With the mpf cache the entries are mpmath objects, so the build
+    # raises
+    #     ValueError: scipy.sparse does not support dtype object
+    # exactly as it would for sympy. Measured 2026-08-30: A=4 (n=12) fails
+    # under the flag and A<=2 does not, because only A=4 crosses dim > 500 —
+    # so this was invisible at every size the flag had been exercised at.
+    # `None` keeps the dim-based default for the float64 path.
+    data = build_seminormal_matrices_cached(
+        shape, cache=cache, sparse=(False if _H3A_MPF else None))
     _SEMINORMAL_CACHE[key] = data
     try:
         sigmas, dim, syts = data
