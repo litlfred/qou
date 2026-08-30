@@ -53,7 +53,14 @@ from hecke_characters import partitions_of, dim_q, qfac
 from witness_base import WitnessBuilder
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
-tr_basis = [1, z, z, z**2, z**2, z**3]
+# tr_basis[5] = tr_M(sigma_0 sigma_1 sigma_0) = h*z^2 + z, NOT z^3 (Markov
+# axioms: tr(s0 s1 s0) = tr(s1 s0^2) = tr(s1 (h s0 + 1)) = h*z^2 + z).
+# docs/audits/2026-05-19-trm5-markov-bug.md fixed this in pyhecke.gram on
+# 2026-05-19; it never propagated here (bean qou-ssex). NOTE: this binding
+# is currently unread in this module -- kept correct rather than deleted so
+# a future consumer does not pick up the wrong weight.
+_h_trm = Q0_PROTON - 1 / Q0_PROTON
+tr_basis = [1, z, z, z**2, z**2, _h_trm * z**2 + z]
 
 
 def contains(lam, mu):
