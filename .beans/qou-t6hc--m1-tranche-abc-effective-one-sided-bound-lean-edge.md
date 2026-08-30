@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T17:53:06Z
+updated_at: 2026-08-30T18:03:03Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -638,3 +638,52 @@ and the budget tolerates **2.028×**. That is why tenths of a percent decide it.
 **STILL OPEN.** qou-k5r5 OPEN. But the gap is now a specific, small, *elementary*
 quantity rather than "effective limit-shape estimates" — and the two refinements
 that reach the line are Lean-reachable from lemmas already proved.
+
+
+---
+
+## Leg A, 2026-08-30 (eighth) — the two refinements are now Lean theorems
+
+Both unwind to one-line statements about `diagLen`, and only one was new:
+
+* **Refinement 1**, `N^τ(r) ≤ min(r, D(0))`, is `D(0) ≤ D(r) + r` — *exactly*
+  `diagLen_le_add_sub` at `u = 0`, already proved. Nothing new needed.
+* **Refinement 2**, `N^σ(a) ≥ max(0, a − (λ₁ − D(0)))`, unwinds to
+  **`D(c) + c ≤ λ₁`** — the last box on diagonal `c` sits at row `D(c)−1`, column
+  `D(c)−1+c`, which is inside row 0. That is the one new lemma.
+
+**A guard that is real, not decorative.** `D(c) + c ≤ λ₁` is **false** when
+`D(c) = 0` and `c > λ₁`; the ℤ form would assert `0 ≤` a negative. So it is stated
+over ℕ unconditionally (truncated subtraction makes it true) and over ℤ only under
+`0 < D c`, which every actual corner satisfies.
+
+**New, sorry-free** (`M1EdgeCalculus.lean`, now 24 theorems, up from 8 at the
+start of this arc; all three standard axioms): `diagLen_le_rowLen_zero_sub`,
+`diagLen_add_le_rowLen_zero`, `diagLen_sub_transpose_le_refined`. The last is the
+combined bound, and it fell to `omega` from four already-proved facts.
+
+**A bug in my own verification, caught before it propagated.** My first check
+reported **2417 violations** of the refined bound. The theorem was fine; the check
+was wrong. When `dABS < 0` the probes' `num` is `−(d_a − d_r)`, not `d_a − d_r` —
+only the ratio `num/dABS` is the slope. Re-checking against `d_a − d_r` computed
+straight from λ's profile gives **0 violations** over 27,794 opposite-sign edges,
+and the slope identity `num/dABS·(r−a) = d_a − d_r` holds on every one of them.
+
+**And my control had failed to fire.** `refined − 1` was also never violated, so
+it demonstrated nothing. Measuring the slack: minimum **1**, attained on 6,778
+edges, against the crude bound's minimum of **2**; tightening by 2 fires on 6,778.
+So the refined bound is essentially attained — the residual O(1) slack is
+`o(√n)` and invisible to the rescaled integrals. Both controls are now in the
+probe.
+
+The refined bound is **strictly tighter than crude on 41%** of opposite-sign
+edges, which is precisely where the gain in the quadrature comes from.
+
+**Also verified:** the algebraic rearrangement linking the Lean statement to the
+quadrature, `min(r,D0) − max(0, a−(λ₁−D0)) = min(D0, λ₁−a) − max(0, D0−r)`, on
+200,000 random rationals with a control (0 mismatches; shifted variant fires
+2000/2000).
+
+**STILL OPEN.** qou-k5r5 OPEN. The asymptotic margin is 0.047% and the finite-n
+crossover (n ≥ 61) is untouched — that is now the *only* thing between this and
+M₁ > 0.

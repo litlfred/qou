@@ -182,6 +182,85 @@ def main():
           f"{nstr(thr / S_same, 4)}x, which is why refinements of a few tenths of a "
           f"percent decide it.")
 
+    # ---- CONTROL: the refined bound the quadrature ASSUMES, on real diagrams ----
+    #
+    # The integrals above are only as good as the per-edge inequality they
+    # integrate. Verify it directly by brute force over every opposite-sign edge
+    # at small n, and measure its slack -- a bound that is never close would mean
+    # the refinement is not where the gain comes from.
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from wlambda_covariance_epic_M1_edge_ratio_monotonicity import (  # noqa: E402
+        corners as _corners, partitions as _partitions,
+    )
+
+    def _prof(lam):
+        Dp = {}
+        for i, q in enumerate(lam):
+            for j in range(q):
+                Dp[j - i] = Dp.get(j - i, 0) + 1
+        return Dp
+
+    def _durfee(Lm):
+        k = 0
+        for i, q in enumerate(Lm):
+            if q >= i + 1:
+                k += 1
+            else:
+                break
+        return k
+
+    nedge = vcrude = vref = tighter = 0
+    minslack = None
+    tight2 = 0
+    for nn in range(6, 21):
+        for Lm in _partitions(nn + 1):
+            cs = _corners(Lm)
+            for xi in range(len(cs)):
+                cxx, _dx, chx = cs[xi]
+                for yi in range(xi + 1, len(cs)):
+                    cyy, _dy, chy = cs[yi]
+                    dab = abs(cyy) - abs(cxx)
+                    if dab == 0 or not (cxx > 0 > cyy):
+                        continue
+                    lam = chx if dab > 0 else chy
+                    Dp, d0, l1, lt = _prof(lam), _durfee(lam), (lam[0] if lam else 0), len(lam)
+                    aa, rr = min(abs(cxx), abs(cyy)), max(abs(cxx), abs(cyy))
+                    nearc = cxx if dab > 0 else cyy
+                    farc = cyy if dab > 0 else cxx
+                    delta = Dp.get(nearc, 0) - Dp.get(farc, 0)
+                    lnear = l1 if nearc >= 0 else lt
+                    ref = min(d0, lnear - aa) - max(0, d0 - rr)
+                    nedge += 1
+                    if delta > d0:
+                        vcrude += 1
+                    if delta > ref:
+                        vref += 1
+                    if ref < d0:
+                        tighter += 1
+                    sl = ref - delta
+                    minslack = sl if minslack is None else min(minslack, sl)
+                    if sl - 2 < 0:
+                        tight2 += 1
+
+    check("CONTROL: the refined per-edge bound holds on real diagrams",
+          vref == 0 and vcrude == 0,
+          f"brute force over every opposite-sign edge at n = 6..20 "
+          f"({nedge} edges): {vcrude} violations of the crude bound, {vref} of the "
+          f"refined one. The refined bound is STRICTLY TIGHTER on {tighter} of them "
+          f"({100 * tighter // nedge}%), which is where the gain in the integrals "
+          f"comes from. Corresponds to "
+          f"QOU.BraidKnot.M1EdgeCalculus.diagLen_sub_transpose_le_refined.")
+
+    check("CONTROL: ...and that check discriminates -- tightening by 2 fails",
+          tight2 > 0,
+          f"minimum slack of the refined bound over the same edges is "
+          f"{minslack}, and tightening it by 2 is violated on {tight2} edges. So "
+          f"the bound is essentially attained -- the residual slack is O(1), hence "
+          f"o(sqrt n) and invisible to the rescaled integrals above. Without this "
+          f"the 'no violations' line would be consistent with a hopelessly loose "
+          f"bound.")
+
     ms = (time.monotonic_ns() - t0) // 1_000_000
     Path(__file__).with_name("m1-limit-closed-form.witness.json").write_text(
         json.dumps({

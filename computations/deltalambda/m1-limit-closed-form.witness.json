@@ -41,9 +41,19 @@
    "name": "for scale: the bound is ~2x the truth, and 2x is nearly enough",
    "pass": true,
    "detail": "S_opp itself -> 0.3302347 while the crude bound gives 0.6754746 -- a factor of 2.045. The refined bound is 2.027x. The budget tolerates a factor of 2.028x, which is why refinements of a few tenths of a percent decide it."
+  },
+  {
+   "name": "CONTROL: the refined per-edge bound holds on real diagrams",
+   "pass": true,
+   "detail": "brute force over every opposite-sign edge at n = 6..20 (6282 edges): 0 violations of the crude bound, 0 of the refined one. The refined bound is STRICTLY TIGHTER on 2696 of them (42%), which is where the gain in the integrals comes from. Corresponds to QOU.BraidKnot.M1EdgeCalculus.diagLen_sub_transpose_le_refined."
+  },
+  {
+   "name": "CONTROL: ...and that check discriminates -- tightening by 2 fails",
+   "pass": true,
+   "detail": "minimum slack of the refined bound over the same edges is 1, and tightening it by 2 is violated on 1896 edges. So the bound is essentially attained -- the residual slack is O(1), hence o(sqrt n) and invisible to the rescaled integrals above. Without this the 'no violations' line would be consistent with a hopelessly loose bound."
   }
  ],
- "passed": 6,
- "total": 6,
- "ms": 40373
+ "passed": 8,
+ "total": 8,
+ "ms": 40565
 }

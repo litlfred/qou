@@ -263,6 +263,77 @@ theorem abs_diagLen_sub_transpose_le (u v : ℕ) :
   rw [abs_le]
   omega
 
+/-! ## Refining the opposite-sign bound
+
+`abs_diagLen_sub_transpose_le` bounds the opposite-sign slope by `D 0 / g`, and
+that bound is SHARP per edge. But it is not sharp on AVERAGE, and the difference
+decides the route: computed over the limiting edge measure
+(`wlambda_covariance_epic_M1_limit_closed_form.py`), the crude bound puts the
+budget at `1.005709` — a miss — while the refinement below puts it at `0.999534`.
+
+Two facts do it, and both are one step from what is already proved here.
+
+* `D 0 ≤ D c + c` (that is `diagLen_le_add_sub` at `u = 0`): the profile cannot
+  have fallen by more than `c` after `c` steps, so at most `c` of the `D 0` drop
+  sites lie in `[0, c)`.
+* `D c + c ≤ λ₁` (`diagLen_add_le_rowLen_zero`, new below): the last box on
+  diagonal `c` sits at row `D c - 1`, column `D c - 1 + c`, and that column is
+  inside row `D c - 1`, hence inside row `0`.
+
+The second is what bounds the drop sites from the *other* end: there are only
+`λ₁ - D 0` non-drop sites in total on a side, so a long interval must contain
+drops. Together they give `diagLen_sub_transpose_le_refined`.
+
+**The guard on the second lemma is real, not decorative.** `D c + c ≤ λ₁` fails
+when `D c = 0` and `c > λ₁` — the ℤ form would then assert `0 ≤` a negative. So
+it is stated over ℕ unconditionally (truncated subtraction makes it true), and
+over ℤ only under `0 < D c`. Every actual corner satisfies that, a corner being a
+box on its own diagonal. -/
+
+/-- `D c` cells on diagonal `c` reach column `D c - 1 + c`, which lies in row `0`.
+Stated with truncated subtraction so it holds unconditionally: past the first row
+both sides are `0`. -/
+theorem diagLen_le_rowLen_zero_sub (c : ℕ) : diagLen μ c ≤ μ.rowLen 0 - c := by
+  rcases Nat.eq_zero_or_pos (diagLen μ c) with h | h
+  · simp [h]
+  · have hmem : diagLen μ c - 1 ∈ diagIdx μ c := by
+      rw [diagIdx_eq_range]
+      exact Finset.mem_range.mpr (by omega)
+    rw [mem_diagIdx] at hmem
+    have := μ.rowLen_anti 0 (diagLen μ c - 1) (Nat.zero_le _)
+    omega
+
+/-- The same fact in the form the refined bound uses: for a NONEMPTY diagonal,
+`D c + c ≤ λ₁`. The hypothesis cannot be dropped — see the section note. -/
+theorem diagLen_add_le_rowLen_zero {c : ℕ} (h : 0 < diagLen μ c) :
+    diagLen μ c + c ≤ μ.rowLen 0 := by
+  have hmem : diagLen μ c - 1 ∈ diagIdx μ c := by
+    rw [diagIdx_eq_range]
+    exact Finset.mem_range.mpr (by omega)
+  rw [mem_diagIdx] at hmem
+  have := μ.rowLen_anti 0 (diagLen μ c - 1) (Nat.zero_le _)
+  omega
+
+/-- **The refined opposite-sign bound.** For an edge whose near corner sits at
+distance `a` on `μ`'s side and whose far corner sits at distance `r` on `μᵀ`'s,
+
+    D_μ a − D_μᵀ r  ≤  min (D 0) (λ₁ − a)  −  max 0 (D 0 − r).
+
+The first term bounds the near diagonal both by the main diagonal and by how much
+room is left in row `0`; the second says the far diagonal cannot have lost more
+than `r` of its `D 0` cells. Dropping both refinements gives back
+`abs_diagLen_sub_transpose_le`'s `D 0`. -/
+theorem diagLen_sub_transpose_le_refined {a r : ℕ} (ha : 0 < diagLen μ a) :
+    (diagLen μ a : ℤ) - (diagLen μ.transpose r : ℤ)
+      ≤ min (diagLen μ 0 : ℤ) ((μ.rowLen 0 : ℤ) - (a : ℤ))
+        - max 0 ((diagLen μ 0 : ℤ) - (r : ℤ)) := by
+  have h1 : diagLen μ a ≤ diagLen μ 0 := diagLen_le_diagLen_zero μ a
+  have h2 : diagLen μ a + a ≤ μ.rowLen 0 := diagLen_add_le_rowLen_zero μ ha
+  have h3 : diagLen μ.transpose 0 ≤ diagLen μ.transpose r + r := by
+    simpa using diagLen_le_add_sub μ.transpose (Nat.zero_le r)
+  have h4 : diagLen μ.transpose 0 = diagLen μ 0 := diagLen_transpose_zero μ
+  omega
+
 /-! ## The site distribution `κ`, and what the "inflation factor" actually is
 
 The `M₁ > 0` route needs `E_ω[slope]`, and by the telescoping lemmas above a
