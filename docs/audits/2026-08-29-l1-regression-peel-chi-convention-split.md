@@ -1,6 +1,29 @@
-# L1 (1 ppQ) is NOT MET on `main`: markov_peel ⟷ chi-cache disagree at 2.9e-7 — a convention split, likely recoverable
+# L1 (1 ppQ) is NOT MET on `main`: the chi-cache combiner is wrong by 2.9e-7 — peel is correct
 
-**Date:** 2026-08-29 · **Method:** cross-witness forensics on `origin/main`, read-only, with an independent `Decimal(60)` recomputation from the two source witnesses · **Tier:** measured fact (two committed witnesses disagree at 2.9e-7) + a **stated, unproven** root-cause hypothesis (convention split) · **Beans:** resolves `qou-wgaw`; confirms `qou-mj1o`'s 2026-08-29 falsification comment; root cause tracked at `qou-3zby`.
+**Date:** 2026-08-29 (root cause **corrected 2026-08-30** — see the box below) · **Method:** cross-witness forensics + **fresh producer recomputation** of both methods at the muon pin · **Tier:** measured fact (L1 not met; the culprit is chi-cache, established by fresh recompute) · **Beans:** resolves `qou-wgaw`; confirms `qou-mj1o`'s falsification comment.
+
+> **🛑 ROOT-CAUSE CORRECTION (2026-08-30).** The first version of this document
+> (2026-08-29) blamed the L1 red on a **convention split with `markov_peel` on
+> convention C**, carried from bean `qou-3zby` (dated 2026-08-21). **That is
+> wrong, and I am correcting my own claim.** Fresh recomputation settles it:
+>
+> - **`markov_peel` is convention D and CORRECT.** Its executable path routes
+>   through `markov_trace_canonical.tr_M_element` → `hecke_symbolic.z_markov =
+>   q³/(q²+1)` (convention D, migrated C→D 2026-08-09, bean `qou-wgta`). Recomputing
+>   `tr_M(proton)` fresh from the current producer reproduces the **committed peel
+>   witness to 3.0×10⁻⁵⁰** — current, not stale, and not convention C.
+> - **`chi-cache` is the outlier, and it is a REAL bug, not a stale witness.**
+>   Fresh recomputation of the `Σ_λ y_λ·χ^λ` chi producer reproduces the
+>   **committed chi value exactly** (`1.14575969303…`), which sits **7.84×10⁻⁸
+>   below** peel. Two independent methods — peel (Markov recursion) and Hoefsmit
+>   (seminormal) — agree to **5×10⁻¹⁰**; chi disagrees with both.
+> - So the L1 failure is a **defect in the chi-cache combiner** (its `y_λ` or
+>   `χ^λ` inputs), NOT a peel convention split, and it is **not** fixed by
+>   regenerating peel. The `qou-3zby` "peel=C" measurement was of a
+>   *then-stale* committed witness; the code was already D.
+>
+> The **measured L1-not-met fact below still stands** (and is now stronger: peel
+> verified correct, chi reproducibly wrong). Only the mechanism changed.
 
 ## Headline
 
@@ -56,15 +79,32 @@ The disagreement **grows monotonically with mass number A**
 (p/n ≈ 7e-8 → D ≈ 1.5e-7 → ⁴He ≈ 2.9e-7) — the signature of a **convention
 split**, not numerical noise.
 
-## Root cause (hypothesis, not proved here)
+## Root cause (established 2026-08-30 by fresh recomputation)
 
-The 2026-08-15 owner ruling made convention **D** canonical and excised **C**.
-The migration is incomplete across these two producers: bean `qou-3zby`
-(2026-08-21) documents `markov_peel` computing in **convention C** while
-`chi-cache` computes in **convention D** at the muon pin. Two methods on two
-different Markov-trace conventions will not agree, and the A-growth is consistent
-with a per-bond convention factor accumulating with braid length. This is stated
-as the **likely** cause; it is not proved in this document.
+The culprit is the **chi-cache combiner** `canonical_tr_m_via_chi_cache.py`
+(`tr_M = Σ_λ y_λ(q₀)·χ^λ`), not `markov_peel`. Evidence (proton, muon pin, all
+values `mpmath` 50-dps):
+
+| method | value `tr_M(proton)` | vs peel |
+|---|---|---|
+| `markov_peel` (Markov recursion, conv. D) | `1.1457597828869253…` | — |
+| Hoefsmit (seminormal, independent) | `1.1457597823152389…` | 5.0×10⁻¹⁰ |
+| **`chi-cache` (Σ_λ y_λ·χ^λ)** | **`1.1457596930289873…`** | **7.84×10⁻⁸** |
+
+- **Fresh peel = committed peel to 3.0×10⁻⁵⁰** ⇒ peel is current and correct (D).
+- **Fresh chi = committed chi exactly** ⇒ chi is **not stale**; it reproducibly
+  computes a value 7.84×10⁻⁸ too small.
+- peel and Hoefsmit are two independent constructions and agree to 5×10⁻¹⁰;
+  **chi is the lone outlier**, so the defect is in chi's inputs — its `y_λ`
+  (from `wedderburn_jones_markov.y_lambda_at`) or its `χ^λ` cache
+  (`chi-<atom>-h<n>.witness.json`) — or the color-weighting in the combiner.
+- The disagreement grows with A (p/n 7.8e-8 → ⁴He 2.9e-7), consistent with a
+  per-block factor accumulating in the `Σ_λ` over the larger partition set — a
+  next-step localization (`y_λ` vs `χ^λ` per partition of n=3A) will pin it.
+
+The A-growth is **not** the C→D ratio (which is 1.481, a 48% split); 7.84e-8 is a
+small residual, so this is a normalization/pin defect in the character path, not
+a wholesale convention swap.
 
 ## What is and is not claimed
 
@@ -72,29 +112,32 @@ as the **likely** cause; it is not proved in this document.
   **not** demonstrate L1 at 1 ppQ; it demonstrates a 2.9e-7 peel⟷chi
   disagreement. An agreement not present in the artifacts is not a certification.
 - **NOT claimed:** that the framework is mathematically **incapable** of 1 ppQ
-  here. This is very likely a *recoverable* mid-migration convention split, not an
-  intrinsic method disagreement. A same-convention (both D, same pin)
-  regeneration may restore the 2026-07-13-era ~1e-50 agreement. Until that number
-  exists in the corpus, L1 is **uncertified**, not **refuted** (scope-(a)).
+  here. peel and Hoefsmit already agree to 5×10⁻¹⁰ — two methods *do* meet the
+  target; the chi-cache combiner is the one that does not. Fixing chi's inputs
+  should restore ~1e-50 agreement. Until that number exists in the corpus, L1 is
+  **uncertified**, not **refuted** (scope-(a)).
 - The **χ-engine closed-form anchor** (`character_closed_form_anchor.worst_delta =
-  5.88e-50`) is a **different, healthy** check — it verifies the character engine
-  is internally correct, not that peel and chi-cache agree. Do not cite it as the
-  peel⟷chi agreement.
+  5.88e-50`) is a **different, healthy** check — it verifies the character engine's
+  1-dim-irrep closed forms, **not** that the full `Σ_λ y_λ·χ^λ` combiner agrees
+  with peel. Do not cite it as evidence the chi combiner is correct — it is exactly
+  the check that passes while the combiner fails.
 
-## The fix (owned convention-D work — do NOT do it here)
+## The fix (at the chi-cache combiner)
 
-The fix is at the producer, and it belongs to the convention-D migration
-(`qou-cds1` / `qou-cdx1`), **not** to a dashboard edit:
+The fix is at `canonical_tr_m_via_chi_cache.py` (and its `y_λ`/`χ^λ` inputs), **not**
+at `markov_peel` (correct) and **not** at the dashboard:
 
-1. Put `markov_peel` and `chi-cache` on the **same convention (D)** at the **same
-   pin**, then regenerate both witnesses.
-2. If a clean same-convention run restores ~1e-50, L1 is recovered — update the
-   cert audit and the precision-goals headline then, from the regenerated number.
+1. Localize the 7.84e-8 defect: for the proton (n=3, partitions of 3), compare
+   `y_lambda_at(3, q₀)·χ^λ` **per partition** against the peel decomposition to
+   find whether it is a `y_λ` normalization/pin, a `χ^λ` cache pin, or the
+   color-weighting. The A-growth says it accumulates over `Σ_λ`.
+2. Fix at the producer and regenerate `canonical-tr-m-via-chi-cache-*.witness.json`;
+   confirm chi then agrees with peel/Hoefsmit at ~1e-50, restoring L1.
 
 **Do NOT** widen the `1e-9` tolerance (`onepb_status_dashboard.py:377`) or edit any
 baseline to force green — the producer's own comment (`:367-371`) forbids it
 ("baselines drain, never grow"). `allPassed=false` should **stay red** until the
-convention split is fixed at the producer.
+chi-cache defect is fixed at the producer.
 
 ## Naming staleness (secondary, `qou-wgaw`)
 
