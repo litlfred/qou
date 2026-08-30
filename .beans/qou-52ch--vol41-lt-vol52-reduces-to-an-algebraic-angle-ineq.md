@@ -140,3 +140,70 @@ carries no `float()` and no numpy.
 **Trap worth re-recording:** a `precision-gates.sh` run **writes 9 witness files** as a
 side effect. Restore the whole `computations/` tree after any gate run, not the one file
 you were looking at — otherwise a dirty tree reads as real work.
+
+## 2026-08-30 — two Lean modules landed; and the remainder is NOT "just arithmetic"
+
+### Landed (#6141, both `lean`-direct exit 0, `#print axioms` clean, guard-registered)
+
+**`QOU/Archimedean/LobMonotonicity.lean`** (4 decls). `Λ′ < 0` exactly where
+`2 sin t > 1`, hence `StrictAntiOn Λ (Icc (π/6) (5π/6))`, plus
+`Lob_sub_Lob_add_pos` in the form the chord consumes. The corpus already proved
+`Λ′ = −log(2 sin t)`; only the consequence was missing.
+
+**`QOU/Knot/FiveTwoAngleSum.lean`** (5 decls). `VOL_5_2 = 3·(Λ a₁ + Λ a₂ + Λ a₃)`,
+translating the Bloch–Wigner definition into the **angle functional** that
+`strictConcaveOn_tetVolLine` is stated for.
+
+### The boundary-continuity gap does not exist
+
+Earlier entries called the chord's degenerate far endpoint the one genuinely new
+Lean. It is not: `volChart` is the honest Λ-sum on all of `ℝ×ℝ`, and
+`volChart_eq_zero_of_not_mem` proves it **exactly 0** on the boundary, sorry-free,
+via `Lob_pi_sub` + `Lob_zero`. The far point can instead be taken strictly
+INTERIOR at `s ≈ 3.02` (boundary is at `3.0500`), where only `f ≥ 0` is needed —
+and that follows from the two lemmas above with no value of `Λ`.
+
+### I nearly duplicated `fiveTwoTet`
+
+It already exists in `FiveTwoVolumeConstant.lean`, with the triangulation and a
+correction recording that the middle tetrahedron is `1/(1−y₁)`, not `y₁`, the
+volume claim surviving via `rotate_angles`. Lean rejected the duplicate.
+**My corpus-grep had been at topic level, not at DECLARATION level** — "does the
+corpus bound VOL_5_2?" rather than "does `fiveTwoTet` exist?".
+
+### CORRECTION — the remaining step is bigger than I said
+
+I signed off the previous turn calling the remainder *"assembly, arithmetic
+against `FiveTwoShapeBounds`, not new mathematics."* Measured, that is wrong.
+`FiveTwoShapeBounds` brackets `Re` and `Im` of the **shape**; the chord needs
+brackets on the **angles**, which are `arg` of derived complex numbers. The
+corpus has **no** numeric `arg`/`arctan` bracketing at all — only qualitative
+facts (`arg_nonneg_of_im_nonneg`, `arg_ne_pi_of_im_ne_zero`).
+
+The route, with each prerequisite checked against Mathlib rather than assumed:
+
+    arg z > 2π/9  ⟺  tan(arg z) > tan(2π/9)      [both in (0, π/2)]
+                  ⟺  Im z / Re z > τ,  τ = tan(2π/9)
+
+    Complex.tan_arg : Real.tan (arg x) = x.im / x.re        EXISTS
+    strictMonoOn_tan, tan_lt_tan_of_nonneg_of_lt_pi_div_two EXISTS
+    Real.tan_pi_div_three                                   EXISTS
+    Real.tan_two_mul                                        EXISTS
+    tan_three_mul                                           **DOES NOT EXIST**
+
+So the one genuinely missing piece is a **triple-angle step for `tan`**, derived
+from `tan_two_mul` + `tan_add`, used to pin `τ` by `τ³ − 3√3τ² − 3τ + √3 = 0`
+(from `tan(3·2π/9) = tan(2π/3) = −√3`) and then bracket it rationally.
+
+That is a real tranche, not arithmetic. Naming it precisely so the next attempt
+starts from the gap rather than rediscovering it.
+
+### Remaining checklist
+
+1. `tan_three_mul` (derive) → the cubic for `τ = tan(2π/9)` → rational bracket.
+2. Angle brackets for `a₁, a₂, a₃` via `Complex.tan_arg` + `FiveTwoShapeBounds`.
+3. Domain membership of `0, 1, s₀` in `tetLineDomain` at `s₀ = 151/50`.
+4. Far point `f(s₀) ≥ 0` — the two `LobMonotonicity` lemmas, already landed.
+5. Chord from `strictConcaveOn_tetVolLine`; conclude via `VOL_5_2_eq_three_mul_lob_sum`.
+
+Steps 4 and 5 are done or one-liners. **1 and 2 are the work.**
