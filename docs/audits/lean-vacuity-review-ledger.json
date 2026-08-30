@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:31Z",
+  "updated_at": "2026-08-30T07:02:32Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -4648,6 +4648,156 @@
       "evidence": "Real computation on both sides: `SplusRecon 0 1 = 4` and `SminusRecon 0 2 = 3` are entries of two INDEPENDENT matrix products (the eq-(96) and eq-(97) reconstructions), and the theorem asserts they differ -- which is the substantive claim, that the `5_2` datum is a genuine two-element chirality split rather than one number read twice. Not a restatement of either def.",
       "reviewed_at": "2026-08-30T04:43:37Z",
       "file_sha": "536e09d5b6e6",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.lean::tau_xi_cross_mul::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 141,
+      "verdict": "legit",
+      "evidence": "Genuine algebra over `[CommRing R]` with `q : R^x`, and division-free by design -- `br5*br3*(br2*(1+h^2)) = br5*br6` is the cross-multiplied form of `xi_3 = [5]_q [3]_q / [6]_q`, stated so no non-vanishing hypothesis is needed. The content sits in the cited `br6_eq_br2_br3_times_one_plus_h_sq`, proved separately in the same file, and this theorem multiplies through by `br5` and closes with `ring`. A presentation lemma over real brackets, not a restatement of a definition.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "6668d1412f5a",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.lean::frobenius_self_duality_forces_lp_dual_extraction::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 23,
+      "verdict": "genuine",
+      "evidence": "The cleanest 3b-cond rule-5 specimen in the drain: the class carries the theorem's exact conclusion as two fields and the proof is the pair of projections. `FrobeniusTraceAlgebra` declares `obs_eq_frob : obs_frame = frob_map` and `obs_bijective : Function.Bijective obs_frame`; the theorem concludes `observationFrame FA = frobeniusSelfDualityMap FA /\\ Function.Bijective (observationFrame FA)` and is `exact <FA.obs_eq_frob, FA.obs_bijective>`, the two defs being aliases for the two fields. Three further tells. (1) `frob_map` is otherwise UNCONSTRAINED, so `obs_eq_frob` merely asserts two arbitrary fields are equal -- the class is trivially inhabitable by setting them equal, and a `[FA]`-conditional statement over a trivially-inhabitable class carries no information. (2) The `trace` field is declared and never used, so the Frobenius pairing the name invokes is not built. (3) Nothing about an LP, a dual, or anything being FORCED appears anywhere in the file. Its own comments concede the position -- 'placeholder pending the Frobenius pairing construction on the trace algebra' -- which makes this a stated placeholder wearing a proposition's name rather than a disguise; the honest form is a `conjecture` block or a `sorry` with the `-- Ref:` it already has.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "9ec23d1e64a1",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/mass-theory/markov-trace-factorization.lean::markov_trace_factorization_mul::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 171,
+      "verdict": "legit",
+      "evidence": "Real inductive content, not a fold unfolded once. Multiplicativity over `++` of `chains.foldl (fun acc ab => acc * (z*ab.1 + ab.2)) 1` needs the accumulator generalised, and the proof does exactly that: `List.foldl_append` splits the concatenation, then a separately-proved `foldl_mul_init` pulls the initial value out. The `let z := markovZ ...` zeta-reduction is handled deliberately (the proof comment records the Copilot review that raised it). Wenzl disjoint multiplicativity is the right citation for the statement.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "a8c3a01d0dee",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean::cpt_boolean_eq_orbit_closure::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 106,
+      "verdict": "genuine",
+      "evidence": "The theorem is `X = X` where the definition is `X := X`. `cptSaturatedBool L := decide (isCPTSaturated L)`, and the theorem states `cptSaturatedBool L = decide (isCPTSaturated L)` proved by `rfl` -- the definition, restated, with `rfl` against its own body. Nothing about the orbit structure is checked. The docstring nonetheless draws a structural conclusion from it: 'Hence the entire Boolean flag is structurally determined by the orbit structure of Lambda under the Type-B fold'. That conclusion may well be true -- it would follow from `isCPTSaturated L := forall lam in L, partitionTranspose lam in L` by reading the definition -- but it is not what the theorem establishes, and `rfl` against a def arm is the AGENTS.md 1a shape that `#print axioms` cannot see.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "c1a935594445",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/observations/building-block-knots.lean::jones_unknot_eq_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 133,
+      "verdict": "advisory",
+      "evidence": "`jones_unknot (q : R) : R := 1` and the theorem is `jones_unknot q = 1 := rfl` -- the definition restated. Advisory rather than genuine because the value is the correct normalisation and the file is not hiding anything: its siblings `jones_trefoil`, `jones_figure_eight`, `jones_cinquefoil` are real q-polynomials, so the constant `1` is the unknot convention those are normalised against, not a flattening. Worth noting only that `-- Ref: [jones1987]` is attached to what reduces to `1 = 1`; the citation belongs on the definition (where the convention is chosen), not on the unfolding.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "70dcbf381257",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean::first_order_transition::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 17,
+      "verdict": "genuine",
+      "evidence": "Both values are assumed and the conclusion is arithmetic on the assumptions. The hypotheses are `h_borr : milnor_mu borromean = 1` and `h_hopf : milnor_mu hopf_cfl = 0`; the conclusion is `|milnor_mu borromean - milnor_mu hopf_cfl| = 1`, i.e. `|1 - 0| = 1`. Every physical claim the name and docstring make -- that the confined-to-CFL transition is FIRST ORDER, that it is characterised by a DISCONTINUOUS JUMP in the Milnor triple linking invariant -- is upstream of the type: nothing derives either mu value, nothing states a transition, and nothing expresses discontinuity (a jump needs a limit or a neighbourhood, and neither appears). The theorem would read identically with the two knots replaced by any two objects assigned 1 and 0.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "286799263f71",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean::alexander_weight_diff_six::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 30,
+      "verdict": "advisory",
+      "evidence": "A numeric instantiation: `alexanderWeightDifference N := (N-1) - N/2` evaluated at `N = 6` gives `5 - 3 = 2`, and `rfl` genuinely computes it in N. Honest as far as it goes -- the docstring claims exactly the instance -- but the formula itself is a `def`, not derived here, so the Alexander-weight content is assumed and only its arithmetic at one point is checked. Advisory; the file's `weight difference increases with N` sibling is where a general statement would live.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "59f37fc2259a",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/predicted-spectra/chebyshev-torus-coefficients.lean::chebyshev_base::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 56,
+      "verdict": "advisory",
+      "evidence": "Def-arm `rfl`: `chebyshevTorusCoefficients` has the literal arm `| 1 => (1, 0)` and the theorem reads it back. It is honestly presented as a base case for the recurrence, which is legitimate infrastructure, but it establishes nothing about `T_{2,1}` -- the identification of the base case with the bare crossing is the modelling step, and it is upstream of anything `rfl` can see.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "20209d130aa2",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean::chebyshev_crossing_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 72,
+      "verdict": "advisory",
+      "evidence": "The same def-arm `rfl` as `chebyshev_base`, in a second file with a second copy of the recurrence (`chebyshev_crossing q : N -> R x R`, arms `| 0 => (0,1) | 1 => (1,0)`). Same verdict. Worth flagging in passing that the two files carry DIFFERENT zero arms -- `(0,0)` in `chebyshevTorusCoefficients` versus `(0,1)` here -- so the two recurrences are not the same object despite the shared name and shared base case; whichever is intended, one of them disagrees with the other at `n = 0`.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "704b903a80f2",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean::spoly_count_decomposition_su2::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 62,
+      "verdict": "advisory",
+      "evidence": "A single-point check of a general identity, labelled as one. `spolyCountStratified 2 2 + spolySavings 2 2 = spolyCountNaive 2 2` is `(4+1)+1 = 6`, and the docstring states the general claim `binom(m+k,2) = m*k + binom(k,2) + binom(m,2)` while saying it is 'Checked here at the SU(2) Hecke level (m = 2, k = 2)'. Grepped the file: there is no general-`(m,k)` version, only this instance and `spoly_stratified_lt_naive_su2`. The general identity is elementary and would be a `ring`-after-`omega` exercise over N with the truncated subtraction handled, so the advisory is that the file states a general fact and proves a point of it.",
+      "reviewed_at": "2026-08-30T04:46:16Z",
+      "file_sha": "4aa2471e5d2e",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
