@@ -143,21 +143,25 @@ def analyze_weightbound():
     print("  => the bound tail PLATEAUS at ~0.5: concentration is a tr property, not a weight one.")
 
 
-def analyze_reflection():
+def analyze_reflection(Amax=13):
     import he4_magnus_omega2_sign_sparse_probe as base  # sets dps=140
     from mass_at_3A_proper import atom_braid_word_3A
     print(f"\nREFLECTION REP (n-1,1) leading term (dps={mp.mp.dps}):")
-    print(f"  {'A':>2} {'dim':>4} {'L':>3} {'tr(ρΩ₂)':>20} {'ratio A/A-1':>12}")
+    print(f"  {'A':>2} {'dim':>4} {'L':>3} {'tr(ρΩ₂)':>20} {'ratio A/A-1':>12} {'tr/4^A':>14}")
     prev = None
-    for A in (2, 3, 4, 5, 6):
+    for A in range(2, Amax + 1):
         n = 3 * A
         Z, N = A // 2, A - A // 2
         gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
         _row, _dP, _dC, tr_rO, _h, dim, _nnz = base._partition_contribution((n - 1, 1), gens)
         ratio = (tr_rO / prev) if prev else mp.mpf("nan")
-        print(f"  {A:>2} {dim:>4} {len(gens):>3} {mp.nstr(tr_rO,12):>20} {mp.nstr(ratio,6):>12}")
+        print(f"  {A:>2} {dim:>4} {len(gens):>3} {mp.nstr(tr_rO,12):>20} {mp.nstr(ratio,6):>12} "
+              f"{mp.nstr(tr_rO/mp.mpf(4)**A,8):>14}")
         prev = tr_rO
-    print("  => negative for all A; inter-A ratio converges (→ closed form poly(A)·μ^A).")
+    print("  => NEGATIVE for all A (the sign's leading term). But the growth base is NOT")
+    print("     numerically pinned: tr/4^A peaks near A=9-10 then falls, and the ratio drifts")
+    print("     below 4 (3.85 at A=13). The 'base 4' reading was a transient (RETRACTED); a")
+    print("     closed form needs DERIVATION, not fitting. See the closedform-stability audit.")
 
 
 def main():
