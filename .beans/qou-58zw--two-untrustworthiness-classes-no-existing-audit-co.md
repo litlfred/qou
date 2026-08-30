@@ -1,11 +1,11 @@
 ---
 # qou-58zw
 title: 'Two untrustworthiness classes no existing audit covers: tolerance-below-arithmetic-floor, and producers that SHRANK'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T18:13:14Z
+updated_at: 2026-08-30T19:54:53Z
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -93,3 +93,79 @@ it — a claim contradicted by the code, which is the sharpest available form of
 the tree. Run here, it is long-compute — >10 min without reaching the end (H_12
 ⁴He). So the numbers behind those 1e-40 assertions have never existed, which is
 worse than stale and is not what the "9 violations" count conveys on its own.
+
+
+---
+
+## Update 2026-08-30 — the detector had a false-positive class, and draining it found a live crash
+
+### 1. I published a wrong claim about my own detector, and corrected it
+
+In `f5aa6e5ce9` I wrote **"none of the 61 is an integer count"**. False. It came
+from a grep for `float\((n_|len\(|count|num_|int\()`, which structurally cannot
+match
+
+    computed=float(result["int_burnside_sum_sq"]), expected=60.0, tolerance=1e-30
+
+because the integer-ness lives in the **dict key**, where no pattern over the
+call shape can see it. `int_burnside_sum_sq` is an integer sum of squares,
+`float(60)` is exactly `60.0`, integers below 2^53 are exact in float64 — so the
+comparison is exact and the tight tolerance is meaningful. Three such sites are
+in `probes/gap_a4_T10_mckay_character_2I_probe.py:172,182,192`.
+
+**The criterion was too wide.** The roundoff argument is about a RESIDUAL — a
+quantity whose exact value is 0, so float64 error lives exactly where the
+tolerance claims resolution. It does not bite on an exactly-representable value.
+The audit now splits (`a3369e3349`):
+
+    flagged assertions   51
+      RESIDUAL (gating)  39   expected == 0
+      EQUALITY (advisory) 12  expected != 0 / non-literal
+
+The equality bucket does **not** set the exit code, because the audit cannot
+decide it and guessing is the false-positive mechanism the taxonomy records. The
+selftest pins all three directions, so a future narrowing cannot re-merge the
+buckets silently.
+
+### 2. The advisory bucket is NOT all false positives — 2 of 12 were real
+
+**`atom_mass_full_hecke_qdeformed.py` — crashes on `main`.** Verified by
+stashing: the pristine file exits 1 with `ZeroDivisionError`. `ya`, the
+alternating-channel weight, is **exactly 0** — `y_lambda_at(3, Q)` routes to
+`y_lambda_su_n(n, q, 2)`, the SU(2) specialisation, whose rank cap *is* the
+two-row cap. The producer was authored under convention C, where the alt weight
+was 0.0228, and its assertion **divided by it**.
+
+| weight at q=111/100 | committed witness (C, 2026-06-22) | live (D) |
+|---|---|---|
+| ŷ_sym | 0.41538069634396413 | 0.5054062110 |
+| ŷ_std | 0.5618691276397312 | 0.4945937890 |
+| ŷ_alt | 0.022750176016304656 | **0.0 exactly** |
+
+The alt channel is not *suppressed*, it is **absent**. Fixed in `f61deb33bf`:
+the division is replaced by two assertions stating the cap itself; the
+normalisation compares as mpf (under a cast the 1e-25 tolerance did no work —
+any mpf residual below ~1e-16 rounds to exactly 1.0); channel traces serialize
+through `_precision.fmt` (raw-float64 ratchet **51 → 0**, NEW dirty 0).
+
+**`qbeta_wenzl_habiro_ansatz_probe.py:479`** asserted `float(target_c[2])`
+against `-1.0`, where `target_c[2] = sp.Integer(-1)` is a literal assigned 211
+lines earlier — an input compared to itself. Its `source` field also repeated
+the "Lean-proved Taylor-exact" claim AGENTS.md corrects. Both fixed in
+`d1e1f294fd`.
+
+### 3. A 17th detector-blind spelling — a literal reaching an assertion via a LIST SLOT
+
+`assertion_on_literal_audit` misses the Wenzl site (confirmed by running it): no
+pattern over the call shape traces `target_c[2]` back to an assignment 211 lines
+up. Candidate row 17 for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`.
+
+### 4. Free finding — a stale muon witness drained by nothing but a re-run
+
+Regenerating the Wenzl witness moved `target_c_k["3"]`:
+
+    committed  -2.020188128141   rel 6.0e-06 from AGENTS.md muon   c_3(mu) = -2.0202002328
+    fresh      -2.069342577115   rel 2.1e-09 from AGENTS.md proton c_3(p)  = -2.0693425728
+
+One of the ~870 muon-fingerprint witnesses, re-pinned to proton by being run.
