@@ -24,6 +24,7 @@ Bundling them would have hidden which half was doing the work.
 -/
 import QOU.Mathlib.RothAuxiliaryInt
 import QOU.Mathlib.RothHouseBound
+import QOU.Mathlib.RothSelection
 
 open NumberField Finset
 
@@ -320,6 +321,62 @@ theorem pow_le_pow_of_height {A C₀ W H₀ : ℤ} {S r₀ m q p : ℕ}
     exact pow_le_pow_right₀ hC₀1 (by nlinarith [hr₀, Nat.zero_le (m * q)])
   rw [← hRexp]
   exact le_trans hL (le_trans hL2 (le_trans hRL hR))
+
+/-- `T ≤ H₀` gives `T ≤ H₀^p` for `p ≥ 1`, so a **floor on the selected heights** discharges the
+height clause's premise — and the selection already takes a floor. -/
+theorem le_pow_of_le {T H₀ : ℤ} {p : ℕ} (hT1 : 1 ≤ T) (hp : 1 ≤ p) (h : T ≤ H₀) :
+    T ≤ H₀ ^ p := by
+  have hH₀1 : 1 ≤ H₀ := le_trans hT1 h
+  calc T ≤ H₀ := h
+    _ = H₀ ^ 1 := (pow_one H₀).symm
+    _ ≤ H₀ ^ p := pow_le_pow_right₀ hH₀1 hp
+
+open private c from Mathlib.NumberTheory.NumberField.House in
+/-- **`Γ_m`'s height clause, from a floor on the heights.**  Everything the clause needs, reduced
+to `C₀^{mq}·W^{2m²q} ≤ H₀` — a condition the selection's own floor parameter can be set to.
+
+So the near-circularity is fully resolved in the formal chain, not only in the argument: the
+threshold is a constant of `K`, `α`, `m`, `p`, `q`, the selection takes it as its floor, and the
+height clause follows. Nothing in it refers to `N`, `r`, or the auxiliary polynomial. -/
+theorem hbound_of_height_floor [DecidableEq (K →+* ℂ)]
+    (H : Fin m → ℕ) (N : ℕ) (α : Fin m → 𝓞 K) (μ : ℚ) {B : ℝ} (hB1 : 1 ≤ B)
+    (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
+    (hE : 2 * Fintype.card ({i // i ∈ (idxBoxF (rothDegrees H N)).filter
+            (fun i => idxWeight (rothDegrees H N) i ≤ μ)}
+            × Module.Free.ChooseBasisIndex ℤ (𝓞 K))
+          ≤ Fintype.card {n // n ∈ idxBoxF (rothDegrees H N)})
+    {C₀ W : ℤ} (hC₀1 : 1 ≤ C₀) (hC₀ : c K ≤ (C₀ : ℝ)) (hW1 : 1 ≤ W) (hW : 4 * B ≤ (W : ℝ))
+    {p q : ℕ} (hp : 1 ≤ p)
+    (hmono : ∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k)
+    (hH2 : ∀ h, 2 ≤ H h)
+    (hr₀ : ∀ j : Fin m, (j : ℕ) = 0 → 1 ≤ rothDegrees H N j)
+    (hfloor : ∀ j : Fin m, (j : ℕ) = 0 →
+      C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ (H j : ℤ)) :
+    ∀ j : Fin m, (j : ℕ) = 0 →
+      (⌈siegelHeight (rothDegrees H N) α μ⌉ : ℤ) ^ (m * q)
+        ≤ (H j : ℤ) ^ (rothDegrees H N j * p) := by
+  intro j hj
+  have hsh0 : (0 : ℝ) ≤ siegelHeight (rothDegrees H N) α μ := by
+    rw [siegelHeight]
+    exact Real.rpow_nonneg (by positivity) _
+  have hone : (1 : ℤ) ≤ C₀ ^ (m * q) * W ^ (2 * m * m * q) := by
+    have h1 : (1 : ℤ) ≤ C₀ ^ (m * q) := one_le_pow₀ hC₀1
+    have h2 : (1 : ℤ) ≤ W ^ (2 * m * m * q) := one_le_pow₀ hW1
+    nlinarith
+  -- `Σ r ≤ 2m·r₀`, using that the heights increase so `H j` is the smallest
+  have hdj : rothDegrees H N j = Nat.log (H j) N := by rw [rothDegrees, if_pos hj]
+  have hsum : ∑ h, rothDegrees H N h ≤ 2 * m * rothDegrees H N j := by
+    have hb : 1 < H j := lt_of_lt_of_le one_lt_two (hH2 j)
+    have hle : ∀ h, H j ≤ H h := fun h => hmono j h (by omega)
+    have h1 := sum_rothDegrees_le H N (H j) hb hle
+    have h2 := hr₀ j hj
+    rw [hdj] at h2 ⊢
+    calc ∑ h, rothDegrees H N h ≤ m * (Nat.log (H j) N + 1) := h1
+      _ ≤ m * (2 * Nat.log (H j) N) := Nat.mul_le_mul le_rfl (by omega)
+      _ = 2 * m * Nat.log (H j) N := by ring
+  exact pow_le_pow_of_height (Int.ceil_nonneg hsh0)
+    (ceil_siegelHeight_le (rothDegrees H N) α μ hB1 hα hE hC₀1 hC₀ hW)
+    hC₀1 hW1 hsum (hr₀ j hj) (le_pow_of_le hone hp (hfloor j hj))
 
 end Integral
 

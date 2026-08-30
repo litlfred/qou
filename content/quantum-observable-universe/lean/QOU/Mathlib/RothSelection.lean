@@ -64,6 +64,19 @@ theorem growSeq_succ (hS : ∀ N, ∃ q ∈ S, N ≤ q) (f : ℕ → ℕ) (N₀ 
   le_trans (le_max_right N₀ (f (growSeq hS f N₀ n)))
     (Classical.choose_spec (hS (max N₀ (f (growSeq hS f N₀ n))))).2
 
+/-- **The greedy sequence is monotone.**  Each term is at least its predecessor's `k`-th power,
+and the floor keeps every term at least `1`, so a `k ≥ 1` growth function cannot decrease.
+
+Needed because `sum_rothDegrees_le` bounds `Σ r_h` using the *smallest* height, and "smallest"
+is only `H₀` if the heights increase. -/
+theorem growSeq_mono (hS : ∀ N, ∃ q ∈ S, N ≤ q) {k : ℕ} (hk : 1 ≤ k) {N₀ : ℕ} (hN₀ : 1 ≤ N₀) :
+    Monotone (growSeq hS (fun x => x ^ k) N₀) := by
+  refine monotone_nat_of_le_succ (fun n => ?_)
+  have h1 : 1 ≤ growSeq hS (fun x => x ^ k) N₀ n := le_trans hN₀ (le_growSeq hS _ N₀ n)
+  have h2 : growSeq hS (fun x => x ^ k) N₀ n ≤ (growSeq hS (fun x => x ^ k) N₀ n) ^ k :=
+    Nat.le_self_pow (by omega) _
+  exact le_trans h2 (growSeq_succ hS (fun x => x ^ k) N₀ n)
+
 /-- **Two of `Γ_m`'s clauses, from an unbounded supply.**  Given infinitely many admissible
 heights, `m` of them can be chosen from the supply, all beyond an arbitrary floor `N₀`, with
 `H j ^ (2q) ≤ H k ^ p` on consecutive indices.
@@ -72,14 +85,16 @@ That is `rothGammaFull_of_heights`'s `hgrow` and `hH` at once — and taking `N�
 its `floor` clause, which is why the floor is a parameter rather than the constant `2`.  Clause 3
 is the one that bites hardest (`RothRealLadder`'s witness needed `H = 1024` at `m = 2` because of
 it), so having it fall out of the same construction is worth the generality. -/
-theorem exists_heights_growing (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q : ℕ) (hp : 0 < p)
+theorem exists_heights_growing (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q : ℕ) (hp : 0 < p) (hq : 0 < q)
     (N₀ : ℕ) (hN₀ : 2 ≤ N₀) :
     ∃ H : Fin m → ℕ, (∀ h, H h ∈ S) ∧ (∀ h, N₀ ≤ H h) ∧ (∀ h, 2 ≤ H h) ∧
+      (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       ∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → H j ^ (2 * q) ≤ H k ^ p := by
   classical
   refine ⟨fun h => growSeq hS (fun x => x ^ (2 * q)) N₀ (h : ℕ),
     fun h => growSeq_mem hS _ N₀ _, fun h => le_growSeq hS _ N₀ _,
-    fun h => le_trans hN₀ (le_growSeq hS _ N₀ _), fun j k hjk => ?_⟩
+    fun h => le_trans hN₀ (le_growSeq hS _ N₀ _),
+    fun j k hjk => growSeq_mono hS (by omega) (by omega) hjk, fun j k hjk => ?_⟩
   have hstep : (growSeq hS (fun x => x ^ (2 * q)) N₀ (j : ℕ)) ^ (2 * q)
       ≤ growSeq hS (fun x => x ^ (2 * q)) N₀ ((j : ℕ) + 1) :=
     growSeq_succ hS (fun x => x ^ (2 * q)) N₀ (j : ℕ)
@@ -90,16 +105,21 @@ theorem exists_heights_growing (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q : ℕ) 
 /-- **The floor clause too.**  At `N₀ = 2 ^ F` the selected heights also satisfy
 `rothGammaFull_of_heights`'s `hfloor`. -/
 theorem exists_heights_growing_floor (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q F : ℕ) (hp : 0 < p)
-    (hF : 1 ≤ F) :
+    (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F) :
     ∃ H : Fin m → ℕ, (∀ h, H h ∈ S) ∧ (∀ h, 2 ≤ H h) ∧
+      (∀ h, T ≤ H h) ∧
       (∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ (H j : ℤ)) ∧
+      (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       ∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → H j ^ (2 * q) ≤ H k ^ p := by
-  have h2F : 2 ≤ 2 ^ F := by
+  have h2F : 2 ≤ max (2 ^ F) T := by
+    refine le_trans ?_ (le_max_left _ _)
     calc (2 : ℕ) = 2 ^ 1 := (pow_one 2).symm
       _ ≤ 2 ^ F := Nat.pow_le_pow_right (by norm_num) hF
-  obtain ⟨H, hmem, hfloor, h2, hgrow⟩ := exists_heights_growing hS m p q hp (2 ^ F) h2F
-  refine ⟨H, hmem, h2, fun j _ => ?_, hgrow⟩
-  have := hfloor j
+  obtain ⟨H, hmem, hfloor, h2, hmono, hgrow⟩ :=
+    exists_heights_growing hS m p q hp hq (max (2 ^ F) T) h2F
+  refine ⟨H, hmem, h2, fun h => le_trans (le_max_right _ _) (hfloor h), fun j _ => ?_,
+    hmono, hgrow⟩
+  have := le_trans (le_max_left (2 ^ F) T) (hfloor j)
   exact_mod_cast this
 
 end Selection
@@ -199,14 +219,17 @@ heights, then the degrees from both.  Nothing here can be reordered.
 /-- **The data, and four of `Γ_m`'s inputs.**  From an unbounded supply of admissible heights:
 `m` of them, a threshold `N`, and the growth, floor, `two_le` and `hlarge` clauses. -/
 theorem exists_heights_and_N {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q F : ℕ)
-    (hp : 0 < p) (hF : 1 ≤ F) :
-    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ (∀ h, 2 ≤ H h) ∧ N ≠ 0 ∧
+    (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F) :
+    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ (∀ h, 2 ≤ H h) ∧ N ≠ 0 ∧ (∀ h, T ≤ H h) ∧
       (∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ (H j : ℤ)) ∧
+      (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       (∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → H j ^ (2 * q) ≤ H k ^ p) ∧
       (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) := by
-  obtain ⟨H, hmem, h2, hfloor, hgrow⟩ := exists_heights_growing_floor hS m p q F hp hF
+  obtain ⟨H, hmem, h2, hT, hfloor, hmono, hgrow⟩ :=
+    exists_heights_growing_floor hS m p q F hp hq T hF
   obtain ⟨N, hN, hpow⟩ := exists_pow_le H h2 (p + 2 * q)
-  exact ⟨H, N, hmem, h2, hN, hfloor, hgrow, hlarge_of_pow_le H N hN h2 p q hp hpow⟩
+  exact ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow,
+    hlarge_of_pow_le H N hN h2 p q hp hpow⟩
 
 /-- **`Γ_m` from the supply, modulo the height clause.**  There are heights in the supply and a
 threshold `N` such that *if* the auxiliary polynomial's height bound `b` satisfies `Γ_m`'s last
@@ -217,16 +240,17 @@ cannot be a hypothesis of the existential — and quantifying it over all possib
 demand far more than the argument needs.  `hbound_mono` above is what makes the implication
 dischargeable: the clause improves as `H₀` grows, and the supply is unbounded. -/
 theorem exists_rothGammaFull_of_supply {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q)
-    (m p q F : ℕ) (b : ℤ) (hp : 0 < p) (hF : 1 ≤ F)
+    (m p q F : ℕ) (b : ℤ) (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F)
     (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p) :
-    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
+    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧ (∀ h, T ≤ H h) ∧
+      (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       ((∀ j : Fin m, (j : ℕ) = 0 →
           b ^ (m * q) ≤ (H j : ℤ) ^ (rothDegrees H N j * p)) →
         RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N)
           (fun j => (H j : ℤ)) b) := by
-  obtain ⟨H, N, hmem, h2, hN, hfloor, hgrow, hlarge⟩ :=
-    exists_heights_and_N hS m p q F hp hF
-  exact ⟨H, N, hmem, hN, h2, fun hbound =>
+  obtain ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow, hlarge⟩ :=
+    exists_heights_and_N hS m p q F hp hq T hF
+  exact ⟨H, N, hmem, hN, h2, hT, hmono, fun hbound =>
     rothGammaFull_of_heights H hp hN h2 hgrow hlarge hfloorExp hfloor hbound⟩
 
 /-- **The selection machinery is applicable.**  Every hypothesis of
@@ -238,12 +262,15 @@ smallest that works, which is the same arithmetic that forced `H = 1024` in the 
 The two are the same constraint seen from opposite ends. -/
 theorem exists_rothGammaFull_of_supply_witness :
     ∃ (H : Fin 2 → ℕ) (N : ℕ), (∀ h, H h ∈ (Set.univ : Set ℕ)) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
+      (∀ h, 5 ≤ H h) ∧
+      (∀ j k : Fin 2, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       ((∀ j : Fin 2, (j : ℕ) = 0 →
           (1 : ℤ) ^ (2 * 1) ≤ (H j : ℤ) ^ (rothDegrees H N j * 1)) →
         RothGammaFull (Equiv.refl (Fin 2)) 1 1 10 (rothDegrees H N)
           (fun j => (H j : ℤ)) 1) :=
   exists_rothGammaFull_of_supply (S := (Set.univ : Set ℕ))
-    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 1 one_pos (by norm_num) (by norm_num)
+    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 1 one_pos one_pos 5 (by norm_num)
+    (by norm_num)
 
 /-- **`Σ r_h` in terms of the smallest height.**  `Σ_h rothDegrees H N h ≤ m·(log_b N + 1)` for any
 `b` below every height — because `Nat.log` is antitone in its base, so the smallest height gives

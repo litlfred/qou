@@ -1001,3 +1001,35 @@ REMAINING:
   2. Feed roth_contradiction_int.
   3. Step 5, not LiouvilleWith.
 
+## 2026-08-30 -- hbound follows from the SELECTION'S OWN FLOOR. The near-circularity is closed.
+
+Three declarations (growSeq_mono, le_pow_of_le, hbound_of_height_floor) plus a threading pass
+through the selection. All axiom-clean, .oleans deleted first.
+
+hbound_of_height_floor reduces Gamma_m's height clause to
+
+    C_0^{mq} * W^{2 m^2 q}  <=  H_0
+
+-- not H_0^p, just H_0, because le_pow_of_le turns a floor on the height into a floor on its p-th
+power. And that threshold is a constant of K, alpha, m, p, q: NOTHING IN IT REFERS TO N, r, OR THE
+AUXILIARY POLYNOMIAL. So it can be passed to exists_heights_growing as its floor parameter, which
+the selection already accepts.
+
+THAT CLOSES THE NEAR-CIRCULARITY IN THE FORMAL CHAIN, not just in the argument. Two entries ago I
+showed hbound was not circular by an asymptotic cancellation; then formalised the two size
+estimates; then found the exponent gap; then removed the logarithms. The result is that the clause
+is discharged by a parameter the selection takes as INPUT, so there is no fixed point to solve.
+
+WHAT THE THREADING NEEDED, and it was not free. sum_rothDegrees_le bounds sum r using the SMALLEST
+height, so it needs the heights to increase -- which they do, but that had to be proved:
+growSeq_mono, from each term being at least its predecessor's k-th power with the floor keeping
+every term at least 1. That in turn forced 0 < q into exists_heights_growing's signature and out
+through exists_heights_growing_floor, exists_heights_and_N, exists_rothGammaFull_of_supply and the
+witness. A monotonicity nobody had needed until the smallest height had to be named.
+
+REMAINING:
+  1. Assemble: pick m, eps from slack_pos (doubled threshold), set the selection's floor to
+     max(2^F, C_0^{mq} W^{2m^2q}), take the heights and N, and feed roth_contradiction_int. Every
+     hypothesis is now either produced or a named arithmetic condition.
+  2. Step 5, not LiouvilleWith.
+
