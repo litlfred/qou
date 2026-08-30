@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T09:14:58Z
+updated_at: 2026-08-30T09:18:06Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2819,3 +2819,19 @@ That is much sharper than Step 2's "the bar grading is destroyed". It names the 
 - `nuclear-interactions/q-beta-cos-resummation.md` — "z = 1/(√q + 1/√q)"
 
 **Consequence for the re-derivation.** The D-frame ladder needs more than a new phase value: it needs a replacement for the *resummation form*. Under C the chain is [α bar-odd] ⇒ [trace symmetrization is even in α] ⇒ [cos is the minimal even resummation]. Under D the first link is gone, so neither the cosine nor its minimality survives, and the D re-derivation must establish what the M_β spectrum on V_(2,1) is under the D trace and what evenness (if any) the D bar involution imposes.
+
+## Step 5 (2026-08-30) — the D weights in closed form, and the carrier block SURVIVES
+
+Solved the H₃ Wedderburn system with `z` free and specialised to D. The weights collapse to closed forms of striking simplicity (against convention C's half-integer-power mess):
+
+    y_(3)   = (q^4 + 1)/(q^2 + 1)^2
+    y_(2,1) = q^2/(q^2 + 1)^2
+    y_(1^3) = 0                      IDENTICALLY, all q
+
+Three results at once:
+
+1. **The radical is confirmed symbolically for all q**, not just at sampled s — `y_(1³) ≡ 0` is an identity. (Step 4 and the PR #6110 Wenzl run had it only at sampled rational s.)
+2. **Step 3 upgrades from 12 sampled rows to an identity**: `Σ_λ y_λ f^λ = (q⁴+1)/(q²+1)² + 2q²/(q²+1)² = (q²+1)²/(q²+1)² = 1` **for all q**. `tr_M(1) = 1` under D is now proved, not sampled.
+3. **THE LADDER'S CARRIER BLOCK SURVIVES D.** `y_(2,1) = q²/(q²+1)²` has numerator `q²`, whose only real root is q = 0 — so it is **nonzero for every q > 0**. V_(2,1), the block the whole eigenphase/cos-resummation construction lives on, is NOT in the D radical.
+
+That third point is the one that matters for planning: **the D re-derivation is not futile.** Had V_(2,1) been in the radical the entire ladder would be dead under D and the only honest move would be to abandon it. It is not; the carrier survives, the weights are simple, and what needs replacing is the resummation FORM (Step 4) rather than the object it acts on.

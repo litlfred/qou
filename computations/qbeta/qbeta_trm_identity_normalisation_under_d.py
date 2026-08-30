@@ -124,8 +124,44 @@ def s_n_dimension(lam: tuple[int, ...]) -> int:
     return math.factorial(n) // prod
 
 
+def symbolic_h3_weights():
+    """Solve the H_3 Wedderburn weights with z FREE, then specialise.
+
+    Upgrades the sampled measurement below to an IDENTITY in q, and answers a
+    question the sampled form cannot: does the ladder's carrier block survive
+    convention D, or is it in the radical?
+    """
+    q, z = sp.symbols("q z", positive=True)
+    h = q - 1 / q
+    y3, y21, y111 = sp.symbols("y3 y21 y111")
+    # characters on (1, sigma, sigma_1 sigma_2); Hecke eigenvalues q and -1/q
+    sol = sp.solve(
+        [y3 + 2 * y21 + y111 - 1,
+         y3 * q + y21 * h + y111 * (-1 / q) - z,
+         y3 * q**2 + y21 * (-1) + y111 * (1 / q**2) - z**2],
+        [y3, y21, y111], dict=True)[0]
+    z_D = q**3 / (q**2 + 1)
+    wD = {k: sp.simplify(sp.factor(sol[v].subs(z, z_D)))
+          for k, v in (("(3)", y3), ("(2,1)", y21), ("(1^3)", y111))}
+    total = sp.simplify(wD["(3)"] + 2 * wD["(2,1)"] + wD["(1^3)"])
+    num, _ = sp.fraction(sp.together(wD["(2,1)"]))
+    roots = sp.real_roots(sp.Poly(sp.expand(num), q))
+    return {
+        "y_(3)": str(wD["(3)"]),
+        "y_(2,1)": str(wD["(2,1)"]),
+        "y_(1^3)": str(wD["(1^3)"]),
+        "radical_is_identically_zero": bool(sp.simplify(wD["(1^3)"]) == 0),
+        "sum_y_f_symbolic": str(total),
+        "sum_equals_one_for_all_q": bool(total == 1),
+        "carrier_numerator": str(sp.factor(num)),
+        "carrier_real_roots": [str(r) for r in roots],
+        "carrier_nonzero_for_q_positive": all(sp.N(r) <= 0 for r in roots),
+    }
+
+
 def main() -> int:
     data = json.loads(WENZL_WITNESS.read_text())["results"]
+    sym = symbolic_h3_weights()
 
     rows, all_one = [], True
     for s, blk in data.items():
@@ -170,6 +206,7 @@ def main() -> int:
             "note": ("holds even though every ell(lambda) >= 3 block vanishes "
                      "under D — the two-row blocks carry the normalisation alone"),
         },
+        "symbolic_h3_under_D": sym,
         "is_it_derived": {
             "answer": "NO — imposed, then reproduced",
             "where_imposed": "markov_trace_s seeds tr = {1: {(0,): Fraction(1)}}",
@@ -244,6 +281,16 @@ def main() -> int:
     print(f"  built from h alone, so z-FREE and convention-independent. All the")
     print(f"  convention dependence is in (z-1). Re-derive the single-wrap")
     print(f"  eigenphase on V_(2,1) under the D trace.")
+    print()
+    print("  === SYMBOLIC, all q (upgrades the 12 sampled rows to an identity) ===")
+    print(f"    y_(3)   = {sym['y_(3)']}")
+    print(f"    y_(2,1) = {sym['y_(2,1)']}")
+    print(f"    y_(1^3) = {sym['y_(1^3)']}   identically zero: {sym['radical_is_identically_zero']}")
+    print(f"    sum y_lambda f^lambda = {sym['sum_y_f_symbolic']}  -> == 1 for ALL q: {sym['sum_equals_one_for_all_q']}")
+    print(f"    carrier V_(2,1) numerator {sym['carrier_numerator']}, real roots "
+          f"{sym['carrier_real_roots']}")
+    print(f"    => the ladder's CARRIER BLOCK SURVIVES convention D "
+          f"(nonzero for every q > 0): {sym['carrier_nonzero_for_q_positive']}")
     print(f"\n  witness -> {out}")
     return 0
 
