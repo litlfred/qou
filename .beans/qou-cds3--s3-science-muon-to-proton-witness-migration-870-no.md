@@ -663,3 +663,36 @@ manifest records. Worth remembering before the next batch of stamp-only
 declarations.
 
 **Nothing to change. The dispute is closed in main's favour.**
+
+
+## 2026-08-30 — bindability audit: the `unresolved` bucket drained, and it hid a dead declaration
+
+The audit had 8 stems it could not classify. That bucket is reported as
+"unexamined, not clean", which is honest but is not an answer, so it was chased.
+
+**Seven were a false problem.** They matched 2 files each, because duplicated
+modules are the norm here — `computations/` and
+`qou-mass/src/qou_mass/_internal/` carry many of the same names — and the audit
+refused to answer rather than guess which copy was meant. But the ambiguity only
+matters if the copies DISAGREE. Now every candidate is classified and a
+unanimous verdict is accepted; a split is reported as a split. All seven were
+unanimous.
+
+**The eighth was real.** `binding_k_enumerator` matched **zero** files:
+
+    computations/_deprecated/binding_k_enumerator.py
+
+The producer was retired and its manifest declaration was left behind — a q0
+layer asserted for something that no longer runs. Removed from
+`physical_proton` (702 -> 701). This cannot change any computation: the file is
+deprecated and the audit skips `_deprecated/` by construction.
+
+That distinction is now a verdict of its own — `NO PRODUCER EXISTS` — rather
+than being folded into "unresolved", because "the copies are ambiguous" and
+"the thing does not exist" call for completely different actions.
+
+    unresolved (copies disagree)   8 -> 0
+    NO PRODUCER EXISTS             1 -> 0   (found, then fixed)
+    contradicts the declaration    0        (unchanged)
+
+The manifest now has no stem the audit cannot account for.

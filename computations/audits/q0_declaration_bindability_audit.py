@@ -391,15 +391,41 @@ def _unbindable(f, src: str, mods: "set[str]", route: str,
 
 
 def _classify(stem: str, idx, expect: str | None) -> "tuple[str, str]":
+    """Verdict for one declared stem.
+
+    A stem matching several files is only unresolvable if the copies DISAGREE —
+    duplicated modules are the norm here (`computations/` and
+    `qou-mass/src/qou_mass/_internal/` carry many of the same names), and
+    refusing to answer left 7 stems "unresolved" over an ambiguity that changes
+    nothing. Classify every candidate and accept a unanimous verdict; report the
+    split only when there is one.
+
+    A stem matching NO file is a different thing entirely and gets its own
+    verdict: the manifest declares a producer that does not exist.
+    """
     cands = idx.get(stem, [])
-    if len(cands) != 1:
-        return "unresolved", f"{len(cands)} files match this stem"
-    f = cands[0]
+    if not cands:
+        return "no_producer", "declared in the manifest, but no such file exists"
+    if len(cands) > 1:
+        seen = {}
+        for c in cands:
+            v, d = _classify_one(c, expect)
+            seen.setdefault(v, []).append(d)
+        if len(seen) == 1:
+            v = next(iter(seen))
+            return v, f"{seen[v][0]}   [{len(cands)} copies, all agree]"
+        return "unresolved", (f"{len(cands)} copies DISAGREE: "
+                              + ", ".join(sorted(seen)))
+    return _classify_one(cands[0], expect)
+
+
+def _classify_one(f, expect: str | None) -> "tuple[str, str]":
     try:
         src = f.read_text(encoding="utf-8", errors="ignore")
         tree = ast.parse(src)
     except Exception as exc:  # noqa: BLE001
         return "unresolved", f"{exc.__class__.__name__} parsing {f.name}"
+    idx = _index()
     mods = _imports(tree)
     if any(_is_qparam(m) for m in mods):
         return "direct", str(f.relative_to(REPO))
@@ -461,7 +487,7 @@ def main() -> int:
     buckets: "dict[str, list[str]]" = {
         "direct": [], "via_helper": [], "unbindable_stamp_FALSE": [],
         "unbindable_stamp_ok": [], "unbindable_comparison": [],
-        "unbindable_unknown": [], "unresolved": []}
+        "unbindable_unknown": [], "unresolved": [], "no_producer": []}
     for s in sorted(stems):
         verdict, detail = _classify(s, idx, expect)
         buckets[verdict].append(f"{s}   {detail}")
@@ -484,8 +510,12 @@ def main() -> int:
           " <- no single anchor is meaningful")
     print(f"        undetermined                 {len(buckets['unbindable_unknown'])}"
           "   <- unexamined, not clean")
-    print(f"    unresolved                   {len(buckets['unresolved'])}"
+    print(f"    unresolved (copies disagree) {len(buckets['unresolved'])}"
           "   <- unexamined, not clean")
+    print(f"    NO PRODUCER EXISTS           {len(buckets['no_producer'])}"
+          "   <- a declaration with nothing behind it")
+    for x in buckets["no_producer"][:args.show]:
+        print(f"       {x}")
 
     if buckets["unbindable_stamp_FALSE"]:
         print(f"\n  DECLARED {args.layer!r} (claims {expect}) but COMPUTES THE"
