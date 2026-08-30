@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:51.523156+00:00",
-  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
+  "computedAt": "2026-08-30T09:12:25.806546+00:00",
+  "commitSha": "0b423be6251b9fbc009ec28d8c30d62ef53a8772",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 66,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "ea5fa7a01aed",
+  "scriptHash": "567e27a7daba",
   "scriptCommitSha": "6af337c6c1c60d1a91d6d167eec9a08d1644739d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -100,7 +100,7 @@
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json.",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. ⚠ CONVENTION FRAME: this prediction was built in Markov convention C, which the owner ruling of 2026-08-15 EXCISED in favour of D (z = q³/(q²+1)). The induced error is NOT quantified here and that is deliberate: qbeta_ck_cache.py raises SystemExit(2) under D, so no D-frame counterpart exists to difference against — this figure is currently UNREPRODUCIBLE under the canonical convention. Re-derivation is tracked as bean qou-cds1 and is not a z-swap (the 2026-08-30 bar-weight prune showed the obstruction is the offset, not z). Applies to the m_n and Δ_pn rows too, which are derived from this value.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
         "compute_output_dps": 60
@@ -205,6 +205,16 @@
       "anchor_alone_exceeds_l2_target": false,
       "material_today": false
     },
+    "convention_frame_qbeta": {
+      "status": "INHERITED_C",
+      "cache_convention": "C",
+      "canonical": "D",
+      "cache_note": "Convention C (z = sqrt(q)/(1+q)), reached only via --historical-convention-C. C was excised by owner ruling (2026-08-09, re-affirmed 2026-08-15 and 2026-08-26); this artifact is retained because 10 consumers read it, including the L2 dashboard per_observable_100x_status.py. The DEFAULT (convention D) path REFUSES: no D-frame ladder has been derived, so there is no D-frame c_k to emit (bean qou-cds1). Substituting z_D into alpha = (z-1)h/2 is proved invalid by QOU.QBeta.decayLadder_zC_threeRow_ne_zero and QOU.QBeta.eigenphase_bar_defect_of_fullBar.",
+      "induced_error_ppb": null,
+      "induced_error_unquantifiable_reason": "qbeta_ck_cache.py raises SystemExit(2) under convention D ('convention D has no derived c_k ladder'), so no D-frame counterpart of this prediction exists to difference against.",
+      "reproducible_under_canonical_convention": false,
+      "tracked_by": "qou-cds1"
+    },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
@@ -256,6 +266,9 @@
       }
     ]
   },
+  "caveats": [
+    "Q_β / m_n / Δ_pn rows: these figures were built in Markov convention C (z = √q/(q+1)), which the owner ruling of 2026-08-15 excised in favour of the canonical D (z = q³/(q²+1)). The upstream qbeta-ck-cache.witness.json carries that stamp; this dashboard published the numbers without it, which is the defect being fixed here (bean qou-zzwm). NO induced-error figure is given, deliberately: qbeta_ck_cache.py raises SystemExit(2) under D, so no D-frame counterpart exists to difference against and any number here would be manufactured. These figures are therefore UNREPRODUCIBLE under the canonical convention. Re-derivation is bean qou-cds1 and is NOT a z-swap — the 2026-08-30 bar-weight prune showed the obstruction is the offset (α = (z−1)h/2 mixes bar-weight −4 with weight 0), not z. This caveat makes the inherited frame visible; it does not change any value."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
