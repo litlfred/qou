@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T06:45:30Z
+updated_at: 2026-08-30T06:57:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2644,3 +2644,33 @@ is the only convention-carrying object and it has no derivation. Either derive
 the single-wrap eigenphase from the D-frame two-row trace, or establish that
 the product ansatz Pi(1 + c_k u^k) with u = b*hbar_q^2 is not the right shape
 under D. The u^1 falsification above is a live constraint on the first route.
+
+## 2026-08-30 — CORRECTION to my own fourth-pass entry above
+
+The fourth-pass table says alpha is a "bare \`def\`, NO derivation theorem" and
+concludes "nothing above N=0 is derived". **The first clause is true only of the
+LEAN; the conclusion over-claims for alpha.**
+
+alpha IS derived, and by me, three days before I wrote that:
+computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py (PR #5864)
+proves
+
+    (D1)   2*alpha = net(Delta) - tr_M^z(Delta)     identically in q and z
+
+with the IDENTIFICATION credited there to a sibling on PR #5337 (comment
+5421747260, bean qou-avt5). I re-derived it from scratch this pass before the
+corpus-grep found my own file — searching "net minus trace" and "eigenphase"
+first, which miss it; only the file-level grep hit.
+
+So the corrected status of the ladder above N=0:
+
+  alpha    DERIVED as a probe (2*alpha = net(Delta) - tr_M(Delta), exact in z);
+           NOT formalized in Lean, where it remains a bare \`def\`
+  c_2      bare \`def\` (N2_factor), no theorem
+  c_3      EXTRACTED by inverting experiment
+  c_4,c_5  read off the Hoefsmit b
+
+**The concrete next step is therefore narrower than 'derive alpha': Lean-prove
+(D1).** The derivation exists, is exact and symbolic in both variables, and
+formalizing it would upgrade alpha from bare def to derived — which is exactly
+the formalize-first discipline this bean's own Discipline section asks for.
