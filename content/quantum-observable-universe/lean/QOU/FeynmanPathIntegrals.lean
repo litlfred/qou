@@ -204,13 +204,6 @@ structure FeynmanCategoricalTrace where
   /-- The partition list has at most ⌊n/2⌋ + 1 entries. -/
   partitions_count : decomp.partitions.length ≤ decomp.n / 2 + 1
 
-/-- **Finiteness**: the transition amplitude is a sum of finitely many
-    terms — one per irreducible summand.  The number of summands is
-    ⌊n/2⌋ + 1 for V^{⊗n} under SU_q(2). -/
-theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
-    fct.decomp.partitions.length ≤ fct.decomp.n / 2 + 1 :=
-  fct.partitions_count
-
 /-- **Mass from transition amplitude**: the categorical mass at a single
     brane level equals the absolute value of the Markov trace, which
     equals the absolute value of the transition amplitude. -/
@@ -359,5 +352,19 @@ theorem full_mass_decomposition
     tmd.totalMass = tmd.baselineHolonomy +
       (Finset.univ.sum fun i => tmd.exceptionalContribution i) :=
   tmd.decomposition
+
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `amplitude_finite_sum` — body was `fct.partitions_count`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.FeynmanPathIntegrals
