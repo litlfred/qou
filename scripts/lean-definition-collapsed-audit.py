@@ -45,6 +45,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib
 from lean_decl_scan import (            # noqa: E402  (path set above)
     blank_comments, split_statement, decl_spans, docstring_before,
     assumption_binders, local_def_names, discharges_via_binder_field,
+    comment_cone,
 )
 
 DEFAULT_ROOTS = [
@@ -55,10 +56,32 @@ DEFAULT_ROOTS = [
 
 # PLAIN_DEF / THM now come from scripts/lib/lean_decl_scan (bean qou-rfq9).
 PROVABLE = {"theorem", "lemma", "example"}
+# Phrases in which an author admits, in their own prose, that the declaration
+# below is NOT the proof of what it is named after.
+#
+# The second group was added 2026-08-30 (bean `qou-rfq9`) and is the half that
+# actually matters.  The bean diagnosed the `b3_nf_wedderburn_uniqueness` miss
+# as `--`-comment blindness; reading the whole comment cone was implemented and
+# measured as a **no-op** -- 2255 -> 2255 findings, 2 -> 2 CRITICAL.  The reason
+# that declaration was invisible is that it says "Full proof requires
+# Wedderburn-Artin over R_q" and "The formal proof needs: Wedderburn for
+# finite-dim algebras", and neither the old `needs the` nor `unproved` matches
+# either phrasing.  Cone blindness was real but was never what was hiding it.
+#
+# These are deliberately narrow: they require the words `proof`/`proved`/
+# `formalis(z)ed` near the admission, so ordinary mathematical prose about what
+# a THEOREM requires as a hypothesis does not match.
 DOC_OPEN = re.compile(
     r"open input|open analytic|body is\s*`?sorry|not in mathlib|"
     r"needs the|needs yekutieli|is the conjecture|open conjecture|"
-    r"unproved|not yet proved", re.I)
+    r"unproved|not yet proved|"
+    # "(full|formal|complete|rigorous|real) proof requires/needs/would ..."
+    r"(?:full|formal|complete|rigorous|actual|real)\s+proof\s+"
+    r"(?:requires|needs|is|would|remains)|"
+    # "proof sketch", "sketch of proof", "we do not prove", "not formalised"
+    r"proof\s+sketch|sketch\s+of\s+(?:the\s+)?proof|"
+    r"(?:we|this)\s+do(?:es)?\s+not\s+prove|"
+    r"not\s+(?:formali[sz]ed|formally\s+prove)", re.I)
 SIMP_ARGS = re.compile(r"\b(?:simp|simp only|unfold|rw|delta)\s*\[?([^\]\n]*)\]?")
 TRIVIAL_TAIL = re.compile(r"^\s*(?::=\s*rfl|:=\s*by\s+rfl|:=\s*by\s*$)")
 
@@ -83,6 +106,9 @@ def parse_file(path: str):
             continue
         stmt, after = split_statement(chunk)
         docstring = docstring_before(lines, line_no)
+        # Signal B reads the whole COMMENT CONE, not the docstring alone --
+        # see the `cone_only` note below and `comment_cone`'s docstring.
+        cone = comment_cone(lines, line_no, chunk.count("\n") + 1)
 
         # --- signal A: COLLAPSED -----------------------------------------
         collapsed, why = False, ""
@@ -113,13 +139,26 @@ def parse_file(path: str):
             continue
 
         # --- signal B: OPEN-CLAIM -----------------------------------------
-        open_claim = bool(DOC_OPEN.search(docstring))
+        # Read the docstring AND the `--` comments above and inside the decl.
+        # Prose in `--` comments was invisible here until 2026-08-30; the
+        # worked case is `b3_nf_wedderburn_uniqueness`, whose docstring ends
+        # "PROVED CORRECT" while an inline comment in its own statement says
+        # "Full proof requires Wedderburn-Artin over R_q".  Both halves are
+        # authored prose about the same declaration and only one was read.
+        doc_claim = bool(DOC_OPEN.search(docstring))
+        open_claim = bool(DOC_OPEN.search(cone))
+        excerpt = docstring if doc_claim else cone
         findings.append({
             "file": path, "line": line_no, "kind": kind, "name": name,
             "severity": "CRITICAL" if open_claim else "ADVISORY",
             "why": why,
             "doc_claims_open": open_claim,
-            "doc_excerpt": " ".join(docstring.split())[:160],
+            # True when ONLY the `--` comments carry the admission, i.e. this
+            # finding is new as of the comment-cone change.  Kept as its own
+            # field so the delta stays auditable rather than being folded into
+            # a count someone has already quoted.
+            "cone_only": open_claim and not doc_claim,
+            "doc_excerpt": " ".join(excerpt.split())[:160],
         })
     return findings
 

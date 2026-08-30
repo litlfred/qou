@@ -1,0 +1,165 @@
+{
+  "engine": "python+sympy+exact rationals",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T09:17:15.814017+00:00",
+  "commitSha": "9473383780fd197cc00e5a5ee04f4214aef450b4",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-trm-identity-normalisation-under-d",
+  "scriptFile": "qbeta_trm_identity_normalisation_under_d.py",
+  "scriptHash": "0dc1ef1c94fc",
+  "scriptCommitSha": "8abe1f2adaf7d82b8fec0554c6459d77d3963c6f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_trm_identity_normalisation_under_d.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_trm_identity_normalisation_under_d.py"
+  },
+  "description": "tr_M(1) = 1 is a normalisation, not a convention-dependent value: it is imposed at the base of the Markov recursion and reproduced exactly by the convention-D Wedderburn solve. Nothing replaces it, which closes the offset-reinterpretation repair of the D ladder phase.",
+  "measurement": {
+    "quantity": "tr_M(1) = sum_lambda y_lambda * f^lambda",
+    "source_weights": "computations/markov-trace-weights-wenzl.witness.json (convention D, exact rationals)",
+    "rows": [
+      {
+        "s": "3/2",
+        "n": 2,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 0
+      },
+      {
+        "s": "3/2",
+        "n": 3,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 1
+      },
+      {
+        "s": "3/2",
+        "n": 4,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 2
+      },
+      {
+        "s": "3/2",
+        "n": 5,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 4
+      },
+      {
+        "s": "7/5",
+        "n": 2,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 0
+      },
+      {
+        "s": "7/5",
+        "n": 3,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 1
+      },
+      {
+        "s": "7/5",
+        "n": 4,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 2
+      },
+      {
+        "s": "7/5",
+        "n": 5,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 4
+      },
+      {
+        "s": "13/9",
+        "n": 2,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 0
+      },
+      {
+        "s": "13/9",
+        "n": 3,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 1
+      },
+      {
+        "s": "13/9",
+        "n": 4,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 2
+      },
+      {
+        "s": "13/9",
+        "n": 5,
+        "sum_y_f": "1",
+        "equals_one_exactly": true,
+        "vanishing_blocks": 4
+      }
+    ],
+    "all_equal_one": true,
+    "note": "holds even though every ell(lambda) >= 3 block vanishes under D — the two-row blocks carry the normalisation alone"
+  },
+  "symbolic_h3_under_D": {
+    "y_(3)": "(q**4 + 1)/(q**2 + 1)**2",
+    "y_(2,1)": "q**2/(q**2 + 1)**2",
+    "y_(1^3)": "0",
+    "radical_is_identically_zero": true,
+    "sum_y_f_symbolic": "1",
+    "sum_equals_one_for_all_q": true,
+    "carrier_numerator": "q**2",
+    "carrier_real_roots": [
+      "0",
+      "0"
+    ],
+    "carrier_nonzero_for_q_positive": true
+  },
+  "is_it_derived": {
+    "answer": "NO — imposed, then reproduced",
+    "where_imposed": "markov_trace_s seeds tr = {1: {(0,): Fraction(1)}}",
+    "what_the_twelve_hits_establish": "that the imposed normalisation and the D-frame block weights are CONSISTENT, and that the vanishing ell >= 3 blocks do not break it — not that tr_M(1) must be 1 under D"
+  },
+  "consequence_for_the_ladder": {
+    "step2_requirement": "offset must carry bar-weight -4 for alpha to be bar-homogeneous under D",
+    "bar_weight_of_1": "1",
+    "bar_weight_of_z_D": "q**(-4)",
+    "verdict": "RETRACTED. The antecedent is false: the phase offset is NOT the trace normalisation but a single-wrap eigenphase artifact on V_(2,1). The weight-0 argument does not bind it. See link_settled_and_FALSE."
+  },
+  "link_settled_and_FALSE": "the `1` is NOT tr_M(1). q-beta-categorical-precision-ladder.md:21 states alpha = (z-1)h/2 is the single-wrap EIGENPHASE on V_(2,1) (prop:q-beta-spectral-bridge). So the weight-0 argument does not bind it and the 'offset repair is CLOSED' verdict is RETRACTED; the offset question is REOPENED. The tr_M(1) = 1 measurement is unaffected — it simply lacks the consequence Step 2 expected.",
+  "sharpened_next_step": "the phase factors as (z-1)*(h/2), and h/2 is Delta_beta = (h/2).I from beta-decay-transfer-matrix-proof.md — built from h alone, so z-free and convention-INDEPENDENT. All convention dependence sits in (z-1). The D phase therefore comes from re-deriving the single-wrap eigenphase on V_(2,1) under the D trace, not from substituting z_D and not from a weight -4 offset.",
+  "context": {
+    "beans": [
+      "qou-cds1"
+    ],
+    "step2": "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py",
+    "corpus_agrees_unresolved": "qbeta_utils.py withholds z and alpha under convention D behind a guard citing the proved invalidity of substituting z_D here",
+    "scope": "(a) exact measurement at 3 s-values x 4 n; (b) the weight algebra is an identity in q"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138"
+}

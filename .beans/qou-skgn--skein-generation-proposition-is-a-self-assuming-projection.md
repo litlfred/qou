@@ -1,0 +1,91 @@
+---
+# qou-skgn
+title: 'prop:skein-generation is a self-assuming projection — the class field IS the conclusion'
+status: todo
+type: task
+priority: medium
+created_at: 2026-08-30T08:20:00Z
+updated_at: 2026-08-30T08:20:00Z
+---
+
+Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a
+q-RH-arc item; recorded because it is load-bearing and because §3b-cond names
+this exact shape.
+
+## The defect
+
+`content/quantum-observable-universe/lean/QOU/Torsion/skein_generation.lean`:
+
+```lean
+class SkeinGenerationContext (R Skein FundamentalKnotIndex : Type*) … where
+  fundamentalKnot : FundamentalKnotIndex → Skein
+  hopfLink : Skein
+  generation_top : Algebra.adjoin R (range fundamentalKnot ∪ {hopfLink}) = ⊤
+
+theorem skein_generation … (h : Skein) :
+    h ∈ Algebra.adjoin R (range ctx.fundamentalKnot ∪ {ctx.hopfLink}) := by
+  rw [ctx.generation_top]
+  exact Algebra.mem_top
+```
+
+The narrative (`mass-theory/skein-generation.md`) opens: *"The Skein module
+`Sk_q` **is generated** as an algebra by the fundamental knot types and the Hopf
+link."* That sentence **is** `generation_top`. So the class carries the block's
+own conclusion as a field and the theorem projects it — the vacuous
+self-assuming projection AGENTS.md §3b-cond item 5 defines, verbatim:
+
+> *"A class that carries the block's own conclusion as a field, with a 'theorem'
+> that merely projects it, is a vacuous self-assuming projection — it satisfies
+> the propagation audit yet fails `proof-statement-integrity`."*
+
+**The block is `prop:skein-generation`, kind `proposition`** — a provable kind,
+not a conjecture. So this is not the sanctioned "open conjecture as a
+content-bearing class with no instance" disposition; it is a proposition whose
+Lean derives nothing.
+
+## Second, independent problem: the theorem over-claims relative to the prose
+
+The narrative's second claim is *"Every **hadron** admits a terminal Skein
+resolution into a finite polynomial in these generators with coefficients in
+`ℤ[q^{±1}]`."* The theorem concludes membership for **every** `h : Skein`, with
+no hadron restriction, no finiteness, and no coefficient ring. Three of the
+four content words in the sentence are absent from the formalisation.
+
+Notably the **scratch** copy `QOU/scratch_skein.lean` — debris in every other
+respect, see `qou-scrx` — is closer here: it carries `Hadron : Skein → Prop` and
+restricts the conclusion to hadrons. It is still a projection, but of the right
+proposition. **Do not delete it before this bean is resolved**, or the corpus
+loses its only hadron-restricted statement of the claim.
+
+## Dispositions, and why this needs the author
+
+Three honest routes; picking among them is a judgement about what the
+proposition is meant to assert, which is the author's call, not a mechanical
+repair:
+
+1. **Demote to `conj:skein-generation`.** Generation of the Skein module by
+   torus knots plus the Hopf link is a real mathematical claim about `Sk_q`; if
+   it is not proved here, a conjecture carrier is the honest kind. Cascade would
+   need measuring (§3b propagation over its `uses[]` consumers).
+2. **Keep it a proposition and make the class carry genuine sub-hypotheses** —
+   the §3b-cond item-5 remedy: fields encoding the *inputs* (a spanning
+   property, a resolution algorithm terminating) from which membership is
+   *derived*, rather than a field asserting membership is total.
+3. **Restate at the narrative's actual strength** — hadron-restricted, with
+   finiteness and the `ℤ[q^{±1}]` coefficient ring — which is a strictly harder
+   and more interesting formalisation than either copy has.
+
+Recommendation, marked as my judgement: **(1) now, (3) later.** The claim reads
+like a conjecture about the Skein module's structure, and demoting is cheap and
+reversible; (2) risks producing another projection with more steps.
+
+**Default if nothing is done:** the proposition stays, the audit family keeps
+passing it (it has no `sorry`, no `axiom`, no `True`), and the corpus keeps a
+provable-kind block whose Lean asserts its own premise. That is the state today
+— nothing breaks, and nothing catches it either.
+
+## Blast radius — unmeasured
+
+I did not measure the `uses[]` consumers of `prop:skein-generation`; route (1)
+would need that first, since demoting a proposition propagates. Measure before
+acting.

@@ -1,11 +1,11 @@
 ---
 # qou-f09n
 title: 'SYMBOL COLLISION: three distinct quantities are all called c_2, and AGENTS.md calls the wrong one Taylor-exact'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T11:48:34Z
-updated_at: 2026-08-17T00:51:45Z
+updated_at: 2026-08-18T05:39:54Z
 ---
 
 

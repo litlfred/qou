@@ -42,6 +42,17 @@ namespace QOU.Mass.QDiffProlongationBaseOperator
 open Finset
 open QOU.MathlibExt
 
+/-! ## Disambiguation (`qInt`)
+
+`QOU.Mass.qInt` (`QHookDimension`) is the **balanced** q-integer
+`∑_{i<n} q^{2i-(n-1)}`; the geometric `∑_{i<n} q^i` this file means is
+`QOU.MathlibExt.qInt`. Lean resolves a bare name against the enclosing namespace
+before an `open`ed one, so inside `namespace QOU.Mass.*` a bare `qInt` is the
+**balanced** one however this file opens `QOU.MathlibExt`. Every reference below is
+therefore fully qualified: the bare form compiled against the wrong convention from
+`1646b5d6d3` until this was fixed, and a bare form reintroduced here would silently
+mean different mathematics again. Bean `qou-lksc`. -/
+
 /-- **The base q-dilation** `σ_q f = z ↦ f(q·z)` — the candidate base operator whose
 jet-tower lift would be the sought prolongation `D_q`. -/
 def qShift {R : Type*} [CommRing R] (q : R) (f : R → R) : R → R := fun z => f (q * z)
@@ -63,17 +74,17 @@ theorem jackson_monomial_numerator_commRing {R : Type*} [CommRing R] (q z : R) (
   ring
 
 /-- **The Jackson q-derivative names the quantum integer `[n]_q`** (over a `Field`,
-reusing the corpus `qInt`): `(q·z)^n − z^n = [n]_q · (q−1) · z^n`. Contrast the classical
+reusing the corpus `QOU.MathlibExt.qInt`): `(q·z)^n − z^n = [n]_q · (q−1) · z^n`. Contrast the classical
 `d/dz (z^n) = n·z^{n−1}` (`n` is q-free); here the coefficient is `[n]_q`, so the base
 operator is genuinely non-classical — the mechanism the C1 kernel needs. -/
 theorem jackson_monomial_numerator {K : Type*} [Field K] (q z : K) (n : ℕ) :
-    (q * z) ^ n - z ^ n = qInt q n * (q - 1) * z ^ n := by
-  simpa [qInt] using jackson_monomial_numerator_commRing q z n
+    (q * z) ^ n - z ^ n = QOU.MathlibExt.qInt q n * (q - 1) * z ^ n := by
+  simpa [QOU.MathlibExt.qInt] using jackson_monomial_numerator_commRing q z n
 
 /-- **q→1 degeneration:** `[n]_1 = n`. The candidate q-difference base operator recovers
 the classical integer coefficient in the classical limit, so `D_q → d/dz` as `q → 1`. -/
 @[simp] theorem qInt_one_eq_natCast {K : Type*} [Field K] (n : ℕ) :
-    qInt (1 : K) n = (n : K) := by
-  simp [qInt, Finset.sum_const, Finset.card_range]
+    QOU.MathlibExt.qInt (1 : K) n = (n : K) := by
+  simp [QOU.MathlibExt.qInt, Finset.sum_const, Finset.card_range]
 
 end QOU.Mass.QDiffProlongationBaseOperator

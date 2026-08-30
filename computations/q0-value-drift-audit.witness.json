@@ -5,9 +5,9 @@
   "data": {
     "counts": {
       "STALE": 219,
-      "proton-pin": 1974,
+      "proton-pin": 1979,
       "unknown": 25,
-      "canonical": 65
+      "canonical": 66
     },
     "stale_total": 219,
     "new_stale": 13,
@@ -2048,6 +2048,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.614060214572863
+      },
+      {
+        "file": "computations/audits/braid-encoding-audit.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/audits/brundan-kleshchev-audit.witness.json",
@@ -5699,7 +5706,7 @@
       {
         "file": "computations/definitive-q0-shift.witness.json",
         "field": "q0Value",
-        "value": "1.109978582751380807591669",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -6882,9 +6889,9 @@
       {
         "file": "computations/derivation-chain-audit.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
+        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
       },
       {
         "file": "computations/derived-bond-graph-binding.witness.json",
@@ -12438,6 +12445,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/qbeta-fmap-power-class-prune.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/qbeta-g3-5two-wall-crossing-barpair.witness.json",
         "field": "q0Value",
         "value": "1.109978582751380807591669",
@@ -13379,6 +13393,13 @@
         "file": "computations/qbeta/qbeta-argu-phase-branch-selection.witness.json",
         "field": "anchors.proton.q0",
         "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/qbeta/qbeta-bar-parity-of-the-decay-trace.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -14909,6 +14930,13 @@
         "ppb_vs_canonical": -11.614060214572863
       },
       {
+        "file": "computations/staircase-ew-residual-conjecture.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/structured-combiner-and-triangle.witness.json",
         "field": "inputs.q0",
         "value": "1.10997858275",
@@ -15770,6 +15798,20 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/wedderburn-mass-table-convention-d.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060207725885
+      },
+      {
+        "file": "computations/wedderburn-mass-table-convention-d.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/wedderburn-mass-table-z1-20.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808076",
@@ -15998,9 +16040,9 @@
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "a945911dd5e4df37cc43e27590036816fc0fd041",
+  "commitSha": "e2f7ae13f7b316ad06123d127577dabcb3917875",
   "engine": "python",
-  "computedAt": "2026-08-30T08:25:26.281565+00:00",
+  "computedAt": "2026-08-30T09:03:49.467625+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
