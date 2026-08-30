@@ -54,10 +54,15 @@ h2 = h * h
 dim_q = Q0 + 1.0 / Q0  # [2]_q
 
 # Molecule Data: (E_cov kJ/mol, n_HB, n_K, T_boil_obs K, T_melt_obs K)
+#
+# Carried as mpf from decimal STRINGS, not float literals. These are exact
+# tabulated values (373.15 K is a definition, not a measurement with a binary64
+# tail), and writing them as `373.15` put six raw float64 into the witness and
+# then propagated into every ratio computed from them.
 MOLECULES = {
-    "H2O": (460.0, 2, 6, 373.15, 273.15),
-    "HF":  (565.0, 1, 3, 293.15, 189.6),
-    "NH3": (391.0, 1, 3, 239.81, 195.4)
+    "H2O": (mp.mpf("460.0"), 2, 6, mp.mpf("373.15"), mp.mpf("273.15")),
+    "HF":  (mp.mpf("565.0"), 1, 3, mp.mpf("293.15"), mp.mpf("189.6")),
+    "NH3": (mp.mpf("391.0"), 1, 3, mp.mpf("239.81"), mp.mpf("195.4"))
 }
 
 def q_integer(n: int, q: float) -> float:
@@ -72,7 +77,7 @@ def main() -> None:
     
     # Collected so the "~6-10x" claim below can be checked against the run
     # rather than asserted as a constant (bean `qou-26f2`).
-    boil_ratios: dict[str, float] = {}
+    boil_ratios: dict[str, "mp.mpf"] = {}
 
     for name, (e_cov, n_hb, n_k, t_boil_obs, t_melt_obs) in MOLECULES.items():
         print(f"[{name}]")
@@ -92,7 +97,13 @@ def main() -> None:
         w.add_data(f"{name}_T_boil_pred", t_boil_pred)
         w.add_data(f"{name}_T_boil_obs", t_boil_obs)
         w.add_data(f"{name}_boil_ratio", boil_ratio)
-        boil_ratios[name] = float(boil_ratio)
+        # NOT `float(boil_ratio)`. `boil_ratio` is already an mpf — collapsing
+        # it here to populate the dict is what put `boil_ratios.*` and
+        # `boil_ratio_range.{min,max}` into the witness as raw float64, five
+        # fields the raw-float64 ratchet counted as a REGRESSION (6 -> 11).
+        # AGENTS.md permits `float(x)` only inside an f-string for display,
+        # which is where the casts below legitimately are.
+        boil_ratios[name] = boil_ratio
         w.add_data(f"{name}_T_melt_pred", t_melt_pred)
         w.add_data(f"{name}_T_melt_obs", t_melt_obs)
         w.add_data(f"{name}_melt_ratio", melt_ratio)
