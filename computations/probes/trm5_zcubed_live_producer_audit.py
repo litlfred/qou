@@ -50,6 +50,7 @@ Run:  PYTHONPATH=computations python3 -u computations/probes/trm5_zcubed_live_pr
 """
 from __future__ import annotations
 
+import ast
 import re
 
 import sys
@@ -202,10 +203,26 @@ def scan_corpus_for_six_vectors(repo):
         if "/_deprecated/" in f"/{rel}" or ".lake" in rel:
             continue
         try:
-            lines = path.read_text().splitlines()
+            text = path.read_text()
+            lines = text.splitlines()
         except (OSError, UnicodeDecodeError):
             continue
+        # Lines living inside a STRING literal are prose or test fixtures, not
+        # code, and must not be flagged. Without this the scan reports four
+        # BUGs against `_selftest`'s own synthetic fixtures in this very file,
+        # and would flag any docstring that quotes the bug in order to warn
+        # about it -- the detector eating its own documentation.
+        in_string = set()
+        try:
+            for node in ast.walk(ast.parse(text)):
+                if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                    end = getattr(node, "end_lineno", None) or node.lineno
+                    in_string.update(range(node.lineno, end + 1))
+        except SyntaxError:
+            pass
         for i, line in enumerate(lines, 1):
+            if i in in_string:
+                continue
             m = _SIX_VEC.search(line)
             if not m:
                 continue
@@ -240,6 +257,9 @@ def _selftest() -> int:
         # controls
         "CORRECT_ctl": "TR_M = [1.0, z, z, z**2, z**2, h * z**2 + z]",
         "DELIB_ctl": '  "OLD  (retired: e-=z^3)": [1, z, z, z**2, z**2, z**3],',
+        # a six-vector quoted INSIDE a string is prose or a fixture, not code.
+        # This control is what stops the scan flagging its own _selftest above.
+        "STRING_ctl": 'DOC = """the bug was [1, z, z, z**2, z**2, z**3] here"""',
     }
     with tempfile.TemporaryDirectory() as d:
         root = pathlib.Path(d)
@@ -255,6 +275,8 @@ def _selftest() -> int:
          "CORRECT_ctl" not in flagged and "CORRECT_ctl" in seen),
         ("deliberate comparison not flagged",
          "DELIB_ctl" not in flagged and "DELIB_ctl" in seen),
+        ("six-vector inside a string literal not flagged",
+         "STRING_ctl" not in flagged),
     ]
     ok_all = True
     for name, passed in checks:
