@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T03:28:21Z
+updated_at: 2026-08-30T04:27:54Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -723,3 +723,58 @@ cap-vs-cup mix-up, now the order-reversal artifact). Each time the error came fr
 the diagram instead of reading the printed goal. PRINT THE GOAL AFTER EVERY SIMP-SET CHANGE — the
 simp set materially changes which crossings are adjacent, and conclusions drawn under one set do not
 survive to another.
+
+
+2026-08-30 — MAJOR REDUCTION: SIX BRAIDINGS TO TWO. Verified, reproducible, and it makes the earlier
+"two Yang-Baxter applications needed" plan obsolete — NO Yang-Baxter was used.
+
+The whole reduction is `braiding_naturality` plus one recombination helper. The key was stating the
+helper in REASSOC form: after `Category.assoc` the goal is right-nested, so a plain `rw` pattern ends
+mid-chain and never matches. Every earlier failure of this kind was that, not a mathematical
+obstruction.
+
+THE HELPER (proves by `rw [braiding_tensor_right_hom]; simp`):
+
+    have hrec : ∀ (W A B Z : C) (k : A ⊗ (B ⊗ W) ⟶ Z),
+        (α_ W A B).hom ≫ (β_ W (A ⊗ B)).hom ≫ (α_ A B W).hom ≫ k
+          = (β_ W A).hom ▷ B ≫ (α_ A W B).hom ≫ A ◁ (β_ W B).hom ≫ k := by
+      intro W A B Z k; rw [braiding_tensor_right_hom]; simp
+
+THE FULL VERIFIED PREFIX (each step confirmed to fire, goal printed after each):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id,
+      MonoidalCategory.comp_whiskerRight]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [Category.assoc, MonoidalCategory.comp_whiskerRight]
+    rw [← hrec Y X (Y' ⊗ X')]                                  -- recombines Y's whole journey
+    simp only [Iso.hom_inv_id_assoc, Category.assoc]            -- kills an α.hom ≫ α.inv pair
+    rw [← braiding_naturality_right_assoc, ← hrec X Y (Y' ⊗ X')] -- recombines X's whole journey
+
+RESULTING GOAL — two braidings, down from six:
+
+    η_X ≫ coh ≫ X ◁ η_Y ▷ X' ≫ coh
+      ≫ (α_ X Y (Y'⊗X')).hom ≫ β_{X, Y⊗Y'⊗X'}
+      ≫ (α_ Y (Y'⊗X') X).hom ≫ β_{Y, (Y'⊗X')⊗X}
+      ≫ (α_ (Y'⊗X') X Y).hom ≫ (Y'⊗X') ◁ (g ⊗ₘ h)
+      ≫ coh ≫ Y' ◁ ε_X ▷ Y ≫ coh ≫ ε_Y
+
+Each strand's ENTIRE journey is now ONE braiding: X past (Y,Y',X'), then Y past (Y',X',X).
+
+WHAT THIS SUPERSEDES. The "two Yang-Baxter applications" plan is withdrawn — not wrong exactly, but
+unnecessary: recombining each strand's journey into a single braiding avoids the crossing-reordering
+problem entirely rather than solving it. That is the fourth time in this bean a crossing-level plan
+of mine was superseded by simply reading the printed goal after a rewrite. The standing warning
+stands and is now well-earned.
+
+WHAT REMAINS — the detachment. `X ◁ η_Y ▷ X'` followed by `β_{X, Y⊗Y'⊗X'}` should collapse by
+`braiding_naturality_right X (η_Y ▷ X')`, moving the Y-cup to the LEFT of X and leaving `β_{X,X'}` —
+which is exactly the X-loop framing crossing the RHS wants. Blocker is a GROUPING mismatch, not a
+mathematical one: the goal has `β_{X, Y⊗(Y'⊗X')}` while the naturality needs `β_{X, (Y⊗Y')⊗X'}`.
+`rw [braiding_naturality_right_assoc]` and `rw [← hrec X (Y⊗Y') X']` both fail to match for that
+reason alone. Next step is a calc step (or a grouping-aware helper) bridging the two associativities,
+which `monoidal` should discharge.
+
+Finishers retried on the two-braiding goal — `monoidal`, two loaded `simp`s — still fail. TWENTY-FIVE
+approaches ruled out, but the shape of the remaining work has changed completely: it is now ONE
+grouping bridge plus the detachment, not a braid-relation search.
