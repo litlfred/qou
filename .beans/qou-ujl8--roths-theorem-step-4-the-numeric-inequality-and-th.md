@@ -1,7 +1,7 @@
 ---
 # qou-ujl8
 title: 'Roth''s theorem step 4: the numeric inequality and the shared parameter record'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T06:35:01Z
@@ -155,4 +155,67 @@ More generally ANY rational alpha = a/b has |p/q - a/b| >= 1/(qb), capping the e
 which forces alpha irrational, and certifying an index at an irrational alpha is step 1's
 non-constructive Siegel argument. A firing witness is not reachable by construction, not merely
 expensive.
+
+## 2026-08-30 -- item 2 finished: "take m large", and what it costs
+
+slack_pos / exists_m_of_slack / hfin_of_large finish the discharge. Substituting the standard
+relations K = (2+delta)L, L' = (1+eta)L, mu = m(1/2 - eps) turns the last inequality into
+
+    (2+delta) nu  <  m * [ (2+delta)(1/2 - eps) - (1+theta)(1+eta) ],
+
+so everything hinges on the bracket, and slack_pos says exactly when it is positive:
+
+    (2+delta) eps + theta + eta + theta*eta  <  delta/2.
+
+THE APPROXIMATION EXCESS delta/2 PAYS FOR ALL THREE SLACKS, and they are of different origin:
+eps is how far step 1's index falls short of m/2; eta is how far the normalisation is from exact;
+theta is the auxiliary polynomial's share of the denominators' size. Only after the bracket is
+positive is m free, and exists_m_of_slack is then pure Archimedes -- the ONE place in the whole
+theorem where "sufficiently large" is used for its Archimedean content rather than as shorthand
+for a counting bound.
+
+Writing it out is what made the four constants comparable. Before it eta had no budget at all: it
+entered only when rothDegrees turned out to be two-sided, and nothing said how tight the two sides
+had to be relative to delta. Now delta/2 pays for it, explicitly.
+
+exists_m_of_slack was written with 0 <= nu; the linter reported it unused and it is -- exists_nat_gt
+does not care. Stronger statement kept.
+
+## Summary of Changes
+
+QOU/Mathlib/RothContradiction.lean (9 declarations) and QOU/Mathlib/RothNormalisation.lean
+(9 declarations), all axiom-clean [propext, Classical.choice, Quot.sound], each built with the
+.olean deleted first, both registered in QOU.lean.
+
+  * ITEM 3 (the contradiction) -- false_of_le_index_of_rothBound and roth_contradiction. Steps 2
+    and 3 bound the same index from below and above; the collision is where Roth's theorem is.
+    Composing them surfaced no interface mismatches; my first report said it had, and that was
+    tested and corrected in place.
+  * ITEM 2 (the inequality) -- mul_exp_neg_lt_one_div gives the additive form, log_taylorConst
+    names the four costs, log_taylorConst_le reduces them to one per-coordinate condition,
+    log_condition_of_cost closes the inequality, and slack_pos / exists_m_of_slack / hfin_of_large
+    discharge the remainder with the slack budget delta/2 > (2+delta)eps + theta + eta + theta*eta.
+  * ITEM 1 (the record) -- SCRAPPED, see below.
+
+## Reasons for Scrapping (item 1 only, not the bean)
+
+Two, and the first is the substantive one.
+
+1. There was nothing to reconcile. The bean was opened on the worry that RothGammaProducer and
+   step 4 would need different normalisations -- the shape correction 26 had. rothDegrees_log_bounds
+   shows rothDegrees H N h = log_{H_h} N already puts r_h log H_h within log H_h of log N on BOTH
+   sides. Gamma_m's growth clause consumes the lower half, step 4 needs both, same construction.
+2. A structure : Prop carrier is taxonomy row 19, which this arc opened: invisible to every
+   detector in the 17-detector suite. With one consumer the packaging buys nothing and re-creates
+   a blind spot we documented.
+
+## Deferred, with a home
+
+roth_contradiction_of_normalisation still takes hgap (the ratio Gamma_m supplies is below
+(nu/c_m)^{2^{m-1}}) and the step-1/step-3 suppliers of mu and nu as hypotheses. Assembling those
+into the final statement of Roth's theorem, and then step 5 (not LiouvilleWith), is qou-br3w.
+The O_K coefficient ring is qou-86j4. No small witness can make the collision fire, and the reason
+is now argued rather than asserted: any rational alpha caps the approximation exponent near 1, so
+K stays at or below L; exponent 2 + delta forces alpha irrational, and certifying an index at an
+irrational alpha is step 1's non-constructive Siegel argument.
 

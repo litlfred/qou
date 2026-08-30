@@ -224,4 +224,59 @@ theorem roth_contradiction_of_normalisation (hm : 1 ≤ m) {p q F : ℕ} (hp : 0
 
 end Assembled
 
+section TakeMLarge
+
+/-! ## Discharging the last inequality: what "take `m` sufficiently large" actually needs
+
+Substituting the standard relations — `K = (2+δ)L` from an approximation exponent `2+δ`,
+`L' = (1+η)L` from a normalisation tight to within `η`, and `μ = m(½−ε)` from step 1 — turns
+`(1+θ)·m·L' < K(μ−ν)` into
+
+    (2+δ)·ν  <  m · [ (2+δ)(½−ε) − (1+θ)(1+η) ],
+
+so everything hinges on the bracket being positive, and `slack_pos` says exactly when:
+
+    (2+δ)·ε + θ + η + θ·η  <  δ/2.
+
+**The approximation excess `δ/2` must exceed the total slack**, and the three slacks are of
+different origin — `ε` is how far step 1's index falls short of `m/2`, `η` is how far the
+normalisation is from exact, `θ` is the auxiliary polynomial's share of the denominators' size.
+Only after that is `m` free: `exists_m_of_slack` is then pure Archimedes.
+
+Writing this out is what makes the four constants comparable.  Before it, `η` in particular had no
+budget at all — it entered only in the last commit, when `rothDegrees` turned out to be two-sided,
+and nothing said how tight the two sides had to be relative to `δ`.  Now `δ/2` pays for it.
+-/
+
+/-- **When the slack budget balances.**  The bracket that has to be positive before enlarging `m`
+helps at all. -/
+theorem slack_pos {δ η θ ε : ℝ}
+    (hslack : (2 + δ) * ε + θ + η + θ * η < δ / 2) :
+    0 < (2 + δ) * (1 / 2 - ε) - (1 + θ) * (1 + η) := by
+  nlinarith [hslack]
+
+/-- **Take `m` large.**  Once the slack budget balances, an `m` making the inequality strict
+exists — and this is the only place in Roth's theorem where "sufficiently large" is used for its
+Archimedean content rather than as shorthand for a counting bound.
+
+No sign condition on `ν` is needed; I wrote one and the linter reported it unused, which is right —
+`exists_nat_gt` does not care.  The stronger statement is kept. -/
+theorem exists_m_of_slack {δ η θ ε ν : ℝ}
+    (hslack : (2 + δ) * ε + θ + η + θ * η < δ / 2) :
+    ∃ m : ℕ, (2 + δ) * ν < (m : ℝ) * ((2 + δ) * (1 / 2 - ε) - (1 + θ) * (1 + η)) := by
+  set c : ℝ := (2 + δ) * (1 / 2 - ε) - (1 + θ) * (1 + η) with hc
+  have hcpos : 0 < c := slack_pos hslack
+  obtain ⟨m, hm⟩ := exists_nat_gt (((2 + δ) * ν) / c)
+  exact ⟨m, by rwa [div_lt_iff₀ hcpos] at hm⟩
+
+/-- **The last inequality, discharged.**  `(1+θ)·m·L' < K(μ−ν)` under the standard relations
+`K = (2+δ)L`, `L' = (1+η)L`, `μ = m(½−ε)`, given the `m` that `exists_m_of_slack` produces. -/
+theorem hfin_of_large {δ η θ ε L ν : ℝ} (hL : 0 < L) {m : ℕ}
+    (hm : (2 + δ) * ν < (m : ℝ) * ((2 + δ) * (1 / 2 - ε) - (1 + θ) * (1 + η))) :
+    (1 + θ) * ((m : ℝ) * ((1 + η) * L))
+      < ((2 + δ) * L) * (((m : ℝ) * (1 / 2 - ε)) - ν) := by
+  nlinarith [mul_pos hL (sub_pos.mpr hm)]
+
+end TakeMLarge
+
 end MvPolynomial
