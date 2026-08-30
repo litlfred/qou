@@ -1,11 +1,11 @@
 ---
 # qou-tower
 title: 'There is no tower: the production chain reduces every nucleus to the same 6 dims'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-08-30T16:10:00Z
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -277,3 +277,63 @@ The previous entry said the A=4 walk was "affordable" on the strength of the
 5.6 MB figure. That was object 1. The corrected plan is: do A ≤ 3 exactly,
 which already contains the first magic number on both the Z and N axes, then
 attempt A=4 separately.
+
+## THE A=3 WALK RAN — and the tower shows nothing
+
+[`tower_walk_h3a_magic_probe.py`](../computations/probes/tower_walk_h3a_magic_probe.py).
+Real H₉ state: a full `d_λ × d_λ` matrix per partition `λ ⊢ 9`, **no per-step
+GS reduction**, generators at their **true strand positions** per
+`sigma_shell_characterization.shell_position` (nucleon `k` on strands
+`3k+1..3k+3`, internal B₃ on generators `3k`/`3k+1`, interface at `3k−1`).
+That last part is the collapse this walk removes — the H₃ code puts every
+crossing on generators 0 and 1.
+
+**A=3 is exhaustive**, which is why it is the right control: `Z ∈ {0,1,2,3}`
+is *all four* configurations, so the contrast is at fixed algebra, fixed
+partitions and fixed strand count with only nucleon composition varying.
+
+    Z=3,N=0      neither   top-share 0.0907  participation 18.895  argmax (6,3)
+    ³He Z=2,N=1  Z MAGIC   top-share 0.0802  participation 20.256  argmax (3,3,1,1,1)
+    ³H  Z=1,N=2  N MAGIC   top-share 0.0961  participation 20.591  argmax (3,3,1,1,1)
+    Z=0,N=3      neither   top-share 0.0968  participation 19.819  argmax (3,3,1,1,1)
+
+**No separation.** Top-block share interleaves — the magic ³He is the *lowest*
+and the magic ³H sits between the two non-magic configurations. The argmax
+partition does not separate either: non-magic `Z=0,N=3` sits on the same
+`(3,3,1,1,1)` as both magic configurations, and only `Z=3,N=0` (non-magic)
+differs. Rank is full in every block for every configuration.
+
+### The one quantity that split, and why it is NOT reported as a signal
+
+Participation ratio splits cleanly — magic `{20.256, 20.591}` against
+non-magic `{18.895, 19.819}`, `min(magic) > max(non-magic)`. Checked before
+believing it: with **2 versus 2** there are 6 label orderings and 2 of them are
+clean splits, so **P = 1/3 under the null**. A one-in-three coincidence is not
+evidence, and A=3 is *exhausted* — there are no further configurations to add,
+so it cannot be tested further at this A. Reporting it as a find would have
+been a sixth instance of the input-presented-as-output / inadequate-control
+pattern this arc has now hit five times.
+
+### What is left
+
+**⁴He (A=4) is the only doubly-magic case in reach and is UNTESTED.** Object 2
+(`Σd²` = 12! = **3.83 GB**) is borderline in a 16 GB container, and the same
+container OOM-killed the k=12 dense run at 12.6 GB. Needs a memory guard, and
+it is the *only* remaining place in this construction where "doubly" magic
+could matter.
+
+Beyond that, §2's structural finding narrows where to look at all: the collapse
+is in `build_atom_nf_mp`, **upstream of every LP and SDP**, so any shell degree
+of freedom has to enter *before or outside* the GS reduction. It cannot be
+recovered downstream of it.
+
+### Precision, stated not hidden
+
+The block values inherit **float64** from `level_k_binding`'s `q0`/`qi`/`HA`,
+which this probe does not re-implement. The question here is structural —
+whether the distribution over partitions differs qualitatively — and the
+compared quantities differ at O(0.1), ~15 orders above the float64 floor. **No
+agreement at any digit count is claimed.** Per AGENTS.md §PROBES ARE NOT
+EXEMPT: this is a stated limitation on an *inherited* input, not a float64
+computation introduced here, and the conclusion is a negative that float64
+cannot manufacture.
