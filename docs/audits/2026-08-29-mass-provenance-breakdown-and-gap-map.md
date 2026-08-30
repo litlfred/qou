@@ -148,6 +148,34 @@ An SDP *channel model* of fusion (initial-state vs final-state active-set
 comparison, e.g. the D and T duals against the ⁴He + n duals) does not exist
 and would be new research; the ingredients (per-isotope duals) are all present.
 
+### 4b. First cross-witness channel read (probe, 2026-08-30)
+
+[`fusion_channel_sdp_comparison_probe.py`](../../computations/probes/fusion_channel_sdp_comparison_probe.py)
+(bean `qou-dpy1`) compares the two sides of D + T → ⁴He + n across the four
+committed real-SDP witnesses — no new solve; conclusions at float64
+resolution (the LP-dual witnesses carry raw float64 by construction, bean
+`qou-ftuv`):
+
+| subject | algebra | $\mathrm{tr}_M$ | $y_0^*$ | active/reps | self-conj active? |
+|---|---|---:|---:|---|---|
+| ²H | $H_6$ | 0.38836 | −0.01443 | 7/8 | no |
+| ³H | $H_9$ | 0.22931 | +0.01655 | 4/5 | no |
+| ⁴He | $H_{12}$ | 0.99426 | +0.00397 | 6/7 | no |
+| n | $H_3$ | 0.98774 | +0.42063 | 1/2 | no |
+
+Findings: (i) strand bookkeeping is conserved across the channel
+(6+9 = 12+3 = 15); (ii) all four sides carry strong-duality certificates
+(gaps ≤ 4.6×10⁻⁴¹); (iii) **the self-conjugate block is priced to zero on
+every side** — the bar-fold wall is channel-invariant, consistent with the
+bar involution being isospin conjugation (§6); (iv) the channel's dual-price
+shift $\Delta y_0^* = +0.4225$ is dominated by the free neutron
+(+0.4206) — the final state pays almost its whole net-constraint price on
+the emitted nucleon, which is the SDP-side shadow of the channel's kinetic
+release; (v) one anomaly for follow-up: the **deuteron is the only subject
+whose $n_{\mathrm{target}}$ (0.38773) differs from its own witness
+$\mathrm{tr}_M$ (0.38836)** — the other three are bit-identical — worth a
+provenance check on which atom word the deuteron solve targeted.
+
 ## 5. The electron layer — ¹H's 13.6 eV is imported
 
 The dashboard's $B_{\mathrm{el}}(Z) = 1.44381\times10^{-5}Z^{2.39} +
