@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T09:45:56Z
+updated_at: 2026-08-30T09:54:37Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -840,3 +840,66 @@ find it**, because the bean records nothing.
 That is a new instance of a documented blind spot, and worth stating as a
 general caution: a `completed` bean with an empty body is invisible to path 6
 while its work product is real. Grep the **witness descriptions** too.
+
+
+---
+
+## What IS derivable from the axioms — the ratio is a THEOREM; only one object is open
+
+Answering the question directly, from the canonical derivation cheat sheet and
+the Lean, rather than from the convention dispute above.
+
+### Derived, not fitted
+
+| fact | status | where |
+|---|---|---|
+| `[n]_q = sinh(nλ)/sinh(λ)`, **cosh = strong / sinh = Coulomb** | **PROVED (Lean + paper)** — "a theorem, not a fit" | cheat sheet §3 item 2 (line 291) |
+| `h = q − q⁻¹ = 2·sinh(ln q)` | Lean, sorry-free | `QOU.Mass.MassVolDensity.h_crossing_eq_two_sinh_log` |
+| `sinh` is **bar-odd** | Lean | `CrossingEnergyBarParity.sinhW_coef`, `QBetaReebSinhParity.reeb_sinh_bar_odd` |
+| `[2]_q = q + q⁻¹ = 2·cosh(ln q)` | elementary | — |
+
+Composing them, the **Coulomb-to-strong ratio is fixed by theorem**:
+
+    h / [2]_q  =  2 sinh(ln q) / 2 cosh(ln q)  =  tanh(ln q)
+
+At the proton pin, `tanh(ln q₀) = 0.10396371005241013891` — **derived,
+parameter-free, no fit anywhere in it.**
+
+### The germ moment I formalized this session IS that ratio
+
+`QOU.MassTheory.EmGermMomentVanishing.emMoment` is `m_F = −h/[2]_q`. So
+
+    m_F  ≡  −tanh(ln q₀)
+
+verified to `3.3e-52` at 50 dps — an **algebraic identity**, not a numerical
+match. And `computations/quark-mass-extraction-stage1.witness.json` names the
+framework's only derived EM mechanism as **`tanh(ln q₀) × strong bond`**.
+
+**This is a convergence, not a new result.** The identity `h/[2]_q = tanh(ln q)`
+is elementary and the framework already carries `tanh(ln q₀)`. What is worth
+recording is that the germ-curvature route (`m_F = qTr(E F_q E)/qTr(E)`, an
+independent construction) lands on the *same* object — which is evidence the
+EM channel is correctly identified, reached from two directions.
+
+### So `qou-bn8e` is NOT "derive two free couplings"
+
+The framing in this bean's earlier entries — `E = A·Σqᵢ² + B·Σqᵢqⱼ` with `A`, `B`
+to be derived — **overstates the freedom.** The axioms already fix the
+Coulomb/strong *ratio* at `tanh(ln q₀)`. What they do not supply is the
+**intra-nucleon bond that ratio multiplies**.
+
+Two corpus statements pin exactly where the gap is:
+
+* Cheat sheet §3 item 1 (line 290): the **`sinh(ln q)` Coulomb channel is
+  DISCARDED by the canonical projection** — which is why the canonical `Δ_pn`
+  route carries no EM term, and why asking "what residual does EM owe" of *that*
+  route was the wrong question.
+* `qou-m3vl`: the derived mechanism `tanh(ln q₀) × strong bond` is
+  **INTER-nucleon**; the **intra**-nucleon self-energy is the open
+  two-like-charge EM-linking invariant.
+
+**Restated, the bean's actual content:** the coefficient is a theorem; the open
+object is one geometric quantity — the intra-nucleon two-like-charge linking
+number — shared with front 4-B and the ³He mirror residual. That is a single
+named object, not two free parameters, and it is the same object `qou-m3vl`
+identified on 2026-08-01.
