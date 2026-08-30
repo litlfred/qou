@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:58:32.126488+00:00",
-  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
+  "computedAt": "2026-08-30T15:05:06.049996+00:00",
+  "commitSha": "74bcb7fbee4d00e9a63ca22a0ec3e10144cddfd8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 4,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "4ef22dbfca2a",
@@ -35,7 +35,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1463,
+    "files_scanned": 1468,
     "patterns": [
       "P15",
       "P16",
@@ -7065,42 +7065,42 @@
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 102,
+        "line": 114,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 124,
+        "line": 142,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 141,
+        "line": 159,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 172,
+        "line": 190,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 191,
+        "line": 209,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "shift_from_nf_basis.py",
-        "line": 196,
+        "line": 214,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
