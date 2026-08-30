@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T16:26:54Z
+updated_at: 2026-08-30T16:53:16Z
 ---
 
 
@@ -806,3 +806,23 @@ audit understood `private` (the surface audit was calling a private/public
 same-name pair a "hard import error", which it cannot be). Live instance was
 `QOU.BraidKnot.qIntBal`. Recorded as TRAP 8 in
 `.claude/agent-memory/lean-verifier/verification-harness.md`.
+
+
+## 2026-08-30 — #6278 MERGED (862a98357aa); main verified green
+
+Rebase-merged, 5 commits. Verified on the merged `main` with lean-direct:
+`MassGapGm`, `KeystoneMcKayValueMap`, `TransferMatrix`,
+`beta_decay_transfer_matrix` all **exit 0**; duplicate-FQN ratchet 0 proposed /
+0 confirmed; name-surface `L~L` 0/0 with the one private pair reported as
+excluded. The two live breakages this arc caused are gone from `main`.
+
+**Leftover I introduced, found while verifying the merge:** the `hbar_q` ->
+`hbarQ` rename in #6191 updated `MassGapGm`'s code and ONE docstring line but
+left FOUR others (28, 35, 56, 65) writing `hbar_q`, one of them in backticks as
+though it were an identifier. Partial, not absent — which is the harder kind to
+notice. Fixed on `claude/hbarq-docstring-residue-2026-08-30`.
+
+Note this is a class the guards cannot see: both audits parse `def`/`abbrev`
+heads, so a stale identifier reference inside a docstring is invisible to them
+and to the compiler alike. Not worth a detector; worth knowing that a rename's
+prose half has no gate at all.
