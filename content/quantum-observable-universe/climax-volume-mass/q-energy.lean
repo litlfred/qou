@@ -5,93 +5,136 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Archimedean.QEnergy — q-Energy from angular momentum + momentum + action
 
-The q-energy of a particle knot is the sum of three terms:
-  E_q = J_q² · ℏ_q + p_q² · ℏ_q/(2[n]_q) + S_q
-where S_q is the categorical action (rest mass energy).
+The q-energy of a particle knot is the sum of three terms,
+
+  `E_q = J_q² · ℏ_q + p_q² · ℏ_q / (2 [n]_q) + S_q`,
+
+where `S_q` is the categorical action (rest-mass energy).
 
 LaTeX label: `def:q-energy`
 
 ## References
 - [manuscript] §6/q-energy
 
-**Ground ring**: archimedean specialisation over `ℝ` (AGENTS.md §7c).
-The q-number formula uses real exponents `q^n` (`Real.rpow`), division
-and ordering, all of which require the archimedean structure of `ℝ`.
-The underlying combinatorial content stays generic to any commutative
-ring carrying the same q-data.
+**Ground ring (AGENTS.md §7c).** Every term above is a ring operation plus
+division, so the whole construction — carrier, total, and the rest-energy
+theorem — is stated over a generic `{R : Type*} [Field R]`, with the
+q-number carried as *data* on the structure. Only two facts need `ℝ`: the
+real-exponent bracket `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)`, where `q ^ n` at a real
+`n` is `Real.rpow`, and the crossing-energy asymmetry, which is an ordering
+statement. Both sit below the substrate→archimedean wall and say `ℝ`.
+
+This file previously opened with `abbrev R_q := ℝ`,
+`def q_param : R_q := 1.1097` and `def hbar_q (q : R_q) : R_q`, all inside
+`namespace QOU.Archimedean`, where `R_q` canonically means
+`LaurentPolynomial ℤ`, `q_param` the indeterminate `T 1`, and `hbar_q` the
+element `1 - q_inv` of that ring (`QOU/Archimedean/GroundRing.lean`,
+`QOU/Archimedean/ParticleKnots.lean`). Three names, each meaning two
+different things depending on which copy a reader or a checker reached. The
+helpers now live in the block's own `QEnergy` namespace, which cannot
+collide with the library's (bean `qou-u87j`).
 -/
 
 namespace QOU.Archimedean
 
-/-- Ground ring: the archimedean specialisation `R_q = ℝ`. -/
-abbrev R_q := ℝ
+/-- **q-Energy of a particle knot**: rotational + translational + rest mass.
 
-/-- The substrate indeterminate, specialised to the numerical anchor. -/
-noncomputable def q_param : R_q := 1.1097
-
-/-- ℏ_q = 1 - q⁻¹, the quantum Planck constant. -/
--- Ref: [manuscript] §6/q-energy
-noncomputable def hbar_q (q : R_q) : R_q := 1 - 1 / q
-
-/-- [n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹), the q-number (real exponents). -/
--- Ref: [manuscript] §6/q-energy
-noncomputable def q_number (q n : R_q) : R_q :=
-  (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : R_q)))
-
-/-- The q-energy of a particle knot.
-    Three terms: rotational + translational + rest mass (action). -/
--- Ref: [manuscript] §6/q-energy
-structure QEnergy where
+The q-number is a *field* rather than a fixed function, which is what keeps
+the structure generic — `total` below is the same expression whichever
+bracket the instance supplies. -/
+structure QEnergy (R : Type*) [Field R] where
+  /-- The q-number `[·]_q` this instance is built over. -/
+  qNumber : R → R → R
   /-- Substrate parameter. -/
-  q : R_q
-  /-- Spin quantum number j. -/
-  j : R_q
+  q : R
+  /-- Spin quantum number `j`. -/
+  j : R
   /-- q-momentum (writhe-derived). -/
-  p_q : R_q
-  /-- Number of strands in braid representative. -/
-  n_strands : R_q
-  /-- Categorical action S_q (rest mass energy). -/
-  S_q : R_q
+  p_q : R
+  /-- Number of strands in the braid representative. -/
+  n_strands : R
+  /-- Categorical action `S_q` (rest-mass energy). -/
+  S_q : R
 
-/-- The total q-energy. -/
--- Ref: [manuscript] §6/q-energy
-noncomputable def QEnergy.total (E : QEnergy) : R_q :=
-  -- Rotational: [j]_q · [j+1]_q · ℏ_q
-  q_number E.q E.j * q_number E.q (E.j + 1) * hbar_q E.q
-  -- Translational: p_q² · ℏ_q / (2 · [n]_q)
-  + E.p_q ^ 2 * hbar_q E.q / (2 * q_number E.q E.n_strands)
-  -- Action (rest mass): S_q
-  + E.S_q
+namespace QEnergy
 
-/-- At rest (p_q = 0, j = 0), q-energy equals the action (rest mass).
-    With `j = 0` the rotational term carries `[0]_q = 0` and with
-    `p_q = 0` the translational term vanishes, leaving `S_q`. -/
+variable {R : Type*} [Field R]
+
+/-- `ℏ_q = 1 - q⁻¹`, the quantum Planck constant, over any field.
+
+Distinct from the library's `QOU.Archimedean.hbar_q`, which is the *element*
+`1 - q_inv` of the Laurent ground ring rather than this function of `q`. -/
 -- Ref: [manuscript] §6/q-energy
-theorem q_energy_rest (q S : R_q) :
-    (QEnergy.mk q 0 0 1 S).total = S := by
-  unfold QEnergy.total q_number
-  simp
+def hbar (q : R) : R := 1 - 1 / q
 
 /-- The crossing energy at a single positive crossing. -/
 -- Ref: [manuscript] §6/q-energy
-noncomputable def crossingEnergy_pos (q : R_q) : R_q := q
+def crossingEnergyPos (q : R) : R := q
 
 /-- The crossing energy at a single negative crossing. -/
 -- Ref: [manuscript] §6/q-energy
-noncomputable def crossingEnergy_neg (q : R_q) : R_q := 1 / q
+def crossingEnergyNeg (q : R) : R := 1 / q
 
-/-- Positive crossings carry more energy than negative at q > 1. -/
+/-- The total q-energy: rotational `[j]_q [j+1]_q ℏ_q`, translational
+`p_q² ℏ_q / (2 [n]_q)`, and the action `S_q`. -/
 -- Ref: [manuscript] §6/q-energy
-theorem crossing_energy_asymmetry {q : R_q} (hq : 1 < q) :
-    crossingEnergy_neg q < crossingEnergy_pos q := by
-  unfold crossingEnergy_pos crossingEnergy_neg
-  rw [div_lt_iff₀ (by linarith : (0 : R_q) < q)]
+def total (E : QEnergy R) : R :=
+  E.qNumber E.q E.j * E.qNumber E.q (E.j + 1) * hbar E.q
+  + E.p_q ^ 2 * hbar E.q / (2 * E.qNumber E.q E.n_strands)
+  + E.S_q
+
+/-- **At rest the q-energy is the action.** With `j = 0` the rotational term
+carries `[0]_q = 0` and with `p_q = 0` the translational term vanishes,
+leaving `S_q`.
+
+The only hypothesis is that the bracket kills `0`; no ordering, no
+exponentiation, no archimedean structure. Note the translational term needs
+no non-vanishing side condition on `[n]_q`, because `0 / x = 0` holds in any
+`DivisionRing` including at `x = 0`. -/
+-- Ref: [manuscript] §6/q-energy
+theorem total_rest (qn : R → R → R) (h : ∀ q, qn q 0 = 0) (q S : R) :
+    (QEnergy.mk qn q 0 0 1 S).total = S := by
+  unfold total
+  simp [h]
+
+/-! ### Archimedean specialisation
+
+Below the substrate→archimedean wall: a real exponent is `Real.rpow`, and an
+asymmetry is an ordering claim. -/
+
+/-- The q-number `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)` at **real** exponents. -/
+-- Ref: [manuscript] §6/q-energy
+noncomputable def qNumberReal (q n : ℝ) : ℝ :=
+  (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : ℝ)))
+
+/-- `[0]_q = 0`, the hypothesis `total_rest` asks for, discharged at `ℝ`. -/
+-- Ref: [manuscript] §6/q-energy
+theorem qNumberReal_zero (q : ℝ) : qNumberReal q 0 = 0 := by
+  unfold qNumberReal
+  simp
+
+/-- The real q-energy at rest is its action — `total_rest` instantiated. -/
+-- Ref: [manuscript] §6/q-energy
+theorem total_rest_real (q S : ℝ) :
+    (QEnergy.mk qNumberReal q 0 0 1 S).total = S :=
+  total_rest qNumberReal qNumberReal_zero q S
+
+/-- Positive crossings carry more energy than negative at `q > 1`.
+
+An ordering statement, so `ℝ`: it is false over a generic field, which has
+no order to state it in. -/
+-- Ref: [manuscript] §6/q-energy
+theorem crossingEnergyNeg_lt_pos {q : ℝ} (hq : 1 < q) :
+    crossingEnergyNeg q < crossingEnergyPos q := by
+  unfold crossingEnergyPos crossingEnergyNeg
+  rw [div_lt_iff₀ (by linarith : (0 : ℝ) < q)]
   nlinarith
 
-/-- Q-Deformed Energy: a rest-mass-nonnegative configuration exists. -/
+/-- **Q-Deformed Energy**: a rest-mass-nonnegative configuration exists. -/
 -- Ref: [manuscript] def:q-energy
-theorem q_energy_def :
-    ∃ (E : QEnergy), E.S_q ≥ 0 :=
-  ⟨QEnergy.mk 1.1097 0 0 1 0, le_refl 0⟩
+theorem exists_nonneg_action : ∃ E : QEnergy ℝ, E.S_q ≥ 0 :=
+  ⟨QEnergy.mk qNumberReal 1.1097 0 0 1 0, le_refl 0⟩
+
+end QEnergy
 
 end QOU.Archimedean
