@@ -230,3 +230,87 @@ deliberately different functions). That is a design decision, not a sweep.
 ALSO FOUND: braids-and-knots/chi-std-pernucleon-closed-form.lean is RED ON MAIN
 (pre-existing, unrelated to this work) -- another instance of the class in
 qou-orph / qou-k448 where nothing checks a file.
+
+---
+
+## 2026-08-30 — THE STATED CEILING IS STALE. Both prerequisites already exist.
+
+Found from `qou-f8lit` while re-verifying the q-bracket row of
+`docs/audits/2026-06-21-constant-consistency-axis2-clean.md` (whose ✅ this bean
+falsifies). **This is not a new design question — it is a bean that did not
+learn.**
+
+This bean closes by saying:
+
+> To go further you must first EXTEND the canonical module — add a Z-index
+> sibling and decide a policy for the guarded variants (either a guarded
+> canonical form, or leave them and document that they are deliberately
+> different functions). **That is a design decision, not a sweep.**
+
+Both were done on **2026-08-10**, two days after this bean was written
+(`90140791dd`, arc `qou-lgkd`). This bean's `updated_at` is still
+`2026-08-08T13:40:00Z`, so it has never seen them.
+
+### Prerequisite 1 — ℤ-index sibling: EXISTS
+
+    QIntegerCanonical.lean:176   qIntBalZ (q : R) (k : ℤ) : R
+    QIntegerCanonical.lean:195   qIntBalZ_neg      : qIntBalZ q (-k) = -qIntBalZ q k
+    QIntegerCanonical.lean:204   qIntBalZ_bar_even : qIntBalZ q⁻¹ k = qIntBalZ q k
+
+The bar-even lemma is the one that matters — it is the property this bean's own
+argument for `qIntBal` rests on, now available at ℤ index.
+
+### Prerequisite 2 — guarded policy: DECIDED, and it went the "guarded canonical
+### form" way, covering BOTH guard shapes the corpus actually uses
+
+    qIntBalCl     q n := if q = 1        then n else qIntBal q n   -- one-sided
+    qIntBalClSing q n := if q - q⁻¹ = 0  then n else qIntBal q n   -- two-sided
+    qIntGeoCl     q n := if q = 1        then n else qIntGeo q n
+
+with the three bridges a migrating site needs:
+
+    qIntBalCl_of_ne_one       guard invisible off q = 1
+    qIntBalClSing_of_ne       guard invisible off the singular locus
+    qIntBalClSing_eq_qIntBalCl  the two guards agree off q ∈ {0, −1}
+
+and — the part that answers this bean's *reason* for calling the guarded sites
+undrainable (*"Migrating changes behaviour at q=1"*) — two lemmas that make the
+behaviour change **checkable rather than asserted**:
+
+    qIntBal_one_eq_zero          qIntBal 1 n = 0, NOT n (Lean's x/0 = 0)
+    qIntBalClSing_eq_qIntBalCl   names q = −1 as the point the two guards differ
+
+So the objection stands as a *fact* (guarded → unguarded really is a behaviour
+change) and is no longer a *blocker*: a guarded site migrates to a guarded
+canonical form of the matching shape, and the difference between the two guard
+shapes is a proved lemma rather than a judgement.
+
+### What this changes
+
+**This item is no longer an owner design call.** It is a mechanical migration
+against an existing canonical module. Nothing here needs a ruling.
+
+**Do not carry this bean's counts forward.** `Z-INDEX 6` / `GUARDED 11` /
+`SHORTHAND 7` were measured on 2026-08-08 against a corpus that has moved; a
+rough re-scan on 2026-08-30 found guarded and ℤ-indexed sites in files this
+bean does not name. Re-measuring is the migration's first step, not a
+precondition someone else owes.
+
+Two adjacent findings, neither drained here:
+
+* **`braids-and-knots/scratch.lean`** defines `qNumberSym` and is in `content/`.
+  A file called `scratch` carrying a q-integer definition is the `qou-orph` /
+  `qou-k448` class ("nothing checks a file"), not a q-bracket problem.
+* This bean already records **`chi-std-pernucleon-closed-form.lean` RED ON
+  MAIN**; it is still red, and still carries an unrouted ℤ-index bracket at
+  line 104.
+
+### Why this is worth writing down beyond the migration
+
+`qou-f8lit` is an arc about durable artifacts carrying claims that decayed —
+a certified constant that went stale, an audit's ✅ that was only as wide as one
+directory, and three of my own unmeasured absences. **A bean is a durable
+artifact too.** This one escalated a decision to the owner, the decision was
+made by a sibling arc 48 hours later, and the escalation sat unqualified for
+three weeks. AGENTS.md's rule that a *completed* bean is the one that bites has
+a mirror: **an open bean's stated blocker is a claim with a date on it.**
