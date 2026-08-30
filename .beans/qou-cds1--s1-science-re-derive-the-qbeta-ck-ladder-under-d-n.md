@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T08:09:08Z
+updated_at: 2026-08-30T09:04:27Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2767,3 +2767,19 @@ The rule reproduces C's offset rather than assuming it — the consistency check
 **NOT established:** that `c = q²` IS the D offset. Only that bar-homogeneity FORCES weight −4, uniquely `q²` among monomials. What replaces `tr_M(1) = 1` in the D normalisation is open. A `q²` reached by search would be a fit; this is reached by grading. No `c_k` proposed, extracted or wired.
 
 Complements Step 1: that proved the ADDITIVE defect forms; this is the MULTIPLICATIVE (eigenvector) reading, and it is the one that prunes the offset class.
+
+## Step 3 (2026-08-30) — the open half of Step 2 is ANSWERED, and it CLOSES the repair
+
+`computations/qbeta/qbeta_trm_identity_normalisation_under_d.py`.
+
+Step 2 left exactly one thing open: *what replaces `tr_M(1) = 1` in the D normalisation.* **Answer: nothing.**
+
+`tr_M(1) = Σ_λ y_λ·f^λ` on the convention-D Wenzl weights, exact rationals: **== 1 EXACTLY at all 12 rows** (s = 3/2, 7/5, 13/9 × n = 2..5). It holds even though every ℓ(λ) ≥ 3 block VANISHES under D — the surviving two-row blocks carry the whole normalisation.
+
+**But it is IMPOSED, not derived.** `markov_trace_s` seeds the recursion with `tr = {1: {(0,): Fraction(1)}}`. The twelve hits establish that the imposed normalisation and the D block weights are CONSISTENT — and that the vanishing ℓ ≥ 3 blocks do not break it — not that `tr_M(1)` must be 1 under D. It is a normalisation carried unchanged across the convention, not a quantity the convention determines.
+
+**Consequence: the natural repair is CLOSED.** Step 2 forced the phase offset to bar-weight −4 (uniquely q² among monomials). The hope was that the D normalisation would supply something of weight −4 in place of the `1`. It does not — `1` has bar-weight 0 in both conventions. So IF the offset is the trace normalisation, **no offset-reinterpretation can make the D phase bar-homogeneous**, and the ladder must be rebuilt on a principle other than bar-homogeneity of `α = (z−1)h/2`.
+
+**The one link NOT established, and the cheap next step.** The `1` in `α = (z−1)h/2` is a **bare literal** at `qbeta_utils.py:255`. That it IS `tr_M(1)` is the reading under which the verdict follows; this probe does not prove it. Settling that provenance is cheap and decides which of two paths the re-derivation takes — if the `1` has a different origin, the weight-0 argument does not bind it and the offset question reopens.
+
+Consistent with the corpus already treating this as unresolved: `qbeta_utils.py` WITHHOLDS `z` and `alpha` under D behind a guard citing the proved invalidity of substituting `z_D` here. No `c_k` proposed, extracted or wired.
