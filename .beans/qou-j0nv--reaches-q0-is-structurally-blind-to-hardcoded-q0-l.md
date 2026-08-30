@@ -52,7 +52,47 @@ the literal 30 lines above it.
 
 ## Todo
 
-- [ ] Add a q0-literal pattern to the detector so `reaches_q0` sees pinned files.
-- [ ] Do NOT mass-restamp on the strength of it: re-running the migration script
-      would rewrite 38 producers' provenance in one sweep. Report first.
-- [ ] Exempt audits/detectors that hold the literal deliberately as a fixture.
+- [x] Add a q0-literal pattern to the detector so `reaches_q0` sees pinned files.
+- [x] Do NOT mass-restamp on the strength of it: re-running the migration script
+      would rewrite 41 producers' provenance in one sweep. Reported, not run.
+- [x] Exempt audits/detectors that hold the literal deliberately as a fixture — **deliberately NOT done, see below**.
+
+
+## Progress 2026-08-30 — detector fixed, restamp deliberately not run
+
+`Q0_LITERAL = re.compile(r"1\.10997858|1\.109978595")` added and consulted by
+`reaches_q0`. Covers both pins: proton `1.10997858…` and the muon family
+`1.109978595…` (vintages A, A′ and C all share that prefix). `reaches_q0` is fed
+comment-stripped source (`code_only`), so a pin quoted in prose does not trip it.
+
+Verified directly:
+
+| source | reaches_q0 |
+|---|---|
+| resolved via `q_parameter` | True (unchanged) |
+| hardcoded pin A | **True** (was False) |
+| hardcoded pin C | **True** (was False) |
+| hardcoded proton | **True** (was False) |
+| no q₀ | False |
+| unrelated decimal `1.10998` | False — does not over-match |
+
+**Effect, measured with the script's own `code_only` + import-hop logic** (this
+supersedes the 38 in the filing, which used a rougher filter): of the producers
+stamping `q0_anchor=False`, **41 real producers** now classify as q₀-dependent,
+plus **6 audits/detectors**.
+
+**No restamp was run.** Re-running the migration script would rewrite 41
+producers' provenance in a single sweep; that is an owner-visible change and
+belongs in its own pass, not as a side effect of fixing a detector.
+
+### Why the audit exemption was NOT added
+
+The filing proposed exempting audits that hold the literal as a fixture. On
+reflection that reintroduces the same blind spot in a narrower form, and it
+contradicts the function's own stated philosophy — *"deliberately conservative:
+anything this cannot rule out is treated as q0-dependent, so the anchor is
+stamped."* Over-stamping an audit is the **intended** failure direction;
+under-stamping a producer is the defect being fixed. A path-based exemption
+would also be fragile (it keys on directory names, not on what the file does).
+Left unexempted on purpose; the 6 are named above so a restamp pass can judge
+them individually.

@@ -101,6 +101,7 @@ import argparse
 import ast
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -112,6 +113,30 @@ from _source_normalise import code_only  # noqa: E402
 
 #: Names whose presence (in code, not comments) means the producer reaches q0.
 Q_MARKERS = ("q_parameter", "Q_50_DIGIT", "qou_substrate.constants", "q_at", "Q_MP")
+
+#: A q0 written as a DECIMAL LITERAL rather than resolved through an accessor.
+#:
+#: Added 2026-08-30 (bean qou-j0nv). Every name in `Q_MARKERS` above is a
+#: RESOLUTION name, so a producer that hardcodes `1.1099785955573347…` matched
+#: none of them and `reaches_q0` returned False -- and this script then stamped
+#: `q0_anchor=False`, "no q0 in this producer's cone", over a file with a q0
+#: literal in it. `reaches_q0`'s docstring calls itself "deliberately
+#: conservative: anything this cannot rule out is treated as q0-dependent". That
+#: is true of the import hop and was exactly backwards for literals: it could
+#: not SEE them, so it silently ruled them out.
+#:
+#: Measured before the fix: of 389 producers stamping `q0_anchor=False`, 44 hold
+#: a q0 decimal on a non-comment line with no resolution marker anywhere -- 6
+#: audits/detectors carrying it deliberately as a fixture, and 38 real
+#: producers. Worked example: `tau_binding_hitchin_wzw_wall_probe` stamped
+#: `q0_anchor=False` under a comment reading "no q0 in this producer's cone",
+#: with the literal 30 lines above it.
+#:
+#: Both pins, truncated to where they diverge: proton `1.10997858…` and the
+#: muon family `1.109978595…` (vintages A, A' and C all share that prefix).
+#: `reaches_q0` is fed comment-stripped source, so a pin quoted in prose does
+#: not trip it.
+Q0_LITERAL = re.compile(r"1\.10997858|1\.109978595")
 
 STAMP_IMPORT = (
     "from qou_substrate.witness import WitnessBuilder  "
@@ -165,6 +190,9 @@ def reaches_q0(src: str) -> bool:
     """Source plus ONE import hop. Deliberately conservative: anything this
     cannot rule out is treated as q0-dependent, so the anchor is stamped."""
     if any(m in src for m in Q_MARKERS):
+        return True
+    # A hardcoded pin is q0-dependence too -- see Q0_LITERAL above.
+    if Q0_LITERAL.search(src):
         return True
     return any(any(k in _module_source(m) for k in Q_MARKERS) for m in set(_imports(src)))
 
