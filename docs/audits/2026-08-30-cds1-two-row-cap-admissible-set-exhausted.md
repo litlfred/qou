@@ -34,9 +34,24 @@ only `z_D` had ever been phase-tested. Testing the other one exhausts the set.
     z_D   q^3/(q^2+1)       alpha = -0.0404857773406    1087.37 windows
     z=q   2nd admissible    alpha = +0.0114960776856    5848.10 windows
 
-`z = q` is not merely far — it has the **WRONG SIGN**. The required phase is
-negative; `z = q` gives a positive α. That is a qualitative exclusion, not a
-magnitude shortfall, and it does not depend on the window's exact width.
+`z = q` is not merely far — it has the **WRONG SIGN**, and that exclusion has a
+form needing **no anchor, no window and no numerics at all**:
+
+    alpha = (z - 1)*h/2  with  h = q - 1/q > 0  for all q > 1
+    =>  alpha < 0  <=>  z < 1
+
+The required phase is negative, so the form **forces z < 1**. And `z = q > 1`
+for every `q > 1`. So `z = q` is excluded structurally, for the whole substrate
+range at once — the 5848-window figure above is an illustration of it at one
+anchor, not the argument.
+
+    z_C = 0.4993203342  < 1   admissible by sign
+    z_D = 0.6126880371  < 1   admissible by sign
+    z=q = 1.109978583   > 1   EXCLUDED
+
+This is the stronger statement and is what should be cited: the two-row cap's
+admissible set has exactly two members, and one of them cannot satisfy the
+form's own sign requirement at any q > 1.
 
 ## Result
 

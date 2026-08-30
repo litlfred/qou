@@ -4446,3 +4446,43 @@ is neither obviously that tension nor obviously experimental. Open.
 - Open with the owner: whether the **counit reading** now becomes the leading
   hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
   and mass independently confirms `z_D`.
+
+
+
+## The two-row cap route is EXHAUSTED (2026-08-30, PR #6264)
+
+The §"Remaining piece" above is closed **as a route**, without running a search.
+
+The cap is `y_(1³) = 0`, whose admissible set is **proved complete** by
+`qou-06wh`: `N = (z−q)((q²+1)z − q³)`, roots exactly `{q, z_D}`. Verified
+symbolically: `y_(1³)(z_D) = 0` exactly, nonzero at `z_C`.
+
+So the cap permits **exactly two** bases and only `z_D` had been phase-tested.
+
+    alpha_required = -0.052358683519      window = +/- 1.09189e-5
+    z_C   -0.0523361202682       2.07 windows
+    z_D   -0.0404857773406    1087.37 windows
+    z=q   +0.0114960776856    5848.10 windows
+
+**`z = q` is excluded structurally, not numerically.** Since `h = q − 1/q > 0`
+for all `q > 1`, `α = (z−1)h/2 < 0 ⟺ z < 1`. The required phase is negative, so
+the form forces `z < 1`; and `z = q > 1` always. No anchor, no window, no
+numerics — the 5848-window figure is an illustration at one anchor, not the
+argument.
+
+**Consequence.** The prune in §Progress tested `z_D` and *inferred* the
+one-parameter class. It is now **exhaustive over the admissible set** — the
+stronger statement, because the cap was the only structural constraint selecting
+members of that class.
+
+**Scope (a).** Excludes the cap as a route to a D-frame ladder *in the
+`α = (z−1)h/2` form*. Does NOT exclude convention D, nor a D-frame ladder derived
+another way. The finding that **neither frame's α is derived** is untouched.
+
+**Does not license a search for a third base:** the set is proved to have exactly
+two members, so a third requires dropping the cap — the constraint under the
+ruling.
+
+**What remains** is what this bean already names: the functional form must
+change, and α is axiomatised in both frames
+(`q-beta-cos-resummation.ts:48`). That is a derivation, not a measurement.
