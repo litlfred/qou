@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:41:15.121129+00:00",
-  "commitSha": "3f58d500a5b056c2e1e4a14f929af38548041f0c",
+  "computedAt": "2026-08-30T13:09:28.820137+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
   "assertions": [
     {
       "name": "g(z) = (2qz - q^2 + 1)/(q^2+1)",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 41,
   "computation": "qbeta-d-frame-required-markov-parameter",
   "scriptFile": "qbeta_d_frame_required_markov_parameter_probe.py",
   "scriptHash": "c645e686b3a9",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "3b19babdaa2b654fc8a5e08d4a320d54725b980b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -137,5 +137,7 @@
     },
     "q0Anchor": "proton",
     "q0Value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

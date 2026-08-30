@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:47:35.538520+00:00",
-  "commitSha": "0664965940aac8c20daa0d462ade3a3c0f5a1f49",
+  "computedAt": "2026-08-30T13:09:34.369779+00:00",
+  "commitSha": "3e2467aa44449216f0c52df759ee270b7389ae65",
   "assertions": [
     {
       "name": "chi^(3)(Delta_S) is bar-ODD (bar/chi = -1 exactly)",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 38,
   "computation": "qbeta-decay-fibre-bar-parity-derivation",
   "scriptFile": "qbeta_decay_fibre_bar_parity_derivation_probe.py",
   "scriptHash": "d9c1784795a9",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "eb5d1a683093a85ca662bef0a2c0e1425cce69fc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -138,5 +138,7 @@
     "scope": "(a) + a derived structural iff; z=1 NOT readmitted",
     "q0Anchor": "proton",
     "q0Value": "1.1099785827513808075916690956107688798744991218736"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
