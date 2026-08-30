@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:22:36.374242+00:00",
-  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T03:30:57.385245+00:00",
+  "commitSha": "93888aa43116808cdbeb5862ace2dd5a0ddeab34",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 26,
+  "durationMs": 22,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
   "scriptHash": "6f2e22f3b468",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -60,28 +58,28 @@
     "deltas": [
       {
         "atom": "deuteron",
-        "within_1ppQ": false,
-        "within_1ppb": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
         "checkable": true,
-        "status": "DIVERGE",
-        "within_1ppQ_exact_methods": false,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
-        "rel_delta_max": "0.00000014920163878100055005088892244459227784653973689722",
-        "exact_method_rel_delta": "0.00000014920161651987485651115620546106279111963644974783",
+        "rel_delta_max": "0.0000000032413776086625535859432035736618926516410798108164",
+        "exact_method_rel_delta": "1.2081923737401556789822358585641308828579587062926e-49",
         "peel_rel_delta": "0.0000000032413776086625535859432035736618926516386192805704",
-        "certified_1ppQ_exact_methods": false,
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 3,
         "hoefsmit_50dps": "0.57517232973441348737691103695756221251125006077858",
         "markov_peel": "0.57517233159876419810031399155511465472441259727215",
-        "chi_cache_canonical": "0.57517224578212254605919867294944323571829236006731",
+        "chi_cache_canonical": "0.57517233159876419810031399155511465472441259727208",
         "habiro_extended": "0.57517233159876419810031399155511465472441259727356",
         "pairwise_rel_deltas": {
           "hoef_vs_peel": "0.0000000032413776086625535859432035736618926516386192805704",
-          "hoef_vs_chi": "0.00000014596023939483108188899231479864143287023845766895",
+          "hoef_vs_chi": "0.0000000032413776086625535859432035736618926516384984613326",
           "hoef_vs_habiro": "0.0000000032413776086625535859432035736618926516410798108164",
-          "chi_vs_habiro": "0.00000014920163878100055005088892244459227784653973689722",
+          "chi_vs_habiro": "2.5813494754332941525947385362783642516446002359448e-48",
           "peel_vs_habiro": "2.4605302380592785846965149504219511633588043653152e-48",
-          "peel_vs_chi": "0.00000014920161651987485651115620546106279111963644974783"
+          "peel_vs_chi": "1.2081923737401556789822358585641308828579587062926e-49"
         }
       },
       {
@@ -134,46 +132,46 @@
       },
       {
         "atom": "neutron",
-        "within_1ppQ": false,
-        "within_1ppb": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
         "checkable": true,
-        "status": "DIVERGE",
-        "within_1ppQ_exact_methods": false,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
-        "rel_delta_max": "0.000000069557203742413987686756007380470213224354268056687",
-        "exact_method_rel_delta": "0.000000069557203742413987686756007380470213224354268056687",
+        "rel_delta_max": "0.00000000032849708724864677742588474487557840137514054943227",
+        "exact_method_rel_delta": "6.0883407809023353874510969840125190646403082546235e-50",
         "peel_rel_delta": "0.00000000032849708724864677742588474487557840137514054943227",
-        "certified_1ppQ_exact_methods": false,
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 2,
         "hoefsmit_50dps": "0.98774375682050346056319687836774019462699369570095",
         "markov_peel": "0.98774375714497440762676794909212469944062064284957",
-        "chi_cache_canonical": "0.98774368844028064659630109329313227952661402232429",
+        "chi_cache_canonical": "0.98774375714497440762676794909212469944062064284951",
         "pairwise_rel_deltas": {
           "hoef_vs_peel": "0.00000000032849708724864677742588474487557840137514054943227",
-          "hoef_vs_chi": "0.000000069228706678014679735873790496054779935340268407167",
-          "peel_vs_chi": "0.000000069557203742413987686756007380470213224354268056687"
+          "hoef_vs_chi": "0.00000000032849708724864677742588474487557840137507966602444",
+          "peel_vs_chi": "6.0883407809023353874510969840125190646403082546235e-50"
         }
       },
       {
         "atom": "proton",
-        "within_1ppQ": false,
-        "within_1ppb": false,
+        "within_1ppQ": true,
+        "within_1ppb": true,
         "checkable": true,
-        "status": "DIVERGE",
-        "within_1ppQ_exact_methods": false,
+        "status": "OK (cb≠)",
+        "within_1ppQ_exact_methods": true,
         "within_peel_tolerance": false,
-        "rel_delta_max": "0.000000078426507301279691698952684216326187649616717470453",
-        "exact_method_rel_delta": "0.000000078426507301279691698952684216326187649616717470453",
+        "rel_delta_max": "0.00000000049895832193134529998257705962747219339233321224185",
+        "exact_method_rel_delta": "8.631154256805581128894073892856574307285522749603e-50",
         "peel_rel_delta": "0.00000000049895832193134529998257705962747219339233321224185",
-        "certified_1ppQ_exact_methods": false,
+        "certified_1ppQ_exact_methods": true,
         "n_exact_methods": 2,
         "hoefsmit_50dps": "1.1457597823152389403944928240171137495590208557374",
         "markov_peel": "1.1457597828869253187149279265985273678220205972661",
-        "chi_cache_canonical": "1.1457596930289873406208450606931776495055591646704",
+        "chi_cache_canonical": "1.145759782886925318714927926598527367822020597266",
         "pairwise_rel_deltas": {
           "hoef_vs_peel": "0.00000000049895832193134529998257705962747219339233321224185",
-          "hoef_vs_chi": "0.000000077927549018479904876953022247301888720178484266919",
-          "peel_vs_chi": "0.000000078426507301279691698952684216326187649616717470453"
+          "hoef_vs_chi": "0.00000000049895832193134529998257705962747219339224690069924",
+          "peel_vs_chi": "8.631154256805581128894073892856574307285522749603e-50"
         }
       },
       {
@@ -275,7 +273,7 @@
       "n_fail": 0,
       "worst_delta": "5.8800823622028304215091802277332601333934331362311e-50"
     },
-    "n_atoms_certified_1ppQ_exact_methods": 0,
+    "n_atoms_certified_1ppQ_exact_methods": 3,
     "n_atoms_uncertified_insufficient_methods": 0
   },
   "q0Anchor": "muon",
