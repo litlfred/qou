@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T08:33:49Z",
+  "updated_at": "2026-08-30T09:24:38Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -86,17 +86,16 @@
       "pattern": "field-projection",
       "line": 201,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
+      "file_sha": "575487b7fc66",
       "reviewer": {
-        "agent_date": "2026-08-23",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
+        "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
       },
-      "reviewed_at": "2026-08-23T17:07:13.000Z",
+      "reviewed_at": "2026-08-30T09:24:38Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Re-reviewed after this file changed (I restated `core_levi_form`, not this decl -- it appears nowhere in the diff). Verdict unchanged: still `ctx.cond_aspect_bound` returned verbatim. It is now also REDUNDANT: `core_levi_form` reaches that field directly, so this accessor's only role is to name it. Restate or drop; not done in this pass.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: Re-reviewed after this file changed (I restated `core_levi_form`, not this decl -- it appears nowhere in the diff). Verdict unchanged: still `ctx.cond_aspect_bound` returned verbatim. It is now also REDUNDANT: `core_levi_form` reaches that field directly, so this accessor's only role is to name it. Restate or drop; not done in this pass.",
       "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::core_levi_cond_bound::proof-no-self-assuming-projection": {
@@ -104,17 +103,16 @@
       "pattern": "field-projection",
       "line": 218,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
+      "file_sha": "575487b7fc66",
       "reviewer": {
-        "agent_date": "2026-08-23",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
+        "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
       },
-      "reviewed_at": "2026-08-23T17:07:13.000Z",
+      "reviewed_at": "2026-08-30T09:24:38Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Re-reviewed after this file changed. The body is still `ctx.cond_bound` -- projection, verdict unchanged. What DID change: the unused `(q : R) (hq : q > 1)` binders were dropped (linter-confirmed unused). The md conditions part (d) on q > 1, but `cond_bound` is a q-free field, so the binders made the statement look stronger than it is. Encoding the q > 1 restriction honestly means indexing the context's bound by q -- an open gap, recorded in the docstring, not a discharged hypothesis.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits; the declaration CHANGED and the change IMPROVES it. Five instance binders were removed -- `[QAubinLions] [NSCounterexample] [CriticalExponent] [BlowupYekutieli] [RegularityBreakdown]` -- by the q-NS arc's carrier work on main. Verdict unchanged (genuine): the proof is still `ctx.cond_bound`, a bare projection of the class field that IS the conclusion. What the removal does is make that visible: the five binders had made the theorem read as conditional on five named open problems when none of them was ever used.",
       "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.lean::helicity_cwf_relation::proof-no-self-assuming-projection": {
@@ -150,17 +148,16 @@
       "pattern": "field-projection",
       "line": 708,
       "verdict": "genuine",
-      "file_sha": "db4d5ccbd525",
+      "file_sha": "3c8e473b54e6",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
+        "agent_date": "2026-08-30"
       },
-      "reviewed_at": "2026-08-21T15:40:59.000Z",
+      "reviewed_at": "2026-08-30T09:24:38Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Decl unchanged; re-confirm prior genuine. Class `TowerNoncollapseImpliesIndependence` field `independence : HyperbolicVolumeIndependence` is character-identical to the theorem's conclusion, and the body returns `hi.independence` verbatim. §3b-cond item-5 self-assuming projection — derives nothing."
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: Decl unchanged; re-confirm prior genuine. Class `TowerNoncollapseImpliesIndependence` field `independence : HyperbolicVolumeIndependence` is character-identical to the theorem's conclusion, and the body returns `hi.independence` verbatim. §3b-cond item-5 self-assuming projection — derives nothing."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::term7_structural::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -425,11 +422,16 @@
       "pattern": "field-projection",
       "line": 203,
       "verdict": "genuine",
-      "file_sha": "6252ac8ed2f4",
+      "file_sha": "d74bee60904e",
       "disposition": "restate-or-demote",
-      "evidence": "CIRCULAR: the instance stipulates the answer. `instance : RogersCorrectionLeadingOrderH4 where leading_h_order := 4; leading_h_order_eq_four := rfl` — the value is set to 4 and the field is discharged by `rfl` on `4 = 4`, so `c.leading_h_order = 4` carries no information about the Rogers correction. The file itself concedes the point immediately below: `the substantive theorem (Pentagon → -3/4 coefficient) requires the explicit Borromean braid lifting in the q-shuffle Hopf algebra, which is structurally open.` The honest form is that sentence as a `conjecture`, not a class whose instance defines the constant it reports.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: CIRCULAR: the instance stipulates the answer. `instance : RogersCorrectionLeadingOrderH4 where leading_h_order := 4; leading_h_order_eq_four := rfl` — the value is set to 4 and the field is discharged by `rfl` on `4 = 4`, so `c.leading_h_order = 4` carries no information about the Rogers correction. The file itself concedes the point immediately below: `the substantive theorem (Pentagon → -3/4 coe",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean::shell_closure_monotone::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -646,11 +648,16 @@
       "pattern": "field-projection",
       "line": 116,
       "verdict": "legit",
-      "file_sha": "19333222eaf9",
+      "file_sha": "847dbba991f6",
       "disposition": "no-fix",
-      "evidence": "Bundle-plus-accessor over a SUBSTANTIVELY inhabited carrier — the idiom working as intended. `[h : VolumeConjecture41] : Tendsto ... (nhds VOL_4_1) := h.limit_eq_vol` projects a class field, but the instance `volumeConjecture41_of_literature := ⟨tendsto_log_kashaev_vol⟩` supplies a real proof: the file records the conjecture closed for 4₁ by bricks E1-E5d (milestone qou-cpfn) — E5a log-bridge, E4/E5c Riemann-sum-vs-Clausen deviation with k-uniform master error, the E2/E3 Cl₂ extremum at 5π/3, the E5d two-envelope squeeze — with the note that no Borel resummation was needed. The downstream `kashaev_saddle_volume` is described as unconditional and sorry-free. CAVEAT NOT VERIFIED HERE: I did not run `#print axioms tendsto_log_kashaev_vol`, so the sorry-free claim rests on the file's own note.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: Bundle-plus-accessor over a SUBSTANTIVELY inhabited carrier — the idiom working as intended. `[h : VolumeConjecture41] : Tendsto ... (nhds VOL_4_1) := h.limit_eq_vol` projects a class field, but the instance `volumeConjecture41_of_literature := ⟨tendsto_log_kashaev_vol⟩` supplies a real proof: the file records the conjecture closed for 4₁ by bricks E1-E5d (milestone qou-cpfn) — E5a log-bridge, E4/",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean::strong_duality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1555,10 +1562,10 @@
       "pattern": "tuple-projection",
       "line": 99,
       "verdict": "genuine",
-      "file_sha": "da1d160c146c",
+      "file_sha": "cb5614a77ea1",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "RE-VERIFIED 2026-08-30 -- the declaration CHANGED and is PARTIALLY remediated; verdict stands, scope reduced. Two of the five conjuncts were removed on 2026-08-30 (bean `qou-3j5m`) as not merely self-assuming but FALSE: sub-claim (iii) `P_7_6 = Phi` (Phi is not in the construction's image -- exhaustive exact-rational search over 32 traced volumes, 528 pairwise products) and (iv) `P_6_7 = -P_7_6` (true only because the producer's `build_matrix` writes both directions from one shared context). That is the stronger finding the original verdict could not see: the class was UNINHABITABLE in its intended model, so the whole `[ctx]`-conditional statement proved nothing. What remains is still the flagged shape -- three conjuncts, three bare `ctx.claim_*` projections, deriving nothing -- but the file now says so in its own docstring instead of disguising it.",
-      "reviewed_at": "2026-08-30T04:30:08Z",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: RE-VERIFIED 2026-08-30 -- the declaration CHANGED and is PARTIALLY remediated; verdict stands, scope reduced. Two of the five conjuncts were removed on 2026-08-30 (bean `qou-3j5m`) as not merely self-assuming but FALSE: sub-claim (iii) `P_7_6 = Phi` (Phi is not in the construction's image -- exhaustive exact-rational search over 32 traced volumes, 528 pairwise products) and (iv) `P_6_7 = -P_7_6` (",
+      "reviewed_at": "2026-08-30T09:24:38Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
@@ -2427,10 +2434,17 @@
       "pattern": "zero-placeholder",
       "line": 186,
       "verdict": "genuine",
-      "file_sha": "408c4fcb89ce",
+      "file_sha": "3195f5333cdd",
       "disposition": "placeholder-inert",
-      "evidence": "`fun k => 0 * (k : R)` -- zero for EVERY knot, i.e. the unknot's value, and the unknot is not hyperbolic at all. Mathematically Vol is positive exactly on hyperbolic knots (Mostow rigidity). INERT in practice: measured, nothing in the corpus references it, not even inside its own file; the only importer of the module is the AppendixSurreals aggregator. Distinct from the structure `QOU.KnotTheory.HyperbolicVolume` (real inhabitants vol_figure_eight / vol_trefoil) -- name overloaded across two files, resolve to the declaration.",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: `fun k => 0 * (k : R)` -- zero for EVERY knot, i.e. the unknot's value, and the unknot is not hyperbolic at all. Mathematically Vol is positive exactly on hyperbolic knots (Mostow rigidity). INERT in practice: measured, nothing in the corpus references it, not even inside its own file; the only importer of the module is the AppendixSurreals aggregator. Distinct from the structure `QOU.KnotTheory.H",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::wenzlSchurElement::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
@@ -2562,11 +2576,18 @@
       "pattern": "borrowed-name",
       "line": 708,
       "verdict": "legit",
-      "file_sha": "408c4fcb89ce",
+      "file_sha": "3195f5333cdd",
       "disposition": "no-change",
       "tier": "major",
-      "evidence": "Kernel-confirmed definitional collapse (defeq_collapse=true, value_is_rfl=true): `abbrev KazhdanLusztigCells (p n) : Type := Fin (p^n)` and `abbrev Nimbers (p n) : Type := Fin (p^n)` are the same type, so `Fintype.card` equality is `rfl`. LEGIT rather than genuine because the docstring DISCLOSES exactly this -- \"provable without any class instance because both placeholder types are `Fin (p^n)`\" -- and scopes itself as \"the easy half of the OnPModularHecke conjecture\". The detector flagged it only because DISCLAIM did not recognise that phrasing; DISCLAIM now does.",
-      "source": "scripts/lean/BorrowedNameKernel.lean + lean-borrowed-name-audit.py (bean qou-0avp)"
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: Kernel-confirmed definitional collapse (defeq_collapse=true, value_is_rfl=true): `abbrev KazhdanLusztigCells (p n) : Type := Fin (p^n)` and `abbrev Nimbers (p n) : Type := Fin (p^n)` are the same type, so `Fintype.card` equality is `rfl`. LEGIT rather than genuine because the docstring DISCLOSES exactly this -- \"provable without any class instance because both placeholder types are `Fin (p^n)`\" --",
+      "source": "scripts/lean/BorrowedNameKernel.lean + lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::is_qou::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -2650,33 +2671,54 @@
       "pattern": "kernel-defeq",
       "line": 0,
       "verdict": "genuine",
-      "file_sha": "db86496cd3c3",
+      "file_sha": "51970fa4d5c7",
       "disposition": "state-the-real-proposition",
-      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `(9 * column_syt_pole_per_cycle 2) * (5 * column_syt_pole_per_cycle 3) = 90 := rfl` is `(9*1) * (5*2) = 90`. The docstring presents this as the combinatorial reading of `alpha_EM^-1 = q * [9]_q * [10]_q`, saying the product 90 'matches [9]*[10] in the q->1 limit of alpha_EM^-1'. But 9 and 5 are hand-chosen multipliers and the function is `p-1`, so the 'match' is arithmetic on inputs selected to produce it. LOAD-BEARING: alpha_EM is a live framework quantity, and this is presented as combinatorial support for its value.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: `def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `(9 * column_syt_pole_per_cycle 2) * (5 * column_syt_pole_per_cycle 3) = 90 := rfl` is `(9*1) * (5*2) = 90`. The docstring presents this as the combinatorial reading of `alpha_EM^-1 = q * [9]_q * [10]_q`, saying the product 90 'matches [9]*[10] in the q->1 limit of alpha_EM^-1'. But 9 and 5 are hand-chos",
       "tier": "major",
-      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::inter_nucleon_interface_pole::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
       "verdict": "genuine",
-      "file_sha": "db86496cd3c3",
+      "file_sha": "51970fa4d5c7",
       "disposition": "state-the-real-proposition",
-      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. Statement is `column_syt_pole_per_cycle 2 = 1 := rfl`, i.e. `2-1=1` -- BYTE-IDENTICAL to `column_syt_pole_per_cycle_two` declared a few lines earlier. Two differently-named theorems with the same trivial statement, one framed as 'Sanity' and this one as the inter-nucleon interface pole. Its own docstring concedes the real content is external: 'the per-nucleon 18 and 21 are inputs from the AXKIA per-new-nucleon decomposition (cited in audit Step 5, not provable from pole_indicator_correct alone)'. The name claims what the statement does not.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The theorem is byte-identical -- `column_syt_pole_per_cycle 2 = 1 := rfl`; the diff is entirely in blanked-comment whitespace below it, i.e. a comment-only edit. Verdict unchanged.",
       "tier": "major",
-      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_T_2_9::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
       "verdict": "advisory",
-      "file_sha": "db86496cd3c3",
+      "file_sha": "51970fa4d5c7",
       "disposition": "note-disclosed-sanity-check",
-      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `9 * column_syt_pole_per_cycle 2 = 9` is `9*1=9`. Trivial, but the docstring opens 'Sanity:' -- it announces itself as a check rather than a derivation, which is the honest framing. Recorded advisory rather than genuine on that basis; the same applies to axkia_pole_T_3_5.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: `def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `9 * column_syt_pole_per_cycle 2 = 9` is `9*1=9`. Trivial, but the docstring opens 'Sanity:' -- it announces itself as a check rather than a derivation, which is the honest framing. Recorded advisory rather than genuine on that basis; the same applies to axkia_pole_T_3_5.",
       "tier": "major",
-      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n3::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -2855,11 +2897,18 @@
       "pattern": "borrowed-name",
       "line": 148,
       "verdict": "advisory",
-      "file_sha": "688de4da8efd",
+      "file_sha": "32a0111936db",
       "disposition": "no-change",
-      "evidence": "`chirality_ideal_4_1` is a structure literal whose `central_projector_value := 1` carries the inline comment \"placeholder for the abstract projector value\", and the docstring repeats \"placeholder\". The theorem projects that field out by `rfl`. The disclosure is explicit in both places, so this is honest; it is recorded only because a `theorem` asserting a value for a placeholder field would be better as an `example` or left as the def. Minor: the docstring says \"at k = 3\" while the name says 4_1 (3 is the depth, 4_1 the knot).",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: `chirality_ideal_4_1` is a structure literal whose `central_projector_value := 1` carries the inline comment \"placeholder for the abstract projector value\", and the docstring repeats \"placeholder\". The theorem projects that field out by `rfl`. The disclosure is explicit in both places, so this is honest; it is recorded only because a `theorem` asserting a value for a placeholder field would be bet",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean::dq_sym_sq_eq_dq_alt_sq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3239,22 +3288,36 @@
       "pattern": "borrowed-name",
       "line": 105,
       "verdict": "legit",
-      "file_sha": "6252ac8ed2f4",
+      "file_sha": "d74bee60904e",
       "disposition": "no-change",
-      "evidence": "`rogersLogCorrection u v := log((1-u)/(1-uv)) * log((1-v)/(1-uv))` is the real Rogers correction; the theorem evaluates it at the degenerate pentagon vertex where both log arguments are 1. The docstring names the degeneracy rather than hiding it.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: `rogersLogCorrection u v := log((1-u)/(1-uv)) * log((1-v)/(1-uv))` is the real Rogers correction; the theorem evaluates it at the degenerate pentagon vertex where both log arguments are 1. The docstring names the degeneracy rather than hiding it.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersAlphaBeta_at_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 163,
       "verdict": "legit",
-      "file_sha": "6252ac8ed2f4",
+      "file_sha": "d74bee60904e",
       "disposition": "no-change",
-      "evidence": "Boundary evaluation of the two real Rogers substitutions alpha(u,v) = u(1-v)/(1-uv) and beta(u,v) = v(1-u)/(1-uv). Honest and disclosed as a boundary case.",
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: Boundary evaluation of the two real Rogers substitutions alpha(u,v) = u(1-v)/(1-uv) and beta(u,v) = v(1-u)/(1-uv). Honest and disclosed as a boundary case.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifertEuler_eq_neg_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3588,65 +3651,129 @@
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 60,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "575487b7fc66",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.CriticalExponent::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 58,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "575487b7fc66",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.NSCounterexample::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 55,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "575487b7fc66",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 52,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "575487b7fc66",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 63,
       "verdict": "genuine",
-      "file_sha": "5a2c062d0274",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "575487b7fc66",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 43,
       "verdict": "genuine",
-      "file_sha": "843dae199cb2",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "d478ac005104",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 43,
       "verdict": "genuine",
-      "file_sha": "d2ef138e215c",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "e65daee41813",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing.",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 196,
       "verdict": "genuine",
-      "file_sha": "076346811312",
+      "file_sha": "3f4362244eaf",
       "agent_note": "Re-adjudicated 2026-08-30 after the PR #6122 review fixes. The file_sha change is the NSCounterexample field strengthening (a reviewer showed my first encoding said 'unbounded somewhere before T' while its docstring claimed 'as t -> T*'; the t0 quantifier localises it) plus dropping decorative class binders. BlowupYekutieli itself is untouched and still inhabitable by zero -- the last vacuous carrier in the file. Left deliberately: its rate is not in the corpus at all and its conjecture block does not exist, measured over six grep paths in docs/audits/2026-08-30-blowup-yekutieli-has-no-source.md. Bean qou-88nf.",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
@@ -3733,27 +3860,51 @@
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 56,
       "verdict": "genuine",
-      "file_sha": "78c708d20c50",
+      "file_sha": "3f4362244eaf",
       "agent_note": "Re-adjudicated 2026-08-30. The file_sha change is the CriticalExponent fix (qou-93hu), which did NOT touch this carrier: its fields are unchanged and it remains provable with no hypotheses (docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean, exit 0). Its sibling CriticalExponent left this population entirely -- drained from the probe baseline because the carrier now constrains an exponent rather than asserting a numeral identity. That is what a fixed carrier looks like here, and this one is not fixed.",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.QAubinLions::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 43,
       "verdict": "genuine",
-      "file_sha": "78c708d20c50",
+      "file_sha": "3f4362244eaf",
       "agent_note": "Re-adjudicated 2026-08-30. The file_sha change is the CriticalExponent fix (qou-93hu), which did NOT touch this carrier: its fields are unchanged and it remains provable with no hypotheses (docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean, exit 0). Its sibling CriticalExponent left this population entirely -- drained from the probe baseline because the carrier now constrains an exponent rather than asserting a numeral identity. That is what a fixed carrier looks like here, and this one is not fixed.",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 111,
       "verdict": "genuine",
-      "file_sha": "78c708d20c50",
+      "file_sha": "3f4362244eaf",
       "agent_note": "Re-adjudicated 2026-08-30. The file_sha change is the CriticalExponent fix (qou-93hu), which did NOT touch this carrier: its fields are unchanged and it remains provable with no hypotheses (docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean, exit 0). Its sibling CriticalExponent left this population entirely -- drained from the probe baseline because the carrier now constrains an exponent rather than asserting a numeral identity. That is what a fixed carrier looks like here, and this one is not fixed.",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "reviewed_at": "2026-08-30T09:24:38Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      },
+      "evidence": "RE-VERIFIED 2026-08-30 after a rebase onto 236 of main's commits. The declaration is BYTE-IDENTICAL to the recorded revision -- diffed mechanically against the exact blob the recorded `file_sha` names, not rehashed. Something else in the file moved. Verdict unchanged. Prior evidence: "
     },
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean::q_ns_wellposedness::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
