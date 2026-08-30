@@ -133,9 +133,54 @@ under exactly the move that assembly performs:
 - a self-energy read off the writhe (self-crossing count) alone is not, so `selfDefect ≠ 0` and
   `binding = −mutual` fails by the amount of the reorganisation.
 
-That is a **statable, checkable criterion** on the self multiplier, and it is the useful output of
-this session. It does not decide which reading `lw` is — that is the honest next question, recorded
-below rather than guessed at here.
+That is a **statable, checkable criterion** on the self multiplier. §4-bis applies it.
+
+## 4-bis. Applying the criterion to `lw` — and the answer deflates §4
+
+**Probe:** [`computations/lw_is_framing_independent_probe.py`](../../computations/lw_is_framing_independent_probe.py)
+— 3/3 PASS, exit 0, mpmath at 65 dps + exact `Fraction`, no float64, emits no witness, wires nothing.
+
+**Answer: neither.** `lw` is not writhe-valued *and* not self-linking-valued. From
+`computations/_li_2_q_util.py:413`:
+
+```python
+def linking_weight_family_a(q: mpf, q_inv: mpf | None = None) -> mpf:
+    ...
+    return mpf(5) / 2 + mpf(3) * h ** 2 / 4
+```
+
+Two kinds of evidence, kept separate because they answer different questions:
+
+- **A type fact, inspected not measured.** The signature is `(q, q_inv=None) -> mpf`. It takes **no
+  knot, no diagram, no framing**. A function of `q` alone cannot be moved by a writhe↔twist
+  reassignment because it never reads either. *That* is what settles the criterion, and it is
+  settled by reading the signature — not by any number.
+- **An exact algebraic check, measured.** The docstring's Wedderburn-sum form
+  `(3q² + 4 + 3q⁻²)/4` and the implemented `5/2 + (3/4)h²` are **identical over ℚ**, verified with
+  `fractions.Fraction` at 5 rational points — exact, not "agrees to N digits", which would say
+  nothing. At the anchor, `lw(q₀) = 2.53277965639939149205151450176` (65 dps, `q` read as `+Q_MP`).
+
+**So the Călugăreanu objection does not bite the framework's `lw`.** `selfDefect = 0` holds for the
+mass multiplier, and the mass=self / binding=mutual assignment is safe from this objection. **§4's
+criterion is thereby deflated** — it is a correct criterion that the framework already passes, not
+a live threat. Recording that plainly, because it weakens this document's own finding and the
+alternative would be leaving a hazard flagged that does not exist.
+
+**What survives, and is the more interesting half.** `lw` is called a *linking weight* and is not a
+linking quantity — it is a normalized sum of quantum dimensions over the partitions of 4, a
+**representation-theoretic** object. `qou-brng` frames the open question as *"linking (mutual) vs
+self-energy (self) amplitudes"*, i.e. as two readings of one linking notion. **They are not that.**
+`M` is a topological coordination count; `lw` is a Wedderburn q-dimension sum. The two multipliers
+are not the same *kind* of object, so "why does binding take the mutual amplitude and mass the self
+one" is not a question about two linking numbers. That is a reframing of the bean's question, not
+an answer to it. It is also the same name-vs-content mismatch AGENTS.md records for
+`markovZ` / `markovZc`.
+
+**Not claimed:** that `lw`'s H₄ Wedderburn-count *interpretation* is derived. The producer's own
+docstring records it as posited — at `q₀` the value is "a CODATA-implied near-match" landing near
+the `λ ≈ 2.46` that round-trips `m_p`, with five refuted derivation paths in
+[`2026-06-04-three-paths-refuted-roadmap-update.md`](2026-06-04-three-paths-refuted-roadmap-update.md).
+Untouched here; still open.
 
 ## 5. Scope, stated per the (a)/(b) discipline
 
@@ -146,16 +191,55 @@ scope-(b) claim is made or licensed. The numerical corpus is untouched.
 
 ## 6. What is open after this
 
-1. **Is `lw` `SL`-valued or writhe-valued?** The criterion in §4 is stated; applying it needs the
-   definition of `lw` traced to whether it reads a framing-independent self-linking or a
-   self-crossing count. Not attempted here — asserting an answer without tracing it would be exactly
-   the defect this document is about.
-2. **Is `selfDefect = 0` for the framework's carriers?** If `lw` turns out writhe-valued, the size
-   of the defect is a measurable question (and a *magnitude* question, hence subject to the anti-fit
-   discipline — inverting AME to fix it would be a fit).
-3. The three items `qou-brng` already records as remaining — the carrier's crossing structure (R1's
-   topological input), and the two named modelling inputs of `ArchimedeanTraceBridge` — are
+1. ~~**Is `lw` `SL`-valued or writhe-valued?**~~ **CLOSED in §4-bis, same session: neither.** `lw`
+   is diagram-free (`(q, q_inv) -> mpf`), so the gate holds for it and §4's criterion does not bite.
+2. ~~**Is `selfDefect = 0` for the framework's carriers?**~~ **Yes, for the mass multiplier**, by 1.
+   Not investigated for any *other* self-valued quantity in the arc; a self-energy elsewhere that
+   does read a crossing count would still owe the check, and the criterion of §4 is the way to run
+   it.
+3. **The reframing 4-bis exposes, which is new and is the live item.** `M` (topological coordination
+   count) and `lw` (Wedderburn q-dimension sum) are not two readings of one linking notion, so
+   `qou-brng`'s framing of its own open question — "linking (mutual) vs self-energy (self)
+   amplitudes" — does not describe the two objects it is about. Whether that is a naming defect
+   only, or means the bean's question needs restating before it can be answered, is a judgement for
+   the author; this document does not decide it. See §8.
+4. `lw`'s H₄ Wedderburn-count interpretation stays **posited**, per its own producer docstring —
+   untouched here.
+5. The items `qou-brng` already records as remaining — the carrier's crossing structure (R1's
+   topological input) and the two named modelling inputs of `ArchimedeanTraceBridge` — are
    unaffected by this document.
+
+## 8. The one thing here that may want an author decision
+
+Stated with the frame AGENTS.md asks for, since naming a decision *is* asking a question.
+
+**The decision.** `qou-brng`'s open question is written as *"why the binding multiplier is the
+mutual (coordination) linking count while the mass multiplier is the self-linking weight `lw`"* —
+which presents `M` and `lw` as two readings of one linking notion. §4-bis measures that they are
+not: `M` counts inter-component crossings (topological); `lw` is `(1/4)·Σ_{λ⊢4} dim_q V_λ`
+(representation-theoretic, diagram-free). The question as written therefore asks why one linking
+notion splits two ways, when what is actually there is two different kinds of object.
+
+**Option A — rename only.** Treat it as the `markovZ`/`markovZc` class: `lw` is misnamed, correct
+the name and docstring, leave the bean's question standing.
+*Costs:* one producer docstring plus its call sites (`_li_2_q_util.py` and ~6 importers).
+*Risks:* low — `linking_weight_family_a` is a widely-imported production symbol, so a rename is a
+mechanical but broad diff. *Commits to:* nothing; the physics question is unchanged.
+
+**Option B — restate the bean's question.** Rewrite `qou-brng`'s open item as "why does the mass
+multiplier come from the Wedderburn spectrum while the binding multiplier comes from the crossing
+topology", which is what the two objects actually are.
+*Costs:* a bean edit. *Risks:* it may make the question *harder*, by removing an assumed symmetry
+that was doing framing work. *Commits to:* attacking the restated question rather than the original.
+
+**Option C — do nothing.** *This is the default and it is safe.* The bean's phrasing stays, `lw`
+keeps its name, and this audit sits in the corpus for whoever next reads the arc.
+
+**Recommendation (my judgement, not a finding):** **C now, B when the arc is next worked.** The
+reframing is worth recording but is not urgent, and B is cheap to do at the moment someone actually
+picks the question up — whereas doing it now spends a bean edit on a question nobody is holding. A
+is the least valuable of the three: renaming a production symbol has real blast radius and fixes
+only the label, not the framing that misled.
 
 ## 7. Verification
 
