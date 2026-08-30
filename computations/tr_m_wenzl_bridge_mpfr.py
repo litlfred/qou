@@ -168,11 +168,45 @@ def load_y_lambda_for_q0(n: int, q0) -> dict:
             f"with `regenerate_y_lambda_mpfr.py --anchor "
             f"{'proton' if want == 'proton' else 'ideal'}` instead of reading "
             f"the other layer's table")
-    declared = anchor_of_q0(json.loads(path.read_text())["q_0_50dps"])
+    declared_q = json.loads(path.read_text())["q_0_50dps"]
+    declared = anchor_of_q0(declared_q)
     if declared != want:
         raise ValueError(
             f"{path.name} declares the {declared} pin but a {want}-anchored "
             f"table was requested; refusing to straddle the layers")
+    # SAME LAYER, DIFFERENT VINTAGE (bean qou-mjcd, 2026-08-30).
+    #
+    # The check above compares LAYER NAMES, and that is not the condition this
+    # function actually needs. `anchor_of_q0` maps every muon vintage -- A, A'
+    # and C -- to the single string "muon", so a caller computing at the CURRENT
+    # muon pin and a table still frozen at the retired pin A both answer "muon",
+    # the guard passes, and the caller silently receives weights from a
+    # different q than the one it is evaluating at.
+    #
+    # That is not hypothetical. `atomic_tr_m_mpfr_50dps` -- the muon tr_M
+    # cross-check -- was repinned to vintage C by `repin(qou-3f7a)` while
+    # `y-lambda-mpfr-witness.json` stayed at A, so it computed a C-pinned tr_M
+    # against A-pinned weights for as long as both were true. It survived
+    # precisely because it is small: A->C is 0.0769 ppb against the 11.5371 ppb
+    # mu-p gap, and only 47 of 270 table entries move at all -- too small to
+    # trip anything, too systematic to be noise.
+    #
+    # The response is the one this module already chose for an unclassifiable q,
+    # quoted in the docstring above: compute the closed form AT THAT EXACT q
+    # rather than serve someone else's weights. It is this q's own y_lambda,
+    # merely slower than a table lookup. Deliberately NOT a raise: a raise would
+    # be a new failure mode for callers that are numerically fine, whereas this
+    # can only make a wrong answer right and a fast path slow.
+    #
+    # The tolerance separates the two cases by ~20 orders of magnitude, so it
+    # needs no tuning: a caller at the table's own pin agrees to the 50-dps
+    # serialisation floor (~1e-50), while the closest DISTINCT vintage, A vs C,
+    # differs by 7.7e-11 relative.
+    _q = mp.mpf(str(q0))
+    _dq = mp.mpf(str(declared_q))
+    if _dq != 0 and abs(_q - _dq) / abs(_dq) > mp.mpf("1e-30"):
+        from schur_principal_mpmath import y_lambda_at_q0_mpmath
+        return y_lambda_at_q0_mpmath(n, _q)
     return _load_y_lambda(n, path)
 
 

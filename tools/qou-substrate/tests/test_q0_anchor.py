@@ -497,7 +497,7 @@ def test_payload_evidence_does_not_move_any_value():
     assert (dict(payload["parameters"]), payload["result"], payload["note"]) == before
 
 
-# ── q0_anchor=None: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
+# ── q0_anchor=False: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
 
 
 def test_false_declares_independence_and_stamps_no_pin():
@@ -519,7 +519,7 @@ def test_false_declares_independence_and_stamps_no_pin():
     """
     payload = {"result": 42}
     w.WitnessBuilder.stamp_staleness_metadata(
-        payload, script_path=_UNLISTED, engine="python", q0_anchor=None,
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
     )
     assert payload["q0Anchor"] == "independent"
     assert payload["q0AnchorReason"]          # audit reports _NO_REASON otherwise
@@ -532,7 +532,7 @@ def test_false_still_stamps_the_provenance_fields():
     whole point of the migration this flag exists for."""
     payload = {"result": 42}
     w.WitnessBuilder.stamp_staleness_metadata(
-        payload, script_path=_UNLISTED, engine="python", q0_anchor=None,
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
     )
     for field in ("scriptHash", "scriptCommitSha", "commitSha", "engine",
                   "computedAt", "durationMs"):
@@ -547,7 +547,7 @@ def test_false_beats_payload_evidence():
     """
     payload = {"parameters": {"q0": _MUON}, "result": 42}
     w.WitnessBuilder.stamp_staleness_metadata(
-        payload, script_path=_UNLISTED, engine="python", q0_anchor=None,
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
     )
     # The declaration still wins over the payload's q₀-looking number: the
     # result is "independent", NOT the muon pin that evidence would resolve to.
@@ -559,7 +559,7 @@ def test_none_and_str_are_unchanged_by_the_new_branch():
     """Regression: the default and the explicit-string paths still stamp.
 
     Deliberately asserts THAT an anchor is stamped, not WHICH one. What the
-    `q0_anchor=None` branch could plausibly break is the other two paths
+    `q0_anchor=False` branch could plausibly break is the other two paths
     silently stamping nothing; which anchor a given payload resolves to is a
     different question, owned by the resolution tests above.
 
@@ -620,12 +620,12 @@ def test_engine_none_preserves_the_payloads_own_declaration(tmp_path):
 
     declared = {"engine": "sympy+mpmath"}
     w.WitnessBuilder.stamp_staleness_metadata(
-        declared, script_path=str(script), engine=None, q0_anchor=None)
+        declared, script_path=str(script), engine=None, q0_anchor=False)
     assert declared["engine"] == "sympy+mpmath"
 
     bare = {}
     w.WitnessBuilder.stamp_staleness_metadata(
-        bare, script_path=str(script), engine=None, q0_anchor=None)
+        bare, script_path=str(script), engine=None, q0_anchor=False)
     assert bare["engine"] == "python", "None on a bare payload falls back"
 
 
@@ -642,7 +642,7 @@ def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
     script.write_text("# producer\n")
     payload = {"engine": "sympy+mpmath"}
     w.WitnessBuilder.stamp_staleness_metadata(
-        payload, script_path=str(script), q0_anchor=None)
+        payload, script_path=str(script), q0_anchor=False)
     assert payload["engine"] == "python"
 
 

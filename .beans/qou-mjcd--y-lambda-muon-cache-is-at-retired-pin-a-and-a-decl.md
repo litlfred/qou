@@ -164,3 +164,67 @@ producer takes b² from `q-beta-operator-valued-N3.witness.json`, which is
 differing at the 10th digit. Regenerated; it now matches the upstream exactly.
 Pre-existing staleness, unrelated to the pin-C move — surfaced by it, not caused
 by it.
+
+
+### A WITHIN-LAYER vintage straddle the pin-C move closes (found 2026-08-30)
+
+`atomic_tr_m_mpfr_50dps` is the MUON tr_M cross-check. Its committed witness
+`atomic-tr-m-mpfr-50dps.witness.json` already records `q_0_50dps =
+1.109978595642739046681795…` — **vintage C** — because an earlier batch
+(`repin(qou-3f7a)`, "re-run 17 more muon producers at C") moved it.
+
+But it takes y_λ through `tr_M_via_wenzl_bridge_mpfr` →
+`load_y_lambda_for_q0`, which until today served the muon table **at pin A**.
+So it computed a C-pinned tr_M against A-pinned weights.
+
+**The straddle guard cannot see this.** `load_y_lambda_for_q0` compares
+`anchor_of_q0(table q_0)` against the requested anchor — both are `muon`, so it
+passes. The guard discriminates LAYER, not VINTAGE. A muon producer repinned to
+C and a muon table left at A agree as far as it is concerned.
+
+Magnitude is small (A→C is 0.0769 ppb, and only 47 of 270 table entries move at
+all), which is exactly why it survived: too small to trip anything, too
+systematic to be noise.
+
+Moving the table to C removes it — the producer and its weights are now on the
+same vintage. Its witness should be regenerated to realise that.
+
+- [ ] Regenerate `atomic_tr_m_mpfr_50dps` so its C q₀ and its now-C weights
+      agree. (Deferred while the validator run holds the checkout; never two
+      producers at once.)
+- [x] Consider whether the guard should compare VINTAGE as well as layer —
+      DONE 2026-08-30 on owner instruction; see below.
+
+
+### The guard is now vintage-aware — and it does not raise
+
+`load_y_lambda_for_q0` compared LAYER NAMES, which is not the condition it
+actually needs: `anchor_of_q0` maps A, A′ and C all to `"muon"`, so a C-pinned
+caller and an A-pinned table both answer `"muon"` and the guard passes.
+
+The fix follows the philosophy this module had **already** chosen for an
+unclassifiable q, quoted in its own docstring — *"an unclassifiable q now falls
+through to the live closed form at that exact q… not guessing and not
+straddling"*. A vintage mismatch now gets the same treatment: compute at the
+caller's q rather than serve someone else's weights.
+
+**Deliberately not a raise.** A raise would be a new failure mode for callers
+that are numerically fine. This can only turn a wrong answer right and a fast
+path slow, so it cannot break anything that currently works.
+
+The tolerance needs no tuning — the two cases are ~20 orders apart. A caller at
+the table's own pin agrees to the 50-dps serialisation floor (~1e-50); the
+closest DISTINCT vintage, A vs C, differs by 7.7e-11 relative. Threshold 1e-30.
+
+Verified on all three live paths:
+
+| caller q | table | result |
+|---|---|---|
+| proton | proton | serves the table exactly |
+| muon C | muon C | serves the table exactly |
+| muon A | muon C | **0.115324226216620456** — computed live, NOT the C value |
+
+That last number is exactly what the OLD pin-A table held
+(`0.11532422621662045631936923868739`), so the live closed form reproduces what
+a pin-A table would have served. The routing is right, not merely different.
+The cross-LAYER refusal above it is untouched.
