@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-30T11:14:32Z
+updated_at: 2026-08-30T11:40:08Z
 ---
 
 
@@ -353,3 +353,21 @@ content-sibling check first; there is no safe blind batch.
 
 The audit scans `lean/QOU/` only — recorded as a SCOPE section in the script
 docstring. A clean run is **not** evidence a name is unambiguous corpus-wide.
+
+
+## DRAINED 2026-08-30: 26 pairs → 7
+
+19 of 24 names gone, all library-only (no content-block sibling), which is
+what the surface audit established and why the drain waited for the join.
+Method: nest the enclosing namespace one level deeper in the zero-importer
+module (11 modules); `NuclearGroebnerReduction` renamed `BraidWord` →
+`NuclearBraidWord` instead, because a live `lean.ref` names
+`QOU.Archimedean.nuclear_groebner_reduction` in that file. Compiler-verified
+throughout: each module `lean`-direct exit 0 with olean rebuilt,
+`lean QOU.lean` exit 0, `--verify` 26 → 7, baseline regenerated and passing.
+
+**The 7 left are decisions.** Five entangled with a sibling (`T_pp`, `T_nn`,
+`BraidKnot.heckeH`, `qInt`, `writhe`) — drain with `qou-u87j`. Two are one
+call over one module pair: `addCell` / `IsAddableCell`,
+`YoungDiagramAddCell` (2 importers) vs `YoungDiagramAddable` (1, in the root
+build), both consumed.
