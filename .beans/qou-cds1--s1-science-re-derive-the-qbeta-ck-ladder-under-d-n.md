@@ -2860,3 +2860,48 @@ So the corrected status of the ladder above N=0:
 (D1).** The derivation exists, is exact and symbolic in both variables, and
 formalizing it would upgrade alpha from bare def to derived — which is exactly
 the formalize-first discipline this bean's own Discipline section asks for.
+
+---
+
+## 2026-08-30 — SCOPING MEASUREMENT: the C surface is channel-local (from `qou-l2we`)
+
+Mechanical sweep of `computations/` for live convention-C `z`
+(`sqrt(q)/(1+q)` and `1/(sqrt q + 1/sqrt q)`, in code — docstring/comment
+occurrences excluded by AST):
+
+    108  files mention z_C
+     66  have it in LIVE code
+     42  inside computations/qbeta/   <- this bean's channel
+     24  OUTSIDE it
+
+**All 24 outside sites are accounted for; none wires a C value into a published
+quantity.** 17 are already labelled excised/superseded/comparison-only. The 7
+unlabelled ones are:
+
+- 5 that are C-vs-D comparisons *by construction* — `mu3_door_sign_C_vs_D`,
+  `binding_closed_form_C_vs_D`, `binding_production_route_C_vs_D`,
+  `binding_sum_C_vs_D_per_isotope`, `binding_channel_convention_exposure`.
+  Excising C from these would delete the comparison they exist to make.
+- `per_channel_wenzl_level.py` — a CENSUS of which z each channel uses; it
+  records `qbeta-decay -> mpsqrt(q)/(1+q) [= z_C]` as an observation. Also
+  independently reports `pyhecke.gram`: "registry says C, code is D — registry
+  STALE" (worth picking up separately).
+- `wenzl_level_family.py` — characterises `r_C`, the Wenzl level *of* C, as the
+  mathematical object under study (W5 check at the proton pin).
+
+**So the excision campaign is channel-local, and this bean is the whole of it.**
+The hub is the one already named above, `qbeta_utils.py::markov_parameter`
+(82 files reference `qbeta_utils`), and its own docstring records why it cannot
+be flipped ahead of the re-derivation: the registry has `channels.qbeta-decay`
+as `agreed-migration-pending` and `evaluators.z` registers the symbol as C, so
+**R9 asserts z_C numerically on every validator run** — flipping first would put
+the registry in contradiction with its own evaluator.
+
+One site left the channel today: `computations/probes/qbeta_ck_basis_constrained_pslq.py`
+excised its frame entirely (bean `qou-l2we`) rather than picking one — its
+entropy verdict never needed a Markov `z`, since `u = b·hbar_q^2` contains none.
+That is the only shape of excision available before the re-derivation lands:
+remove the dependence where it was never real. Where a real c_k value is at
+stake, this bean still gates.
+
+Status untouched — not this bean's owner.
