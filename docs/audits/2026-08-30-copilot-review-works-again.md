@@ -9,8 +9,9 @@
 
 **GitHub Copilot reviews are arriving, in both repos.** Measured first-hand
 today. Note the framing: *that* they arrive is established; *why they did not
-before* is not — three candidate mechanisms are weighed below and this file
-does not pick one.
+before* is not — three candidate mechanisms are weighed below. This file
+originally picked none; **candidate (2) is now closed** in the final section,
+leaving (3) as the live gate and (1) as unneeded rather than refuted.
 
 | PR | requested | review submitted | latency |
 |---|---|---|---|
@@ -88,7 +89,8 @@ requested within moments of each other*. A push-triggered review and a
 request-triggered review are indistinguishable from my timings.
 
 So there are now **three live candidate mechanisms**, and I am not in a position
-to pick:
+to pick (**(2) is closed in the final section, added by a later session** — the
+list is kept as it stood so the narrowing is legible):
 
 1. **Availability changed** between 08-27 and 08-30 (this file's opening claim —
    now the weakest, since it rests on the absence I could not distinguish).
@@ -99,7 +101,10 @@ to pick:
 One piece of evidence bears on (2): the quota refusal says *"the user who
 **requested** the review has reached their quota limit"*, which implies the
 request path is live and consuming quota. That weakens (2) without settling it —
-the request may be accepted and still not be what schedules the review.
+the request may be accepted and still not be what schedules the review. **The
+final section settles it**, on the half this paragraph correctly identifies as
+missing: reviews that *followed* requests on PRs which had sat unreviewed for
+hours.
 
 **Their instruction is also better than mine and should be preferred:** state
 *"do not **wait** on Copilot"* (it is unpredictable and there is no check run to
@@ -224,6 +229,34 @@ historical n=5 no longer requires a separate mechanism. It is **not
 established** that quota explains those five — that would need quota state
 from 2026-08-23, which is not recoverable from this repo — but (1) is no
 longer load-bearing.
+
+**Read (2)-is-refuted as "a request CAN schedule", never as "a request WILL".**
+The two are different claims and only the first is measured here. Later the same
+day, four PRs give censored negatives — an event that did not occur inside the
+window watched, which bounds latency from below and nothing more:
+
+| PR | pushed | requested | reviews, window |
+|---|---|---|---|
+| `#6162` | 10:08:42Z | **~10:09Z** | none, **≥ 31 min** |
+| `#6168` | 10:10:53Z | none | none, **≥ 29 min** |
+| `#6170` | 10:04:19Z | none | none, **≥ 40 min** |
+| `#6174` | 10:35:45Z | none | none, ~5 min (too short to count) |
+
+The first three rows are from a sibling session,
+[`qou#6179`](https://github.com/litlfred/qou/pull/6179); the third is this PR
+observing itself. `#6162` is the one that bears on this section: an explicit
+request, and nothing at ~8× the 3–4 min request→review latency measured above.
+
+**It is not a counterexample, and it is not evidence that reviews stopped
+again.** The ration was exhausted at 07:56:40Z and 10:09Z is ~2 h later; nobody
+has evidence it had recharged. Quota alone explains every row. But it does mean
+a request is not a guarantee, and an agent must not plan around one arriving.
+
+**The recharge interval is the one unknown left, and it is measurable for
+free** — no experiment, no spent calls. It is bounded above by the *next
+successful Copilot review anywhere in this repo after 07:56:40Z*. Record that
+timestamp when you see it; do not burn requests probing for it, which is the
+error that created the shortage in the first place.
 
 **Operational consequence, unchanged and now better grounded:** requests work,
 and they are the thing that spends the ration. Do not re-request after every
