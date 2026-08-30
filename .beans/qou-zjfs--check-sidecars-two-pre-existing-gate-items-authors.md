@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-30T15:35:44Z
+updated_at: 2026-08-30T15:41:20Z
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on
@@ -240,3 +240,20 @@ sidecar aside). Ugly, but it is the only route that both refreshes and stays in 
 Note this does **not** contradict the `authors-note` finding above: that block is not
 enumerated at all, so neither form reaches it. Two distinct failures — unreachable blocks,
 and no single-block granularity for the reachable ones.
+
+
+**Correction to the figure one entry up: the blast radius is not 57, it is criteria-dependent.**
+Same directory, same block, two invocations minutes apart:
+
+    --only da-false-claim,da-overclaim,wall-side-correct,one-voice-audit   ->  57 blocks
+    --only wall-side-correct                                              -> 258 blocks
+
+So the narrower criteria set swept FEWER blocks, which is the opposite of the obvious
+guess and means the enumeration is not simply "every block in the directory". Quoting a
+single number for the blast radius is wrong; quote the invocation with it. Either way the
+conclusion stands and gets stronger — both are far past the AGENTS.md ≤ 10 sidecars/idle-pass
+cap (5.7× and 25.8×), and neither is a way to refresh one block.
+
+I recorded 57 as though it were the directory's size. It is not: `observations/` holds
+enough blocks for the 258 figure, so the 57-run was the one being selective, by a rule I
+have not identified.
