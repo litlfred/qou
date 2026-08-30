@@ -1,16 +1,16 @@
 ---
 # qou-f8lit
-title: 'MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)'
+title: MostowRigidity.figureEight carries a truncated literal, not the exact Vol(4_1)
 status: todo
 type: task
 priority: high
-parent: qou-8mtd
 tags:
     - hyperbolic-volume
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-29T19:10:00Z
+updated_at: 2026-08-30T13:58:14Z
+parent: qou-8mtd
 ---
 
 ## The defect
@@ -635,3 +635,38 @@ confirming `EXIT 1` at the right line, then restoring. Same discipline
 Both items I listed as "next" are **closed as non-issues**, and the second one
 *strengthens* `qou-qint`: `scratch.lean` is a live consumer of `qIntBalZ`, so
 the ℤ-index migration is not merely unblocked but partly already done.
+
+
+---
+
+## 2026-08-30 — the ⚠ section's CONCLUSION is now stale; its REASONING is not.
+
+`QOU/Encounter/FiveTwoVolumeBridge.lean` now carries `VOL_5_2_pos`,
+`vol_pos_of_realises` and `vol_ne_zero_of_realises`, all `lean`-direct exit 0 and
+axiom-clean (`propext, Classical.choice, Quot.sound`; no `sorryAx`), plus
+`vol_lt_of_realises` — the inequality itself rather than its transport.
+
+**Separate the two claims in that section, because only one moved.**
+
+*Still true, unchanged:* the corpus has **no** `0 < BlochWigner_lob z` for `0 < z.im`.
+The 4₁ route through `Cl_2_pi_div_three_pos` really does depend on the 4₁ shape sitting
+on the unit circle, and the 5₂ shape really is not on it. Item 3 of "Still open" —
+general `0 < D(z)` on the upper half plane — is untouched. Anyone reaching for
+positivity at a *third* knot gets nothing from this.
+
+*Now false:* "the 5₂ analogue does not exist, and that is the honest outcome."
+It exists, by a route that says nothing about `BlochWigner_lob` at all:
+`QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` (bean `qou-52ch`, merged in #6141)
+puts `VOL_5_2` strictly above `VOL_4_1`, and `Cl_2_pi_div_three_pos` bounds `VOL_4_1`
+from below. Positivity at 5₂ is a *comparison* result, not a special-value result.
+
+**Item 2 of "Still open" is closed, and NOT the way this bean predicted.** It was
+recorded as blocked on "rigorous 16-digit bounds", then re-scoped to "blocked by the
+method". Both were about the *digit* route. What closed it was Rivin's strict concavity
+of the ideal-tetrahedron volume applied along the chord from the regular shape to the
+5₂ shape — the constants are never approximated at any point, so no digit bound was
+ever needed. The obstacle was real for the route being attempted and irrelevant to the
+route that worked; recording that distinction because "blocked by the method" reads as
+"blocked", and it was not.
+
+Item 1 (exactify both `MostowRigidity` instances) is unchanged.

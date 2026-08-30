@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-29T20:04:43Z
+updated_at: 2026-08-30T14:10:57Z
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on
@@ -157,3 +157,54 @@ is real; what was wrong was calling it the cause of the 325.
 3614 blocks · **330** top-level stale · **23** criterion-level stale · **307** false positives.
 Was 3612 / 376 / 51 / 325. Real backlog 51 -> 23; false-positive rate **86 % -> 93 %** — the finding
 is stronger. See [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md) §4.
+
+
+---
+
+## 2026-08-30 — a THIRD mechanism, and it is in the 51, not the 325
+
+Found while running `check-sidecars.sh` as the pre-commit preflight on the 5₂-bridge
+inequality branch, which regenerates `authors-note.md` via the sanctioned
+`scripts/refresh-authors-note.ts`.
+
+**This bean's own correction applies to me first: I rediscovered its "documented refresh
+does not work" claim and was about to file it as new.** The false-positive analysis above
+is right and I am not disputing it. What follows is a case it does **not** cover.
+
+**Measured.** `content/quantum-observable-universe/introduction/` holds three blocks —
+`intro`, `chapter-overview`, `authors-note`, all three listed in `introduction.ts`'s
+`sections[].blocks[]`. A full dry-run enumerates **one**:
+
+    bun run folio-assistant/content/pipeline/qa-sweep.ts \
+        content/quantum-observable-universe/introduction --dry-run
+    → criteria: 96, blocks: 1
+
+96 criteria, so this is **not** a criterion-applicability filter — it is enumeration.
+Repeated with `--only wall-side-correct`: `blocks: 1`, and the only sidecar written is
+`intro.qa.json`. `authors-note.qa.json` is never touched, on any invocation.
+
+**And this one is genuinely stale, by this bean's own test.** After the refresh:
+
+    per-criterion field_hash.md   5966b92b5b16   ← the live, correct field
+    live sha256(authors-note.md)  99791415bc65   ← mismatched
+
+So it is in the **51 genuinely-unswept**, not the 325 false positives — and no documented
+invocation can reach it. The block-stem form that `check-sidecars.sh` prints
+(`… qa-sweep.ts <dir>/authors-note`) reports `blocks: 0`, **exits 0**, and writes nothing;
+the directory form skips the block. Both read as success.
+
+**Do NOT "fix" it by deleting the criterion entry**, which is what AGENTS.md
+§"Refresh stale sidecars" prescribes. I tried that. The sweep cannot repopulate what it
+does not enumerate, so the entry simply vanishes and the block goes from stale-verdict to
+no-verdict — strictly worse. Restored from HEAD; the sidecar on that branch is committed
+unchanged and stale, with the reason stated in the PR rather than papered over.
+
+**Why it recurs rather than sitting still:** `authors-note.md` is *generated*. Every
+Lean-coverage drift regenerates it, and `check-sidecars.sh` then tells the next agent to
+run a command that cannot help. `qou-ece6` and `qou-rz8m` are the coverage-drift side of
+the same loop.
+
+**Open:** why the enumerator stops at one block in this chapter. Not established here —
+candidates are the `prose()` builder emitting no label (`authors-note.ts` is a bare
+`export default prose()`), and the chapter manifest walk. `intro` is *also* `prose`, which
+weakens the first candidate; do not assume it before measuring.
