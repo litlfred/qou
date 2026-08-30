@@ -610,9 +610,15 @@ The first bounds the new height from above; the second is what keeps the transpo
 unbounded, and it does not follow from the first — without it every `nκ` could have height 1.  Both
 come from one fact about an unreduced fraction, read in opposite directions.
 
-⚠ The factor `n` is why the exponent cannot be preserved.  `|nx − nκ| = n|x − κ| ≤ n·H(κ)^{-(2+δ)}`,
-and `n·H^{-(2+δ)} ≤ H^{-(2+δ')}` only once `H^{δ−δ'} ≥ n`.  The transported statement therefore
-holds at every `δ' < δ` and at no `δ' = δ`; the loss is real, not slack in the estimate. -/
+⚠ The factor `n` is why *this* argument cannot preserve the exponent.  `|nx − nκ| = n|x − κ| ≤
+n·H(κ)^{-(2+δ)}`, and `n·H^{-(2+δ)} ≤ H^{-(2+δ')}` only once `H^{δ−δ'} ≥ n`, which fails for every
+`H` when `δ' = δ`.
+
+An earlier draft of this comment said the transported statement holds "at no `δ' = δ`".  **That was
+an overclaim and is corrected here**: what fails at `δ' = δ` is the elementary transport, not the
+statement.  Whether `n·x` is approximable to order exactly `2 + δ` is not settled by anything in
+this file — and appealing to Roth to settle it would be circular, since Roth is what this transport
+feeds. -/
 
 /-- **The height of any representation bounds the height.**  For `b ≠ 0`, reducing `a/b` divides the
 numerator and the denominator, so `H(a/b) ≤ max(|a|, |b|)` whether or not `a/b` was in lowest
@@ -745,6 +751,26 @@ theorem approximable_nsmul {x : ℝ} {n : ℕ} (hn : 0 < n) {δ δ' : ℝ} (hδ'
     have hstep : Real.log Hn * (-(2 + δ')) ≥ (Real.log n + Real.log Hk) * (-(2 + δ')) :=
       mul_le_mul_of_nonpos_right hlogHn hneg
     nlinarith [hstep, hkey]
+
+/-- **Roth for anything with an integral multiple in `𝓞 K`.**  If `n·x = ψ α₀` for some `n > 0` and
+some algebraic integer `α₀`, then `x` is not approximable to order `2 + δ` for any `δ > 0`.
+
+This is what `approximable_nsmul` is *for*, and it is here because a lemma nobody calls is not a
+completed step.  The scaling costs an exponent, so the proof applies Roth at `δ/2` rather than at
+`δ` — which is free, because the conclusion quantifies over all `δ > 0`.
+
+The remaining distance to "every real algebraic number" is now purely the construction of `K`, `ψ`
+and `α₀` from `IsAlgebraic ℚ x`: `exists_integral_multiple` gives the `n`, `ℚ(n·x) ⊆ ℝ` gives `K`
+and `ψ`, and integrality gives `α₀ ∈ 𝓞 K`.  No further estimate is involved. -/
+theorem not_approximable_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
+    (α₀ : 𝓞 K) (ψ : K →+* ℝ) {n : ℕ} (hn : 0 < n) {x : ℝ}
+    (hx : (n : ℝ) * x = ψ ((algebraMap (𝓞 K) K) α₀)) {δ : ℝ} (hδ : 0 < δ) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ)) := by
+  intro happrox
+  have hscaled := approximable_nsmul hn (half_pos hδ) (by linarith) happrox
+  rw [hx] at hscaled
+  exact not_approximable_of_algebraic α₀ ψ (half_pos hδ) hscaled
 
 end Scaling
 

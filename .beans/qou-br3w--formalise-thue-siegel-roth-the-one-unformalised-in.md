@@ -1140,3 +1140,45 @@ REMAINING for the general statement:
      instance + O_K membership. Nothing mathematical is left in it, but it is not small.
   2. Optional: the classical form (finitely many solutions of |x - p/q| < q^{-(2+delta)}) and the
      Mathlib-facing ¬LiouvilleWith corollary.
+
+## 2026-08-30 (roast) -- Owner asked for a roast. Two code defects, two reporting defects.
+
+Full text: docs/audits/2026-08-30-roth-arc-ROAST.md. Both code defects fixed in the same commit.
+
+R0 -- THE HEADLINE WAS AN OVERCLAIM. I reported "Roth's theorem is proved". What is proved is Roth
+for psi(alpha_0), alpha_0 an algebraic INTEGER, in HEIGHT form (max(|num|,den), not the denominator).
+The height-vs-denominator gap is the one I never mentioned in any commit message and the one a
+reader is least likely to spot. It is benign -- |alpha| <= B gives H <= (B+1)q, so q^{-(2+eps)} <=
+(B+1)^{2+eps} H^{-(2+eps)} <= H^{-(2+delta)} for large H and delta < eps -- but benign and unwritten
+is what the taxonomy exists to catch. Honest headline: "Roth's theorem for psi(alpha_0), in height
+form."
+
+R1 -- A DOCSTRING OVERCLAIM WRITTEN TODAY. approximable_nsmul's comment said the transported
+statement holds "at no delta' = delta". Not proved and probably not provable here: what fails at
+delta'=delta is my elementary transport, not the statement, and the only tool that would settle the
+statement is Roth, which this transport FEEDS. Corrected in place.
+
+R2 -- approximable_nsmul WAS PROVED AND CALLED BY NOTHING. Same failure mode as "the shortcut
+assembly" earlier in this same arc -- a theorem that is true, axiom-clean, and silently not
+load-bearing -- reproduced four commits after I named it. Fixed by not_approximable_of_nsmul_eq,
+which composes it with not_approximable_of_algebraic and thereby demonstrates the one thing the pair
+was for: the exponent loss is absorbable, because the conclusion quantifies over all delta > 0.
+
+R3 -- I REPORTED eslint GREEN OVER THE WRONG REPO. `npx eslint .` from the folio failed with "no
+config"; my ESLINT_EXIT=0 came from the tail at the end of the pipe. The re-run linted the PLATFORM
+repo. The qou content was never linted by either invocation. Taxonomy row 14 exactly, committed by
+the agent who added rows 23 and 24 the same day.
+
+R4 -- "0 errors" IS NOT "GREEN". The corpus lake build never completed (2330/2420). block_pdf_render
+already has the right convention -- a gate that cannot run is NOT RUN, never a pass -- and I did not
+apply it. Also: my first watcher piped the build through head -40, which saturated on warnings, so
+"Build completed" was unreachable by construction and two waiters sat on a file that could not
+change.
+
+R5 -- filed as qou-9zh3: bun test rewrites a committed audit json whose content depends on build
+state. Related to qou-c7jp, which is marked completed for the --diff path; not mine to reopen.
+
+WHAT SURVIVES: the axiom result, the non-vacuity check, step 1 being genuinely load-bearing, and the
+rejection of slack_pos in favour of the product-form budget. Three of six findings are REPORTING
+defects, not proof defects -- the Lean is checked by a machine that cannot be talked into agreeing,
+and the prose around it is checked by nobody.
