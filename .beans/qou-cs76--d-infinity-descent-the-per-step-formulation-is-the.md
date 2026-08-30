@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:44:37Z
-updated_at: 2026-08-30T02:40:32Z
+updated_at: 2026-08-30T02:52:10Z
 parent: qou-ifot
 ---
 
@@ -64,3 +64,19 @@ NOT PROVED, and flagged as such in the file, the commit and here: the measured o
 WHY IT IS NOT TRIVIALLY PROVABLE: the pair (P(w), P'(w)) is NOT closed under the odd branch-inverse -- computing the preimage's derivative at w needs P''(w), so the natural two-coordinate invariant does not close. The even branch-inverse does act cleanly ((u,v) -> ((1+w)u, u+(1+w)v), and 1+w is a unit so N(u) is preserved), which is presumably where the mod-6 regularity comes from; but the odd branch divides by (1+2w), of norm 3, and that is what breaks the closure. A proof likely needs the full jet, not the 1-jet.
 
 STATUS OF v=0: still OPEN. Now with a proved necessary criterion, a proved fact about the attractor, and a precisely stated congruence conjecture whose proof would settle the case for the backward TREE. The step from the tree to all of D_inf is the convergence conjecture itself (qcz7 A1), so even proving the congruence would not close v=0 on D_inf.
+
+INVESTIGATED AND EXPLAINED 2026-08-29/30, commit 9ebb9d9620. The mod-6 congruence I had recorded as an unexplained pattern now has a cause, and the cause is cleaner than the pattern.
+
+THE ENGINE, PROVED (generic CommRing; needs NO norm and NO Z[w] -- it is about unit-ness): only a UNIT evaluation can admit an odd-preimage (isUnit_eval_of_oddPreimage, since P(w) = -w and -w is a unit); the even branch-inverse multiplies P(w) by the unit w+1 so unit-ness is INVARIANT along an even chain (evenPreimage_isUnit_iff); hence one non-unit evaluation blocks odd-preimages through the entire even-subtree, permanently (evenSubtree_no_oddPreimage). Six declarations, all [propext, Quot.sound] only.
+
+THE ARITHMETIC IT APPLIES TO (probe qcollatz_backward_tree_structure_probe.py, exact, NOT proved):
+- w+1 has multiplicative ORDER 6 -- that is the source of the 6. Along the main even chain the evaluation returns to -w exactly at n = 0 (mod 6).
+- The coupled recursion (u,v) -> ((w+1)u, u+(w+1)v) has closed form v_n = a^n v_0 + n a^(n-1) u_0, verified against the real chain n=0..24, reproducing the observed P'(w) = (-6k,-6k-1) exactly.
+- The odd-preimage at n = 6k lands on norm 1+6k+12k^2 (verified k=0..10), which is 1 ONLY at k=0, and k=0 returns q^-1, already on the chain.
+So every k>=1 branch is non-unit and the engine forbids any further odd-preimage below it => no two chained odd-preimages in the backward tree => no v=0 block there.
+
+SCOPE. The engine is proved; the three arithmetic inputs are verified over finite ranges, so the TREE-LEVEL CONCLUSION IS ARGUED, NOT FORMALIZED. Even fully formalized it settles v=0 for the backward TREE only -- the step to all of D_inf is the convergence conjecture (qcz7 A1). v=0 on D_inf is NOT closed.
+
+WHAT CHANGED is the epistemic status, not the verdict: an unexplained congruence over a finite sample became a consequence of an order-6 unit acting on the cube-root evaluation, with the obstruction it implies proved in general.
+
+REMAINING TO FORMALIZE, now precisely bounded: (i) N(odd-preimage at n=6k) = 1+6k+12k^2; (ii) every tree node lies on the main chain or in one of its k>=1 branches. Both are concrete integer/Z[w] statements, not research.
