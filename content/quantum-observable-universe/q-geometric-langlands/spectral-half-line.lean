@@ -47,22 +47,9 @@ namespace QOU.AlgebraicSubstrate
     `Re(ρ · log(↑q)) = Re(ρ) · log(q)` and
     `exp(Re(ρ) · log(q)) = q^{Re(ρ)}` by definition of `rpow`. -/
 theorem abs_cpow_ofReal_eq_rpow_re (q : ℝ) (hq : 0 < q) (ρ : ℂ) :
-    ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re := by
-  have hq_ne : (q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt hq)
-  -- Step 1: unfold cpow to exp(ρ * log(↑q))
-  rw [Complex.cpow_def_of_ne_zero hq_ne]
-  -- Step 2: |exp(z)| = exp(Re(z))
-  rw [Complex.norm_exp]
-  -- Step 3: Re(ρ * log(↑q)) = Re(ρ) * log(q)
-  -- because (log ↑q).re = log|↑q| = log q, and (log ↑q).im = arg(↑q) = 0
-  rw [Complex.mul_re, Complex.log_re, Complex.log_im,
-      Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq,
-      Complex.arg_ofReal_of_nonneg (le_of_lt hq),
-      zero_mul, sub_zero]
-  -- Step 4: exp(Re(ρ) * log q) = q^{Re(ρ)}
-  rw [Real.rpow_def_of_pos hq]
+    ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re :=
+  Complex.norm_cpow_eq_rpow_re_of_pos hq ρ
 
-/-- Backward-compatible alias for q > 1. -/
 theorem abs_rpow_eq_rpow_re (q : ℝ) (hq : q > 1) (ρ : ℂ) :
     ‖(q : ℂ) ^ ρ‖ = q ^ ρ.re :=
   abs_cpow_ofReal_eq_rpow_re q (by linarith) ρ

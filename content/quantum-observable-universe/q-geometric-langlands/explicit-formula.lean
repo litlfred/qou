@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Pow.Complex
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 
@@ -207,6 +208,10 @@ the universal form cannot be reinstated by accident.
 
 The identity is stated instead for a single `QZetaDatum` — the ideals and the
 Reeb spectrum of *one* geometry — as a §3b conjecture class with **no instance**.
+**And no instance can exist**: `not_qExplicitFormula` proves the class
+uninhabitable for every datum, so `explicit_formula` below is a conditional whose
+hypothesis nothing satisfies — see that theorem for why this refutes the
+finite-`List` formalisation and not the mathematics.
 
 **On the citation.** The withdrawn axiom was captioned *"External theorem (Rosen
 2002 Ch 5 Thm 5.12; Weil 1948; Reshetikhin–Turaev 1991)"*. Rosen Thm 5.12 is the
@@ -407,7 +412,11 @@ theorem tail_term_unbounded (q : ℝ) (hq : 1 < q) (B : ℝ) :
     The proof is the bounded-vs-unbounded argument: `qChebyshev_abs_le` bounds
     the geometric side by a constant of the datum, `tail_term_unbounded` puts the
     tail term above that constant at some `X ∈ (1, √2]`, and `X ≤ √2 < 2` keeps
-    the remaining terms small enough that the two cannot meet. -/
+    the remaining terms small enough that the two cannot meet.
+
+    **Subsumed by `not_qExplicitFormula`**, which drops the `spectrum = []`
+    hypothesis entirely. Kept because its proof is this argument without the
+    spectral-sum bound, which is where the idea is easiest to read. -/
 theorem not_qExplicitFormula_of_nil_spectrum (D : QZetaDatum) (hs : D.spectrum = []) :
     ¬ QExplicitFormula D := by
   intro hinst
@@ -436,5 +445,100 @@ theorem not_qExplicitFormula_of_nil_spectrum (D : QZetaDatum) (hs : D.spectrum =
     linarith
   have habs := abs_le.mp hbdd
   linarith [hXb, habs.2, hX1, le_abs_self c]
+
+/-! ### The general case: uninhabitable for ANY finite spectrum (bean `qou-qexu`)
+
+`not_qExplicitFormula_of_nil_spectrum` covers the empty spectrum. The same
+argument covers a **nonempty finite** one, because on `X ∈ (1, √2]` the spectral
+sum is a finite sum of terms whose norms are bounded by a constant of the datum:
+`‖(X:ℂ)^ρ‖ = X^{Re ρ}`, and `X ≤ √2` caps that.
+
+The bounding constant is deliberately crude — `√2 ^ |Re ρ|` per term, which
+dominates `X ^ Re ρ` for every `X ∈ (1, √2]` whatever the sign of `Re ρ`. It does
+not need to be sharp; it only needs to be independent of `X`, because the whole
+argument is bounded-versus-unbounded.
+
+Note `[ρ]_q = 0` is not an obstacle and must not be assumed away: at `ρ = 0` the
+bracket vanishes, and Lean's `x / 0 = 0` makes that term `0`, which the bound
+covers. A proof assuming `[ρ]_q ≠ 0` would be both unnecessary and false. -/
+
+/-- Each spectral term is bounded on `(1, √2]` by a constant of the eigenvalue,
+    independent of `X`. Crude by design — only `X`-independence matters. -/
+theorem spectral_term_norm_le (q : ℝ) (hq : 1 < q) (ρ : ReebEigenvalue)
+    (X : ℝ) (hX1 : 1 < X) (hX2 : X ≤ Real.sqrt 2) :
+    ‖(X : ℂ) ^ ρ.val / qInteger q hq ρ.val‖
+      ≤ Real.sqrt 2 ^ |ρ.val.re| / ‖qInteger q hq ρ.val‖ := by
+  have hX0 : (0:ℝ) < X := lt_trans one_pos hX1
+  have hs2 : (1:ℝ) ≤ Real.sqrt 2 := by
+    nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num), Real.sqrt_nonneg 2]
+  -- the numerator bound, whatever the sign of Re ρ
+  have hnum : X ^ ρ.val.re ≤ Real.sqrt 2 ^ |ρ.val.re| := by
+    rcases le_or_gt 0 ρ.val.re with hs | hs
+    · calc X ^ ρ.val.re ≤ Real.sqrt 2 ^ ρ.val.re := Real.rpow_le_rpow hX0.le hX2 hs
+        _ = Real.sqrt 2 ^ |ρ.val.re| := by rw [abs_of_nonneg hs]
+    · have h1 : X ^ ρ.val.re ≤ 1 := Real.rpow_le_one_of_one_le_of_nonpos hX1.le hs.le
+      have h2 : (1:ℝ) ≤ Real.sqrt 2 ^ |ρ.val.re| := Real.one_le_rpow hs2 (abs_nonneg _)
+      linarith
+  rw [norm_div, Complex.norm_cpow_eq_rpow_re_of_pos hX0]
+  gcongr
+
+/-- The whole spectral sum is bounded on `(1, √2]` by a constant of the datum. -/
+theorem spectralSum_norm_le (q : ℝ) (hq : 1 < q) (spectrum : List ReebEigenvalue)
+    (X : ℝ) (hX1 : 1 < X) (hX2 : X ≤ Real.sqrt 2) :
+    ‖(spectrum.map fun ρ => (X : ℂ) ^ ρ.val / qInteger q hq ρ.val).sum‖
+      ≤ (spectrum.map fun ρ =>
+          Real.sqrt 2 ^ |ρ.val.re| / ‖qInteger q hq ρ.val‖).sum := by
+  induction spectrum with
+  | nil => simp
+  | cons a t ih =>
+    simp only [List.map_cons, List.sum_cons]
+    calc ‖(X : ℂ) ^ a.val / qInteger q hq a.val
+            + (t.map fun ρ => (X : ℂ) ^ ρ.val / qInteger q hq ρ.val).sum‖
+        ≤ ‖(X : ℂ) ^ a.val / qInteger q hq a.val‖
+            + ‖(t.map fun ρ => (X : ℂ) ^ ρ.val / qInteger q hq ρ.val).sum‖ :=
+          norm_add_le _ _
+      _ ≤ Real.sqrt 2 ^ |a.val.re| / ‖qInteger q hq a.val‖
+            + (t.map fun ρ => Real.sqrt 2 ^ |ρ.val.re| / ‖qInteger q hq ρ.val‖).sum := by
+          have := spectral_term_norm_le q hq a X hX1 hX2
+          linarith
+
+/-- **`QExplicitFormula` is uninhabitable — for every datum, no exceptions.**
+
+    The finite-`List` formalisation of the q-explicit formula is satisfied by no
+    `QZetaDatum` whatsoever: any ideals, any spectrum, any `Ω_q`, any `q > 1`.
+
+    Bounded versus unbounded, as in the empty-spectrum case: `ψ_q` is bounded by
+    `qChebyshev_abs_le`, the spectral sum by `spectralSum_norm_le`, and the tail
+    term exceeds their total somewhere in `(1, √2]` by `tail_term_unbounded`.
+
+    **This refutes the formalisation, not the mathematics** — see the section note
+    above `not_qExplicitFormula_of_nil_spectrum`. The classical explicit formula
+    carries the same `−½log(1−x^{−2})` term and is true, because its spectral sum
+    is infinite and only conditionally convergent; that term is the closed form of
+    the trivial-zero series and its blow-up at `x = 1` is cancelled by the
+    divergence of the non-trivial-zero sum. **A finite `List` cannot do that**, and
+    this theorem is the precise statement of why. A faithful carrier needs the
+    spectral side to be an infinite sum with a specified summation order. -/
+theorem not_qExplicitFormula (D : QZetaDatum) : ¬ QExplicitFormula D := by
+  intro hinst
+  set M : ℝ := (D.ideals.map fun m => |QVonMangoldtFunction D.hbar_q D.hbar_pos m|).sum with hM
+  set S : ℝ := (D.spectrum.map fun ρ =>
+    Real.sqrt 2 ^ |ρ.val.re| / ‖qInteger D.q D.hq ρ.val‖).sum with hS
+  set c : ℝ := qLog D.q (2 * Real.pi * D.Omega_q) with hc
+  obtain ⟨X, hX1, hX2, hXb⟩ := tail_term_unbounded D.q D.hq (M + S + |c| + 2)
+  have h := hinst.formula X hX1
+  rw [spectralSide] at h
+  -- real part of the identity, with the spectral sum kept as a complex term
+  set T : ℂ := (D.spectrum.map fun ρ => (X : ℂ) ^ ρ.val / qInteger D.q D.hq ρ.val).sum with hT
+  have hTb : ‖T‖ ≤ S := spectralSum_norm_le D.q D.hq D.spectrum X hX1 hX2
+  have hre : QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X
+      = X - T.re - c - (1 / 2) * qLog D.q (1 - X ^ (-2 : ℝ)) := by
+    have := congrArg Complex.re h
+    simpa [hT, hc, Complex.sub_re, Complex.ofReal_re, Complex.mul_re, Complex.ofReal_im]
+      using this
+  have hbdd := abs_le.mp (qChebyshev_abs_le D.hbar_q D.hbar_pos D.ideals X)
+  have hTre : |T.re| ≤ S := le_trans (Complex.abs_re_le_norm T) hTb
+  have hTre' := abs_le.mp hTre
+  linarith [hXb, hbdd.2, hX1, le_abs_self c, hTre'.1, hTre'.2]
 
 end QOU.AlgebraicSubstrate

@@ -35,11 +35,12 @@ $\Omega_q$ terms --- is a claim of this framework.
 
 **The finite-spectrum form is refuted, and the reason names what a repair must
 do.** Formalised with the spectral side as a *finite* list of eigenvalues, the
-identity holds for **no** datum with an empty spectrum --- any ideals, any
+identity holds for **no datum at all** --- any ideals, any spectrum, any
 $\Omega_q$, any $q>1$. The mechanism is a mismatch of boundedness. The geometric
 side $\psi_q(X)$ is a sum over finitely many maximal ideals whose terms are
 switched on and off by $N(\mathfrak{m}) \le X$, never grown, so it is bounded
-uniformly in $X$; while
+uniformly in $X$; the spectral sum is likewise bounded on $X \in (1,\sqrt2]$,
+being finitely many terms of norm $X^{\mathrm{Re}\,\rho}$ with $X \le \sqrt2$; while
 $-\tfrac{1}{2}\ln_q\!\left(1 - X^{-2}\right)$ diverges to $+\infty$ as
 $X \to 1^{+}$. A bounded function cannot equal an unbounded one.
 
