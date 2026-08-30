@@ -1322,3 +1322,9 @@ import QOU.Archimedean.FiveTwoOhtsukiBridge
 -- lower half of a squeeze whenever the phases are confined.
 import QOU.MathlibExt.ExponentialGrowthRate
 import QOU.MathlibExt.HalfPlaneNonCancellation
+
+-- The T(2,2m) trace polynomial closed form (cheat sheet §5, previously recorded as
+-- "sympy-exact across m = 1..6"), and the cosh/cos separation that refutes the
+-- explanation which stood beside it.
+import QOU.BraidKnot.TorusKnotTracePolynomial
+import QOU.MathlibExt.CoshCosSeparation
