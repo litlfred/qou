@@ -50,8 +50,13 @@ theorem inRothPolySet_of_real_bound {r : Fin m → ℕ} {P : MvPolynomial (Fin m
 
 variable {K : Type*} [Field K] [NumberField K]
 
+omit [NumberField K] in
 /-- **The index transports along a real embedding.**  Step 1 proves it over `K`, step 2 consumes it
-over `ℝ`; `ψ` is what says the `α_h` are real algebraic numbers. -/
+over `ℝ`; `ψ` is what says the `α_h` are real algebraic numbers.
+
+`NumberField K` is omitted — the linter is right that nothing here uses it.  The transport is a
+fact about *any* ring map to `ℝ`; that `K` is a number field is what makes `ψ` exist, not what
+makes the index move. -/
 theorem index_real_of_index_field (r : Fin m → ℕ) (ψ : K →+* ℝ)
     (α : Fin m → 𝓞 K) (P : MvPolynomial (Fin m) ℤ) :
     index r (fun h => ψ ((algebraMap (𝓞 K) K) (α h))) (map (Int.castRingHom ℝ) P)
