@@ -174,4 +174,158 @@ theorem zz_pow_nine_im_pos : 0 < (zz ^ 9).im := by
   have h2 := zz_re_lt_two_thirds
   nlinarith
 
+/-! ## §6 — The argument window
+
+`arg z ∈ (π/6, π/4)` is what fixes the branch: it puts `9·arg z` in
+`(3π/2, 9π/4)`, strictly inside `(π, 3π)`, so the winding number below is
+forced. Both bounds come from §2's reduced conditions. -/
+
+open Real Complex in
+theorem zz_re_pos : 0 < zz.re := by
+  rw [zz_re_eq]; nlinarith [sq_nonneg (realRoot - 1)]
+
+/-- The discriminant is positive, so its square root behaves. -/
+theorem disc_pos' : 0 < 3 * realRoot ^ 2 - 4 * realRoot + 8 := by
+  nlinarith [sq_nonneg (3 * realRoot - 2)]
+
+/-- **`Im z = t·√(3t² − 4t + 8) / 2`** — via `‖y₁‖² = 1/t` again. -/
+theorem zz_im_eq :
+    zz.im = realRoot * Real.sqrt (3 * realRoot ^ 2 - 4 * realRoot + 8) / 2 := by
+  have hn := normSq_pos
+  have hnt := normSq_mul_realRoot
+  have him : zz.im = fiveTwoShape.im / Complex.normSq fiveTwoShape := by
+    simp [zz, Complex.inv_im]; ring
+  have hinv : (Complex.normSq fiveTwoShape)⁻¹ = realRoot :=
+    inv_eq_of_mul_eq_one_right hnt
+  rw [him, fiveTwoShape_im, div_eq_mul_inv, hinv]
+  ring
+
+/-! The two branch inequalities, lifted from the reduced polynomials of §2 by
+squaring.  Each cofactor is exact — `(2Re)² − (2Im)²` is `(−2t² + 2t)` plus
+`(−2t − 4)` times the cubic, and `3(2Im)² − (2Re)²` is `(8t² − 8t + 4)` plus
+`(8t + 8)` times it. -/
+
+theorem zz_im_lt_re : zz.im < zz.re := by
+  have hd := disc_pos'
+  have hsq : Real.sqrt (3 * realRoot ^ 2 - 4 * realRoot + 8) ^ 2
+      = 3 * realRoot ^ 2 - 4 * realRoot + 8 := Real.sq_sqrt hd.le
+  have him := zz_im_eq
+  have hre := zz_re_eq
+  have hb := branch_upper
+  have hc := realRoot_cubic
+  have hpos := zz_im_pos
+  nlinarith [hsq, him, hre, hb, hc, hpos, zz_re_pos]
+
+theorem sqrt_three_mul_zz_im_gt_re : zz.re < Real.sqrt 3 * zz.im := by
+  have hd := disc_pos'
+  have hsq : Real.sqrt (3 * realRoot ^ 2 - 4 * realRoot + 8) ^ 2
+      = 3 * realRoot ^ 2 - 4 * realRoot + 8 := Real.sq_sqrt hd.le
+  have h3 : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
+  have h3p : (0:ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hb := branch_lower
+  have hc := realRoot_cubic
+  refine lt_of_pow_lt_pow_left₀ 2
+    (mul_nonneg (Real.sqrt_nonneg 3) zz_im_pos.le) ?_
+  have e1 : (Real.sqrt 3 * zz.im) ^ 2 = 3 * zz.im ^ 2 := by rw [mul_pow, h3]
+  have e2 : (realRoot * Real.sqrt (3 * realRoot ^ 2 - 4 * realRoot + 8) / 2) ^ 2
+      = realRoot ^ 2 * (3 * realRoot ^ 2 - 4 * realRoot + 8) / 4 := by
+    rw [div_pow, mul_pow, hsq]; ring
+  rw [e1, zz_re_eq, zz_im_eq, e2]
+  nlinarith [hb, hc]
+
+open Real Complex in
+/-- `arg z = arctan (Im z / Re z)`, valid because `Re z > 0` puts `arg z` in
+`(−π/2, π/2)` where `arctan` inverts `tan`. -/
+theorem zz_arg_eq_arctan : zz.arg = Real.arctan (zz.im / zz.re) := by
+  have h : |zz.arg| < π / 2 :=
+    Complex.abs_arg_lt_pi_div_two_iff.mpr (Or.inl zz_re_pos)
+  rw [abs_lt] at h
+  rw [← Complex.tan_arg, Real.arctan_tan h.1 h.2]
+
+open Real Complex in
+/-- `arg z < π/4`, from `Im z < Re z`. -/
+theorem zz_arg_lt_pi_div_four : zz.arg < π / 4 := by
+  have hre := zz_re_pos
+  have hlt : zz.im / zz.re < 1 := (div_lt_one hre).mpr zz_im_lt_re
+  rw [zz_arg_eq_arctan, ← Real.arctan_one]
+  exact Real.arctan_lt_arctan hlt
+
+open Real Complex in
+/-- `π/6 < arg z`, from `√3·Im z > Re z` — i.e. `Im/Re > tan (π/6) = 1/√3`. -/
+theorem pi_div_six_lt_zz_arg : π / 6 < zz.arg := by
+  have hre := zz_re_pos
+  have h3p : (0:ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hgt : Real.tan (π / 6) < zz.im / zz.re := by
+    rw [Real.tan_pi_div_six, lt_div_iff₀ hre, div_mul_eq_mul_div,
+      div_lt_iff₀ h3p]
+    nlinarith [sqrt_three_mul_zz_im_gt_re, Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 3), h3p]
+  have hpi := Real.pi_pos
+  calc π / 6 = Real.arctan (Real.tan (π / 6)) := by
+        rw [Real.arctan_tan (by nlinarith) (by nlinarith)]
+    _ < Real.arctan (zz.im / zz.re) := Real.arctan_lt_arctan hgt
+    _ = zz.arg := zz_arg_eq_arctan.symm
+
+/-! ## §7 — The angle bound
+
+`arg (z⁹) = 9 · arg z` in `Real.Angle`, i.e. modulo `2π`.  The window of §6 puts
+`9 · arg z` in `(3π/2, 9π/4)`, strictly inside `(π, 3π)`, so the winding number
+is forced to be exactly one and `arg (z⁹) = 9·arg z − 2π`.  Positivity of the
+left side is then `arg z > 2π/9`. -/
+
+open Real Complex in
+/-- `0 < arg (z⁹)`: nonneg from `Im (z⁹) > 0`, and nonzero because a zero
+argument forces a zero imaginary part. -/
+theorem zz_pow_nine_arg_pos : 0 < (zz ^ 9).arg := by
+  have him := zz_pow_nine_im_pos
+  rcases (Complex.arg_nonneg_iff.mpr him.le).lt_or_eq with h | h
+  · exact h
+  · exact absurd (Complex.arg_eq_zero_iff.mp h.symm).2 (ne_of_gt him)
+
+open Real Complex in
+/-- **`2π/9 < arg z`** — the smallest dihedral angle of the 5₂ tetrahedron
+exceeds `2π/9`.
+
+This is the inequality the Rivin-concavity chord bound needs, and it is reached
+without a single value of a transcendental function: `z³ = z − 1` gives
+`z⁹ = −3z² + 4z − 2`, whose imaginary part is positive precisely when
+`Re z < 2/3`, which is the quadratic `−3t² + 6t − 2 > 0`. -/
+theorem two_pi_div_nine_lt_zz_arg : 2 * π / 9 < zz.arg := by
+  have hpi := Real.pi_pos
+  have hlo := pi_div_six_lt_zz_arg
+  have hhi := zz_arg_lt_pi_div_four
+  have h9 := zz_pow_nine_arg_pos
+  have h9le : (zz ^ 9).arg ≤ π := Complex.arg_le_pi _
+  have hangle : (((zz ^ 9).arg : ℝ) : Real.Angle) = ((9 * zz.arg : ℝ) : Real.Angle) := by
+    rw [show (9 * zz.arg : ℝ) = (9 : ℕ) • zz.arg by simp [nsmul_eq_mul]]
+    rw [Real.Angle.coe_nsmul, Complex.arg_pow_coe_angle]
+  obtain ⟨k, hk⟩ := Real.Angle.angle_eq_iff_two_pi_dvd_sub.mp hangle
+  -- `hk : arg (z^9) - 9 * arg z = 2 * π * k`, and the window forces `k = -1`.
+  have hkr1 : (-2 : ℝ) < (k : ℝ) := by nlinarith
+  have hkr2 : (k : ℝ) < 0 := by nlinarith
+  have hkz : k = -1 := by
+    have a : (-2 : ℤ) < k := by exact_mod_cast hkr1
+    have b : k < 0 := by exact_mod_cast hkr2
+    omega
+  rw [hkz] at hk
+  push_cast at hk
+  linarith
+
+/-! ## §8 — Back to the tetrahedron
+
+`z` is not an auxiliary quantity: `arg z` **is** the 5₂ tetrahedron's third
+dihedral angle, `tetAngle₃ y₁ = arg (1 − 1/y₁)`. -/
+
+/-- `arg z` is the third dihedral angle. -/
+theorem zz_arg_eq_angle₃ : zz.arg = fiveTwoTet.angle₃ := by
+  simp [zz, fiveTwoTet, QOU.MathlibExt.IdealTetrahedron.angle₃,
+    QOU.Archimedean.tetAngle₃, one_div]
+
+/-- **The 5₂ tetrahedron's third dihedral angle exceeds `2π/9`.**
+
+`qou-52ch`'s chord bound needs this of the *smallest* angle; `angle₃` is the
+smallest numerically (`0.7039` against `1.0300` and `1.4077`), but that ordering
+is not proved here — see the module header. -/
+theorem two_pi_div_nine_lt_angle₃ : 2 * Real.pi / 9 < fiveTwoTet.angle₃ := by
+  rw [← zz_arg_eq_angle₃]; exact two_pi_div_nine_lt_zz_arg
+
 end QOU.Knot.FiveTwoNinthPower
