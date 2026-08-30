@@ -147,14 +147,24 @@ def _selftest() -> None:
             os.unlink(tmp)
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     _selftest()
+    argv = list(sys.argv[1:] if argv is None else argv)
     findings = []
-    for root, dirs, files in os.walk(ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
-        for fn in sorted(files):
-            if fn.endswith(".py"):
-                findings.extend(scan_file(os.path.join(root, fn)))
+    if argv and argv[0] == "--files":
+        # Scope to specific paths, for the pre-commit hook. A whole-tree sweep
+        # AST-parses 3490 files at ~9.7 s; the files one commit touches is
+        # milliseconds. A PreToolUse hook runs BEFORE the tool call, so the
+        # difference is seconds added to every commit.
+        for a in argv[1:]:
+            if a.endswith(".py") and os.path.exists(a):
+                findings.extend(scan_file(os.path.abspath(a)))
+    else:
+        for root, dirs, files in os.walk(ROOT):
+            dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
+            for fn in sorted(files):
+                if fn.endswith(".py"):
+                    findings.extend(scan_file(os.path.join(root, fn)))
     findings.sort(key=lambda r: (r["path"], r["line"]))
 
     print("=" * 78)
