@@ -328,4 +328,72 @@ is not proved here — see the module header. -/
 theorem two_pi_div_nine_lt_angle₃ : 2 * Real.pi / 9 < fiveTwoTet.angle₃ := by
   rw [← zz_arg_eq_angle₃]; exact two_pi_div_nine_lt_zz_arg
 
+/-! ## §9 — The other two angles, and hence the minimum
+
+The chord bound wants the SMALLEST angle to exceed `2π/9`.  §8 gives that for
+`angle₃`; the other two clear it with room, and by a cheaper route — both exceed
+`π/4`, and `π/4 > 2π/9` because `1/4 > 2/9`.  So no ordering of the three needs
+proving. -/
+
+open Real Complex in
+theorem fiveTwoShape_re_pos : 0 < fiveTwoShape.re := by
+  rw [fiveTwoShape_re]; have := realRoot_lt_one; linarith
+
+open Real Complex in
+/-- `Im y₁ > Re y₁` — reduced, this is `2t² + 4 > 0`, unconditional. -/
+theorem fiveTwoShape_im_gt_re : fiveTwoShape.re < fiveTwoShape.im := by
+  have hd := disc_pos'
+  have hsq : Real.sqrt (3 * realRoot ^ 2 - 4 * realRoot + 8) ^ 2
+      = 3 * realRoot ^ 2 - 4 * realRoot + 8 := Real.sq_sqrt hd.le
+  have hre := fiveTwoShape_re_pos
+  rw [fiveTwoShape_re, fiveTwoShape_im] at *
+  refine lt_of_pow_lt_pow_left₀ 2 (by positivity) ?_
+  rw [div_pow, div_pow, hsq]
+  nlinarith [sq_nonneg realRoot]
+
+open Real Complex in
+/-- **`π/4 < angle₁`**, from `Im y₁ > Re y₁`. -/
+theorem pi_div_four_lt_angle₁ : π / 4 < fiveTwoTet.angle₁ := by
+  have hre := fiveTwoShape_re_pos
+  have h : |fiveTwoShape.arg| < π / 2 :=
+    Complex.abs_arg_lt_pi_div_two_iff.mpr (Or.inl hre)
+  rw [abs_lt] at h
+  have harg : fiveTwoShape.arg = Real.arctan (fiveTwoShape.im / fiveTwoShape.re) := by
+    rw [← Complex.tan_arg, Real.arctan_tan h.1 h.2]
+  have hgt : (1:ℝ) < fiveTwoShape.im / fiveTwoShape.re :=
+    (one_lt_div hre).mpr fiveTwoShape_im_gt_re
+  have : π / 4 < fiveTwoShape.arg := by
+    rw [harg, ← Real.arctan_one]; exact Real.arctan_lt_arctan hgt
+  simpa [fiveTwoTet, QOU.MathlibExt.IdealTetrahedron.angle₁,
+    QOU.Archimedean.tetAngle₁] using this
+
+open Real Complex in
+theorem angle₁_lt_pi_div_two : fiveTwoTet.angle₁ < π / 2 := by
+  have hre := fiveTwoShape_re_pos
+  have h : |fiveTwoShape.arg| < π / 2 :=
+    Complex.abs_arg_lt_pi_div_two_iff.mpr (Or.inl hre)
+  rw [abs_lt] at h
+  simpa [fiveTwoTet, QOU.MathlibExt.IdealTetrahedron.angle₁,
+    QOU.Archimedean.tetAngle₁] using h.2
+
+open Real Complex in
+/-- **`π/4 < angle₂`** — from the angle sum, `angle₁ < π/2` and `angle₃ < π/4`. -/
+theorem pi_div_four_lt_angle₂ : π / 4 < fiveTwoTet.angle₂ := by
+  have hsum := fiveTwoTet.angle_sum
+  have h1 := angle₁_lt_pi_div_two
+  have h3 : fiveTwoTet.angle₃ < π / 4 := by
+    rw [← zz_arg_eq_angle₃]; exact zz_arg_lt_pi_div_four
+  linarith
+
+/-- **All three dihedral angles exceed `2π/9`** — so the chord bound's
+hypothesis holds for the minimum, whichever it is. -/
+theorem all_angles_gt_two_pi_div_nine :
+    2 * Real.pi / 9 < fiveTwoTet.angle₁ ∧
+    2 * Real.pi / 9 < fiveTwoTet.angle₂ ∧
+    2 * Real.pi / 9 < fiveTwoTet.angle₃ := by
+  have hpi := Real.pi_pos
+  refine ⟨?_, ?_, two_pi_div_nine_lt_angle₃⟩
+  · have := pi_div_four_lt_angle₁; linarith
+  · have := pi_div_four_lt_angle₂; linarith
+
 end QOU.Knot.FiveTwoNinthPower
