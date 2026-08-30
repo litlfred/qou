@@ -221,14 +221,13 @@ def main() -> int:
         print("Pin this integer relation in prop:em-coupling-bring-zero-mode")
         print("as the explicit B_3 class identification for the α/(4π) term.")
 
-    builder.add_assertion(
-        "pslq_executed_at_maxcoeff_50",
-        computed=int(relation is not None),
-        expected=int(relation is not None),  # tautological; the asset is the verdict
-        tolerance=0,
-        source="PSLQ search on {α/(4π), Cl_3(Bring-symmetric), "
-               "S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50.",
-    )
+    # DEMOTED (bean qou-3e5m): this compared 'pslq_executed_at_maxcoeff_50' to itself and
+    # reported `passed` unconditionally. A count of what a run found is
+    # DATA, not a check, and `add_assertion` has no way to say
+    # "is nonzero" -- which is plausibly why it was written this way.
+    # The assertion's `source` prose is kept alongside the value.
+    builder.add_data('pslq_executed_at_maxcoeff_50', {'value': int(relation is not None), 'source': 'PSLQ search on {α/(4π), Cl_3(Bring-symmetric), S_3(Bring-symmetric), ζ(3)} basis at maxcoeff ≤ 50.'})
+
     builder.save()
     return 0
 
