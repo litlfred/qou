@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T10:27:29Z
+updated_at: 2026-08-30T04:56:26Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2434,3 +2434,53 @@ constants PROTON_NF/NEUTRON_NF are build_nucleon_nf; the fork-pricing probe
 reads _PROTON_G0/_G1. Not filed as its own bean yet.
 ## 2026-08-29 — workflow: ALL 5 Q_beta/c3 lanes converge on this bean as the blocker
 Adversarially-verified (audit 2026-08-29-convention-d-qbeta-front). Key results: (1) proved-lean STRUCTURAL VERDICT (both lenses survive): the C ladder does NOT survive under D; z_D IS the two-row/TL trace (y_(1^3)=0 IFF z=z_D; qou-06wh/PR#5925 proves roots {q,z_D}, net excluded); C->D not a z-swap. Next brick = owner-call qou-99qc (a counit eps that DESCENDS to TL_inf AND reduces to the mass-channel eps; current net(e) != 0 on J_(1^3)). (2) c2 under D is OPEN, NOT -1 and NOT -9.299: the C-frame expression 1-u^2 is z-free (docstring, symbolic-exact) but whether the D-REBUILT N=2 factor = 1-u^2 is OPEN; -9.299 is a CODATA data-inversion (Q_exp/Q_N1^D-1)/u^2, scope-(a) non-structural. (3) -974 cost framing corrected: it is a 1/u^3 amplifier; D phase residual 0.895x (better than C) -- 'measures the amplifier, not the physics'. Mass three-row forcing is COMPATIBLE with a genuine D ladder (must factor through TL, co-located with mass channel).
+
+## 2026-08-30 — a LEAD on where the D-frame re-derivation should start (NOT a finding)
+
+Stating this as a lead because I can measure the identity but cannot yet
+separate the two readings of it, and the difference is the whole content.
+
+### The identity, exact over Q(q)
+
+The ladder's Hoefsmit constant b = sqrt(q^4+q^2+1)/(q^2+1) satisfies
+
+    b^2 = [3]_q * z_D^2 / q^4          EXACT (sympy, difference simplifies to 0)
+
+and the convention-C analogue does NOT hold ([3]_q z_C^2/q^4 leaves a
+q^5(q+1)^2 denominator). Equivalently: b's denominator is (q^2+1), which is
+convention D's denominator, and b contains no (q+1) and no sqrt(q) — the two
+things convention C is built from.
+
+If that is structural it is a real prune: the ladder's RUNGS are already
+D-natural (b appears in every rung as b^2 h^4, 2b^3 h^6, b^8 h^8, ...) and
+the entire convention question localises to the PHASE alpha = (z-1)h/2,
+which is the only place z_C appears. That would make the published ladder
+convention-MIXED rather than convention-C, and would say the re-derivation
+has to re-derive one object, not five.
+
+### Why this is NOT yet a finding — the honest objection to my own lead
+
+The coefficient [3]_q/q^4 was chosen BY ME to make the identity come out.
+Any b can be written as (coefficient) * z^2 for a suitable coefficient; the
+question is whether THIS coefficient is natural or fitted, and I have not
+established that. Sharpened: the unique positive z solving b^2 = [3]_q z^2/q^4
+is exactly z_D — but I picked the numerator that makes it so.
+
+Independent reason for caution: b is a HOEFSMIT object (the H_3 seminormal
+rep), defined with no reference to any Markov parameter
+(qbeta_symbolic_chain_alpha_b.py calls it 'Hoefsmit b (closed form!)' and
+derives it from the representation, not from z). So the identity relates two
+INDEPENDENTLY defined objects, which is what makes it interesting — and also
+what makes a shared cyclotomic factor (q^2+1) a plausible coincidence, since
+(q^2+1) is not rare in H_3.
+
+### The test that would separate the two readings
+
+Does it GENERALISE? If b is genuinely D-natural the analogous relation should
+hold between the n=4 Hoefsmit constant and the n=4 convention-D parameter; if
+it is a shared cyclotomic factor at n=3 it will break. This is the
+da-arity-conflation discipline applied to my own lead: a relation at one
+instance says nothing about the family, and I have exactly one instance.
+
+Not run yet — 'the n=4 Hoefsmit b' needs defining before it can be tested,
+and that definition is itself the work. Nothing wired; nothing claimed.
