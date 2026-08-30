@@ -514,9 +514,34 @@ recorded in this file, in beans `qou-jlam` / `qou-m3xr`, and in three other docs
 though it were an infrastructure fact.
 
 Their sibling `skew_le_straight` is stated here too but is no longer cited — it is proved
-above, unconditionally. `branching_two_one` remains a sibling of the canonical
-`QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK correspondence (open P1–P5
-program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). -/
+above, unconditionally.
+
+**`branching_two_one` is probably not RSK-blocked either (2026-08-30) — do not assume the
+P1–P5 program is the only route.**  This text listed it as "discharged by the RSK
+correspondence (open P1–P5 program
+`docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`)", which is the same
+framing that turned out to be wrong for its former companion.  The differential-poset route
+reaches it too, by induction on `k`:
+
+    G(μ, k) := Σ_{|λ|=k} f^λ · f^{λ/μ},   claim  G(μ, k) = (k!/|μ|!) · f^μ
+
+which at `μ = (2,1)` (`f^μ = 2`, `|μ|! = 6`) is `3 · Σ = k!` verbatim.  The step is
+
+    G(μ, k+1) = Σ_λ f^λ Σ_{ν ⋖ λ, ν ⊇ μ} f^{ν/μ}      (skew branching)
+              = Σ_ν f^{ν/μ} Σ_{λ ⋗ ν} f^λ              (transpose, as `pairTerm` does)
+              = (k+1) · G(μ, k)                        (`QOU.Mathlib.upSum_eq`)
+
+with base `G(μ, |μ|) = f^μ`.  Two of the three inputs are in hand: `upSum_eq` is proved
+sorry-free, and the transposition is the `Finset.sum_comm` manoeuvre already used for it.
+The **one open input is the skew branching rule** — remove the largest entry of a skew SYT —
+the direct analogue of the proved `QOU.Mathlib.numStandardYoungTableaux_branching`.
+
+Checked exactly for `k = 3..11` in
+[`computations/combinatorics/branching_two_one_route_probe.py`](../../../../../computations/combinatorics/branching_two_one_route_probe.py).
+**That probe confirms the route's arithmetic, not its open input**: it computes `f^{λ/μ}` *by*
+the skew branching recursion, so it assumes that rule rather than verifying it.  So this is a
+credible route with one real obligation left, **not** a proof — `branching_two_one` stays
+open, and no instance of the class exists. -/
 
 class RSKIdentitiesContext where
   branching_two_one : ∀ (k : ℕ), 3 ≤ k → 3 * (∑ p : Nat.Partition k, dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k
