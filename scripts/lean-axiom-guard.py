@@ -560,6 +560,21 @@ QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_
 # (the computed Bloch-Wigner sum). Before it they were unrelated. The compatibility
 # between them is an EXPLICIT hypothesis argument, deliberately not a class field.
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
+#
+# MostowRigidity was UNPINNED until 2026-08-30 despite carrying the corpus's
+# manifold-volume instances. Pinned now because figureEight was exactified
+# (volume := VOL_4_1, no longer a truncated decimal) and its three consumers moved from
+# `norm_num` on literals to real proofs: volume_nonneg and the unknot comparison from
+# Cl_2_pi_div_three_pos, the 5_2 comparison from the certified bracket
+# abs_Cl_2_pi_div_three_sub_le. Those are exactly the proofs a regression would silently
+# revert to decimals.
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.figureEight | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.volumeInvariant | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.volumeInvariant_nonneg | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.unknot_volume_lt_figureEight_volume | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.figureEight_volume_lt_knot5_2_volume | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.mass_rigidity_of_mostow | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.mass_eigenvalue_isolated | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_volume_eq_triangulation_volume | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
 #
