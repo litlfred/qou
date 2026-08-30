@@ -50,13 +50,17 @@ variable {R : Type*} [Field R]
     rational formula is `0/0` at `q = 1` (Lean division-by-zero
     convention returns 0, but the correct limit is `k`). The
     `q = 1` guard yields `[k]_1 = k` as expected. -/
-private noncomputable abbrev qInt [DecidableEq R] (q : R) (k : ℕ) : R :=
+-- Named `qIntBal`, not bare `qInt` (bean `qou-qint`): the bare name was
+-- GEOMETRIC in one module of this namespace and BALANCED here, so reading a
+-- call site did not tell you which object you had. The convention now lives
+-- in the name.
+private noncomputable abbrev qIntBal [DecidableEq R] (q : R) (k : ℕ) : R :=
   QOU.QInteger.qIntBalCl q k
 
 /-- q-factorial `[k]_q! = [1]_q · [2]_q · ⋯ · [k]_q`. -/
 noncomputable def qFact [DecidableEq R] (q : R) : ℕ → R
   | 0 => 1
-  | (k+1) => qInt q (k+1) * qFact q k
+  | (k+1) => qIntBal q (k+1) * qFact q k
 
 /-! ## q-dimensions of the three H_3 Wedderburn blocks
 
