@@ -1036,3 +1036,80 @@ and `q0_muon_population_partition.py:49` handling C. Those are not fixed here.
 `sp.Rational(11099785955573347, 10000000000000000)`. A decimal-literal scan is
 blind to it, and it is the only *operative* A-vintage value in that file while
 both decimal occurrences are dead. There may be more of these.
+
+
+## 2026-08-30 — ALL FOUR BATCHES IN. 169 triaged, and the migration is mostly NOT one
+
+    CROSS-ANCHOR (hands off)   76   45%
+    UNCLEAR                    44   26%
+    MUON-INTENT                39   23%
+    PROTON-INTENT              10    6%
+                              ----
+                              169
+
+**Only 10 of 169 are proton-intent** — the verdict a naive "A is superseded,
+move it to the current pin" sweep would have applied to all 189. It would have
+been wrong 94% of the time.
+
+**76 hold pin A as the muon arm of a deliberate two-anchor comparison** —
+`Q = {"muon": …, "proton": …}`, `dq = Q_PROTON - Q_MUON`, per-anchor result
+tables, straddle tests. Several say so in their own headers: *"its cross-anchor
+comparison is the point, so it must NOT be migrated."* A sweep would have
+silently deleted one arm of each experiment and left them still producing
+numbers.
+
+### The muon layer is squeezed from BOTH sides by single-vintage blindness
+
+Two tools, each hardcoding a different single muon vintage, in opposite
+directions:
+
+    gen_q0_anchor_manifest.py:26   MUON = "1.109978595557"      <- pin A only
+    qou_substrate/witness.py:278   ("muon", "1.10997859564")    <- pin C only
+
+Verified both. Consequences:
+
+- a producer at the **current** pin C matched neither prefix in the generator,
+  was omitted from the manifest, and defaulted to **proton**. (Fixed here.)
+- a producer at pin **A** matches neither prefix in the resolver, so
+  `_q0_anchor_from_payload` returns `None` and `resolve_q0_anchor` falls to its
+  documented default — **proton**. (NOT fixed: changing the substrate resolver
+  restamps witnesses corpus-wide and is not a unilateral call.)
+
+**Therefore: `q0Anchor: "proton"` on an UNDECLARED, A-carrying producer is a
+runtime default, not a measurement.** Three of four agents reached this
+independently and discarded those stamps as evidence. `witness.py:393` says so
+in its own comment. Anyone — including me — who has read such a stamp as intent
+was reading the absence of a manifest entry.
+
+The corpus visibly straddles because of it:
+`he-nu-sdp-saturation-obstruction.witness.json` carries `q0: "1.1099785955573347"`
+(pin A) next to `q0Anchor: "proton"`.
+
+### Evidence coverage is thin, and the agents said so
+
+40 of 42 producers in one batch have **no `q0Anchor`/`q0Value` at all** on their
+witness. Verdicts rest on source text and upstream-witness inheritance, not on
+recorded anchors. That is a limit of the evidence, not a hedge.
+
+### My worklist's false-positive classes, now complete
+
+1. **Detector prefixes** (13-14 chars) counted as pins — they are pattern
+   matchers. Verified.
+2. **Vintage conflation**: my 0.01 ppb tolerance absorbed A' (`…5955541805`),
+   which is 0.0028 ppb from A. At least 8 files across batches carry B/A', not A.
+3. **Garbled A**: `…5573347117485…` vs A's `…5573347198997…`, diverging at
+   digit 18. Verified.
+4. **Dead assignments** and `.get("q0", A)` defaults that never fire because the
+   upstream supplies proton.
+5. **Comment-only** occurrences whose operative pin is something else.
+6. **Invisible to a decimal scan entirely**:
+   `qbeta_h4_route_a_gate_probe.py:171` holds A as
+   `sp.Rational(11099785955573347, 10**16)` — the only operative A-value there,
+   while both decimal occurrences are dead.
+
+### What the migration actually is
+
+Not 189 edits. It is **10 proton-intent** producers (mechanical), **39
+muon-intent** (safe only now that the generator recognises C), **44 unclear**
+needing a ruling — two of which say in their own comments that the intent
+question is open and cite this bean — and **76 that must not be touched at all**.
