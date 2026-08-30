@@ -61,10 +61,16 @@ the basis makes statable.
 > `Representation k (Perm (Fin n))`, and no file in it imports the Hecke algebra. Murphy's
 > basis is the `q`-analogue of that story over `H_n(q)`, and *that* is what does not exist.
 >
-> **Nor is the cluster a finished foundation to build on:** it carries **310 `sorry`s**
-> across those 21 files, concentrated in `SpechtStandardBasisCore` (107), `SpechtIrreducible`
-> (57) and `SpechtDominanceCore` (51). So the combinatorial inputs exist as *definitions and
-> partial theory*, not as a settled base.
+> **And the cluster IS a settled foundation — my first correction got this wrong too.** I
+> initially wrote that it *"carries 310 `sorry`s"*. It carries **zero**. All 310 hits were the
+> **word** `sorry` inside docstrings, in files that discuss sorry-discipline at length — the
+> largest offender, `SpechtStandardBasisCore`, has a whole table whose rows literally read
+> `**sorry-free**`. Stripping block and line comments before counting gives **0** across all 21
+> files, no code line ends in `sorry`, and `#print axioms` on `partitionDom_antisymm` and
+> `dom_of_intertwiner` returns `propext / Classical.choice / Quot.sound` with no `sorryAx`.
+>
+> That is a grep counting the wrong thing — the same failure class as the claim it was
+> correcting, made in the same edit. Recorded rather than quietly fixed, for the same reason.
 >
 > The cost of the original wording, had it stood: it tells the next agent to rebuild seventy
 > files that are already here. Recorded rather than silently patched, because the failure was
