@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T18:48:18Z
+updated_at: 2026-08-30T19:38:03Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3915,3 +3915,45 @@ correct result.
 ### Scope
 
 Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb.
+## Entry 10d — entries 10/10b/10c are now LEAN-PROVED (8 theorems, sorry-free)
+
+`content/quantum-observable-universe/lean/QOU/QBeta/N1FactorUniqueness.lean`.
+`lean`-direct exit 0; `#print axioms` clean on all 8; zero sorryAx.
+
+**No new mathematics.** The functional-equation argument is entry 10c's (PR
+#6310). I started the same derivation independently, found 10c on the intent
+pass ~35 min after it landed, and re-scoped from *derive* to *verify with a
+different instrument* per the converge-on-landing rule. 10c is cited, not
+restated.
+
+**The one that earns its keep:** entry 10 records that `sympy.simplify` returns a
+NON-ZERO residual for
+
+    (cos A + cos B)/2 - cos((A+B)/2)*cos((A-B)/2)
+
+and that the identity was therefore confirmed at 60 dps, one step from being
+read as a refutation. `barMidpoint_eq` proves it exactly (`Real.cos_add_cos`).
+A CAS non-simplification is not a refutation; a proof assistant settles which.
+
+| theorem | content |
+|---|---|
+| `barMidpoint_eq` | the identity sympy would not reduce |
+| `phase_forced` | `BarInvariant δ c K ↔ ∃k, c = δ/2 − kπ` (K ≠ 0) — an **iff** |
+| `const_free` | for ARBITRARY K, `cos(a−δ/2)·K` is bar-invariant — 10c's "K is FREE" as a proved negative |
+| `barMidpoint_barInvariant` | the arc's M sits in the forced phase |
+| `c_limit` | `δ = 0` gives the bare cosine (condition iii) |
+| `c_rule_is_vacuous` | under C, bar is `a ↦ −a` and cos is even — WHY C could use a bare cosine |
+| `uncentred_fails` | **CONTROL**: `c = 0` is bar-invariant only if `δ = 2kπ`, arbitrary δ, proved FROM `phase_forced` |
+| `uncentred_fails_of_pos_of_lt` | **CONTROL**: physical form, `0 < δ < 2π`, needs only `Real.pi_pos` |
+
+The controls exist because all eight compiled on the first attempt, which is
+exactly when a vacuous statement hides.
+
+**Unchanged:** the bar-midpoint RULE is still not derived (parsimony, not
+derivation); `const_free` proves the conditions do NOT select `K = cos(δ/2)`;
+no `c_k` proposed or wired; no D-frame Q_beta computable while rungs above
+`k = 2` are cal-anchored. Entry 9's blocker on TESTING against Q_beta stands.
+
+Mathlib note: `Real.pi_gt_three` is in `Mathlib.Analysis.Real.Pi.Bounds`, whose
+olean is absent from the restored cache. The π-free control is the better
+statement regardless — general in δ rather than one sample point.
