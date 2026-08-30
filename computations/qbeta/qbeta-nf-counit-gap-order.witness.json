@@ -1,0 +1,145 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T11:37:37.108653+00:00",
+  "commitSha": "43fe7446bb2a0bf3dd43fc8da8f589242cf6729a",
+  "assertions": [
+    {
+      "name": "gap_closed_form",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_vanishes_to_order_three",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_leading_coefficient_is_minus_quarter",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "the_two_eps_differ",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_has_no_t1_term",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_has_no_t2_term",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gap_first_appears_at_t3",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "reproduces_audit_ratio_1_00579",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-nf-counit-gap-order",
+  "scriptFile": "qbeta_nf_counit_gap_order_probe.py",
+  "scriptHash": "4c39202dee90",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nf_counit_gap_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nf_counit_gap_order_probe.py"
+  },
+  "description": "The single-wrap vs typed nucleon-NF counit gap is h^3(h^4+2h^3+2h^2+2h-1)/4, leading -h^3/4, so the two NFs agree through O(h^2) and the gap contributes nothing at order t^1 or t^2. It therefore cannot move the qou-pdix entry-6 branch-3 acceptance test, which pins at t^1 and predicts t^2. Separately: because the Frobenius counit is a canonical (basis-independent) map, two expansions of ONE element cannot give different eps, so the 1.00579 factor is NOT a 'basis-change' as labelled in the 2026-05-11 audit - the two NFs expand DIFFERENT ELEMENTS. That audit's own section 2 proves the net IS the counit, which is what makes the section 1 label a category error against it.",
+  "contentBlock": "prop:q-beta-spectral-bridge",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)"
+  },
+  "data": {
+    "assertions_passed": 8,
+    "assertions_total": 8,
+    "checks": [
+      {
+        "name": "gap_closed_form",
+        "pass": true,
+        "why": "eps_typed - eps_sw = h^3 (h^4+2h^3+2h^2+2h-1)/4"
+      },
+      {
+        "name": "gap_vanishes_to_order_three",
+        "pass": true,
+        "why": "lowest surviving power of h is 3: the two NFs agree through O(h^2)"
+      },
+      {
+        "name": "gap_leading_coefficient_is_minus_quarter",
+        "pass": true,
+        "why": "leading term is -h^3/4"
+      },
+      {
+        "name": "the_two_eps_differ",
+        "pass": true,
+        "why": "different polynomials => (eps canonical) => DIFFERENT ELEMENTS, not two bases for one element"
+      },
+      {
+        "name": "gap_has_no_t1_term",
+        "pass": true,
+        "why": "the NF gap contributes nothing at order t^1 — so it cannot move the entry-6 acceptance test"
+      },
+      {
+        "name": "gap_has_no_t2_term",
+        "pass": true,
+        "why": "the NF gap contributes nothing at order t^2 — so it cannot move the entry-6 acceptance test"
+      },
+      {
+        "name": "gap_first_appears_at_t3",
+        "pass": true,
+        "why": "first nonzero order in t is 3"
+      },
+      {
+        "name": "reproduces_audit_ratio_1_00579",
+        "pass": true,
+        "why": "matches docs/audits/2026-05-11-q-beta-residual-decomposition.md §1"
+      }
+    ],
+    "numeric_at_proton_pin": {
+      "q0_proton_pin": "1.10997858275138080759166909561",
+      "h_at_q0": "0.20906029879563931543084621313",
+      "eps_single_wrap": "-0.18720719452937832073",
+      "eps_typed": "-0.18829060147138277044",
+      "ratio_typed_over_single_wrap": "1.0057872078299556552",
+      "relative_gap": "0.0057872078299556551719",
+      "gap_closed_form": "h**3*(h**4 + 2*h**3 + 2*h**2 + 2*h - 1)/4"
+    },
+    "verdict": "The NF ambiguity is O(h^3) = O(t^3) and does NOT gate the entry-6 acceptance test. The bean's magnitude argument (0.579% vs a 0.160% target) is untouched and still correct for the ABSOLUTE target; a magnitude at q0 and an order in the expansion are different claims."
+  }
+}
