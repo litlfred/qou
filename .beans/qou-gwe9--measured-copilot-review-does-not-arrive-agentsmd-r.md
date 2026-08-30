@@ -1,11 +1,11 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: completed
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:34:37Z
+updated_at: 2026-08-30T07:54:56Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -135,32 +135,48 @@ both say three. Corrected -- that heading is the line a skimming agent
 reads.
 
 
-## 2026-08-30 — CONTRADICTED. Copilot DID review, on PR #6108.
 
-This bean records n=5 requests with zero Copilot reviews and `get_check_runs` returning
-total_count 0, and AGENTS.md's Phase-4 table cites it as "does not arrive". I quoted that
-in every merge gate this session.
+## REOPENED 2026-08-30 — Copilot reviews again; the rule was self-sealing
 
-On PR #6108 Copilot submitted a full review, unrequested: a "Pull request overview", a
-7/7 file-summary table, an explicit "Approval recommended", and ONE inline review comment
-at scripts/lean-axiom-guard.py:154 -- which was CORRECT and which I acted on. It caught a
-wrong claim ("the namespace never existed") that I had already corrected in the bean and
-the commit message but left standing in the registry comment: the contamination-spread
-failure, caught by a reviewer this bean says does not exist.
+Write-up: `docs/audits/2026-08-30-copilot-review-works-again.md`.
 
-So the finding needs re-scoping, not deletion. What is measured now:
-  - n=5 explicit `request_copilot_review` calls -> 0 reviews (the original measurement,
-    unchanged and still real)
-  - 1 unrequested review, arriving ~23 min after the last push to #6108, with 0 check runs
-    ever enqueued (get_status total_count stayed 0 throughout)
+**Measured first-hand today, two repos:**
+| PR | requested | review | latency |
+|---|---|---|---|
+| qou#6122 | 07:24Z | **07:27:39Z** | ~3 min |
+| folio-assistant#153 | 07:48Z | **07:51:52Z** | ~4 min |
 
-That is consistent with Copilot reviewing on its own trigger rather than on
-`request_copilot_review`, which would make the ORIGINAL measurement correct about the API
-and wrong about the outcome. Not established -- n=1 on the arrival side. What it does
-settle: **"Copilot never arrives" is too strong to keep asserting in a merge gate.** State
-"do not WAIT on Copilot" (still right -- it is unpredictable and there is no check run to
-poll) rather than "it does not come".
+Both `copilot-pull-request-reviewer[bot]`, both COMMENTED with line-level
+findings. 5 of 6 findings were real defects; 4 were mine. The second row is the
+important one — a DIFFERENT REPO, so this is not a qou-specific setting.
 
-Do not update AGENTS.md off this single observation; it needs a second instance. Recorded
-here so the next agent who sees a Copilot review is not confused by the corpus telling
-them it cannot happen.
+**This bean was not wrong.** It recorded n=2 controlled, called its five
+background PRs weak evidence, and said outright it did NOT prove org-level
+disablement. The later strengthening (5 requests + `get_check_runs
+total_count: 0` mechanism + #5532 + ~12 background PRs) was also sound. And it
+was not merely slow: **#5495, this bean's own controlled case, still shows zero
+reviews eight days on.** The behaviour changed between 2026-08-27 and 08-30.
+
+**THE DEFECT IS DOWNSTREAM.** AGENTS.md rule 10 turned the observation into an
+instruction: *"that wait can only expire, so skip it and record why (citing
+qou-gwe9)"*. That instruction PREVENTS THE OBSERVATION THAT WOULD FALSIFY IT —
+an agent who never waits never sees a review arrive. Self-sealing.
+
+**Measured cost this session:** I merged #6068 at 06:59Z having requested
+Copilot at ~06:57Z, ~2 min earlier, because the rule said not to wait. #6068
+shows zero reviews — not because none was coming, but because I merged inside
+the latency window. Every finding Copilot later made on #6122 applied to code
+that also shipped in #6068.
+
+**Generalises:** the corpus has many correctly-scoped measurements that became
+standing facts (the 4.6e6 slope, ~840 muon witnesses, the 39/73/58 % figures).
+This is that class plus a turn of the screw — the stale fact is wired into an
+instruction that suppresses re-measurement. Test for any such rule: *if this
+became false, what would notice?* If the answer is "nothing, the rule says
+don't look", it needs an expiry or a cheap periodic probe.
+
+**Still to do (NOT done here):** rewrite the Copilot row in AGENTS.md rule 10
+and prepare-merge-auto Phase 1b from "does not arrive" to "arrives in ~3-4
+min; wait for it". Left out of the audit deliberately — it belongs with a
+revisit of the 15-minute poll duration, and this file is the measurement that
+justifies it.
