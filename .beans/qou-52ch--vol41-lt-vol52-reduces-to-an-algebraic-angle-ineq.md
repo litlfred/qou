@@ -293,3 +293,64 @@ standard rather than missing.
 straight into deriving a Mathlib lemma that the problem does not require** —
 and because I only looked for this route after the sign error forced me to
 re-derive the cubic by hand. Checking a wrong answer found a better question.
+
+## 2026-08-30 — CORRECTION: the `z⁹` route does NOT close on `2/5`, and the
+## mod-cubic reduction gives the real answer
+
+The entry above says *"the `z⁹` route closes on `2/5 < realRoot` ALONE."*
+**Wrong.** It came from evaluating `Im(z⁹)` along `z(t) = 1 − 1/y(t)` at
+`t = 2/5`, and `|y₁|² = 1/t` — the identity that makes that parametrisation
+right — **holds only AT the root**, because it *is* the cubic in disguise
+(`t·(t²−2t+3) = 1`). Away from the root, `z(t)` is not the shape of anything.
+
+Same error shape as interval-evaluating `(Re, Im)` as independent variables,
+one level down: **evaluating along a parametrisation that is not constrained
+the way the actual object is.** Second instance on this item.
+
+### Done correctly: reduce modulo the cubic
+
+With `|y₁|² = 1/t` (valid at the root, i.e. exactly where we work):
+
+    Re(z) = (t² − 2t + 2)/2          Im(z) = t·√(3t² − 4t + 8)/2
+
+`Im(z⁹) = Im(z)·Q(Re², Im²)` with `Q(A,B) = 9A⁴ − 84A³B + 126A²B² − 36AB³ + B⁴`,
+and `Re²`, `Im²` are polynomial in `t`. So `Im(z⁹) > 0` is a degree-15
+polynomial condition — which, **reduced modulo the cubic, collapses to**
+
+    Q(t) ≡ −3t² + 6t − 2
+
+Exact at the root: both the degree-15 form and the quadratic give
+`0.025846128265761922117`.
+
+### The three conditions, and two of them are FREE
+
+| condition | reduced mod cubic | needs |
+|---|---|---|
+| `Im(z) < Re(z)` (arg < π/4) | `−2t² + 2t = −2t(t−1)` | `0 < t < 1` — **`realRoot_pos` + `realRoot_lt_one`, already proved** |
+| `√3·Im(z) > Re(z)` (arg > π/6) | `8t² − 8t + 4 = 8(t−½)² + 2` | **nothing — unconditional** |
+| `Im(z⁹) > 0` | `−3t² + 6t − 2` | `t > (3−√3)/3 = 0.4226497` |
+
+So the whole angle condition rests on **one** inequality, and the existing
+`realRoot_gt : 2/5 < realRoot` fails it (`Q_red(2/5) = −0.08`).
+
+### The bracket that is actually needed
+
+    t > 2/5     g = -0.056        Q_red = -0.080   BAD
+    t > 17/40   g = -0.0094844    Q_red = +0.0081  usable, tight
+    t > 3/7     g = -0.0029155    Q_red = +0.0204  ← use this
+    t > 43/100  g = -0.000293     Q_red = +0.0253  usable, g very tight
+
+`3/7` balances both margins. It is proved exactly as `realRoot_gt` is —
+`g(3/7) < 0` plus monotonicity — so this is a tighter constant in an existing
+proof, not a new technique. Rate the earlier "no refinement needed" claim as
+superseded: that was true for the *tan* route's ratio test and false for this one.
+
+### Revised remaining Lean
+
+1. `realRoot_gt' : 3/7 < realRoot` — same shape as `realRoot_gt`, tighter constant.
+2. `−3t² + 6t − 2 > 0` from (1) — `nlinarith`.
+3. The two free branch conditions — from `realRoot_pos` / `realRoot_lt_one` / nothing.
+4. `arg z > 2π/9` via `Complex.arg_pow_coe_angle` + `arg_nonneg_iff`.
+5. Chord, far point, conclusion — already done or one-liners.
+
+Step 4's `Real.Angle` bookkeeping remains the only fiddly part.

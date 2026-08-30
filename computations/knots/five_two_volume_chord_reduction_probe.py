@@ -124,67 +124,71 @@ def bracket_requirement() -> bool:
 
 
 def ninth_power_route() -> bool:
-    """The angle condition `a_min > 2*pi/9` as a POLYNOMIAL condition on z^9.
+    """`a_min > 2*pi/9` as a POLYNOMIAL condition -- and the mod-cubic reduction.
 
-    `2*pi/9` is exactly one ninth of a full turn, so for `z` whose argument is
-    known to lie in a window narrow enough to fix the branch,
+    `2*pi/9` is exactly one ninth of a full turn, so with the branch pinned,
 
         arg z > 2*pi/9   <=>   9*arg z > 2*pi   <=>   Im(z^9) > 0
 
-    because `arg(z^9) = 9*arg z (mod 2*pi)` and a positive imaginary part is
-    exactly `arg in (0, pi)`.  The branch window used here is `arg z in
-    (pi/6, pi/4)`, i.e. `Im < Re` and `sqrt3*Im > Re` -- both algebraic -- which
-    puts `9*arg z` in `(3pi/2, 9pi/4)`, inside `(pi, 3pi)`.
+    since `arg(z^9) = 9*arg z (mod 2*pi)` and positive imaginary part is exactly
+    `arg in (0, pi)`.  Branch window: `arg z in (pi/6, pi/4)`.
 
-    WHY THIS MATTERS.  It replaces the tan route entirely:
+    THE REDUCTION.  `|y1|^2 = t^2-2t+3`, and the cubic `t^3-2t^2+3t-1 = 0` gives
+    `t*(t^2-2t+3) = 1`, so `|y1|^2 = 1/t` and `1/y1 = t*conj(y1)`.  Hence
 
-      tan route   needs `tan_three_mul` (NOT in Mathlib), the cubic
-                  `tau^3 + 3*sqrt3*tau^2 - 3*tau - sqrt3 = 0` for tan(2pi/9),
-                  and a rational bracket on tau.
-      z^9 route   needs `Complex.arg_pow_coe_angle` (IN Mathlib) and a
-                  polynomial sign check.
+        Re(z) = (t^2 - 2t + 2)/2        Im(z) = t*sqrt(3t^2 - 4t + 8)/2
 
-    And it is far more robust: the sign of `Im(z^9)` survives a box of halfwidth
-    1e-3 on both coordinates of `z`.
+    `Im(z^9) = Im(z) * Q(Re^2, Im^2)` with `Q(A,B) = 9A^4 - 84A^3 B + 126A^2 B^2
+    - 36A B^3 + B^4`, and `Re^2`, `Im^2` are polynomial in `t`, so `Im(z^9) > 0`
+    reduces to a degree-15 polynomial in `t` alone -- which, reduced modulo the
+    cubic, collapses to a QUADRATIC.
+
+    CORRECTION.  A first pass evaluated `Im(z^9)` along `z(t) = 1 - 1/y(t)` at
+    `t = 2/5` and concluded the route closes on the existing `realRoot_gt`
+    bracket alone.  **It does not.**  `|y1|^2 = 1/t` holds only AT the root, so
+    that parametrisation is not the object in the theorem away from it -- the
+    same error shape as interval-evaluating `(Re, Im)` as independent, one level
+    down.  Done correctly, `2/5` FAILS and the bracket must be tightened.
     """
-    y1 = five_two_shape()
-    z = (y1 - 1) / y1                      # arg z is the smallest dihedral angle
-    re, im = mp.re(z), mp.im(z)
-    z9 = z**9
+    tan_check = mp.mpf(0)  # placeholder to keep mpmath imported in view
+
+    def g(v):        return v**3 - 2*v**2 + 3*v - 1     # < 0  =>  v < realRoot
+    def q_red(v):    return -3*v**2 + 6*v - 2           # > 0  =>  Im(z^9) > 0
+    def im_lt_re(v): return -2*v**2 + 2*v               # > 0  =>  Im(z) < Re(z)
+    def s3im_gt(v):  return 8*v**2 - 8*v + 4            # > 0  =>  sqrt3*Im > Re
+
+    root = mp.findroot(g, mp.mpf("0.43"))
+    crit = (3 - mp.sqrt(3)) / 3
 
     print("\n" + "=" * 66)
     print("THE z^9 ROUTE — the angle condition without tan or arctan")
     print("=" * 66)
-    print("z = (y1-1)/y1 =", mp.nstr(z, 20))
-    print("arg z         =", mp.nstr(mp.arg(z), 20), "  2*pi/9 =", mp.nstr(2*mp.pi/9, 20))
+    print("Q(t) reduced mod the cubic  =  -3t^2 + 6t - 2      (degree 15 -> 2)")
+    print("realRoot            =", mp.nstr(root, 20))
+    print("critical (3-sqrt3)/3=", mp.nstr(crit, 20), "  margin",
+          mp.nstr(root - crit, 12))
 
-    branch_lo = mp.sqrt(3) * im > re       # arg z > pi/6
-    branch_hi = im < re                    # arg z < pi/4
-    print("\nbranch window (algebraic):")
-    print("  sqrt3*Im > Re  (arg > pi/6):", branch_lo)
-    print("  Im < Re        (arg < pi/4):", branch_hi)
+    print("\nbranch conditions, reduced mod the cubic — both FREE:")
+    print("  Im < Re      : -2t^2+2t = -2t(t-1) > 0 on (0,1)"
+          "   <- realRoot_pos + realRoot_lt_one")
+    print("  sqrt3*Im > Re:  8t^2-8t+4 = 8(t-1/2)^2+2 > 0"
+          "        <- unconditional")
 
-    print("\npolynomial condition:")
-    print("  Im(z^9) =", mp.nstr(mp.im(z9), 20), "   > 0 ?", mp.im(z9) > 0)
-    print("  check: arg(z^9) =", mp.nstr(mp.arg(z9), 15),
-          " == 9*arg z - 2*pi =", mp.nstr(9 * mp.arg(z) - 2 * mp.pi, 15))
+    print("\nlower bracket needed (g<0 makes it provable, Q_red>0 makes it work):")
+    ok_any = False
+    for nm, v in [("2/5", mp.mpf(2)/5), ("17/40", mp.mpf(17)/40),
+                  ("3/7", mp.mpf(3)/7), ("43/100", mp.mpf(43)/100)]:
+        gv, qv = g(v), q_red(v)
+        good = gv < 0 and qv > 0
+        ok_any |= good and nm == "3/7"
+        print(f"  t > {nm:7s} g={mp.nstr(gv,10):>15} {'ok ' if gv<0 else 'BAD'}"
+              f"   Q_red={mp.nstr(qv,10):>15} {'ok ' if qv>0 else 'BAD'}"
+              f"  {'USABLE' if good else '-'}")
+    print("\n  -> 2/5 is NOT sufficient; the existing bracket must be tightened.")
+    print("     3/7 works, and is proved the same way realRoot_gt is.")
 
-    # the EXISTING realRoot bracket, propagated
-    def z_of_t(t):
-        yy = (2 - t) / 2 + 1j * mp.sqrt(3 * t**2 - 4 * t + 8) / 2
-        return 1 - 1 / yy
-
-    lo = mp.mpf(2) / 5                     # QOU.Knot.FiveTwoShapeBounds.realRoot_gt
-    zlo = z_of_t(lo)
-    at_lo = mp.im(zlo**9)
-    print("\nEXISTING bracket  realRoot_gt : 2/5 < t   (nothing else needed)")
-    print("  at t = 2/5:  Im(z^9) =", mp.nstr(at_lo, 15), "  > 0 ?", at_lo > 0)
-    print("  branch window there:", mp.sqrt(3) * mp.im(zlo) > mp.re(zlo),
-          mp.im(zlo) < mp.re(zlo))
-
-    ok = bool(branch_lo and branch_hi and mp.im(z9) > 0 and at_lo > 0)
-    print("\n  -> the z^9 route closes on `2/5 < realRoot` ALONE.")
-    return ok
+    at_root = q_red(root)
+    return bool(ok_any and at_root > 0 and im_lt_re(root) > 0 and s3im_gt(root) > 0)
 
 
 def main() -> int:
