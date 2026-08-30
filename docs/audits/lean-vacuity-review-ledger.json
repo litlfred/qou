@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:30Z",
+  "updated_at": "2026-08-30T07:02:31Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -4348,6 +4348,156 @@
       "evidence": "Genuine algebra over a generic `[Field R]`, no anchor and no transcribed datum: `(q^2+1)z^2 - (2q^3+q)z + q^4 = 0 <-> z = q or (q^2+1)z = q^3`, routed through a separately-proved factorisation (`wtNumer_factor`, stated over any `CommRing`) plus `mul_eq_zero`. The two roots are the two admissible Markov parameters, which is the substantive claim; `Markov` names the parameter, not a borrowed theorem.",
       "reviewed_at": "2026-08-30T04:38:02Z",
       "file_sha": "e187357a9985",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::ggm_sandwich_qzero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 94,
+      "verdict": "legit",
+      "evidence": "A real matrix computation cross-checked against an independently-transcribed value, which is the strong end of the decide-over-hand-entered-data gradient. `sandwich` is the eq-(59a) product `A*W0*B*W0^T*C` built from four transcribed matrices; `Splus0 = ![![1,3],![0,1]]` is transcribed separately; the theorem asserts they agree entrywise up to the factor -2, which is a claim that could fail and is not visible by inspection. Conditional on the GGM transcription, as the sibling `ChiralityGradedCount` says out loud -- that is scope, not vacuity.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "c781903a6387",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/YekutieliTrefoilDiscretization.lean::surface2Form_trefoil::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 94,
+      "verdict": "legit",
+      "evidence": "Genuine, and over a generic ring rather than a specialisation. `surface2Form V A = sum_ij (V i j) . bracket (A i) (A j)` evaluated at the transcribed trefoil Seifert form `[[-1,1],[0,-1]]` collapses to `bracket (A 0) (A 1)` because the skew part `V_01 - V_10 = 1`, routed through a separately-stated `surface2Form_eq_skew`. The diagonal genuinely drops out (`bracket a a = 0`), so the computation does work; the result is not the definition restated.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "9280968dccef",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_eigenvalue_swap::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 226,
+      "verdict": "genuine",
+      "evidence": "The type is the class field with a minus sign on both sides, and the docstring says something else. `substrate_inverted : forall p, dualSubstrate.field p = (gaugeGroup.field p)^-1` is the hypothesis; after `rw [ld.substrate_inverted]` the goal is `-(g.field p)^-1 = -(g.field p)^-1`, closed by rfl. So the declaration is `congrArg Neg.neg` applied to an assumption. Meanwhile the docstring asserts a Langlands-duality statement about EIGENVALUES -- 'the symmetric eigenvalue q of G_q becomes the antisymmetric eigenvalue -q^-1 of G^_q' -- and no eigenvalue, no symmetric/antisymmetric channel, and no representation appears anywhere in the type. Contrast the sibling `langlands_dual_pos` twelve lines above, which does real work (`inv_pos.mpr` against `field_pos`); the machinery for an honest statement is right there.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "da7bec095d7f",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_involution_involutive::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 522,
+      "verdict": "advisory",
+      "evidence": "Real content, but the content is `inv_inv`. After rewriting by the class field the goal is `((g.field p)^-1)^-1 = g.field p`, discharged by one Mathlib lemma. Advisory rather than genuine because the docstring is HONEST about exactly this -- it states the claim as `(q^-1)^-1 = q` and promises nothing more, so a reader is not misled about what 'the Langlands involution is an involution' amounts to here. The name is grander than the theorem; the docstring is not.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "da7bec095d7f",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean::markov_add::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 92,
+      "verdict": "legit",
+      "evidence": "A genuine derivation, not a re-assertion: additivity is obtained FROM the Wedderburn presentation (`D.markov_eq`) by `map_add`, `Matrix.trace_add` and `Finset.sum_add_distrib`, rather than carried as a field of the data structure. The docstring's own framing is the right one -- 'a genuine trace functional, not an arbitrary map (consequence of markov_eq + linearity)'.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "24186fe1cf23",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/StandardModel/ChiralFermionBraidWords.lean::leptonNumber_not_markov_invariant::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 211,
+      "verdict": "legit",
+      "evidence": "A stated NEGATIVE with computed inputs, which is the honest shape for a refutation. `leptonNumber b := Int.sign (writhe b)` and `borromean := gluonUnit ++ gluonUnit ++ gluonUnit`, so both writhes are COMPUTED from the braid words rather than transcribed; Markov II stabilisation `b -> b ++ [3]` moves the value 0 -> 1, refuting the candidate against the corpus's own conservation axiom. `decide` is the right tool for a finite refutation.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "3ed14a0636c7",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/StandardModel/WritheLevelParity.lean::leptonNumber_collapses_at_minimal_level::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 371,
+      "verdict": "legit",
+      "evidence": "Fully general and input-free: for ARBITRARY `NF : BraidWord -> BraidWord` and `f : BraidWord -> Z`, the four hypotheses (`NF [1] = []`, `NF [-1] = []`, `f (NF [1]) = 1`, `f (NF [-1]) = -1`) are contradictory, because they force `1 = -1` at the same argument. No knot, no anchor, no transcription. An elementary impossibility proof is still an impossibility proof, and this one is correctly scoped -- it rules out the whole class of `L` candidates that vanish on the minimal words, not one instance.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "f61dd21dc232",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_fst::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 104,
+      "verdict": "legit",
+      "evidence": "Checked the suspicion and it does not hold: the name claims `heckeStep = transferMatrix` while the statement mentions no `heckeStep`, but the missing half is `hecke_linear_mul` five lines above, which derives `(c.sigma+d)(a.sigma+b) = (acq+ad+bc).sigma + (ac+bd)` FROM the Hecke relation with an explicit `linear_combination (a*c) * hsigma` certificate. This theorem then verifies that row 0 of `T(c,d)` reproduces the first of those two coefficients. The pair is the proof. The file also guards against a vacuously-true conditional (`heckeRelation_satisfiable`), which is rarer in this corpus than it should be.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "128411182fc4",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_snd::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 110,
+      "verdict": "legit",
+      "evidence": "The second component of the same identity; legit for the same reason as `_fst`. Row 1 of `T(c,d) = !![c*qq+d, c; c, d]` applied to `(a,b)` gives `a*c + b*d`, matching the second coefficient `hecke_linear_mul` derives from the Hecke relation.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "128411182fc4",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_dominant_pair_transpose_related::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 505,
+      "verdict": "genuine",
+      "evidence": "Every helium-4 claim is in a comment; the type is a fact about rectangles. The docstring opens '**THEOREM (bar-involution alignment).** For 4He, the dominant partition (4,4,4) AND its transpose (3,3,3,3) both appear in the top-5 most-negative min_eig list', and the Lean proves `conjugatePartition [4,4,4] = [3,3,3,3] /\\ conjugatePartition [3,3,3,3] = [4,4,4]` by `decide`. That is the transpose of a 3x4 rectangle -- the most degenerate case of conjugation -- and it holds whatever 4He, min_eig, PSD-ness or the bar-involution do. The three quantitative claims (top-5 membership, min_eig ~ -19.84 and ~ -15.5, 'simultaneously the most-non-PSD blocks') appear ONLY as `--` comments inside the statement, where nothing checks them. The declaration name asserts a physics finding; the type contains no physics. This is the `proof-claims-unencoded` shape reaching the borrowed-name detector through the name.",
+      "reviewed_at": "2026-08-30T04:41:20Z",
+      "file_sha": "4a57f12b7be9",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
