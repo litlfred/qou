@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T12:47:18Z
-updated_at: 2026-08-30T12:48:17Z
+updated_at: 2026-08-30T13:08:43Z
 ---
 
 ## What this is
@@ -139,3 +139,45 @@ now with the exact producer identified.
 
 `qou-brng`, `qou-bhzt`, `qou-82mc` (the convexity dichotomy — this supplies the
 mechanism for the superadditivity it demands), `qou-zy94`, `qou-edt7`.
+
+
+## Follow-on: the multiplicative face of the same constraint (same session)
+
+`QOU.Mass.ArchimedeanTraceBridge` landed on `main` after the `qou-brng` bean text
+above was written, and it **supersedes the "R2 mass-side is untouched" note**: it
+derives the self/mutual partition at the Markov-trace level. If the assembly
+amplitude is `(∏ Tᵢ)·I` — constituent self-traces times an **interaction factor**
+`I` — then binding `= −log I` (`binding_eq_bindingFreeEnergy`), so the additivity
+`SelfMutualPartition` assumed is a consequence of trace multiplicativity rather
+than an assumption. Its two remaining named inputs are that the amplitude *is* the
+Markov trace (`qou-301d`: Jones multiplicativity under connected sum is not in
+Mathlib) and the dressing `m = m_e·Vol·lw/ℏ_q²` (calibration + geometry).
+
+It leaves `I` unstructured, and there is one obvious way to structure it — give
+each pair its own factor and take a cluster's factor to be the product,
+`I(S) = ∏_{i<j∈S} I_ij`. That is exactly what §10a's Cauchy argument invites.
+
+`QOU/Mass/InteractionFactorNotPairwise.lean` (6 declarations, sorry-free,
+`lean`-direct exit 0, axioms `[propext, Classical.choice, Quot.sound]`) says the
+move is refuted:
+
+* `bindingFreeEnergy_mul` — `−log` turns the product into a **sum over bonds**;
+* `isPairwise_of_pairFactorised` — so a pair-factorised interaction is
+  `PairwiseCumulantVanishing.IsPairwise`;
+* `pairFactorised_b3_eq_zero` / `_b4_eq_zero` — hence `b₃ = b₄ = 0` identically;
+* `not_pairFactorised_of_b3_ne_zero` — and the measured `b₃ ≠ 0` refutes it;
+* `trivial_pairFactorised_binding_zero` — non-vacuity (the `I ≡ 1` independent
+  assembly does have zero binding at every order).
+
+**Why it needed saying separately from the additive version above.** The two
+statements look different enough that closing one does not visibly close the
+other. `bindingFreeEnergy` is *defined* through `Real.log`, so a product inside a
+logarithm reads as "the natural factorisation" rather than as "a bond sum in
+disguise". The entire content is that `log` moves it from one column to the other
+— and that is easy to miss precisely because §10a's own conclusion (the map is a
+logarithm) is what suggests the factorisation in the first place.
+
+So the constraint has both faces now: **additively**, a pair's crossing weight is
+not assembly-independent (`CrossingModelPairLocality`); **multiplicatively**, a
+cluster's interaction amplitude is not the product of its pairs'. A Brunnian
+carrier supplies both.
