@@ -181,6 +181,57 @@ def substantiveExternal (env : Environment) (self : Name) (e : Expr) : Array Nam
   e.getUsedConstants.filter fun c =>
     modOf env c != some self && !isPackaging c && !c.isInternal
 
+/-- How many DISTINCT local field projections the proof term reads.
+
+    Second candidate discriminator for the `valueOnlyProjects` false-positive
+    class, after `substantiveExternal` was measured and refuted above.  Its
+    motivation is AGENTS.md 3b-cond rule 5 itself, which states both the
+    degenerate form and its sanctioned repair:
+
+      degenerate  the class carries the block's own CONCLUSION as a field and
+                  the theorem projects it out  (`:= ctx.claim_foo`)
+      sanctioned  the class carries genuine sub-hypotheses and the theorem
+                  COMPOSES them ("carry the two directions of an iff as
+                  hypotheses, derive it by `Iff.intro`")
+
+    Composition needs at least two fields; reading a conclusion out needs
+    exactly one.  So the count is a computable shadow of the distinction, where
+    "does the field's type equal the conclusion" is not.
+
+    üõë MEASURED 2026-08-30 AND REFUTED, more sharply than `substantiveExternal`
+    above, on the same 297 theorems / 18 modules and the same 29 ledger
+    verdicts:
+
+        legit   (false alarm)  n=11   1 projection √ó 11        ‚Äî ALL of them
+        genuine (real defect)  n=18   1 √ó15, 2 √ó1, 5 √ó2
+
+    **Every single `legit` reads exactly one field, and so do 15 of the 18
+    `genuine`.** The premise ‚Äî that the sanctioned repair (compose two or more
+    hypotheses) would show up in the `legit` population ‚Äî is simply false here:
+    composition does not occur in it at all.  Best threshold 62 %, which is the
+    always-flag baseline again.
+
+    TAKEN TOGETHER WITH `substantiveExternal`, THIS IS THE USEFUL RESULT.  Two
+    independent structural proxies, both landing at exactly the baseline, and
+    the reason is now measured rather than inferred: on every structural axis
+    tried the two populations are IDENTICAL ‚Äî one local field projection, few
+    external constants ‚Äî and they differ only in what that one field MEANS
+    (a hypothesis of the claim, or the claim itself).
+
+    So `valueOnlyProjects`'s docstring is upgraded from caveat to finding:
+    *"what separates the two is whether the class carries the conclusion or its
+    inputs, and that is a reading, not a computation."*  Two attempts to make it
+    a computation have now failed, for the same measured reason.
+
+    The one candidate NOT yet excluded is the semantic question asked directly:
+    whether the projected field's instantiated type IS the conclusion.  Note it
+    is not simply `isDefEq fieldType conclusion` ‚Äî `q_hecke_eigenvalue` projects
+    `‚àÄ a b, a.sp = b.sp ‚Üí ‚Ä¶ ‚Üí a = b` and applies it, so the types differ while
+    the declaration is still degenerate.  Bean `qou-qf8t`.  Do NOT threshold
+    either counter here. -/
+def localProjCount (env : Environment) (self : Name) (v : Expr) : Nat :=
+  ((localConsts env self v).filter (isFieldProjection env)).toList.eraseDups.length
+
 /-- Is the proof term a reflexivity proof, after stripping lambdas? -/
 partial def valueIsRfl : Expr -> Bool
   | .lam _ _ b _  => valueIsRfl b
@@ -240,6 +291,7 @@ structure Row where
   isRfl        : Bool
   onlyProjects : Bool
   substExt     : Nat
+  projCount    : Nat
 
 /-- Analyse SEVERAL modules in ONE pass over the environment.
 
@@ -274,9 +326,12 @@ def analyzeModules (mods : List Name) : MetaM (Array (Name × Array Row)) := do
     let se := match ci.value? with
       | some v => (substantiveExternal env self v).size
       | none   => 0
+    let pc := match ci.value? with
+      | some v => localProjCount env self v
+      | none   => 0
     let row : Row := { decl := n, typeForeign := tf, typeLocal := tl,
                        valueForeign := vf, defeq := dq, isRfl := rf,
-                       onlyProjects := op, substExt := se }
+                       onlyProjects := op, substExt := se, projCount := pc }
     acc := acc.insert self ((acc.getD self #[]).push row)
   return mods.toArray.map fun m => (m, acc.getD m #[])
 
@@ -305,9 +360,12 @@ def analyzeModule (self : Name) : MetaM (Array Row) := do
     let se := match ci.value? with
       | some v => (substantiveExternal env self v).size
       | none   => 0
+    let pc := match ci.value? with
+      | some v => localProjCount env self v
+      | none   => 0
     rows := rows.push { decl := n, typeForeign := tf, typeLocal := tl,
                         valueForeign := vf, defeq := dq, isRfl := rf,
-                        onlyProjects := op, substExt := se }
+                        onlyProjects := op, substExt := se, projCount := pc }
   return rows
 
 def esc (s : String) : String := s.replace "\"" "\\\""
@@ -323,7 +381,8 @@ def render (self : Name) (rows : Array Row) : String :=
     "\"defeq_collapse\":" ++ (if r.defeq then "true" else "false") ++ "," ++
     "\"value_is_rfl\":" ++ (if r.isRfl then "true" else "false") ++ "," ++
     "\"value_only_projects\":" ++ (if r.onlyProjects then "true" else "false") ++ "," ++
-    "\"substantive_external\":" ++ toString r.substExt ++ "}"
+    "\"substantive_external\":" ++ toString r.substExt ++ "," ++
+    "\"local_proj_count\":" ++ toString r.projCount ++ "}"
   "{\"module\":\"" ++ esc self.toString ++ "\",\"decls\":[" ++
     String.intercalate "," items.toList ++ "]}"
 
