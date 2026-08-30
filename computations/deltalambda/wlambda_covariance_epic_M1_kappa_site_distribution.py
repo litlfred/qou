@@ -219,7 +219,10 @@ def main():
         "probe": "m1_kappa_site_distribution",
         "bean": ["qou-t6hc", "qou-k5r5"],
         "ns": ns,
-        "rows": [{k: (str(v) if isinstance(v, F) else nstr(v, 12))
+        # int stays int: routing `n` through nstr made it a STRING in the
+        # witness, which silently broke a downstream consumer's lookup.
+        "rows": [{k: (v if isinstance(v, int) else
+                      str(v) if isinstance(v, F) else nstr(v, 12))
                   for k, v in r.items()} for r in rows],
         "checks": checks,
         "passed": sum(1 for c in checks if c["pass"]),

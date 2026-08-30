@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T14:37:01Z
+updated_at: 2026-08-30T15:10:03Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -403,3 +403,66 @@ for the origin, so the `infl → π/2` scenario is not what is happening.
 **STILL OPEN.** qou-k5r5 OPEN. No bound on infl is proved and none can be from
 `diagLen` alone: κ is a property of the Plancherel up-down edge measure, not of
 Young diagrams.
+
+
+---
+
+## Leg A, 2026-08-30 (fourth) — infl settled at n = 800 by exact Plancherel sampling, after I got it wrong twice
+
+**THE UNLOCK.** The triple measure factorises: summing
+`P(λ,Λ,μ) = dim(λ)dim(μ)/((n+1)n!)` over λ and using the branching rule gives
+`P(Λ) = dim(Λ)²/(n+1)! = Plancherel(n+1)`. So
+
+> **Λ ~ Plancherel(n+1) by RSK, then TWO INDEPENDENT GNW hook walks**,
+
+and because the corner-pair probability is ∝ `dim(λ_x)dim(λ_y)`, the ω
+importance weight is exactly `(r−a)²(r+a)` — **no dimension is ever computed**.
+Uniform integer randomness only, `O(n√n)` per sample against enumerating
+`p(n+1)` partitions. Exact enumeration dies near n = 60; this reaches **n = 800**.
+
+**CONTROL:** reproduces the committed exact values at n = 24/40/48 to **0.52%**
+worst case, with seed spreads reported. Without that the large-n numbers would
+be unfalsifiable.
+
+**MEASURED** (30k samples × 3 seeds):
+
+| n | 100 | 200 | 400 | 800 |
+|---|---|---|---|---|
+| infl | 0.62299 | 0.70950 | 0.78647 | 0.84485 |
+| E[D(0)/λ₁] | 0.36968 | 0.36241 | 0.35416 | 0.34706 |
+
+infl rising, decelerating (increments per doubling 0.0865, 0.077, 0.0584);
+`E[D(0)/λ₁]` falling toward the VKLS `1/π = 0.31831`.
+
+**EXTRAPOLATED: infl → 1.028**, at **5.11σ**, with three independent seed refits
+at **1.025, 1.012, 1.050**. Against `π/2 = 1.5708`. `infl = 1` is exactly the
+uniform-κ case of `M1EdgeCalculus.kappa_uniform_dot` — the ω-chosen intervals
+drop at the diagram's own global rate, no faster. That is the benign outcome.
+
+**TWO ERRORS OF MINE, both in the extrapolation and both now gated.**
+
+1. **I reported `infl → 1.01` from a fit that was 1.17σ from meaningless.** The
+   estimator `I = (ac−b²)/(a−2b+c)` has a *second difference* in its denominator;
+   on the narrow grid (100, 200, 400) those points are nearly collinear, so the
+   denominator was `−0.0095` against a seed-propagated noise of `0.0082`. Two
+   runs whose infl agreed to **under 1%** gave **1.00** and **1.41**; perturbing
+   one point by a single noise unit moved the answer from 1.20 to 1.83. The 1.01
+   was right by accident.
+2. **My noise formula dropped a factor.** `var(a−2b+c) = σa² + 4σb² + σc²`; the
+   middle coefficient was unweighted, understating the noise.
+
+**What fixed it was LEVERAGE, not samples.** Adding n = 800 and fitting the top
+three points took the denominator from 1.17σ to 5.11σ. More samples at a narrow
+grid would not have: the second difference grows with grid width, the noise does
+not.
+
+**The check now applies the rule in both directions** — significance-test the
+denominator first, then report only the conclusion that test supports. On the
+narrow grid the same rule returns "undetermined" and refuses to quote a number.
+A third check requires the three independent seed refits to agree, which is the
+real guard; the point estimate alone was what misled.
+
+**STILL OPEN.** qou-k5r5 OPEN. This is an extrapolation from three points on a
+fitted form, not a limit. And it settles only the SAME-sign half: `S_opp` carried
+~44% of ω-weight and was saturating near 0.118 at n = 46, and nothing here
+touches it. That is now the only place the route can fail.
