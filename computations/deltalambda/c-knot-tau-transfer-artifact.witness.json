@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T19:10:08.215570+00:00",
-  "commitSha": "28c7286e1e7b04757a3bf5de6fe1792e057524f6",
+  "computedAt": "2026-08-30T07:17:15.994243+00:00",
+  "commitSha": "ae835e0863ad0325eccfb59d6308d111381eeb3c",
   "assertions": [
     {
       "name": "m_e_cancels_exactly",
@@ -40,7 +40,7 @@
   "computation": "c-knot-tau-transfer-artifact",
   "scriptFile": "c_knot_tau_transfer_artifact_probe.py",
   "scriptHash": "16c83a2c7989",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6dee82ece14bbc4bbbfdbf1049d3dda0ceba931c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,7 +51,15 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/c_knot_tau_transfer_artifact_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/c_knot_tau_transfer_artifact_probe.py"
   },
   "description": "τ-transfer of the parameter-free fibre rotational tier tower (μ₀ counit-derived) onto the m_e-scaled categorical master formula: the deuteron C_knot=5.853 is a pure q₀-geometry NORMALIZATION ARTIFACT (m_e cancels; counit 1/h dominates; dressing is a frame projection), NOT a missing many-body magnitude. Scope: deuteron only; A≥3 extensivity term is separate/open.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
