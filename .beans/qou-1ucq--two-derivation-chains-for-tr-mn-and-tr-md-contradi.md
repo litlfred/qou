@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T16:49:44Z
-updated_at: 2026-08-30T16:51:50Z
+updated_at: 2026-08-30T17:55:24Z
 ---
 
 Found 2026-08-30 while scoping the six documents of `qou-rm57`. This is a
@@ -93,3 +93,83 @@ not exercise (the n/D braid words, or the 3A-strand handling those two share).
 pins, values from one of two contradicting chains, and error bars understating
 the real spread by ~1e8. That is worse than the convention issue the existing
 banner describes, and the banner does not mention it.
+
+
+## ROOT CAUSE IDENTIFIED 2026-08-30 — the two chains trace DIFFERENT WORDS, and both narratives are invalid for the object the producer returns
+
+The bean asked which of the pair is right. The answer is that the question was
+malformed: they are not two computations of one object.
+
+### 1. Different braid words
+
+| chain | what its step says |
+|---|---|
+| `n-tr-M-q0` step 4 | *"Z=0, N=1, include_inter=False; produces a word with **5 crossings** on 3 strands"* |
+| `markov-trace-assembly-neutron` step 3 | *"the canonical neutron σ-word is **11 crossings**, {σ: 5, σ⁻¹: 4, averaged: 2}"* |
+
+Proton, for contrast: 6 crossings vs a 6-crossing word — **agreeing**, which is
+exactly why the proton pair agrees to 0.0 and n/D do not. The lever named in
+this bean pointed at the right place.
+
+### 2. `markov-trace-assembly-neutron` contradicts ITSELF
+
+Step 3 declares an **11**-crossing word. Steps 4 and 6 then compute the
+characters from `σ₁σ₁⁻¹σ₂σ₁σ₂⁻¹` — **n₊ = 3, n₋ = 2, five letters**:
+
+    chi^(3)     = q^{n_+ - n_-} = q^{3-2} = q
+    chi^(1,1,1) = (-q^{-1})^{n_+} · (-q)^{n_-}
+
+So the document announces one word and computes with another, one step apart.
+(That 5-letter word also contains `σ₁σ₁⁻¹`, which is the identity in B₃.)
+
+### 3. 🛑 Both narratives read a crossing number off an object that has none
+
+`atom_braid_word_3A` is the live producer, and its own docstring (PR #5765,
+2026-08-25) says:
+
+> **⚠ NAME IS A MISNOMER — this does NOT return a braid word.** Each triple
+> `(c, d, g)` denotes the HECKE ELEMENT `c·σ_g + d·1`, not a braid generator.
+> … there is **NO SINGLE LINK** behind it … So **NO TOPOLOGICAL quantity may be
+> read off it — not a volume, not a crossing number, not a genus.**
+
+Both chains derive every character from a crossing count. Measured, the live
+producer returns **11 typed triples for BOTH proton and neutron**, and
+`include_inter` changes nothing at A=1 (expected — one nucleon has no
+interfaces, so that parameter is not a defect).
+
+The live path does **not** use crossing counts: it runs
+`chi_lambda_of_word(sigmas, dim, word, n_gens)`, a matrix product in the
+seminormal representation — a linear functional on H_n, which is exactly what
+the docstring says is the only valid route.
+
+**So the defect is not that one chain has the wrong number. Both chains
+document a derivation the corpus explicitly forbids for this object**, and
+their disagreement is a downstream symptom of that.
+
+### What is NOT established, and what I am not claiming
+
+- **Which target is right.** Neither, on this evidence — both narratives are
+  invalid, so neither number is *derived* by the route its document gives.
+  Whether either coincides with a correct value is a separate question.
+- **That the live producer is wrong.** It is not implicated. Its method is the
+  valid one.
+
+### Two adjacent facts, recorded so the next reader is not surprised
+
+- `markov_trace_3A(q=Q0_PROTON)` returns **0.70225067735** for the proton
+  against canon **1.14575969246** — **39 %** apart. It is a *different
+  normalisation* (`w = dim_q²/[n]_q!`, then `w·χ/dim`), not a competing value
+  for the same functional. Do not read it as a fifth candidate.
+- That function only **half-honours its `q` argument**: the weight table uses
+  the caller's `q` while `_cached_seminormal` is built at `Q0_PROTON`. Passing
+  the muon pin moves the result by only 2.3e-9. **This is already documented in
+  the source** — *"pre-existing and is left alone here"* (line ~915) — so it is
+  not a new finding, but it does mean the `q` parameter promises more than it
+  delivers.
+
+### The work now
+
+Not "re-derive one of the pair". Either **rewrite both narratives** to describe
+the linear-functional route the producer actually takes, or **retire them** —
+a derivation chain whose every step reads a crossing number off a
+non-braid-word documents a computation nobody performs.
