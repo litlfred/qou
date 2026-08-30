@@ -376,3 +376,68 @@ Six `computations/` sites carry the sibling variant `2.0298832128193072500115970
 witness `mmu-categorical-correction-first-probe.witness.json`. Fixing those needs producer
 re-runs and is out of this branch's scope. **Note the variant differs from the Lean one**
 (`…0115970029` vs `…011597804990`), so a grep for one does not find the other.
+
+---
+
+## 2026-08-30 — a VALUE-based detector, and what it caught that grep never could
+
+`scripts/known-constant-literal-audit.py`. Every prior drain of this defect class was a
+grep for a specific digit string, and every one missed the sites spelling the same wrong
+number differently — the Lean carrier had `…011597804990` while `computations/` had
+`…0115970029`, so **a grep for either misses the other**. This script instead finds every
+sufficiently-long decimal literal, asks which canonical constant it is nearest, and
+checks whether its own digits are right. Constants are **computed**, not transcribed —
+a hard-coded table would reproduce the defect one level up.
+
+It distinguishes **truncated** (a correct prefix; correct but short — usually deliberate)
+from **WRONG** (digits disagree before the literal ends; incorrect *and* long, which is
+worse because the extra digits invite trust).
+
+### It over-flags, and the rate is measured
+
+Raw: **191**. Of those **123 (64 %) were `witness.json` numeric outputs** — a probe's
+computed estimate of a constant *should* differ from the exact value; that is the
+measurement, not a defect. After gating JSON on whether the *key names* the constant
+(so a transcribed `"vol_4_1": …` is still caught), and excluding the script's own
+docstring: **92 candidates**. Still high-recall, still agent-confirmed. Three legitimate
+classes remain in the output by design — historical records of known-bad values, float64
+reprs recorded deliberately, and converging estimates quoted in prose.
+
+### The catch: a live wrong constant in a mass formula
+
+`content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean`
+lines 28 and 30:
+
+    bindingScale .satellite = m_e * 7.327724753846269
+    bindingScale .borromean = m_e * 7.327724753846269
+
+against `Vol(B₃) = 8·G = 7.327724753417752120…` — **wrong from digit 11**, abs err
+`4.3e-10`. Every other Lean carrier (`building-block-knots.vol_borromean`,
+`categorical-neutron`, `categorical-proton`) already had `7.32772475341775`, so this file
+was the outlier, not an alternative convention. Corrected; the file's one theorem is
+about `classifyByMassNumber`, not the literal, so nothing depended on it.
+
+### The part that matters: an audit declared this axis CLEAN while it was live
+
+The corpus had already **identified** the value —
+`computations/snappy_borromean_volume.py` tabulates it as "**wrong** at digit 11". And
+`docs/audits/2026-06-21-constant-consistency-axis2-clean.md` declared the axis clean on
+the ground that it *"survives only as a comment in `experimental_constants.py`, wrong-tail
+variants only in `_deprecated/`"*.
+
+**That verdict was false.** The value was live in executable Lean, in a mass formula, at
+two sites. The audit was evidently scoped to `computations/` and never looked at
+`content/**/*.lean` — the same detector-blindness shape AGENTS.md catalogues elsewhere.
+**A "clean" verdict is only as wide as the surface the detector walked**, and that audit
+did not say which surface it walked.
+
+### Not fixed here
+
+The six `computations/` sites with the `…0115970029` variant, plus one committed witness.
+Fixing those needs producer re-runs, and **this container has no numpy and no scipy**
+(established earlier this session), so re-running would write degraded witnesses. Left
+deliberately.
+
+Also: the sidecar `nuclear-knot-classification.qa.json` cannot be refreshed here —
+folio-assistant is not set up, so `qa-sweep` is unavailable. The Lean change is
+`lean`-direct verified; the sidecar refresh is owed.
