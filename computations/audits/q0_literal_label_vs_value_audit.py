@@ -56,6 +56,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import collections
 import json
 import re
 import sys
@@ -142,6 +143,57 @@ def _label_near(lines: list, lineno: int, name: str | None):
     if has_m:
         return "muon"
     return None
+
+
+def _operative_lines(tree) -> "set[int]":
+    """Lines whose q0 literal is NOT the producer's operative q0.
+
+    Two shapes, both found by cross-checking the unlabelled bucket against the
+    manifest and both of which would otherwise be reported as defects:
+
+      except-handler fallback   `try: Q0 = q_at()  except: Q0 = "<muon>"`
+          The operative q0 is the resolved one; the literal is a fallback, and
+          cross-layer fallbacks already have their own detector
+          (`q0_cross_layer_fallback_scan`). Double-reporting them here would
+          inflate this audit with another audit's population.
+
+      guard sentinel            `if not q.startswith("1.10997858275"): raise`
+          A PREFIX being compared against, not a value being used.
+          `atomic_tr_m_mpfr_50dps` checks that q_parameter resolved to the pin
+          it asked for — reporting that as a mislabel flags a correctness check
+          as the defect it exists to catch.
+
+    Excluding these took the manifest cross-check from 14 findings to 2, and
+    both survivors were already known.
+    """
+    out: "set[int]" = set()
+
+    def mark(node):
+        for sub in ast.walk(node):
+            if isinstance(sub, ast.Constant):
+                out.add(sub.lineno)
+
+    for n in ast.walk(tree):
+        if isinstance(n, ast.ExceptHandler):
+            mark(n)
+        elif isinstance(n, ast.Compare):
+            mark(n)
+        elif isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) \
+                and n.func.attr in ("startswith", "endswith"):
+            mark(n)
+    return out
+
+
+def _manifest_layers() -> "tuple[dict, set]":
+    try:
+        man = json.loads((ROOT / "q0_anchor_manifest.json").read_text())
+    except Exception:  # noqa: BLE001
+        return {}, set()
+    layers = {}
+    for key, claim in (("ideal_muon", "muon"), ("physical_proton", "proton")):
+        for stem in man.get(key, []):
+            layers[stem] = claim
+    return layers, set(man.get("ambiguous", []))
 
 
 def _scan():
@@ -237,6 +289,10 @@ def main() -> int:
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any label contradicts its value")
     ap.add_argument("--show", type=int, default=12)
+    ap.add_argument("--cross-manifest", action="store_true",
+                    help="cross-check the UNLABELLED literals against the "
+                         "producer's manifest declaration, so that bucket is "
+                         "examined rather than merely counted")
     args = ap.parse_args()
     r = _scan()
 
@@ -267,6 +323,40 @@ def main() -> int:
             print(f"\n  {title} ({len(r[key])}), first {args.show}:")
             for x in r[key][:args.show]:
                 print(f"    {x}")
+
+    if args.cross_manifest:
+        layers, amb = _manifest_layers()
+        buckets = collections.Counter()
+        clash = []
+        for entry in r["unlabelled"]:
+            path, rest = entry.split(":", 1)
+            parts = rest.split()
+            lineno, layer = int(parts[0]), parts[1]
+            try:
+                tree = ast.parse((REPO / path).read_text(encoding="utf-8",
+                                                         errors="ignore"))
+            except Exception:  # noqa: BLE001
+                buckets["unparseable"] += 1
+                continue
+            if lineno in _operative_lines(tree):
+                buckets["fallback / sentinel (another audit's population)"] += 1
+                continue
+            stem = Path(path).stem
+            decl = layers.get(stem, "ambiguous" if stem in amb else None)
+            if decl is None:
+                buckets["producer undeclared (nothing to contradict)"] += 1
+            elif decl == "ambiguous":
+                buckets["declared ambiguous"] += 1
+            elif decl == layer:
+                buckets[f"agrees with declaration ({layer})"] += 1
+            else:
+                clash.append(f"{path}:{lineno}  literal {layer}, declared {decl}")
+        print("\n  --cross-manifest: the UNLABELLED bucket, examined")
+        for k, v in buckets.most_common():
+            print(f"    {v:>4}  {k}")
+        print(f"    {len(clash):>4}  CONTRADICTS its manifest declaration")
+        for x in clash:
+            print(f"       {x}")
 
     if args.strict and r["findings"]:
         print("\n  --strict: exiting 1 on a label that contradicts its value.")

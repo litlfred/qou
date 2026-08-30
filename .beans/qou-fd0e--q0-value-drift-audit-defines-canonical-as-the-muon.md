@@ -759,3 +759,53 @@ the compute, so each carries a note instead. Separate work.
 that `_gap_a4_qsafe.py` carried under near-identical wording, which is the
 copy-paste lineage already recorded here. Main has since fixed `_gap_a4_qsafe`
 structurally by resolving through `q_parameter`; this one is still a literal.
+
+
+## 2026-08-30 — the 277 "unexamined" literals are now EXAMINED, and they are clean
+
+The label-vs-value audit reported 277 q0 literals with no anchor label in
+context, counted as *"UNEXAMINED, not clean"*. That is the honest way to report
+them, but it is not an answer. A literal with no comment is not thereby wrong —
+so the question is whether anything in that bucket contradicts something
+checkable. It does have a check available: the producer's own **manifest
+declaration**.
+
+New mode: `--cross-manifest`.
+
+    204  producer undeclared (nothing to contradict)
+     58  fallback / sentinel (another audit's population)
+     11  agrees with declaration (proton)
+      2  declared ambiguous
+      2  CONTRADICTS its manifest declaration
+
+**Both survivors are already known** — `lever1_trB_geometric_target` and
+`lever1_trB_quantum_integer_form`, two of the durable seven in `qou-cds3`. So
+the largest unexamined pocket in this audit contains **zero new defects**. That
+is a negative result and it is worth having: it was the biggest thing either
+audit could not speak to.
+
+### It reported 14 before I looked at any of them
+
+The first cut of this cross-check found **14** contradictions. Hand-checking two
+killed it, and the two failed for *different* reasons — which is why one spot
+check would not have been enough:
+
+- `atomic_tr_m_mpfr_50dps.py:124` — the literal sits in
+  `if not q.startswith("1.10997858275"): raise SystemExit(...)`. It is a
+  **prefix being compared against**, not a value in use. That script checks that
+  `q_parameter` resolved to the pin it asked for; reporting it would flag a
+  correctness check as the defect it exists to catch.
+- `alpha_k_four_strand_singlet_selection.py:82` — the literal is in an
+  **`except` fallback**: `try: Q0 = q_at()` / `except: Q0 = "<muon>"`. The
+  operative q0 is the resolved one. Cross-layer fallbacks already have a
+  detector — `q0_cross_layer_fallback_scan`, which names
+  `rt_c23_singlet_sign_core` and `rt_identity_chain_consolidation` in its own
+  output, two of my "findings". Reporting them here would have inflated this
+  audit with another audit's population and called it new.
+
+Excluding both shapes by AST: **14 → 2**. The exclusion is a printed bucket (58),
+not a silent drop.
+
+Third time this session that a first cut of a detector of mine over-reported,
+and the same shape each time: **the literal was in the file, but it was not the
+thing the file computes with.**
