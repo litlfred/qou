@@ -2,6 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Archimedean.BlochWignerLobachevsky
 import QOU.Archimedean.BlochWignerSymmetry
+import QOU.MathlibExt.ExponentialGrowthRate
 
 /-!
 # QOU.Archimedean.FiveTwoOhtsukiBridge — shrinking the `5₂` volume-conjecture axiom
@@ -18,13 +19,20 @@ shows that only **one** of them is Ohtsuki's hard analysis:
 |---|---|---|
 | (A) | `⟨5₂⟩_N = e^{Nζ}·N^{3/2}·ω·(1 + O(1/N))` | **axiom** — Ohtsuki Thm 1.1, the 52-page part |
 | (B) | `2π·Re ζ = 3·D(y₀)` | a dilogarithm identity — half proved, no geometry |
-| (C) | (A) ⟹ `(2π/N)·log‖⟨5₂⟩_N‖ → 2π·Re ζ` | elementary analysis |
+| (C) | (A) ⟹ `(2π/N)·log‖⟨5₂⟩_N‖ → 2π·Re ζ` | **PROVED**, sorry-free |
 | (D) | `Vol(5₂) = 3·D(y₊)` | already axiomatised as `FiveTwoTriangulation` |
 
 The point of the split is (B). It looks like it should need hyperbolic
 geometry, and it does not: it is an identity among dilogarithms at the root of
 a cubic. **Nothing in (B) or (C) needs the method of steepest descent** — that
 is required only to prove (A) itself, which we do not attempt.
+
+**`volume_conjecture_five_two` is now sorry-free.** Its content is exactly (A)
+plus the two identities (B) and (D), both taken as explicit hypotheses, and
+nothing else: no `sorry` sits between Ohtsuki's Theorem 1.1 and the volume
+conjecture for `5₂`. The remaining `sorry` in this file belongs to
+`ohtsuki_sum_im_eq_three_blochWigner`, which *proves* (B) rather than assuming
+it, and which the bridge does not call.
 
 ## Ohtsuki's Theorem 1.1, verbatim
 
@@ -98,6 +106,7 @@ root of the cubic (residual `1.9e-121`) before this file was written:
 * `2√−1·ω² = −2(y₀−1)/(2y₀+1) = 0.2344867660… − √−1·0.8286683659…`.
 
 A numerical check is not a proof, which is why (B) still carries a `sorry`.
+(C), by contrast, no longer does — see below.
 
 ## The tier boundary lives in the type
 
@@ -300,10 +309,16 @@ class OhtsukiAsymptotic (kashaev : ℕ → ℂ) (y ζ ω : ℂ) : Prop where
   stated through its square so that no branch has to be chosen — and so that
   `ω ≠ 0` becomes derivable rather than assumed. -/
   omega_sq : ω ^ 2 = ohtsukiOmegaSq y
-  /-- `⟨5₂⟩_N / (e^{Nζ}·N^{3/2}·ω) → 1`. This is the only analytic content. -/
+  /-- `⟨5₂⟩_N / (e^{Nζ}·N^{3/2}·ω) → 1`. This is the only analytic content.
+
+  `N^{3/2}` is written as a *real* power cast into `ℂ`, not as `Complex.cpow`.
+  That is the faithful reading — Ohtsuki's `N^{3/2}` is a positive real, and
+  `cpow` would drag in a branch choice he does not make — and it is also what
+  lets `Real.log_rpow` reach it in the proof of (C). -/
   ratio_tendsto_one :
     Filter.Tendsto
-      (fun N : ℕ => kashaev N / (Complex.exp (N * ζ) * (N : ℂ) ^ (3 / 2 : ℂ) * ω))
+      (fun N : ℕ =>
+        kashaev N / (Complex.exp (N * ζ) * (((N : ℝ) ^ (3 / 2 : ℝ) : ℝ) : ℂ) * ω))
       Filter.atTop (nhds 1)
 
 /-- **The field that is no longer a field.** The previous version of this class
@@ -316,20 +331,46 @@ theorem omega_ne_zero (kashaev : ℕ → ℂ) (y ζ ω : ℂ)
   rw [← h.omega_sq, h0]
   ring
 
+/-- **A second field that is not a field.** `⟨5₂⟩_N ≠ 0` eventually — because a
+ratio tending to `1` is eventually non-zero, and a quotient is non-zero only if
+its numerator is.
+
+Worth isolating: the obvious way to supply this is to assume it, and assuming it
+would be assuming something about the Kashaev invariant that Ohtsuki's theorem
+already implies. -/
+theorem kashaev_eventually_ne_zero (kashaev : ℕ → ℂ) (y ζ ω : ℂ)
+    [h : OhtsukiAsymptotic kashaev y ζ ω] :
+    ∀ᶠ N : ℕ in Filter.atTop, kashaev N ≠ 0 := by
+  filter_upwards [h.ratio_tendsto_one.eventually_ne (by norm_num : (1 : ℂ) ≠ 0)] with N hN
+  exact (div_ne_zero_iff.mp hN).1
+
 /-- **(C).** From the asymptotic form alone, the Kashaev growth rate is
-`2π·Re ζ`. Elementary: `log‖e^{Nζ}·N^{3/2}·ω·(1+o(1))‖ = N·Re ζ + (3/2)·log N
-+ log‖ω‖ + o(1)`, and everything but the first term dies after dividing by `N`.
+`2π·Re ζ`.
+
+`log‖e^{Nζ}·N^{3/2}·ω·(1+o(1))‖ = N·Re ζ + (3/2)·log N + log‖ω‖ + o(1)`, and
+everything but the first term dies after dividing by `N`.
 
 No steepest descent, no geometry — this is the step that makes the shrink pay,
 because it shows the volume-conjecture *conclusion* follows from the asymptotic
-*form* by analysis Mathlib already has. The `ω ≠ 0` this needs is
-`omega_ne_zero` above, no longer an assumption. -/
+*form* by analysis Mathlib already has. Both side conditions it needs — `ω ≠ 0`
+and `⟨5₂⟩_N ≠ 0` — are the two theorems above rather than assumptions.
+
+The content is entirely generic, and lives in
+`QOU.MathlibExt.tendsto_log_norm_div_of_tendsto_one`: *a sub-exponential factor
+cannot change an exponential growth rate*. Nothing here is about `5₂`, which is
+why it is stated once for every knot with such an expansion rather than per
+knot. -/
 theorem growth_rate_eq_two_pi_re_zeta
-    (kashaev : ℕ → ℂ) (y ζ ω : ℂ) [OhtsukiAsymptotic kashaev y ζ ω] :
+    (kashaev : ℕ → ℂ) (y ζ ω : ℂ) [h : OhtsukiAsymptotic kashaev y ζ ω] :
     Filter.Tendsto
       (fun N : ℕ => (2 * Real.pi / N) * Real.log ‖kashaev N‖)
       Filter.atTop (nhds (2 * Real.pi * ζ.re)) := by
-  sorry
+  have hgr := QOU.MathlibExt.tendsto_log_norm_div_of_tendsto_one
+    (omega_ne_zero kashaev y ζ ω) (3 / 2 : ℝ)
+    (kashaev_eventually_ne_zero kashaev y ζ ω) h.ratio_tendsto_one
+  have := hgr.const_mul (2 * Real.pi)
+  refine this.congr fun N => ?_
+  ring
 
 /-- **The bridge.** Combining (A), (B) and the corpus's `FiveTwoTriangulation`
 (D), the volume conjecture holds for `5₂`.

@@ -1316,3 +1316,9 @@ import QOU.Knot.RivinConcavitySimplex
 -- `Cl_2` and the tetrahedron angles were never built from the root.
 import QOU.Archimedean.BlochWignerSymmetry
 import QOU.Archimedean.FiveTwoOhtsukiBridge
+
+-- Gap 5's first two bricks: the growth-rate transfer that discharges part (C)
+-- of the 5₂ bridge, and the half-plane non-cancellation bound that gives the
+-- lower half of a squeeze whenever the phases are confined.
+import QOU.MathlibExt.ExponentialGrowthRate
+import QOU.MathlibExt.HalfPlaneNonCancellation
