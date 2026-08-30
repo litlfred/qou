@@ -189,9 +189,8 @@ systematic to be noise.
 Moving the table to C removes it — the producer and its weights are now on the
 same vintage. Its witness should be regenerated to realise that.
 
-- [ ] Regenerate `atomic_tr_m_mpfr_50dps` so its C q₀ and its now-C weights
-      agree. (Deferred while the validator run holds the checkout; never two
-      producers at once.)
+- [x] Regenerate `atomic_tr_m_mpfr_50dps` so its C q₀ and its now-C weights
+      agree. DONE 2026-08-30.
 - [x] Consider whether the guard should compare VINTAGE as well as layer —
       DONE 2026-08-30 on owner instruction; see below.
 
@@ -263,3 +262,23 @@ The local declaration in `regenerate_y_lambda_mpfr` is kept: it sets `q0Value`
 before the stamper runs, so the new branch does not fire there (it requires
 `"q0Value" not in payload`), and the "existing value is never overwritten" test
 covers that interaction. Belt and braces, not a conflict.
+
+
+### Vintage straddle closed, measured
+
+`atomic_tr_m_mpfr_50dps` regenerated once the validator released the checkout.
+Its q₀ was already vintage C; its weights are now C as well, so producer and
+table finally agree. All five atoms moved:
+
+| atom | before | after | relative |
+|---|---|---|---|
+| deuteron | 0.575172329734413487 | 0.575172331598764198 | 3.241e-9 |
+| helium-3 | 0.403767136906005195 | 0.403767139161629087 | 5.586e-9 |
+| tritium | 0.229310146151905276 | 0.229310147483458894 | 5.807e-9 |
+| proton | 1.145759782315238940 | 1.145759782886925318 | 4.99e-10 |
+| neutron | 0.987743756820503460 | 0.987743757144974407 | 3.285e-10 |
+
+That spread — 3e-10 to 5.8e-9 — is the size of the A-vs-C mismatch it had been
+carrying, amplified through the trace sum from the 0.0769 ppb pin gap. Small,
+systematic, and invisible to the layer-only guard, which is exactly why it
+lasted.
