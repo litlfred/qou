@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T04:30:39Z
+updated_at: 2026-08-30T04:35:00Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -809,3 +809,37 @@ the RHS wants. After that only the Y side remains, by the same method.
 STATE OF THE PROOF: six braidings reduced to two, groupings reconciled, one coherence merge away from
 the detachment. No Yang-Baxter, no slide lemma, no `sorry`. Every step above is verified to fire and
 the goal was printed after each.
+
+
+END OF 2026-08-30 SESSION — where the coherence merge stands.
+
+After `hgrp` the braiding is `β_{X, (Y⊗Y')⊗X'}`, flanked by `X ◁ (α_ Y Y' X').inv` before and
+`(α_ Y Y' X').hom ▷ X` after. Attempts to go further, all failing:
+
+    rw [hrec X (Y ⊗ Y') X']                     -- forward split; hrec's LHS needs ITS OWN
+                                                   associators around the braiding, and the ones
+                                                   hgrp leaves are different ones
+    aesop_cat
+    simp [braiding_tensor_right_hom_assoc, braiding_naturality_right_assoc, monoidalComp,
+          Category.assoc]
+    simp [monoidalComp, braiding_naturality_right, braiding_naturality_left, Category.assoc]
+    rw [braiding_naturality_right_assoc X ((λ_ X').inv ≫ η_ Y Y' ▷ X')]
+    simp only [← MonoidalCategory.whiskerLeft_comp, Category.assoc]
+      then rw [braiding_naturality_right_assoc]
+
+THIRTY approaches ruled out.
+
+A TENSION WORTH RECORDING, because it may be the real reason this last step resists. Recombining
+each strand's journey into ONE braiding is what produced the 6→2 reduction — but
+`braiding_slide_cup_right`, the lemma that performs the detachment, is stated with the braidings
+SPLIT (`(β_ W A).hom ▷ B ⊗≫ A ◁ (β_ W B).hom`). So the reduction and the detachment want opposite
+normal forms. Either the detachment must be restated for a recombined `β_{W, A⊗B}` — which is just
+`braiding_naturality_right W u` at the cup, no slide lemma needed — or the recombination has to be
+undone locally at the cup. The first is much the better bet and is what the failed attempts above
+were reaching for; what defeats them is only that the cup and the braiding are not ADJACENT.
+
+CONCRETE NEXT STEP: build a `calc` step whose right-hand side states the prefix as
+`η_X ≫ X ◁ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ≫ β_{X, (Y⊗Y')⊗X'} ≫ …` and discharge that step with
+`monoidal`. `monoidal` handles composites containing arbitrary morphisms via `⊗≫`, so it should
+absorb the `⊗𝟙.hom` and the two associators around `η_Y`. Every `rw`-based route tried so far fails
+for the same syntactic-adjacency reason, so stop trying `rw` and write the term.
