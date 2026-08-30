@@ -48,17 +48,25 @@ ITEM 3 (the contradiction) IS DONE.
     upper bound cannot both hold once c_m^{2^{m-1}} (p/q) drops below nu^{2^{m-1}}.
   * roth_contradiction -- steps 2 and 3 in one place, with both hypothesis lists composed.
 
-WHAT COMPOSING THEM ACTUALLY FOUND. Neither step was missing mathematics; what was missing is
-that they had never been written down together, so nothing forced their interfaces to agree.
-Three mismatches surfaced only on composition:
-  * step 3 states its conclusion with algebraMap Z Q, step 2 with Int.castRingHom Q
-    (algebraMap_int_rat);
-  * step 3's kappa against step 2's p_h/q_h;
-  * step 3's p, q are Gamma_m's RATIO parameters and have nothing to do with the numerators and
-    denominators of the approximations, despite the shared letters -- the single most likely
-    place for a silent wrong-variable bug in the whole arc.
-Correction 26 was exactly a pair of halves each correct that did not compose. Composing early is
-the cheapest defence there is.
+WHAT COMPOSING THEM FOUND -- and a correction to my own first report of it.
+
+I first wrote, in the module header, the bean and the commit message, that composing the two steps
+"surfaced three mismatches": algebraMap Z Q against Int.castRingHom Q, kappa against p_h/q_h, and
+Gamma_m's ratio parameters p,q against the numerators and denominators of the approximations.
+That was an over-claim and it is now corrected in place.
+
+I tested it rather than leaving it asserted: deleting the rewrite that bridged algebraMap and
+Int.castRingHom and rebuilding shows the file STILL COMPILES. The two unify definitionally; there
+was no mismatch and the rewrite was not load-bearing. It has been removed and algebraMap_int_rat
+kept as a recorded check with the correction in its docstring. The kappa "mismatch" was likewise
+not one -- I wrote roth_contradiction's hypothesis as InRothFracSet Hh (fun h => p_h/q_h), forcing
+the two to agree by construction rather than discovering anything. The p,q overloading is a real
+trap for a reader and was navigated by naming step 2's data pn, qd, but nothing about it failed.
+
+THE HONEST REPORT is that the two halves fit as they stood. That is the good outcome, and it is
+worth stating as an outcome rather than dressed up as a discovery. The reason the expectation was
+the opposite is correction 26, which WAS a pair of halves each correct that did not compose;
+composing early remains the cheapest defence, and this time it found nothing to fix.
 
 ITEM 2 (the inequality) IS HALF DONE, deliberately.
   * mul_exp_neg_lt_one_div converts step 2's multiplicative hypothesis

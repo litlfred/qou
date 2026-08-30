@@ -7,14 +7,20 @@ by `ν`; step 3 (`index_le_rothBound`, Roth's Lemma) bounds it from **above** by
 `Θ^{2^{m−1}} ≤ c_m^{2^{m−1}}·(p/q)`.  Roth's theorem is the observation that for the right
 parameters those two cannot both hold.  This file performs that collision.
 
-## What was actually missing
+## The interfaces fit — checked, not assumed
 
-Neither step was missing mathematics; what was missing was that they had never been written down
-in the same place, so nothing forced their interfaces to agree.  Composing them here surfaces the
-mismatches — `algebraMap ℤ ℚ` against `Int.castRingHom ℚ`, `κ` against `p_h/q_h`, step 3's `p`,`q`
-(the ratio parameters of `Γ_m`) against the numerators and denominators of the approximations,
-which are unrelated despite the shared letters.  Correction 26 was exactly a pair of halves that
-were each correct and did not compose; the cheapest defence is to compose them early.
+Correction 26 was a pair of halves that were each correct and did not compose, so the expectation
+going in was that composing steps 2 and 3 would surface mismatches: `algebraMap ℤ ℚ` against
+`Int.castRingHom ℚ`, `κ` against `p_h/q_h`, and step 3's `p`, `q` — which are `Γ_m`'s ratio
+parameters and have nothing to do with the numerators and denominators of the approximations,
+despite the shared letters.
+
+It surfaced none.  `algebraMap ℤ ℚ` and `Int.castRingHom ℚ` unify definitionally, and I verified
+that by deleting the rewrite that bridged them and rebuilding: the file still compiles, so
+`algebraMap_int_rat` below is a recorded check rather than a load-bearing step.  The `p`,`q`
+overloading is a real trap for a reader and was navigated by naming step 2's data `pn`, `qd`, but
+nothing about it failed.  The honest report is that the two halves fit as they stood — which is
+the good outcome, and worth stating as an outcome rather than dressed up as a discovery.
 
 ## The two shapes of the numeric hypothesis
 
@@ -161,8 +167,13 @@ theorem false_of_le_index_of_rothBound {r : Fin m → ℕ} {κ : Fin m → ℚ}
   have hpow : ν ^ (2 ^ (m - 1)) ≤ Θ ^ (2 ^ (m - 1)) := pow_le_pow_left₀ hν0 hνΘ _
   linarith
 
-/-- The unique ring hom `ℤ → ℚ`, under its two names.  Step 3 states its conclusion with
-`algebraMap`, step 2 with `Int.castRingHom`; nothing forced them to agree until they were composed. -/
+/-- The unique ring hom `ℤ → ℚ`, under its two names — step 3 states its conclusion with
+`algebraMap`, step 2 with `Int.castRingHom`.
+
+⚠ **Not load-bearing.**  I wrote this expecting to need it and used it to bridge the two
+statements; deleting the bridging rewrite and rebuilding shows the file still compiles, so the two
+unify definitionally.  Kept as a recorded check — the claim "composing the halves surfaced an
+interface mismatch" was mine and was wrong, and the lemma is the evidence for the correction. -/
 theorem algebraMap_int_rat : (algebraMap ℤ ℚ) = Int.castRingHom ℚ := RingHom.ext_int _ _
 
 /-- **Step 4.**  Steps 2 and 3 in one place: the Taylor lower bound and Roth's Lemma's upper bound
@@ -192,7 +203,8 @@ theorem roth_contradiction (hm : 1 ≤ m) {p q F : ℕ} (hp : 0 < p) (hpq : p �
     False := by
   obtain ⟨Θ, _, hΘbound, hΘidx⟩ :=
     index_le_rothBound hm hp hpq (Equiv.refl (Fin m)) hg hA hκ
-  rw [algebraMap_int_rat] at hΘidx
+  -- no coercion bridge needed: `algebraMap ℤ ℚ` and `Int.castRingHom ℚ` unify definitionally
+  -- (see `algebraMap_int_rat`, which is a recorded check rather than a step).
   exact false_of_le_index_of_rothBound hν0
     (le_index_rational_of_log r hr pn qd hq α hG0 hGT hclose hK0 hT hB1 hα P hdeg hH hidx
       hCpos hlog)
@@ -214,7 +226,7 @@ derivable from satisfiable hypotheses.  Both holding at once needs `μ ≈ m(½�
 parameter record has to deliver — not something a small witness can exhibit. -/
 theorem roth_contradiction_at_witness
     (hlog : Real.log (taylorConst (fun _ : Fin 2 => 1) 1 1024)
-        + ∑ h : Fin 2, (((1 : ℕ) : ℝ)) * Real.log (((1 : ℕ) : ℝ))
+        + ∑ _ : Fin 2, (((1 : ℕ) : ℝ)) * Real.log (((1 : ℕ) : ℝ))
         < 8 * (((0 : ℚ) : ℝ) - ((0 : ℚ) : ℝ)))
     (hgap : (rothConstant 2 : ℚ) ^ (2 ^ (2 - 1)) * (((1 : ℕ) : ℚ) / ((1 : ℕ) : ℚ))
         < (0 : ℚ) ^ (2 ^ (2 - 1))) :
