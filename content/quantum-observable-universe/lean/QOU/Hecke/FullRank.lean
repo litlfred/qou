@@ -29,6 +29,26 @@ not the `{T_w}_{w ∈ S_n}` labelling. That is deliberate — the dimension is w
 every downstream argument in the corpus actually uses, and it is what the
 degenerate models fail.
 
+> **Correction (2026-08-30, bean `qou-0y6h`) — the granted assumption is no
+> longer an assumption over a field.** The paragraph above says the Iwahori
+> basis theorem *"is not formalised here"*. It is now formalised in this
+> corpus: `QOU.Hecke.TwBasis.basisTwOfField` is a genuine
+> `Module.Basis (Equiv.Perm (Fin (n+1))) K (QOU.Hecke.IwahoriHecke K q n)` whose
+> vectors are the `T_w`, giving
+> `finrank_eq_factorial : Module.finrank K (IwahoriHecke K q n) = (n+1)!`.
+> `QOU.Hecke.TwFullRank` discharges `IsHeckeOfFullRank` from it, so the
+> predicate now holds of the honest `RingQuot` presentation at **every** rank,
+> not only of the tree's `H3A` / `H4A` (where, per
+> `QOU.Hecke.FullRankFromWedderburn`, the dimension is true by construction of
+> the carrier and carries no Hecke content).
+>
+> Two scope notes. The basis is a **field** statement — everything upstream of
+> `QOU/Hecke/TwBasisField.lean` holds over an arbitrary commutative ring, but
+> the dimension squeeze does not. And it does **not** supply a `HeckeAlgebra`
+> instance for `IwahoriHecke`: this class's quadratic field is
+> `σ² = (q - q⁻¹)σ + 1` while `IwahoriHecke`'s is `σ² = (q-1)σ + q`, so the two
+> are related by a rescaling of `q`, not by an instance (bean `qou-img9`).
+
 ## The inductive route
 
 The point of `§ Inductive assembly` below: the rank condition is not something
