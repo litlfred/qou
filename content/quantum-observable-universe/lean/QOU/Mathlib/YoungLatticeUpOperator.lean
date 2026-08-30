@@ -1,3 +1,5 @@
+import Mathlib.Tactic.Ring
+import Mathlib.Algebra.BigOperators.Ring.Finset
 import QOU.Mathlib.YoungDiagramAddCell
 import QOU.Mathlib.SYTBranchingRule
 
@@ -246,5 +248,179 @@ theorem branching_finset (μ : YoungDiagram) (hμ : 0 < μ.cells.card) :
   intro c
   rw [show ((Equiv.subtypeEquivRight (fun x => (mem_cornerCells μ x).symm)) c : ℕ × ℕ) = (c : ℕ × ℕ)
       from rfl, eraseCornerOrSelf_of c.2]
+
+
+
+/-! ### The up-operator sum
+
+`upSum μ = ∑_{λ = μ + one addable cell} f^λ`, the left-hand side of (UP). -/
+
+/-- `∑_{λ = μ + one addable cell} f^λ`. -/
+noncomputable def upSum (μ : YoungDiagram) : ℕ :=
+  ∑ s ∈ addableCells μ, numStandardYoungTableaux (addCellOrSelf μ s)
+
+/-- `isCornerCell_addCell_iff` with the two cells kept as pairs. -/
+theorem isCornerCell_addCell_iff' {s c : ℕ × ℕ} (hs : IsAddableCell μ s) (hc : IsCornerCell μ c) :
+    IsCornerCell (addCell μ s hs) c ↔ IsAddableCell (eraseCorner μ c hc) s := by
+  obtain ⟨a, b⟩ := s
+  obtain ⟨p, q⟩ := c
+  exact isCornerCell_addCell_iff μ a b p q hs hc
+
+/-- `isAddableCell_of_eraseCorner` with the two cells kept as pairs. -/
+theorem isAddableCell_of_eraseCorner' {s c : ℕ × ℕ} (hc : IsCornerCell μ c)
+    (hs : IsAddableCell (eraseCorner μ c hc) s) (hne : s ≠ c) : IsAddableCell μ s := by
+  obtain ⟨a, b⟩ := s
+  obtain ⟨p, q⟩ := c
+  exact isAddableCell_of_eraseCorner a b p q hc hs hne
+
+/-- An addable cell is never a removable corner: the first is outside `μ`, the second inside. -/
+theorem ne_of_addable_of_corner {s c : ℕ × ℕ} (hs : IsAddableCell μ s) (hc : IsCornerCell μ c) :
+    s ≠ c := fun h => hs.1 (h ▸ hc.1)
+
+/-- **The summand of the transposed double sum**, made total in both cells.  It is `f^{(μ ∖ c) + s}`
+where that makes sense and `0` elsewhere, so that both orders of summation range over the *full*
+`addableCells μ` and `cornerCells μ` and `Finset.sum_comm` applies with nothing to check. -/
+noncomputable def pairTerm (μ : YoungDiagram) (s c : ℕ × ℕ) : ℕ :=
+  if IsAddableCell (eraseCornerOrSelf μ c) s then
+    numStandardYoungTableaux (addCellOrSelf (eraseCornerOrSelf μ c) s)
+  else 0
+
+/-- Expanding one summand of `upSum` by the branching rule and splitting off the corner that is the
+cell just inserted. -/
+theorem numSYT_addCell_eq (s : ℕ × ℕ) (hs : IsAddableCell μ s) :
+    numStandardYoungTableaux (addCell μ s hs)
+      = numStandardYoungTableaux μ + ∑ c ∈ cornerCells μ, pairTerm μ s c := by
+  have hpos : 0 < (addCell μ s hs).cells.card := by rw [card_addCell]; omega
+  have hmem : s ∈ cornerCells (addCell μ s hs) :=
+    (mem_cornerCells _ s).mpr (isCornerCell_addCell s hs)
+  rw [branching_finset _ hpos, ← Finset.add_sum_erase _ _ hmem,
+    eraseCornerOrSelf_of (isCornerCell_addCell s hs), eraseCorner_addCell s hs]
+  congr 1
+  -- the remaining corners: rewrite the summand, then widen the index set to all of `cornerCells μ`
+  have hsub : (cornerCells (addCell μ s hs)).erase s ⊆ cornerCells μ := by
+    intro c hc
+    rw [Finset.mem_erase, mem_cornerCells] at hc
+    exact (mem_cornerCells μ c).mpr (isCornerCell_of_addCell hs hc.2 hc.1)
+  have hstep : ∀ c ∈ (cornerCells (addCell μ s hs)).erase s,
+      numStandardYoungTableaux (eraseCornerOrSelf (addCell μ s hs) c) = pairTerm μ s c := by
+    intro c hc
+    rw [Finset.mem_erase, mem_cornerCells] at hc
+    obtain ⟨hne, hq⟩ := hc
+    have hc' : IsCornerCell μ c := isCornerCell_of_addCell hs hq hne
+    have hs' : IsAddableCell (eraseCorner μ c hc') s := (isCornerCell_addCell_iff' hs hc').mp hq
+    rw [eraseCornerOrSelf_of hq, eraseCorner_addCell_comm hs hq hne hc' hs']
+    unfold pairTerm
+    rw [eraseCornerOrSelf_of hc', if_pos hs', addCellOrSelf_of hs']
+  rw [Finset.sum_congr rfl hstep]
+  refine Finset.sum_subset hsub (fun c hcμ hcnot => ?_)
+  rw [mem_cornerCells] at hcμ
+  unfold pairTerm
+  rw [eraseCornerOrSelf_of hcμ]
+  refine if_neg (fun hs' => hcnot ?_)
+  rw [Finset.mem_erase, mem_cornerCells]
+  exact ⟨Ne.symm (ne_of_addable_of_corner hs hcμ), (isCornerCell_addCell_iff' hs hcμ).mpr hs'⟩
+
+/-- The transposed inner sum: for a removable corner `c`, summing `pairTerm` over all addable cells
+of `μ` recovers `upSum (μ ∖ c)` once the term at `s = c` — which is `f^μ` — is put back. -/
+theorem sum_pairTerm_add (c : ℕ × ℕ) (hc : IsCornerCell μ c) :
+    (∑ s ∈ addableCells μ, pairTerm μ s c) + numStandardYoungTableaux μ
+      = upSum (eraseCorner μ c hc) := by
+  have hcadd : IsAddableCell (eraseCorner μ c hc) c := isAddableCell_eraseCorner c hc
+  have hmem : c ∈ addableCells (eraseCorner μ c hc) :=
+    (mem_addableCells _ c).mpr hcadd
+  have hsub : (addableCells (eraseCorner μ c hc)).erase c ⊆ addableCells μ := by
+    intro s hs
+    rw [Finset.mem_erase, mem_addableCells] at hs
+    exact (mem_addableCells μ s).mpr (isAddableCell_of_eraseCorner' hc hs.2 hs.1)
+  have hstep : ∀ s ∈ (addableCells (eraseCorner μ c hc)).erase c,
+      pairTerm μ s c = numStandardYoungTableaux (addCellOrSelf (eraseCorner μ c hc) s) := by
+    intro s hs
+    rw [Finset.mem_erase, mem_addableCells] at hs
+    unfold pairTerm
+    rw [eraseCornerOrSelf_of hc, if_pos hs.2]
+  have hwiden : ∑ s ∈ (addableCells (eraseCorner μ c hc)).erase c, pairTerm μ s c
+      = ∑ s ∈ addableCells μ, pairTerm μ s c := by
+    refine Finset.sum_subset hsub (fun s hsμ hsnot => ?_)
+    rw [mem_addableCells] at hsμ
+    unfold pairTerm
+    rw [eraseCornerOrSelf_of hc]
+    refine if_neg (fun hs' => hsnot ?_)
+    rw [Finset.mem_erase, mem_addableCells]
+    exact ⟨ne_of_addable_of_corner hsμ hc, hs'⟩
+  rw [← hwiden, Finset.sum_congr rfl hstep]
+  unfold upSum
+  rw [← Finset.add_sum_erase _ _ hmem, addCellOrSelf_of hcadd, addCell_eraseCorner c hc hcadd]
+  omega
+
+
+
+/-! ### (UP) -/
+
+/-- **The up-operator identity.**  `∑_{λ = μ + one addable cell} f^λ = (|μ| + 1) · f^μ`.
+
+Strong induction on `|μ|`.  Each summand is expanded by the branching rule
+(`numSYT_addCell_eq`), the double sum is transposed by `Finset.sum_comm`, and the inner sum is
+identified with `upSum (μ ∖ c)` (`sum_pairTerm_add`), to which the induction hypothesis applies.
+`card_addableCells_eq_card_cornerCells_succ` then cancels the corner count off both sides. -/
+theorem upSum_eq : ∀ (n : ℕ) (μ : YoungDiagram), μ.cells.card = n →
+    upSum μ = (n + 1) * numStandardYoungTableaux μ := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro μ hn
+    have hexp : upSum μ
+        = (addableCells μ).card * numStandardYoungTableaux μ
+          + ∑ c ∈ cornerCells μ, ∑ s ∈ addableCells μ, pairTerm μ s c := by
+      have hsummand : ∀ s ∈ addableCells μ, numStandardYoungTableaux (addCellOrSelf μ s)
+          = numStandardYoungTableaux μ + ∑ c ∈ cornerCells μ, pairTerm μ s c := by
+        intro s hsA
+        have hs := (mem_addableCells μ s).mp hsA
+        rw [addCellOrSelf_of hs]
+        exact numSYT_addCell_eq s hs
+      unfold upSum
+      rw [Finset.sum_congr rfl hsummand, Finset.sum_add_distrib,
+        Finset.sum_const_nat (m := numStandardYoungTableaux μ) (fun _ _ => rfl),
+        Finset.sum_comm]
+    have hcorner : (∑ c ∈ cornerCells μ, ∑ s ∈ addableCells μ, pairTerm μ s c)
+        + (cornerCells μ).card * numStandardYoungTableaux μ
+        = n * numStandardYoungTableaux μ := by
+      rcases Nat.eq_zero_or_pos n with hn0 | hnpos
+      · subst hn0
+        have hempty : cornerCells μ = ∅ := by
+          rw [Finset.eq_empty_iff_forall_notMem]
+          intro c hc
+          rw [mem_cornerCells] at hc
+          have hcm : c ∈ μ.cells := hc.1
+          rw [Finset.card_eq_zero.mp hn] at hcm
+          exact absurd hcm (Finset.notMem_empty c)
+        rw [hempty]
+        simp
+      · have hpos : 0 < μ.cells.card := by omega
+        have hstep : ∀ c ∈ cornerCells μ,
+            (∑ s ∈ addableCells μ, pairTerm μ s c) + numStandardYoungTableaux μ
+              = n * numStandardYoungTableaux (eraseCornerOrSelf μ c) := by
+          intro c hcA
+          have hc := (mem_cornerCells μ c).mp hcA
+          rw [sum_pairTerm_add c hc, eraseCornerOrSelf_of hc]
+          have hcard : (eraseCorner μ c hc).cells.card = n - 1 := by
+            have := card_eraseCorner μ c hc; omega
+          rw [ih (n - 1) (by omega) _ hcard]
+          congr 1
+          omega
+        have hsum := Finset.sum_congr rfl hstep
+        rw [Finset.sum_add_distrib,
+          Finset.sum_const_nat (m := numStandardYoungTableaux μ) (fun _ _ => rfl),
+          ← Finset.mul_sum, ← branching_finset μ hpos] at hsum
+        exact hsum
+    have hA : (addableCells μ).card = (cornerCells μ).card + 1 :=
+      card_addableCells_eq_card_cornerCells_succ μ
+    rw [hexp, hA]
+    have hrearr : ((cornerCells μ).card + 1) * numStandardYoungTableaux μ
+        + ∑ c ∈ cornerCells μ, ∑ s ∈ addableCells μ, pairTerm μ s c
+        = ((∑ c ∈ cornerCells μ, ∑ s ∈ addableCells μ, pairTerm μ s c)
+            + (cornerCells μ).card * numStandardYoungTableaux μ)
+          + numStandardYoungTableaux μ := by ring
+    rw [hrearr, hcorner]
+    exact (add_one_mul n _).symm
 
 end QOU.Mathlib
