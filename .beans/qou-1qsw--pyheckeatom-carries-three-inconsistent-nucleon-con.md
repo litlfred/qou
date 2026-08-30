@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-30T02:49:36Z
+updated_at: 2026-08-30T03:12:26Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -760,3 +760,66 @@ answers had. It leaves exactly one honest gap — why the vertex is present at a
 Do NOT wire anything on this yet: it selects the parity, and the corpus should
 decide whether "gluon vertex present" is an axiom or is itself derived before
 the crossing budget is declared canonical.
+
+
+## The H₂ selector is PSD parity, not tr_M = 1 (owner ruling 2026-08-30)
+
+Owner: *"H₂ PSD parity rule; drop tr_M = 1 from the selecting rol"*. Adopted.
+
+**The rule, proved.** For the gluon vertex `σ₀^k` in `H₂(q)` the two Wedderburn
+projections are one-dimensional and are ring homomorphisms, so they send
+`σ₀^k` to the `k`-th power of the generator's eigenvalue: sym `q^k`, alt
+`(−q⁻¹)^k`. With `0 < q` the sym block is positive at every `k` and is never
+the binding constraint, so
+
+    σ₀^k is PSD  ⇔  k is even.
+
+`content/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean`
+— seven declarations, `lean`-direct exit 0, `#print axioms` shows only
+`propext / Classical.choice / Quot.sound` on all seven. Stated over a generic
+ordered field (`[Field R] [LinearOrder R] [IsStrictOrderedRing R]` — this
+Mathlib has no `LinearOrderedField`); the algebraic half is over a bare
+`DivisionRing`.
+
+**Why this form and not a re-run.** The rule it replaces was a Frobenius
+positivity test against a Gram matrix in `_deprecated/integer-lp-gluon.py`,
+built at convention C's Markov parameter and on the superseded `tr_M(e⁻) = z³`
+rule; under D its premise does not hold and it selects nothing
+(`computations/qbeta/integer_lp_gluon_convention_d.py`). The parity statement
+mentions no Markov parameter, no Gram matrix, no trace rule and no anchor, so
+a convention change cannot invalidate it.
+
+**What it settles.** `σ₀²` — the shipped gluon term — is the minimal non-zero
+admissible vertex. The single `σ₀` that the convention-D integer-LP re-run
+returns as its optimum is EXCLUDED. The convention-C neutron answer
+(`L₊ → L₋`, four crossings) is even and admissible.
+
+**What it does not settle.** `k = 0` is PSD, so parity does not force the
+vertex to be present at all. That stays open and is not answered by this.
+
+## tr_M = 1 dropped from the selecting role
+
+Recorded in `computations/sdp_gamma_gamma_to_qqbar.py` at both sites.
+
+Imposed as a constraint it admits only the identity, so it rejects `σ₀²` —
+which is PSD but has `tr_M = 1.128…` at the substrate. **A condition that
+rejects the construction the file ships cannot be what selected it.** It is a
+normalisation of the trace, not a selection principle.
+
+**A second defect found while removing it.** The demo's printed reading argued
+`σ₀³` is not canonical because *"tr_M ≈ 0.73 … is NOT 1"*. `0.73` was never
+the trace — the code prints `tr_M = 0.8485`, and `0.7312` is the **magnitude
+of the alt eigenvalue** sitting three lines above it. So the withdrawn
+argument was quoting the wrong quantity as well as using the wrong criterion.
+The parity rule gives the stronger and correct replacement: `σ₀³` has `k = 3`
+odd, hence is not PSD — which is exactly what the file's own `psd_at_q_0`
+already printed as `False`, an independent empirical check of the Lean.
+
+**Noted in passing, NOT acted on** (untouched producer; the pin migration is
+the tracked sweep `qou-1c4y`, and the witness re-run would have *downgraded*
+the environment record `sympy 1.14.0 -> 1.12` while moving no number, so it
+was reverted): `sdp_gamma_gamma_to_qqbar.py` evaluates at
+`q₀ = 1.10997859564273903916…`, which is neither the proton pin nor the frozen
+canonical muon pin — it is the **CODATA-2022 lepton-tower muon** value
+(`…5956427390…`), the third of the three values AGENTS.md warns are all called
+"the muon q₀". The parity rule is anchor-free, so nothing here depends on it.
