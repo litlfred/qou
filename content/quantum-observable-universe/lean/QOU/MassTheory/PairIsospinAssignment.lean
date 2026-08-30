@@ -186,4 +186,60 @@ theorem charge_symmetric_iff (h z : R) : z = z - h ↔ h = 0 := by
 theorem conj_fixed_iff (h z : R) : h - z = z ↔ h = 2 * z := by
   constructor <;> intro hh <;> linear_combination hh
 
+/-! ## 5. Level 3 versus level 4, as a theorem rather than as prose
+
+`shell-schur-weyl-self-duality-interpretation` asserts that Schur–Weyl
+self-duality is *exact at level 4 (the shell)* while conjugate symmetry *breaks
+at level 3 (the inter-nucleon pair)*. Sections 1–2 give the level-3 half:
+`no_selfDual` says the pair has no self-conjugate partition at all. This section
+supplies the level-4 half at the first shell, `n = 4`, where `(2,2)` **is**
+self-conjugate — so the asymmetry between the two levels is not a stipulation
+about them, it is a fact about partitions of 2 and of 4. -/
+
+/-- The five partitions of 4, the Wedderburn blocks of `H₄(q)`. -/
+inductive Block4
+  | p4      -- `(4)`
+  | p31     -- `(3,1)`
+  | p22     -- `(2,2)`
+  | p211    -- `(2,1,1)`
+  | p1111   -- `(1,1,1,1)`
+  deriving DecidableEq
+
+/-- The transpose on partitions of 4: `(4)* = (1,1,1,1)`, `(3,1)* = (2,1,1)`,
+and `(2,2)* = (2,2)`. -/
+def conj4 : Block4 → Block4
+  | .p4 => .p1111
+  | .p31 => .p211
+  | .p22 => .p22
+  | .p211 => .p31
+  | .p1111 => .p4
+
+theorem conj4_involutive : ∀ b : Block4, conj4 (conj4 b) = b
+  | .p4 | .p31 | .p22 | .p211 | .p1111 => rfl
+
+/-- The `n = 4` instance of the same carrier. -/
+def shellDuality4 : QOU.BraidKnot.ShellSchurWeylSelfDuality where
+  Partition := Block4
+  conj := conj4
+  conj_conj := conj4_involutive
+
+/-- **At `n = 4` the block `(2,2)` IS self-dual** — the level-4 half. -/
+theorem p22_selfDual : shellDuality4.SelfDual .p22 := rfl
+
+/-- **And it is the only one.** So the shell has exactly one charge-conjugation
+fixed point where the pair has none. -/
+theorem selfDual4_iff (b : Block4) : shellDuality4.SelfDual b ↔ b = .p22 := by
+  cases b <;>
+    simp [QOU.BraidKnot.ShellSchurWeylSelfDuality.SelfDual, shellDuality4, conj4]
+
+/-- **The level-3 / level-4 asymmetry, in one statement.** The pair (`n = 2`) has
+no charge-conjugation-invariant block; the first shell (`n = 4`) has one. The
+corpus's architectural claim is therefore a theorem about partitions, not a
+modelling choice — and it is also the reason the pair layer cannot inherit
+charge symmetry from the shell: there is no invariant block at the pair for the
+shell's invariant one to restrict to. -/
+theorem level3_no_fixed_point_level4_has_one :
+    (∀ b : Block, ¬ shellDuality.SelfDual b) ∧ (∃ b : Block4, shellDuality4.SelfDual b) :=
+  ⟨no_selfDual, ⟨.p22, p22_selfDual⟩⟩
+
 end QOU.MassTheory.PairIsospinAssignment
