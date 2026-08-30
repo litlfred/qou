@@ -49,7 +49,27 @@ bps = mp.polyroots([complex(c) for c in sp.Poly(disc, z).all_coeffs()])
 print("color-cubic branch points (disc_X=0):", [mp.nstr(b, 5) for b in bps])
 # verify order-2 branch: at z_k two cubic roots collide (gap → 0)
 zk = bps[0]
-roots = sorted(mp.polyroots([1, zk + 1, zk**2 + zk + 1, zk**3 + zk**2 + zk + 1]),
+# maxsteps=200 (was mpmath's default 50) — this producer DIED here.
+#
+# The point z_k is a BRANCH POINT, chosen as a root of the discriminant, so the
+# cubic has a genuine DOUBLE root there. That is the whole subject of the check
+# two lines down ("gap -> 0 ⇒ square-root branch"). mpmath's polyroots uses
+# Durand-Kerner, which converges linearly rather than quadratically on a
+# repeated root, so the default 50 iterations are not enough to reach the
+# tolerance implied by `set_compute_dps()` above.
+#
+# The failure is PRECISION-DEPENDENT, which is why it looked mysterious:
+#     dps=15  OK      dps=30  OK      dps=50  NoConvergence   dps=60  NoConvergence
+# so the probe worked until the ambient dps was raised. Verified that exact
+# rational discriminant coefficients do NOT fix it — this is the repeated root,
+# not coefficient accuracy — while maxsteps=200 does, at every dps tried.
+#
+# It also sharpens the result rather than merely unblocking it: the measured
+# minimum sheet-gap falls with precision (4.5e-16 at dps=30, 4.17e-26 at
+# dps=50), which is the signature of a true double root and is exactly what
+# this probe is asserting.
+roots = sorted(mp.polyroots([1, zk + 1, zk**2 + zk + 1, zk**3 + zk**2 + zk + 1],
+                            maxsteps=200),
                key=lambda r: abs(r))
 gap_min = min(abs(roots[i] - roots[j]) for i in range(3) for j in range(i + 1, 3))
 print(f"min sheet-gap at a branch point = {mp.nstr(gap_min,4)} (→0 ⇒ square-root branch, exponent 1/2)")
