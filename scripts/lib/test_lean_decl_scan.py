@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lean_decl_scan import (  # noqa: E402
     blank_comments, split_statement, decl_spans, docstring_before,
     binder_names, assumption_binders, discharges_via_binder_field,
-    local_def_names,
+    local_def_names, line_comments_before, line_comments_inside, comment_cone,
 )
 
 FAIL = []
@@ -137,9 +137,50 @@ kind, name, line_no, _ = list(decl_spans(blank_comments(SRC_REF)))[0]
 check("docstring found across a Ref line",
       "**A theorem.**" in docstring_before(lines, line_no), True)
 
+# --- 10-12. the comment cone (bean `qou-rfq9`, 2026-08-30) ------------------
+# `docstring_before` deliberately SKIPS `--` lines, so prose written there is
+# invisible to it.  Modelled on `b3_nf_wedderburn_uniqueness`, whose docstring
+# says "PROVED CORRECT" while its own `--` comments say the proof is not there.
+SRC_CONE = """\
+/-- The coefficients are PROVED CORRECT. -/
+-- Ref: [jones1987]
+-- The formal proof needs: Wedderburn for finite-dim algebras.
+theorem b3_uniqueness :
+    -- Full proof requires Wedderburn-Artin over R_q.
+    coeffs 5 = 0 :=
+  rfl
+"""
+lines = SRC_CONE.split("\n")
+kind, name, line_no, chunk = list(decl_spans(blank_comments(SRC_CONE)))[0]
+span = chunk.count("\n") + 1
+
+check("docstring alone does NOT see the -- admission",
+      "formal proof needs" in docstring_before(lines, line_no), False)
+check("line_comments_before reads the -- block above",
+      "formal proof needs" in line_comments_before(lines, line_no), True)
+check("line_comments_inside reads -- inside the statement",
+      "Full proof requires" in line_comments_inside(lines, line_no, span), True)
+
+cone = comment_cone(lines, line_no, span)
+check("cone carries all three sources",
+      ("PROVED CORRECT" in cone, "formal proof needs" in cone,
+       "Full proof requires" in cone), (True, True, True))
+
+# The walk upward must stop at a preceding declaration, never reach over it.
+SRC_STOP = """\
+def earlier : Nat := 0
+-- a comment about `later`
+theorem later : True := trivial
+"""
+lines2 = SRC_STOP.split("\n")
+_, _, ln2, _ = [d for d in decl_spans(blank_comments(SRC_STOP)) if d[1] == "later"][0]
+check("comment walk stops at the previous decl",
+      "earlier" in line_comments_before(lines2, ln2), False)
+
+
 if FAIL:
     print(f"FAIL ({len(FAIL)}):")
     for f in FAIL:
         print("  -", f)
     sys.exit(1)
-print("lean_decl_scan selftest OK (12 regression cases)")
+print("lean_decl_scan selftest OK (17 regression cases, incl. the comment cone)")
