@@ -118,7 +118,7 @@ The bar-involution split (dashboard Table 4) is live here too: the
 entanglement-augmented $B_{\mathrm{sym+ent}}$ improves ²H (0.79 → 0.56 err
 direction) and ³H (1.38 → 1.06) but leaves ⁴He at 2.57.
 
-## 4. Fusion channels — D + T → ⁴He + n, and why the sign comes out wrong
+## 4. Fusion processes — D + T → ⁴He + n, and why the sign comes out wrong
 
 **No reaction/channel model exists on main** (the only reaction-shaped compute,
 `borromean-qvalue.py`, is deprecated). Fusion Q-values are therefore pure
@@ -137,7 +137,7 @@ central structural fact: **a fusion Q-value is a small difference of same-order
 bindings, so it amplifies per-isotope binding error without mercy.** D+T comes
 out *endothermic* in every current form because ⁴He is under-bound 3.26× —
 the entire +17.6 MeV lives in the magic-closure physics the production forms
-miss. Until the ⁴He row closes, every fusion channel involving it will have
+miss. Until the ⁴He row closes, every fusion process involving it will have
 the wrong sign; this is the single highest-leverage number in the light-nuclei
 program. (The SU(4) occupancy form $B_{\mathrm{gate}}$ — parameter-free
 $E_0\ln(1/W_\lambda)$ — fixes ⁴He specifically, err 0.94, but over-binds ²H
@@ -150,7 +150,7 @@ and would be new research; the ingredients (per-isotope duals) are all present.
 
 ### 4b. First cross-witness channel read (probe, 2026-08-30)
 
-[`fusion_channel_sdp_comparison_probe.py`](../../computations/probes/fusion_channel_sdp_comparison_probe.py)
+[`fusion_process_sdp_comparison_probe.py`](../../computations/probes/fusion_process_sdp_comparison_probe.py)
 (bean `qou-dpy1`) compares the two sides of D + T → ⁴He + n across the four
 committed real-SDP witnesses — no new solve; conclusions at float64
 resolution (the LP-dual witnesses carry raw float64 by construction, bean
@@ -184,7 +184,7 @@ than a true absence of negative-norm content — settling which requires
 completing those tables (the known Phase-B gap), not a probe.
 
 **(vi) LR support conservation (probe, 2026-08-30, bean `qou-89xc`).**
-[`fusion_channel_lr_support_probe.py`](../../computations/probes/fusion_channel_lr_support_probe.py)
+[`fusion_process_lr_support_probe.py`](../../computations/probes/fusion_process_lr_support_probe.py)
 induces each side's SDP active sets into the common frame $H_{15}$ by
 Littlewood–Richardson (exact integer combinatorics, no tolerance):
 $|S_{\mathrm{init}}| = 79$, $|S_{\mathrm{fin}}| = 23$ of the 176
@@ -291,7 +291,7 @@ currently carrying.
    contradiction logged in `topological-field-ansatz-table-data.qa.json`.
 3. `/dashboard-low` re-run at head (proton pin); output archived in the PR.
    Fusion bookkeeping table (§4) computed from it.
-4. Follow-up beans: fusion-channel SDP comparison (research), e-layer
+4. Follow-up beans: fusion-process SDP comparison (research), e-layer
    promotion (G4), plus the pre-existing q₀-drain and Δ_λ tracks.
 
 Validation note: the folio-assistant pipeline is not available in this
