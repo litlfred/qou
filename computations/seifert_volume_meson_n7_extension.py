@@ -146,13 +146,13 @@ def main():
     chi5 = chi_n(5)
     seifert_K = mp.mpf(9) / 5
     kaon_base = chi5 * seifert_K**2
-    kaon_err_ppm = float(mp.fabs(kaon_base - m_K / m_pi) / (m_K / m_pi) * 1e6)
+    kaon_err_ppm = mp.fabs(kaon_base - m_K / m_pi) / (m_K / m_pi) * mp.mpf("1e6")
 
     print(f"  chi_5 = q^5 - q^{{-5}} = {mp.nstr(chi5, 15)}")
     print(f"  (9/5)^2 = {mp.nstr(seifert_K**2, 10)}")
     print(f"  m_K/m_pi predicted = {mp.nstr(kaon_base, 12)}")
     print(f"  m_K/m_pi PDG      = {mp.nstr(m_K / m_pi, 12)}")
-    print(f"  Error: {kaon_err_ppm:.1f} ppm")
+    print(f"  Error: {float(kaon_err_ppm):.1f} ppm")
 
     # ================================================================
     # SECTION 3: CANDIDATE FORMULAS FOR ETA AND PHI
@@ -188,14 +188,14 @@ def main():
     n_eff_eta = 8
     ratio_A1_eta = mp.mpf(2 * n_eff_eta - 1) / n_eff_eta
     pred_A1_eta = m_pi * chi_n(5) * ratio_A1_eta**2  # chi_5 since s-quark
-    err_A1_eta = float(mp.fabs(pred_A1_eta - m_eta) / m_eta * 1e6)
+    err_A1_eta = mp.fabs(pred_A1_eta - m_eta) / m_eta * mp.mpf("1e6")
     eta_candidates.append(("A1: eta n_eff=8, (15/8)^2*chi5", pred_A1_eta, err_A1_eta))
 
     # A2: phi as n_eff=10 (ss-bar, 5+5)
     n_eff_phi = 10
     ratio_A2_phi = mp.mpf(2 * n_eff_phi - 1) / n_eff_phi
     pred_A2_phi = m_pi * chi_n(5) * ratio_A2_phi**2  # chi_5 for s-quark
-    err_A2_phi = float(mp.fabs(pred_A2_phi - m_phi) / m_phi * 1e6)
+    err_A2_phi = mp.fabs(pred_A2_phi - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("A2: phi n_eff=10, (19/10)^2*chi5", pred_A2_phi, err_A2_phi))
 
     # ------------------------------------------------------------------
@@ -227,7 +227,7 @@ def main():
         else:
             continue
 
-        err = float(mp.fabs(pred - target_mass) / target_mass * 1e6)
+        err = mp.fabs(pred - target_mass) / target_mass * mp.mpf("1e6")
         if target_mass == m_eta:
             eta_candidates.append((label, pred, err))
         else:
@@ -264,7 +264,7 @@ def main():
         ("C6: phi = m_K * |tr_H2(10)/tr_H2(5)|", m_phi,
          m_K * mp.fabs(tr10 / tr5)),
     ]:
-        err = float(mp.fabs(pred - target_mass) / target_mass * 1e6)
+        err = mp.fabs(pred - target_mass) / target_mass * mp.mpf("1e6")
         if target_mass == m_eta:
             eta_candidates.append((label, pred, err))
         else:
@@ -295,7 +295,7 @@ def main():
         ("D2: phi = m_pi * net(10)/net(6)", m_phi,
          m_pi * net_10 / net_6),
     ]:
-        err = float(mp.fabs(pred - target_mass) / target_mass * 1e6)
+        err = mp.fabs(pred - target_mass) / target_mass * mp.mpf("1e6")
         if target_mass == m_eta:
             eta_candidates.append((label, pred, err))
         else:
@@ -317,27 +317,27 @@ def main():
 
     # E1: eta = m_K * q (stunning if it holds!)
     pred_E1 = m_K * q
-    err_E1 = float(mp.fabs(pred_E1 - m_eta) / m_eta * 1e6)
+    err_E1 = mp.fabs(pred_E1 - m_eta) / m_eta * mp.mpf("1e6")
     eta_candidates.append(("E1: eta = m_K * q_0 (!!!)", pred_E1, err_E1))
 
     # E2: phi = m_K * [5]_q / [3]_q (q-integer ratio)
     pred_E2 = m_K * q_int(5) / q_int(3)
-    err_E2 = float(mp.fabs(pred_E2 - m_phi) / m_phi * 1e6)
+    err_E2 = mp.fabs(pred_E2 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E2: phi = m_K * [5]_q/[3]_q", pred_E2, err_E2))
 
     # E3: phi = m_K * q^2  (generalize E1: next power)
     pred_E3 = m_K * q**2
-    err_E3 = float(mp.fabs(pred_E3 - m_phi) / m_phi * 1e6)
+    err_E3 = mp.fabs(pred_E3 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E3: phi = m_K * q^2", pred_E3, err_E3))
 
     # E4: phi = m_pi * chi(5) * (9/5)^2 * q^2 = m_K_base * q^2
     pred_E4 = m_pi * kaon_base * q**2
-    err_E4 = float(mp.fabs(pred_E4 - m_phi) / m_phi * 1e6)
+    err_E4 = mp.fabs(pred_E4 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E4: phi = m_pi * kaon_base * q^2", pred_E4, err_E4))
 
     # E5: phi = m_eta * q  (chain: pi -> K*q -> eta*q -> phi?)
     pred_E5 = m_eta * q
-    err_E5 = float(mp.fabs(pred_E5 - m_phi) / m_phi * 1e6)
+    err_E5 = mp.fabs(pred_E5 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E5: phi = m_eta * q_0 (chain test)", pred_E5, err_E5))
 
     # E6: phi / m_pi ratio analysis
@@ -349,12 +349,12 @@ def main():
 
     # E6: phi = m_pi * chi5 * chi3
     pred_E6 = m_pi * mp.fabs(chi5 * chi_n(3))
-    err_E6 = float(mp.fabs(pred_E6 - m_phi) / m_phi * 1e6)
+    err_E6 = mp.fabs(pred_E6 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E6: phi = m_pi * |chi5 * chi3|", pred_E6, err_E6))
 
     # E7: phi from q-integer product
     pred_E7 = m_pi * q_int(5) * q_int(3)
-    err_E7 = float(mp.fabs(pred_E7 - m_phi) / m_phi * 1e6)
+    err_E7 = mp.fabs(pred_E7 - m_phi) / m_phi * mp.mpf("1e6")
     phi_candidates.append(("E7: phi = m_pi * [5]_q * [3]_q", pred_E7, err_E7))
 
     # ================================================================
@@ -371,12 +371,12 @@ def main():
 
     # Apply R to kaon base
     kaon_with_R = kaon_base * R_tower
-    kaon_R_err = float(mp.fabs(kaon_with_R - m_K / m_pi) / (m_K / m_pi) * 1e6)
-    print(f"  Kaon with R: m_K/m_pi = {mp.nstr(kaon_with_R, 12)} (err {kaon_R_err:.1f} ppm)")
-    print(f"  Kaon without R:        {mp.nstr(kaon_base, 12)} (err {kaon_err_ppm:.1f} ppm)")
+    kaon_R_err = mp.fabs(kaon_with_R - m_K / m_pi) / (m_K / m_pi) * mp.mpf("1e6")
+    print(f"  Kaon with R: m_K/m_pi = {mp.nstr(kaon_with_R, 12)} (err {float(kaon_R_err):.1f} ppm)")
+    print(f"  Kaon without R:        {mp.nstr(kaon_base, 12)} (err {float(kaon_err_ppm):.1f} ppm)")
 
     improvement = "improves" if kaon_R_err < kaon_err_ppm else "worsens"
-    print(f"  Tower correction {improvement} kaon: {kaon_err_ppm:.0f} -> {kaon_R_err:.0f} ppm")
+    print(f"  Tower correction {improvement} kaon: {float(kaon_err_ppm):.0f} -> {float(kaon_R_err):.0f} ppm")
     print()
 
     # Apply R to best eta and phi candidates
@@ -389,23 +389,23 @@ def main():
 
     # Tower-corrected versions of the best
     best_eta_with_R = best_eta_pred * R_tower
-    best_eta_R_err = float(mp.fabs(best_eta_with_R - m_eta) / m_eta * 1e6)
+    best_eta_R_err = mp.fabs(best_eta_with_R - m_eta) / m_eta * mp.mpf("1e6")
 
     best_phi_with_R = best_phi_pred * R_tower
-    best_phi_R_err = float(mp.fabs(best_phi_with_R - m_phi) / m_phi * 1e6)
+    best_phi_R_err = mp.fabs(best_phi_with_R - m_phi) / m_phi * mp.mpf("1e6")
 
     print(f"  Best eta ({best_eta_label}):")
     print(f"    Without R: {mp.nstr(best_eta_pred, 10)} MeV (err {best_eta_err:.0f} ppm)")
-    print(f"    With R:    {mp.nstr(best_eta_with_R, 10)} MeV (err {best_eta_R_err:.0f} ppm)")
+    print(f"    With R:    {mp.nstr(best_eta_with_R, 10)} MeV (err {float(best_eta_R_err):.0f} ppm)")
     eta_R_improvement = "improves" if best_eta_R_err < best_eta_err else "worsens"
-    print(f"    R {eta_R_improvement}: {best_eta_err:.0f} -> {best_eta_R_err:.0f} ppm")
+    print(f"    R {eta_R_improvement}: {best_eta_err:.0f} -> {float(best_eta_R_err):.0f} ppm")
     print()
 
     print(f"  Best phi ({best_phi_label}):")
     print(f"    Without R: {mp.nstr(best_phi_pred, 10)} MeV (err {best_phi_err:.0f} ppm)")
-    print(f"    With R:    {mp.nstr(best_phi_with_R, 10)} MeV (err {best_phi_R_err:.0f} ppm)")
+    print(f"    With R:    {mp.nstr(best_phi_with_R, 10)} MeV (err {float(best_phi_R_err):.0f} ppm)")
     phi_R_improvement = "improves" if best_phi_R_err < best_phi_err else "worsens"
-    print(f"    R {phi_R_improvement}: {best_phi_err:.0f} -> {best_phi_R_err:.0f} ppm")
+    print(f"    R {phi_R_improvement}: {best_phi_err:.0f} -> {float(best_phi_R_err):.0f} ppm")
 
     # ================================================================
     # SECTION 5: RESULTS SUMMARY
@@ -421,12 +421,12 @@ def main():
     print(f"\n  --- ETA (m_eta = {float(m_eta):.3f} MeV) ---")
     for label, pred, err in eta_candidates:
         mark = " <<<" if err < 10000 else ""
-        print(f"  {label:60s} {float(pred):>12.3f} {float(m_eta):>12.3f} {err:>12.0f}{mark}")
+        print(f"  {label:60s} {float(pred):>12.3f} {float(m_eta):>12.3f} {float(err):>12.0f}{mark}")
 
     print(f"\n  --- PHI (m_phi = {float(m_phi):.3f} MeV) ---")
     for label, pred, err in phi_candidates:
         mark = " <<<" if err < 10000 else ""
-        print(f"  {label:60s} {float(pred):>12.3f} {float(m_phi):>12.3f} {err:>12.0f}{mark}")
+        print(f"  {label:60s} {float(pred):>12.3f} {float(m_phi):>12.3f} {float(err):>12.0f}{mark}")
 
     # ================================================================
     # SECTION 6: STRUCTURAL ANALYSIS — WHY TORUS KNOTS USE CHARACTERS
@@ -500,12 +500,18 @@ def main():
     })
 
     wb.add_data("eta_candidates", [
-        {"label": label, "pred_MeV": float(pred), "err_ppm": err}
+        # NOT `float(pred)`. `pred` is already mpf; this cast was the last
+        # raw-float64 source in this witness after the err_ppm sites were
+        # carried through (see the note on the `* mp.mpf("1e6")` scalings).
+        {"label": label, "pred_MeV": pred, "err_ppm": err}
         for label, pred, err in eta_candidates
     ])
 
     wb.add_data("phi_candidates", [
-        {"label": label, "pred_MeV": float(pred), "err_ppm": err}
+        # NOT `float(pred)`. `pred` is already mpf; this cast was the last
+        # raw-float64 source in this witness after the err_ppm sites were
+        # carried through (see the note on the `* mp.mpf("1e6")` scalings).
+        {"label": label, "pred_MeV": pred, "err_ppm": err}
         for label, pred, err in phi_candidates
     ])
 
@@ -526,7 +532,7 @@ def main():
     wb.add_data("notable_ratio", {
         "m_eta_over_m_K": str(mp.nstr(eta_K_ratio, 15)),
         "q_0": str(mp.nstr(q, 15)),
-        "difference_ppm": float(mp.fabs(eta_K_ratio - q) / q * 1e6),
+        "difference_ppm": mp.fabs(eta_K_ratio - q) / q * mp.mpf("1e6"),
         "interpretation": "m_eta / m_K ~ q_0 to the precision shown",
     })
 
