@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:43:04Z
-updated_at: 2026-08-30T14:43:37Z
+updated_at: 2026-08-30T14:50:44Z
 ---
 
 Found 2026-08-30 while draining the `qou-cds2` producer-importability backlog.
@@ -67,3 +67,58 @@ the committed witness.
 **Do not "refresh" this witness to the better numbers before that measurement.**
 A value improving is not evidence about why, and committing it would launder an
 unexplained change as a precision win.
+
+
+## 2026-08-30 — MEASURED. Cause 1 is REFUTED; the interesting hypothesis is dead
+
+Ran `a_operator_recursive_a3_crosscheck.py` both ways, as this bean prescribed.
+
+    run (a)  PYTHONPATH=computations:computations/a_operator:...   exit 0
+    run (b)  env -u PYTHONPATH, from repo root                     exit 0
+
+**Every non-ephemeral field is byte-identical between the two.** The witness
+writer itself said so on the second run — *"[unchanged — kept on-disk commitSha
+for staleness]"*.
+
+So the documented `PYTHONPATH` invocation does **not** select a float64 module.
+The speculation that the masking bug was degrading a *number* rather than
+merely hiding a crash is **wrong**, and the corollary I floated — that the whole
+`PYTHONPATH`-documented population needs re-examining for silently degraded
+numbers — does not follow from anything. Withdrawn.
+
+## What the movement actually is: an ordinary two-month-stale witness
+
+    committed   2026-06-28T17:11:53Z   mpmath 1.3.0   scriptHash 8db718c4294d
+    fresh       2026-08-30             mpmath 1.4.1   scriptHash 8db718c4294d
+
+**The producer's own source is unchanged** — identical `scriptHash`. Both fresh
+runs agree with each other and differ from a witness nobody has regenerated in
+two months.
+
+## Remaining candidates, and why I cannot close it here
+
+- **Import-cone drift** — the likelier one. The stale value `rel = 1.9515091e-16`
+  sits exactly at the float64 floor, and no `mpmath` version bump turns a double
+  into 50 correct digits; something in the cone stopped laundering an f64. The
+  transfer reference (`reduced_block_kernel.chi_all_lambda_reduced_block`,
+  `dps=50`) carries no `float(` today.
+- **Environment** — `mpmath 1.3.0 -> 1.4.1`. Cannot explain a 1e-16 -> 1e-50
+  move on its own, for the reason above.
+
+**Dating it is not possible in this clone, and that is a finding in itself.**
+The repo is shallow (`git rev-parse --is-shallow-repository` -> true). The
+witness's `commitSha 406489450c9b…` does not resolve, and `git log -- <file>`
+attributes everything predating the graft to `cdb64587b8`, which has **no
+parents** (`git rev-list --count` -> 1) and reports "41473 files changed,
+14448426 insertions" — the graft artifact, not a diff.
+
+## Next step (unchanged in aim, narrowed in method)
+
+Run `computations/audits/witness_import_cone_staleness_audit.py` against this
+producer to identify which cone member moved. Do NOT date anything with
+`git log` in a shallow clone.
+
+**Still do not refresh this witness to the better numbers** until the cone
+member is named. Two reproducible runs agreeing is evidence the value is
+*right*; it is not evidence about *why it changed*, and committing it without
+that is the laundering this bean was opened to avoid.
