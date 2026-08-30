@@ -1,11 +1,11 @@
 ---
 # qou-rm57
 title: 'Convention-frame audit: 7 derivation documents disagree with canon and do not say why'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:44:08Z
-updated_at: 2026-08-30T14:44:54Z
+updated_at: 2026-08-30T15:11:18Z
 ---
 
 Opened by [`computations/audits/derivation_convention_frame_audit.py`](../computations/audits/derivation_convention_frame_audit.py),
@@ -120,3 +120,76 @@ eyeball a tail.
 float64-truncated convention-C proton in `markov-trace-assembly-proton` and
 `p-tr-M-q0`) are unaffected — they were measured against the exact C value, not
 eyeballed.
+
+
+## CLOSED 2026-08-30 — all six scoped, audit drained 6 → 0
+
+Each of the six was read individually rather than batch-labelled, and the answer
+was the same for all of them but **stronger than "undeclared convention"**:
+they are **doubly off canon**, and neither departure was declared.
+
+### 1. Convention C — expected
+
+Markov parameter `z = √q/(q+1)`. The live D values are now named in each
+document's `description`, with their source.
+
+### 2. The pin is NEITHER live anchor — not expected
+
+Step 7 of the `*-tr-M-q0` family evaluates at **`q_0 = 1.1099785955541805`**:
+the **CODATA-2018 lepton-tower derivation**, not the frozen canonical muon pin
+(`1.1099785955573347…`) and not the proton pin that the 2026-08-15 ruling makes
+default for compute. That is the third of the three values AGENTS.md warns are
+all called "the muon q₀".
+
+**Established, not assumed** — and it corrects a claim I made earlier in this
+bean and on the PR:
+
+| hypothesis | test | verdict |
+|---|---|---|
+| float64 truncation of the frozen-pin C value | float64 rounding agrees to ~1e-16; observed divergence is at the **11th digit** (rel 1.9504e-11) | **REFUTED** |
+| exact C evaluated at the CODATA-2018 muon pin | dq/q between the two muon pins = 2.8417e-12 ⇒ required elasticity **6.86** — exactly the scale of a Laurent polynomial spanning q⁻⁶…q⁶ (6-crossing braid word; χ^(3) = q⁶, χ^(111) = q⁻⁶) | **CONFIRMED** |
+
+So *"the C value, float64-truncated"* — which I wrote in this bean, in a commit
+message and in a PR comment — **was wrong**. The truth is more useful: these are
+exact C traces at a third pin.
+
+**And I nearly shipped the opposite conclusion.** My verification script printed
+*"an elasticity of ~7e3 is not physical: REFUTED"* directly beneath its own
+computed value of **6.8635**. The label was hardcoded before the number existed.
+Two orders of magnitude, in the sentence that decides the verdict.
+
+### 3. A finding the convention audit was not built to catch
+
+The corpus carries **two independent chains per atom**, and they disagree with
+each other while both asserting `target_tolerance: 1e-09`:
+
+| atom | `*-tr-M-q0` | `markov-trace-assembly-*` | rel diff | vs own tolerance |
+|---|---|---|---|---|
+| p | 1.0653062285923893 | 1.0653062285923893 | **0.0** | — |
+| n | 0.9232332971695838 | 0.9232332299116371 | 7.285e-8 | **73×** |
+| D | 0.3882864715477134 | 0.3882864240747888 | 1.223e-7 | **122×** |
+
+The proton pair agrees **exactly**, so this is not a systematic offset between
+the two methods — it is specific to n and D. **Which of each pair is right is
+NOT established here**, and I did not guess; both are recorded in each
+document's own scoping block so the next reader meets the discrepancy rather
+than picking one at random.
+
+That fell out of *reading* the six. No convention detector would have found it:
+both values are equally non-canonical, so a canon-comparison flags them
+identically and never notices they disagree with each other.
+
+### Verification
+
+- convention-frame audit: **84 scanned, 0 undeclared** (was 6).
+- `--selftest` **PASS** — still flags the pre-scoping `markov-peel` document.
+- `derivation_chain_validator.py`: **0 failures**.
+- Scoped, not corrected: the values are right for their own frame and pin, and
+  re-deriving under D at the proton pin is a compute, not an edit.
+
+### Left open
+
+The n and D cross-family disagreement (§3). It is a real numerical
+contradiction between two live chains, not a labelling problem, and resolving
+it needs one of the two re-derived — not a decision I can make from the
+documents.
