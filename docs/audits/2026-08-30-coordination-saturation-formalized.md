@@ -54,6 +54,29 @@ free positive parameters.
   proved. It needs new substrate structure and is the surviving open route
   (`qou-brng`). This file deliberately stops before it rather than fitting it.
 
+## Convergent frontier (sibling landings, 2026-08-29/30)
+
+This lemma is one of several formalize-first prunes converging on the extensive
+term. Read together:
+
+- **`ChainBondOrderDependence.orderIndependent_iff`** — the linear-chain bond sum
+  is arrangement-invariant **iff** `L_pp = L_pn = L_nn`; a nucleus has no
+  arrangement, so bond-type-dependent scalars are a non-physical DOF (scope-(b)
+  excluded at `q ≠ 1`, bean `qou-m07y`). **My uniform-ε assumption is exactly that
+  order-independent regime** — so the saturation dichotomy here holds precisely in
+  the physical case, and the linear chain is excluded there while the complete
+  graph is excluded here.
+- **`BodyOrderRecurrenceDepth.three_le_depth`** — body-order recurrence depth ≥ 3
+  is forced (0- and 1-body vanish, deuteron binds), and 3 terms cannot test it.
+- **`MayerThreeBodySign`** — the connected 3-body Ursell cumulant sign is
+  threshold-forced and wrong against AME (`−2.744` vs `+1.426`), independent of
+  the bond set (bean `qou-rraz`).
+
+So **both** simple coordination ansätze (complete graph, linear chain) are now
+excluded, depth ≥ 3 is forced, and the Mayer 3-body route is wrong-signed. The
+admissible structure of the extensive term is being pruned from several directions
+simultaneously; this file adds the saturation constraint.
+
 ## Verdict
 
 The extensive term's **scaling** (bounded coordination ⇒ saturation; complete

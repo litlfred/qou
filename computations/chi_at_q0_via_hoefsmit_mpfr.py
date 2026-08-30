@@ -31,6 +31,7 @@ combiner prefers the numerical cache when present.
 from __future__ import annotations
 
 import hashlib
+import os
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
@@ -229,12 +230,21 @@ def build_chi_cache_at_q0(
     # `partial` and `tr_M_at_q0`. Writing this shape into those filenames would
     # hand every `at-qinv` consumer a file missing the field it reads. Checked
     # before choosing, not after.
-    _anchor = anchor_of_q0(q_str)
+    # Env-first anchor: anchor_of_q0() returns None for the muon Q_50_DIGIT_STR
+    # (2022-CODATA ...56427390... vs frozen canonical ...5573347...), so it
+    # cannot be relied on to distinguish muon from proton. QOU_Q0_ANCHOR is the
+    # intent signal (default proton).
+    _anchor = os.environ.get("QOU_Q0_ANCHOR") or anchor_of_q0(q_str)
     if _anchor is None:
         _tag = hashlib.sha256(str(q_str).strip().encode()).hexdigest()[:8]
         out_path = HERE / f"chi-{atom_name}-h{n}-at-q{_tag}-50dps.witness.json"
     else:
-        out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
+        # Pin-specific filename (qou-wgaw / qou-3zby): a single un-suffixed cache
+        # cannot serve both pins without a straddle. Proton keeps the legacy
+        # un-suffixed name (backward compatible); other anchors (muon) get a
+        # `-{anchor}` suffix, matching `_load_numerical_chi_cache`'s preference.
+        _sfx = "" if _anchor == "proton" else f"-{_anchor}"
+        out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps{_sfx}.witness.json"
     already: dict[tuple, dict] = {}
     if out_path.exists():
         existing = json.loads(out_path.read_text())
@@ -479,7 +489,13 @@ def save_witness(record: dict) -> Path:
     `chi-{atom}-h{n}-at-q0-50dps.witness.json`."""
     atom_name = record["atom"]
     n = record["n_strands"]
-    out = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
+    # Pin-specific filename (qou-wgaw / qou-3zby): proton keeps the legacy
+    # un-suffixed name; other anchors (muon) get a `-{anchor}` suffix. Env-first
+    # (anchor_of_q0 returns None for the muon Q_50_DIGIT_STR).
+    _anchor = os.environ.get("QOU_Q0_ANCHOR") or anchor_of_q0(
+        record.get("q_0_50dps", Q_50_DIGIT_STR))
+    _sfx = "" if _anchor in (None, "proton") else f"-{_anchor}"
+    out = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps{_sfx}.witness.json"
     payload = {
         "computation": f"chi-{atom_name}-h{n}-at-q0-50dps",
         "description": (
