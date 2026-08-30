@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-30T02:42:20Z
+updated_at: 2026-08-30T02:49:36Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -671,3 +671,92 @@ ratchet** — a new red, and mine. That ratchet exists to drain exactly the
 backlog of unstamped witnesses, so refilling it while investigating a staleness
 problem would have been the wrong kind of irony. Stamped `q0Anchor`/`q0Value` at
 the producer; not baselined.
+
+
+## 2026-08-29 — H_2 gluon-vertex SDP vs LR embedding: the H_2 route HAS a binding
+## constraint under D, and it is PARITY, not the normalisation
+
+Owner asked for the results and implications of the two candidate selection
+principles. Measured both.
+
+### Option 1 — the H_2 gluon-vertex SDP
+
+`sdp_gamma_gamma_to_qqbar.py` sets it up: `H_2(q)` has NF basis `{1, sigma_0}`,
+`T_w = c_1.1 + c_sigma.sigma_0`, and the Wedderburn projections are 1x1 blocks
+
+    sym  (2)    : c_1 + q.c_sigma      >= 0
+    alt  (1,1)  : c_1 - q^-1.c_sigma   >= 0
+
+**Its stated normalisation is the wrong thing to lean on.** With `tr_M(T_w) = 1`
+imposed, measured at D:
+
+    identity              PSD   tr_M = 1.0                  meets it
+    sigma_0               NOT PSD (alt = -0.900918)         tr_M = 0.6127
+    sigma_0^2 = h.s0 + 1  PSD   tr_M = 1.1280887441144      VIOLATES it
+
+so the feasible set under that constraint is the identity alone — the script's
+own comment says as much (*"The minimal PSD T_w with tr_M = 1 is T_w =
+identity"*). Read that way the H_2 SDP selects nothing, exactly as the D re-run
+LP selected nothing.
+
+**But the PSD condition alone IS binding, and it is a parity rule.** The
+antisymmetric projection of `sigma^k` is exactly
+
+    alt(sigma_0^k) = (-1/q)^k
+
+so `alt >= 0 <=> k EVEN`. Measured, k = 0..6:
+
+     k    sym            alt              PSD?
+     0    1.0            1.0              PSD
+     1    1.10997858    -0.900918284      no
+     2    1.23205245     0.811653754      PSD
+     3    1.36755184    -0.731233708      no
+     4    1.51795325     0.658781817      PSD
+     5    1.68489560    -0.593508584      no
+     6    1.87019803     0.534702735      PSD
+
+**This is the constraint that survives convention D.** It is exact and
+algebraic — no numerics, no anchor, no Gram — so unlike the Frobenius-positivity
+proxy in the deprecated LP it cannot go stale with a convention or a trace rule.
+
+Implications, and they are sharp:
+
+* It **rules out the D-LP's answer.** That re-run returned `s0` — ONE crossing,
+  10 total — for both nucleons. Odd, hence not PSD at the vertex. My own
+  re-run's optimum is excluded by this rule.
+* It **selects 2 sigma_0 over 1 and 3**, i.e. the shipped 11-crossing
+  construction, as the minimal NON-ZERO even option.
+* It is **consistent with the C-era neutron answer too**: `L+ -> L-` is 4
+  crossings, also even.
+* It does **not** by itself force k > 0 — `k = 0` is PSD. So parity narrows
+  {0, 2, 4, ...} and the remaining step, that the vertex is present at all, is a
+  physical input rather than a PSD consequence.
+
+### Option 2 — LR cross-level embedding
+
+Machinery exists and is live: `lr_coeff` implemented in three non-deprecated
+places (`meson/cut_entropy_is_A_independent_probe.py`,
+`probe_9b_perlambda_brane_tower.py`), plus `probes/lr_hecke_character_probe.py`
+and `computations/UNIVERSAL-BRANCHING-PLAN.md`. So this is not a from-scratch
+build.
+
+But it is the wrong tool for THIS question. LR coefficients govern how
+representations COMBINE across levels — how the H_2 vertex and the H_3 blocks
+fuse. They constrain the embedding, not the multiplicity of crossings at the
+vertex being embedded. Nothing in the LR data distinguishes 9 from 11: both are
+H_3 elements, and the embedding acts identically on either. LR becomes
+load-bearing at the NEXT step — assembling the four SDP components into the
+nucleon — which is a real open piece, just not the adjudicator here.
+
+### Recommendation (my judgement, not a finding)
+
+**Take the H_2 PSD parity rule as the selection principle, and drop the
+tr_M = 1 normalisation from that role.** It is the only candidate examined that
+is binding under D, it is exact rather than numerical, it excludes my own LP's
+answer, and it independently reproduces the even crossing count both C-era
+answers had. It leaves exactly one honest gap — why the vertex is present at all
+— which is a smaller and better-posed question than "which of 9, 10, 11, 13".
+
+Do NOT wire anything on this yet: it selects the parity, and the corpus should
+decide whether "gluon vertex present" is an axiom or is itself derived before
+the crossing budget is declared canonical.
