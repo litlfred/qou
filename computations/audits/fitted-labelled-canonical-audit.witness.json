@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:44:16.740304+00:00",
-  "commitSha": "b15cef402dd3ce6f2f6dc6d7e15dabfbaf10bd2b",
+  "computedAt": "2026-08-30T09:01:20.248109+00:00",
+  "commitSha": "e2f7ae13f7b316ad06123d127577dabcb3917875",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
@@ -45,7 +45,7 @@
   "data": {
     "total_issues": 14,
     "flagged_script_count": 11,
-    "scripts_scanned": 3396,
+    "scripts_scanned": 3425,
     "rows": [
       {
         "path": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
