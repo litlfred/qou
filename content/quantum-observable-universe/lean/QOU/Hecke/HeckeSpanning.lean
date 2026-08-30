@@ -98,12 +98,14 @@ theorem towerSpan_mul_gen {x : IwahoriHecke K q (n + 1)} (hx : x ∈ towerSpan K
   | zero => simp
   | add x y _ _ hx hy => rw [add_mul]; exact Submodule.add_mem _ hx hy
 
-/-- The generators of `H_{n+1}(q)` generate it as a `K`-algebra. -/
-theorem adjoin_range_σ :
-    Algebra.adjoin K (Set.range (σ K q (n + 1))) = ⊤ := by
-  have hcomp : (σ K q (n + 1)) = (mk K q (n + 1)) ∘ (FreeAlgebra.ι K) := rfl
-  have hrange : Set.range (σ K q (n + 1))
-      = (mk K q (n + 1)) '' (Set.range (FreeAlgebra.ι K)) := by
+/-- The generators of `H_m(q)` generate it as a `K`-algebra.  Stated at every
+    `m`, not just `n+1`, because the spanning induction needs the `m = 0` base
+    case where the generating set is empty. -/
+theorem adjoin_range_σ (m : ℕ) :
+    Algebra.adjoin K (Set.range (σ K q m)) = ⊤ := by
+  have hcomp : (σ K q m) = (mk K q m) ∘ (FreeAlgebra.ι K) := rfl
+  have hrange : Set.range (σ K q m)
+      = (mk K q m) '' (Set.range (FreeAlgebra.ι K)) := by
     rw [hcomp, Set.range_comp]
   rw [hrange, ← AlgHom.map_adjoin, FreeAlgebra.adjoin_range_ι, Algebra.map_top,
     AlgHom.range_eq_top]
@@ -113,7 +115,7 @@ theorem adjoin_range_σ :
     under right multiplication by generators, and those generate the algebra. -/
 theorem towerSpan_eq_top : towerSpan K q n = ⊤ := by
   have hspan := Algebra.adjoin_eq_span (R := K) (Set.range (σ K q (n + 1)))
-  rw [adjoin_range_σ] at hspan
+  rw [adjoin_range_σ K q (n + 1)] at hspan
   have htop : (⊤ : Submodule K (IwahoriHecke K q (n + 1)))
       = Submodule.span K (Submonoid.closure (Set.range (σ K q (n + 1))) : Set _) := by
     rw [← hspan]; simp
