@@ -171,10 +171,34 @@ bar involution being isospin conjugation (§6); (iv) the channel's dual-price
 shift $\Delta y_0^* = +0.4225$ is dominated by the free neutron
 (+0.4206) — the final state pays almost its whole net-constraint price on
 the emitted nucleon, which is the SDP-side shadow of the channel's kinetic
-release; (v) one anomaly for follow-up: the **deuteron is the only subject
-whose $n_{\mathrm{target}}$ (0.38773) differs from its own witness
-$\mathrm{tr}_M$ (0.38836)** — the other three are bit-identical — worth a
-provenance check on which atom word the deuteron solve targeted.
+release; (v) the $n_{\mathrm{target}} \ne \mathrm{tr}_M$ "anomaly" is **resolved at
+the producer** (2026-08-30): `nucleus_real_sdp.py` defines
+$n_{\mathrm{target}} := \sum t_\lambda$ over the **positive-norm**
+(bar-fold representative) blocks only, and the deuteron is the only
+subject of the four whose witness records *any* negative-norm blocks
+(3, carrying $\mathrm{tr}_M - n_{\mathrm{target}} = 6.25\times10^{-4}$;
+the other three record zero). Two readings, deliberately kept apart: the
+deuteron's $6.2\times10^{-4}$ bar-odd-fold weight is **measured**; the
+zeros for ³H/⁴He may reflect their *partial* character tables rather
+than a true absence of negative-norm content — settling which requires
+completing those tables (the known Phase-B gap), not a probe.
+
+**(vi) LR support conservation (probe, 2026-08-30, bean `qou-89xc`).**
+[`fusion_channel_lr_support_probe.py`](../../computations/probes/fusion_channel_lr_support_probe.py)
+induces each side's SDP active sets into the common frame $H_{15}$ by
+Littlewood–Richardson (exact integer combinatorics, no tolerance):
+$|S_{\mathrm{init}}| = 79$, $|S_{\mathrm{fin}}| = 23$ of the 176
+partitions of 15, and $S_{\mathrm{fin}} \subsetneq S_{\mathrm{init}}$
+**strictly** — every $H_{15}$ block the final state (⁴He + n) can reach
+is already reachable from the initial state (D + T), and the channel
+contracts the induced support $79 \to 23$. So there is no LR-level
+obstruction to an $H_{15}$ channel model built on these active sets, and
+the channel's structural signature is *support contraction* — consistent
+with fusion concentrating trace weight (the $\mathrm{tr}_M$ products move
+$0.089 \to 0.982$ across the same channel). Necessary-not-sufficient: the
+supports say which blocks a joint model may use, nothing about magnitudes;
+the joint solve itself (constraint transfer, Phase-B LR constraints)
+remains the open research under `qou-dpy1`.
 
 ## 5. The electron layer — ¹H's 13.6 eV is imported
 

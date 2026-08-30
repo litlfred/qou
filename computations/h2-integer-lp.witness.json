@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:53:03.937649+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T06:19:01.266012+00:00",
+  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
   "assertions": [
     {
       "name": "Binding is positive for at least one operator",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "h2-integer-lp",
   "scriptFile": "h2-integer-lp.py",
   "scriptHash": "ecb2581a3a7a",
-  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -64,34 +64,34 @@
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
     "q": 1.1099785827513808,
-    "E_mol_eV": 6.729338426152079,
+    "E_mol_eV": 6.72932460783094,
     "Phi_H_isolated": -0.8419636168774549
   },
   "data": {
     "best_1_crossing": {
       "ops": "σ₀⁻¹",
       "binding": -1.269993593455005,
-      "E_eV": -8.546216689403728
+      "E_eV": -8.546199140224408
     },
     "best_2_crossings": {
       "ops": "σ₁⁻¹,σ₁⁻¹",
       "binding": 0.01440664831054228,
-      "E_eV": 0.0969472120681911
+      "E_eV": 0.09694701299249821
     },
     "best_3_crossings": {
       "ops": "σ₁⁻¹,σ₀⁻¹,σ₁⁻¹",
       "binding": 0.2544514687638877,
-      "E_eV": 1.712290046343665
+      "E_eV": 1.7122865302515553
     },
     "best_4_crossings": {
       "ops": "σ₁⁻¹,σ₁⁻¹,σ₁⁻¹,σ₁⁻¹",
       "binding": 1.8995573989732244,
-      "E_eV": 12.782764597592015
+      "E_eV": 12.782738348897855
     },
     "closest_to_observed": {
       "ops": "σ₁⁻¹,σ₀⁻¹,σ₁⁻¹",
-      "E_eV": 1.712290046343665,
-      "error_pct": -61.762169576961476
+      "E_eV": 1.7122865302515553,
+      "error_pct": -61.76224809621359
     },
     "y0_star": -1.9785532831996737,
     "y_star": [
@@ -144,9 +144,9 @@
       "phi_sep_md_formula": -2.8437286176260486,
       "phi_sep_markov_consistent": 0.22924686816778989,
       "y_cov_star_md_phi_sep": -1.9785532831996737,
-      "y_cov_star_md_phi_sep_eV": -13.314354636824921,
+      "y_cov_star_md_phi_sep_eV": -13.314327296540263,
       "y_cov_star_markov_consistent": 1.0944222025941648,
-      "y_cov_star_markov_consistent_eV": 7.364737382350909,
+      "y_cov_star_markov_consistent_eV": 7.364722259273452,
       "solver_result": {
         "x_star": [
           1.145591186080312e-43,
