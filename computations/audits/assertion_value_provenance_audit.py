@@ -41,12 +41,16 @@ that actually settles a field.
 MEASURED WEAKNESSES — both found by this audit being wrong first, so do not
 read a low count as a clean corpus:
 
-  * **It over-flagged badly on integer counts.**  The first version treated
-    any `sum`/`min`/`max` as a float64 accumulation and reported **35
-    producers / 67 fields**.  Most of that was `sum(1 for ...)`, an EXACT
-    integer count.  Requiring the accumulated expression to itself have a
-    float64 origin drops the count to **3 producers / 10 fields** — a 12x
-    correction to a number that had already been committed.
+  * **The accumulation rule took three attempts, and the first two were
+    committed.**  v1 flagged every `sum`/`min`/`max` and reported **35
+    producers / 67 fields**; most of that was `sum(1 for ...)`, an EXACT
+    integer count.  v2 required an ARGUMENT to have a visible float64 origin
+    and reported **3 / 10** — but lost `max(baseline_ratios)` in
+    `fr_pullback_k1_k2_test.py`, a CONFIRMED DRAIN-NO-OP, because a list's
+    element type is not visible at the call site.  v3 flags unless the
+    accumuland is PROVABLY an integer literal: **34 producers / 64 fields**.
+    Conservative on purpose — this audit narrows rather than decides, so a
+    false positive costs a look while a false negative costs a producer run.
 
   * **It is CALL-SITE-LOCAL and cannot see through a function boundary.**
     `borromean_per_lambda_fr_probe.py` takes its asserted value from
@@ -56,11 +60,19 @@ read a low count as a clean corpus:
     image of the trap the bean already records in the other direction (an
     inherited `set_compute_dps()` living INSIDE a function body).
 
-So the honest scope is: precise when it fires on a visible origin, blind to
-anything a helper returns.  Against the drain batch it has 1 confirmed true
-positive (he4_sdp_compositional_probe) and 1 confirmed false negative
-(borromean_per_lambda_fr_probe).  Two data points settle nothing; they are
-recorded so the next agent does not mistake "3 flagged" for "3 exist".
+So the honest scope is: it sees a float64 origin that is visible in the
+assertion's own function, and is blind to anything a helper returns.
+
+Measured against the drain batch's own verdicts (the only instrument that
+settles a field), on every case decided so far:
+
+    he4_sdp_compositional_probe.py    REVERT/no-op   PREDICTED
+    fr_pullback_k1_k2_test.py         REVERT/no-op   PREDICTED
+    borromean_per_lambda_fr_probe.py  REVERT/no-op   MISSED
+    probe_bring_residue_resolvent.py  KEEP (8 gains) not flagged  (control)
+
+2 of 3, with the negative control clean.  A small sample, and it is recorded
+so the next agent does not mistake "34 flagged" for "34 exist".
 
 Usage:
     assertion_value_provenance_audit.py [--list] [--selftest]
@@ -83,6 +95,26 @@ FLOAT64_ATTRS = {"x_star", "y_star", "y0_star", "duality_gap", "primal_obj",
                  "dual_obj", "fun", "x", "eigenvalues", "eigenvals"}
 
 
+def _provably_integer_accumulation(call: ast.Call) -> bool:
+    """True only when sum/min/max demonstrably accumulates integers.
+
+    Recognises the `sum(1 for ...)` / `sum(<int literal> for ...)` shape and
+    a literal list/tuple of ints. Anything else is treated as possibly
+    float64 -- absence of proof is not proof of exactness.
+    """
+    if not call.args:
+        return False
+    a = call.args[0]
+    if isinstance(a, (ast.GeneratorExp, ast.ListComp)):
+        elt = a.elt
+        return isinstance(elt, ast.Constant) and isinstance(elt.value, int) \
+            and not isinstance(elt.value, bool)
+    if isinstance(a, (ast.List, ast.Tuple)):
+        return all(isinstance(e, ast.Constant) and isinstance(e.value, int)
+                   and not isinstance(e.value, bool) for e in a.elts)
+    return False
+
+
 def _root_name(node) -> str | None:
     while isinstance(node, (ast.Attribute, ast.Subscript)):
         node = node.value
@@ -101,14 +133,22 @@ def _float64_origin(expr, floaty: set) -> str | None:
             if isinstance(f, ast.Name) and f.id in ("float", "sum", "min", "max"):
                 if f.id == "float":
                     continue  # the cast itself is the thing being removed
-                # An accumulation is only float64 if what it accumulates is.
-                # `sum(1 for ...)` is an exact INTEGER count -- flagging it was
-                # a false positive of the first version of this audit, caught
-                # on qbeta_two_pole_ladder_decomposition.py (`sign_flips`) and
-                # atomic_chirality_residue.py (`n_iso_with_chir`), both
-                # `sum(1 for ...)`. Recurse instead of trusting the call name.
-                if any(_float64_origin(arg, floaty) for arg in n.args):
-                    return f"{f.id}() accumulates a float64 quantity"
+                # An accumulation is exact only if what it accumulates is
+                # provably an integer. Two failed rules bracket this:
+                #   v1 flagged EVERY sum/min/max -- wrong on `sum(1 for ...)`,
+                #      an exact integer count (qbeta_two_pole_ladder
+                #      `sign_flips`, atomic_chirality_residue
+                #      `n_iso_with_chir`);
+                #   v2 flagged only when an ARGUMENT had a visible float64
+                #      origin -- which missed `max(baseline_ratios)` in
+                #      fr_pullback_k1_k2_test.py, a confirmed DRAIN-NO-OP,
+                #      because the list's element type is not visible here.
+                # So: flag unless the accumuland is provably an int literal.
+                # Conservative by construction -- this audit narrows, it does
+                # not decide, so a false positive costs a look and a false
+                # negative costs a producer run.
+                if not _provably_integer_accumulation(n):
+                    return f"{f.id}() accumulates a possibly-float64 quantity"
                 continue
         if isinstance(n, ast.Attribute) and n.attr in FLOAT64_ATTRS:
             return f".{n.attr} is a numeric-solver result (float64)"
