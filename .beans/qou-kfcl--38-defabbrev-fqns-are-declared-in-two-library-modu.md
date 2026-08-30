@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-23T20:29:08Z
+updated_at: 2026-08-30T11:03:19Z
 ---
 
 
@@ -256,3 +256,56 @@ RSK–Burnside work.
 `prepare-merge` §4a baseline **raised** 56 → 57 with that reason stated in the
 file — a ratchet loosening should never be silent. Put it back to 56 when that
 pair is resolved.
+
+
+---
+
+## RE-MEASURED 2026-08-30 — 26 compiler-confirmed pairs, not 38, and the guard is now committed (PR #6191)
+
+**Do not quote the 38.** It was a parse-only count with one compiler
+spot-check. Today's figure is **26 module pairs over 22 distinct
+fully-qualified names**, every one confirmed by writing a two-line probe
+that imports both modules and running `lean` on it. Propose stage offered
+28; the compiler rejected 2.
+
+**The 38 → 26 difference is NOT attributed, and it is both things at once.**
+Real drain: `QOU/scratch_fusion.lean` no longer exists, so the
+`QOU.BraidsKnots.S3 / cyclic_perm / resolvent` rows are gone, and the
+`QOU.Archimedean.R_q` row was fixed today (PR #6140). Detector change: four
+false-positive classes were found and fixed while calibrating, listed below.
+I did not separate the two contributions and the numbers should not be read
+as though I had.
+
+**This bean's own headline example has drained.** `import
+QOU.BraidKnot.CasimirShared` + `import QOU.CategoricalDqSquared` — quoted
+above as the motivating error — **compiles clean today**. Re-run it before
+citing it.
+
+### The four detector defects, because each was a wrong count first
+
+| class | what it did before the fix |
+|---|---|
+| `import` indented inside a docstring | made `GroundRingCore` look like it imported `CasimirShared`, inventing a cross-module `R_q` shadow in `WeierstrassProjection` that the compiler denies outright (`QOU.R_q` is not in scope there at all) |
+| `namespace` / `abbrev` inside `/- -/` | corrupted namespace stacks |
+| `section ... end` popping the namespace stack | same |
+| **dotted decl name truncated at its first component** — `def A5Irrep.dim` read as `A5Irrep` | manufactured a duplicate out of every inductive's namespace; the propose stage claimed **5 live errors** on a corpus that compiles green |
+
+The last row is the lesson: **a propose-stage count that contradicts a green
+build is a bug in the detector.** It happened twice before it was believed.
+
+### Guard
+
+[`scripts/lean-duplicate-fqn-audit.py`](scripts/lean-duplicate-fqn-audit.py)
+— `--verify` runs the compiler per pair; `--check-baseline` is a drain-only
+ratchet against
+[`docs/audits/lean-duplicate-fqn-baseline.json`](docs/audits/lean-duplicate-fqn-baseline.json).
+Both controls run: clean baseline exits 0; removing two entries exits 1
+naming exactly those two.
+
+### Still open (what this bean now tracks)
+
+Draining the 26. Each needs a per-pair judgement — which name is canonical,
+whether the two bodies are meant to be the same object — so it was
+deliberately kept out of the guard PR. None is a live error today: no module
+imports both halves of any pair. They are latent, each one waiting for
+whoever writes the module that needs both.
