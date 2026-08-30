@@ -1,15 +1,44 @@
 #!/usr/bin/env python3
-"""qbeta_habiro_depth15_interpretation.py — categorical meaning of `u^15`.
+"""qbeta_habiro_pn_split_depth.py — the u-depth at which β_p and β_n first differ.
 
-CONTEXT (per docs/audits/2026-05-31-qbeta-habiro-delta-am-factorization.md):
+RENAMED 2026-08-30 (bean `qou-saop`), from
+`qbeta_habiro_depth15_interpretation.py`. The old name asserted the answer —
+15 — and the answer changed, so the name became a false claim that no gate
+could see. It is now named for the QUESTION it asks: at what u-exponent does
+the proton/neutron split first appear? That survives a convention change; a
+number in the filename does not.
+
+CONVENTION MATTERS HERE, AND THE ANSWER IS NOW u^4.
+
+Under convention C the Δ-Habiro element factored as
 
     Σ_{m=0..8} Δa_m(u) · (u;u)_m  =  -u^15 · (u - 1) · (u + 1) · P_8(u)
 
-The factors (u-1)(u+1) = Φ_1·Φ_2 are cyclotomic (q=1 vanishing witness).
-P_8(u) is irreducible over ℚ. **THIS script tests the categorical meaning
-of the high-power `u^15` monomial prefactor.**
+and the whole module below was built to interpret that `u^15` prefactor.
+Commit `f392d75408e` (2026-08-18) migrated the family to convention D under
+the owner directive "no C family. D only.", and recorded the p−n difference
+there as
 
-CANDIDATE INTERPRETATIONS (per task statement):
+    u^4(u^2-u+1)(u^2+u+1)(u^4-u^2+1)(u^32+3u^20-2u^16+3u^12-4u^8+3u^4-2)
+
+whose leading factor is **u^4**. This module was not re-run for two months, so
+its witness kept reporting the C-era answer with `allPassed: true` — its only
+assertion was `6 == 6` and could not contradict anything. Test A reproduces
+that D polynomial exactly today (`expanded_min_deg: 4`).
+
+That same commit also found the Φ_k mirror structure does not survive under D:
+all four multiplicities are 0 on all seven pairs, differences nonzero but
+carrying no cyclotomic content. So `(u-1)(u+1) = Φ_1·Φ_2` above is **a
+convention-C statement**, not a live one.
+
+WHAT THIS MEANS FOR THE TESTS BELOW. They were designed to explain 15, and 15
+is no longer the number to explain. They still run, and the depth they measure
+is now reported honestly wherever it appears — but the seven candidate
+interpretations are answers to the C-era question and are retained as the
+record of that enquiry, not as live hypotheses about u^4. Whether any of them
+has a u^4 analogue is open and nothing here claims one.
+
+CANDIDATE INTERPRETATIONS (convention C era — kept as record, see above):
 
   1. 15 = 3 · 5  — 3 strands × 5 atoms (arithmetic only)
   2. 15 = C(4,2) — binomial coefficient (arithmetic only)
@@ -42,11 +71,11 @@ STRUCTURAL TESTS (must show categorical equivalence, not arithmetic match):
      the witness's `M=8` ladder structure.)
 
 USAGE:
-    python3 -u qbeta_habiro_depth15_interpretation.py 2>&1 \
-        | tee /tmp/qbeta_depth15.log
+    python3 -u qbeta_habiro_pn_split_depth.py 2>&1 \
+        | tee /tmp/qbeta_pn_split_depth.log
 
 Outputs:
-    computations/qbeta-habiro-depth15-interpretation.witness.json
+    computations/qbeta/qbeta-habiro-pn-split-depth.witness.json
 """
 from __future__ import annotations
 
@@ -502,7 +531,7 @@ def main() -> int:
     t0 = time.perf_counter()
 
     builder = WitnessBuilder(
-        "qbeta-habiro-depth15-interpretation",
+        "qbeta-habiro-pn-split-depth",
         engine="python+sympy",
         start_time=t0,
     )
@@ -718,7 +747,7 @@ def main() -> int:
             f"earlier atomic witness; they have not been rewritten here.")
 
     builder.save()
-    print(f"\n  ✓ Witness: qbeta-habiro-depth15-interpretation.witness.json")
+    print(f"\n  ✓ Witness: qbeta-habiro-pn-split-depth.witness.json")
     return 0
 
 

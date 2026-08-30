@@ -1,11 +1,11 @@
 ---
 # qou-saop
 title: qbeta_habiro_depth15 still claims u^15 in prose but computes u^4 after the C-to-D upstream regen
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T10:19:31Z
-updated_at: 2026-08-30T10:27:18Z
+updated_at: 2026-08-30T10:37:55Z
 ---
 
 
@@ -130,3 +130,47 @@ The module's **filename, docstring and `set_description`** still say depth 15.
 Renaming a producer is not a mechanical edit — it moves a witness path — and
 whether "depth 15" survives as a name for a probe whose answer is 4 is a
 framing question. Nothing here touches it.
+
+## COMPLETED 2026-08-30 — renamed and documented
+
+**`qbeta_habiro_depth15_interpretation` -> `qbeta_habiro_pn_split_depth`**,
+with witness and `script-qa` sidecar moved alongside via `git mv`.
+
+The new name states the **question** — at what u-depth do β_p and β_n first
+differ — rather than an answer. Naming it `depth4` would have repeated the
+exact mistake: a number in a filename is a claim, and this one went stale for
+two months with nothing able to see it. The question survives a convention
+change; the answer does not.
+
+Verified safe before moving: **no content block cites this probe or its
+witness** (`grep -rn depth15 content/` is empty), so no `.ts` dependency
+breaks. Remaining old-path hits are audit witnesses that regenerate.
+
+Updated: the module docstring (which now carries the C->D history, the u^4
+polynomial and the note that the seven candidate interpretations are C-era
+record rather than live hypotheses), the `WitnessBuilder` name, the completion
+print, the QA sidecar's five self-references, `q0-anchor-missing-baseline.json`,
+`git_files.txt`, and the producer/witness paths in two audit docs. Re-run
+clean: 2 assertions, both passing, witness at the new path with
+`computation: qbeta-habiro-pn-split-depth`.
+
+## What was deliberately NOT renamed
+
+`docs/audits/2026-05-31-qbeta-habiro-depth15-interpretation.md` keeps its
+filename. It is a **dated record of what was true on that date under
+convention C**, and renaming a dated audit falsifies history — the finding was
+correct when made. Three sibling audits link to it by that filename and those
+links stay valid.
+
+Instead it gained a superseded banner at the top: the u^4 polynomial, the
+provenance (`f392d75408e`, "no C family. D only."), the verdict change to
+UNCLEAR, and two further C-only statements flagged — the cyclotomic reading
+`(u−1)(u+1) = Φ_1·Φ_2` (the same migration found all four Φ_k multiplicities
+are 0 on all seven pairs) and the seven candidate interpretations, which
+answer "why 15" and so answer nothing current.
+
+## Still open, and stated as open
+
+Whether any of those seven interpretations has a `u^4` analogue. Nothing in
+this work claims one, and the banner says so explicitly rather than leaving a
+reader to assume the old framing carries over.

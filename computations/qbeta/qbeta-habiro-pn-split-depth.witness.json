@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:26:57.204417+00:00",
-  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
+  "computedAt": "2026-08-30T10:36:57.697754+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
   "assertions": [
     {
       "name": "every_structural_test_recorded",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 344,
-  "computation": "qbeta-habiro-depth15-interpretation",
-  "scriptFile": "qbeta_habiro_depth15_interpretation.py",
-  "scriptHash": "0703f1eb5123",
-  "scriptCommitSha": "0e196b9cfd65a55c44c4977edd1f733de907840a",
+  "durationMs": 317,
+  "computation": "qbeta-habiro-pn-split-depth",
+  "scriptFile": "qbeta_habiro_pn_split_depth.py",
+  "scriptHash": "231ce810a2ca",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,9 +47,9 @@
   },
   "invocation": {
     "argv": [
-      "computations/qbeta/qbeta_habiro_depth15_interpretation.py"
+      "computations/qbeta/qbeta_habiro_pn_split_depth.py"
     ],
-    "reproduce": "python3 -u computations/qbeta/qbeta_habiro_depth15_interpretation.py"
+    "reproduce": "python3 -u computations/qbeta/qbeta_habiro_pn_split_depth.py"
   },
   "description": "Categorical interpretation of the u^15 prefactor in Σ_m Δa_m·(u;u)_m = −u^15·(u−1)(u+1)·P_8(u). Tests six candidates: (A) confirm u^15 is min-degree after cancellation; (B) (u;u)_5 hypothesis (deg 15); (C) per-m origin tracing; (D) M_p + M_n − 1 hypothesis; (E) (u;u)_8 / shared-denominator u^19; (F) first-differing u-exponent of reconstructed p_in_u vs n_in_u.",
   "contentBlock": "prop:neutron-qvalue-symbolic",
