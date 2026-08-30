@@ -86,23 +86,22 @@ def q_pochhammer(U: sp.Symbol, m: int) -> sp.Expr:
 
 
 def habiro_trM(atom: dict, U: sp.Symbol) -> sp.Expr:
-    # ⚠ BLOCKER (found 2026-08-30, NOT fixed here — separate defect, bean
-    # qou-0ndb). `locals={"check_q": U}` is stale: since
+    # SYMBOL BINDING, fixed 2026-08-30 (bean qou-0ndb). This bound
+    # `locals={"check_q": U}`, which was stale: since
     # `fix(qou-0ndb): serialize Habiro polynomials in ONE canonical symbol`
     # (2026-08-10) the upstream serialises in `u`, and it was regenerated in
     # `u` on 2026-08-26. So sympify mints a fresh Symbol('u'), the a_m/denom
     # never bind to `U`, and the expression comes out a {u, U} MIXTURE — the
     # exact silent failure habiro_coefficients_atomic.py:222-231 warns about.
-    # `.subs(U, sqrt(q))` then leaves `u` symbolic and `float(dtrM_at_1)`
-    # raises, so THIS PRODUCER CANNOT RUN and its witness cannot be
-    # regenerated. Verified offline (no producer run) that `locals={"u": U}`
-    # restores it: Δtr_M(q=1) = 0, leading order ε¹ (both assertions hold),
-    # and the q₀ line then matches the upstream to 1.3e-17. Left unapplied
-    # because it changes what the probe computes, not which pin it uses.
-    D = sp.sympify(atom["denom_in_u"], locals={"check_q": U})
+    # `.subs(U, sqrt(q))` then left `u` symbolic and `float(dtrM_at_1)` raised
+    # with "Cannot convert expression to float", so THIS PRODUCER COULD NOT RUN
+    # AT ALL and its witness could not be regenerated. Reproduced directly
+    # before fixing. Confirmed against the committed upstream, whose
+    # `denom_in_u` reads `4*u**26 + 8*u**22 + 4*u**18` — serialised in `u`.
+    D = sp.sympify(atom["denom_in_u"], locals={"u": U})
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
-        total += sp.sympify(c["a_m"], locals={"check_q": U}) \
+        total += sp.sympify(c["a_m"], locals={"u": U}) \
             * q_pochhammer(U, int(c["m"]))
     return sp.cancel(total / D)
 
@@ -304,20 +303,28 @@ def main() -> int:
         "status": "open object, now fully constrained",
         "no_fitted_form_proposed": True,
     })
+    # NO FLOAT64 (owner directive): assertion values pass as STRINGS, the
+    # drained convention (qou-t0rf). WitnessBuilder.add_assertion coerces
+    # with float() when evaluating `passed`, so exact-zero tolerance still
+    # behaves identically; only the RECORDED value stays out of float64.
     builder.add_assertion(
         "delta_trM_vanishes_at_classical_point",
-        computed=float(dtrM_at_1),
-        expected=0.0,
-        tolerance=0.0,
+        computed=str(dtrM_at_1),
+        expected="0",
+        tolerance="0",
         source=("Δtr_M(q=1) = 0 exactly — proton & neutron Markov traces "
                 "coincide at the classical point q=1 (the q-space form of "
                 "the #1622 d=2 bar-mode vanishing)."),
     )
     builder.add_assertion(
         "delta_trM_is_sqrt_u_ladder_order",
-        computed=float(sp.Rational(dtrM_lead, u_lad_lead)),
-        expected=0.5,
-        tolerance=0.0,
+        # DECIMAL string, not str(Rational): str(Rational(1,2)) is "1/2",
+        # which add_assertion's float() coercion cannot parse — it records
+        # passed=False on a ratio that is exactly right. The drained-
+        # convention string must stay float()-parseable.
+        computed=str(sp.N(sp.Rational(dtrM_lead, u_lad_lead), 20)),
+        expected="0.5",
+        tolerance="0",
         source=("Δtr_M leads at ε¹ while u_ladder is O(ε²), so Δtr_M is "
                 "O(√u_ladder) — exactly the per-block order of the #1593 "
                 "order audit. Confirms the c_k come from f(Δtr_M), not "
