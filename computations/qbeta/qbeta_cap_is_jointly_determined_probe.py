@@ -158,16 +158,22 @@ def main() -> int:
     verdict = (
         "CROSS-CHANNEL DETERMINACY. The premise as posed is wrong: the mass "
         "channel does NOT force the cap -- markovWeights_eq_jones_of_threeRow_eq_zero "
-        "takes y_(1^3) = 0 as a HYPOTHESIS, and its own file says the categorical "
-        "premise is unestablished and the corpus inconsistent on it. So nothing "
-        "transfers. BUT: chi^(3)(beta_Bor) = chi^(1^3)(beta_Bor) = 1, so the mass "
+        "takes y_(1^3) = 0 as a HYPOTHESIS, so nothing transfers THROUGH THAT "
+        "LEMMA. (Its file's 'What this does NOT establish' note said the premise "
+        "was unestablished; that note is STALE and is corrected on this branch -- "
+        "the cap IS derived, from the 2-dim mass fibre, in "
+        "FibreDimensionForcesTL.lean, sorry-free. That correction does not touch "
+        "the determinacy result below, which is independent of HOW the cap is "
+        "established.) BUT: chi^(3)(beta_Bor) = chi^(1^3)(beta_Bor) = 1, so the mass "
         "channel sees y_3 + y_(1^3) where the decay channel sees y_3 - y_(1^3). Sum "
         "and difference. With normalisation the determinant is "
         "-2(q-1)^4(q+1)^4(q^2-q+1)(q^2+q+1)/q^6, nonzero off {0,1,-1}, so the THREE "
         "TOGETHER determine all three weights UNIQUELY -- including y_(1^3). The cap "
         "is undeterminable by either channel alone (Step 12 for decay) and "
-        "DETERMINED by the pair. It is therefore an OBSERVABLE, not a convention, "
-        "and can be asked of the data rather than ruled. NOT DONE HERE: plugging in "
+        "DETERMINED by the pair. So the cap is ALSO an observable -- measurable "
+        "from the two pairings, not only derivable from the fibre dimension -- "
+        "which makes it a falsifiable cross-check on the derived z_D rather than "
+        "a second route that must be taken on trust. NOT DONE HERE: plugging in "
         "numbers, which needs a mass pairing from measured m_p that does not itself "
         "presuppose a convention -- the corpus's m_p route goes through F_Bor, which "
         "does. That circularity is a separate piece of work.")
@@ -190,9 +196,13 @@ def main() -> int:
                 {str(k): str(sp.factor(sp.simplify(v))) for k, v in sol.items()})
     wb.add_data("premise_corrected",
                 "the mass channel does NOT force the cap; TL-factorization is a "
-                "HYPOTHESIS of markovWeights_eq_jones_of_threeRow_eq_zero, and that "
-                "file's own 'What this does NOT establish' section says the "
-                "categorical premise is unestablished and the corpus inconsistent")
+                "HYPOTHESIS of markovWeights_eq_jones_of_threeRow_eq_zero. That "
+                "file's 'What this does NOT establish' note claimed the categorical "
+                "premise was unestablished; the note is STALE and is corrected on "
+                "this branch -- FibreDimensionForcesTL.lean derives the cap from the "
+                "2-dim mass fibre, sorry-free. What stands is that the cap does not "
+                "transfer through THAT lemma, which is all the determinacy result "
+                "below needs.")
     wb.add_data("not_done_here",
                 "the empirical solve -- it needs a mass pairing from measured m_p "
                 "that does not presuppose a convention; the corpus's F_Bor route does")
