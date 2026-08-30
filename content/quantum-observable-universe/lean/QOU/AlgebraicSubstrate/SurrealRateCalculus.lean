@@ -138,9 +138,11 @@ theorem surreal_rate_calculus_conditional
     -- universally quantified rather than fixed at `4/3`: `[CriticalExponent
     -- (4/3)]` would be dischargeable by `⟨rfl⟩` at any call site, which would
     -- make the dependency record satisfy itself and record nothing.
-    {α : ℝ}
-    [QAubinLions] [NSCounterexample] [CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown]
+    -- NB `S` is already the SurrealRateCalculus instance above; the breakdown
+    -- locus is `Sbrk` to avoid shadowing it.
+    {α : ℝ} {K ω : ℝ → ℝ} {Sbrk : Set ℝ}
+    [QAubinLions K] [NSCounterexample ω] [CriticalExponent α]
+    [BlowupYekutieli] [RegularityBreakdown Sbrk]
     (hε_pos : 0 < S.epsilon)
     (hε_inf : ∀ (n : ℕ) (lam : F), 0 < lam → S.epsilon ^ (n + 1) < lam) :
     (0 < S.massGap ∧ 0 < S.reebPeriod)

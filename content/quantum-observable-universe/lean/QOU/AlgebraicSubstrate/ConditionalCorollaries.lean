@@ -25,17 +25,38 @@ import QOU.AlgebraicSubstrate.ConditionalClasses
 
 namespace QOU.AlgebraicSubstrate
 
-/-- **Compactness-constant existence** — direct consequence of
-    `[QAubinLions]` at energy `E = 0`. -/
-theorem qAubinLions_K_exists [QAubinLions] :
-    ∃ K : ℝ, 0 ≤ K ∧ K ≤ 2 * (0 : ℝ) :=
-  QAubinLions.exists_compactness_constant 0 (le_refl 0)
+/-- **Compactness vanishes at zero energy** — a consequence of linearity.
 
-/-- **Singularity-time existence** — direct consequence of
-    `[NSCounterexample]`. -/
-theorem ns_counterexample_T_exists [NSCounterexample] :
-    ∃ T : ℝ, 0 ≤ T :=
-  NSCounterexample.exists_singularity_time 0 (le_refl 0)
+    Until 2026-08-30 this concluded `∃ K, 0 ≤ K ∧ K ≤ 2 · 0`, i.e. that some
+    non-negative real is `≤ 0`, which is true of `0` with or without the
+    hypothesis. The class now says `K` is linear in the energy, so the
+    zero-energy value is *determined* rather than merely bounded, and the proof
+    has to use the hypothesis to get it. Bean `qou-3ytx`. -/
+theorem qAubinLions_zero_energy (K : ℝ → ℝ) [h : QAubinLions K] :
+    K 0 = 0 := by
+  obtain ⟨C, _, hlin⟩ := h.linear_in_energy
+  rw [hlin 0 (le_refl 0)]; ring
+
+/-- **Compactness is monotone in the energy bound** — the substantive half of
+    linearity: more available energy never yields a smaller constant. -/
+theorem qAubinLions_monotone (K : ℝ → ℝ) [h : QAubinLions K]
+    {E₁ E₂ : ℝ} (h₁ : 0 ≤ E₁) (h₂ : E₁ ≤ E₂) :
+    K E₁ ≤ K E₂ := by
+  obtain ⟨C, hC, hlin⟩ := h.linear_in_energy
+  rw [hlin E₁ h₁, hlin E₂ (le_trans h₁ h₂)]
+  exact mul_le_mul_of_nonneg_left h₂ (le_of_lt hC)
+
+/-- **The vorticity is unbounded** — a consequence of blow-up.
+
+    Until 2026-08-30 this concluded `∃ T, 0 ≤ T` — "there exists a non-negative
+    real" — which needs no hypothesis at all. The class now asserts divergence,
+    so what follows from it is that no bound holds. Bean `qou-5nj1`. -/
+theorem ns_counterexample_unbounded (ω : ℝ → ℝ) [h : NSCounterexample ω] :
+    ∀ M : ℝ, ∃ t : ℝ, M < ω t := by
+  obtain ⟨T, _, hdiv⟩ := h.blowup_at_finite_time
+  intro M
+  obtain ⟨t, _, hM⟩ := hdiv M
+  exact ⟨t, hM⟩
 
 /-- **Critical-exponent identity**, in cleared form: under `[CriticalExponent
     α]`, the exponent satisfies `3 · α = 4`.
@@ -67,50 +88,68 @@ theorem blowup_yekutieli_r_exists [BlowupYekutieli] :
     ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + (0 : ℝ) :=
   BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
 
-/-- **Breakdown-measure existence** — direct consequence of
-    `[RegularityBreakdown]`. -/
-theorem regularity_breakdown_measure_exists [RegularityBreakdown] :
-    ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ (0 : ℝ) :=
-  RegularityBreakdown.exists_breakdown_measure 0 (le_refl 0)
+/-- **Every subset of the breakdown locus is null** — monotonicity of measure.
 
-/-- **Two-class composition** (Aubin-Lions + blow-up): there exists
-    a non-negative compactness constant *and* a non-negative blow-up
-    rate.  The two existentials combine without circularity. -/
-theorem qNS_combined_existence [QAubinLions] [BlowupYekutieli] :
-    (∃ K : ℝ, 0 ≤ K) ∧ (∃ r : ℝ, 0 ≤ r) := by
-  obtain ⟨K, hK, _⟩ := QAubinLions.exists_compactness_constant 0 (le_refl 0)
+    Until 2026-08-30 this concluded `∃ μ, 0 ≤ μ ∧ μ ≤ 0`, satisfied by `0`
+    regardless. The class now asserts the locus is Lebesgue-null, so what
+    follows is a genuine statement about subsets of it. Bean `qou-m7a2`. -/
+theorem regularity_breakdown_subset_null (S : Set ℝ) [h : RegularityBreakdown S]
+    {A : Set ℝ} (hA : A ⊆ S) :
+    MeasureTheory.volume A = 0 :=
+  MeasureTheory.measure_mono_null hA h.breakdown_measure_zero
+
+/-- **Two-class composition** (Aubin-Lions + blow-up): the compactness constant
+    is pinned at zero energy *and* the blow-up rate exists.
+
+    The composition is the point — two class hypotheses used together without
+    circularity — but note the asymmetry it now exposes: the Aubin-Lions half
+    derives a determined value, while the Yekutieli half can still only produce
+    an existential, because that carrier has not been re-encoded (bean
+    `qou-88nf`). -/
+theorem qNS_combined (K : ℝ → ℝ) [QAubinLions K] [BlowupYekutieli] :
+    K 0 = 0 ∧ (∃ r : ℝ, 0 ≤ r) := by
+  refine ⟨qAubinLions_zero_energy K, ?_⟩
   obtain ⟨r, hr, _⟩ := BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
-  exact ⟨⟨K, hK⟩, ⟨r, hr⟩⟩
+  exact ⟨r, hr⟩
 
 /-- **Three-class composition** (Aubin-Lions + critical + blow-up):
     the critical-exponent identity holds even when combined with the
     Aubin-Lions and blow-up class hypotheses. -/
-theorem qNS_critical_exponent_with_compactness (α : ℝ)
-    [QAubinLions] [h : CriticalExponent α] [BlowupYekutieli] :
+theorem qNS_critical_exponent_with_compactness (α : ℝ) (K : ℝ → ℝ)
+    [QAubinLions K] [h : CriticalExponent α] [BlowupYekutieli] :
     3 * α = 4 := by
   rw [h.alpha_eq]; norm_num
 
-/-- **Full q-NS-cone composition** (all 5 classes): every
-    conjectural existential field admits a witness simultaneously. -/
-theorem qNS_cone_full_composition (α : ℝ)
-    [QAubinLions] [NSCounterexample] [h : CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown] :
-    (∃ K : ℝ, 0 ≤ K) ∧
-    (∃ T : ℝ, 0 ≤ T) ∧
+/-- **Full q-NS-cone composition** (all 5 classes).
+
+    Until 2026-08-30 this concluded that "every conjectural existential field
+    admits a witness simultaneously" — five existentials, all witnessed by
+    zero, so the conjunction was provable with none of the hypotheses. Four of
+    the five conjuncts now say something the corresponding class is needed for:
+    a determined zero-energy compactness, an unbounded vorticity, the exponent's
+    value, a null breakdown locus.
+
+    **The fourth conjunct is the exception and is left visible rather than
+    dressed up.** `BlowupYekutieli` has not been re-encoded (bean `qou-88nf`),
+    so its leg is still an existential satisfied by zero — the one place this
+    composition is as weak as the whole thing used to be. -/
+theorem qNS_cone_full_composition (α : ℝ) (K ω : ℝ → ℝ) (S : Set ℝ)
+    [QAubinLions K] [NSCounterexample ω] [h : CriticalExponent α]
+    [BlowupYekutieli] [RegularityBreakdown S] :
+    K 0 = 0 ∧
+    (∀ M : ℝ, ∃ t : ℝ, M < ω t) ∧
     (α = 4 / 3) ∧
     (∃ r : ℝ, 0 ≤ r) ∧
-    (∃ μ : ℝ, 0 ≤ μ) := by
-  obtain ⟨K, hK, _⟩ := QAubinLions.exists_compactness_constant 0 (le_refl 0)
-  obtain ⟨T, hT⟩ := NSCounterexample.exists_singularity_time 0 (le_refl 0)
+    MeasureTheory.volume S = 0 := by
   obtain ⟨r, hr, _⟩ := BlowupYekutieli.exists_blowup_rate 0 (le_refl 0)
-  obtain ⟨μ, hμ, _⟩ := RegularityBreakdown.exists_breakdown_measure 0 (le_refl 0)
-  exact ⟨⟨K, hK⟩, ⟨T, hT⟩, h.alpha_eq, ⟨r, hr⟩, ⟨μ, hμ⟩⟩
+  exact ⟨qAubinLions_zero_energy K, ns_counterexample_unbounded ω, h.alpha_eq,
+         ⟨r, hr⟩, RegularityBreakdown.breakdown_measure_zero⟩
 
 /-- **Conditional Reeb-period bound**: under Aubin-Lions + blow-up,
     the Reeb period `Ω · ε ≥ 0` for every infinitesimal `ε ≥ 0` and
     Reeb period `Ω ≥ 0`. -/
-theorem qNS_reeb_period_bound
-    [QAubinLions] [BlowupYekutieli]
+theorem qNS_reeb_period_bound (K : ℝ → ℝ)
+    [QAubinLions K] [BlowupYekutieli]
     (Ω ε : ℝ) (h_Ω : 0 ≤ Ω) (h_ε : 0 ≤ ε) :
     0 ≤ Ω * ε :=
   mul_nonneg h_Ω h_ε
@@ -118,9 +157,9 @@ theorem qNS_reeb_period_bound
 /-- **Conditional enstrophy bound**: under the full q-NS cone,
     every non-negative enstrophy `Z ≥ 0` admits the trivial-cube
     bound `Z³ ≥ 0`. -/
-theorem qNS_enstrophy_cube_bound {α : ℝ}
-    [QAubinLions] [NSCounterexample] [CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown]
+theorem qNS_enstrophy_cube_bound {α : ℝ} {K ω : ℝ → ℝ} {S : Set ℝ}
+    [QAubinLions K] [NSCounterexample ω] [CriticalExponent α]
+    [BlowupYekutieli] [RegularityBreakdown S]
     (Z : ℝ) (h_Z : 0 ≤ Z) :
     0 ≤ Z ^ 3 :=
   pow_nonneg h_Z 3
@@ -137,8 +176,8 @@ theorem qNS_enstrophy_cube_bound {α : ℝ}
 /-- **Conditional rogue-zero cost bound**: under Aubin-Lions +
     blow-up, the rogue-zero energy cost `E(δ) = δ²/ε ≥ 0` for
     `δ : ℝ` and `ε > 0`. -/
-theorem qNS_rogue_zero_cost_nonneg
-    [QAubinLions] [BlowupYekutieli]
+theorem qNS_rogue_zero_cost_nonneg (K : ℝ → ℝ)
+    [QAubinLions K] [BlowupYekutieli]
     (δ ε : ℝ) (h_ε : 0 < ε) :
     0 ≤ δ ^ 2 / ε :=
   div_nonneg (sq_nonneg δ) (le_of_lt h_ε)
