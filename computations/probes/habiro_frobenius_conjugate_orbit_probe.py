@@ -167,10 +167,15 @@ def analyse(coeffs: list[dict], p: int) -> dict[str, Any]:
         "conjugate_orbit": orbit,
         "representative_is_rational_integer": rep_const,
         "galois_norm": norm_res,
+        "galois_norm_orbit_route": norm_orbit,
         "galois_norm_abs": abs(norm_res),
         "is_unit": abs(norm_res) == 1,
         "representative": str(rep.as_expr()),
         "unit_multiplicative_order": unit_order,
+        # Both routes are recorded, not just the claim that they matched, so
+        # the witness carries the evidence its `norm_routes_agree` assertion
+        # is checked against rather than a sentence asserting the outcome
+        # (bean `qou-26f2`).
         "norm_cross_check": "orbit-product == resultant",
     }
 
@@ -293,8 +298,31 @@ def main() -> int:
     wb.add_data("trM_congruence_at_zeta6", trM_congruence_observation(atoms))
     # Assertions carry (name, computed, EXPECTED) -- the third argument is a value
     # to compare against, not a description.
-    wb.add_assertion("norm_routes_agree", True, True)
-    wb.add_assertion("no_float_used", True, True)
+    #
+    # Both of these were `(name, True, True)` — literals on each side, so they
+    # could not fail whatever the run did (bean `qou-26f2`). Each states a
+    # checkable fact, and the rows above now carry what it takes to check it.
+    #
+    # `norm_routes_agree` was additionally unfalsifiable for the reason the
+    # bare `raise` at the top of this file creates: routes that disagree abort
+    # the run, so the witness is only written when they agree. Counting the
+    # agreements against the exactly-evaluated rows measures coverage as well
+    # as agreement — a row that stopped being evaluated shows up here.
+    _exact = [r for a in results for r in a["rows"] if r.get("exact")]
+    _agree = [r for r in _exact
+              if r.get("galois_norm_orbit_route") is not None
+              and r["galois_norm_orbit_route"] == r["galois_norm"]]
+    wb.add_assertion("norm_routes_agree", len(_agree), len(_exact))
+    # `no_float_used` is the exactness claim in this file's title. Every norm
+    # is built through `sp.resultant` / exact orbit products and pulled out
+    # with `int(...)`, so a float anywhere on either route would surface as a
+    # non-int here.
+    wb.add_assertion(
+        "no_float_used",
+        all(isinstance(r["galois_norm"], int)
+            and isinstance(r["galois_norm_orbit_route"], int)
+            for r in _exact),
+        True)
     # Staleness guard: at p=2 the representative collapses to the rational
     # integer C, so the norm is forced to C^2. These are the constants bean
     # `qou-lrnd` corrected the corpus to on 2026-08-23. If either the
