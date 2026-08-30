@@ -126,11 +126,70 @@ HELIUM4_N = 12
 DIRECT_BUDGET_SEC = 480.0                        # 8 min budget per task brief
 
 
+_REF_NAMES = ("atomic-tr-m-mpfr-50dps-proton.witness.json",
+              "atomic-tr-m-mpfr-50dps.witness.json")
+
+
+def _pick_witness_for_pin() -> Path:
+    """The |tr_M| reference BUILT AT THIS RUN'S PIN.
+
+    Both layers exist on disk with identical structure and the same five
+    atoms. `tr_m_q_hecke_seminormal.py:103`, another reader of this artifact,
+    already picks between them — by anchor name; this picks by the recorded
+    value, which needs no manifest lookup and cannot drift from it.
+
+    Raises rather than falling back: returning the wrong layer silently is the
+    defect being fixed, and a 296 ppb error that reads as a successful load is
+    worse than a stack trace.
+    """
+    from q_parameter import Q_50_DIGIT_STR
+    want = mp.mpf(Q_50_DIGIT_STR)
+    tried = []
+    for name in _REF_NAMES:
+        cand = _pb.witness_path(name, HERE)
+        if not cand.exists():
+            continue
+        try:
+            d = json.loads(cand.read_text())
+        except Exception:                                  # noqa: BLE001
+            continue
+        w = d.get("witness", d)
+        q_rec = (w.get("parameters", {}) or {}).get("q_0") or w.get("q_0") \
+            or d.get("q_0_50dps") or w.get("q_0_50dps")
+        tried.append((name, str(q_rec)[:26]))
+        if q_rec is not None and abs(mp.mpf(str(q_rec)) - want) < mp.mpf("1e-40"):
+            return cand
+    raise FileNotFoundError(
+        f"no |tr_M| reference recorded at this run's pin "
+        f"{str(Q_50_DIGIT_STR)[:26]}…; inspected {tried}. Regenerate "
+        f"atomic_tr_m_mpfr_50dps.py at this anchor rather than reading the "
+        f"other layer."
+    )
+
+
 # ── (A) Disjoint-product formula via legacy witness ──────────
 def disjoint_product_value() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
     """Return (|tr_M(⁴He)|, |tr_M(p)|, |tr_M(n)|) read from the
     legacy 50-dps witness."""
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    # PIN-STRADDLE FIX (2026-08-30, bean qou-y313). This hardcoded the MUON
+    # basename while the module resolves `Q_50_DIGIT_STR`, which is the PROTON
+    # pin for this stem. Measured from the two committed witnesses:
+    #
+    #     tr_M(p)   muon 1.14575978232   proton 1.14575969246   rel 7.84e-8
+    #     tr_M(n)   muon 0.987743756821  proton 0.987743688116  rel 6.96e-8
+    #     tr_p^2 * tr_n^2                                       rel 2.96e-7
+    #
+    # and the fourth power is not incidental: this function returns
+    # `tr_p**2 * tr_n**2`, so (1+e)^2(1+f)^2 - 1 = 2e + 2f carries a 78 ppb
+    # per-factor error to 296 ppb on the product. Those are the same figures
+    # `93888aa431` records for `canonical_tr_m_via_chi_cache` — the same
+    # straddle, one producer over.
+    #
+    # Select by the artifact's OWN recorded q rather than by a filename, as
+    # `y_lambda_symbolic_validate.load_mpfr_witness` now does. `_REF_NAMES` is
+    # ordered proton-first only as a hint; the recorded q decides, and an
+    # unmatched pin raises rather than silently returning the other layer.
+    path = _pick_witness_for_pin()
     if not path.exists():
         raise FileNotFoundError(
             f"Required legacy |tr_M| witness not found at {path}; "
@@ -346,7 +405,12 @@ def main() -> int:
                     "abs_tr_p_50dps": fmt(abs_tr_p),
                     "abs_tr_n_50dps": fmt(abs_tr_n),
                     "abs_tr_he4_50dps": fmt(abs_tr_disjoint),
-                    "source_witness": "atomic-tr-m-mpfr-50dps.witness.json",
+                    # Report the witness actually read, not a hardcoded name.
+                    # The pin-straddle fix makes this selectable, so a fixed
+                    # string here would record the wrong provenance for every
+                    # run at the other anchor — a lie of exactly the kind this
+                    # audit exists to catch, one field over.
+                    "source_witness": _pick_witness_for_pin().name,
                 },
                 "direct_recursion": {
                     "engine": "markov_trace_recursive.markov_trace_of_word",

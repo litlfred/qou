@@ -190,6 +190,7 @@ import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
+import QOU.Knot.FiveTwoShapeBounds
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
 import QOU.Knot.IdealTetLawOfSines
@@ -648,6 +649,7 @@ import QOU.QBeta.BarOddLadderShape
 import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
 import QOU.QBeta.PairingSeesCommutator
+import QOU.QBeta.GluonVertexPsdParity
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate

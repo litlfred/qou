@@ -38,14 +38,41 @@ del _sys, _Path
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
 # Single source of truth: codata_2022_source.M_E_MEV = 0.51099895069(15)
 # MeV (full 11-sig-fig CODATA-2022; same module codata_constants.py
-# imports from). float()-cast on import so the ~266 importers' float
-# arithmetic / json.dumps stay intact (an mpf would break json.dumps);
-# the cast value is bit-identical to the prior literal. The old literal
-# 0.51099895000 was truncated by 3 figs. The computations/ dir is on
-# sys.path via the path bridge above, so this resolves cleanly.
-# READ from the registry -- this file already did so for M_E_MEV and
-# hardcoded everything else, which is how the CODATA-2018 values below
-# survived under 2022 labels (drain qou-7ot6-a, 2026-08-21).
+# imports from). READ from the registry -- this file already did so for
+# M_E_MEV and hardcoded everything else, which is how the CODATA-2018
+# values below survived under 2022 labels (drain qou-7ot6-a, 2026-08-21).
+#
+# THESE ARE mpf, NOT float (changed 2026-08-29, bean qou-p77d).
+#
+# Until now every one of them was wrapped in `float()` on import, with the
+# stated reason: "so the ~266 importers' float arithmetic / json.dumps stay
+# intact (an mpf would break json.dumps)". That cast was the upstream cause
+# of a whole class of float64 defects -- 291 non-integral float64 fields at
+# `.assertions[].computed/.expected` across 57 producers, because a producer
+# starting from these constants is float64 end to end however much mpmath it
+# calls afterwards. `channel_product_mass.py` is the clearest case: it
+# computes `Z*M_P_MEV + N*m_n + Z*me` in pure binary64 and then wraps the
+# answer in `mp.log`, which cannot restore what was never there.
+#
+# The reason was measured before it was removed
+# (`computations/audits/experimental_constants_float64_rationale_probe.py`)
+# and is HALF TRUE, which is why it survived so long:
+#
+#   * "an mpf would break json.dumps" -- REAL for a bare `json.dumps`, and
+#     there are hand-rolled ones in the tree. NOT true of the witness path,
+#     which is where these fields come from: `qou_substrate/witness.py`
+#     serializes with `json.dump(..., default=str)`, which renders an mpf at
+#     full precision. So the reason never covered the case it was invoked for.
+#   * "the importers' float arithmetic stays intact" -- mpf interoperates
+#     with float for arithmetic, comparison and f-string formatting, so the
+#     ordinary call sites are unaffected.
+#   * "~266 importers" -- 204 live (+4 in the generated qou-mass mirror).
+#
+# THE ONE REAL HAZARD, and it is silent: `math.log(mpf)` and friends do NOT
+# raise, they DOWNCAST. A module doing `import math` and calling `math.sqrt`
+# on one of these values still gets binary64, with no error to notice. This
+# module's own `Q_NEUTRON_MEV_ERR` did exactly that and is fixed below; any
+# consumer wanting full precision must use `mpmath` equivalents.
 from codata_2022_source import (  # noqa: E402
     M_E_MEV as _M_E_MEV,
     M_E_MEV_ERR as _M_E_MEV_ERR,
@@ -58,23 +85,23 @@ from codata_2022_source import (  # noqa: E402
     M_MU_OVER_M_E as _M_MU_OVER_M_E,
     M_MU_OVER_M_E_ERR as _M_MU_OVER_M_E_ERR,
 )
-M_E_MEV     = float(_M_E_MEV)
-M_E_MEV_ERR = float(_M_E_MEV_ERR)   # was 0.00000000015; table says ...16
+M_E_MEV     = _M_E_MEV
+M_E_MEV_ERR = _M_E_MEV_ERR   # was 0.00000000015; table says ...16
 
 # Energy scale for Q-values: κ = m_e / 3
 # This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
 KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV
 
-M_P_MEV     = float(_M_P_MEV)       # was 938.27208816 (CODATA-2018)
-M_P_MEV_ERR = float(_M_P_MEV_ERR)
+M_P_MEV     = _M_P_MEV       # was 938.27208816 (CODATA-2018)
+M_P_MEV_ERR = _M_P_MEV_ERR
 
 # NOTE: the registry's M_N_MEV is the AME-DERIVED neutron mass
 # (939.56542179), not the CODATA-direct 939.56542194. That is the corpus's
 # deliberate choice -- see codata_2022_source -- so reading the registry
 # follows it rather than the raw table. The literal here was 939.56542052,
 # the CODATA-2018 DIRECT value: wrong edition and wrong determination.
-M_N_MEV     = float(_M_N_MEV)
-M_N_MEV_ERR = float(_M_N_MEV_ERR)
+M_N_MEV     = _M_N_MEV
+M_N_MEV_ERR = _M_N_MEV_ERR
 
 # ── Free neutron beta-decay Q-value (CODATA 2022) ────────────────
 # n → p + e⁻ + ν̄ₑ,  Q = m_n − m_p − m_e
@@ -93,12 +120,16 @@ M_N_MEV_ERR = float(_M_N_MEV_ERR)
 # Was the literal 1.2933321 labelled "direct CODATA 2022 value" -- 320 ppb
 # from the actual 2022 entry (1.29333251). Now read from the registry, where
 # codata_table_vintage_audit checks it against the NIST table.
-M_N_MINUS_P_MEV     = float(_M_N_MINUS_P_MEV)
-M_N_MINUS_P_MEV_ERR = float(_M_N_MINUS_P_MEV_ERR)
+M_N_MINUS_P_MEV     = _M_N_MINUS_P_MEV
+M_N_MINUS_P_MEV_ERR = _M_N_MINUS_P_MEV_ERR
 
-import math as _math
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
-Q_NEUTRON_MEV_ERR = _math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+# `_math.sqrt` here, on three mpf arguments, is the exact hazard named in the
+# header: it does not raise, it returns a binary64 float. So the quadrature
+# sum was silently the one float64 quantity left in this module the moment the
+# casts came off. `_mpm.sqrt` keeps it mpf.
+import mpmath as _mpm  # noqa: E402
+Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
 # m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
 # list pins m_p, m_e and the β-decay sector, deriving m_n rather than using
@@ -120,8 +151,8 @@ HBAR_MEV_S_ERR = 0.0          # exact by definition
 ALPHA_EM_INV     = 137.035999084  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
 ALPHA_EM_INV_ERR = 0.000000021
 
-MU_OVER_E        = float(_M_MU_OVER_M_E)      # was 206.7682830 (CODATA-2018)
-MU_OVER_E_ERR    = float(_M_MU_OVER_M_E_ERR)
+MU_OVER_E        = _M_MU_OVER_M_E      # was 206.7682830 (CODATA-2018)
+MU_OVER_E_ERR    = _M_MU_OVER_M_E_ERR
 
 TAU_OVER_E       = 3477.23        # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
 TAU_OVER_E_ERR   = 0.23

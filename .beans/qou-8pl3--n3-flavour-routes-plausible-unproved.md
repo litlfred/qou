@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T13:24:14Z
+updated_at: 2026-08-30T02:41:23Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -435,3 +435,44 @@ but SU(2) is a self-dual category, and in a self-dual category parity excludes
 3'. The guard held.
 
 New ledger: docs/coordination/eightfold-n3-surface.md.
+
+
+---
+
+**Cross-reference added 2026-08-29** (from PR #5744, answering the ask posted on
+that PR from #5819). Route A here — *"construct a three-dimensional object in
+the multi-fibre groupoid"* — is not an unclaimed slot. It already has a bean
+cluster, under epic **`qou-8lxd`** (EPIC: eightfold way / SM derived from QOU):
+
+| bean | title | status |
+|---|---|---|
+| `qou-dwsh` | T3b: distinct-fibre groupoid — does a non-self-dual 3-object exist? | **completed** (high) |
+| `qou-y7vg` | T3g: non-neutral Tannakian / gerbe — inter-universe flavour | todo |
+| `qou-8p1i` | multi-fibre groupoid (T3b) — "the only untouched native route" | **scrapped** |
+| `qou-bldy` | T3a: Lean the Sym² gate — SU(3) fundamental admits no invariant symmetric form | completed |
+
+So Route A (here), T3b (`qou-dwsh`) and T3g (`qou-y7vg`) are **three names for
+one open problem**, and `qou-8p1i` is the scrapped predecessor — its "only
+untouched native route" framing is superseded by `qou-dwsh`.
+
+**Read `qou-dwsh`'s `completed` carefully — it is a SPECIFICATION, not a
+construction.** Its body does not build the object; it states what the object
+must be:
+
+> Single-fibre `V^{⊗n}` is structurally capped at `gl₂` (Descartes `χ(A) = −6`
+> → `SU(2)` → `dim V = 2` → partitions ≤ 2 rows; the `(1³)` block **drops** at
+> `n = 3`). So the representation must **not** be a tensor power of one `V`.
+> Need: a groupoid with inequivalent fibre objects carrying a 3-dim `W` whose
+> fundamental is **not self-dual**.
+
+That is the same necessary condition #5819 reached from the Frobenius–Schur
+trichotomy (`gate_forces_complex_of_dim_three`: a dim-3 object through the gate
+must supply a **complex**-type summand — and complex type is exactly
+"fundamental not self-dual"). Two routes, one condition, independently derived.
+
+**Its stated gate is discharged.** `qou-dwsh` says "Gated on T3a"; T3a is
+`qou-bldy`, which is `completed`. So nothing upstream blocks the construction —
+what is missing is the construction itself.
+
+Anyone picking this up: read `qou-dwsh` first, then `qou-y7vg`. The setup is
+written down; do not re-derive it.

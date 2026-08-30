@@ -2861,6 +2861,39 @@ export const references: Reference[] = [
     DOI: "10.1007/BF01857727",
   }),
 
+  // ── Shi 2002/03: Toffoli + Hadamard is quantum universal ──────
+  ref({
+    id: "shi2002",
+    type: "article-journal",
+    title:
+      "Both Toffoli and Controlled-NOT need little help to do universal quantum computation",
+    author: [
+      { family: "Shi", given: "Y." },
+    ],
+    "container-title": "Quantum Information and Computation",
+    volume: 3,
+    issue: 1,
+    page: "84-92",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.26421/QIC3.1-7",
+    URL: "https://arxiv.org/abs/quant-ph/0205115",
+    note: "arXiv:quant-ph/0205115 (2002). THE source for Toffoli+Hadamard quantum universality. Added 2026-08-29 (bean qou-nmqd): the q-GoL proof cited fredkin1982 + toffoli1980 for this result, which are classical reversible-computation papers predating it by two decades and cannot carry it. Note the theorem is about the STANDARD Toffoli; a q-deformed gate needs its own argument.",
+  }),
+
+  // ── Aharonov 2003: simple proof of the same universality ──────
+  ref({
+    id: "aharonov2003",
+    type: "article",
+    title:
+      "A Simple Proof that Toffoli and Hadamard are Quantum Universal",
+    author: [
+      { family: "Aharonov", given: "D." },
+    ],
+    issued: { "date-parts": [[2003]] },
+    URL: "https://arxiv.org/abs/quant-ph/0301040",
+    note: "arXiv:quant-ph/0301040. Preprint, no journal DOI. Companion to shi2002; cited together as the actual provenance of Toffoli+Hadamard universality. Added 2026-08-29 (bean qou-nmqd).",
+  }),
+
   // ── Peña et al. 2022: Quantum Game of Life (QGoL) ─────────────
   ref({
     id: "pena2022",
@@ -3724,6 +3757,38 @@ export const references: Reference[] = [
   }),
 
   // ── Kawauchi 1996 ─────────────────────────────────────────────
+  ref({
+    id: "okubo1962",
+    type: "article-journal",
+    title: "Note on Unitary Symmetry in Strong Interactions",
+    author: [{ family: "Okubo", given: "Susumu" }],
+    "container-title": "Progress of Theoretical Physics",
+    volume: "27",
+    issue: "5",
+    page: "949-966",
+    DOI: "10.1143/PTP.27.949",
+    issued: { "date-parts": [[1962]] },
+  }),
+
+  ref({
+    id: "milnor1957",
+    type: "chapter",
+    title: "Isotopy of links",
+    author: [{ family: "Milnor", given: "John" }],
+    "container-title":
+      "Algebraic Geometry and Topology: A Symposium in Honor of S. Lefschetz",
+    editor: [
+      { family: "Fox", given: "Ralph H." },
+      { family: "Spencer", given: "Donald C." },
+      { family: "Tucker", given: "Albert W." },
+    ],
+    publisher: "Princeton University Press",
+    "publisher-place": "Princeton, NJ",
+    page: "280-306",
+    DOI: "10.1515/9781400879915-016",
+    issued: { "date-parts": [[1957]] },
+  }),
+
   ref({
     id: "kawauchi1996",
     type: "book",

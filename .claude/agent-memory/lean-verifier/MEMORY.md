@@ -199,6 +199,35 @@ file (which cites 6990 as the pre-eviction count). A tree evicted from 6990
 down to 2919 would have read as *healthy* under the old row. Re-measure;
 do not treat any number here as a threshold.
 
+## TRAP — v4.24.0 module moves + subscript ± are notation tokens
+
+Two authoring mistakes that block a NEW file but are trivial, correct fixes
+(no statement/witness change) — seen 2026-08-29 on
+`QOU/MassTheory/MagnusPairingSignStructure.lean`:
+
+- `import Mathlib.Data.Matrix.Notation` **does not exist** in mathlib
+  v4.24.0. The `!![a,b;c,d]` matrix literal notation lives in
+  `Mathlib.LinearAlgebra.Matrix.Notation`. (`Mathlib.Data.Matrix.Notation`
+  has neither olean nor source in the tree; the olean error is a red
+  herring for "cache is partial" — the module is gone, not uncached.)
+- Under a full `import Mathlib.Tactic`, `₊`/`₋` (U+208A/U+208B subscript
+  plus/minus) are **notation tokens** (PosPart etc.), so a bound-variable
+  name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
+  the binder (`ρ₊`→`ρp`) — pure alpha-renaming, the proposition is
+  identical. Fine in comments/docstrings, not in identifiers.
+
+## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
+
+`lake-cache/qou-v4-24-0` (25 parts) extracts to `$ROOT/.lake/` (root
+workspace layout: `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`).
+Measured 2026-08-29: **3407 mathlib oleans** + 2275 QOU-library oleans,
+`Mathlib.Tactic.olean` and `Matrix/Trace.olean` present. The pre-existing
+`content/quantum-observable-universe/lean/.lake/packages/**` tree is a
+**partial decoy** (~726 mathlib, QOU lib = 0) — do NOT point LEAN_PATH at
+it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
+(The prior log's "6990 mathlib" was not what THIS restore produced; 3407 is
+the QOU-cone partial and it is sufficient for QOU + Mathlib.Tactic files.)
+
 ---
 
 ## Session log
@@ -210,9 +239,25 @@ prune the log, never the TRAPs.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
+- 2026-08-30 (torus-knots): restored `lake-cache/qou-v4-24-0` fresh (3407
+  mathlib oleans this seed — vs 6990 in the baseline; cone was sufficient),
+  verified new `QOU/Interactions/EmCouplingBarParity.lean` lean-direct exit 0
+  + `#print axioms` (std 3 only). One fix: `/-!` docstring preceded imports —
+  Lean rejects any `import` after a module doc; imports must be first.
 - 2026-08-30: found `QOU/Hecke/WedderburnRankDegeneracy.lean` red on `main` for
   six days behind a FALSE GREEN — my own #5710 removed a field its instance
   discharged. Rebuilt the 8-module reverse-import cone: ALL-GREEN after repair.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
+  after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
+  Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT
+  source FIRST (avoids false-green), then Borromean/Brunnian against the fresh
+  olean: all exit 0. Magnus standalone exit 0. All 9 key theorems axiom-clean
+  {propext,Classical.choice,Quot.sound}. No instance of `BrunnianDeficitRecursion`
+  (content-bearing class, honest §3b-cond open state). No rebase breakage; Milnor
+  still exports leadingOrder/leadingOrder_four/tauBorromean/borromean_deficit_factor/
+  MilnorExactOrderConjecture. Confirmed: cache restores to ROOT `.lake` (2277 QOU
+  oleans), the per-paper `content/.../lean/.lake` tree is a 3-olean decoy — the
+  harness §3 base path must be ROOT, not $LEANLIB.

@@ -83,14 +83,36 @@ HA               = Q0 - QI0
 #   c_1 + q·c_σ ≥ 0
 #   c_1 − q⁻¹·c_σ ≥ 0
 #
-# Normalization: tr_M(T_w) = 1 (canonical Markov trace of identity).
+# Trace value (a normalisation, NOT the selector — see below):
 # Per Wenzl: tr_M(T_w) = y_(2)·χ_(2) + y_(1,1)·χ_(1,1)
 #                      = y_(2)·(c_1 + q·c_σ) + y_(1,1)·(c_1 − q⁻¹·c_σ)
 #                      = c_1·(y_(2) + y_(1,1)) + c_σ·(y_(2)·q − y_(1,1)·q⁻¹)
 #
 # At Markov-trace normalization: tr_M(σ_0) = z_M (the Markov param).
 #
-# The minimal PSD T_w with tr_M = 1 is T_w = identity (c_1 = 1, c_σ = 0).
+# tr_M(T_w) = 1 IS NOT THE SELECTION RULE (owner ruling 2026-08-30, bean
+# qou-1qsw).  Imposed as a constraint it admits only the identity
+# (c_1 = 1, c_σ = 0), so it excludes every non-trivial vertex including the
+# shipped σ_0² — which is PSD but has tr_M = 1.128… at the substrate.  A
+# condition that rejects the construction the file ships cannot be what
+# selected it.  It is a normalisation of the trace, nothing more.
+#
+# THE SELECTOR IS PSD PARITY.  For the vertex σ_0^k both projections are the
+# k-th powers of the generator's eigenvalues — sym q^k, alt (−q⁻¹)^k — so with
+# 0 < q the sym block is always positive and the alt block is non-negative
+# exactly when k is even:
+#
+#     σ_0^k is PSD  ⇔  k is even.
+#
+# Proved, sorry-free and over a generic ordered field, in
+# content/quantum-observable-universe/lean/QOU/QBeta/GluonVertexPsdParity.lean
+# (`vertex_psd_iff_even`).  It mentions no Markov parameter, no Gram matrix
+# and no anchor, so unlike the integer-LP rule it replaces it cannot go stale
+# under a convention change.  It makes σ_0² the minimal non-zero admissible
+# vertex, and excludes the single σ_0 that the convention-D re-run of the
+# integer LP returns as its optimum
+# (computations/qbeta/integer_lp_gluon_convention_d.py).  It does not force
+# k > 0: whether the gluon vertex is present at all is a separate question.
 # γγ → qq̄ "production" is described by σ_0³ (per breit-wheeler-vertex
 # the trefoil σ_0σ_1σ_0 closes to a trefoil knot = electron, not quark).
 
@@ -199,10 +221,21 @@ def main():
     print(f"  PSD at q_0?            = {bw['psd_at_q_0']}")
     print(f"  tr_M at q_0            = {bw['tr_M_at_q_0']:.4f}")
     print()
-    print("  Interpretation: σ_0³ in H_2 has tr_M ≈ 0.73 at q_0.  This")
-    print("  is NOT 1 (the Markov-trace identity), so σ_0³ is NOT")
-    print("  the canonical T_w(electron); rather it's a SPECIFIC braid")
-    print("  whose closure produces the electron knot (trefoil 3_1).")
+    print("  Interpretation: σ_0³ is NOT PSD — the alt eigenvalue above is")
+    print("  negative.  That is the parity rule, not an accident of q_0:")
+    print("  alt(σ_0^k) = (−q⁻¹)^k, so with 0 < q it is non-negative iff k")
+    print("  is even, and k = 3 is odd.  Proved sorry-free over a generic")
+    print("  ordered field in QOU/QBeta/GluonVertexPsdParity.lean")
+    print("  (vertex_psd_iff_even); the printed eigenvalue is its check.")
+    print()
+    print("  The older reading here argued from tr_M ≠ 1 instead.  That")
+    print("  argument is WITHDRAWN (owner ruling 2026-08-30, bean qou-1qsw):")
+    print("  tr_M = 1 admits only the identity, so it would also reject the")
+    print("  σ_0² gluon vertex this file ships.  It is a normalisation, not")
+    print("  a selector.  It also quoted tr_M ≈ 0.73, which was never the")
+    print("  trace — 0.7312 is the magnitude of the alt eigenvalue.")
+    print("  σ_0³ remains a SPECIFIC braid whose closure is the trefoil 3_1;")
+    print("  what is now excluded is reading it as an admissible H_2 vertex.")
     print()
     print("  γγ → e⁻e⁺ in H_2: the breit-wheeler-vertex content block")
     print("  describes σ_0·σ_1·σ_0 → trefoil, but at H_2 there's no σ_1.")

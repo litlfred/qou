@@ -10,7 +10,7 @@
   hypotheses without depending on the cross-chapter sibling-style
   modules.
 
-  **Round 11 sharpening** (post Gemini review): each class field is
+  **Round 11 sharpening** (post Gemini review): each class field was
   upgraded to a non-tautological *existential* predicate that
   quantifies over an actual NS-evolution parameter (energy bound,
   initial-data norm, scaling exponent, etc).  The canonical instance
@@ -18,6 +18,34 @@
   `⟨0, …⟩`, but the SHAPE captures content (the conjecture asserts
   something about how a quantity scales / depends on parameters,
   not a vacuous `True`).
+
+  **🛑 That last claim was wrong, and this file was the corpus's exemplar for
+  it (2026-08-30).** AGENTS.md §3b-tax cited these classes as the model of a
+  carrier stating "a parameter-quantified inequality in the *shape* of the
+  claim". The shape was right and the content was absent: every field was an
+  **existential** satisfied by choosing zero, so the conjectures were
+  discharged by the bundle at the foot of this file and no shipped criterion
+  fired — the audit raised 0 lines here, and the five carriers had 0 entries in
+  the vacuity review ledger.
+
+  Shape is not content, and the difference is **refutability**: an `∃` over a
+  quantity you get to pick cannot be false, while a `∀` about a quantity the
+  *caller* supplies can. Each re-encoded carrier below now takes that quantity
+  as a class **parameter** (`Prop` classes cannot carry data) and constrains
+  it, so there is a value at which the class is false — recorded per carrier.
+
+  Status of the five, all under bean `qou-rq9n`:
+
+  | carrier | state | refuted by |
+  |---|---|---|
+  | `QAubinLions` | re-encoded `qou-3ytx` | a non-linear `K` |
+  | `NSCounterexample` | re-encoded `qou-5nj1` | a bounded vorticity |
+  | `CriticalExponent` | re-encoded `qou-93hu` | any `α ≠ 4/3` |
+  | `RegularityBreakdown` | re-encoded `qou-m7a2` | a positive-measure set |
+  | `BlowupYekutieli` | **still vacuous**, `qou-88nf` | — its docstring names a bound it never gives |
+
+  The trivial-zero instance bundle that discharged all five is removed; see the
+  note at the foot of this file.
 
   Ref: [manuscript]
     - conj:q-aubin-lions
@@ -29,35 +57,82 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
+-- `RegularityBreakdown` states its claim against the real Lebesgue measure
+-- rather than a numeric proxy for it (bean `qou-m7a2`).
+import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 namespace QOU.AlgebraicSubstrate
 
 /-- **§3b-cond hypothesis class** for `conj:q-aubin-lions`.
 
-    The q-deformed Aubin-Lions weak-compactness lemma.  For every
-    bounded-energy initial datum, there exists a non-negative
-    compactness constant `K` controlling the subsequence-extraction
-    rate.  Concrete content: `K` scales linearly with the energy
-    bound (the Aubin-Lions embedding constant). -/
+    The q-deformed Aubin-Lions weak-compactness lemma.  `K` is the
+    compactness constant as a function of the energy bound, and the claim is
+    the one this class's docstring has always made: **`K` scales linearly with
+    the energy bound** (the Aubin-Lions embedding constant).
+
+    **What this encodes.** `∃ C > 0, ∀ E ≥ 0, K E = C · E` — linear, with a
+    strictly positive constant. The strictness is what carries the content:
+    without `0 < C` the zero function satisfies it and the class is back where
+    it started.
+
+    **What this does NOT encode**, so the fix is not over-read: nothing here
+    ties `K` to a subsequence extraction, to the q-deformation, or to any
+    function space. Those need the analytic setup, which is open. This is the
+    docstring's *scaling* claim, stated about a supplied `K`.
+
+    **History.** Until 2026-08-30 the field read
+    `∀ E ≥ 0, ∃ K, 0 ≤ K ∧ K ≤ 2·E` — an existential per `E`, satisfied by
+    `K = 0` for every `E`, so "scales linearly" appeared in the prose and
+    nowhere in the Lean. `Prop` classes cannot carry data, hence `K` is a
+    parameter. Bean `qou-3ytx`. -/
 -- Ref: [manuscript] conj:q-aubin-lions
-class QAubinLions : Prop where
-  /-- For every bounded energy `E ≥ 0`, there exists a compactness
-      constant `K ≥ 0` bounded by `2 · E`. -/
-  exists_compactness_constant :
-    ∀ (E : ℝ), 0 ≤ E → ∃ K : ℝ, 0 ≤ K ∧ K ≤ 2 * E
+class QAubinLions (K : ℝ → ℝ) : Prop where
+  /-- The compactness constant is linear in the energy bound, with a strictly
+      positive embedding constant. -/
+  linear_in_energy : ∃ C : ℝ, 0 < C ∧ ∀ E : ℝ, 0 ≤ E → K E = C * E
 
 /-- **§3b-cond hypothesis class** for `conj:ns-counterexample`.
 
-    There exists initial data exhibiting finite-time singularity
-    formation (q-deformed Beale-Kato-Majda obstruction).  Concrete
-    content: a non-negative singularity time `T*` exists such that
-    the vorticity diverges in `L^∞` as `t → T*`. -/
+    Finite-time singularity formation (q-deformed Beale-Kato-Majda
+    obstruction).  `vorticitySup t` is the `L^∞` norm of the vorticity at time
+    `t`, and the claim is the one this class's docstring has always made: **a
+    non-negative singularity time `T*` exists at which the vorticity
+    diverges**.
+
+    **What this encodes.** `∃ T ≥ 0, ∀ M, ∀ t₀ < T, ∃ t ∈ (t₀, T), M <
+    vorticitySup t` — the vorticity exceeds every bound at times **arbitrarily
+    close to `T` from below**, which is the Beale-Kato-Majda shape. A bounded
+    `vorticitySup` refutes it, which is exactly what the previous field could
+    not do.
+
+    **The `t₀` quantifier is load-bearing and was missing in the first
+    encoding** (caught in review on PR #6122). Without it the field reads
+    `∀ M, ∃ t < T, M < vorticitySup t`, which says only that the vorticity is
+    unbounded somewhere on `(-∞, T)` — satisfied by a function that blows up
+    early and is placid near `T`, i.e. by no blow-up *at* `T` at all. That is
+    the "documented as a limit, stated without one" defect: the docstring said
+    "as `t → T*`" and the statement had no device localising anything near
+    `T`. Quantifying over `t₀ < T` is what turns "unbounded before `T`" into
+    "unbounded approaching `T`".
+
+    **What this does NOT encode.** That `vorticitySup` solves anything. There
+    is no q-NS evolution here, no initial datum, no relation between `T` and
+    the data — the previous field bound `D₀` and never mentioned it again, and
+    this one does not bind it at all rather than pretend to use it. Supplying
+    the evolution is the open work.
+
+    **History.** Until 2026-08-30 the field read `∀ D₀ ≥ 0, ∃ T, 0 ≤ T` —
+    literally "there exists a non-negative real", with the initial-datum norm
+    bound and discarded, and its own sub-docstring conceded "Trivially: `T* = 0`
+    works." Bean `qou-5nj1`. -/
 -- Ref: [manuscript] conj:ns-counterexample
-class NSCounterexample : Prop where
-  /-- For every initial-data norm `D₀ ≥ 0`, there exists a
-      singularity time `T* ≥ 0`.  Trivially: `T* = 0` works. -/
-  exists_singularity_time :
-    ∀ (D₀ : ℝ), 0 ≤ D₀ → ∃ T : ℝ, 0 ≤ T
+class NSCounterexample (vorticitySup : ℝ → ℝ) : Prop where
+  /-- The vorticity exceeds every bound `M` at times arbitrarily close to `T`
+      from below: for every `t₀ < T` there is a `t` in `(t₀, T)` with
+      `M < vorticitySup t`. -/
+  blowup_at_finite_time :
+    ∃ T : ℝ, 0 ≤ T ∧ ∀ M : ℝ, ∀ t₀ : ℝ, t₀ < T →
+      ∃ t : ℝ, t₀ < t ∧ t < T ∧ M < vorticitySup t
 
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`.
 
@@ -90,10 +165,33 @@ class CriticalExponent (α : ℝ) : Prop where
 
 /-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`.
 
-    Yekutieli's blow-up rate is realised on the q-NS evolution.
-    Concrete content: for every observed blow-up time `T*`, the
-    blow-up exponent is bounded above by an explicit constant
-    determined by the substrate scale. -/
+    Yekutieli's blow-up rate is realised on the q-NS evolution.  Concrete
+    content: for every observed blow-up time `T*`, the blow-up exponent is
+    bounded above by an explicit constant determined by the substrate scale.
+
+    **🛑 STILL VACUOUS — deliberately left, bean `qou-88nf`.** The three sibling
+    carriers in this file were re-encoded on 2026-08-30 by transcribing the
+    claim each docstring already made. **That is not possible here, and the
+    reason is specific rather than a shortage of effort: this docstring names a
+    bound it never gives.** "An explicit constant determined by the substrate
+    scale" says a constant exists and says nothing about which; the encoded
+    bound `1 + T` involves no substrate scale at all, and is satisfied by
+    `r = 0` — that is, by *no blow-up*, the negation of the claim the carrier is
+    named for.
+
+    Writing a bound here would mean choosing the constant myself, which is the
+    step separating transcription from invention. Encoding
+    `r ≤ f(q₀)` for an `f` I picked would look like the other three fixes and be
+    a fitted value wearing their clothes.
+
+    **What closing it needs**, so the next agent does not re-derive the
+    blocker: the Yekutieli blow-up rate as an explicit function of the substrate
+    modulus, from the source the conjecture label points at. With that, the
+    encoding is the same shape as its siblings — the exponent as a class
+    parameter, the field bounding it by that function.
+
+    Until then the field below is the original and is inhabitable by zero. It is
+    left rather than half-fixed. -/
 -- Ref: [manuscript] conj:blowup-yekutieli
 class BlowupYekutieli : Prop where
   /-- For every blow-up time `T ≥ 0`, the blow-up rate `r ≥ 0`
@@ -103,16 +201,28 @@ class BlowupYekutieli : Prop where
 
 /-- **§3b-cond hypothesis class** for `conj:regularity-breakdown`.
 
-    Regularity breakdown is concentrated on a measure-zero set.
-    Concrete content: for every regular slice (parametrised by
-    a non-negative regularity index), the breakdown measure is
-    bounded by the slice's own complement. -/
+    `breakdownSet` is the set of times at which regularity fails, and the claim
+    is the one this class's docstring has always made: **breakdown is
+    concentrated on a measure-zero set**.
+
+    **What this encodes.** `volume breakdownSet = 0`, against Mathlib's
+    Lebesgue measure — the actual statement, not a numeric proxy for it. It is
+    false for any breakdown set of positive measure (an interval `Ioo a b` with
+    `a < b` refutes it), which is what the previous field could not be.
+
+    **What this does NOT encode.** That `breakdownSet` is the breakdown locus
+    of anything. There is no q-NS solution here and no definition of
+    regularity; supplying those is the open work.
+
+    **History.** Until 2026-08-30 the field read
+    `∀ s ≥ 0, ∃ μ, 0 ≤ μ ∧ μ ≤ s` — satisfied by `μ = 0` for every `s`, and
+    its own sub-docstring conceded "Trivially: `μ = 0`". Note the discharger
+    also reused the hypothesis directly (`⟨0, le_refl 0, hs⟩`): the proof term
+    *was* the hypothesis. Bean `qou-m7a2`. -/
 -- Ref: [manuscript] conj:regularity-breakdown
-class RegularityBreakdown : Prop where
-  /-- For every regularity index `s ≥ 0`, the breakdown measure
-      `μ ≥ 0` satisfies `μ ≤ s`.  Trivially: `μ = 0`. -/
-  exists_breakdown_measure :
-    ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
+class RegularityBreakdown (breakdownSet : Set ℝ) : Prop where
+  /-- The breakdown locus is Lebesgue-null. -/
+  breakdown_measure_zero : MeasureTheory.volume breakdownSet = 0
 
 /-! ## The "canonical instance bundle" — REMOVED 2026-08-30 (bean `qou-rq9n`)
 

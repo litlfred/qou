@@ -1,11 +1,11 @@
 ---
 # qou-dsif
 title: 'GAP: (P), the Pieri step of the Macdonald telescope — the induction over addable corners'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-30T03:42:33Z
+updated_at: 2026-08-30T07:29:12Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -262,3 +262,148 @@ wrong by a large factor and I am not replacing it with a confident number the ot
 
 Probe: `computations/pieri_corner_node_identity_probe.py` (6 facts, exact sympy).
 Audit: `docs/audits/2026-08-30-pieri-corner-identity-and-the-substrate-question.md`.
+
+
+## 2026-08-30 (later) — RETRACTION: the q-FRT bridge was never open
+
+My entry above named the q-analogue of Frame-Robinson-Thrall as the one open piece. **It is proved,
+sorry-free, on main, and was before I wrote that.** Chain:
+
+  SYTHookFormulaBetaMonoid.rowHookProdF_mul_betaGapProdF   per-row FRT, ANY commutative monoid,
+                                                           arbitrary f : N -> M
+  SYTHookFormulaBetaProdMonoid.prodHooksF_mul_betaGapProdF whole-diagram assembly, same generality
+  SYTBetaGapVandermonde.prodHooksF_one_sub_pow_pair        the q-case, f n = 1 - Q^n
+
+Machine-checked: prodHooksF_one_sub_pow_pair is [propext, Classical.choice, Quot.sound], and all
+five files in that chain have ZERO sorry tokens.
+
+### Why I got it wrong, and the pattern
+
+I trusted `LagrangeCoeffSum`'s docstring, which names the q-FRT identity as its own open input and
+points at bean qou-j7ln. That docstring is stale -- qou-j7ln is completed and the identity landed
+after it was written. AGENTS.md's rule that a source file's `## Status` note is not authoritative
+applies to docstrings verbatim; I suspended it for a file whose Lean I had just read closely. Same
+failure mode as trusting a sibling's bean, one artifact type over.
+
+THREE TIMES this session the corpus already held what I was about to build: sum_eval_div_prod_eq_coeff,
+the hook-update rule (qou-j7ln), and the whole q-FRT chain. Common cause: my grep ran on TOPIC words
+(Pieri, telescope, Macdonald) while these files are named for their METHOD (SYTBetaGapVandermonde,
+LagrangeCoeffSum). None surfaces on a topic grep; all three surface on the SHAPE of the statement.
+
+### Landed this turn
+
+`QOU/Mathlib/QHookVandermonde.lean` (sorry-free, generic [CommRing R]): converts the pair-product
+form to a genuine Vandermonde in x_i = Q^{beta_i}, via the termwise
+    x_i - x_j = (-x_j)(1 - Q^{beta_i - beta_j})     (beta_j <= beta_i)
+The monomial/sign correction is left as the product prod_{i<j}(-x_j), NOT evaluated to
+(-1)^C(k,2) Q^{sum_j j beta_j}: the evaluated form is where sign errors live and no consumer needs
+it, since it cancels on both sides of any ratio. Also corrects the stale LagrangeCoeffSum docstring
+and the two artifacts of mine that repeated the false claim.
+
+### What is actually left
+
+WIRING, not identity-proving: discharge the `hw` hypothesis of sum_eq_one_of_corner_ratio_scaling
+by feeding it the box-addition ratio, which is a quotient of two instances of
+prodHooksF_one_sub_pow_vandermonde. No schedule -- my last two estimates on this front were both
+wrong, in opposite directions.
+
+### Literature
+
+Not needed and not available. The library (544 docs) has no Macdonald and no symmetric-functions
+text; `hdr` (Hecke algebras) has Schur elements but no hook products. Irrelevant anyway: a citation
+does not discharge a Lean goal, and the identity is proved in-corpus over a generality no textbook
+states (arbitrary f over a commutative monoid). Lit would only serve paper attribution, and would
+need ingesting first.
+
+
+## 2026-08-30 (later still) — CLOSED. The goal is proved, by the other route.
+
+`QOU.MathlibExt.MacdonaldTelescopeGeneralX.telescope_generalX` is the goal of this bean:
+
+    sum_{|nu|=n} f^nu * schurElement Q X0 nu.rowLens  =  ((1 - X0)/(1 - Q))^n
+
+for ARBITRARY X0, over Q > 1 not a root of unity. VERIFIED axiom-clean this turn:
+[propext, Classical.choice, Quot.sound], no sorryAx.
+
+It does NOT go through the Pieri step. It goes through the polynomial-identity route: both
+sides are eval X of polynomials of degree <= n; they agree at every X = Q^r by the proved
+principal specialisation; {Q^r} is infinite for Q > 1; Polynomial.eq_of_infinite_eval_eq.
+
+The Pieri route is proved too, and separately:
+  SchurWeyl.sum_schurPrincipal_addCellOrSelf  : sum_a s_{mu + box at a} = [r]_Q * s_mu
+  SchurWeyl.sum_wenzlWeight_addCellOrSelf     : sum_a w_{mu + box at a} = w_mu
+both axiom-clean, both assembled from sum_eq_bracket_mul_of_qratio_scaling with
+schurPrincipal_addCell_eq as the `hw` I twice named as the open remainder.
+
+## Why "sorry-free" was not enough, and the fix that made the check possible
+
+telescope_generalX had ZERO sorry tokens and was NOT VERIFIABLE. Its import cone was RED on
+main: QOU/Mass/QIntegerBarParity.lean:53 does `open QOU.Mass.QHookDimension (qIntPoly)` and
+that namespace HAS NEVER EXISTED -- QHookDimension.lean declares `QOU.Mass` only. Measured
+across history: the file was red on the day it landed (PR #5745), and QHookDimension has
+since dropped its own `def qIntPoly` as well, breaking QIntegerCanonical:117 the same way.
+
+One error blocked SIX modules: QIntegerCanonical, QPartitionCombinatorics, WenzlSchurElement,
+WenzlSchurElementBridge, WenzlJonesMarkovNormalisation, MacdonaldTelescopeGeneralX. Both
+consumers now point at QOU.Mass.QHookDimensionBalanced.qIntPoly -- the identical geometric
+`sum_{i<n} q^i`, in a file both already imported. Cone: 104 modules, ok, 0 error, 0 blocked.
+
+`grep -c sorry` is a screen; the proof term is the verdict. Here the screen said 0 and the
+verdict could not be taken at all.
+
+## Six duplications in one session
+
+sum_eval_div_prod_eq_coeff; the hook-update rule (qou-j7ln); the whole q-FRT chain;
+betaR_addCell (same name I chose, in QRatioBetaFactors); schurPrincipal_addCell_eq (the `hw`);
+and finally the telescope itself. My grep ran on TOPIC words -- Pieri, telescope, Macdonald --
+while these files are named for their METHOD: SYTBetaGapVandermonde, LagrangeCoeffSum,
+QRatioBetaFactors, VandermondeUpdateRatio, BranchingGenericity. Not one surfaces on a topic
+grep. Grep the SHAPE of the statement, and grep it BEFORE writing, not after compiling.
+
+## What my two PRs are worth now
+
+#6098's sum_prod_qratio_corner and #6108's QHookVandermonde are a PARALLEL route, not the
+critical path. They are new statements (nothing else sums the corner q-ratio to 1, and nothing
+else converts the pair product to a genuine Vandermonde), and AGENTS.md explicitly permits
+measured research overlap. But they do not close anything this bean needed, and the bean's
+goal was met before they were written.
+
+
+## 2026-08-30 — CORRECTION to my own entry above, and the measured answer
+
+**I claimed the `QOU.Mass.QHookDimension` namespace "has never existed" and that
+QIntegerBarParity "was red on the day it landed". BOTH WRONG.** At fed69b1c4d the file
+declared
+
+    namespace QOU.Mass
+    namespace QHookDimension
+
+so the namespace existed, NESTED. I grepped only `namespace QOU.Mass.QHookDimension` --
+the fully-qualified spelling -- got 0, and read that as absence. One spelling of a
+two-spelling construct: the detector blind spot this corpus has a taxonomy for. The file
+broke at 1646b5d6d3, which removed both the nested namespace and the def. A sibling
+(5479e2141a9) got this right while I was working and fixed the first consumer; my branch
+now carries only the second (QIntegerCanonical:117) and defers to theirs on the first.
+
+## The measurement: 179
+
+Whole-corpus lean-direct on origin/main bf08fd156f9, keep-going so `error` and `blocked`
+separate:
+
+    up-to-date 1718    ok 379    blocked 210    error 1
+
+ONE error -- QOU.MathlibExt.QIntegerCanonical -- and ALL 210 blocked modules trace to it.
+Single point of failure. Of those 210, **179 carry zero sorry tokens**: they read as
+sorry-free on main while `#print axioms` cannot run on any declaration in them. 31 carry
+a sorry and are honestly marked.
+
+The 179 include QOU.Torsion, QOU.ArchimedeanMassFormula, QOU.AlgebraicSubstrate, the whole
+QOU.Archimedean.PauliWitness family (20 isotope witnesses), and
+MacdonaldTelescopeGeneralX -- which carries telescope_generalX, this bean's goal, verified
+axiom-clean only after the cone was unblocked.
+
+**`grep -c sorry` is a screen; the proof term is the verdict.** A blocked cone makes the
+verdict unavailable while leaving the screen green, and nothing in the repo currently
+distinguishes the two: lean-axiom-guard covers only its registry, and the sorry-count
+audits read files, not proof terms. That gap is a candidate bean, not a continuation of
+this one.

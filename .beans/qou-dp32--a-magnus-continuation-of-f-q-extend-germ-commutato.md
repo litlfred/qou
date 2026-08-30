@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-19T17:54:14Z
-updated_at: 2026-08-29T18:03:58Z
+updated_at: 2026-08-29T18:29:19Z
 ---
 
 
@@ -19,3 +19,16 @@ the wall F_q could not. HONEST: sign only, NOT the 0.608 MeV (open Δ_λ norm), 
 sign-MATCH (needs binding-sign convention + A≥3/H₉). scope-(a), no fit, nothing wired.
 NEXT (new bean territory): (a) the binding-sign convention that maps net-P to ±binding;
 (b) A=3 (H₉) to test the 'flips positive at A≥3' half.
+
+
+
+--- 2026-08-29 corpus connection (before committing the Lean) ---
+CORPUS-GREP: the 'cyclic trace kills the commutator' half is ALREADY PROVED — Mathlib
+matrix_trace_commutator_zero (Algebra/Lie/Classical); corpus cyclic_trace_kills_iterCommTower
++ trace_magnusGen_realization_eq_zero (MilnorExactCoefficient/MilnorMagnusCoefficient, qou-v7ro).
+So my probe's ρ=I control is a KNOWN fact, not novel. The NEW content is the ESCAPE:
+tr(ρ·[A,B]) is sign-indefinite under a NON-cyclic (density) weighting — the same phenomenon
+qou-v7ro captures via the off-diagonal μ̄(12..A)=±1 (a non-cyclic functional). My follow-on #1
+(binding-sign convention) IS essentially the OPEN qou-v7ro bridge: Magnus μ̄=±1 → Markov-trace
+deficit D_A(h) leading coefficient. Lean file MagnusPairingSignStructure.lean formalizes the
+sign-indefinite ESCAPE (theorem 3), cites the existing cyclic-trace-kills lemmas for the control.
