@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T18:12:32Z
-updated_at: 2026-08-30T20:07:54Z
+updated_at: 2026-08-30T20:36:02Z
 ---
 
 Found 2026-08-30 answering "which probes are on float or not trustworthy". The
@@ -243,3 +243,61 @@ list-slot blindness (row 17). What does not stand is calling the 39
 
 Class 2 (producers that SHRANK) is untouched. And the 19 corrected sites are
 undrained.
+
+
+---
+
+## DRAINED 2026-08-30 — 19 → 0, and a third broken producer
+
+`d3dca4631f`. Every site the corrected criterion flags, in two classes.
+
+**Class A (13 sites)** — the quantity carries roundoff, so `abs(float(c) −
+float(e))` cancels at `~2.22e-16·|e|` and the bound was unreachable. Fixed to
+**residual against 0**. Worst and most telling: `su4_casimir_beta_derivation`
+had `expected="0.75"`, `tolerance="1e-50"` — **1.7e34× below reachable** — while
+the *correct* mpmath check already sat **two lines below** in its own `ok &=`
+guard, and the sibling assertion directly above already used the residual
+pattern. The producer was right; only the witness was vacuous.
+
+**Class B (6 sites)** — the quantity is an exact integer (Burnside sums of
+squares, dimension counts, `x/x`). `float(60)` **is** exactly `60.0`, so the
+comparison was already exact and `1e-30` was decorative — a precision claim
+about something with no precision. Changed to `tolerance=0` on the bare int.
+
+### A SECOND FLOOR the criterion does not detect
+
+Several sites serialize with `mp.nstr(x, 10)` or `(x, 12)` under a `1e-20` /
+`1e-30` bound. A 10-digit string caps the comparison **before float64 enters**,
+and there it is the *stricter* of the two floors. Tolerances set to what the
+digits support (1e-9 on a determinant of order 10; 1e-11 on an order-1
+product). **The audit should gain an nstr floor** — follow-up.
+
+### Verified, because a fix that does not run is not a fix
+
+- Every touched producer **re-run**. Three died on `NameError: fmt` — the
+  residual form needs an import those files lacked. Caught by running, not
+  reading.
+- All 18 reworked assertions **PASS** in the regenerated witnesses.
+- **The new shape can still FAIL**, checked at four boundary points:
+  `fmt(1e-40)` vs `"0"` at 1e-50 → False; `fmt(1e-55)` → True; `fmt(1e-20)` at
+  1e-30 → False; `fmt(1e-40)` → True. Correct in both directions.
+- Raw-float64 ratchet: NEW dirty 1, REGRESSED 1 — the **same two** already
+  established as main's. 13 producer changes added none.
+
+### A THIRD BROKEN PRODUCER on main, not mine
+
+`habiro/habiro_q_difference_mode_solve.py` dies with
+
+    sympy.polys.polyerrors.PolynomialError:
+    1/(2*u**4 + 2) contains an element of the set of generators
+
+Verified by stashing: **identical failure on the pristine file**. AGENTS.md
+records two genuinely-broken producers (`su4_1111_markov_trace_probe`,
+`qbeta_habiro_element_probe`); this is a **third**. Its assertion is fixed here
+but its witness cannot be refreshed, so that file's source moves without its
+witness — recorded rather than reverted.
+
+### Bean status
+
+Class 1 (tolerance floor) is **drained**, after two criterion corrections.
+Class 2 (producers that SHRANK) remains **untouched**.
