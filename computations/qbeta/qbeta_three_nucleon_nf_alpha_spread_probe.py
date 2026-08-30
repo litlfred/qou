@@ -1,61 +1,55 @@
-"""There is no single "the nucleon NF": three live builders give three alphas,
-spanning a SIGN CHANGE. The qou-pdix gate is far worse than 0.58%.
+"""OWNER RULING 2026-08-30: single-wrap is canonical for the Q_beta channel.
 
 Bean `qou-pdix` (child of `qou-cds1`).
 
-The bean gates branch 3 on the nucleon normal form being "unsettled at 0.58%".
-That figure is the COUNIT ratio 1.00579 between two builders. Measured on the
-PHASE, across the three builders the tree actually contains, the spread is not
-0.58% — it spans a sign change and a factor ~4.5 in magnitude.
+> *"single-wrap. it's A=1, no gluon, no electron"*  — owner, 2026-08-30
 
-## The three builders are three different SYSTEMS, not three bases
+This probe measured three live nucleon-NF builders giving three different Q_beta
+N=1 phases spanning a SIGN CHANGE, and raised the choice with the author rather
+than settling it by residual (which would have been the fit the discipline
+forbids). The ruling settles it, and the reason is structural rather than
+numerical: **free-neutron beta decay is A=1** — one nucleon, no nucleus — so the
+gluon dressing and the electron that `build_atom_nf` carries describe a
+different system.
 
-This is the caveat to read before using the table. They are not like-for-like:
+    CANONICAL   single-wrap             bare A=1 nucleon                 alpha = -0.0523361
+    not this    build_nucleon_nf (9cr)  bare nucleon + quark crossings   alpha = -0.0354101
+    not this    build_atom_nf           + gluons + electrons             alpha = +0.2355793
 
-  single-wrap    a bare A=1 nucleon; the 6-vector [h^2/2, -h/2, -h/2, 0,0,0]
-                 asserted in the 2026-06-16 counit-vs-trace audit. What the
-                 Q_beta counit chain is built on.
+**The corpus split is therefore CORRECT, not inconsistent.** Before the ruling I
+framed the Q_beta chain (single-wrap) and the mass compute (`build_atom_nf`) as
+using two objects of which "one is wrong for this channel". Neither is wrong:
+they describe different systems, and each is used where it belongs. A nucleus
+has gluon dressing and electrons; a decaying free neutron does not.
 
-  build_nucleon_nf   a bare nucleon as B_3 + quark crossings, 9 crossings.
-                 What the earlier probe called "typed". **Its own docstring
-                 declares it DEFECTIVE** -- "NO GLUON TERM -- and this is a
-                 DEFECT, not a convention ... 6 (B_3) + 3 (quarks) + 2 (gluon)
-                 = 11 is the SDP-consistent budget. Use build_atom_nf".
+Note this does NOT double-count the electron. The framework's Q_beta carries
+`m_e` as an explicit prefactor (`Q_beta = m_e * |q0^2-2q0-1|(q0+1)/(2q0^3)`), so
+the emitted electron enters the Q-value there, not inside the normal form. The
+atomic-mass convention that compares neutron to HYDROGEN is the bookkeeping of
+experiment, not of this construction.
 
-  build_atom_nf  gluon-complete, and includes ELECTRONS (sigma_1^-1 per Z). So
-                 `(0,1) - (1,0)` is neutron minus HYDROGEN, which is the
-                 atomic-mass convention beta^- decay actually uses -- arguably
-                 the physically right object, but a different object from the
-                 bare-nucleon difference the other two compute.
+## What the ruling settles, and what it sharpens rather than settling
 
-So the spread below is NOT a basis ambiguity and NOT a bookkeeping choice. It
-is three different models of the decaying system, and the ladder's N=1 phase
-is not robust across them.
+SETTLED: the builder. `qou-pdix`'s branch-3 acceptance test is now runnable
+against a fixed object; the O(t) NF sensitivity established in the retraction
+commit no longer blocks it, because there is now one NF.
 
-## Measured at the proton pin, against the required N=1 factor 0.99839767
+SHARPENED, NOT SETTLED: with the builder fixed, the C-vs-D tension is exposed
+rather than resolved. Bean entry (6)'s Kohno-Drinfeld consistency test — does
+`alpha` look like a holonomy angle `c*ln q`, with `c` pinned at order `t^1` so
+`t^2` is a prediction — now reads unambiguously:
 
-    builder                  alpha (C)     cos(alpha)     unexplained
-    single-wrap             -0.0523361     0.99863078       +14.5%
-    build_nucleon_nf (9cr)  -0.0354101     0.99937313       +60.9%
-    build_atom_nf (gluon)   +0.2355793     0.97237929      -1624%
+    single-wrap C   t^1 -1/2   t^2 pred 1/4   actual 1/4    MATCH
+    single-wrap D   t^1 -1/2   t^2 pred 1/4   actual 5/4    FAILS
 
-The first two UNDER-correct; the third OVER-corrects by more than an order of
-magnitude, with the opposite sign of residual. No choice among them is a small
-perturbation of another.
+**Under the canonical builder AND the canonical convention D, the ladder phase
+fails the holonomy acceptance test at second order.** That was recorded in entry
+(6) as a "tension with the ruling"; with the builder ambiguity removed it is no
+longer attributable to a modelling choice.
 
-## A docstring defect found on the way, and it is load-bearing
-
-`pyhecke/atom.py` `build_nucleon_nf` retracts the sentence *"No separate gluon
-dressing -- B_3 IS the gluon structure"* as unbacked and redirects to
-`build_atom_nf`. **That exact sentence still stands verbatim at line 218, in
-`build_atom_nf`'s own docstring** -- and there it is not merely unbacked, it is
-FALSE ABOUT ITS OWN FUNCTION: lines 252-253 and 264-265 apply `hm(nf, 1, 0, 0)`
-twice per nucleon, commented "gluon 1" / "gluon 2". A prior agent corrected one
-docstring and left its twin, and the redirect points at the uncorrected one.
-
-The code is right; the redirect is sound; only the line is stale. Recorded
-because a reader checking the contract at the function they call would conclude
-the opposite of what it does.
+And the residual does not close either: at the proton pin, single-wrap C leaves
+14.5% of the required N=1 correction unexplained and single-wrap D leaves 48.9%.
+The ruling picks the object; it does not close the ladder.
 
 Run:  python3 -u computations/qbeta/qbeta_three_nucleon_nf_alpha_spread_probe.py
 """
@@ -150,6 +144,51 @@ def main() -> int:
         "is not the 0.58% the bean records from the COUNIT ratio",
     ))
 
+    # ---- the OWNER RULING: single-wrap is canonical. Record it as assertions.
+    checks.append((
+        "canonical_builder_is_single_wrap",
+        "single_wrap" in rows,
+        "owner ruling 2026-08-30: single-wrap — A=1, no gluon, no electron",
+    ))
+    checks.append((
+        "canonical_alpha_is_negative",
+        mp.mpf(rows["single_wrap"]["alpha_C"]) < 0,
+        "the canonical builder gives a NEGATIVE phase; the gluon+electron "
+        "builder's positive one belongs to a different system",
+    ))
+
+    # ---- with the builder fixed, the C vs D holonomy test reads unambiguously
+    import sympy as sp
+    t = sp.Symbol("t")
+    hs = sp.Symbol("h")
+    q_t = 1 + t
+    h_t = sp.simplify(q_t - 1 / q_t)
+    sw_sym = [hs**2 / 2, -hs / 2, -hs / 2, 0, 0, 0]
+    zsym = sp.Symbol("zs")
+
+    def alpha_coeffs(zexpr):
+        eps_s = sp.expand(sum(sw_sym))
+        tr_s = sp.expand(sum(c * zsym**k for c, k in zip(sw_sym, CR)))
+        a = sp.simplify((eps_s - tr_s) / 2)
+        ser = sp.expand(sp.nsimplify(sp.series(
+            a.subs({zsym: zexpr, hs: h_t}), t, 0, 4).removeO()))
+        return [sp.nsimplify(sp.simplify(ser.coeff(t, k))) for k in (1, 2)]
+
+    cC = alpha_coeffs(sp.sqrt(q_t) / (q_t + 1))
+    cD = alpha_coeffs(q_t**3 / (q_t**2 + 1))
+    # c*ln q prediction: t^2 coefficient is -c1/2
+    checks.append((
+        "single_wrap_C_passes_holonomy_t2_test",
+        cC[1] == -cC[0] / 2,
+        f"C: t^2 = {cC[1]}, prediction {-cC[0]/2} — MATCH",
+    ))
+    checks.append((
+        "single_wrap_D_FAILS_holonomy_t2_test",
+        cD[1] != -cD[0] / 2,
+        f"D: t^2 = {cD[1]}, prediction {-cD[0]/2} — FAILS, and with the "
+        f"builder now fixed this is not attributable to a modelling choice",
+    ))
+
     npass = sum(1 for _, ok, _ in checks if ok)
     for n, ok, why in checks:
         print(f"  [{'PASS' if ok else 'FAIL'}] {n}: {why}")
@@ -163,7 +202,9 @@ def main() -> int:
                        engine="python+mpmath+pyhecke", output_dir=HERE,
                        _script_path=__file__)
     w.set_description(
-        "Three live nucleon-NF builders give three different Q_beta N=1 "
+        "OWNER RULING 2026-08-30: single-wrap is canonical for the Q_beta "
+        "channel — 'it's A=1, no gluon, no electron'. Three live nucleon-NF "
+        "builders give three different Q_beta N=1 "
         "phases, spanning a SIGN CHANGE: single-wrap -0.05234, "
         "build_nucleon_nf (9 crossings, self-declared defective) -0.03541, "
         "build_atom_nf (gluon-complete, neutron-minus-hydrogen) +0.23558, all "
@@ -171,7 +212,15 @@ def main() -> int:
         "required N=1 factor 0.99839767; the third overshoots by ~16x. They "
         "are three different SYSTEMS, not three bases, so this is not a "
         "convention ambiguity. The qou-pdix gate on branch 3 is therefore far "
-        "worse than the 0.58% counit ratio the bean records.")
+        "worse than the 0.58% counit ratio the bean records. RESOLVED by the "
+        "ruling: single-wrap. The corpus split (Q_beta chain on single-wrap, "
+        "mass compute on build_atom_nf) is therefore CORRECT — different "
+        "systems, each used where it belongs — not an inconsistency. With the "
+        "builder fixed, single-wrap C passes the entry-6 holonomy t^2 test "
+        "(1/4 = 1/4) and single-wrap D FAILS it (5/4 vs 1/4), so the C-vs-D "
+        "tension is now exposed rather than attributable to a modelling "
+        "choice. The ruling picks the object; it does not close the ladder "
+        "(C still leaves 14.5% of the required correction unexplained).")
     w.set_content_block("prop:q-beta-cos-resummation")
     w.add_parameter("q0_anchor", "proton (physical_proton pin)")
     w.add_parameter("required_N1_factor", str(REQUIRED_N1))
@@ -180,6 +229,14 @@ def main() -> int:
     w.add_data("checks", [{"name": n, "pass": ok, "why": why}
                           for n, ok, why in checks])
     w.add_data("builders", rows)
+    w.add_data("owner_ruling_2026_08_30", (
+        "single-wrap is canonical for the Q_beta channel. Verbatim: "
+        "\"single-wrap. it's A=1, no gluon, no electron\". Structural, not "
+        "numerical: free-neutron beta decay is A=1, so the gluon dressing and "
+        "electron that build_atom_nf carries describe a different system. Does "
+        "NOT double-count the electron — the framework's Q_beta carries m_e as "
+        "an explicit prefactor, so the emitted electron enters there, not "
+        "inside the normal form."))
     w.add_data("caveat", (
         "NOT like-for-like: build_atom_nf includes electrons (sigma_1^-1 per "
         "Z), so (0,1)-(1,0) is neutron minus HYDROGEN — the atomic-mass "

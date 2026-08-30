@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+pyhecke",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:58:25.734056+00:00",
-  "commitSha": "8d76b8234b71778af791976f9773bf071fe554a0",
+  "computedAt": "2026-08-30T12:32:25.207777+00:00",
+  "commitSha": "74757784a9199d4e7438a44410b19e78f0f91ee6",
   "assertions": [
     {
       "name": "three_builders_give_three_distinct_alphas",
@@ -33,14 +33,38 @@
       "computed": "pass",
       "expected": "pass",
       "passed": true
+    },
+    {
+      "name": "canonical_builder_is_single_wrap",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "canonical_alpha_is_negative",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "single_wrap_C_passes_holonomy_t2_test",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "single_wrap_D_FAILS_holonomy_t2_test",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-three-nucleon-nf-alpha-spread",
   "scriptFile": "qbeta_three_nucleon_nf_alpha_spread_probe.py",
-  "scriptHash": "eb4a43b77319",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ba2e812168a1",
+  "scriptCommitSha": "6e50a69ffca1063fc127f7bffa30e6036265236b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,15 +87,15 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_three_nucleon_nf_alpha_spread_probe.py"
   },
-  "description": "Three live nucleon-NF builders give three different Q_beta N=1 phases, spanning a SIGN CHANGE: single-wrap -0.05234, build_nucleon_nf (9 crossings, self-declared defective) -0.03541, build_atom_nf (gluon-complete, neutron-minus-hydrogen) +0.23558, all at convention C and the proton pin. The first two undershoot the required N=1 factor 0.99839767; the third overshoots by ~16x. They are three different SYSTEMS, not three bases, so this is not a convention ambiguity. The qou-pdix gate on branch 3 is therefore far worse than the 0.58% counit ratio the bean records.",
+  "description": "OWNER RULING 2026-08-30: single-wrap is canonical for the Q_beta channel — 'it's A=1, no gluon, no electron'. Three live nucleon-NF builders give three different Q_beta N=1 phases, spanning a SIGN CHANGE: single-wrap -0.05234, build_nucleon_nf (9 crossings, self-declared defective) -0.03541, build_atom_nf (gluon-complete, neutron-minus-hydrogen) +0.23558, all at convention C and the proton pin. The first two undershoot the required N=1 factor 0.99839767; the third overshoots by ~16x. They are three different SYSTEMS, not three bases, so this is not a convention ambiguity. The qou-pdix gate on branch 3 is therefore far worse than the 0.58% counit ratio the bean records. RESOLVED by the ruling: single-wrap. The corpus split (Q_beta chain on single-wrap, mass compute on build_atom_nf) is therefore CORRECT — different systems, each used where it belongs — not an inconsistency. With the builder fixed, single-wrap C passes the entry-6 holonomy t^2 test (1/4 = 1/4) and single-wrap D FAILS it (5/4 vs 1/4), so the C-vs-D tension is now exposed rather than attributable to a modelling choice. The ruling picks the object; it does not close the ladder (C still leaves 14.5% of the required correction unexplained).",
   "contentBlock": "prop:q-beta-cos-resummation",
   "parameters": {
     "q0_anchor": "proton (physical_proton pin)",
     "required_N1_factor": "0.99839767000000001484494305259431712329387664794922"
   },
   "data": {
-    "assertions_passed": 5,
-    "assertions_total": 5,
+    "assertions_passed": 9,
+    "assertions_total": 9,
     "checks": [
       {
         "name": "three_builders_give_three_distinct_alphas",
@@ -97,6 +121,26 @@
         "name": "spread_far_exceeds_the_recorded_0p58pct",
         "pass": true,
         "why": "the phase spread exceeds the magnitude of the smallest phase, so it is not the 0.58% the bean records from the COUNIT ratio"
+      },
+      {
+        "name": "canonical_builder_is_single_wrap",
+        "pass": true,
+        "why": "owner ruling 2026-08-30: single-wrap — A=1, no gluon, no electron"
+      },
+      {
+        "name": "canonical_alpha_is_negative",
+        "pass": true,
+        "why": "the canonical builder gives a NEGATIVE phase; the gluon+electron builder's positive one belongs to a different system"
+      },
+      {
+        "name": "single_wrap_C_passes_holonomy_t2_test",
+        "pass": true,
+        "why": "C: t^2 = 1/4, prediction 1/4 — MATCH"
+      },
+      {
+        "name": "single_wrap_D_FAILS_holonomy_t2_test",
+        "pass": true,
+        "why": "D: t^2 = 5/4, prediction 1/4 — FAILS, and with the builder now fixed this is not attributable to a modelling choice"
       }
     ],
     "builders": {
@@ -128,6 +172,7 @@
         "unexplained_D": "-8.584824132"
       }
     },
+    "owner_ruling_2026_08_30": "single-wrap is canonical for the Q_beta channel. Verbatim: \"single-wrap. it's A=1, no gluon, no electron\". Structural, not numerical: free-neutron beta decay is A=1, so the gluon dressing and electron that build_atom_nf carries describe a different system. Does NOT double-count the electron — the framework's Q_beta carries m_e as an explicit prefactor, so the emitted electron enters there, not inside the normal form.",
     "caveat": "NOT like-for-like: build_atom_nf includes electrons (sigma_1^-1 per Z), so (0,1)-(1,0) is neutron minus HYDROGEN — the atomic-mass convention beta^- decay uses, arguably the physically right object, but a different object from the bare-nucleon difference the other two compute.",
     "docstring_defect": "pyhecke/atom.py:218 — build_atom_nf's docstring still carries 'No separate gluon dressing — B_3 IS the gluon structure', the exact sentence build_nucleon_nf retracts as unbacked while redirecting to build_atom_nf. There it is FALSE about its own function: lines 252-253 and 264-265 apply two gluon crossings per nucleon. Code is right, redirect is sound, only the line is stale."
   }
