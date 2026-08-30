@@ -1,5 +1,6 @@
 import QOU.Knot.RivinConcavity
 import QOU.MathlibExt.StrictConcaveOnSegments
+import QOU.MathlibExt.ConcaveOnSum
 
 /-!
 # QOU.Knot.RivinConcavitySimplex — Rivin concavity on the angle simplex, not just on a line
@@ -109,5 +110,67 @@ theorem strictConcaveOn_tetVol : StrictConcaveOn ℝ tetAngleSimplex tetVol := b
     · rw [h]; simpa using hq
     · exact add_pos_of_pos_of_nonneg (mul_pos (by linarith) hp) (mul_nonneg ht0 hq.le)
   exact ⟨pos _ _ hx1 hy1, pos _ _ hx2 hy2, pos _ _ hx3 hy3⟩
+
+/-! ## From one tetrahedron to a triangulation -/
+
+/-- The total volume of an ideal triangulation with `n` tetrahedra, as a function of the
+tuple of angle triples. -/
+noncomputable def totalVol {n : ℕ} (θ : Fin n → ℝ × ℝ × ℝ) : ℝ :=
+  ∑ i, tetVol (θ i)
+
+/-- **RIVIN CONCAVITY FOR AN IDEAL TRIANGULATION.**
+
+The total volume is strictly concave on **any** convex set of angle assignments whose
+points are tetrahedron-wise admissible.
+
+The gluing equations never appear. That is the point: they are linear, so whatever
+polytope they cut out is convex, and `P` may be taken to be it. Concavity does not care
+*which* convex set — only that it is one, and that each of its points gives every
+tetrahedron a genuine angle triple. So this covers Rivin's angle-structure polytope, any
+face of it, and any further linear restriction, without proving anything about the
+gluing equations themselves.
+
+**Where strictness comes from.** Each summand `tetVol ∘ (eval i)` is constant in every
+*other* tetrahedron's angles, so as a function on `P` it is concave and not strictly so.
+But two distinct angle assignments must differ at some tetrahedron `j`, and there the
+summand is strictly concave by `strictConcaveOn_tetVol`. `StrictConcaveOn.sum_of_mem` is
+shaped for exactly this: one strict summand carries the sum.
+
+This is the variational statement the hyperbolic structure is characterised by — the
+complete structure is the unique critical point — and hence what the volume-conjecture
+work rests on downstream. -/
+theorem strictConcaveOn_totalVol {n : ℕ} {P : Set (Fin n → ℝ × ℝ × ℝ)}
+    (hP : Convex ℝ P) (hsub : ∀ θ ∈ P, ∀ i, θ i ∈ tetAngleSimplex) :
+    StrictConcaveOn ℝ P totalVol := by
+  classical
+  refine strictConcaveOn_of_segments hP fun x hx y hy hxy => ?_
+  -- Two distinct assignments differ at some tetrahedron.
+  obtain ⟨j, hj⟩ : ∃ j, x j ≠ y j := by
+    by_contra hcon
+    push_neg at hcon
+    exact hxy (funext hcon)
+  -- The restriction to the segment is the sum of the per-tetrahedron restrictions.
+  have hfun : (fun t : ℝ => totalVol (x + t • (y - x)))
+      = fun t : ℝ => ∑ i, tetVol (x i + t • (y i - x i)) := by
+    funext t
+    simp only [totalVol, Pi.add_apply, Pi.smul_apply, Pi.sub_apply]
+  rw [hfun]
+  -- Every summand is concave: constant where the tetrahedron does not move, strictly
+  -- concave where it does.
+  have hcon : ∀ i : Fin n, i ≠ j →
+      ConcaveOn ℝ (Icc (0 : ℝ) 1) (fun t : ℝ => tetVol (x i + t • (y i - x i))) := by
+    intro i _
+    by_cases h : x i = y i
+    · have hconst : (fun t : ℝ => tetVol (x i + t • (y i - x i)))
+          = fun _ : ℝ => tetVol (x i) := by
+        funext t; rw [← h]; simp
+      rw [hconst]
+      exact concaveOn_const _ (convex_Icc 0 1)
+    · exact (StrictConcaveOn.restrict_segment strictConcaveOn_tetVol
+        (hsub x hx i) (hsub y hy i) h).concaveOn
+  -- and the `j`-th is strictly concave.
+  exact StrictConcaveOn.sum_of_mem (Finset.mem_univ j) (convex_Icc 0 1)
+    (StrictConcaveOn.restrict_segment strictConcaveOn_tetVol (hsub x hx j) (hsub y hy j) hj)
+    (fun i _ hij => hcon i hij)
 
 end QOU.Knot.Rivin

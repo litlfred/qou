@@ -170,4 +170,37 @@ theorem StrictConcaveOn.comp_affineMap {f : F → β} (g : E →ᵃ[𝕜] F)
 
 end AffineMap
 
+section Restrict
+
+variable {E : Type*} [AddCommGroup E] [Module ℝ E] [NoZeroSMulDivisors ℝ E]
+
+/-- **The converse of `strictConcaveOn_of_segments`**: a strictly concave function
+restricts to a strictly concave function on each of its segments.
+
+Together the two say strict concavity on a convex set *is* segment-wise strict
+concavity — which is the sentence `QOU.Knot.RivinConcavity` asserts in prose.
+
+The proof is `StrictConcaveOn.comp_affineMap` above applied to `AffineMap.lineMap x y`,
+which is injective exactly because `x ≠ y` (`NoZeroSMulDivisors` is what turns that into
+injectivity of `t ↦ t • (y − x)`). This is the direction that needs the *strict*
+`comp_affineMap`, and hence the reason it is worth having. -/
+theorem StrictConcaveOn.restrict_segment {S : Set E} {f : E → ℝ}
+    (hf : StrictConcaveOn ℝ S f) {x y : E} (hx : x ∈ S) (hy : y ∈ S) (hxy : x ≠ y) :
+    StrictConcaveOn ℝ (Icc (0 : ℝ) 1) (fun t : ℝ => f (x + t • (y - x))) := by
+  -- Not `hf.comp_affineMap`: `StrictConcaveOn` is a `def` unfolding to an `And`, so dot
+  -- notation resolves against `And` and looks for `And.comp_affineMap`.
+  have hcomp := StrictConcaveOn.comp_affineMap (AffineMap.lineMap x y)
+    (AffineMap.lineMap_injective ℝ hxy) hf
+  have hsub : Icc (0 : ℝ) 1 ⊆ AffineMap.lineMap x y ⁻¹' S := by
+    intro t ht
+    exact hf.1.lineMap_mem hx hy ht
+  have hfun : (f ∘ AffineMap.lineMap x y) = fun t : ℝ => f (x + t • (y - x)) := by
+    funext t
+    simp only [Function.comp_apply, AffineMap.lineMap_apply_module']
+    rw [add_comm]
+  rw [hfun] at hcomp
+  exact hcomp.subset hsub (convex_Icc 0 1)
+
+end Restrict
+
 end QOU.MathlibExt
