@@ -235,6 +235,7 @@ import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
 import QOU.MassTheory.CrossingCountAffine
+import QOU.MassTheory.BondChargeRule
 import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
