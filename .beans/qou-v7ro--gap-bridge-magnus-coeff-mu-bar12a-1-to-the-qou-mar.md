@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-29T18:42:54Z
+updated_at: 2026-08-30T02:45:43Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -50,3 +50,16 @@ Magnus coefficient (large), or (b) leave `MilnorExactOrderConjecture` /
 `BrunnianVassilievBridge` instance-less and keep the honest conditional results.
 Do NOT fabricate an instance; do NOT wire `μ̄_A = (3/4)(−2)^{A−3}` as canonical
 (it is MEASURED, #4480).
+
+
+
+--- 2026-08-29/30 A=5 CONFIRMS the recursion (PR #6077) ---
+A=4 tight slice PROVED in Lean (borromean4_tight_slice, lean-direct exit 0, axiom-clean;
+convention D, cofactor(0)=-3/2). Candidate recursion D_{A+1}=-h^2(h^2+2)D_A read off A=3,A=4.
+NOW: exact convention-D A=5 computed (milnor_a5_a6_recursion_test.py) — D_5 == -h^2(h^2+2)*D_4
+holds on the FULL rational function (not just leading coeff): D_5=h^8(h^2+2)^2(h^2+3)/(h^2+4).
+3 exact points agree. A=6 running (92-crossing H_6 word, slow). If A=6 also holds -> 4 points;
+then the OPEN prize is the STRUCTURAL derivation of the -h^2(h^2+2) factor from the TL/
+strand-addition (Jones-Wenzl) property, which would prove MilnorExactOrderConjecture
+NONVANISHING for all A by induction from A=3 (no weight-system bridge needed). Still no
+instance fabricated; recursion is measured-exact at 3 pts, not yet derived.
