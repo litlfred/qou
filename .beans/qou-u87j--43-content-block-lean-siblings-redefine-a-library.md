@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T11:40:08Z
+updated_at: 2026-08-30T12:00:50Z
 ---
 
 
@@ -714,3 +714,47 @@ Note the checker lives on unmerged folio-assistant branch
 `claude/gracious-dijkstra-0ijp2l` and is NOT on `main`; running it needs a
 worktree of that branch (one file will not do — it imports
 `ARCHIMEDEAN_TYPE_RE` from `qa-checkers-voice.ts`, which main lacks).
+
+
+## RESOLVED: `R_q` — 11 sites, two rings, now one (2026-08-30)
+
+Owner direction: *"keep it as a general commutative ring as far as possible."*
+
+`QOU.Archimedean.R_q` was declared in **11** places — nine
+`LaurentPolynomial ℤ`, two `ℝ` (`climax-volume-mass/q-angular-momentum`,
+`q-energy`), all in the same namespace. Two further canonical names of that
+namespace were overloaded the same way in the **same two files**:
+`q_param` (the indeterminate `T 1` vs a numeric `1.1097`) and `hbar_q` (the
+ring element `1 - q_inv` vs a function of `q`).
+
+**Resolved by acting on what those two files' own docstrings already
+claimed** — *"the underlying combinatorial content stays generic to any
+commutative ring"* — and had never acted on:
+
+| layer | contents | ground |
+|---|---|---|
+| generic | the Casimir `[j]_q·[j+1]_q`, the energy total, the rest-energy theorem, `ℏ_q`, both crossing energies | `{R : Type*} [CommRing R]` / `[Field R]`, q-number carried as **data** on the structure |
+| archimedean | the real-exponent bracket (`q ^ n` at real `n` is `Real.rpow`) and the crossing asymmetry (an ordering claim) | `ℝ`, written as `ℝ` |
+
+So `abbrev R_q := ℝ` and `def q_param := 1.1097` are **gone, not renamed**:
+the generic layer carries no ground ring at all. Helpers moved into each
+block's own `QEnergy` / `QAngularMomentum` namespace, which cannot collide
+with the library's. Both `lean.ref` targets keep their names.
+
+**Measured after:** `R_q` **11 → 9 sites, all one ring**; `q_param` **8 → 6,
+all one meaning**. Verified: three files `lean`-direct exit 0; `#print
+axioms` on all six theorems gives the standard three and **no `sorryAx`**,
+and the generic `qCasimir_zero_of_qNumber_zero` **depends on no axioms at
+all**.
+
+Two facts the split had been hiding, now stated where they belong: the
+translational term needs no non-vanishing side condition on `[n]_q`, because
+`0 / x = 0` in any `DivisionRing`; and `1.1097` is a rounded illustration,
+not the substrate anchor (live pin `1.1099785827513808`), which
+`def q_param : R_q := 1.1097` read as.
+
+**Residual on this bean:** `hbar_q` still has **three bodies across three
+files** — the library's `1 - q_inv : R_q` against `(q - 1) / q : ℝ → ℝ` in
+`observations/eos-borromean-cfl` and
+`predicted-spectra/quantum-dilogarithm-volume`. Same value, different type
+and different form; a smaller version of the same defect.
