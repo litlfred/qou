@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:44:37Z
-updated_at: 2026-08-30T02:52:10Z
+updated_at: 2026-08-30T02:56:41Z
 parent: qou-ifot
 ---
 
@@ -80,3 +80,11 @@ SCOPE. The engine is proved; the three arithmetic inputs are verified over finit
 WHAT CHANGED is the epistemic status, not the verdict: an unexplained congruence over a finite sample became a consequence of an order-6 unit acting on the cube-root evaluation, with the obstruction it implies proved in general.
 
 REMAINING TO FORMALIZE, now precisely bounded: (i) N(odd-preimage at n=6k) = 1+6k+12k^2; (ii) every tree node lies on the main chain or in one of its k>=1 branches. Both are concrete integer/Z[w] statements, not research.
+
+SMALL ADDITION, commit add26cccad: the chained-odd-preimage criterion is now MACHINE-CHECKED rather than hand-derived. chained_oddPreimage_forces_deriv_eq_two -- given P(w) = -w, the odd-preimage satisfies Q(w) = -w only if P'(w) = 2; used in contrapositive, so P'(w) != 2 rules out a chained odd-preimage. This is exactly the criterion the v=0 probes evaluate, and it had been pen-and-paper until now.
+
+The derivative identity (1+2w)Q(w) = P(w) + (w+1)P'(w) is carried as an explicit HYPOTHESIS rather than formalized -- it is ordinary differentiation of [3]Q = [2]P - 1 at w -- so nothing is smuggled in.
+
+Only the direction actually used is claimed. The cancellation is of the UNIT w+1 so no domain hypothesis is needed; the CONVERSE would have to cancel 1+2w, which is NOT a unit (norm 3), so it holds in a domain but not over an arbitrary CommRing. That is said in the docstring rather than the lemma being quietly stated as an iff.
+
+Axioms [propext, Classical.choice, Quot.sound]. lean-direct exit 0 first pass.
