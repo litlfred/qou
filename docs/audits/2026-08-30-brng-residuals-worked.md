@@ -21,11 +21,27 @@ The residual was: why is rest mass the *self* (intra-component) energy and bindi
 - **`binding_indep_of_self`** — binding is independent of every self-crossing (the falsifiable form:
   binding is purely the mutual pairing; no self-energy contributes).
 
-**Open residual (stated, not hidden):** this proves the assignment at the additive crossing-energy
-granularity. Lifting it to the substrate *mass observable* — where the self energy closes to the
-q-dimension self-trace lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1) and the archimedean dressing is
-m = m_e·Vol·lw/ℏ_q² — is the remaining modelling step. It is a named identification (mass observable
-= closed self-trace), not a fit; but it is not proved here.
+**Residual — now lifted (2026-08-30 follow-up, `QOU.Mass.ArchimedeanTraceBridge`, sorry-free).** The
+additive partition above was proved at the crossing-energy granularity; the mass observable carries
+the MULTIPLICATIVE q-dimension Markov self-trace lw = (Σ_{λ⊢c+1} dim_q λ)/(c+1). The bridge between
+the two is the archimedean functor τ = logarithm (the free energy of a partition-function-like
+amplitude):
+
+- `freeEnergy_connectedSum` — the Markov/Jones trace is multiplicative under connected sum
+  (J(K₁#K₂) = J(K₁)·J(K₂), Jones); its log-image E = log T is ADDITIVE. So the additive-energy model
+  `SelfMutualPartition` *assumed* is DERIVED from trace multiplicativity, and rest mass is extensive.
+- `freeEnergy_prod` — mass adds over the A constituents.
+- `binding_eq_bindingFreeEnergy` — for an assembly amplitude (∏Tᵢ)·I, the mass-deficit binding
+  Σ Eᵢ − E_assembly = −log I, the connected/interaction free energy. This is
+  `binding_eq_neg_mutualEnergy` lifted to the Markov-trace level.
+- `bindingFreeEnergy_eq_zero_iff` / `_pos_iff` — binding = 0 ⟺ independence (I=1); binding > 0 ⟺
+  I < 1 (the assembly amplitude is suppressed exactly when the state is bound).
+
+What remains a *modelling input* (named, not faked): (1) that the substrate assembly amplitude IS the
+Markov trace, multiplicative under nucleon assembly — a citable theorem for the Jones polynomial,
+carried as the `Multiplicative`/positivity hypothesis; (2) the dimensional dressing
+m = m_e·Vol·lw/ℏ_q² (CAL-1 scale m_e, geometric Vol, CAL-2 cusp 1/ℏ_q²) — calibration and geometry.
+The bridge between those two inputs is now a theorem, not a postulate.
 
 ## R1 — the crossing-count → coordination coefficient
 
@@ -75,10 +91,14 @@ the A≈60 balance point, the ≈ℏ_q² match is numerology. Do not wire; do no
 - **Type question** (unsigned coordination count vs signed linking number) — PROVED (#6125).
 - **R1** (crossing-count → coordination coefficient) — PROVED for the clasp model; residual is the
   carrier's crossing structure (a topological input).
-- **R2** (mass=self, binding=mutual) — PROVED at the additive-energy level; residual is the
-  mass-observable ↔ crossing-energy identification at Markov-trace granularity.
+- **R2** (mass=self, binding=mutual) — PROVED at the additive level AND lifted to the Markov-trace
+  level via the archimedean log bridge (`ArchimedeanTraceBridge`). The additivity is now derived from
+  trace multiplicativity; binding is the connected free energy.
 - **R3** (exact ℏ_q² saturation) — measured to be numerology-suspect; not a prediction.
 
-The surviving genuinely-open item is the single modelling identification in R2 (mass observable =
-closed self-trace at the archimedean boundary). Everything else is either proved or shown to be a
-topological input / a numerical coincidence.
+What remains are two named *modelling inputs*, not open derivations: (1) that the substrate assembly
+amplitude is the (multiplicative) Markov trace — a citable Jones theorem, carried as a hypothesis;
+(2) the dimensional dressing m = m_e·Vol·lw/ℏ_q² — calibration and geometry. Everything between them
+— the amplitude assignment (type), the coordination coefficient, the additive→multiplicative bridge,
+and the binding-is-the-connected-part identity — is proved. The exact ℏ_q² saturated fraction is a
+numerical coincidence.

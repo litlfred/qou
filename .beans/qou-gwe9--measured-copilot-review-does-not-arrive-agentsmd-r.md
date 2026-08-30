@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:58:22Z
+updated_at: 2026-08-30T11:33:25Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -256,3 +256,242 @@ and `prepare-merge-auto` currently prescribes requesting on every run.
 historical `total_count: 0` with no message is a different signature from
 today's announced quota refusal. Silent-exhaustion and off-then-back remain
 distinguishable only by evidence nobody has yet.
+**My own AGENTS.md correction is SUPERSEDED and was dropped**, not merged: it
+was n=1, request-agnostic, and had none of the quota mechanism or the
+self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
+stay that way.
+
+
+---
+
+## Data point 2026-08-30 — a review on a push with NO contemporaneous request
+
+Recorded because `docs/audits/2026-08-30-copilot-review-works-again.md` states
+it **cannot** separate the push-trigger and request-trigger hypotheses — *"in
+all three of my cases I pushed and requested within moments of each other. A
+push-triggered review and a request-triggered review are indistinguishable from
+my timings."* This session happened to separate them, by accident rather than
+design.
+
+| PR | push | `request_copilot_review` | outcome |
+|---|---|---|---|
+| #5744 | `7747b365ff` 03:03:54Z | immediately after, ~03:05Z | **nothing** |
+| #5744 | `2e6be9054d` 07:41:50Z | **none at this time** | **review 07:52:18Z, `commit_id = 2e6be9054d`** |
+| #6090 | `54958f587e` 08:48:01Z | 08:52Z | nothing by 09:05Z |
+
+**Row 2 is the one the audit lacked.** A review arrived **10m28s after a push**
+with no request anywhere near it, carrying that push's commit as its
+`commit_id`. That is consistent with the sibling's hypothesis (Copilot reviews
+on its own trigger) and is *not* what a request-triggered model predicts, since
+the only request on that PR was **4h38m earlier** and had produced nothing for
+those 4h38m.
+
+**What this does NOT establish, stated because the audit's own error was
+over-reading a single signature:**
+
+* It is not "no request ever" — a request existed on #5744, just 4h38m before.
+  A request-triggered review with multi-hour latency is not excluded, though it
+  would have to explain why the latency landed 10 minutes after an unrelated
+  push.
+* **Row 3 discriminates nothing.** It is consistent with quota exhaustion
+  (another agent hit the limit at 07:56Z, between rows 2 and 3), and equally
+  consistent with a push-trigger that simply had not fired yet. Note it produced
+  **no quota message at all**, whereas the audit records exhaustion
+  *announcing itself* as a posted review — so either the message is not always
+  posted, or row 3 is not quota. Undetermined.
+* **Latency: the audit's table says ~3–4 min; this measured 10m28s.** One
+  sample, but it is push→review, whereas the audit's is request→review, so the
+  two numbers are not measuring the same interval and should not be averaged.
+
+**Operational consequence, which holds under every candidate:** the corrected
+rule *"request once, do not wait, but it can arrive"* needs its second half
+taken seriously. On #5744 the review landed on the exact head that was merged
+minutes later, and was merged over unread — both of its findings were real, and
+one pointed at a defect worse than reported (two new `references.ts` entries
+inserted **between** the `Kawauchi 1996` banner and its own entry, orphaning
+both). Checking back before merging is the part that failed, not the not-waiting.
+## The historical zeros: one datum that CONSTRAINS the open question above
+## (session clinical-derivation-attack-vectors, PR #6131)
+
+The QUOTA section leaves a question open and says it cannot be settled from
+there: were the historical zeros "over quota all along", or "off, then back"?
+It notes the two imply different operating rules, and that today's exhaustion
+ANNOUNCES ITSELF as a posted review.
+
+Measured, on exactly the five PRs this bean's original n=5 was collected from:
+
+    get_reviews  #5474 []   #5495 []   #5411 []   #5459 []   #5482 []
+
+ZERO reviews. Not quota refusals -- nothing posted at all, by either instrument
+(get_check_runs was already recorded as total_count 0 on all five).
+
+BEARING ON THE QUESTION, and it is a constraint rather than a settlement: if
+those five had been quota exhaustion, and exhaustion announces itself as a
+posted review as it did on #6122 and #6131, then get_reviews should show a
+refusal on at least some of them. It shows nothing. That FAVOURS "off, then
+back" over "over quota all along".
+
+WHAT IT DOES NOT ESTABLISH, stated because the distinction is the whole point of
+the open question:
+  * the announcing behaviour may itself be new -- if the refusal message shipped
+    between 2026-08-23 and 2026-08-30, silent exhaustion then and announced
+    exhaustion now are perfectly consistent with "over quota all along". This
+    bean already names that possibility and I cannot exclude it either.
+  * five PRs from one day is a thin sample for a rationed resource.
+
+So: the observation removes the easy version of "over quota all along" (the one
+where refusals would have been visible), and leaves the harder version standing.
+Recorded as a constraint on the candidates, in the same spirit as the #6119
+unrequested-review row above.
+
+METHOD NOTE for whoever re-measures: this is cheap and non-consuming.
+get_reviews on a historical PR spends no quota, unlike a fresh
+request_copilot_review. Any PR from the original window can be checked the same
+way at no cost.
+
+## Superseded record, kept for the trail
+
+This session independently reached the quota mechanism (trial 2, #6131, 07:56Z,
+same refusal text) and independently reached the "check runs are the wrong
+instrument" point. BOTH ARE SUPERSEDED by the sections above, which are more
+thorough -- they carry the self-sealing diagnosis, four timing rows, the
+unrequested-review case and the 5-of-6 findings calibration, none of which I
+had. Only the five-PR datum above is additive, and it is why this append exists
+rather than a competing account.
+
+I also over-attributed once en route, and record it since the error is
+instructive: I blamed the check-run instrument for the n=5 result. The
+instrument IS wrong -- Copilot produces no check run in any outcome, so a
+check-run poll cannot distinguish reviewed / refused / never-asked -- but the
+five PRs show nothing under get_reviews either, so the instrument was not what
+produced that reading. Two independent facts; I had collapsed them.
+
+## Second additive datum: exhausted quota is not always a refusal (2026-08-30, 09:08Z)
+
+Same PR (#6131), same account, same day, two `request_copilot_review` calls
+~63 minutes apart:
+
+| request | head sha | outcome | latency |
+|---|---|---|---|
+| 07:55Z | `44f0b7d0` | **refusal posted** ("reached their quota limit") | ~40 s |
+| 08:58Z | `38f674db` | **nothing** — `get_reviews` unchanged at 09:08Z | > 9 min, still silent |
+
+The first is 13x faster than the second is old, so the second is silence, not a
+slow refusal. **The same exhausted-quota state produces a refusal one hour and
+silence the next.**
+
+Consequence for the recommended poll: the sibling account above concludes a
+quota refusal is actionable while silence is not. That holds, but silence is now
+*less* informative than it looked -- it does not even distinguish "quota
+exhausted" from "never asked", because exhausted quota is one of the things that
+produces it. There is no instrument that separates those two states: check runs
+are `total_count: 0` in every outcome (established above), and `get_reviews` is
+`[]` in both. Budget the request, poll ~3 min, and on silence proceed on your
+own verification -- which is what rule 10 already says, for a reason that turns
+out to be sounder than its stated premise.
+
+Also: quota did not replenish within ~63 minutes, so a retry-after-an-hour
+strategy is not viable on the observed window.
+
+
+
+---
+
+## Data point 2026-08-30 (~10:08–10:40Z) — three PRs, and one is the direct NEGATIVE counterpart to row 2
+
+Recorded because the entry above establishes *"a review on a push with NO
+contemporaneous request"* (row 2, 10m28s) and reads as support for the
+push-trigger hypothesis. This session ran the same configuration and got the
+opposite result at more than twice the observation window.
+
+| PR | head pushed | `request_copilot_review` | merged | reviews, last checked **10:54Z** |
+|---|---|---|---|---|
+| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 45 min |
+| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 43 min |
+| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ≥ 18 min (weak) |
+
+> **Re-read 10:54Z by a second session** (`get_reviews` → `[]` on all three,
+> plus `#6170` at ≥ 42 min). The bounds above were ≥ 37 / ≥ 35 / ≥ 10 at the
+> 10:46Z read and ≥ 31 / ≥ 29 / ~5 at 10:40Z, and the prose below still carried
+> the 10:40Z pair while this table carried the 10:46Z one — the same figure
+> disagreeing with itself two paragraphs apart. **A censored bound grows until
+> the event happens, so it is not a number, it is a number plus a read time.**
+> Quote it with the timestamp or a later reader cannot tell a stale figure from
+> a different measurement. Prose below aligned to this read.
+
+All three `get_reviews` → `[]`, re-checked after each merge.
+
+**#6168 is the discriminating row.** Push with NO request, ≥ 43 min observed
+(re-read 10:54Z), no review. That is the same configuration as row 2 above and the opposite
+outcome, at ~3.4x its 10m28s latency. So **a push does not reliably trigger a
+review** — row 2 shows it *can* happen, this shows it does not always.
+
+**#6162 is a clean negative for the request-trigger at ≥ 45 min** (re-read
+10:54Z), which is ~11x the 3–4 min request→review latency the reopened audit
+measured. Unlike the
+audit's #6068 and this session's own earlier merges, the observation window
+here is not the merge — I kept reading `get_reviews` for half an hour after.
+
+### What this does NOT establish
+
+- **Not "reviews stopped again".** The most economical reading is the **quota**
+  the entry above found the hard way: that exhaustion was measured at 07:56Z,
+  and 10:08Z is ~2h later with the recharge interval unknown. If the quota was
+  still spent, all three rows are explained and neither trigger hypothesis is
+  touched. **I did not receive the quota-limit message on any of them** — which
+  is the same undetermined signature row 3 above hit, and is the reason this
+  cannot be scored either way.
+- **Not a latency measurement.** These are censored observations (no event), so
+  they bound latency from below and cannot be averaged with row 2's 10m28s or
+  the audit's 3–4 min.
+- **#6174's window is still too weak to count.** At ≥ 18 min (re-read 10:54Z)
+  it is only ~1.7x row 2's own 10m28s, so it barely discriminates. Included for
+  completeness.
+
+### The one operational thing that IS true under every candidate
+
+I requested on #6162 and merged **2 min 3 s later** — the exact error the audit
+records against its own #6068. It happened not to cost anything (nothing
+arrived in the following half hour), but the window was not mine to gamble.
+The rule that follows is the audit's, unchanged: **do not wait, but keep
+reading after the merge**, because the merge is not the end of the window.
+
+
+### Observation CLOSED 2026-08-30 11:33Z — final bounds, nothing arrived
+
+Final sweep of all four merged PRs. `get_reviews` → `[]` on every one.
+
+| PR | pushed | requested | final censored window |
+|---|---|---|---|
+| #6162 | 10:08:42Z | **~10:09Z** | **≥ 84 min** |
+| #6168 | 10:10:53Z | none | **≥ 81 min** |
+| #6174 | 10:35:45Z | none | ≥ 57 min |
+| #6179 | 10:47:00Z | none | ≥ 45 min |
+
+Superseding the ≥37/≥35 recorded above: these are the same observations carried
+to their end, not new ones.
+
+**What the two strong rows now bound.**
+
+- **#6162 — request trigger, ≥ 84 min.** That is ~21× the 3–4 min
+  request→review latency the reopened audit measured. A request-triggered review
+  did not arrive within twenty-one times its own observed latency.
+- **#6168 — push trigger, ≥ 81 min.** ~7.8× the 10m28s push→review latency of
+  the data point in `f96325ec1`. A push-triggered review did not arrive within
+  nearly eight times its own observed latency.
+
+**Still NOT scored, and this is the point.** The quota exhausted at 07:56Z with
+an unknown recharge interval remains the one live explanation that fits all four
+rows without touching either trigger hypothesis, and **no quota-limit message
+was posted on any of them** — the same undetermined signature row 3 hit. Four
+negatives at long windows are consistent with "quota still spent for the whole
+session" and say nothing on their own about what triggers a review.
+
+**What would settle it, for whoever picks this up:** a request on a fresh PR
+after a known-long quiet period, with the quota-limit message watched for
+explicitly. Until then the three candidates in
+`docs/audits/2026-08-30-copilot-review-works-again.md` stand unresolved and this
+bean stays open.
+
+Observation closed; no further check-in scheduled. Past ~80 min further waiting
+adds nothing — a fifth zero at 120 min would not discriminate either.

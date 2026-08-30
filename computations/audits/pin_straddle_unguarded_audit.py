@@ -99,7 +99,18 @@ SEED_LOADERS: set[str] = set()
 #: a name-level test makes `if q_0 > x` satisfy "mentions a pin" and "mentions
 #: a stamp" at once and clears every module that touches q_0 at all. That is
 #: not hypothetical: it cleared instance B pre-fix on the first attempt here.
-STAMP_KEYS = {"q0Value", "q_0", "q0", "anchor", "q0_value", "q_0_50dps"}
+#: Dict keys under which an artifact records the q0 it was BUILT AT.
+#:
+#: ``"q"`` looks dangerously generic and is not. Measured on live
+#: ``computations/`` (excluding ``_deprecated``): **5** ``.get("q")`` call
+#: sites exist in the entire tree, and all five read a pin stamp off a loaded
+#: artifact table — `y_lambda_symbolic_validate` x2, `y_lambda_macdonald_telescope`,
+#: `muon_pin_three_values_probe`, and this file's own docstring. Zero false
+#: positives at a hand-checked 5/5, against a real false NEGATIVE it was
+#: causing: `y-lambda-mpfr-witness.json` stamps each per-n table with exactly
+#: this key (`{"n", "num_partitions", "q", "z", "dps", "weights"}`), so every
+#: consumer that correctly reconciles against it was invisible.
+STAMP_KEYS = {"q0Value", "q_0", "q0", "anchor", "q0_value", "q_0_50dps", "q"}
 
 #: Keyword names that hand the runtime pin DOWN into a loader.
 PIN_KWARGS = {"q_str", "q0", "q_0", "q", "q0_str"}
@@ -287,18 +298,103 @@ def _stamp_derived(tree: ast.Module) -> set[str]:
     and then compares ``_cache_q0`` to the runtime pin. The comparison itself
     never mentions ``q0Value``, so a reconciliation test keyed on the literal
     field name cannot see it. Bind the name at the extraction site instead.
+
+    A COMPREHENSION counts as an extraction site too. `y_lambda_symbolic_validate`
+    collects its stamps as `recorded = [t.get("q") for t in tables.values() ...]`
+    and compares against `recorded`'s elements; an assignment-only walk sees the
+    `Assign` but its value is a `ListComp`, so the `.get` is reached — the case
+    that needed adding is the loop variable, which is bound by a `comprehension`
+    node rather than by an `Assign` at all.
     """
     out: set[str] = set()
     for n in ast.walk(tree):
-        if not isinstance(n, (ast.Assign, ast.AnnAssign)) or n.value is None:
+        if isinstance(n, (ast.Assign, ast.AnnAssign)) and n.value is not None:
+            if not _reads_stamp(n.value):
+                continue
+            targets = n.targets if isinstance(n, ast.Assign) else [n.target]
+        elif isinstance(n, ast.comprehension):
+            if not _reads_stamp(n.iter) and not any(_reads_stamp(i) for i in n.ifs):
+                continue
+            targets = [n.target]
+        elif isinstance(n, ast.For):
+            if not _reads_stamp(n.iter):
+                continue
+            targets = [n.target]
+        else:
             continue
-        if not _reads_stamp(n.value):
-            continue
-        targets = n.targets if isinstance(n, ast.Assign) else [n.target]
         for t in targets:
             for sub in ast.walk(t):
                 if isinstance(sub, ast.Name):
                     out.add(sub.id)
+    return out
+
+
+def _pin_derived(tree: ast.Module) -> set[str]:
+    """Names bound from the RUNTIME PIN — the mirror of :func:`_stamp_derived`.
+
+    That function exists because *"the comparison itself never mentions
+    ``q0Value``, so a reconciliation test keyed on the literal field name
+    cannot see it."* The identical argument applies to the other operand and
+    was never made, so RECONCILIATION 2 tracked derivation on one side of the
+    comparison and demanded a literal on the other.
+
+    The cost was not hypothetical: it is blind to the fix pattern this audit's
+    own findings recommend. Both straddles closed under `qou-y313` bind the pin
+    to a local first —
+
+        want = mp.mpf(Q_50_DIGIT_STR)          # ← the only mention of the pin
+        ...
+        if abs(mp.mpf(str(q_rec)) - want) < mp.mpf("1e-40"):
+
+    — and the `Compare` node names `want`, `q_rec`, `abs`, `mp`, `str`, but not
+    `Q_50_DIGIT_STR`. Measured: `atomic_tr_m_helium4` and
+    `y_lambda_symbolic_validate` were both **still flagged after being
+    correctly fixed and their witnesses regenerated to the right layer**. A
+    detector that cannot see its own remedy can never be triaged to zero, which
+    is the stated precondition for making this gate blocking.
+
+    **One hop is not enough, and that was measured rather than assumed.** The
+    first version of this stopped at a single assignment and still left
+    `y_lambda_symbolic_validate` flagged, because that module aliases the pin at
+    module level and then converts it inside the loader:
+
+        Q0_STR = Q_50_DIGIT_STR        # hop 1  — caught by one hop
+        ...
+        want = mp.mpf(Q0_STR)          # hop 2  — NOT caught
+
+    So this iterates to a fixed point over assignments. It is still assignments
+    only — no arguments, no attributes, no returns.
+
+    **Why growing this side is safe, and what actually guards the predicate.**
+    A larger pin side cannot on its own clear anything, because the *other*
+    operand must still be the artifact's own stamp (`sub & stamped` or
+    `_reads_stamp`). That is the half instance B pre-fix fails: it compares the
+    runtime pin against `_q0_value_for_anchor("muon")`, a check on the PIN
+    involving **no artifact stamp at all**, and it must keep failing however
+    many names the pin side acquires. It does, and `--selftest` fails if it
+    stops.
+
+    **The residual risk, stated rather than waved at:** a `Compare` that
+    mentions a pin-derived name and a stamp-derived name without being a
+    reconciliation would now clear. That is a false negative this trades for
+    the false positives above, and it is the reason stage 2 exists — stage 2
+    reads both numbers off disk and never consults this predicate at all.
+    """
+    out: set[str] = set()
+    changed = True
+    while changed:                       # fixed point: aliases of aliases
+        changed = False
+        for n in ast.walk(tree):
+            if not isinstance(n, (ast.Assign, ast.AnnAssign)) or n.value is None:
+                continue
+            if not (_all_names(n.value) & (RUNTIME_PIN | out)):
+                continue
+            targets = n.targets if isinstance(n, ast.Assign) else [n.target]
+            for t in targets:
+                for sub in ast.walk(t):
+                    if isinstance(sub, ast.Name) and sub.id not in out:
+                        out.add(sub.id)
+                        changed = True
     return out
 
 
@@ -351,10 +447,11 @@ def analyse(src: str, label: str, loaders: set[str]) -> tuple[bool, str]:
     # stamp at all — and an audit that accepted that as reconciliation cleared
     # the straddle it was written to find.
     stamped = _stamp_derived(tree)
+    pin_side = RUNTIME_PIN | _pin_derived(tree)
     for n in ast.walk(tree):
         if isinstance(n, (ast.Compare, ast.If)):
             sub = _all_names(n)
-            if (sub & RUNTIME_PIN) and ((sub & stamped) or _reads_stamp(n)):
+            if (sub & pin_side) and ((sub & stamped) or _reads_stamp(n)):
                 return False, ("reconciled: compares the runtime pin against "
                                "the artifact's own pin stamp")
 
@@ -539,6 +636,45 @@ def _consumed_at_artifact_q(tree: ast.Module) -> bool:
     return False
 
 
+#: Coefficient-like symbolic content: a polynomial in a variable, not a number.
+_SYMBOLIC_RE = re.compile(r'"[^"]*\*\*?[a-z][^"]*"')
+
+
+def _payload_is_pin_independent(path: Path, memo: dict[Path, bool]) -> bool:
+    """True if the artifact's DATA cannot depend on the pin it is stamped with.
+
+    THE EIGHTH FALSE-POSITIVE MECHANISM, and the first where I nearly changed
+    correct code to satisfy this audit.
+
+    `habiro-coefficients-extended.witness.json` carries a top-level q₀ stamp
+    and was flagged as a muon artifact read by a proton producer. But its
+    payload is a SYMBOLIC Habiro expansion — `a_m` entries like `"768"`,
+    `"-35712*u - 35712"`, `"491861*u**2 + 503768*u + 515411"`, with
+    `all_integral: true` — and the rows contain no q stamp at all. The
+    consumer evaluates it at `u₀ = q₀^{1/2}` from its OWN runtime pin, so
+    reading it at the proton pin is correct.
+
+    The stamp records the run that PRODUCED the symbolic object, not a frame
+    the data lives in. Stage 2 compares producer-anchor to artifact-stamp and
+    cannot tell pin-STAMPED from pin-DEPENDENT; that distinction is what this
+    restores.
+
+    The test is evidence, not a name list: symbolic coefficient strings in the
+    payload. It is deliberately narrow — a numeric artifact that merely
+    happens to contain one such string will not match, and a symbolic artifact
+    whose consumer nonetheless needs the stamp will be wrongly exempted. If
+    that second case appears, tighten HERE rather than adding the producer to
+    an allow-list, which would hide the reason.
+    """
+    if path not in memo:
+        try:
+            txt = path.read_text(errors="ignore")[:400_000]
+            memo[path] = bool(_SYMBOLIC_RE.search(txt)) and '"all_integral"' in txt
+        except Exception:                                  # noqa: BLE001
+            memo[path] = False
+    return memo[path]
+
+
 def _anchor_keyed(tree: ast.Module) -> set[str]:
     """Filename constants that sit under an anchor key in a dict literal.
 
@@ -579,6 +715,7 @@ def measure(hits: list[tuple[str, str]]) -> list[tuple[str, str, str, str]]:
     """For each candidate, compare its producer's anchor to its artifacts'."""
     anchors = _anchor_values()
     idx = _json_index(ROOT / "computations")
+    sym_memo: dict[Path, bool] = {}
     out: list[tuple[str, str, str, str]] = []
     for rel, _why in hits:
         path = ROOT / rel
@@ -625,6 +762,8 @@ def measure(hits: list[tuple[str, str]]) -> list[tuple[str, str, str, str]]:
                 cs = str(c)
                 if c.name in ARTIFACT_EXEMPT_NAMES or \
                         any(d in cs for d in ARTIFACT_EXEMPT_DIRS):
+                    continue
+                if _payload_is_pin_independent(c, sym_memo):
                     continue
                 got = _artifact_pin(c)
                 if got and got[:_Q0_PREFIX] != want_val:

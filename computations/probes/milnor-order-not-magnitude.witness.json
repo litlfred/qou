@@ -1,0 +1,84 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T10:54:25.459031+00:00",
+  "commitSha": "b49a63b015704661e82e779eb48f3e8db8347ace",
+  "assertions": [
+    {
+      "name": "single_coupling_order_law_refuted",
+      "computed": "9.10888402160610101146905039595605295151337618770590649757220",
+      "expected": "4.25",
+      "passed": true,
+      "tolerance": "6.0",
+      "unit": "worst |b2*b4/b3^2 - 1| across conventions",
+      "source": "b_A = s_A g^{2(A-1)} forces b3^2 = b2*b4 with g eliminated; measured factors 10.11 (isospin average) and 5.25 (Coulomb-corrected). Lean: not_geometric_order"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "milnor-order-not-magnitude",
+  "scriptFile": "milnor_order_not_magnitude_probe.py",
+  "scriptHash": "be66f3b66804",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_order_not_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_order_not_magnitude_probe.py"
+  },
+  "description": "Milnor's mu-bar is +-1 on Brunnian links (corpus: brunnian_exact_leadingOrder), so it carries order and sign but NO magnitude and cannot be the b3 rise. The single-coupling order law b_A = s_A g^{2(A-1)} it suggests is refuted division-free by b3^2 != b2*b4, under both A=3 conventions. Scope-(a): the family falls, not Milnor's involvement.",
+  "data": {
+    "leading_order": {
+      "2": 2,
+      "3": 4,
+      "4": 6
+    },
+    "mu_bar_value": "+-1 (brunnian_exact_leadingOrder, conditional on BrunnianVassilievBridge)",
+    "square_test": [
+      {
+        "convention": "isospin_average",
+        "b2": "2.22456620000000000000000000000000000000000000000000000000000",
+        "b3": "1.42622016000000000000000000000000000000000000000000000000000",
+        "b4": "9.24338456000000000000000000000000000000000000000000000000000",
+        "b3_squared": "2.03410394479042560000000000000000000000000000000000000000000",
+        "b2_times_b4": "20.5625208657778720000000000000000000000000000000000000000000",
+        "factor": "10.1088840216061010114690503959560529515133761877059064975722"
+      },
+      {
+        "convention": "3H_Coulomb_corrected",
+        "b2": "2.22456620000000000000000000000000000000000000000000000000000",
+        "b3": "1.80809760000000000000000000000000000000000000000000000000000",
+        "b4": "7.71587480000000000000000000000000000000000000000000000000000",
+        "b3_squared": "3.26921693112576000000000000000000000000000000000000000000000",
+        "b2_times_b4": "17.1644742835117600000000000000000000000000000000000000000000",
+        "factor": "5.25033200461284355409448012388171440667870308304606241508423"
+      }
+    ],
+    "not_a_refutation_of_the_parity_law": {
+      "parity_law_predicts": "sign(1 - tau_A) = (-1)^(A-1), i.e. -,+,- at A=2,3,4",
+      "measured_cumulant_signs": "+,+,+",
+      "why_this_is_not_a_conflict": "1 - tau_A is a different quantity from b_A; no relation between them is established here"
+    },
+    "verdict": {
+      "mu_bar_can_carry_magnitude": false,
+      "why": "it is +-1 on Brunnian links, so |b_A| = |c_A| and the size is all c_A's",
+      "single_coupling_order_law": "REFUTED, scope-(a), division-free via b3^2 != b2*b4",
+      "what_survives": "a multi-term closure where mu-bar fixes each term's SIGN and ORDER while separate coefficients carry the SIZES",
+      "derives_a_magnitude": false
+    }
+  }
+}

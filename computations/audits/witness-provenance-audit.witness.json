@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:27:28.446143+00:00",
-  "commitSha": "a945911dd5e4df37cc43e27590036816fc0fd041",
+  "computedAt": "2026-08-30T09:07:51.265152+00:00",
+  "commitSha": "e2f7ae13f7b316ad06123d127577dabcb3917875",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
+  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,17 +29,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py"
+      "computations/audits/witness_provenance_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -57,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2905,
-      "prov_ok": 2488,
+      "total_scanned": 2907,
+      "prov_ok": 2491,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 259,
+      "prov_exempt_no_reader": 258,
       "prov_exempt_acknowledged": 0,
       "prov_missing": 78,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.973149741824440619621342512908777969018932874354561101549053"
+      "completeness_ratio": "0.973168214654282765737874097007223942208462332301341589267286"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4809,6 +4810,10 @@
           "missing_fields": []
         },
         {
+          "witness": "nucleus-real-sdp-deuteron.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "nv-pslq-tr-pure-basis.witness.json",
           "missing_fields": []
         },
@@ -7665,6 +7670,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-bar-parity-of-the-decay-trace.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-bar-split-ord17.witness.json",
           "missing_fields": []
         },
@@ -9889,6 +9898,10 @@
           "missing_fields": []
         },
         {
+          "witness": "wedderburn-mass-table-convention-d.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "wedderburn-mass-table-z1-20.witness.json",
           "missing_fields": []
         },
@@ -11622,12 +11635,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nucleus-real-sdp-deuteron.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },

@@ -7,6 +7,7 @@ section_number: null
 pages: 27-28
 source_pdf: 1409.0435v2.pdf
 source_sha256: 0c6abbb9c5a720d9
+doc_brief: "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where"
 ---
 [1] J. Baik, P. Deift, and K. Johansson, On the distribution of the length of the longest
 increasing subsequence of random permutations, J. Amer. Math. Soc. 12 (1999),

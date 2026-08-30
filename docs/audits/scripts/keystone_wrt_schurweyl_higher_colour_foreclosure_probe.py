@@ -35,7 +35,25 @@ prune), not a closure of the keystone.
 import json
 import os
 
-Q0 = 1.1099785955541805
+# The substrate pin is READ, not transcribed. This file previously carried
+#     Q0 = 1.1099785955541805
+# -- the CODATA-2018 muon derivation B, 11.54 ppb from the canonical proton pin.
+# Two files in this group cited `tools/hecke-engine/src/gram.rs::Q_0` as the
+# source of that number; gram.rs was RE-PINNED to proton on 2026-08-15 (owner
+# decision, bean `qou-m7py`) and now holds 1.1099785827513808, so the citation
+# had outlived the value it pointed at. AGENTS.md's 2026-08-07 directive makes
+# the experimental/proton pin the default for all touched compute.
+#
+# `docs/audits/scripts/` is outside `hardcoded_q0_literal_families_audit.py`'s
+# `_SCAN_ROOT` (which is `computations/`), so nothing flagged these -- bean
+# `qou-2whe`. Reading the pin means a future re-pin reaches this file without
+# anyone editing a digit.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_ROOT = _pl.Path(__file__).resolve().parents[3]
+for _p in (_ROOT / "computations", _ROOT / "computations" / "substrate"):
+    if str(_p) not in _sys.path:
+        _sys.path.insert(0, str(_p))
+from q_parameter import Q as Q0  # noqa: E402
 PARTITIONS_5 = [(5,), (4, 1), (3, 2), (3, 1, 1), (2, 2, 1), (2, 1, 1, 1), (1, 1, 1, 1, 1)]
 
 

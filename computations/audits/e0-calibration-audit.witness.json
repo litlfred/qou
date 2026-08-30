@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-08-23T08:54:17.556111+00:00",
+  "computedAt": "2026-08-30T07:44:15.194533+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -24,7 +24,48 @@
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.17e-7 (~717.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
     "literal_0_782": [],
-    "literal_0_78233341": [],
+    "literal_0_78233341": [
+      {
+        "file": "computations/audits/_source_normalise.py",
+        "line": 11,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"this module does NOT use the β-decay Q-value 0.78233341 MeV as E_0\"",
+        "kind": "doc"
+      },
+      {
+        "file": "computations/audits/_source_normalise.py",
+        "line": 232,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "'\"\"\"Module doc mentioning 0.78233341 and q-pinning-50-digit.\"\"\"\\n'",
+        "kind": "doc"
+      },
+      {
+        "file": "computations/audits/_source_normalise.py",
+        "line": 236,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"REAL = 0.78233341\\n\"",
+        "kind": "doc"
+      },
+      {
+        "file": "computations/audits/_source_normalise.py",
+        "line": 248,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "(1, \"0.78233341\", False),   # module docstring",
+        "kind": "active"
+      },
+      {
+        "file": "computations/audits/_source_normalise.py",
+        "line": 251,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "(5, \"0.78233341\", True),    # real assignment survives",
+        "kind": "active"
+      }
+    ],
     "literal_0_78233": [],
     "E_0_CALIBRATION_MEV": [],
     "Q_BETA_MEV": [

@@ -231,6 +231,7 @@ import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
+import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
 import QOU.MassTheory.SaturationRhoCap
@@ -321,6 +322,9 @@ import QOU.Mass.QBetaProxyHReduction
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
+import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mathlib.YoungLatticeExchange
+import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization

@@ -1,0 +1,340 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s10955-022-02992-6",
+ "source": {
+  "file": "s10955-022-02992-6.pdf",
+  "sha256": "aa73d797a89eaf06bc67198fc6ad8cdbbd066b2d652140c96137dffe253469cc",
+  "bytes": 721298,
+  "pages": 47,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s10955-022-02992-6",
+  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 \u00b7 Leonid Kolesnikov 1 \u00a9 The Author(s) 2022",
+  "authors_raw": null,
+  "title_lines": [
+   "Cluster Expansions: Necessary and Sufficient Convergence",
+   "Conditions",
+   "Sabine Jansen 1,2 \u00b7 Leonid Kolesnikov 1",
+   "\u00a9 The Author(s) 2022"
+  ],
+  "abstract": "We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics with possibly negative pair potentials. For non-negative pair potentials, the criterion is an if and only if condition. The condition is formulated with a sign-\ufb02ipped Kirkwood\u2013Salsburg operator and known conditions such as Koteck\u00fd\u2013Preiss and Fern\u00e1ndez\u2013Procacci are easily recovered. In addition, we deduce new suf\ufb01cient convergence conditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The latter improves on the Fern\u00e1ndez\u2013Procacci criterion.",
+  "docinfo": {
+   "Author": "Sabine Jansen ",
+   "CreationDate": "D:20220923130855+05'30'",
+   "Creator": "Springer",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Main Results",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "(Locally) Stable Pair Potentials",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Abstract Polymer Models",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Hard-Core Systems in the Continuum",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Subset Polymers",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Forest Partition Schemes: Alternating Sign Property",
+   "page": 14,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Kirkwood\u2013Salsburg Equations: Proof of Theorem 2.1",
+   "page": 17,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
+   "page": 19,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
+   "page": 22,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Application to Concrete Hard-Core Models",
+   "page": 25,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "Single-Type Subset Polymers in mathbbZd",
+   "page": 25,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Single-Type Hard-Core System in mathbbRd",
+   "page": 27,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "Multi-Type Hard Spheres in mathbbRd",
+   "page": 30,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Tonks Gas on mathbbZ",
+   "page": 33,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 3,
+   "title": "Tonks Gas on mathbbR",
+   "page": 36,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "A Proof of Lemma 2.5",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 856,
+   "n_words": 118
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 11349,
+   "n_words": 1770
+  },
+  {
+   "id": "sec-002-2-main-results",
+   "number": "2",
+   "title": "Main Results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-21-locally-stable-pair-potentials",
+   "number": "2.1",
+   "title": "(Locally) Stable Pair Potentials",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 10003,
+   "n_words": 1969
+  },
+  {
+   "id": "sec-004-22-abstract-polymer-models",
+   "number": "2.2",
+   "title": "Abstract Polymer Models",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5413,
+   "n_words": 1049
+  },
+  {
+   "id": "sec-005-23-hard-core-systems-in-the-continuum",
+   "number": "2.3",
+   "title": "Hard-Core Systems in the Continuum",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2225,
+   "n_words": 428
+  },
+  {
+   "id": "sec-006-24-subset-polymers",
+   "number": "2.4",
+   "title": "Subset Polymers",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5992,
+   "n_words": 1134
+  },
+  {
+   "id": "sec-007-3-combinatorial-lemmas-proof-of-theorems-21-26-a",
+   "number": "3",
+   "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-31-forest-partition-schemes-alternating-sign-pro",
+   "number": "3.1",
+   "title": "Forest Partition Schemes: Alternating Sign Property",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 6964,
+   "n_words": 1310
+  },
+  {
+   "id": "sec-009-32-kirkwoodsalsburg-equations-proof-of-theorem-2",
+   "number": "3.2",
+   "title": "Kirkwood\u2013Salsburg Equations: Proof of Theorem 2.1",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 5667,
+   "n_words": 1139
+  },
+  {
+   "id": "sec-010-33-integral-equations-for-hard-core-models-proof",
+   "number": "3.3",
+   "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 6264,
+   "n_words": 1308
+  },
+  {
+   "id": "sec-011-34-recurrence-relations-for-subset-polymers-proo",
+   "number": "3.4",
+   "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 5733,
+   "n_words": 1091
+  },
+  {
+   "id": "sec-012-4-application-to-concrete-hard-core-models",
+   "number": "4",
+   "title": "Application to Concrete Hard-Core Models",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 41,
+   "n_chars": 38550,
+   "n_words": 7603
+  },
+  {
+   "id": "sec-013-a-proof-of-lemma-25",
+   "number": null,
+   "title": "A Proof of Lemma 2.5",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 46,
+   "n_chars": 7422,
+   "n_words": 1450
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 4959,
+   "n_words": 707
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 15,
+  "chars_total": 111397
+ }
+}

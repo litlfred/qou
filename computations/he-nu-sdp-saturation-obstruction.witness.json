@@ -3,13 +3,15 @@
   "kind": "exploratory-probe",
   "description": "Capstone of the ν_SDP line: the operator-selection SDP saturation does not reproduce ν=1,2,2 in any principled regime — q→1 gives a single min-cost block (ν=1 always); q₀ is indefinite/rail-degenerate. With per-block-PSD, SDP-active-set, bar-fold, and self-conjugate all refuted, ν_SDP has no first-principles SDP-saturation derivation; 1,2,2 are hand-assigned. No fit.",
   "engine": "numpy+scipy",
-  "q0": 1.1099785955573347,
+  "q0": 1.1099785827513808,
   "regimes": {
     "q→1⁺ (well-posed)": {
       "D": {
         "bounded_support_size": 1,
         "nu_canonical": 1,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 7,
+        "zero_tolerance": 1e-30,
         "support": [
           [
             [
@@ -25,12 +27,16 @@
         "bounded_support_size": 0,
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": 1e-30,
         "support": []
       },
       "3He": {
         "bounded_support_size": 0,
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": 1e-30,
         "support": []
       }
     },
@@ -39,6 +45,8 @@
         "bounded_support_size": 1,
         "nu_canonical": 1,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 7,
+        "zero_tolerance": 1e-30,
         "support": [
           [
             [
@@ -46,7 +54,7 @@
               2,
               2
             ],
-            0.5751723309916856
+            0.5751722439177741
           ]
         ]
       },
@@ -54,6 +62,8 @@
         "bounded_support_size": 1,
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": 1e-30,
         "support": [
           [
             [
@@ -64,7 +74,7 @@
               1,
               1
             ],
-            0.22931014717238246
+            0.2293101021045579
           ]
         ]
       },
@@ -72,6 +82,8 @@
         "bounded_support_size": 1,
         "nu_canonical": 2,
         "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": 1e-30,
         "support": [
           [
             [
@@ -82,7 +94,7 @@
               1,
               1
             ],
-            0.40376713846544077
+            0.4037670368514308
           ]
         ]
       }
@@ -102,10 +114,10 @@
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
   "scriptFile": "he_nu_sdp_saturation_obstruction.py",
-  "scriptHash": "9188325fdad3",
+  "scriptHash": "b65498e9fd93",
   "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
-  "computedAt": "2026-08-29T07:37:02.682184+00:00",
+  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "computedAt": "2026-08-30T11:41:32.399825+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T09:00:02Z
+updated_at: 2026-08-30T10:51:23Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -92,3 +92,16 @@ A≈60), NOT the fundamental volume coefficient a_V/m_N ≈ 1.71·ℏ_q². 3/7 t
 Net: type question PROVED (#6125); R1 PROVED (clasp model); R2 PROVED (additive level); R3 = numerology.
 Sole surviving genuinely-open item: the R2 mass-observable=closed-self-trace identification at the
 archimedean boundary. Audit: docs/audits/2026-08-30-brng-residuals-worked.md.
+
+
+---
+**Update 2026-08-30 (session qou-0qkt, PR #6145) — R2 residual LIFTED.**
+The additive self/mutual partition is now lifted to the mass observable via the archimedean functor
+τ=log — QOU.Mass.ArchimedeanTraceBridge (sorry-free): Markov/Jones trace multiplicative under
+connected sum ⇒ free energy E=log T additive (freeEnergy_connectedSum/_prod) ⇒ the additivity
+SelfMutualPartition assumed is DERIVED; binding = −log I = connected/interaction free energy
+(binding_eq_bindingFreeEnergy), =0 ⟺ independence, >0 ⟺ amplitude suppressed. Two named modelling
+inputs remain (NOT open derivations): (1) substrate assembly amplitude = the multiplicative Markov
+trace (citable Jones, carried as hypothesis); (2) dressing m=m_e·Vol·lw/ℏ_q² (calibration+geometry).
+Net: type question, R1 coefficient, R2 additive+lift all PROVED; R3 = numerology. Audit:
+docs/audits/2026-08-30-brng-residuals-worked.md.
