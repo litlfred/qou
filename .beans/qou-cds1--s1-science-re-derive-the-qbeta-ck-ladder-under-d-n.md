@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T06:18:46Z
+updated_at: 2026-08-30T06:34:34Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2539,3 +2539,60 @@ Newly recorded (vocabulary, not mathematics): y_(2,1)(z_D) = 1/[2]_q^2 and
 tr_M^D(T_e) = 1 exactly, so the D-frame trace closes as
 
     tr_M^D = ( [2]_{q^2} chi^(3) + chi^(2,1) ) / [2]_q^2 ,  [2]_q^2 = [2]_{q^2} + 2.
+
+## 2026-08-30 (third pass) — the sharpened question is ANSWERED, and the answer is a negative
+
+Previous entry asked: the published ladder's only z-dependence is the phase
+alpha, so where does the three-row C-frame dependence hide such that
+'re-derive, do not z-swap' is true?
+
+**It does not hide. There is no derivation of c_3 to redo.** The live producer
+computations/probe_q_beta_operator_valued_N3.py extracts c_3 by INVERTING the
+experimental Q_beta against the ansatz, in its own comments:
+
+    Q_emp_factor    = Q_AME / Q_N2                        # 'residual factor we need'
+    c3_emp_additive = (Q_emp_factor - 1) / (b**3 * hbar_q6)
+
+and labels the matching row '[fit]'. So 'c_3 = -2 = J_Hopf(q=1)' is a post-hoc
+MATCH to an extracted number, not a derivation. J_Hopf(q=1) = -2 is itself
+convention-free — the Jones polynomial of ANY link at t=1 is
+(-2)^(components-1), and Hopf has 2 components — and every J_Hopf site in the
+corpus is a hardcoded literal in _deprecated/ citing Jones 1985, computed from
+no trace at any z.
+
+Measured (probe qbeta_c3_is_extraction_determined_probe, 5/5):
+  - the extracted c_3 fed back reproduces its own input, residual 0
+  - the published N=3 residual is exactly the (-2 vs extracted) gap propagated
+  - the extraction amplifies its reference Q by 1.618e6
+  - c_3 moves 2.8 % across q0 pins but 5.5e4 % between z_C and z_D
+
+## What this means for this bean, restated
+
+'Re-derive under D' cannot mean 'redo the derivation'. For c_3 there is none.
+It means DERIVE it for the first time — or establish that the product-ansatz
+SHAPE, Pi(1 + c_k u^k) with u = b*hbar_q^2, is itself C-specific. The D-frame
+extracted c_3 near -974 sits near no categorical candidate, which is scope-(a)
+evidence the shape does not transfer.
+
+This is consistent with, and sharpens, the red-team verdict already recorded in
+this bean ('convergence-framework PHYSICS wrapped around higher-coefficient
+NUMEROLOGY').
+
+## The near-match is fragile — and this is NOT a corpus defect
+
+I nearly filed 'the corpus carries two neutron masses' as a high-priority bug.
+It is DOCUMENTED at both sites: codata_2022_source.py lists CODATA-2022's
+direct measurement 939.56542194(48) AND an AME-derived 939.56542179, and
+qou_substrate's line reads 'AME-derived, NOT CODATA'. Retracted.
+
+What survives is stronger: choosing between those two legitimate references
+moves Q_beta by 191.73 ppb and the extracted c_3 by 17.6 % — about 5x the
+3.4671 % gap on which the c_3 = -2 near-match rests. The near-match is not
+robust to a reference choice the corpus deliberately leaves open.
+
+(Second retraction, same pass: I read M_N_MEV_VALIDATION's long decimal
+expansion as an mpf built from a float64 literal. Wrong — the witness stores
+strings; that was str(mpf) at 65 dps.)
+
+SCOPE: the probe does not reproduce the corpus's recorded c_3 = -2.0693425728
+with either reference and says so up front. Its content is structural.
