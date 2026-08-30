@@ -1,0 +1,93 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T12:33:13.044942+00:00",
+  "commitSha": "d73a3f7b3860487e6f6820c04107180a2e3d1b12",
+  "assertions": [
+    {
+      "name": "undershoot_is_not_consistent",
+      "computed": "1.92336846617556267824261647057300430079356595456678250348315",
+      "expected": "1.92",
+      "passed": true,
+      "tolerance": "0.2",
+      "unit": "C(2n,n) under-shoot factor",
+      "source": "under 2x, directly contradicting the 25-100x range I asserted"
+    },
+    {
+      "name": "semf_predicts_an_unbound_deuteron",
+      "computed": "-4.66119253869955290032625184980151416050708787632491090151546",
+      "expected": "-4.66",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "MeV, SEMF B(2H)",
+      "source": "a formula putting the deuteron below threshold cannot supply the standard for an A=2 pairing strength; the 25-40x refutation is WITHDRAWN"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 103,
+  "computation": "b3-is-the-deuteron-deficit",
+  "scriptFile": "b3_is_the_deuteron_deficit_probe.py",
+  "scriptHash": "69fbec7a80d9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b3_is_the_deuteron_deficit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b3_is_the_deuteron_deficit_probe.py"
+  },
+  "description": "Retracts two of my own claims: the '25-100x systematic under-shoot' (false -- factors span 1.92x to infinite, and two mechanisms have no magnitude at all) and the 'pairing delta is 25-40x too weak' refutation (invalid standard -- the SEMF predicts an UNBOUND deuteron at A=2). What survives: b3 = 3 x the deuteron deficit exactly, so the b3 question is the deuteron-weakness question, a TWO-body anomaly.",
+  "data": {
+    "retraction_1_undershoot_factors": [
+      {
+        "mechanism": "n_factorial",
+        "b3_over_b2": "0.0",
+        "under_by": "infinite"
+      },
+      {
+        "mechanism": "q_factorial",
+        "b3_over_b2": "0.0437062085325219836514078072942294397390915008392971458067479",
+        "under_by": "14.6689187551342632891442173131548178168100453682034773183370"
+      },
+      {
+        "mechanism": "central_binomial",
+        "b3_over_b2": "0.333333333333333333333333333333333333333333333333333333333333",
+        "under_by": "1.92336846617556267824261647057300430079356595456678250348315"
+      }
+    ],
+    "semf_at_low_A": {
+      "2H": "-4.66119253869955290032625184980151416050708787632491090151546",
+      "3H": "2.32450794967610552022411687150160505501759286897758470795065",
+      "4He": "22.8410067572672586252161220136779750060665055126261930765262"
+    },
+    "deuteron_deficit": {
+      "isospin_average": "0.475406720000000000000000000000000000000000000000000000000000",
+      "3H": "0.602699200000000000000000000000000000000000000000000000000000"
+    },
+    "pairing_status_restored": {
+      "previously": "refuted at 25-40x against the SEMF",
+      "now": "live candidate -- sign derived, magnitude the right order",
+      "fraction_of_deficit_covered": "0.345114113308927571166512250223660492663670368236758900625718..0.710970177283148206234863486994883034047141782093446218008866"
+    },
+    "reframing": {
+      "identity": "b3 = B(3) - 3B(2) = 3 * (B(3)/3 - B(2)) = 3 * deuteron deficit",
+      "consequence": "the b3 question IS the deuteron-weakness question -- a TWO-body anomaly dominating a connected three-body cumulant",
+      "relocated_target": "derive the deuteron deficit, not b3; it has an established cause (near-unitary 3S1, a_t = 5.42 fm against a ~1.4 fm range; the unbound 1S0 virtual state)",
+      "is_a_result": false,
+      "why_not": "the identity is trivial; its value is moving the question to a two-body quantity with known physics"
+    }
+  }
+}
