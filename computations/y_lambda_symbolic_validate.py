@@ -132,6 +132,13 @@ def load_mpfr_witness() -> dict:
     filename, and it degrades honestly — an unmatched pin returns `{}`, and
     `test_1_cross_q` then falls through to its `wenzl-bridge@100dps` reference
     for every probe instead of comparing across a layer boundary.
+
+    Coverage note, stated precisely because it is easy to overstate: this
+    now returns 17 entries rather than 11, but `main` iterates
+    `range(2, 13)`, so only n=2..12 are ever consumed. The extra proton
+    entries are available and unused — the fix corrects WHICH table is
+    compared against, not HOW MUCH is validated, and it does not change
+    the run's cost.
     """
     want = mp.mpf(Q0_STR)
     for name in _MPFR_WITNESSES:
