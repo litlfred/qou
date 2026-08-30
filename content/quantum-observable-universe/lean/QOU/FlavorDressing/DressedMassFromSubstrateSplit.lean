@@ -126,13 +126,18 @@ theorem dressed_mass_from_substrate_split
       = M_N * substrate_split_factor q :=
   h.split
 
-/-- The hypotheses travel with the instance: a triple carrying
-    `DressedMassSubstrateSplit` has a positive nucleon-mass scale and a
-    substrate parameter above the classical point. -/
-theorem dressed_mass_split_hypotheses
-    (F : FlavorDressingFunctor) (M_N q : ℝ)
-    [h : DressedMassSubstrateSplit F M_N q] :
-    0 < M_N ∧ 1 < q :=
-  ⟨h.M_N_pos, h.q_gt_one⟩
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `dressed_mass_split_hypotheses` — body was `⟨h.M_N_pos, h.q_gt_one⟩`: the conclusion was the
+  projected field verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, asserting the same proposition under the same hypotheses; only the
+restatement goes. That is the vacuity ledger's recorded disposition for this
+category — *"drop the pseudo-theorem and project the field at use sites"* — and
+there were no use sites: each had **zero references anywhere in the corpus**.
+Bean `qou-z9ws`.
+-/
 
 end QOU.FlavorDressing
