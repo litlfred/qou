@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:36:18Z
-updated_at: 2026-08-30T12:37:24Z
+updated_at: 2026-08-30T12:45:30Z
 ---
 
 ## The finding
@@ -61,3 +61,23 @@ committed witnesses hold B, so a generated witness will differ from the
 hand-written one by ~11.5 ppb, and any difference beyond that is a transcription
 error worth knowing about. That comparison is the whole value of doing it, and
 it needs its own PR with a field-by-field diff, not a side effect of a pin fix.
+
+
+## First regeneration check found one bad witness (2026-08-30) — see `qou-j3u0`
+
+Before writing emitters, the five were checked by re-running each producer
+pinned to the witness's own q₀ and comparing. Result:
+
+- `keystone-wrt-color-schurweyl` — **reproduces faithfully** (one field recorded
+  at 13 sig figs vs 14 printed; a truncation, not an error).
+- `keystone-schurweyl-dual-sides`, `keystone-schurweyl-su2-rowcount` — one
+  number each, both reproduce.
+- `keystone-habiro-wrt-s3-2i` — one number not located by a string scan;
+  **unchecked**, the scan over-reports across precisions.
+- `keystone-qdeform-projector-shift` — **CONTRADICTS its producer at the same
+  pin**: T_electron differs by 16 orders of magnitude, δ by 47 %, and the
+  bar-parity conclusion flips. Bean `qou-j3u0`.
+
+This changes the emitter plan: do **not** regenerate that one into a committed
+witness until it is established which computation is correct. Emitting would
+silently overwrite a recorded conclusion with a different one.

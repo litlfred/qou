@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T11:58:08.620692+00:00",
-  "commitSha": "2861f0a73fcf3d97b4d60e860d3471edf6fb5dc6",
+  "computedAt": "2026-08-30T12:41:46.443873+00:00",
+  "commitSha": "5fc51869673ecd97fe2fc5dcd02253514de97b5f",
   "assertions": [
     {
       "name": "proton_anchor_exact",
@@ -26,7 +26,7 @@
   "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
-  "scriptHash": "4207dfd1e900",
+  "scriptHash": "c59546654365",
   "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -123,7 +123,7 @@
       "N": 1,
       "A": 2,
       "M_codata": 1876.124,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -132,7 +132,7 @@
       "N": 2,
       "A": 3,
       "M_codata": 2809.432,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -141,7 +141,7 @@
       "N": 1,
       "A": 3,
       "M_codata": 2809.413,
-      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -278,7 +278,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -287,7 +287,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -296,7 +296,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -433,7 +433,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -442,7 +442,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -451,7 +451,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -588,7 +588,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -597,7 +597,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -606,7 +606,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -743,7 +743,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -752,7 +752,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -761,7 +761,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -898,7 +898,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -907,7 +907,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -916,7 +916,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1053,7 +1053,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1062,7 +1062,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1071,7 +1071,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1169,7 +1169,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1178,7 +1178,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1187,7 +1187,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1310,7 +1310,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1319,7 +1319,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1328,7 +1328,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {

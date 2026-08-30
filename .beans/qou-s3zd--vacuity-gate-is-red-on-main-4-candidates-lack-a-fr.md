@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-08-30T10:04:11Z
-updated_at: 2026-08-30T10:41:12Z
+updated_at: 2026-08-30T12:44:26Z
 ---
 
 ## Measured on main, 2026-08-30
@@ -116,3 +116,62 @@ were fixed by siblings. `scripts/precommit-ledger-shrink-warn.sh --check` exits
 2. Teach the criterion to check `uses[]` reachability before flagging a
    block-level prose claim. On this sweep that turns 3 hits into 1, and the 1
    is the true positive.
+
+## Follow-up 2026-08-30: three edges landed, and one of my own verdicts was WRONG
+
+Asked to read each of the four banners and land whichever held up. Three did.
+The fourth was a false positive **produced by my own depth bound**, and the
+verdict I had written against it stated something I had not measured.
+
+### `root-of-unity-truncation` — RETRACTED, was `genuine`, is `legit`
+
+I recorded that `conj:regularity-breakdown` is *"UNREACHABLE at any depth"*.
+It is reachable at depth **6**:
+
+    prop:root-of-unity-truncation -> prop:vorticity-lower-bound
+      -> conj:q-aubin-lions -> conj:ns-counterexample
+      -> prop:universality -> conj:critical-exponent
+      -> conj:regularity-breakdown
+
+`USES_REACH_MAX_DEPTH` was 5. One hop short. I asserted "at any depth" from a
+search that had looked five deep — the same error class as the `--check-ledger`
+false finding earlier the same day (`qou-jr5r`): an absence measured under a
+bound, reported as an absence simpliciter. The block records its dependency
+correctly and always did.
+
+### The bound was defended on a premise that is false here
+
+The argument for bounding was that an unbounded walk over a large graph would
+connect almost anything to anything. Measured: the `uses[]` graph is **3606
+blocks joined by 4912 edges** — barely more than one edge per block — and the
+transitive closures of the four blocks in question are **164, 110, 11 and 1**.
+A reading order is not a mesh.
+
+Unbounded is also the correct semantics: the question is "would a direct edge
+be redundant?", and `prune-transitive-deps.ts` strips a redundant edge at ANY
+depth, so any bound makes the checker disagree with the tool whose rule it
+enforces. Now unbounded; termination is by `seen`, not by a counter. The test
+that pinned the bound asserted the wrong thing and now asserts the opposite.
+
+### The three that held up — edges added
+
+Each has a `.md` banner naming the conjecture AND a Lean theorem binding the
+carrier, with the label unreachable in `uses[]` at **any** depth:
+
+| block | edge added | Lean evidence |
+|---|---|---|
+| `hecke-1d-irrep-closed-form-character` | `conj:borromean-quark` | `:305` binds `[inst : BorromeanQuark]` |
+| `wigner-coefficient-derivation` | `conj:q-integer-mass-formula` | `wigner_coefficient_conditional :81` |
+| `shell-structure-eigenvalues` | `conj:borromean-quark` | `shell_eigenvalues_conditional :174` |
+
+### Verification, including the part that matters
+
+The criterion now reports **0**, which is indistinguishable from a broken
+checker — so it was fault-injected rather than trusted: removing the
+`shell-structure` edge brings the hit back verbatim, restoring it clears.
+
+- `bun test` 16 pass / 0 fail
+- `run-validate` exit 0 (14 pre-existing issues, none from this change)
+- agent-inspection gate exit 0, `✓ all 171 candidate(s) carry a fresh verdict`
+- ledger 384 -> 380: all four entries removed because none is a candidate any
+  more — three fixed, one never a defect.
