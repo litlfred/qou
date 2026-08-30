@@ -146,4 +146,14 @@ theorem stair_push_full (i : ℕ) (hi : i ≤ n) (h0 : 0 < i) :
       = gen K q n (i - 1) * stair K q n (n + 1) :=
   stair_push K q n (n + 1) le_rfl i hi (by omega)
 
+/-- **The generators below the top one lie in the tower subalgebra.**  `gen m`
+    for `m < n` is `incl (σ_m)`, so the whole closure argument's "commute past
+    and absorb" cases land back in `(incl K q n).range`. -/
+theorem gen_mem_inclRange {m : ℕ} (hm : m < n) :
+    gen K q n m ∈ (incl K q n).range := by
+  refine ⟨σ K q n ⟨m, hm⟩, ?_⟩
+  show incl K q n (σ K q n ⟨m, hm⟩) = gen K q n m
+  rw [incl_σ, gen_eq_σ K q n (by omega)]
+  congr 1
+
 end QOU.Hecke.IwahoriHecke
