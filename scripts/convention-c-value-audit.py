@@ -120,13 +120,75 @@ _SKIP_DIRS = {".git", ".lake", "__pycache__", "_deprecated", "node_modules"}
 #: Variable names that conventionally denote sqrt(q) in this corpus, and those
 #: that denote q itself.  Used only to triage a `-sqrtvar` match; an unlisted
 #: name is reported `unknown`, never assumed.
+#  FALLBACK ONLY as of 2026-08-30 (qou-t9r1). The primary route is
+#  `_sqrt_bindings`, which resolves a name AT ITS BINDING in the file being
+#  scanned. This list now covers exactly what binding-site resolution CANNOT
+#  reach:
+#
+#    * FUNCTION PARAMETERS. `def z_C_s(ss): return ss / (ss**2 + 1)` has no
+#      binding site — the parameter's meaning is fixed by the CALLER, not the
+#      definition. Resolving it properly needs call-site analysis, which is a
+#      strictly larger job and is not attempted here. `ss` is listed for this
+#      reason and is the worked example.
+#    * names bound in another module and imported.
+#
+#  Everything else should resolve at its binding; if a new sqrt-variable lands
+#  in UNRESOLVED and IS assigned in-file, that is a resolver gap to fix rather
+#  than a name to add here.
 _SQRT_VARS = {"s", "u", "t", "v", "sq", "sqq", "qh", "qhalf", "q_half", "rq",
-              "sqrt_q", "qsqrt", "shalf"}
+              "sqrt_q", "qsqrt", "shalf", "ss"}
 _Q_VARS = {"q", "q0", "_q", "q_0", "qq", "Q"}
 
+#: path -> names bound to sqrt(q) in that file, filled during the scan.
+_SQRT_BINDINGS_BY_PATH: dict = {}
 
-def _var_kind(var: str) -> str:
-    if var in _SQRT_VARS:
+
+def _sqrt_bindings(text: str, tree: "ast.AST") -> set:
+    """Names bound to sqrt(q) IN THIS FILE, resolved at the binding site.
+
+    The name list below is a fallback, not the primary route: it is the same
+    brittleness this audit exists to avoid, and it demonstrably hid sites --
+    `_s` and `ss` sat in UNRESOLVED, which is invisible in BOTH directions
+    (not blocking, so a drain reads as finished; not adjudicable, because the
+    ledger matcher only reaches resolved rows).
+
+    Two binding shapes are recognised:
+
+      X = <anything>.sqrt(<q-var>)      AST-visible
+      X = <anything>.symbols(...)  # ... sqrt ...
+
+    The second is comment-keyed because a sympy symbol carries no arithmetic
+    the AST can inspect -- `_s = sp.symbols("s", positive=True)  # s = sqrt(q)`
+    is the real case, and the comment is the only statement of intent. That is
+    weaker evidence than the first shape and is deliberately limited to lines
+    whose comment actually mentions a square root.
+    """
+    import ast as _ast
+    names, lines = set(), text.splitlines()
+    for node in _ast.walk(tree):
+        if not isinstance(node, _ast.Assign) or len(node.targets) != 1:
+            continue
+        tgt = node.targets[0]
+        if not isinstance(tgt, _ast.Name):
+            continue
+        v = node.value
+        if isinstance(v, _ast.Call) and isinstance(v.func, _ast.Attribute):
+            if v.func.attr == "sqrt" and v.args:
+                a = v.args[0]
+                if isinstance(a, _ast.Name) and a.id in _Q_VARS:
+                    names.add(tgt.id); continue
+            if v.func.attr in ("symbols", "Symbol"):
+                ln = lines[node.lineno - 1] if node.lineno <= len(lines) else ""
+                cmt = ln.split("#", 1)[1].lower() if "#" in ln else ""
+                if "sqrt" in cmt or "\u221a" in cmt:
+                    names.add(tgt.id)
+    return names
+
+
+def _var_kind(var: str, sqrt_names: set = frozenset()) -> str:
+    if var in sqrt_names:          # resolved AT ITS BINDING in this file
+        return "sqrt(q)"
+    if var in _SQRT_VARS:          # fallback: corpus-wide conventional names
         return "sqrt(q)"
     if var in _Q_VARS:
         return "q"
@@ -322,6 +384,7 @@ def scan(root: pathlib.Path):
             continue
         lines = text.splitlines()
         scope_at = _scope_of(tree)
+        _SQRT_BINDINGS_BY_PATH[str(path)] = _sqrt_bindings(text, tree)
         for node in ast.walk(tree):
             if isinstance(node, ast.Assign):
                 value, targets = node.value, node.targets
@@ -461,7 +524,7 @@ def main() -> int:
     confirmed, notc, unresolved = [], [], []
     for r in c_rows:
         label, var = r[3], r[5]
-        kind = _var_kind(var)
+        kind = _var_kind(var, _SQRT_BINDINGS_BY_PATH.get(str(r[0]), frozenset()))
         if label == "C":
             confirmed.append(r)
         elif kind == "sqrt(q)":
