@@ -153,9 +153,8 @@ follow it" is a measurement with a 16-step margin, not a story fitted to three
 exceptions. Measured, not asserted: the producer records steps-after-last-nn
 for the whole `N ≤ 2` set.
 
-**Still not derived:** no closed form for the size of the loss, and no
-mechanism for the A = 27 break in §3. What §4a supplies is the locus, not the
-law.
+**Still not derived:** no *mechanism* for either. But both quantities now
+have measured closed forms — see §6.
 
 ### 4b. The denominator is the published `2^{p_n}`, from the other side
 
@@ -206,3 +205,44 @@ symbolic-q path cannot be run.
   throughout; no q₀ is substituted, so neither pin can move any number in the
   witness (`q0Anchor: "independent"`).
 * A > 30, and the tropical comparison above A = 12, are not measured.
+
+
+## 6. Two measured closed forms
+
+Producer: [`computations/probes/atom_nf_degree_laws_probe.py`](../../computations/probes/atom_nf_degree_laws_probe.py).
+Witness: `computations/probes/atom-nf-degree-laws.witness.json`.
+
+**The size of the shortfall.** For `Z ≥ 5` and `N ≥ 5`:
+
+    gap(Z, N) = 6N − 19 + [Z > N]
+
+zero exceptions on the tested grid. It does **not** depend on `Z` beyond that
+indicator — once a nucleus carries five or more protons, the leading-order loss
+is a function of the **neutron count alone**, linear, at **6 degrees per
+neutron**.
+
+My first version of this was `6N − 19` flat, and it was **wrong**: for `Z > N`
+the value is `6N − 18`. The failure is structured rather than noisy, and it was
+found by widening the sweep, not by inspection — the same lesson as §3.
+
+`Z ≤ 4` is a different and larger regime, but the *slope* still converges:
+`Z = 2` and `Z = 4` both settle to **+6** per neutron (offsets `6N + 41` from
+N = 10, `6N + 7` from N = 9), and `Z = 0` alone settles to **+8** (`8N + 2`
+from N = 8). So the pure-neutron chain is an outlier in **slope**, not merely
+in offset. Those three offsets are read off the last few increments of a short
+sequence and are the weakest claims in the witness.
+
+**The A = 27 break**, extended to A = 40, is one clean two-branch maximum:
+
+    deg(γ)|_{Z=0} = A(A+1)/2 + 2·max(0, A − 26)
+
+Two branches with the **same quadratic leading term** whose linear parts differ
+by `2A − 52`, crossing exactly at A = 26. The excess grows by exactly 2 per
+unit A past the break with no further transition, and `deg(σ₀) = deg(γ) − 1`
+holds **across** the break as well as away from it — so it is not a reordering
+of which component dominates; both move together.
+
+**Neither law is derived.** No mechanism for the coefficient 6, the constant
+−19, the `Z ≥ 5` threshold, or the crossover at 26. They are fits to exact
+integer data over a stated range, and the range is stated for the reason §3
+gives.
