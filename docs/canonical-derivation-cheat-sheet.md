@@ -655,8 +655,12 @@ compute has already established:
 >
 > **Three further fences added the same week**, so effort does not go here:
 >
-> 1. **Milnor `μ̄` cannot carry the ⁴He magic surplus** — scope-(b) with the
->    invariant cited. The physical max-contact tetrahedron `K₄` has all six pairs
+> 1. **Milnor `μ̄` and the ⁴He magic surplus** — **RE-SCOPED (b) → (a) on
+>    2026-08-30.** The exclusion's premise ("every bonded pair has `lk = 1`") is
+>    contradicted by the corpus's own triton model, which puts `lk = 0` on three
+>    *bonded* pairs; and on the branch that saves the premise, `M₃(T) = 0` makes
+>    the 3-body calibration `e₃` a division by zero. The conditional survives,
+>    its hypothesis does not. Originally stated with the The physical max-contact tetrahedron `K₄` has all six pairs
 >    Hopf-linked (`lk = 1`), so Milnor indeterminacy makes every higher `μ̄`
 >    defined only mod `gcd(lk) = 1` ⇒ `M₃_irr = M₄ = 0`, and the tower supplies
 >    nothing beyond `M₂ = 6`. It does **not** touch the non-link-invariant SU(4)
