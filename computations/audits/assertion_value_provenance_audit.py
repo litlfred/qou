@@ -38,6 +38,30 @@ look before you run"; a miss does not promise a gain.  Confirm with
 `assertion_drain_verify.py` against a fresh baseline, which is the only thing
 that actually settles a field.
 
+MEASURED WEAKNESSES — both found by this audit being wrong first, so do not
+read a low count as a clean corpus:
+
+  * **It over-flagged badly on integer counts.**  The first version treated
+    any `sum`/`min`/`max` as a float64 accumulation and reported **35
+    producers / 67 fields**.  Most of that was `sum(1 for ...)`, an EXACT
+    integer count.  Requiring the accumulated expression to itself have a
+    float64 origin drops the count to **3 producers / 10 fields** — a 12x
+    correction to a number that had already been committed.
+
+  * **It is CALL-SITE-LOCAL and cannot see through a function boundary.**
+    `borromean_per_lambda_fr_probe.py` takes its asserted value from
+    `sweep(tau, tau)`; the float64 is produced inside `sweep`, so nothing at
+    the call site reveals it.  The drain batch confirmed that producer as a
+    DRAIN-NO-OP, and this audit does NOT predict it.  This is the mirror
+    image of the trap the bean already records in the other direction (an
+    inherited `set_compute_dps()` living INSIDE a function body).
+
+So the honest scope is: precise when it fires on a visible origin, blind to
+anything a helper returns.  Against the drain batch it has 1 confirmed true
+positive (he4_sdp_compositional_probe) and 1 confirmed false negative
+(borromean_per_lambda_fr_probe).  Two data points settle nothing; they are
+recorded so the next agent does not mistake "3 flagged" for "3 exist".
+
 Usage:
     assertion_value_provenance_audit.py [--list] [--selftest]
 """
@@ -77,7 +101,15 @@ def _float64_origin(expr, floaty: set) -> str | None:
             if isinstance(f, ast.Name) and f.id in ("float", "sum", "min", "max"):
                 if f.id == "float":
                     continue  # the cast itself is the thing being removed
-                return f"{f.id}() accumulates in float64"
+                # An accumulation is only float64 if what it accumulates is.
+                # `sum(1 for ...)` is an exact INTEGER count -- flagging it was
+                # a false positive of the first version of this audit, caught
+                # on qbeta_two_pole_ladder_decomposition.py (`sign_flips`) and
+                # atomic_chirality_residue.py (`n_iso_with_chir`), both
+                # `sum(1 for ...)`. Recurse instead of trusting the call name.
+                if any(_float64_origin(arg, floaty) for arg in n.args):
+                    return f"{f.id}() accumulates a float64 quantity"
+                continue
         if isinstance(n, ast.Attribute) and n.attr in FLOAT64_ATTRS:
             return f".{n.attr} is a numeric-solver result (float64)"
         if isinstance(n, ast.Name) and n.id in floaty:
