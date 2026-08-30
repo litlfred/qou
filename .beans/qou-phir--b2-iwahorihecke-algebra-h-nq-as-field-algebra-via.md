@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T02:56:37Z
+updated_at: 2026-08-30T03:03:43Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -88,3 +88,37 @@ Note for whoever takes (1): the blocker this arc has cited for a year — the Co
 order accessor being "in flux in Mathlib's `CoxeterSystem` API" — is not a blocker
 for the *presentation*. `m_{st}` is just `orderOf (s * t : W)`. It may still bite for
 the basis, where reduced expressions really are needed.
+
+
+### Correction + coordination (same day): Mathlib HAS `CoxeterMatrix.Aₙ`, and a sibling proved the S_n bridge
+
+Two amendments to the survey above, both found by reading sibling PR #6053
+(`qou-lrz1`) rather than by my own greps:
+
+1. **`CoxeterMatrix.Aₙ : (n : ℕ) → CoxeterMatrix (Fin n)` is in Mathlib**, with
+   exactly the entries my `typeAMatrix` computes. I wrote mine without knowing it
+   existed. The ℕ-indexing is kept deliberately — it is what buys the *unbounded*
+   `HeckeGenerators`, where `Aₙ N` is `Fin N`-indexed and pins one `n` — but
+   `typeAMatrix_eq_An` now states the agreement so the two are connected rather
+   than parallel. **This does not weaken "Mathlib has no Hecke algebra":** the
+   Coxeter *theory* is there (that was never in doubt); the *algebra* is not.
+2. **`S_{n+1}` IS the Coxeter group of type `Aₙ`, formalized** —
+   `QOU/Hecke/SymmetricCoxeter.lean::permCoxeterSystem` on #6053, sorry-free at
+   general `n`, plus the `IsCoxeterGroup` instance. That sibling also measured
+   that Mathlib has **zero** `IsCoxeterGroup` instances, so `cs.length` and all of
+   `Coxeter/Length.lean` / `Coxeter/Inversion.lean` had never been applied to a
+   concrete group before.
+
+**This changes the outlook on open item (1), the `T_w` basis.** My note above
+said the basis "needs Matsumoto / reduced expressions, i.e. the genuinely hard
+part". #6053 is taking the **Bourbaki route instead**, which sidesteps Matsumoto
+entirely: build the free module `W →₀ R`, define right multiplication `Rs i`
+directly on the basis by the length dichotomy, and get well-definedness as a
+*consequence* of having a representation rather than as a prerequisite. Their
+`Rs_sq` (the quadratic relation) is proved; the braid relation for `Rs` is the
+remaining step.
+
+So the two halves fit: their `Rs` needs braid, and once it has it,
+`exists_unique_lift` from `QOU/MathlibExt/IwahoriHeckeAlgebra.lean` is exactly the
+map `H_n(q) → End (W →₀ R)` — no hand-built algebra map required. Recorded on
+#6053. **The `T_w` basis stays theirs**; this bean should not duplicate it.
