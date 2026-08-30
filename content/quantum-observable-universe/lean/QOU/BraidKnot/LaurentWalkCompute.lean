@@ -700,4 +700,88 @@ theorem denoteZ_contribZ (cNum dNum : ℤ) (dRat : ℚ) (dH : Bool) (m : Mult)
                        denoteZ_zsmul, denote_csmul, denoteZ_zmulH, denote_cmulH, hp]
             rw [hC]; ring
 
+/-- The scaled form of `denoteZ_contribZ`: if the input already carries a
+scale `k`, the output carries `cNum * k`. This is the shape the walk-level
+induction needs, since the scale accumulates across steps. -/
+theorem denoteZ_contribZ_scaled (cNum dNum : ℤ) (dRat k : ℚ) (dH : Bool) (m : Mult)
+    (hc : (cNum : ℚ) ≠ 0) (hs : ScaledStep cNum dNum dRat)
+    (pZ : ZLaurent) (p : CLaurent) (hp : denoteZ pZ = C k * denote p) :
+    denoteZ (contribZ cNum dNum dH m pZ)
+      = C ((cNum : ℚ) * k) * denote (contrib dRat dH m p) := by
+  have hC : (C (dNum : ℚ) : ℚ[T;T⁻¹]) = C (cNum : ℚ) * C dRat := by
+    rw [← map_mul, ← hs]
+  cases m with
+  | c => simp [contribZ, contrib, hp, map_mul]; ring
+  | ch => simp [contribZ, contrib, hp, map_mul]; ring
+  | d =>
+      have hiff : dNum = 0 ↔ dRat = 0 := by
+        constructor
+        · intro h
+          have h0 : (0 : ℚ) = (cNum : ℚ) * dRat := by rw [← hs, h]; norm_num
+          rcases mul_eq_zero.mp h0.symm with h' | h'
+          · exact absurd h' hc
+          · exact h'
+        · intro h
+          have : (dNum : ℚ) = 0 := by rw [hs, h, mul_zero]
+          exact_mod_cast this
+      by_cases hd : dNum = 0
+      · simp [contribZ, contrib, hd, hiff.mp hd]
+      · have hd' : dRat ≠ 0 := fun h => hd (hiff.mpr h)
+        cases dH with
+        | false =>
+            simp only [contribZ, contrib, if_neg hd, if_neg hd', Bool.false_eq_true,
+                       if_false, denoteZ_zsmul, denote_csmul, hp]
+            rw [hC, map_mul]; ring
+        | true =>
+            simp only [contribZ, contrib, if_neg hd, if_neg hd', if_true,
+                       denoteZ_zsmul, denote_csmul, denoteZ_zmulH, denote_cmulH, hp]
+            rw [hC, map_mul]; ring
+
+/-- **The step-level fold scales.** Accumulating the table's contributions
+preserves the scale relation, so one whole normal-form step does. This is the
+induction that lifts `denoteZ_contribZ_scaled` from a single table entry to a
+step. -/
+theorem denoteZ_foldl_scaled (cNum dNum : ℤ) (dRat k : ℚ) (dH : Bool)
+    (hc : (cNum : ℚ) ≠ 0) (hs : ScaledStep cNum dNum dRat)
+    (nfZ : NF6Z) (nf : NF6) (hrel : ∀ i, denoteZ (nfZ i) = C k * denote (nf i))
+    (t : Fin 6) :
+    ∀ (l : List (Fin 6 × Fin 6 × Mult)) (accZ : ZLaurent) (acc : CLaurent),
+      denoteZ accZ = C ((cNum : ℚ) * k) * denote acc →
+      denoteZ (l.foldl
+          (fun a e => if e.2.1 = t then a ++ contribZ cNum dNum dH e.2.2 (nfZ e.1) else a)
+          accZ)
+        = C ((cNum : ℚ) * k) * denote (l.foldl
+            (fun a e => if e.2.1 = t then cadd a (contrib dRat dH e.2.2 (nf e.1)) else a)
+            acc) := by
+  intro l
+  induction l with
+  | nil => intro accZ acc h; simpa using h
+  | cons e rest ih =>
+      intro accZ acc h
+      by_cases he : e.2.1 = t
+      · refine ih _ _ ?_
+        simp only [if_pos he, denoteZ_append, denote_cadd, h,
+                   denoteZ_contribZ_scaled cNum dNum dRat k dH e.2.2 hc hs _ _ (hrel e.1)]
+        ring
+      · exact ih _ _ (by simpa [if_neg he] using h)
+
+/-- **One whole normal-form step scales.** `hmStepZ` denotes `cNum` times
+`hmStep`, so the scale relation is preserved by a step and accumulates across
+the walk. `znorm` is transparent here by `denoteZ_znorm`.
+
+This is the capstone of the scale chain: per table entry
+(`denoteZ_contribZ_scaled`), then across the fold (`denoteZ_foldl_scaled`),
+then for the step. What remains purely mechanical is matching
+`nucleonStepsZ`/`interfaceStepZ` against `nucleonSteps`/`interfaceStep`
+entry by entry — each pair is one of the three `scaledStep_*` facts. -/
+theorem denoteZ_hmStepZ (cNum dNum : ℤ) (dRat k : ℚ) (dH gen : Bool)
+    (hc : (cNum : ℚ) ≠ 0) (hs : ScaledStep cNum dNum dRat)
+    (nfZ : NF6Z) (nf : NF6) (hrel : ∀ i, denoteZ (nfZ i) = C k * denote (nf i))
+    (t : Fin 6) :
+    denoteZ (hmStepZ cNum dNum dH gen nfZ t)
+      = C ((cNum : ℚ) * k) * denote (hmStep dRat dH gen nf t) := by
+  unfold hmStepZ hmStep
+  rw [denoteZ_znorm]
+  exact denoteZ_foldl_scaled cNum dNum dRat k dH hc hs nfZ nf hrel t _ [] [] (by simp)
+
 end QOU.BraidKnot.LaurentWalk
