@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-30T02:59:49Z
+updated_at: 2026-08-30T03:25:29Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -367,3 +367,104 @@ producer verdicts corrected them.
    total_fields 35109 -> 34779 and drained_files +3, while this session's
    drains account for far less. NOT committed — the movement is not
    established as mine. Regenerate on a clean tree and attribute it.
+
+
+## Continued 2026-08-30 — the binding-shape finding is confirmed, and three new traps
+
+### The shape split, now with numbers
+
+    inline `computed=float(...)`     11 verdicted -> 0 KEEP
+    local  `x = float(EXPR)`          9 verdicted -> 7 KEEP
+
+**Work the local-binding shape.** Not a tendency — 0/11 vs 7/9.
+
+### Drained this session: 21 fields over 8 producers
+
+    probe_bring_residue_resolvent            8
+    qbeta_c3_two_route_cross_pin_probe       2
+    qbeta_habiro_residual_probe              3
+    seifert_volume_meson_n7_extension        2
+    q0_figure_eight_phase_derivation         2
+    binding_endomorphism_deuteron            2
+    binding_per_bond_decomposition           2   (+ a STALE VALUE, see below)
+    difference_knot_volume_extrema_stability 1   (unblocked by snappy)
+
+Ratchet drained-since-baseline moved 150 -> 156 files, +623 -> +631 fields.
+
+### THE TRANSFORM: parallel binding, not rewriting the local
+
+Rewriting `x = float(EXPR)` to `x = fmt(EXPR)` is WRONG whenever `x` is read
+anywhere else, and it usually is. `fmt` returns a str; `f"{x:.4f}"` on a str
+raises, exactly as `f"{mpf:.4f}"` raises TypeError. Instead:
+
+    x_exact_mpf = EXPR
+    x = float(x_exact_mpf)      # unchanged; every existing use still works
+    ... computed=fmt(x_exact_mpf)
+
+Only the witness field moves, so no safety guard is needed at all. (Where
+nothing but the assertion reads the local, the simple rewrite is used so no
+dead line is left.) Driver at /tmp/drain_driver.py — NOT committed; it is
+scaffolding, and the committed instruments are the two audits.
+
+### 🛑 `git checkout -- <file>` DOES NOT give you an unmodified baseline
+
+The driver now STAGES each KEEP, because its own restore uses
+`git checkout -- <path>` which restores from the INDEX — that is what stops a
+batch wiping earlier KEEPs. The same fact then makes `git checkout --` useless
+for reverting: I ran a "truly unmodified" producer that was still my drained
+version, and it reported a 17% VALUE-MOVED that would have been blamed on the
+cast removal. **`git checkout HEAD -- <file>` is the spelling that reverts.**
+Verify with `grep -c 'fmt(' <producer>` before trusting a baseline.
+
+### A committed witness is STALE by 17% (independent of any drain)
+
+`computations/binding-per-bond-decomposition.witness.json`,
+`method_discrepancy_recorded`:
+
+    committed         28.749413293755964
+    fresh unmodified  23.800662623432725      rel 0.172
+
+Measured on a genuinely unmodified producer (checked out from HEAD, 0
+occurrences of `fmt(`). It is a diagnostic (records the binding_canonical vs
+H_{3A} Δtr gap, tolerance 1) with nothing asserting on it downstream.
+HYPOTHESIS NOT VERIFIED: this bean already records import-cone drift in exactly
+this cone (`binding_canonical` source-stable while `tr_M_atom` moved 48%
+because `tr_m_atom_via_transfer` changed). This producer reads
+binding_canonical. Plausible mechanism; establishing it needs the import-cone
+audit. Refreshed in a commit that leads with the value change, not with "drain".
+
+### 🛑 "producer exit 1" is not a producer-health figure
+
+9 of 13 exited 1 on an unmodified run. Triaged, they are three different
+things and only one is a producer bug:
+
+    ModuleNotFoundError: snappy       ENVIRONMENT — `pip install snappy`
+                                      (SnapPy 3.3.2) and it runs; it then
+                                      drained cleanly
+    FileNotFoundError: jet-knot-...   a missing UPSTREAM WITNESS
+    TypeError: Cannot convert expr    a genuine producer error
+
+"9 of 13 cannot run" would have been a wrong headline. Install the optional
+deps before counting: mpmath, sympy, numpy, scipy, snappy, and
+`pyhecke-native` built locally (`maturin build --release`, it is not on PyPI).
+
+### Recorded environments differ PER WITNESS — one venv cannot match them all
+
+Correcting my own looser phrasing: `difference-knot-volume-extrema-stability`
+records python 3.11.15 / numpy 2.4.6 (bare-container versions), while the venv
+built for the earlier witnesses is 3.13.12 / numpy 2.5.0 / scipy 1.18.0. So
+that re-run UPGRADES the block rather than matching it. Honest provenance, and
+the tooling only refuses downgrades — but do not claim a blanket "matched
+environment" across the corpus.
+
+### Remaining bucket-A map (146 producers, measured on this branch)
+
+     84 producers  173 fields  float() present but not reaching an assertion value
+     34            64          predicted DRAIN-NO-OP (float64-valued)
+     20            33          rewriter finds a cast -> drainable
+      7            12          no float() at all — float64 enters another way
+      1             4          producer file not found
+
+The 84-producer group is the real remaining body of work and it is NOT
+mechanical: the cast sits in a helper, a dict, or a comprehension. The
+`min(dists, ...)` case in qbeta_c3_two_route_cross_pin is the worked example.
