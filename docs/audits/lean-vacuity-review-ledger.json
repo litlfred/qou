@@ -166,25 +166,27 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 71,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "30e736d8ee10",
       "evidence": "Self-assuming projection: `.alpha5_derived` has the conclusion's type and is returned verbatim, and though `Term7ShellCorrectionClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance stipulates alpha5_value = -1 and closes by norm_num/rfl; its own docstring calls it a placeholder / 'sign witness only'. (Automated shape test saw: term7ShellCorrectionInstance(trivial-witness).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "Projects the class field `alpha5_derived : exists a, a < 0 and a = alpha5_value`; the theorem's conclusion is that type verbatim, body `hT.alpha5_derived`. AGENTS.md 3b-cond item 5: the class carries the conclusion, so the theorem derives nothing. Re-read 2026-08-30; declaration unchanged from the prior `genuine` (the file_sha drift was elsewhere in the file)."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::brane_tower_finite::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 205,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "30e736d8ee10",
       "evidence": "Self-assuming projection: `.uniform_bound` has the conclusion's type and is returned verbatim, and though `ZHabiroConvergenceClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance picks the constant bound `fun _ => 1` and closes by norm_num after `unfold brane_tower_pole`; the file's own prose says the substantive content 'remains' open. (Automated shape test saw: zHabiroConvergenceInstance(substantive).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "Projects `uniform_bound`; conclusion is that field's type verbatim, body `hZ.uniform_bound`. Same 3b-cond item 5 shape as term7_structural in the same file. Re-read 2026-08-30, declaration unchanged."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean::skein_multiset_invariance_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -349,13 +351,14 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 93,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "a734dafd7e3b",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `GradedTraceResidueSplit` carries field `total` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `total` is outside CONCLUSION_FIELD.",
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "`s.total = s.smooth + s.oscillating := s.split_identity` -- the class field IS the conclusion. Note the same projection appears twice in the file (once above at the structure, once as this theorem). Re-read 2026-08-30, unchanged."
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean::hecke_baer_star_generic::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -462,7 +465,7 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 109,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "8192c1c775c1",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Projection `:= jgcs.adjoint_vanishing`, and worse than the others: the binder `(k : \u2115)` is entirely unused, while the docstring promises `the adjoint vanishing at level 0 implies at all levels` and sketches a six-step induction on k. The conclusion `Subsingleton (\ud835\udfd9_C \u27f6 jgcs.adjointObj)` does not mention k at all, so the PROPAGATION \u2014 the whole claim \u2014 is absent from the statement; what is proved is the level-0 field, re-exported. Same file as `adjoint_has_no_degree_zero`, which #5371 deleted for the same reason. Fix: index the adjoint object by jet level and state vanishing at every k, or delete.",
@@ -474,7 +477,8 @@
         "agent_model": "claude-opus-4-8",
         "agent_date": "2026-08-21"
       },
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "Projects `jgcs.adjoint_vanishing`. Two defects, and THE FILE ALREADY DOCUMENTS BOTH at lines 79-86: the conclusion names `jgcs.adjointObj`, the base object, so the bound `k : \u2115` is decorative and no level-propagation is stated -- the docstring claims induction on k, step 6. Annotated by a prior agent and left unfixed; annotation is not a disposition."
     },
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean::amplitude_finite_sum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -944,7 +948,7 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 301,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "4daf4bce78cb",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Decl unchanged at line 301: `inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`. The class `BorromeanQuark` carries the conclusion directly as field `forms_agree`, whose own docstring calls it '**The conjecture itself** (spectral bridge)'. \u00a73b-cond item-5 violation exactly: class axiomatises the conclusion, theorem projects it verbatim rather than deriving it from sub-hypotheses. Re-confirms prior genuine.",
@@ -956,7 +960,8 @@
         "agent_model": "claude-opus-4-8",
         "agent_date": "2026-08-21"
       },
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "`inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`, where `forms_agree : Q_beta_A = Q_beta_B` is introduced as 'The conjecture itself'. The docstring defends it as 'Derived from the class field forms_agree -- not a sorry-projection of an unrelated conclusion', which answers a charge nobody made: 3b-cond item 5 forbids projecting the SAME conclusion, which is exactly what this does."
     },
     "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean::nu_selfConjugate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1579,7 +1584,7 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 76,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "0bbbaba6a665",
       "disposition": "drop-redundant-projection",
       "evidence": "Self-assuming field-projection (\u00a73b-cond item 5): the conclusion `h.binding = h.epsilon * C(A,2)` is character-identical to the class field `extensive` and the proof is `:= h.extensive` verbatim, deriving nothing (the docstring says 'Just h.extensive, exposed as a named consumer'). The BondExtensiveBinding class is a legitimately-open conditional carrier and its sibling `binding_nonneg` genuinely derives (mul_nonneg on epsilon_nonneg), but this decl only re-exports the hypothesis. Honest fix: drop it, use h.extensive directly downstream. (Sibling qou-4tj9's fresh file \u2014 queued, not fixed here.)",
@@ -1591,13 +1596,14 @@
         "agent_model": "claude-opus-4-8",
         "agent_date": "2026-08-21"
       },
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "`h.binding = h.epsilon * (A.choose 2)` := `h.extensive`, and `extensive` is that field. MITIGATING: the docstring is honest -- '(Just h.extensive, exposed as a named consumer.)' -- and the field is labelled 'OPEN hypothesis'. That makes it non-deceptive, not a theorem: the fix is demotion to a def/abbrev, not a proof. Contrast `binding_nonneg` immediately below, which genuinely derives from two fields."
     },
     "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
       "line": 70,
-      "verdict": "needs-agent",
+      "verdict": "legit",
       "file_sha": "89856d3be01d",
       "disposition": "deliberate-reproduction-for-demonstration",
       "evidence": "New candidate, NOT mine. This is a verbatim reproduction of the carrier above, inside a file whose stated purpose is to DEMONSTRATE that the carrier asserts nothing ('Definitions reproduced verbatim from the content-block sibling so this file is self-contained'). Flagging the demonstration alongside the thing demonstrated is a detector false positive; the defect is recorded once, on the real carrier.",
@@ -1609,7 +1615,8 @@
         "id": "local/lean-proof-vacuity-audit",
         "kind": "agent"
       },
-      "stale_prev_verdict": "legit"
+      "stale_prev_verdict": "legit",
+      "agent_note": "This file IS the vacuity demonstration: it re-declares the carrier ('The existing carrier, fields reproduced verbatim') in order to prove `field1_holds_for_any_real`, i.e. that field 1 holds for an arbitrary real and so says nothing about the eigenphase. Flagging the reproduction is a true positive about a copy that exists to be flagged. The LIVE carrier is the q-beta-cos-resummation one, adjudicated genuine."
     },
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::HasCategoricalIrreducibility::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -1633,7 +1640,7 @@
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
       "line": 124,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "b82832dd0098",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "New candidate, NOT mine -- a sibling's landed work (bean `qou-cds1`) already demonstrates it, in `QOU/QBeta/EigenphaseCarrierVacuity.lean`. The docstring axiomatises a spectral identification (`M_beta` has spectrum {e^{+i.alpha}, e^{-i.alpha}} on the 2-d irrep of H_3(q), alpha = (z-1)h/2); the two fields encode `-2 <= 2cos(theta) <= 2` and `cos(theta) = cos(-theta)`, both true of EVERY real. So the carrier is inhabited for every q by a proof using nothing about the eigenphase, and `[TransferMatrixEigenphase q] -> P` is just `P`. Owned by that bean, not re-derived here.",
@@ -1645,7 +1652,8 @@
         "id": "local/lean-proof-vacuity-audit",
         "kind": "agent"
       },
-      "stale_prev_verdict": "genuine"
+      "stale_prev_verdict": "genuine",
+      "agent_note": "The LIVE carrier. `symmetrized_character_in_unit_disc : -2 <= 2*cos(alpha) <= 2` holds for every real, as QBeta/EigenphaseCarrierVacuity.lean proves outright (`field1_holds_for_any_real`), and `cos_eigenphase_bar_invariant` is cos evenness. Neither field constrains the eigenphase."
     },
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean::mobius_frobenius_kernel::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
@@ -3549,8 +3557,9 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "binder-echo",
       "line": 102,
-      "verdict": "needs-agent",
-      "file_sha": "c5dbf1de8bd4"
+      "verdict": "genuine",
+      "file_sha": "c5dbf1de8bd4",
+      "agent_note": "`(h_invalid : not P) : not P := h_invalid` -- the identity function. Sharpest of the nine: the docstring EIGHT LINES ABOVE records that a previous `(h : not P) : not P := h` 'was a self-assuming tautology that asserted nothing about braid words'. The lesson is written down and the shape is repeated below it for a different predicate. NEW candidate, no prior verdict."
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
