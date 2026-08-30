@@ -354,3 +354,53 @@ superseded: that was true for the *tan* route's ratio test and false for this on
 5. Chord, far point, conclusion — already done or one-liners.
 
 Step 4's `Real.Angle` bookkeeping remains the only fiddly part.
+
+## 2026-08-30 — PROVED: `2π/9 < fiveTwoTet.angle₃`
+
+`QOU/Knot/FiveTwoNinthPower.lean`, **26 declarations**, `lean`-direct exit 0,
+`#print axioms` clean on every one (no `sorryAx`), axiom guard 26/26.
+
+The chain, and no step touches a value of a transcendental function:
+
+    z := 1 − y₁⁻¹              arg z IS tetAngle₃ y₁  (zz_arg_eq_angle₃)
+    z³ = z − 1                 Landen image of y₁'s cubic; z³−z+1 = (y³−2y²+3y−1)/y³
+    z⁹ = −3z² + 4z − 2         one reduction — no degree-9 expansion
+    Im(z⁹) = Im z · (4 − 6 Re z)
+    ‖y₁‖²·t = 1                straight off `saddle.hprod`
+    Re z = (t²−2t+2)/2         so `Re z < 2/3` IS the quadratic −3t²+6t−2 > 0
+    arg z ∈ (π/6, π/4)         both from §2's reduced polynomials, by squaring
+    arg(z⁹) ≡ 9·arg z (mod 2π) window forces winding number exactly 1
+    ⟹ 2π/9 < arg z
+
+### The plan's remaining "hard part" evaporated
+
+The checklist expected the degree-15 polynomial and its reduction modulo the
+cubic to be the work. **Both are unnecessary** — they were the shape of the
+problem before noticing that `z` has its own cubic. Noticing it turned a
+degree-15 identity into `(z−1)³`.
+
+### The two numeric inputs, both small
+
+* `realRoot_gt_three_sevenths` — `2/5` is genuinely not enough (the quadratic is
+  negative there); `3/7` is, proved exactly as `realRoot_gt` is.
+* The two branch inequalities lift from §2 by squaring, with exact cofactors:
+  `(2Re)² − (2Im)² = (−2t²+2t) + (−2t−4)·cubic`, and
+  `3(2Im)² − (2Re)² = (8t²−8t+4) + (8t+8)·cubic`.
+
+### Corrected a stale header while landing this
+
+`FiveTwoShapeBounds`'s module header asserted the route "needs interval
+arithmetic on `sin` at irrational arguments — machinery the corpus does not
+have, and its own project." **False, and it named the wrong obstruction**: no
+`Λ` value is needed, because `Cl₂(π/3)` cancels from both sides of the chord.
+Corrected in place, with the `2/5`-is-insufficient consequence recorded there.
+
+### NOT proved
+
+That `angle₃` is the **smallest** of the three angles. It is numerically
+(`0.7039` against `1.0300` and `1.4077`), and the chord bound wants the minimum.
+Either prove the ordering, or prove all three exceed `2π/9` — the latter is
+probably easier, since the other two are nowhere near the bound.
+
+That, plus assembling the chord itself, is what stands between here and
+`VOL_4_1 < VOL_5_2`.
