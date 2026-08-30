@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T13:58:26.205506+00:00",
-  "commitSha": "2924761c21c57057d1d4cfae303d9c564844d2d8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T14:05:26.678564+00:00",
+  "commitSha": "87a02c84fe32f9ccf3bd669e8fba76c5b060b850",
   "assertions": [
     {
       "name": "theorem_a_im_li3_zeta_n_closed_form",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 252,
+  "durationMs": 239,
   "computation": "cyclotomic-trilog-imaginary",
   "scriptFile": "cyclotomic_trilog_imaginary.py",
   "scriptHash": "d74ca7050ee7",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptCommitSha": "87a02c84fe32f9ccf3bd669e8fba76c5b060b850",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
@@ -49,7 +50,7 @@
     "reproduce": "python3 -u computations/cyclotomic_trilog_imaginary.py"
   },
   "description": "Numerical verification at 50 decimal digits of two general closed forms for the depth-3 trilog at roots of unity: (A) Im Li_3(zeta_n) = (n-1)(n-2) pi^3 / (3 n^3) and (B) sum_{k=1..N-1} Cl_3(2 pi k / N) = -(N^2-1)/N^2 zeta(3). Both generalise rounds 10 and 11 of PR #634 from `zeta_5 only` to all roots of unity. Verified at n, N in [3, 4, 5, 6, 7, 10, 11, 12, 13]; max residual below 1e-45 in both theorems.",
-  "timestamp": "2026-08-30T13:58:26.061220+00:00",
+  "timestamp": "2026-08-30T14:05:26.670799+00:00",
   "precision_decimal_digits": 70,
   "tested_indices": [
     3,
