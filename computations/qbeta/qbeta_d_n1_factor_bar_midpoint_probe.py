@@ -43,10 +43,39 @@ established for the defect.
 All three conditions are met, and (a) and (b) hold EXACTLY as symbolic
 identities rather than numerically.
 
+UNIQUENESS — tested by trying to BREAK it, and (a)+(b) alone do NOT hold.
+
+The GEOMETRIC mean `G := sqrt(cos(a_D) * cos(bar a_D))` is also bar-invariant
+(verified) and also reduces correctly under C (where `bar a_C = -a_C`, giving
+`|cos a_C|`). So conditions (a) and (b) admit at least a second solution — and
+the two are NOT numerically interchangeable:
+
+    proton pin   M = 0.9986190619723252   G = 0.9986189041126984   rel 1.581e-7
+    muon pin     M = 0.9986190616623656   G = 0.9986189038026348   rel 1.581e-7
+
+**158 ppb** — against a Q_beta 100x target of 7.8 ppb, i.e. **~20x the target**.
+The ambiguity is physically significant, not cosmetic.
+
+CONDITION (c) IS WHAT DISCRIMINATES, and it does so structurally. Read (c) as
+the arc's entry 3 requires — the defect enters as a PHASE SHIFT times a factor
+carrying NO phase dependence, i.e. `log F = f(a - c(delta)) + g(delta)`:
+
+  * `M = cos(a - delta/2) * cos(delta/2)` separates exactly. One singular set
+    in `a`.
+  * `G` does not. It inherits the poles of BOTH `cos a` and `cos(a - delta)` —
+    two shifted singular sets — and a separated form `f(a-c)*K` has only one.
+    Counted symbolically: at `delta = 0` both have 2 pole families (they must
+    agree when there is no defect); at `delta = 1/3`, M has **2** and G has
+    **3**.
+
+So (c) excludes the natural competitor, on pole structure rather than on a
+number.
+
 WHAT THIS DOES NOT CLAIM — scope (a).
 
-  * NOT uniqueness. Other bar-invariant functions exist. What is argued is that
-    this one introduces no new freedom, being the arc's own rule re-applied.
+  * NOT full uniqueness. (c) is shown to exclude `G`; it is NOT shown that no
+    other function satisfies all three. That needs a functional-equation
+    argument this probe does not attempt.
   * NOT a D-frame Q_beta. Rungs above k=2 remain `cal-anchored` (extracted from
     experiment), so no D-frame number is computable here and none is quoted.
   * NOT a wiring. Nothing downstream consumes this.
@@ -144,11 +173,44 @@ def main() -> int:
         print(f"     {lbl}: phase shift h^2/4 = {mp.nstr(f_s(x), 12)}"
               f" ; constant cos(h^2/4) = {mp.nstr(f_h(x), 18)}")
 
+    print("\n-- uniqueness: (a)+(b) do NOT pin it; (c) is what excludes the rival")
+    a_s, d_s = sp.symbols("a delta", real=True)
+    M_s = (sp.cos(a_s) + sp.cos(a_s - d_s)) / 2
+    G_s = sp.sqrt(sp.cos(a_s) * sp.cos(a_s - d_s))
+    G_D = sp.sqrt(sp.cos(a_D) * sp.cos(bar(a_D)))
+
+    check("rival_geometric_mean_IS_bar_invariant",
+          sp.simplify(sp.expand(bar(G_D) - G_D)) == 0,
+          "so conditions (a) and (b) alone do NOT pin the factor")
+
+    f_M2 = sp.lambdify(q, M_D, "mpmath")
+    f_G2 = sp.lambdify(q, G_D, "mpmath")
+    xp = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    spread = abs(f_M2(xp) - f_G2(xp)) / f_M2(xp)
+    check("rival_differs_by_MORE_than_the_Qbeta_target",
+          spread > mp.mpf("7.8e-9"),
+          f"arithmetic vs geometric = {mp.nstr(spread, 4)} at the proton pin"
+          f" — ~{int(spread / mp.mpf('7.8e-9'))}x the 7.8 ppb 100x target")
+
+    check("cond_c_separates_M_exactly",
+          sp.simplify(sp.expand_trig(M_s - sp.cos(a_s - d_s / 2) * sp.cos(d_s / 2))) == 0,
+          "log M = log cos(a - delta/2) + log cos(delta/2); no phase in the 2nd term")
+
+    poles_M = sp.solve(sp.cos(a_s - sp.Rational(1, 3) / 2), a_s)
+    poles_G = sorted(set(sp.solve(sp.cos(a_s) * sp.cos(a_s - sp.Rational(1, 3)), a_s)), key=str)
+    check("cond_c_EXCLUDES_the_rival_on_pole_structure",
+          len(poles_G) > len(poles_M),
+          f"at delta=1/3: M has {len(poles_M)} pole families, G has {len(poles_G)}"
+          " — a separated f(a-c)*K admits only one")
+
     ok = all(p for _, p, _ in _A)
     print("\n" + "=" * 72)
     print(f"  {sum(p for _, p, _ in _A)}/{len(_A)} assertions passed")
-    print("  Scope (a): a candidate meeting all three stated conditions,")
-    print("  introducing no new freedom. NOT uniqueness, NOT a D-frame Q_beta.")
+    print("  Scope (a). Meets all three stated conditions, adding no new freedom.")
+    print("  (a)+(b) alone do NOT pin it — the geometric mean also satisfies them")
+    print("  and differs by 1.581e-7 (~20x the 7.8 ppb target). (c) excludes that")
+    print("  rival on pole structure. FULL uniqueness is NOT proved, and no")
+    print("  D-frame Q_beta is computable or quoted here.")
     print("=" * 72)
     return 0 if ok else 1
 
