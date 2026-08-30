@@ -51,8 +51,19 @@ coordination count is therefore a parity fact, not a modelling choice.
 ## Scope
 
 The channel structure, the Brunnian reduction, the coordination-unit map for minimal bonds, and the
-bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`, sorry-free). Not settled
-here: the exact crossing-count-to-coordination map beyond the minimal-bond model, and the
-Hamiltonian-level claim that rest mass *is* the closed self-trace and binding *is* the open mutual
-pairing. This is the discrete counterpart of the unsigned-invariant resolution reached
-independently on the electromagnetic-linking side.
+bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`, sorry-free). The two further
+residuals are now also settled. The mass $\leftrightarrow$ self, binding $\leftrightarrow$ mutual
+assignment is a theorem of the crossing partition plus the mass-deficit definition of binding
+($B = \sum_i m_i^{\text{isolated}} - m^{\text{assembly}} = -(\text{mutual energy})$; the self
+energies cancel), so binding is exactly the inter-component pairing
+(`QOU.Mass.SelfMutualPartition`, sorry-free); and the crossing-count $\to$ coordination coefficient
+is $\tfrac{1}{2}\lvert\text{inter-crossings}\rvert$ in general, giving $\binom{A}{2}$ units and
+per-nucleon $z = A-1$ for a complete graph of minimal single clasps. This is the discrete
+counterpart of the unsigned-invariant resolution reached independently on the electromagnetic-linking
+side. The one modelling step not lifted is the identification of the substrate mass observable with
+this crossing energy at the full Markov-trace granularity (the self energy closes to the
+q-dimension self-trace $\mathrm{lw}$; the archimedean dressing
+$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$). The exact saturated fraction
+$B/A/\mathfrak{m}_N \approx \hbar_q^2$ is a numerical coincidence, not a prediction: the empirical
+$B/A$ peaks at $0.954\,\hbar_q^2$ near $A \approx 60$ and falls, and the fundamental volume
+coefficient is $a_V/\mathfrak{m}_N \approx 1.71\,\hbar_q^2$.

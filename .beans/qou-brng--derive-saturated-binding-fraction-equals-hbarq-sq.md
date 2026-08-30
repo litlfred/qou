@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-08-30T07:33:05Z
+updated_at: 2026-08-30T09:00:02Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -67,3 +67,28 @@ STILL OPEN (the sharpened kernel — a future attack aims here):
    full q-dim self-trace lw (self = closed quantum trace over Wedderburn channels; mutual = pairing
    of two fixed components, no internal channel sum — plausible but NOT proved);
 3. the exact ℏ_q² saturation value stays numerology-suspect (unchanged; not touched, not forced).
+
+
+---
+**Update 2026-08-30 (session qou-xjup, PR #6145) — residuals R1/R2/R3 worked.**
+
+R2 (mass=self, binding=mutual) PROVED at the additive-energy level — QOU.Mass.SelfMutualPartition
+(sorry-free): the crossing energy partitions into self+mutual; binding := Σ(isolated self) − assembly
+= −(mutual), self-energies cancel (binding_eq_neg_mutualEnergy, binding_indep_of_self). The
+assignment is a theorem of the partition + mass-deficit definition, not a postulate. Residual: the
+mass-observable ↔ crossing-energy identification at Markov-trace granularity (self closes to lw;
+m=m_e·Vol·lw/ℏ_q²) — a named modelling step, not lifted.
+
+R1 (crossing-count → coordination) PROVED for the clasp model: coordinationUnits = ½·|inter
+crossings|; complete minimal-clasp graph ⇒ C(A,2), per-nucleon z=A−1. Residual: which link realizes
+the A-body carrier (topological input, saturation-limited).
+
+R3 (exact ℏ_q² saturation) MEASURED (brng_hbarq2_saturation_genericity_probe.py, no float64,
+scope-(a)): B/A/m_N PEAKS at 0.954·ℏ_q² (⁶²Ni) and FALLS (²³⁸U 0.82·ℏ_q²) — never reaches ℏ_q², not
+a saturation limit. The match is to the empirical B/A peak (a volume−surface−Coulomb balance near
+A≈60), NOT the fundamental volume coefficient a_V/m_N ≈ 1.71·ℏ_q². 3/7 trivial constants match within
+6%. Verdict: numerology — confirms & sharpens the 2026-08-21 suspicion; do NOT wire, do NOT force.
+
+Net: type question PROVED (#6125); R1 PROVED (clasp model); R2 PROVED (additive level); R3 = numerology.
+Sole surviving genuinely-open item: the R2 mass-observable=closed-self-trace identification at the
+archimedean boundary. Audit: docs/audits/2026-08-30-brng-residuals-worked.md.
