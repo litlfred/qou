@@ -37,7 +37,18 @@ $$
 $$
 The diagonal is strictly positive; the target-flip amplitude is **negative**, and is negative throughout $q > 1$. The figures this item previously carried, $P_{7,7}(q_0) \approx 0.5514$ and $\Phi(q_0) \approx 0.0495$, were the convention-$C$ diagonal and the retired $\Phi$ respectively.
 
-The stability argument recorded in the proof block runs through the positivity of *both* amplitudes, so it does not close on the derived family. What that costs is bounded by which step it enters: the proof reduces feasibility of $G\vec t(q) \geq 0$ to the positivity of $P_{7,7}(q)\,W_{\mathrm{std}}(q)$ *"with the appropriate sign from $\Phi(q)$"*, and that qualifying clause is asserted without derivation — nothing in the corpus says what the sign is or why. The first factor survives: $P_{7,7}(q_0)\,W_{\mathrm{std}}(q_0) \approx 0.4624 > 0$. Whether feasibility survives the second is **open**; it is not settled either way here, and no claim of LP-instability is made. The downstream statement that $\{q\text{-Toffoli}, H\}$ generates universal reversible computation on the Reeb bundles inherits that opening.
+The stability argument recorded in the proof block runs through the positivity of *both* amplitudes, so it does not close on the derived family. What that costs is bounded by which step it enters: the proof reduces feasibility of $G\vec t(q) \geq 0$ to the positivity of $P_{7,7}(q)\,W_{\mathrm{std}}(q)$ *"with the appropriate sign from $\Phi(q)$"*, and that qualifying clause is asserted without derivation — nothing in the corpus says what the sign is or why. The first factor survives: $P_{7,7}(q_0)\,W_{\mathrm{std}}(q_0) \approx 0.4624 > 0$.
+
+**The stated condition has now been measured directly, and it holds.** Rather than settle the reduction, one can construct $T_q$ and evaluate $G\vec t(q_0) \geq 0$ itself. The element is implicit in the crossing coefficients — $C_{ij} = c_j\sigma_i + d_j$ is an algebra element, and the chain recursion is $(a\sigma+b)(c\sigma+d)$ reduced by $\sigma^2 = \hbar_\times\sigma + 1$ — so for the all-proton ordering
+$$
+  T_q \;=\; \sigma_1 \;+\; \hbar_\times\,\sigma_0\sigma_1,
+  \qquad \hbar_\times = q - q^{-1}.
+$$
+Against the production Gram, every component of $G\vec t(q_0)$ is strictly positive, for all eight strand-type orderings ([`toffoli_nf_coordinates_and_lp_feasibility.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_nf_coordinates_and_lp_feasibility.py)). So the substrate satisfies the LP condition this proposition states.
+
+**Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced by shape with no cancellation possible — 2 of the 8 orderings are trivial in this sense and 6 are not. Second, and more consequential: $\vec t$ acquires a negative component exactly when $\hbar_\times < 0$, i.e. on $0 < q < 1$ — the *opposite* side of $q = 1$ from where $P_{7,6}$ is negative. The amplitude sign and the cone condition disagree about which regime is the admissible one, so the reduction above does not merely mix index spaces; any correct version of it must account for a sign inversion. That remains **open**.
+
+No claim of LP-instability is made, and none is available: the condition as stated is satisfied. The downstream statement that $\{q\text{-Toffoli}, H\}$ generates universal reversible computation on the Reeb bundles inherits that opening.
 
 **Substrate stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).
