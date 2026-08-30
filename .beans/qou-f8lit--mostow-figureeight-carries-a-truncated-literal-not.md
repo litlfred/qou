@@ -441,3 +441,39 @@ deliberately.
 Also: the sidecar `nuclear-knot-classification.qa.json` cannot be refreshed here —
 folio-assistant is not set up, so `qa-sweep` is unavailable. The Lean change is
 `lean`-direct verified; the sidecar refresh is owed.
+
+---
+
+## 2026-08-30 — the second Lean family: a false precision CLAIM
+
+The detector's other Lean cluster. `2.029883212819307250042408` at six sites
+(`MassDerivation` ×2, `KnotTheory` ×2, `Calculations`, `HyperbolicVolumeTranscendence`),
+carrying the docstring claim *"24 dps verified (OEIS A091518)"*.
+
+    true to 24 dp : 2.029883212819307250042405
+    literal       : 2.029883212819307250042408
+
+**Wrong at exactly the digit it claimed to have verified.** err `2.9e-24` — numerically
+harmless, and a false precision claim regardless. This is the value I earlier called
+"correct" when comparing it against `VOL_4_1_decimal`; it *is* correct to 2.9e-24, and
+its final digit is still wrong. Both statements are true and only one of them is what
+the docstring asserts.
+
+Corrected at all six. Safe: the only dependent proof is
+`vol_figure_eight_approx : |vol_figure_eight − 2.029883| < 1e-6`, whose tolerance exceeds
+the change by 18 orders of magnitude. Both modules `lean`-direct exit 0.
+
+### Running tally of this defect class, all one root
+
+| carrier | was | error | status |
+|---|---|---|---|
+| `MostowRigidity.figureEight.volume` | 15-digit truncation | — | **exactified** to `VOL_4_1` |
+| `VOL_4_1_decimal` | wrong from sig fig 21 | `3.1e-20` | **corrected** |
+| `nuclear-knot-classification` `Vol(B₃)` ×2 | wrong from digit 11 | `4.3e-10` | **corrected** |
+| `vol_figure_eight` family ×6 | wrong at 24th dp | `2.9e-24` | **corrected** |
+| `MostowRigidity.knot5_2.volume` | 15-digit truncation | — | open (needs `VOL_5_2` lower bound) |
+| six `computations/` sites + 1 witness | wrong from sig fig 21 | `3.1e-20` | open (needs producer re-runs; no numpy/scipy here) |
+
+Four distinct wrong values for two constants, spread across nine files, none of which a
+grep for any one of them would have found. That is the argument for the value-based
+detector, not the individual fixes.
