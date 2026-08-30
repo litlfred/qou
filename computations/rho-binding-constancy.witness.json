@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:08:27.697511+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:48:20.731459+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "ratios computed for all 3 atoms",
@@ -15,8 +15,8 @@
   "durationMs": 0,
   "computation": "rho-binding-constancy",
   "scriptFile": "rho_binding_constancy_probe.py",
-  "scriptHash": "3ecb7a4fd5c8",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "2d7933de5e81",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,14 @@
   },
   "ratios_B_over_trM": {
     "D": 3.8676511783874816,
-    "T": 36.98841591324332,
-    "He3": 19.115118744746205
+    "T": 36.98830776279843,
+    "He3": 19.115077433812722
   },
-  "relative_spread": 1.6568339081315422,
-  "t_he3_mirror_mismatch": 0.6371540501843171,
+  "relative_spread": 1.6568326272022857,
+  "t_he3_mirror_mismatch": 0.6371533648584654,
   "witness": {
-    "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
-    "scriptHash": "3ecb7a4fd5c8",
+    "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
+    "scriptHash": "2d7933de5e81",
     "producer": "computations/probes/rho_binding_constancy_probe.py"
   },
   "auditOnly": true

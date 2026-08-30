@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:07:14.064281+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:39.998594+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "volume_defect_route_overpredicts_by_inverse_hbar_q_sq",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "binding-volume-defect-route-refuted",
   "scriptFile": "binding_volume_defect_route_refuted.py",
-  "scriptHash": "0aa93e85448f",
-  "scriptCommitSha": "e85e89f8c500b045b43226acf98e3e12fe4358fb",
+  "scriptHash": "5e01ffebac80",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,8 +47,8 @@
   },
   "data": {
     "mass_prefactor_MeV_per_volunit": "131.834895138",
-    "overprediction_factor_3H": "212.89341",
+    "overprediction_factor_3H": "212.89403",
     "overprediction_factor_3He": "250.33549",
-    "overprediction_factor_4He": "102.42377"
+    "overprediction_factor_4He": "102.42381"
   }
 }

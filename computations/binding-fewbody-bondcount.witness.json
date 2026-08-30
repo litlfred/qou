@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:09.413101+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:38.630137+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "fewbody_truncation_tames_overshoot",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "binding-fewbody-bondcount",
   "scriptFile": "binding_fewbody_bondcount.py",
-  "scriptHash": "b509155a9d49",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "84cddbacbff4",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,18 +45,18 @@
   "data": {
     "w2_w3_anchored": {
       "w2": 4.3533674521174195,
-      "w3": 5.902750666724376
+      "w3": 5.902714366322571
     },
     "coordination_bonds_per_A": {
       "D": 0.5,
-      "T": 1.2709325830207556,
-      "3He": 1.3060970771237577,
-      "4He": 3.281853800970759,
+      "T": 1.27092886694044,
+      "3He": 1.3060945777600617,
+      "4He": 3.2818539583048043,
       "6Li": 2.5751857912195892,
       "7Li": 2.665229381482026,
       "9Be": 3.112649246825208,
       "12C": 3.8058502154694263
     },
-    "chain_worst_err_pct": 49.52855992423619
+    "chain_worst_err_pct": 49.52873219056199
   }
 }

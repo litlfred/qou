@@ -44,6 +44,9 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from closed_form_tau_M import closed_form_ratio  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
     M_E_MEV,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -53,9 +56,9 @@ from _precision import set_compute_dps  # noqa: E402
 # AME2020 binding energies (MeV)
 AME = {
     "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
-    "T":   8.481798,
-    "³He": 7.718058,
-    "⁴He": 28.295674,
+    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),
+    "³He": float(AME_B_HE3_MEV_VALIDATION),
+    "⁴He": float(AME_B_HE4_MEV_VALIDATION),
 }
 
 

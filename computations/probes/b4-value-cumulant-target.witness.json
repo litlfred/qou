@@ -1,13 +1,13 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:07:06.186656+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:35.275298+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "cumulant_reconstruction_exact",
-      "computed": "28.29567",
-      "expected": "28.29567",
+      "computed": "28.295662",
+      "expected": "28.295662",
       "passed": true,
       "tolerance": "1e-06"
     },
@@ -22,8 +22,8 @@
   "durationMs": 0,
   "computation": "b4-value-cumulant-target",
   "scriptFile": "b4_value_cumulant_target_probe.py",
-  "scriptHash": "60275e01c17c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b9d804b0412e",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,11 +52,11 @@
     "cumulants_MeV": {
       "b2_pair": "2.22452",
       "b3_connected_3body": "1.4263588",
-      "b4_connected_4body_TARGET": "9.243115"
+      "b4_connected_4body_TARGET": "9.2431074"
     },
     "reconstruction_check": {
-      "sum_6b2_4b3_b4": "28.29567",
-      "B_4He": "28.29567",
+      "sum_6b2_4b3_b4": "28.295662",
+      "B_4He": "28.295662",
       "exact": true
     },
     "target_within_iceil_room": true,

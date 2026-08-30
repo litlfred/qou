@@ -65,6 +65,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
 
@@ -73,7 +74,7 @@ COMP = str(_COMP)
 
 def main() -> int:
     B = {"D": mp.mpf("2.22452"), "3H": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
-         "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION), "4He": mp.mpf("28.29567")}
+         "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION), "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION)}
     b2 = B["D"]
     B3 = (B["3H"] + B["3He"]) / 2
     b3 = B3 - comb(3, 2) * b2

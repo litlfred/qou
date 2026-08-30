@@ -22,6 +22,8 @@ sys.path.insert(0, os.path.join(HERE, ".."))
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 # muon-q0 canonical (computations layer); scale cancels in the ratio anyway.
@@ -30,8 +32,8 @@ Q0 = 1.10997859555733471
 # AME2020 binding energies (MeV).
 B_OBS = {
     "D":   (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-    "T":   (1, 2, 8.481821),
-    "He3": (2, 1, 7.718058),
+    "T":   (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
+    "He3": (2, 1, float(AME_B_HE3_MEV_VALIDATION)),
 }
 
 

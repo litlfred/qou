@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:07:10.191605+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:38.849914+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "saturated_binding_fraction_approaches_hbar_q_sq",
@@ -17,8 +17,8 @@
   "durationMs": 4,
   "computation": "binding-mass-rung-derivation",
   "scriptFile": "binding_mass_rung_derivation_probe.py",
-  "scriptHash": "c10fda5539f0",
-  "scriptCommitSha": "e5a97e0c89e6598f64e8309eafc5087ae17ac7e5",
+  "scriptHash": "874bdb612c96",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

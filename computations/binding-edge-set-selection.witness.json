@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:08.403017+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:38.393868+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "edge_set_is_max_contact_packing",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "binding-edge-set-selection",
   "scriptFile": "binding_edge_set_selection.py",
-  "scriptHash": "42044a83da9c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "0ea4d6db6c35",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,19 +53,19 @@
       },
       "T": {
         "A": 3,
-        "bonds_implied": 3.8127977490622667,
+        "bonds_implied": 3.81278660082132,
         "chain": 2,
         "simplex": 3
       },
       "3He": {
         "A": 3,
-        "bonds_implied": 3.918291231371273,
+        "bonds_implied": 3.9182837332801848,
         "chain": 2,
         "simplex": 3
       },
       "4He": {
         "A": 4,
-        "bonds_implied": 13.127415203883036,
+        "bonds_implied": 13.127415833219217,
         "chain": 3,
         "simplex": 6
       }

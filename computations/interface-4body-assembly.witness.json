@@ -31,7 +31,7 @@
     "n_complete": 3,
     "B_chain_MeV": "3.64606939364",
     "B_complete_MeV": "4.11003214064",
-    "B_AME_MeV": "8.481798",
+    "B_AME_MeV": "8.4817962",
     "err_chain_pct": "-57.013",
     "err_complete_pct": "-51.5429"
    },
@@ -43,7 +43,7 @@
     "n_complete": 3,
     "B_chain_MeV": "3.79179026085",
     "B_complete_MeV": "4.67440818705",
-    "B_AME_MeV": "7.718043",
+    "B_AME_MeV": "7.71804132",
     "err_chain_pct": "-50.8711",
     "err_complete_pct": "-39.4353"
    },
@@ -55,7 +55,7 @@
     "n_complete": 6,
     "B_chain_MeV": "5.01573069739",
     "B_complete_MeV": "5.70540524043",
-    "B_AME_MeV": "28.295673",
+    "B_AME_MeV": "28.2956624",
     "err_chain_pct": "-82.2739",
     "err_complete_pct": "-79.8365"
    }
@@ -64,14 +64,14 @@
   "scaling_4He_over_D": {
    "chain": "2.60333022429",
    "complete": "2.96129413645",
-   "AME": "12.7196363048"
+   "AME": "12.7196315398"
   }
  },
- "scriptHash": "c9ba41421c08",
- "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
- "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+ "scriptHash": "28b1bb4dc790",
+ "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
+ "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
  "engine": "mpmath",
- "computedAt": "2026-08-30T09:07:34.140663+00:00",
+ "computedAt": "2026-08-30T09:48:07.070513+00:00",
  "durationMs": 0,
  "engineVersion": "mpmath 1.4.1",
  "q0Anchor": "proton",

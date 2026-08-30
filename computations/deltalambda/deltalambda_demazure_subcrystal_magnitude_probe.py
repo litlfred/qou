@@ -120,6 +120,9 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 Q0_STR = _Q0_RESOLVED
@@ -153,9 +156,9 @@ def main() -> int:
     # -- isospin-corrected STRONG targets (identical construction to #4012 and the
     #    sibling bareven / coulomb-mirror probes; AME2020 + #3986/#3990 premise) --
     BD = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
-    B3H = mp.mpf("8.481821")
-    B3He = mp.mpf("7.718058")
-    B4 = mp.mpf("28.295673")
+    B3H = mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)
+    B3He = mp.mpf(AME_B_HE3_MEV_VALIDATION)
+    B4 = mp.mpf(AME_B_HE4_MEV_VALIDATION)
     EC3He = B3H - B3He
     EC4 = EC3He * (mp.mpf(3) / 4) ** (mp.mpf(1) / 3)
     T3 = B3H / BD                       # ≈ 3.813

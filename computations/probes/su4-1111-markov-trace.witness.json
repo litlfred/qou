@@ -1,7 +1,7 @@
 {
   "engine": "mpmath+numpy",
   "engineVersion": "mpmath50dps/f64-chi",
-  "computedAt": "2026-08-30T09:08:59.376689+00:00",
+  "computedAt": "2026-08-30T09:48:49.138428+00:00",
   "computation": "su4-1111-markov-trace",
   "scriptFile": "su4_1111_markov_trace_probe.py",
   "description": "PROBE 2b: GENUINE Schur-Weyl [1^4]-flavour-projected 3A-strand Markov trace. e_A[h_3] antisymmetric SU(4) plethysm (exact power-sum + Murnaghan-Nakayama) \u2192 Schur mult m_\u03bb, y_\u03bb-normalised (Wenzl bridge) sum of exact Hoefsmit characters \u03c7_\u03bb(\u03b2_atom), gated by C(4,A). Replaces the PROBE-2 Mayer-cluster stand-in. Audit-only, no fit, single canonical operator.",
@@ -206,8 +206,8 @@
     "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
   },
   "allPassed": true,
-  "scriptHash": "01b3ba552e09",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "scriptHash": "7ef70fdeb928",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "durationMs": 0
 }

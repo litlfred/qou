@@ -1,7 +1,7 @@
 {
   "computation": "path-b-habiro-mass-probe",
   "description": "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md: predict atomic mass via the Habiro expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m \u2014 using a single-prefactor binding model alpha_M * |tr_M| calibrated from deuteron.  Tests whether the Markov trace via Habiro gives sensible binding without the Phi_q brane-tower specialisation that produces the -737 MeV isospin pathology.",
-  "computedAt": "2026-08-30T09:08:04.758303+00:00",
+  "computedAt": "2026-08-30T09:48:09.928953+00:00",
   "alpha_M_MeV": 12.537288955972219,
   "calibrated_from": "deuteron binding",
   "rows": [

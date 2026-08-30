@@ -42,6 +42,8 @@ from q_parameter import Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -84,7 +86,7 @@ VHAT: dict[str, list[str]] = {
     ],
 }
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "helium3": (2, 1)}
-B_AME = {"deuteron": float(AME_B_DEUTERON_MEV_VALIDATION), "tritium": 8.481798, "helium3": 7.718043}
+B_AME = {"deuteron": float(AME_B_DEUTERON_MEV_VALIDATION), "tritium": float(AME_B_TRITIUM_MEV_VALIDATION), "helium3": float(AME_B_HE3_MEV_VALIDATION)}
 NEAR_POLE = mp.mpf("0.9")  # |V̂| above this = proton/near-pole generator
 
 

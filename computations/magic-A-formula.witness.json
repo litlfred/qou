@@ -1,0 +1,43 @@
+{
+  "computation": "magic-A-formula",
+  "computedAt": "2026-08-30T09:48:08.322614+00:00",
+  "description": "Magic-A doubly-magic binding formula B = ρ_F · m_e · A · 8G as a callable.  Currently applies to ⁴He only per the watched-branch's methodology audit; heavier doubly-magic atoms (¹⁶O, ⁴⁰Ca) use recursive-on-4He instead.",
+  "constants": {
+    "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+    "catalan_G": "0.915965594177219015054603514932384110774149374281672134266498",
+    "Vol_8G": "7.32772475341775212043682811945907288619319499425337707413198",
+    "magic_numbers": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ]
+  },
+  "rows": [
+    {
+      "applicable": true,
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "rho_F": 2,
+      "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+      "Vol_8G": "7.32772475341775212043682811945907288619319499425337707413198",
+      "B_pred_MeV": "29.9556772795328825980939333878037777219596194454562901189628",
+      "formula": "2·m_e·4·8G",
+      "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
+      "err_MeV": "1.66001487953288259809393338780377772195961944545629011896277",
+      "err_pct": "5.86667615716563892172368224114724284369331267345163871817602"
+    }
+  ],
+  "scriptFile": "magic_A_formula.py",
+  "scriptHash": "f359ec660426",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:23.389955+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:58.794703+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "object_is_bruhat_subsum_graded_dim",
@@ -16,7 +16,7 @@
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "max over ALL A=3 truncations = ρ_grad(3) = [3]_{q0}=3.34203 < 3.8128 = ρ_strong(3).  A Bruhat sub-sum is ≤ the full sum, so NO Demazure sub-crystal reaches A=3 — damping is monotone the WRONG way (A=3 needs amplification: ρ_strong(3) > 3 = 3!/2!, the classical ceiling)"
+      "source": "max over ALL A=3 truncations = ρ_grad(3) = [3]_{q0}=3.34203 < 3.81279 = ρ_strong(3).  A Bruhat sub-sum is ≤ the full sum, so NO Demazure sub-crystal reaches A=3 — damping is monotone the WRONG way (A=3 needs amplification: ρ_strong(3) > 3 = 3!/2!, the classical ceiling)"
     },
     {
       "name": "A4_target_bracketed_by_consecutive_truncations",
@@ -51,8 +51,8 @@
   "durationMs": 0,
   "computation": "deltalambda-demazure-subcrystal-magnitude",
   "scriptFile": "deltalambda_demazure_subcrystal_magnitude_probe.py",
-  "scriptHash": "43cc85eeee86",
-  "scriptCommitSha": "2caa0ad00cb4b913541759e54ea2925db9d08af7",
+  "scriptHash": "455547aa1b70",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -83,9 +83,9 @@
   },
   "data": {
     "strong_targets": {
-      "rho_strong_3": "3.8127977",
-      "rho_strong_4": "13.031573",
-      "data_step_A3_to_A4": "3.4178507",
+      "rho_strong_3": "3.8127866",
+      "rho_strong_4": "13.031565",
+      "data_step_A3_to_A4": "3.4178586",
       "construction": "AME2020 + Lean #3986/#3990 Coulomb premise"
     },
     "object": "rho_dem(A)=W^dem_A/W^dem_2 = prod_{k=3..A}[t_k+1]_q, t_k in {0..k-1}: coset-chain Demazure sub-crystal graded dim (Bruhat-prefix sub-sum of [A]_q!); NON-determinant; deuteron W2=[2]_q kept full (saturated reference)",
@@ -93,7 +93,7 @@
     "forward_test_rows": [
       {
         "A": 3,
-        "target": 3.8127977490622667,
+        "target": 3.81278660082132,
         "family_max_rho_grad": 3.342031036918145,
         "all_truncations": {
           "0": 1.0,
@@ -103,7 +103,7 @@
       },
       {
         "A": 4,
-        "target": 13.031573408636536,
+        "target": 13.031565327281346,
         "det_cap": 6.0,
         "bracket_lo_droptop": 11.16917145172417,
         "bracket_hi_full": 15.739572135410121,
@@ -125,14 +125,14 @@
     ],
     "A4_bracket": {
       "lower_droptop_[3][3]": "11.169171",
-      "target": "13.031573",
+      "target": "13.031565",
       "upper_full_[3][4]": "15.739572",
       "pr4012_lower_det_cap": 6,
       "note": "lower bracket rises 6 -> 11.17 (tightening)"
     },
     "A3_obstruction": {
       "family_max_[3]_q0": "3.342031",
-      "target": "3.8127977",
+      "target": "3.8127866",
       "classical_ceiling_3!/2!": 3,
       "note": "whole Demazure family <= full graded dim, which already undershoots; damping monotone the WRONG way for A=3"
     },

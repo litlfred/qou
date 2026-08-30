@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:37.529071+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:47:35.676395+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "trace_ceiling_admits_connected_excess",
@@ -22,7 +22,7 @@
   "durationMs": 0,
   "computation": "b4-iceil-norm-ceiling",
   "scriptFile": "b4_iceil_norm_ceiling_probe.py",
-  "scriptHash": "e4023e6981b1",
+  "scriptHash": "5930a244fc7b",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -38,7 +38,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -50,13 +50,13 @@
   "tier": "structural (parameter-free B_vol ceiling + committed pairwise best)",
   "result": {
     "E0_MeV": "4.1859808",
-    "B_AME_he4_MeV": "28.29567",
+    "B_AME_he4_MeV": "28.295662",
     "best_pairwise_MeV": "13.522857",
-    "needed_connected_excess_MeV": "14.772813",
+    "needed_connected_excess_MeV": "14.772805",
     "a_V_MeV_per_nucleon": "7.5835662",
     "trace_ceiling_B_vol_he4_MeV": "30.334265",
     "max_connected_room_MeV": "16.811408",
-    "headroom_fraction": "0.137996",
+    "headroom_fraction": "0.137997",
     "verdict": "I-ceil PASSES: max connected room (16.811 MeV = B_vol − pairwise) ≥ needed excess (14.773 MeV), ~14% headroom. The trace framework admits the connected b₄^even excess; the [1^4] term is NOT excluded by the norm ceiling — the value computation is licensed. NECESSARY condition only: passing ≠ the term supplies it; the connected-slice value (not the total 30.3 MeV) must reach ~14.8 MeV. Modest headroom. Scope-(a), no fit.",
     "gates_status": "I-par (done), I-conn (done), I-ceil (done) — all three magnitude gates cleared."
   },

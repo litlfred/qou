@@ -144,12 +144,6 @@ _T1_CACHE_B: dict | None = None
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
-from codata_constants import (  # noqa: E402
-    M_D_ATOMIC_MEV_VALIDATION,
-    M_HE4_ATOMIC_MEV_VALIDATION,
-    M_LI6_ATOMIC_MEV_VALIDATION,
-    M_T_ATOMIC_MEV_VALIDATION,
-)
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -1357,12 +1351,12 @@ if __name__ == "__main__":
     ISOTOPES = [
         ("p",   1, 0, False,  float(M_P_MEV_VALIDATION)),
         ("n",   0, 1, False,  939.565),
-        ("D",   1, 1, True,  float(M_D_ATOMIC_MEV_VALIDATION)),
-        ("T",   1, 2, True,  float(M_T_ATOMIC_MEV_VALIDATION)),
+        ("D",   1, 1, True,  1876.124),
+        ("T",   1, 2, True,  2809.432),
         ("3He", 2, 1, True,  2809.413),
-        ("4He", 2, 2, True,  float(M_HE4_ATOMIC_MEV_VALIDATION)),
+        ("4He", 2, 2, True,  3728.401),
         ("5Li", 3, 2, True,  4669.151),
-        ("6Li", 3, 3, True,  float(M_LI6_ATOMIC_MEV_VALIDATION)),
+        ("6Li", 3, 3, True,  5603.052),
         ("7Li", 3, 4, True,  6535.366),
         ("7Be", 4, 3, True,  6536.227),
         ("8Be", 4, 4, True,  7456.894),

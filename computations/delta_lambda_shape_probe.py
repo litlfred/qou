@@ -35,6 +35,12 @@ from mass_binding_dashboard import (  # noqa: E402
     _constants, _bond_type_L, _nucleon_msym, _ame_table, _row, GROUPS,
 )
 from math import factorial  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # ── option-e Δ_λ = sgn(w0^{S_λ'}) · dim(V_λ)  (main 6d68481e, q-independent) ──
 # replicated verbatim from docs/audits/scripts/option_e_delta_lambda_sign_chirality.py
@@ -157,7 +163,7 @@ def _test_option_e_delta_lambda(me: float) -> None:
     from q_parameter import Q as Q0
 
     iso = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
-    b_ame = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": 28.295673}
+    b_ame = {"2H": float(AME_B_DEUTERON_MEV_VALIDATION), "3H": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
 
     print("\n### option-e Δ_λ = sgn(w0^{S_λ'})·dim(V_λ) — does it recover A=3,4?")
     print("  B_Δ = m_e·Σ_λ y_λ X_λ Δ_λ;  X_λ = χ^λ_atom (gate) | χ^λ_free−χ^λ_atom (defect)")

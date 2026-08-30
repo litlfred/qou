@@ -3,12 +3,12 @@
   "description": "A-stability criterion selects the irrep dimension (\u0394_\u03bb=sgn\u00b7dim, p=1, min cross-isotope spread ~2.8x, ratios 0.11-0.30) over the block dim\u00b2 (p=2, spread ~119x, blows up). Uses the classical q=1 dim (#3542), not the q\u2080 quantum dim. Vindicates the #3542 irrep trace as the correct A-scaling; residual is an O(1) factor (~3-9), same power. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-a-scaling.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-08-30T09:07:23.063708+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:58.550366+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_binding_a_scaling_probe.py",
-  "scriptHash": "9cedaa6370b0",
+  "scriptHash": "72875524bcc2",
   "q0": "1.1099785827513808076",
   "q0_source": "qou_substrate.q_at(30)",
   "assertions": [
@@ -41,44 +41,44 @@
         "d": 0.01406701635047399,
         "t": 0.00304958257982262,
         "3he": 0.0040005987863520115,
-        "4he": 0.0001901395634396847
+        "4he": 0.00019013961450972723
       },
       "1": {
         "d": 0.16480582648819336,
         "t": 0.14911866115796799,
         "3he": 0.20385499596011908,
-        "4he": 0.00344819542313951
+        "4he": 0.0034481963492986097
       },
       "1.5": {
         "d": 0.29786370344311,
         "t": 1.0481516512890388,
         "3he": 1.5100830828184963,
-        "4he": -0.22075300648908613
+        "4he": -0.22075306578166695
       },
       "2": {
         "d": 0.35192723063982234,
         "t": 7.602872170604092,
         "3he": 11.490707282538335,
-        "4he": -7.5191424962469675
+        "4he": -7.51914451583153
       }
     },
     "ratio_p1_irrep": {
       "d": 0.16480582648819336,
       "t": 0.14911866115796799,
       "3he": 0.20385499596011908,
-      "4he": 0.00344819542313951
+      "4he": 0.0034481963492986097
     },
     "ratio_p2_block": {
       "d": 0.35192723063982234,
       "t": 7.602872170604092,
       "3he": 11.490707282538335,
-      "4he": -7.5191424962469675
+      "4he": -7.51914451583153
     },
     "residual_O1_factor_p1": {
       "d": 6.0677466404480525,
       "t": 6.706068792695609,
       "3he": 4.905447596661471,
-      "4he": 290.00676507177803
+      "4he": 290.00668717818456
     },
     "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
   },
@@ -89,7 +89,7 @@
     "open": "the O(1) multiplicative factor (~3-9) \u2014 same power \u2014 DERIVE, do not fit",
     "gate": "\u0394_\u03bb gate \u2014 A-stability is a structural criterion, not a fit; nothing wired"
   },
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

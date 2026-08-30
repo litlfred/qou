@@ -3,7 +3,7 @@
   "description": "Re-runs the T vs ³He f-factor comparison with pn_convention='bring_color_weighted' to test whether the substrate-pure δ = Δm/M_N at q_0 closes the 15% single-magic A=3 p/n asymmetry. Per the audit docs/audits/2026-05-31-binding-magic-A-wireup.md.",
   "computation": "closed_form_ratio(Z, N, q_0, pn_convention) compared across 'strict_averaged' and 'bring_color_weighted'; f required to close B_endo to B_AME under each.",
   "generator": "computations/binding_bring_enhancement_compare.py",
-  "timestamp_utc": "2026-08-30T09:07:05.511227+00:00",
+  "timestamp_utc": "2026-08-30T09:47:35.488784+00:00",
   "inputs": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": 0.51099895069,
@@ -11,9 +11,9 @@
     "vol_borromean_8G": 7.327724753417752,
     "AME": {
       "D": 2.2245662,
-      "T": 8.481798,
-      "³He": 7.718058,
-      "⁴He": 28.295674
+      "T": 8.4817962,
+      "³He": 7.71804132,
+      "⁴He": 28.2956624
     }
   },
   "predictions": [
@@ -39,9 +39,9 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 2.976446199269664,
       "B_endo_bring_MeV": 2.9763375294653547,
-      "B_AME_MeV": 8.481798,
-      "f_required_strict": 2.8496392785736204,
-      "f_required_bring": 2.8497433224663875
+      "B_AME_MeV": 8.4817962,
+      "f_required_strict": 2.849638673825582,
+      "f_required_bring": 2.849742717696269
     },
     {
       "atom": "³He",
@@ -52,9 +52,9 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 2.5786511314103953,
       "B_endo_bring_MeV": 2.578486175727787,
-      "B_AME_MeV": 7.718058,
-      "f_required_strict": 2.9930601724237906,
-      "f_required_bring": 2.9932516500002375
+      "B_AME_MeV": 7.71804132,
+      "f_required_strict": 2.993053703925669,
+      "f_required_bring": 2.993245181088301
     },
     {
       "atom": "⁴He",
@@ -65,17 +65,17 @@
       "tau_M_ratio_delta_ppm": 141.4946610627719,
       "B_endo_strict_MeV": 3.2739070002204516,
       "B_endo_bring_MeV": 3.273840419531352,
-      "B_AME_MeV": 28.295674,
-      "f_required_strict": 8.642784904426023,
-      "f_required_bring": 8.642960674317322
+      "B_AME_MeV": 28.2956624,
+      "f_required_strict": 8.642781361258791,
+      "f_required_bring": 8.642957131078033
     }
   ],
   "f_spread_summary": "T vs ³He f-factor spread (single-magic A=3 p/n asymmetry): strict_averaged = 4.79%, bring_color_weighted = 4.79%. The Bring weighting at q_0 produces a substantially identical f-spread — the 180.9 ppm uniform correction cancels out of the T vs ³He ratio because both have exactly one pn arc. The 15%+ T vs ³He spread is at the arc-COMPOSITION layer (T = pn+nn vs ³He = pp+pn, distinct factors f_nn ≠ f_pp), NOT at the pn-arc weighting layer; Bring weighting cannot close it. The actual closure path is the operator-valued Wenzl branching with full per-arc operator extracts (canonical_tr_m_via_branching.py + A_operator_extract_at_level.py), not a scalar pn-weighting refinement.",
-  "scriptHash": "0bda59ba3e07",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "scriptHash": "b94ae31f5247",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "engine": "mpmath",
-  "computedAt": "2026-08-30T09:07:06.442504+00:00",
+  "computedAt": "2026-08-30T09:47:35.502487+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",

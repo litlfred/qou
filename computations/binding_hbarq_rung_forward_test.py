@@ -100,14 +100,16 @@ import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 # AME2020 binding energies (MeV) and the arc's committed 𝓑_K interface volumes
 # (docs/audits/2026-07-11-bk-crossing-coordination-multiplicity.md; bk_crossing_coordination.py).
 ISO = {
-    "3H":  dict(A=3, B="8.481821",  vol="8.286316817806593", link="8_11"),
+    "3H":  dict(A=3, B=AME_B_TRITIUM_MEV_VALIDATION,  vol="8.286316817806593", link="8_11"),
     "3He": dict(A=3, B=AME_B_HE3_MEV_VALIDATION,  vol="7.327724753417752", link="L6a4"),
-    "4He": dict(A=4, B="28.295674", vol="7.327724753417752", link="L6a4-base"),
+    "4He": dict(A=4, B=AME_B_HE4_MEV_VALIDATION, vol="7.327724753417752", link="L6a4-base"),
 }
 B_ALPHA_ALPHA = "2.416"   # single α–α bond residual (¹²C/¹⁶O simplex fit)
 

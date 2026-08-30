@@ -22,7 +22,9 @@ Branch: claude/ame-roadmap-replant-2026-08-29 (worktree /tmp/qou-mine).
 - [x] Fix the triage: byte-exact string match is NOT sufficient for SAFE
 - [x] Split REVIEW into ROUNDING (63, routable) and DIVERGENT (125, needs a ruling)
 - [x] Route the 63 ROUNDING sites — verified, 0 unexplained leaves
-- [ ] DIVERGENT (125 sites / 66 files): evidence says hand-typing drift, not an
-      older AME edition — binding_canonical.py documents 8.481821 as "a typo for
-      8.481798", and PR #1105 already set the precedent of routing such values
+- [x] DIVERGENT: 110 sites routed, 16 held as per-site INPUT
+- [x] Rule on the self-test sites — delta_lambda routed, pin validator and dps
+      audit held (each DEMONSTRATES something its own literal is required for)
+- [x] REVIEW bucket is 0. The drain is complete; what remains is 25 INPUT sites
+      and 6 demonstration literals, all permanently excluded with reasons.
 - [x] Close verification loose ends — see qou-fsva, now completed

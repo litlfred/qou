@@ -69,6 +69,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
 )
 
 COMP = str(_COMP)
@@ -100,7 +101,7 @@ def main() -> int:
     ratio_5g_b2 = five_g / b2_cumulant
 
     # V3 -- 4He cluster structure (pair-additive baseline + many-body remainder)
-    B_AME_4He = mp.mpf("28.295673")
+    B_AME_4He = mp.mpf(AME_B_HE4_MEV_VALIDATION)
     pair_bonds_4He = 6                    # C(4,2)
     pair_additive = pair_bonds_4He * B_AME_2H
     many_body_remainder = B_AME_4He - pair_additive

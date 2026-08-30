@@ -91,6 +91,8 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -100,7 +102,7 @@ CHIRAL_W = _COMP / "chirality-weighted-3body-cluster.witness.json"
 STRUCT_W = _COMP / "structured-combiner-and-triangle.witness.json"
 
 # AME2020 binding energies, as the source probes define them.
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
+AME = {"T": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION), "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION)}
 B2 = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
 ATOMS = ["T", "3He"]
 CANONICAL_CONV = "bring_color_weighted (canonical, R3)"

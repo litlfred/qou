@@ -68,6 +68,9 @@ from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
 from nucleus_sdp_assembly import (  # noqa: E402
     build_cost_gram, tr_M_from_cache, solve_real_sdp, solve_real_sdp_arrays,
 )
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 
 COST_WITNESS = _pb.witness_path("iterative-lp-dual-h6-deuteron.witness.json", HERE)
 BRANCHING_WITNESS = _pb.witness_path("sublemma-2-1-deuteron-branching.witness.json", HERE)
@@ -79,7 +82,7 @@ LEAN_UNIQUENESS_REF = "qou:QOU.BraidKnot.deuteron_uniqueness_closed"
 
 # AME2020 deuteron binding energy (MeV) — RHS for the physical constraint.
 # Matches the repo-wide constant (probe_k_ud_*, applied_uniqueness_mass_table).
-B_D_AME_MeV = 2.22456607
+B_D_AME_MeV = float(AME_B_DEUTERON_MEV_VALIDATION)
 # 9-pair color-flavor structure of p=uud × n=udd: 2·(u,u)+4·(u,d)+1·(d,u)+2·(d,d).
 # Neutron-heavy 5:4 weighting with a bar-involution sign flip on the mixed
 # (u,d)/(d,u) channel (probe_k_ud_fractional_and_alt_ansatz.nine_pair_ratio).

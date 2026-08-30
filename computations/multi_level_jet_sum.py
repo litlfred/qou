@@ -52,6 +52,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import _path_bridge  # noqa: F401, E402 — substrate path bridge (codata_constants)
 from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
     M_P_MEV_VALIDATION,
 )
 from mass_endomorphism import q0, Phi_q, z_mark
@@ -154,9 +156,9 @@ def binding_flat_all_pairs(Z, N, E_0=E_0_PROTON_TOWER_MEV):
 if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, 28.295674),
+        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
         ("6Li",  3, 3, 32.0),
         ("9Be",  4, 5, 58.1650),
         ("10B",  5, 5, 64.750),

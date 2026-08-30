@@ -59,8 +59,11 @@ set_compute_dps()
 # "1.10997858", the proton pin truncated to 9 s.f. (canonical
 # 1.10997858275138…). Proton is the default anchor per AGENTS.md.
 from q_parameter import Q_MP  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
 Q0 = Q_MP
-B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")   # AME deuteron binding / m_e ~ 4.353
+B_DEU_OVER_ME = mpf(AME_B_DEUTERON_MEV_VALIDATION) / mpf("0.510999")   # AME deuteron binding / m_e ~ 4.353
 HERE = pathlib.Path(__file__).resolve().parent
 DEU = HERE.parent / "atom-chi-rust-d.witness.json"
 

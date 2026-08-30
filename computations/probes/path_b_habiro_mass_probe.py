@@ -90,6 +90,8 @@ from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_D_ATOMIC_MEV_VALIDATION,
     M_E_MEV as _M_E_MEV_MP,
+    M_HE3_ATOMIC_MEV_VALIDATION,
+    M_T_ATOMIC_MEV_VALIDATION,
 )
 # Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
 # used to report fit residuals, not as prediction inputs.
@@ -109,8 +111,8 @@ AME_ATOMIC = {
     "p": ("p (proton, A=1)", 938.78308711),  # H-1 atomic
     "n": ("n (neutron, A=1)", float(M_N_MEV)),
     "D": ("D (deuteron, A=2)", float(M_D_ATOMIC_MEV_VALIDATION)),
-    "T": ("T (tritium, A=3)", 2809.43215),
-    "3He": ("3He (helium-3, A=3)", 2809.41347),
+    "T": ("T (tritium, A=3)", float(M_T_ATOMIC_MEV_VALIDATION)),
+    "3He": ("3He (helium-3, A=3)", float(M_HE3_ATOMIC_MEV_VALIDATION)),
 }
 
 

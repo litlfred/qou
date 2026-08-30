@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:17.052641+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:43.796791+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-weighted-3body-cluster",
   "scriptFile": "chirality_weighted_3body_cluster_probe.py",
-  "scriptHash": "92be3dfce3b1",
-  "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
+  "scriptHash": "67bc64299915",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,14 +45,14 @@
         "abs_c3_MeV": "-1.3723314",
         "signed_c3_MeV": "-1.3723314",
         "chiral_c3_MeV": "0.11155618",
-        "b3_empirical_MeV": "1.8080994"
+        "b3_empirical_MeV": "1.8080976"
       },
       {
         "atom": "3He",
         "abs_c3_MeV": "-1.0338363",
         "signed_c3_MeV": "-1.0338363",
         "chiral_c3_MeV": "0.15464001",
-        "b3_empirical_MeV": "1.0443444"
+        "b3_empirical_MeV": "1.0443427"
       }
     ]
   },

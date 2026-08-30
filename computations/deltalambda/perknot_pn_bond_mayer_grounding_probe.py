@@ -56,6 +56,10 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -70,8 +74,8 @@ MU_T = mp.mpf("4.444146924325849")
 MU_3HE = mp.mpf("3.2918285794896933")
 
 # AME binding energies (MeV) — direction cross-check only
-B_T_AME = mp.mpf("8.481798")
-B_3HE_AME = mp.mpf("7.718058")
+B_T_AME = mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)
+B_3HE_AME = mp.mpf(AME_B_HE3_MEV_VALIDATION)
 
 
 def w(a, b):

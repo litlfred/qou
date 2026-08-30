@@ -56,13 +56,15 @@ import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 # AME2020 total binding energies (MeV) across the mass range; m_N = mean nucleon mass.
 NUCLEI = [
     ("2H",   2, AME_B_DEUTERON_MEV_VALIDATION),
-    ("3H",   3, "8.481821"),
-    ("4He",  4, "28.295674"),
+    ("3H",   3, AME_B_TRITIUM_MEV_VALIDATION),
+    ("4He",  4, AME_B_HE4_MEV_VALIDATION),
     ("12C",  12, "92.161728"),
     ("16O",  16, "127.619336"),
     ("40Ca", 40, "342.052000"),

@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:04:58.324964+00:00",
-  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
+  "computedAt": "2026-08-30T09:47:37.633688+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "data_loaded",
       "computed": "2.224566199999999999999999999999999999999999999999997340954056611765576",
-      "expected": 2.22456607,
-      "passed": false,
+      "expected": 2.2245662,
+      "passed": true,
       "tolerance": "1e-10",
       "unit": "B(D) MeV",
       "source": "AME 2020 deuteron binding"
     }
   ],
-  "allPassed": false,
-  "durationMs": 80,
+  "allPassed": true,
+  "durationMs": 294,
   "computation": "binding-depth-stratified-lr",
   "scriptFile": "binding_depth_stratified_lr.py",
-  "scriptHash": "7a2096483efd",
-  "scriptCommitSha": "c86e55ec9f547271b135371823248cac0a4b1560",
+  "scriptHash": "aeb07695e1a0",
+  "scriptCommitSha": "913a677057c51f5dfda5c0f79f43b052c5091cb8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [

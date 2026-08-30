@@ -55,10 +55,13 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 HE4_WITNESS = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
 VOL_L6A4 = "7.327724753417752"   # 8G = Vol(L6a4) = Vol(Borromean)
-B_AME_HE4 = "28.295674"
+B_AME_HE4 = AME_B_HE4_MEV_VALIDATION
 
 
 def main() -> int:

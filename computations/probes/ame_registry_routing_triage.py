@@ -472,8 +472,19 @@ def main() -> int:
             v = float(lit)
             if not _in_range(v):
                 continue
-            if lineno in fixlines:
+            # A self-test line only matters if the literal is ACTUALLY an AME
+            # value. _in_range is a numeric window, not a semantic test: without
+            # the near-match gate this branch swallowed Euler's number
+            # (2.718281828) and a beam eigenvalue (4.73124891) from
+            # no_free_parameter_certificate, and four unrelated magnitudes from
+            # witness_raw_float64_audit, reporting six sites of routing work
+            # that never existed.
+            _near = lit in REG or any(abs(v - float(rs)) / float(rs) < 5e-6
+                                      for rs in REG)
+            if lineno in fixlines and _near:
                 fixture.setdefault(fn, set()).add((lit, REG.get(lit, "~near")))
+            elif lineno in fixlines:
+                pass
             elif lit in REG:
                 safe.setdefault(fn, set()).add((lit, REG[lit]))
             else:

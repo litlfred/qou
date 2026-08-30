@@ -73,6 +73,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -97,9 +100,9 @@ NUCLEAR_MASS = {
 # (Z, N, knot, ρ_F=ν_SDP, Vol_hyp, B_AME MeV); ρ_F<0 ⇒ extrapolated
 ATOMS = [
     (1, 1, "6_2",   1, "4.400833", AME_B_DEUTERON_MEV_VALIDATION),
-    (1, 2, "8_11",  2, "8.286300", "8.481821"),
-    (2, 1, "L6a4",  2, "7.327700", "7.718058"),
-    (2, 2, "magic", -1, None,      "28.295673"),  # no census knot
+    (1, 2, "8_11",  2, "8.286300", AME_B_TRITIUM_MEV_VALIDATION),
+    (2, 1, "L6a4",  2, "7.327700", AME_B_HE3_MEV_VALIDATION),
+    (2, 2, "magic", -1, None,      AME_B_HE4_MEV_VALIDATION),  # no census knot
 ]
 NAMES = {(1, 1): "2H", (1, 2): "3H", (2, 1): "3He", (2, 2): "4He"}
 

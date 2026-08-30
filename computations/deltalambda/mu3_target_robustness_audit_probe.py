@@ -38,6 +38,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -50,9 +53,9 @@ Q0_PROTON = mp.mpf("1.10997859")  # ~identical to 8 sig figs; the pin swing is ~
 # ── AME2020 connected binding energies (MeV), from the #3943 committed witness ──
 B_AME = {
     "2H":  mp.mpf(AME_B_DEUTERON_MEV_VALIDATION),
-    "3H":  mp.mpf("8.481821"),
-    "3He": mp.mpf("7.718058"),
-    "4He": mp.mpf("28.295673"),
+    "3H":  mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
+    "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION),
+    "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION),
 }
 # Coulomb energy of the A=3 mirror (³He), two standard models (from #3990):
 E_C_3HE_SPHERE = mp.mpf("0.8487393706040641")   # 3/5 uniform charged sphere

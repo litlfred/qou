@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:10.790658+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:52:00.787829+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "verdict == strongly_cooperative_measures_4body_target",
@@ -15,8 +15,8 @@
   "durationMs": 0,
   "computation": "binding-mayer-linked-cluster-decomposition",
   "scriptFile": "computations/probes/binding_mayer_linked_cluster_probe.py",
-  "scriptHash": "fb6a26ae86a0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3eba029f97ec",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,21 +46,21 @@
   },
   "data": {
     "per_bond_MeV": {
-      "D": "2.2245662",
+      "D": "2.224566",
       "T": "2.827266",
       "3He": "2.572681",
       "4He": "4.7159455"
     },
-    "b2_MeV": "2.2245662",
-    "b3_T_MeV": "1.8080994",
-    "b3_3He_MeV": "1.0443444",
-    "b4_4He_MeV": "9.2433882",
-    "b3_over_b2": "0.6411236",
-    "b4_over_b2": "4.1551419",
+    "b2_MeV": "2.224566",
+    "b3_T_MeV": "1.8081",
+    "b3_3He_MeV": "1.044345",
+    "b4_4He_MeV": "9.243387",
+    "b3_over_b2": "0.64112393",
+    "b4_over_b2": "4.1551417",
     "pairwise_only_pred_MeV": {
-      "T": "6.6736986",
-      "3He": "6.6736986",
-      "4He": "13.3473972"
+      "T": "6.673698",
+      "3He": "6.673698",
+      "4He": "13.347396"
     },
     "verdict": "strongly_cooperative_measures_4body_target",
     "scope_note": "does NOT rule out the interface program: the trace product 1-PROD f already carries cross-bond cooperative terms, and the per-bond factors are Lean-proved exact (a permanent correct contribution). Measures the size of the missing cluster operator."

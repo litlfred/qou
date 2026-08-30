@@ -91,6 +91,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -102,7 +103,7 @@ set_compute_dps()
 _BLOCK_CACHE_MP = BlockCacheMP(mp.mpf(Q_50_DIGIT_STR))
 
 # AME2020 total nuclear binding (MeV) — same anchors as PROBE 2.
-AME = {"D": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "4He": mp.mpf("28.295673"), "6Li": mp.mpf("31.994564")}
+AME = {"D": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION), "6Li": mp.mpf("31.994564")}
 
 
 # ══════════════════════════════════════════════════════════════════════

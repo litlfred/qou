@@ -50,11 +50,7 @@ from _precision import set_compute_dps  # noqa: E402
 # AME here is a measurement/comparison reference -- what a `_VALIDATION`
 # constant is for -- not a prediction input, which would be the 3-cal
 # violation fvxq warns about.
-from codata_constants import (  # noqa: E402
-    AME_B_DEUTERON_MEV_VALIDATION,
-    AME_B_HE4_MEV_VALIDATION,
-    AME_B_TRITIUM_MEV_VALIDATION,
-)
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
 HERE = Path(__file__).parent
@@ -66,9 +62,9 @@ M_E_MEV = mp.mpf("0.51099895069")
 # χ^λ caches exist. These are the *targets*, never inputs to Vol_λ.
 AME_B = {
     "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
-    "tritium": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
+    "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
-    "helium-4": mp.mpf(AME_B_HE4_MEV_VALIDATION),
+    "helium-4": mp.mpf("28.29566"),
 }
 CHI_CACHE = {
     "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",

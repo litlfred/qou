@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:13.573760+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:39.428758+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 972,
+  "durationMs": 437,
   "computation": "binding-triangle-3body-cluster",
   "scriptFile": "binding_triangle_3body_cluster_probe.py",
-  "scriptHash": "0a32071b65f3",
-  "scriptCommitSha": "e5deb145c7b35f26fee3327bd253d3b392c8b576",
+  "scriptHash": "c81b287492ba",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
         "two_bond_MeV": "-2.863603475",
         "three_bond_MeV": "0.41861869",
         "beyond_pairwise_MeV": "-2.444984785",
-        "empirical_b3_MeV": "1.8080994",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -59,7 +59,7 @@
         "two_bond_MeV": "-2.442708875",
         "three_bond_MeV": "0.3153634563",
         "beyond_pairwise_MeV": "-2.127345419",
-        "empirical_b3_MeV": "1.0443444",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
@@ -69,7 +69,7 @@
         "two_bond_MeV": "-3.877023366",
         "three_bond_MeV": "0.6750690757",
         "beyond_pairwise_MeV": "-3.20195429",
-        "empirical_b3_MeV": "1.8080994",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -79,7 +79,7 @@
         "two_bond_MeV": "-3.381021187",
         "three_bond_MeV": "0.5085585571",
         "beyond_pairwise_MeV": "-2.872462629",
-        "empirical_b3_MeV": "1.0443444",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
@@ -89,7 +89,7 @@
         "two_bond_MeV": "-3.876291135",
         "three_bond_MeV": "0.6748717156",
         "beyond_pairwise_MeV": "-3.201419419",
-        "empirical_b3_MeV": "1.8080994",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -99,7 +99,7 @@
         "two_bond_MeV": "-3.380334996",
         "three_bond_MeV": "0.5084098772",
         "beyond_pairwise_MeV": "-2.871925119",
-        "empirical_b3_MeV": "1.0443444",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       }
     ],

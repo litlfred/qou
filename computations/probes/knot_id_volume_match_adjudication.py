@@ -59,6 +59,9 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+)
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -76,7 +79,7 @@ ROWS = [
 ]
 
 # AME2020 helium-3 binding fallback (the ame witness carries D and T).
-B_HELIUM3_FALLBACK_MEV = "7.718043"
+B_HELIUM3_FALLBACK_MEV = AME_B_HE3_MEV_VALIDATION
 
 
 def b_ame() -> dict[str, mp.mpf]:

@@ -78,13 +78,16 @@ from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
 )
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 T0 = time.time()
 
 # AME2020 -- OUTPUT COMPARISON TARGETS ONLY.
-AME = {(1, 1): ("2H", AME_B_DEUTERON_MEV_VALIDATION), (1, 2): ("3H", "8.481821"),
-       (2, 1): ("3He", "7.718043"), (2, 2): ("4He", "28.295673"),
+AME = {(1, 1): ("2H", AME_B_DEUTERON_MEV_VALIDATION), (1, 2): ("3H", AME_B_TRITIUM_MEV_VALIDATION),
+       (2, 1): ("3He", AME_B_HE3_MEV_VALIDATION), (2, 2): ("4He", AME_B_HE4_MEV_VALIDATION),
        (3, 3): ("6Li", "31.994566"), (3, 4): ("7Li", "39.244538"),
        (4, 3): ("7Be", "37.600411")}
 

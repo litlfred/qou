@@ -50,12 +50,13 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import (
+from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
-    M_E_MEV)
+    M_E_MEV,
+)
 from mass_at_3A_proper import dim_q, qfac
 from q_parameter import Q as Q0
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
@@ -239,7 +240,7 @@ def main() -> int:
           f"{all_results[best_beta]['max_over_min']:.4f})")
 
     builder.add_assertion(
-        "data_loaded", computed=B_AME["D"], expected=2.22456607,
+        "data_loaded", computed=B_AME["D"], expected=float(AME_B_DEUTERON_MEV_VALIDATION),
         tolerance=1e-10, unit="B(D) MeV", source="AME 2020",
     )
     builder.save()

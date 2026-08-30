@@ -70,6 +70,8 @@ from q_parameter import Q_MP
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 
@@ -112,9 +114,9 @@ M_CODATA = {
 }
 B_CODATA = {
     "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
-    "T":   8.481793,
+    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),
     "3He": float(AME_B_HE3_MEV_VALIDATION),
-    "4He": 28.295674,
+    "4He": float(AME_B_HE4_MEV_VALIDATION),
     "6Li": 31.994576,
 }
 

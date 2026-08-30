@@ -46,6 +46,9 @@ from coulomb_energy import (  # noqa: E402
 )
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 Q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -56,8 +59,8 @@ MEAS_R0_3HE = mp.sqrt(mp.mpf(5) / 3) * mp.mpf("1.9661") / mp.mpf(3) ** (mp.mpf(1
 M_E = mp.mpf(str(M_E_MEV))
 
 # AME2020 binding energies (MeV) — the comparison boundary, not model input.
-B_AME = {"2H": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "3H": mp.mpf("8.481821"),
-         "3He": mp.mpf("7.718058"), "4He": mp.mpf("28.295661")}
+B_AME = {"2H": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "3H": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
+         "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION), "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION)}
 Z_OF = {"2H": 1, "3H": 1, "3He": 2, "4He": 2}
 A_OF = {"2H": 2, "3H": 3, "3He": 3, "4He": 4}
 

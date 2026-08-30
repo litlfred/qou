@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:07:20.851792+00:00",
-  "commitSha": "40662cc17158c2215a1eb7f082964c29284774e3",
+  "computedAt": "2026-08-30T09:47:45.241364+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "connected_magnitude_is_charge_symmetry_invariant",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 4,
   "computation": "connected-magnitude-charge-symmetric",
   "scriptFile": "connected_magnitude_charge_symmetric.py",
-  "scriptHash": "0b59e07f31b2",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "8e55df162fbc",
+  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,8 @@
         "b_broken": 1.1739476211135373,
         "b_symm": 1.1840000655690872,
         "delta_pct": 0.856294120347086,
-        "need_broken": 2.0974621819677206,
-        "need_symm": 2.119939384137006
+        "need_broken": 2.097461396225705,
+        "need_symm": 2.1199385899746805
       },
       "6Li": {
         "A": 6,

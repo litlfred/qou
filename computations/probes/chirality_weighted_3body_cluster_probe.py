@@ -39,6 +39,8 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
     M_E_MEV,
 )
 
@@ -50,7 +52,7 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
 # Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
+AME = {"T": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION), "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION)}
 _Y9 = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
        for k, v in y_lambda_at(9, q0).items()}
 

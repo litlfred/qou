@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps; reads ⁴He H₁₂ witness)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T16:04:52.968951+00:00",
-  "commitSha": "84fc175fe9728f33e9f9dd0948b2321353b817d1",
+  "computedAt": "2026-08-30T09:48:06.856656+00:00",
+  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
   "assertions": [
     {
       "name": "alt_block_empty_cpt_doubling_refuted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "he4-rho-F-cpt-mechanism-refuted",
   "scriptFile": "he4_rho_F_cpt_mechanism_refuted.py",
-  "scriptHash": "e8208b4d9b79",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9b8b9bce11fe",
+  "scriptCommitSha": "652ad51590a269999b1fb5144b5872bea4e6f6bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/he4_rho_F_cpt_mechanism_refuted.py"
+    ],
+    "reproduce": "python3 -u computations/he4_rho_F_cpt_mechanism_refuted.py"
   },
   "description": "Item 2 (ρ_F(⁴He) / a_D^(4)) adjudication. The canonical colour-weighted convention-D ⁴He H₁₂ decomposition (chi-helium-4-h12-at-q0-50dps) has EXACT two-row dominance: the 7 nonzero y_λ blocks all have ≤2 rows ([12],[11,1],[10,2],…,[6,6]); all 70 zero-weight blocks have >2 rows, including the alternating channel [1¹²] with y=0 exactly. So the CPT alt-block-doubling mechanism of frobenius-packing-density.md (closed shell populates the alt block ⇒ CPT doubling ⇒ ρ_F=2m_e) is REFUTED under the canonical convention — the alt channel is structurally empty, nothing to double; that block's 'derives ρ_F without tuning' claim is a convention-C-frame over-claim, and the authoritative 'not closed' status (magic-A context block) is correct. Sharpens the open problem: ρ_F=2 must be derived within the two-row stratum; the data-implied value is 1.889 (integer 2 overshoots +5.9%, [2]_q +6.4%). Scope-(a): mechanism tested and structurally unable. No fit; no wiring; q₀ proton-anchored.",
   "parameters": {
@@ -39,6 +50,6 @@
     "y_alt_block_1e12": "0.0",
     "n_nonzero_blocks": 7,
     "max_rows_among_nonzero": 2,
-    "rho_F_data_implied": "1.88916937086"
+    "rho_F_data_implied": "1.88916859639"
   }
 }
