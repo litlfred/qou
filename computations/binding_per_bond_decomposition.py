@@ -183,13 +183,13 @@ def main():
         "gap_pct": method_gap_pct,
         "note": "Two production trace conventions disagree; reconcile before A≥3.",
     })
-    wb.add_assertion(
-        "method_discrepancy_recorded",
-        computed=fmt(method_gap_pct_exact_mpf),
-        expected=fmt(method_gap_pct_exact_mpf),
-        tolerance=1,
-        source="Diagnostic: records the binding_canonical vs H_{3A} Δtr gap",
-    )
+    # DEMOTED (bean qou-3e5m): this compared 'method_discrepancy_recorded' to itself and
+    # reported `passed` unconditionally. A count of what a run found is
+    # DATA, not a check, and `add_assertion` has no way to say
+    # "is nonzero" -- which is plausibly why it was written this way.
+    # The assertion's `source` prose is kept alongside the value.
+    wb.add_data('method_discrepancy_recorded', {'value': fmt(method_gap_pct_exact_mpf), 'source': 'Diagnostic: records the binding_canonical vs H_{3A} Δtr gap'})
+
     wb.save()
 
 

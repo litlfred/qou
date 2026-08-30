@@ -1,24 +1,15 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-08-30T03:15:14.417136+00:00",
-  "commitSha": "095a92eb43e8cdc5a18e8c77d98d3c7078af1136",
-  "assertions": [
-    {
-      "name": "method_discrepancy_recorded",
-      "computed": "23.8006626234327246207112042561982234633122076498667298798616",
-      "expected": "23.8006626234327246207112042561982234633122076498667298798616",
-      "passed": true,
-      "tolerance": 1,
-      "source": "Diagnostic: records the binding_canonical vs H_{3A} Δtr gap"
-    }
-  ],
+  "computedAt": "2026-08-30T05:02:39.469328+00:00",
+  "commitSha": "7ca5e2beca4ae776137bcfeaa2b6506285e13b86",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 812,
+  "durationMs": 1232,
   "computation": "binding-per-bond-decomposition",
   "scriptFile": "binding_per_bond_decomposition.py",
-  "scriptHash": "98563fe0b29a",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "5b11a20ff4a6",
+  "scriptCommitSha": "cf540b0a1a39f95ffc1fd0a765a7939580f85b06",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -85,6 +76,10 @@
       "delta_tr_h3a_direct": "0.4240833434328485",
       "gap_pct": 23.800662623432725,
       "note": "Two production trace conventions disagree; reconcile before A≥3."
+    },
+    "method_discrepancy_recorded": {
+      "value": "23.8006626234327246207112042561982234633122076498667298798616",
+      "source": "Diagnostic: records the binding_canonical vs H_{3A} Δtr gap"
     }
   }
 }
