@@ -1,5 +1,6 @@
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
 import QOU.AlgebraicSubstrate.ReebSpectrum
+import QOU.AlgebraicSubstrate.WeilZeta
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
@@ -245,30 +246,48 @@ Reeb spectrum lies on the critical line**, conditional on the identification and
 on the Hasse–Weil bound. The conditionality is visible in the type, which is the
 point — the identification is unproved, and nothing here pretends otherwise. -/
 
-/-- **The Reeb spectrum lies on the critical line**, given the identification
-    `αᵢ = q^{ρᵢ}` and the Hasse–Weil magnitude bound.
+/-- **The Reeb spectrum lies on the critical line.**
 
     This is what `cor:spectral-half-line` was always meant to say. What it said
     before was the same conclusion about unnamed exponents; the `ρ` here are the
-    eigenvalues of an actual operator, carried by `R`. -/
+    eigenvalues of an actual operator, carried by `R`.
+
+    **The magnitude is now derived, not assumed.** This statement used to carry
+    `(hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1/2))` as a hypothesis — the very fact
+    `hasse_weil_bound` proves from `IsWeilZeta`, one file away, which this file
+    could not reach because content-block siblings cannot import one another
+    (§0a). Lifting the class into `QOU.AlgebraicSubstrate.WeilZeta` removed the
+    duplication: `[IsWeilZeta Z]` replaces `hw`, and the Hasse–Weil bound is
+    imported rather than re-assumed.
+
+    So the result is now conditional on exactly two things, and it is worth being
+    precise about their different standings:
+
+    - `[IsWeilZeta Z]` — the two classical Weil inputs (functional equation,
+      Castelnuovo–Severi). Cited results, and `weilZetaExample` witnesses that
+      they are jointly satisfiable.
+    - `[HasReebSpectralCoords Z R]` — the identification of the Frobenius
+      exponents with the Reeb spectrum. **This is the open one** (bean
+      `qou-qspc`); no instance exists, and `hasReebSpectralCoords_satisfiable`
+      below shows only that the hypothesis is consistent, not that `ξ_q` meets
+      it. -/
 theorem reeb_spectrum_on_critical_line
-    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
     {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
-    [HasReebSpectralCoords Z R]
-    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    [HasReebSpectralCoords Z R] :
     ∀ i, (R.spec i).re = 1 / 2 :=
-  spectral_half_line Z hq R.spec HasReebSpectralCoords.coords hw
+  spectral_half_line Z hq R.spec HasReebSpectralCoords.coords
+    (hasse_weil_bound Z)
 
 /-- The same, as the symmetry statement: each Reeb eigenvalue is fixed by the
     functional equation's involution on real parts. -/
 theorem reeb_spectrum_fixed_by_involution
-    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) [IsWeilZeta Z]
     {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
-    [HasReebSpectralCoords Z R]
-    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    [HasReebSpectralCoords Z R] :
     ∀ i, (R.spec i).re = 1 - (R.spec i).re := fun i =>
   (critical_line_iff_fixed (R.spec i)).mp
-    (reeb_spectrum_on_critical_line Z hq R hw i)
+    (reeb_spectrum_on_critical_line Z hq R i)
 
 
 /-! ## Is the hypothesis satisfiable?
