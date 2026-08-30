@@ -276,8 +276,15 @@ def main():
             "rank_among_all": 1 + sum(1 for o in others if o > v),
         }
     dm_arg = tuple(dm[0]["argmax_partition"])
-    verdict["argmax_shared_with_non_magic"] = any(
-        tuple(r["argmax_partition"]) == dm_arg for r in nm)
+    nm_args = [tuple(r["argmax_partition"]) for r in nm]
+    verdict["argmax_shared_with_non_magic"] = dm_arg in nm_args
+    # An UNSHARED argmax is only evidence if the non-magic configurations
+    # share one WITH EACH OTHER. If they are all distinct, "4He has its own"
+    # is the null expectation, not a signal -- the criterion is vacuous and
+    # must be reported as such rather than as a pass.
+    verdict["non_magic_argmax_agree"] = len(set(nm_args)) == 1
+    verdict["n_distinct_non_magic_argmax"] = len(set(nm_args))
+    verdict["argmax_criterion_informative"] = verdict["non_magic_argmax_agree"]
     verdict["doubly_magic_rank_deficient"] = len(dm[0]["rank_deficient"]) > 0
     verdict["any_non_magic_rank_deficient"] = any(len(r["rank_deficient"]) > 0 for r in nm)
     verdict["null_probability_of_an_extremum"] = 1.0 / len(rows)
@@ -289,6 +296,12 @@ def main():
               f"(max={d['is_max']}, min={d['is_min']})", flush=True)
     print(f"    argmax partition shared with a non-magic config: "
           f"{verdict['argmax_shared_with_non_magic']}", flush=True)
+    print(f"    non-magic argmaxes agree with each other: "
+          f"{verdict['non_magic_argmax_agree']} "
+          f"({verdict['n_distinct_non_magic_argmax']} distinct of {len(nm)}) "
+          f"-> argmax criterion is "
+          f"{'informative' if verdict['argmax_criterion_informative'] else 'VACUOUS'}",
+          flush=True)
     print(f"    4He rank-deficient: {verdict['doubly_magic_rank_deficient']}   "
           f"any non-magic rank-deficient: {verdict['any_non_magic_rank_deficient']}", flush=True)
     print(f"    P(an extremum | null) = 1/{len(rows)} = "
@@ -296,7 +309,8 @@ def main():
 
     qualitative = (verdict["doubly_magic_rank_deficient"]
                    and not verdict["any_non_magic_rank_deficient"]) or \
-                  (not verdict["argmax_shared_with_non_magic"])
+                  (verdict["argmax_criterion_informative"]
+                   and not verdict["argmax_shared_with_non_magic"])
     print(f"\n  QUALITATIVE separation (the only kind this control can support): "
           f"{qualitative}", flush=True)
 
