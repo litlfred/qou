@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T09:43:39Z
+updated_at: 2026-08-30T10:11:01Z
 parent: qou-mhj9
 ---
 
@@ -247,3 +247,47 @@ Derive w(z). Specifically: why does w rise from z = 1 to z = 2, and why does it
 turn over at the alpha particle? The corpus has a coordination story already
 (`CoordinationSaturation`, `bk-coordination-multiplicity`) whose contact with this
 is unexamined — that is the next place I would look, marked as judgement.
+
+
+## THE NEGATIVE HALF IS CLOSED (2026-08-30, PR #6173)
+
+Lean: `QOU/Mass/UniformBondSimpleGraphExclusion.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/coordination_weight_rise_and_turnover_probe.py` (4/4).
+Audit: `docs/audits/2026-08-30-why-w-rises-the-negative-half-is-closed.md`.
+
+**PROVED — the rise is NOT about which pairs bind.** For a uniform bond weight over
+a SIMPLE GRAPH, b3 = eps*(e3 - 3*e2) <= 0 always: a simple graph on 3 vertices has
+at most 3 edges, a bonded pair at least 1. No monotonicity, no cap, no relation
+between mass numbers. Case-(b) exclusion (the invariant is a proved counting bound).
+
+**Strictly stronger than CoordinationSaturation**, which checked two endpoints. In
+the w coordinate, a degree function gives w(z) = eps*d(z+1)/z, so complete => w
+constant => b3 = 0; bounded-degree => w ~ 1/z => b3 < 0; chain => b3 = -eps. An
+intermediate profile cannot rise at the bottom because d(3) <= 2 on any simple
+graph. **THE WHOLE COORDINATION-MULTIPLICITY FAMILY IS EXCLUDED** as a source of
+b3 > 0 — which answers the 'unexamined contact with CoordinationSaturation' I named
+as the next place to look. The contact exists and it is negative.
+
+**So the rise is non-transferability, and it is one number:**
+eps(2)/eps(1) = 1.2137076 — the bond is 21.4% stronger at coordination 2.
+
+**REFUTED — single-ratio (Markov-power) scaling, for EVERY r.** tr_{n+1} = z*tr_n
+makes a bond n-dependent, which is the right kind of mechanism; its simplest form
+eps(z) = eps(1)*r^(z-1) requires eps(2)/eps(1) = eps(3)/eps(2). Measured 1.2137 vs
+1.7467, **43.9% apart**. Convention-independent: a single ratio of ANY value cannot
+produce two ratios 44% apart. Scope-(a) — kills the family, not the mechanism.
+
+**REFUTED — same-orbital pair fraction** beyond A=7: <8% at A=5,6,7 with one
+normalisation, then 29.7% at A=9, 166% at A=16. Scope-(a).
+
+**SURVIVES — the turnover LOCATION.** Wigner SU(4)'s [1^n] has dim = C(4,n), which
+VANISHES for n >= 5, so the maximally-symmetric regime ends at A=4, where the peak
+is. Parameter-free. Caveats asserted in the witness: it LOCATES without SIZING, and
+rests on Wigner's symmetry-to-binding assumption, not derived here. NOTE this is a
+SUPPORT bound (C(4,n)=0), not the C(4,n)>0 positivity argument an earlier probe of
+mine made about a SIGN — that was wrong and is not reused.
+
+### STILL OPEN — one number
+Why eps(2)/eps(1) = 1.2137 (and eps(3)/eps(1) = 2.1200). Nothing tested predicts
+either. No magnitude is derived here; what changed is that a large family is gone
+from the search and the remainder is a single sharply stated quantity.
