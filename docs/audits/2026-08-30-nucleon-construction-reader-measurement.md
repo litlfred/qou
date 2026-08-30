@@ -164,3 +164,35 @@ a regenerated one.
 The correct sequencing is: regenerate `hadron-knot-table.witness.json` in an
 environment that can run the producer to completion, in the same change as the
 code. Until then the code change should not merge.
+
+---
+
+# CORRECTION 3 — the witness is ALREADY stale on main, so the blocker is not what I said
+
+The correction above concluded this change "is NOT safe to land" because it
+would make `hadron-knot-table.witness.json` stale. Measured, that framing is
+wrong in the way that matters: **the witness is already stale on `main`,
+independently of this change.**
+
+`tr_M(protium)` from the current tree is **1.1463376906350053**; the committed
+witness asserts **1.123183539266** — a 2.1 % disagreement in a published
+number. Verified not attributable to this branch by computing it **with the
+change stashed**: identical to the digit. Protium goes through
+`build_atom_nf`, which this branch does not touch.
+
+So the accurate statement is not *"landing this makes the witness stale"* but
+*"the witness is stale, and landing this makes three assertions stale instead
+of one"*.
+
+**The producer genuinely cannot regenerate here** — confirmed empirically
+rather than from the record. The three A=1 atoms complete in under 20 s; then
+deuterium runs indefinitely (killed after ~3.5 min of silence; AGENTS.md
+records a 50-minute run terminated by its own timeout, with 16 atoms after
+it). The witness is written once after all 19 atoms, so a partial run yields
+nothing.
+
+**Consequence.** Blocking a correct, thrice-cross-checked change behind a
+pre-existing defect it did not cause and cannot fix is the wrong trade. The
+change lands; the witness staleness is tracked as its own item (`qou-i7ju`)
+with the three routes that would actually clear it, and is stated wherever the
+witness is read.
