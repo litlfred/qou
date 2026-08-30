@@ -25,11 +25,10 @@ What is canonical here
                    /dashboard-low). α = E₀ = m_e / (q₀(q₀−1)).
   Z·m_e            electron rest mass, the CAL-1 anchor (M_E_MEV).
   e-Hartree scale  E_h = α_EM²·m_e c²; Rydberg Ry = E_h/2. α_EM here is the
-                   BARE derived value α_EM⁻¹ = q₀·[9]_q·[10]_q, computed at 60
-                   dps from Q_50_DIGIT_STR (mpmath end-to-end). The CS-corrected
-                   value (ALPHA_EM_INV_DERIVED ≈ 137.03594) exists only at
-                   float64 in pyhecke.constants and is recorded as a
-                   comparison parameter, never used in the mp arithmetic.
+                   CS-corrected derived value via pyhecke alpha_em_inv_mp
+                   (mp end-to-end since the 2026-08-30 float64 excision, bean
+                   qou-ozvb); the BARE α_EM⁻¹ = q₀·[9]_q·[10]_q is recorded
+                   alongside — their gap (~3.1e-3 rel on Ry) is the CS tower.
   capacity         neutral atom = Z electrons; hydrogenic shell sum Σ Z²·Ry/n²
                    with aufbau capacity 2n². Exact for Z = 1.
 
@@ -67,9 +66,8 @@ from codata_constants import (  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
-# CS-corrected α_EM (float64-only in pyhecke.constants; comparison parameter)
-from hecke_core import E_HARTREE_EV as _E_H_EV_F64  # noqa: E402
-from pyhecke.constants import ALPHA_EM_INV_DERIVED as _ALPHA_INV_CS_F64  # noqa: E402
+# CS-corrected α_EM at mp precision (float64 excised 2026-08-30, bean qou-ozvb)
+from pyhecke.constants import alpha_em_inv_mp, e_hartree_ev_mp  # noqa: E402
 
 ME = +M_E_MEV                      # CAL-1 (already mpf in the registry)
 MP_MEV = +M_P_MEV_VALIDATION       # CLASS-A validation anchor
@@ -86,10 +84,11 @@ def q_int(n: int):
 
 
 ALPHA_EM_INV_BARE = Q0 * q_int(9) * q_int(10)      # bare derived α_EM⁻¹, mp
-ALPHA_EM_BARE = 1 / ALPHA_EM_INV_BARE
+ALPHA_EM_INV_CS = alpha_em_inv_mp(50)               # CS-corrected, mp (canonical)
 ME_EV = ME * mpf(10) ** 6                           # m_e c² in eV, exact CAL-1
-E_H_EV = ALPHA_EM_BARE ** 2 * ME_EV                 # Hartree (bare α), eV, mp
-RY_EV = E_H_EV / 2                                  # Rydberg, eV, mp
+E_H_EV_BARE = ME_EV / ALPHA_EM_INV_BARE ** 2        # Hartree at bare α, eV, mp
+E_H_EV = e_hartree_ev_mp(50)                        # Hartree at CS α (canonical), mp
+RY_EV = E_H_EV / 2                                  # Rydberg (CS-corrected), eV, mp
 
 # Low-isotope set, mirroring /dashboard-low plus protium ¹H (A=1 showcase).
 ISOTOPES = [
@@ -154,10 +153,9 @@ def _n(x, d=50):
 def main() -> int:
     ame, ame_bind = _ame_tables()
     print(f"  LEVEL-6 ATOMIC ELECTRON LAYER   q0={_n(Q0, 17)}  alpha=E0={_n(ALPHA, 6)} MeV")
-    print(f"  bare 1/alpha_EM = q0*[9]_q*[10]_q = {_n(ALPHA_EM_INV_BARE, 12)}   "
-          f"(CS-corrected f64 comparison: {_ALPHA_INV_CS_F64:.10f})")
-    print(f"  E_Hartree(bare) = {_n(E_H_EV, 10)} eV   Ry = {_n(RY_EV, 10)} eV   "
-          f"(pyhecke f64 E_h: {_E_H_EV_F64:.6f} eV)")
+    print(f"  1/alpha_EM: bare {_n(ALPHA_EM_INV_BARE, 12)}  CS-corrected(mp) {_n(ALPHA_EM_INV_CS, 12)}")
+    print(f"  E_Hartree(CS,mp) = {_n(E_H_EV, 10)} eV   Ry = {_n(RY_EV, 10)} eV   "
+          f"(bare-route E_h: {_n(E_H_EV_BARE, 10)} eV)")
     print("  m_atom = m_sym(nucleus) + Z*m_e - E_e_binding   [bare-Z hydrogenic]\n")
 
     per_iso = {}
@@ -192,9 +190,9 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
     ry_codata = mpf("13.605693122990")  # CODATA-2022 Rydberg, eV (comparison)
-    ry_rel = abs(RY_EV - ry_codata) / ry_codata
-    ry_cs_f64 = mpf(repr(_E_H_EV_F64)) / 2  # CS-corrected route (f64-limited)
-    ry_cs_rel = abs(ry_cs_f64 - ry_codata) / ry_codata
+    ry_rel = abs(RY_EV - ry_codata) / ry_codata           # CS route (canonical)
+    ry_bare = E_H_EV_BARE / 2
+    ry_bare_rel = abs(ry_bare - ry_codata) / ry_codata    # bare route
     h = per_iso["1H"]
     h_ele_kev = abs(mpf(h["delta_electron_kev"]))
 
@@ -213,14 +211,15 @@ def main() -> int:
     wb.add_parameter("q0Anchor", "proton")
     wb.add_parameter("alpha_E0_mev", _n(ALPHA))
     wb.add_parameter("alpha_em_inv_bare", _n(ALPHA_EM_INV_BARE))
-    wb.add_parameter("alpha_em_inv_cs_f64_comparison", repr(_ALPHA_INV_CS_F64))
-    wb.add_parameter("E_hartree_ev_bare", _n(E_H_EV))
-    wb.add_parameter("rydberg_ev_bare", _n(RY_EV))
+    wb.add_parameter("alpha_em_inv_cs_mp", _n(ALPHA_EM_INV_CS))
+    wb.add_parameter("E_hartree_ev_cs_mp", _n(E_H_EV))
+    wb.add_parameter("rydberg_ev_cs_mp", _n(RY_EV))
+    wb.add_parameter("E_hartree_ev_bare", _n(E_H_EV_BARE))
     wb.add_data("per_isotope", per_iso)
     wb.add_data("rydberg_codata_2022_ev", _n(ry_codata))
-    wb.add_data("rydberg_bare_vs_codata_rel", _n(ry_rel))
-    wb.add_data("rydberg_cs_f64_ev", _n(ry_cs_f64))
-    wb.add_data("rydberg_cs_f64_vs_codata_rel", _n(ry_cs_rel))
+    wb.add_data("rydberg_cs_mp_vs_codata_rel", _n(ry_rel))
+    wb.add_data("rydberg_bare_ev", _n(ry_bare))
+    wb.add_data("rydberg_bare_vs_codata_rel", _n(ry_bare_rel))
     wb.add_assertion(
         "h_shell_binding_equals_rydberg",
         _n(e_binding_hydrogenic_ev(1)),
@@ -230,18 +229,18 @@ def main() -> int:
         source="structural: Z=1, single 1s electron, bare-Z hydrogenic sum = Ry exactly",
     )
     wb.add_assertion(
-        "rydberg_bare_vs_codata_rel",
+        "rydberg_cs_mp_vs_codata_rel",
         _n(ry_rel),
         "0",
-        tolerance="5e-3",
-        source="bare-alpha route (q0*[9]_q*[10]_q, mp-exact) vs CODATA-2022 Ry; the ~3.1e-3 gap IS the CS-tower correction the bare route omits",
+        tolerance="2e-6",
+        source="CS-corrected mp route (pyhecke alpha_em_inv_mp + CODATA m_e; float64 excised, bean qou-ozvb) vs CODATA-2022 Ry; the ~9.4e-7 residual is the structural alpha_EM gap (-468 ppb, doubled)",
     )
     wb.add_assertion(
-        "rydberg_cs_f64_vs_codata_rel",
-        _n(ry_cs_rel),
+        "rydberg_bare_vs_codata_rel",
+        _n(ry_bare_rel),
         "0",
-        tolerance="1e-5",
-        source="CS-corrected route (pyhecke ALPHA_EM_INV_DERIVED, float64-limited, rounded 511000.0 eV m_e) vs CODATA-2022 Ry",
+        tolerance="5e-3",
+        source="bare-alpha route (q0*[9]_q*[10]_q) vs CODATA-2022 Ry; the ~3.1e-3 gap IS the CS-tower correction the bare route omits",
     )
     wb.add_assertion(
         "h_atomic_electron_residual_kev",
@@ -255,12 +254,12 @@ def main() -> int:
         "Bare-Z hydrogenic shell sum: no inter-electron screening (Z_eff open); "
         "over-binds He/Li at the eV scale. Nuclear side uses CODATA validation "
         "masses (CLASS-A acknowledged anchor). The CS-corrected alpha_EM tower "
-        "exists only at float64 in pyhecke.constants (and its E_HARTREE_EV uses "
-        "a rounded 511000.0 eV electron mass) — recorded as comparison only."
+        "and E_Hartree are mp end-to-end as of 2026-08-30 (pyhecke float64 "
+        "excised, bean qou-ozvb; the rounded 511000.0 eV m_e is gone)."
     )
     out = wb.save()
     print(f"\n  witness: {out}")
-    print(f"  Ry(bare) vs CODATA rel: {_n(ry_rel, 6)}   "
+    print(f"  Ry(CS,mp) vs CODATA rel: {_n(ry_rel, 6)}   "
           f"1H delta_electron: {_n(h_ele_kev, 6)} keV")
     return 0
 
