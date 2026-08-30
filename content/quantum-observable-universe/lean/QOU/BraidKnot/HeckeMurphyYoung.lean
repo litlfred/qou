@@ -3,6 +3,7 @@ import QOU.BraidKnot.Specht
 import QOU.BraidKnot.ColSuperstandardTableau
 import QOU.BraidKnot.HeckeCellular
 import QOU.BraidKnot.HeckeTypeAPresentationEquiv
+import QOU.Mathlib.SchenstedRSKBurnside
 
 /-!
 # QOU.BraidKnot.HeckeMurphyYoung — Murphy's `x_λ` over the *actual* Young subgroup
@@ -150,5 +151,38 @@ noncomputable def murphyM {μ : YoungDiagram} (h : QOU.BraidKnot.Specht.nOf μ =
   (antiAutTw K q n (Tw K q n (dAt n h s))).unop
     * murphySum K q n {w | w ∈ youngSubgroup n h t}
     * Tw K q n (dAt n h t)
+
+/-! ## Toward (C1): the Murphy family has exactly the right size
+
+Cellular axiom (C1) asks that `{m_{st}}`, indexed by **pairs of standard tableaux of the same
+shape**, be a **basis** of `H_n(q)`. A basis claim is two claims — spanning and independence —
+but for a finite family in a finite-dimensional space, either one plus a **cardinality match**
+gives the other. So the cheap half is worth isolating.
+
+Both ingredients already exist in this corpus, and neither had to be built:
+
+* `QOU.Mathlib.rskBurnsideHolds` — `∑_{p ⊢ n} (#SYT p)² = n!`, the RSK/Burnside identity, proved
+  for **every** `n` from a Robinson–Schensted correspondence built in-repo (the pinned Mathlib has
+  no RSK). That sum counts exactly the pairs `(s,t)` of standard tableaux of a common shape — the
+  Murphy index set.
+* `QOU.Hecke.TwBasis.finrank_eq_factorial` — `dim_K H_n(q) = (n+1)!`, transported to the other
+  presentation on #6158 as `basisTwOfSn`.
+
+Putting them together is two lines, and the content is worth stating plainly: **the Murphy family
+is not over- or under-counted.** (C1) therefore reduces from *"is a basis"* to *"spans"* **or**
+*"is independent"* — whichever is easier — with the other following by dimension count. That is a
+real reduction of the remaining work, obtained entirely from results the corpus already held.
+-/
+
+/-- **The Murphy index set has exactly `dim_K H_n(q)` elements.**
+
+The left side counts pairs of standard tableaux of a common shape — the `(s,t)` indexing
+`murphyM` — via the RSK/Burnside identity; the right is the Hecke algebra's dimension. Their
+agreement is what makes (C1) a one-sided question. -/
+theorem murphyIndex_card_eq_finrank :
+    ∑ p : Nat.Partition (n + 1), (QOU.Mathlib.dimSYT p) ^ 2
+      = Module.finrank K (QOU.Hecke.IwahoriHecke K q n) := by
+  rw [QOU.Hecke.TwBasis.finrank_eq_factorial K q n]
+  exact QOU.Mathlib.rskBurnsideHolds (n + 1)
 
 end QOU.BraidKnot.HeckeMurphyYoung
