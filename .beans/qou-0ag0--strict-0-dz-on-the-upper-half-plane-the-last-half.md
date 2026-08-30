@@ -1,11 +1,11 @@
 ---
 # qou-0ag0
 title: STRICT 0 < D(z) on the upper half plane — the last half of qou-f8lit item 3
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:30:07Z
-updated_at: 2026-08-30T14:30:49Z
+updated_at: 2026-08-30T14:54:38Z
 ---
 
 Splits off the remaining half of `qou-f8lit` item 3. The **non-strict** `0 ≤ D(z)` landed
@@ -60,3 +60,49 @@ proves `exists_isMaxOn_angleSimplex` by pushing the maximiser off the boundary w
 exactly these two facts. Whether the same compactness argument gives a *positive lower
 bound* on the interior — rather than only locating the max — is not established here and
 should be checked first; if it does, it is likely the cheaper route.
+
+
+---
+
+## 2026-08-30 — CLOSED, and the route this bean predicted was the expensive one
+
+`QOU/Archimedean/BlochWignerPositive.lean` and `QOU/MathlibExt/ManifoldVolumePositive.lean`
+(#6263), all six declarations `lean`-direct exit 0 and axiom-clean:
+
+    lob_sum_pos             0 < Λα + Λβ + Λγ
+    volume_pos              0 < T.volume
+    blochWigner_lob_pos     0 < D(z)  for  0 < z.im
+    triangulation_volume_pos  0 < n → 0 < T.volume
+    vol_pos_of_realises       0 < n → Realises T m → 0 < vol m
+    vol_ne_zero_of_realises
+
+**Correcting this bean's own prediction.** It said the cost would be in *"hitting the
+boundary — constructing the two exit points of a line through an arbitrary interior point
+and showing each lands in `closedSimplex ∖ angleSimplex`"*, and told the next agent to
+budget for that. **None of it was needed.** Keep both chord endpoints strictly *interior*,
+at `t = ∓ε` with `ε = min(α, γ)/2`, and bound them below with the **non-strict**
+`lob_sum_nonneg` — their angle triples are still positive and still sum to `π`. The target
+is the midpoint, so strict concavity does the rest. The strictness comes from the
+concavity, not from the endpoint values, so the endpoints never need to be the places
+where the sum vanishes.
+
+`volChart_eq_zero_of_not_mem` — the boundary-vanishing lemma this bean identified as the
+load-bearing input — is **not used at all**.
+
+**Third instance of the same error class in one session**, and worth naming as such:
+
+| claim | where | what was actually true |
+|---|---|---|
+| `qou-f8lit` item 2 "blocked on 16-digit bounds", then "blocked by the method" | the bean | the chord route never approximates a constant; no digit bound needed |
+| "strictness needs the angles bounded away from the corners, or a strict subadditivity" | `BlochWignerNonneg` header, written the same day | needs neither |
+| "the cost is in constructing the boundary exit points" | this bean | the boundary is never touched |
+
+Each named an obstacle to the *route being attempted* and stated it as an obstacle to the
+*problem*. All three were mine, and all three would have sent the next agent the long way
+round.
+
+**Downstream payoff.** `MathlibExt/ManifoldVolumeBridge.lean` deliberately declines to
+carry positivity as a fourth class field, calling the alternative *"the easy and dishonest
+move"*. That judgement is **vindicated**: it was derivable, so assuming it would have been
+assuming a theorem. Note the genuine side condition — `0 < n` cannot be dropped, because
+`IdealTriangulation 0` is legitimate and its volume is the empty sum.
