@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T14:35:46Z
+updated_at: 2026-08-30T14:46:07Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3466,3 +3466,74 @@ the replacement is dictated by the multiplicative grading rather than chosen.
 `Pi(1 + c_k (u*Vhat)^k)` reproduce the known structural rung `c_2 = -1`? That is
 a derivation check against an already-proved value, not a fit to experiment — if
 it fails, the forced form is wrong and this route closes too.
+
+
+
+## The forced form, worked through: BLOCKED on the N=1 phase — not refuted (PR #6244)
+
+Probe: `computations/qbeta/qbeta_d_forced_form_derivation_probe.py`, 6/6. Two of
+the three findings are corrections to my own plan.
+
+### 1 — my proposed test does NOT discriminate
+
+The previous entry said the next check was whether the forced form reproduces
+the proved `c_2 = -1`, and called that falsifying. **It is not.** `c_2 = -1`
+comes from `N2_factor = 1 - b^2*hbar^4 = 1 - u^2`; its content is that the N=2
+factor has the SHAPE `1 - x^2`, and the `x^2` coefficient of `1 - x^2` is `-1`
+for ANY `x`. So `u -> u*Vhat` preserves it trivially. A consistency check, not
+evidence. Recorded because I claimed otherwise one entry ago.
+
+### 2 — convergence is not broken
+
+At the proton pin: `u = 0.0085172`, `Vhat_D = 1.1280887`,
+`u*Vhat = 0.0096082` — same order, 1.128x. The route does not die on numerics.
+
+### 3 — but it cannot be tested against Q_beta. This is the terminus.
+
+    Q_beta = Q_A * cos(alpha_eff) * Pi_{k>=2}(1 + c_k u^k)
+
+The forced form replaces only the PRODUCT. The N=1 factor is `cos(alpha_eff)`,
+and **entry 7 of this arc** showed that under D the bar-ODD slot is
+structure-free — so no cos-of-a-bar-odd-phase exists to play that role.
+Confirmed against the committed cache: its only DERIVED rung is `k = 2`
+(`k = 3` is tier `cal-anchored`, i.e. extracted from experiment).
+
+So the forced product refines a leading term that **does not exist** under D. No
+D-frame Q_beta is computable from it — not because the comparison would be a
+fit, but because there is nothing to compare.
+
+### Derivable anyway, and not nothing
+
+Rung `k` scales by `Vhat^k`, so the `k=2` rung — the ONLY one the corpus derives
+rather than extracts — is `Vhat^2 = 1.2726x` larger under the forced form.
+**+27.3%**, stated without any fit.
+
+### Status
+
+**NOT refuted. BLOCKED**, on the N=1 phase, by a blocker this arc established
+itself. Naming which of two open pieces gates the other is progress; claiming
+the form confirmed would not be.
+
+### The arc, closed out — nine entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT form is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+  9. That forced product is BLOCKED on (7) — it refines a leading term that
+     does not exist.
+
+**The single open item this arc leaves is sharp: what replaces `cos(alpha_eff)`
+as the N=1 factor under D?** Everything else is either settled or downstream of
+it. (7) says it is not a cosine of a bar-odd phase; (3) says the frame is
+multiplicative/log; (4) says `u*Vhat` is the available invariant. A candidate
+must be bar-invariant, must reduce to `cos(alpha_eff)` in the C limit, and must
+absorb the `h^2/2` defect of (6) — three conditions, all stated, none yet met.
+
+That is a better-posed question than the one this arc started with, and it is
+the honest end of what I can derive without either a new structural input or a
+fit.
