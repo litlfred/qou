@@ -4,7 +4,9 @@ import QOU.Hecke.FullRank
 /-!
 # `WedderburnDecomp` does not characterise `H_n(q)` — an instance would prove nothing
 
-**Bean `qou-luq7`, answered in the negative.**
+**Bean `qou-luq7`, answered in the negative.** Re-verified against the
+repaired class 2026-08-30 (bean `qou-0cyu`); see "The repair ... does not close
+the hole" below.
 
 ## The question this module settles
 
@@ -32,10 +34,33 @@ so it inherits the hole through its own hypothesis.
 Every remaining field then goes through on `ℚ` for structural reasons, not by
 any dodge: `central` because `ℚ` is commutative; `idempotent` and `orthogonal`
 because the family `π_λ = if λ = λ₀ then 1 else 0` is supported at one
-partition; `complete` because that one value is `1`; and `trace_decomp` because
-— as `QOU/QBeta/WedderburnTraceDecomposition.lean` already records — the
-weighted sum follows from `complete` alone once `y_λ` is unconstrained, and
-`y_λ` *is* unconstrained: it appears in no other field.
+partition; `complete` because that one value is `1`; and `block_scaling`
+because the block character `χ^λ` is *itself* a free field of the class, so
+`tr_M(x · π_λ) = y_λ · χ^λ(x)` constrains only the **product** `y_λ · χ^λ` —
+choose `χ^λ` to absorb whatever `y_λ` you picked.
+
+## The repair this module originally asked for has landed, and does not close
+the hole
+
+The first version of this file (2026-08-21) named a specific repair: replace
+the old `trace_decomp` field — which asserted the summation identity outright
+— with the block-scaling sentence `tr_M(x · π_λ) = y_λ · χ^λ(x)`, "so that
+`y_λ` is pinned and `trace_decomp` can be deleted rather than assumed".
+
+That repair landed in PR #5710 (commit `30e5df8938`), and it is a real
+improvement: `trace_decomposition` is now *derived* from `complete` +
+`block_scaling` rather than projected out of an axiom, and the pair of
+theorems `weights_inert` / `weight_one_or_block_trace_zero` that the old field
+forced are gone with it.
+
+**But it does not pin `y_λ`, and this module now proves that too.** The class
+stores the blocks abstractly, so `χ^λ` had to come in as a field alongside
+`y_λ`; an equation on their product pins neither factor. `rankOneWedderburnScaled`
+below realises **every** nonzero rational as the weight at every partition,
+under an otherwise unchanged witness. So the degeneracy survives the repair,
+and the reason it survives is the same reason the repair was needed: what the
+class stores is not enough to compute the block character from, so the
+character is assumed, and an assumed character can absorb an assumed weight.
 
 ## What this module does and does not claim
 
@@ -50,19 +75,31 @@ exclusion (b)**, and the invariant cited is a dimension count —
 "an instance of the class as it stands is worth building", not the Wedderburn
 decomposition itself.
 
-## What would have to change
+## What would have to change (revised 2026-08-30)
 
-Pair the class with the rank predicate exactly as `HeckeAlgebra` was paired:
+Pairing the class with the rank predicate is still necessary:
 
 ```
 variable [HeckeAlgebra R n q A] [IsHeckeOfFullRank R n A] [WedderburnDecomp n q A]
 ```
 
-and encode the block-scaling sentence `tr(x · π_λ) = y_λ · χ_λ(x)` — present in
-the class docstring, absent from its fields — so that `y_λ` is pinned and
-`trace_decomp` can be deleted rather than assumed
-(`QOU/QBeta/WedderburnTraceDecomposition.lean` derives the sum from that
-hypothesis). Only then does an instance carry content.
+It is no longer *sufficient*, and the block-scaling half of the original
+prescription has been tried. Two things would additionally have to hold:
+
+1. **`χ^λ` must stop being a free field.** It has to be *computed* — as the
+   trace of a matrix representation `ρ_λ : A → M_{f^λ}(R)`, which is the
+   content the header docstring promises ("the matrix-algebra isomorphisms are
+   captured abstractly") and the class does not carry. Only a `χ^λ` that is
+   determined by the algebra makes `block_scaling` an equation about one
+   unknown.
+2. **`f^λ` must be tied to the partition.** `SpechtDimension` is a class with a
+   free `dim` field and no link to `lam`; the hook-length formula is stated in
+   its docstring and encoded nowhere. Without it there is no dimension count to
+   contradict, which is why the exclusion below has to be argued from
+   `Module.finrank ℚ ℚ` rather than from anything the class says.
+
+Both are Mathas (1999) Theorem 3.43 — the seminormal form and its indexing by
+`Partition n` — and neither is in Mathlib.
 
 ## References
 
@@ -157,16 +194,55 @@ theorem rankOne_finrank_ne_factorial {n : ℕ} (hn : 2 ≤ n) :
       _ ≤ n.factorial := Nat.factorial_le hn
   omega
 
-/-- **`y_lambda` is unconstrained.** The class's only use of `y_lambda` is in
-`trace_decomp`, and that field follows from `complete` alone once the weights
-may be chosen — here they are all `1`. Stated as the concrete fact that the
-witness above assigns weight `1` to every partition, including at ranks where a
-genuine Ocneanu weight is not `1`.
-
-This re-confirms, on the merged class rather than in the abstract, what
-`QOU/QBeta/WedderburnTraceDecomposition.lean` records: the weighted summation
-identity was never the thing that needed assuming. -/
+/-- **The witness assigns weight `1` at every partition**, including at ranks
+where a genuine Ocneanu weight is not `1`. The `c = 1` case of
+`yLambda_not_pinned` below, kept separately because it is the weight the
+default witness above carries. -/
 theorem rankOne_yLambda_all_one (n : ℕ) (lam : Partition n) :
     (rankOneWedderburn n).y_lambda lam = 1 := rfl
+
+open Classical in
+/-- **The same witness at an arbitrary nonzero weight.** Identical to
+`rankOneWedderburn` except that `y_λ ≡ c` and the block character is rescaled
+by `c⁻¹` to compensate. This is a `def`, not an `instance`: registering a
+`c`-indexed family would make typeclass search ambiguous, and the point is made
+by exhibiting it, not by having it found. -/
+noncomputable def rankOneWedderburnScaled (n : ℕ) (c : ℚ) (hc : c ≠ 0) :
+    WedderburnDecomp (R := ℚ) n 1 ℚ where
+  pi_lambda := fun lam => if lam.parts = (lam0 n).parts then (1 : ℚ) else 0
+  idempotent := by
+    intro lam; by_cases h : lam.parts = (lam0 n).parts <;> simp [h]
+  orthogonal := by
+    intro lam mu hne
+    by_cases hl : lam.parts = (lam0 n).parts
+    · by_cases hm : mu.parts = (lam0 n).parts
+      · exact absurd (hl.trans hm.symm) hne
+      · simp [hm]
+    · simp [hl]
+  central := by intro lam a; exact mul_comm _ _
+  y_lambda := fun _ => c
+  all_parts := {lam0 n}
+  complete := by rw [Finset.sum_singleton]; simp
+  chi_lambda := fun lam x => if lam.parts = (lam0 n).parts then c⁻¹ * x else 0
+  block_scaling := by
+    intro x lam
+    by_cases h : lam.parts = (lam0 n).parts <;>
+      simp [h, rankOneMarkov, ← mul_assoc, mul_inv_cancel₀ hc]
+
+/-- **`block_scaling` does not pin `y_λ`.** Every nonzero rational is realised
+as the weight at every partition, by a witness that satisfies the whole class.
+
+This is the sharper form of the module's claim, and it is what distinguishes
+the current class from the one this file was written against. The 2026-08-21
+version could say only that `y_λ` "appears in no other field"; PR #5710 gave it
+another field, and it is still not pinned, because `chi_lambda` is free too and
+absorbs the rescaling. An equation on a product of two unknowns pins neither.
+
+Consequence for the audit: an instance of `WedderburnDecomp` still carries no
+information about the Ocneanu weights, so it cannot be evidence for
+`prop:y-lambda-recipe-from-partition` or anything downstream of it. -/
+theorem yLambda_not_pinned (n : ℕ) (c : ℚ) (hc : c ≠ 0) :
+    ∃ WD : WedderburnDecomp (R := ℚ) n 1 ℚ, ∀ lam, WD.y_lambda lam = c :=
+  ⟨rankOneWedderburnScaled n c hc, fun _ => rfl⟩
 
 end QOU.Hecke.RankOneDegeneracy
