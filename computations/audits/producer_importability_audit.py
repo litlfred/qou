@@ -60,6 +60,26 @@ everything except this audit's own witness:
 The `heavy-at-import` class this reports IS that population, so a nonzero
 count there is advance warning that the run dirtied the tree.
 
+🛑 DO NOT DATE ANYTHING IN THIS REPO WITH `git log` (added 2026-08-30).
+
+Agent clones here are SHALLOW. `git rev-parse --is-shallow-repository` returns
+true, and every change predating the graft is attributed by `git log -- <file>`
+and `git log -L` to the boundary commit `cdb64587b8`, which has NO PARENTS
+(`git rev-list --count cdb64587b8` -> 1) and reports "41473 files changed,
+14448426 insertions" — the graft, not a diff.
+
+Cost of not knowing that, on this very audit: the 2026-08-30 re-run found this
+witness's largest class (`pyhecke`, 35) drained, asked git when, was told
+2026-08-24 by `git log -L` on `computations/_path_bridge.py`, and published
+"drained five days after this audit as a side effect of a float64 commit" in a
+commit message and a PR comment. All of that was the graft answering. The DRAIN
+is real and measured by execution; the DATE and the CAUSAL STORY were not
+measured at all and are withdrawn.
+
+The general rule: in this clone, `git log` can tell you a file changed within
+the fetched window, and nothing whatever about anything older. Measure by
+running; attribute only what you ran.
+
 SCOPE. This is a DETECTOR. It fixes nothing and does not claim the 90 are all
 defects — the optional-dep class in particular is a fact about the environment.
 Draining the in-repo-wiring class is separate work.
