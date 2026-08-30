@@ -1,11 +1,11 @@
 ---
 # qou-br3w
 title: 'Formalise Thue-Siegel-Roth: the one unformalised input the trajectory lane takes as a hypothesis'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T10:49:19Z
-updated_at: 2026-08-30T07:27:59Z
+updated_at: 2026-08-30T15:05:53Z
 ---
 
 
@@ -1192,3 +1192,46 @@ estimate -- not_approximable_of_nsmul_eq already does the analytic half.
 The roast's R0 is the reason this is not marked completed. "Roth's theorem is proved" was the claim
 I made; "Roth's theorem for psi(alpha_0), in height form" is what is true. Closing the bean on the
 first sentence would bury the second.
+
+## 2026-08-30 (close) -- DONE. Roth's theorem, classical form, for every real algebraic number.
+
+    #print axioms MvPolynomial.finite_approximations_of_isAlgebraic
+      -> [propext, Classical.choice, Quot.sound]
+
+|x - p/q| <= q^{-(2+eps)} has only FINITELY MANY rational solutions, for any real algebraic x and
+any eps > 0. Nothing in the cone is sorry'd, Roth's Lemma included.
+
+Steps 1-5 merged as 9c5ee67c4b (PR #6096) in HEIGHT form for psi(alpha_0); the three remaining
+distances to the classical statement closed on qou-mjbr (PR #6256).
+
+WHY THIS BEAN STAYED OPEN AFTER #6096 MERGED, and why it closes now. At the merge I reported "Roth's
+theorem is proved" and the roast (R0) found that overstated: it was Roth for psi(alpha_0), an
+algebraic INTEGER, in height form, and the height-vs-denominator gap had never appeared in any
+commit message. Closing then would have buried that. It is now actually true, so it closes.
+
+THE ARC'S THREE STRUCTURAL FINDINGS, for anyone reading this later:
+
+  1. STEPS 1 AND 3 DO NOT COMPOSE. Step 1 over O_K yields MvPolynomial (Fin m) (O_K); step 3 needs
+     MvPolynomial sigma Z through InRothPolySet. Route A (integer auxiliary polynomial via Mathlib's
+     SiegelsLemma) was taken over Route B (Roth's Lemma over O_K, which needs Northcott in place of
+     a box count). The O_K half is the honest step 2 for an O_K polynomial and is documented as off
+     the critical path rather than left looking load-bearing.
+
+  2. hbound IS NOT CIRCULAR, and the resolution is a FLOOR, not a fixed point. The threshold
+     C_0^{mq} W^{2m^2q} mentions none of the produced data, so it goes in as the selection's floor
+     parameter T and comes back out of T <= H_j. Getting there needed the doubled unknowns threshold
+     (2 deg alpha < 4 eps^2 m, so Siegel's exponent is <= 1 and not merely finite) and dropping
+     logarithms entirely.
+
+  3. slack_pos IS THE WRONG BUDGET for this chain. It balances the additive shape; this chain
+     produces (2+delta)(1-eta) against (1+eta), so eta appears TWICE WITH OPPOSITE SIGNS. Reusing
+     the additive form would have been an error nothing could catch, because both are true
+     statements. fin_of_slack is the right one: t(16+5delta) < delta.
+
+AND THE PROCESS FINDING, which cost more than any of the above: three of the roast's six findings
+were REPORTING defects, not proof defects -- an overclaimed headline, a gate reported green over the
+wrong repo, and a build reported "0 errors" when the honest status was NOT RUN. The Lean is checked
+by a machine that cannot be talked into agreeing; the prose around it is checked by nobody.
+
+Children: qou-qi0t, qou-86j4, qou-jm52, qou-ujl8, qou-4lbh, qou-mjbr -- all closed. qou-9zh3 (opened
+by the roast, fixed) is unrelated to Roth.
