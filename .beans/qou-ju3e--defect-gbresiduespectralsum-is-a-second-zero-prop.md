@@ -1,11 +1,11 @@
 ---
 # qou-ju3e
 title: 'DEFECT: GBResidueSpectralSum is a second zero-Prop-field carrier, in mass-theory'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:27:51Z
-updated_at: 2026-08-30T05:27:20Z
+updated_at: 2026-08-30T09:25:26Z
 ---
 
 `content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:87`
@@ -127,3 +127,51 @@ what the fields actually say. Both are honest; the first is better. **Do not** a
 
 Still unmeasured, as before: whether anything downstream takes
 `[GBResidueSpectralSum]` as a hypothesis and concludes something.
+
+
+---
+
+## RESOLVED 2026-08-30
+
+Fixed what survived the retraction. Commit: *"the field docstrings now say what the
+fields encode, and what they do not"*.
+
+- **`gradedTrace`** and **`residue`** docstrings now mark their intended meanings as
+  **INTENDED and NOT ENCODED**, and name the infrastructure the module header already
+  defers (GS filtration, Habiro ring). In particular the `residue` docstring now says
+  outright that nothing relates it to `gradedTrace`, despite the prose having claimed
+  one is computed from the other.
+- **`spectral_decomposition`**'s docstring now records what it buys: it constrains
+  `mass`, but `mass` is itself a free field, so any tuple inhabits the class — set
+  `mass := |descended| + ∑ residue ℓ` and discharge by `rfl`.
+
+Docs only; the Lean is unchanged and compiles (exit 0). Encoding the relationships for
+real needs the deferred infrastructure, so this is honesty about the gap, not a
+weakening of anything.
+
+**Sidecar refreshed** via `qa-sweep` (the `.lean` edit drifted `source_hashes.lean`);
+mechanical criteria re-run, agent-judgement ones marked `needs-agent` as expected.
+
+### Found while here, and deliberately NOT touched: `spectral_sum_finite`
+
+```lean
+theorem spectral_sum_finite (S : GBResidueSpectralSum R) :
+    ∃ N, ∀ ℓ ≥ N, ∀ (h : ℓ < S.levelBound), S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound
+```
+
+proved by `Or.inr h` — the second disjunct **is** the hypothesis, so the goal is
+`P ∨ P` given `P`. A genuine tautology under §"No trivial trues".
+
+Left alone for two reasons, both checked:
+
+1. **It is a *knowing* tautology.** The content block's own `.md` says so:
+   *"Cast as a tautology over the compact domain `Fin levelBound` … The substantive
+   claim is that `levelBound` correctly represents the confinement level."* That is
+   exactly the honest labelling the discipline asks for.
+2. **It is the `lean.ref` of `conj:gs-spectral-sum-finite`.** Deleting it breaks a
+   content block, which is not a drive-by fix.
+
+The real content — that residues vanish above the confinement level — is carried by the
+*type* `Fin levelBound`, so there is nothing left for a theorem to say. If anyone wants
+this cleaned, the move is to retire the block or restate it around what `levelBound`
+means, not to patch the proof.
