@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T04:38:31Z
+updated_at: 2026-08-30T04:41:33Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -877,3 +877,44 @@ scratch copy of the theorem was still in it, so the next run failed with
 "`qTrWith_tensor_monodromy` has already been declared" — which reads like a Lean problem and is not.
 Rebuild the scratch base from `git show HEAD:<path>`, never from the working tree, and assert the
 theorem name is absent.
+
+
+🛑 MY OWN HARNESS HYPOTHESIS IS FALSIFIED. Recorded because I stated it as the likely fix.
+
+I predicted that unfolding `monoidalComp` in the prefix was what prevented the slide lemmas and
+`monoidal` from bridging the cup to the braiding — reasoning that `⊗≫` is absorbable and raw
+coherence isos are not, so KEEPING `⊗≫` should let them fire. Tested directly.
+
+Prefix without `monoidalComp` (the `⊗≫` survives, and the goal IS much cleaner):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      Category.assoc, Category.id_comp, Category.comp_id, MonoidalCategory.comp_whiskerRight]
+
+    ⊢ (η_X ⊗≫ X ◁ η_Y ▷ X' ⊗≫ 𝟙) ≫ β_{X,Y} ▷ (Y'⊗X') ≫ β_{Y,X} ▷ (Y'⊗X')
+        ≫ (g⊗ₘh) ▷ (Y'⊗X') ≫ β_{X⊗Y, Y'⊗X'} ≫ 𝟙 ⊗≫ Y' ◁ ε_X ▷ Y ⊗≫ ε_Y
+
+From that state, ALL of these still fail:
+
+    simp [braiding_slide_cup_right, braiding_slide_cap_right, braiding_slide_cap_right_inv,
+          monoidalComp]
+    rw [braiding_slide_cup_right]
+    monoidal
+
+So the `⊗≫`-vs-unfolded distinction is NOT the blocker. THIRTY-THREE approaches ruled out. The
+slide lemmas do not match this goal even in their own native notation, which means the earlier
+inference "a ⊗≫-phrased lemma cannot fire as a rewrite" was RIGHT about the mechanism but the
+proposed remedy (keep ⊗≫) does not follow from it — matching needs the surrounding term to be
+literally the lemma's LHS, and padding alone does not produce that.
+
+WHAT THIS LEAVES. The three lemmas (hrec, hgrp, hdet) are all verified and the mathematics is
+complete; what is unsolved is purely getting Lean to see the pattern. Every remedy tried has been a
+variation on "make the rewrite fire". The remaining honest option is the one never actually
+attempted: write the full `calc` with each intermediate term SPELLED OUT, discharging each step with
+`monoidal`, rather than trying to steer the goal into a lemma's shape. That is what
+`tensorExactPairing`'s own snake proofs do, and it is laborious precisely because the terms must be
+written by hand.
+
+SIXTH superseded plan of mine on this bean. The pattern is now unmistakable and worth stating
+plainly for whoever picks this up: my predictions about WHICH REWRITE WILL FIRE have been wrong
+essentially every time, while my measurements of what DID fire have all held. Trust the printed goal;
+do not trust a plan — including this entry's.
