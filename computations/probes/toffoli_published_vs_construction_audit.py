@@ -317,7 +317,23 @@ def main() -> int:
         "yields -0.0467 rather than Phi = +0.0495. Blocks the convention-D migration of "
         "Phi, P_66 and P_67 -- P_77 is unaffected and stays derived."
     )
-    w.save()
+    # q₀ stamp (bean qou-sal4). Verified by RESOLVING this file's imports,
+    # not by grep: the only non-stdlib imports are `_path_bridge` (a sys.path
+    # shim), mpmath, sympy, `_precision.set_compute_dps` (sets dps only) and
+    # `witness_base.WitnessBuilder` (the writer). None carries a substrate q₀,
+    # and there is no q₀ literal in the file. Everything here is a symbolic
+    # identity in the free variable q — a published Toffoli closed form checked
+    # against the construction — so there is no pin for a re-pin to move.
+    w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no substrate q₀: no q_parameter / Q_MP / q_at import, no "
+            "pinning-witness read, and no q₀ literal. The audit is symbolic in "
+            "the free variable q (published Φ closed form vs the construction); "
+            "nothing is evaluated at a pin, so the result is identical under "
+            "every anchor. Not 'ambiguous' — there is nothing undetermined here."
+        ),
+    })
     return 0 if gates_ok else 1
 
 

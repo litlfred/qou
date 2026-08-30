@@ -281,7 +281,20 @@ def main() -> int:
         "derived honestly, P_67 != -P_76 in both conventions. P_77 and the q->1 "
         "vanishing survive. Supplies the derived replacements for P_66, P_67, P_76."
     )
-    w.save()
+    # q₀ stamp (bean qou-sal4). Verified by RESOLVING imports, not by grep:
+    # only `_path_bridge` (sys.path shim), sympy and `witness_base` — none
+    # carries a substrate q₀, and the file holds no q₀ literal.
+    w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no substrate q₀: no q_parameter / Q_MP / q_at import, no "
+            "pinning-witness read, no q₀ literal. The re-derivation is symbolic "
+            "in the free variable q. NOTE the two convention assertions "
+            "(antisymmetry_is_FALSE_convention_C / _D) are symbolic Markov-frame "
+            "comparisons, NOT anchor choices — they evaluate no pin either. "
+            "Not 'ambiguous': nothing here is undetermined."
+        ),
+    })
     return 0 if gates else 1
 
 

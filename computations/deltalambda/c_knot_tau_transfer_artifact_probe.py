@@ -167,7 +167,32 @@ def main() -> int:
     wb.add_assertion("tier0_normalization_is_over_85pct_of_C_knot", computed=str(bool(a3)), expected="True")
     wb.add_assertion("dressing_is_small_frame_projection", computed=str(bool(a4)), expected="True")
     wb.add_assertion("verdict_is_ARTIFACT", computed=verdict, expected="ARTIFACT")
-    wb.save(extra={"auditOnly": True})
+    # q₀ stamp (bean qou-sal4). This producer DOES read a q₀ — but a bad one:
+    # `Q0_STR` (line 63) is the muon vintage-A pin RETIRED by owner ruling
+    # 2026-08-22, hardcoded and TRUNCATED to 24 significant digits rather than
+    # resolved through `q_at()`. Its prefix `1.10997859555` is exactly the
+    # superseded-vintage prefix the substrate's staleness guard watches for.
+    #
+    # So the honest stamp is `ambiguous`, not `muon`: stamping `muon` would
+    # assert a live anchor for a retired vintage and would trip that guard,
+    # and stamping `independent` would be false — it reads a pin.
+    #
+    # Repinning it is NOT done here: it moves published numbers and belongs to
+    # the tracked muon→proton migration (bean `qou-cds3`), which requires a
+    # per-producer source edit to read `q_at()`. Recorded there.
+    wb.save(extra={
+        "auditOnly": True,
+        "q0Anchor": "ambiguous",
+        "q0AnchorReason": (
+            "Reads a hardcoded, truncated q₀ literal (Q0_STR, 24 sig digits) "
+            "carrying the muon vintage-A prefix 1.10997859555 — a pin RETIRED "
+            "2026-08-22 — instead of resolving through q_at(). Undetermined "
+            "because the literal names a superseded vintage that no live anchor "
+            "maps to: it is neither the current muon pin nor proton. Fix is a "
+            "source edit to read q_at(), which moves published numbers and is "
+            "tracked by bean qou-cds3, not a restamp."
+        ),
+    })
 
     print("=" * 88)
     print("  Deuteron C_knot = 5.853: ARTIFACT vs REAL — the τ-transfer test")
