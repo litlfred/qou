@@ -922,6 +922,46 @@
       "line_at_adjudication": 96,
       "scope": "main",
       "rationale": "The z of the CORPUS CLOSED FORM being cross-checked, not residual C. The probe verifies tr_M(σ₁²) = (q-q⁻¹)z + 1 against the closed form of trm-hopf-sigma1-sq-closed-form.md, which is proved over ℚ(q^{1/2}) WITH z = 1/(√q + 1/√q); it then cross-checks a second, independent q-Schur Plancherel decomposition of the same object. Measured: the quantity is NOT C/D-invariant -- z_C gives 1.1043880582592 and matches the closed form, z_D gives 1.1280887441144 and does not -- so substituting z_D would test the closed form against a value it was never proved to equal. ALSO LABELLED IN SITU: the adjacent comment 'Identical in Wenzl and q-Schur conventions at H₂' is true but is about the WENZL-vs-Q-SCHUR axis, not C-vs-D; sitting one line above this binding it reads as a convention-safety clearance it does not provide."
+    },
+    {
+      "path": "computations/phi1_z_separability_probe.py",
+      "target": "Z_C",
+      "source_hash": "36ddcd65fe9d",
+      "line_at_adjudication": 45,
+      "scope": "<module>",
+      "rationale": "Explicit two-arm probe: Z_C at :45 and Z_D at :46 are ADJACENT module constants, and the source annotates Z_C itself -- 'excised, used ONLY as a second z probe point' -- against Z_D 'canonical'. The probe evaluates the phi1 separability question at both z values; keeping only Z_D removes the second probe point the test is built on."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 103,
+      "scope": "main",
+      "rationale": "Two-arm, co-bound one line apart at the top of main(): z_C at :103, z_D at :104. The file declares the C-frame context 7 times and carries 19 D-arm references -- it is a D-frame prune that needs the C weight to state what it is pruning against."
+    },
+    {
+      "path": "computations/qbeta/qbeta_utils.py",
+      "target": "z",
+      "source_hash": "c9e1cf07ebbd",
+      "line_at_adjudication": 268,
+      "scope": "substrate_ladder_quantities",
+      "rationale": "Inside an explicit `convention == \"C\"` / `elif convention == \"D\"` dispatch -- the function is convention-PARAMETERISED, so the C branch is its contract, not residual C. The source additionally records why the spelling is kept verbatim rather than normalised to the algebraically equal sqrt(q)/(1+q): the two differ by 1.6e-61 relative at 60 dps, and 'this is the one ladder that must not be perturbed by a substitution, however small'. Rewriting it would be a precision change disguised as a cosmetic one."
+    },
+    {
+      "path": "computations/qbeta/qbeta_h_vs_u_frame_stability_probe.py",
+      "target": "<return>",
+      "source_hash": "b33678fed70d",
+      "line_at_adjudication": 80,
+      "scope": "z_C",
+      "rationale": "The probe's axis is h-frame vs u-frame -- 'does re-expressing the Q_beta ladder in h = q - 1/q instead of u = b*hbar_q^2 fix the anchor-instability? DECISIVE TEST, and the answer is NO' -- NOT C vs D. z_C is the single convention held fixed while that other axis is varied, and it is the frame the ladder lives in. Substituting z_D would vary two axes at once and destroy the decisive test."
+    },
+    {
+      "path": "computations/qbeta/qbeta_ladder_headline_residual_provenance_probe.py",
+      "target": "z",
+      "source_hash": "e49e738a6528",
+      "line_at_adjudication": 87,
+      "scope": "ladder_ppb",
+      "rationale": "Self-declared and load-bearing: the site carries '# convention C -- see docstring', and the docstring at :32 states 'NOR is this a convention-D measurement. The whole ladder is convention-C-frame'. That is the qou-cds1 caveat asserted in-file -- the c_k ladder is C-frame throughout and must be RE-DERIVED under D, which is not a z-swap (QOU.QBeta.decayLadder_zC_threeRow_ne_zero proves the C-frame ladder and the mass channel's three-row forcing are mutually exclusive). Migrating this site alone would produce a number belonging to neither frame."
     }
   ]
 }
