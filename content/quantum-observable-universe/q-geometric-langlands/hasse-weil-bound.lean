@@ -305,4 +305,60 @@ theorem charPoly_coeff_isReal (Z : LocalQZetaFunction) [IsWeilZeta Z] (n : ℕ) 
   have h := congrArg (fun p => Polynomial.coeff p n) (charPoly_map_conj Z)
   simpa using h
 
+/-! ## `det(Fr_q) = ±q^g` — the determinant pinned, not just bounded
+
+`norm_prod_eigenvalues` gives `‖∏ αᵢ‖ = q⁴`, a statement about modulus only. The
+functional equation pins the value itself: the multiset is stable under
+`α ↦ q/α`, so the product is invariant under that map, and a product of eight
+terms each replaced by `q/αᵢ` is `q⁸ / ∏ αᵢ`. Equating gives `(∏ αᵢ)² = q⁸`,
+hence `∏ αᵢ = ±q⁴` — the classical `det(Fr_q) = ±q^g` for `g = 4`.
+
+The sign is the genuinely arithmetic datum (it distinguishes the two square
+roots and is not determined by the hypotheses carried here), which is why the
+statement is a disjunction rather than an equality. -/
+
+/-- The eigenvalue product is nonzero. -/
+theorem prod_eigenvalues_ne_zero (Z : LocalQZetaFunction) :
+    ∏ i : Fin 8, Z.eigenvalues i ≠ 0 :=
+  Finset.prod_ne_zero_iff.mpr fun i _ => Z.eigenvalues_ne_zero i
+
+/-- The product is invariant under the functional-equation pairing: replacing
+    every `αᵢ` by its partner `q/αᵢ` leaves the product unchanged. Reindexing
+    along the permutation, exactly as for `charPoly_map_conj`. -/
+theorem prod_partner_eq (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ∏ i : Fin 8, ((Z.q : ℂ) / Z.eigenvalues i) = ∏ i : Fin 8, Z.eigenvalues i := by
+  obtain ⟨σ, hσ⟩ := IsWeilZeta.functional_equation (Z := Z)
+  exact Fintype.prod_equiv σ
+    (fun i => (Z.q : ℂ) / Z.eigenvalues i)
+    (fun j => Z.eigenvalues j)
+    (fun i => by simp only [hσ i])
+
+/-- `(∏ αᵢ)² = q⁸`. -/
+theorem prod_eigenvalues_sq (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    (∏ i : Fin 8, Z.eigenvalues i) ^ 2 = (Z.q : ℂ) ^ 8 := by
+  have hP := prod_eigenvalues_ne_zero Z
+  have h := prod_partner_eq Z
+  rw [Finset.prod_div_distrib, Finset.prod_const, Finset.card_univ,
+    Fintype.card_fin] at h
+  field_simp at h
+  linear_combination -h
+
+/-- **`det(Fr_q) = ±q^g`.** The Frobenius determinant is exactly `+q⁴` or `−q⁴`.
+
+    Upgrades `norm_prod_eigenvalues` from a modulus to a value. The sign is not
+    determined by the two hypotheses carried here — it is the arithmetic datum
+    that distinguishes the two square roots — so the conclusion is a
+    disjunction, honestly. -/
+theorem prod_eigenvalues_eq_pm (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    (∏ i : Fin 8, Z.eigenvalues i) = (Z.q : ℂ) ^ 4 ∨
+      (∏ i : Fin 8, Z.eigenvalues i) = -((Z.q : ℂ) ^ 4) := by
+  have h : (∏ i : Fin 8, Z.eigenvalues i) ^ 2 - ((Z.q : ℂ) ^ 4) ^ 2 = 0 := by
+    rw [← pow_mul]; norm_num [prod_eigenvalues_sq Z]
+  have hf : ((∏ i : Fin 8, Z.eigenvalues i) - (Z.q : ℂ) ^ 4) *
+      ((∏ i : Fin 8, Z.eigenvalues i) + (Z.q : ℂ) ^ 4) = 0 := by
+    linear_combination h
+  rcases mul_eq_zero.mp hf with h1 | h2
+  · exact Or.inl (by linear_combination h1)
+  · exact Or.inr (by linear_combination h2)
+
 end QOU.AlgebraicSubstrate
