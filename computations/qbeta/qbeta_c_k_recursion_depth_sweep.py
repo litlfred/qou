@@ -88,10 +88,43 @@ INV_HBAR_Q_SQ = 1 / HBAR_Q_SQ  # ≈ 117.4
 
 
 def load_c_k() -> dict:
+    """Resolved c_k from the extraction witness. NULL IS A CONTRACT, NOT A BUG.
+
+    `qbeta-decay-sdp-extended-ck.witness.json` writes `c_k_extracted_50dps[k] =
+    null` for every rung its own `_settle_resolution` could not resolve, and
+    says so at the write site: "Unresolved rungs are now null; the raw quotient
+    is preserved separately under an unmistakable key so the record is complete
+    without being consumable."
+
+    This function used to do `mp.mpf(v)` over the whole dict, so that
+    deliberate state surfaced as `TypeError: cannot create mpf from None` --
+    an opaque mpmath error 60 lines from the field that explains it, which reads
+    like upstream corruption. It is not corruption; it is the upstream refusing
+    to publish numbers that would be misread as extractions.
+
+    `c_k_unresolved_raw_quotient` holds the raw quotients and is NOT a
+    substitute: it is deliberately keyed to be non-consumable, and reading it
+    here would defeat the guard on purpose.
+    """
     p = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     w = record_upstream(p, _UPSTREAM_RECORDS)
     raw = w["data"]["c_k_extracted_50dps"]
-    return {int(k.split("_")[1]): mp.mpf(v) for k, v in raw.items()}
+    resolved = {int(k.split("_")[1]): mp.mpf(v)
+                for k, v in raw.items() if v is not None}
+    if not resolved:
+        res = w["data"].get("c_k_resolution", {})
+        raise SystemExit(
+            "no resolvable c_k in qbeta-decay-sdp-extended-ck.witness.json: "
+            f"all {len(raw)} rungs are null "
+            f"(last_resolved_rung={res.get('last_resolved_rung')!r}, "
+            f"n_unresolved={res.get('n_unresolved')!r}). That witness is not "
+            "broken -- it deliberately nulls rungs whose residual never drops "
+            "by the required ~1/u factor. Its own field "
+            "`c_k_resolution.why_unresolved_rungs_are_null` states why. This "
+            "sweep needs at least one RESOLVED rung, so re-run "
+            "qbeta_decay_sdp_extended_ck.py once the extraction resolves; do "
+            "not substitute c_k_unresolved_raw_quotient.")
+    return resolved
 
 
 def solve_depth_d_window(c_k: dict, k_start: int, d: int) -> tuple:
