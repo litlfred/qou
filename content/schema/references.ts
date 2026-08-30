@@ -3725,6 +3725,38 @@ export const references: Reference[] = [
 
   // ── Kawauchi 1996 ─────────────────────────────────────────────
   ref({
+    id: "okubo1962",
+    type: "article-journal",
+    title: "Note on Unitary Symmetry in Strong Interactions",
+    author: [{ family: "Okubo", given: "Susumu" }],
+    "container-title": "Progress of Theoretical Physics",
+    volume: "27",
+    issue: "5",
+    page: "949-966",
+    DOI: "10.1143/PTP.27.949",
+    issued: { "date-parts": [[1962]] },
+  }),
+
+  ref({
+    id: "milnor1957",
+    type: "chapter",
+    title: "Isotopy of links",
+    author: [{ family: "Milnor", given: "John" }],
+    "container-title":
+      "Algebraic Geometry and Topology: A Symposium in Honor of S. Lefschetz",
+    editor: [
+      { family: "Fox", given: "Ralph H." },
+      { family: "Spencer", given: "Donald C." },
+      { family: "Tucker", given: "Albert W." },
+    ],
+    publisher: "Princeton University Press",
+    "publisher-place": "Princeton, NJ",
+    page: "280-306",
+    DOI: "10.1515/9781400879915-016",
+    issued: { "date-parts": [[1957]] },
+  }),
+
+  ref({
     id: "kawauchi1996",
     type: "book",
     title: "A Survey of Knot Theory",
