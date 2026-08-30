@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ and Planck time $t_P(q) = 1/\hbar_q$. Let $\mathcal{L} \subset M$ be a discrete sublattice of brane points $\{p_i\}$. Each site carries a qubit $|\psi_i\rangle \in \mathcal{S}_{p_i}$. The **$q$-Game of Life** ($q$-GoL) is the discrete-time unitary cellular automaton
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ and Planck time $t_P(q) = 1/\hbar_q$. Let $\mathcal{L} \subset M$ be a discrete sublattice of brane points $\{p_i\}$. Each site carries a qubit $|\psi_i\rangle \in \mathcal{S}_{p_i}$. The **$q$-Game of Life** ($q$-GoL) is the discrete-time invertible cellular automaton
 $$
   \mathcal{U}_{\mathrm{q\text{-}GoL}}
     \colon  \mathcal{H}_{\mathcal{L}}
@@ -18,9 +18,13 @@ $$
   \longmapsto
   |c_1, c_2,  t \oplus_q (c_1 \wedge_q c_2)\rangle.
 $$
-The symbol $\wedge_q$ denotes the Hecke-algebra q-AND amplitude $\Phi(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / \bigl(2(q+1)^2\bigr)$. Each $\mathrm{Toff}_q$ executes in three Planck steps.
+The symbol $\wedge_q$ denotes the Hecke-algebra q-AND amplitude $P_{7,6}(q)$, given in the canonical convention $z_D$ under **Stability condition** below. Each $\mathrm{Toff}_q$ executes in three Planck steps.
 
-2. **Superposition.** Cell states admit superpositions $|\psi_i\rangle = \alpha_i|0\rangle + \beta_i|1\rangle$ via Hadamard rotations $H \in \mathrm{End}(\mathcal{S}_{p_i})$. The set $\{\mathrm{Toff}_q, H\}$ is universal for quantum computation.
+This item previously defined $\wedge_q$ as $\Phi(q) = (q-1)(q^{3/2}+q^{1/2}-1)(q^{3/2}+q+1)/2(q+1)^2$, which is withdrawn: $\Phi$ is not in the image of the Toffoli construction under any indexing or convention ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)), so it cannot be what $\wedge_q$ denotes.
+
+2. **Superposition.** Cell states admit superpositions $|\psi_i\rangle = \alpha_i|0\rangle + \beta_i|1\rangle$ via Hadamard rotations $H \in \mathrm{End}(\mathcal{S}_{p_i})$. The set $\{\mathrm{Toff}_q, H\}$ is universal for **reversible** computation, in the sense of Bennett, for every $q > 0$: reversible universality needs the gate to be invertible with a firing target-flip channel, both of which item 4 and the non-vanishing of $P_{7,6}$ on $q \neq 1$ supply.
+
+**Open.** This item formerly claimed universality for *quantum* computation. That is a stronger claim and is in tension with item 4: the standard Toffoli-plus-Hadamard universality theorem is a statement about unitary gates, and $\mathrm{Toff}_q$ is provably **not** unitary for $q \neq 1$. Whether a non-unitary invertible gate set can be universal in any quantum sense — and if so which — is not settled in this corpus, and the claim is narrowed to the reversible statement until it is.
 
 3. **Conway's rules as Toffoli circuits.** Survival ($k = 2, 3$) and birth ($k = 3$) at site $i$ with neighbourhood $N(i)$ are enacted by the composite operator
 $$
