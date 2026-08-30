@@ -51,6 +51,7 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 from codata_constants import M_E_MEV as M_E_MEV_RAW  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -58,7 +59,41 @@ COMPUTE_DIR = HERE.parent
 # Canonical anchors per the existing GAP-A-3 channels probe.
 # CODATA constants imported from the central registry per Gemini
 # review on PR #1899; M_E_MEV is re-cast to mp.mpf for precision.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+#
+# q0 is RESOLVED, not spelled (2026-08-30). This line read:
+#
+#     Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+#
+# a SUPERSEDED muon vintage, 11.5371 ppb from the proton pin. The word
+# "Canonical" above is NOT a muon tell-tale: the owner ruling of
+# 2026-08-15 (AGENTS.md/"q0 anchor convention": "use proton pin") makes
+# the proton pin canonical.
+#
+# The evidence for proton here is a DATA DEPENDENCY, not the analogy to
+# the sibling channels probe:
+#   * CHI_WITNESS (loaded in main) is proton-pinned - q0Anchor "proton",
+#     q_0_50dps 1.10997858275138... - at EVERY commit in its history.
+#     The closure below multiplies those chi^lambda against y_lambda
+#     evaluated at Q_0_50DPS, so the old literal made a single product
+#     term mix two different anchors.
+#   * y_lambda_wenzl_bridge_symbolic (used in main) reproduces the
+#     corpus cache y-lambda-at-q0.witness.json (also q0Anchor "proton")
+#     exactly at the proton pin and at no other; every nonzero n=6
+#     partition disagreed at the old literal.
+# Corroboration only: the sibling gap_a3_deuteron_p_lambda_channels_probe
+# - same chi cache, same closure A(D)*sum y_lambda*chi^lambda*P_lambda
+# against -B(D)/m_e - was migrated the same way in 0d9aedfc6 and is
+# manifest-declared physical_proton. This file is absent from
+# q0_anchor_manifest.json, which auto-selects on `ideal_muon` only, so it
+# resolves proton by default - a default, not evidence.
+#
+# THIS MOVES VALUES: q0 +11.5371 ppb => A(D) +19.3632 ppb, rel_err
+# +22.1336 ppb (verdict stays REFUTED at both pins). So the committed
+# gap-a3-deuteron-mixed-plethystic-probe.witness.json is STALE and must
+# be regenerated - it was already stale by percent-level amounts from
+# upstream chi / y_lambda regeneration, independent of this change.
+# Bean qou-jjge.
+Q_0_50DPS = Q_50_DIGIT_STR
 VOL_HYP_D = mp.mpf("12.776")   # Phase-4 deuteron hyperbolic volume
 M_E_MEV = mp.mpf(str(M_E_MEV_RAW))
 B_D_MEV = mp.mpf("2.2245")
