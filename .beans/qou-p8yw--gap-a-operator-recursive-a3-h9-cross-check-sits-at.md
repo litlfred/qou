@@ -1,11 +1,11 @@
 ---
 # qou-p8yw
 title: 'GAP: a-operator-recursive-a3-h9 cross-check sits at the float64 floor in the committed witness but at 50 dps on a fresh run'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:43:04Z
-updated_at: 2026-08-30T14:50:44Z
+updated_at: 2026-08-30T15:12:04Z
 ---
 
 Found 2026-08-30 while draining the `qou-cds2` producer-importability backlog.
@@ -122,3 +122,51 @@ producer to identify which cone member moved. Do NOT date anything with
 member is named. Two reproducible runs agreeing is evidence the value is
 *right*; it is not evidence about *why it changed*, and committing it without
 that is the laundering this bean was opened to avoid.
+
+
+## 2026-08-30 — CLOSED. The cone member is `canonical_trm_reference.py`
+
+**Import-cone drift, as narrowed.** The audit's own transitive walk on this
+producer: **63 cone modules, 21 datable, and all 21 post-date the witness**
+(newest 2026-08-30 vs `computedAt` 2026-06-28). `canonical_trm_reference.py` is
+among them; so is `markov_weights_symbolic.py`, which imports it.
+
+**The mechanism is arithmetic, not a coincidence.** `06788fd463` (today) created
+`canonical_trm_reference.py`, replacing the tr_M reference that *fifteen files*
+had hardcoded as `mp.mpf("1.0653062286131670…")` with a value read from
+`atomic-tr-m-mpfr-50dps*.witness.json`, selected by anchor stamp. `654c1a2a46`
+added a `mp.dps < 60` guard because *"parsing it at mpmath's default dps=15
+would silently round it"*.
+
+That literal is **17 significant figures**. A comparison against it cannot show
+agreement better than ~1e-16 however exact both sides are. So the committed
+`rel = 1.9515091e-16` was never a disagreement between the combiner and the
+transfer — **it was the truncation of the constant they were compared against.**
+Against the 50-dps reference the real agreement shows: `1.0198718e-50`.
+
+**Refreshed** in `e4d5fb5b7b`, which is now safe where it was not: producer
+source unchanged (`scriptHash 8db718c4294d` both), both fresh runs byte-identical,
+cause named. 4/4 assertions; the verdict is unchanged and now rests on an exact
+reference rather than a truncated one.
+
+**Not traced:** the exact cone edge carrying the reference into the
+`chi_all_lambda_reduced_block` transfer comparison. Attribution is by three
+converging measurements (in-cone, moved after, magnitude matches its documented
+effect), not by a dataflow trace. Stated so the next reader knows which part is
+proved.
+
+## Two corrections to my own reasoning, both worth keeping
+
+1. **"PYTHONPATH selects a float64 module"** — refuted by measurement; the two
+   invocations are byte-identical. The corollary I drew from it (re-examine
+   every PYTHONPATH-documented producer for degraded numbers) died with it.
+2. **"The import-cone audit will report a vacuous clean in a shallow clone"** —
+   also wrong. It reports **1,799 of 3,267** cone-stale, prints an explicit
+   `⚠ SHALLOW CLONE` banner, and calls its own count a LOWER BOUND covering
+   only post-graft commits. It returns `None` for pre-graft modules *by design*
+   — a correct refusal to date what it cannot see, and better handling of the
+   shallow hazard than the two audits I had to annotate.
+
+Top movers corpus-wide, for whoever drains this: `pyhecke/constants.py` (1470
+witnesses), `canonical_trm_reference.py` (137), `substrate/hecke_core_symbolic.py`
+(121), `qbeta/qbeta_utils.py` (49).
