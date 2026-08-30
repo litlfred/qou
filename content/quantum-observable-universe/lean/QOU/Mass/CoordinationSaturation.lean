@@ -44,6 +44,23 @@ weight `lw` — is the linking-vs-self-energy amplitude assignment (bean
 Ground ring `ℝ` (§7c: archimedean — the statement is unboundedness of `B/A`).
 No fit: `ε`, `k` are free positive parameters, nothing is tuned to data.
 
+## Convergent frontier (2026-08-29/30 sibling landings)
+
+This lemma uses a **single uniform per-bond energy `ε`** — which is exactly the
+**order-independent** regime `L_pp = L_pn = L_nn` that
+`QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` proves is the
+*only* arrangement-invariant one (a nucleus has no arrangement, so bond-type-
+dependent scalars are a non-physical DOF, scope-(b) excluded at `q ≠ 1`, bean
+`qou-m07y`). So the saturation dichotomy here holds precisely in the physical case.
+
+Together these exclude *both* simple coordination ansätze — the **complete graph**
+(here, by saturation) and the **linear chain** (there, by arrangement-dependence) —
+and sit alongside `QOU.MassTheory.BodyOrderRecurrenceDepth` (body-order depth ≥ 3
+forced) and `QOU.MassTheory.MayerThreeBodySign` (the 3-body cumulant sign is
+threshold-forced, wrong against AME). The extensive term's admissible structure is
+being pruned from several directions at once; this file contributes the saturation
+constraint.
+
 LaTeX label: `prop:coordination-saturation` (interprets `bk-coordination-multiplicity`).
 -/
 
