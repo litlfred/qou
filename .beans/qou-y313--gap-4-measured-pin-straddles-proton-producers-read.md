@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T04:51:16Z
-updated_at: 2026-08-30T05:04:19Z
+updated_at: 2026-08-30T05:24:47Z
 ---
 
 Found by `computations/audits/pin_straddle_unguarded_audit.py` stage 2 (PR #6104),
@@ -123,3 +123,44 @@ anchor the way `tr_m_q_hecke_seminormal.py:103` does), THEN regenerate.
 
 Not done here: the regenerated file was a diagnostic side-effect and was
 restored, per the contended-witness rule (qou-v0t8).
+
+
+## FIXED (1 of 2): y_lambda_symbolic_validate — 45dbc808f4, PR #6104
+
+`load_mpfr_witness` now selects the reference by the artifact's OWN recorded
+`q` rather than by a hardcoded path or via the manifest. Reconciles against the
+stamp instead of trusting a filename, and degrades honestly: an unmatched pin
+returns `{}` and every probe falls back to its self-consistent
+`wenzl-bridge@100dps` reference rather than comparing across a layer boundary.
+
+    n=3   1.19e-9  ->  2.53e-51        tolerance TOL_CROSS_Q = 1e-30
+    n=4   1.49e-9  ->  2.91e-51
+    coverage 11 -> 17 values of n (the proton table is the more complete one)
+
+Two independent checks agree and neither was tuned to the other: the arithmetic
+moves 42 orders, and `pin_straddle_unguarded_audit` stage 2 — written before
+this fix — stops flagging the module (2 mismatches -> 1).
+
+### WITNESS REGENERATION IS STILL OPEN, and it is a LONG COMPUTE
+
+`computations/y-lambda-symbolic-validation.json` on main is still the stale
+record (`all_passed: true` at `1.1099785955541805`). Do not commit a partial
+regeneration: the producer writes incrementally per-n, so a killed run leaves a
+witness carrying TWO different q values at once — measured, n=11 and n=12 still
+held the old muon value while every completed n held proton. That is the exact
+defect this branch is about.
+
+MEASURED BUDGET: a `timeout 900` run completed Tests 1 and 2 across all n with
+**zero [FAIL]**, then was killed partway through Test 3. So >900 s, and the
+true figure is higher than the old record implies — the fix RAISES coverage
+from 11 to 17 values of n, so Test 3 now runs on 6 more (and larger) partition
+sets than the committed witness ever did.
+
+Run it with `python3 -u ... 2>&1 | tee /tmp/ylsv.log` and a budget of 3000 s+,
+to completion, in one go. Re-verify `all_passed` and that exactly ONE q value
+appears in the file before committing.
+
+TRAP for whoever picks this up: a waiter that greps only for
+`ALL TESTS PASSED|SOME TESTS FAILED` hangs forever on a timeout kill, because a
+killed process prints neither. Watch for process death as well as for the
+marker.
