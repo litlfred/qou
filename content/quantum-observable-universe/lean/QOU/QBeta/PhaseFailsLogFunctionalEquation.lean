@@ -53,73 +53,73 @@ Kohno–Drinfeld holonomy angle is `c · ln q`.  The hypothesis is only additivi
 on the diagonal, so the lemma applies to any logarithm-like scale, and `c` is
 arbitrary — which is what makes the exclusion below hold for *every* `c` at
 once. -/
-theorem const_mul_additive_doubles {L : ℝ → ℝ}
-    (hL : ∀ x : ℝ, L (x * x) = L x + L x) (c : ℝ) (q : ℝ) :
+theorem const_mul_additive_doubles {K : Type*} [CommRing K] {L : K → K}
+    (hL : ∀ x : K, L (x * x) = L x + L x) (c : K) (q : K) :
     (fun x => c * L x) (q * q) = 2 * (fun x => c * L x) q := by
   simp only [hL q]
   ring
 
 /-- The ladder phase under **convention D**, `α_D = (z_D − 1)·h/2` with
 `z_D = q³/(q²+1)` and `h = q − q⁻¹`. -/
-noncomputable def alphaD (q : ℝ) : ℝ :=
+noncomputable def alphaD {K : Type*} [Field K] (q : K) : K :=
   (q ^ 3 / (q ^ 2 + 1) - 1) * (q - q⁻¹) / 2
 
 /-- The ladder phase under **convention C**, in the square-root variable
 `u = √q`: `z_C = u/(u²+1)` and `h = u² − u⁻²`.  Writing it in `u` keeps the
 statement algebraic; `q ↦ q²` corresponds to `u ↦ u²`. -/
-noncomputable def alphaC (u : ℝ) : ℝ :=
+noncomputable def alphaC {K : Type*} [Field K] (u : K) : K :=
   (u / (u ^ 2 + 1) - 1) * (u ^ 2 - (u ^ 2)⁻¹) / 2
 
 /-- `α_D (2) = 9/20`. -/
-theorem alphaD_two : alphaD 2 = 9 / 20 := by
+theorem alphaD_two : alphaD (2 : ℚ) = 9 / 20 := by
   unfold alphaD; norm_num
 
 /-- `α_D (4) = 705/136`. -/
-theorem alphaD_four : alphaD 4 = 705 / 136 := by
+theorem alphaD_four : alphaD (4 : ℚ) = 705 / 136 := by
   unfold alphaD; norm_num
 
 /-- **`α_D` fails the doubling identity at `q = 2`**: `α_D(2·2) = 705/136`
 while `2·α_D(2) = 9/10`. -/
-theorem alphaD_fails_doubling : alphaD (2 * 2) ≠ 2 * alphaD 2 := by
-  rw [show (2 : ℝ) * 2 = 4 by norm_num, alphaD_four, alphaD_two]
+theorem alphaD_fails_doubling : alphaD ((2 : ℚ) * 2) ≠ 2 * alphaD (2 : ℚ) := by
+  rw [show (2 : ℚ) * 2 = 4 by norm_num, alphaD_four, alphaD_two]
   norm_num
 
 /-- `α_C (2) = −9/8`. -/
-theorem alphaC_two : alphaC 2 = -(9 / 8) := by
+theorem alphaC_two : alphaC (2 : ℚ) = -(9 / 8) := by
   unfold alphaC; norm_num
 
 /-- `α_C (4) = −195/32`. -/
-theorem alphaC_four : alphaC 4 = -(195 / 32) := by
+theorem alphaC_four : alphaC (4 : ℚ) = -(195 / 32) := by
   unfold alphaC; norm_num
 
 /-- **`α_C` fails the doubling identity at `u = 2`**: `α_C(2·2) = −195/32`
 while `2·α_C(2) = −9/4 = −72/32`. -/
-theorem alphaC_fails_doubling : alphaC (2 * 2) ≠ 2 * alphaC 2 := by
-  rw [show (2 : ℝ) * 2 = 4 by norm_num, alphaC_four, alphaC_two]
+theorem alphaC_fails_doubling : alphaC ((2 : ℚ) * 2) ≠ 2 * alphaC (2 : ℚ) := by
+  rw [show (2 : ℚ) * 2 = 4 by norm_num, alphaC_four, alphaC_two]
   norm_num
 
 /-- **The exclusion, convention D.**  For no constant `c` and no additive `L`
 is `α_D` equal to `c · L` — in particular `α_D ≠ c · ln`, so `α_D` is not a
 constant-residue Kohno–Drinfeld holonomy angle. -/
 theorem alphaD_not_const_mul_additive :
-    ¬ ∃ (L : ℝ → ℝ) (c : ℝ), (∀ x : ℝ, L (x * x) = L x + L x) ∧
-        ∀ x : ℝ, alphaD x = c * L x := by
+    ¬ ∃ (L : ℚ → ℚ) (c : ℚ), (∀ x : ℚ, L (x * x) = L x + L x) ∧
+        ∀ x : ℚ, alphaD x = c * L x := by
   rintro ⟨L, c, hL, hEq⟩
-  have h4 : alphaD (2 * 2) = 2 * alphaD 2 := by
+  have h4 : alphaD ((2 : ℚ) * 2) = 2 * alphaD (2 : ℚ) := by
     rw [hEq, hEq]
-    have := const_mul_additive_doubles hL c 2
+    have := const_mul_additive_doubles hL c (2 : ℚ)
     simpa using this
   exact alphaD_fails_doubling h4
 
 /-- **The exclusion, convention C.**  Same statement in the square-root
 variable, where `q ↦ q²` is `u ↦ u²`. -/
 theorem alphaC_not_const_mul_additive :
-    ¬ ∃ (L : ℝ → ℝ) (c : ℝ), (∀ x : ℝ, L (x * x) = L x + L x) ∧
-        ∀ x : ℝ, alphaC x = c * L x := by
+    ¬ ∃ (L : ℚ → ℚ) (c : ℚ), (∀ x : ℚ, L (x * x) = L x + L x) ∧
+        ∀ x : ℚ, alphaC x = c * L x := by
   rintro ⟨L, c, hL, hEq⟩
-  have h4 : alphaC (2 * 2) = 2 * alphaC 2 := by
+  have h4 : alphaC ((2 : ℚ) * 2) = 2 * alphaC (2 : ℚ) := by
     rw [hEq, hEq]
-    have := const_mul_additive_doubles hL c 2
+    have := const_mul_additive_doubles hL c (2 : ℚ)
     simpa using this
   exact alphaC_fails_doubling h4
 
