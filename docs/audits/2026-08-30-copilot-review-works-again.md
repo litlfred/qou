@@ -235,17 +235,26 @@ The two are different claims and only the first is measured here. Later the same
 day, four PRs give censored negatives — an event that did not occur inside the
 window watched, which bounds latency from below and nothing more:
 
-| PR | pushed | requested | reviews, window |
-|---|---|---|---|
-| `#6162` | 10:08:42Z | **~10:09Z** | none, **≥ 31 min** |
-| `#6168` | 10:10:53Z | none | none, **≥ 29 min** |
-| `#6170` | 10:04:19Z | none | none, **≥ 40 min** |
-| `#6174` | 10:35:45Z | none | none, ~5 min (too short to count) |
+**A censored bound is only meaningful with the time it was read at**, because
+it grows until the event happens. Re-read by hand at **10:54Z**:
 
-The first three rows are from a sibling session,
-[`qou#6179`](https://github.com/litlfred/qou/pull/6179); the third is this PR
-observing itself. `#6162` is the one that bears on this section: an explicit
-request, and nothing at ~8× the 3–4 min request→review latency measured above.
+| PR | pushed | requested | reviews @ 10:54Z | window |
+|---|---|---|---|---|
+| `#6162` | 10:08:42Z | **~10:09Z** | none | **≥ 45 min** |
+| `#6168` | 10:10:53Z | none | none | **≥ 43 min** |
+| `#6170` | 10:04:19Z | none | none | **≥ 42 min** (to its force-push at 10:46Z) |
+| `#6174` | 10:35:45Z | none | none | ≥ 18 min — weak |
+
+`#6162` / `#6168` / `#6174` are a sibling session's,
+[`qou#6179`](https://github.com/litlfred/qou/pull/6179); `#6170` is this PR
+observing itself. All four `get_reviews` → `[]`, verified here rather than
+copied — which is why these bounds are larger than that PR's, not different
+from them.
+
+`#6162` is the row that bears on this section: an explicit request, and nothing
+at ~11× the 3–4 min request→review latency measured above. `#6174` still cannot
+discriminate — at ≥ 18 min it is only ~1.7× the 10m28s push-trigger latency it
+would have to beat.
 
 **It is not a counterexample, and it is not evidence that reviews stopped
 again.** The ration was exhausted at 07:56:40Z and 10:09Z is ~2 h later; nobody

@@ -404,21 +404,31 @@ contemporaneous request"* (row 2, 10m28s) and reads as support for the
 push-trigger hypothesis. This session ran the same configuration and got the
 opposite result at more than twice the observation window.
 
-| PR | head pushed | `request_copilot_review` | merged | reviews, last checked 10:46Z |
+| PR | head pushed | `request_copilot_review` | merged | reviews, last checked **10:54Z** |
 |---|---|---|---|---|
-| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 37 min |
-| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 35 min |
-| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ≥ 10 min (weak) |
+| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 45 min |
+| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 43 min |
+| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ≥ 18 min (weak) |
+
+> **Re-read 10:54Z by a second session** (`get_reviews` → `[]` on all three,
+> plus `#6170` at ≥ 42 min). The bounds above were ≥ 37 / ≥ 35 / ≥ 10 at the
+> 10:46Z read and ≥ 31 / ≥ 29 / ~5 at 10:40Z, and the prose below still carried
+> the 10:40Z pair while this table carried the 10:46Z one — the same figure
+> disagreeing with itself two paragraphs apart. **A censored bound grows until
+> the event happens, so it is not a number, it is a number plus a read time.**
+> Quote it with the timestamp or a later reader cannot tell a stale figure from
+> a different measurement. Prose below aligned to this read.
 
 All three `get_reviews` → `[]`, re-checked after each merge.
 
-**#6168 is the discriminating row.** Push with NO request, 29 minutes observed,
-no review. That is the same configuration as row 2 above and the opposite
+**#6168 is the discriminating row.** Push with NO request, ≥ 43 min observed
+(re-read 10:54Z), no review. That is the same configuration as row 2 above and the opposite
 outcome, at ~3.4x its 10m28s latency. So **a push does not reliably trigger a
 review** — row 2 shows it *can* happen, this shows it does not always.
 
-**#6162 is a clean negative for the request-trigger at 31 minutes**, which is
-~8x the 3–4 min request→review latency the reopened audit measured. Unlike the
+**#6162 is a clean negative for the request-trigger at ≥ 45 min** (re-read
+10:54Z), which is ~11x the 3–4 min request→review latency the reopened audit
+measured. Unlike the
 audit's #6068 and this session's own earlier merges, the observation window
 here is not the merge — I kept reading `get_reviews` for half an hour after.
 
@@ -434,8 +444,9 @@ here is not the merge — I kept reading `get_reviews` for half an hour after.
 - **Not a latency measurement.** These are censored observations (no event), so
   they bound latency from below and cannot be averaged with row 2's 10m28s or
   the audit's 3–4 min.
-- **#6174's ~10 min window is still too short to count.** It only just reaches
-  row 2's own 10m28s, so it cannot discriminate. Included for completeness.
+- **#6174's window is still too weak to count.** At ≥ 18 min (re-read 10:54Z)
+  it is only ~1.7x row 2's own 10m28s, so it barely discriminates. Included for
+  completeness.
 
 ### The one operational thing that IS true under every candidate
 
