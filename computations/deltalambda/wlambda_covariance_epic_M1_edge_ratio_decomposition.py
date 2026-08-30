@@ -142,7 +142,7 @@ def decompose(n):
 
 
 def main():
-    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 16
+    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 40   # ~6 min; 32 is ~12 s
     t0 = time.monotonic_ns()
     rows, checks = [], []
 
@@ -195,6 +195,52 @@ def main():
           "N/P = S + Q <= 1 + Q > 1. The pointwise bound cannot prove N/P < 1 at ANY "
           "finite n. Strictness must come from the omega-AVERAGE: E[slope] -> 0.33025 "
           "against the pointwise 1/2, a margin of ~1.51x that averaging supplies.")
+
+    # ---- A MUCH WEAKER SUFFICIENT CONDITION THAN THE EFFECTIVE CLT ----
+    #
+    # N/P is monotone INCREASING from n = 9, and every value sits below the
+    # proved limit 0.6605. Monotone-increasing-with-limit-L means sup = L, so
+    #
+    #     M_1 > 0 for all n
+    #       <== [N/P monotone for n >= 9]           (OPEN, observed only)
+    #         + [N/P -> 0.6605 < 1]                 (proved, modulo the IO CLT)
+    #         + [exact check n <= 9]                (done)
+    #
+    # That replaces "Berry-Esseen-grade effective limit-shape estimates" with
+    # monotonicity of a sequence -- a different and far weaker demand. It is NOT
+    # a proof: monotonicity is observed on a finite range, and the increments
+    # OSCILLATE (below), so it is not smooth and could in principle fail.
+    NPs = [(r["n"], r["NP"]) for r in rows]
+    tail_np = [(n, v) for n, v in NPs if n >= 9]
+    mono = all(b > a for (_, a), (_, b) in zip(tail_np, tail_np[1:]))
+    check("N/P is monotone increasing for n >= 9", mono,
+          f"exact Fraction comparison over n = 9..{nmax}; "
+          f"the only decreases anywhere are 5->6 and 8->9")
+    LIM = F(6605, 10000)
+    check("every N/P sits below the proved limit 0.6605",
+          all(v < LIM for _, v in NPs),
+          f"max = {nstr(max(f(v) for _, v in NPs), 8)} at n = {max(NPs, key=lambda t: t[1])[0]}")
+
+    # The increments oscillate, with extrema equally spaced in sqrt(n).
+    # Measured extrema: peaks n = 12, 25; troughs n = 20, 36 -- i.e.
+    # sqrt(n) = 3.46, 5.00 and 4.47, 6.00, a period of about 1.53 in sqrt(n).
+    # The n = 36 trough was PREDICTED from the n <= 32 data before the n = 40 run
+    # and came out exactly. Next prediction, untested here: a peak near n = 43
+    # (sqrt(n) ~ 6.53). Mechanism unexplained; do not read it as established.
+    incs = {b_n: b - a for (_, a), (b_n, b) in zip(tail_np, tail_np[1:])}
+    if nmax >= 40:
+        window = [n for n in incs if 30 <= n <= 40]
+        trough = min(window, key=lambda n: incs[n])
+        after = sorted(n for n in window if n > trough)
+        check("increment oscillation: trough at n = 36, then rising (PREDICTED)",
+              trough == 36 and all(incs[after[i]] < incs[after[i + 1]]
+                                   for i in range(len(after) - 1)),
+              f"trough at n = {trough}; increments rise monotonically to n = {nmax}. "
+              f"Extrema are equally spaced in sqrt(n), period ~1.53.")
+    else:
+        check("increment oscillation: trough at n = 36, then rising (PREDICTED)",
+              False,
+              f"NOT CHECKED: needs nmax >= 40, got {nmax}.")
 
     check("the measured mean slope stays well under the pointwise 1/2",
           all(r["mean_slope"] < F(1, 2) for r in rows),

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T11:03:56Z
+updated_at: 2026-08-30T11:09:40Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -157,5 +157,52 @@ because `r - a` is a gap between ABSOLUTE contents, so opposite-sign contents
 give `|c_r - c_a| > r - a`. The Lean lemma `diagLen_lipschitz` bounds the slope
 across ADJACENT diagonals only; the structure probe's "d_a - d_r <= r - a" holds
 for SAME-SIGN contents, a qualifier I dropped when first quoting it.
+
+Gap qou-k5r5 stays OPEN. Nothing wired; no fit; L2 unchanged.
+
+
+## Leg A, second pass (2026-08-30): a far weaker sufficient condition
+
+Still not a proof. But the target is now something much smaller than the
+effective CLT the workplan scoped.
+
+**N/P is monotone INCREASING for n >= 9**, verified in exact Fractions over
+n = 9..40 (the only decreases anywhere are 5->6 and 8->9), and every value sits
+below the proved limit 0.6605 (max 0.63108 at n = 40). Monotone-increasing-with-
+limit-L means sup = L, so
+
+    M_1 > 0 for all n
+      <== [N/P monotone for n >= 9]      OPEN -- observed on 9..40, not proved
+        + [N/P -> 0.6605 < 1]            proved, modulo the cited IO CLT
+        + [exact check n <= 9]           done
+
+That replaces "Berry-Esseen-grade effective limit-shape estimates" with
+**monotonicity of a sequence**. Different kind of problem, and a far weaker
+demand. It does NOT close the gap: monotonicity is observed on a finite range.
+
+## The increments oscillate, and the oscillation is periodic in sqrt(n)
+
+Not smooth, which is why monotonicity is not obviously safe. Measured extrema:
+peaks at n = 12, 25; troughs at n = 20, 36 -- i.e. sqrt(n) = 3.46, 5.00 and
+4.47, 6.00, a period of about **1.53 in sqrt(n)**.
+
+**This was predicted before it was measured.** From the n <= 32 data alone the
+extrema already looked equally spaced in sqrt(n), which forecast a trough near
+n ~ 36 and a rise after. The n = 40 run put the trough at exactly n = 36 with
+increments rising monotonically to n = 40. Recorded as a check in the probe.
+
+NEXT PREDICTION, untested: a peak near n = 43 (sqrt(n) ~ 6.53). Testing it needs
+nmax >= 46. Mechanism unexplained -- I have no account of why the period is 1.53
+in sqrt(n), and it should not be treated as established structure until someone
+does. The natural suspects (the VKLS support |c| <= 2 sqrt(n) crossing integers,
+which would give period 1/2) do NOT match 1.53.
+
+## Why the per-edge route stays dead, with the reason sharpened
+
+There is no uniform pointwise bound on the slope. Telescoping the Lean lemma
+gives |d_a - d_r| <= |c_A - c_B|, but the denominator is r - a = |c_B| - |c_A|.
+For OPPOSITE-sign contents |c_A - c_B| = a + r, so slope <= (a+r)/(r-a), which
+is unbounded as a -> r. That is why the measured max per-edge slope grows (0.5
+at n=12, 1 at n=15, 2 at n=28) rather than sitting at the same-sign bound of 1.
 
 Gap qou-k5r5 stays OPEN. Nothing wired; no fit; L2 unchanged.
