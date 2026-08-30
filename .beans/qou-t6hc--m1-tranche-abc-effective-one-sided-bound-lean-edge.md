@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T15:55:11Z
+updated_at: 2026-08-30T17:53:06Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -577,3 +577,64 @@ passed it.
 
 **STILL OPEN.** qou-k5r5 OPEN. Current reading: the route is trending to fail,
 by a margin that is inside the error bar, and the deciding quantity is now named.
+
+
+---
+
+## Leg A, 2026-08-30 (seventh) — the budget in CLOSED FORM: the crude bound misses by 0.57%, elementary refinements reach the line
+
+Everything before this was measured. This is **computed** — two quadratures over
+the limiting edge measure, no sampling.
+
+**THE LIMITING PICTURE.** The sampler established the factorisation
+(`Λ ~ Plancherel(n+1)`, two independent down-steps). In the limit the
+co-transition measure → **semicircle** on [−2,2] (Kerov), so the two corner
+contents are i.i.d. semicircle; the ω weight is `(r−a)²(r+a)`; and
+`D(c√n)/√n → φ(c) = (Ω(c) − |c|)/2` from VKLS.
+
+**`w_opp → 1/2` EXACTLY, and the argument is one line.** The ω weight depends on
+the two contents *only through their absolute values*. The semicircle is
+symmetric, so each sign is independent of its magnitude, hence the sign pattern
+is independent of the weight — and the opposite-sign share is exactly
+`P(opposite signs) = 1/2`. No integral. (Measured 0.4567 → 0.4862 at n = 100..800,
+rising to it from below.) The same symmetry makes the limiting slope identical for
+both sign classes, so `S_same = S_opp = S/2`.
+
+**This kills last turn's target.** Closure needed the limiting `w_opp < 0.4857`;
+it is 1/2. So the reduction moves to the other factor.
+
+**THE CONTROL, and it is what makes the rest trustworthy.** The framework predicts
+`S → 2·E[(r²−a²)(φ(a)−φ(r))]/E[(r−a)²(r+a)]`, a constant the corpus already knows
+by a *completely different route* (the Ivanov–Olshanski Kerov CLT field):
+`N/P → 0.6605`. Quadrature gives **0.66046945 — agreement to 0.005%**. That checks
+the semicircle co-transition limit, the corners' independence, the ω weight and φ,
+all at once.
+
+**THE VERDICT.**
+
+| bound on the opposite-sign half | B_opp → | total | |
+|---|---|---|---|
+| crude, `\|d_a − d_r\| ≤ D(0)` — *the one proved in Lean* | 0.675475 | **1.005709** | fails by 0.571% |
+| refined (below) | 0.669299 | **0.999534** | reaches the line, by 0.047% |
+
+The refinements are two facts already in hand:
+`N^τ(r) ≤ min(r, D(0))` (at most one drop per site, `D(0)` in total) and
+`N^σ(a) ≥ max(0, a − (λ₁ − D(0)))` (at most `λ₁ − D(0)` non-drops in total). The
+first is `D(c) ≥ D(0) − c`, i.e. **`diagLen_le_add_sub`, already proved
+sorry-free**; the second is the same telescoping identity read from the other end.
+**Neither needs new mathematics.**
+
+**0.047% IS NOT A PROOF.** Three reasons, recorded so nobody re-derives them:
+1. it is **asymptotic**. M₁ > 0 needs every n; exact verification reaches n = 60,
+   this reaches the limit, and the crossover is untouched;
+2. the margin leaves no room for finite-n corrections — and the measured
+   quantities approach these limits from *both* directions (`B_opp` from below,
+   `Ê` from above), so the finite-n budget is **worse** before it is better;
+3. the semicircle co-transition limit is used, not proved here.
+
+**For scale:** the crude bound is **2.045×** the truth, the refined **2.027×**,
+and the budget tolerates **2.028×**. That is why tenths of a percent decide it.
+
+**STILL OPEN.** qou-k5r5 OPEN. But the gap is now a specific, small, *elementary*
+quantity rather than "effective limit-shape estimates" — and the two refinements
+that reach the line are Lean-reachable from lemmas already proved.

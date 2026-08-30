@@ -1,0 +1,49 @@
+{
+ "probe": "m1_limit_closed_form",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "S_inf": "0.660469454737",
+ "S_same": "0.330234727369",
+ "B_opp_crude": "0.675474557616",
+ "B_opp_refined": "0.669298826082",
+ "total_crude": "1.00570928498",
+ "total_refined": "0.999533553451",
+ "w_opp": "1/2 exactly",
+ "checks": [
+  {
+   "name": "the framework reproduces phi(0) = 2/pi and phi(2) = 0",
+   "pass": true,
+   "detail": "phi(0) = 0.6366197724 against 2/pi = 0.6366197724; phi(2) = 0.0. The rescaled diagonal length starts at the Durfee constant and vanishes at the edge of the support."
+  },
+  {
+   "name": "CONTROL: the limiting framework reproduces N/P -> 0.6605",
+   "pass": true,
+   "detail": "quadrature gives S = 0.6604694547 against the corpus's 0.6605 (from the Ivanov-Olshanski field, an entirely different route) -- agreement 0.00462%. This checks the semicircle co-transition limit, the independence of the two corners, the omega weight and phi, all at once. Without it the integrals below would be unfalsifiable."
+  },
+  {
+   "name": "w_opp -> 1/2 EXACTLY, by symmetry -- no integral needed",
+   "pass": true,
+   "detail": "the omega weight (r-a)^2(r+a) depends on the two contents only through their ABSOLUTE values, and the semicircle is symmetric, so each sign is independent of its magnitude and the sign pattern is independent of the weight. Hence opposite-sign weight = P(opposite signs) = 1/2. Measured 0.4567, 0.4735, 0.4806, 0.4862 at n = 100..800, rising to it from below. The same symmetry gives S_same = S_opp = S/2 = 0.33023473."
+  },
+  {
+   "name": "the CRUDE bound (the one proved in Lean) does NOT close the limit",
+   "pass": true,
+   "detail": "|d_a - d_r| <= D(0) gives B_opp -> 0.67547456, so the total is 1.0057093 -- over 1 by 0.00571, i.e. 0.571%. That is QOU.BraidKnot.M1EdgeCalculus.abs_diagLen_sub_transpose_le, and it is sharp per edge, so the shortfall is not slack in the inequality."
+  },
+  {
+   "name": "REFINED elementary bounds reach the line (they do not settle it)",
+   "pass": true,
+   "detail": "adding N^tau(r) <= min(r, D(0)) and N^sigma(a) >= max(0, a - (l1-D0)) gives B_opp -> 0.66929883, total 0.99953355 -- under 1 by only 0.000466 (0.0466%). Both refinements are elementary: the first is D(c) >= D(0) - c, i.e. `diagLen_le_add_sub`, already proved sorry-free; the second is the same telescoping identity read from the other end. NOT A PROOF -- see the header for the three reasons, of which the sharpest is that this is asymptotic and the finite-n budget is WORSE (B_opp rises to its limit, Ehat falls to its)."
+  },
+  {
+   "name": "for scale: the bound is ~2x the truth, and 2x is nearly enough",
+   "pass": true,
+   "detail": "S_opp itself -> 0.3302347 while the crude bound gives 0.6754746 -- a factor of 2.045. The refined bound is 2.027x. The budget tolerates a factor of 2.028x, which is why refinements of a few tenths of a percent decide it."
+  }
+ ],
+ "passed": 6,
+ "total": 6,
+ "ms": 40373
+}
