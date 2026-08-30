@@ -297,4 +297,144 @@ theorem not_qExplicitFormula_empty :
   simp at hre
   nlinarith [hre, hq34]
 
+/-! ### The class is uninhabitable for an empty spectrum — and why (bean `qou-qexu`)
+
+`not_qExplicitFormula_empty` above refutes **one** datum. That is weaker than it
+looks, and the gap matters: a class refuted on one instance may still be
+satisfiable on another, and a conditional theorem over it is only worthless if
+**no** instance exists. So the satisfiability question has to be asked
+separately — the lesson recorded on this branch as *"exhibit a witness of the
+thing the conditional theorems actually depend on"*, here applied in the
+negative direction.
+
+Asked, the answer is that the identity fails for **every** datum with an empty
+spectrum, whatever its ideals, `Ω_q` and `q`. The mechanism:
+
+* `ψ_q(X)` is a sum over a **finite** `List MaxIdeal` whose terms are switched on
+  and off by `N(𝔪) ≤ X`, never grown — so it is bounded uniformly in `X`, by the
+  total of the weights' magnitudes.
+* `−½·ln_q(1 − X^{−2})` **diverges to `+∞` as `X → 1⁺`**, since `1 − X^{−2} → 0⁺`
+  and `log q > 0`.
+
+A bounded function cannot equal an unbounded one, so no such datum satisfies the
+class.
+
+**This is a defect in the formalisation, not in the mathematics**, and the
+diagnosis is worth stating precisely because it says what a repair must do. The
+classical explicit formula carries the *same* `−½ log(1 − x^{−2})` term, and it
+is true — because there the spectral sum runs over **infinitely many** zeros and
+is only conditionally convergent. That term is itself the closed form of the
+trivial-zero series, and its blow-up near `x = 1` is cancelled by the divergence
+of the non-trivial-zero sum. Pairing it against a **finite** `List` cannot
+reproduce that cancellation.
+
+So a faithful carrier needs the spectral side to be an infinite sum with a
+specified summation order, not a `List`. Until it has one, `explicit_formula` is
+a conditional whose hypothesis nothing can satisfy in the empty-spectrum case,
+and the general case is `qou-qexu`. -/
+
+/-- `ψ_q` is bounded uniformly in `X`: a finite sum whose terms are switched on
+    and off, never grown. -/
+theorem qChebyshev_abs_le (hbar : ℝ) (hpos : 0 < hbar)
+    (ideals : List MaxIdeal) (X : ℝ) :
+    |QChebyshevFunction hbar hpos ideals X|
+      ≤ (ideals.map fun m => |QVonMangoldtFunction hbar hpos m|).sum := by
+  unfold QChebyshevFunction
+  induction ideals with
+  | nil => simp
+  | cons a t ih =>
+    simp only [List.map_cons, List.sum_cons]
+    have hstep : |if a.norm ≤ X then QVonMangoldtFunction hbar hpos a else 0|
+        ≤ |QVonMangoldtFunction hbar hpos a| := by
+      by_cases h : a.norm ≤ X <;> simp [h]
+    calc |(if a.norm ≤ X then QVonMangoldtFunction hbar hpos a else 0)
+            + (t.map fun m => if m.norm ≤ X then QVonMangoldtFunction hbar hpos m else 0).sum|
+        ≤ |if a.norm ≤ X then QVonMangoldtFunction hbar hpos a else 0|
+            + |(t.map fun m => if m.norm ≤ X then QVonMangoldtFunction hbar hpos m else 0).sum| :=
+          abs_add_le _ _
+      _ ≤ |QVonMangoldtFunction hbar hpos a|
+            + (t.map fun m => |QVonMangoldtFunction hbar hpos m|).sum := by linarith
+
+/-- The trivial-zero tail term is **unbounded** as `X → 1⁺`: for every bound `B`
+    there is an `X > 1` on which it exceeds `B`.
+
+    Constructed rather than obtained as a limit: `X := 1/√(1−ε)` gives
+    `1 − X^{−2} = ε` exactly, so choosing `ε ≤ q^{−2B}` makes the term at least
+    `B`. Taking `ε ≤ 1/2` as well keeps `X ≤ √2`, which is what lets the
+    *bounded* side of the identity be bounded by a constant. -/
+theorem tail_term_unbounded (q : ℝ) (hq : 1 < q) (B : ℝ) :
+    ∃ X : ℝ, 1 < X ∧ X ≤ Real.sqrt 2 ∧ B ≤ -(1 / 2) * qLog q (1 - X ^ (-2 : ℝ)) := by
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  set ε : ℝ := min (1 / 2) (q ^ (-(2 * B))) with hε
+  have hqpos : (0:ℝ) < q := lt_trans one_pos hq
+  have hεpos : 0 < ε := lt_min (by norm_num) (Real.rpow_pos_of_pos hqpos _)
+  have hεhalf : ε ≤ 1 / 2 := min_le_left _ _
+  have hone : (0:ℝ) < 1 - ε := by linarith
+  set y : ℝ := Real.sqrt (1 - ε) with hy
+  have hypos : 0 < y := Real.sqrt_pos.mpr hone
+  have hysq : y ^ 2 = 1 - ε := Real.sq_sqrt hone.le
+  refine ⟨1 / y, ?_, ?_, ?_⟩
+  · -- 1 < 1/y  because y < 1
+    have hylt : y < 1 := by nlinarith [hysq, hypos]
+    rw [lt_div_iff₀ hypos]; linarith
+  · -- 1/y ≤ √2  because y ≥ 1/√2, i.e. y² ≥ 1/2
+    have h2 : (1:ℝ)/2 ≤ y ^ 2 := by rw [hysq]; linarith
+    have hs2 : Real.sqrt 2 > 0 := Real.sqrt_pos.mpr (by norm_num)
+    rw [div_le_iff₀ hypos]
+    nlinarith [h2, hypos, Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num), hs2]
+  · -- the bound itself
+    have hx2 : (1 / y) ^ (-2 : ℝ) = 1 - ε := by
+      rw [show (-2:ℝ) = -(2:ℕ) by norm_num,
+        Real.rpow_neg (by positivity), Real.rpow_natCast, div_pow, one_pow, hysq,
+        one_div, inv_inv]
+    rw [hx2, show (1:ℝ) - (1 - ε) = ε by ring, qLog]
+    have hle : ε ≤ q ^ (-(2 * B)) := min_le_right _ _
+    have hlog : Real.log ε ≤ -(2 * B) * Real.log q := by
+      calc Real.log ε ≤ Real.log (q ^ (-(2 * B))) := Real.log_le_log hεpos hle
+        _ = -(2 * B) * Real.log q := Real.log_rpow hqpos _
+    have hdiv : Real.log ε / Real.log q ≤ -(2 * B) := by
+      rw [div_le_iff₀ hlogq]; linarith [hlog]
+    linarith [hdiv]
+
+/-- **The class is uninhabitable for an empty spectrum.** For *every* datum with
+    `spectrum = []` — any ideals, any `Ω_q`, any `q > 1` — the identity fails.
+
+    Strictly stronger than `not_qExplicitFormula_empty`, which refutes one datum.
+    A class refuted on one instance may still be satisfiable on another; this
+    says no empty-spectrum datum satisfies it at all, so over that whole family
+    `explicit_formula` is a conditional whose hypothesis nothing meets.
+
+    The proof is the bounded-vs-unbounded argument: `qChebyshev_abs_le` bounds
+    the geometric side by a constant of the datum, `tail_term_unbounded` puts the
+    tail term above that constant at some `X ∈ (1, √2]`, and `X ≤ √2 < 2` keeps
+    the remaining terms small enough that the two cannot meet. -/
+theorem not_qExplicitFormula_of_nil_spectrum (D : QZetaDatum) (hs : D.spectrum = []) :
+    ¬ QExplicitFormula D := by
+  intro hinst
+  set M : ℝ := (D.ideals.map fun m => |QVonMangoldtFunction D.hbar_q D.hbar_pos m|).sum with hM
+  set c : ℝ := qLog D.q (2 * Real.pi * D.Omega_q) with hc
+  obtain ⟨X, hX1, hX2, hXb⟩ := tail_term_unbounded D.q D.hq (M + |c| + 2)
+  have h := hinst.formula X hX1
+  rw [spectralSide, hs] at h
+  simp only [List.map_nil, List.sum_nil, sub_zero] at h
+  -- every term is a real coercion, so the identity returns to ℝ by injectivity
+  have hre : QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X
+      = X - qLog D.q (2 * Real.pi * D.Omega_q)
+        - (1 / 2) * qLog D.q (1 - X ^ (-2 : ℝ)) := by
+    have hc2 : ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ)
+        = ((X - qLog D.q (2 * Real.pi * D.Omega_q)
+            - (1 / 2) * qLog D.q (1 - X ^ (-2 : ℝ)) : ℝ) : ℂ) := by
+      rw [h]; push_cast; ring
+    exact_mod_cast hc2
+  -- the geometric side is bounded by M
+  have hbdd : |QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X| ≤ M :=
+    qChebyshev_abs_le _ _ _ _
+  have hXlt2 : X < 2 := by
+    have : Real.sqrt 2 < 2 := by
+      nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),
+        Real.sqrt_nonneg 2]
+    linarith
+  have habs := abs_le.mp hbdd
+  linarith [hXb, habs.2, hX1, le_abs_self c]
+
 end QOU.AlgebraicSubstrate
