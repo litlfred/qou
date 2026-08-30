@@ -844,3 +844,37 @@ REVISED REMAINING WORK:
      delta, m from slack_pos.
   3. Step 5, not LiouvilleWith.
 
+## 2026-08-30 -- hbound's missing half, written down. QOU/Mathlib/RothSiegelBound.lean
+
+Four declarations, axiom-clean, .olean deleted first, registered in QOU.lean. The previous entry
+flagged an asymptotic estimate as NOT formalised; this closes it.
+
+  * card_idxBoxF_le_two_pow: #box <= 2^{sum r_h}. Immediate from prod_succ_le_two_pow_sum.
+  * norm_auxMatrixInt_le: ||auxMatrixInt|| <= C (2B)^{sum r_h}, with the coordinate-vs-norm
+    comparison as a hypothesis hC.
+  * abs_basis_repr_le: hC DISCHARGED from Mathlib's basis_repr_norm_le_const_mul_house, so the arc
+    assumes nothing about K. The constant is Mathlib's private c, reached the same way
+    RothAuxiliary reaches c_1.
+  * norm_auxMatrixInt_le_house: the two composed, unconditional.
+
+WHY THIS IS THE HALF THAT MATTERED. Both constants are INERT IN r. Taking logs,
+log #box <= (sum r_h) log 2 and log ||A|| <= log c(K) + (sum r_h) log(2B), so log b is LINEAR in
+sum r_h. That linearity is precisely what makes the log N cancel on the two sides of
+b^{mq} <= H_0^{r_0 p}: sum r_h ~ log N sum_h 1/log H_h against r_0 log H_0 ~ log N.
+
+Splitting norm_auxMatrixInt_le from abs_basis_repr_le was deliberate rather than tidy. The growth
+in sum r_h is the arc's business and is proved unconditionally; hC is a fact about K alone. Had
+they been one theorem, a reader could not tell which half was doing the work, and the K-fact would
+have looked like an arc assumption.
+
+API friction worth recording: Basis is now in the Module namespace, so the reindex lemma is
+Module.Basis.repr_reindex_apply -- Basis.reindex_repr and Basis.repr_reindex_apply both fail with
+"unknown identifier", which reads like the lemma is missing rather than moved.
+
+REMAINING on this bean, unchanged in substance:
+  1. Assemble: heights (exists_heights_growing_floor) -> N (exists_pow_le) -> degrees
+     (rothDegrees) -> Gamma_m (rothGammaFull_of_heights) -> roth_contradiction_int, with eps,
+     delta, m from slack_pos. Every input now exists; this is arithmetic bookkeeping over the
+     named quantities.
+  2. Step 5, not LiouvilleWith.
+

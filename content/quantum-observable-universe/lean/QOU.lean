@@ -1334,6 +1334,12 @@ import QOU.Mathlib.RothIntegerChain
 -- two_le would fail on every index but the first.  At floor 2^F it discharges clause 3
 -- as well, which is the clause that bites hardest (m = 2 needed H = 1024 for it).
 import QOU.Mathlib.RothSelection
+-- The two size estimates hbound's non-circularity rests on, and which RothSelection
+-- could only state: #box <= 2^{sum r_h} and ||auxMatrixInt|| <= c(K) (2B)^{sum r_h}.
+-- Both constants are inert in r, so log b is LINEAR in sum r_h -- which is what lets
+-- the log N on the two sides of b^{mq} <= H_0^{r_0 p} cancel.  The coordinate-vs-house
+-- comparison is Mathlib's basis_repr_norm_le_const_mul_house, so the arc assumes nothing.
+import QOU.Mathlib.RothSiegelBound
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
