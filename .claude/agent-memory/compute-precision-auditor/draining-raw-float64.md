@@ -129,6 +129,34 @@ change moved. On 2026-08-30 `witness-float64-padding-audit.witness.json` moved
 landed on main in `6e08f1f570`. Committing it would have made the PR look like
 it caused four new padding occurrences.
 
+**TRAP — the mechanism that defeats the rule above is `git add -A`.** Knowing
+the policy is not enough; the failure is mechanical. `precision-gates.sh`
+regenerates **~7 audit witnesses in the working tree as a side effect** of
+running — `q0-anchor-consistency`, `witness-provenance`, `mpf-import-time-dps`,
+`never-raises-dps`, `q0-value-drift`, `witness-float64-padding`,
+`witness-raw-float64`. So the natural one-liner
+
+    bash scripts/precision-gates.sh --changed && git add -A && git commit …
+
+silently sweeps all seven into whatever PR you are on. Measured on 2026-08-30
+in one session, twice, on *unrelated research PRs*: caught by inspection on
+#6271 (reverted before commit), missed on #6279, which went up as **13 files /
++1042** and had to be amended back to **6 files / +768**. The regenerated
+`inter-nucleon-channel-color-tube.qa.json` in that same commit was legitimate —
+so "the diff is bigger than expected" does not localise the problem for you;
+you have to name the seven.
+
+Two habits that actually work, since the policy alone did not:
+
+- **`git add <explicit paths>`**, never `-A`, in any command that also runs a
+  gate or a producer.
+- **`git checkout -- computations/` immediately after the gate run**, before
+  staging anything. Restores the side effects and keeps whatever you actually
+  edited, provided you edited it outside `computations/` or staged it first.
+
+And check `git diff --stat origin/main...HEAD` before opening the PR, not after
+— on #6279 the PR was already public when the count gave it away.
+
 ## Environment
 
 Two gates cannot run here: `q0_value_drift_audit.py` and the padding audit's
