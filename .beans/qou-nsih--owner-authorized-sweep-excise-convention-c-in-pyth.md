@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T09:52:14Z
+updated_at: 2026-08-30T10:08:24Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -248,3 +248,31 @@ So the actionable migration surface is materially smaller than 50 and probably
 smaller than the ~20-25 estimated. Next step is to finish reading the 14 and
 split them into (i) parameter sites, migratable; (ii) subject sites, -> cds1;
 (iii) comparison sites, -> ledger.
+
+
+## CORRECTION 2026-08-30 (second) — the 46 was measured on a stale tree
+
+I reported "blocking 50 -> 46" and adjudicated 4 sites into the comparison
+ledger. Both are wrong in the same way: measured against a tree 177 commits
+behind main.
+
+After rebasing:
+
+  ledger entries        45 (my view)  ->  75 (main's)
+  BLOCKING              46            ->  16
+
+ALL FOUR of my adjudications were DUPLICATES. A sibling had adjudicated the same
+four sites on 2026-08-29 with the IDENTICAL source_hash values (8f68fcb6b016,
+6897fbb293a0, 8bb7d434c4a1, 81f975ad164b), so the union kept theirs and dropped
+mine, and my commit reduced to a 925/925-line pure REFORMAT with byte-identical
+content. Dropped.
+
+TRAP for the next agent: ledger adjudication is MECHANICAL work, which AGENTS.md
+says has one owner and must not be overlapped -- unlike open research, where
+parallel attack is explicitly sanctioned. I fetched main at session start (89
+behind) and never re-fetched before spending a tranche on the ledger, by which
+time main was 177 ahead and the sites were already done. Re-fetch before
+starting any mechanical drain, not merely before pushing.
+
+Live count is 16 blocking. The subject-vs-parameter finding above is unaffected
+-- it is about what the remaining sites ARE, not how many.
