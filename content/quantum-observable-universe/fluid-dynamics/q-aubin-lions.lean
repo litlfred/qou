@@ -17,17 +17,14 @@ Conjectural q-deformed Aubin–Lions compactness: as q → 1, the q-NS solution 
 
 ## Status
 
-Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
-the residual §3b-violator cone identified in
-[`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
-(P1.b sweep). Class declaration here lets downstream
-provable-kind blocks (in the same `uses[]` cone) become
-`conditional-on-class` rather than violators.
+Class-axiomatised per AGENTS.md §3b-cond. Downstream blocks may take
+`[QAubinLions …]` as an explicit `[Instance]` hypothesis to retain
+`theorem` / `proposition` status.
 
-`sorry` in any concrete instance is understood as **conjecture**,
-not missing proof. Downstream blocks may take `[QAubinLions]` as an
-explicit `[Instance]` hypothesis to retain
-`theorem` / `proposition` status under §3b-cond.
+Assuming this class is assuming an open conjecture. It is *not* proved
+here, and no `instance` is declared — the examples below are witnesses
+that the class is consistent and refutable, not instances that would
+make it available to typeclass inference.
 
 ## References
 
