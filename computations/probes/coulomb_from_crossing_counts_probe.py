@@ -23,9 +23,22 @@ they reach it one degree up.
 
 ## What is measured
 
-1. **The two channel identities**, re-measured against the corpus's own braid
-   generator `mass_at_3A_proper.atom_braid_word_3A` rather than assumed:
-   `n₊ + n₋ = 10A - 2` and `n₊ - n₋ = 4Z`.
+1. **The two channel identities** `n₊ + n₋ = 10A - 2` and `n₊ - n₋ = 4Z`, and
+   **which bond set they are over** — the point a sibling raised on #6302.
+   `mass_at_3A_proper.atom_braid_word_3A` takes `include_inter`, and the answer
+   is measured here rather than read off the signature: the default is
+   **`True`**, so these counts carry the **adjacent-pair chain** of `A - 1`
+   inter-nucleon bonds. Cross-checked by total length, `12A - 1 =
+   (n₊ + n₋) + n_averaged = (10A - 2) + (2A + 1)`, against the generator itself.
+
+   That is the same `A - 1` chain `computations/binding_canonical.py` uses, and
+   the same self-vs-mutual split `QOU.Mass.SelfMutualPartition` formalises — so
+   the channel is affine in `A` because the bond set is a chain, not because a
+   nucleus has no pair bonds. The corpus carries **three** inter-nucleon bond
+   sets across its atom-word builders (none, chain `A-1`, complete `C(A,2)`) in
+   two growth classes; had these counts come from the complete-graph builder
+   they would be quadratic in `A` already and §2's "one degree up" would be
+   reachable linearly. They do not.
 
 2. **`16·Z(Z-1) = (n₊ - n₋)(n₊ - n₋ - 4)`**, exactly, in integer arithmetic, on
    every nucleus — the identity `CoulombFromCrossingCounts.protonPairs_from_counts`
@@ -154,6 +167,35 @@ def main() -> int:
           ok_sum and ok_dif,
           "exact integer equality on every row; the unsigned channel depends on "
           "A alone (mirror-invariant) and the signed one is 4Z.")
+
+    # Which bond set? MEASURED against the generator, not read off the signature.
+    print("\n  Bond set — measured, because a signature can be misread:")
+    from mass_at_3A_proper import atom_braid_word_3A
+    print(f"    {'A':>4}{'default len':>13}{'inter=True':>12}{'inter=False':>13}"
+          f"{'12A-1':>8}{'(n+ + n-) + n_avg':>19}")
+    default_is_inter = True
+    len_ok = True
+    for A in (2, 4, 6, 8):
+        Zc = A // 2
+        dlen = len(atom_braid_word_3A(Zc, A - Zc))
+        tlen = len(atom_braid_word_3A(Zc, A - Zc, include_inter=True))
+        flen = len(atom_braid_word_3A(Zc, A - Zc, include_inter=False))
+        pc, mc = counts(A, Zc)
+        assembled = (pc + mc) + (2 * A + 1)
+        default_is_inter &= (dlen == tlen)
+        len_ok &= (dlen == 12 * A - 1 == assembled)
+        print(f"    {A:>4}{dlen:>13}{tlen:>12}{flen:>13}{12*A-1:>8}{assembled:>19}")
+    check("the counts are over the ADJACENT-PAIR CHAIN (A-1 bonds), not the "
+          "free-nucleon word",
+          default_is_inter and len_ok,
+          "atom_braid_word_3A's include_inter defaults to True (verified by "
+          "CALLING it, on A = 2,4,6,8, not by reading the signature), and the "
+          "default word length is exactly 12A - 1 = (n+ + n-) + n_averaged = "
+          "(10A - 2) + (2A + 1). So the channel is affine in A because the bond "
+          "set is a CHAIN, not because there are no pair bonds. Same A-1 chain "
+          "as binding_canonical.py and QOU.Mass.SelfMutualPartition. Had they "
+          "come from the complete-graph builder (C(A,2), quadratic in A), §2's "
+          "'one degree up' would be reachable linearly instead.")
 
     # ---------------------------------------------------------------- 2
     print("\n" + "-" * 78)
