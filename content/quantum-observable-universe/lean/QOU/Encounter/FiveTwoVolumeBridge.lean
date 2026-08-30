@@ -37,9 +37,14 @@
   circle, so its Bloch–Wigner value *is* a Clausen value.  The 5₂ shape is the root of
   `X³ − 2X² + 3X − 1`; it is not on the unit circle and there is no Clausen special case
   to appeal to.  That is still true, and the corpus still has **no**
-  `0 < BlochWigner_lob z` for `0 < z.im` — what it has is `BlochWigner_lob_real_eq_zero`,
-  vanishing *on the reals*, which is the opposite boundary and gives nothing here.  The
-  general positivity `ManifoldVolumeBridge` declined to assume remains open.
+  `0 < BlochWigner_lob z` for `0 < z.im` — the **strict** inequality, which is the one
+  `ManifoldVolumeBridge` declined to assume, remains open.
+
+  Say *strict*, though.  `Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg` gives
+  `0 ≤ D(z)` on the whole upper half plane, from Milnor's angle formula and
+  `LobMonotonicity.lob_sum_nonneg`, so an unqualified "the corpus has no positivity for
+  `D`" is now wrong.  Nonneg does not give what this file needs — `vol_ne_zero_of_realises`
+  wants `≠ 0` — which is why the comparison route below is still the one doing the work.
 
   What closed it at 5₂ is `QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` (bean
   `qou-52ch`): Rivin's strict concavity of the ideal-tetrahedron volume, applied along
