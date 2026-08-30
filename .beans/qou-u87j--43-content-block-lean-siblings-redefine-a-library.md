@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-23T20:28:24Z
+updated_at: 2026-08-30T11:40:08Z
 ---
 
 
@@ -671,3 +671,46 @@ material, so deleting the wrongly-migrated copy removes the defect outright.
 Worth recording, because it is the seventh direction-shape and the first that
 resolves by deletion: **sibling wrong, library right, and the sibling should
 not exist at all.** The previous six all ended with two copies in agreement.
+
+
+## JOINED with qou-kfcl 2026-08-30 — the uncovered cell is bigger than this one
+
+`check-mirror-drift.ts` reads `structure`/`class` heads only (its own
+docstring says so), so **every `def` and `abbrev` is invisible to it**.
+`lean-duplicate-fqn-audit.py` covers library-vs-library for `def`/`abbrev`.
+Nobody covered sibling-vs-library for `def`/`abbrev`.
+
+Measured with `scripts/lean-name-surface-audit.py` (shares the calibrated
+parser):
+
+| collision | identical | DRIFTED |
+|---|---|---|
+| library ~ library | 0 (was 8, drained) | 7 (was 16) |
+| **library ~ sibling** | 74 | **54** |
+| sibling ~ sibling | 37 | 27 |
+
+Live `check-mirror-drift --package qou` on the same tree: 136 pairs / 103
+identical / **33 drifted** — so the population this bean tracks is **33**,
+and the uncovered `def`/`abbrev` population is **54**. It also reports
+`duplicatesInLibrary: 0`, which is true for structures and classes and
+was 26 for defs and abbrevs.
+
+Three of the 54 are not merely drift:
+
+- **`QOU.Archimedean.R_q` is declared in ELEVEN places**, and two siblings
+  (`climax-volume-mass/q-angular-momentum`, `q-energy`) say
+  `abbrev R_q := ℝ` where every other says `LaurentPolynomial ℤ`. One name,
+  two base rings, across the §7c wall.
+- **Two siblings are `:= trivial` stubs shadowing a real library definition**
+  — `signSequenceOfBraid` and `staircasePartition`. The first says so in its
+  own header ("Sibling stub … the compiled formalisation lives in
+  `QOU/AppendixSurreals/SignSequence.lean`"), which is exactly what
+  AGENTS.md §0a "No shadowing stubs (STRICT)" forbids: the block's `lean.ref`
+  resolves to the stub, not to the five-binder definition Lake compiles.
+- **`T_pp` / `T_nn` / `T_mix`** carry three different formulas across the two
+  library copies and the sibling.
+
+Note the checker lives on unmerged folio-assistant branch
+`claude/gracious-dijkstra-0ijp2l` and is NOT on `main`; running it needs a
+worktree of that branch (one file will not do — it imports
+`ARCHIMEDEAN_TYPE_RE` from `qa-checkers-voice.ts`, which main lacks).

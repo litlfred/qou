@@ -50,6 +50,47 @@ module pair.
 paper may still resolve declarations from it. Check before deleting anything —
 this triage recommends renaming, not deletion, for exactly that reason.
 
+## DRAINED: 26 pairs → 7 (same day)
+
+19 of the 24 names are gone. All 19 were library-only — no content-block
+sibling anywhere — which is what made them safe; the surface audit
+(`scripts/lean-name-surface-audit.py`) is what established that, and it is
+why the drain waited for the join with `qou-u87j`.
+
+| | before | after |
+|---|---|---|
+| compiler-confirmed collision pairs | 26 | **7** |
+| L~L names, bodies identical | 8 | **0** |
+| L~L names, bodies differ | 16 | **7** |
+
+Method: nest the enclosing namespace one level deeper in the zero-importer
+module. That fixes every collision in a file at once and leaves in-file
+references resolving unchanged, because they were already relative. Eleven
+modules were treated this way. `NuclearGroebnerReduction` is the one
+exception — a content block's `lean.ref` names
+`QOU.Archimedean.nuclear_groebner_reduction` in it, so nesting would have
+moved a live reference; there the colliding `BraidWord` was renamed to
+`NuclearBraidWord` instead. All 109 declarations across the nine modules of
+the second batch were checked against every `lean.ref` in `content/**/*.ts`
+first; that was the only hit.
+
+Verified with the compiler at every step: each changed module `lean`-direct
+exit 0 with its olean rebuilt, `lean QOU.lean` exit 0, `--verify` down from
+26 to 7, regenerated baseline passing `--check-baseline`.
+
+### The 7 that remain are the decisions, not leftovers
+
+- **Five are entangled with a content-block sibling** declaring the same
+  name: `QOU.Archimedean.T_pp`, `T_nn`, `QOU.BraidKnot.heckeH`, `qInt`,
+  `writhe`. Draining these means choosing between three copies, not two, and
+  belongs with `qou-u87j`.
+- **Two are one decision over one module pair**: `QOU.Mathlib.addCell` and
+  `IsAddableCell`, `YoungDiagramAddCell` (2 importers) against
+  `YoungDiagramAddable` (1, and in the root build). Both sides are consumed,
+  so someone has to say which definition is canonical.
+
+---
+
 ## Do not start the drain without checking for a content sibling
 
 **The audit scans `lean/QOU/` only.** Content-block `.lean` siblings under
