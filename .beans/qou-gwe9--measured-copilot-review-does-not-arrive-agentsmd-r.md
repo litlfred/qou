@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T10:39:27Z
+updated_at: 2026-08-30T11:33:25Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -455,3 +455,43 @@ records against its own #6068. It happened not to cost anything (nothing
 arrived in the following half hour), but the window was not mine to gamble.
 The rule that follows is the audit's, unchanged: **do not wait, but keep
 reading after the merge**, because the merge is not the end of the window.
+
+
+### Observation CLOSED 2026-08-30 11:33Z — final bounds, nothing arrived
+
+Final sweep of all four merged PRs. `get_reviews` → `[]` on every one.
+
+| PR | pushed | requested | final censored window |
+|---|---|---|---|
+| #6162 | 10:08:42Z | **~10:09Z** | **≥ 84 min** |
+| #6168 | 10:10:53Z | none | **≥ 81 min** |
+| #6174 | 10:35:45Z | none | ≥ 57 min |
+| #6179 | 10:47:00Z | none | ≥ 45 min |
+
+Superseding the ≥37/≥35 recorded above: these are the same observations carried
+to their end, not new ones.
+
+**What the two strong rows now bound.**
+
+- **#6162 — request trigger, ≥ 84 min.** That is ~21× the 3–4 min
+  request→review latency the reopened audit measured. A request-triggered review
+  did not arrive within twenty-one times its own observed latency.
+- **#6168 — push trigger, ≥ 81 min.** ~7.8× the 10m28s push→review latency of
+  the data point in `f96325ec1`. A push-triggered review did not arrive within
+  nearly eight times its own observed latency.
+
+**Still NOT scored, and this is the point.** The quota exhausted at 07:56Z with
+an unknown recharge interval remains the one live explanation that fits all four
+rows without touching either trigger hypothesis, and **no quota-limit message
+was posted on any of them** — the same undetermined signature row 3 hit. Four
+negatives at long windows are consistent with "quota still spent for the whole
+session" and say nothing on their own about what triggers a review.
+
+**What would settle it, for whoever picks this up:** a request on a fresh PR
+after a known-long quiet period, with the quota-limit message watched for
+explicitly. Until then the three candidates in
+`docs/audits/2026-08-30-copilot-review-works-again.md` stand unresolved and this
+bean stays open.
+
+Observation closed; no further check-in scheduled. Past ~80 min further waiting
+adds nothing — a fifth zero at 120 min would not discriminate either.
