@@ -163,11 +163,23 @@ def load_y_lambda_for_q0(n: int, q0) -> dict:
         return y_lambda_at_q0_mpmath(n, mp.mpf(str(q0)))
     path = _Y_LAMBDA_BY_ANCHOR[want]
     if not path.exists():
+        # This message used to name `regenerate_y_lambda_mpfr.py --anchor …`
+        # ALONE, which is a DESTRUCTIVE instruction (bean `qou-sal4`): that
+        # script writes only n ≤ 12 and overwrites the cache wholesale, so
+        # following it drops `tables_by_n` n = 13..18 and the
+        # `extension.closed_form_tower` block that `y_lambda_tower_infra.py`
+        # owns. Both steps are named now, with the explicit n — the extender
+        # defaults to 24 and would otherwise grow the cache past its extent.
         raise FileNotFoundError(
-            f"no {want}-anchored y_lambda cache at {path.name}; generate it "
-            f"with `regenerate_y_lambda_mpfr.py --anchor "
-            f"{'proton' if want == 'proton' else 'ideal'}` instead of reading "
-            f"the other layer's table")
+            f"no {want}-anchored y_lambda cache at {path.name}; rebuild it "
+            f"with the TWO-STEP pipeline, not step 1 alone:\n"
+            f"    python3 computations/regenerate_y_lambda_mpfr.py --anchor "
+            f"{'proton' if want == 'proton' else 'ideal'}\n"
+            f"    python3 computations/y_lambda_tower_infra.py 18\n"
+            f"Step 1 writes n<=12 and OVERWRITES the file, dropping the "
+            f"closed-form tower (n=13..18 + extension.closed_form_tower) that "
+            f"step 2 owns; pass step 2's n explicitly (its default is 24). "
+            f"Do not read the other layer's table instead.")
     declared_q = json.loads(path.read_text())["q_0_50dps"]
     declared = anchor_of_q0(declared_q)
     if declared != want:

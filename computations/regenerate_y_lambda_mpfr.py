@@ -277,9 +277,57 @@ def run_anchor(anchor: str) -> int:
         engine_version=f"sympy {sp.__version__} + mpmath {mp.__version__}",
         q0_anchor=out["q0Anchor"], q0_value=q0_str,
     )
+    # ── DESTRUCTIVE-OVERWRITE WARNING (bean `qou-sal4`) ──────────────────────
+    #
+    # This is a WHOLESALE overwrite: `out_tables` holds only what THIS run
+    # computed (n ≤ 12, symbolic). Anything the on-disk cache carried beyond
+    # that is dropped -- and the proton cache really does carry more:
+    # `y_lambda_tower_infra.py` extends `tables_by_n` to n = 13..18 by closed
+    # form and adds an `extension.closed_form_tower` block. A bare
+    # `--anchor proton` silently deleted all of it (measured 2026-08-30:
+    # 17 tables_by_n keys -> 11, extension block gone).
+    #
+    # Worse, that bare command is what the corpus TELLS you to run: the
+    # FileNotFoundError in `tr_m_wenzl_bridge_mpfr.load_y_lambda_for_q0` names
+    # it verbatim. Both sides are fixed together; this half makes the loss
+    # impossible to miss.
+    #
+    # The loss is NOT repaired by silently carrying the old entries forward.
+    # They were evaluated at whatever q the previous run used, so merging them
+    # into a freshly-pinned file would manufacture a within-file straddle --
+    # a cache whose label says one pin and whose tail holds another. That is
+    # the defect class this module's own q0Anchor comment (above) exists to
+    # prevent. The honest move is to drop them and SAY SO, loudly, with the
+    # exact command that rebuilds them.
+    dropped_n, had_extension = [], False
+    if OUTPUT.exists():
+        try:
+            _prev = json.loads(OUTPUT.read_text())
+            dropped_n = sorted(
+                (k for k in _prev.get("tables_by_n", {}) if k not in out_tables),
+                key=int)
+            had_extension = "extension" in _prev
+        except (ValueError, OSError):
+            pass  # unreadable prior cache: nothing to warn about
+
     OUTPUT.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\n  Wrote {OUTPUT.name} ({OUTPUT.stat().st_size} bytes).")
     print(f"  tables_by_n keys: {sorted(out_tables.keys(), key=int)}")
+    if dropped_n or had_extension:
+        _max = max(int(n) for n in dropped_n) if dropped_n else 0
+        print()
+        print("  " + "!" * 74)
+        print("  !! THIS OVERWRITE DROPPED CLOSED-FORM TOWER DATA -- REBUILD IT NOW")
+        print("  " + "!" * 74)
+        if dropped_n:
+            print(f"    dropped tables_by_n n = {', '.join(dropped_n)}")
+        if had_extension:
+            print("    dropped the `extension.closed_form_tower` block")
+        print("    Those entries are NOT produced by this script. Rebuild with:")
+        print(f"        python3 computations/y_lambda_tower_infra.py {_max or 18}")
+        print("    Pass the n above explicitly -- the script's own default is 24,")
+        print("    which would extend the cache PAST the extent you started with.")
+        print()
     print("=" * 96)
     return 0
 
