@@ -113,6 +113,50 @@ Second independent crack; the first,
 `BodyOrderRecurrenceDepth.no_equivariant_prolongation` (merged), reaches it from
 equivariance rather than growth.
 
+> **🛑 CORRECTION 2026-08-30, and it is against this unit — two things, one of
+> them a partial duplication I did not detect.**
+>
+> **(a) The unit partially duplicates `QOU/MassTheory/FixedDepthGrowthBound.lean`
+> on PR #6088**, which proves the same geometric bound (`abs_le_geometric`) and
+> the factorial case (`not_factorial_growth`), and which landed on that branch
+> roughly forty minutes before this file was written. **It has priority.** The
+> corpus-grep that preceded this unit was run against `main` and `.beans/`, where
+> bean `qou-9yqb` still listed the Lean as its *"next unit"*; the sibling landed
+> it in the interval, and announced it in a comment on **#6052** — a thread this
+> branch had not read. Recorded as a limit of the six-path checklist rather than
+> as an excuse: **a sibling branch's Lean is not on any of the six paths**, and a
+> PR comment thread is not either.
+>
+> What survives as an increment is the **generality**: the hypothesis here is
+> `SuperExponential` — exceeds *every* geometric sequence — rather than factorial
+> specifically, so the contradiction covers growth classes strictly between
+> exponential and factorial. That is real but modest; if #6088's maintainers
+> prefer one home, this file should be folded into theirs and deleted, and I have
+> said so on both threads.
+>
+> **(b) This file's header cited the wrong declaration, and the sibling caught
+> the same slip in themselves first.** It named `involution_ratio_unbounded`
+> (*"`I` leaves every geometric class"*) as the super-exponential half. That is
+> too quick: **a geometric upper bound does not forbid unbounded two-step
+> ratios** — a sequence may dip far below `K ^ n` at some `n` and jump back,
+> making `a(n+2)/a(n)` arbitrarily large while never exceeding `M·Kⁿ`. The
+> load-bearing declaration is `factorial_le_involution_two_mul` (`n! ≤ I(2n)`),
+> not the ratio lemma.
+>
+> **The theorems are unaffected** — `SuperExponential` is defined here as the
+> negation of the geometric bound itself, which is the property that genuinely
+> conflicts, so `not_isConstKernelRec_of_superExponential` was correct as proved.
+> Only the header's citation was wrong, and it is fixed.
+>
+> **The bridge is not formalised here.** Factorial growth on the even indices
+> does imply `SuperExponential` (`Kⁿ/n! → 0`), but that argument belongs next to
+> the factorial lemma in #6088's file. It is stated rather than proved, and
+> deliberately not left as a `sorry`: nothing in this file needs it, since the
+> theorems are stated for the general predicate directly. My first attempt at it
+> also carried a real error — I bounded `M·Kⁿ` when the index is `2n` and the
+> bound must be on `K^(2n)` — which is a further reason it should be written
+> where its reader can check it against the factorial statement.
+
 **Consequence for `qou-i5yp`.** That bean asks whether a depth-≤8 Bring
 Gauss–Manin recurrence admits `a₂ : a₃ : a₄ = 1 : −0.52 : +4.45`. If the
 fixed-depth picture is what gives, the question is moot — settle this first.

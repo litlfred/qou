@@ -9,9 +9,19 @@ incompatibility machine-checked rather than argued.
   kernel `c`, for every `n`, with `d ≤ rank V ≤ 2g = 8` on the genus-4 Bring
   curve — obtained by Cayley–Hamilton on the jet-prolongation operator.
 
-* `QOU.Mass.SWPeriodSuperExponential` (PR #6052) proves the classical period
-  ratio is **unbounded**: `a_D^(n)|_{q=1} = lw (n-1) = I n / n` with `I` the
-  involution numbers, and `I` leaves every geometric class.
+* `QOU.Mass.SWPeriodSuperExponential` (PR #6052) proves `a_D^(n)|_{q=1} =
+  lw (n-1) = I n / n` grows at least factorially: `factorial_le_involution_two_mul`
+  gives `n ! ≤ I (2n)`.
+
+**Cite that lemma, not the ratio one.** It is tempting to reach for
+`involution_ratio_unbounded` ("`I` leaves every geometric class") instead, and it
+does **not** carry the contradiction: a geometric *upper* bound does not forbid
+unbounded two-step ratios, since a sequence may dip far below `K ^ n` at some `n`
+and jump back, making `a (n+2) / a n` arbitrarily large while never exceeding
+`M * K ^ n`. `SuperExponential` below is the negation of the geometric bound
+itself, which is the property that actually conflicts. (This correction is
+#6088's, made against its own earlier claim; an earlier revision of this header
+repeated the same slip and cited the ratio lemmas here.)
 
 A linear recurrence with constant coefficients admits only solutions
 `Σ p_i n * λ_i ^ n`, which are at most exponential. This file proves the
@@ -40,6 +50,23 @@ its docstring records that `Σ_{λ ⊢ n} f^λ = I n` (RSK) is open in this corp
 This is the second independent crack in the fixed-depth picture. The first,
 `QOU.MassTheory.BodyOrderRecurrenceDepth.no_equivariant_prolongation` (merged),
 reaches it from equivariance (Schur on `H¹(Bring)`) rather than from growth.
+
+## Overlap with `QOU.MassTheory.FixedDepthGrowthBound` (#6088) — read this first
+
+That file landed on its branch before this one and proves the same geometric
+bound (`abs_le_geometric`) plus the factorial case (`not_factorial_growth`).
+**It has priority; this file is the generalisation, not a re-derivation.** The
+increment here is that the growth hypothesis is `SuperExponential` — *exceeds
+every geometric sequence* — rather than factorial specifically, so the
+contradiction covers growth classes between exponential and factorial, where no
+`n !` bound is available. **The bridge between the two is NOT formalised here.** Factorial growth on the
+even indices does imply `SuperExponential`, since `K ^ n / n !` tends to zero for
+every `K` — but that argument belongs in #6088's file, next to the factorial
+lemma it discharges, and is stated here only so the relationship is on the
+record. It is deliberately not a `sorry` in this file: nothing below needs it,
+because the theorems are stated for the general predicate directly. If the
+maintainers of #6088 prefer a single home, this file should be folded into
+theirs and deleted.
 
 Ground ring `ℝ`: the claim is about magnitudes and unboundedness, so it is
 archimedean by nature and `ℝ` is the correct specialisation under AGENTS.md §7c.
