@@ -200,4 +200,31 @@ theorem sum_prod_qratio_corner {s : Finset ι} {v : ι → F} (hv : Set.InjOn v 
         Finset.sum_add_distrib
     _ = 1 := by rw [hH, hF]; ring
 
+/-- **The corner identity, for any weight family whose box-addition ratio is the corner
+`q`-ratio.**
+
+If `w i` — the weight attached to the corner in row `i` — is the corner `q`-ratio at node `i`,
+then `∑_i w i = 1`. This is the form in which `sum_prod_qratio_corner` delivers the Pieri step,
+and it is the exact analogue of `sum_eq_bracket_mul_of_qratio_scaling` for the branching sum.
+
+`hw` is a genuine sub-hypothesis and not a restatement of the conclusion: it says that adding a
+box in row `i` multiplies the weight by the node ratio, which is the `q`-analogue of the
+Frame–Robinson–Thrall hook identity in node coordinates and is **not** proved here. Establishing
+it is what still stands between this and the general Pieri step (P); the same input is what
+`sum_eq_bracket_mul_of_qratio_scaling` names as its own remaining gap. Measured — over 13 shapes
+at three padding lengths, `computations/pieri_corner_node_identity_probe.py` fact 2 — the
+identity it needs is
+
+    ∏_{c ∈ λ} (1 − q^{h(c)})  =  ∏_i (q;q)_{β_i} / ∏_{j<l} (1 − q^{β_j − β_l}),
+
+whose classical shadow `prodHooks_mul_betaProdGap` is already proved on the list layer. -/
+theorem sum_eq_one_of_corner_ratio_scaling {s : Finset ι} {v : ι → F} (hv : Set.InjOn v s)
+    (hv0 : ∀ i ∈ s, v i ≠ 0) {Q : F} (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) {b : ι} (hb : b ∈ s)
+    (hvb : v b = 1) (hne : ∀ i ∈ s, i ≠ b → Q * v i - v b ≠ 0) (w : ι → F)
+    (hw : ∀ i ∈ s, w i = (∏ j ∈ s.erase i, (Q * v i - v j) / (v i - v j))
+        * ((Q - 1) / (Q * v i - v b))) :
+    ∑ i ∈ s, w i = 1 := by
+  rw [Finset.sum_congr rfl hw]
+  exact sum_prod_qratio_corner hv hv0 hQ0 hQ1 hb hvb hne
+
 end QOU.Mathlib
