@@ -129,3 +129,56 @@ churn across the corpus that has nothing to do with the change being made.**
 Budget for it, and diff non-ephemeral values before attributing drift to a fix.
 Raw-float64 count for this witness is unchanged (104 -> 104), so no ratchet
 regression.
+
+### 4. `baldfn_theta_limit_probe.py` — diagnosed; NOT precision, and NOT a regression
+
+First, the framing in this bean was too generous: `baldfn-theta-limit.witness.json`
+has **never been committed** (`git log --diff-filter=A` over all refs: empty).
+This probe has never completed a run. So the AssertionError is not something
+that broke — it is the probe's standing state.
+
+The failure is in `block_b4`, per rung:
+
+    assert j_rel >= 4, (r["label"], "reliable window too short", j_rel)
+    AssertionError: ('qt=2', 'reliable window too short', 0)
+
+`j_rel` is an ORDER-STABILITY window: coefficient `c_j` is retained only if
+reconstructions of order `M = j+2 .. j+7` agree on it to 1e-6. `j_rel = 0` means
+even `c_1` fails that test at qt=2.
+
+#### The obvious explanation is RULED OUT
+
+qt=2 is configured far below its siblings, which looked like the answer:
+
+    rung       N     J    dps     B3 gauge
+    qt=2       340   40   1500    1.58e-30
+    qt=36/25   1000  48   6000    3.0e-66
+    qt=6/5     1300  48   4000    7.55e-45
+
+I raised qt=2 to qt=36/25's exact configuration and re-ran. The gauge improved
+from `1.58e-30` to **`5.91e-126`** — 96 orders of magnitude — and `j_rel` was
+**still 0**. So the reconstruction is order-unstable at qt=2 no matter how well
+converged the input is. **This is structural, not numerical. Do not spend more
+time on precision.** (Experiment reverted; the file is untouched.)
+
+#### Where to look instead — qt=2 is a DEGENERATE point
+
+The B3 line for qt=2 differs in kind from the others, not in quality:
+
+    qt=2       C = 1.119076609   c1 = 1.119076609   SW 1.0        <- C == c1 exactly
+    qt=36/25   C = 1.265767841   c1 = 2.876745094   SW 2.2727273
+    qt=6/5     C = 1.381066535   c1 = 6.905332676   SW 5.0
+
+At qt=2, `qt - 1 = 1`, so `c1 = C/(qt-1) = C` identically and SW collapses to
+1.0. The B4 cross-check `c1_cross = |-cs[0]/(C/(qt-1)) - 1|` is therefore
+degenerate there too. qt=2 looks like a boundary case of the reconstruction
+basis, not a rung that needs more terms.
+
+#### Structural defect, independent of the science
+
+The assert is PER-RUNG but aborts the WHOLE probe. B1–B3 all succeeded and
+their results were discarded, and no witness was written — the same shape as the
+matplotlib defect fixed above: a late failure destroying earlier valid work.
+Not fixed here because `block_b4` sets `r["cs"]`, `r["ginf"]`, `r["j_rel"]`
+that `block_b4b` and `block_b5` consume, so skipping a rung is not a local
+change and needs the probe owner's call on whether qt=2 belongs in B4 at all.
