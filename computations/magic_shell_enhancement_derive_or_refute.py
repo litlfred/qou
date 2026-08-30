@@ -54,7 +54,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q_MP  # noqa: E402  — proton pin (owner directive 2026-08-07)
+from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402  — proton pin (2026-08-07)
 from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV,
@@ -329,7 +329,21 @@ def main() -> int:
                             computed="PASS" if c["passed"] else "FAIL",
                             expected="PASS",
                             source=c["detail"])
-        w.save()
+        # Say which pin was used (AGENTS.md §q₀ anchor convention, rule 4).
+        # This probe evaluates dim_q at ONE pin — the experimental/proton one,
+        # the standing default for new compute (owner directive 2026-08-07).
+        # It is not a proton-vs-muon comparison: the finding is about whether
+        # a_D^(4) equals an AME read, not about the mu-p substrate tension.
+        w.save({
+            "q0Anchor": "proton",
+            "q0Value": Q_50_DIGIT_STR,
+            "q0AnchorReason": (
+                "a_D^(n) = sum_{lam|-n} dim_q lam / n is evaluated at the "
+                "experimental (proton) pin, the standing default for new "
+                "compute. One pin only: the question is whether the derived "
+                "period matches the AME read M_need/z, not how the two pins "
+                "differ."),
+        })
         print("  witness written.")
 
     return 0 if ok else 1
