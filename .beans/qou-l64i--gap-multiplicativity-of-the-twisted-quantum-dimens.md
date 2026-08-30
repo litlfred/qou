@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-30T04:35:00Z
+updated_at: 2026-08-30T04:38:31Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -843,3 +843,37 @@ CONCRETE NEXT STEP: build a `calc` step whose right-hand side states the prefix 
 `monoidal`. `monoidal` handles composites containing arbitrary morphisms via `⊗≫`, so it should
 absorb the `⊗𝟙.hom` and the two associators around `η_Y`. Every `rw`-based route tried so far fails
 for the same syntactic-adjacency reason, so stop trying `rw` and write the term.
+
+
+ALL THREE LEMMAS THE PROOF NEEDS ARE NOW VERIFIED. Only adjacency remains.
+
+    hrec  (recombination, REASSOC form)  — proves by `rw [braiding_tensor_right_hom]; simp`
+    hgrp  (grouping bridge)              — proves by `rw [← braiding_naturality_right_assoc]; simp`
+    hdet  (the detachment)               — proves by `braiding_naturality_right X _`  ← VERIFIED
+
+`hdet` in full, confirmed to typecheck and prove:
+
+    have hdet : X ◁ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ≫ (β_ X ((Y ⊗ Y') ⊗ X')).hom
+        = (β_ X X').hom ≫ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ▷ X :=
+      braiding_naturality_right X _
+
+It moves the Y-cup to the LEFT of X and leaves `β_{X,X'}` — precisely the X-loop framing crossing
+the right-hand side wants. This is the detachment, and it is a one-liner.
+
+SO THE MATHEMATICAL CONTENT IS COMPLETE. What is left is purely making `hdet` APPLICABLE: the goal
+holds `X ◁ η_Y ▷ X'` and `β_{X, (Y⊗Y')⊗X'}` separated by `⊗𝟙.hom` and two associators, and both
+`rw` and `simp` need them syntactically adjacent.
+
+THE FIX TO TRY NEXT, and why the current route fights it: the prefix does
+`simp only [..., monoidalComp, ...]`, which UNFOLDS `⊗≫` into raw coherence isos — and raw
+coherence isos are exactly what cannot be absorbed. The `tensorExactPairing` idiom does the
+opposite: it KEEPS `⊗≫` and pads every calc term with `𝟙 _ ⊗≫ … ⊗≫ 𝟙 _`, because `monoidal`
+absorbs `⊗≫` but not unfolded coherence. So drop `monoidalComp` from the prefix's simp set and
+state the intermediate in `⊗≫` form; `monoidal` should then bridge the cup to the braiding and
+`hdet` fires.
+
+HARNESS TRAP, cost one wasted run: `/tmp/tqd.base` had been rebuilt from the WORKING TREE while a
+scratch copy of the theorem was still in it, so the next run failed with
+"`qTrWith_tensor_monodromy` has already been declared" — which reads like a Lean problem and is not.
+Rebuild the scratch base from `git show HEAD:<path>`, never from the working tree, and assert the
+theorem name is absent.
