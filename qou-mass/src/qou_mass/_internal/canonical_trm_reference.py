@@ -49,6 +49,22 @@ sys.path.insert(0, str(_HERE))
 
 import mpmath as mp                                        # noqa: E402
 
+# Guarantee our own precision rather than inheriting it. (Copilot, PR #6116.)
+#
+# The reference is a 50-dps decimal string; parsing it at mpmath's default
+# dps=15 would silently round it before a caller serialises it back into a
+# witness, defeating the point of a 50-dps reference.
+#
+# Measured: this did NOT bite — dps was 70 by the time a caller reached us.
+# But it was 70 by ACCIDENT, set as a side-effect somewhere in the import
+# chain (`mp.dps` is 15 before importing `markov_weights_symbolic` and 70
+# after). A guarantee that depends on who imported you first is not a
+# guarantee; re-ordering an unrelated import would silently truncate every
+# value this module returns. So state the requirement here, where the
+# obligation actually lives.
+if mp.mp.dps < 60:
+    mp.mp.dps = 60
+
 #: Proton-built first only as a hint; the recorded q₀ decides.
 _WITNESSES = ("atomic-tr-m-mpfr-50dps-proton.witness.json",
               "atomic-tr-m-mpfr-50dps.witness.json")
