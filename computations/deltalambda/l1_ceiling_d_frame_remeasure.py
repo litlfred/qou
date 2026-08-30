@@ -4,9 +4,15 @@
 ## Why this needed re-measuring
 
 `computations/delta-lambda-l1-ceiling-sign-prune.witness.json` -- the source
-of the "the existing terms reach at most 59 % of the AME target" claim -- is
-`q0Anchor: "muon"`, computedAt 2026-07-17, and its ell-1 sum takes nonzero
-contributions from `ell(lambda) = 3,4,5,6` blocks.  Under convention D those
+of the "the existing terms reach at most 59 % of the AME target" claim -- WAS
+`q0Anchor: "muon"`, computedAt 2026-07-17, and its ell-1 sum took nonzero
+contributions from `ell(lambda) = 3,4,5,6` blocks.
+
+SUPERSEDED 2026-08-29: that witness has since been regenerated -- it is now
+`q0Anchor: "proton"`, computedAt 2026-08-21, and this script's own run confirms
+it (`committed y_lambda reproduced by live D: True`, the `committed` and
+`D live` columns agreeing to every printed digit). The premise below is kept as
+the reason this re-measurement was written; it no longer describes the tree.  Under convention D those
 blocks have `y_lambda = 0` exactly (PROVED all-n:
 `QOU.QBeta.WenzlWeight.schurPrincipal_eq_zero_iff`).  So the committed
 ceiling is neither proton-pinned nor D-frame, and the question "does the

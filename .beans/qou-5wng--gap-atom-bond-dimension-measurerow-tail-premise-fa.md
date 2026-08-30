@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-29T23:48:14Z
+updated_at: 2026-08-30T01:12:21Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to
@@ -274,3 +274,74 @@ Note the prior art: `tr_m_wenzl_bridge_mpfr.py`'s correction cites "#5324, which
 is auditing the same stale claim where it also appears in AGENTS.md" — and
 AGENTS.md HAS been corrected (the `qou-c1ya`/`qou-vu19` note). So the doc side
 was already done; what remained was this call-site residue.
+
+
+## A NEW blind spot, one character wide — and I measured it wrong first
+
+`computations/audits/witness_filename_blindspot_audit.py` (new). Every
+witness-consuming tool here globs `*.witness.json`: the raw-float64 ratchet,
+`witness_staleness_triage.py`, the q0-anchor classifier and ratchet, and layers 2
+and 3 of the y_λ frame audit. A file carrying full witness provenance but named
+`foo-witness.json` — hyphen, not dot — is invisible to all of them.
+
+Measured against `origin/main`: **7 tracked files**, and **5 are the `y-lambda-*`
+family** — the very subject of the audit that could not see them.
+
+**The payoff question, answered, and it is mostly reassuring.** All five carry
+**convention-D** values where a fingerprint is detectable. No C-frame
+contamination is hiding here. One carries a declaration its own fields refute:
+
+    y-lambda-wenzl-bridge-numeric-witness.json
+      q0Anchor:       "independent"
+      q0AnchorReason: "no q0-dependent field in this witness"
+      /q0:            1.10997859555418051695830018898879867637876138498395
+
+A `/q0` VALUE field, not a mention in a description — established by walking the
+JSON and reporting the path, since "the token appears" and "the value is used"
+are different claims. And **which** muon value matters: `…55541805…` is the
+CODATA-2018 lepton-tower derivation, NOT the frozen canonical pin
+`1.1099785955573347…`. AGENTS.md records three values all called "the muon q₀",
+diverging at the 13th digit; calling this "the muon pin" would be the exact error
+that section exists to prevent.
+
+**I MEASURED IT WRONG FIRST, and the error is the one AGENTS.md names twice.**
+The audit's first run reported **8**. The extra file was my own doing: running
+`l1_ceiling_d_frame_remeasure.py` minutes earlier had ADDED provenance stamps to
+`l1-ceiling-d-frame-remeasure.json`, which on `origin/main` carries **none**.
+That file is not an invisible witness at all — it is unstamped output that
+becomes stamped the moment anyone re-runs its producer. Measuring a corpus
+property against a tree your own commands have mutated gives you a fact about
+your session. AGENTS.md records this costing two retracted witness-staleness
+rates (39 % and 73 %); this is a third. The audit now baselines from
+`origin/main` by default and warns loudly under `--worktree`.
+
+**Not fixed, deliberately.** Re-stamping is a producer-side declaration, which
+per `qou-x5mi` costs a full re-run and inherits every environment difference —
+four producers there did not reproduce their committed values under a changed
+mpmath. Renaming is worse: any consumer reading the path breaks silently. The
+audit reports; the fix is a scoped change.
+
+## The ℓ¹ ceiling: 59 % is stale, the correction was measured, downstream was not updated
+
+Re-ran `l1_ceiling_d_frame_remeasure.py`. Live D-frame ceilings at the proton
+pin: D 0.5661, T 0.3604, ³He 0.6925, ⁴He 0.4335 — **worst case 69.2 %**, against
+C's 0.516 / 0.358 / 0.592 / 0.406 whose worst is the **59 %** five docs still
+quote. `docs/audits/2026-08-16-su-r-level-tower-gap-map.md:310` already recorded
+`59 % → 69.2 %, still < 1 | measured | done; downstream artifacts need updating`
+— and they were not.
+
+Still-quoting: `2026-07-19-c3-q0-real-routes-closed-fibre-phase-survives.md`,
+`2026-08-07-two-row-projection-is-the-pairwise-cap.md`,
+`2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`
+(×4), `2026-07-19-delta-lambda-barodd-sector-already-pruned.md`.
+
+**Not swept**, per the `qou-3nva` precedent that dated audit docs are historical
+records. The conclusion is unaffected either way — every D ceiling is still < 1,
+so no reweighting of the N=2 partition sum reaches the target. Note the D ceiling
+is LOOSER than C (`D_tighter_than_C_everywhere: false`), which is the direction
+that makes the surviving conclusion meaningful.
+
+Also corrected `l1_ceiling_d_frame_remeasure.py`'s own premise: it says the
+committed ceiling witness is `q0Anchor: muon`, 2026-07-17. It is **proton,
+2026-08-21** — and the script's own run confirms it (`committed y_lambda
+reproduced by live D: True`).
