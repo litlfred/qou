@@ -15,6 +15,28 @@ appear at inter-nucleon generators. It is tempting to read that as the braid
 DERIVING the multiplicity. This probe measures what those crossings actually
 connect, and the answer is that they do not.
 
+## Two different objects — say which one is being measured
+
+The block's `B_K` is the **building-block census link** (`8_11` for 3H, `L6a4`
+for 3He), and `Vol_n(K)` is that link's hyperbolic volume. The object measured
+here is the **3A-strand word** `atom_braid_word_3A`. They are not the same
+thing, and the finding below is about the second one — which is what the
+`include_inter` crossing count belongs to.
+
+That distinction matters twice over, because `atom_braid_word_3A`'s own
+docstring rules out reading a topological quantity off it at all: its averaged
+letters lie outside the image of `rho : B_n -> H_n(q)`, so the word is a Hecke
+element rather than a braid, `tr_M` of it is a weighted sum of `2^(2A+1)` link
+invariants, and *"NO TOPOLOGICAL quantity may be read off it — not a volume,
+not a crossing number, not a genus"*.
+
+This probe does not read one. What it measures is which **strand pairs** each
+letter acts on, i.e. the combinatorial incidence of the word's generators — a
+fact about the word, well defined whether or not the word is a braid, and not
+an invariant of any link. So the result stands, and it sharpens the verdict:
+the integer `A - 1` is not merely the wrong *kind* of graph count, it is not a
+"topological reading" of anything.
+
 ## Method — the adjacency is DERIVED, not read off the loop
 
 `atom_braid_word_3A` builds its word from a hard-coded
