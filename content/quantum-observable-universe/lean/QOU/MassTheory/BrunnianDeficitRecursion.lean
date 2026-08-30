@@ -15,11 +15,24 @@ This file proves, sorry-free, that **the recursion implies the exact-order tight
 A** (nonzero leading coefficient `(3/4)(−2)^{A−3}` at every A ≥ 3). It thereby **reduces**
 `MilnorExactOrderConjecture` (the open ∀A nonvanishing, which classically needs the Bar-Natan /
 Habegger–Masbaum weight-system bridge Mathlib lacks) to the single concrete hypothesis that the
-deficit obeys this recursion — a hypothesis verified exactly at four points and plausibly
-derivable from the Temperley–Lieb strand-addition property (`h²+2 = q²+q⁻²`, a Jones–Wenzl
-form). The recursion is carried as a conjecture **class with NO instance** (the honest open
-state): four exact points are strong evidence, not a proof. No instance is fabricated; the
-structural TL derivation of the `−h²(h²+2)` factor remains the open step.
+deficit obeys this recursion.
+
+**That hypothesis is now proved MATHEMATICALLY (2026-08-30, bean qou-v7ro).** The recursion
+`D_{A+1}=−h²(h²+2)D_A` holds ∀A by structural induction on the Temperley–Lieb Markov trace:
+`qtr(ρ(w_n))` reduces (three of four terms A-independent) to a single bilinear pairing
+`Q_n=qtr_{n-2}(c·B)` of the `μ⁻¹`-partial-closures of `w_{n-1}` and its inverse; coupled `c,B`
+recursions plus cyclicity and the exact scalar closure `(1+h²)²=1+u h²` (`u=h²+2`) give the
+2-term recursion `Q_n=[2]^n(1+u h²)−u h²[2]Q_{n-1}`, equivalent to the deficit recursion. Every
+step is a uniform TL/Markov/cyclicity identity; the inductive step is verified symbolically at
+n=5 (`milnor_recursion_forall_A_proof_probe.py`), the direct recursion at A=3–6. Full proof:
+`docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md`.
+
+**The conjecture `class` is nonetheless carried with NO instance, deliberately.** The proof above
+lives on the TL operator algebra and is certified by exact symbolic computation — it is not a Lean
+proof. Fabricating the instance with `sorry` would violate the anti-laundering discipline
+("Axiomatization is NOT a Proof"). The Lean formalization of the TL machinery (quantum trace,
+cap-cup, Markov property) that would discharge the instance for real is the remaining
+**formalization** task — mechanical, not a mathematical gap.
 
 Base cases `k=0` (A=3) and `k=1` (A=4) are tied to the proved slices `borromean_deficit_factor`
 and `borromean4_deficit_factor`: `deficitClosed 0 = 1 − tauBorromean` and

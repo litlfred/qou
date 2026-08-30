@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T09:24:19Z
+updated_at: 2026-08-30T12:53:43Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -122,3 +122,23 @@ Corrections vs last session (probe milnor_recursion_capcup_weight_probe.py, exac
 
 STILL OPEN ∀A: proving (†''). No BrunnianDeficitRecursion instance created. Recursive handle
 E_A(w_A⁻¹)=E_A(b·w_{A-1}·b⁻¹)·w_{A-1}⁻¹ (b=A_{A-1,A}, verified A=4) is the induction skeleton.
+
+## 2026-08-30 — RECURSION PROVED ∀A (mathematically) by TL structural induction
+
+D_{A+1}=−h²(h²+2)D_A is now PROVED for all A on the Temperley–Lieb Markov trace:
+- (I) qtr(ρ(w_n))=[2]^n(1+h²)−h²Q_n [3 of 4 terms A-independent ∀n].
+- (R) Q_n=qtr_{n-2}(c·B), c=ptr_{μ⁻¹}(ρ(w_{n-1})), B=ptr_{μ⁻¹}(ρ(w_{n-1})⁻¹) [cap-cup ptr_{μ⁻¹}(e)=1 + Markov].
+- (C) coupled recursions B_m=[2](1+h²)1−h²(c_{m-1}⊗1)ρ(w_{m-1})⁻¹, c_m=[2](1+h²)1−h²ρ(w_{m-1})(B_{m-1}⊗1).
+- (P) pairing qtr((c⊗1)ρ⁻¹)=qtr(ρ(B⊗1))=Q_{n-1} [μ↔μ⁻¹ trace-swap + cyclicity].
+- (T) T4=h⁴[2]Q_{n-1} [cyclicity cancels ρ⁻¹ρ].
+- assembly: Q_n=(1+h²)²[2]^n−uh²[2]Q_{n-1}, and (1+h²)²=1+uh² EXACTLY (u=h²+2), so
+  Q_n=[2]^n(1+uh²)−uh²[2]Q_{n-1}; with (I) ⟹ D_n=−h²(h²+2)D_{n-1}. ∎ Base D_3.
+
+Every step is a uniform TL/Markov/cyclicity identity; inductive step verified symbolically at n=5;
+direct recursion A=3–6. Probe milnor_recursion_forall_A_proof_probe.py; audit
+docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md.
+
+STILL OPEN (Lean only): the BrunnianDeficitRecursion INSTANCE is NOT created — the proof is on the
+TL operator algebra (symbolic), not Lean-formalized. Discharging the instance requires formalizing
+the TL machinery (quantum trace, cap-cup, Markov) in Lean — mechanical formalization work, not a
+mathematical gap. Bean stays in-progress for that Lean formalization.
