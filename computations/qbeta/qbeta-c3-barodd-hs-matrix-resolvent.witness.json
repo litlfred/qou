@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T12:44:33.371492+00:00",
-  "commitSha": "ce3c86556e29485742705840f7a3e1e78de949cf",
+  "computedAt": "2026-08-30T14:01:59.148902+00:00",
+  "commitSha": "ddb3b6b05abaab5c050bd93383a8923faaf0c4e4",
   "assertions": [
     {
       "name": "no_sign_flip_at_any_geometric_mu",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qbeta-c3-barodd-hs-matrix-resolvent",
   "scriptFile": "qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
-  "scriptHash": "d3b886e8c93e",
-  "scriptCommitSha": "98f6bfecb17731e452230df3979c8f15aec85d94",
+  "scriptHash": "b31573b4193e",
+  "scriptCommitSha": "8ed5ca17e29cb53f745dc2702f2a92775c6a9c7d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

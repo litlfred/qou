@@ -1114,6 +1114,22 @@
       "line_at_adjudication": 134,
       "scope": "z_C_s",
       "rationale": "CONFIRMED convention C and self-declaring: the enclosing function is literally named `z_C_s` (:132). It sat in UNRESOLVED rather than BLOCKING only because the parameter name `ss` is not in the audit's sqrt-variable recogniser. `ss/(ss**2+1)` with ss = sqrt(q) is z_C in the generic-variable spelling."
+    },
+    {
+      "path": "computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_at_adjudication": 165,
+      "scope": "z_C_historical",
+      "rationale": "Self-declaring by scope name: the enclosing function is `z_C_historical`. It exists to reproduce the historical convention-C value so that C-era numbers stay RECOGNISABLE in surviving records -- the same role as the two load-bearing C bindings in ocneanu_param_from_fibre_dimension. Migrating it to z_D would defeat its only purpose, which is to be the historical value."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_bar_defect_is_h_squared_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 65,
+      "scope": "<module>",
+      "rationale": "Two-arm comparison, co-bound at module scope with z_D. The probe's subject is the D-frame bar defect (whether it is h^2), which is stated relative to the C arm; binding only z_D removes the baseline the defect is measured against."
     }
   ]
 }
