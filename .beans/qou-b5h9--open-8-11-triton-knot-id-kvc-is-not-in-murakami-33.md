@@ -166,3 +166,76 @@ Whatever blocks it is the strength of the available theorem, not the knot's
 position in the classification. And 8₁₇/8₁₈ are outside the two-bridge class
 entirely, so no two-bridge result will ever reach them — worth knowing before
 the τ search settles on a candidate.
+
+## 2026-08-30 — both papers read. The prediction held: 8₁₁ stays open.
+
+The *if* above is resolved, and against the hopeful reading. Neither paper is a
+volume-conjecture result, and neither closes 8₁₁.
+
+**Ohtsuki & Takata** (note **both** authors — the ingest's `structure.json`
+`authors_raw` named only Ohtsuki and has been corrected; `docinfo.Author` in
+the same file had both). Theorem 1.1, verbatim from
+`library/download-1/`:
+
+> Let K be any two-bridge knot, and let D be an appropriate parameterized
+> diagram of K. Then ω₂(D) = ± τ(K)/(2√−1), where τ(K) is the twisted
+> Reidemeister torsion …
+
+`ω₂(D)` is *defined* (their Def. 4.4) as a modification of the Hessian of the
+potential function — a quantity of the diagram, defined with no reference to
+asymptotics. So Theorem 1.1 is an unconditional identity between two
+diagram/representation-theoretic quantities, and it does reach 8₁₁: **8₁₁ =
+b(27,10)**, hyperbolic, α = 27 < 50, and not one of the five exceptional
+α/β classes their computer search lists (27/5, 33/5, 39/7, 45/7, 45/19 — the
+class of 10 mod 27 is {8,10,17,19}, disjoint from the class of 5). Verified
+independently in-sandbox: `RationalTangle(27,10).numerator_closure()` is
+`is_isometric_to` the SnapPy `8_11` exterior, volume 8.2863168178…
+
+**But that is a statement about ω, not about ζ.** The bridge from `ω₂(D)` to
+the actual asymptotic prefactor is their Prop. 4.9, gated on **Assumption 4.8**
+— "we assume that a knot diagram D satisfies the above mentioned assumptions
+of the Poisson summation formula and the saddle point method" — verified in the
+literature only for hyperbolic knots up to 7 crossings, via [17;18;20]. Their
+own introduction says the theorem confirms the ω conjecture *"assuming"* those
+assumptions. The phrase "volume conjecture" occurs twice in 100 pages, both in
+the historical survey. **The paper never claims to prove it for anything.**
+
+**Garoufalidis–Yoon** is the same shape: Theorem 1.1 is the single sentence
+"The 1-loop equals torsion conjecture holds for hyperbolic 2-bridge knots",
+proved unconditionally by explicit algebra over the trace field. It contains no
+Chern–Simons content, no complex volume, no ζ — exhaustive grep over 24 pages
+returns two hits for "Chern", one motivational and one bibliographic.
+
+So the two links have different status, and conflating them is the trap:
+
+| link | status |
+|---|---|
+| ω_Hessian ↔ adjoint torsion ↔ 1-loop τ_DG | **theorem**, unconditional, all hyperbolic 2-bridge knots |
+| ω_Hessian ↔ the ω in ⟨K⟩_N = e^{Nζ}N^{3/2}ω(1+O(1/N)) | theorem for ≤ 7 crossings; **conditional** otherwise |
+
+For 5₂ both are theorems. For 8₁₁ only the first is. **Citing either paper as
+closing 8₁₁ would be an overstatement of exactly the kind the discipline
+forbids.** Same for 10₄₃ = b(73,27), which is two-bridge but has α = 73 > 50,
+outside their search (their Remark D.14 still covers its geometric root).
+
+**A second trap, worth naming loudly because the headline invites it.** *FAMED
+by computer: proving the Andersen–Kashaev volume conjecture for 42,000 knots*
+(arXiv:2512.17437) proves its conjecture for all knots with ≤ 12 crossings,
+which nominally includes 8₁₁. It is the **Andersen–Kashaev** VC for the
+Teichmüller TQFT, not the coloured Jones at `e^{2πi/N}`. `references.bib`
+already carries this scope warning for a neighbouring Chen–Yang result; it
+needs to be stated *at* the 8₁₁ row, or a future agent will close 8₁₁ wrongly
+off the headline.
+
+**Two side-findings that do land.** (a) Garoufalidis–Yoon's worked 6₁ example
+validates `computations/one_loop_torsion.py` against published digits — the
+corpus computes τ_DG(6₁) = −0.487465163217 + 1.73804539712i against their
+printed 0.487465 + 1.738045i, 6/6 digits, ±. (b) τ_DG and τ_OT are
+**reciprocals** (|τ_DG|·|τ_OT| = 1 to 11 digits), so the corpus's
+`c_σ = 2^{−1/2}|τ_DG|^{−1/2}` is exactly Ohtsuki–Takata's |ω²(D)| = |τ_OT|/2.
+The modulus half of the `c_σ` law is therefore a theorem for all hyperbolic
+two-bridge knots in the Hessian reading — 8₁₁ included, predicting
+|ω_Hessian(8₁₁)| = 0.238296403552 unconditionally. Whether that number is the
+Kashaev asymptotic prefactor for 8₁₁ is the part that stays open.
+
+**Status: unchanged. 8₁₁ remains the corpus's load-bearing open VC instance.**

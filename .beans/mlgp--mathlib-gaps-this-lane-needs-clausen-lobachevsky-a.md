@@ -363,3 +363,47 @@ caught by re-reading before commit: the first draft proved a `≠ 0` side
 condition with `linarith` on a **ℂ**-valued hypothesis, and `linarith` does not
 work over ℂ. Rewritten to rewrite `1 − 1/z` as `(z−1)/z` first so `field_simp`
 has both non-vanishing facts in hand.
+
+## Gap 4, third follow-through — the axiom shrank again, and not via Mathlib
+
+Read Ohtsuki's Theorem 1.1 out of `library/ki52` instead of paraphrasing it,
+and a second hypothesis turned into a proof. He does not leave the prefactor
+as an unknown constant:
+
+```
+ω = e^{√−1 π/4}·((y₀−1)/(2y₀+1))^{1/2}      so      ω² = √−1·(y₀−1)/(2y₀+1)
+```
+
+A rational function of `y₀` times `i`. So `FiveTwoOhtsukiBridge`'s
+`OhtsukiAsymptotic` now states `ω² = ohtsukiOmegaSq y` in place of a bare
+`omega_ne_zero` field, and non-vanishing is **derived** — from the cubic, not
+from `Im y₀ > 0`: none of `0`, `1`, `−1/2` is a root, so `y ≠ 0`, `y ≠ 1` and
+`2y + 1 ≠ 0` are three `norm_num` calls. Also derived, where they were assumed
+or `sorry`'d: `two_I_mul_ohtsukiOmegaSq`, and `volume_conjecture_five_two`
+itself, which is now a rewrite of (C) rather than an axiom.
+
+**The pattern is the point for this bean.** Gap 4 recorded that upgrading the
+literature-cited VC instances needs the method of steepest descent, which
+Mathlib lacks entirely. That is true of proving Ohtsuki's *expansion*. It has
+now twice been false of the surrounding structure — first `D(x₀) = D(y₀)`,
+which is a Möbius reordering (`BlochWignerSymmetry.lean`), and now the whole
+prefactor, which is algebra over a cubic. **Both times the Mathlib gap survey
+was measuring the wrong thing: what it costs to prove the hard theorem, not
+what it costs to state it at the smallest surface and derive the rest.** The
+survey stands; its scope was overstated.
+
+Two guards recorded while doing this, both from the ingest agents:
+
+* `library/ki52`'s extracted section text **drops `π`** (it renders as a glyph
+  the extractor discards), so the definition of `ζ` reads `1/2√−1` there. With
+  the `π` missing every constant is off by a factor of π — I hit exactly this
+  and only caught it because `2π·Im ζ` matched Chern–Simons to 26 digits while
+  `2π·Re ζ` missed the volume at 1e-16. Read constants from the PDF, or check
+  them numerically before trusting a section file.
+* Ohtsuki–Takata and Garoufalidis–Yoon prove `1-loop = torsion` for two-bridge
+  knots **unconditionally**, which covers `8₁₁ = b(27,10)`. That is a statement
+  about `ω`, not `ζ`, and does **not** give the VC. See `qou-b5h9`.
+
+Transcription checked at 120 dps against a root polished to residual 1.9e-121:
+`y₀`, `ζ`, `ω` and `κ₁` all reproduce Ohtsuki's printed digits, and three
+independent routes to `Vol(5₂)` agree to 121 digits.
