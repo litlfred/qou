@@ -96,6 +96,18 @@ def partitions(n, maxpart=None):
             yield (k,) + rest
 
 
+def _dim_estimate(shape):
+    """Hook-length dimension f^λ (integer) — for biggest-first scheduling."""
+    from math import factorial
+    rows = list(shape)
+    cols = [sum(1 for r in rows if r > c) for c in range(rows[0])]
+    hooks = []
+    for i, ri in enumerate(rows):
+        for j in range(ri):
+            hooks.append((ri - j - 1) + (cols[j] - i - 1) + 1)
+    return factorial(sum(shape)) // prod(hooks)
+
+
 def q_int(k, q):
     if q == 1:
         return mp.mpf(k)
@@ -349,73 +361,103 @@ def gate_sparse_vs_dense(shapes, verbose=True):
 # ── main pairing computation (sparse, matrix-free) ───────────────────────────
 
 
-def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None):
-    """Compute P = Σ_λ y_λ tr(ρ_λ Ω₂_λ) over λ ⊢ n_strands, matrix-free."""
+def _partition_contribution(shape, gens):
+    """Per-partition worker: returns (row_dict, y*tr_rO, y*tr_O, tr_rO, hcheck).
+
+    Self-contained (module globals Q0/H/EPS are set at import in every worker),
+    so it is safe to dispatch under multiprocessing across the 77 partitions."""
+    per_gen, dim = block_structure(shape)
+    y = wedderburn_weight(shape, Q0)
+    if dim == 1:  # singlet: germs abelian ⇒ Ω₂ = 0
+        row = {"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
+               "tr_rho_Omega2": fmt(mp.mpf(0)), "tr_Omega2_ctrl": fmt(mp.mpf(0))}
+        return row, mp.mpf(0), mp.mpf(0), mp.mpf(0), mp.mpf(0), dim, 0
+    sig = sigma_csr(per_gen, dim, Q0)
+    germ_rows, hcheck = germ_csr(per_gen, dim, Q0, EPS)
+    assert hcheck < mp.mpf(10) ** -55, f"germ Hecke check failed {shape}: {mp.nstr(hcheck,3)}"
+    A = [csr_to_dict(germ_rows[g]) for g in range(len(germ_rows))]
+
+    # Ω₂ = ½ Σ_{i<j} [A_{g_i}, A_{g_j}] — adjacent generators only (far-commutativity)
+    ccache = {}
+    Om2 = {}
+    L = len(gens)
+    for i in range(L):
+        a = gens[i]
+        for j in range(i + 1, L):
+            b = gens[j]
+            if abs(a - b) != 1:
+                continue  # [A_a,A_b] = 0 for |a-b|>=2; a==b commutes
+            key = (a, b)
+            C = ccache.get(key)
+            if C is None:
+                C = commutator(A[a], A[b])
+                ccache[key] = C
+            for r, crow in C.items():
+                orow = Om2.setdefault(r, {})
+                for c, v in crow.items():
+                    orow[c] = orow.get(c, mp.mpf(0)) + v
+    for r in Om2:
+        for c in Om2[r]:
+            Om2[r][c] = Om2[r][c] / 2
+
+    tr_O = mp.mpf(0)
+    for r, orow in Om2.items():
+        tr_O += orow.get(r, mp.mpf(0))
+    tr_rO = mp.mpf(0)
+    for k, orow in Om2.items():
+        w = apply_word_to_e(gens, sig, k, dim)
+        s = mp.mpf(0)
+        for c, v in orow.items():
+            s += v * w[c]
+        tr_rO += s
+
+    row = {"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
+           "tr_rho_Omega2": fmt(tr_rO), "tr_Omega2_ctrl": fmt(tr_O)}
+    return row, y * tr_rO, y * tr_O, tr_rO, hcheck, dim, len(Om2)
+
+
+def _pool_worker(args):
+    shape, gens = args
+    return _partition_contribution(shape, gens)
+
+
+def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, workers=1):
+    """Compute P = Σ_λ y_λ tr(ρ_λ Ω₂_λ) over λ ⊢ n_strands, matrix-free.
+
+    workers>1 dispatches the independent partitions across a process pool
+    (biggest-first so the long-pole partition starts immediately)."""
     parts = list(partitions(n_strands))
-    rows = []
+    parts_sorted = sorted(parts, key=_dim_estimate, reverse=True)  # long-pole first
+    rows_by_shape = {}
     P_total = mp.mpf(0)
     P_ctrl = mp.mpf(0)
     worst_hcheck = mp.mpf(0)
     t0 = time.time()
-    for pi, shape in enumerate(parts):
-        per_gen, dim = block_structure(shape)
-        y = wedderburn_weight(shape, Q0)
-        if dim == 1:  # singlet: germs abelian ⇒ Ω₂ = 0
-            rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
-                         "tr_rho_Omega2": fmt(mp.mpf(0)), "tr_Omega2_ctrl": fmt(mp.mpf(0))})
-            continue
-        sig = sigma_csr(per_gen, dim, Q0)
-        germ_rows, hcheck = germ_csr(per_gen, dim, Q0, EPS)
+    done = 0
+
+    def _record(res):
+        nonlocal P_total, P_ctrl, worst_hcheck, done
+        row, dP, dC, tr_rO, hcheck, dim, nnz = res
+        rows_by_shape[tuple(row["lambda"])] = row
+        P_total += dP
+        P_ctrl += dC
         worst_hcheck = max(worst_hcheck, hcheck)
-        assert hcheck < mp.mpf(10) ** -55, f"germ Hecke check failed {shape}: {mp.nstr(hcheck,3)}"
-        A = [csr_to_dict(germ_rows[g]) for g in range(len(germ_rows))]
-
-        # Ω₂ = ½ Σ_{i<j} [A_{g_i}, A_{g_j}] — adjacent generators only (far-comm.)
-        # cache commutators by ordered generator pair (a,b), |a-b|==1
-        ccache = {}
-        Om2 = {}
-        L = len(gens)
-        for i in range(L):
-            a = gens[i]
-            for j in range(i + 1, L):
-                b = gens[j]
-                if abs(a - b) != 1:
-                    continue  # [A_a,A_b] = 0 for |a-b|>=2, and a==b commutes
-                key = (a, b)
-                C = ccache.get(key)
-                if C is None:
-                    C = commutator(A[a], A[b])
-                    ccache[key] = C
-                for r, crow in C.items():
-                    orow = Om2.setdefault(r, {})
-                    for c, v in crow.items():
-                        orow[c] = orow.get(c, mp.mpf(0)) + v
-        # halve
-        for r in Om2:
-            for c in Om2[r]:
-                Om2[r][c] = Om2[r][c] / 2
-
-        # control tr(Ω₂) and matrix-free tr(ρ Ω₂) = Σ_k Σ_i Ω₂[k][i]·(ρ e_k)[i]
-        tr_O = mp.mpf(0)
-        for r, orow in Om2.items():
-            tr_O += orow.get(r, mp.mpf(0))
-        tr_rO = mp.mpf(0)
-        for k, orow in Om2.items():
-            w = apply_word_to_e(gens, sig, k, dim)
-            s = mp.mpf(0)
-            for c, v in orow.items():
-                s += v * w[c]
-            tr_rO += s
-
-        P_total += y * tr_rO
-        P_ctrl += y * tr_O
-        rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
-                     "tr_rho_Omega2": fmt(tr_rO), "tr_Omega2_ctrl": fmt(tr_O)})
+        done += 1
         el = time.time() - t0
-        print(f"{log_prefix}  [{pi+1:>2}/{len(parts)}] {str(tuple(shape)):>26} dim={dim:>4} "
-              f"nnzΩ2rows={len(Om2):>4}  tr(ρΩ2)={mp.nstr(tr_rO,6):>14}  "
-              f"[P={mp.nstr(P_total,6)}]  {el:6.1f}s", flush=True)
+        print(f"{log_prefix}  [{done:>2}/{len(parts)}] {str(tuple(row['lambda'])):>28} dim={dim:>5} "
+              f"nnzΩ2rows={nnz:>5}  tr(ρΩ2)={mp.nstr(tr_rO,6):>14}  "
+              f"[P={mp.nstr(P_total,6)}]  {el:7.1f}s", flush=True)
 
+    if workers > 1:
+        import multiprocessing as _mp
+        with _mp.Pool(workers) as pool:
+            for res in pool.imap_unordered(_pool_worker, [(s, gens) for s in parts_sorted]):
+                _record(res)
+    else:
+        for shape in parts_sorted:
+            _record(_partition_contribution(shape, gens))
+
+    rows = [rows_by_shape[tuple(s)] for s in parts]  # canonical partition order
     ctrl_ok = abs(P_ctrl) < _EXACT
     P_sign = 0 if abs(P_total) < _EXACT else (1 if P_total > 0 else -1)
     npos = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) > _EXACT)
@@ -457,7 +499,7 @@ def run_gate():
     return True
 
 
-def run_he4():
+def run_he4(workers=1):
     from mass_at_3A_proper import atom_braid_word_3A
     triples = atom_braid_word_3A(2, 2)
     gens = [int(t[2]) for t in triples]
@@ -473,8 +515,9 @@ def run_he4():
     a2_sign = _sign("deuteron-magnus-omega2-sign.witness.json")
     a3_sign = _sign("triton-magnus-omega2-sign.witness.json")
 
-    print(f"[he4] word: {mult}  ({len(gens)} crossings, 12 strands, H₁₂; 77 partitions)", flush=True)
-    res = pairing_for_word(gens, 12, log_prefix="[he4]", a_baseline_sign=a3_sign)
+    print(f"[he4] word: {mult}  ({len(gens)} crossings, 12 strands, H₁₂; 77 partitions; "
+          f"{workers} worker(s))", flush=True)
+    res = pairing_for_word(gens, 12, log_prefix="[he4]", a_baseline_sign=a3_sign, workers=workers)
     P_total, P_ctrl = res["P_total"], res["P_ctrl"]
     P_sign, npos, nneg = res["P_sign"], res["npos"], res["nneg"]
     ctrl_ok = res["ctrl_ok"]
@@ -596,13 +639,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--gate", action="store_true", help="run the correctness gate only")
     ap.add_argument("--full", action="store_true", help="run gate then the full H₁₂ ⁴He")
+    ap.add_argument("--workers", type=int, default=1, help="process-pool size for the H₁₂ partitions")
+    ap.add_argument("--skip-gate", action="store_true", help="skip the gate (gate already passed)")
     args = ap.parse_args()
     if args.gate:
         run_gate()
         return
-    # default and --full: gate first, then He4
-    run_gate()
-    run_he4()
+    # default and --full: gate first (unless already verified), then He4
+    if not args.skip_gate:
+        run_gate()
+    run_he4(workers=args.workers)
 
 
 if __name__ == "__main__":
