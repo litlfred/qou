@@ -61,10 +61,55 @@ if str(HERE) not in sys.path:
 
 import sympy as sp  # noqa: E402
 
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_0 = sp.Rational("1.1099785955573347")
+# ── q₀ pin: RESOLVED from the substrate, never hardcoded ─────────────
+#
+# WAS:  Q_0 = sp.Rational("1.1099785955573347")
+#
+# 17 digits, and a SUPERSEDED MUON VINTAGE: that literal sits 0.0769 ppb
+# from the muon pin C (`q-pinning-50-digit.witness.json` →
+# derived_50_digit.q) and 11.5371 ppb from the proton pin. It was left
+# behind by the 2026-05-28 re-pin of the substrate to the proton anchor.
+#
+# WHY PROTON IS RIGHT HERE — payload evidence, not a `q0Anchor` stamp.
+# REF_WITNESS (`atomic-tr-m-mpfr-50dps-proton.witness.json`) carries a
+# real q₀ PAYLOAD:
+#
+#   "q_0_50dps"  (and "q0Value", the identical string):
+#     1.1099785827513808075916690956107688798744991218736
+#
+# which is byte-identical to `Q_50_DIGIT_STR` as this producer resolves
+# it. And Q_0 really does drive a recomputation of the quantity that
+# witness holds: `_load_canonical_tr_m()` reads its
+# `results[].tr_M_at_q0_50dps` (tr_M *at that q₀*), and `main()` passes
+# Q_0 as `q_val` to `global_wedderburn_sum_jones_markov`, which is the
+# same Σ_λ y_λ(q)·χ^λ partition sum by a second implementation — then
+# differences the two. Recomputing at one pin and differencing against a
+# reference held at another measures the PIN GAP, not the method gap.
+#
+# ANCHOR RESOLUTION: this producer's stem is absent from
+# `computations/q0_anchor_manifest.json`, so `q_parameter` applies the
+# default physical/proton anchor — exactly what REF_WITNESS requires.
+# Running under `QOU_Q0_ANCHOR=ideal|muon|canonical` would swing Q_0 to
+# the muon pin while REF_WITNESS stays proton, reopening this defect.
+#
+# TYPE: deliberately still `sp.Rational`. `q_val` reaches
+# `wedderburn_jones_markov.y_lambda_at`, which does `mp.mpf(str(q_val))`;
+# a Rational stringifies to an exact fraction that mpmath parses
+# losslessly, so all 50 digits survive (checked: equals
+# `mp.mpf(Q_50_DIGIT_STR)`), and `free_symbols == set()` keeps it on the
+# numeric branch as before.
+#
+# THIS MOVES VALUES — the witness is STALE. q₀ shifts 11.5371 ppb, and
+# because the characters here are the q-INDEPENDENT q=1 MN limit, the
+# whole q-dependence rides on y_λ: measured 2.35 ppb at n=3 (proton,
+# neutron) and 2.26-11.40 ppb across the n=6 shapes (deuteron).
+# `tr-m-jones-markov-cross-check.witness.json` must be regenerated.
+# Bean `qou-jjge`.
+Q_0 = sp.Rational(Q_50_DIGIT_STR)
 REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
 
 
