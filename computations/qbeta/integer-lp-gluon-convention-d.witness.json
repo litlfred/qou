@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T02:34:52.020058+00:00",
+  "commitSha": "c8d72731584281404c1c5f9e1d396f099c721817",
+  "assertions": [
+    {
+      "name": "convention_C_premise_re_evaluated_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Both nucleons' 9-crossing bases return the same feasibility verdict under D (proton True, neutron True), so the convention-C claim that the base is LP-infeasible is answered uniformly rather than for one nucleon only."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 112,
+  "computation": "integer-lp-gluon-convention-d",
+  "scriptFile": "integer_lp_gluon_convention_d.py",
+  "scriptHash": "1d8477beb8a5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/integer_lp_gluon_convention_d.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/integer_lp_gluon_convention_d.py"
+  },
+  "description": "Re-runs the gluon-placement integer LP of the deprecated integer-lp-gluon.py under convention D with the corrected trace rule (tr_M(e-), fixed 2026-05-19) and mpmath at 50 dps, holding the base words, the operation set {s0, s1, L+, L-}, the every-step Frobenius feasibility criterion and the minimum-|tr_M| objective fixed. The original selected 2 sigma_0 for the proton and L+L- for the neutron BECAUSE the 9-crossing base was LP-infeasible; it was built on convention C (z = 1/(sqrt q + 1/sqrt q)) and on the superseded tr_M(e-) = z^3, both since retired. Reports whether that premise survives under D. Scope-(a): reports what the LP returns; does not by itself establish which crossing budget is canonical. Bean qou-1qsw.",
+  "data": {
+    "q0_anchor": "proton",
+    "dps": 50,
+    "z_D": "0.612688037146465251595829863945899248026308391545085404591497",
+    "h": "0.209060298795639315430846213129674943859757495263061811021371",
+    "results": {
+      "proton": {
+        "base_9_crossing_stable_under_D": true,
+        "base_min_G_dot_nf": "0.339148565147953565685441617111722391302489186050701728027313",
+        "base_tr_M": "0.544370078179695182212578030754752163488755546671534689340564",
+        "n_feasible": 41,
+        "optimal_ops": [
+          "s0"
+        ],
+        "optimal_added_crossings": 1,
+        "optimal_total_crossings": 10,
+        "optimal_abs_tr_M": "0.339148565147953565685441617111722391302489186050702611493789",
+        "convention_C_result_on_record": "s0 -> s0 (2 crossings, 11 total)"
+      },
+      "neutron": {
+        "base_9_crossing_stable_under_D": true,
+        "base_min_G_dot_nf": "0.217525232533728993543192837503427471532678419990711302507257",
+        "base_tr_M": "0.408266728180734293045913580444294681443955000763480306911618",
+        "n_feasible": 41,
+        "optimal_ops": [
+          "s0"
+        ],
+        "optimal_added_crossings": 1,
+        "optimal_total_crossings": 10,
+        "optimal_abs_tr_M": "0.217525232533728993543192837503427471532678419990712246605619",
+        "convention_C_result_on_record": "L+ -> L- (4 crossings, 13 total)"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
