@@ -76,3 +76,50 @@ verdict. Tracked as follow-up rather than papered over.
 - Probe: **exit 0**, all assertions pass, re-run three times across the edits.
 - Convention arithmetic exact in `mpf` from `q₀`; `float()` only in display.
 - Exit codes captured directly, never through a pipe.
+
+
+---
+
+# Addendum: the μ₂ target, and the geometric per-order law refuted
+
+The anatomy probe warned that reading `k_n = a·rⁿ` off `k₃` and `k₄` is a
+**tautology** — two parameters on two points — and named the test: a μ₂ target
+from the same simplex. **That target exists, and it kills the hypothesis.**
+
+**μ₂ is structurally zero.** The simplex is deuteron-anchored, so it reproduces
+the 2-body datum exactly and leaves no 2-body residual. Two of its three
+producers *assert* it:
+
+```
+deltalambda_kappa_interface_residual_simplex_probe.py
+    residual_pure_ge3body = abs(mu2) < mp.mpf("1e-40")
+mu3_target_frame_robustness_probe.py
+    assert corr["per_baseline"][k]["mu2_is_zero"], "μ₂ must be 0 (deuteron)"
+```
+
+The **measured** μ₂ is not zero — the He4 witness carries six nonzero per-bond
+values, mean `−0.5840148855`. So the third correction factor is well defined:
+
+| | `k_n = target / measured` |
+|---|--:|
+| `k₂` | **0 exactly** |
+| `k₃` | 0.54861385 |
+| `k₄` | 5.2418656 |
+
+**The test.** `k₂ = 0` forces `a·r² = 0`, hence `a = 0` or `r = 0` — either of
+which forces `k₃ = k₄ = 0`. Both are measured nonzero. **No finite `(a, r)` fits
+all three points: the geometric per-order law is REFUTED**, scope-(b), cited
+invariant = the structural vanishing of the 2-body residual.
+
+**What it settles and what it does not.** It closes one hypothesis about the
+*shape* of the 9.56× gap — the misses are not a geometric rescaling in body
+order. It does **not** explain the gap, does **not** touch the scope-(a) wall in
+`a4-interface-magnitude-one-scalar-gate` (the mechanism is surjective onto every
+target, so the magnitude stays open and uncloseable by computation), and
+excludes no other functional form.
+
+**Caveat, stated not buried:** `k₂ = 0` is a property of the simplex's
+construction rather than an independent measurement. It is the right third point
+because it is the same kind of quantity as `k₃` and `k₄` — target-over-measured
+for the same model against the same H₁₂ cumulants — but re-anchoring the simplex
+away from the deuteron would require redoing it.
