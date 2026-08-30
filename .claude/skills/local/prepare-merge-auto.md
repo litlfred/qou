@@ -249,8 +249,12 @@ After merge:
 - Do NOT merge without resolving review comments (even if CI is green).
 - Do NOT squash unless the user explicitly says "squash" on this PR.
 - Do NOT wait on a Gemini review — Gemini Code Assist is sunset.
-- Do NOT wait on a Copilot review either — measured n=5, it never enqueues
-  (`qou-gwe9`). Request once, then proceed with 0 comments.
+- Do NOT **block** on a Copilot review — but do NOT skip reading it either.
+  The "n=5, never enqueues" line that stood here is **refuted**; see the
+  Phase 1b correction above. Reviews arrive (minutes), carry real findings,
+  and are **rationed** — so request once, keep working, and read
+  `get_reviews` before you merge. Never poll `get_check_runs`: it returns
+  `total_count: 0` whether or not a review exists, so it cannot tell you.
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.
