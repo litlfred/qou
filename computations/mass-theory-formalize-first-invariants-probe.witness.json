@@ -1,24 +1,24 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:18:56.794558+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-30T07:16:01.787342+00:00",
+  "commitSha": "d51e22b1a776e898713b11e090c70859e4b3e428",
   "assertions": [
     {
       "name": "mass_theory_formalize_first_invariants_matrix_executed",
-      "computed": 1,
-      "expected": 1,
+      "computed": 12,
+      "expected": 12,
       "passed": true,
       "tolerance": 0,
       "source": "Mass-theory §4 invariants 4×3 verdict matrix executed on three published linking_weight candidates. The probe is diagnostic only — it reports per-cell pass/fail/unclear verdicts for invariants (a) anchor-stability, (b) bar-evenness, (c) q=1 shadow, (d) direction sanity. The interpretation in §INTERPRETATION above identifies the structural gap: §4(c) q=1 shadow lacks a registry-level anchor for linking_weight, unlike Q_β's c_2 / c_3 anchors. Closing this gap is owner-gated multi-session research."
     }
   ],
   "allPassed": true,
-  "durationMs": 577,
+  "durationMs": 429,
   "computation": "mass-theory-formalize-first-invariants-probe",
   "scriptFile": "mass_theory_formalize_first_invariants_probe.py",
-  "scriptHash": "c9319c6d34a4",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "cb92877869b0",
+  "scriptCommitSha": "ee772cd282cfcbbf33fc3d2e41e5f6b772d3db08",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_theory_formalize_first_invariants_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mass_theory_formalize_first_invariants_probe.py"
   },
   "description": "Extends the Q_β §4 formalize-first invariant template (PRs #1875/#1889/#1890/#1893) to mass-theory. Tests three published linking_weight candidates (Family A, via-Jones, Bring color-tube) against all four §4 invariants: anchor-stability, bar-evenness, q=1 classical-limit shadow, direction sanity. 4×3 verdict matrix; diagnostic only.",
   "contentBlock": "prop:q-beta-bar-even-kernel-typeclass",

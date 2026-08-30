@@ -195,8 +195,8 @@ def main() -> int:
 
     w.add_assertion(
         name="multicell_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} summed-cell candidates at 50 dps.",
     )

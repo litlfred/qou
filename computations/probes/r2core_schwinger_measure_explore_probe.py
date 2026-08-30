@@ -132,9 +132,13 @@ def block1_linear_unit_invisibility():
     rhs = sp.integrate(1 / t, (t, a, b))
     diff = sp.simplify(lhs - rhs)
     assert diff == 0, f"linear-unit invisibility failed: {diff}"
+    # Returned so the caller can record the COMPUTED difference. The witness
+    # assertion used to read `computed="0", expected="0"` — a constant that
+    # would pass with this whole function deleted (bean `qou-26f2`).
     # Reeb period at q₀ (recorded value only — it drops out above).
     q = sp.Rational(0)  # placeholder to avoid unused warnings
     del q
+    return diff
     return diff
 
 
@@ -223,6 +227,7 @@ def block4_rung_chart(wb: WitnessBuilder):
     # Pin-dependence of intrinsic per-step units, 50 dps.
     set_compute_dps(50)
     shifts = {}
+    pin_dependent = {}
     for name, ufun in [
         ("one_nat_per_step", lambda qv: mpf(1)),
         ("eta_q_per_step", lambda qv: (2 * qv - 1) / qv ** 3),
@@ -236,14 +241,20 @@ def block4_rung_chart(wb: WitnessBuilder):
         shifts[name] = {"c_eff_muon": mp.nstr(c_mu, 20),
                         "c_eff_proton": mp.nstr(c_pr, 20),
                         "pin_rel_shift": mp.nstr(rel, 8)}
+        pin_dependent[name] = bool(rel > PIN_SHIFT_MIN)
         assert rel > PIN_SHIFT_MIN, \
             f"{name}: expected pin-dependence, got rel shift {rel}"
     # The tautological unit u = ln q₀ gives c_eff = 1 at BOTH pins exactly.
     c_taut_mu = mlog(mpf(Q0_MUON_STR)) / mlog(mpf(Q0_MUON_STR))
     c_taut_pr = mlog(mpf(Q0_PROTON_STR)) / mlog(mpf(Q0_PROTON_STR))
     assert c_taut_mu == 1 and c_taut_pr == 1
+    # `computed=True` was a constant; the measured verdict is carried now, so
+    # the witness records the finding rather than restating the intent.
     wb.add_assertion(
-        "intrinsic_step_units_pin_dependent", computed=True, expected=True,
+        "intrinsic_step_units_pin_dependent",
+        computed=all(pin_dependent.values()) and c_taut_mu == 1
+        and c_taut_pr == 1,
+        expected=True,
         tolerance=TOL_EXACT,
         source="every intrinsic per-step unit u ∈ {1 nat, η_q, ℏ_q, 𝔅} "
                "yields c_eff = u/ln q₀ with pin-relative shift > 1e-10 "
@@ -267,11 +278,20 @@ def block4_rung_chart(wb: WitnessBuilder):
 def block5_keystone_moment(wb: WitnessBuilder):
     """B5: N(n) = (n−1)! is the c = 1 Schwinger moment; c = ½ breaks n·N=n!."""
     s, n = sp.symbols("s n", positive=True)
-    for k in range(1, 7):
-        mom = sp.integrate(s ** k * sp.exp(-s) / s, (s, 0, sp.oo))
-        assert mom == sp.factorial(k - 1), f"moment {k}: {mom}"
+    # The real check was a bare `assert` in the loop below: it crashes the
+    # script on failure but leaves NOTHING in the witness, and the witness
+    # assertion then recorded `computed=True, expected=True` — a tautology that
+    # would pass even if the loop were deleted (bean `qou-26f2`). The result is
+    # now carried into the assertion, so the witness records the fact rather
+    # than a constant, and the assertion can fail.
+    moments_are_factorials = all(
+        sp.integrate(s ** k * sp.exp(-s) / s, (s, 0, sp.oo))
+        == sp.factorial(k - 1)
+        for k in range(1, 7)
+    )
     wb.add_assertion(
-        "keystone_normalizer_is_unit_schwinger_moment", computed=True,
+        "keystone_normalizer_is_unit_schwinger_moment",
+        computed=moments_are_factorials,
         expected=True, tolerance=TOL_EXACT,
         source="∫₀^∞ sⁿ e^{−s} ds/s = (n−1)! for n = 1..6 (sympy exact) — "
                "the KeystoneBridgeC1Binding FORCED q-Borel normalizer "
@@ -282,10 +302,14 @@ def block5_keystone_moment(wb: WitnessBuilder):
                "c = 1 — the binding sector and the loop measure share ONE "
                "unit, and the binding side's is forced")
     # The arithmetic distinguisher: c = ½ ⇒ n·N(n) = n!/2 ≠ n! (n ≥ 1... n!>0).
-    for k in range(1, 7):
-        assert sp.factorial(k) / 2 != sp.factorial(k)
+    # Same treatment — the bare `assert` proved it and the witness recorded a
+    # constant.
+    half_unit_differs = all(
+        sp.factorial(k) / 2 != sp.factorial(k) for k in range(1, 7)
+    )
     wb.add_assertion(
-        "half_unit_breaks_bridge_identity", computed=True, expected=True,
+        "half_unit_breaks_bridge_identity",
+        computed=half_unit_differs, expected=True,
         tolerance=TOL_EXACT,
         source="with c = ½ the moments are ½(n−1)! and n·N(n) = n!/2 ≠ n! "
                "for every n — the E-Jacobian reading of the ½ (c_s = ½ on "
@@ -348,11 +372,11 @@ def main() -> int:
     wb.set_audit_only(
         "docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md")
 
-    block1_linear_unit_invisibility()
+    b1_diff = block1_linear_unit_invisibility()
     print("B1: linear-unit invisibility exact (Reeb/Planck units cannot "
           "carry c).")
     wb.add_assertion(
-        "linear_unit_invisibility", computed="0", expected="0",
+        "linear_unit_invisibility", computed=str(b1_diff), expected="0",
         tolerance=TOL_EXACT,
         source="∫_{a/T}^{b/T} dt/t − ∫_a^b dt/t = 0 symbolically for any "
                "T > 0: candidate (c) (Reeb-period unit t_P = q₀/(q₀−1) "

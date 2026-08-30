@@ -597,7 +597,19 @@ user's last message, not the most recently mentioned file.
       It normalises both producer versions through `ast.unparse` (comments,
       docstrings and formatting gone) and reports which drifts can actually
       move a number. Re-measured three times across 1564 commits of `main`,
-      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      **zero** of ~700 self-stale witnesses were safe to refresh.
+
+      > **Re-measured a FOURTH time 2026-08-30 on `main` `655a80ee84d`, and the
+      > answer is unchanged where it matters: `cosmetic = 0`.** The denominator
+      > and the split both moved, so quote these rather than the figures above:
+      > **559 decided** (was 628 in the committed witness), **substantive 186 /
+      > 33.3 %**, **rewritten 309 / 55.3 %**, **unresolvable 60**,
+      > `cosmetic_import_cone_drift` **4**. So the standing advice holds on a
+      > fourth independent run — **not one self-stale witness in the corpus is
+      > safe to refresh**, and an idle pass should spend its budget on sidecars.
+      > Recorded in `computations/witness-staleness-triage.witness.json`.
+
+      Source-
       identical is necessary but not sufficient, and the two extra gates are
       the ones that bite:
 
@@ -787,7 +799,8 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      And ~49 % of the backlog is `rewritten` (**55.3 % as re-measured
+      2026-08-30**; see the fourth-run note above) — the recorded `commitSha`
       resolves to nothing. **This text previously named rebase-merge as the
       cause; that is confirmed for only 46 of 376.** Agent clones here are
       **shallow**, so a sha can be missing merely because the history was never
@@ -1014,12 +1027,13 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    > | Copilot review | **🛑 CORRECTED 2026-08-30 — reviews DO arrive, and are RATIONED.** Measured first-hand on `qou#6122` (~3 min) and `folio-assistant#153` (~4 min), both from `copilot-pull-request-reviewer[bot]`, both with substantive findings — and on qou#6104/#6116, where the reviews landed minutes AFTER those PRs were merged on this row's old guidance, carrying six findings including a real correctness regression. **A quota exists**: five requests across two repos in ~30 min returned *"reached their quota limit"*, so do NOT re-request after every push. The mechanism for the historical zeros is UNSETTLED (three candidates weighed in [`docs/audits/2026-08-30-copilot-review-works-again.md`](docs/audits/2026-08-30-copilot-review-works-again.md), bean `qou-gwe9` **reopened**); note `get_check_runs` still returns `total_count: 0`, so that signal does not discriminate and must not be read as "no review is coming". Superseded text follows: Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
     >
     > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
     > one.** All three original gates are gone. The agent's own verification
     > is not the last gate standing — it is the *only* gate. Act accordingly:
-    > state the verification you actually ran, and do **not** wait on Copilot.
+    > state the verification you actually ran. (The "do not wait on Copilot" that
+> stood here is corrected above — reviews arrive, subject to quota.)
     > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
     > check run that is never created; that wait can only expire, so skip it
     > and record why (citing `qou-gwe9`) rather than burning the window.
@@ -1335,7 +1349,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1371,8 +1385,35 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
-   characters are searchable this way.
+   and re-deriving one. **536** document directories are searchable this
+   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
+   low by 62 %, not merely old).
+
+   **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
+   (added 2026-08-30).** Some documents were ingested with their text in
+   `library/<doc-id>/ocr/page-*.txt` and only a **stub** in `sections/`, so
+   the command on the line above cannot see their mathematics at all:
+
+   ```sh
+   grep -rln <topic> library/*/ocr/     # the tier the three above miss
+   ```
+
+   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   of the eleven single-`sections/`-file directories hold **under 15 %** of
+   their OCR bytes in `sections/`, six of them under 3 %. The worked case is
+   the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
+   Ricca 1992, _Helicity and the Calugareanu invariant_**, whose `sections/`
+   is **1,916 bytes of JSTOR download banner** against **46,511 bytes** of
+   real text in `ocr/` (4.1 %). A `sections/` grep for *helicity* returns
+   several other documents and **not this one** — the single most on-point
+   held source for the mass/binding self-vs-mutual linking question, invisible
+   to the documented path. `1992evansberger` (*A Hierarchy of Linking
+   Integrals*, 2.2 %) is hidden the same way.
+
+   So a clean `sections/` grep is **not** evidence the library lacks a topic.
+   Run the `ocr/` tier before concluding a source is not held — the whole
+   point of path 5 is to catch a citation, and this is exactly where the
+   citations that matter have been hiding.
 
    This path exists only because the sources were sectioned into text.
    Before that they were 339 PDFs and grep could not see them, which is
@@ -1771,7 +1812,7 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
->    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −8.006`) are separated in §2 and in the notation register.
+>    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −7.4588`) are separated in §2 and in the notation register. **That third figure read `−8.006` until 2026-08-29 and was stale, not a different normalisation.** The producer's own upstream source of the exact rungs, `qbeta-c4even-exact-sseries.witness.json`, carries `−7.45876032789888019236780697835`, and a fresh run of `qbeta_c4even_ladder_reconstruction_probe` reproduces it byte-for-byte at BOTH pins — the `c_k^even` are exact s-series coefficients and are **anchor-independent** (only the `abs_ck_uk` products move, by ~4e-7). The downstream ladder witness had simply never been regenerated since it was first written: `−8.006` survived the convention C→D excision (`70d1ade383`) and a sweep whose own message claims it re-ran 154 producers (`119885a4c6`). Fixed in PR #6054, which regenerates that witness and pins the producer to proton.
 >    - **"PROVED" IS wrong.** The Lean is `1 − b²ℏ⁴ = 1 − (bℏ²)²`, a one-line `ring` identity: it proves only that *re-reading* the N=2 factor in the ansatz form yields `−1`. Corpus-grepped: `N2_factor` is a bare `def` with **no** theorem deriving it — every use in `QBetaCategoricalPrecisionLadder.lean` merely `unfold`s it, and its provenance ("Kashiwara `f̃_1†f̃_1`") lives in a docstring. **"Structural" is the defensible word** (no fit, no CODATA, no q₀) and is what the source block itself claims; the compression to "PROVED" happened here, not there.
 > 2. **"`N` is the truncation order chosen by target precision" does not describe the canonical producer.** `qbeta_ck_cache.py` extracts **one** rung by inverting the target; the residual at the next rung is then **exactly zero**, not merely below tolerance, so its guard fires and `c_4 … c_7` are **never computed** (`QOU.QBeta.greedy_rung_exact` / `greedy_later_rungs_vanish`, sorry-free). Whether some abstract ladder converges is a separate question this does not settle; the point is that no `N` is being *chosen* by an `ε` anywhere in the producer.
 > 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3748 %** (proton-normalised; 2.4571 % normalised by the candidate `-2`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.02020024`), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
@@ -1946,6 +1987,49 @@ object — pairwise cap `ρ_A ≤ C(A,2)` proved in
 seventh fit-based ansatz for the MAGNITUDE** — the three-calibration
 discipline review will catch it. Full framing:
 [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
+
+> **🟧 Extensive-term frontier + deuteron ruling (2026-08-29/30).** The "separate
+> super-pairwise additive extensive object" above is the arc's one real open
+> problem. It is now bounded by four sorry-free formalize-first results — the
+> *scaling* is pruned from four directions; the *coefficient/mechanism* stays
+> open (`qou-brng`). Do not re-attempt the excluded routes.
+>
+> - **Complete-graph coordination is excluded by saturation.**
+>   `QOU.Mass.CoordinationSaturation` (lean-direct sorry-free): the complete
+>   graph `M = C(A,2)` (the `z = A−1` law) gives `B/A = ε·(A−1)/2`, **unbounded**
+>   (no plateau); bounded-degree gives `B/A = ε·k/2`, constant. Observed
+>   saturation *forces* bounded degree and refutes `z = A−1` **structurally**
+>   (not merely at ⁴He). Audit:
+>   [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](docs/audits/2026-08-30-coordination-saturation-formalized.md).
+> - **Linear-chain coordination is excluded by arrangement-dependence.**
+>   `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` — the chain
+>   bond sum is arrangement-invariant iff `L_pp = L_pn = L_nn`; a nucleus has no
+>   arrangement (scope-(b), bean `qou-m07y`). The saturation lemma's uniform-`ε`
+>   is exactly that order-independent (physical) regime.
+> - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
+>   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
+> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
+>   wrong against AME**, independent of the bond set
+>   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+>
+> **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
+> canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
+> NOT a hyperbolic-volume term** (Bloch volume leg proved 0, PR #5242). The 6₂
+> census assignment (`Vol = 4.40`) is retired; `qou-e5jf` unblocked. Sourcing the
+> binding from the **Gram/Frobenius pairing (⟨g,g⟩) + confinement SDP** was tested
+> (`deuteron_real_sdp.py`, H₆) and is a **scope-(a) negative**: the diagonal Gram
+> SDP is degenerate and 0 of 6 off-diagonal encodings derive the binding — the
+> only non-zero result (`2.22456607`) is the AME value fed in as the constraint
+> (circular). Same intensive/extensive gap. Audits:
+> [`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`](docs/audits/2026-08-29-deuteron-knot-owner-decision.md),
+> [`docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md`](docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md).
+>
+> **Open positive target (`qou-brng`):** the linking-vs-self-energy amplitude
+> assignment — why the binding multiplier is the *mutual* (coordination) linking
+> count while the mass multiplier is the *self*-linking weight `lw`. The
+> exact-`ℏ_q²` saturated-fraction value is **suspect numerology** (volume-defect
+> route refuted); do not chase it. Consolidated arc ledger:
+> [`docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md`](docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md).
 
 > **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
 > The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:
@@ -3387,8 +3471,52 @@ export interface AuthorNote {
 }
 ```
 
-`BlockBase.authorNotes?: AuthorNote[]` — every block kind accepts it
-(builders pass through via `Omit<XBlock, "kind">`).
+`BlockBase.authorNotes?: AuthorNote[]`.
+
+> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
+> silence (measured 2026-08-30).** This line read *"every block kind accepts
+> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
+> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
+> declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
+> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
+> note written on one of those blocks validates clean and **vanishes**.
+>
+> **Six authored fields are being dropped in this corpus right now**, and two
+> of them are substantive:
+>
+> | block | field | what is lost |
+> |---|---|---|
+> | `braids-and-knots/hecke-log-decomposition-table-data` | `authorNotes` | multi-paragraph caveat recording that the table has **no source block** and why the dangling `uses[]` was dropped rather than guessed |
+> | `nuclear-interactions/q-beta-form-a-n1-symbolic-table-data` | `authorNotes` | — |
+> | `observations/fine-structure-data` | `authorNotes` | — |
+> | `appendix-surreals/millennium-bounds-via-surreals-intro` | `authorNotes` | — |
+> | `appendix-transfer-matrices/tm-interaction-completeness` | `authorNotes` | — |
+> | `appendix-knot-periodic-table/knot-periodic-table` | `computation` | the block's link to its producer |
+>
+> **The wider hazard is not `authorNotes`.** Those same four kinds also drop
+> **`defines`** and (all but `prose`) **`cites`**. No block hits those today,
+> but §4c *mandates* `defines` for every glossary term, so the first `prose`
+> or `table` block to register one will have it silently discarded and the
+> glossary gate will not fire. `cites` dropping means bibliography extraction
+> would silently miss those kinds.
+>
+> **A second class, same symptom, different cause.** The validator also
+> reports five *invented* field names no schema declares anywhere —
+> `is_mathematics` (×3), `probe`, `consumers`. Those are authoring errors
+> rather than a schema gap, and they are dropped just as quietly.
+>
+> **You only see any of this if the validator is current.** These warnings
+> come from an "Unknown field" check that a stale `folio-assistant` clone does
+> not have; the same tree reported **1** issue before the clone was
+> fast-forwarded and **14** after. Run
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> check the clone is not behind before trusting a clean validate.
+>
+> **The fix is in `folio-assistant`, not here** — those four schemas should
+> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
+> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
+> be accepted and lost.
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable

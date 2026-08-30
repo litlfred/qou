@@ -595,11 +595,120 @@ compute has already established:
 
 ### 9.3 The gap, narrowed to one item
 
+> **🛑 CURRENCY (2026-08-30) — the gate in this section is RE-LOCALISED. It is no
+> longer "the per-rep `θ_λ` magnitude" (the row below) nor "the per-depth `α_k`
+> assignment rule" (§9.5). Both were superseded on 2026-08-29/30, and the metric
+> that produced them cannot see the actual defect. Read this before working any
+> row here or in §9.5.**
+>
+> **The old metric was blind at 3-body.** PROBE 2's lumped ratio
+> `1 + |b₄ᶜ|/Σg` compares the 4-body cluster against the 2-body sum and **omits
+> the 3-body order entirely** — so a *sign error* at 3-body, averaged against an
+> order-of-magnitude deficit at 4-body, reads as a benign "26 % short". The
+> matching metric is the Ursell cumulant inversion, which is a *definition* of a
+> binding map's body-order content rather than a fit
+> ([`2026-08-29-he4-magnitude-shortfall-location.md`](audits/2026-08-29-he4-magnitude-shortfall-location.md),
+> canonical convention D, proton pin, mpmath end to end):
+>
+> | | `b₂` | `b₃` | `b₄` |
+> |---|---:|---:|---:|
+> | **AME2020 (target)** | 2.224566 | **+1.426222** | +9.243387 |
+> | model (D, probe2 typing) | 2.22457 *(the unit)* | **−2.74386** | 2.07699 |
+> | model / target | — | **−1.924** | 0.225 |
+>
+> **The convention leg is closed as an explanation.** Under canonical D the
+> lumped enhancement is *farther* from target than under excised C — 0.6664 vs
+> 0.7360 — in both `f_pn` typings. The 23 % `z_C → z_D` difference moves the
+> answer the wrong way, so the convention is not the missing ingredient
+> (scope-(a); this is no argument against D, which is forced independently by
+> `markovWeights_eq_jones_of_threeRow_eq_zero`).
+>
+> **The deficit is present BELOW 4-body**, so looking at ⁴He alone misses it. The
+> held-out ³He−³H splitting carries no 4-body content and is untouched by any
+> common per-order weight: right-signed in all four convention × typing
+> combinations, magnitude short by **2–6×** (D/probe2: model/AME = 0.320).
+>
+> **Both corpus assemblies are now PROVED incapable of the observed `b₃`.** This
+> is the crux, and it is two scope-(b) exclusions, not a numerical shortfall:
+>
+> | assembly | forces | invariant (all sorry-free on `main`) |
+> |---|---|---|
+> | multiplicative / Mayer `W = 1 − ∏ f_ij` | `b₃ > 0` requires `f_pn > 2/3`; every measured `f_pn` is below it (largest `z_D = 0.61269`) ⇒ **`b₃ < 0` always** | [`QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos`](../content/quantum-observable-universe/lean/QOU/MassTheory/MayerThreeBodySign.lean) |
+> | pairwise-additive log `B = −α Σ ln f_ij` | every connected cumulant above 2 vanishes ⇒ **`b₃ = 0` exactly** | arithmetic (uniform `g`: `B(2)=g, B(3)=3g, B(4)=6g`) |
+>
+> Assembly 1 gives `b₃ < 0`, assembly 2 gives `b₃ = 0`, nature gives `b₃ > 0`.
+> And the 2026-08-08 audit §10a **derives** the log form (tr_M multiplicative +
+> energy extensive ⇒ Cauchy functional equation ⇒ `f = c·ln x`, "forced"), so if
+> §10a stands the corpus is committed to a functional that provably cannot
+> reproduce the measured 3-body cumulant. **That tension is the live question**
+> — a derivation question, not a fit (bean `qou-edt7`).
+>
+> **What a replacement assembly may NOT be** (each already proved, so do not
+> re-run these): not pairwise-additive (`b₃ ≡ 0`); not multiplicative with
+> `f_pn ≤ 2/3` (`b₃ < 0`); not reachable by varying the **edge set**, the
+> **like-pair typing**, or the **energy scale** (all three proved sign-irrelevant
+> in `MayerThreeBodySign`); not a **per-λ reweighting** (PROBE 4 / #5234 — a
+> per-λ re-decomposition of the same Borromean trace reproduces the scalar tower
+> to ≤ 6.6e-7); and it must be **arrangement-independent**, which the linear
+> chain provably is not at `q ≠ 1`
+> ([`ChainBondOrderDependence.orderIndependent_iff`](../content/quantum-observable-universe/lean/QOU/MassTheory/ChainBondOrderDependence.lean)).
+>
+> **Three further fences added the same week**, so effort does not go here:
+>
+> 1. **Milnor `μ̄` and the ⁴He magic surplus** — **RE-SCOPED (b) → (a) on
+>    2026-08-30.** The exclusion's premise ("every bonded pair has `lk = 1`") is
+>    contradicted by the corpus's own triton model, which puts `lk = 0` on three
+>    *bonded* pairs; and on the branch that saves the premise, `M₃(T) = 0` makes
+>    the 3-body calibration `e₃` a division by zero. The conditional survives,
+>    its hypothesis does not. **Superseded 2026-08-30**: the canonical braid word
+>    fixes the interfaces non-uniformly — ⁴He's three are `σ` (+1),
+>    `averaged_weighted` (no sign) and `σ⁻¹` (−1) — so the uniform premise is
+>    *false*, not merely unestablished. Originally stated as: the physical
+>    max-contact tetrahedron `K₄` has all six pairs
+>    Hopf-linked (`lk = 1`), so Milnor indeterminacy makes every higher `μ̄`
+>    defined only mod `gcd(lk) = 1` ⇒ `M₃_irr = M₄ = 0`, and the tower supplies
+>    nothing beyond `M₂ = 6`. It does **not** touch the non-link-invariant SU(4)
+>    `[1⁴]` shell object, which is the surviving candidate for that surplus.
+>    ([audit](audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md))
+> 2. **`w_3` is a required boundary condition of a rank-2 problem, not a
+>    computable output.** `no_scalar_kernel_on_carrier` (sorry-free): the
+>    q-Borel-normalised carrier is pure isoclinic of Newton slope `1/2`, every
+>    rank-1 q-difference module has integer slope, and `2u − 2p = 1` is
+>    unsolvable over ℤ — so no scalar `R(q,x)` acts on the carrier at **any**
+>    depth. A rank-2 recursion needs two base cases and the corpus supplies one
+>    (n=2). Four routes to a second were measured and none closes; the one route
+>    nothing excludes is the **ramified double cover** (adjoin `q^{1/2}, x^{1/2}`,
+>    slope becomes 1). ([audit](audits/2026-08-29-w3-closeability.md), bean `qou-v8qx`)
+> 3. **The complete graph cannot saturate**, so it is structurally excluded for
+>    heavy `A` — only a bounded coordination number gives the observed finite
+>    `B/A` plateau (`complete_graph_no_saturation` /
+>    `bounded_degree_saturates`, sorry-free).
+>    ([audit](audits/2026-08-30-coordination-saturation-formalized.md))
+>
+> **One upstream contradiction to settle before pricing any per-order weight.**
+> `prop:prolonged-periods-fixed-depth` asserts an **n-independent** kernel, while
+> `a_D^(n) = I(n)/n` grows **super-exponentially**; a constant-coefficient
+> recurrence of depth `d` obeys `|a_n| ≤ M·Kⁿ`, so at most one of the two holds.
+> The tell sits in their own load-bearing step — `I(n+2) = I(n+1) + (n+1)·I(n)`
+> has the `n`-dependence in the coefficient. This is the **second** independent
+> crack in that proposition; the first, `no_equivariant_prolongation` (merged),
+> reaches it from equivariance instead of growth. Until it is settled, the
+> question *"does a depth-≤8 Bring Gauss–Manin recurrence admit
+> `a₂ : a₃ : a₄ = 1 : −0.52 : +4.45`?"* (bean `qou-i5yp`) may be moot. Bean
+> `qou-9yqb`.
+>
+> **Downstream cost of the open gate, so the priority is legible:** ⁴He
+> under-binds 3.26× on the production form, and **D + T → ⁴He + n comes out
+> endothermic** (−0.29 MeV against +17.59 observed) in every current form,
+> because a fusion Q-value is a small difference of same-order bindings and
+> amplifies per-isotope error without mercy
+> ([gap map](audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md) §4).
+
 | Quantity | Status |
 |---|---|
 | Mirror-pair **differences** (³H/³He, A=3) | 🟡 **partial — signed structure real, magnitude not derived.** The bar-symmetric `(χ^λ + χ^{λᵀ})/2` isospin-mirror combination IS the signed per-block object the volume side proved necessary (#1709 T/³He obstruction), but its best *structural* result is ≈ 2.52 %. The widely-cited **0.11 % is a fitted `(1+q)/2` (CAL-4) near-match**, and is **stale** (canonical q₀ → +0.12 %). Not a derived closure. ([discipline assessment](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)) |
 | Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
-| **A≥3 absolute** binding | 🔴 **the open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
+| **A≥3 absolute** binding | 🔴 **the open gate — but NOT where this row used to say.** ~~needs the full per-rep `θ_λ` magnitude~~ is **superseded**: PROBE 4 measured that a per-λ re-decomposition of the same Borromean trace reproduces the scalar tower to ≤ 6.6e-7, so the missing content cannot be a per-block weight at all. The gate is the **assembly functional**, and both corpus assemblies are proved incapable of the observed `b₃ > 0` — see the currency banner above. |
 
 **Trace-canonical residual (2026-06-09).** On the trace-canonical path the
 whole 9b gap collapses to a near-integer q₀-power, `Δ_λ(K) ≈ q₀^(10A−5)`
@@ -892,6 +1001,25 @@ constant goes to which k, why α_3 = 1 breaks the Markov-marker
 series, why α_{k≥4} plateaus at m_e·8G) — NOT in the LR-vs-Rust
 choice.
 
+> **🛑 CURRENCY (2026-08-30) — the α_k assignment rule is no longer the named
+> unclosed gap.** The paragraph above is kept as the record of what the tower
+> measures; the *diagnosis* in its last sentence is superseded by the §9.3
+> currency banner. The defect is one order lower and one level up: the model's
+> connected **3-body** cumulant is **wrong-signed** (`−2.744` against AME's
+> `+1.426`) under every convention × bond-typing combination tested, and that
+> sign is forced by the assembly functional rather than by any per-depth
+> coefficient — proved for the multiplicative form
+> (`MayerThreeBodySign.lt_of_b3_pos`) and by arithmetic for the pairwise-additive
+> log form (`b₃ ≡ 0`). Re-running an α_k assignment variant cannot move a
+> quantity that is sign-fixed upstream of it. Two further §9.5-adjacent routes
+> are separately fenced: reading the **magic-A formula as the n=4 term** rather
+> than as the total determines `w_3` **negative** and predicts *unbound tritium*
+> (−1.66 MeV), scope-(a) against that reading only
+> ([w₃ audit](audits/2026-08-29-w3-closeability.md) R4); and the **depth-2 SL₂
+> route to `τ`** is measurably circular — substituting any value for `a_D^(3)`
+> leaves the `a_D^(4)` residual at 0.0 to full precision, so `τ` carries no
+> information about it (same audit, R2).
+
 **Agent guidance for binding compute:**
 
 1. ✅ DO use `binding_depth_stratified_rust.py` (or LR variant for A ≥ 4)
@@ -903,6 +1031,15 @@ choice.
    isotope bar-symmetric, etc.) without first checking §9.3 + the
    audit doc. The Δ_λ gate is mis-framed; CAL-4 numerology is forbidden
    (cheat sheet §9.3 + isospin-mirror discipline assessment).
+7. ❌ DO NOT re-run an **edge-set**, **like-pair typing**, or **energy-scale**
+   variant expecting the 3-body sign to move — all three are proved
+   sign-irrelevant (`MayerThreeBodySign`), as is a per-λ reweighting
+   (PROBE 4 / #5234). And do NOT propose a functional *chosen because it
+   lands `b₃ > 0`*: that is anchor inversion in new clothes, i.e. the
+   seventh ansatz under another name.
+8. ✅ DO report the body-order cumulants (`b₂, b₃, b₄`) rather than a lumped
+   ratio when claiming a binding form works — the lumped metric is blind
+   at 3-body, which is where the defect is.
 5. ❌ DO NOT treat the +5.87 % magic-A formula as universal binding —
    it applies only to ⁴He's doubly-magic shell.
 6. ❌ DO NOT chase the retracted Option E v9 cross-isotope `(1+q)/2`
@@ -916,6 +1053,12 @@ choice.
 - [`DERIVATION-CHAIN-METHODOLOGY.md`](../computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
 - [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index
+- [`docs/audits/2026-08-30-magnitude-gate-is-the-assembly-five-fronts.md`](audits/2026-08-30-magnitude-gate-is-the-assembly-five-fronts.md) — **read first on this axis**: both corpus assemblies proved incapable of `b₃ > 0`; the double cover measured and not closing; SU(4) `[1⁴]` the surviving non-link-invariant candidate (its sign-capability is analytic and discriminates nothing — corrected 2026-08-30); the `M_n(K)` blocker stale under the Option-A ruling
+- [`docs/audits/2026-08-29-he4-magnitude-shortfall-location.md`](audits/2026-08-29-he4-magnitude-shortfall-location.md) — **the current magnitude localisation**: Ursell body-order inversion; the model's `b₃` is wrong-signed under every convention × typing; the convention leg closed as an explanation; held-out ³He−³H splitting short by 2–6×
+- [`docs/audits/2026-08-29-w3-closeability.md`](audits/2026-08-29-w3-closeability.md) — `w_3` is a rank-2 boundary condition, not a computable output; four routes measured, the ramified double cover the only one unexcluded
+- [`docs/audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`](audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md) — **RE-SCOPED (b) → (a) 2026-08-30**: originally a structural exclusion (Milnor indeterminacy on a max-contact cluster); its uniform-`lk` premise is contradicted by the canonical braid word, so the conditional survives and the exclusion does not
+- [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](audits/2026-08-30-coordination-saturation-formalized.md) — complete-graph coordination cannot saturate; bounded degree is the forced regime
+- [`docs/audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md`](audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md) — provenance ladder + the G1–G8 expected-gap map; why every fusion channel through ⁴He currently has the wrong sign
 - [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md) — depth-stratified `Σ_k α_k Φ_k` is the canonical binding default; α_k structural (z² Markov + m_e·8G Borromean), per-depth assignment rule is the unclosed gap
 - [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](audits/2026-05-24-magic-shell-gs-filtration-exploitation.md) — magic-shell + GS-NF wiring gap (L3 closure path)
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](audits/2026-05-24-isospin-categorical-source.md) — D9 isospin closure path (operator-valued bowtie extension)

@@ -60,7 +60,14 @@ B_AME = {
 }
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
-N_INTERFACES = {"D": 1, "T": 3, "3He": 3, "4He": 6}  # C(A,2) nucleon pairs
+# NOTE (2026-08-30, bean qou-gecf): this is the C(A,2) NUCLEON-PAIR count, and
+# it is NOT the interface count. The canonical braid word wires a CHAIN of A-1
+# inter-nucleon interfaces (D 1, T 2, 3He 2, 4He 3) -- see
+# theta_mn_linearchain_vs_allpairs.py, which records that resolution, and
+# prop:linear-chain-bond-count for the Lean-proved aggregate. Renamed so the
+# name agrees with the value; no number changes, because this field is
+# descriptive metadata that nothing downstream reads.
+N_NUCLEON_PAIRS = {"D": 1, "T": 3, "3He": 3, "4He": 6}  # C(A,2)
 
 
 def load_chi(fn):
@@ -80,7 +87,7 @@ def main():
         rows.append({
             "atom": name, "A": (2 if name == "D" else 3 if name in ("T", "3He") else 4),
             "n_partitions": len(chi),
-            "n_interfaces": N_INTERFACES[name],
+            "n_nucleon_pairs": N_NUCLEON_PAIRS[name],
             "counit_sum_chi": mp.nstr(S, 12),
             "target_minus_B_over_me": mp.nstr(tgt, 12),
             "abs_ratio": mp.nstr(ratio, 8),
@@ -135,9 +142,9 @@ def main():
     ).save()
 
     print("=== counit Σ_λ χ^λ across D/T/³He/⁴He ===")
-    print(f"{'atom':>4} {'n_int':>5} {'sum_chi':>12} {'-B/me':>12} {'ratio':>8} {'sign':>6}")
+    print(f"{'atom':>4} {'n_pair':>6} {'sum_chi':>12} {'-B/me':>12} {'ratio':>8} {'sign':>6}")
     for r in rows:
-        print(f"{r['atom']:>4} {r['n_interfaces']:>5} {float(r['counit_sum_chi']):>12.4f} "
+        print(f"{r['atom']:>4} {r['n_nucleon_pairs']:>6} {float(r['counit_sum_chi']):>12.4f} "
               f"{float(r['target_minus_B_over_me']):>12.4f} {float(r['abs_ratio']):>8.4f} "
               f"{'OK' if r['right_sign'] else 'WRONG':>6}")
     print(f"ratio spread max/min = {mp.nstr(ratio_spread,5)} (>1.1 => not a fixed factor)")

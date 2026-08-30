@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-08-26T23:22:02Z
+updated_at: 2026-08-30T04:50:37Z
 ---
 
 ## What was measured
@@ -63,3 +63,46 @@ I had just found the code disagrees with.
 Noted but NOT chased in that probe: it was opened for the rung-1 re-derivation
 and this is a separate defect. Queued rather than pivoted to, per the bean
 policy.
+
+## 2026-08-30 — ANSWERED, and the recorded number is itself stale (PR #6103)
+
+**Which hypothesis?** (4), a sign convention — and it is NECESSARY BUT NOT
+SUFFICIENT. Probe qbeta_ladder_headline_residual_provenance_probe, 5/5.
+
+  headline (prose)                  -6.6      ppb
+  block's OWN table 2, N=3          +6.02     ppb   |ratio| 0.912
+  block's OWN table 2, N=4          -0.57     ppb   |ratio| 0.086
+  live implementation, muon pin     +7.133937 ppb
+  live implementation, proton pin   +37.70749 ppb
+
+The headline matches NO row of the block's own table. Nearest is N=3:
+opposite sign AND 8.8 % apart in magnitude, so a pure sign flip does not
+close it. Hypotheses (1) CODATA and (3) faithfulness are not needed to
+explain it; (2) predating a rung change is folded into the fifth-rung
+question below.
+
+**Hypothesis (2) — the q0 pin — is DEAD.** The implementation is POSITIVE at
+both pins; changing q0 moves the magnitude 5.3x, never the sign. This also
+corrects qbeta_ladder_convention_fee_probe's own docstring item 3, which
+says the -0.0066 ppm 'reproduces only at the MUON pin'. It does not: the
+muon pin gives +7.13 ppb.
+
+**Not settled here:** which number is RIGHT. That needs the block's
+fifth-rung coefficient, which its own .qa.json finding (1) records as
+superseded — boxed -(b^2+1/2) = -1.2527 vs context/table-3 3c_3^2+b =
++12.8676, opposite sign, order of magnitude apart. Math question.
+
+## NEW, and it is the reason to re-measure rather than quote
+
+This bean recorded **+7.336484 ppb** at the muon pin on 2026-08-26. A fresh
+run today gives **+7.133937 ppb** — 0.203 ppb apart, 2.8 %. The committed
+qbeta-ladder-convention-fee.witness.json still holds the 7.336484 figure, so
+that witness is **substantively stale**, not merely drifted.
+
+I did NOT refresh it in #6103. The movement is main's (the muon anchor's
+CODATA-2022 move and whatever else entered the cone), not this PR's, and
+committing it here would put a main-caused change to a published number
+inside a PR about a different defect. Left as its own item.
+
+Every number above is C-frame; the D-frame ladder is unknown pending the
+qou-cds1 re-derivation.

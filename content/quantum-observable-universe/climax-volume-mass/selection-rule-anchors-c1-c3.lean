@@ -39,6 +39,7 @@
 -/
 
 import Mathlib.Algebra.Field.Basic
+import QOU.Mass.QHookDimension
 import Mathlib.Algebra.Order.Ring.Cast
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -100,5 +101,29 @@ theorem selection_rule_c3_eq_family_a (q : R) (hq : q ≠ 0) :
     = 5 / 2 + (3 / 4) * (q - q⁻¹)^2 := by
   rw [selection_rule_c3_eq_family_a_q_form q hq]
   exact family_a_q_form_eq_h_form q hq
+
+/-! ## Derived from the hook-length formula (bean `qou-lx7k`, 2026-08-29)
+
+Everything above is an arithmetic identity over q-dimension values substituted by
+hand: no partition, hook length or `dim_q` occurs in any of those *statements*,
+and the hook-length step lived in the docstrings.  The theorems are true and are
+kept; what was missing was the derivation of their left-hand sides.
+
+`QOU.Mass.QHookDimension` supplies it — shape → conjugate → hook lengths →
+`[n]_q!` over the hooks' q-integers, with each shape's hook multiset settled by
+`decide`.  The two anchors below are the statements this block's `.md` describes,
+now resting on that formula rather than on a substitution. -/
+
+theorem selection_rule_c1_anchor_derived {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [2] + dimQ q [1, 1]) / 2 = 1 :=
+  selection_rule_c1_real hq
+
+theorem selection_rule_c3_anchor_derived {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [4] + dimQ q [3, 1] + dimQ q [2, 2] + dimQ q [2, 1, 1]
+       + dimQ q [1, 1, 1, 1]) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 :=
+  selection_rule_c3_real hq
 
 end QOU.Mass

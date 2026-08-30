@@ -468,3 +468,111 @@ corpus checked at the source. Status:
 2026-08-29 (research route, piece 1): owner chose to treat the bulk rate as a research problem. Piece 1 DONE: the classical DEBYE bulk asymptotic of J_x(2sqrt th) (Watson 1944 sec8.4 / DLMF 10.19.6) VERIFIED against exact besselj (debye_bulk_asymptotic_probe.py, no float64): rel err ~ theta^-1/2, exponent 0.51 at deepest bulk a=0.5. Confirms J -> discrete sine kernel with angle R=arccos(a/2) and the O(theta^-1/2) pointwise correction. This is a rigorous+cited+verified brick. Remaining: write J=S+E, variance = sine-part + 2*cross(S*E) + E^2; the cross term is oscillatory so summation-by-parts/stationary-phase gains one more theta^-1/2 -> net theta^-1 (measured tvok). That cancellation with explicit constant is the hard analysis, NOT done (would risk laundering). Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-research-piece1-debye-verified.md. Gap OPEN.
 
 2026-08-29 (session tender-keller, branch m1-k5r5-bulk-rate-derivation): owner supplied two on-target papers (00231c40) — Charlier-Claeys 1409.0435 (arc/gap Toeplitz + sine-kernel Fredholm det, RH O(1/n) parametrix matching) and Corwin-Deift-Its 2201.05665 (Widom sine-kernel survey). Ingested + registered as charlier-claeys2015 / corwin-deift-its2022. PIECE 2 (rigorous brick): verified the Widom/CC arc-Toeplitz constant c=(1/12)ln2+3zeta'(-1)=-0.4385 against the actual finite-n determinant (Cholesky, NO float64); residual ~n^{-2} (even-symbol cancels the n^{-1} term). HONEST STATUS: these give the determinant-level TOOL + limit object + constant, now in-corpus/citable, but NOT the Plancherel linear-statistic variance rate (adjacent functional: gap-probability n^{-2} / sine-det O(1/y) vs variance theta^{-1}). Open piece unchanged: the bulk cross-term summation-by-parts/stationary-phase cancellation (the RH computation), now better-equipped. Not laundered. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-charlier-claeys-widom-toeplitz.md
+
+---
+
+## 2026-08-30 — TRACK B EXECUTED: exact window 67 → 78, and the effective exponent turns
+
+`computations/deltalambda/wlambda_covariance_epic_B1_kappa_window_extension.py`
++ witness, 5/5 assertions. Eleven new exact points, ~28 min of compute. Exact
+`Fraction` throughout, comparison at 60 dps, no float64.
+
+### The one-sided bound still holds, and the approach is from above
+
+**All eleven `κ_n > κ`**, and `κ_n` is *strictly decreasing* across the whole new
+window. So the reduction's premise — `κ_n` approaching its limit from above past
+the `n₀ = 13` crossing — survives the extension.
+
+| n | κ_n − κ | | n | κ_n − κ |
+|---|---|---|---|---|
+| 68 | 0.0012908539 | | 74 | 0.0012458061 |
+| 69 | 0.0012825060 | | 75 | 0.0012387614 |
+| 70 | 0.0012745731 | | 76 | 0.0012315753 |
+| 71 | 0.0012670386 | | 77 | 0.0012242230 |
+| 72 | 0.0012598181 | | 78 | 0.0012167299 |
+| 73 | 0.0012527860 | | | |
+
+### The finding: the effective exponent is NOT monotone
+
+The workplan records *"measured effective exponent still rising, ≈0.25 → 0.36
+over n = 40..64"*. Just past the old window it **turns**:
+
+| stencil | α (from `κ_n − κ ~ C n^{−α}`) |
+|---|---|
+| 68..71 | 0.4313 |
+| 71..74 | **0.4083 ← minimum** |
+| 75..78 | 0.4575 |
+
+Robust to stencil width — successive-pair, 4-wide and half-window secants all
+put the minimum near **n = 71–72**. Not numerical noise: these are exact
+rationals evaluated at 60 dps, so the local exponent carries ~50 correct digits.
+
+### Why that constrains Track A
+
+**A single power law gives a monotone effective exponent.** A genuine interior
+minimum means the correction is a *sum of at least two terms of different order*
+(or carries a log) at these `n`. So:
+
+* the earlier "0.25 → 0.36 and rising" reading was sampling one side of a
+  turning point, which is why extrapolating it suggested something lower;
+* **A3's answer must accommodate two competing terms**, not fit one exponent;
+* every windowed exponent sits well below the edge order `2/3 = 0.667`, and the
+  top-end value (0.458 over 75..78, local 0.476 at 78) trends toward the bulk
+  `1/2`. **Consistent with bulk-dominated, not established** — the turning point
+  is precisely why a naive extrapolation from either side misleads.
+
+### Cost, and where this approach walls
+
+Measured scaling ≈ **2.35× per +5 in n** (n = 50 → 3.4s, 55 → 8.1s, 60 → 19.1s,
+68 → 64.5s, 78 → 283s). `p(85) ~ 3×10⁷` is the practical wall in Python; a
+materially wider window needs a different algorithm, not a faster loop.
+
+Two optimisations, both recorded so they are not re-attempted:
+
+* closed forms for `H` and `C2` replace two of the three per-partition cell
+  walks (`H = Σ_i C(λ_i,2) + Σ_j C(λ'_j,2) + n`; `C2` a per-row cubic) —
+  verified on all 507 partitions of n = 1..14, and the producer against the
+  committed script on n = 3..20. **Only 1.31×**: the hook product still needs
+  its `O(n)` walk and the cost is Python loop overhead, not big-int arithmetic.
+* a beta-number (first-column hook) formula for `f^λ`, evaluated on whichever of
+  `λ`/`λ'` has fewer rows, is **not faster** (1.25×) — the `O(r²)` pair product
+  plus one big `n! · num // den` costs about what the `O(n)` walk costs here.
+
+### Not claimed
+
+This proves nothing about the sign for `n > 78`; it is Track B doing what the
+workplan scoped it for — guiding A's order prediction. The gap stays OPEN.
+
+---
+
+## 2026-08-30 — TRACK A IS BLOCKED AT A1, NOT AT A2 (beans qou-470y, qou-nna0)
+
+The workplan rated **A1 low-risk and A2 the crux**. It is the other way round,
+and A1 does not merely stall — it is impossible as stated.
+
+**`Sigma_h` is not a polynomial in the free cumulants** (`qou-470y`, 11/11
+assertions, exact over all partitions of `n <= 10`). Conjugation-invariance of
+`Sigma_h` plus the parity law `R_k(lam') = (-1)^k R_k(lam)` confine any such
+polynomial to the subalgebra generated by even-index `R`'s and even monomials in
+the odd ones — every generator of which has **integer** Plancherel order. But
+`E_Planch[Sigma_h] ~ c n^{3/2}`. Contradiction.
+
+So the workplan's stated premise — *"Genus applicability established (both legs
+polynomial-on-Young-diagrams)"* — **holds for `omega_3` and fails for
+`Sigma_h`**. A2 is scrapped: the `R_k` it was to assemble do not enter through
+`Sigma_h` at all.
+
+### What this leaves standing
+
+* `Sigma_c = R_3/2`, `R_4 = 3 omega_3 - n` (Lean's `r4Value` is the right
+  normalisation), and `M_1 = Cov(p_2, omega_3) = Cov(Sigma_h, omega_3)` because
+  `Cov(R_3, omega_3) = 0` by parity.
+* **Track D is promoted to principal.** Fulman's exchangeable-pair / Stein
+  bound needs neither leg polynomial. The workplan held it as the fallback "if
+  A2 walls"; A1 walling is a stronger reason to take it, and it is now the only
+  route in the plan whose premises are intact.
+* Track B's window (67 -> 78, previous append) still stands and is unaffected:
+  it measures `kappa_n` directly and never touches `Lambda*`.
+
+The gap stays OPEN. What changed is which door is worth pushing on.
+

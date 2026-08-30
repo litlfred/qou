@@ -219,18 +219,21 @@ def nbal3(q0: mpf) -> mpf:
 
 def block_t1_exact(wb: WitnessBuilder) -> None:
     """T1: exact second-moment identity, positivity gap, monotonicity."""
+    _ok: list[bool] = []
     m = 2  # N^bal(3) = q^{-m(m-1)/4}·[2]_q! at m = 2
     nbal = _q ** (-sp.Rational(m * (m - 1), 4)) * (1 + _q)  # [2]_q! = 1+q
     # (a) closed forms
     d_a1 = sp.simplify(nbal - (1 + _q) / sp.sqrt(_q))
     d_a2 = sp.simplify(nbal - 2 - (sp.sqrt(_q) - 1) ** 2 / sp.sqrt(_q))
-    assert d_a1 == 0 and d_a2 == 0, (d_a1, d_a2)
+    _ok.append(bool(d_a1 == 0 and d_a2 == 0))
+    assert _ok[-1], (d_a1, d_a2)
     # (b) monotonicity: d/dq = (q−1)/(2q^{3/2}) — exact factorization
     d_b = sp.simplify(sp.diff(nbal, _q) - (_q - 1) / (2 * _q ** sp.Rational(3, 2)))
-    assert d_b == 0, d_b
+    _ok.append(bool(d_b == 0))
+    assert _ok[-1], d_b
     # (c) mass: N^bal(1) = [0]_q! · q^0 = 1 exactly (m = 0 empty product)
     wb.add_assertion(
-        "second_moment_exact_identities", computed="0", expected="0",
+        "second_moment_exact_identities", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="∫ s² dK_q = N^bal_q(3) = q^{−1/2}(1+q) = 2 + (√q−1)²/√q "
                "and d/dq N^bal(3) = (q−1)/(2q^{3/2}) — exact (sympy). "
@@ -293,6 +296,7 @@ def block_t2_kernel_second_moments(wb: WitnessBuilder, q_values) -> None:
 def block_t3_markov_tails(wb: WitnessBuilder, q_values) -> dict:
     """T3: tail masses obey the Markov bound tail(R) ≤ N^bal(3)/R² at
     every sampled q and threshold, both kernel variants."""
+    _ok: list[bool] = []
     rows = {}
     kernels = {}
     for name, q0 in q_values:
@@ -310,14 +314,16 @@ def block_t3_markov_tails(wb: WitnessBuilder, q_values) -> dict:
             t_at = tail_atomic(Rm, jk, tk)
             t_ac = tail_ac(Rm, jk, sig, muh)
             # positive-series truncation error < 1e-30 ≪ slack: bound holds
-            assert t_at <= markov, (name, R, t_at, markov)
-            assert t_ac <= markov, (name, R, t_ac, markov)
+            _ok.append(bool(t_at <= markov))
+            assert _ok[-1], (name, R, t_at, markov)
+            _ok.append(bool(t_ac <= markov))
+            assert _ok[-1], (name, R, t_ac, markov)
             rows[name][str(R)] = {
                 "markov_bound": mp.nstr(markov, 10),
                 "tail_atomic": mp.nstr(t_at, 10),
                 "tail_ac": mp.nstr(t_ac, 10)}
     wb.add_assertion(
-        "markov_tail_bound", computed="0", expected="0",
+        "markov_tail_bound", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"0 = #violations of [K_q((R,∞)) ≤ N^bal_q(3)/R²] over "
                f"q ∈ {{{', '.join(n for n, _ in q_values)}}}, "
@@ -337,6 +343,7 @@ def block_t3_markov_tails(wb: WitnessBuilder, q_values) -> dict:
 def block_t4_uniform_certificate(wb: WitnessBuilder, kernels) -> None:
     """T4: the tightness certificate — one compact window per ε catches
     1 − ε of EVERY member simultaneously."""
+    _ok: list[bool] = []
     c2_max = max(nbal3(q0) for q0, *_ in kernels.values())
     cert = {}
     for eps in EPS_LADDER:
@@ -345,11 +352,12 @@ def block_t4_uniform_certificate(wb: WitnessBuilder, kernels) -> None:
         for name, (q0, jk, tk, sig, muh) in kernels.items():
             sup_tail = max(sup_tail, tail_atomic(Reps, jk, tk),
                            tail_ac(Reps, jk, sig, muh))
-        assert sup_tail <= eps, (mp.nstr(eps, 5), sup_tail)
+        _ok.append(bool(sup_tail <= eps))
+        assert _ok[-1], (mp.nstr(eps, 5), sup_tail)
         cert[mp.nstr(eps, 5)] = {"R_eps": mp.nstr(Reps, 12),
                                  "sup_tail": mp.nstr(sup_tail, 10)}
     wb.add_assertion(
-        "uniform_tightness_certificate", computed="0", expected="0",
+        "uniform_tightness_certificate", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"0 = #violations of [sup_q K_q((R(ε),∞)) ≤ ε] with "
                f"R(ε) = √(C₂/ε), C₂ = {mp.nstr(c2_max, 12)} (the exact "

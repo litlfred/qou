@@ -15,11 +15,12 @@ created; that wait **can only expire**.
 |---|---|
 | **CI green** | Unavailable. Auto-triggers disabled repo-wide (owner directive 2026-06-30, Actions billing). `build.yml` is `workflow_dispatch`-only; there is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
 | **Gemini review** | Gone. The consumer Gemini Code Assist on GitHub was sunset — "All code review activity has officially ceased" (bot notice, PR #4514, 2026-08-01). |
-| **Copilot review** | Does not arrive. Measured n=5, bean `qou-gwe9`: requested via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help. The cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+| **Copilot review** | **TRAP — this row was wrong, corrected 2026-08-30.** Reviews DO arrive (~3-4 min; measured on qou#6122, folio-assistant#153, and on qou#6104/#6116 where they landed minutes AFTER a merge taken on this row's old advice, carrying six findings incl. a real correctness regression). **They are RATIONED** — five requests across two repos in ~30 min hit *"reached their quota limit"*, so never re-request after every push. `get_check_runs` really does return `total_count: 0`, but that does NOT discriminate and must not be read as "none coming"; the review arrives as a `pull_request_review.submitted` wake via `subscribe_pr_activity`. Mechanism for the historical zeros is UNSETTLED — see `docs/audits/2026-08-30-copilot-review-works-again.md`, bean `qou-gwe9` (reopened). Superseded text: Measured n=5, bean `qou-gwe9`: requested via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help. The cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
 
-**So the gate table has ZERO live external gates.** The agent's own
-verification is not the last gate standing — it is the *only* gate. Skip the
-Copilot wait and record why, citing `qou-gwe9`.
+**So the gate table has ONE intermittent external gate (Copilot, quota-limited), not zero.** The agent's own
+verification is not the last gate standing — it is the *only* gate. Do not block on a check-run poll (it sees nothing), but DO expect a
+review wake on a subscribed PR and handle it — after a merge that means a
+follow-up PR, not nothing.
 
 `AGENTS.md`'s heading over this table read "Two of the three" while the table
 and its own closing paragraph both said three; an agent skimming the heading

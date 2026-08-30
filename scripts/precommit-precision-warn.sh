@@ -68,7 +68,39 @@ audit="computations/witness_raw_float64_audit.py"
 [ -f "$audit" ] || exit 0
 
 export PYTHONPATH="$PWD/computations:$PWD/tools/qou-substrate/python:${PYTHONPATH:-}"
+
+# THE AUDIT WRITES ITS OWN WITNESS, and this hook must not.
+#
+# witness_raw_float64_audit.py has no --no-write, so running it rewrites the
+# tracked computations/witness-raw-float64-audit.witness.json -- on EVERY commit
+# that touches a witness or a computations/*.py, which is precisely when this
+# hook fires. The rewrite is almost always stamp-only (commitSha, computedAt);
+# the counts move only when the corpus does.
+#
+# That is a warn-only hook silently dirtying the working tree, and the cost is
+# on the record twice on one branch: the file was swept into a `git add -A`,
+# reverted when caught, and swept in again one commit later. It then conflicts
+# with main every time, because main regenerates the same file from a different
+# tree -- two snapshots of different corpora, neither more current than the
+# other.
+#
+# So: snapshot before, restore after. ONLY when the file is clean going in --
+# an agent deliberately refreshing this witness has a modified copy staged or
+# unstaged, and that copy is theirs to keep.
+_w="computations/witness-raw-float64-audit.witness.json"
+_snap=""
+if [ -f "$_w" ] && git diff --quiet -- "$_w" 2>/dev/null \
+   && git diff --cached --quiet -- "$_w" 2>/dev/null; then
+  _snap="$(mktemp)"
+  cp "$_w" "$_snap"
+fi
+
 out="$(timeout 120 python3 "$audit" --strict 2>&1)"; rc=$?
+
+if [ -n "$_snap" ]; then
+  cp "$_snap" "$_w"
+  rm -f "$_snap"
+fi
 
 case "$rc" in
   0) : ;;  # green -- say nothing, the commit is the signal

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T07:00:13.032438+00:00",
-  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
+  "computedAt": "2026-08-30T10:45:47.487174+00:00",
+  "commitSha": "c80f90670f0ae61cf3b9ce04415f75b4d8a7d7e2",
   "assertions": [
     {
       "name": "coefficient_lock_holds",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "wedderburn-mass-table-z1-20",
   "scriptFile": "wedderburn_mass_table_z1_20.py",
-  "scriptHash": "14a1f8ba93b9",
-  "scriptCommitSha": "dc17437c90d9279352b9ef02271456fa4560b2eb",
+  "scriptHash": "6c0245a2b00f",
+  "scriptCommitSha": "e353d0ecf6c071a11c39888729815664e4405c3c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

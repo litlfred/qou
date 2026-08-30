@@ -22,7 +22,8 @@ Public surface (mirrors the plan API):
     shift_nf_atomic_closed_form(Z, N) -> int        # exact 18Z+21N+1
     build_atom_nf_mp(Z, N, dps=50) -> list[mpf]     # NF at q_0
     gram_mp(dps=50) -> mpmath.matrix                # Gram at q_0
-    primal_to_dual(coeffs_primal, dps=50) -> list[mpf]
+    primal_to_dual(coeffs_primal, dps=50)            -> RAISES under D
+    primal_to_dual_quotient(coeffs_primal, dps=50) -> list[mpf]
     compound_shift(Z, N, dps=50) -> CompoundShiftResult
     verify_alpha_em_chain(dps=50) -> dict
 
@@ -248,13 +249,77 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
 # §2 — mpmath Gram matrix and Markov trace
 # ──────────────────────────────────────────────────────────────────────
 
+def _min_norm_lstsq_mp(A, b, rcond=None):
+    """Minimum-norm least-squares solve of A x = b, via SVD, in mpmath.
+
+    This is the mpmath twin of `numpy.linalg.pinv` / `pyhecke.gram.G_PINV`,
+    and it exists here for the same reason that one does: under convention D
+    the H_3(q) trace form is SINGULAR (rank 5 of 6, radical = the three-strand
+    q-antisymmetriser), so the dual system assembled from `G` below is
+    rank-deficient and `mp.qr_solve` RAISES on it.
+
+    Returning NaN in that case — which is what the bare `qr_solve` path did —
+    reports "no answer" for a system that has a perfectly good one: the
+    least-squares solution is not unique, and the minimum-norm representative
+    is the canonical choice. That representative is exactly the solve on the
+    quotient H_3(q)/rad, i.e. the object the convention-D form actually has.
+
+    Returns (x, rank).
+    """
+    m, n = A.rows, A.cols
+    U, S, V = mp.svd_r(A)
+    smax = max((abs(S[i]) for i in range(len(S))), default=mp.mpf(0))
+    if rcond is None:
+        rcond = mp.mpf(10) ** (-(mp.mp.dps - 8))
+    tol = smax * rcond
+    rank = sum(1 for i in range(len(S)) if abs(S[i]) > tol)
+    # x = V^T diag(1/s) U^T b, zeroing the directions below tolerance.
+    Utb = U.T * b
+    y = mp.matrix(len(S), 1)
+    for i in range(len(S)):
+        y[i, 0] = (Utb[i, 0] / S[i]) if abs(S[i]) > tol else mp.mpf(0)
+    x = V.T * y
+    return x, rank
+
+
 def tr_m_weights_mp(dps: int = 50) -> list:
-    """Markov-trace weights TR_M = [1, z, z, z², z², z³] in mpmath."""
+    """Markov-trace weights TR_M = [1, z, z, z², z², h·z² + z] in mpmath.
+
+    TWO corrections land here together, and they must (bean qou-ssex):
+
+    1. **TR_M[5] is `h·z² + z`, not `z³`** — the 2026-05-19 fix
+       (docs/audits/2026-05-19-trm5-markov-bug.md) that reached
+       `pyhecke.gram.TR_M` and never reached this module. The Markov axioms
+       give tr(σ₀σ₁σ₀) = tr(σ₁σ₀²) = tr(σ₁(h·σ₀ + 1)) = h·tr(σ₁σ₀) + tr(σ₁)
+       = h·z² + z.
+    2. **z is convention D**, `q³/(q² + 1)` — owner ruling 2026-08-15 R1.
+
+    They land together because the wrong weight was MASKING the convention-D
+    Gram singularity. Measured on this module's own `gram_mp` at q₀:
+
+        z_C / z³        det  0.360801088987   rank 6/6
+        z_C / h·z²+z    det  0.189205219144   rank 6/6
+        z_D / z³        det  0.152018239085   rank 6/6
+        z_D / h·z²+z    det  1.4e-56          rank 5/6   <- the true D form
+
+    So under D the trace form is SINGULAR (rank 5; the radical is the
+    three-strand q-antisymmetriser). That is correct, not a defect — see
+    `pyhecke.gram.RADICAL` / `G_PINV`. The dual solve below already uses
+    `mp.qr_solve` least-squares rather than a 6×6 inverse, which IS the
+    solve on the quotient H₃(q)/rad, so the singular form is handled
+    honestly there.
+
+    An earlier draft of this docstring added "there is no `G⁻¹` in this
+    module to remove". That was WRONG and Copilot caught it: `primal_to_dual`
+    below did `G ** -1 * c_vec`, which mpmath performs without raising on the
+    singular D Gram, returning entries ~1e55. It now refuses, with
+    `primal_to_dual_quotient` as the honest replacement.
+    """
     with mp.workdps(dps + 5):
         q0 = q_at(dps + 5)
-        sq = mp.sqrt(q0)
-        z = mp.mpf(1) / (sq + mp.mpf(1) / sq)
-        out = [mp.mpf(1), z, z, z ** 2, z ** 2, z ** 3]
+        z = q0 ** 3 / (q0 ** 2 + 1)
+        h = q0 - mp.mpf(1) / q0
+        out = [mp.mpf(1), z, z, z ** 2, z ** 2, h * z ** 2 + z]
         # Round inside the workdps block (Gemini review on PR #658).
         with mp.workdps(dps):
             return [+v for v in out]
@@ -289,15 +354,53 @@ def gram_mp(dps: int = 50) -> mp.matrix:
 
 
 def primal_to_dual(coeffs_primal: Sequence, dps: int = 50) -> list:
-    """Gram-inverse transfer: primal NF coefficients → dual Frobenius basis.
+    """REMOVED under convention D — `gram_mp` is singular, so `G⁻¹` does not
+    exist. Use `primal_to_dual_quotient` and mean it.
 
-    NF c_b(q) coefficients live in PRIMAL basis.  Frobenius-dual
+    This mirrors `pyhecke.gram.gram_inverse()`, which raises for the same
+    reason rather than silently returning `G_PINV`: the caller asked for an
+    inverse, and under convention D there isn't one. The quotient answers a
+    different question, so the caller has to say they want it.
+
+    **mpmath does NOT protect you here.** Measured on this module's own D-frame
+    Gram (min singular value 1.4e-56):
+
+        G ** -1                    returns, raising nothing
+        max |entry| of the result  2.09e55
+        ‖G @ Ginv − I‖_max         3.7e-4
+
+    i.e. exactly the `np.linalg.inv` failure mode that `pyhecke.gram.
+    safe_inverse()` exists to guard, reproduced in mpmath. This function had
+    no callers when the defect was found (Copilot review, PR #6110), so
+    nothing consumed the garbage — but it is listed in this module's public
+    API at the top of the file, so a future caller would have.
+    """
+    raise NotImplementedError(
+        "primal_to_dual() is removed: under convention D the H_3(q) trace form "
+        "is SINGULAR (rank 5 of 6; the radical is the three-strand "
+        "q-antisymmetriser), so G^-1 does not exist and mpmath's `G ** -1` "
+        "returns entries ~1e55 without raising. Use primal_to_dual_quotient(), "
+        "which is the transfer on H_3(q)/rad."
+    )
+
+
+def primal_to_dual_quotient(coeffs_primal: Sequence, dps: int = 50) -> list:
+    """Transfer on the QUOTIENT H_3(q)/rad: primal NF coeffs → dual basis.
+
+    The honest convention-D replacement for `primal_to_dual`. Solves
+    `G · dual = c` in the minimum-norm least-squares sense, which for a
+    symmetric form with a one-dimensional kernel IS the inverse on the
+    orthogonal complement of that kernel — i.e. on the quotient. Same object
+    as `pyhecke.gram.gram_quotient_inverse()` / `G_PINV`, and the same solve
+    the LP dual/primal recomputes fall back to.
+
+    NF c_b(q) coefficients live in the PRIMAL basis; Frobenius-dual
     coefficients live in the DUAL basis (inner product against tr_M).
     """
     with mp.workdps(dps + 5):
         G = gram_mp(dps + 5)
         c_vec = mp.matrix([mp.mpf(c) for c in coeffs_primal])
-        dual = G ** -1 * c_vec
+        dual, _rank = _min_norm_lstsq_mp(G, c_vec)
         # Round inside the workdps block (Gemini review on PR #658).
         with mp.workdps(dps):
             return [+dual[i] for i in range(6)]
@@ -415,21 +518,22 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
         # for the over-determined case). qr_solve avoids squaring the
         # condition number of the matrix the way normal-equations would,
         # preserving 50-dps precision on poorly-conditioned A.
+        # QR first: for a full-rank, well-conditioned A it avoids squaring
+        # the condition number and preserves 50-dps precision. Under
+        # convention D the Gram is rank 5, so A can be rank-deficient and
+        # qr_solve RAISES; that is not "no solution", it is a solution that
+        # is not unique. Fall back to the minimum-norm SVD solve, which is
+        # the solve on the quotient H_3(q)/rad — see `_min_norm_lstsq_mp`.
+        # Returning NaN here (the previous behaviour) reported failure for a
+        # system the convention-D form answers perfectly well.
         try:
             sol, _ = mp.qr_solve(A, b)
             y0 = sol[0, 0]
             y_active = [sol[1 + k, 0] for k in range(d)]
         except Exception:
-            return LpMpResult(
-                x_star=[mp.mpf('nan')] * 6,
-                y0_star=mp.mpf('nan'),
-                y_star=[mp.mpf('nan')] * 6,
-                active_set=active,
-                primal_obj=mp.mpf('nan'),
-                dual_obj=mp.mpf('nan'),
-                duality_gap=mp.mpf('nan'),
-                feasible=False,
-            )
+            sol, _rank = _min_norm_lstsq_mp(A, b)
+            y0 = sol[0, 0]
+            y_active = [sol[1 + k, 0] for k in range(d)]
 
         y_star = [mp.mpf(0)] * 6
         for k, i in enumerate(active):
@@ -458,11 +562,18 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
         # over-determined case, minimum-norm for under-determined when
         # |active| < 5). Avoids squaring the condition number — same
         # precision argument as the dual solve above.
+        # Same rank-deficiency story as the dual solve above, and this is
+        # the one that actually bites under convention D: the constraint
+        # rows (Gx)_i = 0 are rows of a rank-5 form, so A2 is rank-deficient
+        # and qr_solve raises. NaN here is not "infeasible" — it is a
+        # unique-solution assumption that convention D removes. The
+        # minimum-norm representative is the solve on H_3(q)/rad.
         try:
             x_sol, _ = mp.qr_solve(A2, b2)
             x_star = [x_sol[i, 0] for i in range(6)]
         except Exception:
-            x_star = [mp.mpf('nan')] * 6
+            x_sol, _rank = _min_norm_lstsq_mp(A2, b2)
+            x_star = [x_sol[i, 0] for i in range(6)]
 
         primal_obj = sum(t[i] * x_star[i] for i in range(6))
         dual_obj = n_target * y0

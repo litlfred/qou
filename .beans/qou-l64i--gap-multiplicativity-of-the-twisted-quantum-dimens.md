@@ -1,11 +1,11 @@
 ---
 # qou-l64i
 title: 'GAP: multiplicativity of the twisted quantum dimension, dim(X tensor Y) = dim X * dim Y'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T06:11:02Z
+updated_at: 2026-08-30T06:35:59Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -472,3 +472,511 @@ ALSO MEASURED THIS ROUND:
 
 TACTIC LEDGER NOW AT NINE ruled-out approaches. The search is closed; the remaining work is the
 hand-constructed calc, and everything needed to start it is recorded above.
+
+
+2026-08-27 — SUBSTANTIAL PROGRESS. A WORKING REWRITE PREFIX, AND BOTH SLIDES IDENTIFIED WITH
+MATCHING ORDER. This supersedes "nothing fires" — two rewrites DO fire, and the goal is now fully
+exposed.
+
+THE PREFIX THAT WORKS (verified, reaches a readable goal):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [braiding_tensor_right_hom, Category.assoc]
+
+`braiding_naturality_left_assoc` is the one I had missed: `m ▷ (Y'⊗X') ≫ β_{X⊗Y,Y'⊗X'}` matches it
+exactly, and it moves the MONODROMY across the block braiding to sit just before the caps. That is
+what makes everything else line up.
+
+AFTER THE PREFIX, all six braidings are explicit and IN THIS ORDER:
+
+    β_{Y,Y'}   -- keeper: the Y-loop framing, appears on the RHS
+    β_{Y,X'}   -- CROSS
+    β_{X,Y'}   -- CROSS
+    β_{X,X'}   -- keeper: the X-loop framing, appears on the RHS
+    β_{X,Y} ≫ β_{Y,X}   -- the monodromy, now adjacent to the caps
+    then  Y' ◁ ε_X ▷ Y  then  ε_Y
+
+BOTH SLIDES ARE INSTANTIATED, AND THE ORDER IS ALREADY RIGHT — this is the key finding:
+
+  slide 1:  W = Y, A = X', B = X, c = ε_X
+            needs  Y-past-X'  then  Y-past-X  then  ε_X
+            has    β_{Y,X'}   then  β_{Y,X} (2nd monodromy factor)  then  ε_X     ✓ ORDER MATCHES
+
+  slide 2:  W = X, A = Y', B = Y, c = ε_Y
+            needs  X-past-Y'  then  X-past-Y  then  ε_Y
+            has    β_{X,Y'}   then  β_{X,Y} (1st monodromy factor)  then  ε_Y     ✓ ORDER MATCHES
+
+So the monodromy's TWO factors serve the TWO slides, one each — `β_{Y,X}` feeds the X-cap slide and
+`β_{X,Y}` feeds the Y-cap slide. That is why the forward monodromy is the right one and why there
+are exactly two of them: one per cap. The earlier "linking number" story was the right intuition;
+this is the mechanism at the level of the actual term.
+
+WHAT REMAINS is purely the INTERCHANGE REGROUPING: the terms of each slide are separated by
+morphisms acting on disjoint strands (`β_{X,Y'}`, `β_{X,X'}` sit between `β_{Y,X'}` and the
+monodromy), so `whisker_exchange` must commute them into adjacency before either slide can fire.
+That is the same obstruction measured all along, but it is now a FINITE, NAMED list of commutations
+toward a KNOWN target rather than an open search.
+
+MECHANISM NOTE for the implementer: `braiding_slide_cap_right` cannot be `rw`-applied (⊗≫ form, per
+the earlier finding). Its CONTENT is `braiding_naturality_right W c` at the cap, plus
+`← braiding_tensor_right_hom` to recombine `β_{W,A}` and `β_{W,B}` into `β_{W,A⊗B}`. Recombining is
+the step to aim the regrouping at.
+
+STILL NOT PROVED. Tactic finishers from the exposed state (`monoidal`, two loaded `simp`s) all still
+fail — twelve approaches ruled out now. But the remaining work is construction, not search.
+
+
+CORRECTION TO THE PLAN ABOVE — THE TWO SLIDES INTERLEAVE, so "both orders already match" is true but
+NOT sufficient. Traced the object positions by hand; recording before the plan misleads someone.
+
+Position trace, starting from `(X ⊗ Y) ⊗ (Y' ⊗ X')` i.e. order  X, Y, Y', X':
+
+    β_{Y,Y'}   ->  X, Y', Y, X'     (Y-loop framing, keeper)
+    β_{Y,X'}   ->  X, Y', X', Y     (cross, slide 1)
+    β_{X,Y'}   ->  Y', X, X', Y     (cross, slide 2)
+    β_{X,X'}   ->  Y', X', X, Y     (X-loop framing, keeper)
+    β_{X,Y}    ->  Y', X', Y, X     (monodromy 1st, slide 2)
+    β_{Y,X}    ->  Y', X', X, Y     (monodromy 2nd, slide 1)
+    ε_X contracts X'(2) with X(3);  ε_Y contracts Y'(1) with Y(4)
+
+So the assignment is confirmed — slide 1 consumes {β_{Y,X'}, β_{Y,X}}, slide 2 consumes
+{β_{X,Y'}, β_{X,Y}}, one monodromy factor each. THE PROBLEM IS WHAT SITS BETWEEN:
+
+  * between slide 1's two factors sit β_{X,Y'}, β_{X,X'} AND β_{X,Y} — and β_{X,Y} TOUCHES Y,
+    so it cannot be commuted away by `whisker_exchange` (which needs disjoint strands).
+  * between slide 2's two factors sit β_{X,X'} — which TOUCHES X, likewise not disjoint from
+    slide 2's W = X.
+
+So NEITHER slide can be brought to adjacency by interchange alone while the other is still in place.
+They are mutually blocking, and the resolution has to be either (i) an order of application where
+firing one first clears the other's obstruction — note firing slide 2 removes β_{X,Y}, which is
+exactly slide 1's blocker, so SLIDE 2 FIRST is the candidate — or (ii) a braid relation
+(hexagon/Yang-Baxter) to reorder crossings that share a strand, which interchange cannot do.
+
+RECOMMENDED NEXT STEP, concretely: try SLIDE 2 FIRST (W = X, A = Y', B = Y, c = ε_Y). Its only
+in-between term is β_{X,X'}. That is still not disjoint from X, so it likely needs Yang-Baxter
+rather than whisker_exchange — check whether Mathlib's `hexagon_forward` / `hexagon_reverse` (or
+`braiding_naturality` on the braiding itself) reorders β_{X,X'} past β_{X,Y}. If it does, slide 2
+fires, β_{X,Y} disappears, and slide 1's path is then clear of Y-touching obstructions.
+
+THIS IS THE FIRST TIME THE OBSTRUCTION HAS A NAME BEYOND "interchange": it is that two of the six
+crossings share a strand with the terms that must move past them, so `whisker_exchange` is
+provably insufficient and a BRAID RELATION is required. Every earlier round, mine included,
+assumed interchange would be enough. It is not.
+
+Tactic ledger now FIFTEEN ruled out (added: simp[whisker_exchange], aesop_cat, simp[←whisker_exchange]
++ monoidal, all from the exposed state).
+
+
+YANG-BAXTER IS AVAILABLE AND STILL DOES NOT CLOSE IT — measured, so the next attempt does not need
+to go looking for the tool.
+
+`CategoryTheory.yang_baxter` exists in this Mathlib (Braided/Basic.lean:155), along with
+`yang_baxter'`, `yang_baxter_iso`, and the `hexagon_forward/reverse` family with their `_iso` and
+`_inv` variants. So the braid relation the previous entry says is REQUIRED is present.
+
+    simp [hexagon_forward, hexagon_reverse, whisker_exchange, monoidalComp]   fails
+    simp [yang_baxter, whisker_exchange, monoidalComp]                       fails
+
+Both from the exposed state. These are genuine proof failures, not unknown-identifier errors — I
+checked. Seventeen approaches ruled out in total.
+
+WHAT THIS MEANS FOR THE NEXT ATTEMPT: every ingredient is now present and named — the working
+prefix, the two slide instantiations with their assignment, the mutual-blocking diagnosis, and the
+braid relation that the diagnosis says is needed. What is missing is the HAND APPLICATION: aiming
+`yang_baxter` at the specific crossing pair that blocks slide 2 (β_{X,X'} against β_{X,Y}), which a
+simp set will not do because it has no reason to prefer that direction. This is a targeted `rw` at a
+located subterm, i.e. `slice_lhs`/`conv` work, not a tactic search.
+
+SESSION SUMMARY (2026-08-27, dedicated session at the author's request): moved this bean from "no
+tactic fires, mechanism unknown" to "prefix verified, mechanism identified, obstruction named and
+diagnosed, required tool confirmed present". Still NOT PROVED, and no `sorry` committed.
+
+
+🛑 CORRECTION — MY SLIDE-2 INSTANTIATION WAS WRONG. It is a CUP slide, not a cap slide.
+
+I published "slide 2: W = X, A = Y', B = Y, c = ε_Y" in this bean and in PR #5879. It is wrong, and
+the reason is simple enough that it should have been caught before publishing: **X does not survive
+to ε_Y.** Read the position trace above — `Y' ◁ ε_X ▷ Y` contracts X'(2) with X(3), so the X strand
+is CONSUMED BY ε_X. `braiding_slide_cap_right` requires W to survive past the cap (its conclusion is
+`W ◁ c`), so X cannot slide across ε_Y. There is no such move.
+
+WHAT ACTUALLY HANDLES β_{X,Y'} AND β_{X,Y}: the Y-**CUP**, not the Y-cap. Y and Y' are the two legs
+of `η_Y : 𝟙 ⟶ Y ⊗ Y'`, and X crosses both, so this is a strand sliding across a CUP — the mirror
+move. `QOU.MathlibExt.braiding_slide_cup_right` already exists in BraidedSlide.lean (I wrote it in
+#5848 and had forgotten it; the file has FOUR slide lemmas — cap right/left, cup right/left — plus
+the cap inverse form):
+
+    braiding_slide_cup_right (u : 𝟙_ C ⟶ A ⊗ B) :
+      u ▷ W = W ◁ u ≫ (β_ W A).hom ▷ B ≫ A ◁ (β_ W B).hom          (⊗≫-padded)
+
+CORRECTED PLAN:
+
+    slide 1  CAP  — W = Y, A = X', B = X, c = ε_X   consumes β_{Y,X'}, β_{Y,X}
+                    order in the goal MATCHES the lemma                              ✓
+    slide 2  CUP  — W = X, A = Y,  B = Y', u = η_Y  consumes β_{X,Y},  β_{X,Y'}
+                    order in the goal is REVERSED: the goal has β_{X,Y'} (from the
+                    block braiding) BEFORE β_{X,Y} (monodromy), the lemma wants
+                    X-past-A=Y first                                                 ✗
+
+AND THAT REVERSAL INDEPENDENTLY CONFIRMS THE BRAID-RELATION FINDING. β_{X,Y'} and β_{X,Y} both
+involve X, so they are NOT disjoint and `whisker_exchange` cannot swap them — only Yang-Baxter can.
+So the previous entry's conclusion ("a braid relation is required, interchange is provably
+insufficient") stands, and now it is pinned to a specific swap: reorder β_{X,Y'} past β_{X,Y} so the
+cup slide can fire.
+
+Handedness note, checked: our braidings are `β_{X,·}` (X on the left), which matches the `_right`
+family; `braiding_slide_cup_left` is the wrong handedness here.
+
+LESSON, recorded because it is the second time this session: I asserted a slide instantiation from
+the SHAPE of the crossings without checking WHICH CAP CONSUMES THE STRAND. Both times the fix came
+from tracing object positions through the composite. Trace positions first; the crossing pattern
+alone does not determine which absorption applies.
+
+
+SYMMETRIC TWISTLESS CASE ALSO FAILS BY TACTIC — the smaller target is not a shortcut either.
+
+Tried `qDimWith_tensor_symm` — the `[SymmetricCategory C]` twistless case, where the monodromy is
+the identity and the two cross terms β_{Y,X'}, β_{X,Y'} should form an R2 pair that
+`SymmetricCategory.symmetry` kills. With the working prefix in front:
+
+    simp [SymmetricCategory.symmetry, whisker_exchange, monoidalComp]                    fails
+    simp [SymmetricCategory.symmetry, braiding_slide_cup_right, braiding_slide_cap_right,
+          monoidalComp]                                                                  fails
+
+NINETEEN approaches ruled out. The symmetric case is genuinely smaller and genuinely true, and it
+still needs the same hand construction — so it remains worth doing FIRST as a warm-up (fewer moving
+parts once someone is hand-building), but it is NOT a feasibility shortcut and should not be
+attempted as one. That is the second time this bean has recorded "the smaller case is not easier";
+the first was the earlier symmetric probe, before the prefix existed.
+
+FINAL STATE OF THIS TRANCHE (two dedicated sessions). Everything below is verified:
+
+  KNOWN     the statement, and that it type-checks
+  KNOWN     the direction (forward monodromy), forced by twist_tensor and no longer doubted
+  KNOWN     the working rewrite prefix (three lines, reaches a compact readable goal)
+  KNOWN     the mechanism: ONE CAP SLIDE + ONE CUP SLIDE, not two cap slides
+              slide 1  CAP  W=Y, A=X', B=X, c=ε_X   order MATCHES
+              slide 2  CUP  W=X, A=Y,  B=Y', u=η_Y  order REVERSED, needs Yang-Baxter
+  KNOWN     both slide lemmas already exist (BraidedSlide.lean, four of them)
+  KNOWN     yang_baxter exists in this Mathlib and is the required tool
+  KNOWN     19 tactic approaches that do not work, including on the symmetric sub-case
+  OPEN      the construction itself: a conv/slice_lhs surgery to reorder β_{X,Y'} past β_{X,Y}
+            so the cup slide fires, then the cap slide
+
+WHAT I WOULD TELL THE NEXT AGENT: stop probing tactics — that is exhausted. Open the goal with the
+prefix, print it with `trace_state`, and do `conv`-level surgery aimed at the two named slides. The
+single decisive question is whether `yang_baxter` can be aimed at the β_{X,Y'}/β_{X,Y} pair in
+context; if it can, both slides fire and the rest is coherence.
+
+
+2026-08-30 — `comp_whiskerRight` CHANGES THE STATE MATERIALLY, and my "order is reversed" finding
+was an ARTIFACT of not distributing it.
+
+Adding `MonoidalCategory.comp_whiskerRight` to the prefix's simp set distributes
+`(β_{X,Y} ≫ β_{Y,X} ≫ (g ⊗ₘ h)) ▷ (Y'⊗X')` into three separate whiskerings. The monodromy then
+sits at the FRONT, adjacent to the cups, and only `(g ⊗ₘ h)` gets carried across by
+`braiding_naturality_left_assoc`. Revised prefix:
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id,
+      MonoidalCategory.comp_whiskerRight]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [Category.assoc, MonoidalCategory.comp_whiskerRight]
+
+Resulting order:  β_{X,Y} ▷(Y'⊗X') ; β_{Y,X} ▷(Y'⊗X') ; X ◁ β_{Y,Y'⊗X'} ; β_{X,Y'⊗X'} ▷ Y ;
+(Y'⊗X') ◁ (g⊗ₘh) ; caps.
+
+SO THE EARLIER "cup slide order is REVERSED" ENTRY IS WITHDRAWN. It was measured on a goal where
+the monodromy had not been distributed. With distribution, β_{X,Y} comes BEFORE β_{X,Y'}, which is
+the order `braiding_slide_cup_right` wants.
+
+THE MECHANISM, now coherent — the cup slide DETACHES the Y-loop:
+
+    braiding_slide_cup_right (W = X, A = Y, B = Y', u = η_Y) read right-to-left:
+        X ◁ η_Y ≫ β_{X,Y} ▷ Y' ≫ Y ◁ β_{X,Y'}  =  η_Y ▷ X
+
+The goal opens with `X ◁ η_Y ▷ X'` and has `β_{X,Y}` immediately after. If `β_{X,Y'}` can be
+brought up to follow it, the three collapse to `η_Y ▷ X` — the Y-cup moves to the LEFT of X, i.e.
+the Y-loop DETACHES from the X strand. That detachment is what the whole theorem is about, and it
+is now a single named move rather than a vague "absorb the cross terms".
+
+WHAT BLOCKS IT, per-crossing (this is the finite list the earlier entry promised):
+`β_{X,Y'}` must move up past three crossings —
+
+    past β_{Y,X'}   objects {Y,X'} vs {X,Y'}   DISJOINT      -> whisker_exchange      ✓
+    past β_{Y,Y'}   share Y'                   NOT disjoint  -> Yang-Baxter           ✗
+    past β_{Y,X}    share X                    NOT disjoint  -> Yang-Baxter           ✗
+
+So TWO Yang-Baxter applications, both named, plus one interchange. The cap slide (Y across ε_X) then
+handles what remains.
+
+STILL NOT PROVED. Finishers retried from the improved state — `monoidal`, `simp` with both slide
+lemmas, `simp` with `braiding_tensor_right_hom`+`whisker_exchange` — all fail. TWENTY-TWO approaches
+ruled out.
+
+BOOKKEEPING WARNING FOR THE NEXT AGENT, and for me: this is the THIRD time in this bean that a
+crossing-pairing claim of mine turned out to be wrong (first the linking-number direction, then the
+cap-vs-cup mix-up, now the order-reversal artifact). Each time the error came from reasoning about
+the diagram instead of reading the printed goal. PRINT THE GOAL AFTER EVERY SIMP-SET CHANGE — the
+simp set materially changes which crossings are adjacent, and conclusions drawn under one set do not
+survive to another.
+
+
+2026-08-30 — MAJOR REDUCTION: SIX BRAIDINGS TO TWO. Verified, reproducible, and it makes the earlier
+"two Yang-Baxter applications needed" plan obsolete — NO Yang-Baxter was used.
+
+The whole reduction is `braiding_naturality` plus one recombination helper. The key was stating the
+helper in REASSOC form: after `Category.assoc` the goal is right-nested, so a plain `rw` pattern ends
+mid-chain and never matches. Every earlier failure of this kind was that, not a mathematical
+obstruction.
+
+THE HELPER (proves by `rw [braiding_tensor_right_hom]; simp`):
+
+    have hrec : ∀ (W A B Z : C) (k : A ⊗ (B ⊗ W) ⟶ Z),
+        (α_ W A B).hom ≫ (β_ W (A ⊗ B)).hom ≫ (α_ A B W).hom ≫ k
+          = (β_ W A).hom ▷ B ≫ (α_ A W B).hom ≫ A ◁ (β_ W B).hom ≫ k := by
+      intro W A B Z k; rw [braiding_tensor_right_hom]; simp
+
+THE FULL VERIFIED PREFIX (each step confirmed to fire, goal printed after each):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id,
+      MonoidalCategory.comp_whiskerRight]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [Category.assoc, MonoidalCategory.comp_whiskerRight]
+    rw [← hrec Y X (Y' ⊗ X')]                                  -- recombines Y's whole journey
+    simp only [Iso.hom_inv_id_assoc, Category.assoc]            -- kills an α.hom ≫ α.inv pair
+    rw [← braiding_naturality_right_assoc, ← hrec X Y (Y' ⊗ X')] -- recombines X's whole journey
+
+RESULTING GOAL — two braidings, down from six:
+
+    η_X ≫ coh ≫ X ◁ η_Y ▷ X' ≫ coh
+      ≫ (α_ X Y (Y'⊗X')).hom ≫ β_{X, Y⊗Y'⊗X'}
+      ≫ (α_ Y (Y'⊗X') X).hom ≫ β_{Y, (Y'⊗X')⊗X}
+      ≫ (α_ (Y'⊗X') X Y).hom ≫ (Y'⊗X') ◁ (g ⊗ₘ h)
+      ≫ coh ≫ Y' ◁ ε_X ▷ Y ≫ coh ≫ ε_Y
+
+Each strand's ENTIRE journey is now ONE braiding: X past (Y,Y',X'), then Y past (Y',X',X).
+
+WHAT THIS SUPERSEDES. The "two Yang-Baxter applications" plan is withdrawn — not wrong exactly, but
+unnecessary: recombining each strand's journey into a single braiding avoids the crossing-reordering
+problem entirely rather than solving it. That is the fourth time in this bean a crossing-level plan
+of mine was superseded by simply reading the printed goal after a rewrite. The standing warning
+stands and is now well-earned.
+
+WHAT REMAINS — the detachment. `X ◁ η_Y ▷ X'` followed by `β_{X, Y⊗Y'⊗X'}` should collapse by
+`braiding_naturality_right X (η_Y ▷ X')`, moving the Y-cup to the LEFT of X and leaving `β_{X,X'}` —
+which is exactly the X-loop framing crossing the RHS wants. Blocker is a GROUPING mismatch, not a
+mathematical one: the goal has `β_{X, Y⊗(Y'⊗X')}` while the naturality needs `β_{X, (Y⊗Y')⊗X'}`.
+`rw [braiding_naturality_right_assoc]` and `rw [← hrec X (Y⊗Y') X']` both fail to match for that
+reason alone. Next step is a calc step (or a grouping-aware helper) bridging the two associativities,
+which `monoidal` should discharge.
+
+Finishers retried on the two-braiding goal — `monoidal`, two loaded `simp`s — still fail. TWENTY-FIVE
+approaches ruled out, but the shape of the remaining work has changed completely: it is now ONE
+grouping bridge plus the detachment, not a braid-relation search.
+
+
+GROUPING BRIDGE ALSO FIRES — verified. Braidings are natural in the ASSOCIATOR itself, which is what
+converts between the two groupings:
+
+    have hgrp : ∀ (Z : C) (k : (Y ⊗ Y' ⊗ X') ⊗ X ⟶ Z),
+        (β_ X (Y ⊗ Y' ⊗ X')).hom ≫ k
+          = X ◁ (α_ Y Y' X').inv ≫ (β_ X ((Y ⊗ Y') ⊗ X')).hom ≫ (α_ Y Y' X').hom ▷ X ≫ k := by
+      intro Z k
+      rw [← braiding_naturality_right_assoc]
+      simp
+
+    rw [hgrp]
+
+After it the braiding is `β_{X, (Y⊗Y')⊗X'}` — the grouping `braiding_naturality_right X (η_Y ▷ X')`
+needs for the cup detachment. So the blocker named in the previous entry is CLEARED.
+
+WHAT STILL BLOCKS THE DETACHMENT, and it is now the last thing: the cup `X ◁ η_Y ▷ X'` and the
+braiding are separated by coherence — `⊗𝟙.hom ≫ (α_ X Y (Y'⊗X')).hom ≫ X ◁ (α_ Y Y' X').inv`.
+`braiding_naturality_right` wants `X ◁ f ≫ β_{X,·}` ADJACENT. Tried and failed:
+`simp only [← MonoidalCategory.whiskerLeft_comp, Category.assoc]` then
+`rw [braiding_naturality_right_assoc]`; and `monoidal` on the whole thing. TWENTY-SEVEN ruled out.
+
+The remaining task is therefore narrow and purely coherence: merge the two `X ◁ (…)` factors and
+absorb the `⊗𝟙.hom` between them so the naturality pattern is adjacent, then one
+`braiding_naturality_right` detaches the Y-cup and leaves `β_{X,X'}` — the X-loop framing crossing
+the RHS wants. After that only the Y side remains, by the same method.
+
+STATE OF THE PROOF: six braidings reduced to two, groupings reconciled, one coherence merge away from
+the detachment. No Yang-Baxter, no slide lemma, no `sorry`. Every step above is verified to fire and
+the goal was printed after each.
+
+
+END OF 2026-08-30 SESSION — where the coherence merge stands.
+
+After `hgrp` the braiding is `β_{X, (Y⊗Y')⊗X'}`, flanked by `X ◁ (α_ Y Y' X').inv` before and
+`(α_ Y Y' X').hom ▷ X` after. Attempts to go further, all failing:
+
+    rw [hrec X (Y ⊗ Y') X']                     -- forward split; hrec's LHS needs ITS OWN
+                                                   associators around the braiding, and the ones
+                                                   hgrp leaves are different ones
+    aesop_cat
+    simp [braiding_tensor_right_hom_assoc, braiding_naturality_right_assoc, monoidalComp,
+          Category.assoc]
+    simp [monoidalComp, braiding_naturality_right, braiding_naturality_left, Category.assoc]
+    rw [braiding_naturality_right_assoc X ((λ_ X').inv ≫ η_ Y Y' ▷ X')]
+    simp only [← MonoidalCategory.whiskerLeft_comp, Category.assoc]
+      then rw [braiding_naturality_right_assoc]
+
+THIRTY approaches ruled out.
+
+A TENSION WORTH RECORDING, because it may be the real reason this last step resists. Recombining
+each strand's journey into ONE braiding is what produced the 6→2 reduction — but
+`braiding_slide_cup_right`, the lemma that performs the detachment, is stated with the braidings
+SPLIT (`(β_ W A).hom ▷ B ⊗≫ A ◁ (β_ W B).hom`). So the reduction and the detachment want opposite
+normal forms. Either the detachment must be restated for a recombined `β_{W, A⊗B}` — which is just
+`braiding_naturality_right W u` at the cup, no slide lemma needed — or the recombination has to be
+undone locally at the cup. The first is much the better bet and is what the failed attempts above
+were reaching for; what defeats them is only that the cup and the braiding are not ADJACENT.
+
+CONCRETE NEXT STEP: build a `calc` step whose right-hand side states the prefix as
+`η_X ≫ X ◁ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ≫ β_{X, (Y⊗Y')⊗X'} ≫ …` and discharge that step with
+`monoidal`. `monoidal` handles composites containing arbitrary morphisms via `⊗≫`, so it should
+absorb the `⊗𝟙.hom` and the two associators around `η_Y`. Every `rw`-based route tried so far fails
+for the same syntactic-adjacency reason, so stop trying `rw` and write the term.
+
+
+ALL THREE LEMMAS THE PROOF NEEDS ARE NOW VERIFIED. Only adjacency remains.
+
+    hrec  (recombination, REASSOC form)  — proves by `rw [braiding_tensor_right_hom]; simp`
+    hgrp  (grouping bridge)              — proves by `rw [← braiding_naturality_right_assoc]; simp`
+    hdet  (the detachment)               — proves by `braiding_naturality_right X _`  ← VERIFIED
+
+`hdet` in full, confirmed to typecheck and prove:
+
+    have hdet : X ◁ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ≫ (β_ X ((Y ⊗ Y') ⊗ X')).hom
+        = (β_ X X').hom ≫ ((λ_ X').inv ≫ η_ Y Y' ▷ X') ▷ X :=
+      braiding_naturality_right X _
+
+It moves the Y-cup to the LEFT of X and leaves `β_{X,X'}` — precisely the X-loop framing crossing
+the right-hand side wants. This is the detachment, and it is a one-liner.
+
+SO THE MATHEMATICAL CONTENT IS COMPLETE. What is left is purely making `hdet` APPLICABLE: the goal
+holds `X ◁ η_Y ▷ X'` and `β_{X, (Y⊗Y')⊗X'}` separated by `⊗𝟙.hom` and two associators, and both
+`rw` and `simp` need them syntactically adjacent.
+
+THE FIX TO TRY NEXT, and why the current route fights it: the prefix does
+`simp only [..., monoidalComp, ...]`, which UNFOLDS `⊗≫` into raw coherence isos — and raw
+coherence isos are exactly what cannot be absorbed. The `tensorExactPairing` idiom does the
+opposite: it KEEPS `⊗≫` and pads every calc term with `𝟙 _ ⊗≫ … ⊗≫ 𝟙 _`, because `monoidal`
+absorbs `⊗≫` but not unfolded coherence. So drop `monoidalComp` from the prefix's simp set and
+state the intermediate in `⊗≫` form; `monoidal` should then bridge the cup to the braiding and
+`hdet` fires.
+
+HARNESS TRAP, cost one wasted run: `/tmp/tqd.base` had been rebuilt from the WORKING TREE while a
+scratch copy of the theorem was still in it, so the next run failed with
+"`qTrWith_tensor_monodromy` has already been declared" — which reads like a Lean problem and is not.
+Rebuild the scratch base from `git show HEAD:<path>`, never from the working tree, and assert the
+theorem name is absent.
+
+
+🛑 MY OWN HARNESS HYPOTHESIS IS FALSIFIED. Recorded because I stated it as the likely fix.
+
+I predicted that unfolding `monoidalComp` in the prefix was what prevented the slide lemmas and
+`monoidal` from bridging the cup to the braiding — reasoning that `⊗≫` is absorbable and raw
+coherence isos are not, so KEEPING `⊗≫` should let them fire. Tested directly.
+
+Prefix without `monoidalComp` (the `⊗≫` survives, and the goal IS much cleaner):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      Category.assoc, Category.id_comp, Category.comp_id, MonoidalCategory.comp_whiskerRight]
+
+    ⊢ (η_X ⊗≫ X ◁ η_Y ▷ X' ⊗≫ 𝟙) ≫ β_{X,Y} ▷ (Y'⊗X') ≫ β_{Y,X} ▷ (Y'⊗X')
+        ≫ (g⊗ₘh) ▷ (Y'⊗X') ≫ β_{X⊗Y, Y'⊗X'} ≫ 𝟙 ⊗≫ Y' ◁ ε_X ▷ Y ⊗≫ ε_Y
+
+From that state, ALL of these still fail:
+
+    simp [braiding_slide_cup_right, braiding_slide_cap_right, braiding_slide_cap_right_inv,
+          monoidalComp]
+    rw [braiding_slide_cup_right]
+    monoidal
+
+So the `⊗≫`-vs-unfolded distinction is NOT the blocker. THIRTY-THREE approaches ruled out. The
+slide lemmas do not match this goal even in their own native notation, which means the earlier
+inference "a ⊗≫-phrased lemma cannot fire as a rewrite" was RIGHT about the mechanism but the
+proposed remedy (keep ⊗≫) does not follow from it — matching needs the surrounding term to be
+literally the lemma's LHS, and padding alone does not produce that.
+
+WHAT THIS LEAVES. The three lemmas (hrec, hgrp, hdet) are all verified and the mathematics is
+complete; what is unsolved is purely getting Lean to see the pattern. Every remedy tried has been a
+variation on "make the rewrite fire". The remaining honest option is the one never actually
+attempted: write the full `calc` with each intermediate term SPELLED OUT, discharging each step with
+`monoidal`, rather than trying to steer the goal into a lemma's shape. That is what
+`tensorExactPairing`'s own snake proofs do, and it is laborious precisely because the terms must be
+written by hand.
+
+SIXTH superseded plan of mine on this bean. The pattern is now unmistakable and worth stating
+plainly for whoever picks this up: my predictions about WHICH REWRITE WILL FIRE have been wrong
+essentially every time, while my measurements of what DID fire have all held. Trust the printed goal;
+do not trust a plan — including this entry's.
+
+
+## CLOSED 2026-08-30 — `qTrWith_tensor_monodromy` proved, sorry-free
+
+Commit `85f590a1a8` on `claude/qtr-tensor-monodromy-2026-08-27`. The lemma is
+proved unconditionally (braided + two exact pairings; no rigidity, no balancing),
+and `qDimTwistedWith_tensor_of_monodromy` is now discharged into the
+unconditional `qDimTwistedWith_tensor` — multiplicativity of the twisted quantum
+dimension over `tensorExactPairing`.
+
+**The blocker was a prime, not the mathematics.** `η_` / `ε_` notation
+elaborates to `ExactPairing.coevaluation` / `.evaluation`; the goal, after
+`simp only [ExactPairing.coevaluation, ExactPairing.evaluation]`, is in the
+**primed** `coevaluation'` form. Every hand-written `have` in this bean's history
+used the notation and therefore never matched — `rw` said "did not find an
+occurrence" and `simp only` said "no progress" against goal terms that **print
+identically**. That is why 33 tactic approaches all failed and why the mechanism
+stayed unknown: the failures were not about coherence, `monoidalComp`, or the
+hexagons at all.
+
+Fix, one line: `simp only [ExactPairing.coevaluation, ExactPairing.evaluation] at <have>`.
+Found by extracting the hypothesis and the goal under `set_option pp.explicit true`
+and diffing them character by character. **That diff is the diagnostic to reach
+for whenever a rewrite fails against a goal it visibly matches** — the pretty
+printer showed `ExactPairing.coevaluation'` on both sides.
+
+### Proof shape (all steps machine-checked)
+
+1. `hpre` — normalise the `⊗≫`-padded cup to `η_X ≫ X ◁ u ≫ (α).inv`, by `monoidal`.
+2. `braiding_naturality_left` + `braiding_tensor_left_hom` — move `(g ⊗ h)` past
+   the block braiding and hexagon-split `β_{X⊗Y, Y'⊗X'}`.
+3. `hrec` (from `braiding_tensor_right_hom`) — recombine the X-half.
+4. `braiding_naturality_right` — detach the X-strand onto the cup; both sides now
+   open `η_X ≫ β_{X,X'}`, peeled with `congrArg`.
+5. `braiding_naturality` + `tensorHom_def'` + `whisker_exchange` — carry `g` to
+   the front and `h` back into the Y-cup; peel `g` with `congrArg`.
+6. `hsl` — `braiding_slide_cap_right` (QOU.MathlibExt.BraidedSlide) whiskered by
+   `Y'`, bridged in and out by `monoidal`. This is the only genuinely
+   knot-theoretic step: one strand crossing a cap.
+7. `hfin` — assemble, `whisker_exchange` + `unitors_inv_equal` to finish.
+
+### Why the monodromy is load-bearing (unchanged, now machine-checked)
+
+`tensorExactPairing` nests the pairs in **opposite orders at its two ends** — cup
+`X, Y, Y', X'`, cap `Y', X', X, Y`. The nested closure therefore links the
+X-loop with the Y-loop, and `β_{X,Y} ≫ β_{Y,X}` is exactly the crossing that
+unlinks them. The statement is false without it. This is the same asymmetry that
+made the earlier `ptrWith` factorisation false, and that retraction stands.
+
+### Verification (CI is `workflow_dispatch`-only; agent verification is the gate)
+
+- `lean`-direct on `QOU/MathlibExt/TwistedQuantumDimension.lean`: **exit 0**, no warnings.
+- `#print axioms` on both new declarations: `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.
+- `scripts/check-sidecars.sh`: clean; no §7c flags (file stays generic over `C`, no `ℝ`).
+- Only consumer is the `QOU.lean` aggregator; nothing downstream to re-verify.
+
+### Standing caveat, re-confirmed
+
+Across this bean my predictions about **which rewrite would fire** were wrong
+essentially every time; my **measurements of what did fire** all held. The final
+unlock came from a measurement (`pp.explicit` diff), not a plan. Print the goal
+after every simp-set change.

@@ -133,6 +133,44 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the Lagrange node-sum family (Pieri corner identity, PR #6098) ---
+# `sum_prod_qratio_corner` is the node-coordinate form of the one identity the
+# Macdonald hook telescope's Pieri step (P) reduces to. It is proved FROM
+# `sum_eval_div_prod_eq_coeff`, so the keystone is registered alongside it: a
+# regression there would poison the corner identity silently, and `#print axioms`
+# on the consumer alone would not say which of the two moved.
+QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_prod_qratio_corner | clean
+QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_eq_one_of_corner_ratio_scaling | clean
+QOU.Mathlib.LagrangeCoeffSum | QOU.Mathlib.sum_eval_div_prod_eq_coeff | clean
+# The q-FRT chain the corner identity consumes. `prodHooksF_one_sub_pow_pair` is pinned
+# because a session read LagrangeCoeffSum's (stale) docstring as saying it was OPEN and
+# nearly rebuilt the chain; a registry row is a claim a machine re-checks.
+QOU.Mathlib.SYTBetaGapVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_pair | clean
+QOU.Mathlib.QHookVandermonde | QOU.Mathlib.SYTBeta.prodHooksF_one_sub_pow_vandermonde | clean
+# The general-X Macdonald hook telescope -- the goal of bean qou-dsif -- and the
+# general-r branching it rests on. Pinned because until 2026-08-30 this theorem was
+# UNVERIFIABLE: its import cone was red on main. `QOU.Mass.QIntegerBarParity` opened
+# `QOU.Mass.QHookDimension`, which 1646b5d6d3 removed (it had been declared nested,
+# as `namespace QOU.Mass` then `namespace QHookDimension`); `QIntegerCanonical` named
+# the same path and broke with it. So `grep -c sorry` returned 0 while `#print axioms`
+# could not run at all. A registry row is a claim a machine re-checks; a sorry count
+# is not.
+#
+# An earlier draft of this comment said the namespace "never existed". That was wrong,
+# and it was wrong for an instructive reason: the grep behind it matched only the
+# fully-qualified `namespace QOU.Mass.QHookDimension` and so could not see the nested
+# spelling. One spelling of a two-spelling construct -- the blind-spot class in
+# docs/audits/2026-08-15-detector-blindness-taxonomy.md. Caught in review by Copilot
+# after the same error had already been corrected in the bean and the commit message
+# but not here, which is the contamination-spread failure AGENTS.md warns about.
+#
+# Measured on origin/main bf08fd156f9, whole-corpus lean-direct with keep-going:
+# up-to-date 1718, ok 379, blocked 210, error 1. All 210 blocked trace to the single
+# error, and 179 of them carry ZERO sorry tokens -- sorry-free on the screen, no
+# verdict available from the proof term.
+QOU.MathlibExt.MacdonaldTelescopeGeneralX | QOU.MathlibExt.MacdonaldTelescopeGeneralX.telescope_generalX | clean
+QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_schurPrincipal_addCellOrSelf | clean
+QOU.SchurWeyl.BranchingGenericity | QOU.SchurWeyl.sum_wenzlWeight_addCellOrSelf | clean
 # --- the (TAIL) first-instance chain (covariance-kernel epic qou-x631) ---
 # The SIGN is genuinely sorry-free and is the content of the (TAIL) instance.
 QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagramTailFirstInstance.nuV_top_nonneg | clean
@@ -140,6 +178,24 @@ QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagr
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux | sorryAx-free-expected-clean-alias
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_le_numSYT | clean
 
+# --- known-BAD: the RSK identity and everything reindexed from it ---
+# The real gap is upstream (RegularRepBlockTrace's sorry on the specialised
+# lemma, plus the Specht-core cone: 16 of 23 modules carry sorry).
+QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | sorryAx
+QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+
+# --- fibration exactness (bean qou-de7r, item 2 of qou-pan0) ---
+# Measured 2026-08-24. The topological half of the homotopy LES, and only the
+# MIDDLE spot: exactness of pi_N(F) -> pi_N(E) -> pi_N(B) at pi_N(E), from a
+# stationary-relative homotopy lifting hypothesis. There is no connecting map
+# and no exactness at the other two spots, so `clean` here is NOT a claim about
+# the long exact sequence.
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.homotopyGroupMap_eq_const_iff | clean
+QOU.Mathlib.FibrationExactness | QOU.Mathlib.FibrationExactness.range_homotopyGroupHom_eq_ker | clean
+# The witness that the lifting hypothesis above is satisfiable at all.
+QOU.Mathlib.HomotopyLifting | QOU.Mathlib.HomotopyLifting.Prod.hasHomotopyLiftingPropertyRel_fst | clean
 # --- the RSK identity: WAS known-BAD, MEASURED CLEAN 2026-08-25 ---
 # These four were recorded `sorryAx` with the note "the real gap is upstream
 # (RegularRepBlockTrace's sorry ... plus the Specht-core cone: 16 of 23 modules carry
@@ -522,8 +578,84 @@ QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_
 # (the computed Bloch-Wigner sum). Before it they were unrelated. The compatibility
 # between them is an EXPLICIT hypothesis argument, deliberately not a class field.
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
-QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_literal_eq_triangulation_volume | clean
+#
+# MostowRigidity was UNPINNED until 2026-08-30 despite carrying the corpus's
+# manifold-volume instances. Pinned now because figureEight was exactified
+# (volume := VOL_4_1, no longer a truncated decimal) and its three consumers moved from
+# `norm_num` on literals to real proofs: volume_nonneg and the unknot comparison from
+# Cl_2_pi_div_three_pos, the 5_2 comparison from the certified bracket
+# abs_Cl_2_pi_div_three_sub_le. Those are exactly the proofs a regression would silently
+# revert to decimals.
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.figureEight | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.volumeInvariant | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.volumeInvariant_nonneg | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.unknot_volume_lt_figureEight_volume | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.figureEight_volume_lt_knot5_2_volume | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.mass_rigidity_of_mostow | clean
+QOU.Encounter.MostowRigidity | QOU.Encounter.MostowRigidity.mass_eigenvalue_isolated | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_volume_eq_triangulation_volume | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
+#
+# HyperbolicQuotient supplies what H^3 was missing: a GROUP acting. The load-bearing
+# entry is `vaddInvariantMeasure` -- it is PROVED from the corpus's own
+# hypVolume_add_left, not assumed, which is what lets the quotient volume be derived
+# rather than entered. `isAddFundamentalDomain_slab` exhibits an actual fundamental
+# domain, so `hypVolume_eq_of_isAddFundamentalDomain` is applicable rather than
+# conditional over a possibly-empty hypothesis (the ManifoldVolumeBridge trap).
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.horizontal | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.height_eq_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_height | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_mem_upperHalfSpace | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vaddInvariantMeasure | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_right_injective | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.eq_zero_of_vadd_eq | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_ne_of_ne_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.hypVolume_eq_of_isAddFundamentalDomain | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.e₀_ne_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isHorizontal_closure | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isHorizontal_zmultiples | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.latticeE₀_ne_bot | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.zsmul_e₀_apply_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.exists_zsmul_of_mem_latticeE₀ | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.ofInt_surjective | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.measurableSet_slab | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isAddFundamentalDomain_slab | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.hypVolume_eq_slab_of_isAddFundamentalDomain | clean
+#
+# FigureEightVolumeBridge keys the 4_1 statement on the EXACT VOL_4_1 = 2*Cl_2(pi/3),
+# not on MostowRigidity.figureEight's 15-digit truncated literal -- the sibling
+# MostowTriangulationBridge theorem keyed on that literal is sound but has jointly
+# unsatisfiable hypotheses at the corpus's own figureEightTriangulation. vol_pos is
+# DERIVED here from Cl_2_pi_div_three_pos, closing the positivity ManifoldVolumeBridge
+# deliberately left open (for this shape only; the general case stays open).
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_eq_VOL_4_1_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_eq_two_clausen_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_pos_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_ne_zero_of_realises | clean
+#
+# FiveTwoVolumeBridge: the SAME truncation defect at the second knot --
+# MostowRigidity.knot5_2.volume := 2.82812208833078 is a 15-digit truncation of
+# VOL_5_2 = 3*BlochWigner_lob(fiveTwoShape) = 2.8281220883307831627... These are keyed
+# on the exact constant. NOTE there is deliberately NO positivity here: the 4_1 proof
+# went through Cl_2_pi_div_three_pos (its shape is on the unit circle), and the 5_2
+# shape is not -- the corpus has no 0 < BlochWigner_lob z for 0 < z.im.
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_VOL_5_2_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_three_blochWigner_of_realises | clean
+QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_lt_iff_of_realises | clean
+#
+# FiveTwoShapeBounds: the first numeric handle on fiveTwoShape, which was
+# Classical.choose on an IVT statement and had NO bracket on re/im/modulus -- only
+# fiveTwoShape_im_pos. Steps (i)-(ii) of the qou-f8lit route to VOL_4_1 < VOL_5_2.
+# Step (iv) (certified Lambda at angles that are NOT rational multiples of pi) is NOT
+# attempted here and needs interval arithmetic on sin the corpus does not have.
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.realRoot_gt | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.realRoot_lt | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_re | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_re_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.radicand_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_normSq_gt_one | clean
 
 """
 

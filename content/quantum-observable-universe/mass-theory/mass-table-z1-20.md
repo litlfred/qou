@@ -41,13 +41,66 @@ AME2020 is materially unchanged (mean $0.075\%$, max $0.191\%$, against
 $0.074\%$ and $0.192\%$), because $\Phi_{3}$ enters roughly fifty times more
 weakly than $\Phi_{1}$. The correction is one of provenance, not of fit.
 
-Two limitations remain. The three invariants
-$\Phi_{1}, \Phi_{2}, \Phi_{3}$ are carried from the superseded producer
-rather than re-derived, so the transfer-matrix computation behind them is
-not itself reproduced here. And the base masses used are
-$44$ and $36\;\mathrm{ppm}$ below CODATA, which accounts for roughly
-$1.5\;\mathrm{MeV}$ at $Z = 20$; correcting them is a separate change and
-has not been made.
+### Convention D, and what it costs
+
+The table above is computed under the **canonical Markov convention**
+$z = q^{3}/(q^{2}+1)$ (convention D). The values it supersedes were computed
+under the excised convention C, $z = \sqrt{q}/(q+1)$.
+
+**Agreement with AME2020 is worse under D, and materially so.** Mean
+$\lvert\Delta\rvert/\mathfrak{m}$ rises from $0.0746\%$ to $0.1827\%$ and
+the maximum from $0.1909\%$ to $0.3214\%$ — a factor of about $2.4$ on the
+mean. This is reported as measured. It is not an improvement and is not
+presented as one.
+
+The two changes involved were separated rather than quoted together:
+
+| change | mean $\lvert\Delta\rvert/\mathfrak{m}$ |
+|:---|:---|
+| published, convention C, recorded base masses | $0.0746\%$ |
+| convention $C \to D$, base masses held fixed | $0.1787\%$ |
+| base masses recorded $\to$ CODATA, convention held at D | $0.1827\%$ |
+
+So the convention accounts for nearly all of the change and the base-mass
+correction for very little. Note the direction of that last row: replacing
+the recorded base masses with the *correct* CODATA values makes agreement
+slightly **worse**, which is what one expects if the formula had been
+absorbing part of the input error.
+
+The convention was not chosen on accuracy. It was fixed by the ruling of
+2026-08-15 on other grounds, and a table that fits better in the superseded
+convention is what one would expect of a table that was *built* in it. The
+earlier figures were convention-C figures.
+
+### What is now derived, and what is not
+
+$\Phi_{2}$ and $\Phi_{3}$ are no longer carried from the superseded
+producer. Both are derived from the strand content and the per-crossing
+values,
+
+$$
+  \Phi_{2} = Z N \ln\left(1 + h_{\mathrm{A}}^{2}/4\right),
+  \qquad
+  \Phi_{3} = -\left(2Z + N(N-1)\right)\ln q ,
+$$
+
+and both are **convention-independent** — neither involves the Markov
+parameter $z$, so neither moved when $C \to D$. Both reproduce all nineteen
+non-hydrogen values of the superseded table exactly. The per-crossing
+determinants and ratios they rest on are proved in Lean
+(`QOU.BraidKnot.detT_*`, `symAltRatio_*`, `chiralityCount_collapse`,
+sorry-free).
+
+$\Phi_{1}$ is the only invariant that uses $z$, and it is the only one the
+convention change moves. It is recomputed here rather than carried.
+
+**One limitation remains.** The ground-state ordering minimises $\Phi_{1}$
+over arrangements, which is exponential in $A$; the search is exhaustive
+where feasible (five atoms, where the minimum is global) and hill-climbing
+beyond, validated against exhaustive search on every atom where exhaustive
+search can be run. The witness records the regime per row. The base masses
+are now CODATA, so the earlier $44$ and $36\;\mathrm{ppm}$ discrepancy is
+closed.
 
 The live mass-prediction
 pipelines give substantially larger errors than these figures: nucleons

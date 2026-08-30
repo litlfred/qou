@@ -5,9 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-08-25T09:51:12Z
-updated_at: 2026-08-25T12:42:12Z
-updated_at: 2026-08-29T16:33:38Z
+updated_at: 2026-08-29T18:22:17Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -353,3 +351,50 @@ NEXT, in the order I would take it:
   4. block_swap_binding: do NOT re-run at a larger budget. Row 1 <=19s, row 2
      unfinished at 7181s (>378x). Instrument per-row timing or cost one
      non-identity row first.
+
+=== LANDED 2026-08-29 — PR #5755 merged to main as 8176c8270747 ===
+
+Rebase-merged (AGENTS.md rule 8), 8 commits, 7 files. Live on main:
+  - aoperator_a5_crosscheck is in physical_proton (verified on the merged tree).
+  - computations/audits/proton_pin_assertion_check.py + its verdicts artifact.
+  - the producer-level float64 tolerance fix.
+
+TWO THINGS THE LANDING ITSELF TAUGHT
+
+1. GitHub REFUSED the rebase-merge ("This branch can't be rebased") because the
+   branch carried three merge commits from main. AGENTS.md already prescribes
+   the fix under the squash prohibition — "clean the branch locally with git
+   rebase -i and rebase-merge the cleaned-up history instead" — so no new
+   decision was needed. Flattened locally onto main, force-with-lease, merged.
+   Worth knowing before proposing squash next time: a branch that has merged
+   main repeatedly is NOT a squash case, it is a local-rebase case.
+
+2. THE REBASE SWEPT IN FOUR SIBLING AUDIT WITNESSES, and this is the durable
+   lesson. q0-anchor-consistency-audit (639 lines), witness-provenance-audit
+   (343), and the two witness-raw-float64--*-audit files rode along, because
+   they regenerate as a SIDE EFFECT of every precision-gates run and each
+   conflict resolution dutifully carried them forward.
+
+   A resolution that is correct COMMIT BY COMMIT can still be wrong for the
+   BRANCH: each replay only sees its own conflict, never the accumulated diff.
+   The merge-based history had these correctly restored; the rebase reintroduced
+   them. Reverted in 8176c82707.
+
+   RULE: after any rebase, check the whole `git diff --name-only
+   origin/main...HEAD` against the file set the PR is supposed to touch — not
+   merely that each step resolved cleanly.
+
+STATE OF THE ARC AFTER LANDING
+  ideal_muon is now 21 stems (was 32 when this arc's review was written, 35 at
+  its start) — siblings have been draining it in parallel. Re-measure before
+  quoting; the 17-of-32 env-bypass figure recorded above is a 2026-08-29
+  measurement against a list that is moving.
+
+  NEXT, unchanged in priority:
+   1. The group-B env-bypass stems (qou-aj91) — until they route through
+      q_parameter their manifest entry is decorative and no assertion check can
+      measure them. Bigger and more tractable than either slow producer.
+   2. gram_norm_binding_probe — restart from the checkpoint; it is PENDING, not
+      UNKNOWN (interrupted at ~2100s on 3H by a container reclaim).
+   3. block_swap_binding — do NOT re-run at a larger budget. Row 1 <=19s, row 2
+      unfinished at 7181s (>378x). Instrument per-row timing first.

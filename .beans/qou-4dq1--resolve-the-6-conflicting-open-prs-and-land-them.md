@@ -1,11 +1,11 @@
 ---
 # qou-4dq1
 title: Resolve the 6 conflicting open PRs and land them
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T10:08:52Z
-updated_at: 2026-08-25T18:32:39Z
+updated_at: 2026-08-29T16:28:41Z
 ---
 
 ## Map (measured 2026-08-25 by git merge-tree against origin/main)
@@ -206,3 +206,10 @@ built by repeated merge-of-main, and a linear replay flattens every merged-in co
 The number to trust is `git diff --name-only origin/main...HEAD`, not the rebase's
 commit count. Merged with `merge_method: "merge"` on that measured ground; #5762 and
 #5760 rebased normally.
+
+
+CLOSED 2026-08-29. All six merged (#4673, #4766, #4619, #5249, #4868, #4718), plus
+#5761 which retargeted the seventh (#4925) after I merged it into its stacking base
+by not reading base.ref. #5760 and #5762 also merged. The bean sat in-progress for
+four days after its work landed -- my own stale bookkeeping, and the exact omission
+the end-of-turn bean report exists to catch.

@@ -81,3 +81,12 @@ Block kind is read from the `.ts` sibling's builder import
 determines it. Eight collision groups have a `.lean` sibling with **no `.ts`
 sibling at all** — those are neither content blocks nor library modules, and
 are worth a look on their own.
+
+> **🛑 The "eight" is 4, corrected 2026-08-29** —
+> [`2026-08-29-the-four-orphan-lean-siblings.md`](2026-08-29-the-four-orphan-lean-siblings.md).
+> This bucket did not separate library modules from content siblings.
+> Re-measured by testing `.ts` existence on every file in every
+> same-namespace collision group: **134** such files, of which **130** are
+> library modules under `/lean/QOU/` (where no `.ts` is expected) and **4**
+> are content-tree orphans. The four are read in that audit; two are stale
+> copies left behind by a block move and a block demotion.

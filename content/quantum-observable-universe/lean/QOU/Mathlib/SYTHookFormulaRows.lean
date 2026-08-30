@@ -4,9 +4,16 @@ import QOU.BraidKnot.IdentityIContentDecomposition
 # QOU.Mathlib.SYTHookFormulaRows — Frame–Robinson–Thrall hook-length formula, closed
 in full generality for one- and two-row shapes (sorry-free).
 
-The general HLF `numSYTenum l = dimHLF l` is the classical Greene–Nijenhuis–Wilf theorem
-and remains open in this corpus.  This file proves the **closed-form sub-cases** that
-HLF specialises to on shapes with at most two rows — genuine `∀`-quantified theorems
+The general HLF `numSYTenum l = dimHLF l` is **PROVED, sorry-free**, in
+`QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF` (`SYTHookGNW.lean`) via the
+Greene–Nijenhuis–Wilf route — corner recursion plus the hook-summation identity,
+combined by strong induction. **This header said "remains open in this corpus" until
+2026-08-30**, long after that proof landed; it is a source-file status note that went
+stale, and it misled a downstream consumer into writing the same false claim into
+`QOU.Hecke.blockDim`, a PR body and a bean. Cite the theorem, not this file, for the
+general case.  This file proves the **closed-form sub-cases** that
+HLF specialises to on small shapes — worth having independently of the general
+theorem, since they are explicit closed forms rather than an existence result — genuine `∀`-quantified theorems
 (not bounded `decide`):
 
 * **One row** `[a]` (`a ≥ 1`): `prodHooks [a] = a!`, hence `dimHLF [a] = 1`
@@ -208,5 +215,51 @@ theorem prodHooks_pair_mul (a b : ℕ) (hab : b ≤ a) (_hb : 1 ≤ b) :
   -- (row0 * b!) * (a+1-b)! = row0 * (a+1-b)! * b!
   rw [mul_assoc, mul_comm (Nat.factorial b) (Nat.factorial (a + 1 - b)), ← mul_assoc,
     prodHooks_pair_row0_mul a b hab]
+
+
+/-! ## One column `[1,1,…,1]` — the transpose of the one-row case
+
+Added 2026-08-30 for `qou-luq7` item 2: `QOU.Hecke.WedderburnDecomp` needs the block
+dimension to be a *function of the partition*, and the all-ones partition is the shape
+its rank-one witness is supported on. Together with `dimHLF_single` this closes both
+extreme shapes: a single row and a single column each carry exactly one standard
+tableau. -/
+
+/-- `colLen` of a single column is `n` at column `0` and `0` beyond: every one of the `n`
+parts exceeds `0`, and none exceeds `0 + 1`. -/
+theorem colLen_column (n j : ℕ) :
+    colLen (List.replicate n 1) j = if j < 1 then n else 0 := by
+  unfold colLen
+  by_cases hj : j < 1
+  · have hj0 : j = 0 := by omega
+    subst hj0
+    simp
+  · have hj' : ¬ (j < 1) := hj
+    simp [hj']
+
+/-- **The single-column hook product is `n!`.** The column `[1,1,…,1]` has one cell per
+row, and the hook at row `i` is `(1 - 0) + (n - i) - 1 = n - i`, so the product over
+`i < n` is the descending product `n · (n-1) ⋯ 1`. -/
+theorem prodHooks_column (n : ℕ) : prodHooks (List.replicate n 1) = Nat.factorial n := by
+  unfold prodHooks
+  rw [List.length_replicate]
+  have hbody : ∀ i ∈ List.range n,
+      (let rowLen := (List.replicate n 1).getD i 0
+       ((List.range rowLen).map fun j =>
+         ((rowLen - j) + (colLen (List.replicate n 1) j - i) - 1)).prod) = n - i := by
+    intro i hi
+    have hi' : i < n := List.mem_range.mp hi
+    simp [hi', colLen_column]
+  rw [List.map_congr_left hbody]
+  exact prod_range_descending n
+
+/-- **`dimHLF` of a single column is `1`.** `n!/n! = 1`: there is exactly one standard
+Young tableau of shape `[1,1,…,1]`, since the entries must ascend down the column. -/
+theorem dimHLF_column (n : ℕ) : dimHLF (List.replicate n 1) = 1 := by
+  unfold dimHLF
+  rw [prodHooks_column]
+  have hsz : sz (List.replicate n 1) = n := by simp [sz]
+  rw [hsz]
+  exact Nat.div_self (Nat.factorial_pos n)
 
 end QOU.Mathlib.SYTHookRows

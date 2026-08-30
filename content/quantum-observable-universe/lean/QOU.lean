@@ -106,6 +106,7 @@ import QOU.MathlibExt.BraidedTensorDual
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.TwistedQuantumDimension
+import QOU.MathlibExt.SphericalCategory
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
@@ -189,6 +190,7 @@ import QOU.MathlibExt.IdealTriangulation
 import QOU.MathlibExt.ManifoldVolumeBridge
 import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
+import QOU.Knot.FiveTwoShapeBounds
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
 import QOU.Knot.IdealTetLawOfSines
@@ -319,6 +321,9 @@ import QOU.Mass.QBetaProxyHReduction
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
+import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mathlib.YoungLatticeExchange
+import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
@@ -329,6 +334,11 @@ import QOU.Mass.BondChannelClassSelection
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
 -- conditional theorem that logarithmic k(A) follows (k∝A / k∝bond-count excluded).
 import QOU.Mass.LevelSelectionLogarithmic
+-- 3D-realizability cap on max-contact coordination: a pairwise-equidistant family
+-- has at most finrank members, so the complete contact graph K_A is realizable in
+-- ℝ³ only for A ≤ 4. Replaces the EMPIRICAL premise ("saturation is observed")
+-- that CoordinationSaturation's complete-graph exclusion rested on.
+import QOU.Mass.EquidistantCoordinationCap
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -433,6 +443,7 @@ import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.IdealTetrahedronVolumeConcavity
 import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
@@ -645,6 +656,8 @@ import QOU.QBeta.BarOddLadderShape
 -- them and no CI run would have caught a regression in any of them.
 import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
+import QOU.QBeta.PairingSeesCommutator
+import QOU.QBeta.GluonVertexPsdParity
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate
@@ -867,7 +880,6 @@ import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
-import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
@@ -1255,6 +1267,7 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+import QOU.Mathlib.KazhdanLusztigBasis
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar

@@ -20,12 +20,14 @@ Hoefsmit matrix-entry computation.  In particular,
 `α_shift(T_{(p, k)}) = k(p - 1)` recovered without computing
 seminormal eigenvalues.
 
-The class encodes the pole-order indicator + its consistency with
-the audit's Step 2 statement.  A trivial model proves consistency
-(no `sorry`).  A `HasBranchingBlockLemma` instance can be derived
-from this class via the Step 4 composition (cycle → product over
-generators), closing the operator-valued residual of
-`prop:confinement-nf-partial-proof` Theorem T_2.
+The class states that a **given** pole-order assignment agrees with
+the audit's Step 2 indicator.  The assignment is carried as separate
+data (`PoleOrderData`) rather than as a class field, so no instance
+can pick the very function it is compared against — see the history
+note on `combinatorialPoleOrder` below.  A `HasBranchingBlockLemma`
+instance can be derived from this class via the Step 4 composition
+(cycle → product over generators), closing the operator-valued
+residual of `prop:confinement-nf-partial-proof` Theorem T_2.
 
 LaTeX: `\label{prop:crystal-r-matrix-sub-lemma}`
 
@@ -47,7 +49,29 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- **Crystal R-matrix Sub-lemma 2.1 (proposition, conditional).**
+/-- **Matrix-entry pole orders as *given* data.**
+
+    `poleOrder ρ` is the pole order at `q = 0` of the matrix entry of
+    `A^λ_{μ, ν}(σ_i)` on an SYT whose axial distance at `i` is `ρ`,
+    recorded as a `Bool` (`true ↦ pole of order 1`, `false ↦ order 0`;
+    Step 1 of the audit rules out higher orders).
+
+    **Why a structure and not a class field (2026-08-24, bean
+    `qou-09mr`).**  When the pole orders are a *field of the class*, an
+    instance gets to choose the very function the propositional field
+    compares it against, and the choice `fun ρ => decide (ρ ≤ -1)`
+    satisfies the comparison by `rfl`.  That is how the previous
+    encoding was discharged for free — no `sorry`, and nothing
+    established.  Carried as data and taken as a class *parameter*
+    below, the assignment must be named by whoever assumes something
+    about it. -/
+structure PoleOrderData where
+  /-- Pole order at `q = 0` as a function of the axial distance `ρ`:
+      `true` for a pole of order 1, `false` for order 0. -/
+  poleOrder : ℤ → Bool
+
+/-- **Crystal R-matrix Sub-lemma 2.1 (proposition, conditional), as a
+    predicate ON a given pole-order assignment.**
 
     Conditional on
     [`conj:crystal-graph-realization`](crystal-graph-realization.md),
@@ -60,30 +84,22 @@ universe u
     where `ρ_T(i) = c(cell of i+1 in T) - c(cell of i in T)` is
     the axial distance and `c(cell) = col - row`.
 
-    Class fields:
-    - `poleIndicator : ℤ → Bool` — the indicator function
-      `1[ρ ≤ -1]` (representing `True ↦ pole 1`, `False ↦ pole 0`).
-    - `pole_indicator_correct` — agreement with the audit's
-      Step 2 statement: indicator returns `true` exactly when
-      `ρ ≤ -1`. -/
+    The single field asserts that identity **about the supplied `P`**;
+    the class can no longer manufacture its own indicator. -/
 -- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
 -- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 -- Ref: [hoefsmit1974] http://hdl.handle.net/2429/19407
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
 class CrystalRMatrixSubLemma (R : Type u) [CommRing R] (q : R)
-    [C : CrystalGraphRealization R q] where
-  /-- Pole-order indicator: returns `true` if the matrix entry has
-      a pole of order 1 at `q = 0`, `false` if pole order 0.
-      Determined entirely by the axial distance `ρ`. -/
-  poleIndicator : ℤ → Bool
-  /-- **The proposition itself** (Step 2 of the audit): pole order
-      is exactly the indicator of `ρ ≤ -1`.  This is the field that
-      a concrete instance must populate (not a `sorry` — the
+    [C : CrystalGraphRealization R q] (P : PoleOrderData) : Prop where
+  /-- **The proposition itself** (Step 2 of the audit): the supplied
+      pole order is exactly the indicator of `ρ ≤ -1`.  This is the
+      field a concrete model must discharge (not a `sorry` — the
       content is combinatorial, derived from the crystal R-matrix
       action at `q = 0`). -/
   pole_indicator_correct : ∀ rho : ℤ,
-    poleIndicator rho = decide (rho ≤ -1)
+    P.poleOrder rho = decide (rho ≤ -1)
 
 namespace CrystalRMatrixSubLemma
 
@@ -95,8 +111,8 @@ namespace CrystalRMatrixSubLemma
 theorem poleIndicator_minus_one_eq_true
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
-    [SL : CrystalRMatrixSubLemma R q] :
-    SL.poleIndicator (-1) = true := by
+    {P : PoleOrderData} [SL : CrystalRMatrixSubLemma R q P] :
+    P.poleOrder (-1) = true := by
   rw [SL.pole_indicator_correct]; decide
 
 /-- Unconditional structural lemma: `poleIndicator (+1) = false`.
@@ -106,8 +122,8 @@ theorem poleIndicator_minus_one_eq_true
 theorem poleIndicator_plus_one_eq_false
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
-    [SL : CrystalRMatrixSubLemma R q] :
-    SL.poleIndicator 1 = false := by
+    {P : PoleOrderData} [SL : CrystalRMatrixSubLemma R q P] :
+    P.poleOrder 1 = false := by
   rw [SL.pole_indicator_correct]; decide
 
 /-- Pole-per-cycle on the column SYT of shape `(1^p)`.
@@ -180,19 +196,77 @@ theorem axkia_pole_product :
 theorem inter_nucleon_interface_pole :
     column_syt_pole_per_cycle 2 = 1 := rfl
 
-/-- **Consistency witness.** Concrete `CrystalRMatrixSubLemma` over the
-    canonical `CrystalGraphRealization` model. `poleIndicator` is the
-    indicator `fun ρ => decide (ρ ≤ -1)`, so `pole_indicator_correct`
-    holds by `rfl` (the indicator IS the witness function) — this
-    instance introduces no `sorry`. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
-    let C := CrystalGraphRealization.canonical R q
-    @CrystalRMatrixSubLemma R _ q C := by
-  intro C
-  exact {
-    poleIndicator := fun rho => decide (rho ≤ -1)
-    pole_indicator_correct := fun _ => rfl
-  }
+/-! ### The residual vacuity, stated as theorems rather than left as a trap
+
+Parameterising stops the class from *choosing* its pole orders, but it
+cannot stop a consumer from instantiating at the assignment that is
+literally the indicator.  Rather than leave that as a latent trap — the
+shape that let the previous encoding pass every audit — it is recorded
+below as a pair.  Read together they say exactly what an instance is
+worth: **`[CrystalRMatrixSubLemma R q P]` carries no information until
+`P` is pinned down**, and it carries real information as soon as it is. -/
+
+/-- The pole-order assignment that *is* the Step 2 indicator. -/
+def combinatorialPoleOrder : PoleOrderData where
+  poleOrder := fun rho => decide (rho ≤ -1)
+
+/-- **The sub-lemma is satisfiable, at the indicator itself (PROVED).**
+    So an instance `[CrystalRMatrixSubLemma R q P]` for an *unspecified*
+    `P` asserts nothing.  Any downstream result must say which `P`.
+
+    **History (2026-08-24, bean `qou-09mr`).**  This replaces an
+    `instance canonical` whose class field `poleIndicator` was set to
+    `fun ρ => decide (ρ ≤ -1)` — the very function
+    `pole_indicator_correct` compares against — so the propositional
+    field closed by `rfl`.  Its docstring conceded the point ("the
+    indicator IS the witness function") and offered "no `sorry`" as
+    reassurance; no `sorry` was exactly the problem, because nothing was
+    left visible to `#print axioms`.  It was also an `instance`, pinned
+    by `let C := CrystalGraphRealization.canonical R q` to the one-point
+    crystal — and since that `def` is the corpus's only realisation of
+    `CrystalGraphRealization`, every way of instantiating this class's
+    theorems at a concrete `R`, `q` got the free witness by resolution.
+
+    Note what this witness does *not* depend on: `R`, `q`, and the
+    realisation `C` are free.  A consistency witness that holds for
+    every crystal-graph realisation, including
+    `CrystalGraphRealization.canonical`'s one-point crystal, says
+    nothing about any of them — it is a fact about the indicator
+    function alone.  The old instance hid that by pinning itself to
+    `CrystalGraphRealization.canonical R q`, which read as though a
+    crystal had been consulted. -/
+instance combinatorialPoleOrder_subLemma (R : Type u) [CommRing R] (q : R)
+    [C : CrystalGraphRealization R q] :
+    CrystalRMatrixSubLemma R q combinatorialPoleOrder where
+  pole_indicator_correct := fun _ => rfl
+
+/-- **…and it fails at any assignment that disagrees at one axial
+    distance (PROVED).**  This is the content the parameterisation buys:
+    for a *specific* `P` coming from the actual Hoefsmit matrix entries,
+    the sub-lemma is a real constraint that can fail. -/
+theorem not_subLemma_of_poleOrder_ne
+    {R : Type u} [CommRing R] {q : R}
+    [C : CrystalGraphRealization R q]
+    {P : PoleOrderData} {rho : ℤ}
+    (h : P.poleOrder rho ≠ decide (rho ≤ -1)) :
+    ¬ CrystalRMatrixSubLemma R q P :=
+  fun SL => h (SL.pole_indicator_correct rho)
+
+/-- The "every generator has a pole" assignment — the shape a reader
+    might expect from the boxed identity read carelessly. -/
+def alwaysPoleOrder : PoleOrderData where
+  poleOrder := fun _ => true
+
+/-- **A concrete non-model (PROVED).**  `alwaysPoleOrder` fails the
+    sub-lemma already at axial distance `ρ = 0`, where the audit's Step 2
+    indicator is `false`.  So the class is not satisfied by every
+    assignment, which is what `combinatorialPoleOrder_subLemma` alone
+    could not establish. -/
+theorem not_subLemma_alwaysPoleOrder
+    (R : Type u) [CommRing R] (q : R)
+    [C : CrystalGraphRealization R q] :
+    ¬ CrystalRMatrixSubLemma R q alwaysPoleOrder :=
+  not_subLemma_of_poleOrder_ne (rho := 0) (by decide)
 
 end CrystalRMatrixSubLemma
 

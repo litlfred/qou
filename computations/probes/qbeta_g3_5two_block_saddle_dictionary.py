@@ -193,15 +193,26 @@ def main() -> int:
         nm: {"saddle": b[0], "k": b[1], "m": b[2], "n": b[3],
              "residual": mp.nstr(b[4], 8)} for nm, b in idents.items()})
     wb.add_data("verdict", verdict)
+    # Both were `computed=1.0, expected=1.0, tolerance=0.5` (bean `qou-26f2`).
+    # Their names claim only that a table was written — which is the one thing
+    # a constant cannot establish, because a run that produced *no* terms
+    # would have written an empty table and still reported 1.0 == 1.0.
+    #
+    # So each now counts the table it names against the term inventory the
+    # probe set out to cover. Coverage is the falsifiable content of "recorded
+    # in full": a term dropped upstream shows up here instead of silently
+    # shrinking the dictionary.
     wb.add_assertion("per_term_ratio_data_recorded",
-                     computed=1.0, expected=1.0, tolerance=0.5,
+                     computed=len(claim), expected=len(E_terms), tolerance=0,
                      source="exact per-term Prony-grid ratios + drift "
-                            "recorded; comparable magnitudes; no clean "
+                            "recorded for every term in the exponent "
+                            "inventory; comparable magnitudes; no clean "
                             "bijection at this window (honest diagnostic)")
     wb.add_assertion("saddle_identification_reported",
-                     computed=1.0, expected=1.0, tolerance=0.5,
+                     computed=len(idents), expected=len(E_terms), tolerance=0,
                      source="per-term identification table recorded with "
-                            "honest residuals (derived if < 0.05)")
+                            "honest residuals (derived if < 0.05), one row "
+                            "per term in the exponent inventory")
     wb.save()
     return 0 if ok else 1
 

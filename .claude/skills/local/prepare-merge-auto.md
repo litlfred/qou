@@ -65,6 +65,51 @@ Do NOT skip ahead — the review is the input to Phase 2.
 > only live external reviewer.** Waiting for a Gemini review that can
 > never arrive is the documented stall mode (PR #4456).
 
+> **🛑 CORRECTED 2026-08-30 (bean `qou-426q`) — READ THIS BEFORE THE BANNER
+> BELOW. The banner is half right, and the wrong half is the operative one.**
+>
+> Measured on #6104, #6116, #6132:
+>
+> | claim | verdict |
+> |---|---|
+> | `get_check_runs` returns `total_count: 0` — no `copilot-pull-request-reviewer` run is ever created | **CONFIRMED** |
+> | therefore **zero reviews arrive** | **FALSE** — Copilot reviewed #6104 and #6116 |
+>
+> **The mechanism is UNSETTLED — do not repeat my first explanation.** I
+> wrote here that Copilot "delivers via webhook, not check run, so the poll is
+> structurally blind". That is a *candidate*, not a finding, and it does not
+> discriminate: `total_count: 0` is equally consistent with every other
+> candidate, including simple quota exhaustion. The adjudicated write-up is
+> [`docs/audits/2026-08-30-copilot-review-works-again.md`](../../../docs/audits/2026-08-30-copilot-review-works-again.md)
+> (bean `qou-gwe9`, **reopened**), which weighs three and picks none:
+> availability changed; Copilot reviews on its own trigger rather than on
+> `request_copilot_review`; or a quota gates it, making the whole thing
+> intermittent.
+>
+> **🛑 THERE IS A QUOTA, and it is easy to exhaust.** That audit measured five
+> requests across two repos in ~30 minutes returning *"the user who requested
+> the review has reached their quota limit"*. Copilot review is a **rationed**
+> resource, not a binary available/unavailable one. **Do not re-request after
+> every push** — nothing else in the repo's docs says this, and it is the
+> operational rule that actually follows from the measurement.
+>
+> **Cost, on the record:** #6104 and #6116 were merged on the "do not wait"
+> guidance and the reviews landed minutes later, carrying six findings — one a
+> real correctness regression (a tautology introduced into a three-path
+> cross-check, so its printed "should be ≈ 1.0" ratio read exactly 1.0 by
+> construction). Fixed in #6132, after the merge.
+>
+> **What to do:** do NOT restore a blocking poll on check runs — that half of
+> `qou-gwe9` stands and the poll would still see nothing. Instead, subscribe
+> to the PR (`subscribe_pr_activity`) and expect the review to arrive as a
+> wake. A merge is not gated on a check run that does not exist, but a
+> subscribed session **must handle the review when it lands** — which, after a
+> merge, means a follow-up PR rather than nothing. **Latency is unmeasured**
+> (n=2, both within minutes); do not write a specific wait window into this
+> skill on that basis.
+>
+> The original banner follows, and its check-run half remains accurate:
+>
 > **🛑 MEASURED 2026-08-23 — do NOT run this wait. Copilot never enqueues.**
 > n=5 (bean `qou-gwe9`, AGENTS.md rule 10): on #5474, #5495, #5411, #5459 and
 > #5482 the review was requested explicitly and **zero** arrived. Critically
@@ -204,8 +249,12 @@ After merge:
 - Do NOT merge without resolving review comments (even if CI is green).
 - Do NOT squash unless the user explicitly says "squash" on this PR.
 - Do NOT wait on a Gemini review — Gemini Code Assist is sunset.
-- Do NOT wait on a Copilot review either — measured n=5, it never enqueues
-  (`qou-gwe9`). Request once, then proceed with 0 comments.
+- Do NOT **block** on a Copilot review — but do NOT skip reading it either.
+  The "n=5, never enqueues" line that stood here is **refuted**; see the
+  Phase 1b correction above. Reviews arrive (minutes), carry real findings,
+  and are **rationed** — so request once, keep working, and read
+  `get_reviews` before you merge. Never poll `get_check_runs`: it returns
+  `total_count: 0` whether or not a review exists, so it cannot tell you.
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.

@@ -25,7 +25,7 @@ The witness serves as a numerical certificate of the pinning procedure. It is no
 
 ## Significance for the Borromean baryon programme
 
-The figure-8 (muon) sector verifies the mass ansatz at the single-knot level with a topologically trivial Skein contribution ($S(4_1) = 0$ in the canonical orientation). The mass formula reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.
+The figure-8 sector — the Higgs knot, whose volume the muon mass proxy evaluates; the muon's identity knot is the cinquefoil $T(2,5)$ — verifies the mass ansatz at the single-knot level with a topologically trivial Skein contribution ($S(4_1) = 0$ in the canonical orientation). The mass formula reduces to $m_\mu = m_e \cdot \mathrm{Vol}(4_1)/\hbar_q^2$.
 
 The Borromean baryon programme asks whether the same ansatz, lifted to a 3-link with non-trivial Skein contribution, gives baryon masses with a single common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$:
 

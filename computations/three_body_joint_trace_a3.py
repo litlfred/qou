@@ -98,7 +98,10 @@ def main() -> int:
                        "c3<0 = destructive co-bond interference = the 3-body "
                        "force. Adjacent pair only; non-adjacent 1-3 flagged. "
                        "Rust kernel; zero fit.")
-    wb.add_assertion("kernel_ran", computed=1, expected=1, tolerance=0)
+    # `kernel_ran` was `computed=1, expected=1` (bean `qou-26f2`). Reaching
+    # this line is what proves the kernel ran; an assertion placed after it can
+    # only ever agree with itself. Recorded as data.
+    wb.add_data("kernel_ran", True)
     wb.save()
     print("✓ Witness: three-body-joint-trace-a3.witness.json")
     return 0

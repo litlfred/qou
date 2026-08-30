@@ -162,7 +162,7 @@ The three QOU volumes used in `SingleVolumeIrrational` /
   (exact; supersedes the former 15-dps SnapPy literal). -/
 
 /-- Hyperbolic volume of the figure-eight knot 4₁ (Higgs boson).
-    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042408
+    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042405
     (two regular ideal tetrahedra, each of volume Cl₂(π/3) = 3Λ(π/3)).
 
     Corrected 2026-08-09: this docstring and the §1 summary above both

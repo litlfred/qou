@@ -1,17 +1,9 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:19:19.123460+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T06:40:18.858972+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "assertions": [
-    {
-      "name": "torus_knots_not_hyperbolic",
-      "computed": 1,
-      "expected": 1,
-      "passed": true,
-      "tolerance": 0,
-      "source": "Structural: T(2,k) are Seifert-fibered, Vol=0"
-    },
     {
       "name": "kaon_reference_under_500ppm",
       "computed": 289.6474297199268,
@@ -21,28 +13,28 @@
       "source": "Kaon base formula reproduces m_K/m_pi to 290 ppm"
     },
     {
-      "name": "best_eta_computed",
-      "computed": 1,
-      "expected": 1,
+      "name": "best_eta_is_minimum_error_candidate",
+      "computed": 198.7668371842233,
+      "expected": 198.7668371842233,
       "passed": true,
       "tolerance": 0,
-      "source": "Best eta formula: E1: eta = m_K * q_0 (!!!)"
+      "source": "Best eta formula: E1: eta = m_K * q_0 (!!!) (8 candidates)"
     },
     {
-      "name": "best_phi_computed",
-      "computed": 1,
-      "expected": 1,
+      "name": "best_phi_is_minimum_error_candidate",
+      "computed": 17304.99690997485,
+      "expected": 17304.99690997485,
       "passed": true,
       "tolerance": 0,
-      "source": "Best phi formula: C6: phi = m_K * |tr_H2(10)/tr_H2(5)|"
+      "source": "Best phi formula: C6: phi = m_K * |tr_H2(10)/tr_H2(5)| (13 candidates)"
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 4,
   "computation": "seifert-volume-meson-n7-extension",
   "scriptFile": "seifert_volume_meson_n7_extension.py",
-  "scriptHash": "a9469102c3cb",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "ba7a10bf17c2",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/seifert_volume_meson_n7_extension.py"
+    ],
+    "reproduce": "python3 -u computations/seifert_volume_meson_n7_extension.py"
   },
   "description": "Extension of meson mass formula to eta (547.862 MeV) and phi (1019.461 MeV). Confirms torus knots T(2,k) have Vol=0 (not hyperbolic); uses character-based formulas from H_n(q) instead. Best eta: E1: eta = m_K * q_0 (!!!) at 199 ppm. Best phi: C6: phi = m_K * |tr_H2(10)/tr_H2(5)| at 17305 ppm. Notable: m_eta/m_K = 1.109758 vs q_0 = 1.1099786.",
   "data": {
@@ -223,6 +224,11 @@
       "tr_H3(sigma^5)": "0.394714614906721",
       "tr_H3(sigma^7)": "0.536501322246512",
       "tr_H3(sigma^10)": "0.937075989811789"
+    },
+    "structural_premise": {
+      "claim": "torus knots T(2,k) are Seifert-fibered, so Vol = 0",
+      "role": "premise — the 'Seifert volume' in this file is the effective character ratio, NOT a hyperbolic volume",
+      "computed_here": false
     }
   },
   "q0Anchor": "proton",

@@ -1,0 +1,38 @@
+{
+ "computation": "milnor-a4-deficit-h-form",
+ "engine": "python-sympy-exact",
+ "description": "EXACT convention-D (Jones/Temperley-Lieb) closed form of the A=4 4-component Brunnian Markov-trace deficit D_4 = 1 - tau_4 as a rational function of h = q - 1/q, in the SAME convention as the Lean A=3 object tauBorromean = (4+h^2-3h^4-h^6)/(h^2+4) (BorromeanMarkovTrace.lean / BorromeanFrobeniusReconstruction.lean). Convention D uses SIGNED chi_lambda and Temperley-Lieb weights y_{(a,b)} = [a-b+1]_q/[2]_q^n with y_lambda=0 for >=3-row diagrams (only the SU(2)-surviving 2-row diagrams contribute), NOT the production |chi|-with-Wenzl-y convention (which lives in s=sqrt(q)). All exact sympy over Q(q); ZERO float64. A=3 leg validates the convention by reproducing tauBorromean exactly before A=4 is touched.",
+ "q0_pin_exact_rational": "2584370278640139188197914756009/2328306436538696289062500000000",
+ "outcome": "a",
+ "outcome_a_means": "D_4 is a clean rational function of h alone (like A=3)",
+ "outcome_b_means": "D_4 genuinely depends on s=sqrt(q) (NOT the case here)",
+ "A3_validation": {
+  "tau3_h_form": "(-h**6 - 3*h**4 + h**2 + 4)/(h**2 + 4)",
+  "reproduces_tauBorromean": true,
+  "deficit_h_form": "(h**6 + 3*h**4)/(h**2 + 4)",
+  "h_power": 4,
+  "cofactor_h": "(h**2 + 3)/(h**2 + 4)",
+  "cofactor_at_0": "3/4",
+  "leading_q_minus_1_order": 4,
+  "leading_coeff_q_minus_1": "12"
+ },
+ "A4_result": {
+  "convention": "D (Jones/Temperley-Lieb; y_{(a,b)}=[a-b+1]/[2]^n, 2-row only, signed chi)",
+  "outcome": "a",
+  "tau4_h_form": "(h**10 + 5*h**8 + 6*h**6 + h**2 + 4)/(h**2 + 4)",
+  "deficit_D4_h_form": "(-h**10 - 5*h**8 - 6*h**6)/(h**2 + 4)",
+  "h_power": 6,
+  "cofactor_h": "(-h**4 - 5*h**2 - 6)/(h**2 + 4)",
+  "cofactor_at_0": "-3/2",
+  "cofactor_at_0_is_neg_three_halves": true,
+  "leading_q_minus_1_order": 6,
+  "leading_coeff_q_minus_1": "-96",
+  "leading_coeff_matches_producer_neg96": true,
+  "leading_order_matches_producer_6": true,
+  "h_form_matches_q_form_exactly": true,
+  "convention_D_tau4_at_q0": "251642582808708532040161969428502684473698553888985195685140336539579474894427030805530887284476992309176197967183297618763346027354553717401204915217009196425955761735023069519961072022519296823386232981202212252027796317012284943481226157915404656679888239818341547311652689982297229230358687921807718542305884815740489820214558987862054563849206611506633490718235717773900882187636911808226772156786432131869201638211732980594712442697752853179460616279824771542850306300003737771526375845373137645194878714321132154342200086851017719172245157694723610979372381431602913756775405353594700259849799002608801/251610268165823013644002630198855418505679347783029466541707054099121766121600583166107249334125759017485607636598924695372857722562123139872156939809308645807596078989508672601502943577149061770215713266629574273375335429484027681514420073301289689021243118165095456941716358724209208543657637404393817396724010205204871418683156284608132433325487029261862448759847750453102936024551792003812219606781611503408216889933603069585395804089100349070971719089499048803271874897752004684296230070219021172786902362794592136197024956345558166503906250000000000000000000000000000000000000000000000000000000000000000",
+  "convention_D_tau4_at_q0_display30": "1.00012843133597481611911668808",
+  "producer_absval_convention_tauL4_at_q0": "1.000145898",
+  "note_convention_difference": "The committed producer a4_brunnian_deficit_closed_form.py uses the PRODUCTION mass convention g=\u03a3 y_\u03bb^Wenzl\u00b7|\u03c7_\u03bb| (half-integer q-powers, deficit rational in s=\u221aq). This script uses convention D (the Lean tauBorromean frame: signed \u03c7, Temperley-Lieb weights, 2-row diagrams only), which is rational in h. The two conventions AGREE at leading Milnor order/coefficient (topological \u03bc\u0304-invariant) but DIFFER at subleading order and at q0."
+ }
+}

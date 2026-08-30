@@ -74,7 +74,11 @@ def main():
     V_TREFOIL = 0.0
     V_FIG8 = 2.0298832128193072
     V_5_1 = 0.0
-    V_BORROMEAN = 7.327724753417960
+    # CORRECTED 2026-08-30 (bean `qou-f8lit`): read 7.327724753417960, which is wrong
+    # from digit 13 against Vol(B_3) = 8*G = 7.3277247534177521204 (abs err 2.08e-13).
+    # Labelled "from SnapPy canonical values", but SnapPy gives ...417752 at this
+    # precision -- it was a transcription slip, not a SnapPy variant.
+    V_BORROMEAN = 7.327724753417752
 
     # Costs |tr_M(β)| × V_hyp(β) per state
     cost_hopf = [abs(tr_M_n2_sigma1_k(2, q)) * V_HOPF for q in qs]

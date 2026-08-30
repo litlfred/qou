@@ -187,8 +187,8 @@ def main() -> int:
 
     w.add_assertion(
         name="standard_channel_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )

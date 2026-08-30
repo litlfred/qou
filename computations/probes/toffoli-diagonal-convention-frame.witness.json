@@ -1,0 +1,72 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T16:38:18.656983+00:00",
+  "commitSha": "e04f2303fb2563c8c5232c511e55f3a6486f4758",
+  "assertions": [
+    {
+      "name": "published_P77_reconstructs_from_z_C",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "published_P77_vanishes_at_golden_ratio",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "z_D_recipe_does_not_vanish_at_golden_ratio",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "toffoli-diagonal-convention-frame",
+  "scriptFile": "toffoli_diagonal_convention_frame_probe.py",
+  "scriptHash": "03006b803772",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_diagonal_convention_frame_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_diagonal_convention_frame_probe.py"
+  },
+  "description": "Reconstructs the published Toffoli diagonal P_77 = (q + q^{1/2} - 1)/(q+1) from the transfer-matrix block's own recipe V_1 = z*c + d, and finds it is exactly z_C + (q-1)/(q+1) -- convention C, excised 2026-08-09. Its golden-ratio zero at q = 1/phi^2 is therefore a C-frame feature: the same recipe at the canonical z_D has its root at 0.6631 instead, 74% away. At q0 the two differ by 21% and both stay positive, so the q-GoL stability VERDICT survives the convention while the threshold and the number do not. scope-(a).",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "recipe": "V_1 = z(q)*c + d, c = 1, d = (q-1)/(q+1)"
+  },
+  "data": {
+    "worst_abs_diff_vs_z_C": "1.33638235505e-51",
+    "smallest_abs_diff_vs_z_D": "0.113367702963",
+    "golden_threshold_q": "0.381966011250105151795413165634",
+    "z_D_recipe_root": "0.663137898367361434473583982884",
+    "P77_at_q0_published_C": "0.551443414318455993583364700049",
+    "P77_at_q0_z_D_recipe": "0.664811117281226792765751883737"
+  },
+  "caveats": [
+    "The z_D column is NOT the convention-D Toffoli diagonal. Substituting z_D into a closed form derived under C is not a migration -- AGENTS.md states this for the c_k ladder and it applies verbatim here. The column establishes only that the golden-ratio root is not invariant under the convention. What the D-frame diagonal is remains open and is content work."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

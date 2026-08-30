@@ -1,0 +1,160 @@
+{
+  "engine": "python+mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T08:45:53.115269+00:00",
+  "commitSha": "47f8fa2278e84329ed6e4b2476400e8492efd8de",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "trm5-zcubed-live-producer-audit",
+  "scriptFile": "trm5_zcubed_live_producer_audit.py",
+  "scriptHash": "6a07494632c6",
+  "scriptCommitSha": "1f45c01fe23f154cac8803118b9172411f760b64",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/trm5_zcubed_live_producer_audit.py"
+    ],
+    "reproduce": "python3 -u computations/probes/trm5_zcubed_live_producer_audit.py"
+  },
+  "description": "The 2026-05-19 TR_M[5] fix (h*z^2 + z, NOT z^3) reached pyhecke/gram.py and never reached computations/. Five live producers on the same H_3 NF basis still carry z^3, and the wrong weight masks the convention-D Gram singularity.",
+  "nf_basis": [
+    [],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "regression_guard": {
+    "note": "These five carried TR_M[5] = z^3 when this probe was written; all five are fixed in the same PR. The check is now that the fix HOLDS, keyed on content rather than line numbers — the line-keyed version contradicted its own payload as soon as the fix landed.",
+    "all_five_fixed": true,
+    "sites": [
+      {
+        "file": "computations/compound_shift_nf.py",
+        "symbol": "tr_m_weights_mp",
+        "historical_line": 257,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/electron_sigma_f_chain.py",
+        "symbol": "TR_M",
+        "historical_line": 107,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/jet_knot_invariants.py",
+        "symbol": "tr_basis",
+        "historical_line": 56,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/atom_mass_derived.py",
+        "symbol": "TR_M_3",
+        "historical_line": 102,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/basis_knot_tables.py",
+        "symbol": "TR_M",
+        "historical_line": 54,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      }
+    ]
+  },
+  "check1_markov_derivation": {
+    "derived_symbolic": "q*z**2 + z - z**2/q",
+    "equals_z_cubed": false,
+    "difference": "-z*(q - z)*(q*z + 1)/q"
+  },
+  "check2_magnitude_at_q0": {
+    "C": {
+      "z": "0.49932033418369445241",
+      "committed_z_cubed": "0.12449094324223497257",
+      "correct_h_z2_plus_z": "0.55144341431845599358",
+      "correct_over_committed": "4.4295866025",
+      "committed_rel_error_pct": "-77.42452988"
+    },
+    "D": {
+      "z": "0.6126880371464652516",
+      "committed_z_cubed": "0.22999489803410145346",
+      "correct_h_z2_plus_z": "0.69116647835844452615",
+      "correct_over_committed": "3.0051383064",
+      "committed_rel_error_pct": "-66.72366134"
+    }
+  },
+  "check3_gram_rank_live_producer": {
+    "z_C/committed": {
+      "det": "0.360801088987",
+      "rank": 6,
+      "min_singular_value": "0.413999"
+    },
+    "z_C/correct": {
+      "det": "0.189205219144",
+      "rank": 6,
+      "min_singular_value": "0.101797"
+    },
+    "z_D/committed": {
+      "det": "0.152018239085",
+      "rank": 6,
+      "min_singular_value": "0.291531"
+    },
+    "z_D/correct": {
+      "det": "1.44947339554e-56",
+      "rank": 5,
+      "min_singular_value": "1.06744e-56"
+    }
+  },
+  "check4_same_gram_as_gram_h3": {
+    "gram_h3_det_factorization_at_q0": "-0.18920521914403675053",
+    "compound_shift_nf_correct_weight_at_q0": "0.189205219144",
+    "magnitudes_agree": true,
+    "note": "sign differs by a basis-ordering orientation; the magnitude identity is the claim"
+  },
+  "sequencing_constraint": "pyhecke/gram.py records that the trace fix and the Gram quotient must land together: fixing the trace alone drops a singular Gram into a path with nothing to handle it. Check 3 measures exactly that on compound_shift_nf.",
+  "context": {
+    "prior_audit": "docs/audits/2026-05-19-trm5-markov-bug.md",
+    "beans": [
+      "qou-t9r1",
+      "qou-pmkh",
+      "qou-cds2"
+    ],
+    "scope": "(a) scope-limited -- five named files on one basis; not a claim about every z**3 in the corpus"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814195318705"
+}

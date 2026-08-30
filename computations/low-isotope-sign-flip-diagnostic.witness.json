@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:06:19.104308+00:00",
-  "commitSha": "85d4ee8bf9f089c29a0bec444f69ef02b40a0c40",
+  "computedAt": "2026-08-30T07:11:48.251597+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
-      "computed": 5,
-      "expected": 5,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "unit": "rows",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "e964cd8e8874",
-  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
+  "scriptHash": "34a96c31ff55",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

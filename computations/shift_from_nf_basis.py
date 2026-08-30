@@ -252,16 +252,28 @@ def main() -> int:
         .add_data("empirical_shift_neutron_h3_standalone", 16)
         .add_data("empirical_shift_proton_in_deuteron_h6", 18)
         .add_data("empirical_shift_neutron_in_deuteron_h6", 21)
+        # These read `computed=shift_p, expected=shift_p` — the same
+        # expression, so they passed for any value including `inf` and `nan`,
+        # which is precisely what a name ending `_finite` promises to exclude
+        # (bean `qou-26f2`). The name already said what to check; it now does.
+        #
+        # Finiteness is decided in sympy, not by rounding to float64. The
+        # first draft of this fix used `math.isfinite(float(shift_p))`, which
+        # answers a different question: a shift too large for a double raises
+        # `OverflowError` instead of reporting False, so the check that is
+        # meant to catch a blow-up would crash on one. `.is_finite` returns
+        # None when sympy cannot decide, and `is True` sends that to a
+        # failure — unknown is not verified.
         .add_assertion(
             "shift_proton_h3_finite",
-            computed=shift_p,
-            expected=shift_p,
+            computed=bool(sp.sympify(shift_p).is_finite is True),
+            expected=True,
             source="canonical Markov trace via NF basis",
         )
         .add_assertion(
             "shift_neutron_h3_finite",
-            computed=shift_n,
-            expected=shift_n,
+            computed=bool(sp.sympify(shift_n).is_finite is True),
+            expected=True,
             source="canonical Markov trace via NF basis",
         )
         # F1 (PR #565): anchor the per-nucleon shifts against the

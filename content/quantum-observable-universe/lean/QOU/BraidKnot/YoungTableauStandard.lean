@@ -30,16 +30,23 @@ and the C8 corollary is `KeystoneC8SuperExpBound`-specific:
   `skewSYT_nonempty_of_not_le`.
 * `involutionNumber_pos` — a genuine, fully proved positivity helper
   (`involutionNumber` lives in the imported `KeystoneC8SuperExpBound`).
-* `c8_superexp` — an **unconditional** corollary of the sibling arithmetic core
-  `c8_lower_bound`, expressed over the canonical `dimSYT` / `partitionShape`; its only
-  gaps are the two cited RSK identities below.
+* `c8_superexp` — a corollary of the sibling arithmetic core `c8_lower_bound`,
+  expressed over the canonical `dimSYT` / `partitionShape`. All of its own arithmetic
+  is proved; its only gaps are the two RSK identities below, which it inherits as the
+  `[RSKIdentitiesContext]` hypothesis rather than as `sorry`s.
 
-The two remaining cited `sorry`s (`branching_two_one`, `sum_dimSYT_eq_involution`)
-are the classical Standard-Young-Tableau counting facts Mathlib cannot yet prove —
-siblings of the canonical `QOU.Mathlib.RSKBurnsideHolds` target, discharged by the
-RSK correspondence (the open P1–P5 program
+The two remaining gaps (`branching_two_one`, `sum_dimSYT_eq_involution`) are the
+classical Standard-Young-Tableau counting facts Mathlib cannot yet prove — siblings
+of the canonical `QOU.Mathlib.RSKBurnsideHolds` target, discharged by the RSK
+correspondence (the open P1–P5 program
 `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). Each states the
 real proposition and carries a `-- Ref:` to Sagan.
+
+They are **not** `sorry`s, as this header used to say. Each is `§3b`-conditional on
+the `RSKIdentitiesContext` class and its body is the matching class field, so
+`#print axioms` on them is clean and the gap shows up in the signature instead. No
+instance of that class exists in this corpus, so neither identity — nor
+`c8_superexp`, which inherits the same hypothesis — can be applied at a concrete `k`.
 
 The third, `skew_le_straight`, is **proved** (§"Skew ↪ straight"): it is an
 *inequality*, and an inequality between two counts needs only an injection, not a
@@ -472,13 +479,26 @@ theorem involutionNumber_pos : ∀ n, 0 < involutionNumber n := by
         = involutionNumber (n + 1) + (n + 1) * involutionNumber n := rfl
     omega
 
-/-! ## The two remaining RSK-family identities (cited `sorry`)
+/-! ## The two remaining RSK-family identities (hypotheses, not `sorry`s)
 
 These are the deep Standard-Young-Tableau counting facts that Mathlib does not
 prove (no hook-length formula, no RSK correspondence). Each states the real
-proposition over the canonical `dimSYT` / `partitionShape` / skew count; the fill
-is `sorry` with a `-- Ref:` to Sagan. Their sibling `skew_le_straight` is stated
-here too but is no longer cited — it is proved above. They are siblings of the canonical
+proposition over the canonical `dimSYT` / `partitionShape` / skew count.
+
+**How the gap is carried.** This section text used to say the fill "is `sorry`
+with a `-- Ref:` to Sagan". It is not: both are `§3b`-conditional on the
+`RSKIdentitiesContext` class below, and each theorem's body is the matching
+class field. Nothing here is axiomatised and nothing here is `sorry`, so
+`#print axioms` on either is clean — the gap is instead visible in the
+signature, as an instance argument a caller has to produce.
+
+**No instance exists.** `RSKIdentitiesContext` has no instance anywhere in this
+corpus, degenerate or otherwise, so neither identity can be applied at a
+concrete `k` and nothing downstream is silently discharged. That is the intended
+state until the RSK program lands, not an oversight.
+
+Their sibling `skew_le_straight` is stated here too but is no longer cited — it
+is proved above, unconditionally. They are siblings of the canonical
 `QOU.Mathlib.RSKBurnsideHolds` target — all discharged by the RSK correspondence
 (open P1–P5 program `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). -/
 
@@ -499,12 +519,16 @@ index-times-dimension formula, and `Σ_λ f^{λ/μ} f^λ` by `s_μ·s_1^{k−m} 
 `λ` not containing `(2,1)`.  See `skewSYT_nonempty_of_not_le`, which exhibits the
 counterexample the guard removes and checks this identity at `k = 3, 4`.
 
-This requires massive infrastructure (the RSK correspondence and hook-length formula)
-and is left as a sorry.
+This requires massive infrastructure (the RSK correspondence and hook-length formula),
+and is **not** proved here. It is not a `sorry` either: the body is
+`ctx.branching_two_one`, the matching field of the `[RSKIdentitiesContext]`
+hypothesis, so the gap sits in the signature rather than in the term and
+`#print axioms` on this declaration is clean.
 
 **Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
 proves the Burnside identity `∑ (dimSYT)² = n!`. It does not yet prove this classical
-branching identity, which remains an open gap. -/
+branching identity, which remains an open gap. No instance of `RSKIdentitiesContext`
+exists in this corpus, so this theorem cannot currently be applied at any `k`. -/
 theorem branching_two_one (k : ℕ) (hk : 3 ≤ k) [ctx : RSKIdentitiesContext] :
     3 * (∑ p : Nat.Partition k,
         dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k :=
@@ -533,19 +557,26 @@ theorem skew_le_straight (k : ℕ) :
 /-- **RSK for involutions.** `Σ_{λ⊢k} f^λ = I(k)`, the number of involutions in
 `S_k` — the `q = 1` value of the QOU na-Stokes period.
 
-This requires massive infrastructure (the RSK correspondence) and is left as a sorry.
+This requires massive infrastructure (the RSK correspondence), and is **not** proved
+here. It is not a `sorry` either: the body is `ctx.sum_dimSYT_eq_involution`, the
+matching field of the `[RSKIdentitiesContext]` hypothesis, so the gap sits in the
+signature rather than in the term and `#print axioms` on this declaration is clean.
 
 **Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) only
 proves the standard permutation RSK identity (`∑ (dimSYT)² = n!`), not this specialization
-for involutions. This remains an open gap. -/
+for involutions. This remains an open gap. No instance of `RSKIdentitiesContext` exists in
+this corpus, so this theorem cannot currently be applied at any `k`. -/
 theorem sum_dimSYT_eq_involution (k : ℕ) [ctx : RSKIdentitiesContext] :
     (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k :=
   ctx.sum_dimSYT_eq_involution k
 
 /-! ## The unconditional C8 super-exponential corollary -/
 
-/-- **C8 super-exponential lower bound (unconditional modulo the two remaining RSK
-`sorry`s above).** Instantiating the sibling arithmetic core `c8_lower_bound`
+/-- **C8 super-exponential lower bound (`§3b`-conditional on `[RSKIdentitiesContext]`).**
+This said "unconditional modulo the two remaining RSK `sorry`s above"; there are no
+`sorry`s above — the two RSK identities are fields of the `[RSKIdentitiesContext]`
+hypothesis this theorem also takes, so the conditionality is in the signature and
+`#print axioms` here is clean. Instantiating the sibling arithmetic core `c8_lower_bound`
 with `f = f^λ = dimSYT`, `g = f^{λ/(2,1)}`, `kfac = k!`, `Ik = I(k)`, and
 discharging its inputs by casting `branching_two_one` (A) and `skew_le_straight` +
 `sum_dimSYT_eq_involution` (C) to `ℝ`, the Plancherel-weighted branched sum obeys

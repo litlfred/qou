@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:54:17.259991+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T06:34:14.889006+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "assertions": [
     {
       "name": "dim_H_n_eq_factorial_n2",
@@ -45,44 +45,44 @@
       "source": "Burnside Σ_λ f_λ² = n!"
     },
     {
-      "name": "dim_centre_eq_pn_2",
+      "name": "partition_count_p_2",
       "computed": 2,
       "expected": 2,
       "passed": true,
       "tolerance": 0,
-      "source": "number of partitions p(n) = dim Z(H_n)"
+      "source": "p(n) from the standard partition function; identification with dim Z(H_n) is Brundan-Kleshchev, not computed here"
     },
     {
-      "name": "dim_centre_eq_pn_3",
+      "name": "partition_count_p_3",
       "computed": 3,
       "expected": 3,
       "passed": true,
       "tolerance": 0,
-      "source": "number of partitions p(n) = dim Z(H_n)"
+      "source": "p(n) from the standard partition function; identification with dim Z(H_n) is Brundan-Kleshchev, not computed here"
     },
     {
-      "name": "dim_centre_eq_pn_4",
+      "name": "partition_count_p_4",
       "computed": 5,
       "expected": 5,
       "passed": true,
       "tolerance": 0,
-      "source": "number of partitions p(n) = dim Z(H_n)"
+      "source": "p(n) from the standard partition function; identification with dim Z(H_n) is Brundan-Kleshchev, not computed here"
     },
     {
-      "name": "dim_centre_eq_pn_5",
+      "name": "partition_count_p_5",
       "computed": 7,
       "expected": 7,
       "passed": true,
       "tolerance": 0,
-      "source": "number of partitions p(n) = dim Z(H_n)"
+      "source": "p(n) from the standard partition function; identification with dim Z(H_n) is Brundan-Kleshchev, not computed here"
     },
     {
-      "name": "dim_centre_eq_pn_6",
+      "name": "partition_count_p_6",
       "computed": 11,
       "expected": 11,
       "passed": true,
       "tolerance": 0,
-      "source": "number of partitions p(n) = dim Z(H_n)"
+      "source": "p(n) from the standard partition function; identification with dim Z(H_n) is Brundan-Kleshchev, not computed here"
     },
     {
       "name": "jm_content_separation_n2",
@@ -166,11 +166,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "brundan-kleshchev-audit",
   "scriptFile": "brundan_kleshchev_audit.py",
-  "scriptHash": "742488c12937",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "c0aa62675e37",
+  "scriptCommitSha": "d4c8cceb49842afbb17884447af09db6b839bdad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -185,7 +185,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

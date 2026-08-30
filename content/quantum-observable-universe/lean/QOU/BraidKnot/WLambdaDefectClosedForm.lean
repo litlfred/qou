@@ -241,10 +241,36 @@ decomposition (`twoM_content_decomposition`) is a complete proof route:
   `Σ_{k=1}^n (k−1) = C(n,2)` (only the `(i,k)²=e` terms hit the identity). **No
   HLF, no dimensions.** Brute-verified in `ℂ[S_n]`, `n = 2..6`.
 
-Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. The remaining work is **Lean
-formalization** of A (Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)`
-+ regular-character bridge) — **neither the HLF**. Full proof:
+Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. Full proof:
 `docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md`.
+
+**Both halves are now formalized, and Identity I is unconditional at every `n`.**
+This paragraph used to end "the remaining work is **Lean formalization** of A
+(Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)` + regular-character
+bridge)". Neither remains:
+
+* **A** — `QOU.BraidKnot.PieceA.pieceA`, over Mathlib's `YoungDiagram`,
+  sorry-free and unconditional (bean `qou-o5xj`). The route is arm–leg /
+  β-set: expand `h = arm + leg + 1` and reduce to the off-diagonal pair count
+  (`pairCount_holds`), so it is HLF-free and dimension-free as claimed above.
+* **B and the assembly** —
+  `QOU.BraidKnot.PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general (n : ℕ)`
+  discharges `IdentityI.two_sum_dim_sq_hooks`'s class hypothesis with
+  `plancherelSnDataGeneral n`, giving
+  `2 · Σ_λ (dim λ)² · Σ_□ h(□)² = n(3n−1) · n!` with **no hypothesis**, where
+  the bridge previously held only for `n ≤ 12`. Axiom-clean
+  (`propext, Classical.choice, Quot.sound`) per
+  `docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md`.
+
+The `decide` checks in this file (`n ≤ 8`) are now a concrete cross-check of a
+general theorem rather than the only evidence for it.
+
+**What this does NOT close.** Identity I is a **first-moment** statement — the
+Plancherel mean of `Σ_□ h(□)²`. The open `M₁` problem is a second-order object,
+`Cov_Planch(Σ_□ h(□), Σ_□ c(□)²)`, and the general-`n` substrate here supplies
+no covariance. See `docs/workplans/2026-08-28-M1-arc-revised-workplan.md`; the
+same caveat applies to `secondMomentKernel_eq_zero`, which is a first-moment
+identity despite its name.
 Ref: [manuscript] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
 end QOU.BraidKnot.WLambdaDefect

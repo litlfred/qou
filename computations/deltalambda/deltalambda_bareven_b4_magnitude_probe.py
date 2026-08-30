@@ -134,12 +134,30 @@ def bar_even(bfun, A, m):
 def main() -> int:
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
+    # CONVENTION C, DELIBERATE AND BLOCKED -- do not substitute z_D here.
+    # z_naive (below) and its bar image z_bar are convention C, z = sqrt(q)/(q+1).
+    # This probe's SUBJECT is bar-evenness, and only z_C has it: measured
+    # symbolically, bar(z_C) - z_C = 0, while bar(z_D) = 1/(q^3+q) and
+    # bar(z_D) - z_D = 1/q - q = -h, so z_D is bar-NEITHER. Swapping in z_D
+    # therefore flips this file's own assertion rather than re-coordinatising
+    # it. Registered in docs/coordination/trace-convention-registry.json under
+    # blocked_on_rederivation (both z_naive and z_bar), blocked on bean
+    # qou-pmkh: what replaces this under D is a D-frame bar decomposition
+    # built on bar(z_D) = z_D - h, which is real work, not a swap.
     z_naive = 1 / (v + 1 / v)                       # 1/[2]_v
     g_reeb = 1 / mp.sqrt(5 + (q0 - 1) ** 2 / q0)    # derived reeb magnitude
     ceiling = 1 / mp.sqrt(mp.mpf(5))
 
     # ---- 0. bar-parity of the parameter-free magnitudes ----------------------
     g_bar = 1 / mp.sqrt(5 + (1 / q0 - 1) ** 2 * q0)
+    # MANIFEST, not measured (labelled 2026-08-30, qou-t9r1). z(v) = 1/(v + 1/v)
+    # is symmetric under the bar v -> 1/v BY INSPECTION -- this line differs from
+    # z_naive only by commuting the addition, so `z_bar_even` below is exactly 0
+    # and CANNOT FAIL. No formulation of it can: the symmetry is syntactic.
+    # Kept because the claim is TRUE and worth recording, but it is not evidence
+    # in the way `g_bar_even` is -- that one compares (q-1)**2/q against
+    # (1/q-1)**2*q, a genuine algebraic identity that a sign slip would break.
+    # Read the two assertions differently when citing this witness.
     z_bar = 1 / (1 / v + v)
     g_bar_even = abs(g_reeb - g_bar) < mp.mpf(10) ** -40
     z_bar_even = abs(z_naive - z_bar) < mp.mpf(10) ** -40

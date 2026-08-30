@@ -548,3 +548,72 @@ structurally incapable of failing, because such an assertion is *green in every
 convention*. It took re-running a probe and reading the two arguments side by side.
 A fourth layer keyed on assertion **shape** rather than value is what the audit tool
 above now provides.
+
+
+---
+
+# Arc status, re-measured 2026-08-29
+
+Re-ran all three layers against `main` (1525 commits on from this audit's branch
+point). **The C-frame backlog this audit opened is closed.**
+
+## Layer 3 — zero C-frame records remain
+
+| computedAt | convention | allPassed | witness |
+|---|---|---|---|
+| 2026-08-25T18:53:21 | D | true | `ylambda-sign-content-threshold` |
+| 2026-08-25T19:46:06 | D | true | `threerow-sign-crossing` |
+| 2026-08-25T20:03:36 | D | true | `threerow-4he-completion` |
+| 2026-08-25T21:17:47 | D | **false** | `mu3-abs-choice-robustness` |
+| 2026-08-25T21:17:48 | D | **false** | `mu3-frechet-perblock` |
+
+All five that were convention-C on 2026-08-25 have been regenerated post-switch.
+Two now report `allPassed: false`, which is the honest state rather than a
+regression — a probe whose object D annihilates *should* fail its own gate.
+Three further D-era witnesses have since appeared on the same axis
+(`markov-weight-support-conjugation`, `qbeta-d-frame-trace-baseline`,
+`molien-jones-markov-general-n`), so 13 witnesses now match, none pre-switch.
+
+## Both confirmed instances retired
+
+- `qou-ulxr` — closed with a **better diagnosis than this audit had**. The prior
+  reason is not `y_λ = 0 ⇒ sign(0)`: under D the threshold lands *exactly on the
+  content lattice* (`r = 2 ⇒ Q^r = Q² ⇒ c* = −2`, an attainable content), so
+  `wenzl_sign`'s `hnd` hypothesis fails and the parity is **undefined**, not
+  merely zero. Measured margin `0.0` at every n = 3..12. The rule is also vacuous
+  where it stays well-posed (0 deep cells, n = 2..12). Producer rewritten as a
+  retirement record keeping the C measurement in `convention_c_record`; Lean
+  untouched and not refuted.
+- `qou-qdtk` — retired in `6ebae05c45`, same shape.
+
+## A sibling found a sixth instance
+
+`qou-iav7`: `threerow_isospin_parity_probe` carries the same C/D straddle and
+**emits no witness at all**, so layers 2 and 3 are both blind to it — only the
+source scan can see that one. In progress on another branch; not touched here.
+
+## What this audit got wrong about itself
+
+**The `--selftest` was anchored to a live file, and the fix broke it.**
+
+It required `threerow_qcross_trend_probe.py` to be detected *and* to read as
+hard-coding C's level. That file was retired in `6ebae05c45` — exactly what this
+audit asked for — and the selftest then began failing on a clean tree, reporting
+a regression that was the fix landing.
+
+That is the worst possible direction for a check to fail in: **it cries regression
+at success**, which trains a reader to ignore it. A selftest anchored to a mutable
+instance goes stale the moment the instance is repaired.
+
+Re-anchored on **per-pattern minimal probe strings** — the detector is now tested
+against strings it cannot lose, and the corpus is left to the report. Layer 3's
+count is explicitly a report, never a required value: zero C-frame records is the
+goal state, not a failure.
+
+**The first attempt at that fix did not work, and the negative control is what
+caught it.** It used one combined fixture containing a variable named
+`three_row` — which matches `ROWS`' `three[_-]?row` alternative — so sabotaging
+`ROWS`' `len(x) >= 3` branch left the selftest **green**. Per-branch probes
+replaced it, and two negative controls now confirm the check bites: breaking
+`ROWS/len` alone fails it, and breaking `C_LEVEL`'s constant branch alone fails
+it. Without those controls this selftest would have been decoration.

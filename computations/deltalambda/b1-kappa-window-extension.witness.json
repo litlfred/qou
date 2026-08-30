@@ -1,0 +1,182 @@
+{
+  "computation": "b1-kappa-window-extension",
+  "engine": "python",
+  "scriptFile": "computations/deltalambda/wlambda_covariance_epic_B1_kappa_window_extension.py",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Plancherel combinatorics over partitions only: exact Fraction arithmetic plus mpmath at 60 dps for the comparison to kappa. No substrate modulus, no q, no float64.",
+  "parameters": {
+    "n_min": 68,
+    "n_max": 78,
+    "kappa": "128/(225 pi^2)",
+    "dps": 60,
+    "gap": "qou-k5r5",
+    "track": "B1"
+  },
+  "data": {
+    "kappa": "0.05764049558319659886585143",
+    "rows": [
+      {
+        "n": 68,
+        "M1_num": "412948672067619143797789764496108600326277140289582071873940150863391554466438827778195639",
+        "M1_den": "183771180750500683304883473858856868364221447222491922747819142923105075200000000000000",
+        "kappa_n": "0.05893134950439987986486227",
+        "kappa_n_minus_kappa": "0.0012908539212",
+        "sign": "+",
+        "ms": 64480
+      },
+      {
+        "n": 69,
+        "M1_num": "13089321305310636288484768180649215167351538108730317049164914102629444545764780498954467",
+        "M1_den": "5617066165469700519452960054201738212505624490128471649859787467574476800000000000000",
+        "kappa_n": "0.05892300158712856333048759",
+        "kappa_n_minus_kappa": "0.00128250600393",
+        "sign": "+",
+        "ms": 74270
+      },
+      {
+        "n": 70,
+        "M1_num": "317780507768851787364869104279449176530665804823176033967329288940143505127540613349014303931",
+        "M1_den": "131569664207029889207250573941578154499161743557177217148995773810490484981760000000000000",
+        "kappa_n": "0.05891506868450117973881566",
+        "kappa_n_minus_kappa": "0.0012745731013",
+        "sign": "+",
+        "ms": 87250
+      },
+      {
+        "n": 71,
+        "M1_num": "78351883103283410507481976389001643365522971048795214019280655768276871965747475104509547664183",
+        "M1_den": "31313580081273113631325636598095600770800494966608177681460994166896735425658880000000000000",
+        "kappa_n": "0.05890753413671497386404414",
+        "kappa_n_minus_kappa": "0.00126703855352",
+        "sign": "+",
+        "ms": 101590
+      },
+      {
+        "n": 72,
+        "M1_num": "3792663442647905007899365626087861703613187955240078077630461955120079424290078353869847776899",
+        "M1_den": "1463846223311547994960344800317477271805714195593471720881306637883383973150720000000000000",
+        "kappa_n": "0.05890031370574370604136583",
+        "kappa_n_minus_kappa": "0.00125981812255",
+        "sign": "+",
+        "ms": 116590
+      },
+      {
+        "n": 73,
+        "M1_num": "6594435776581476568446834997925557007723607553440922285587337766875738486752547116550016530499269",
+        "M1_den": "2459261655163400631533379264533361816633599848597032491080595151644085074893209600000000000000",
+        "kappa_n": "0.05889328160245180251671404",
+        "kappa_n_minus_kappa": "0.00125278601926",
+        "sign": "+",
+        "ms": 136640
+      },
+      {
+        "n": 74,
+        "M1_num": "59634322481307972291550960178313537113046254931359012179846310926742836217774409271483085975589991",
+        "M1_den": "21498230264806784499680681798968817562223450928726611355962800259567362321363763200000000000000",
+        "kappa_n": "0.05888630172937965648230813",
+        "kappa_n_minus_kappa": "0.00124580614618",
+        "sign": "+",
+        "ms": 158670
+      },
+      {
+        "n": 75,
+        "M1_num": "147841009540703035272922829177316087626735583123031930019230697857405765633136177865543442687180210939",
+        "M1_den": "51544156882900746516434402681207636987186945946714923387056409902338707901701758648320000000000000",
+        "kappa_n": "0.05887925697883025358591502",
+        "kappa_n_minus_kappa": "0.00123876139563",
+        "sign": "+",
+        "ms": 181260
+      },
+      {
+        "n": 76,
+        "M1_num": "209668873455739222593330505588762294215277902312827118941057749969004749573978595028028850298804215387",
+        "M1_den": "70727884444581851422926905934739802632794117558462206903291690279524918737297525964800000000000000",
+        "kappa_n": "0.05887207091284959132745069",
+        "kappa_n_minus_kappa": "0.00123157532965",
+        "sign": "+",
+        "ms": 210820
+      },
+      {
+        "n": 77,
+        "M1_num": "152122621258596383472223352409787306509119400210386105578012518797171268497019214254421286218572980573",
+        "M1_den": "49672030733807234316001613258863218032821443200398532920093964302203814058261898854400000000000000",
+        "kappa_n": "0.05886471853370614279190331",
+        "kappa_n_minus_kappa": "0.00122422295051",
+        "sign": "+",
+        "ms": 243900
+      },
+      {
+        "n": 78,
+        "M1_num": "6109050891437682552038451174933955847164768982673254860383050211306736358354736837094465290411042102541",
+        "M1_den": "1931690084092503556733396071178014034609722791126609613559209722863481657821296066560000000000000000",
+        "kappa_n": "0.05885722550346492813334825",
+        "kappa_n_minus_kappa": "0.00121672992027",
+        "sign": "+",
+        "ms": 283070
+      }
+    ],
+    "local_exponent_min_near": 72,
+    "windowed_exponents": {
+      "68..71": "0.43133396",
+      "69..72": "0.41937918",
+      "70..73": "0.41086006",
+      "71..74": "0.40834636",
+      "72..75": "0.41289892",
+      "73..76": "0.42399125",
+      "74..77": "0.43976764",
+      "75..78": "0.4575424"
+    },
+    "secant_over_new_window": "0.43102481",
+    "prior_reading": "monotone rise ~0.25 -> 0.36 over n = 40..64 (2026-08-28 workplan)",
+    "verdict": "window 67 -> 78, all kappa_n > kappa, monotone approach from above; effective exponent NON-monotone with a minimum near n = 71-72, so the genus-1 correction is not a single power at these n"
+  },
+  "assertions": [
+    {
+      "name": "all_kappa_n_exceed_kappa",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "source": "B1_kappa_window_extension",
+      "note": "the one-sided bound kappa_n >= kappa holds at every new n"
+    },
+    {
+      "name": "kappa_n_strictly_decreasing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "B1_kappa_window_extension",
+      "note": "approach to kappa is from ABOVE and monotone across the new window"
+    },
+    {
+      "name": "window_extended_to_78",
+      "computed": 78,
+      "expected": 78,
+      "passed": true,
+      "source": "B1_kappa_window_extension",
+      "note": "previously verified only to n <= 67"
+    },
+    {
+      "name": "effective_exponent_is_NOT_monotone",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "B1_kappa_window_extension",
+      "note": "a single power law would give a monotone effective exponent; this has a minimum near n = 71-72, so at least two terms of different order are present"
+    },
+    {
+      "name": "exponent_below_edge_order",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "B1_kappa_window_extension",
+      "note": "every windowed exponent is well below the edge order 2/3"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "8aef03a42108",
+  "scriptCommitSha": "8d638d3acc905eebc8c00522e9795a58c4c7320a",
+  "commitSha": "8d638d3acc905eebc8c00522e9795a58c4c7320a",
+  "computedAt": "2026-08-30T03:28:21.891195+00:00",
+  "durationMs": 0,
+  "engineVersion": "3.11.15"
+}

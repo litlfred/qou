@@ -89,13 +89,35 @@ theorem nodeOf_barInvolution_highest_weight
   rw [S.bar_invariant T]
   exact C.crystal_realises T i
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `barInvolution T := T`, so `bar_invariant` is discharged by `rfl` on
+    `T = T`. Every normal form is bar-invariant because the bar involution is
+    the identity map — nothing here sends `q ↦ q⁻¹` or reverses a crossing, and
+    `bar_involutive` is `rfl` for the same reason. A `sorry` would at least be
+    visible to `#print axioms`; this was not.
+
+    As an unconditional `instance` it made `barInvolution_eq_self` and
+    `nodeOf_barInvolution_highest_weight` unconditional theorems about the
+    identity map, so `conj:symmetric-crystal-pair-production` asserted nothing.
+
+    Demoted the same way as `ConfinementGradingCorrespondence.canonical`
+    (bean `qou-fngs`). Nothing consumed it: the class has no users outside this
+    file.
+
+    **Still open:** that the GS-generated normal forms are fixed by the genuine
+    bar involution, and the Type-B folding statement that a transition
+    `v₀ → v₋ ⊔ v₊` out of a bar-invariant source produces a bar-conjugate
+    pair — which no field of this class states. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     SymmetricCrystalPairProduction R q where
   barInvolution T := T
   bar_involutive _ := rfl
-  -- Ref: [manuscript] conj:symmetric-crystal-pair-production (§3b-cond conjectural-class instance; sorry = the conjecture)
+  -- Ref: [manuscript] conj:symmetric-crystal-pair-production (§3b-cond conjectural class;
+  --      discharged here by `barInvolution := id`, not by a `sorry` and not by the conjecture)
   bar_invariant _ := rfl
 
 end SymmetricCrystalPairProduction

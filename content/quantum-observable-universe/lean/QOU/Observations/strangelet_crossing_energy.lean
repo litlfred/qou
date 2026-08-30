@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.ArchimedeanEval
 
 /-!
 # QOU.Observations.strangelet_crossing_energy
@@ -12,24 +12,28 @@ This module states the manuscript claim conditional on the §3b hypothesis class
 
 ## Base ring (§7c) — `ℝ` here is correct
 
-`StrangeletCrossingEnergyContext` extends `QOU.Shared.MarkovTraceContext`,
-which supplies a generic coefficient ring `R`, but this block's fields stay at
+`StrangeletCrossingEnergyContext` inherits a generic coefficient ring `R` from
+`QOU.Shared.MarkovTraceContext`, but this block's fields stay at
 `ℝ`: the binding-energy formulae are hypothesised under `0 < q_real`, and the
 conclusion `E_bind_udd < E_bind_uds` is derived by `inv_pos` + `linarith`.
 Ordering hypotheses and `linarith` are archimedean, so the block sits after the
 substrate→archimedean wall.  Reviewed under bean `qou-mtcx`; do not "port" it
 to `R` to reduce an `ℝ` count.
 
-The private `q_real : ℝ` is genuinely used, but nothing connects it to the
-inherited `q : R` — tying the two would need the archimedean evaluation
-functor, which the parent context does not carry.  Recorded as bean `qou-mt7r`.
+`q_real` is genuinely used and is now **tied** to the inherited `q : R` (bean
+`qou-mt7r`): the class extends `QOU.Shared.ArchimedeanEval`, which carries an
+assumed evaluation `eval : R →+* ℝ` and derives `q_real := eval q`.  It used to
+be an independent field, so `0 < q_real` constrained a free real rather than the
+image of this universe's substrate parameter.  The evaluation is assumed, not
+constructed: it is **not** the archimedean τ-functor, and
+`ArchimedeanEval.ofRingHom` machine-checks how little it takes to inhabit.
 -/
 
 namespace QOU.Observations
 
 /-- Abstract context for the `strangelet_crossing_energy` claim — manuscript-themed
     typed fields below. -/
-class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext where
+class StrangeletCrossingEnergyContext extends QOU.Shared.ArchimedeanEval where
   /-- Coulomb charge `Q(𝓑₃(u, d, s)) = +2/3 − 1/3 − 1/3 = 0`. -/
   Q_uds : ℝ
   /-- Baryon count `N` of the strangelet composite `𝓢_N`. -/
@@ -40,8 +44,6 @@ class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext wher
   n_minus : ℕ
   /-- Crossing energy `E_cross(𝓢_N)`. -/
   E_cross : ℝ
-  /-- Substrate parameter `q` specialised to `ℝ` for the energy formula. -/
-  q_real : ℝ
   /-- Binding energy per baryon for `uds` (strange matter). -/
   E_bind_uds : ℝ
   /-- Binding energy per baryon for `udd` (neutron matter). -/

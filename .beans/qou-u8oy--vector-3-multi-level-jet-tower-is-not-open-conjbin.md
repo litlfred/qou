@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T08:45:07Z
-updated_at: 2026-08-29T08:45:47Z
+updated_at: 2026-08-29T18:58:24Z
 ---
 
 2026-08-29, branch claude/tower-gap-lean-and-infra-2026-08-29 (PR #5978),
@@ -65,3 +65,42 @@ kind of over-reach the corpus-grep rule exists to prevent.
 NOTE ON SCOPE. This bean asserts only that the SCAFFOLD is not open. It does not
 claim (1)-(3) are open -- that claim would need its own corpus-grep, which has
 not been run here.
+
+
+CORPUS-GREP RUN 2026-08-29 (this bean explicitly deferred it). PR #6051, audit
+docs/audits/2026-08-29-jet-filtration-three-inputs-corpus-grep.md.
+
+The bean closed with: 'This bean asserts only that the SCAFFOLD is not open. It
+does not claim (1)-(3) are open -- that claim would need its own corpus-grep,
+which has not been run here.' It has now been run. ONE of the three is open.
+
+(1) super-exponential magnitude of a_D^(n) -- NOT OPEN as a growth class.
+Settled 2026-06-25 (audit 2026-06-25-sw-jet-prolongation-explicit-and-fork.md,
+PR #2795): sqrt-branch at disc_X=0, plus an independent corpus-internal
+residue-sum route. Object positively identified (#2822): T_q(n) = n*lw(n-1) is
+the q-deformed involution number, T_q(n) -> I(n) (A000085) by RSK -- re-verified
+exact n=1..12 today. AND the gloss the SCOPE section carried for it, 'the
+sqrt-branch falling-factorial growth', names a form that was PRUNED: re-measured
+today, lw / |prod[1/2-k]_q| decays 4.0109 -> 0.0282 over n=2..10 with monotone
+decreasing successive ratios (0.889 -> 0.383), so no constant R^n absorbs it --
+the falling factorial OUTGROWS lw. Scope-(a), not a structural exclusion; the
+nu=1/2 q-Bessel order and the super-exponentiality both stand. What is left is
+the exact q-statistic, itself bounded: no q-holonomic recurrence for T_q(n) at
+depth <=3, Laurent degree <=3, established precision-independently.
+
+(2) the keystone a_D^(n) = lw(n-1) -- GENUINELY OPEN. 3b conjecture class
+QOU.Mass.NaStokesKeystone.ProlongationPeriodMeanQuantumDim, no instance.
+Consumed only at c=1,2,3, and as of PR #6051 those three lw values are derived
+from the q-hook-length formula rather than substituted as literals; they
+reproduce the probe's first three rows exactly (1.0, 1.336966, 2.532780).
+
+(3) the residue weight w_n(K) -- NOT OPEN. Scope-(b) excluded 2026-08-29 by
+bean qou-1xne / PR #5967, invariant cited (no_scalar_kernel_on_carrier,
+sorry-free): w_3 is a required boundary condition of a rank-2 problem. Read and
+cited, not re-derived -- a sibling owns it.
+
+SIDE FIX: the falling-factorial probe's set_audit_only named a file that never
+existed, so every witness it wrote carried a dead pointer. Fixed at the
+producer; payload byte-identical (also across mpmath 1.3.0 -> 1.4.1).
+
+SO: the remaining research target under this conjecture is (2) alone.

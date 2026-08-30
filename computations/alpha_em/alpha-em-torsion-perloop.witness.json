@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:31:46.407356+00:00",
-  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
+  "computedAt": "2026-08-30T06:57:25.687101+00:00",
+  "commitSha": "1a3a41ab2650b38c5cd6744562e5b3d3eae83e39",
   "assertions": [
     {
       "name": "controls_pass",
@@ -27,30 +27,14 @@
       "passed": true,
       "tolerance": "1e-08",
       "source": "tau_RS(T^b1)=exp(1/2 zeta'_Delta0(0) Sum_q(-1)^q q C(b1,q))=exp(0)=1: analytic torsion trivial (pi cancels); fails pi-power=-1 and reciprocal-b1 axes"
-    },
-    {
-      "name": "permode_derivative_is_b1_independent_not_reciprocal",
-      "computed": 1.0,
-      "expected": 1.0,
-      "passed": true,
-      "tolerance": "0.5",
-      "source": "d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is b1-independent; no graded/per-mode determinant object on T^{b1} is reciprocal in b1"
-    },
-    {
-      "name": "no_flat_torus_object_meets_all_three_axes",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": "0.5",
-      "source": "A (torsion=1, covolume residue) and B (alt-ratio=1, per-mode const) each fail area-free + pi^-1 + reciprocal-b1; measure must be the RT/WRT S-matrix total quantum dimension D=Sum d_i^2 (off the flat-torus determinant). No alpha_k wired; no fit."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "alpha-em-torsion-perloop",
   "scriptFile": "alpha_em_torsion_perloop_probe.py",
-  "scriptHash": "cef927a75a7d",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "6291de02bab4",
+  "scriptCommitSha": "4faace2fd4b53a206daf62ef2f70b36b89f83ba8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -160,6 +144,16 @@
       },
       "reciprocal_b1_is": "a 1/(total-count) democratic-average normalization (one photon over b1 harmonic directions)",
       "must_live": "RT/WRT modular S-matrix total quantum dimension D=Sum d_i^2 (S_00=1/D) / Verlinde per-handle measure — bare pi from the S-matrix; OFF the flat-torus determinant, on the NONABELIAN S-matrix route (Front 2 / W_lambda keystone). NOT a determinant/torsion on the Jacobian."
+    },
+    "three_axis_conclusions": {
+      "permode_derivative_is_b1_independent_not_reciprocal": {
+        "finding": "d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is b1-independent; no graded/per-mode determinant object on T^{b1} is reciprocal in b1",
+        "has_independent_expected_value": false
+      },
+      "no_flat_torus_object_meets_all_three_axes": {
+        "finding": "A (torsion=1, covolume residue) and B (alt-ratio=1, per-mode const) each fail area-free + pi^-1 + reciprocal-b1; the measure must be the RT/WRT S-matrix total quantum dimension D=Sum d_i^2, off the flat-torus determinant. No alpha_k wired; no fit",
+        "has_independent_expected_value": false
+      }
     }
   }
 }

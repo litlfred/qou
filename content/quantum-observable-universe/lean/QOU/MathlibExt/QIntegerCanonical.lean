@@ -114,7 +114,7 @@ noncomputable abbrev qIntBal {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
 Correct **only where the variable means `q²`** (see `qIntBal_eq_twist_canonical`).
 It is *not* bar-even, so it must not carry a bar-even quantity. -/
 abbrev qIntGeo {R : Type*} [CommRing R] (q : R) (n : ℕ) : R :=
-  QOU.Mass.QHookDimension.qIntPoly q n
+  QOU.Mass.QHookDimensionBalanced.qIntPoly q n
 
 /-- **Defining equation**, exposed as `simp`/`rw` fodder.
 

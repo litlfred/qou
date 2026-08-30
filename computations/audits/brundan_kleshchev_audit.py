@@ -179,19 +179,31 @@ def main():
         )
 
     # ── Test 2: dim Z(H_n) = p(n) ──────────────────────────────────
+    #
+    # Known values of the partition function, independent of the enumerator
+    # below. This assertion read `computed=pn, expected=pn` — the same
+    # expression on both sides, so it passed whatever `partitions_of` returned
+    # (bean `qou-26f2`). Test 1 above already had the right shape:
+    # `computed=burnside, expected=dim_hecke`, two independent routes to n!.
+    #
+    # Note what IS and is NOT checked. This checks the enumerator against the
+    # partition function, and it can fail. The identification of p(n) with
+    # dim Z(H_n) is Brundan-Kleshchev's theorem, cited in `source` — nothing
+    # here computes a centre dimension, and no assertion should imply it does.
+    KNOWN_P_N = {2: 2, 3: 3, 4: 5, 5: 7, 6: 11}
     print("\nTest 2: dim Z(H_n) = p(n)")
     for n in range(2, 7):
         pn = len(partitions_of(n))
-        # Centre dimension = number of irreducibles = number of
-        # partitions of n (Brundan-Kleshchev's KLR principal block
-        # decomposition gives p(n) graded simples).
         print(f"  n={n}: p(n) = {pn}")
         builder.add_assertion(
-            name=f"dim_centre_eq_pn_{n}",
+            name=f"partition_count_p_{n}",
             computed=pn,
-            expected=pn,
+            expected=KNOWN_P_N[n],
             tolerance=0,
-            source="number of partitions p(n) = dim Z(H_n)",
+            source=(
+                "p(n) from the standard partition function; identification "
+                "with dim Z(H_n) is Brundan-Kleshchev, not computed here"
+            ),
         )
 
     # ── Test 3: Jucys–Murphy content separation ────────────────────

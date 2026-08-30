@@ -78,14 +78,37 @@ $(y_3, y_2)$; the anharmonic evaluations; the branch equations from
 $y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step is
 sorry-free on the standard axioms, and `SaddleRoots` is inhabited via the
 intermediate value theorem — so the closed form is a statement about the
-**actual** roots of $X^{3} - 2X^{2} + 3X - 1$, not merely about a structure that
-might be empty.
+**actual** roots of $X^{3} - 2X^{2} + 3X - 1$, rather than about a structure
+that might be empty.
+
+## Why the shape field is $\mathbb{Q}(\sqrt{-23})$ and not something smaller
+
+The cubic $X^3 - 2X^2 + 3X - 1$ is irreducible over $\mathbb{Q}$ with
+discriminant $-23$, so its splitting field contains the imaginary quadratic
+subfield $\mathbb{Q}(\sqrt{-23})$. Contrast the figure-eight knot, whose shape
+field is the Eisenstein field $\mathbb{Q}(\sqrt{-3})$ and whose tetrahedra are
+regular. That extra arithmetic is exactly why the $5_2$ analysis does not reduce
+to the $4_1$ argument: the $4_1$ squeeze rests on positivity of
+$\langle 4_1\rangle_N$, which $\langle 5_2\rangle_N$ does not have.
 
 ## What this does and does not establish
 
 It establishes an exact, parameter-free relation among the three shapes of a
 chiral hyperbolic knot — the analogue, for $5_2$, of the closures available for
 the amphichiral $4_1$.
+
+**It is not the volume conjecture.** Three statements are distinct and must not
+be conflated:
+
+1. the sum rule above, which is proved;
+2. $\mathrm{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, a statement about a
+   hyperbolic manifold, which is not formalised here;
+3. $\lim_{N} \frac{2\pi}{N}\log\langle 5_2\rangle_N =
+   \mathrm{Vol}(S^3 \setminus 5_2)$, the volume conjecture for $5_2$ —
+   Ohtsuki's theorem \cite{ohtsuki2016}, untouched.
+
+The sum rule is an identity among dilogarithm values at algebraic points.
+Nothing about a metric, a manifold, or an asymptotic follows from it.
 
 It does **not** by itself supply a bar-odd action value, and no such value is
 claimed here. The sum rule is symmetric in the conjugate pair: $a$ and $\bar a$

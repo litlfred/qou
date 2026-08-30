@@ -23,6 +23,19 @@ export default proposition({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-08-09",
+      body:
+        "**Convention C is excised by owner ruling; this instance is " +
+        "deliberately left on it.** The block exists to witness that " +
+        "`CanonicalMarkovWeightsH3` is inhabitable, and the witness it " +
+        "carries was built on $z(q) = 1/(q^{1/2}+q^{-1/2})$. Rebuilding it " +
+        "on the production $z = q^3/(q^2+1)$ would be a different " +
+        "construction, not a correction, and nothing downstream reads this " +
+        "instance's $z$ as the paper's. The prose states that scope; the " +
+        "ruling's date sits here per \u00a74d.",
+    },
+    {
+      kind: "note",
       body:
         "Provenance: the `markov_parameter` $z(q) = \\sqrt q/(1+q)$ and §Extension #4 landed in PR #1764. Kept in metadata (not scholarly prose) per AGENTS.md §4d.",
     },

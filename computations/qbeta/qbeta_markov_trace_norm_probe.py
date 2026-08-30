@@ -308,11 +308,18 @@ def main() -> None:
     )
     wb.add_assertion(
         name="shapes-differ-per-channel",
-        computed=float(max_diff),
-        expected=float(max_diff),  # We just record the differences
+        # Read `computed=float(max_diff), expected=float(max_diff)` with the
+        # comment "We just record the differences" — which is exactly right and
+        # is why it should not have been an assertion (bean `qou-26f2`). The
+        # name and the `source` both state the checkable claim: the shapes
+        # DIFFER, i.e. the max is non-zero. That can fail; recording a number
+        # against itself cannot. The magnitude is kept as data below.
+        computed=bool(float(max_diff) > 0.0),
+        expected=True,
         tolerance=None,
         source="max |x_L2 - x_M| across 6 channels (non-zero is expected)",
     )
+    wb.add_data("max_abs_x_L2_minus_x_M", float(max_diff))
     wb.add_data(
         "gram_matrix_diagonal",
         [str(sp.simplify(G[i, i])) for i in range(6)],

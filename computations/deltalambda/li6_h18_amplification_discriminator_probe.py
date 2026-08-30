@@ -541,17 +541,26 @@ def main() -> int:
         computed=large_meta["5Li"]["tr_M_consistency_rel"],
         expected=0.0, tolerance=1e-30,
         source="Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0")
-    wb.add_assertion(
-        "li6_amplification_measured",
-        computed=A6["y_dim"],
-        expected=A6["y_dim"], tolerance=0.0,
-        source="MEASURED diagnostic 𝒜(⁶Li) under w = y·dim — recorded "
-               "value, self-referential by design (no target smuggling)")
-    wb.add_assertion(
-        "geometric_law_verdict_flag",
-        computed=int(survives), expected=int(survives), tolerance=0,
-        source="1 = survives (in anchor-scatter band or ±40 % outer gate), "
-               "0 = breaks — recorded verdict, self-referential by design")
+    # Demoted from `add_assertion` to data (bean `qou-26f2`). Both read
+    # `computed=X, expected=X`, and their own source strings said why —
+    # "self-referential by design (no target smuggling)". That reasoning is
+    # right and the conclusion drawn from it was wrong: refusing to smuggle a
+    # target is a reason not to *assert*, not a reason to assert a tautology.
+    # As assertions they fed `allPassed` a guaranteed pass and made the
+    # witness look like it had checked two more things than it had. As data
+    # they say exactly what they always meant — a measured diagnostic and a
+    # recorded verdict, neither of which has an independent expected value.
+    wb.add_data("li6_amplification_measured", {
+        "value": A6["y_dim"],
+        "meaning": "MEASURED diagnostic 𝒜(⁶Li) under w = y·dim",
+        "has_independent_expected_value": False,
+    })
+    wb.add_data("geometric_law_verdict", {
+        "survives": bool(survives),
+        "meaning": "true = in anchor-scatter band or ±40 % outer gate; "
+                   "false = breaks",
+        "has_independent_expected_value": False,
+    })
     out = wb.save()
     print(f"\n  witness: {out}")
     return 0

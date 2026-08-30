@@ -104,7 +104,14 @@ def confinement_dual(T_diag, n_target, tol=1e-6):
 
 # Markov-trace cost per confinement operator (NF weights). Lowest weight = the
 # most-confined operator the SDP selects; ties = degeneracy.
-TR_M = [1.0, z, z, z * z, z * z, z ** 3]
+# TR_M[5] = tr_M(sigma_0 sigma_1 sigma_0) = h*z^2 + z, NOT z^3. Markov axioms:
+# tr(s0 s1 s0) = tr(s1 s0^2) = tr(s1 (h s0 + 1)) = h*tr(s1 s0) + tr(s1).
+# docs/audits/2026-05-19-trm5-markov-bug.md fixed this in pyhecke.gram on
+# 2026-05-19; it never propagated here (bean qou-ssex). The SDP takes these
+# as a DIAGONAL cost, not a Gram, so there is no singularity to handle --
+# only the weight itself was wrong.
+_h = q0 - qi0
+TR_M = [1.0, z, z, z * z, z * z, _h * z * z + z]
 
 
 def main() -> int:

@@ -67,12 +67,28 @@ theorem classical_limit_eq_stpart [inst : ClassicalLimitStpart]
     inst.cl_value q = inst.st_part (inst.q_quantity_at (q - 1)) :=
   inst.cl_via_stpart_holds q hq
 
-/-- **Trivial-zero skeleton.**  All three functions are constant
-    zero; the `cl_via_stpart_holds` field reduces to `0 = 0` by
-    `rfl`.  Encodes none of the actual classical-limit / standard-
-    part content but discharges the §3b-cond hypothesis. -/
+/-- **Trivial-zero skeleton.**  All three functions are constant zero,
+    so `cl_via_stpart_holds` reduces to `0 = 0` and closes by `rfl`.
+    It encodes none of the classical-limit / standard-part content.
+
+    **A `def`, not an `instance`, since 2026-08-24.**  It takes no
+    parameters, so as an `instance` it was *the* global
+    `ClassicalLimitStpart`: `classical_limit_eq_stpart`, labelled a
+    "Downstream conditional theorem (AGENTS.md §3b-cond)", had nothing
+    left to be conditional on and asserted `0 = 0` for every `q ≥ 1`.
+
+    Note also what the class docstring above says a concrete instance
+    should look like: it *"discharges `cl_via_stpart_holds` with
+    `sorry` (the conjecture)"*.  This one discharges it with `rfl`.
+    Those are different states — a `sorry` is an admitted conjecture
+    that `#print axioms` reports and the vacuity audit can find; a
+    `rfl` over constant-zero data reports clean while proving nothing.
+    The class docstring describes a declaration this file does not
+    contain.
+
+    Callers name it: `letI := canonical`. -/
 -- Ref: [manuscript] conj:classical-limit-stpart §"Skeleton"
-instance canonical : ClassicalLimitStpart where
+def canonical : ClassicalLimitStpart where
   cl_value := fun _ => 0
   st_part := fun _ => 0
   q_quantity_at := fun _ => 0

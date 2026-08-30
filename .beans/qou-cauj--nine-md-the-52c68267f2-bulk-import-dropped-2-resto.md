@@ -165,3 +165,27 @@ The four remaining non-block `.md` (`PieceACornerInduction`,
 `PieceASpechtCharacter`, `bring_tetraplectic` at the paper root, and
 `lean/AUDIT-REPORT.md`) are untouched. None is a block; none is flagged; the new
 gate correctly skips them.
+
+## 2026-08-24 — three of the four "not blocks" were an authoring call, and it went the other way
+
+This bean's last section says the four remaining paper-root `.md` are untouched,
+none is a block, and the new gate correctly skips them. The owner ruled
+otherwise for three of them (bean `qou-wy6d`):
+
+| file | disposition |
+|---|---|
+| `PieceACornerInduction.md` | -> `lem:piece-a-corner-removal-obligation` + proof, `mass-theory` |
+| `PieceASpechtCharacter.md` | -> `lem:piece-a-specht-character-trace` + proof, `mass-theory` |
+| `bring_tetraplectic.md` | -> six blocks in `brings-surface` §`sec:spectral-gauge` |
+| `lean/AUDIT-REPORT.md` | unchanged — an audit report, still not a block |
+
+The judgement that read them as "working notes, not blocks" was made from
+filename convention (CamelCase / snake_case at the paper root) rather than from
+content. Two things the content showed once opened:
+`PieceASpechtCharacter.md`'s three named Lean declarations all exist and are
+sorry-free, and `bring_tetraplectic.md` was the only thing in the corpus
+referencing two other sorry-free Lean files. Naming convention was the wrong
+signal to stop on.
+
+Still true, and still not fixed by any of this: nothing detects an unregistered
+`.md` outside the changed-files scope of `check-sidecars.sh`.

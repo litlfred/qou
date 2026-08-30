@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:18:27Z
-updated_at: 2026-08-29T20:07:02Z
+updated_at: 2026-08-30T03:53:17Z
 ---
 
 
@@ -369,3 +369,84 @@ Also measured: the RSK/Burnside keystone `Σ_{λ ⊢ n} (dim SYT λ)² = n!` is
 **proved** (`QOU.Mathlib.rskBurnsideHolds`, epic `qou-nrex`) and is no longer an
 axiom — so the partition-indexed dimension count this bean's `Partition n` gap
 sits next to has landed since 2026-08-24.
+
+
+## 2026-08-30 — all six `RingTheory/SimpleModule` `proof_wanted`s now have proofs here
+
+Three more since the 2026-08-29 entry, completing the file's list:
+
+| statement | file (`QOU/MathlibExt/`) | PR |
+|---|---|---|
+| `IsSemisimpleRing.matrix` | `MatrixSemisimpleGeneral.lean` | #6069 |
+| `IsSemisimpleRing.module_end` | `EndSemisimpleGeneral.lean` | #6070 |
+| `isSemisimpleRing_iff_pi_matrix_divisionRing` | `WedderburnArtinCharacterisation.lean` | #6072 |
+| `IsSemisimpleRing.mulOpposite` | `MulOppositeSemisimple.lean` | #6079 |
+| `…_of_injective` + `…_of_surjective` (semilinear) | `SemilinearSemisimple.lean` | #6081 |
+
+All sorry-free, `[propext, Classical.choice, Quot.sound]`, each with an
+acceptance test that fails to synthesise without it.
+
+### 🛑 Read "closed" correctly — Mathlib is untouched
+
+#6081's body claimed *"that file's `proof_wanted` list is now empty."* **Wrong,
+and corrected on the PR.** Mathlib is a **vendored dependency**; all six
+`proof_wanted` declarations are still in its `Basic.lean` (re-measured on `main`
+after the merges). What exists is a **proof of each statement in this tree**.
+They are *upstreamable*, not *upstreamed* — that needs PRs against
+`leanprover-community/mathlib4`, which have not been made.
+
+### The two TODOs Mathlib attaches to the semilinear pair are avoidable
+
+Each of `…_of_injective` / `…_of_surjective` carries a TODO naming an API
+generalisation — *"generalize `Submodule.equivMapOfInjective` from InvPair to
+RingHomSurjective"*, *"generalize `LinearMap.quotKerEquivOfSurjective` to
+SemilinearMaps"*. **Neither is needed.** Both assume the proof routes through a
+semilinear *equivalence*, and `≃ₛₗ` is what forces `RingHomInvPair`. But
+`isSemisimpleModule_iff_of_bijective` — sitting directly above them — takes a
+bijective semilinear **map**. So: `l.rangeRestrict` for the injective case, and a
+*complement* of `ker l` rather than the quotient for the surjective one.
+
+I hit the `RingHomInvPair` wall first by trying the equivalence route, which is
+what showed the way round it. Mid-scoping I also called the first TODO "stale"
+because `equivMapOfInjective` is already semilinear-typed; that was wrong — it is
+semilinear *and* needs an inv-pair.
+
+**Both need `[RingHomSurjective σ]`, which neither `proof_wanted` states.** Looks
+like an oversight: `LinearMap.range` and `Submodule.map` are only defined for a
+semilinear map under it, and the sibling theorem above them carries it. An
+upstreamer needs to know this before transcribing the statements.
+
+### And they are siblings, not a stack
+
+Four of the six rest on `MatrixSemisimple.instIsSemisimpleRing_matrix` (the
+division-ring case, predating this work) rather than on each other. #6069's
+general-base result is not load-bearing for any of the others.
+
+
+---
+
+## 2026-08-30 — Wedderburn leg: the class repair landed, the degeneracy did not
+
+The `WedderburnDecomp` item in this catalogue is now measured rather than
+estimated, and the answer is negative.
+
+- **#5710 fixed the self-assuming field** (`trace_decomp` → `block_scaling`);
+  `trace_decomposition` is derived. Real progress.
+- **It did not make an instance meaningful.** `chi_lambda` had to enter as a
+  second free field, so only the product `y_λ · χ^λ` is constrained.
+  `yLambda_not_pinned` (PR #6097) realises every nonzero rational as the weight
+  at every partition. Bean `qou-luq7` carries the full record.
+- **The `Partition n` / Mathas §3.43 item is NOT blocked on a decision.** It is
+  blocked on two concrete formalisations: computing `χ^λ` from a matrix
+  representation, and tying `SpechtDimension.dim` to its partition. Mathlib's
+  Artin–Wedderburn (the asset this bean opens with) gives neither — it produces
+  an unindexed existential product of matrix rings, and the whole difficulty is
+  the *indexing by partitions*.
+- **Cost of my own #5710 blast-radius miss:** `WedderburnRankDegeneracy.lean`
+  red on main for six days. Two verification traps recorded in
+  `.claude/agent-memory/lean-verifier/verification-harness.md` — a green
+  `lean`-direct run against a stale dependency olean is a FALSE GREEN, and a
+  hypothesis-binder grep does not find an instance.
+- **Unrelated red file found by the same cone check and fixed:**
+  `QOU/Mass/QIntegerBarParity.lean`, red since `1646b5d6d3` behind one stale
+  `open`. PR #6097.

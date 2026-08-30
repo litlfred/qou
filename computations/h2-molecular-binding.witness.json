@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:53:04.635460+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T06:19:00.762072+00:00",
+  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
   "assertions": [
     {
       "name": "H2 binding is positive",
@@ -20,7 +20,7 @@
     },
     {
       "name": "H2 binding energy within 5% of observed (no calibration)",
-      "computed": "0.864536457714344",
+      "computed": "0.864534682436946",
       "expected": 4.478,
       "passed": false,
       "tolerance": "0.25",
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "h2-molecular-binding",
   "scriptFile": "h2-molecular-binding.py",
   "scriptHash": "4de8c9313d11",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,7 +47,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -61,10 +61,10 @@
     "q": 1.1099785827513808,
     "HA": 0.20906029879563937,
     "z": 0.6126880371464652,
-    "alpha_EM": 0.007297355976840865,
-    "E_hartree_eV": 27.211467573147633,
+    "alpha_EM": 0.007297355976840867,
+    "E_hartree_eV": 27.211411695916652,
     "TWO_Q": 2.0108968667071223,
-    "E_mol_scale_eV": 6.729338426152079,
+    "E_mol_scale_eV": 6.72932460783094,
     "strand_labels": [
       "p1",
       "e1",
@@ -84,7 +84,7 @@
       "p2"
     ],
     "binding_Phi_diff": 0.12847272688122136,
-    "E_bind_eV_predicted": 0.8645364577143441,
+    "E_bind_eV_predicted": 0.8645346824369464,
     "generator_volumes": [
       -0.2696386769228253,
       0.5874977215493498,

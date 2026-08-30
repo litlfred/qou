@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:56:09.435111+00:00",
-  "commitSha": "fa94034954eea81399e33561c6242180c688c208",
+  "computedAt": "2026-08-30T06:34:17.333628+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "assertions": [
     {
       "name": "crystal_pole_counter_well_defined",
-      "computed": 11,
-      "expected": 11,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2"
     },
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "crystal-shift-nf-atomic",
   "scriptFile": "crystal_shift_nf_atomic.py",
-  "scriptHash": "7c6a94ecf3e7",
-  "scriptCommitSha": "4e126c6f41e3b9645abe8c4bd369c6256401da48",
+  "scriptHash": "ea8e620e293b",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -84,7 +84,7 @@
           6,
           3
         ],
-        "compute_time_seconds": "0.032",
+        "compute_time_seconds": "0.028",
         "syt_enumeration_method": "full"
       },
       {
@@ -102,7 +102,7 @@
           6,
           3
         ],
-        "compute_time_seconds": "0.027",
+        "compute_time_seconds": "0.028",
         "syt_enumeration_method": "full"
       },
       {
@@ -120,7 +120,7 @@
           8,
           4
         ],
-        "compute_time_seconds": "1.834",
+        "compute_time_seconds": "1.860",
         "syt_enumeration_method": "full"
       },
       {

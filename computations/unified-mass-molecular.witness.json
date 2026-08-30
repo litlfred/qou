@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:34.823444+00:00",
-  "commitSha": "0060157d414b8f96542e4cf1322717de51d0efac",
+  "computedAt": "2026-08-30T10:45:47.232357+00:00",
+  "commitSha": "c80f90670f0ae61cf3b9ce04415f75b4d8a7d7e2",
   "assertions": [
     {
       "name": "H2",
@@ -30,7 +30,7 @@
     },
     {
       "name": "CH4",
-      "computed": 27.16,
+      "computed": 27.15,
       "expected": 17.4,
       "passed": false,
       "tolerance": "8.7",
@@ -62,7 +62,7 @@
     },
     {
       "name": "CO2",
-      "computed": 27.16,
+      "computed": 27.15,
       "expected": 16.56,
       "passed": false,
       "tolerance": "8.28",
@@ -70,7 +70,7 @@
     },
     {
       "name": "C6H6",
-      "computed": 81.47,
+      "computed": 81.46,
       "expected": 57.4,
       "passed": true,
       "tolerance": "28.7",
@@ -90,7 +90,7 @@
   "computation": "unified-mass-molecular",
   "scriptFile": "unified-mass-molecular.py",
   "scriptHash": "3fa2ccd6f46e",
-  "scriptCommitSha": "f7df6dfc39b87efefafc00a7f7ff4046834fc2cf",
+  "scriptCommitSha": "e353d0ecf6c071a11c39888729815664e4405c3c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -120,12 +120,12 @@
     "w_s": 0.16546138503360688,
     "w_d": 0.6690772299327864,
     "w_a": 0.16546138503360688,
-    "E_mol_eV": 6.729338426152079,
+    "E_mol_eV": 6.72932460783094,
     "kappa_MeV": "0.51099895069"
   },
   "data": {
     "mass_mae_pct": 0.7677276503862455,
-    "molecular_mae_pct": 58.41415214939467,
+    "molecular_mae_pct": 58.413826854768544,
     "mass_H": {
       "Z": 1,
       "N": 0,
@@ -288,32 +288,32 @@
     },
     "bond_HH": {
       "k": 7,
-      "E": 6.788752790887951,
+      "E": 6.788738850562727,
       "obs": 4.478
     },
     "bond_CH": {
       "k": 7,
-      "E": 6.788752790887948,
+      "E": 6.788738850562725,
       "obs": 4.33
     },
     "bond_CC": {
       "k": 7,
-      "E": 6.788752790887912,
+      "E": 6.788738850562689,
       "obs": 3.6
     },
     "bond_CO": {
       "k": 7,
-      "E": 6.78875279088796,
+      "E": 6.788738850562737,
       "obs": 3.71
     },
     "bond_OH": {
       "k": 7,
-      "E": 6.788752790887948,
+      "E": 6.788738850562725,
       "obs": 4.82
     },
     "bond_NH": {
       "k": 7,
-      "E": 6.788752790887951,
+      "E": 6.788738850562727,
       "obs": 3.87
     }
   },

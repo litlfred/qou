@@ -4,7 +4,16 @@
   Critical temperatures from the Hecke algebra representation theory:
   - Gas-liquid: T_q^{g→l} = S_q^{∂} / [2]_q
   - Liquid-solid: T_q^{l→s} = S_q^{∂} / ([2]_q · [n_K]_q)
-  - Sublimation: when Ext¹_{H_n(q)}(V_asym, V_sym) ≠ 0
+  - Sublimation: no mechanism (bean `qou-zut2`, 2026-08-24)
+
+  The block previously read sublimation off `Ext¹_{H_n(q)}(V_asym, V_sym) ≠ 0`.
+  That group is zero: `H_n(q)` is semisimple away from roots of unity, so every
+  short exact sequence of its modules splits
+  (`QOU.Mathlib.ExtensionClass.isSplit_of_isSemisimpleRing`), and the sym/asym
+  pair splits on the Hecke quadratic alone once `[2]_q` is a unit
+  (`QOU.Mathlib.ExtensionClass.heckeSES_isSplit`) — the same `[2]_q` the two
+  critical temperatures above divide by.  `SublimationCondition` below keeps a
+  bare `Prop` field for the condition and asserts nothing about its content.
 
 **Ground ring**: archimedean specialisation over `ℝ` (AGENTS.md §7c).
 The critical-temperature proofs use ordering, division, and positivity,
@@ -94,12 +103,16 @@ theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
   gcongr
   nlinarith
 
-/-- **Sublimation condition** (type-level): the liquid phase is
-    topologically obstructed when the Hecke extension is non-split.
+/-- **Sublimation condition** (type-level): the shell-and-parity pattern
+    `rem:composite-crossing-sublimation-criteria` records, with the condition
+    it implies left abstract.
 
-    We model this as a proposition: for a given crossing number n_K,
-    the Ext group is non-trivial iff certain representation-theoretic
-    conditions hold. -/
+    The `sublimes` field is a bare `Prop` supplied by the instantiator. It was
+    once documented as "the Hecke extension is non-split"; that reading is
+    withdrawn (bean `qou-zut2`, 2026-08-24) because `Ext¹_{H_n(q)}` vanishes
+    identically away from roots of unity. Nothing here asserts what the
+    condition *is*, so the structure survives the withdrawal unchanged in
+    content — only in name and documentation. -/
 structure SublimationCondition (M : Type*) where
   sp : SubstrateParameter M
   point : M
@@ -109,13 +122,13 @@ structure SublimationCondition (M : Type*) where
   valenceElectrons : ℕ
   /-- Capacity of the valence shell. -/
   shellCapacity : ℕ
-  /-- The extension is non-split (sublimation occurs). -/
-  extensionNonSplit : Prop
-  /-- Half-filled shell with odd Z implies non-split. -/
-  halfFilled_implies_nonSplit :
+  /-- The atom sublimes. Left abstract: this file supplies no mechanism. -/
+  sublimes : Prop
+  /-- Half-filled shell with odd `Z` is the recorded sublimation pattern. -/
+  halfFilled_implies_sublimes :
     2 * valenceElectrons = shellCapacity →
     crossingNumber % 2 = 1 →
-    extensionNonSplit
+    sublimes
 
 end
 

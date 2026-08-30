@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:22:56.658242+00:00",
-  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
+  "computedAt": "2026-08-30T07:47:17.493788+00:00",
+  "commitSha": "13483c9b488f7fe9c8abbf6fa9b2b376d8d3a035",
   "assertions": [
     {
       "name": "deuteron_endomorphism_exact",
-      "computed": "1.067471177766125265427018622163137595007532487513852876557722611874947",
+      "computed": "1.067471177766125265427018622163137595007532487513851695352539911819451",
       "expected": 1.0,
       "passed": false,
       "tolerance": "0.01",
@@ -14,19 +14,18 @@
     },
     {
       "name": "no_derived_scalar_f_closes_A3",
-      "computed": 14.0,
-      "expected": 14.0,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 1,
-      "source": "best derived f leaves ≥12% on A≥3; p/n asymmetry blocks any scalar f"
+      "source": "best derived f (Vol(B3)/[3]_q) leaves 14.1% >= 12% on A>=3; p/n asymmetry blocks any scalar f"
     }
   ],
   "allPassed": false,
-  "durationMs": 26,
+  "durationMs": 28,
   "computation": "binding-shell-enhancement-derivation",
   "scriptFile": "binding_shell_enhancement_derivation.py",
-  "scriptHash": "6f52eba7b2e0",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "fab6fb27ca67",
+  "scriptCommitSha": "a744956372e5e83ca675f59e7d05a5c8135a368a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

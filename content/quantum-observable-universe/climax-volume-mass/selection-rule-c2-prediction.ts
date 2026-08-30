@@ -15,8 +15,8 @@ export default proposition({
     "lean",
   ],
   lean: {
-    ref: "qou:QOU.Mass.selection_rule_c2_eq_closed_form",
-    validation: "not_checked",
+    ref: "qou:QOU.Mass.selection_rule_c2_prediction_derived",
+    validation: "validated",
   },
   uses: ["prop:selection-rule-anchors-c1-c3"],
   authorNotes: [

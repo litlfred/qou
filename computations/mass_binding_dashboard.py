@@ -80,6 +80,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 import codata_constants as _codata  # noqa: E402 — registry (CODATA-2022 u→MeV); bean me3r
+from hecke_core import E_HARTREE_EV as _E_HARTREE_EV_DERIVED  # noqa: E402 — mp-backed downcast (qou-ozvb)
 
 # (name, Z, N) grouped by mass band. The sweep is a curated spread low→high so
 # the trend (and the breakdown past the light nuclei) is visible in one view.
@@ -273,9 +274,29 @@ def _ame_table():
 
 
 def _electron_binding_mev(Z):
-    """Total atomic electron binding B_el(Z) in MeV — the AME (Lunney–Pearson–
-    Thibault) empirical fit used to convert atomic↔nuclear masses:
-    B_el = 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV (H ≈ 14 eV → U ≈ 0.76 MeV)."""
+    """Total atomic electron binding B_el(Z) in MeV — DERIVED (owner-ordered
+    swap 2026-08-30, bean qou-g3x3): bare-Z hydrogenic shell sum at the
+    canonical e-Hartree scale, Ry = E_h/2, E_h = α_EM²·m_e c² with the
+    CS-corrected mp α_EM and CODATA m_e (pyhecke float64 excised, bean
+    qou-ozvb). Replaces the AME Lunney-Pearson-Thibault empirical fit
+    (kept as _electron_binding_mev_ame_fit for comparison). Bare-Z carries
+    no inter-electron screening: exact for H (13.606 eV), over-binds He/Li
+    at the eV scale and Fe by ~18 keV — all far below the MeV-scale nuclear
+    residuals this table reports. mp-exact version + witness:
+    computations/atom_electron_mass.py / atom-electron-mass.witness.json."""
+    ry_mev = _E_HARTREE_EV_DERIVED / 2.0 / 1e6
+    total, n, left = 0.0, 1, Z
+    while left > 0:
+        k = min(2 * n * n, left)
+        total += k * (Z * Z) * ry_mev / (n * n)
+        left -= k
+        n += 1
+    return total
+
+
+def _electron_binding_mev_ame_fit(Z):
+    """AME (Lunney-Pearson-Thibault) empirical fit — COMPARISON ONLY since
+    the 2026-08-30 derived swap: 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV."""
     return 1.44381e-5 * Z ** 2.39 + 1.55468e-12 * Z ** 5.35
 
 
@@ -1080,6 +1101,13 @@ def main(argv=None) -> int:
         print(f"| {r['name']} | {r['A']} | {Z} | {_fmt(m_atom_ame,10,3)} "
               f"| {_fmt(m_atom_pred,10,3)} | {_sci(err,13,3)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(e_layer,7,3)} |")
+    max_fit_dev_kev = max(
+        abs(_electron_binding_mev(r["Z"]) - _electron_binding_mev_ame_fit(r["Z"])) * 1e3
+        for r in rows if r["Z"] > 0
+    )
+    print(f"\n  B_el is DERIVED (bare-Z hydrogenic @ e-Hartree, swap 2026-08-30); "
+          f"max |derived − AME fit| over this group: {max_fit_dev_kev:.4f} keV "
+          f"(screening open; both far below the MeV nuclear residuals)")
 
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "

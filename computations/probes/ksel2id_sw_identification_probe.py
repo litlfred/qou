@@ -153,18 +153,21 @@ def qpoch(pv, k: int):
 # ------------------------------------------------------ S1 base-p rewrite
 
 def block_s1_base_p(wb: WitnessBuilder):
+    _ok: list[bool] = []
     q = 1 / _pt ** 2          # p = pt^2, q = 1/p — pt = sqrt(p) exact
     p = _pt ** 2
     for k in range(N_SYM + 1):
         one_sided = qfact_q(q, k)
         rhs_os = p ** sp.Rational(-k * (k - 1), 2) * qpoch(p, k) \
             / (1 - p) ** k
-        assert sp.simplify(one_sided - rhs_os) == 0, (k, "one-sided")
+        _ok.append(bool(sp.simplify(one_sided - rhs_os) == 0))
+        assert _ok[-1], (k, 'one-sided')
         balanced = q ** sp.Rational(-k * (k - 1), 4) * qfact_q(q, k)
         rhs_bal = _pt ** (-(k * (k - 1)) // 2) * qpoch(p, k) / (1 - p) ** k
-        assert sp.simplify(balanced - rhs_bal) == 0, (k, "balanced")
+        _ok.append(bool(sp.simplify(balanced - rhs_bal) == 0))
+        assert _ok[-1], (k, 'balanced')
     wb.add_assertion(
-        "s1_base_p_rewrite_exact", computed="0", expected="0", tolerance=0,
+        "s1_base_p_rewrite_exact", computed=all(_ok), expected=True, tolerance=0,
         source="sympy exact (k <= 12, p = pt^2 so ptilde = sqrt(p) is "
                "polynomial): [k]_q! = p^(-k(k-1)/2)(p;p)_k/(1-p)^k and "
                "m_k = q^(-k(k-1)/4)[k]_q! "
@@ -185,19 +188,22 @@ def block_s1_base_p(wb: WitnessBuilder):
 # --------------------------------------------- S2 SW-proper reference class
 
 def block_s2_sw_reference(wb: WitnessBuilder):
+    _ok: list[bool] = []
     t = sp.symbols("t", positive=True)
     # log-normal moments: E[s^k] = exp(k mu + k^2 s2 / 2) (Gaussian integral)
     integrand = sp.exp(_k * t) * sp.exp(-(t - _mu) ** 2 / (2 * _s2)) \
         / sp.sqrt(2 * sp.pi * _s2)
     mom = sp.simplify(sp.integrate(integrand, (t, -sp.oo, sp.oo)))
     target = sp.exp(_k * _mu + _k ** 2 * _s2 / 2)
-    assert sp.simplify(mom - target) == 0, mom
+    _ok.append(bool(sp.simplify(mom - target) == 0))
+    assert _ok[-1], mom
     # affine-in-log closure: s -> c s^a gives moments c^k E[s^{ak}] =
     # exp(k(ln c + a mu) + k^2 (a^2 s2)/2) — still log-quadratic
     pushed = sp.simplify(_c ** _k * target.subs(_k, _a * _k))
     closed = sp.exp(_k * (sp.log(_c) + _a * _mu) +
                     _k ** 2 * (_a ** 2 * _s2) / 2)
-    assert sp.simplify(pushed / closed - 1) == 0
+    _ok.append(bool(sp.simplify(pushed / closed - 1) == 0))
+    assert _ok[-1]
     # classical SW weight (Stieltjes 1894): w_g(x) = (g/sqrt(pi))
     # exp(-g^2 ln^2 x) on (0,oo): x-moments = exp((k+1)^2/(4 g^2));
     # normalized: t_sw^{-k(k+2)/2} with t_sw = exp(-1/(2 g^2))
@@ -205,13 +211,15 @@ def block_s2_sw_reference(wb: WitnessBuilder):
         sp.exp((_k + 1) * t) * (_g / sp.sqrt(sp.pi)) *
         sp.exp(-_g ** 2 * t ** 2),
         (t, -sp.oo, sp.oo)).rewrite(sp.erf))   # erfc -> 1 - erf
-    assert sp.simplify(wmom - sp.exp((_k + 1) ** 2 / (4 * _g ** 2))) == 0
+    _ok.append(bool(sp.simplify(wmom - sp.exp((_k + 1) ** 2 / (4 * _g ** 2))) == 0))
+    assert _ok[-1]
     norm = sp.simplify(wmom / wmom.subs(_k, 0))
     tsw = sp.exp(-1 / (2 * _g ** 2))
-    assert sp.simplify(norm - tsw ** (-_k * (_k + 2) / 2)) == 0
+    _ok.append(bool(sp.simplify(norm - tsw ** (-_k * (_k + 2) / 2)) == 0))
+    assert _ok[-1]
     wb.add_assertion(
-        "s2_sw_lognormal_affine_closure_exact", computed="0",
-        expected="0", tolerance=0,
+        "s2_sw_lognormal_affine_closure_exact", computed=all(_ok),
+        expected=True, tolerance=0,
         source="sympy exact: LN(mu,s2) moments exp(k mu + k^2 s2/2) "
                "(log-QUADRATIC in k); affine-in-log pushforward "
                "s -> c s^a keeps log-quadraticity (LN -> LN(ln c + "
@@ -226,11 +234,14 @@ def block_s2_sw_reference(wb: WitnessBuilder):
 def block_s3_obstruction(wb: WitnessBuilder):
     # Delta^2 ln m_k = L + ln((1-p^{k+2})/(1-p^{k+1})): exact and strictly
     # increasing in k at rational p (=> NOT constant => not log-quadratic).
+    _ok: list[bool] = []
     pv = sp.Rational(9, 10)
     # ln of a strictly increasing >0 argument: compare arguments exactly
     args = [(1 - pv ** (k + 2)) / (1 - pv ** (k + 1)) for k in range(11)]
-    assert all(args[i + 1] < args[i] for i in range(10)), "monotone dec"
-    assert all(a > 1 for a in args), "above 1 (deviation positive)"
+    _ok.append(bool(all((args[i + 1] < args[i] for i in range(10)))))
+    assert _ok[-1], 'monotone dec'
+    _ok.append(bool(all((a > 1 for a in args))))
+    assert _ok[-1], 'above 1 (deviation positive)'
     # symbolic: Delta ln m_k = ln(m_{k+1}/m_k); built from S1 rewrite
     p = _pt ** 2
     q = 1 / p
@@ -246,7 +257,8 @@ def block_s3_obstruction(wb: WitnessBuilder):
         r2 = sp.simplify(mk2 * mk / mk1 ** 2)
         # qtilde = q^{1/2} = pt^{-1}
         target = _pt ** (-1) * (1 - p ** (k + 2)) / (1 - p ** (k + 1))
-        assert sp.simplify(r2 - target) == 0, (k, r2)
+        _ok.append(bool(sp.simplify(r2 - target) == 0))
+        assert _ok[-1], (k, r2)
     # residual vs the unique log-quadratic through k = 0,1,2 at the pins
     set_compute_dps(60)
     resid_tbl = {}
@@ -263,12 +275,13 @@ def block_s3_obstruction(wb: WitnessBuilder):
         Qf = lambda k: lm[0] + k * (lm[1] - lm[0]) + \
             mpf(k * (k - 1)) / 2 * (lm[2] - 2 * lm[1] + lm[0])  # noqa: E731
         res = [lm[k] - Qf(k) for k in range(13)]
-        assert abs(res[12]) > mpf("0.5"), res[12]
+        _ok.append(bool(abs(res[12]) > mpf('0.5')))
+        assert _ok[-1], res[12]
         resid_tbl[tag] = {str(k): mp.nstr(res[k], 6)
                           for k in (3, 6, 9, 12)}
     wb.add_assertion(
-        "s3_sw_proper_no_match_exact_obstruction", computed="0",
-        expected="0", tolerance=0,
+        "s3_sw_proper_no_match_exact_obstruction", computed=all(_ok),
+        expected=True, tolerance=0,
         source="exact: Delta^2 ln m_k = ln qtilde + ln((1-p^(k+2))/"
                "(1-p^(k+1))) — the second factor is > 1 and strictly "
                "decreasing to 1 (exact at p = 9/10; symbolic identity "
@@ -300,16 +313,19 @@ def block_s4_sw_factor(wb: WitnessBuilder):
     # classical SW weight with t_sw = e^{-L} (g^2 = 1/(2L)) pushed by
     # s -> c s with c = e^{-L/2}: moments c^k t_sw^{-k(k+2)/2} =
     # e^{-Lk/2} e^{L k(k+2)/2} = e^{L k^2/2 + L k/2}... match to LN(+?):
+    _ok: list[bool] = []
     Lsym = sp.symbols("Lsym", positive=True)
     Gk = sp.exp(Lsym * _k ** 2 / 2 - Lsym * _k / 2)
     ln_mom = sp.exp(_k * (-Lsym / 2) + _k ** 2 * Lsym / 2)
-    assert sp.simplify(Gk - ln_mom) == 0
+    _ok.append(bool(sp.simplify(Gk - ln_mom) == 0))
+    assert _ok[-1]
     tsw = sp.exp(-Lsym)
     # normalized SW-weight x-moments are LN(+L, L): t_sw^{-k(k+2)/2} =
     # e^{L k^2/2 + L k}; pushforward s -> c s with c = e^{-3L/2} lands
     # on G_k = LN(-L/2, L) moments:
     pushed = (sp.exp(-3 * Lsym / 2)) ** _k * tsw ** (-_k * (_k + 2) / 2)
-    assert sp.simplify(sp.expand(sp.log(pushed) - sp.log(Gk))) == 0
+    _ok.append(bool(sp.simplify(sp.expand(sp.log(pushed) - sp.log(Gk))) == 0))
+    assert _ok[-1]
     # Jackson factor moments via Euler's identity, numeric at 3 points
     set_compute_dps(60)
     worst = mpf(0)
@@ -332,9 +348,10 @@ def block_s4_sw_factor(wb: WitnessBuilder):
                 target *= (1 - pn ** j)
             target /= (1 - pn) ** k
             worst = max(worst, abs(s / target - 1))
-    assert worst < TOL_30, worst
+    _ok.append(bool(worst < TOL_30))
+    assert _ok[-1], worst
     wb.add_assertion(
-        "s4_sw_exact_factor_decomposition", computed="0", expected="0",
+        "s4_sw_exact_factor_decomposition", computed=all(_ok), expected=True,
         tolerance=float(TOL_30),
         source="symbolic: m_k = G_k J_k with G_k = LN(-L/2, L) moments "
                "= the classical SW weight at t_sw = e^(-L) = 1/qtilde "
@@ -366,10 +383,12 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
     # (a) functional equation w(p x) = (1+x) w(x) for w = 1/(-x;p)_oo:
     #     symbolic on the truncated product, exact in the infinite limit
     #     via (-x;p)_oo = (1+x)(-px;p)_oo:
+    _ok: list[bool] = []
     Nprod = 14
     prod_full = sp.prod([1 + _x * _p ** n for n in range(Nprod)])
     prod_shift = sp.prod([1 + _x * _p ** (n + 1) for n in range(Nprod - 1)])
-    assert sp.expand(prod_full - (1 + _x) * prod_shift) == 0
+    _ok.append(bool(sp.expand(prod_full - (1 + _x) * prod_shift) == 0))
+    assert _ok[-1]
     # => nu_k = p^{k+1}(nu_k + nu_{k+1})  =>
     #    nu_{k+1} = p^{-(k+1)}(1-p^{k+1}) nu_k
     # => rho_k = nu_k/nu_0 = p^{-k(k+1)/2}(p;p)_k  (finite product, exact)
@@ -377,7 +396,8 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
         prod_ratio = sp.prod(
             [_p ** (-(j + 1)) * (1 - _p ** (j + 1)) for j in range(k)])
         closed = _p ** sp.Rational(-k * (k + 1), 2) * qpoch(_p, k)
-        assert sp.simplify(prod_ratio - closed) == 0, k
+        _ok.append(bool(sp.simplify(prod_ratio - closed) == 0))
+        assert _ok[-1], k
     # numeric quadrature cross-check of the recurrence at 3 points
     set_compute_dps()
     worst_q = mpf(0)
@@ -397,23 +417,25 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
         quad_tbl[["p_5_6", "p_inv_q0_muon", "p_inv_q0_proton"][pi]] = \
             mp.nstr(worst_here, 4)
         worst_q = max(worst_q, worst_here)
-    assert worst_q < TOL_Q, worst_q
+    _ok.append(bool(worst_q < TOL_Q))
+    assert _ok[-1], worst_q
     # (c) EXACT map: [k]_q! = rho_k (p/(1-p))^k   (symbolic, k <= 12)
     p = _pt ** 2
     q = 1 / p
     for k in range(N_SYM + 1):
         rho = p ** sp.Rational(-k * (k + 1), 2) * qpoch(p, k)
-        assert sp.simplify(qfact_q(q, k) - rho * (p / (1 - p)) ** k) == 0, k
+        _ok.append(bool(sp.simplify(qfact_q(q, k) - rho * (p / (1 - p)) ** k) == 0))
+        assert _ok[-1], k
     # (d) balanced bridge: m_k * G'_k = [k]_q! with G'_k = LN(-L/2,L)
     #     moments = p^{-k(k-1)/4}: symbolic trivial
     for k in range(N_SYM + 1):
         bal = q ** sp.Rational(-k * (k - 1), 4) * qfact_q(q, k)
-        assert sp.simplify(
-            bal * q ** sp.Rational(k * (k - 1), 4) - qfact_q(q, k)) == 0
+        _ok.append(bool(sp.simplify(bal * q ** sp.Rational(k * (k - 1), 4) - qfact_q(q, k)) == 0))
+        assert _ok[-1]
     set_compute_dps(60)
     wb.add_assertion(
-        "s5_q_laguerre_one_sided_exact_identification", computed="0",
-        expected="0", tolerance=float(TOL_Q),
+        "s5_q_laguerre_one_sided_exact_identification", computed=all(_ok),
+        expected=True, tolerance=float(TOL_Q),
         source="exact: the alpha=0 q-Laguerre weight 1/(-x;p)_oo "
                "satisfies w(px) = (1+x)w(x) => nu_{k+1} = "
                "p^(-(k+1))(1-p^(k+1)) nu_k (quadrature cross-check rel "

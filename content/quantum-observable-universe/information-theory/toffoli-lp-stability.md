@@ -12,7 +12,7 @@ where $\varphi = (1 + \sqrt{5})/2$ is the golden ratio.
 
 2. **(Three operator thresholds.)** Each zero corresponds to a vanishing Hecke amplitude:
 See [Table 1](#tbl:toffoli-lp-stability-table1-data).
-At $q_\star$, the diagonal amplitude $P_{7,7}$ vanishes. At $q_\Phi$, the q-AND amplitude $\Phi$ reverses sign. At $q = 1$, the q-AND vanishes. The classical reversible Toffoli has trivial amplitude here.
+At $q_\star$, the diagonal amplitude $P_{7,7}$ vanishes **in the convention-$C$ frame**; under the canonical $z_D = q^3/(q^2+1)$ the diagonal is $q^3(q^4+1)/(q^2+1)^2$, strictly positive for every $q > 0$, so this threshold is a property of the excised frame rather than of the gate. At $q_\Phi$, the q-AND amplitude $\Phi$ reverses sign. At $q = 1$, the q-AND vanishes. The classical reversible Toffoli has trivial amplitude here.
 
 3. **(Dual shadow prices.)** For $q > 1$, the LP dual admits bounded shadow prices $y_i^*(q)$ satisfying:
 $$

@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:56:47.068471+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T07:11:50.310908+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "plancherel_channel_scan_completed",
-      "computed": 8,
-      "expected": 8,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "source": "Scanned 8 Plancherel-channel candidates at 80 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 8,
   "computation": "mn-flavor-split-plancherel-channel",
   "scriptFile": "mn_flavor_split_plancherel_channel.py",
-  "scriptHash": "db4aedc6a65a",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "b595ebc0a8bc",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mn_flavor_split_plancherel_channel.py"
+    ],
+    "reproduce": "python3 -u computations/mn_flavor_split_plancherel_channel.py"
   },
   "description": "Item 2 of PR #1650: applies PR #1645's sign-block / Plancherel-channel template to m_n flavor-split. Tests whether σ_1 eigendecomposition at H_2 + Plancherel weights closes the 0.10% baseline X(q) residual.",
   "parameters": {

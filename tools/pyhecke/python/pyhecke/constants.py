@@ -120,33 +120,6 @@ _bare_alpha_inv = q0 * q_int(9) * q_int(10)
 # G_CS encodes the CS pairing of T_{2,9}∪T_{3,5} on Bring's surface:
 #   Diagonal: CS + self-linking²/crossing²
 #   Off-diagonal: mutual CS from linking number |2×5-3×9|=17
-_CS_T29 = math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
-_CS_T35 = math.pi**2 * 16.0/15.0      # CS(T_{3,5})
-_hbar_q2 = (1.0 - qi)**2               # ℏ_q²
-_n2 = q_int(2)
-_c1 = (_CS_T29 + _CS_T35) * (_n2/2.0) * _hbar_q2 / _bare_alpha_inv
-
-# Gram matrix of CS pairing (classical)
-_sl = 8  # self-linking = (m-1)(n-1) for both T_{2,9} and T_{3,5}
-_linking = 17  # |2×5-3×9|
-_G_cl_11 = _CS_T29 + math.pi**2 * _sl**2 / (2*9)**2
-_G_cl_22 = _CS_T35 + math.pi**2 * _sl**2 / (3*5)**2
-_G_cl_12 = math.pi**2 * _linking**2 / (2*9 * 3*5)
-_det_G_cl = _G_cl_11 * _G_cl_22 - _G_cl_12**2
-
-# Gram matrix (q-deformed: replace m,n with [m],[n])
-_linking_q = abs(_n2*q_int(5) - q_int(3)*q_int(9))
-_CS_q_29 = math.pi**2 * (_n2**2-1)*(q_int(9)**2-1)/(12*_n2*q_int(9))
-_CS_q_35 = math.pi**2 * (q_int(3)**2-1)*(q_int(5)**2-1)/(12*q_int(3)*q_int(5))
-_sl_q_29 = (_n2-1)*(q_int(9)-1)
-_sl_q_35 = (q_int(3)-1)*(q_int(5)-1)
-_G_q_11 = _CS_q_29 + math.pi**2 * _sl_q_29**2 / (_n2*q_int(9))**2
-_G_q_22 = _CS_q_35 + math.pi**2 * _sl_q_35**2 / (q_int(3)*q_int(5))**2
-_G_q_12 = math.pi**2 * _linking_q**2 / (_n2*q_int(9) * q_int(3)*q_int(5))
-_det_G_q = _G_q_11 * _G_q_22 - _G_q_12**2
-
-_kappa_gram = _det_G_cl / _det_G_q  # J² self-dual damping factor
-
 # ── The CS tower is geometric — sum it exactly, do not truncate ──────
 #
 # The correction tower is  Σ_{j≥1} c₁^j κ^{j−1}, i.e. c₁ times a geometric
@@ -154,21 +127,18 @@ _kappa_gram = _det_G_cl / _det_G_q  # J² self-dual damping factor
 #
 #     1 + Σ_{j≥1} c₁^j κ^{j−1}  =  1 + c₁/(1 − c₁κ)
 #
-# whose expansion is 1 + c₁ + c₁²κ + c₁³κ² + …, reproducing the previous
-# order-2 truncation as its first three terms.
+# whose expansion is 1 + c₁ + c₁²κ + c₁³κ² + …, reproducing an earlier
+# order-2 truncation as its first three terms (the truncation cost 11.06
+# ppb at the substrate anchor; the exact form has no order parameter).
 #
-# This file previously shipped that order-2 truncation
-# (`1 + _c1 + _c1**2 * _kappa_gram`). At the substrate anchor the ratio is
-# c₁·κ ≈ 2.7e-3, so truncating cost **11.06 ppb** — significant for a
-# constant consumed by ppb-level claims. The exact form is no more
-# expensive to evaluate and has no order parameter to get wrong.
-def _alpha_em_tower(c1, kappa):
-    """Exact resummation of the CS correction tower (all orders)."""
-    return 1.0 + c1 / (1.0 - c1 * kappa)
-
-
-ALPHA_EM_INV_DERIVED = _bare_alpha_inv * _alpha_em_tower(_c1, _kappa_gram)
-# ≈ 137.0359350940 at the proton-pinned substrate anchor.
+# FLOAT64 EXCISED (owner directive 2026-08-30, bean qou-ozvb): the CS-tower
+# arithmetic (CS constants, both Gram determinants, κ, the resummation)
+# previously ran a second time at module level in float64 alongside
+# `alpha_em_inv_mp` below. The mp function is now the ONLY implementation;
+# the module-level constant is a single marked downcast of it. The two
+# paths agreed to ~13 digits, so the float64 value of
+# `ALPHA_EM_INV_DERIVED` is unchanged; what changed is that no consumer of
+# this module can now reach an α that did not come through mp arithmetic.
 #
 # NOTE ON THE ANCHOR: this is proton-pinned (`Q` from qou-substrate is
 # `_solve_q_proton_f64`, re-pinned 2026-05-28). A stale comment here used to
@@ -229,9 +199,27 @@ def alpha_em_inv_mp(dps: int = 50):
         return +(bare * (1 + c1 / (1 - c1 * kappa)))
 
 
+ALPHA_EM_INV_DERIVED = float(alpha_em_inv_mp())  # float64-intentional: back-compat downcast of the mp value
+# ≈ 137.0359350940 at the proton-pinned substrate anchor.
+
 # Canonical α_EM: the CS-corrected value is physical
 alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
 alpha_em_derived = alpha_em  # alias for backward compatibility
+
+
+def e_hartree_ev_mp(dps: int = 50):
+    """Hartree energy in eV at mp precision: E_h = α_EM²·m_e c².
+
+    Uses the CS-corrected `alpha_em_inv_mp` and the CODATA electron mass
+    `M_E_MEV` — NOT the rounded 511000.0 eV this module used through
+    2026-08-29, which understated m_e by 2.05e-6 relative and put that
+    error straight into every consumer of `E_HARTREE_EV` (bean qou-ozvb).
+    """
+    import mpmath as _mp
+    with _mp.workdps(dps):
+        inv = alpha_em_inv_mp(dps)
+        me_ev = _mp.mpf(str(M_E_MEV)) * _mp.mpf(10) ** 6
+        return +(me_ev / inv ** 2)
 
 
 # ── Knot-volume binding scales ──
@@ -276,7 +264,10 @@ FIG8_R_41  = (1 - h**2) / (4 - h**2 + 4*h**2)          # [4,1] ratio ≈ 0.239
 
 # ── Molecular energy scales ──
 # Use the CS-corrected alpha_em above (NOT bare α).
-E_HARTREE_EV = 511000.0 * alpha_em**2  # Hartree energy (eV)
+# FLOAT64 EXCISED + rounded-m_e corrected (2026-08-30, bean qou-ozvb): was
+# `511000.0 * alpha_em**2` = 27.211468 eV; now the marked downcast of the mp
+# route with CODATA M_E_MEV = 27.211412 eV (−2.05e-6 rel — the rounded m_e).
+E_HARTREE_EV = float(e_hartree_ev_mp())  # float64-intentional: back-compat downcast
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
 KAPPA = M_E_MEV                    # nuclear binding scale (MeV)

@@ -1,0 +1,107 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T19:03:55.530321+00:00",
+  "commitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
+  "assertions": [
+    {
+      "name": "reconstruction_equals_producer_witness",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_published_equals_construction",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "delta1_lemma_is_convention_dependent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "chain_does_NOT_reproduce_published_Phi",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "construction_does_NOT_give_universal_c_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "universality_fails_under_blocks_own_indexing_too",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 966,
+  "computation": "toffoli-published-vs-construction",
+  "scriptFile": "toffoli_published_vs_construction_audit.py",
+  "scriptHash": "fe05aa4d715a",
+  "scriptCommitSha": "d1fbed9f63dc1a81848e08e53764137d69433421",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_published_vs_construction_audit.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_published_vs_construction_audit.py"
+  },
+  "description": "Compares the published Toffoli transfer-matrix entries against the only construction the corpus records (_deprecated/toffoli-braid.py). An independent reconstruction reproduces that producer exactly, and then only P_77 of the four published entries matches: P_66 is 0.4154 vs a published 0.6010, and P_76 is -0.1415 vs a published +0.0495 (claimed equal to Phi). The proof block's key lemma Delta_1 = 0 holds only when the target is strand 0, while the producer flips the last strand; and even under the block's own convention the chain yields -0.0467 rather than Phi = +0.0495. Blocks the convention-D migration of Phi, P_66 and P_67 -- P_77 is unaffected and stays derived.",
+  "parameters": {
+    "q_evaluated_at": "111/100",
+    "construction_source": "computations/_deprecated/toffoli-braid.py::chain_reduce"
+  },
+  "data": {
+    "mismatched_published_entries": [
+      "P_66",
+      "P_76"
+    ],
+    "P66_construction": "0.41537901198504020636",
+    "P66_published": "0.60100172796942525073",
+    "P76_producer": "-0.14153164476025049",
+    "Phi_published": "0.049548943474034783985",
+    "chain_amplitude_block_convention": "-0.046674829171900710964",
+    "chain_over_Phi_ratio": "-0.941994438214",
+    "P_flip_by_control_pair_target_last": {
+      "pp": "-0.13061590026045002348",
+      "mixed": "-0.11767065403640645275",
+      "nn": "-0.10701098816280097533"
+    },
+    "P_flip_by_control_pair_target_first": {
+      "pp": "-0.046674829171900710964",
+      "mixed": "-0.032586792772638093571",
+      "nn": "-0.020784336723813569493"
+    },
+    "P_flip_over_Phi_target_first": {
+      "pp": "-0.941994438214",
+      "mixed": "-0.657668771277",
+      "nn": "-0.419470835634"
+    }
+  },
+  "caveats": [
+    "NOT a claim that the published forms are wrong. The only recorded construction lives in a _deprecated file that neither the content blocks nor the live producer cite, so it may itself be superseded by a derivation absent from the tree. What is established: the two disagree on three of four entries, the proof block's key lemma is convention-dependent and false as the producer runs, and the corpus does not record which side is current. NOTE the universality result WEAKENS a transcription-drift reading: a structural claim (all three control pairs giving the same amplitude) cannot arise from a mistyped number. Universality is now measured under BOTH indexings and fails under both, including the target-first reading where the block's own key lemma Delta_1 = 0 does hold -- so no choice of convention rescues it. That removes one of the two branches this probe previously could not separate: the published trio does not come from this construction under any reading of it. It remains possible that a different, unrecorded derivation produces them; the probe still cannot speak to a derivation that is not in the tree."
+  ]
+}

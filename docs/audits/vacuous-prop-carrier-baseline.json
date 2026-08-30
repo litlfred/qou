@@ -32,23 +32,7 @@
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli": {
       "verdict": "proved-vacuous",
-      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
-    },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.CriticalExponent": {
-      "verdict": "proved-vacuous",
-      "note": "Same field, `(3 * 4 : ℕ) = 12`. Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
-    },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.NSCounterexample": {
-      "verdict": "proved-vacuous",
-      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
-    },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.QAubinLions": {
-      "verdict": "proved-vacuous",
-      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
-    },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.RegularityBreakdown": {
-      "verdict": "proved-vacuous",
-      "note": "Proved vacuous BY THE CORPUS ITSELF: ConditionalClasses.lean supplies an unconditional global instance discharging this with zeros, introduced as the \"canonical instance bundle ... via the trivial-zero discharger\". No stronger evidence is available than the file inhabiting its own carrier."
+      "note": "Proved vacuous by hand in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). NOTE THE EVIDENCE CHANGED 2026-08-30: this entry previously cited the file's own 'canonical instance bundle' as proof -- the corpus inhabiting the carrier itself. That bundle was REMOVED (qou-rq9n) because it made every [C]-conditional theorem in the q-NS cone unconditional, so the citation would now point at nothing. The verdict is unchanged: inhabitability is a property of the FIELDS, not of whether the file ships an instance, and all five remain provable with no hypotheses. Removing the bundle closed the downstream hole; it did not give the carriers content."
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou": {
       "verdict": "proved-vacuous",

@@ -1,31 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T08:31:41.953962+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
-  "assertions": [
-    {
-      "name": "cross_anchor_u_subst_compared",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "tolerance": 0,
-      "source": "Step 2 of Q_β 1ppQ closure"
-    },
-    {
-      "name": "step1_premise_supported",
-      "computed": false,
-      "expected": false,
-      "passed": true,
-      "tolerance": 0,
-      "source": "whether rungs 8-10 -- the ones Step 1's flat asymptote was read off -- are certified resolved by the upstream extractor (qou-8ofm / qou-frch). Recorded, not gated: this probe reports the premise's status, it does not assert it."
-    }
-  ],
+  "computedAt": "2026-08-30T06:58:47.738010+00:00",
+  "commitSha": "ad59600162fd79fce5ad49c7ed8c7b80346b463e",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-singularity-cross-anchor-probe",
   "scriptFile": "qbeta_singularity_cross_anchor_probe.py",
-  "scriptHash": "dfd06d55405c",
+  "scriptHash": "9ccd9d613472",
   "scriptCommitSha": "0feccb2b09bcde0ee409c0c2c7c75feca68a8fa0",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -41,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -57,7 +40,12 @@
     "u_muon": "0.00851723635242482310735822116751",
     "delta_u_relative_ppb": "211.602565399",
     "fibre_level_within_1ppm": "True",
-    "step1_premise_supported": "False",
+    "step1_premise_supported": {
+      "supported": false,
+      "meaning": "whether rungs 8-10 — the ones Step 1's flat asymptote was read off — are certified resolved by the upstream extractor (qou-8ofm / qou-frch)",
+      "recorded_not_gated": true,
+      "has_independent_expected_value": false
+    },
     "last_resolved_rung": "None",
     "n_unresolved_rungs": "9",
     "floor_identity": {

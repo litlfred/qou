@@ -1,4 +1,6 @@
 import Mathlib.Tactic
+import QOU.Knot.Clausen
+import QOU.Knot.ClausenValueBounds
 
 /-!
 # QOU.Encounter.MostowRigidity
@@ -227,13 +229,23 @@ instance unknot : MostowRigidity Unknot where
     Ref: [thurston1978]; Cao–Meyerhoff, *The orientable cusped
     hyperbolic 3-manifolds of minimum volume*, Invent. Math. 146
     (2001) 451–478. -/
-instance figureEight : MostowRigidity FigureEight where
-  -- Both numeric literals below are kept in sync with the
-  -- canonical witness `hyperbolic-volumes.witness.json` by
-  -- `content/pipeline/codemod-leanval.ts`.  Never hand-edit
-  -- the literals; rerun the codemod after a witness update.
-  volume := 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
-  volume_nonneg := by norm_num
+noncomputable instance figureEight : MostowRigidity FigureEight where
+  -- EXACTIFIED 2026-08-30 (bean `qou-f8lit`).  This field used to be the decimal
+  -- literal `2.02988321281930`, a 15-significant-digit TRUNCATION of the corpus's own
+  -- exact `VOL_4_1 = 2·Cl₂(π/3) = 2.029883212819307250042405108549…`.  The two differ
+  -- at the 16th digit, so `volumeInvariant FigureEight ≠ VOL_4_1` -- while
+  -- `figureEightTriangulation_volume : figureEightTriangulation.volume = VOL_4_1` is
+  -- proved sorry-free.  Any bridge statement keyed on the literal was therefore
+  -- UNSATISFIABLE at the corpus's own 4₁ triangulation.  There is now no decimal here
+  -- to be unequal to, so the `:leanval[Vol_4_1]` sync has nothing to sync and is gone.
+  volume := QOU.Knot.FigureEightVolume.VOL_4_1
+  volume_nonneg := by
+    have := QOU.Knot.Cl_2_pi_div_three_pos
+    show (0 : ℝ) ≤ 2 * QOU.Archimedean.Cl_2 (Real.pi / 3)
+    linarith
+  -- `mostow_gap` keeps its literal deliberately: it is a conservative
+  -- UNDER-approximation of the true gap, not an approximation OF anything exact, so
+  -- truncation is the correct representation and it is not part of the defect class.
   mostow_gap := 0.5  -- :leanval[mostow_gap_4_1]
   mostow_gap_pos := by norm_num
 
@@ -248,11 +260,12 @@ instance figureEight : MostowRigidity FigureEight where
     use of `volumeInvariant`. -/
 theorem unknot_volume_lt_figureEight_volume :
     volumeInvariant Unknot < volumeInvariant FigureEight := by
-  -- The literal below is `:leanval[vol_4_1]`-tagged so that the
-  -- codemod keeps it in sync with the witness whenever Vol(4_1)
-  -- is recomputed.
-  show (0 : ℝ) < 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
-  norm_num
+  -- No literal any more: the figure-eight volume is the exact `2·Cl₂(π/3)`, and its
+  -- positivity is the corpus's proved `Cl_2_pi_div_three_pos` rather than `norm_num`
+  -- on a decimal.
+  have := QOU.Knot.Cl_2_pi_div_three_pos
+  show (0 : ℝ) < 2 * QOU.Archimedean.Cl_2 (Real.pi / 3)
+  linarith
 
 /-- **Concrete instance: 5_2 knot complement**.
 
@@ -298,13 +311,23 @@ instance knot5_2 : MostowRigidity Knot5_2 where
     bookkeeping rather than a single anchored comparison. -/
 theorem figureEight_volume_lt_knot5_2_volume :
     volumeInvariant FigureEight < volumeInvariant Knot5_2 := by
-  -- The two literals below are `:leanval`-tagged on separate lines
-  -- so the codemod (single-literal-per-line) can sync each one
-  -- independently.
-  have h41 : volumeInvariant FigureEight = 2.02988321281930 := rfl  -- :leanval[Vol_4_1]{precision=15}
+  -- The 4₁ side is now exact, so this is no longer `norm_num` on two decimals -- it is
+  -- a real inequality discharged from the certified Clausen bracket
+  -- `|Cl₂(π/3) − c·√3| ≤ 1/24` (`QOU.Knot.abs_Cl_2_pi_div_three_sub_le`).  The gap to
+  -- the 5₂ value is ≈ 0.72, an order of magnitude wider than the 1/12 uncertainty the
+  -- bracket leaves on `VOL_4_1`, so the existing coarse bound is comfortably enough.
+  --
+  -- The 5₂ side is STILL a truncated literal and still carries the same defect; making
+  -- it exact needs a LOWER bound on `VOL_5_2`, which the corpus does not have (bean
+  -- `qou-f8lit`).  Exactifying one side is what makes this provable at all.
+  have hb := QOU.Knot.abs_Cl_2_pi_div_three_sub_le
+  have hs := QOU.Knot.sqrt_three_lt
+  have hs0 := Real.sqrt_nonneg 3
+  rw [abs_le] at hb
   have h52 : volumeInvariant Knot5_2 = 2.82812208833078 := rfl  -- :leanval[vol_5_2]{precision=15}
-  rw [h41, h52]
-  norm_num
+  rw [h52]
+  show 2 * QOU.Archimedean.Cl_2 (Real.pi / 3) < 2.82812208833078
+  nlinarith [hb.2, hs, hs0]
 
 /-- **Downstream consumer: mass eigenvalue is isolated**.
 

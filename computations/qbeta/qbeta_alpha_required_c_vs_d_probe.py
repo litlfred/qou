@@ -206,15 +206,27 @@ def main() -> int:
     wb.add_data("gap_C_cross_anchor_drift", fmt(dC))
     wb.add_data("gap_D_cross_anchor_drift", fmt(dD))
 
-    wb.add_assertion(
-        name="alpha_required_is_convention_independent_by_construction",
-        computed="1", expected="1", tolerance=0,
-        source="b = sqrt(d1*d2+1) with d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1)); "
-               "u = b*hbar^2; Q_A = m_e|q^2-2q-1|(q+1)/(2q^3). None reads z, so "
-               "cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) is the same target in "
-               "both frames — which is what makes the C/D comparison fair rather "
-               "than a comparison of two different targets.",
-    )
+    # Demoted from `add_assertion(computed="1", expected="1")` to data (bean
+    # `qou-26f2`), and this one is genuinely un-assertable rather than merely
+    # unasserted. The claim is that `alpha_required` cannot depend on the
+    # convention, and the reason is structural: `substrate()` takes `q` alone
+    # and derives b, u and Q_A from it, none of which reads `z` — and `z` is
+    # the only thing C and D disagree about. There is no second value to
+    # compare against, because the signature makes the second value
+    # impossible to construct. "By construction" was accurate; `add_assertion`
+    # was the wrong place to say it.
+    wb.add_data("alpha_required_is_convention_independent_by_construction", {
+        "why": "b = sqrt(d1*d2+1) with d1 = q^3/(q^2+1), "
+               "d2 = -1/(q(q^2+1)); u = b*hbar^2; "
+               "Q_A = m_e|q^2-2q-1|(q+1)/(2q^3). None reads z, so "
+               "cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) is the same "
+               "target in both frames — which is what makes the C/D "
+               "comparison fair rather than a comparison of two different "
+               "targets",
+        "enforced_by": "substrate() takes q only; the convention enters "
+                       "through z, which it never reads",
+        "has_independent_expected_value": False,
+    })
     wb.add_assertion(
         name="D_frame_phase_residual_is_COMPARABLE_to_C_not_orders_worse",
         computed=str(int(mp.mpf("0.5") < ratio < mp.mpf("2"))), expected="1",
@@ -234,19 +246,27 @@ def main() -> int:
                "1/u^3 = 1.6e6 amplifier acting on a 0.06 % cos difference, not "
                "evidence that D breaks the physics.",
     )
-    wb.add_assertion(
-        name="RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2",
-        computed="0", expected="0", tolerance=0,
-        source="RETRACTED 2026-08-18. This asserted that both frames leave "
-               "~0.1 rad for c_3 because both gaps exceed 0.01. The gaps were "
-               "measured against the PRINCIPAL arccos branch only, but cos is "
-               "EVEN — the C phase sits on the NEGATIVE branch, with a true "
-               "residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce "
-               "CODATA at N=2 to that residual, which under 1/u^3 amplification "
-               "is exactly c_3 = -2.069. Kept as a recorded retraction rather "
-               "than deleted, so the corpus shows the correction. Superseded by "
-               "qbeta_eigenphase_branch_and_barodd_projection_probe.py.",
-    )
+    # Demoted from `add_assertion(computed="0", expected="0")` to data (bean
+    # `qou-26f2`). The intent behind it was right and is preserved: a
+    # withdrawn claim is "kept as a recorded retraction rather than deleted,
+    # so the corpus shows the correction". But a retraction is a record, and
+    # as an assertion it was a permanent guaranteed pass sitting in
+    # `allPassed` under a name beginning `RETRACTED_` — a withdrawn claim
+    # contributing to a witness's green.
+    wb.add_data("RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2", {
+        "retracted_on": "2026-08-18",
+        "what_it_claimed": "both frames leave ~0.1 rad for c_3 because both "
+                           "gaps exceed 0.01",
+        "why_it_was_wrong": "the gaps were measured against the PRINCIPAL "
+                            "arccos branch only, but cos is EVEN — the C "
+                            "phase sits on the NEGATIVE branch, with a true "
+                            "residual of 2.26e-5 rad (~5017x smaller). C "
+                            "DOES reproduce CODATA at N=2 to that residual, "
+                            "which under 1/u^3 amplification is exactly "
+                            "c_3 = -2.069",
+        "superseded_by": "qbeta_eigenphase_branch_and_barodd_projection_"
+                         "probe.py",
+    })
     out = wb.save({"q0Anchor": "ambiguous"})
     print(f"Witness: {out}")
     return 0

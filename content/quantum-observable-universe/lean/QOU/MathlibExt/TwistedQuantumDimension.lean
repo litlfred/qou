@@ -4,6 +4,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 import QOU.MathlibExt.Ribbon
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.BraidedSlide
 
 /-!
 # QOU.MathlibExt.TwistedQuantumDimension — the quantum dimension the ribbon literature means
@@ -247,14 +248,100 @@ theorem ptrWith_id (X Y Y' : C) [ExactPairing Y Y'] :
     ptrWith X Y Y' (𝟙 (X ⊗ Y)) = (ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom := by
   simp [ptrWith, qDimWith, monoidalComp]
 
+set_option maxHeartbeats 1600000 in
+/-- **The monodromy factorisation for the nested closure** (bean `qou-l64i`).
+
+Closing the 2-cable `X ⊗ Y` against the nested dual `Y' ⊗ X'` of `tensorExactPairing`, with a
+monodromy `β_{X,Y} ≫ β_{Y,X}` inserted in front of `g ⊗ h`, splits into the two separate closures.
+
+The monodromy is not decoration: `tensorExactPairing` nests the two dual pairs in **opposite orders
+at its two ends** — the cup is `X, Y, Y', X'` (X outside) while the cap is `Y', X', X, Y` (Y
+outside) — so the nested closure links the `X`-loop with the `Y`-loop.  The monodromy is exactly the
+crossing that unlinks them, which is why the statement is false without it.  This is also why the
+earlier attempt to route the proof through a partial trace (`ptrWith`) could not work: no
+trace-of-partial-trace factorisation respects two opposite nestings at once.
+
+Proof shape: the hexagon splits `β_{X⊗Y, Y'⊗X'}` into the `X`- and `Y`-halves; braiding naturality
+detaches the `X`-strand onto the cup and then carries `g` and `h` back to the two loops; what is
+left is a single strand crossing a cap, discharged by `braiding_slide_cap_right`. -/
+theorem qTrWith_tensor_monodromy (X X' Y Y' : C)
+    [ExactPairing X X'] [ExactPairing Y Y'] (g : X ⟶ X) (h : Y ⟶ Y) :
+    @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+        ((β_ X Y).hom ≫ (β_ Y X).hom ≫ (g ⊗ₘ h))
+      = qTrWith X X' g ≫ qTrWith Y Y' h := by
+  have hrec : ∀ (W A B Z : C) (k : A ⊗ (B ⊗ W) ⟶ Z),
+      (α_ W A B).hom ≫ (β_ W (A ⊗ B)).hom ≫ (α_ A B W).hom ≫ k
+        = (β_ W A).hom ▷ B ≫ (α_ A W B).hom ≫ A ◁ (β_ W B).hom ≫ k := by
+    intro W A B Z k; rw [braiding_tensor_right_hom]; simp
+  have hsl : 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ (Y' ◁ (β_ Y X').hom) ▷ X
+        ⊗≫ (Y' ⊗ X') ◁ (β_ Y X).hom ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ 𝟙 (Y' ⊗ Y)
+      = 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ Y' ◁ Y ◁ ε_ X X' ⊗≫ 𝟙 (Y' ⊗ Y) := by
+    have hh := braiding_slide_cap_right (W := Y) (A := X') (B := X) (ε_ X X')
+    calc _ = 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ Y' ◁ (𝟙 ((Y ⊗ X') ⊗ X) ⊗≫ (β_ Y X').hom ▷ X
+              ⊗≫ X' ◁ (β_ Y X).hom ⊗≫ ε_ X X' ▷ Y ⊗≫ 𝟙 Y) ⊗≫ 𝟙 (Y' ⊗ Y) := by monoidal
+      _ = _ := by rw [hh]; monoidal
+  have hfin : ∀ (v : 𝟙_ C ⟶ Y' ⊗ Y),
+      ((λ_ X').inv ≫ v ▷ X' ≫ (α_ Y' Y X').hom ≫ Y' ◁ (β_ Y X').hom ≫ (α_ Y' X' Y).inv) ▷ X
+        ≫ (α_ (Y' ⊗ X') Y X).hom ≫ (Y' ⊗ X') ◁ (β_ Y X).hom
+        ≫ 𝟙 ((Y' ⊗ X') ⊗ X ⊗ Y) ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y'
+      = ε_ X X' ≫ v ≫ ε_ Y Y' := by
+    intro v
+    calc _ = (𝟙 (X' ⊗ X) ⊗≫ (v ▷ X') ▷ X ⊗≫ 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X))
+            ≫ (𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ (Y' ◁ (β_ Y X').hom) ▷ X
+                ⊗≫ (Y' ⊗ X') ◁ (β_ Y X).hom ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ 𝟙 (Y' ⊗ Y))
+            ≫ ε_ Y Y' := by monoidal
+      _ = (𝟙 (X' ⊗ X) ⊗≫ (v ▷ X') ▷ X ⊗≫ 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X))
+            ≫ (𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ Y' ◁ Y ◁ ε_ X X' ⊗≫ 𝟙 (Y' ⊗ Y))
+            ≫ ε_ Y Y' := by rw [hsl]
+      _ = ε_ X X' ≫ v ≫ ε_ Y Y' := by
+            rw [← Category.assoc]
+            rw [show (𝟙 (X' ⊗ X) ⊗≫ (v ▷ X') ▷ X ⊗≫ 𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X))
+                  ≫ (𝟙 (((Y' ⊗ Y) ⊗ X') ⊗ X) ⊗≫ Y' ◁ Y ◁ ε_ X X' ⊗≫ 𝟙 (Y' ⊗ Y))
+                = (λ_ (X' ⊗ X)).inv ≫ v ▷ (X' ⊗ X) ≫ (Y' ⊗ Y) ◁ ε_ X X' ≫ (ρ_ (Y' ⊗ Y)).hom from by monoidal]
+            simp only [Category.assoc]
+            rw [← whisker_exchange_assoc]
+            simp [unitors_inv_equal]
+  have hpre : ∀ (Z : C) (k : (X ⊗ Y) ⊗ (Y' ⊗ X') ⟶ Z),
+      (η_ X X' ⊗≫ X ◁ η_ Y Y' ▷ X' ⊗≫ 𝟙 ((X ⊗ Y) ⊗ Y' ⊗ X')) ≫ k
+        = η_ X X' ≫ X ◁ ((λ_ X').inv ≫ η_ Y Y' ▷ X' ≫ (α_ Y Y' X').hom)
+            ≫ (α_ X Y (Y' ⊗ X')).inv ≫ k := by
+    intro Z k; monoidal
+  simp only [ExactPairing.coevaluation] at hpre
+  simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation]
+  rw [hpre]
+  rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+  simp only [Category.assoc, Iso.inv_hom_id_assoc]
+  simp only [MonoidalCategory.whiskerLeft_comp, Category.assoc]
+  rw [← hrec X (Y' ⊗ X') Y, Iso.inv_hom_id_assoc]
+  simp only [← MonoidalCategory.whiskerLeft_comp_assoc]
+  rw [braiding_naturality_right_assoc]
+  conv_rhs => rw [braiding_naturality_left_assoc]
+  refine congrArg _ (congrArg _ ?_)
+  rw [← braiding_naturality, tensorHom_def']
+  simp only [MonoidalCategory.whiskerLeft_comp, Category.assoc]
+  rw [← MonoidalCategory.associator_naturality_right_assoc,
+    ← MonoidalCategory.whisker_exchange_assoc]
+  refine congrArg _ ?_
+  rw [← MonoidalCategory.associator_naturality_middle_assoc, ← comp_whiskerRight_assoc]
+  simp only [Category.assoc]
+  rw [← braiding_naturality_left]
+  rw [← MonoidalCategory.associator_naturality_left_assoc, ← comp_whiskerRight_assoc]
+  rw [braiding_tensor_right_hom]
+  simp only [Category.assoc, Iso.hom_inv_id_assoc, ← comp_whiskerRight_assoc]
+  have hf := hfin (η_ Y Y' ≫ h ▷ Y' ≫ (β_ Y Y').hom)
+  simp only [ExactPairing.coevaluation, ExactPairing.evaluation, Category.assoc] at hf ⊢
+  exact hf
+
 /-- **Multiplicativity, CONDITIONAL on the monodromy factorisation.**
 
-The hypothesis `hmono` is the one open lemma (bean `qou-l64i`): closing the 2-cable `X ⊗ Y` with a
+The hypothesis `hmono` is `qTrWith_tensor_monodromy` above, proved unconditionally as of bean
+`qou-l64i`; the unconditional form is `qDimTwistedWith_tensor` below.  This conditional form is kept
+because it isolates where the balancing axiom is used.  Closing the 2-cable `X ⊗ Y` with a
 monodromy `β_{X,Y} ≫ β_{Y,X}` on the input splits into the two separate closures.  Given it, the
 twisted quantum dimension is multiplicative, and the derivation uses the balancing axiom exactly
 once — `twist_tensor` is precisely what puts the required monodromy in front of `θ_X ⊗ θ_Y`.
 
-This is stated conditionally on purpose.  I had asserted in the bean that multiplicativity "is then
+It was stated conditionally on purpose.  I had asserted in the bean that multiplicativity "is then
 a corollary"; that assertion is what this theorem replaces with a machine-checked implication, after
 an earlier assertion of the same kind (that the nested closure factors through `ptrWith`) turned out
 to be false.  A named hypothesis discharged by `rw` is worth more than a claim that a step will go
@@ -271,6 +358,18 @@ theorem qDimTwistedWith_tensor_of_monodromy [BalancedCategory C] (X X' Y Y' : C)
         (BalancedCategory.twist (X ⊗ Y))
       = qTrWith X X' (BalancedCategory.twist X) ≫ qTrWith Y Y' (BalancedCategory.twist Y)
   rw [BalancedCategory.twist_tensor, hmono]
+
+/-- **Multiplicativity of the twisted quantum dimension**, unconditionally.
+
+`qDimTwistedWith_tensor_of_monodromy` with its hypothesis discharged by
+`qTrWith_tensor_monodromy`.  This is the ribbon-category fact that the quantum dimension is a
+monoid homomorphism, for the nested `tensorExactPairing` dual and with no rigidity assumed beyond
+the two exact pairings. -/
+theorem qDimTwistedWith_tensor [BalancedCategory C] (X X' Y Y' : C)
+    [ExactPairing X X'] [ExactPairing Y Y'] :
+    @qDimTwistedWith C _ _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+      = qDimTwistedWith X X' ≫ qDimTwistedWith Y Y' :=
+  qDimTwistedWith_tensor_of_monodromy X X' Y Y' (qTrWith_tensor_monodromy X X' Y Y')
 
 end PartialTrace
 

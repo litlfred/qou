@@ -1268,11 +1268,30 @@ class HasGeneratorAction (n : ℕ) (q : ℝ) where
   /-- Far-commutativity witness. -/
   far_commute_witness : far_commute_holds
 
-/-- **Trivial canonical instance** discharging
-    `HasGeneratorAction n q` via constant-zero action and
-    vacuous-True relations.  Genuine instances at concrete `n`
-    arrive once the per-basis multiplication table is encoded. -/
-instance HasGeneratorAction_punit (n : ℕ) (q : ℝ) :
+/-- **Trivial model of `HasGeneratorAction n q`** — the σ-action is the
+    constant-zero map and all three relations are `True`.  Genuine
+    models at concrete `n` arrive once the per-basis multiplication
+    table is encoded.
+
+    **A `def`, not an `instance`, since 2026-08-24** — the same
+    treatment `triv_hecke` (line ~173 of this file) received on
+    2026-08-23, for the same reason.  Being an `instance`, this
+    answered `[HasGeneratorAction n q]` at every `n` and every `q`, so
+    a downstream theorem taking the class as a §3b-cond hypothesis
+    would have had it discharged with the zero action and three `True`s
+    and never learned the hypothesis was free.
+
+    Difference from `triv_hecke`, worth recording: that demotion cost
+    one error (`triv_wedderburn`, fixed in place).  This one costs
+    **zero** — `HasGeneratorAction` had no consumers anywhere in the
+    corpus at the time of the demotion.  Nothing was relying on the
+    global resolution because nothing was using the class at all; the
+    §3b-cond hypothesis in its docstring is a hypothesis no theorem yet
+    takes.
+
+    A caller wanting the trivial action writes
+    `letI := HasGeneratorAction_punit n q`. -/
+def HasGeneratorAction_punit (n : ℕ) (q : ℝ) :
     HasGeneratorAction n q where
   sigma_action _ _ := fun _ => 0
   hecke_holds := True

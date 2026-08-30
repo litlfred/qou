@@ -144,6 +144,17 @@ def main() -> int:
     # now convention D. So either the comparison is currently mismatched (C
     # values against D-forced weights) and the fix is to migrate this line, or
     # the probe deliberately evaluates C for contrast and should say so the way
+    # RESOLVED 2026-08-30 (qou-t9r1): the fear above is BACKWARDS. The Lean has
+    # BOTH arms as separate declarations -- `BorromeanMarkovTrace` is D, and
+    # `BorromeanCanonicalTraceDerivation` (`trC_borromean_derived`), which is the
+    # one THIS probe compares against, is C. They are a deliberately-maintained
+    # pair: `BorromeanTraceConventionSplit.lean` proves D != C sorry-free. So the
+    # comparison is correctly paired and z_C is the object under test, not
+    # residual C -- binding z_D here would assert a known-false equality.
+    # Evidence is this probe's own exact-symbolic PASS: because D != C is a
+    # THEOREM, a mismatched pairing could not pass. Ledger-adjudicated;
+    # taxonomy row 20 (the D arm is in Lean, so no Python-side pairing test
+    # can see it). Prior text kept below for provenance:
     # probe_convention_d_vs_c_borromean now does. Running it decides which;
     # neither answer should be assumed. Bean qou-9xla.
     z_C = t / (t**2 + 1)

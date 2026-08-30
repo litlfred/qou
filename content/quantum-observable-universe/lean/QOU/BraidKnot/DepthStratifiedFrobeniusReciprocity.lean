@@ -125,9 +125,28 @@ class DepthStratifiedFrobeniusReciprocity (R : Type*) [Field R] where
   fr_pullback_at_low_k : R → ℕ → Prop
   fr_pullback_classical : ∀ k : ℕ, fr_pullback_at_low_k 1 k
 
-/-- Default instance providing the chirality ideal at k = 3
-    and discharging the q = 1 case for all k. -/
-noncomputable instance {R : Type*} [Field R] : DepthStratifiedFrobeniusReciprocity R where
+/-- **Chirality-ideal model with the predicate read as its own
+    witness.**  `knot_ideal_at_k` is real at `k = 3`
+    (`chirality_ideal_4_1`) and a `"?"`-labelled zero projector
+    elsewhere.  The conjectural field is not: `fr_pullback_at_low_k` is
+    *defined* to be `fun q _k => q = 1`, so
+    `fr_pullback_classical : ∀ k, fr_pullback_at_low_k 1 k` unfolds to
+    `1 = 1` and closes by `rfl`, uniformly in `k`.  No Frobenius
+    reciprocity, induced representation or depth stratum is encoded;
+    the field is satisfied by choosing the predicate to be the equation
+    the field asserts.
+
+    The classical-limit case genuinely is provable in principle, via
+    Mathlib's `Representation.induced` plus the pending Specht-module
+    API — that is what a real model would have to supply here.
+
+    **A `def`, not an `instance`, since 2026-08-24**, and given a name:
+    it was anonymous, so resolution supplied it for every field under
+    the generated name `instDepthStratifiedFrobeniusReciprocity`.
+
+    Callers name it: `letI := depthStratifiedFR_chiralityIdeal R`. -/
+noncomputable def depthStratifiedFR_chiralityIdeal (R : Type*) [Field R] :
+    DepthStratifiedFrobeniusReciprocity R where
   knot_ideal_at_k k _h := match k with
     | 3 => chirality_ideal_4_1
     | _ => { central_projector_value := 0,

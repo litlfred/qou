@@ -77,23 +77,32 @@ theorem mostow_volume_eq_triangulation_volume
   rw [← compat m]
   exact HyperbolicVolumeBridge.vol_eq_of_realises T m h
 
-/-- **The entered literal, pinned to a computed sum.**
+/-- **The figure-eight invariant IS the computed Bloch–Wigner sum.**
 
-`figureEight` sets `volume := 2.02988321281930` as a decimal literal. Under the
-bridge, that literal is not free: it is the Bloch–Wigner sum of any triangulation
-realising the complement.
+RESOLVED 2026-08-30 (bean `qou-f8lit`). This theorem previously concluded
+`(2.02988321281930 : ℝ) = T.volume`, keyed on the decimal literal
+`MostowRigidity.figureEight` used to carry, and was **unusable at the figure-eight**:
+that literal is a 15-digit truncation, `figureEightTriangulation.volume = VOL_4_1` is
+proved sorry-free, and the two differ at the 16th digit — so its hypotheses were jointly
+unsatisfiable there and no correct bridge instance could ever discharge them.
 
-This is what the bridge buys. It does not verify the literal — `compat` is still
-assumed — but it converts "a number was entered here" into "this number is the
-value of a computed quantity, given the bridge", which is a statement the corpus
-could not previously make at all. -/
-theorem figureEight_literal_eq_triangulation_volume
+The instance is now exact (`volume := VOL_4_1`), so the statement is keyed on the exact
+constant and applies. **The typechecker made the defect visible at exactly this line**:
+before exactification `volumeInvariant FigureEight` was *definitionally* the literal, so
+the coercion went through silently; afterwards Lean reported
+
+    has type      volumeInvariant FigureEight = T.volume
+    but expected  2.02988321281930 = T.volume
+
+which is the whole finding in one error message. Worth remembering: a truncated literal
+standing in for an exact constant is invisible while it is the definition. -/
+theorem figureEight_volume_eq_triangulation_volume
     [HyperbolicVolumeBridge FigureEight]
     (compat : ∀ m : FigureEight,
       HyperbolicVolumeBridge.vol m = (figureEight).volume)
     (T : IdealTriangulation n) (m : FigureEight)
     (h : HyperbolicVolumeBridge.Realises T m) :
-    (2.02988321281930 : ℝ) = T.volume :=
+    QOU.Knot.FigureEightVolume.VOL_4_1 = T.volume :=
   mostow_volume_eq_triangulation_volume compat T m h
 
 /-- **Any two triangulations realising a Mostow-rigid manifold agree with its

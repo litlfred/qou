@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:43:47.112354+00:00",
-  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "computedAt": "2026-08-30T10:45:46.865467+00:00",
+  "commitSha": "c80f90670f0ae61cf3b9ce04415f75b4d8a7d7e2",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
-      "computed": 8,
-      "expected": 8,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0.0,
       "source": "Enumeration of structurally-motivated bar-symmetric candidates"
     }
   ],
   "allPassed": true,
-  "durationMs": 197,
+  "durationMs": 9,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
-  "scriptHash": "a596e6dd3f06",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "013e0b2a672d",
+  "scriptCommitSha": "3b5c125376a04d0e4d64590813f0bbdbc9665cdc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:17:17.007207+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-30T06:34:17.577159+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "assertions": [
     {
       "name": "deuteron_scan_completed",
-      "computed": 9,
-      "expected": 9,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "source": "Scanned 9 candidates at 80 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "deuteron-binding-plancherel-channel",
   "scriptFile": "deuteron_binding_plancherel_channel.py",
-  "scriptHash": "e85c502f86f9",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "7ef3d9d5475e",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deuteron_binding_plancherel_channel.py"
+    ],
+    "reproduce": "python3 -u computations/deuteron_binding_plancherel_channel.py"
   },
   "description": "Item C of PR #1654: brief test of Plancherel-channel template at H_2 for the deuteron binding ratio. Complements sibling Δ_λ Option E work (multiple existing queue entries).",
   "parameters": {
@@ -38,9 +47,9 @@
     "mp_dps_runtime": "80"
   },
   "data": {
-    "target_Bd_over_Md": "0.00118604753651991760685113",
+    "target_Bd_over_Md": "0.00118604759363078502839864",
     "best_candidate": "(h) ℏ_q · (q-1)² · 1/2",
-    "best_rel_pct": "-49.4783337101",
+    "best_rel_pct": "-49.4783361428",
     "verdict": "NULL — Plancherel-channel template at H_2 does NOT close the deuteron binding ratio. Confirms (yet again) that the Δ_λ binding closure requires deeper structure than H_2 classical Plancherel — multi-session open work.",
     "lean_uniqueness_ref": {
       "nucleus": "deuteron (²H)",

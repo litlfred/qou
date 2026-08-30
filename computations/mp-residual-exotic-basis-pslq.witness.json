@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:57:19.369309+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T07:48:37.470122+00:00",
+  "commitSha": "a763ee8b5309297eda7f099562e175973c56a5df",
   "assertions": [
     {
       "name": "exotic_basis_pslq_completed",
-      "computed": true,
-      "expected": true,
+      "computed": 13,
+      "expected": 13,
       "passed": true,
       "tolerance": 0,
-      "source": "Exotic-basis PSLQ over 13 elements at 120 dps."
+      "source": "Exotic-basis PSLQ at 120 dps: 12 of 13 elements submitted, 1 skipped as ~0, 0 errored"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 13,
   "computation": "mp-residual-exotic-basis-pslq",
   "scriptFile": "mp_residual_exotic_basis_pslq.py",
-  "scriptHash": "8ba26345fab5",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "b2aed037d191",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mp_residual_exotic_basis_pslq.py"
+    ],
+    "reproduce": "python3 -u computations/mp_residual_exotic_basis_pslq.py"
   },
   "description": "Open-work follow-up to PR #1645: PSLQ search for the 54 ppb m_p sub-residual after (α_em/π)/6 correction, over the EXOTIC basis deferred by PR #1629 Task 2 (Bloch-Wigner D(z), Mahler measures of golden/Bring-quintic/Cassini polynomials, hyperbolic volumes, elliptic K). 120 dps, maxcoeff 10⁶, tol 10⁻²².",
   "parameters": {
@@ -43,7 +51,15 @@
     "sub_residual_ppb": "261.139933553",
     "basis_size": 13,
     "matches": 0,
-    "verdict": "DEEPER NULL — even the exotic basis (Bloch-Wigner D(z), Mahler measures of golden/quintic/Cassini polynomials, hyperbolic volumes, elliptic integrals) does NOT identify the 54 ppb sub-residual at 120 dps tol 10⁻²². Strongly suggests the residual is at the **CODATA precision floor** for the input anchors (α_em precision 10⁻¹⁰; m_p 10⁻¹⁰; m_μ 10⁻¹⁰; m_e 10⁻¹⁰). A 54 ppb residual on a kg-scale identity is consistent with ~10⁻¹⁰ × propagation factor. Further structural derivation would need improved CODATA inputs."
+    "verdict": "DEEPER NULL — even the exotic basis (Bloch-Wigner D(z), Mahler measures of golden/quintic/Cassini polynomials, hyperbolic volumes, elliptic integrals) does NOT identify the 54 ppb sub-residual at 120 dps tol 10⁻²². Strongly suggests the residual is at the **CODATA precision floor** for the input anchors (α_em precision 10⁻¹⁰; m_p 10⁻¹⁰; m_μ 10⁻¹⁰; m_e 10⁻¹⁰). A 54 ppb residual on a kg-scale identity is consistent with ~10⁻¹⁰ × propagation factor. Further structural derivation would need improved CODATA inputs.",
+    "pslq_coverage": {
+      "basis_size": 13,
+      "ran": 12,
+      "skipped_near_zero": [
+        "D(q_0 + i·0)"
+      ],
+      "errored": []
+    }
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

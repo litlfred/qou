@@ -797,10 +797,16 @@ if __name__ == "__main__":
             "them'.")
     w.add_assertion(
         "summary_total_observables",
-        computed=out["summary"]["total"],
+        # Read `computed=…["total"], expected=…["total"]` — the same expression,
+        # so it passed however the table was built (bean `qou-26f2`). There is
+        # no external expectation for a snapshot count, but there IS an internal
+        # one: the summary must agree with the rows actually serialised beside
+        # it. That can fail if rows are filtered after the summary is built,
+        # which is the realistic way this dashboard goes wrong.
+        computed=len(out["rows"]),
         expected=out["summary"]["total"],
         tolerance=0,
-        source="Snapshot count of observables in the table.",
+        source="row count in the emitted payload vs the summary's own total",
     )
     # Reference upstream witnesses for staleness tracking
     for upstream in [

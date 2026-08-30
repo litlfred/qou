@@ -70,9 +70,13 @@ def main() -> None:
     print("Boiling/Freezing Temperature Scan via q-Equation of State (NO FIT)")
     print("=" * 80)
     
+    # Collected so the "~6-10x" claim below can be checked against the run
+    # rather than asserted as a constant (bean `qou-26f2`).
+    boil_ratios: dict[str, float] = {}
+
     for name, (e_cov, n_hb, n_k, t_boil_obs, t_melt_obs) in MOLECULES.items():
         print(f"[{name}]")
-        
+
         # 1. Cohesion Energy S_q^(∂)
         S_q_boundary = n_hb * h2 * e_cov * 1000.0  # J/mol
         
@@ -88,6 +92,7 @@ def main() -> None:
         w.add_data(f"{name}_T_boil_pred", t_boil_pred)
         w.add_data(f"{name}_T_boil_obs", t_boil_obs)
         w.add_data(f"{name}_boil_ratio", boil_ratio)
+        boil_ratios[name] = float(boil_ratio)
         w.add_data(f"{name}_T_melt_pred", t_melt_pred)
         w.add_data(f"{name}_T_melt_obs", t_melt_obs)
         w.add_data(f"{name}_melt_ratio", melt_ratio)
@@ -99,10 +104,41 @@ def main() -> None:
     print("CONCLUSION: The strict geometric mapping P_q V_q = n_q R T over-predicts temperatures.")
     print("The empirical 'entropy of vaporization' involves a missing topological factor beyond the simple [2]_q.")
     
+    # Was `computed=True, expected=True` under the name "Direct substitution
+    # of [2]_q yields gap ratio ~6-10x" (bean `qou-26f2`). This probe's
+    # finding is a NEGATIVE one — the strict geometric mapping over-predicts —
+    # and the size of the miss is its whole content. A literal `True` recorded
+    # that a conclusion had been reached, not that the numbers supported it:
+    # every ratio could have come out at 1.0, confirming the method works, and
+    # it would still have passed.
+    #
+    # Draining it showed the name is wrong about this script's own numbers.
+    # The measured boil ratios are H2O 6.45x, HF 5.04x, NH3 4.26x — a range of
+    # **4.26-6.45x**, with only one of three inside the stated "6-10x". The
+    # constant had been covering that since the assertion was written. Bean
+    # `qou-3hre`; not resolved here, because widening the band to fit the
+    # observation is precisely the move this file's "NO FIT" header forbids,
+    # and which of the two is wrong — the band or the model — is the author's
+    # call.
+    #
+    # What is asserted instead is the over-prediction finding itself, which is
+    # what the probe actually establishes and is falsifiable in the direction
+    # that matters: if the geometric mapping ever started working, the ratios
+    # would approach 1 and this would fail.
+    _over = {n: r for n, r in boil_ratios.items() if r > 1.0}
+    w.add_data("boil_ratios", boil_ratios)
+    w.add_data("boil_ratio_range", {"min": min(boil_ratios.values()),
+                                    "max": max(boil_ratios.values()),
+                                    "claimed_band_in_assertion_name": "6-10x",
+                                    "matches_claimed_band": False})
     w.add_assertion(
-        "Direct substitution of [2]_q yields gap ratio ~6-10x",
-        computed=True, expected=True,
-        source="T_boil_pred = S_q / ([2]_q R) misses by a large factor"
+        "Direct substitution of [2]_q over-predicts T_boil for every material",
+        computed=len(_over), expected=len(boil_ratios), tolerance=0,
+        source=f"T_boil_pred = S_q / ([2]_q R) misses high everywhere: "
+               f"{', '.join(f'{n} {r:.2f}x' for n, r in boil_ratios.items())} "
+               f"(range {min(boil_ratios.values()):.2f}-"
+               f"{max(boil_ratios.values()):.2f}x, NOT the 6-10x the previous "
+               f"assertion name claimed — see bean qou-3hre)"
     )
     
     w.set_description(

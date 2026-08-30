@@ -251,7 +251,8 @@ def save_ckpt(state: Path, ck: dict) -> None:
 
 # ── the check itself ────────────────────────────────────────────────────────
 
-def run_producer(prod: Path, timeout: int, log_dir: Path | None):
+def run_producer_at(prod: Path, timeout: int, log_dir: Path | None,
+                    anchor: str = "physical"):
     """Run at the proton pin with LIVE logging. (rc|None, tail, seconds).
 
     The producer's stdout goes STRAIGHT TO A FILE, not through a pipe this
@@ -269,10 +270,10 @@ def run_producer(prod: Path, timeout: int, log_dir: Path | None):
     while nobody is reading — which a two-hour run is a good candidate for.
     """
     env = dict(os.environ)
-    env["QOU_Q0_ANCHOR"] = "physical"
+    env["QOU_Q0_ANCHOR"] = anchor
     if log_dir:
         log_dir.mkdir(parents=True, exist_ok=True)
-        log_path = log_dir / f"{prod.stem}.log"
+        log_path = log_dir / f"{prod.stem}.{anchor}.log"
     else:
         log_path = Path(tempfile.gettempdir()) / f"ppc-{prod.stem}-{os.getpid()}.log"
     t0 = time.monotonic()
@@ -308,7 +309,28 @@ def run_producer(prod: Path, timeout: int, log_dir: Path | None):
 # through `q_parameter`, so QOU_Q0_ANCHOR does not reach them. Measured on
 # main 2026-08-29: 17 of the 32 `ideal_muon` stems. Raised from #5792, and
 # the count there (7 of 13) is a different subset, not a disagreement.
-_PIN_FILE_MARKERS = ("q-pinning-50-digit", "q_pinning_50_digit")
+# THE FIRST VERSION OF THIS LIST WAS WRONG IN BOTH DIRECTIONS, and the count
+# hid it. Matching the bare strings "q-pinning-50-digit"/"q_pinning_50_digit"
+# anywhere in the source gave 15 of 21 stems on 2026-08-29. The corrected test
+# also gives 15 — over a DIFFERENT SET:
+#
+#   FALSE POSITIVE  rho_f_categorical_probe names `q_pinning_50_digit.py` in a
+#                   docstring markdown link and never reads the witness. It was
+#                   refused as unmeasurable; run, it returns NO-ASSERTIONS.
+#   FALSE NEGATIVE  qbeta_jacobi_anger_tower_general reaches muon through
+#                   `q_muon_at()` and never names the file, so no filename test
+#                   of any tightness sees it. It was being RUN, and its verdict
+#                   would have been a FALSE PASS — the dangerous direction.
+#
+# So a matching count is not agreement, and tightening a pattern is not the same
+# as fixing it: this had to widen (the anchor APIs) as well as narrow (the
+# actual witness filename, not the producer's name).
+_PIN_FILE_MARKERS = (
+    "q-pinning-50-digit.witness.json",   # the witness itself, read directly
+    "q_muon_at",                         # the muon anchor API, by name
+    "_q0_value_for_anchor",              # the underlying anchor resolver
+    "load_q_50dps",                      # muon default (qou-dkm2)
+)
 
 
 def env_override_reaches(prod: Path) -> bool:
@@ -338,13 +360,30 @@ def check(prod: Path, timeout: int, state: Path, log_dir: Path | None):
                 "MUON leg and report it as proton. Route it through "
                 "q_parameter first (qou-aj91 mechanism 5).", 0.0)
     snapshot(state)
-    rc, tail, secs = run_producer(prod, timeout, log_dir)
+    rc, tail, secs = run_producer_at(prod, timeout, log_dir, "physical")
     try:
         if rc is None:
             return "UNKNOWN", f"exceeded {timeout}s — not a pass, not a fail", secs
         if rc != 0:
+            # A NON-ZERO EXIT IS NOT EVIDENCE ABOUT THE ANCHOR. Measured twice:
+            # binding_via_interface_knot dies on `data_loaded`, and
+            # qbeta_hoefsmit_tbeta_matrix_build_probe on `TypeError:
+            # unsupported format string passed to mpf.__format__` — both
+            # IDENTICALLY at either pin. Calling those FAILS-AT-PROTON reads as
+            # "it depends on the muon pin" and would freeze a merely broken
+            # producer in ideal_muon forever, for a reason unrelated to q0.
+            #
+            # So on failure ONLY, spend a second leg to disambiguate. The common
+            # path stays one leg, which is what makes this check cheap and what
+            # distinguishes it from the anchor-flip audit.
+            rc2, tail2, _ = run_producer_at(prod, timeout, log_dir, "ideal")
+            if rc2 == rc:
+                return ("BROKEN-AT-BOTH",
+                        f"exit {rc} at BOTH pins — pre-existing, not anchor-"
+                        f"dependent: {tail[-110:].replace(chr(10), ' ')}", secs)
             return ("FAILS-AT-PROTON",
-                    f"exit {rc}: {tail[-140:].replace(chr(10), ' ')}", secs)
+                    f"exit {rc} at proton but {rc2} at muon — genuinely "
+                    f"anchor-dependent: {tail[-110:].replace(chr(10), ' ')}", secs)
 
         wrote = written_since(state)
         if not wrote:
@@ -592,6 +631,7 @@ def main(argv=None) -> int:
     print("  UNSOUND-ENV-BYPASS-> the pin override cannot reach it; not run")
     print("  UNCLEAR          -> an assertion is neither true nor false")
     print("  NO-ASSERTIONS    -> wrote a witness but asserts nothing")
+    print("  BROKEN-AT-BOTH   -> same failure at either pin; NOT a hold, fix the producer")
     print(f"  resume/inspect:  {sys.argv[0]} --status --state {state}")
     return rc
 

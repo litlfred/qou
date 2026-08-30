@@ -54,6 +54,18 @@ from hecke_core import *
 from witness_base import WitnessBuilder
 
 
+# The braid-word alphabet. Module-level so the witness block can re-parse a
+# reported operator label against exactly the list the selection used — a
+# second copy would drift and the round-trip assertion would stop meaning
+# anything.
+OPS = [
+    ('σ₀',  0, 1.0, 0.0),
+    ('σ₁',  1, 1.0, 0.0),
+    ('σ₀⁻¹',0, 1.0, -h),
+    ('σ₁⁻¹',1, 1.0, -h),
+]
+
+
 def universal_ilp(state_nf, label, target_nf_builder=None, max_len=6):
     """Run the universal LP on a state.
 
@@ -67,12 +79,6 @@ def universal_ilp(state_nf, label, target_nf_builder=None, max_len=6):
     tr_x = nf_tr(state_nf)
     stable_x, Gx, viols_x = check_frobenius(state_nf)
 
-    OPS = [
-        ('σ₀',  0, 1.0, 0.0),
-        ('σ₁',  1, 1.0, 0.0),
-        ('σ₀⁻¹',0, 1.0, -h),
-        ('σ₁⁻¹',1, 1.0, -h),
-    ]
 
     print('  {} state: tr_M={:.6e}, Frob={}'.format(
         label, tr_x, 'STABLE' if stable_x else 'UNSTABLE'))
@@ -272,9 +278,43 @@ for level, key in [('confinement','confinement'),('gluon','gluon'),
     sel = results.get(key)
     if sel:
         w.add_data(key, {"operator": sel[0], "crossings": sel[3], "tr_M": sel[1]})
+        # This read `computed=sel[0], expected=sel[0]` — the same expression on
+        # both sides, so every level asserted `x == x`. `allPassed: true` was
+        # guaranteed whatever the script computed, and `status: "verified"` on
+        # `def:universal-ilp-algorithm` certified nothing about it (bean
+        # `qou-v5fp`; the same shape occurs at 265 other sites corpus-wide,
+        # bean `qou-26f2`).
+        #
+        # Two repairs are tempting and both are wrong here.
+        #
+        #   * Assert the operator against a hardcoded name. Which operator each
+        #     level SHOULD select is exactly what `qou-v5fp` leaves open, and
+        #     `qou-jqjx` withdrew the block values that would be hardcoded.
+        #   * Assert "the selection is minimum-crossing among feasible" or "the
+        #     selection is Frobenius-feasible". Both are TRUE BY CONSTRUCTION:
+        #     `select_operator` scans `n` upward and takes the first feasible
+        #     `best_at_n`, and `best_at_n` is only ever set when `stable_new`.
+        #     Asserting either re-runs the selection rule against itself — the
+        #     same tautology in a longer form.
+        #
+        # So this producer cannot verify its own selection: the check and the
+        # rule are one computation. What it can honestly assert is the internal
+        # consistency of what it REPORTS, which is independent of the rule and
+        # can fail — a label that does not re-parse, or a crossing count that
+        # disagrees with the label it is filed against.
+        parsed, rest = [], sel[0]
+        while rest:                       # longest-match against the op names
+            for nm, _g, _c, _d in sorted(OPS, key=lambda o: len(o[0]), reverse=True):
+                if rest.startswith(nm):
+                    parsed.append(nm); rest = rest[len(nm):]; break
+            else:
+                parsed, rest = None, ""   # unparseable label — the failure case
+                break
         w.add_assertion(
-            level, computed=sel[0], expected=sel[0],
-            source="Universal ILP",
+            f"{level}: reported operator label re-parses to its crossing count",
+            computed=(len(parsed) if parsed is not None else -1),
+            expected=sel[3],
+            source="label round-trip against OPS; independent of the selection rule",
         )
 
 w.save()
