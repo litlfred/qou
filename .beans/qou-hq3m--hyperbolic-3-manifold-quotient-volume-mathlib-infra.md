@@ -119,3 +119,56 @@ Exhibiting the model is the only way to know. The unit slab is proved to be one,
 
 Mostow rigidity and Thurston hyperbolisation are untouched, and nothing here is a step
 toward either.
+
+---
+
+## 2026-08-29 — TWO CORRECTIONS to my own claims, both caught by the author
+
+Both appear in PR #6056's body and in my end-of-turn reports, so they need naming here.
+
+### 1. "Nothing here makes `Vol(4₁)` computable" — WRONG
+
+Measured on main. The corpus has the figure-eight volume **exactly, and sorry-free**:
+
+| declaration | file | state |
+|---|---|---|
+| `VOL_4_1 := 2 * Cl_2 (π/3)` | `Knot/FigureEightVolume.lean:88` | exact constant |
+| `figureEightTriangulation : IdealTriangulation 2` | `Knot/FigureEightTriangulation.lean:97` | 2 regular ideal tets |
+| `figureEightTriangulation_volume` | same, **0 sorries** | `= VOL_4_1`, proved |
+| `edge_zero` / `edge_one` | same | gluing equations, proved |
+| `Cl_2_pi_div_three_pos` | `Knot/Clausen.lean:490` | `0 < Cl₂(π/3)` |
+
+So the 4₁ analogue of `FiveTwoVolumeConstant` already existed, and the constant is a
+closed form, not a decimal.
+
+**What I should have said**, and it is much narrower: nothing connects the *knot
+complement as a topological object* to `figureEightTriangulation`. The proved statement
+is "this triangulation of two regular ideal tetrahedra has volume `2·Cl₂(π/3)`" — not
+"the complement `S³ ∖ 4₁` has that volume". That step is Thurston. The number was never
+the gap; the identification was.
+
+Note also there is **no knot 4₂** — 4₁ is the only 4-crossing knot. The knot with the
+full exact treatment in `FiveTwoVolumeConstant.lean` is **5₂**.
+
+### 2. "There is no group acting" — TOO BROAD
+
+Measured: **8 files** carry `MulAction`/`AddAction` (`BraidKnot/Specht`,
+`SpechtIrreducible`, `HeckeBoundedSeminormalWeight`, `QBeta/MarkovTraceQuotient`,
+`Substrate/ColorAntisymmetric`, `BraidsAndKnots/ClosureComponentsSignInvariant`,
+`BringsSurface/OctonionInvariantObstruction`, `MathlibExt/RegularHom`), and
+`MobiusEnergy.lean` discusses a `PSL(2,ℂ)` Möbius action.
+
+The claim is true only **scoped to ℍ³**: of the 10 files touching
+`upperHalfSpace`/`upperH`, exactly one carries an action, and it is
+`Archimedean/HyperbolicQuotient.lean` — the one added by this bean. Stated without that
+scope it reads as "this corpus has no group actions", which is false and would mislead
+anyone auditing the representation-theory side.
+
+### The lesson worth keeping
+
+Both errors have the same shape as the `ManifoldVolumeBridge` vacuity trap they sit
+beside: **a claim about absence that was never measured.** "Mathlib has no hyperbolic
+3-manifolds" is a fact about Mathlib that I carried across into a claim about this
+corpus without running the corpus-grep, which is the very checklist AGENTS.md gates
+"open" declarations on. The checklist is not only for declaring items open — it applies
+to any assertion that the corpus *lacks* something.

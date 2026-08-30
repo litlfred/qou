@@ -550,6 +550,17 @@ QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.ofInt_su
 QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.measurableSet_slab | clean
 QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isAddFundamentalDomain_slab | clean
 QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.hypVolume_eq_slab_of_isAddFundamentalDomain | clean
+#
+# FigureEightVolumeBridge keys the 4_1 statement on the EXACT VOL_4_1 = 2*Cl_2(pi/3),
+# not on MostowRigidity.figureEight's 15-digit truncated literal -- the sibling
+# MostowTriangulationBridge theorem keyed on that literal is sound but has jointly
+# unsatisfiable hypotheses at the corpus's own figureEightTriangulation. vol_pos is
+# DERIVED here from Cl_2_pi_div_three_pos, closing the positivity ManifoldVolumeBridge
+# deliberately left open (for this shape only; the general case stays open).
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_eq_VOL_4_1_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_eq_two_clausen_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_pos_of_realises | clean
+QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vol_ne_zero_of_realises | clean
 
 """
 
