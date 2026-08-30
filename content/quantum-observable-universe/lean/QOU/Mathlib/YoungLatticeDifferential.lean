@@ -206,6 +206,38 @@ theorem mem_cornerCells_of_isCornerCell {c : ℕ × ℕ} (hc : IsCornerCell μ c
   simp only [cornerCells, mem_image, cornerRows, mem_filter, mem_range]
   exact ⟨i, ⟨hi, by omega⟩, by simp [hrow]⟩
 
+/-- **Converse for addable cells.** Every addable cell is listed by `addableCells`. With
+`isAddableCell_of_mem_addableCells` this makes the addable family exactly the addable
+set, mirroring `mem_cornerCells_iff`. -/
+theorem mem_addableCells_of_isAddableCell {c : ℕ × ℕ} (hc : IsAddableCell μ c) :
+    c ∈ addableCells μ := by
+  obtain ⟨i, j⟩ := c
+  obtain ⟨hout, hup, hleft⟩ := hc
+  have hle : μ.rowLen i ≤ j := by
+    by_contra h
+    exact hout (YoungDiagram.mem_iff_lt_rowLen.mpr (by omega))
+  -- the cell sits at the end of its row: j = rowLen i
+  have hrow : μ.rowLen i = j := by
+    rcases hleft with h0 | hmem
+    · simp only at h0; omega
+    · have := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+      simp only at this ⊢
+      omega
+  -- and the row is addable: i = 0, or the row above is strictly longer
+  refine Finset.mem_image.mpr ⟨i, ?_, by simp [hrow]⟩
+  simp only [addableRows, mem_filter, mem_range]
+  rcases hup with h0 | hmem
+  · exact ⟨by omega, Or.inl (by simpa using h0)⟩
+  · simp only at hmem
+    have hlt : j < μ.rowLen (i - 1) := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+    have hprev : 0 < μ.rowLen (i - 1) := by omega
+    have hi1 : i - 1 < numRows μ := (rowLen_pos_iff μ (i - 1)).mp hprev
+    exact ⟨by omega, Or.inr (by omega)⟩
+
+/-- Membership in `addableCells` characterises addable cells. -/
+theorem mem_addableCells_iff {c : ℕ × ℕ} : c ∈ addableCells μ ↔ IsAddableCell μ c :=
+  ⟨isAddableCell_of_mem_addableCells, mem_addableCells_of_isAddableCell⟩
+
 /-- **The corner family is exactly the corner set.** Combined with
 `isCornerCell_of_mem_cornerCells`, membership in `cornerCells` *characterises* removable
 corners. This is what lets `card_addableCells_eq_card_cornerCells_add_one` compose with
