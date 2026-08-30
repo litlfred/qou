@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-30T14:39:06Z
+updated_at: 2026-08-30T15:37:11Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -218,3 +218,45 @@ Four untouched declarations staled on their file hashes across this batch
 `neutron_pair_skein_approx`, `skein_mass_relation_holds`); each verified
 byte-identical to origin/main before its verdict was refreshed, verdict field
 included.
+
+
+---
+
+## 2026-08-30 — the sizing verdict is refuted by its own three examples
+
+The bullet this bean rests on — *"for many of these that IS the open research,
+not a formalisation chore"* — was asserted, never measured. Measured now:
+
+**25 of the 79 context classes carrying the 90 remaining findings are inhabited
+by `Unit` and zero, with no hypotheses at all** (machine-checked, lean-direct).
+All THREE classes the sizing doc named as examples of open research —
+`KnotOperatorSelectionContext`, `HoefsmitScatteringPipelineContext`,
+`NucleonOrderingFactorizationContext` — are among them.
+
+A class inhabited that cheaply constrains nothing, so a `[C]` binder assumes
+nothing and the downstream `[C]`-conditional declaration is conditional on
+nothing. **Constructing a witness for one is the defect, not progress** — the
+same defect the q-NS carriers had before 2026-08-30.
+
+Stated narrowly: inhabited does NOT mean the block is bad. `BorromeanQuark` is
+inhabitable by the corpus's own `orbital_dim_eq_square` and that is §3b-cond
+working. The discriminator is whether the downstream declaration *derives* from
+the field or *projects* it verbatim; all 90 are the latter by construction.
+
+Second, different finding: `Term7ShellCorrectionClass` is not vacuous but
+**provable** — `alpha5_value := -1`, so its field is `-1 < 0`. The open part
+(the magnitude, per the source's own comment) is encoded nowhere. That is
+`proof-claims-unencoded`, wanting a different disposition.
+
+**Literature: none needed.** Kerov–Vershik 32 documents held, LR 27, elliptic
+functions 15, Călugăreanu 3+1 OCR. The one apparent gap is a Mathlib question
+and the corpus overstates it: `HasFiniteLPDuality` says LP duality "does not
+exist in Mathlib", but `ProperCone.hyperplane_separation` and
+`ProperCone.innerDual_innerDual` both resolve against the restored cache.
+
+Artifacts: `scripts/lean-context-class-inhabitation-probe.py` (with
+`--selftest`), `docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean`,
+`docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`. PR #6276.
+
+Floor is soft in both directions: three generator fixes moved it 15 → 25 without
+touching a class, and 54 classes remain unmeasured rather than established hard.
