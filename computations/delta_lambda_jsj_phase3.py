@@ -38,7 +38,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
-from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
+from _precision import set_compute_dps, fmt  # noqa: E402 — raise dps before any mpmath value; fmt for mpf serialisation
 import json
 import sys
 from pathlib import Path
@@ -52,6 +52,27 @@ import snappy
 from witness_base import WitnessBuilder
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0, HBAR_Q
+
+
+ATOMS = ("D", "T", "3He", "4He")
+
+# Thurston's closed form for the figure-eight knot complement:
+#   Vol(4_1) = 6·Λ(π/3) = 3·Cl₂(2π/3)
+# (Λ = Lobachevsky, Cl₂ = Clausen).  Used below to CALIBRATE SnapPy's
+# numerical gluing-equation solver against a route that never touches
+# SnapPy — see `figure8_volume_matches_lobachevsky_closed_form`.
+def figure8_volume_closed_form() -> mp.mpf:
+    """Vol(4_1) from the Lobachevsky closed form — no SnapPy involved."""
+    return 3 * mp.clsin(2, 2 * mp.pi / 3)
+
+
+def strands_snappy_will_use(braid_word: list[int]) -> int:
+    """Strand count SnapPy infers from a braid word: max|generator| + 1.
+
+    Rebuilt from the word itself rather than taken from the caller's
+    declared `n_strands`, so the two can be compared.
+    """
+    return max(abs(g) for g in braid_word) + 1
 
 
 def load_atom_braids() -> dict:
@@ -161,20 +182,47 @@ def main() -> int:
               f"n_components={n_comp} vol={vol} n_tet={n_tet}")
     builder.add_data("jsj_volumes", vols)
 
+    # 2b. Strand-count consistency: what SnapPy actually got vs what we
+    #     declared.  These disagree today — `[g + 3 for g in n]` shifts the
+    #     SIGNED generator, so σ_2⁻¹ (-2) becomes +1 instead of -5 and the
+    #     inter-nucleon braid collapses.  Recorded, not silently repaired:
+    #     fixing it moves every volume below and is a content change.
+    strand_mismatch = {
+        a: {"declared_n_strands": n,
+            "strands_snappy_infers": strands_snappy_will_use(w)}
+        for a, (w, n) in braids.items()
+        if strands_snappy_will_use(w) != n
+    }
+    builder.add_data("declared_vs_inferred_strand_counts", strand_mismatch)
+    if strand_mismatch:
+        builder.add_caveat(
+            "BRAID CONSTRUCTION DEFECT (open, not fixed here): the "
+            "shifted sub-words use `g + k` on the SIGNED generator, so a "
+            "negative generator is reflected instead of translated "
+            "(σ_2⁻¹ + 3 = +1, not -5). SnapPy therefore closes a braid on "
+            f"{sorted(strand_mismatch)} with fewer strands than declared, "
+            "and every hyperbolic volume in this witness is the volume of "
+            "that collapsed braid. The separability verdict below is "
+            "conditional on this defect being repaired."
+        )
+
     # 3. Load empirical |Δ_λ*| from tabulation
     emp = builder.add_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE))["data"]["per_atom"]
     empirical_delta = {a: float(mp.mpf(emp[a]["a_single_block"]["best_abs_delta"]))
-                       for a in ("D", "T", "3He", "4He")}
+                       for a in ATOMS if a in emp}
     builder.add_data("empirical_best_abs_delta", empirical_delta)
 
     # 4. Test separability: if V(K) = Vol(K) gives K-independent c_λ
     #    then |Δ*(K)| / Vol(K) should be roughly constant across atoms
     print(f"\n  {'atom':<6} {'|Δ*|':>12} {'Vol(K)':>12} {'|Δ*|/Vol':>14}")
     ratios = {}
-    for a in ("D", "T", "3He", "4He"):
+    for a in ATOMS:
         vol = vols[a]["hyperbolic_volume"]
-        delta = empirical_delta[a]
-        if vol is not None and vol > 0:
+        delta = empirical_delta.get(a)
+        if delta is None:
+            ratios[a] = None
+            print(f"  {a:<6} {'(no upstream |Δ*|)':>12} {'—':>12} {'—':>14}")
+        elif vol is not None and vol > 0:
             ratio = delta / vol
             ratios[a] = ratio
             print(f"  {a:<6} {delta:>12.4f} {vol:>12.6f} {ratio:>14.4f}")
@@ -208,13 +256,81 @@ def main() -> int:
     builder.add_data("verdict", verdict)
     print(f"\n  Verdict: {verdict}")
 
+    # ── Assertions ────────────────────────────────────────────────────
+    # Was: add_assertion("snappy_available", computed=1.0, expected=1.0)
+    # — a hardcoded constant compared with itself.  It could not fail even
+    # if SnapPy returned nonsense, and it asserted nothing about the
+    # volumes this producer exists to compute.  Replaced by three checks
+    # that each have a second, independent route.
+
+    # (1) Calibrate the volume engine itself.  Route A: SnapPy's numerical
+    #     solve of the gluing equations for the 4_1 exterior.  Route B:
+    #     Thurston's closed form 6·Λ(π/3) = 3·Cl₂(2π/3), evaluated by
+    #     mpmath's Clausen function, which never touches SnapPy.  A SnapPy
+    #     build whose hyperbolic solver regressed fails this.
+    #     Both routes are carried at 200 bits / 40 dps, so the check bites
+    #     ~40 digits deep rather than at float64.
+    vol_4_1_snappy = mp.mpf(str(snappy.Manifold("4_1").volume(bits_prec=200)))
+    vol_4_1_closed = figure8_volume_closed_form()
+    builder.add_data("figure8_calibration", {
+        "snappy_volume_bits_prec_200": fmt(vol_4_1_snappy, 40),
+        "lobachevsky_closed_form": fmt(vol_4_1_closed, 40),
+    })
     builder.add_assertion(
-        "snappy_available",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        unit="boolean",
-        source="snappy.version() = " + str(snappy.version()),
+        "figure8_volume_matches_lobachevsky_closed_form",
+        computed=fmt(vol_4_1_snappy, 40),
+        expected=fmt(vol_4_1_closed, 40),
+        tolerance="1e-38",
+        unit="hyperbolic volume",
+        source=(
+            "volume-engine calibration: SnapPy's numerical gluing-equation "
+            "solve of the figure-eight exterior (bits_prec=200) vs "
+            "Thurston's closed form 6·Λ(π/3) = 3·Cl₂(2π/3) via mpmath's "
+            "Clausen function — two independent routes to the same "
+            f"constant, agreeing to ~40 dps (snappy {snappy.version()})."
+        ),
+    )
+
+    # (2) Pin the separability verdict.  Route A: rel_std of |Δ*|/Vol
+    #     recomputed from this run's volumes and the upstream tabulation.
+    #     Route B: the 0.5 MISS boundary of this producer's own verdict
+    #     taxonomy, pinned against the committed run (rel_std = 1.398,
+    #     max/min = 153×).  A rerun that drops under the boundary flips
+    #     this assertion so a human re-adjudicates instead of the verdict
+    #     string quietly changing inside add_data.
+    rel_std_now = None
+    if len(valid_ratios) >= 2:
+        rel_std_now = rel_std
+    if rel_std_now is not None:
+        builder.add_assertion(
+            "separability_misses_beyond_50pct_spread",
+            computed=1.0 if rel_std_now >= 0.5 else 0.0,
+            expected=1.0,
+            tolerance=0.5,
+            unit="boolean",
+            source=(
+                f"V(K) = Vol_hyp(K) does NOT separate: rel_std = "
+                f"{rel_std_now:.4f} is at or beyond the 0.5 MISS boundary "
+                f"(committed run: 1.398, max/min = 153×). Pinned as a "
+                f"regression guard — a rerun finding rel_std < 0.5 flips "
+                f"this and reopens conj:delta-lambda-categorical-closure."
+            ),
+        )
+
+    # (3) Coverage, rebuilt from inputs.  Route A: the atoms for which an
+    #     empirical |Δ*| was actually recovered from the upstream
+    #     tabulation witness.  Route B: this producer's declared ATOMS
+    #     roster.  Catches an upstream that silently drops an atom.
+    builder.add_assertion(
+        "empirical_tabulation_covers_every_declared_atom",
+        computed=len(empirical_delta),
+        expected=len(ATOMS),
+        tolerance=0,
+        unit="atoms",
+        source=(
+            "atoms recovered from delta-lambda-empirical-tabulation."
+            "witness.json vs the ATOMS roster this producer declares."
+        ),
     )
 
     builder.save()
