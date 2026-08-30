@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-29T16:35:30Z
+updated_at: 2026-08-30T02:48:09Z
 ---
 
 ## What
@@ -520,3 +520,61 @@ each needs its rationale read before it is touched.
 
 Reachability data committed at
 computations/audits/proton-pin-assertion-verdicts.json (PR #5755).
+
+=== LANDED 2026-08-30 — PR #6054 merged as c6003a5103 (rebase, 4 commits) ===
+
+VERIFIED ON MAIN, not assumed: both stems in physical_proton; ideal_muon 21 ->
+19, physical_proton 707; AGENTS.md carries -7.4588 with zero -8.006 remaining;
+the regenerated downstream witness agrees field-for-field with its upstream
+source and stamps q0Anchor: proton.
+
+FOUR THINGS WORTH KEEPING, in descending order of how much they cost to learn.
+
+1. THE REACHABILITY DETECTOR WAS WRONG IN BOTH DIRECTIONS, AND THE COUNT HID IT.
+   Matching the bare strings "q-pinning-50-digit"/"q_pinning_50_digit" anywhere
+   in a source gave 15 of 21 refused. The CORRECTED test also gives 15 — over a
+   different set. False positive: rho_f_categorical_probe names the producer in
+   a docstring link and never reads the witness (refused though measurable; run,
+   it returns NO-ASSERTIONS). False negative: qbeta_jacobi_anger_tower_general
+   reaches muon via q_muon_at() and never names the file, so NO filename test of
+   any tightness sees it — it was being RUN, i.e. a false pass, the dangerous
+   direction. The fix had to WIDEN (q_muon_at, _q0_value_for_anchor,
+   load_q_50dps) as well as NARROW. A matching count is not agreement.
+
+2. c_k^even ARE ANCHOR-INDEPENDENT. Byte-identical at both pins; only the
+   abs_ck_uk products move, by ~4e-7 (11.5 ppb amplified by u^2). I claimed a
+   7-9 % anchor effect and retracted it. The error: comparing a committed
+   witness against a fresh PROTON run and attributing the whole delta to the one
+   variable I had changed. The control I skipped — the muon re-run — costs
+   seconds. Same shape as the aoperator HOLD inversion in #5755. NEVER attribute
+   a c_k move to an anchor without running BOTH legs.
+
+3. THE 7-9 % WAS A WITNESS THAT HAD NEVER BEEN REGENERATED. The producer's own
+   upstream source (qbeta-c4even-exact-sseries.witness.json) already carried the
+   fresh values, byte-identical, stamped proton. My hypothesis that -8.006 was a
+   leftover convention-C value is REFUTED: it is unchanged at every commit
+   touching the file, including 70d1ade383 ("excise C tiers 2+3: 176 producer
+   sites to convention D") and 119885a4c6 ("re-run 154 muon/proton producers").
+   It did not move at the C->D excision. Recording the discarded hypothesis
+   because "stale because convention C" would have been a plausible and entirely
+   wrong entry in the C-migration ledger.
+
+4. A NON-ZERO EXIT IS NOT EVIDENCE ABOUT THE ANCHOR. New BROKEN-AT-BOTH verdict:
+   qbeta_hoefsmit_tbeta_matrix_build_probe dies on the mpf.__format__ TypeError
+   identically at both pins. FAILS-AT-PROTON would have frozen a merely broken
+   producer in ideal_muon forever. Second leg spent only on failure.
+
+CARVE-OUT STATE (re-measure before quoting — it moved 35 -> 32 -> 21 -> 19 in
+under a day as siblings drained in parallel):
+    group A measurable   5  ->  now 3 with both migrations landed
+    group B refused     15
+
+NEXT
+ 1. hadron_knot_table — last measurable stem, never run. AGENTS.md records
+    >50 min for ONE bound atom: budget --timeout 7200 --log-dir. The tool is
+    crash-safe and resumable, so a container reclaim is survivable.
+ 2. The 15 refused stems CANNOT be measured by this tool by construction. They
+    need routing through q_parameter first. At least three must NEVER be routed:
+    q_pinning_50_digit (defines the anchor), q0_anchor_consistency_audit (the
+    flip detector, needs both pins), cross_check_trM_1ppb (its own source says
+    the L1 cross-check must run at muon).

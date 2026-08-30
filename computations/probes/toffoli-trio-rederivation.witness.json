@@ -1,0 +1,100 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T02:47:51.999322+00:00",
+  "commitSha": "e8eeeb814bd6abb91a1733ba162ac356e64188c4",
+  "assertions": [
+    {
+      "name": "phi_is_no_single_construction_object",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "phi_is_no_product_of_two",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "P77_reproduces_published_closed_form",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "derived_P76_still_vanishes_at_q_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "antisymmetry_is_FALSE_convention_C",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "antisymmetry_is_FALSE_convention_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 121,
+  "computation": "toffoli-trio-rederivation",
+  "scriptFile": "toffoli_trio_rederivation.py",
+  "scriptHash": "6fc70e42fe0b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_trio_rederivation.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_trio_rederivation.py"
+  },
+  "description": "Resolves qou-3j5m by derivation. The published core amplitude Phi is not in the Toffoli construction's image: an exhaustive exact-rational search over 32 objects and all 528 pairwise products finds no match, and Phi's z-coefficient carries a (q+1) denominator that chain_reduce cannot produce. The committed P_76 comes from a last-write-wins overwrite in build_matrix using parent |111> rather than the documented |110>, and that overwrite exists to impose the antisymmetry the block claims — derived honestly, P_67 != -P_76 in both conventions. P_77 and the q->1 vanishing survive. Supplies the derived replacements for P_66, P_67, P_76.",
+  "parameters": {
+    "objects_searched": 32,
+    "pairwise_products_searched": 528,
+    "search_arithmetic": "exact Fraction at 6 q with rational sqrt(q)"
+  },
+  "data": {
+    "derived_closed_forms": {
+      "C": {
+        "P_76": "-(q - 1)*(q**2 + 3*q + 1)/(2*q*(q + 1))",
+        "P_67": "(q**(13/2) + q**(11/2) - 2*q**(9/2) - 2*q**(7/2) + q**(5/2) + q**(3/2) + q**6 + 3*q**5 - 3*q**3 - q**2)/(2*q**3*(q + 1)**2)",
+        "P_66": "-(q**(13/2) + q**(11/2) - 6*q**(9/2) - 6*q**(7/2) + q**(5/2) + q**(3/2) + 2*q**6 + 2*q**5 - 2*q**3 - 2*q**2)/(4*q**3*(q + 1)**2)",
+        "P_77": "(q**(3/2) + sqrt(q) + q**2 - 1)/(q + 1)**2"
+      },
+      "D": {
+        "P_76": "-(q - 1)*(q + 1)*(q**6 + q**4 + 2*q**2 + 1)/(2*q*(q**2 + 1)**2)",
+        "P_67": "(q - 1)*(q + 1)*(2*q**6 + q**4 + q**2 + 1)/(2*q*(q**2 + 1)**2)",
+        "P_66": "(q**4 + 1)*(q**4 + q**2 + 2)/(4*q*(q**2 + 1)**2)",
+        "P_77": "q**3*(q**4 + 1)/(q**2 + 1)**2"
+      }
+    },
+    "P76_documented_parent_110_at_q_111_100": "-0.13061590026045002966",
+    "P76_overwrite_parent_111_at_q_111_100": "-0.14153164476025048568",
+    "phi_z_coefficient": "(q - 1)*(q**2 + q + 1)/(2*(q + 1))"
+  },
+  "caveats": [
+    "The published forms are REFUTED as objects of this construction, not shown to be arbitrary: an unrecorded derivation could still produce them, and this probe cannot speak to one absent from the tree. What it settles is that the corpus's own recorded construction does not, under any indexing or convention, and that three of the block's four claims (universal factorization, Delta_1 = 0, antisymmetry) are false against it — the first two by the block's own internal contradiction."
+  ]
+}

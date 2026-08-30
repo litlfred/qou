@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T20:13:16.443996+00:00",
-  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
+  "computedAt": "2026-08-29T18:40:05.712102+00:00",
+  "commitSha": "3fa9e2abf2d39f1b34bc49db0f7af3fb7dfef9e4",
   "assertions": [
     {
       "name": "bessel_half_falling_factorial_bridge_does_not_close",
@@ -25,8 +25,8 @@
   "durationMs": 16,
   "computation": "sw-period-bessel-half-falling-factorial",
   "scriptFile": "sw_period_bessel_half_falling_factorial_probe.py",
-  "scriptHash": "24f850437f85",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "6765b1734f9a",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,11 +38,18 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
-  "auditOnly": "docs/audits/2026-06-26-bessel-half-falling-factorial-bridge-pruned.md",
+  "invocation": {
+    "argv": [
+      "computations/sw_period_bessel_half_falling_factorial_probe.py"
+    ],
+    "reproduce": "python3 -u computations/sw_period_bessel_half_falling_factorial_probe.py"
+  },
+  "auditOnly": "docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736"
   },

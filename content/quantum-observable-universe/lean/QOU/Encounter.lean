@@ -7,3 +7,4 @@
 
 import QOU.Encounter.MostowRigidity
 import QOU.Encounter.MostowTriangulationBridge
+import QOU.Encounter.FigureEightVolumeBridge

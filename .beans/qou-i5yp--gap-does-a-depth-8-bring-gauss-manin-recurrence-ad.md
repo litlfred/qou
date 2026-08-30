@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T07:05:23Z
-updated_at: 2026-08-29T07:06:13Z
+updated_at: 2026-08-29T18:46:55Z
 ---
 
 Falsifiable target handed back to the s5-so3 keystone by PR #5966.
@@ -41,3 +41,27 @@ magnitude is not.
 Producer: computations/probes/he4_body_order_shortfall_location_probe.py
 Audit:    docs/audits/2026-08-29-he4-magnitude-shortfall-location.md section 3c
 Ledger:   docs/coordination/s5-so3-keystone.md
+
+
+## RE-SCOPED 2026-08-29 (PR #6059) — the question as posed cannot be answered
+
+Formalize-first prune, Lean sorry-free in
+QOU/MassTheory/BodyOrderRecurrenceDepth.lean (see qou-d9sk).
+
+This bean asks whether a depth-<=8 Bring Gauss-Manin recurrence admits
+a2:a3:a4 = 1 : -0.52 : +4.45. Measured answer: YES, and vacuously, so the
+question carries no information as posed.
+
+  * d >= 3 is FORCED by the vanishing one-body term (three_le_depth), not
+    merely bounded above by the rank.
+  * At d = 3 the map (c1,c2) -> (a3,a4) is SURJECTIVE
+    (depth_three_kernel_reaches). Every ratio is admitted. Matching the target
+    solves for the kernel — an anchor inversion, i.e. a fit.
+  * The first value the kernel DETERMINES is at body order 2d >= 6.
+
+REVISED, ANSWERABLE FORM: extend the Ursell cumulant inversion to 6Li/7Li to
+obtain a5, a6; then a depth-3 kernel pinned by (a3,a4,a5) PREDICTS a6, and THAT
+is falsifiable. Only after that does the Picard-Fuchs identification have a
+target worth computing against.
+
+Do not run the PF computation against three terms.

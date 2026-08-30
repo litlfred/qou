@@ -1,6 +1,5 @@
 {
   "ideal_muon": [
-    "alpha_5_lp_dual_crystal",
     "alpha_high_precision",
     "atomic_tr_m_mpfr_50dps",
     "cross_check_trM_1ppb",
@@ -13,7 +12,6 @@
     "q0_anchor_consistency_audit",
     "q1_mass_gap_probe",
     "q_pinning_50_digit",
-    "qbeta_c4even_ladder_reconstruction_probe",
     "qbeta_decay_sdp_extended_ck",
     "qbeta_fsc_g_pattern_comparison",
     "qbeta_hoefsmit_tbeta_matrix_build_probe",
@@ -26,6 +24,7 @@
     "_habiro_coefficient_extract",
     "adjacent_vs_full_probe",
     "alpha_5_jucys_murphy_central",
+    "alpha_5_lp_dual_crystal",
     "alpha_basis_knot_couplings",
     "alpha_em_4pi_derived_form_probe",
     "alpha_em_4pi_fixed_point_solve",
@@ -546,6 +545,7 @@
     "qbeta_c3_slope_filter",
     "qbeta_c3_three_rung_probe",
     "qbeta_c3_v9_style_probe",
+    "qbeta_c4even_ladder_reconstruction_probe",
     "qbeta_c6_c10_crossanchor_falsification",
     "qbeta_chain4_demazure_fund_weights",
     "qbeta_chain4_kashiwara_step2_n4",
