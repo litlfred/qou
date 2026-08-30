@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:44:37Z
-updated_at: 2026-08-29T18:58:52Z
+updated_at: 2026-08-30T02:40:32Z
 parent: qou-ifot
 ---
 
@@ -50,3 +50,17 @@ Deliberately NOT formalized as a Lean theorem: the equivalence is Iff.rfl once b
 So the scoreboard for this arc is now: descent measure (any mu closes the conjecture), D_inf characterisation (equivalent to the conjecture), q=1 height (provably cannot reach the critical ratio, qou-n3xf), any valuation (provably cannot descend, qou-4atn). Three routes are the whole problem and one is provably dead.
 
 THE ONE GENUINELY BOUNDED OPEN ITEM LEFT in this arc is the v=0 question from the trichotomy: can two consecutive odd steps occur inside D_inf? It is not equivalent to the conjecture -- a NO makes the block decomposition total on D_inf (strengthening reaches_cycle_of_block_descent_domainStable's applicability), a YES forces a third case in the block accounting. Either answer is informative and neither closes anything. That is the honest recommendation, replacing the wrong one.
+
+v=0 QUESTION ATTACKED 2026-08-29, commit 3735ba33f1. Answer to 'is it Lean-provable': PARTLY, and the split is the point.
+
+PROVED (sorry-free; axioms [propext, Quot.sound] only -- not even Classical.choice):
+- cubeRoot_one_add_mul_neg: (w+1) is a unit with inverse -w, when w^2+w+1=0.
+- oddPreimage_forces_eval_cubeRoot: evaluating the odd step [2]P = [3]Q + 1 at a primitive cube root w kills the [3] term outright, ELIMINATING Q and pinning P(w) = -w. So P(w) = -w is necessary for an odd-preimage to exist.
+- attractor_no_oddPreimage: q^-1 evaluates to w^2, and w^2 = -w would force 1 = 0. So NO q-odd element maps to the attractor under the odd branch -- the attractor is reached ONLY by even steps. This is the structural reason odd-preimages are so rare in the backward tree (6 of 154 nodes at depth 40, 20 of 1260 at depth 120), now proved rather than observed.
+All stated over generic CommRing with w a ring element satisfying w^2+w+1=0, rather than constructing Z[w] -- nothing specialises (7c).
+
+NOT PROVED, and flagged as such in the file, the commit and here: the measured obstruction is a CONGRUENCE. Across 1260 backward-tree nodes every node admitting an odd-preimage has P'(w) = -w (mod 6), whereas a chained odd-preimage needs P'(w) = 2, and 2 is not congruent to -w mod 6 because N(2+w)=3 does not divide N(6)=36. That is an OBSERVED PATTERN over a finite sample. It is not a theorem and must not be cited as one.
+
+WHY IT IS NOT TRIVIALLY PROVABLE: the pair (P(w), P'(w)) is NOT closed under the odd branch-inverse -- computing the preimage's derivative at w needs P''(w), so the natural two-coordinate invariant does not close. The even branch-inverse does act cleanly ((u,v) -> ((1+w)u, u+(1+w)v), and 1+w is a unit so N(u) is preserved), which is presumably where the mod-6 regularity comes from; but the odd branch divides by (1+2w), of norm 3, and that is what breaks the closure. A proof likely needs the full jet, not the 1-jet.
+
+STATUS OF v=0: still OPEN. Now with a proved necessary criterion, a proved fact about the attractor, and a precisely stated congruence conjecture whose proof would settle the case for the backward TREE. The step from the tree to all of D_inf is the convergence conjecture itself (qcz7 A1), so even proving the congruence would not close v=0 on D_inf.
