@@ -1,0 +1,69 @@
+---
+# qou-3e5m
+title: 'GAP: 56 self-fulfilling MEASURED assertions, hidden by a positional-only detector'
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-30T03:40:10Z
+updated_at: 2026-08-30T03:40:45Z
+---
+
+Surfaced while draining `qou-p77d`. The detector
+`computations/audits/self_fulfilling_assertion_audit.py` read only the
+POSITIONAL calling form of `add_assertion`, and positional is the minority:
+
+    add_assertion calls    487 positional    3300 KEYWORD
+
+So it scanned 13% of the corpus and its headline read **"MEASURED (cannot
+report a regression): 0"**. With both forms read the figures are **MEASURED 56,
+LITERAL 187**. The detector is fixed (this PR); the 56 findings are not, and
+they are a triage job rather than a sweep.
+
+## Why the MEASURED ones matter and the LITERAL ones mostly do not
+
+The audit's own framing: a LITERAL self-comparison (`probe_completed = True`
+against itself) is a documentary flag — it records that a step ran and was
+never going to fail. The 187 of those are noise unless one is masquerading.
+
+A **MEASURED** self-comparison is different: it computes something, compares it
+to itself, and is recorded as a passing assertion. It looks like a check and
+cannot fail. The sharpest instance:
+
+    computations/habiro/habiro_exact_qbeta.py:197
+      habiro_tr_M_proton_matches_direct
+        computed = tr_M_p / tr_M_p_direct ...   expected = the same expression
+
+The NAME asserts a cross-check between two routes. The code compares one route
+to itself. Anything reading this witness sees `passed: true` for a
+cross-validation that never happened.
+
+## The originating instance
+
+    computations/m_p_m_e_li2q.py:134
+      codata_mp_me_loaded   computed=1836.152  expected=1836.152  tol=1e-10
+
+Named as though it verifies the CODATA value LOADED; no variable is read.
+Note also that CODATA 2022 m_p/m_e is 1836.152673426 — 1836.152 is a truncation,
+so even a real check against the loaded constant would need the fuller value.
+
+## Work order (suggested, not measured)
+
+1. Take the 56 MEASURED first; ignore the 187 LITERAL unless one is named like
+   a check.
+2. For each, find the INTENDED second value. Usually one of: an independent
+   route (the habiro case), a published/CODATA reference, or a prior witness.
+3. Where no independent value exists, the honest fix is to demote it — record
+   the quantity with `add_data` instead of dressing it as an assertion.
+4. Do NOT delete the assertion to make the count go down.
+
+## Trap worth carrying
+
+The selftest did not catch this and its docstring claimed it would — "guards
+against a future narrowing quietly reporting a clean tree". It exercised only
+positional calls, so it validated the one branch that worked and never touched
+the branch that did not exist. **A selftest built from the same assumption as
+the code tests the assumption's consequences, not the assumption.** This is a
+new row for the detector-blindness taxonomy
+(`docs/audits/2026-08-15-detector-blindness-taxonomy.md`): calling-form
+blindness, where the detector is correct on the shape it reads and simply does
+not read the shape the corpus uses.
