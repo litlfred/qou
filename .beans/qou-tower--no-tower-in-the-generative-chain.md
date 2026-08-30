@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T16:10:00Z
+updated_at: 2026-08-30T17:20:00Z
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -337,3 +337,88 @@ agreement at any digit count is claimed.** Per AGENTS.md §PROBES ARE NOT
 EXEMPT: this is a stated limitation on an *inherited* input, not a float64
 computation introduced here, and the conclusion is a negative that float64
 cannot manufacture.
+
+## 🛑 CLOSED: the tower shows nothing at ANY level it can reach
+
+[`tower_walk_magic_replication_probe.py`](../computations/probes/tower_walk_magic_replication_probe.py)
+(renamed from `tower_walk_a4_doubly_magic_probe`). All three reachable levels,
+**exhaustively** — every `Z` in `0..A`, so there is no unmeasured configuration
+to appeal to:
+
+    A=2  Z=2,N=0 MAGIC    top-share 0.1996  participation  7.624  argmax (6,)
+         Z=1,N=1 neither  top-share 0.1960  participation  7.801  argmax (3,3)
+         Z=0,N=2 MAGIC    top-share 0.1909  participation  7.560  argmax (2,2,2)
+
+    A=3  Z=3,N=0 neither  top-share 0.0907  participation 18.895  argmax (6,3)
+         Z=2,N=1 MAGIC    top-share 0.0802  participation 20.256  argmax (3,3,1,1,1)
+         Z=1,N=2 MAGIC    top-share 0.0961  participation 20.590  argmax (3,3,1,1,1)
+         Z=0,N=3 neither  top-share 0.0968  participation 19.819  argmax (3,3,1,1,1)
+
+    A=4  Z=4,N=0 neither  top-share 0.0530  participation 42.169  argmax (9,3)
+         Z=3,N=1 neither  top-share 0.0436  participation 44.400  argmax (5,4,1,1,1)
+         Z=2,N=2 DOUBLY   top-share 0.0504  participation 45.487  argmax (5,4,1,1,1)
+         Z=1,N=3 neither  top-share 0.0481  participation 44.826  argmax (5,4,1,1,1)
+         Z=0,N=4 neither  top-share 0.0567  participation 43.818  argmax (3,3,3,1,1,1)
+
+### A=2 is what settled it, and I had skipped it
+
+The entry above treats **A=4** as the decisive test because it is the only
+**doubly**-magic case. That framing was wrong in a way that cost a session:
+magic-ness is a property of `Z` **or** `N`, so **A=2 already carries magic
+numbers** — `Z=2,N=0` and `Z=0,N=2` are singly magic, the deuteron is neither
+— and A=2 is *eleven partitions of dimension ≤ 16*, i.e. seconds. It was
+skipped only because the probe was written around "doubly magic", and its
+`dm`-empty guard returned early on it.
+
+**The participation ratio reverses sign between levels.** It is the one
+quantity that split cleanly at A=3 (magic `{20.256, 20.590}` above non-magic
+`{18.895, 19.819}`), and this bean carried it as "the one thing that
+separated". At A=2 the magic configurations are the **two lowest** (7.624 and
+7.560, against the deuteron's 7.801). A quantity that is high for magic at one
+level and low at the next is measuring **the level**, not the magic number.
+The A=3 split was the P = 1/3 coincidence it was labelled as, and A=2 is the
+direct demonstration rather than an argument from the null.
+
+The other two criteria fail outright:
+
+- **rank** — every block is full rank in every configuration at every level;
+- **argmax** — ⁴He's `(5,4,1,1,1)` is shared with **three** non-magic A=4
+  configurations. The criterion is also *vacuous* at every level, for three
+  different reasons the probe now names: A=2 has one non-magic configuration
+  (a singleton "agrees with itself"), A=3's non-magic argmaxes disagree with
+  each other, A=4 has one magic configuration.
+
+### And A=4 is the end of the road
+
+`Σ_λ d_λ²` = 12! is **not** the binding constraint — partitions are
+independent under the braid action, so peak memory is `max_λ d_λ²` = 7700² =
+474 MB (measured RSS **0.64 GB**), and the `O(d³)` dense matmul becomes
+`O(d²)` column ops in the Hoefsmit basis (verified against the dense route,
+max relative disagreement **6.34e-16**). But at A=5, `max_λ d_λ²` =
+292,864² = **686 GB**. So A=4 is the last reachable level and ⁴He the only
+doubly-magic nucleus this construction can ever test.
+
+### Three defects in my own instrument, all caught before the verdict
+
+1. **The vacuity guard was itself vacuous.** It asked whether the non-magic
+   configurations agree with each other — and at A=2 there is only one, which
+   agrees with itself trivially, so A=2 reported a spurious qualitative
+   separation. Now requires ≥2 members in *both* groups *and* internal
+   consistency in both, and prints why when it cannot decide.
+2. **Two assertions asserted the answer** (`expected="False"` on the verdict).
+   A test that passes exactly when the result is the one wanted. Removed; the
+   assertions now record the *control* and the verdict is payload data.
+3. **39 raw float64 fields** would have entered the witness. Aggregation moved
+   to mpmath (`mp.fsum`, `mpf`) and serialized through `_precision.fmt`. The
+   per-partition `|tr|` inputs remain float64 — inherited from
+   `level_k_binding`, stated, not stringified. The headline is a negative plus
+   a **sign reversal of ~0.24 in a quantity of size ~7.7**; float64 cannot
+   manufacture either.
+
+### Where a shell degree of freedom could still be
+
+Not downstream. The collapse is in `build_atom_nf_mp`, **upstream of every LP
+and SDP**, and removing it does not produce a signal. So a shell DOF would
+have to enter the construction *before or outside* the Gröbner–Shirshov
+reduction — it cannot be recovered from the tower, because the tower has now
+been carried intact and has none.
