@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:03:02Z
+updated_at: 2026-08-30T13:19:27Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3059,3 +3059,72 @@ The concrete next question this leaves is narrower than Step 8's: not "what
 replaces the cosine" in general, but **what resums about a centre that moves as
 `cosh(2 log q)`** — a named, derived, q-dependent centre rather than an absent
 one.
+
+
+
+## The replacement FORM, named: resum `log Vhat`, not `Vhat` (PR #6211)
+
+Step 8 leaves this open in as many words — *"The replacement FORM. The class is
+fixed ... the additive route is closed ... but naming the form needs [more]."*
+Probe: `computations/qbeta/qbeta_d_frame_log_coordinate_form_probe.py`, 11/11,
+sympy exact.
+
+### The move
+
+Work in `theta = log q`, where the bar involution is simply `theta -> -theta`.
+Every bar statement becomes a PARITY statement in theta, and the two conventions
+stop looking like different phenomena.
+
+### Closed forms, derived not assumed
+
+    C:  Vhat = 1 + 2 sinh(theta/2)
+             = bar-EVEN CONSTANT  +  bar-ODD term            ADDITIVE
+
+    D:  Vhat = e^theta * cosh(2 theta)/cosh(theta)
+             = bar-ODD MONOMIAL   *  bar-EVEN factor         MULTIPLICATIVE
+
+D's even factor is `(q^2+q^-2)/(q+q^-1) = [2]_{q^2}/[2]_q` — a **ratio of
+q-integers**, not a generic function of q.
+
+### Why this answers the form question
+
+`cos` is not a generic resummation. It is the one adapted to C's shape: a SUM
+whose bar-odd part sits on a fixed centre. D has no such sum. The object adapted
+to a PRODUCT is the LOGARITHM:
+
+    log Vhat_D  =  theta  +  [ log cosh 2theta - log cosh theta ]
+                   ^odd       ^--------- even ---------^
+
+So the D-frame ladder should resum `log Vhat`, not `Vhat`. In that coordinate
+the bar-odd part is exactly `theta = log q`, and the bar-even remainder is a
+series in `theta^2` — equivalently in the `q^{2k}`-integers.
+
+### It absorbs the "moving centre"
+
+The bar-midpoint `cosh(2 theta)` — Step 7's q-dependent offset, identified as
+the bar-midpoint in the previous entry — is exactly the NUMERATOR of D's
+bar-even factor. So the moving centre is not a separate obstacle: it is one half
+of the multiplicative decomposition, and it moves *because* the decomposition is
+multiplicative rather than additive. Two entries that arrived separately are one
+fact.
+
+### Step 8 is CONFIRMED, not overturned
+
+There is no fixed centre for an ADDITIVE resummation of `Vhat`, and that is
+exactly why the additive form fails. What is added here is the positive half —
+the coordinate in which the structure is visible — not a contradiction.
+
+### Not claimed
+
+No `c_k`. Naming the coordinate and the parity structure is not exhibiting the
+ladder; the series coefficients are untouched and nothing is wired. Scope (a):
+one object (`Vhat`), two conventions, symbolic.
+
+### The next question, now sharper again
+
+Not "what replaces the cosine" (answered: the log), and not "what resums about a
+moving centre" (dissolved: the centre is the even factor's numerator). It is:
+**what are the coefficients of `log Vhat_D`'s bar-even remainder in the
+`q^{2k}`-integer basis, and do they reproduce the ladder's rung structure?**
+That is a concrete symbolic expansion, and it is the first form of this question
+that does not presuppose an additive shape.
