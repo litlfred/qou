@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T15:38:24Z
+updated_at: 2026-08-30T03:28:21Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -670,3 +670,56 @@ WHAT I WOULD TELL THE NEXT AGENT: stop probing tactics — that is exhausted. Op
 prefix, print it with `trace_state`, and do `conv`-level surgery aimed at the two named slides. The
 single decisive question is whether `yang_baxter` can be aimed at the β_{X,Y'}/β_{X,Y} pair in
 context; if it can, both slides fire and the rest is coherence.
+
+
+2026-08-30 — `comp_whiskerRight` CHANGES THE STATE MATERIALLY, and my "order is reversed" finding
+was an ARTIFACT of not distributing it.
+
+Adding `MonoidalCategory.comp_whiskerRight` to the prefix's simp set distributes
+`(β_{X,Y} ≫ β_{Y,X} ≫ (g ⊗ₘ h)) ▷ (Y'⊗X')` into three separate whiskerings. The monodromy then
+sits at the FRONT, adjacent to the cups, and only `(g ⊗ₘ h)` gets carried across by
+`braiding_naturality_left_assoc`. Revised prefix:
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id,
+      MonoidalCategory.comp_whiskerRight]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [Category.assoc, MonoidalCategory.comp_whiskerRight]
+
+Resulting order:  β_{X,Y} ▷(Y'⊗X') ; β_{Y,X} ▷(Y'⊗X') ; X ◁ β_{Y,Y'⊗X'} ; β_{X,Y'⊗X'} ▷ Y ;
+(Y'⊗X') ◁ (g⊗ₘh) ; caps.
+
+SO THE EARLIER "cup slide order is REVERSED" ENTRY IS WITHDRAWN. It was measured on a goal where
+the monodromy had not been distributed. With distribution, β_{X,Y} comes BEFORE β_{X,Y'}, which is
+the order `braiding_slide_cup_right` wants.
+
+THE MECHANISM, now coherent — the cup slide DETACHES the Y-loop:
+
+    braiding_slide_cup_right (W = X, A = Y, B = Y', u = η_Y) read right-to-left:
+        X ◁ η_Y ≫ β_{X,Y} ▷ Y' ≫ Y ◁ β_{X,Y'}  =  η_Y ▷ X
+
+The goal opens with `X ◁ η_Y ▷ X'` and has `β_{X,Y}` immediately after. If `β_{X,Y'}` can be
+brought up to follow it, the three collapse to `η_Y ▷ X` — the Y-cup moves to the LEFT of X, i.e.
+the Y-loop DETACHES from the X strand. That detachment is what the whole theorem is about, and it
+is now a single named move rather than a vague "absorb the cross terms".
+
+WHAT BLOCKS IT, per-crossing (this is the finite list the earlier entry promised):
+`β_{X,Y'}` must move up past three crossings —
+
+    past β_{Y,X'}   objects {Y,X'} vs {X,Y'}   DISJOINT      -> whisker_exchange      ✓
+    past β_{Y,Y'}   share Y'                   NOT disjoint  -> Yang-Baxter           ✗
+    past β_{Y,X}    share X                    NOT disjoint  -> Yang-Baxter           ✗
+
+So TWO Yang-Baxter applications, both named, plus one interchange. The cap slide (Y across ε_X) then
+handles what remains.
+
+STILL NOT PROVED. Finishers retried from the improved state — `monoidal`, `simp` with both slide
+lemmas, `simp` with `braiding_tensor_right_hom`+`whisker_exchange` — all fail. TWENTY-TWO approaches
+ruled out.
+
+BOOKKEEPING WARNING FOR THE NEXT AGENT, and for me: this is the THIRD time in this bean that a
+crossing-pairing claim of mine turned out to be wrong (first the linking-number direction, then the
+cap-vs-cup mix-up, now the order-reversal artifact). Each time the error came from reasoning about
+the diagram instead of reading the printed goal. PRINT THE GOAL AFTER EVERY SIMP-SET CHANGE — the
+simp set materially changes which crossings are adjacent, and conclusions drawn under one set do not
+survive to another.
