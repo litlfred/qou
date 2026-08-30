@@ -162,7 +162,24 @@ type Category =
   // discharges by projection has left the contradiction in plain text. When
   // the prose and `#print axioms` disagree about whether a proof exists, one
   // of them is wrong and the class is usually positing its own conclusion.
-  | "proof-docstring-sorry-mismatch";
+  | "proof-docstring-sorry-mismatch"
+  // A `Prop` carrier that Lean PROVED inhabitable with no hypotheses.
+  //
+  // Every other category on this list is decided by reading source. This one
+  // cannot be: the defect is that the carrier's fields, whatever shape they
+  // have, assert nothing — and shape is exactly what a static scan sees. The
+  // corpus's own exemplar makes the point. AGENTS.md §3b-tax cites
+  // `ConditionalClasses.lean` as the model of a carrier "in the *shape* of the
+  // claim", which it is; each field is a parameter-quantified inequality. Every
+  // one is also discharged by zero, and that file raises **0** lines here.
+  //
+  // So the evidence comes from OUTSIDE this scanner:
+  // `scripts/vacuous-prop-carrier-probe.py` emits a Lean file re-declaring each
+  // self-contained carrier and attempts to inhabit it, and records what Lean
+  // said in `docs/audits/vacuous-prop-carrier-baseline.json`. This audit reads
+  // that record. See `seedProbeInhabitedCandidates` for the asymmetry that
+  // governs which of its verdicts may be used.
+  | "proof-carrier-inhabited-by-probe";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -210,6 +227,13 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   // an audit reading `#print axioms` records a proof. Both are wrong, and they
   // disagree — so neither review path can catch it unaided.
   "proof-docstring-sorry-mismatch": "critical",
+  // Major, not critical, and deliberately so. Lean proving the carrier
+  // inhabitable is a hard fact, but "asserts nothing" is not the same as
+  // "should not exist": a carrier can be provably inhabitable-by-zero and
+  // still be the right disposition — the three `FMap*` carriers are typed
+  // `: True` behind a sanctioned `@marker` opt-out. The probe settles
+  // inhabitability; the agent still settles disposition.
+  "proof-carrier-inhabited-by-probe": "major",
 };
 
 interface Hit {
@@ -2301,6 +2325,92 @@ function hashFile(p: string): string | undefined {
   if (!existsSync(p)) return undefined;
   return createHash("sha256").update(readFileSync(p)).digest("hex").slice(0, 12);
 }
+
+/** Where the inhabitation probe records what Lean actually said. */
+const PROBE_BASELINE = "docs/audits/vacuous-prop-carrier-baseline.json";
+
+/**
+ * Seed `proof-carrier-inhabited-by-probe` candidates from the probe baseline.
+ *
+ * THE ASYMMETRY, which is the whole reason this is a separate function rather
+ * than three lines inline: **a probe SUCCESS is evidence and a probe FAILURE
+ * is not.** Lean inhabiting a carrier with no hypotheses settles that the
+ * carrier asserts nothing. Lean failing to means the tactic list found no
+ * witness — nothing more. This is not a hypothetical distinction; measured on
+ * this corpus, the generic list misses `QAubinLions`, `BlowupYekutieli` and
+ * `RegularityBreakdown`, all three of which are provable and two of which the
+ * corpus itself proves in its own instance bundle.
+ *
+ * So this reads exactly one verdict, `proved-vacuous`, and every other value
+ * — `uninhabitable-by-design`, `undecided`, anything added later — emits
+ * nothing. A carrier is never flagged because a probe *failed* to settle it,
+ * and the enum cannot drift into flagging one: the check is an allowlist of
+ * one, not a denylist.
+ *
+ * The baseline is optional. It is produced by a script that needs a working
+ * Lean toolchain, which a bare container does not have, and an audit that
+ * hard-failed on its absence would be unrunnable exactly where Lean is
+ * unavailable. Absent baseline → no candidates, no error.
+ *
+ * Staleness is delegated to the ledger's existing `file_sha` logic, keyed on
+ * the CARRIER's file rather than on the baseline. That is deliberate and is a
+ * strict improvement on the baseline alone, which stores no hash at all: edit
+ * a carrier and its ledger verdict goes `needs-agent` on the next
+ * `--review-ledger`, whether or not anyone re-runs the probe.
+ */
+function seedProbeInhabitedCandidates(
+  shaCache: Map<string, string | undefined>,
+): {
+  key: string;
+  rel: string;
+  line: number;
+  decl: string;
+  category: string;
+  pattern: string;
+  file_sha?: string;
+}[] {
+  const p = resolve(REPO_ROOT, PROBE_BASELINE);
+  if (!existsSync(p)) return [];
+  let entries: Record<string, { verdict?: string }> = {};
+  try {
+    entries = JSON.parse(readFileSync(p, "utf-8"))?.entries ?? {};
+  } catch {
+    return [];
+  }
+
+  const out = [];
+  for (const [k, v] of Object.entries(entries)) {
+    if (v?.verdict !== "proved-vacuous") continue;
+    const sep = k.lastIndexOf("::");
+    if (sep < 0) continue;
+    const rel = k.slice(0, sep);
+    const decl = k.slice(sep + 2);
+    const abs = resolve(REPO_ROOT, rel);
+    if (!existsSync(abs)) continue; // carrier's file moved or was deleted
+    if (!shaCache.has(abs)) shaCache.set(abs, hashFile(abs));
+
+    // Locate the declaration for a clickable line. The baseline stores the
+    // fully-qualified name; the source writes the last component, so match on
+    // that at a `class`/`structure` head. A miss is not fatal — the candidate
+    // is still real, so fall back to line 1 rather than dropping it.
+    const leaf = decl.slice(decl.lastIndexOf(".") + 1);
+    const lines = readFileSync(abs, "utf-8").split("\n");
+    const at = lines.findIndex((l) =>
+      new RegExp(`^\\s*(?:@\\[[^\\]]*\\]\\s*)?(?:class|structure)\\s+${leaf}\\b`).test(l),
+    );
+
+    out.push({
+      key: `${rel}::${decl}::proof-carrier-inhabited-by-probe`,
+      rel,
+      line: at >= 0 ? at + 1 : 1,
+      decl,
+      category: "proof-carrier-inhabited-by-probe",
+      pattern: "lean-inhabited-no-hypotheses",
+      file_sha: shaCache.get(abs),
+    });
+  }
+  return out;
+}
 function gitHeadSha(): string {
   try {
     return execFileSync("git", ["rev-parse", "HEAD"], {
@@ -2791,6 +2901,11 @@ function main() {
       }
     }
 
+    // Candidates this scanner cannot see, because deciding them needs Lean
+    // rather than a reading of the source. Evidence comes from the probe
+    // baseline; only carriers Lean PROVED inhabitable are admitted.
+    candidates.push(...seedProbeInhabitedCandidates(shaCache));
+
     if (reviewLedger) {
       const p = resolve(REPO_ROOT, reviewLedger);
       let led: {
@@ -2840,9 +2955,42 @@ function main() {
           added++;
         }
       }
-      // Drop entries whose candidate no longer flags (resolved/fixed).
-      for (const k of Object.keys(led.entries))
-        if (!seen.has(k)) delete led.entries[k];
+      // Drop entries whose candidate no longer flags (resolved/fixed) — but
+      // ONLY in categories this audit actually produces.
+      //
+      // The ledger is SHARED. Other tools and hand adjudications write into it
+      // under categories this scanner has never heard of, and to this loop an
+      // entry it cannot produce is indistinguishable from one that has been
+      // fixed. Measured on `main` 2026-08-30, before this guard: a single
+      // `--review-ledger` run deleted **116 of 268 entries** — 104
+      // `proof-borrowed-name`, 7 `proof-zero-placeholder`, and one each of
+      // `name-overload`, `proof-docstring-body-mismatch`,
+      // `proof-vacuous-hypotheses` — carrying **38 `genuine`, 56 `legit` and
+      // 22 `advisory` agent verdicts** with them.
+      //
+      // Those verdicts are not recoverable by re-running anything: none of the
+      // five categories is emitted by any script in the tree. Deleting them
+      // discards the one thing the ledger exists to hold, and does it silently,
+      // in a run whose printed summary says only "N candidate(s)".
+      //
+      // `OWNED` is derived from SEVERITY rather than hardcoded, so a category
+      // added to this audit is covered automatically and one belonging to
+      // another tool is left alone by default — the safe direction.
+      const OWNED = new Set(Object.keys(SEVERITY));
+      let foreign = 0;
+      for (const k of Object.keys(led.entries)) {
+        if (seen.has(k)) continue;
+        const cat = k.slice(k.lastIndexOf("::") + 2);
+        if (!OWNED.has(cat)) {
+          foreign++;
+          continue; // another tool's entry — not ours to resolve or delete
+        }
+        delete led.entries[k];
+      }
+      if (foreign && !quiet)
+        console.log(
+          `  (preserved ${foreign} entr(ies) in categories this audit does not produce)`,
+        );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");
       if (!quiet)
