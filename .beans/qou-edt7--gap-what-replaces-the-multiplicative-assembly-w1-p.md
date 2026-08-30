@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T12:43:32Z
+updated_at: 2026-08-30T14:00:47Z
 parent: qou-mhj9
 ---
 
@@ -643,3 +643,94 @@ hit.
 
 Probe: computations/probes/framework_near_unitary_channel_probe.py (mpmath 65
 dps, no float64, 2/2). Commit 755965d10d.
+
+
+## THE SECOND ESCAPE HATCH IS ALSO CLOSED — isospin typing (2026-08-30, PR #6229)
+
+Lean: `QOU/Mass/TypedBondSiteInvariance.lean` (lean-direct exit 0; `#print
+axioms` on all 14 declarations = `[propext, Classical.choice, Quot.sound]`).
+Audit: `docs/audits/2026-08-30-typed-bond-site-invariance-and-the-corrected-prune-map.md`.
+
+`UniformBondSimpleGraphExclusion` names its escape hatch as "drop *uniform
+bond weight* or drop *simple graph*". There are **two** ways to drop the
+first, and this bean had been tracking only one of them:
+
+* **coordination-dependence** `eps(z)` — the survivor, `eps(2)/eps(1) = 1.2137076`;
+* **isospin typing** `L_pp` / `L_pn` / `L_nn` — believed closed by
+  `ChainBondOrderDependence`. **It was not.** Now closed.
+
+### Why it was open — an arity error, not a gap in effort
+
+`ChainBondOrderDependence.orderIndependent_iff` proves arrangement-invariance
+iff `L_pp = L_pn = L_nn`, and reads as "physical => uniform bonds". It does
+not say that: it is a theorem about `bondSum`, the sum over **adjacent pairs
+of a List Bool**, i.e. the linear chain. The counterexample is one line — on
+the **complete graph** the typed sum is site-invariant for *arbitrary* L,
+because `C(Z,2)`, `Z*N`, `C(N,2)` are fixed by `(Z,N)` alone.
+
+### PROVED — the general classification
+
+For `G` on `A >= 3` carrying both a bond and a non-bond, site invariance
+(the binding depends on how many protons, not which sites) holds **iff**
+
+    G is regular  AND  L_pp + L_nn = 2*L_pn
+
+The mean condition is **strictly weaker** than uniformity and genuinely
+suffices on a regular graph. The chain's stronger conclusion is an artifact
+of the chain being **irregular** (endpoints have degree 1). Under both,
+
+    2*B(S) = k * (L_pp*Z + L_nn*N)
+
+— **linear in the nucleon counts**, a one-body self-energy. The graph is
+erased; only the scalar `k` survives.
+
+### Two kills
+
+**Regular branch, two nuclei, no fit.** Along `N = Z`, with `k_2 = 1` and the
+simple-graph degree bound `k <= A-1`:
+
+    B(4He)/B(2H) = 2*k_4 <= 6        AME2020: 28.2956624/2.224566 = 12.7196
+
+**Complete branch — and this is a HOLE IN `CoordinationSaturation`, worth
+recording separately.** `complete_graph_no_saturation` assumes a single
+`eps > 0`, so it does **not** cover mixed signs. The `A^2` coefficient of the
+isobaric complete-graph typed sum is `L_pp + L_nn + 2*L_pn`, which **can
+cancel** — a saturating complete-graph family does exist and that lemma does
+not see it. It dies to a *different* invariant: under exactly that
+cancellation `b3 = -2*b2`, so a bound deuteron (`b2 = 2.224566 > 0`) forces
+`b3 = -4.449` against the measured `+1.426222`.
+
+### What this changes for this bean
+
+The pairwise class is now exhausted along every axis tested:
+
+| vary | result |
+|---|---|
+| which pairs bond | `UniformBondSimpleGraphExclusion` — `b3 <= 0` |
+| the bond function `f` | `PairwiseCumulantVanishing` — `b3 = 0` |
+| the isospin typing | **this PR** — collapses to one-body, `2*k_4 <= 6` |
+| the assembly (multiplicative) | `MayerThreeBodySign` — `b3 < 0` |
+
+**One axis left, and it is this bean's own:** non-transferability, i.e. the
+bond weight depending on coordination number. `eps(2)/eps(1) = 1.2137076`,
+`eps(3)/eps(1) = 2.1200`, with single-ratio scaling already refuted here
+(1.2137 vs 1.7467, 43.9% apart).
+
+The upgrade is **epistemic, not directional**: this bean concluded "the rise
+is non-transferability" after excluding the uniform family. That is now
+*proved* rather than *asserted-after-one-exclusion* — it is
+non-transferability, and **not isospin typing either.** Do not spend another
+tranche re-testing bond typing.
+
+### Correction to the map several briefs have been working from
+
+A dispatch brief for this front named four prunes (`CoordinationSaturation`,
+`ChainBondOrderDependence`, `BodyOrderRecurrenceDepth`, `MayerThreeBodySign`).
+The tree holds at least **nine**. The five missing —
+`ChainBindingNoSaturationPeak`, `UniformBondSimpleGraphExclusion`,
+`PairwiseCumulantVanishing`, `SU4CasimirIsAffineInPairCount`, and now
+`TypedBondSiteInvariance` — are tabulated in the audit doc above. Note
+especially that `PairwiseCumulantVanishing` is **orthogonal** to the typed
+classification, not stronger: it fixes the complete pair set and varies the
+bond *function*, while this varies the *edge set and typing* at fixed
+pairwise shape. Neither subsumes the other.
