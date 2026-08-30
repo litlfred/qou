@@ -51,7 +51,12 @@ NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 z = q0**3 / (q0**2 + 1)
-TR_M = [_ONE, z, z, z**2, z**2, z**3]
+h = q0 - _ONE / q0
+# TR_M[5] = tr_M(sigma_0 sigma_1 sigma_0) = h*z^2 + z, NOT z^3. The Markov
+# axioms give tr(s0 s1 s0) = tr(s1 s0^2) = tr(s1 (h s0 + 1)) = h*tr(s1 s0)
+# + tr(s1) = h*z^2 + z. docs/audits/2026-05-19-trm5-markov-bug.md fixed this
+# in pyhecke.gram on 2026-05-19; it never propagated here (bean qou-ssex).
+TR_M = [_ONE, z, z, z**2, z**2, h * z**2 + z]
 
 
 def hecke_mul(t1, t2):

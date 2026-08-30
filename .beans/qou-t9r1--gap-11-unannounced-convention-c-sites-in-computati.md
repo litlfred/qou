@@ -1,11 +1,11 @@
 ---
 # qou-t9r1
 title: 'GAP: 8 unannounced convention-C sites left in computations/ (detector-blind spelling)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-30T02:53:07Z
+updated_at: 2026-08-30T07:56:32Z
 ---
 
 THE FINDING behind PR #5972. `scripts/convention-c-producer-audit.py` reports 9
@@ -79,6 +79,20 @@ than a re-spelling; anything else needs explaining. Watch for a SECOND spelling
 of z in the same file -- prearchimedean_bond_factor.py had one in its assertion
 comparand, and migrating only the first sent the assertion 5.55e-17 -> 0.1134.
 
-2026-08-29: adjudicated 37 of the 86 value-audit blocking sites as deliberate C-vs-D comparison arms (docstring frames it as convention work AND scope co-binds z_D; each entry quotes the file's own purpose). BLOCKING 86 -> 49, ledger 1 -> 38. Remaining 49 = 42 solo + 7 co-bound-but-unframed; the latter include qbeta_utils.py (cds1-gated ladder) and the fork-pricing probe, which need an eye rather than a keyword match. NOTE for anyone quoting a C-surface figure: the SHAPE audit's ACTIONABLE (8) is ~a tenth of the VALUE audit's surface (87 confirmed); do not report the former as the remaining work.
+## RESOLVED 2026-08-30 (PR #6110)
 
-2026-08-29 (cont): 49 -> 30 blocking. Adjudicated 16 sibling-def comparisons (taxonomy row 18), 1 whose D arm is a closed form in h not a z (row 19), and markov_trace_weights_wenzl's two sites — that one is a STALE CANONICITY CLAIM, not just a C binding: it called z_C 'the canonical Markov trace' post-R1. Relabelled, not migrated; zero importers and only inventory audits read its witness, so migration is cheap but is a separate decision. Ledger 38 -> 57.
+All enumerated sites dispositioned. **The header said 8; the list held 7.**
+
+| site | disposition |
+|---|---|
+| `compound_shift_nf.py:256` | migrated to D **with** the TR_M[5] fix (qou-ssex) — NOT a clean z-swap: the trace bug was masking the D Gram singularity |
+| `markov_trace_weights_wenzl.py:254,:457` | migrated. The premise caution does NOT hold — `a² = z/z₋` is an identity in `z` (`a2_fitted − a2_closed = 0` generically), not a C-specific fact |
+| `probe_markov_trace_ratio_exact.py:87` | migrated; 4/4 pass under D, symbolic cancellation still exact in ℚ(q) |
+| `probes/markov_stab_trace_axis_probe.py:130` | migrated; its cited authority `hecke_symbolic.py` had **already** moved to D on 2026-08-09 |
+| `lw2_c2_independent_hopf_test_attempt.py:96` | **BLOCKED** — C-premised. `(q−1/q)z+1 = 1+(q−1)/√q` holds only at z_C; under z_D the file's own `wenzl_eq_cf` fails by 0.0237 at q₀ |
+| `deltalambda_bareven_b4_magnitude_probe.py:137` | **BLOCKED**, registered (qou-pmkh) |
+
+## Two findings beyond the migration
+
+1. **A live layer straddle**, pre-existing, now removed: `markov_stab_trace_axis_probe` hardcoded the frozen MUON literal while reading a PROTON-anchored y-lambda cache, and the two met in one quantity (`y_lam * f_lam`). Same shape as the μ₃ Fréchet incident.
+2. **The D radical, independently confirmed**: under D exactly the ℓ(λ) ≥ 3 Wenzl weights vanish, in exact rational arithmetic at every sampled s. Matches qou-fu8c by a completely different route.

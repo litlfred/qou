@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:34Z
-updated_at: 2026-08-29T08:05:04Z
+updated_at: 2026-08-30T07:56:33Z
 ---
 
 Four convention-C sites in computations/ that must NOT stay on C but CANNOT be
@@ -69,3 +69,10 @@ NEXT HONEST STEP: add four rows to `blocked_on_rederivation` (2 on qou-cds2,
 1 new, 2 on qou-cds1) with this evidence, so the standing audit accounts for
 them instead of being blind to them. Then the re-derivations are four separate
 pieces of research, not a sweep.
+
+## 2026-08-30 (PR #6110)
+
+- **Registration COMPLETE.** The sixth line-site (`deltalambda_bareven_b4_magnitude_probe.py` `z_bar`, :137) was never registered — and was double-counted, listed among qou-t9r1's *migratable* sites while described there as "the partner of the blocked site above". Now a `blocked_on_rederivation` row.
+- **All four dispositions re-verified symbolically**, not cited: `((q²+1)z−q³)|_{z_D} = 0`; `det G|_{z_C,q₀} = −0.1892052191`; `bar(z_C)−z_C = 0`; `bar(z_D)−z_D = −h`.
+- **Gram item: the replacement theorem is DERIVED** — see qou-cds2 above. That was the largest of the four.
+- Two c₃ items remain blocked on qou-cds1; the bar-decomposition item (the only one pmkh owns outright) is still open, and must be built on `bar(z_D) = z_D − h`.

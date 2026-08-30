@@ -1,6 +1,6 @@
 {
   "schema": "trace-convention-registry/v1",
-  "updated": "2026-08-29",
+  "updated": "2026-08-30",
   "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
   "bean": "qou-n1dj",
   "meta": {
@@ -916,11 +916,20 @@
     {
       "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
       "symbol": "z_naive",
-      "line": 131,
+      "line": 141,
       "stays": "C until a D-frame bar decomposition exists",
       "blocked_on_bean": "qou-pmkh",
       "registered_on": "2026-08-29",
       "evidence": "The probe asserts z_naive_bar_even and its whole subject is the bar-even B4 magnitude. MEASURED symbolically: bar(z_C) - z_C = 0, so z_C IS bar-even; bar(z_D) = 1/(q^3+q) and bar(z_D) - z_D = 1/q - q = -h, so z_D is bar-NEITHER. Substituting z_D flips the probe's own assertion False and leaves it reporting on a premise it no longer has. The substitution was applied on branch claude/convention-c-full-excision-2026-08-29, observed to do exactly this, and REVERTED. The relation bar(z_D) = z_D - h is what a D-frame re-derivation has to be built on. Converges with QOU/QBeta/ZBarParity.lean, whose z_bar_invariant proves the C statement."
+    },
+    {
+      "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "symbol": "z_bar",
+      "line": 147,
+      "stays": "C until a D-frame bar decomposition exists",
+      "blocked_on_bean": "qou-pmkh",
+      "registered_on": "2026-08-30",
+      "evidence": "The BAR PARTNER of the z_naive row immediately above, and not an independent site. z_bar = 1/(1/v + v) with v = sqrt(q0) is bar(z_naive) written out: under q -> 1/q, v -> 1/v, so the commuted denominator IS the bar image. It is consumed at exactly one place, line 139 z_bar_even = abs(z_naive - z_bar) < 1e-40, which feeds witness field z_naive_bar_even (line 243) and the assertion at line 311 with expected=True. MEASURED: migrating :137 ALONE compares z_D against bar(z_C) -- two different objects, so the assertion stops being false and starts being meaningless. Migrating :131 and :137 TOGETHER makes it False, because bar(z_D) - z_D = 1/q - q = -h is nonzero. Neither disposition is a migration, which is why the pair is one blocked item. Registered because bean qou-t9r1 listed this line among its EIGHT migratable sites while simultaneously describing it as 'the partner of the blocked site above'; the migratable count is 7, not 8."
     },
     {
       "file": "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py",

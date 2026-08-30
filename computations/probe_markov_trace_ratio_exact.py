@@ -81,10 +81,21 @@ def jones_norm_factor(n: int, q):
 
 
 def markov_z_h(q):
-    """Markov parameter z = 1/(q^{1/2}+q^{-1/2}) and h = q - q⁻¹ at q.
-    Generic over sympy / mpmath inputs."""
-    qh = _sqrt(q)
-    z = 1 / (qh + 1 / qh)
+    """Markov parameter z = q³/(q² + 1) (convention D) and h = q - q⁻¹ at q.
+    Generic over sympy / mpmath inputs.
+
+    MIGRATED C -> D 2026-08-30 (bean qou-t9r1). This site was one of the
+    sqrt-variable spellings invisible to scripts/convention-c-producer-audit.py
+    (it matches shapes, and `1/(qh + 1/qh)` with qh = sqrt(q) is z_C exactly).
+
+    Migrating here is a FREE TEST rather than a risk: this probe's whole claim
+    (prop:markov-trace-ratio-exact) is that the Jones normalisation C(n, q)
+    cancels in every RATIO taken at fixed strand count n. If that is true the
+    assertions must survive a change of z; if it is not, they break and the
+    probe has found something. Ratio-invariance is NOT automatic in general —
+    a generic weighted ratio over TR_M = [1,z,z,z²,z²,·] does depend on z —
+    so this is a real check, not a tautology."""
+    z = q ** 3 / (q ** 2 + 1)
     h = q - 1 / q
     return z, h
 

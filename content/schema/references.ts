@@ -3756,7 +3756,7 @@ export const references: Reference[] = [
     DOI: "10.1142/1116",
   }),
 
-  // ── Kawauchi 1996 ─────────────────────────────────────────────
+  // ── Okubo 1962 ────────────────────────────────────────────────
   ref({
     id: "okubo1962",
     type: "article-journal",
@@ -3770,6 +3770,7 @@ export const references: Reference[] = [
     issued: { "date-parts": [[1962]] },
   }),
 
+  // ── Milnor 1957 ───────────────────────────────────────────────
   ref({
     id: "milnor1957",
     type: "chapter",
@@ -3789,6 +3790,7 @@ export const references: Reference[] = [
     issued: { "date-parts": [[1957]] },
   }),
 
+  // ── Kawauchi 1996 ─────────────────────────────────────────────
   ref({
     id: "kawauchi1996",
     type: "book",
