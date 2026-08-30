@@ -56,12 +56,19 @@ def main() -> int:
         # truncated a 70-dps magnitude to a double before it reached the
         # witness (AGENTS.md §PROBES ARE NOT EXEMPT; bean qou-p77d).
         denom_abs = fmt(abs(denom))
+        # Was `computed=denom_abs, expected=denom_abs` -- the magnitude as its
+        # own expectation, so it passed even at an exact pole, which is the one
+        # outcome the name excludes (bean qou-3e5m). The claim in `source` is
+        # already an inequality; assert it. The magnitude is not lost -- it is
+        # recorded beside the flag.
+        w.add_data(f"denominator_magnitude_n{n}", denom_abs)
         w.add_assertion(
             name=f"denominator_nonzero_n{n}",
-            computed=denom_abs,
-            expected=denom_abs,  # presence-of-magnitude check
-            tolerance=None,
-            source=f"|1 − h_q·q^{n}| > 0 at q₀",
+            computed=1 if abs(denom) > 0 else 0,
+            expected=1,
+            tolerance=0,
+            source=f"|1 − h_q·q^{n}| > 0 at q₀; magnitude in "
+                   f"data.denominator_magnitude_n{n}",
         )
 
         # The residual is ~1e-72 against a 1e-49 tolerance; the cast
