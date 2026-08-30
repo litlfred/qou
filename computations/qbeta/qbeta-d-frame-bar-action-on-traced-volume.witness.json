@@ -1,0 +1,86 @@
+{
+  "engine": "python+sympy (exact in q)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:12:21.808227+00:00",
+  "commitSha": "8edcd495faf2aacd38b82058025bfbccbea79eb7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-d-frame-bar-action-on-traced-volume",
+  "scriptFile": "qbeta_d_frame_bar_action_on_traced_volume.py",
+  "scriptHash": "74823188f1db",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py"
+  },
+  "description": "The bar involution acts on the Q_beta traced volume as an AFFINE REFLECTION under convention C (fixed point 1) and as a MULTIPLICATIVE eigenvector of weight -2 under D. That is the root cause of the cos-resummation's failure under D, and it says the D replacement must respect a multiplicative action.",
+  "phase_is_recentred_traced_volume": "alpha = (z-1)h/2 = (Vhat - 1 - h)/2",
+  "by_convention": {
+    "C": {
+      "Vhat": "(sqrt(q)*(q + 1) + q**2 - 1)/(sqrt(q)*(q + 1))",
+      "bar_Vhat": "(q**(3/2) + sqrt(q) - q**2 + 1)/(sqrt(q)*(q + 1))",
+      "alpha_equals_recentred_Vhat": true,
+      "bar_is_affine_reflection_2_minus_V": true,
+      "bar_is_multiplicative_weight_minus2": false,
+      "bar_alpha_plus_alpha": "0",
+      "alpha_is_bar_odd": true,
+      "additive_symmetrisation": "2",
+      "additive_is_constant": true,
+      "multiplicative_symmetrisation": "-(q**2 - 3*q + 1)/q",
+      "multiplicative_is_constant": false
+    },
+    "D": {
+      "Vhat": "(q**4 + 1)/(q**2 + 1)",
+      "bar_Vhat": "(q**4 + 1)/(q**4 + q**2)",
+      "alpha_equals_recentred_Vhat": true,
+      "bar_is_affine_reflection_2_minus_V": false,
+      "bar_is_multiplicative_weight_minus2": true,
+      "bar_alpha_plus_alpha": "(q - 1)**2*(q + 1)**2/(2*q**2)",
+      "alpha_is_bar_odd": false,
+      "additive_symmetrisation": "(q**4 + 1)/q**2",
+      "additive_is_constant": false,
+      "multiplicative_symmetrisation": "(q**4 + 1)**2/(q**2*(q**2 + 1)**2)",
+      "multiplicative_is_constant": false
+    }
+  },
+  "no_constant_recentring_repairs_D": {
+    "offset_c_solving_bar_oddness": [
+      "(q**4 + 1)/(2*q**2)"
+    ],
+    "equals_bar_midpoint_of_Vhat": true,
+    "why_this_is_not_a_repair": "c depends on q, so it is not a re-centring of the phase but a different object. Independently confirms Step 2's bar-weight argument, reached there from weights rather than the action."
+  },
+  "result": "cos(alpha) = (e^{i alpha} + e^{-i alpha})/2 is the ADDITIVE symmetrisation. Under C the additive bar-symmetrisation of the traced volume is CONSTANT (= 2) — the bar action is affine, so additive symmetrisation is the invariant and the cosine is its trigonometric realisation. Under D the action is multiplicative, so no additive form, cosine included, can be the minimal invariant.",
+  "does_not_establish": "the replacement FORM. This fixes the CLASS it must lie in (multiplicative in the bar action) and closes the additive route, from the group action rather than by search. Naming the form still needs the D-frame M_beta spectrum on V_(2,1).",
+  "no_ck_wired": true,
+  "context": {
+    "beans": [
+      "qou-cds1"
+    ],
+    "prior": [
+      "Step 4 (cos justification fails)",
+      "Step 6 (phase formula is generic in z)"
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138"
+}

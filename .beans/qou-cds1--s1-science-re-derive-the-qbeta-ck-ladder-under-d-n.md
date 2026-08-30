@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T10:07:11Z
+updated_at: 2026-08-30T10:12:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2867,3 +2867,30 @@ So the D re-derivation target is the **resummation form + the ladder**, not the 
 **Values at the proton pin:** α_C = −0.0523361202682285, α_D = −0.0404857773406426. Recorded as generic-formula values, NOT wired ladder inputs. No c_k proposed, extracted or wired; c_3 ≈ −974 remains a sensitivity measurement.
 
 **I also corrected my own reading twice here.** I had described the guard as "withholding α under D because the substitution is proved invalid" — the withholding is actually of UNNAMED access, and D is served. And the quoted sentence is in the KeyError, not the docstring; my quote was accurate, my characterisation of its scope was not.
+
+## Step 7 (2026-08-30) — WHY the cosine fails: the bar action itself changes shape
+
+`computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py`. Step 4 saw the *symptom* (α not bar-odd under D). This derives the *cause*, from the group action.
+
+**The phase is a re-centred traced volume.** With `V̂ = z·h + 1` (the Markov trace on the pp transfer matrix), verified for BOTH conventions:
+
+    alpha = (z-1)h/2 = (Vhat - 1 - h)/2        EXACT identity
+
+**The bar involution acts completely differently in the two conventions** — different group actions, not different values of one:
+
+    C:  bar(Vhat) = 2 - Vhat        AFFINE REFLECTION, fixed point 1
+    D:  bar(Vhat) = Vhat / q^2      MULTIPLICATIVE eigenvector, weight -2
+
+Under C bar fixes the centre 1 and negates h, so `V̂ − 1 − h` is bar-ODD and α inherits `α ↦ −α`. Under D bar does not fix 1 — it scales — so the centring buys nothing: `bar(α)+α = (q−1)²(q+1)²/(2q²) ≠ 0`.
+
+**No constant re-centring repairs it.** Solving for the offset `c` making `V̂ − c − h` bar-odd under D gives `c = (q⁴+1)/(2q²)` — which is exactly the **bar-midpoint** of V̂, and is q-dependent. A q-dependent offset is not a re-centring of the phase, it is a different object. Independently confirms Step 2's bar-weight argument, reached there from weights rather than from the action.
+
+**THE RESULT.** `cos α = (e^{iα}+e^{−iα})/2` is precisely the **ADDITIVE** symmetrisation. Measured:
+
+    C:  bar(Vhat) + Vhat = 2                    CONSTANT in q
+    D:  bar(Vhat) + Vhat = (q^4+1)/q^2          NOT constant
+        bar(Vhat) * Vhat = (q^4+1)^2/(q^2(q^2+1)^2)   NOT constant
+
+Under C the additive bar-symmetrisation of the traced volume is a **constant**. That is the precise sense in which the additive/cosine structure belongs to convention C: the bar action is affine, so additive symmetrisation is the invariant and the cosine is its trigonometric realisation. Under D the action is multiplicative, so **no additive form — cosine included — can be the minimal invariant.**
+
+**What it does NOT establish:** the replacement form. It fixes the CLASS (multiplicative in the bar action) and closes the additive route, from the group action rather than by search. Naming the form still needs the D-frame M_β spectrum on V_(2,1). No c_k proposed, extracted or wired.
