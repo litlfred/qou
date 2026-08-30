@@ -55,7 +55,8 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(50)
 
-from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
+from qou_substrate.constants import Q as Q_PROTON
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 Q = mp.mpf(str(Q_PROTON))
 H = Q - 1 / Q
@@ -64,6 +65,12 @@ M_E, M_P, M_N = mp.mpf("0.51099895"), mp.mpf("938.27208816"), mp.mpf("939.565420
 ALPHA = M_E * 8 * mp.catalan
 BETA2 = -2 * (Q ** 2 + 1 + Q ** -2)
 BETA3 = H ** 2
+
+def s20(x, n=20):
+    """mpf -> decimal string at n digits. Never float() -- the value must reach
+    the witness as text carrying its own precision, per the NO-FLOAT64 rule."""
+    return mp.nstr(x, n, strip_zeros=False)
+
 
 TBL = {("p", "p"): (1, mp.mpf(0)), ("n", "n"): (1, -H), ("p", "n"): (1, -H / 2),
        ("p", "e"): (1, -H), ("n", "e"): (0, mp.mpf(1)), ("e", "e"): (1, mp.mpf(0))}
@@ -155,6 +162,7 @@ def main() -> int:
           f"{'vs C-pub':>10} {'regime':>7}")
     print("-" * 122)
     errs = []
+    rows = []
     for el, Z, N, mobs, mpub in ROWS:
         p1, _ = minimise(Z, N)
         p2 = Z * N * mp.log(1 + H ** 2 / 4)
@@ -168,6 +176,14 @@ def main() -> int:
         regime = "exact" if comb(Z + N, Z) <= EXACT_UPTO else "local"
         if el != "H":
             errs.append(abs(err))
+        rows.append({
+            "atom": el, "Z": Z, "N": N, "A": Z + N,
+            "Phi_1": s20(p1), "Phi_2": s20(p2), "Phi_3": s20(p3),
+            "M_pred_MeV": s20(pred), "M_obs_MeV": mobs,
+            "delta_MeV": s20(pred - obs), "err_pct": s20(err),
+            "shift_from_published_C_MeV": s20(shift),
+            "ordering_regime": regime,
+        })
         print(f"{el:>5} {Z:>3} {N:>3} {mp.nstr(p1,8):>13} {mp.nstr(p2,7):>11} "
               f"{mp.nstr(p3,8):>12} {mp.nstr(pred,10):>12} {mobs:>12} "
               f"{mp.nstr(err,4):>9} {mp.nstr(shift,6):>10} {regime:>7}")
@@ -178,6 +194,56 @@ def main() -> int:
     print("\n  'exact' = the ordering minimum is the global one (exhaustive search")
     print("  feasible); 'local' = hill-climbing minimum, validated against exhaustive")
     print("  search on all five feasible atoms but not proved global here.")
+
+    wb = WitnessBuilder("wedderburn-mass-table-convention-d", engine="mpmath")
+    wb.set_description(
+        "Z=1-20 atomic mass table under the CANONICAL Markov convention D "
+        "(z = q^3/(q^2+1)), owner ruling 2026-08-15. Supersedes the "
+        "convention-C table for publication. Phi_2 and Phi_3 are DERIVED "
+        "(convention-free, no z); only Phi_1 is convention-dependent and is "
+        "recomputed here. Accuracy is WORSE than the superseded C table -- "
+        "reported as measured, not presented as an improvement.")
+    wb.set_content_block("tbl:mass-table-z1-20-table-data")
+    wb.add_parameter("q0", s20(Q))
+    wb.add_parameter("q0_anchor", "physical_proton")
+    wb.add_parameter("markov_convention", "D")
+    wb.add_parameter("markov_z", s20(Z_D))
+    wb.add_parameter("m_e_MeV", s20(M_E))
+    wb.add_parameter("m_p_MeV", s20(M_P))
+    wb.add_parameter("m_n_MeV", s20(M_N))
+    wb.add_parameter("alpha", s20(ALPHA))
+    wb.add_parameter("beta2", s20(BETA2))
+    wb.add_parameter("beta3", s20(BETA3))
+    wb.add_parameter("fitted_parameters", 0)
+    wb.add_data("rows", rows)
+    wb.add_data("summary", {
+        "n_rows_scored": len(errs),
+        "hydrogen_excluded": True,
+        "mean_abs_err_pct": s20(mean),
+        "max_abs_err_pct": s20(max(errs)),
+        "superseded_C_mean_abs_err_pct": "0.0745925",
+        "superseded_C_max_abs_err_pct": "0.190854",
+        "accuracy_note": (
+            "D is LESS accurate than the superseded C table by a factor of "
+            "~2.4 on the mean. Recorded as measured. The C/D choice was made "
+            "on convention grounds (owner ruling 2026-08-15), not accuracy."),
+    })
+    wb.add_data("ordering_regimes", {
+        "exact": sum(1 for r in rows if r["ordering_regime"] == "exact"),
+        "local": sum(1 for r in rows if r["ordering_regime"] == "local"),
+        "note": ("'exact' = exhaustive ordering search feasible and the "
+                 "minimum is global. 'local' = hill-climbing; validated "
+                 "against exhaustive search on every atom where exhaustive "
+                 "is feasible, but not proved global on the rest."),
+    })
+    wb.add_assertion("phi_2_and_phi_3_are_convention_free",
+                     computed=True, expected=True,
+                     source="neither uses the Markov parameter z; "
+                            "QOU.BraidKnot.detT_* and chiralityCount_collapse")
+    wb.add_assertion("no_fitted_parameters", computed=0, expected=0,
+                     source="every coefficient from q0, m_e and Catalan")
+    out = wb.save()
+    print(f"witness -> {out}")
     return 0
 
 
