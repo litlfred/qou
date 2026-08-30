@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T12:36:26Z
+updated_at: 2026-08-30T11:33:03Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -524,3 +524,82 @@ a reader checking the contract at the function they call would conclude C.
 
 The sweep this bean opened with -- "870 witnesses" -- was 222, of which the
 actionable part is now done except for what cds1 and one long compute gate.
+
+
+## 2026-08-30 — the "inert manifest entry" detector: NEGATIVE RESULT, 3 shapes tried
+
+This bean names the class and says "Not filed as its own bean yet". Attempted
+it. **The general form is not decidable statically**, and the reason is worth
+more than the attempt.
+
+### Root cause — TWO steering mechanisms on TWO DIFFERENT stems
+
+    q_parameter.py:107        _stem = Path(sys.argv[0]).stem     ENTRY POINT
+    qou_substrate/witness.py  stem  = Path(_script_path).stem    CALLER FRAME
+                              (_script_path defaults to inspect.stack()[1])
+
+**The bean's framing describes only the second.** A producer run as
+`python3 foo.py` is steered correctly by `q_parameter` whatever its
+WitnessBuilder does, because `sys.argv[0]` IS the producer. So "constructs no
+WitnessBuilder" does NOT imply "the manifest entry is inert" — which is what
+the note above invites a reader to test.
+
+### Three shapes measured, all over-flag — DO NOT REBUILD THESE
+
+1. **"listed but never constructs a WitnessBuilder"** -> **176**.
+   `torus_knot_markov_trace_closed_form` builds a plain dict and writes it with
+   `json.dumps`, never touching WitnessBuilder, and is steered anyway via
+   `q_parameter`'s `sys.argv[0]` lookup at import.
+
+2. **"a scriptFile on many witnesses = a helper stamping foreign witnesses"**
+   -> 37 shared basenames, two largest both legitimate.
+   `canonical_isotope_witness.py` (120) and `_habiro_coefficient_extract.py`
+   (26) are BOTH entry points, BOTH manifest-listed, each emitting its own
+   named family (`habiro-coefficients-*`). One producer / many witnesses is
+   the normal case here. **A leading underscore is not evidence.**
+
+3. **"scriptFile names a module with no `__main__`"** -> **90**. Those are
+   producers running at top level without a guard, each naming its own witness
+   (`meson-mass-from-hecke.witness.json` <- `meson_mass_from_hecke.py`).
+
+I reported 176 to myself before checking it. Recording the numbers that were
+WRONG as well as the one that survived, because the failure mode is the
+detector-blindness pattern this corpus keeps hitting from the other side: here
+the detector was too BROAD, not too narrow.
+
+### The residual real cases exist and need a different method
+
+`habiro_interpolation_wlambda` (recorded above) stamped `muon` through TWO full
+re-runs while the manifest said `ambiguous`. That is genuine. It was found by
+**running the producer and watching it ignore the manifest** — not by any
+static shape. No shape tried here separates it from the 176/37/90.
+
+### What DOES survive — 2 entries that cannot bind to anything
+
+    alpha_high_precision  [ideal_muon]       only computations/_deprecated/
+    binding_k_enumerator  [physical_proton]  only computations/_deprecated/
+
+Both still have a committed witness carrying their name. The manifest asserts
+an anchor class for two RETIRED producers. Decidable without running anything:
+either the live tree has the file or it does not, so this class has no
+false-positive mechanism.
+
+**Reported, not fixed.** Removing an entry changes what `resolve_q0_anchor`
+returns for that stem (unlisted => the `proton` default), and whether those two
+witnesses should be retired alongside their producers is an owner call, not a
+sweep.
+
+AUDIT: computations/audits/manifest_inert_entry_audit.py (reporting-only; no
+witness regenerated, no manifest edited). Its docstring carries the three dead
+shapes so the next reader does not re-derive them.
+
+### cds3 status from this session's reading
+
+Everything else on this bean is GATED, not open:
+
+    4  qbeta c_k          -> gated on qou-cds1 (the D re-derivation)
+    2  float64 defect     -> gated on qou-k6b3
+    1  hadron_knot_table  -> compute-blocked (stalls on deuterium, killed 1297 s)
+
+Direct readers 20/20 and the indirect class closed at zero. There is no
+unblocked migration work left on cds3.
