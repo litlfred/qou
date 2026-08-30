@@ -53,6 +53,11 @@
             "type": "command",
             "command": "./scripts/precommit-ledger-shrink-warn.sh",
             "timeout": 20
+          },
+          {
+            "type": "command",
+            "command": "./scripts/precommit-bootstrap-order-warn.sh",
+            "timeout": 120
           }
         ]
       }

@@ -54,6 +54,54 @@ PATH_MUT = re.compile(
 IMPORT_RE = re.compile(r"\s*import\s+_path_bridge\b")
 MISSING = "No module named '_path_bridge'"
 
+# ---------------------------------------------------------------------------
+# GENERALISED 2026-08-30: `_path_bridge` is one SPELLING of the defect, not the
+# defect. The class is "a bare-name import that only the bootstrap can resolve,
+# placed before the bootstrap". Measured the same day: this audit reported 0
+# while SEVEN scripts were broken exactly that way --
+#
+#   from q_parameter import Q_50_DIGIT_STR          (x3)
+#   from substrate.q_parameter import ...           (x2)
+#   from _precision import set_compute_dps          (x1)
+#   from canonical_braid_crossings import CTYPES    (x1)
+#
+# -- three of them with the bootstrap present but LATER in the file. They were
+# found by `producer_importability_audit`, which decides by importing rather
+# than by pattern; this audit's own pattern could not see them. Entry 17 for
+# docs/audits/2026-08-15-detector-blindness-taxonomy.md, and the same shape as
+# the 28-vs-6 error above: one unknown spelling, a confidently wrong count.
+#
+# The importable-name set is DERIVED from the tree rather than hardcoded, so it
+# cannot go stale the way a literal list would. `_bare_names()` collects every
+# module a bootstrapped script can reach by bare name: the `.py` stems directly
+# under computations/, the stems in every cluster subdir, and the subdir names
+# themselves (for the `from substrate.q_parameter import ...` package form).
+# ---------------------------------------------------------------------------
+BARE_IMPORT_RE = re.compile(
+    r"^\s*(?:from\s+(?P<f>[A-Za-z_][A-Za-z0-9_]*)(?:\.[A-Za-z0-9_.]+)?\s+import\b"
+    r"|import\s+(?P<i>[A-Za-z_][A-Za-z0-9_]*)\s*(?:$|#|,))"
+)
+_MISSING_RE = re.compile(r"No module named '([A-Za-z_][A-Za-z0-9_]*)'")
+
+
+def _bare_names() -> set[str]:
+    """Modules a bootstrapped computations/ script can import by bare name."""
+    names: set[str] = set()
+    for fn in os.listdir(ROOT):
+        full = os.path.join(ROOT, fn)
+        if fn.endswith(".py"):
+            names.add(fn[:-3])
+        elif os.path.isdir(full) and fn not in SKIP_DIRS and not fn.startswith("."):
+            names.add(fn)
+            for sub in os.listdir(full):
+                if sub.endswith(".py"):
+                    names.add(sub[:-3])
+    names.discard("__init__")
+    return names
+
+
+BARE = _bare_names()
+
 
 def candidates() -> list[str]:
     """Narrow the field: subdir scripts importing _path_bridge with no
@@ -76,14 +124,35 @@ def candidates() -> list[str]:
                 continue
             lines = src.split("\n")
             idx = [i for i, l in enumerate(lines) if IMPORT_RE.match(l)]
+
+            # the generalised form: any bare-name import of an in-repo module
+            # that is NOT a sibling of this script (a sibling resolves via
+            # sys.path[0] with no bootstrap at all, so it is never a defect)
+            here = {f[:-3] for f in files if f.endswith(".py")}
+            for i, line in enumerate(lines):
+                m = BARE_IMPORT_RE.match(line)
+                if not m:
+                    continue
+                mod = m.group("f") or m.group("i")
+                if mod in BARE and mod not in here:
+                    idx.append(i)
+
             if not idx:
                 continue
-            if not PATH_MUT.search("\n".join(lines[:idx[0]])):
+            if not PATH_MUT.search("\n".join(lines[:min(idx)])):
                 out.append(p)
     return out
 
 
-def really_broken(path: str, timeout: int = 120) -> bool:
+#: A script that gets past its imports is not broken, and `really_broken`
+#: already reads a timeout as "not broken" -- the safe direction. Imports
+#: resolve in well under this, so a shorter budget costs nothing in accuracy
+#: and is what makes the pre-commit hook usable: at 120 s a five-candidate
+#: sweep of compute-heavy probes ran past two minutes.
+RUN_TIMEOUT = 25
+
+
+def really_broken(path: str, timeout: int = RUN_TIMEOUT) -> bool:
     """Execute it. The interpreter is the authority, not the regex."""
     env = dict(os.environ)
     # strip any inherited path help -- that masking is the whole bug
@@ -94,11 +163,28 @@ def really_broken(path: str, timeout: int = 120) -> bool:
     except subprocess.TimeoutExpired:
         # got far enough to do real work => the import succeeded
         return False
-    return MISSING in (r.stdout + r.stderr)
+    out = r.stdout + r.stderr
+    if MISSING in out:
+        return True
+    # generalised: the interpreter could not find an in-repo module, i.e. the
+    # bootstrap that would have made it reachable did not run first. A missing
+    # THIRD-PARTY package (snappy, matplotlib) is an environment fact and is
+    # deliberately not this audit's business.
+    return any(m in BARE for m in _MISSING_RE.findall(out))
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    only = None
+    if argv and argv[0] == "--files":
+        # Scope to specific paths, for the pre-commit hook: checking the files
+        # a commit touches is near-instant, where a whole-tree sweep is not.
+        only = {os.path.abspath(a) for a in argv[1:]}
+        if not only:
+            return 0
     cands = candidates()
+    if only is not None:
+        cands = [c for c in cands if os.path.abspath(c) in only]
     print("=" * 70)
     print(" _path_bridge bootstrap-order audit")
     print("=" * 70)
@@ -111,8 +197,9 @@ def main() -> int:
     for p in broken:
         print(f"    - {os.path.relpath(p, ROOT)}")
     if broken:
-        print("\n  Fix: move `import _path_bridge` AFTER a sys.path insert of")
-        print("  the parent directory, per _path_bridge's documented USAGE.")
+        print("\n  Fix: move the import AFTER a sys.path insert of the parent")
+        print("  directory, per _path_bridge's documented USAGE. This covers any")
+        print("  bare-name import of an in-repo module, not only _path_bridge.")
     return 1 if broken else 0
 
 
