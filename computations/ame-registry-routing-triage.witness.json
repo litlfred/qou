@@ -18,72 +18,6 @@
     "2809.43212207852": "M_T_ATOMIC_MEV_VALIDATION"
   },
   "safe_routes": {
-    "binding_law_surprisal_vs_entropy_ambiguity_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "binding_per_block_magnitude_a3_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "binding_perblock_bond_type_a3.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_binding_frame_independent_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_g2_frame_artifact_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_naive_z_physical_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_r_is_binding_residual_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "deuteron_two_body_kernel_overshoot_probe.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "light_series_open_loop_decomposition.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "probe_q6j_jm_spectral_delta_lambda.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
-    "probe_volume_wedderburn_delta_lambda.py": [
-      [
-        "2.2245662",
-        "AME_B_DEUTERON_MEV_VALIDATION"
-      ]
-    ],
     "registry_witness_pin_validator.py": [
       [
         "2.2245662",
@@ -3008,19 +2942,19 @@
     ]
   },
   "counts": {
-    "safe_routes": 20,
-    "safe_files": 15,
+    "safe_routes": 9,
+    "safe_files": 4,
     "unsafe_near_matches": 498,
     "unsafe_files": 193
   },
   "note": "Routing + per-file run-verification (the fvxq value-preservation discipline) is infra-gated in some sandboxes: many target files import pyhecke_native (buildable, ~42s) or have pre-existing runtime errors. This triage (pure string compare) runs anywhere and is the roadmap.",
   "bean": "fvxq",
   "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
-  "scriptHash": "4b5632103df0",
+  "scriptHash": "c22f49d5815b",
   "scriptCommitSha": "37ccad0b6ded7819c53b0aa715e2704ada777e7b",
-  "commitSha": "21bf71f1f122cc042c16ee3e336b10f8f571c7c4",
+  "commitSha": "60da37e59439bef18c90ce156d5f9b2466776afc",
   "engine": "python",
-  "computedAt": "2026-08-29T19:55:53.964667+00:00",
+  "computedAt": "2026-08-30T02:29:09.100218+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

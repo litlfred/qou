@@ -37,6 +37,7 @@ Output: ame-registry-routing-triage.witness.json
 """
 from __future__ import annotations
 
+import ast
 import json
 import re
 import sys
@@ -97,11 +98,141 @@ def _literals(txt: str):
                 yield t.string
 
 
+
+# ── Role classification: which UNSAFE sites may be routed AT ALL ────────
+#
+# SAFE/UNSAFE answers "would routing change the value". It does NOT answer
+# the question bean fvxq raises, which gates the whole migration: routing a
+# `_VALIDATION` constant into a PREDICTION INPUT violates the 3-cal
+# discipline. Those constants are comparison targets; feeding one into the
+# quantity being validated is fitting on the answer. So an UNSAFE site is not
+# a unit of work until its ROLE is known, and until now nothing measured it.
+#
+# The discriminator is what the AME-bound name FLOWS INTO:
+#
+#   TARGET  every assignment it reaches names an error/comparison quantity
+#           (err, miss, residual, pct, ratio, deviation, gap, delta_*). The
+#           value is only ever compared against, never built from.
+#   INPUT   it reaches a scale/calibration name (alpha, scale, calib, norm,
+#           E0, coeff) or a predicted quantity (B_pred, M_pred). This is the
+#           3-cal shape: derive a scale FROM the measurement, then multiply it
+#           back into a prediction of that same measurement.
+#   REVIEW  neither, or it escapes into a call whose role we cannot see.
+#
+# Deliberately conservative: a site is INPUT if ANY use looks like one, and
+# REVIEW rather than TARGET when unsure. The failure mode to avoid is calling
+# a calibration site routable.
+_TARGET_RE = re.compile(r'err|miss|resid|pct|ratio|deviat|gap|diff|delta|'
+                        r'compare|vs_|_vs|overshoot|undershoot|closure|'
+                        r'^tgt$|target', re.I)
+_INPUT_RE = re.compile(r'^(alpha|scale|calib|norm|coeff|e0|b_pred|m_pred|'
+                       r'pred|fit|anchor|pin)\b|_pred$|^b_sym', re.I)
+
+
+def _binding_names(tree, lits: set) -> set:
+    """Names bound to an assignment whose value contains an AME literal."""
+    out = set()
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        val = node.value
+        if val is None:
+            continue
+        src = ast.dump(val)
+        if not any(("'" + L + "'") in src or ("=" + L) in src or L in src for L in lits):
+            continue
+        tgts = node.targets if isinstance(node, ast.Assign) else [node.target]
+        for t in tgts:
+            for n in ast.walk(t):
+                if isinstance(n, ast.Name):
+                    out.add(n.id)
+    return out
+
+
+def _role_for(txt: str, lits: set) -> str:
+    try:
+        tree = ast.parse(txt)
+    except SyntaxError:
+        return "REVIEW"
+    names = _binding_names(tree, lits)
+    if not names:
+        return "REVIEW"
+    saw_target = False
+    for node in ast.walk(tree):
+        # (a) assignment targets: `err_pct = (pred - AME) / AME`
+        if isinstance(node, ast.Assign):
+            used = {n.id for n in ast.walk(node.value) if isinstance(n, ast.Name)}
+            if used & names:
+                for t in node.targets:
+                    for tn in ast.walk(t):
+                        if not isinstance(tn, ast.Name):
+                            continue
+                        if _INPUT_RE.search(tn.id):
+                            return "INPUT"
+                        if _TARGET_RE.search(tn.id):
+                            saw_target = True
+        # (b) DICT-LITERAL KEYS. Most of this corpus records results as
+        #     {"err_pct": (B_base - B_AME[n]) / B_AME[n], ...}
+        #     which is the clearest target signal there is, and is invisible to
+        #     (a) because the key is not an assignment target. Missing this put
+        #     87% of the tail in REVIEW on the first pass.
+        elif isinstance(node, ast.Dict):
+            for k, v in zip(node.keys, node.values):
+                if not isinstance(k, ast.Constant) or not isinstance(k.value, str):
+                    continue
+                used = {n.id for n in ast.walk(v) if isinstance(n, ast.Name)}
+                if not (used & names):
+                    continue
+                if _INPUT_RE.search(k.value):
+                    return "INPUT"
+                if _TARGET_RE.search(k.value):
+                    saw_target = True
+    return "TARGET" if saw_target else "REVIEW"
+
+
 def _in_range(v: float) -> bool:
     return (1.5 < v < 45) or (1800 < v < 12000)   # AME binding MeV or atomic-mass MeV
 
 
+
+def _selftest() -> int:
+    """Pin every role the classifier must be able to reach.
+
+    A classifier that CANNOT return INPUT would report zero INPUT sites and
+    look like good news. That is the failure this exists to make impossible:
+    the zero below is only meaningful because these cases prove the path
+    fires.
+    """
+    cases = [
+        ("calibration: a scale derived FROM the measurement, then multiplied "
+         "back into a prediction of it",
+         'B_AME = {"D": 2.22452}\nalpha = B_AME["D"] / ell\nB_pred = alpha * tr\n',
+         "INPUT"),
+        ("comparison, assignment target",
+         'B_AME = {"D": 2.22452}\nerr_pct = (P - B_AME["D"]) / B_AME["D"]\n',
+         "TARGET"),
+        ("comparison, DICT KEY — the common shape in this corpus, and "
+         "invisible to an assignment-target-only pass",
+         'B_AME = {"D": 2.22452}\nrow = {"err_pct": (P - B_AME["D"]) / B_AME["D"]}\n',
+         "TARGET"),
+        ("opaque: escapes into a call, role unknowable statically",
+         'B_AME = {"D": 2.22452}\nz = helper(B_AME["D"])\n',
+         "REVIEW"),
+    ]
+    print("role-classifier self-test:")
+    ok = True
+    for name, src, want in cases:
+        got = _role_for(src, {"2.22452"})
+        good = got == want
+        ok = ok and good
+        print(f"  {'ok  ' if good else 'FAIL'}  {name}\n         got={got} want={want}")
+    print("PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
 def main() -> int:
+    if "--selftest" in sys.argv:
+        return _selftest()
     # rglob, NOT glob. This used to scan `computations/*.py` only, with a
     # comment reasoning that substrate/ is a subdir and therefore excluded --
     # but that also hid probes/, deltalambda/, phase5/ and sweeps/, which is
@@ -112,6 +243,7 @@ def main() -> int:
              and q.name != "codata_constants.py"]
     safe: dict[str, set] = {}
     unsafe: dict[str, set] = {}
+    roles: dict[str, str] = {}
     for p in files:
         fn = p.name
         txt = p.read_text(encoding="utf-8")
@@ -126,6 +258,8 @@ def main() -> int:
                     if abs(v - float(rs)) / float(rs) < 5e-6:
                         unsafe.setdefault(fn, set()).add((lit, nm, rs))
                         break
+        if fn in unsafe and fn not in roles:
+            roles[fn] = _role_for(txt, {l for l, _n, _r in unsafe[fn]})
 
     n_safe_routes = sum(len(v) for v in safe.values())
     n_unsafe = sum(len(v) for v in unsafe.values())
@@ -133,6 +267,20 @@ def main() -> int:
     print(f"  registry value strings: {len(REG)}")
     print(f"  SAFE (byte-exact, value-preserving): {n_safe_routes} routes in {len(safe)} files")
     print(f"  UNSAFE (near, value-change — decision needed): {n_unsafe} in {len(unsafe)} files")
+
+    # Role split. SAFE/UNSAFE says whether routing moves a VALUE; role says
+    # whether the site may be routed AT ALL. A prediction INPUT must not be,
+    # whatever its value does (bean fvxq, 3-cal).
+    by_role: dict[str, list] = {"TARGET": [], "INPUT": [], "REVIEW": []}
+    for fn in unsafe:
+        by_role.setdefault(roles.get(fn, "REVIEW"), []).append(fn)
+    print("  UNSAFE by role — what the AME-bound name flows into:")
+    for r, why in (("TARGET", "only error/comparison names — routable once the value question is settled"),
+                   ("INPUT",  "reaches a scale/calibration or predicted name — NEVER route (3-cal)"),
+                   ("REVIEW", "neither, or escapes into a call — needs reading")):
+        fns = sorted(by_role.get(r, []))
+        n = sum(len(unsafe[f]) for f in fns)
+        print(f"    {r:7} {n:4} sites in {len(fns):3} files   {why}")
     print(f"\n  SAFE files (route value-preservingly):")
     for fn in sorted(safe):
         print(f"    {fn:46} {sorted(l for l, _ in safe[fn])}")
