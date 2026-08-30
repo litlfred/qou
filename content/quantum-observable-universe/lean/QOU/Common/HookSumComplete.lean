@@ -13,6 +13,25 @@ collapse to `Σ_j C(colLen j, 2)` through it.
 This file is self-contained (it re-declares the small `colLen`/`bStat` helpers)
 so it compiles under `lean`-direct without the freshly-merged
 `HookSumGeneral.olean` in the restored cache.
+
+## The same identity is also proved over `YoungDiagram`
+
+`QOU.BraidKnot.HookSum` proves it again in the other register: on Mathlib's
+`YoungDiagram`, over `ℤ`, on `PieceAGeneral`'s `armZ`/`legZ`/`hookZ`, with no
+sortedness hypothesis. That is not redundancy to be cleaned up — each register
+has a native consumer. `TwistUnconditional` uses `hookSum_eq` HERE, in lists;
+the Plancherel/`Λ*` argument needs the `2·Σ_h = p₂(λ) + p₂(λ')` form THERE, in
+diagrams. Converting either consumer costs more than keeping both statements.
+
+**The two are provably the same**, not merely similar:
+`QOU.BraidKnot.HookSumRegisterBridge.hookSum_rowLens` identifies the two hook
+sums, and `sum_hookZ_eq_bStat_via_list` re-derives the `YoungDiagram` closed
+form from `hookSum_eq` below. So if either proof drifts, the bridge stops
+compiling — which is the protection that retiring one of them would have bought.
+
+If you change a statement in this file, expect to fix the bridge, and read its
+docstring first: the registers agree only ON A CELL, because the truncated `ℕ`
+subtraction here is exact exactly there.
 -/
 
 namespace QOU.HookSumComplete
