@@ -39,7 +39,14 @@ m_e = mpf(str(M_E_MEV))
 B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": mpf("7.71804"), "4He": mpf("28.29567")}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
-N_INTERFACES = {"D": 1, "T": 3, "3He": 3, "4He": 6}  # C(A,2) nucleon pairs
+# NOTE (2026-08-30, bean qou-gecf): this is the C(A,2) NUCLEON-PAIR count, and
+# it is NOT the interface count. The canonical braid word wires a CHAIN of A-1
+# inter-nucleon interfaces (D 1, T 2, 3He 2, 4He 3) -- see
+# theta_mn_linearchain_vs_allpairs.py, which records that resolution, and
+# prop:linear-chain-bond-count for the Lean-proved aggregate. Renamed so the
+# name agrees with the value; no number changes, because this field is
+# descriptive metadata that nothing downstream reads.
+N_NUCLEON_PAIRS = {"D": 1, "T": 3, "3He": 3, "4He": 6}  # C(A,2)
 
 
 def load_chi(fn):
@@ -59,7 +66,7 @@ def main():
         rows.append({
             "atom": name, "A": (2 if name == "D" else 3 if name in ("T", "3He") else 4),
             "n_partitions": len(chi),
-            "n_interfaces": N_INTERFACES[name],
+            "n_nucleon_pairs": N_NUCLEON_PAIRS[name],
             "counit_sum_chi": mp.nstr(S, 12),
             "target_minus_B_over_me": mp.nstr(tgt, 12),
             "abs_ratio": mp.nstr(ratio, 8),
