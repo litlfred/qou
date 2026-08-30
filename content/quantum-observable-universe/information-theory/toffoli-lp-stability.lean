@@ -381,6 +381,42 @@ theorem toffoliDiagonal_mul_wStd_pos {q : ℝ} (hq : 0 < q) :
     0 < toffoliDiagonal q * wStd q :=
   mul_pos (toffoliDiagonal_pos hq) (wStd_pos hq)
 
+/-!
+## The recorded "product of traced volumes" IS the trace of the element
+
+Retracts a hazard raised in bean `qou-ahu3`.  The construction computes
+`markov_trace(ordering)` as `∏ᵢ V̂ᵢ` — a *product of traces* — and `tr_M` is
+not multiplicative in general, since `σ₀` and `σ₁` do not commute.  That looked
+like it might be the arc's real defect.  It is not: the factorisation follows
+from the **defining Markov property** `tr(x·σ_last) = z·tr(x)` alone, with no
+convention, no anchor, and no extra assumption.
+
+For the chain elements `x = a σ₀ + b` and `y = c σ₁ + d`,
+
+    tr(x·y) = ac·tr(σ₀σ₁) + ad·tr(σ₀) + bc·tr(σ₁) + bd·tr(1)
+            = ac z² + ad z + bc z + bd            [Markov, twice]
+            = (za + b)(zc + d)  =  V̂₀ · V̂₁ .
+
+Verified symbolically for all eight strand-type orderings, in `q` **and** `z`
+simultaneously, in `computations/probes/toffoli_markov_factorisation.py`; the
+word `(0,1,0)` never occurs in any `T_q`, so no unproven trace value enters.
+-/
+
+/-- **The traced-volume factorisation is the Markov property.**  Given only
+    `tr(1) = 1` and the Markov rule `tr(x·σ_last) = z·tr(x)`, the trace of the
+    chain product equals the product of the traced volumes.  Stated with the
+    trace values as hypotheses, so it is a theorem about the Markov property
+    rather than about any particular convention or anchor. -/
+theorem tracedVolume_product_eq_trace_of_markov
+    (z a b c d trOne trS0 trS1 trS0S1 : ℝ)
+    (hone : trOne = 1)
+    (hs0 : trS0 = z * trOne)
+    (hs1 : trS1 = z * trOne)
+    (hs01 : trS0S1 = z * trS0) :
+    a * c * trS0S1 + a * d * trS0 + b * c * trS1 + b * d * trOne
+      = (z * a + b) * (z * c + d) := by
+  subst hone; subst hs0; subst hs1; subst hs01; ring
+
 end
 
 end QOU.Information

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:30:58Z
-updated_at: 2026-08-30T14:30:58Z
+updated_at: 2026-08-30T14:36:21Z
 ---
 
 NEXT TRANCHE, opened 2026-08-30 after PR #6095 merged (d43f261ed1).
@@ -55,3 +55,42 @@ real defect.
 FORMALIZE-FIRST applies: before sweeping q widely, look for an invariant that
 prunes. The sign identity above is the precedent -- it killed the whole
 sign-inheriting family in two lines.
+
+
+## RETRACTED 2026-08-30 — the multiplicativity hazard is refuted, by me
+
+The "WATCH OUT" above flagged markov_trace(ordering) = prod_i V_i as a product
+of traces rather than the trace of the product, and called it possibly "the
+real defect". It is not a defect at all, and the flag is withdrawn.
+
+The factorisation follows from the DEFINING MARKOV PROPERTY alone --
+tr(x . sigma_last) = z tr(x) -- with no convention, no anchor and no extra
+assumption. For chain elements x = a s0 + b and y = c s1 + d:
+
+    tr(x y) = ac tr(s0 s1) + ad tr(s0) + bc tr(s1) + bd tr(1)
+            = ac z^2 + ad z + bc z + bd          [Markov, twice]
+            = (z a + b)(z c + d) = V_0 . V_1
+
+The chains are built generator-by-generator in INCREASING index order, which is
+exactly the shape the Markov property handles. Non-commutativity of s0 and s1
+is irrelevant because the property is applied to the last generator each time.
+
+MEASURED: all 8 strand-type orderings agree, symbolically in BOTH q and z, so
+it is neither a convention artefact nor an anchor coincidence
+(computations/probes/toffoli_markov_factorisation.py). The NF word (0,1,0)
+never occurs in any T_q, so no unproven trace value enters the comparison --
+checked, not assumed.
+
+PROVED sorry-free: QOU.Information.tracedVolume_product_eq_trace_of_markov,
+stated with the trace values as HYPOTHESES so it is a theorem about the Markov
+property rather than about any convention.
+
+CONSEQUENCE FOR THIS TRANCHE. The cheap decisive check I put first has come
+back clean, so it does NOT collapse the tranche. The construction is sound and
+question (b) -- the orderings-to-NF map -- is unaffected and remains the hard
+half. Question (a), whether the cone condition tracks -P_76 across q = 1, is
+untouched and is now the next thing to measure.
+
+This also removes a reason to distrust the 8x8: its entries are honest Markov
+traces of honest H_3(q) elements. What is still missing is a relation between
+those entries and the 6-dimensional cone condition, not a fix to the entries.
