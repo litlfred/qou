@@ -1,24 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T17:14:07.278948+00:00",
-  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
+  "computedAt": "2026-08-30T13:58:01.567576+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "audit_completed",
-      "computed": true,
-      "expected": true,
+      "name": "hoefsmit_b_two_closed_forms_agree",
+      "computed": "0.867584066965251155651162891536052395705",
+      "expected": "0.867584066965251155651162891536052395705",
       "passed": true,
-      "tolerance": 0,
-      "source": "Q_β c_3 evaluation comparison completed at 50 dps."
+      "tolerance": "1e-45",
+      "source": "b at q_0 two ways: √(q⁴+q²+1)/(q²+1) vs √((h²+3)/(h²+4)) with h = q − q⁻¹ — the two forms this function's docstring gives, written with no shared subexpression. u = b·ℏ_q² carries every ppb figure in this audit."
+    },
+    {
+      "name": "hoefsmit_b_is_bar_even",
+      "computed": "0.867584066965251155651162891536052395705",
+      "expected": "0.867584066965251155651162891536052395705",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "b(q_0⁻¹) vs b(q_0) — an evaluation at the BAR-CONJUGATE point, independent of the evaluation at q_0. This is the Lean-proved QOU.QBeta.hoefsmitBSq_bar_even (audit 2026-06-20-hoefsmit-b-bar-parity-correction.md); the bar-ODD (q−q⁻¹)/(q+q⁻¹) that once sat in `hoefsmit_b` flips sign here."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-c3-jhopf-q0-vs-q1-comparison",
   "scriptFile": "qbeta_c3_jhopf_q0_vs_q1_comparison.py",
-  "scriptHash": "4182fda2ec9e",
-  "scriptCommitSha": "3f95b1ea0fc1c5cc29b33c1763b66e9cdd6f930e",
+  "scriptHash": "96cec7fcd6d1",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "9916510690677ea8"
   },
   "invocation": {
     "argv": [
@@ -55,8 +63,25 @@
       "difference_B_minus_A": "-27.0046750016"
     },
     "stability_J_ratio_q0_over_q1": "1.02185310427",
-    "interpretation": "Rule A (c_3 = J_Hopf(q=1) = -2) is q_0-INDEPENDENT — passes the Taylor-coefficient stability test required for a true Habiro coefficient. Rule B (c_3 = J_Hopf(q_0) = -2.044) is q_0-DEPENDENT — cannot be a Taylor coefficient (those are constants). The 3.47% 'swing' between A and B IS the c_4·u⁴ truncation error, BOUNDED per rule 2 of the canonical framing — NOT evidence c_3 is wrong. Per the framing's Rule 4, dashboard should report c_3 = -2 in the 'near-match' tier (still pending Habiro-element identification per the α_EM PR #1511 template)."
+    "interpretation": "Rule A (c_3 = J_Hopf(q=1) = -2) is q_0-INDEPENDENT — passes the Taylor-coefficient stability test required for a true Habiro coefficient. Rule B (c_3 = J_Hopf(q_0) = -2.044) is q_0-DEPENDENT — cannot be a Taylor coefficient (those are constants). The 3.47% 'swing' between A and B IS the c_4·u⁴ truncation error, BOUNDED per rule 2 of the canonical framing — NOT evidence c_3 is wrong. Per the framing's Rule 4, dashboard should report c_3 = -2 in the 'near-match' tier (still pending Habiro-element identification per the α_EM PR #1511 template).",
+    "audit_completed": {
+      "completed": true,
+      "meaning": "the 50 dps Rule A vs Rule B comparison ran to its verdict",
+      "recorded_not_gated": true,
+      "has_independent_expected_value": false
+    },
+    "hoefsmit_b_cross_checks": {
+      "b_from_h_form": "0.8675840669652511556511629",
+      "b_from_q_form": "0.8675840669652511556511629",
+      "b_at_bar_conjugate_q_inverse": "0.8675840669652511556511629",
+      "abs_dev_between_closed_forms": "1.3363824e-51",
+      "abs_dev_under_bar": "0.0"
+    }
   },
+  "caveats": [
+    "STALE COMMENT (recorded, not repaired): the c_4-estimate comment in section [5] states \"b = hoefsmit_b(q) = (q-q⁻¹)/(q+q⁻¹)\" — the bar-ODD form that `hoefsmit_b`'s own docstring says was REMOVED as wrong by ~8×. The code calls the corrected function; only the comment still describes the defect. The two b assertions above now fail if the code ever regresses to what the comment claims.",
+    "The 3.47% m_p-pin swing quoted in [3] and in the description is the audit's figure, not this run's: J(q_0)/J(q=1) − 1 computes to 2.18531% here. c_4 ≈ c_3·b⁴ is a natural-magnitude ESTIMATE with no independent route in this script (the empirical c_4 would have to come from the SDP extraction, whose c_k are now nulled as unresolved), so the truncation bound is recorded as data only."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

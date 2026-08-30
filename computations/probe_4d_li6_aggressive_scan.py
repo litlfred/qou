@@ -64,11 +64,32 @@ def main():
 
     # Enumerate p(18) with d_λ in feasible range
     DMIN, DMAX = 100_000, 1_500_000
+    all_shapes = list(parts(18))
     candidates = []
-    for p in parts(18):
+    for p in all_shapes:
         d = hook_dim(p)
         if DMIN <= d <= DMAX:
             candidates.append((p, d))
+
+    # ── Two checks on the enumeration itself, each with a second route.
+    # Everything below — which shapes get scanned, and the d_λ that decides
+    # feasibility — comes out of `parts` and `hook_dim`, and neither is
+    # validated anywhere else in this file.
+    #
+    # (i) Σ_{λ⊢18} (f^λ)² = 18!  (Robinson–Schensted). Route 1 is the
+    #     hook-length formula summed over the enumerated shapes; route 2 is
+    #     the count of permutations of 18 letters. RSK is a bijection
+    #     S_18 ↔ pairs of standard tableaux, so the identity holds without
+    #     any appeal to hook lengths.
+    sum_dim_sq = sum(hook_dim(p) ** 2 for p in all_shapes)
+    n_factorial = factorial(18)
+    # (ii) the shape count itself is p(18) = 385, a tabulated partition
+    #      number (OEIS A000041) — the same figure the H_18 row of the
+    #      feasibility wall in fr_pullback_borromean_h3a_test.py quotes.
+    n_shapes = len(all_shapes)
+    print(f"Enumeration cross-checks: p(18) = {n_shapes} (expect 385); "
+          f"Σ d_λ² = {sum_dim_sq} vs 18! = {n_factorial} "
+          f"({'MATCH' if sum_dim_sq == n_factorial else 'MISMATCH'})")
 
     # Sort by d_λ ascending (cheapest first)
     candidates.sort(key=lambda x: x[1])
@@ -166,16 +187,77 @@ def main():
     out.add_data("deepest_min_eig", deepest_min)
     out.add_data("scan_range_dmin_dmax", [DMIN, DMAX])
     out.add_data("n_candidates", len(candidates))
+    out.add_data("enumeration_cross_checks", {
+        "n_shapes_p18": n_shapes,
+        "sum_hook_dim_squared": str(sum_dim_sq),
+        "n_factorial_18": str(n_factorial),
+    })
+
+    # `deepest_shape_identified` (computed="1", expected="1") was a tautology:
+    # it passed whatever the scan found, and would have passed had the scan
+    # found nothing at all. Replaced by three checks that can fail — the two
+    # enumeration identities, and the argmin property the old NAME claimed.
+    out.add_data("deepest_shape_identified", {
+        "identified": True,
+        "shape": list(deepest_shape),
+        "min_eig": deepest_min,
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
 
     out.add_assertion(
-        name="deepest_shape_identified",
-        computed="1",
-        expected="1",
+        name="hook_dim_squares_sum_to_18_factorial",
+        computed=str(sum_dim_sq),
+        expected=str(n_factorial),
         tolerance=0,
-        source=f"deepest min_eig = {deepest_min:+.4f} at {list(deepest_shape)}",
+        source="Σ_{λ⊢18} (f^λ)² over the enumerated shapes, by the "
+               "hook-length formula, vs 18! — the Robinson–Schensted "
+               "identity, which counts permutations and knows nothing of "
+               "hook lengths. Fails if either `parts` misses a shape or "
+               "`hook_dim` is wrong, and both decide which partitions are "
+               "in the scan and what d_λ they are filtered on.",
+    )
+    out.add_assertion(
+        name="partition_count_of_18_is_385",
+        computed=str(n_shapes),
+        expected="385",
+        tolerance=0,
+        source="len(parts(18)) vs the tabulated partition number "
+               "p(18) = 385 (OEIS A000041) — the same figure the H_18 row "
+               "of the gap-9b feasibility wall quotes.",
+    )
+    out.add_assertion(
+        name="reported_deepest_is_argmin_of_scanned_results",
+        computed=f"{deepest_min:.6f}",
+        expected=f"{min(r['min_eig'] for r in results):.6f}" if results else "nan",
+        tolerance=1e-9,
+        source="The running minimum carried through the scan loop vs the "
+               "minimum recomputed over the completed `results` list. These "
+               "differ where it matters: the running one is SEEDED at "
+               "-96.52 with shape (3,3,3,3,3,3), whose d_λ = 87,516 is "
+               "below DMIN and so is never scanned — if nothing in range "
+               "beat the seed, the reported deepest shape would not be in "
+               "`results` at all.",
     )
 
     out.add_data("lean_uniqueness_ref", lean_uniqueness_ref("⁶Li"))
+    out.add_caveat(
+        "SEEDED RUNNING MINIMUM (recorded, not repaired): `deepest_min` "
+        "starts at -96.52 for shape (3,3,3,3,3,3) rather than at +inf, and "
+        "that shape has d_λ = 87,516 — below DMIN, so it is never scanned. "
+        "The `done` cache also carries (3,3,3,3,2,2,2) at -116.71, which IS "
+        "in range and does get replayed, so the seed is currently harmless; "
+        "narrow the range or change the cache and it stops being. The new "
+        "`reported_deepest_is_argmin_of_scanned_results` assertion is what "
+        "notices."
+    )
+    out.add_caveat(
+        "The `done` cache holds ten min_eig values as f64 literals to 2 "
+        "decimals, replayed rather than recomputed, and 10 of the 141 "
+        "in-range shapes are therefore never re-derived in a run of this "
+        "script. They are recorded in `all_scanned_partitions` with "
+        "cached=true."
+    )
     out_path = out.save()
     print(f"\nWitness: {out_path}")
 
