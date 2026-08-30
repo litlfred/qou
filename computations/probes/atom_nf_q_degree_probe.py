@@ -52,8 +52,10 @@ exponent, and this probe measures both.
    included) gives a genuine upper bound — it is ≥ the true degree in every
    one of the components tested — but it is attained in under a third of
    them.  The gap is always even, is zero on the proton-rich side, and
-   reaches **130 in degree** at A = 16.  The neutron-rich coefficients
-   suffer massive leading-order cancellation that no degree-only model sees.
+   reaches **104 in degree** already at A = 12, the largest nucleus in
+   this sweep — it is still growing there, so 104 is a floor on the gap,
+   not a maximum.  The neutron-rich coefficients suffer massive
+   leading-order cancellation that no degree-only model sees.
 
 ## Cost, and why the mirror exists
 
@@ -300,7 +302,11 @@ def cross_check(fails):
     """
     stock = HS.hm_sym
     results = {"stock_cases": [], "normalised_cases": [],
-               "expand_is_value_preserving": None}
+               "expand_is_value_preserving": None,
+               "timing_note": ("`ms` is integer wall-clock, indicative only "
+                               "-- no result depends on it. Recorded as int "
+                               "because time.time() is float64 and a raw "
+                               "float must not enter a witness.")}
 
     for Z, N in [(1, 0), (0, 1)]:
         t0 = time.time()
@@ -309,7 +315,7 @@ def cross_check(fails):
         ok = all(sp.simplify(sp.expand(sym[i] - _to_sympy(lpv[i]))) == 0
                  for i in range(6))
         results["stock_cases"].append({"Z": Z, "N": N, "identical": ok,
-                                       "seconds": round(time.time() - t0, 3)})
+                                       "ms": int((time.time() - t0) * 1000)})
         if not ok:
             fails.append(f"mirror != stock build_atom_nf_sym at Z={Z} N={N}")
         print(f"  stock       Z={Z} N={N} identical={ok}")
@@ -335,7 +341,7 @@ def cross_check(fails):
                      for i in range(6))
             results["normalised_cases"].append(
                 {"Z": Z, "N": N, "identical": ok,
-                 "seconds": round(time.time() - t0, 3)})
+                 "ms": int((time.time() - t0) * 1000)})
             if not ok:
                 fails.append(f"mirror != normalised build at Z={Z} N={N}")
             print(f"  normalised  Z={Z} N={N} identical={ok}")
@@ -515,7 +521,8 @@ def main() -> int:
         "would have called it exact. (e) The max-plus bound on the effective "
         "step matrix is a genuine upper bound but is attained in under a "
         "third of components; the gap is always even, zero on the "
-        "proton-rich side, and reaches 130 in degree at A=16, so "
+        "proton-rich side, and reaches 104 in degree at A=12 (the largest "
+        "in this sweep, and still growing there -- a floor, not a max), so "
         "neutron-rich coefficients cancel at leading order in a way no "
         "degree-only model sees. NOT ESTABLISHED: no mechanism for that "
         "cancellation or for the A=27 break. shift_NF = 18Z+21N+1 is a "
