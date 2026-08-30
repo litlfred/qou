@@ -1,4 +1,4 @@
-# Copilot review works again — and the rule citing its absence was self-sealing
+# Copilot reviews DO arrive — mechanism unsettled, and the rule citing their absence was self-sealing
 
 **Date:** 2026-08-30 · **Bean:** `qou-gwe9` (reopened)
 **Corrects:** [`AGENTS.md` §"Branch + PR workflow" rule 10](../../AGENTS.md), the Phase-4 gate table
@@ -7,8 +7,10 @@
 
 ## The finding
 
-**GitHub Copilot is reviewing pull requests again, in both repos.** Measured
-first-hand today:
+**GitHub Copilot reviews are arriving, in both repos.** Measured first-hand
+today. Note the framing: *that* they arrive is established; *why they did not
+before* is not — three candidate mechanisms are weighed below and this file
+does not pick one.
 
 | PR | requested | review submitted | latency |
 |---|---|---|---|
@@ -49,8 +51,9 @@ distinction matters — "we were over quota all along" and "it was off and came
 back" imply different operating rules.
 
 **What is safe to act on:** treat Copilot review as a scarce resource. Request
-it *once* per PR, at the point the branch is actually ready, and wait the ~3–4
-minutes — rather than after every push, which is what burned the quota here.
+it *once* per PR, at the point the branch is actually ready — not after every
+push, which is what burned the quota here. On whether to *wait*, see the
+disposition: the sibling's "do not wait, but it can arrive" is the better rule.
 
 ## The prior measurement was sound and has expired
 
