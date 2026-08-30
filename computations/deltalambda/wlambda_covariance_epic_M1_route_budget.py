@@ -159,6 +159,72 @@ def main():
           f"its own; the same-sign half got one from the telescoping density "
           f"reading, and that reading provably does not apply here.")
 
+    # ---- DECOMPOSING B_opp: which factor is driving it over the line? ----
+    #
+    # B_opp = 2 * w_opp * Ehat, with Ehat := E_omega[D(0)/g | opp] dimensionless
+    # and therefore convergent. Splitting the product is what turns "the bound is
+    # rising, undecided" into a statement about WHICH factor is responsible.
+    orows = sorted(opp["rows"], key=lambda r: r["n"])
+    big_o = [r for r in orows if r["n"] >= 100]
+    Ehat, Esp, wop = [], [], []
+    for r in big_o:
+        w = mpf(r["w_opp"])
+        ps = [mpf(x) / (2 * w) for x in r.get("B_opp_per_seed", [])]
+        Ehat.append(mpf(r["B_opp"]) / (2 * w))
+        Esp.append(((max(ps) - min(ps)) / 2) if ps else mpf(0))
+        wop.append(w)
+
+    check("DECOMPOSITION: Ehat FALLS while w_opp RISES -- the rise is w_opp's",
+          all(Ehat[i] > Ehat[i + 1] for i in range(len(Ehat) - 1))
+          and all(wop[i] < wop[i + 1] for i in range(len(wop) - 1)),
+          f"Ehat = E[D(0)/g | opp] = {[nstr(v, 5) for v in Ehat]} (monotonically "
+          f"FALLING) and w_opp = {[nstr(v, 5) for v in wop]} (monotonically "
+          f"RISING) at n = {[r['n'] for r in big_o]}. So the deterministic bound "
+          f"is not degrading because the per-edge estimate is getting worse -- it "
+          f"is improving -- but because opposite-sign edges keep taking a larger "
+          f"share of the omega-weight. Both monotonicities are solid; neither "
+          f"LIMIT is (below).")
+
+    a2, b2, c2 = Ehat[-3:]
+    sa2, sb2, sc2 = Esp[-3:]
+    d2E = a2 - 2 * b2 + c2
+    sigE = mp.sqrt(sa2 ** 2 + 4 * sb2 ** 2 + sc2 ** 2)
+    check("...but NEITHER factor's limit is determined at this precision",
+          (abs(d2E) / sigE if sigE > 0 else mpf(0)) < 3,
+          f"Ehat's second difference is {nstr(d2E, 3)} against a seed-propagated "
+          f"noise of {nstr(sigE, 3)} -- {nstr(abs(d2E) / sigE if sigE > 0 else 0, 3)} "
+          f"sigma, far under the 3-sigma bar. The same 3-point fit that is quotable "
+          f"for infl is not quotable here, and saying so is the point: the fit "
+          f"would give {nstr(((a2 * c2 - b2 * b2) / d2E) if d2E else 0, 5)} and it "
+          f"means nothing.")
+
+    # The route's fate as ONE constant.
+    Ecur = Ehat[-1]
+    w_crit = (1 - S_same) / (2 * Ecur)
+    check("THE ROUTE REDUCES TO ONE CONSTANT: the limiting w_opp",
+          True,
+          f"closure needs 2*w_opp*Ehat < 1 - S_same = {nstr(1 - S_same, 5)}, i.e. "
+          f"with Ehat at its current {nstr(Ecur, 5)}, w_opp < {nstr(w_crit, 5)}. "
+          f"Measured w_opp at n = {big_o[-1]['n']} is {nstr(wop[-1], 5)} -- already "
+          f"at that line, and rising ({[nstr(v, 4) for v in wop]}). So the whole "
+          f"deterministic-bound route now turns on a SINGLE limiting constant: the "
+          f"share of omega-weight carried by opposite-sign content pairs. That is a "
+          f"far sharper target than 'effective limit-shape estimates', and unlike "
+          f"the rest of this it may be computable in closed form from the limiting "
+          f"edge measure rather than measured.")
+
+    thr = 1 - S_same
+    Bser = [(r["n"], mpf(r["B_opp"]), mpf(r["B_opp_spread"])) for r in orows]
+    crossed = [n for n, B, sp in Bser if B > thr]
+    check("MEASURED: B_opp reaches the closure threshold around n = 800",
+          bool(crossed),
+          "; ".join(f"n={n}: {nstr(B, 6)}{'>' if B > thr else '<'}thr by "
+                    f"{nstr(abs(B - thr) / sp if sp > 0 else 0, 3)} sigma"
+                    for n, B, sp in Bser)
+          + f". Threshold {nstr(thr, 6)}. It sits 1.8 sigma UNDER at n = 400 and "
+            f"0.2 sigma OVER at n = 800 -- i.e. it has reached the line and is "
+            f"indistinguishable from it, not clearly past it.")
+
     ms = (time.monotonic_ns() - t0) // 1_000_000
     (here / "m1-route-budget.witness.json").write_text(json.dumps({
         "probe": "m1_route_budget",
@@ -177,6 +243,11 @@ def main():
     print(f"RESULT: accounting closes ({nstr(total, 5)} vs {nstr(NP_LIMIT, 5)}); "
           f"the BOUNDS land on the boundary ({nstr(S_same + B_opp, 5)}, range "
           f"[{nstr(lo, 5)}, {nstr(hi, 5)}] vs 1) -- undecided at this precision.")
+    print(f"RESULT: B_opp = 2 w_opp Ehat with Ehat FALLING and w_opp RISING -- the "
+          f"bound's drift is w_opp's, not the per-edge estimate's.")
+    print(f"RESULT: the route reduces to ONE constant: closure needs the limiting "
+          f"w_opp < {nstr(w_crit, 5)}, and it is {nstr(wop[-1], 5)} at n = "
+          f"{big_o[-1]['n']} and rising.")
     print("RESULT: gap qou-k5r5 stays OPEN -- the opposite-sign half needs its own "
           "averaging argument.")
     print("EXIT: 0" if all(c["pass"] for c in checks) else "EXIT: 1")

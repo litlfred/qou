@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T15:28:41Z
+updated_at: 2026-08-30T15:55:11Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -535,3 +535,45 @@ so old witnesses still work.
 telescoping density reading, `infl → 1.028`). The opposite-sign half has none —
 and that reading provably does not apply to it. **That is the whole remaining
 gap**, and it is now stated in one line rather than spread across five probes.
+
+
+---
+
+## Leg A, 2026-08-30 (sixth) — the route reduces to ONE constant
+
+`B_opp = 2·w_opp·Ê` with `Ê := E_ω[D(0)/g | opp]` dimensionless. Splitting the
+product is what turns "the bound is rising, undecided" into a statement about
+*which factor* is responsible:
+
+| n | 100 | 200 | 400 | 800 |
+|---|---|---|---|---|
+| `Ê` | 0.6953 | 0.6901 | 0.6845 | **0.6833** — monotonically FALLING |
+| `w_opp` | 0.4567 | 0.4735 | 0.4806 | **0.4862** — monotonically RISING |
+
+**The deterministic bound is not degrading because the per-edge estimate is
+getting worse — it is improving.** It drifts because opposite-sign edges keep
+taking a larger share of the ω-weight. Both monotonicities are solid.
+
+**Neither LIMIT is.** `Ê`'s second difference is 0.00426 against a
+seed-propagated noise of 0.013 — **0.33σ**, far under the 3σ bar. The same
+3-point fit that is quotable for `infl` (5.11σ) is not quotable here, and the
+probe says so rather than quoting the 0.6829 it would produce.
+
+**THE REDUCTION.** Closure needs `2·w_opp·Ê < 1 − S_same = 0.6637`, i.e. with
+`Ê` at its current 0.6833:
+
+> **the limiting `w_opp` must be below ≈0.4857.**
+
+Measured: **0.48624 at n = 800, and rising.** So the whole deterministic-bound
+route now turns on a *single limiting constant* — the share of ω-weight carried
+by opposite-sign content pairs. That is a far sharper target than "effective
+limit-shape estimates", and unlike everything else here it may be computable in
+**closed form** from the limiting edge measure (`ω ∝ (v−u)²(v+u)` over the
+limiting corner-pair distribution) rather than measured.
+
+**Threshold crossing, with error bars:** B_opp sits **1.8σ UNDER** the threshold
+at n = 400 and **0.2σ OVER** at n = 800 — it has *reached* the line, not clearly
+passed it.
+
+**STILL OPEN.** qou-k5r5 OPEN. Current reading: the route is trending to fail,
+by a margin that is inside the error bar, and the deciding quantity is now named.
