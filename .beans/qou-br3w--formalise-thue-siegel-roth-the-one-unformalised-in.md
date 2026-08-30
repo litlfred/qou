@@ -878,3 +878,31 @@ REMAINING on this bean, unchanged in substance:
      named quantities.
   2. Step 5, not LiouvilleWith.
 
+## 2026-08-30 -- the selection assembled: four of Gamma_m's six inputs from the supply alone
+
+Three declarations added to RothSelection, axiom-clean, .olean deleted first.
+
+exists_heights_and_N produces the data and four of rothGammaFull_of_heights's six inputs from an
+unbounded supply: the heights, N, and the two_le / floor / growth / hlarge clauses. The order is
+forced and IS the content -- heights first (the growth recursion), then N from the heights, then
+the degrees from both. Nothing here can be reordered.
+
+exists_rothGammaFull_of_supply states it as an IMPLICATION, and that shape is the honest one.
+hbound is a statement ABOUT THE PRODUCED DATA, so it cannot be a hypothesis of the existential;
+quantifying it over all possible (H, N) would demand far more than the argument needs -- the same
+over-strength I had to correct in roth_contradiction_int's first draft. hbound_mono is what makes
+the implication dischargeable: the clause improves as H_0 grows and the supply is unbounded.
+
+exists_rothGammaFull_of_supply_witness discharges every hypothesis at m = 2, p = q = 1, F = 10,
+b = 1 over Set.univ, so the machinery is applicable and not vacuous. Worth noting what pins F:
+hfloorExp at m = 2 reads 1*(1*2*5) <= F, so F = 10 is the smallest that works -- the same
+arithmetic that forced H = 1024 in RothRealLadder's witness. The two are one constraint seen from
+opposite ends, which is the sort of thing only shows up when both witnesses exist.
+
+REMAINING:
+  1. Discharge hbound for a concrete parameter family. Everything needed is now proved --
+     hbound_mono for the monotonicity, card_idxBoxF_le_two_pow and norm_auxMatrixInt_le_house for
+     the size estimates, slack_pos for eps/delta/m -- so this is arithmetic over named quantities.
+  2. Feed the result to roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+

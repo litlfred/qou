@@ -183,4 +183,68 @@ theorem hbound_mono {m : ℕ} {b : ℤ} (H H' : Fin m → ℕ) (d : Fin m → �
 
 end Degrees
 
+section Assembly
+
+/-! ## The selection assembled: four of `Γ_m`'s six inputs, from the supply alone
+
+`rothGammaFull_of_heights` takes six inputs.  Two are free of the selection — `hfloorExp` is a
+numeric condition on `F` alone, and `hbound` is the height clause the previous section analysed.
+The other four all come from the supply, and `exists_heights_and_N` produces them together with
+the data they are about.
+
+The order is forced and is the content: heights first (the growth recursion), then `N` from the
+heights, then the degrees from both.  Nothing here can be reordered.
+-/
+
+/-- **The data, and four of `Γ_m`'s inputs.**  From an unbounded supply of admissible heights:
+`m` of them, a threshold `N`, and the growth, floor, `two_le` and `hlarge` clauses. -/
+theorem exists_heights_and_N {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q F : ℕ)
+    (hp : 0 < p) (hF : 1 ≤ F) :
+    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ (∀ h, 2 ≤ H h) ∧ N ≠ 0 ∧
+      (∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ (H j : ℤ)) ∧
+      (∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → H j ^ (2 * q) ≤ H k ^ p) ∧
+      (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) := by
+  obtain ⟨H, hmem, h2, hfloor, hgrow⟩ := exists_heights_growing_floor hS m p q F hp hF
+  obtain ⟨N, hN, hpow⟩ := exists_pow_le H h2 (p + 2 * q)
+  exact ⟨H, N, hmem, h2, hN, hfloor, hgrow, hlarge_of_pow_le H N hN h2 p q hp hpow⟩
+
+/-- **`Γ_m` from the supply, modulo the height clause.**  There are heights in the supply and a
+threshold `N` such that *if* the auxiliary polynomial's height bound `b` satisfies `Γ_m`'s last
+clause for them, then all seven clauses hold.
+
+The implication is the honest shape.  `hbound` is a statement *about the produced data*, so it
+cannot be a hypothesis of the existential — and quantifying it over all possible `H`, `N` would
+demand far more than the argument needs.  `hbound_mono` above is what makes the implication
+dischargeable: the clause improves as `H₀` grows, and the supply is unbounded. -/
+theorem exists_rothGammaFull_of_supply {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q)
+    (m p q F : ℕ) (b : ℤ) (hp : 0 < p) (hF : 1 ≤ F)
+    (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p) :
+    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
+      ((∀ j : Fin m, (j : ℕ) = 0 →
+          b ^ (m * q) ≤ (H j : ℤ) ^ (rothDegrees H N j * p)) →
+        RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N)
+          (fun j => (H j : ℤ)) b) := by
+  obtain ⟨H, N, hmem, h2, hN, hfloor, hgrow, hlarge⟩ :=
+    exists_heights_and_N hS m p q F hp hF
+  exact ⟨H, N, hmem, hN, h2, fun hbound =>
+    rothGammaFull_of_heights H hp hN h2 hgrow hlarge hfloorExp hfloor hbound⟩
+
+/-- **The selection machinery is applicable.**  Every hypothesis of
+`exists_rothGammaFull_of_supply` is discharged at `m = 2`, `p = q = 1`, `F = 10`, `b = 1` — the
+parameters `RothRealLadder`'s own witness uses — over the unbounded supply `Set.univ`.
+
+`hfloorExp` is the clause that pins `F`: at `m = 2` it reads `1·(1·2·5) ≤ F·1`, so `F = 10` is the
+smallest that works, which is the same arithmetic that forced `H = 1024` in the earlier witness.
+The two are the same constraint seen from opposite ends. -/
+theorem exists_rothGammaFull_of_supply_witness :
+    ∃ (H : Fin 2 → ℕ) (N : ℕ), (∀ h, H h ∈ (Set.univ : Set ℕ)) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
+      ((∀ j : Fin 2, (j : ℕ) = 0 →
+          (1 : ℤ) ^ (2 * 1) ≤ (H j : ℤ) ^ (rothDegrees H N j * 1)) →
+        RothGammaFull (Equiv.refl (Fin 2)) 1 1 10 (rothDegrees H N)
+          (fun j => (H j : ℤ)) 1) :=
+  exists_rothGammaFull_of_supply (S := (Set.univ : Set ℕ))
+    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 1 one_pos (by norm_num) (by norm_num)
+
+end Assembly
+
 end MvPolynomial
