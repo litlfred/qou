@@ -208,22 +208,26 @@ def main() -> int:
             best_classical_ok
             if best_classical_ok else "none — all candidates fail classical limit",
         )
-        .add_assertion(
-            name="exists_classical_ok_candidate_within_one_percent",
-            computed=float(n_sub_one_pct),
-            expected=float(n_sub_one_pct),  # tautological — just measure
-            tolerance=0.0,
-            unit=(
-                "count of classical-limit-OK candidates within 1% "
-                "of π²/720 at substrate"
-            ),
-            source=(
-                "If > 0, at least one q-deformation reproduces "
-                "classical Casimir AND lands within 1% at substrate "
-                "— closing sub-problem 3 of conj:casimir-epsilon-"
-                "vacuum.  Note: this assertion is informational "
-                "(measurement), not pass/fail."
-            ),
+        # DEMOTED, and deliberately NOT turned into an existence flag (bean
+        # qou-3e5m). The name reads like a claim, and my own triage filed it
+        # class R for that reason -- but the measured count is ZERO. A
+        # `computed = 1 if n_sub_one_pct else 0, expected = 1` here would not
+        # be a check: it would assert sub-problem 3 of
+        # conj:casimir-epsilon-vacuum, which is OPEN, and it would fail on
+        # correct behaviour. Finding no candidate is a legitimate result of
+        # this probe -- five prior sweeps found near-matches that vanish at
+        # q -> 1 -- so by the demote-when-nothing-is-a-real-answer rule this is
+        # data, not an assertion. If a candidate is ever found, the flag
+        # becomes appropriate and this comment is the place to start.
+        .add_data(
+            "n_classical_ok_candidates_within_one_percent",
+            {"value": int(n_sub_one_pct),
+             "unit": "count of classical-limit-OK candidates within 1% of "
+                     "π²/720 at substrate",
+             "source": "If > 0, at least one q-deformation reproduces "
+                       "classical Casimir AND lands within 1% at substrate, "
+                       "closing sub-problem 3 of conj:casimir-epsilon-vacuum. "
+                       "Currently 0."},
         )
     )
 

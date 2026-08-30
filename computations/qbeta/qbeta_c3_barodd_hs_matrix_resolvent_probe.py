@@ -1,6 +1,35 @@
 #!/usr/bin/env python3
 """qbeta_c3_barodd_hs_matrix_resolvent_probe.py
 
+🛑 THIS PROBE IS RED AS OF 2026-08-30 AND ITS RECORDED CONCLUSION DOES NOT HOLD
+AS DERIVED. Do not cite it until the re-analysis in bean qou-dbau lands.
+
+It carried the 2026-05-19 TR_M[5] Markov bug: TR_M[5] was z**3 where
+NF_BASIS[5] = (0,1,0) = sigma_0 sigma_1 sigma_0 has Markov weight h*z**2 + z.
+Same defect as pyhecke/gram.py (fixed 2026-05-19) and compound_shift_nf (fixed
+on #6058, qou-looi); this is the THIRD instance. The weight is now correct.
+
+Correcting it moves 18 computed fields and FAILS two of the three assertions:
+
+    HS(mu=0, proton)               5.5635149 -> 12.619583   (x2.27)
+    pairing_is_bar_even            True -> FALSE
+    gram_eigenvalues_do_not_cross  True -> FALSE
+
+The RESULT line below -- "real matrix Gram-resolvent route CLOSED by bar-parity
+(scope-a)" -- rests on pairing_is_bar_even, which is exactly one of the two that
+now fail. So the recorded scope-(a) refutation was derived from a Gram matrix
+built on a wrong Markov weight.
+
+WHAT THIS DOES AND DOES NOT ESTABLISH. It does NOT establish that the route is
+open -- that would be the mirror over-claim, and nothing here has re-derived
+anything. It establishes only that this probe's own evidence no longer supports
+its conclusion. Whether bar-parity still closes the route under the correct
+weight is an OPEN question requiring the bar-parity argument to be redone.
+
+The assertions are left FAILING deliberately. They fail truthfully, and
+retuning them to pass would encode the bug in the expectations -- the exact
+"never make a red run green by widening a baseline" defect AGENTS.md forbids.
+
 Does a MATRIX Gram-resolvent pairing supply the bar-odd flip that the SCALAR
 Frobenius closure cannot? — the Hilbert–Schmidt matrix-O probe (PR #4064
 synthesis, Frobenius-pairing lens).
@@ -84,7 +113,14 @@ def make_engine(q):
     HA = q - 1 / q
     sq = mp.sqrt(q)
     z = 1 / (sq + 1 / sq)
-    TR_M = [mp.mpf(1), z, z, z * z, z * z, z * z * z]
+    # TR_M[5] is the Markov weight of NF_BASIS[5] = (0,1,0) = σ₀σ₁σ₀, which the
+    # Markov recursion gives as h·z² + z, NOT z³. This file carried the
+    # 2026-05-19 bug (docs/audits/2026-05-19-trm5-markov-bug.md) — the same
+    # defect fixed in pyhecke/gram.py then, and in compound_shift_nf on #6058
+    # (qou-looi). Third instance found; corrected 2026-08-30 (qou-t9r1).
+    # The correction is convention-INDEPENDENT: the recursion gives h·z² + z
+    # for any z.
+    TR_M = [mp.mpf(1), z, z, z * z, z * z, HA * z * z + z]
 
     def hecke_mul(t1, t2):
         r = {}

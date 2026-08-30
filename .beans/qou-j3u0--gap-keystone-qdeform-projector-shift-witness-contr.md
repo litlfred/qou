@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:44:54Z
-updated_at: 2026-08-30T12:45:29Z
+updated_at: 2026-08-30T13:43:26Z
 ---
 
 ## The disagreement, measured AT THE WITNESS'S OWN PIN
@@ -64,3 +64,119 @@ single number each and reproduced. `habiro-wrt-s3-2i` has one number
 (`10.4959110098`) not located in its output by a string scan — **not
 investigated**, and that scan over-reports (it compares different precisions),
 so treat it as unchecked rather than as a finding.
+
+
+## RESOLVED 2026-08-30 — the witness is wrong, and the mechanism is a float64 leak
+
+The disagreement is not between two defensible computations. **`y_(3,1,1)^{H5}`
+is EXACTLY ZERO**, so `T_electron = 0` and the live producer was right.
+
+**Mechanism**, at `weights5()` in the producer:
+
+    ws = ph.trace_weights_n(5, float(q))        # 50-dps pin -> 53 bits
+    return {p: mpf(str(w)) ...}                 # 53-bit data dressed as 50 dps
+
+`trace_weights_n` is float64 internally — it returns a Python float even when
+handed an mpf — so the whole weight vector resolved at the float64 floor.
+Measured, float64 route vs exact (`y_lambda_wenzl_bridge_numeric`):
+
+    lambda        float64                exact
+    (5,)          0.19427718737799       0.19427718737799
+    (4,1)         0.12498539716795       0.12498539716795
+    (3,2)         0.061156244790044      0.061156244790044
+    (3,1,1)       1.094436485732e-17     0
+    (2,2,1)       1.9631309013882e-17    0
+    (2,1,1,1)     -3.2754415082272e-17   0
+    (1,1,1,1,1)   3.5151413120942e-18    0
+
+**The zeros are structural, not numerical:** `y_λ = 0` exactly iff λ has **more
+than two rows** — the SU(2)/N=2 truncation. (5,), (4,1), (3,2) have ≤ 2 rows and
+survive; every deeper partition is killed. Perfect correlation across all seven.
+
+**Independent confirmation the leak was real:** with the exact route the
+bar-parity residual sharpens **5.5e-17 → 7.14e-42**, and the (3,1,1) branching
+cross-check goes to exactly 0.0. Those are 50-dps numbers; the old ones were the
+float64 floor.
+
+## FIXED in the producer
+
+`weights5()` now uses `y_lambda_wenzl_bridge_numeric`. `delta / T_e` was
+`4.65e+15`, which was δ divided by the noise floor — a statement about the
+arithmetic, not the traces; it now reports **UNDEFINED (T_e is exactly 0)**
+rather than a fabricated magnitude, in both places it was printed.
+
+## What this does to the probe's PREMISE — scope (a), author's call
+
+The probe exists to compare a "muon home-block (3,2)" against an "electron
+home-block (3,1,1)". With `y_(3,1,1) = 0` structurally, **that comparison is
+vacuous on one side**: δ = T_μ − 0 = T_μ, and the probe's own `δ/T_μ = 1.0`
+exactly says so. The whole measured quantity is T_μ under another name.
+
+Not fixed here — whether the probe should compare different blocks, or whether
+the (3,1,1) "home block" idea survives the SU(2) truncation at all, is a
+question about what the probe is for.
+
+## Contamination — 2 docs, annotated not rewritten
+
+`y_(3,1,1) = 0.0167666` reached
+`docs/audits/2026-06-22-keystone-qdeform-projector-shift.md` and
+`docs/audits/2026-06-20-keystone-branching-shift-first-crack.md`. Both now carry
+a correction banner; their numbers are **left as the historical record**, per the
+standing `qou-3nva` decision on dated audit docs. The committed witness is
+likewise left — it has no producer to regenerate it (`qou-bake`).
+
+
+## SECOND INSTANCE, same mechanism — `keystone_branching_shift_probe.py` (2026-08-30)
+
+The `trace_weights_n` float64 leak is **not unique to the qdeform probe**. Audit
+of every caller found the same defect in `keystone_branching_shift_probe.py`,
+where it is the probe's **headline quantity**:
+
+    y5 = dict(zip(..., ph.trace_weights_n(5, Q0)))
+    y_mu, y_el = y5[(3, 2)], y5[(3, 1, 1)]
+    r = y_mu / y_el                      # <-- divides by an EXACT ZERO
+
+The old output was **self-contradictory on its face**: it printed
+
+    y_(3,1,1)^H5 = 0.000000000000
+    ratio r      = 5587920869536671.000000000000
+
+— a finite ratio obtained by dividing 0.0611562 by a printed zero. 5.59e15 is
+exactly `0.0611562 / 1.09e-17`, the float64 noise floor.
+
+**Fixed** the same way: exact route + a tolerance guard, and Model B now reports
+**UNDEFINED** instead of a fabricated magnitude.
+
+**A second-order trap found while fixing it.** The first fix used
+`mpf(str(Q0))`, and y_(3,1,1) came out at **4.63291310128e-52** rather than 0 —
+because this probe's `Q0` is `q_parameter.Q`, a **float64**. Feeding its
+17-digit decimal into a 50-dps computation lands on the dps=50 floor for a
+float64-accurate q, not on the exact zero. Using `Q_50_DIGIT_STR` gives exactly
+0. So *"use mpmath"* is not sufficient — **the INPUT must be full-precision
+too**, or you have merely moved the floor from 1e-17 to 1e-52. The guard is a
+tolerance (1e-30) rather than `== 0` for exactly this reason.
+
+**Stale verdict flagged, not rewritten.** The probe's structural verdict item 3
+calls Model B a *"well-posed object ~1e0"*. Model B does not exist. Note it was
+**already contradicted before the fix** — the float64 route printed 5.59e15, not
+~1e0 — so this is a pre-existing defect in the prose, not one the fix created.
+The probe now prints a banner saying so; whether the verdict survives with Model
+B removed is the author's judgement.
+
+## The other callers — measured, and they are NOT all defects
+
+- `keystone_h3_h5_lift_block_shift.py` — passes q to `trace_weights_n` and its
+  own comment says *"expect ~1e-16 ... y_lambda are f64-internal"*. It sets its
+  tolerance **to** the float64 floor knowingly. That is a scope limitation
+  honestly stated, not a laundered number: its cross-check simply cannot resolve
+  below 1e-16.
+- `computations/atom_vhyp_bar_trace_test.py` — `float(q)` with the comment
+  *"native y_λ wants a float q"*, then sums `y*chi`. The zero blocks contribute
+  noise to a sum dominated by nonzero terms; lower severity, not chased here.
+- `computations/pyhecke_n_generic.py` — declares `q: float = Q0_F64` and returns
+  `list[float]`. Float64 **by design and by signature**; the defect is never the
+  routine, it is a caller treating its output as high precision.
+
+So the rule to carry forward: `trace_weights_n` is a float64 API. Any caller
+that divides by one of its outputs, compares one to zero, or records one in a
+witness at high precision has a defect — and there were **two**.

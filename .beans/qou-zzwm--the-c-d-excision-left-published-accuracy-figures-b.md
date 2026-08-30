@@ -1,11 +1,11 @@
 ---
 # qou-zzwm
 title: The C->D excision left published accuracy figures behind — my mass table was the first, not the only
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T08:06:31Z
-updated_at: 2026-08-30T08:07:30Z
+updated_at: 2026-08-30T09:36:16Z
 ---
 
 FOUND while answering the owner's question "investigate 2.4 accuracy loss --
@@ -109,3 +109,72 @@ load-bearing C artifact in the repo was invisible to the value-based detector
 and was found by tracing the L2 producer's imports instead. Consistent with
 docs/audits/2026-08-15-detector-blindness-taxonomy.md: every detector here is
 blind to some spelling. Treat the list above as a LOWER BOUND.
+
+
+
+=== THE LABELLING HALF IS DONE (PR #6156) — the ladder half is NOT, by design ===
+
+Owner asked to work this. Split it deliberately: the LABELLING half is
+mechanical and unowned, the RE-DERIVATION half has a live owner (qou-cds1), and
+AGENTS.md permits research overlap while giving mechanical work ONE owner. So I
+took the half that neither waits on the ladder nor duplicates anyone.
+
+DONE — three artifacts, ZERO values changed:
+
+1. per_observable_100x_status.py: added _convention_frame_check, the convention
+   sibling of the existing _anchor_layer_check. That function's own docstring
+   already states the principle -- "This does NOT regenerate the muon witness
+   (a tracked migration). It makes the mismatch loud."
+   Before: grep -c on the committed witness = 0 convention / 0 markov / 0
+   Markov. After: 7 / 0 / 2. Verified pure labelling: 9 fields added, 0
+   removed, 1 prose note extended, ZERO numeric fields changed.
+
+   ONE DELIBERATE ASYMMETRY, and it is the part worth reviewing. The anchor
+   check SIZES its error; this one emits induced_error_ppb: null with the
+   reason. There the D-frame counterpart exists and the error is a derivative
+   away; here qbeta_ck_cache.py raises SystemExit(2) under D, so no D-frame
+   counterpart exists and any figure would be MANUFACTURED. Naming a number
+   that cannot be computed is the exact failure this check exists to prevent.
+
+2. atom-mass-full-hecke.md: VERIFIED the alternating-weight claim myself rather
+   than carrying the survey's word. y_lambda_at(3, q) at the proton pin returns
+   [0.5054, 0.2473, 0.0] raw = (0.5054, 0.4946, 0.0000) dimension-weighted.
+   y_alt is EXACTLY ZERO under D, not merely small. The block's key observation
+   ("the alternating block is suppressed") describes a channel that under D does
+   not contribute at all. Both frames now tabulated.
+
+   Note for anyone re-checking: the survey reported (0.5054, 0.4946, 0.0000) and
+   I first measured [0.5054, 0.2473, 0.0]. Not a discrepancy -- the std block has
+   dimension 2 and 0.2473 x 2 = 0.4946. The block's three values sum to 1, so it
+   uses the dimension-weighted convention. Check which you are reading.
+
+3. feynman-qou-comparison.md: headline "achieves 0.074 %" was the SUPERSEDED
+   convention-C table. Corrected to 0.183 % (adopted D), which moves the SEMF
+   comparison from 3.2x to 7.9x worse -- stated plainly. The
+   zero-fitted-parameter claim is UNAFFECTED and now says so explicitly:
+   convention D introduces no parameter.
+
+   Table 2 SCOPED, NOT regenerated. Its QOU column is confirmed the same
+   superseded table (938.910 for H-1 vs the adopted 935.352; the D producer's
+   own shift_from_published_C_MeV reproduces the difference exactly). It
+   declares NO `computation` block and the SEMF column has no derivation in the
+   corpus, so there is nothing to re-run. Inventing a producer to reproduce the
+   published numbers would be manufacturing provenance -- the qou-lvx7 class.
+
+VERIFICATION: both .md render through the folio-assistant pipeline at exit 0
+(machine-validated, not a hand grep); both sidecars refreshed via qa-sweep;
+gates 8 red, all inherited (raw-float64 is newly ARMED, not newly broken -- it
+evaluates only when a witness is touched; this witness carries 0 raw float64
+fields before AND after).
+
+NOT DONE, and not mine to do: re-deriving the ladder under D. Bean qou-cds1,
+live owner, and the 2026-08-30 bar-weight prune (add3a7304a) established the
+obstruction is the OFFSET, not z -- alpha = (z-1)h/2 mixes bar-weight -4 (z_D)
+with weight 0 (the constant 1), so it is not a bar-eigenvector and a z-swap is
+invalid. Until that lands, Q_beta / m_n / Delta_pn stay unreproducible under
+canon and the dashboard now SAYS SO instead of publishing them bare.
+
+COORDINATED: posted findings on #6144 (their 95-field C->D movement profile was
+measured against the pre-fix TR_M[5] = z^3 -- the h*z^2+z fix landed 14 min
+before their last commit and their branch does not carry it; verified directly)
+and on #6058 (their finding 1 landed on main as 064eff1240 / 8a505f2b5a).

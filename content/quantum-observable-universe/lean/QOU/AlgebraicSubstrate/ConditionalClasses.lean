@@ -49,7 +49,7 @@
   | `NSCounterexample` | re-encoded `qou-5nj1` | a bounded vorticity |
   | `CriticalExponent` | re-encoded `qou-93hu`, then **de-boxed** `qou-4670` | a non-positive `α`, or a bounded enstrophy |
   | `RegularityBreakdown` | re-encoded `qou-m7a2` | a positive-measure set |
-  | `BlowupYekutieli` | **still vacuous**, `qou-88nf` | — its docstring names a bound it never gives |
+  | `BlowupYekutieli` | **replaced** `qou-88nf` — a rate existential became the upstream obstruction statement | every obstruction vanishing while `smooth` is `False` |
 
   The trivial-zero instance bundle that discharged all five is removed; see the
   note at the foot of this file.
@@ -58,7 +58,9 @@
     - conj:q-aubin-lions
     - conj:ns-counterexample
     - conj:critical-exponent
-    - conj:blowup-yekutieli
+    - prop:blowup-yekutieli   (NOT `conj:` — no such label is declared by any
+                               content block; the live one is a proposition in
+                               `lifting-and-descent/`. Bean `qou-88nf`.)
     - conj:regularity-breakdown
 -/
 
@@ -211,41 +213,57 @@ class CriticalExponent (enstrophy : ℝ → ℝ) (α : ℝ) : Prop where
     ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
       ∃ q : ℝ, 1 < q ∧ q - 1 < ε ∧ M < enstrophy q
 
-/-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`.
+/-- **§3b-cond hypothesis class** for [`prop:blowup-yekutieli`].
 
-    Yekutieli's blow-up rate is realised on the q-NS evolution.  Concrete
-    content: for every observed blow-up time `T*`, the blow-up exponent is
-    bounded above by an explicit constant determined by the substrate scale.
+    Smoothness as lifting through the brane tower: `v` is smooth exactly when
+    every obstruction class `κ_n(v)` vanishes. `obstruction n` is `κ_n(v)` at
+    tower level `n`, valued in a coefficient group modelled by `ℕ` with its
+    distinguished zero; `smooth` is the proposition "`v` lifts through the whole
+    tower".
 
-    **🛑 STILL VACUOUS — deliberately left, bean `qou-88nf`.** The three sibling
-    carriers in this file were re-encoded on 2026-08-30 by transcribing the
-    claim each docstring already made. **That is not possible here, and the
-    reason is specific rather than a shortage of effort: this docstring names a
-    bound it never gives.** "An explicit constant determined by the substrate
-    scale" says a constant exists and says nothing about which; the encoded
-    bound `1 + T` involves no substrate scale at all, and is satisfied by
-    `r = 0` — that is, by *no blow-up*, the negation of the claim the carrier is
-    named for.
+    Transcribed from the upstream carrier `QOU.FluidDynamics.BlowupYekutieli` in
+    [`lifting-and-descent/p3-blowup-yekutieli.lean`], which states exactly this
+    field and derives the blow-up direction from it by contraposition. Both
+    parameters are class parameters because `Prop` classes cannot carry data.
 
-    Writing a bound here would mean choosing the constant myself, which is the
-    step separating transcription from invention. Encoding
-    `r ≤ f(q₀)` for an `f` I picked would look like the other three fixes and be
-    a fitted value wearing their clothes.
+    **🛑 THIS IS NOT THE CLASS THAT USED TO BE HERE, and the difference is not a
+    strengthening (2026-08-30, beans `qou-88nf` / `qou-4670`).** Until today the
+    field read `∀ T ≥ 0, ∃ r, 0 ≤ r ∧ r ≤ 1 + T` — an existential satisfied by
+    `r = 0`, i.e. by *no blow-up*, the negation of the claim the carrier is
+    named for. That field was about a **blow-up rate**. This one is about
+    **obstruction-class vanishing**. They are two different propositions that
+    happened to share a name, so this is a replacement, not a re-encoding of the
+    same content, and a `[BlowupYekutieli …]` binder written before today did
+    not mean what one written after it means.
 
-    **What closing it needs**, so the next agent does not re-derive the
-    blocker: the Yekutieli blow-up rate as an explicit function of the substrate
-    modulus, from the source the conjecture label points at. With that, the
-    encoding is the same shape as its siblings — the exponent as a class
-    parameter, the field bounding it by that function.
+    **Why it took a second look.** The carrier was left vacuous on the stated
+    grounds that its docstring named "an explicit constant determined by the
+    substrate scale" without saying which, so any bound would have been chosen
+    by an agent rather than transcribed — and an audit concluded the rate is
+    nowhere in the corpus and "its conjecture block does not exist". The first
+    half stands: **there is still no Yekutieli blow-up rate in the corpus**, and
+    none may be invented. The second half was wrong. There is no
+    `conj:blowup-yekutieli`, which is what that grep tested, but the block is
+    live at `lifting-and-descent/` under the label **`prop:`**, with ten blocks
+    interpreting or using it. It had moved chapters, not been deleted.
 
-    Until then the field below is the original and is inhabitable by zero. It is
-    left rather than half-fixed. -/
--- Ref: [manuscript] conj:blowup-yekutieli
-class BlowupYekutieli : Prop where
-  /-- For every blow-up time `T ≥ 0`, the blow-up rate `r ≥ 0`
-      satisfies `r ≤ 1 + T`.  Trivially: `r = 0` works. -/
-  exists_blowup_rate :
-    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
+    So the transcription needs no rate at all: the upstream statement is about
+    obstructions, and it is the thing this class should always have carried.
+
+    **Refutable**, which the old field was not: `BlowupYekutieli (fun _ => 0)
+    False` is false, because every obstruction vanishes while `smooth` is
+    `False`. Satisfiable both ways — trivially by `(fun _ => 0, True)`, and with
+    a genuine blow-up by an `obstruction` that is nonzero somewhere against
+    `smooth = False`. Witnesses in
+    `docs/audits/2026-08-30-qns-carriers-are-refutable.lean`. -/
+-- Ref: [manuscript] prop:blowup-yekutieli
+-- Ref: [yekutieli2010] https://doi.org/10.1007/s00029-010-0029-8
+class BlowupYekutieli (obstruction : ℕ → ℕ) (smooth : Prop) : Prop where
+  /-- **Smoothness-as-lifting.** `v` is smooth iff every brane-tower
+      obstruction class vanishes. The blow-up characterisation — some finite
+      level has `κ_{n*}(v) ≠ 0` — is *derived* from this by contraposition,
+      not assumed. -/
+  smooth_iff_all_obstructions_vanish : smooth ↔ ∀ n : ℕ, obstruction n = 0
 
 /-- **§3b-cond hypothesis class** for `conj:regularity-breakdown`.
 
@@ -312,7 +330,10 @@ claimed — `NSCounterexample` bound `D₀` and never mentioned it again;
 `CriticalExponent`'s entire content was a closed numeral identity with no
 exponent variable in it. **That sentence is history as of later the same day:**
 four of the five have since been re-encoded (see the table at the head of this
-file), and only `BlowupYekutieli` still carries its original field. Do **not** re-add an instance
+file). As of 2026-08-30 none of the five carries its original field:
+`BlowupYekutieli` was the last, and it was REPLACED rather than re-encoded --
+its rate existential and the upstream obstruction statement are different
+propositions sharing a name (`qou-88nf`). Do **not** re-add an instance
 to make a downstream result typecheck: with no instance, an attempt to use one
 of these conditionally-proved theorems fails loudly, which is the correct
 behaviour for an open conjecture.

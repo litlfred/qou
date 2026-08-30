@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T11:33:25Z
+updated_at: 2026-08-30T13:37:23Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -495,3 +495,76 @@ bean stays open.
 
 Observation closed; no further check-in scheduled. Past ~80 min further waiting
 adds nothing — a fifth zero at 120 min would not discriminate either.
+
+## Third datum: quota had NOT refilled at 5 hours (2026-08-30, 13:03Z)
+
+Requested on #6167 at **12:56Z** — exactly **5h 00m** after the 07:56Z refusal on
+#6131. `get_reviews` at 13:03Z (7 min later, against a ~3 min observed latency for
+a real review on #6088): **`[]`**.
+
+| request | elapsed since 07:56Z exhaustion | outcome |
+|---|---|---|
+| 07:55Z (#6131) | — | refusal posted, ~40 s |
+| 08:58Z (#6131) | 1h 02m | silence |
+| 12:56Z (#6167) | **5h 00m** | **silence** |
+
+So the retry-after-an-hour strategy already ruled out is now ruled out at five
+hours too. Either the window is longer than 5h, or it is not a simple time-based
+refill (per-user-per-day is consistent with all three rows).
+
+**Practical consequence, unchanged in direction but firmer:** budget Copilot as a
+resource you get roughly *once*, not as a step in every prepare-merge. Spending it
+on the first substantive PR of a session and not re-requesting is the strategy the
+data supports. `prepare-merge-auto` Phase 1b's per-run request is exactly the
+behaviour that drained it here.
+
+
+---
+
+## 2026-08-30 13:37Z — four more censored negatives, and what they do NOT bound
+
+Read by hand at **13:37Z**, `get_reviews` → `[]` on all four. Windows run from
+PR creation (itself a push), so a push-triggered review had the whole interval:
+
+| PR | repo | created | merged | window @ 13:37Z |
+|---|---|---|---|---|
+| [`fa#156`](https://github.com/litlfred/folio-assistant/pull/156) | folio-assistant | 10:43:27Z | 11:04:14Z | **≥ 2 h 54 m** |
+| [`#6189`](https://github.com/litlfred/qou/pull/6189) | qou | 10:57:06Z | 11:00:52Z | **≥ 2 h 40 m** |
+| [`#6204`](https://github.com/litlfred/qou/pull/6204) | qou | 12:17:14Z | 12:31:54Z | **≥ 1 h 20 m** |
+| [`#6208`](https://github.com/litlfred/qou/pull/6208) | qou | 12:44:23Z | 12:53:11Z | **≥ 53 m** |
+
+`#6204` and `#6208` were each force-pushed again (rebase) shortly before merge,
+which only *adds* trigger opportunities inside the window — it does not shorten
+it. Two repositories, so this is not a qou-specific setting.
+
+**These are push-trigger evidence, NOT quota evidence.** No
+`request_copilot_review` was fired on any of the four. That matters for how they
+may be used:
+
+- **Against the push trigger** they are the strongest rows in this bean. The
+  entry that opened the push-trigger hypothesis measured a review arriving
+  **10m28s** after an unrequested push; `fa#156` and `#6189` are the same
+  configuration at **~15×** that latency, in two different repos, with nothing.
+  Together with `#6168` (≥ 43 min) that is four independent censored negatives
+  against a trigger whose one positive observation is a single 10m28s event.
+- **They say nothing about the quota**, because an un-requested PR would draw no
+  review under *either* the quota-exhausted or the request-required reading.
+  Do not cite them as evidence the ration is still spent.
+
+**The recharge interval is barely bounded, and by less than the elapsed time
+suggests.** The only request fired since exhaustion at **07:56:40Z** is the
+sibling's on `#6162` at ~10:09Z, which returned nothing at ≥ 45 min. So the
+honest statement is **recharge > ~2 h 13 m**, from that one request — *not*
+"> 5 h 40 m" from the wall clock, which would be reading four unrequested PRs
+as if they had asked.
+
+**The passive-measurement instruction stands and is now sharper.** The next
+successful review after 07:56:40Z bounds the recharge from above — but only a
+**requested** one bounds it usefully, and nobody should fire a request to find
+out, which is the error that created the shortage. The cheap discriminator is
+already scheduled by ordinary work: the next session that requests a review on
+its first substantive PR will produce the datapoint for free.
+
+Recorded because the alternative was leaving it in a chat transcript, which is
+this corpus's documented way of losing a measurement — and because this bean
+already tells future agents to write exactly this observation down.

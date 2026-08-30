@@ -234,11 +234,23 @@ def main() -> int:
                      tolerance=0.5,
                      source="per-level terms re-sum to a u-even total, "
                             "consistent with the B1.3 parity finding")
+    # Read `computed=float(n_scan), expected=float(n_scan)` -- a self-comparison
+    # that also carried the count as float64. I first demoted it to `add_data`;
+    # that was the weaker of the two available dispositions. The grid here is
+    # PRE-REGISTERED, so the count IS knowable in advance and the assertion can
+    # be made to fail: derive it from the three factors the loops iterate, the
+    # way `qbeta_5two_stokes_population_bridge_probe` does (bean `qou-26f2`).
+    # Decoupling a loop bound from its grid, or dropping a sign branch, now
+    # fails here instead of being recorded as a passing "scan completed".
+    _n_expected = sum(len(_l) for _l in LAM_GRID.values()) * 3 * len(SHIFTS)
     wb.add_assertion("scan_completed",
-                     computed=float(n_scan), expected=float(n_scan),
-                     tolerance=0.5,
-                     source="all pre-registered (sign,j,λ)×shift "
-                            "combinations decided and recorded")
+                     computed=n_scan,
+                     expected=_n_expected,
+                     tolerance=0,
+                     source="all pre-registered (sign,j,λ)×shift combinations "
+                            "decided and recorded; expected = "
+                            "Σ|LAM_GRID| × 3 (j) × |SHIFTS|")
+
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("level_parity", {str(k): v for k, v in level_parity.items()})

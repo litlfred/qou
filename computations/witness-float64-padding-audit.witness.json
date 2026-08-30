@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 17,
-    "distinct_values": 14,
+    "occurrences": 14,
+    "distinct_values": 12,
     "files": 7,
     "live_files": 2,
-    "new_not_baselined": 4,
+    "new_not_baselined": 2,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -83,42 +83,24 @@
       },
       {
         "file": "computations/audits/hardcoded-literal-audit.witness.json",
-        "field": "data.rows[26].hits[4].literal",
-        "value": "0.51099894999999995182093925905064679682254791259766",
-        "real_value": "0.51099895"
+        "field": "data.rows[349].hits[0].literal",
+        "value": "8.4817962000000015621026250300928950309753417968750000000000",
+        "real_value": "8.481796200000002"
       },
       {
-        "file": "computations/option-e-phase1-gram-h6.witness.json",
-        "field": "data.h3.blocks.3.w0_det",
-        "value": "1.36755183695138526900336728431284427642822265625000000000000",
-        "real_value": "1.3675518369513853"
-      },
-      {
-        "file": "computations/option-e-phase1-gram-h6.witness.json",
-        "field": "data.h3.blocks.1_1_1.w0_det",
-        "value": "-0.731233707549433731287535920273512601852416992187500000000000",
-        "real_value": "-0.7312337075494337"
-      },
-      {
-        "file": "computations/option-e-phase1-gram-h6.witness.json",
-        "field": "data.h6.blocks.6.w0_det",
-        "value": "4.78320490856174895810681846342049539089202880859375000000000",
-        "real_value": "4.783204908561749"
-      },
-      {
-        "file": "computations/option-e-phase1-gram-h6.witness.json",
-        "field": "data.h6.blocks.1_1_1_1_1_1.w0_det",
-        "value": "-0.209064846502820589346782753636944107711315155029296875000000",
-        "real_value": "-0.2090648465028206"
+        "file": "computations/probes/path-b-habiro-mass-probe.witness.json",
+        "field": "rows[2].M_pred_MeV",
+        "value": "1876.123929999999973006197251379489898681640625",
+        "real_value": "1876.12393"
       }
     ]
   },
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "ba7a8bbc7be0",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "0b314f4de5553d5813502bd489ee995529fd4708",
+  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
   "engine": "python",
-  "computedAt": "2026-08-30T03:28:57.078030+00:00",
+  "computedAt": "2026-08-30T13:00:17.471934+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
