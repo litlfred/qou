@@ -60,7 +60,7 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
@@ -291,21 +291,27 @@ def main() -> int:
         print(f"  but minimal in this closure.")
     print()
 
-    builder.add_data("baseline_eps_ppm", float(eps_baseline))
+    # NO FLOAT64 (owner directive): these five fields ENTER THE WITNESS and
+    # so must carry mpmath precision. `float()` here truncated 65-dps mpf
+    # values to 53 bits, which the raw-float64 ratchet flags on every run.
+    # `fmt()` must be handed the mpf itself -- `fmt(float(x))` would
+    # short-circuit to str() and keep the float64. The display prints above
+    # keep float(): they are formatting, and never reach the JSON.
+    builder.add_data("baseline_eps_ppm", fmt(eps_baseline))
     builder.add_data("piece_tests", [
         {"piece": "base = -(q²+q⁻²)", "q_0_value": mp.nstr(base_q0, 25),
          "q_1_fibre_value": str(base_fib),
-         "delta_eps_ppm": float(eps_t1 - eps_baseline)},
+         "delta_eps_ppm": fmt(eps_t1 - eps_baseline)},
         {"piece": "[3]_q", "q_0_value": mp.nstr(qint_3_q0, 25),
          "q_1_fibre_value": str(qint_3_fib),
-         "delta_eps_ppm": float(eps_t2 - eps_baseline)},
+         "delta_eps_ppm": fmt(eps_t2 - eps_baseline)},
         {"piece": "[2]_q", "q_0_value": mp.nstr(qint_2_q0, 25),
          "q_1_fibre_value": str(qint_2_fib),
-         "delta_eps_ppm": float(eps_t3 - eps_baseline)},
+         "delta_eps_ppm": fmt(eps_t3 - eps_baseline)},
         {"piece": "/25 → /[5]_q²|_{q=q_0} (cross-check NOT fibre test)",
          "q_0_value_main": str(div_25),
          "alt_q0_value": mp.nstr(div_qint_5_sq, 25),
-         "delta_eps_ppm": float(eps_t4 - eps_baseline),
+         "delta_eps_ppm": fmt(eps_t4 - eps_baseline),
          "purpose": "reverse-direction confirmation of PR #1811"},
     ])
     builder.add_data("verdict", {
