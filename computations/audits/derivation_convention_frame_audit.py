@@ -78,11 +78,33 @@ def _declared(text: str) -> bool:
     return bool(_DECLARES.search(head))
 
 #: Atom aliases as they appear in derivation prose.
-_ATOMS = {
-    "p": "p", "proton": "p",
-    "n": "n", "neutron": "n",
-    "d": "D", "deuteron": "D",
-}
+#:
+#: 🛑 BARE SINGLE LETTERS ARE MATCHED CASE-SENSITIVELY, and that is not
+#: pedantry. The first version lower-cased the search window and accepted "d"
+#: as deuteron, which made every stray lone `d` in prose an atom marker: the
+#: full scan then reported `tr_M(D) = 0.2293101…` and `0.4037670…`, which are
+#: the TRITIUM and HELIUM-3 traces, against a deuteron canon. The count of
+#: flagged documents was right and the per-row attribution was wrong — the
+#: worst shape for a report, because the number looks checkable and the label
+#: sends the reader to the wrong quantity.
+#:
+#: Long names stay case-insensitive ("Deuteron"/"deuteron" are the same word);
+#: only the one-letter forms require their canonical case.
+_ATOMS_ANY_CASE = {"proton": "p", "neutron": "n", "deuteron": "D",
+                   # RECOGNISED BUT NOT IN CANON — and that is the point.
+                   # `TR_M_AT_Q0` holds p/n/D only. Without these names here,
+                   # a tritium value in a sentence like
+                   #   "proton 1.1457…, neutron 0.9877…, deuteron 0.5751…,
+                   #    tritium 0.2293…"
+                   # takes the nearest PRECEDING atom word — `deuteron` — and
+                   # is reported as a deuteron disagreeing with canon by 60 %.
+                   # Recognising the name lets the scan skip it for want of a
+                   # reference, which is the honest outcome; leaving it out
+                   # silently reattributed it to a quantity it is not.
+                   "tritium": "T", "helium-3": "3He", "helium3": "3He",
+                   "helium-4": "4He", "helium4": "4He"}
+_ATOMS_EXACT = {"p": "p", "n": "n", "D": "D",
+                "T": "T", "3He": "3He", "4He": "4He", "³He": "3He", "⁴He": "4He"}
 
 _NUM = re.compile(r"\b\d+\.\d{6,}\b")
 
@@ -131,13 +153,16 @@ def _findings(text: str, canon: dict[str, float]) -> list[tuple[str, str, float]
             continue
         # Which atom is this value about? Take the nearest atom word before it
         # that is inside a tr_M context.
-        window = text[max(0, m.start() - 220):m.start()].lower()
-        if "tr_m" not in window:
+        window = text[max(0, m.start() - 220):m.start()]
+        if "tr_m" not in window.lower():
             continue
         atom = None
-        for word in re.findall(r"[a-z_0-9³]+", window)[::-1]:
-            if word in _ATOMS:
-                atom = _ATOMS[word]
+        for word in re.findall(r"[A-Za-z_0-9³]+", window)[::-1]:
+            if word.lower() in _ATOMS_ANY_CASE:
+                atom = _ATOMS_ANY_CASE[word.lower()]
+                break
+            if word in _ATOMS_EXACT:          # case-sensitive: "D" not "d"
+                atom = _ATOMS_EXACT[word]
                 break
         if atom is None or atom not in canon:
             continue
