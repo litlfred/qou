@@ -1839,8 +1839,22 @@ function docBlockAbove(origLines: string[], declIdx0: number): string {
  * carrier with no `conj:` self-reference is a definition, not a
  * conjecture, and is excluded. */
 function isConjectureCarrier(doc: string): boolean {
+  // A docstring that simply *announces* itself as a conjecture is a carrier.
+  //
+  // Measured 2026-08-29: without this clause the gate rejected every carrier
+  // whose docstring is a bare `**CONJECTURE.** …` with no `conj:` label and no
+  // "axiomatis" wording -- among them `QuantumLanglandsDual`,
+  // `Mirror3d3dCorrespondence`, `LusztigCanonicalBasisQEq1`, `SpinFromSo3Fiber`
+  // and `PoincareLefschetzBorromean`, all five of which carry the content-free
+  // `holds : Prop`. Because the gate runs before every criterion in this
+  // family, those carriers were invisible to `proof-claims-unencoded`,
+  // `proof-no-empty-prop-carrier` AND
+  // `proof-dependent-conjecture-not-conditional` alike, and none had ever
+  // reached the review ledger. The audit could not see the carriers most
+  // likely to be defective.
+  const announcesConjecture = /\*\*\s*conjecture\b|^\s*conjecture[.:]/im.test(doc);
   const hasConjRef = /conj:[a-z0-9-]+/i.test(doc) || /\\label\{conj:/i.test(doc);
-  const axiomatises = /axiomatis/i.test(doc);
+  const axiomatises = /axiomatis/i.test(doc) || announcesConjecture;
   if (!hasConjRef && !axiomatises) return false;
   // A `def:`-labelled carrier that only *references* a conjecture (no
   // `conj:` self-label, no axiomatisation) is a definition — exclude.
@@ -2039,6 +2053,8 @@ interface ConjCarrier {
   sig: string;
   doc: string;
   ownLabels: string[];
+  /** The `.md` sibling's prose, scanned alongside the docstring. */
+  narrative: string;
 }
 
 interface ConjGraph {
@@ -2056,6 +2072,41 @@ function ownConjLabels(doc: string): string[] {
   for (const m of doc.matchAll(/\\label\{conj:([a-z0-9-]+)\}/gi))
     out.add(m[1].toLowerCase());
   return [...out];
+}
+
+/** The content block's own label, read from the authoritative `.ts` sibling.
+ *
+ * `ownConjLabels` keys on `\label{conj:…}`, which appears in **15** `.lean`
+ * files corpus-wide against **113** using the markdown-link form. Since
+ * `labelToName` is built from own-labels, that alone left the map nearly empty
+ * and `proof-dependent-conjecture-not-conditional` unable to resolve any
+ * claimed dependency to a carrier — measured, the criterion returned **0 hits
+ * across 244 carriers and 3264 files** while at least four carriers declare
+ * conditionality in prose and bind nothing. The `.ts` `label:` field is the
+ * block's identity and does not depend on how a docstring was written. */
+function siblingBlockLabel(leanFile: string): string | undefined {
+  const ts = leanFile.replace(/\.lean$/, ".ts");
+  if (!existsSync(ts)) return undefined;
+  try {
+    const m = /label:\s*"(conj:[a-z0-9-]+)"/i.exec(readFileSync(ts, "utf8"));
+    return m ? m[1].slice("conj:".length).toLowerCase() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** The `.md` sibling's prose, where a content block actually declares its
+ * conditionality. The Lean docstring is a summary; the narrative is where
+ * "conditional on [`conj:X`]" is written. Scanning only the docstring was the
+ * second half of the blind spot above. */
+function siblingNarrative(leanFile: string): string {
+  const md = leanFile.replace(/\.lean$/, ".md");
+  if (!existsSync(md)) return "";
+  try {
+    return readFileSync(md, "utf8");
+  } catch {
+    return "";
+  }
 }
 
 /** Conjecture-class names referenced in `sig`'s binders — instance `[…]`,
@@ -2090,13 +2141,17 @@ function classifyConjectures(files: string[]): {
         continue;
       const doc = docBlockAbove(orig, d.startLine - 1);
       if (!isConjectureCarrier(doc)) continue;
+      const ownFromTs = siblingBlockLabel(f);
       carriers.push({
         name: d.name,
         file: relative(REPO_ROOT, f),
         line: d.startLine,
         sig: d.sig,
         doc,
-        ownLabels: ownConjLabels(doc),
+        narrative: siblingNarrative(f),
+        ownLabels: ownFromTs
+          ? [...new Set([...ownConjLabels(doc), ownFromTs])]
+          : ownConjLabels(doc),
       });
     }
   }
@@ -2108,6 +2163,8 @@ function classifyConjectures(files: string[]): {
   const primary: ConjGraph["primary"] = [];
   const dependent: ConjGraph["dependent"] = [];
   const hitsByFile = new Map<string, Hit[]>();
+  /** `.md`-sourced claims already reported for a file — see `scan` below. */
+  const narrativeReported = new Map<string, Set<string>>();
 
   for (const c of carriers) {
     const edges = bindersReferencing(c.sig, names).filter((n) => n !== c.name);
@@ -2119,11 +2176,30 @@ function classifyConjectures(files: string[]): {
     // `conj:Y` (another carrier) yet the type binds no such class. This is
     // the intent-vs-type mismatch — a result that reads as conditional but
     // is stated unconditionally. Plain prose mentions are NOT flagged.
-    const claimed = [
-      ...c.doc.matchAll(
-        /(?:conditional on|assuming|given|depends on|modulo)\s+[[`]?\s*conj:([a-z0-9-]+)/gi,
+    // Sourced separately, because they have different SCOPE. A Lean docstring
+    // belongs to one declaration; the `.md` is the narrative of the whole
+    // content block, which may define several carriers. Charging a block-level
+    // sentence to each carrier in the file manufactures duplicates: measured,
+    // one line of `phi-q-aj-machinery-identification.md` became three "hits"
+    // across the three classes that share it, and all three were spurious --
+    // those classes are well-formed §3b-cond carriers binding
+    // `[QuantumAPolynomial …]`, not the conjecture the prose names.
+    const scan = (text: string) => [
+      ...text.matchAll(
+        // `[[`]?` allowed exactly ONE bracket-or-backtick, but the corpus's
+        // canonical cross-reference is ``[`conj:X`]`` -- bracket AND backtick.
+        // That single `?` was the third reason this criterion never fired.
+        /(?:conditional on|assuming|given|depends on|modulo)\s+[[`\s]*conj:([a-z0-9-]+)/gi,
       ),
     ].map((m) => m[1].toLowerCase());
+    const fromDoc = scan(c.doc);
+    // block-level: emit once per file, not once per carrier
+    const narrativeSeen = narrativeReported.get(c.file) ?? new Set<string>();
+    const fromNarrative = scan(c.narrative).filter((l) => !narrativeSeen.has(l));
+    for (const l of fromNarrative) narrativeSeen.add(l);
+    narrativeReported.set(c.file, narrativeSeen);
+    const blockLevel = fromDoc.length === 0 && fromNarrative.length > 0;
+    const claimed = [...new Set([...fromDoc, ...fromNarrative])];
     const unmet = claimed
       .filter((l) => !c.ownLabels.includes(l))
       .map((l) => labelToName.get(l))
@@ -2133,11 +2209,13 @@ function classifyConjectures(files: string[]): {
       const hit: Hit = {
         line: c.line,
         category: "proof-dependent-conjecture-not-conditional",
-        pattern: "prose-conditional-not-in-type",
+        pattern: blockLevel
+          ? "prose-conditional-block-level"
+          : "prose-conditional-not-in-type",
         snippet: c.name,
         decl: c.name,
         severity: SEVERITY["proof-dependent-conjecture-not-conditional"],
-        detail: `doc claims conditionality on ${unmet
+        detail: `${blockLevel ? "the block's .md" : "doc"} claims conditionality on ${unmet
           .map((n) => `\`${n}\``)
           .join(", ")} but the signature takes no binder on it`,
       };

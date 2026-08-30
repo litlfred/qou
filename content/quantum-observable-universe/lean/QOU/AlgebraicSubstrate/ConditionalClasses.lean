@@ -10,17 +10,24 @@
   hypotheses without depending on the cross-chapter sibling-style
   modules.
 
-  **Round 11 sharpening** (post Gemini review): each class field was
-  upgraded to a non-tautological *existential* predicate that
-  quantifies over an actual NS-evolution parameter (energy bound,
-  initial-data norm, scaling exponent, etc).  The canonical instance
-  discharges each existential with a concrete witness of the form
-  `⟨0, …⟩`, but the SHAPE captures content (the conjecture asserts
-  something about how a quantity scales / depends on parameters,
-  not a vacuous `True`).
+  **🛑 Round 11's claim was WRONG, and this file was the corpus's exemplar for
+  it. Read this before the paragraph it corrects (2026-08-30).**
 
-  **🛑 That last claim was wrong, and this file was the corpus's exemplar for
-  it (2026-08-30).** AGENTS.md §3b-tax cited these classes as the model of a
+  Round 11 (post Gemini review) upgraded each class field to a non-tautological
+  *existential* predicate quantifying over an NS-evolution parameter, and
+  argued — in this header, as settled fact — that *"the canonical instance
+  discharges each existential with a concrete witness of the form `⟨0, …⟩`, but
+  the SHAPE captures content (the conjecture asserts something about how a
+  quantity scales / depends on parameters, not a vacuous `True`)."*
+
+  **It does not.** The retraction is below, and the original wording is quoted
+  above rather than restated as the file's own voice, because a reader skimming
+  a header takes away whatever it asserts first — and the assertion here was the
+  reverted one. (Flagged in review on PR #6122; the corpus documents this exact
+  failure mode elsewhere as *"that heading is the line a skimming agent
+  reads"*.)
+
+  **The retraction.** AGENTS.md §3b-tax cited these classes as the model of a
   carrier stating "a parameter-quantified inequality in the *shape* of the
   claim". The shape was right and the content was absent: every field was an
   **existential** satisfied by choosing zero, so the conjectures were

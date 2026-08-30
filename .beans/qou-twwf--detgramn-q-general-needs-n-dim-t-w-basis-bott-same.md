@@ -1,11 +1,11 @@
 ---
 # qou-twwf
 title: 'det(Gram)=[n]_q! GENERAL: needs n!-dim T_w basis (Bott-Samelson, qou-lrz1) + Schur-element product formula. Deep classical piece'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-25T03:29:22Z
-updated_at: 2026-08-30T04:49:25Z
+updated_at: 2026-08-30T07:56:21Z
 ---
 
 ## 2026-08-30 — the whole Hecke presentation now holds for the `T_w` operators

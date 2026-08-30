@@ -1,11 +1,11 @@
 ---
 # qou-rq9n
 title: Five q-NS conjecture carriers carry a FABRICATED trivial-zero instance
-status: todo
+status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-29T19:45:34Z
-updated_at: 2026-08-30T03:16:49Z
+updated_at: 2026-08-30T09:05:52Z
 ---
 
 `lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean` declares five `Prop`
@@ -107,3 +107,19 @@ So the five children stay open. What each needs is the real statement encoded:
 
 Four of the five need analytic setup the docstrings only gesture at; that is
 the author's mathematics, not a cleanup.
+
+STATUS CORRECTED 2026-08-30: four of five, not zero and not five.
+
+Closed: qou-93hu (CriticalExponent, main 33d9eb4b414/5f019815d56), and
+qou-3ytx / qou-5nj1 / qou-m7a2 (PR #6122, merged).
+OPEN: qou-88nf (BlowupYekutieli).
+
+This bean sat at 'todo' on main while four of its five children were completed,
+which understated the work done. It is not 'completed' either: qou-88nf is
+genuinely open and is different IN KIND from its siblings -- conj:blowup-yekutieli
+is declared by NO content block, so unlike the other four there is no upstream
+statement to transcribe. Closing it requires recovering or re-authoring the
+missing conjecture block, which is authorial mathematics, not encoding.
+
+I briefly closed qou-88nf by inventing an affine bound C*(1+T) off its
+docstring; that was retracted (see its body). Do not repeat it.

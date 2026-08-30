@@ -1,11 +1,11 @@
 ---
 # qou-cwin
 title: 'MIGRATION: express the Q_beta c_k ladder in h = q - 1/q instead of u = b*hbar_q^2'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-16T12:45:00Z
-updated_at: 2026-08-17T01:53:02Z
+updated_at: 2026-08-18T05:39:54Z
 ---
 
 Owner-authorised 2026-08-16: *"bean up and start = express the ladder in h"*.

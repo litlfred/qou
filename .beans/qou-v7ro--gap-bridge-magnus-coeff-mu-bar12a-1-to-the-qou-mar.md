@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T03:30:41Z
+updated_at: 2026-08-30T07:59:18Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -89,3 +89,18 @@ REFUTED by the probe (messy rational, not affine) - the recursion is the full 4-
 Caught pre-durable; Lean+PR unaffected. STATUS: -h^2 derived at operator level; the (h^2+2)
 trace-assembly + forall-A Brunnian induction (a concrete TL statement, NOT the weight-system
 bridge) remain open. No instance.
+
+
+
+--- 2026-08-30 MERGED (#6077 f50bd72b03) + ∀A reduction ---
+PR #6077 rebase-merged to main: A=4 slice PROVED, recursion verified A=3-6, reduction Lean
+(recursion=>∀A tight slice) proved, operator-level -h^2(h^2+2) derivation (A=3). Also carried
+the dp32 Magnus commits (MagnusPairingSignStructure.lean) -> #6057 now redundant (noted there).
+
+∀A PROOF PROGRESS (milnor_recursion_forall_A_reduction_probe.py, verified A=3,4): 3 of 4 qtr-terms
+proven A-INDEPENDENT ([2]^A): T1 loop-closure, T2 via [rho(braid),mu]=0, T3 scalar q^2h-hq^-2=h^2[2].
+Recursion collapses EXACTLY to ONE identity (star-star): qtr_{A+1}(W e_A W^-1 e_A)=[2]^{A+1}(1-u)+u[2]qtr_A(W0),
+u=q^2+q^-2. HONEST: an earlier conditional-expectation reduction of star-star's LHS was WRONG
+(verification caught it); star-star is for the DIRECT 4th-term qtr. Recursive handle
+E_A(w_A^-1)=E_A(b w_{A-1} b^-1)w_{A-1}^-1 verified (A=4). REMAINING: prove star-star ∀A (the single
+open step). NOT yet ∀A-proven; no instance fabricated.

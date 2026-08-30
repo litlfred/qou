@@ -597,7 +597,19 @@ user's last message, not the most recently mentioned file.
       It normalises both producer versions through `ast.unparse` (comments,
       docstrings and formatting gone) and reports which drifts can actually
       move a number. Re-measured three times across 1564 commits of `main`,
-      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      **zero** of ~700 self-stale witnesses were safe to refresh.
+
+      > **Re-measured a FOURTH time 2026-08-30 on `main` `655a80ee84d`, and the
+      > answer is unchanged where it matters: `cosmetic = 0`.** The denominator
+      > and the split both moved, so quote these rather than the figures above:
+      > **559 decided** (was 628 in the committed witness), **substantive 186 /
+      > 33.3 %**, **rewritten 309 / 55.3 %**, **unresolvable 60**,
+      > `cosmetic_import_cone_drift` **4**. So the standing advice holds on a
+      > fourth independent run — **not one self-stale witness in the corpus is
+      > safe to refresh**, and an idle pass should spend its budget on sidecars.
+      > Recorded in `computations/witness-staleness-triage.witness.json`.
+
+      Source-
       identical is necessary but not sufficient, and the two extra gates are
       the ones that bite:
 
@@ -787,7 +799,8 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      And ~49 % of the backlog is `rewritten` (**55.3 % as re-measured
+      2026-08-30**; see the fourth-run note above) — the recorded `commitSha`
       resolves to nothing. **This text previously named rebase-merge as the
       cause; that is confirmed for only 46 of 376.** Agent clones here are
       **shallow**, so a sha can be missing merely because the history was never
@@ -3458,8 +3471,52 @@ export interface AuthorNote {
 }
 ```
 
-`BlockBase.authorNotes?: AuthorNote[]` — every block kind accepts it
-(builders pass through via `Omit<XBlock, "kind">`).
+`BlockBase.authorNotes?: AuthorNote[]`.
+
+> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
+> silence (measured 2026-08-30).** This line read *"every block kind accepts
+> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
+> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
+> declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
+> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
+> note written on one of those blocks validates clean and **vanishes**.
+>
+> **Six authored fields are being dropped in this corpus right now**, and two
+> of them are substantive:
+>
+> | block | field | what is lost |
+> |---|---|---|
+> | `braids-and-knots/hecke-log-decomposition-table-data` | `authorNotes` | multi-paragraph caveat recording that the table has **no source block** and why the dangling `uses[]` was dropped rather than guessed |
+> | `nuclear-interactions/q-beta-form-a-n1-symbolic-table-data` | `authorNotes` | — |
+> | `observations/fine-structure-data` | `authorNotes` | — |
+> | `appendix-surreals/millennium-bounds-via-surreals-intro` | `authorNotes` | — |
+> | `appendix-transfer-matrices/tm-interaction-completeness` | `authorNotes` | — |
+> | `appendix-knot-periodic-table/knot-periodic-table` | `computation` | the block's link to its producer |
+>
+> **The wider hazard is not `authorNotes`.** Those same four kinds also drop
+> **`defines`** and (all but `prose`) **`cites`**. No block hits those today,
+> but §4c *mandates* `defines` for every glossary term, so the first `prose`
+> or `table` block to register one will have it silently discarded and the
+> glossary gate will not fire. `cites` dropping means bibliography extraction
+> would silently miss those kinds.
+>
+> **A second class, same symptom, different cause.** The validator also
+> reports five *invented* field names no schema declares anywhere —
+> `is_mathematics` (×3), `probe`, `consumers`. Those are authoring errors
+> rather than a schema gap, and they are dropped just as quietly.
+>
+> **You only see any of this if the validator is current.** These warnings
+> come from an "Unknown field" check that a stale `folio-assistant` clone does
+> not have; the same tree reported **1** issue before the clone was
+> fast-forwarded and **14** after. Run
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> check the clone is not behind before trusting a clean validate.
+>
+> **The fix is in `folio-assistant`, not here** — those four schemas should
+> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
+> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
+> be accepted and lost.
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable
