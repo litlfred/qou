@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:05:43Z
-updated_at: 2026-08-30T10:06:29Z
+updated_at: 2026-08-30T10:30:49Z
 ---
 
 ## The question that provoked it
@@ -90,3 +90,78 @@ Ask whether the corpus's own p/n convention (`bring_color_weighted`, canonical
 per owner ruling R3 2026-08-15) gives an even-in-T_z typing, and if not, what
 would. Cross-reference qou-9v7t, which found 9 of 10 chirality candidates get
 the mirror asymmetry backwards and named the missing EM channel.
+
+
+
+---
+
+## ANSWER to the owner's follow-up: "check bring_color_weighted parity" (2026-08-30)
+
+**`bring_color_weighted` is parity-blind. It cannot fix this, and the reason is
+structural.**
+
+Producer: `computations/probes/pair_layer_isospin_parity_probe.py`, 8/8.
+
+### The decomposition
+
+Charge conjugation p<->n maps pp<->nn and FIXES pn. On the like-pair channel:
+
+    E = (f_pp + f_nn)/2 = 0.50815788774864559388     charge-symmetric (isoscalar)
+    O = (f_pp - f_nn)/2 = 0.10453014939781965772     charge-ANTIsymmetric (isovector)
+    |O|/|E|             = 0.205704077252
+
+and the T=0-vs-T=1 splitting -- what makes the deuteron special -- is `f_pn - E`:
+
+    strict_averaged      f_pn - E = 0            EXACTLY zero
+    bring_color_weighted f_pn - E = 7.19016e-5   = h*delta/4
+
+    isovector / isoscalar-splitting = **1453.79**
+
+### Root cause: it is the HECKE SKEIN RELATION, not a convention
+
+`interface_factor`'s own docstring maps `positive: sigma -> z` (p-p) and
+`negative: sigma^-1 -> z - h` (n-n). So
+
+    f_pp - f_nn = z - (z - h) = h = q - 1/q = sigma - sigma^-1
+
+**exactly** (residual 0.0). Given the identification `p |-> positive crossing,
+n |-> negative crossing`, the skein relation fixes the isovector term with **no
+free coefficient**. It is not tunable by any `pn_convention`.
+
+### What bring_color_weighted actually does
+
+It modifies **only** the p-n factor, by `h*delta/4 = 7.19e-5`. `f_pp` and
+`f_nn` are untouched, so `O` is **identical under all three conventions**.
+It is a correction on the channel that is already charge-even (pn is
+self-conjugate) and leaves the 0.1045 term on the channel where the parity
+problem lives.
+
+It is still strictly better than `strict_averaged`, which sets the T=0/T=1
+splitting to exactly zero -- better by 1/1454 of what is needed.
+
+### In energy terms (Sec.10a log map, alpha = 4.18598 MeV)
+
+    B_pp = 2.0507   B_pn = 2.8332   B_nn = 3.7978 MeV
+    model mirror asymmetry = 1.74707 MeV   vs AME 0.763755   ratio 2.2875
+
+Physics wants the reverse ordering: charge symmetry makes pp and nn nearly
+degenerate (the strong CSB contribution to the A=3 splitting is ~70 keV of
+764 keV) with the T=0 pn channel distinguished -- the deuteron binds, the
+diproton and dineutron do not. The model has B_nn, the UNBOUND channel, as the
+most bound.
+
+### Scope
+
+**(a)** for the physics judgement -- charge symmetry is an empirical
+near-symmetry, not a theorem about this model. **Exact and unconditional** for
+the algebra: `f_pp - f_nn = h` identically and `bring_color_weighted` leaves it
+unchanged. Those two are what constrain any repair.
+
+### Consequence for the repair
+
+The isovector term cannot be reduced by choosing a different `pn_convention`.
+It can only be changed by changing **the p/n-to-crossing-sign identification
+itself** -- i.e. `p |-> sigma, n |-> sigma^-1` is the thing to revisit, not the
+p-n averaging rule. Any candidate replacement has to make the LIKE pairs
+near-degenerate while distinguishing the unlike one, which is the opposite of
+what a crossing-sign assignment naturally produces.
