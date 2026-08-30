@@ -31,7 +31,7 @@ them.  `NumberField.InfinitePlace.prod_eq_abs_norm` is the same identity re-inde
 places with multiplicities, which is the wrong shape here — `house` is a max over embeddings, not
 over places, so re-indexing would have to be undone immediately.
 -/
-import QOU.Mathlib.RothRationalIndex
+import QOU.Mathlib.RothTaylorBound
 import Mathlib.NumberTheory.NumberField.House
 import Mathlib.NumberTheory.NumberField.Norm
 import Mathlib.RingTheory.Norm.Transitivity
@@ -216,6 +216,15 @@ theorem le_index_of_norm_lt (pn : Fin m → ℤ) (qd : Fin m → ℕ) (hq : ∀ 
   rw [hy0, map_zero] at hy
   have hDK : (((∏ h, (qd h) ^ (r h) : ℕ)) : K) ≠ 0 := Nat.cast_ne_zero.mpr hDne
   exact (mul_eq_zero.mp hy.symm).resolve_left hDK
+
+/-- **`‖·‖` on `ℂ` is a submultiplicative seminorm.**  So every estimate in `RothTaylorBound`
+applies at a complex embedding of a number field — which is exactly what the `𝓞 K` case needs,
+since there the smallness is measured at one embedding while the others carry only the `house`
+bound.  Generalising those estimates from `|·|` on `ℝ` to an arbitrary `SubmultSeminorm` was
+cheaper than a second copy of the peeling induction, and this is the whole cost of the
+`ℂ` case. -/
+theorem submultSeminorm_norm_complex : SubmultSeminorm (norm : ℂ → ℝ) :=
+  ⟨fun a => norm_nonneg a, norm_zero, le_of_eq norm_one, norm_add_le, norm_mul_le⟩
 
 end Index
 

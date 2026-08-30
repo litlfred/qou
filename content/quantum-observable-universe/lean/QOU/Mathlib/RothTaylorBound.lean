@@ -355,20 +355,47 @@ theorem abs_translateMatrix_le_prod (γ : Fin m → ℝ) {G : Fin m → ℝ}
       ≤ 2 ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h) :=
   seminorm_translateMatrix_le_prod submultSeminorm_abs_real γ hG0 hG1 hγ _ n rfl i
 
+/-- `f` of a finite sum is at most the sum of the `f`s.  The structure carries `add_le` only in
+binary form; this is the iterated version every estimate here actually uses. -/
+theorem SubmultSeminorm.sum_le {f : R → ℝ} (hf : SubmultSeminorm f)
+    {ι : Type*} (s : Finset ι) (g : ι → R) : f (∑ i ∈ s, g i) ≤ ∑ i ∈ s, f (g i) := by
+  classical
+  induction s using Finset.induction with
+  | empty => rw [Finset.sum_empty, Finset.sum_empty, hf.map_zero]
+  | insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.sum_insert ha]
+      exact le_trans (hf.add_le _ _) (add_le_add_left ih _)
+
 /-- **The Taylor tail, bounded per coordinate.**  The form step 2 actually consumes: the index
 hypothesis at `α` restricts which `n` appear in the sum, and each surviving term carries
-`∏_h G_h^{n_h−i_h}` rather than a single power of a single `G`. -/
+`∏_h G_h^{n_h−i_h}` rather than a single power of a single `G`.
+
+Stated against an arbitrary `SubmultSeminorm` rather than `|·|` on `ℝ`.  The `ℝ` instance is the
+one step 2 uses over `ℤ`; the `ℂ` instance (`submultSeminorm_norm_complex`) is what the `𝓞 K` case
+needs, because there the estimate has to run at a complex embedding.  Generalising was cheaper
+than a second copy, and the `abs_` statements below are now one line each. -/
+theorem seminorm_coeff_translate_add_le_prod {f : R → ℝ} (hf : SubmultSeminorm f)
+    (α γ : Fin m → R) {G : Fin m → ℝ}
+    (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1) (hγ : ∀ h, f (γ h) ≤ G h)
+    (P : MvPolynomial (Fin m) R) (i : Fin m →₀ ℕ) :
+    f (coeff i (translate (fun j => α j + γ j) P))
+      ≤ ∑ n ∈ (translate α P).support, f (coeff n (translate α P))
+          * (2 ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) := by
+  classical
+  rw [coeff_translate_add]
+  refine le_trans (hf.sum_le _ _) (Finset.sum_le_sum (fun n _ => ?_))
+  exact le_trans (hf.mul_le _ _)
+    (mul_le_mul_of_nonneg_left
+      (seminorm_translateMatrix_le_prod hf γ hG0 hG1 hγ _ n rfl i) (hf.nonneg _))
+
+/-- The real instance. -/
 theorem abs_coeff_translate_add_le_prod (α γ : Fin m → ℝ) {G : Fin m → ℝ}
     (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1) (hγ : ∀ h, |γ h| ≤ G h)
     (P : MvPolynomial (Fin m) ℝ) (i : Fin m →₀ ℕ) :
     |coeff i (translate (fun j => α j + γ j) P)|
       ≤ ∑ n ∈ (translate α P).support, |coeff n (translate α P)|
-          * (2 ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) := by
-  classical
-  rw [coeff_translate_add]
-  refine le_trans (Finset.abs_sum_le_sum_abs _ _) (Finset.sum_le_sum (fun n _ => ?_))
-  rw [abs_mul]
-  exact mul_le_mul_of_nonneg_left (abs_translateMatrix_le_prod γ hG0 hG1 hγ n i) (abs_nonneg _)
+          * (2 ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) :=
+  seminorm_coeff_translate_add_le_prod submultSeminorm_abs_real α γ hG0 hG1 hγ P i
 
 end PerCoordinate
 
@@ -380,36 +407,36 @@ variable {m : ℕ}
 theorem finsuppSum_eq_sum_univ (n : Fin m →₀ ℕ) : (n.sum fun _ e => e) = ∑ h, n h :=
   Finsupp.sum_fintype _ _ (fun _ => rfl)
 
-/-- **The height budget for a translate.**  `|coeff n (translate α P)| ≤ #box · H · (2B)^{Σ r}`
-— the multivariate analogue of `WronskianHeight`'s budget, and the second of the four inputs
-the smallness hypothesis of `le_index_of_abs_lt` needs. -/
-theorem abs_coeff_translate_le (α : Fin m → ℝ) {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, |α h| ≤ B)
-    {P : MvPolynomial (Fin m) ℝ} {r : Fin m → ℕ} (hdeg : ∀ h, degreeOf h P ≤ r h)
-    {H : ℝ} (hH : ∀ k, |coeff k P| ≤ H) (n : Fin m →₀ ℕ) :
-    |coeff n (translate α P)|
+/-- **The height budget for a translate.**  `f (coeff n (translate α P)) ≤ #box · H · (2B)^{Σ r}`
+— the multivariate analogue of `WronskianHeight`'s budget, against any submultiplicative
+seminorm. -/
+theorem seminorm_coeff_translate_le {f : R → ℝ} (hf : SubmultSeminorm f)
+    (α : Fin m → R) {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, f (α h) ≤ B)
+    {P : MvPolynomial (Fin m) R} {r : Fin m → ℕ} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H : ℝ} (hH : ∀ k, f (coeff k P) ≤ H) (n : Fin m →₀ ℕ) :
+    f (coeff n (translate α P))
       ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) := by
   classical
-  have hH0 : 0 ≤ H := le_trans (abs_nonneg _) (hH 0)
+  have hH0 : 0 ≤ H := le_trans (hf.nonneg _) (hH 0)
   have hB0 : (0:ℝ) ≤ 2 * B := by linarith
   have hB1' : (1:ℝ) ≤ 2 * B := by linarith
   have hterm : ∀ k ∈ P.support,
-      |coeff k P * translateMatrix α n k| ≤ H * (2 * B) ^ (∑ h, r h) := by
+      f (coeff k P * translateMatrix α n k) ≤ H * (2 * B) ^ (∑ h, r h) := by
     intro k hk
     have hkr : ∀ h, k h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hk) (hdeg h)
     have hksum : (k.sum fun _ e => e) ≤ ∑ h, r h := by
       rw [finsuppSum_eq_sum_univ]
       exact Finset.sum_le_sum (fun h _ => hkr h)
-    have h1 : |translateMatrix α n k| ≤ (2 * B) ^ (k.sum fun _ e => e) :=
-      seminorm_translateMatrix_le submultSeminorm_abs_real α hB1 hα _ k rfl n
+    have h1 : f (translateMatrix α n k) ≤ (2 * B) ^ (k.sum fun _ e => e) :=
+      seminorm_translateMatrix_le hf α hB1 hα _ k rfl n
     have h2 : (2 * B) ^ (k.sum fun _ e => e) ≤ (2 * B) ^ (∑ h, r h) :=
       pow_le_pow_right₀ hB1' hksum
-    rw [abs_mul]
-    exact mul_le_mul (hH k) (le_trans h1 h2) (abs_nonneg _) hH0
-  calc |coeff n (translate α P)|
-      = |∑ k ∈ P.support, coeff k P * translateMatrix α n k| := by
+    exact le_trans (hf.mul_le _ _)
+      (mul_le_mul (hH k) (le_trans h1 h2) (hf.nonneg _) hH0)
+  calc f (coeff n (translate α P))
+      = f (∑ k ∈ P.support, coeff k P * translateMatrix α n k) := by
         rw [coeff_translate_eq_sum]
-    _ ≤ ∑ k ∈ P.support, |coeff k P * translateMatrix α n k| :=
-        Finset.abs_sum_le_sum_abs _ _
+    _ ≤ ∑ k ∈ P.support, f (coeff k P * translateMatrix α n k) := hf.sum_le _ _
     _ ≤ (P.support.card : ℝ) * (H * (2 * B) ^ (∑ h, r h)) := by
         rw [← nsmul_eq_mul]
         exact Finset.sum_le_card_nsmul _ _ _ hterm
@@ -417,15 +444,72 @@ theorem abs_coeff_translate_le (α : Fin m → ℝ) {B : ℝ} (hB1 : 1 ≤ B) (h
         refine mul_le_mul_of_nonneg_right ?_ (by positivity)
         exact_mod_cast card_support_le_prod_succ hdeg
 
+/-- The real instance. -/
+theorem abs_coeff_translate_le (α : Fin m → ℝ) {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, |α h| ≤ B)
+    {P : MvPolynomial (Fin m) ℝ} {r : Fin m → ℕ} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H : ℝ} (hH : ∀ k, |coeff k P| ≤ H) (n : Fin m →₀ ℕ) :
+    |coeff n (translate α P)|
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) :=
+  seminorm_coeff_translate_le submultSeminorm_abs_real α hB1 hα hdeg hH n
+
 /-- **The Taylor tail with every budget folded in.**  Everything step 2 needs except the
 arithmetic of the exponents: the index hypothesis at `α` restricts the sum, the degree bound
 counts it, the height bound sizes each term, and `S` is whatever uniform bound the caller can
-prove on `∏_h G_h^{n_h−i_h}` over the surviving multi-indices.
+prove on `∏_h G_h^{n_h−i_h}` over the surviving multi-indices. -/
+theorem seminorm_coeff_translate_add_le_index {f : R → ℝ} (hf : SubmultSeminorm f)
+    (r : Fin m → ℕ) (α γ : Fin m → R)
+    {G : Fin m → ℝ} (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1) (hγ : ∀ h, f (γ h) ≤ G h)
+    {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, f (α h) ≤ B)
+    {P : MvPolynomial (Fin m) R} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H : ℝ} (hH : ∀ k, f (coeff k P) ≤ H)
+    {μ : ℚ} (hidx : ((μ : ℚ) : WithTop ℚ) ≤ index r α P)
+    (i : Fin m →₀ ℕ) {S : ℝ} (hS0 : 0 ≤ S)
+    (hS : ∀ n : Fin m →₀ ℕ, (∀ h, n h ≤ r h) → μ ≤ idxWeight r n →
+      (∏ h, (G h) ^ (n h - i h)) ≤ S) :
+    f (coeff i (translate (fun j => α j + γ j) P))
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ)
+        * ((((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)))
+            * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+  classical
+  have hH0 : 0 ≤ H := le_trans (hf.nonneg _) (hH 0)
+  have hB0 : (0:ℝ) ≤ 2 * B := by linarith
+  have hdegT : ∀ h, degreeOf h (translate α P) ≤ r h := by
+    intro h
+    rw [degreeOf_translate_eq]
+    exact hdeg h
+  set CH : ℝ := ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) with hCH
+  have hCH0 : 0 ≤ CH := by rw [hCH]; positivity
+  have hterm : ∀ n ∈ (translate α P).support,
+      f (coeff n (translate α P)) * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h))
+        ≤ CH * ((2 : ℝ) ^ (∑ h, r h) * S) := by
+    intro n hn
+    have hnr : ∀ h, n h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hn) (hdegT h)
+    have hnsum : (n.sum fun _ e => e) ≤ ∑ h, r h := by
+      rw [finsuppSum_eq_sum_univ]
+      exact Finset.sum_le_sum (fun h _ => hnr h)
+    have hμn : μ ≤ idxWeight r n := by
+      have := (le_index_iff r α P _).mp hidx n hn
+      exact_mod_cast this
+    have h1 : f (coeff n (translate α P)) ≤ CH := seminorm_coeff_translate_le hf α hB1 hα hdeg hH n
+    have h2 : (2:ℝ) ^ (n.sum fun _ e => e) ≤ (2:ℝ) ^ (∑ h, r h) :=
+      pow_le_pow_right₀ (by norm_num) hnsum
+    have h3 : (∏ h, (G h) ^ (n h - i h)) ≤ S := hS n hnr hμn
+    have h4 : (0:ℝ) ≤ ∏ h, (G h) ^ (n h - i h) :=
+      Finset.prod_nonneg (fun h _ => pow_nonneg (hG0 h) _)
+    refine mul_le_mul h1 ?_ (by positivity) hCH0
+    exact mul_le_mul h2 h3 h4 (by positivity)
+  calc f (coeff i (translate (fun j => α j + γ j) P))
+      ≤ ∑ n ∈ (translate α P).support, f (coeff n (translate α P))
+          * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) :=
+        seminorm_coeff_translate_add_le_prod hf α γ hG0 hG1 hγ P i
+    _ ≤ ((translate α P).support.card : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+        rw [← nsmul_eq_mul]
+        exact Finset.sum_le_card_nsmul _ _ _ hterm
+    _ ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+        refine mul_le_mul_of_nonneg_right ?_ (by positivity)
+        exact_mod_cast card_support_le_prod_succ hdegT
 
-Producing `S` is the one genuinely remaining piece, and it is where the logarithms live: under
-`r_h·log q_h ≈ L` and `G_h ≤ q_h^{−(2+δ)}`, `∑_h (n_h−i_h)/r_h ≥ μ − idxWeight r i` gives
-`S ≈ exp(−(2+δ)·L·(μ − idxWeight r i))`.  Stating it as a hypothesis keeps that bookkeeping out
-of the estimate and gives it a fixed target. -/
+/-- The real instance. -/
 theorem abs_coeff_translate_add_le_index (r : Fin m → ℕ) (α γ : Fin m → ℝ)
     {G : Fin m → ℝ} (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1) (hγ : ∀ h, |γ h| ≤ G h)
     {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, |α h| ≤ B)
@@ -438,45 +522,9 @@ theorem abs_coeff_translate_add_le_index (r : Fin m → ℕ) (α γ : Fin m → 
     |coeff i (translate (fun j => α j + γ j) P)|
       ≤ ((∏ h, (r h + 1) : ℕ) : ℝ)
         * ((((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)))
-            * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
-  classical
-  have hH0 : 0 ≤ H := le_trans (abs_nonneg _) (hH 0)
-  have hB0 : (0:ℝ) ≤ 2 * B := by linarith
-  have hdegT : ∀ h, degreeOf h (translate α P) ≤ r h := by
-    intro h
-    rw [degreeOf_translate_eq]
-    exact hdeg h
-  set CH : ℝ := ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)) with hCH
-  have hCH0 : 0 ≤ CH := by rw [hCH]; positivity
-  have hterm : ∀ n ∈ (translate α P).support,
-      |coeff n (translate α P)| * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h))
-        ≤ CH * ((2 : ℝ) ^ (∑ h, r h) * S) := by
-    intro n hn
-    have hnr : ∀ h, n h ≤ r h := fun h => le_trans (monomial_le_degreeOf h hn) (hdegT h)
-    have hnsum : (n.sum fun _ e => e) ≤ ∑ h, r h := by
-      rw [finsuppSum_eq_sum_univ]
-      exact Finset.sum_le_sum (fun h _ => hnr h)
-    have hμn : μ ≤ idxWeight r n := by
-      have := (le_index_iff r α P _).mp hidx n hn
-      exact_mod_cast this
-    have h1 : |coeff n (translate α P)| ≤ CH := abs_coeff_translate_le α hB1 hα hdeg hH n
-    have h2 : (2:ℝ) ^ (n.sum fun _ e => e) ≤ (2:ℝ) ^ (∑ h, r h) :=
-      pow_le_pow_right₀ (by norm_num) hnsum
-    have h3 : (∏ h, (G h) ^ (n h - i h)) ≤ S := hS n hnr hμn
-    have h4 : (0:ℝ) ≤ ∏ h, (G h) ^ (n h - i h) :=
-      Finset.prod_nonneg (fun h _ => pow_nonneg (hG0 h) _)
-    refine mul_le_mul h1 ?_ (by positivity) hCH0
-    exact mul_le_mul h2 h3 h4 (by positivity)
-  calc |coeff i (translate (fun j => α j + γ j) P)|
-      ≤ ∑ n ∈ (translate α P).support, |coeff n (translate α P)|
-          * ((2:ℝ) ^ (n.sum fun _ e => e) * ∏ h, (G h) ^ (n h - i h)) :=
-        abs_coeff_translate_add_le_prod α γ hG0 hG1 hγ P i
-    _ ≤ ((translate α P).support.card : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
-        rw [← nsmul_eq_mul]
-        exact Finset.sum_le_card_nsmul _ _ _ hterm
-    _ ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (CH * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
-        refine mul_le_mul_of_nonneg_right ?_ (by positivity)
-        exact_mod_cast card_support_le_prod_succ hdegT
+            * ((2 : ℝ) ^ (∑ h, r h) * S)) :=
+  seminorm_coeff_translate_add_le_index submultSeminorm_abs_real r α γ hG0 hG1 hγ hB1 hα
+    hdeg hH hidx i hS0 hS
 
 end Budget
 

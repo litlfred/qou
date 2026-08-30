@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T10:49:19Z
-updated_at: 2026-08-19T16:27:34Z
+updated_at: 2026-08-30T07:27:59Z
 ---
 
 
@@ -538,3 +538,43 @@ though the bound were already there.
 `RothIndex.lean` 27 declarations, `GenWronskian.lean` 18, `MvGenWronskian.lean` 21 — **66
 declarations of Roth prerequisites**, all sorry-free on the standard axiom set, none of
 which existed in Mathlib.
+
+## 2026-08-30 -- the shortcut assembly would have been dishonest, so it was not taken
+
+Steps 1-4 are individually done (qou-qi0t, qou-86j4 + qou-jm52, qou-4lbh, qou-ujl8). The obvious
+next move was a theorem composing all four. I did not write it, and the reason is worth recording
+because the result would have LOOKED complete.
+
+THE TRAP. Step 2's O_K entry point, le_index_of_norm_lt, takes the per-embedding smallness of the
+translated coefficients as a hypothesis -- exactly as its Z sibling takes |coeff| < 1/prod q^r. An
+assembly that supplies that hypothesis from outside would type-check, would chain steps 2, 3 and 4,
+and would NEVER USE STEP 1. Step 1's only output is a lower bound on the index at alpha, and the
+sole path from that to step 2's conclusion runs through the analytic estimate that produces the
+smallness. Take the smallness as given and step 1 becomes decorative: the composed theorem would
+be true, axiom-clean, and silently missing a quarter of the proof.
+
+That is the same failure mode as correction 24 (a weaker-but-true statement that costs an exponent
+and passes every check) except worse, because the missing piece would be an entire step rather
+than a factor.
+
+WHAT WAS ACTUALLY BLOCKING. The analytic estimate (RothTaylorBound) was stated for |.| on R, and
+the O_K case needs it at a COMPLEX embedding: smallness at phi_0, and only the house bound at the
+other conjugates. So the Z chain could not feed the O_K vanishing criterion at all.
+
+FIXED BY GENERALISING, NOT COPYING. The peeling induction was already generic over a
+SubmultSeminorm; only the four abs_ wrappers were R-specific. They are now
+seminorm_coeff_translate_add_le_prod, seminorm_coeff_translate_le and
+seminorm_coeff_translate_add_le_index over an arbitrary SubmultSeminorm, with the abs_ statements
+one line each, plus SubmultSeminorm.sum_le (the iterated form of add_le, which the structure
+carries only in binary form). submultSeminorm_norm_complex is the C instance, and it is the whole
+cost of the C case. Every downstream module -- RothIndexGap, RothContradiction, RothNormalisation
+-- rebuilds unchanged.
+
+NEXT, and now unblocked: run the C-valued Taylor estimate at phi_0 against step 1's house bounds
+at the other conjugates, feed le_index_of_norm_lt, and only then compose with steps 3 and 4. The
+assembly is worth writing once it carries step 1 rather than stepping around it.
+
+STILL OUT OF SCOPE after that: the parameter SELECTION -- choosing q_1 large then q_2, ..., q_m
+from an infinite sequence of good approximations with q_{h+1} >> q_h. That is what turns a
+contradiction into "finitely many solutions", and it is what step 5 (not LiouvilleWith) needs.
+
