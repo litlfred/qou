@@ -597,7 +597,19 @@ user's last message, not the most recently mentioned file.
       It normalises both producer versions through `ast.unparse` (comments,
       docstrings and formatting gone) and reports which drifts can actually
       move a number. Re-measured three times across 1564 commits of `main`,
-      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      **zero** of ~700 self-stale witnesses were safe to refresh.
+
+      > **Re-measured a FOURTH time 2026-08-30 on `main` `655a80ee84d`, and the
+      > answer is unchanged where it matters: `cosmetic = 0`.** The denominator
+      > and the split both moved, so quote these rather than the figures above:
+      > **559 decided** (was 628 in the committed witness), **substantive 186 /
+      > 33.3 %**, **rewritten 309 / 55.3 %**, **unresolvable 60**,
+      > `cosmetic_import_cone_drift` **4**. So the standing advice holds on a
+      > fourth independent run — **not one self-stale witness in the corpus is
+      > safe to refresh**, and an idle pass should spend its budget on sidecars.
+      > Recorded in `computations/witness-staleness-triage.witness.json`.
+
+      Source-
       identical is necessary but not sufficient, and the two extra gates are
       the ones that bite:
 
@@ -787,7 +799,8 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      And ~49 % of the backlog is `rewritten` (**55.3 % as re-measured
+      2026-08-30**; see the fourth-run note above) — the recorded `commitSha`
       resolves to nothing. **This text previously named rebase-merge as the
       cause; that is confirmed for only 46 of 376.** Agent clones here are
       **shallow**, so a sha can be missing merely because the history was never
