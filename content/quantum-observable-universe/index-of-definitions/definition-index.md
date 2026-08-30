@@ -1,4 +1,4 @@
-**1281** indexed entries across 7 categories.
+**1285** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -119,6 +119,7 @@
 | [def:frobenius-pairing](#def:frobenius-pairing) | Frobenius pairing | Ch 1 | `qou:QOU.FrobeniusPairing` |
 | [def:frobenius-self-pairing-chirality](#def:frobenius-self-pairing-chirality) | Frobenius self-pairing chirality factor $a_K(\beta) = \tau(\beta\beta^{\ast})/\tau(1)$ | Ch 12 | `qou:QOU.BraidKnot.chiralityFactor` |
 | [def:fundamental-object](#def:fundamental-object) | Fundamental object | Ch 1 | `qou:QOU.FundamentalObject` |
+| [def:fusion-process](#def:fusion-process) | Fusion process | Ch 8 | `qou:QOU.Interactions.FusionProcessBlock.Process.isRearrangement` |
 | [def:gauge-action-groupoid](#def:gauge-action-groupoid) | Gauge action groupoid | Toward the Standard Model | `qou:QOU.StandardModel.GaugeActionGroupoid` |
 | [def:gravitational-constant](#def:gravitational-constant) | Gravitational constant from information geometry | Ch 20 | `qou:QOU.Information.gravitationalConstant` |
 | [def:habiro-ring](#def:habiro-ring) | Habiro ring $\widehat{\mathbb{Z}[q]}$ | Ch 12 | `qou:QOU.HabiroRing.HabiroElement` |
@@ -133,6 +134,7 @@
 | [def:information-bandwidth](#def:information-bandwidth) | Information bandwidth per Planck time | Ch 20 | `qou:QOU.Information.informationBandwidth` |
 | [def:information-theoretic-time](#def:information-theoretic-time) | Information-Theoretic Time | Ch 20 | `qou:QOU.informationTheoreticTime` |
 | [def:inter-shell-operator](#def:inter-shell-operator) | Inter-shell torus-knot operator $\Phi_{\mathrm{shell}}^{(\ell)}$ | Ch 14 | `qou:QOU.Archimedean.InterShellOperator` |
+| [def:interaction-sector-taxonomy](#def:interaction-sector-taxonomy) | Interaction-sector taxonomy | Ch 8 | `qou:QOU.Interactions.SectorTaxonomy.Sector` |
 | [def:poisson-object](#def:poisson-object) | Internal Poisson object | Ch 1 | `qou:QOU.PoissonObject` |
 | [def:involutive-structure](#def:involutive-structure) | Involutive structure ($\ast$-structure) | Ch 1 | `qou:QOU.InvolutiveStructure` |
 | [def:isotope-knot](#def:isotope-knot) | Isotope as a knot variant of fixed proton block | Ch 8 | `qou:QOU.BraidKnot.IsotopeKnot` |
@@ -309,7 +311,6 @@
 | [thm:rivin-concavity-one-tetrahedron](#thm:rivin-concavity-one-tetrahedron) | Rivin concavity for one ideal tetrahedron: $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ is strictly concave along every line in the angle simplex | Ch 12 | `qou:QOU.Knot.Rivin.strictConcaveOn_tetVolLine` |
 | [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 | `qou:QOU.AlgebraicSubstrate.substrate_self_duality` |
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 12 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
-| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 12 | `qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le` |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 | `qou:QOU.AppendixSurreals.liouvilleWith_separates` |
 | [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
@@ -725,8 +726,8 @@
 | [prop:qns-shell-tail-collapse](#prop:qns-shell-tail-collapse) | Per-amplitude tail collapse in the discrete $q$-shell hierarchy | Ch 18 | `qou:QOU.FluidDynamics.PhysicalLayerLeray.trajectory_tail_collapse` |
 | [prop:qbeta-per-block-chi-closed-forms](#prop:qbeta-per-block-chi-closed-forms) | Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$ | Ch 7 | `qou:QOU.BraidKnot.chi_block_antipode_pairing` |
 | [prop:per-braid-mass-tower](#prop:per-braid-mass-tower) | Per-braid mass tower | Ch 12 | `qou:QOU.BraidKnot.perBraidMassTower` |
-| [prop:selection-rule-anchors-c1-c3](#prop:selection-rule-anchors-c1-c3) | Per-component selection rule $\frac{1}{c+1}\sum_{\lambda\vdash c+1} \dim_q V_\lambda$ at c=1, c=3 | Ch 11 | `qou:QOU.Mass.selection_rule_c3_eq_family_a` |
-| [prop:selection-rule-c2-prediction](#prop:selection-rule-c2-prediction) | Per-component selection rule at c=2: $\mathrm{lw}(2) = (q+1)^2/(3q)$ | Ch 11 | `qou:QOU.Mass.selection_rule_c2_eq_closed_form` |
+| [prop:selection-rule-anchors-c1-c3](#prop:selection-rule-anchors-c1-c3) | Per-component selection rule $\frac{1}{c+1}\sum_{\lambda\vdash c+1} \dim_q V_\lambda$ at c=1, c=3 | Ch 11 | `qou:QOU.Mass.selection_rule_c3_anchor_derived` |
+| [prop:selection-rule-c2-prediction](#prop:selection-rule-c2-prediction) | Per-component selection rule at c=2: $\mathrm{lw}(2) = (q+1)^2/(3q)$ | Ch 11 | `qou:QOU.Mass.selection_rule_c2_prediction_derived` |
 | [prop:six-term-per-derivation-weights](#prop:six-term-per-derivation-weights) | Per-derivation weights for the six-term mass formula | Ch 12 | `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly` |
 | [prop:per-nucleon-shift-additive-linearity](#prop:per-nucleon-shift-additive-linearity) | Per-new-nucleon additive linearity: $\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering | Ch 12 | `qou:QOU.BraidKnot.per_nucleon_shift_additive_linearity` |
 | [prop:q-heat-kernel-peter-weyl](#prop:q-heat-kernel-peter-weyl) | Peter--Weyl decomposition of the $q$-heat kernel (archimedean) | Ch 20 | `qou:QOU.qHeatKernelPeterWeyl` |
@@ -829,6 +830,7 @@
 | [prop:baryon-product-from-alt](#prop:baryon-product-from-alt) | The baryon integrand $\prod_k dc_k/dz$ is the $\mathrm{Alt}^3$-isotype of the color-tube Jacobian | Ch 14 | `qou:QOU.Archimedean.baryonProductFromAlt` |
 | [prop:baryon-octet-decomposition](#prop:baryon-octet-decomposition) | The baryon octet and the degeneracy of its weight diagram | Ch 9 | `qou:QOU.Eightfold.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0` |
 | [prop:binding-genfun-qdifference](#prop:binding-genfun-qdifference) | The binding generating function's q-difference equation gives a depth-d recurrence | Ch 12 | `qou:QOU.Mass.binding_qdifference_recurrence` |
+| [prop:brunnian-binding-channel](#prop:brunnian-binding-channel) | The binding multiplier is the unsigned coordination count, not a Gauss linking number: forced by Brunnian topology and bar-parity | Ch 12 | `qou:QOU.Mass.BrunnianBindingChannel.brunnian_energy_is_count_channel` |
 | [prop:categorical-coordinate-ring](#prop:categorical-coordinate-ring) | The categorical-coordinate ring $R[i, q^{\pm 1}]$ of chart-transition data on $\mathbb{P}_q(V)$ | Ch 2 | `qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing` |
 | [prop:sw-classical-jet-exactness](#prop:sw-classical-jet-exactness) | The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$ | Ch 6 | `qou:QOU.Brings.classical_jet_period_zero` |
 | [prop:c1-theta-zero-locus-and-pole-divisor](#prop:c1-theta-zero-locus-and-pole-divisor) | The connection matrix of the ramified binding operator is p-elliptic and its poles are theta zeros; the q-theta vanishes exactly on −p^ℤ | Ch 12 | `qou:QOU.QBeta.C1Poles.qThetaC_eq_zero_iff` |
@@ -1040,6 +1042,7 @@
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 | `qou:QOU.QGeometricLanglands.QGeometricLanglandsConjecture` |
 | [conj:q-oper-hecke](#conj:q-oper-hecke) | $q$-Opers are $q$-Hecke eigensheaves | Ch 22 | `qou:QOU.QGeometricLanglands.q_oper_hecke` |
 | [conj:mirror-3d-3d-correspondence](#conj:mirror-3d-3d-correspondence) | 3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\mathcal{N}{=}2$ gauge theories | Ch 22 | `qou:QOU.BraidsAndKnots.Mirror3d3dCorrespondence` |
+| [conj:adelic-critical-line-persistence](#conj:adelic-critical-line-persistence) | Adelic persistence of the critical line | Ch 19 | `qou:QOU.BraidKnot.AdelicCriticalLinePersistence` |
 | [conj:hyperbolic-volume-transcendence](#conj:hyperbolic-volume-transcendence) | Algebraic independence of QOU hyperbolic volumes | Ch 14 | `qou:QOU.Archimedean.HyperbolicVolumeIndependence` |
 | [conj:diophantine-birthday](#conj:diophantine-birthday) | Algebraic vs transcendental numbers are separated by birthday trajectory | Ch 26 | `qou:QOU.AppendixSurreals.DiophantineBirthday` |
 | [conj:algebraic-geometric-dilog-equivalence](#conj:algebraic-geometric-dilog-equivalence) | Algebraic-geometric dilogarithm equivalence: $\Phi_n(x; q)$ poles map to ideal-tetrahedron cusps | Ch 12 | `qou:QOU.QPochhammer.algebraic_geometric_equivalence` |
@@ -1182,6 +1185,7 @@
 | [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 25 | `qou:QOU.AppendixSurreals.LocalInfinitesimalField` |
 | [conj:tower-geometric-lower-bound](#conj:tower-geometric-lower-bound) | Super-exponential brane-tower growth (GAP-A-3) | Ch 12 | `qou:QOU.Mass.LevelSelection.TowerGeometricLowerBound` |
 | [conj:surreal-limit-transfer](#conj:surreal-limit-transfer) | Surreal limit transfer: limits as standard-part equalities via an $\omega$-evaluation | Ch 26 | `qou:QOU.AppendixSurreals.SurrealLimitTransfer` |
+| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 25 | `qou:QOU.AppendixSurreals.QCollatz` |
 | [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 25 | `qou:QOU.AppendixSurreals.QBirchSwinnertonDyer` |
 | [conj:c1-ggm-bar-parity-faces](#conj:c1-ggm-bar-parity-faces) | The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces | Ch 12 | `qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity` |
