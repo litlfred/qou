@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T11:24:04Z
-updated_at: 2026-08-30T11:24:54Z
+updated_at: 2026-08-30T11:48:04Z
 ---
 
 `computations/audits/hardcoded_q0_literal_families_audit.py` exists to find
@@ -50,3 +50,28 @@ re-baselined deliberately rather than as a side effect.
 
 Documented in the audit's own source (comment-only; verified zero non-comment
 lines changed) so the next reader is not misled by its output.
+
+
+## THIRD BLIND SPOT: scope (measured 2026-08-30)
+
+`_SCAN_ROOT = HERE.parent` resolves to `computations/` and nothing else, so
+every producer outside that tree is unscanned. Measured .py files carrying a
+q0-pin literal outside `computations/`, excluding `_deprecated`:
+
+    19  docs/audits/scripts          <- EMITS COMMITTED WITNESSES; entirely unscanned
+     3  qou-mass/src/qou_mass/_internal   (generated mirror — never hand-edit)
+     2  tools/qou-substrate/python/qou_substrate
+     2  tools/pyhecke/tests
+     2  tools/pyhecke/python/pyhecke
+     1  tools/qou-substrate/tests
+     1  tests
+
+`docs/audits/scripts/` is the one that matters. Found via `qou-tekx`: 6 of the
+10 literal-transcribing producers behind unstamped off-canonical witnesses are
+`docs/audits/scripts/keystone_*_probe.py`, invisible to this audit purely
+because of where they live.
+
+So the three blind spots are **quotes required**, **prefix pinned to A/B**, and
+**scope limited to computations/** — and the same caution applies to all three:
+widening without extending the triage classes would flag the class-(b) sites
+that carry a superseded value in order to detect it.

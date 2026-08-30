@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T11:24:04Z
+updated_at: 2026-08-30T11:48:04Z
 ---
 
 ## The ruling
@@ -120,3 +120,56 @@ Fix at the producer for those three (read the anchor, do not transcribe it),
 then re-measure. Do NOT bulk-migrate the other 70 — the 45 unstamped ones need
 their anchor established first, and an unstamped witness is not evidence of
 which pin it used.
+
+
+## THE 45 UNSTAMPED, TRIAGED 2026-08-30 — 40 producers, a long tail, not a sweep
+
+45 witnesses carry an off-canonical muon value with NO `q0Anchor`, across **40
+distinct producers**; all but two are 1x. Classified by whether the producer
+READS a declared pin or TRANSCRIBES a literal, because only the second is a
+one-line fix:
+
+| bucket | n | what it means |
+|---|---|---|
+| **READS a declared pin** | 11 | producer is CORRECT; the witness is merely STALE — needs a re-run, not an edit |
+| **TRANSCRIBES a literal** | 10 | same defect as the he_nu_sdp trio; one-line fix each |
+| **BOTH** | 9 | reads a pin AND carries a literal — triage individually, may be a deliberate comparison |
+| **neither/unclear** | 4 | needs reading |
+| **producer not found** | 11 | 5 have no `scriptFile`; 2 say so explicitly ("deferred", "legacy") |
+
+**The 11 READS are the good news and the easy half**: nothing is wrong with the
+code, the numbers simply predate the 2026-08-28 anchor move. `d_from_scratch`,
+`compound_binding_via_differences`, `neutron_error_diagnostic`,
+`build_six_term_substrate_model_b`, `per_irrep_pole_atom`, the two `ksel2id_*`,
+`qbeta_habiro_integrality_kill_test`, `lambda_scale_homflypt_skein_recursion`,
+`probe_mup_dressing_attribution`, `probe_trace_convention_production_impact`.
+Re-run cost unmeasured — check each before spending an idle pass.
+
+## A THIRD DETECTOR BLIND SPOT (goes to `qou-2whe`)
+
+**6 of the 10 transcribers live in `docs/audits/scripts/`** — all six
+`keystone_*_probe.py`. That directory is outside
+`hardcoded_q0_literal_families_audit.py`'s `_SCAN_ROOT`, which resolves to
+`computations/` and nothing else. Measured, .py files carrying a pin literal
+OUTSIDE `computations/`:
+
+    19  docs/audits/scripts       <- writes witnesses, entirely unscanned
+     3  qou-mass/src/.../_internal   (generated mirror — never hand-edit)
+     2  tools/qou-substrate/python/qou_substrate
+     2  tools/pyhecke/tests
+     2  tools/pyhecke/python/pyhecke
+     1  tools/qou-substrate/tests
+     1  tests
+
+So the audit's scope is a third blind spot alongside the quotes requirement and
+the A/B-pinned prefix. `docs/audits/scripts/` is the one that matters — those
+scripts emit committed witnesses.
+
+## Recommended order
+
+1. The 10 transcribers (one-line each; 6 are the keystone probes, likely one
+   shared edit).
+2. The 11 READS — re-run only, after checking cost per producer.
+3. The 9 BOTH and 4 unclear — read individually; a literal beside a read is
+   often a deliberate cross-anchor comparison and must NOT be migrated.
+4. The 11 without a producer — provenance first, migration never.
