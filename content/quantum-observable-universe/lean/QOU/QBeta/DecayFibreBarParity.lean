@@ -178,4 +178,47 @@ theorem fullBar_add_barEven {q z zbar f : R} (h : FullBar q z zbar) :
   unfold FullBar at h ⊢
   rw [h]; ring
 
+
+/-! ### What actually pins `z_D`, and what bar-parity does NOT do
+
+Three conditions are in play and they do different jobs. Keeping them apart is
+the point of this section, because conflating them is how "bar-parity closes the
+gap" would get written down, and that is false.
+
+* **the two-row cap** `y_(1³) = 0` — narrows to `{q, z_D}` (`AdmissibleRoots`).
+  For the DECAY channel this is a RULING, not a derivation.
+* **faithfulness** `y_(2,1) ≠ 0` — the corpus's own `hfaith` hypothesis.
+  `y_(2,1)(q) = 0` exactly, so the augmentation is the trivial-block-only trace
+  and is not faithful. Within the admissible pair this picks `z_D`.
+* **full-bar** — derived above. Excludes `z_C` and the CONSTANT `z ≡ 1`.
+
+**The limitation, stated so it cannot be quoted away.** `fullBar_add_barEven`
+plus the fact that every constant is bar-even means `z_D + c` is full-bar for
+ANY constant `c`. So a full-bar parameter can take ANY value at the substrate
+pin, and bar-parity therefore constrains the FUNCTIONAL FORM of `z(q)`, not its
+value. `one_not_fullBar` excludes `z ≡ 1` as a choice of parameter; it does NOT
+exclude the required VALUE (`z_required ≈ 0.99850`), which a full-bar function
+could attain.
+
+Consequently the narrowing to `{q, z_D}` — and hence the exclusion of what the
+data wants — still rests on the cap, which for this channel is the ruling. -/
+
+/-- The `(2,1)` Ocneanu weight, as a function of `q` and the Markov parameter. -/
+def y21 (q z : R) : R :=
+  q * (q - z) * (q * z + 1) / ((q ^ 2 - q + 1) * (q ^ 2 + q + 1))
+
+/-- **The augmentation is NOT faithful:** `y_(2,1)(q) = 0` exactly. This is what
+picks `z_D` out of the admissible pair `{q, z_D}` — and it is structural, being
+the corpus's own `hfaith` hypothesis, rather than a further ruling. -/
+theorem y21_at_augmentation (q : R) : y21 q q = 0 := by
+  unfold y21
+  rw [sub_self]
+  simp
+
+/-- **Every constant is bar-even**, hence `z_D + c` is full-bar whenever `z_D`
+is. Together with `fullBar_add_barEven` this is the precise sense in which
+bar-parity cannot constrain the value at a point. -/
+theorem fullBar_add_const {q z zbar : R} (c : R) (h : FullBar q z zbar) :
+    FullBar q (z + c) (zbar + c) := fullBar_add_barEven h
+
 end QOU.QBeta.DecayFibreBarParity
