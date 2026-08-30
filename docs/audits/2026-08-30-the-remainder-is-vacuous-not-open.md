@@ -23,7 +23,7 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 25 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 26 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -32,8 +32,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses (machine-proved)** | **25** |
-| unproven — INCONCLUSIVE, see method below | 27 |
+| **INHABITED with no hypotheses (machine-proved)** | **26** |
+| unproven — INCONCLUSIVE, see method below | 26 |
 | skipped — generator could not build a model at all | 27 |
 | hand-verified before any tooling existed | 5 of 5 |
 
@@ -43,7 +43,7 @@ inhabited by `Unit` and zero. So is `MassVolumeFactorization`, which cites
 Thurston and Murakami–Murakami; so is `HasArgumentPrinciple`, whose all-zero
 model takes the pole set to be empty.
 
-The 25:
+The 26:
 
 `AlgebraicQuantumVolumeSpecializationContext`, `BetaStabilityContext`,
 `BindingAssemblyContext`, `CatEigenspaceDecompositionContext`,
@@ -56,7 +56,8 @@ The 25:
 `NucleonOrderingFactorizationContext`, `PairSkeinMassContext`,
 `RMatrixBraidingContext`, `ReidemeisterMassInvarianceContext`,
 `SharedDenominatorCuspHolonomy`, `SixTermMassFormulaContext`,
-`WedderburnWeightCanonicalContext`, `Wigner2CoefficientContext`.
+`WedderburnWeightCanonicalContext`, `Wigner2CoefficientContext`, and
+`CPTClosure` (added by the sibling-import fix; see the refutation below).
 
 A class inhabited that cheaply constrains nothing. A `[C]` binder on it assumes
 nothing, and the downstream `[C]`-conditional declaration is therefore not
@@ -190,15 +191,61 @@ and compiles it. The asymmetry is deliberate:
   did not satisfy the fields.
 
 So the reported count is a **lower bound**, and the complement must never be
-quoted as a count of contentful classes. The 25 above is a floor, not an
-estimate — 27 `unproven` and 27 `skipped` are 54 classes about which this run
-says *nothing*.
+quoted as a count of contentful classes. The 26 above is a floor, not an
+estimate — 26 `unproven` and 27 `skipped` are 53 classes about which these runs
+say *nothing*.
 
 Two calibration points for how soft that floor is. Fixing three generator gaps
 took the count from **15 to 25** in one pass, without touching a single class —
 so the floor moves with the tool, not with the corpus. And I first wrote **26**
 into this document, having counted the summary line itself as a result; the
 figure is 25.
+
+### 🛑 But "keep fixing the tool" is REFUTED — measured twice, and both were mine
+
+The paragraph above invites an obvious inference: the gaps have all been the
+tool, so keep fixing the tool and the floor keeps rising. **I made that
+inference, recommended it, and then measured it twice. It does not hold.**
+
+**Attempt 1 — sibling imports.** The prober probes a content-block sibling by
+compiling a copy of its file, which inherits *that file's* imports; most
+siblings do not import `Mathlib.Tactic`, so `linarith` came back *"unknown
+tactic"*. Real defect, and I verified it by hand on `DirectionSanityGateClass`:
+`unproven` in the sweep, **INHABITED, exit 0** once the import was prepended. I
+then wrote *"15 sibling classes judged with a crippled tactic set"* into a
+commit message and a PR body, on the strength of that one case.
+
+**Measured over all 54 undecided classes: the fix converts exactly ONE**
+(`CPTClosure`). Not 15. The floor is **26**, not the ~40 the inference implied.
+
+**Attempt 2 — unfolding the claim's own constants.** The reason
+`DirectionSanityGateClass` still failed is that the discharge cannot unfold a
+`noncomputable def`: the goal comes back as
+`|0 - qBetaTargetMagnitudeAtQ0| ≤ directionSanityThreshold * …`, verbatim. My
+hand-proof used a bespoke `rw [qBetaTargetMagnitudeAtQ0, directionSanityThreshold,
+abs_le]; constructor <;> norm_num`, which the generic list does not contain. So I
+made the generator pass each claim's own constants into `norm_num`'s simp set.
+
+**Measured on the six gate classes: it converts ZERO** — `DirectionSanityGateClass`
+included, the very class whose hand proof motivated it. That patch was reverted
+rather than committed: a change with no measured yield is not an improvement.
+
+**What this actually establishes**, stated narrowly:
+
+- The **hand proof stands** — `DirectionSanityGateClass` *is* inhabited, so at
+  least one `unproven` verdict is definitely a harness artifact.
+- **How many more, nobody knows.** Two systematic attempts to convert them
+  yielded 1 and 0. There is no evidence the remainder is mostly harness, and
+  the two data points argue against it.
+- So the honest reading of `unproven` + `skipped` is what this document already
+  says — *unmeasured* — and the tempting stronger reading, "mostly the tool",
+  is now **refuted by measurement**. A per-class hand proof is the only method
+  shown to work on them, at roughly the cost the sizing audit originally
+  estimated.
+
+Recorded at this length because the error is the one this whole arc is about: I
+generalised from a single verified case to a population, put the number in a
+commit message and a PR body, and only then measured it.
 
 The `--selftest` pins the five classes inhabited by hand before the script
 existed. That guard is load-bearing rather than ceremonial: **the first version
