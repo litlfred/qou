@@ -158,7 +158,12 @@ NF_BASIS: list[tuple[int, ...]] = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES: list[str] = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 # TR_M weights — symbolic via z.  Word lengths 0,1,1,2,2,3.
-TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, z**3]
+# 6th weight is the Ocneanu value on the longest element:
+# tr(T_{s1s2s1}) = z*tr(T_{s1}^2) = z(h z + 1) = h z^2 + z, from the
+# defining Markov property tr(x T_n y) = z tr(xy) plus T^2 = h T + 1.
+# z^3 (the z^len(w) guess) is NOT a trace: it is non-cyclic, so the
+# Gram tr(b_i b_j) comes out asymmetric. Bean qou-isu5.
+TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, h * z**2 + z]
 
 INV_TREFOIL_G0_SYM = [(ONE, -h), (ONE, -h)]  # σ₀⁻¹σ₀⁻¹
 INV_TREFOIL_G1_SYM = [(ONE, -h)]              # σ₁⁻¹

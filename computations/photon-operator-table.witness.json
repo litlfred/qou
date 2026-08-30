@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:51.773892+00:00",
-  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
+  "computedAt": "2026-08-30T09:19:53.562461+00:00",
+  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
   "assertions": [
     {
       "name": "T_{1,0} e⁻ pair count",
@@ -54,10 +54,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "photon-operator-table",
   "scriptFile": "photon_operator_table.py",
-  "scriptHash": "3621e2921887",
+  "scriptHash": "c6eb1d7adea9",
   "scriptCommitSha": "d4c8cceb49842afbb17884447af09db6b839bdad",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
