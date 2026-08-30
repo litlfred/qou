@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T10:06:30.085097+00:00",
-  "commitSha": "2c9e803d545c05e3f370a036cd12fa0b7778df62",
+  "computedAt": "2026-08-30T13:12:02.623506+00:00",
+  "commitSha": "f17e4467ea8c0897bf0f4330f2dcd6111fff08ad",
   "assertions": [
     {
       "name": "bond_strengthens_from_z1_to_z2",
@@ -45,8 +45,8 @@
   "durationMs": 5,
   "computation": "coordination-weight-rise-and-turnover",
   "scriptFile": "coordination_weight_rise_and_turnover_probe.py",
-  "scriptHash": "effa6489cf39",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "11aa50494a9a",
+  "scriptCommitSha": "c9d47234ce99f23bcfce5a38bcd1afedea9c5fdb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
