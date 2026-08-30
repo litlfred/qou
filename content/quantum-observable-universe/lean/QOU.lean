@@ -1269,6 +1269,14 @@ import QOU.Mathlib.RothTaylorBound
 -- normalisation r_h log q_h ~ L in the only form the estimate needs -- the same fact
 -- RothGammaProducer discharges for Gamma_m's growth clause.
 import QOU.Mathlib.RothIndexGap
+-- Step 4: steps 2 and 3 collide.  Both bound the SAME number -- the index of the
+-- auxiliary polynomial at the rational point -- one from below, one from above, and
+-- Roth's theorem is that for the right parameters they cannot both hold.  Nothing was
+-- mathematically missing; what was missing is that the two had never been written in
+-- one place, so nothing forced their interfaces to agree (algebraMap vs Int.castRingHom,
+-- and Gamma_m's p,q against the numerators and denominators of the approximations, which
+-- are unrelated despite the shared letters).
+import QOU.Mathlib.RothContradiction
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
