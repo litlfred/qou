@@ -175,8 +175,16 @@ def _load_canonical_t1_model_b() -> dict:
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
-            f"missing Model B T1 witness: {path}.  Run "
-            f"probe_sdp_canonical_paper_formula.py first."
+            f"missing Model B T1 witness: {path}. "
+            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
+            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
+            f"in this repo, GitHub code search finds it only in these error "
+            f"strings, and no commit in this clone's history touches it — so "
+            f"the old instruction to 'run it first' could not be followed by "
+            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
+            f"registry's deuteron row is blocked on the 2026-08-29 owner "
+            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
+            f"Model A (3A-strand) is the live T1 route."
         )
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}
