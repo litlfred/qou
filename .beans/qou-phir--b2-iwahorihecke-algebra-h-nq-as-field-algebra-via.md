@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T17:50:14Z
+updated_at: 2026-08-30T17:54:41Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -590,3 +590,50 @@ plus the generic levers — and `murphyIndex_card` makes spanning unnecessary wh
 reusable as-is. So the estimate was too pessimistic, in a way that would have discouraged the next
 agent from starting. The honest scope is: **one new definition (`lead`), two transferable proofs,
 and one genuinely new `q`-deformed support argument.**
+
+
+### Refinement to the above — `lead` has a missing prerequisite, and a possible way around it
+
+The note above calls `lead` "the one genuinely new object" and leaves it at that. Measured, it is
+**harder than that reads**, and the reason is worth stating before someone starts.
+
+**Murphy's canonical leading term is `d(s)⁻¹ · w_λ · d(t)`, where `w_λ` is the LONGEST ELEMENT of
+the Young subgroup — and no longest-element construction exists here or in Mathlib.**
+
+Verified against a positive control so the absence is a measurement, not a failed grep:
+
+| symbol | oleans in the pinned Mathlib |
+|---|---|
+| `CoxeterSystem` | 3 |
+| `wordProd` | 3 |
+| `IsReduced` | 58 |
+| **`longestElement`** | **0** |
+| **`longest_element`** | **0** |
+
+And nothing in `QOU/` constructs one. The three corpus hits that look like candidates are not:
+`DeltaLambdaSignRule.sgnLongest` is the **sign** `(-1)^{C(k,2)}` (a formula, no group element),
+`GZThirdKnotRankGrading.w0Multiplicities` is a literal `[2,1,0]`, and
+`TwoRowRootsAndAugmentation.trLongest` is a trace polynomial `z(hz+1)`. Names containing "longest"
+are not longest elements.
+
+**But `Triangular` is weaker than Murphy's canonical statement, and that is the opening.** Its three
+fields ask only for *some* injective `lead` with a unit diagonal and support bounded above — not for
+*the* leading term of the classical theory. So there are two routes, and the second may skip the
+missing prerequisite entirely:
+
+* **(a) Canonical.** Construct `w_λ` (longest element of a Young subgroup, by length maximisation
+  over a `Fintype`), then `lead (s,t) := d(s)⁻¹ w_λ d(t)`. This is the textbook object and it makes
+  `supp_le` the classical argument — but the construction is a genuine new prerequisite, plausibly
+  Mathlib-upstreamable in its own right.
+* **(b) Opportunistic.** Pick any `lead` making the three fields provable. The order on
+  `Equiv.Perm (Fin (n+1))` is itself free — `exists_linearOrder_of_partialOrder` accepts **any**
+  partial order — so `lead` and the order can be chosen together to fit the proof rather than the
+  tradition.
+
+**I have not established that (b) works**, and it may not: the freedom in the order is real, but
+`lead_inj` still has to hold across all tableau pairs, which is what forces something canonical in
+the classical treatment. Recording it as a route to *test*, not a route that works.
+
+Net effect on the scope stated above: `lead` is not a one-liner, and the "three field proofs" figure
+should be read as **three field proofs plus either a longest-element construction or a demonstration
+that (b) avoids one.**
