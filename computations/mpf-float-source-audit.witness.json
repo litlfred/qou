@@ -4,11 +4,36 @@
   "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
   "data": {
     "counts": {
-      "benign": 12,
-      "advisory-cast": 14
+      "advisory-cast": 16,
+      "marked-cast": 1,
+      "benign": 12
     },
     "defects": [],
     "rows": [
+      {
+        "file": "computations/audits/assertion_drain_verify.py",
+        "line": 114,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "d = mpf(float(a_num))",
+        "fix": null
+      },
+      {
+        "file": "computations/audits/assertion_drain_verify.py",
+        "line": 183,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "off = abs(a_num - mpf(float(a_num))) / abs(a_num)",
+        "fix": null
+      },
+      {
+        "file": "computations/audits/assertion_drain_verify.py",
+        "line": 266,
+        "class": "marked-cast",
+        "arg": "float(...)",
+        "source": "(\"reserialized-double\", classify(0.1, mp.nstr(mpf(float(0.1)), 40)),",
+        "fix": null
+      },
       {
         "file": "computations/audits/e0_calibration_audit.py",
         "line": 293,
@@ -221,10 +246,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "cdeb737aadf9",
-  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "e2f7ae13f7b316ad06123d127577dabcb3917875",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "commitSha": "cf2689484ea0ca14289433eb2860b2027813abd9",
   "engine": "python",
-  "computedAt": "2026-08-30T09:02:27.815393+00:00",
+  "computedAt": "2026-08-30T12:40:28.722869+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
