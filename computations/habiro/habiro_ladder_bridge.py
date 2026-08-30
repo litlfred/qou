@@ -74,7 +74,8 @@ mp.mp.dps = 70
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+# NOTE: this module deliberately holds NO q₀ literal. The pin is read from the
+# upstream witness at the evaluation site below; see the block comment there.
 
 
 def q_pochhammer(U: sp.Symbol, m: int) -> sp.Expr:
@@ -85,6 +86,19 @@ def q_pochhammer(U: sp.Symbol, m: int) -> sp.Expr:
 
 
 def habiro_trM(atom: dict, U: sp.Symbol) -> sp.Expr:
+    # ⚠ BLOCKER (found 2026-08-30, NOT fixed here — separate defect, bean
+    # qou-0ndb). `locals={"check_q": U}` is stale: since
+    # `fix(qou-0ndb): serialize Habiro polynomials in ONE canonical symbol`
+    # (2026-08-10) the upstream serialises in `u`, and it was regenerated in
+    # `u` on 2026-08-26. So sympify mints a fresh Symbol('u'), the a_m/denom
+    # never bind to `U`, and the expression comes out a {u, U} MIXTURE — the
+    # exact silent failure habiro_coefficients_atomic.py:222-231 warns about.
+    # `.subs(U, sqrt(q))` then leaves `u` symbolic and `float(dtrM_at_1)`
+    # raises, so THIS PRODUCER CANNOT RUN and its witness cannot be
+    # regenerated. Verified offline (no producer run) that `locals={"u": U}`
+    # restores it: Δtr_M(q=1) = 0, leading order ε¹ (both assertions hold),
+    # and the q₀ line then matches the upstream to 1.3e-17. Left unapplied
+    # because it changes what the probe computes, not which pin it uses.
     D = sp.sympify(atom["denom_in_u"], locals={"check_q": U})
     total = sp.Integer(0)
     for c in atom["habiro_coefficients"]:
@@ -163,10 +177,83 @@ def main() -> int:
           f"(#1602).")
     print()
 
-    # numeric value at q0 (sanity)
-    q0 = mp.mpf(Q0_MP_PIN)
-    dq_num = complex(sp.N(dq.subs(q, sp.Float(str(q0), 50)), 30)).real
-    print(f"  Δtr_M(q₀) = {dq_num:.12f}  (numeric sanity at m_p-pin q₀)")
+    # ── numeric value at q₀ (sanity) ─────────────────────────────────
+    # q₀ MIGRATED off pin A to the proton pin, 2026-08-30. VALUES MOVE, so the
+    # witness must be regenerated (bean qou-jjge) — but see the BLOCKER at
+    # `habiro_trM` first: this producer cannot currently run at all.
+    #
+    # Until now this read a hardcoded
+    #     Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+    # under the label "m_p-pin". Measured, that literal is 11.5371 ppb from the
+    # proton pin and 0.0769 ppb from the current muon pin C — label and value
+    # disagreed. It is the value that is the artefact here: the constant was
+    # named `Q0_MP_PIN` because when this probe was written
+    # (docs/audits/2026-06-01-habiro-ladder-bridge.md) the corpus believed that
+    # literal WAS the m_p pin — see 2026-06-21-q0-clusterA-migration-plan.md,
+    # which calls it "the canonical proton anchor". 2026-06-24-q0-layer-
+    # migration-scope.md then showed it reaches m_p only via the FITTED
+    # habiro_ratio (1+46u⁴)(1+4u⁵)(1−29u⁶), and the owner ruling 2026-07-03
+    # stripped that tower (q_parameter.py:33-44), after which the tower-free
+    # proton solve is 1.1099785827513808…. The label kept its meaning; the
+    # value did not follow.
+    #
+    # COMPETING PRECEDENT — considered, and a DIFFERENT SHAPE.
+    # `probes/qbeta_habiro_cyclotomic_probe.py:270` and
+    # `substrate/z2bn_tau_gauss_manin_sage_probe.py:88` carry this same literal
+    # under a "proton" label and were resolved the other way on 2026-08-29 —
+    # label corrected, value kept (bean qou-fd0e). Both keep it because there
+    # the value has an independent job: the cyclotomic probe evaluates the MUON
+    # arm of a deliberate proton↔muon residual (its own text reports the 2.88%
+    # proton↔muon swing, and 2026-06-21-q0-clusterA-migration-plan.md had
+    # already REVERTED that file from a mechanical sweep for exactly that
+    # reason), and the z2bn probe takes q₀ from the 50-dps pinning witness, the
+    # muon feed. That pass also did not rule on intent — qou-fd0e records it as
+    # "the label is corrected, the intent is not ruled on".
+    #
+    # This file has neither: no second anchor, no cross-anchor comparison, no
+    # read of the pinning witness, and exactly one upstream — habiro-
+    # coefficients-atomic, which is manifest-declared `physical_proton` AND
+    # carries the proton pin in its PAYLOAD (`parameters.q_0 =
+    # 1.1099785827513808`), not merely in a `q0Anchor` stamp (a stamp on an
+    # undeclared stem is only a runtime default — this stem IS declared, and
+    # the payload is the real evidence either way). The nearest precedent is
+    # one file over in this cluster on this same upstream:
+    # `habiro_interpolate_cross_validator.py:143` (bean qou-0hnz, 2026-08-30)
+    # dropped its own pin-A default for the same reason and now reads the pin
+    # from the upstream payload, raising rather than guessing.
+    #
+    # DECIDING EVIDENCE is arithmetic, not a label. Δtr_M is built ENTIRELY
+    # from that upstream's coefficients, so a "sanity" check is only sane at
+    # the pin those coefficients were computed at. Against the upstream's own
+    # recorded traces (n − p = −0.158016004341491285…):
+    #     at the proton pin   |diff| = 1.3e-17  (agrees to its precision)
+    #     at pin A            |diff| = 2.1e-8   (six orders worse)
+    #
+    # So the pin is taken from the upstream and never hardcoded: a resolved pin
+    # cannot go stale, a literal can (qou-0hnz).
+    _params = wit.get("parameters") or {}
+    q0_payload = _params.get("q_0")
+    if q0_payload is None:
+        raise SystemExit(
+            "habiro_ladder_bridge: habiro-coefficients-atomic carries no "
+            "parameters.q_0. Refusing to fall back to a hardcoded pin from "
+            "the other anchor layer (bean qou-0hnz).")
+    q0_str = str(q0_payload)
+    # The stamp is higher precision, but a stamp alone is not evidence — use it
+    # only when the payload (which is) agrees with it.
+    q0_stamp = wit.get("q0Value")
+    if q0_stamp is not None:
+        _payload, _stamp = mp.mpf(q0_str), mp.mpf(str(q0_stamp))
+        if abs(_stamp - _payload) > mp.mpf("1e-15") * abs(_payload):
+            raise SystemExit(
+                f"habiro_ladder_bridge: upstream q0Value {q0_stamp!r} "
+                f"disagrees with its own parameters.q_0 {q0_payload!r}. "
+                "Refusing to pick one (bean qou-fd0e).")
+        q0_str = str(q0_stamp)
+    q0_anchor = wit.get("q0Anchor", "unstamped")
+    dq_num = complex(sp.N(dq.subs(q, sp.Float(q0_str, 50)), 30)).real
+    print(f"  Δtr_M(q₀) = {dq_num:.12f}  (numeric sanity at the upstream's "
+          f"{q0_anchor} pin q₀)")
     print()
 
     print("=" * 78)
