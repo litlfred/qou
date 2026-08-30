@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-30T07:08:55Z
+updated_at: 2026-08-30T07:29:12Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -367,3 +367,43 @@ critical path. They are new statements (nothing else sums the corner q-ratio to 
 else converts the pair product to a genuine Vandermonde), and AGENTS.md explicitly permits
 measured research overlap. But they do not close anything this bean needed, and the bean's
 goal was met before they were written.
+
+
+## 2026-08-30 — CORRECTION to my own entry above, and the measured answer
+
+**I claimed the `QOU.Mass.QHookDimension` namespace "has never existed" and that
+QIntegerBarParity "was red on the day it landed". BOTH WRONG.** At fed69b1c4d the file
+declared
+
+    namespace QOU.Mass
+    namespace QHookDimension
+
+so the namespace existed, NESTED. I grepped only `namespace QOU.Mass.QHookDimension` --
+the fully-qualified spelling -- got 0, and read that as absence. One spelling of a
+two-spelling construct: the detector blind spot this corpus has a taxonomy for. The file
+broke at 1646b5d6d3, which removed both the nested namespace and the def. A sibling
+(5479e2141a9) got this right while I was working and fixed the first consumer; my branch
+now carries only the second (QIntegerCanonical:117) and defers to theirs on the first.
+
+## The measurement: 179
+
+Whole-corpus lean-direct on origin/main bf08fd156f9, keep-going so `error` and `blocked`
+separate:
+
+    up-to-date 1718    ok 379    blocked 210    error 1
+
+ONE error -- QOU.MathlibExt.QIntegerCanonical -- and ALL 210 blocked modules trace to it.
+Single point of failure. Of those 210, **179 carry zero sorry tokens**: they read as
+sorry-free on main while `#print axioms` cannot run on any declaration in them. 31 carry
+a sorry and are honestly marked.
+
+The 179 include QOU.Torsion, QOU.ArchimedeanMassFormula, QOU.AlgebraicSubstrate, the whole
+QOU.Archimedean.PauliWitness family (20 isotope witnesses), and
+MacdonaldTelescopeGeneralX -- which carries telescope_generalX, this bean's goal, verified
+axiom-clean only after the cone was unblocked.
+
+**`grep -c sorry` is a screen; the proof term is the verdict.** A blocked cone makes the
+verdict unavailable while leaving the screen green, and nothing in the repo currently
+distinguishes the two: lean-axiom-guard covers only its registry, and the sorry-count
+audits read files, not proof terms. That gap is a candidate bean, not a continuation of
+this one.
