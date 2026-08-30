@@ -22,7 +22,8 @@ Public surface (mirrors the plan API):
     shift_nf_atomic_closed_form(Z, N) -> int        # exact 18Z+21N+1
     build_atom_nf_mp(Z, N, dps=50) -> list[mpf]     # NF at q_0
     gram_mp(dps=50) -> mpmath.matrix                # Gram at q_0
-    primal_to_dual(coeffs_primal, dps=50) -> list[mpf]
+    primal_to_dual(coeffs_primal, dps=50)            -> RAISES under D
+    primal_to_dual_quotient(coeffs_primal, dps=50) -> list[mpf]
     compound_shift(Z, N, dps=50) -> CompoundShiftResult
     verify_alpha_em_chain(dps=50) -> dict
 
@@ -306,7 +307,13 @@ def tr_m_weights_mp(dps: int = 50) -> list:
     `pyhecke.gram.RADICAL` / `G_PINV`. The dual solve below already uses
     `mp.qr_solve` least-squares rather than a 6×6 inverse, which IS the
     solve on the quotient H₃(q)/rad, so the singular form is handled
-    honestly here; there is no `G⁻¹` in this module to remove.
+    honestly there.
+
+    An earlier draft of this docstring added "there is no `G⁻¹` in this
+    module to remove". That was WRONG and Copilot caught it: `primal_to_dual`
+    below did `G ** -1 * c_vec`, which mpmath performs without raising on the
+    singular D Gram, returning entries ~1e55. It now refuses, with
+    `primal_to_dual_quotient` as the honest replacement.
     """
     with mp.workdps(dps + 5):
         q0 = q_at(dps + 5)
@@ -347,15 +354,53 @@ def gram_mp(dps: int = 50) -> mp.matrix:
 
 
 def primal_to_dual(coeffs_primal: Sequence, dps: int = 50) -> list:
-    """Gram-inverse transfer: primal NF coefficients → dual Frobenius basis.
+    """REMOVED under convention D — `gram_mp` is singular, so `G⁻¹` does not
+    exist. Use `primal_to_dual_quotient` and mean it.
 
-    NF c_b(q) coefficients live in PRIMAL basis.  Frobenius-dual
+    This mirrors `pyhecke.gram.gram_inverse()`, which raises for the same
+    reason rather than silently returning `G_PINV`: the caller asked for an
+    inverse, and under convention D there isn't one. The quotient answers a
+    different question, so the caller has to say they want it.
+
+    **mpmath does NOT protect you here.** Measured on this module's own D-frame
+    Gram (min singular value 1.4e-56):
+
+        G ** -1                    returns, raising nothing
+        max |entry| of the result  2.09e55
+        ‖G @ Ginv − I‖_max         3.7e-4
+
+    i.e. exactly the `np.linalg.inv` failure mode that `pyhecke.gram.
+    safe_inverse()` exists to guard, reproduced in mpmath. This function had
+    no callers when the defect was found (Copilot review, PR #6110), so
+    nothing consumed the garbage — but it is listed in this module's public
+    API at the top of the file, so a future caller would have.
+    """
+    raise NotImplementedError(
+        "primal_to_dual() is removed: under convention D the H_3(q) trace form "
+        "is SINGULAR (rank 5 of 6; the radical is the three-strand "
+        "q-antisymmetriser), so G^-1 does not exist and mpmath's `G ** -1` "
+        "returns entries ~1e55 without raising. Use primal_to_dual_quotient(), "
+        "which is the transfer on H_3(q)/rad."
+    )
+
+
+def primal_to_dual_quotient(coeffs_primal: Sequence, dps: int = 50) -> list:
+    """Transfer on the QUOTIENT H_3(q)/rad: primal NF coeffs → dual basis.
+
+    The honest convention-D replacement for `primal_to_dual`. Solves
+    `G · dual = c` in the minimum-norm least-squares sense, which for a
+    symmetric form with a one-dimensional kernel IS the inverse on the
+    orthogonal complement of that kernel — i.e. on the quotient. Same object
+    as `pyhecke.gram.gram_quotient_inverse()` / `G_PINV`, and the same solve
+    the LP dual/primal recomputes fall back to.
+
+    NF c_b(q) coefficients live in the PRIMAL basis; Frobenius-dual
     coefficients live in the DUAL basis (inner product against tr_M).
     """
     with mp.workdps(dps + 5):
         G = gram_mp(dps + 5)
         c_vec = mp.matrix([mp.mpf(c) for c in coeffs_primal])
-        dual = G ** -1 * c_vec
+        dual, _rank = _min_norm_lstsq_mp(G, c_vec)
         # Round inside the workdps block (Gemini review on PR #658).
         with mp.workdps(dps):
             return [+dual[i] for i in range(6)]

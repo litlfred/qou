@@ -58,9 +58,13 @@ from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-inde
 # docs/audits/2026-05-19-trm5-markov-bug.md fixed this in pyhecke.gram on
 # 2026-05-19; it never propagated here (bean qou-ssex). NOTE: this binding
 # is currently unread in this module -- kept correct rather than deleted so
-# a future consumer does not pick up the wrong weight.
-_h_trm = Q0_PROTON - 1 / Q0_PROTON
-tr_basis = [1, z, z, z**2, z**2, _h_trm * z**2 + z]
+# a future consumer does not pick up the wrong weight. h is the one already
+# imported from hecke_core (= q0 - qi, verified), NOT a second q0 source:
+# deriving it from Q0_PROTON instead would pin TR_M[5] to a different anchor
+# than the z it multiplies if hecke_core's pin ever moves (Copilot review,
+# PR #6110). hecke_core.q0 is currently the proton pin, so the value is
+# unchanged -- this removes a latent straddle, not a live one.
+tr_basis = [1, z, z, z**2, z**2, h * z**2 + z]   # h = q0 - qi, from hecke_core
 
 
 def contains(lam, mu):

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T07:36:13.648563+00:00",
-  "commitSha": "2042914b16151eecab975ce6df3c483632d3fb7a",
+  "computedAt": "2026-08-30T08:02:14.090849+00:00",
+  "commitSha": "eba68cb580eb04437f269096ce0f8017b9dc1554",
   "assertions": [
     {
       "name": "closed_form_shift_consistent_D",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 32,
   "computation": "compound-shift-nf",
   "scriptFile": "compound_shift_nf.py",
-  "scriptHash": "5b309ac3d13a",
-  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "scriptHash": "ec70a21189ba",
+  "scriptCommitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
