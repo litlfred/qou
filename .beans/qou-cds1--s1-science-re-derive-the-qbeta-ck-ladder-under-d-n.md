@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T18:17:33Z
+updated_at: 2026-08-30T18:27:21Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3605,3 +3605,47 @@ identity, and I was one step from doing so.
 Scope (a). What changes is that the arc's terminus — *"it refines a leading term
 that does not exist"* — no longer holds: the leading term now has a derived
 candidate form.
+
+
+## Entry 10b — uniqueness, tested by trying to break it: (a)+(b) FAIL, (c) saves it
+
+Entry 10 asked whether `M` is **the** N=1 factor or merely **a** candidate. The
+first two conditions do not pin it, and the third turns out to carry the content.
+
+### The rival
+
+`G := sqrt(cos(a_D) · bar(cos a_D))` — the **geometric** mean — is also
+bar-invariant (verified symbolically) and also reduces correctly under C, where
+`bar(a_C) = −a_C` gives `|cos a_C|`. So **(a) and (b) admit a second solution.**
+
+**And it is not a rounding difference:**
+
+    proton pin   M = 0.9986190619723252   G = 0.9986189041126984   rel 1.581e-7
+    muon pin     M = 0.9986190616623656   G = 0.9986189038026348   rel 1.581e-7
+
+**158 ppb**, against the Q_beta 100× target of 7.8 ppb — **~20× the target**.
+Had the arc stopped at (a)+(b), the framework would carry a 158 ppb ambiguity
+in its leading factor.
+
+### Condition (c) discriminates — structurally, not numerically
+
+Read as **entry 3** requires (the defect enters as a phase shift times a factor
+with no phase dependence: `log F = f(a − c(δ)) + g(δ)`):
+
+- `M = cos(a − δ/2)·cos(δ/2)` **separates exactly**. One singular set in `a`.
+- `G` **does not**. It inherits the poles of *both* `cos a` and `cos(a − δ)` —
+  two shifted singular sets — and a separated `f(a−c)·K` admits only one.
+  Counted symbolically: at `δ = 0` both have **2** pole families (they must
+  agree when there is no defect); at `δ = 1/3`, M has **2** and G has **3**.
+
+So (c) is not decoration on (a)+(b) — **it is the condition doing the work**,
+and the arc was right to state it separately.
+
+### Not claimed
+
+**Full uniqueness.** (c) is shown to exclude `G`; it is *not* shown that no
+other function satisfies all three. That needs a functional-equation argument
+this probe does not attempt, and entry 10's summary now says so rather than the
+blanket "NOT uniqueness" it carried before.
+
+Probe **12/12**.
