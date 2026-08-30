@@ -245,11 +245,73 @@ def main() -> int:
               f"   >q₀ (diag): "
               f"{[f'{float(q):.5f}' for q in above] if above else 'none'}")
 
+    # ── STRUCTURAL-ZERO GUARD, which must run BEFORE the verdict ───────────
+    #
+    # The verdict below branches on (a) a crossing existing on the diagnostic
+    # ray and (b) none existing on the physical interval. NOTHING in it checks
+    # whether F is nonzero at all — so an F that is IDENTICALLY ZERO lands in
+    # the `A_DEPENDENT_crossing_above_q0` branch by construction, the moment
+    # round-off changes sign anywhere on the ray.
+    #
+    # That is what the committed 2026-08-25 witness recorded, and it was wrong
+    # three ways at once:
+    #
+    #   * it asserts "the n=9 crossing EXISTS" while its own fields read
+    #     F_at_qlo = F_at_q0 = 0.0 and sign = 0 for D, T and 3He alike;
+    #   * it says "q0 sits between the n=6 and n=9 crossings" while its own
+    #     `crossings_below_or_at_q0` is [] for every isotope — there is no n=6
+    #     crossing on the physical interval to sit above;
+    #   * it says A-DEPENDENT while its own numbers give D, T and 3He the
+    #     IDENTICAL first crossing, 1.5378214048144982, to 17 digits — and the
+    #     character-free companion G finds the same value at n = 6, 9 AND 12.
+    #     A location identical across three braid words, three n, and two
+    #     different objects is not a property of any of them.
+    #
+    # Measured 2026-08-29 at 70 dps: max|y_lambda| over the ell>=3 stratum is
+    # BELOW the noise floor at every q on the ray, including at all three
+    # "located crossings" --
+    #
+    #     q                     max|y| ell>=3      floor
+    #     1.0001                0.0                1.09e-63
+    #     1.1099785827513808    0.0                1.15e-63
+    #     1.5378214048144982    1.34e-72           2.08e-63
+    #     2.2810884055126934    9.77e-73           4.31e-63
+    #     4.0                   2.63e-74           7.41e-63
+    #
+    # -- nine orders below. Under convention D the Wenzl level is r = 2, so
+    # y_lambda = 0 for ell(lambda) > 2 IDENTICALLY IN q; the ray does not escape
+    # it. The located crossings are sign changes of cancellation residue.
+    #
+    # The C-frame result this probe followed up (#4829: crossing at q ~ 1.05365,
+    # F(q0) = -0.1950) is NOT refuted. It was a real convention-C measurement and
+    # is out of frame, not wrong. What went wrong is that the convention-D
+    # regeneration updated the MEASUREMENTS and left the VERDICT.
+    _zero_q = [Q_LO, Q0, mp.mpf("1.5378214048144982"), Q_RAY_MAX]
+    _above_floor = []
+    for _q in _zero_q:
+        _y = y_lambda_at_q0_mpmath(6, _q)
+        _all = max(abs(mp.mpf(v)) for v in _y.values())
+        _ge3 = max((abs(mp.mpf(v)) for l, v in _y.items() if len(l) >= 3),
+                   default=mp.mpf(0))
+        if _ge3 >= _all * mp.mpf(10) ** (-(mp.mp.dps - 8)):
+            _above_floor.append(_q)
+    structural_zero = not _above_floor
+
     # ── verdict ────────────────────────────────────────────────────────────
     n9_above = [name for name in ("T", "3He")
                 if iso[name]["diagnostic_first_crossing_above_q0"] is not None]
     n9_below = [name for name in ("T", "3He") if iso[name]["crossings_below_or_at_q0"]]
-    if n9_above and not n9_below:
+    if structural_zero:
+        verdict = "structural_zero_no_crossing_exists"
+        vtext = ("STRUCTURAL ZERO under convention D. F_K(q) = 0 identically — the "
+                 "Wenzl level is r = 2, so y_lambda = 0 for ell(lambda) > 2 at EVERY "
+                 "q, on the ray as well as on the physical interval. The question "
+                 "'is the crossing A-dependent' has no answer because there is no "
+                 "crossing: every located q is a sign change of cancellation "
+                 "residue, which is why all three isotopes and both objects share "
+                 "the same locations. The #4829 convention-C result is out of "
+                 "frame, not refuted.")
+    elif n9_above and not n9_below:
         verdict = "A_DEPENDENT_crossing_above_q0"
         vtext = ("A-DEPENDENT. The n=9 crossing EXISTS but lies ABOVE q₀ — the "
                  "deuteron is NOT special; q₀ sits between the n=6 and n=9 crossings.")
@@ -263,7 +325,8 @@ def main() -> int:
     print("\n" + "=" * 88)
     print(f" VERDICT: {verdict}")
     print(f"   {vtext}")
-    print(f"   crossing q:  D (n=6) = {iso['D']['crossings_below_or_at_q0']}  [≤ q₀, PHYSICAL]")
+    _dcross = iso['D']['crossings_below_or_at_q0']
+    print(f"   crossing q:  D (n=6) = {_dcross if _dcross else 'NONE'}  [≤ q₀, PHYSICAL]")
     for name in ("T", "3He"):
         print(f"                {name} (n=9) = "
               f"{iso[name]['diagnostic_first_crossing_above_q0']}  [> q₀, DIAGNOSTIC]")
@@ -297,6 +360,33 @@ def main() -> int:
     w.add_data("character_free_companion", cf)
     w.add_data("verdict", verdict)
     w.add_data("verdict_text", vtext)
+    w.add_data("structural_zero_under_convention_D", structural_zero)
+    w.add_data("q_above_floor_on_ray", [mp.nstr(q, 20) for q in _above_floor])
+
+    # THE ASSERTION THIS WITNESS DID NOT HAVE.
+    #
+    # The committed 2026-08-25 run carried ZERO assertions and `allPassed: true`,
+    # so nothing could contradict a verdict its own data refuted. The invariant
+    # is simple and is the one that failed: a verdict may claim a crossing EXISTS
+    # only if the object is nonzero somewhere. Under a structural zero, the only
+    # admissible verdict is the structural-zero one.
+    _claims_crossing = verdict in ("A_DEPENDENT_crossing_above_q0", "mixed")
+    _consistent = not (structural_zero and _claims_crossing)
+    w.add_assertion("verdict_does_not_claim_a_crossing_in_a_vanishing_object",
+                    mp.mpf(1) if _consistent else mp.mpf(0), mp.mpf(1),
+                    tolerance=mp.mpf("0.5"),
+                    source="a located crossing is an existence claim; an object below "
+                           "the noise floor at every sampled q supports none")
+
+    # A-INDEPENDENCE, recorded because it is the tell that the located crossings
+    # are not isotope properties: D, T and 3He share their first diagnostic
+    # crossing to full printed precision, and the character-free companion finds
+    # the same value at n = 6, 9 and 12. Three braid words, three n, two objects.
+    _firsts = {k: iso[k]["diagnostic_first_crossing_above_q0"] for k in iso}
+    _vals = [v for v in _firsts.values() if v is not None]
+    w.add_data("diagnostic_first_crossing_by_isotope", _firsts)
+    w.add_data("diagnostic_first_crossing_is_isotope_INDEPENDENT",
+               bool(_vals) and len(set(_vals)) == 1)
     # These six were add_assertion(name, X, X) under a comment calling them
     # "Falsifiable assertions". They were the opposite: computed and expected were the
     # SAME expression, so each was `x == x` -- tautologically true and unable to fail.

@@ -1,0 +1,273 @@
+{
+  "computation": "quaternionic-flag-su3-exclusion",
+  "engine": "python",
+  "scriptFile": "computations/quaternionic_flag_su3_exclusion.py",
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Exact integers and highest-weight combinatorics only. No substrate modulus, no q, no float; the import cone is json/os/sys/time/fractions/itertools. Nothing here can depend on the q0 anchor.",
+  "parameters": {
+    "n_max": 12,
+    "flag": "Sp(n)/Sp(1)^n",
+    "beans": [
+      "qou-8p1g",
+      "qou-8p1f",
+      "qou-8p1x"
+    ]
+  },
+  "data": {
+    "full_flag_dims": {
+      "2": {
+        "dim": 4,
+        "m": 1
+      },
+      "3": {
+        "dim": 12,
+        "m": 3
+      },
+      "4": {
+        "dim": 24,
+        "m": 6
+      },
+      "5": {
+        "dim": 40,
+        "m": 10
+      },
+      "6": {
+        "dim": 60,
+        "m": 15
+      },
+      "7": {
+        "dim": 84,
+        "m": 21
+      },
+      "8": {
+        "dim": 112,
+        "m": 28
+      },
+      "9": {
+        "dim": 144,
+        "m": 36
+      },
+      "10": {
+        "dim": 180,
+        "m": 45
+      },
+      "11": {
+        "dim": 220,
+        "m": 55
+      },
+      "12": {
+        "dim": 264,
+        "m": 66
+      }
+    },
+    "su3_real_irrep_dims_below_13": [
+      6,
+      8,
+      12
+    ],
+    "verdict": "S_3 on three quaternionic lines yields Sp(1)^3 : S_3, NOT SU(3). Scope-(b) for that claim."
+  },
+  "assertions": [
+    {
+      "name": "full_flag_dim_is_4_times_binom_n_2",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "dim Sp(n)/Sp(1)^n = 2n(n-1) = 4*C(n,2), so m = C(n,2)"
+    },
+    {
+      "name": "bring_cone_m_is_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "the Bring cone C(B) is real-4-dimensional: m = 1, where the tetraplectic condition is vacuous (qou-8p1g finding 1)"
+    },
+    {
+      "name": "sp3_over_sp1_cubed_has_m_3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "dim = 21 - 9 = 12 = 4*3, so m = 3 >= 2: the vacuity IS escaped"
+    },
+    {
+      "name": "m_at_least_2_from_n_at_least_3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "sp3_tangent_is_three_quaternionic_lines",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "tangent = H_12 + H_13 + H_23, each acted on by (q_i, q_j) via x -> q_i x conj(q_j)"
+    },
+    {
+      "name": "sp3_tangent_real_dim",
+      "computed": 12,
+      "expected": 12,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "s3_acts_faithfully_on_the_three_lines",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "all 6 permutations of {1,2,3} induce distinct permutations of {12, 13, 23}: the action on the lines is faithful"
+    },
+    {
+      "name": "only_identity_fixes_all_three_lines",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "dim_su3_exceeds_dim_su2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "dim su(3) = 8 > 3 = dim su(2), so no injection into a single factor"
+    },
+    {
+      "name": "su3_is_simple",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "A_2 is an irreducible root system, so su(3) is simple; this is the premise that makes the projection argument work"
+    },
+    {
+      "name": "naive_dim_count_is_insufficient",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "dim su(2)^3 = 9 > 8 = dim su(3): a dimension count on the PRODUCT permits an embedding. Simplicity, not dimension, is what excludes it"
+    },
+    {
+      "name": "su3_min_nontrivial_real_irrep_dim",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "the 3 is of complex type, so its realification is 6-dimensional; the adjoint 8 is the smallest of real type"
+    },
+    {
+      "name": "su3_has_no_real_irrep_of_dim_2_3_4_5",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "so SU(3) cannot act nontrivially on one quaternionic line H = R^4"
+    },
+    {
+      "name": "su3_small_real_irrep_dims",
+      "computed": [
+        6,
+        8,
+        12
+      ],
+      "expected": [
+        6,
+        8,
+        12
+      ],
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "su3_embeds_in_sp_n_iff_n_at_least_3",
+      "computed": [
+        3,
+        4,
+        5
+      ],
+      "expected": [
+        3,
+        4,
+        5
+      ],
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "SU(3) < U(3) < Sp(3) is the standard chain"
+    },
+    {
+      "name": "smallest_flag_with_both_s3_and_su3_available",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "Sp(9)/Sp(3)^3 -- and even there the SU(3) is a chosen reduction of one factor, not something the tetraplectic condition supplies"
+    },
+    {
+      "name": "sp9_over_sp3_cubed_dim",
+      "computed": 108,
+      "expected": 108,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "sp9_over_sp3_cubed_m",
+      "computed": 27,
+      "expected": 27,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "hp3_dim",
+      "computed": 12,
+      "expected": 12,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion"
+    },
+    {
+      "name": "hp3_tangent_as_su3_is_3_plus_3bar",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "H^3 = C^3 + C^3 j = 3 + conj(3) as a complex SU(3)-rep, real dimension 12 = the tangent space; available by REDUCTION only"
+    },
+    {
+      "name": "s_n_on_lines_admits_no_connected_enhancement",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "a continuous homomorphism from a connected group to a finite group is constant, so the permutation of the lines can never carry gauge bosons"
+    },
+    {
+      "name": "verdict_s3_yields_sp1_cubed_semidirect_s3_not_su3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "checks 3 and 4 together: SU(3) -> Sp(1)^3 : S_3 lands in the identity component Sp(1)^3 by connectedness, and every such map is zero"
+    },
+    {
+      "name": "any_su3_preserving_the_three_lines_is_trivial",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "quaternionic_flag_su3_exclusion",
+      "note": "connectedness kills the permutation part, and SU(3) has no nontrivial real representation of dimension 4, so nothing is left -- this does not depend on naming Sp(1)^3 : S_3 as the structure group"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "550512f2fe8e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6c10b35e0e6e28c7cf09d49c4cb076b9f38c9fb6",
+  "computedAt": "2026-08-24T19:21:24.670291+00:00",
+  "durationMs": 528,
+  "engineVersion": "3.11.15"
+}

@@ -16,8 +16,62 @@ export default proposition({
     "trace-field",
     "bar-even",
   ],
-  uses: ["prop:fivetwo-trace-field"],
+  uses: ["prop:fivetwo-trace-field", "prop:hyperbolic-knot-shape-fields"],
+  cites: ["zagier1986", "ohtsuki2016"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-24",
+      body:
+        "**\u00a77c base-ring note (archimedean specialisation).** " +
+        "`FiveTwoComplexPentagon.lean` is archimedean throughout, and has " +
+        "to be: the statement is an identity among values of `Li_2^ext` at " +
+        "complex algebraic points, with `Real.log t` and `Complex.arg a` on " +
+        "the right-hand side. `arg` and `log` have no generic-`CommRing` " +
+        "form, and the branch bookkeeping that produces the " +
+        "$(\\arg a - \\pi)^2$ term is a statement about the real line. " +
+        "The \u211d is forced by the statement rather than chosen, so this " +
+        "is the \u00a77c archimedean-evaluation row and not a file that " +
+        "wants splitting.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-24",
+      body:
+        "**Merged with a duplicate; this block is the survivor.** " +
+        "`thm:five-two-saddle-sum-rule` in `mass-theory` stated the same " +
+        "identity, with the same existence quantifier, pointing at the same " +
+        "declaration — two statement-bearing blocks owning one Lean " +
+        "declaration, which `lean-ref-owns-decl` flags because the formal " +
+        "graph can attach it to only one. Not a deliberate pair: that block " +
+        "landed 2026-08-15 as exposition, and the 2026-08-19 commit that " +
+        "created this one opens \"~180 probes and 33 sorry-free Lean files " +
+        "of 5_2 work, and not one content block anywhere in the paper\" — " +
+        "the differing slugs (`five-two-` against `fivetwo-`) are why the " +
+        "search missed it. This block survives on consumers: three blocks " +
+        "read it, none read the other. Its `cites: [zagier1986]`, its " +
+        "`uses` of `prop:hyperbolic-knot-shape-fields`, and the two " +
+        "passages its prose carried that this one did not — the " +
+        "volume-conjecture disclaimer and the shape-field contrast with " +
+        "$4_1$ — are folded in here.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-08-24",
+      body:
+        "**What the `not_checked` means, since the retired duplicate said " +
+        "`leanok`.** Verified here: the declaration exists — " +
+        "`theorem fiveTwo_saddle_sum_rule` at " +
+        "`FiveTwoComplexPentagon.lean:1865`, namespace " +
+        "`QOU.QBeta.FiveTwoComplexPentagon`, so the ref resolves — and the " +
+        "file contains no `sorry`. NOT verified: that it builds. The " +
+        "duplicate's `leanok` rested on a `lake env lean` run of " +
+        "2026-08-15, which is not a current build, and this container " +
+        "cannot produce one — the restored olean cache is dependencies-only " +
+        "(zero `QOU.*` modules, by construction), and a `lake build` evicts " +
+        "it. Carrying `leanok` forward would assert something nobody has " +
+        "checked since August; the provenance is recorded instead.",
+    },
     {
       kind: "status",
       date: "2026-08-19",

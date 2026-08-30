@@ -1,15 +1,24 @@
 {
   "engine": "mpmath+f64-seminormal",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:24:40.722831+00:00",
-  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
-  "assertions": [],
+  "computedAt": "2026-08-30T00:59:42.155232+00:00",
+  "commitSha": "ad136327b51af6d25caee17931fafebc55d298b3",
+  "assertions": [
+    {
+      "name": "verdict_does_not_claim_a_crossing_in_a_vanishing_object",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a located crossing is an existence claim; an object below the noise floor at every sampled q supports none"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 6,
   "computation": "threerow-crossing-a-dependence",
   "scriptFile": "threerow_crossing_a_dependence_probe.py",
-  "scriptHash": "d617a226d798",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "d58f0dfcee92",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -644,8 +653,16 @@
         ]
       }
     },
-    "verdict": "A_DEPENDENT_crossing_above_q0",
-    "verdict_text": "A-DEPENDENT. The n=9 crossing EXISTS but lies ABOVE q₀ — the deuteron is NOT special; q₀ sits between the n=6 and n=9 crossings.",
+    "verdict": "structural_zero_no_crossing_exists",
+    "verdict_text": "STRUCTURAL ZERO under convention D. F_K(q) = 0 identically — the Wenzl level is r = 2, so y_lambda = 0 for ell(lambda) > 2 at EVERY q, on the ray as well as on the physical interval. The question 'is the crossing A-dependent' has no answer because there is no crossing: every located q is a sign change of cancellation residue, which is why all three isotopes and both objects share the same locations. The #4829 convention-C result is out of frame, not refuted.",
+    "structural_zero_under_convention_D": true,
+    "q_above_floor_on_ray": [],
+    "diagnostic_first_crossing_by_isotope": {
+      "D": "1.5378214048144982",
+      "T": "1.5378214048144982",
+      "3He": "1.5378214048144982"
+    },
+    "diagnostic_first_crossing_is_isotope_INDEPENDENT": true,
     "D_sign_at_q0_measured": 0,
     "D_sign_at_qlo_measured": 0,
     "T_sign_at_q0_measured": 0,

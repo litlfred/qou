@@ -1,9 +1,9 @@
 {
   "schema": "proton-pin-assertion-verdicts/v1",
   "producedBy": "computations/audits/proton_pin_assertion_check.py",
-  "generatedAt": "2026-08-29T16:28:06.313018+00:00",
-  "manifestBaseline": "origin/main q0_anchor_manifest.json, ideal_muon = 32 stems",
-  "READ_THIS_FIRST": "A verdict is sound ONLY for a producer the QOU_Q0_ANCHOR override actually reaches. A producer reading q-pinning-50-digit.witness.json directly takes muon from the file regardless of the environment, so running it would measure the MUON leg and report it as proton. Measured on main 2026-08-29: 17 of 32 ideal_muon stems are unreachable this way. The tool now refuses them with verdict UNSOUND-ENV-BYPASS rather than producing a false pass.",
+  "generatedAt": "2026-08-29T18:34:24.269765+00:00",
+  "manifestBaseline": "origin/main q0_anchor_manifest.json, ideal_muon = 21 stems",
+  "READ_THIS_FIRST": "A verdict is sound ONLY for a producer QOU_Q0_ANCHOR actually reaches. The reachability test was WRONG IN BOTH DIRECTIONS in the first version and the count hid it: bare-name matching gave 15 of 21 on 2026-08-29, the corrected test also gives 15, over a DIFFERENT SET. It falsely refused rho_f_categorical_probe (names the producer in a docstring, never reads the witness) and falsely RAN qbeta_jacobi_anger_tower_general (reaches muon via q_muon_at(), never mentions the file) \u2014 the second being a false pass, the dangerous direction. A matching count is not agreement.",
   "verdicts": {
     "aoperator_a5_crosscheck": {
       "verdict": "PASSES-AT-PROTON",
@@ -31,167 +31,75 @@
       "detail": "interrupted by container reclaim at ~2100s while on 3H (n=9); 2H (n=6) had taken 0.8s. Checkpoint holds in_flight, so a restart recovers the tree and re-runs it. NOT a verdict.",
       "sound": true,
       "group": "A_manifest_driven"
+    },
+    "alpha_5_lp_dual_crystal": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 3,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_c4even_ladder_reconstruction_probe": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 4,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "rho_f_categorical_probe": {
+      "verdict": "NO-ASSERTIONS",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "writes a witness but asserts nothing, so running it at proton establishes nothing. Only measurable at all because the reachability false positive was fixed.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_hoefsmit_tbeta_matrix_build_probe": {
+      "verdict": "BROKEN-AT-BOTH",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "TypeError: unsupported format string passed to mpf.__format__, IDENTICALLY at both pins. NOT a hold \u2014 a pre-existing producer defect (the mpf-formatting class). Fix the producer; the anchor question is unanswered until then.",
+      "sound": true,
+      "group": "A_manifest_driven"
     }
   },
   "reachability": {
-    "alpha_5_lp_dual_crystal": {
-      "path": "computations/alpha/alpha_5_lp_dual_crystal.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "alpha_high_precision": {
-      "reachable": null,
-      "note": "source not found on disk"
-    },
-    "aoperator_a5_crosscheck": {
-      "path": "computations/probes/aoperator_a5_crosscheck.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "atomic_tr_m_mpfr_50dps": {
-      "path": "computations/atomic_tr_m_mpfr_50dps.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "binding_via_interface_knot": {
-      "path": "computations/binding_via_interface_knot.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "block_swap_binding": {
-      "path": "computations/block_swap_binding.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "chi_lambda_he4_full_partition_table": {
-      "path": "computations/chi_lambda_he4_full_partition_table.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "cross_check_trM_1ppb": {
-      "path": "computations/cross_check_trM_1ppb.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "cross_check_trM_cw_seminormal_leg": {
-      "path": "computations/cross_check_trM_cw_seminormal_leg.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "fivetwo_stokes_matrix_zq": {
-      "path": "computations/probes/fivetwo_stokes_matrix_zq.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "frakV_askey_wilson_recurrence_tie_probe": {
-      "path": "computations/substrate/frakV_askey_wilson_recurrence_tie_probe.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "gram_norm_binding_probe": {
-      "path": "computations/probes/gram_norm_binding_probe.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "habiro_interpolation_wlambda": {
-      "path": "computations/habiro_interpolation_wlambda.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "hadron_knot_table": {
-      "path": "computations/hadron_knot_table.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "he3_tritium_cosh_asymmetry_diagnosis": {
-      "path": "computations/he3_tritium_cosh_asymmetry_diagnosis.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "he4_binding_k_stage2_probe": {
-      "path": "computations/deltalambda/he4_binding_k_stage2_probe.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "he4_stage2_ranking_seminormal_xcheck": {
-      "path": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "lambda_scale_substrate_probe": {
-      "path": "computations/probes/lambda_scale_substrate_probe.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "lever1_binding_habiro_single_element_test": {
-      "path": "computations/substrate/lever1_binding_habiro_single_element_test.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "q0_anchor_consistency_audit": {
-      "path": "computations/audits/q0_anchor_consistency_audit.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "q1_mass_gap_probe": {
-      "path": "computations/q1_mass_gap_probe.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "q_pinning_50_digit": {
-      "path": "computations/q_pinning_50_digit.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "qbeta_c4even_ladder_reconstruction_probe": {
-      "path": "computations/qbeta/qbeta_c4even_ladder_reconstruction_probe.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "qbeta_decay_sdp_extended_ck": {
-      "path": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "qbeta_fsc_g_pattern_comparison": {
-      "path": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "qbeta_hoefsmit_tbeta_matrix_build_probe": {
-      "path": "computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "qbeta_jacobi_anger_tower_general": {
-      "path": "computations/qbeta/qbeta_jacobi_anger_tower_general.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "qbeta_physics": {
-      "path": "computations/qbeta/qbeta_physics.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "qbeta_symbolic_sdp_strict_complementarity": {
-      "path": "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "rho_f_categorical_probe": {
-      "path": "computations/probes/rho_f_categorical_probe.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    },
-    "theta_jet_gb_grading_probe": {
-      "path": "computations/probes/theta_jet_gb_grading_probe.py",
-      "env_override_reaches": true,
-      "group": "A_manifest_driven"
-    },
-    "wlambda_q0_continuation": {
-      "path": "computations/probes/wlambda_q0_continuation.py",
-      "env_override_reaches": false,
-      "group": "B_reads_pin_file"
-    }
+    "measured_at": "2026-08-29",
+    "criterion": [
+      "q-pinning-50-digit.witness.json",
+      "q_muon_at",
+      "_q0_value_for_anchor",
+      "load_q_50dps"
+    ],
+    "A_measurable": [
+      "alpha_5_lp_dual_crystal",
+      "hadron_knot_table",
+      "qbeta_c4even_ladder_reconstruction_probe",
+      "qbeta_hoefsmit_tbeta_matrix_build_probe",
+      "rho_f_categorical_probe"
+    ],
+    "B_refused": [
+      "atomic_tr_m_mpfr_50dps",
+      "cross_check_trM_1ppb",
+      "cross_check_trM_cw_seminormal_leg",
+      "frakV_askey_wilson_recurrence_tie_probe",
+      "he4_binding_k_stage2_probe",
+      "he4_stage2_ranking_seminormal_xcheck",
+      "lambda_scale_substrate_probe",
+      "q0_anchor_consistency_audit",
+      "q1_mass_gap_probe",
+      "q_pinning_50_digit",
+      "qbeta_decay_sdp_extended_ck",
+      "qbeta_fsc_g_pattern_comparison",
+      "qbeta_jacobi_anger_tower_general",
+      "qbeta_physics",
+      "qbeta_symbolic_sdp_strict_complementarity"
+    ]
   }
 }

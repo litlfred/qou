@@ -236,7 +236,12 @@ def main() -> int:
     print(f"\n  {total - len(_FAILURES)}/{total} checks passed")
     for f in _FAILURES:
         print(f"    FAILED: {f}")
-    out = w.save()
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's import cone -- it imports only stdlib and WitnessBuilder. This is provenance bookkeeping over an ILP solution count, with no substrate evaluation. It was declared `ambiguous` in the manifest, which the builder can never stamp, so the witness went out unstamped. Bean qou-fl0a."
+        ),
+    })
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
 

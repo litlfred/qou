@@ -34,7 +34,7 @@ Every route below is judged on one question: **does it produce that object?**
 | 2 | Bruhat / `GL_n(F_q)` realisation of `H_n(q)` | `qou-8p1h` | group natively; fibre via complex **3** of `PSL(2,7)` | **live, gated** on `qou-8p1j` |
 | 3 | char-2 justification (gate for #2) | `qou-8p1j` | — | **the load-bearing unknown** |
 | 4 | Octonionic `G_2` (status quo, direction 2) | — | yes, by import | **works, but unearned** — substrate bridge dead, `qou-8fl1` |
-| 5 | Tetraplectic / quaternionic (Foth, Foth–Leitner) | `qou-8p1g` | supplies `SU(2)`, already spent on electroweak | **does not reach `SU(3)` as instantiated** |
+| 5 | Tetraplectic / quaternionic (Foth, Foth–Leitner) | `qou-8p1g` | supplies `SU(2)`, already spent on electroweak | **EXCLUDED scope-(b)** — and `m ≥ 2` does not rescue it |
 | 6 | "4-form degenerates" -> `Spin(7)` -> `G_2` -> `SU(3)` | `qou-8p1f` | — | **EXCLUDED scope-(b)**, dimension count |
 | 7 | `G_2 -> SU(3)` via `S^6 = G_2/SU(3)` | open-problem item 3 | yes, if `G_2` granted | **surviving form-stabilizer link** |
 
@@ -71,6 +71,20 @@ and it still does not get to `SU(3)`. Three problems, in increasing severity:
 the Bring-cone instantiation is at `m = 1` where the tetraplectic condition is
 *vacuous*; its output is `SU(2)`; and that `SU(2)` is already spent on
 electroweak. Full detail in `qou-8p1g`.
+
+**UPDATE 2026-08-24 — #5 is now EXCLUDED, not merely "as instantiated".**
+`qou-8p1g` left one escape open: go to `m >= 2`, where the tetraplectic
+condition has content, and ask whether the `S_3` permuting three quaternionic
+lines of `Sp(3)/Sp(1)^3` yields `SU(3)`. It does not. Every Lie-algebra map
+`su(3) -> su(2)^k` is zero (simplicity, not dimension — `dim su(2)^3 = 9 > 8`,
+so the naive count permits an embedding and is the wrong tool), and `SU(3)` has
+no nontrivial real representation below dimension 6, so nothing acts on a
+single quaternionic line either. The "three" of the permutation is a
+three-element **set** with a **finite** group on it; colour needs a
+three-dimensional complex **vector space** with a **connected** one, and a
+continuous map from a connected group to a finite one is constant. That is
+this bean's own adjoint-vs-fundamental equivocation reappearing one level up.
+`computations/quaternionic_flag_su3_exclusion.py`, 23/23.
 
 **#6 "4-form degenerates".** Excluded, and cleanly — `qou-8p1f`. There is
 nothing for the 4-form to degenerate *into*.

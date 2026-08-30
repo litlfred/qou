@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T17:32:45.928536+00:00",
-  "commitSha": "6f3f161fe1839ebbc1311b92e7ab191cfb5986aa",
+  "computedAt": "2026-08-29T19:29:34.762631+00:00",
+  "commitSha": "9aeac96d6663289d4a07f5b38e59b6ce77805e74",
   "assertions": [
     {
       "name": "single_generator_control_sterile",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 33,
   "computation": "alpha-em-germ-viability",
   "scriptFile": "alpha_em_germ_viability_probe.py",
-  "scriptHash": "4d181be4e3c2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5fe45b449b50",
+  "scriptCommitSha": "13cb8250680c4ac227787e015f44ce5b8d3d9ce2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,10 +44,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -73,5 +75,7 @@
       "live": true,
       "text": "LIVE — the germ curvature is non-sterile IN the EM singlet channel on two-generator words (the single-generator binding case structurally lacks this). NECESSARY not sufficient: does NOT prove the germ reproduces Φ (that is the 08a2 keystone); it decides the route is worth the multi-week setup."
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's import cone -- sympy, mpmath, WitnessBuilder and set_compute_dps, with no q_parameter or qou_substrate.constants anywhere, and it reads no upstream witness. The germ Hol(q) = prod sigma_i(q) is symbolic IN q by construction; the viability question is about whether a germ exists at all, not about its value at any pin. Confirmed by payload: no q_0 value of either anchor appears in it. Declared 2026-08-29 to take the q0-anchor refill ratchet to NEW = 0; bean qou-fl0a."
 }

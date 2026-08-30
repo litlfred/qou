@@ -8,7 +8,7 @@ $$
   y_{(1,1,1)}(q) = z(q),
 $$
 
-where $z(q) = \sqrt q / (1 + q) = 1/(q^{1/2}+q^{-1/2})$ is the parameter *this instance* is built on. It is the **excised convention C** value (owner ruling 2026-08-09), not the framework's production Markov parameter $z = q^3/(q^2+1)$; the instance is a formal inhabitant of the class, constructed to show the class is non-empty, and nothing downstream reads its $z$ as the paper's.
+where $z(q) = \sqrt q / (1 + q) = 1/(q^{1/2}+q^{-1/2})$ is the parameter *this instance* is built on. It is the **excised convention C** value, not the framework's production Markov parameter $z = q^3/(q^2+1)$; the instance is a formal inhabitant of the class, constructed to show the class is non-empty, and nothing downstream reads its $z$ as the paper's.
 
 ## Cross-references
 

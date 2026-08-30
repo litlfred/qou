@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T10:27:29Z
+updated_at: 2026-08-30T06:57:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2620,3 +2620,243 @@ constants PROTON_NF/NEUTRON_NF are build_nucleon_nf; the fork-pricing probe
 reads _PROTON_G0/_G1. Not filed as its own bean yet.
 ## 2026-08-29 — workflow: ALL 5 Q_beta/c3 lanes converge on this bean as the blocker
 Adversarially-verified (audit 2026-08-29-convention-d-qbeta-front). Key results: (1) proved-lean STRUCTURAL VERDICT (both lenses survive): the C ladder does NOT survive under D; z_D IS the two-row/TL trace (y_(1^3)=0 IFF z=z_D; qou-06wh/PR#5925 proves roots {q,z_D}, net excluded); C->D not a z-swap. Next brick = owner-call qou-99qc (a counit eps that DESCENDS to TL_inf AND reduces to the mass-channel eps; current net(e) != 0 on J_(1^3)). (2) c2 under D is OPEN, NOT -1 and NOT -9.299: the C-frame expression 1-u^2 is z-free (docstring, symbolic-exact) but whether the D-REBUILT N=2 factor = 1-u^2 is OPEN; -9.299 is a CODATA data-inversion (Q_exp/Q_N1^D-1)/u^2, scope-(a) non-structural. (3) -974 cost framing corrected: it is a 1/u^3 amplifier; D phase residual 0.895x (better than C) -- 'measures the amplifier, not the physics'. Mass three-row forcing is COMPATIBLE with a genuine D ladder (must factor through TL, co-located with mass channel).
+
+## 2026-08-30 — a LEAD on where the D-frame re-derivation should start (NOT a finding)
+
+Stating this as a lead because I can measure the identity but cannot yet
+separate the two readings of it, and the difference is the whole content.
+
+### The identity, exact over Q(q)
+
+The ladder's Hoefsmit constant b = sqrt(q^4+q^2+1)/(q^2+1) satisfies
+
+    b^2 = [3]_q * z_D^2 / q^4          EXACT (sympy, difference simplifies to 0)
+
+and the convention-C analogue does NOT hold ([3]_q z_C^2/q^4 leaves a
+q^5(q+1)^2 denominator). Equivalently: b's denominator is (q^2+1), which is
+convention D's denominator, and b contains no (q+1) and no sqrt(q) — the two
+things convention C is built from.
+
+If that is structural it is a real prune: the ladder's RUNGS are already
+D-natural (b appears in every rung as b^2 h^4, 2b^3 h^6, b^8 h^8, ...) and
+the entire convention question localises to the PHASE alpha = (z-1)h/2,
+which is the only place z_C appears. That would make the published ladder
+convention-MIXED rather than convention-C, and would say the re-derivation
+has to re-derive one object, not five.
+
+### Why this is NOT yet a finding — the honest objection to my own lead
+
+The coefficient [3]_q/q^4 was chosen BY ME to make the identity come out.
+Any b can be written as (coefficient) * z^2 for a suitable coefficient; the
+question is whether THIS coefficient is natural or fitted, and I have not
+established that. Sharpened: the unique positive z solving b^2 = [3]_q z^2/q^4
+is exactly z_D — but I picked the numerator that makes it so.
+
+Independent reason for caution: b is a HOEFSMIT object (the H_3 seminormal
+rep), defined with no reference to any Markov parameter
+(qbeta_symbolic_chain_alpha_b.py calls it 'Hoefsmit b (closed form!)' and
+derives it from the representation, not from z). So the identity relates two
+INDEPENDENTLY defined objects, which is what makes it interesting — and also
+what makes a shared cyclotomic factor (q^2+1) a plausible coincidence, since
+(q^2+1) is not rare in H_3.
+
+### The test that would separate the two readings
+
+Does it GENERALISE? If b is genuinely D-natural the analogous relation should
+hold between the n=4 Hoefsmit constant and the n=4 convention-D parameter; if
+it is a shared cyclotomic factor at n=3 it will break. This is the
+da-arity-conflation discipline applied to my own lead: a relation at one
+instance says nothing about the family, and I have exactly one instance.
+
+Not run yet — 'the n=4 Hoefsmit b' needs defining before it can be tested,
+and that definition is itself the work. Nothing wired; nothing claimed.
+
+## 2026-08-30 (later) — the lead above is RETRACTED; what replaces it (PR #6103)
+
+**The lead is dead, and I killed it.** b^2 = [3]_q z_D^2/q^4 is a RESTATEMENT.
+In quantum integers:
+
+    b   = sqrt([3]_q)/[2]_q      (Hoefsmit off-diagonal, axial distance 2)
+    z_D = q^2/[2]_q
+    z_C = 1/[2]_sqrt(q)
+
+Substituting z_D = q^2/[2]_q returns b^2 = [3]_q/[2]_q^2, which IS b's own
+definition. Zero information about b. The objection I attached to the lead
+this morning was the right one and it was fatal: two independently defined
+objects sharing a cyclotomic factor. Probe
+qbeta_ladder_convention_dependence_is_one_phase_probe, 7/7, carries the
+retraction as a control rather than deleting it.
+
+**What is actually true, and it is the opposite of the lead:** b is a HOEFSMIT
+constant, built from the H_3 seminormal representation with NO Markov
+parameter in it. So b is convention-INDEPENDENT — neither C nor D.
+
+## The sharpening, which is the real gain
+
+Measured over the whole published formula: Q_A, hbar_q, b and ALL FOUR RUNGS
+are z-free. alpha = (z-1)h/2 is the ONLY z.
+
+That creates a tension worth naming, because both halves are corpus positions:
+
+  (i) the published ladder's only z-dependence is one phase, so a
+      z-substitution changes the phase and NOTHING ELSE; and
+  (ii) AGENTS.md + QOU.QBeta.decayLadder_zC_threeRow_ne_zero say the D-frame
+      ladder must be RE-DERIVED and that a z-swap is invalid.
+
+Both cannot be the whole story. The only resolution: the RUNGS' DERIVATION
+used the three-row C-frame trace at a step that has been integrated out of the
+final formula. Under D the trace is two-row (y_(1^3)(z_D) = 0, Lean-proved in
+qou-06wh and reproduced here from the regular representation).
+
+**LOCATING THAT STEP IS THE RE-DERIVATION.** That is a sharper statement of
+this bean's open problem than it carried before, and it is where the next
+session should start: find where b^2 hbar^4, 2b^3 hbar^6, 2b^8 hbar^8 and
+(b^2+1/2)b^5 hbar^10 come from, and check which of them used three rows.
+
+## Reproduced, NOT new — verified as not new
+
+The D-frame H_3 weights recomputed here match
+computations/y-lambda-symbolic-witness.json (markov_convention: D) exactly:
+y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0. Corpus-grep
+found this AFTER I computed them, so treat my run as an independent check on
+that committed witness, not as a contribution.
+
+Newly recorded (vocabulary, not mathematics): y_(2,1)(z_D) = 1/[2]_q^2 and
+tr_M^D(T_e) = 1 exactly, so the D-frame trace closes as
+
+    tr_M^D = ( [2]_{q^2} chi^(3) + chi^(2,1) ) / [2]_q^2 ,  [2]_q^2 = [2]_{q^2} + 2.
+
+## 2026-08-30 (third pass) — the sharpened question is ANSWERED, and the answer is a negative
+
+Previous entry asked: the published ladder's only z-dependence is the phase
+alpha, so where does the three-row C-frame dependence hide such that
+'re-derive, do not z-swap' is true?
+
+**It does not hide. There is no derivation of c_3 to redo.** The live producer
+computations/probe_q_beta_operator_valued_N3.py extracts c_3 by INVERTING the
+experimental Q_beta against the ansatz, in its own comments:
+
+    Q_emp_factor    = Q_AME / Q_N2                        # 'residual factor we need'
+    c3_emp_additive = (Q_emp_factor - 1) / (b**3 * hbar_q6)
+
+and labels the matching row '[fit]'. So 'c_3 = -2 = J_Hopf(q=1)' is a post-hoc
+MATCH to an extracted number, not a derivation. J_Hopf(q=1) = -2 is itself
+convention-free — the Jones polynomial of ANY link at t=1 is
+(-2)^(components-1), and Hopf has 2 components — and every J_Hopf site in the
+corpus is a hardcoded literal in _deprecated/ citing Jones 1985, computed from
+no trace at any z.
+
+Measured (probe qbeta_c3_is_extraction_determined_probe, 5/5):
+  - the extracted c_3 fed back reproduces its own input, residual 0
+  - the published N=3 residual is exactly the (-2 vs extracted) gap propagated
+  - the extraction amplifies its reference Q by 1.618e6
+  - c_3 moves 2.8 % across q0 pins but 5.5e4 % between z_C and z_D
+
+## What this means for this bean, restated
+
+'Re-derive under D' cannot mean 'redo the derivation'. For c_3 there is none.
+It means DERIVE it for the first time — or establish that the product-ansatz
+SHAPE, Pi(1 + c_k u^k) with u = b*hbar_q^2, is itself C-specific. The D-frame
+extracted c_3 near -974 sits near no categorical candidate, which is scope-(a)
+evidence the shape does not transfer.
+
+This is consistent with, and sharpens, the red-team verdict already recorded in
+this bean ('convergence-framework PHYSICS wrapped around higher-coefficient
+NUMEROLOGY').
+
+## The near-match is fragile — and this is NOT a corpus defect
+
+I nearly filed 'the corpus carries two neutron masses' as a high-priority bug.
+It is DOCUMENTED at both sites: codata_2022_source.py lists CODATA-2022's
+direct measurement 939.56542194(48) AND an AME-derived 939.56542179, and
+qou_substrate's line reads 'AME-derived, NOT CODATA'. Retracted.
+
+What survives is stronger: choosing between those two legitimate references
+moves Q_beta by 191.73 ppb and the extracted c_3 by 17.6 % — about 5x the
+3.4671 % gap on which the c_3 = -2 near-match rests. The near-match is not
+robust to a reference choice the corpus deliberately leaves open.
+
+(Second retraction, same pass: I read M_N_MEV_VALIDATION's long decimal
+expansion as an mpf built from a float64 literal. Wrong — the witness stores
+strings; that was str(mpf) at 65 dps.)
+
+SCOPE: the probe does not reproduce the corpus's recorded c_3 = -2.0693425728
+with either reference and says so up front. Its content is structural.
+
+## 2026-08-30 (fourth pass) — the audit is COMPLETE: nothing above N=0 is derived
+
+Traced every ingredient of the published ladder to its definition site.
+
+| ingredient | z-carrying? | derivation status |
+|---|---|---|
+| Q_A = abs(eps m_e/(q(q-1))) | no | eps is a coordinate sum; z-free |
+| hbar_q = (q-1)/q | no | definition |
+| b = sqrt([3]_q)/[2]_q | no | Hoefsmit off-diagonal, axial distance 2 — genuinely representation-theoretic, and convention-INDEPENDENT |
+| alpha = (z-1)h/2 | **YES, the only one** | **bare `def`, NO derivation theorem** |
+| c_2 = -1 | no | bare `def` (N2_factor), no theorem; 'structural' by unfolding only |
+| c_3 = -2 | no | **EXTRACTED by inverting CODATA**; the J_Hopf(q=1) match is post-hoc |
+| c_4 = -2b^4, c_5 = -(b^2+1/2) | no | read off b |
+
+**So 're-derive the ladder under D' has nothing to re-derive.** Above N=0 the
+ladder is one undeirved phase, one undeirved structural rung, one extracted
+rung, and two read off a representation-theoretic constant. The task is to
+DERIVE it, first time — that is a bigger and more honest statement of this
+bean than 'redo the derivation under a different convention'.
+
+Evidence for the alpha row specifically
+(content/.../lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean):
+`alpha` is a bare `noncomputable def` at line 61. Every theorem touching it
+evaluates at q=1 (`alpha_one`), states bar-behaviour
+(`eigenphase_bar_involution`), or restates the form (`q_beta_nK_structural_form`).
+None derives it. The same file at lines 686-690 already records that the
+'eigenphase = f' hypothesis is **falsified at u^1** — so the one derivational
+story alpha had is closed, negatively.
+
+## Two things I checked that were ALREADY KNOWN (corpus-grep caught both)
+
+1. The Lean ladder's `markovZ'` is convention **D** (`q^3/(q^2+1)`) while the
+   Python implementation is **C**. Not a discovery: the file's own docstring
+   carries the caveat ('a theorem evaluated only at the classical point is
+   convention-agnostic by accident of sitting exactly on the coincidence ...
+   anything evaluated away from q = 1 still needs re-deriving under D'), and
+   the migration commit bf7d8f3d3e is titled 'qou-cxjq: the c_k ladder — it
+   COMPILES under D, and that is a much weaker result than it sounds'.
+2. The D-frame H_3 Markov weights — already in y-lambda-symbolic-witness.json.
+
+## Where a next session should start
+
+Not on the ladder's algebra, which this pass has now exhausted. On alpha: it
+is the only convention-carrying object and it has no derivation. Either derive
+the single-wrap eigenphase from the D-frame two-row trace, or establish that
+the product ansatz Pi(1 + c_k u^k) with u = b*hbar_q^2 is not the right shape
+under D. The u^1 falsification above is a live constraint on the first route.
+
+## 2026-08-30 — CORRECTION to my own fourth-pass entry above
+
+The fourth-pass table says alpha is a "bare \`def\`, NO derivation theorem" and
+concludes "nothing above N=0 is derived". **The first clause is true only of the
+LEAN; the conclusion over-claims for alpha.**
+
+alpha IS derived, and by me, three days before I wrote that:
+computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py (PR #5864)
+proves
+
+    (D1)   2*alpha = net(Delta) - tr_M^z(Delta)     identically in q and z
+
+with the IDENTIFICATION credited there to a sibling on PR #5337 (comment
+5421747260, bean qou-avt5). I re-derived it from scratch this pass before the
+corpus-grep found my own file — searching "net minus trace" and "eigenphase"
+first, which miss it; only the file-level grep hit.
+
+So the corrected status of the ladder above N=0:
+
+  alpha    DERIVED as a probe (2*alpha = net(Delta) - tr_M(Delta), exact in z);
+           NOT formalized in Lean, where it remains a bare \`def\`
+  c_2      bare \`def\` (N2_factor), no theorem
+  c_3      EXTRACTED by inverting experiment
+  c_4,c_5  read off the Hoefsmit b
+
+**The concrete next step is therefore narrower than 'derive alpha': Lean-prove
+(D1).** The derivation exists, is exact and symbolic in both variables, and
+formalizing it would upgrade alpha from bare def to derived — which is exactly
+the formalize-first discipline this bean's own Discipline section asks for.

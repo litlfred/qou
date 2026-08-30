@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:54:06.618754+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T06:19:01.821275+00:00",
+  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 5,
   "computation": "hh-trefoil-corrected",
   "scriptFile": "hh-trefoil-corrected.py",
   "scriptHash": "5465667a4159",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -38,48 +38,48 @@
     "w_sym": 0.1654613850336069,
     "w_std": 0.6690772299327862,
     "w_alt": 0.1654613850336069,
-    "E_mol_eV": 6.729338426152079
+    "E_mol_eV": 6.72932460783094
   },
   "data": {
     "Inverse trefoil s0i.s1i.s0i (w": {
       "writhe": -3,
       "binding": 0.8776264544384091,
-      "E_eV": 5.9058454236599935
+      "E_eV": 5.905833296335806
     },
     "Inverse trefoil s1i.s0i.s1i (w": {
       "writhe": -3,
       "binding": 0.8776264544384091,
-      "E_eV": 5.9058454236599935
+      "E_eV": 5.905833296335806
     },
     "Positive trefoil s0.s1.s0 (w=+": {
       "writhe": 3,
       "binding": -0.5511522107110668,
-      "E_eV": -3.7088897501966493
+      "E_eV": -3.7088821341984053
     },
     "(s1i)^2 Hopf link (w=-2)": {
       "writhe": -2,
       "binding": 0.6375816339850648,
-      "E_eV": 4.290502589384527
+      "E_eV": 4.2904937790767566
     },
     "(s1i)^3 (w=-3, NOT trefoil)": {
       "writhe": -3,
       "binding": -0.7629048241352249,
-      "E_eV": -5.133844748549963
+      "E_eV": -5.133834206486105
     },
     "Figure-8: s0.s1i.s0.s1i (w=0)": {
       "writhe": 0,
       "binding": -1.2127286690547758,
-      "E_eV": -8.16086163316657
+      "E_eV": -8.160844875292367
     },
     "T(2,5) = s0.s1.s0.s1.s0 (w=+5)": {
       "writhe": 5,
       "binding": -1.3458559145358275,
-      "E_eV": -9.056719921749993
+      "E_eV": -9.056701324280759
     },
     "T(2,5)^-1 (w=-5)": {
       "writhe": -5,
       "binding": -0.30298821785345775,
-      "E_eV": -2.0389102570726108
+      "E_eV": -2.0389060702841153
     }
   },
   "q0Anchor": "proton",
