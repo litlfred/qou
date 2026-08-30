@@ -47,6 +47,10 @@ import QOU.BraidKnot.UnstableAtom.decay_channel
 import QOU.BraidKnot.schur_weyl_mass_decomposition
 import QOU.ParticleInteractions.confinement_frobenius_reciprocity
 import QOU.BraidKnot.e_infinity_identifications
+import QOU.Hecke.InstanceH2
+import QOU.Hecke.MarkovTrace
+import QOU.Shared.MarkovTraceClaim
+import QOU.BraidsAndKnots.explicit_alpha_k_h4
 
 /-! ## Inhabited with no hypotheses
 
@@ -235,3 +239,60 @@ example : QOU.BraidKnot.EInfinityIdentificationsContext where
   claim_chirality_sign := Or.inl rfl
   claim_wenzl_bridge_correction := True
   claim_wenzl_bridge_correction_holds := trivial
+
+/-! ## The `extends MarkovTraceContext` family, via a degenerate parent
+
+Five of the undecided classes `extends` a shared parent, and the prober skips
+them for that reason alone.  They are unlocked by inhabiting the parent —
+which, per the header of
+[`QOU/Hecke/InstanceH2.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/InstanceH2.lean),
+had never been done:
+
+> *"no concrete instance of `QOU.Hecke.HeckeAlgebra` existed anywhere in the
+> tree (nor of `QOU.Hecke.MarkovTrace`, nor of
+> `QOU.Shared.MarkovTraceContext`)"*
+
+That file supplies the missing piece and names the reason it is easy: its
+`rankOneModel` shows `ℚ` itself is a `HeckeAlgebra ℚ n 1 ℚ` **at every `n`**,
+because at `q = 1` the Hecke parameter `h = q − q⁻¹` vanishes.  So a hypothesis
+`[HeckeAlgebra R n q A]` is far weaker than "`A` is the Hecke algebra" — the
+missing axiom being the Iwahori basis (that file's own analysis, bean
+`qou-ghak`).
+
+What is added here is the other half: the same rank-one model carries a
+**Markov trace**, hence a `MarkovTraceContext`.  Credit for the model is theirs;
+this is one step downstream of it. -/
+
+open QOU.Hecke QOU.Hecke.InstanceH2 in
+/-- `trace = id`, `z = 1`.  Cyclicity is `mul_comm` in `ℚ`, and both generator
+axioms are `rfl` because `embed` is constantly `1`. -/
+noncomputable instance rankOneMarkov (n : ℕ) : MarkovTrace n (1 : ℚ) ℚ where
+  trace := LinearMap.id
+  normalised := rfl
+  cyclic := by intro x y; simp [mul_comm]
+  z_param := 1
+  trace_gen := by intro i; rfl
+  trace_prod_gen := by intro i j _; rfl
+
+open QOU.Hecke.InstanceH2 in
+/-- **`QOU.Shared.MarkovTraceContext` is inhabited**, at `R = A = ℚ`, `q = 1`.
+Every `extends MarkovTraceContext` class in the corpus can be built from this,
+so the parent contributes nothing to any of them. -/
+noncomputable def degenerateMarkovTraceContext : QOU.Shared.MarkovTraceContext where
+  R := ℚ
+  ringR := inferInstance
+  invR := inferInstance
+  q := 1
+  n := 3
+  A := ℚ
+  ringA := inferInstance
+  algebraA := inferInstance
+  heckeInst := rankOneModel 3
+  markovInst := rankOneMarkov 3
+
+/-- First of the family: `p(4) = 5` conjugacy classes.  The claim is `5 = 5`
+and the inherited Markov-trace substrate is the degenerate one above. -/
+noncomputable example : QOU.BraidsAndKnots.ExplicitAlphaKH4Context where
+  toMarkovTraceContext := degenerateMarkovTraceContext
+  n_classes := 5
+  claim_explicit_alpha_k_h4 := rfl
