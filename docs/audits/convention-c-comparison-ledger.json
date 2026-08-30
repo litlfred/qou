@@ -1098,6 +1098,22 @@
       "line_at_adjudication": 155,
       "scope": "main",
       "rationale": "The bar-conjugate companion of z_naive, which is already adjudicated in this ledger as one of the probe's two parameter-free magnitudes. z_bar is written out to demonstrate z's bar-evenness; it differs from z_naive only by commuting the addition, so the companion assertion z_bar_even is exactly 0 and CANNOT FAIL -- labelled in situ on #6058 as MANIFEST rather than measured. Adjudicated for the same reason as z_naive: substituting z_D would test a different candidate, and here it would additionally break the demonstration, since z_D is bar-NEITHER (measured: z_D(1/q) - z_D(q) = -q + 1/q)."
+    },
+    {
+      "path": "computations/probes/toffoli_qand_convention_d_derivation.py",
+      "target": "zc_s",
+      "source_hash": "78ac4d660831",
+      "line_at_adjudication": 185,
+      "scope": "main",
+      "rationale": "CONFIRMED convention C, and it sat in the audit's UNRESOLVED bucket rather than BLOCKING purely because the variable name `_s` is not in the recogniser's list. The file declares it at :109 -- `_s = sp.symbols(\"s\", positive=True)  # s = sqrt(q)` -- so `_s/(_s**2+1)` IS sqrt(q)/(q+1) = z_C, the generic-variable spelling. It is the deliberate C arm of GATE 4/5 in a file whose subject is the convention-D derivation: it reconstructs P_77 = z + h*z^2 exactly and checks that its D form is positive. Note that P_77 = z + h*z^2 is the SAME shape as the TR_M[5] Markov weight (h*z^2 + z) whose absence caused the three-instance bug fixed on #6058/#6169 -- here it is present and correct."
+    },
+    {
+      "path": "computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py",
+      "target": "<return>",
+      "source_hash": "89dae5d199be",
+      "line_at_adjudication": 134,
+      "scope": "z_C_s",
+      "rationale": "CONFIRMED convention C and self-declaring: the enclosing function is literally named `z_C_s` (:132). It sat in UNRESOLVED rather than BLOCKING only because the parameter name `ss` is not in the audit's sqrt-variable recogniser. `ss/(ss**2+1)` with ss = sqrt(q) is z_C in the generic-variable spelling."
     }
   ]
 }
