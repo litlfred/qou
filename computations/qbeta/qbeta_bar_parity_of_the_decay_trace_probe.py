@@ -89,12 +89,12 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-import sys as _sys, pathlib as _pl  # noqa: E402
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
-import _path_bridge  # noqa: F401,E402
-
 HERE = Path(__file__).resolve().parent
+# `_path_bridge` lives in computations/, one level up from this cluster dir, so
+# that directory must be on sys.path BEFORE the import — otherwise the script is
+# unrunnable standalone (AGENTS.md; computations/audits/path_bridge_bootstrap_audit.py).
 sys.path.insert(0, str(HERE.parent))
+import _path_bridge  # noqa: F401,E402
 
 import sympy as sp  # noqa: E402
 

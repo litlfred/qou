@@ -16,12 +16,12 @@
       "path": "computations/probes/he4_body_order_shortfall_location_probe.py",
       "target": "<return>",
       "source_hash": "6a3e1d0c3e9c",
-      "line_at_adjudication": 102,
       "scope": "z_of",
       "rationale": "`z_of(q, convention)` is a two-arm frame-comparison helper: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe calls both to measure the frame difference in the He-4 body-order shortfall. The function's own docstring scopes the C arm 'excised - computed here ONLY to measure the frame difference, never wired'. Binding only z_D would delete the comparison the probe exists to make. NOTE: --propose-ledger does NOT stub this site, because its D arm is a CALL (`markov_z(q)`) rather than an inline z_D binding, so the co-binding hint does not fire. Adjudicated by hand for that reason; see bean qou-1jny.",
       "adjudicated_by": "claude (session 2b6a2d13)",
       "date": "2026-08-29",
-      "bean": "qou-1jny"
+      "bean": "qou-1jny",
+      "line_when_adjudicated": 102
     },
     {
       "path": "computations/markov_z_full_bar_condition_probe.py",

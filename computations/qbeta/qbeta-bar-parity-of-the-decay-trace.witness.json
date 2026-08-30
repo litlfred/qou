@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T07:53:25.925110+00:00",
-  "commitSha": "0a4d8f6d860d93c44591896a0e7c6d5ab1da0519",
+  "computedAt": "2026-08-30T07:58:46.804880+00:00",
+  "commitSha": "9f085c7cc4dea9f3ce26fa7809a35b1456b92657",
   "assertions": [
     {
       "name": "bar_oddness_iff_full_bar_condition",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1019,
+  "durationMs": 969,
   "computation": "qbeta-bar-parity-of-the-decay-trace",
   "scriptFile": "qbeta_bar_parity_of_the_decay_trace_probe.py",
-  "scriptHash": "f746ed60913d",
-  "scriptCommitSha": "0a4d8f6d860d93c44591896a0e7c6d5ab1da0519",
+  "scriptHash": "6c5fb8d233c7",
+  "scriptCommitSha": "f2c3387841aa31e810f2904c81051cb39761dd1a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
