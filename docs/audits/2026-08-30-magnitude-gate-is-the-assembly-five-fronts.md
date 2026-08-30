@@ -25,7 +25,7 @@ The five fronts, in the order they were worked:
 | M1 | replace the assembly | **§10a's Cauchy step is orthogonal to the defect** — proved for *every* bond functional, not only the log |
 | M2 | fixed-depth vs super-exponential | **machine-checked incompatibility**; which side gives is not decided |
 | M3 | ramified double cover | **measured, and it does not close** — a dichotomy by kernel depth |
-| M4 | SU(4) `[1⁴]` shell object | **the first sign-capable candidate**; a single common scale refuted |
+| M4 | SU(4) `[1⁴]` shell object | a single common scale **refuted**; the sign-capability claim **corrected below** — it is analytic and discriminates nothing |
 | M5 | `M_n(K)` under the Option-A ruling | the "blocked upstream" clause is **stale**; the counts are fixed and cannot supply the surplus |
 
 ---
@@ -198,7 +198,7 @@ counting.
 
 ---
 
-## M4 — the SU(4) `[1⁴]` object is the first sign-capable candidate
+## M4 — SU(4) `[1⁴]`: a common scale refuted, and my sign-capability claim corrected
 
 **Bean `qou-u8mu`. Probe:
 [`computations/probes/su4_supermultiplet_body_order_sign_probe.py`](../../computations/probes/su4_supermultiplet_body_order_sign_probe.py)
@@ -211,10 +211,27 @@ antisymmetriser, `dim = C(4,n)`, vanishing for `n > 4`
 (`SU4SupermultipletGate`, sorry-free). Given M1, the first question is not "does
 it hit 9.24 MeV" but the one that killed its two predecessors.
 
-**Leg 1 — sign capability.** `C(4,n) > 0` for `n = 2,3,4`, so with positive
-per-order energies every connected cumulant is positive. **It is the first
-candidate in the corpus not sign-obstructed at 3-body.** Necessary condition
-only; not evidence of closure.
+**Leg 1 — sign capability. 🛑 CORRECTED 2026-08-30, against my own claim.**
+`C(4,n) > 0` for `n = 2,3,4`, so with positive per-order energies every
+connected cumulant is positive. I wrote that this makes SU(4) *"the first
+candidate in the corpus not sign-obstructed at 3-body"*. **That overstates it.**
+The property is `C(4,n) > 0` — binomial arithmetic — so it is **analytic**, and
+it holds for *any* object with positive per-order weights whether or not it has
+anything to do with binding. It discriminates nothing, and every
+positive-weight assembly is equally "sign-capable".
+
+What actually singles the object out is structural, not numerical: it is a
+**non-link-invariant, non-pairwise** object, so neither the Milnor `μ̄`
+indeterminacy exclusion nor `PairwiseCumulantVanishing` reaches it. **Cite the
+exclusions it survives, never its positivity.**
+
+This is the failure mode bean `qou-04ub` AMENDMENT 1 already recorded against
+the *same object one step over* — a choice-free candidate whose definite
+prediction is **analytic rather than synthetic** — and I walked into the
+neighbouring instance of it while citing that object. Their diagnostic question
+is the one to apply: *could the prediction have come out otherwise, given the
+specification?* For `C(4,n) > 0`, no. See
+[`prereg_su4_prediction_is_analytic_probe.py`](../../computations/meson/prereg_su4_prediction_is_analytic_probe.py).
 
 **Leg 2 — zero-parameter ratio test.** A single common scale forces the ratios:
 
