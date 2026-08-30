@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T13:06:14.873Z",
+  "updated_at": "2026-08-30T13:58:30.874Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3637,14 +3637,6 @@
       "evidence": "A REAL algebraic identity: with `wedderburnSym := 1/(t^2+2)` and `wedderburnStd := t^2/(t^2+2)` for t = q + q^{-1}, the sum `1/(t^2+2) + t^2/(t^2+2) + 1/(t^2+2) = 1` needs `field_simp` and `ring`, not unfolding. It is the normalisation check on the Wedderburn weights and would catch a wrong weight.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean::structurallyValidBinding_necessary::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "binder-echo",
-      "line": 102,
-      "verdict": "genuine",
-      "file_sha": "c5dbf1de8bd4",
-      "agent_note": "`(h_invalid : not P) : not P := h_invalid` -- the identity function. Sharpest of the nine: the docstring EIGHT LINES ABOVE records that a previous `(h : not P) : not P := h` 'was a self-assuming tautology that asserted nothing about braid words'. The lesson is written down and the shape is repeated below it for a different predicate. NEW candidate, no prior verdict."
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
