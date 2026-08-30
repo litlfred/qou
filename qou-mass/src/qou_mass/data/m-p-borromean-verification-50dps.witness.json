@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:00:54.962784+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T09:30:54.473879+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
-      "computed": "0.0000409500895364419075324511306725513681591668991730806991254551",
+      "computed": "0.211164914360491664750848125160031210715916798251211153294036",
       "expected": "0",
       "passed": true,
       "tolerance": "2.0",
@@ -15,7 +15,7 @@
     },
     {
       "name": "substrate_flavor_split_ratio_within_1000ppm_of_codata",
-      "computed": "305.403952476639133731640445401663533872486579586730069904719",
+      "computed": "305.728287116855059626813254083712331203794411369552708726435",
       "expected": "0",
       "passed": true,
       "tolerance": "1000.0",
@@ -24,7 +24,7 @@
     },
     {
       "name": "proton_borromean_tower_within_5pct_of_codata",
-      "computed": "28896.0793643376395684603257187073227859654089441468831840169",
+      "computed": "28896.2939280533376382720950622865451843457544247494380184581",
       "expected": "0",
       "passed": true,
       "tolerance": "50000.0",
@@ -33,7 +33,7 @@
     },
     {
       "name": "neutron_borromean_tower_within_5pct_of_codata",
-      "computed": "28895.6465232694901750295651038658699652258264905564838614054",
+      "computed": "28895.8606272238866568702600777545723202715333608507381140097",
       "expected": "0",
       "passed": true,
       "tolerance": "50000.0",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "35165a8ddc21",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "6476395ecfb1",
+  "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,28 +81,28 @@
     "linking_weight_proof_script": "lambda_scale_all_c_i_family_a.py",
     "framing_reference_doc": "docs/lambda-scale-absorbed-into-vol-density.md",
     "tracking_doc": "docs/canonical-derivation-cheat-sheet.md §5 fix #1 (closed)",
-    "q_0_50dps": "1.1099785956427390467",
-    "hbar_q_50dps": "0.099081726507577699949",
+    "q_0_50dps": "1.1099785827513808076",
+    "hbar_q_50dps": "0.099081716044258507839",
     "Vol_B3": "7.3277247534177521204",
     "Vol_4_1": "2.02988321281930725",
     "m_e_codata_MeV": "0.51099895069",
-    "vol_density_borromean_q0": "1890.5119509937060375",
+    "vol_density_borromean_q0": "1890.5123448142975983",
     "linking_weight_proton_fitted_from_codata_AUDIT_ONLY": "2.4599527869",
     "linking_weight_neutron_fitted_from_codata_AUDIT_ONLY": "2.4633436333"
   },
   "data": {
     "muon_check": {
       "formula": "m_mu = m_e · Vol(4_1) / ℏ_q²  (S = 0)",
-      "vol_4_1_over_hbar_q_squared": "206.7682827",
-      "m_mu_pred_MeV": "105.65837549567328006",
+      "vol_4_1_over_hbar_q_squared": "206.768326371",
+      "m_mu_pred_MeV": "105.65839781134181393",
       "m_mu_codata_MeV": "105.6583755",
-      "rel_diff_ppm": "-4.09501e-5"
+      "rel_diff_ppm": "0.211165"
     },
     "class_uniform_m_avg": {
       "formula": "m_avg = m_e · VolDensity(𝓑₃, q₀)  (PR #1080, before flavor split)",
-      "m_avg_pred_MeV": "966.04962322468848794",
+      "m_avg_pred_MeV": "966.04982446659753566",
       "m_avg_codata_MeV": "938.918755685",
-      "rel_diff_ppm": "28895.863",
+      "rel_diff_ppm": "28896.077",
       "vol_density_decomposition": "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED canonical Wedderburn — Family A)"
     },
     "canonical_mass_reference": {
@@ -113,40 +113,40 @@
     },
     "substrate_flavor_split": {
       "formula": "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 (prop:flavor-split-substrate, PR #690)",
-      "delta_m_over_M_N": "0.001377049412753823007674863",
+      "delta_m_over_M_N": "0.00137704896599255450539757",
       "delta_m_over_M_N_codata": "0.00137747009756604",
-      "ratio_ppm_vs_codata": "-305.40395"
+      "ratio_ppm_vs_codata": "-305.72829"
     },
     "proton": {
       "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with m_avg_pred = m_e · VolDensity(𝓑₃, q₀) and Δm/M_N from flavor_split_subleading",
-      "vol_B3_over_hbar_q_squared": "746.41784995013989288",
-      "vol_density_borromean_q0": "1890.5119509937060375",
-      "tower_factor": "1889.2102868077460539",
-      "m_p_pred_MeV": "965.38447419151218331",
+      "vol_B3_over_hbar_q_squared": "746.41800759796713899",
+      "vol_density_borromean_q0": "1890.5123448142975983",
+      "tower_factor": "1889.2106807794862542",
+      "m_p_pred_MeV": "965.3846755106580272",
       "m_p_codata_MeV": "938.27208943",
-      "rel_diff": "0.0288960793643",
-      "rel_diff_ppm": "28896.079"
+      "rel_diff": "0.0288962939281",
+      "rel_diff_ppm": "28896.294"
     },
     "neutron": {
       "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and Δm/M_N from flavor_split_subleading",
-      "tower_factor": "1891.813615179666021",
-      "m_n_pred_MeV": "966.71477225786479256",
+      "tower_factor": "1891.8140088491089424",
+      "m_n_pred_MeV": "966.71497342253704412",
       "m_n_codata_MeV": "939.56542194",
-      "rel_diff": "0.0288956465233",
-      "rel_diff_ppm": "28895.647"
+      "rel_diff": "0.0288958606272",
+      "rel_diff_ppm": "28895.861"
     },
     "proton_neutron_split": {
-      "delta_m_pn_pred_MeV": "1.33029806635",
+      "delta_m_pn_pred_MeV": "1.33029791188",
       "delta_m_pn_codata_MeV": "1.29333251",
-      "rel_diff": "0.0285816",
+      "rel_diff": "0.0285815",
       "note": "The pn split is now categorically derived: Δm = m_avg_pred · (ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3) via prop:flavor-split-substrate / flavor_split_subleading. The rel_diff vs CODATA inherits the Family A m_avg gap (~3 %); the substrate flavor-ratio Δm/M_N is matched to ~305 ppm (~0.030 %) independently — see substrate_flavor_split.ratio_ppm_vs_codata."
     },
     "scale_gap_resolution": {
       "single_level_m_p_estimate_MeV": "0.54421388",
       "codata_m_p_MeV": "938.27209",
       "scale_gap_factor": "1724.08701730632518054551985171981463694755194296197582195245",
-      "borromean_tower_multiplier": "1890.51195099370603745781622392487492705390528727047750490023",
-      "match_to_gap_pct": "9.65293120456294799486817883466066607011768032315109184484860",
+      "borromean_tower_multiplier": "1890.51234481429759833383725776545409631176904637375140296420",
+      "match_to_gap_pct": "9.65295404683178986414140260556395837436928304508806282422948",
       "conclusion": "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula closes the gap to ~2.89 % on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to ~305 ppm independently."
     },
     "lean_uniqueness_ref": {
@@ -158,11 +158,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
-        "size_bytes": 6237,
-        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
-        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
-        "computedAt": "2026-08-22T21:11:04.185076+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
@@ -170,6 +170,6 @@
     "λ_A EXCISION (owner ruling 2026-06-24): this witness AUDITS the excised λ_A Borromean-VolDensity path; it is NOT the production absolute-mass route. Production route: canonical_mass.py (muon-anchored Hecke energy, see canonical_mass_reference). Ledger: docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md.",
     "Audited formula framing (pre-excision, PR #1080): m(K) = m_e × VolDensity(K, q₀), a single Geom call per knot.  VolDensity decomposes as (Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A categorical Wedderburn identity, Lean: `lambda-scale-substrate-form.lean`).  There is no separate λ_scale constant — older docs called the linking-weight component λ_scale before it was absorbed into VolDensity.  The prior CAL-4 literals 2.4599527869 / 2.4633436333 are retained only as audit-only comparison columns.  The proton-neutron mass ratio Δm/M_N is the substrate-pure closed form from `prop:flavor-split-substrate` (PR #690): ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the absolute m_avg scale is now framed (per PR #1063) as a VolDensity(𝓑₃) categorical-exactness refinement gap at h² order, NOT as a separate λ_scale closure."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

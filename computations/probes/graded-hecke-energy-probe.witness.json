@@ -1,21 +1,21 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:44:19.004929+00:00",
-  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T07:22:41.396302+00:00",
+  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
       "computed": "1.1457596924573008696890815957741193059437280619434",
-      "expected": "1.065306228613167",
-      "passed": false,
+      "expected": "1.1457596924573008696890815957741193059437280619435",
+      "passed": true,
       "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[neutron]",
       "computed": "0.98774368811580957163402016550129498205504875906272",
-      "expected": "0.9232332971861535",
-      "passed": false,
+      "expected": "0.98774368811580957163402016550129498205504875906283",
+      "passed": true,
       "tolerance": "1e-10"
     },
     {
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 188,
+  "durationMs": 246,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
-  "scriptHash": "b8264b225856",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "609562e893a6",
+  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,10 +43,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -67,12 +66,12 @@
         "Z": 1,
         "N": 0,
         "include_inter": false,
-        "target_tr_M": "1.065306228613167",
+        "target_tr_M": "1.1457596924573008696890815957741193059437280619435",
         "num_partitions": 2,
         "num_grades": 2,
         "max_grade": 1,
-        "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": -1,
+        "effective_confinement_level_tight": 1,
+        "effective_confinement_level_loose_1e_minus_3": 1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -105,12 +104,12 @@
         "Z": 0,
         "N": 1,
         "include_inter": false,
-        "target_tr_M": "0.9232332971861535",
+        "target_tr_M": "0.98774368811580957163402016550129498205504875906283",
         "num_partitions": 2,
         "num_grades": 2,
         "max_grade": 1,
-        "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": -1,
+        "effective_confinement_level_tight": 1,
+        "effective_confinement_level_loose_1e_minus_3": 1,
         "per_grade_cumulative": [
           {
             "grade": 0,

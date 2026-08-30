@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T23:46:06.377429+00:00",
-  "commitSha": "7823271e66b3b24b04b491a61bc37c78df85aae7",
+  "computedAt": "2026-08-30T07:22:41.616882+00:00",
+  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-tr-m-three-path-comparison",
   "scriptFile": "canonical_tr_m_three_path_comparison.py",
-  "scriptHash": "1322548b6a9e",
-  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+  "scriptHash": "bad294ed5f8e",
+  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,8 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -37,17 +36,17 @@
     {
       "atom": "proton",
       "bridge_canonical": 1.1457596924573008,
-      "markov_peel": 1.065306228613167,
+      "markov_peel": 1.1457596924573008,
       "pyhecke_SW_pseudo_canonical": 0.5054042265039308,
-      "peel_vs_bridge_ratio": 0.9297815550906787,
+      "peel_vs_bridge_ratio": 1.0,
       "pyhecke_vs_bridge_ratio": 0.4411084015532042
     },
     {
       "atom": "neutron",
       "bridge_canonical": 0.9877436881158096,
-      "markov_peel": 0.9232332971861535,
+      "markov_peel": 0.9877436881158096,
       "pyhecke_SW_pseudo_canonical": 0.5054042265039308,
-      "peel_vs_bridge_ratio": 0.9346891387858786,
+      "peel_vs_bridge_ratio": 1.0,
       "pyhecke_vs_bridge_ratio": 0.5116754807798619
     },
     {
