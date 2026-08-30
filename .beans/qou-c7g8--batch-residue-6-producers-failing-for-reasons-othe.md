@@ -182,3 +182,58 @@ matplotlib defect fixed above: a late failure destroying earlier valid work.
 Not fixed here because `block_b4` sets `r["cs"]`, `r["ginf"]`, `r["j_rel"]`
 that `block_b4b` and `block_b5` consume, so skipping a rung is not a local
 change and needs the probe owner's call on whether qt=2 belongs in B4 at all.
+
+### 5. `q0_migration_decompose.py` — NOT HUNG. The 600s cap was simply too short.
+
+Re-ran with a 2400s cap: completes, **EXIT=0**, total ~1802s.
+
+    [1/2]  1800.3s  hadron_knot_table            FAIL(m=-9,p=-9)  TIMEOUT >900s
+    [2/2]     2.0s  q0_anchor_consistency_audit  anchor+drift
+    of 2: 1 moved by the ANCHOR, 1 also carried pre-existing DRIFT
+
+It is a DRIVER that runs other producers under its own internal 900s per-producer
+cap. `FAIL(m=-9,p=-9)` is the muon and proton runs each SIGKILLed at 900s —
+2 × 900 = the 1800.3s wall. So no batch cap below ~1810s can ever let this
+script finish, and the "timeout" told us nothing about this script at all: it
+was reporting a nested producer's timeout.
+
+**Instrumentation lesson, the second this bean has produced:** a driver's wall
+time is the SUM of its children's caps. Capping a driver at 600s when it runs
+two 900s children measures the harness, not the code. (The first lesson was
+classifying failures by stderr regex — see item 1.)
+
+### 🔴 The two open items are THE SAME PRODUCER
+
+Re-running the nested audit surfaced that `hadron_knot_table` is also the
+corpus's single remaining **Q0_FLIP**:
+
+    hadron-knot-table.witness.json: anchor=muon but q0Value=1.10997859555733…
+                                    (expected 1.109978595642…)
+
+That is the retired vintage **A** carried under a `muon` label whose current pin
+is **C** — the within-layer vintage straddle this campaign keeps finding, and
+exactly what `q0Value` exists to catch. The witness is dated **2026-06-17**,
+over two months stale.
+
+So: the one producer whose timeout blocks `q0_migration_decompose` is the same
+one whose stale pin blocks `q0_anchor_consistency_audit --strict`. It cannot be
+repinned by re-running because it does not finish inside 900s. Whether it
+finishes at all is being measured now (3000s cap).
+
+### Audit witness refreshed properly
+
+The nested driver ran `q0_anchor_consistency_audit` WITHOUT `--strict`, which
+would have replaced a strict artifact with a weaker one. Re-ran it with
+`--strict` so the witness records the stricter invocation. Counts are identical
+either way — `--strict` gates only the exit code — and they show real progress:
+
+    Q0_OK             1087 -> 1121   (+34)
+    Q0_ANCHOR_MISSING 1629 -> 1601   (-28)
+    Q0_INDEPENDENT      59 ->   67   (+8)
+    Q0_AMBIGUOUS         3 ->    4   (+1, the c_knot stamp from this bean)
+
+`--strict` now fails on exactly ONE thing: the single Q0_FLIP above.
+
+(I briefly suspected `Q0_AMBIGUOUS_NO_REASON` 13 -> 14 was my c_knot stamp
+missing its reason. It is not — that witness carries both `q0Anchor` and
+`q0AnchorReason` at top level, verified. The +1 is a different witness.)
