@@ -659,6 +659,15 @@ QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_ne_zer
 QOU.Archimedean.BlochWignerNonneg | QOU.Archimedean.BlochWignerNonneg.volume_nonneg | clean
 QOU.Archimedean.BlochWignerNonneg | QOU.Archimedean.BlochWignerNonneg.blochWigner_lob_nonneg | clean
 #
+# BlochWignerPositive: the STRICT 0 < D(z), which the comment above (and the headers of
+# both bridge files) called a further step needing angles bounded away from the corners
+# or a strict subadditivity. It needs NEITHER: Rivin strict concavity along a horizontal
+# chord whose two endpoints stay strictly interior, bounded below by the NON-strict
+# lob_sum_nonneg. The strictness comes from the concavity, not from the endpoints.
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.lob_sum_pos | clean
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.volume_pos | clean
+QOU.Archimedean.BlochWignerPositive | QOU.Archimedean.BlochWignerPositive.blochWigner_lob_pos | clean
+#
 # FiveTwoShapeBounds: the first numeric handle on fiveTwoShape, which was
 # Classical.choose on an IVT statement and had NO bracket on re/im/modulus -- only
 # fiveTwoShape_im_pos. Steps (i)-(ii) of the qou-f8lit route to VOL_4_1 < VOL_5_2.
