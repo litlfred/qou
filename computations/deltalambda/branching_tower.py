@@ -163,6 +163,92 @@ def run_validate(shapes=None):
     return ok
 
 
+def syt_path(t, cells, n):
+    """Bratteli path of an SYT: the tuple of level-j shapes (cells of entries 1..j),
+    j = 1..n. Level j shape = partition of the row-multiset of entries 1..j."""
+    path = []
+    rowcount = {}
+    for j in range(1, n + 1):
+        r, _c = cells[t[j]]
+        rowcount[r] = rowcount.get(r, 0) + 1
+        path.append(tuple(sorted((v for v in rowcount.values()), reverse=True)))
+    return tuple(path)
+
+
+def verify_path_locality(shape, eps=mp.mpf(10) ** -50):
+    """Step 3 prerequisite: both σ_g and the germ A_g = q·∂_qσ_g·σ_g⁻¹ are
+    SINGLE-LEVEL-LOCAL in the Bratteli-path basis — a nonzero matrix element
+    ⟨P|σ_g|P'⟩ (or ⟨P|A_g|P'⟩) requires the paths P, P' to agree at every level
+    except level g+1 (generator index g swaps entries g+1,g+2, changing only the
+    shape after placing entry g+1). This is exactly the statement that makes ρ
+    and Ω₂ matrix-product operators over the Bratteli levels. Returns
+    (sigma_violations, germ_violations, max_level_span)."""
+    n = sum(shape)
+    sig, dim, _ = build_seminormal_matrices_mp(shape, Q0)
+    syts, cells, contents = standard_young_tableaux(shape)
+    paths = [syt_path(t, cells, n) for t in syts]
+
+    def _levels_differing(pi, pj):
+        return [lev for lev in range(n) if paths[pi][lev] != paths[pj][lev]]
+
+    sig_viol = 0
+    germ_viol = 0
+    max_span = 0
+    # germ via central finite difference (dense; small n)
+    if dim > 1:
+        sig_p, _, _ = build_seminormal_matrices_mp(shape, Q0 + eps)
+        sig_m, _, _ = build_seminormal_matrices_mp(shape, Q0 - eps)
+    for g in range(len(sig)):
+        allowed = {g + 1}                              # generator g changes only level g+1 (1-indexed level index g+1 → path index g+1)
+        A = None
+        if dim > 1:
+            dsig = (sig_p[g] - sig_m[g]) / (2 * eps)
+            A = Q0 * dsig * mp.inverse(sig[g])
+        for i in range(dim):
+            for j in range(dim):
+                if i == j:
+                    continue
+                diff = None
+                if abs(sig[g][i, j]) > mp.mpf(10) ** -40:
+                    diff = _levels_differing(i, j)
+                    if any((lev + 1) not in allowed for lev in diff):
+                        sig_viol += 1
+                    max_span = max(max_span, len(diff))
+                if A is not None and abs(A[i, j]) > mp.mpf(10) ** -40:
+                    d2 = _levels_differing(i, j)
+                    if any((lev + 1) not in allowed for lev in d2):
+                        germ_viol += 1
+                    max_span = max(max_span, len(d2))
+    return sig_viol, germ_viol, max_span
+
+
+def run_verify_locality(ns=(4, 5, 6)):
+    print("[step3] Bratteli-path LOCALITY of σ_g and germ A_g (MPO-tensor existence)\n")
+    tot_sig = 0
+    tot_germ = 0
+    worst_span = 0
+    for nn in ns:
+        for shape in partitions(nn):
+            if sum(shape) < 2:
+                continue
+            sv, gv, span = verify_path_locality(shape)
+            tot_sig += sv
+            tot_germ += gv
+            worst_span = max(worst_span, span)
+            flag = "" if (sv == 0 and gv == 0) else "  <-- VIOLATION"
+            print(f"  {str(tuple(shape)):>22} n={sum(shape):>2}  σ-violations={sv:>3}  "
+                  f"germ-violations={gv:>3}  max-level-span={span}{flag}", flush=True)
+    print(f"\n[step3] total σ_g non-local elements  = {tot_sig}")
+    print(f"[step3] total A_g (germ) non-local     = {tot_germ}")
+    print(f"[step3] max levels any element spans   = {worst_span}  (must be 1)")
+    assert tot_sig == 0, "σ_g is not single-level-local in the path basis"
+    assert tot_germ == 0, "germ A_g is not single-level-local in the path basis"
+    assert worst_span <= 1, "an operator spans more than one Bratteli level"
+    print("[step3] PASS — σ_g AND the germ A_g are single-level-local ⇒ ρ and Ω₂ are")
+    print("        Bratteli-level MPOs. Step 4 (transfer-matrix contraction) is unblocked.")
+    return True
+
+
 def _npart(m):
     """p(m) — number of partitions of m (the branching-bond upper bound)."""
     return sum(1 for _ in partitions(m)) if m > 0 else 1
@@ -231,10 +317,14 @@ def main():
     ap.add_argument("--validate", action="store_true", help="validate the branching restriction")
     ap.add_argument("--measure-bond", action="store_true",
                     help="step 2: nucleon-cut bond dimension + germ locality (poly-vs-blowup)")
+    ap.add_argument("--verify-locality", action="store_true",
+                    help="step 3: σ_g and germ A_g are single-level-local (MPO-tensor existence)")
     ap.add_argument("--n", type=int, default=None, help="validate only shapes of this n")
     args = ap.parse_args()
     if args.measure_bond:
         measure_tower_bond()
+    elif args.verify_locality:
+        run_verify_locality()
     elif args.n:
         run_validate(list(partitions(args.n)))
     else:
