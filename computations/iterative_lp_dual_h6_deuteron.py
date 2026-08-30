@@ -50,6 +50,7 @@ set_compute_dps()
 from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
+from tr_m_wenzl_bridge_mpfr import load_y_lambda_for_q0  # noqa: E402
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
@@ -146,16 +147,34 @@ def main() -> int:
     print("ITERATIVE LP-DUAL AT H_6 FOR DEUTERON")
     print("=" * 100)
 
-    # Load y_λ values for n=6
     here = Path(__file__).parent
-    y_witness_path = here / "y-lambda-mpfr-witness.json"
-    with open(y_witness_path) as f:
-        y_data = json.load(f)
-    weights = y_data["tables_by_n"]["6"]["weights"]
-    y_at_q0 = {tuple(w["partition"]): mp.mpf(w["y_lambda"]) for w in weights}
+
+    # y_λ for n=6 — SELECTED BY ANCHOR, not by filename (bean qou-mjcd).
+    #
+    # This read `y-lambda-mpfr-witness.json` directly. That table is
+    # `q0Anchor: muon` and holds `q_0_50dps = 1.10997859555733471989…`, i.e.
+    # pin A — the vintage `fca08de7d2` RETIRED on 2026-08-22. Meanwhile this
+    # producer is manifest-declared `physical_proton`, `q_parameter.Q` resolves
+    # to 1.1099785827513808 for it, and χ^λ below is evaluated at THAT q. So
+    # `tr_M_check = Σ y_λ·χ^λ` multiplied a muon/pin-A y_λ against a proton χ^λ
+    # inside one number: the straddle AGENTS.md §"q₀ anchor convention" forbids
+    # ("never straddle the two layers inside one quantity").
+    #
+    # It was measurable in the committed witness, not theoretical: that witness
+    # declares `q0Anchor: proton` and records `parameters.q_0 =
+    # 1.1099785827513808`, yet `tr_M_check_at_q0 = 0.5751722457697738` sat
+    # **3.22 ppb** from the corpus canonical proton tr_M(β_D) =
+    # 0.5751722439177718708265. The gap WAS the straddle.
+    #
+    # `load_y_lambda_for_q0` picks the table from the q₀ it is handed and
+    # REFUSES to serve the other layer's table, so the weights now follow this
+    # producer's resolved anchor and cannot drift from it again. Do not put a
+    # filename back here.
+    y_at_q0 = load_y_lambda_for_q0(6, Q0_FLOAT)
     parts_6 = list(y_at_q0.keys())
 
-    print("\n  y_λ(q_0) for partitions of 6 (from y-lambda-mpfr-witness.json):")
+    print(f"\n  y_λ(q_0) for partitions of 6 "
+          f"(anchor-selected for q₀={float(Q0_FLOAT):.16f}):")
     for p in parts_6:
         print(f"    y_{p} = {mp.nstr(y_at_q0[p], 12)}")
 
