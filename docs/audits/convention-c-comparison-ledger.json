@@ -978,6 +978,38 @@
       "line_at_adjudication": 55,
       "scope": "substrate",
       "rationale": "Settles the 'c_3 = -2 exact' claim on the post-bug-fix compute, and the c_3 extraction it tests is C-frame BY CONSTRUCTION: the same `substrate()` helper derives z, then alpha = (z-1)*h/2 and Q_A_over_me, which `extract_ck` inverts to get c_k. The probe exists to adjudicate a claim made ABOUT the C-frame ladder (a 2026-07-06 docs commit asserting c_3 is exactly -2 for all q, and that the cross-anchor swing was a 0-indexed generator-bug artifact). Re-basing it on z_D would answer a question nobody asked and leave the recorded claim unadjudicated. Same qou-cds1 caveat: the D-frame ladder is a separate open item requiring RE-DERIVATION, not a z-swap."
+    },
+    {
+      "path": "computations/qbeta/qbeta_prearchimedean_z_recursion.py",
+      "target": "z",
+      "source_hash": "5a3f42e7f514",
+      "line_at_adjudication": 103,
+      "scope": "main",
+      "rationale": "z_C IS THE OBJECT OF STUDY, and this is provable rather than argued. The probe derives, symbolically in formal q, that z = sqrt(1+w)/(2+w) with w = q-1 is ALGEBRAIC hence D-finite, and exhibits its first-order ODE at :112, `(4 + 6w + 2w^2) z' + w z`. MEASURED both ways: with z_C the residual is EXACTLY 0; with z_D it is (w+1)^2 (w(w+1)((w+1)^2+1) + 2((w+1)^2+3)(w^2+3w+2)) / ((w+1)^2+1)^2, i.e. nonzero. Substituting z_D would not re-express the result, it would FALSIFY the probe's own theorem. NOTE FOR READERS: 'D-finite' in this file means differentiably finite (holonomic), NOT convention D -- a grep for 'D' here misleads."
+    },
+    {
+      "path": "computations/qbeta/qbeta_h_frame_rungs_probe.py",
+      "target": "z",
+      "source_hash": "0d87f360da46",
+      "line_at_adjudication": 73,
+      "scope": "h_frame_series",
+      "rationale": "C-frame by construction, identically to qbeta_c3_cross_anchor_exactness: z feeds `alpha = (z - 1) * hh / 2` at :74, the ladder's alpha. The probe computes the Q_beta ladder's rungs in the h frame and is the companion to QOU/QBeta/LadderFrameChange.lean. Note the Lean proves the ALGEBRA over a generic field -- that genericity is about the frame-change identity, not about the Markov convention, so it does not make this site convention-neutral. Same qou-cds1 status as the rest of the ladder: C-frame throughout, D requires RE-DERIVATION."
+    },
+    {
+      "path": "computations/qbeta/qbeta_eval_map_bar_decomposition_probe.py",
+      "target": "z",
+      "source_hash": "16b37f40ab80",
+      "line_at_adjudication": 48,
+      "scope": "main",
+      "rationale": "Q_beta ladder work: the probe realizes the archimedean evaluation map's bar-decomposition, following the B3-U obstruction, and its stated premise is that 'the c_k come from the archimedean evaluation, not a fibre basis change'. The c_k ladder is convention-C-frame throughout per qou-cds1 and has not been re-derived under D; a z-swap here would mix a D-frame Markov parameter into a C-frame c_k decomposition and produce a quantity belonging to neither."
+    },
+    {
+      "path": "computations/qbeta/qbeta_eta_singularity_probe.py",
+      "target": "zq",
+      "source_hash": "a47d78fa85f5",
+      "line_at_adjudication": 180,
+      "scope": "Rq",
+      "rationale": "Follow-up to bean 0zr0 (docs/audits/2026-07-03-0zr0-eta-descent-invariant-theory-prune.md), identifying the eta-plane singularity from the descent rungs g_k that the 0zr0 prune left as its one sharpened datum. Those rungs are ladder quantities and carry the ladder's C frame (qou-cds1); the probe's subject is the singularity structure of that C-frame object, so re-basing on z_D would relocate the singularity being identified rather than re-express it."
     }
   ]
 }
