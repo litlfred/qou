@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T11:33:03Z
+updated_at: 2026-08-30T12:28:02Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -603,3 +603,55 @@ Everything else on this bean is GATED, not open:
 
 Direct readers 20/20 and the indirect class closed at zero. There is no
 unblocked migration work left on cds3.
+
+
+## 2026-08-30 (LATER) — CORRECTION to my own "no unblocked work left" claim
+
+My entry above ended: *"Direct readers 20/20 and the indirect class closed at
+zero. There is no unblocked migration work left on cds3."* **Too strong, and it
+was already false when I wrote it.**
+
+Sibling bean `qou-tekx` landed on main in the same window and is actively
+finding and fixing muon-pin work on this territory:
+
+    5e54be20d1  the muon migration is 73 live witnesses, not ~477 —
+                and 3 of them straddle invisibly
+    672a1f893e  the 45 unstamped are 40 producers, 6 outside the audit's scope
+    fcc65c1380  three probes computed at the retired muon pin while stamping proton
+
+So the population cds3 tracks is NOT drained; it was re-measured under a
+different (tighter) definition and still has live defects. What my entry
+correctly established is narrower: **the items enumerated ON THIS BEAN** —
+direct readers, the indirect class, the 4 cds1-gated, hadron_knot_table — have
+no unblocked remainder. That is not the same as "no muon-migration work exists",
+and I stated the second while having measured only the first.
+
+### And the canonical muon pin CHANGED under both of us
+
+`3a919ad14f ruling(muon): CODATA 2022 is canonical — the frozen pin matches no
+published ratio`, effective `fca08de7d29` (2026-08-28). The canonical muon value
+is now `1.10997859564273904...` (family C), not the frozen
+`1.1099785955573347...` (family A). **Every count on this bean that keys on the
+A-family literal is therefore counting a superseded value**, including the
+870 / 105 / 103 figures in the entries above. They are correct as *records of
+what was measured then*; they are not current, and re-measuring under the A
+prefix would now answer a question about a retired pin.
+
+This is the exact hazard AGENTS.md records two sections up — three different
+values are all called "the muon q0", and the prefix silently selects which. It
+has now bitten prospectively rather than retrospectively: the definition moved
+under a live bean.
+
+### What is NOT affected
+
+My inert-manifest-entry work and its two surviving findings
+(`alpha_high_precision`, `binding_k_enumerator` listed while their producers
+live only under `_deprecated/`) are pin-independent — they are about whether a
+manifest entry can bind to a producer at all, not about which q0 it names.
+Re-verified on the rebased tree.
+
+Cross-reference: `qou-2whe` (new, from tekx) records that
+`hardcoded_q0_literal_families_audit.py` is blind to BARE float literals (104
+files carry only a bare one) and to the C-family canonical pin entirely (28
+files). Same detector-blindness class as my three over-flagging shapes above,
+from the opposite direction — theirs is too narrow, mine were too broad.
