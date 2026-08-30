@@ -477,3 +477,46 @@ the change by 18 orders of magnitude. Both modules `lean`-direct exit 0.
 Four distinct wrong values for two constants, spread across nine files, none of which a
 grep for any one of them would have found. That is the argument for the value-based
 detector, not the individual fixes.
+
+---
+
+## 2026-08-30 — the `.py` surface triaged: 30 blocked, 1 fixed, 1 correctly left alone
+
+Of 32 distinct `computations/*.py` files the detector flagged, **30 emit witnesses** and
+cannot be fixed here — they need producer re-runs, and this container has no numpy or
+scipy, so re-running would write degraded numbers. Two were safe to edit.
+
+**Fixed — `two_quark_volume_weighted_clean.py:77`.** `V_BORROMEAN = 7.327724753417960`
+against `8·G = 7.3277247534177521204` — wrong from digit 13, abs err `2.079e-13`. It is
+labelled *"from SnapPy canonical values"*, but SnapPy gives `…417752` at that precision;
+this was a transcription slip, not a SnapPy variant. No committed witness, so the fix is
+self-contained.
+
+**Left alone deliberately — `alpha_em_lean_vs_compute_divergence_probe.py:270.**
+`2.82812208832975` for Vol(5₂) is 1.03e-12 off canonical, and it is **not a defect**: the
+docstring says the table is *"the corpus's own volume table plus five more hyperbolic
+knots"*, its neighbours are 8–9 significant-figure census values (`6_1` at
+`3.16396322888`, `6_2` at `4.40083251`), and the test being run is whether `Vol(K)/G` is
+an integer — a question 1e-12 cannot affect. It is a **deliberate mirror** of the corpus
+table, and "correcting" it would break the mirror the probe is built on. Same class as
+the convention-C audit's deliberate C-named comparisons.
+
+That is 1 fix and 1 dismissal out of 2 examined — a reminder that the detector's output
+needs reading, not applying.
+
+### Pre-existing red, NOT from this branch
+
+`scripts/precision-gates.sh --changed` reports the **float64-padding ratchet** at
+`NEW (not baselined): 4` (17 padded occurrences, 14 distinct values, 7 files, 2 live,
+baseline 13). Verified pre-existing: the same 4 appear on a clean tree with this
+branch's changes stashed. Not this arc's regression, and not silenced — draining it is
+whoever owns those witnesses. The **raw-float64 ratchet is clean for this branch**:
+NEW 0, REGRESSED 0.
+
+### A separate defect noticed, not fixed
+
+`two_quark_volume_weighted_clean.py` computes in **plain Python floats**
+(`V_FIG8 = 2.0298832128193072` is a `float`, not an `mpf`), which the "PROBES ARE NOT
+EXEMPT" rule (AGENTS.md, owner directive 2026-08-18) makes a defect in its own right.
+Fixing it means carrying `mpf` through the whole cost computation — a different change
+from correcting a constant, and out of this branch's scope. Recorded so it is not lost.
