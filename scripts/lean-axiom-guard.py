@@ -676,6 +676,37 @@ QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₂_pos | clea
 QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.fiveTwoTet_angle₃_pos | clean
 QOU.Knot.FiveTwoAngleSum | QOU.Knot.FiveTwoVolume.VOL_5_2_eq_three_mul_lob_sum | clean
 
+# FiveTwoNinthPower proves the 5_2 smallest dihedral angle exceeds 2*pi/9 --
+# the angle condition qou-52ch's Rivin-concavity chord bound needs. Reached
+# WITHOUT any value of a transcendental function: z^3 = z - 1 makes z^9 a
+# quadratic in z, and Im(z^9) > 0 collapses to Re z < 2/3.
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.realRoot_gt_three_sevenths | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_upper | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.branch_lower | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.ninth_power_im_pos_reduced | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_ne_zero | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_cubic | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_mul_realRoot | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.normSq_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_lt_two_thirds | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_im_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.disc_pos' | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_eq | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_im_lt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.sqrt_three_mul_zz_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_arctan | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_lt_pi_div_four | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_six_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_arg_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_zz_arg | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_angle₃ | clean
+
 """
 
 
