@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-30T05:47:31Z
+updated_at: 2026-08-30T08:26:01Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -1036,3 +1036,71 @@ negative is worth more than an unexamined maybe.
 STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; NO FITTING; only
 CAL-1/2/3 admissible; and a factorisation that reproduces Phi_1 by tuning a
 constant against the table is a fit, not a derivation.
+
+
+
+=== THE xzrj LEAD IS DEAD — and my objection to it was wrong (PR #6137) ===
+
+Worked the lead I queued above. It dies, but NOT for the reason I recorded, and
+the difference matters for anyone who picks this up.
+
+WHAT I HAD WRITTEN: "mu is a scalar normalisation, Phi_1 is a MINIMUM over
+arrangements, and min() is exactly what a factorisation into block invariants
+does not close."
+
+THAT IS WRONG ABOUT THE MECHANISM. I reasoned from the shape of Phi_1 instead
+of reading the producer. In wedderburn_mass_table_convention_d.py::V the
+transfer recursion builds (a, b) from the crossing content ALONE, and z enters
+exactly once, at the end:
+
+    def V(chain):
+        a, b = mp.mpf(0), mp.mpf(1)
+        for c, d in chain:
+            a, b = a*(c*H + d) + b*c,  a*c + b*d
+        return Z_D * a + b            # z appears HERE and nowhere else
+
+So V is AFFINE in z with z-FREE coefficients (verified: divided second
+difference over three z points is exactly 0.0), and
+
+    Phi_1(seq) = sum_i log |z*a_i + b_i|.
+
+A min over a finite set of z-free (a_i, b_i) multisets is NO obstacle to a
+closed form at all. The min was never the problem.
+
+WHY IT DIES ANYWAY — the coupling I had not considered. The argmin ARRANGEMENT
+moves with z. Exhaustive over all arrangements at z_D and z_C:
+
+    atom   Z   N   #arrangements   argmin stable?
+    He     2   2               6   yes
+    Li     3   4              35   yes
+    Be     4   5             126   yes
+    B      5   6             462   yes
+    C      6   6             924   NO -- it moves
+
+One of five. There is no fixed multiset to factorise: the combinatorial
+selection carries its own convention-dependence, and that is what blocks the
+xzrj route.
+
+TWO THINGS WORTH KEEPING, so this is not merely "closed, no":
+
+  1. NEAR-SEPARABILITY. 4 of 5 stable means the coupling is weak and localised,
+     not pervasive. A future attempt has a sharp question rather than a vague
+     one: are the z-free a_i, b_i named block invariants, and is the argmin
+     instability confined to a characterisable set of atoms? That is a better
+     starting point than the lead had.
+
+  2. A SUBSTANTIVE FACT ABOUT THE ADOPTED TABLE. For carbon, the C and D tables
+     do not merely evaluate the same arrangement at two z -- THEY MINIMISE AT
+     DIFFERENT ARRANGEMENTS. Stronger than "Phi_1 moved", and not previously
+     recorded anywhere in the corpus.
+
+Probe: computations/phi1_z_separability_probe.py (mpmath 50 dps end to end, no
+float64; q0 from q_at(50), not the f64 constants.Q). SCOPE (a): five light
+atoms, two z points, exhaustive over arrangements. Not a claim about all Z or
+all z, and nothing is excluded.
+
+METHOD NOTE FOR MYSELF: I recorded the lead WITH an objection and the objection
+was the wrong one. Queuing a lead with a reason it will fail is still better
+than queuing it bare -- it made the test obvious -- but the reason has to be
+checked against the code, not inferred from the shape of the formula. Reading
+V() took two minutes and overturned it.
