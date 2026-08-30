@@ -140,8 +140,18 @@ degree loss is transiently recovered by the steps that **follow** it — at
 A = 3 the loss at step 22 is recovered at step 23 — and the three exceptions
 are exactly the cases where the nn step sits too near the end of the sequence
 for that to happen. So the tightness condition is about the *position* of the
-negative crossing, not only the count. Measured, not asserted: the producer
-records steps-after-last-nn for the whole `N ≤ 2` set.
+negative crossing, not only the count — and the two populations separate
+cleanly rather than marginally:
+
+| | steps remaining after the last nn step |
+|---|---|
+| not tight — `(0,2)`, `(1,2)`, `(2,2)` | **≤ 3** |
+| tight | **≥ 19** |
+
+Nothing falls between 3 and 19. So "the loss is recovered by the steps that
+follow it" is a measurement with a 16-step margin, not a story fitted to three
+exceptions. Measured, not asserted: the producer records steps-after-last-nn
+for the whole `N ≤ 2` set.
 
 **Still not derived:** no closed form for the size of the loss, and no
 mechanism for the A = 27 break in §3. What §4a supplies is the locus, not the
