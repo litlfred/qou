@@ -1,23 +1,25 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:57:35.973470+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:47:44.732999+00:00",
+  "commitSha": "738f2c10d0cc0f91df3a9bb4f6dafeb2570146f6",
   "assertions": [
     {
-      "name": "kernel_ran",
-      "computed": 1,
-      "expected": 1,
+      "name": "every_chain_interface_binds",
+      "computed": "4",
+      "expected": "4",
       "passed": true,
-      "tolerance": 0
+      "tolerance": 0,
+      "unit": "chain interfaces with finite B_emb > 0",
+      "source": "marginal of adding one inter-nucleon generator to the H_9 free braid; B_emb = E_0·(perblock(free) − perblock(free+I_b)) must be positive for a bound bond. Expected count = Σ_atoms (A−1) from the ATOMS spec, independent of the results dict."
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 29,
   "computation": "per-bond-growth-a3",
   "scriptFile": "per_bond_growth_a3.py",
-  "scriptHash": "4f49cc327812",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "22e9eaff6e52",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/per_bond_growth_a3.py"
+    ],
+    "reproduce": "python3 -u computations/per_bond_growth_a3.py"
   },
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
@@ -45,29 +55,48 @@
         "bond0_pn": {
           "B_emb_MeV": 2.301132223278883,
           "B_iso_MeV": 2.3048,
-          "growth": 0.9984086355774398
+          "growth": 0.9984086355774398,
+          "binds": true
         },
         "bond1_nn": {
           "B_emb_MeV": 2.7905948727787933,
           "B_iso_MeV": 2.2497,
-          "growth": 1.2404297785388245
+          "growth": 1.2404297785388245,
+          "binds": true
         }
       },
       "3He": {
         "bond0_pp": {
           "B_emb_MeV": 2.1022750902037655,
           "B_iso_MeV": 2.2861,
-          "growth": 0.9195901711227705
+          "growth": 0.9195901711227705,
+          "binds": true
         },
         "bond1_pn": {
           "B_emb_MeV": 2.669259829416874,
           "B_iso_MeV": 2.3048,
-          "growth": 1.1581307833290846
+          "growth": 1.1581307833290846,
+          "binds": true
         }
       }
     },
-    "note": "Embedded per-bond binding (marginal of one chain interface in the H_9 free braid) vs isolated H_6 bond. growth>1 ⇒ embedding enhancement, the A=3 −15% residual mechanism. Rust kernel; no fit."
+    "note": "Embedded per-bond binding (marginal of one chain interface in the H_9 free braid) vs isolated H_6 bond. growth>1 ⇒ embedding enhancement, the A=3 −15% residual mechanism. Rust kernel; no fit.",
+    "growth_hypothesis": {
+      "claim": "growth = B_emb / B_iso > 1 for every embedded chain interface",
+      "per_interface": {
+        "T.bond0_pn": false,
+        "T.bond1_nn": true,
+        "3He.bond0_pp": false,
+        "3He.bond1_pn": true
+      },
+      "holds_for": 2,
+      "of": 4,
+      "has_independent_expected_value": false
+    }
   },
+  "caveats": [
+    "The per-bond GROWTH hypothesis in the module docstring is not uniform: 3He.bond0_pp, T.bond0_pn have growth <= 1, i.e. the embedded bond is no stronger than the isolated H_6 one. Note the pn bond type occurs at both interface positions and does not agree with itself across them, so growth is not a function of bond type alone — which is the assumption B_ISO encodes."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

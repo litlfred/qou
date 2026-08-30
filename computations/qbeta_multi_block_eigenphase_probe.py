@@ -248,11 +248,48 @@ def main() -> int:
         "production_action": "Q_β stays at Q_N2 (1279 ppb)" if abs_err_canon >= 0.001
                               else "wire fund-rep eigenphase as Q_β bridge",
     })
+    # Was `computed=1.0, expected=1.0` (bean `qou-26f2`) — the same literal on
+    # both sides, so the witness reported `allPassed` whichever of the three
+    # verdict branches fired, and the q₀-stability number the name refers to
+    # never reached an assertion at all. Both halves are recorded now.
+    #
+    # (1) THE STABILITY TEST, WITH ITS NUMBER. 0.01% is discipline lock §4's
+    #     own threshold, quoted from the branch above, not chosen here.
     builder.add_assertion(
-        "q0_stability_test_completed",
-        computed=1.0, expected=1.0, tolerance=0.0,
-        source="probe completes regardless of pass/fail; discipline lock applied",
+        "q0_drift_within_discipline_lock_threshold",
+        computed=mp.nstr(mp.mpf(drift_pct), 8),
+        expected="0",
+        tolerance="0.01",
+        unit="% drift in err_ppb between the m_p pin and the stale muon pin",
+        source=("|err_ppb(canonical) − err_ppb(stale)| / |err_ppb(canonical)|. "
+                "Above 0.01%, discipline lock §4 rules the candidate out as "
+                "form-fitted to one q₀; the branch above states that rule and "
+                "the witness never carried the number."),
     )
+    # (2) POSITIVE CONTROL. A drift near zero is evidence of stability only if
+    #     the two pins are genuinely different values. If `q_parameter` ever
+    #     resolved the canonical pin to the stale muon string, the result above
+    #     would read identically while measuring nothing — the same shape of
+    #     defect as the assertion being replaced here.
+    _first_diff = next((i for i, (a, b) in enumerate(
+        zip(Q_50_DIGIT_STR, Q0_STALE_MUON_PIN)) if a != b), -1)
+    builder.add_assertion(
+        "the_two_q0_pins_are_distinct",
+        computed=str(int(Q_50_DIGIT_STR != Q0_STALE_MUON_PIN)),
+        expected="1",
+        tolerance=0,
+        unit="1 if the canonical and the stale pin differ",
+        source=(f"canonical {Q_50_DIGIT_STR[:22]}… vs stale "
+                f"{Q0_STALE_MUON_PIN[:22]}…; first differing character at "
+                f"index {_first_diff}."),
+    )
+    if abs_err_canon >= 0.001:
+        builder.add_caveat(
+            f"The bridge does NOT close: residual {mp.nstr(err_canon, 6)} ppb "
+            "at the canonical pin, against a 0.001 ppb compute-precision bar. "
+            f"Verdict '{verdict}'. The q₀-stability assertion above says only "
+            "that the candidate is not form-fitted to one pin; it is not "
+            "evidence that the candidate is right.")
     builder.save()
     print(f"  Witness: qbeta-multi-block-eigenphase-probe.witness.json")
     return 0

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:38:43.893164+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:52:59.077237+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
       "name": "three_term_sector_certified",
@@ -13,19 +13,29 @@
       "source": "rank-3 Prony beats rank-2 on held-out exact samples within the c1-tau drift floor"
     },
     {
-      "name": "exponents_recorded",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "every_prony_exponent_recorded",
+      "computed": "3",
+      "expected": "3",
       "passed": true,
-      "tolerance": "0.5",
-      "source": "E+/E- recorded with lattice-match table (identification honest per residuals)"
+      "tolerance": 0,
+      "unit": "finite exponents carrying a lattice-match row",
+      "source": "rank-3 Prony has three characteristic roots; each must reach data.prony.exponents finite and carry a row in data.lattice_matches. Expected count is the model order, not len(Es)."
+    },
+    {
+      "name": "exponents_solve_their_own_recurrence",
+      "computed": "5.8093974e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-60",
+      "unit": "max |p(ρ)|/(1+|ρ|³) over the recorded roots",
+      "source": "p(z) = z³ − a z² − b z − c with (a,b,c) the rank-3 Prony coefficients solved from the first six samples; ρ the roots the recorded exponents were built from. Floor = 10^-(dps-10)."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qbeta-g3-5two-sector-prony",
   "scriptFile": "qbeta_g3_5two_sector_prony.py",
-  "scriptHash": "5fd05e64004e",
+  "scriptHash": "3abb77fd70cb",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -41,7 +51,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -89,6 +99,7 @@
         "residual": "4.8780618"
       }
     ],
-    "verdict": "Sector content extracted representative-free: Prony on the exact Theorem-22 Z_52 along the S2-failure direction is held-out-certified: rank-3 holdout 0.00486 vs rank-2 0.185 (True) — the sector contains THREE exponential terms (all saddles populated; this is what broke the #3987 single-saddle strip), exponents (-2.738533 + 6.4091101j), (-3.0508417 + 3.8800717j), (-2.7935284 + 5.305307j). Lattice identification vs the saddle actions (2 pi^2 k + 2 pi i m v + (2 pi i)^2 n moves): OPEN - exponents sit outside the scanned small-integer lattice moves; branch-sheet bookkeeping needs the full M-dictionary (best residuals 4.49, 4.85, 4.88). This resolves WHY the single-saddle strip failed off-ray (three comparable terms) and hands the M-dictionary step concrete exact exponent targets. phi_odd (#3987) unaffected: the substrate ray's conjugate-pair assumption is the on-ray case. No fit; no c_k wired; scope-(a)."
+    "verdict": "Sector content extracted representative-free: Prony on the exact Theorem-22 Z_52 along the S2-failure direction is held-out-certified: rank-3 holdout 0.00486 vs rank-2 0.185 (True) — the sector contains THREE exponential terms (all saddles populated; this is what broke the #3987 single-saddle strip), exponents (-2.738533 + 6.4091101j), (-3.0508417 + 3.8800717j), (-2.7935284 + 5.305307j). Lattice identification vs the saddle actions (2 pi^2 k + 2 pi i m v + (2 pi i)^2 n moves): OPEN - exponents sit outside the scanned small-integer lattice moves; branch-sheet bookkeeping needs the full M-dictionary (best residuals 4.49, 4.85, 4.88). This resolves WHY the single-saddle strip failed off-ray (three comparable terms) and hands the M-dictionary step concrete exact exponent targets. phi_odd (#3987) unaffected: the substrate ray's conjugate-pair assumption is the on-ray case. No fit; no c_k wired; scope-(a).",
+    "prony_characteristic_residual": "5.8093974e-71"
   }
 }

@@ -175,12 +175,22 @@ def main() -> int:
             else:
                 a_2_norm = a_2
             delta = a_2_norm - (-G)
+            # Goodness of fit. `fit_h_polynomial` solves 3 even-order unknowns
+            # against 5 sample points, so it always returns coefficients — even
+            # where tr_M carries odd-order h dependence the model cannot see.
+            # Without this residual there is nothing to distinguish an a_2 that
+            # IS the h² coefficient from a least-squares artefact.
+            fit_res = max(
+                abs(sum(coeffs[k] * h ** k for k in coeffs) - t)
+                / max(abs(t), mp.mpf(1))
+                for h, t in zip(h_vals, trM_vals))
             results[name] = {
                 "a_0": mp.nstr(a_0, 12),
                 "a_2": mp.nstr(a_2, 12),
                 "a_4": mp.nstr(a_4, 12),
                 "a_2_normalized_to_h0_5over2": mp.nstr(a_2_norm, 12),
                 "delta_vs_minus_G": mp.nstr(delta, 8),
+                "fit_max_rel_residual": mp.nstr(fit_res, 8),
             }
             print(f"  {name:<32}{mp.nstr(a_0, 8):<14}{mp.nstr(a_2, 12):<18}{mp.nstr(a_4, 8):<14}{mp.nstr(delta, 8):<14}")
         except Exception as e:
@@ -251,16 +261,77 @@ def main() -> int:
             "reason."
         ))
 
+    # Was `computed=True, expected=True` (bean `qou-26f2`) — one literal against
+    # itself, whose `source` claimed "search completed without error" while the
+    # per-braid loop above catches every exception and files it under `error`.
+    # A run in which every braid failed recorded exactly the same passing
+    # assertion as this one.
+    #
+    # (1) COVERAGE, WHICH IS WHAT THE OLD SOURCE CLAIMED. Expected count comes
+    #     from the catalogue, so a swallowed failure fails here instead of
+    #     quietly shrinking the population the verdict below is computed over.
+    scored = [n for n, d in results.items() if "error" not in d]
     w.add_assertion(
-        name="prescreen_completed",
-        computed=True,
-        expected=True,
+        name="every_catalogued_braid_produced_coefficients",
+        computed=str(len(scored)),
+        expected=str(len(braids)),
         tolerance=0,
-        source=(
-            f"Tested {len(braids)} H_4 braid words; {len(negative_a2)} "
-            f"with negative a_2. Sanity: search completed without error."
-        ),
+        unit="braid words with a fitted (a_0, a_2, a_4)",
+        source=("the per-braid loop catches Exception and stores {'error': …}; "
+                "the negative-a_2 summary then skips those entries silently. "
+                + ("all catalogued braids scored"
+                   if len(scored) == len(braids) else
+                   "failed: " + ", ".join(n for n in results if n not in scored))),
     )
+
+    # (2) AN EXACT CONTROL THE CATALOGUE ALREADY CONTAINS. The Markov trace is
+    #     normalised so tr_M(1) = 1, with no h dependence at all — an
+    #     independent value for the identity row that exercises the whole
+    #     pipeline (`markov_trace_at_q` and the Vandermonde fit) end to end.
+    #     Floor is 10^-(dps−10) at dps 50; measured deviation is ~1e-47.
+    if "error" not in results["identity"]:
+        ident_dev = max(abs(mp.mpf(results["identity"]["a_0"]) - 1),
+                        abs(mp.mpf(results["identity"]["a_2"])),
+                        abs(mp.mpf(results["identity"]["a_4"])))
+        w.add_assertion(
+            name="identity_braid_trace_is_the_constant_one",
+            computed=mp.nstr(ident_dev, 8),
+            expected="0",
+            tolerance=mp.nstr(mp.mpf(10) ** -(mp.mp.dps - 10), 3),
+            unit="max(|a_0 − 1|, |a_2|, |a_4|) for the identity braid",
+            source=("tr_M(1) = 1 identically by the Markov normalisation, so "
+                    "the fit must return a_0 = 1 and a_2 = a_4 = 0. Independent "
+                    "of everything the prescreen measures, and the only row "
+                    "here with a known answer."),
+        )
+
+    # (3) THE FIT IS NOT EXACT, AND THE PRINTED PRECISION HIDES IT. Recorded,
+    #     not asserted: there is no independent bound on how well an even-order
+    #     model should fit tr_M, and inventing one to pass would be the defect
+    #     this drain exists to remove.
+    fit_residuals = {n: d["fit_max_rel_residual"] for n, d in results.items()
+                     if "fit_max_rel_residual" in d}
+    w.add_data("fit_max_rel_residual_per_braid", {
+        **fit_residuals,
+        "has_independent_expected_value": False,
+    })
+    if fit_residuals:
+        worst_n = max(fit_residuals, key=lambda n: mp.mpf(fit_residuals[n]))
+        if mp.mpf(fit_residuals[worst_n]) > mp.mpf("1e-6"):
+            w.add_caveat(
+                "The even-order h model is a FIT, not an identity: it "
+                f"reproduces the sampled traces to only {fit_residuals[worst_n]} "
+                f"relative at worst ({worst_n}), because tr_M carries odd-order "
+                "h dependence for words that are not inverse-symmetric. "
+                "`a_2` and `delta_vs_minus_G` are printed to 8-12 digits but "
+                "are not determined to anything like that precision.")
+    if any(n == "identity" for n, _ in negative_a2):
+        w.add_caveat(
+            "The identity braid is listed under 'negative a_2' on a value of "
+            f"{results['identity']['a_2']}, which is round-off around an exact "
+            "zero, not a negative h² coefficient. The negative-a_2 population "
+            "the verdict is drawn from should be read as two entries, not "
+            "three.")
 
     out = w.save()
     print(f"\n  Witness emitted: {out.name}")

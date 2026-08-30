@@ -1,24 +1,43 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-07-11T17:56:47.837049+00:00",
-  "commitSha": "9f9644bf2868e28a054706c828ad9319b0f4b92a",
+  "computedAt": "2026-08-30T10:01:24.688518+00:00",
+  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
   "assertions": [
     {
-      "name": "bond_extensive_derived_from_translation_invariance",
+      "name": "unbonded_ghost_cross_term_vanishes",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "tr_M(g) in exact rational arithmetic",
+      "source": "step (1) of the derivation: two nucleon ghosts on disjoint strands form a split link, tr_M factorizes, so the cross term is tr_M(g)². Zero iff the ghost is traceless. pyhecke._TR_M_FRAC[3] − [4] over 2, in ℚ."
+    },
+    {
+      "name": "ghost_self_gram_norm_is_negative",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "unbonded ghost cross-term = 0 (split-link factorization × traceless); identical bonds ⇒ constant per-bond b* ⇒ B = self + coordination·b* (bond-extensive form derived, not assumed). Value b* = H₆ build."
+      "unit": "1 if ⟨g⟩²_G < 0 (the Part-10 negative-norm ghost)",
+      "source": "⟨g⟩²_G = -0.3763510566259827007968897 at 60 dps. The binding form B(K) ~ ⟨Σ_i g_i⟩²_G is stated as the negative-norm ghost quadratic form; a non-negative value would refute the premise this derivation is conditioned on."
+    },
+    {
+      "name": "ghost_self_gram_norm_reproduces_at_60_dps",
+      "computed": "2.63592e-16",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-14",
+      "unit": "relative gap, float64 Gram vs 60-dps Gram",
+      "source": "⟨g⟩²_G by two routes: pyhecke.gram.G (float64) and gram_matrix_mp(60) (mpmath). Tolerance is the float64 round-off scale for a quantity of order 1, which is what the coarser of the two routes can carry."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 0,
   "computation": "binding-bond-extensive-derivation",
   "scriptFile": "binding_bond_extensive_derivation.py",
-  "scriptHash": "2dd06bb2c28a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8b10e0f011d4",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,13 +49,24 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_bond_extensive_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/binding_bond_extensive_derivation.py"
   },
   "description": "EXPLORATORY: derives the bond-extensive hypothesis (B = self + coordination·b*) from bond translation-invariance, given the Part-10 Gram-quadratic binding form. Unbonded ghost pair = split link ⇒ cross-term 0 (traceless factorization); a bond couples them; identical bonds ⇒ constant per-bond b*. Upgrades #3549's conditional bond-extensive hypothesis to derived (modulo the value b*, the H₆ seminormal build). Mean-field/homogeneous reading. No fit.",
   "data": {
     "ghost_h3": {
       "tr_M": 0.0,
-      "self_gram_norm": -0.42753363106493264
+      "self_gram_norm": -0.3763510566259828,
+      "tr_M_exact": "0",
+      "self_gram_norm_60dps": "-0.3763510566259827007968897"
     }
   }
 }

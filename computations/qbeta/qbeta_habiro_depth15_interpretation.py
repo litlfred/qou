@@ -620,13 +620,86 @@ def main() -> int:
         "summary": "; ".join(interp_lines),
     })
 
+    # Was `computed=6, expected=6` (bean `qou-26f2`) — the same literal on both
+    # sides, so `allPassed` stayed true across a COMPLETE REVERSAL of this
+    # probe's conclusion (see the premise check below). Two real checks replace
+    # it.
+    #
+    # (a) COVERAGE. The expected count is the number of `test_<x>_*` functions
+    #     the module defines, not the literal 6, so adding a test G without
+    #     recording it fails here instead of leaving the witness silently short.
+    test_fns = sorted(k for k, v in globals().items()
+                      if k.startswith("test_") and callable(v))
+    recorded = {k: v for k, v in builder.data.items()
+                if k.startswith("test_") and isinstance(v, dict) and v}
     builder.add_assertion(
-        "depth15_interpretation_tests_completed",
-        computed=6,
-        expected=6,
+        "every_structural_test_recorded",
+        computed=str(len(recorded)),
+        expected=str(len(test_fns)),
         tolerance=0,
-        source="Six structural tests A-F executed; verdict logged.",
+        unit="test result dicts in witness data",
+        source=("tests defined: " + ", ".join(test_fns) + "; recorded: "
+                + ", ".join(sorted(recorded))),
     )
+
+    # (b) TWO INDEPENDENT ROUTES TO THE SAME EXPONENT. Test A takes the minimum
+    #     degree of Σ_m Δa_m·(u;u)_m — differenced per m, then summed. Test F
+    #     assembles p and n separately (Σ_m a_m·(u;u)_m each) and reports the
+    #     lowest exponent at which their coefficients disagree. Linearity says
+    #     these are the same integer; the two get there through different key
+    #     sets (A intersects p_a/n_a, F iterates each alone) and different
+    #     sympy expansions, so a depth mismatch M_p != M_n, or a dropped m,
+    #     breaks the agreement. That is the check the tautology was standing in
+    #     for. NOTE Test F only scans u^0..u^15, so it reports None if the first
+    #     difference sits above u^15 — recorded rather than silently compared.
+    min_deg = test_a["expanded_min_deg"]
+    first_diff = test_f["first_differing_exponent"]
+    if first_diff is None:
+        builder.add_data("first_diff_out_of_scanned_range", {
+            "test_f_scans": "u^0..u^15",
+            "test_a_min_deg": min_deg,
+            "has_independent_expected_value": False,
+        })
+        builder.add_caveat(
+            "Test F found no differing coefficient in u^0..u^15, so its "
+            "exponent could not be cross-checked against Test A's minimum "
+            "degree of " + str(min_deg) + ".")
+    else:
+        builder.add_assertion(
+            "min_degree_agrees_with_first_differing_exponent",
+            computed=str(min_deg),
+            expected=str(first_diff),
+            tolerance=0,
+            unit="u-exponent",
+            source=("Test A: min degree of Σ_m Δa_m·(u;u)_m (per-m difference, "
+                    "then sum). Test F: lowest u-exponent where the separately "
+                    "assembled p and n numerators disagree. Equal by linearity; "
+                    "computed by disjoint code paths."),
+        )
+
+    # (c) THE PREMISE, WHICH IS NO LONGER TRUE. This probe's description, prose
+    #     and name all assume the Δ-Habiro element has its floor at u^15. On the
+    #     upstream atomic witness as it now stands that floor is elsewhere, and
+    #     it is recorded rather than asserted so the drift is visible without
+    #     this producer quietly re-writing its own subject.
+    builder.add_data("u15_premise", {
+        "claim": "the Δ-Habiro element Σ_m Δa_m·(u;u)_m has its lowest-degree "
+                 "monomial at u^15 (description, Test A, Test F)",
+        "holds": bool(test_a["is_u15_min"]),
+        "measured_min_degree": min_deg,
+        "measured_first_differing_exponent": first_diff,
+        "upstream": str(hab_path.name),
+        "has_independent_expected_value": False,
+    })
+    if not test_a["is_u15_min"]:
+        builder.add_caveat(
+            f"PREMISE NOT REPRODUCED: this probe is named and described for a "
+            f"u^15 floor, but against the current {hab_path.name} the floor is "
+            f"u^{min_deg} (first differing exponent u^{first_diff}), the "
+            f"Δa_m support runs m={min(test_c['per_m_origin'], key=int)}.."
+            f"{max(test_c['per_m_origin'], key=int)}, and the verdict falls to "
+            f"'{best}'. The prose and the description were written against an "
+            f"earlier atomic witness; they have not been rewritten here.")
 
     builder.save()
     print(f"\n  ✓ Witness: qbeta-habiro-depth15-interpretation.witness.json")

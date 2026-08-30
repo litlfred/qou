@@ -302,9 +302,51 @@ def main():
     w.add_data("fitted", ["S correction", "c₂=29/30", "c₃ tightest=1/1256", "c₃ structural=1/1260"])
     w.add_data("reason", "Vol(4₁) is transcendental; S = R_alg/(Vol/ℏ²) inherits it")
 
-    w.add_assertion("R_alg_is_algebraic",
-                    computed=1, expected=1, tolerance=0,
-                    source="R_alg(q) computed as exact polynomial ratio in u")
+    # Was `computed=1, expected=1` (bean `qou-26f2`) — the same literal on both
+    # sides, so it recorded `passed:true` whatever `R_hsq_sym` turned out to be.
+    # This analysis's whole conclusion is the CONTRAST between an algebraic
+    # R_alg and a transcendental Vol(4₁), so "R_alg is algebraic" is its
+    # load-bearing half, and it is directly checkable two ways.
+    #
+    # (1) STRUCTURAL. Numerator and denominator must each be a polynomial in u
+    #     with rational coefficients and no other free symbol. A Vol, a π or a
+    #     dilogarithm leaking in through `full_bridge_sym` or `plancherel_sym`
+    #     shows up here and nowhere else in this script.
+    _parts = {"numer": R_hsq_numer, "denom": R_hsq_denom}
+    algebraic_parts = sum(
+        1 for e in _parts.values()
+        if e.is_polynomial(u) and e.free_symbols <= {u}
+        and all(c.is_Rational for c in sp.Poly(e, u).coeffs())
+    )
+    w.add_assertion(
+        "R_alg_numer_and_denom_are_rational_polynomials_in_u",
+        computed=str(algebraic_parts),
+        expected=str(len(_parts)),
+        tolerance=0,
+        unit="of {numerator, denominator} polynomial in u over ℚ",
+        source=("R_alg × ℏ² = together(bridge · ℏ² / Plancherel); degrees "
+                f"{int(sp.degree(R_hsq_numer, u))} / "
+                f"{int(sp.degree(R_hsq_denom, u))}. Free symbols must be {{u}} "
+                "alone and every coefficient rational."),
+    )
+    # (2) INDEPENDENT ROUTE — a rational function over ℚ maps ℚ into ℚ. Evaluate
+    #     the ratio itself (not its parts) at a rational u and check the value
+    #     is an exact Rational. That goes through substitution and cancellation
+    #     rather than sympy's polynomial predicates, so it still fails on a
+    #     transcendental factor that `is_polynomial` happened to accept.
+    _u_test = sp.Rational(1, 2)
+    _val = sp.cancel(R_hsq_sym.subs(u, _u_test))
+    w.add_data("R_alg_hsq_at_u_one_half", str(_val))
+    w.add_assertion(
+        "R_alg_is_rational_valued_at_rational_u",
+        computed=str(int(bool(_val.is_Rational))),
+        expected="1",
+        tolerance=0,
+        unit="1 if R_alg×ℏ² at u = 1/2 is an exact rational",
+        source=("an algebraic function with rational coefficients maps ℚ → ℚ; "
+                "Vol(4₁)/ℏ², the transcendental half of the contrast this "
+                "analysis draws, does not. Value recorded in data."),
+    )
 
     print(f"  Elapsed: {elapsed:.1f}s")
     print(f"  Witness: {w.save()}")

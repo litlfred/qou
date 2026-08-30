@@ -208,24 +208,70 @@ def main() -> int:
             best_classical_ok
             if best_classical_ok else "none — all candidates fail classical limit",
         )
-        .add_assertion(
-            name="exists_classical_ok_candidate_within_one_percent",
-            computed=float(n_sub_one_pct),
-            expected=float(n_sub_one_pct),  # tautological — just measure
-            tolerance=0.0,
-            unit=(
-                "count of classical-limit-OK candidates within 1% "
-                "of π²/720 at substrate"
-            ),
-            source=(
-                "If > 0, at least one q-deformation reproduces "
-                "classical Casimir AND lands within 1% at substrate "
-                "— closing sub-problem 3 of conj:casimir-epsilon-"
-                "vacuum.  Note: this assertion is informational "
-                "(measurement), not pass/fail."
-            ),
-        )
     )
+
+    # Was `computed=float(n_sub_one_pct), expected=float(n_sub_one_pct)`, with
+    # the comment "tautological — just measure" (bean `qou-26f2`). Worse than
+    # inert: the name is an EXISTENCE claim, and the measured count is 0, so
+    # the assertion recorded `passed:true` at precisely the value that refutes
+    # it. Split into the claim that is true and the claim that is not.
+    #
+    # (1) THE CLASSICAL LIMIT, WHICH IS THE PROBE'S ONE REAL CONSTRAINT. The
+    #     docstring's premise is that both q-factorial conventions satisfy
+    #     [n]_q!_sym → n! and {n}!_q → n! as q → 1; every candidate is admitted
+    #     or rejected on that basis and it was never checked. `_fact` is a plain
+    #     integer product — an independent route to n! from the q-deformed
+    #     products of [k]_q and (1−q^k)/(1−q). The 1e-3 criterion is this
+    #     file's own (`verify_classical_limit`), not one chosen here; measured
+    #     worst deviation is 1.05e-5 at n = 7, sampling at q = 1 + 1e-6.
+    limit_keys = ("[n]_q!_sym_at_q→1", "{n}!_q_poch_at_q→1")
+    limit_hits = sum(
+        1 for row in qf_data.values() for key in limit_keys
+        if abs(row[key] - row["classical_n_factorial"])
+        / row["classical_n_factorial"] < 1e-3
+    )
+    builder.add_assertion(
+        name="both_q_factorial_conventions_reach_n_factorial_at_q_to_1",
+        computed=str(limit_hits),
+        expected=str(len(limit_keys) * len(qf_data)),
+        tolerance=0,
+        unit="(n, convention) pairs whose q→1 value matches n! within 1e-3",
+        source=("n = 2..7 for the symmetric [n]_q!_sym and the Pochhammer "
+                "{n}!_q convention, each against _fact(n). Every candidate is "
+                "admitted or rejected by this limit, so a convention that "
+                "stopped converging would silently re-rank the whole sweep."),
+    )
+
+    # (2) THE GOAL, WHICH IS NOT MET. "Find a candidate with classical limit
+    #     AND substrate residue < 1%" is the probe's stated purpose; the sweep
+    #     finds none, the best classical-limit-OK candidate sitting at 8.6% at
+    #     substrate. There is no independent expected value for that residue —
+    #     it is what the substrate q gives — so the outcome is recorded rather
+    #     than asserted, and the negative result is stated instead of being
+    #     left implicit in a count compared against itself.
+    builder.add_data("goal_classical_ok_within_one_percent", {
+        "goal": ("close sub-problem 3 of conj:casimir-epsilon-vacuum: a "
+                 "q-deformation with C_q(q→1) = π²/720 AND substrate residue "
+                 "below 1%"),
+        "n_candidates_tested": len(candidates),
+        "n_with_classical_limit": len(classical_ok_candidates),
+        "n_within_one_percent_at_substrate": n_sub_one_pct,
+        "met": bool(n_sub_one_pct > 0),
+        "best_classical_ok_substrate_residue": (
+            best_classical_ok["rel_residue_substrate"]
+            if best_classical_ok else None),
+        "has_independent_expected_value": False,
+    })
+    if n_sub_one_pct == 0:
+        builder.add_caveat(
+            f"GOAL NOT MET: none of the {len(classical_ok_candidates)} "
+            "candidates that satisfy C_q(q→1) = π²/720 lands within 1% of "
+            "π²/720 at the substrate q. "
+            + (f"Best is {best_classical_ok['form']} at "
+               f"{100 * best_classical_ok['rel_residue_substrate']:.4f}%. "
+               if best_classical_ok else "")
+            + "Sub-problem 3 of conj:casimir-epsilon-vacuum is not closed by "
+              "this sweep.")
 
     out = builder.save()
     print(f"\nWitness: {out}")
