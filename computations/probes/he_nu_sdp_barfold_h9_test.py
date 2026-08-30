@@ -86,6 +86,25 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # ones. The float() cast below is therefore deliberate: resolve the PIN, keep
 # the tier.
 Q0 = float(Q_50_DIGIT_STR)
+# PRECISION OF THE STRING FORM MATTERS HERE -- corrected 2026-08-30, same day,
+# after the first version of this migration got it wrong.
+#
+# `y_lambda_wenzl_bridge_numeric` does `str(q_val)` internally, so the number of
+# digits in the STRING decides the mpmath computation. Passing the float64 head
+# (17 digits) leaves cancellation debris ~1e-53 where the exact answer is ZERO:
+# under convention D the Wenzl level is r=2, so y_lambda vanishes identically for
+# every partition with >=3 rows. Measured at the proton pin:
+#     float(Q_50_DIGIT_STR) -> n=6: 3/11 negative, 0 exact zeros
+#                              n=9: 10/30 negative, 0 exact zeros
+#     Q_50_DIGIT_STR        -> n=6: 0/11 negative, 7 exact zeros
+#                              n=9: 0/30 negative, 25 exact zeros
+# `neg_norm_blocks` counts those with NO tolerance, so the float form
+# resurrects a spurious "indefinite Gram" reading that the canonical reference
+# (deuteron-real-sdp.witness.json, frobenius_gram_indefinite = false) denies.
+#
+# So: the 50-dps STRING goes to y_lambda, and float() only where numpy needs it
+# (chi_numpy / hoefsmit are f64 by construction anyway).
+Q0_STR: str = Q_50_DIGIT_STR
 RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
 
 
@@ -118,7 +137,7 @@ def barfold(Z, N):
     cr = atom_canonical_crossings(Z, N)
     P = list(_parts(n))
     idx = {p: i for i, p in enumerate(P)}
-    y = {p: float(y_lambda_wenzl_bridge_numeric(list(p), Q0)) for p in P}
+    y = {p: float(y_lambda_wenzl_bridge_numeric(list(p), Q0_STR)) for p in P}
     chi = {p: float(chi_numpy(p, cr, Q0)) for p in P}
     t = np.array([y[p] * chi[p] for p in P])
     frob = np.array([y[p] * _hook_dim(p) for p in P])

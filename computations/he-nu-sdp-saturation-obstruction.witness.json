@@ -38,7 +38,7 @@
       "D": {
         "bounded_support_size": 1,
         "nu_canonical": 1,
-        "neg_norm_blocks": 3,
+        "neg_norm_blocks": 0,
         "support": [
           [
             [
@@ -53,7 +53,7 @@
       "T": {
         "bounded_support_size": 1,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
+        "neg_norm_blocks": 0,
         "support": [
           [
             [
@@ -71,7 +71,7 @@
       "3He": {
         "bounded_support_size": 1,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
+        "neg_norm_blocks": 0,
         "support": [
           [
             [
@@ -102,10 +102,10 @@
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
   "scriptFile": "he_nu_sdp_saturation_obstruction.py",
-  "scriptHash": "51009e3ce54a",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "7fbfc199c49adb6bc56f26c63b80e65980f812de",
-  "computedAt": "2026-08-30T11:03:54.355702+00:00",
+  "scriptHash": "d36dd41b20db",
+  "scriptCommitSha": "178f284ea2b97784cecd33b86c5b6b51757bddbc",
+  "commitSha": "178f284ea2b97784cecd33b86c5b6b51757bddbc",
+  "computedAt": "2026-08-30T11:07:48.899132+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

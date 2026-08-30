@@ -480,12 +480,34 @@ barely matters.
   answer.
 * **The `q0Anchor: proton` stamp was NOT used as evidence.** All three stems are
   absent from `q0_anchor_manifest.json`, so it is the runtime default.
-* **Immateriality, measured.** These probes record only integers
-  (`bounded_support_size`, `nu_canonical`, `neg_norm_blocks`) and a categorical
-  verdict; the sole continuous outputs are support weights, which an 11.5371 ppb
-  shift moves in the ~10th digit. They assert **nothing** (`allPassed` null),
-  nothing imports them, and no producer reads their witnesses. Confirmed after
-  regeneration: verdicts unchanged (REFUTED / OBSTRUCTED / REFUTED).
+* **Immateriality, measured — with one correction.** These probes record
+  integers (`bounded_support_size`, `nu_canonical`, `neg_norm_blocks`) and a
+  categorical verdict; the continuous outputs are support weights, which an
+  11.5371 ppb shift moves in the ~8th–10th digit. They assert **nothing**
+  (`allPassed` null), nothing imports them, and no producer reads their
+  witnesses. Verdicts after regeneration are unchanged (REFUTED / OBSTRUCTED /
+  REFUTED).
+
+  **`neg_norm_blocks` is NOT immaterial, and the first cut of this migration
+  broke it.** `y_lambda_wenzl_bridge_numeric` does `str(q_val)` internally, so
+  the DIGIT COUNT OF THE STRING decides the computation. Passing
+  `float(Q_50_DIGIT_STR)` (17 digits) leaves cancellation debris ~1e-53 where
+  the exact answer is zero — under convention D the Wenzl level is r = 2, so
+  y_λ vanishes identically for every partition with ≥3 rows. Measured at the
+  proton pin:
+
+  | q passed to `y_lambda` | n=6 | n=9 |
+  |---|---|---|
+  | `float(Q_50_DIGIT_STR)` — 17 digits | 3/11 negative, 0 exact zeros | 10/30 negative, 0 exact zeros |
+  | `Q_50_DIGIT_STR` — 50 dps | **0/11 negative, 7 exact zeros** | **0/30 negative, 25 exact zeros** |
+
+  `n_neg = int((frob < 0).sum())` has no tolerance, so the float form drove
+  `neg_norm_blocks` 0 → 3/10/10 and resurrected a spurious "indefinite Gram"
+  reading that the canonical reference denies
+  (`deuteron-real-sdp.witness.json`, `frobenius_gram_indefinite = false`).
+  Fixed: the 50-dps STRING goes to `y_lambda`, and `float()` only where numpy
+  needs it. After the fix the sole differences from the pre-migration state are
+  `q0` and three support weights, all at pin scale.
 * **It resolved a real straddle.** Each witness carried payload `q0` = pin A (a
   MUON value) beside a stamped proton `q0Value`. Payload and stamp now agree.
 * **float64 is correct here and was kept.** These run on numpy throughout
