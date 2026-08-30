@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T04:51:16Z
-updated_at: 2026-08-30T05:27:00Z
+updated_at: 2026-08-30T05:30:59Z
 ---
 
 Found by `computations/audits/pin_straddle_unguarded_audit.py` stage 2 (PR #6104),
@@ -195,3 +195,35 @@ them with a ternary.
 
 Deferred off PR #6104 for regeneration cost (DIRECT_BUDGET_SEC = 480 per
 trace), NOT for difficulty. The load-path change itself is one line.
+
+
+## CORRECTION 2026-08-30 (second) — the "coverage 11 -> 17" claim is WRONG
+
+I wrote, in this bean and in the PR body, that the witness regeneration is
+longer than the old record implies "because the fix RAISES coverage from 11 to
+17 values of n, so Test 3 now runs on six more and larger partition sets."
+
+That is false. `main()` sets `ns = list(range(2, 13))` -- the n range is
+HARDCODED at 2..12 and is not driven by the witness table. `load_mpfr_witness`
+now returns 17 entries instead of 11, but only n=2..12 are ever consumed, so
+the extra proton entries are available and unused.
+
+Two things this changes:
+
+- **The regeneration cost is UNCHANGED by my fix.** The >900 s figure was
+  measured and stands; my explanation for it was invented. Test 3 at n=11-12
+  (all partitions x 5 probes x 2 mu) is simply expensive, and was equally so
+  before. The committed record contains test_3 for all of n=2..12, which proves
+  the run IS achievable -- 900 s was just short of it.
+- **The fix's benefit is narrower than I stated.** It corrects WHICH table is
+  compared against, not HOW MUCH is validated. No additional n is checked.
+
+The 42-order accuracy improvement (1.19e-9 -> 2.53e-51) is unaffected and was
+measured directly. Only the coverage claim was wrong.
+
+Also worth recording: `main()` is MERGE-AWARE ("preserve entries for n not in
+this run"). That is exactly why a killed run leaves a genuinely mixed-pin file
+rather than a truncated one -- the stale n survive by design. It confirms the
+decision to restore rather than commit the partial.
+
+Corrected in the producer docstring so the next reader does not inherit it.
