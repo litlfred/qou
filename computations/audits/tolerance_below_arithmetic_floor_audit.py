@@ -38,6 +38,12 @@ NOT FLAGGED, deliberately:
   * tolerance 0 / 0.0 — an exactness claim, a different question, and one the
     vacuous-assertion scans already cover.
 
+RUNTIME ~9.7 s (measured 3x, 3490 files AST-parsed). Not the ~1 s I first
+claimed in this file's own commit message. That matters: it is 10x the
+`--files`-scoped bootstrap-order guard, so wiring this into the PreToolUse
+commit hook as a whole-tree sweep would put ten seconds on every commit.
+Give it a `--files` mode first if it is ever hooked.
+
 Exit 0 when clean, 1 otherwise.
 
 -- Ref: [manuscript] docs/audits/2026-08-15-detector-blindness-taxonomy.md
