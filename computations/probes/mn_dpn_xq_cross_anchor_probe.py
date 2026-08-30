@@ -236,8 +236,8 @@ def main() -> int:
 
     builder.add_assertion(
         name="cross_anchor_candidates_evaluated",
-        computed=len(results),
-        expected=len(results),
+        computed=len(results) > 0,
+        expected=True,
         tolerance=0.0,
         source="Cross-anchor enumeration",
     )
