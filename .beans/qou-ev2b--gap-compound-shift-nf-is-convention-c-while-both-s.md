@@ -63,3 +63,28 @@ means, or merely evaluated at a z. If the latter, migrate and re-run; if the
 former, it needs the same re-derivation the ladder does. Re-read
 `shift-from-nf-basis.witness.json` rather than trusting the transcribed
 constants, per the in-file warning.
+
+## RESOLVED ON MAIN 2026-08-30 — a sibling made the call and migrated it
+
+Superseded before it was worked. `main` now carries `compound_shift_nf.py` with
+BOTH halves:
+
+    :320  z = q0 ** 3 / (q0 ** 2 + 1)          <- convention D
+    :322  out = [..., h * z ** 2 + z]          <- the TR_M[5] fix
+
+So the desync this bean reported is closed: the module now agrees with
+`pyhecke.gram` and `hecke_core_symbolic` on the convention, which is what the
+line-67 claim asserted all along. The bug documentation is retained in the file.
+
+Taken from `main` wholesale on the pre-merge integration rather than reconciled,
+since main's version is strictly ahead of this branch's on both axes.
+
+`markov_trace_weights_wenzl.py` moved the same way (:291 and :497 are now
+`q ** 3 / (q ** 2 + 1)`), which invalidated this branch's ledger entry for it —
+pruned rather than rehashed, because the site no longer carries convention C at
+all.
+
+Worth recording the shape: this bean asked for a decision on a 22.7-50.6 %
+numeric move, and the answer arrived from a parallel agent while the question
+sat open. The measurement was still the right output — it is what made the
+incoming migration checkable rather than something to take on trust.
