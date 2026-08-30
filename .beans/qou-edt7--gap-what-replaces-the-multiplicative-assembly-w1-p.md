@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T09:43:39Z
+updated_at: 2026-08-30T10:45:46Z
 parent: qou-mhj9
 ---
 
@@ -247,3 +247,101 @@ Derive w(z). Specifically: why does w rise from z = 1 to z = 2, and why does it
 turn over at the alpha particle? The corpus has a coordination story already
 (`CoordinationSaturation`, `bk-coordination-multiplicity`) whose contact with this
 is unexamined — that is the next place I would look, marked as judgement.
+
+
+## THE NEGATIVE HALF IS CLOSED (2026-08-30, PR #6173)
+
+Lean: `QOU/Mass/UniformBondSimpleGraphExclusion.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/coordination_weight_rise_and_turnover_probe.py` (4/4).
+Audit: `docs/audits/2026-08-30-why-w-rises-the-negative-half-is-closed.md`.
+
+**PROVED — the rise is NOT about which pairs bind.** For a uniform bond weight over
+a SIMPLE GRAPH, b3 = eps*(e3 - 3*e2) <= 0 always: a simple graph on 3 vertices has
+at most 3 edges, a bonded pair at least 1. No monotonicity, no cap, no relation
+between mass numbers. Case-(b) exclusion (the invariant is a proved counting bound).
+
+**Strictly stronger than CoordinationSaturation**, which checked two endpoints. In
+the w coordinate, a degree function gives w(z) = eps*d(z+1)/z, so complete => w
+constant => b3 = 0; bounded-degree => w ~ 1/z => b3 < 0; chain => b3 = -eps. An
+intermediate profile cannot rise at the bottom because d(3) <= 2 on any simple
+graph. **THE WHOLE COORDINATION-MULTIPLICITY FAMILY IS EXCLUDED** as a source of
+b3 > 0 — which answers the 'unexamined contact with CoordinationSaturation' I named
+as the next place to look. The contact exists and it is negative.
+
+**So the rise is non-transferability, and it is one number:**
+eps(2)/eps(1) = 1.2137076 — the bond is 21.4% stronger at coordination 2.
+
+**REFUTED — single-ratio (Markov-power) scaling, for EVERY r.** tr_{n+1} = z*tr_n
+makes a bond n-dependent, which is the right kind of mechanism; its simplest form
+eps(z) = eps(1)*r^(z-1) requires eps(2)/eps(1) = eps(3)/eps(2). Measured 1.2137 vs
+1.7467, **43.9% apart**. Convention-independent: a single ratio of ANY value cannot
+produce two ratios 44% apart. Scope-(a) — kills the family, not the mechanism.
+
+**REFUTED — same-orbital pair fraction** beyond A=7: <8% at A=5,6,7 with one
+normalisation, then 29.7% at A=9, 166% at A=16. Scope-(a).
+
+**SURVIVES — the turnover LOCATION.** Wigner SU(4)'s [1^n] has dim = C(4,n), which
+VANISHES for n >= 5, so the maximally-symmetric regime ends at A=4, where the peak
+is. Parameter-free. Caveats asserted in the witness: it LOCATES without SIZING, and
+rests on Wigner's symmetry-to-binding assumption, not derived here. NOTE this is a
+SUPPORT bound (C(4,n)=0), not the C(4,n)>0 positivity argument an earlier probe of
+mine made about a SIGN — that was wrong and is not reused.
+
+### STILL OPEN — one number
+Why eps(2)/eps(1) = 1.2137 (and eps(3)/eps(1) = 2.1200). Nothing tested predicts
+either. No magnitude is derived here; what changed is that a large family is gone
+from the search and the remainder is a single sharply stated quantity.
+
+
+## beta CANNOT BE DERIVED — and the answer RETRACTS the lead (2026-08-30)
+
+Lean: `QOU/Mass/SU4CasimirIsAffineInPairCount.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/su4_casimir_beta_derivation_probe.py` (3/3).
+
+**The SU(4) Casimir of [1^n] is AFFINE IN THE PAIR COUNT:**
+
+    C2([1^n]) = (5/8)n(4-n) = (15/8)n - (5/4)C(n,2)
+
+and the sum a two-body SU(4)-invariant interaction actually contributes,
+S(n) = (1/2)[C2 - n*C2(fund)] with C2(fund) = 15/8, is EXACTLY proportional to
+the pair count:
+
+    S(n) = -(5/8) C(n,2)      for every n, exactly (verified n=2..12, dev 0.0)
+
+So such an interaction contributes a CONSTANT PER PAIR => w constant => b3 = 0.
+That is the pairwise wall reached from group theory instead of from the counting
+bound in UniformBondSimpleGraphExclusion; the two agree, which checks both.
+
+**Therefore the fitted w = alpha - beta*C2 is NOT the SU(4) prediction**, and
+there is no coupling for beta to be. The lead is retracted as a derivation route.
+
+### What the fit actually was
+C2 = 2.5, 1.875, 0 at A=2,3,4, so fitting the endpoints and predicting the middle
+is a FIXED interpolation with zero remaining freedom: lambda = 3/4 EXACTLY, i.e.
+
+    w(3) = (3/4)w(2) + (1/4)w(4)   <=>   B(4) = 8B(3) - 18B(2)
+
+Two consequences:
+1. It IS better than the corpus simplex baseline mu4=0 (B(4)=4B(3)-6B(2)), which
+   misses B(4) by 32.7%; this misses by 1.7% on the Coulomb-corrected convention.
+   Real, and why the fit looked good.
+2. The residual is variable-dependent. SAME convention: 0.71% on B(3), 1.709% on
+   B(4), amplification 8*B(3)/B(4) = 2.4. I quoted the smaller.
+
+### A correction to my own scratch output
+A scratch run printed '18x' for that amplification. It was hardcoded prose, not
+computed, AND it crossed two conventions (0.71% from 3H against 12.5% from the
+isospin average). The computed factor is 2.4, consistent across conventions.
+
+### UNTOUCHED
+The SUPPORT bound dim[1^n] = C(4,n) = 0 for n >= 5 still locates the turnover at
+A=4. It uses the VANISHING OF THE REPRESENTATION, not its Casimir, so this result
+does not reach it. Wigner SU(4) as physics is not refuted; one route is closed.
+
+### STILL OPEN
+The rise itself. Both SU(4) routes to the MAGNITUDE are now shut (two-body: no
+Casimir term; single-ratio Markov: refuted under all three conventions), and
+closed-form guessing is entropically dead at the target's 1-2 significant digits.
+What is left needs a genuine three-body operator, and the corpus's own candidate
+is the Milnor triple linking number (all pairwise linking zero, mu-bar_123 != 0)
+-- the topological object with exactly the required structure. That is qou-brng.
