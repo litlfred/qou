@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-30T04:59:35Z
+updated_at: 2026-08-30T08:01:47Z
 ---
 
 ## What
@@ -631,3 +631,45 @@ MEASURABLE SURFACE NOW FULLY ACCOUNTED FOR (5 of 5)
 
 The remaining 15 are UNSOUND-ENV-BYPASS and cannot be measured by this tool at
 all until they route through q_parameter. Three of them must never be routed.
+
+
+## Manifest audit: 2 of 753 stems point at a producer that no longer exists (2026-08-30)
+
+Fell out of refreshing the reachability block for #6105. Method: for every stem in
+`computations/q0_anchor_manifest.json`, rglob `computations/**/<stem>.py` with the
+check tool's `SKIP` tuple applied. 753 stems audited — `ideal_muon` 19,
+`physical_proton` 718, `ambiguous` 16.
+
+| list | stem | only file | deprecated in |
+|---|---|---|---|
+| `ideal_muon` | `alpha_high_precision` | `_deprecated/alpha_high_precision.py` | `f62425070e` 2026-08-25 |
+| `physical_proton` | `binding_k_enumerator` | `_deprecated/binding_k_enumerator.py` | `626f332b08` 2026-08-10 |
+
+`ambiguous` is clean.
+
+**The two are not equivalent, and the asymmetry is the point.** `q_parameter`
+selects by `Path(sys.argv[0]).stem`, and its default for an unlisted stem is
+proton. So:
+
+- `binding_k_enumerator` under `physical_proton` is genuinely **inert** — the entry
+  restates the default. Deleting it is a true no-op.
+- `alpha_high_precision` under `ideal_muon` is **not inert**. Running
+  `computations/_deprecated/alpha_high_precision.py` directly still matches the
+  entry and rebinds every constant to the **muon** pin. Deleting the entry would
+  silently re-pin that file to proton.
+
+I have changed neither. The muon one is a behaviour change on a file the corpus
+has deliberately excised as a fit, which is exactly the sort of quiet re-pin the
+2026-08-19 sweep constraints exist to prevent; the proton one is not worth a
+commit on its own.
+
+**Do not count either as an unmeasured group-A hold.** They are not producers
+awaiting a verdict — they are manifest entries whose producers were excised
+deliberately, in commits that did not update the manifest.
+
+**A stale GAP bean fell out of it.** `qou-2zjp` (*'alpha_high_precision is broken
+on main — bisection bracket no longer contains a root'*) is still `todo`, last
+updated 2026-08-25T01:03Z — **hours before** the excision commit the same day. Its
+measurement stands; whether the bean is moot depends on whether its convention-C→D
+`z` diagnosis generalises beyond the one file. Noted on that bean; not closed,
+because that is a scope judgement and I did not write it.
