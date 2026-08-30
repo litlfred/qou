@@ -68,12 +68,20 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import canonical_braid_crossings as C  # noqa: E402
-from hecke_core import h as h_val  # noqa: E402
+
+# `h` is imported inside main() rather than at module level. NOTE, because a
+# reviewer suggested taking it from "a lighter substrate shim" to avoid heavy
+# deps: that would not help. `canonical_braid_crossings.atom_canonical_crossings`
+# does `from hecke_core import h as h_val` INTERNALLY (line 159), and this probe
+# cannot avoid calling it -- the canonical word IS its subject. So the
+# dependency is unavoidable here; only the failure POINT moves.
 
 ISO = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 
 
 def main() -> int:
+    from hecke_core import h as h_val  # see the note above the imports
+
     print("== the four interface elements, as Hecke elements sigma_g + d.1 ==")
     for t in ("sigma", "sigma_inv", "averaged", "averaged_weighted"):
         d = C.d_for_ctype(t, h_val)

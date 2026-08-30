@@ -266,8 +266,11 @@ because each would have inflated the result:
 
 Corrected: `2/3` is alone only at `q ≤ 6`; at `q ≤ 9` it is joined by `5/8`, at
 `q ≤ 12` by `7/11`. **So the 3.83 % agreement discriminates weakly and must not
-be reported as an identification.** What survives Leg 2 is Leg 1's sign result,
-which is structural.
+be reported as an identification.** And Leg 1's sign result does **not** rescue
+it — that is analytic, per the correction above, so neither leg discriminates.
+What survives is neither leg's number but a structural fact they do not measure:
+the object is **non-link-invariant and non-pairwise**, so it escapes both the
+Milnor and the pairwise-additivity arguments.
 
 **Leg 4 — required per-order energies (diagnostic, not a derivation).** Under
 the SU(4) weighting, `e₂ : e₃ : e₄ = 1 : 0.9617 : 24.93`. Against the
