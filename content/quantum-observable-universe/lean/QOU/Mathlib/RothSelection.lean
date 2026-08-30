@@ -245,6 +245,27 @@ theorem exists_rothGammaFull_of_supply_witness :
   exists_rothGammaFull_of_supply (S := (Set.univ : Set ℕ))
     (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 1 one_pos (by norm_num) (by norm_num)
 
+/-- **`Σ r_h` in terms of the smallest height.**  `Σ_h rothDegrees H N h ≤ m·(log_b N + 1)` for any
+`b` below every height — because `Nat.log` is antitone in its base, so the smallest height gives
+the largest degree.
+
+This is the concrete form of the asymptotic `Σ r_h ≈ log N · Σ_h 1/log H_h ≤ m·log N/log H₀` that
+`hbound`'s cancellation runs on: it puts `Σ r_h` under `m·log_{H₀} N`, so the left side of the
+height clause grows like `N^{c·m/log H₀}` against a right side of `N^p`. -/
+theorem sum_rothDegrees_le {m : ℕ} (H : Fin m → ℕ) (N b : ℕ) (hb : 1 < b)
+    (hle : ∀ h, b ≤ H h) :
+    ∑ h, rothDegrees H N h ≤ m * (Nat.log b N + 1) := by
+  classical
+  calc ∑ h, rothDegrees H N h ≤ ∑ _h : Fin m, (Nat.log b N + 1) := by
+        refine Finset.sum_le_sum (fun h _ => ?_)
+        have hstep : Nat.log (H h) N ≤ Nat.log b N := Nat.log_anti_left hb (hle h)
+        rw [rothDegrees]
+        split_ifs
+        · omega
+        · omega
+    _ = m * (Nat.log b N + 1) := by
+        rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, smul_eq_mul]
+
 end Assembly
 
 end MvPolynomial

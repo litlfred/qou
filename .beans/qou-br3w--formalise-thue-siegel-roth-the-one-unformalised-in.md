@@ -939,3 +939,33 @@ REMAINING:
   2. Feed roth_contradiction_int.
   3. Step 5, not LiouvilleWith.
 
+## 2026-08-30 -- the two concrete pieces the instantiation needs
+
+sum_rothDegrees_le (RothSelection) and hbound_of_ceil_le (RothSiegelBound), axiom-clean, .oleans
+deleted first.
+
+sum_rothDegrees_le: sum_h rothDegrees H N h <= m (log_b N + 1) for any b below every height. The
+mechanism is that Nat.log is ANTITONE in its base, so the smallest height gives the largest degree
+-- which is why the bound is in terms of H_0 and not of the H_h individually. This is the concrete
+form of the asymptotic sum r_h ~ log N sum_h 1/log H_h <= m log N / log H_0 that hbound's
+cancellation runs on: it puts the left side of the height clause at N^{c m / log H_0} against a
+right side of N^p.
+
+hbound_of_ceil_le: Gamma_m's height clause is about ceil(siegelHeight), which is opaque. This
+replaces it by siegelHeight_le_pow's explicit bound, so what a parameter choice must verify is an
+inequality between NAMED quantities.
+
+⚠ AND THE REPLACEMENT IS ONE-DIRECTIONAL. siegelHeight <= Y gives ceil(siegelHeight) <= ceil(Y), so
+the explicit inequality is SUFFICIENT and not necessary. A parameter family that fails hY might
+still satisfy the clause. Stated in the docstring because otherwise a future reader hitting a
+failure of hY would read it as a failure of the argument, and it is not.
+
+REMAINING -- and it is now a single arithmetic obligation with every ingredient named:
+    ceil(2^{sum r} max(1, c(K)(2B)^{sum r}))^{mq}  <=  H_0^{r_0 p}
+with sum r <= m(log_{H_0} N + 1) from sum_rothDegrees_le and r_0 = log_{H_0} N. Taking logs this is
+    m q (m (log_{H_0} N + 1) log(4B) + log c(K))  <=  p log_{H_0} N log H_0,
+i.e. log H_0 >~ m^2 q log(4B) / p once N is large. So the shape of the final choice is: m and eps
+from slack_pos with the DOUBLED threshold (2 deg alpha < 4 eps^2 m), then H_0 past that log
+threshold, then the rest of the heights by growth, then N.
+Then feed roth_contradiction_int, and step 5 (not LiouvilleWith).
+

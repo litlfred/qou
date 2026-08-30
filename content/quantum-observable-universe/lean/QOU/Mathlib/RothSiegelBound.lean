@@ -209,6 +209,32 @@ theorem siegelHeight_le_pow [DecidableEq (K →+* ℂ)]
   have h4 : (0 : ℝ) ≤ (2 : ℝ) ^ (∑ h, r h) := by positivity
   exact mul_le_mul h1 h2 h3 h4
 
+open private c from Mathlib.NumberTheory.NumberField.House in
+/-- **`Γ_m`'s height clause, reduced to a checkable inequality.**  The clause is about
+`⌈siegelHeight⌉`, which is opaque; this replaces it by the explicit bound of `siegelHeight_le_pow`,
+so what a parameter choice has to verify is an inequality between named quantities.
+
+Nothing is lost by the replacement in the direction that matters: `siegelHeight ≤ Y` gives
+`⌈siegelHeight⌉ ≤ ⌈Y⌉`, so the explicit inequality is *sufficient*.  It is not necessary, and a
+parameter family that fails it might still satisfy the clause — worth knowing before anyone reads
+a failure of `hY` as a failure of the argument. -/
+theorem hbound_of_ceil_le [DecidableEq (K →+* ℂ)]
+    (r : Fin m → ℕ) (α : Fin m → 𝓞 K) (μ : ℚ) {B : ℝ} (hB1 : 1 ≤ B)
+    (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
+    (hE : 2 * Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
+            × Module.Free.ChooseBasisIndex ℤ (𝓞 K))
+          ≤ Fintype.card {n // n ∈ idxBoxF r})
+    (D : ℤ) (e : ℕ)
+    (hY : (⌈(2 : ℝ) ^ (∑ h, r h) * max 1 (c K * (2 * B) ^ (∑ h, r h))⌉ : ℤ) ^ e ≤ D) :
+    (⌈siegelHeight r α μ⌉ : ℤ) ^ e ≤ D := by
+  have h0 : (0 : ℝ) ≤ siegelHeight r α μ := by
+    rw [siegelHeight]
+    exact Real.rpow_nonneg (by positivity) _
+  have hceil : (⌈siegelHeight r α μ⌉ : ℤ)
+      ≤ ⌈(2 : ℝ) ^ (∑ h, r h) * max 1 (c K * (2 * B) ^ (∑ h, r h))⌉ :=
+    Int.ceil_le_ceil (siegelHeight_le_pow r α μ hB1 hα hE)
+  refine le_trans (pow_le_pow_left₀ (Int.ceil_nonneg h0) hceil e) hY
+
 end Exponent
 
 end MvPolynomial
