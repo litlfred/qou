@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T08:05:06Z
+updated_at: 2026-08-30T08:18:46Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -95,3 +95,61 @@ certify harmless.
 
 Chasing why the output could not move surfaced a real defect in that probe --
 two assertions that cannot fail. Filed separately.
+
+## 2026-08-30 — the remaining 53, classified by reading every one
+
+93 -> 53 so far (41 ledger entries + 1 dead binding removed). The co-bound set
+is drained; what remains is a different population, and reading it changes the
+estimate again.
+
+### The 53 break down as
+
+  ~15  named `z_C` / `z_of` FUNCTIONS whose scope IS the C arm, in files often
+       named *_C_vs_D_* — binding_closed_form_C_vs_D:94,
+       binding_production_route_C_vs_D:84, binding_sum_C_vs_D_per_isotope:118,
+       binding_channel_convention_exposure:109, mu3_door_sign_C_vs_D:90,
+       toffoli_diagonal_convention_frame:61, qbeta_F_coordinate_bridge_audit:65,
+       qbeta_d_frame_ladder_structure:83, qbeta_decay_channel_convention_status:79,
+       qbeta_h_vs_u_frame_stability:80, qbeta_ladder_required_phase:72,
+       qbeta_zcd_classical_coincidence:113, mayer_threebody_sign_threshold:74,
+       markov_stab_trace_axis:130, gram_h3_symbolic_regression:72
+
+   2   explicitly historical and self-labelled —
+       schur_principal_mpmath:123 in `_wenzl_constants_convention_C_HISTORICAL`,
+       ocneanu_param_from_fibre_dimension:178 `# EXCISED — audited here, not used`
+
+   1   GUARDED DISPATCHER, and it is the one that looked most dangerous:
+       qbeta_ck_cache.py:140 — the canonical c_k extractor. Reachable ONLY via
+       an explicit --historical-convention-C flag, behind
+       `if convention != "C": raise`, with the reason stated in place: "this
+       path exists solely so the committed witness stays machine-reproducible,
+       and it is never the default". NOT a defect. 11 importers.
+
+   3   my own probes from this session, deliberately C-frame and documented as
+       such (the c_3 extraction is DEFINED in C, so its probe must evaluate there)
+
+ ~20-25  genuinely computational, no comparison framing — the real remaining
+       targets. compound_shift_nf:256 (tr_m_weights_mp),
+       markov_trace_weights_wenzl:254/457 (markov_trace_s),
+       gram_h3_det_factorization:55, probe_markov_trace_ratio_exact:87,
+       qbeta_c3_barodd_hs_matrix_resolvent:86, qbeta_c3_cross_anchor_exactness:55,
+       qbeta_eta_singularity:180, qbeta_eval_map_bar_decomposition:48,
+       qbeta_h_frame_rungs:73, qbeta_prearchimedean_z_recursion:103,
+       qbeta_t3_carrier_q1_order_preflight:68, qbeta_z_bar_parity_fmap_class:72,
+       and others.
+
+### The estimate has moved twice, both times downward, both times on reading
+
+  93 blocking -> ~36 "genuine" (co-bound triage) -> ~20-25 (reading the rest).
+
+Each narrowing came from looking rather than from a heuristic, and each time the
+heuristic would have over-counted. Do not quote 93 as a defect count.
+
+### The next tranche is materially harder than everything so far
+
+These ~20-25 CHANGE NUMBERS. Each needs its producer re-run, its witness
+regenerated, and its recorded conclusions re-checked — and several sit in the
+qbeta decay channel where qou-cds1 forbids substitution outright (a z-swap is
+not a re-derivation). Expect the honest outcome for some of them to be "cannot
+migrate by substitution; needs the D-frame derivation first", i.e. blocked on
+qou-cds1 rather than on effort.
