@@ -64,28 +64,49 @@ triple-angle formula gives `τ³ − 3√3·τ² − 3τ + √3 = 0`. So **both*
 cubics (one over `ℚ`, one over `ℚ(√3)`) and admit rational brackets — `nlinarith` with
 `Real.sq_sqrt 3` territory, not special-function territory.
 
-`QOU.Knot.FiveTwoShapeBounds` (landed #6084) already brackets `y₁`. **Measured — they
-are NOT tight enough**, and the probe now carries the check.
+`QOU.Knot.FiveTwoShapeBounds` (landed #6084) already brackets `y₁`, and **the existing
+bracket is already sufficient — no refinement needed.**
 
-    condition            Im(z)/Re(z) > tan(2π/9) = 0.8390996312
-      with  Im(z)/Re(z) = Im(y) / (Re(y)² − Re(y) + Im(y)²)
+### CORRECTION — my first answer here said the opposite, and was wrong
 
-    EXISTING  31/40 < Re < 4/5,  13/10 < Im < 33/25
-              worst-case ratio  0.8215369060      SHORT BY 0.0175627252
+I first interval-evaluated the condition over a rational **box** for `(Re y₁, Im y₁)`,
+concluded the existing bounds fall short by `0.0176`, and wrote that denominators of
+**200** were required (`156/200 < Re < 157/200`, `261/200 < Im < 262/200`), noting
+pointedly that den=100 "still falls short". **All of that is an artefact of the
+relaxation.** Re and Im are not independent — both are functions of the single real
+root `t` of `X³−2X²+3X−1`:
 
-    den= 50   0.8215369060   —
-    den=100   0.8386014708   —   (short by only 0.0004981604)
-    den=200   0.8433910135   SUFFICIENT
+    Re = (2 − t)/2            Im = √(3t² − 4t + 8)/2
 
-**Denominator 100 is not enough and 200 is** — the margin is thin enough that the
-obvious "one more digit" refinement fails. Concretely `FiveTwoShapeBounds` needs
+so a box over `(Re, Im)` discards the constraint linking them, and here it discards
+enough to **invert the answer**.
 
-    156/200 < Re(y₁) < 157/200        261/200 < Im(y₁) < 262/200
+### The correct analysis
 
-i.e. `0.78 < Re < 0.785` and `1.305 < Im < 1.31`, against the current
-`0.775 < Re < 0.8` and `1.3 < Im < 1.32`. Same proof technique as the existing
-bounds (bracket the cubic's real root, then the closed forms for Re/Im) at finer
-granularity — not a new method.
+    Re² − Re + Im²  =  (4t² − 6t + 8)/4
+
+    ratio(t)  =  Im / (Re² − Re + Im²)  =  2√(3t² − 4t + 8) / (4t² − 6t + 8)
+
+`ratio` is strictly **increasing** across the bracket (`ratio′ ≈ 0.25–0.28` on
+`[0.39, 0.46]`), so a **lower** bracket on `t` alone settles it:
+
+    critical t (ratio = tan 2π/9)   0.3943107684
+    EXISTING realRoot_gt : 2/5 < t  ratio(2/5) = 0.8406972467
+    tan(2π/9)                       0.8390996312
+    margin                          0.0015976155      SUFFICIENT
+
+**Consequences for the Lean, all in the easier direction.** No new bracketing. The
+*upper* bracket `realRoot_lt` and the separate `Re`/`Im` bounds are not needed for this
+either — the whole angle condition rests on `2/5 < realRoot` plus monotonicity of a
+rational-plus-one-square-root function.
+
+### And it retroactively vindicates a docstring I was about to correct
+
+`FiveTwoShapeBounds` §3 says *"the margins are deliberately loose … there is no reason
+to chase digits."* I had this queued as a false claim to fix, on the strength of the
+box analysis. Its stated **reason** is still wrong (it cites "34 % headroom" for a
+consumer whose chord bound clears by 0.82 %), but its **advice** is right, and my
+correction would have been the error. Fix the number, keep the conclusion.
 
 ## The Lean gap, stated so nobody reads this as done
 
