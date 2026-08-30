@@ -129,4 +129,43 @@ theorem offLocus_b3_ne_zero {s h : ℝ} (hs : s ≠ 0) (hh : h ≠ 0) :
   have hEq := (b3_eq_zero_iff hs hh).mp hzero
   norm_num at hEq
 
+/-! ### The other reading fails too, and in the opposite direction
+
+Applying the *count channel* to the deuteron is already a stretch: the deuteron is a Hopf clasp with
+`lk = ±1`, **not** Brunnian, so its signed channel is live and
+`brunnian_energy_is_count_channel` does not apply to it. The honest alternative is to use the
+**full** mutual energy `pairEnergy n₊ n₋ q = n₊·q − n₋·q⁻¹` for both carriers.
+
+That reading is worse, and structurally so. With Hopf `(2,0) ↦ 2q` and Borromean `(3,3) ↦ 3q − 3q⁻¹`,
+
+    b₃ = (3q − 3q⁻¹) − 3·(2q) = −3(q + q⁻¹) < 0   for every `q > 0`.
+
+So it is not that the number comes out wrong at `q₀` — **no substrate modulus whatever makes this
+reading positive**, while the measurement is `b₃/b₂ = +0.6411239316`.
+
+Taken together the two readings **bracket the measurement from below**: count-only gives exactly `0`,
+full-energy gives `−2.7174806` at `q₀`, and the measured value is positive. The failure is therefore
+not a matter of having picked the wrong channel. -/
+
+/-- The full inter-component mutual energy of a crossing pair, `n₊·q − n₋·q⁻¹`
+(`QOU.Mass.BrunnianBindingChannel.pairEnergy`, restated here to keep this file's import cone
+small). -/
+noncomputable def fullPairEnergy (np nn : ℕ) (q : ℝ) : ℝ := (np : ℝ) * q - (nn : ℝ) * q⁻¹
+
+/-- **The full-energy reading gives `b₃ = −3(q + q⁻¹)` on the canonical carriers** — an exact closed
+form, with the Hopf clasp at `(2,0)` and the Borromean carrier at `(3,3)`. -/
+theorem fullEnergy_b3_closed_form (q : ℝ) :
+    fullPairEnergy 3 3 q - 3 * fullPairEnergy 2 0 q = -3 * (q + q⁻¹) := by
+  unfold fullPairEnergy
+  push_cast
+  ring
+
+/-- **And it is negative for every substrate modulus.** The wrong sign is structural, not a
+numerical accident at `q₀`: no `q > 0` makes this reading reproduce a positive `b₃`. -/
+theorem fullEnergy_b3_neg {q : ℝ} (hq : 0 < q) :
+    fullPairEnergy 3 3 q - 3 * fullPairEnergy 2 0 q < 0 := by
+  rw [fullEnergy_b3_closed_form]
+  have hinv : 0 < q⁻¹ := inv_pos.mpr hq
+  nlinarith
+
 end QOU.Mass.CountChannelCarrierLocus

@@ -138,6 +138,33 @@ def main():
 
     best_rel = cands[0][0] if cands else None
 
+    # READING (b): the FULL mutual energy. The deuteron is a Hopf clasp with
+    # lk = +-1 -- NOT Brunnian -- so its signed channel is live and
+    # brunnian_energy_is_count_channel does not apply to it. Using the count
+    # channel for it (reading (a) above) is already a stretch; this is the
+    # honest alternative, and it is worse.
+    def full(np_, nn_):
+        return np_ * q - nn_ / q
+
+    full_pair = full(2, 0)
+    full_triple = full(3, 3)
+    full_ratio = full_triple / full_pair - 3
+    closed = -3 * (q + 1 / q) / (2 * q)
+    closed_agrees = abs(full_ratio - closed) < mpf(10) ** (-(mp.dps - 10))
+
+    print("\n  READING (b) -- FULL mutual energy (the deuteron is NOT Brunnian,")
+    print("                 so dropping its signed channel is unjustified):")
+    print(f"    Hopf  (2,0) -> {mp.nstr(full_pair, 10)}"
+          f"    L6a4 (3,3) -> {mp.nstr(full_triple, 10)}")
+    print(f"    b3/b2 = {mp.nstr(full_ratio, 10)} = -3(q+1/q)/(2q)"
+          f"   closed form agrees: {closed_agrees}")
+    print(f"    WRONG SIGN, and negative for EVERY q > 0 "
+          f"(QOU.Mass.CountChannelCarrierLocus.fullEnergy_b3_neg)")
+    print(f"\n  So the two readings BRACKET the measurement from below:")
+    print(f"    (a) count-only  =  0")
+    print(f"    (b) full energy = {mp.nstr(full_ratio, 10)}")
+    print(f"    measured        = +{float(measured_ratio):.10f}")
+
     assertions = [
         {"name": "the canonical carriers land EXACTLY on the pair-local locus "
                  "(mu_triple = 3 * mu_pair)",
@@ -152,6 +179,14 @@ def main():
         {"name": "the half-integer quantisation argument does NOT obstruct the "
                  "channel -- some small carrier pair gets within 1%",
          "passed": bool(best_rel is not None and best_rel < F(1, 100))},
+        {"name": "READING (b): the full-energy reading has the WRONG SIGN, and "
+                 "its closed form -3(q+1/q)/(2q) is negative for every q > 0",
+         "passed": bool(full_ratio < 0 and closed_agrees)},
+        {"name": "the two readings BRACKET the measurement from below -- both "
+                 "are <= 0 while the measured b3/b2 is positive, so the failure "
+                 "is not a matter of picking the wrong channel",
+         "passed": bool(full_ratio < 0 and model_ratio == 0
+                        and measured_ratio > 0)},
     ]
 
     ok = all(a["passed"] for a in assertions)
@@ -178,7 +213,9 @@ def main():
         "h_substrate_factor": mp.nstr(h, 20),
         "free_parameters": 0,
         "carriers": rows,
-        "model_b3_over_b2": str(model_ratio),
+        "model_b3_over_b2_reading_a_count_only": str(model_ratio),
+        "model_b3_over_b2_reading_b_full_energy": mp.nstr(full_ratio, 14),
+        "reading_b_closed_form": "-3(q+1/q)/(2q), negative for every q>0",
         "measured_b3_over_b2": f"{float(measured_ratio):.12f}",
         "required_multiplicity_ratio": f"{float(need):.12f}",
         "exact_match_counts": {"n_pair": need.denominator,
