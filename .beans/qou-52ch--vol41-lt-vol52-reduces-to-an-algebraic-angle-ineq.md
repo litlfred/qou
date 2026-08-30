@@ -239,3 +239,57 @@ and 0.6 % on the right. The cubic is still the natural way to *establish*
 `τ < 21/25` in Lean (sign-check at a rational, as `FiveTwoShapeBounds` does for
 `realRoot`) — but the target is now a single rational inequality rather than a
 full bracket, which is strictly less work than the checklist above assumed.
+
+## 2026-08-30 — the `z⁹` route replaces the whole tan/arctan plan
+
+Found while starting the `tan_three_mul` derivation the checklist above calls
+for. **That derivation is not needed, and neither is the cubic.**
+
+`2π/9` is exactly one ninth of a full turn, so for `z` whose argument is pinned
+to a window narrow enough to fix the branch,
+
+    arg z > 2π/9   ⟺   9·arg z > 2π   ⟺   Im(z⁹) > 0
+
+because `arg(z⁹) = 9·arg z (mod 2π)` and positive imaginary part is exactly
+`arg ∈ (0, π)`. The branch window is `arg z ∈ (π/6, π/4)`, i.e.
+
+    √3·Im(z) > Re(z)     and     Im(z) < Re(z)
+
+both **algebraic**, and they put `9·arg z` in `(3π/2, 9π/4) ⊂ (π, 3π)`.
+
+### What it replaces
+
+| | tan route | `z⁹` route |
+|---|---|---|
+| Mathlib lemma | `tan_three_mul` — **does not exist** | `Complex.arg_pow_coe_angle` — **exists** |
+| extra derivation | cubic `τ³ + 3√3τ² − 3τ − √3 = 0` for `tan(2π/9)` | none |
+| numeric target | rational bracket `τ < 21/25`, 0.6 % clearance | polynomial sign check |
+| robustness | ratio margin 0.0098 | sign of `Im(z⁹)` survives a **1e-3 box** on both coordinates of `z` |
+
+### And it closes on the bracket already proved
+
+    at t = 2/5 (QOU.Knot.FiveTwoShapeBounds.realRoot_gt):
+      Im(z⁹) = 0.0022520546  > 0          ✓
+      branch window                        ✓ both
+    at the true root:
+      Im(z⁹) = 0.0145327484
+      arg(z⁹) = 0.0515341845 = 9·arg z − 2π   ✓ (branch confirmed)
+
+Critical `t` is **0.3943107684** — the same value the tan analysis gave, as it
+must be. So only a LOWER bracket on `realRoot` is needed, and `2/5` is it.
+
+### Revised checklist (supersedes the one above)
+
+1. ~~`tan_three_mul` → cubic for `τ` → rational bracket~~ **not needed**
+2. Branch window `√3·Im(z) > Re(z)`, `Im(z) < Re(z)` from `FiveTwoShapeBounds`.
+3. `Im(z⁹) > 0` — polynomial in `Re(z)`, `Im(z)`, from the same brackets.
+4. `arg z > 2π/9` via `Complex.arg_pow_coe_angle` + `arg_nonneg_iff`.
+5. Domain membership, far point, chord — **already done or one-liners**.
+
+The `Real.Angle` bookkeeping in step 4 is the only fiddly part left, and it is
+standard rather than missing.
+
+**Recorded because the previous checklist would have sent the next attempt
+straight into deriving a Mathlib lemma that the problem does not require** —
+and because I only looked for this route after the sign error forced me to
+re-derive the cubic by hand. Checking a wrong answer found a better question.

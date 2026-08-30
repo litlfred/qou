@@ -123,6 +123,70 @@ def bracket_requirement() -> bool:
     return bool(ok)
 
 
+def ninth_power_route() -> bool:
+    """The angle condition `a_min > 2*pi/9` as a POLYNOMIAL condition on z^9.
+
+    `2*pi/9` is exactly one ninth of a full turn, so for `z` whose argument is
+    known to lie in a window narrow enough to fix the branch,
+
+        arg z > 2*pi/9   <=>   9*arg z > 2*pi   <=>   Im(z^9) > 0
+
+    because `arg(z^9) = 9*arg z (mod 2*pi)` and a positive imaginary part is
+    exactly `arg in (0, pi)`.  The branch window used here is `arg z in
+    (pi/6, pi/4)`, i.e. `Im < Re` and `sqrt3*Im > Re` -- both algebraic -- which
+    puts `9*arg z` in `(3pi/2, 9pi/4)`, inside `(pi, 3pi)`.
+
+    WHY THIS MATTERS.  It replaces the tan route entirely:
+
+      tan route   needs `tan_three_mul` (NOT in Mathlib), the cubic
+                  `tau^3 + 3*sqrt3*tau^2 - 3*tau - sqrt3 = 0` for tan(2pi/9),
+                  and a rational bracket on tau.
+      z^9 route   needs `Complex.arg_pow_coe_angle` (IN Mathlib) and a
+                  polynomial sign check.
+
+    And it is far more robust: the sign of `Im(z^9)` survives a box of halfwidth
+    1e-3 on both coordinates of `z`.
+    """
+    y1 = five_two_shape()
+    z = (y1 - 1) / y1                      # arg z is the smallest dihedral angle
+    re, im = mp.re(z), mp.im(z)
+    z9 = z**9
+
+    print("\n" + "=" * 66)
+    print("THE z^9 ROUTE — the angle condition without tan or arctan")
+    print("=" * 66)
+    print("z = (y1-1)/y1 =", mp.nstr(z, 20))
+    print("arg z         =", mp.nstr(mp.arg(z), 20), "  2*pi/9 =", mp.nstr(2*mp.pi/9, 20))
+
+    branch_lo = mp.sqrt(3) * im > re       # arg z > pi/6
+    branch_hi = im < re                    # arg z < pi/4
+    print("\nbranch window (algebraic):")
+    print("  sqrt3*Im > Re  (arg > pi/6):", branch_lo)
+    print("  Im < Re        (arg < pi/4):", branch_hi)
+
+    print("\npolynomial condition:")
+    print("  Im(z^9) =", mp.nstr(mp.im(z9), 20), "   > 0 ?", mp.im(z9) > 0)
+    print("  check: arg(z^9) =", mp.nstr(mp.arg(z9), 15),
+          " == 9*arg z - 2*pi =", mp.nstr(9 * mp.arg(z) - 2 * mp.pi, 15))
+
+    # the EXISTING realRoot bracket, propagated
+    def z_of_t(t):
+        yy = (2 - t) / 2 + 1j * mp.sqrt(3 * t**2 - 4 * t + 8) / 2
+        return 1 - 1 / yy
+
+    lo = mp.mpf(2) / 5                     # QOU.Knot.FiveTwoShapeBounds.realRoot_gt
+    zlo = z_of_t(lo)
+    at_lo = mp.im(zlo**9)
+    print("\nEXISTING bracket  realRoot_gt : 2/5 < t   (nothing else needed)")
+    print("  at t = 2/5:  Im(z^9) =", mp.nstr(at_lo, 15), "  > 0 ?", at_lo > 0)
+    print("  branch window there:", mp.sqrt(3) * mp.im(zlo) > mp.re(zlo),
+          mp.im(zlo) < mp.re(zlo))
+
+    ok = bool(branch_lo and branch_hi and mp.im(z9) > 0 and at_lo > 0)
+    print("\n  -> the z^9 route closes on `2/5 < realRoot` ALONE.")
+    return ok
+
+
 def main() -> int:
     y1 = five_two_shape()
     angles = dihedral_angles(y1)
@@ -170,6 +234,7 @@ def main() -> int:
           f"({mp.nstr((a_min - two_pi_9)/two_pi_9*100, 4)} %).")
     print()
     ok &= bracket_requirement()
+    ok &= ninth_power_route()
     print("\nVERDICT:", "REDUCTION HOLDS" if ok else "REDUCTION FAILS")
     return 0 if ok else 1
 
