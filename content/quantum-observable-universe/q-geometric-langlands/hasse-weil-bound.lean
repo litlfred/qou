@@ -338,4 +338,86 @@ theorem norm_charPoly_coeff_seven_le (Z : LocalQZetaFunction) [IsWeilZeta Z] :
   rw [charPoly_coeff_seven Z, norm_neg]
   exact norm_sum_eigenvalues_le Z
 
+/-! ## Hasse–Weil over every extension field
+
+`norm_sum_eigenvalues_le` bounds the point count over `𝔽_q` alone. The theorem
+the theory is named for bounds it over **every** finite extension: the Frobenius
+of `𝔽_{q^r}` acts with eigenvalues `αᵢ^r`, so
+
+  `| |ℬ(𝔽_{q^r})| − (q^r + 1) | ≤ 2g·q^{r/2}`.
+
+That is one line from the magnitude bound, since `‖αᵢ^r‖ = ‖αᵢ‖^r`, and it is
+worth having stated: the `r = 1` case alone is a weaker statement than the name
+promises, and the growth rate in `r` is what makes the bound sharp enough to be
+useful.
+
+Note the **`r = 0` degeneracy**, which is why the exponent bound is stated for
+all `r` rather than assuming `r ≥ 1`: at `r = 0` every `αᵢ^0 = 1`, the sum is
+`8` and the bound reads `8 ≤ 8`. True, and tight, but carrying no arithmetic —
+`𝔽_{q^0}` is not a field. The statement holds there vacuously rather than
+meaningfully, and nothing downstream should read the `r = 0` instance as a
+point count. -/
+
+/-- The `r`-th power of a Frobenius eigenvalue has magnitude `q^{r/2}`.
+
+    The eigenvalues of Frobenius on `𝔽_{q^r}` are the `r`-th powers of those on
+    `𝔽_q`, so this is the Hasse–Weil magnitude at every level of the tower. -/
+theorem norm_eigenvalue_pow (Z : LocalQZetaFunction) [IsWeilZeta Z]
+    (i : Fin 8) (r : ℕ) :
+    ‖Z.eigenvalues i ^ r‖ = (Z.q ^ (1 / 2 : ℝ)) ^ r := by
+  rw [norm_pow, hasse_weil_bound Z]
+
+/-- **Hasse–Weil over `𝔽_{q^r}`**: `|∑ αᵢ^r| ≤ 2g·q^{r/2}` with `2g = 8`.
+
+    The point-count statement the theory is named for, at every level of the
+    tower rather than only at `r = 1`. Combined with the Lefschetz trace formula
+    `|ℬ(𝔽_{q^r})| = q^r + 1 − ∑ αᵢ^r` — which is not formalised here — this is
+    `| |ℬ(𝔽_{q^r})| − (q^r + 1) | ≤ 2g·q^{r/2}`.
+
+    See the section note on the `r = 0` degeneracy: the bound holds there but
+    carries no arithmetic. -/
+theorem norm_sum_eigenvalue_pow_le (Z : LocalQZetaFunction) [IsWeilZeta Z] (r : ℕ) :
+    ‖∑ i : Fin 8, Z.eigenvalues i ^ r‖ ≤ 8 * (Z.q ^ (1 / 2 : ℝ)) ^ r := by
+  calc ‖∑ i : Fin 8, Z.eigenvalues i ^ r‖
+      ≤ ∑ i : Fin 8, ‖Z.eigenvalues i ^ r‖ := norm_sum_le _ _
+    _ = 8 * (Z.q ^ (1 / 2 : ℝ)) ^ r := by
+        simp only [norm_eigenvalue_pow Z _ r, Finset.sum_const, Finset.card_univ,
+          Fintype.card_fin, nsmul_eq_mul]
+        norm_num
+
+/-- The power sums are **real**, at every level of the tower.
+
+    `sum_eigenvalues_isReal` is the `r = 1` case. The general statement is what
+    the trace formula needs: `|ℬ(𝔽_{q^r})|` is an integer, so a `∑ αᵢ^r` with a
+    nonzero imaginary part would be an inconsistency rather than a bound. It
+    follows from conjugation-closure, since `conj` commutes with powers and the
+    conjugation permutation reindexes the sum. -/
+theorem sum_eigenvalue_pow_isReal (Z : LocalQZetaFunction) [IsWeilZeta Z] (r : ℕ) :
+    (starRingEnd ℂ) (∑ i : Fin 8, Z.eigenvalues i ^ r)
+      = ∑ i : Fin 8, Z.eigenvalues i ^ r := by
+  obtain ⟨σ, hσ⟩ := eigenvalues_conj_perm Z
+  rw [map_sum]
+  simp only [map_pow]
+  rw [← Equiv.sum_comp σ (fun i => Z.eigenvalues i ^ r)]
+  exact Finset.sum_congr rfl fun x _ => by rw [hσ x]
+
+/-- **The extension bound is tight at every level**, not only at `r = 1`.
+
+    On the supersingular witness (`q = 4`, all `αᵢ = 2`) the power sum is
+    `8·2^r` and the bound is `8·(4^{1/2})^r = 8·2^r`. Equality for all `r`.
+
+    Worth checking rather than assuming: a bound that is tight at `r = 1` could
+    still be loose in the tower, and then the growth rate — which is the part of
+    Hasse–Weil that does the work — would be unattested. It is not loose. -/
+theorem norm_sum_eigenvalue_pow_tight (r : ℕ) :
+    ‖∑ i : Fin 8, weilZetaExample.eigenvalues i ^ r‖
+      = 8 * (weilZetaExample.q ^ (1 / 2 : ℝ)) ^ r := by
+  have hq : weilZetaExample.q ^ (1 / 2 : ℝ) = 2 := by
+    show (4 : ℝ) ^ (1 / 2 : ℝ) = 2
+    rw [show (4 : ℝ) = 2 ^ (2 : ℕ) by norm_num, ← Real.rpow_natCast (2 : ℝ) 2,
+      ← Real.rpow_mul (by norm_num)]
+    norm_num
+  rw [hq]
+  simp [weilZetaExample]
+
 end QOU.AlgebraicSubstrate
