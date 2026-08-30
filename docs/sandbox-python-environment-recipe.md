@@ -64,3 +64,46 @@ draining them belongs to whoever owns those witnesses.
 Do not commit regenerated audit witnesses on a branch that does not otherwise touch
 them; check whether a **count** moved (substantive) or only `computedAt`/`commitSha`
 (drift — revert it).
+
+## The environment was necessary, not sufficient — measured on a real producer
+
+Having fixed the environment, I claimed the ~30 flagged `computations/` producers were
+"now unblocked". **Tested on one before leaving that claim standing**, and it needs
+qualifying.
+
+`computations/mmu_r9_consistency_check.py` — one of the six carrying the wrong
+`VOL_4_1` variant `2.0298832128193072500115970029` — **runs clean** in the restored
+environment: exit 0, witness written, assertions evaluated. So the environment really
+was the barrier to *running* them.
+
+**But it emits a raw-float64 warning on the way:**
+
+```
+⚠ raw-float64: mmu-r9-consistency-check.witness.json: 7 raw float64 field(s) would
+  enter the witness — .data.sigma_exp_ppb, .data.target_100x_ppb, .data.bare_err_ppb,
+  .data.bare_miss_factor, .data.r9_err_ppb, .data.r9_miss_factor,
+  .data.improvement_factor
+```
+
+So re-running it **as-is** would introduce float64 dirt that the ratchet forbids, and
+the fix has to happen **at the producer** — carry `mpmath.mpf` from source, serialize
+with `_precision.fmt` — before any re-run is committable.
+
+All six of the bad-variant producers are in the same state:
+
+| producer | `float(` calls |
+|---|---|
+| `mmu_r9_two_rung_extension_probe.py` | 7 |
+| `mmu_r9_two_rung_v2_probe.py` | 6 |
+| `mmu_simpler_form_search_probe.py` | 6 |
+| `mmu_r9_consistency_check.py` | 6 |
+| `mmu_categorical_correction_first_probe.py` | 4 |
+| `mmu_categorical_correction_refined_probe.py` | 3 |
+
+**So the correct scoping is: fix the float64 at each producer, then correct the constant,
+then re-run.** Not "re-run them". That is a substantially larger piece of work than
+installing four packages, and anyone reading "unblocked" as "cheap" would have found
+this out the expensive way — by committing a witness that fails the ratchet.
+
+The two facts are independent and both true: the environment barrier is gone, and a
+different barrier is in front of the same sweep.
