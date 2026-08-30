@@ -657,6 +657,16 @@ QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.radicand_bounds | clea
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im_bounds | clean
 QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_normSq_gt_one | clean
 
+# LobMonotonicity supplies the sign of Lambda' where Rivin concavity needs it.
+# qou-52ch's chord argument folds an obtuse angle with Lob_pi_sub, leaving
+# (Lob a - Lob (a+c)) + Lob c; the first bracket is positive because Lambda
+# DECREASES past pi/6, and no VALUE of Lambda is used -- which is the whole
+# point of that reduction and would be lost if it were done numerically.
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.one_lt_two_mul_sin | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.deriv_Lob_neg | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.strictAntiOn_Lob | clean
+QOU.Archimedean.LobMonotonicity | QOU.Archimedean.LobMonotonicity.Lob_sub_Lob_add_pos | clean
+
 """
 
 
