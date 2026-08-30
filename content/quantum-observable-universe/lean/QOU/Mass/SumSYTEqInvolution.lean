@@ -1,5 +1,8 @@
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.InvolutionNumbers
+import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.BraidKnot.KeystoneC8SuperExpBound
 
 /-!
 # `QOU.Mass.SumSYTEqInvolution` — `∑_{λ ⊢ n} f^λ = I(n)`
@@ -154,5 +157,43 @@ theorem sum_numSYT_eq_card_involutions (n : ℕ) :
     ∑ μ : {μ : YoungDiagram // μ.cells.card = n}, numStandardYoungTableaux μ.1
       = Fintype.card {σ : Equiv.Perm (Fin n) // σ * σ = 1} := by
   rw [sum_numSYT_eq_involutionNumber, ← card_involutions_eq_involutionNumber]
+
+/-- The same identity indexed by `Nat.Partition n` rather than by sized diagrams — the shape
+`RSKIdentitiesContext.sum_dimSYT_eq_involution` is stated in.  `dimSYT p` is by definition
+`#SYT (partitionShape p)`, and `partitionShapeEquiv` matches the two index types. -/
+theorem sum_dimSYT_eq_involutionNumber (n : ℕ) :
+    (∑ p : Nat.Partition n, dimSYT p) = involutionNumber n := by
+  classical
+  rw [← sum_numSYT_eq_involutionNumber n]
+  refine Fintype.sum_equiv (partitionShapeEquiv n) _ _ (fun p => ?_)
+  rw [partitionShapeEquiv_apply]
+  rfl
+
+/-! ### The duplicate `involutionNumber`
+
+`QOU.BraidKnot.KeystoneC8SuperExpBound.involutionNumber` is a second definition of the same
+sequence, with the same two base cases and the same recurrence.  The corpus should carry one,
+not two (follow-up), but until it does, the bridge is a two-step induction and it is what lets
+the identity be stated in the form `RSKIdentitiesContext.sum_dimSYT_eq_involution` uses. -/
+
+theorem involutionNumber_eq_keystone (n : ℕ) :
+    involutionNumber n = QOU.BraidKnot.KeystoneC8SuperExpBound.involutionNumber n := by
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    match n with
+    | 0 => rfl
+    | 1 => rfl
+    | (k + 2) =>
+      rw [involutionNumber_succ_succ, ih (k + 1) (by omega), ih k (by omega)]
+      rfl
+
+/-- **`RSKIdentitiesContext.sum_dimSYT_eq_involution` is no longer open.**  The field's exact
+statement, discharged unconditionally.  Removing it from the class (leaving `branching_two_one`
+as the one genuinely open field) is a separate change; this theorem is what makes that removal
+possible. -/
+theorem sum_dimSYT_eq_involution_keystone (k : ℕ) :
+    (∑ p : Nat.Partition k, dimSYT p)
+      = QOU.BraidKnot.KeystoneC8SuperExpBound.involutionNumber k := by
+  rw [← involutionNumber_eq_keystone, sum_dimSYT_eq_involutionNumber]
 
 end QOU.Mass
