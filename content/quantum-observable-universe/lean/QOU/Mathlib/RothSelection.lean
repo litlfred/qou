@@ -219,17 +219,23 @@ heights, then the degrees from both.  Nothing here can be reordered.
 /-- **The data, and four of `Γ_m`'s inputs.**  From an unbounded supply of admissible heights:
 `m` of them, a threshold `N`, and the growth, floor, `two_le` and `hlarge` clauses. -/
 theorem exists_heights_and_N {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q F : ℕ)
-    (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F) :
+    (hp : 0 < p) (hq : 0 < q) (T k : ℕ) (hF : 1 ≤ F) :
     ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ (∀ h, 2 ≤ H h) ∧ N ≠ 0 ∧ (∀ h, T ≤ H h) ∧
       (∀ j : Fin m, (j : ℕ) = 0 → (2 : ℤ) ^ F ≤ (H j : ℤ)) ∧
       (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       (∀ j k : Fin m, (j : ℕ) + 1 = (k : ℕ) → H j ^ (2 * q) ≤ H k ^ p) ∧
-      (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) := by
+      (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) ∧
+      (∀ h : Fin m, (H h) ^ k ≤ N) := by
   obtain ⟨H, hmem, h2, hT, hfloor, hmono, hgrow⟩ :=
     exists_heights_growing_floor hS m p q F hp hq T hF
-  obtain ⟨N, hN, hpow⟩ := exists_pow_le H h2 (p + 2 * q)
+  obtain ⟨N, hN, hpow⟩ := exists_pow_le H h2 (max (p + 2 * q) k)
+  have hH1 : ∀ h : Fin m, 1 ≤ H h := fun h => le_trans one_le_two (h2 h)
+  have hp2q : ∀ h, (H h) ^ (p + 2 * q) ≤ N := fun h =>
+    le_trans (Nat.pow_le_pow_right (hH1 h) (le_max_left _ _)) (hpow h)
+  have hk : ∀ h, (H h) ^ k ≤ N := fun h =>
+    le_trans (Nat.pow_le_pow_right (hH1 h) (le_max_right _ _)) (hpow h)
   exact ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow,
-    hlarge_of_pow_le H N hN h2 p q hp hpow⟩
+    hlarge_of_pow_le H N hN h2 p q hp hp2q, hk⟩
 
 /-- **`Γ_m` from the supply, modulo the height clause.**  There are heights in the supply and a
 threshold `N` such that *if* the auxiliary polynomial's height bound `b` satisfies `Γ_m`'s last
@@ -246,18 +252,19 @@ draft, and that version cannot be used: the `b` this is actually applied at is
 produces.  A constant `b` cannot be instantiated with it, so the "honest shape" was still the
 wrong one — honest about `hbound` and wrong about `b`. -/
 theorem exists_rothGammaFull_of_supply {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q)
-    (m p q F : ℕ) (bOf : (Fin m → ℕ) → ℕ → ℤ) (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F)
+    (m p q F : ℕ) (bOf : (Fin m → ℕ) → ℕ → ℤ) (hp : 0 < p) (hq : 0 < q) (T k : ℕ) (hF : 1 ≤ F)
     (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p) :
     ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧ (∀ h, T ≤ H h) ∧
       (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) ∧
+      (∀ h : Fin m, (H h) ^ k ≤ N) ∧
       ((∀ j : Fin m, (j : ℕ) = 0 →
           (bOf H N) ^ (m * q) ≤ (H j : ℤ) ^ (rothDegrees H N j * p)) →
         RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N)
           (fun j => (H j : ℤ)) (bOf H N)) := by
-  obtain ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow, hlarge⟩ :=
-    exists_heights_and_N hS m p q F hp hq T hF
-  exact ⟨H, N, hmem, hN, h2, hT, hmono, hlarge, fun hbound =>
+  obtain ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow, hlarge, hk⟩ :=
+    exists_heights_and_N hS m p q F hp hq T k hF
+  exact ⟨H, N, hmem, hN, h2, hT, hmono, hlarge, hk, fun hbound =>
     rothGammaFull_of_heights H hp hN h2 hgrow hlarge hfloorExp hfloor hbound⟩
 
 /-- **The selection machinery is applicable.**  Every hypothesis of
@@ -272,12 +279,13 @@ theorem exists_rothGammaFull_of_supply_witness :
       (∀ h, 5 ≤ H h) ∧
       (∀ j k : Fin 2, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       (∀ h : Fin 2, 1 + 2 * 1 ≤ 1 * rothDegrees H N h) ∧
+      (∀ h : Fin 2, (H h) ^ 7 ≤ N) ∧
       ((∀ j : Fin 2, (j : ℕ) = 0 →
           (1 : ℤ) ^ (2 * 1) ≤ (H j : ℤ) ^ (rothDegrees H N j * 1)) →
         RothGammaFull (Equiv.refl (Fin 2)) 1 1 10 (rothDegrees H N)
           (fun j => (H j : ℤ)) 1) :=
   exists_rothGammaFull_of_supply (S := (Set.univ : Set ℕ))
-    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 (fun _ _ => 1) one_pos one_pos 5
+    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 (fun _ _ => 1) one_pos one_pos 5 7
     (by norm_num) (by norm_num)
 
 /-- **`Σ r_h` in terms of the smallest height.**  `Σ_h rothDegrees H N h ≤ m·(log_b N + 1)` for any

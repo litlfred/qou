@@ -146,6 +146,26 @@ theorem two_card_prod_le_card_idxBoxF (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0
           (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))} := by ring
     _ ≤ Fintype.card {n // n ∈ idxBoxF r} := le_of_lt h
 
+/-- **The condition count is positive.**  `i = 0` sits in the box with weight `0`, which is `≤ μ`
+exactly when `ε ≤ 1/2`; and the integral basis is nonempty because `[K:ℚ] ≥ 1`.  This is the one
+hypothesis of `exists_auxiliary_polynomial_int` that is not a growth estimate — Siegel's lemma
+needs at least one equation to solve. -/
+theorem card_prod_pos (r : Fin m → ℕ) {ε : ℚ} (hε2 : ε ≤ 1 / 2) (hm : 0 < m) :
+    0 < Fintype.card ({i // i ∈ (idxBoxF r).filter
+        (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))}
+      × Module.Free.ChooseBasisIndex ℤ (𝓞 K)) := by
+  classical
+  have hmQ : (0 : ℚ) < (m : ℚ) := by exact_mod_cast hm
+  have hμ0 : (0 : ℚ) ≤ (m : ℚ) / 2 - ε * (m : ℚ) := by nlinarith
+  have hzero : (0 : Fin m →₀ ℕ) ∈ (idxBoxF r).filter
+      (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ)) := by
+    rw [Finset.mem_filter]
+    exact ⟨(mem_idxBoxF r 0).mpr (fun h => Nat.zero_le _), by simpa [idxWeight] using hμ0⟩
+  rw [Fintype.card_prod]
+  refine Nat.mul_pos (Fintype.card_pos_iff.mpr ⟨⟨0, hzero⟩⟩) ?_
+  rw [card_chooseBasisIndex_eq_finrank]
+  exact Module.finrank_pos
+
 /-- **Siegel's exponent is at most one**, and then the height is at most its base. -/
 theorem siegelHeight_le_base (r : Fin m → ℕ) (α : Fin m → 𝓞 K) (μ : ℚ)
     (hE : 2 * Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
@@ -399,14 +419,15 @@ The hypotheses that remain are each a fact about one fixed object:
 
 Nothing here mentions `N`, `r`, or the polynomial. -/
 theorem exists_rothGammaFull_auxiliary [DecidableEq (K →+* ℂ)] {S : Set ℕ}
-    (hS : ∀ N, ∃ q ∈ S, N ≤ q) (p q F : ℕ) (hp : 0 < p) (hq : 0 < q) (hF : 1 ≤ F)
+    (hS : ∀ N, ∃ q ∈ S, N ≤ q) (p q F k : ℕ) (hp : 0 < p) (hq : 0 < q) (hF : 1 ≤ F)
     (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p)
     (α : Fin m → 𝓞 K) {ε : ℚ} (hε : 0 < ε)
     (hm2 : 2 * ((Module.finrank ℚ K : ℕ) : ℚ) < 4 * ε ^ 2 * (m : ℚ))
     {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
     {C₀ W : ℤ} (hC₀1 : 1 ≤ C₀) (hC₀ : c K ≤ (C₀ : ℝ)) (hW1 : 1 ≤ W) (hW : 4 * B ≤ (W : ℝ)) :
     ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
-      (∀ h : Fin m, rothDegrees H N h ≠ 0) ∧
+      (∀ h : Fin m, rothDegrees H N h ≠ 0) ∧ (∀ h : Fin m, (H h) ^ k ≤ N) ∧
+      (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
       RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N) (fun j => (H j : ℤ))
         ⌈siegelHeight (rothDegrees H N) α ((m : ℚ) / 2 - ε * (m : ℚ))⌉ := by
   classical
@@ -414,17 +435,17 @@ theorem exists_rothGammaFull_auxiliary [DecidableEq (K →+* ℂ)] {S : Set ℕ}
     have h1 : (1 : ℤ) ≤ C₀ ^ (m * q) := one_le_pow₀ hC₀1
     have h2 : (1 : ℤ) ≤ W ^ (2 * m * m * q) := one_le_pow₀ hW1
     nlinarith
-  obtain ⟨H, N, hmem, hN, hH2, hTle, hmono, hlarge, himp⟩ :=
+  obtain ⟨H, N, hmem, hN, hH2, hTle, hmono, hlarge, hkpow, himp⟩ :=
     exists_rothGammaFull_of_supply hS m p q F
       (fun H N => ⌈siegelHeight (rothDegrees H N) α ((m : ℚ) / 2 - ε * (m : ℚ))⌉) hp hq
-      (C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat hF hfloorExp
+      (C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat k hF hfloorExp
   -- the degrees are positive: `p + 2q ≤ p·r h` forces `r h ≠ 0`
   have hrne : ∀ h, rothDegrees H N h ≠ 0 := by
     intro h hcon
     have hh := hlarge h
     rw [hcon, Nat.mul_zero] at hh
     omega
-  refine ⟨H, N, hmem, hN, hH2, hrne, himp ?_⟩
+  refine ⟨H, N, hmem, hN, hH2, hrne, hkpow, hmono, himp ?_⟩
   -- the floor parameter, recovered from the produced heights
   have hfloor : ∀ j : Fin m, (j : ℕ) = 0 →
       C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ (H j : ℤ) := by

@@ -1341,6 +1341,13 @@ import QOU.Mathlib.RothSelection
 -- the log N on the two sides of b^{mq} <= H_0^{r_0 p} cancel.  The coordinate-vs-house
 -- comparison is Mathlib's basis_repr_norm_le_const_mul_house, so the arc assumes nothing.
 import QOU.Mathlib.RothSiegelBound
+-- The exchange between the two currencies the chain is stated in.  The selection produces
+-- heights and a threshold N; roth_contradiction_of_normalisation consumes real constants
+-- cH, theta, L' and one inequality.  Every conversion turns out to be a FLOOR on the heights
+-- or a POWER of them below N -- exactly the selection's own parameters.  The normalisation
+-- slack eta is 1/k from (H h)^k <= N, and height_le_mul_den is what makes a floor on the
+-- heights serve as a floor on the DENOMINATORS, which is what hpt actually constrains.
+import QOU.Mathlib.RothFinalAssembly
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
