@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T16:55:37.936124+00:00",
-  "commitSha": "5933074a4ac692e60a1b71ee16a859fe5a2c0ec3",
+  "computedAt": "2026-08-30T17:36:21.448349+00:00",
+  "commitSha": "73cbafb453ac96acef16729a3371b49f1d2fc6c1",
   "assertions": [
     {
       "name": "control_exhaustive_at_A2",
@@ -14,6 +14,12 @@
       "name": "control_exhaustive_at_A3",
       "computed": "4",
       "expected": "4",
+      "passed": true
+    },
+    {
+      "name": "control_exhaustive_at_A4",
+      "computed": "5",
+      "expected": "5",
       "passed": true
     },
     {
@@ -29,6 +35,12 @@
       "passed": true
     },
     {
+      "name": "both_groups_non_empty_at_A4",
+      "computed": "1/4",
+      "expected": "1/4",
+      "passed": true
+    },
+    {
       "name": "selftest_reproduces_A3_reference_figures",
       "computed": "True",
       "expected": "True",
@@ -36,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1041,
+  "durationMs": 2403677,
   "computation": "tower-walk-magic-replication",
   "scriptFile": "tower_walk_magic_replication_probe.py",
   "scriptHash": "804df91767a5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9770962539a9580c90477fa090755a852dc68c20",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,16 +73,17 @@
     "argv": [
       "computations/probes/tower_walk_magic_replication_probe.py",
       "--levels",
-      "2,3"
+      "2,3,4"
     ],
-    "reproduce": "python3 -u computations/probes/tower_walk_magic_replication_probe.py --levels 2,3"
+    "reproduce": "python3 -u computations/probes/tower_walk_magic_replication_probe.py --levels 2,3,4"
   },
   "probe": "tower_walk_magic_replication",
   "question": "does the H_{3A} tower, carried WITHOUT the per-step Groebner-Shirshov reduction, distinguish magic from non-magic nucleon configurations?",
   "control": "exhaustive at each level: every Z in 0..A, so the contrast is at fixed algebra, fixed partitions and fixed strand count with only nucleon composition varying",
   "levels": [
     2,
-    3
+    3,
+    4
   ],
   "configurations": {
     "2": [
@@ -232,6 +245,126 @@
         "tag": "neither",
         "any_magic": false
       }
+    ],
+    "4": [
+      {
+        "Z": 4,
+        "N": 0,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0530284669146108139647921575487998779863119125366210937500000",
+        "participation": "42.1688734495197650176123715937137603759765625000000000000000",
+        "argmax_partition": [
+          9,
+          3
+        ],
+        "argmax_dim": 154,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 488,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0435659540872939052280621297086327103897929191589355468750000",
+        "participation": "44.3999826823949987897321989294141530990600585937500000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 483,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "magic_Z": true,
+        "magic_N": true,
+        "doubly_magic": true,
+        "n_partitions": 77,
+        "top_share": "0.0503538081099217660341338387297582812607288360595703125000000",
+        "participation": "45.4866170466504797786910785362124443054199218750000000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 469,
+        "tag": "DOUBLY MAGIC",
+        "any_magic": true
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0480683126806936283914595264832314569503068923950195312500000",
+        "participation": "44.8256767764511678819872031453996896743774414062500000000000",
+        "argmax_partition": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 3520,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 486,
+        "tag": "neither",
+        "any_magic": false
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "A": 4,
+        "magic_Z": false,
+        "magic_N": false,
+        "doubly_magic": false,
+        "n_partitions": 77,
+        "top_share": "0.0566908310614428270768350159869441995397210121154785156250000",
+        "participation": "43.8182322342940153703239047899842262268066406250000000000000",
+        "argmax_partition": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "argmax_dim": 1650,
+        "rank_deficient": [],
+        "n_rank_checked": 32,
+        "wall_seconds": 476,
+        "tag": "neither",
+        "any_magic": false
+      }
     ]
   },
   "per_level_verdict": {
@@ -359,13 +492,94 @@
       "argmax_criterion_informative": false,
       "argmax_criterion_vacuity_reason": "non-magic argmaxes disagree with each other",
       "qualitative_separation": false
+    },
+    "4": {
+      "A": 4,
+      "n_configurations": 5,
+      "n_magic": 1,
+      "n_non_magic": 4,
+      "comparable": true,
+      "top_share": {
+        "magic": [
+          "0.0503538081099217660341338387297582812607288360595703125000000"
+        ],
+        "non_magic": [
+          "0.0530284669146108139647921575487998779863119125366210937500000",
+          "0.0435659540872939052280621297086327103897929191589355468750000",
+          "0.0480683126806936283914595264832314569503068923950195312500000",
+          "0.0566908310614428270768350159869441995397210121154785156250000"
+        ],
+        "magic_all_above": false,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "0.0000154169239114723688466312978562200441956520080566406250000000"
+      },
+      "participation": {
+        "magic": [
+          "45.4866170466504797786910785362124443054199218750000000000000"
+        ],
+        "non_magic": [
+          "42.1688734495197650176123715937137603759765625000000000000000",
+          "44.3999826823949987897321989294141530990600585937500000000000",
+          "44.8256767764511678819872031453996896743774414062500000000000",
+          "43.8182322342940153703239047899842262268066406250000000000000"
+        ],
+        "magic_all_above": true,
+        "magic_all_below": false,
+        "magic_mean_minus_non_magic_mean": "1.68342576098549301377715892158448696136474609375000000000000"
+      },
+      "magic_rank_deficient": false,
+      "non_magic_rank_deficient": false,
+      "argmax_magic": [
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_non_magic": [
+        [
+          9,
+          3
+        ],
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "argmax_shared_across_groups": true,
+      "non_magic_argmax_agree": false,
+      "magic_argmax_agree": true,
+      "argmax_criterion_informative": false,
+      "argmax_criterion_vacuity_reason": "magic group has one member",
+      "qualitative_separation": false
     }
   },
   "cross_level_replication": {
     "top_share": {
       "per_level_direction": {
         "2": "interleaved",
-        "3": "interleaved"
+        "3": "interleaved",
+        "4": "interleaved"
       },
       "consistent_across_levels": false,
       "contradictory": false
@@ -373,7 +587,8 @@
     "participation": {
       "per_level_direction": {
         "2": "magic_below",
-        "3": "magic_above"
+        "3": "magic_above",
+        "4": "magic_above"
       },
       "consistent_across_levels": false,
       "contradictory": true
