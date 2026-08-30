@@ -809,3 +809,63 @@ not a silent drop.
 Third time this session that a first cut of a detector of mine over-reported,
 and the same shape each time: **the literal was in the file, but it was not the
 thing the file computes with.**
+
+
+## 2026-08-30 — PINNING CONVENTION CONFORMANCE, measured
+
+Established what the current convention actually IS before checking anything
+against it:
+
+    proton layer  q_parameter.Q_MP / Q_50_DIGIT_STR  ->  1.10997858275138080759...
+    muon layer    q-pinning-50-digit.witness.json
+                  derived_50_digit.q                 ->  1.10997859564273904668...
+                  and that witness stamps itself `q0Anchor: muon`
+
+So **the muon pin is C**. `deltalambda/he4_binding_k_presentation_correction_probe.py:95`
+encodes the conformant idiom and asserts it:
+
+    q = d["derived_50_digit"]["q"]
+    assert q.startswith("1.109978595642"), q
+
+Note its docstring's warning, which matters for anyone copying it: *"q_parameter
+is anchor-adaptive and would resolve PROTON in this non-manifest process"* — so
+`q_parameter` is NOT a muon source for an undeclared producer.
+
+### The corpus is largely NOT conformant
+
+Scanned every `*.py` outside `_deprecated/`, AST-parsed, comment-only literals
+excluded, classified by distance to each vintage:
+
+    283 literals in 238 files   A (muon, SUPERSEDED)
+    214 literals in 183 files   proton (CURRENT)
+     43 literals in  36 files   off-pin / other
+     11 literals in  11 files   C (muon, CURRENT)
+
+**A outnumbers C by 26 to 1.** Anything hardcoding A is not "the muon pin" any
+more; it is last week's muon pin.
+
+**NOT bulk-edited, deliberately.** That population is `qou-0hnz`'s and main is
+actively draining it — `2caa0ad00 migrate(qou-1c4y): 12 frozen muon literals
+resolved at the source` landed on 2026-08-29. Editing 238 files here would
+collide with an in-flight campaign and move values across the corpus. Recorded
+as a measurement for whoever owns it.
+
+### Fixed the one I own
+
+`probes/rho_binding_constancy_probe.py` was mine, from earlier this session, and
+it was non-conformant in a way I had explicitly deferred — I fixed its float64
+and left the vintage, writing "re-pinning is a convention decision". Under the
+current convention that deferral was the wrong call: a hardcoded A is stale by
+construction.
+
+Re-fixed by **resolving rather than re-hardcoding at a newer vintage**, which is
+the only version that does not go stale again:
+
+    q0 before  1.109978595557334719899763   (A)
+    q0 after   1.109978595642739046681795   (C, read from the pinning witness)
+    raw float64 fields  0        verdicts  identical
+
+The general rule this settles, and the reason it is worth a bean entry: **the
+conformant fix for a pin literal is not "update it to the current value", it is
+"stop having a literal".** Updating A to C would have been non-conformant again
+at the next re-pin.

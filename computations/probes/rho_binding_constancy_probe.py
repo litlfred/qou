@@ -22,19 +22,38 @@ sys.path.insert(0, os.path.join(HERE, ".."))
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 
 # muon-q0 canonical (computations layer); scale cancels in the ratio anyway.
-# Was the float64 literal `1.10997859555733471` until 2026-08-30 (bean
-# qou-840k): a 17-digit truncation of the muon pin A, fed straight into
-# `global_wedderburn_sum_q_hecke_seminormal`, which became an mpf kernel earlier
-# in this bean. A float64 q0 there discards exactly the precision that rewire
-# exists to keep, so it is now the full 50-digit value as an mpf.
+# q0 SOURCING — RESOLVED, not hardcoded (beans qou-840k / qou-fd0e, 2026-08-30).
 #
-# VINTAGE NOT CHANGED: the canonical pin moved A -> C on 2026-08-29 and this is
-# still A. The payload below calls it "muon (computations-layer canonical)", so
-# re-pinning it is a convention decision, not a precision fix, and is left alone.
+# This was the float64 literal `1.10997859555733471` — a 17-digit truncation of
+# muon pin A. Two things were wrong with it and only one was obvious:
+#
+#   1. float64, feeding an mpf kernel (`global_wedderburn_sum_q_hecke_seminormal`
+#      became mpf earlier in qou-840k), so the precision was discarded at entry.
+#   2. **A is a SUPERSEDED VINTAGE.** The canonical muon pin moved A -> C on
+#      2026-08-29; `q-pinning-50-digit.witness.json` now serves
+#      1.109978595642739... and stamps itself `q0Anchor: muon`. A hardcoded A is
+#      no longer the muon pin, it is last week's muon pin.
+#
+# Fixed by RESOLVING rather than re-hardcoding at a newer vintage, which is the
+# current convention and the only version that does not go stale again. Idiom
+# copied from `deltalambda/he4_binding_k_presentation_correction_probe.py`,
+# including its prefix assertion — note `q_parameter` is anchor-adaptive and
+# resolves PROTON for a producer not in the manifest, which this one is not, so
+# it cannot be used for the muon layer here.
+import json as _json  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
 import mpmath as _mp  # noqa: E402
 from _precision import fmt  # noqa: E402
 
-Q0 = _mp.mpf("1.1099785955573347198997632204832250266562084087802")
+def _load_canonical_muon_q() -> str:
+    d = _json.loads((_Path(__file__).resolve().parent.parent
+                     / "q-pinning-50-digit.witness.json").read_text())
+    q = d["derived_50_digit"]["q"]
+    assert q.startswith("1.109978595642"), f"pinning witness is not the C-vintage muon pin: {q[:24]}"
+    return q
+
+
+Q0 = _mp.mpf(_load_canonical_muon_q())
 
 # AME2020 binding energies (MeV).
 B_OBS = {
