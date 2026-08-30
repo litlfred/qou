@@ -16,14 +16,17 @@ import Mathlib.Algebra.Group.Hom.Defs
 > the present tense as the record of why that change was made; read "states" as
 > "stated, until PR #5710".
 >
-> **The prescription was not sufficient**, which matters before reusing this
-> reasoning. `block_scaling` is an equation on the *product* `y_λ · χ^λ`, and
-> since the class stores its blocks abstractly it had to add `chi_lambda` as a
-> second free field — so neither factor is pinned.
-> `QOU.Hecke.RankOneDegeneracy.yLambda_not_pinned` realises **every** nonzero
-> rational as the weight at every partition, under a witness satisfying the
-> whole class. Encoding the block-scaling sentence was necessary and is not
-> enough; `χ^λ` has to become *computed* rather than assumed.
+> **The prescription was necessary and not sufficient**, and the follow-up has
+> since landed. `block_scaling` is an equation on the *product* `y_λ · χ^λ`,
+> and the #5710 class had to carry `chi_lambda` as a second free field, so
+> neither factor was pinned — every nonzero rational was realisable as the
+> weight at every partition. `χ^λ` is now *computed*: the field is replaced by
+> a block representation `ρ_λ : A →ₐ[R] M_{f^λ}(R)` with
+> `χ^λ := Matrix.trace ∘ ρ_λ`, and because an algebra map has `ρ_λ 1 = 1`,
+> `block_scaling` at `x = 1` forces `tr_M(π_λ) = y_λ · f^λ`
+> (`QOU.Hecke.WedderburnDecomp.yLambda_determined`). The freedom left is the
+> untied `blockDim`, giving the one-parameter family `y_λ = 1/d`
+> (`QOU.Hecke.RankOneDegeneracy.yLambda_residual_freedom`).
 >
 > The three theorems in this file are untouched by all of it — they were always
 > stated over a generic `tr`, `pi`, `y`, `chi` with the block scaling as an
