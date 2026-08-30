@@ -92,8 +92,76 @@ degree at A = 12** — the largest nucleus in that sweep, where it is still
 growing, so 104 is a floor rather than a maximum.
 
 So neutron-rich coefficients cancel at leading order, heavily, in a way no
-degree-only model sees. **No mechanism is claimed for this, nor for the A = 27
-break.** Both are measured.
+degree-only model sees.
+
+### 4a. Where the gap opens — and it is one step kind
+
+Running the build step by step against the max-plus model localises it. The
+three inter-nucleon coefficients are, **per the already-published table** in
+[`appendix-nf-witnesses/witness-computation-method.md`](../../content/quantum-observable-universe/appendix-nf-witnesses/witness-computation-method.md):
+
+| pair | `d` | factor `σ₀ + d` |
+|---|---|---|
+| pp | `0` | `σ₀` — positive crossing |
+| nn | `−h` | `σ₀ − h = σ₀⁻¹` — negative crossing |
+| pn | `−h/2` | `½(σ₀ + σ₀⁻¹)` — averaged; not a braid element |
+
+That reading is **not new here** — the appendix states all three rows,
+including the average. This probe re-derived it (and re-verified `σ₀·(σ₀−h) = 1`
+in the 6-dimensional NF representation) only to attribute the degree gap. The
+attribution *is* new:
+
+| step kind | times run | gap units opened |
+|---|---:|---:|
+| `gen0 d = −h` — the nn **negative** crossing | 495 | **531** |
+| `gen0 d = 0` | 2915 | 135 |
+| `gen1 d = −h` | 1760 | 169 |
+| `gen0 d = −h/2` — **averaged** | 1155 | **0** |
+| `gen1 d = −h/2` — **averaged** | 220 | **0** |
+
+Two things fall out, over all 65 nuclei with A ≤ 10.
+
+* **The averaged pn crossing never opens a gap** — 0 units in 1375
+  occurrences. Being the mean of the positive and negative crossings, it is
+  degree-benign.
+* **The nn negative crossing opens 64 % of the total** from 13 % of the steps.
+  The remainder is downstream: once `σ₀⁻¹` has knocked the top term out, later
+  generic steps are no longer tight either.
+
+The criterion this suggests is **necessary but not sufficient**, and it is
+worth stating the failed version because it is the one that looks right. Every
+one of the 26 tight nuclei has `N ≤ 2` — at most one nn pair. But three nuclei
+with `N ≤ 2` are *not* tight: `(Z, N) = (0, 2), (1, 2), (2, 2)`. I had written
+the criterion as an "iff" and the count caught it: 26 tight against 29 with
+`N ≤ 2`.
+
+The step trace says what the extra condition is. A *single* negative crossing's
+degree loss is transiently recovered by the steps that **follow** it — at
+A = 3 the loss at step 22 is recovered at step 23 — and the three exceptions
+are exactly the cases where the nn step sits too near the end of the sequence
+for that to happen. So the tightness condition is about the *position* of the
+negative crossing, not only the count. Measured, not asserted: the producer
+records steps-after-last-nn for the whole `N ≤ 2` set.
+
+**Still not derived:** no closed form for the size of the loss, and no
+mechanism for the A = 27 break in §3. What §4a supplies is the locus, not the
+law.
+
+### 4b. The denominator is the published `2^{p_n}`, from the other side
+
+The same appendix records that the engine tracks a denominator `2^{p_n}`
+counting averaged pn crossings. That is stated for the **Rust hecke-engine**;
+`hecke_core_symbolic` is an independent Python implementation, and its
+denominators match it exactly — the deepest power of two in the coefficients
+equals the number of `d = −h/2` steps, on all 65 nuclei with A ≤ 10.
+
+A cross-implementation agreement rather than a new claim, and worth recording
+as one: it is the kind of bookkeeping that drifts silently between two engines.
+
+Note also that the engine genuinely carries **half-integer q-exponents**
+(`laurent_poly_q.rs` stores `2 × exponent` keys; the certificate is "exact in
+`t = q^{1/2}`"), so the appendix's `ℤ[q̌, q̌^{-1}]` is correct for it and is
+**not** a convention-C residue — checked, because it looked like one.
 
 ## 5. Cost — the symbolic path is unnormalised, not intractable
 

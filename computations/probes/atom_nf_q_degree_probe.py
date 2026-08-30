@@ -497,6 +497,115 @@ def main() -> int:
         f"{sorted(k for k in gaps if k % 2)} odd gaps", not [k for k in gaps if k % 2])
     print(f"      exact on {exact_rows}/{rows} nuclei; max gap {max(gaps)}")
 
+    print("\n8. Denominator = 2^(number of AVERAGED pn crossings)")
+    # appendix-nf-witnesses/witness-computation-method.md states, for the
+    # RUST hecke-engine, that the true value is poly / 2^{p_n} with p_n the
+    # count of averaged (pn) crossings. hecke_core_symbolic is an
+    # independent Python implementation; this checks the two agree.
+    den_rows = []
+    den_ok = True
+    for A in range(1, 11):
+        for Z in range(0, A + 1):
+            N = A - Z
+            n_avg = sum(1 for (c, d, g) in step_sequence(Z, N) if d == MHALF_LP)
+            nf, _ = build_atom_nf_lp(Z, N)
+            k = max((v.denominator.bit_length() - 1
+                     for c in nf for v in c.values()), default=0)
+            den_rows.append({"A": A, "Z": Z, "N": N,
+                             "averaged_crossings": n_avg, "denominator_exp": k})
+            den_ok &= (k == n_avg)
+    chk("denominator exponent equals the averaged-crossing count on all 65 "
+        "nuclei A<=10 (the published 2^{p_n} rule, independently reproduced)",
+        den_ok)
+
+    print("\n9. WHICH step kind opens the max-plus gap?")
+    # The three inter-nucleon coefficients are, per the published table:
+    #   pp  d = 0     -> sigma      (positive crossing)
+    #   nn  d = -h    -> sigma^-1   (negative crossing)
+    #   pn  d = -h/2  -> (sigma + sigma^-1)/2   (averaged; not a braid element)
+    # Attribute every unit of gap to the step that opened it.
+    opened: dict[str, int] = {}
+    seen: dict[str, int] = {}
+    tight_nuclei = []
+    for A in range(1, 11):
+        for Z in range(0, A + 1):
+            N = A - Z
+            nf = [dict(ONE_LP)] + [{} for _ in range(5)]
+            tv = [0, None, None, None, None, None]
+            prev = 0
+            for (c, d, gen) in step_sequence(Z, N):
+                nf = hm_lp(nf, c, d, gen)
+                T = [[(max(e) if e else None) for e in row]
+                     for row in _effective_matrix(c, d, gen)]
+                out = [None] * 6
+                for si in range(6):
+                    if tv[si] is None:
+                        continue
+                    for ti in range(6):
+                        if T[si][ti] is None:
+                            continue
+                        cand = tv[si] + T[si][ti]
+                        if out[ti] is None or cand > out[ti]:
+                            out[ti] = cand
+                tv = out
+                a = max((max(x) for x in nf if x), default=None)
+                t_ = max((x for x in tv if x is not None), default=None)
+                g = t_ - a
+                dn = "0" if not d else ("-h" if d == MH_LP else "-h/2")
+                key = f"gen{gen} d={dn}"
+                seen[key] = seen.get(key, 0) + 1
+                if g > prev:
+                    opened[key] = opened.get(key, 0) + (g - prev)
+                prev = g
+            if prev == 0:
+                tight_nuclei.append({"Z": Z, "N": N})
+    total_units = sum(opened.values())
+    avg_units = opened.get("gen0 d=-h/2", 0) + opened.get("gen1 d=-h/2", 0)
+    avg_runs = seen.get("gen0 d=-h/2", 0) + seen.get("gen1 d=-h/2", 0)
+    nn_units = opened.get("gen0 d=-h", 0)
+    for k in sorted(seen):
+        print(f"      {k:<14} run {seen[k]:>5}   opened {opened.get(k, 0):>5}")
+    chk(f"the AVERAGED pn crossing opens NO gap ever ({avg_units} units in "
+        f"{avg_runs} occurrences)", avg_units == 0)
+    chk(f"the nn NEGATIVE crossing opens most of it ({nn_units}/{total_units} "
+        f"units from {seen.get('gen0 d=-h', 0)} steps)",
+        nn_units > total_units // 2)
+    # N <= 2 (at most one nn pair) is NECESSARY but NOT sufficient: three
+    # nuclei with one nn pair are still not tight. The step trace says why --
+    # a single negative crossing's loss is recovered by the steps that FOLLOW
+    # it, and in those three the nn step sits too near the end of the
+    # sequence. Measured below rather than asserted.
+    tight_by_N = all(r["N"] <= 2 for r in tight_nuclei)
+    le2 = {(Z, A - Z) for A in range(1, 11) for Z in range(0, A + 1)
+           if A - Z <= 2}
+    tight_set = {(r["Z"], r["N"]) for r in tight_nuclei}
+    exceptions = sorted(le2 - tight_set)
+    chk(f"every tight nucleus has at most one nn pair, N <= 2 "
+        f"({len(tight_nuclei)} tight) — NECESSARY", tight_by_N)
+    chk(f"but N <= 2 is NOT sufficient: {len(exceptions)} of {len(le2)} such "
+        f"nuclei are not tight — {exceptions}", bool(exceptions))
+
+    # Steps remaining after the LAST nn step, tight vs not, for the N <= 2 set.
+    tail_rows = []
+    for (Z, N) in sorted(le2):
+        seq = step_sequence(Z, N)
+        idx = [i for i, (c, d, g) in enumerate(seq) if g == 0 and d == MH_LP]
+        tail_rows.append({"Z": Z, "N": N,
+                          "steps_after_last_nn": (len(seq) - 1 - idx[-1])
+                                                 if idx else None,
+                          "tight": (Z, N) in tight_set})
+    short = [r for r in tail_rows
+             if r["steps_after_last_nn"] is not None and not r["tight"]]
+    long_ = [r for r in tail_rows
+             if r["steps_after_last_nn"] is not None and r["tight"]]
+    if short and long_:
+        worst = max(r["steps_after_last_nn"] for r in short)
+        best = min(r["steps_after_last_nn"] for r in long_)
+        print(f"      steps after last nn step: not-tight <= {worst}, "
+              f"tight >= {best}")
+        chk(f"the not-tight ones are exactly those whose nn step has too few "
+            f"steps after it (<= {worst} vs >= {best})", worst < best)
+
     print(f"\n{'ALL CHECKS PASSED' if not fails else str(len(fails)) + ' CHECK(S) FAILED'}")
 
     w = WitnessBuilder("atom-nf-q-degree", start_time=t0,
@@ -558,6 +667,37 @@ def main() -> int:
                      "nothing here and is not a discrepancy"),
         "A_above_30": "not measured",
     })
+    w.add_data("denominator_is_two_to_the_averaged_crossing_count", {
+        "rule": "denominator = 2^(number of d=-h/2 averaged crossings)",
+        "published_as": ("content/quantum-observable-universe/"
+                         "appendix-nf-witnesses/witness-computation-method.md "
+                         "states poly / 2^{p_n} for the RUST hecke-engine; "
+                         "this reproduces it from the independent Python "
+                         "hecke_core_symbolic"),
+        "holds_on_all_65_nuclei_A_le_10": den_ok,
+        "rows": den_rows,
+    })
+    w.add_data("gap_attribution_by_step_kind", {
+        "crossing_dictionary": {
+            "gen0 d=0": "sigma (positive crossing) -- pp pair, uu quark",
+            "gen0 d=-h": "sigma^-1 (negative crossing) -- nn pair, dd quark",
+            "gen0 d=-h/2": "(sigma + sigma^-1)/2 averaged -- pn pair, ud quark",
+        },
+        "published_convention": ("the three-row table is already in "
+                                 "appendix-nf-witnesses/"
+                                 "witness-computation-method.md; this probe "
+                                 "re-derived it and adds only the DEGREE "
+                                 "consequence below"),
+        "steps_run": seen,
+        "gap_units_opened": opened,
+        "averaged_crossing_opens_zero_gap": {"units": avg_units,
+                                             "occurrences": avg_runs},
+        "tropical_tight_nuclei": tight_nuclei,
+        "criterion": ("N <= 2 (at most one nn pair) is NECESSARY for the "
+                      "max-plus bound to be tight, and NOT sufficient"),
+        "n_le_2_but_not_tight": exceptions,
+        "steps_after_last_nn_step": tail_rows,
+    })
     w.add_data("checks_failed", fails)
     w.add_assertion("coefficients_are_laurent_over_Z_half", not non_dyadic, True)
     w.add_assertion("support_symmetric_lo_eq_minus_hi", asym == 0, True)
@@ -567,6 +707,11 @@ def main() -> int:
     w.add_assertion("triangular_law_breaks_at_A_27", first_break == 27, True)
     w.add_assertion("tropical_is_an_upper_bound", below == 0, True)
     w.add_assertion("tropical_bound_is_not_tight", gaps.get(0, 0) < tot, True)
+    w.add_assertion("denominator_is_2_to_the_averaged_crossing_count", den_ok, True)
+    w.add_assertion("averaged_pn_crossing_never_opens_a_gap", avg_units == 0, True)
+    w.add_assertion("tight_implies_at_most_one_nn_pair", tight_by_N, True)
+    w.add_assertion("at_most_one_nn_pair_is_NOT_sufficient",
+                    bool(exceptions), True)
     w.save({
         "q0Anchor": "independent",
         "q0AnchorReason": ("q is a sympy Symbol / a formal Laurent variable "
