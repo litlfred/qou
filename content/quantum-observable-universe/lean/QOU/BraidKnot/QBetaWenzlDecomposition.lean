@@ -1,7 +1,13 @@
 import QOU.HeckeAlgebra.JonesMarkovWenzl
 import Mathlib.Data.Real.Basic
 
-namespace QOU.BraidKnot
+-- Declarations here are nested one namespace deeper than the module's
+-- parent so this module and QOU.BraidKnot.H3HeckeIdempotents
+-- can be imported together: both declared the same fully-qualified
+-- name(s), and Lean rejects the second import with "environment already
+-- contains" (bean `qou-kfcl`). Nothing imports this module, so the
+-- nesting costs no consumer.
+namespace QOU.BraidKnot.QBetaWenzlDecomposition
 
 open QOU.HeckeAlgebra.JonesMarkovWenzl
 
@@ -36,4 +42,4 @@ theorem q_beta_c3_wenzl_decomposition_exact {q : ℝ} :
   q_beta_c3_wenzl_coefficient q = -2 - (3/2 : ℝ) * wenzlAltWeight 4 q := by
   rfl
 
-end QOU.BraidKnot
+end QOU.BraidKnot.QBetaWenzlDecomposition
