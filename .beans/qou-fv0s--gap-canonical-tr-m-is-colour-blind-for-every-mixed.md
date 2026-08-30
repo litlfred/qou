@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T18:21:32Z
-updated_at: 2026-08-30T19:24:12Z
+updated_at: 2026-08-30T20:00:53Z
 ---
 
 ## The canonical tr_M path structurally cannot honour owner ruling R3
@@ -153,3 +153,51 @@ correct it back.
 
 The rest of the section above stands — what gdtb closed IS what made this
 measurable, as it says.
+
+
+## UNIVERSAL — one number, and my #6309 caveat is RETRACTED (2026-08-30, PR #6319)
+
+The PRICED section above carries a scope-(a) caveat: *"the linear coefficient
+tr(A B) is word-specific — do NOT quote 1.41e-4 for T / 3He / 4He."* **That is
+wrong.** The coefficient is word-specific; the RATIO is not, and nothing in
+#6309 tested it.
+
+Measured across all four mixed nuclei — H_6, H_9, H_12:
+
+    atom  H_n  contrib  maxdim     delta_rel    rust-vs-blind
+    D       6        4       9   1.414947e-04      1.909e-18
+    T       9        5      48   1.414947e-04      3.420e-18
+    3He     9        5      48   1.414947e-04      3.290e-18
+    4He    12        7     297   1.414947e-04      4.815e-18
+
+**The identity.** Fitting k in `tr_M ∝ (d + k)` from each nucleus's own two arms
+— nothing about the Markov parameter entering the fit — gives
+
+    k = z_D = q^3/(q^2 + 1)      |k - z_D| ~ 1e-48, spread 1.3e-47
+
+So `tr(A σ_g B) = z_D · tr(A B)`, the Markov stabilization factor, and
+
+    Delta_rel = (d_w - d_blind)/(d_blind + z_D) = 1.414946610628e-4
+
+nucleus-independent. Four different braid words agreeing on a constant never put
+in.
+
+**The mechanism, with a control.** The weighted generator occurs exactly once per
+canonical word (D/T at gen 2, 3He/4He at gen 5). Tested by breaking it:
+
+    canonical beta_D                    occ=1   k - z_D = 2.3e-48
+    + one sigma on the SAME generator   occ=2   k - z_D = 1.2285   <- dies
+    + one sigma on ANOTHER generator    occ=1   k - z_D = 1.1e-47  <- survives
+
+Survives lengthening elsewhere, dies on reuse. So the once-only occurrence
+carries it — not word length or content — and the four-way agreement is not an
+artifact of these particular words.
+
+**What this changes for the decision.** The choice is worth a SINGLE
+nucleus-independent 1.414946610628e-4 on every mixed nucleus. It does not grow
+with A and needs no per-isotope re-measurement. Still not settled here: which
+arm is correct is a physical modelling question.
+
+**Scope narrowed, not widened:** no claim for words where the interface
+generator repeats — the control shows it fails there, and no canonical nucleus
+has that shape.
