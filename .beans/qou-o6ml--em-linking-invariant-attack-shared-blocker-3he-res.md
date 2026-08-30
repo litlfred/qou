@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T14:32:54Z
+updated_at: 2026-08-30T14:39:21Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -233,3 +233,58 @@ answer); route (3) needs the von Neumann inductive limit (open R&D).
 
 **On that comparison route (2) is the cheaper front**, and I am reversing my
 earlier ranking accordingly.
+
+
+## ROUTE (2) — the positive half of the μ̄ prune, PROVED 2026-08-30
+
+The prune I contributed from `qou-bn8e` (route (1)'s linear ansatz dies:
+`odd_symmetric_functional_vanishes`) said what `E_EM` may **not** be. Route (2)
+needs the complementary statement, and it was missing — "the map must be even"
+is half an instruction.
+
+Three lemmas added to
+[`MilnorTripleLinkingMagnus.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MilnorTripleLinkingMagnus.lean),
+`lean`-direct exit 0, sorry-free; two of them depend on **no axioms at all**.
+
+1. **`even_functional_is_symmetric`** — an even `F` satisfies the exchange-
+   symmetry hypothesis *automatically*. So evenness is not an extra condition
+   route (2) must meet; it is the condition under which the symmetry is free.
+2. **`even_symmetric_functional_can_be_nonzero`** — witness `F m = m²`. Without
+   this the prune pair would have been consistent with *every* admissible
+   functional vanishing, which would kill route (2) rather than narrow it.
+3. **`exchange_symmetry_forces_agreement_on_pm_one`** — the sharper reading, and
+   the one that actually constrains route (2). Exchange symmetry **alone**, with
+   no parity assumption, forces `F(1) = F(−1)`.
+
+### What (3) means for route (2), stated carefully
+
+Since the Borromean longitude and its component-swapped partner are separated by
+`μ̄₁₂₃ = 1` against `μ̄₁₂₃ = −1`, **the sign of `μ̄₁₂₃` is invisible to any
+exchange-symmetric `E_EM`**: on that pair such a functional sees at most
+`|μ̄₁₂₃|`. That is strictly stronger than "odd functionals vanish", which is the
+special case `F(−m) = −F(m)`.
+
+**Consequence for route (2):** the triple-linking channel can supply a
+*magnitude* to the EM weight but never a *chirality*. Any construction whose EM
+content is carried by the **sign** of `μ̄₁₂₃` is excluded before it is built.
+Scope: (b) on sign-carrying constructions — the invariant cited is
+`mubar_swap_eq_neg`, computed by `decide`, not assumed. Scope (a) on nothing
+else; the magnitude channel is untouched.
+
+This matters because it is the *same* obstruction shape as the PROBE-4 KL-
+positivity prune recorded in AGENTS.md for Δ_λ — a channel that supplies
+magnitude but not chirality sign. Two independent fronts, same failure mode.
+Worth checking whether that is a coincidence or a common cause.
+
+### Retracted before it was written down
+
+I began this by arguing that the Möbius energy is even in `μ̄₁₂₃` because it is
+built from distances, hence **mirror-invariant**, and `μ̄₁₂₃` negates under
+mirror image. **The last step is a transformation law I was quoting from
+memory and did not verify** — the Borromean rings' amphichirality points the
+other way, and I could not settle it from the corpus. It is not needed: the
+prune's hypothesis is *exchange* symmetry, not mirror symmetry, and a functional
+of the unlabelled geometry is exchange-symmetric by construction with no
+transformation law required. Recorded so the mirror route is not re-attempted
+as though it had been checked. If someone does want it, the open question is the
+sign of `μ̄₁₂₃` under mirror image — worth a `library/` read, not a memory.
