@@ -36,12 +36,33 @@ refutable `HasQPlancherelCLT` shape *and* to **not** flag its repair. The
 negative control is the important half; without it, an over-broad detector
 reports success by flagging everything.
 
-**Precision is low and that is by design.** 20 candidates corpus-wide, of which
-**one** was a genuine defect. The dominant false-positive source is a *proof*
-binder (`hn : hecke.n ≥ 2`, `_hst : γ s ≠ γ t`) counted as an unconstrained
-variable; the next is a field where both sides are class data, which an
-instance can satisfy by choosing them together. Read every hit; construct the
-cheapest inhabitant before calling anything a defect.
+**Precision was low, and three of the four causes are now fixed** (2026-08-30).
+The first pass reported 20 candidates for one genuine defect. Three
+false-positive sources were structural rather than inherent:
+
+| cause | shape | rule added |
+|---|---|---|
+| proof binder | `hn : H.n ≥ 2` — a proof, not a quantity | skip binders whose type is a proposition |
+| `∃` witnesses the variable | `∀ M, ∃ q, M < enstrophy q` — unboundedness, satisfiable | skip statements containing `∃` |
+| finite index | `i : Fin channels` — boundedly many values | skip `Fin`/`Bool`/`Unit`/`Empty` binders |
+
+Measured A/B on the same tree: **19 → 9 candidates.** (Both numbers on the
+current corpus; the original 20 was a different tree and is not comparable.)
+
+**One near-miss worth recording.** The finite-type rule first included
+`Finset`, which would have silently skipped the Rosso–Jones defect this
+detector found — `∀ (partitions_of_r : Finset Partition), …`. A `Finset` is a
+finite set, but the *type* of finite sets is infinite, so such a binder is
+arbitrary. Caught before shipping and pinned as a positive control; the
+`--selftest` now has five arms — it must flag the `HasQPlancherelCLT` and
+Rosso–Jones shapes, and must **not** flag a repaired carrier, a proof binder,
+an `∃`-witnessed bound, or a finite index.
+
+The remaining nine still need reading: the residual false positives are fields
+where both sides are class data (an instance chooses them together) and binders
+over a non-archimedean parameter type (`∀ n : ℕ, (n : K) < omegaSurreal` is
+satisfiable exactly because `K` is not archimedean). Construct the cheapest
+inhabitant before calling anything a defect.
 
 ## The genuine hit: the Rosso–Jones index set
 
