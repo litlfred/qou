@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T16:58:40.272909+00:00",
+  "commitSha": "26a638b6a29053785081b94abcfa89b2ec76c995",
+  "assertions": [
+    {
+      "name": "crossing_count_is_exactly_twelve_A_minus_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "exact match on all six N=Z nuclei",
+      "source": "n_strands = 3A and the construction places 4 crossings per strand, so crossings = 4*n_strands - 1 = 12A - 1: affine in A, extensive BY CONSTRUCTION"
+    },
+    {
+      "name": "neither_ratio_is_constant",
+      "computed": "2.27895073695095047262924621279",
+      "expected": "2.279",
+      "passed": true,
+      "tolerance": "0.01",
+      "unit": "smaller of the two fractional spreads",
+      "source": "deficit/crossings 580.7%, deficit/A^(2/3) 227.9%"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 193,
+  "computation": "braid-crossing-count-is-extensive",
+  "scriptFile": "braid_crossing_count_is_extensive_probe.py",
+  "scriptHash": "4a478adce1e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/braid_crossing_count_is_extensive_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/braid_crossing_count_is_extensive_probe.py"
+  },
+  "description": "Tests the prediction from the non-abelian Stokes audit that the surface coefficient a_S tracks a singularity count. The canonical braid's crossing count is 12*A - 1 EXACTLY on all six N=Z nuclei (= 4*n_strands - 1), hence affine in A and extensive by construction. A surface term scales as A^(2/3), and (12m^3-1)/m^2 = 12m - 1/m^2 is strictly monotone, so no constant coefficient works at even two mass numbers (QOU.Mass.AffineCountIsNotASurfaceTerm). Scope-(b) for that form only. The useful half: Yekutieli's bad set stratifies a 2-cell structure and a braid WORD is 1-dimensional, so the route needs the spanning surface, which the framework does not construct.",
+  "data": {
+    "chain": {
+      "2": {
+        "crossings": 23,
+        "deficit_MeV": "16.1978178935005979726679443915",
+        "deficit_per_crossing": "0.704252951891330346637736712673",
+        "deficit_per_A23": "10.2039858631926181202654513364"
+      },
+      "4": {
+        "crossings": 47,
+        "deficit_MeV": "8.54910578700119594533588878294",
+        "deficit_per_crossing": "0.181895867808536083943316782616",
+        "deficit_per_A23": "3.39271487991828007861361334613"
+      },
+      "6": {
+        "crossings": 71,
+        "deficit_MeV": "23.2731650805017939180038331744",
+        "deficit_per_crossing": "0.32779105747185625236625117147",
+        "deficit_per_A23": "7.04835792136027851212545806369"
+      },
+      "8": {
+        "crossings": 95,
+        "deficit_MeV": "17.1900515740023918906717775659",
+        "deficit_per_crossing": "0.180947911305288335691281869114",
+        "deficit_per_A23": "4.29751289350059797266794439147"
+      },
+      "12": {
+        "crossings": 143,
+        "deficit_MeV": "18.3725693610035878360076663488",
+        "deficit_per_crossing": "0.12847950602100411074131235209",
+        "deficit_per_A23": "3.50522363663996242165547665452"
+      },
+      "16": {
+        "crossings": 191,
+        "deficit_MeV": "19.7597575480047837813435551317",
+        "deficit_per_crossing": "0.103454228000025045975620707496",
+        "deficit_per_A23": "3.11196680944379147635304711857"
+      }
+    },
+    "ratio_spreads": {
+      "deficit_per_crossing": "5.80738685606121239426289159394",
+      "deficit_per_A23": "2.27895073695095047262924621279",
+      "note": "recorded for completeness; the ARGUMENT is the monotonicity theorem, not these numbers -- they would not become evidence if they happened to be closer"
+    },
+    "what_the_route_needs_instead": {
+      "why_untestable_here": "Yekutieli's bad set stratifies a 2-dimensional cell structure (a kite: 1-simplex + 2-simplex); a braid WORD is 1-dimensional and has no 2-cell structure to stratify",
+      "what_would_test_it": "the spanning surface -- Seifert genus, boundary components, or a genuine 2-cell decomposition -- which the framework does not presently construct",
+      "scope": "(b) for 'crossing count times a constant' via the proved monotonicity invariant; (a) for any wider claim about crossings"
+    }
+  }
+}
