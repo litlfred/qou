@@ -5,7 +5,7 @@ status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-30T10:32:43Z
-updated_at: 2026-08-30T10:44:44Z
+updated_at: 2026-08-30T10:51:40Z
 ---
 
 ## Why the current pair factor cannot be repaired by convention
@@ -176,3 +176,29 @@ A repair has to change that identification, and the corpus's architecture says
 where the isospin SU(2) actually lives: **level 4**. Whether a level-3 quantity
 can inherit charge symmetry from a level-4 structure is the open question, and
 it is qou-brng's neighbour, not its duplicate.
+
+
+
+## Strengthened: the refutation now lives INSIDE the corpus's own carrier
+
+Corpus-grepped my own new file and found `QOU/BraidKnot/ShellSchurWeylSelfDuality.lean`
+already formalises the proof I was arguing from -- a `structure` with
+`Partition`, `conj` (the transpose) and `conj_conj` (involutivity), plus
+`SelfDual lam := conj lam = lam` and `selfDual_iff_fixed`.
+
+So `PairIsospinAssignment` now **instantiates** it at n = 2 rather than
+building a parallel construction beside it:
+
+    def shellDuality : QOU.BraidKnot.ShellSchurWeylSelfDuality where
+      Partition := Block ; conj := conj ; conj_conj := conj_involutive
+
+    theorem no_selfDual (b : Block) : not (shellDuality.SelfDual b) := conj_ne b
+
+**At n = 2 no block is self-dual.** The carrier defines a self-dual shell as a
+fixed point of the transpose; at n = 2 the transpose has none. That is the sharp
+form of the interpretation block's own claim that Schur-Weyl self-duality is
+*exact at level 4* and broken at level 3 -- the pair has no self-conjugate
+partition to carry it, and the corpus's own Lean now says so.
+
+lean-direct exit 0 (72 s with the ShellSchurWeylSelfDuality cone, which pulls
+Mathlib.Tactic); 0 sorry, 0 axiom. run-validate exit 0, 14 pre-existing issues.

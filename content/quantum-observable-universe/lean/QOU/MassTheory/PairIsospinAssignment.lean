@@ -63,6 +63,7 @@ irrep-isospin assignment"*.
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
+import QOU.BraidKnot.ShellSchurWeylSelfDuality
 
 namespace QOU.MassTheory.PairIsospinAssignment
 
@@ -95,6 +96,21 @@ identity": there is nowhere for a `C`-eigenlabel to sit. -/
 theorem conj_ne : ∀ b : Block, conj b ≠ b
   | .sym => by decide
   | .alt => by decide
+
+/-- The `n = 2` instance of the corpus's **own** Schur–Weyl self-duality carrier
+(`QOU.BraidKnot.ShellSchurWeylSelfDuality`), so that what follows is a statement
+inside that structure rather than a parallel construction beside it. -/
+def shellDuality : QOU.BraidKnot.ShellSchurWeylSelfDuality where
+  Partition := Block
+  conj := conj
+  conj_conj := conj_involutive
+
+/-- **At `n = 2` no block is self-dual.** The carrier defines a self-dual shell
+as a fixed point of the transpose (`selfDual_iff_fixed`), and at `n = 2` the
+transpose has none. This is the sharp form of the interpretation block's claim
+that Schur–Weyl self-duality is *exact at level 4* but broken at level 3: the
+pair simply has no self-conjugate partition to carry it. -/
+theorem no_selfDual (b : Block) : ¬ shellDuality.SelfDual b := conj_ne b
 
 /-! ## 2. The exclusion
 
