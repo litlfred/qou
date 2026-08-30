@@ -273,3 +273,30 @@ constitutionally unable to see a non-magic counterexample:
 In all three the magic set is an **input** presented as an output. Any future
 magic-number claim should be required to state, up front, what its
 non-magic control is and what result would have falsified it.
+
+### Exhaustive partition sweep closes the remaining caveat
+
+The scope-(a) caveat above ("other partitions of 3A are untested") is now
+tested. All **11,660** partitions of 3A for A = 2..10:
+
+| A | k=3A | partitions | max\|y\| | n with \|y\|>1 |
+|---|---|---|---|---|
+| 2 | 6 | 11 | 0.0212226 | **0** |
+| 4 | 12 | 77 | 2.46806e-5 | **0** |
+| 8 | 24 | 1575 | 3.29685e-11 | **0** |
+| 10 | 30 | 5604 | 2.28167e-13 | **0** |
+
+`max|y|` over the entire partition space is monotone decreasing in A, ranking
+exactly `[2,3,4,5,6,7,8,9,10]` — pure A order, no magic feature. And **not one
+partition of the 11,660 violates `|y| ≤ 1`**.
+
+So the vacuity is a property of **the criterion**, not of the partition choice:
+the level-4 PSD condition cannot fail anywhere in the partition space. Option 2
+("re-pose the LP above H_3") is closed in the form the corpus already
+implements it.
+
+**Honest limit.** Exhaustive only to A = 10 — `p(60) = 966,467` and `p(84)` is
+~1e9 — so the exhaustive claim covers magic **{2, 8}**. Magic 20 and 28 are
+covered by the default-partition sweep to A = 30; 50, 82, 126 by neither.
+`min|y|` is exactly 0.0 at some partitions for A = 3,4,5,10, so its cross-A
+ranking is degenerate and carries no signal either way — do not read it as one.
