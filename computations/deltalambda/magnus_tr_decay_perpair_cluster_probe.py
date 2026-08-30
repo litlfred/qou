@@ -108,7 +108,7 @@ def per_pair_traces(shape, gens):
     return dim, tvals, agg / 2
 
 
-def run(A=3, verify=True):
+def run(A=3, verify=True, bmax=None):
     n = 3 * A
     Z, N = A // 2, A - A // 2
     gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
@@ -116,20 +116,36 @@ def run(A=3, verify=True):
     print(f"[perpair] A={A} (n={n}, Z={Z} N={N}), word L={len(gens)}, "
           f"distinct gens {sorted(set(gens))}")
     print(f"[perpair] adjacent-pair multiplicities (period-3 lattice): {pairs}")
-    print(f"[perpair] Ω₂ = ½ Σ_pair mult·[A_a,A_{{a+1}}] over {len(pairs)} local windows\n")
+    print(f"[perpair] Ω₂ = ½ Σ_pair mult·[A_a,A_{{a+1}}] over {len(pairs)} local windows")
+    if bmax is not None:
+        print(f"[perpair] RESTRICTED to b(λ) <= {bmax} (low-b, where the mass concentrates; "
+              f"skips the high-dim mid-b partitions that make full H_{n} expensive).")
+    print()
 
-    # committed witness for the aggregate self-check
+    # committed witness (A=2,3) or banked checkpoint (A=4) for the per-partition self-check
     wpath = {3: "triton-magnus-omega2-sign.witness.json",
              2: "deuteron-magnus-omega2-sign.witness.json"}.get(A)
     committed = {}
+    src = None
     if wpath and os.path.exists(os.path.join(_HERE, wpath)):
         w = json.load(open(os.path.join(_HERE, wpath)))
         for r in w["results"]["per_partition"]:
             committed[tuple(r["lambda"])] = mp.mpf(r["tr_rho_Omega2"])
+        src = wpath
+    else:
+        ckpt = os.path.join(_HERE, "he4-magnus-omega2-sign.checkpoint.jsonl")
+        if A == 4 and os.path.exists(ckpt):
+            for line in open(ckpt):
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                committed[tuple(r["lambda"])] = mp.mpf(r["tr_rho_Omega2"])
+            src = "he4 checkpoint (gitignored; banked)"
+    if src:
+        print(f"[perpair] per-partition self-check source: {src} ({len(committed)} partitions)")
 
-    shapes = list(base.partitions(n))
+    shapes = [sh for sh in base.partitions(n) if bmax is None or (n - sh[0]) <= bmax]
     # per-pair contributions grouped by b, normalised by dim
-    by_b_pair = defaultdict(lambda: defaultdict(lambda: mp.mpf(0)))   # b -> pair -> Σ|t|/... (we store list)
     rows = []
     max_agg_err = mp.mpf(0)
     for shape in shapes:
@@ -222,8 +238,10 @@ def run(A=3, verify=True):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--A", type=int, default=3)
+    ap.add_argument("--bmax", type=int, default=None,
+                    help="restrict to partitions with b(λ)=n-λ₁ <= bmax (low-b, cheap at high A)")
     args = ap.parse_args()
-    run(A=args.A)
+    run(A=args.A, bmax=args.bmax)
 
 
 if __name__ == "__main__":
