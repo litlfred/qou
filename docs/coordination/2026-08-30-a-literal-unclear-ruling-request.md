@@ -108,8 +108,13 @@ The pin provably cannot affect the result, and migrating them is churn:
    Migrating a producer to the current muon pin silently re-declared it proton.
    **Fixed** (now matches A, A′ and C).
 2. **`witness.py:278` recognises the muon layer only as pin C** — the mirror image.
-   **Not fixed**: changing it restamps witnesses corpus-wide and is not a unilateral
-   call. It is the reason item 2 above holds.
+   ~~Not fixed~~ **FIXED 2026-08-30** (`e1a877866`), after the owner authorised it.
+   The naive widening would have been worse than the bug: the stamping caller
+   writes the anchor's CURRENT value, so recognising a pin-A payload as muon
+   would have stamped `q0Value: C` over a payload holding A. The superseded
+   vintages went into a separate tuple that only the staleness guard opts into;
+   the stamping path is byte-identical. Blast radius measured at **6 witnesses**,
+   not corpus-wide.
 
 ## What happens with no ruling
 
@@ -118,3 +123,42 @@ computed. But they are pinned to a vintage the corpus has moved off, they are
 invisible to the manifest, and every one of them reports `q0Anchor: proton` while
 holding a muon-family value. The next agent to run a pin audit will re-derive this
 same list.
+
+
+---
+
+## CORRECTION — this document never enumerated the 44 (2026-08-30)
+
+Recorded because it changes what a ruling here is worth.
+
+**This document asks for a ruling on a set it does not list.** It names six file
+paths and otherwise uses approximate counts ("~20 files", "~22 files"). There is
+no enumeration of the 44 here, in bean `qou-0hnz`, or in any committed artifact.
+A follow-up archeology pass had to *reconstruct* the population from the corpus
+and could recover only 43, could not identify which one is missing, and found at
+least two membership errors in the original 44 — in both directions. So the
+"44" was never a certified set, and no ruling should be recorded against it as
+though it were.
+
+**Supersession.** The reconstructed population, per-file evidence, and the actual
+decision surface are in
+[`2026-08-30-unclear-44-archeology-triage.md`](2026-08-30-unclear-44-archeology-triage.md).
+**Rule from that document, not this one.** It reduces the ask from 44 open files
+to **six binary questions over 22 files** — 21 are disposed of by existing
+precedent with no input needed.
+
+**The reframe that makes it binary.** This document treated pin A as a muon value
+an author might have wanted. It is not: `fca08de7d2` (owner ruling 2026-08-22,
+"A → CODATA 2022") **retired** it. Its own commit body records why — pin A inverts
+to `m_mu/m_e = 206.768282989315`, which matches *no* published CODATA and
+disagrees by 1.4 ppb with the ratio the very same witness declares as its input.
+The anchor had certified itself. So "keep the value" is not an available answer
+for any file in this population; under either answer the literal is deleted and
+replaced by a resolved read, and the only question is **which layer**.
+
+**One claim in the section above is now known to be too strong.** "Every one of
+them reports `q0Anchor: proton` while holding a muon-family value" — where that
+is true, the proton stamp is in general the *runtime default* for a stem absent
+from the manifest, not a declaration. Verified for the `he_nu_sdp_*` trio: all
+three are absent from `q0_anchor_manifest.json`. Those stamps are therefore not
+evidence of intent and must not be read as such.
