@@ -1296,6 +1296,13 @@ import QOU.Mathlib.RothNormalisation
 -- so the O_K case has an input the Z case does not.  Not a generalisation: a
 -- different theorem with different hypotheses.
 import QOU.Mathlib.RothAlgebraicInteger
+-- Step 2 over O_K, assembled: the Taylor bound at phi_0 and the height budget at
+-- the other d-1 conjugates meet the vanishing criterion.  The two enter the final
+-- inequality DIFFERENTLY -- phi_0 linearly, the conjugate bound raised to the d-1 --
+-- so slack in conjBound costs d-1 times as much, which is why it is named.  Over Z
+-- the asymmetry vanishes because d = 1; that is a fact about the shape, not a route
+-- from one vanishing criterion to the other.
+import QOU.Mathlib.RothAssembly
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

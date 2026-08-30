@@ -601,3 +601,33 @@ REMAINING on this bean: assemble these two into le_index_of_norm_lt's hypothesis
 M is the d-1 bound, the phi_0 bound is the Taylor one), then compose with steps 3 and 4. After
 that, the parameter SELECTION, which is what turns a contradiction into "finitely many solutions".
 
+## 2026-08-30 -- step 2 over O_K runs end to end. QOU/Mathlib/RothAssembly.lean
+
+le_index_of_taylor_house composes the two embedding bounds into le_index_of_norm_lt's hypothesis,
+so step 2 over O_K now runs from step 1's auxiliary polynomial to a lower bound on the index at
+the rational point, with only a numeric comparison (hfinal) left. Axiom-clean, .olean deleted
+first, registered in QOU.lean.
+
+THE ASYMMETRY IS THE CONTENT, and it is why conjBound is a named definition rather than an inline
+expression. eq_zero_of_norm_mul_pow_lt_one needs ||phi_0 x|| * M^{d-1} < 1, so the two estimates
+enter the final inequality DIFFERENTLY: the phi_0 bound linearly, the conjugate bound raised to
+the d-1. A factor wasted in conjBound costs d-1 times as much as one wasted at phi_0, and the two
+must not be tuned as if interchangeable.
+
+Over Z the asymmetry disappears because d = 1 and M^{d-1} = 1. That is a fact about the SHAPE of
+the two statements, not a route from one to the other -- the vanishing criteria remain different
+theorems with different hypotheses, as qou-86j4 recorded.
+
+hidx is load-bearing here, which was the whole point of the previous entry: it is what restricts
+the sum in the phi_0 estimate. The draft that would have taken the smallness directly as a
+hypothesis is now definitively not what got built.
+
+REMAINING on this bean:
+  1. compose le_index_of_taylor_house with steps 3 and 4 -- mechanical, the O_K analogue of
+     roth_contradiction, whose Z version already exists;
+  2. discharge hfinal from a parameter record -- the O_K analogue of RothNormalisation, and note
+     it must budget for the d-1 exponent that the Z case does not have;
+  3. the parameter SELECTION -- choosing q_1 large then q_2, ..., q_m from an infinite sequence of
+     good approximations. This is what turns a contradiction into "finitely many solutions" and is
+     what step 5 (not LiouvilleWith) needs. It is the only remaining piece that is not bookkeeping.
+
