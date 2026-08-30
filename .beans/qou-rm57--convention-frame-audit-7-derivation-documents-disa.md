@@ -81,3 +81,42 @@ typo.
 **Default if nothing is done:** the audit reports and does not gate (exit 0
 always). Nothing breaks; the seven keep disagreeing with canon silently, which
 is the state that let a 7.55 % contradiction sit in two artifacts unnoticed.
+
+
+## CORRECTION 2026-08-30 — 6 documents, not 7, and one row class was mine
+
+Two corrections to the numbers above, both found by re-running the audit after
+a rebase rather than trusting the first run.
+
+**One of the seven was a PURE FALSE POSITIVE.**
+`canonical-tr-m-via-chi-cache.derivation.json` lists every atom in one
+sentence — *"proton 1.145759…, neutron 0.987743…, deuteron 0.575172…, tritium
+0.229310…"* — and tritium, helium-3 and helium-4 were not in the audit's atom
+table at all. The nearest *preceding* atom word for the tritium value is
+therefore `deuteron`, and it was reported as a deuteron disagreeing with canon
+by 60 %. Its proton / neutron / deuteron values are the **correct convention-D
+ones**; nothing was wrong with the document.
+
+Fixed by recognising those names so their values are **skipped** for want of a
+reference (`TR_M_AT_Q0` holds p/n/D only) rather than silently reattributed.
+
+    rows       16 -> 13
+    documents   7 ->  6   of 84
+
+**And a repair I committed before this one did nothing.** I claimed bare `"d"`
+was being accepted as deuteron, made single-letter matching case-sensitive, and
+wrote *"rows drop 15 → 12"* into the commit message. The change was a **no-op**
+— audit output byte-identical across it — and the 15 → 12 was never measured; I
+read it off a truncated `tail`. That commit was squashed into an honest one
+(`c7dae15d3d`), which records both halves.
+
+Worth keeping in this bean rather than only in git history: **the audit's own
+first two reports each contained an unmeasured number, written by the agent
+building the detector for unmeasured numbers.** The discipline that caught both
+was the same one the audit exists to enforce — diff the actual output, do not
+eyeball a tail.
+
+**The live finding set is the six**, and the two decisive rows above (the
+float64-truncated convention-C proton in `markov-trace-assembly-proton` and
+`p-tr-M-q0`) are unaffected — they were measured against the exact C value, not
+eyeballed.
