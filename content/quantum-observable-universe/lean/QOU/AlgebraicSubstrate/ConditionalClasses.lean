@@ -99,10 +99,21 @@ class QAubinLions (K : ℝ → ℝ) : Prop where
     non-negative singularity time `T*` exists at which the vorticity
     diverges**.
 
-    **What this encodes.** `∃ T ≥ 0, ∀ M, ∃ t < T, M < vorticitySup t` — the
-    vorticity exceeds every bound at some time strictly before `T`, which is
-    the Beale-Kato-Majda shape of blow-up. A bounded `vorticitySup` refutes it,
-    which is exactly what the previous field could not do.
+    **What this encodes.** `∃ T ≥ 0, ∀ M, ∀ t₀ < T, ∃ t ∈ (t₀, T), M <
+    vorticitySup t` — the vorticity exceeds every bound at times **arbitrarily
+    close to `T` from below**, which is the Beale-Kato-Majda shape. A bounded
+    `vorticitySup` refutes it, which is exactly what the previous field could
+    not do.
+
+    **The `t₀` quantifier is load-bearing and was missing in the first
+    encoding** (caught in review on PR #6122). Without it the field reads
+    `∀ M, ∃ t < T, M < vorticitySup t`, which says only that the vorticity is
+    unbounded somewhere on `(-∞, T)` — satisfied by a function that blows up
+    early and is placid near `T`, i.e. by no blow-up *at* `T` at all. That is
+    the "documented as a limit, stated without one" defect: the docstring said
+    "as `t → T*`" and the statement had no device localising anything near
+    `T`. Quantifying over `t₀ < T` is what turns "unbounded before `T`" into
+    "unbounded approaching `T`".
 
     **What this does NOT encode.** That `vorticitySup` solves anything. There
     is no q-NS evolution here, no initial datum, no relation between `T` and
@@ -116,9 +127,12 @@ class QAubinLions (K : ℝ → ℝ) : Prop where
     works." Bean `qou-5nj1`. -/
 -- Ref: [manuscript] conj:ns-counterexample
 class NSCounterexample (vorticitySup : ℝ → ℝ) : Prop where
-  /-- The vorticity is unbounded approaching some non-negative time `T`. -/
+  /-- The vorticity exceeds every bound `M` at times arbitrarily close to `T`
+      from below: for every `t₀ < T` there is a `t` in `(t₀, T)` with
+      `M < vorticitySup t`. -/
   blowup_at_finite_time :
-    ∃ T : ℝ, 0 ≤ T ∧ ∀ M : ℝ, ∃ t : ℝ, t < T ∧ M < vorticitySup t
+    ∃ T : ℝ, 0 ≤ T ∧ ∀ M : ℝ, ∀ t₀ : ℝ, t₀ < T →
+      ∃ t : ℝ, t₀ < t ∧ t < T ∧ M < vorticitySup t
 
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`.
 

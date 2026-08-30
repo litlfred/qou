@@ -55,7 +55,7 @@ theorem ns_counterexample_unbounded (ω : ℝ → ℝ) [h : NSCounterexample ω]
     ∀ M : ℝ, ∃ t : ℝ, M < ω t := by
   obtain ⟨T, _, hdiv⟩ := h.blowup_at_finite_time
   intro M
-  obtain ⟨t, _, hM⟩ := hdiv M
+  obtain ⟨t, _, _, hM⟩ := hdiv M (T - 1) (by linarith)
   exact ⟨t, hM⟩
 
 /-- **Critical-exponent identity**, in cleared form: under `[CriticalExponent
@@ -145,39 +145,37 @@ theorem qNS_cone_full_composition (α : ℝ) (K ω : ℝ → ℝ) (S : Set ℝ)
   exact ⟨qAubinLions_zero_energy K, ns_counterexample_unbounded ω, h.alpha_eq,
          ⟨r, hr⟩, RegularityBreakdown.breakdown_measure_zero⟩
 
-/-- **Conditional Reeb-period bound**: under Aubin-Lions + blow-up,
-    the Reeb period `Ω · ε ≥ 0` for every infinitesimal `ε ≥ 0` and
-    Reeb period `Ω ≥ 0`. -/
-theorem qNS_reeb_period_bound (K : ℝ → ℝ)
-    [QAubinLions K] [BlowupYekutieli]
+/-- **Reeb-period bound**: `Ω · ε ≥ 0` for non-negative `Ω` and `ε`.
+
+    Unconditional, and its class binders are dropped for the same reason as
+    `qNS_enstrophy_cube_bound` above: the proof is `mul_nonneg` and used none
+    of them. -/
+theorem qNS_reeb_period_bound
     (Ω ε : ℝ) (h_Ω : 0 ≤ Ω) (h_ε : 0 ≤ ε) :
     0 ≤ Ω * ε :=
   mul_nonneg h_Ω h_ε
 
-/-- **Conditional enstrophy bound**: under the full q-NS cone,
-    every non-negative enstrophy `Z ≥ 0` admits the trivial-cube
-    bound `Z³ ≥ 0`. -/
-theorem qNS_enstrophy_cube_bound {α : ℝ} {K ω : ℝ → ℝ} {S : Set ℝ}
-    [QAubinLions K] [NSCounterexample ω] [CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown S]
-    (Z : ℝ) (h_Z : 0 ≤ Z) :
+/-- **Enstrophy cube bound**: every non-negative enstrophy `Z ≥ 0` satisfies
+    `Z³ ≥ 0`.
+
+    **This is UNCONDITIONAL and used to pretend otherwise.** It carried all
+    five q-NS class hypotheses while its proof is `pow_nonneg h_Z 3`, which
+    uses none of them — `0 ≤ Z ^ 3` follows from `0 ≤ Z` alone. I flagged that
+    in a note here and left the binders; a reviewer then flagged the same thing
+    on PR #6122, observing that it makes dependency tracking noisy and reads
+    later as a genuine conditional consequence. Two independent reads agreeing
+    is enough: the binders are gone.
+
+    Verified safe to drop: these corollaries have no external callers, so
+    removing hypotheses breaks nothing. -/
+theorem qNS_enstrophy_cube_bound (Z : ℝ) (h_Z : 0 ≤ Z) :
     0 ≤ Z ^ 3 :=
   pow_nonneg h_Z 3
--- NOTE (2026-08-30, bean `qou-93hu`): the `α` binder above is added only to
--- track the `CriticalExponent` signature change. It does not make this theorem
--- conditional, because it never was: the proof is `pow_nonneg h_Z 3` and uses
--- NONE of the five class hypotheses — `0 ≤ Z ^ 3` follows from `0 ≤ Z` alone.
--- `qNS_reeb_period_bound` (`mul_nonneg`) and `qNS_rogue_zero_cost_nonneg`
--- (`div_nonneg`) have the same shape. That is a distinct defect from the one
--- this bean fixes — decorative hypotheses on an unconditionally-true claim,
--- the `proof-no-unused-hypothesis-rfl` family — and it is left untouched here
--- rather than folded into a critical-exponent change.
 
 /-- **Conditional rogue-zero cost bound**: under Aubin-Lions +
     blow-up, the rogue-zero energy cost `E(δ) = δ²/ε ≥ 0` for
     `δ : ℝ` and `ε > 0`. -/
-theorem qNS_rogue_zero_cost_nonneg (K : ℝ → ℝ)
-    [QAubinLions K] [BlowupYekutieli]
+theorem qNS_rogue_zero_cost_nonneg
     (δ ε : ℝ) (h_ε : 0 < ε) :
     0 ≤ δ ^ 2 / ε :=
   div_nonneg (sq_nonneg δ) (le_of_lt h_ε)

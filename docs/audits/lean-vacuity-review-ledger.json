@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:26:19.976Z",
+  "updated_at": "2026-08-30T07:42:48.095Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3622,10 +3622,10 @@
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
-      "line": 182,
+      "line": 196,
       "verdict": "genuine",
-      "file_sha": "fc07c4cf1a7d",
-      "agent_note": "Re-adjudicated 2026-08-30. Still genuine, and now the LAST vacuous carrier in this file: its three siblings (QAubinLions qou-3ytx, NSCounterexample qou-5nj1, RegularityBreakdown qou-m7a2) were re-encoded and left the population entirely, as CriticalExponent (qou-93hu) had already. The file_sha change is those three edits, not this carrier -- its field is untouched and still `forall T >= 0, exists r, 0 <= r and r <= 1 + T`, witnessed by r = 0, i.e. by NO blow-up, the negation of the claim it is named for. LEFT DELIBERATELY, not missed: the other four were fixed by transcribing a claim their docstrings already made, and this docstring names 'an explicit constant determined by the substrate scale' without ever saying which constant. Writing a bound would mean choosing it -- invention wearing transcription's clothes. Closing it needs the Yekutieli rate as an explicit function of the substrate modulus, from the source the conjecture label points at; the blocker is stated at the declaration. Bean qou-88nf.",
+      "file_sha": "076346811312",
+      "agent_note": "Re-adjudicated 2026-08-30 after the PR #6122 review fixes. The file_sha change is the NSCounterexample field strengthening (a reviewer showed my first encoding said 'unbounded somewhere before T' while its docstring claimed 'as t -> T*'; the t0 quantifier localises it) plus dropping decorative class binders. BlowupYekutieli itself is untouched and still inhabitable by zero -- the last vacuous carrier in the file. Left deliberately: its rate is not in the corpus at all and its conjecture block does not exist, measured over six grep paths in docs/audits/2026-08-30-blowup-yekutieli-has-no-source.md. Bean qou-88nf.",
       "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
