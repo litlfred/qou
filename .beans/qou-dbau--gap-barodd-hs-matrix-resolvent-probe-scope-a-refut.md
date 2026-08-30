@@ -58,12 +58,31 @@ They fail truthfully; retuning them to pass would encode the bug in the
 expectations — the "never make a red run green by widening a baseline" defect.
 The file carries a header saying so, pointing here.
 
-## Also noted, not fixed
+## Also noted, not fixed — and the ratchet does NOT see it
 
-The probe emits **6 raw float64 fields** into its witness
-(`.assertions[*].computed` / `.expected`), flagged by the ratchet on every run.
-Separate defect, separate fix — carry `mpmath.mpf` from source and serialize
-with `_precision.fmt`.
+The probe emits **6 raw float64 fields** into its witness. Verified on the
+committed file rather than inferred from the runtime warning — all six are
+Python `float`:
+
+    assertions[0].computed 1.0  expected 1.0
+    assertions[1].computed 0.0  expected 1.0
+    assertions[2].computed 0.0  expected 1.0
+
+**The raw-float64 ratchet does not flag any of them**, and the witness is not in
+`raw-float64-baseline.json` either. The only thing that reports it is the
+probe's own runtime warning, which is a *pre-write* message about what the code
+passes — so a reader who trusts the ratchet alone would conclude this witness is
+clean, and it is not.
+
+Why the ratchet misses it is **undetermined** and should not be guessed: these
+are exactly-representable values (1.0 / 0.0), which may be scoped out
+deliberately, or may be a blind spot for float-typed booleans. Establishing
+which needs a read of the ratchet's own predicate — worth doing, because if it
+is a blind spot then every assertion-shaped `passed`-as-float in the corpus is
+invisible to it.
+
+The fix at this producer is unchanged: carry `mpmath.mpf` from source and
+serialize with `_precision.fmt`.
 
 ## Next step
 
