@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:46:03.021100+00:00",
-  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
+  "computedAt": "2026-08-30T08:01:39.157081+00:00",
+  "commitSha": "735a7a141c70d667d169309bcf29766723b5b6df",
   "assertions": [
     {
       "name": "both_sides_strong_duality",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 20,
   "computation": "fusion-process-joint-h15-lp",
   "scriptFile": "fusion_process_joint_h15_lp.py",
-  "scriptHash": "fbfb6b31d8bb",
-  "scriptCommitSha": "2d89cf7cc3dd109e93f6e22bf4471ff24a4990ec",
+  "scriptHash": "7108d4756aa9",
+  "scriptCommitSha": "d290a9292f0bb6c4dc08721518fe454231ca63af",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

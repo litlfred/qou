@@ -63,11 +63,11 @@
     },
     "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
   },
-  "scriptHash": "c52c7fc0ee56",
+  "q0AnchorReason": "inherited: no q0 arithmetic in this producer; all chi inputs (NUCLEI[*]['chi']) are q0-evaluated witnesses declaring q0Anchor='proton'",
+  "scriptHash": "8e36dcdfcea9",
   "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
-  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
-  "computedAt": "2026-08-30T07:42:32.659852+00:00",
+  "commitSha": "735a7a141c70d667d169309bcf29766723b5b6df",
+  "computedAt": "2026-08-30T08:01:06.116868+00:00",
   "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "q0Anchor": "proton"
 }

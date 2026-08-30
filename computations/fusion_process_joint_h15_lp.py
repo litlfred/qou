@@ -155,9 +155,14 @@ def main() -> int:
     ok = all(r["lp"].get("duality_gap") is not None and
              abs(float(r["lp"]["duality_gap"])) < 1e-6 for r in (ri, rf))
     # split multiplicativity checks (exact split union, both sides; factors
-    # from the regenerated per-subject SDP witnesses)
-    mult_fin = abs(float(rf["tr15_branched"]) - 0.99426104515176 * 0.9877436881158096)
-    mult_init = abs(float(ri["tr15_branched"]) - 0.5751722457697739 * 0.22931010210455652)
+    # read LIVE from the committed per-subject SDP witnesses, never hardcoded
+    # (Copilot review, PR #6129))
+    import json as _json
+    def _tr(atom):
+        w = _json.load(open(os.path.join(HERE, f"nucleus-real-sdp-{atom}.witness.json")))
+        return float(w.get("data", w)["tr_M"])
+    mult_fin = abs(float(rf["tr15_branched"]) - _tr("he4") * _tr("neutron"))
+    mult_init = abs(float(ri["tr15_branched"]) - _tr("deuteron") * _tr("tritium"))
 
     from qou_substrate.witness import WitnessBuilder
     wb = WitnessBuilder("fusion-process-joint-h15-lp", engine="python", output_dir=HERE)

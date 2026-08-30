@@ -118,8 +118,9 @@ def main() -> int:
     a2ev, a2od = (A2 + A2bar) / 2, (A2 - A2bar) / 2
     print(f"  alpha^2 odd/even = {mp.nstr(a2od / a2ev, 12)}   -tanh(2 ln q0) = {mp.nstr(-mp.tanh(2 * lam), 12)}")
     ok &= abs(a2od / a2ev + mp.tanh(2 * lam)) < mpf("1e-55")
-    # not-pure numerically: C(1/q) differs from both C(q) and -C(q)
-    ok &= abs(Cbar - C) > 1 and abs(Cbar + C) > 1
+    # not-pure numerically: C(1/q) differs from both C(q) and -C(q),
+    # measured RELATIVE to |C| (no arbitrary magnitude; Copilot, PR #6129)
+    ok &= abs(Cbar - C) > mpf("1e-40") * abs(C) and abs(Cbar + C) > mpf("1e-40") * abs(C)
 
     print(f"\nRESULT: {'PASS' if ok else 'FAIL'} — EM coupling = e^lambda * (bar-even B), "
           "alpha = e^-lambda/B, alpha^2 = e^-2lambda/B^2: provably mixed parity, "
