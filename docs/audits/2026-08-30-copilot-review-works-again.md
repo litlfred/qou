@@ -22,6 +22,36 @@ Both from `copilot-pull-request-reviewer[bot]` (app id 175728472), both
 The second row matters as much as the first: `folio-assistant` is a *different
 repository*, so this is not a qou-specific setting.
 
+## 🛑 There is a QUOTA, and I exhausted it in thirty minutes
+
+Added after the fact, because it changes the shape of this finding.
+
+The **third** review request on #6122 returned, from the same bot at
+2026-08-30 07:56:06Z:
+
+> *"Copilot was unable to review this pull request because the user who
+> requested the review has reached their **quota limit**."*
+
+So Copilot review here is a **rationed** resource, not a binary
+available/unavailable one. Five requests across two repos in roughly thirty
+minutes — three of which I fired while chasing this very measurement —
+exhausted it. That is my own error and it is worth naming: re-requesting a
+review after every push is expensive in a way nothing in the repo's docs says.
+
+**What this does and does not establish.** It confirms a quota exists and that
+we hit it. It is a *candidate* explanation for the historical zeros, **not an
+established one**, and the reason is a signature mismatch: today's exhaustion
+**announces itself** as a posted review, whereas `qou-gwe9` recorded
+`get_check_runs` returning `total_count: 0` with nothing enqueued and no
+message of any kind. Either the older exhaustion was silent and the message is
+new, or the two are different failure modes. I cannot tell from here, and the
+distinction matters — "we were over quota all along" and "it was off and came
+back" imply different operating rules.
+
+**What is safe to act on:** treat Copilot review as a scarce resource. Request
+it *once* per PR, at the point the branch is actually ready, and wait the ~3–4
+minutes — rather than after every push, which is what burned the quota here.
+
 ## The prior measurement was sound and has expired
 
 This is not a case of a bad measurement being repeated. `qou-gwe9` was careful:
@@ -85,6 +115,23 @@ that also revisits the 15-minute poll duration, and this file is the
 measurement that justifies it.
 
 What is safe to act on immediately, and what this session now does: **request a
-Copilot review and give it a few minutes before merging.** Two data points is
-thin, but the cost of waiting four minutes is four minutes, and the cost of not
-waiting is #6068.
+Copilot review ONCE, when the branch is ready, and give it a few minutes before
+merging.** The cost of waiting four minutes is four minutes; the cost of not
+waiting is #6068; and the cost of requesting after every push is the quota,
+which I spent proving the point.
+
+## A footnote on trusting the reviewer
+
+Of the six findings Copilot produced today, **five were real and one was
+false**. The false one claimed the refutation proofs in
+`2026-08-30-qns-carriers-are-refutable.lean` "leave goals unsolved" because
+`norm_num at h` does not close `False`. It does, when `h` reduces to `False`,
+and the file was verified before and after: `lean`-direct **exit 0, 0 errors, 0
+`sorry`**, with `#print axioms` on the two named proofs showing only `propext`,
+`Classical.choice`, `Quot.sound` — no `sorryAx`.
+
+Recorded because the correct handling was *not* to apply the suggested fix. A
+review bot's finding is a bug report to verify, and the verification here was
+cheap and decisive. Rewriting two working proofs to satisfy a speculative
+comment would have been the same failure as widening a baseline to make a gate
+green.
