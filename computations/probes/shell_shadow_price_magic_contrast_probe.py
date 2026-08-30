@@ -30,10 +30,27 @@ TWO DEFECTS, both measured here.
    precisely why the condition is vacuous: it cannot fail for any A, so passing
    it says nothing about shell closure.
 
-SCOPE (a). A negative about this statistic at the standard-rep partition
-(k-1, 1), which is the function's default and the one its callers use. Other
-partitions of 3A are untested here and could in principle behave differently;
-that is the open question this leaves, not a claim that none can work.
+SCOPE. Two sweeps, and the second closes what the first left open.
+
+  (i) DEFAULT PARTITION (k-1, 1), A = 2..30 -- covers magic 2, 8, 20, 28.
+      Smooth monotone decay, zero local extrema, 29/29 feasible.
+
+ (ii) EXHAUSTIVE OVER PARTITIONS, A = 2..10 -- every one of the 11,660
+      partitions of 3A (p(6)=11 through p(30)=5604), covering magic 2 and 8.
+      `max|y|` over the whole partition space is again monotone decreasing in A
+      (0.0212 at A=2 to 2.28e-13 at A=10), ranking exactly in A order with no
+      magic feature. And **not one partition of the 11,660 violates |y| <= 1**:
+      the level-4 PSD condition cannot fail anywhere in the partition space,
+      not merely at the default. So the vacuity is a property of the criterion,
+      not of the partition choice.
+
+      NOT exhaustive above A = 10: p(60) = 966,467 and p(84) is ~1e9, so magic
+      20, 28, 50, 82, 126 are covered only by sweep (i), at the default
+      partition. The exhaustive claim is for magic A in {2, 8}.
+
+      One artifact worth not over-reading: `min|y|` is exactly 0.0 for some
+      partitions at A = 3,4,5,10, so its ranking across A is degenerate and
+      carries no signal either way.
 
 PRECISION. `shell_shadow_price` returns decimal STRINGS; they are parsed with
 mp.mpf at 40 dps and never through float(). The conclusion is a monotone decay
@@ -52,12 +69,15 @@ for _p in (_ROOT, _ROOT / "substrate",
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
-from sigma_shell_characterization import shell_shadow_price   # noqa: E402
+from sigma_shell_characterization import (                    # noqa: E402
+    shell_shadow_price, shadow_price_at_partition)
+from sympy.utilities.iterables import partitions as _sym_parts  # noqa: E402
 from qou_substrate.witness import WitnessBuilder              # noqa: E402
 
 mp.dps = 40
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 A_MAX = 30
+A_MAX_EXHAUSTIVE = 10   # p(60)=966,467 and p(84)~1e9 put magic 20+ out of reach
 
 
 def main() -> int:
@@ -82,6 +102,33 @@ def main() -> int:
            (y < rows[i - 1][1] and y < rows[i + 1][1]):
             extrema.append(A)
 
+    # ---- sweep (ii): EXHAUSTIVE over every partition of 3A ----
+    # Computed here rather than quoted in the docstring: a number stated
+    # without its producer is the exact defect this probe exists to document.
+    def _parts(n):
+        for d in _sym_parts(n):
+            yield tuple(sorted((k for k, v in d.items() for _ in range(v)),
+                               reverse=True))
+
+    exhaustive, total_parts, total_violations = {}, 0, 0
+    for A in range(2, A_MAX_EXHAUSTIVE + 1):
+        k = 3 * A
+        ys = []
+        for lam in _parts(k):
+            d = shadow_price_at_partition(lam, k)
+            if d is not None:
+                ys.append(mp.mpf(d["shadow_price_abs"]))
+        if not ys:
+            continue
+        nbig = sum(1 for y in ys if abs(y) > 1)
+        total_parts += len(ys)
+        total_violations += nbig
+        exhaustive[A] = {"n_partitions": len(ys),
+                         "max_abs_y": mp.nstr(max(ys), 12),
+                         "n_violating_feasibility": nbig}
+    ex_order = sorted(exhaustive, key=lambda a: -mp.mpf(exhaustive[a]["max_abs_y"]))
+    ex_monotone = ex_order == sorted(exhaustive)
+
     feas_m = sum(1 for _, y in magic if abs(y) <= 1)
     feas_o = sum(1 for _, y in other if abs(y) <= 1)
 
@@ -92,6 +139,9 @@ def main() -> int:
     print(f"feasible |y|<=1, other   : {feas_o}/{len(other)}")
     print(f"y(A=2)  = {mp.nstr(rows[0][1], 8)}")
     print(f"y(A={A_MAX}) = {mp.nstr(rows[-1][1], 8)}")
+    print(f"exhaustive: {total_parts} partitions over A=2..{A_MAX_EXHAUSTIVE}")
+    print(f"  max|y| ranks in pure A order : {ex_monotone}")
+    print(f"  partitions violating |y|<=1  : {total_violations}")
 
     w = WitnessBuilder("shell-shadow-price-magic-contrast", engine="mpmath")
     w.set_description(
@@ -114,6 +164,16 @@ def main() -> int:
     w.add_data("shadow_price_abs_by_A",
                {str(A): mp.nstr(y, 20) for A, y in rows})
     w.add_data("errors", errs)
+    w.add_data("exhaustive_partition_sweep", exhaustive)
+    w.add_data("exhaustive_total_partitions", total_parts)
+    w.add_data("exhaustive_total_feasibility_violations", total_violations)
+    w.add_data("exhaustive_max_abs_y_ranks_in_A_order", ex_monotone)
+    w.add_assertion("no_partition_anywhere_violates_feasibility",
+                    total_violations, 0, tolerance=0,
+                    source=f"{total_parts} partitions of 3A, A=2..{A_MAX_EXHAUSTIVE}")
+    w.add_assertion("exhaustive_max_ranks_in_pure_A_order",
+                    1 if ex_monotone else 0, 1, tolerance=0,
+                    source="a magic feature would break the A ordering")
     w.add_assertion("no_local_extremum_at_any_A", len(extrema), 0, tolerance=0,
                     source="a magic feature would appear as an extremum")
     w.add_assertion("feasibility_holds_for_every_A",
@@ -123,8 +183,11 @@ def main() -> int:
                     1 if monotone else 0, 1, tolerance=0,
                     source="smooth monotone decay admits no shell signal")
     w.add_caveat(
-        "Scope (a): the default standard-rep partition (k-1, 1) only. Other "
-        "partitions of 3A are untested and are the open question this leaves."
+        "Exhaustive over partitions only to A=10 (p(60)=966,467 puts magic 20+ "
+        "out of reach), so that leg covers magic {2, 8}; magic 20 and 28 are "
+        "covered by the default-partition sweep to A=30, and 50/82/126 by "
+        "neither. min|y| is exactly 0.0 at some partitions for A=3,4,5,10, so "
+        "its cross-A ranking is degenerate and is not a signal either way."
     )
     w.save()
     return 0
