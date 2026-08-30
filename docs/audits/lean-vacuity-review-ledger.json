@@ -2845,11 +2845,18 @@
       "pattern": "borrowed-name",
       "line": 260,
       "verdict": "genuine",
-      "file_sha": "e8f3476e6734",
+      "file_sha": "1b4d059238f4",
       "disposition": "state-the-real-proposition",
-      "evidence": "`def markovSymmetrizedV21Character (q) (trace_unsym) : R := trace_unsym * Real.cos (eigenphase q)` and the theorem asserts exactly that, by `rfl`. The `[V21Eigenphase q]` instance is TAKEN AND DISCARDED -- `rfl` uses none of it -- so the docstring's \"Under the eigenphase axiomatisation, the symmetrized character equals ...\" describes a dependence the proof does not have. \"closed form\" in the docstring is an overclaim for a definition restated. Same shape as `is_qou` (already recorded genuine): a hypothesis bound in the signature and unused in the body.",
+      "evidence": "RE-VERIFIED 2026-08-30 after the file sha moved. The declaration is byte-identical; the file changed only at lines 191-215, where `ae8098c3a` renamed the file-local `markovZ` to `cosKernel` (bean `qou-961o`, disambiguating the 13 `markovZ` declarations across both trace conventions). Verdict unchanged: the theorem states `markovSymmetrizedV21Character q t = t * Real.cos (eigenphase q)` and proves it `rfl` -- that IS the def's body, so the theorem re-asserts the definition under a name borrowing Hoefsmit. Worse than an axiom per AGENTS.md §1a: `#print axioms` cannot see a def arm.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T04:25:11Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean::chirality_ideal_4_1_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -2953,13 +2960,20 @@
     "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_atOne::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
-      "line": 96,
+      "line": 98,
       "verdict": "legit",
-      "file_sha": "61b13a54ef48",
+      "file_sha": "11463c7f6278",
       "disposition": "no-change",
-      "evidence": "`classicalJonesAtOne c := (loopValue 1)^(c-1)` is the real classical formula V_L(1) = (-2)^{c-1}; proved by rewrite + `norm_num`, not by table lookup. Contrast the `jonesAtOne` table entries in BraidLinkTypes/multi-link-jones, which are flagged.",
+      "evidence": "RE-VERIFIED 2026-08-30 after the file sha moved. The declaration is byte-identical and moved 96 -> 98; the edit (`30d192ed2`) was to `jonesHopfLink_one` 19 lines above, dropping a dead `rw [Real.sqrt_one]` left over from the convention-D migration. Verdict unchanged (legit): `classicalJonesAtOne 2 = -2` is discharged via `classicalJonesAtOne_eq` + `norm_num` over `loopValue_one`, a real if small computation, and the Jones name is the Jones polynomial value at t=1.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T04:25:11Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_eq_sq_mul_kernel::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -2986,13 +3000,20 @@
     "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean::twoM_content_decomposition::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
-      "line": 64,
+      "line": 69,
       "verdict": "legit",
-      "file_sha": "bd0f37f4ea78",
+      "file_sha": "8d93aa475b47",
       "disposition": "no-change",
-      "evidence": "`twoM n := n*(3n-1)` and the theorem `= n*(n-1) + 2*n^2` is a REAL algebraic identity, general in n, proved by `ring` (3n^2-n = n^2-n+2n^2). The docstring attributes both pieces. A clean false positive of the detector.",
+      "evidence": "RE-VERIFIED 2026-08-30 after the file sha moved. The theorem body (`simp only [twoM]; ring`) and statement are byte-identical; `92fcab5fb` refreshed the module + decl docstrings, which had still described Identity I as a compute-verified n=2..14 input after it became a sorry-free general-n theorem on 2026-08-25. The docstring is now MORE accurate than when the verdict was recorded. Verdict unchanged (legit): `twoM n = n*(n-1) + 2*n^2` is a genuine ℤ ring identity, and the Plancherel / Jucys-Murphy names in the docstring attribute the two pieces to proved in-tree theorems (`PieceA.pieceA`, `identityB_via_wedderburn_unconditional`), not to the literature alone.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T04:25:11Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::electron_not_in_gl2_image::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3087,11 +3108,18 @@
       "pattern": "borrowed-name",
       "line": 425,
       "verdict": "legit",
-      "file_sha": "8862d3cb09e9",
+      "file_sha": "7006e2734a36",
       "disposition": "no-change",
-      "evidence": "A worked COUNTEREXAMPLE: the trace-field-only rule predicts 3 for (-2,3,7) and the measured rank is 6. The docstring states its own purpose -- \"This is why the hypothesis has to be stated, not assumed\" -- which is the honest direction. A negative result carried by literature data is exactly what the tier should NOT flag as a defect.",
+      "evidence": "RE-VERIFIED 2026-08-30 after the file sha moved. The declaration is byte-identical; `a1a06540c` rewrote four `uploads/*.pdf` path references in PROSE to their `library/<doc-id>/` homes (repairing a blanket rewrite). Verdict unchanged (legit): the theorem is a `decide` over hand-entered per-knot data, but it is a stated NEGATIVE -- trace-field degree 3 vs measured rank 6 for (-2,3,7) -- which is the honest form for a refuted rule, and the docstring says so.",
       "tier": "major",
-      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
+      "reviewed_at": "2026-08-30T04:25:11Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZClassicalCoincidence.lean::zCsub_eq_zDsub_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
