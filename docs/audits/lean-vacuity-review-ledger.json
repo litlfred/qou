@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:29Z",
+  "updated_at": "2026-08-30T07:02:30Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -4204,6 +4204,156 @@
       "evidence": "`rfl` reading one arm of the `lengthFn4_for_h3_to_h4 : Fin 24 -> N` table, so it verifies the table entry rather than the Coxeter length. Honest about its purpose -- the docstring says it is \"the value needed by `markov_axiom_identity_witness`\" -- and the table's first six arms are annotated with the permutations they encode. Advisory rather than genuine: a tabulated length function is a reasonable way to carry S_4 data, but nothing here checks it against the inversion count that `coxeterLength` (same module family) computes for real.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dim_q_squares_sum_two::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 92,
+      "verdict": "legit",
+      "evidence": "The constant defs are the RIGHT values, which is what separates this from laundering: `dimqRowPartition (_n)(_q) := 1` and `dimqColPartition (_n)(_q) := 1` discard both arguments, but the trivial and sign channels of H_n(q) ARE one-dimensional at every n and every q, so 1 is correct and the underscore binders say so honestly. The file keeps the higher channels q-dependent (`dimqLshape21 q := q + q^-1`, `dimqPartition31 := qInteger q 3`), so the constants are a genuine special case, not a flattening. Note in passing: `Holds ... at any q` is true but carries no q-content, and the neighbouring `syt_squares_sum_three : 1^2+2^2+1^2 = 6` is correctly labelled **classical** rather than q-deformed.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "6adea58b42ec",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qFactorial_succ::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 84,
+      "verdict": "legit",
+      "evidence": "Real content over a real def. `qFactorial q n = prod_{k<n} qInt q (k+1)` with `qInt q n = sum_{i<n} q^i`, and the theorem is the product recursion discharged by `Finset.prod_range_succ`. Nothing is asserted that the definitions do not earn, and the name is the standard quantum factorial.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "92a92bfafb0d",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean::frobPos_zero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 104,
+      "verdict": "legit",
+      "evidence": "Small but genuine. `FrobPos G x` unfolds to `forall gamma, 0 <= sum_i G gamma i * x i`; at `x = 0` every summand is `G gamma i * 0`, which is what `simp` closes. The claim -- the relaxed LP feasible set is never empty -- is the one the content block makes, and the theorem states exactly it. `Frobenius` here names the Frobenius-positivity constraint family of the operator-selection LP, not a borrowed theorem.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "2f5966cf1e15",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean::selectionInput_injective::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 127,
+      "verdict": "legit",
+      "evidence": "`decide` over hand-entered per-quark data, but the THEOREM is a real combinatorial claim about that data rather than a restatement of it: injectivity of `(genWinding q, (signedWrithe q).sign)` over the six-element `Quark` type could fail and does not, and it is precisely the fact the file needs (charm and strange share `n = 5`, so only the sign separates them). Checked the suspected docstring/def mismatch and there is none: the file defines `T3 = sign(kappa)/2`, so `2*T3` IS `(signedWrithe q).sign`. Conditional, as the file says, on the writhe assignment (PR #4618); that is scope, not vacuity.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "a7e0dcf910ec",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::adjoint_palindromic::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 105,
+      "verdict": "advisory",
+      "evidence": "Correct, and the theorem cannot see the part that matters. `adjointExponents : List Int := [1, 0, -1]` is a literal, and `forall e in it, -e in it` is visible by inspection and closed by `decide`. The bar-symmetry the docstring credits is a property of the CHOICE of that list -- the sl2 adjoint weight set, which the module derives at length -- and the choice is upstream of anything `decide` can check. The file is otherwise careful (it labels H_Ad 'NOT proved here'), so this is a note, not a defect: the theorem restates its own input.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "dbd67fd45020",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::min_max_pair_reconstructs_datum::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 205,
+      "verdict": "advisory",
+      "evidence": "True, and narrower than it reads. `[dtMinus K, dtPlus K] = [dtMin K, dtMax K]` holds only because `dtMinus <= dtPlus` on the two transcribed knots; as a LIST equality it would fail for any knot with `dtPlus < dtMinus`, so it is an ordering accident on two data points rather than the complementarity claim the docstring's 'the pair (H_Ad, R1) recovers the full set-valued DT datum' suggests. Advisory rather than genuine because the general fact IS stated, correctly and for arbitrary `f g`, eleven lines below in `two_scalars_name_what_one_cannot` -- so the file has the content; this instance just reads more general than it is.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "dbd67fd45020",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit52_chiral_grading::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 152,
+      "verdict": "legit",
+      "evidence": "The file's own framing is the answer, and it is exemplary. `ChiralityGradedCount`'s module docstring exists to isolate what needs no input: 'Every theorem below is a statement about *arbitrary* integers, proved outright. The knot-specific numbers (4, 3) then appear only as an *instance*, never as a hypothesis of the general result.' It names the transcription problem explicitly ('Lean cannot verify a transcription from a PDF ... the sorry-free != derived boundary'). This is one of those instances; the general theorems (`barGrading_faithful_general`, `symmetric_scalar_cannot_separate`, `chiral_iff_odd_ne_zero`) carry the content.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "30457713acc0",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_amphichiral::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 157,
+      "verdict": "legit",
+      "evidence": "Same as `dtSplit52_chiral_grading`: an `instance` of the general `amphichiral_collapse` theorem, in a file that separates input-free content from transcribed data by design. Here the instance carries a methodological payload the file spells out -- testing on an amphichiral knot alone is structurally incapable of separating 'scalar' from 'graded', so the cross-knot gate is a logical necessity rather than a preference.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "30457713acc0",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_eq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 161,
+      "verdict": "legit",
+      "evidence": "`dtSplit41 = (3, 3)` so `.1 = .2` by `decide` -- an instance supplying the hypothesis of `amphichiral_collapse`, in the same input-free-core file. Legit for the same reason as its two siblings.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "30457713acc0",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean::wtNumer_eq_zero_iff::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 79,
+      "verdict": "legit",
+      "evidence": "Genuine algebra over a generic `[Field R]`, no anchor and no transcribed datum: `(q^2+1)z^2 - (2q^3+q)z + q^4 = 0 <-> z = q or (q^2+1)z = q^3`, routed through a separately-proved factorisation (`wtNumer_factor`, stated over any `CommRing`) plus `mul_eq_zero`. The two roots are the two admissible Markov parameters, which is the substantive claim; `Markov` names the parameter, not a borrowed theorem.",
+      "reviewed_at": "2026-08-30T04:38:02Z",
+      "file_sha": "e187357a9985",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-08-30"
+      }
     }
   }
 }
