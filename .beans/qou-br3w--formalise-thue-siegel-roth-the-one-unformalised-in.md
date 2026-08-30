@@ -1111,3 +1111,32 @@ REMAINING:
   1. Clear denominators: from alpha_0 in O_K to an arbitrary real algebraic number. One step.
   2. Optional: state the classical form (|x - p/q| < q^{-(2+delta)} has finitely many solutions)
      and derive it, plus the Mathlib-facing ¬LiouvilleWith corollary.
+
+## 2026-08-30 (later) -- Clearing denominators: the height under an integer multiple.
+
+height_divInt_le, height_nsmul_le, height_le_height_nsmul, one_le_height, approximable_nsmul.
+All axiom-clean.
+
+ONE FACT, READ TWICE. For b != 0, reducing a/b divides numerator and denominator, so
+H(a/b) <= max(|a|,|b|) whatever representation you start from. At n*kappa = (n*num)/den that gives
+H(n kappa) <= n H(kappa); at kappa = (n kappa).num/(n (n kappa).den) it gives H(kappa) <= n H(n kappa).
+THE SECOND DOES NOT FOLLOW FROM THE FIRST and is not decoration -- without it every n*kappa could
+have height 1 and the transported heights would not be unbounded, which is the hypothesis Roth
+consumes.
+
+THE EXPONENT LOSS IS REAL, not slack in my estimate. |nx - n kappa| = n|x - kappa|, and
+n H^{-(2+delta)} beats H^{-(2+delta')} only once H^{delta-delta'} >= n, which fails at delta'=delta
+for EVERY H. So approximable_nsmul holds at every delta' < delta and at no delta' = delta. Anyone
+reading the arc should not expect the exponent to survive the scaling.
+
+Written in logs throughout: the condition is (3+delta') log n <= (delta-delta') log H, so the
+threshold handed to the hypothesis is exp((3+delta') log n/(delta-delta')) and the argument is
+linear. No monotonicity of x^c for negative c is needed anywhere.
+
+REMAINING for the general statement:
+  1. THE PLUMBING, which is now the only gap: from IsAlgebraic Q x (x : R) via
+     IsAlgebraic.exists_integral_multiple to a number field K = Q(n x), a real embedding psi, and
+     alpha_0 in O_K with psi(alpha_0) = n x. That is IntermediateField.adjoin + the NumberField
+     instance + O_K membership. Nothing mathematical is left in it, but it is not small.
+  2. Optional: the classical form (finitely many solutions of |x - p/q| < q^{-(2+delta)}) and the
+     Mathlib-facing ¬LiouvilleWith corollary.
