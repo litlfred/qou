@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T09:45:49Z
-updated_at: 2026-08-30T12:52:25Z
+updated_at: 2026-08-30T12:55:53Z
 ---
 
 Surfaced while draining `qou-3e5m`, and this bean exists because **that drain
@@ -114,3 +114,47 @@ would have encoded an open conjecture (sub-problem 3 of
 Two entries this branch added (`casimir_q_factorial_probe`,
 `intermediate_knot_detection`) are deliberately left in the baseline pending
 that decision.
+
+
+## 🛑 SAME DAY — this is NOT new, and the "owner call" I was about to raise is SETTLED
+
+Caught by corpus-grep path 3 one step before putting a question to the author
+that the corpus had already answered.
+
+**`scripts/check-computation-status.py` already classifies this exact shape**
+and calls it **vacuous** — `allPassed: true` over an empty assertions array,
+where `all([]) is True` means the witness reports everything passed having
+tested nothing. Bean **`qou-vfy1`**, measured 2026-08-22: of 221 blocks marked
+`status: "verified"`, **43 were vacuous**. It ships a `--strict-unbacked` flag.
+
+**And the fix I was about to propose is already investigated and WITHDRAWN.**
+Making `WitnessBuilder` emit `allPassed: null` for an empty assertion list was
+rejected under `qou-vfy1` on measurement: about a dozen producers hand-roll
+`return 0 if wit["allPassed"] else 1`, and `None` is falsy, so it converts a
+silent false positive into a **loud false negative**. Do not re-propose it.
+That checker reads `len(assertions)` directly and needs no schema or producer
+change.
+
+### What this bean still adds — a different population, not a duplicate
+
+`check-computation-status.py` walks content blocks, so it only sees a witness
+that some block CITES while claiming `verified`. That is the consequential
+subset and the right thing to gate a paper on. It cannot see a vacuous witness
+no block cites, or one cited by a block with any other status.
+
+    qou-vfy1  :  43 vacuous of  221 `verified` BLOCKS    (consequential subset)
+    qou-srvu  : 420 vacuous of 3280 WITNESSES on main    (superset)
+
+So the detector landed here is the wider hygiene net, and it **ratchets** —
+count may fall, never rise — which the block-level checker does not do. Both
+are now cross-referenced in each other's terms in the new script's docstring.
+
+**Division of labour:** `check-computation-status.py --strict-unbacked` gates
+what a paper CLAIMS; `vacuous_green_witness_audit.py` stops the population
+growing.
+
+**No owner question is outstanding on this bean.** The `allPassed` semantics
+question is closed by `qou-vfy1`. What remains is ordinary draining, one
+witness at a time, and the two entries this branch added stay in the baseline
+as legitimate cases (`casimir_q_factorial_probe` lost its only assertion
+BECAUSE asserting it would have encoded an open conjecture).
