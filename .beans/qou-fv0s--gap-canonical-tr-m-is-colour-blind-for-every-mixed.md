@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T18:21:32Z
-updated_at: 2026-08-30T18:22:29Z
+updated_at: 2026-08-30T18:45:09Z
 ---
 
 ## The canonical tr_M path structurally cannot honour owner ruling R3
@@ -76,3 +76,47 @@ missing is a path from `d_for_ctype` (which is exact, and carries the weighting)
 to a canonical trace for mixed nuclei. Closing it means either widening the wire
 format past a sign, or computing mixed-nucleus traces through the Python ctype
 route instead — a design choice, not a patch.
+
+
+## PRICED — 1.4149e-4 relative, and the corpus answers it both ways (2026-08-30, PR #6309)
+
+The gap above was established but not measured. It is now measured, on the
+deuteron at the proton pin, 50 dps.
+
+**Method.** The trace is affine in the single shift the weighted crossing
+carries: `tr M(d) = tr(A σ_g B) + d·tr(A B)`. Evaluating the Schur-Weyl sum at
+three shift values (blind / weighted / midpoint) settles the whole effect; the
+midpoint lands halfway to **1.8e-71**, the 50-dps floor, so the affine reading
+is measured rather than assumed.
+
+**1. The colour-blind arm is now CROSS-VALIDATED, not inferred.** An independent
+Python route (Hoefsmit matrices + symbolic y_lambda) reproduces the canonical
+Rust value to **1.909e-18** when the weighted crossing gets the *unweighted*
+shift. Independent on both axes — Rust MPFR chi vs Python Hoefsmit, witness-table
+y_lambda vs symbolic. So "canonical is colour-blind" no longer rests on reading
+`sign_for_ctype`.
+
+**2. Magnitude: 8.137e-5 absolute, 1.4149e-4 relative.** That is ~12000x the
+mu-p substrate tension (11.54 ppb), and ~4.9x SMALLER than the per-crossing
+weight difference 6.87855e-4 recorded above — the trace attenuates the
+weighting, it does not amplify it.
+
+**3. The committed witness is on the colour-WEIGHTED arm.**
+`atomic-tr-m-mpfr-50dps.witness.json`'s deuteron entry is 1.48e-7 from the
+weighted sum and 1.416e-4 from the blind one. (That 1.48e-7 is the q_0 pin
+straddle `rho_k_h3a_residual_decomposition.py` already decomposes: 8.34e-8
+straddle + 1.85e-9 witness self-inconsistency.)
+
+**What that changes about this bean.** The design choice is NOT "build the
+colour-weighted route or don't" — both routes are already in the tree, and the
+corpus answers R3 both ways depending on which one a consumer takes. The choice
+is which of the two is canonical, and it is worth 1.4e-4.
+
+**Still open, and still not a patch:** whether the p-n interface should carry
+the flavour weighting is a physical modelling question. The probe prices it; it
+does not settle it.
+
+**Scope-(a):** deuteron only. The linear coefficient tr(A B) is word-specific —
+do NOT quote 1.41e-4 for T / 3He / 4He.
+
+Probe: `computations/probes/colour_weighting_trace_magnitude_probe.py` (5/5).
