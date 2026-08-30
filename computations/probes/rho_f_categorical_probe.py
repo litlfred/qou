@@ -67,6 +67,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 import json
 import sys
 
@@ -111,8 +112,10 @@ if _peel.exists():
 # mpf, not float64 literals: these are 50-dps witness values and a bare Python
 # float truncates them at the 17th digit before any arithmetic runs.
 TR_M: dict = {
-    (1, 0): _mp.mpf("1.0653062286131670"),   # proton
-    (0, 1): _mp.mpf("0.9232332971861535"),   # neutron
+    # CONVENTION FIX (2026-08-30, bean qou-46ab): were convention-C literals,
+    # 7.55% from the canonical D values.
+    (1, 0): tr_m_nucleon("proton"),
+    (0, 1): tr_m_nucleon("neutron"),
     (1, 1): _mp.mpf("0.3882864715477132"),   # deuteron  (D)
     (1, 2): _mp.mpf("0.1040521186755260"),   # tritium   (³H)
     (2, 1): _mp.mpf("0.2065408585622625"),   # helium-3  (³He)

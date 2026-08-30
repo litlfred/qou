@@ -11,6 +11,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -18,8 +19,13 @@ q0 = mp.mpf(Q_50_DIGIT_STR)
 m_e = mp.mpf(M_E_MEV)
 Q_beta_codata = mp.mpf(str(Q_BETA_MEV))
 
-tr_M_p = mp.mpf('1.06530622861316626170946619823')
-tr_M_n = mp.mpf('0.923233297186152879199028120638')
+# CONVENTION FIX (2026-08-30, bean qou-46ab). These were convention-C
+# literals AND float64-laundered on top of it: '1.06530622861316626170…'
+# diverges from the exact C value '1.06530622861316705936…' at the 15th digit
+# (~7.5e-16) — the C number round-tripped through a double, then re-serialised
+# as if it carried 30 real digits. Two defects on one line.
+tr_M_p = tr_m_nucleon("proton")
+tr_M_n = tr_m_nucleon("neutron")
 
 delta_tr = tr_M_p - tr_M_n
 print(f"delta_tr: {delta_tr}")
