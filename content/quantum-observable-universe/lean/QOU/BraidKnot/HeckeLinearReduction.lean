@@ -112,4 +112,124 @@ theorem symAltRatio_half (q : K) (hq : q ≠ 0) (h2 : (2 : K) ≠ 0)
   have hX : (q + 1 / q) / 2 ≠ 0 := div_ne_zero hsum h2
   rw [hn, hd, div_neg, div_self hX]
 
+
+/-! ### Determinants of the transfer factors — the `Phi_2` half
+
+`Phi_3` is governed by the sym/alt RATIO lemmas above; `Phi_2 = sum ln|det M_i|`
+is governed by the DETERMINANT of the same factors. For the factor `c*sigma + d`
+the transfer matrix is `T = ![![c*h + d, c], ![c, d]]`, so
+
+    det T = (c * h + d) * d - c ^ 2.
+
+The point of the four lemmas below is a dichotomy: of the six crossing types in
+`tbl:atomic-braid-table1-data`, FIVE have `|det| = 1` and contribute nothing to
+`Phi_2`; only the proton-neutron factor does not. That is what collapses `Phi_2`
+to a single pair-count, and it is why `Phi_2` — unlike `Phi_1` — needs no
+Markov parameter and is therefore convention-independent.
+
+These are stated over a `CommRing` with no ordering and no `q` at all: `h` is a
+free variable, so nothing here depends on `h = q - q⁻¹`, on the substrate
+anchor, or on the C/D convention. (§7c: generic base ring; the archimedean
+reading specialises later.) -/
+
+section Determinants
+
+variable {R : Type*} [CommRing R]
+
+/-- The transfer-matrix determinant of the factor `c * sigma + d`. -/
+def detT (h c d : R) : R := (c * h + d) * d - c ^ 2
+
+/-- `d = 0` (the `pp` and `ee` crossings, `c = 1`): `det = -1`. -/
+theorem detT_zero (h c : R) : detT h c 0 = -c ^ 2 := by
+  unfold detT; ring
+
+/-- `d = -c*h` (the `nn` and `pe` crossings, `c = 1`): `det = -c^2`, so `-1`
+at `c = 1`. Note this is the SAME determinant as the `d = 0` case even though
+the two have opposite chirality — `Phi_2` cannot separate them, which is
+exactly why `Phi_3` is the invariant that carries the sign information. -/
+theorem detT_full (h c : R) : detT h c (-(c * h)) = -c ^ 2 := by
+  unfold detT; ring
+
+/-- The identity factor `c = 0`, `d = 1` (the `ne` crossing): `det = 1`. -/
+theorem detT_id (h : R) : detT h 0 1 = 1 := by
+  unfold detT; ring
+
+end Determinants
+
+/-! ### The proton-neutron determinant — the only one that is not a unit
+
+The `pn` factor needs division by `2`, so it is stated over a field alongside
+the ratio lemmas rather than over a bare `CommRing`. -/
+
+section PnDeterminant
+
+variable {K : Type*} [Field K]
+
+/-- `d = -h/2` (the `pn` crossing, `c = 1`): `det = -(1 + h^2/4)`.
+
+THIS IS THE ONLY CROSSING OF THE SIX WITH `|det| ≠ 1`. Every other factor
+contributes `0` to `Phi_2 = sum ln|det M_i|`, so the whole invariant collapses
+to one term per proton-neutron pair:
+
+    Phi_2 = Z * N * log (1 + h^2/4).
+
+Equivalently `1 + h^2/4 = ((q + q⁻¹)/2)^2 = ([2]_q / 2)^2` when `h = q - q⁻¹`,
+which is the form used in the notation register.
+
+`h` is free — nothing here fixes `h = q - q⁻¹`, so the statement is independent
+of the substrate anchor AND of the Markov convention (no `z` occurs). That
+independence is the load-bearing part: it is why the C→D excision moves `Phi_1`
+and leaves `Phi_2` alone. -/
+theorem detT_half (h : K) (h2 : (2 : K) ≠ 0) :
+    (1 * h + -(h / 2)) * -(h / 2) - 1 ^ 2 = -(1 + h ^ 2 / 4) := by
+  have h4 : (4 : K) ≠ 0 := by
+    have : (4 : K) = 2 * 2 := by norm_num
+    rw [this]; exact mul_ne_zero h2 h2
+  field_simp
+  ring
+
+/-- The `[2]_q` form of the same determinant, for `h = q - q⁻¹`:
+`1 + h^2/4 = ((q + q⁻¹)/2)^2`. -/
+theorem one_add_hSq_div_four (q : K) (hq : q ≠ 0) (h2 : (2 : K) ≠ 0) :
+    1 + (q - 1 / q) ^ 2 / 4 = ((q + 1 / q) / 2) ^ 2 := by
+  have h4 : (4 : K) ≠ 0 := by
+    have : (4 : K) = 2 * 2 := by norm_num
+    rw [this]; exact mul_ne_zero h2 h2
+  field_simp
+  ring
+
+end PnDeterminant
+
+/-! ### The chirality count
+
+`Phi_3 = w * ln q` with `w` an even integer, and under the all-pairs chain
+structure `w` is a signed pair count: `+1` for each `pp` and `ee` pair, `-1` for
+each `nn` and `pe` pair, `0` for `pn` and `ne`. With `Z` protons, `N` neutrons
+and `Z` electrons those counts are `C(Z,2)`, `C(Z,2)`, `C(N,2)` and `Z^2`.
+
+The lemma below is the resulting collapse. It is stated with the binomials
+already doubled (`2 * C(n,2) = n * (n-1)`) so that it holds over any commutative
+ring with no division and no `Nat` subtraction. -/
+
+section ChiralityCount
+
+variable {R : Type*} [CommRing R]
+
+/-- The all-pairs chirality count collapses:
+
+    2 * [ 2*C(Z,2) - C(N,2) - Z^2 ]  =  -2*Z - N*(N-1),
+
+written with `2*C(n,2) = n*(n-1)` so no division appears. The `Z^2` term is the
+proton-electron pairs, the two `C(Z,2)` are `pp` and `ee`, and `C(N,2)` is `nn`.
+
+Note what survives: the `Z^2` from `pe` cancels the `2*Z^2` coming from the two
+proton/electron `C(Z,2)` terms, leaving only a LINEAR proton contribution
+against a QUADRATIC neutron one. That asymmetry is the whole content of the
+formula — it is why `w` grows like `N^2` and not like `A^2`. -/
+theorem chiralityCount_collapse (Z N : R) :
+    2 * (Z * (Z - 1)) - N * (N - 1) - 2 * Z ^ 2 = -2 * Z - N * (N - 1) := by
+  ring
+
+end ChiralityCount
+
 end QOU.BraidKnot

@@ -72,22 +72,43 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 ```lean
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 
-/-- The conjectural canonical pair-gen functional `f_2(q, V_i, V_j)`;
-    expected six-term `T_3` Kashaev form, derivation open. -/
-noncomputable def pair_gen_functional
-    {R : Type*} [Field R] (q V_i V_j : R) : R :=
-  sorry
+/-- The quantum dilogarithm `Li₂^q` as a concrete real function — the
+    Faddeev–Kashaev series, evaluated over `ℝ`. -/
+noncomputable def qDilog (q x : ℝ) : ℝ :=
+  ∑' n : ℕ, x ^ (n + 1) / ((n + 1 : ℝ) * (1 - q ^ (n + 1)))
 
-/-- Conjecture axiomatisation: a single canonical functional
-    reproduces ρ_K^pair-gen to sub-percent accuracy. The specific Li_2^q
-    recovery bound requires the graded-expansion infrastructure, 
-    so it exists as a `Prop` class assumed downstream as `[PairGenCanonical]`. -/
+/-- Markov datum for one atomic braid: the Wedderburn-traced
+    per-generator volumes `|V̂_i|`. -/
+structure AtomicBraid where
+  vols : List ℝ
+
+/-- The measured (CODATA) pair-gen contribution — an external empirical
+    datum, hence an opaque *function* of the braid's Markov data. -/
+axiom physMass : AtomicBraid → ℝ
+
+/-- Pairwise sum `Σ_{i<j} f (vᵢ) (vⱼ)`. -/
+def pairSum (f : ℝ → ℝ → ℝ) : List ℝ → ℝ
+  | [] => 0
+  | v :: vs => (vs.map (f v)).sum + pairSum f vs
+
+/-- The six-term theorem's `T₃` Kashaev-limit functional
+    `f(x, y) = -z² · Li₂^q(-|x·y|)`. -/
+def kashaevT3 (Li2q : ℝ → ℝ) (z x y : ℝ) : ℝ :=
+  -z ^ 2 * Li2q (-(|x * y|))
+
+/-- Conjecture axiomatisation (§3b class, content-bearing). One concrete
+    `T₃` functional recovers every atomic braid's measured pair-gen mass
+    to sub-percent accuracy, uniformly in the braid. **No instance is
+    provided** — that is the open Kashaev-limit derivation. -/
 class PairGenCanonical : Prop where
-  exists_subpercent_recovery :
-    ∀ (M : ℝ), 0 ≤ M → ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
+  content :
+    ∃ (q z : ℝ), 1 < q ∧
+      ∀ K : AtomicBraid, 0 < physMass K →
+        |pairSum (kashaevT3 (qDilog q) z) K.vols - physMass K| ≤ physMass K / 100
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```
+
 
 ## Resolution path
 

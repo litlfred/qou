@@ -102,7 +102,12 @@ theorem topological_mass_conjecture (tmf : TopologicalMassFormula) :
     The complement decomposes into two regular ideal tetrahedra, each of
     volume `Cl₂(π/3) = 3 · Λ(π/3) ≈ 1.01494`.
     Computed by SnapPy; value from Bloch-Wigner dilogarithm. -/
-noncomputable def vol_figure_eight : ℝ := 2.029883212819307250042408
+-- CORRECTED 2026-08-30 (bean `qou-f8lit`): the 24th decimal place read `8`; the
+-- canonical 2·Cl₂(π/3) = 2.029883212819307250042405108549… has `5`. The literal
+-- carried a "24 dps verified (OEIS A091518)" claim that was false at exactly the
+-- digit it claimed. err was 2.9e-24 -- harmless numerically, and a false precision
+-- claim regardless. Found by scripts/known-constant-literal-audit.py.
+noncomputable def vol_figure_eight : ℝ := 2.029883212819307250042405
 
 /-- CODATA 2022 Muon-Electron mass ratio.
     NIST: 206.768 2827(46), rel. uncertainty 2.2 × 10⁻⁸.
@@ -308,7 +313,7 @@ lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
 
 | Parameter    | Narrative Origin           | NIST Value (uncertainty)       | Lean Representation   |
 |--------------|----------------------------|--------------------------------|-----------------------|
-| Vol(4₁)      | Hyperbolic Geometry        | 2.029883212819307250042408 (OEIS A091518)| `vol_figure_eight`    |
+| Vol(4₁)      | Hyperbolic Geometry        | 2.029883212819307250042405 (OEIS A091518)| `vol_figure_eight`    |
 | m_μ / m_e    | CODATA 2022                | 206.7682827(46)                | `experimental_mu_e_ratio` |
 | ℏ_q          | Quantum Planck Field       | 0.09908                        | `quantum_planck q`    |
 | q            | Substrate Coupling         | 1.1097                         | `substrate_q`         |

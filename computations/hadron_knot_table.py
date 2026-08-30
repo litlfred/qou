@@ -254,15 +254,21 @@ w.add_parameter("total_nf_entries", total_terms)
 
 # Assertions: check key traces AND LP stability
 for r in results:
-    if r["A"] <= 4:
-        w.add_assertion(
-            f"tr_M({r['name']})",
-            computed=r["tr_M"],
-            expected=r["tr_M"],
-            tolerance=1e-10,
-            unit="dimensionless",
-            source="hecke_core.build_atom_nf → nf_tr",
-        )
+    # The `tr_M(<atom>)` assertion that stood here read
+    # `computed=r["tr_M"], expected=r["tr_M"]` under
+    # `source="hecke_core.build_atom_nf -> nf_tr"` — it advertised a check
+    # against a named producer while comparing the value to itself, so it
+    # passed for any number the producer returned (bean `qou-26f2`).
+    #
+    # Removed rather than repaired, because there is nothing to repair it TO:
+    # each `tr_M` has one derivation route, so no assertion over it can fail,
+    # and `w.add_data("atoms", results)` below already records every one of
+    # these values with full precision. The assertion was contributing a
+    # guaranteed pass to `allPassed` and nothing else; deleting it loses no
+    # information and removes a claim that was never made.
+    #
+    # The LP-stability assertion below is the model: `computed` is the measured
+    # predicate and `expected=1` is fixed, so it can fail.
     # LP stability assertion: all atoms must be Frobenius-stable
     # (gluon-dressed nucleons satisfy Gx ≥ 0). Catches missing operators.
     if r["A"] >= 2:

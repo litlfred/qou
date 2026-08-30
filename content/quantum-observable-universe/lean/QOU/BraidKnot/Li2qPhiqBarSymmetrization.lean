@@ -103,8 +103,27 @@ class Li2qPhiqBarSymmetrization where
       classical-limit chain. -/
   bar_holds_at_classical : ∀ n : ℕ, bar_holds_at 1 n
 
-/-- Default instance discharging the q = 1 case for all n. -/
-instance : Li2qPhiqBarSymmetrization where
+/-- **Model with the predicate read as its own witness.**  `bar_holds_at`
+    is *defined* to be `fun q _n => q = 1`, so the conjectural field
+    `bar_holds_at_classical : ∀ n, bar_holds_at 1 n` unfolds to `1 = 1`
+    and closes by `rfl`, uniformly in `n`.  Nothing about bar
+    symmetrisation, the Faddeev coefficients or `li2qCoeff` is encoded;
+    the field is satisfied by choosing the predicate to be the equation
+    the field asserts.
+
+    The classical-limit fact it gestures at *is* proved in this file,
+    unconditionally and without the class:
+    `li2qCoeff_bar_invariant_at_q_eq_one`.  This model does not use it,
+    and a real model would.
+
+    **A `def`, not an `instance`, since 2026-08-24**, and given a name:
+    it was anonymous, so resolution supplied it under the generated name
+    `instLi2qPhiqBarSymmetrization`.  Nothing in the corpus takes
+    `[Li2qPhiqBarSymmetrization]`, so the class documented as consumed
+    "via [Instance] per AGENTS.md §3b-cond" has no consumers.
+
+    Callers name it: `letI := li2qPhiqBarSymmetrization_qEqOne`. -/
+def li2qPhiqBarSymmetrization_qEqOne : Li2qPhiqBarSymmetrization where
   bar_holds_at q _ := q = 1
   bar_holds_at_classical _ := rfl
 

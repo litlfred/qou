@@ -95,6 +95,11 @@ export default chapter({
       blocks: ["sm-params-neutrino"],
     }),
     section({
+      title: "The results surface and what gates the rest",
+      label: "sec:sm-results-surface",
+      blocks: ["sm-results-index", "sm-gating-objects"],
+    }),
+    section({
       title: "Open problems",
       label: "sec:sm-open-problems",
       blocks: ["sm-open-problems"],

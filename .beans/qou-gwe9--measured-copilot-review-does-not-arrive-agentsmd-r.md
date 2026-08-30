@@ -1,11 +1,11 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: completed
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-28T15:06:25Z
+updated_at: 2026-08-30T08:02:14Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -133,3 +133,88 @@ Residual fixed here: the banner HEADING still read "Two of the three
 original gates no longer exist" while its own table and closing paragraph
 both say three. Corrected -- that heading is the line a skimming agent
 reads.
+
+
+
+## REOPENED 2026-08-30 — Copilot reviews again; the rule was self-sealing
+
+Write-up: `docs/audits/2026-08-30-copilot-review-works-again.md`.
+
+**Measured first-hand today, two repos:**
+| PR | requested | review | latency |
+|---|---|---|---|
+| qou#6122 | 07:24Z | **07:27:39Z** | ~3 min |
+| folio-assistant#153 | 07:48Z | **07:51:52Z** | ~4 min |
+
+Both `copilot-pull-request-reviewer[bot]`, both COMMENTED with line-level
+findings. 5 of 6 findings were real defects; 4 were mine. The second row is the
+important one — a DIFFERENT REPO, so this is not a qou-specific setting.
+
+**This bean was not wrong.** It recorded n=2 controlled, called its five
+background PRs weak evidence, and said outright it did NOT prove org-level
+disablement. The later strengthening (5 requests + `get_check_runs
+total_count: 0` mechanism + #5532 + ~12 background PRs) was also sound. And it
+was not merely slow: **#5495, this bean's own controlled case, still shows zero
+reviews eight days on.** The behaviour changed between 2026-08-27 and 08-30.
+
+**THE DEFECT IS DOWNSTREAM.** AGENTS.md rule 10 turned the observation into an
+instruction: *"that wait can only expire, so skip it and record why (citing
+qou-gwe9)"*. That instruction PREVENTS THE OBSERVATION THAT WOULD FALSIFY IT —
+an agent who never waits never sees a review arrive. Self-sealing.
+
+**Measured cost this session:** I merged #6068 at 06:59Z having requested
+Copilot at ~06:57Z, ~2 min earlier, because the rule said not to wait. #6068
+shows zero reviews — not because none was coming, but because I merged inside
+the latency window. Every finding Copilot later made on #6122 applied to code
+that also shipped in #6068.
+
+**Generalises:** the corpus has many correctly-scoped measurements that became
+standing facts (the 4.6e6 slope, ~840 muon witnesses, the 39/73/58 % figures).
+This is that class plus a turn of the screw — the stale fact is wired into an
+instruction that suppresses re-measurement. Test for any such rule: *if this
+became false, what would notice?* If the answer is "nothing, the rule says
+don't look", it needs an expiry or a cheap periodic probe.
+
+**Still to do (NOT done here):** rewrite the Copilot row in AGENTS.md rule 10
+and prepare-merge-auto Phase 1b from "does not arrive" to "arrives in ~3-4
+min; wait for it". Left out of the audit deliberately — it belongs with a
+revisit of the 15-minute poll duration, and this file is the measurement that
+justifies it.
+
+
+
+## 🛑 QUOTA — the mechanism, found the hard way (2026-08-30 07:56Z)
+
+Third request on #6122 returned, from the same bot:
+
+> *"Copilot was unable to review this pull request because the user who
+> requested the review has reached their **quota limit**."*
+
+**Copilot review is RATIONED, not binary available/unavailable.** Five requests
+across two repos in ~30 min — three of them fired while chasing this very
+measurement — exhausted it. That is my own error and nothing in the repo's docs
+warns of it.
+
+**Candidate, NOT established, explanation for the historical zeros.** Signature
+mismatch: today's exhaustion ANNOUNCES ITSELF as a posted review, whereas this
+bean recorded `get_check_runs total_count: 0` with nothing enqueued and no
+message at all. Either the older exhaustion was silent and the message is new,
+or they are different failure modes. Cannot tell from here, and it matters:
+"over quota all along" and "off, then back" imply different operating rules.
+
+**Actionable now:** request Copilot ONCE per PR, when the branch is actually
+ready, and wait ~3-4 min. Not after every push.
+
+## Footnote: 5 of 6 findings real, 1 false — and the false one mattered
+
+Copilot's second #6122 review claimed the refutation proofs "leave goals
+unsolved" because `norm_num at h` does not close `False`. **It does**, when
+`h` reduces to `False`. Verified: lean-direct exit 0, 0 errors, 0 sorry, and
+`#print axioms` on both named proofs shows only propext / Classical.choice /
+Quot.sound — no sorryAx.
+
+The correct handling was NOT to apply the suggested fix. Rewriting two working
+proofs to satisfy a speculative comment is the same failure as widening a
+baseline to make a gate green.
+
+**Independent corroboration (second session, same day):** PR #6124 (check run enqueued, in_progress) and PR #6129 (full review submitted ~4 min after request: 4 substantive inline comments, all verified-real, addressed same session). Matches the reopened record above; and the quota mechanism explains that session's later thread-resolution 'rate limit' errors.

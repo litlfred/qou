@@ -51,14 +51,17 @@ trivial instance to 'close' it"), the absence of an instance is the honest
 representation of the open state: any `[VolumeBridge R β]`-conditional result
 is genuinely *modulo the Volume Conjecture*.
 
-> **Follow-up (recorded here, not actioned):** the sibling class
-> `MassEndomorphism` in `MassEndomorphismConjecture.lean` ships a global
-> `instance canonical` (all-zeros) and `MassEndomorphismTrivial.lean` ships
-> `trivial_int_zero`; both make `[MassEndomorphism R β]` synthesizable, so
-> conditionality against *that* class is vacuous. Those instances are governed
-> by the GAP-18a scoping audits (`docs/audits/2026-05-04-gap-6a-18a-scoping.md`)
-> and are out of scope for bean `2g2u`; demoting them to non-instance `def`s is
-> tracked separately. `VolumeBridge` is the instance-free alternative.
+> **Follow-up, now actioned (2026-08-24):** the sibling class
+> `MassEndomorphism` in `MassEndomorphismConjecture.lean` shipped a global
+> `instance canonical` (all-zeros) and `MassEndomorphismTrivial.lean` shipped
+> `trivial_int_zero`; both made `[MassEndomorphism R β]` synthesizable, so
+> conditionality against *that* class was vacuous. Both are now `def`s, so
+> the class is no longer globally inhabited and a caller who wants the zero
+> model must name it. The **mathematical** gap the models stand in for is
+> unchanged and still governed by the GAP-18a scoping audits
+> (`docs/audits/2026-05-04-gap-6a-18a-scoping.md`): there is still no
+> deterministic recipe `Braid n → MassEndomorphism R β`. `VolumeBridge`
+> remains the instance-free carrier for the open Volume-Conjecture bridge.
 
 -- Ref: [manuscript] conj:mass-endomorphism §"Established results" (Steps 1–3)
 -- Ref: [kashaev1997] https://doi.org/10.1007/BF01238857

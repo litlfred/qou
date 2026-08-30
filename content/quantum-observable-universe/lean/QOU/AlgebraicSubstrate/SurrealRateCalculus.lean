@@ -76,17 +76,37 @@ class SurrealRateCalculus (F : Type u) [CommRing F] where
       `E(δ) · ε = δ²` for every drift `δ`. -/
   rogueZero_order : ∀ δ : F, roguePartCost δ * epsilon = δ ^ 2
 
-/-- **Classical-limit instance** (ε = 1).
-    At the classical limit, the Reeb infinitesimal collapses to 1
-    and every rate equation becomes trivial:
-    - `Δ = 1 = 1³` ✓
-    - `Ω · 1 = 1 · 1 = 1` ✓
-    - `Z³ · 1⁴ = 1 · 1 = 1` ✓
-    - `E(δ) · 1 = δ² · 1 = δ²` ✓
-    This is the "no infinitesimal" baseline; the substantive
-    surreal content arises when ε is genuinely infinitesimal in
-    `𝐍𝐨` via the standard-part embedding. -/
-instance surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
+/-- **Classical-limit model** (ε = 1).  Every rate quantity is `1`, so
+    three of the four rate equations degenerate to `1 = 1`:
+    - `Δ = 1 = 1³`
+    - `Ω · 1 = 1 · 1 = 1`
+    - `Z³ · 1⁴ = 1 · 1 = 1`
+    - `E(δ) · 1 = δ² · 1 = δ²` — the only field that still varies with
+      its argument, and only because `roguePartCost` is *defined* as
+      `fun δ => δ ^ 2`.
+
+    This is the "no infinitesimal" baseline: it fixes no rate ratio,
+    because with `Δ = Ω = Z = 1` there are no ratios to fix.  The
+    substantive content arises when `ε` is genuinely infinitesimal in
+    `𝐍𝐨` via the standard-part embedding.
+
+    **A `def`, not an `instance`, since 2026-08-24.**  The carrier was
+    universally quantified (`(F : Type u) [CommRing F]`), so typeclass
+    resolution supplied `ε = 1` for every commutative ring.
+    `surreal_rate_calculus_conditional` below is stated over
+    `[S : SurrealRateCalculus F]` and reads as conditional on the rate
+    table; with this instance in scope the class binder cost a caller
+    nothing and the table it named was the all-ones one.
+
+    Worth stating precisely, because it is *not* a vacuity claim about
+    that theorem: at `ε = 1` its other hypothesis `hε_inf` (`ε^(n+1)`
+    below every positive `λ`) is unsatisfiable in an ordered field, so
+    the theorem cannot actually be *applied* at this model.  The defect
+    is that the model is supplied silently — a reader of the signature
+    could not see which rate data the conclusion was about.
+
+    Callers name it: `letI := surrealRateCalculus_classicalLimit F`. -/
+def surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
     SurrealRateCalculus F where
   epsilon := 1
   massGap := 1
@@ -138,9 +158,11 @@ theorem surreal_rate_calculus_conditional
     -- universally quantified rather than fixed at `4/3`: `[CriticalExponent
     -- (4/3)]` would be dischargeable by `⟨rfl⟩` at any call site, which would
     -- make the dependency record satisfy itself and record nothing.
-    {α : ℝ}
-    [QAubinLions] [NSCounterexample] [CriticalExponent α]
-    [BlowupYekutieli] [RegularityBreakdown]
+    -- NB `S` is already the SurrealRateCalculus instance above; the breakdown
+    -- locus is `Sbrk` to avoid shadowing it.
+    {α : ℝ} {K ω : ℝ → ℝ} {Sbrk : Set ℝ}
+    [QAubinLions K] [NSCounterexample ω] [CriticalExponent α]
+    [BlowupYekutieli] [RegularityBreakdown Sbrk]
     (hε_pos : 0 < S.epsilon)
     (hε_inf : ∀ (n : ℕ) (lam : F), 0 < lam → S.epsilon ^ (n + 1) < lam) :
     (0 < S.massGap ∧ 0 < S.reebPeriod)

@@ -171,27 +171,38 @@ bar involution being isospin conjugation (§6); (iv) the channel's dual-price
 shift $\Delta y_0^* = +0.4225$ is dominated by the free neutron
 (+0.4206) — the final state pays almost its whole net-constraint price on
 the emitted nucleon, which is the SDP-side shadow of the channel's kinetic
-release; (v) the $n_{\mathrm{target}} \ne \mathrm{tr}_M$ "anomaly" is **resolved at
-the producer** (2026-08-30): `nucleus_real_sdp.py` defines
-$n_{\mathrm{target}} := \sum t_\lambda$ over the **positive-norm**
-(bar-fold representative) blocks only, and the deuteron is the only
-subject of the four whose witness records *any* negative-norm blocks
-(3, carrying $\mathrm{tr}_M - n_{\mathrm{target}} = 6.25\times10^{-4}$;
-the other three record zero). Two readings, deliberately kept apart: the
-deuteron's $6.2\times10^{-4}$ bar-odd-fold weight is **measured**; the
-zeros for ³H/⁴He may reflect their *partial* character tables rather
-than a true absence of negative-norm content — settling which requires
-completing those tables (the known Phase-B gap), not a probe.
+release; (v) the $n_{\mathrm{target}} \ne \mathrm{tr}_M$ "anomaly" was
+**resolved twice, and the second resolution retires the first**
+(2026-08-30, beans `qou-nnu3` then `qou-lzgv`). Round one explained the
+gap mechanically: `nucleus_real_sdp.py` restricts the target to
+positive-norm blocks, and the committed deuteron witness carried 3
+negative-norm blocks ($6.25\times10^{-4}$ of $\mathrm{tr}_M$). Round two
+adjudicated the underlying disagreement and found those blocks were an
+**artifact of a stale solve**: the committed deuteron witness held the
+pre-import-cone $\mathrm{tr}_M = 0.38836$, while the live trace
+(`tr_m_atom_zn(1,1)`) and the χ table both give $0.57517$. The witness
+was **regenerated from the live trace**: the live deuteron has **zero**
+negative-norm blocks, $n_{\mathrm{target}} = \mathrm{tr}_M$
+bit-identical (like the other three subjects), active set collapsed from
+seven blocks to three ($(4,2), (5,1), (6)$), and $y_0^*$ flipped sign to
+$+0.0643$. The earlier "the deuteron alone carries bar-odd-fold weight"
+observation is **retracted** — it measured the stale solve, and the ²H
+row of the table above is the stale record (kept as history). The
+"partial character tables" reading offered alongside it is also retired:
+all four tables are complete (§4c).
 
 **(vi) LR support conservation (probe, 2026-08-30, bean `qou-89xc`).**
 [`fusion_process_lr_support_probe.py`](../../computations/probes/fusion_process_lr_support_probe.py)
 induces each side's SDP active sets into the common frame $H_{15}$ by
 Littlewood–Richardson (exact integer combinatorics, no tolerance):
-$|S_{\mathrm{init}}| = 79$, $|S_{\mathrm{fin}}| = 23$ of the 176
+$|S_{\mathrm{init}}| = 47$ (re-measured 2026-08-30 against the
+adjudicated live deuteron active set; the first measurement, 79, ran
+against the stale seven-block set), $|S_{\mathrm{fin}}| = 23$ of the 176
 partitions of 15, and $S_{\mathrm{fin}} \subsetneq S_{\mathrm{init}}$
-**strictly** — every $H_{15}$ block the final state (⁴He + n) can reach
-is already reachable from the initial state (D + T), and the channel
-contracts the induced support $79 \to 23$. So there is no LR-level
+**strictly — the containment survives the adjudication** — every
+$H_{15}$ block the final state (⁴He + n) can reach is already reachable
+from the initial state (D + T), and the channel contracts the induced
+support $47 \to 23$. So there is no LR-level
 obstruction to an $H_{15}$ channel model built on these active sets, and
 the channel's structural signature is *support contraction* — consistent
 with fusion concentrating trace weight (the $\mathrm{tr}_M$ products move
@@ -199,6 +210,45 @@ $0.089 \to 0.982$ across the same channel). Necessary-not-sufficient: the
 supports say which blocks a joint model may use, nothing about magnitudes;
 the joint solve itself (constraint transfer, Phase-B LR constraints)
 remains the open research under `qou-dpy1`.
+
+### 4c. The joint $H_{15}$ solve (2026-08-30, beans `qou-t37g`/`qou-dpy1`)
+
+Two corrections and a result. **First, the "blocked on ³H/⁴He character
+tables" framing above was stale**: re-measured, all four subjects' block
+tables are complete ($p(6)=11$, $p(9)=30$, $p(12)=77$, $p(3)=3$ entries) —
+the "partial" flag was legacy truncation lore. **Second, the joint solve is
+therefore cheap**: for a split element of the parabolic
+$H_a \times H_b \subset H_{15}$ the block characters branch by
+Littlewood–Richardson,
+$\chi^\nu(x \otimes y) = \sum c^\nu_{\lambda\mu}\, \chi^\lambda(x)\chi^\mu(y)$,
+so both sides' $H_{15}$ cost vectors come from the existing per-subject
+tables plus the cached LR tables — no new character computation.
+[`fusion_process_joint_h15_lp.py`](../../computations/fusion_process_joint_h15_lp.py)
+(witness `fusion-process-joint-h15-lp.witness.json`, 4/4 assertions, both
+solves clarabel with duality gaps $\le 2.6\times10^{-43}$) solves the
+bar-fold operator-selection LP for both sides in the one frame:
+
+| side | pos-blocks | $n_{\mathrm{target}}$ | $y_0^*$ | active |
+|---|---|---:|---:|---|
+| D + T | 8/176 | +0.13189 | +0.0016948 | 7 |
+| ⁴He + n | 8/176 | +0.98208 | +0.0007731 | 7 |
+
+**Result: the two sides select the *same* seven active $H_{15}$ channels**
+(overlap = union; asserted in the witness) — the canonical $T_w$ active
+support is invariant across the fusion process, sharpening §4b(vi)'s
+containment into same-frame equality of the *selected* channels. The
+same-frame dual-price shift is $\Delta y_0^* = -9.217\times10^{-4}$. The
+final side exhibits exact split multiplicativity —
+$\mathrm{tr}_{15}(^4\mathrm{He} \otimes n) = \mathrm{tr}(^4\mathrm{He})\cdot\mathrm{tr}(n)$
+to $2.5\times10^{-9}$, the f64 accumulation floor of the branching sum —
+and — after the `qou-lzgv` adjudication regenerated the deuteron witness
+to the live $\mathrm{tr}_{H_6} = 0.57517$ — the **initial side is
+split-multiplicative too** (asserted in the witness, 5/5). The
+committed-witness inconsistency this paragraph originally flagged (χ table
+0.5752 vs SDP witness 0.38836, the `tr_m_atom_via_transfer` import-cone
+drift pair) is thereby resolved at the witness; the joint-solve results
+above were computed from the live χ table throughout and are unchanged by
+the adjudication.
 
 ## 5. The electron layer — ¹H's 13.6 eV is imported
 

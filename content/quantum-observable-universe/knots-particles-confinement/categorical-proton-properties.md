@@ -6,8 +6,13 @@ The inverse relation $\sigma_1^{-1} = \sigma_1 - h_{\mathrm{A}} \mathbf{1}$ yiel
 **Step 2: Typed crossings.**
 Quark flavor rigidly specifies the crossing eigenvalue. The $\mathfrak{u}$-$\mathfrak{u}$ crossing preserves the eigenvalue $+q$. The $\mathfrak{d}$-type crossings impose a full $-h_{\mathrm{A}}$ shift. Mixed $\mathfrak{u}$-$\mathfrak{d}$ crossings incur a half-shift $-\tfrac{1}{2}h_{\mathrm{A}}$.
 
-**LP stability constraint.**
-The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ violates Frobenius positivity. A single Hopf link $L_- = \sigma_1\sigma_0$ is the minimum additional structure capable of restoring stability. The gluon is strictly required by the LP dual. The integer LP dual enumerates all feasible gluon combinations and selects the configuration minimizing $|\mathrm{tr}_M|$.
+**LP stability constraint.** *(Partly withdrawn 2026-08-24.)*
+
+~~The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ violates Frobenius positivity. A single Hopf link $L_- = \sigma_1\sigma_0$ is the minimum additional structure capable of restoring stability. The gluon is strictly required by the LP dual.~~
+
+Those three sentences rest on $\mathrm{tr}_M(e^-) = z^3$, a weight retired on 2026-05-19 in favour of the Markov-recursion value $h z^2 + z$. Under the live convention the bare element has $\mathrm{tr}_M = +0.544$, not $-0.006$, and so does every intermediate step of the typed build. There is no instability for a gluon to repair, and the bare nucleon lies inside the feasible set. Whether the gluon is required on some other ground is open; the [gluon ledger](#rem:gluon-stabiliser-ledger) carries the measurement.
+
+What survives unchanged is the *scope* of the enumeration. The integer LP dual enumerates all feasible gluon combinations and selects the configuration minimizing $|\mathrm{tr}_M|$. That enumeration ranges over every non-trivial braid word inside the crossing cap, not over $L_\pm$ alone. The trefoil word $e^- = \sigma_0\sigma_1\sigma_0$ is inside the range and is admissible; it is not selected because it loses the minimisation, not because anything forbids it ([gluon ledger](#rem:gluon-stabiliser-ledger)).
 
 **Step 3: Proton NF.**
 Applying typed crossings and Hopf link stabilisation yields $\mathrm{net}(\mathfrak{p}) = +1.0065$. The dominant term is $e^- \approx +1.022$. The Hopf gluon link actively redistributes normal-form weight from $\sigma_1$ into the trefoil channel.

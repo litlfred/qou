@@ -1,34 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T22:49:15.882306+00:00",
-  "commitSha": "136f22bd281848718126c090f8ee22494dccf87e",
-  "assertions": [
-    {
-      "name": "delta_n_squared_is_placeholder",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "canonical_a_k_method_unknown",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "neutron_error_localised_to_T1_trace_asymmetry",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    }
-  ],
+  "computedAt": "2026-08-30T06:40:19.463992+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "56b2b06c3360",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "2568e83cbe2c",
+  "scriptCommitSha": "2d9a4b0abb8364ad08f135ba76d2e62f02d1322c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/braid_encoding_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/braid_encoding_audit.py"
   },
   "description": "Phase 1.8 audit per user directive: validate braid encodings of p and n, classify all knot operations (SDP / Lean / fitted / fallback / placeholder), track γγ pair-production per particle, and identify where the structural differences really are.  Findings: (1) Δ_n² is a placeholder (returns 1.0 always); (2) canonical_a_k for ³H/³He/⁴He has method:unknown in source witness; (3) framework's own fresh_derivation_pn_true_sdp.py documents that absolute m_p / m_n are NOT directly derivable — only differences project to observables — but Strategy-3 ignores this and predicts m_n directly, hence the −8.3% error.",
   "contentBlock": "prop:atomic-mass-gb-nf",
@@ -1190,9 +1178,9 @@
       "proton": {
         "strategy_3_tr_M": null,
         "strategy_3_tr_M_missing": true,
-        "phase_1_6_closed_form": 1.6331535640480805,
+        "phase_1_6_closed_form": 1.884319467254976,
         "markov_trace_assembly_chain": 1.0653062285923893,
-        "axiomatic_content_block": 1.63315
+        "axiomatic_content_block": 1.88432
       },
       "neutron": {
         "strategy_3_tr_M": null,
@@ -1202,7 +1190,7 @@
       },
       "electron": {
         "strategy_3_tr_M": "(not in Strategy-3 mass table — uses bare nucleon braids only)",
-        "phase_1_6_closed_form": 0.7302040595096823
+        "phase_1_6_closed_form": 0.8485266070590096
       }
     },
     "structural_finding": {
@@ -1211,15 +1199,37 @@
       "implication": "Strategy-3 (atomic_braid_mass_table.py) computes |tr_M(p)| and |tr_M(n)| separately and combines via E_0 calibration. This violates the framework's own claim — the bare absolute traces are not observables. The −8.3% neutron error is a direct consequence: the σ↔σ⁻¹ asymmetry between uud and udd is real in the Hecke algebra but does NOT correspond to a physical absolute-mass observable in the framework's stated semantics.",
       "actionable_path": "The framework predicts m_n − m_p (an observable) via the (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u) formula at < 1 ppm. Strategy-3 should consume this difference formula directly rather than deriving m_n independently from |tr_M(n)|. A two-step calibration: (a) anchor m_p via CODATA (or via a different absolute-mass channel), (b) derive m_n = m_p + (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u)."
     },
+    "audit_findings": {
+      "delta_n_squared_is_placeholder": {
+        "finding": "full_twist_scalar(A) returned mp.mpf(1) unconditionally",
+        "source": "atomic_braid_mass_table.full_twist_scalar",
+        "verifiable_here": false,
+        "note": "defining module no longer present in the repo; the legacy record is atomic-braid-mass-table.witness.json, which delta_n2_placeholder_audit.py reads by design"
+      },
+      "canonical_a_k_method_unknown": {
+        "finding": "canonical_a_k for 3H/3He/4He had method: 'unknown'",
+        "source": "jet-knot-invariants.witness.json",
+        "verifiable_here": false,
+        "note": "that witness now carries neither a `method` field nor a `canonical_a_k` key; re-check against the current producer before citing this finding"
+      },
+      "neutron_error_localised_to_T1_trace_asymmetry": {
+        "finding": "the neutron error localises to the T1 trace asymmetry",
+        "source": "neutron_error_diagnostic.py",
+        "verifiable_here": false,
+        "note": "asserted from a sibling script's output, not recomputed here; that script is still present"
+      }
+    },
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",
-        "sha256": "4b2da48476f30937d886312539a2cbc9d802b6a090d81e998e3545dbb9bea757",
-        "size_bytes": 18134,
-        "commitSha": "a565201b866a99c843cd8e85aaa08a52d691b28d",
-        "scriptCommitSha": "299567fa008ae080c59a726e2f09d68eb5e0a074",
-        "computedAt": "2026-05-19T04:06:28.829453+00:00"
+        "sha256": "8cf352f90dc4c1e06117b175b689c049f00025359eddc0e89ad008f9fefa7b01",
+        "size_bytes": 16325,
+        "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+        "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+        "computedAt": "2026-08-24T14:27:44.884232+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

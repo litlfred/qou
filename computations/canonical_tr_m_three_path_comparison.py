@@ -101,8 +101,27 @@ def main() -> int:
     # correctly (as visible in stdout) but the witness write fails.
     # Inline the printed-to-stdout values from the actual run.
     peel_map = {
-        "proton":  "1.0653062286131670",  # matches bridge to all digits
-        "neutron": "0.9232332971861535",  # matches bridge
+        # proton / neutron are DELIBERATELY ABSENT. (2026-08-30, bean qou-46ab.)
+        #
+        # They used to hold convention-C literals annotated "matches bridge to
+        # all digits" — false, since the bridge computes
+        # 1.14575969245730086968… under D, 7.55% away.
+        #
+        # My first fix seeded them from `tr_m_nucleon()`, and that was WORSE
+        # than the stale literal: this map is the markov_peel column of a
+        # THREE-PATH comparison, and `tr_m_nucleon` reads the BRIDGE witness.
+        # It made peel == bridge by construction, so `peel_vs_bridge_ratio`
+        # below — printed under "should be ≈ 1.0" — would have read exactly
+        # 1.0 for both nucleons. A cross-check that cannot fail is not a
+        # cross-check. Caught by Copilot on PR #6116.
+        #
+        # There is no honest value to put here: markov_peel's own witness has
+        # the documented format bug noted above, so no D-frame peel value for
+        # p/n exists on disk. Absent keys fall through the `except (TypeError,
+        # ValueError)` below and print an empty cell — which is the truthful
+        # rendering of "this path has no recorded value", and is what the
+        # stale literals were obscuring. Restore them only from an actual
+        # markov_peel run, never from the bridge.
         "deuteron": "0.3882864715477132785110659223165687998713135876719",
         "tritium":  "0.10405211867552603688391599234819295816123485565186",
         "helium-3": "0.20654085856226245265787611060659401118755340576172",
@@ -137,7 +156,14 @@ def main() -> int:
         # Numeric ratios where comparable
         try:
             bv = float(bridge_map.get(atom, 0))
-            pv = float(peel_map.get(atom, 0))
+            # A MISSING peel value must not become 0.0. It did: the default
+            # here is `0`, so removing the (wrong) proton/neutron seeds turned
+            # a fabricated PASS into a fabricated FAIL — "ratio = 0.0 ✗" reads
+            # as markov_peel disagreeing with the bridge, when in truth this
+            # path recorded nothing. Absent is absent; skip the row.
+            if atom not in peel_map:
+                raise ValueError("no markov_peel value recorded for this atom")
+            pv = float(peel_map[atom])
             pyv = float(pyhecke_map.get(atom, 0))
             rows.append({
                 "atom": atom,

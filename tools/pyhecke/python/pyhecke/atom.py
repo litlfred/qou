@@ -30,6 +30,7 @@ from __future__ import annotations
 import math
 from fractions import Fraction
 import numpy as np
+import mpmath as _mp
 
 # Substrate constants + Gram / NF primitives — pyhecke owns these
 # (M2b inversion landed earlier; pyhecke.gram is the canonical source).
@@ -38,6 +39,7 @@ from pyhecke.gram import (  # type: ignore[import-not-found]
     W_SYM, W_STD, W_ALT,
     NF_BASIS, NF_NAMES,
     hm, hm_exact, nf_tr, nf_net,
+    h_mp, hm_mp,
     G,
     _H_FRAC, _Z_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
     _Q_FRAC, _QI_FRAC,
@@ -780,7 +782,24 @@ def build_nucleon_nf(quarks):
     Generator assignment: pair (i,j) uses gen = i (the lower quark index).
     For 3 quarks: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1.
 
-    No separate gluon dressing — B₃ IS the gluon structure.
+    ⚠️  NO GLUON TERM — and this is a DEFECT, not a convention.
+
+    This builder stops at B₃ + quarks = 9 crossings. The line that used to
+    stand here, "No separate gluon dressing — B₃ IS the gluon structure",
+    asserted that omission was deliberate. Nothing backs it: it cites no
+    proposition, no ILP, no SDP, and it contradicts the framework it sits in.
+    `computations/sdp_gamma_gamma_to_qqbar.py` decomposes the proton into FOUR
+    SDP components — H₃ for the Borromean B₃, H₃ per quark pair, **H₂ for the
+    2·σ₀ gluon self-coupling**, then LR cross-level embedding — so the gluon
+    term is a separate derived component, not something B₃ already contains.
+    `prop:mass-endomorphism-tower` carries the ILP derivation, cited at the
+    gluon lines of `build_atom_nf`.
+
+    6 (B₃) + 3 (quarks) + 2 (gluon) = 11 is the SDP-consistent budget. Use
+    `build_atom_nf` / `build_atom_nf_exact`, which build it in braid order.
+
+    Kept for the consumers that already read `PROTON_NF` / `NEUTRON_NF`;
+    do not build anything new on it. Bean qou-1qsw.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³
@@ -802,6 +821,116 @@ def build_nucleon_nf(quarks):
 
 
 
+def nucleon_braid_word(quarks, dps: int = 50):
+    """The nucleon's 11 crossings as a `(c, d, gen)` word in **BRAID ORDER**.
+
+    This is `build_atom_nf`'s per-nucleon block expressed as a word rather
+    than folded into an NF, so a trace routine can consume it directly:
+
+        B_3 = (sigma_0 . sigma_1^-1)^3        6 crossings, ALTERNATING
+        quark pairs (0,1)@0 (0,2)@0 (1,2)@1   3
+        gluon self-coupling 2 . sigma_0@0     2   (ILP, prop:mass-endomorphism-tower)
+
+    **Why the order is not free.** `sigma_0` and `sigma_1` do not commute, so
+    re-sorting the crossings by generator is a different element of `H_3(q)` --
+    not a re-parameterisation. It matters most exactly where it looks most
+    innocuous: on `B_3` alone, at the substrate q_0,
+
+        (s0 s1^-1)^3  tr_M = 0.99856216383678726595     the Borromean braid
+        s0^3 s1^-3    tr_M = 0.18006453953550109830     its monotone re-sort
+
+    an 81.97 % difference, and essentially the whole 82.06 % gap seen on the
+    full nucleon. The alternation IS the Borromean structure that `B_3` is
+    named for, so flattening it substitutes a different link rather than
+    perturbing the intended one.
+
+    ⚠️  DO NOT SWAP THIS IN FOR THE MONOTONE WORD. It is provided for
+    comparison and for callers who genuinely want the literal per-nucleon
+    braid; it is NOT established as the correct H_3 reduction, and measurement
+    currently points the other way.
+
+    The independent Markov-peel route
+    (`binding_combiner_markov_peel_fallback.py`) builds from
+    `atom_braid_word_3A` — the 3A-strand word, which never passes through
+    `nucleon_gen_chains` and so shares no ordering assumption with it — and its
+    committed deuteron value `0.575172243917771870826535` matches what the
+    MONOTONE H_3 word gives, not what this braid-order word gives (0.151968…).
+    So the monotone form appears to be the correct H_3 *reduction* of the 3A
+    braid, even though it is not the literal sub-braid, and the fact that its
+    shape was originally chosen to satisfy `chi_all_lambda` (a fine-Bratteli
+    transfer matrix that applies `O_g` once per generator in increasing order
+    and raises on a non-monotone word) does not by itself make it wrong.
+
+    What remains established: the two orderings are different elements, 82 %
+    apart on tr_M, essentially all of it from `B_3`. What is NOT established is
+    which is the right reduction. Bean qou-1qsw.
+    """
+    hv = h_mp(dps)
+    one, zero = _mp.mpf(1), _mp.mpf(0)
+    w = []
+    for _ in range(3):                       # B_3, alternating
+        w.append((one, zero, 0))             # sigma_0
+        w.append((one, -hv, 1))              # sigma_1^-1
+    for i, j, gen in [(0, 1, 0), (0, 2, 0), (1, 2, 1)]:
+        a, b = quarks[i], quarks[j]
+        if a == b == 'u':
+            w.append((one, zero, gen))
+        elif a == b == 'd':
+            w.append((one, -hv, gen))
+        else:
+            w.append((one, -hv / 2, gen))
+    w.append((one, zero, 0))                 # gluon 1
+    w.append((one, zero, 0))                 # gluon 2
+    return w
+
+
+def build_nucleon_nf_mp(quarks, dps: int = 50):
+    """float64-free twin of `build_nucleon_nf`, at the TRUE substrate q_0.
+
+    Same construction, same crossing order, same generator assignment — only
+    the arithmetic differs. Every coefficient is `mpmath.mpf` and `h` comes
+    from `gram.h_mp(dps)`, i.e. `q_0 - q_0**-1` at the 50-dps substrate
+    string.
+
+    **Why not `hm_exact`.** The module's Fraction path is exact arithmetic at
+    the RATIONAL MODEL `q = 111/100`, which differs from the substrate
+    `q_0 = 1.1099785827513808` by 1.93e-5 relative (gram.py says so at
+    `_Z_FRAC`). Measured on this builder's own output, that propagates to a
+    **1.66e-5 relative deviation** — 16.6 ppm — so routing it through the
+    Fraction path would be float-free and eleven orders of magnitude WORSE
+    than the float64 it replaced. Exactness of the arithmetic and correctness
+    of the anchor are separate properties, and only the mp path has both.
+
+    Measured agreement with the float64 builder: max relative difference
+    1.4e-16 (proton) and 6.0e-17 (neutron), i.e. the float path was already
+    correct to its own precision — this twin extends the precision, it does
+    not correct a value.
+
+    **What this does not change.** `build_nucleon_nf`, `PROTON_NF` and
+    `NEUTRON_NF` are untouched, so no existing consumer moves. This is the
+    additive twin the module already uses elsewhere (`build_atom_nf` /
+    `build_atom_nf_exact`); callers who need more than float64 opt in.
+    """
+    hv = h_mp(dps)
+    nf = [_mp.mpf(1)] + [_mp.mpf(0)] * 5
+    one, zero = _mp.mpf(1), _mp.mpf(0)
+    # B_3 confinement: (sigma_0 . sigma_1^-1)^3
+    for _ in range(3):
+        nf = hm_mp(nf, one, zero, 0, dps)        # sigma_0
+        nf = hm_mp(nf, one, -hv, 1, dps)         # sigma_1^-1
+    # Quark pairwise crossings: (0,1), (0,2), (1,2); generator = lower index
+    for i, j in [(0, 1), (0, 2), (1, 2)]:
+        qi_, qj_ = quarks[i], quarks[j]
+        gen = i
+        if qi_ == qj_ == 'u':
+            nf = hm_mp(nf, one, zero, gen, dps)      # sigma_gen
+        elif qi_ == qj_ == 'd':
+            nf = hm_mp(nf, one, -hv, gen, dps)       # sigma_gen^-1
+        else:
+            nf = hm_mp(nf, one, -hv / 2, gen, dps)   # (sigma + sigma^-1)/2
+    return nf
+
+
 # Precomputed nucleon NFs
 PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 
@@ -810,6 +939,8 @@ NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 
 __all__ = [
     "_ID_NF",
+    "build_nucleon_nf_mp",
+    "nucleon_braid_word",
     "_PROTON_G0", "_PROTON_G1", "_NEUTRON_G0", "_NEUTRON_G1",
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",

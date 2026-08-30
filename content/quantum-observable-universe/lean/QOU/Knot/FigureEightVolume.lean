@@ -79,24 +79,43 @@ theorem kashaev_pos (N : ℕ) (hN : 1 ≤ N) : 0 < kashaev N :=
     `e^{iπ/3}`, each of volume `Cl₂(π/3)`).
 
     STATEMENT-REPAIR NOTE (2026-07-26, bean qou-yf47). This was previously
-    the truncated rational decimal `2.029883212819307250011597804990`, which
-    differs from the transcendental `2·Cl₂(π/3)` by ≈ 1e-30 — making the
-    conjectured limit `limit_eq_vol` AS THEN STATED mathematically false and
-    undischargeable. The exact definition is the honest target of the
-    E5 saddle/deviation program (`QOU/Knot/Clausen.lean` E5c bricks); the
-    decimal is demoted to the approximation carrier `VOL_4_1_decimal`. -/
+    the rational decimal `2.029883212819307250011597804990` — which, as of the
+    2026-08-30 correction below, is now known to have been not merely truncated
+    but WRONG from its 21st significant figure. The note is left with the value
+    it actually carried; a historical record that silently adopts a later
+    correction stops being a record. -/
 noncomputable def VOL_4_1 : ℝ := 2 * QOU.Archimedean.Cl_2 (π / 3)
 
 /-- `VOL_4_1` agrees with the Clausen-filler volume carrier
     `Vol_figure_8 = 2·Cl₂(π/3)` definitionally. -/
 theorem VOL_4_1_eq_vol_figure_8 : VOL_4_1 = QOU.Archimedean.Vol_figure_8 := rfl
 
-/-- The 30-digit decimal approximation of `Vol(4_1)`, numerically witnessed by
-    `computations/figure_eight_kashaev_volume.py`. This is an APPROXIMATION
-    carrier only — `VOL_4_1 = 2·Cl₂(π/3)` is transcendental and differs from
-    this rational by ≈ 1e-30; no formal identity between the two is claimed
-    (that would need certified interval arithmetic on the `Cl₂` series). -/
-noncomputable def VOL_4_1_decimal : ℝ := 2.029883212819307250011597804990
+/-- The 30-digit decimal approximation of `Vol(4_1)`. An APPROXIMATION carrier
+    only — `VOL_4_1 = 2·Cl₂(π/3)` is transcendental; no formal identity between
+    the two is claimed (that would need certified interval arithmetic on `Cl₂`).
+
+    ⚠ **CORRECTED 2026-08-30 (bean `qou-f8lit`) — this literal was WRONG.**
+
+It read `2.029883212819307250011597804990`, which is **wrong from the 21st significant
+figure** (error `3.08e-20`) against the canonical
+`2·Cl₂(π/3) = 2.0298832128193072500424051085490…`. Verified by three independent
+routes: `2·Cl₂(π/3)`, `6·Λ(π/3)`, and `2·Im Li₂(e^{iπ/3})`.
+
+**This is worse in kind than a truncation.** A truncated literal is correct but short;
+this one presented 30 digits of which only 20 were right, and the extra digits invite
+the trust that a short value would not get. `MassDerivation.vol_figure_eight` carries the
+correct value at 24 digits, so the corpus disagreed with itself.
+
+Nothing in Lean was unsound: `abs_VOL_4_1_sub_decimal_lt` bounds the gap by `1/10` and
+`3.08e-20 < 1/10` comfortably, so the theorem held either way — which is exactly why a
+coarse certified bound does not protect a decimal's digits.
+
+Known family, partially drained: bean `qou-jgew` found **seven** wrong hand-typed
+`Vol(4₁)` values in one session, and `docs/audits/2026-06-21-q0-clusterD-and-vol41-fixes.md`
+fixed one `.py` probe. Those drains never reached this Lean carrier. **Still live:** six
+`computations/` sites carry the sibling variant `2.0298832128193072500115970029`, one of
+them a committed witness that needs a producer re-run. -/
+noncomputable def VOL_4_1_decimal : ℝ := 2.029883212819307250042405108549
 
 /-- **Volume conjecture for the figure-eight** (Kashaev–Murakami–Murakami),
     a PROVED theorem for `4_1` (Andersen–Hansen; Ohtsuki) whose saddle-point /

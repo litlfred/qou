@@ -535,8 +535,8 @@ def main() -> int:
         )
         .add_assertion(
             "crystal_pole_counter_well_defined",
-            computed=len(results),
-            expected=len(results),
+            computed=len(results) > 0,
+            expected=True,
             source="docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2",
         )
         .add_assertion(

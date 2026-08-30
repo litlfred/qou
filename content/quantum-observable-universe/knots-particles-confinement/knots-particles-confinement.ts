@@ -79,6 +79,9 @@ export default chapter({
         "confinement-universality-proof",
         "derived-atom",
         "nucleon-from-photons-summary",
+        // `gluon-stabiliser-ledger` was here on landing (2026-08-24) and moved
+        // to §12 the same day — see the note there. Placed by `interprets`,
+        // measured by the detangler, and the two disagree.
       ],
     }),
 
@@ -321,12 +324,38 @@ export default chapter({
       blocks: [
         "categorical-proton",
         "categorical-proton-properties",
+        // Moved here from §2 on 2026-08-24, the day it landed, on the
+        // detangler's measurement rather than on topic. It was placed in §2
+        // because it `interprets: def:derived-atom` and explains that
+        // definition's step 4 — a good reason, but the only one pointing
+        // there. Against it: NO §2 block references it, both its referrers
+        // are in this section, and both blocks it `uses` are in this section,
+        // so in §2 it emitted two forward refs (`-> rem:ilp-solution-count-
+        // unwrap`, `-> rem:categorical-proton-properties`) and here it emits
+        // none — chapter total 10 -> 8. Checked against all nine detangler
+        // criteria before and after: nothing new appears, and section-band,
+        // topic-coherence and no-dependency-cycle pass either way. The
+        // `interprets` edge now points backward, which is what a dependency
+        // should do. Revert if the editorial call outweighs the measurement.
+        "gluon-stabiliser-ledger",
         "categorical-neutron",
         "categorical-neutron-properties",
         "categorical-meson",
         "meson-scale-independence",
         "meson-scale-independence-calibration",
         "meson-scale-independence-proof",
+        // Placement chosen by the detangler's forward-ref metric rather than
+        // by topic (bean `qou-bzy0`). The obvious home for the antiquark
+        // ledger was §2 — it `interprets: def:derived-atom` and closes a gap
+        // in that section's step 2 — but measured, §2 costs two new forward
+        // refs (`-> def:categorical-meson` and
+        // `-> rem:pion-mass-hyperbolic-threshold`) while here it costs none:
+        // 10 chapter-wide either way, the same 10 that were already there.
+        // Six placements tie at zero and all six are in this section; this is
+        // the only one that does not split the `meson-scale-independence`
+        // statement / calibration / proof triple.
+        "pion-mass-hyperbolic-threshold",
+        "antiquark-channel-ledger",
       ],
     }),
   ],

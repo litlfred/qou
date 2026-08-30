@@ -1014,12 +1014,13 @@ ephemeral.
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    > | Copilot review | **🛑 CORRECTED 2026-08-30 — reviews DO arrive, and are RATIONED.** Measured first-hand on `qou#6122` (~3 min) and `folio-assistant#153` (~4 min), both from `copilot-pull-request-reviewer[bot]`, both with substantive findings — and on qou#6104/#6116, where the reviews landed minutes AFTER those PRs were merged on this row's old guidance, carrying six findings including a real correctness regression. **A quota exists**: five requests across two repos in ~30 min returned *"reached their quota limit"*, so do NOT re-request after every push. The mechanism for the historical zeros is UNSETTLED (three candidates weighed in [`docs/audits/2026-08-30-copilot-review-works-again.md`](docs/audits/2026-08-30-copilot-review-works-again.md), bean `qou-gwe9` **reopened**); note `get_check_runs` still returns `total_count: 0`, so that signal does not discriminate and must not be read as "no review is coming". Superseded text follows: Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
     >
     > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
     > one.** All three original gates are gone. The agent's own verification
     > is not the last gate standing — it is the *only* gate. Act accordingly:
-    > state the verification you actually ran, and do **not** wait on Copilot.
+    > state the verification you actually ran. (The "do not wait on Copilot" that
+> stood here is corrected above — reviews arrive, subject to quota.)
     > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
     > check run that is never created; that wait can only expire, so skip it
     > and record why (citing `qou-gwe9`) rather than burning the window.
@@ -1335,7 +1336,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1371,8 +1372,35 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
-   characters are searchable this way.
+   and re-deriving one. **536** document directories are searchable this
+   way (this read *"332 documents / 7,313 sections"* until 2026-08-30 —
+   low by 62 %, not merely old).
+
+   **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
+   (added 2026-08-30).** Some documents were ingested with their text in
+   `library/<doc-id>/ocr/page-*.txt` and only a **stub** in `sections/`, so
+   the command on the line above cannot see their mathematics at all:
+
+   ```sh
+   grep -rln <topic> library/*/ocr/     # the tier the three above miss
+   ```
+
+   Measured, not estimated: **25 of 536** directories carry an `ocr/`; ten
+   of the eleven single-`sections/`-file directories hold **under 15 %** of
+   their OCR bytes in `sections/`, six of them under 3 %. The worked case is
+   the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
+   Ricca 1992, _Helicity and the Calugareanu invariant_**, whose `sections/`
+   is **1,916 bytes of JSTOR download banner** against **46,511 bytes** of
+   real text in `ocr/` (4.1 %). A `sections/` grep for *helicity* returns
+   several other documents and **not this one** — the single most on-point
+   held source for the mass/binding self-vs-mutual linking question, invisible
+   to the documented path. `1992evansberger` (*A Hierarchy of Linking
+   Integrals*, 2.2 %) is hidden the same way.
+
+   So a clean `sections/` grep is **not** evidence the library lacks a topic.
+   Run the `ocr/` tier before concluding a source is not held — the whole
+   point of path 5 is to catch a citation, and this is exactly where the
+   citations that matter have been hiding.
 
    This path exists only because the sources were sectioned into text.
    Before that they were 339 PDFs and grep could not see them, which is

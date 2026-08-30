@@ -1,11 +1,11 @@
 ---
 # qou-m7a2
 title: 'Conjecture carrier: RegularityBreakdown — fabricated trivial-zero instance, asserts nothing'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T19:46:36Z
-updated_at: 2026-08-29T19:46:37Z
+updated_at: 2026-08-30T07:22:32Z
 parent: qou-rq9n
 ---
 
