@@ -909,3 +909,64 @@ then rewrite the tests that guard it, and the tests would still pass.
 change needing a witness regeneration, which is why `qou-aj91` is doing them one
 at a time with a regen per producer rather than in a sweep. That is the correct
 shape for the work; the contribution here is the denominator and the exclusions.
+
+
+## 2026-08-30 — the 189-producer migration: worklist built, agents dispatched, 20 triaged
+
+Built the worklist mechanically: AST-parsed every `*.py` outside `_deprecated/`,
+kept literals that FULL-match a q0 decimal (an earlier prefix-only regex crashed
+on a string that starts `1.109` and contains non-ASCII), excluded comment-only,
+except-fallback and `startswith` sentinel occurrences, and excluded the substrate
+package, its tests and `docs/`. **Exactly 189 producers**, matching the earlier
+independent count.
+
+### The breakdown changes the design
+
+    169  UNDECLARED in q0_anchor_manifest.json
+     14  declared proton
+      5  declared ambiguous
+      1  declared muon
+
+**169 of 189 have no manifest answer.** So this is not "resolve to what the
+manifest says" — for 89% of the population the manifest says nothing, and
+choosing wrong moves physics by 11.5 ppb. It is 169 judgements about intent.
+
+Dispatched four READ-ONLY agents over the 169, one per batch, classifying each
+into CROSS-ANCHOR / MUON-INTENT / PROTON-INTENT / UNCLEAR with cited evidence and
+a confidence. Read-only deliberately: agents sharing this checkout must not run
+producers (never two at once) and must not race the git index — a previous agent
+already caused one index race here.
+
+### The 20 declared, triaged by hand — and the heuristic already failed twice
+
+Counting cross-anchor markers (`cross.anchor`, `both anchors`, `q_proton`,
+`anchors =`):
+
+    HANDS OFF, cross-anchor (markers 5-32):
+      c_3_categorical_derivation_attempt (15)
+      qbeta_c3_complex_habiro_cross_anchor_probe (32)
+      qbeta_c3_complex_singularity_probe (11)
+      qbeta_chain4_kashiwara_step3_cross_anchor (29)
+      qbeta_chain4_kashiwara_step4_n5 (9)
+      qbeta_hoefsmit_chi_cross_anchor_stability_probe (22)
+      qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe (21)
+      qbeta_qbessel_crossanchor_smoothness_refutation (10)
+      qbeta_ck_basis_constrained_pslq (5)
+      qbeta_ck_qholonomic_recurrence_test (17)
+
+**Half of the declared set is cross-anchor**, where the A literal is the muon arm
+of a deliberate comparison. Migrating any of them destroys one arm.
+
+**The marker count has two known false negatives, both caught by hand:**
+
+- `sigma_all_evaluator` scores **1**, and I verified earlier this session that
+  its comment reads *"Pinning both sides here makes the test survive every future
+  re-pin … the two anchors are deliberate."* It is cross-anchor.
+- `mu_p_pin_sensitivity_map` scores **0**, and it is a **mu-p pin sensitivity
+  map** — cross-anchor by construction, from its name alone.
+
+So the marker heuristic is a screen, not a verdict — the same "keyed on how it is
+SPELLED, not what it DOES" failure this campaign keeps hitting, this time in my
+own triage. **No migration was performed on the strength of it.** The agents were
+told to be skeptical for exactly this reason, and their verdicts need the same
+treatment when they land.
