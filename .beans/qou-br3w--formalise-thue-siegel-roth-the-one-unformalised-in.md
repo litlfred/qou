@@ -1077,3 +1077,37 @@ REMAINING:
      -> eps, theta, k -> m (from hm2 AND nu/m <= t) -> T (from hTtheta) -> p, q, nu, F (hgap needs
      q/p large, hfloorExp then needs F large; both are free).
   2. Step 5: the supply app from a Liouville-type hypothesis, and hence not LiouvilleWith.
+
+## 2026-08-30 -- ROTH'S THEOREM IS PROVED. not_approximable_of_algebraic, axiom-clean.
+
+    #print axioms MvPolynomial.not_approximable_of_algebraic
+    -> [propext, Classical.choice, Quot.sound]
+
+For a real embedding psi of a number field K and alpha_0 in O_K, there is NO sequence of rationals
+of unbounded height approximating psi(alpha_0) to within H^{-(2+delta)}. Steps 1-5 compose; nothing
+in the cone is sorry'd, Roth's Lemma (index_le_rothBound) included.
+
+SCOPE, stated rather than glossed: this is Roth for psi(alpha_0) with alpha_0 an algebraic INTEGER.
+Every real algebraic number is psi(alpha_0)/n after clearing denominators, and the approximation
+exponent has to be carried across that scaling -- ONE MORE STEP, not done here. The statement says
+only what it proves.
+
+THE NON-VACUITY CHECK CAME FIRST, and it should have. roth_contradiction_selected derives False from
+a list of conditions; a CONTRADICTORY list would prove it just as well and would look identical from
+outside. exists_roth_parameters exhibits m, p, q, F, k, T, eps, nu, theta satisfying all of them
+except app -- and app is excluded deliberately, because app IS the negation of Roth, so a witness
+for it cannot exist and asking for one is asking to refute the result.
+
+WHAT THE PARAMETER CHOICE TURNED ON. nu is bounded BELOW by hgap and ABOVE by hfin, so nu cannot be
+made small; only nu/m can. Taking nu = s*m pins nu/m at the common slack s while hgap's lower bound
+falls away as q grows. The two constraints are compatible only in that order, which is what makes
+hfin_of_slack's division by m load-bearing rather than cosmetic. Order: t -> s (rational, below t
+and 1/2) -> k past 1/s -> m past [K:Q]/(2s^2) -> nu = s*m -> q at p=1 -> F -> T past both its
+thresholds. Every step Archimedean.
+
+New: exists_roth_parameters, not_approximable_of_algebraic.
+
+REMAINING:
+  1. Clear denominators: from alpha_0 in O_K to an arbitrary real algebraic number. One step.
+  2. Optional: state the classical form (|x - p/q| < q^{-(2+delta)} has finitely many solutions)
+     and derive it, plus the Mathlib-facing ¬LiouvilleWith corollary.
