@@ -41,6 +41,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+from convolution_provenance import CONVOLUTION  # noqa: E402
 
 from witness_base import WitnessBuilder
 
@@ -413,6 +414,7 @@ w.add_parameter("gram_eigenvalues", sorted(np.linalg.eigvals(G).real.tolist()))
 
 # Canonical operator-selection LP dual: primal coefficients + shadow prices.
 w.add_data("operator_selection_lp_dual", _lp.to_dict())
+w.add_data("convolution", CONVOLUTION)
 w.add_data("operator_selection_active_channels",
            [NF_NAMES[i] for i in _lp.active_set])
 w.add_assertion(
