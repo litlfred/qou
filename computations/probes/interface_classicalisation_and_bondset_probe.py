@@ -117,6 +117,15 @@ def main() -> int:
         chain, clique = A - 1, comb(A, 2)
         print(f"  {A:2d} {chain:18d} {clique:21d} {clique / chain:7.2f}")
     print("  They agree only at A = 2, and the contact graph grows ~A/2 faster.")
+    print()
+    print("  🛑 NOT A NEW FINDING, and the corpus RESOLVED it: see")
+    print("  theta_mn_linearchain_vs_allpairs.py -- 'the mba-9b binom(A,2) is")
+    print("  superseded by the linear-chain A-1 count', with the body-order")
+    print("  aggregate Lean-proved (prop:linear-chain-bond-count). It also")
+    print("  records the CHANNEL mapping pp->sigma, pn->averaged, nn->sigma^-1,")
+    print("  which qou-k12x did not have. So the count below is not evidence of")
+    print("  an unknown inconsistency -- it is a DRAIN backlog: consumers still")
+    print("  using a convention the corpus already superseded.")
 
     # grep-level upper bound, run here so the number is reproducible
     pat = r"comb\(A, ?2\)|C\(A,2\)|clique"

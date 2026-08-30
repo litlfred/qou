@@ -57,7 +57,43 @@ classical link requires **choosing** a representative.
 That choice — not a wrong value — is the unforced step `qou-zbgu` was looking
 for. Every `μ̄` count in the `M_n` tower silently classicalises a Hecke element.
 
-## A fourth thing, found on the way, and it is larger
+## 🛑 CORRECTION 2026-08-30 — the "fourth thing" below is NOT new, and the
+## corpus had already RESOLVED it
+
+I presented the `A−1` vs `C(A,2)` disagreement as something found on the way and
+"larger". **The corpus states it explicitly and settled it.**
+[`theta_mn_linearchain_vs_allpairs.py`](../../computations/theta_mn_linearchain_vs_allpairs.py)
+is about exactly this question, derives the interface positions
+`{3k−1 : k = 1..A−1}` from the recipe JSON, and closes:
+
+> "RESOLUTION: the mba-9b color-averaging note's `binom(A,2)` is superseded by
+> the linear-chain `A−1` count. (A distinct all-pairs mean-field model would
+> need its own derivation; the canonical braid does not realise it.)"
+
+with the body-order aggregate `Σ(A−n+1)(n−1) = binom(A+1,3)` **Lean-proved**
+(`prop:linear-chain-bond-count`). Re-run today, it passes.
+
+**It is also ahead of me on the interfaces.** That file already records the
+**channel** mapping — `pp→σ`, `pn→averaged`, `nn→σ⁻¹` — which I did not have: I
+found the three types but did not identify which pair type each belongs to. My
+independent counts confirm it exactly (⁴He = `σ`, `averaged`, `σ⁻¹` at gens 2,
+5, 8 ⇒ pp, pn, nn; T ⇒ pn, nn; ³He ⇒ pp, pn; D ⇒ pn). So my "the mirror pair
+differs in its interfaces" note is just the known pp/nn asymmetry, not a new
+observation.
+
+**What survives as new in this audit**, and it is narrower than I claimed:
+
+1. the algebraic decomposition `σ − d·1 = a·σ + b·σ⁻¹` with `a + b = 1`, and
+   that `averaged` is **exactly** ½:½ — the classicalisation argument;
+2. the consequence for the Milnor premise, i.e. the retraction of `qou-klgu`;
+3. the derived representative and its 0.069 % margin.
+
+**And the residual question is a DRAIN question, not a discovery.** If the
+resolution is the chain, why do **57 witness-emitting files** still compute a
+`C(A,2)`/clique bond set? That is stale consumers of a superseded convention,
+which is actionable and mechanical — not the unknowing inconsistency I implied.
+
+## A fourth thing, found on the way — SEE THE CORRECTION ABOVE BEFORE READING
 
 **The canonical braid is a chain of `A−1` interfaces** (D 1, T 2, ⁴He 3, at
 generator indices 2, 5, 8 — exactly the boundaries between consecutive 3-strand
