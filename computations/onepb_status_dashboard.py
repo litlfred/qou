@@ -165,25 +165,40 @@ def main() -> None:
         tolerance_float = float(tolerance)
     except (TypeError, ValueError):
         tolerance_float = 1e-9
-    # Per-atom relative delta.  The key is `rel_delta_max` -- the max over
-    # the method PAIRS compared for that atom.  This read `rel_delta`, a key
-    # NO delta entry has ever carried, so `.get(..., 0)` returned 0 for every
-    # atom and `max_rel_delta` was 0.0 by key-miss rather than by measurement.
-    # That fed the GATING `markov_trace_max_rel_delta` assertion below
-    # (expected 0.0, tolerance 1e-9), so the L1 Markov-trace gate could not
-    # fail whatever the cross-check found.  Legacy names kept as fallbacks.
-    _DELTA_KEYS = ("rel_delta_max", "rel_delta", "peel_rel_delta")
+    # Per-atom relative delta.  L1 GATES ON THE COLOR-WEIGHTED EXACT METHODS
+    # (`exact_method_rel_delta` = markov_peel vs chi-cache) — the two float-clean
+    # methods the 1 ppQ certification explicitly rests on.  It must NOT gate on
+    # `rel_delta_max`, the max over ALL method pairs: that includes the
+    # color-blind (sign-only) Hoefsmit/Habiro legs, which the cross-check itself
+    # declares "informational, not gated" and which diverge by the color
+    # weighting (e.g. ⁴He rel_delta_max ≈ 4.6 while its color-weighted delta is
+    # ≈ 6e-50, certified). Gating on rel_delta_max held L1 red on a leg that was
+    # never part of the certification (qou-wgaw, 2026-08-30).
+    #
+    # History: this once read `rel_delta`, a key NO delta entry carries, so
+    # max_rel_delta was 0.0 by key-miss and the gate could not fail; then it was
+    # "fixed" to `rel_delta_max`, which over-corrected onto the informational
+    # legs. `exact_method_rel_delta` is the right quantity. Legacy names kept as
+    # fallbacks for older cross-check witnesses that predate the exact-method key.
+    _DELTA_KEYS = ("exact_method_rel_delta", "rel_delta_max", "rel_delta",
+                   "peel_rel_delta")
 
     def _rel_delta(d: dict):
-        """Largest relative delta recorded for one atom, as mpf.
+        """The L1-gated relative delta for one atom, as mpf.
+
+        Returns the FIRST present key in `_DELTA_KEYS` priority order
+        (`exact_method_rel_delta` — the color-weighted certification quantity —
+        first), NOT the max over keys: a max would re-pick `rel_delta_max`, which
+        includes the informational color-blind legs the gate must ignore.
 
         mpf, not float(): these arrive as 50-digit decimal STRINGS under the
         NO-FLOAT64 discipline, and this value is recorded in the witness and
         asserted against -- an argument, not a display.
         """
-        vals = [mp.mpf(str(d[k])) for k in _DELTA_KEYS
-                if d.get(k) is not None]
-        return max(vals) if vals else None
+        for k in _DELTA_KEYS:
+            if d.get(k) is not None:
+                return mp.mpf(str(d[k]))
+        return None
 
     _deltas = trm.get("deltas", []) or []
     _rds = [v for v in (_rel_delta(d) for d in _deltas) if v is not None]
@@ -375,7 +390,7 @@ def main() -> None:
             computed=trm_summary["max_rel_delta"],
             expected=0.0,
             tolerance=1e-9,
-            source="cross-check-trM-1ppb (Hoefsmit vs markov_peel)",
+            source="cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)",
         )
     builder.add_data("summary", summary)
     builder.add_data("framing_note",
