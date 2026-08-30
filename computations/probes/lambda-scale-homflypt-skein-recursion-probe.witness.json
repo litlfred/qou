@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T17:24:55.168910+00:00",
-  "commitSha": "b97f9d43aa481c02040e58081d4df73bf84ce06f",
+  "computedAt": "2026-08-30T20:18:31.767012+00:00",
+  "commitSha": "acf5d779bd55b61669ee70b1980d78b63f6a6fe3",
   "assertions": [
     {
       "name": "Multi-knot HOMFLYPT PSLQ — no closure relation expected for either target",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "lambda-scale-homflypt-skein-recursion-probe",
   "scriptFile": "lambda_scale_homflypt_skein_recursion_probe.py",
-  "scriptHash": "f29855de6803",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "62e839a6a15d",
+  "scriptCommitSha": "acebd1cd9004c3a1731556f8ab60415568d275e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
