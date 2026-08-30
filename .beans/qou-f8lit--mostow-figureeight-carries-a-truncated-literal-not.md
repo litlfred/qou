@@ -578,3 +578,60 @@ bodies chosen so no window can contaminate them.
 **Third time in this arc that a claim of mine was an unmeasured absence** (after
 "no numpy/scipy" and "the producers are unblocked"). The pattern is specific: I
 report the *absence of evidence I did not look for* as evidence of absence.
+
+## 2026-08-30 — the FOURTH unmeasured absence, and the only one that landed
+
+Immediately after #6084 merged, I picked up the two follow-ups I had named as
+"next" and measured them. **Both claims were mine, both were false, and one of
+them was already on `main` inside this arc's own correction.**
+
+    claimed: chi-std-pernucleon-closed-form.lean "is still red [on main], and
+             still carries an unrouted Z-index bracket at line 104"
+    measured: EXIT 0, zero sorries; the site routes at the canonical module
+             via a sorry-free bridge (qNum_eq_qIntBal, line 114)
+
+    claimed: scratch.lean "holds a q-integer definition nothing checks"
+    measured: nothing checks it (true -- no .ts/.md sibling, no importer, not
+             in QOU.lean) but it is NOT an unrouted duplicate: it is
+             `qNumberSym q n := qIntBalZ q n`, an alias for the canonical
+             Z-index form, and it is green
+
+I produced the first by reading `qou-qint`'s three-week-old `ALSO FOUND` line
+and restating it. I did not open the file. Had I done so I would have hit, four
+lines under the site I called unrouted, a docstring reading *"it is migrated
+now that the two closed-form theorems above are proved."*
+
+### Why this one is worse than the first three
+
+The other three unmeasured absences in this arc ("no numpy/scipy", "the
+producers are unblocked", "none re-checked against `content/`") were caught
+before or during the PR and corrected in it. **This one I wrote into the
+correction itself** — the `qou-qint` addendum whose thesis is *"an open bean's
+stated blocker is a claim with a date on it"* — and merged it.
+
+So the arc now contains its own counterexample: a durable artifact repeating a
+stale claim, inside the paragraph explaining how durable artifacts repeat stale
+claims. That is not irony worth enjoying, it is evidence the failure is
+*structural rather than attentional*: I was maximally primed against this exact
+error and still made it, because the cost of restating a secondary source is
+zero and the cost of opening the file is one command — so the default wins
+unless the rule is mechanical.
+
+### The mechanical rule
+
+**Before asserting a file's build state, `lean`-direct it. Before asserting a
+site is unrouted, open the site.** A bean, an audit ✅, a sibling's finding, and
+a docstring are all *secondary*. For "is this red?" the only primary source is
+the compiler.
+
+And the companion, applied here rather than assumed: **`EXIT 0` with no output
+is the same shape as a check that examined nothing.** The green above was
+established by injecting a deliberate error (`(1:Nat) = 2 := rfl`) and
+confirming `EXIT 1` at the right line, then restoring. Same discipline
+`qou-wn1w` records for gates.
+
+### Net effect on the arc's open items
+
+Both items I listed as "next" are **closed as non-issues**, and the second one
+*strengthens* `qou-qint`: `scratch.lean` is a live consumer of `qIntBalZ`, so
+the ℤ-index migration is not merely unblocked but partly already done.
