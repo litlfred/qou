@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:19:27Z
+updated_at: 2026-08-30T13:45:53Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3128,3 +3128,64 @@ moving centre" (dissolved: the centre is the even factor's numerator). It is:
 `q^{2k}`-integer basis, and do they reproduce the ladder's rung structure?**
 That is a concrete symbolic expansion, and it is the first form of this question
 that does not presuppose an additive shape.
+
+
+
+## `u` and `Vhat` carry OPPOSITE bar-weights — `u*Vhat` is invariant (PR #6223)
+
+Follows the log-coordinate entry above. That one asked what `Vhat` does under
+bar; this asks what the LADDER'S OWN expansion variable does, which the corpus
+does not state anywhere. Probe:
+`computations/qbeta/qbeta_d_frame_u_vhat_bar_pairing_probe.py`, 8/8, sympy exact.
+
+    object      bar-weight   q-integer form
+    u            +2          sqrt([3]_{q^2})/[2]_q * hbar_q^2
+    Vhat_D       -2          q * [2]_{q^2}/[2]_q
+    u * Vhat_D    0          BAR-INVARIANT
+
+### The pieces, each verified
+
+* **`b = sqrt([3]_{q^2})/[2]_q`.** The Hoefsmit `b` is a RATIO OF q-INTEGERS:
+  `q^4+q^2+1 = q^2*[3]_{q^2}` and `q^2+1 = q*[2]_q`, so the powers of q cancel.
+  It is not written that way anywhere in the corpus — `_h4_route_ladder_scan.py:25`
+  carries it as `sqrt(q**4+q**2+1)/(q**2+1)`.
+* **`b` is bar-EVEN** — `[2]_x` and `[3]_x` are each invariant under `x -> 1/x`.
+* **`hbar_q` is a bar-eigenvector**: `bar(hbar) = -q*hbar`. So `hbar^2` carries
+  `q^2`, and with `b` even, `u` has bar-weight **+2** — exactly minus `Vhat`'s.
+* **The additive counterpart does NOT cancel**: `u + Vhat` is not invariant. The
+  cancellation is specifically MULTIPLICATIVE, matching the multiplicative
+  action Step 7 identified.
+* **`b` and `Vhat_D/q` share the `[2]_q` denominator**, so it cancels in their
+  ratio: `(Vhat_D/q)/b = [2]_{q^2}/sqrt([3]_{q^2})` — a pure q^2-object.
+
+### Why it matters
+
+A resummation needs a bar-invariant to organise around. Step 8 showed the D
+invariant `Vhat/q` is not CONSTANT, which is what closes the additive route.
+This exhibits a DIFFERENT invariant — one built from the ladder's own variable
+rather than from `Vhat` alone. The weights permit an organising object that
+`Vhat` by itself does not supply.
+
+### What it is NOT
+
+Not a resummation. No series exhibited, no `c_k` proposed, extracted or wired,
+and nothing here shows the ladder MUST be organised this way — only that the
+bar-weights permit it. **Step 8's closure of the ADDITIVE route is untouched and
+remains correct.** Under C the question does not arise: the action is affine
+there and weights are not what organises it. Scope (a).
+
+### Where this leaves the arc
+
+Four entries now, in one direction:
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` have opposite bar-weights; `u*Vhat` is invariant.
+
+Each is scope (a) and none proposes a `c_k`. The next question is whether the
+invariant in (4) is the thing the ladder's rungs actually expand in — i.e.
+whether `log(u*Vhat)` or `u*Vhat` has a series whose coefficients reproduce the
+rung structure. That is a concrete symbolic expansion and it is the first
+version of the question that has a bar-invariant to expand ABOUT, which is what
+Step 8 said was missing.
