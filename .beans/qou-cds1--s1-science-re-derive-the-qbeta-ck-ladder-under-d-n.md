@@ -4318,3 +4318,55 @@ The cap is derived, so z_D is forced, so z_required = 0.99850 is genuinely
 excluded. The gap between what the data wants and what the theory gives is
 therefore REAL and unexplained — not an artefact of an undecided convention.
 That is a sharper problem than the one I thought I had.
+
+
+## Step 14 (2026-08-30) — the terminus, stated as a negative
+
+With the two-row cap DERIVED (Step 13), the missing convention-D Q_beta
+factor `Q_beta = K · g · χ` has exactly three places to live, and all
+three are measured-negative. Probe
+`computations/qbeta/qbeta_d_frame_terminus_probe.py`, 2/2, proton pin.
+
+| leg | status |
+|---|---|
+| `g` block-weight pairing | **CLOSED.** Cap derived ⇒ `z = z_D` forced ⇒ `g = y_(3)(z_D) = (q⁴+1)/(q²+1)² = 0.5054042265`, no freedom left. Data wants `0.8891258104` — short by ×1.7592369905. Not a failed search; a DOF that does not exist. |
+| `χ` element characters | **NEGATIVE.** `χ^(2,1)(Δ_S) = 0` exactly (Lean-proved), so `Δ_S` is `(c, 0, −c)`. An element would need `a_(2,1)/a_(3) = 1.5516573513`. Nearest declared: `[3]_q/[2]_q` 2.45 %, `3/2` 3.33 % — basket distance, not isolation. |
+| `K` trace→MeV scale | **NEGATIVE.** Enumerated 2026-08-29 (`qbeta_d_frame_admissible_base_correction_search`): nothing parameter-free within 6.31 %. |
+
+Joins the four correction classes already closed: the 2026-08-29
+corrections, additive/cos (Step 8), the `z = 1` wall, block re-weighting
+(Step 9).
+
+**Scope-(a), explicitly.** An enumeration over DECLARED classes, not a
+proved impossibility. A *derived* (not searched) decay element with the
+right character ratio would still close it. Searching for one on the
+number would be a fit, so `1.5516573513` is recorded as a target to check
+a future derivation AGAINST, never a criterion to search ON.
+
+**Not claimed:** that the framework or convention D is wrong, or that no
+closure exists — only that none is findable by any enumeration this
+corpus has run.
+
+## Step 14b — my own Step-13 correction had not been propagated
+
+The Step-13 withdrawal ("the cap is a ruling" → the cap is DERIVED, from
+the 2-dim mass fibre, `FibreDimensionForcesTL.lean`, `qou-n1dj`) fixed
+the Lean docstring and this bean and left the same wrong sentence live in
+`qbeta_cap_is_jointly_determined_probe.py` — in its verdict string, its
+`premise_corrected` field, and the witness both write. Two copies, five
+commits apart, on one branch. Corrected in `c297bd7b04`.
+
+What stands unchanged: `χ^(3)(β_Bor) = χ^(1³)(β_Bor) = 1`, so mass sees
+`y₃ + y₁₃` and decay sees `y₃ − y₁₃`; with normalisation
+`det = −2(q−1)⁴(q+1)⁴(q²−q+1)(q²+q+1)/q⁶ ≠ 0` off `{0,1,−1}`, so the
+three functionals determine all three weights uniquely. Re-scoped, not
+retracted: the cap is *also* an observable — a falsifiable cross-check on
+the derived `z_D`, not a second route to be taken on trust.
+
+## Step 14c — all five of this branch's probes were `Q0_ANCHOR_MISSING`
+
+They read `q_at()` (proton) but no stem was in `q0_anchor_manifest.json`,
+and `WitnessBuilder.build()` stamps `q0Anchor` only on a positive
+declaration. `q0-anchor-consistency-audit` `Q0_ANCHOR_MISSING`
+1634 → 1639; the +5 was mine. Registered and re-run (`7820b814f6`) —
+fixed at the producer, no witness hand-edited, no computed value moved.
