@@ -450,7 +450,11 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
     resumable across container reclaims: re-invoking the same command banks the
     partitions already done and only recomputes the ones still missing."""
     parts = list(partitions(n_strands))
-    parts_sorted = sorted(parts, key=_dim_estimate, reverse=True)  # long-pole first
+    # smallest-first: with per-partition checkpointing, this banks dozens of cheap
+    # partitions within minutes so a container reclaim loses at most the few large
+    # partitions in flight, not the whole run (the prior biggest-first run died
+    # with 0 banked). Trades a little makespan for reclaim-resilience.
+    parts_sorted = sorted(parts, key=_dim_estimate)
     rows_by_shape = {}
     worst_hcheck = mp.mpf(0)
     t0 = time.time()
