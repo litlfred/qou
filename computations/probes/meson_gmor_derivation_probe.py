@@ -234,13 +234,68 @@ def main():
     w.add_data("fusion_identity", "[3]_q·[4]_q = [2]_q+[4]_q+[6]_q (spin-1⊗spin-3/2)")
     w.add_data("mK2_mpi2_eq_3q4q_miss_ppm", float(ratio_sq / (q_int(3,q)*q_int(4,q)) - 1) * 1e6)
 
-    w.add_assertion("gmor_reframe_recorded",
-                    computed=1, expected=1, tolerance=0,
-                    source="GMOR squared-ratio target documented")
+    # ── Was `gmor_reframe_recorded`, computed=1 / expected=1 ─────────────
+    # Two integer literals whose source line said "documented" — it asserted
+    # that a paragraph had been written. The reframe it stands for IS
+    # testable: GMOR's claim is that the SQUARED ratio, not the linear one,
+    # is what quark masses reproduce.
+    #   Route A: (m_K/m_π)² from the PDG-2024 charged meson masses in
+    #            substrate/codata_constants.py. Mesons only.
+    #   Route B: (m_u+m_s)/(m_u+m_d) from the PDG MS-bar quark masses at
+    #            2 GeV. Quarks only — no meson mass enters it.
+    # The residual is the known LO-χPT gap that NLO closes, so the bound is
+    # 15%; at 11.8% this has little headroom and a wrong quark mass, a
+    # swapped m_s/m_d, or reverting the target to the LINEAR ratio (which
+    # sits 296% out) all break it.
+    gmor_vs_squared = abs(mp.mpf(str(gmor_pdg)) / ratio_sq - 1)
+    gmor_vs_linear = abs(mp.mpf(str(gmor_pdg)) / ratio_lin - 1)
+    w.add_data("gmor_lo_vs_squared_ratio_rel_gap", mp.nstr(gmor_vs_squared, 12))
+    w.add_data("gmor_lo_vs_linear_ratio_rel_gap", mp.nstr(gmor_vs_linear, 12))
+    w.add_assertion("gmor_lo_reproduces_squared_ratio_within_chpt_lo",
+                    computed=mp.nstr(gmor_vs_squared, 18),
+                    expected="0", tolerance="0.15",
+                    unit="relative gap, GMOR LO vs m_K²/m_π²",
+                    source=("Route A: (m_K/m_π)² from PDG-2024 charged meson "
+                            "masses. Route B: (m_u+m_s)/(m_u+m_d) from PDG "
+                            "MS-bar quark masses at 2 GeV — disjoint inputs. "
+                            "Bound 15% = the LO-χPT gap NLO closes; the same "
+                            "GMOR value misses the LINEAR ratio by "
+                            f"{float(gmor_vs_linear) * 100:.0f}%, which is the "
+                            "reframe this replaces a narration flag with."))
+
+    # The (a) sweep's winner, tied to the (a') fusion structure.
+    #   Route A: argmin over the 11 declared q-forms of |val/ratio_sq − 1| —
+    #            selected purely by numerical proximity to the MESON data.
+    #   Route B: [2]_q+[4]_q+[6]_q, the q-Clebsch–Gordan decomposition of
+    #            spin-1 ⊗ spin-3/2 — a SUM, built with no product in it and
+    #            no meson mass in it.
+    # If the sweep's winner were any other entry the gap is ≥ 0.3, so this
+    # pins the identification the (a') block asserts in prose.
+    winner_vs_fusion = abs(best_a[1] - fusion_sum)
+    w.add_assertion("sweep_winner_is_the_spin1_spin3half_fusion_sum",
+                    computed=mp.nstr(winner_vs_fusion, 18),
+                    expected="0", tolerance="1e-30",
+                    unit="|best sweep candidate − ([2]_q+[4]_q+[6]_q)|",
+                    source=("Route A: the sweep winner, chosen by proximity to "
+                            "the measured m_K²/m_π². Route B: the fusion sum "
+                            "[2]_q+[4]_q+[6]_q. The winner this run is "
+                            f"{best_a[0]}."))
     w.add_assertion("fusion_identity_holds",
                     computed=1 if abs(float(q_int(3,q)*q_int(4,q) - (q_int(2,q)+q_int(4,q)+q_int(6,q)))) < 1e-30 else 0,
                     expected=1, tolerance=0,
                     source="[3]_q·[4]_q = [2]_q+[4]_q+[6]_q q-Clebsch-Gordan")
+    w.add_caveat(
+        "The (a) candidate list declares 11 forms but only 10 distinct ones: "
+        "'[5]_q²/[2]_q' and '[5]_q·[5]_q/[2]_q' are the same expression, so "
+        "that value is scored twice. Recorded, not repaired — it does not "
+        "change the winner ([4]_q·[3]_q) or any number here."
+    )
+    w.add_caveat(
+        "best_pure_q_miss_pct and mK2_mpi2_eq_3q4q_miss_ppm drift ~4.5e-5 "
+        "relative between container images (python/numpy/scipy versions) with "
+        "no source change. Environmental; the assertions above are stated "
+        "against bounds far wider than that drift."
+    )
 
     print(f"  Witness: {w.save()}")
 

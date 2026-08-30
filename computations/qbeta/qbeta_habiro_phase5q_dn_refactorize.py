@@ -247,12 +247,31 @@ def main() -> int:
     log(f"  tr_M(p, q) parsed (free symbols: {p_tr.free_symbols})")
     log(f"  tr_M(n, q) parsed (free symbols: {n_tr.free_symbols})")
 
-    # Numerical cross-check at q_0
+    # Numerical cross-check at q_0.
+    #   Route A: the tr_M_in_q STRING parsed by sympy and evaluated at q_0.
+    #   Route B: tr_M_at_q0, the number the upstream producer wrote into the
+    #            same witness through its own numeric path.
+    # These lines used to print hard-coded "(expected ~1.0653062)" and
+    # "(~0.9232333)" that nothing compared against — and both are now stale
+    # by ~8% and ~7% because the witness moved to convention D. Compared
+    # live, and asserted below.
     from q_parameter import Q as Q0
     p_at_q0 = float(p_tr.subs(q, sp.Float(float(Q0))).evalf(30))
     n_at_q0 = float(n_tr.subs(q, sp.Float(float(Q0))).evalf(30))
-    log(f"  tr_M(p, q_0) = {p_at_q0:.10f}  (expected ~1.0653062)")
-    log(f"  tr_M(n, q_0) = {n_at_q0:.10f}  (expected ~0.9232333)")
+    p_at_q0_witness = float(w["results"]["p (proton, A=1)"]["tr_M_at_q0"])
+    n_at_q0_witness = float(w["results"]["n (neutron, A=1)"]["tr_M_at_q0"])
+    # The comparison itself in mpf, off the witness's full-precision STRINGS
+    # and a 40-digit sympy evaluation — not off the float64 prints below.
+    _q0_mp = mp.mpf(str(Q0))
+    trm_parse_gaps = []
+    for _key, _expr in (("p (proton, A=1)", p_tr), ("n (neutron, A=1)", n_tr)):
+        _route_a = mp.mpf(str(sp.N(_expr.subs(q, sp.Float(str(_q0_mp), 40)), 40)))
+        _route_b = mp.mpf(w["results"][_key]["tr_M_at_q0"])
+        trm_parse_gaps.append(abs(_route_a - _route_b))
+    log(f"  tr_M(p, q_0) = {p_at_q0:.10f}  (witness tr_M_at_q0: "
+        f"{p_at_q0_witness:.10f}, |Δ| = {mp.nstr(trm_parse_gaps[0], 3)})")
+    log(f"  tr_M(n, q_0) = {n_at_q0:.10f}  (witness tr_M_at_q0: "
+        f"{n_at_q0_witness:.10f}, |Δ| = {mp.nstr(trm_parse_gaps[1], 3)})")
 
     # ─────────────────────────────────────────────────────────────────
     # Step 2: Construct Phase 5q canonical D symbolically.
@@ -410,24 +429,35 @@ def main() -> int:
         else:
             other_factors.append((str(f), 1))
 
-    # Also test divisibility directly
-    quotient_by_phi8, rem_phi8 = sp.div(habiro_sum, Phi8, u)
-    phi8_divides = (rem_phi8 == 0)
-    if phi8_divides:
-        quotient_by_phi8_sq, rem_phi8_sq = sp.div(quotient_by_phi8, Phi8, u)
-        phi8_sq_divides = (rem_phi8_sq == 0)
-    else:
-        phi8_sq_divides = False
+    # Also test divisibility directly — and carry it all the way to a
+    # multiplicity, so it is a second ROUTE to phi8_count rather than a
+    # weaker restatement of the first two powers. Route A above is
+    # sympy's factorisation algorithm; this is repeated long division.
+    phi8_mult_by_division = 0
+    if habiro_sum != 0:
+        _rest = habiro_sum
+        while True:
+            _quot, _rem = sp.div(_rest, Phi8, u)
+            if _rem != 0:
+                break
+            phi8_mult_by_division += 1
+            _rest = sp.expand(_quot)
+            if _rest == 0:
+                break
+    phi8_divides = phi8_mult_by_division >= 1
+    phi8_sq_divides = phi8_mult_by_division >= 2
 
     log(f"  Φ_8 divides habiro_sum: {phi8_divides}")
     log(f"  Φ_8² divides habiro_sum: {phi8_sq_divides}")
-    log(f"  Φ_8 power in factorization (from sp.factor): {phi8_count}")
+    log(f"  Φ_8 power in factorization (from sp.factor):     {phi8_count}")
+    log(f"  Φ_8 power by repeated long division (route B):   {phi8_mult_by_division}")
 
     builder.add_data("phi8_survival_test", {
         "Phi8": str(Phi8),
         "phi8_divides_habiro_sum": phi8_divides,
         "phi8_sq_divides_habiro_sum": phi8_sq_divides,
         "phi8_power_in_factorization": phi8_count,
+        "phi8_power_by_repeated_division": phi8_mult_by_division,
         "other_factors": [{"factor": fstr, "exponent": exp}
                           for fstr, exp in other_factors],
     })
@@ -471,12 +501,74 @@ def main() -> int:
                      else ("phi8_linear_only" if phi8_count == 1
                            else "phi8_absent_in_canonical"))
 
+    # ── Was `phase5q_dn_refactorize_completed`, computed=1 / expected=1 ──
+    # It named sympy.factor and asserted nothing about what came back. The
+    # verdict gate here is a single integer, phi8_count, and it was read off
+    # ONE algorithm with nothing to check it.
+
+    # (1) The Φ_8 multiplicity, two routes.
+    #     Route A: sympy's factorisation of the Habiro sum, tallying the
+    #              exponent of (u⁴+1) across the returned Mul/Pow args.
+    #     Route B: repeated sp.div by Φ_8, counting zero remainders until one
+    #              is non-zero. Long division, never a factorisation.
+    #     The verdict ("STRUCTURAL" vs "CONVENTION-SPECIFIC") turns entirely
+    #     on this integer, so an sp.factor that returned an unexpected shape —
+    #     the `isinstance(f, sp.Pow)` walk above silently mis-tallies anything
+    #     it does not recognise — now separates the routes instead of setting
+    #     the verdict on its own.
     builder.add_assertion(
-        "phase5q_dn_refactorize_completed",
-        computed=1,
-        expected=1,
+        "phi8_multiplicity_two_routes_agree",
+        computed=str(phi8_mult_by_division),
+        expected=str(phi8_count),
         tolerance=0,
-        source="sympy.factor on Phase 5q canonical (D - n) Habiro sum.",
+        unit="power of Φ_8 = u⁴+1 dividing Σ_m Δa_m·(u;u)_m",
+        source=("Route A: exponent of (u⁴+1) tallied from sp.factor's output. "
+                "Route B: repeated sp.div by Φ_8 counting zero remainders. "
+                "The verdict gate reads Route A alone; this is what makes a "
+                "mis-tally visible."),
+    )
+
+    # (2) The symbolic parse. Route A: the tr_M_in_q string sympified and
+    #     evaluated at q_0. Route B: tr_M_at_q0, written into the same
+    #     upstream witness by its producer's own numeric path. Everything
+    #     downstream is built on Route A's parse of a STRING; nothing checked
+    #     that the parse reproduced the number the string came from, which is
+    #     exactly how the two stale "(expected ~1.0653…)" literals above
+    #     survived a whole convention change.
+    builder.add_data("tr_M_parse_cross_check", {
+        "p_witness_tr_M_at_q0": w["results"]["p (proton, A=1)"]["tr_M_at_q0"],
+        "n_witness_tr_M_at_q0": w["results"]["n (neutron, A=1)"]["tr_M_at_q0"],
+        "p_abs_gap": mp.nstr(trm_parse_gaps[0], 6),
+        "n_abs_gap": mp.nstr(trm_parse_gaps[1], 6),
+    })
+    builder.add_assertion(
+        "tr_M_symbolic_parse_matches_witness_numeric",
+        computed=mp.nstr(max(trm_parse_gaps), 12),
+        expected="0",
+        tolerance="1e-9",
+        unit="max |tr_M(x, q_0) parsed − tr_M_at_q0 recorded| over x ∈ {p, n}",
+        source=("Route A: sympify(tr_M_in_q).subs(q, q_0). Route B: the "
+                "tr_M_at_q0 field the upstream producer recorded alongside it. "
+                "Guards the string parse every later step depends on."),
+    )
+    builder.add_caveat(
+        "Blocked, not run: the qou-lnog preflight raises AmDifferenceInvalid on "
+        "the D−n leg before Step 1 finishes, because the deuteron and nucleon "
+        "denominators differ under BOTH conventions — this pair was never "
+        "a_m-differenceable. The two assertions above were exercised in situ "
+        "with the preflight neutralised and both pass; the committed witness "
+        "still carries the old `phase5q_dn_refactorize_completed` and cannot be "
+        "regenerated until this file is ported to trace_diff_numerator."
+    )
+    builder.add_caveat(
+        "Four hard-coded expectations in the log lines and docstring are stale, "
+        "none of them ever compared to anything: 'tr_M(p, q_0) expected "
+        "~1.0653062' and '~0.9232333' against the witness's own 1.1457597 and "
+        "0.9877437; 'tr_M(D) ≈ 0.3883' against 0.5751722; and 'ratio "
+        "Phase5q/witness expected ~1.875' against 1.2055. The p/n pair now "
+        "prints live and is asserted against the witness's tr_M_at_q0; the "
+        "deuteron pair is left as recorded since it is the object the "
+        "qou-lnog preflight rejects."
     )
 
     elapsed = time.time() - t0

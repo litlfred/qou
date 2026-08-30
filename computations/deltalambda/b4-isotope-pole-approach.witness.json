@@ -1,14 +1,26 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-19T13:11:18.635291+00:00",
-  "commitSha": "d616db2a54f7d303e979d58f4b5306a00ea06f02",
+  "computedAt": "2026-08-30T13:46:05.612476+00:00",
+  "commitSha": "583a071a49e9f8189aa1d3572a33614008d1a41c",
   "assertions": [
     {
-      "name": "g_reeb_fixed_no_fit",
-      "computed": "True",
-      "expected": "True",
-      "passed": true
+      "name": "K4_ppnn_lambda_ss_equals_sqrt5",
+      "computed": "2.23606797749978969640917366873",
+      "expected": "2.23606797749978969640917366873",
+      "passed": true,
+      "tolerance": "1e-25",
+      "unit": "ss-sector eigenvalue of the K4(ppnn) writhe matrix",
+      "source": "Route A: mp.eigsy spectrum of S_4(ppnn) = {-sqrt5,-1,+1,+sqrt5}. Route B: sqrt(5) = sqrt(1+2^2), the +-sqrt5 species-symmetric writhe modes recorded in PR #4084 FACT 1 at undeformed pn-degree 2."
+    },
+    {
+      "name": "ss_pole_from_determinant_equals_inverse_lambda_ss",
+      "computed": "0.447213595499957939281834733746",
+      "expected": "0.447213595499957939281834733746",
+      "passed": true,
+      "tolerance": "1e-25",
+      "unit": "per-bond magnitude g at the A=4 ss-sector pole",
+      "source": "Route A: bisection for the smallest positive root of det(I + g*S_4) = 0 -- determinant only. Route B: 1/lambda_ss from the mp.eigsy spectrum -- eigenvalue only. The probe's det-based AT_POLE classifier and its g*lambda_ss criticality column are only the same statement if these coincide."
     },
     {
       "name": "deformed_A4_exactly_on_pole",
@@ -42,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 122,
   "computation": "b4-isotope-pole-approach",
   "scriptFile": "b4_isotope_pole_approach_probe.py",
-  "scriptHash": "7b43aa1dc22c",
-  "scriptCommitSha": "d616db2a54f7d303e979d58f4b5306a00ea06f02",
+  "scriptHash": "19615b887761",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,10 +67,22 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/b4_isotope_pole_approach_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/b4_isotope_pole_approach_probe.py"
   },
   "description": "alpha-magic as criticality: the species-symmetric exchange criticality g_reeb*lambda_ss(A) rises monotonically across the He4-local domain and hits the ss-condensation pole EXACTLY at 4He (the [1^4] closed shell, C(4,4)=1), with A<=3 sub-critical and A>=5 off-domain (C(4,A)=0). Forward, g_reeb fixed from q0, no fit. Explains WHICH isotope is critical and WHY alpha is magic; the finite 4He magnitude (pole regulator = Vol*rho) stays open. Connects the b4 ss-pole (PR #4084) to the corpus non-constant inter-cluster volume (2026-07-13). Audit-only.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "caveats": [
+    "Eigensolver changed from mp.eig to mp.eigsy in this run (2026-08-30). S is real symmetric by construction, so eigsy is the correct routine; mp.eig raised 'qr: failed to converge after 281 steps' on the 6x6 6Li word at compute_dps=70 under mpmath 1.3.0 AND 1.4.1, which made the probe unrunnable. Value-identical: every lambda_ss here reproduces the 2026-07-19 witness exactly."
+  ],
   "audit_only": true,
   "tier": "structural (fixed g_reeb + pure graph eigenvalues; no fit, no AME inversion)",
   "result": {
