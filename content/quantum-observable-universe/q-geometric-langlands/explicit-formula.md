@@ -32,3 +32,22 @@ $X^{\rho_i}/[\rho_i]_q$. That route is not carried out here, and the identity is
 not established: the classical explicit formula for a curve over a finite field
 is a theorem of Weil, but its $q$-deformation --- the $[\rho]_q$, $\ln_q$ and
 $\Omega_q$ terms --- is a claim of this framework.
+
+**The finite-spectrum form is refuted, and the reason names what a repair must
+do.** Formalised with the spectral side as a *finite* list of eigenvalues, the
+identity holds for **no** datum with an empty spectrum --- any ideals, any
+$\Omega_q$, any $q>1$. The mechanism is a mismatch of boundedness. The geometric
+side $\psi_q(X)$ is a sum over finitely many maximal ideals whose terms are
+switched on and off by $N(\mathfrak{m}) \le X$, never grown, so it is bounded
+uniformly in $X$; while
+$-\tfrac{1}{2}\ln_q\!\left(1 - X^{-2}\right)$ diverges to $+\infty$ as
+$X \to 1^{+}$. A bounded function cannot equal an unbounded one.
+
+This is a defect of the formalisation, not of the mathematics. The classical
+explicit formula carries the same $-\tfrac{1}{2}\log(1-x^{-2})$ term and is
+true, because there the spectral sum runs over *infinitely many* zeros and
+converges only conditionally: that term is the closed form of the trivial-zero
+series, and its blow-up near $x=1$ is cancelled by the divergence of the
+non-trivial-zero sum. A finite sum cannot reproduce that cancellation. A
+faithful carrier therefore needs the spectral side to be an infinite sum with a
+specified summation order, not a list.
