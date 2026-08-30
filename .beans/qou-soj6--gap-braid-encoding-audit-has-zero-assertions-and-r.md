@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T15:12:00Z
-updated_at: 2026-08-30T15:12:48Z
+updated_at: 2026-08-30T16:56:09Z
 ---
 
 `computations/audits/braid_encoding_audit.py` runs to **exit 0** and writes a
@@ -52,3 +52,58 @@ Not decided here. Recommendation (judgement): **1** — the audit has two other
 live upstreams, so it can be made falsifiable without resurrecting anything.
 
 Found while triaging the six remaining consumers of the removed witness.
+
+
+## THE 43% ASSERTION INVESTIGATED — it is not two values, it is FIVE
+
+Probe: `computations/probes/trm_proton_five_values_census.py`.
+
+| value | source | status |
+|---|---|---|
+| **1.884319467254976** | `option-b-proton-mass-full-chain.witness.json` | **VERIFIED CANONICAL** |
+| 1.88432 | axiomatic content block (hardcoded in the audit) | matches, 2.83e-7 |
+| **1.6331535640480814…** | `TR_M_AT_Q0["p"]` in `canonical_a_k_magnitude_audit.py` | **13.33 % off, and LIVE** |
+| 1.0653062285923893 | `markov-trace-assembly-proton.derivation.json` | 43.46 % off, unexplained |
+| ≈ 2.12258 | the deprecated producer's own docstring | 12.64 % off, unexplained |
+
+**Which one is right is settled, not assumed.** Recomputing
+`Σ_λ y_λ · χ^λ(σ₁⁷σ₂⁴)` over λ ⊢ 3 with the canonical Wenzl-bridge weights at
+the proton pin gives **1.88431946725497503**, reproducing the option-b value to
+**5.17e-16** — machine precision. So option-b *is* the canonical Jones–Markov
+trace, derived here rather than trusted.
+
+### Four explanations ruled out, each by measurement
+
+- **The pin.** Characters move only in the 8th significant digit between pins;
+  the full trace goes 1.884319467 → 1.884319714. An 11.5 ppb change cannot make
+  a 43 % gap.
+- **Convention C.** `_y_lambda_at_convention_C_HISTORICAL` returns the **same**
+  weights as the live accessor at n = 3 (0.5054042265, 0.2472978867, 0) and the
+  **same** total. Worth recording, because "it's convention C" is the first
+  hypothesis anyone reaches for here — and it is wrong.
+- **The braid word.** σ₁⁷σ₂⁴ and its reverse both give 1.884319467; (σ₁σ₂)³
+  gives 1.4398, σ₁³σ₂³ 0.7200, σ₁²σ₂² 1.2726. None is 1.0653.
+- **A normalisation, or the other weight family.** option-b ÷ {[2]_q, [3]_q,
+  [3]_q!, q, q², q³, √[3]_q} = {0.9371, 0.6191, 0.3079, 1.6976, 1.5294, 1.3779,
+  1.0801}; `W_λ = d_q²/[3]_q!` gives 1.2424. None is 1.0653.
+
+### The one that matters operationally
+
+**1.63315 is not an archived number.** It is `TR_M_AT_Q0["p"]`, imported by the
+**live** `build_markov_trace_assembly_neutron_chain.py` (via the `["n"]` entry)
+and by `phase5/phase2_proton_m_e_hecke_diagnostic.py`. `braid_encoding_audit`'s
+own comment already identified 1.63315 as the value that "disagreed with this
+audit's own upstream by 15 %" — **the content block was migrated and this
+constant was not.**
+
+### Scope, and what is NOT done
+
+This establishes which value is canonical and rules out four explanations for
+the others. It does **not** establish what 1.0653, 2.12258 or 1.63315 *are*, and
+**changes none of them**: `TR_M_AT_Q0` feeds live producers, so correcting it
+moves published numbers and belongs in its own tranche with a diff.
+
+Also noted: the derivation file carries **no provenance at all** — no
+`scriptFile`, no `commitSha`, no `engine` — and its producer
+`build_markov_trace_assembly_chain.py` is in `_deprecated/`, while its own
+docstring states a *third* value (≈2.12258) that contradicts the file it writes.
