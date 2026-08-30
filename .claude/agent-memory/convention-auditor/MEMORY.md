@@ -198,3 +198,9 @@ under 200 lines — prune the log or split a section out, never the TRAPs.
 - 2026-08-29 — re-measured post-`qou-961o`: bare `markovZ` 9, all D; found the
   `markovZC`/`markovZc` case collision and, under it, a docstring that agreed
   with the wrong name; fixed in #6015; split `q0-pin-migration.md` out.
+- 2026-08-30 — live: value-audit 87 C / 348 D in `computations/`. TRAP: its
+  "86 BLOCKING" over-states the DRAINABLE surface ~80× (subtracts only the
+  1-entry comparison-ledger, not the 12 `blocked_on_rederivation` rows nor ~64
+  deliberate-named). Safely-actionable C = ≤1, and that 1 is the forbidden
+  z-swap on the cds1-blocked `qbeta_ck_cache.py`. Fixed one Λ-Cl₂ mislabel
+  (`local-substrate-q.qa.json:1498`, `3Cl_2`→`2*Cl_2`). Never quote "BLOCKING".
