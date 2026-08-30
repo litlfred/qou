@@ -172,10 +172,17 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
         pochhammer = u_pochhammer_at_u0(m, u_val)
         contribution = a_m_val * pochhammer
         numerator += contribution
+        # SERIALIZE WITH fmt, NOT float (2026-08-30). All three are mp.mpf
+        # computed at mp.mp.dps -- `a_m_val` is deliberately lifted losslessly
+        # four lines up, via mp.mpf(str(...evalf(mp.mp.dps))), precisely to
+        # avoid a float64 cast. Casting it back here threw that away at the
+        # witness boundary, which is the "carry mpf from the source and
+        # serialize with _precision.fmt" rule in AGENTS.md. `fmt` was already
+        # imported at the top of this file and never used.
         breakdown.append({
-            "m": m, "a_m_at_u0": float(a_m_val),
-            "u_u_m": float(pochhammer),
-            "contribution": float(contribution),
+            "m": m, "a_m_at_u0": fmt(a_m_val),
+            "u_u_m": fmt(pochhammer),
+            "contribution": fmt(contribution),
         })
 
     # Divide by denom(u) at u_val
@@ -238,6 +245,7 @@ def main() -> int:
           f"{'tr_M_witness':>16}  {'agree':>8}")
     print("  " + "-" * 75)
     rows = []
+    tr_M_mpf: dict[str, mp.mpf] = {}   # calibration inputs, kept as mpf
     for label, (key, M_AME) in AME_ATOMIC.items():
         if key not in results:
             print(f"  {label:<6}: missing in witness")
@@ -247,25 +255,36 @@ def main() -> int:
         tr_M_in_witness = mp.mpf(str(entry.get("tr_M_at_q0", 0)))
         agree = abs(tr_M_habiro_sum - tr_M_in_witness) < 1e-6 * max(abs(tr_M_habiro_sum), abs(tr_M_in_witness), mp.mpf("1e-30"))
         agree_mark = "✓" if agree else "✗"
-        print(f"  {label:<6}  {M_AME:>12.4f}  {float(tr_M_habiro_sum):>+16.6e}  "
+        print(f"  {label:<6}  {float(M_AME):>12.4f}  {float(tr_M_habiro_sum):>+16.6e}  "
               f"{float(tr_M_in_witness):>+16.6e}  {agree_mark:>8}")
         rows.append({
             "atom": label,
             "Z": entry["Z"], "N": entry["N"], "A": entry["Z"] + entry["N"],
             "M_AME_MeV": M_AME,
-            "tr_M_via_habiro_sum": float(tr_M_habiro_sum),
-            "tr_M_in_witness": float(tr_M_in_witness),
+            "tr_M_via_habiro_sum": fmt(tr_M_habiro_sum),
+            "tr_M_in_witness": fmt(tr_M_in_witness),
             "habiro_breakdown": breakdown,
         })
+        # The row dict does DOUBLE DUTY -- it is both the witness payload and
+        # the input to the alpha_M calibration below. Serializing with `fmt`
+        # (correctly) makes those fields strings, so the calibration needs the
+        # mpf kept beside them rather than re-parsed out of its own output.
+        # Keeping it in a separate map rather than as a `_`-prefixed row key
+        # avoids relying on the witness writer to strip anything.
+        tr_M_mpf[label] = tr_M_habiro_sum
 
     # 2. Now build the simplified formula:
     #    M_pred = Z·m_p + N·m_n + Z·m_e − E_0 · binding
     #    binding = α_M · |tr_M(T_w; q_0)|  (single-prefactor)
     # Calibrate α_M from D binding
     print("\n  Calibrate α_M from deuteron binding:")
-    M_p = float(M_P_MEV)
-    M_n = float(M_N_MEV)
-    M_e = float(M_E_MEV)
+    # Kept as mpmath.mpf, not float(). These feed B_D_observed -> alpha_M ->
+    # every B_pred, so a float64 cast here made the whole calibration chain
+    # float64 regardless of how carefully tr_M was computed. They are already
+    # mpf at their source.
+    M_p = M_P_MEV
+    M_n = M_N_MEV
+    M_e = M_E_MEV
     M_atomic_p = M_p + M_e  # atomic H-1 mass
     M_atomic_D = M_p + M_n + M_e  # atomic D mass (free constituent)
 
@@ -275,12 +294,12 @@ def main() -> int:
         print("  Missing deuteron — can't calibrate")
         return 1
     B_D_observed = (1 * M_p + 1 * M_n + 1 * M_e) - rD["M_AME_MeV"]
-    tr_M_D = abs(rD["tr_M_via_habiro_sum"])
+    tr_M_D = abs(tr_M_mpf["D"])
     # Naive: binding = α_M · |tr_M|
     alpha_M = B_D_observed / tr_M_D if tr_M_D else 0.0
-    print(f"    B(D)_observed = {B_D_observed:.6f} MeV")
-    print(f"    |tr_M(D)| via Habiro = {tr_M_D:.6e}")
-    print(f"    α_M = B / |tr_M| = {alpha_M:.4e} MeV per unit tr_M")
+    print(f"    B(D)_observed = {float(B_D_observed):.6f} MeV")
+    print(f"    |tr_M(D)| via Habiro = {float(tr_M_D):.6e}")
+    print(f"    α_M = B / |tr_M| = {float(alpha_M):.4e} MeV per unit tr_M")
 
     # 3. Predict for each atom
     print("\n  Predictions (binding = α_M · |tr_M|, NO T2/T3, no T4/T5/T6):")
@@ -290,12 +309,12 @@ def main() -> int:
     for r in rows:
         Z, N = r["Z"], r["N"]
         constituent = Z * M_p + N * M_n + Z * M_e
-        B_pred = alpha_M * abs(r["tr_M_via_habiro_sum"])
+        B_pred = alpha_M * abs(tr_M_mpf[r["atom"]])
         M_pred = constituent - B_pred
         B_obs = constituent - r["M_AME_MeV"]
         err_pct = (M_pred - r["M_AME_MeV"]) / r["M_AME_MeV"] * 100
-        print(f"  {r['atom']:<6} {r['A']:>3}  {B_pred:>+10.4f} {B_obs:>+10.4f}  "
-              f"{M_pred:>12.3f} {r['M_AME_MeV']:>12.3f} {err_pct:>+7.4f}%")
+        print(f"  {r['atom']:<6} {r['A']:>3}  {float(B_pred):>+10.4f} {float(B_obs):>+10.4f}  "
+              f"{float(M_pred):>12.3f} {r['M_AME_MeV']:>12.3f} {float(err_pct):>+7.4f}%")
         r["B_pred_MeV"] = B_pred
         r["B_obs_MeV"] = B_obs
         r["M_pred_MeV"] = M_pred
@@ -308,8 +327,8 @@ def main() -> int:
         delta_pred = rT["M_pred_MeV"] - r3["M_pred_MeV"]
         delta_obs = rT["M_AME_MeV"] - r3["M_AME_MeV"]
         print(f"\n  Isospin (T - ³He):")
-        print(f"    Path B prediction: {delta_pred:+.4f} MeV")
-        print(f"    CODATA:            {delta_obs:+.4f} MeV")
+        print(f"    Path B prediction: {float(delta_pred):+.4f} MeV")
+        print(f"    CODATA:            {float(delta_obs):+.4f} MeV")
         print(f"    Path B captures the canonical asymmetry "
               f"(factor in tr_M); brane-tower formula gave -737 MeV.")
 
