@@ -214,6 +214,30 @@ corners. This is what lets `card_addableCells_eq_card_cornerCells_add_one` compo
 theorem mem_cornerCells_iff {c : ℕ × ℕ} : c ∈ cornerCells μ ↔ IsCornerCell μ c :=
   ⟨isCornerCell_of_mem_cornerCells, mem_cornerCells_of_isCornerCell⟩
 
+/-! ## Bridge to the branching theorem's index type
+
+`QOU.Mathlib.numStandardYoungTableaux_branching` sums over the SUBTYPE
+`{c // IsCornerCell μ c}`. This file counts with the FINSET `cornerCells μ`. The two
+agree — that is what `mem_cornerCells_iff` buys — so the differential property counts
+exactly the terms of the branching sum. -/
+
+/-- The corner Finset and the branching theorem's corner subtype have the same
+cardinality. So `#SYT μ = Σ_{c : corners} #SYT (μ ∖ c)` has exactly
+`(cornerCells μ).card` summands. -/
+theorem card_cornerCells_eq_card_subtype (μ : YoungDiagram)
+    [Fintype {c : ℕ × ℕ // IsCornerCell μ c}] :
+    (cornerCells μ).card = Fintype.card {c : ℕ × ℕ // IsCornerCell μ c} :=
+  (Fintype.card_of_subtype (cornerCells μ) (fun _ => mem_cornerCells_iff)).symm
+
+/-- **The differential property, in the form the branching sum sees it.** The number of
+summands in `numStandardYoungTableaux_branching` for `μ` is one less than the number of
+addable cells of `μ`. This is the bridge that lets the `DU = UD + I` step be run against
+the already-proved branching rule. -/
+theorem card_subtype_corners_add_one (μ : YoungDiagram)
+    [Fintype {c : ℕ × ℕ // IsCornerCell μ c}] :
+    Fintype.card {c : ℕ × ℕ // IsCornerCell μ c} + 1 = (addableCells μ).card := by
+  rw [← card_cornerCells_eq_card_subtype, card_addableCells_eq_card_cornerCells_add_one]
+
 /-! ## Non-vacuity
 
 A `card = card + 1` theorem is worth nothing if both families are empty — it would then
