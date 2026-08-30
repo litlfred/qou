@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T16:49:53Z
-updated_at: 2026-08-30T11:03:19Z
+updated_at: 2026-08-30T11:10:01Z
 ---
 
 
@@ -309,3 +309,27 @@ whether the two bodies are meant to be the same object — so it was
 deliberately kept out of the guard PR. None is a live error today: no module
 imports both halves of any pair. They are latent, each one waiting for
 whoever writes the module that needs both.
+
+
+## Drain triage + the thing that was actually holding the 26 apart (2026-08-30)
+
+[`docs/audits/2026-08-30-duplicate-fqn-drain-triage.md`](docs/audits/2026-08-30-duplicate-fqn-drain-triage.md).
+
+**`QOU.lean` reaches 1290 of the 2389 modules under `QOU/` — 1099 (46 %) are
+outside the root build.** Of the 26 pairs, **0** have both modules reachable
+from it, 19 have exactly one, 7 have neither. That is the consistency test:
+a pair with both sides in the root build would make `lean QOU.lean` fail, and
+it exits 0. `QOU.Mathlib.addCell` is the worked case — `YoungDiagramAddable`
+is imported by `QOU.lean`, `YoungDiagramAddCell` is not.
+
+**So `lean QOU.lean` exit 0 is not a corpus-wide gate** and must not be quoted
+as one. The corpus-wide measurement is `lean_cone_triage.py` over every module
+(2128 up-to-date / 210 ok / 0 blocked after #6140); that is what "180 → 0"
+rests on, and it is unaffected.
+
+Drain shape: **11** names have a zero-importer side, **10** have zero
+importers on both sides, and only **3** need a judgement about which
+definition is canonical — `QOU.BraidKnot.writhe`, `QOU.Mathlib.addCell`,
+`QOU.Mathlib.IsAddableCell`, the last two being one decision (same module
+pair). Rename rather than delete: no direct importer under `QOU/` does not
+mean dead, since a content-block `.lean` sibling can still resolve from it.
