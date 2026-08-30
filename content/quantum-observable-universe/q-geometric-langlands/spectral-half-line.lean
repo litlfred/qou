@@ -183,20 +183,6 @@ answers a question the arc otherwise leaves open: the critical line is not a
 fitted constant, it is where the functional equation's involution acts
 trivially on real parts. -/
 
-/-- **The functional-equation partner is the complex conjugate.** For a nonzero
-    `α` with `‖α‖² = q`, the partner `q/α` supplied by the functional equation
-    equals `conj α`.
-
-    This is what makes `|α| = √q` a *symmetry* statement rather than a bare
-    magnitude bound: the eigenvalue multiset is closed under conjugation. -/
-theorem weil_partner_eq_conj (q : ℝ) (α : ℂ) (hα : α ≠ 0)
-    (h : ‖α‖ ^ 2 = q) :
-    (q : ℂ) / α = (starRingEnd ℂ) α := by
-  have hns : (Complex.normSq α : ℂ) = (q : ℂ) := by
-    rw [Complex.normSq_eq_norm_sq, h]
-  rw [div_eq_iff hα, ← hns, ← Complex.mul_conj]
-  ring
-
 /-- **The pairing acts as `ρ ↦ 1 − ρ` on the spectral coordinate.** If
     `α = q^ρ` and `q/α = q^σ`, then `σ = 1 − ρ` — provided `q > 1`, so that the
     exponent is determined by its value up to the usual period.
@@ -243,27 +229,5 @@ theorem spectral_half_line_is_fixed_locus
     (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
     ∀ i, (ρ i).re = 1 - (ρ i).re := fun i =>
   (critical_line_iff_fixed (ρ i)).mp (spectral_half_line Z hq ρ spectral_coord hw i)
-
-/-! ### Non-vacuity of the conjugate-partner theorem
-
-`weil_partner_eq_conj` is only worth stating if it fires. Two witnesses at
-`q = 4`: the supersingular real eigenvalue `α = 2`, where the statement is
-`4/2 = 2` and the conjugation is invisible; and the genuinely complex `α = 2i`,
-where it says `4/(2i) = -2i` — the partner and the conjugate coincide only
-because `|α|² = q`. The second is the case the arc actually needs, since
-Frobenius eigenvalues of a curve come in conjugate pairs off the real axis. -/
-
-/-- The real (supersingular) witness: `q = 4`, `α = 2`. -/
-theorem weil_partner_real_witness :
-    ((4 : ℝ) : ℂ) / (2 : ℂ) = (starRingEnd ℂ) (2 : ℂ) :=
-  weil_partner_eq_conj 4 2 (by norm_num) (by norm_num)
-
-/-- The complex witness: `q = 4`, `α = 2i`, partner `= −2i = conj α`. -/
-theorem weil_partner_complex_witness :
-    ((4 : ℝ) : ℂ) / (2 * Complex.I) = (starRingEnd ℂ) (2 * Complex.I) := by
-  refine weil_partner_eq_conj 4 _ (by simp [Complex.ext_iff]) ?_
-  rw [← Complex.normSq_eq_norm_sq]
-  simp [Complex.normSq_mul]
-  norm_num
 
 end QOU.AlgebraicSubstrate
