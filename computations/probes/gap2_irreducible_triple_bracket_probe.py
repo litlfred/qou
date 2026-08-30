@@ -42,8 +42,15 @@ occurs at any A >= 5 -- every triple there is bonded-hence-reducible. So the
 3-body term is calibrated on a configuration type that never recurs, and the
 mu-bar realisation cannot interpolate between the brackets.
 
-SCOPE. This is scope-(b) for the MU-BAR REALISATION of `M_3` at A >= 5, with
-the invariant cited (Milnor indeterminacy) -- the same invariant and the same
+SCOPE -- RE-SCOPED 2026-08-30, BEFORE THIS EVER MERGED. This was written as
+scope-(b) for the MU-BAR REALISATION of `M_3` at A >= 5, with the invariant
+cited (Milnor indeterminacy). It is now (a): CONDITIONAL ON THE LINK MODEL.
+The premise "every bonded pair has lk = 1" is contradicted by the corpus's own
+triton model -- see `bonded_pair_linking_inconsistency_probe.py`, which was
+written an hour after this one and corrects both it and qou-klgu. The bracket
+BELOW STANDS as arithmetic; what changes is that its lower arm (M_3 = 0) is a
+consequence of an assumed link assignment rather than a forced one.
+The original wording, kept for the record: scope-(b) with the invariant cited -- the same invariant and the same
 argument as qou-klgu, applied to the A >= 5 deltahedra rather than to the
 tetrahedron. It excludes NOTHING ELSE. A non-Milnor super-pairwise object is
 untouched, exactly as in qou-klgu; so is the possibility that the contact model
@@ -182,9 +189,13 @@ def main() -> int:
     print("  occurs at any A >= 5, so the 3-body term is calibrated on a")
     print("  configuration type that never recurs.")
     print()
-    print("  scope-(b) for the MU-BAR REALISATION of M3 at A >= 5, invariant")
-    print("  cited (Milnor indeterminacy) -- the qou-klgu argument applied to")
-    print("  the A >= 5 deltahedra. Excludes nothing else: a non-Milnor")
+    print("  RE-SCOPED (b) -> (a): CONDITIONAL ON THE LINK MODEL. The premise")
+    print("  'every bonded pair has lk = 1' is contradicted by the corpus's own")
+    print("  triton model (BORROMEAN, pairwise lk = [0,0,0], three BONDED")
+    print("  pairs) -- see bonded_pair_linking_inconsistency_probe.py. The")
+    print("  bracket above stands as arithmetic; its lower arm (M3 = 0) follows")
+    print("  from an ASSUMED link assignment, not a forced one. Excludes")
+    print("  nothing structurally. A non-Milnor")
     print("  super-pairwise object is untouched, and so is the possibility that")
     print("  'bonded => lk = 1' is the wrong link model. That assumption is what")
     print("  this argument runs on, and it is the thing to attack next.")

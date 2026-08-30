@@ -205,6 +205,17 @@ counting.
 — mpmath at 60 dps, no `float()`, AME from the canonical
 `ame_2020_binding_energies` table, no witness, nothing wired.**
 
+>**🛑 RE-SCOPED 2026-08-30.** The Milnor exclusion this section leans on
+>(`qou-klgu`) has been re-scoped **(b) → (a)** by its own author: its premise
+>*"every bonded pair has `lk = 1`"* is contradicted by the corpus's own triton
+>model (`BORROMEAN`, pairwise `lk = [0,0,0]`, on three **bonded** pairs), and
+>on the branch that saves the premise `M₃(T) = 0` makes `e₃` a division by
+>zero. The conditional survives; its hypothesis is not established. So "the one
+>named candidate left" below overstates how narrow the field is — the μ̄ route
+>is **not** structurally excluded, only conditional. See
+>[`bonded_pair_linking_inconsistency_probe.py`](../../computations/probes/bonded_pair_linking_inconsistency_probe.py)
+>and the note on that audit.
+
 After the Milnor exclusion (`qou-klgu`) the one named candidate left for the
 super-pairwise content is the **non-link-invariant** Wigner SU(4) `[1^n]`
 antisymmetriser, `dim = C(4,n)`, vanishing for `n > 4`
@@ -290,6 +301,7 @@ day and R3b cites the earlier adjudication, which is how they crossed.
 **What the lifted blocker actually buys, measured.** With the deuteron link
 fixed, the topological counts for `A ≤ 4` are determined rather than free:
 `M₂ = C(A,2)` (derived fit-free, #3588) and `M₃ = M₄ = 0` (Milnor indeterminacy
+— **conditional, re-scoped 2026-08-30**, see the note in M4:
 on the max-contact tetrahedron, `qou-klgu`). The tower then predicts
 
 ```
