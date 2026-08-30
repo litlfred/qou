@@ -380,8 +380,16 @@ def main() -> int:
                     computed=ref["im_dev"], expected=0.0,
                     tolerance=0.10,
                     source="a Pade pole sits on the line Im zeta = Vol")
+    # Was `expected=d_ggm` -- the measured value as its own expectation, so it
+    # passed however far V3_measured sat from BOTH candidates (bean qou-3e5m).
+    # The claim the `source` line makes is an INEQUALITY, and the tolerance was
+    # already the right bound for it: with `expected=0`, this passes exactly
+    # when d_ggm <= d_leg, i.e. when V3_measured really is closer to the
+    # published GGM value than to the legacy literal. Both deviations are
+    # abs()/abs() and so non-negative, which is what makes the one-sided
+    # reading sound. It now fails if the ordering flips.
     w.add_assertion("favours_published_V3",
-                    computed=d_ggm, expected=d_ggm,
+                    computed=d_ggm, expected=0.0,
                     tolerance=float(d_leg),
                     source="V3_measured is closer to the published GGM value "
                            "than to the legacy literal")

@@ -2343,10 +2343,24 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **sixteen** distinct detector-blind spellings (this said *thirteen*
->   and was itself stale — the table already ran to 15 on 2026-08-26, and row 16
->   landed 2026-08-29), several of which were
->   found *by* detectors written to catch the previous blind spot. So: **treat
+>   catalogues **twenty-two** rows, and they split three ways: **1-16** are
+>   detector-blind *spellings* of convention C, **17-21** blind an *exemption*
+>   or a guard rather than a detector, and **22** is a different arc entirely.
+>   Several were found *by* detectors written to catch the previous blind spot.
+>   Quote the split, not the total, because folding the last six into the C
+>   figure inflates exactly the number this note exists to keep honest.
+>   Rows 17-21 are the `qou-t9r1` family — a labelled two-arm comparison whose
+>   D arm is a call, a sibling scope, a derived closed form, a Lean
+>   declaration, or unreachable to an mpmath-only guard, so each is reported
+>   as a leak forever. Row **22** is not about conventions at all — it comes from the
+>   NO-FLOAT64 arc, where an assertion detector read its operands positionally
+>   and so examined 13 % of a corpus that writes 87 % of its calls with
+>   keywords, reporting `MEASURED: 0` against a true 56. That row is the first
+>   evidence the pattern is not an artifact of the convention migration.
+>   (This line has been stale four times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21 — and on the fourth fix I first wrote "twenty are
+>   spellings", miscounting the very split I was adding. **Re-count the table;
+>   do not trust this sentence, including this parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.

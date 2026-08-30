@@ -1,0 +1,78 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T11:33:37.356694+00:00",
+  "commitSha": "5295a9678c73d40613f0b4605a00843ca03ff3dc",
+  "assertions": [
+    {
+      "name": "mu2_target_is_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mu2_measured_is_nonzero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "geometric_per_order_law_refuted",
+      "computed": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "mu2-target-and-per-order-law",
+  "scriptFile": "mu2_target_and_per_order_law_probe.py",
+  "scriptHash": "ba6a8e964440",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu2_target_and_per_order_law_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu2_target_and_per_order_law_probe.py"
+  },
+  "description": "The mu2 target exists and is structurally ZERO (deuteron-anchored simplex), supplying the third point the anatomy probe named. It REFUTES the geometric per-order law k_n = a*r^n: k2 = 0 forces a = 0 or r = 0, either of which forces k3 = k4 = 0, contradicting the measured nonzero k3, k4. Scope-(b) with a cited invariant. Does not explain the magnitude gap and does not touch the scope-(a) wall.",
+  "data": {
+    "mu2_target_is_structurally_zero": {
+      "value": "0.0",
+      "reason": "the simplex is deuteron-anchored, so it reproduces the 2-body datum exactly and leaves no 2-body residual",
+      "asserted_in": [
+        "deltalambda_kappa_interface_residual_simplex_probe.py (residual_pure_ge3body = abs(mu2) < 1e-40)",
+        "mu3_target_frame_robustness_probe.py (assert ... mu2_is_zero, 'mu2 must be 0 (deuteron)')"
+      ]
+    },
+    "correction_factors": {
+      "k2": "0.0",
+      "k3": "0.548613850285745695505183193004188052279995609791465608216419",
+      "k4": "5.24186556205905415364905904477646540874652738405819775289367",
+      "mu2_measured_mean_per_bond": "-0.584014885496266499999999999999972639912983546393844378669168",
+      "n_bonds": 6
+    },
+    "geometric_per_order_law": {
+      "form": "k_n = a * r^n",
+      "survives": false,
+      "argument": "k2 = 0 forces a*r^2 = 0, hence a = 0 or r = 0; either forces k3 = k4 = 0, contradicting the measured nonzero k3 = 0.5486 and k4 = 5.2419. No finite (a, r) fits all three points.",
+      "scope": "(b), cited invariant = structural vanishing of the 2-body residual"
+    },
+    "caveat": "k2 = 0 is a property of the SIMPLEX's construction, not an independent measurement. It is the right third point because it is the same kind of quantity as k3 and k4 — target-over-measured for the same model against the same H12 cumulants — but re-anchoring the simplex away from the deuteron would require redoing it."
+  }
+}

@@ -202,14 +202,27 @@ for name, Z, N in ATOMS:
     steps = all_results[name]
     w.add_data(name, steps)
     final = steps[-1]
+    # DEMOTED, and NOT converted to a per-atom cos_sim threshold (bean
+    # qou-3e5m). My own triage proposed lifting `cos_sim > 0.7` out of this
+    # guard and asserting it. Measured, that is wrong: only 2 of the 7 atoms
+    # clear 0.7 (³H 0.9987, ⁴He 0.965) while ²H 0.0121, ⁶Li 0.1006, ¹²C 0.6666,
+    # ¹⁶O 0.6033 and ⁴⁰Ca 0.3667 do not, and those are correct outcomes -- not
+    # every atom matches a reference knot. A per-atom assertion would fail on
+    # working behaviour.
+    #
+    # What is left is the knot's IDENTITY, and asserting a label against itself
+    # decides nothing: the guard already establishes that detection happened,
+    # and no second route predicts WHICH knot without hard-coding the observed
+    # answer, which would be a fit. So the identity is recorded as data.
     if final['cos_sim'] > 0.7:
-        w.add_assertion(
-            f"knot_detected({name})",
-            computed=final['knot'],
-            expected=final['knot'],
-            tolerance=0,
-            unit="knot_type",
-            source=f"cosine_similarity={final['cos_sim']:.3f}",
-        )
+        # `cos_sim` is deliberately NOT repeated as a field here: it is already
+        # in this atom's `steps` payload above, and copying it back in as a
+        # Python float added two raw-float64 fields to the witness (the ratchet
+        # caught it, 350 -> 352). The formatted value in `source` carries the
+        # number for a reader without re-introducing the type.
+        w.add_data(f"knot_detected({name})", {
+            "knot": final['knot'],
+            "source": f"cosine_similarity={final['cos_sim']:.3f} > 0.7",
+        })
 
 w.save()

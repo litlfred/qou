@@ -1,11 +1,11 @@
 ---
 # qou-4670
 title: CriticalExponent carrier boxed alpha=4/3, a value p2-critical-exponent.md calls OPEN
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T09:27:07Z
-updated_at: 2026-08-30T09:28:00Z
+updated_at: 2026-08-30T13:07:33Z
 ---
 
 ## The defect
@@ -98,3 +98,5 @@ carrier (one per field) and a real satisfiability witness — `enstrophy q =
 The asymptotic `Ω_max(q) ~ (q-1)^{-α}` relating the two parameters is still
 absent, here and upstream. Encoding it needs the asymptotic; pinning α needs a
 closure that is not rigorous. That is the honest open state.
+
+Landed in PR #6161 and verified on main. The carrier states 0 < alpha plus the divergence statement, both transcribed from upstream; the boxed 4/3 is gone from the class and from every consumer.

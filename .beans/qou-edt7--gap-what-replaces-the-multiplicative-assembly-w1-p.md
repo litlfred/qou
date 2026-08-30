@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T10:55:11Z
+updated_at: 2026-08-30T12:43:32Z
 parent: qou-mhj9
 ---
 
@@ -393,3 +393,253 @@ I twice named `qou-brng` as 'the Milnor bean'. It is not: qou-brng is the
 hbar_q^2 saturated-binding-fraction bean whose surviving route is the
 linking-vs-self-energy AMPLITUDE question. Adjacent, not the same, and untouched
 by this work.
+
+
+## THE TWO-TERM PAIRING I PROPOSED IS DEGENERATE (2026-08-30)
+
+Lean: `QOU/Mass/SaturationInvisibleToCumulants.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/two_term_structure_degeneracy_probe.py` (2/2).
+
+I proposed pairing a CONVEX s-shell term with the corpus's SATURATING bounded-
+degree term. **The saturating half is inert where the data is.**
+
+A degree cap at k gives bond count f_k(A) = A*min(A-1,k)/2. For A <= k+1 the cap
+DOES NOT BIND, so f_k is identically C(A,2) there — and C(A,2) contributes
+exactly zero to b3 and b4. Measured:
+
+    k=1: b3-contrib -1.5, b4 +2.0   (pure dimer; wrong sign)
+    k=2: b3-contrib  0.0, b4 -2.0
+    k>=3: b3 0.0, b4 0.0  — the cap never binds below A=5
+
+Every (saturating, convex) pair gave a SINGULAR 2x2 system, and the singularity
+IS this fact. Not a contradiction with the two-term necessity theorem — the terms
+act in DISJOINT REGIMES, not together.
+
+### What replaces the target, and it is sharper
+With the saturating half inert, ONE term carries b2, b3 AND b4: three constraints
+on one coefficient, and scaling cancels in a ratio, so TWO PARAMETER-FREE
+predictions —
+
+    isospin average     b3/b2 = 0.6411228   b4/b2 = 4.1551403
+    Coulomb-corrected   b3/b2 = 0.8127866   b4/b2 = 3.4684851
+
+Nothing tested is close: dim[1^A] (-2.333, 3.5), A^3 (0.375, 0.5), A! (0, 6),
+indicator (-2, 3), k=1 dimer (-1.5, 2), 2^A (-1, 2).
+
+**This is real progress on the epistemics even though no magnitude is derived.**
+The old target was ONE ratio inside a 9.4% convention band, which many candidates
+sit in and hitting which is not evidence. The fingerprint is TWO numbers with
+ZERO free parameters — the discriminator the earlier work said it needed.
+
+### SCOPE
+Refutes the SPECIFIC pairing as an explanation of the cumulants. Does NOT touch
+CoordinationSaturation (a statement about A -> infinity, unaffected by having no
+A <= 4 signature), and does NOT refute two-term structures generally.
+
+
+## SCREENED THE FINGERPRINT — 0 hits, and the METHOD result is the keeper (2026-08-30)
+
+Probe: `computations/probes/fingerprint_screen_zero_parameter_probe.py` (2/2).
+
+**Exploited an asymmetry first**: f(4) = B(4)/B(2) = 12.71963154 does not involve
+the A=3 binding at all, so it is CONVENTION-INDEPENDENT; f(3) carries the whole
+4.7% band [3.641123, 3.812787].
+
+### RESULT 1 — a free parameter destroys the test (this is the durable one)
+Design A: fit each one-parameter family to the solid f(4), predict f(3). Ten
+families, ONE hit (alpha^A * A at alpha = 2.5219 -> f(3) = 3.7828).
+
+**That hit is exactly chance.** The 9 valid predictions span 3.089..4.820 (range
+1.731); the band is 0.172; per-candidate chance 9.9%; EXPECTED hits 0.89;
+observed 1. Spending the f(4) constraint on a fitted parameter leaves ONE
+prediction against a 4.7% band — a ~10% false-positive filter.
+
+**So the fingerprint discriminates only at ZERO free parameters.** That is a
+constraint on how any future candidate may be tested, and it is the useful output
+of this turn.
+
+### RESULT 2 — zero-parameter screen: 0 of 14
+Both numbers predicted, nothing fitted, q0 at the proton pin. Closest overall is
+the central binomial C(2n,n) at 8.45% / 8.28% — not a hit, and unremarkable among
+14 candidates.
+
+### RESULT 3 — the miss is STRUCTURED
+The factorial family lands f(3) ~ 3.00-3.04 against a measured 3.64-3.81 (low by
+16-18%), while [n]_q! is within **1.66%** on f(4). They get the A=4 growth roughly
+right and the A=3 step badly wrong: b3/b2 ~ 0 where the measurement wants 0.64.
+
+That is the arc's recurring defect in the fingerprint's own coordinates — **a
+smooth growth law reproduces b4 far better than b3.** Whatever supplies b3 is not
+a smooth growth law.
+
+### SCOPE
+Honest negative. Derives nothing, refutes no named framework claim, and is NOT an
+enumeration — 14 hand-chosen functions is a sample. Do not cite it as 'the
+fingerprint has been screened'.
+
+
+## PAIRING PARITY DERIVES THE b3 SIGN — the first mechanism that does (2026-08-30)
+
+Lean: `QOU/Mass/PairingParityForcesPositiveB3.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/pairing_parity_b3_sign_probe.py` (2/2).
+
+Followed the structured miss (smooth laws get b4 to 1.66%, b3 low by 16-18%) to
+whatever is NON-SMOOTH at A=3. It is the parities:
+
+    A=2  2H  Z=1,N=1  ODD-ODD      A=3  3H/3He  ODD-A      A=4  4He Z=2,N=2  EVEN-EVEN
+
+and the SEMF pairing term is parity-dependent by construction (+d even-even, 0
+odd-A, -d odd-odd, d > 0).
+
+### THE SIGN IS DERIVED
+    b3-contribution = p(3) - 3p(2) = 0 - 3(-d) = **+3d > 0 for EVERY d > 0**
+
+The signs come from which nuclei are odd and even; the magnitude never enters the
+sign. **First mechanism in the arc with the measured sign for a principled
+reason** — every earlier candidate either could not contribute (Delta^3 = 0),
+carried no magnitude (mu-bar = +-1), or had the sign wrong (b4/b3 <= 0).
+
+Textbook physical reading: the deuteron is ODD-ODD so pairing PENALISES it, which
+is the standard reason 2H is weakly bound — and a weak B(2) is exactly what makes
+b3 = B(3) - 3B(2) positive.
+
+### THE MAGNITUDE IS NOT — and the good number was convention luck
+Fit smooth + pairing to b3,b4; PREDICT b2. Best smooth partner C(2n,n):
+
+    raw AME, isospin avg   b2 pred 2.196193   **1.28%**
+    raw AME, 3H            b2 pred 1.887753    15.14%
+    Coulomb-corrected      b2 pred 2.044540     8.09%
+
+**The 1.28% does not survive the Coulomb correction, and that correction is the
+physically required one**: Coulomb ~ Z(Z-1)/A^(1/3) touches 3He and 4He but NOT
+2H or 3H, so 3H is the Coulomb-free A=3 point and 4He needs its own shift. A
+model with no Coulomb term must be compared against corrected data. The 1.28% was
+the best of nine trials on the one dataset that flatters it.
+
+### STATUS
+Strongest candidate the arc has produced. **Sign derived, size open.** Not a
+closure and not a refutation — and the 1.28% must not be quoted as a result.
+
+
+## delta IS OVER-DETERMINED, AND THE TWO DETERMINATIONS DISAGREE 25-40x (2026-08-30)
+
+Probe: `computations/probes/pairing_delta_overdetermination_probe.py` (1/1).
+
+**Method note first:** hunting a formula for delta is BANNED by this arc's own
+entropy result (closed-form guessing is dead at 1-2 significant digits). The
+legitimate move is OVER-DETERMINATION — delta is fixed by the A<=4 cumulants AND
+independently measurable as the odd-even staggering. No formula is proposed.
+
+    DETERMINATION 1, from the A<=4 cumulants (smooth C(2n,n) + pairing):
+       raw isospin-avg    delta = 0.58901076 MeV  -> pairing at A=2  0.208 MeV
+       Coulomb-corrected  delta = 0.95593837 MeV  -> pairing at A=2  0.338 MeV
+
+    DETERMINATION 2, from the odd-even staggering (51 triples, A >= 8):
+       median |D3| = 1.80355 MeV   (consistent with the standard 1-3 MeV gap)
+       SEMF pairing at A=2 (a_P = 12/sqrt(A)) = 8.48528 MeV
+
+    DISAGREEMENT: **25-41x**, the fitted term being far TOO WEAK.
+
+**The exponent cannot rescue it.** Pairing DECREASES with A, so a term giving
+0.2-0.34 MeV at A=2 cannot reach ~1.8 MeV at A~10 for any positive exponent — it
+is smallest exactly where pairing is largest. The discrepancy is in the STRENGTH.
+
+### TWO MEASUREMENT SLIPS OF MINE, both recorded
+1. Taking the median of |D3|*A^1.5 over ALL A gives 88 MeV and a 92-150x ratio.
+   **Contaminated**: the low-A entries (A=4 -> 85, A=5 -> 90, A=6 -> 119) are
+   SHELL-CLOSURE jumps, not pairing, and dominate the median. Restricting to
+   A >= 8 and comparing pairing ENERGIES gives the honest 25-40x. Headline moved
+   by ~4x when the artifact was removed.
+2. An earlier pass printed NO staggering rows at all — a sign filter (if d3 > 0)
+   of mine that dropped every entry. Recorded so the absence is not later read as
+   an absence of signal.
+
+### VERDICT
+**The SIGN result is untouched** — pairing forces b3 > 0 from the parities for
+EVERY delta, and that argument never uses delta's value.
+
+**The MAGNITUDE route is refuted.** The pairing term reproducing b3 and b4 is
+25-40x too weak to be the physical nuclear pairing force. Either the term is not
+really pairing, or pairing supplies only a small part of b3.
+
+Scope (a): refutes pairing as the SOLE quantitative mechanism, not its presence
+in a multi-term closure. **delta is NOT derived.**
+
+
+## TWO RETRACTIONS OF MY OWN, and the reframing that survives (2026-08-30)
+
+Probe: `computations/probes/b3_is_the_deuteron_deficit_probe.py` (2/2).
+
+### RETRACTION 1 — the '25-100x systematic under-shoot across four mechanisms'
+**I asserted this and proposed a turn investigating it. It is FALSE.** Measured in
+the b3/b2 coordinate (measured 0.64112282):
+
+    SU(N) Casimir     Delta^3 = 0 EXACTLY — ZERO contribution, not small
+    Milnor mu-bar     normalised +-1 — NO magnitude at all
+    n!                0.0          -> INFINITE
+    [n]_q!            0.0437062    -> 14.67x
+    C(2n,n)           0.3333333    -> **1.92x**
+
+Two have no magnitude, so 'too small' is undefined for them; the rest span 1.92x
+to infinite — and C(2n,n) under by less than 2x **directly contradicts the range I
+quoted**. What is actually there is the tautology 'nothing produces b3'.
+
+### RETRACTION 2 — 'the fitted pairing delta is 25-40x too weak'
+Worse, because it stood as a REFUTATION. I judged the fitted A=2 pairing against
+the SEMF a_P = 12/sqrt(A) = 8.485 MeV. **The SEMF has no validity at A <= 4** —
+with standard coefficients it predicts
+
+    2H  B = -4.661 MeV  (UNBOUND)    3H  2.325 vs 8.482    4He  22.841 vs 28.296
+
+A formula that puts the deuteron below threshold cannot supply that standard.
+**The refutation is WITHDRAWN.** Against the quantity pairing must actually
+explain — the deuteron deficit, 0.475-0.603 MeV — the fitted 0.208-0.338 MeV is
+the SAME ORDER, covering **34.5-71.1%** of it. The SEMF extrapolation is 17.8x
+the entire deficit.
+
+**PAIRING IS RESTORED as a live candidate: sign derived, magnitude the right order.**
+
+### WHAT SURVIVES — and it is sharper than the pattern I invented
+    b3 = B(3) - 3B(2) = 3 * (B(3)/3 - B(2)) = 3 * (deuteron deficit)   EXACTLY
+
+**The b3 question IS the deuteron-weakness question.** The deuteron is 17.6-21.3%
+weaker than b3 = 0 requires; in B/A it sits 2.54x below A=3 and 6.36x below 4He.
+Every mechanism treating B(2) as an ordinary member of a smooth family gets b3
+too small because none makes the deuteron anomalously weak — **a TWO-body anomaly
+dominating a connected THREE-body cumulant.**
+
+Relocated target: derive the deuteron deficit, not b3. It has an established
+cause (near-unitary 3S1, a_t = 5.42 fm against a ~1.4 fm range; unbound 1S0
+virtual state), so it is a sharper question than 'produce b3'.
+
+The identity is trivial and is NOT a result; its value is the relocation.
+
+## Near-unitary two-body channel — asked and answered (2026-08-30, PR #6197)
+
+**Question:** does the framework produce a near-unitary two-body channel — the
+mechanism that would explain the deuteron deficit the previous commit relocated
+b3 onto?
+
+**STRUCTURE: yes, and not by analogy.** The Hecke relation sigma^2 = h*sigma + 1
+has eigenvalues q and -1/q, split by h = q - 1/q = 0.2090602988 at q0. h -> 0 as
+q -> 1, so **q = 1 is the framework's degenerate point** — the structural
+analogue of the 3S1/1S0 near-degeneracy that makes the physical two-nucleon
+system near-unitary. Symmetric and antisymmetric channels; one splitting
+parameter.
+
+**NEARNESS: no, and the route is closed by RULE, not by physics.** q0 is a CAL-2
+calibration input. Deriving q0 from the substrate is FOREVER GATED (owner ruling
+2026-08-02, bean qou-eic1). A nearness derivation would have to answer 'why is q0
+close to 1', which is precisely the forbidden question. **The deuteron-deficit
+route therefore terminates at the q0 gate rather than at a wall in the
+mathematics.**
+
+**A near-match deliberately NOT reported as evidence.** h = 0.2090603 sits 1.93%
+from the 3H deficit fraction 0.2131739. That fraction is convention-dependent
+over [0.1760783, 0.2131739] — 21.07% wide — and 3 of 8 framework small parameters
+land inside it (h, 1 - 1/q^2, 2*hbar_q). Three of eight is not discrimination.
+Recorded in the witness so a later agent does not rediscover it and read it as a
+hit.
+
+Probe: computations/probes/framework_near_unitary_channel_probe.py (mpmath 65
+dps, no float64, 2/2). Commit 755965d10d.

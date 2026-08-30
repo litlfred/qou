@@ -34,7 +34,7 @@ from mpmath import mp, mpf, fabs, catalan
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
@@ -52,7 +52,11 @@ def main():
     B_AME = mpf("2.22452")
 
     B_pred = m_e * VOL_B3 * delta_tr_D
-    err_pct = float(fabs(B_pred - B_AME) / B_AME * 100)
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    err_pct_exact_mpf = fabs(B_pred - B_AME) / B_AME * 100
+    err_pct = float(err_pct_exact_mpf)
     err_ppm = err_pct * 1e4
 
     print("=" * 70)
@@ -97,7 +101,7 @@ def main():
     })
     wb.add_assertion(
         "deuteron_under_1pct",
-        computed=err_pct,
+        computed=fmt(err_pct_exact_mpf),
         expected=0,
         tolerance=1,
         source="B(D) = m_e × Vol(B₃) × Δtr",

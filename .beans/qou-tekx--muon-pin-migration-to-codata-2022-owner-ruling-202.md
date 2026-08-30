@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T11:48:04Z
+updated_at: 2026-08-30T12:37:24Z
 ---
 
 ## The ruling
@@ -173,3 +173,61 @@ scripts emit committed witnesses.
 3. The 9 BOTH and 4 unclear — read individually; a literal beside a read is
    often a deliberate cross-anchor comparison and must NOT be migrated.
 4. The 11 without a producer — provenance first, migration never.
+
+
+## KEYSTONE TRANCHE DONE 2026-08-30 — 10 files, not the 6 I predicted, and 1 must NOT move
+
+The triage said 6 keystone probes transcribe a literal. Measured directly:
+**10** files in `docs/audits/scripts/` carry `1.1099785955541805` = **B**
+(CODATA-2018 muon). The 6 were the ones behind *unstamped witnesses*; the other
+4 carry the same literal and were invisible to that framing.
+
+**The cited source had already moved.** Two of them annotate the value
+`# tools/hecke-engine/src/gram.rs::Q_0`. `gram.rs:108` now reads
+`pub const Q_0: f64 = 1.1099785827513808` — **proton** — re-pinned 2026-08-15
+(owner decision, bean `qou-m7py`), and its own docstring calls
+`1.1099785955541805` *"11.54 ppb away"*. The citations outlived the value.
+
+**One comment was actively wrong.**
+`keystone_wrt_schurweyl_plancherel_4count_probe.py` labelled B as
+*"substrate q_0 (proton-anchored re-pin; matches #2603 witness)"*. B is the
+muon derivation, 11.54 ppb from proton. Only the "#2603 witness" half was true.
+
+| n | disposition |
+|---|---|
+| 8 | print-only, no frozen companions → **migrated**, all exit 0 |
+| 1 | emits a witness, computes its table → **migrated**, exit 0 |
+| 1 | emits a witness AND freezes `WRT`/`CANON_W` read off the #2603 witness → **NOT migrated** |
+
+The last is the class-(5) correctness case: moving `Q0` alone would leave a
+proton q₀ beside B-pinned reference constants — the same straddle shape as the
+he_nu_sdp defect (PR #6200). Its comment is corrected to name the value
+honestly and say why it stays; moving it needs the #2603 producer re-run.
+
+## What this does NOT fix
+
+**5 committed keystone witnesses still carry B** —
+`keystone-{habiro-wrt-s3-2i,qdeform-projector-shift,schurweyl-dual-sides,
+schurweyl-su2-rowcount,wrt-color-schurweyl}.witness.json` — and the migration
+cannot refresh them, because **all 5 have `scriptFile: None`** and the probes
+now bearing their names are print-only (they write no witness). Whatever wrote
+them is not identified. Provenance first; regeneration after. That is the
+"producer not found" bucket of the triage, seen from the other side.
+
+Also: `keystone_wrt_schurweyl_higher_colour_foreclosure_probe.py` writes
+`computations/keystone-wrt-schurweyl-higher-colour-foreclosure.witness.json`,
+which is **untracked** — never committed. Its fresh output was deleted rather
+than committed here: adding a first-ever witness computed at a just-changed pin,
+with no baseline to diff, should be a deliberate act, not a side effect.
+
+
+## CORRECTION to this bean's own triage (2026-08-30)
+
+The "producer not found — 11" bucket above was read off `scriptFile`. For the
+five keystone witnesses that was **the wrong field**: all five name their
+producer in `computation`. The producers are known; what is missing is that
+**none of them writes a witness at all** (all print-only), so these five are
+hand-transcribed. Full evidence and the fix in bean `qou-bake`.
+
+Re-check the other 6 of that bucket against `computation` before treating them
+as unattributable — the same read error may cover them.

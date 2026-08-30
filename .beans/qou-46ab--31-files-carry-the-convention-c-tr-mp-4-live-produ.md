@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-08-30T06:49:40Z
+updated_at: 2026-08-30T12:15:51Z
 ---
 
 Generalised from qou-5ll9, where `atomic-tr-m-helium4.witness.json` was shown
@@ -177,3 +177,58 @@ effort that reported completion.
 The 11 witness files are untriaged individually. Each is presumably downstream
 of one of the 15 code sites, so fixing the code and regenerating is the order —
 not the reverse.
+
+
+## 2026-08-30 — the code side is DRAINED; the witness side is done bar one
+
+**Zero live convention-C tr_M literals remain in Python outside the one that
+needs C by design.** Measured by AST rather than by grep, which is the
+difference that matters here: a text search returns 19 files, and 4 of the 5
+AST-visible constants are **docstrings** recording what was fixed.
+
+    LIVE (non-comment) C tr_M constants in .py : 5
+      he4_witness_convention_attribution_probe.py:2   docstring
+      he4_witness_convention_attribution_probe.py:73  ← the only real one,
+                                                        needs C BY DESIGN
+      canonical_trm_reference.py:2                    docstring
+      habiro/habiro_coefficients_atomic.py:84         docstring
+      qou-mass/.../canonical_trm_reference.py:2       generated mirror of above
+
+The 7 `habiro/` files, `markov_weights_symbolic.py` and both `probe_qbeta_form`
+copies now carry the value only in **comments explaining the fix** — items (3),
+(4) and (5) of the triage above are closed at the source.
+
+### The three witnesses this bean deferred are regenerated
+
+All three converted, verified by value:
+
+    path-b-habiro-mass-probe        C 2 -> 0,  D 0 -> 2
+    qbeta-habiro-element-probe      C 1 -> 0,  D 0 -> 2
+    paper-six-term-isotope-sweep    term1_canonical_tr_M (proton, habiro mode)
+                                    1.0653062286131671 -> 1.1457596924573008
+
+That last is the **7.55 % C→D gap in a paper-facing sweep column**, in two
+places (`/all_modes/habiro` and `/all_modes/combined`).
+
+### 🛑 The environment blocker I recorded was WRONG
+
+I reported these as needing "a Python 3.13 container I cannot produce here".
+**`/usr/bin/python3.13` was already installed** — 3.13.12, byte-matching the
+version the witnesses record. The default `python3` is 3.11, which is the whole
+of it. Every dependency was reachable: mpmath/numpy/sympy/scipy/clarabel by
+pip, the local packages by `pip install -e`, and `pyhecke_native` **built from
+`tools/pyhecke-native` in 31 s** with the `maturin` already on PATH.
+
+Nothing was missing except the check. Recorded because "I need an input I
+cannot produce" is the most expensive kind of wrong claim to leave in a bean —
+it stops the next agent from trying.
+
+### Still open
+
+- `markov-peel-atomic-tr-m.derivation.json` — no producer recorded anywhere in
+  the artifact; cannot be regenerated. Unchanged.
+- `qou-mass/.../data/_deprecated/markov_weights_symbolic.witness.json` —
+  deprecated mirror, correctly left alone.
+- The **Model B** leg of the six-term sweep, which turned out to be worse than
+  a missing witness: the producer it names has never existed. Split to
+  `qou-imkb` with the measurement.

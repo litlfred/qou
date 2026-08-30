@@ -1,11 +1,11 @@
 ---
 # qou-y313
 title: 'GAP: 4 measured pin straddles — proton producers reading muon artifacts'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T04:51:16Z
-updated_at: 2026-08-30T05:30:59Z
+updated_at: 2026-08-30T12:15:17Z
 ---
 
 Found by `computations/audits/pin_straddle_unguarded_audit.py` stage 2 (PR #6104),
@@ -227,3 +227,52 @@ rather than a truncated one -- the stale n survive by design. It confirms the
 decision to restore rather than commit the partial.
 
 Corrected in the producer docstring so the next reader does not inherit it.
+
+
+## CLOSED 2026-08-30 — all four resolved, verified by measurement
+
+Final disposition of the four entries in the table above:
+
+| module | outcome |
+|---|---|
+| `y_lambda_macdonald_telescope.py` | **RETRACTED** — reads the artifact's own `q`. Never a straddle. |
+| `qbeta/qlommel_delta_lambda_lin_vs_sym_ladder.py` | **RETRACTED** — same. |
+| `y_lambda_symbolic_validate.py` | **FIXED** in PR #6104 (`45dbc808f4` + `3e03eff95c`) |
+| `atomic_tr_m_helium4.py` | **FIXED AND REGENERATED** |
+
+**The helium-4 leg is confirmed done, not assumed.** `_pick_witness_for_pin()`
+is live in the producer, and the committed witness records
+`source_witness: "atomic-tr-m-mpfr-50dps-proton.witness.json"`. Checked by
+value rather than by that field:
+
+    committed abs_tr_p_50dps  vs proton reference   rel = 0.0   (exact)
+    committed abs_tr_n_50dps  vs proton reference   rel = 0.0   (exact)
+    committed abs_tr_p_50dps  vs MUON layer         rel = 7.84e-8
+
+So the 296 ppb fourth-power error this bean was opened for is gone, and the
+witness sits on the layer its producer pins to.
+
+**Detector agrees:** `pin_straddle_unguarded_audit.py` stage 2 reports
+**0 measured mismatches, 0 artifacts** on a full scan.
+
+## What closing it exposed — split to its own work, not left here
+
+Both fixed modules were **still flagged by stage 1** after being correctly
+fixed. The detector could not see its own recommended remedy: RECONCILIATION 2
+tracked derivation on the stamp side (`_stamp_derived`) and demanded a literal
+on the runtime-pin side, while both fixes bind the pin first
+(`want = mp.mpf(Q_50_DIGIT_STR)`).
+
+That is not cosmetic — the #6104 PR body states "candidate list triaged to
+zero" as the precondition for making this gate blocking, and a detector blind
+to its own fix can never reach zero.
+
+Fixed in the same tranche (`2861f0a73f`): added the mirror `_pin_derived`,
+iterated to a fixed point (a module-level alias plus an in-loader conversion is
+two hops, and one hop left `y_lambda_symbolic_validate` flagged), and added
+`"q"` to `STAMP_KEYS` — which looks too generic and is not: **5 of 5**
+`.get("q")` sites in live `computations/` read a pin stamp off an artifact
+table, and `y-lambda-mpfr-witness.json` stamps every per-n table with exactly
+that key.
+
+**133 → 123 shape candidates, `--selftest` PASS, stage 2 unchanged at 0.**

@@ -149,10 +149,23 @@ def main() -> int:
                      tolerance=0.1,
                      source=f"min distance {mp.nstr(min_all, 6)} >> anchor "
                             f"separation {dq:.1e} => no branch-point graze")
+    # Was `computed=d_complete, expected=d_complete` -- the distance as its own
+    # expectation, so it passed even if the complete structure sat ON the
+    # locus, which is the one outcome the name excludes (bean qou-3e5m). The
+    # `source` called it informational; the NAME states a falsifiable claim,
+    # and by the qou-26f2 rule that is what the assertion owes.
+    #
+    # Threshold is the file's OWN graze criterion from three lines up
+    # (`graze = min_all < 1e-6`), not a number picked here: "not on the locus"
+    # and "does not graze the locus" are the same bar, and reusing it keeps the
+    # two assertions consistent. The distance itself stays in the verdict text.
     wb.add_assertion("complete_structure_not_on_locus",
-                     computed=d_complete, expected=d_complete,
-                     tolerance=1e-30,
-                     source="recorded exact-locus distance from m=1 (informational)")
+                     computed=1.0 if float(d_complete) >= 1e-6 else 0.0,
+                     expected=1.0,
+                     tolerance=0.1,
+                     source=f"exact-locus distance from m=1 is "
+                            f"{mp.nstr(d_complete, 6)}, at or above the 1e-6 "
+                            f"graze bar this probe uses for the other paths")
 
     ok = all(a.passed for a in wb.assertions)
     wb.add_data("verdict", (
