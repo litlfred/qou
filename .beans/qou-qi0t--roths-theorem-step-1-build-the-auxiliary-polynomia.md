@@ -191,3 +191,55 @@ so it instantiates at `house` the moment that module is built, and at `|·|` on 
 
 All four inputs Siegel needs now exist: the system (Part 1), its size (Parts 2–3), and the
 entry bound (Part 4).
+
+## Part 5, the house bound — and a measurement I got wrong by 20×
+
+**Part 5, the bridge.** `Finsupp.equivFunOnFinite` carries `Fin m → ℕ` (the counting) to `σ →₀ ℕ`
+(what `index` speaks), and the two weights differ by exactly the mean:
+`centredWeight r (equivFunOnFinite i) = idxWeight r i − m/2`. Endpoint:
+`fintypeCard_idxWeight_lt` — `Fintype.card` of the equation subtype below `Fintype.card` of the
+unknown subtype, i.e. **`p < q` in the exact form Siegel asks for**.
+
+**The house bound.** `house_translateMatrix_le` (`QOU/Mathlib/RothHouseBound.lean`) instantiates
+Part 4's seminorm bound at `house`. First try, no new proof — which is what the generality was
+for.
+
+### ⚠⚠ The correction
+
+Last commit I recorded that `House` was **470 of 3322** transitive imports from the built
+closure, and framed the next step as a **fork**: that build against re-deriving the
+integral-basis bookkeeping by hand.
+
+**Both numbers were wrong and there was no fork.** `House` took **40 modules and about four
+minutes** (`3390 → 3430` oleans). `SiegelsLemma` was `3`, which the estimate did get right.
+
+Cause: the import-cone script matched `^import` with `re.MULTILINE` over whole files, so it
+collected `import` lines inside docstrings and comments; once the root module `Mathlib` came in
+that way the cone inflated toward all of Mathlib. The first run read only the first 20 kB per
+file, which hid most of the damage.
+
+**What makes this worth recording rather than just fixing.** The arc has now hit the same shape
+three times in three guises:
+
+* a **weaker true theorem** (correction 24) — invisible to build, axioms, and witnesses;
+* a **hypothesis nobody discharges** (correction 25) — indistinguishable from a false one;
+* an **unvalidated measurement** (here) — indistinguishable from a measured one.
+
+And the check that would have caught this one was free: the script produced two numbers, `3` and
+`470`. I verified the `3` in thirty seconds and extrapolated the `470`. **Validating a tool on
+the case whose answer you already know is not the same as validating it** — the cheap case is
+exactly the one a bug is least likely to disturb.
+
+The wrong figure was published in a commit message and a docstring; the docstring is corrected in
+place and `RothHouseBound`'s header carries the full account.
+
+## Remaining
+
+Only the Siegel application itself. All four of its inputs now exist and are checked:
+
+| input | where |
+|---|---|
+| the system | `le_index_iff_coeff_eq_zero`, `coeff_translate_eq_sum` |
+| `p < q` | `fintypeCard_idxWeight_lt` |
+| entry bound (`house`) | `house_translateMatrix_le` |
+| the engine | `exists_ne_zero_int_vec_house_le`, built and verified |

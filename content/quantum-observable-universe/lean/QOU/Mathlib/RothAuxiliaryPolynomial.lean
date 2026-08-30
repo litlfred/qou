@@ -63,8 +63,8 @@ simplification of the *counting*, not of the theorem.
 
 * the `house` bound on `translateMatrix`, which does need the closed form — and is where
   `deg α` actually enters;
-* the bridge from `Fin m → ℕ` (used here) to `σ →₀ ℕ` (used by `index`);
-* the application of Siegel itself, now that `p < q` is available.
+* ~~the bridge from `Fin m → ℕ` to `σ →₀ ℕ`~~ — **done**, Part 5;
+* the application of Siegel itself, now that `p < q` is available in its exact form.
 
 ⚠ Not Mathlib-only: imports `QOU/Mathlib/RothGammaProducer.lean`.
 -/
@@ -388,23 +388,24 @@ one.  The multivariate binomial theorem is never needed.
 ⚠ The bound is stated for an arbitrary **submultiplicative seminorm**, not for `house`, and the
 reason is a measurement rather than a taste for generality.
 
-`Mathlib.NumberTheory.NumberField.House` — Siegel's lemma over a number field, which is what
-would let the equations keep their `ℚ(α)` coefficients — is **not in this project's built Mathlib
-closure**: `470` of its `3322` transitive imports are unbuilt, so an instantiation at `house`
-cannot be checked here.  `Mathlib.NumberTheory.SiegelsLemma`, the plain `ℤ` version, was only
-**three** modules away (`Analysis.Matrix`, `Data.Pi.Interval`, and itself) and builds in about
-half a minute; `Int.Matrix.exists_ne_zero_int_vec_norm_le` is verified usable at this pin.
+Neither Siegel module ships in this project's built Mathlib closure, and both are cheap to add:
+`Mathlib.NumberTheory.SiegelsLemma` (over `ℤ`) is **3** modules and about half a minute;
+`Mathlib.NumberTheory.NumberField.House` (over a number field) is **40** modules and about four.
+Both are verified usable at this pin — `Int.Matrix.exists_ne_zero_int_vec_norm_le` with
+`attribute [local instance] Matrix.seminormedAddCommGroup` and `open Matrix`, and `house` in
+`QOU/Mathlib/RothHouseBound.lean`.
 
-⚠ `.lake` is a build artifact, so a fresh container has neither.  Reproducing the `ℤ` engine
-needs `lake build Mathlib.NumberTheory.SiegelsLemma` first, with
-`attribute [local instance] Matrix.seminormedAddCommGroup` and `open Matrix` at the use site.
+⚠⚠ **An earlier version of this paragraph said `House` was `470` of `3322` imports away and
+framed the next step as a fork between that build and re-deriving the integral-basis bookkeeping
+by hand.  Both numbers were wrong and there was no fork** — see `RothHouseBound` for the cause
+(an import-cone script that matched `import` inside comments) and for what it says about
+reporting an unvalidated measurement as a measurement.
 
-**The fork this creates**, stated rather than silently taken: the `ℤ` engine is free but needs
-the `ℚ(α) → ℚ`-basis expansion of the equations — which is precisely the work `House` exists to
-do.  So the choice is a 470-module Mathlib build against re-deriving the integral-basis
-bookkeeping.  Neither is obviously right, and the bound below is written to survive either: it
-holds for **any** submultiplicative seminorm, so it instantiates at `house` the moment that
-module is built, and at `|·|` on `ℤ` today (`abs_translateMatrix_le`).
+⚠ `.lake` is a build artifact, so a fresh container has neither module.
+
+The bound below is nonetheless stated for an arbitrary submultiplicative seminorm, and that
+remains the right shape: it instantiates at `house` (`RothHouseBound.house_translateMatrix_le`)
+and at `|·|` on `ℤ` (`abs_translateMatrix_le`) with no duplicated proof.
 -/
 
 variable {σ R : Type*} [CommRing R]
@@ -498,5 +499,88 @@ theorem abs_translateMatrix_le [DecidableEq σ] (α : σ → ℤ) {B : ℤ} (hB1
     rw [Int.cast_abs]
   rw [hcast] at h
   exact_mod_cast h
+
+/-! ### Part 5 — the bridge to `index`'s own language
+
+Parts 2 and 3 count multi-indices as `Fin m → ℕ`, because that is the shape the product-space
+lemmas want.  `index` and `idxWeight` speak `σ →₀ ℕ`.  `Finsupp.equivFunOnFinite` carries one to
+the other, and the two weights differ by exactly the mean:
+
+    centredWeight r (equivFunOnFinite i) = idxWeight r i − m/2
+
+`idxWeight` sums over the *support* while `centredWeight` sums over all coordinates; they agree
+because the missing terms are `0/d = 0`, which is `idxWeight_eq_sum_univ`.
+
+The endpoint is `fintypeCard_idxWeight_lt`: `Fintype.card` of the equation subtype is less than
+`Fintype.card` of the unknown subtype — **`p < q` in exactly the form
+`Int.Matrix.exists_ne_zero_int_vec_norm_le` asks for it.**
+-/
+
+
+/-- **`idxWeight`, as a sum over all coordinates.**  `idxWeight` sums over the support; on a
+finite index type the missing terms are `0/d = 0`, so the two agree. -/
+theorem idxWeight_eq_sum_univ {m : ℕ} (d : Fin m → ℕ) (i : Fin m →₀ ℕ) :
+    idxWeight d i = ∑ h, (i h : ℚ) / (d h : ℚ) := by
+  rw [idxWeight]
+  refine Finset.sum_subset (Finset.subset_univ _) ?_
+  intro h _ hns
+  rw [Finsupp.notMem_support_iff.mp hns]
+  simp
+
+/-- **The two weights differ by the mean.** -/
+theorem centredWeight_equivFun {m : ℕ} (r : Fin m → ℕ) (i : Fin m →₀ ℕ) :
+    centredWeight r (Finsupp.equivFunOnFinite i) = idxWeight r i - (m : ℚ) / 2 := by
+  rw [centredWeight, idxWeight_eq_sum_univ, Finset.sum_sub_distrib]
+  simp [Finsupp.equivFunOnFinite]
+  ring
+
+/-- The box of multi-indices, carried onto `Finsupp`s — the form `index` speaks. -/
+noncomputable def idxBoxF {m : ℕ} (r : Fin m → ℕ) : Finset (Fin m →₀ ℕ) :=
+  (idxBox r).map (Finsupp.equivFunOnFinite.symm.toEmbedding)
+
+@[simp] theorem card_idxBoxF {m : ℕ} (r : Fin m → ℕ) :
+    (idxBoxF r).card = (idxBox r).card := Finset.card_map _
+
+theorem mem_idxBoxF {m : ℕ} (r : Fin m → ℕ) (i : Fin m →₀ ℕ) :
+    i ∈ idxBoxF r ↔ ∀ h, i h ≤ r h := by
+  rw [idxBoxF, Finset.mem_map_equiv]
+  simp [idxBox, Fintype.mem_piFinset, Nat.lt_succ_iff]
+
+theorem card_filter_idxBoxF {m : ℕ} (r : Fin m → ℕ) (c : ℚ) :
+    ((idxBoxF r).filter (fun i => idxWeight r i ≤ c)).card
+      = ((idxBox r).filter (fun x => centredWeight r x ≤ c - (m : ℚ) / 2)).card := by
+  classical
+  rw [idxBoxF, Finset.filter_map, Finset.card_map]
+  congr 1
+  refine Finset.filter_congr fun x _ => ?_
+  have hx : Finsupp.equivFunOnFinite (Finsupp.equivFunOnFinite.symm x) = x :=
+    Equiv.apply_symm_apply _ _
+  have := centredWeight_equivFun r (Finsupp.equivFunOnFinite.symm x)
+  rw [hx] at this
+  simp only [Function.comp_apply, Equiv.coe_toEmbedding]
+  constructor
+  · intro h; linarith [this]
+  · intro h; linarith [this]
+
+/-- **The vanishing conditions are fewer than the coefficients**, in the arc's own `idxWeight`
+language: at index threshold `m(½ − ε)`, as soon as `m > 1/(4ε²)`. -/
+theorem card_idxWeight_lt {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    {ε : ℚ} (hε : 0 < ε) (hm : 1 < 4 * ε ^ 2 * (m : ℚ)) :
+    ((idxBoxF r).filter (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))).card
+      < (idxBoxF r).card := by
+  rw [card_filter_idxBoxF, card_idxBoxF]
+  rw [show (m : ℚ) / 2 - ε * (m : ℚ) - (m : ℚ) / 2 = -(ε * (m : ℚ)) by ring]
+  exact card_lt_card_idxBox_of_eps r hr hε hm
+
+/-- **`p < q`, exactly as `Int.Matrix.exists_ne_zero_int_vec_norm_le` asks for it** — the
+equations indexed by a subtype, the unknowns by another, and `Fintype.card` between them. -/
+theorem fintypeCard_idxWeight_lt {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    {ε : ℚ} (hε : 0 < ε) (hm : 1 < 4 * ε ^ 2 * (m : ℚ)) :
+    Fintype.card {i // i ∈ (idxBoxF r).filter
+        (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))}
+      < Fintype.card {n // n ∈ idxBoxF r} := by
+  classical
+  rw [Fintype.card_coe, Fintype.card_coe]
+  exact card_idxWeight_lt r hr hε hm
 
 end MvPolynomial
