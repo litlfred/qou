@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T15:51:05Z
+updated_at: 2026-08-30T15:59:47Z
 ---
 
 ## Context
@@ -123,3 +123,17 @@ text above, in descending order of how badly it misleads:
 the same pass: `ArchimedeanTraceBridge`'s module docstring, `brunnian-binding-channel.md`, and
 `docs/audits/2026-08-30-brng-residuals-worked.md` — all three carried the connected-sum conflation
 after the sibling had fixed the Lean.
+
+
+
+**Follow-on consequence PROVED 2026-08-30 — QOU.Mass.SpuriousClosureBinding (sorry-free).**
+ClosureNormalisationDefect proves the assembly free energy is short by m·log δ and stops there; it
+mentions binding ZERO times. But binding is DEFINED as that same mass deficit, so rearranged the
+theorem says: an assembly with NO interaction registers B = m·log δ > 0. The closure bookkeeping
+manufactures positive binding out of nothing — 0.6985808249 per joining, 2.0957424747 for four
+components (reproduced independently at the proton pin). Proved: spuriousBinding_eq (it equals
+m·log δ), spuriousBinding_pos (always the SIGN of binding, so no sign check can catch it),
+loopValue_gt_one (the substrate is never at the exceptional δ=1), physicalBinding_eq (the
+subtraction), and spuriousPerNucleon_lt_log/_mono (per component it rises to the CONSTANT log δ —
+it saturates rather than washing out, which is the shape of a plateau). Does NOT touch the empirical
+B/A, which comes from AME masses, not from a closure-normalised trace.
