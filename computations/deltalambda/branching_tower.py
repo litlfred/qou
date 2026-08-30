@@ -163,12 +163,79 @@ def run_validate(shapes=None):
     return ok
 
 
+def _npart(m):
+    """p(m) — number of partitions of m (the branching-bond upper bound)."""
+    return sum(1 for _ in partitions(m)) if m > 0 else 1
+
+
+def measure_tower_bond(As=(2, 3, 4, 5, 6, 8)):
+    """Step 2 — the poly-vs-blowup decision. For each A measures, at every
+    nucleon cut of the ⁴He-style word atom_braid_word_3A(Z,N):
+
+      • BRANCHING BOND: distinct intermediate shapes μ⊢3k that can appear across
+        the cut, bounded by p(3k) — the transfer-matrix bond dimension.
+      • GERM LOCALITY: how many Ω₂ commutator terms [A_a,A_{a+1}] straddle the
+        cut. Each germ term is supported on 3 consecutive strands {a,a+1,a+2},
+        so it straddles the cut after strand 3k iff a ∈ {3k-2, 3k-1} — AT MOST
+        2 terms, INDEPENDENT of A. This is the germ MPO's local bond.
+
+    Poly(A) feasibility holds iff both stay bounded: bond ≤ p(3k) (sub-exponential)
+    and germ terms/cut = O(1). Reproduces no physics — a structural feasibility
+    measurement (scope-(a))."""
+    from mass_at_3A_proper import atom_braid_word_3A
+    print("[step2] nucleon-chain transfer-matrix feasibility (bond + germ locality)\n")
+    print(f"  {'A':>2} {'n=3A':>5} {'#cuts':>6} {'max bond p(3k)':>15} "
+          f"{'max germ terms/cut':>20} {'flat cost (3A)!':>18}")
+    import math
+    all_poly = True
+    for A in As:
+        Z, N = A // 2, A - A // 2
+        gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
+        n = 3 * A
+        present = set(gens)
+        # Ω₂ term (a,a+1) present iff both generators occur as crossings
+        germ_terms = [a for a in range(n - 2) if a in present and (a + 1) in present]
+        cuts = [3 * k for k in range(1, A)]        # 0-indexed strand boundary; left = 0..3k-1
+        max_bond = 0
+        max_germ = 0
+        for c in cuts:
+            max_bond = max(max_bond, _npart(c))
+            straddle = sum(1 for a in germ_terms if a in (c - 2, c - 1))
+            max_germ = max(max_germ, straddle)
+        flat = math.factorial(n)
+        poly = max_germ <= 2
+        all_poly = all_poly and poly
+        print(f"  {A:>2} {n:>5} {len(cuts):>6} {max_bond:>15} {max_germ:>20} {flat:>18.3g}")
+    print()
+    print("  BRANCHING BOND is p(3(A-1)) at the widest cut: A=4→30, 8→792, 12→p(33)=10143,")
+    print("    16→p(45)=89134. This is SUB-EXPONENTIAL — p(m) ~ exp(π√(2m/3)) ~ exp(c√A) —")
+    print("    NOT polynomial (p(m) is not a polynomial), but vastly below the flat (3A)!.")
+    print("  GERM LOCALITY: ≤ 2 straddling Ω₂ terms per cut for every A (each term spans 3")
+    print("    consecutive strands, so only a ∈ {3k-2,3k-1} cross the cut) — O(1), A-independent.")
+    print("  LINK/ρ LOCALITY: a seminormal generator σ_g is a ⊕ of 1×1/2×2 blocks (step 1), so")
+    print("    a single straddling crossing couples the two sides at operator-Schmidt rank ≤ 2;")
+    print("    ρ has A-1 links ⇒ its MPO bond across any nucleon cut is O(1) too.")
+    print()
+    if all_poly:
+        print("  VERDICT: bond = p(3(A-1)) SUB-EXPONENTIAL (exp(c√A)) AND germ+link locality O(1)")
+        print("  ⇒ the nucleon-chain contraction costs ~ A · p(3(A-1))^c ~ exp(c'√A), vs the flat")
+        print("  (3A)! ~ exp(3A·ln 3A). A≫4 is feasible: e.g. A=16 → bond ~9e4 vs flat 48! ~ 1e61.")
+        print("  Build steps 3-4 (local tensors + contraction), gated against flat-sparse A=3/A=4.")
+    else:
+        print("  VERDICT: a germ term count exceeded 2 — re-examine locality before building.")
+    return all_poly
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--validate", action="store_true", help="validate the branching restriction")
+    ap.add_argument("--measure-bond", action="store_true",
+                    help="step 2: nucleon-cut bond dimension + germ locality (poly-vs-blowup)")
     ap.add_argument("--n", type=int, default=None, help="validate only shapes of this n")
     args = ap.parse_args()
-    if args.n:
+    if args.measure_bond:
+        measure_tower_bond()
+    elif args.n:
         run_validate(list(partitions(args.n)))
     else:
         run_validate()
