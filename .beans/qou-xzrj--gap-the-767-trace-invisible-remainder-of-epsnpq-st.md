@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T15:34:40Z
+updated_at: 2026-08-30T04:34:57Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -541,3 +541,11 @@ four corrections (this one, the step-3/4 mix-up, the over-read alignment, the
 Omega mislabel).
 
 Scope (a) throughout.
+
+## 2026-08-30 — PR #5869 merged (9ce3ed2942)
+
+The pairing result is on main: the trace-invisible remainder is Riesz-representable by a unique y0 = mu*dC, and every factor of mu is a named (2,1)-block invariant except the last, which collapses onto step 3's presentation of the proton/neutron normal forms.
+
+Bean stays OPEN. What merged is a *representation* of net, scope (a) throughout — nothing here produces y0 without first inverting net. Step 8's actual postulate, the physical identification Q_beta = |Delta(net)|*E0, is untouched by all seven tranches.
+
+Merge note: GitHub refused rebase-merge (4 merge commits); branch was linearized locally per AGENTS.md rule 8, and the six audit-witness conflicts were resolved to origin/main's side because my regenerated copies carried this container's environment (mpmath 1.3.0, no scipy/clarabel) rather than main's.
