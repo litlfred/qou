@@ -9,7 +9,7 @@ tags:
     - mathlib-gap
     - hyperbolic-volume
 created_at: 2026-08-09T19:45:00Z
-updated_at: 2026-08-09T19:45:00Z
+updated_at: 2026-08-30T17:30:00Z
 ---
 
 Inventory of what Mathlib does **not** have that the volume lane needs, with what
@@ -157,3 +157,79 @@ needs hyperbolic 3-manifolds, which neither Mathlib nor QOU has. No claim here
 is about `S³ ∖ 5₂`, and the 5₂ triangulation defined in
 `FiveTwoVolumeConstant.lean` is **not** asserted to satisfy any gluing data —
 that would need the actual SnapPy combinatorics (`qou-m015`).
+
+---
+
+## Gap 4 (added 2026-08-30) — Mathlib has NO method of steepest descent, and that is what blocks upgrading the literature-cited VC instances
+
+Owner asked: upgrade the literature-cited volume-conjecture instances (5₂, 6₁,
+6₂, 6₃ — see bean `qou-ckbv`) from *asserted* to *Lean-derived*. Surveyed
+against the vendored Mathlib on this date, that is blocked on a missing
+**analysis** theory, not on knot theory and not on effort.
+
+### Why the corpus's own proof route cannot reach them
+
+The in-repo discharges (4₁, Borromean, 2-belt Whitehead chain) all use the
+positive-sum squeeze: Riemann sums of `log(2 sin)` against the Clausen
+primitive, saddle, two envelopes. Its precondition is a **single positive sum**
+at the Kashaev point. The corpus's own transfer scan
+(`2026-07-27-squeeze-architecture-transfer-scan.md`) tabulates:
+
+    | 5₂, 8₁₁, generic knots | no | oscillatory sums (structural) | — |
+
+No positivity ⇒ no squeeze. That is precisely why Ohtsuki needed the saddle
+point method for 5₂ and the 6-crossing family.
+
+### The gap
+
+Ohtsuki's route is: integral presentation of `(q)_n` → Poisson summation →
+**saddle point method** → and the load-bearing part, an explicit homotopy of the
+real-3-dimensional integration domain in ℂ³ keeping its boundary inside the
+region controlled by the potential.
+
+Measured against Mathlib (`grep -rli` over `Mathlib/`, this date):
+
+| ingredient | Mathlib files |
+|---|---|
+| Poisson summation | **2** — `Analysis/Fourier/PoissonSummation.lean` ✅ |
+| stationary phase | **0** |
+| steepest descent | **0** |
+| Laplace method | **0** |
+| saddle-point analysis | **0** — the 18 `saddle` hits are Haar-measure and `ToAdditive` word-list files, none complex-analytic |
+| Lobachevsky | **0** (Gap 1) |
+| polylogarithm | **0** |
+| quantum dilogarithm / q-Pochhammer | **0** |
+
+Correction to a plausible reading of Gap 1: Mathlib's three `Clausen` hits are
+`Probability/Distributions/Exponential.lean` and two `Condensed/` files — that is
+**Dustin Clausen**, the mathematician, not the Clausen function. Mathlib has
+none, exactly as Gap 1 says.
+
+So the first milestone of "formalize Ohtsuki" is *build the method of steepest
+descent in Mathlib* — in several variables, with hypothesis verification — a
+major library contribution with no knot theory in it. This is not a session or
+a sprint; it is a programme whose payoff is years out, and it should not be
+scoped as a QOU task.
+
+### What IS reachable — shrink the axiom instead of eliminating it
+
+The §3b-cond pattern the corpus already uses for `VolumeBridge` applies exactly
+here: axiomatise **only the open analytic input** and *derive* the conclusion.
+Rather than assuming "VC holds for 5₂" (a conjecture), assume Ohtsuki's
+**specific quantitative asymptotic estimate** (a named, cited, published lemma)
+and derive VC-for-5₂ from it in Lean. That is formalizable with what exists,
+and it moves the assumed surface from a conjecture to a theorem-someone-proved.
+
+It does not make 5₂ tier-1. It makes the tier-2 assumption *minimal and
+precise* instead of blanket — which is the same improvement `VolumeBridge` was
+built to make, applied one level down.
+
+Sources for extracting that estimate are already in `library/`: `ki52`,
+`104171-qt-83` (Ohtsuki, 5₂) and `ki6c` (Ohtsuki–Yokota, 6-crossing).
+
+### Upstreamable, and worth flagging as such
+
+Gap 1 already notes `Cl₂` is a clean Mathlib contribution. Add: **`Li₂` /
+polylogarithm and the Lobachevsky function are equally self-contained**, and
+QOU has working versions of both. Steepest descent is a much larger piece and a
+different kind of contribution.
