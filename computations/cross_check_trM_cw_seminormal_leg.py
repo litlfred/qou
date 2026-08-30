@@ -39,7 +39,20 @@ import sys
 import time
 from pathlib import Path
 
-os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")
+# The self-imposed `os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")` that
+# stood here was REMOVED 2026-08-30 (bean `qou-aj91`). It forced this
+# script to the muon anchor at import time, overriding the manifest, and
+# that is what broke the cross-check: the peel reference this script
+# compares against at TOLERANCE_PPQ = 1e-15 is stamped `q0Anchor:
+# "proton"`, so the comparison ran across an 11.6141 ppb anchor gap.
+#
+# Measured, same commit, only the anchor varying:
+#
+#     muon    |d|/ref = 7.89e-08 .. 2.53e-07   FAIL on all 6 atoms
+#     proton  |d|/ref = 1.46e-50 .. 5.70e-50   OK   on all 6 atoms
+#
+# 43 orders of magnitude. The anchor now comes from the manifest, where
+# this stem is listed `physical_proton`, matching its reference.
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -65,10 +78,40 @@ ATOMS = [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1),
 
 
 def load_q() -> str:
-    d = json.loads((HERE / "q-pinning-50-digit.witness.json").read_text())
-    q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595642"), q
-    return q
+    """q_0 at the RUNNING SCRIPT's anchor, matching the peel reference.
+
+    Routed through `q_parameter` on 2026-08-30 (bean `qou-aj91`). It used to
+    read `q-pinning-50-digit.witness.json` directly and assert the MUON prefix
+    `1.109978595642`.
+
+    That assert was not protecting this cross-check; it was breaking it. The
+    reference this script compares against at TOLERANCE_PPQ = 1e-15 is
+    `markov/markov-peel-atomic-tr-m.witness.json`, which is stamped
+    `q0Anchor: "proton"` (and has been since 2026-08-09, dbd91b5ffc) and
+    carries a single `tr_M_at_q0` per row with no muon layer. So the assert
+    pinned this side to muon while the reference side stayed proton, and the
+    comparison ran across an 11.6141 ppb anchor gap at a tolerance seven orders
+    of magnitude tighter.
+
+    Measured on `main` before this change -- it fails on every atom, and the
+    magnitudes are the anchor gap amplified by the trace, not noise:
+
+        proton    A=1  |d|/ref = 7.89e-08  FAIL
+        neutron   A=1  |d|/ref = 6.99e-08  FAIL
+        deuteron  A=2  |d|/ref = 1.52e-07  FAIL
+        triton    A=3  |d|/ref = 1.98e-07  FAIL
+        helium-3  A=3  |d|/ref = 2.53e-07  FAIL
+
+    It went unnoticed because this producer is listed `ideal_muon` and read the
+    anchor directly, so `QOU_Q0_ANCHOR` never reached it and the proton-pin
+    assertion check could not measure it (group B, `UNSOUND-ENV-BYPASS`).
+
+    The anchor is no longer hardcoded here. A cross-check must evaluate at the
+    same anchor as the artifact it checks against; `q_parameter` supplies the
+    running script's, and the manifest is the one place that decides it.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    return Q_50_DIGIT_STR
 
 
 def load_peel_reference() -> dict[tuple, mp.mpf]:
