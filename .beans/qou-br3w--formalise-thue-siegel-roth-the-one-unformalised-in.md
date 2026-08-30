@@ -906,3 +906,36 @@ REMAINING:
   2. Feed the result to roth_contradiction_int.
   3. Step 5, not LiouvilleWith.
 
+## 2026-08-30 -- Siegel's EXPONENT, and a threshold that had to be doubled
+
+Three declarations added to RothSiegelBound, axiom-clean, .olean deleted first.
+
+A GAP I HAD NOT SEEN, found by trying to use the two size estimates. siegelHeight is
+(#box * ||A||)^rho with rho = #E/(#box - #E). The estimates make the BASE well behaved -- both
+factors are C^{sum r} -- and that is worth nothing while rho is unbounded. The counting condition
+proved so far gives only #E < #box, hence #box - #E >= 1 and rho <= #E; and #E is itself
+exponential in sum r, so that bound makes siegelHeight DOUBLY exponential and the argument dies.
+
+Last entry said the size estimates were "the missing half" of hbound. They were a missing half,
+not the missing half. The exponent was a second one, and it was invisible until the first was in
+hand -- exactly the pattern main's own taxonomy row about draining a residue describes.
+
+THE FIX IS A FACTOR OF TWO IN THE THRESHOLD. Asking 2 deg(alpha) < 4 eps^2 m instead of
+deg(alpha) < 4 eps^2 m gives 2#E <= #box (two_card_prod_le_card_idxBoxF), hence rho <= 1 and
+siegelHeight <= #box * ||A|| (siegelHeight_le_base). So "take m large" is m > deg(alpha)/(2 eps^2),
+not m > deg(alpha)/(4 eps^2). A factor of two in m, bought to avoid a double exponential. The
+weaker threshold is the one the variance argument naturally produces and it is NOT ENOUGH, which
+is worth stating because nothing in the variance argument hints at it.
+
+siegelHeight_le_pow is the explicit conclusion:
+    siegelHeight <= 2^{sum r} * max(1, c(K) (2B)^{sum r}),
+so log(siegelHeight) is LINEAR in sum r_h with every constant independent of r. That is what
+Gamma_m's height clause needs and what made hbound look circular when absent.
+
+REMAINING:
+  1. Instantiate: choose eps, delta, m from slack_pos with the DOUBLED threshold, then H_0 large
+     enough that 2^{sum r} max(1, c(K)(2B)^{sum r}) raised to mq is below H_0^{r_0 p}. The
+     ingredients are all named now.
+  2. Feed roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+
