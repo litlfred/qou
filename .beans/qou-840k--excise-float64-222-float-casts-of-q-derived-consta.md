@@ -658,3 +658,76 @@ The blocker is gone; the flag now works above dim > 500. Remaining:
 - then the standing choice this flag exists to inform — flip the default, or
   declare a float64 tier — which changes every value for ~20 consumers and is
   explicitly not a change to make silently.
+
+
+## 2026-08-30 — OPTIMISATION: the mpf character kernel does ~2.2x more matrix work than it needs
+
+Asked whether the Hecke seminormal path can be made faster. It can, exactly, and
+the reason is algebraic rather than a micro-optimisation.
+
+### The easy win was already taken
+
+`mpmath 1.4.1` is running on the **`gmpy` backend** with `gmpy2 2.3.1`
+installed, so the usual "install gmpy2" advice does not apply — it is already
+the fast path. `python-flint` is NOT installed and would be the next big lever
+(C-backed arbitrary-precision matrices), but that is a dependency decision.
+
+### Where the time actually goes
+
+Measured earlier: the seminormal BUILD is not the bottleneck — dim=768 in 0.2s,
+dim=2112 in 2.0s under mpf. The cost is the character kernel
+`_chi_lambda_of_word_mpf`, which multiplies a dense d x d accumulator by one
+sparse factor per word letter. The A=4 atom word has **47 letters**.
+
+### The word is runs of a repeated generator
+
+    gens = [0x7, 1x4, 2x1, 3x7, 4x4, 5x1, 6x7, 7x4, 8x1, 9x7, 10x4]
+
+and grouping by the full `(c, d, g)` triple gives runs of length up to 4.
+
+### The Hoefsmit matrices satisfy the Hecke quadratic — verified, not assumed
+
+    max |sigma^2 - (h*sigma + I)| = 3.6e-71        h = q - 1/q
+    max |sigma^2 - (h*sigma - I)| = 2.0            (the other sign, for contrast)
+
+at dps=70. So every polynomial in a single sigma is again linear in it:
+
+    (c*sigma + d*I)^k = a_k*sigma + b_k*I
+        a_{k+1} = a_k*(c*h + d) + b_k*c
+        b_{k+1} = a_k*c + b_k*d
+
+A run of k identical factors therefore collapses to **one** factor by a scalar
+recurrence — zero matrix work.
+
+    A=2   23 factors -> 10 runs   2.30x fewer matrix products
+    A=4   47 factors -> 21 runs   2.24x fewer
+
+### Implemented as PREPROCESSING, so the hot loop is untouched
+
+The collapsed run has the same `(c, d, g)` shape as an ordinary letter, so the
+optimisation is a shorter word handed to the existing loop. Nothing about the
+multiplication changed. Only consecutive IDENTICAL triples collapse; different
+generators do not commute and nothing is reordered.
+
+### Correctness, three ways
+
+- the quadratic itself, above;
+- the recurrence against direct powers: `M**k` vs `a*sigma + b*I` agrees to
+  3.6e-71 for k = 2, 3, 4 and 1.8e-70 for k = 7;
+- the kernel against an **independent** explicit mpmath matrix product at
+  dim=16: `-1.972272446151549689048234878` from both, differing by 2.5e-70.
+
+### What is measured and what is not
+
+The **factor-count** reduction is exact and measured (47 -> 21). The
+**wall-clock** A/B at dim ~2000 has not returned — the "collapse off" arm is
+precisely the slow case, and it exceeded 600s. So the 2.24x is an operation
+count, and the speedup should track it but is NOT yet a timing I can quote.
+Do not repeat it as a measured runtime until that A/B lands.
+
+### Also this round
+
+`term5_v2_chirality` is in this bean's list of six consumers to re-run. It has
+**no `main`, no `__main__` guard and zero write operations** — it is a library
+module, not a producer, and emits no witness. It needs no regeneration and the
+list of six is really five.

@@ -46,6 +46,8 @@ import sys
 from pathlib import Path
 from typing import Iterable, Sequence
 
+from itertools import groupby as _groupby
+
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -303,6 +305,51 @@ def _hecke_factor_coo(sigma_coo, c: mp.mpf, d: mp.mpf, dim: int):
     return out
 
 
+def _collapse_hecke_runs(word, h):
+    """Collapse runs of an IDENTICAL Hecke factor to a single factor.
+
+    The Hoefsmit seminormal matrices satisfy the Hecke quadratic
+
+        sigma^2 = h * sigma + I,     h = q - 1/q
+
+    verified numerically here at dps=70: max |sigma^2 - (h*sigma + I)| was
+    3.6e-71, while the opposite sign was off by 2.0. So every polynomial in a
+    single sigma is again linear in it, and in particular
+
+        (c*sigma + d*I)^k = a_k * sigma + b_k * I
+
+    with a two-term SCALAR recurrence, no matrix work at all:
+
+        a_1, b_1 = c, d
+        a_{k+1} = a_k*(c*h + d) + b_k*c
+        b_{k+1} = a_k*c + b_k*d
+
+    The atom braid words are runs of a repeated generator — measured
+    `[0x7, 1x4, 2x1, 3x7, 4x4, 5x1, ...]` — so this is not a micro-optimisation:
+
+        A=2   23 factors -> 10 runs   2.30x fewer matrix products
+        A=4   47 factors -> 21 runs   2.24x fewer
+
+    It is EXACT, not an approximation: the collapsed factor reproduces M**k to
+    3.6e-71 for k = 2, 3, 4 and 1.8e-70 for k = 7, i.e. machine zero at the
+    working precision.
+
+    Only consecutive IDENTICAL triples collapse. Different generators do not
+    commute, so nothing is reordered.
+    """
+    out = []
+    for (c, d, g), grp in _groupby(word):
+        k = len(list(grp))
+        if k == 1:
+            out.append((c, d, g))
+            continue
+        a, b = c, d
+        for _ in range(k - 1):
+            a, b = a * (c * h + d) + b * c, a * c + b * d
+        out.append((a, b, g))
+    return out
+
+
 def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
                               word: Sequence[tuple[float, float, int]],
                               q: mp.mpf | None = None
@@ -345,6 +392,15 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
             round(float(-h_mp), 9): -h_mp,
             round(float(-h_mp / 2), 9): -h_mp / 2,
         }
+
+    # Collapse runs of an identical factor before touching a matrix: the
+    # Hecke quadratic makes each run one factor, ~2.2x fewer products on the
+    # real atom words. Needs h, so only when q was supplied.
+    if q is not None:
+        word = _collapse_hecke_runs(
+            [(c if isinstance(c, mp.mpf) else mp.mpf(str(c)),
+              d if isinstance(d, mp.mpf) else mp.mpf(str(d)), g)
+             for (c, d, g) in word], h_mp)
 
     # P starts as the identity, stored as a dict-of-dicts for sparsity.
     # After the first multiplication it generally becomes dense, so
