@@ -1,7 +1,22 @@
 import QOU.Mathlib.HeckeAlgebra
 
 /-!
-# Probe: does `IwahoriHeckeAlgebra` encode its presentation, or only name it?
+# Probe: does `QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra` encode its
+# presentation, or only name it?
+
+**Scope first, because the name is ambiguous.** There are TWO
+`IwahoriHeckeAlgebra` declarations in the tree and this probe analyses exactly
+one of them:
+
+* `QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra` — a `class`, the subject here;
+* `QOU.BraidKnot.IwahoriHeckeAPI.IwahoriHeckeAlgebra` — a *different*
+  `structure`, carrying `Ring`/`StarRing` on its carrier and stating the Hecke
+  relations as SEPARATE AXIOMS rather than as instance-chosen `Prop` fields.
+  **Nothing below applies to it.**
+
+Both describe themselves as placeholders. Do not read this probe as a statement
+about "the framework's Hecke algebra" — read it as a statement about the first
+of two placeholders, which is what it is.
 
 **Result: only name it.**  The class declares the three relations of AGENTS.md
 §7a as BARE `Prop` FIELDS, each with a sibling field proving it:
@@ -37,10 +52,23 @@ restates the relations as its own hypothesis.  The fields are write-only.
 Nothing false is derived FROM them; the defect is that the class does not mean
 what its docstrings say.
 
-Incidental, and it corroborates the reading: the carrier carries no `One` or
-`Mul` INSTANCE, only `one` and `mul` fields, so the presentation cannot even be
-stated in the class's own vocabulary without projecting the raw fields.  The
-first draft of this probe failed to elaborate for exactly that reason.
+Incidental, and it corroborates the reading: the CLASS provides no `One` or
+`Mul` typeclass instance for `carrier` — only `one` and `mul` FIELDS — so the
+presentation cannot be stated in the class's own vocabulary without projecting
+those fields.  (The carrier type may of course have such instances of its own;
+the class does not require or expose them.)  The first draft of this probe
+failed to elaborate for exactly that reason.
+
+**Prior art, and my own corpus-grep failure.** `triv_hecke`
+(`HeckeAlgebra.lean:174`, a hundred lines below the class) ALREADY constructs a
+satisfying instance with all three relations `True`, over `PUnit`, and cites its
+own probe (`docs/audits/2026-08-23-trivial-global-instance-probe.lean`).  It was
+deliberately demoted from `instance` to `def` for a related reason.  So the
+INHABITATION half of this probe re-derives something the corpus already held,
+and a grep for `hecke_relation :=` before writing it would have found it.  What
+is new here is the FALSIFICATION half — `degenerate_sigma_sq` together with
+`degenerate_violates_hecke_at_two` exhibits a concrete `q` at which §7a's
+relation is false in a satisfying instance, which `triv_hecke` does not state.
 
 To run (needs the QOU oleans; `QOU.Mathlib.HeckeAlgebra` only):
 
