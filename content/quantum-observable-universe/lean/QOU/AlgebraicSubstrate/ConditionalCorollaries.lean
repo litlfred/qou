@@ -37,15 +37,29 @@ theorem ns_counterexample_T_exists [NSCounterexample] :
     ∃ T : ℝ, 0 ≤ T :=
   NSCounterexample.exists_singularity_time 0 (le_refl 0)
 
-/-- **Critical-exponent value**: under `[CriticalExponent α]`, the exponent
-    `α` is `4/3`.
+/-- **Critical-exponent identity**, in cleared form: under `[CriticalExponent
+    α]`, the exponent satisfies `3 · α = 4`.
 
-    Until 2026-08-30 this concluded `(3 * 4 : ℕ) = 12` — true by `rfl` with or
-    without the hypothesis, so the `[CriticalExponent]` binder was decorative.
-    It now concludes something the hypothesis is actually needed for. -/
+    Two changes on 2026-08-30 (bean `qou-93hu`), and the second is a
+    consequence of the first.
+
+    It used to conclude `(3 * 4 : ℕ) = 12` — true by `rfl` with or without the
+    hypothesis, so the `[CriticalExponent]` binder was decorative.
+
+    Restating the conclusion as `α = 4/3` fixed that and immediately created a
+    different defect: the class field is *typed* `α = 4/3`, so a theorem
+    concluding it and proving it by `h.alpha_eq` is a §3b-cond item 5
+    self-assuming projection — correctly flagged by
+    `proof-no-self-assuming-projection`, which had nothing to flag while the
+    conclusion was a closed numeral.
+
+    The cleared form is the honest exit, and it is what this declaration's own
+    original docstring promised (*"the scaling-exponent identity `3 · α_num =
+    4`"*): the conclusion is **not** the field's type, and the proof does
+    arithmetic rather than returning the hypothesis. -/
 theorem critical_exponent_identity (α : ℝ) [h : CriticalExponent α] :
-    α = 4 / 3 :=
-  h.alpha_eq
+    3 * α = 4 := by
+  rw [h.alpha_eq]; norm_num
 
 /-- **Blow-up rate existence** — direct consequence of
     `[BlowupYekutieli]`. -/
@@ -73,8 +87,8 @@ theorem qNS_combined_existence [QAubinLions] [BlowupYekutieli] :
     Aubin-Lions and blow-up class hypotheses. -/
 theorem qNS_critical_exponent_with_compactness (α : ℝ)
     [QAubinLions] [h : CriticalExponent α] [BlowupYekutieli] :
-    α = 4 / 3 :=
-  h.alpha_eq
+    3 * α = 4 := by
+  rw [h.alpha_eq]; norm_num
 
 /-- **Full q-NS-cone composition** (all 5 classes): every
     conjectural existential field admits a witness simultaneously. -/
