@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T12:33:15Z
+updated_at: 2026-08-30T12:42:16Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -937,3 +937,77 @@ does not.
 
 PROBE: `qbeta_three_nucleon_nf_alpha_spread_probe.py`, now 9/9 — the ruling and
 both C/D holonomy verdicts are assertions, not prose.
+
+
+## 2026-08-30 — the C-passes-t2 tension DEFLATES: it is a bar-symmetry test in disguise
+
+Chasing the tension entry (6) recorded (*"TENSION WITH THE RULING ... deepens
+the recorded decayLadder_zC_threeRow_ne_zero tension"*). **It does not deepen
+it. It restates it.**
+
+### The chain, each link exact
+
+1. With `q = 1+t`, `h = 2t - t^2 + ...`, the phase `alpha = (z-1)h/2` has
+
+       t^1 coefficient = z(1) - 1
+       t^2 coefficient = 1/4 + z'(1)        verified for BOTH conventions
+
+2. Kohno-Drinfeld fixes the scale (`hbar = 2 ln q`), so a constant-residue
+   holonomy angle is a multiple of `ln q`. Both conventions have `z(1) = 1/2`,
+   pinning `c = -1/2` at `t^1`, and `c*ln q` predicts `t^2 = 1/4`.
+
+3. Therefore **alpha is second-order logarithmic iff `z'(1) = 0`**.
+
+4. **Bar-evenness FORCES `z'(1) = 0`.** Differentiate `z(1/q) = z(q)` at the bar
+   fixed point `q = 1`: `-z'(1) = z'(1)`. **No property of the function is used.**
+
+5. `z_C = sqrt(q)/(q+1)` IS bar-even — as `u/(u^2+1)` in `u = sqrt q` it is
+   manifestly `u <-> 1/u` symmetric. `z_D = q^3/(q^2+1)` is not, `z_D'(1) = 1`.
+
+### The deflation
+
+C passes the `t^2` holonomy test **because it is bar-invariant**; D fails it
+**because it is not**. These are not two facts. The corpus already knows z_D is
+not bar-even — `QOU.Interactions.markovZC`'s docstring says so, and
+`QOU.QBeta.DFrameBarAction` (this branch) proves the stronger form: the whole
+bar ACTION changes shape, affine reflection under C vs multiplicative under D.
+
+**So the t^2 failure is NOT independent evidence against convention D.** The
+2026-08-15 ruling does not have to answer a second objection. Entry (6)'s
+"tension" line should be read as an observation about z_D's bar parity, which
+was already recorded, not as a new finding.
+
+### 🛑 A CORRECTION to the branch-3 acceptance test
+
+Entry (6) states part 1 as *"reproduce alpha through order t^2 (requires
+z'(1) = 0)"*. Given link 4, **that part has ZERO discriminating power for route
+5**: any construction over a bar-even `z` passes it automatically, and any over
+`z_D` fails it automatically, whatever the construction is. It tests the Markov
+parameter, not the holonomy hypothesis. Because the Lean theorem quantifies over
+an arbitrary function, this is airtight rather than a property of two examples.
+
+**Acceptance test, corrected to two parts:**
+  1. ~~reproduce alpha through t^2~~  — VACUOUS, see above
+  2. account for `alpha = -1/4` of `Re(log-gap)` AND the discarded `i*pi`
+  3. be genuinely oscillatory, delivering a value BELOW 1
+  (plus entry-10's corrected weight-cancellation constraint)
+
+### And neither convention is a logarithm at all
+
+`alpha` is **ALGEBRAIC**: exactly `-(u-1)(u+1)(u^2-u+1)/(2u^2)` in `u = sqrt q`
+under C, and `(q-1)(q+1)(q^3-q^2-1)/(2q(q^2+1))` under D. `c*ln q` is
+transcendental, so exact agreement is impossible in either convention. Measured
+deviations from `-1/2 ln q`:
+
+    alpha_C - c*ln q = -7t^3/48 + 7t^4/32 - 337t^5/1280 + ...   first at t^3
+    alpha_D - c*ln q =    t^2   -   t^3/3 +     t^4/4   + ...   first at t^2
+
+So C's advantage is exactly one order, and it is bought by bar-evenness rather
+than by being closer to a holonomy.
+
+LEAN: `QOU/QBeta/BarEvenForcesStationarity.lean` — 5 theorems, lean-direct
+exit 0, zero warnings, #print axioms clean on all 5, zero sorryAx. The main
+theorem `deriv_at_one_eq_zero_of_barEven` is stated for an ARBITRARY
+differentiable `f` with `f(x⁻¹) = f(x)` near 1, which is what makes the
+acceptance-test correction general.
+PROBE: `qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py` (11/11, exact).
