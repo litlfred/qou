@@ -75,6 +75,8 @@ export default remark({
         "crossing budget, the net-amplitude route) is open. See " +
         "`rem:gluon-stabiliser-ledger` and the neutron block, whose " +
         "4-versus-2 asymmetry does not survive either.",
+    },
+    {
       kind: "note",
       date: "2026-08-29",
       body:

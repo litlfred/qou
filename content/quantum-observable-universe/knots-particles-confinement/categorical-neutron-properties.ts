@@ -62,6 +62,8 @@ export default remark({
         "beta-decay discussion. What changes is the Markov trace evaluated " +
         "against those coefficients, hence Frobenius positivity and everything " +
         "the gluon LP selects on.",
+    },
+    {
       kind: "note",
       date: "2026-08-29",
       body:
