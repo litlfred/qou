@@ -126,3 +126,53 @@ that is an open item rather than a measured absence.
 - l.s from a scalar q-oscillator. Proved scope-(b), see above.
 - delta2-Phi at any q in (1, phi). 49-point sweep, `qou-pz4m`: Z=20 and Z=2 are
   local maxima at no sampled q.
+
+## Full no-float64 sweep: the flat dual is real (2026-08-30)
+
+`all_nuclides_sdp_admissibility_mp.py 92 160` -> witness. **4932 rows, 0
+overflow, 0 build failures.** Z=82 is 161/161 and N=126 is 93/93, where the f64
+producer had 0/43 and no rows at all.
+
+Wall 1 SURVIVES the fix and is now measured corpus-wide rather than inferred
+from 62 % of the chart:
+
+    distinct lp_active_count      [1]
+    distinct active channel sets  [{gamma}]
+    double-magic nuclides         all 42, still 1
+    dual_discriminates_magic      false
+
+So the flatness is a property of **H_3**, not of the chart's light end. There
+is one channel available, so there is nothing for magic structure to modulate.
+Wall 2 is GONE — reachability is no longer the blocker; the algebra is.
+
+This makes the "more intertwining, like T_{3,5}" route (option 2) the only
+surviving LP-side attack, and it is now unblocked: every magic Z and N is
+computable, so an LP posed above H_3 can be tested against the whole ladder
+rather than against {2,8,20,28,50}.
+
+## Parity is the pairing term — sibling convergence (qou-edt7 / PR #6197)
+
+My `qou-pz4m` note speculated that the period-2 structure in Phi "may be the
+pairing term, which IS nuclear physics — just not magic numbers." A sibling has
+now derived that from the other side, and I verified it rather than taking the
+comment at face value (AGENTS.md: a sibling's claim is not a primary source).
+
+`content/quantum-observable-universe/lean/QOU/Mass/PairingParityForcesPositiveB3.lean`
+on the PR #6197 head — 108 lines, **0 sorry, 0 axiom**, checked by fetching
+refs/pull/6197/head, not from the comment. `b3Contrib f2 f3 := f3 - 3*f2` with
+`pairing_b3_eq : b3Contrib (-delta) 0 = 3*delta`, so pairing (f2 = -delta,
+f3 = 0) forces the connected three-body cumulant `b3 > 0`, sign derived with no
+fitted input.
+
+**Why this matters HERE, beyond the coincidence.** It converts my scope-(a)
+negative into a positive identification. If parity is the pairing term, then
+delta^2-Phi's even-Z positivity is plausibly *measuring the pairing term* —
+which is real nuclear physics and is why the signal looked meaningful — rather
+than measuring shell closure. That explains the finding instead of merely
+recording it, and it predicts the signal should track `delta` (the SEMF pairing
+scale), not the magic ladder. Testable: correlate `delta^2 Phi(Z)` against the
+SEMF pairing term across the chart.
+
+Their stated caveat, carried honestly: the pairing scale is over-determined,
+`b3` magnitude vs the SEMF fit disagreeing by 25-40x. So the SIGN transfers and
+the SCALE does not — which is the same shape as every other result on this arc.
