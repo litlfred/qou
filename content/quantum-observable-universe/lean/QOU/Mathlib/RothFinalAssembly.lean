@@ -914,6 +914,74 @@ theorem not_approximable_of_isAlgebraic {x : ℝ} (hx : IsAlgebraic ℚ x) {ε :
     (K := ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯) ⟨⟨_, hymem⟩, hα₀⟩
     (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ) hn rfl (abs_nonneg x) le_rfl hε
 
+/-- **Rationals of bounded denominator near a fixed real are finitely many.**  The `num`/`den` pair
+determines the rational, the denominator is bounded by hypothesis, and the numerator is bounded
+because `|κ| ≤ |x| + 1` forces `|num| ≤ (|x|+1)·den`.
+
+This is the discreteness of `ℚ`, and it is exactly what separates "no family of unbounded
+denominator" from "finitely many solutions".  Nothing earlier in the arc supplies it — every
+estimate so far is about *how good* an approximation is, none about *how many* there are. -/
+theorem finite_den_le (x : ℝ) (D : ℕ) :
+    {κ : ℚ | κ.den ≤ D ∧ |((κ : ℚ) : ℝ) - x| ≤ 1}.Finite := by
+  classical
+  have hinj : Set.InjOn (fun q : ℚ => (q.num, q.den))
+      {κ : ℚ | κ.den ≤ D ∧ |((κ : ℚ) : ℝ) - x| ≤ 1} := by
+    intro a _ b _ hab
+    simp only [Prod.mk.injEq] at hab
+    rw [← Rat.num_div_den a, ← Rat.num_div_den b, hab.1, hab.2]
+  refine Set.Finite.of_finite_image ?_ hinj
+  refine Set.Finite.subset
+    ((Set.finite_Icc (-⌈(|x| + 1) * (D : ℝ)⌉) ⌈(|x| + 1) * (D : ℝ)⌉).prod
+      (Set.finite_Iic D)) ?_
+  rintro ⟨a, d⟩ ⟨κ, ⟨hd, hclose⟩, heq⟩
+  simp only [Prod.mk.injEq] at heq
+  obtain ⟨rfl, rfl⟩ := heq
+  have hden0 : (0 : ℝ) < (κ.den : ℝ) := by exact_mod_cast κ.pos
+  have hdenD : (κ.den : ℝ) ≤ (D : ℝ) := by exact_mod_cast hd
+  have habs : |((κ.num : ℤ) : ℝ)| = |((κ : ℚ) : ℝ)| * (κ.den : ℝ) := by
+    rw [Rat.cast_def, abs_div, abs_of_pos hden0, div_mul_cancel₀ _ (ne_of_gt hden0)]
+  have hκabs : |((κ : ℚ) : ℝ)| ≤ |x| + 1 := by
+    have h := abs_sub_abs_le_abs_sub (((κ : ℚ) : ℝ)) x
+    linarith
+  have hnumR : |((κ.num : ℤ) : ℝ)| ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := by
+    rw [habs]
+    calc |((κ : ℚ) : ℝ)| * (κ.den : ℝ) ≤ (|x| + 1) * (κ.den : ℝ) :=
+          mul_le_mul_of_nonneg_right hκabs (le_of_lt hden0)
+      _ ≤ (|x| + 1) * (D : ℝ) := mul_le_mul_of_nonneg_left hdenD (by positivity)
+      _ ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := Int.le_ceil _
+  have hnumZ : |κ.num| ≤ ⌈(|x| + 1) * (D : ℝ)⌉ := by
+    have hcast : ((|κ.num| : ℤ) : ℝ) ≤ ((⌈(|x| + 1) * (D : ℝ)⌉ : ℤ) : ℝ) := by
+      rwa [Int.cast_abs]
+    exact_mod_cast hcast
+  exact Set.mk_mem_prod (Set.mem_Icc.mpr (abs_le.mp hnumZ)) (Set.mem_Iic.mpr hd)
+
+/-- **Roth's theorem, classical form.**  For a real algebraic `x` and any `ε > 0`, the inequality
+`|x − p/q| ≤ q^{−(2+ε)}` has only **finitely many** rational solutions.
+
+The step from `not_approximable_of_isAlgebraic` is not bookkeeping: "no family of unbounded
+denominator" and "finitely many solutions" differ by the discreteness of `ℚ`, which is
+`finite_den_le`.  What makes them meet is that a solution is automatically within `1` of `x`,
+because `q^{−(2+ε)} ≤ 1` — so an infinite solution set with bounded denominators would sit inside a
+finite set. -/
+theorem finite_approximations_of_isAlgebraic {x : ℝ} (hx : IsAlgebraic ℚ x) {ε : ℝ} (hε : 0 < ε) :
+    {κ : ℚ | |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε))}.Finite := by
+  classical
+  by_contra hinf
+  refine not_approximable_of_isAlgebraic hx hε ?_
+  intro N
+  by_contra hcon
+  push_neg at hcon
+  refine hinf (Set.Finite.subset (finite_den_le x N) ?_)
+  intro κ hκ
+  have hclose : |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := hκ
+  have hden1 : (1 : ℝ) ≤ ((κ.den : ℕ) : ℝ) := by exact_mod_cast κ.pos
+  have hle1 : ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) ≤ 1 :=
+    Real.rpow_le_one_of_one_le_of_nonpos hden1 (by linarith)
+  refine ⟨?_, le_trans hclose hle1⟩
+  by_contra hd
+  push_neg at hd
+  exact absurd hclose (not_le.mpr (hcon κ (le_of_lt hd)))
+
 end Algebraic
 
 end MvPolynomial
