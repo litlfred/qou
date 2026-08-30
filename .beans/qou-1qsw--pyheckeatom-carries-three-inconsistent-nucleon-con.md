@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T19:02:31Z
+updated_at: 2026-08-30T02:42:20Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -615,3 +615,59 @@ piece of work: the LP is ~200 lines and the D Gram already exists
 
 Not executed here: re-deriving it is a new compute artifact, not a correction,
 and it should be its own scoped piece rather than a tail on a review branch.
+
+
+## 2026-08-29 — the integer LP RE-RUN under convention D: the premise does not survive
+
+Owner: *"rerun integer LP under convention D"*. Done —
+`computations/qbeta/integer_lp_gluon_convention_d.py`, witness alongside.
+
+Held fixed so the comparison isolates the convention: both 9-crossing base
+words letter for letter, the op set `{s0, s1, L+ = s0.s1, L- = s1.s0}` (both
+L's are POSITIVE crossings, not inverses — I had this wrong in an earlier
+throwaway check), the every-intermediate-step Frobenius criterion, the
+minimum-|tr_M| objective, `max_depth = 3`. Changed: convention D via
+`gram_matrix_mp` / `tr_m_mp` (so the corrected `tr_M(e-)` rule is used), mpmath
+50 dps, no float64.
+
+### The premise fails
+
+    proton   9-crossing base    LP stable under D?  True
+    neutron  9-crossing base    LP stable under D?  True   min(G.nf) = 0.2175
+
+The convention-C LP added a gluon term BECAUSE the base was infeasible. Under D
+both bases are feasible, so **there is no stability pressure to add any
+crossings**.
+
+### And with the constraint slack, the objective selects on its own
+
+    proton   optimal under D:  s0   ->  1 crossing, 10 total
+    neutron  optimal under D:  s0   ->  1 crossing, 10 total
+
+(41 feasible solutions each.) So under D the LP supports **neither** the shipped
+construction (2 sigma_0, 11 crossings, for both nucleons) **nor** its own
+convention-C answer (11 proton / 13 neutron).
+
+### What that means, stated carefully
+
+This does not show the gluon term is wrong. It shows the argument that
+*selected* it is gone: minimising |tr_M| is a tie-breaker, and it was only ever
+meant to choose among stability-feasible options. With stability non-binding the
+LP is answering a different question from the one it was written for, and a
+minimum-trace principle is not on its own a physical selection criterion.
+
+**So the gamma-gamma/SDP criterion still cannot adjudicate 9 vs 11** — not
+because it is the wrong criterion, but because under D the LP that applied it
+has no constraint left to bite. Settling the crossing budget needs a selection
+principle that is binding under D. Candidates worth considering, none pursued
+here: the H_2 SDP for the gluon vertex that `sdp_gamma_gamma_to_qqbar.py`
+actually names (as opposed to this LP's Frobenius-positivity proxy), or the LR
+cross-level embedding it lists as the fourth component.
+
+### Also fixed at source
+
+The first run emitted an unstamped witness and tripped the **q0-anchor refill
+ratchet** — a new red, and mine. That ratchet exists to drain exactly the
+backlog of unstamped witnesses, so refilling it while investigating a staleness
+problem would have been the wrong kind of irony. Stamped `q0Anchor`/`q0Value` at
+the producer; not baselined.
