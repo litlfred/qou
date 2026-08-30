@@ -805,3 +805,42 @@ REMAINING for the selection:
     chosen last.
   * then assemble with slack_pos's condition on eps, delta and m, and step 5 (not LiouvilleWith).
 
+## 2026-08-30 -- investigated the two remaining Gamma_m clauses. hbound is NOT circular
+
+ISSUE 1, hlarge (p + 2q <= p * rothDegrees H N h). RESOLVED AND PROVED. It constrains N relative
+to the ALREADY-CHOSEN heights, so the dependency runs one way and there was never a difficulty:
+hlarge_of_pow_le derives it from (H h)^{p+2q} <= N for every h, and exists_pow_le constructs such
+an N from the heights as (prod_h H h)^{p+2q}. Order: heights -> N -> degrees, never the reverse.
+
+ISSUE 2, hbound (b^{mq} <= H_0^{r_0 p} where b = ceil(siegelHeight r alpha mu)). It READS as
+circular: b depends on r, r = rothDegrees H N depends on H_0, and H_0 is what the clause
+constrains. IT IS NOT CIRCULAR, and the reason is a cancellation.
+
+  (a) From the TYPES: siegelHeight r alpha mu depends on H only through r. So raising H_0 while
+      holding r fixed leaves b alone and raises the right-hand side. That is hbound_mono, proved.
+      It is the formal content of the informal proof's "choose q_1 large".
+  (b) Holding r fixed while raising H_0 means raising N too, and the asymptotics close it.
+      r_0 log H_0 ~ log N, so RHS ~ p log N. On the left, log b ~ rho log(#box * ||A||) with
+      rho = #E/(#box - #E), and both #box and ||A|| grow like exp(c sum_h r_h) while
+      sum_h r_h ~ log N * sum_h 1/log H_h. So LHS ~ m q rho c log N sum_h 1/log H_h, and LOG N
+      CANCELS. The growth clause makes H_0 the smallest height, so sum_h 1/log H_h <= m/log H_0,
+      and the clause reduces to a condition on H_0 ALONE: log H_0 >~ m^2 q rho c / p.
+
+WHAT IS PROVED AND WHAT IS NOT. (a) is proved (hbound_mono). (b) is an asymptotic estimate and is
+NOT formalised -- it needs bounds on #box and ||auxMatrixInt|| in terms of sum_h r_h, which this
+arc has not written down. Recorded explicitly in the module, because with hlarge proved and
+hbound_mono proved next to it, the untouched half would otherwise look discharged by association.
+
+hbound_mono was written with 0 <= b; the linter reported it unused and it is -- only the BASE H j
+needs to be non-negative, and it is a natural number. Stronger statement kept.
+
+REVISED REMAINING WORK:
+  1. The #box and ||A|| estimates in terms of sum_h r_h -- the missing half of (b). #box is
+     prod_h (r_h + 1), so that half is easy; ||auxMatrixInt|| needs a bound on the integral-basis
+     coordinates of translateMatrix alpha i n, which is a house-style estimate the arc already has
+     the shape of (seminorm_translateMatrix_le) but not over an integral basis.
+  2. Assemble: heights (exists_heights_growing_floor) -> N (exists_pow_le) -> degrees
+     (rothDegrees) -> Gamma_m (rothGammaFull_of_heights) -> roth_contradiction_int, with eps,
+     delta, m from slack_pos.
+  3. Step 5, not LiouvilleWith.
+

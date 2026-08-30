@@ -104,4 +104,83 @@ theorem exists_heights_growing_floor (hS : ∀ N, ∃ q ∈ S, N ≤ q) (m p q F
 
 end Selection
 
+section Degrees
+
+/-! ## `N` after the heights: `Γ_m`'s `hlarge`
+
+The dependency runs one way.  `hlarge` constrains `N` *relative to the already-chosen heights*, so
+it is discharged after the selection, not before — and there is no circularity in it at all.
+`hbound` is the one that looks circular; see the bean.
+-/
+
+/-- **`N` large relative to the heights gives `Γ_m`'s `hlarge`.**  `(H h)^{p+2q} ≤ N` for every
+`h` is the whole condition, and `p ≥ 1` does the rest. -/
+theorem hlarge_of_pow_le {m : ℕ} (H : Fin m → ℕ) (N : ℕ) (hN : N ≠ 0) (hH : ∀ h, 2 ≤ H h)
+    (p q : ℕ) (hp : 0 < p) (hpow : ∀ h, (H h) ^ (p + 2 * q) ≤ N) :
+    ∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h := by
+  intro h
+  have hb : 1 < H h := lt_of_lt_of_le one_lt_two (hH h)
+  have hlog : p + 2 * q ≤ Nat.log (H h) N := (Nat.le_log_iff_pow_le hb hN).mpr (hpow h)
+  have hd : Nat.log (H h) N ≤ rothDegrees H N h := by
+    rw [rothDegrees]
+    split_ifs
+    · exact le_rfl
+    · exact Nat.le_succ _
+  calc p + 2 * q ≤ Nat.log (H h) N := hlog
+    _ ≤ rothDegrees H N h := hd
+    _ = 1 * rothDegrees H N h := (one_mul _).symm
+    _ ≤ p * rothDegrees H N h := Nat.mul_le_mul_right _ hp
+
+/-- **And such an `N` exists.**  Constructed from the heights, which is the point: the order is
+heights → `N` → degrees, never the other way. -/
+theorem exists_pow_le {m : ℕ} (H : Fin m → ℕ) (hH : ∀ h, 2 ≤ H h) (k : ℕ) :
+    ∃ N : ℕ, N ≠ 0 ∧ ∀ h, (H h) ^ k ≤ N := by
+  classical
+  have hpos : ∀ h : Fin m, 1 ≤ H h := fun h => le_trans one_le_two (hH h)
+  refine ⟨(∏ h, H h) ^ k, pow_ne_zero _ ?_, fun h => ?_⟩
+  · exact Finset.prod_ne_zero_iff.mpr (fun h _ => by have := hH h; omega)
+  · exact Nat.pow_le_pow_left
+      (Finset.single_le_prod' (fun i _ => hpos i) (Finset.mem_univ h)) k
+
+/-! ## Is `hbound` circular?  No — and this is the lemma that says why
+
+`Γ_m`'s last clause is `b ^ (m q) ≤ H₀ ^ (r₀ p)` where `b` is the auxiliary polynomial's height
+bound, `⌈siegelHeight r α μ⌉`.  It reads as circular: `b` depends on `r`, `r = rothDegrees H N`
+depends on `H₀`, and `H₀` is what the clause constrains.
+
+It is not, and the reason is a *cancellation*.  Note first, from the types, that
+`siegelHeight r α μ` depends on `H` **only through `r`** — so raising `H₀` while holding `r` fixed
+leaves `b` alone and raises the right-hand side, which is `hbound_mono` below.  That is the move
+the informal proof makes when it says "choose `q₁` large".
+
+Holding `r` fixed while raising `H₀` means raising `N` too, and the asymptotics are what make it
+work.  Writing `log` for real logarithms: `r₀·log H₀ ≈ log N`, so the right side is `≈ p·log N`.
+On the left, `log b ≈ ρ·log(#box · ‖A‖)` with `ρ = #E/(#box − #E)`, and both `#box` and `‖A‖` grow
+like `exp(c·∑_h r_h)` while `∑_h r_h ≈ log N · ∑_h 1/log H_h`.  So the left side is
+`≈ m q ρ c · log N · ∑_h 1/log H_h`, **`log N` cancels**, and since the growth clause makes `H₀`
+the smallest height, `∑_h 1/log H_h ≤ m/log H₀`.  The clause reduces to a condition on `H₀`
+alone: `log H₀ ≳ m² q ρ c / p`.
+
+⚠ That cancellation is an asymptotic argument, not yet formalised.  `hbound_mono` is the part that
+is, and it is the part the non-circularity actually rests on; the rest is an estimate on `#box`
+and `‖A‖` that this arc has not written down.  Recorded so the gap is visible rather than implied
+by the surrounding lemmas being proved.
+-/
+
+/-- **Raising `H j` never hurts `Γ_m`'s height clause**, with the degrees held fixed.  This is the
+formal content of "choose `q₁` large": the clause is monotone in the height, and `b` does not move
+when `r` does not.
+
+No sign condition on `b` is needed — I wrote `0 ≤ b` and the linter reported it unused, which is
+right: only the *base* `H j` has to be non-negative, and it is a natural number.  The stronger
+statement is kept. -/
+theorem hbound_mono {m : ℕ} {b : ℤ} (H H' : Fin m → ℕ) (d : Fin m → ℕ) (p q : ℕ)
+    (j : Fin m) (hle : H j ≤ H' j)
+    (h : b ^ (m * q) ≤ (H j : ℤ) ^ (d j * p)) :
+    b ^ (m * q) ≤ (H' j : ℤ) ^ (d j * p) := by
+  refine le_trans h (pow_le_pow_left₀ (Int.natCast_nonneg _) ?_ _)
+  exact_mod_cast hle
+
+end Degrees
+
 end MvPolynomial
