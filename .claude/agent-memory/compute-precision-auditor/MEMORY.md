@@ -109,6 +109,19 @@ first reported as an environment effect; that was wrong — re-run with
 byte-identically. Check the `environment` block, but this corpus has not yet
 produced a confirmed environment case.
 
+## TRAP — `fmt()` is not the universal answer (see `draining-raw-float64.md`)
+
+`AGENTS.md` says "carry `mpf` from its source and serialize with
+`_precision.fmt`", and that is right for a **computed** value and **wrong for a
+READ one**: `fmt(mpf("2.2245662"))` prints a 9-significant-figure measurement
+out to 60 digits. Emit an exact source's decimal **text verbatim** instead
+(`ame_2020_binding_energies.py` is the exemplar). Three further traps live in
+**`draining-raw-float64.md`** in this directory: a float→string flip is not
+automatically a drain (`mp.dps` defaults to **15**, so mpf strings can be
+float64-grade); raising dps can *manufacture* digits when the divisor has a
+±1e-12 ceiling; and a residue at 2⁻⁵⁴/2⁻⁵⁵ is the arithmetic floor — trace it to
+the producer (numpy/LAPACK) rather than draining it. Read it before draining.
+
 ## TRAP — producers write SIBLING witnesses
 
 The isotope producer rewrote 21 `canonical-isotope-witness-Z*.json` files
