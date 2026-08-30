@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:25:32Z
-updated_at: 2026-08-30T06:30:18Z
+updated_at: 2026-08-30T06:36:30Z
 ---
 
 Found while finishing the pin-straddle fix in `atomic_tr_m_helium4.py`
@@ -123,3 +123,51 @@ Compute |tr_M(proton)| under convention C (z = sqrt(q)/(q+1)) at the pin the
 old witness recorded and check whether it equals 1.0653062286131670593652845
 to the digits available. That is a direct test and does not depend on reading
 commit archaeology. Only after it passes may the attribution be written down.
+
+
+## SETTLED 2026-08-30 — it IS convention C. Hypothesis -> finding.
+
+`computations/audits/he4_witness_convention_attribution_probe.py` (reproducible,
+exit 0/1):
+
+    C-frame |tr_M(proton)|   1.0653062286131670594
+    recorded                 1.0653062286131670594     |C-rec|/rec = 4.85e-50
+    D-frame |tr_M(proton)|   1.1457597822878355047     |D-rec|/rec = 0.0755215
+
+So the earlier "HYPOTHESIS, not a finding" note is now DISCHARGED, in the
+direction it suspected: the downstream witness holds a convention-C value and
+was never regenerated after its upstream moved to D.
+
+The test is direct rather than archaeological. `tr_M = sum_lambda y_lambda *
+chi^lambda`; the chi are convention-independent, only the weights change. So
+contract the committed symbolic chi cache against BOTH weight sets --
+convention C survives as
+`schur_principal_mpmath.y_lambda_at_q0_mpmath_convention_C_HISTORICAL` -- at
+the pin the OLD WITNESS ITSELF records. No commit messages involved.
+
+Corroborating, and worth keeping: the producer's own diff across the transition
+window (7c60b2f381 -> bd45adff92) is ENTIRELY timing-format (`float(t)` ->
+`f"{t:.4f}"`, the float64 drain) and provably math-neutral. So the change
+arrived through the IMPORT CONE, which is exactly what a convention migration
+does and what AGENTS.md flags as the drift a file-local `git diff` cannot see.
+
+## Two method traps, each of which cost a wrong answer first
+
+- **Do not read `Q_50_DIGIT_STR` from an ad-hoc script.** It resolves by the
+  RUNNING PRODUCER'S STEM, so a `-c` invocation gets an arbitrary answer. The
+  probe takes q from the old witness's own field instead -- the value the
+  recorded number was actually computed at, needing no stem.
+- **`Symbol('q', positive=True)` is not the `q` that `sympify` creates.**
+  Different assumptions make different symbols, so `.subs()` silently does
+  nothing and leaves a polynomial standing where a number should be. My first
+  run failed this way and looked like a type error rather than a logic error.
+
+## Now actionable
+
+The fix is to regenerate `atomic-tr-m-helium4.witness.json` under D. The
+attribution is established, so this is no longer "changing numbers whose
+provenance is unknown". Still NOT done in PR #6104: that PR is scoped to the
+pin straddles, and this is a convention migration with 9 Python consumers and
+the reader-facing `atom-mass-full-hecke` observations block downstream. It
+deserves its own change where the 7.55% move is the headline rather than a
+side effect.
