@@ -45,6 +45,8 @@ import QOU.BraidKnot.terms_2_6_higher_operations
 import QOU.BraidKnot.sorting_color_energy
 import QOU.BraidKnot.UnstableAtom.decay_channel
 import QOU.BraidKnot.schur_weyl_mass_decomposition
+import QOU.ParticleInteractions.confinement_frobenius_reciprocity
+import QOU.BraidKnot.e_infinity_identifications
 
 /-! ## Inhabited with no hypotheses
 
@@ -179,3 +181,57 @@ example : QOU.BraidKnot.SchurWeylMassContext ℚ 1 0 where
   trM_atomic := 0
   qHookProduct_ne_zero := by intro _; norm_num
   claim_schur_weyl_sum := by simp
+
+/-- The "master reciprocity formula" `⟨O⟩_T = Σ_{i,j∈A*} u*ᵢ (G⁻¹)_{ij} ⟨O,bⱼ⟩`
+holds when the physical expectation and the Frobenius pairing are both zero —
+and both are context fields, so nothing relates them.
+
+Worth noting separately: `strong_duality : primal_obj = dual_obj` is a FIELD,
+not a derived fact.  LP strong duality is assumed here, which is consistent with
+`HasFiniteLPDuality` elsewhere in the corpus doing the same, and is the honest
+reading of what this class provides. -/
+example : QOU.ParticleInteractions.ConfinementFrobeniusReciprocityContext where
+  d := 1
+  G := fun _ _ => 1
+  Ginv := fun _ _ => 1
+  A_star := Finset.univ
+  x_star := fun _ => 1
+  u_star := fun _ => 1
+  y_0_star := 1
+  primal_obj := 0
+  dual_obj := 0
+  Observable := Unit
+  pairing := fun _ _ => 0
+  physExp := fun _ => 0
+  reciprocity := by intro O; simp
+  primal_nontrivial := ⟨0, by norm_num⟩
+  y_0_star_pos := by norm_num
+  A_star_nonempty := Finset.univ_nonempty
+  active_iff_pos_shadow := by
+    intro i
+    exact ⟨fun _ => by norm_num, fun _ => Finset.mem_univ i⟩
+  strong_duality := rfl
+
+/-- All six `E_∞`-page identifications of the unified mass formula hold at zero
+pages, zero branes and zero mass.  `n_pages := 0` makes the six-term sum empty,
+so the "unified mass formula" claim is `0 = 0 + 0 + 0`; the per-page claims are
+`rfl`.  The chirality sign is the one field with real content (`= 1 ∨ = -1`) and
+it is satisfied by `1`. -/
+example : QOU.BraidKnot.EInfinityIdentificationsContext where
+  m_total := 0
+  page_pairing := fun _ => 0
+  n_pages := 0
+  ribbon_closure := 0
+  frobenius_co_casimir := 0
+  claim_mass_formula_unified := by simp
+  trM_T_w_abs := 0
+  claim_descended := rfl
+  n_branes := 0
+  brane_pairing := fun _ => 0
+  claim_brane_tower_single := by simp
+  brane_pairwise := fun _ _ => 0
+  claim_brane_tower_pairwise := by simp
+  chirality_sign := 1
+  claim_chirality_sign := Or.inl rfl
+  claim_wenzl_bridge_correction := True
+  claim_wenzl_bridge_correction_holds := trivial
