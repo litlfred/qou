@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:16:52.210508+00:00",
-  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
+  "computedAt": "2026-08-30T09:31:15.922561+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
   "assertions": [
     {
       "name": "locus_is_O1_far_from_canonical_paths",
@@ -11,22 +11,14 @@
       "passed": true,
       "tolerance": "0.1",
       "source": "min distance 0.35587 >> anchor separation 1.3e-08 => no branch-point graze"
-    },
-    {
-      "name": "complete_structure_not_on_locus",
-      "computed": "0.6604590185851418652286230046558126017346496288673810303387104996541823",
-      "expected": "0.6604590185851418652286230046558126017346496288673810303387104996541823",
-      "passed": true,
-      "tolerance": "1e-30",
-      "source": "recorded exact-locus distance from m=1 (informational)"
     }
   ],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 67,
   "computation": "qbeta-c3-phib-gluing-discriminant",
   "scriptFile": "qbeta_c3_phib_gluing_discriminant_probe.py",
-  "scriptHash": "da1b8e803f7c",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "76fd1d56e49d",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -108,6 +100,11 @@
       "m = e^{t e^{i pi/4}/2} (b-aligned near-match)": "0.672922420349451",
       "m = e^{u_min(p) i /2} (floor, imaginary dir)": "0.604512904363527",
       "anchor_separation_dq": 1.2891358239090127e-08
+    },
+    "complete_structure_distance": {
+      "distance_from_m_equals_1": "0.660459018585141865228623",
+      "gated_by": "locus_is_O1_far_from_canonical_paths (a min over all paths, hence ≤ this distance)",
+      "has_independent_expected_value": false
     },
     "verdict": "NO BRANCH-POINT GRAZE: the exact discriminant locus of the m-deformed 4_1 gluing system sits O(1)-far (min 0.3559) from the complete structure, the real-m axis, and every canonical candidate path — 10^5+ times the anchor separation. Combined with the three prior negatives, the u^3-lever hypersensitivity is now excluded from (i) smooth substrate phases, (ii) the pole-seeding stage, (iii) the gluing-variety branch points. Scope-(a): the near-singularity lives in the substrate->m ASSIGNMENT (the archimedean-realization functor of conj:algebraic-geometric-dilog-equivalence) upstream of the geometry — the map itself, not the variety. No ingredient excluded structurally; no fit; nothing wired."
   }

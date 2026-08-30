@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:17:50.991160+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-30T09:31:14.710081+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
   "assertions": [
     {
       "name": "W_A_is_length_gen_func_not_determinant",
@@ -51,15 +51,15 @@
       "computed": "False",
       "expected": "False",
       "passed": true,
-      "source": "honest negative: no single parameter-free q lands both {3.81,13.03}"
+      "source": "honest negative: no single parameter-free q lands both {3.81,13.03} — at q₀ ρ_grad(3)=3.34203 misses ρ_strong(3) by 12.3% and ρ_grad(4)=15.7396 misses ρ_strong(4) by 20.8%, both outside the ±5% band"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deltalambda-jet-filtration-magnitude",
   "scriptFile": "deltalambda_jet_filtration_magnitude_probe.py",
-  "scriptHash": "b57aad2e81d8",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "d2f8af56a978",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,7 +74,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:44:16.475768+00:00",
-  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
+  "computedAt": "2026-08-30T09:31:15.516970+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
   "assertions": [
     {
       "name": "sum_rule_exact",
@@ -38,19 +38,19 @@
     },
     {
       "name": "legacy_pair_internally_inconsistent",
-      "computed": "0.00007303060000000000000000000000000000000000000000000000000000000000002219",
-      "expected": "0.00007303060000000000000000000000000000000000000000000000000000000000002219",
+      "computed": "True",
+      "expected": "True",
       "passed": true,
-      "tolerance": 0.0,
-      "source": "the pair violates the exact relation => the two were computed independently"
+      "unit": "|V3_legacy + 2·ImV1_legacy| > 1.0e-5",
+      "source": "the pair violates the exact relation => the two were computed independently; violation 7.3031e-5 vs the G5 floor 1.0e-5"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
   "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
-  "scriptHash": "1b1eeda064cf",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "52954f198418",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
