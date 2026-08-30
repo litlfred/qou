@@ -506,6 +506,39 @@ def _artifact_pin(path: Path) -> str | None:
     return m.group(1) if m else None
 
 
+def _consumed_at_artifact_q(tree: ast.Module) -> bool:
+    """Does the module take q FROM the artifact it loaded?
+
+    The seventh false-positive mechanism, and the subtlest: a module can pin
+    proton, load a muon-built table, and be entirely correct — because it reads
+    the artifact's OWN recorded q and evaluates there.
+    `y_lambda_macdonald_telescope.cross_check_mpfr` does exactly that
+    (`q_val = mp.mpf(table.get("q") or ...)`), so it is checking the witness
+    against the closed form at the witness's own pin. Nothing straddles.
+
+    That is reconciliation by USING the artifact's pin rather than comparing
+    against it, and stage 2's "producer anchor != artifact stamp" test cannot
+    tell the two apart — it reported this module as a straddle and the claim
+    reached a PR body and a bean before the consumer was read. Hence: a `q`-ish
+    key read out of loaded data is evidence the module anchors to the artifact.
+
+    Its sibling reader `y_lambda_symbolic_validate` does NOT do this — it drops
+    the witness's `q` at load and compares against the Wenzl bridge evaluated
+    at its own runtime pin — and stays flagged. The two read the same file and
+    only one of them straddles.
+    """
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Call) and _call_name(n) == "get":
+            for a in n.args:
+                if isinstance(a, ast.Constant) and a.value in ("q", "q0", "q_0"):
+                    return True
+        elif isinstance(n, ast.Subscript):
+            sl = n.slice
+            if isinstance(sl, ast.Constant) and sl.value in ("q", "q0", "q_0"):
+                return True
+    return False
+
+
 def _anchor_keyed(tree: ast.Module) -> set[str]:
     """Filename constants that sit under an anchor key in a dict literal.
 
@@ -559,6 +592,8 @@ def measure(hits: list[tuple[str, str]]) -> list[tuple[str, str, str, str]]:
         try:
             tree = ast.parse(path.read_text())
         except Exception:                                  # noqa: BLE001
+            continue
+        if _consumed_at_artifact_q(tree):
             continue
         seen: set[Path] = set()
         keyed = _anchor_keyed(tree)
