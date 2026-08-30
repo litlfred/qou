@@ -51,14 +51,15 @@ The b-decay of `tr(ρ_λ Ω₂)` could arise two ways:
 - **(C) inter-window cancellation** — individual windows do not decay; the decay only
   appears after the signed sum (the harder Penrose/Ursell connected-diagram story).
 
-**Measured verdict: (P), decisively, at both A=2 and A=3.** Every one of the local
+**Measured verdict: (P), decisively, at A=2, A=3, and A=4.** Every one of the local
 windows has its normalised trace `max_λ |t_λ^{(a)}|/dim_λ` **peaking at b=1** and
-falling into a suppressed b≥3 tail:
+falling into a suppressed tail:
 
-| | windows | b1/tail(b≥3) suppression, per window |
-|---|---|---|
-| A=2 (n=6) | 4 | 1.55× .. 6.93× |
-| A=3 (n=9) | 7 | 5.6× .. 12.8× |
+| | windows | self-check err | b1/tail suppression, per window |
+|---|---|---|---|
+| A=2 (n=6) | 4 | 4.46e-58 (11 parts) | 1.55× .. 6.93× (tail = max b≥3) |
+| A=3 (n=9) | 7 | 4.31e-57 (30 parts) | 5.6× .. 12.8× (tail = max b≥3) |
+| A=4 (n=12, b≤3) | 10 | 2.59e-56 (50 banked) | 7.3× .. 22.0× (tail = b=3 only) |
 
 No window carries its mass at high b, so the b-decay is **already present per
 window** — it is **not** an inter-window cancellation. This **rules out the (C)
@@ -73,10 +74,17 @@ sub-route** and reduces the theorem to a single local estimate:
 - **Not monotone.** The per-window fall is not strictly monotone in b — small bumps at
   high b where values are already small. "(P)" is a **peak-at-b=1** statement, not a
   monotone-decay one; a monotone bound is a separate, stronger claim.
-- **Suppression is modest at small A.** At A=2 some windows are only ~1.5× down. The
-  suppression **sharpens with A** (A=2: 1.5–6.9×; A=3: 5.6–12.8×) — consistent with the
-  representation-stability reading (growth audit §3), but a **uniform quantitative
-  bound is not proved** here.
+- **Suppression is modest at small A, sharpens with A.** At A=2 some windows are only
+  ~1.5× down. The **fully-comparable** metric (the `b1/b2` ratio, since b=2 is present at
+  all three A) sharpens monotonically: window `(0,1)` `3.10 → 3.45 → 3.62` (A=2,3,4);
+  window `(2,3)` `1.68 → 2.24 → 2.59`. Consistent with representation stability (growth
+  audit §3), but a **uniform quantitative bound is not proved**. The A=4 "tail" column
+  above is `b1/b3` (the low-b run stops at b=3), so it is **not** directly comparable to
+  the A=2/A=3 tails (which are `b1/max(b≥3)`); use `b1/b2` for cross-A comparison. At A=4
+  restricted to b≤3 every window is additionally **strictly monotone** b1>b2>b3 — the
+  non-monotone bumps at A=2/A=3 sit at *higher* b (where values are already tiny), which
+  this low-b run does not reach. The A=4 self-check anchor is the **banked (gitignored)
+  checkpoint**, not a committed witness; the reproducible anchors are A=2/A=3.
 - **The reduced single-window estimate is still open.** (P) is a genuine reduction and
   a genuine elimination of the harder sub-route; it is **not** a proof of the theorem.
   Proving `|tr(ρ_λ [A_a,A_{a+1}])|/dim_λ` decays with b (with a rate) remains the open
