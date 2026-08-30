@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T10:52:55Z",
+  "updated_at": "2026-08-30T11:10:55Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -5125,36 +5125,48 @@
     },
     "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean::RootOfUnityTruncationContext::proof-dependent-conjecture-not-conditional": {
       "category": "proof-dependent-conjecture-not-conditional",
-      "pattern": "prose-conditional-block-level",
+      "pattern": "prose-conditional-unrecorded-dependency",
       "line": 31,
-      "verdict": "legit",
-      "file_sha": "67894ace6ffa",
-      "disposition": "detector-cannot-see-the-uses-graph",
-      "evidence": "NOT a defect. The .md banner reads 'Proposition (conditional on [`conj:q-aubin-lions`])' and the signature binds only [RootOfUnityTruncationContext], so the detector's literal claim is correct. But the dependency IS auditable: conj:q-aubin-lions is reachable from prop:root-of-unity-truncation in TWO hops -- prop:root-of-unity-truncation -> prop:vorticity-lower-bound -> conj:q-aubin-lions (measured by BFS over every uses[] edge in content/).\n\nAnd it may NOT be listed directly. AGENTS.md states uses[] carries IMMEDIATE NEIGHBOURS ONLY, with pipeline/prune-transitive-deps.ts enforcing it; adding conj:q-aubin-lions alongside prop:vorticity-lower-bound would be exactly the transitive redundancy that tool removes. So 3b-cond item 4 ('uses[] includes the conjecture explicitly') and the immediate-neighbours rule are in tension here, and the graph convention wins. The block is correct as authored.\n\nThe Lean is also honestly conditional in substance: RootOfUnityTruncationContext is content-bearing (a Bernstein core bound and a blowup-iff-nondegenerate equivalence), has no instance anywhere, and root_of_unity_truncation_conditional DERIVES their conjunction rather than projecting its own conclusion -- 3b-cond item 5 satisfied. Binding QAubinLions instead would be wrong: the proposition does not use q-Aubin-Lions as a hypothesis, it uses the two facts.\n\nDetector improvement, if wanted: check reachability in the uses[] graph before flagging a block-level prose claim. Bean qou-s3zd.",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-30T10:31:50Z"
-    },
-    "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean::MagicABindingFormula::proof-dependent-conjecture-not-conditional": {
-      "category": "proof-dependent-conjecture-not-conditional",
-      "pattern": "prose-conditional-block-level",
-      "line": 107,
       "verdict": "genuine",
-      "file_sha": "94696339bf6b",
-      "disposition": "uses-edges-added; banner wording is an open authorial question",
-      "evidence": "A REAL defect in the DEPENDENCY RECORD, now partly fixed; the residual is a wording question.\n\nThe .md opens 'Theorem (conditional on [`conj:magic-numbers-bring`] and [`prop:gravity-spectral-prefactor`])'. Measured 2026-08-30, BOTH were absent from uses[] and UNREACHABLE from prop:magic-A-binding-formula at 5 hops of the uses[] graph. The criterion reported only the first, because its regex matches `conj:` labels; the missing `prop:` edge was invisible to it and is the same defect.\n\nFIXED: both edges added to magic-A-binding-formula.ts. Neither is transitively reachable, so neither is redundant under prune-transitive-deps.ts. `uses[]` is the EDITORIAL relation -- what a reader must have read to follow the block -- and a reader plainly needs to know where the magic set M comes from and where 8G comes from, so both belong there on the definition of the field.\n\nNOT FIXED, and deliberately so: the Lean still takes no binder on MagicNumbersBring, and it SHOULD NOT. That carrier asserts the substantive conjecture -- for each n in magicSet a Bring period sub-lattice L n of rank n, S5-stable and tau-stable. The binding theorem uses NONE of it. It inlines the seven-element SET as a decidable predicate `isMagic`, with its own comment saying so ('Inlined here to keep this file standalone for the sibling-trace convention'), and the closed form holds for any nucleus whose Z and N lie in that set whatever justifies the set. Adding [MagicNumbersBring] would make the theorem conditional on a hypothesis it does not use -- decorative binding, the defect qNS_enstrophy_cube_bound was corrected for.\n\nSo the residual is the BANNER: writing 'Theorem (conditional on conj:X)' invokes the 3b-cond contract, which implies a matching Lean instance binder. Here the dependency on conj:magic-numbers-bring is editorial/motivational (where M comes from), while the dependency on prop:gravity-spectral-prefactor is logical (it supplies the 8G in the formula). Those are different relations sharing one banner form. Whether to re-word is a claim about what the theorem asserts and is the author's, not an agent's. Left `genuine` so the criterion keeps reporting it. Bean qou-s3zd.",
+      "file_sha": "67894ace6ffa",
+      "disposition": "add-the-uses-edge-for-regularity-breakdown",
+      "evidence": "RE-ADJUDICATED 2026-08-30, legit -> genuine, and the REASON changed rather than the code. My earlier `legit` was about `conj:q-aubin-lions` and remains correct for it: that label is reachable in two hops (prop:root-of-unity-truncation -> prop:vorticity-lower-bound -> conj:q-aubin-lions) and may NOT be listed directly, since uses[] carries immediate neighbours only and prune-transitive-deps.ts strips the redundant edge.\n\nThe widened scan reads the WHOLE banner clause, and this banner names FIVE dependencies, not one: conj:q-aubin-lions, conj:ns-counterexample, conj:critical-exponent, prop:blowup-yekutieli and conj:regularity-breakdown. Measured by BFS over every uses[] edge in content/, the first four are reachable at depths 2, 3, 5 and 5. **conj:regularity-breakdown is UNREACHABLE at any depth** -- it is in no uses[] on any path from this block -- so that one dependency is claimed in prose only. Same block, same key, a different and real finding, which the one-label-per-trigger scan could not see.\n\nNOTE FOR THE LEDGER ITSELF: the key is file::decl::category and does not carry the REASON, so a verdict survives a changed finding under the same key. Mine did: a `legit` recorded about q-aubin-lions would have silently covered a genuine hit about regularity-breakdown. Worth considering whether the key should include the claimed label.\n\nFIX: add conj:regularity-breakdown to the block's uses[] (not transitively reachable, so prune-transitive-deps will not strip it), or drop it from the banner if the proposition does not depend on it. Authorial. Bean qou-s3zd.",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-30T10:52:55Z"
+      "reviewed_at": "2026-08-30T11:10:55Z",
+      "stale_prev_verdict": "legit"
     },
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::QuantumAPolynomial::proof-dependent-conjecture-not-conditional": {
+    "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean::BorromeanQuark::proof-dependent-conjecture-not-conditional": {
       "category": "proof-dependent-conjecture-not-conditional",
-      "pattern": "prose-conditional-block-level",
-      "line": 167,
-      "verdict": "legit",
-      "file_sha": "f2f6ce336f15",
-      "disposition": "dependency-is-a-direct-uses-edge",
-      "evidence": "NOT a defect, and the strongest of the three. The .md banner names conj:quantum-langlands-dual and conj:dim-master-pentagon, and BOTH are DIRECT uses[] edges of prop:phi-q-aj-machinery-identification -- uses: ['conj:quantum-langlands-dual', 'conj:dim-master-pentagon', 'rem:dilog-saddle-regime']. 3b-cond item 4 is satisfied literally, with no transitive argument needed.\n\nThe class the hit is charged to, QuantumAPolynomial, is itself the proximate 3b-cond carrier that the file's three theorems bind; it is not the conjecture the prose names, which is why the signature has no binder on it. The detector's own source comment (lean-vacuity-axiom-audit.ts, above `scan`) already records this exact file as the measured false-positive that motivated per-file deduplication -- one .md line had become three hits across the three classes sharing the file. The dedup fixed the triplication; this is the surviving single charge, and it is spurious for the same reason.\n\nBean qou-s3zd.",
+      "pattern": "prose-conditional-unrecorded-dependency",
+      "line": 294,
+      "verdict": "genuine",
+      "file_sha": "022a7965c249",
+      "disposition": "add-the-uses-edge",
+      "evidence": "NEW candidate, surfaced 2026-08-30 by the uses[]-reachability check; verified before recording.\n\nThe .md banner opens 'Proposition (conditional on [`conj:borromean-quark`])' and that dependency is absent from uses[] -- the block records ['prop:q-beta-cos-resummation'] -- and UNREACHABLE from it by BFS over every uses[] edge in content/. So the conditionality is claimed in one prose sentence and nowhere a reader or a tool can follow.\n\nWHY THIS WAS INVISIBLE BEFORE, and it is the new coverage rather than a regression: the Lean here is CORRECT. The signature does bind the carrier, so the old binder-based check passed and reported nothing. The defect is in the dependency RECORD, not in the type -- \u00a73b-cond item 4 without item 2 being at fault. A block can be properly conditional in Lean and still invisible to anyone tracing the manifest.\n\nFIX: add conj:borromean-quark to uses[]. Not transitively reachable, so prune-transitive-deps.ts will not strip it. Not done here -- changing a block's dependency record is a content decision, and this branch is a checker change. Bean qou-s3zd.",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-30T10:31:50Z"
+      "reviewed_at": "2026-08-30T11:10:55Z"
+    },
+    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QIntegerMassFormula::proof-dependent-conjecture-not-conditional": {
+      "category": "proof-dependent-conjecture-not-conditional",
+      "pattern": "prose-conditional-unrecorded-dependency",
+      "line": 70,
+      "verdict": "genuine",
+      "file_sha": "b836131e5e60",
+      "disposition": "add-the-uses-edge",
+      "evidence": "NEW candidate, surfaced 2026-08-30 by the uses[]-reachability check; verified before recording.\n\nThe .md banner opens 'Proposition (conditional on [`conj:q-integer-mass-formula`])' and that dependency is absent from uses[] -- the block records ['prop:wedderburn-trace-identity'] -- and UNREACHABLE from it by BFS over every uses[] edge in content/. So the conditionality is claimed in one prose sentence and nowhere a reader or a tool can follow.\n\nWHY THIS WAS INVISIBLE BEFORE, and it is the new coverage rather than a regression: the Lean here is CORRECT. The signature does bind the carrier, so the old binder-based check passed and reported nothing. The defect is in the dependency RECORD, not in the type -- \u00a73b-cond item 4 without item 2 being at fault. A block can be properly conditional in Lean and still invisible to anyone tracing the manifest.\n\nFIX: add conj:q-integer-mass-formula to uses[]. Not transitively reachable, so prune-transitive-deps.ts will not strip it. Not done here -- changing a block's dependency record is a content decision, and this branch is a checker change. Bean qou-s3zd.",
+      "reviewer": "agent",
+      "reviewed_at": "2026-08-30T11:10:55Z"
+    },
+    "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean::BorromeanQuark::proof-dependent-conjecture-not-conditional": {
+      "category": "proof-dependent-conjecture-not-conditional",
+      "pattern": "prose-conditional-unrecorded-dependency",
+      "line": 156,
+      "verdict": "genuine",
+      "file_sha": "cb599a75da35",
+      "disposition": "add-the-uses-edge",
+      "evidence": "NEW candidate, surfaced 2026-08-30 by the uses[]-reachability check; verified before recording.\n\nThe .md banner opens 'Proposition (conditional on [`conj:borromean-quark`])' and that dependency is absent from uses[] -- the block records ['def:transfer-matrix-operator'] -- and UNREACHABLE from it by BFS over every uses[] edge in content/. So the conditionality is claimed in one prose sentence and nowhere a reader or a tool can follow.\n\nWHY THIS WAS INVISIBLE BEFORE, and it is the new coverage rather than a regression: the Lean here is CORRECT. The signature does bind the carrier, so the old binder-based check passed and reported nothing. The defect is in the dependency RECORD, not in the type -- \u00a73b-cond item 4 without item 2 being at fault. A block can be properly conditional in Lean and still invisible to anyone tracing the manifest.\n\nFIX: add conj:borromean-quark to uses[]. Not transitively reachable, so prune-transitive-deps.ts will not strip it. Not done here -- changing a block's dependency record is a content decision, and this branch is a checker change. Bean qou-s3zd.",
+      "reviewer": "agent",
+      "reviewed_at": "2026-08-30T11:10:55Z"
     }
   }
 }
