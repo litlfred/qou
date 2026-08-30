@@ -696,3 +696,41 @@ than being folded into "unresolved", because "the copies are ambiguous" and
     contradicts the declaration    0        (unchanged)
 
 The manifest now has no stem the audit cannot account for.
+
+
+## 2026-08-30 (2) — the undetermined bucket, and a SECOND dead declaration
+
+### Two more shared-helper q0 routes
+
+Clustered the undetermined `physical_proton` stems by what they import. Past the
+noise (`witness_base.WitnessBuilder` 37, `_precision.set_compute_dps` 21 — a
+witness writer and a precision setter, neither a q0 source) two real routes
+appeared:
+
+- **`hecke_core.q0` / `.qi` / `.h`** — `qou-mass/.../hecke_core.py:35` is
+  `from q_parameter import Q as q0, Q_INV as qi, HA as h`. A **re-export of the
+  governed accessor**, so importers ARE anchor-governed. The audit was skipping
+  it because the stem matches more than one file.
+- **`young_qdim.q`** — `sp.Symbol("q", positive=True)`. A symbolic variable, not
+  a pin. Correctly not a q0 source, and worth recording so nobody chases it.
+
+Applied the same candidate-agreement rule already used elsewhere: a duplicated
+helper only blocks a verdict if the copies DISAGREE.
+
+    bindable via a local helper   30 -> 49
+    undetermined                  42 -> 38
+    contradicts the declaration    0     (unchanged)
+
+### A second declaration with nothing behind it — on the MUON layer
+
+    alpha_high_precision  ->  computations/_deprecated/alpha_high_precision.py
+
+Same shape as `binding_k_enumerator`: producer retired, manifest entry left
+behind. What makes this one worth noting is **where** it was — in main's
+`ideal_muon`, the layer main deliberately drained from 120 to 21 on 2026-08-29.
+A hand-curated 21-entry list still carried a dead entry, which is exactly the
+argument for the check being mechanical rather than careful.
+
+Removed; `ideal_muon` is 20.
+
+**Both layers now report 0 contradictions, 0 unresolved, 0 dead declarations.**

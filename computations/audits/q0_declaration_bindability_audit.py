@@ -450,17 +450,23 @@ def _classify_one(f, expect: str | None) -> "tuple[str, str]":
         if m in _UNGOVERNED or _is_qparam(m):
             continue
         base = m.split(".")[-1]
-        cands = idx.get(base, [])
-        if len(cands) != 1:
-            continue          # ambiguous stem: do not guess which file it is
-        h = cands[0]
-        if h == f:
+        cands = [c for c in idx.get(base, []) if c != f]
+        if not cands:
             continue
-        try:
-            htree = ast.parse(h.read_text(encoding="utf-8", errors="ignore"))
-        except Exception:  # noqa: BLE001
-            continue
-        if any(_is_qparam(x) for x in _imports(htree)):
+        # A duplicated helper stem is only a problem if the copies DISAGREE.
+        # `hecke_core` exists under qou-mass and re-exports the governed
+        # accessor verbatim — `from q_parameter import Q as q0, Q_INV as qi,
+        # HA as h` — so its importers ARE anchor-governed. Skipping it for
+        # being duplicated left those stems "undetermined" over an ambiguity
+        # that changes nothing.
+        verdicts = set()
+        for h in cands:
+            try:
+                htree = ast.parse(h.read_text(encoding="utf-8", errors="ignore"))
+            except Exception:  # noqa: BLE001
+                continue
+            verdicts.add(any(_is_qparam(x) for x in _imports(htree)))
+        if verdicts == {True}:
             return "via_helper", f"{f.relative_to(REPO)}  <- {base}"
     return _unbindable(f, src, mods, _route(src, mods), expect, idx)
 
