@@ -55,10 +55,15 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(50)
 
-from qou_substrate.constants import Q as Q_PROTON
+from qou_substrate.constants import q_at  # mpmath-native proton pin; NOT the f64 `Q`
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
-Q = mp.mpf(str(Q_PROTON))
+# q0 at full working precision. `constants.Q` is `_solve_q_proton_f64` -- a
+# float64 solve -- so `mpf(str(Q))` would inflate a double's error to 50 dps
+# and every value below would carry it. `q_at` solves in mpmath at the same
+# (proton) pin. Flagged as the corpus's only `mpf(str(<f64>))` laundering
+# site by computations/f64_into_mpmath_audit.py.
+Q = q_at(50)
 H = Q - 1 / Q
 Z_D = Q ** 3 / (Q ** 2 + 1)
 M_E, M_P, M_N = mp.mpf("0.51099895"), mp.mpf("938.27208816"), mp.mpf("939.56542052")
