@@ -22,7 +22,37 @@ VACUOUS-GREEN one is indistinguishable from a passing witness to every
 consumer that reads `allPassed` — "all zero of them passed" is vacuously true
 and operationally misleading.
 
-## Why the existing detector cannot see this
+## This is NOT the first detector on this defect — read `qou-vfy1` first
+
+`scripts/check-computation-status.py` already classifies exactly this shape and
+calls it **vacuous**: `allPassed: true` over an empty assertions array, where
+`all([]) is True` means the witness reports everything passed having tested
+nothing. Bean `qou-vfy1`, measured 2026-08-22: of 221 content blocks marked
+`status: "verified"`, **43 were vacuous**. It has a `--strict-unbacked` flag.
+
+**The obvious fix is already settled and WITHDRAWN, so do not re-propose it.**
+Making `WitnessBuilder` emit `allPassed: null` for an empty assertion list was
+investigated under `qou-vfy1` and rejected on measurement: about a dozen
+producers hand-roll `return 0 if wit["allPassed"] else 1`, and `None` is falsy,
+so the change turns a silent false positive into a loud false negative. That
+checker therefore reads `len(assertions)` directly and needs no schema change.
+
+## What THIS audit adds, and it is a different population
+
+`check-computation-status.py` walks content blocks and only sees a witness that
+some block CITES while claiming `verified` — the consequential subset, and the
+right one to gate on. It cannot see a vacuous witness that no block cites, or
+one cited by a block with any other status.
+
+    qou-vfy1  : 43 vacuous, of 221 `verified` BLOCKS       (consequential)
+    qou-srvu  : 420 vacuous, of 3280 WITNESSES on main     (superset)
+
+This audit is the wider hygiene net over the superset, and it ratchets — the
+count may fall, never rise — which the block-level checker does not do. Use
+`check-computation-status.py --strict-unbacked` to gate what a paper CLAIMS;
+use this to stop the population growing.
+
+## Why the assertion-level detector cannot see this
 
 `self_fulfilling_assertion_audit.py` scans `add_assertion` CALL SITES. A
 producer that never calls it has no site to scan, so the limiting case of an
