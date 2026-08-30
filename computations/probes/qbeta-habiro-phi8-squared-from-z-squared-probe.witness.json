@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:01:04.961780+00:00",
-  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
+  "computedAt": "2026-08-30T14:04:54.095637+00:00",
+  "commitSha": "1717c95e6cd31392765736c080e042799c26c2d2",
   "assertions": [
     {
       "name": "habiro_expansion_reconstructs_input_polynomial",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35448,
+  "durationMs": 35140,
   "computation": "qbeta-habiro-phi8-squared-from-z-squared-probe",
   "scriptFile": "qbeta_habiro_phi8_squared_from_z_squared_probe.py",
   "scriptHash": "c8474bf01a64",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "1717c95e6cd31392765736c080e042799c26c2d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -547,7 +547,7 @@
       ],
       "agreeing": 7
     },
-    "elapsed_seconds": 35.44894337654114
+    "elapsed_seconds": 35.14091610908508
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
