@@ -133,3 +133,39 @@ Residual fixed here: the banner HEADING still read "Two of the three
 original gates no longer exist" while its own table and closing paragraph
 both say three. Corrected -- that heading is the line a skimming agent
 reads.
+
+## FALSIFIED 2026-08-30 — a Copilot review arrived, with three real findings
+
+The n=5 negative recorded above was real when measured. It is **not** a
+permanent property of the integration, and this bean's title ("Copilot review
+does not arrive") is now false as stated.
+
+PR #6058 requested a review via `request_copilot_review` at ~07:40 UTC and
+received one at 07:49 — about 9 minutes — carrying three findings, **all three
+confirmed by measurement**, none cosmetic:
+
+1. `markov_parameter_convention_C` dispatched on bare
+   `hasattr(q, "free_symbols")`, which is also True for sympy NUMERICS
+   (`Rational(1,2)`, `Float(1.11)`) whose `free_symbols` is the EMPTY set — so
+   numeric callers were handed a sympy expression where they asked for a
+   number.
+2. + 3. Two probes imported `pyhecke.atom` / `qbeta_utils` with no
+   `_path_bridge` bootstrap. Confirmed by running with PYTHONPATH STRIPPED:
+   `No module named 'pyhecke'` / `No module named 'qbeta_utils'`.
+
+Findings 2 and 3 are the `qou-0e1t` class, and the agent could not have found
+them with its own runner: it had `PYTHONPATH` set for every invocation all
+session, which is exactly the masking AGENTS.md documents. **The external
+reviewer's value here was precisely that it did not share the agent's
+environment.**
+
+What this does and does not establish:
+
+- It DOES refute "zero reviews every time" / "nothing is ever enqueued" as a
+  standing claim, and it refutes the derived guidance to skip requesting one.
+- It does NOT establish that reviews are dependable. One positive against five
+  negatives means UNRELIABLE, not RESTORED. Do not now build a gate on it.
+
+Guidance that follows: **request it every time, never block on it, and never
+assert in a durable artifact that it will not come.** AGENTS.md's Phase-4
+banner and gate table are corrected accordingly.
