@@ -189,3 +189,66 @@ direction** and does not help.
 So the ordered plan is: (i) a certified lower bound on `D(y₁)`; (ii) then
 `VOL_4_1 < VOL_5_2`; (iii) then exactify both instances and retire the literals — at
 which point item 2 becomes moot, because there is no literal left to be unequal to.
+
+---
+
+## 2026-08-30 — step (i) scoped: the route to `D(y₁) > 2/3·Cl₂(π/3)`, and where it stops
+
+Measured the whole chain before attempting it. **It is a formalization project, not a
+session task**, and the obstacle is specific enough to name.
+
+### The numbers
+
+`fiveTwoShape` is the non-real root of `X³ − 2X² + 3X − 1`:
+
+    real root r  = 0.4301597090        (f(0.4) = −0.0560,  f(0.45) = +0.0361)
+    y₁           = 0.7849201455 + 1.3071412787i
+    |y₁|         = 1.5247025799
+    D(y₁)        = 0.9427073628        target: > 0.703413      margin 34 %
+
+The margin is comfortable — a bound good to ~1 % suffices. Accuracy is **not** the
+problem here (unlike item 2, where 16 digits were needed).
+
+### Step-by-step feasibility
+
+| step | what | verdict |
+|---|---|---|
+| 1 | bracket the real root `r` by IVT on explicit rationals | **easy** — `f(0.4) < 0 < f(0.45)`, `norm_num` closes it |
+| 2 | `Re(y₁) = (2−r)/2`, `\|y₁\|² = 1/r` from the factorisation (root sum 2, product 1) | **easy algebra** |
+| 3 | the three tetrahedron angles `1.030019, 1.407715, 0.703858` (sum `= π` ✓) | needs certified `arctan` bounds — moderate |
+| 4 | certified `Λ` at those three angles, `Λ(θ) = ½Σ sin(2kθ)/k²` | **THE OBSTACLE** |
+| 5 | combine → `D(y₁) > 0.7034` | trivial once 4 lands |
+
+### Two things that close off the obvious shortcuts
+
+**The Li₂ power series DIVERGES at `y₁`.** `|y₁| = 1.5247 > 1`, so the direct
+`Im Li₂(y₁)` route is not available at all — this is why the corpus uses the *extended*
+`cLiTwoExt`. Anyone reaching for a dilogarithm partial sum here will find it does not
+converge.
+
+**The angles are not rational multiples of π.** This is what makes step 4 hard, and it
+is exactly the property that made the 4₁ case easy. `ClausenValueBounds.lean` gets an
+*exact rational multiple of √3* for its partial sum because `sin(kπ/3) ∈ {±√3/2, 0}`
+repeats with period 6. At `θ = 1.030019…` there is no closed form for `sin(2kθ)`, so a
+certified partial sum needs **interval arithmetic on `sin` at irrational arguments** —
+machinery the corpus does not have. The tail is fine (≈50 terms for 1e-2); it is the
+*head* that is the problem.
+
+### Why `fiveTwoShape` currently admits no numeric bound at all
+
+`realRoot := Classical.choose SaddleRoots.exists_real_root` — obtained from the
+intermediate value theorem, so it is **non-constructive by construction**. Grepped: the
+only fact about it anywhere is `fiveTwoShape_im_pos`. There is no bracket on `.re`, `.im`
+or `|·|`. Step 1 above is therefore not optional bookkeeping — it is what first gives the
+constant any numeric handle, and it is independently useful.
+
+### Recommendation
+
+**Do step 1 and 2 as a standalone brick** (`fiveTwoShape` re/im/modulus brackets). They
+are cheap, sorry-free, unblock any later numeric work on 5₂, and are worth having
+regardless of whether step 4 is ever attempted. **Do not start step 4** without first
+deciding whether to build a general certified-`sin` interval facility — that is its own
+project and would serve far more than this one theorem.
+
+**Scope-(a) negative, not (b):** nothing here shows `VOL_4_1 < VOL_5_2` is unreachable.
+It shows the *currently available* machinery does not reach it.
