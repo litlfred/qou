@@ -221,12 +221,18 @@ def main():
           all(v < LIM for _, v in NPs),
           f"max = {nstr(max(f(v) for _, v in NPs), 8)} at n = {max(NPs, key=lambda t: t[1])[0]}")
 
-    # The increments oscillate, with extrema equally spaced in sqrt(n).
-    # Measured extrema: peaks n = 12, 25; troughs n = 20, 36 -- i.e.
-    # sqrt(n) = 3.46, 5.00 and 4.47, 6.00, a period of about 1.53 in sqrt(n).
-    # The n = 36 trough was PREDICTED from the n <= 32 data before the n = 40 run
-    # and came out exactly. Next prediction, untested here: a peak near n = 43
-    # (sqrt(n) ~ 6.53). Mechanism unexplained; do not read it as established.
+    # The increments oscillate. Extrema are ROUGHLY equally spaced in sqrt(n),
+    # but NOT exactly, and the n = 46 data is what showed that:
+    #   peaks   n = 12, 25, 44 -> sqrt(n) = 3.464, 5.000, 6.633
+    #   troughs n = 20, 36     -> sqrt(n) = 4.472, 6.000
+    #   peak-to-peak spacing 1.536 then 1.633 (+6.3%); trough-to-trough 1.528.
+    # A constant period would make those equal. They are not, and the spacing is
+    # drifting upward, so this is an approximate description and NOT a
+    # periodicity. Two predictions were made from it: the n = 36 trough (exact)
+    # and a peak at n = 43 (came out at 44, off by one -- precisely because the
+    # spacing was assumed constant). Do not extrapolate further: three peaks fit
+    # two spacings, and the mechanism is unexplained. The natural suspect, the
+    # VKLS support |c| <= 2 sqrt(n) crossing integers, gives period 1/2, not 1.53.
     incs = {b_n: b - a for (_, a), (b_n, b) in zip(tail_np, tail_np[1:])}
     if nmax >= 40:
         window = [n for n in incs if 30 <= n <= 40]
@@ -235,12 +241,35 @@ def main():
         check("increment oscillation: trough at n = 36, then rising (PREDICTED)",
               trough == 36 and all(incs[after[i]] < incs[after[i + 1]]
                                    for i in range(len(after) - 1)),
-              f"trough at n = {trough}; increments rise monotonically to n = {nmax}. "
-              f"Extrema are equally spaced in sqrt(n), period ~1.53.")
+              f"trough at n = {trough}; increments rise monotonically across the "
+              f"30..40 window this check inspects. (They peak at n = 44 and fall "
+              f"again after -- see the next check; do not read this as rising to "
+              f"nmax.)")
     else:
         check("increment oscillation: trough at n = 36, then rising (PREDICTED)",
               False,
               f"NOT CHECKED: needs nmax >= 40, got {nmax}.")
+
+    # SECOND PREDICTION, written before the n >= 46 run existed.
+    # Extrema equally spaced in sqrt(n) with period ~1.53 puts the next PEAK at
+    # sqrt(n) ~ 6.00 + 0.53 = 6.53, i.e. n ~ 43: increments rise from the n = 36
+    # trough to a peak at n ~ 43, then fall through n = 46. If they instead rise
+    # monotonically through 46, or peak well away from 43, the sqrt(n)
+    # periodicity is wrong and this check must FAIL rather than be reinterpreted.
+    if nmax >= 46:
+        w2 = sorted(n for n in incs if 37 <= n <= 46)
+        peak = max(w2, key=lambda n: incs[n])
+        before = [n for n in w2 if n < peak]
+        after = [n for n in w2 if n > peak]
+        rising = all(incs[before[i]] < incs[before[i + 1]] for i in range(len(before) - 1))
+        falling = all(incs[after[i]] > incs[after[i + 1]] for i in range(len(after) - 1))
+        check("increment oscillation: PREDICTED peak at n ~ 43, falling after",
+              abs(peak - 43) <= 1 and rising and falling and len(after) >= 2,
+              f"peak at n = {peak} (predicted 43); rising before = {rising}, "
+              f"falling after = {falling}")
+    else:
+        check("increment oscillation: PREDICTED peak at n ~ 43, falling after",
+              False, f"NOT CHECKED: needs nmax >= 46, got {nmax}.")
 
     check("the measured mean slope stays well under the pointwise 1/2",
           all(r["mean_slope"] < F(1, 2) for r in rows),
