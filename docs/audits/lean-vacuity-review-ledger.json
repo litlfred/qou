@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T02:37:27.692Z",
+  "updated_at": "2026-08-30T03:14:52.840Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3622,40 +3622,45 @@
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 79,
       "verdict": "genuine",
-      "file_sha": "22b52d3c9fbb",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "a484b0dfbfc7",
+      "agent_note": "Re-adjudicated 2026-08-30 after the fabricated trivial-zero instance bundle was removed from this file (qou-rq9n). The file_sha change is that removal. Verdict UNCHANGED and for an unchanged reason: the carrier's FIELDS are what make it vacuous, and they were not touched -- re-proved with no hypotheses in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). Removing the bundle stopped [C]-conditional theorems in the q-NS cone from being dischargeable at their call sites (verified: `example : (3*4:N)=12 := critical_exponent_identity` now fails to synthesize); it did not give the carrier content. Remaining work is AUTHORIAL -- encode what the claim actually says. Beaned individually under qou-rq9n.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.CriticalExponent::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 68,
       "verdict": "genuine",
-      "file_sha": "22b52d3c9fbb",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "a484b0dfbfc7",
+      "agent_note": "Re-adjudicated 2026-08-30 after the fabricated trivial-zero instance bundle was removed from this file (qou-rq9n). The file_sha change is that removal. Verdict UNCHANGED and for an unchanged reason: the carrier's FIELDS are what make it vacuous, and they were not touched -- re-proved with no hypotheses in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). Removing the bundle stopped [C]-conditional theorems in the q-NS cone from being dischargeable at their call sites (verified: `example : (3*4:N)=12 := critical_exponent_identity` now fails to synthesize); it did not give the carrier content. Remaining work is AUTHORIAL -- encode what the claim actually says. Beaned individually under qou-rq9n.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.NSCounterexample::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 56,
       "verdict": "genuine",
-      "file_sha": "22b52d3c9fbb",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "a484b0dfbfc7",
+      "agent_note": "Re-adjudicated 2026-08-30 after the fabricated trivial-zero instance bundle was removed from this file (qou-rq9n). The file_sha change is that removal. Verdict UNCHANGED and for an unchanged reason: the carrier's FIELDS are what make it vacuous, and they were not touched -- re-proved with no hypotheses in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). Removing the bundle stopped [C]-conditional theorems in the q-NS cone from being dischargeable at their call sites (verified: `example : (3*4:N)=12 := critical_exponent_identity` now fails to synthesize); it did not give the carrier content. Remaining work is AUTHORIAL -- encode what the claim actually says. Beaned individually under qou-rq9n.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.QAubinLions::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 43,
       "verdict": "genuine",
-      "file_sha": "22b52d3c9fbb",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "a484b0dfbfc7",
+      "agent_note": "Re-adjudicated 2026-08-30 after the fabricated trivial-zero instance bundle was removed from this file (qou-rq9n). The file_sha change is that removal. Verdict UNCHANGED and for an unchanged reason: the carrier's FIELDS are what make it vacuous, and they were not touched -- re-proved with no hypotheses in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). Removing the bundle stopped [C]-conditional theorems in the q-NS cone from being dischargeable at their call sites (verified: `example : (3*4:N)=12 := critical_exponent_identity` now fails to synthesize); it did not give the carrier content. Remaining work is AUTHORIAL -- encode what the claim actually says. Beaned individually under qou-rq9n.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 92,
       "verdict": "genuine",
-      "file_sha": "22b52d3c9fbb",
-      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+      "file_sha": "a484b0dfbfc7",
+      "agent_note": "Re-adjudicated 2026-08-30 after the fabricated trivial-zero instance bundle was removed from this file (qou-rq9n). The file_sha change is that removal. Verdict UNCHANGED and for an unchanged reason: the carrier's FIELDS are what make it vacuous, and they were not touched -- re-proved with no hypotheses in docs/audits/2026-08-30-conditional-classes-still-vacuous-after-bundle-removal.lean (exit 0, 0 errors). Removing the bundle stopped [C]-conditional theorems in the q-NS cone from being dischargeable at their call sites (verified: `example : (3*4:N)=12 := critical_exponent_identity` now fails to synthesize); it did not give the carrier content. Remaining work is AUTHORIAL -- encode what the claim actually says. Beaned individually under qou-rq9n.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
