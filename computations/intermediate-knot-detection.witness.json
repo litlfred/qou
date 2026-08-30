@@ -1,34 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:19:50.190026+00:00",
-  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
-  "assertions": [
-    {
-      "name": "knot_detected(³H)",
-      "computed": "trefoil",
-      "expected": "trefoil",
-      "passed": true,
-      "tolerance": 0,
-      "unit": "knot_type",
-      "source": "cosine_similarity=0.999"
-    },
-    {
-      "name": "knot_detected(⁴He)",
-      "computed": "hopf",
-      "expected": "hopf",
-      "passed": true,
-      "tolerance": 0,
-      "unit": "knot_type",
-      "source": "cosine_similarity=0.965"
-    }
-  ],
+  "computedAt": "2026-08-30T20:18:30.165941+00:00",
+  "commitSha": "acf5d779bd55b61669ee70b1980d78b63f6a6fe3",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "intermediate-knot-detection",
   "scriptFile": "intermediate_knot_detection.py",
-  "scriptHash": "320b8bbf7b05",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "3dd3853fd2c4",
+  "scriptCommitSha": "c2d3978ec59b26beb3677d95d37524673309b899",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -160,6 +141,10 @@
         "stable": true
       }
     ],
+    "knot_detected(³H)": {
+      "knot": "trefoil",
+      "source": "cosine_similarity=0.999 > 0.7"
+    },
     "⁴He": [
       {
         "A": 1,
@@ -227,6 +212,10 @@
         "stable": true
       }
     ],
+    "knot_detected(⁴He)": {
+      "knot": "hopf",
+      "source": "cosine_similarity=0.965 > 0.7"
+    },
     "⁶Li": [
       {
         "A": 1,
