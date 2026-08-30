@@ -20,9 +20,19 @@ algebra Wedderburn decomposition.
   PSD.  Axiomatised at the categorical-content level pending
   the algebra-evaluation map `BraidWord → HeckeElement n`.
 
-- `structurallyValidBinding_necessary_for_canonical` — same
-  pattern: the structural-validity proxy is necessary for the
-  Hecke element to be a candidate canonical T_w.
+- `withinLengthBound` — the enumerator's search-space bound as a
+  named decidable predicate.
+
+**Not provided, despite an earlier version of this list saying so:**
+a `structurallyValidBinding_necessary_for_canonical` — "the
+structural-validity proxy is necessary for the Hecke element to be
+a candidate canonical T_w". No such declaration exists or has ever
+existed in this file. What stood in its place was a tautology under
+the similar name `structurallyValidBinding_necessary`, removed on
+2026-08-30 (see the note at the foot of this file). The predicate
+itself is `BraidWord.structurallyValidBinding` in
+`mass-theory/conj-canonical-knot-id-sdp.lean`; the necessity claim
+awaits the same algebra-evaluation map as its `evenPower` sibling.
 
 ## Mathematical content
 
@@ -95,15 +105,43 @@ axiom evenPower_necessary_for_blockPosSemidef :
 def withinLengthBound (w : List Int) (L_max : ℕ) : Prop :=
   w.length ≤ L_max
 
-/-- **Structural-validity proxy is necessary for braid-word
-    interpretation.**  A binding word with a zero-index generator
-    or out-of-range generator does not correspond to any valid
-    inter-nucleon binding operation in `B_{n_0}`. -/
-theorem structurallyValidBinding_necessary {w : List Int} {n_0 : ℕ}
-    (h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
-                   (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0))) :
-    -- Then `w` is not a structurally-valid binding word at `n_0`:
-    ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
-      (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0)) := h_invalid
+/-! ### `structurallyValidBinding_necessary` — REMOVED 2026-08-30
+
+It read, in full:
+
+    theorem structurallyValidBinding_necessary {w : List Int} {n_0 : ℕ}
+        (h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+                       (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0))) :
+        ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+          (∀ g ∈ w, 3 ≤ Int.natAbs g ∧ Int.natAbs g < n_0)) := h_invalid
+
+Hypothesis and conclusion are the same proposition and the proof is the
+hypothesis: `(h : ¬P) : ¬P := h`, which is `id` under a name that promises a
+necessity result. It asserted nothing about braid words, PSD blocks, or
+`n_0`.
+
+**The fix is this file's own precedent, applied one declaration later than it
+should have been.** `withinLengthBound` above records that *"the previous
+`(h : ¬P) : ¬P := h` was a self-assuming tautology"* and replaces it with a
+named decidable predicate — naming, not asserting (§3b). The same move was
+available here and was not made.
+
+It is a removal rather than a renaming because the predicate **already has a
+canonical name elsewhere**: `BraidWord.structurallyValidBinding` in
+[`mass-theory/conj-canonical-knot-id-sdp.lean:156`], a `@[reducible] def`
+with roughly twenty use sites, whose body unfolds to exactly the proposition
+restated above. Defining a second copy here would have been the worse fix.
+
+Nothing consumed this declaration — the only other mention in the corpus was
+the module header's entry for a *differently named* theorem that does not
+exist, corrected above.
+
+The necessity direction this file's header describes — structural validity
+being necessary for the Hecke element to be a candidate canonical `T_w` — is
+**not stated anywhere**, and writing it is authorial: it needs the
+algebra-evaluation map the header lists as an open Lean port. Its sibling
+`evenPower_necessary_for_blockPosSemidef` is an honest `axiom` for exactly
+that reason. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot.PSDFeasibilityProxy
