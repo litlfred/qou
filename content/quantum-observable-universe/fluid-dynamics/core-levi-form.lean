@@ -24,10 +24,9 @@
 
   This file restates the proposition as `core_levi_form` (matching the
   `lean.ref`), keeping the §3b-cond conditional structure: the five
-  conjecture-cone classes (`QAubinLions`, `NSCounterexample`,
-  `CriticalExponent`, `BlowupYekutieli`, `RegularityBreakdown`) remain
-  explicit `[Instance]` hypotheses, and the geometric load-bearing
-  identities are derived from a `CoreLeviContext`.
+  geometric load-bearing identities are derived from a `CoreLeviContext`.
+  The five conjecture-cone classes were carried as explicit `[Instance]`
+  hypotheses until 2026-08-30; see the deletion note below the imports.
 
   ## 2026-08-23 — `core_levi_form` no longer returns a field
 
@@ -49,20 +48,29 @@ import Mathlib.Tactic.Ring
 
 namespace QOU.FluidDynamics
 
-class QAubinLions : Prop where
-  exists_compactness_constant :
-    ∀ (E : ℝ), 0 ≤ E → ∃ K : ℝ, 0 ≤ K ∧ K ≤ 2 * E
-class NSCounterexample : Prop where
-  exists_singularity_time :
-    ∀ (D₀ : ℝ), 0 ≤ D₀ → ∃ T : ℝ, 0 ≤ T
-class CriticalExponent : Prop where
-  alpha_three_eq_four : (3 * 4 : ℕ) = 12
-class BlowupYekutieli : Prop where
-  exists_blowup_rate :
-    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
-class RegularityBreakdown : Prop where
-  exists_breakdown_measure :
-    ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
+/-! ### The five q-NS carrier copies were DELETED 2026-08-30
+
+This file used to re-declare `QAubinLions`, `NSCounterexample`,
+`CriticalExponent`, `BlowupYekutieli` and `RegularityBreakdown` verbatim, in
+this namespace, with the vacuous fields they had upstream — `∃ K, 0 ≤ K ∧
+K ≤ 2E` (`K = 0`), `∀ D₀ ≥ 0, ∃ T, 0 ≤ T` (`D₀` bound and unused),
+`(3 * 4 : ℕ) = 12` (no exponent variable at all), and so on — and bound all
+five on `core_levi_form` and `core_levi_cond_bound`.
+
+Two defects at once. The copies were a **second, undocumented set** of the
+same carriers, so the upstream repair (`qou-rq9n` / `qou-93hu`, and the
+per-carrier encoding on `main`) did not reach them; and the binders were
+**decorative**, since both proofs use only `ctx : CoreLeviContext` and
+elaborate unchanged without them.
+
+That second point is what this file already says about a different
+hypothesis, two theorems down: *"Carrying an unused hypothesis makes the
+statement look stronger than it is, so the binders are dropped rather than
+kept as decoration."* The same reasoning applied to these five, and they
+were kept. Both are now dropped.
+
+The conditional dependency of `prop:core-levi-form` on the q-NS cone is a
+manuscript-level claim and lives in the `.md`, which states it. -/
 
 /-- Levi-form geometry of the vortex core on the normal plane `N_pϱ`:
     the Levi eigenvalues `λ∥, λ⊥ > 0`, the core radii `a∥, a⊥ > 0`, the
@@ -167,8 +175,6 @@ theorem core_levi_ratio_eq_aspect_sq [ctx : CoreLeviContext] :
     `cond` into `[1, 1 + C₀ℏ_q²]`. -/
 -- Ref: [manuscript] prop:core-levi-form
 theorem core_levi_form
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
-    [BlowupYekutieli] [RegularityBreakdown]
     [ctx : CoreLeviContext] :
     1 ≤ ctx.cond ∧
       |ctx.cond - max ctx.lamPar ctx.lamPerp / min ctx.lamPar ctx.lamPerp|
@@ -216,8 +222,6 @@ theorem core_levi_cond_aspect_bound [ctx : CoreLeviContext] :
     an open gap in this encoding, not a discharged hypothesis. -/
 -- Ref: [manuscript] prop:core-levi-form
 theorem core_levi_cond_bound
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
-    [BlowupYekutieli] [RegularityBreakdown]
     [ctx : CoreLeviContext] :
     ctx.cond ≤ 1 + ctx.C0 * ctx.hbar ^ 2 :=
   ctx.cond_bound
