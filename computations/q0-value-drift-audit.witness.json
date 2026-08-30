@@ -2010,7 +2010,7 @@
       {
         "file": "computations/atomic-tr-m-helium4.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561076887987449912187357763605672",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -15998,9 +15998,9 @@
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "0daec83720af07d8956084471267095655615111",
+  "commitSha": "a945911dd5e4df37cc43e27590036816fc0fd041",
   "engine": "python",
-  "computedAt": "2026-08-30T07:58:44.636982+00:00",
+  "computedAt": "2026-08-30T08:25:26.281565+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
