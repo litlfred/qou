@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T08:02:14Z
+updated_at: 2026-08-30T07:58:22Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -217,48 +217,42 @@ The correct handling was NOT to apply the suggested fix. Rewriting two working
 proofs to satisfy a speculative comment is the same failure as widening a
 baseline to make a gate green.
 
-**Independent corroboration (second session, same day):** PR #6124 (check run enqueued, in_progress) and PR #6129 (full review submitted ~4 min after request: 4 substantive inline comments, all verified-real, addressed same session). Matches the reopened record above; and the quota mechanism explains that session's later thread-resolution 'rate limit' errors.
+---
 
-## Addendum (session tender-keller, PR #6119): one review arrived UNREQUESTED
+## Independent observation from PR #6120, and how it fits the rationing finding
 
-Not a separate finding — the sections above are the measurement, and this is one
-more row for their table. Recording it only because it differs in the variable
-their two rows hold fixed:
+Recorded from a different session, arrived at before the quota message above was
+visible on main. Kept because it is a data point the rationing account does not
+otherwise have.
 
-  qou#6119   push 07:25:09Z   review 07:27:31Z   ~2.5 min   NOT REQUESTED
+**Copilot reviewed PR #6120 WITHOUT BEING REQUESTED.** `get_check_runs` returned
+a live `copilot-pull-request-reviewer` run, `status: in_progress`, started
+07:25:25Z — the exact object this bean records as never being created — which
+submitted a review at 07:29:29Z against `66dac18c4`: `COMMENTED`, 3 inline
+comments plus 1 suppressed, effort "Lite". No `request_copilot_review` call
+preceded it; it fired on PR creation.
 
-I never called `request_copilot_review` on that push. Both rows in the table
-above are explicit requests, so this says the trigger is not solely a request —
-a push alone can draw one.
+The comments were substantive. The headline one caught a real over-claim:
+a probe said `IwahoriHeckeAlgebra` without qualifying WHICH of the two
+declarations of that name it analysed, and chasing that turned up prior art
+(`triv_hecke`) the author had missed. See PR #6120 and bean `qou-qcy6`.
 
-**Bearing on the open mechanism question.** The QUOTA section asks whether the
-historical zeros were "over quota all along" or "off, then back", and notes the
-two imply different operating rules. An unrequested review consumes quota that
-nobody spent deliberately, which fits "over quota all along" more comfortably
-than the request-only reading does — but it does not settle it, and I am not
-claiming it does. One observation, offered as a constraint on the candidates.
+### The synthesis neither observation has alone
 
-The finding itself was correct and substantive (two `rfl` proofs of
-`tr_M(1) = 1` that should have used the `MarkovTrace.normalised` axiom, since
-the enclosing theorems quantify over an arbitrary decomposition). Fixed,
-thread resolved.
+**Auto-triggered reviews consume the same quota.** The rationing note above
+attributes exhaustion to five explicit requests; #6120 was never requested and
+still got a review, so the budget is spent by PR creation too, not only by
+`request_copilot_review`. That matters for the actionable rule: "request once
+per PR, when ready" is necessary but not sufficient — merely OPENING PRs draws
+down the same allowance, so a session that opens several in quick succession can
+exhaust it without ever calling the request tool.
 
-**My own AGENTS.md correction is SUPERSEDED and was dropped**, not merged: it
-was n=1, request-agnostic, and had none of the quota mechanism or the
-self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
-stay that way.
+**It also implicates my own #6093 prepare-merge.** That run requested a Copilot
+review per the skill's Phase 1b, on a PR that had already had several pushes.
+Under the rationing account that request was part of what drained the budget —
+and `prepare-merge-auto` currently prescribes requesting on every run.
 
-**One more datum (PR #6039, 2026-08-30).** Request 07:38Z → review submitted
-07:52Z, **~14 min**; 41/41 files, 3 inline comments, **3 of 3 real**. Added only
-because it widens the recorded latency spread — it sits between the ~2–5 min
-cluster and the ~30 min case — and adds 3/3 to the findings-quality tally
-(running with the footnote above: 8 of 9 real). Everything else this session
-observed is already covered by the quota mechanism and the self-sealing
-diagnosis above; my longer write-up of it was **dropped as redundant** rather
-than merged, for the same reason the note directly above this one was.
-
-All three findings were of a class the agent-side gate cannot reach:
-`run-validate` and `lean`-direct both pass a stale prose note, a `.qa.json`
-`kind` field no schema cross-checks against the builder, and a generated-index
-row. That is the argument for keeping the *request* even though the wait is
-worthless.
+**What is still NOT established**, and the note above is right to flag it: the
+historical `total_count: 0` with no message is a different signature from
+today's announced quota refusal. Silent-exhaustion and off-then-back remain
+distinguishable only by evidence nobody has yet.
