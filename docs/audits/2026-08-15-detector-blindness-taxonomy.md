@@ -40,6 +40,8 @@ question.
 | 20 | **the EXEMPTION's LANGUAGE** — both arms assumed to be in the same file, hence the same language | a C-vs-D comparison whose D arm is a **Lean declaration**, so no Python-side pairing test can ever see it | `probe_h3_central_idempotents_exact.py` computes the C arm; its D counterpart is Lean `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D ≠ C sorry-free (qou-t9r1) |
 | 21 | **the GUARD's TYPE** — the anti-invisibility helper is mpmath-only (SCOPE: 1 measured site, NOT a wide class — see note below) | a SYMBOLIC (sympy) consumer cannot call `markov_parameter_convention_C` (`TypeError: cannot create mpf from q`), so it MUST inline `sqrt(q)/(1+q)` — invisible to the very mechanism built to make deliberate C visible | `probes/qbeta_fmap_power_class_prune.py`; helper made polymorphic 2026-08-30 (qou-t9r1) |
 | 22 | the **argument-passing form** — positional `args` only | every keyword call, i.e. 87 % of the corpus's call sites | `self_fulfilling_assertion_audit` reported `MEASURED: 0` against a true 56 (qou-3e5m) |
+| 23 | the **presence** of a field — every statement-strength matcher keys on a field that is present and *wrong* | a defect that is an **absent** clause: `RothGammaFull` lacked `two_le` and `degPos`, which made `RothLemmaTheta` false at `m = 1` | pre-fix `RothGammaFull` reconstructed; `limit-claim-encoding-audit.py` and `unbounded-quantifier-audit.py` both reported **0** (qou-4lbh) |
+| 24 | the **declaration form** — every field-keyed scan begins at `class\|structure … where` | a carrier that is a `def … : Prop`, which is how this corpus states Mahler's Lemma 4 and Roth's Lemma | pre-fix `RothLemma4` reconstructed; `unbounded-quantifier-audit.py` reported `0 candidate(s) over 18 file(s)` (qou-4lbh) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -745,13 +747,20 @@ expression rather than a string.
 Only **one** site was ever affected by row 21
 (`probes/qbeta_fmap_power_class_prune.py`), and it is fixed.
 
-> **Renumbered on merge (2026-08-30).**  These two rows were written as 18 and 19 on the Roth arc
-> while `main` was independently using 18 and 19 for the convention-C exemption family above, and
-> had reached 21.  They are now 22 and 23.  Nothing about their content changed; the collision is
-> recorded rather than silently resolved, because a reader meeting a cross-reference to "row 18"
-> in either arc's commit history needs to know which 18 was meant.
+> **Renumbered twice on merge (2026-08-30).**  These two rows were written as 18 and 19 on the
+> Roth arc while `main` was independently using 18 and 19 for the convention-C exemption family
+> above; they became 22 and 23.  Later the same day `main` claimed 22 for the argument-passing
+> row (`qou-3e5m`), which by then had a prose section and outside references in
+> `computations/audits/vacuous_green_witness_audit.py` and `.beans/qou-srvu`, so the Roth rows
+> moved again and are now **23 and 24**.  Nothing about their content changed either time.
+>
+> The collisions are recorded rather than silently resolved, because a reader meeting a
+> cross-reference to "row 18" or "row 22" in either arc's commit history needs to know which was
+> meant.  That this happened twice in one day is itself the lesson: **a shared append-only numbered
+> list has no allocator**, so concurrent branches collide by construction, and the collision is
+> invisible to `git merge` — both times it merged clean and both times the numbering was wrong.
 
-### 22 — the defect is an ABSENT field, not a wrong one
+### 23 — the defect is an ABSENT field, not a wrong one
 
 Added 2026-08-29 (bean `qou-4lbh`), from the Roth's-Lemma arc.
 
@@ -768,7 +777,7 @@ hypothesis*, hence a *stronger theorem*: the same direction as rows 1–17, reac
 No field-shaped matcher can see an absence. Confirmed rather than argued: the pre-fix
 `RothGammaFull` was reconstructed and both detectors reported **0**.
 
-### 23 — the carrier is a `def : Prop`, not a `class` or `structure`
+### 24 — the carrier is a `def : Prop`, not a `class` or `structure`
 
 Same bean, same probe.
 
