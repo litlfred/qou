@@ -51,7 +51,7 @@ straddle. A declared-proton witness is asserting proton over a mixed number.
 - [x] Audit the other 12 readers for the same mixed-product shape.
 - [x] Separately: the muon table is at a RETIRED vintage. Regenerated at pin C on
       owner instruction 2026-08-30.
-- [ ] Regenerate affected witnesses (qou-jjge).
+- [x] Regenerate affected witnesses (qou-jjge).
 
 
 ## Progress 2026-08-30
@@ -137,7 +137,30 @@ moved: only **2** committed artifacts still carry one —
 
 ### Still open on this bean
 
-- [ ] Regenerate those 2 downstream artifacts (qou-jjge).
+- [x] Regenerate those 2 downstream artifacts (qou-jjge).
 - [ ] `y-lambda-symbolic-validation.json` is stale corpus-wide now and needs a
       FULL pass; it was left at HEAD rather than committed half-fresh. n=11's
       Test 3 does not complete in 50 min, which is what blocks it.
+
+
+### Downstream regenerated — and one of the two was misdiagnosed
+
+`y-lambda-macdonald-telescope.witness.json` — a genuine consumer of the muon
+table. Regenerated: all 42 stale pin-A values gone, all 42 fresh pin-C values
+present, 16 assertions still pass. Its `truncation_eps` was a bare `0.0`
+float64; drained to `"0"`, which is also more honest — the computation is
+symbolic in q, so the truncation error is exactly zero, not zero-to-53-bits.
+
+`qbeta-c8-c10-pell-lucas-closed-form-predictions.witness.json` — **not a muon
+table consumer at all.** My value-matching search flagged it because its
+`b_squared_at_q0` coincided with the pin-A y_λ for n=2, λ=(2,) — the same
+Hoefsmit quantity, so the collision is substantive rather than accidental. Its
+producer takes b² from `q-beta-operator-valued-N3.witness.json`, which is
+`q0Anchor: proton`. The witness was simply STALE against its own upstream:
+
+    recorded   0.752702113845204172470…
+    upstream   0.752702113251965401593779
+
+differing at the 10th digit. Regenerated; it now matches the upstream exactly.
+Pre-existing staleness, unrelated to the pin-C move — surfaced by it, not caused
+by it.

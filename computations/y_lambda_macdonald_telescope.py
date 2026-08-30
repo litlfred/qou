@@ -376,7 +376,12 @@ def main():
     builder.add_data("closed_forms_by_n", closed)
     builder.add_data("mpfr_cross_check", mpfr_check)
     builder.add_data("precision", "symbolic_q")
-    builder.add_data("truncation_eps", 0.0)
+    # NO FLOAT64 (owner directive): a bare 0.0 is a float64 entering the
+    # witness, which the raw-float64 ratchet flags on every run. This
+    # computation is symbolic in q ("precision": "symbolic_q" above), so the
+    # truncation error is EXACTLY zero, not zero-to-53-bits -- the string
+    # says so without asserting a float precision the value does not have.
+    builder.add_data("truncation_eps", "0")
 
     out_path = builder.save()
     print(f"\nWitness: {out_path}")
