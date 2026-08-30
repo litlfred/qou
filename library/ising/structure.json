@@ -1,0 +1,395 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ising",
+ "source": {
+  "file": "ising.pdf",
+  "sha256": "9f84d7209731d299042c7ec2e84a2d7de7729f9e5537bd05596e8540c6254661",
+  "bytes": 491416,
+  "pages": 24,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+  "authors_raw": "JEHANNE DOUSSE AND VALENTIN F\u00c9RAY",
+  "title_lines": [
+   "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL"
+  ],
+  "abstract": "Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.",
+  "docinfo": {
+   "Producer": "MiKTeX pdfTeX-1.40.19",
+   "Creator": "TeX",
+   "CreationDate": "D:20190319092147+01'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and statement of results",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Weighted dependency graphs. The theory of weighted dependency graphs, recently intro-",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Cluster expansions and bounds on joint cumulants",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Weighted dependency graphs and central limit theorems",
+   "page": 16,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Weighted dependency graph for the \u03c3i\u2019s and central limit theorem for the magneti-",
+   "page": 16,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "(\u2016i\u2212j\u20161\u2212max\u03b1,\u03b2\u2208D\u2016\u03b1\u2212\u03b2\u20161)\u2264 max",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 23,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-jehanne-dousse-and-valentin-f-eray",
+   "number": "2",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 378,
+   "n_words": 61
+  },
+  {
+   "id": "sec-001-1-introduction-and-statement-of-results",
+   "number": "1",
+   "title": "Introduction and statement of results",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6717,
+   "n_words": 1172
+  },
+  {
+   "id": "sec-002-12-weighted-dependency-graphs-the-theory-of-weig",
+   "number": "1.2",
+   "title": "Weighted dependency graphs. The theory of weighted dependency graphs, recently intro-",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3656,
+   "n_words": 672
+  },
+  {
+   "id": "sec-003-4-jehanne-dousse-and-valentin-f-eray",
+   "number": "4",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 7457,
+   "n_words": 1348
+  },
+  {
+   "id": "sec-004-6-jehanne-dousse-and-valentin-f-eray",
+   "number": "6",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 919,
+   "n_words": 163
+  },
+  {
+   "id": "sec-005-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4518,
+   "n_words": 857
+  },
+  {
+   "id": "sec-006-8-jehanne-dousse-and-valentin-f-eray",
+   "number": "8",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 94,
+   "n_words": 19
+  },
+  {
+   "id": "sec-007-3-cluster-expansions-and-bounds-on-joint-cumulan",
+   "number": "3",
+   "title": "Cluster expansions and bounds on joint cumulants",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 5258,
+   "n_words": 974
+  },
+  {
+   "id": "sec-008-10-jehanne-dousse-and-valentin-f-eray",
+   "number": "10",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4965,
+   "n_words": 898
+  },
+  {
+   "id": "sec-009-12-jehanne-dousse-and-valentin-f-eray",
+   "number": "12",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4555,
+   "n_words": 833
+  },
+  {
+   "id": "sec-010-14-jehanne-dousse-and-valentin-f-eray",
+   "number": "14",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4082,
+   "n_words": 799
+  },
+  {
+   "id": "sec-011-16-jehanne-dousse-and-valentin-f-eray",
+   "number": "16",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2392,
+   "n_words": 457
+  },
+  {
+   "id": "sec-012-4-weighted-dependency-graphs-and-central-limit-t",
+   "number": "4",
+   "title": "Weighted dependency graphs and central limit theorems",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 487,
+   "n_words": 84
+  },
+  {
+   "id": "sec-013-41-weighted-dependency-graph-for-the-\u03c3is-and-cen",
+   "number": "4.1",
+   "title": "Weighted dependency graph for the \u03c3i\u2019s and central limit theorem for the magneti-",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2286,
+   "n_words": 414
+  },
+  {
+   "id": "sec-014-18-jehanne-dousse-and-valentin-f-eray",
+   "number": "18",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5269,
+   "n_words": 1009
+  },
+  {
+   "id": "sec-015-20-jehanne-dousse-and-valentin-f-eray",
+   "number": "20",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2571,
+   "n_words": 523
+  },
+  {
+   "id": "sec-016-2-ij1max\u03b1\u03b2d\u03b1\u03b21-max",
+   "number": "2",
+   "title": "(\u2016i\u2212j\u20161\u2212max\u03b1,\u03b2\u2208D\u2016\u03b1\u2212\u03b2\u20161)\u2264 max",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2255,
+   "n_words": 409
+  },
+  {
+   "id": "sec-017-22-jehanne-dousse-and-valentin-f-eray",
+   "number": "22",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2698,
+   "n_words": 487
+  },
+  {
+   "id": "sec-018-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 592,
+   "n_words": 97
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3960,
+   "n_words": 623
+  },
+  {
+   "id": "sec-020-24-jehanne-dousse-and-valentin-f-eray",
+   "number": "24",
+   "title": "JEHANNE DOUSSE AND VALENTIN F \u00b4ERAY",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1156,
+   "n_words": 170
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 21,
+  "chars_total": 66265
+ }
+}

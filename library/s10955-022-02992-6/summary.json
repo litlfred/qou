@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s10955-022-02992-6",
+ "source_sha256": "aa73d797a89eaf06",
+ "brief": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 · Leonid Kolesnikov 1 © The Author(s) 2022 — We prove a new convergence condition for the activity expansion of",
+ "extended": "**Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 · Leonid Kolesnikov 1 © The Author(s) 2022**\n\n47 pp, 15 sections.\n\n**Abstract.** We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics with possibly negative pair potentials. For non-negative pair potentials, the criterion is an if and only if condition. The condition is formulated with a sign-ﬂipped Kirkwood–Salsburg operator and known conditions such as Kotecký–Preiss and Fernández–Procacci are easily recovered. In addition, we deduce new sufﬁcient convergence conditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The latter improves on the Fernández–Procacci criterion.\n\n**Outline.** Abstract; 1 Introduction; 2 Main Results; 2.1 (Locally) Stable Pair Potentials; 2.2 Abstract Polymer Models; 2.3 Hard-Core Systems in the Continuum; 2.4 Subset Polymers; 3 Combinatorial Lemmas: Proof of Theorems 2.1,; 3.1 Forest Partition Schemes: Alternating Sign; 3.2 Kirkwood–Salsburg Equations: Proof of Theo; 3.3 Integral Equations for Hard-Core Models: P; 3.4 Recurrence Relations for Subset Polymers: ; 4 Application to Concrete Hard-Core Models; A Proof of Lemma 2.5; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: Let z(·) be a non-negative activity and s (·) any selection rule. Consider the\n- Theorem 2.6: Let z(·) be a non-negative activity function. The following two conditions are\n- Theorem 2.7: Let (z(X))X∈X be a non-negative activity. The following two conditions are\n- Theorem 2.9: If z(·) is a non-negative activity and T (D; z) is absolutely convergent for all\n- Theorem 3.13: Let (z(X))X∈X be a non-negative activity. The following two conditions are\n- Theorem 4.1: Let z(·) be the activity function from ( 4.1). Suppose there exists α> 0 such",
+ "tokens": {
+  "brief": 49,
+  "extended": 469
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-2-main-results",
+   "title": "Main Results",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-locally-stable-pair-potentials",
+   "title": "(Locally) Stable Pair Potentials",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-004-22-abstract-polymer-models",
+   "title": "Abstract Polymer Models",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-23-hard-core-systems-in-the-continuum",
+   "title": "Hard-Core Systems in the Continuum",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-24-subset-polymers",
+   "title": "Subset Polymers",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-007-3-combinatorial-lemmas-proof-of-theorems-21-26-a",
+   "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-31-forest-partition-schemes-alternating-sign-pro",
+   "title": "Forest Partition Schemes: Alternating Sign Property",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-009-32-kirkwoodsalsburg-equations-proof-of-theorem-2",
+   "title": "Kirkwood–Salsburg Equations: Proof of Theorem 2.1",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-010-33-integral-equations-for-hard-core-models-proof",
+   "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-011-34-recurrence-relations-for-subset-polymers-proo",
+   "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-012-4-application-to-concrete-hard-core-models",
+   "title": "Application to Concrete Hard-Core Models",
+   "pages": "25-41"
+  },
+  {
+   "id": "sec-013-a-proof-of-lemma-25",
+   "title": "A Proof of Lemma 2.5",
+   "pages": "41-46"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "46-47"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

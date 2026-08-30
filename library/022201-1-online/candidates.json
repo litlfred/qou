@@ -1,0 +1,171 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "022201-1-online",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "50331bf18a2bd4d5e3b3dcbbde4da73c4884a60d94e266b3a9fc2ab62ccd716e",
+  "file": "022201_1_online.pdf"
+ },
+ "provenance": {
+  "title": "Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann\ue923 ; Tyler Helmuth",
+  "authors": "J. Math. Phys. 62, 022201 (2021)",
+  "arxiv": null,
+  "doi": "10.1063/5.0013689"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "theorem": 1,
+   "lemma": 9,
+   "corollary": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Fix \u0394\u2208 Z+. There is a fully polynomial-time approximation scheme for the partition function Z G(\u03b2) for all graphs G of",
+   "section_file": "sections/sec-001-i-introduction.md",
+   "section_title": "INTRODUCTION",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "The partition function Z G(\u03b2) admits the following abstract polymer model representation:",
+   "section_file": "sections/sec-003-iii-the-quantum-cluster-expansion.md",
+   "section_title": "THE QUANTUM CLUSTER EXPANSION",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "3",
+   "name": null,
+   "statement": "The partition function Z G(\u03b2) admits the following cluster expansion:",
+   "section_file": "sections/sec-003-iii-the-quantum-cluster-expansion.md",
+   "section_title": "THE QUANTUM CLUSTER EXPANSION",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "Fix \u0394\u2208 Z+. Let G = (V, E) be a graph of maximum degree at most \u0394, and let \u03b2 be a complex number such that \u2223\u03b2\u2223\u2264 1",
+   "section_file": "sections/sec-004-iv-approximation-algorithm.md",
+   "section_title": "APPROXIMATION ALGORITHM",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "Fix \u0394\u2208 Z+, and let G = (V, E) be a graph of maximum degree at most \u0394. The clusters of size at most m can be listed in time",
+   "section_file": "sections/sec-004-iv-approximation-algorithm.md",
+   "section_title": "APPROXIMATION ALGORITHM",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "The Ursell function \u03c6(H) can be computed in time exp(O(\u2223V(H)\u2223)).",
+   "section_file": "sections/sec-004-iv-approximation-algorithm.md",
+   "section_title": "APPROXIMATION ALGORITHM",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "The weight w\u03b3 of a polymer \u03b3 can be computed in time exp(O(\u2225\u03b3\u2225)).",
+   "section_file": "sections/sec-004-iv-approximation-algorithm.md",
+   "section_title": "APPROXIMATION ALGORITHM",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "8",
+   "name": null,
+   "statement": "Fix \u0394\u2208 Z+, and let G = (V, E) be a graph of maximum degree at most \u0394. The truncated cluster expansion T m(ZG(\u03b2)) can be",
+   "section_file": "sections/sec-004-iv-approximation-algorithm.md",
+   "section_title": "APPROXIMATION ALGORITHM",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": "restatement",
+   "statement": "The partition function Z G(\u03b2) admits the following abstract polymer model representation:",
+   "section_file": "sections/sec-006-acknowledgments.md",
+   "section_title": "Acknowledgments",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "(restatement). Fix \u0394\u2208 Z+. Let G = (V, E) be a graph of maximum degree at most \u0394, and let\u03b2 be a complex number such that",
+   "section_file": "sections/sec-006-acknowledgments.md",
+   "section_title": "Acknowledgments",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": "restatement",
+   "statement": "The weight w\u03b3 of a polymer \u03b3 can be computed in time exp(O(\u2225\u03b3\u2225)).",
+   "section_file": "sections/sec-006-acknowledgments.md",
+   "section_title": "Acknowledgments",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

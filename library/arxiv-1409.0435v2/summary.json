@@ -1,0 +1,91 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1409.0435v2",
+ "source_sha256": "0c6abbb9c5a720d9",
+ "brief": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where",
+ "extended": "**Asymptotics for Toeplitz determinants: perturbation of symbols with a gap**\n\n*Christophe Charlier∗and Tom Claeys∗*\n\n28 pp, 14 sections.\n\n**Abstract.** We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an asymptotic expansion by Widom [22], which was known for symbols supported on an arc. We highlight applications of our results in the Circular Unitary Ensemble and in the study of Fredholm determinants associated to the sine kernel.\n\n**Outline.** Abstract; Introduction; 2 I′; 2 K′; 0 (2(−ζ); 2 W(z)σ3,; 2 W(z)σ3 1; 1 We get; 12 (0) = sin θ0; 2 (if W = 0),; 12 (0) + R12(0)P (∞); 2 O(n1/2),; Acknowledgements; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 206
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-18"
+  },
+  {
+   "id": "sec-002-2-i",
+   "title": "I′",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-003-2-k",
+   "title": "K′",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-004-0-2ζ",
+   "title": "(2(−ζ)",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-005-2-wzσ3",
+   "title": "W(z)σ3,",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-006-2-wzσ3-1",
+   "title": "W(z)σ3 1",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-007-1-we-get",
+   "title": "We get",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-008-12-0-sin-θ0",
+   "title": "(0) = sin θ0",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-009-2-if-w-0",
+   "title": "(if W = 0),",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-010-12-0-r120p",
+   "title": "(0) + R12(0)P (∞)",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-011-2-on12",
+   "title": "O(n1/2),",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-012-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-013-references",
+   "title": "References",
+   "pages": "27-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

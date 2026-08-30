@@ -1,0 +1,166 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1508.07379v2",
+ "source": {
+  "file": "1508.07379v2.pdf",
+  "sha256": "c3dbf93d1cac198e6d9fafe655dd69a38ba09aa944daf273017aca0b74e5ce2f",
+  "bytes": 214166,
+  "pages": 15,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1508.07379",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "9 Dec 2016"
+  },
+  "doi": null,
+  "title": "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity",
+  "authors_raw": "Aldo Procacci \u2217, Sergio A. Yuhjtman \u2020",
+  "title_lines": [
+   "Convergence of Mayer and Virial expansions and the Penrose t ree-graph",
+   "identity"
+  ],
+  "abstract": "We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous particle system interacting via a stable a nd tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial s eries. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a ne w partition scheme based on minimum spanning trees.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181118004512-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Model and Results",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Model",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Results",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Proposition ??",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "General Penrose identity",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Partition scheme via minimum spanning tree",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion of the proof of Proposition ??",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Comparison with recent results and concluding remarks",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6224,
+   "n_words": 1079
+  },
+  {
+   "id": "sec-001-2-model-and-results",
+   "number": "2",
+   "title": "Model and Results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 9346,
+   "n_words": 1896
+  },
+  {
+   "id": "sec-002-31-general-penrose-identity",
+   "number": "3.1",
+   "title": "General Penrose identity",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2552,
+   "n_words": 659
+  },
+  {
+   "id": "sec-003-32-partition-scheme-via-minimum-spanning-tree",
+   "number": "3.2",
+   "title": "Partition scheme via minimum spanning tree",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 10786,
+   "n_words": 2505
+  },
+  {
+   "id": "sec-004-5-comparison-with-recent-results-and-concluding",
+   "number": "5",
+   "title": "Comparison with recent results and concluding remarks",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5584,
+   "n_words": 949
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 5,
+  "chars_total": 34492
+ }
+}
