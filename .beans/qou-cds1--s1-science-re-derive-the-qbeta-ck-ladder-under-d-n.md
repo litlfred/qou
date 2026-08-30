@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T14:30:44Z
+updated_at: 2026-08-30T14:35:46Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3402,3 +3402,67 @@ bar-invariant `u*Vhat`. Nothing in (5)–(7) touches either — they close the
 ADDITIVE/phase family specifically. Whether `u*Vhat` or `log(u*Vhat)` admits an
 expansion whose coefficients reproduce the rung structure is still open, and is
 now the only live route this arc has identified.
+
+
+
+## The PRODUCT FORM is weight-inhomogeneous under D — and the fix is forced (PR #6244)
+
+Applies the arc's surviving lead (the multiplicative form + the bar-invariant
+`u*Vhat`) to the ladder's product form. Probe:
+`computations/qbeta/qbeta_d_product_form_grading_probe.py`, 12/12, sympy exact.
+
+    bar(u^k)/u^k          = q^{2k}     weight 2k, verified k = 1,2,3
+    bar((u*Vhat)^k)/(..)  = 1          weight 0,  verified k = 1,2,3
+
+    1 + c*u^k          is NEVER a bar-eigenvector — bar(f)/f depends on q for
+                       EVERY c, so no coefficient repairs it
+    1 + c*(u*Vhat)^k   is EXACTLY bar-invariant for EVERY c
+
+Under D each ladder factor `(1 + c_k u^k)` mixes bar-weight 0 (the `1`) with
+bar-weight 2k (the `u^k`). That is the SAME weight-mismatch pathology Step 2
+found in the offset, now one level up — **in the product form itself**. It is
+the grading that fails, not the coefficients.
+
+The weight-homogeneous form is FORCED by the grading:
+
+        Pi ( 1 + c_k (u * Vhat)^k )
+
+because `u*Vhat` is the bar-invariant. Reached BY GRADING, not by search —
+which is what makes it a candidate rather than a fit.
+
+### The C control, without which this would be an overclaim
+
+`u` is convention-INDEPENDENT (`u = b*hbar_q^2`; neither factor involves `z`),
+so `1 + c*u^k` is weight-inhomogeneous under C as well. That is **not** a defect
+there: C's bar action is AFFINE and weights are not its grading. Confirmed —
+`u*Vhat_C` is NOT bar-invariant, so the D repair does not even typecheck under
+C. Two-case, like every other result in this arc.
+
+### Not claimed
+
+That `Pi(1 + c_k (u*Vhat)^k)` **is** the D ladder. Only that it is the
+weight-homogeneous form. No `c_k` proposed, extracted or wired; no series
+evaluated; nothing compared to experiment. A form reached by fitting
+coefficients to Q_beta would be exactly what this bean's Discipline section
+forbids, and none is attempted. Scope (a).
+
+### Where the arc stands — eight entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the series cannot reach it.
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — the ladder's own `b`.
+  7. D's bar-ODD slot is structure-free — no cos-type phase can work.
+  8. The PRODUCT FORM is weight-inhomogeneous; `Pi(1 + c_k (u*Vhat)^k)` is forced.
+
+(5)-(7) closed the phase family. (8) says the *other* half of the C instrument —
+the product in `u` — is also wrong under D, for the same grading reason. So both
+halves of `Q_A cos(alpha_eff) * Pi(1 + c_k u^k)` fail under D, and in each case
+the replacement is dictated by the multiplicative grading rather than chosen.
+
+**The next question is now concrete and non-fitting:** does
+`Pi(1 + c_k (u*Vhat)^k)` reproduce the known structural rung `c_2 = -1`? That is
+a derivation check against an already-proved value, not a fit to experiment — if
+it fails, the forced form is wrong and this route closes too.
