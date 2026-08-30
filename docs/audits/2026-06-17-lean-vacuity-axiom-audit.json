@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-26T14:00:41.478Z",
+  "generated": "2026-08-30T03:14:58.510Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3193,
-  "files_flagged": 154,
-  "total_defects": 134,
+  "scanned_files": 3269,
+  "files_flagged": 153,
+  "total_defects": 133,
   "total_exempt": 59,
   "total_promoted_from_exempt": 66,
   "categories": {
-    "proof-no-self-assuming-projection": 113,
+    "proof-no-self-assuming-projection": 112,
     "proof-docstring-sorry-mismatch": 12,
     "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1,
@@ -40,7 +40,7 @@
       {
         "name": "AlphaEmGluonOctetConjecture",
         "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-        "line": 102
+        "line": 129
       },
       {
         "name": "AlphaKCategoricalClosure",
@@ -210,7 +210,7 @@
       {
         "name": "ChernSimonsCorrectionConjecture",
         "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-        "line": 122
+        "line": 169
       },
       {
         "name": "Cl_2_DoubleAngle",
@@ -625,7 +625,7 @@
       {
         "name": "MarkovDisjointStabilisation",
         "file": "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.lean",
-        "line": 102
+        "line": 105
       },
       {
         "name": "MarkovTraceCyclic",
@@ -780,27 +780,27 @@
       {
         "name": "QbetaC3StructuralFormClass",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
-        "line": 429
+        "line": 441
       },
       {
         "name": "QbetaC4StructuralFormClass",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
-        "line": 513
+        "line": 525
       },
       {
         "name": "QbetaC5StructuralFormClass",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
-        "line": 553
+        "line": 565
       },
       {
         "name": "QbetaC6StructuralFormClass",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
-        "line": 593
+        "line": 605
       },
       {
         "name": "QbetaC7StructuralFormClass",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
-        "line": 636
+        "line": 648
       },
       {
         "name": "QBetaCKClosedForms",
@@ -1080,7 +1080,7 @@
       {
         "name": "V21Eigenphase",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
-        "line": 213
+        "line": 229
       },
       {
         "name": "VacuumEpsilon",
@@ -1155,7 +1155,7 @@
       {
         "name": "ZHabiroConvergenceClass",
         "file": "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean",
-        "line": 161
+        "line": 195
       },
       {
         "name": "ZRecursionCoeffs",
@@ -1478,7 +1478,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 171,
+        "line": 205,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :",
@@ -2281,16 +2281,6 @@
         "exempt_reason": "legitimate iff-from-directions conditional-class"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean": [
-      {
-        "line": 108,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :",
-        "decl": "q_ns_wellposedness",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean": [
       {
         "line": 69,
@@ -2669,7 +2659,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean": [
       {
-        "line": 75,
+        "line": 76,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem binding_eq_bond_energy (h : BondExtensiveBinding A) :",
@@ -3397,7 +3387,7 @@
     ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean": [
       {
-        "line": 97,
+        "line": 124,
         "category": "proof-claims-unencoded",
         "pattern": "tautological-field",
         "snippet": "class TransferMatrixEigenphase (q : ℝ) : Prop where",

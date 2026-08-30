@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Fusion-channel SDP comparison probe — D + T vs 4He + n (bean qou-dpy1).
+Fusion-process SDP comparison probe — D + T vs 4He + n (bean qou-dpy1).
 
 Reads the four committed per-isotope real-SDP witnesses
 (nucleus-real-sdp-{deuteron,tritium,he4,neutron}.witness.json) and compares
-the two SIDES of the D + T -> 4He + n fusion channel at the level the SDP
+the two SIDES of the D + T -> 4He + n fusion process at the level the SDP
 actually prices: dual variables (y0_star), active Wedderburn channels, and
 bar-fold structure. No new SDP is solved; this is a cross-witness read.
 
@@ -74,7 +74,7 @@ def main() -> int:
     subjects = {a: load(a) for side in SIDES.values() for a in side}
     ok = True
 
-    print("FUSION-CHANNEL SDP COMPARISON — D + T -> 4He + n  (cross-witness read)")
+    print("FUSION-PROCESS SDP COMPARISON — D + T -> 4He + n  (cross-witness read)")
     print("| subject | H_n | blocks | tr_M | n_target | y0* | active/reps | self-conj active? | gap |")
     print("|---|--:|--:|--:|--:|--:|:--|:--|--:|")
     for a, s in subjects.items():

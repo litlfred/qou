@@ -1,0 +1,94 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-30T06:36:15.262833+00:00",
+  "commitSha": "31f7400b35f742f45a681175bbfb584fd8e51c01",
+  "assertions": [
+    {
+      "name": "b_is_the_hoefsmit_constant_sqrt3_over_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "zD_is_q2_over_bracket2_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "zC_is_one_over_bracket2_sqrtq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "my_lead_is_a_restatement_not_a_finding",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "reproduces_the_committed_D_frame_weights",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "surviving_weight_is_one_over_bracket2_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "convention_dependence_is_exactly_one_phase",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 406,
+  "computation": "qbeta-ladder-convention-dependence-is-one-phase",
+  "scriptFile": "qbeta_ladder_convention_dependence_is_one_phase_probe.py",
+  "scriptHash": "1e18bdc3ddbc",
+  "scriptCommitSha": "5622c946e47d95f54d2431df0ce526af671e4a39",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_convention_dependence_is_one_phase_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_convention_dependence_is_one_phase_probe.py"
+  },
+  "description": "NEGATIVE plus a sharpening for qou-cds1. b^2 = [3]_q z_D^2/q^4 is a RESTATEMENT of z_D = q^2/[2]_q and says nothing about b; b is a convention-independent Hoefsmit constant sqrt([3]_q)/[2]_q. Every ingredient of the published ladder is z-free except the phase alpha = (z-1)h/2. Reproduces the committed D-frame H_3 weights as an independent check. Scope (a); nothing wired.",
+  "data": {
+    "b_quantum_integer_form": "sqrt([3]_q)/[2]_q",
+    "zD_quantum_integer_form": "q^2/[2]_q",
+    "zC_quantum_integer_form": "1/[2]_sqrt(q)",
+    "y_2_1_at_zD": "q**2/(q**2 + 1)**2",
+    "y_3_at_zD": "(q**4 + 1)/(q**2 + 1)**2",
+    "y_1_1_1_at_zD": "0"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
