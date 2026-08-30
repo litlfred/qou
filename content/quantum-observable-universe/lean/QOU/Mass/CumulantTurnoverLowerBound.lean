@@ -91,17 +91,14 @@ theorem w1_lt_w2_lt_w3 {w : ℕ → R} (h3 : 0 < b3 w) (h4 : 0 < b4 w) :
     w 1 < w 2 ∧ w 2 < w 3 :=
   ⟨lt_of_b3_pos h3, w2_lt_w3_of_b3_b4_pos h3 h4⟩
 
-/-- **The turnover is at `A ≥ 4`.** Every coordination below `3` carries a strictly
+/-- **The turnover is at `A ≥ 4`.** Both coordinations below `3` carry a strictly
 smaller weight than `z = 3` does, so the maximum of `w` over `{1,2,3}` sits at `3`,
 i.e. at mass number `A = 4`. -/
-theorem lt_w3_of_lt_three {w : ℕ → R} (h3 : 0 < b3 w) (h4 : 0 < b4 w) :
-    ∀ z : ℕ, 1 ≤ z → z < 3 → w z < w 3 := by
-  intro z hz1 hz3
+theorem max_at_three {w : ℕ → R} (h3 : 0 < b3 w) (h4 : 0 < b4 w) :
+    w 1 < w 3 ∧ w 2 < w 3 := by
   have h12 : w 1 < w 2 := lt_of_b3_pos h3
   have h23 : w 2 < w 3 := w2_lt_w3_of_b3_b4_pos h3 h4
-  interval_cases z
-  · exact lt_trans h12 h23
-  · exact h23
+  exact ⟨lt_trans h12 h23, h23⟩
 
 /-- The contrapositive, and the falsifiable form: a coordination weight whose value at
 `z = 3` does not exceed its value at `z = 2` cannot carry both measured signs. -/
