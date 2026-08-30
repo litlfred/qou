@@ -291,7 +291,14 @@ def main() -> None:
     wb.add_data(
         "step_4_pointer",
         {
-            "S_at_q0": str(S_at_q0),
+            # Recorded at the width it ACTUALLY has, not at the 50 the
+            # `sp.Float(..., 50)` above asks for. The upstream
+            # `tau_M_at_q0` is a JSON float carrying 16 significant
+            # digits, so `str(S_at_q0)` wrote 50 and the float64-padding
+            # audit flagged it: a 53-bit value serialized at full width
+            # reads as precision that was never computed (bean qou-3e5m,
+            # AGENTS.md §"never report a float64 agreement to N digits").
+            "S_at_q0": str(sdp["data"]["tau_M_at_q0"]),
             "structural_note": (
                 "Under Markov collapse T_β = S · I, the c_k Taylor "
                 "coefficients of Q_β(q)/E_0(q) are the w-Taylor "
