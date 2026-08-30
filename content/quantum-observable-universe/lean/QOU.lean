@@ -331,6 +331,11 @@ import QOU.Mass.BondChannelClassSelection
 -- growth (verified k≤10, faithful proof = Mathlib-gap) + the proved downstream
 -- conditional theorem that logarithmic k(A) follows (k∝A / k∝bond-count excluded).
 import QOU.Mass.LevelSelectionLogarithmic
+-- 3D-realizability cap on max-contact coordination: a pairwise-equidistant family
+-- has at most finrank members, so the complete contact graph K_A is realizable in
+-- ℝ³ only for A ≤ 4. Replaces the EMPIRICAL premise ("saturation is observed")
+-- that CoordinationSaturation's complete-graph exclusion rested on.
+import QOU.Mass.EquidistantCoordinationCap
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
