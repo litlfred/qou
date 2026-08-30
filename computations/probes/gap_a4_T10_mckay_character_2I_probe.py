@@ -169,9 +169,9 @@ def main():
 
     w.add_assertion(
         "integer_spin_dim_sum_squares",
-        computed=float(result["int_burnside_sum_sq"]),
-        expected=60.0,
-        tolerance=1e-30,
+        computed=result["int_burnside_sum_sq"],
+        expected=60,
+        tolerance=0,
         source=(
             "Integer-spin 2I irreps factor through A_5; Σ dim² over "
             "them equals |A_5| = 60 (Burnside on the quotient)."
@@ -179,9 +179,9 @@ def main():
     )
     w.add_assertion(
         "half_spin_dim_sum_squares",
-        computed=float(result["half_burnside_sum_sq"]),
-        expected=60.0,
-        tolerance=1e-30,
+        computed=result["half_burnside_sum_sq"],
+        expected=60,
+        tolerance=0,
         source=(
             "Half-spin 2I irreps are genuinely 2I-valued; Σ dim² over "
             "them equals |2I| − |A_5| = 60."
@@ -189,9 +189,9 @@ def main():
     )
     w.add_assertion(
         "total_2I_burnside",
-        computed=float(result["total_burnside_sum_sq"]),
-        expected=120.0,
-        tolerance=1e-30,
+        computed=result["total_burnside_sum_sq"],
+        expected=120,
+        tolerance=0,
         source="Σ dim² over all 2I irreps = |2I| = 120.",
     )
 

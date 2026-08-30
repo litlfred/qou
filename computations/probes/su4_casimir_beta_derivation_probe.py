@@ -153,8 +153,14 @@ def main() -> int:
     print("   w(3) = (3/4)w(2) + (1/4)w(4)   <=>   B(4) = 8 B(3) - 18 B(2)")
     wb.add_assertion(
         name="fit_is_the_fixed_three_quarter_interpolation",
-        computed=fmt(lam), expected="0.75", tolerance="1e-50",
-        unit="interpolation weight",
+        # |lam - 3/4|, not lam vs "0.75". `Assertion.passed` compares in
+        # float64 (witness.py:830), and two values of magnitude ~1 cancel at
+        # ~2.2e-16 -- so the 1e-50 bound was 1.7e34x below what the verdict
+        # could reach. The correct mpmath check was already TWO LINES BELOW,
+        # in the `ok &=` guard; this makes the witness say what the guard
+        # tests. The sibling assertion above already uses this pattern.
+        computed=fmt(abs(lam - mp.mpf(3) / 4)), expected="0", tolerance="1e-50",
+        unit="deviation from the 3/4 interpolation weight",
         source="lambda = (C2(3)-C2(4))/(C2(2)-C2(4)); no fitted freedom remains",
     )
     ok &= abs(lam - mp.mpf(3) / 4) < mp.mpf(10) ** -50
