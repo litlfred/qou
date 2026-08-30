@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T11:50:22Z
+updated_at: 2026-08-30T12:00:06Z
 parent: qou-mhj9
 ---
 
@@ -519,3 +519,48 @@ the best of nine trials on the one dataset that flatters it.
 ### STATUS
 Strongest candidate the arc has produced. **Sign derived, size open.** Not a
 closure and not a refutation — and the 1.28% must not be quoted as a result.
+
+
+## delta IS OVER-DETERMINED, AND THE TWO DETERMINATIONS DISAGREE 25-40x (2026-08-30)
+
+Probe: `computations/probes/pairing_delta_overdetermination_probe.py` (1/1).
+
+**Method note first:** hunting a formula for delta is BANNED by this arc's own
+entropy result (closed-form guessing is dead at 1-2 significant digits). The
+legitimate move is OVER-DETERMINATION — delta is fixed by the A<=4 cumulants AND
+independently measurable as the odd-even staggering. No formula is proposed.
+
+    DETERMINATION 1, from the A<=4 cumulants (smooth C(2n,n) + pairing):
+       raw isospin-avg    delta = 0.58901076 MeV  -> pairing at A=2  0.208 MeV
+       Coulomb-corrected  delta = 0.95593837 MeV  -> pairing at A=2  0.338 MeV
+
+    DETERMINATION 2, from the odd-even staggering (51 triples, A >= 8):
+       median |D3| = 1.80355 MeV   (consistent with the standard 1-3 MeV gap)
+       SEMF pairing at A=2 (a_P = 12/sqrt(A)) = 8.48528 MeV
+
+    DISAGREEMENT: **25-41x**, the fitted term being far TOO WEAK.
+
+**The exponent cannot rescue it.** Pairing DECREASES with A, so a term giving
+0.2-0.34 MeV at A=2 cannot reach ~1.8 MeV at A~10 for any positive exponent — it
+is smallest exactly where pairing is largest. The discrepancy is in the STRENGTH.
+
+### TWO MEASUREMENT SLIPS OF MINE, both recorded
+1. Taking the median of |D3|*A^1.5 over ALL A gives 88 MeV and a 92-150x ratio.
+   **Contaminated**: the low-A entries (A=4 -> 85, A=5 -> 90, A=6 -> 119) are
+   SHELL-CLOSURE jumps, not pairing, and dominate the median. Restricting to
+   A >= 8 and comparing pairing ENERGIES gives the honest 25-40x. Headline moved
+   by ~4x when the artifact was removed.
+2. An earlier pass printed NO staggering rows at all — a sign filter (if d3 > 0)
+   of mine that dropped every entry. Recorded so the absence is not later read as
+   an absence of signal.
+
+### VERDICT
+**The SIGN result is untouched** — pairing forces b3 > 0 from the parities for
+EVERY delta, and that argument never uses delta's value.
+
+**The MAGNITUDE route is refuted.** The pairing term reproducing b3 and b4 is
+25-40x too weak to be the physical nuclear pairing force. Either the term is not
+really pairing, or pairing supplies only a small part of b3.
+
+Scope (a): refutes pairing as the SOLE quantitative mechanism, not its presence
+in a multi-term closure. **delta is NOT derived.**
