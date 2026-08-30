@@ -239,10 +239,38 @@ def main() -> int:
         "q0Value": str(q0),
     }
 
-    out = WitnessBuilder.wrap_legacy(
+    # bean qou-srvu. This audit's own payload calls `all_five_fixed` a
+    # REGRESSION GUARD -- "the check is now that the fix HOLDS" -- and check 1
+    # is the symbolic derivation the whole audit rests on. Neither reached
+    # `assertions[]`, so `save()` emitted `allPassed: true` over an EMPTY list:
+    # a regression guard that could not report a regression. No claim is
+    # invented and no threshold is chosen here: check 1 is exact sympy
+    # (`sp.simplify(derived - z**3) == 0`), and check 4's 1e-9 is the constant
+    # already at its own call site, compared at 40 dps -- not float64.
+    _b = WitnessBuilder.wrap_legacy(
         "trm5-zcubed-live-producer-audit", payload,
         script_path=__file__, engine="python+mpmath+sympy",
-    ).save()
+    )
+    _b.add_assertion(
+        "regression_guard_all_five_fixed", computed=bool(all_fixed),
+        expected=True,
+        source=("each of the five live producers carries TR_M[5] = h*z^2 + z "
+                "and no longer carries z^3. Keyed on file content, not line "
+                "numbers"))
+    _b.add_assertion(
+        "markov_derivation_is_NOT_z_cubed",
+        computed=bool(c1["equals_z_cubed"]), expected=False,
+        source=("the Markov axioms give tr(s0 s1 s0) = h*z^2 + z symbolically "
+                "with z free; it is NOT z^3. This is the audit's premise, "
+                "proved by exact sympy simplification, not numerically"))
+    _b.add_assertion(
+        "same_gram_as_gram_h3",
+        computed=bool(c4["magnitudes_agree"]), expected=True,
+        source=("with the correct weight, compound_shift_nf's |det| matches "
+                "the independent gram_h3_det_factorization value at q0 to the "
+                "1e-9 already declared at that call site (40 dps; sign differs "
+                "by a basis-ordering orientation, so magnitude is the claim)"))
+    out = _b.save()
 
     print("=== TR_M[5]: the 2026-05-19 fix never reached computations/ ===")
     print(f"  CHECK 1  Markov axioms give     : {c1['derived_symbolic']}")

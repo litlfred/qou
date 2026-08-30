@@ -1,15 +1,37 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:45:53.115269+00:00",
-  "commitSha": "47f8fa2278e84329ed6e4b2476400e8492efd8de",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:22:17.595368+00:00",
+  "commitSha": "89f632a8cba989331178e9234ed9bba813cbd4c3",
+  "assertions": [
+    {
+      "name": "regression_guard_all_five_fixed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "each of the five live producers carries TR_M[5] = h*z^2 + z and no longer carries z^3. Keyed on file content, not line numbers"
+    },
+    {
+      "name": "markov_derivation_is_NOT_z_cubed",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "source": "the Markov axioms give tr(s0 s1 s0) = h*z^2 + z symbolically with z free; it is NOT z^3. This is the audit's premise, proved by exact sympy simplification, not numerically"
+    },
+    {
+      "name": "same_gram_as_gram_h3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "with the correct weight, compound_shift_nf's |det| matches the independent gram_h3_det_factorization value at q0 to the 1e-9 already declared at that call site (40 dps; sign differs by a basis-ordering orientation, so magnitude is the claim)"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm5-zcubed-live-producer-audit",
   "scriptFile": "trm5_zcubed_live_producer_audit.py",
-  "scriptHash": "6a07494632c6",
-  "scriptCommitSha": "1f45c01fe23f154cac8803118b9172411f760b64",
+  "scriptHash": "e97f492a518d",
+  "scriptCommitSha": "8a505f2b5a8913970c0d815642f8b49ace6e9335",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
