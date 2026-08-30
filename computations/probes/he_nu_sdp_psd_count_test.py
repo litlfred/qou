@@ -52,17 +52,50 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))            # computations/ on path for hoefsmit_numpy
 from hoefsmit_numpy import hoefsmit_matrices_numpy  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# Canonical substrate q₀, inlined. NOTE: this is the MUON pin, not the proton
-# one — it read "proton-pinned; == computations/q_parameter.Q" until 2026-08-29
-# and sits 11.5371 ppb from the proton pin. Label corrected, value untouched;
-# whether muon is INTENDED is open (bean qou-fd0e). Separately: this is a float64
-# literal, and an earlier version of this note called that a no-float64
-# violation. It is not. This probe runs on numpy throughout
-# (`hoefsmit_matrices_numpy`, `np.linalg.eigvalsh`) and its witness records
-# `"engine": "numpy"`, so an mpf here would be downcast at the first call. It is
-# f64 BY CONSTRUCTION — bean qou-840k's 67-file class, not its 49 fixable ones.
-Q0 = 1.1099785955573347
+# HISTORY of this constant, kept because it is the clearest worked example of
+# the label-vs-value trap in this corpus. It read "proton-pinned; ==
+# computations/q_parameter.Q" until 2026-08-29 — a falsifiable claim that was
+# FALSE: the value sat 11.5371 ppb from the proton pin and 0.0769 ppb from the
+# muon pin. Commit 009143b58 corrected the LABEL and deliberately left the
+# VALUE and the intent open. That open question is now closed as PROTON; see
+# the block below. The value finally matches the label the file first carried,
+# but by ruling, not by assuming the label was right.
+# q0 RESOLVED, never a literal. Ruled PROTON 2026-08-30 (Q4 of the UNCLEAR
+# archeology, docs/coordination/2026-08-30-unclear-44-archeology-triage.md).
+#
+# It held pin A, which `fca08de7d2` RETIRED on 2026-08-22 -- that value inverts
+# to m_mu/m_e = 206.768282989315, matching no published CODATA. So keeping it
+# was never an option; only the layer was open.
+#
+# WHY PROTON, stated honestly as an argument from DEFAULT, not from evidence
+# of intent -- there is no positive evidence of intent in this file:
+#   * No muon signal anywhere in the he_nu_sdp trio. The only "muon" mentions
+#     are the 2026-08-29 label-correction note, which itself records the
+#     question as OPEN -- that is the question, not an answer to it.
+#   * The `q0Anchor: proton` stamp on the committed witness is NOT cited as
+#     evidence: this stem is absent from q0_anchor_manifest.json, so
+#     resolve_q0_anchor hands it the runtime DEFAULT. A default proves nothing.
+#   * Proton is the ruled default layer for production compute, and nothing
+#     here argues for the ideal layer.
+#   * The witness was a straddle -- payload q0 = pin A (a MUON value) beside a
+#     stamped proton q0Value. Resolving to proton makes it self-consistent.
+#
+# COST OF BEING WRONG IS LOW, measured: this probe records only integers
+# (bounded_support_size, nu_canonical, neg_norm_blocks) and a categorical
+# verdict (OBSTRUCTED); the sole continuous outputs are support weights, which
+# an 11.5371 ppb pin shift moves in the ~10th significant digit. It asserts
+# NOTHING (allPassed is null), nothing imports it, and no producer reads its
+# witness. So no verdict can flip and nothing propagates.
+#
+# FLOAT64 IS CORRECT HERE and is not a NO-FLOAT64 violation: this probe runs on
+# numpy throughout (hoefsmit_matrices_numpy, np.linalg.eigvalsh) and its witness
+# records engine numpy+scipy, so an mpf would be downcast at the first call. It
+# is f64 BY CONSTRUCTION -- bean qou-840k's 67-file class, not its 49 fixable
+# ones. The float() cast below is therefore deliberate: resolve the PIN, keep
+# the tier.
+Q0 = float(Q_50_DIGIT_STR)
 H = Q0 - 1.0 / Q0
 TOL = 1e-9
 

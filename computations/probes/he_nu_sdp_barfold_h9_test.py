@@ -50,8 +50,42 @@ sys.path.insert(0, str(HERE.parent))
 from hoefsmit_numpy import chi_numpy  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0 = 1.1099785955573347
+# q0 RESOLVED, never a literal. Ruled PROTON 2026-08-30 (Q4 of the UNCLEAR
+# archeology, docs/coordination/2026-08-30-unclear-44-archeology-triage.md).
+#
+# It held pin A, which `fca08de7d2` RETIRED on 2026-08-22 -- that value inverts
+# to m_mu/m_e = 206.768282989315, matching no published CODATA. So keeping it
+# was never an option; only the layer was open.
+#
+# WHY PROTON, stated honestly as an argument from DEFAULT, not from evidence
+# of intent -- there is no positive evidence of intent in this file:
+#   * No muon signal anywhere in the he_nu_sdp trio. The only "muon" mentions
+#     are the 2026-08-29 label-correction note, which itself records the
+#     question as OPEN -- that is the question, not an answer to it.
+#   * The `q0Anchor: proton` stamp on the committed witness is NOT cited as
+#     evidence: this stem is absent from q0_anchor_manifest.json, so
+#     resolve_q0_anchor hands it the runtime DEFAULT. A default proves nothing.
+#   * Proton is the ruled default layer for production compute, and nothing
+#     here argues for the ideal layer.
+#   * The witness was a straddle -- payload q0 = pin A (a MUON value) beside a
+#     stamped proton q0Value. Resolving to proton makes it self-consistent.
+#
+# COST OF BEING WRONG IS LOW, measured: this probe records only integers
+# (bounded_support_size, nu_canonical, neg_norm_blocks) and a categorical
+# verdict (OBSTRUCTED); the sole continuous outputs are support weights, which
+# an 11.5371 ppb pin shift moves in the ~10th significant digit. It asserts
+# NOTHING (allPassed is null), nothing imports it, and no producer reads its
+# witness. So no verdict can flip and nothing propagates.
+#
+# FLOAT64 IS CORRECT HERE and is not a NO-FLOAT64 violation: this probe runs on
+# numpy throughout (hoefsmit_matrices_numpy, np.linalg.eigvalsh) and its witness
+# records engine numpy+scipy, so an mpf would be downcast at the first call. It
+# is f64 BY CONSTRUCTION -- bean qou-840k's 67-file class, not its 49 fixable
+# ones. The float() cast below is therefore deliberate: resolve the PIN, keep
+# the tier.
+Q0 = float(Q_50_DIGIT_STR)
 RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
 
 

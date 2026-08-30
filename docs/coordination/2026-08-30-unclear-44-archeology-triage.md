@@ -286,7 +286,7 @@ retyping either is right under neither for long."
 | ~~**Q1**~~ | ~~**lever1 / z2bn binding-period cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded".** | rows 22, 23, 24, 25 | **4 ✅** |
 | ~~**Q2**~~ | ~~**qbeta c_k / rung-2 / stage-C cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded" below.** | rows 26–35 | **10 ✅** |
 | ~~**Q3**~~ | ~~**`mmu_gap_a4_*` scratch scripts**~~ — **RULED DELETE 2026-08-30.** | rows 36, 37 | **2 ✅** |
-| **Q4** | **`he_nu_sdp_*` probes** — the SDP saturation/PSD/barfold trio | rows 38, 39, 40 | **3** |
+| ~~**Q4**~~ | ~~**`he_nu_sdp_*` probes**~~ — **RESOLVED PROTON 2026-08-30, on DEFAULT + measured immateriality (not on evidence of intent).** | rows 38, 39, 40 | **3 ✅** |
 | **Q5** | **τ-binding / unified-τ** — and specifically: *was the original "proton-pinned" label right and the value wrong, or the reverse?* This is the ruling request's group (b), and it needs a yes/no, not analysis | rows 41, 42 | **2** |
 | ~~**Q6**~~ | ~~**option-E KL batch**~~ — **NO RULING NEEDED: the q₀ is a DEAD assignment.** | row 43 | **1 ✅** |
 
@@ -467,4 +467,38 @@ combinatorial in S₆), it writes no witness, and nothing it prints changes.
 **This is a correction to the archeology above**, which filed row 43 as needing
 a ruling. It did not; the deadness was simply not checked.
 
-### Q4, Q5 — still open (5 files).
+### Q4 — **PROTON**, 2026-08-30. Closed on default, not on evidence.
+
+Stated honestly: **there is no positive evidence of intent in any of the three
+files.** The resolution rests on (a) the absence of any muon signal, (b) proton
+being the ruled default layer, and (c) a measured demonstration that the choice
+barely matters.
+
+* **No muon signal.** Two of the three contain no muon/ideal words at all. The
+  third's only "muon" mentions are the 2026-08-29 label-correction note, which
+  itself records the question as OPEN — that is the question restated, not an
+  answer.
+* **The `q0Anchor: proton` stamp was NOT used as evidence.** All three stems are
+  absent from `q0_anchor_manifest.json`, so it is the runtime default.
+* **Immateriality, measured.** These probes record only integers
+  (`bounded_support_size`, `nu_canonical`, `neg_norm_blocks`) and a categorical
+  verdict; the sole continuous outputs are support weights, which an 11.5371 ppb
+  shift moves in the ~10th digit. They assert **nothing** (`allPassed` null),
+  nothing imports them, and no producer reads their witnesses. Confirmed after
+  regeneration: verdicts unchanged (REFUTED / OBSTRUCTED / REFUTED).
+* **It resolved a real straddle.** Each witness carried payload `q0` = pin A (a
+  MUON value) beside a stamped proton `q0Value`. Payload and stamp now agree.
+* **float64 is correct here and was kept.** These run on numpy throughout
+  (`hoefsmit_matrices_numpy`, `np.linalg.eigvalsh`), so an mpf would be downcast
+  at the first call — qou-840k's 67-file "f64 by construction" class. The fix
+  resolves the PIN and keeps the tier.
+* **No conflation with the `QOU_H3A_MPF` flip**, though `mass_at_3A_proper` IS in
+  their import cone via `markov_weights_symbolic`. Tested rather than assumed:
+  running `psd_count_test` with the flag off and on gives **zero differing
+  fields**, because the flip moves values beyond digit ~16 and this tier is
+  float64.
+
+**If this ruling is ever revisited, it is cheap:** all three are leaves and the
+outputs are insensitive.
+
+### Q5 — still open (2 files).
