@@ -695,3 +695,54 @@ def test_cross_anchor_protection_survives_the_superseded_flag():
     cross-anchor probe frozen at pin A."""
     both = {"a": {"q0": _MUON_A}, "b": {"q_0": _PROTON}}
     assert w._q0_anchor_from_payload(both, include_superseded=True) is None
+
+
+# ── a self-declared q0Anchor no longer forfeits its q0Value ──────────────
+#
+# Regression cover for the 2026-08-30 fix. `q0Value` was written only inside
+# `if "q0Anchor" not in payload`, so a producer that declares its own anchor --
+# which that block exists to permit -- had its explicit `q0_value=` argument
+# silently dropped. The agreement check is what keeps this from reviving the
+# carry-forward removed on 2026-08-24: the value is passed in by THIS call, not
+# inherited from a previous run, and it is written only if it belongs to the
+# declared anchor.
+
+def _stamped(anchor, value):
+    """Stamp a payload that ALREADY declares its own anchor, as
+    `regenerate_y_lambda_mpfr` does, and report what q0Value came out."""
+    payload = {"q0Anchor": anchor, "data": {}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="x",
+        q0_anchor=anchor, q0_value=value)
+    return payload.get("q0Value")
+
+
+def test_self_declared_anchor_keeps_an_agreeing_explicit_value():
+    """The case that motivated the fix: regenerate_y_lambda_mpfr sets its own
+    q0Anchor and passes q0_value, and used to get neither written."""
+    assert _stamped("muon", _MUON) == _MUON
+    assert _stamped("proton", _PROTON) == _PROTON
+
+
+def test_self_declared_anchor_refuses_a_superseded_vintage():
+    """A retired muon vintage under `q0Anchor: "muon"` must NOT be stamped.
+
+    This is the Q0_FLIP the 2026-08-24 carry-forward removal was about: a fresh,
+    correct label beside the old label's number. Refusing leaves no q0Value at
+    all — a visible unknown, never a wrong pairing.
+    """
+    assert _stamped("muon", _MUON_A) is None
+    assert _stamped("muon", _MUON_A_PRIME) is None
+
+
+def test_self_declared_anchor_refuses_the_other_layer():
+    assert _stamped("proton", _MUON) is None
+    assert _stamped("muon", _PROTON) is None
+
+
+def test_an_existing_q0Value_is_never_overwritten():
+    payload = {"q0Anchor": "muon", "q0Value": _MUON, "data": {}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="x",
+        q0_anchor="muon", q0_value=_PROTON)
+    assert payload["q0Value"] == _MUON

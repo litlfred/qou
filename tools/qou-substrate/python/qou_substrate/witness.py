@@ -1800,6 +1800,37 @@ class WitnessBuilder:
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
                 payload["q0Value"] = q0_value
+        elif q0_value is not None and "q0Value" not in payload:
+            # A SELF-DECLARED ANCHOR NO LONGER FORFEITS ITS VALUE (2026-08-30).
+            #
+            # `q0Value` used to be written only inside the branch above, so a
+            # producer that states its own `q0Anchor` -- which the block above
+            # exists to let it do -- got its explicit `q0_value=` argument
+            # silently DROPPED. `regenerate_y_lambda_mpfr` is exactly that
+            # shape: it sets `q0Anchor` itself, passes `q0_value=q0_str`, and
+            # its cache came out carrying `q_0_50dps` with no `q0Value` beside
+            # it. An argument the signature advertises should not be discarded.
+            #
+            # THE AGREEMENT CHECK IS THE WHOLE POINT, and it is why this is not
+            # a revival of the carry-forward removed on 2026-08-24. That removal
+            # was right: the old code let a PREVIOUS run's value ride forward
+            # onto a freshly-declared anchor, pairing a correct label with the
+            # old label's number -- a Q0_FLIP manufactured by the very block
+            # meant to prevent one. Here the value is not inherited, it is
+            # passed in by this call, and it is written only if it BELONGS to
+            # the anchor the payload declares. A caller handing a stale vintage
+            # (say pin A) under `q0Anchor: "muon"`, whose current value is
+            # vintage C, is refused and leaves no `q0Value` at all -- the same
+            # visible-unknown outcome as before, never a wrong pairing.
+            #
+            # 14 characters discriminates both layer AND vintage:
+            #   proton  1.109978582751   muon C  1.109978595642
+            #   (retired muon A 1.109978595557 is therefore refused under muon)
+            _declared = payload.get("q0Anchor")
+            if _declared in ("muon", "proton"):
+                _expect = _q0_value_for_anchor(_declared)
+                if _expect and str(q0_value)[:14] == str(_expect)[:14]:
+                    payload["q0Value"] = q0_value
         return payload
 
     def is_fresh(self) -> bool:

@@ -228,3 +228,38 @@ That last number is exactly what the OLD pin-A table held
 (`0.11532422621662045631936923868739`), so the live closed form reproduces what
 a pin-A table would have served. The routing is right, not merely different.
 The cross-LAYER refusal above it is untouched.
+
+
+### The stamper asymmetry is fixed upstream too (2026-08-30, owner go-ahead)
+
+The `q0Value` gap was worked around locally in `regenerate_y_lambda_mpfr` when
+it was found. The underlying asymmetry is now fixed in the shared tooling:
+`stamp_staleness_metadata` wrote `q0Value` only inside
+`if "q0Anchor" not in payload`, so a producer that declares its own anchor —
+which that block exists to permit — had the explicit `q0_value=` argument its
+signature advertises silently discarded.
+
+**The agreement check is what keeps this from reviving the carry-forward removed
+on 2026-08-24.** That removal was right: the old code let a PREVIOUS run's value
+ride forward onto a freshly-declared anchor, pairing a correct label with the
+old label's number — a Q0_FLIP manufactured by the block meant to prevent one.
+Here the value is passed in by the call, not inherited, and it is written only
+if it belongs to the declared anchor. 14 characters discriminates layer AND
+vintage.
+
+Verified, and the second row is the one that matters:
+
+| payload declares | explicit q0_value | result |
+|---|---|---|
+| muon | vintage C (current) | written |
+| muon | **vintage A (retired)** | **refused — no q0Value at all** |
+| proton | proton | written |
+| proton | muon | refused |
+
+A refusal leaves a visible unknown, never a wrong pairing. 4 regression tests
+added; suite 138 → 142.
+
+The local declaration in `regenerate_y_lambda_mpfr` is kept: it sets `q0Value`
+before the stamper runs, so the new branch does not fire there (it requires
+`"q0Value" not in payload`), and the "existing value is never overwritten" test
+covers that interaction. Belt and braces, not a conflict.
