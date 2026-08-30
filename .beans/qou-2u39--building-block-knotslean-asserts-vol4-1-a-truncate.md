@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-30T15:04:15Z
-updated_at: 2026-08-30T15:21:41Z
+updated_at: 2026-08-30T15:26:51Z
 ---
 
 Found while exactifying `MostowRigidity.knot5_2` (bean `qou-f8lit` item 1, PR #6263). Two
@@ -116,3 +116,46 @@ one is the coarsest, and the drain here is mostly deletion rather than exactific
 
 Still not fixed on #6263 — different chapter, sidecar verification path, and item 3 is now an
 author decision rather than a mechanical fix.
+
+
+---
+
+## 2026-08-30 — the recommendation is no longer judgement. MEASURED in Lean, all three compile, exit 0.
+
+I offered three options and said option 2 "may or may not take" a 200× tighter tolerance.
+Tested it instead. Reduced harness (`/tmp/tighten2.lean`, the four definitions copied
+verbatim from the file):
+
+    theorem tight : |muon_electron_ratio q₀ - 206.768| < 0.005 := by
+      simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt]
+      constructor <;> norm_num                                    -- ✓ compiles
+
+    theorem tighter : |muon_electron_ratio q₀ - 206.768| < 0.00448 := by
+      simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt]
+      constructor <;> norm_num                                    -- ✓ compiles
+
+    theorem docstring_claim_is_false : ¬ (|muon_electron_ratio q₀ - 206.768| < 0.001) := by
+      simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt, not_and_or]
+      left; norm_num                                              -- ✓ compiles
+
+Three things follow, and they change the shape of the decision:
+
+1. **Option 2 costs nothing.** The tightened bound proves with the *identical* one-line
+   tactic the loose one uses. No new lemma, no `nlinarith`, no bracket. The arithmetic is
+   rational and exact, so `norm_num` does not care how tight the tolerance is.
+2. **`0.00448` also proves** — a bound **224× tighter** than the committed `< 1`, and
+   within 0.03 % of the true deviation `0.0044746`. So the theorem can state essentially
+   the exact bound, not merely a defensible one.
+3. **The docstring's `0.001` is refuted by Lean**, not merely contradicted by an mpmath
+   computation. It is a false statement, machine-checked as false, sitting on the CAL-2
+   anchor.
+
+**Revised recommendation, now evidence rather than preference: tighten the theorem to
+`< 0.00448` and set the docstring to match.** Option 1 (docstring → `0.005`) was offered
+as the cheap path and is now strictly dominated — it costs the same edit and leaves the
+prose still claiming more than the Lean carries, which is the defect pattern this bean
+exists to record. Option 3 (do nothing) leaves a Lean-refutable claim in the corpus.
+
+The direction matters and is worth stating: the ratio is **below** `206.768`
+(`206.763525398207`), which is why the refutation discharges on the `left` disjunct. An
+agent writing the negation with `right` gets `⊢ False` and may conclude the claim is true.
