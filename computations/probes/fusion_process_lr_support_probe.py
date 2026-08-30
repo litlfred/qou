@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fusion-channel LR support probe — does D + T -> 4He + n conserve the induced
+Fusion-process LR support probe — does D + T -> 4He + n conserve the induced
 Wedderburn support in H_15?  (bean qou-89xc, parent qou-dpy1)
 
 The two sides of the channel live in different algebras (H_6 x H_9 initial,
@@ -67,7 +67,7 @@ def induced_support(acts1, acts2, n1, n2):
 def main() -> int:
     init_1, init_2 = active_blocks("deuteron"), active_blocks("tritium")
     fin_1, fin_2 = active_blocks("he4"), active_blocks("neutron")
-    print("FUSION-CHANNEL LR SUPPORT — D + T vs 4He + n, induced into H_15")
+    print("FUSION-PROCESS LR SUPPORT — D + T vs 4He + n, induced into H_15")
     print(f"  active sets: 2H {len(init_1)} (H_6) x 3H {len(init_2)} (H_9)  |  "
           f"4He {len(fin_1)} (H_12) x n {len(fin_2)} (H_3)")
 
