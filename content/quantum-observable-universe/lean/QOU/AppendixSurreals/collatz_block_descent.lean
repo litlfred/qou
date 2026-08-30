@@ -387,4 +387,34 @@ theorem evenSubtree_no_oddPreimage {R : Type*} [CommRing R] (w p : R)
   exact hnu ((evenChain_isUnit_iff w p hw n).mp
     (isUnit_eval_of_oddPreimage w _ q hw hq))
 
+
+/-- **The chained-odd-preimage criterion, machine-checked.** Differentiating
+    `[3]_q·Q = [2]_q·P - 1` at `w` (where `[3]_q` vanishes) gives
+
+        (1 + 2w)·Q(w) = P(w) + (w+1)·P'(w),
+
+    which is carried here as the hypothesis `hrel` — it is ordinary
+    differentiation, not formalized in this file. Given `P(w) = -w` (so `P`
+    admits an odd-preimage at all), that preimage satisfies `Q(w) = -w` — the
+    condition for a **second** chained odd-preimage — only if `P'(w) = 2`.
+
+    Contrapositive, which is how it is used: `P'(w) ≠ 2` rules out a chained
+    odd-preimage. This is the criterion the probes evaluate, previously derived
+    by hand; the cancellation is of the **unit** `w+1`, so no domain hypothesis
+    is needed.
+
+    (The converse would need to cancel `1 + 2w`, which is *not* a unit — it has
+    norm 3 — so it holds in a domain but not over an arbitrary `CommRing`. Only
+    the direction actually used is claimed.) -/
+theorem chained_oddPreimage_forces_deriv_eq_two {R : Type*} [CommRing R]
+    (w v Qw : R) (hw : w ^ 2 + w + 1 = 0)
+    (hrel : (1 + 2 * w) * Qw = -w + (w + 1) * v)
+    (hQ : Qw = -w) : v = 2 := by
+  subst hQ
+  have h1 : (w + 1) * v = (w + 1) * 2 := by linear_combination -hrel - 2 * hw
+  have hu : (-w) * ((w + 1) * v) = v := by linear_combination (-v) * hw
+  have hu2 : (-w) * ((w + 1) * 2) = 2 := by linear_combination (-2 : R) * hw
+  rw [h1, hu2] at hu
+  exact hu.symm
+
 end QOU.AppendixSurreals.CollatzBlockDescent
