@@ -133,3 +133,59 @@ follows.
    bounds for the comparison theorems and a deliberate `:leanval` codemod decision.
 2. The inequalities as Lean facts (needs rigorous 16-digit bounds).
 3. General `0 < D(z)` on the upper half plane.
+
+---
+
+## 2026-08-30 — follow-up item 2 is NOT "more digits". It is blocked by the method.
+
+I recorded item 2 as *"needs a rigorous 16-digit lower bound on `Cl₂(π/3)`, which the
+corpus does not have"*. That was right not to assert the inequality, but it understates
+the obstacle in a way that would send the next agent down a dead end. Measured:
+
+**The corpus DOES have certified bounds** — `QOU/Knot/ClausenValueBounds.lean`
+(bean `qou-44ma`, 222 lines, **0 sorries**):
+
+    abs_Cl_2_pi_div_three_sub_le : |Cl₂(π/3) − (414173156523019011/707846096282124800)·√3| ≤ 1/24
+    abs_VOL_4_1_sub_decimal_lt   : |VOL_4_1 − VOL_4_1_decimal| < 1/10
+
+built from a 24-term partial sum plus the crude tail `|sin| ≤ 1`, `Σ_{k>N} 1/k² ≤ 1/N`.
+
+**The cost of closing the gap with that skeleton:**
+
+| quantity | value |
+|---|---|
+| current certified bound on `Cl₂(π/3)` | `1/24 ≈ 4.2e-2` |
+| literal-vs-exact gap to separate | `≈ 7.25e-16` |
+| needed bound on `Cl₂(π/3)` | `≈ 3.6e-16` |
+| **partial-sum terms `N` required** | **`≈ 2.8 × 10¹⁵`** |
+
+The file's own note — *"Tightening to more digits is a longer partial sum plus a sharper
+tail — same skeleton"* — is true of the **skeleton** and wildly optimistic about the
+**cost**. A `Finset.range` of 2.8e15 cannot be elaborated. This is not a longer
+computation; it is a different method.
+
+**Not impossible, though — do not record it as refuted.** The tail bound throws away the
+period-6 sign structure `sin(kπ/3) ∈ {√3/2, √3/2, 0, −√3/2, −√3/2, 0}`. Grouping in
+blocks of six gives cancellation and a much faster-converging series, so a feasible route
+plausibly exists. The corpus simply does not take it, and nobody should assume the
+existing skeleton scales. **Scope-(a) negative: this construction, alone, cannot reach
+16 digits — not a structural exclusion.**
+
+### What this changes about the plan
+
+**Exactify; do not try to prove the literal wrong.** Removing the literal
+(`figureEight.volume := VOL_4_1`) needs no bounds at all for two of its three blockers —
+`volume_nonneg` and `unknot_volume_lt_figureEight_volume` both fall straight out of
+`Cl_2_pi_div_three_pos`, which is already proved. Only the cross-knot comparison
+`figureEight_volume_lt_knot5_2_volume` needs real analysis, and it needs a **lower bound
+on `VOL_5_2`**, not a tighter one on `Cl₂(π/3)`:
+
+    VOL_4_1 < VOL_5_2  ⟺  2·Cl₂(π/3) < 3·D(y₁)  ⟸  D(y₁) > (2/3)·Cl₂(π/3) ≈ 0.6766
+
+and there is no bound on `BlochWigner_lob fiveTwoShape` in the corpus at all. Note the
+regular-tetrahedron maximum gives `VOL_5_2 ≤ 3·Cl₂(π/3)`, which is the **wrong
+direction** and does not help.
+
+So the ordered plan is: (i) a certified lower bound on `D(y₁)`; (ii) then
+`VOL_4_1 < VOL_5_2`; (iii) then exactify both instances and retire the literals — at
+which point item 2 becomes moot, because there is no literal left to be unequal to.
