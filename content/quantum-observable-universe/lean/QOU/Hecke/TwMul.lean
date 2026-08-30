@@ -92,4 +92,37 @@ theorem Tw_mul_Tw (v w : Equiv.Perm (Fin (n + 1)))
       (by rw [wordProd_reducedWord, h, hlen]), wordProd_reducedWord]
   rw [orbitMap_mul, orbitMap_Tw, Tw, toEnd_TwOf, hstep, orbitMap_Tw]
 
+/-- **The multiplication table of `H_n(q)` on its own basis.**  Left
+    multiplication by a generator is exactly the operator `Rs i` that built the
+    basis in the first place — so the *down* case, where the `(q-1)` and `q`
+    coefficients appear, comes for free from `rsFun`.
+
+    This is the statement the Gram determinant needs: it is the whole structure
+    constant table, up and down cases together, in one identity. -/
+theorem σ_mul_Tw (i : Fin n) (v : Equiv.Perm (Fin (n + 1))) :
+    σ K q n i * Tw K q n v
+      = if v i.castSucc < v i.succ then
+          Tw K q n (v * Equiv.swap i.castSucc i.succ)
+        else (q - 1) • Tw K q n v
+               + q • Tw K q n (v * Equiv.swap i.castSucc i.succ) := by
+  refine orbitMap_injective K q n ?_
+  rw [orbitMap_mul, orbitMap_Tw, toEnd_σ, Rs_single_perm]
+  by_cases h : v i.castSucc < v i.succ
+  · rw [if_pos h, if_pos h, orbitMap_Tw]
+  · rw [if_neg h, if_neg h, map_add, map_smul, map_smul, orbitMap_Tw, orbitMap_Tw]
+
+/-- The **up** case on its own: when the length goes up, no coefficients. -/
+theorem σ_mul_Tw_of_lt (i : Fin n) (v : Equiv.Perm (Fin (n + 1)))
+    (h : v i.castSucc < v i.succ) :
+    σ K q n i * Tw K q n v = Tw K q n (v * Equiv.swap i.castSucc i.succ) := by
+  rw [σ_mul_Tw, if_pos h]
+
+/-- The **down** case on its own: when the length drops, the quadratic
+    relation's coefficients appear. -/
+theorem σ_mul_Tw_of_not_lt (i : Fin n) (v : Equiv.Perm (Fin (n + 1)))
+    (h : ¬ v i.castSucc < v i.succ) :
+    σ K q n i * Tw K q n v
+      = (q - 1) • Tw K q n v + q • Tw K q n (v * Equiv.swap i.castSucc i.succ) := by
+  rw [σ_mul_Tw, if_neg h]
+
 end QOU.Hecke.TwBasis
