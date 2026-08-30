@@ -1,0 +1,169 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T02:31:55.216112+00:00",
+  "commitSha": "787016f52f81987ef6bd67ca0453e5deeb185e93",
+  "assertions": [
+    {
+      "name": "h_shell_binding_equals_rydberg",
+      "computed": "13.648045749648474716495840424118555785816260149178",
+      "expected": "13.648045749648474716495840424118555785816260149178",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "eV",
+      "source": "structural: Z=1, single 1s electron, bare-Z hydrogenic sum = Ry exactly"
+    },
+    {
+      "name": "rydberg_bare_vs_codata_rel",
+      "computed": "0.0031128606441159583621369896527378229411787628636511",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "5e-3",
+      "source": "bare-alpha route (q0*[9]_q*[10]_q, mp-exact) vs CODATA-2022 Ry; the ~3.1e-3 gap IS the CS-tower correction the bare route omits"
+    },
+    {
+      "name": "rydberg_cs_f64_vs_codata_rel",
+      "computed": "0.0000029887182849794963130780437611322993851425648521442",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "CS-corrected route (pyhecke ALPHA_EM_INV_DERIVED, float64-limited, rounded 511000.0 eV m_e) vs CODATA-2022 Ry"
+    },
+    {
+      "name": "h_atomic_electron_residual_kev",
+      "computed": "0.000051355749648474716495840424118555785816261362709121",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1",
+      "unit": "keV",
+      "source": "1H delta_electron (total residual minus nuclear part) is sub-keV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "atom-electron-mass",
+  "scriptFile": "atom_electron_mass.py",
+  "scriptHash": "8b6629dcc885",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/atom_electron_mass.py"
+    ],
+    "reproduce": "python3 -u computations/atom_electron_mass.py"
+  },
+  "description": "Level-6 atomic electron layer at the canonical e-Hartree scale (bare derived alpha_EM^-1 = q0*[9]_q*[10]_q, mp end-to-end): m_atom = m_sym(nucleus) + Z*m_e - E_e(Z), vs AME2020 neutral-atom masses, 1H..7Li. G4 promotion of the previously unwitnessed diagnostic (docs/audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md). The /dashboard-low atomic table still uses the AME empirical B_el fit; this witness is the derived-side comparator, not a production rewire.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0Anchor": "proton",
+    "alpha_E0_mev": "4.1859813632944758969450621587590084101434868908787",
+    "alpha_em_inv_bare": "136.82320885358258430804610540444147849492999517977",
+    "alpha_em_inv_cs_f64_comparison": "137.03593509397564",
+    "E_hartree_ev_bare": "27.296091499296949432991680848237111571632520298356",
+    "rydberg_ev_bare": "13.648045749648474716495840424118555785816260149178"
+  },
+  "data": {
+    "per_isotope": {
+      "1H": {
+        "Z": 1,
+        "N": 0,
+        "E_e_ev": "13.648045749648474716495840424118555785816260149178",
+        "B_sym_mev": "0.0",
+        "m_atom_mev": "938.78307473264425035152528350415957588144421418374",
+        "M_ame_mev": "938.783074784",
+        "delta_total_mev": "-0.000000051355749648474716495840424118555785816261362709121",
+        "delta_nuclear_mev": "0.0",
+        "delta_electron_kev": "-0.000051355749648474716495840424118555785816261362709121"
+      },
+      "2H": {
+        "Z": 1,
+        "N": 1,
+        "E_e_ev": "13.648045749648474716495840424118555785816260149178",
+        "B_sym_mev": "2.8331625720045237703378158014920195241868601607275",
+        "m_atom_mev": "1875.515334100639726581187467702667556357257354023",
+        "M_ame_mev": "1876.123930335",
+        "delta_total_mev": "-0.60859623436027341881253229733244364274264597698535",
+        "delta_nuclear_mev": "-0.60859637200452377033781580149201952418686016072746",
+        "delta_electron_kev": "0.00013764425035152528350415957588144421418374210742536"
+      },
+      "3H": {
+        "Z": 1,
+        "N": 2,
+        "E_e_ev": "13.648045749648474716495840424118555785816260149178",
+        "B_sym_mev": "6.630945507146877099461641786345815948433701999592",
+        "m_atom_mev": "2811.2829731054973732520636417178137599330105121841",
+        "M_ame_mev": "2809.43212206",
+        "delta_total_mev": "1.8508510454973732520636417178137599330105121841431",
+        "delta_nuclear_mev": "1.850850692853122900538358213654184051566298000408",
+        "delta_electron_kev": "0.00035264425035152528350415957588144421418373503752063"
+      },
+      "3He": {
+        "Z": 2,
+        "N": 1,
+        "E_e_ev": "109.18436599718779773196672339294844628653008119343",
+        "B_sym_mev": "4.883872264385957455968773636376672841077183167",
+        "m_atom_mev": "2812.2476172526280453562334943968999342104765303029",
+        "M_ame_mev": "2809.41353004",
+        "delta_total_mev": "2.8340872126280453562334943968999342104765303029236",
+        "delta_nuclear_mev": "2.834169055614042544031226363623327158922816833",
+        "delta_electron_kev": "-0.081842985997187797731966723392948446286530076427337"
+      },
+      "4He": {
+        "Z": 2,
+        "N": 2,
+        "E_e_ev": "109.18436599718779773196672339294844628653008119343",
+        "B_sym_mev": "8.6816551995283107850925996212304692653240250058645",
+        "m_atom_mev": "3748.0152562574856920271096684120461377862296884641",
+        "M_ame_mev": "3728.40133075",
+        "delta_total_mev": "19.613925507485692027109668412046137786229688464057",
+        "delta_nuclear_mev": "19.614007200471689214907400378769530734675974994136",
+        "delta_electron_kev": "-0.081692985997187797731966723392948446286530078078171"
+      },
+      "6Li": {
+        "Z": 3,
+        "N": 3,
+        "E_e_ev": "276.37292643038161300904076858840075466277926802086",
+        "B_sym_mev": "14.530147827052097799847383440968919006461189851001",
+        "m_atom_mev": "5620.5151067620914718185396075182624925927841473697",
+        "M_ame_mev": "5603.05150276",
+        "delta_total_mev": "17.463604002091471818539607518262492592784147369717",
+        "delta_nuclear_mev": "17.463839372947898200152616559031080993538810148999",
+        "delta_electron_kev": "-0.23537085642638161300904076858840075466277928105886"
+      },
+      "7Li": {
+        "Z": 3,
+        "N": 4,
+        "E_e_ev": "276.37292643038161300904076858840075466277926802086",
+        "B_sym_mev": "18.327930762194451128971209425822715430708031689866",
+        "m_atom_mev": "6556.2827457669491184894157815334086961685373055309",
+        "M_ame_mev": "6535.36583067",
+        "delta_total_mev": "20.916915096949118489415781533408696168537305530862",
+        "delta_nuclear_mev": "20.917149937805548871028790574177284569291968310134",
+        "delta_electron_kev": "-0.2348408564303816130090407685884007546627792717237"
+      }
+    },
+    "rydberg_codata_2022_ev": "13.60569312299",
+    "rydberg_bare_vs_codata_rel": "0.0031128606441159583621369896527378229411787628636511",
+    "rydberg_cs_f64_ev": "13.6057337865738165",
+    "rydberg_cs_f64_vs_codata_rel": "0.0000029887182849794963130780437611322993851425648521442"
+  },
+  "caveats": [
+    "Bare-Z hydrogenic shell sum: no inter-electron screening (Z_eff open); over-binds He/Li at the eV scale. Nuclear side uses CODATA validation masses (CLASS-A acknowledged anchor). The CS-corrected alpha_EM tower exists only at float64 in pyhecke.constants (and its E_HARTREE_EV uses a rounded 511000.0 eV electron mass) — recorded as comparison only."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
