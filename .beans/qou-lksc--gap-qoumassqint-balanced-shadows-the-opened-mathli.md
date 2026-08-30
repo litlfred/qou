@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T08:41:28Z
-updated_at: 2026-08-30T08:42:07Z
+updated_at: 2026-08-30T09:22:43Z
 ---
 
 ## The defect
@@ -58,3 +58,45 @@ Both were in the BLOCKED set behind QIntegerCanonical until 68dc39ba729 landed. 
 never compiles, so no error was ever reported and `grep -c sorry` read 0. They surfaced only in
 the post-merge whole-corpus run: blocked 210 -> 3, error 1 -> 2. Nothing "regressed" — unblocking
 converted two invisible errors into two visible ones.
+
+
+## 2026-08-30 — fixed, and a THIRD defect in the same chain
+
+Both qInt shadowings fixed by full qualification (`QOU.MathlibExt.qInt`) plus a
+disambiguation note per file. PR #6140.
+
+Whole-corpus after that fix: up-to-date 2128, ok 210, **blocked 0**, error 1. The 179
+sorry-free-but-unverifiable modules are FULLY DRAINED.
+
+### The remaining error was the next layer down
+
+`QOU` — the root aggregator — was `blocked` in BOTH earlier runs (behind QIntegerCanonical,
+then behind QDiffProlongationBaseOperator) and only reached elaboration once those were
+fixed:
+
+    import QOU.Archimedean.ParticleKnots failed, environment already contains
+    'QOU.Archimedean.R_q' from QOU.Archimedean.GroundRing
+
+GroundRing and ParticleKnots both declared `abbrev R_q := LaurentPolynomial ℤ` — same name,
+same namespace, same body, neither importing the other. Each compiles ALONE; they collide
+only where something imports both, and the only thing that does is the root aggregator that
+nothing had been able to check. Fixed: ParticleKnots imports GroundRing and drops the
+duplicate.
+
+### What this sharpens
+
+The corpus was carrying THREE independent breaks stacked behind one another:
+
+    QIntegerCanonical  hid  the two qInt shadowings  hid  the R_q collision
+
+So the "179 sorry-free but unverifiable" figure UNDERSTATED the damage. A blocked cone hides
+not only unverified modules but **other errors**, and each fix reveals the next layer. Any
+future sweep of this class should expect to iterate, not to measure once.
+
+### A correction on my own diagnosis
+
+My first hand-run of QOU.lean reported `unknown module prefix 'UGB'` and I nearly recorded
+that as the defect. It was my LEAN_PATH omitting the sibling path-packages (ugb, fred2005)
+that `scripts/lean-direct-cone.sh` adds from `content/*/lean/.lake/build/lib/lean`. Wrong
+environment, not wrong code. Use the script, or copy its WHOLE path construction — the
+fetched-packages loop alone is not enough.
