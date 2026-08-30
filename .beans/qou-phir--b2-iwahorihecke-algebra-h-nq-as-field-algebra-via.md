@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T05:22:14Z
+updated_at: 2026-08-30T08:03:24Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -188,3 +188,47 @@ Two caveats on the basis, from the sibling and not contested: it is at `Q = q` w
 convention bridge is unproved** — do not cite the basis as applying to `HeckeAlgebra`
 until someone proves it. The field hypothesis is confined to the dimension squeeze;
 everything upstream holds over a commutative ring.
+
+
+## 2026-08-30 — the T_w basis TRANSPORTS: two presentations proved equal
+
+`QOU/BraidKnot/HeckeTypeAPresentationEquiv.lean`:
+
+```lean
+noncomputable def algEquiv :
+    IwahoriHeckeOfSn K q (n + 1) ≃ₐ[K] QOU.Hecke.IwahoriHecke K q n
+```
+
+sorry-free, `#print axioms` clean, generic `[CommRing K]`.
+
+This closes the gap #6053's author flagged and explicitly did **not** claim: their
+`finrank_eq_factorial` (`dim H = (n+1)!`) is proved against *their* presentation, and
+whether it reached mine was unproved. An `AlgEquiv` carries a basis and a finrank, so it
+now does — and through `IwahoriHeckeOfSn` it reaches the `HeckeGenerators` instance and
+the whole JM/full-twist arc.
+
+**It went through because the two are the same relations in different shape.** Both are
+`RingQuot (FreeAlgebra K (Fin n))`; theirs writes quadratic / braid / commute as three
+constructors with `Fin`-index side conditions, mine packages the last two into one
+`altProd` family indexed by the Coxeter matrix. Built from the two universal properties,
+so neither presentation is privileged.
+
+Two reconciliation details worth keeping:
+
+- **My family has a case theirs has no constructor for.** `altProd (σ i) (σ j) (M i j)`
+  at `i = j` gives `M i i = 1`, `altProd a b 1 = a`, so the diagonal is `rfl`. Theirs
+  omits it. It is the first case in every split.
+- **Their `commute` is one-sided** (`j + 2 ≤ i`), mine symmetric — so the far case
+  splits on `lt_or_gt_of_ne` and uses `σ_commute` one way and `.symm` the other.
+
+**Index offset:** theirs has `Fin n` generators and is `H_{n+1}(q)`; mine at `m` has
+`Fin (m-1)`. The match is `m = n+1`.
+
+**Not done:** the `finrank_eq_factorial` corollary itself. `TwBasisField` is on their
+branch, not main, so it cannot be written yet — `algEquiv` is the mechanism, the
+one-line corollary waits on their merge. Offered it to them since the basis is theirs.
+
+**This changes the read on `qou-b5gu` / `qou-img9`.** If presentations can be *proved
+equal* pairwise, "retire vs repair" is less pressing than it looked: the cost of an
+extra name is bounded by whether an equivalence exists, and here one did. That argues
+for proving more of these before deleting any.
