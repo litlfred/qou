@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:59:41.951600+00:00",
-  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
+  "computedAt": "2026-08-30T14:28:24.530932+00:00",
+  "commitSha": "1eeffe1b3ea2e4cfb8d7f9584bd095ebd17e17dd",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "23ee17b6aeef",
-  "scriptCommitSha": "fca08de7d29a585a3587ee0c1b06dd36991b8e89",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,19 +33,18 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py",
-      "--strict"
+      "computations/audits/q0_anchor_consistency_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 1125,
+      "Q0_OK": 1129,
       "Q0_AMBIGUOUS": 3,
       "Q0_AMBIGUOUS_NO_REASON": 13,
       "Q0_INDEPENDENT": 68,
@@ -53,7 +52,7 @@
       "Q0_COMPARISON": 5,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1637,
+      "Q0_ANCHOR_MISSING": 1646,
       "Q0_VALUE_MISSING": 3,
       "Q0_AUDIT_EXEMPT": 81,
       "Q0_PARSE_ERROR": 0,
@@ -987,6 +986,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-tritium-h9-at-qafe1ff9e-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-tritium-h9.witness.json",
           "detail": ""
         },
@@ -1364,6 +1367,10 @@
         },
         {
           "witness": "milnor-recursion-capcup-weight.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "milnor-recursion-forall-A-proof.witness.json",
           "detail": ""
         },
         {
@@ -3079,6 +3086,10 @@
           "detail": ""
         },
         {
+          "witness": "aggregator-family-exclusion.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "ak-lp-dual-quotient-probe.witness.json",
           "detail": ""
         },
@@ -3116,6 +3127,10 @@
         },
         {
           "witness": "b3-candidate-space-enumeration.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "b3-is-the-deuteron-deficit.witness.json",
           "detail": ""
         },
         {
@@ -3255,10 +3270,6 @@
           "detail": ""
         },
         {
-          "witness": "casimir-q-factorial-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "casimir-q-zeta-probe.witness.json",
           "detail": ""
         },
@@ -3375,6 +3386,10 @@
           "detail": ""
         },
         {
+          "witness": "fingerprint-screen-zero-parameter.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "finite-q-volume-conjecture-probe.witness.json",
           "detail": ""
         },
@@ -3396,6 +3411,10 @@
         },
         {
           "witness": "fourone-stokes-series-selfcheck.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "framework-near-unitary-channel.witness.json",
           "detail": ""
         },
         {
@@ -3784,6 +3803,18 @@
         },
         {
           "witness": "option-b-h3-h4-bratteli-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "pair-locality-shortfall.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "pairing-delta-overdetermination.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "pairing-parity-b3-sign.witness.json",
           "detail": ""
         },
         {
@@ -4476,6 +4507,10 @@
         },
         {
           "witness": "tritium-8-11-jones-markov-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "two-term-structure-degeneracy.witness.json",
           "detail": ""
         },
         {
@@ -9357,6 +9392,10 @@
           "detail": ""
         },
         {
+          "witness": "bond-rule-dashboard-comparison.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "borromean-trace-cross-validation.witness.json",
           "detail": ""
         },
@@ -9378,6 +9417,10 @@
         },
         {
           "witness": "casimir-macdonald-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "casimir-q-factorial-probe.witness.json",
           "detail": ""
         },
         {
@@ -9718,6 +9761,14 @@
         },
         {
           "witness": "lambda-scale-substrate-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "level3-bond-charge-rule.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "level3-em-channel-parity.witness.json",
           "detail": ""
         },
         {
