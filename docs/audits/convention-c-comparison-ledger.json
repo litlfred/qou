@@ -792,6 +792,14 @@
       "line_at_adjudication": 74,
       "scope": "z_of",
       "rationale": "Two-arm frame-comparison helper `z_of(q, convention)`: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe evaluates BOTH to show its 2/3 threshold verdict is convention-independent. The function's own docstring scopes the C arm: 'excised, computed here ONLY to show the threshold verdict is convention-independent'. Binding only z_D would delete the comparison the probe exists to make -- the verdict's convention-independence is the result. Instance of taxonomy ROW 17 (the D arm is a CALL to the canonical helper, not an inline re-spelling, so the co-binding test sees no D-shaped expression in scope); same shape as the already-adjudicated he4_body_order_shortfall_location_probe.z_of, which is row 17's worked example."
+    },
+    {
+      "path": "computations/qbeta/qbeta_utils.py",
+      "target": "<return>",
+      "source_hash": "621de16c7521",
+      "line_at_adjudication": 83,
+      "scope": "markov_parameter_convention_C",
+      "rationale": "This IS the sanctioned named convention-C source. `markov_parameter_convention_C` exists precisely so that a deliberate C consumer is greppable rather than inlining sqrt(q)/(1+q); flagging its own return as residual C would be flagging the guard for doing its job, and migrating it to z_D would make the function a liar to every caller that asks for C by name. The registry registers this symbol under `evaluators.z` as C so R9 asserts z_C numerically on every validator run. Newly VISIBLE (not newly introduced) on 2026-08-30: the helper was mpmath-only and raised TypeError on a sympy Symbol, so symbolic consumers had to inline C and were invisible to the guard (taxonomy row 21); adding the sympy branch is what put this return in the audit's view. The mpmath arm at the same site is the identical object in the other numeric tower."
     }
   ]
 }
