@@ -1,0 +1,214 @@
+{
+  "schema": "lean-duplicate-fqn/v1",
+  "note": "Ratchet: this list drains, never grows.",
+  "pairs": [
+    {
+      "fqn": "QOU.Archimedean.BraidWord",
+      "modules": [
+        "QOU.Archimedean.HeckeRep",
+        "QOU.Archimedean.NuclearGroebnerReduction"
+      ],
+      "lean_error": "import QOU.Archimedean.NuclearGroebnerReduction failed, environment already contains 'QOU.Archimedean.BraidWord' from QOU.Archimedean.HeckeRep"
+    },
+    {
+      "fqn": "QOU.Archimedean.T_nn",
+      "modules": [
+        "QOU.Archimedean.TransferMatrix",
+        "QOU.Archimedean.beta_decay_transfer_matrix"
+      ],
+      "lean_error": "import QOU.Archimedean.beta_decay_transfer_matrix failed, environment already contains 'QOU.Archimedean.T_nn' from QOU.Archimedean.TransferMatrix"
+    },
+    {
+      "fqn": "QOU.Archimedean.T_pp",
+      "modules": [
+        "QOU.Archimedean.TransferMatrix",
+        "QOU.Archimedean.beta_decay_transfer_matrix"
+      ],
+      "lean_error": "import QOU.Archimedean.beta_decay_transfer_matrix failed, environment already contains 'QOU.Archimedean.T_nn' from QOU.Archimedean.TransferMatrix"
+    },
+    {
+      "fqn": "QOU.BraidKnot.heckeH",
+      "modules": [
+        "QOU.BraidKnot.HoefsmitV21CosSymmetrization",
+        "QOU.BraidKnot.chirality_frobenius_self_pairing"
+      ],
+      "lean_error": "import QOU.BraidKnot.chirality_frobenius_self_pairing failed, environment already contains 'QOU.BraidKnot.heckeH' from QOU.BraidKnot.HoefsmitV21CosSymmetrization"
+    },
+    {
+      "fqn": "QOU.BraidKnot.qFact",
+      "modules": [
+        "QOU.BraidKnot.H3HeckeIdempotents",
+        "QOU.BraidKnot.QBetaWenzlDecomposition"
+      ],
+      "lean_error": "import QOU.BraidKnot.QBetaWenzlDecomposition failed, environment already contains 'QOU.BraidKnot.qFact' from QOU.BraidKnot.H3HeckeIdempotents"
+    },
+    {
+      "fqn": "QOU.BraidKnot.qInt",
+      "modules": [
+        "QOU.BraidKnot.ZeqNRhoCorrection",
+        "QOU.BraidKnot.wedderburn_trace_identity"
+      ],
+      "lean_error": "import QOU.BraidKnot.wedderburn_trace_identity failed, environment already contains 'QOU.BraidKnot.qInt' from QOU.BraidKnot.ZeqNRhoCorrection"
+    },
+    {
+      "fqn": "QOU.BraidKnot.writhe",
+      "modules": [
+        "QOU.BraidKnot.AlphaShiftOneDimChannel",
+        "QOU.BraidKnot.DeltaLambdaExponentKeystone"
+      ],
+      "lean_error": "import QOU.BraidKnot.DeltaLambdaExponentKeystone failed, environment already contains 'QOU.BraidKnot.writhe' from QOU.BraidKnot.AlphaShiftOneDimChannel"
+    },
+    {
+      "fqn": "QOU.BraidsAndKnots.chi21_borromean",
+      "modules": [
+        "QOU.BraidsAndKnots.BorromeanChiPerRep",
+        "QOU.BraidsAndKnots.BorromeanFrobeniusReconstruction"
+      ],
+      "lean_error": "import QOU.BraidsAndKnots.BorromeanFrobeniusReconstruction failed, environment already contains 'QOU.BraidsAndKnots.chi21_borromean' from QOU.BraidsAndKnots.BorromeanChiPerRep"
+    },
+    {
+      "fqn": "QOU.BraidsAndKnots.qFactorial",
+      "modules": [
+        "QOU.BraidsAndKnots.QSchurYLambdaClosedForm",
+        "QOU.BraidsAndKnots.YLambdaQSchur"
+      ],
+      "lean_error": "import QOU.BraidsAndKnots.YLambdaQSchur failed, environment already contains 'QOU.BraidsAndKnots.qFactorial' from QOU.BraidsAndKnots.QSchurYLambdaClosedForm"
+    },
+    {
+      "fqn": "QOU.BringsSurface.eulerChar",
+      "modules": [
+        "QOU.BringsSurface",
+        "QOU.BringsSurface.EulerCharacteristicSix"
+      ],
+      "lean_error": "import QOU.BringsSurface.EulerCharacteristicSix failed, environment already contains 'QOU.BringsSurface.eulerChar' from QOU.BringsSurface"
+    },
+    {
+      "fqn": "QOU.HyperellipticQuintic.HyperellipticQuintic",
+      "modules": [
+        "QOU.HyperellipticQuintic.ScratchZeta5",
+        "QOU.HyperellipticQuintic.zeta5_residue_monodromy"
+      ],
+      "lean_error": "import QOU.HyperellipticQuintic.zeta5_residue_monodromy failed, environment already contains 'QOU.HyperellipticQuintic.Zeta5MonodromyContext.noConfusion' from QOU.HyperellipticQuintic.ScratchZeta5"
+    },
+    {
+      "fqn": "QOU.HyperellipticQuintic.gauss_sum_5",
+      "modules": [
+        "QOU.HyperellipticQuintic.ScratchZeta5",
+        "QOU.HyperellipticQuintic.zeta5_residue_monodromy"
+      ],
+      "lean_error": "import QOU.HyperellipticQuintic.zeta5_residue_monodromy failed, environment already contains 'QOU.HyperellipticQuintic.Zeta5MonodromyContext.noConfusion' from QOU.HyperellipticQuintic.ScratchZeta5"
+    },
+    {
+      "fqn": "QOU.HyperellipticQuintic.zeta5",
+      "modules": [
+        "QOU.HyperellipticQuintic.ScratchZeta5",
+        "QOU.HyperellipticQuintic.zeta5_residue_monodromy"
+      ],
+      "lean_error": "import QOU.HyperellipticQuintic.zeta5_residue_monodromy failed, environment already contains 'QOU.HyperellipticQuintic.Zeta5MonodromyContext.noConfusion' from QOU.HyperellipticQuintic.ScratchZeta5"
+    },
+    {
+      "fqn": "QOU.MassTheory.MagnitudeCloses",
+      "modules": [
+        "QOU.MassTheory.BorromeanMagnitudeLift",
+        "QOU.MassTheory.BraneTowerLevelAmplitude"
+      ],
+      "lean_error": "import QOU.MassTheory.BraneTowerLevelAmplitude failed, environment already contains 'QOU.MassTheory.MagnitudeCloses' from QOU.MassTheory.BorromeanMagnitudeLift"
+    },
+    {
+      "fqn": "QOU.MassTheory.heckeH",
+      "modules": [
+        "QOU.MassTheory.AveragedLetterSpectrum",
+        "QOU.MassTheory.PnInterfaceBarStructure"
+      ],
+      "lean_error": "import QOU.MassTheory.PnInterfaceBarStructure failed, environment already contains 'QOU.MassTheory.heckeH' from QOU.MassTheory.AveragedLetterSpectrum"
+    },
+    {
+      "fqn": "QOU.MassTheory.levelMagnitude",
+      "modules": [
+        "QOU.MassTheory.BorromeanMagnitudeLift",
+        "QOU.MassTheory.BraneTowerLevelAmplitude"
+      ],
+      "lean_error": "import QOU.MassTheory.BraneTowerLevelAmplitude failed, environment already contains 'QOU.MassTheory.MagnitudeCloses' from QOU.MassTheory.BorromeanMagnitudeLift"
+    },
+    {
+      "fqn": "QOU.Mathlib.IsAddableCell",
+      "modules": [
+        "QOU.Mathlib.YoungDiagramAddCell",
+        "QOU.Mathlib.YoungDiagramAddable"
+      ],
+      "lean_error": "import QOU.Mathlib.YoungDiagramAddable failed, environment already contains 'QOU.Mathlib.mem_addCell._simp_1' from QOU.Mathlib.YoungDiagramAddCell"
+    },
+    {
+      "fqn": "QOU.Mathlib.addCell",
+      "modules": [
+        "QOU.Mathlib.YoungDiagramAddCell",
+        "QOU.Mathlib.YoungDiagramAddable"
+      ],
+      "lean_error": "import QOU.Mathlib.YoungDiagramAddable failed, environment already contains 'QOU.Mathlib.mem_addCell._simp_1' from QOU.Mathlib.YoungDiagramAddCell"
+    },
+    {
+      "fqn": "QOU.QBeta.zC",
+      "modules": [
+        "QOU.QBeta.DecayLadderConventionDPositivity",
+        "QOU.QBeta.LadderPhaseMirrorCovariance"
+      ],
+      "lean_error": "import QOU.QBeta.LadderPhaseMirrorCovariance failed, environment already contains 'QOU.QBeta.zC' from QOU.QBeta.DecayLadderConventionDPositivity"
+    },
+    {
+      "fqn": "QOU.QBeta.zD",
+      "modules": [
+        "QOU.QBeta.DecayLadderConventionDPositivity",
+        "QOU.QBeta.LadderParityReflection"
+      ],
+      "lean_error": "import QOU.QBeta.LadderParityReflection failed, environment already contains 'QOU.QBeta.zD' from QOU.QBeta.DecayLadderConventionDPositivity"
+    },
+    {
+      "fqn": "QOU.QBeta.zD",
+      "modules": [
+        "QOU.QBeta.DecayLadderConventionDPositivity",
+        "QOU.QBeta.LadderPhaseMirrorCovariance"
+      ],
+      "lean_error": "import QOU.QBeta.LadderPhaseMirrorCovariance failed, environment already contains 'QOU.QBeta.zC' from QOU.QBeta.DecayLadderConventionDPositivity"
+    },
+    {
+      "fqn": "QOU.QBeta.zD",
+      "modules": [
+        "QOU.QBeta.LadderParityReflection",
+        "QOU.QBeta.LadderPhaseMirrorCovariance"
+      ],
+      "lean_error": "import QOU.QBeta.LadderPhaseMirrorCovariance failed, environment already contains 'QOU.QBeta.zD' from QOU.QBeta.LadderParityReflection"
+    },
+    {
+      "fqn": "QOU.Substrate.ProtonMassSubstrateIdentity.m_e_codata",
+      "modules": [
+        "QOU.Substrate.ProtonMassSubstrateIdentity",
+        "QOU.scratch_pmass"
+      ],
+      "lean_error": "import QOU.scratch_pmass failed, environment already contains 'QOU.Substrate.ProtonMassSubstrateIdentity.m_mu_codata' from QOU.Substrate.ProtonMassSubstrateIdentity"
+    },
+    {
+      "fqn": "QOU.Substrate.ProtonMassSubstrateIdentity.m_mu_codata",
+      "modules": [
+        "QOU.Substrate.ProtonMassSubstrateIdentity",
+        "QOU.scratch_pmass"
+      ],
+      "lean_error": "import QOU.scratch_pmass failed, environment already contains 'QOU.Substrate.ProtonMassSubstrateIdentity.m_mu_codata' from QOU.Substrate.ProtonMassSubstrateIdentity"
+    },
+    {
+      "fqn": "QOU.Substrate.ProtonMassSubstrateIdentity.m_p_codata",
+      "modules": [
+        "QOU.Substrate.ProtonMassSubstrateIdentity",
+        "QOU.scratch_pmass"
+      ],
+      "lean_error": "import QOU.scratch_pmass failed, environment already contains 'QOU.Substrate.ProtonMassSubstrateIdentity.m_mu_codata' from QOU.Substrate.ProtonMassSubstrateIdentity"
+    },
+    {
+      "fqn": "QOU.Substrate.ProtonMassSubstrateIdentity.m_p_predicted",
+      "modules": [
+        "QOU.Substrate.ProtonMassSubstrateIdentity",
+        "QOU.scratch_pmass"
+      ],
+      "lean_error": "import QOU.scratch_pmass failed, environment already contains 'QOU.Substrate.ProtonMassSubstrateIdentity.m_mu_codata' from QOU.Substrate.ProtonMassSubstrateIdentity"
+    }
+  ]
+}
