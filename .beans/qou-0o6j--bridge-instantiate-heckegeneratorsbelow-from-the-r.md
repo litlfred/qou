@@ -1,11 +1,11 @@
 ---
 # qou-0o6j
 title: 'Bridge: instantiate HeckeGeneratorsBelow from the real H_n(q) — promotes the whole JM/twist arc from ''any ring'' to ''the Hecke algebra'''
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:37:12Z
-updated_at: 2026-08-29T18:59:20Z
+updated_at: 2026-08-30T02:55:56Z
 ---
 
 ## Why this exists
@@ -149,3 +149,29 @@ Side observation, independent of their route: the two Markov parameters are the
 same rational shape `x^k/(x²+1)` — C is `u/(u²+1)` at `u = √q` (`u²+1 = q+1`,
 which is why the denominators look unlike), D is `q³/(q²+1)` at `x = q`. The
 `√q` is carried by the choice of variable, not by the shape.
+
+
+---
+
+## CLOSED 2026-08-30 — and closed STRONGER than this bean asked
+
+The bean asks for a `HeckeGeneratorsBelow R A q n` instance. What landed is the
+**unbounded** `HeckeGenerators R (TypeAHecke R q) q`
+(`QOU/BraidKnot/HeckeTypeAInstance.lean::typeAHeckeGenerators`), from which every
+`HeckeGeneratorsBelow n` follows by restriction via the existing
+`HeckeGenerators.toBelow`.
+
+The move that bought the stronger form: **index the type-A Coxeter matrix by `ℕ`,
+not by `Fin (n-1)`.** `typeAMatrix i j` is 3 for adjacent, 2 for distant, 1 on the
+diagonal, over all of `ℕ`. The relations then hold at every index, so one object
+serves every `n` at once and all the `Fin` bookkeeping disappears.
+
+Obstacle 1 (the corpus had no H_n(q) with braid relations) is gone: see the
+`qou-phir` note. Obstacle 2 was already resolved and is recorded above.
+
+`typeA_jmRaw_comm` is the payoff in one line — Jucys–Murphy elements commute **in
+the type-A Hecke algebra**, not merely in a ring that happens to carry the
+relations. The rest of the arc composes the same way.
+
+Verified: `lean`-direct exit 0, no warnings; `#print axioms` on all ten new
+declarations shows no `sorryAx`.
