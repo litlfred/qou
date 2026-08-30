@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T02:45:43Z
+updated_at: 2026-08-30T02:58:22Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -63,3 +63,16 @@ then the OPEN prize is the STRUCTURAL derivation of the -h^2(h^2+2) factor from 
 strand-addition (Jones-Wenzl) property, which would prove MilnorExactOrderConjecture
 NONVANISHING for all A by induction from A=3 (no weight-system bridge needed). Still no
 instance fabricated; recursion is measured-exact at 3 pts, not yet derived.
+
+
+
+--- A=6 confirms (4 exact points) + reduction Lean (2026-08-30) ---
+A=6 also holds on the FULL rational function: D_6=-h^10(h^2+2)^3(h^2+3)/(h^2+4)=-h^2(h^2+2)*D_5.
+So D_{A+1}=-h^2(h^2+2)D_A verified EXACT at A=3,4,5,6 (whole function, not just leading coeff).
+Closed form: D_A=(-1)^(A-3)h^(2(A-1))(h^2+2)^(A-3)(h^2+3)/(h^2+4). New Lean file
+BrunnianDeficitRecursion.lean (verifying): PROVES the recursion => tight slice for ALL A>=3
+(cofactor(0)=(3/4)(-2)^(A-3)!=0), via a BrunnianDeficitRecursion conjecture CLASS (no instance).
+This REDUCES MilnorExactOrderConjecture nonvanishing from 'needs weight-system bridge' to 'the
+deficit obeys this 1-line recursion' (4-pt verified). REMAINING OPEN (the instance): structural
+TL/Jones-Wenzl derivation of the -h^2(h^2+2)=-h^2*(q^2+q^-2) strand-addition factor. Not
+fabricated; conditional result only.
