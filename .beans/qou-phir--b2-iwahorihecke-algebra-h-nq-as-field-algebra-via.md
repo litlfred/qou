@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T15:34:28Z
+updated_at: 2026-08-30T17:50:14Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -519,3 +519,74 @@ to be proved; here only one does.
 `SpechtStandardBasisCore` is 170 KB. The `q = 1` triangularity took that much. The port is a real
 tranche, not a session's tail — do not start it expecting a quick win, and do not pad it with a
 `sorry`-laden scaffold if it does not close.
+
+
+---
+
+## 2026-08-30, later — the (C1) remainder is SHARPER than #6281 said: no machinery port at all
+
+#6281 said (C1) is "a port of `standardPolytabloid_triangular`". Measured, that **overstates the
+work**: the two load-bearing levers are **fully generic** and already sorry-free, so nothing needs
+porting. Only three field proofs remain, at named instantiations.
+
+### The two levers, verified generic by `#check` and axiom-clean by `#print axioms`
+
+```
+QOU.BraidKnot.SpechtStandardBasis.Triangular.linearIndependent :
+  ∀ {ι α R} [LinearOrder α] [CommRing R] {v : ι → α →₀ R} {lead : ι → α},
+    Triangular v lead → LinearIndependent R v
+```
+
+No Specht, no partition, no `q = 1` — it is a statement about an arbitrary `Finsupp` family over an
+arbitrary `CommRing`. Its own docstring calls it *"the lemma the pinned Mathlib lacks"* and *"a
+natural Mathlib-upstream candidate"*.
+
+```
+QOU.BraidKnot.SpechtDominanceCore.exists_linearOrder_of_partialOrder :
+  ∀ {α} [Fintype α] [DecidableEq α] (r) [DecidableRel r],
+    reflexive → transitive → antisymmetric → ∃ _ : LinearOrder α, ∀ a b, r a b → a ≤ b
+```
+
+Also generic, also filling a Mathlib gap (no `Szpilrajn` / `LinearExtension` at the pin). This
+manufactures the linear order the `Triangular` structure requires **from** a partial order — so the
+dominance order does not have to be linearised by hand.
+
+Both: `propext / Classical.choice / Quot.sound`, no `sorryAx`.
+
+### What actually remains — three goals, not a tranche
+
+Instantiate `Triangular v lead` with
+
+| slot | value |
+|---|---|
+| `ι` | `MurphyIndex (n+1)` (#6239) |
+| `α` | `Equiv.Perm (Fin (n+1))` — `Fintype` + `DecidableEq` ✓, linear order via the lever above |
+| `R` | `K` |
+| `v i` | `(basisTwOfField K q n).repr (murphyM K q n h i.s i.t)` |
+| `lead` | the leading permutation of `m_{st}` — **the one genuinely new object** |
+
+and prove the three fields:
+
+1. **`lead_inj`** — distinct tableau pairs have distinct leading permutations. The `q = 1` analogue
+   is `leadTab_injective`, proved via `leadTab_injective_core`, `rowSet_eq_of_rowPattern_eq` and
+   `entry_eq_orderEmbOfFin`; the argument is about **tableau combinatorics, not about `q`**, so it
+   should transfer with the index re-mapping rather than be re-derived.
+2. **`diag_unit`** — the diagonal coefficient is a unit. `repr_murphySum_one_of_subgroup` (#6285)
+   gives coefficient **exactly 1** at `w = 1` for `x_λ`; what remains is carrying it through the
+   two `T_{d(·)}` conjugations.
+3. **`supp_le`** — the off-diagonal support is bounded by `lead` in the dominance order. **This is
+   the real remaining work**, and the only one with no `q = 1` shortcut, because it is where `q`
+   actually enters: the `rsFun` down-branch contributes `(q−1)T_v + qT_{vs}` rather than a single
+   term, so the support argument is genuinely `q`-deformed.
+
+Then `Triangular.linearIndependent` gives independence, and `murphyIndex_card` (#6239) upgrades it
+to a basis — **spanning and Garnir straightening never enter**.
+
+### Correcting my own framing from #6281
+
+#6281 called the whole thing "a port ... a real tranche, not a session's tail", citing
+`SpechtStandardBasisCore`'s 170 KB. That size is mostly the **spanning** half (Garnir straightening)
+plus the generic levers — and `murphyIndex_card` makes spanning unnecessary while the levers are
+reusable as-is. So the estimate was too pessimistic, in a way that would have discouraged the next
+agent from starting. The honest scope is: **one new definition (`lead`), two transferable proofs,
+and one genuinely new `q`-deformed support argument.**
