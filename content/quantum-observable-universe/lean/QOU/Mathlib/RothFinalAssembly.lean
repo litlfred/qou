@@ -30,6 +30,9 @@ which is what `slack_pos` says.
 import QOU.Mathlib.RothIntegerChain
 import QOU.Mathlib.RothNormalisation
 import QOU.Mathlib.RothSiegelBound
+import Mathlib.RingTheory.Localization.Integral
+import Mathlib.RingTheory.Algebraic.Integral
+import Mathlib.FieldTheory.IntermediateField.Adjoin.Basic
 
 open NumberField Finset
 
@@ -857,5 +860,60 @@ theorem not_approximable_den_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
     (approximable_height_of_den hB0 hBx (half_pos hε) (by linarith) happrox)
 
 end Scaling
+
+section Algebraic
+
+open IntermediateField
+
+/-- **Roth's theorem, for every real algebraic number.**
+
+`|x − p/q| ≤ q^{−(2+ε)}` has no solutions of unbounded denominator, for any real algebraic `x` and
+any `ε > 0`.
+
+Everything analytic is already done — `not_approximable_den_of_nsmul_eq` handles both exponent
+conversions.  What is left is **construction**, and it is the last step of the arc:
+
+* `IsFractionRing.isAlgebraic_iff ℤ ℚ ℝ` turns `IsAlgebraic ℚ x` into `IsAlgebraic ℤ x` by clearing
+  denominators, and `exists_integral_multiple` then produces a non-zero `c : ℤ` with `c • x`
+  integral.  The sign is discarded by passing to `c.natAbs`, since integrality survives negation.
+* `ℚ⟮y⟯ ⊆ ℝ` for `y = |c|·x` is a number field: finite-dimensional because `y` is integral over `ℚ`,
+  and of characteristic zero because it sits inside `ℝ`.
+* The real embedding is the inclusion, and it is injective because it is a ring map out of a field —
+  which is also what lets `IsIntegral.tower_bot` carry integrality *down* from `ℝ` to `ℚ⟮y⟯`, the
+  one step that does not go the obvious way.
+
+Note that `y` need not be primitive for anything: `ℚ⟮y⟯` is used only as *some* number field
+containing `y`, never as `ℚ(x)`. -/
+theorem not_approximable_of_isAlgebraic {x : ℝ} (hx : IsAlgebraic ℚ x) {ε : ℝ} (hε : 0 < ε) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := by
+  classical
+  -- an integer multiple of `x` that is an algebraic integer
+  have hxZ : IsAlgebraic ℤ x := (IsFractionRing.isAlgebraic_iff ℤ ℚ ℝ).mpr hx
+  obtain ⟨c, hc0, hcint⟩ := hxZ.exists_integral_multiple
+  have hn : 0 < c.natAbs := Int.natAbs_pos.mpr hc0
+  have hcast : ((c.natAbs : ℕ) : ℝ) = |(c : ℝ)| := by rw [Int.cast_natAbs, Int.cast_abs]
+  have hyint : IsIntegral ℤ (((c.natAbs : ℕ) : ℝ) * x) := by
+    rw [hcast]
+    rcases abs_choice (c : ℝ) with h | h
+    · rw [h, ← zsmul_eq_mul]; exact hcint
+    · have he : |(c : ℝ)| * x = -(c • x) := by rw [h, zsmul_eq_mul]; ring
+      rw [he]; exact hcint.neg
+  -- the number field it generates inside `ℝ`
+  have hyQ : IsIntegral ℚ (((c.natAbs : ℕ) : ℝ) * x) := hyint.tower_top
+  haveI : FiniteDimensional ℚ ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ := adjoin.finiteDimensional hyQ
+  haveI : NumberField ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ := ⟨⟩
+  have hymem : (((c.natAbs : ℕ) : ℝ) * x) ∈ ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ :=
+    mem_adjoin_simple_self ℚ _
+  have hinj : Function.Injective (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ) :=
+    (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ).injective
+  have hα₀ : IsIntegral ℤ
+      (⟨((c.natAbs : ℕ) : ℝ) * x, hymem⟩ : ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯) :=
+    IsIntegral.tower_bot hinj hyint
+  exact not_approximable_den_of_nsmul_eq
+    (K := ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯) ⟨⟨_, hymem⟩, hα₀⟩
+    (algebraMap ℚ⟮((c.natAbs : ℕ) : ℝ) * x⟯ ℝ) hn rfl (abs_nonneg x) le_rfl hε
+
+end Algebraic
 
 end MvPolynomial
