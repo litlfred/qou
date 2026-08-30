@@ -44,12 +44,27 @@ filter `centredWeight ≤ -lam` is a *weaker* condition than the square bound it
 against.  Found by `nlinarith` refusing the step, which is the cheapest way this arc has yet
 found a statement-stronger-than-the-truth defect.
 
+## Part 3 — the system is underdetermined, and how large `m` must be
+
+`card_lt_card_idxBox_of_eps`: at index threshold `m(½ − ε)` the vanishing conditions are strictly
+fewer than the coefficients as soon as `m > 1/(4ε²)`.  That is Roth's "take `m` sufficiently
+large" with the bound explicit, and it is what the variance computation was for — the threshold
+scales with `m` while the standard deviation scales with `√m`.
+
+⚠ **The degree of `α` does not appear.**  I expected it to: classically each `K`-linear equation
+is `deg α` equations over `ℚ`, so the count should be `deg α · #conditions < #unknowns`.  But
+Mathlib's `exists_ne_zero_int_vec_house_le` takes `p < q` with `p`, `q` the **`K`-counts**, and
+discharges the `ℚ`-counts `p·h`, `q·h` internally (`h = finrank ℚ K`).  Since `p·h < q·h ⟺ p < q`,
+the degree cancels out of the counting condition entirely.  It re-enters only through the
+`house` bound on the matrix entries — which is the piece still missing, so this is a
+simplification of the *counting*, not of the theorem.
+
 ## What remains
 
-* the `house` bound on `translateMatrix`, which does need the closed form;
+* the `house` bound on `translateMatrix`, which does need the closed form — and is where
+  `deg α` actually enters;
 * the bridge from `Fin m → ℕ` (used here) to `σ →₀ ℕ` (used by `index`);
-* the count of *equations* — `deg α` per vanishing condition — against unknowns, and the
-  application of Siegel.
+* the application of Siegel itself, now that `p < q` is available.
 
 ⚠ Not Mathlib-only: imports `QOU/Mathlib/RothGammaProducer.lean`.
 -/
@@ -300,6 +315,66 @@ theorem card_centredWeight_le_witness :
 
 /-- …and the box in that witness really does have two elements, so the count is not `0 ≤ 0`. -/
 theorem card_idxBox_witness : (idxBox (fun _ : Fin 1 => 1)).card = 2 := by
+  rw [card_idxBox]; simp
+
+
+theorem card_idxBox_pos {m : ℕ} (r : Fin m → ℕ) : 0 < (idxBox r).card := by
+  rw [card_idxBox]
+  exact Finset.prod_pos fun i _ => Nat.succ_pos _
+
+/-- **The system is underdetermined.**  Fewer vanishing conditions than coefficients, as soon
+as `m < 4λ²`. -/
+theorem card_lt_card_idxBox {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    {lam : ℚ} (hlam : 0 < lam) (hm : (m : ℚ) < 4 * lam ^ 2) :
+    ((idxBox r).filter (fun x => centredWeight r x ≤ -lam)).card < (idxBox r).card := by
+  classical
+  by_contra hcon
+  push_neg at hcon
+  have hsub : ((idxBox r).filter (fun x => centredWeight r x ≤ -lam)).card ≤ (idxBox r).card :=
+    Finset.card_filter_le _ _
+  have heq : ((idxBox r).filter (fun x => centredWeight r x ≤ -lam)).card = (idxBox r).card :=
+    le_antisymm hsub hcon
+  have hQpos : (0 : ℚ) < ((idxBox r).card : ℚ) := by
+    exact_mod_cast card_idxBox_pos r
+  have hch := card_centredWeight_le r hr hlam.le
+  rw [heq] at hch
+  nlinarith [hQpos, hch, hm]
+
+/-- **Where `m` gets chosen.**  For an index threshold `m(½ − ε)` — i.e. `centredWeight ≤ −εm` —
+the system is underdetermined as soon as `m > 1/(4ε²)`.
+
+This is Roth's "take `m` sufficiently large", with the bound made explicit, and it is the whole
+purpose of the variance computation: the threshold scales with `m` while the standard deviation
+scales with `√m`, so the fraction below it goes to zero. -/
+theorem card_lt_card_idxBox_of_eps {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    {ε : ℚ} (hε : 0 < ε) (hm : 1 < 4 * ε ^ 2 * (m : ℚ)) :
+    ((idxBox r).filter (fun x => centredWeight r x ≤ -(ε * (m : ℚ)))).card
+      < (idxBox r).card := by
+  have hmpos : (0 : ℚ) < (m : ℚ) := by nlinarith [sq_nonneg ε]
+  refine card_lt_card_idxBox r hr (by positivity) ?_
+  nlinarith [hmpos, hm]
+
+/-- **Non-vacuity of the `ε` form**, at `ε = ¼`, `m = 5`, `r ≡ 1`: the threshold `1 < 4ε²m`
+reads `1 < 5/4`.
+
+The box has `2⁵ = 32` points (`card_idxBox_five_witness`, checked).  The filtered set is the
+multi-indices with `∑ x_h ≤ 1`, since `centredWeight x = ∑ x_h − 5/2` and the threshold is
+`−5/4`; that is **six** of them, and the strict inequality is not a near miss.
+
+⚠ The `6` is a hand count, **not** checked by the build: `decide` gets stuck on this goal because
+the filter's `Decidable` instance does not reduce (it goes through `Rat.instDecidableLe` and then
+`Finset.filter` over `Fintype.piFinset` and stalls).  Recorded rather than quietly asserted —
+a number in a docstring that the build has no opinion about is what corrections 17 and 24 in
+this arc were both about. -/
+theorem card_lt_card_idxBox_of_eps_witness :
+    ((idxBox (fun _ : Fin 5 => 1)).filter
+        (fun x => centredWeight (fun _ : Fin 5 => 1) x ≤ -((1 / 4 : ℚ) * ((5 : ℕ) : ℚ)))).card
+      < (idxBox (fun _ : Fin 5 => 1)).card :=
+  card_lt_card_idxBox_of_eps _ (fun _ => one_ne_zero) (by norm_num) (by norm_num)
+
+/-- The box in the witness above really does have `2⁵ = 32` points, so the strict inequality is
+not `0 < 0`.  ⚠ This part *is* checked; the count of the filtered set is not — see above. -/
+theorem card_idxBox_five_witness : (idxBox (fun _ : Fin 5 => 1)).card = 32 := by
   rw [card_idxBox]; simp
 
 end MvPolynomial

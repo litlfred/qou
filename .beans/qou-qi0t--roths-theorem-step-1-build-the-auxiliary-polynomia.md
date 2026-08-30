@@ -107,3 +107,39 @@ arc: no reading, no counterexample construction, just a tactic declining.
 
 (2) is plumbing. (1) is a real lemma. (3) is where `m` gets chosen, and the counting above is
 what makes the choice possible.
+
+## Part 3 — the system is underdetermined, and `deg α` is not in the count
+
+`card_lt_card_idxBox_of_eps`: at index threshold `m(½ − ε)` the vanishing conditions are strictly
+fewer than the coefficients as soon as **`m > 1/(4ε²)`**. That is Roth's "take `m` sufficiently
+large" with the bound explicit, and it is what the variance computation bought — the threshold
+scales with `m` while the standard deviation scales with `√m`.
+
+### The degree cancels out of the counting
+
+I expected `deg α` to appear: classically each `K`-linear equation is `deg α` equations over `ℚ`,
+so the count should read `deg α · #conditions < #unknowns`. It does not.
+`exists_ne_zero_int_vec_house_le` takes `p < q` with `p`, `q` the **`K`-counts** and discharges
+the `ℚ`-counts `p·h`, `q·h` internally (`h = finrank ℚ K`); since `p·h < q·h ⟺ p < q`, the degree
+cancels.
+
+⚠ This is a simplification of the **counting**, not of the theorem. `deg α` re-enters through the
+`house` bound on the matrix entries, which is still missing. Worth stating precisely because
+"the degree dropped out" is the kind of observation that reads as a discovery and is usually a
+misreading — here it is a fact about where Mathlib draws the interface, and it moves work rather
+than removing it.
+
+### A number I did not assert
+
+The `ε = ¼, m = 5` witness has a box of `2⁵ = 32` points (`card_idxBox_five_witness`, checked)
+and a filtered set of six. The **six is a hand count and the build has no opinion about it** —
+`decide` stalls on the filter's `Decidable` instance, which goes through `Rat.instDecidableLe`
+and `Fintype.piFinset` and does not reduce. Recorded in the docstring as unverified rather than
+stated flatly. Corrections 17 and 24 in this arc were both docstring numbers nothing checked.
+
+## Remaining, re-ranked
+
+1. **the `house` bound on `translateMatrix`** — needs the multivariate binomial closed form, and
+   is where `deg α` actually enters. Now the only mathematical gap.
+2. the `Fin m → ℕ` ↔ `σ →₀ ℕ` bridge — plumbing.
+3. the application of Siegel, now that `p < q` is available.
