@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-30T03:27:23Z
+updated_at: 2026-08-30T08:40:35Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -501,3 +501,39 @@ which would have conflated my drains with main's movement.
 **Quote the per-witness attribution, not a whole-corpus difference.** This
 branch merged 68 commits of main mid-session; a before/after of the global
 figure cannot separate the two.
+
+
+## 2026-08-30 — status at PR #6060 rebase onto `a917f3da1e`
+
+**Done:** Job 3 re-measure reproduced `A=304 / B=284 / C=5` exactly. 20 fields
+drained over 8 producers, all 17 → 60 digits, attribution measured per-witness
+against a `git worktree` of the exact base.
+
+**The bean's work order was backwards and is corrected in the PR body.** The 40
+producers with an inline `computed=float(...)` are the *mechanically* easiest and
+the *least* rewarding: 11 tried → 0 KEEP, against 9 tried → 7 KEEP for the
+`x = float(EXPR)` … `computed=x` local-binding shape. Mechanical, not
+statistical — an inline cast is what you write when wrapping a solver's float; a
+local binding is what you write when carrying an `mpf`. **Work the local-binding
+shape first.**
+
+**Bucket A overstates what is drainable.** Four producers call
+`set_compute_dps()` (so the static classifier files them A) while the asserted
+value comes from a solver, a helper, or a float accumulation. `_precision.fmt`
+short-circuits a Python `float` to `str()`, so the prescribed repair changes the
+JSON type and nothing else. `computations/audits/assertion_value_provenance_audit.py`
+predicts this statically — 34 producers / 64 fields of the 152 bucket-A — but it
+is call-site-local and cannot see a float64 produced inside a helper.
+
+**Remaining, unchanged:**
+
+1. **32 q-dependent producers / 209 fields** — each forces a proton-vs-muon
+   anchor choice. Owner decision, 32 times. Untouched.
+2. **84 literal `expected` fields across 69 producers** — mechanically safe
+   fidelity fix, needs 69 producer re-runs.
+
+**Do not run item 2 in a weaker container.** Same constraint recorded on
+`qou-3e5m`: `save()`'s environment guard fires only on the preserve path
+(`_witnesses_substantively_equal`), and a drain is substantive by construction,
+so the rewrite path takes a downgraded `environment` block under a warn-only
+check. Match python/mpmath/clarabel to what the target witnesses record first.
