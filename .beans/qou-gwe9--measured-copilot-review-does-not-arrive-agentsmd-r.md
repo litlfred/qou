@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-28T15:06:25Z
+updated_at: 2026-08-30T07:34:37Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -133,3 +133,34 @@ Residual fixed here: the banner HEADING still read "Two of the three
 original gates no longer exist" while its own table and closing paragraph
 both say three. Corrected -- that heading is the line a skimming agent
 reads.
+
+
+## 2026-08-30 — CONTRADICTED. Copilot DID review, on PR #6108.
+
+This bean records n=5 requests with zero Copilot reviews and `get_check_runs` returning
+total_count 0, and AGENTS.md's Phase-4 table cites it as "does not arrive". I quoted that
+in every merge gate this session.
+
+On PR #6108 Copilot submitted a full review, unrequested: a "Pull request overview", a
+7/7 file-summary table, an explicit "Approval recommended", and ONE inline review comment
+at scripts/lean-axiom-guard.py:154 -- which was CORRECT and which I acted on. It caught a
+wrong claim ("the namespace never existed") that I had already corrected in the bean and
+the commit message but left standing in the registry comment: the contamination-spread
+failure, caught by a reviewer this bean says does not exist.
+
+So the finding needs re-scoping, not deletion. What is measured now:
+  - n=5 explicit `request_copilot_review` calls -> 0 reviews (the original measurement,
+    unchanged and still real)
+  - 1 unrequested review, arriving ~23 min after the last push to #6108, with 0 check runs
+    ever enqueued (get_status total_count stayed 0 throughout)
+
+That is consistent with Copilot reviewing on its own trigger rather than on
+`request_copilot_review`, which would make the ORIGINAL measurement correct about the API
+and wrong about the outcome. Not established -- n=1 on the arrival side. What it does
+settle: **"Copilot never arrives" is too strong to keep asserting in a merge gate.** State
+"do not WAIT on Copilot" (still right -- it is unpredictable and there is no check run to
+poll) rather than "it does not come".
+
+Do not update AGENTS.md off this single observation; it needs a second instance. Recorded
+here so the next agent who sees a Copilot review is not confused by the corpus telling
+them it cannot happen.
