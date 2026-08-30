@@ -287,7 +287,7 @@ retyping either is right under neither for long."
 | ~~**Q2**~~ | ~~**qbeta c_k / rung-2 / stage-C cluster**~~ — **RULED PROTON 2026-08-30. Migrated; see "Rulings recorded" below.** | rows 26–35 | **10 ✅** |
 | ~~**Q3**~~ | ~~**`mmu_gap_a4_*` scratch scripts**~~ — **RULED DELETE 2026-08-30.** | rows 36, 37 | **2 ✅** |
 | ~~**Q4**~~ | ~~**`he_nu_sdp_*` probes**~~ — **RESOLVED PROTON 2026-08-30, on DEFAULT + measured immateriality (not on evidence of intent).** | rows 38, 39, 40 | **3 ✅** |
-| **Q5** | **τ-binding / unified-τ** — and specifically: *was the original "proton-pinned" label right and the value wrong, or the reverse?* This is the ruling request's group (b), and it needs a yes/no, not analysis | rows 41, 42 | **2** |
+| ~~**Q5**~~ | ~~**τ-binding / unified-τ**~~ — **RESOLVED PROTON 2026-08-30. The label was right and the value was the artefact — settled by row 42's own witness, not by the label.** | rows 41, 42 | **2 ✅** |
 | ~~**Q6**~~ | ~~**option-E KL batch**~~ — **NO RULING NEEDED: the q₀ is a DEAD assignment.** | row 43 | **1 ✅** |
 
 **Q5 deserves a sentence of framing**, because it is the only place where the
@@ -523,4 +523,43 @@ barely matters.
 **If this ruling is ever revisited, it is cheap:** all three are leaves and the
 outputs are insensitive.
 
-### Q5 — still open (2 files).
+### Q5 — **PROTON**, 2026-08-30. Closed. **The open set is now empty.**
+
+The tie the tree contradicted itself on is broken by evidence, not by picking a
+side of the label.
+
+**Row 42 (`unified_tau_odd_partner_solve`) — decisive.** Its own committed
+witness has never been regenerated: its entire git history is the root import,
+so it records what the producer computed *before* any literal was substituted
+in. It holds `tau_at_q0 = 2.642386309448846394790988704223550229645147866221…`.
+Measured at 80 dps against `τ(q) = 3(3q⁴+8q²+3)/(4q(q+1)²)`:
+
+| against | significant digits agreeing |
+|---|---|
+| τ(**proton**) | **50** |
+| τ(pin A) — the literal that was in the source | **8** |
+
+So the recorded output was computed at proton while the source held pin A.
+**A falsifiable prediction was made before regenerating — that migrating to
+proton would return `tau_at_q0` to the value already committed — and it held to
+every recorded digit.** The label was right; the value was the artefact.
+
+The copy-paste chain (from `_gap_a4_qsafe.py`, adjudicated 2026-08-24 by
+`3fd4ab139`) agrees, but is recorded as **disposition precedent, not
+independent evidence**: that commit's own body says *"whoever tagged them read
+the comment"*, so the manifest tags it leaned on descend from the same wrong
+comment.
+
+**Row 41 (`tau_binding_hitchin_wzw_wall_probe`) — proton, and immaterial.** Its
+`tau_binding()` is byte-identical to the closed form in
+`z2bn_pf_monodromy_synthesis.py:34`, i.e. the cluster ruled PROTON as Q1 — the
+same object by the same formula, so it inherits that ruling rather than
+resembling a neighbour. Both assertions are pin-insensitive (a `> 0.5` threshold
+against a ~1e-8 move; an algebraic identity checked to 1e-30) and it writes **no
+witness**, so nothing committed changes. Confidence medium on intent, high that
+it costs nothing.
+
+**Adjacent straddle found and fixed** (not part of Q5, same defect class):
+`lever1_sw_period_lw_rate_refine.py` resolved `q` through `q_parameter` (proton)
+while hardcoding `TAU = 2.6423863133015` = τ(pin A), *and* carried an `except`
+fallback to pin A. τ is now derived; the fallback is removed per `ac8a1fe30`.

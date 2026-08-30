@@ -54,13 +54,33 @@ set_compute_dps()
 # Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-try:
-    from q_parameter import Q_50_DIGIT_STR as Q0
-    q = mp.mpf(Q0)
-except Exception:
-    q = mp.mpf('1.1099785955573347')
+# TWO DEFECTS FIXED HERE 2026-08-30 (bean qou-0hnz), both on existing precedent.
+#
+# 1. CROSS-LAYER FALLBACK REMOVED. This was:
+#        except Exception:
+#            q = mp.mpf('1.1099785955573347')
+#    On any import hiccup -- a bare container, a path change, a partially
+#    installed substrate -- it silently computed at the MUON pin while every
+#    label around it said proton, with nothing signalling the switch. That is
+#    the straddle AGENTS.md forbids, arriving through the error path, and it is
+#    the class ruled on by ac8a1fe30 ("three alpha_em cross-layer fallbacks now
+#    raise instead of switching anchor"). The correct behaviour is to fail
+#    loudly. The literal was also pin A, which fca08de7d2 RETIRED.
+#
+# 2. TAU IS NOW DERIVED, not frozen. It was
+#        TAU = mp.mpf('2.6423863133015')
+#    described in its own comment as "the wired closed form
+#    3(3q^4+8q^2+3)/(4q(q+1)^2) at q0" -- but frozen at pin A while `q` above
+#    resolves to proton. So the file paired a proton q with a pin-A tau inside
+#    one computation: a live straddle, and byte-identical to the one the Q1
+#    ruling removed from sw_period_growth_probe.py on 2026-08-30. Verified at
+#    40 dps: 2.6423863133015 is exactly tau(pin A) to all 14 digits it carried,
+#    where tau(proton) = 2.6423863094488463948. Deriving it means tau follows
+#    the pin and cannot go stale again.
+from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: E402
 
-TAU = mp.mpf('2.6423863133015')   # wired closed form 3(3q⁴+8q²+3)/(4q(q+1)²) at q₀
+q = mp.mpf(Q0)
+TAU = 3 * (3 * q**4 + 8 * q**2 + 3) / (4 * q * (q + 1)**2)
 
 
 def qint(k):

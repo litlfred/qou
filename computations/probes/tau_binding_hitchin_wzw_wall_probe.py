@@ -59,6 +59,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
@@ -85,7 +86,26 @@ def _head_sha():
     return sha
 
 
-Q0 = mp.mpf("1.10997859555733471")
+# q0 RESOLVED, never a literal. Q5 ruled PROTON 2026-08-30. Pin A is RETIRED
+# (fca08de7d2, owner ruling 2026-08-22), so keeping the value was never an
+# option; only the layer was open.
+#
+# DECIDED ON THE CLOSED FORM, NOT ANALOGY. `tau_binding(q)` below is
+# 3(3q^4 + 8q^2 + 3) / (4q(q+1)^2) -- byte-identical to the tau in
+# substrate/z2bn_pf_monodromy_synthesis.py:34, which is the lever1/z2bn
+# binding-period cluster the owner ruled PROTON as Q1 on 2026-08-30. This is
+# the same substrate quantity computed by the same formula, so it takes the
+# same layer; that is inheritance of a ruling, not resemblance to a neighbour.
+#
+# IMMATERIAL EITHER WAY, and worth saying so: both assertions here are
+# pin-insensitive. `lps_element_neq_tau_binding` tests |th - tb| > 0.5 while
+# 11.5371 ppb moves either side by ~1e-8; `tau_binding_bareven_form_consistent`
+# is an algebraic identity checked to 1e-30 and holds for every q. This probe
+# also writes NO witness, so nothing committed changes.
+#
+# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.
+# Do not put a literal back.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 
 def tau_binding(q):

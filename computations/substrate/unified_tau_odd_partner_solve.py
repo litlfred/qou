@@ -49,12 +49,54 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from sl2_tau_solver import tau_from_three, verify_recurrence  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Canonical substrate q_0, 50 dps — the MUON pin. Read "proton-pinned" until
 # 2026-08-29; the literal is 11.5371 ppb from the proton pin. Label corrected,
 # value untouched (bean qou-fd0e). Same literal and near-identical wording as
 # _gap_a4_qsafe.py carried, so this mislabel spread by copy-paste.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# q0 RESOLVED, never a literal. Q5 ruled PROTON 2026-08-30. Pin A is RETIRED
+# (fca08de7d2, owner ruling 2026-08-22), so keeping the value was never an
+# option; only the layer was open.
+#
+# DECIDED ON TRACED PROVENANCE, NOT ANALOGY. This file's own comment recorded
+# that the constant spread by COPY-PASTE from computations/probes/_gap_a4_qsafe.py.
+# That source file held the IDENTICAL constant under the IDENTICAL variable name
+# `Q_0_50DPS`, commented "Substrate parameter (proton-mass-anchored q_0, 50 dps)"
+# -- the same false proton label over the same muon value. It was ruled on
+# 2026-08-24 by 3fd4ab139, "a shared constant labelled proton held the MUON
+# value", which resolved it through q_parameter rather than re-pinning it, and
+# recorded that 22 modules had been computing at muon while their manifest
+# entries said proton.
+#
+# So this is not "a sibling did X". It is the same constant, with the same
+# mislabel, from the same origin file, whose origin was already adjudicated:
+# the LABEL was right and the VALUE was the artefact.
+#
+# CAVEAT, recorded rather than buried: that adjudication is DISPOSITION
+# precedent, not independent evidence of intent. 3fd4ab139's own body says
+# "whoever tagged them read the comment" -- so the manifest tags it relied on
+# descend from the same wrong comment. Descent alone would not settle this.
+#
+# WHAT ACTUALLY SETTLES IT is this file's OWN committed witness, whose entire
+# git history is the root import -- it has never been regenerated, so it
+# records what this producer computed before any literal was substituted in.
+# It holds
+#     tau_at_q0 = 2.642386309448846394790988704223550229645147866221...
+# Measured at 80 dps against the closed form 3(3q^4+8q^2+3)/(4q(q+1)^2):
+#     agrees with tau(PROTON) to 50 significant digits
+#     agrees with tau(pin A)  to  8
+# So the recorded output was computed at the proton pin while the source now
+# holds pin A. Migrating to proton restores agreement between this file and its
+# own witness; migrating to muon would put them permanently at odds.
+#
+# (Honest bound: computedAt is 2026-06-06, when the ambient resolver default
+# leaned proton, so this shows the producer was RESOLVING rather than pinning,
+# and resolving to proton -- not that the author typed the word "proton".)
+#
+# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.
+# Do not put a literal back.
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 def main() -> int:
