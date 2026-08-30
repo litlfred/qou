@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T12:00:50Z
+updated_at: 2026-08-30T12:04:35Z
 ---
 
 
@@ -758,3 +758,30 @@ files** — the library's `1 - q_inv : R_q` against `(q - 1) / q : ℝ → ℝ` 
 `observations/eos-borromean-cfl` and
 `predicted-spectra/quantum-dilogarithm-volume`. Same value, different type
 and different form; a smaller version of the same defect.
+
+
+### Correction: `hbar_q` is NOT "a smaller instance of exactly what `R_q` was"
+
+I wrote that when recording the `R_q` fix. Measured, it is a different and
+much milder defect, and the difference is the part that matters:
+
+| | `R_q` | `hbar_q` |
+|---|---|---|
+| the two bodies denote | **two different rings** (`LaurentPolynomial ℤ`, `ℝ`) | **one quantity** — the library's own docstring reads "ℏ_q = (q − 1)/q = 1 − q⁻¹" |
+| both elaborate at a use site? | **yes** — both are types, so a wrong resolution is silent | **no** — the library's takes no argument, the siblings' takes `(q : ℝ)`; misuse is a type error |
+| named by a `.ts` `lean.ref`? | — | **no**; the two blocks ref `eos_borromean_cfl` and `quantum_dilogarithm_volume` |
+| visible together in one compilation? | — | never: siblings cannot be imported |
+
+Both sibling files (`observations/eos-borromean-cfl`,
+`predicted-spectra/quantum-dilogarithm-volume`) are archimedean throughout
+on their own merits — `3 ^ (2/3 : ℝ)` and `Real.log` respectively — so
+`hbar_q (q : ℝ) : ℝ` is the right type there and there is nothing to
+generalise.
+
+**Left as-is deliberately**, not overlooked. Renaming two files to move a
+count would be churn: nothing resolves to the wrong object, and no silent
+failure is possible. What remains is a readability point — the corpus now
+carries three spellings of one quantity (`1 - q_inv` in the ground ring,
+`(q - 1) / q` at `ℝ`, and the generic `QEnergy.hbar := 1 - 1 / q` added by
+the `R_q` fix) — worth a cross-reference if someone is in these files
+anyway, not worth a pass of its own.
