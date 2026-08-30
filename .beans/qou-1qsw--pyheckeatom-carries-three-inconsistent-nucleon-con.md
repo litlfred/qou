@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-30T12:51:14Z
+updated_at: 2026-08-30T13:01:34Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -909,3 +909,69 @@ Nothing asserts on `PROTON_NF`.
 the gluon structure"* — the same unsourced claim, sitting directly above the
 code that applies the gluon term. Corrected. Both builders now say the same
 true thing.
+
+
+## CORRECTION (same day) — "zero published numbers move" was FALSE
+
+A **fourth** counting error, same class as the other three, and this one
+inverted the conclusion.
+
+**What went wrong.** The AST scan that produced "7 real consumers" matched
+`ast.Name` nodes carrying the target identifiers — which matches **assignment
+targets** as well as uses. `computations/atom_mass_derived.py` was counted as a
+consumer when it in fact **defines its own**:
+
+```python
+PROTON_NF  = build_nucleon(['u', 'u', 'd'])   # line 271, its OWN build_nucleon
+NEUTRON_NF = build_nucleon(['u', 'd', 'd'])
+```
+
+It never imports `pyhecke.atom`. Its witness not moving was *expected* and said
+nothing about the change — and I had reported it as the primary evidence that
+the change was inert.
+
+**Corrected consumer set**, resolving by import rather than by name: **6 true
+consumers**, 1 defining its own, 6 text-only. Layer-2 via `hecke_core` adds
+nothing new. **Of the six, exactly one publishes a witness —
+`hadron_knot_table` — and it is the one that could not be run.** So the "five
+publishers, zero movement" measurement covered five producers of which **none
+consumed the changed function**.
+
+**The actual blast radius, measured directly** against the committed witness.
+`hadron_knot_table` calls `build_nucleon_nf` only for the rows passing
+`quarks` — `("proton", 1, 0, "uud")` and `("neutron", 0, 1, "udd")`; every
+other row goes through the untouched `build_atom_nf`:
+
+| assertion | committed (9×) | new (11×) | change | Frobenius |
+|---|---|---|---|---|
+| `tr_M(proton)` | 0.419562177934 | **0.629328402203** | **+50.00 %** | stable |
+| `tr_M(neutron)` | 0.301675079767 | **0.475133517156** | **+57.50 %** | stable |
+
+21 of 23 assertions unaffected.
+
+**And a third exact cross-check falls out of it.** The new `tr_M(proton) =
+0.629328402203` matches the braid-order value recorded further up this bean —
+`tr_M braid-order = 0.62932840220292191817` — to every printed digit. The
+11-crossing `build_nucleon_nf` reproduces the braid-order nucleon exactly.
+That is what it *should* do, and it is a check the change was not tuned
+against.
+
+### Consequence — PR #6214 must not merge yet
+
+Landing the code makes `computations/hadron-knot-table.witness.json` stale by
+50 % on two assertions, and **the witness cannot be regenerated in this
+container** (the producer does not finish; deuterium alone >50 min). Hand-
+editing the two numbers is forbidden; truncating the ATOMS list would produce a
+*different* witness rather than a regenerated one.
+
+Correct sequencing: regenerate that witness in an environment that can run the
+producer to completion, **in the same change as the code**.
+
+### The pattern, since this is now four for four
+
+Every one of my four errors on this bean was a **proxy mistaken for the
+thing**: a bean's recorded count for a live count; a grep hit for a call site;
+an atom-level builder for a per-nucleon one; and an assignment target for a
+use. The corrective in each case was to resolve to the actual object —
+re-measure, parse, read the signature, follow the import. Worth keeping as the
+method rather than as four separate embarrassments.
