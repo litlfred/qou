@@ -230,3 +230,60 @@ the same contradiction reached from the witness rather than from the source.
 
 Either rewrite both to describe the seminormal linear-functional route, or
 retire them.
+
+
+## The six chains are corrected (PR #6318, second commit) — and three of my own claims here were wrong
+
+Measured against the live producer, twice by independent routes (reading `h`
+off the returned `d`-values; and `canonical_braid_crossings.classify_crossing`):
+
+| atom | letters | σ | σ⁻¹ | averaged | non-braid | chain claimed |
+|---|---|---|---|---|---|---|
+| proton | 11 | 6 | 3 | 2 | 2 = 2A | "6 crossings" |
+| neutron | 11 | 5 | 4 | 2 | 2 = 2A | "5 crossings" |
+| deuteron | 23 | 11 | 7 | 5 | 5 = 2A+1 | "12 crossings" |
+
+The claimed figures do not share one convention: p's 6 and n's 5 are the σ
+(`d = 0`) counts alone; D's 12 is the complement. Also `h` read off the word is
+`0.20906029879563932` = h(q) at the **proton** pin to float64, in three chains
+whose targets declare the CODATA-2018 **muon** pin.
+
+### Corrections to THIS bean
+
+1. **"Both narratives are invalid" was too broad.** The three `*-tr-M-q0` chains
+   have a **sound method** — their character step is `χ^λ := tr(ρ^λ(T_w))`, the
+   seminormal matrix product, which never consults a crossing count. Only their
+   word-*description* was wrong.
+2. **`markov-trace-assembly-deuteron` is sound too**, and better than this bean
+   said: its step 3 already carries the correct decomposition {σ:11, σ⁻¹:7,
+   averaged:5} — matching my measurement exactly — and step 4 gives the averaged
+   letter its correct action `ρ^λ(I_avg) = ρ^λ(σ_i) − (q−q⁻¹)/2·1`.
+3. **The neutron chain does NOT contradict itself silently.** This bean said it
+   "announces one word and computes with another, one step apart". The
+   legacy-convention NOTE was already there, in that very step. What is true is
+   that the note is **load-bearing**: it is the root cause of the 7.285e-8 (73×)
+   disagreement, because steps 5/7 evaluate χ on a genuinely different element
+   of H₃(q).
+
+### The one genuinely wrong, unflagged chain — and it is the one I called "agreeing"
+
+`markov-trace-assembly-proton` asserts the word is 6 crossings **"all positive
+σ"**. False: 6 σ, 3 σ⁻¹, 2 averaged. Verified symbolically:
+
+    chi^(3)     = q(q^2+1)^2/4         not q^6     ratio  (q^2+1)^2/(4q^5)
+    chi^(1,1,1) = -(q^2+1)^2/(4q^5)    not q^-6    ratio  -q(q^2+1)^2/4
+
+Note the **sign** on (1,1,1): the canonical character is negative where the
+chain reports positive. So the proton pair "agreeing to 0.0" was agreement of
+*values*, not of *method* — and value-agreement is what this bean originally
+used as its lever.
+
+Flagged to the standard the neutron chain already met. **Not re-derived** —
+correcting it moves the value, which is a compute change, not a documentation
+one.
+
+### Remaining work (compute, not documentation)
+
+Recompute `markov-trace-assembly-{proton,neutron}` steps on the canonical
+11-letter element. Both currently report tr_M of a legacy element under a
+canonical label. The deuteron chain shows what the corrected form looks like.
