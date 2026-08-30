@@ -560,7 +560,7 @@ QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_
 # (the computed Bloch-Wigner sum). Before it they were unrelated. The compatibility
 # between them is an EXPLICIT hypothesis argument, deliberately not a class field.
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
-QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_literal_eq_triangulation_volume | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_volume_eq_triangulation_volume | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
 #
 # HyperbolicQuotient supplies what H^3 was missing: a GROUP acting. The load-bearing
