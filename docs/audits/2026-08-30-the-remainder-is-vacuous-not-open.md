@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 37 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 38 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 11 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 12 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **37** (26 machine + 11 hand) |
-| still undecided — INCONCLUSIVE, see method below | 42 |
+| **INHABITED with no hypotheses** | **38** (26 machine + 12 hand) |
+| still undecided — INCONCLUSIVE, see method below | 41 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -261,7 +261,22 @@ the undecided classes hand-adjudicated in one sitting, all **inhabited**, all
 `SortingColorEnergyContext`, `DecayChannelContext`, `SchurWeylMassContext`,
 `ConfinementFrobeniusReciprocityContext`, `EInfinityIdentificationsContext`.
 
-**Floor: 26 → 37.**
+**Floor: 26 → 38.**
+
+**And the `extends` family — 5 classes the prober skips on sight — is
+unlocked.** They inherit `QOU.Shared.MarkovTraceContext`, which per the header
+of [`QOU/Hecke/InstanceH2.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/InstanceH2.lean)
+had **never been instantiated anywhere in the tree**. That file (a sibling's
+work, already on `main`) supplies `rankOneModel`, showing `ℚ` is a
+`HeckeAlgebra ℚ n 1 ℚ` at *every* `n` — at `q = 1` the parameter `h = q − q⁻¹`
+vanishes, so the class is satisfied by a rank-1 algebra where `H_n(1)` has
+dimension `n!`. Added here: the same model carries a **Markov trace**
+(`trace = id`, `z = 1`), hence a `MarkovTraceContext`. `ExplicitAlphaKH4Context`
+follows immediately, and the remaining four are mechanical.
+
+The credit is theirs and the finding is the same one twice over, one layer
+apart: a hypothesis that reads as "this is the Hecke algebra with its Markov
+trace" is satisfied by `ℚ`.
 
 **The rate is the useful number, not the count.** Eleven classes in roughly
 an hour of working time, several minutes of which is `lean` startup on a
