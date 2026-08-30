@@ -1,8 +1,24 @@
 #!/usr/bin/env python3
 """EXACT H_{3A} tower walk -- does the tower distinguish magic from non-magic?
 
-RESULT: no. Not at A = 2, 3 or 4, and the one observable that looked promising
-at A = 3 points the OTHER WAY at A = 2.
+RESULT, CORRECTLY SCOPED: no separation IN THE NUMERIC MAGNITUDES AT q = q_0,
+at A = 2, 3 or 4 -- and the one observable that looked promising at A = 3
+points the OTHER WAY at A = 2.
+
+🛑 READ THE SCOPE BEFORE THE RESULT (owner correction, 2026-08-30). This probe
+evaluates everything at the single point q = q_0, which COLLAPSES the
+Groebner-Shirshov filtration into one float per basis element. The corpus is
+explicit that the filtration is where the many-body structure lives: the GS
+algorithm "digests global entanglement into local coefficients"
+(`trace-locality-gs-reconciliation`), adding a nucleon "rais[es] the
+normal-form length by a fixed increment" placing the n-nucleon cluster at
+"jet vertical degree n" (`bond-order-eq-jet-degree-proof`), and the associated
+graded gr_n IS the n-nucleon cluster contribution (`prop:gb-spectral-sequence`
+E_2 collapse, `prop:jet-prefix-gb-filtration`). So the negative below is about
+MAGNITUDES AT A POINT and says nothing about the graded structure -- which
+this probe never looked at. The object to measure is the symbolic NF over
+Q(q, sqrt q), `hecke_core_symbolic.build_atom_nf_sym`, and its q-degree /
+filtration shape. Bean `qou-tower` (reopened).
 
 The production chain collapses every nucleus to the same 6-dim H_3 quotient
 (`gamma_chain_tower_magic_probe.py`) because `build_atom_nf_mp` applies the
