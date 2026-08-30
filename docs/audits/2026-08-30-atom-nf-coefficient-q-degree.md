@@ -239,8 +239,14 @@ sequence and are the weakest claims in the witness.
 Two branches with the **same quadratic leading term** whose linear parts differ
 by `2A − 52`, crossing exactly at A = 26. The excess grows by exactly 2 per
 unit A past the break with no further transition, and `deg(σ₀) = deg(γ) − 1`
-holds **across** the break as well as away from it — so it is not a reordering
-of which component dominates; both move together.
+holds **for A = 8…40** — across the break as well as away from it — so it is
+not a reordering of which component dominates; both move together.
+
+**A = 7 is the sole exception**, at offset `+7` rather than `−1`. I first
+asserted the offset over 7…40 and *the producer failed itself on it*; the
+exception is a single value and it is not a stray, because A = 7 is the lower
+edge of the triangular window (§3's window is 7…26). The regime simply has not
+settled at its own first point.
 
 **Neither law is derived.** No mechanism for the coefficient 6, the constant
 −19, the `Z ≥ 5` threshold, or the crossover at 26. They are fits to exact
