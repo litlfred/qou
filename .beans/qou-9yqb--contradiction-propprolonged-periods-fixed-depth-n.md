@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T07:43:33Z
+updated_at: 2026-08-30T07:48:22Z
 parent: qou-mhj9
 ---
 
@@ -140,3 +140,39 @@ independently names the identification a_D^(n) = I(n)/n as the cheapest suspect.
 Coordination note: I flagged the duplicate to them at 04:24 on #6088 (their
 qou-9nt7). They had already written it. Flagging worked in the sense that the
 overlap is now visible and adjudicated; it did not arrive in time to prevent it.
+
+
+## CORRECTION TO MY OWN DEDUP DECISION 2026-08-30
+
+I deleted FixedDepthGrowthBound.lean as "subsumed by #6101's more general
+version". That was too quick, and #6101's own comments (issuecomment-5467079264,
+-5467208270) are what corrected it:
+
+  * They offered me priority -- mine landed ~40 min before theirs.
+  * Their ONLY increment is the SuperExponential PREDICATE over my factorial
+    instance.
+  * AND THEY WITHDREW THE BRIDGE. They tried factorial => SuperExponential,
+    mis-indexed M*K^n at 2n, could not find the Mathlib limit lemma
+    (tendsto_pow_div_factorial_atTop does not exist under that name in this
+    toolchain), and stopped rather than half-prove it -- correctly, and they
+    recorded it in their docstring rather than leaving a sorry.
+
+So their generality is UNUSABLE against the corpus's actual growth statement.
+SWPeriodSuperExponential.factorial_le_involution_two_mul gives n! <= I(2n), a
+factorial bound on the even subsequence; without the bridge,
+not_isConstKernelRec_of_superExponential cannot be applied to it. Verified by
+git grep on main: no summable_pow_div_factorial, no factorial/SuperExponential
+bridge anywhere in .lean.
+
+RESOLVED by supplying the bridge, not by restoring my file:
+QOU/MassTheory/FactorialSuperExponential.lean (sorry-free, axioms clean)
+  superExponential_of_factorial_le      -- against THEIR SuperExponential
+  not_isConstKernelRec_of_factorial_le  -- composition with THEIR theorem
+
+The limit input is Real.summable_pow_div_factorial (summable => terms -> 0),
+which is the lemma they could not locate. Indexing at 2n is what makes it hold
+for EVERY real K including negative: K^(2n) = (K^2)^n >= 0.
+
+Net: one home for the general result (theirs), one home for the bridge (mine),
+no duplicate. The deletion of my file stands; the deletion of the FINDING it
+carried would have been wrong, and nearly happened.
