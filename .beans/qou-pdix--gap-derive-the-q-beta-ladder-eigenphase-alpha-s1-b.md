@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T13:02:11Z
+updated_at: 2026-08-30T13:53:54Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1083,3 +1083,79 @@ lemma is stated for an ARBITRARY additive `L` and arbitrary `c`, so the
 exclusion holds for every `c` at once rather than for a fitted one.
 PROBE: `qbeta_phase_fails_log_functional_equation_probe.py` (7/7, exact
 symbolic + mpmath 50 dps at the proton pin).
+
+
+## 2026-08-30 — a REPLACEMENT acceptance test, in two tiers, with the burden stated
+
+The retired test did not discriminate. This is its replacement, validated against
+known-wrong candidates — **and carrying a correction of my own first draft.**
+
+### 🛑 The correction: the supergolden zero is NOT a fingerprint
+
+I first built the test around `alpha_D`'s zero at the **supergolden ratio**
+psi = 1.4655712318767680 (real root of `q^3-q^2-1`), calling it *"a rigid
+fingerprint no generic construction reproduces by accident"*. **Wrong twice:**
+
+    z_D - 1 = (q^3 - q^2 - 1)/(q^2 + 1)      verified
+    z_D(psi) = 1.0000000000                   verified
+
+psi is **exactly where `z_D = 1`** — immediate from `alpha = (z-1)h/2`, not an
+arithmetic coincidence. And it is **already in the corpus, twice**:
+`QOU/Observations/centered_hecke_variance_positive.lean` names psi by value as
+the `z < 1` threshold, and `predicted-spectra/spectrahedral-phase-collapse`
+carries it as the convention-C Gram degeneracy at `u = 1/psi`, multiplicity 5.
+Prior art, found by grep before the claim shipped rather than after.
+
+**The consequence reshaped the test.** Since `alpha = (z-1)h/2` EXACTLY, its
+zeros, poles and bar behaviour are all inherited from `z` and `h`. So every
+output-side criterion is automatic for any candidate of the form `c*(z-1)h`.
+They pin the constant `c` and nothing else.
+
+### TIER 1 — necessary, cheap, rejects perturbations, NOT evidence alone
+
+    D1 algebraic over Q(q)        closes the constant-residue holonomy horn
+    D2 zero locus + multiplicity  inherited from (z-1)h
+    D3 pole locus + multiplicity  inherited from z
+    D4 bar defect exact           the only one that pins c
+
+Nine independent conditions: 5 numerator + 3 denominator + 1 normalisation.
+
+### TIER 2 — where the discriminating power actually is
+
+    D5 NON-CIRCULAR   the construction must not take alpha, (z-1)h/2, or the
+                      ladder residual as an INPUT. Entry (5)'s circularWitness
+                      is why: for EVERY alpha a rotation matrix with trace
+                      2cos(alpha) exists, built FROM alpha.
+    D6 OVER-DETERMINED  fewer than 9 free parameters. A deg-5/deg-3 rational
+                      function has exactly 9 after scaling, so 9+ tunables hit
+                      all of tier 1 by FITTING and passing it is worth nothing.
+                      A parameter-free construction meeting all nine is
+                      over-determined by nine conditions — that is evidence.
+
+D5/D6 check the **definition**, not the output, so no script can run them.
+Stated explicitly so the burden is not quietly dropped again.
+
+### Validation — the rejections, which the old test never had
+
+    candidate                        D1 D2 D3 D4   OLD part1   verdict
+    alpha_D (target)                  Y  Y  Y  Y       Y        PASS
+    alpha_C (other convention)        Y  .  .  .       .        reject
+    c*ln q (constant-residue)         .  .  .  .       .        reject
+    NEAR-MISS alpha_D + (q-1)^3       Y  .  Y  .       Y        reject
+    NEAR-MISS alpha_D*(1+(q-1)^3)     Y  .  .  .       Y        reject
+    cosh-shaped                       Y  .  .  .       .        reject
+    2*alpha_D                         Y  Y  Y  .       .        reject
+
+**The near-miss row is the point**: it agrees through `t^2`, so the RETIRED test
+accepts it and tier 1 rejects it. **The `2*alpha_D` row shows D4 is
+load-bearing** — right zeros, right poles, wrong constant.
+
+### What this does NOT deliver
+
+Tier 1 is nearly free for anything built from `z`, and cannot detect a
+construction handed `(z-1)h/2` — the same circularity that retired the old test.
+**Only D5/D6 close that, and they are read, not run.** A candidate passing tier 1
+while silent on tier 2 has shown nothing.
+
+PROBE: `computations/qbeta/qbeta_route5_discriminating_test.py` (19/19; the
+correction and the tier-1-is-automatic fact are assertions, not prose).
