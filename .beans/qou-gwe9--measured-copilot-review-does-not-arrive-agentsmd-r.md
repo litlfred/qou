@@ -495,3 +495,25 @@ bean stays open.
 
 Observation closed; no further check-in scheduled. Past ~80 min further waiting
 adds nothing — a fifth zero at 120 min would not discriminate either.
+
+## Third datum: quota had NOT refilled at 5 hours (2026-08-30, 13:03Z)
+
+Requested on #6167 at **12:56Z** — exactly **5h 00m** after the 07:56Z refusal on
+#6131. `get_reviews` at 13:03Z (7 min later, against a ~3 min observed latency for
+a real review on #6088): **`[]`**.
+
+| request | elapsed since 07:56Z exhaustion | outcome |
+|---|---|---|
+| 07:55Z (#6131) | — | refusal posted, ~40 s |
+| 08:58Z (#6131) | 1h 02m | silence |
+| 12:56Z (#6167) | **5h 00m** | **silence** |
+
+So the retry-after-an-hour strategy already ruled out is now ruled out at five
+hours too. Either the window is longer than 5h, or it is not a simple time-based
+refill (per-user-per-day is consistent with all three rows).
+
+**Practical consequence, unchanged in direction but firmer:** budget Copilot as a
+resource you get roughly *once*, not as a step in every prepare-merge. Spending it
+on the first substantive PR of a session and not re-requesting is the strategy the
+data supports. `prepare-merge-auto` Phase 1b's per-run request is exactly the
+behaviour that drained it here.
