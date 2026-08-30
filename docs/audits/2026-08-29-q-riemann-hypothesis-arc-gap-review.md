@@ -70,6 +70,56 @@ the quantified domain (an empty list, a constant family, a degenerate structure)
 and evaluate the claim on it. All four `False` derivations here were found that
 way in minutes.
 
+### A fourth instance of the shape, from a sibling — and two lessons off it
+
+Reported on this PR by the q-NS sibling session and **verified here against
+`origin/main` rather than taken on trust**: `HasQPlancherelCLT` in
+`lean/QOU/MathlibExt/QPlancherel.lean` carried
+
+```lean
+bound : ∀ (f : ℕ → ℝ) (f_inf : ℝ) (k : ℕ), k ≥ 4 →
+  |f k - f_inf| ≤ Cq / Real.sqrt (k - 3 : ℝ)
+```
+
+`Cq` is fixed by the instance while `f_inf` ranged over all of `ℝ`, so
+`f := 0`, `f_inf := Cq + 1`, `k := 4` gives `Cq + 1 ≤ Cq`. Same shape as
+`qou-hwax`: *an external theorem asserted for every inhabitant of a structure
+that does not carry the theorem's hypotheses* — [feray2010] Thm 1.1 is about
+the q-Plancherel branching fractions, and the carrier recorded only "a real
+sequence and a real limit". Fixed on #6041, now on `main` with `f` and `f_inf`
+as class **data**. That makes **five** instances of this one shape and **seven**
+`False` axioms in this corpus's history, none of them found by a checker.
+
+Two lessons from that exchange, one theirs and one a sharpening of it.
+
+**1. Show the fix INHABITED, not merely unrefuted.** Theirs, and it is right: a
+repair can trade one unusable class for another, and nothing catches it. #6041
+proves both directions in one probe — old shape refutable, new shape inhabited.
+
+**But "show it inhabited" can be discharged against the wrong object, and then
+it is false comfort.** A structure and a hypothesis class about it are different
+things, and the witness for one says nothing about the other. Worked case from
+this branch: `reebSpectrumExample` inhabits `ReebSpectrum`, so the *shape* is
+satisfiable — and it settles nothing about `HasReebSpectralCoords`, because that
+witness has every `spec i = 1`, which would force `αᵢ = q` for all `i`, false
+for any `Z` with distinct eigenvalues. The class needed its own result
+(`hasReebSpectralCoords_satisfiable`, by diagonalising the exponents from
+`exists_spectral_coord`). So the discipline is sharper than "exhibit a witness":
+**exhibit a witness of the thing the conditional theorems actually depend on.**
+The same applies to `isTannakaKreinDual_refl` — and there the witness is the
+identity equivalence, which is a floor rather than evidence, and is labelled so
+at the declaration.
+
+**2. The two detectors are complementary and neither subsumes the other.**
+Theirs (`scripts/limit-claim-encoding-audit.py`) asks *is the statement weaker
+than the prose*; this one (`scripts/lean-overclaim-audit.py`) asks *is the
+statement stronger than the truth*. The same field can pass one and fail the
+other, and this field did: their detector flagged it and they triaged it a false
+positive, correctly for the question it asks — an explicit quantitative bound is
+not an unlocalised limit — and blind to whether the bound was **true**. Worth
+the taxonomy row: a docstring/statement mismatch has two independent directions,
+and a detector for either one is silent on the other.
+
 A fourth axiom, `qLog_tendsto_log_axiom`, is a *different* and simpler failure:
 false against a definition three lines above it. No instantiation trick was
 needed. That one argues for reading each axiom against its own file before

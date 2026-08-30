@@ -63,6 +63,40 @@ by `<True>` whatever else is true, and the shape admits no benign reading.  A ra
 grep for it reports 38 FILES of which 15 are prose only -- a 39 % false-positive
 rate that stripping comments removes entirely.
 
+What this detector does NOT see, and what pairs with it
+------------------------------------------------------
+
+This asks one question: *is the statement stronger than the truth* -- does a
+declaration assert something for every inhabitant of a domain wider than the
+claim's subject.  The mirror question -- *is the statement weaker than the
+prose*, a docstring promising a limit or a property the statement never
+localises -- is a different detector, `scripts/limit-claim-encoding-audit.py`.
+
+**Neither subsumes the other, and the same field can pass one and fail the
+other.**  Measured, not supposed: `HasQPlancherelCLT.bound` in
+`lean/QOU/MathlibExt/QPlancherel.lean` was flagged by that detector and triaged
+a false positive -- correctly for the question it asks, since the field carries
+an explicit quantitative bound rather than an unlocalised limit, and blind to
+whether that bound was *true*.  It was not: `Cq` fixed by the instance against
+an `f_inf` ranging over all of `R` gives `Cq + 1 <= Cq`.  Refuted and fixed on
+PR #6041.
+
+So run both, and do not read a clean pass from either as a clean bill.
+
+A repaired carrier needs a witness -- of the right object
+--------------------------------------------------------
+
+A refutation-driven repair can trade one unusable class for another, so the fix
+should be shown *inhabited*, not merely unrefuted.
+
+The trap is that "show it inhabited" is dischargeable against the wrong object.
+A structure and a hypothesis class about that structure are different things,
+and a witness for one says nothing about the other.  Worked case:
+`reebSpectrumExample` inhabits `ReebSpectrum`, and settles nothing about
+`HasReebSpectralCoords`, whose satisfiability needed its own proof -- that
+witness has every `spec i = 1`, which would force `alpha_i = q` for all `i`.
+Exhibit a witness of the thing the conditional theorems actually depend on.
+
 Usage:
     python3 scripts/lean-overclaim-audit.py [--root content] [--json OUT]
     python3 scripts/lean-overclaim-audit.py --selftest
