@@ -41,6 +41,22 @@ below. That is what is proved here.
   `(n/2)! / n`, and `classical_period_ratio_unbounded` — its growth leaves every
   geometric class.
 
+## A caution on what `a_D^(n)` IS (added after merging main, 2026-08-30)
+
+[`docs/audits/2026-08-29-sw-period-residue-sum-projection-and-warrant.md`](../../../../../docs/audits/2026-08-29-sw-period-residue-sum-projection-and-warrant.md)
+(bean `qou-6v5l`, found working input (2) of the same scope note) reports that
+`prop:sw-period-residue-sum`'s Lean is a conclusion-typed projection, and that its stated
+warrant — "the residue theorem on the compact Riemann surface" — runs backwards: on a
+compact surface the residues sum to **zero**, and `H₁(P¹) = 0` supplies no generating
+cycle. So the residue-sum *representation* of `a_D^(n)` is itself under question.
+
+**This file is insulated from that, by construction.** Everything proved below is about
+`involutionNumber` and about a bar-symmetric non-negative Laurent presentation — concrete
+objects with no geometric input. The step from those to "the Seiberg–Witten period" is
+input (2), which this file explicitly does not claim. Read the results as statements about
+`I(n)/n` and `Σ_{λ⊢n} dim_q λ`; whether that quantity *is* the SW period is exactly the
+open identification, and it is now open in one more way than it looked.
+
 ## What is NOT proved here (honest scope)
 
 * **The `q`-transfer.** These are the `q = 1` statements. The step from
