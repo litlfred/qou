@@ -1,16 +1,51 @@
 #!/usr/bin/env python3
 """Assertions whose TOLERANCE is finer than the arithmetic that produced the value.
 
-An assertion carrying `tolerance=1e-40` on a value cast through `float()` cannot
-mean what it says. IEEE double resolves ~2.2e-16 relative, so for a quantity of
-order 1 there is nothing between "exactly 0.0" and "about 1e-16". Such an
-assertion therefore has exactly two possible meanings, and neither is the
+An assertion carrying `tolerance=1e-40` on a RESIDUAL cast through `float()`
+cannot mean what it says. IEEE double resolves ~2.2e-16 relative, so for a
+quantity of order 1 there is nothing between "exactly 0.0" and "about 1e-16".
+Such an assertion has exactly two possible meanings, and neither is the
 advertised one:
 
   * the cast value is exactly 0.0 -> trivially true, measuring nothing; or
   * it is nonzero at ~1e-16       -> must fail.
 
 It can never mean "agreement verified to 1e-40". In a witness it reads as one.
+
+TWO BUCKETS, AND ONLY ONE OF THEM IS A DEFECT
+---------------------------------------------
+The argument above is about ROUNDOFF, so it only bites when the compared
+quantity is a residual — something whose exact value is 0 and whose float
+representation therefore carries error. It does NOT bite when the quantity is
+EXACTLY REPRESENTABLE in float64, and integers below 2^53 are.
+
+  w.add_assertion("integer_spin_dim_sum_squares",
+                  computed=float(result["int_burnside_sum_sq"]),
+                  expected=60.0, tolerance=1e-30)
+
+`int_burnside_sum_sq` is an integer sum of squares; `float(60)` is exactly
+`60.0`; the comparison is exact and the tight tolerance is meaningful — it is an
+integer equality check written with a tolerance, not a precision claim. Three
+such sites live in `probes/gap_a4_T10_mckay_character_2I_probe.py:172,182,192`.
+They are FALSE POSITIVES of the criterion this file was first written with, and
+they are the reason it now splits its output.
+
+So the report has two sections:
+
+  RESIDUAL   `expected` is a literal 0 -> the defect. Roundoff lives exactly
+             where the tolerance claims resolution. GATING (exit 1).
+  EQUALITY   `expected` is nonzero or non-literal -> MAY be an exact-integer
+             equality check, may be a genuine float64 precision claim on a
+             non-integral quantity. ADVISORY: the audit cannot tell which, and
+             guessing is the false-positive mechanism the taxonomy records.
+             Inspect by hand; ask whether the computed quantity is an integer
+             count or an integer-valued algebraic invariant.
+
+I published "none of the 61 is an integer count" in this file's own first
+commit (`f5aa6e5ce9`). That was wrong. It came from a grep for
+`float\((n_|len\(|count|num_|int\()`, which cannot match
+`float(result["int_burnside_sum_sq"])` — the integer-ness is in the DICT KEY,
+where no pattern over the call shape can see it. Corrected here.
 
 WHY NO EXISTING AUDIT CATCHES THIS
 ----------------------------------
@@ -108,6 +143,12 @@ def scan_file(path: str) -> list[dict]:
             continue
         if not _is_float_cast(comp_node):
             continue
+        # A literal 0 expected means the computed value is a RESIDUAL, so the
+        # roundoff argument applies and this is the defect. Anything else may be
+        # an exact-integer equality check (see the module docstring) and the
+        # audit cannot decide which -- so it reports it without gating on it.
+        exp = _numeric(kw["expected"]) if "expected" in kw else None
+        bucket = "residual" if exp == 0.0 else "equality"
         name = ""
         if node.args and isinstance(node.args[0], ast.Constant):
             name = str(node.args[0].value)[:60]
@@ -125,14 +166,23 @@ def scan_file(path: str) -> list[dict]:
             "line": comp_node.lineno,
             "assertion": name,
             "tolerance": tol,
+            "bucket": bucket,
+            "expected": exp,
             "computed": lines[comp_node.lineno - 1].strip()[:88]
             if comp_node.lineno - 1 < len(lines) else "",
         })
     return out
 
 
-_SELFTEST_FIRES = '''
+_SELFTEST_RESIDUAL = '''
 w.add_assertion("a", computed=float(dev), expected=0.0, tolerance=1e-40)
+'''
+#: The gap_a4_T10 shape: an integer-valued quantity compared to a nonzero
+#: literal. Must be SEEN (so a real precision claim on a non-integral quantity
+#: is not lost) but must NOT gate (so the integer checks do not read as defects).
+_SELFTEST_EQUALITY = '''
+w.add_assertion("f", computed=float(r["int_burnside_sum_sq"]), expected=60.0,
+                tolerance=1e-30)
 '''
 _SELFTEST_QUIET = '''
 w.add_assertion("b", computed=mpf(dev), expected=0.0, tolerance=1e-40)
@@ -143,15 +193,26 @@ w.add_assertion("e", computed=float(dev), expected=0.0, tolerance="0")
 
 
 def _selftest() -> None:
-    """A detector that cannot fire is not a detector. Pin both directions."""
+    """A detector that cannot fire is not a detector. Pin all three directions.
+
+    The middle case is the one this selftest exists for: before the split, the
+    equality shape fired as a defect. Pinning it as `equality` is what stops a
+    future narrowing from quietly re-merging the buckets.
+    """
     import tempfile
-    for src, want in ((_SELFTEST_FIRES, 1), (_SELFTEST_QUIET, 0)):
+    cases = ((_SELFTEST_RESIDUAL, 1, "residual"),
+             (_SELFTEST_EQUALITY, 1, "equality"),
+             (_SELFTEST_QUIET, 0, None))
+    for src, want, bucket in cases:
         with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False) as f:
             f.write(src)
             tmp = f.name
         try:
-            got = len(scan_file(tmp))
-            assert got == want, f"selftest: expected {want} hit(s), got {got}"
+            got = scan_file(tmp)
+            assert len(got) == want, f"selftest: expected {want} hit(s), got {len(got)}"
+            if bucket:
+                assert got[0]["bucket"] == bucket, (
+                    f"selftest: expected bucket {bucket}, got {got[0]['bucket']}")
         finally:
             os.unlink(tmp)
 
@@ -175,21 +236,42 @@ def main(argv: list[str] | None = None) -> int:
                 if fn.endswith(".py"):
                     findings.extend(scan_file(os.path.join(root, fn)))
     findings.sort(key=lambda r: (r["path"], r["line"]))
+    residual = [f for f in findings if f["bucket"] == "residual"]
+    equality = [f for f in findings if f["bucket"] == "equality"]
+
+    def _dump(rows):
+        for f in rows:
+            exp = "non-literal" if f["expected"] is None else f"{f['expected']:g}"
+            print(f"  {f['path']}:{f['line']}  tol={f['tolerance']:g}  expected={exp}")
+            print(f"      {f['assertion']}")
+            print(f"      {f['computed']}")
 
     print("=" * 78)
     print(" TOLERANCE BELOW THE ARITHMETIC FLOOR — a claim the type cannot support")
     print("=" * 78)
     print(f"  float64 resolution used   : {FLOAT64_FLOOR:.6e}")
     print(f"  flagged assertions        : {len(findings)}")
+    print(f"    RESIDUAL (gating)       : {len(residual)}   expected == 0")
+    print(f"    EQUALITY (advisory)     : {len(equality)}   expected != 0 / non-literal")
     print(f"  files                     : {len({f['path'] for f in findings})}")
-    print("  selftest                  : PASS (1 must-fire, 4 must-stay-quiet)")
-    if findings:
+    print("  selftest                  : PASS (residual fires, equality classifies,")
+    print("                              4 must-stay-quiet)")
+    if residual:
         print()
-        for f in findings:
-            print(f"  {f['path']}:{f['line']}  tol={f['tolerance']:g}")
-            print(f"      {f['assertion']}")
-            print(f"      {f['computed']}")
-    return 1 if findings else 0
+        print("-- RESIDUAL — the defect. A residual's exact value is 0, so float64")
+        print("   roundoff lives exactly where the tolerance claims resolution.")
+        print()
+        _dump(residual)
+    if equality:
+        print()
+        print("-- EQUALITY — ADVISORY, NOT GATING. May be an exact-integer equality")
+        print("   check (integers below 2^53 are exact in float64, so `float(60)`")
+        print("   compared to `60.0` under tol=1e-30 is meaningful), or may be a")
+        print("   genuine float64 precision claim on a non-integral quantity. This")
+        print("   audit cannot tell which; inspect the computed quantity by hand.")
+        print()
+        _dump(equality)
+    return 1 if residual else 0
 
 
 if __name__ == "__main__":
