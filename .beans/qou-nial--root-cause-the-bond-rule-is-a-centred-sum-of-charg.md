@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T13:00:13Z
-updated_at: 2026-08-30T13:00:56Z
+updated_at: 2026-08-30T13:54:55Z
 ---
 
 ## The finding
@@ -94,3 +94,100 @@ whole binding table, and Phase 5q's 1e-49 closed-form validation is against the
 current convention.
 
 Parents: qou-1pig, qou-dhsn, qou-vudb.
+
+
+
+---
+
+## 🛑 MEASURED (owner: "go") — the product rule LOSES on the dashboard. Do NOT switch.
+
+Producer: `computations/probes/bond_rule_dashboard_comparison_probe.py`, 5/5.
+Both rules through the Sec.10a log form on the chain assembly, 12 nuclei
+2H-56Fe, against AME2020.
+
+### 1. The product rule is WORSE on absolute binding
+
+    mean |ln(model/AME)| over 12:   SUM 0.808072    PROD 0.939762
+
+Moving `f_nn` onto the `pn` baseline **removes** binding from every nucleus
+with an nn bond, and the model is already short. That is a measurable
+regression, not a wash.
+
+### 2. Its A=3 mirror agreement is a coincidence — the same trap as qou-vudb
+
+    pair      A   observed        SUM (ratio)          PROD (ratio)
+    3He/3H    3   -0.76375488   -1.7470732 (2.29x)   -0.78294409 (1.025x)
+    7Be/7Li   7   -1.6442398    -1.7470732 (1.06x)   -0.78294409 (0.476x)
+
+Under the chain the product rule's mirror difference is
+`(Z-N)(B_pp - B_baseline)` — a **CONSTANT** for odd-A mirrors, flat in A,
+exactly like the sum rule. It is **identical at A=3 and A=7** while the observed
+splitting has doubled. **Do not quote the 1.025x as a win**: a flat line
+crossing a rising curve.
+
+### 3. Both rules are ~3x short on absolute binding for A >= 4
+
+Ratios 0.28-0.35 from 4He to 56Fe under either rule. That is the extensivity
+problem (`qou-brng`) — the chain carries only A-1 bonds — and **no bond-rule
+change can reach it.**
+
+## Recommendation
+
+**Do not switch `interface_factor`.** It would trade a measured regression in
+absolute binding for a structural improvement whose numerical benefit does not
+survive past A=3, while leaving the 3x shortfall untouched.
+
+The structural finding **stands**: the sum-vs-product substitution is a correct
+and complete diagnosis of why the arc's four failures all look alike. It is a
+**diagnosis, not a repair** — the assembly is short by 3x independently, and
+that is the thing to attack next.
+
+Scope-(a): a measurement under ONE assembly (the chain). It does not refute the
+product rule structurally; it prices it.
+
+
+---
+
+## 🛑 MEASURED (owner: "go") — the product rule LOSES on the dashboard. Do NOT switch.
+
+Producer: `computations/probes/bond_rule_dashboard_comparison_probe.py`, 5/5.
+Both rules through the Sec.10a log form on the chain assembly, 12 nuclei
+2H-56Fe, against AME2020.
+
+### 1. The product rule is WORSE on absolute binding
+
+    mean |ln(model/AME)| over 12:   SUM 0.808072    PROD 0.939762
+
+Moving `f_nn` onto the `pn` baseline REMOVES binding from every nucleus with an
+nn bond, and the model is already short. A measurable regression, not a wash.
+
+### 2. Its A=3 mirror agreement is a coincidence — the same trap as qou-vudb
+
+    pair      A   observed        SUM (ratio)          PROD (ratio)
+    3He/3H    3   -0.76375488   -1.7470732 (2.29x)   -0.78294409 (1.025x)
+    7Be/7Li   7   -1.6442398    -1.7470732 (1.06x)   -0.78294409 (0.476x)
+
+Under the chain the product rule's mirror difference is
+`(Z-N)(B_pp - B_baseline)` — a CONSTANT for odd-A mirrors, flat in A, exactly
+like the sum rule. IDENTICAL at A=3 and A=7 while the observed splitting has
+doubled. Do not quote the 1.025x as a win: a flat line crossing a rising curve.
+
+### 3. Both rules are ~3x short on absolute binding for A >= 4
+
+Ratios 0.28-0.35 from 4He to 56Fe under either rule. That is the extensivity
+problem (qou-brng) — the chain carries only A-1 bonds — and NO bond-rule change
+can reach it.
+
+## Recommendation
+
+DO NOT switch `interface_factor`. It would trade a measured regression in
+absolute binding for a structural improvement whose numerical benefit does not
+survive past A=3, while leaving the 3x shortfall untouched.
+
+The structural finding STANDS: the sum-vs-product substitution is a correct and
+complete diagnosis of why the arc's four failures all look alike. It is a
+DIAGNOSIS, NOT A REPAIR — the assembly is short by 3x independently, and that is
+what to attack next.
+
+Scope-(a): a measurement under ONE assembly (the chain). It does not refute the
+product rule structurally; it prices it.
