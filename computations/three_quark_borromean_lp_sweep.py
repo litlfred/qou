@@ -23,9 +23,19 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+# matplotlib is OPTIONAL (bean qou-c7g8). It was imported at module level, so
+# on any machine without it this producer died at import and never wrote its
+# witness at all -- losing the entire LP sweep because a PNG could not be
+# drawn. The witness is the deliverable; the plot is a convenience. Degrade,
+# do not fail.
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    _HAVE_MPL = True
+except ImportError:                      # pragma: no cover - environment-dependent
+    plt = None
+    _HAVE_MPL = False
 import mpmath as mp
 import numpy as np
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
@@ -286,44 +296,50 @@ def main() -> None:
                 "metallic_brackets": brackets,
             })
 
-    # ── Plot ───────────────────────────────────────────────────────────
-    fig, axes = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
+    if _HAVE_MPL:
+        # ── Plot ───────────────────────────────────────────────────────────
+        fig, axes = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
 
-    # Panel 1: cost coefficients t_i(q)
-    ax = axes[0]
-    for i in range(6):
-        ax.plot(qs_float, [r["t_values"][i] for r in rows],
-                lw=1.3, label=BASIS_NAMES[i])
-    ax.set_ylabel(r"$t_i(q) = \mathrm{tr}_M(b_i)$")
-    ax.set_title(r"Borromean n=3 LP cost coefficients: when do two $t_i$'s coincide?")
-    ax.legend(loc="upper left", fontsize=9, ncol=2)
-    ax.grid(alpha=0.3)
+        # Panel 1: cost coefficients t_i(q)
+        ax = axes[0]
+        for i in range(6):
+            ax.plot(qs_float, [r["t_values"][i] for r in rows],
+                    lw=1.3, label=BASIS_NAMES[i])
+        ax.set_ylabel(r"$t_i(q) = \mathrm{tr}_M(b_i)$")
+        ax.set_title(r"Borromean n=3 LP cost coefficients: when do two $t_i$'s coincide?")
+        ax.legend(loc="upper left", fontsize=9, ncol=2)
+        ax.grid(alpha=0.3)
 
-    # Panel 2: Frobenius shadow prices y_i*
-    ax = axes[1]
-    for i in range(6):
-        ax.plot(qs_float, [r["y_star"][i] for r in rows],
-                lw=1.5, label=BASIS_NAMES[i])
-    ax.axhline(0, color="gray", lw=0.5)
-    ax.set_xlabel(r"$q$ (real)")
-    ax.set_ylabel(r"shadow price $y_i^*$")
-    ax.set_title(r"Active set $\mathcal{A} = \{i : y_i^* > 0\}$ — transitions at metallic $\delta_n$?")
-    ax.legend(loc="upper left", fontsize=9, ncol=2)
-    ax.grid(alpha=0.3)
+        # Panel 2: Frobenius shadow prices y_i*
+        ax = axes[1]
+        for i in range(6):
+            ax.plot(qs_float, [r["y_star"][i] for r in rows],
+                    lw=1.5, label=BASIS_NAMES[i])
+        ax.axhline(0, color="gray", lw=0.5)
+        ax.set_xlabel(r"$q$ (real)")
+        ax.set_ylabel(r"shadow price $y_i^*$")
+        ax.set_title(r"Active set $\mathcal{A} = \{i : y_i^* > 0\}$ — transitions at metallic $\delta_n$?")
+        ax.legend(loc="upper left", fontsize=9, ncol=2)
+        ax.grid(alpha=0.3)
 
-    for ax in axes:
-        for q_special, name, color in [
-            (Q0, r"$q_0$", "tab:red"),
-            (PHI, r"$\varphi$", "goldenrod"),
-            (DELTA_SILVER, r"$\delta_2$", "silver"),
-            (DELTA_BRONZE, r"$\delta_3$", "peru"),
-        ]:
-            ax.axvline(float(q_special), color=color, lw=1.2, ls=":", alpha=0.7)
+        for ax in axes:
+            for q_special, name, color in [
+                (Q0, r"$q_0$", "tab:red"),
+                (PHI, r"$\varphi$", "goldenrod"),
+                (DELTA_SILVER, r"$\delta_2$", "silver"),
+                (DELTA_BRONZE, r"$\delta_3$", "peru"),
+            ]:
+                ax.axvline(float(q_special), color=color, lw=1.2, ls=":", alpha=0.7)
 
-    plt.tight_layout()
-    out_png = HERE / "three-quark-borromean-lp-sweep.png"
-    fig.savefig(out_png, dpi=140, bbox_inches="tight")
-    print(f"Saved plot: {out_png}", file=sys.stderr)
+        plt.tight_layout()
+        out_png = HERE / "three-quark-borromean-lp-sweep.png"
+        fig.savefig(out_png, dpi=140, bbox_inches="tight")
+        print(f"Saved plot: {out_png}", file=sys.stderr)
+    else:
+        out_png = None
+        print("matplotlib unavailable — skipping the PNG; the witness is",
+              "unaffected and records plot_skipped_no_matplotlib.",
+              file=sys.stderr)
 
     # LP duals at the transition brackets. `solve_lp_n3` computes x_star,
     # y0_star, y_star and active_set at every sweep point and the witness
@@ -417,6 +433,17 @@ def main() -> None:
             "active-set detection.",
         ],
     }
+    # Record whether the PNG was drawn (bean qou-c7g8). A reader comparing
+    # two runs of this producer must be able to tell "no plot because
+    # matplotlib was absent" from "no plot because the run failed" -- the
+    # witness is identical either way otherwise.
+    witness["plot_rendered"] = bool(_HAVE_MPL)
+    if not _HAVE_MPL:
+        witness["plot_skipped_no_matplotlib"] = (
+            "matplotlib is not installed in this environment; the PNG was "
+            "skipped. No computed value depends on it -- the plot is drawn "
+            "FROM the sweep rows this witness already carries, never into "
+            "them.")
     out_json = HERE / "three-quark-borromean-lp-sweep.witness.json"
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made

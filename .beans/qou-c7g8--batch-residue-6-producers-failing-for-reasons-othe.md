@@ -100,3 +100,32 @@ beaned separately as a portability defect rather than refactored mid-bean.
 - `baldfn_theta_limit_probe.py` — AssertionError ('qt=2', 'reliable window too
   short', 0), a genuine assertion
 - `three_quark_borromean_lp_sweep.py` — matplotlib absent
+
+### 3. `three_quark_borromean_lp_sweep.py` — FIXED, exit 0 without matplotlib
+
+Took the bean's second option (degrade, don't install): an ephemeral container's
+`pip install` helps nobody else, whereas the real defect is durable — a
+module-level `import matplotlib` meant that on any machine without it the
+producer died at IMPORT and never wrote its witness at all. An entire LP sweep
+was lost because a PNG could not be drawn. The witness is the deliverable; the
+plot is drawn FROM the sweep rows the witness already carries, never into them.
+
+Import is now guarded, the plot block is conditional, and the witness records
+`plot_rendered: false` + `plot_skipped_no_matplotlib` so a reader can tell "no
+plot because matplotlib was absent" from "no plot because the run failed" —
+otherwise the two are indistinguishable.
+
+### ⚠️ Operational note for the whole campaign: this container has NEWER libs
+
+Re-running the sweep moved LP duals at ~1e-11 (`-0.04063618418327389` ->
+`-0.04063618417431147`). That is NOT nondeterminism: two consecutive runs here
+are bit-identical (0 non-ephemeral differences). It is an ENVIRONMENT
+difference — scipy 1.17.1 / numpy 2.4.6 now, versus whatever built the
+2026-08-24 witness. The `c-knot` witness showed the same shape
+(`engineVersion: mpmath 1.3.0 -> 1.4.1`).
+
+**So any mass re-run of producers in this container will produce float64-level
+churn across the corpus that has nothing to do with the change being made.**
+Budget for it, and diff non-ephemeral values before attributing drift to a fix.
+Raw-float64 count for this witness is unchanged (104 -> 104), so no ratchet
+regression.
