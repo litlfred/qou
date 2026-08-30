@@ -1,6 +1,38 @@
 #!/usr/bin/env python3
 """jet_filtration_hypothesis_fails_probe.py
 
+*** RETRACTED 2026-08-30, same session, by the author of the claim. ***
+
+The conditional this probe states does NOT fire, because its antecedent is
+false. I flagged the identification `mu_n == a_D^(n) * w_n` as unestablished
+and said settling it was the next step. Settled: it is WRONG.
+
+`bk-coordination-multiplicity.md` DOES state the multiplicity, in the section I
+had not read when I wrote this: `M_n(A)` is the **per-nucleon coordination
+number z = A - 1**, read off AME2020 as `M_need = B_AME/(m_e Vol_A)` and matched
+for the non-magic A=3 pair (2.003 for 3H, 2.061 for 3He against z = 2) to better
+than 3% with no free parameter. It is NOT `C(A,n)`.
+
+So the jet-filtration decomposition is not the binomial one, the measured
+alternation of `mu_5` and `mu_7` says nothing about `a_D^(n)`, and the
+extensivity hypothesis is NOT shown to be violated. My grep missed it because I
+searched for `binom{A}{n}` / `C(A,n)` / `n-subsets` -- the block writes `C(A,2)`
+for the total bond count and `z = A-1` for the multiplicity, so none of my
+patterns could hit.
+
+WHAT SURVIVES, and it is only the measurement, not the inference:
+  - the binomial-basis coefficients mu_k are exactly as tabulated below, and
+    their sign pattern (+,+,+,-,+,-) is convention-invariant over all 27 mirror
+    conventions. That is a fact about the binomial decomposition and stays true.
+  - QOU.Mass.JetFiltrationSignObstruction stays valid: it is stated in `_of_`
+    form over abstract `aD`/`w`, so it proves what it proves (w >= 0 is
+    structural; a negative term forces a negative aD). It simply has no
+    instance here.
+
+Original text follows, unchanged, for the record.
+
+ORIGINAL:
+
 The jet-filtration extensivity proposition is proved, and its hypothesis is
 false in the data -- conditional on one identification I have NOT established.
 
