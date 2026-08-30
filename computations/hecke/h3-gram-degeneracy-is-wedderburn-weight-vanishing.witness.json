@@ -1,0 +1,273 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:48:02.508808+00:00",
+  "commitSha": "f3afaa8c51d01c2e3163120d3f5ff85a40f782e5",
+  "assertions": [
+    {
+      "name": "seminormal_braid_relation",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "chi21_sigma_is_h",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "chi21_sigma1sigma2_is_minus_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "y111_matches_2026_08_26_audit",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "weights_sum_to_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "y21_roots_are_q_and_minus_inv_q",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "gram_det_is_wedderburn_product_no_pos_zeros",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "detFactor3_is_zC_eq_q",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "detFactor4_is_zC_eq_minus_inv_q",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "y21_at_zD_closed_form",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "y111_at_zD_vanishes_identically",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "y3_at_zD_closed_form",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_eq_q_has_no_positive_solution",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_eq_minus_inv_q_has_no_real_solution",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "melt_is_below_not_above",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "substrate_is_on_the_stable_side",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "threshold_q_is_inv_psi_squared_not_psi",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_eq_one_is_q_eq_psi",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zC_never_reaches_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "h3-gram-degeneracy-is-wedderburn-weight-vanishing",
+  "scriptFile": "h3_gram_degeneracy_is_wedderburn_weight_vanishing.py",
+  "scriptHash": "234334f47611",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke/h3_gram_degeneracy_is_wedderburn_weight_vanishing.py"
+    ],
+    "reproduce": "python3 -u computations/hecke/h3_gram_degeneracy_is_wedderburn_weight_vanishing.py"
+  },
+  "description": "The convention-C H_3 Gram determinant's recorded factorisation is explained: det G = [unit on u>0] * y_(3) * y_(2,1)^4 * y_(1^3), so every positive-u degeneracy is a Wedderburn weight vanishing and the multiplicity-5 factors are d^2 bookkeeping. y_(2,1) = 0 iff z = q or z = -1/q; under convention C those are exactly detFactor3 (u^3+u-1) and detFactor4 (u^3+u^2+1). Under the canonical convention D neither has a real solution and y_(2,1)(z_D) = q^2/(q^2+1)^2 > 0, so the hadronic-melt degeneracy does not exist at any real q. Separately, spectrahedral-phase-collapse-melt.md misplaces the convention-C threshold (it says q = psi; the theorem gives u = 1/psi with u = sqrt(q), i.e. q = 1/psi^2) and inverts its direction (it says heated past; the weight goes negative BELOW).",
+  "contentBlock": "prop:spectrahedral-phase-collapse",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)"
+  },
+  "data": {
+    "assertions_passed": 19,
+    "assertions_total": 19,
+    "checks": [
+      {
+        "name": "seminormal_braid_relation",
+        "pass": true,
+        "why": "sigma_1 sigma_2 sigma_1 = sigma_2 sigma_1 sigma_2 on V_(2,1)"
+      },
+      {
+        "name": "chi21_sigma_is_h",
+        "pass": true,
+        "why": "chi^(2,1)(sigma) = q - 1/q = h"
+      },
+      {
+        "name": "chi21_sigma1sigma2_is_minus_one",
+        "pass": true,
+        "why": "chi^(2,1)(sigma_1 sigma_2) = -1"
+      },
+      {
+        "name": "y111_matches_2026_08_26_audit",
+        "pass": true,
+        "why": "independent re-derivation of y_(1^3)(z) agrees exactly"
+      },
+      {
+        "name": "weights_sum_to_one",
+        "pass": true,
+        "why": "y_(3) + 2 y_(2,1) + y_(1^3) = 1 for every z (Markov normalisation)"
+      },
+      {
+        "name": "y21_roots_are_q_and_minus_inv_q",
+        "pass": true,
+        "why": "y_(2,1) = 0 iff z = q or z = -1/q; got [-1/u**2, u**2]"
+      },
+      {
+        "name": "gram_det_is_wedderburn_product_no_pos_zeros",
+        "pass": true,
+        "why": "det G / (y3 y21^4 y111) = -(u**4 + 1)**2*(u**2 - u + 1)**6*(u**2 + u + 1)**6*(u**4 - u**2 + 1)**6/u**28 — no positive real zero or pole, so on u>0 every Gram degeneracy is a weight vanishing"
+      },
+      {
+        "name": "detFactor3_is_zC_eq_q",
+        "pass": true,
+        "why": "z_C = q  <=>  u(u^3+u-1) = 0   [corpus detFactor3]; got -u*(u**3 + u - 1)"
+      },
+      {
+        "name": "detFactor4_is_zC_eq_minus_inv_q",
+        "pass": true,
+        "why": "z_C = -1/q  <=>  u^3+u^2+1 = 0  [corpus detFactor4]; got u**3 + u**2 + 1"
+      },
+      {
+        "name": "y21_at_zD_closed_form",
+        "pass": true,
+        "why": "y_(2,1)(z_D) = q^2/(q^2+1)^2 — manifestly positive, never zero"
+      },
+      {
+        "name": "y111_at_zD_vanishes_identically",
+        "pass": true,
+        "why": "y_(1^3)(z_D) = 0 for every q — the D radical / TL quotient"
+      },
+      {
+        "name": "y3_at_zD_closed_form",
+        "pass": true,
+        "why": "y_(3)(z_D) = (q^4+1)/(q^2+1)^2"
+      },
+      {
+        "name": "zD_eq_q_has_no_positive_solution",
+        "pass": true,
+        "why": "z_D = q forces q = 0"
+      },
+      {
+        "name": "zD_eq_minus_inv_q_has_no_real_solution",
+        "pass": true,
+        "why": "z_D = -1/q forces q^4+q^2+1 = 0, no real root"
+      },
+      {
+        "name": "melt_is_below_not_above",
+        "pass": true,
+        "why": "y_(2,1)(z_C) < 0 for u < 1/psi and > 0 for u > 1/psi (below=-0.02607950041, above=0.04201193778)"
+      },
+      {
+        "name": "substrate_is_on_the_stable_side",
+        "pass": true,
+        "why": "y_(2,1)(z_C) = 0.280929631031 > 0 at the proton pin q0"
+      },
+      {
+        "name": "threshold_q_is_inv_psi_squared_not_psi",
+        "pass": true,
+        "why": "threshold in q is 1/psi^2 = 0.46557123187676802666, NOT psi = 1.4655712318767680267"
+      },
+      {
+        "name": "zD_eq_one_is_q_eq_psi",
+        "pass": true,
+        "why": "z_D = 1  <=>  q^3 = q^2+1  <=>  q = psi — a DIFFERENT point from u = 1/psi"
+      },
+      {
+        "name": "zC_never_reaches_one",
+        "pass": true,
+        "why": "z_C = u/(u^2+1) <= 1/2 for all u>0, so eps = tr_M is unreachable under C at any q"
+      }
+    ],
+    "y_lambda_free_z": {
+      "y_3": "(u**8*z**2 + u**6*z + u**4*z**2 + 2*u**2*z + 1)/(u**12 + 2*u**8 + 2*u**4 + 1)",
+      "y_21": "(u**6*z - u**4*z**2 + u**4 - u**2*z)/(u**8 + u**4 + 1)",
+      "y_111": "(u**12 - 2*u**10*z + u**8*z**2 - u**6*z + u**4*z**2)/(u**12 + 2*u**8 + 2*u**4 + 1)"
+    },
+    "det_over_wedderburn_product": "-(u**4 + 1)**2*(u**2 - u + 1)**6*(u**2 + u + 1)**6*(u**4 - u**2 + 1)**6/u**28",
+    "at_convention_D": {
+      "y_3": "(u**8 + 1)/(u**8 + 2*u**4 + 1)",
+      "y_21": "u**4/(u**8 + 2*u**4 + 1)",
+      "y_111": "0"
+    },
+    "convention_C_threshold": {
+      "u": "0.682327803828019327369483739711",
+      "q": "0.46557123187676802665673122522",
+      "psi": "1.46557123187676802665673122522"
+    },
+    "scope": "Scope-(b) for 'the (2,1) Wedderburn weight cannot vanish at any real q under convention D', with the invariant cited: y_(2,1)(z_D) = q^2/(q^2+1)^2 is a manifestly positive rational function. Scope-(a) for 'there is no hadronic melt' — this excludes the Wedderburn / Gram-degeneracy route only; a transition from some other mechanism is untouched."
+  }
+}
