@@ -305,6 +305,94 @@ def _hecke_factor_coo(sigma_coo, c: mp.mpf, d: mp.mpf, dim: int):
     return out
 
 
+def _to_fixed(x, S: int) -> int:
+    """mpf -> integer scaled by 2**S. EXACT: mpf is binary, so this is a shift.
+
+    THE SIGN IS APPLIED BY HAND. mpmath's `man_exp` returns an UNSIGNED
+    mantissa. The flint attempt in this same bean lost every negative value to
+    exactly this and returned chi = 5.13 instead of 1.53, and the conversion
+    test that missed it used a positive number. Signs are checked in the A/B
+    below on values of both signs.
+    """
+    m, e = x.man_exp
+    m = int(m)
+    if x < 0:
+        m = -m
+    e = int(e) + S
+    return m << e if e >= 0 else m >> (-e)
+
+
+def _chi_via_fixed_point(sigmas, dim, word, S: int):
+    """chi_lambda(W) in scaled-integer arithmetic, or None on any surprise.
+
+    WHY. Profiling the mpf kernel at dim=768 (8.7M multiplies, 8.7M adds):
+
+        real arithmetic   mpf_add + mpf_mul                 ~29%
+        object protocol   __mul__/__add__, __new__, hasattr ~55%
+
+    17.5M object allocations and 17.5M hasattr calls, one of each per
+    elementary operation. gmpy2 already does the mantissa work; wrapping every
+    intermediate in a Python mpf is what costs. Measured on the primitive,
+    200k multiply-adds at ~70 digits: mpf 0.294s, gmpy2 fixed-point 0.045s,
+    6.58x.
+
+    Fixed point is faithful here because the values are O(1) and the precision
+    is fixed: multiply is an integer multiply plus a shift, add is an integer
+    add, and Python/gmpy2 ints carry their own sign. Truncation is 2**-S per
+    operation; with S = prec + 64 that is far below the working precision even
+    accumulated over millions of operations.
+
+    This does NOT discard sparsity — that is why it beats the dense arb_mat
+    route, which was measured 0.39x at dim=768.
+    """
+    try:
+        one = 1 << S
+        Pm = [[0] * dim for _ in range(dim)]
+        for i in range(dim):
+            Pm[i][i] = one
+        for (c, d, g) in word:
+            c_fx = _to_fixed(c if isinstance(c, mp.mpf) else mp.mpf(str(c)), S)
+            d_fx = _to_fixed(d if isinstance(d, mp.mpf) else mp.mpf(str(d)), S)
+            # (c*sigma + d*I) in fixed point, reusing the existing COO builder's
+            # structure but on ints.
+            by_row = {}
+            for (i, j, v) in sigmas[g]:
+                by_row.setdefault(i, []).append(
+                    (j, _to_fixed(v if isinstance(v, mp.mpf) else mp.mpf(str(v)), S)))
+            M = []
+            seen = set()
+            for i in range(dim):
+                ents = by_row.get(i, [])
+                if not ents:
+                    if d_fx:
+                        M.append((i, i, d_fx))
+                    seen.add(i)
+                    continue
+                for (j, v) in ents:
+                    if i == j:
+                        M.append((i, i, (c_fx * v >> S) + d_fx))
+                        seen.add(i)
+                    else:
+                        M.append((i, j, c_fx * v >> S))
+            for i in range(dim):
+                if i not in seen and d_fx:
+                    M.append((i, i, d_fx))
+            Pn = [[0] * dim for _ in range(dim)]
+            for (j, k, v) in M:
+                col = Pn
+                for r in range(dim):
+                    pv = Pm[r][j]
+                    if pv:
+                        col[r][k] += pv * v >> S
+            Pm = Pn
+        tr = 0
+        for i in range(dim):
+            tr += Pm[i][i]
+        return mp.ldexp(mp.mpf(tr), -S)
+    except Exception:      # noqa: BLE001 - accelerator only, never fatal
+        return None
+
+
 def _collapse_hecke_runs(word, h):
     """Collapse runs of an IDENTICAL Hecke factor to a single factor.
 
@@ -401,6 +489,12 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
             [(c if isinstance(c, mp.mpf) else mp.mpf(str(c)),
               d if isinstance(d, mp.mpf) else mp.mpf(str(d)), g)
              for (c, d, g) in word], h_mp)
+
+    # Fixed-point fast path: same sparse structure, integer arithmetic.
+    if q is not None:
+        _fx = _chi_via_fixed_point(sigmas, dim, word, mp.mp.prec + 64)
+        if _fx is not None:
+            return _fx
 
     # P starts as the identity, stored as a dict-of-dicts for sparsity.
     # After the first multiplication it generally becomes dense, so

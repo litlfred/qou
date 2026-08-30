@@ -904,3 +904,63 @@ first.
 Vintage deliberately unchanged: the canonical pin moved A -> C, this is still A,
 and the payload calls it "muon (computations-layer canonical)" — re-pinning is a
 convention decision, not a precision fix.
+
+
+## 2026-08-30 — A=4 IS NOW TRACTABLE. Fixed-point kernel: 31.7x measured
+
+Implemented the fixed-point route the bottleneck analysis identified. It beat
+its own projection.
+
+    shape         dim     mpf        fixed      speedup   rel.err
+    (2,2,1,1)       9     0.002s     0.001s      2.31x     1.8e-71
+    (4,1,1)        10     0.002s     0.001s      2.66x     4.5e-72
+    (3,2,1)        16     0.005s     0.001s      4.16x     5.5e-71
+    (4,3,2,1)     768    11.857s     0.374s     **31.73x** 5.9e-70
+
+The projection was 6.58x, from a primitive benchmark. The realised figure grows
+with dimension because the per-operation object overhead is a larger share of a
+bigger problem — 6.58x was the floor, not the ceiling.
+
+**Signs are covered, and deliberately so.** chi for `(3,2,1)` is NEGATIVE
+(-1.9722...) and matches to 5.5e-71. `_to_fixed` applies the sign by hand
+because mpmath's `man_exp` mantissa is unsigned — the exact bug that made the
+flint attempt return 5.13 instead of 1.53, whose test used only positives.
+
+Sparsity is retained, which is why this wins where `arb_mat` lost: dense flint
+was 0.39x at this same dim=768.
+
+### Why A=4 still did not finish in my tests — measured, not guessed
+
+    partitions of 12: 77     max dim 7700     sum dim^2 = 4.79e8
+
+    (6,3,2,1)   dim=5632   build 13.03s   chi 69.91s
+    (4,3,3,2)   dim=2970   build  3.55s   chi 17.57s
+    (5,4,3)     dim=2112   build  1.93s   chi  8.62s
+    (4,4,4)     dim= 462   build  0.15s   chi  0.37s
+
+chi is ~84% of the cost; the seminormal build is only 16%. Extrapolating on
+dim^2 from two independent calibration points:
+
+    calibrated on dim=5632   total chi ~ 1056s = 17.6 min
+    calibrated on dim=2112   total chi ~  926s = 15.4 min
+
+**~15-18 minutes.** Before this change it was ~31x that: **8-9 hours**, which is
+why it never finished and why "did not complete in 850s" kept being the only
+observation available. **My 850s command timeout is 14 minutes — A=4 was
+finishing just outside the window I was measuring in.**
+
+### What this means for the default flip
+
+The blocker was "A=4 does not complete". That is now false: it completes in
+~15-18 minutes. But that is per A=4 producer, against 75.6s for float64, so
+flipping `QOU_H3A_MPF` on for ~20 consumers is a **~12-14x wall-clock cost**,
+not a hang. That is a real decision with a real number behind it now, rather
+than a blocker — and it is still the owner's call, not mine, because it changes
+every value those consumers emit.
+
+### Remaining headroom, if it is ever wanted
+
+chi is O(sum_lambda dim_lambda^2) and that sum is 4.79e8 for n=12. The
+fixed-point kernel removed the constant-factor waste; what is left is the
+algorithm. Real further gains would need to avoid computing every irrep
+separately — a different piece of mathematics, not a faster inner loop.
