@@ -9,7 +9,7 @@ tags:
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T14:27:31Z
+updated_at: 2026-08-30T14:55:24Z
 parent: qou-8mtd
 ---
 
@@ -711,3 +711,28 @@ the `lean-axiom-guard.py` registry comment.
 the strict statement, at that. AGENTS.md §"Terse ≠ compressed" names this exact failure,
 and the corpus-grep checklist exists to catch it. I had walked path 2 (`content/`) and
 not path 2 into `MathlibExt/`, where the answer was sitting in a `rfl`.
+
+
+---
+
+## 2026-08-30 (later still) — item 3 is FULLY CLOSED
+
+Strict `0 < D(z)` landed in #6263 as `Archimedean.BlochWignerPositive.blochWigner_lob_pos`,
+by Rivin strict concavity along a chord whose endpoints stay strictly interior. Bean
+`qou-0ag0` carries the argument and the correction to what it cost.
+
+**The note two entries up says "item 3 should now read *strict* `0 < D(z)`, not
+positivity". Both halves are now proved; item 3 is done.** So this bean's "Still open" list
+is:
+
+1. Exactify both `MostowRigidity` instances (`figureEight`, `knot5_2`) — **still open**,
+   and #6234 recorded why the 5₂ half is not unblocked by the chord: the bound it gives is
+   `VOL_4_1 < VOL_5_2`, and `VOL_4_1` is the quantity already on the left of the comparison
+   that would use it. Exactifying the literal needs separation from the *next* spectrum
+   value up, which is a different bound.
+2. The inequalities as Lean facts — **closed** (#6141).
+3. General `0 < D(z)` — **closed**, non-strict #6234, strict #6263.
+
+Downstream, `MathlibExt/ManifoldVolumePositive.vol_pos_of_realises` now gives
+`0 < vol m` for any realised manifold with a nonempty triangulation, which is what item 3
+was wanted for.
