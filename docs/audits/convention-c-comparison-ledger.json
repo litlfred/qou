@@ -1010,6 +1010,110 @@
       "line_at_adjudication": 180,
       "scope": "Rq",
       "rationale": "Follow-up to bean 0zr0 (docs/audits/2026-07-03-0zr0-eta-descent-invariant-theory-prune.md), identifying the eta-plane singularity from the descent rungs g_k that the 0zr0 prune left as its one sharpened datum. Those rungs are ladder quantities and carry the ladder's C frame (qou-cds1); the probe's subject is the singularity structure of that C-frame object, so re-basing on z_D would relocate the singularity being identified rather than re-express it."
+    },
+    {
+      "path": "computations/probes/coordination_weight_rise_and_turnover_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_at_adjudication": 123,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures coordination-weight rise/turnover measured in both frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/probes/mu4_magnitude_gap_anatomy_probe.py",
+      "target": "zC",
+      "source_hash": "e83d4b1880e3",
+      "line_at_adjudication": 130,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures mu4 magnitude-gap anatomy priced in both frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 106,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the bar action on traced volume compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 51,
+      "scope": "<module>",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the bar-midpoint offset compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_bridge_generic_z.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 135,
+      "scope": "main",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the D-frame bridge evaluated at a generic z, with both endpoints instantiated; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_log_coordinate_form_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_at_adjudication": 59,
+      "scope": "<module>",
+      "rationale": "Two-arm frame comparison, co-bound in one scope: z_D is bound within two lines of this z_C binding (verified, not taken from the audit's [co-bound] tag -- co-binding is REPORTED by the audit but does not by itself exempt, which is why each of these is adjudicated explicitly). The probe measures the log-coordinate form compared across frames; binding only z_D deletes the comparison it exists to make. Four of these six are `qbeta_d_frame_*` probes, i.e. files whose subject IS the D frame -- they need the C arm precisely to say what D differs from."
+    },
+    {
+      "path": "computations/qbeta/qbeta_z_bar_parity_fmap_class_probe.py",
+      "target": "z",
+      "source_hash": "16b37f40ab80",
+      "line_at_adjudication": 72,
+      "scope": "main",
+      "rationale": "z_C IS THE OBJECT UNDER TEST, and this is provable. The line above it reads '# 1. z = sqrt(q)/(1+q) is exactly bar-even', and the very next statement asserts `z_bar_even_twist_1`. MEASURED both ways: z_C(1/q) - z_C(q) = 0 EXACTLY, so z_C is bar-even; z_D(1/q) - z_D(q) = -q + 1/q, so z_D is bar-NEITHER (not even, not odd). Substituting z_D would not re-express the check -- it would make the probe's own assertion FAIL. Same shape as qbeta_prearchimedean_z_recursion, where z_C satisfies the derived ODE exactly and z_D leaves a nonzero residual."
+    },
+    {
+      "path": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_at_adjudication": 131,
+      "scope": "qbeta_C_over_me",
+      "rationale": "Deliberate reproduction, declared in the source immediately above: 'convention-D substitution here would measure a different chain and destroy the finding.' The z feeds a = (z_C - 1) * h / 2 -- the ladder's alpha, same construction as qbeta_c3_cross_anchor_exactness and qbeta_h_frame_rungs. DETECTOR NOTE worth carrying: the same comment records that a PRIOR agent renamed the binding from `z` to `z_C` specifically so the AST/shape detector would read it as deliberate (it decides `deliberate` from the target name, per scripts/lib/convention_c_names.py). That rename worked for the shape audit and did NOTHING for the value audit, which keys on the VALUE and not the name -- which is why the site is still blocking and still needs this ledger entry. A fix aimed at one detector does not satisfy the other."
+    },
+    {
+      "path": "computations/qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py",
+      "target": "z",
+      "source_hash": "16b37f40ab80",
+      "line_at_adjudication": 68,
+      "scope": "main",
+      "rationale": "Q_beta ladder/carrier preflight: z feeds the T3 carrier's q=1 order check alongside kappa = (q-1)^3 (q+1)/q^2. Carries the ladder's C frame per qou-cds1, which has not been re-derived under D; a z-swap would mix a D-frame Markov parameter into a C-frame order computation. C-frame status here is INFERRED from what the probe computes rather than declared in the file -- weaker evidence than the self-declaring cases, recorded as such."
+    },
+    {
+      "path": "computations/qbeta/qbeta_c3_barodd_hs_matrix_resolvent_probe.py",
+      "target": "z",
+      "source_hash": "c9e1cf07ebbd",
+      "line_at_adjudication": 115,
+      "scope": "make_engine",
+      "rationale": "The Markov parameter of the same make_engine whose TR_M[5] weight was corrected on #6169 (qou-dbau). C-frame ladder work; the convention question is SEPARABLE from the correctness bug that was fixed there, and this entry adjudicates the CONVENTION only. IMPORTANT: this file is currently RED and under re-analysis -- its recorded scope-(a) conclusion does not hold as derived, because correcting TR_M[5] flips pairing_is_bar_even to FALSE. This adjudication does not endorse the probe's conclusions; it records that its z is the ladder's C frame and not residual C."
+    },
+    {
+      "path": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "target": "z_bar",
+      "source_hash": "4aac58cec121",
+      "line_at_adjudication": 155,
+      "scope": "main",
+      "rationale": "The bar-conjugate companion of z_naive, which is already adjudicated in this ledger as one of the probe's two parameter-free magnitudes. z_bar is written out to demonstrate z's bar-evenness; it differs from z_naive only by commuting the addition, so the companion assertion z_bar_even is exactly 0 and CANNOT FAIL -- labelled in situ on #6058 as MANIFEST rather than measured. Adjudicated for the same reason as z_naive: substituting z_D would test a different candidate, and here it would additionally break the demonstration, since z_D is bar-NEITHER (measured: z_D(1/q) - z_D(q) = -q + 1/q)."
+    },
+    {
+      "path": "computations/probes/toffoli_qand_convention_d_derivation.py",
+      "target": "zc_s",
+      "source_hash": "78ac4d660831",
+      "line_at_adjudication": 185,
+      "scope": "main",
+      "rationale": "CONFIRMED convention C, and it sat in the audit's UNRESOLVED bucket rather than BLOCKING purely because the variable name `_s` is not in the recogniser's list. The file declares it at :109 -- `_s = sp.symbols(\"s\", positive=True)  # s = sqrt(q)` -- so `_s/(_s**2+1)` IS sqrt(q)/(q+1) = z_C, the generic-variable spelling. It is the deliberate C arm of GATE 4/5 in a file whose subject is the convention-D derivation: it reconstructs P_77 = z + h*z^2 exactly and checks that its D form is positive. Note that P_77 = z + h*z^2 is the SAME shape as the TR_M[5] Markov weight (h*z^2 + z) whose absence caused the three-instance bug fixed on #6058/#6169 -- here it is present and correct."
+    },
+    {
+      "path": "computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py",
+      "target": "<return>",
+      "source_hash": "89dae5d199be",
+      "line_at_adjudication": 134,
+      "scope": "z_C_s",
+      "rationale": "CONFIRMED convention C and self-declaring: the enclosing function is literally named `z_C_s` (:132). It sat in UNRESOLVED rather than BLOCKING only because the parameter name `ss` is not in the audit's sqrt-variable recogniser. `ss/(ss**2+1)` with ss = sqrt(q) is z_C in the generic-variable spelling."
     }
   ]
 }

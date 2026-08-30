@@ -120,8 +120,26 @@ _SKIP_DIRS = {".git", ".lake", "__pycache__", "_deprecated", "node_modules"}
 #: Variable names that conventionally denote sqrt(q) in this corpus, and those
 #: that denote q itself.  Used only to triage a `-sqrtvar` match; an unlisted
 #: name is reported `unknown`, never assumed.
+#  `_s` and `ss` added 2026-08-30 (qou-t9r1), both VERIFIED at their bindings
+#  rather than guessed from the name: toffoli_qand_convention_d_derivation.py:109
+#  declares `_s = sp.symbols("s", positive=True)  # s = sqrt(q)`, and
+#  qbeta_braid_image_eigenphase_exclusion_probe.py:132 names the enclosing
+#  function `z_C_s`. Before this, both sat in UNRESOLVED — neither BLOCKING (so
+#  a drain reads as complete) nor adjudicable (the ledger matcher only reaches
+#  resolved rows, so an entry written for them matches NOTHING). That gap is the
+#  reason to keep this list honest: an unresolved row is invisible in both
+#  directions at once.
+#
+#  KNOWN LIMITATION, deliberately not papered over: this triage is NAME-based,
+#  which is the exact brittleness the value audit exists to avoid everywhere
+#  else — it evaluates BINDINGS rather than matching names, except here. The
+#  principled fix is to resolve each variable at its binding site (`X = *sqrt(q)`,
+#  or a sympy symbol whose comment or later use says so) and fall back to this
+#  list only when that fails. Until then, every new sqrt-variable spelling lands
+#  in UNRESOLVED and must be added by hand, having first been verified the way
+#  these two were.
 _SQRT_VARS = {"s", "u", "t", "v", "sq", "sqq", "qh", "qhalf", "q_half", "rq",
-              "sqrt_q", "qsqrt", "shalf"}
+              "sqrt_q", "qsqrt", "shalf", "_s", "ss"}
 _Q_VARS = {"q", "q0", "_q", "q_0", "qq", "Q"}
 
 
