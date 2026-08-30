@@ -19,7 +19,7 @@ has positive forward second difference `δ² Φ(Z)` precisely at
 magic-number list is used — positions emerge from `q₀` via the
 Hoefsmit matrices.
 
-LaTeX: `\label{prop:magic-numbers-from-q}`
+LaTeX: `\label{conj:magic-numbers-from-q}`
 
 This file encodes:
 

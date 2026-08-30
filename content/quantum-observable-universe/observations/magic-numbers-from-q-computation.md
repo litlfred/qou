@@ -1,4 +1,4 @@
-This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q).
+This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q).
 
 ## Computation
 

@@ -1,5 +1,6 @@
-**Theorem (conditional on [`conj:magic-numbers-bring`](../quantum-observable-universes/magic-numbers-bring.md)
-and [`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md)).**
+**Theorem (conditional on [`conj:magic-numbers-bring`](../quantum-observable-universes/magic-numbers-bring.md),
+[`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md),
+and [`conj:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic
 (both $Z \in \mathfrak{M}$ and $N \in \mathfrak{M}$, with
 $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$), the binding energy

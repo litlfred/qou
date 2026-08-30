@@ -3283,12 +3283,12 @@
     },
     "rem:categorical-neutrality-saturated-shells-interpretation": {
       "derived": [
-        "prop:magic-numbers-from-q",
+        "conj:magic-numbers-from-q",
         "thm:wedderburn-mass-formula"
       ],
       "declared": [],
       "effective": [
-        "prop:magic-numbers-from-q",
+        "conj:magic-numbers-from-q",
         "thm:wedderburn-mass-formula"
       ]
     },
@@ -4025,12 +4025,12 @@
     },
     "rem:magic-A-binding-formula-context": {
       "derived": [
-        "prop:diagrammatic-double-magic-lr-fusion",
+        "conj:diagrammatic-double-magic-lr-fusion",
         "rem:strutinsky-from-graded-trace"
       ],
       "declared": [],
       "effective": [
-        "prop:diagrammatic-double-magic-lr-fusion",
+        "conj:diagrammatic-double-magic-lr-fusion",
         "rem:strutinsky-from-graded-trace"
       ]
     },

@@ -1,4 +1,4 @@
-This remark records the setup, mechanism, worked cases, higher-magic predictions, and proof outlook for [`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion).
+This remark records the setup, mechanism, worked cases, higher-magic predictions, and proof outlook for [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion).
 
 A nuclide is double-magic when its proton and neutron counts both fall in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. Canonical examples include $^4\mathrm{He}$, $^{16}\mathrm{O}$, $^{40}\mathrm{Ca}$, $^{48}\mathrm{Ca}$, $^{56}\mathrm{Ni}$, $^{132}\mathrm{Sn}$, and $^{208}\mathrm{Pb}$. The empirical signature is exceptional binding-energy stability: these nuclei occupy sharp local maxima on the binding-per-nucleon curve. The Littlewood-Richardson (LR) fusion of the two saturated $Z$- and $N$-blocks is rigid (a single self-conjugate Specht module on the diagonal) and permits no off-diagonal flux.
 

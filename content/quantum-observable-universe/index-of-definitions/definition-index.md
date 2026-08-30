@@ -740,7 +740,7 @@
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 12 | `qou:QOU.BraidKnot.QRogersAnalyticContinuation` |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 12 | `qou:QOU.BraidKnot.habiro_integral` |
 | [prop:chain-ring-comparison](#prop:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
-| [prop:diagrammatic-double-magic-lr-fusion](#prop:diagrammatic-double-magic-lr-fusion) | Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 | `qou:QOU.LRFusion.DoubleMagicConjecture` |
+| [conj:diagrammatic-double-magic-lr-fusion](#conj:diagrammatic-double-magic-lr-fusion) | Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 15 | `qou:QOU.LRFusion.DoubleMagicConjecture` |
 | [prop:homological-shell-condensation](#prop:homological-shell-condensation) | Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
 | [prop:partition-sum-proton-residual](#prop:partition-sum-proton-residual) | Proton tower residual = $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 12 | `qou:QOU.MassEndomorphism.mass_endomorphism_positive` |
@@ -944,7 +944,7 @@
 | [prop:vorticity-lower-bound](#prop:vorticity-lower-bound) | Vorticity lower bound for anti-parallel filament collision as $q \to 1$ | Ch 18 | `qou:QOU.FluidDynamics.vorticity_lower_bound_conditional` |
 | [prop:weak-equiv-invariance](#prop:weak-equiv-invariance) | Weak equivalence invariance of physical states | Ch 4 | `qou:QOU.Torsion.weak_equiv_invariance` |
 | [prop:weak-symmetric-normalization](#prop:weak-symmetric-normalization) | Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.weak_symmetric_normalization` |
-| [prop:magic-numbers-from-q](#prop:magic-numbers-from-q) | Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers | Ch 15 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
+| [conj:magic-numbers-from-q](#conj:magic-numbers-from-q) | Wedderburn nuclear character signal at $q_0$ is elevated at the magic numbers | Ch 15 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
 | [prop:wedderburn-bratteli-recursion](#prop:wedderburn-bratteli-recursion) | Wedderburn--Bratteli recursion for Jones--Markov weights $y_\lambda$ at $H_n(R, q)$ | Ch 12 | `qou:QOU.BraidsAndKnots.wedderburn_bratteli_recursion` |
 | [prop:wenzl-qmn-synergy](#prop:wenzl-qmn-synergy) | Wenzl-bridge + q-Murnaghan-Nakayama synergy: $\mathrm{tr}_M$ on canonical braids in $O(p(n)(\max\text{hooks} + n^2))$ | Ch 12 | `qou:QOU.BraidsAndKnots.wenzl_qmn_synergy` |
 | [prop:wigner-coefficient-derivation](#prop:wigner-coefficient-derivation) | Wigner coefficient $[5]_q! \cdot m_e$ from Frobenius reciprocity | Ch 12 | `qou:QOU.BraidKnot.wigner_coefficient` |
