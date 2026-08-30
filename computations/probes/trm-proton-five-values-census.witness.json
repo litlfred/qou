@@ -1,16 +1,16 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T16:55:19.073774+00:00",
-  "commitSha": "89f1137463e5ca45bde90cf49fe0473c3585e003",
+  "computedAt": "2026-08-30T18:14:54.424344+00:00",
+  "commitSha": "84fa3856ce1081a681483cf830002497351f1e0b",
   "assertions": [
     {
-      "name": "the option-b value IS the canonical Jones-Markov trace",
+      "name": "the option-b value equals the ALL-POSITIVE-word trace (NOT the canonical one)",
       "computed": "5.1738026498081750046040373900665734255900258242142e-16",
       "expected": "0.0",
       "passed": true,
       "tolerance": "0.00000000000001",
-      "source": "recomputed from y_lambda * chi^lambda at the proton pin"
+      "source": "recomputed from y_lambda * chi^lambda on sigma_1^7 sigma_2^4, ELEVEN ALL-POSITIVE crossings. This says option-b used the same word this probe does -- it does NOT say either is canonical. The canonical word is {sigma: 6, sigma_inv: 3, averaged: 2} and gives 1.14575969245730086935241774516176649113 (bean qou-7zff)."
     },
     {
       "name": "the content block tracks it to its quoted 6 significant figures",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 20,
   "computation": "trm-proton-five-values-census",
   "scriptFile": "trm_proton_five_values_census.py",
-  "scriptHash": "0f1990b7b384",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9e35671ce653",
+  "scriptCommitSha": "84fa3856ce1081a681483cf830002497351f1e0b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

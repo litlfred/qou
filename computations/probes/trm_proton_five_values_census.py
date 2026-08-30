@@ -6,18 +6,31 @@ failed at 43.46%, comparing two of them. Investigating that turned up not two
 claimants but FIVE, and settled which one is right.
 
     value                     source                                    status
-    1.884319467254976         option-b-proton-mass-full-chain.witness   VERIFIED
+    1.884319467254976         option-b-proton-mass-full-chain.witness   all-positive word
     1.88432                   axiomatic content block (in the audit)    matches, 2.8e-7
     1.6331535640480814...     TR_M_AT_Q0["p"], canonical_a_k_magnitude  UNEXPLAINED, LIVE
     1.0653062285923893        markov-trace-assembly-proton.derivation   UNEXPLAINED
     2.12258 (approx)          the deprecated producer's own docstring   UNEXPLAINED
 
-VERIFIED means: `sum_lambda y_lambda * chi^lambda(sigma_1^7 sigma_2^4)` over
-lambda |- 3, with the canonical Wenzl-bridge weights at the proton pin,
-reproduces the option-b value to 5.17e-16 -- machine precision. So option-b IS
-the canonical Jones-Markov trace, computed here from first principles rather
-than taken on trust. The content block agrees with it to 2.8e-7 (it quotes 6
-significant figures).
+RETRACTED, 2026-08-30 (bean `qou-7zff`). This docstring said the option-b value
+"IS the canonical Jones-Markov trace" because
+`sum_lambda y_lambda * chi^lambda(sigma_1^7 sigma_2^4)` reproduces it to
+5.17e-16. That word is ELEVEN ALL-POSITIVE CROSSINGS. The canonical proton word
+is not: `canonical_word_for(1, 0)` gives
+`[[1,1]x4, [0,1], [1,1]x2, [-1,2]x3, [0,2]]`, i.e. {sigma: 6, sigma_inv: 3,
+averaged: 2}, where sign 0 is an AVERAGED crossing acting as (q+q^-1)/2 on the
+trivial rep.
+
+So the 5.17e-16 agreement establishes only that option-b was computed on the
+SAME all-positive word used here -- not that either is canonical. The canonical
+value, from `hecke-canonical-chi` once its REPO_ROOT path bug was fixed, is
+
+    tr_M(p, q_0) = 1.14575969245730086935241774516176649113
+    tr_M(n, q_0) = 0.98774368811580957144294046174148798302
+
+which is a SIXTH value, matching none of the five below. The table's "status"
+column is kept as-recorded; read it as "agrees with the all-positive-word
+trace", not as "canonical".
 
 WHAT WAS RULED OUT for the other three, each by measurement:
 
@@ -108,10 +121,14 @@ def main() -> int:
     w.add_data("claims", rows)
 
     w.add_assertion(
-        "the option-b value IS the canonical Jones-Markov trace",
+        "the option-b value equals the ALL-POSITIVE-word trace (NOT the canonical one)",
         computed=abs(CLAIMS["option_b_full_chain"] - canonical) / canonical,
         expected=mpf(0), tolerance=mpf("1e-14"),
-        source="recomputed from y_lambda * chi^lambda at the proton pin")
+        source="recomputed from y_lambda * chi^lambda on sigma_1^7 sigma_2^4, "
+               "ELEVEN ALL-POSITIVE crossings. This says option-b used the same "
+               "word this probe does -- it does NOT say either is canonical. The "
+               "canonical word is {sigma: 6, sigma_inv: 3, averaged: 2} and gives "
+               "1.14575969245730086935241774516176649113 (bean qou-7zff).")
     w.add_assertion(
         "the content block tracks it to its quoted 6 significant figures",
         computed=abs(CLAIMS["axiomatic_content_block"] - canonical) / canonical,
