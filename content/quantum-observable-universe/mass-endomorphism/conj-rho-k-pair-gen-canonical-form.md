@@ -109,13 +109,6 @@ class PairGenCanonical : Prop where
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```
 
-> **Note on this block.** It previously showed `pair_gen_functional … := sorry` and a
-> carrier field `∀ M ≥ 0, ∃ M_rec, |M_rec − M| ≤ M/100`. That field is **trivially
-> inhabited** — take `M_rec := M` — so it asserted nothing, and a downstream
-> `[PairGenCanonical]` hypothesis constrained nothing. The sibling `.lean` was
-> corrected to the content-bearing form above; this narrative block had not been
-> re-synced and was still publishing the vacuous version. It now matches the `.lean`.
-
 
 ## Resolution path
 
