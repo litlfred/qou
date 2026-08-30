@@ -417,6 +417,93 @@ theorem tracedVolume_product_eq_trace_of_markov
       = (z * a + b) * (z * c + d) := by
   subst hone; subst hs0; subst hs1; subst hs01; ring
 
+/-!
+## The LP cone condition's own threshold, and why it is not the amplitude's
+
+The cone condition `G·t ≥ 0` for the q-Toffoli reduces to a **single**
+inequality: of the six components, five are strictly positive throughout and
+only the one indexed by the longest word `σ₀σ₁σ₀` changes sign.  With the
+symbolic Gram (validated against `pyhecke.gram.gram_matrix_mp` at five values
+of `q`) that component is
+
+    (G·t)₅  =  (q¹⁰ + q⁶ - q⁴ + q² - 1) / (q²+1)²
+
+whose numerator is irreducible over `ℚ` and has exactly one positive real root,
+`q_c ≈ 0.8944802929106147637790049841733`.
+
+**The point of the theorems below.** `q_c < 1` strictly, while the flip
+amplitude `P₇₆` vanishes exactly at `q = 1`.  The cone condition and the
+amplitude therefore have *different* thresholds, which refutes the last
+surviving form of the proof's reduction — the sign-inheriting form was already
+excluded by `toffoliFlip_mul_coneCoord_nonpos`, and a negative proportionality
+would require the thresholds to coincide.  They do not.
+
+Substituting `u = q²` turns the numerator into `u⁵ + u³ - u² + u - 1`, whose
+strict monotonicity on `u ≥ 0` is elementary because `3u² - 2u + 1` has
+negative discriminant.
+
+Probe: `computations/probes/toffoli_cone_threshold.py`.
+-/
+
+/-- The cone constraint's numerator after the substitution `u = q²`. -/
+noncomputable def coneRow5Poly (u : ℝ) : ℝ := u ^ 5 + u ^ 3 - u ^ 2 + u - 1
+
+/-- The numerator of `(G·t)₅`, the one constraint that governs the cone. -/
+noncomputable def coneRow5Numerator (q : ℝ) : ℝ :=
+  q ^ 10 + q ^ 6 - q ^ 4 + q ^ 2 - 1
+
+/-- The substitution `u = q²`. -/
+theorem coneRow5Numerator_eq (q : ℝ) :
+    coneRow5Numerator q = coneRow5Poly (q ^ 2) := by
+  unfold coneRow5Numerator coneRow5Poly; ring
+
+/-- `3u² - 2u + 1 > 0` for every real `u` — negative discriminant. -/
+theorem quad_pos (u : ℝ) : 0 < 3 * u ^ 2 - 2 * u + 1 := by nlinarith [sq_nonneg (3 * u - 1)]
+
+/-- `coneRow5Poly` is strictly increasing on `u ≥ 0`. -/
+theorem coneRow5Poly_strictMono {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) :
+    coneRow5Poly a < coneRow5Poly b := by
+  unfold coneRow5Poly
+  have hb : 0 < b := lt_of_le_of_lt ha hab
+  have hd : 0 < b - a := sub_pos.mpr hab
+  -- a² + ab + b² - a - b + 1 = ½[(a-1)² + (b-1)² + (a+b)²] > 0
+  have hquad : 0 < a ^ 2 + a * b + b ^ 2 - a - b + 1 := by
+    nlinarith [sq_nonneg (a - 1), sq_nonneg (b - 1), sq_nonneg (a + b)]
+  have hquart : 0 ≤ b ^ 4 + b ^ 3 * a + b ^ 2 * a ^ 2 + b * a ^ 3 + a ^ 4 := by
+    have hb' : (0 : ℝ) ≤ b := le_of_lt hb
+    nlinarith [pow_nonneg ha 4, pow_nonneg hb' 4, mul_nonneg (pow_nonneg hb' 3) ha,
+               mul_nonneg (pow_nonneg hb' 2) (pow_nonneg ha 2),
+               mul_nonneg hb' (pow_nonneg ha 3)]
+  have hbr : 0 < (b ^ 4 + b ^ 3 * a + b ^ 2 * a ^ 2 + b * a ^ 3 + a ^ 4)
+      + (a ^ 2 + a * b + b ^ 2 - a - b + 1) := by linarith
+  have key : (b ^ 5 + b ^ 3 - b ^ 2 + b - 1) - (a ^ 5 + a ^ 3 - a ^ 2 + a - 1)
+      = (b - a) * ((b ^ 4 + b ^ 3 * a + b ^ 2 * a ^ 2 + b * a ^ 3 + a ^ 4)
+        + (a ^ 2 + a * b + b ^ 2 - a - b + 1)) := by ring
+  have hpos : 0 < (b ^ 5 + b ^ 3 - b ^ 2 + b - 1) - (a ^ 5 + a ^ 3 - a ^ 2 + a - 1) := by
+    rw [key]; exact mul_pos hd hbr
+  linarith
+
+/-- **The cone constraint is strictly satisfied at the classical limit.**
+    `(G·t)₅`'s numerator equals `1` at `q = 1`. -/
+theorem coneRow5Numerator_one : coneRow5Numerator 1 = 1 := by
+  unfold coneRow5Numerator; norm_num
+
+/-- The constraint is violated at `q = 1/2`, so a threshold exists below `1`. -/
+theorem coneRow5Numerator_half_neg : coneRow5Numerator (1 / 2) < 0 := by
+  unfold coneRow5Numerator; norm_num
+
+/-- **The cone threshold is strictly below the amplitude's.**  At `q = 1` the
+    flip amplitude vanishes while the cone constraint is strictly positive, so
+    the two do not change sign at the same place.  This refutes the negative-
+    proportionality reduction, which would require them to coincide; together
+    with `toffoliFlip_mul_coneCoord_nonpos` (which excludes the sign-inheriting
+    form) the proof's reduction has no surviving form. -/
+theorem cone_threshold_ne_amplitude_threshold :
+    toffoliFlipAmplitude 1 = 0 ∧ 0 < coneRow5Numerator 1 := by
+  refine ⟨?_, ?_⟩
+  · exact (toffoliFlip_eq_zero_iff one_pos).mpr rfl
+  · rw [coneRow5Numerator_one]; norm_num
+
 end
 
 end QOU.Information

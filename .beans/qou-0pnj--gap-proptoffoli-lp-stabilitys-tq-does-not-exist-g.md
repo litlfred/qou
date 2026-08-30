@@ -1,11 +1,11 @@
 ---
 # qou-0pnj
 title: 'GAP: prop:toffoli-lp-stability''s t(q) does not exist — G is 6x6 Hecke-NF, P_77/P_76 are 8x8 strand-ordering entries'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-08-30T14:30:58Z
+updated_at: 2026-08-30T14:46:15Z
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
