@@ -1,11 +1,11 @@
 ---
 # qou-imkb
 title: 'GAP: paper_six_term_isotope_sweep''s Model B leg names a producer that does not exist'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:14:04Z
-updated_at: 2026-08-30T12:14:45Z
+updated_at: 2026-08-30T12:42:54Z
 ---
 
 ## What is wrong
@@ -90,3 +90,82 @@ Found 2026-08-30 while draining the last three convention-C witnesses
 (`qou-46ab`); previously mis-recorded by me as "waiting on the Model B T1
 witness for ³He", which understated it three ways — it is D, T *and* ³He, it is
 not merely *waiting*, and it is not a missing witness but a missing producer.
+
+
+## 2026-08-30 (worked) — TWO CORRECTIONS to this bean, and the real blocker
+
+### Correction 1: there are TWO consumers, not one
+
+I wrote *"`paper_six_term_isotope_sweep.py` is the only reader"*. Wrong.
+**`computations/build_six_term_substrate_model_b.py`** carries the same loader
+(`_load_model_b_t1`, ~line 96), reads the same missing witness, keys on the
+same `data.results.<atom>.tr_M_wenzl_schur`, and raises the same message. It is
+the *primary* Model B consumer — the sweep is the secondary one. So the blast
+radius is the whole Model B six-term pipeline, not one sweep column.
+
+That producer **exits 1 outright**; the sweep degrades to per-row `ERR`.
+
+### Correction 2 — 🛑 THE REAL BLOCKER: one input is RETIRED BY OWNER RULING
+
+The producer is not merely unwritten. **It cannot be written correctly today**,
+and the reason is not difficulty.
+
+`MODEL_B_BRAID_REGISTRY[(1, 1)]` — the deuteron — assigns knot **`6_2`**. The
+owner ruled on exactly this on **2026-08-29**
+([`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`](../docs/audits/2026-08-29-deuteron-knot-owner-decision.md),
+bean `qou-e5jf`):
+
+> **OWNER RULING (2026-08-29): Option A.** The deuteron knot is the canonical
+> braid closure (trefoil / Hopf, Vol = 0) … **the 6₂ census assignment is
+> retired as a bare lookup.**
+
+**Option B was literally *"the deuteron knot is 6₂ (Vol = 4.40)"* and it was
+put to the owner and rejected.** So this is a ruling about the **knot
+identity**, not only about whether the binding is a volume term — I checked that
+distinction specifically, because "grep the claim SHAPE, not only the topic"
+is exactly the trap here.
+
+**Consequence: writing the producer against the registry as it stands would
+compute `tr_M(6₂)` for the deuteron — implementing the rejected option.** That
+converts this bean from *"someone should write a producer"* into *"one registry
+row must be resolved first, and the resolution is an owner ruling that already
+exists."*
+
+Checked the other two rows: **`8_11` (T) and `L6a4` (³He) are live and not
+retired** — both appear in current, non-deprecated audits, and `L6a4` carries
+an exact hyperbolic identity with the Borromean volume. Only the deuteron row
+is affected.
+
+### What I changed (no fabricated numbers)
+
+1. **Both error messages now tell the truth.** They used to say *"Run
+   `probe_sdp_canonical_paper_formula.py` first"* — an instruction nobody could
+   follow. They now say the producer does not exist, give the evidence, and
+   point here. This also lands in the sweep's committed witness, where a reader
+   of the `ERR` rows will actually see it.
+2. **The retired registry row is flagged in place**, citing the ruling, with
+   the reason it was *not* silently changed.
+
+**I deliberately did NOT pick a replacement knot.** At A=2 the canonical braid
+closure is the object Model A already uses, so adopting it may collapse Model
+B's deuteron T1 into Model A's — and whether that is correct, or means Model B
+simply has no distinct A=2 entry, is a modelling decision with real
+consequences for what "Model B" means. That is the owner's call, not a fix I
+should smuggle into a registry comment.
+
+### The decision this now needs
+
+- **What replaces `6_2` in `MODEL_B_BRAID_REGISTRY[(1,1)]`?** The ruling names
+  the object (canonical braid closure, trefoil/Hopf) but not what Model B's
+  low-strand entry should therefore be.
+  - If it becomes Model A's canonical braid, the row should route via
+    `t1_atom_a` like `p` and `n` do, and Model B has no independent deuteron.
+  - If Model B is meant to keep a distinct A=2 object, that object needs
+    naming, and the ruling does not name one.
+- **Only after that** is writing the producer a well-posed task: emit
+  `data.results.<atom>.tr_M_wenzl_schur` for deuteron / tritium / he3 (p and n
+  come from the Model A registry; ⁴He is explicitly `open` in the registry).
+
+**Default if nothing is done:** unchanged and safe. Both consumers refuse
+loudly, the sweep prints `ERR` rather than fabricating, and nothing downstream
+reads a Model B number — because there is no Model B number to read.
