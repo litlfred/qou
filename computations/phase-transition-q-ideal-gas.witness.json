@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:45:54.335206+00:00",
-  "commitSha": "bd725815a3d480c9429425de5e82a4f44a1c6730",
+  "computedAt": "2026-08-30T09:51:04.602319+00:00",
+  "commitSha": "484e4cf6573453960a3ee46810996574178ddf85",
   "assertions": [
     {
       "name": "Direct substitution of [2]_q over-predicts T_boil for every material",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "phase-transition-q-ideal-gas",
   "scriptFile": "phase_transition_q_ideal_gas.py",
-  "scriptHash": "a937e711c0c8",
-  "scriptCommitSha": "874431aeba03e32a808c289370c8fff1827472b8",
+  "scriptHash": "3533a094d275",
+  "scriptCommitSha": "13483c9b488f7fe9c8abbf6fa9b2b376d8d3a035",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     ],
     "reproduce": "python3 -u computations/phase_transition_q_ideal_gas.py"
   },
-  "description": "Attempts to derive absolute boiling and freezing temperatures strictly from the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), this over-predicts the temperatures by a factor of 6.4x to 10x. This demonstrates that the true entropy of vaporisation ΔS_vap requires a more sophisticated topological partition function (likely involving the full Reeb flow phase space) rather than just the bare dimension [2]_q. Result is recorded honestly as open.",
+  "description": "Attempts to derive absolute boiling and freezing temperatures strictly from the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), this over-predicts T_boil by a factor of 4.26x to 6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38x to 2.56x. This demonstrates that the true entropy of vaporisation ΔS_vap requires a more sophisticated topological partition function (likely involving the full Reeb flow phase space) rather than just the bare dimension [2]_q. Result is recorded honestly as open.",
   "data": {
     "H2O_T_boil_pred": "2404.9551321782452417070341341456516166636023071182",
     "H2O_T_boil_obs": 373.15,
@@ -69,10 +69,10 @@
     "boil_ratio_range": {
       "min": 4.262148914456254,
       "max": 6.445009063857015,
-      "claimed_band_in_assertion_name": "6-10x",
+      "previously_claimed_band": "6-10x (wrong when written; see bean qou-3hre)",
       "matches_claimed_band": false
     },
     "tier": "open",
-    "finding": "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil and T_melt by 6-10x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN."
+    "finding": "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil by 4.26-6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38-2.56x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN."
   }
 }
