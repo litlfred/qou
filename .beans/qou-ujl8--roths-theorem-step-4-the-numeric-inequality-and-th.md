@@ -104,3 +104,55 @@ hypotheses. Both holding at once needs mu ~ m(1/2 - eps) from step 1 and K ~ (2+
 approximation exponent above 2. That is Roth's inequality itself and is what the record has to
 deliver; no small witness can exhibit it.
 
+## 2026-08-30 -- the record is not needed: rothDegrees was already two-sided
+
+QOU/Mathlib/RothNormalisation.lean, six declarations, all axiom-clean, .olean deleted first,
+registered in QOU.lean.
+
+THE FINDING. Last entry concluded that a one-sided normalisation cannot discharge step 4's
+inequality and that the record must carry L <= r_h log q_h <= L'. I expected that to be a NEW
+obligation on whatever supplies the degrees. It is not. rothDegrees H N h is log_{H_h} N (plus one
+off the first coordinate), and rothDegrees_log_bounds proves
+
+    log N - log H_h  <=  r_h log H_h  <=  log N + log H_h
+
+for every h -- the two-sided normalisation, with L = log N - max_h log H_h and
+L' = log N + max_h log H_h. Gamma_m's growth clause consumes the lower half; step 4's inequality
+needs both; they are the SAME construction. So the worry that opened this bean -- two
+normalisations for one ladder, the shape correction 26 had -- was unfounded. The fix is to record
+that they coincide, not to introduce a record reconciling them.
+
+ITEM 1 (the record) IS THEREFORE SCRAPPED, with two reasons rather than one:
+  * there is nothing to reconcile, per the above;
+  * a structure : Prop carrier is exactly taxonomy row 19, which I opened myself: such carriers
+    are invisible to every detector in the 17-detector suite, so a false or over-strong clause
+    inside one goes unflagged. With a single consumer the packaging buys nothing and re-creates
+    the blind spot I documented.
+The normalisation stays as explicit hypotheses.
+
+ITEM 2 (the inequality) IS DONE, reduced to checkable conditions.
+  * log_taylorConst_le -- the polynomial's total size is at most theta * sum_h r_h log q_h from
+    ONE per-coordinate condition, 2 + c_H + log(4B) <= theta log q_h. That is Roth's "choose the
+    q_h large" in exactly the form the estimate consumes.
+  * log_condition_of_cost -- closes the additive inequality against (1+theta) m L' < K(mu-nu).
+  * roth_contradiction_of_normalisation -- step 4 with its additive hypothesis replaced by data a
+    parameter choice can be checked against.
+
+WHAT DOES NOT TRANSFER, and this is the one asymmetry worth carrying forward. Step 4 wants bounds
+on r_h log q_h; rothDegrees is built from the HEIGHTS H_h = max(|p_h|, q_h). The UPPER half
+transfers free because q_h <= H_h (rothDegrees_log_bounds_den). The LOWER half does not: H_h <= q_h
+fails whenever the numerator dominates. height_le_den identifies exactly what recovers it --
+|p_h| <= q_h -- and proves it, including the wrinkle that it is the REDUCED fraction's height
+(2/4 has height 2, not 4), so it is an inequality and not the equality H_h = q_h one expects.
+In Roth's setting |p_h| <= q_h is the harmless consequence of approximating a number of absolute
+value at most 1, but it is a hypothesis on the approximations and not a consequence of the degrees.
+
+STILL NOT SHOWN, unchanged and now argued rather than asserted: the collision does not fire at
+any small witness. I checked why. With alpha = 0 and beta_h = 1/q_h the approximation exponent is
+1, so K <= L and hlog needs (1+theta) m L' < L(mu - nu) -- impossible for mu <= m and theta,nu >= 0.
+More generally ANY rational alpha = a/b has |p/q - a/b| >= 1/(qb), capping the exponent at
+1 + log b / log q, so K stays at or below L up to a bounded factor. Roth needs exponent 2 + delta,
+which forces alpha irrational, and certifying an index at an irrational alpha is step 1's
+non-constructive Siegel argument. A firing witness is not reachable by construction, not merely
+expensive.
+

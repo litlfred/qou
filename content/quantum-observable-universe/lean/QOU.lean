@@ -1277,6 +1277,13 @@ import QOU.Mathlib.RothIndexGap
 -- and Gamma_m's p,q against the numerators and denominators of the approximations, which
 -- are unrelated despite the shared letters).
 import QOU.Mathlib.RothContradiction
+-- The two-sided normalisation step 4's inequality needs -- and the finding that
+-- rothDegrees already satisfies it.  r_h = log_{H_h} N puts r_h log H_h within
+-- log H_h of log N on BOTH sides, so Gamma_m's growth clause (which consumes the
+-- lower half) and step 4's inequality (which needs both) were never using different
+-- normalisations.  The worry that opened qou-ujl8 was unfounded; recording that they
+-- coincide is the fix, not a record reconciling them.
+import QOU.Mathlib.RothNormalisation
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
