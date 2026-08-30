@@ -166,6 +166,40 @@ def _is_alias(val, tainted: set) -> bool:
     return bool(used & tainted)
 
 
+def _ame_slot(tree, fornode, lits: set):
+    """The single loop variable that receives the AME literal, when knowable.
+
+    Only fires for the shape the corpus actually uses: a module-level name bound
+    to a list/tuple of same-length tuples, iterated with a tuple target. Returns
+    the ast.Name for the slot whose column contains an AME literal, or None.
+    """
+    if not isinstance(fornode.target, ast.Tuple):
+        return None
+    names = [n for n in fornode.target.elts if isinstance(n, ast.Name)]
+    if len(names) != len(fornode.target.elts):
+        return None
+    if not isinstance(fornode.iter, ast.Name):
+        return None
+    rows = None
+    for nd in ast.walk(tree):
+        if isinstance(nd, ast.Assign) and any(
+                isinstance(tg, ast.Name) and tg.id == fornode.iter.id for tg in nd.targets):
+            if isinstance(nd.value, (ast.List, ast.Tuple)):
+                rows = nd.value.elts
+            break
+    if not rows:
+        return None
+    hits = set()
+    for r in rows:
+        if not isinstance(r, ast.Tuple) or len(r.elts) != len(names):
+            return None
+        for i, e in enumerate(r.elts):
+            src = ast.dump(e)
+            if any(L in src for L in lits):
+                hits.add(i)
+    return names[hits.pop()] if len(hits) == 1 else None
+
+
 def _tainted_names(tree, lits: set) -> set:
     """`_binding_names` closed transitively over ALIASES.
 
@@ -180,11 +214,40 @@ def _tainted_names(tree, lits: set) -> set:
     for _ in range(10):
         grew = False
         for node in ast.walk(tree):
-            if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            # (i) alias assignment
+            if isinstance(node, (ast.Assign, ast.AnnAssign)):
+                if node.value is None or not _is_alias(node.value, t):
+                    continue
+                tgts = node.targets if isinstance(node, ast.Assign) else [node.target]
+            # (ii) UNPACKING a tainted table. The corpus keeps AME values in
+            #      row tuples --
+            #          ISOTOPES = [("D", 1, 1, 2.22456612, ...), ...]
+            #          for label, Z, N, B_AME, formula, leading in ISOTOPES:
+            #              leading_err_pct = (leading - B_AME) / B_AME * 100
+            #      -- and without this the taint stops at ISOTOPES, which is
+            #      never itself in arithmetic. That file then looks like a value
+            #      that is merely recorded, when it is the comparison target of
+            #      the whole probe. Bind every loop variable: which slot holds
+            #      the AME value is not knowable here, and over-tainting costs
+            #      a REVIEW, while under-tainting costs a misclassification.
+            elif isinstance(node, (ast.For, ast.AsyncFor)):
+                if not ({n.id for n in ast.walk(node.iter) if isinstance(n, ast.Name)} & t):
+                    continue
+                # Prefer the POSITIONAL slot. `for label, Z, N, B_AME, ... in
+                # ISOTOPES` over rows of literal tuples: only one slot holds the
+                # AME value, and tainting `Z` and `N` as well floods the sink
+                # census with loop-counter names and can manufacture a false
+                # INPUT out of a variable that merely happens to be called
+                # `scale`. When the rows are statically readable, taint that one
+                # slot; otherwise fall back to the whole target.
+                slot = _ame_slot(tree, node, lits)
+                tgts = [slot] if slot is not None else [node.target]
+            elif isinstance(node, ast.comprehension):
+                if not ({n.id for n in ast.walk(node.iter) if isinstance(n, ast.Name)} & t):
+                    continue
+                tgts = [node.target]
+            else:
                 continue
-            if node.value is None or not _is_alias(node.value, t):
-                continue
-            tgts = node.targets if isinstance(node, ast.Assign) else [node.target]
             for tg in tgts:
                 for n in ast.walk(tg):
                     if isinstance(n, ast.Name) and n.id not in t:
@@ -253,6 +316,13 @@ def _selftest() -> int:
         ("ALIAS CHAIN to a comparison: the corpus almost never names the "
          "literal and the residual with the same variable",
          'B_AME = 2.22452\nb_exp = B_AME\nerr_pct = (pred - b_exp) / b_exp\n',
+         "TARGET"),
+        ("UNPACKING a table of rows — the corpus keeps AME values in tuples "
+         "and reads them out in a for-loop, so taint that cannot cross the "
+         "unpack stops at a container that is never itself in arithmetic",
+         'ISOTOPES = [("D", 2.22452, "vol")]\n'
+         'for label, B_AME, formula in ISOTOPES:\n'
+         '    err_pct = (leading - B_AME) / B_AME * 100\n',
          "TARGET"),
         ("ALIAS CHAIN to a calibration — the case that makes this closure "
          "load-bearing rather than cosmetic. Without it this reads REVIEW, "
