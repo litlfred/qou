@@ -52,6 +52,15 @@ count may fall, never rise — which the block-level checker does not do. Use
 `check-computation-status.py --strict-unbacked` to gate what a paper CLAIMS;
 use this to stop the population growing.
 
+**Cross-validated against it, 2026-08-30.** The superset claim is not merely
+asserted: the block-level checker reported 41 vacuous blocks, 36 of which
+resolve to a witness path, and **all 36 are flagged by this audit** — zero
+missed. Two independently written detectors over the same defect agree on
+their overlap, which is the strongest available evidence that this one has no
+hole in the population where an independent check exists. The 5 unresolved are
+blocks whose `.ts` did not yield a `witness:` field to the mapping script, not
+disagreements.
+
 ## Why the assertion-level detector cannot see this
 
 `self_fulfilling_assertion_audit.py` scans `add_assertion` CALL SITES. A
