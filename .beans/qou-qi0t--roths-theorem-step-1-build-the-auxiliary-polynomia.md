@@ -143,3 +143,51 @@ stated flatly. Corrections 17 and 24 in this arc were both docstring numbers not
    is where `deg α` actually enters. Now the only mathematical gap.
 2. the `Fin m → ℕ` ↔ `σ →₀ ℕ` bridge — plumbing.
 3. the application of Siegel, now that `p < q` is available.
+
+## Part 4 — the matrix entries are small, and the engine was measured
+
+`seminorm_translateMatrix_le`: `f (translateMatrix α i n) ≤ (2B)^{|n|}` where `|n|` is the total
+degree and `B` bounds `f ∘ α`.
+
+**Proved without the closed form.** Peel one variable occurrence at a time from
+`monomial n 1 = X_j · monomial n' 1`; each step multiplies by a single linear factor
+`X_j + C α_j` and costs a factor `2B` — the `2` from its two terms, the `B` from the constant
+one. `coeff_X_mul'` does the peeling. The multivariate binomial theorem is never needed, which
+retires the item I had ranked as "a real lemma" last turn.
+
+### The engine: measured, not assumed
+
+Last turn I recorded that Mathlib "supplies the engine". It does — but not in this build:
+
+| module | transitive cone | unbuilt | verdict |
+|---|---|---|---|
+| `NumberTheory.SiegelsLemma` (over `ℤ`) | 1955 | **3** | built in ~30 s, verified usable |
+| `NumberTheory.NumberField.House` (over `K`) | 3322 | **470** | expensive |
+
+`Int.Matrix.exists_ne_zero_int_vec_norm_le` now type-checks at this pin (needs
+`attribute [local instance] Matrix.seminormedAddCommGroup` and `open Matrix`).
+
+⚠ `.lake` is a build artifact — a fresh container has neither, and reproducing needs
+`lake build Mathlib.NumberTheory.SiegelsLemma`.
+
+⚠ "Mathlib has it" and "this project can use it" are different claims, and I made the first
+while meaning the second. The measurement took one script.
+
+### The fork, stated rather than taken
+
+The `ℤ` engine is free but needs the `ℚ(α) → ℚ`-basis expansion of the equations — precisely
+what `House` exists to do. So: a 470-module Mathlib build, against re-deriving the integral-basis
+bookkeeping. Neither is obviously right.
+
+The Part 4 bound is written to survive either: it holds for **any** submultiplicative seminorm,
+so it instantiates at `house` the moment that module is built, and at `|·|` on `ℤ` today
+(`abs_translateMatrix_le`). That was the reason for the generality, not a preference for it.
+
+## Remaining
+
+1. **the fork above** — decide, or build `House` in the background and keep both open;
+2. the `Fin m → ℕ` ↔ `σ →₀ ℕ` bridge — plumbing;
+3. the Siegel application itself.
+
+All four inputs Siegel needs now exist: the system (Part 1), its size (Parts 2–3), and the
+entry bound (Part 4).

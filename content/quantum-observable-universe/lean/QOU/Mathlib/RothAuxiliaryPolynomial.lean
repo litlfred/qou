@@ -377,4 +377,126 @@ not `0 < 0`.  ⚠ This part *is* checked; the count of the filtered set is not �
 theorem card_idxBox_five_witness : (idxBox (fun _ : Fin 5 => 1)).card = 32 := by
   rw [card_idxBox]; simp
 
+/-! ### Part 4 — the matrix entries are small
+
+The last input Siegel needs.  `translateMatrix α i n` is Roth's `binom(n,i)·α^{n−i}`, and the
+bound is proved **without the closed form**: peel one variable occurrence at a time from
+`monomial n 1 = X_j · monomial n' 1`, so each step multiplies by a single linear factor
+`X_j + C α_j` and costs a factor `2B` — the `2` from its two terms, the `B` from the constant
+one.  The multivariate binomial theorem is never needed.
+
+⚠ The bound is stated for an arbitrary **submultiplicative seminorm**, not for `house`, and the
+reason is a measurement rather than a taste for generality.
+
+`Mathlib.NumberTheory.NumberField.House` — Siegel's lemma over a number field, which is what
+would let the equations keep their `ℚ(α)` coefficients — is **not in this project's built Mathlib
+closure**: `470` of its `3322` transitive imports are unbuilt, so an instantiation at `house`
+cannot be checked here.  `Mathlib.NumberTheory.SiegelsLemma`, the plain `ℤ` version, was only
+**three** modules away (`Analysis.Matrix`, `Data.Pi.Interval`, and itself) and builds in about
+half a minute; `Int.Matrix.exists_ne_zero_int_vec_norm_le` is verified usable at this pin.
+
+⚠ `.lake` is a build artifact, so a fresh container has neither.  Reproducing the `ℤ` engine
+needs `lake build Mathlib.NumberTheory.SiegelsLemma` first, with
+`attribute [local instance] Matrix.seminormedAddCommGroup` and `open Matrix` at the use site.
+
+**The fork this creates**, stated rather than silently taken: the `ℤ` engine is free but needs
+the `ℚ(α) → ℚ`-basis expansion of the equations — which is precisely the work `House` exists to
+do.  So the choice is a 470-module Mathlib build against re-deriving the integral-basis
+bookkeeping.  Neither is obviously right, and the bound below is written to survive either: it
+holds for **any** submultiplicative seminorm, so it instantiates at `house` the moment that
+module is built, and at `|·|` on `ℤ` today (`abs_translateMatrix_le`).
+-/
+
+variable {σ R : Type*} [CommRing R]
+
+
+/-- A submultiplicative seminorm — the only structure the translate-matrix bound needs.
+`house` is one (`house_nonneg`, `house_sum_le_sum_house`, `house_mul_le`); so is `|·|` on `ℤ`. -/
+structure SubmultSeminorm (f : R → ℝ) : Prop where
+  nonneg : ∀ a, 0 ≤ f a
+  map_zero : f 0 = 0
+  one_le : f 1 ≤ 1
+  add_le : ∀ a b, f (a + b) ≤ f a + f b
+  mul_le : ∀ a b, f (a * b) ≤ f a * f b
+
+/-- **The translate matrix is small.**  `f (binom(n,i)·α^{n−i}) ≤ (2B)^{|n|}` where `|n|` is the
+total degree and `B` bounds `f ∘ α` — proved by peeling one variable occurrence at a time, so the
+multivariate binomial closed form is never needed.
+
+The `2` is the two terms of `X_j + C α_j`; the `B` is the constant one. -/
+theorem seminorm_translateMatrix_le [DecidableEq σ] {f : R → ℝ} (hf : SubmultSeminorm f)
+    (α : σ → R) {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, f (α h) ≤ B) :
+    ∀ (N : ℕ) (n : σ →₀ ℕ), (n.sum fun _ e => e) = N → ∀ i : σ →₀ ℕ,
+      f (translateMatrix α i n) ≤ (2 * B) ^ N := by
+  have hB0 : (0:ℝ) ≤ B := le_trans zero_le_one hB1
+  intro N
+  induction N with
+  | zero =>
+      intro n hn i
+      rw [Finsupp.sum] at hn
+      have hn0 : n = 0 := by
+        ext a
+        by_contra hc
+        have hmem : a ∈ n.support := Finsupp.mem_support_iff.mpr (by simpa using hc)
+        exact (Finsupp.mem_support_iff.mp hmem) ((Finset.sum_eq_zero_iff.mp hn) a hmem)
+      subst hn0
+      rw [translateMatrix, monomial_zero', map_one, translate, map_one, coeff_one]
+      split_ifs
+      · simpa using hf.one_le
+      · rw [hf.map_zero]; positivity
+  | succ N ih =>
+      intro n hn i
+      have hne : n ≠ 0 := by intro h; rw [h] at hn; simp at hn
+      obtain ⟨j, hj⟩ : ∃ j, n j ≠ 0 := by
+        by_contra hc; push_neg at hc; exact hne (Finsupp.ext hc)
+      set n' : σ →₀ ℕ := n - Finsupp.single j 1 with hn'
+      have hle : Finsupp.single j 1 ≤ n :=
+        Finsupp.single_le_iff.mpr (Nat.one_le_iff_ne_zero.mpr hj)
+      have hsplit : Finsupp.single j 1 + n' = n := add_tsub_cancel_of_le hle
+      have hsum' : (n'.sum fun _ e => e) = N := by
+        have hadd : ((Finsupp.single j 1 + n').sum fun _ e => e)
+            = ((Finsupp.single j 1).sum fun _ e => e) + (n'.sum fun _ e => e) :=
+          Finsupp.sum_add_index' (fun _ => rfl) (fun _ _ _ => rfl)
+        rw [hsplit, Finsupp.sum_single_index rfl] at hadd
+        omega
+      have hmono : (monomial n 1 : MvPolynomial σ R) = X j * monomial n' 1 := by
+        rw [X, monomial_mul, hsplit, one_mul]
+      have htr : translate α (monomial n 1)
+          = (X j + C (α j)) * translate α (monomial n' 1) := by
+        rw [hmono, translate, map_mul, aeval_X, ← translate]
+      have hT : ∀ k : σ →₀ ℕ, f (coeff k (translate α (monomial n' 1))) ≤ (2 * B) ^ N :=
+        fun k => ih n' hsum' k
+      have h1 : f (coeff i (X j * translate α (monomial n' 1))) ≤ (2 * B) ^ N := by
+        rw [coeff_X_mul']
+        split_ifs
+        · exact hT _
+        · rw [hf.map_zero]; positivity
+      have h2 : f ((α j) * coeff i (translate α (monomial n' 1))) ≤ B * (2 * B) ^ N :=
+        le_trans (hf.mul_le _ _) (mul_le_mul (hα j) (hT i) (hf.nonneg _) hB0)
+      have hcoeff : translateMatrix α i n
+          = coeff i (X j * translate α (monomial n' 1))
+            + (α j) * coeff i (translate α (monomial n' 1)) := by
+        rw [translateMatrix, htr, add_mul, coeff_add, coeff_C_mul]
+      rw [hcoeff]
+      refine le_trans (hf.add_le _ _) (le_trans (add_le_add h1 h2) ?_)
+      rw [pow_succ]
+      nlinarith [pow_nonneg (by positivity : (0:ℝ) ≤ 2 * B) N]
+
+/-- **The integer instance.**  `|binom(n,i)·α^{n−i}| ≤ (2B)^{|n|}` for integer `α` bounded by `B`. -/
+theorem abs_translateMatrix_le [DecidableEq σ] (α : σ → ℤ) {B : ℤ} (hB1 : 1 ≤ B)
+    (hα : ∀ h, |α h| ≤ B) (n i : σ →₀ ℕ) :
+    |translateMatrix α i n| ≤ (2 * B) ^ (n.sum fun _ e => e) := by
+  have hsm : SubmultSeminorm (fun z : ℤ => |(z : ℝ)|) :=
+    ⟨fun a => abs_nonneg _, by simp, by simp,
+      fun a b => by push_cast; exact abs_add_le _ _,
+      fun a b => by push_cast; rw [abs_mul]⟩
+  have hB1R : (1 : ℝ) ≤ (B : ℝ) := by exact_mod_cast hB1
+  have hαR : ∀ h, |((α h : ℤ) : ℝ)| ≤ (B : ℝ) := by
+    intro h; rw [← Int.cast_abs]; exact_mod_cast hα h
+  have h := seminorm_translateMatrix_le hsm α hB1R hαR (n.sum fun _ e => e) n rfl i
+  have hcast : |((translateMatrix α i n : ℤ) : ℝ)| = ((|translateMatrix α i n| : ℤ) : ℝ) := by
+    rw [Int.cast_abs]
+  rw [hcast] at h
+  exact_mod_cast h
+
 end MvPolynomial
