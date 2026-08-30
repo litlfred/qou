@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:01:52Z",
+  "updated_at": "2026-08-30T07:02:26Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3833,6 +3833,116 @@
       "disposition": "no-change",
       "evidence": "A real 15-term evaluation -- `rw [Fin_sum_univ_fifteen]; simp [div_eq_mul_inv]; ring` over `heckeH7DimQ` -- of sum 1/dim_q(lambda) across the partitions of 7. Same family as hecke_n4_frobenius_codim, already recorded legit: the q-hook dimensions are a hand-entered table attributed in the docstring, but the summation and the algebraic normalisation are genuine work that `ring` has to close. This is the COMPANION side of the frobenius_codim_trace_* finding -- the mathematics lives here and is sound; what is missing is any Lean link from the `match` arms in knot-mass-formula-unified to these theorems.",
       "tier": "CRITICAL",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/brings-surface/generation-completeness.lean::generation_completeness::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 53,
+      "verdict": "genuine",
+      "file_sha": "588eb1c13824",
+      "disposition": "state-the-real-proposition",
+      "evidence": "MACHINE-CHECKED VACUOUS (`lean` exit 0, scripts/lean/probes/generation-completeness-vacuity.lean). `isReachable K := exists r : N, r <= K.unknottingNumber` is inhabited by r = 0 for ANY K, so it says nothing about knots, generators or Skein moves; `KnotType` is two naturals with no knot in it. Verified: isReachable holds with NO hypothesis, holds for the junk value <999,0>, and holds when `isEmbeddable` is NEGATED -- so the docstring's scope (\"any knot with Seifert genus g(K) <= 4\") is not a scope. The prose claims a two-step proof (reachability from the unknot via the unknotting number; a spectral filter from Bring's surface) of which NEITHER step appears in the term. LEAN ALREADY SAYS HALF OF THIS: the file compiles with `warning: unused variable h_embed`, unprompted, on every build. SCOPE (a), deliberately: this says the LEAN establishes nothing, NOT that generation completeness is false -- it may hold, and [kauffman1991] is cited for the unknotting step. Nothing numerical depends on it. Full analysis: docs/audits/2026-08-30-generation-completeness-is-vacuous.md",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/brings-surface/generation-completeness.lean::spectrum_complete::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 67,
+      "verdict": "genuine",
+      "file_sha": "588eb1c13824",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`spectrum_complete (K) (h : K.seifertGenus <= 4) : isEmbeddable K AND isReachable K := <h, generation_completeness K h>`. FIRST conjunct is the hypothesis restated -- `isEmbeddable K` unfolds to exactly `K.seifertGenus <= 4` and the proof is `exact h` (verified). SECOND is the vacuous `generation_completeness`. So \"The Descartes particle spectrum is COMPLETE over embeddable knots -- every knot with g(K) <= 4 corresponds to a state in the algebraic direct limit V_phys = colim V^(x)n\" is `<h, trivially-true>`. DETECTOR RECALL NOTE -- NEITHER DETECTOR FLAGGED THIS ONE. It carries no borrowed mathematician name and its proof is a `constructor` split rather than a cheap tactic, so the borrowed-name signal misses it; and `<h, ...>` is not a definitional collapse, so the kernel defeq signal misses it too. It was found only by reading the file its flagged neighbour lives in. That is a third vacuity shape -- an honest term inhabiting a trivially-inhabited type -- distinct from both signals the two detectors carry.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp) [neighbour-read, not detector-flagged]"
+    },
+    "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 85,
+      "verdict": "advisory",
+      "file_sha": "a99708aa1244",
+      "disposition": "no-change",
+      "evidence": "`antipodeS := id` and `heckeSigma _ _ _ := { coeff := 0 }`, so the statement is `0 = 0` by `rfl` and would hold for any antipode whatsoever. ADVISORY not genuine because the disclosure is unusually complete: the FILENAME ends `-lean-stub`, the docstring says \"On the scalar-coefficient model `antipodeS = id`\" outright, and it names where the real statement lives (\"requires the basis-vector Hecke model\"). Same file as `chiralityFactor`, already recorded CRITICAL/genuine as a zero-placeholder -- a known, labelled stub.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::threeStrandRotation_eq_product::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 134,
+      "verdict": "legit",
+      "file_sha": "45c9c7230a51",
+      "disposition": "no-change",
+      "evidence": "A real 2x2 matrix product: `M2.mul` is the honest four-entry formula and each component is closed by `ring` against `threeStrandRotation`'s definition. Genuine algebra general in q, a and beta -- a wrong entry would fail `ring`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::axial_eq_div::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 201,
+      "verdict": "legit",
+      "file_sha": "45c9c7230a51",
+      "disposition": "no-change",
+      "evidence": "Genuine field manipulation with the nonzero hypothesis USED: `rw [eq_div_iff h4]; exact ha`. The docstring states the point correctly -- carrying `a*(1-q^4) = h` loses nothing relative to the classical Hoefsmit quotient `a2 = h/(1-q^4)`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/EmSpectralCompleteness.lean::hecke_minimal_polynomial_splits::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 87,
+      "verdict": "advisory",
+      "file_sha": "ffbcc882e63d",
+      "disposition": "no-change",
+      "evidence": "NAME/STATEMENT GAP. The name claims the minimal polynomial SPLITS into linear factors with distinct unit roots; the statement is `exists lp lm, lp = lambdaPlus AND lm = lambdaMinus AND IsUnit (lp - lm)` -- only that the two eigenvalues differ by a unit, with two existentials whose witnesses are pinned by `rfl` and carry no content. It delegates the one real obligation to `eigenvalues_distinct S`, so the Lean is sound; what is claimed is narrower than the name.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/s5_bring_hodge_depth.lean::multiplicity_W_in_H1::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 85,
+      "verdict": "legit",
+      "file_sha": "9d01451f7d11",
+      "disposition": "no-change",
+      "evidence": "A real S_5 character inner product: `inner a b := (classSizes.zipWith (*) (a.zipWith (*) b)).sum / 120` computed by `norm_num` over literature character tables, giving <chi_H1, chi_W41> = 2. Characters are hand-entered and attributed; the summation and division are genuine arithmetic that would expose a mis-transcribed entry as a non-integer.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::closure2_jones_at_one_sigma_sq_eq_neg_two::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 185,
+      "verdict": "advisory",
+      "file_sha": "aafc985e17e2",
+      "disposition": "no-change",
+      "evidence": "Honest chaining -- `rw [closure2_at_two_crossings_eq_hopf]; exact jonesAtOne_hopf_eq_neg_two` -- but BOTH links are table lookups: `closure2 | 2 => Link.hopfLink` and `jonesAtOne | Link.hopfLink => -2`. The chain is table-to-table and verifies neither. The docstring says \"Closes by chaining ...\", accurate about the mechanism.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerIsospinBlind.lean::t2_isobar_invariant::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 81,
+      "verdict": "legit",
+      "file_sha": "6beeea598ec4",
+      "disposition": "no-change",
+      "evidence": "Real: `M.value := sum over i of M.z * M.trGen i`, and equality is derived from the hypothesis `hz : M.z = M'.z` via each tower's `value_eq`. The hypothesis is USED. Also a structural (b)-type exclusion done properly -- two isobars with the same strand count and Markov parameter get identical T_2, so the brane tower contributes ZERO to the mirror-nucleus split. A negative result, stated as one.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean::schur_weyl_n3::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 129,
+      "verdict": "advisory",
+      "file_sha": "931cf6455a6e",
+      "disposition": "no-change",
+      "evidence": "`rw [sw.summands_count, hn]` -- the content is a FIELD of the `DescartesSchurWeyl` structure binder, so this is a conditional derivation from a stated assumption rather than something the file establishes. Legitimate as a projection; advisory because the name reads as the Schur-Weyl decomposition at n = 3 while the decomposition itself is assumed.",
+      "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
   }
