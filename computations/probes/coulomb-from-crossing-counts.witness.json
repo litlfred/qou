@@ -1,0 +1,98 @@
+{
+  "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "name": "coulomb-from-crossing-counts",
+  "description": "Corrects the scope of CrossingCountAffine: it excludes the LINEAR class only, and Z(Z-1) is reachable from the crossing counts quadratically \u2014 16\u00b7Z(Z-1) = (n+ - n-)(n+ - n- - 4) exactly, on 16 nuclei. The A^(1/3) scale is the cube root of the extensive unsigned channel n+ + n- = 10A-2, which needs no hyperbolic structure \u2014 the volume route is closed by measurement (0 of 40 branch closures hyperbolic). Assembled, Z(Z-1)/(n+ + n-)^(1/3) tracks the mirror Coulomb displacement energy across A=3..39 with one slope. Scope (a); the slope is NOT derived and nothing is wired.",
+  "computedAt": "2026-08-30T18:11:55.306056+00:00",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "channel_identities": "n+ + n- = 10A - 2 ; n+ - n- = 4Z",
+    "correction_identity": "16*Z(Z-1) = (n+ - n-)*(n+ - n- - 4)",
+    "hyperbolic_branches_total": 0,
+    "branches_total": 40,
+    "scale_ratio_min": "2.0800838230519041145",
+    "scale_ratio_max": "2.150745582317914639",
+    "cube_root_ten": "2.1544346900318837218",
+    "mirror_rows": [
+      {
+        "pair": "3He/3H",
+        "A": 3,
+        "observed_MeV": "0.76375488",
+        "shape": "0.658633756008",
+        "obs_over_shape": "1.15960482291"
+      },
+      {
+        "pair": "7Be/7Li",
+        "A": 7,
+        "observed_MeV": "1.6442398",
+        "shape": "1.46999191509",
+        "obs_over_shape": "1.11853662807"
+      },
+      {
+        "pair": "11C/11B",
+        "A": 11,
+        "observed_MeV": "2.764036",
+        "shape": "2.09986841649",
+        "obs_over_shape": "1.31629009622"
+      },
+      {
+        "pair": "15O/15N",
+        "A": 15,
+        "observed_MeV": "3.536532",
+        "shape": "2.64671673794",
+        "obs_over_shape": "1.33619587971"
+      },
+      {
+        "pair": "39Ca/39K",
+        "A": 39,
+        "observed_MeV": "7.3068333",
+        "shape": "5.21002357054",
+        "obs_over_shape": "1.40245686052"
+      }
+    ],
+    "r2_observed_vs_shape": "0.99809392057632720288",
+    "best_slope_MeV": "1.4605355897442507766",
+    "assertions": [
+      {
+        "name": "n+ + n- = 10A - 2 and n+ - n- = 4Z on all 16",
+        "passed": true,
+        "detail": "exact integer equality on every row; the unsigned channel depends on A alone (mirror-invariant) and the signed one is 4Z."
+      },
+      {
+        "name": "the proton-pair multiplicity IS a quadratic in the counts",
+        "passed": true,
+        "detail": "exact on all 16 in integer arithmetic. CrossingCountAffine excludes a\u00b7n+ + b\u00b7n- + c = Z(Z-1) for CONSTANT a,b,c \u2014 the affine class. This is one degree up and it lands exactly. The ingredient was never excluded; only the linear closure was."
+      },
+      {
+        "name": "the linear exclusion is untouched \u2014 both statements hold at once",
+        "passed": true,
+        "detail": "Z(Z-1) has second difference 2 while every linear combination has 0, so no linear form matches; and the quadratic form matches at every Z. Nothing is contradicted \u2014 a boundary is located."
+      },
+      {
+        "name": "no hyperbolic volume exists at the atom-braid level to take a root of",
+        "passed": true,
+        "detail": "0 of 40 branch closures are hyperbolic across p, n and the deuteron \u2014 every one degenerate. So `Vol(K_A)^(1/3)` as the A^(1/3) scale is blocked by a measured fact, not by preference. This is read from the committed witness, not re-derived."
+      },
+      {
+        "name": "the cube root is IMPOSED, not derived \u2014 it tracks A^(1/3) trivially",
+        "passed": true,
+        "detail": "ratio spans 2.0800838 .. 2.1507456 (spread 0.0706618) over A=2..39, tending to 10^(1/3) = 2.15443469. \ud83d\uded1 THIS IS NOT A DERIVATION AND MUST NOT BE READ AS ONE: the exponent 1/3 is written in BY HAND. Since n+ + n- = 10A - 2 is affine in A, (n+ + n-)^(1/3) is A^(1/3) with extra steps, and the near-constant ratio is arithmetic. Bean qou-nf9l (COMPLETED) refuted all three corpus combinatorial classes for producing a cube root of A, and its census records that every 1/3 in the corpus is a FIXED INDEX 3, never an A-th root. The only thing this section adds is that the count channel is available where the hyperbolic volume is not (0 of 40 branches)."
+      },
+      {
+        "name": "the assembled shape tracks the mirror Coulomb energy across A=3..39",
+        "passed": true,
+        "detail": "R^2 = 0.99809392 on 5 mirror pairs spanning A = 3..39, with a single slope and no other free quantity. Compare qou-vudb, where the model's mirror asymmetry was a CONSTANT (A^0) against an observed A^0.87. Scope (a): 5 points, one fitted slope, and the slope is NOT derived \u2014 this measures shape agreement, not a derivation."
+      },
+      {
+        "name": "section 4 does NOT test the quadratic \u2014 it cancels in a mirror pair",
+        "passed": true,
+        "detail": "\u0394Z(Z-1) = A - 1 exactly on all 5 pairs, so section 4's shape is (A-1)/(10A-2)^(1/3), a pure function of A. Its R^2 against another function of A is near-guaranteed and is NOT evidence for the quadratic multiplicity. What section 4 CAN test is the EXPONENT."
+      },
+      {
+        "name": "the data prefers p = 1/4, NOT 1/3 \u2014 reproducing qou-nf9l independently",
+        "passed": true,
+        "detail": "minimised at p = 1/4 (rel spread 0.12131); 1/3 is nearly double that. This INDEPENDENTLY REPRODUCES the corpus's own 8-pair fit p* = 0.252 +- 0.020 (docs/audits/2026-07-13-packing-exponent-combinatorics-derive-or-refute.md, bean qou-nf9l), where 1/4 sits at 0.1 sigma and 1/3 at 4.1 sigma \u2014 a different sample and a different method, same answer. So the SEMF's A^(1/3) is not what this data wants. p = 0 (the current model's behaviour, no length scale at all) is much worse than either. Scope (a), 5 points, one scanned parameter; evidence about the DENOMINATOR only \u2014 the quadratic numerator cancels here by construction."
+      }
+    ],
+    "allPassed": true
+  }
+}
