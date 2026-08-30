@@ -252,3 +252,66 @@ project and would serve far more than this one theorem.
 
 **Scope-(a) negative, not (b):** nothing here shows `VOL_4_1 < VOL_5_2` is unreachable.
 It shows the *currently available* machinery does not reach it.
+
+---
+
+## 2026-08-30 — EXACTIFIED. The defect is fixed, not merely recorded.
+
+`MostowRigidity.figureEight.volume` is now `VOL_4_1`, not `2.02988321281930`. There is
+no decimal left to be unequal to.
+
+### I had scoped this as blocked, and I was wrong about why
+
+The recorded blocker was `figureEight_volume_lt_knot5_2_volume` needing `VOL_4_1 <
+VOL_5_2`, hence a **lower** bound on `VOL_5_2` the corpus does not have. That assumed
+both instances had to move together. **They do not.** Exactifying only the 4₁ side turns
+the comparison into
+
+    VOL_4_1 < 2.82812208833078
+
+— an **upper** bound on `VOL_4_1`, which the existing certified bracket already gives:
+`|Cl₂(π/3) − c·√3| ≤ 1/24` ⟹ `VOL_4_1 < 2.1103`, with **0.72 headroom**. The missing
+lower bound was only ever needed if both sides were exact.
+
+All three consumers now discharge from proved facts instead of `norm_num` on decimals:
+
+| consumer | now derived from |
+|---|---|
+| `volume_nonneg` | `Cl_2_pi_div_three_pos` |
+| `unknot_volume_lt_figureEight_volume` | `Cl_2_pi_div_three_pos` |
+| `figureEight_volume_lt_knot5_2_volume` | `abs_Cl_2_pi_div_three_sub_le` |
+
+### The typechecker made the defect visible — keep this
+
+`MostowTriangulationBridge`'s theorem concluded `(2.02988321281930 : ℝ) = T.volume` and
+**compiled**, because `volumeInvariant FigureEight` was *definitionally* that literal.
+After exactification Lean reported:
+
+    has type      volumeInvariant FigureEight = T.volume
+    but expected  2.02988321281930 = T.volume
+
+**A truncated literal standing in for an exact constant is invisible precisely while it
+is the definition.** No audit catches that by reading the file; replacing the definition
+is what surfaces it. The theorem is re-keyed on `VOL_4_1` and renamed
+`figureEight_volume_eq_triangulation_volume` — it is now **applicable** at the corpus's
+own `figureEightTriangulation`, which it never was.
+
+### Also fixed: MostowRigidity was UNPINNED
+
+It carries the corpus's manifold-volume instances and had **zero** axiom-guard entries.
+Seven added — the guard is exactly what would catch a regression from these proofs back
+to `norm_num` on literals.
+
+### Scope kept honest
+
+- `mostow_gap := 0.5` **keeps its literal deliberately** — a conservative
+  under-approximation of the true gap, not an approximation *of* anything exact, so it
+  is not in the defect class.
+- The `:leanval[Vol_4_1]` tag is removed from the exactified field only: nothing left to
+  sync.
+- **The 5₂ side is unchanged and still carries the truncation.** Making it exact still
+  needs the `VOL_5_2` lower bound, and that still routes through certified `Λ` at angles
+  that are not rational multiples of π. Unchanged, still open.
+- A **third** carrier exists: `Archimedean/HyperbolicVolumeTranscendence.vol_4_1 :=
+  figureEightEntry.volume.value`, its own registry entry, whose comment says it "uses the
+  identical value". Not touched, not audited against the exact constant.
