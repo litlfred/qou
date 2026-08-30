@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-25T03:29:22Z
-updated_at: 2026-08-30T04:08:57Z
+updated_at: 2026-08-30T04:31:01Z
 ---
 
 ## 2026-08-30 — the whole Hecke presentation now holds for the `T_w` operators
@@ -81,3 +81,44 @@ says it is not established.
    elements `1, σ_n, σ_n σ_{n-1}, …` and induct — the Hecke analogue of the
    `InCosets` / `card_An_le` argument already in `SymmetricCoxeter.lean`.
    Avoids Matsumoto entirely, but is type-A only and not upstreamable as such.
+
+
+## 2026-08-30 (route 2 started) — the tower's algebraic ingredients
+
+Proceeding with the type-A tower spanning route (the Matsumoto-free one), since
+it was the recommendation and is reversible. Landed, all sorry-free:
+
+* `HeckeTower.lean` — `incl : H_n(q) →ₐ[K] H_{n+1}(q)`, `incl_σ`.
+* `HeckeStaircase.lean` — an ℕ-indexed generator layer `gen` (so every side
+  condition is `omega`-shaped, not `Fin`-shaped) with `gen_sq` / `gen_braid` /
+  `gen_comm`; the runs `stair k = σ_n σ_{n-1} ⋯ σ_{n-k+1}`; and the three
+  relations the closure argument needs:
+  - `stair_comm` — a generator strictly below the run commutes past it;
+  - `stair_fold` — `c_{k+1} σ_{n-k} = (q−1)·c_{k+1} + q·c_k`, the **only**
+    place a coefficient appears in the whole argument;
+  - `stair_push` — `c_k σ_i = σ_{i−1} c_k` above the foot;
+  plus `stair_push_full` and `gen_mem_inclRange`.
+
+With `c_k σ_{n-k} = c_{k+1}` (definitional) those are the four closure cases.
+
+### One defect found and fixed before it cost anything
+
+`stair_push` first shipped with hypothesis `n − k + 1 < i`. The foot of `c_k` is
+`σ_{n+1−k}`, and the two agree for `k ≤ n` but differ at the **full run**
+`k = n+1`, where truncated subtraction turns `n − (n+1) + 1` into `1` while the
+real foot is `σ_0`. So it silently excluded `i = 1` at `k = n+1` — a case the
+closure needs and which is true (`n = 1`: `c₂σ₁ = σ₁σ₀σ₁ = σ₀σ₁σ₀ = σ₀c₂`).
+Hypothesis weakened to `n + 1 − k < i` with `hk : k ≤ n + 1` added so the
+induction step gets `k ≤ n` and truncation cannot bite again.
+
+### Still to build
+
+1. The submodule `M = Σ_{k≤n+1} (incl range) · c_k`, and `M · σ_i ⊆ M` from the
+   four cases above.
+2. `M = ⊤`, via `1 ∈ M` plus the span of generator-products being everything
+   (`RingQuot.mkAlgHom` surjective + `FreeAlgebra.adjoin_range_ι` +
+   `Algebra.adjoin_eq_span`).
+3. The induction on `n`: `dim_K H_{n+1} ≤ (n+2)·dim_K H_n ≤ (n+2)!`.
+4. Over a **field**: with `linearIndependent_Tw` giving `≥`, conclude `orbitMap`
+   injective and make `basisTw` unconditional. Note this last step wants
+   `[Field K]`; `basisTw` as stated is over any `CommRing`.
