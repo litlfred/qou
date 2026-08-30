@@ -168,13 +168,38 @@ def main() -> int:
     c3 = check3_gram_rank(q0)
     c4 = check4_same_gram(c3)
 
+    # REGRESSION GUARD, not a live-site scan.
+    #
+    # This probe was written to ESTABLISH the finding, while all five sites
+    # still carried z^3. They were fixed later in the same PR, at which point
+    # reading `text[line - 1]` started returning the FIXED lines (and, once
+    # explanatory comments shifted the files, unrelated lines entirely) while
+    # the payload still said "live sites still on z^3". The witness contradicted
+    # itself. Caught when a rebase re-ran the probe.
+    #
+    # So it now checks what is actually worth checking going forward: that each
+    # file carries the CORRECT weight and no longer carries the bug. Keyed on
+    # content, not line numbers, so it cannot rot the same way twice.
     sites = []
     repo = HERE.parent.parent
+    all_fixed = True
     for path, line, sym in LIVE_SITES:
-        text = (repo / path).read_text().splitlines()
+        text = (repo / path).read_text()
+        # the bug: a six-element trace vector ending in a cube of z
+        has_bug = any(
+            pat in text.replace(" ", "")
+            for pat in ("z**2,z**2,z**3", "z*z,z*z,z**3", "z**2,z**2,z**3]")
+        )
+        has_fix = any(
+            pat in text.replace(" ", "")
+            for pat in ("h*z**2+z", "h*z*z+z", "h_trm*z**2+z", "_h_trm*z**2+z")
+        )
+        all_fixed = all_fixed and has_fix and not has_bug
         sites.append({
-            "file": path, "line": line, "symbol": sym,
-            "source": text[line - 1].strip() if line <= len(text) else "<out of range>",
+            "file": path, "symbol": sym,
+            "historical_line": line,
+            "still_carries_z_cubed": has_bug,
+            "carries_h_z2_plus_z": has_fix,
         })
 
     payload = {
@@ -185,7 +210,15 @@ def main() -> int:
             "wrong weight masks the convention-D Gram singularity."
         ),
         "nf_basis": [list(b) for b in NF_BASIS],
-        "live_sites": sites,
+        "regression_guard": {
+            "note": ("These five carried TR_M[5] = z^3 when this probe was "
+                     "written; all five are fixed in the same PR. The check is "
+                     "now that the fix HOLDS, keyed on content rather than line "
+                     "numbers — the line-keyed version contradicted its own "
+                     "payload as soon as the fix landed."),
+            "all_five_fixed": all_fixed,
+            "sites": sites,
+        },
         "check1_markov_derivation": c1,
         "check2_magnitude_at_q0": c2,
         "check3_gram_rank_live_producer": c3,
@@ -223,9 +256,10 @@ def main() -> int:
     for k, v in c3.items():
         print(f"           {k:22s} det {v['det']:>16}  rank {v['rank']}/6")
     print(f"  CHECK 4  same Gram as gram_h3?  : {c4['magnitudes_agree']}")
-    print(f"  LIVE SITES STILL ON z^3         : {len(sites)}")
-    for s in sites:
-        print(f"           {s['file']}:{s['line']}  {s['symbol']}")
+    print(f"  REGRESSION GUARD — all five fixed : {all_fixed}")
+    for st in sites:
+        flag = "BUG" if st["still_carries_z_cubed"] else ("ok" if st["carries_h_z2_plus_z"] else "??")
+        print(f"           [{flag}] {st['file']}  {st['symbol']}")
     print(f"\n  witness -> {out}")
     return 0
 

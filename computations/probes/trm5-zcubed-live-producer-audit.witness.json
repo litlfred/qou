@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:07:03.986405+00:00",
-  "commitSha": "4fdbca4dfd6847cccce0d6c58d93cb1bcc3eee6f",
+  "computedAt": "2026-08-30T08:45:53.115269+00:00",
+  "commitSha": "47f8fa2278e84329ed6e4b2476400e8492efd8de",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm5-zcubed-live-producer-audit",
   "scriptFile": "trm5_zcubed_live_producer_audit.py",
-  "scriptHash": "ae967c22de80",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6a07494632c6",
+  "scriptCommitSha": "1f45c01fe23f154cac8803118b9172411f760b64",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,38 +55,47 @@
       0
     ]
   ],
-  "live_sites": [
-    {
-      "file": "computations/compound_shift_nf.py",
-      "line": 257,
-      "symbol": "tr_m_weights_mp",
-      "source": "out = [mp.mpf(1), z, z, z ** 2, z ** 2, z ** 3]"
-    },
-    {
-      "file": "computations/electron_sigma_f_chain.py",
-      "line": 107,
-      "symbol": "TR_M",
-      "source": "TR_M = [1.0, z, z, z * z, z * z, z ** 3]"
-    },
-    {
-      "file": "computations/jet_knot_invariants.py",
-      "line": 56,
-      "symbol": "tr_basis",
-      "source": "tr_basis = [1, z, z, z**2, z**2, z**3]"
-    },
-    {
-      "file": "computations/atom_mass_derived.py",
-      "line": 102,
-      "symbol": "TR_M_3",
-      "source": "TR_M_3 = [1.0, z, z, z**2, z**2, z**3]"
-    },
-    {
-      "file": "computations/basis_knot_tables.py",
-      "line": 54,
-      "symbol": "TR_M",
-      "source": "TR_M = [_ONE, z, z, z**2, z**2, z**3]"
-    }
-  ],
+  "regression_guard": {
+    "note": "These five carried TR_M[5] = z^3 when this probe was written; all five are fixed in the same PR. The check is now that the fix HOLDS, keyed on content rather than line numbers — the line-keyed version contradicted its own payload as soon as the fix landed.",
+    "all_five_fixed": true,
+    "sites": [
+      {
+        "file": "computations/compound_shift_nf.py",
+        "symbol": "tr_m_weights_mp",
+        "historical_line": 257,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/electron_sigma_f_chain.py",
+        "symbol": "TR_M",
+        "historical_line": 107,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/jet_knot_invariants.py",
+        "symbol": "tr_basis",
+        "historical_line": 56,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/atom_mass_derived.py",
+        "symbol": "TR_M_3",
+        "historical_line": 102,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      },
+      {
+        "file": "computations/basis_knot_tables.py",
+        "symbol": "TR_M",
+        "historical_line": 54,
+        "still_carries_z_cubed": false,
+        "carries_h_z2_plus_z": true
+      }
+    ]
+  },
   "check1_markov_derivation": {
     "derived_symbolic": "q*z**2 + z - z**2/q",
     "equals_z_cubed": false,
