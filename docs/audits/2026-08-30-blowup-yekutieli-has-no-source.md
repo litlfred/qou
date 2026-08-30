@@ -67,12 +67,48 @@ declared by no content block in the corpus. The four transcriptions were
 possible because there was an upstream statement to transcribe; here the
 citation resolves to nothing.
 
-**A `p3-blowup-yekutieli` block did once exist** — under `ch10-fluid-dynamics/`
-and `ch6-descartes-universe/`, plus a `fluid-dynamics/p3-blowup-yekutieli.lean`,
-none of which is on disk now. Recovering the last committed `.md` does **not**
-supply the missing rate: its content is the *regularity-breakdown* argument —
-smoothness as lifting through the brane tower, `v` smooth ⟺ `κ_n(v) = 0` — with
-no blow-up exponent in it.
+> **🛑 CORRECTED 2026-08-30, later the same day (bean `qou-4670`). The
+> paragraph below said the `p3-blowup-yekutieli` block is gone. It is not — it
+> MOVED, and it is live.**
+>
+> I asserted: *"A `p3-blowup-yekutieli` block did once exist — under
+> `ch10-fluid-dynamics/` and `ch6-descartes-universe/`, plus a
+> `fluid-dynamics/p3-blowup-yekutieli.lean`, none of which is on disk now."*
+> I had searched the chapter directories the block used to sit in, found
+> nothing, and stopped. It is at
+> [`lifting-and-descent/p3-blowup-yekutieli.ts`](../../content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.ts),
+> with its `.md`, its `.lean` and a `.qa.json` sidecar — a full live block.
+>
+> **The table above is literally true and its inference is not.** Zero `.ts`
+> blocks declare `conj:blowup-yekutieli`, because the live block's label is
+> **`prop:blowup-yekutieli`** — a *proposition*, not a conjecture. Ten other
+> blocks `interprets` or `uses` it. So the sentence *"the citation resolves to
+> nothing"* is right about the citation and wrong about the corpus: the Lean's
+> `-- Ref: conj:blowup-yekutieli` points at a label nobody declares, while the
+> statement it is named for is one directory over under a different kind.
+>
+> **What that block actually carries**, in `QOU.FluidDynamics.BlowupYekutieli`:
+> a `smooth : Prop`, an `obstruction : ℕ → ℕ`, and the definitional field
+> `smooth ↔ ∀ n, obstruction n = 0` — with a *derived*, sorry-free theorem
+> `blowup_yekutieli` getting the blow-up direction by contraposition. That is a
+> §3b-cond non-degenerate carrier, and it is nothing like the local class of
+> the same name, whose entire content is `∃ r, 0 ≤ r ∧ r ≤ 1 + T`.
+>
+> **What survives unchanged.** The finding this audit is titled for stands:
+> there is no Yekutieli blow-up *rate* in the corpus, the six-path grep is
+> unaffected, and no bound can be transcribed. What changes is the disposition
+> — see the correction under §Disposition below, where option 2 was resting on
+> this error.
+
+Superseded text follows. **A `p3-blowup-yekutieli` block did once exist** —
+under `ch10-fluid-dynamics/` and `ch6-descartes-universe/`, plus a
+`fluid-dynamics/p3-blowup-yekutieli.lean`, none of which is on disk now.
+Recovering the last committed `.md` does **not** supply the missing rate: its
+content is the *regularity-breakdown* argument — smoothness as lifting through
+the brane tower, `v` smooth ⟺ `κ_n(v) = 0` — with no blow-up exponent in it.
+
+(That last sentence was correct about the *content*, and is in fact the whole
+point: the block states the lifting-obstruction claim and no rate.)
 
 ## What this is, in the corpus's own taxonomy
 
@@ -101,7 +137,31 @@ Deliberately **not** done here: no bound was written. Choosing an `f(q₀)` woul
 produce something that looks exactly like the four sibling fixes and is a fitted
 value wearing their clothes — the anti-laundering rule this whole arc is about.
 
-Three options, none of which is mine to take:
+> **🛑 The three options below were written believing the `p3` block was
+> deleted. It is live (see the correction above), and that collapses the choice
+> — option 2 is no longer a speculative rename, it is a transcription with a
+> named source.**
+>
+> **Recommended, and this is my judgement rather than a finding: option 2.**
+> The local class should be re-encoded against
+> `QOU.FluidDynamics.BlowupYekutieli` — `smooth ↔ ∀ n, obstruction n = 0` —
+> exactly as the other four were transcribed from their upstreams, and its
+> `-- Ref:` corrected from the non-existent `conj:blowup-yekutieli` to the live
+> `prop:blowup-yekutieli`. That needs no new mathematics, no rate, and no
+> number chosen by an agent: the statement exists, is proved-from in
+> `blowup_yekutieli`, and is refutable (an `obstruction` that vanishes
+> everywhere while `smooth` is `False` falsifies it).
+>
+> **The rename question is separate and stays open.** Whether the *name*
+> `BlowupYekutieli` should survive is the borrowed-name issue below (`qou-0avp`)
+> and is genuinely authorial; transcribing the upstream content does not settle
+> it, and can be done under either name.
+>
+> Option 1 stays available and stays the more ambitious one: if the framework
+> does claim a blow-up *rate*, that is a conjecture block nobody has written,
+> and this audit's six-path grep says so. Option 3 is unaffected.
+
+Superseded text follows. Three options, none of which is mine to take:
 
 1. **Write the missing conjecture block.** Someone states the q-NS blow-up rate
    as an explicit function of the substrate modulus, `conj:blowup-yekutieli`
