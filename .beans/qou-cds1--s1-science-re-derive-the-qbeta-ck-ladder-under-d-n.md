@@ -3746,3 +3746,51 @@ stays underived and L2 is untouched. Scope **(a)**.
 2. Not applicable to the candidate `c_3 = -2 = J_Hopf(q=1)` — a constant is
    trivially bar-even, so the test has nothing to say about it either way.
 3. Not a uniqueness result. It constrains the rungs; it does not select them.
+---
+
+## Entry 12 — bar-parity is SILENT on `K(δ)`, the freedom that dominates L2
+
+`computations/qbeta/qbeta_d_n1_constant_bar_silence_probe.py` — **6/6**.
+
+Entry 11 forces every D rung bar-even. The obvious next hope is that the same
+symmetry pins entry 10c's free constant `K(δ)`. **It does not, and the reason is
+structural rather than circumstantial.**
+
+    delta = h^2/2,  h = q - 1/q
+    bar: q -> 1/q  sends  h -> -h,  so  h^2 -> h^2
+
+`δ` is bar-**invariant**. Therefore `K(δ)` is bar-even for **every** `K`, and
+bar-parity imposes no condition at all. It is not a weak constraint on `K`; it is
+a vacuous one. (Verified symbolically, with the contrast: `bar(u)/u = q²` exactly
+— `u` is bar-covariant, a *graded* weight, which is precisely what makes entry 11
+bite on the rungs.)
+
+### Why this matters more than the k=3 rung
+
+The gap between the two `K` the arc admits — `K ≡ 1` and `K = cos(δ/2)`, the
+latter being what the midpoint factor `M` supplies — is
+
+    delta(q0)          = 0.021853104266260994701
+    |1 - cos(delta/2)| = 5.9694176850430203e-5   =  59694.18 ppb
+    vs target 7.797    = 7656.0x
+
+**That single residual is ~7656× the Q_β 100× target**, which is far larger than
+anything a derived k=3 rung could contribute. So `K` is the L2 blocker at N=1,
+and entry 11 — real as it is — does not reach it.
+
+### A rounding, not a discrepancy
+
+My first run reported **7653.1×** against entry 10c's recorded **7656×**. Same
+number: 59694.18 / 7.8 = 7653.1 and 59694.18 / 7.797 = 7656.0. AGENTS.md quotes
+the Q_β target as "7.8 ppb", which is `σ_exp/100 = 779.7/100 = 7.797` rounded.
+The probe now uses the unrounded target and says so in a comment, so the pair
+cannot be mistaken later for two measurements — the exact failure mode the `c₃`
+"3.47 % vs 3.35 %" note in AGENTS.md was written about.
+
+### Scope
+
+A **negative**, scope (a). No `c_k` is produced, proposed or fitted; Q_β stays at
+1279 ppb. It is **not** a claim that `K` is underivable — only that bar-parity is
+not the tool, and that no sharpening of entry 11 will become one, because the
+quantity it would have to constrain is invariant under the symmetry it is built
+from. Closing `K` needs a genuinely different input.
