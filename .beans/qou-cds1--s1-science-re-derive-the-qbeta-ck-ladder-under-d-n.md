@@ -4106,3 +4106,75 @@ character's basis values are taken as DATA from the corpus's own
 trace-of-left-multiplication computation. Formalising the H_3 multiplication
 table is not what these results turn on. The theorems are exactly "given those
 values, these identities hold".
+
+
+## Step 10 (2026-08-30, PR #6144) — z_required = 0.99850, and the block is a RULING
+
+### The reduction makes the question exact
+
+Step 9 proved `tr(Delta_S)(z) = (y_3 - y_(1^3))(z) * chi^(3)(Delta_S)` with
+`chi^(3)` FIXED. So the whole z-dependence is one scalar, and it is AFFINE:
+
+    g(z) = (2qz - q^2 + 1)/(q^2 + 1)
+    g(z) * chi^(3)(Delta_S) = h^2/2 - h z        exact, all z
+    g(z_D) = (q^4+1)/(q^2+1)^2
+
+Affine => invertible => "what z does CODATA require" is EXACT and UNIQUE, zero
+free parameters. Not a fit.
+
+### The number
+
+    z_required = 0.998500302563
+    z = 1        PROVED inadmissible (one_not_root)
+    z_D          0.612688037146   admissible
+    z = q        1.109978582751   admissible
+
+**0.15 % from z = 1, and 257x nearer to it than the admissible z_D.** Both
+admissible bases give the SAME z_required to 10 digits -- as they must, since
+only one z reproduces the Q-value. The two "different bases" were never
+different problems; that agreement is the check the reduction is right.
+
+### The block is a ruling, not an impossibility — CHECKED, not assumed
+
+`MarkovZFullBarCondition`'s docstring says "Which horn is the decay channel's is
+NOT decided here: no corpus block derives the decay fibre, and the channel is
+registered `disputed`". That could be a stale status note superseded by the
+2026-08-15 ruling. It is not. The trace-convention registry preserves the
+distinction verbatim:
+
+  "Supersedes the CONTRADICTORY/null registration ... AS A STATUS, NOT AS
+   ANALYSIS: its finding that neither convention was DERIVED for this channel
+   stands"
+
+STATUS settled (D, by ruling); DERIVATION not. `AdmissibleRoots` proves
+`admissible <=> y_(1^3)=0 <=> z in {q,z_D}` -- a theorem ABOUT the condition.
+That the DECAY channel must satisfy it is the ruling.
+
+### Splitting my own results honestly
+
+UNCONDITIONAL (any z, any convention):
+  - chi^(2,1)(Delta_S) = 0                    (Lean, sorry-free)
+  - tr(Delta_S)(z) = g(z) * chi^(3), g affine
+  - the decay channel's entire z-content is ONE affine scalar
+  - z_required = 0.998500302563
+
+CONDITIONAL ON THE RULING:
+  - "under D the carrier is a single block"
+  - "block re-weighting cannot source the correction"  <- Step 9's own headline
+  - the inadmissibility of z_required
+  - the four closed correction routes (08-29, Step 8, z=1 wall, Step 9)
+
+conditional-proved != premise-established, applied to my own work.
+
+### The reframing — what the open problem actually is
+
+The D re-derivation is NOT blocked by a proved impossibility. The decay trace is
+one affine scalar; the data fixes it at 0.99850; the ruling fixes it at 0.61269.
+Closing that gap means **DERIVING THE DECAY FIBRE**, which the registry already
+names as the open item — not finding another correction.
+
+**The thing missing is not a form.** Every "new form" search, mine included, has
+been searching inside a constraint that was never derived for this channel.
+
+z = 1 is NOT readmitted: its admissibility leak is 7.6x too small to be the
+correction. "Nearly z=1" describes the tension; it is not a mechanism.
