@@ -1,11 +1,11 @@
 ---
 # qou-o6ml
 title: 'EM-linking invariant ATTACK (shared blocker: 3He residual 69% + m_d-m_u extraction): trichotomy of routes — (1) higher-order Milnor/third-order-helicity integrals (pairwise lk=0 in Brunnian B3 kills first-order Gauss), (2) Mobius/knot-energy class (nonzero for unlinked pairs; corpus MobiusEnergy.lean exists), (3) h-graded per-pair Hecke trace channel at H_2A with Hochschild-homology classification of trace functionals (Solleveld 1108.5286, uploaded). GATE: must reproduce kappa(A) profile 3.2->2.1-2.3 from em-linking-invariant-scoping witness; no tuned constant (CAL-4)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T13:25:47Z
+updated_at: 2026-08-30T14:32:54Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -131,3 +131,105 @@ makes route (2) cheaper than it looks, but not yet startable.
 
 **Route (3) (h-graded Hecke trace channel) is untouched by all of this** and is
 now the only live route with no known structural blocker.
+
+
+## ROUTE (3) RESHAPED 2026-08-30 — it inherits a blocker this bean does not name, and "h-graded" misdescribes what the theorem offers
+
+Formalize-first pass before probing, per AGENTS.md §"Formalize-first probe
+discipline". Four findings; **none refutes the route**, and one of them is prior
+art this bean should have linked from the start.
+
+### 1. Prior art: `qou-siin` already worked this apparatus, and found the wall
+
+`qou-siin` ("Pull through Solleveld") and its probe
+[`computations/probes/solleveld_form_degree_vs_body_order_probe.py`](../computations/probes/solleveld_form_degree_vs_body_order_probe.py)
+attacked the same Solleveld theorem for a **different target** — the body-order
+series of `conj:binding-manybody-eq-jet-filtration`, not the EM per-pair weight.
+Its OBSERVATION 3 is this route's blocker verbatim:
+
+> Solleveld's theorem is about the **affine** Hecke algebra. The corpus's atom
+> word lives in the **finite** `H_{3A}(q)`, which is semisimple at generic q —
+> so for it the whole grading **collapses to degree 0** and none of the above
+> exists. Using any of this requires the inductive limit, and
+> `markov-trace-inductive-limit.lean` says of exactly that: *"The full
+> operator-theoretic construction (von Neumann inductive limit on the
+> infinite-dim affine Hecke algebra) is the open R&D content."*
+
+**So route (3) is NOT the blocker-free route.** It waits on the same
+inductive-limit bridge the corpus has already marked open. That is a correction
+to this bean's own framing and to my ROAST entry above, which called (3) *"the
+only live route with no known structural blocker"* — **retracted**; I had
+grepped this bean's routes, not the apparatus they cite.
+
+### 2. "h-graded" is not what the theorem supplies
+
+Solleveld's Theorem 2 (introduction, p. 3): `HH_*(H(R,q^ε)) ≅ Ω^*(T̃)^W`, and
+
+> the Hochschild homology of `H(R,q^ε)` is **independent of the parameters
+> `q^ε`** and can be expressed in terms of `T` and `W`. Only the action of the
+> centre depends on `q^ε`, but in a simple way.
+
+The grading index is the **de Rham form degree** `j`, and `qou-siin`'s probe
+computes its ranks as pure combinatorics — `rank HH_j = Σ_{λ⊢n} C(#parts(λ)−1, j)`
+— with no `q` anywhere. So there is no grading of the trace space by powers of
+`h = ℏ_q` to find: **`h` enters only through the centre's action** (the
+`c_{w,i}(q)` shifts of Theorem 1.c), which is a *finite discrete datum*, not a
+grading. Restate the route as "the form-degree channel, with `h` entering
+through the central character" or it will be searched for the wrong object.
+
+The `c_{w,i}` being finite and explicit is the encouraging half: it is exactly
+the no-tuned-constant shape this bean's GATE demands.
+
+### 3. On the FINITE algebra the route's search space is small, and already searched
+
+Degree 0 is all that survives finiteness, and `HH_0` of `H_n(q)` at generic `q`
+is `span{χ_λ}`, `p(n)`-dimensional — i.e. **the Frobenius pairing
+`tr_M = Σ_λ y_λ χ_λ` the canonical chain already uses.** Route (3) on the finite
+algebra is therefore not a new channel; it is a re-search of that span with
+different `y_λ`.
+
+And convention D cuts it much further. `deuteron_real_sdp.py:342`: *"Convention D
+zeroes `y_lambda` for `ell(lambda) > 2`"* — so the live sub-space is the
+**two-row** partitions only:
+
+| A | n = 3A | p(n) | ℓ(λ) ≤ 2 | pairs C(A,2) |
+|---|---|---|---|---|
+| 2 | 6 | 11 | **4** | 1 |
+| 3 | 9 | 30 | 5 | 3 |
+| 4 | 12 | 77 | 7 | 6 |
+| 6 | 18 | 385 | 10 | 15 |
+| 8 | 24 | 1575 | 13 | 28 |
+
+**Not claimed:** that ⌊3A/2⌋+1 < C(A,2) is a counting obstruction. It is not —
+the trace is *evaluated* at each pair's sub-braid, so a low-dimensional space of
+functionals still yields many distinct values. The dimension is a fact about the
+search space, not a bound on the weights.
+
+**What IS claimed:** the corpus has already run an SDP over exactly this space at
+A = 2 (`deuteron_real_sdp.py`, H₆, 11 partitions restricted to the support) and
+AGENTS.md records the outcome as a scope-(a) negative — *"the diagonal Gram SDP
+is degenerate and 0 of 6 off-diagonal encodings derive the binding; the only
+non-zero result (2.22456607) is the AME value fed in as the constraint
+(circular)"*. So the finite-algebra reading of route (3) is not merely small, it
+is **tested and empty at the one A where it has been tried**.
+
+### 4. Convention trap, carried forward from `qou-siin`
+
+**Solleveld's `q` is the corpus's `q²`.** His Hecke relation is
+`(N_s − q(s)^{1/2})(N_s + q(s)^{-1/2}) = 0` against the corpus's
+`(σ_i − q)(σ_i + q^{-1}) = 0` (AGENTS.md §7a). At the anchor,
+`q_Sol = q₀² ≈ 1.23206`, **not** 1.10998. Any numeric transfer that skips this
+is off by a square root.
+
+### Where route (3) actually stands
+
+Not refuted — scope (a) throughout, and the affine object genuinely has the
+higher-degree structure the finite one lacks. But it is **gated on the
+inductive-limit bridge**, and that bridge is the corpus's own open R&D item, not
+a step this bean can take. Ranking (2) against (3) on "which has no blocker" was
+wrong: **both** are gated on infrastructure. The difference is the *kind* —
+route (2) needs an ambient metric on `KnotEmbedding` (bounded, known right
+answer); route (3) needs the von Neumann inductive limit (open R&D).
+
+**On that comparison route (2) is the cheaper front**, and I am reversing my
+earlier ranking accordingly.
