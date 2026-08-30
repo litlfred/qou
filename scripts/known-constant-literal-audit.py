@@ -94,15 +94,58 @@ def classify(lit: str, const: "mp.mpf") -> tuple[str, int | None]:
             return ("WRONG", i + 1)
     return ("truncated", None)
 
+def selftest() -> int:
+    """Assert the detector still catches what it was built for.
+
+    Every detector in this corpus has a blind-spot story, and several were found blind
+    by the detector written to replace them. The cases below are the REAL values this
+    script was built from -- if a future narrowing stops catching them, this fails
+    loudly instead of reporting a clean tree.
+
+    Needs no repo, no files, no Lean.
+    """
+    consts = _constants()
+    v41 = consts["Vol(4_1)=2Cl2(pi/3)"]
+    v8g = consts["Vol(Borromean)=8G"]
+    cases = [
+        # (literal, constant, expected verdict, expected first-wrong sig fig)
+        ("2.029883212819307250011597804990", v41, "WRONG", 21),   # was VOL_4_1_decimal
+        ("2.0298832128193072500115970029",  v41, "WRONG", 21),    # computations/ variant
+        ("2.029883212819307250042408",      v41, "WRONG", 25),    # false "24 dps verified"
+        ("7.327724753846269",               v8g, "WRONG", 11),    # live in a mass formula
+        # correct values must NOT fire -- a detector that flags everything is useless
+        ("2.029883212819307250042405108549", v41, "truncated", None),
+        ("2.0298832128193072",               v41, "truncated", None),
+        ("2.029883212819307",                v41, "truncated", None),
+        ("7.32772475341775",                 v8g, "truncated", None),
+        ("7.327724753417752120",             v8g, "truncated", None),
+    ]
+    bad = 0
+    for lit, const, want_v, want_p in cases:
+        got_v, got_p = classify(lit, const)
+        ok = (got_v == want_v) and (want_p is None or got_p == want_p)
+        print(f"  [{'ok  ' if ok else 'FAIL'}] {lit:34} -> {got_v}"
+              + (f" @ sig fig {got_p}" if got_p else ""))
+        if not ok:
+            bad += 1
+            print(f"         expected {want_v}" + (f" @ {want_p}" if want_p else ""))
+    print("selftest: " + ("PASS" if not bad else f"FAIL ({bad})"))
+    return 0 if not bad else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("paths", nargs="*", default=["content", "computations", "scripts", "docs"])
     ap.add_argument("--min-digits", type=int, default=12,
                     help="ignore literals with fewer significant digits (default 12)")
     ap.add_argument("--all", action="store_true", help="also list correctly-truncated hits")
+    ap.add_argument("--selftest", action="store_true",
+                    help="check the detector against its own founding cases; needs no repo")
     ap.add_argument("--rel-tol", type=float, default=1e-6,
                     help="how close a literal must be to be considered a claim about a constant")
     args = ap.parse_args()
+    if args.selftest:
+        return selftest()
 
     consts = _constants()
     roots = [Path(p) for p in (args.paths or ["content", "computations", "scripts", "docs"])]
