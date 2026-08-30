@@ -157,6 +157,19 @@ theorem brunnian_multiplicities (m : ℕ) :
   unfold signedMultiplicity countMultiplicity
   exact ⟨by ring, by ring⟩
 
+/-- **Maximal separation happens exactly on Brunnian pairs.** The signed (linking-number)
+multiplicity vanishes iff `n₊ = n₋`. Together with `multiplicities_agree_iff` this brackets the whole
+range: the two invariants coincide exactly on all-positive carriers, and the signed one dies exactly
+on Brunnian ones. -/
+theorem signedMultiplicity_eq_zero_iff (np nn : ℕ) :
+    signedMultiplicity np nn = 0 ↔ np = nn := by
+  unfold signedMultiplicity
+  constructor
+  · intro h
+    have hc : (np : ℝ) = (nn : ℝ) := by linarith
+    exact_mod_cast hc
+  · intro h; subst h; ring
+
 /-- **The deuteron (Hopf) boundary case.** The positive Hopf carrier has `n₊ = 2`, `n₋ = 0`, so both
 multiplicities equal `2`: the linking number (`|lk| = 1`) and the coordination count (`z = 1`) give
 the same multiplier. By `multiplicities_agree_iff` this is exactly because the carrier is
