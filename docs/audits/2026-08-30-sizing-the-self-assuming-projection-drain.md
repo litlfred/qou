@@ -127,3 +127,101 @@ more than one defect.
 Both measurements are pure reads over the committed ledger and the `.lean`
 sources; no producer was run and nothing was regenerated. The sample indices are
 fixed above so the same twelve come back.
+
+---
+
+# Follow-up: both "cheaper decompositions" measured — one was mine misreading my own regex
+
+Added 2026-08-30, same day, after working the two leads this document
+recommended.
+
+## 🛑 RETRACTION — the "21 bodies with no visible projection" is not a sub-shape
+
+This document reported *"21 bodies with no visible projection … a different
+sub-shape … possibly smaller and more uniform"* and recommended measuring it
+first. **That number is an artifact of my own regex.**
+
+The body scan looked for a projection under a hard-coded list of instance
+names — `ctx|inst|h|hC|c|s|dl|kec|hi|self`. Re-run against *any*
+`identifier.field`, **19 of the 21 do project**; they simply bind the instance
+as `d`, `hZ`, `hT`, `dc`, `hyp`, `i`, `fac`, `jgcs`, `fct`, `hArg`, `hStrong`,
+`v`, `pq`, `fai`, `jp`, `lpd`, `hK` or `chart`.
+
+So there is **no distinct sub-shape and no cheaper decomposition here.** The
+21 collapse into the ordinary population, and the recommendation to measure
+them first is withdrawn. Same failure mode as the two producer detectors above:
+a name-keyed pattern reporting absence where it had only failed to look.
+
+## The 2 that are genuinely different
+
+**`structurallyValidBinding_necessary`** — a pure tautology, not a projection:
+
+    theorem structurallyValidBinding_necessary (h_invalid : ¬P) : ¬P := h_invalid
+
+`id` under a name promising a necessity result. **Fixed** — removed, with the
+module header corrected. Three things made this determinate rather than
+authorial:
+
+- the file sets its own precedent one declaration earlier: `withinLengthBound`
+  records that *"the previous `(h : ¬P) : ¬P := h` was a self-assuming
+  tautology"* and replaces it with a named decidable predicate;
+- the predicate already has a canonical name — `BraidWord.structurallyValidBinding`
+  in `mass-theory/conj-canonical-knot-id-sdp.lean:156`, ~20 use sites, body
+  identical — so defining a local copy would have been the worse fix;
+- nothing consumed it. The header's only related entry named
+  `structurallyValidBinding_necessary_for_canonical`, **which does not exist
+  and never did**; that entry is corrected too.
+
+The necessity claim the header describes is still unwritten and stays
+authorial: it needs the algebra-evaluation map the header lists as an open
+port, which is why its sibling `evenPower_necessary_for_blockPosSemidef` is an
+honest `axiom`.
+
+**`whitehead_volume_conjecture`** — *not* mine to fix and not a hidden defect.
+Its docstring is accurate: the genuine unconditional proof exists downstream as
+`QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half` (verified present at
+`WhiteheadSaddleClausen.lean:731` — namespace and filename differ, which is
+correct, not a dead reference), this base file is Mathlib-only and cannot
+import it, and bean `qou-1gkf` tracks the port. An honestly-documented
+state-and-queue.
+
+## The 7 repeated bundles: 15 declarations, all genuine
+
+| bundle | defects | inhabited? |
+|---|---|---|
+| `RMatrixBraidingContext` | 3 | no |
+| `CoreLeviContext` | 2 | no |
+| `HasFiniteLPDuality` | 2 | no |
+| `KnotFactorSpectralContext` | 2 | no |
+| `DressedMassSubstrateSplit` | 2 | no |
+| `AtomicLPStabilityContext` | 2 | no |
+| `BarEvenKernel` | 2 | no |
+
+All seven uninhabited, so all 15 are genuine. **Hand-verified total is now 27
+of 112, still 0 legitimate** — which tightens the rule-of-three bound on the
+legitimate rate from ~25 % to roughly **11 %**.
+
+These are the only places one fix covers more than one defect, and the saving
+is small: 15 declarations across 7 bundles, i.e. 8 fewer independent fixes out
+of 112. It does not change the week-shaped verdict.
+
+## New finding: a same-namespace duplicate
+
+`RMatrixBraidingContext` and `r_matrix_braiding_structure` are each declared
+**twice in namespace `QOU.Braiding`**, in two files:
+
+- `braids-and-knots/r-matrix-braiding-structure.lean` (153 lines) — the
+  content-block sibling, a **strict superset**: adds `Rcheck1`, `Rcheck2`,
+  `claim_braid_relation` and `braid_rep_from_R_check`;
+- `lean/QOU/Braiding/r_matrix_braiding_structure.lean` (65 lines) — the subset.
+
+The duplication is deliberate: the sibling's header says it mirrors *"the
+build-graph copy under `QOU/Braiding/r_matrix_braiding_structure.lean`"`.
+**But that copy is in no build graph** — nothing imports it, and `QOU.lean`
+imports six other `QOU.Braiding.*` modules and not this one (`grep -c` = 0).
+So the stated rationale for keeping the mirror does not hold.
+
+Left for an author: either drop the unimported subset, or add it to the
+umbrella and make the sibling reference rather than restate it. Not done here —
+it changes what `prop:r-matrix-braiding-structure` resolves to under the §0a
+sibling-first rule, which is a content decision.

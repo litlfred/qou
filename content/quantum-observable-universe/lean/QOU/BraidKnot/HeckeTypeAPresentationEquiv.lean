@@ -1,5 +1,6 @@
 import QOU.IwahoriHecke.TypeA
 import QOU.Hecke.IwahoriHecke
+import QOU.Hecke.TwBasisField
 
 /-!
 # Two of the presentations are the same algebra
@@ -228,5 +229,31 @@ noncomputable def algEquiv : IwahoriHeckeOfSn K q (n + 1) ≃ₐ[K] QOU.Hecke.Iw
       show toMine K q n (toTheirs K q n (QOU.IwahoriHecke.TypeA.σ K q (n + 1) i)) = _
       simp
       rfl))
+
+/-! ## The transport
+
+`QOU/Hecke/TwBasisField.lean` proves `finrank_eq_factorial` against the sibling
+presentation, and its author flagged — correctly — that carrying it to this one was
+unproved. `algEquiv` is the mechanism; these two are the carry. An `AlgEquiv` is in
+particular a linear equivalence, so it moves both the dimension and the basis. -/
+
+section FieldTransport
+
+variable (K : Type u) [Field K] (q : K) (n : ℕ)
+
+/-- **`dim_K H_n(q) = (n+1)!` for the `HeckeAlgebra`-backed presentation**, transported
+across `algEquiv` from `QOU.Hecke.TwBasis.finrank_eq_factorial`. -/
+theorem finrank_IwahoriHeckeOfSn :
+    Module.finrank K (IwahoriHeckeOfSn K q (n + 1)) = Nat.factorial (n + 1) := by
+  rw [(algEquiv K q n).toLinearEquiv.finrank_eq]
+  exact QOU.Hecke.TwBasis.finrank_eq_factorial K q n
+
+/-- **The `T_w` basis, transported.** Indexed by `Equiv.Perm (Fin (n+1))`, as on the
+sibling side. -/
+noncomputable def basisTwOfSn :
+    Module.Basis (Equiv.Perm (Fin (n + 1))) K (IwahoriHeckeOfSn K q (n + 1)) :=
+  (QOU.Hecke.TwBasis.basisTwOfField K q n).map (algEquiv K q n).toLinearEquiv.symm
+
+end FieldTransport
 
 end QOU.BraidKnot.Hecke

@@ -94,14 +94,21 @@ class GBResidueSpectralSum (R : Type*) [CommRing R] [LinearOrder R] where
   q : R
   /-- The roots of unity indexed by filtration level. -/
   roots : Fin levelBound → RootOfUnity R
-  /-- The graded Markov trace value at level `ℓ`, supplied by the
-      instance.  Per `prop:graded-markov-trace-from-gs-filtration`,
-      this is the value of `tr_M` descended to `J^ℓ / J^{ℓ+1}`. -/
+  /-- The graded trace value at level `ℓ`, **supplied freely by the instance**.
+
+      *Intended* meaning, per `prop:graded-markov-trace-from-gs-filtration`: the
+      value of `tr_M` descended to `J^ℓ / J^{ℓ+1}`.  **That is not encoded here** —
+      no field relates this to `tr_M`, to the filtration, or to `descended`, so an
+      instance may supply any function at all.  Encoding it needs the
+      GS-filtration infrastructure the module header defers. -/
   gradedTrace : Fin levelBound → R
-  /-- The cyclotomic residue value at level `ℓ`, supplied by the
-      instance.  Per `prop:residue-at-root`, this is the
-      cyclotomic projection of `Φ_q · gradedTrace ℓ` in the
-      Habiro completion. -/
+  /-- The residue value at level `ℓ`, **supplied freely by the instance**.
+
+      *Intended* meaning, per `prop:residue-at-root`: the cyclotomic projection of
+      `Φ_q · gradedTrace ℓ` in the Habiro completion.  **That is not encoded here** —
+      in particular nothing relates `residue` to `gradedTrace`, despite the prose,
+      so the two are independent data.  Encoding it needs the Habiro-ring
+      infrastructure the module header defers. -/
   residue : Fin levelBound → R
   /-- The spectral sum:
       `𝔪 = |descended| + Σ_ℓ residue ℓ`.
@@ -111,9 +118,15 @@ class GBResidueSpectralSum (R : Type*) [CommRing R] [LinearOrder R] where
       with `residue ℓ` standing in for the unfolded
       `residueAtRoot ℓ.val (roots ℓ) q` term. -/
   mass : R
-  /-- Consistency: the mass is the descended term plus the sum of
-      residues over filtration levels.  This is the content of
-      `prop:gb-residue-spectral-sum`. -/
+  /-- Consistency: the mass is the descended term plus the sum of residues over
+      filtration levels.  This is the content of `prop:gb-residue-spectral-sum`, and
+      the **only** `Prop` field of the class.
+
+      Note what it does and does not buy.  It constrains `mass` — but `mass` is
+      itself a free field, so any tuple inhabits the class: choose the six data
+      fields freely, set `mass := |descended| + ∑ residue ℓ`, and discharge this by
+      `rfl`.  So it fixes one field relative to the others rather than constraining
+      anything outside the class. -/
   spectral_decomposition :
     mass = |descended| + ∑ ℓ : Fin levelBound, residue ℓ
 
