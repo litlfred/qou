@@ -394,4 +394,206 @@ theorem exists_slack_bound {δ : ℝ} (hδ : 0 < δ) :
 
 end Slack
 
+section ParameterExistence
+
+variable {K : Type*} [Field K] [NumberField K]
+
+/-- **The parameters exist.**  Every hypothesis of `roth_contradiction_selected` *except the supply
+`app`* is satisfiable, simultaneously, for any `δ > 0` and any `K`, `B`, `C₀`, `W`.
+
+This is the non-vacuity check, and it is not optional.  `roth_contradiction_selected` derives
+`False` from a list of conditions; a contradictory list would prove it just as well and would look
+exactly the same from outside.  `app` is deliberately excluded — it *is* the negation of Roth's
+theorem, so no witness for it can exist and asking for one would be asking to refute the result.
+
+The order of choice is forced, and every step is Archimedean:
+
+1. `t` from `exists_slack_bound` — the common bound on all four slacks.
+2. `s : ℚ` below both `t` and `1/2`; it serves as `ε`, as `θ`, and as `ν/m`.
+3. `k` past `1/s`, so the normalisation slack `1/k` is below `s`.
+4. `m` past `[K:ℚ]/(2s²)` — the *doubled* unknowns-beat-conditions threshold.
+5. `ν := s·m`.
+6. `q` past `rothConstant(m)^(2^{m−1}) / ν^(2^{m−1})` at `p = 1`, then `F` from `hfloorExp`.
+7. `T` past `exp((2 + log C₀W + log 4B + s·log B)/s)` and past `C₀^{mq}·W^{2m²q}`.
+
+`ν` is the step worth naming.  `hgap` bounds it **below** and `hfin` bounds it **above**, so `ν`
+cannot be made small; only `ν/m` can, which is why `hfin_of_slack`'s division by `m` is not
+cosmetic.  Taking `ν = s·m` pins `ν/m` at `s` while `hgap`'s lower bound falls away as `q` grows —
+the two constraints are compatible only in that order. -/
+theorem exists_roth_parameters {δ : ℝ} (hδ : 0 < δ) {B : ℝ} {C₀ W : ℤ}
+    (hC₀1 : 1 ≤ C₀) (hW1 : 1 ≤ W) :
+    ∃ (m p q F k T : ℕ) (ε ν : ℚ) (θ : ℝ),
+      1 ≤ m ∧ 0 < p ∧ p ≤ q ∧ 0 < q ∧ 1 ≤ F ∧ 1 ≤ k ∧
+      q * ((m - 1) * m * (2 * m + 1)) ≤ F * p ∧
+      0 < ε ∧ ε ≤ 1 / 2 ∧
+      2 * ((Module.finrank ℚ K : ℕ) : ℚ) < 4 * ε ^ 2 * (m : ℚ) ∧
+      0 ≤ θ ∧ 1 ≤ T ∧
+      C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ (T : ℤ) ∧
+      2 + (Real.log C₀ + Real.log W) + Real.log (2 * B) + Real.log 2 + θ * Real.log B
+        ≤ θ * Real.log T ∧
+      0 ≤ ν ∧
+      (rothConstant m : ℚ) ^ (2 ^ (m - 1)) * ((p : ℚ) / (q : ℚ)) < ν ^ (2 ^ (m - 1)) ∧
+      (1 + θ) * ((m : ℝ) * (1 + 1 / (k : ℝ)))
+        < (2 + δ) * (1 - 1 / (k : ℝ))
+          * ((((m : ℚ) / 2 - ε * (m : ℚ) : ℚ) : ℝ) - ((ν : ℚ) : ℝ)) := by
+  classical
+  -- 1.  the common slack bound, and 2. a rational slack below it and below `1/2`
+  obtain ⟨t, ht0, -, htδ⟩ := exists_slack_bound hδ
+  obtain ⟨s, hs0R, hsmin⟩ :=
+    exists_rat_btwn (show (0 : ℝ) < min t (1 / 2) from lt_min ht0 (by norm_num))
+  have hst : (s : ℝ) < t := lt_of_lt_of_le hsmin (min_le_left _ _)
+  have hs0 : (0 : ℚ) < s := by exact_mod_cast hs0R
+  have hs2 : s ≤ 1 / 2 := by
+    have h : ((s : ℚ) : ℝ) < (((1 : ℚ) / 2 : ℚ) : ℝ) := by
+      push_cast
+      exact lt_of_lt_of_le hsmin (min_le_right _ _)
+    exact le_of_lt (by exact_mod_cast h)
+  -- 3.  `k` past `1/s`, so `1/k < s`
+  obtain ⟨k₀, hk₀⟩ := exists_nat_gt (1 / (s : ℝ))
+  set k : ℕ := max k₀ 1 with hk_def
+  have hk1 : 1 ≤ k := le_max_right _ _
+  have hkR : (0 : ℝ) < (k : ℝ) := by exact_mod_cast hk1
+  have hks : 1 / (k : ℝ) < (s : ℝ) := by
+    have hkk : (k₀ : ℝ) ≤ (k : ℝ) := by exact_mod_cast le_max_left k₀ 1
+    have hlt : 1 / (s : ℝ) < (k : ℝ) := lt_of_lt_of_le hk₀ hkk
+    rw [div_lt_iff₀ hs0R] at hlt
+    rw [div_lt_iff₀ hkR]
+    linarith
+  -- 4.  `m` past the doubled threshold
+  obtain ⟨m₀, hm₀⟩ := exists_nat_gt ((2 * ((Module.finrank ℚ K : ℕ) : ℚ)) / (4 * s ^ 2))
+  set m : ℕ := max m₀ 1 with hm_def
+  have hm1 : 1 ≤ m := le_max_right _ _
+  have hmQ : (0 : ℚ) < (m : ℚ) := by exact_mod_cast hm1
+  have hm2 : 2 * ((Module.finrank ℚ K : ℕ) : ℚ) < 4 * s ^ 2 * (m : ℚ) := by
+    have hmm : (m₀ : ℚ) ≤ (m : ℚ) := by exact_mod_cast le_max_left m₀ 1
+    have h := lt_of_lt_of_le hm₀ hmm
+    rw [div_lt_iff₀ (by positivity : (0 : ℚ) < 4 * s ^ 2)] at h
+    calc 2 * ((Module.finrank ℚ K : ℕ) : ℚ) < (m : ℚ) * (4 * s ^ 2) := h
+      _ = 4 * s ^ 2 * (m : ℚ) := by ring
+  -- 5.  `ν := s·m` — small only after division by `m`
+  set ν : ℚ := s * (m : ℚ) with hν_def
+  have hνpos : (0 : ℚ) < ν := mul_pos hs0 hmQ
+  -- 6.  `q` at `p = 1`, then `F`
+  obtain ⟨q₀, hq₀⟩ := exists_nat_gt ((rothConstant m : ℚ) ^ (2 ^ (m - 1)) / ν ^ (2 ^ (m - 1)))
+  set q : ℕ := max q₀ 1 with hq_def
+  have hq1 : 1 ≤ q := le_max_right _ _
+  have hqQ : (0 : ℚ) < (q : ℚ) := by exact_mod_cast hq1
+  have hgap : (rothConstant m : ℚ) ^ (2 ^ (m - 1)) * (((1 : ℕ) : ℚ) / (q : ℚ))
+      < ν ^ (2 ^ (m - 1)) := by
+    have hqq : (q₀ : ℚ) ≤ (q : ℚ) := by exact_mod_cast le_max_left q₀ 1
+    have h := lt_of_lt_of_le hq₀ hqq
+    rw [div_lt_iff₀ (pow_pos hνpos _)] at h
+    rw [Nat.cast_one, mul_one_div, div_lt_iff₀ hqQ]
+    calc (rothConstant m : ℚ) ^ (2 ^ (m - 1)) < (q : ℚ) * ν ^ (2 ^ (m - 1)) := h
+      _ = ν ^ (2 ^ (m - 1)) * (q : ℚ) := mul_comm _ _
+  set F : ℕ := max 1 (q * ((m - 1) * m * (2 * m + 1))) with hF_def
+  -- 7.  `T` past both thresholds
+  set Mexp : ℝ := (2 + (Real.log C₀ + Real.log W) + Real.log (2 * B) + Real.log 2
+      + (s : ℝ) * Real.log B) / (s : ℝ) with hM_def
+  obtain ⟨T₀, hT₀⟩ := exists_nat_gt (Real.exp Mexp)
+  set T : ℕ := max T₀ (max 1 (C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat) with hT_def
+  have hone : (1 : ℤ) ≤ C₀ ^ (m * q) * W ^ (2 * m * m * q) := by
+    have h1 : (1 : ℤ) ≤ C₀ ^ (m * q) := one_le_pow₀ hC₀1
+    have h2 : (1 : ℤ) ≤ W ^ (2 * m * m * q) := one_le_pow₀ hW1
+    nlinarith
+  have hTsiegel : C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ (T : ℤ) := by
+    have hle : (C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat ≤ T :=
+      le_trans (le_max_right 1 _) (le_max_right T₀ _)
+    have hcast := Int.ofNat_le.mpr hle
+    rwa [Int.toNat_of_nonneg (le_trans zero_le_one hone)] at hcast
+  have hTtheta : 2 + (Real.log C₀ + Real.log W) + Real.log (2 * B) + Real.log 2
+      + (s : ℝ) * Real.log B ≤ (s : ℝ) * Real.log T := by
+    have hTle : (T₀ : ℝ) ≤ (T : ℝ) := by exact_mod_cast le_max_left T₀ _
+    have hTexp : Real.exp Mexp < (T : ℝ) := lt_of_lt_of_le hT₀ hTle
+    have hlogT : Mexp < Real.log T := by
+      have h := Real.log_lt_log (Real.exp_pos Mexp) hTexp
+      rwa [Real.log_exp] at h
+    rw [hM_def, div_lt_iff₀ hs0R] at hlogT
+    have hcomm : Real.log T * (s : ℝ) = (s : ℝ) * Real.log T := mul_comm _ _
+    linarith
+  -- the final inequality, through the slack budget
+  have hmR : (0 : ℝ) < (m : ℝ) := by exact_mod_cast hm1
+  have hslack := fin_of_slack (δ := δ) (ε := (s : ℝ)) (θ := (s : ℝ)) (η := 1 / (k : ℝ))
+    (νm := (s : ℝ)) (t := t) hδ ht0 htδ (le_of_lt hst) (le_of_lt hs0R) (le_of_lt hst)
+    (le_of_lt (lt_trans hks hst)) (le_of_lt hst)
+  have hνm : ((ν : ℚ) : ℝ) / (m : ℝ) = (s : ℝ) := by
+    rw [hν_def]; push_cast; field_simp
+  have hfin0 : (1 + (s : ℝ)) * (1 + 1 / (k : ℝ))
+      + (2 + δ) * (1 - 1 / (k : ℝ)) * (((ν : ℚ) : ℝ) / (m : ℝ))
+      < (2 + δ) * (1 - 1 / (k : ℝ)) * (1 / 2 - (s : ℝ)) := by
+    rw [hνm]; exact hslack
+  have hfinal := hfin_of_slack hmR hfin0
+  have hcast : ((((m : ℚ) / 2 - s * (m : ℚ) : ℚ)) : ℝ) = (m : ℝ) * (1 / 2 - (s : ℝ)) := by
+    push_cast; ring
+  exact ⟨m, 1, q, F, k, T, s, ν, (s : ℝ), hm1, one_pos, hq1, hq1, le_max_left _ _, hk1,
+    by rw [mul_one]; exact le_max_right _ _, hs0, hs2, hm2, le_of_lt hs0R, 
+    le_trans (le_max_left 1 _) (le_max_right T₀ _), hTsiegel, hTtheta, le_of_lt hνpos, hgap,
+    by rw [hcast]; exact hfinal⟩
+
+end ParameterExistence
+
+section Roth
+
+variable {K : Type*} [Field K] [NumberField K]
+
+open private c from Mathlib.NumberTheory.NumberField.House in
+/-- **Step 5 — Roth's theorem, in the "not approximable to order `2 + δ`" form.**
+
+For a real embedding `ψ` of a number field and an algebraic integer `α₀`, there is **no** sequence
+of rationals of unbounded height approximating `ψ α₀` to within `H^{-(2+δ)}`.
+
+Everything the contradiction needs is now manufactured here rather than assumed:
+
+* the constants — `B` above the house of `α₀` and above `|ψ α₀| + 1`, `C₀` above `c K`, `W` above
+  `4B` — are ceilings, and exist because those are three real numbers;
+* the parameters come from `exists_roth_parameters`, which is where the non-vacuity lives;
+* the supply `S` is *defined* as the set of heights that admit a good approximation, so `app` holds
+  by unfolding and `hS` is exactly the hypothesis being refuted.
+
+⚠ **Scope.**  This is Roth for `ψ α₀` with `α₀` an algebraic *integer* of `K`.  Extending to every
+real algebraic number needs one more step — clearing denominators, so that an arbitrary algebraic
+`x` is `ψ α₀ / n` for some `α₀ ∈ 𝓞 K` — and the approximation exponent has to be carried across
+that scaling.  That step is not done here, and the statement below says only what it proves. -/
+theorem not_approximable_of_algebraic (α₀ : 𝓞 K) (ψ : K →+* ℝ) {δ : ℝ} (hδ : 0 < δ) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+        |((κ : ℚ) : ℝ) - ψ ((algebraMap (𝓞 K) K) α₀)|
+          ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ)) := by
+  classical
+  letI : DecidableEq (K →+* ℂ) := Classical.decEq _
+  intro happrox
+  -- the three constants, as ceilings
+  set B : ℝ := max 1 (max (house ((algebraMap (𝓞 K) K) α₀))
+    (|ψ ((algebraMap (𝓞 K) K) α₀)| + 1)) with hB_def
+  have hB1 : 1 ≤ B := le_max_left _ _
+  have hhouse : house ((algebraMap (𝓞 K) K) α₀) ≤ B :=
+    le_trans (le_max_left _ _) (le_max_right _ _)
+  have hψα : |ψ ((algebraMap (𝓞 K) K) α₀)| + 1 ≤ B :=
+    le_trans (le_max_right _ _) (le_max_right _ _)
+  set C₀ : ℤ := max 1 ⌈c K⌉ with hC_def
+  have hC₀1 : (1 : ℤ) ≤ C₀ := le_max_left _ _
+  have hC₀ : c K ≤ (C₀ : ℝ) := by
+    have hle : ((⌈c K⌉ : ℤ) : ℝ) ≤ (C₀ : ℝ) := by exact_mod_cast le_max_right (1 : ℤ) ⌈c K⌉
+    exact le_trans (Int.le_ceil _) hle
+  set W : ℤ := max 1 ⌈4 * B⌉ with hW_def
+  have hW1 : (1 : ℤ) ≤ W := le_max_left _ _
+  have hW : 4 * B ≤ (W : ℝ) := by
+    have hle : ((⌈4 * B⌉ : ℤ) : ℝ) ≤ (W : ℝ) := by exact_mod_cast le_max_right (1 : ℤ) ⌈4 * B⌉
+    exact le_trans (Int.le_ceil _) hle
+  -- the parameters
+  obtain ⟨m, p, q, F, k, T, ε, ν, θ, hm1, hp, hpq, hq, hF, hk, hfloorExp, hε, hε2, hm2, hθ0,
+    hT1, hTsiegel, hTtheta, hν0, hgap, hfin⟩ :=
+    exists_roth_parameters (K := K) (B := B) hδ hC₀1 hW1
+  -- the supply: the heights that admit a good approximation
+  set S : Set ℕ := {Hv | ∃ κ : ℚ, max κ.num.natAbs κ.den = Hv ∧
+    |((κ : ℚ) : ℝ) - ψ ((algebraMap (𝓞 K) K) α₀)| ≤ (Hv : ℝ) ^ (-(2 + δ))} with hS_def
+  have hS : ∀ N, ∃ Hv ∈ S, N ≤ Hv := by
+    intro N
+    obtain ⟨κ, hN, hclose⟩ := happrox N
+    exact ⟨max κ.num.natAbs κ.den, ⟨κ, rfl, hclose⟩, hN⟩
+  exact roth_contradiction_selected hm1 hS hp hpq hq hF hk hfloorExp α₀ ψ hB1 hhouse hψα
+    hε hε2 hm2 hC₀1 hC₀ hW1 hW (le_of_lt hδ) (fun _ hHv => hHv) hθ0 T hT1 hTsiegel hTtheta
+    hν0 hgap hfin
+
+end Roth
+
 end MvPolynomial
