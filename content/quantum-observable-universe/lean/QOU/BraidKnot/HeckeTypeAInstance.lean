@@ -1,5 +1,6 @@
 import QOU.MathlibExt.IwahoriHeckeAlgebra
 import QOU.BraidKnot.HeckeIwahoriConventionBridge
+import Mathlib.GroupTheory.Coxeter.Matrix
 
 /-!
 # The arc's theorems, instantiated on the actual Hecke algebra
@@ -57,6 +58,19 @@ theorem typeAMatrix_of_gt {i j : ℕ} (h : i + 1 < j) : typeAMatrix j i = 2 := b
   have h1 : j ≠ i := by omega
   have h2 : ¬(i = j + 1 ∨ j = i + 1) := by omega
   simp [typeAMatrix, h1, h2]
+
+/-- **Agreement with Mathlib's `CoxeterMatrix.Aₙ`.** On the common range the ℕ-indexed
+matrix above *is* Mathlib's type-A Coxeter matrix.
+
+Mathlib does have `Aₙ : (n : ℕ) → CoxeterMatrix (Fin n)`; the reason this file does not
+simply use it is the indexing. `Aₙ N` is `Fin N`-indexed, which pins one `n`, whereas
+the `HeckeGenerators` class is ℕ-indexed and unbounded. Stating the agreement keeps the
+two from being merely parallel: anything proved about `Aₙ` transfers here on the nose. -/
+theorem typeAMatrix_eq_An (N : ℕ) (i j : Fin N) :
+    typeAMatrix i j = CoxeterMatrix.Aₙ N i j := by
+  have hiff : ((j : ℕ) = (i : ℕ) + 1 ∨ (i : ℕ) = (j : ℕ) + 1)
+      ↔ ((j : ℕ) + 1 = (i : ℕ) ∨ (i : ℕ) + 1 = (j : ℕ)) := by omega
+  simp only [typeAMatrix, CoxeterMatrix.Aₙ, Matrix.of_apply, Fin.ext_iff, hiff]
 
 /-! ## The type-A Hecke algebra -/
 
