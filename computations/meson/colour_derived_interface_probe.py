@@ -185,7 +185,12 @@ def main() -> int:
         return tot
 
     inv = [-g for g in reversed(I_COLOUR)]
+    # The Addendum-29 screen candidate I5 = (s3 s2 s4 s3)^2, carried as the
+    # contrast in A7 below. Its ratio was a typed literal there; put it through
+    # the same atom_trace as every other word so the contrast is measured.
+    I5_UNDERIVED = [3, 2, 4, 3] * 2
     t1, tc, ti = atom_trace([3]), atom_trace(I_COLOUR), atom_trace(inv)
+    t5 = atom_trace(I5_UNDERIVED)
     perm = permutation(I_COLOUR, 6)
     conn = provably_connected_sum(gens[:pos] + I_COLOUR + gens[pos + 1:])
 
@@ -195,6 +200,8 @@ def main() -> int:
           f"{mp.nstr(tc / need, 7):>10}x")
     print(f"I_colour^-1 reversed             tr_M {mp.nstr(ti, 10):<14}"
           f"{mp.nstr(ti / need, 7):>10}x")
+    print(f"I5 (underived control)           tr_M {mp.nstr(t5, 10):<14}"
+          f"{mp.nstr(t5 / need, 7):>10}x")
     print(f"\ncrossings {len(I_COLOUR)}   permutation {perm}   "
           f"provably connected sum: {conn}")
 
@@ -244,12 +251,21 @@ def main() -> int:
     # A7 — CONTROL tying to Addendum 29: the undERIVED I5 does clear, so the
     #      failure here is about THIS candidate, not about the bar being
     #      unreachable by any interface.
+    # Was `computed="1.247533", expected="1.247533"` (bean `qou-26f2`) — the one
+    # assertion here whose computed side was typed rather than traced, while its
+    # six siblings all measure. It is also the assertion carrying the sting of
+    # the result ("the interface that works has no reason"), so a stale I5 ratio
+    # would have gone on reading PASS while the contrast it draws had quietly
+    # stopped holding. I5 now goes through the same atom_trace as I_colour and
+    # its inverse; the literal is kept as the Addendum-29 expected value, which
+    # the measurement reproduces.
     wb.add_assertion(
         name="control_an_underived_candidate_does_clear",
-        computed="1.247533", expected="1.247533", tolerance="1e-4",
+        computed=mp.nstr(t5 / need, 20), expected="1.247533", tolerance="1e-4",
         unit="ratio",
-        source="interface-candidate-screen I5 = (s3 s2 s4 s3)^2, carried "
-               "forward as the contrast; it has no derivation")
+        source="interface-candidate-screen I5 = (s3 s2 s4 s3)^2, traced here "
+               "and carried forward as the contrast; it clears the magnitude "
+               "bar (> 1) and has no derivation")
 
     wb.add_data("interface_word", I_COLOUR)
     wb.add_data("crossings", len(I_COLOUR))
@@ -257,6 +273,7 @@ def main() -> int:
     wb.add_data("tr_M_current", mp.nstr(t1, 24))
     wb.add_data("tr_M_colour_derived", mp.nstr(tc, 24))
     wb.add_data("tr_M_reversed", mp.nstr(ti, 24))
+    wb.add_data("tr_M_I5_underived_control", mp.nstr(t5, 24))
     wb.add_data("required_trace", mp.nstr(need, 24))
     wb.add_caveat(
         "THE 9-CROSSING READING IS MINE, NOT THE BLOCK'S. "

@@ -198,18 +198,46 @@ w.set_content_block("prop:confined-knot-binding")
 w.add_parameter("q", Q)
 w.add_parameter("reference_knots", list(REFS.keys()))
 
+# Was one `add_assertion(computed=final['knot'], expected=final['knot'])` per
+# atom that cleared cos>0.7 (bean `qou-26f2`). Two problems, not one: the pair
+# compared the detection to itself — there is no reference answer for "which
+# knot ⁴⁰Ca's NF is", so nothing could have made it fail — and the `if` meant
+# the atoms that did NOT clear the gate left no trace in the witness at all,
+# so 5 of the 7 were invisible. The classification is a measurement without an
+# independent expected value, so it is recorded rather than asserted, and
+# every atom is recorded, cleared or not.
+final_classification = {}
 for name, Z, N in ATOMS:
     steps = all_results[name]
     w.add_data(name, steps)
     final = steps[-1]
-    if final['cos_sim'] > 0.7:
-        w.add_assertion(
-            f"knot_detected({name})",
-            computed=final['knot'],
-            expected=final['knot'],
-            tolerance=0,
-            unit="knot_type",
-            source=f"cosine_similarity={final['cos_sim']:.3f}",
-        )
+    final_classification[name] = {
+        "knot": final["knot"],
+        "cos_sim": final["cos_sim"],
+        "cleared_0p7_gate": bool(final["cos_sim"] > 0.7),
+        "has_independent_expected_value": False,
+    }
+w.add_data("final_knot_classification", final_classification)
+
+# What IS checkable is that every classification is well formed. `frob` reaches
+# ~1e21 by ⁴⁰Ca, so an overflow to inf/nan in the NF is a live hazard here, and
+# `cosine_similarity` would swallow it as a silent nan while `best_knot_match`
+# would report the 'unknown' sentinel — both of which read as ordinary output.
+well_formed, total_steps = 0, 0
+for name, Z, N in ATOMS:
+    for s in all_results[name]:
+        total_steps += 1
+        if s["knot"] in REFS and math.isfinite(s["cos_sim"]) and -1.0 <= s["cos_sim"] <= 1.0:
+            well_formed += 1
+w.add_assertion(
+    "every_step_classification_well_formed",
+    computed=str(well_formed),
+    expected=str(total_steps),
+    tolerance=0,
+    unit="steps whose knot label is a reference knot and cos_sim ∈ [−1,1] and finite",
+    source=f"{well_formed}/{total_steps} steps across {len(ATOMS)} atoms; catches the "
+           f"'unknown' sentinel from best_knot_match and a nan cosine from an "
+           f"overflowed NF (‖G x‖ reaches ~1e21 by ⁴⁰Ca)",
+)
 
 w.save()

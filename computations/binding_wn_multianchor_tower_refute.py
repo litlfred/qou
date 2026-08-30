@@ -123,6 +123,7 @@ def w_nq2(n):
 def main() -> int:
     print("=== na-Stokes full jet tower summed to n=A: multi-anchor REFUTE (scope-a) ===\n")
     worst = {}
+    heavy_err = {}          # (weight, isotope) → signed relative error, A ≥ 5 only
     for wname, wf in [("n^2", w_n2), ("[n]_q^2", w_nq2)]:
         def raw(A):
             return M_E * mp.fsum(a_D(n) * wf(n) for n in range(2, A + 1))
@@ -135,6 +136,8 @@ def main() -> int:
             bp = s * raw(A)
             err = (bp - bs) / bs
             mx = max(mx, abs(err))
+            if A >= 5:
+                heavy_err[(wname, K)] = err
             print(f"  {K:<5}{A:>3}{float(bs):>10.2f}{float(bp):>15.2f}{float(err) * 100:>12.1f}%")
         worst[wname] = float(mx) * 100
         print()
@@ -155,12 +158,26 @@ def main() -> int:
             "(⁶Li~+920%..¹²C~+2e6%). Structural: a_D super-exp vs B/A→const. Redirects "
             "to few-body truncation. No fit beyond one scale.")
         wb.add_data("worst_abs_err_pct", worst)
+        # Was `computed="1", expected="1"` (bean `qou-26f2`). The refutation is a
+        # whole table of signed errors, none of which the constant read: it would
+        # have said REFUTED just as loudly had every A≥5 prediction come in under
+        # B_strong, which is the outcome that would have SAVED the full tower.
+        # Count the (weight, isotope) pairs that clear the source's own ⁶Li floor
+        # instead — 900 % is the number already in the source string, not one
+        # chosen to make this pass, and the check fails if any single pair
+        # undershoots or merely overshoots mildly.
+        FLOOR = mp.mpf(9)                    # +900 %, the ⁶Li figure the source quotes
+        cleared = [k for k, e in heavy_err.items() if e > FLOOR]
+        margins = ", ".join(f"{w}/{K} {float(e) * 100:+.0f}%"
+                            for (w, K), e in heavy_err.items())
         wb.add_assertion(
             name="full_tower_overshoots_A_ge_5",
-            computed="1", expected="1", tolerance=0,
+            computed=str(len(cleared)), expected=str(len(heavy_err)), tolerance=0,
+            unit="(weight, isotope) pairs with A≥5 overshooting by >900%",
             source=("na-Stokes super-exp period summed to n=A overshoots B_strong by "
                     ">900% at ⁶Li for every bounded/amplifying body-order weight; "
-                    "structural (super-exp vs extensive). Few-body truncation required."))
+                    f"measured: {margins}. Structural (super-exp vs extensive). "
+                    "Few-body truncation required."))
         out = wb.save()
         print(f"\nWitness: {out}")
     except Exception as e:

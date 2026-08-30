@@ -169,6 +169,20 @@ def main() -> int:
     ctrl_sumd2_closed = abs(sum_d2 - sum_d2_closed) < mp.mpf("1e-40")
     ctrl_D_closed = abs(D_total - D_total_closed) < mp.mpf("1e-40")
 
+    # ── the π-axis exclusion, made checkable ────────────────────────────────────
+    # The (b)-structural claim "the S-matrix carries no bare π" rests on ONE
+    # arithmetic fact: 𝒟, Σd_i² and S₀₀ are ALGEBRAIC. Exhibit it by evaluating
+    # the integer minimal polynomial each one satisfies and checking the residual
+    # vanishes — Σd_i² is a root of z²−5z+5, 𝒟 of x⁴−5x²+5, S₀₀=1/𝒟 of 5y⁴−5y²+1.
+    # With that in hand the exclusion is Lindemann: π is transcendental, so
+    # π·b₁ is transcendental for every nonzero rational b₁, so 1/(π·b₁) is too —
+    # and an algebraic S₀₀ can never equal it, for ANY mode count, not just 8.
+    minpoly_sumd2 = sum_d2 ** 2 - 5 * sum_d2 + 5
+    minpoly_D = D_total ** 4 - 5 * D_total ** 2 + 5
+    minpoly_S00 = 5 * S00 ** 4 - 5 * S00 ** 2 + 1
+    algebraicity_residual = max(abs(minpoly_sumd2), abs(minpoly_D), abs(minpoly_S00))
+    ctrl_algebraic = algebraicity_residual < mp.mpf("1e-40")
+
     print("\n TOTAL QUANTUM DIMENSION (from the reused S-matrix vacuum row):")
     print(f"   quantum dims d_i = {{{mp.nstr(d[0],4)}, {mp.nstr(d[1],10)}}}  (= {{1, φ}})")
     print(f"   Σ_i d_i²  = {mp.nstr(sum_d2, 16)}   closed = (5+√5)/2 = 2+φ   [match {ctrl_sumd2_closed}]")
@@ -326,10 +340,19 @@ def main() -> int:
                      computed=0.0 if not (D_eq_8 or D_eq_8pi) else 1.0, expected=0.0, tolerance=0.5,
                      source="𝒟≈1.902, Σd_i²≈3.618 ∉ {8, 8π=25.13}; #3853 n=5 reading 11.357 also ∉ "
                             "— the naive S₀₀=1/D shared-wall value identification is falsified")
+    # Was `computed=1.0, expected=1.0` (bean `qou-26f2`): the π-axis exclusion is
+    # the ONE verdict of this probe that no longer depended on anything computed,
+    # so it would have read PASS even if the reused S-matrix had come back with a
+    # transcendental vacuum row. Now it carries the algebraicity residual the
+    # source's own premise names — max|minpoly| over Σd_i², 𝒟 and S₀₀ — which a
+    # non-algebraic quantum dimension would push far above the 1e-40 gate.
     wb.add_assertion("smatrix_carries_no_bare_pi_structural_pi_axis",
-                     computed=1.0, expected=1.0, tolerance=None,
-                     source="𝒟,S₀₀ ∈ ℚ(√5) algebraic (cyclotomic quantum dims) ⇒ S-matrix cannot "
-                            "supply the bare π of 1/(π·b₁); π is archimedean (1-loop det 4π²)")
+                     computed=1.0 if ctrl_algebraic else 0.0, expected=1.0, tolerance=0.5,
+                     source="𝒟,S₀₀ algebraic (cyclotomic quantum dims): Σd_i² roots z²−5z+5, 𝒟 roots "
+                            "x⁴−5x²+5, S₀₀=1/𝒟 roots 5y⁴−5y²+1, max residual "
+                            f"{mp.nstr(algebraicity_residual, 6)} < 1e-40 ⇒ by Lindemann (π "
+                            "transcendental) S₀₀ ≠ 1/(π·b₁) for ANY nonzero rational b₁; the "
+                            "S-matrix cannot supply that bare π — it is archimedean (1-loop det 4π²)")
     wb.save()
     print("\n  witness saved: computations/alpha_em/alpha-em-smatrix-perloop.witness.json")
     print("  RESULT: scope-(a) NEGATIVE — reciprocal 1/D FORM confirmed; 𝒟∈ℚ(√5)≈1.902≠8,≠8π;")

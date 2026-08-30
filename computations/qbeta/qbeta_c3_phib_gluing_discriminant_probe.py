@@ -149,10 +149,21 @@ def main() -> int:
                      tolerance=0.1,
                      source=f"min distance {mp.nstr(min_all, 6)} >> anchor "
                             f"separation {dq:.1e} => no branch-point graze")
-    wb.add_assertion("complete_structure_not_on_locus",
-                     computed=d_complete, expected=d_complete,
-                     tolerance=1e-30,
-                     source="recorded exact-locus distance from m=1 (informational)")
+    # Was `add_assertion(computed=d_complete, expected=d_complete)` (bean
+    # `qou-26f2`). Its own source called it "informational", and that is what it
+    # was: a number compared to itself, passing at d_complete = 0 — the value
+    # meaning the complete structure IS on the locus, i.e. the graze this probe
+    # exists to rule out. There is no independent expected value for the
+    # distance, and the inequality it looked like it was making is already
+    # gated one assertion up: min_all ≤ d_complete, so
+    # `locus_is_O1_far_from_canonical_paths` covers this case strictly.
+    # Recorded rather than asserted, which is what "informational" meant.
+    wb.add_data("complete_structure_distance", {
+        "distance_from_m_equals_1": mp.nstr(d_complete, 25),
+        "gated_by": "locus_is_O1_far_from_canonical_paths (a min over all "
+                    "paths, hence ≤ this distance)",
+        "has_independent_expected_value": False,
+    })
 
     ok = all(a.passed for a in wb.assertions)
     wb.add_data("verdict", (

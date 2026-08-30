@@ -215,7 +215,9 @@ def main():
     w.add_data("klr_canonical_dimensions", klr_dims)
     w.add_data("khovanov_ranks_at_q1", KHOVANOV_RANKS)
     w.add_data("empirical_c_values", {
-        "c_3_categorical_exact": -2,
+        # Read from the table rather than retyped, so this and the assertion
+        # below cannot drift apart from KHOVANOV_RANKS or from each other.
+        "c_3_categorical_exact": KHOVANOV_RANKS["Hopf_pos"]["J_at_1"],
         "c_3_categorical_source": "J_Hopf(q=1)",
         "c_4_empirical_exact_closure": empirical_c4,
         "c_4_doc_categorical_form": -(float(b_sq) + 0.5),
@@ -228,12 +230,34 @@ def main():
     })
     w.add_data("c_4_decompositions_top10", c4_decomps[:10])
     w.add_data("c_5_decompositions_top10", c5_decomps[:10])
+    # Was `computed=-2, expected=-2` (bean `qou-26f2`). Note what this script
+    # does and does not hold: `empirical_c4` and `empirical_c5` are here as
+    # literals, but there is NO empirical c_3 anywhere in it — so "matches
+    # empirical c_3 exactly" had no empirical side to compare against, and the
+    # pair was two retyped copies of one number. What IS gateable here is the
+    # categorical side: read J_Hopf(q=1) out of KHOVANOV_RANKS rather than
+    # retyping it, and cross-check the two tabulated orientations against each
+    # other. An edit to the table now moves the assertion.
+    j_hopf_pos = KHOVANOV_RANKS["Hopf_pos"]["J_at_1"]
+    j_hopf_neg = KHOVANOV_RANKS["Hopf_neg"]["J_at_1"]
     w.add_assertion(
         "c_3_exact_match",
-        computed=-2,
-        expected=-2,
+        computed=str(j_hopf_pos),
+        expected="-2",
         tolerance=0,
-        source="J_Hopf(q=1) = -2 matches empirical c_3 exactly",
+        unit="J_Hopf(q=1), read from the tabulated Khovanov data",
+        source="J_Hopf(q=1) = -2 matches empirical c_3 exactly (the empirical "
+               "side comes from binding_q_target_sweep, not from this script; "
+               "what is gated here is the categorical value)",
+    )
+    w.add_assertion(
+        "hopf_orientations_agree_at_q1",
+        computed=str(j_hopf_neg),
+        expected=str(j_hopf_pos),
+        tolerance=0,
+        unit="J(q=1) for Hopf_neg vs Hopf_pos",
+        source="J(q=1) is orientation-independent for the Hopf link; the two "
+               "table rows must not drift apart",
     )
     w.add_assertion(
         "c_5_within_2pct_of_13",

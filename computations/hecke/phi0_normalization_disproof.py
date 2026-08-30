@@ -143,13 +143,35 @@ def main() -> int:
     # Record the disproof as a passing assertion on the GAP between
     # the two order-wise normalizations: |N_h2 − N_h4| is large
     # (~72), which is the positive evidence that no constant N exists.
+    #
+    # Was `computed=abs(N_h2 - N_h4), expected=abs(N_h2 - N_h4)` (bean
+    # `qou-26f2`) — which passes for ANY gap, the zero gap included. A zero gap
+    # is precisely the outcome that RESTORES Φ₀ and refutes this probe, so the
+    # assertion could not fail in the one case anyone cares about. Assert the
+    # predicate the run already computes instead: `structural` must be False.
     w.add_assertion(
         "phi0_normalization_not_constant_across_orders",
-        computed=abs(N_h2 - N_h4),
-        expected=abs(N_h2 - N_h4),
-        tolerance=1e-6,
-        unit="|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
-        source="N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀",
+        computed=str(bool(structural)),
+        expected="False",
+        unit="constant N exists (|N_h2 − N_h4| < 1e-6)",
+        source=f"N_h2 = alg_h2/κ = {mp.nstr(N_h2, 10)} ; N_h4 = alg_h4/κ₄ = "
+               f"{mp.nstr(N_h4, 10)} ; gap {mp.nstr(abs(N_h2 - N_h4), 10)} ≫ 1e-6 "
+               f"⇒ no constant normalization, no Φ₀",
+    )
+    # The two facts the description calls proved, and that the −64 is built
+    # from. They have independent expected values (−12 and 3/16), so pinning
+    # them means the disproof rests on inputs a re-run has to reproduce rather
+    # than on whatever the trace code happens to return that day.
+    w.add_assertion(
+        "alg_h2_trace_equals_minus_12",
+        computed=mp.nstr(alg_h2, 20), expected="-12", tolerance=1e-12,
+        source="proved: Q₈ crossed-module multiplicative-integral trace, h² coefficient",
+    )
+    w.add_assertion(
+        "markov_kappa_h2_equals_3_over_16",
+        computed=mp.nstr(kappa, 20), expected=mp.nstr(mp.mpf(3) / 16, 20),
+        tolerance=1e-12,
+        source="proved: Borromean Markov trace h² coefficient κ = 3/16",
     )
 
     out = w.save()

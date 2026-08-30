@@ -71,6 +71,10 @@ KNOTS = {
 }
 
 
+# Every χ^λ(e_K) evaluation that raised and was replaced by 0.0 (see below).
+CHI_FAILURES: list[dict] = []
+
+
 def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple) -> float:
     """χ^λ(e_K) approximation: evaluate the knot's Markov character on
     partition λ at q_0. Lifts the knot's braid word from H_{n_strands}
@@ -87,7 +91,16 @@ def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple) -
     word_marshalled = [(1 if s > 0 else -1, abs(s)) for s in K_word]
     try:
         return chi_lambda_braid(lam, word_marshalled, q_value=Q0_FLOAT)
-    except Exception:
+    except Exception as exc:
+        # A swallowed character evaluation is indistinguishable downstream from
+        # a genuine χ^λ(e_K) = 0 ("λ doesn't see the knot"), so a search that
+        # failed everywhere and one that succeeded everywhere produce the same
+        # shaped output. Record each one so the completion assertion can say how
+        # many of the cells it counts are real evaluations.
+        CHI_FAILURES.append(
+            {"n_target": n_target, "lambda": str(lam), "n_strands": n_strands,
+             "error": f"{exc.__class__.__name__}: {exc}"}
+        )
         return 0.0
 
 
@@ -173,19 +186,52 @@ def main() -> int:
 
     builder.add_data("per_n_per_k_per_knot", per_n)
 
+    # Was `computed=1.0, expected=1.0` (bean `qou-26f2`). "Completed" is a
+    # coverage claim, and the constant asserted none of it: a run in which every
+    # knot was skipped for want of strands, or in which every χ evaluation hit
+    # the swallow-and-return-0.0 path, produced exactly the same 1.0. Count the
+    # (n, k, K) cells that actually hold characters, against an expected count
+    # re-derived from the loop bounds rather than read back off the output.
+    cells_filled = sum(
+        1
+        for n_ in per_n
+        for k_ in per_n[n_]
+        for cell in per_n[n_][k_].values()
+        if cell["chi_values"]
+    )
+    cells_expected = sum(
+        1
+        for n_ in (6, 9, 12)
+        for k_ in (1, 2, 3)
+        for (_w, strands) in KNOTS.values()
+        if strands <= n_ and any(depth_k(p) == k_ for p in partitions_of(n_))
+    )
+    builder.add_data("chi_evaluation_failures", CHI_FAILURES)
     builder.add_assertion(
         "k_star_search_completed",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        unit="boolean",
+        computed=str(cells_filled),
+        expected=str(cells_expected),
+        tolerance=0,
+        unit="(H_n, curvature-rank k, knot) cells holding χ^λ(e_K) values",
         source=(
             f"Computed FR projector character χ^λ(e_K) for "
             f"{len(KNOTS)} candidate knots × {3} curvature-ranks "
-            f"× 3 atomic-braid ambient algebras (H_6, H_9, H_12). "
-            f"Top candidates per (n, k) ranked by |Z_norm| of the "
-            f"FR-restricted weight."
+            f"× 3 atomic-braid ambient algebras (H_6, H_9, H_12); "
+            f"{cells_filled}/{cells_expected} cells filled, "
+            f"{len(CHI_FAILURES)} χ evaluation(s) fell through to the 0.0 "
+            f"exception path. Top candidates per (n, k) ranked by |Z_norm| of "
+            f"the FR-restricted weight."
         ),
+    )
+    builder.add_assertion(
+        "chi_evaluations_all_succeeded",
+        computed=str(len(CHI_FAILURES)),
+        expected="0",
+        tolerance=0,
+        unit="χ^λ(e_K) evaluations replaced by 0.0 after an exception",
+        source="the χ helper substitutes 0.0 for a raised evaluation, which "
+               "reads downstream as a genuine 'λ does not see the knot'; this "
+               "counts the substitutions so the two cannot be confused",
     )
 
     builder.save()

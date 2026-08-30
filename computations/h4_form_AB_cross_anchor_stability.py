@@ -245,12 +245,39 @@ def main(argv=None) -> int:
     w.add_data("Form_B_ppb_muon", mp.nstr(ppb_B_m, 12))
     w.add_data("verdict", verdict)
 
+    # Was `computed=True, expected=True` (bean `qou-26f2`). "Cross-anchor
+    # evaluation at 80 dps" is a coverage claim and the constant carried none of
+    # it: an `evaluate_form` returning inf or nan at one anchor — what a
+    # mis-resolved q₀ pin does — left this reading PASS while the residuals it is
+    # meant to certify were unusable. Count the cells that actually produced a
+    # finite residual, over the same {form} × {anchor} grid the run walks.
+    cross_cells = {
+        (form, anchor): ppb
+        for form, (p, m) in (("A", (ppb_A_p, ppb_A_m)),
+                             ("B", (ppb_B_p, ppb_B_m)),
+                             ("bare", (bare_p, bare_m)))
+        for anchor, ppb in (("proton", p), ("muon", m))
+    }
+    finite_cells = [k for k, v in cross_cells.items() if mp.isfinite(v)]
+    # The pre-stated discrimination ("stable cross-anchor = structural candidate,
+    # collapses = proton-anchor coincidence") lived only inside the verdict
+    # prose; record the margins that selected it so they are auditable too.
+    w.add_data("discrimination_margins", {
+        "form_A_improvement_gap_ppb": mp.nstr(abs(improvement_A_p - improvement_A_m), 8),
+        "form_B_improvement_gap_ppb": mp.nstr(abs(improvement_B_p - improvement_B_m), 8),
+        "collapse_threshold_ppb": "1",
+        "form_A_coefficient_stability_rel": mp.nstr(coef_stability, 8),
+        "form_A_coefficient_delta_abs": mp.nstr(abs(f_A_m - f_A_p), 8),
+    })
     w.add_assertion(
         name="cross_anchor_test_completed",
-        computed=True,
-        expected=True,
+        computed=str(len(finite_cells)),
+        expected=str(len(cross_cells)),
         tolerance=0,
-        source="Cross-anchor evaluation at 80 dps.",
+        unit="(form, q-anchor) cells with a finite ppb residual",
+        source=f"Cross-anchor evaluation at 80 dps: {len(finite_cells)}/"
+               f"{len(cross_cells)} cells finite over "
+               f"{{Form A, Form B, bare}} × {{proton-pin, muon-pin}}.",
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

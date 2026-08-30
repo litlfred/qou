@@ -265,14 +265,25 @@ def build_candidates(kappa: sp.Expr) -> list[dict]:
     return cands
 
 
-def prune_no_single_spin_weight_is_8() -> None:
+def prune_no_single_spin_weight_is_8() -> dict:
     """Formalize-first prune: 3(n+1)² − 1 = 8 ⇒ (n+1)² = 3 has no integer
-    solution — no single AGMV spin weight equals 8; only sums can."""
+    solution — no single AGMV spin weight equals 8; only sums can.
+
+    Returns the solve output rather than swallowing it in a bare `assert`
+    (bean `qou-26f2`). The assert aborted the run on a surprise and left the
+    witness unwritten, so the witness assertion downstream stood in a
+    hard-coded "[]" for a result it had never seen. Returning it means a sympy
+    that starts producing a root is RECORDED as a failing assertion rather
+    than vanishing with the process.
+    """
     n = sp.symbols("n", integer=True)
     sols = sp.solve(sp.Eq(3 * (n + 1) ** 2 - 1, 8), n)
-    assert sols == [], f"unexpected integer solutions: {sols}"
-    # And the integer solutions of (n+1)^2 = 3 over ℚ are irrational:
-    assert not any(sp.sqrt(3).is_rational for _ in [0])
+    return {
+        # str() so the payload survives JSON whatever sympy hands back.
+        "integer_solutions": [str(s) for s in sols],
+        # the same prune over ℚ: (n+1)² = 3 forces √3, which is irrational.
+        "sqrt3_is_rational": bool(sp.sqrt(3).is_rational),
+    }
 
 
 # ── Block 3: numeric tie to the Bring point (mpmath) ───────────────────────
@@ -365,14 +376,22 @@ def main() -> None:
                "residual vs 1/(8π) is exactly 2, i.e. the known open ½ "
                "(#3925) relocated, not closed",
     )
-    prune_no_single_spin_weight_is_8()
+    prune = prune_no_single_spin_weight_is_8()
+    wb.add_data("spin_weight_prune", prune)
     wb.add_assertion(
         "no_single_agmv_spin_weight_equals_8",
-        computed="[]", expected="[]",
+        computed=str(prune["integer_solutions"]), expected="[]",
         source="3(n+1)²−1 = 8 ⇒ (n+1)² = 3: no integer solution (sympy "
                "solve over ℤ) — no single AGMV spin weight is 8; only sums "
                "reach 8, and the structurally-suggested one (4 scalar "
                "factors) is 2g = b₁ in disguise",
+    )
+    wb.add_assertion(
+        "prune_sqrt3_irrational_over_Q",
+        computed=str(prune["sqrt3_is_rational"]), expected="False",
+        source="the same prune stated over ℚ rather than ℤ: (n+1)² = 3 "
+               "forces n+1 = ±√3, and √3 ∉ ℚ, so the miss is not an "
+               "artefact of restricting the solve to integers",
     )
 
     # Block 3 — numeric tie to the Bring point.
