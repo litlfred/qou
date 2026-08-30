@@ -66,11 +66,45 @@ kind.
 
 **And it was not merely slow.** `#5495`, the bean's own controlled case,
 requested 2026-08-22, still shows **zero reviews eight days later**. Nothing
-arrived late; the behaviour genuinely changed somewhere between 2026-08-27 and
-2026-08-30.
+arrived late.
 
-So the bean was right for its window. What went wrong is what happened to it
-afterwards.
+## 🛑 A sibling reached this first, with a better hypothesis than mine
+
+Found on rebase: another agent had already appended a re-scoping to `qou-gwe9`,
+from a different observation — **one *unrequested* review on #6108**, arriving
+~23 minutes after the last push, with `get_status total_count` at 0 throughout.
+Their reading:
+
+> *"consistent with Copilot reviewing on its own trigger rather than on
+> `request_copilot_review`, which would make the ORIGINAL measurement correct
+> about the API and wrong about the outcome."*
+
+**That is a better hypothesis than the one this file opened with**, and my own
+data cannot distinguish it, because in all three of my cases I *pushed and
+requested within moments of each other*. A push-triggered review and a
+request-triggered review are indistinguishable from my timings.
+
+So there are now **three live candidate mechanisms**, and I am not in a position
+to pick:
+
+1. **Availability changed** between 08-27 and 08-30 (this file's opening claim —
+   now the weakest, since it rests on the absence I could not distinguish).
+2. **Copilot reviews on its own trigger**, never on `request_copilot_review`
+   (the sibling's, from an unrequested review).
+3. **Quota** gates it (below), which would make all of this intermittent.
+
+One piece of evidence bears on (2): the quota refusal says *"the user who
+**requested** the review has reached their quota limit"*, which implies the
+request path is live and consuming quota. That weakens (2) without settling it —
+the request may be accepted and still not be what schedules the review.
+
+**Their instruction is also better than mine and should be preferred:** state
+*"do not **wait** on Copilot"* (it is unpredictable and there is no check run to
+poll) rather than *"it does not come"*. That is right, and it is what this file
+should have said.
+
+So the bean was right for its window, a sibling had already caught the
+over-claim, and what went wrong is what happened to the finding downstream.
 
 ## The actual defect: a time-bounded measurement became a standing instruction
 
@@ -109,14 +143,18 @@ citation.
 ## Disposition
 
 Recorded here; `AGENTS.md` rule 10 and `prepare-merge-auto` Phase 1b both need
-the Copilot row rewritten from "does not arrive" to "arrives in ~3–4 minutes;
-wait for it". That edit is **not** made in this audit — it belongs in a change
+the Copilot row rewritten from "does not arrive" to something that does not
+over-claim in the other direction — the sibling's *"do not wait on it, but it
+can arrive"* is the right shape, not my first draft's "arrives in ~3-4 minutes;
+wait for it", which assumes mechanism (1) over (2) and (3). That edit is
+**not** made in this audit — it belongs in a change
 that also revisits the 15-minute poll duration, and this file is the
 measurement that justifies it.
 
-What is safe to act on immediately, and what this session now does: **request a
-Copilot review ONCE, when the branch is ready, and give it a few minutes before
-merging.** The cost of waiting four minutes is four minutes; the cost of not
+What is safe to act on immediately — adopting the sibling's wording, which is
+more accurate than mine: **do not WAIT on Copilot** (unpredictable, no check
+run to poll), but do **request it once**, when the branch is ready, and give it
+a few minutes if you are not otherwise blocked. The cost of waiting four minutes is four minutes; the cost of not
 waiting is #6068; and the cost of requesting after every push is the quota,
 which I spent proving the point.
 
