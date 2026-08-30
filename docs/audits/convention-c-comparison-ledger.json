@@ -784,6 +784,14 @@
       "line_at_adjudication": 160,
       "scope": "main",
       "rationale": "Two-arm C-vs-D comparison whose D arm lives in LEAN, not in this file. The probe's A5 assertion checks tr_C(pi_lambda) = w_lambda(t)*d_lambda against the Markov-forced weights of the Lean `BorromeanCanonicalTraceDerivation` (`trC_borromean_derived`), which is the convention-C arm of a deliberately-maintained C/D pair; the D arm is `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D != C sorry-free. So z_C here is the object under comparison, not residual C: binding z_D would make the probe compare the D value against the Lean C weights and assert a known-false equality. RESOLVES the in-file note of 2026-08-10, which feared the reverse (that the Lean side had moved to D leaving this comparison mismatched). Evidence is the probe's own exact-symbolic PASS: because D != C is a THEOREM, a mismatched pairing could not pass, so the Lean weights it cites are necessarily C. Verified by running it (A5 traces: True, 4/4 assertions)."
+    },
+    {
+      "path": "computations/probes/mayer_threebody_sign_threshold_probe.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_at_adjudication": 74,
+      "scope": "z_of",
+      "rationale": "Two-arm frame-comparison helper `z_of(q, convention)`: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe evaluates BOTH to show its 2/3 threshold verdict is convention-independent. The function's own docstring scopes the C arm: 'excised, computed here ONLY to show the threshold verdict is convention-independent'. Binding only z_D would delete the comparison the probe exists to make -- the verdict's convention-independence is the result. Instance of taxonomy ROW 17 (the D arm is a CALL to the canonical helper, not an inline re-spelling, so the co-binding test sees no D-shaped expression in scope); same shape as the already-adjudicated he4_body_order_shortfall_location_probe.z_of, which is row 17's worked example."
     }
   ]
 }

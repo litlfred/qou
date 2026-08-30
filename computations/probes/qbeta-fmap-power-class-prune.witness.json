@@ -72,12 +72,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "b9bb7d0d58a5",
-  "scriptCommitSha": "unknown",
-  "commitSha": "ecadd5d6add073c67b86bdaafd2cc0ad64022a19",
+  "scriptHash": "fcf0fa0b717d",
+  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
+  "commitSha": "0ad9c53dcb903abcac4106c25a2451e917470cb2",
   "engine": "sympy",
-  "computedAt": "2026-07-13T21:10:05.151623+00:00",
-  "durationMs": 875,
+  "computedAt": "2026-08-30T04:57:59.600409+00:00",
+  "durationMs": 1296,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_fmap_power_class_prune.py"
 }

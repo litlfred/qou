@@ -50,6 +50,8 @@ from pathlib import Path
 
 import sympy as sp
 
+from qbeta_utils import markov_parameter_convention_C
+
 HERE = Path(__file__).resolve().parent          # computations/probes
 ROOT = HERE.parent                               # computations/
 sys.path.insert(0, str(ROOT))
@@ -86,7 +88,13 @@ def main() -> int:
     # recorded observation: the explicit-instance per-block weighting differs
     pb = json.loads((ROOT / "qbeta" / "qbeta-per-block-paper-closed-forms.witness.json").read_text())
     forms = {k: sp.sympify(v, locals={"q": q}) for k, v in pb["data"]["paper_closed_forms"].items()}
-    z = sp.sqrt(q) / (1 + q)
+    # z = sqrt(q)/(1+q) is part of the DEFINITION of the Lean object
+    # `CanonicalMarkovWeightsH3.explicitInstance` (qbeta_utils
+    # `delta_tau_M_canonical_explicit`), not residual convention C: building it
+    # with z_D would compute a different inhabitant. Routed through the named
+    # guard rather than inlined so the deliberate C is greppable -- the guard
+    # was mpmath-only until 2026-08-30, which is why this was inlined.
+    z = markov_parameter_convention_C(q)
     dtr_explicit = sp.simplify(z * forms["(3)"] + (sp.Rational(1, 2) - z) * forms["(2,1)"] + z * forms["(1,1,1)"])
     explicit_differs = sp.simplify(dtr_explicit - dtr) != 0
     print(f"\n[1] Δtr_M = bridge atom-word rational (a_n provenance); explicit-instance"
