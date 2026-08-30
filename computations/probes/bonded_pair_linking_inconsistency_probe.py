@@ -127,11 +127,18 @@ def main() -> int:
     print("  committed by me while citing a real invariant whose applicability")
     print("  I did not check.")
     print()
-    print("  The open question this promotes, and it is now the load-bearing")
-    print("  one for the whole M_n programme: WHAT FIXES THE LINKING NUMBER OF")
-    print("  A BONDED PAIR? Until that is derived rather than assigned, every")
-    print("  mu-bar count in the tower -- overshoot and vanishing alike -- is")
-    print("  conditional on an unforced choice.")
+    print("  The open question this promotes: WHAT FIXES THE LINKING NUMBER")
+    print("  OF A BONDED PAIR?")
+    print()
+    print("  ANSWERED, same day, by bonded_pair_linking_from_canonical_braid")
+    print("  _probe.py (qou-k12x): the CANONICAL BRAID WORD fixes it, and it")
+    print("  fixes it NON-UNIFORMLY. 4He's three interfaces are sigma (+1),")
+    print("  averaged_weighted (no sign), sigma_inv (-1). So BRANCH 1 and")
+    print("  BRANCH 2 above are BOTH false -- neither uniform model is what")
+    print("  the canonical word contains -- and the p-n interface")
+    print("  sigma - h(1/2-delta/4).1 is not in the braid group at all, so it")
+    print("  has no classical linking number. The unforced choice is the")
+    print("  CLASSICALISATION, not the value.")
     return 0
 
 
