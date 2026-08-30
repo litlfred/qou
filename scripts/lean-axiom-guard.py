@@ -133,6 +133,15 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the Lagrange node-sum family (Pieri corner identity, PR #6098) ---
+# `sum_prod_qratio_corner` is the node-coordinate form of the one identity the
+# Macdonald hook telescope's Pieri step (P) reduces to. It is proved FROM
+# `sum_eval_div_prod_eq_coeff`, so the keystone is registered alongside it: a
+# regression there would poison the corner identity silently, and `#print axioms`
+# on the consumer alone would not say which of the two moved.
+QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_prod_qratio_corner | clean
+QOU.Mathlib.LagrangeCornerNodeSum | QOU.Mathlib.sum_eq_one_of_corner_ratio_scaling | clean
+QOU.Mathlib.LagrangeCoeffSum | QOU.Mathlib.sum_eval_div_prod_eq_coeff | clean
 # --- the (TAIL) first-instance chain (covariance-kernel epic qou-x631) ---
 # The SIGN is genuinely sorry-free and is the content of the (TAIL) instance.
 QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagramTailFirstInstance.nuV_top_nonneg | clean

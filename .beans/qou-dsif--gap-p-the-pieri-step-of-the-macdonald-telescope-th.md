@@ -1,11 +1,11 @@
 ---
 # qou-dsif
 title: 'GAP: (P), the Pieri step of the Macdonald telescope — the induction over addable corners'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-27T06:35:37Z
+updated_at: 2026-08-30T03:42:33Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -211,3 +211,54 @@ Count poles and zeros **per root of unity**, not per exponent. At `(4,2,1) r=0`
 the pole exponents are `{3,5,7}` and zeros `{1,4,6}`: the `(1−Q³)` pole dies
 against the `(1−Q⁶)` zero, both vanishing at a primitive cube root. Exponent
 matching reports a spurious pole.
+
+
+## 2026-08-30 — the node-level identity is PROVED, and my sizing was wrong
+
+PR #6098. `QOU.Mathlib.sum_prod_qratio_corner`, sorry-free, axiom-clean, generic `[Field F]`:
+
+    Sum_{i in s} (prod_{j != i} (Q v_i - v_j)/(v_i - v_j)) * (Q-1)/(Q v_i - v_b) = 1   (v_b = 1)
+
+That is (P1) after the coordinate change `b_i = q^{beta_i}`. It mentions no partition.
+
+### Three corrections to what this bean said on 2026-08-27
+
+1. **"Multi-week" was wrong, and wrong in an instructive direction.** I reasoned that
+   the q=1 case needs GNW/NPS and the q-deformation is "at least that hard". The
+   q-dependence lives entirely in the coefficients c_1..c_{|s|-1} of
+   `prod_{j != b}(Q X - v_j)`, and the Lagrange vanishing annihilates all of them; only
+   the Q-free c_0 survives. The q-statement is NO HARDER than its q=1 shadow.
+2. **GNW is already proved in this corpus** (`SYTHookGNW.gnwHookIdentity`, sorry-free),
+   so the premise of the estimate was false as well as the inference.
+3. **The Lagrange keystone existed and I nearly rebuilt it.**
+   `QOU/Mathlib/LagrangeCoeffSum.lean` landed on main while this branch sat idle three
+   days: sorry-free, generic-field, carrying `sum_eval_div_prod_eq_coeff` plus two
+   siblings of this very identity. Found only by re-running the corpus grep after the
+   gap. The proof here is that file's divX residue argument.
+
+### The substrate question is settled by measurement
+
+Option C (`QOU/MathlibExt/QPartitionCombinatorics.lean`, my own tower) is ruled out
+STRUCTURALLY, not by preference: `abbrev Partition := List N` carries no
+weakly-decreasing invariant (`grep -c Sorted` = 0 across all three of my files), so the
+beta-numbers need not be distinct and the Lagrange step is false as stated on that type.
+Separately `qou-j7ln` (completed) proved my hook-update rule on YoungDiagram, cleaner
+("one `if`, not two cases"). That tower is superseded.
+
+Option B (YoungDiagram) is the partition layer: q-hook product, addable corners, FRT,
+hook-under-addCell, all sorry-free. Option A (the sorted-list layer) is the beta home.
+
+### What remains — one bridge, which the corpus names itself
+
+`sum_eq_bracket_mul_of_qratio_scaling`'s docstring calls out its own open input: the
+q-analogue of Frame-Robinson-Thrall. Measured today over 13 shapes x 3 paddings,
+k-independent, sign-free and power-free:
+
+    prod_{c in lam} (1 - q^h(c)) = prod_i (q;q)_{beta_i} / prod_{j<l} (1 - q^{beta_j - beta_l})
+
+Classical shadow `prodHooks_mul_betaProdGap` already proved on the list layer, so this is
+a q-deformation of an existing proof. NOT giving a schedule: the last one I gave was
+wrong by a large factor and I am not replacing it with a confident number the other way.
+
+Probe: `computations/pieri_corner_node_identity_probe.py` (6 facts, exact sympy).
+Audit: `docs/audits/2026-08-30-pieri-corner-identity-and-the-substrate-question.md`.
