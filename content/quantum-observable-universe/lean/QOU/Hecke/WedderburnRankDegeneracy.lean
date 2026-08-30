@@ -128,7 +128,10 @@ noncomputable scoped instance rankOneWedderburn (n : ℕ) :
   y_lambda := fun _ => 1
   all_parts := {lam0 n}
   complete := by rw [Finset.sum_singleton]; simp
-  trace_decomp := by intro x; rw [Finset.sum_singleton]; simp
+  chi_lambda := fun lam x => if lam.parts = (lam0 n).parts then x else 0
+  block_scaling := by
+    intro x lam
+    by_cases h : lam.parts = (lam0 n).parts <;> simp [h, rankOneMarkov]
 
 /-! ## The consequence -/
 
