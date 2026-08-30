@@ -73,8 +73,34 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # ---- run the Psi-division probe in-process for its validated
 # machinery + quotient coefficients (cwd redirected so its witness
 # lands in a temp dir, not over the committed one) --------------------
-ns = {"__name__": "psi_probe"}
-src = open(os.path.join(HERE, "gswz_psi_section_division_probe.py")).read()
+# `__file__` MUST be in the namespace. `exec` does not supply it, and the
+# probe being exec'd uses it at module scope for its own sys.path
+# bootstrap:
+#     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+# Without it the exec dies on `NameError: name '__file__' is not defined`
+# before any of the machinery this file wants is built. The traceback
+# names the OTHER probe, so it reads as a defect there rather than here.
+_psi_src_path = os.path.join(HERE, "gswz_psi_section_division_probe.py")
+ns = {"__name__": "psi_probe", "__file__": _psi_src_path}
+src = open(_psi_src_path).read()
+# CONTAINMENT, and why the cwd redirect alone is not enough any more.
+#
+# The `os.chdir(_tmp)` below was the only thing keeping the exec'd probe from
+# writing over the COMMITTED `gswz-psi-section-division.witness.json`, and it
+# worked only while that probe resolved its output path relative to the cwd.
+# Supplying a real `__file__` (required, above) makes it resolve `__file__`-
+# relative instead, i.e. straight back into the source tree — measured: one run
+# rewrote the committed witness, adding `archimedean_expansion_validation` and
+# a `scriptFile` stamp.
+#
+# `__file__` cannot simply be pointed at a temp copy: the exec'd probe uses it
+# to find `computations/` for its `_path_bridge` bootstrap, so a fake path
+# breaks the import instead. So the containment is made explicit — snapshot the
+# sibling witness, restore it afterwards — rather than left to a cwd trick that
+# a later change can silently defeat.
+_sib = os.path.join(HERE, "gswz_psi_section_division.witness.json")
+_sib_snap = open(_sib, "rb").read() if os.path.exists(_sib) else None
+
 _cwd = os.getcwd()
 _tmp = tempfile.mkdtemp(prefix="psi287_")
 os.makedirs(os.path.join(_tmp, "computations", "probes"), exist_ok=True)
@@ -85,6 +111,11 @@ except SystemExit:
     pass
 finally:
     os.chdir(_cwd)
+    if _sib_snap is not None:
+        with open(_sib, "wb") as _f:
+            _f.write(_sib_snap)
+    elif os.path.exists(_sib):
+        os.remove(_sib)
 
 MOD = ns["MOD"]
 T1, T2, T3 = ns["T1"], ns["T2"], ns["T3"]
