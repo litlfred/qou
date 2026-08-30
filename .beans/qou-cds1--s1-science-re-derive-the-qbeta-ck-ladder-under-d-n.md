@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T10:16:37Z
+updated_at: 2026-08-30T12:48:01Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2918,3 +2918,88 @@ At the proton pin: [2]_q = 2.01089686670712230, h²z_D/q² = 0.0217346842874601,
 **THE SHARPEST STATEMENT of why cos is C-only.** A resummation needs something to be centred on. Under C the bar-invariant is the **constant 1** — a fixed centre — and `cos` is the additive resummation about it. Under D the invariant is `V̂/q`, which **moves with q**: there is no fixed centre, so no additive resummation has anything to be centred on. That is stronger than Step 7's "the action is multiplicative": it names what is missing.
 
 **Still NOT established:** the replacement form. The class is fixed (must respect the multiplicative action; the invariant is `V̂/q`), the additive route is closed, and the closed form above is a derived candidate anchor — but naming the form needs the D-frame M_β spectrum on V_(2,1). No c_k proposed, extracted or wired.
+
+
+
+## (D1) IS LEAN-PROVED (PR #6211) — and this bean's own next-step note over-states what was missing
+
+The entry above says "The concrete next step is therefore narrower than
+'derive alpha': Lean-prove (D1)". Correct in direction, but the scope is
+smaller again, and the corpus-grep is why.
+
+### The analytic core has existed since 2026-06-16
+
+QOU/Interactions/qbeta_counit_vs_trace.lean already carries, TWO AND A HALF
+MONTHS before this bean asked for it:
+
+    epsNP h     = h^2/2 - h        the Frobenius counit of Delta  (= net)
+    trMNP h z   = h^2/2 - h*z      the Ocneanu trace of Delta
+    eps_sub_trMNP : epsNP h - trMNP h z = h*(z-1)      the exact gap
+    agree_iff     : for h != 0, the two agree iff z = 1
+
+I wrote a first draft that re-derived all four under new names before grepping.
+Deleted; #6211 imports them instead. Recording it because the bean's phrasing
+invites exactly that duplication: "Lean-prove (D1)" reads as from-scratch work
+and it is not.
+
+### What was genuinely missing: the alpha bridge
+
+That file relates the counit to the trace and NEVER MENTIONS alpha. So it never
+says the gap IS twice the rung-1 phase — which is the whole content of (D1) and
+the step that upgrades alpha from bare def to derived.
+
+Neither existing alpha closes it:
+  EigenphaseCarrierVacuity.eigenphase  built on markovZC — pinned to the
+                                       EXCISED convention C
+  BraidImageEigenphaseExclusion.alphaOf  R-valued AND function-valued
+A claim holding "identically in q and z" needs the free form over a general
+field. That is what #6211 adds.
+
+### The three theorems (sorry-free, axioms propext/Classical.choice/Quot.sound)
+
+  rungOnePhase_eq_counit_sub_trace    2*alpha = epsNP - trMNP          (D1)
+  generatorWeight_forced              with the sigma-weight left UNKNOWN as w,
+                                      (D1) holds IFF w = z. The falsifiable
+                                      content: the phase PINS the Markov
+                                      parameter rather than merely agreeing
+                                      with it. This is the precise form of
+                                      "z enters the ladder in exactly one
+                                      place", and it is what stops (D1) from
+                                      being arithmetic on chosen constants.
+  generatorWeight_unpinned_at_classical
+                                      sharpness: at h = 0 the weight is
+                                      unpinned — (D1) holds for EVERY w. Same
+                                      degeneracy this bean records elsewhere
+                                      when warning that a theorem evaluated
+                                      only at q = 1 is convention-agnostic by
+                                      accident.
+
+### Characteristic two is a REAL hypothesis
+
+2*(x/2) = x fails when 2 = 0, so (D1)'s left side is identically 0 in char 2
+while the gap need not be: the identity is FALSE there and (2 : K) != 0 is
+required. My first attempt omitted it and `ring` refused — that refusal was
+mathematics, not a syntax error. The imported lemmas do NOT need it (in
+epsNP - trMNP the h^2/2 cancels first); it enters with alpha's uncancelled /2.
+The classical-point lemma does not need it either, so it is DROPPED there
+rather than carried unused, which makes that lemma strictly stronger.
+
+### Scope
+
+Delta's NF coordinates are INPUT, not proved — rebuilt from typed-crossing
+words by qbeta_d_frame_rung_one_rederivation_probe.py and already encoded in
+the imported defs. Identification remains the sibling's (PR #5337 comment
+5421747260, bean qou-avt5); the exact derivation incl. the factor of 2 is that
+probe (PR #5864).
+
+NO convention is assumed: z free throughout, nothing substituted. This does NOT
+touch the resummation question — Steps 6-8 landed while I was working and Step
+8's "no fixed centre under D" is untouched by this.
+
+### What this does and does not change for the ladder
+
+alpha is now DERIVED in Lean rather than a bare def, which was the bean's
+stated goal for this step. It does not produce a c_k, does not re-derive the
+ladder, and does not reopen the additive-resummation route Step 8 closed. The
+status line above should now read alpha: DERIVED (probe) + FORMALIZED (#6211),
+where it previously read "NOT formalized in Lean, where it remains a bare def".
