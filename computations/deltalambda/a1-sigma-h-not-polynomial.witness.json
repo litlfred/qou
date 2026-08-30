@@ -1,0 +1,150 @@
+{
+  "computation": "a1-sigma-h-not-polynomial",
+  "engine": "python",
+  "scriptFile": "computations/deltalambda/wlambda_covariance_epic_A1_sigmah_not_polynomial.py",
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Young-diagram combinatorics and the transition measure only: exact Fraction arithmetic, no substrate modulus, no q.",
+  "parameters": {
+    "n_max_exact": 10,
+    "k_max_cumulant": 8,
+    "gap": "qou-k5r5",
+    "beans": [
+      "qou-470y",
+      "qou-nna0"
+    ]
+  },
+  "data": {
+    "E_sigma_h_ratios": [
+      {
+        "n": 8,
+        "over_n_1p5": "0.999182919264",
+        "over_n_2": "0.353264508929"
+      },
+      {
+        "n": 12,
+        "over_n_1p5": "0.989623582913",
+        "over_n_2": "0.285679720996"
+      },
+      {
+        "n": 16,
+        "over_n_1p5": "0.984198813561",
+        "over_n_2": "0.24604970339"
+      },
+      {
+        "n": 20,
+        "over_n_1p5": "0.980612078087",
+        "over_n_2": "0.219271526616"
+      },
+      {
+        "n": 24,
+        "over_n_1p5": "0.978039567655",
+        "over_n_2": "0.199641490751"
+      },
+      {
+        "n": 28,
+        "over_n_1p5": "0.976114471153",
+        "over_n_2": "0.184468295843"
+      },
+      {
+        "n": 32,
+        "over_n_1p5": "0.974599197007",
+        "over_n_2": "0.172286425286"
+      }
+    ],
+    "verdict": "Sigma_h is NOT in Lambda*; A1 is impossible as stated and the genus route does not apply to the Sigma_h leg. Track D (Fulman/Stein) needs no polynomiality and is promoted."
+  },
+  "assertions": [
+    {
+      "name": "sigma_h_is_half_p2_plus_p2conj",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "the identity the workplan states; follows from h = arm+leg+1 telescoping"
+    },
+    {
+      "name": "sigma_h_conjugation_invariant",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial"
+    },
+    {
+      "name": "plancherel_conjugation_invariant",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial"
+    },
+    {
+      "name": "omega3_conjugation_invariant",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial"
+    },
+    {
+      "name": "free_cumulant_conjugation_parity",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "R_k(lam') = (-1)^k R_k(lam) for k = 2..8"
+    },
+    {
+      "name": "R2_equals_n",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial"
+    },
+    {
+      "name": "R4_equals_3omega3_minus_n",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "the Lean r4Value normalisation; the naive R_4 = omega_3 - n is wrong"
+    },
+    {
+      "name": "sigma_c_equals_R3_over_2",
+      "computed": 138,
+      "expected": 138,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "the CONTENT sum is in Lambda*, unlike the hook sum"
+    },
+    {
+      "name": "E_sigma_h_over_n_three_halves_is_bounded_away_from_0",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "settles near 0.974599 -- half-integer Plancherel order"
+    },
+    {
+      "name": "E_sigma_h_over_n_squared_decays",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "so the order is NOT 2; combined with the above it is 3/2"
+    },
+    {
+      "name": "sigma_h_not_a_polynomial_in_free_cumulants",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1_sigmah_not_polynomial",
+      "note": "conjugation-invariance + cumulant parity confine any such polynomial to integer Plancherel order; E[Sigma_h] ~ c n^{3/2} contradicts that"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "cd8cfe1a489b",
+  "scriptCommitSha": "0a160c984190eb850fc515536a8d83f63a41c808",
+  "commitSha": "c76d2cb7dec2228a92e9bc79c0d62685b414673f",
+  "computedAt": "2026-08-30T06:43:16.128803+00:00",
+  "durationMs": 6917,
+  "engineVersion": "3.11.15"
+}
