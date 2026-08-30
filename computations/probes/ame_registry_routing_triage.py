@@ -149,12 +149,58 @@ def _binding_names(tree, lits: set) -> set:
     return out
 
 
+def _is_alias(val, tainted: set) -> bool:
+    """Is `val` still THE AME value, or a quantity DERIVED from it?
+
+    An alias is the bare name, a trivial numeric/string wrapper of it
+    (`mp.mpf(x)`, `float(x)`, `D(str(x))`), or a subscript of a tainted AME
+    table (`B_AME["D"]`). Anything containing an operator is a DERIVED
+    quantity, and the name that lands on is exactly the role signal this
+    classifier reads -- propagating taint through arithmetic would erase the
+    signal and make everything REVIEW again.
+    """
+    if any(isinstance(n, (ast.BinOp, ast.UnaryOp, ast.Compare, ast.BoolOp))
+           for n in ast.walk(val)):
+        return False
+    used = {n.id for n in ast.walk(val) if isinstance(n, ast.Name)}
+    return bool(used & tainted)
+
+
+def _tainted_names(tree, lits: set) -> set:
+    """`_binding_names` closed transitively over ALIASES.
+
+    `_binding_names` alone stops at the first name. The corpus almost never
+    stops there: it writes `B_AME = 2.224566`, then `b_exp = B_AME`, then
+    `err_pct = (pred - b_exp) / b_exp`. One level of tainting sees `b_exp` as a
+    sink with no role signal and gives up -- which is why 383 of the 389 REVIEW
+    sites were "bound, but no signal". Closing over aliases follows the value to
+    where its role is actually named.
+    """
+    t = set(_binding_names(tree, lits))
+    for _ in range(10):
+        grew = False
+        for node in ast.walk(tree):
+            if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+                continue
+            if node.value is None or not _is_alias(node.value, t):
+                continue
+            tgts = node.targets if isinstance(node, ast.Assign) else [node.target]
+            for tg in tgts:
+                for n in ast.walk(tg):
+                    if isinstance(n, ast.Name) and n.id not in t:
+                        t.add(n.id)
+                        grew = True
+        if not grew:
+            break
+    return t
+
+
 def _role_for(txt: str, lits: set) -> str:
     try:
         tree = ast.parse(txt)
     except SyntaxError:
         return "REVIEW"
-    names = _binding_names(tree, lits)
+    names = _tainted_names(tree, lits)
     if not names:
         return "REVIEW"
     saw_target = False
@@ -204,6 +250,20 @@ def _selftest() -> int:
     fires.
     """
     cases = [
+        ("ALIAS CHAIN to a comparison: the corpus almost never names the "
+         "literal and the residual with the same variable",
+         'B_AME = 2.22452\nb_exp = B_AME\nerr_pct = (pred - b_exp) / b_exp\n',
+         "TARGET"),
+        ("ALIAS CHAIN to a calibration — the case that makes this closure "
+         "load-bearing rather than cosmetic. Without it this reads REVIEW, "
+         "and a REVIEW site that is really an INPUT is the one error this "
+         "classifier exists to prevent.",
+         'AME = {"D": 2.22452}\nb2 = AME["D"]\npred = comb(A, 2) * b2\n',
+         "INPUT"),
+        ("alias closure must NOT cross arithmetic: a derived quantity is not "
+         "the AME value, and its name is the signal",
+         'B_AME = 2.22452\ngap = B_AME - base\nscale = gap / ell\n',
+         "TARGET"),
         ("calibration: a scale derived FROM the measurement, then multiplied "
          "back into a prediction of it",
          'B_AME = {"D": 2.22452}\nalpha = B_AME["D"] / ell\nB_pred = alpha * tr\n',
