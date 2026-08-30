@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T10:46:42Z
+updated_at: 2026-08-30T11:24:04Z
 ---
 
 ## The ruling
@@ -69,3 +69,54 @@ not make the fix cheap: `hadron_knot_table` is the producer AGENTS.md measures a
 C is a **live** derivation over a CODATA input, so unlike A it moves whenever that
 table is updated. That is the deliberate price of reproducibility from a published
 source, and should not be re-litigated as a defect the next time it drifts.
+
+
+## SCOPE MEASURED 2026-08-30 — it is 73 live witnesses, not ~477
+
+The AGENTS.md census figures (871 -> 477 -> 149) were all measured with a PREFIX
+LADDER whose rungs cannot separate the three muon values. After `fca08de7d29`
+(2026-08-28) retired A and made C canonical, that ladder measures the wrong
+thing. `muon_pin_witness_census.py` now discriminates by VALUE:
+
+    rev origin/main (8c12b870e1e), 3261 tracked witnesses
+
+    value                                    total  _deprecated  audits  LIVE
+    A  retired frozen pin  1.1099785955573347    40           1       4    35
+    B  CODATA 2018         1.10997859555418     260         214       8    38
+    C  CODATA 2022 (CANON) 1.10997859564273     100           0       3    97
+
+**Live off-canonical = 73** (35 A + 38 B). 97 live are already on C, so the
+migration is ~57 % done by live witness count. B's 260 looked like the largest
+population and is 82 % `_deprecated/` — dead weight, not backlog.
+
+**Only ONE of the 73 is stamped `muon`** (`hadron-knot-table`, the single
+Q0_FLIP). **45 carry no q0Anchor at all**, so the flip audit never examines them.
+16 are stamped `proton`, and those were checked individually rather than
+assumed: 13 are innocent — `q0Value` is the proton pin and the muon string sits
+in an explicitly-named comparison field (`q_muon`, `stale_muon_pin_q0`,
+`q0_anchor_note`, `anchors/muon_q0`).
+
+## THREE ARE NOT INNOCENT — a straddle the flip audit structurally cannot see
+
+`probes/he_nu_sdp_barfold_h9_test.py`, `he_nu_sdp_psd_count_test.py`,
+`he_nu_sdp_saturation_obstruction.py` each carry, at module level:
+
+    Q0 = 1.1099785955573347        # the RETIRED A pin, as a BARE float64 literal
+
+They write it to the witness as top-level `"q0"`, then call the stamper with
+`q0_anchor=None`, which resolves to proton and writes `q0Value` = the proton
+pin. So each witness **declares an anchor it did not compute at**, and its own
+`q0` and `q0Value` — siblings, not nested — disagree by ~11.5 ppb.
+
+`q0_anchor_consistency_audit` compares `q0Anchor` against `q0Value`. Those two
+AGREE, so all three pass. The disagreement is one field over.
+
+Three defects in one: wrong pin, float64 literal where AGENTS.md permits
+`float()` only inside an f-string, and a stamp that conceals both.
+
+## Next honest step
+
+Fix at the producer for those three (read the anchor, do not transcribe it),
+then re-measure. Do NOT bulk-migrate the other 70 — the 45 unstamped ones need
+their anchor established first, and an unstamped witness is not evidence of
+which pin it used.
