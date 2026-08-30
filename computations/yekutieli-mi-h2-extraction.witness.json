@@ -1,22 +1,32 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T10:00:27.392133+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:29:51.564205+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "h2_coefficient_computed",
-      "computed": 1,
-      "expected": 1,
+      "computed": "3",
+      "expected": "3",
       "passed": true,
+      "tolerance": 0,
+      "unit": "partitions of 3 carrying both a y-weight and a CBH c₂",
       "source": "CBH expansion of Borromean Markov trace at H_3"
+    },
+    {
+      "name": "kappa_reproducible_from_recorded_tables",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "Σ_λ y_λ·c₂(λ) recomputed from the serialized y_weights and c2_by_partition tables must return the reported κ, so a reader can redo the sum from the witness alone"
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 16,
   "computation": "yekutieli-mi-h2-extraction",
   "scriptFile": "yekutieli_mi_h2_extraction.py",
-  "scriptHash": "2ec237253190",
+  "scriptHash": "d3e5f8defc18",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -32,7 +42,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -61,7 +71,19 @@
       "(1, 1, 1)": 0.0
     },
     "catalan_G": 0.915965594177219,
-    "three_sixteenths": 0.1875
+    "three_sixteenths": 0.1875,
+    "kappa_identification": {
+      "kappa": "-0.032897755524634774",
+      "candidates": {
+        "minus_catalan_G": "-0.91596559417721901",
+        "three_quarters": "0.75",
+        "three_quarters_minus_G": "-0.16596559417721901",
+        "three_sixteenths": "0.1875"
+      },
+      "nearest_candidate_gap": "0.13306783865258423",
+      "verdict": "NEW VALUE — needs structural identification",
+      "has_independent_expected_value": false
+    }
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

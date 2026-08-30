@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:55:19.229205+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:29:43.687075+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "edge_set_is_max_contact_packing",
-      "computed": "1",
-      "expected": "1",
+      "computed": "4",
+      "expected": "4",
       "passed": true,
       "tolerance": 0,
-      "source": "binding-max ⇒ max #bonds subject to 3D hard-core ⇒ max-contact packing; pairwise edges ≈ simplex for A≤4 (D=1, A=3≈triangle); ⁴He surplus = 3-body M_3 not edges. Resolves #2089 chain-vs-complete. Cluster/halo deviation open."
+      "unit": "isotopes with #bonds_implied ≥ max-contact C(A,2)",
+      "source": "binding-max ⇒ max #bonds subject to 3D hard-core ⇒ max-contact packing; for A≤4 max-contact = simplex C(A,2), so no isotope may fall below it. Surplus over simplex: D +0.00, T +0.81, 3He +0.92, 4He +7.13 (D = 0 by construction, it defines b*; the ⁴He excess is 3-body M_3, not extra edges — Part 7). A chain or any sub-simplex edge set would drive one of these negative. Resolves #2089 chain-vs-complete. Cluster/halo deviation open."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "binding-edge-set-selection",
   "scriptFile": "binding_edge_set_selection.py",
-  "scriptHash": "9a858995399b",
+  "scriptHash": "153920aef8b1",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -33,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

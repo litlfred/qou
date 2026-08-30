@@ -1,25 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:19:32.007985+00:00",
-  "commitSha": "79aa1eb4bc090278a12041c8b3e9a5804daed3f2",
+  "computedAt": "2026-08-30T09:29:46.201927+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "phi0_normalization_not_constant_across_orders",
-      "computed": "71.91752577319587628865979381443298969072164948453608247422680412371134",
-      "expected": "71.91752577319587628865979381443298969072164948453608247422680412371134",
+      "computed": "False",
+      "expected": "False",
       "passed": true,
-      "tolerance": "1e-06",
-      "unit": "|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
-      "source": "N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀"
+      "unit": "constant N exists (|N_h2 − N_h4| < 1e-6)",
+      "source": "N_h2 = alg_h2/κ = -64.0 ; N_h4 = alg_h4/κ₄ = 7.917525773 ; gap 71.91752577 ≫ 1e-6 ⇒ no constant normalization, no Φ₀"
+    },
+    {
+      "name": "alg_h2_trace_equals_minus_12",
+      "computed": "-12.0",
+      "expected": "-12",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "proved: Q₈ crossed-module multiplicative-integral trace, h² coefficient"
+    },
+    {
+      "name": "markov_kappa_h2_equals_3_over_16",
+      "computed": "0.1875",
+      "expected": "0.1875",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "proved: Borromean Markov trace h² coefficient κ = 3/16"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "phi0-normalization-disproof",
   "scriptFile": "phi0_normalization_disproof.py",
-  "scriptHash": "b6585c606a97",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "8066ebcb1775",
+  "scriptCommitSha": "fbe8e7c332c5e96e1f374118997a40e8948d2969",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

@@ -1,16 +1,26 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T23:35:29.016761+00:00",
-  "commitSha": "90502dca9e06bf83198c5a89b19d5faee87dba7c",
+  "computedAt": "2026-08-30T09:29:50.627483+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "c_3_exact_match",
-      "computed": -2,
-      "expected": -2,
+      "computed": "-2",
+      "expected": "-2",
       "passed": true,
       "tolerance": 0,
-      "source": "J_Hopf(q=1) = -2 matches empirical c_3 exactly"
+      "unit": "J_Hopf(q=1), read from the tabulated Khovanov data",
+      "source": "J_Hopf(q=1) = -2 matches empirical c_3 exactly (the empirical side comes from binding_q_target_sweep, not from this script; what is gated here is the categorical value)"
+    },
+    {
+      "name": "hopf_orientations_agree_at_q1",
+      "computed": "-2",
+      "expected": "-2",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "J(q=1) for Hopf_neg vs Hopf_pos",
+      "source": "J(q=1) is orientation-independent for the Hopf link; the two table rows must not drift apart"
     },
     {
       "name": "c_5_within_2pct_of_13",
@@ -25,8 +35,30 @@
   "durationMs": 3,
   "computation": "khovanov-klr-rank-cohomology-probe",
   "scriptFile": "khovanov_klr_rank_cohomology_probe.py",
-  "scriptHash": "0d3f018825df",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "854ab6723e12",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/khovanov_klr_rank_cohomology_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/khovanov_klr_rank_cohomology_probe.py"
+  },
   "description": "Cohomological-strata probe for Q_β precision-ladder c_k. Tests whether empirical c_4, c_5 decompose as (integer Khovanov rank or KLR canonical-basis dim) − α·b² for clean integer α. Exploratory; the residual α values indicate where further strata or q-deformations would close the categorical derivation.",
   "data": {
     "klr_canonical_dimensions": [

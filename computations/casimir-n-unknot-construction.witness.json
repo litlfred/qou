@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:57:03.214624+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T09:29:44.908529+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -13,12 +13,13 @@
       "source": "(π²/6)·|ζ(-3)| with disjoint geometric n³ degeneracy"
     },
     {
-      "name": "bare_count_is_n_stable",
-      "computed": "0",
-      "expected": "0",
+      "name": "bare_count_is_uniquely_n_stable",
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "tolerance": "1e-40",
-      "source": "disjoint unknot count is q-independent"
+      "tolerance": 0,
+      "unit": "candidate mode-count functionals with n-flat rel-h² deviation",
+      "source": "disjoint unknot count is q-independent; |rel-h²| spread over n=2..8 — bare_count 0, jones_unlink 0.188, wenzl_unnorm 1 ⇒ n-stable set = ['bare_count']"
     },
     {
       "name": "prefactor_n_sum_regulator_independent",
@@ -30,10 +31,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 62,
+  "durationMs": 36,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "6299fd8cba8f",
+  "scriptHash": "b3f20d929af0",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +50,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
