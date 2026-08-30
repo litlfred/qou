@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-30T12:55:00Z
+updated_at: 2026-08-30T13:40:00Z
 ---
 
 ## Measured, not estimated
@@ -280,3 +280,102 @@ snappy is **not** in this container by default; `pip install snappy` was needed
 and did not survive a mid-session container restart. The gate exits 77 without
 it, so in CI this audit is skipped, not passed — worth confirming the pipeline
 image actually carries it, or this hardening buys nothing there.
+
+---
+
+## 2026-08-30 (later) — excised rather than re-transcribed; audit now reads 0/0/0 honestly
+
+Owner directive: *"excise all f64"*. Every remaining flagged literal is gone,
+replaced by a call to `knot_volumes.vol_at`, not by a better decimal.
+
+### Why the registry had to grow first
+
+`knot_volumes.py` calls itself "the SINGLE SOURCE OF TRUTH for knot volumes"
+and stocked seven manifolds. Every probe needing 6_1, 6_3, 7_4, an 8-crossing
+amphichiral knot or a 10-crossing one had **no accessor to call**, so it typed
+a literal. The duplication was an unmet need, not carelessness. Added at
+verified 50 dps (snappy 3.3.2, `bits_prec=2000`, each cross-checked against a
+randomized re-triangulation): 6_1, 6_3, 7_4, 8_3, 8_9, 8_12, 8_17, 8_18,
+10_17, 10_33, 10_37, 10_43, 10_45, plus an `L7a6` alias for `7^2_1`.
+
+### Excised
+
+| file | was | good digits |
+|---|---|---|
+| `binding_ladder_catalog.py` | 5 literals | 9, 6, 10, 15, **1** |
+| `tau_amphichiral_sdp_probe.py` | 12-row table | 10 rows wrong, worst **25 %** out |
+| `binding_wn_link_volume_probe.py` | `8_11` | 7 |
+| `fivetwo_stokes_matrix_zq.py` | `ReV` | 11 of 15 |
+| `alpha_em_lean_vs_compute_divergence_probe.py` | 9-row list | 12 of 15 |
+| `probe_topological_mass_formula.py` | 3 rows | 15 of 18 |
+| `mass_sweep_bar_sym_h2_coefficient_hunt.py` | `VOL_7_SQ_1` | 11 of 14 |
+| `dt_crossknot_snappy_slope_hardening_probe.py` | `VOL_CORPUS` ×3 | 34, 50, 21 of 46 |
+| `mmu_*.py` ×6 | `VOL_4_1_STR` | 19 of 29 |
+
+The six `mmu_*` sites are deleted outright, not corrected: `Vol(4_1)` is
+`2*Cl_2(pi/3)`, so any literal is a truncation of something the machine
+computes exactly. That closes one rung of qou-f8lit.
+
+`dt_crossknot`'s comment called its values "50-digit corpus constants
+truncated to float64-safe comparison width". Two of the three were good to 34
+and 21 of 46 printed — not truncations of the corpus constants, different
+numbers.
+
+### A conclusion moved — the only one
+
+`tau_amphichiral_sdp_probe` searches for the tau knot among amphichiral
+candidates. With the volumes corrected its best matches **changed**:
+
+    before:  10_37 with "3 (pure)"        at -0.41 %
+             10_43 with [5]_q[3]_q/[6]_q
+    after:   10_33 with "3 (pure)"        at +1.38 %
+             10_45 with [5]_q[3]_q/[6]_q  at -0.06 %
+
+So the previously-reported tau candidates were artifacts of wrong volumes.
+No assertion flipped (4 -> 4, all passing) — because the probe does not
+assert *which* knot matched. Its actual finding is unguarded; worth a bean of
+its own.
+
+Its "10_33" row had held 8_12's volume under the comment "commensurable w/
+8_12" (11.5357 vs 8.9359 — false), the same false-reason pattern as the
+`9_46` "cosmetic surgery with 9_42" entry. Both are cases where a stated
+reason made a wrong number look deliberate.
+
+Every other regenerated witness: **no assertion added, removed or flipped**
+(14 witnesses checked).
+
+### Two more recall bugs found in the audit itself
+
+1. **Table rows were labelled by the enclosing variable.** The `Assign` pass
+   claimed every line for `VOLS`/`amphichiral_knots` before the `Dict` pass
+   could attach the real key, so rows carried no knot token and only the
+   nearly-right ones were caught by value. That hid an `8_11` wrong at digit 8
+   and a `7_4` wrong at digit 2. Passes now run innermost-first: dict keys,
+   then `(name, value)` pairs, then the assignment name.
+2. **The census stopped at 9 crossings**, so five 10-crossing rows — every one
+   wrong at digit 0-1 — were never checked. Widened to 10.
+
+Also added two advisory, non-gating verdicts so recall does not come at the
+cost of false alarms:
+
+* `LABEL_ONLY` — the label names a knot but the value is nowhere near its
+  volume. Catches `SHAPES["6_1"]` (tetrahedra shape parameters),
+  `THETA_T4["muon (4_1)"]` (an angle), `"-Vol(4_1)/(2pi)"` (a derived
+  expression). Threshold 0.35 relative: real transcription defects stayed
+  within 25 %, these sit at 50-97 %. A heuristic, so it reports rather than
+  drops.
+* `F64_EXACT` — the literal is the exact decimal expansion of a double.
+  `witness_regen_classify.py` carries one as a **test fixture** for the
+  classifier that detects f64 padding; flagging it would ask an author to
+  corrupt a fixture to quiet a gate.
+
+### State
+
+`hyperbolic_volume_literal_audit.py --strict` → **WRONG 0, MISLABELLED 0,
+OVER_CLAIMED 0**, exit 0, over 193 literals (was 93 scanned / 0 found). This
+zero is a measurement; the previous one was an absence of looking.
+
+Remaining on this bean: the 2 UNRECOGNISED, and the original item-5 triage of
+names the audit cannot map. The `.lean`/`.md`/`.json` carriers are still out
+of scope — this audit reads `.py` only, and qou-f8lit still owns the two Lean
+carriers at 14 and 20 digits.

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:56:42.182182+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T12:52:21.614136+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "mmu_refined_correction_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "mmu-categorical-correction-refined-probe",
   "scriptFile": "mmu_categorical_correction_refined_probe.py",
-  "scriptHash": "fb93f534934c",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "1515e56d3a5d",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mmu_categorical_correction_refined_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mmu_categorical_correction_refined_probe.py"
   },
   "data": {
     "target_delta": "0.0000002098",
@@ -84,7 +89,7 @@
         "passed": false
       },
       "R8. hbar^6 / Vol(4_1)": {
-        "computed_delta": "0.00000046611176658279147678774586214",
+        "computed_delta": "0.000000466111766582791476780671553402",
         "err_ppm_vs_target": 1221695.741576699,
         "passed": false
       },

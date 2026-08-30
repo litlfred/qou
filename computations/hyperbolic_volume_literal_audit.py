@@ -162,7 +162,10 @@ _KNOT_TOKEN = re.compile(r'(?<![0-9A-Za-z])(\d{1,2}_\d{1,2})(?![0-9])')
 _LINK_TOKEN = re.compile(r'(?<![0-9A-Za-z])(L\d+[an]\d+)(?![0-9])', re.I)
 DECIMAL = re.compile(r'\d+\.\d+')
 
-CENSUS = ([f"{n}_{i}" for n in range(3, 10) for i in range(1, 50)]
+# Through 10 crossings: the amphichiral table in tau_amphichiral_sdp_probe
+# carries 10_17/10_33/10_37/10_43/10_45, every one wrong at digit 0-1, and a
+# census stopping at 9 never looked at them.
+CENSUS = ([f"{n}_{i}" for n in range(3, 11) for i in range(1, 170)]
           + ["L5a1", "L6a1", "L6a2", "L6a3", "L6a4", "L6a5", "L6n1",
              "L7a1", "L7a2", "L7a3", "L7a4", "L7a5", "L7a6", "L7a7",
              "7^2_1", "L8a1", "L8a2"])
@@ -233,20 +236,41 @@ def _string_constants(path: Path) -> list:
     except Exception:
         return []
 
+    # Nearest enclosing label wins, so the passes run innermost-first and use
+    # setdefault. Order matters and is the whole point: a table is written
+    #
+    #     VOLS = {"8_11": mp.mpf("8.28631808635811"), ...}
+    #     amphichiral = [("8_17", mp.mpf("10.78528041739327")), ...]
+    #
+    # and the knot name is on the KEY, not on the assignment. An earlier cut
+    # of this function ran the Assign pass first, so every row in such a table
+    # was labelled `VOLS` — carrying no knot token, hence unidentifiable by
+    # name — and only rows that happened to be nearly-right got caught by the
+    # value route. That silently hid an 8_11 wrong at digit 8 and a 7_4 wrong
+    # at digit 2, which is precisely the failure this audit was rewritten to
+    # stop making.
     names: dict = {}
-    for node in ast.walk(tree):
+
+    def label(node, name):
+        for sub in ast.walk(node):
+            if isinstance(sub, ast.Constant):
+                names.setdefault(sub.lineno, name)
+
+    for node in ast.walk(tree):          # 1. dict keys: {"8_11": mpf(...)}
+        if isinstance(node, ast.Dict):
+            for k, v in zip(node.keys, node.values):
+                if isinstance(k, ast.Constant) and isinstance(k.value, str):
+                    label(v, k.value)
+    for node in ast.walk(tree):          # 2. pairs: ("8_17", mpf(...))
+        if isinstance(node, (ast.Tuple, ast.List)) and len(node.elts) == 2:
+            first, second = node.elts
+            if isinstance(first, ast.Constant) and isinstance(first.value, str):
+                label(second, first.value)
+    for node in ast.walk(tree):          # 3. fall back to the assignment name
         if isinstance(node, ast.Assign):
             for t in node.targets:
                 if isinstance(t, ast.Name):
-                    for sub in ast.walk(node.value):
-                        if isinstance(sub, ast.Constant):
-                            names.setdefault(sub.lineno, t.id)
-        elif isinstance(node, ast.Dict):
-            for k, v in zip(node.keys, node.values):
-                if isinstance(k, ast.Constant) and isinstance(k.value, str):
-                    for sub in ast.walk(v):
-                        if isinstance(sub, ast.Constant):
-                            names.setdefault(sub.lineno, k.value)
+                    label(node.value, t.id)
 
     out = []
     for node in ast.walk(tree):
@@ -285,6 +309,44 @@ def scan() -> list[dict]:
                                      "verdict": "UNRECOGNISED"})
                     continue
                 true = true_volume(mfld)
+                # A label that MENTIONS a knot does not make its value that
+                # knot's volume. `SHAPES = {"6_1": ("0.8951...", ...)}` holds
+                # tetrahedra shape parameters; `THETA_T4["muon (4_1)"]` is an
+                # angle; `"-Vol(4_1)/(2pi)"` labels a derived expression whose
+                # literal is the half-volume. The name route reaches all three.
+                #
+                # Real transcription defects stay near the value they meant:
+                # the worst found in this corpus was 25 % off (an 8_3 entry
+                # holding 6.5517 for 5.2387). The false positives above sit at
+                # 50-97 %. 0.35 separates them, but it is a heuristic, not a
+                # proof — so anything beyond it is REPORTED as LABEL_ONLY
+                # rather than silently dropped, and does not gate.
+                if (by_name and not by_value
+                        and abs(mp.mpf(lit) - true) / true > mp.mpf("0.35")):
+                    rows.append({"file": rel, "line": lineno, "name": name,
+                                 "literal": lit, "manifold": mfld,
+                                 "identified_by": "name",
+                                 "verdict": "LABEL_ONLY"})
+                    continue
+                # An EXACT float64 expansion is a deliberate record, not a
+                # fabricated tail: 2.0298832128193073920385813835309818387\
+                # 03155517578125 is the exact decimal value of a double, and
+                # witness_regen_classify.py carries it as a TEST FIXTURE for
+                # the very classifier that recognises f64 padding. Flagging
+                # it would ask an author to corrupt a fixture to quiet a gate.
+                # Compare against the double's EXACT value (mp.mpf(float(x))
+                # is a binary conversion), not against repr(), which shortens
+                # to 17 digits and never matches a 52-digit expansion.
+                with mp.workdps(80):
+                    _is_f64_exact = (digits_printed(lit) > 17
+                                     and mp.mpf(lit) == mp.mpf(float(lit)))
+                if _is_f64_exact:
+                    rows.append({"file": rel, "line": lineno,
+                                 "name": name or "(unnamed)", "literal": lit,
+                                 "manifold": mfld,
+                                 "identified_by": "name" if by_name else "value",
+                                 "verdict": "F64_EXACT"})
+                    continue
                 printed = digits_printed(lit)
                 correct = digits_correct(lit, true)
                 row = {"file": rel, "line": lineno, "name": name or "(unnamed)",
@@ -325,7 +387,7 @@ def main() -> int:
     rows = scan()
     by = {v: [r for r in rows if r["verdict"] == v]
           for v in ("WRONG", "MISLABELLED", "OVER_CLAIMED", "OK",
-                    "UNRECOGNISED")}
+                    "UNRECOGNISED", "LABEL_ONLY", "F64_EXACT")}
 
     if args.json:
         print(json.dumps({"counts": {k: len(v) for k, v in by.items()},
@@ -352,6 +414,14 @@ def main() -> int:
         print(f"OK            ({len(by['OK'])}) -- correct at every digit printed")
         print(f"UNRECOGNISED  ({len(by['UNRECOGNISED'])}) -- not matched to a "
               f"census manifold; NOT a pass")
+        print(f"F64_EXACT     ({len(by['F64_EXACT'])}) -- exact float64 "
+              f"expansions, recorded deliberately; advisory, does not gate")
+        print(f"LABEL_ONLY    ({len(by['LABEL_ONLY'])}) -- label names a knot "
+              f"but the value is nowhere near its volume (usually a derived "
+              f"quantity); advisory, does not gate")
+        for r in by["LABEL_ONLY"]:
+            print(f"    {r['file']}:{r['line']}  {r['name']} -> "
+                  f"Vol({r['manifold']})")
 
     if args.strict and (by["WRONG"] or by["OVER_CLAIMED"] or by["MISLABELLED"]):
         return 1

@@ -54,9 +54,14 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
-# Vol(4_1) from SnapPy — hyperbolic volume of figure-8 knot complement.
-VOL_4_1_STR = "2.0298832128193072500115970029"
+# Vol(4_1) is EXCISED, not corrected (bean qou-ckbv, 2026-08-30).
+# This file carried VOL_4_1_STR = "2.0298832128193072500115970029" -- 29
+# digits printed, 19 correct, the same 20-digit carrier bean qou-f8lit
+# tracks. Vol(4_1) has a closed form, 2*Cl_2(pi/3); a literal for it can
+# only ever be a truncation of something the machine can compute exactly,
+# so the fix is deletion rather than re-transcription.
 
 
 def hoefsmit_b(q: mpf) -> mpf:
@@ -89,13 +94,13 @@ def delta_4_h_sq_hbar_4(q: mpf) -> mpf:
 
 def delta_5_hbar_4_q_minus_1_vol(q: mpf) -> mpf:
     hbar = (q - 1) / q
-    vol = mpf(VOL_4_1_STR)
+    vol = vol_at("4_1")
     return hbar ** 4 * (q - 1) * vol
 
 
 def delta_6_hbar_8_over_vol(q: mpf) -> mpf:
     hbar = (q - 1) / q
-    vol = mpf(VOL_4_1_STR)
+    vol = vol_at("4_1")
     return hbar ** 8 / vol
 
 
@@ -206,7 +211,7 @@ def main() -> int:
 
     wb.add_data("target_delta", mp.nstr(target_delta, 30))
     wb.add_data("q_substrate", mp.nstr(q_mp, 30))
-    wb.add_data("vol_4_1", VOL_4_1_STR)
+    wb.add_data("vol_4_1", mp.nstr(vol_at("4_1"), 30))
     wb.add_data("candidates_tested", list(candidates.keys()))
     wb.add_data("per_candidate_results", results)
     wb.add_data("best_candidate_name", best_name)

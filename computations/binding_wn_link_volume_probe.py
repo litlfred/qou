@@ -38,6 +38,7 @@ sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401,E402
 from _precision import set_compute_dps  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -53,7 +54,10 @@ VOL = {
     "2-unlink": mp.mpf(0),
     "Whitehead L5a1": 4 * CATALAN,
     "Borromean L6a4": 8 * CATALAN,
-    "8_11": mp.mpf("8.286316155818656"),
+    # EXCISED (bean qou-ckbv): was mp.mpf("8.286316155818656"), correct to 7
+    # digits. Every other row in this table is a closed form or a computed
+    # value; this was the only hand-typed one, and the only wrong one.
+    "8_11": vol_at("8_11", mp.mp.dps),
     "fig-8 4_1": 2 * mp.im(mp.polylog(2, mp.exp(mp.j * mp.pi / 3))),
 }
 
