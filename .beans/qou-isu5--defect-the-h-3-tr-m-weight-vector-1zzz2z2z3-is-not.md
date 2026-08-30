@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T09:08:42Z
+updated_at: 2026-08-30T09:51:42Z
 ---
 
 ## What is ESTABLISHED (two independent proofs)
@@ -159,3 +159,35 @@ not "1 live file", which is what my first too-narrow grep suggested. Two of the
 eight also FAIL outright under perturbation (exit 0 -> 1), which means their own
 assertions are sensitive to this weight -- those are the two most likely to
 reveal what the correct value does.
+
+
+## CORRECTION 2026-08-30 — this was NOT a new finding
+
+Two claims made when this bean was opened were re-derivations of corpus-held
+facts, and the corpus-grep checklist should have caught both:
+
+- `docs/audits/2026-05-19-trm5-markov-bug.md` (2026-05-19) already states the
+  defect, the `h*z^2 + z` derivation and the "not a trace" reasoning.
+- `computations/probes/confinement_b3_enumeration_recheck_probe.py` already
+  records the qou-6hm4 link: "stale power rule -> max|G-G^T| = 0.46, rank 6 ...
+  qou/6hm4 first diagnosed it as one [a row-ordering bug] -- a coincidence in
+  the numbers."
+
+## What IS this bean's contribution
+
+TRAP, and the durable half: `trm5_zcubed_live_producer_audit.py` checked a
+hardcoded five-file LIVE_SITES list and printed "all five fixed: True" while
+SEVEN other files on the same H_3 NF basis carried the bug. Two of the seven
+(`z ** 3` inside np.array; `z * z * z`) were in spellings no pattern in the
+guard could match. Guard now backed by a shape-keyed corpus scan with a
+--selftest that fails unless all four spellings are detected.
+
+12 sites total; all 12 correct as of f1047c2f9c. Rust (gram.rs:146) was already
+correct -- the pyhecke test docstring claiming otherwise was stale.
+
+Downstream consequence worth carrying: the corrected trace WITHDRAWS the
+scope-(a) negative published by qbeta_c3_barodd_hs_matrix_resolvent_probe. Its
+finding 2 ("the pairing is bar-even") is falsified at mu=0 (BAR-ODD, 18.38 vs
+6.86); finding 3's test goes degenerate because the correct Gram is singular.
+Not a positive result either -- that probe is still convention C and inverts a
+singular Gram in float64. Re-run belongs to qou-cds1.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:53:56Z
-updated_at: 2026-08-30T08:51:37Z
+updated_at: 2026-08-30T09:52:14Z
 ---
 
 ## Measured 2026-08-30 — the surface, before any edit
@@ -213,3 +213,38 @@ The remaining ~20 are the same shape: each rewrites published numbers, and
 "assertions pass" will keep being true while they do. This needs either a
 per-file review of the movement, or the D-frame derivation (qou-cds1) to give an
 independent check. Raised with the author.
+
+
+## Re-triage on the post-trace-fix baseline (2026-08-30)
+
+50 blocking sites in convention-c-value-audit. Layered triage:
+
+  27  ANNOUNCE THEMSELVES as C-vs-D comparisons (filename `*_C_vs_D_*` /
+      `*convention_d*`, a scope literally named `z_C`, or co-bound with z_D).
+      These need LEDGER ROWS, not migration.
+   9  of the remaining 23 DECLARE convention C in a comment or docstring
+      within 25 lines of the binding (`qbeta_ck_cache` is reached only via an
+      explicit --historical-convention-C flag and refuses otherwise).
+  14  silent locally.
+
+Of the 14, spot-reading found several are NOT migration candidates at all.
+They are THEOREMS WHOSE SUBJECT IS z_C:
+
+  - qbeta_z_bar_parity_fmap_class_probe asserts "z = sqrt(q)/(1+q) is exactly
+    bar-even". For z_D, bar(z_D)/z_D = q^-4 != 1, so the claim is FALSE, not
+    merely different. Its Lean companion QOU/QBeta/ZBarParity.lean is C-frame.
+  - qbeta_prearchimedean_z_recursion proves the ODE (4+6w+2w^2)z' + wz = 0,
+    which z_C satisfies and z_D does not.
+  - qbeta_t3_carrier_q1_order_preflight asserts z - 1/2 vanishes at q=1 to
+    order exactly 2, a fact about z_C's expansion.
+
+Substituting z_D there does not fix a defect -- it deletes the statement. This
+is the same shape as the owner's challenge on the earlier tranche
+("migrating its z_C would delete the proof --> why?"), and it generalises: the
+excision sweep cannot reach any site where z_C is the SUBJECT rather than a
+parameter. Those belong to the convention-D re-derivation (qou-cds1).
+
+So the actionable migration surface is materially smaller than 50 and probably
+smaller than the ~20-25 estimated. Next step is to finish reading the 14 and
+split them into (i) parameter sites, migratable; (ii) subject sites, -> cds1;
+(iii) comparison sites, -> ledger.
