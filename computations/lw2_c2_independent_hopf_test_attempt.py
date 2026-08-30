@@ -93,6 +93,16 @@ def main() -> int:
     # Corpus closed form, proved over ℚ(q^{1/2}) in trm-hopf-sigma1-sq-closed-form.md:
     #   tr_M(σ₁²) = (q − q⁻¹)·z + 1,  z = 1/(√q + 1/√q)  =  1 + (q−1)/√q.
     # Identical in Wenzl and q-Schur conventions at H₂. NO selection-rule input.
+    #
+    # SCOPE OF THAT SENTENCE (labelled 2026-08-30, qou-t9r1): "conventions" here
+    # means WENZL vs Q-SCHUR -- the two decompositions cross-checked below -- and
+    # NOT the Markov trace-convention axis C vs D. The quantity is NOT C/D
+    # invariant. Measured at the substrate pin:
+    #     tr_M(σ₁²) at z_C = 1.1043880582592   <- matches the closed form
+    #     tr_M(σ₁²) at z_D = 1.1280887441144   <- does not
+    # The closed form cited above is proved over ℚ(q^{1/2}) WITH z = z_C, so the
+    # z below is the convention that form is stated in, not residual C. Do not
+    # read the sentence above as a convention-safety clearance for this binding.
     z = 1 / (sqq + 1 / sqq)
     trM_hopf_wenzl = (q - qi) * z + 1
     trM_hopf_cf = 1 + (q - 1) / sqq

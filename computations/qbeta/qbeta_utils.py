@@ -67,7 +67,27 @@ def markov_parameter_convention_C(q: mpf) -> mpf:
 
     Mirrors `markov_parameter` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
+
+    SYMBOLIC q IS SUPPORTED (added 2026-08-30, qou-t9r1). Until then this was
+    mpmath-only -- `mpsqrt` raises `TypeError: cannot create mpf from q` on a
+    sympy Symbol -- so every SYMBOLIC consumer needing the C arm had to inline
+    `sqrt(q)/(1+q)`, which is precisely the invisibility the guard above exists
+    to prevent. The guard had a type hole exactly the size of its own purpose.
+    Measured instance: `probes/qbeta_fmap_power_class_prune.py` inlined it to
+    build the Lean-defined `CanonicalMarkovWeightsH3.explicitInstance`, whose
+    definition legitimately fixes z = sqrt(q)/(1+q); the site was correct and
+    ungreppable. Taxonomy row 21.
     """
+    # NOTE the NON-EMPTY test. `hasattr(q, "free_symbols")` is also True for
+    # sympy NUMERICS -- Rational(1,2) and Float(1.11) both carry the attribute
+    # with an EMPTY set -- so the bare hasattr routed numeric callers into the
+    # symbolic branch and handed them a sympy expression where they asked for a
+    # number. Measured; and mpmath accepts both (mpsqrt(Rational(1,2)) ->
+    # 0.471404520791032), so the numeric arm is the correct destination for
+    # them. Caught by Copilot on PR #6058.
+    if getattr(q, "free_symbols", None):   # genuinely symbolic sympy Expr
+        import sympy as _sp
+        return _sp.sqrt(q) / (1 + q)
     return mpsqrt(q) / (1 + q)
 
 
