@@ -69,13 +69,13 @@ THE INTERESTING RESULT: my value-based method (233) was WORSE than the key-based
 one it replaced (139) -- the opposite of what I predicted. 'Does the witness
 CITE a real .py' is STRICTER than 'does a provenance key exist', so it flags
 more. Strictness is not accuracy. The key-based count was accidentally closer
-because  is present on 91% of witnesses and a witness with one
+because the `computation` key is present on 91% of witnesses and a witness with one
 usually does have a producer, for reasons unrelated to that field's contents
 (it holds the witness ID, not a script -- it names a producer on only 46 of
 2679, i.e. 1.7%).
 
 TWO BUGS IN MY OWN DETECTOR, opposite directions, both now fixed and recorded:
- - ORPHAN over-reported: missed the  SUFFIX (gswz_52_symmetrization ->
+ - ORPHAN over-reported: missed the '_probe' SUFFIX (gswz_52_symmetrization ->
    gswz_52_symmetrization_probe.py), and the mention index tokenised only
    HYPHENATED ids so every underscore-named witness was invisible. Most of a
    30-item list.
@@ -97,3 +97,9 @@ SCOPE: says a producer EXISTS, not that it REPRODUCES the witness -- that is
 witness_provenance_audit.py, strictly stronger where it applies but blind to the
 213 resolved here by convention or producer-call. Nothing rewritten; no
 canonical spelling proposed (owner's call).
+
+
+NOTE ON THIS BEAN'S OWN TEXT: two words above were eaten by shell backtick
+expansion when this body was appended (`computation` and `_probe` ran as
+commands). Repaired. The committed audit doc and commit message used a quoted
+heredoc and were never affected.
