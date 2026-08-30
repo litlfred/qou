@@ -176,3 +176,50 @@ SEMF pairing term across the chart.
 Their stated caveat, carried honestly: the pairing scale is over-determined,
 `b3` magnitude vs the SEMF fit disagreeing by 25-40x. So the SIGN transfers and
 the SCALE does not — which is the same shape as every other result on this arc.
+
+## 🛑 RETRACTION — the pairing identification above is REFUTED, and it was mine
+
+The section immediately above claims delta^2-Phi's even-Z positivity is
+"plausibly *measuring* the pairing term". **That is wrong.** I published it in a
+PR comment before testing it. Tested now:
+[`delta2phi_semf_pairing_probe.py`](../computations/probes/delta2phi_semf_pairing_probe.py)
+-> `delta2phi-semf-pairing.witness.json`, 3/3.
+
+**1. The sign agreement is structurally FORCED, so it is not evidence.** The
+producer evaluates the **N = Z line**, so `A = 2Z` and the pairing class is
+fixed by Z parity alone: Z even -> N even -> even-even -> SEMF `+delta`; Z odd
+-> odd-odd -> `-delta`. **Any** quantity that alternates with Z parity
+reproduces the SEMF pairing sign here. delta^2-Phi alternates (0 exceptions,
+Z = 3..31), so of course it matches — that is a restatement of "delta^2-Phi
+alternates", which `qou-pz4m` already established. It carries no new content,
+and I presented it as if it did.
+
+**2. The magnitude is refuted by SHAPE, not merely scale.** Decomposing
+`Phi(Z) = s(Z) + (-1)^Z e(Z)` and separating by averaging / half-differencing
+adjacent Z (the smooth part is only **3.4 %** of the alternating one, so e(Z)
+extracts cleanly):
+
+| quantity | SEMF requires | measured |
+|---|---|---|
+| `e(Z)·sqrt(Z)` | constant | **11.04x spread** (3.38 -> 37.34) |
+| `e(Z)` | monotone decreasing in A | **non-monotone**, peaks at **Z = 12** |
+
+`e(Z)` rises 8.67 -> 9.65 through Z = 12-15 and only then falls to 0.617 by
+Z = 30. SEMF pairing `delta = a_P/A^(1/2)` decreases monotonically throughout.
+Wrong shape, so no choice of `a_P` rescues it.
+
+**What this does NOT touch.** PR #6197's `PairingParityForcesPositiveB3.lean`
+is unaffected — verified sorry-free, and it is about the connected three-body
+cumulant `b_3`, a different object. The parity finding in `qou-pz4m` is
+unaffected. Only my inference *between* them is retracted.
+
+**Contamination.** The claim reached three places, all now corrected: this bean,
+the reply on PR #6201 (correction comment posted), and the PR body's beans
+section. Scope **(a)**: a negative about the SEMF-pairing identification of this
+statistic, not a claim that no pairing mechanism exists anywhere in the tower.
+
+**The lesson, since it is the second time on this arc.** "Sign matches" was
+worth nothing here because the sign was *determined by the sampling line*, not
+by the physics. Before treating a sign agreement as evidence, check whether the
+sampling forces it. `qou-o16k` is the same shape one block over: the kappa fit
+lived entirely where two conventions coincide, so it could not distinguish them.
