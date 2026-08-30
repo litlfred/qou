@@ -38,7 +38,9 @@ noncomputable def vol_unknot : ℝ := 0
 -- Ref: [culler2024] SnapPy census
 noncomputable def vol_trefoil : ℝ := 0
 
-/-- Vol(4₁) = 2.02988321281930 (figure-eight, exact: 2·Cl₂(π/3)). -/
+/-- Vol(4₁) ≈ 2.02988321281930 (figure-eight; the exact value is 2·Cl₂(π/3),
+    which this 15-digit literal truncates -- they differ at the 16th digit,
+    so the relation is `≈` and not `=` per AGENTS.md §7ab). -/
 -- Ref: [turaev2010], OEIS A091518
 noncomputable def vol_figure_eight : ℝ := 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
 
@@ -195,15 +197,38 @@ noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
   vol_figure_eight / (hbarQ q) ^ 2
 
 /-- At the CODATA substrate parameter q₀, the muon-electron mass
-    ratio matches the experimental value 206.768 to within 0.001. -/
+    ratio matches the experimental value 206.768 to within 0.00448.
+
+    **Corrected 2026-08-30 (bean `qou-2u39`).**  This docstring claimed
+    "to within 0.001" over a theorem proving only `< 1`.  Both numbers were
+    wrong in opposite directions: the true deviation is `0.0044746`, so
+    `0.001` is FALSE — `¬ (|… − 206.768| < 0.001)` is itself provable here —
+    while `< 1` was 224× looser than what holds.  The bound below is now the
+    measured one, and the prose states exactly what the Lean carries.
+
+    The tightening cost nothing: the tactic is unchanged.  The arithmetic is
+    rational and exact, so `norm_num` is indifferent to the tolerance. -/
 -- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [manuscript] Ch. 7
 theorem muon_electron_ratio_from_substrate :
-    |muon_electron_ratio q₀ - 206.768| < 1 := by
+    |muon_electron_ratio q₀ - 206.768| < 0.00448 := by
   -- muon_electron_ratio q₀ = vol_figure_eight / (hbarQ q₀)²
-  -- = 2.02988321281931 / (1 - 1/1.10998)²
+  -- = 2.02988321281930 / (1 - 1/1.10998)² = 206.763525398207…
   -- Clearing denominators yields rational arithmetic that norm_num resolves.
   simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt]
   constructor <;> norm_num
+
+/-- **The previously-claimed bound is false**, recorded so the correction cannot
+    silently regress.
+
+    The docstring above once asserted agreement "to within 0.001".  The ratio sits
+    `0.0044746` BELOW `206.768`, so that claim fails on the lower side — which is
+    why the proof takes the `left` disjunct.  Writing it with `right` leaves a bare
+    `False` goal and reads like the claim being true. -/
+theorem muon_electron_ratio_not_within_thousandth :
+    ¬ (|muon_electron_ratio q₀ - 206.768| < 0.001) := by
+  simp only [muon_electron_ratio, vol_figure_eight, hbarQ, q₀, abs_lt, not_and_or]
+  left
+  norm_num
 
 /-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/
 -- Ref: [manuscript] Ch. 7, §Building block knots
