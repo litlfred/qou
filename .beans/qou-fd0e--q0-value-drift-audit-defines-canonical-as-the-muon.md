@@ -869,3 +869,43 @@ The general rule this settles, and the reason it is worth a bean entry: **the
 conformant fix for a pin literal is not "update it to the current value", it is
 "stop having a literal".** Updating A to C would have been non-conformant again
 at the next re-pin.
+
+
+## 2026-08-30 — pulled main's migration in; it does NOT drain the A-literals
+
+Merged `origin/main` (225 commits) to bring the in-flight migration onto this
+branch — `qou-aj91` and `qou-1c4y` are actively migrating producers. One
+conflict, `alpha-5-lp-dual-crystal.witness.json`: mine was the mpf-kernel
+regeneration at muon/C, main's was `aea2728dc migrate(qou-aj91):
+alpha_5_lp_dual_crystal to proton`. Took main's — it carries the migration.
+
+**The A-literal population did not go down. It went UP.**
+
+    before merge   283 literals in 238 files
+    after merge    285 literals in 239 files
+
+Those migrations move a producer's ANCHOR — declaring it, or repointing it at
+`q_parameter` — which is a different axis from a hardcoded literal in the
+source. Pulling the migration in was correct and it does not, by itself, address
+this population.
+
+### And a blanket migration would be WRONG, which the count hides
+
+Split the 285 by whether migrating them is even the right action:
+
+    215 literals in 189 files   PRODUCER consuming a hardcoded A   <- the target
+     39 literals in  31 files   fallback / sentinel / comparison
+     17 literals in  17 files   docs/audits scripts
+     13 literals in   5 files   TEST fixture (asserts the pin)
+      1 literal  in   1 file    the substrate package (DEFINES the pin)
+
+`tools/qou-substrate/python/qou_substrate/constants.py` and
+`tools/qou-substrate/tests/test_q0_anchor.py` are the first hits by file order,
+and they are exactly the files that MUST keep an A literal — one defines the
+pin, the others assert it. A 239-file sweep would rewrite the definition and
+then rewrite the tests that guard it, and the tests would still pass.
+
+**The real scope is 189 producers, not 239 files.** Every one is a value-moving
+change needing a witness regeneration, which is why `qou-aj91` is doing them one
+at a time with a regen per producer rather than in a sweep. That is the correct
+shape for the work; the contribution here is the denominator and the exclusions.
