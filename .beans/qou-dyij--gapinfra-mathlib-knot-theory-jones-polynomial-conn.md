@@ -1,11 +1,11 @@
 ---
 # qou-dyij
 title: 'GAP/INFRA: Mathlib knot theory — Jones polynomial, connected sum, Markov-trace multiplicativity'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:33:56Z
-updated_at: 2026-08-30T12:34:44Z
+updated_at: 2026-08-30T12:55:30Z
 ---
 
 Consumer: qou-301d (discharge the ArchimedeanTraceBridge multiplicativity hypothesis). Parent epic:
@@ -69,3 +69,18 @@ to Mathlib, and scoped to the multiplicativity functional (skip Markov's theorem
 amplitude=trace identification stays a modelling input, so the net QOU gain is converting one citation
 into "citation of a now-formalised theorem". Leave qou-301d at the citation boundary; revisit only if
 the qou-08a2 keystone epic builds the general Hecke Markov-trace functional for other reasons.
+
+
+
+---
+**Update 2026-08-30 — route B's consumer-facing piece is DELIVERED; route A untouched by design.**
+MarkovTraceMultiplicative lands the multiplicativity functional (trace of juxtaposition = product),
+generic over CommRing with NO QOU dependency — Mathlib-upstreamable next to Matrix.trace_kronecker.
+This is what qou-301d needed, and it needed neither Markov's theorem nor any link-diagram
+infrastructure, confirming the roast's route-B scoping.
+
+Still open for a genuine Mathlib knot-theory contribution (unchanged priority — LOW for QOU, real
+for Mathlib): the Hecke tower + Ocneanu trace as a functional with the Markov stabilisation property,
+the Jones polynomial as a normalised braid-closure trace, and (much larger) Markov's theorem that the
+closure is a link invariant. Route A (diagrams, Reidemeister, Kauffman bracket) remains UNBOUNDED and
+advised-against.
