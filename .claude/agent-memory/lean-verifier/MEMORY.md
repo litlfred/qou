@@ -148,7 +148,16 @@ and the working recipe are in the sibling file; the shapes:
    a complete `cp -al` mirror, `rm -f`-ing each olean before rebuilding it.
 3. **A disk-full `lake build` writes truncated oleans that segfault.** Signature
    **exit 139, zero errors, 0–1 s**; 10 of 11 "failing" modules were this. Never
-   call a module broken from exit 139 alone.
+   call a module broken from exit 139 alone. **Do NOT use olean size as the
+   test** — 2026-08-30, three segfaulters measured 50–226 KB inside a normal
+   33 KB–6.7 MB range, so size flagged nothing.
+4. **Most cone failures are the harness, not the code.** Measured 8, of which
+   **1** was a real defect. `object file … does not exist` usually means a
+   *non-cone* dependency has no olean at all — `ls` it. Decisive test for every
+   one: re-run against **main's own oleans**, your changes off `LEAN_PATH`.
+5. **A dead constant hides behind `abbrev` hops.** A consumer can fail on a
+   deleted constant whose name does not appear in it (three hops, measured), so
+   grepping consumers is not a blast-radius check. Same class as 1.
 
 ## STABLE — the honest dispositions when a proof will not close
 
