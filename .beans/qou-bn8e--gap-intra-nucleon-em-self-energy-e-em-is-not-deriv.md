@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-30T09:41:18Z
+updated_at: 2026-08-30T09:45:56Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -791,3 +791,52 @@ wrong in different directions.
 
 **Do not quote a single "the framework over-predicts by X" figure for `Δ_pn`.**
 State the construction, or the number is meaningless.
+
+
+---
+
+## 🛑 The corpus already answered the "surviving question" — `qou-m3vl`, 2026-08-01
+
+Found by running check-before-create on a bean I was about to file. I nearly
+filed a duplicate, and then nearly dismissed the existing one as an empty
+closure. Both would have been wrong.
+
+**`qou-m3vl`** (completed 2026-08-01) is titled *"decompose the derived Δ_pn into
+EM (Coulomb crossing term, antisymmetric q − q⁻¹) vs strong parts"* — precisely
+the question the entry above called "surviving". Its finding, from
+`computations/quark-mass-extraction-stage1.witness.json`:
+
+> `δ_QCD = Δ_pn + E_EM`. **The framework derives `Δ_pn`, but its only derived EM
+> mechanism (`tanh(ln q₀) × strong bond`) is INTER-nucleon; the intra-nucleon EM
+> self-energy is the SAME open two-like-charge EM-linking invariant that owns the
+> ³He mirror residual. One invariant blocks both.**
+
+So this bean's `E_EM` is **not an independent open object**. It is the
+two-like-charge EM-linking invariant — front 4-B — under a different name, and
+the ³He mirror residual is its other consumer.
+
+### ⚠ This is in tension with C2, which I recorded on #5744
+
+C2 retracted *"4-B gates two fronts"* on the ground that the intra-nucleon
+self-energy contributes **exactly zero** to the mirror split (per-component self
+terms cancel in binding energy). `qou-m3vl` says one invariant blocks both.
+
+These are not obviously reconcilable, and I am **not** resolving it here.
+Both could stand if the shared object is the *pairwise linking* term applied to
+two different systems (two up quarks in a nucleon; two protons in ³He) while the
+*self* terms genuinely cancel in the mirror split — C2's argument was about self
+terms specifically. But that reading needs checking, not assuming. **Whoever
+takes this next must reconcile C2 against `qou-m3vl` before treating either as
+settled.**
+
+### Why path 6 did not surface this earlier
+
+**`qou-m3vl`'s bean body is EMPTY** — 10 lines, front-matter only, `completed`
+eleven minutes after creation. Its conclusion exists *only* in the witness
+`description` field. So a `git grep` over `.beans/` — corpus-grep path 6, the
+path added specifically to catch conclusions that live nowhere else — **cannot
+find it**, because the bean records nothing.
+
+That is a new instance of a documented blind spot, and worth stating as a
+general caution: a `completed` bean with an empty body is invisible to path 6
+while its work product is real. Grep the **witness descriptions** too.
