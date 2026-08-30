@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T12:44:54Z
-updated_at: 2026-08-30T12:45:29Z
+updated_at: 2026-08-30T12:59:45Z
 ---
 
 ## The disagreement, measured AT THE WITNESS'S OWN PIN
@@ -64,3 +64,63 @@ single number each and reproduced. `habiro-wrt-s3-2i` has one number
 (`10.4959110098`) not located in its output by a string scan — **not
 investigated**, and that scan over-reports (it compares different precisions),
 so treat it as unchecked rather than as a finding.
+
+
+## RESOLVED 2026-08-30 — the witness is wrong, and the mechanism is a float64 leak
+
+The disagreement is not between two defensible computations. **`y_(3,1,1)^{H5}`
+is EXACTLY ZERO**, so `T_electron = 0` and the live producer was right.
+
+**Mechanism**, at `weights5()` in the producer:
+
+    ws = ph.trace_weights_n(5, float(q))        # 50-dps pin -> 53 bits
+    return {p: mpf(str(w)) ...}                 # 53-bit data dressed as 50 dps
+
+`trace_weights_n` is float64 internally — it returns a Python float even when
+handed an mpf — so the whole weight vector resolved at the float64 floor.
+Measured, float64 route vs exact (`y_lambda_wenzl_bridge_numeric`):
+
+    lambda        float64                exact
+    (5,)          0.19427718737799       0.19427718737799
+    (4,1)         0.12498539716795       0.12498539716795
+    (3,2)         0.061156244790044      0.061156244790044
+    (3,1,1)       1.094436485732e-17     0
+    (2,2,1)       1.9631309013882e-17    0
+    (2,1,1,1)     -3.2754415082272e-17   0
+    (1,1,1,1,1)   3.5151413120942e-18    0
+
+**The zeros are structural, not numerical:** `y_λ = 0` exactly iff λ has **more
+than two rows** — the SU(2)/N=2 truncation. (5,), (4,1), (3,2) have ≤ 2 rows and
+survive; every deeper partition is killed. Perfect correlation across all seven.
+
+**Independent confirmation the leak was real:** with the exact route the
+bar-parity residual sharpens **5.5e-17 → 7.14e-42**, and the (3,1,1) branching
+cross-check goes to exactly 0.0. Those are 50-dps numbers; the old ones were the
+float64 floor.
+
+## FIXED in the producer
+
+`weights5()` now uses `y_lambda_wenzl_bridge_numeric`. `delta / T_e` was
+`4.65e+15`, which was δ divided by the noise floor — a statement about the
+arithmetic, not the traces; it now reports **UNDEFINED (T_e is exactly 0)**
+rather than a fabricated magnitude, in both places it was printed.
+
+## What this does to the probe's PREMISE — scope (a), author's call
+
+The probe exists to compare a "muon home-block (3,2)" against an "electron
+home-block (3,1,1)". With `y_(3,1,1) = 0` structurally, **that comparison is
+vacuous on one side**: δ = T_μ − 0 = T_μ, and the probe's own `δ/T_μ = 1.0`
+exactly says so. The whole measured quantity is T_μ under another name.
+
+Not fixed here — whether the probe should compare different blocks, or whether
+the (3,1,1) "home block" idea survives the SU(2) truncation at all, is a
+question about what the probe is for.
+
+## Contamination — 2 docs, annotated not rewritten
+
+`y_(3,1,1) = 0.0167666` reached
+`docs/audits/2026-06-22-keystone-qdeform-projector-shift.md` and
+`docs/audits/2026-06-20-keystone-branching-shift-first-crack.md`. Both now carry
+a correction banner; their numbers are **left as the historical record**, per the
+standing `qou-3nva` decision on dated audit docs. The committed witness is
+likewise left — it has no producer to regenerate it (`qou-bake`).
