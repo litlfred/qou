@@ -144,6 +144,45 @@ false against a definition three lines above it. No instantiation trick was
 needed. That one argues for reading each axiom against its own file before
 reaching for any detector.
 
+## Hasse–Weil over the whole tower, added 2026-08-30
+
+The arc had the point-count bound at `r = 1` only — `|∑ αᵢ| ≤ 2g√q` — which is
+weaker than the name promises. Hasse–Weil is a statement about **every** finite
+extension: Frobenius on `𝔽_{q^r}` acts with eigenvalues `αᵢ^r`, so
+
+```
+| |ℬ(𝔽_{q^r})| − (q^r + 1) |  ≤  2g·q^{r/2}
+```
+
+Three results, all one or two lines from the magnitude bound already proved, all
+`#print axioms` clean:
+
+- `norm_eigenvalue_pow` — `‖αᵢ^r‖ = (q^{1/2})^r`, the magnitude at every level.
+- `norm_sum_eigenvalue_pow_le` — the bound itself, `‖∑ αᵢ^r‖ ≤ 8·(q^{1/2})^r`.
+- `sum_eigenvalue_pow_isReal` — the power sums are **real** at every level, from
+  conjugation-closure. Not decoration: `|ℬ(𝔽_{q^r})|` is an integer, so a power
+  sum with nonzero imaginary part would be an inconsistency rather than a loose
+  bound. The `r = 1` case was already there as `sum_eigenvalues_isReal`; the
+  general one is what a trace formula would need.
+
+**Tightness was checked, not assumed** — `norm_sum_eigenvalue_pow_tight`. A
+bound tight at `r = 1` can still be loose in the tower, and the *growth rate* in
+`r` is the part of Hasse–Weil that does the work; a loose rate would leave that
+part unattested. On the supersingular witness (`q = 4`, all `αᵢ = 2`) the power
+sum is `8·2^r` and the bound is `8·(4^{1/2})^r = 8·2^r` — equality at every `r`.
+
+**The `r = 0` degeneracy is stated rather than excluded.** At `r = 0` every
+`αᵢ^0 = 1`, the sum is `8`, and the bound reads `8 ≤ 8` — true and tight, and
+carrying no arithmetic, since `𝔽_{q^0}` is not a field. The theorems quantify
+over all `r : ℕ` because excluding it would buy nothing, but nothing downstream
+should read the `r = 0` instance as a point count.
+
+**What this is not.** It is more of the *local* theory, which is the half that
+was never in doubt — Hasse–Weil has held unconditionally at every place since
+1948. It does not move the arc toward RH; the assembly step still carries the
+whole distance. It closes a gap between what the chapter proved and what it
+claimed the name of.
+
 ## The remaining gaps, ranked by what they cost
 
 ### 1. Both axioms in `explicit-formula.lean` prove `False` — CORRECTED 2026-08-29
