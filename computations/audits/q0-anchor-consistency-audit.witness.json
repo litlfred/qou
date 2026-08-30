@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T03:28:30.256227+00:00",
-  "commitSha": "0b314f4de5553d5813502bd489ee995529fd4708",
+  "computedAt": "2026-08-30T07:57:35.086965+00:00",
+  "commitSha": "0daec83720af07d8956084471267095655615111",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 83,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "23ee17b6aeef",
@@ -45,10 +45,10 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 1094,
+      "Q0_OK": 1111,
       "Q0_AMBIGUOUS": 3,
       "Q0_AMBIGUOUS_NO_REASON": 13,
-      "Q0_INDEPENDENT": 63,
+      "Q0_INDEPENDENT": 67,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 5,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -1192,6 +1192,10 @@
         },
         {
           "witness": "c-knot-not-universal.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c-knot-tau-transfer-artifact.witness.json",
           "detail": ""
         },
         {
@@ -2780,10 +2784,6 @@
         },
         {
           "witness": "one-loop-triangulation-invariance.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "onepb-status-dashboard.witness.json",
           "detail": ""
         },
         {
@@ -7529,6 +7529,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-helium-3-h9-at-q0-50dps-muon.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
           "detail": ""
         },
@@ -7550,6 +7554,10 @@
         },
         {
           "witness": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-helium-4-h12-at-q0-50dps-muon.witness.json",
           "detail": ""
         },
         {
@@ -7598,6 +7606,10 @@
         },
         {
           "witness": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps-muon.witness.json",
           "detail": ""
         },
         {
@@ -8234,6 +8246,10 @@
         },
         {
           "witness": "full-twist-delta-n2-verification.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "fusion-process-joint-h15-lp.witness.json",
           "detail": ""
         },
         {
@@ -9037,6 +9053,10 @@
           "detail": ""
         },
         {
+          "witness": "onepb-status-dashboard.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "option-e-kl-betti-contributive-deuteron.witness.json",
           "detail": ""
         },
@@ -9809,6 +9829,10 @@
           "detail": ""
         },
         {
+          "witness": "qgol-stability-region-convention-d.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qm-channel-contribution-probe.witness.json",
           "detail": ""
         },
@@ -10089,7 +10113,15 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-experimental-uncertainty.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-hopf-habiro-profile.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-c3-is-extraction-determined.witness.json",
           "detail": ""
         },
         {
@@ -10317,7 +10349,19 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-ladder-convention-dependence-is-one-phase.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ladder-headline-residual-provenance.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ladder-required-phase.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-last-step-is-the-presentation.witness.json",
           "detail": ""
         },
         {
@@ -10325,7 +10369,23 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-mu-closed-form-and-delta-alignment.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-mu-is-block-invariants.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-mu-normalisation-is-derived.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-net-as-trace-plus-longest.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-net-is-tau-against-all-ones.witness.json",
           "detail": ""
         },
         {
@@ -10369,6 +10429,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-riesz-element-structurally-forced.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-route-alpha-lift-prediction.witness.json",
           "detail": ""
         },
@@ -10398,6 +10462,10 @@
         },
         {
           "witness": "qbeta-symbolic-sdp-strict-complementarity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-trace-invisible-is-pairing-representable.witness.json",
           "detail": ""
         },
         {
@@ -10935,6 +11003,14 @@
           "detail": ""
         },
         {
+          "witness": "a1-sigma-h-not-polynomial.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "b1-kappa-window-extension.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gap2-he4-borromean-mu-bar.witness.json",
           "detail": ""
         },
@@ -11067,6 +11143,10 @@
           "detail": ""
         },
         {
+          "witness": "piece-a-corner-removal.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
           "detail": ""
         },
@@ -11140,6 +11220,10 @@
         },
         {
           "witness": "qns-phase-scramble-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "quaternionic-flag-su3-exclusion.witness.json",
           "detail": ""
         },
         {
