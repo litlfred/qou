@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T09:18:06Z
+updated_at: 2026-08-30T10:07:11Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2835,3 +2835,35 @@ Three results at once:
 3. **THE LADDER'S CARRIER BLOCK SURVIVES D.** `y_(2,1) = q²/(q²+1)²` has numerator `q²`, whose only real root is q = 0 — so it is **nonzero for every q > 0**. V_(2,1), the block the whole eigenphase/cos-resummation construction lives on, is NOT in the D radical.
 
 That third point is the one that matters for planning: **the D re-derivation is not futile.** Had V_(2,1) been in the radical the entire ladder would be dead under D and the only honest move would be to abandon it. It is not; the carrier survives, the weights are simple, and what needs replacing is the resummation FORM (Step 4) rather than the object it acts on.
+
+## Step 6 (2026-08-30) — the bridge phase is GENERIC in z; the D target is narrower than the guard reads
+
+`computations/qbeta/qbeta_d_frame_bridge_generic_z.py`.
+
+**Where z enters, measured.** `beta-decay-transfer-matrix-proof.md` gives T_pp, T_nn, T_mix and Δ_β explicitly, and **all four are z-FREE** (built from `h` alone) — verified by symbolic differentiation. So M_β as an OPERATOR is convention-independent. `z` enters in exactly two downstream places, both trace/normalisation:
+
+    Vhat_i = z·M_11 + M_21              the Markov trace on a 2x2 (z-linear)
+    Q^B    = ln(Vhat_dau/Vhat_par)·E_0/z
+
+**The result.** Re-derived the bridge with `z` carried as a FREE symbol (Vhat_pp = z·h+1, Vhat_nn = 1, Q^A/E_0 from `prop:neutron-qvalue-symbolic` over E_0 = m_e/(q(q−1))), expanded about q = 1+w:
+
+    w^0 : 1
+    w^1 : z − 1                          <- matches the corpus's (z−1)h/2 EXACTLY
+    w^2 : −z²/3 − 3z/2 + 1/2             } NEW — the corpus records only
+    w^3 : z³/3 + 2z²/3 + 3z/2 − 1/2      }  first order plus O(h²)
+
+**So `α = (z−1)h/2` is the GENERIC-z result, not a convention-C specialisation.** Nothing in the bridge derivation privileges z_C.
+
+**Scope — and the guard is NOT wrong.** `qbeta_utils.py`'s KeyError says *"substituting z_D into alpha = (z−1)h/2 is proved invalid by decayLadder_zC_threeRow_ne_zero and eigenphase_bar_defect_of_fullBar"*. Those two Lean results are about the **ladder's three-row forcing** and the **bar defect** — not about whether the bridge's first-order coefficient is generic. The sentence is correct for the ladder. What this adds is the split:
+
+| object | status under D |
+|---|---|
+| bridge term `(z−1)h/2` | **generic in z** → z_D substitution legitimate |
+| cos resummation `cos α` | justified by α bar-odd (Step 4) → **FAILS** |
+| c_k ladder | C-frame → **FAILS** |
+
+So the D re-derivation target is the **resummation form + the ladder**, not the phase formula — strictly narrower than "re-derive the ladder from scratch". **The guard should stay exactly as it is**: it withholds z/α unless a convention is NAMED (a visibility mechanism) and already serves `convention='D'`. Nothing here asks for it to be loosened.
+
+**Values at the proton pin:** α_C = −0.0523361202682285, α_D = −0.0404857773406426. Recorded as generic-formula values, NOT wired ladder inputs. No c_k proposed, extracted or wired; c_3 ≈ −974 remains a sensitivity measurement.
+
+**I also corrected my own reading twice here.** I had described the guard as "withholding α under D because the substitution is proved invalid" — the withholding is actually of UNNAMED access, and D is served. And the quoted sentence is in the KeyError, not the docstring; my quote was accurate, my characterisation of its scope was not.
