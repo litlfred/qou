@@ -58,7 +58,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from codata_constants import ame_binding_mev  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402  (exact mpf; NEVER mpf(str(Q)) -- Q is f64)
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(65)
@@ -100,7 +100,7 @@ def main() -> int:
     )
 
     # candidates that #6173 read as failures and that are in fact inside the band
-    q = mp.mpf(str(Q))
+    q = +Q_MP
     inband = {"2*z_D": 2 * q**3 / (q**2 + 1), "6/5": mp.mpf(6) / 5, "q0^2": q**2}
     print("\ncandidates INSIDE the band (so: not refuted -- and not evidence either):")
     rows = []

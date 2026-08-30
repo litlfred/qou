@@ -82,7 +82,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from codata_constants import ame_binding_mev  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402  (exact mpf; NEVER mpf(str(Q)) -- Q is f64)
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(65)
@@ -102,7 +102,7 @@ def main() -> int:
 
     D = ame_binding_mev(1, 2)
     T3, He3, He4 = ame_binding_mev(1, 3), ame_binding_mev(2, 3), ame_binding_mev(2, 4)
-    q = mp.mpf(str(Q))
+    q = +Q_MP
 
     def qint(n):
         return sum(q ** (n - 1 - 2 * k) for k in range(n)) if n > 0 else mp.mpf(0)
