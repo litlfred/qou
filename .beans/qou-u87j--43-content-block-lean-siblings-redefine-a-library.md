@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T07:55:37Z
-updated_at: 2026-08-30T12:04:35Z
+updated_at: 2026-08-30T16:26:54Z
 ---
 
 
@@ -785,3 +785,24 @@ carries three spellings of one quantity (`1 - q_inv` in the ground ring,
 `(q - 1) / q` at `ℝ`, and the generic `QEnergy.hbar := 1 - 1 / q` added by
 the `R_q` fix) — worth a cross-reference if someone is in these files
 anyway, not worth a pass of its own.
+
+
+## 2026-08-30 — PR #6278: the drain's own two regressions, found and fixed
+
+The def/abbrev half of this bean (#6191 hbarQ consolidation, #6257 the last
+three collisions) landed **two live breakages on main**, both from checking
+consumers one level deep and gating on `lean QOU.lean`:
+`Archimedean/MassGapGm.lean` (7 sites) and `BraidKnot/KeystoneMcKayValueMap.lean`
+(19 sites, reached via `open`). Both fixed in #6278, verified against a
+79-module at-risk sweep (2 real, 2 environment gaps, 1 pre-existing timeout,
+74 clean).
+
+The missing guard is beaned separately as `qou-s63a` — it is not part of this
+bean's scope and should not block it.
+
+Also fixed in #6278, in the guards this arc produced: the duplicate-FQN
+ratchet exited 0 without verifying when `--verify` was absent, and neither
+audit understood `private` (the surface audit was calling a private/public
+same-name pair a "hard import error", which it cannot be). Live instance was
+`QOU.BraidKnot.qIntBal`. Recorded as TRAP 8 in
+`.claude/agent-memory/lean-verifier/verification-harness.md`.
