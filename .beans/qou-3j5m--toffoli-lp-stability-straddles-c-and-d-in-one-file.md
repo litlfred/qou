@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T03:29:28Z
+updated_at: 2026-08-30T05:49:49Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -631,3 +631,70 @@ so positivity is what the framework claims, and the honest correction is to
 retire the claim rather than re-tune the test to survive it.
 
 **Content block deliberately NOT edited** pending that call.
+
+
+## 2026-08-30 — I ANSWERED MY OWN BLOCKING QUESTION FROM THE CORPUS, and nearly claimed something false on the way
+
+I asked the owner: positivity or non-vanishing? Before asking again I ran the
+corpus-grep I should have run first. It settles the question, and it caught a
+wrong claim I was one step from making.
+
+### The near-miss, recorded because it is the point
+
+Reading `operator-selection-lp.md` I found the LP's feasibility conditions are
+the net constraint, **Frobenius positivity `Σ_j G_ij x_j ≥ 0`** on the
+Gram-weighted selection vector, and boundedness — none of which mentions a
+transfer-matrix entry. And `toffoli-lp-stability.py` **solves no LP at all**: no
+`linprog`, no selection vector, no net constraint, no dual. I was about to
+conclude *"the stability gate is unconnected to the LP it is named for"*.
+
+**That would have been wrong.** `toffoli-lp-stability-proof.md` states the link
+explicitly:
+
+> *"Positivity of `G·t(q)` therefore reduces to the positivity of the product
+> `P_{7,7}(q)·W_std(q)` with the appropriate sign from `Φ(q)`."*
+
+So there IS a stated reduction from LP feasibility to amplitude positivity. The
+producer not solving an LP is by design — the reduction is what licenses the
+sign test. **Checking the proof block before generalising from the producer is
+what saved this.**
+
+### The question is ANSWERED: positivity
+
+The proof block makes amplitude positivity the LP-feasibility condition and
+says so twice ("all amplitudes of the correct sign"; "The proof stands on the
+two amplitude positivities"). So positivity is what the framework claims, not a
+choice I get to make — my recommendation was right, but it is now settled by
+the corpus rather than by my judgement. **The owner does not need to rule on
+this.**
+
+### But the proof block carries three claims the derivation retires — all measured
+
+**Claim 1: "For q > 1: both P₇₇(q) > 0 and Φ(q) > 0."**
+
+    q            1.1          1.5          2            5
+    P_77 D    +0.6715      +1.9371      +5.4400     +115.75
+    P_76 D    -0.1301      -0.8660      -2.6700      -57.873
+    P_76 C    -0.1193      -0.5167      -0.9167       -2.7333
+
+The derived q-AND is negative for **every** q > 1, in both conventions. FAILS.
+
+**Claim 2: the two positivities "are convention-independent".** `P₇₇` has a
+positive zero in C (`q⋆ = 1/φ² = 0.38197`) and its convention-D numerator
+`q³(q⁴+1)` has **no** positive real root. FAILS.
+
+**Claim 3: the thresholds.** `q⋆` comes from `x²+x−1`, the numerator of the
+convention-C diagonal; `q_Φ ≈ 0.4656` from `x³+x−1`, a factor of Φ, which is
+not in the construction's image. Both derive from retired objects.
+
+### The residual gap — a finding, not a question
+
+The reduction itself is asserted, not derived, and the unspecified part is
+precisely the one that matters here: *"with the appropriate sign from `Φ(q)`"*.
+Nothing in the source says what the appropriate sign IS or why. So even with
+positivity established as the criterion, whether a **negative** target-flip
+amplitude actually breaks `G·t ≥ 0` is not established by the corpus — it is
+the missing step in a reduction the proof block states in one clause.
+
+That is the honest residue, and it belongs in the proof block as an open note
+rather than as a question to the owner.
