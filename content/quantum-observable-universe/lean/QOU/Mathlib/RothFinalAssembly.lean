@@ -772,6 +772,90 @@ theorem not_approximable_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
   rw [hx] at hscaled
   exact not_approximable_of_algebraic α₀ ψ (half_pos hδ) hscaled
 
+/-- **Height form from denominator form.**  The classical statement bounds `|x − p/q|` by a power of
+the *denominator*; everything above is stated in terms of the *height* `max(|p|, q)`.  The two
+differ, and the difference costs a slice of the exponent.
+
+`H ≥ q` always, so `q^{-(2+ε)} ≥ H^{-(2+ε)}` — the height form is the *stronger* hypothesis, and it
+does not follow from the denominator form for free.  What makes it follow is that a rational close
+to a bounded `x` has a bounded numerator: `|p| ≤ (B+1)q`, hence `H ≤ (B+1)q`, and then
+`q^{-(2+ε)} ≤ H^{-(2+δ)}` once `(B+1)^{2+δ} ≤ q^{ε−δ}`.  True for large `q`, and the hypothesis
+supplies unboundedly many.
+
+This is flagged as **R0** in `docs/audits/2026-08-30-roth-arc-ROAST.md`: the gap is benign but it
+had never been written down, and "benign and unwritten" is what this repo's taxonomy exists to
+catch. -/
+theorem approximable_height_of_den {x B : ℝ} (hB0 : 0 ≤ B) (hBx : |x| ≤ B) {ε δ : ℝ}
+    (hδ0 : 0 < δ) (hlt : δ < ε)
+    (h : ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧ |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε))) :
+    ∀ N : ℕ, ∃ κ : ℚ, N ≤ max κ.num.natAbs κ.den ∧
+      |((κ : ℚ) : ℝ) - x| ≤ ((max κ.num.natAbs κ.den : ℕ) : ℝ) ^ (-(2 + δ)) := by
+  intro N
+  have hεd : (0 : ℝ) < ε - δ := by linarith
+  have hC1 : (1 : ℝ) ≤ B + 1 := by linarith
+  have hClog : (0 : ℝ) ≤ Real.log (B + 1) := Real.log_nonneg hC1
+  obtain ⟨N₀, hN₀⟩ :=
+    exists_nat_gt (max (Real.exp ((2 + δ) * Real.log (B + 1) / (ε - δ))) (N : ℝ))
+  obtain ⟨κ, hNκ, hclose⟩ := h N₀
+  refine ⟨κ, ?_, ?_⟩
+  · -- the height is at least the denominator, which is at least `N`
+    have h1 : (N : ℝ) < (N₀ : ℝ) := lt_of_le_of_lt (le_max_right _ _) hN₀
+    have h2 : N ≤ N₀ := by exact_mod_cast le_of_lt h1
+    exact le_trans (le_trans h2 hNκ) (le_max_right _ _)
+  · set qd : ℝ := ((κ.den : ℕ) : ℝ) with hqd_def
+    set Hk : ℝ := ((max κ.num.natAbs κ.den : ℕ) : ℝ) with hHk_def
+    have hqd1 : (1 : ℝ) ≤ qd := by rw [hqd_def]; exact_mod_cast κ.pos
+    have hqd0 : (0 : ℝ) < qd := lt_of_lt_of_le zero_lt_one hqd1
+    have hHk1 : (1 : ℝ) ≤ Hk := by rw [hHk_def]; exact_mod_cast one_le_height κ
+    have hHk0 : (0 : ℝ) < Hk := lt_of_lt_of_le zero_lt_one hHk1
+    -- the denominator is large enough
+    have hqdN : (N₀ : ℝ) ≤ qd := by rw [hqd_def]; exact_mod_cast hNκ
+    have hexp : Real.exp ((2 + δ) * Real.log (B + 1) / (ε - δ)) < qd :=
+      lt_of_lt_of_le (lt_of_le_of_lt (le_max_left _ _) hN₀) hqdN
+    have hlogq : (2 + δ) * Real.log (B + 1) / (ε - δ) < Real.log qd := by
+      have hh := Real.log_lt_log (Real.exp_pos _) hexp
+      rwa [Real.log_exp] at hh
+    have hkey : (2 + δ) * Real.log (B + 1) ≤ (ε - δ) * Real.log qd := by
+      rw [div_lt_iff₀ hεd] at hlogq
+      nlinarith [hlogq]
+    -- `|κ| ≤ B + 1`, hence `|num| ≤ (B+1)·den`, hence `H ≤ (B+1)·den`
+    have hle1 : (qd : ℝ) ^ (-(2 + ε)) ≤ 1 :=
+      Real.rpow_le_one_of_one_le_of_nonpos hqd1 (by linarith)
+    have hκB : |((κ : ℚ) : ℝ)| ≤ B + 1 := by
+      have h3 := abs_sub_abs_le_abs_sub (((κ : ℚ) : ℝ)) x
+      linarith [hclose, hle1, hBx]
+    have hHkle : Hk ≤ (B + 1) * qd := by
+      rw [hHk_def, hqd_def]
+      exact_mod_cast height_le_mul_den hC1 hκB
+    have hlogHk : Real.log Hk ≤ Real.log (B + 1) + Real.log qd := by
+      calc Real.log Hk ≤ Real.log ((B + 1) * qd) := Real.log_le_log hHk0 hHkle
+        _ = Real.log (B + 1) + Real.log qd :=
+            Real.log_mul (by linarith) (ne_of_gt hqd0)
+    -- assemble, in logarithms
+    refine le_trans hclose ?_
+    rw [Real.rpow_def_of_pos hqd0, Real.rpow_def_of_pos hHk0]
+    refine Real.exp_le_exp.mpr ?_
+    have hneg : (-(2 + δ) : ℝ) ≤ 0 := by linarith
+    have hstep : Real.log Hk * (-(2 + δ)) ≥ (Real.log (B + 1) + Real.log qd) * (-(2 + δ)) :=
+      mul_le_mul_of_nonpos_right hlogHk hneg
+    nlinarith [hstep, hkey]
+
+/-- **Roth in the classical denominator form**, for anything with an integral multiple in `𝓞 K`.
+
+Composes the two conversions: `approximable_height_of_den` moves from denominators to heights at
+the cost of an arbitrarily small slice of the exponent, and `not_approximable_of_nsmul_eq` moves
+from `x` to `n·x` at the cost of another.  Both slices are free because the conclusion quantifies
+over all `ε > 0`, so each is taken at `ε/2`. -/
+theorem not_approximable_den_of_nsmul_eq {K : Type*} [Field K] [NumberField K]
+    (α₀ : 𝓞 K) (ψ : K →+* ℝ) {n : ℕ} (hn : 0 < n) {x : ℝ}
+    (hx : (n : ℝ) * x = ψ ((algebraMap (𝓞 K) K) α₀))
+    {B : ℝ} (hB0 : 0 ≤ B) (hBx : |x| ≤ B) {ε : ℝ} (hε : 0 < ε) :
+    ¬ ∀ N : ℕ, ∃ κ : ℚ, N ≤ κ.den ∧
+        |((κ : ℚ) : ℝ) - x| ≤ ((κ.den : ℕ) : ℝ) ^ (-(2 + ε)) := by
+  intro happrox
+  exact not_approximable_of_nsmul_eq α₀ ψ hn hx (half_pos hε)
+    (approximable_height_of_den hB0 hBx (half_pos hε) (by linarith) happrox)
+
 end Scaling
 
 end MvPolynomial
