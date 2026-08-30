@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T13:53:36Z
+updated_at: 2026-08-30T13:57:32Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -3253,3 +3253,64 @@ ladder one (`alpha − b*hbar^2/2`).
 ### Not claimed
 
 No `c_k`, no replacement phase. Steps 7 and 8 untouched. Scope (a).
+
+
+
+## The un-removable defect IS `h^2/2` — and it is built from the ladder's own `b`
+
+Identifies the u-independent piece the previous entry left unnamed. Probe:
+`computations/qbeta/qbeta_d_bar_defect_is_h_squared_probe.py`, 8/8, sympy exact.
+
+    bar(alpha_D) + alpha_D  =  h^2/2  =  ([3]_{q^2} - 3)/2  =  ((b*[2]_q)^2 - 3)/2
+
+`alpha_C` has NO such defect (it is bar-odd), so this is D-specific.
+
+### The link
+
+The Hoefsmit `b` — which defines the ladder variable `u = b*hbar_q^2` — is
+`sqrt([3]_{q^2})/[2]_q` (established earlier in this arc). So
+`(b*[2]_q)^2 = [3]_{q^2}`, and the defect is `((b*[2]_q)^2 - 3)/2`.
+
+**The same q^2-integer governs both the ladder's expansion variable and the
+defect the ladder cannot remove.**
+
+### Why that matters
+
+The order result says the defect does not live in the series. One might then
+expect it to be something external to the construction. It is not: it is
+`h^2/2`, the most elementary invariant in the algebra, expressible in the
+ladder's own `b`. So D does not introduce an alien obstruction — the same
+ingredient enters at a place the correction series cannot reach. That is a
+sharper account of why the series is the wrong instrument than "the defect does
+not live in the series": it says WHICH object it is and where it comes from.
+
+### A notation trap, recorded because it caught me
+
+AGENTS.md writes `h_A^2 = [3]_q - 3`. With the symmetric convention
+`[3]_x = x + 1 + 1/x` that is **FALSE at argument q** (giving `q - 2 + 1/q`) and
+**TRUE at argument q^2**. My first test used the literal argument `q` and
+returned a false negative on the corpus's own identity. The corpus is right; the
+argument is `q^2`. The probe asserts both the true and the false form so the
+trap is on record rather than re-discovered.
+
+### Not claimed
+
+A repair, a replacement phase, or any `c_k`. Naming an obstruction is not
+removing it. Steps 7 and 8 untouched. Scope (a).
+
+### Where the arc stands — six entries
+
+  1. (D1) Lean-proved — `alpha` is DERIVED, not a bare def.
+  2. The D offset is the BAR-MIDPOINT; one rule gives C's `1` and D's `cosh(2t)`.
+  3. The form is MULTIPLICATIVE — resum `log Vhat`, not `Vhat`.
+  4. `u` and `Vhat` carry opposite bar-weights; `u*Vhat` is bar-invariant.
+  5. D's bar-defect is u-INDEPENDENT — the correction series cannot reach it.
+     (Includes two recorded wrong turns of mine.)
+  6. That defect IS `h^2/2 = ((b*[2]_q)^2 - 3)/2` — built from the ladder's own `b`.
+
+None proposes a `c_k`; all are scope (a). Taken together they say: the D-frame
+ladder fails not because a coefficient is wrong but because the correction
+series is the wrong instrument for an obstruction that is `h^2/2` and sits
+outside it. The next question is whether the multiplicative/log form (3) plus
+the invariant `u*Vhat` (4) can absorb `h^2/2` — i.e. whether an instrument
+exists that reaches it.
