@@ -216,4 +216,41 @@ theorem eigenvalues_conj_closed (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin
   exact ⟨j, hj.trans (weil_partner_eq_conj Z.q (Z.eigenvalues i)
     (Z.eigenvalues_ne_zero i) (eigenvalue_norm_sq_eq Z i))⟩
 
+/-! ## The Frobenius determinant
+
+`|det(Fr_q)| = q^g`, here `q^4` since Bring's curve has genus 4. Two forms: over
+the eigenvalue family, and over `charPoly` — the latter finally consuming
+`charPoly_roots`, a structure field that until now nothing used.
+
+This is the third consequence of the same two inputs, after the magnitude bound
+and conjugation-closure, and it is the one that pins the *degree*: the product of
+eight eigenvalues each of modulus `q^{1/2}` is forced to modulus `q^4`. -/
+
+/-- `‖∏ αᵢ‖ = q^4` — the Frobenius determinant has modulus `q^g`, `g = 4`. -/
+theorem norm_prod_eigenvalues (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ‖∏ i : Fin 8, Z.eigenvalues i‖ = Z.q ^ (4 : ℕ) := by
+  have hq : (0 : ℝ) < Z.q := Z.q_pos
+  rw [norm_prod]
+  simp only [hasse_weil_bound Z]
+  rw [Finset.prod_const, Finset.card_univ, Fintype.card_fin,
+    ← Real.rpow_natCast (Z.q ^ (1 / 2 : ℝ)) 8, ← Real.rpow_mul (le_of_lt hq),
+    ← Real.rpow_natCast Z.q 4]
+  norm_num
+
+/-- The same, read off the characteristic polynomial: `‖P̃(0)‖ = q^4`.
+
+    Uses `charPoly_roots`, i.e. `P̃ = ∏ (X − αᵢ)`. Evaluating at `0` gives
+    `∏ (−αᵢ)`, whose norm is the product of the norms. -/
+theorem norm_charPoly_eval_zero (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ‖Z.charPoly.eval 0‖ = Z.q ^ (4 : ℕ) := by
+  have hq : (0 : ℝ) < Z.q := Z.q_pos
+  rw [Z.charPoly_roots, Polynomial.eval_prod]
+  simp only [Polynomial.eval_sub, Polynomial.eval_X, Polynomial.eval_C, zero_sub]
+  rw [norm_prod]
+  simp only [norm_neg, hasse_weil_bound Z]
+  rw [Finset.prod_const, Finset.card_univ, Fintype.card_fin,
+    ← Real.rpow_natCast (Z.q ^ (1 / 2 : ℝ)) 8, ← Real.rpow_mul (le_of_lt hq),
+    ← Real.rpow_natCast Z.q 4]
+  norm_num
+
 end QOU.AlgebraicSubstrate
