@@ -36,12 +36,28 @@ Float64 is sufficient: W_λ ~ O(0.1), compared to the canonical table at 5 sig f
 import json
 import os
 
+import mpmath as mp
+
+# 50 dps: the pin below is a 50-digit value and the q-arithmetic here is a
+# product of q-integers, so the working precision must carry it.
+mp.mp.dps = 50
+
 # substrate q_0 matching the #2603 witness. This is a MUON-family value (the
 # CODATA-2018 closed form B), not a proton one — it read "proton-anchored
-# re-pin" until 2026-08-29 and sits 11.5343 ppb from the proton pin. Label
-# corrected, value untouched (bean qou-fd0e). Also a float64 literal, which
-# the no-float64 directive forbids; changing it would change the compute.
-Q0 = 1.1099785955541805
+# re-pin" until 2026-08-29 and sits 11.5343 ppb from the proton pin (bean
+# qou-fd0e).
+#
+# Was the float64 literal `1.1099785955541805` until 2026-08-30 (bean qou-840k):
+# that is this same value truncated at 17 digits. Now the full 50-digit B string
+# as an mpf, so the q-integer products below no longer run in float64. This
+# probe is pure Python — no numpy, no scipy — so unlike the numpy probes it is
+# genuinely fixable rather than f64 by construction.
+#
+# The VINTAGE is a separate open question and is NOT settled here: the canonical
+# pin moved A -> C on 2026-08-29, and this is B. It is pinned to reproduce the
+# #2603 witness, so changing it would break the very cross-check this script
+# performs. Re-pinning is a decision for whoever re-runs #2603.
+Q0 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
 
 # WRT false-theta colour components Ψ̃₃₀^(a)(1/q₀), from #2603 witness
 # (computations/keystone-wrt-color-schurweyl.witness.json, 50 dps; 14 sig figs here).
@@ -63,7 +79,7 @@ def q_int(k, q):
 
 
 def q_factorial(n, q):
-    p = 1.0
+    p = mp.mpf(1)
     for k in range(1, n + 1):
         p *= q_int(k, q)
     return p
@@ -90,7 +106,7 @@ def hook_lengths(lam):
 def q_dim(lam, q):
     """q-hook-length quantum dimension d_q(λ) = [n]_q! / ∏_cells [h(c)]_q."""
     n = sum(lam)
-    denom = 1.0
+    denom = mp.mpf(1)
     for h in hook_lengths(lam):
         denom *= q_int(h, q)
     return q_factorial(n, q) / denom
@@ -104,7 +120,7 @@ def main():
 
     print("q-Plancherel measure  W_λ = d_q(λ)²/[5]_q!  (cross-check vs canonical table):")
     W = {}
-    max_err = 0.0
+    max_err = mp.mpf(0)
     for lam in PARTITIONS_5:
         d = q_dim(lam, q)
         w = d * d / fact
