@@ -404,17 +404,17 @@ contemporaneous request"* (row 2, 10m28s) and reads as support for the
 push-trigger hypothesis. This session ran the same configuration and got the
 opposite result at more than twice the observation window.
 
-| PR | head pushed | `request_copilot_review` | merged | reviews, last checked 10:40Z |
+| PR | head pushed | `request_copilot_review` | merged | reviews, last checked 10:46Z |
 |---|---|---|---|---|
-| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 31 min |
-| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 29 min |
-| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ~5 min (weak) |
+| #6162 | 10:08:42Z | **~10:09Z** | 10:10:45Z | **none** — window ≥ 37 min |
+| #6168 | 10:10:53Z | none | 10:12:34Z | **none** — window ≥ 35 min |
+| #6174 | 10:35:45Z | none | 10:37:33Z | **none** — window ≥ 10 min (weak) |
 
 All three `get_reviews` → `[]`, re-checked after each merge.
 
 **#6168 is the discriminating row.** Push with NO request, 29 minutes observed,
 no review. That is the same configuration as row 2 above and the opposite
-outcome, at ~3x its 10m28s latency. So **a push does not reliably trigger a
+outcome, at ~3.4x its 10m28s latency. So **a push does not reliably trigger a
 review** — row 2 shows it *can* happen, this shows it does not always.
 
 **#6162 is a clean negative for the request-trigger at 31 minutes**, which is
@@ -434,8 +434,8 @@ here is not the merge — I kept reading `get_reviews` for half an hour after.
 - **Not a latency measurement.** These are censored observations (no event), so
   they bound latency from below and cannot be averaged with row 2's 10m28s or
   the audit's 3–4 min.
-- **#6174's ~5 min window is too short to count.** Included for completeness,
-  not as evidence.
+- **#6174's ~10 min window is still too short to count.** It only just reaches
+  row 2's own 10m28s, so it cannot discriminate. Included for completeness.
 
 ### The one operational thing that IS true under every candidate
 
