@@ -407,3 +407,76 @@ Two guards recorded while doing this, both from the ingest agents:
 Transcription checked at 120 dps against a root polished to residual 1.9e-121:
 `y₀`, `ζ`, `ω` and `κ₁` all reproduce Ohtsuki's printed digits, and three
 independent routes to `Vol(5₂)` agree to 121 digits.
+
+## Gap 3 — ✅ **CLOSED 2026-08-30**, end to end, sorry-free
+
+And closed for a triangulation, not just a tetrahedron. Six new declarations,
+all `#print axioms`-clean (`propext`, `Classical.choice`, `Quot.sound` only).
+
+**The gap, measured rather than asserted.** This container has a working Lean
+setup — 7268 Mathlib oleans plus 1926 QOU oleans restored from the
+`lake-cache/qou-v4-24-0` orphan branch, driven by `scripts/lean-direct-cone.sh`
+— and a Mathlib source checkout at the pinned rev `f897ebcf`. So the survey
+below is grep over the actual pinned source:
+
+| wanted | in Mathlib at `f897ebcf`? |
+|---|---|
+| `strictConcaveOn_of_deriv2_neg` | **yes**, but 1-D only (interval in ℝ) |
+| any multi-dim convexity-from-second-derivative | **no** — `StrictConvexOn.*fderiv`, `ConvexOn_of_hasFDeriv`: zero hits |
+| `ConvexOn.comp_affineMap` / `ConcaveOn.comp_affineMap` | **yes** |
+| the **strict** `comp_affineMap` | **no** |
+| `Finset`-indexed sum of concave functions | **no** — `ConvexOn.sum`, `concaveOn_sum`: zero hits |
+| Hall / max-flow–min-cut | **yes**, `Finset.all_card_le_biUnion_card_iff_exists_injective` |
+
+**What was actually missing was one sentence.** `QOU.Knot.RivinConcavity` already
+proved concavity along a *line*, and its docstring said "strict concavity on a
+convex set is exactly strict concavity along every segment". True, and asserted
+in prose. `QOU.MathlibExt.strictConcaveOn_of_segments` is that sentence as a
+theorem, and `StrictConcaveOn.restrict_segment` is its converse — the two
+together make it an iff.
+
+**Gap 3's framing overstated the cost, exactly as Gap 4's did.** It was recorded
+as wanting "negative-definite Hessian on the tangent space of an affine
+constraint", which suggests affine subspaces, tangent spaces and restricted
+Hessians. None is needed: *every segment between two points of `S` already has
+its direction in the directions of `S`*, so quantifying over pairs in `S` **is**
+quantifying over tangent directions. For `S ⊆ {Σθ = π}` the direction
+automatically satisfies `u+v+w = 0` — precisely the tangency `cot_quadratic_pos`
+consumes. The general lemma is nine lines and mentions no geometry.
+
+That is now twice this bean has costed a gap by the price of the hard theorem
+rather than the price of stating it minimally and deriving the rest. Worth
+treating as the bean's standing bias, not a coincidence.
+
+**Delivered**
+
+* `QOU/MathlibExt/StrictConcaveOnSegments.lean` — `strictConcaveOn_of_segments`,
+  `strictConcaveOn_of_deriv2_neg_along_segments`, `StrictConcaveOn.comp_affineMap`
+  (strict, injective), `StrictConcaveOn.restrict_segment`.
+* `QOU/MathlibExt/ConcaveOnSum.lean` — `ConcaveOn.sum`, `ConvexOn.sum`,
+  `StrictConcaveOn.sum_of_mem`. The last takes **one** strict summand and lets
+  the rest be concave; that asymmetry is forced, because a per-tetrahedron
+  volume read on the whole polytope is constant in the other tetrahedra and so
+  never strictly concave there.
+* `QOU/Knot/RivinConcavitySimplex.lean` — `strictConcaveOn_tetVol` (one ideal
+  tetrahedron, on the simplex in ℝ³) and `strictConcaveOn_totalVol` (a whole
+  triangulation, on any convex tetrahedron-wise-admissible set). The gluing
+  equations never appear: they are linear, so whatever polytope they cut out is
+  convex, and concavity does not care which convex set it is handed.
+
+**Also fixed while here:** `BlochWignerSymmetry.lean` and
+`FiveTwoOhtsukiBridge.lean` were landed unverified last session and had two real
+errors — `field_simp` matches non-vanishing hypotheses *syntactically*, so
+`z − 1 ≠ 0` does not discharge a `(1 − z)⁻¹`; and `Complex.abs` does not exist at
+this rev. 11 of their 12 declarations are now confirmed sorry-free, the
+exception being `volume_conjecture_five_two`, which routes through the still-open
+part (C).
+
+**Not done, and why.** The corpus's `lean-axiom-guard.py` cannot render a verdict
+here: ~120 registry modules have missing or stale oleans, all pre-existing
+(SchurWeyl, Torsion, Schensted — none touched by this work) because the restored
+cache predates HEAD. Rebuilding them is unrelated to this change.
+
+**Ordering update.** ~~Gap 2~~ → ~~Gap 3~~ → Gap 1 (upstream `Cl₂`/`Λ`; the corpus
+already has them, so this is a contribution, not a blocker) → Gap 4 → Gap 5.
+All five new `MathlibExt` lemmas are written to be upstreamable unchanged.

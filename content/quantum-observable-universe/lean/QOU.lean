@@ -1301,3 +1301,18 @@ import QOU.Archimedean.ParticleKnots
 -- either, since the old file type-checked fine; but an uncompiled module is one
 -- nobody has reason to open.  Wiring it in at least puts it in the build.
 import QOU.Observations.centered_hecke_variance_positive
+
+-- Rivin concavity, and the convexity infrastructure it needed (bean `qou-mlgp`
+-- Gap 3).  `RivinConcavity` was already wired in and proved concavity along a
+-- LINE; the two `MathlibExt` modules supply the segment-wise characterisation
+-- and the `Finset`-sum lemmas that Mathlib lacks, and `RivinConcavitySimplex`
+-- uses them to reach the simplex and then a whole triangulation.
+import QOU.MathlibExt.StrictConcaveOnSegments
+import QOU.MathlibExt.ConcaveOnSum
+import QOU.Knot.RivinConcavitySimplex
+
+-- The `5₂` volume-conjecture shrink.  `BlochWignerLobachevsky` is imported
+-- transitively by the two below; it was not in this list before, so `Lob`,
+-- `Cl_2` and the tetrahedron angles were never built from the root.
+import QOU.Archimedean.BlochWignerSymmetry
+import QOU.Archimedean.FiveTwoOhtsukiBridge
