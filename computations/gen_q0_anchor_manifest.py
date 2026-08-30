@@ -23,7 +23,28 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-MUON = "1.109978595557"
+# The muon layer has had THREE vintages and this generator saw only the first.
+# Matching one of them is not "the muon prefix", it is a snapshot:
+#
+#   A   1.109978595557...   the original pin, superseded 2026-08-29
+#   A'  1.109978595554...   the CODATA-2018 closed form
+#   C   1.109978595642...   the CURRENT pin, served by
+#                           q-pinning-50-digit.witness.json
+#
+# A and C diverge at the 10th significant figure, so the old single prefix
+# `"1.109978595557"` does not match C. The consequence was not cosmetic: a
+# producer correctly migrated to the CURRENT muon pin matched neither MUON nor
+# PROTON, fell into the "neither: no q0 field — omit" branch below, dropped out
+# of the manifest entirely, and was then defaulted to PROTON at runtime by
+# `resolve_q0_anchor`. **Migrating a producer to the current muon pin silently
+# re-declared it proton.** The tooling punished conformance.
+#
+# Found while triaging the qou-0hnz A-literal population (2026-08-30).
+MUON_VINTAGES = (
+    "1.109978595557",      # A  (superseded)
+    "1.109978595554",      # A' (CODATA-2018 closed form)
+    "1.109978595642",      # C  (current)
+)
 PROTON = "1.10997858275"
 
 
@@ -70,7 +91,8 @@ def main() -> int:
             continue
         txt = subprocess.run(["git", "show", f"HEAD:{w}"], cwd=ROOT,
                              capture_output=True, text=True).stdout
-        has_m, has_p = (MUON in txt), (PROTON in txt)
+        has_m = any(v in txt for v in MUON_VINTAGES)
+        has_p = PROTON in txt
         if has_m and not has_p:
             ideal[prod] = w
         elif has_p and not has_m:

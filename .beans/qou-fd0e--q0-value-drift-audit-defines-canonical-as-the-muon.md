@@ -970,3 +970,69 @@ SPELLED, not what it DOES" failure this campaign keeps hitting, this time in my
 own triage. **No migration was performed on the strength of it.** The agents were
 told to be skeptical for exactly this reason, and their verdicts need the same
 treatment when they land.
+
+
+## 2026-08-30 — agent triage of the 169, and a defect that BLOCKS the migration
+
+Three of four batches returned (127 of 169; batch 3 still running).
+
+    CROSS-ANCHOR (hands off)   57
+    MUON-INTENT                27
+    PROTON-INTENT               7
+    UNCLEAR                    36
+
+**45% is CROSS-ANCHOR.** Nearly half the population holds pin A as the *muon arm
+of a deliberate two-anchor comparison* — `Q = {"muon": …, "proton": …}`,
+`dq = Q_PROTON - Q_MUON`, per-anchor result tables. Migrating any of them
+destroys one side of the experiment. Two files say so in their own headers:
+*"its cross-anchor comparison is the point, so it must NOT be migrated."*
+
+**Only 7 are PROTON-INTENT** — the case a naive "A is superseded, move it"
+sweep would have assumed for all 189.
+
+### The blocker: the manifest generator cannot see the current muon pin
+
+`computations/gen_q0_anchor_manifest.py:26` classified by
+
+    MUON   = "1.109978595557"     <- pin A
+    PROTON = "1.10997858275"
+
+A and C diverge at the **10th** significant figure, so **C does not match**.
+Verified directly: `C.startswith("1.109978595557")` is `False`.
+
+The consequence is not cosmetic. A producer correctly migrated to the CURRENT
+muon pin matches neither prefix, falls into the generator's *"neither: no q0
+field — omit"* branch, drops out of the manifest entirely, and is then defaulted
+to **proton** by `resolve_q0_anchor`. **Migrating a producer to the current muon
+pin silently re-declared it proton.** The tooling punished conformance, and it
+would have silently mis-declared all 27 MUON-INTENT producers the moment they
+were migrated.
+
+Fixed: the generator now matches all three muon vintages (A, A', C) and says why
+in-line. Verified all three classify muon; C did not before.
+
+**Batch 1 flagged the same A-only blind spot in
+`audits/q0_witness_read_dataflow_audit.py:121` and
+`q0_cross_layer_fallback_scan.py:47`**, with only `witness_regen_classify.py:155`
+and `q0_muon_population_partition.py:49` handling C. Those are not fixed here.
+
+### My worklist has false positives — the agents found five classes
+
+1. **Detector prefixes counted as pins.** `q0_anchor_payload_recovery.py:86`
+   `MUON_PREFIX = "1.10997859555"` is a 13-char *pattern*, not a q0. Verified.
+2. **A' counted as A.** `1.1099785955541805` is a distinct vintage sitting
+   **0.0028 ppb** from A — inside my 0.01 ppb tolerance, so it was absorbed.
+3. **Garbled A.** `he4_binding_k_averaged_interface_probe.py:67` is
+   `…5573347117485…` where A is `…5573347198997…` — diverges at digit 18.
+   Verified by eye against the canonical string.
+4. **Dead assignments and unreachable defaults.** `a4_interface_kl_subpath_
+   closure.py:27` is never referenced; several `.get("q0", A)` defaults never
+   fire because the upstream witness supplies proton.
+5. **Comment-only occurrences** in files whose operative pin is something else.
+
+### And one the detector CANNOT see
+
+`qbeta/qbeta_h4_route_a_gate_probe.py:171` carries A as
+`sp.Rational(11099785955573347, 10000000000000000)`. A decimal-literal scan is
+blind to it, and it is the only *operative* A-vintage value in that file while
+both decimal occurrences are dead. There may be more of these.
