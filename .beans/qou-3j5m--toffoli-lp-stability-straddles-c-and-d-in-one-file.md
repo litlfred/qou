@@ -1,11 +1,11 @@
 ---
 # qou-3j5m
 title: 'toffoli-lp-stability straddles C and D in one file: D Gram, C-frame Phi and P_77 feeding the witness'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T03:17:59Z
+updated_at: 2026-08-30T03:29:28Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -562,3 +562,72 @@ The content edits: `toffoli-transfer-matrix.md` items 1-4, and
 `toffoli-q-and.md`, whose entire factor-anatomy section describes Φ's factors
 `(q^{3/2}+q^{1/2}-1)` and `(q^{3/2}+q+1)` — including the q ≈ 0.466 sign-reversal
 threshold, which belongs to a polynomial the construction does not produce.
+
+
+## REOPENED 2026-08-30 — the straddle this bean OPENED on is now fixed, and it flips a headline claim
+
+The bean's original scope — `computations/toffoli-lp-stability.py` computing its
+Gram in convention **D** while `toffoli_diagonal()` and `q_and_amplitude()` were
+hard-coded convention-**C** closed forms, both feeding `physical_q0_stable` —
+was never fixed by the derivation tranche. Fixed now, and the result is not
+cosmetic.
+
+**Migrated:**
+* `toffoli_diagonal` → `P₇₇^D = q³(q⁴+1)/(q²+1)²`. A straight frame change.
+* `q_and_amplitude` → the **derived** `P₇₆^D = −(q−1)(q+1)(q⁶+q⁴+2q²+1)/(2q(q²+1)²)`.
+  NOT a frame change: the published Φ is not in the construction's image.
+* Both C forms retained as `*_HISTORICAL`, unwired, with the reason.
+
+**`physical_q0_stable` now reports False, and that is the honest answer.**
+
+    P_77 C (published)   +0.5514        P_77 D (derived)   +0.6912
+    Phi  C (published)   +0.0495
+    P_76 C (derived)     -0.1306        P_76 D (derived)   -0.1438
+
+The block claims: *"P₇₇(q₀) ≈ 0.5514, Φ(q₀) ≈ 0.0495. **Both are strictly
+positive.** The q-Toffoli is LP-stable at the physical substrate value."* The
+positivity half fails.
+
+**And it is NOT a convention artefact.** The derived q-AND is negative at q₀ in
+convention **C** as well as D. The failure follows from replacing Φ with the
+amplitude the construction actually produces, not from the frame change. A
+migration alone would have left the claim standing.
+
+**Both stability thresholds also vanish.** `stable_regime_lp` was "q > q⋆" and
+`stable_regime_physical` was "(q⋆, q_Φ) ∪ (1, ∞)". Under the derived forms
+`P₇₇^D` is strictly positive for **all** q > 0 (no q⋆ to be above), and the
+derived q-AND's sextic `q⁶+q⁴+2q²+1` has **no positive real root** (no q_Φ) — so
+its only sign change on q > 0 is at q = 1. Conclusions rewritten to what is
+measured.
+
+## THE DECISION, and it is the owner's
+
+**Is positivity the right LP-stability criterion for the target-flip
+amplitude, or is non-vanishing?**
+
+* **What it means.** The gate tests `P₇₇(q₀) > 0 AND q_AND(q₀) > 0`. The
+  diagonal passes. The q-AND is a *transition* amplitude; whether its sign
+  carries physical meaning, or only its magnitude, is a modelling question the
+  producer cannot settle. If non-vanishing is the criterion, the q-Toffoli is
+  stable at q₀ after all (|P₇₆| = 0.1438 ≠ 0) and only the *wording* of the
+  claim needs correcting.
+* **What it costs.** Positivity: rewrite item 4 of `prop:toffoli-lp-stability`
+  to its negation, and revisit item 1's "all Hecke amplitudes carry the correct
+  sign". Non-vanishing: a one-line criterion change plus a corrected sentence.
+* **What it risks.** Choosing non-vanishing *because it keeps the claim green*
+  is exactly the move the anti-fit discipline forbids; it needs an independent
+  reason. Choosing positivity retires a published stability result.
+* **What it commits to.** Either way the block's quoted numbers (0.5514,
+  0.0495) go — the first is C-frame, the second is not an object of the
+  construction.
+* **Default if nothing is done.** The witness reports `physical_q0_stable:
+  False` with the criterion recorded beside it, and the content block still
+  claims stability. That inconsistency is live and visible, which is better
+  than a silently-weakened gate, but it should not stand for long.
+
+**My judgement, not a finding:** I would NOT weaken the criterion. The block
+states positivity as the LP-feasibility condition in item 1 as well as item 4,
+so positivity is what the framework claims, and the honest correction is to
+retire the claim rather than re-tune the test to survive it.
+
+**Content block deliberately NOT edited** pending that call.
