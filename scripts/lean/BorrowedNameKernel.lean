@@ -223,12 +223,30 @@ def substantiveExternal (env : Environment) (self : Name) (e : Expr) : Array Nam
     inputs, and that is a reading, not a computation."*  Two attempts to make it
     a computation have now failed, for the same measured reason.
 
-    The one candidate NOT yet excluded is the semantic question asked directly:
-    whether the projected field's instantiated type IS the conclusion.  Note it
-    is not simply `isDefEq fieldType conclusion` ‚Äî `q_hecke_eigenvalue` projects
+    CANDIDATE 3, and a correction to my own first draft of this note.  I wrote
+    here that the direct semantic question ‚Äî "is the projected field's type the
+    conclusion?" ‚Äî was NOT YET ATTEMPTED.  That was written without grepping the
+    corpus, in a note about measurement discipline.  It is attempted:
+    `scripts/lean-self-assuming-audit.py` Rule 2 ("the proof projects a class
+    field whose DECLARED TYPE is the conclusion") matches
+    `norm(fieldType) == conclusion` textually, and has been in the tree since
+    bean `qou-q407`.
+
+    That is the `isDefEq fieldType conclusion` variant this note had already
+    ruled out on the grounds that `q_hecke_eigenvalue` projects
     `‚àÄ a b, a.sp = b.sp ‚Üí ‚Ä¶ ‚Üí a = b` and applies it, so the types differ while
-    the declaration is still degenerate.  Bean `qou-qf8t`.  Do NOT threshold
-    either counter here. -/
+    the declaration is still degenerate.  MEASURED against the ledger, the
+    ruling-out is right and the variant is worse than doing nothing:
+
+        flags 14 corpus-wide      genuine  5, legit 9
+        precision                 36 %     vs an 85 % base rate (112/132 genuine)
+        recall                     4 %     (5 of the 112 genuine already adjudicated)
+
+    So all THREE structural candidates now measure at or below baseline, by
+    three different mechanisms.  What remains genuinely unattempted is the
+    narrower shape this note proposed instead: the projection is applied only to
+    BOUND VARIABLES and their projections, i.e. the proof introduces no term of
+    its own.  Bean `qou-qf8t`.  Do NOT threshold any counter here. -/
 def localProjCount (env : Environment) (self : Name) (v : Expr) : Nat :=
   ((localConsts env self v).filter (isFieldProjection env)).toList.eraseDups.length
 
