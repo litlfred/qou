@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-08-30T14:05:02Z
+updated_at: 2026-08-30T14:30:58Z
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
@@ -208,3 +208,43 @@ above. G.t is a 6-vector over the Hecke NF basis; P_77/P_76 are entries of an
 8x8 matrix indexed by strand-type orderings. A correct reduction still needs a
 map between them, and none is recorded. The sign result narrows WHICH map
 could work; it does not supply one.
+
+
+## ALL ARC ASSERTIONS NOW LEAN-PROVED 2026-08-30
+
+Owner asked for every assertion to be Lean-proved. Eleven new sorry-free
+theorems in the block's own sibling, all axioms [propext, Classical.choice,
+Quot.sound], file has 0 sorries:
+
+  toffoliDiagonal_pos              P_77 > 0 on q > 0 (no positive root)
+  toffoliP66_pos                   P_66 > 0 on q > 0
+  toffoliConeCoord_pos_iff         hbar > 0 <-> q > 1
+  toffoliConeCoord_eq_zero_iff     hbar = 0 <-> q = 1
+  toffoliFlip_eq_zero_iff          P_76 = 0 <-> q = 1
+  toffoliFlip_neg_of_one_lt        P_76 < 0 on q > 1  (substrate side)
+  toffoliFlip_pos_of_lt_one        P_76 > 0 on 0 < q < 1
+  toffoli_antisymmetry_defect      P_67 + P_76 = q(q-1)^2(q+1)^2/(2(q^2+1))
+  toffoli_not_antisymmetric        P_67 != -P_76 for q > 0, q != 1
+  wStd_pos                         W_std > 0
+  toffoliDiagonal_mul_wStd_pos     P_77 * W_std > 0
+
+joining the three already proved (toffoliSextic_pos, toffoliFlipAmplitude_eq,
+toffoliFlip_mul_coneCoord_nonpos). Fourteen total.
+
+THE ANTISYMMETRY DEFECT IS EXACT, which is stronger than the "it fails" the
+blocks asserted: P_67 + P_76 = q(q-1)^2(q+1)^2/(2(q^2+1)), vanishing on q > 0
+only at q = 1. So "reversing the crossing negates it" is false everywhere
+except the classical limit, and the size of the failure is now a closed form.
+
+Symbolic cross-check computations/probes/toffoli_amplitude_sign_claims.py, 9/9,
+exact rational arithmetic, one row per Lean theorem.
+
+ONE LEMMA-NAME TRAP for the next agent: `div_lt_iff` does NOT resolve in this
+Mathlib pin (unknown identifier). toffoliConeCoord_pos_iff is written without
+it -- multiply through by q and by 1/q explicitly -- which is robust to the
+rename.
+
+REMAINING OPEN in this bean, unchanged: the index-space mismatch. G.t is a
+6-vector over the Hecke NF basis; P_77/P_76 are entries of an 8x8 matrix
+indexed by strand-type orderings. A correct reduction still needs a map, and
+none is recorded. Tracked forward as the next tranche.

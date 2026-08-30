@@ -232,6 +232,155 @@ theorem toffoliFlip_mul_coneCoord_nonpos (q : ℝ) (hq : 0 < q) :
   nlinarith [sq_nonneg (toffoliConeCoord q), hS,
              mul_nonneg (le_of_lt hS) (sq_nonneg (toffoliConeCoord q))]
 
+/-!
+## Every sign and zero claim of the convention-D Toffoli arc, proved
+
+The blocks of this arc assert a family of sign and zero facts about the four
+derived convention-D amplitudes.  Each is discharged below, so nothing in the
+arc rests on a numerical evaluation at a single anchor.
+
+| claim | theorem |
+|---|---|
+| `P₇₇` strictly positive on `q > 0`, no positive root | `toffoliDiagonal_pos` |
+| `P₆₆` strictly positive on `q > 0` | `toffoliP66_pos` |
+| `P₇₆`'s only positive zero is `q = 1` | `toffoliFlip_eq_zero_iff` |
+| `P₇₆ < 0` on `q > 1` (the substrate side) | `toffoliFlip_neg_of_one_lt` |
+| `P₇₆ > 0` on `0 < q < 1` | `toffoliFlip_pos_of_lt_one` |
+| the flip channel is **not** antisymmetric | `toffoli_not_antisymmetric` |
+| `W_std > 0`, and `P₇₇·W_std > 0` | `wStd_pos`, `toffoliDiagonal_mul_wStd_pos` |
+
+Symbolic cross-check of the same seven:
+`computations/probes/toffoli_amplitude_sign_claims.py`.
+-/
+
+/-- The convention-D diagonal `P₇₇ = q³(q⁴+1)/(q²+1)²`. -/
+noncomputable def toffoliDiagonal (q : ℝ) : ℝ :=
+  q ^ 3 * (q ^ 4 + 1) / (q ^ 2 + 1) ^ 2
+
+/-- The convention-D even-channel diagonal `P₆₆`. -/
+noncomputable def toffoliP66 (q : ℝ) : ℝ :=
+  (q ^ 4 + 1) * (q ^ 4 + q ^ 2 + 2) / (4 * q * (q ^ 2 + 1) ^ 2)
+
+/-- The convention-D reverse-flip amplitude `P₆₇`. -/
+noncomputable def toffoliReverseFlip (q : ℝ) : ℝ :=
+  (q - 1) * (q + 1) * (2 * q ^ 6 + q ^ 4 + q ^ 2 + 1) / (2 * q * (q ^ 2 + 1) ^ 2)
+
+/-- The Wedderburn weight of the 2-dimensional standard representation. -/
+noncomputable def wStd (q : ℝ) : ℝ := (q ^ 2 + 1) ^ 2 / (q ^ 4 + 4 * q ^ 2 + 1)
+
+/-- **`P₇₇` has no positive root.** Strictly positive for every `q > 0`, so the
+    golden-ratio threshold `q⋆` of the excised convention C has no analogue. -/
+theorem toffoliDiagonal_pos {q : ℝ} (hq : 0 < q) : 0 < toffoliDiagonal q := by
+  unfold toffoliDiagonal; positivity
+
+/-- **`P₆₆` is strictly positive** for every `q > 0`. -/
+theorem toffoliP66_pos {q : ℝ} (hq : 0 < q) : 0 < toffoliP66 q := by
+  unfold toffoliP66; positivity
+
+/-- The cone coordinate `ħ = q - q⁻¹` is positive exactly above `1`. -/
+theorem toffoliConeCoord_pos_iff {q : ℝ} (hq : 0 < q) :
+    0 < toffoliConeCoord q ↔ 1 < q := by
+  unfold toffoliConeCoord
+  rw [sub_pos]
+  have hinv : 0 < 1 / q := by positivity
+  constructor
+  · intro h
+    -- multiply `1/q < q` through by `q > 0`
+    have h2 := mul_lt_mul_of_pos_right h hq
+    rw [one_div, inv_mul_cancel₀ (ne_of_gt hq)] at h2
+    nlinarith
+  · intro h
+    -- multiply `1 < q*q` through by `1/q > 0`
+    have h1 : (1 : ℝ) < q * q := by nlinarith
+    have h2 := mul_lt_mul_of_pos_left h1 hinv
+    rw [mul_one] at h2
+    calc 1 / q < 1 / q * (q * q) := h2
+      _ = q := by field_simp
+
+/-- `ħ = 0` exactly at `q = 1`, on `q > 0`. -/
+theorem toffoliConeCoord_eq_zero_iff {q : ℝ} (hq : 0 < q) :
+    toffoliConeCoord q = 0 ↔ q = 1 := by
+  unfold toffoliConeCoord
+  rw [sub_eq_zero, eq_div_iff (ne_of_gt hq)]
+  constructor
+  · intro h; nlinarith
+  · intro h; rw [h]; ring
+
+/-- **The only positive zero of `P₇₆` is `q = 1`** — the classical limit. -/
+theorem toffoliFlip_eq_zero_iff {q : ℝ} (hq : 0 < q) :
+    toffoliFlipAmplitude q = 0 ↔ q = 1 := by
+  rw [toffoliFlipAmplitude_eq q (ne_of_gt hq)]
+  have hC : 0 < toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2) := by
+    have := toffoliSextic_pos q; positivity
+  rw [← toffoliConeCoord_eq_zero_iff hq]
+  constructor
+  · intro h
+    rcases mul_eq_zero.mp h with h1 | h2
+    · linarith [neg_eq_zero.mp h1]
+    · exact absurd h2 (ne_of_gt hC)
+  · intro h; rw [h]; ring
+
+/-- **`P₇₆ < 0` on `q > 1`** — including the substrate anchor. -/
+theorem toffoliFlip_neg_of_one_lt {q : ℝ} (hq : 1 < q) :
+    toffoliFlipAmplitude q < 0 := by
+  have hq0 : 0 < q := lt_trans zero_lt_one hq
+  rw [toffoliFlipAmplitude_eq q (ne_of_gt hq0)]
+  have hC : 0 < toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2) := by
+    have := toffoliSextic_pos q; positivity
+  have hh : 0 < toffoliConeCoord q := (toffoliConeCoord_pos_iff hq0).mpr hq
+  nlinarith
+
+/-- **`P₇₆ > 0` on `0 < q < 1`.** The sign structure is the mirror of the
+    amplitude's, which is what makes the excised convention's regime wrong. -/
+theorem toffoliFlip_pos_of_lt_one {q : ℝ} (h0 : 0 < q) (h1 : q < 1) :
+    0 < toffoliFlipAmplitude q := by
+  rw [toffoliFlipAmplitude_eq q (ne_of_gt h0)]
+  have hC : 0 < toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2) := by
+    have := toffoliSextic_pos q; positivity
+  have hh : toffoliConeCoord q < 0 := by
+    by_contra hcon
+    push_neg at hcon
+    rcases lt_or_eq_of_le hcon with h | h
+    · exact absurd ((toffoliConeCoord_pos_iff h0).mp h) (not_lt.mpr (le_of_lt h1))
+    · exact absurd ((toffoliConeCoord_eq_zero_iff h0).mp h.symm) (ne_of_lt h1)
+  nlinarith
+
+/-- **The antisymmetry defect, exactly.** `P₆₇ + P₇₆ = q(q-1)²(q+1)²/(2(q²+1))`,
+    which is `0` only at `q = 1`. -/
+theorem toffoli_antisymmetry_defect {q : ℝ} (hq : 0 < q) :
+    toffoliReverseFlip q + toffoliFlipAmplitude q
+      = q * (q - 1) ^ 2 * (q + 1) ^ 2 / (2 * (q ^ 2 + 1)) := by
+  unfold toffoliReverseFlip toffoliFlipAmplitude toffoliSextic
+  have h1 : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The flip channel is not antisymmetric.** `P₆₇ ≠ -P₇₆` for every `q > 0`
+    other than the classical limit, so "reversing the crossing negates it" is
+    false — and it fails in convention C and D alike. -/
+theorem toffoli_not_antisymmetric {q : ℝ} (hq : 0 < q) (h1 : q ≠ 1) :
+    toffoliReverseFlip q ≠ -toffoliFlipAmplitude q := by
+  intro hcon
+  have hsum : toffoliReverseFlip q + toffoliFlipAmplitude q = 0 := by
+    rw [hcon]; ring
+  rw [toffoli_antisymmetry_defect hq] at hsum
+  have hne : q - 1 ≠ 0 := sub_ne_zero.mpr h1
+  have hpos : 0 < q * (q - 1) ^ 2 * (q + 1) ^ 2 / (2 * (q ^ 2 + 1)) := by
+    have h2 : 0 < (q - 1) ^ 2 := by positivity
+    positivity
+  exact absurd hsum (ne_of_gt hpos)
+
+/-- **`W_std > 0`** for every `q > 0`: the denominator has no real root. -/
+theorem wStd_pos {q : ℝ} (hq : 0 < q) : 0 < wStd q := by
+  unfold wStd; positivity
+
+/-- **The surviving half of the LP reduction.** `P₇₇ · W_std > 0` on `q > 0`,
+    so the first factor of the proof's reduction never obstructs feasibility;
+    everything at issue sits in the off-diagonal sign. -/
+theorem toffoliDiagonal_mul_wStd_pos {q : ℝ} (hq : 0 < q) :
+    0 < toffoliDiagonal q * wStd q :=
+  mul_pos (toffoliDiagonal_pos hq) (wStd_pos hq)
+
 end
 
 end QOU.Information
