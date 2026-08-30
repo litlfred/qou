@@ -99,7 +99,40 @@ TOL_PLANCHEREL = TOL_MARKOV_M3
 # ────────────────────────────────────────────────────────────────
 
 def load_mpfr_witness() -> dict:
-    p = Path(__file__).parent / "y-lambda-mpfr-witness.json"
+    """The MPFR y_λ reference table AT Q0_STR's OWN ANCHOR (bean qou-mjcd).
+
+    This hardcoded `y-lambda-mpfr-witness.json`, the MUON cache. `Q0_STR` is
+    `q_parameter.Q_50_DIGIT_STR` — the PROTON pin — and it is in `PROBES`, so
+    `test_1_cross_q` took muon weights as the reference for the proton probe at
+    `TOL_CROSS_Q = 1e-30`.
+
+    That was a live failure, not a latent risk. Measured before the fix:
+
+        q=1.05                      max|diff| = 4.41e-51   [PASS]
+        q=1.08                      max|diff| = 4.57e-52   [PASS]
+        q=1.10997858275138080759…   max|diff| = 5.93e-10   [FAIL]   <- proton probe
+        q=1.15                      max|diff| = 2.16e-51   [PASS]
+        q=1.20                      max|diff| = 9.36e-52   [PASS]
+
+    Every probe that derives its own reference passes at ~1e-51; the only
+    failing one was the single probe reading this table. The ~1e-9 residual was
+    the 11.5371 ppb μ–p gap, not a precision problem. Selecting by anchor means
+    the reference follows whatever pin `Q0_STR` resolves to.
+
+    Note this does NOT become moot now the muon cache sits at pin C rather than
+    pin A: C is still the muon layer, so a proton probe read against it would
+    still be comparing across layers.
+    """
+    from tr_m_wenzl_bridge_mpfr import anchor_of_q0  # noqa: PLC0415
+    anchor = anchor_of_q0(Q0_STR)
+    if anchor is None:
+        raise ValueError(
+            f"cannot tell which layer Q0_STR={Q0_STR[:22]}… belongs to, so no "
+            f"y_λ reference table can be chosen; refusing to guess")
+    p = Path(__file__).parent / {
+        "proton": "y-lambda-mpfr-proton-witness.json",
+        "muon": "y-lambda-mpfr-witness.json",
+    }[anchor]
     with p.open() as f:
         data = json.load(f)
     out = {}

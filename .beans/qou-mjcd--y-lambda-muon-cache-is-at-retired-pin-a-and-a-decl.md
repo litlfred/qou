@@ -49,9 +49,8 @@ straddle. A declared-proton witness is asserting proton over a mixed number.
       `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_BY_ANCHOR` already maps.
 - [x] Confirm the proton table covers partitions of 6 before swapping.
 - [x] Audit the other 12 readers for the same mixed-product shape.
-- [ ] Separately: the muon table is at a RETIRED vintage. Regenerating it at pin C
-      is an owner-visible change (`regenerate_y_lambda_mpfr.py --anchor ideal`)
-      and must not be done silently.
+- [x] Separately: the muon table is at a RETIRED vintage. Regenerated at pin C on
+      owner instruction 2026-08-30.
 - [ ] Regenerate affected witnesses (qou-jjge).
 
 
@@ -92,3 +91,53 @@ The remaining readers are clean: anchor-aware via the accessor
 (`regenerate_y_lambda_mpfr`, `tr_m_wenzl_bridge_mpfr`), muon-only consumers, or
 already fixed for this exact defect (`y_lambda_tower_infra`, whose comment
 documents it).
+
+
+## 2026-08-30 — muon table regenerated at pin C (owner-instructed)
+
+`regenerate_y_lambda_mpfr.py --anchor ideal`. `--anchor ideal` writes ONLY the
+muon cache, so the proton table is untouched (verified unmodified).
+
+    before  q_0_50dps = 1.1099785955573347198997632204832250266562084087802  (pin A, RETIRED)
+    after   q_0_50dps = 1.1099785956427390466817951293800017527000655610290  (pin C, current)
+
+The anchor source is `q-pinning-50-digit.witness.json` → `derived_50_digit.q`,
+which already held C; the table was simply behind it.
+
+**This was only possible because of `f4cafc561`.** `load_y_lambda_for_q0`'s
+straddle guard reads the TABLE's own declared pin and raises when it disagrees
+with the requested anchor. Before that fix `anchor_of_q0` recognised muon ONLY
+as vintage A, so a C-valued muon table would have resolved to `None` and the
+guard would have raised "declares the None pin" — the muon cache could not have
+been moved to the live pin at all. Verified after regenerating:
+`anchor_of_q0(C) = muon`, and both anchors now serve their own table
+(`muon → 0.115324226225387`, `proton → 0.115324224902066`).
+
+**Movement is small**: 47 of 270 entries changed, worst relative move 3.06e-10.
+The other 223 are the exact zeros convention D forces for partitions with ≥3
+rows (Wenzl level r = 2), which do not move at any q. For scale, A→C is 0.0769
+ppb against the 11.5371 ppb μ–p gap — this is the small correction, not the
+large one.
+
+**A `q0Value` gap was found and closed in the same pass.**
+`stamp_staleness_metadata` writes `q0Value` only inside
+`if "q0Anchor" not in payload`. This producer declares its own `q0Anchor`
+deliberately, so the stamper's block was skipped and the explicit
+`q0_value=q0_str` it was handed was silently dropped — the first regenerated
+table came out with `q_0_50dps` and NO `q0Value`. That is not the stamper
+misbehaving: the 2026-08-24 change removed a carry-forward that paired a fresh
+label with the previous run's number. A producer stating its own anchor is
+expected to state its own value, so it now does, from the same `q0_str`. Label
+and number are byte-identical and cannot disagree.
+
+**Downstream, measured** by searching for the 42 pin-A y_λ values that actually
+moved: only **2** committed artifacts still carry one —
+`y-lambda-macdonald-telescope.witness.json` (42 values) and
+`qbeta-c8-c10-pell-lucas-closed-form-predictions.witness.json` (1).
+
+### Still open on this bean
+
+- [ ] Regenerate those 2 downstream artifacts (qou-jjge).
+- [ ] `y-lambda-symbolic-validation.json` is stale corpus-wide now and needs a
+      FULL pass; it was left at HEAD rather than committed half-fresh. n=11's
+      Test 3 does not complete in 50 min, which is what blocks it.

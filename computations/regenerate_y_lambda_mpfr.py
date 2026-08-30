@@ -222,6 +222,22 @@ def run_anchor(anchor: str) -> int:
         # string-matching the q0 prefix, which is how the two caches got
         # confused for one another in the first place.
         "q0Anchor": "proton" if anchor == "proton" else "muon",
+        # Declared alongside the anchor, and it has to be declared HERE.
+        #
+        # `stamp_staleness_metadata` writes `q0Value` only inside
+        # `if "q0Anchor" not in payload` (witness.py ~:1799). This producer
+        # sets `q0Anchor` itself two lines up -- deliberately, see the NOTE
+        # below -- so the stamper's whole block is skipped and the explicit
+        # `q0_value=q0_str` handed to it is silently dropped. The result was a
+        # cache carrying `q_0_50dps` with NO `q0Value` beside it.
+        #
+        # That is not the stamper being wrong: the 2026-08-24 change removed a
+        # carry-forward that paired a fresh anchor label with the PREVIOUS
+        # run's number, manufacturing exactly the Q0_FLIP the field exists to
+        # catch. A producer that states its own anchor is therefore expected to
+        # state its own value too. This does, from the same `q0_str` the whole
+        # table was evaluated at, so label and number cannot disagree.
+        "q0Value": q0_str,
         "q0Layer": ("experimental / Physical-Observations" if anchor == "proton"
                     else "ideal / canonical 3-CAL"),
         "dps": 50,
