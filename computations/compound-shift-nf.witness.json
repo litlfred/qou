@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T08:02:14.090849+00:00",
-  "commitSha": "eba68cb580eb04437f269096ce0f8017b9dc1554",
+  "computedAt": "2026-08-30T13:02:18.470735+00:00",
+  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
   "assertions": [
     {
       "name": "closed_form_shift_consistent_D",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 28,
   "computation": "compound-shift-nf",
   "scriptFile": "compound_shift_nf.py",
-  "scriptHash": "ec70a21189ba",
-  "scriptCommitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
+  "scriptHash": "2ca197c34ccc",
+  "scriptCommitSha": "cd816982242e2d18d7818fddea30a2fa465625c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -158,7 +158,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -177,6 +177,35 @@
       "L₋",
       "e⁻"
     ],
+    "convolution": {
+      "operator": "q-convolution = mate of the comultiplication Delta_q on H_q",
+      "corpus_refs": [
+        "prop:categorical-fourier-transform-exists",
+        "def:categorical-laplace-transform",
+        "def:q-resolvent",
+        "conj:diagrammatic-double-magic-lr-fusion"
+      ],
+      "character_level_realisation": "tensor product of Specht modules, i.e. Littlewood-Richardson fusion; F and L intertwine it with the pointwise product on irreducibles",
+      "braid_level_realisation": {
+        "per_nucleon_B3": "3 x (sigma_0, sigma_1^-1)  [confinement]",
+        "quark_proton": "uu -> sigma_0 ; ud -> sigma_0 mixed (-h/2) ; ud -> sigma_1 mixed (-h/2)",
+        "quark_neutron": "ud -> sigma_0 mixed (-h/2) ; ud -> sigma_0 mixed (-h/2) ; dd -> sigma_1^-1 (-h)",
+        "gluon": "2 x sigma_0 per nucleon",
+        "inter_nucleon_pp": "sigma_0        (c=1, d=0)     EM repulsion",
+        "inter_nucleon_nn": "sigma_0^-1     (c=1, d=-h)    nuclear attraction",
+        "inter_nucleon_pn": "colour-weighted (c=1, d=D_PN)  mixed nuclear",
+        "electron_pe": "sigma_1^-1 per electron (EM channel)",
+        "which_part_is_the_convolution": "the inter-nucleon double loop over all previously placed nucleons; the per-nucleon block builds the factor being convolved"
+      },
+      "knot_operator_identification": "UNRESOLVED",
+      "knot_operator_candidates": [
+        "connected sum",
+        "satellite",
+        "cabling"
+      ],
+      "knot_operator_status": "No content block identifies which knot operation realises this convolution. The Fourier / Laplace / resolvent blocks name the algebraic operator (the Delta_q-mate) but not its knot-diagram counterpart. OPEN, not absent: the search surface was a keyword grep over content/ and computations/ plus a read of the hits.",
+      "bean": "qou-mgq3"
+    },
     "dps": 50,
     "per_nucleon_shift_p_h3": 18,
     "per_nucleon_shift_n_h3": 14,

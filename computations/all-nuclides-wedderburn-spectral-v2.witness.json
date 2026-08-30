@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T00:27:41.643654+00:00",
-  "commitSha": "e3e3b803180b805c81d0f3104d8d853e1cb3b801",
+  "computedAt": "2026-08-30T13:02:58.725919+00:00",
+  "commitSha": "98c4eeceb4cb3b87c81e0ab23c77e42ba9a53f02",
   "assertions": [
     {
       "name": "hecke_relation_both_gens",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 29038,
+  "durationMs": 25066,
   "computation": "all-nuclides-wedderburn-spectral-v2",
   "scriptFile": "all_nuclides_wedderburn_spectral_v2.py",
-  "scriptHash": "718ce0728c6b",
-  "scriptCommitSha": "e3e3b803180b805c81d0f3104d8d853e1cb3b801",
+  "scriptHash": "cc9e97d3b340",
+  "scriptCommitSha": "cd816982242e2d18d7818fddea30a2fa465625c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -92,6 +92,35 @@
   "description": "v2 Wedderburn-spectral admissibility over the AME2020 chart at q_0 (EXPLORATORY). Per nucleus: the three Wedderburn block images of build_atom_nf's crossing sequence at 40-dps mpmath (no f64 overflow — closes v1's 38% gap). Tests: (F) Frobenius-cone membership tr_M(b_i a) >= 0 (prop:operator-selection-lp positivity); (P) spectral positivity of all blocks (the genuine SDP-strength per-nucleus criterion; the diagonal-lift solve_psd_operator_selection_sdp is LP-equivalent, so v1's suggestion would not have been a real upgrade). Includes the closed form sign(alt) = (-1)^T, T = 11A + A(A-1)/2 + Z.",
   "data": {
     "q0_source": "qou_substrate.constants.q_at(40)",
+    "convolution": {
+      "operator": "q-convolution = mate of the comultiplication Delta_q on H_q",
+      "corpus_refs": [
+        "prop:categorical-fourier-transform-exists",
+        "def:categorical-laplace-transform",
+        "def:q-resolvent",
+        "conj:diagrammatic-double-magic-lr-fusion"
+      ],
+      "character_level_realisation": "tensor product of Specht modules, i.e. Littlewood-Richardson fusion; F and L intertwine it with the pointwise product on irreducibles",
+      "braid_level_realisation": {
+        "per_nucleon_B3": "3 x (sigma_0, sigma_1^-1)  [confinement]",
+        "quark_proton": "uu -> sigma_0 ; ud -> sigma_0 mixed (-h/2) ; ud -> sigma_1 mixed (-h/2)",
+        "quark_neutron": "ud -> sigma_0 mixed (-h/2) ; ud -> sigma_0 mixed (-h/2) ; dd -> sigma_1^-1 (-h)",
+        "gluon": "2 x sigma_0 per nucleon",
+        "inter_nucleon_pp": "sigma_0        (c=1, d=0)     EM repulsion",
+        "inter_nucleon_nn": "sigma_0^-1     (c=1, d=-h)    nuclear attraction",
+        "inter_nucleon_pn": "colour-weighted (c=1, d=D_PN)  mixed nuclear",
+        "electron_pe": "sigma_1^-1 per electron (EM channel)",
+        "which_part_is_the_convolution": "the inter-nucleon double loop over all previously placed nucleons; the per-nucleon block builds the factor being convolved"
+      },
+      "knot_operator_identification": "UNRESOLVED",
+      "knot_operator_candidates": [
+        "connected sum",
+        "satellite",
+        "cabling"
+      ],
+      "knot_operator_status": "No content block identifies which knot operation realises this convolution. The Fourier / Laplace / resolvent blocks name the algebraic operator (the Delta_q-mate) but not its knot-diagram counterpart. OPEN, not absent: the search surface was a keyword grep over content/ and computations/ plus a read of the hits.",
+      "bean": "qou-mgq3"
+    },
     "markov_weights_y_lambda": {
       "(3)": "0.50540422650393080318755870324",
       "(2,1)": "0.24729788674803459840622064838",
@@ -3350,7 +3379,7 @@
         "frobenius_member": true,
         "trM_sign": 1,
         "trM_log10": "-0.1422",
-        "B_AME_MeV": "27.560663"
+        "B_AME_MeV": "27.560662"
       },
       {
         "Z": 2,
@@ -3502,7 +3531,7 @@
         "frobenius_member": true,
         "trM_sign": 1,
         "trM_log10": "0.3438",
-        "B_AME_MeV": "26.330663"
+        "B_AME_MeV": "26.330662"
       },
       {
         "Z": 3,
@@ -3920,7 +3949,7 @@
         "frobenius_member": true,
         "trM_sign": 1,
         "trM_log10": "0.7608",
-        "B_AME_MeV": "24.910939"
+        "B_AME_MeV": "24.910938"
       },
       {
         "Z": 5,
@@ -4604,7 +4633,7 @@
         "frobenius_member": true,
         "trM_sign": 1,
         "trM_log10": "0.4178",
-        "B_AME_MeV": "115.491905"
+        "B_AME_MeV": "115.491904"
       },
       {
         "Z": 7,
@@ -4889,7 +4918,7 @@
         "frobenius_member": true,
         "trM_sign": 1,
         "trM_log10": "1.3743",
-        "B_AME_MeV": "111.955373"
+        "B_AME_MeV": "111.955372"
       },
       {
         "Z": 8,
@@ -6048,7 +6077,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "2.5220",
-        "B_AME_MeV": "202.534947"
+        "B_AME_MeV": "202.534948"
       },
       {
         "Z": 11,
@@ -6485,7 +6514,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "4.1798",
-        "B_AME_MeV": "223.124017"
+        "B_AME_MeV": "223.124018"
       },
       {
         "Z": 12,
@@ -6675,7 +6704,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "8.4818",
-        "B_AME_MeV": "261.039125"
+        "B_AME_MeV": "261.039126"
       },
       {
         "Z": 12,
@@ -6808,7 +6837,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "3.7670",
-        "B_AME_MeV": "168.721733"
+        "B_AME_MeV": "168.721732"
       },
       {
         "Z": 13,
@@ -7264,7 +7293,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "4.6516",
-        "B_AME_MeV": "187.002773"
+        "B_AME_MeV": "187.002772"
       },
       {
         "Z": 14,
@@ -9164,7 +9193,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "11.3631",
-        "B_AME_MeV": "291.461173"
+        "B_AME_MeV": "291.461174"
       },
       {
         "Z": 18,
@@ -9848,7 +9877,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "18.3580",
-        "B_AME_MeV": "400.199337"
+        "B_AME_MeV": "400.199336"
       },
       {
         "Z": 19,
@@ -10247,7 +10276,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "15.5702",
-        "B_AME_MeV": "350.415007"
+        "B_AME_MeV": "350.415008"
       },
       {
         "Z": 20,
@@ -10323,7 +10352,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "17.7054",
-        "B_AME_MeV": "388.374601"
+        "B_AME_MeV": "388.374602"
       },
       {
         "Z": 20,
@@ -10437,7 +10466,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "22.2257",
-        "B_AME_MeV": "432.322589"
+        "B_AME_MeV": "432.322588"
       },
       {
         "Z": 20,
@@ -10722,7 +10751,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "14.4500",
-        "B_AME_MeV": "312.524843"
+        "B_AME_MeV": "312.524842"
       },
       {
         "Z": 21,
@@ -10798,7 +10827,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "17.4129",
-        "B_AME_MeV": "366.825539"
+        "B_AME_MeV": "366.825540"
       },
       {
         "Z": 21,
@@ -10912,7 +10941,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "21.1542",
-        "B_AME_MeV": "425.627745"
+        "B_AME_MeV": "425.627744"
       },
       {
         "Z": 21,
@@ -11349,7 +11378,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "19.4150",
-        "B_AME_MeV": "385.007945"
+        "B_AME_MeV": "385.007944"
       },
       {
         "Z": 22,
@@ -11425,7 +11454,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "21.9138",
-        "B_AME_MeV": "426.846963"
+        "B_AME_MeV": "426.846962"
       },
       {
         "Z": 22,
@@ -12641,7 +12670,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "32.1547",
-        "B_AME_MeV": "505.547371"
+        "B_AME_MeV": "505.547370"
       },
       {
         "Z": 24,
@@ -13097,7 +13126,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "28.9423",
-        "B_AME_MeV": "482.076359"
+        "B_AME_MeV": "482.076358"
       },
       {
         "Z": 25,
@@ -14959,7 +14988,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "38.9421",
-        "B_AME_MeV": "552.100217"
+        "B_AME_MeV": "552.100216"
       },
       {
         "Z": 28,
@@ -15035,7 +15064,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "43.6422",
-        "B_AME_MeV": "582.615283"
+        "B_AME_MeV": "582.615284"
       },
       {
         "Z": 28,
@@ -15586,7 +15615,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "41.8593",
-        "B_AME_MeV": "569.211285"
+        "B_AME_MeV": "569.211286"
       },
       {
         "Z": 29,
@@ -16365,7 +16394,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "55.7677",
-        "B_AME_MeV": "644.437357"
+        "B_AME_MeV": "644.437358"
       },
       {
         "Z": 30,
@@ -16764,7 +16793,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "43.4463",
-        "B_AME_MeV": "563.040407"
+        "B_AME_MeV": "563.040406"
       },
       {
         "Z": 31,
@@ -17144,7 +17173,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "73.4227",
-        "B_AME_MeV": "701.553339"
+        "B_AME_MeV": "701.553340"
       },
       {
         "Z": 31,
@@ -18702,7 +18731,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "57.9136",
-        "B_AME_MeV": "650.918543"
+        "B_AME_MeV": "650.918542"
       },
       {
         "Z": 34,
@@ -18892,7 +18921,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "73.8762",
-        "B_AME_MeV": "731.875883"
+        "B_AME_MeV": "731.875882"
       },
       {
         "Z": 34,
@@ -19405,7 +19434,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "67.4405",
-        "B_AME_MeV": "704.371667"
+        "B_AME_MeV": "704.371666"
       },
       {
         "Z": 35,
@@ -19519,7 +19548,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "77.8474",
-        "B_AME_MeV": "748.714213"
+        "B_AME_MeV": "748.714214"
       },
       {
         "Z": 35,
@@ -19899,7 +19928,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "59.5040",
-        "B_AME_MeV": "641.507993"
+        "B_AME_MeV": "641.507992"
       },
       {
         "Z": 36,
@@ -20051,7 +20080,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "71.2245",
-        "B_AME_MeV": "721.745549"
+        "B_AME_MeV": "721.745548"
       },
       {
         "Z": 36,
@@ -20089,7 +20118,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "74.6075",
-        "B_AME_MeV": "739.377881"
+        "B_AME_MeV": "739.377880"
       },
       {
         "Z": 36,
@@ -20241,7 +20270,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "89.9518",
-        "B_AME_MeV": "786.604091"
+        "B_AME_MeV": "786.604090"
       },
       {
         "Z": 36,
@@ -20279,7 +20308,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "94.2409",
-        "B_AME_MeV": "794.769649"
+        "B_AME_MeV": "794.769648"
       },
       {
         "Z": 36,
@@ -20868,7 +20897,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "94.3051",
-        "B_AME_MeV": "803.718687"
+        "B_AME_MeV": "803.718686"
       },
       {
         "Z": 37,
@@ -21210,7 +21239,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "69.4425",
-        "B_AME_MeV": "695.575715"
+        "B_AME_MeV": "695.575714"
       },
       {
         "Z": 38,
@@ -21286,7 +21315,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "75.6836",
-        "B_AME_MeV": "737.436141"
+        "B_AME_MeV": "737.436140"
       },
       {
         "Z": 38,
@@ -22578,7 +22607,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "80.3245",
-        "B_AME_MeV": "750.257941"
+        "B_AME_MeV": "750.257942"
       },
       {
         "Z": 40,
@@ -22616,7 +22645,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "83.7261",
-        "B_AME_MeV": "771.931399"
+        "B_AME_MeV": "771.931398"
       },
       {
         "Z": 40,
@@ -23205,7 +23234,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "77.9430",
-        "B_AME_MeV": "720.265495"
+        "B_AME_MeV": "720.265494"
       },
       {
         "Z": 41,
@@ -23509,7 +23538,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "108.0930",
-        "B_AME_MeV": "862.018385"
+        "B_AME_MeV": "862.018386"
       },
       {
         "Z": 41,
@@ -24782,7 +24811,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "96.5051",
-        "B_AME_MeV": "819.155655"
+        "B_AME_MeV": "819.155654"
       },
       {
         "Z": 43,
@@ -24858,7 +24887,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "104.4237",
-        "B_AME_MeV": "852.747439"
+        "B_AME_MeV": "852.747440"
       },
       {
         "Z": 43,
@@ -25922,7 +25951,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "148.7516",
-        "B_AME_MeV": "969.410813"
+        "B_AME_MeV": "969.410812"
       },
       {
         "Z": 44,
@@ -26226,7 +26255,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "97.9269",
-        "B_AME_MeV": "809.910217"
+        "B_AME_MeV": "809.910216"
       },
       {
         "Z": 45,
@@ -26416,7 +26445,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "118.2230",
-        "B_AME_MeV": "900.134057"
+        "B_AME_MeV": "900.134056"
       },
       {
         "Z": 45,
@@ -27157,7 +27186,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "118.6333",
-        "B_AME_MeV": "899.918345"
+        "B_AME_MeV": "899.918344"
       },
       {
         "Z": 46,
@@ -27233,7 +27262,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "127.8486",
-        "B_AME_MeV": "931.392193"
+        "B_AME_MeV": "931.392192"
       },
       {
         "Z": 46,
@@ -27309,7 +27338,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "137.7889",
-        "B_AME_MeV": "959.661483"
+        "B_AME_MeV": "959.661484"
       },
       {
         "Z": 46,
@@ -27841,7 +27870,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "110.8111",
-        "B_AME_MeV": "859.767197"
+        "B_AME_MeV": "859.767196"
       },
       {
         "Z": 47,
@@ -28297,7 +28326,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "171.5962",
-        "B_AME_MeV": "1036.664387"
+        "B_AME_MeV": "1036.664388"
       },
       {
         "Z": 47,
@@ -29057,7 +29086,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "171.3188",
-        "B_AME_MeV": "1044.710187"
+        "B_AME_MeV": "1044.710188"
       },
       {
         "Z": 48,
@@ -30748,7 +30777,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "202.7630",
-        "B_AME_MeV": "1111.142839"
+        "B_AME_MeV": "1111.142840"
       },
       {
         "Z": 50,
@@ -31413,7 +31442,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "189.2455",
-        "B_AME_MeV": "1099.424377"
+        "B_AME_MeV": "1099.424378"
       },
       {
         "Z": 51,
@@ -31774,7 +31803,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "135.4483",
-        "B_AME_MeV": "928.821749"
+        "B_AME_MeV": "928.821748"
       },
       {
         "Z": 52,
@@ -31926,7 +31955,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "154.7156",
-        "B_AME_MeV": "1006.987341"
+        "B_AME_MeV": "1006.987342"
       },
       {
         "Z": 52,
@@ -32192,7 +32221,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "195.4118",
-        "B_AME_MeV": "1115.740391"
+        "B_AME_MeV": "1115.740392"
       },
       {
         "Z": 52,
@@ -32610,7 +32639,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "145.3020",
-        "B_AME_MeV": "963.074987"
+        "B_AME_MeV": "963.074986"
       },
       {
         "Z": 53,
@@ -32990,7 +33019,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "201.6734",
-        "B_AME_MeV": "1131.942721"
+        "B_AME_MeV": "1131.942722"
       },
       {
         "Z": 53,
@@ -33788,7 +33817,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "208.0305",
-        "B_AME_MeV": "1145.907251"
+        "B_AME_MeV": "1145.907250"
       },
       {
         "Z": 54,
@@ -34320,7 +34349,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "171.7855",
-        "B_AME_MeV": "1049.975413"
+        "B_AME_MeV": "1049.975412"
       },
       {
         "Z": 55,
@@ -34396,7 +34425,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "183.0785",
-        "B_AME_MeV": "1085.669999"
+        "B_AME_MeV": "1085.669998"
       },
       {
         "Z": 55,
@@ -35270,7 +35299,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "201.3583",
-        "B_AME_MeV": "1133.667157"
+        "B_AME_MeV": "1133.667158"
       },
       {
         "Z": 56,
@@ -36201,7 +36230,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "234.6887",
-        "B_AME_MeV": "1198.582659"
+        "B_AME_MeV": "1198.582658"
       },
       {
         "Z": 57,
@@ -36277,7 +36306,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "249.2629",
-        "B_AME_MeV": "1218.252533"
+        "B_AME_MeV": "1218.252534"
       },
       {
         "Z": 57,
@@ -36752,7 +36781,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "201.5783",
-        "B_AME_MeV": "1128.868123"
+        "B_AME_MeV": "1128.868124"
       },
       {
         "Z": 58,
@@ -36904,7 +36933,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "227.4827",
-        "B_AME_MeV": "1190.428739"
+        "B_AME_MeV": "1190.428740"
       },
       {
         "Z": 58,
@@ -37683,7 +37712,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "234.2211",
-        "B_AME_MeV": "1203.808633"
+        "B_AME_MeV": "1203.808632"
       },
       {
         "Z": 59,
@@ -38139,7 +38168,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "190.6217",
-        "B_AME_MeV": "1078.169889"
+        "B_AME_MeV": "1078.169890"
       },
       {
         "Z": 60,
@@ -38937,7 +38966,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "202.5536",
-        "B_AME_MeV": "1111.967095"
+        "B_AME_MeV": "1111.967096"
       },
       {
         "Z": 61,
@@ -39051,7 +39080,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "220.9363",
-        "B_AME_MeV": "1170.855611"
+        "B_AME_MeV": "1170.855610"
       },
       {
         "Z": 61,
@@ -39317,7 +39346,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "270.1732",
-        "B_AME_MeV": "1270.271143"
+        "B_AME_MeV": "1270.271144"
       },
       {
         "Z": 61,
@@ -40818,7 +40847,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "277.1211",
-        "B_AME_MeV": "1287.368207"
+        "B_AME_MeV": "1287.368208"
       },
       {
         "Z": 63,
@@ -41312,7 +41341,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "234.5577",
-        "B_AME_MeV": "1193.197533"
+        "B_AME_MeV": "1193.197532"
       },
       {
         "Z": 64,
@@ -41502,7 +41531,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "269.3437",
-        "B_AME_MeV": "1273.054385"
+        "B_AME_MeV": "1273.054386"
       },
       {
         "Z": 64,
@@ -42034,7 +42063,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "234.8832",
-        "B_AME_MeV": "1185.888257"
+        "B_AME_MeV": "1185.888256"
       },
       {
         "Z": 65,
@@ -42224,7 +42253,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "269.2392",
-        "B_AME_MeV": "1271.452181"
+        "B_AME_MeV": "1271.452182"
       },
       {
         "Z": 65,
@@ -43117,7 +43146,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "307.6785",
-        "B_AME_MeV": "1343.744869"
+        "B_AME_MeV": "1343.744870"
       },
       {
         "Z": 66,
@@ -43820,7 +43849,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "307.3163",
-        "B_AME_MeV": "1344.248251"
+        "B_AME_MeV": "1344.248252"
       },
       {
         "Z": 67,
@@ -45226,7 +45255,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "306.8499",
-        "B_AME_MeV": "1340.715569"
+        "B_AME_MeV": "1340.715568"
       },
       {
         "Z": 69,
@@ -45416,7 +45445,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "348.5495",
-        "B_AME_MeV": "1410.809277"
+        "B_AME_MeV": "1410.809278"
       },
       {
         "Z": 69,
@@ -46081,7 +46110,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "348.0155",
-        "B_AME_MeV": "1412.411927"
+        "B_AME_MeV": "1412.411928"
       },
       {
         "Z": 70,
@@ -47601,7 +47630,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "382.7962",
-        "B_AME_MeV": "1464.005765"
+        "B_AME_MeV": "1464.005764"
       },
       {
         "Z": 72,
@@ -47639,7 +47668,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "392.1470",
-        "B_AME_MeV": "1475.184653"
+        "B_AME_MeV": "1475.184654"
       },
       {
         "Z": 72,
@@ -47905,7 +47934,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "299.4974",
-        "B_AME_MeV": "1301.048151"
+        "B_AME_MeV": "1301.048152"
       },
       {
         "Z": 73,
@@ -48703,7 +48732,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "314.7372",
-        "B_AME_MeV": "1332.109651"
+        "B_AME_MeV": "1332.109652"
       },
       {
         "Z": 74,
@@ -49045,7 +49074,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "390.8216",
-        "B_AME_MeV": "1478.688035"
+        "B_AME_MeV": "1478.688036"
       },
       {
         "Z": 74,
@@ -49406,7 +49435,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "307.5157",
-        "B_AME_MeV": "1303.750817"
+        "B_AME_MeV": "1303.750816"
       },
       {
         "Z": 75,
@@ -49786,7 +49815,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "390.2879",
-        "B_AME_MeV": "1478.336869"
+        "B_AME_MeV": "1478.336868"
       },
       {
         "Z": 75,
@@ -50527,7 +50556,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "389.8403",
-        "B_AME_MeV": "1476.541369"
+        "B_AME_MeV": "1476.541370"
       },
       {
         "Z": 76,
@@ -52237,7 +52266,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "426.3556",
-        "B_AME_MeV": "1531.220987"
+        "B_AME_MeV": "1531.220988"
       },
       {
         "Z": 78,
@@ -53643,7 +53672,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "388.9101",
-        "B_AME_MeV": "1456.789733"
+        "B_AME_MeV": "1456.789734"
       },
       {
         "Z": 80,
@@ -54023,7 +54052,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "485.5096",
-        "B_AME_MeV": "1614.320163"
+        "B_AME_MeV": "1614.320162"
       },
       {
         "Z": 80,
@@ -54270,7 +54299,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "355.6720",
-        "B_AME_MeV": "1368.593293"
+        "B_AME_MeV": "1368.593294"
       },
       {
         "Z": 81,
@@ -54536,7 +54565,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "415.7114",
-        "B_AME_MeV": "1504.534599"
+        "B_AME_MeV": "1504.534600"
       },
       {
         "Z": 81,
@@ -54612,7 +54641,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "434.4968",
-        "B_AME_MeV": "1538.692213"
+        "B_AME_MeV": "1538.692214"
       },
       {
         "Z": 81,
@@ -54916,7 +54945,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "516.8889",
-        "B_AME_MeV": "1645.756007"
+        "B_AME_MeV": "1645.756006"
       },
       {
         "Z": 81,
@@ -55391,7 +55420,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "434.1355",
-        "B_AME_MeV": "1533.492617"
+        "B_AME_MeV": "1533.492616"
       },
       {
         "Z": 82,
@@ -55771,7 +55800,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "538.0785",
-        "B_AME_MeV": "1666.838691"
+        "B_AME_MeV": "1666.838692"
       },
       {
         "Z": 82,
@@ -56398,7 +56427,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "514.8768",
-        "B_AME_MeV": "1649.972419"
+        "B_AME_MeV": "1649.972420"
       },
       {
         "Z": 83,
@@ -57842,7 +57871,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "513.2088",
-        "B_AME_MeV": "1648.195799"
+        "B_AME_MeV": "1648.195800"
       },
       {
         "Z": 85,
@@ -57918,7 +57947,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "534.9317",
-        "B_AME_MeV": "1670.090481"
+        "B_AME_MeV": "1670.090480"
       },
       {
         "Z": 85,
@@ -59286,7 +59315,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "533.2640",
-        "B_AME_MeV": "1666.951051"
+        "B_AME_MeV": "1666.951050"
       },
       {
         "Z": 87,
@@ -59913,7 +59942,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "532.5592",
-        "B_AME_MeV": "1663.954853"
+        "B_AME_MeV": "1663.954854"
       },
       {
         "Z": 88,
@@ -60312,7 +60341,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "480.7122",
-        "B_AME_MeV": "1570.884639"
+        "B_AME_MeV": "1570.884640"
       },
       {
         "Z": 89,
@@ -60502,7 +60531,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "531.9404",
-        "B_AME_MeV": "1659.673945"
+        "B_AME_MeV": "1659.673946"
       },
       {
         "Z": 89,
@@ -61148,7 +61177,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "552.9958",
-        "B_AME_MeV": "1682.744645"
+        "B_AME_MeV": "1682.744644"
       },
       {
         "Z": 90,
@@ -61851,7 +61880,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "597.3847",
-        "B_AME_MeV": "1734.165251"
+        "B_AME_MeV": "1734.165252"
       },
       {
         "Z": 91,
@@ -61965,7 +61994,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "633.0435",
-        "B_AME_MeV": "1771.934127"
+        "B_AME_MeV": "1771.934128"
       },
       {
         "Z": 91,
@@ -62003,7 +62032,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "645.2923",
-        "B_AME_MeV": "1783.277267"
+        "B_AME_MeV": "1783.277266"
       },
       {
         "Z": 91,
@@ -62136,7 +62165,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "530.6003",
-        "B_AME_MeV": "1638.468151"
+        "B_AME_MeV": "1638.468152"
       },
       {
         "Z": 92,
@@ -62326,7 +62355,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "585.0704",
-        "B_AME_MeV": "1716.698633"
+        "B_AME_MeV": "1716.698632"
       },
       {
         "Z": 92,
@@ -62516,7 +62545,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "644.0719",
-        "B_AME_MeV": "1783.865049"
+        "B_AME_MeV": "1783.865048"
       },
       {
         "Z": 92,
@@ -62801,7 +62830,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "584.3659",
-        "B_AME_MeV": "1711.670197"
+        "B_AME_MeV": "1711.670198"
       },
       {
         "Z": 93,
@@ -62991,7 +63020,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "642.9376",
-        "B_AME_MeV": "1782.958419"
+        "B_AME_MeV": "1782.958418"
       },
       {
         "Z": 93,
@@ -63580,7 +63609,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "678.9495",
-        "B_AME_MeV": "1818.691919"
+        "B_AME_MeV": "1818.691920"
       },
       {
         "Z": 94,
@@ -64055,7 +64084,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "677.7293",
-        "B_AME_MeV": "1817.930359"
+        "B_AME_MeV": "1817.930360"
       },
       {
         "Z": 95,
@@ -64492,7 +64521,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "701.8643",
-        "B_AME_MeV": "1841.363087"
+        "B_AME_MeV": "1841.363086"
       },
       {
         "Z": 96,
@@ -66335,7 +66364,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "734.5979",
-        "B_AME_MeV": "1867.917025"
+        "B_AME_MeV": "1867.917026"
       },
       {
         "Z": 101,
@@ -66411,7 +66440,7 @@
         "frobenius_member": false,
         "trM_sign": 1,
         "trM_log10": "760.8200",
-        "B_AME_MeV": "1894.326991"
+        "B_AME_MeV": "1894.326992"
       },
       {
         "Z": 101,
@@ -66696,7 +66725,7 @@
         "frobenius_member": false,
         "trM_sign": -1,
         "trM_log10": "759.6002",
-        "B_AME_MeV": "1891.574777"
+        "B_AME_MeV": "1891.574776"
       },
       {
         "Z": 102,
