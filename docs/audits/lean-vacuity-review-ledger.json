@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T13:21:19.440040Z",
+  "updated_at": "2026-08-30T02:37:27.692Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -166,23 +166,25 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 71,
-      "verdict": "genuine",
-      "file_sha": "0e83a2932cbf",
+      "verdict": "needs-agent",
+      "file_sha": "30e736d8ee10",
       "evidence": "Self-assuming projection: `.alpha5_derived` has the conclusion's type and is returned verbatim, and though `Term7ShellCorrectionClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance stipulates alpha5_value = -1 and closes by norm_num/rfl; its own docstring calls it a placeholder / 'sign witness only'. (Automated shape test saw: term7ShellCorrectionInstance(trivial-witness).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote"
+      "disposition": "restate-to-derive-or-demote",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::brane_tower_finite::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 171,
-      "verdict": "genuine",
-      "file_sha": "0e83a2932cbf",
+      "line": 205,
+      "verdict": "needs-agent",
+      "file_sha": "30e736d8ee10",
       "evidence": "Self-assuming projection: `.uniform_bound` has the conclusion's type and is returned verbatim, and though `ZHabiroConvergenceClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance picks the constant bound `fun _ => 1` and closes by norm_num after `unfold brane_tower_pole`; the file's own prose says the substantive content 'remains' open. (Automated shape test saw: zHabiroConvergenceInstance(substantive).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote"
+      "disposition": "restate-to-derive-or-demote",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean::skein_multiset_invariance_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -346,13 +348,14 @@
     "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean::graded_trace_residue_split::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 91,
-      "verdict": "genuine",
-      "file_sha": "3d13a0640c57",
+      "line": 93,
+      "verdict": "needs-agent",
+      "file_sha": "a734dafd7e3b",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `GradedTraceResidueSplit` carries field `total` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `total` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `GradedTraceResidueSplit` carries field `total` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `total` is outside CONCLUSION_FIELD.",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean::hecke_baer_star_generic::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -458,9 +461,9 @@
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::adjoint_vanishing_propagation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 110,
-      "verdict": "genuine",
-      "file_sha": "dbf01837882f",
+      "line": 109,
+      "verdict": "needs-agent",
+      "file_sha": "8192c1c775c1",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Projection `:= jgcs.adjoint_vanishing`, and worse than the others: the binder `(k : \u2115)` is entirely unused, while the docstring promises `the adjoint vanishing at level 0 implies at all levels` and sketches a six-step induction on k. The conclusion `Subsingleton (\ud835\udfd9_C \u27f6 jgcs.adjointObj)` does not mention k at all, so the PROPAGATION \u2014 the whole claim \u2014 is absent from the statement; what is proved is the level-0 field, re-exported. Same file as `adjoint_has_no_degree_zero`, which #5371 deleted for the same reason. Fix: index the adjoint object by jet level and state vanishing at every k, or delete.",
       "reviewed_at": "2026-08-21T15:40:59.000Z",
@@ -941,8 +944,8 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 301,
-      "verdict": "genuine",
-      "file_sha": "67196453d7be",
+      "verdict": "needs-agent",
+      "file_sha": "4daf4bce78cb",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Decl unchanged at line 301: `inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`. The class `BorromeanQuark` carries the conclusion directly as field `forms_agree`, whose own docstring calls it '**The conjecture itself** (spectral bridge)'. \u00a73b-cond item-5 violation exactly: class axiomatises the conclusion, theorem projects it verbatim rather than deriving it from sub-hypotheses. Re-confirms prior genuine.",
       "reviewed_at": "2026-08-21T15:40:59.000Z",
@@ -952,7 +955,8 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "agent_model": "claude-opus-4-8",
         "agent_date": "2026-08-21"
-      }
+      },
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean::nu_selfConjugate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1574,9 +1578,9 @@
     "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 75,
-      "verdict": "genuine",
-      "file_sha": "e0086c80a420",
+      "line": 76,
+      "verdict": "needs-agent",
+      "file_sha": "0bbbaba6a665",
       "disposition": "drop-redundant-projection",
       "evidence": "Self-assuming field-projection (\u00a73b-cond item 5): the conclusion `h.binding = h.epsilon * C(A,2)` is character-identical to the class field `extensive` and the proof is `:= h.extensive` verbatim, deriving nothing (the docstring says 'Just h.extensive, exposed as a named consumer'). The BondExtensiveBinding class is a legitimately-open conditional carrier and its sibling `binding_nonneg` genuinely derives (mul_nonneg on epsilon_nonneg), but this decl only re-exports the hypothesis. Honest fix: drop it, use h.extensive directly downstream. (Sibling qou-4tj9's fresh file \u2014 queued, not fixed here.)",
       "reviewed_at": "2026-08-21T16:09:39.000Z",
@@ -1586,14 +1590,15 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "agent_model": "claude-opus-4-8",
         "agent_date": "2026-08-21"
-      }
+      },
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
       "line": 70,
-      "verdict": "legit",
-      "file_sha": "5b96d542a714",
+      "verdict": "needs-agent",
+      "file_sha": "89856d3be01d",
       "disposition": "deliberate-reproduction-for-demonstration",
       "evidence": "New candidate, NOT mine. This is a verbatim reproduction of the carrier above, inside a file whose stated purpose is to DEMONSTRATE that the carrier asserts nothing ('Definitions reproduced verbatim from the content-block sibling so this file is self-contained'). Flagging the demonstration alongside the thing demonstrated is a detector false positive; the defect is recorded once, on the real carrier.",
       "reviewed_at": "2026-08-23T17:07:13.000Z",
@@ -1603,7 +1608,8 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "id": "local/lean-proof-vacuity-audit",
         "kind": "agent"
-      }
+      },
+      "stale_prev_verdict": "legit"
     },
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::HasCategoricalIrreducibility::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -1626,9 +1632,9 @@
     "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
-      "line": 97,
-      "verdict": "genuine",
-      "file_sha": "046133d415f5",
+      "line": 124,
+      "verdict": "needs-agent",
+      "file_sha": "b82832dd0098",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "New candidate, NOT mine -- a sibling's landed work (bean `qou-cds1`) already demonstrates it, in `QOU/QBeta/EigenphaseCarrierVacuity.lean`. The docstring axiomatises a spectral identification (`M_beta` has spectrum {e^{+i.alpha}, e^{-i.alpha}} on the 2-d irrep of H_3(q), alpha = (z-1)h/2); the two fields encode `-2 <= 2cos(theta) <= 2` and `cos(theta) = cos(-theta)`, both true of EVERY real. So the carrier is inhabited for every q by a proof using nothing about the eigenphase, and `[TransferMatrixEigenphase q] -> P` is just `P`. Owned by that bean, not re-derived here.",
       "reviewed_at": "2026-08-23T17:07:13.000Z",
@@ -1638,7 +1644,8 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "id": "local/lean-proof-vacuity-audit",
         "kind": "agent"
-      }
+      },
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean::mobius_frobenius_kernel::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
@@ -1870,23 +1877,6 @@
       "disposition": "docstring-describes-a-sorry-that-is-not-there",
       "evidence": "Docstring says the body is a `sorry` while the body is a class-field projection. The sorry became an ASSUMPTION and the prose was left behind -- the MISLEADING direction, since a reader and the has_sorry status derivation both see an honestly-open declaration. Same shape as mobius_frobenius_kernel (PR #5562). Arrived with main's 'resolve sorry gaps via class field enrichment' / 'Convert sorry to class fields' batch.",
       "reviewed_at": "2026-08-24T10:59:29.000Z",
-      "reviewer": {
-        "agent_date": "2026-08-24",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
-      }
-    },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean::q_ns_wellposedness::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 108,
-      "verdict": "genuine",
-      "file_sha": "9426e956e6f4",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "The class field IS the conclusion, verbatim, and the body returns it -- AGENTS.md 3b-cond item 5. `ctx.wellposedness_holds` carries the WHOLE conclusion: existence-and-uniqueness of the solution, smoothness, the energy inequality, and the per-mode exponential decay. Worth flagging beyond the routine: this is the q-Navier-Stokes well-posedness statement, so a downstream reader seeing a sorry-free `q_ns_wellposedness` could easily take global well-posedness as established here. It is assumed in one field.",
-      "reviewed_at": "2026-08-24T13:09:46.000Z",
       "reviewer": {
         "agent_date": "2026-08-24",
         "agent_model": "claude-opus-5",
@@ -2141,23 +2131,6 @@
       "file_sha": "7c13175c5986",
       "disposition": "cite-as-axiom-or-prove",
       "evidence": "Declared Mathlib gap, blocker documented (needs the residue theorem for parallelograms, which needs the Cauchy-Goursat gap above, plus homotopy invariance for polygonal paths). IMPORTANT: this axiom was UNSOUND until 2026-08-24, and inconsistent BY ITSELF, without the other one: every term of `parallelogramIntegral` carries a literal omega factor, so at the DEGENERATE parallelogram w1 = w2 = 0 the left side is identically 0, giving 0 = 2*pi*i. It was also false for `w` outside the parallelogram, where the true value is 0, and the sign depends on orientation. Repaired by adding `horient : 0 < (w2 / w1).im` (which also rules out degeneracy and fixes the sign) plus strict interiority in period coordinates.",
-      "reviewed_at": "2026-08-24T10:52:56.000Z",
-      "reviewer": {
-        "agent_date": "2026-08-24",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
-      }
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/SDPDuality.lean::traceInner_nonneg_of_posSemidef::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 39,
-      "verdict": "advisory",
-      "file_sha": "2a5964191315",
-      "disposition": "cite-as-axiom-or-prove",
-      "evidence": "Declared Mathlib gap and TRUE mathematics: tr(SX) >= 0 for PSD S, X is standard, and the file states why it is not formalizable yet -- the usual proof factors through the matrix square root `tr(SX) = tr(S^{1/2} X S^{1/2})`, and Mathlib has no matrix square root. Unlike the two ParallelogramContour axioms, this one is SOUND as stated: the hypotheses `Matrix.PosSemidef S` and `Matrix.PosSemidef X` are both present and are exactly what the result needs. Checked for the same missing-hypothesis shape and it is not there. Minor: it carries a prose comment rather than an AGENTS.md 1 `-- Ref:` citation.",
       "reviewed_at": "2026-08-24T10:52:56.000Z",
       "reviewer": {
         "agent_date": "2026-08-24",
@@ -3571,6 +3544,189 @@
       "evidence": "A REAL algebraic identity: with `wedderburnSym := 1/(t^2+2)` and `wedderburnStd := t^2/(t^2+2)` for t = q + q^{-1}, the sum `1/(t^2+2) + t^2/(t^2+2) + 1/(t^2+2) = 1` needs `field_simp` and `ring`, not unfolding. It is the normalisation check on the Wedderburn weights and would catch a wrong weight.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean::structurallyValidBinding_necessary::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "binder-echo",
+      "line": 102,
+      "verdict": "needs-agent",
+      "file_sha": "c5dbf1de8bd4"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 60,
+      "verdict": "genuine",
+      "file_sha": "5a2c062d0274",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.CriticalExponent::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 58,
+      "verdict": "genuine",
+      "file_sha": "5a2c062d0274",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.NSCounterexample::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 55,
+      "verdict": "genuine",
+      "file_sha": "5a2c062d0274",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 52,
+      "verdict": "genuine",
+      "file_sha": "5a2c062d0274",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 63,
+      "verdict": "genuine",
+      "file_sha": "5a2c062d0274",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean::QOU.FluidDynamics.QAubinLions::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 43,
+      "verdict": "genuine",
+      "file_sha": "843dae199cb2",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean::QOU.FluidDynamics.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 43,
+      "verdict": "genuine",
+      "file_sha": "d2ef138e215c",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.BlowupYekutieli::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 79,
+      "verdict": "genuine",
+      "file_sha": "22b52d3c9fbb",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.CriticalExponent::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 68,
+      "verdict": "genuine",
+      "file_sha": "22b52d3c9fbb",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.NSCounterexample::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 56,
+      "verdict": "genuine",
+      "file_sha": "22b52d3c9fbb",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.QAubinLions::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 43,
+      "verdict": "genuine",
+      "file_sha": "22b52d3c9fbb",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean::QOU.AlgebraicSubstrate.RegularityBreakdown::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 92,
+      "verdict": "genuine",
+      "file_sha": "22b52d3c9fbb",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 52,
+      "verdict": "genuine",
+      "file_sha": "9c4c166550f6",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 54,
+      "verdict": "genuine",
+      "file_sha": "653297dea0f2",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 119,
+      "verdict": "legit",
+      "file_sha": "808fd4298b03",
+      "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out \u00a73b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 60,
+      "verdict": "legit",
+      "file_sha": "0e26fd9fed37",
+      "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out \u00a73b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 32,
+      "verdict": "legit",
+      "file_sha": "0e26fd9fed37",
+      "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out \u00a73b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 46,
+      "verdict": "legit",
+      "file_sha": "0e26fd9fed37",
+      "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out \u00a73b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
+    },
+    "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 50,
+      "verdict": "genuine",
+      "file_sha": "d55f839624a9",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 120,
+      "verdict": "genuine",
+      "file_sha": "70af9415e22d",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 70,
+      "verdict": "genuine",
+      "file_sha": "b836131e5e60",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
+    },
+    "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
+      "category": "proof-carrier-inhabited-by-probe",
+      "pattern": "lean-inhabited-no-hypotheses",
+      "line": 21,
+      "verdict": "genuine",
+      "file_sha": "267bc9129f2d",
+      "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     }
   }
 }
