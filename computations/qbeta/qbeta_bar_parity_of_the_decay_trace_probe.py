@@ -1,5 +1,28 @@
 """The bar-oddness of the decay trace IS the convention-D condition.
 
+*** NOT NEW. CORRECTED before this probe's first push was reported as a finding. ***
+(R1) and (R3) below are a RE-DERIVATION, by a different route, of results the
+corpus already holds sorry-free in Lean:
+
+    QOU.QBeta.eigenphase_barOdd_of_barEven      bar(z)=z    => bar(2a)+2a = 0
+    QOU.QBeta.eigenphase_bar_defect_of_fullBar  bar(z)=z-h  => bar(2a)+2a = h^2
+    (MarkovZFullBarCondition.lean; recorded in
+     qbeta_phase_bar_parity_completeness_probe, which states the consequence
+     directly: "a_odd = a - h^2/4")
+
+The second theorem IS (R3): for any e, e + bar(e) = 2*even(e), so
+bar(2a)+2a = h^2 says even(alpha) = h^2/4. And since 2*alpha = net(Delta) -
+tr_M(Delta) with even(net) = h^2/2, "even(alpha) = h^2/4" and "even(tr_M) = 0"
+are the SAME statement -- so (R1) is that theorem transported through (D1),
+not an independent result.
+
+What this probe adds is only the ROUTE: it reaches the same place from the decay
+element Delta and the trace, rather than from z's own bar parity, and it states
+the equivalence as an iff with bar(z) left free. Two routes to one result is
+worth keeping as corroboration; claiming it twice is not. (R2) -- that
+eps = net(Delta) splits as h^2/2 (even) - h (odd) -- is elementary arithmetic
+and is recorded here for the record, not as a discovery.
+
 An attack on the c_3-odd / Q_beta bar-parity sector, using the Riesz decomposition
 merged in PR #5869 (`net(x) = sum_lambda a_lambda chi^lambda(x) + tr_M(x y_0)`,
 `y_0 = mu dC`) and the two-row D-frame trace.

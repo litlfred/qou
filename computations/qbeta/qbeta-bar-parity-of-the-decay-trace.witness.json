@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T07:50:45.248894+00:00",
-  "commitSha": "1f378bb4ef0c67bb70e9b5cdf4d3907dcf9d481b",
+  "computedAt": "2026-08-30T07:53:25.925110+00:00",
+  "commitSha": "0a4d8f6d860d93c44591896a0e7c6d5ab1da0519",
   "assertions": [
     {
       "name": "bar_oddness_iff_full_bar_condition",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1016,
+  "durationMs": 1019,
   "computation": "qbeta-bar-parity-of-the-decay-trace",
   "scriptFile": "qbeta_bar_parity_of_the_decay_trace_probe.py",
-  "scriptHash": "f6e9717b0195",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f746ed60913d",
+  "scriptCommitSha": "0a4d8f6d860d93c44591896a0e7c6d5ab1da0519",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,5 +74,7 @@
     "trM_bar_even_at_zC": "(q - 1)**2*(q + 1)**2/(2*q**2)",
     "alpha_bar_even_at_zD": "(q - 1)**2*(q + 1)**2/(4*q**2)",
     "alpha_bar_odd_at_zD": "(q - 1)*(q + 1)*(q**4 - 2*q**3 - 2*q + 1)/(4*q**2*(q**2 + 1))"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
