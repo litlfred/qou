@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-30T03:53:16Z
+updated_at: 2026-08-30T06:48:57Z
 ---
 
 
@@ -190,3 +190,55 @@ Two things, both Mathas (1999) Thm 3.43, neither in Mathlib:
 
 Until those land, do not build an instance: it would silence the audit and
 prove nothing. Scope (b) structural exclusion, per AGENTS.md.
+
+
+---
+
+## 2026-08-30 — ITEM 1 DONE. chi_lambda is computed; y_lambda is pinned against blockDim
+
+PR #6097, commits c7a0ca4488 + f194547158.
+
+The free field `chi_lambda : Partition n -> A -> R` is gone. In its place:
+
+    blockDim : Partition n -> N
+    rho : (lam : Partition n) ->
+      A ->a[R] Matrix (Fin (blockDim lam)) (Fin (blockDim lam)) R
+
+with `chi_lambda := Matrix.trace . rho` as a DEF. The AlgHom is the whole
+content: `rho_lam 1 = 1` forces `chi^lam(1) = f^lam` (`chi_lambda_one`), which
+a free field could never be held to.
+
+That converts `block_scaling` from an equation on a product of two unknowns
+into one that pins the weight:
+
+  * `WedderburnDecomp.yLambda_determined` : tr_M(pi_lam) = y_lam * f^lam
+  * `WedderburnDecomp.yLambda_unique`     : agree on pi_lam and blockDim => agree on y_lam
+  * `RankOneDegeneracy.yLambda_two_not_realisable` : with pi_lam = 1, y_lam = 2 is
+    IMPOSSIBLE (it would need 1 = 2*d for a natural d). Stated over an arbitrary
+    instance, so it is a property of the class, not of a witness.
+
+`rankOneWedderburnScaled` and `yLambda_not_pinned` are DELETED — they cannot be
+stated any more. All sorry-free, [propext, Classical.choice, Quot.sound];
+8-module reverse-import cone ALL-GREEN.
+
+## What item 1 did NOT close — read this before calling the degeneracy fixed
+
+`blockDim` is a free natural, so `y_lam` is determined only RELATIVE to it.
+Measured rather than left as a caveat: `RankOneDegeneracy.yLambda_residual_freedom`
+exhibits, for every d >= 1, an instance with `y_lam = 1/d`.
+
+So the honest ledger is:
+
+  before item 1:  y_lam ranges over ALL of Q-nonzero
+  after  item 1:  y_lam ranges over {1/d : d >= 1}, one parameter
+  after  item 2:  determined, once blockDim is tied to lam
+
+**Item 2 is now the whole remaining gap** and it is smaller than it was: tie
+`SpechtDimension.dim` to its partition by the hook-length formula (still a free
+`N` with the formula only in its docstring). That is the other half of Mathas
+(1999) Thm 3.43 and is not in Mathlib.
+
+Note for whoever takes item 2: the exclusion `rankOne_finrank_ne_factorial`
+still has to be argued from `Module.finrank Q Q /= n!` rather than from the
+class, precisely because `SpechtDimension` supplies no dimension count. Closing
+item 2 should let that argument come from the class instead.
