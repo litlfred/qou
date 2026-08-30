@@ -120,6 +120,27 @@ projection, `ctx.field`. Here the term is `ctx.field ctx.other_field` — an
 derivation from a stated hypothesis, and exactly what hides it from the
 detector.
 
+### The population
+
+[`scripts/lean-decoy-hypothesis-audit.py`](../../scripts/lean-decoy-hypothesis-audit.py)
+finds **17 decoy carriers across 17 files, carrying 34 `impl_` fields** — so 34
+conclusions currently reached by projecting an assumption through an eliminable
+arrow.
+
+**That number was 12 twice before it was 17, and both wrong readings looked
+plausible.** The parser dropped any field whose type begins on the *next* line —
+`impl_x :` with the arrow below it — because the field regex demanded at least
+one character after the colon; such a line then fell through to the
+continuation branch and was appended to the *preceding* field, swallowing the
+very `impl_` fields the detector exists to find. A first "fix" made it 11.
+
+It was caught by one observation: `KnotParticleGenerationContext`, the class
+with a machine-checked probe in this same PR, was **absent from its own
+detector's results**. That is now a `--self-test` assertion in the script — it
+exits 1 and refuses to let the count be quoted if the worked example is missing.
+Same discipline as `valueOnlyProjects` in #6093, where the first cut returned
+zero across five modules chosen for containing the defect.
+
 ### On `CoreLeviFormContext` specifically
 
 Still read-verified rather than machine-checked, and the blocker is named: the
