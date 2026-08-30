@@ -378,6 +378,64 @@ theorem hbound_of_height_floor [DecidableEq (K →+* ℂ)]
     (ceil_siegelHeight_le (rothDegrees H N) α μ hB1 hα hE hC₀1 hC₀ hW)
     hC₀1 hW1 hsum (hr₀ j hj) (le_pow_of_le hone hp (hfloor j hj))
 
+open private c from Mathlib.NumberTheory.NumberField.House in
+/-- **All seven clauses of `Γ_m`, at the auxiliary polynomial's own height.**  Not an implication:
+the height clause is discharged here, so what comes out is `RothGammaFull` itself, instantiated at
+`b = ⌈siegelHeight r α μ⌉` — the very bound Siegel's lemma hands step 1.
+
+This is where the near-circularity finally closes.  `hbound` is a statement about the produced
+`H` and `N`, and `b` is a *function* of them, so neither can be a hypothesis of the existential.
+The resolution is that the threshold `C₀^{mq}·W^{2m²q}` refers to none of the produced data — it
+is a constant of `K`, `α`, `m`, `p`, `q` alone — so it can be handed to the selection as its floor
+parameter `T` and recovered afterwards from `T ≤ H j`.
+
+The hypotheses that remain are each a fact about one fixed object:
+
+* `hfloorExp` pins `F` against `m`, `p`, `q` (the `Γ_m` exponent clause, unchanged);
+* `hm2 : 2·[K:ℚ] < 4ε²m` is the **doubled** unknowns-beat-conditions threshold, i.e. `m > [K:ℚ]/2ε²`
+  — doubled because Siegel's exponent must be ≤ 1, not merely finite, or the height is doubly
+  exponential in `Σ r`;
+* `hα` bounds the houses of the `α h` by `B`, and `hC₀`/`hW` name integers above `c K` and `4B`.
+
+Nothing here mentions `N`, `r`, or the polynomial. -/
+theorem exists_rothGammaFull_auxiliary [DecidableEq (K →+* ℂ)] {S : Set ℕ}
+    (hS : ∀ N, ∃ q ∈ S, N ≤ q) (p q F : ℕ) (hp : 0 < p) (hq : 0 < q) (hF : 1 ≤ F)
+    (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p)
+    (α : Fin m → 𝓞 K) {ε : ℚ} (hε : 0 < ε)
+    (hm2 : 2 * ((Module.finrank ℚ K : ℕ) : ℚ) < 4 * ε ^ 2 * (m : ℚ))
+    {B : ℝ} (hB1 : 1 ≤ B) (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
+    {C₀ W : ℤ} (hC₀1 : 1 ≤ C₀) (hC₀ : c K ≤ (C₀ : ℝ)) (hW1 : 1 ≤ W) (hW : 4 * B ≤ (W : ℝ)) :
+    ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
+      (∀ h : Fin m, rothDegrees H N h ≠ 0) ∧
+      RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N) (fun j => (H j : ℤ))
+        ⌈siegelHeight (rothDegrees H N) α ((m : ℚ) / 2 - ε * (m : ℚ))⌉ := by
+  classical
+  have hone : (1 : ℤ) ≤ C₀ ^ (m * q) * W ^ (2 * m * m * q) := by
+    have h1 : (1 : ℤ) ≤ C₀ ^ (m * q) := one_le_pow₀ hC₀1
+    have h2 : (1 : ℤ) ≤ W ^ (2 * m * m * q) := one_le_pow₀ hW1
+    nlinarith
+  obtain ⟨H, N, hmem, hN, hH2, hTle, hmono, hlarge, himp⟩ :=
+    exists_rothGammaFull_of_supply hS m p q F
+      (fun H N => ⌈siegelHeight (rothDegrees H N) α ((m : ℚ) / 2 - ε * (m : ℚ))⌉) hp hq
+      (C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat hF hfloorExp
+  -- the degrees are positive: `p + 2q ≤ p·r h` forces `r h ≠ 0`
+  have hrne : ∀ h, rothDegrees H N h ≠ 0 := by
+    intro h hcon
+    have hh := hlarge h
+    rw [hcon, Nat.mul_zero] at hh
+    omega
+  refine ⟨H, N, hmem, hN, hH2, hrne, himp ?_⟩
+  -- the floor parameter, recovered from the produced heights
+  have hfloor : ∀ j : Fin m, (j : ℕ) = 0 →
+      C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ (H j : ℤ) := by
+    intro j _
+    have hle : (((C₀ ^ (m * q) * W ^ (2 * m * m * q)).toNat : ℕ) : ℤ) ≤ (H j : ℤ) :=
+      Int.ofNat_le.mpr (hTle j)
+    rwa [Int.toNat_of_nonneg (le_trans zero_le_one hone)] at hle
+  exact hbound_of_height_floor H N α ((m : ℚ) / 2 - ε * (m : ℚ)) hB1 hα
+    (two_card_prod_le_card_idxBoxF (rothDegrees H N) hrne hε hm2)
+    hC₀1 hC₀ hW1 hW hp hmono hH2 (fun j _ => Nat.one_le_iff_ne_zero.mpr (hrne j)) hfloor
+
 end Integral
 
 end MvPolynomial

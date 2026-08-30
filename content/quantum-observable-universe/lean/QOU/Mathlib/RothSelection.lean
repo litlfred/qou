@@ -237,20 +237,27 @@ clause for them, then all seven clauses hold.
 
 The implication is the honest shape.  `hbound` is a statement *about the produced data*, so it
 cannot be a hypothesis of the existential — and quantifying it over all possible `H`, `N` would
-demand far more than the argument needs.  `hbound_mono` above is what makes the implication
-dischargeable: the clause improves as `H₀` grows, and the supply is unbounded. -/
+demand far more than the argument needs.  `hbound_mono` is what makes the implication
+dischargeable: the clause improves as `H₀` grows, and the supply is unbounded.
+
+⚠ `b` is a **function** of the produced data, not a constant.  It was a constant in the first
+draft, and that version cannot be used: the `b` this is actually applied at is
+`⌈siegelHeight (rothDegrees H N) α μ⌉`, which depends on the `H` and `N` the theorem itself
+produces.  A constant `b` cannot be instantiated with it, so the "honest shape" was still the
+wrong one — honest about `hbound` and wrong about `b`. -/
 theorem exists_rothGammaFull_of_supply {S : Set ℕ} (hS : ∀ N, ∃ q ∈ S, N ≤ q)
-    (m p q F : ℕ) (b : ℤ) (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F)
+    (m p q F : ℕ) (bOf : (Fin m → ℕ) → ℕ → ℤ) (hp : 0 < p) (hq : 0 < q) (T : ℕ) (hF : 1 ≤ F)
     (hfloorExp : q * ((m - 1) * m * (2 * m + 1)) ≤ F * p) :
     ∃ (H : Fin m → ℕ) (N : ℕ), (∀ h, H h ∈ S) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧ (∀ h, T ≤ H h) ∧
       (∀ j k : Fin m, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
+      (∀ h : Fin m, p + 2 * q ≤ p * rothDegrees H N h) ∧
       ((∀ j : Fin m, (j : ℕ) = 0 →
-          b ^ (m * q) ≤ (H j : ℤ) ^ (rothDegrees H N j * p)) →
+          (bOf H N) ^ (m * q) ≤ (H j : ℤ) ^ (rothDegrees H N j * p)) →
         RothGammaFull (Equiv.refl (Fin m)) p q F (rothDegrees H N)
-          (fun j => (H j : ℤ)) b) := by
+          (fun j => (H j : ℤ)) (bOf H N)) := by
   obtain ⟨H, N, hmem, h2, hN, hT, hfloor, hmono, hgrow, hlarge⟩ :=
     exists_heights_and_N hS m p q F hp hq T hF
-  exact ⟨H, N, hmem, hN, h2, hT, hmono, fun hbound =>
+  exact ⟨H, N, hmem, hN, h2, hT, hmono, hlarge, fun hbound =>
     rothGammaFull_of_heights H hp hN h2 hgrow hlarge hfloorExp hfloor hbound⟩
 
 /-- **The selection machinery is applicable.**  Every hypothesis of
@@ -264,13 +271,14 @@ theorem exists_rothGammaFull_of_supply_witness :
     ∃ (H : Fin 2 → ℕ) (N : ℕ), (∀ h, H h ∈ (Set.univ : Set ℕ)) ∧ N ≠ 0 ∧ (∀ h, 2 ≤ H h) ∧
       (∀ h, 5 ≤ H h) ∧
       (∀ j k : Fin 2, (j : ℕ) ≤ (k : ℕ) → H j ≤ H k) ∧
+      (∀ h : Fin 2, 1 + 2 * 1 ≤ 1 * rothDegrees H N h) ∧
       ((∀ j : Fin 2, (j : ℕ) = 0 →
           (1 : ℤ) ^ (2 * 1) ≤ (H j : ℤ) ^ (rothDegrees H N j * 1)) →
         RothGammaFull (Equiv.refl (Fin 2)) 1 1 10 (rothDegrees H N)
           (fun j => (H j : ℤ)) 1) :=
   exists_rothGammaFull_of_supply (S := (Set.univ : Set ℕ))
-    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 1 one_pos one_pos 5 (by norm_num)
-    (by norm_num)
+    (fun N => ⟨N, Set.mem_univ N, le_rfl⟩) 2 1 1 10 (fun _ _ => 1) one_pos one_pos 5
+    (by norm_num) (by norm_num)
 
 /-- **`Σ r_h` in terms of the smallest height.**  `Σ_h rothDegrees H N h ≤ m·(log_b N + 1)` for any
 `b` below every height — because `Nat.log` is antitone in its base, so the smallest height gives
