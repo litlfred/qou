@@ -99,20 +99,45 @@ classes, 95 of which occur once**. There is no shared structure to fix once.
 
 ## What this means for the drain
 
+> **🛑 THE FIRST BULLET BELOW IS WRONG, AND ALL THREE OF ITS OWN EXAMPLES
+> REFUTE IT (measured 2026-08-30, same day; see
+> [`2026-08-30-the-remainder-is-vacuous-not-open.md`](2026-08-30-the-remainder-is-vacuous-not-open.md)).**
+> `KnotOperatorSelectionContext`, `HoefsmitScatteringPipelineContext` and
+> `NucleonOrderingFactorizationContext` are each **inhabited by `Unit` and
+> zero, with no hypotheses** — machine-checked, along with 22 others of the 79
+> classes. Constructing a witness for such a class is not the open research; it
+> is a one-liner, and it is *the defect* rather than progress, because a class
+> inhabited that cheaply constrains nothing and the `[C]`-conditional
+> declaration downstream is conditional on nothing.
+>
+> The bullet is kept rather than deleted because the *shape* of the argument is
+> still right — a genuinely contentful class would cost exactly what it says.
+> What was missing is that nobody had asked which of these are contentful, and
+> the answer for at least a quarter of them is "none of it". Read the second
+> bullet as the live one.
+
 The disposition recorded on these entries is *"construct a witness instance and
 prove the property there, or drop the pseudo-theorem and project the field at
 use sites"*. Neither is mechanical:
 
-- **Constructing a witness** means supplying the mathematics the context class
+- ~~**Constructing a witness** means supplying the mathematics the context class
   was standing in for. For many of these — `KnotOperatorSelectionContext`,
   `HoefsmitScatteringPipelineContext`, `NucleonOrderingFactorizationContext` —
-  that *is* the open research, not a formalisation chore.
+  that *is* the open research, not a formalisation chore.~~ **Refuted above.**
 - **Dropping the pseudo-theorem** is cheap per case but changes what each
   content block claims, so it is an authorial decision each time.
 
-**So this is a week-shaped job, not a session-shaped one**, and the binding
+~~**So this is a week-shaped job, not a session-shaped one**, and the binding
 constraint is not typing but per-case mathematical judgement across ~102
-unrelated contexts.
+unrelated contexts.~~
+
+**Revised 2026-08-30.** The week-shaped verdict rested on the refuted bullet.
+With at least 25 of the 79 classes machine-proved vacuous, that fraction of the
+job is not mathematical judgement at all — those context classes want
+*re-encoding* (constrain a parameter, per the q-NS remedy) or the pseudo-theorem
+wants dropping, and neither needs a derivation. The remaining ~54 are
+unmeasured, not established as hard: `unproven` and `skipped` are statements
+about the prober, not about them.
 
 ### The cheaper decomposition, if it is wanted
 
