@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Shape A: a class/structure field of BARE type `Prop`, plus a sibling field
 whose type IS that field.  An instance may then take the Prop field to be `True`
 and discharge its partner with `trivial`, so the docstring's equation is never
@@ -29,7 +30,7 @@ for p in pathlib.Path('content').rglob('*.lean'):
         if cur is None: continue
         if ln.strip() and not ln[0].isspace(): flush(); continue
         f=FIELD.match(ln)
-        if f and 'where' not in f.group(1): fields[f.group(1)]=f.group(2)
+        if f: fields[f.group(1)] = f.group(2)
     flush()
 seen=set(); out=[]
 for h in hits:

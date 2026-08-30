@@ -22,7 +22,26 @@ the equation; the type does not.
 candidates. The existing criteria pass them *correctly* — `proof-claims-unencoded`
 keys on docstring properties that have **no field**, and here there is a field.
 
-## Machine-checked: the framework's Hecke class
+## Machine-checked: one of two placeholder Hecke carriers
+
+**Scope correction, raised by a Copilot review on PR #6120 and accepted.** The
+name `IwahoriHeckeAlgebra` is ambiguous — there are two:
+
+| declaration | kind | how it states the relations |
+|---|---|---|
+| `QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra` | `class` | bare `Prop` fields — **the subject here** |
+| `QOU.BraidKnot.IwahoriHeckeAPI.IwahoriHeckeAlgebra` | `structure` | separate **axioms**, with `Ring`/`StarRing` on the carrier |
+
+Both describe themselves as placeholders. An earlier draft of this document
+called the first "the framework's foundational algebra class"; that was an
+over-claim and is withdrawn. Nothing below applies to the second.
+
+**Prior art I missed.** `triv_hecke` (`HeckeAlgebra.lean:174`) already
+constructs a satisfying instance with all three relations `True`, over `PUnit`,
+and cites its own probe. A grep for `hecke_relation :=` before writing mine
+would have found it. What the probe below adds is the *falsification* half — a
+concrete `q` at which §7a's relation is false in a satisfying instance — which
+`triv_hecke` does not state.
 
 [`scripts/lean/probes/prop-field-carrier-vacuity.lean`](../../scripts/lean/probes/prop-field-carrier-vacuity.lean),
 `lean`-direct **exit 0**. `QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra` is
