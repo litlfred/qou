@@ -78,7 +78,14 @@ def markov_parameter_convention_C(q: mpf) -> mpf:
     definition legitimately fixes z = sqrt(q)/(1+q); the site was correct and
     ungreppable. Taxonomy row 21.
     """
-    if hasattr(q, "free_symbols"):        # sympy Expr / Symbol
+    # NOTE the NON-EMPTY test. `hasattr(q, "free_symbols")` is also True for
+    # sympy NUMERICS -- Rational(1,2) and Float(1.11) both carry the attribute
+    # with an EMPTY set -- so the bare hasattr routed numeric callers into the
+    # symbolic branch and handed them a sympy expression where they asked for a
+    # number. Measured; and mpmath accepts both (mpsqrt(Rational(1,2)) ->
+    # 0.471404520791032), so the numeric arm is the correct destination for
+    # them. Caught by Copilot on PR #6058.
+    if getattr(q, "free_symbols", None):   # genuinely symbolic sympy Expr
         import sympy as _sp
         return _sp.sqrt(q) / (1 + q)
     return mpsqrt(q) / (1 + q)

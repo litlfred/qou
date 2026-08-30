@@ -43,14 +43,22 @@ the Lean-proved c₁ = 0 rung. No c_k value produced; nothing wired; no fit.
 """
 from __future__ import annotations
 
+import pathlib as _pl
+import sys as _sys
+
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent / "qbeta"))
+
+import _path_bridge  # noqa: F401,E402
+from qbeta_utils import markov_parameter_convention_C  # noqa: E402
+
+
 import json
 import sys
 import time
 from pathlib import Path
 
 import sympy as sp
-
-from qbeta_utils import markov_parameter_convention_C
 
 HERE = Path(__file__).resolve().parent          # computations/probes
 ROOT = HERE.parent                               # computations/

@@ -33,6 +33,14 @@ demonstrably disagrees with.
 Structural only: counts crossings and compares templates. No arithmetic on q,
 so nothing here can be a float64 defect.
 """
+import pathlib as _pl
+import sys as _sys
+
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))
+
+import _path_bridge  # noqa: F401,E402
+
 import sys
 
 CHECKS = []
