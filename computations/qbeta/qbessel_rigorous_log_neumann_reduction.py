@@ -53,9 +53,19 @@ set_compute_dps()
 # "1.10997858", the proton pin truncated to 9 s.f. (canonical
 # 1.10997858275138…). Proton is the default anchor per AGENTS.md.
 from q_parameter import Q_MP  # noqa: E402
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 Q0 = Q_MP
 QMU = mpf("1.110037")
-B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")
+B_DEU_OVER_ME = mpf(AME_B_DEUTERON_MEV_VALIDATION) / mpf("0.510999")
 KSER = 70          # terms in g1
 JSUM = 120         # terms in the reduction-of-order Jackson sum
 HERE = pathlib.Path(__file__).resolve().parent

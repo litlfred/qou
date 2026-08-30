@@ -46,7 +46,16 @@ from _precision import set_compute_dps  # noqa: E402
 # AME here is a measurement/comparison reference -- what a `_VALIDATION`
 # constant is for -- not a prediction input, which would be the 3-cal
 # violation fvxq warns about.
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 HERE = Path(__file__).parent
@@ -54,9 +63,9 @@ HERE = Path(__file__).parent
 M_E_MEV = mp.mpf("0.51099895069")
 AME_B = {
     "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
-    "tritium": mp.mpf("8.4818"),
+    "tritium": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
     "helium-3": mp.mpf("7.7180"),
-    "helium-4": mp.mpf("28.29566"),
+    "helium-4": mp.mpf(AME_B_HE4_MEV_VALIDATION),
 }
 CHI_CACHE = {
     "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",

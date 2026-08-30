@@ -34,8 +34,18 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 ME = mp.mpf("0.51099895069")          # MeV
-AME_4HE = mp.mpf("28.295674")
+AME_4HE = mp.mpf(AME_B_HE4_MEV_VALIDATION)
 TAU = mp.mpf("2.6423863")              # depth-2 kernel τ(q₀)
 A = 4
 

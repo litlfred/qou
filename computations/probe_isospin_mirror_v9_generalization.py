@@ -35,6 +35,17 @@ from datetime import datetime, timezone
 from decimal import Decimal as D, getcontext
 from pathlib import Path
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 getcontext().prec = 40
 
 M_E_MEV = D("0.51099895069")
@@ -52,7 +63,11 @@ H = Q_0 - 1 / Q_0
 MU_0 = M_E_MEV / (D(3) * H / D(2))
 
 # AME2020 binding energies (MeV), same source as v7/v8/v9.
-AME_MeV = {"D": D("2.224566"), "T": D("8.481798"), "3He": D("7.71806")}
+AME_MeV = {
+    "D": D(AME_B_DEUTERON_MEV_VALIDATION),
+    "T": D(AME_B_TRITIUM_MEV_VALIDATION),
+    "3He": D(AME_B_HE3_MEV_VALIDATION),
+}
 
 
 def load_chi_atom(repo_root, atom_label):

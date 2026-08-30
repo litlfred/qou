@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T18:02:27.858510+00:00",
-  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
+  "computedAt": "2026-08-30T03:43:10.104368+00:00",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "assertions": [
     {
       "name": "g_reeb_below_ceiling",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 169,
   "computation": "b4-1four-reeb-flow-magnitude",
   "scriptFile": "b4_1four_reeb_flow_magnitude.py",
-  "scriptHash": "f5054f1face8",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptHash": "9dc4a76ebc14",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -66,9 +66,9 @@
       "det_I_plus_G2_(1-g^2)": "0.8004349268",
       "B_det_form_MeV_E0*(-ln det)": "0.93179962",
       "B_linear_5g_MeV_(landed law)": "2.2336353",
-      "B_AME_2H_MeV": "2.224566",
+      "B_AME_2H_MeV": "2.2245662",
       "err_det_form_pct": "-58.113",
-      "err_linear_5g_pct": "0.40769",
+      "err_linear_5g_pct": "0.40768",
       "finding": "The determinant form does NOT reproduce the deuteron at g_reeb (≈0.93 MeV, −58 %); the landed 5·g law (+0.41 %) is a DISTINCT linear assertion, not the A=2 case of b₄ = −ln det(I+G). Reconciling the two forms is open."
     },
     "q2_1four_enumeration_at_g_reeb": [
@@ -99,7 +99,7 @@
     ],
     "q3_ursell_cumulants_of_det_form": {
       "b2_det_MeV": "0.93179962",
-      "b2_AME": "2.224566",
+      "b2_AME": "2.2245662",
       "B3_ppn_MeV": "2.283055",
       "B3_pnn_MeV": "6.2813669",
       "b3_det_MeV": "1.4868121",

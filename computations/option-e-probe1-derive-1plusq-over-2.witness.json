@@ -1,20 +1,20 @@
 {
   "engine": "python+mpmath",
-  "computedAt": "2026-08-29T07:33:34.968934+00:00",
+  "computedAt": "2026-08-30T03:39:35.444997+00:00",
   "computation": "option-e-probe1-derive-1plusq-over-2",
   "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "auditOnly": true,
   "trigger": "author directive 'work on Delta_lambda binding-energy Gram closure' -> docs/coordination/option-e.md PROBE 1 (next-session keystone): derive-or-falsify v9 (1+q)/2",
   "description": "Tests whether the v9 mirror-pair closure factor (1+q)/2 is structurally FORCED (= [2]_q/2 unbalanced) or a near-match/fit. Refreshes the v9 residual at canonical proton q0 (v9 source hardcodes the stale muon-anchor literal 1.1097090249); tests 4 structural hypotheses for an algebraic identity with (1+q)/2; runs the proton-pin vs muon-pin required-factor discriminator. AUDIT-ONLY: no production wiring, no v10 ansatz, no fit.",
   "dps": 50,
-  "start_time_monotonic": 2215.036467901,
-  "elapsed_sec": 0.010626821000187192,
+  "start_time_monotonic": 4601.258949614,
+  "elapsed_sec": 0.08423874500022066,
   "q_proton_canonical": "1.1099785827513808075916690956107688798744991218736",
   "q_muon_crosscheck": "1.109978595642739046681795129380001752700065561029",
   "stale_literal_q0": "1.1097090249",
   "mirror_sum_S": "0.11463311161007449336534900593099597464431147184235",
   "m_pi_MeV": "139.57039",
-  "target_diff_MeV": "0.763738",
+  "target_diff_MeV": "0.76375488000000000000000000000000000000000000000001",
   "step0_staleness_refresh": {
     "stale_literal_q0": "1.1097090249",
     "canonical_proton_q0": "1.1099785827513808075916690956107688798744991218736",
@@ -22,18 +22,18 @@
     "v9_value_at_stale_MeV": "1.6685113880901710240198423570752004880544949143838",
     "v9_value_at_proton_MeV": "1.6724184277741819086660455918839821162236201828229",
     "v9_value_at_muon_MeV": "1.6724186146044559285140671378395828195360460444642",
-    "target_MeV": "0.763738",
-    "residual_at_stale_pct": 118.46646207078489,
-    "residual_at_proton_pct": 118.97803013260855,
-    "residual_at_muon_pct": 118.9780545952219
+    "target_MeV": "0.76375488000000000000000000000000000000000000000001",
+    "residual_at_stale_pct": 118.46163367102427,
+    "residual_at_proton_pct": 118.97319042651249,
+    "residual_at_muon_pct": 118.97321488858519
   },
   "decisive_fit_test": {
-    "required_factor_proton": "0.48177860159615591240794953419941753657588436971124",
-    "required_factor_muon": "0.48177855071893095767968857612130349151433476408182",
+    "required_factor_proton": "0.48178924978021241229639484684346207301117684033358",
+    "required_factor_muon": "0.48178919890186297828697226914582882298001640094004",
     "candidate_1plusq_over_2_proton": "1.0549892913756904037958345478053844399372495609368",
     "candidate_1plusq_over_2_muon": "1.0549892978213695233408975646900008763500327805145",
-    "residual_proton_pct": 118.97803013260855,
-    "residual_muon_pct": 118.9780545952219
+    "residual_proton_pct": 118.97319042651249,
+    "residual_muon_pct": 118.97321488858519
   },
   "hypotheses": {
     "H1_two_q_over_two_unbalanced": {
@@ -94,8 +94,8 @@
     }
   },
   "scriptFile": "option_e_probe1_derive_1plusq_over_2.py",
-  "scriptHash": "72a11c1cc253",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "scriptHash": "99cfee8bb504",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "durationMs": 0,
   "engineVersion": "python 3.11 + mpmath 1.4.1",
   "q0Anchor": "proton",

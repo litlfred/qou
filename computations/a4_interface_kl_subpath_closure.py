@@ -31,9 +31,19 @@ Q0_STR = "1.1099785955573347198997632204832250266562084087802"
 # Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 M_E_MEV = mpf("0.51099895069")
-B_D_AME = mpf("2.224566")  # MeV
-B_4HE_AME = mpf("28.29566") # MeV
+B_D_AME = mpf(AME_B_DEUTERON_MEV_VALIDATION)  # MeV
+B_4HE_AME = mpf(AME_B_HE4_MEV_VALIDATION) # MeV
 
 def conjugate(lam):
     return [sum(1 for x in lam if x >= i) for i in range(1, lam[0] + 1)]

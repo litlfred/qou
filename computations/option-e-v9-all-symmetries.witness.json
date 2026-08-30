@@ -1,16 +1,16 @@
 {
   "engine": "python",
-  "computedAt": "2026-08-23T09:15:46.253335+00:00",
+  "computedAt": "2026-08-30T03:39:47.496220+00:00",
   "computation": "option-e-v9-all-symmetries",
   "description": "Option E v9: tries all remaining symmetries on top of v8's 6.15% closure baseline. Tests 9 scales \u00d7 9 input combinations = 81 candidates. Goal: close mirror pair below 2%.",
-  "mirror_target_MeV": "0.7637380000000000000000000000000000000000000000000013424548764674272916",
+  "mirror_target_MeV": "0.7637548800000000000000000000000000000000000000000138741685141259935181",
   "base_quantities": {
-    "v8 base (y M_sym)": "0.1146331273911092739707187874855925562169325919535446355688061886575514",
-    "v8 alt (y M_asym)": "0.1146770062694767847553834198974260673285715290288624288888740488821204",
-    "dim M_sym": "-2.022674876930280771646554525311567796732902617645340000000000000000021",
-    "dim M_asym": "67.68885649402486061135387292100940136710682610927372999999999999999999",
-    "y\u00b2 M_sym": "0.001437939514002490078625218291132266870624101658131233079781151225228224",
-    "phase M_sym": "0.07686249071005220225014505275600097931603564731924889921163621248777758",
+    "v8 base (y M_sym)": "0.1146331116100744933653490059309959746443114718423575026559621246124792",
+    "v8 alt (y M_asym)": "0.1146769904944820139667418043379129049584901646137080787235166166341826",
+    "dim M_sym": "-2.022695043259791771171570097783079729812390474935259999999999999999972",
+    "dim M_asym": "67.6895994509696212126550790038083198288520083948655",
+    "y\u00b2 M_sym": "0.001437939326763665743537183888372488632333825310603806549526493148770808",
+    "phase M_sym": "0.07686249328399249453270435564071147593152502096727080149181236925728399",
     "self-conj y M_sym": "0.0",
     "chiral-only y M_sym": "0.0",
     "chiral-only y M_asym": "0.0"
@@ -18,122 +18,129 @@
   "results_top15": [
     {
       "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (phase M_sym)",
-      "value_MeV": 0.9557226191320367,
-      "err_pct": 25.137497300387917
+      "value_MeV": 0.9557226511368928,
+      "err_pct": 25.134735785503956
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (phase M_sym)",
-      "value_MeV": 1.0605740157518866,
-      "err_pct": 38.86621010763986
+      "value_MeV": 1.0605740512679642,
+      "err_pct": 38.86314562965073
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(q+q\u207b\u00b9)/2 \u00b7 (phase M_sym)",
-      "value_MeV": 1.06632558799317,
-      "err_pct": 39.61929195524773
+      "value_MeV": 1.066325623701854,
+      "err_pct": 39.616210858365186
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (phase M_sym)",
-      "value_MeV": 1.1654254123717362,
-      "err_pct": 52.5949229148918
+      "value_MeV": 1.1654254513990356,
+      "err_pct": 52.591555473797506
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h/2) \u00b7 (phase M_sym)",
-      "value_MeV": 1.1711769846130198,
-      "err_pct": 53.34800476249967
+      "value_MeV": 1.1711770238329253,
+      "err_pct": 53.34462070251196
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (phase M_sym)",
-      "value_MeV": 1.176928556854303,
-      "err_pct": 54.10108661010755
+      "value_MeV": 1.1769285962668152,
+      "err_pct": 54.09768593122641
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (phase M_sym)",
-      "value_MeV": 1.281779953474153,
-      "err_pct": 67.8297994173595
+      "value_MeV": 1.2817799963978864,
+      "err_pct": 67.82609577537319
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.15643578755333507,
-      "err_pct": -79.51708733186838
+      "value_MeV": 0.15643576603399295,
+      "err_pct": -79.51754284908884
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (v8 base (y M_sym))",
-      "value_MeV": 0.15637593050685575,
-      "err_pct": -79.52492471150372
+      "value_MeV": 0.1563759089792742,
+      "err_pct": -79.52538005658646
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (phase M_sym)",
-      "value_MeV": 0.10485139661984982,
-      "err_pct": -86.27128719274806
+      "value_MeV": 0.10485140013107139,
+      "err_pct": -86.27159015585323
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (v8 base (y M_sym))",
-      "value_MeV": 1.425369796599621,
-      "err_pct": 86.63072894102703
+      "value_MeV": 1.425369600375276,
+      "err_pct": 86.62657846130895
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 1.4259153947993486,
-      "err_pct": 86.70216681628366
+      "value_MeV": 1.4259151986501062,
+      "err_pct": 86.69801476752674
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (y\u00b2 M_sym)",
-      "value_MeV": 0.028135625140972717,
-      "err_pct": -96.3160632126498
+      "value_MeV": 0.02813562147734061,
+      "err_pct": -96.31614511224588
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (y\u00b2 M_sym)",
-      "value_MeV": 0.02397947329484226,
-      "err_pct": -96.86024876399469
+      "value_MeV": 0.023979470172396326,
+      "err_pct": -96.86031856550673
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (phase M_sym)",
-      "value_MeV": 1.5039396337332878,
-      "err_pct": 96.91826696239912
+      "value_MeV": 1.5039396840966155,
+      "err_pct": 96.9139214006221
     }
   ],
   "best_formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (phase M_sym)",
-  "best_err_pct": 25.137497300387917,
+  "best_err_pct": 25.134735785503956,
   "correction_factor_search": {
-    "v8_base_MeV": 1.5817457271064768,
-    "target_factor": 0.48284499013449095,
+    "v8_base_MeV": 1.5817455093545503,
+    "target_factor": 0.4828557283602841,
     "candidates": {
       "1 + h_q\u00b2": {
         "value": 1.0097738681040356,
-        "err_vs_target_pct": 109.13002904364289
+        "err_vs_target_pct": 109.12537820211796
       },
       "1 + h": {
         "value": 1.2085719001567694,
-        "err_vs_target_pct": 150.3022553511709
+        "err_vs_target_pct": 150.2966888807396
       },
       "1 + h/2": {
         "value": 1.1042859500783848,
-        "err_vs_target_pct": 128.7040297903471
+        "err_vs_target_pct": 128.69894364273105
       },
       "(1 + q)/2": {
         "value": 1.05485451245,
-        "err_vs_target_pct": 118.46649214609897
+        "err_vs_target_pct": 118.46163367102427
       },
       "q/[2]_q": {
         "value": 0.5518617250240091,
-        "err_vs_target_pct": 14.293766384589464
+        "err_vs_target_pct": 14.291224606169727
       },
       "[2]_q/2": {
         "value": 1.0054230748216153,
-        "err_vs_target_pct": 108.22895450185082
+        "err_vs_target_pct": 108.2243236993175
       },
       "(q\u00b2+1)/(q\u00b2)": {
         "value": 1.8120481175904966,
-        "err_vs_target_pct": 275.28568269617364
+        "err_vs_target_pct": 275.27733672001335
       },
       "(q+1)\u00b2/4q": {
         "value": 1.0027115374108075,
-        "err_vs_target_pct": 107.66737936568707
+        "err_vs_target_pct": 107.66276105202
       },
       "1 + h_q + h_q\u00b2": {
         "value": 1.108636743360805,
-        "err_vs_target_pct": 129.60510433213918
+        "err_vs_target_pct": 129.59999814553152
       }
     }
-  }
+  },
+  "scriptFile": "option_e_v9_all_symmetries.py",
+  "scriptHash": "fd4702061395",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

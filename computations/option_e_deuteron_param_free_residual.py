@@ -34,9 +34,18 @@ from _precision import set_compute_dps  # noqa: E402
 # literal rounded there cannot be recovered by raising dps afterwards.
 mp.dps = 50
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 
 M_E_MEV = mpf("0.51099895069")
-B_D_AME_MEV = mpf("2.224566")  # deuteron binding (AME), as used in v6/v7
+B_D_AME_MEV = mpf(AME_B_DEUTERON_MEV_VALIDATION)  # deuteron binding (AME), as used in v6/v7
 # ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
 # both live pins. NOT migrated on purpose — these files ARE the record
 # of the v1..v9 progression that docs/coordination/option-e.md tracks

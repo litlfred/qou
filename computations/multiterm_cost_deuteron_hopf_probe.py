@@ -21,7 +21,15 @@ import mpmath as mp
 from _precision import set_compute_dps
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP as Q_CANONICAL
-from codata_constants import M_E_MEV
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV,
+)
 from hecke_core import z as z_val
 
 set_compute_dps()
@@ -31,7 +39,7 @@ m_e = mp.mpf(str(M_E_MEV))
 z = mp.mpf(str(z_val))
 
 # Deuteron data
-B_AME = mp.mpf("2.224566")
+B_AME = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
 
 # From binding-k-enumerator.witness.json for K = [3, 3]
 # T_pred_markov_at_n0 = 1.1007832370743025

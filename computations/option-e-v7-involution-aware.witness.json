@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-08-23T09:15:45.936075+00:00",
+  "computedAt": "2026-08-30T03:39:58.380178+00:00",
   "computation": "option-e-v7-involution-aware",
   "description": "Option E v7: involution-aware \u0394_\u03bb probe. Tests partition-transpose \u03bb \u2194 \u03bb\u1d40 symmetry (self-conjugate + bar-(anti)symmetric combinations) with 5 scale candidates (m_e, \u03bc\u2080, \u03bc\u2080\u00b7\u210f_q, m_\u03c0, m_\u03c0\u00b7\u210f_q) \u00d7 7 involution sums. Addresses user question 'are we using involution / bar / skew symmetry appropriately?'",
   "scriptFile": "option_e_v7_involution_aware.py",
@@ -45,218 +45,224 @@
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
       "D": {
-        "B_pred": 1.9892110996650085,
-        "err_pct": -10.579811987371539
+        "B_pred": 1.9892108273296236,
+        "err_pct": -10.57983226888804
       },
       "T": {
-        "B_pred": 0.7911483693293548,
-        "err_pct": -90.67239788863924
+        "B_pred": 0.7911482604913154,
+        "err_pct": -90.67239719233864
       },
       "3He": {
-        "B_pred": 1.3926765379227664,
-        "err_pct": -81.95561400244665
+        "B_pred": 1.392676346230862,
+        "err_pct": -81.95557281324763
       },
-      "max_err_pct": 90.67239788863924
+      "max_err_pct": 90.67239719233864
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 1.9789976767566866,
-        "err_pct": -11.038931784595887
+        "B_pred": 1.978997403015405,
+        "err_pct": -11.03895208803384
       },
       "T": {
-        "B_pred": 0.7909000854002254,
-        "err_pct": -90.6753251445009
+        "B_pred": 0.7908999765280093,
+        "err_pct": -90.67532444922446
       },
       "3He": {
-        "B_pred": 1.39297926554587,
-        "err_pct": -81.95169167451574
+        "B_pred": 1.3929790738956365,
+        "err_pct": -81.95165047528359
       },
-      "max_err_pct": 90.6753251445009
+      "max_err_pct": 90.67532444922446
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 1.3238700925403075,
-        "err_pct": -40.48861249608654
+        "B_pred": 1.3238701349926079,
+        "err_pct": -40.48861593812727
       },
       "T": {
-        "B_pred": 0.40984438349926566,
-        "err_pct": -95.16795397038145
+        "B_pred": 0.4098443900431574,
+        "err_pct": -95.16795286777632
       },
       "3He": {
-        "B_pred": 0.3730849656553402,
-        "err_pct": -95.16607844904885
+        "B_pred": 0.3730849760744704,
+        "err_pct": -95.16606661449605
       },
-      "max_err_pct": 95.16795397038145
+      "max_err_pct": 95.16795286777632
     },
     {
       "formula": "\u03bc\u2080 \u00b7 bar_sym_sum_atom",
       "D": {
-        "B_pred": 0.23546550669782432,
-        "err_pct": -89.41521597031401
+        "B_pred": 0.2354654744611304,
+        "err_pct": -89.41521837106352
       },
       "T": {
-        "B_pred": 0.09364926210630219,
-        "err_pct": -98.8958795988032
+        "B_pred": 0.09364924922300183,
+        "err_pct": -98.89587951638119
       },
       "3He": {
-        "B_pred": 0.16485293427297903,
-        "err_pct": -97.86406254586024
+        "B_pred": 0.1648529115821588,
+        "err_pct": -97.86405767024115
       },
-      "max_err_pct": 98.8958795988032
+      "max_err_pct": 98.89587951638119
     },
     {
       "formula": "\u03bc\u2080 \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 0.2342565305360524,
-        "err_pct": -89.46956257822639
+        "B_pred": 0.2342564981329406,
+        "err_pct": -89.46956498157076
       },
       "T": {
-        "B_pred": 0.09361987241448555,
-        "err_pct": -98.89622610188918
+        "B_pred": 0.09361985952713964,
+        "err_pct": -98.8962260195884
       },
       "3He": {
-        "B_pred": 0.16488876853570633,
-        "err_pct": -97.8635982547984
+        "B_pred": 0.16488874584981877,
+        "err_pct": -97.86359337799168
       },
-      "max_err_pct": 98.89622610188918
+      "max_err_pct": 98.8962260195884
     },
     {
       "formula": "\u03bc\u2080 \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 0.1567082257858882,
-        "err_pct": -92.9555596109134
+        "B_pred": 0.15670823081102225,
+        "err_pct": -92.95556001835224
       },
       "T": {
-        "B_pred": 0.0485138130609485,
-        "err_pct": -99.42802442287652
+        "B_pred": 0.04851381383555749,
+        "err_pct": -99.42802429235971
       },
       "3He": {
-        "B_pred": 0.04416255293074182,
-        "err_pct": -99.4278024149755
+        "B_pred": 0.044162554164067815,
+        "err_pct": -99.42780101410408
       },
-      "max_err_pct": 99.42802442287652
+      "max_err_pct": 99.42802429235971
     },
     {
       "formula": "m_e \u00b7 bar_sym_sum_atom",
       "D": {
-        "B_pred": 0.07366723223001263,
-        "err_pct": -96.68846722326904
+        "B_pred": 0.07366722214450987,
+        "err_pct": -96.68846797436238
       },
       "T": {
-        "B_pred": 0.029298906818686195,
-        "err_pct": -99.6545672648808
+        "B_pred": 0.029298902788044538,
+        "err_pct": -99.65456723909442
       },
       "3He": {
-        "B_pred": 0.051575534621601395,
-        "err_pct": -99.33175519986109
+        "B_pred": 0.05157552752260017,
+        "err_pct": -99.33175367448538
       },
-      "max_err_pct": 99.6545672648808
+      "max_err_pct": 99.65456723909442
     },
     {
       "formula": "m_e \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 0.0732889945470551,
-        "err_pct": -96.70546998618809
+        "B_pred": 0.07328898440948722,
+        "err_pct": -96.70547073809324
       },
       "T": {
-        "B_pred": 0.029289712022885366,
-        "err_pct": -99.65467567109137
+        "B_pred": 0.02928970799097803,
+        "err_pct": -99.65467564534293
       },
       "3He": {
-        "B_pred": 0.05158674565200302,
-        "err_pct": -99.3316099427576
+        "B_pred": 0.051586738554545014,
+        "err_pct": -99.33160841701033
       },
-      "max_err_pct": 99.65467567109137
+      "max_err_pct": 99.65467564534293
     },
     {
       "formula": "m_e \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 0.04902739863353814,
-        "err_pct": -97.79609152376068
+        "B_pred": 0.049027400205690776,
+        "err_pct": -97.79609165123111
       },
       "T": {
-        "B_pred": 0.015177927260958495,
-        "err_pct": -99.82105295055413
+        "B_pred": 0.015177927503300997,
+        "err_pct": -99.82105290972093
       },
       "3He": {
-        "B_pred": 0.013816601370808096,
-        "err_pct": -99.82098349363949
+        "B_pred": 0.013816601756663814,
+        "err_pct": -99.82098305536587
       },
-      "max_err_pct": 99.82105295055413
+      "max_err_pct": 99.82105290972093
     },
     {
       "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
       "D": {
-        "B_pred": 0.023278797015939025,
-        "err_pct": -98.9535578168533
+        "B_pred": 0.023278793828926773,
+        "err_pct": -98.95355805419831
       },
       "T": {
-        "B_pred": 0.009258435317503862,
-        "err_pct": -99.89084348250803
+        "B_pred": 0.009258434043823746,
+        "err_pct": -99.89084347435956
       },
       "3He": {
-        "B_pred": 0.016297835076741943,
-        "err_pct": -99.78883508191512
+        "B_pred": 0.016297832833462218,
+        "err_pct": -99.7888345998974
       },
-      "max_err_pct": 99.89084348250803
+      "max_err_pct": 99.89084347435956
     }
   ],
   "mirror_pair_results_top10": [
     {
       "formula": "m_\u03c0 \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.3718222613741792,
-      "err_pct": -51.31546926116297
+      "diff_MeV": 0.3718222221760642,
+      "err_pct": -51.316550386419244
     },
     {
       "formula": "m_\u03c0 \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.16127795269643094,
-      "err_pct": -78.88307866095036
+      "diff_MeV": 0.16127878999776415,
+      "err_pct": -78.88343574344636
     },
     {
       "formula": "m_\u03c0 \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.14385254451859983,
-      "err_pct": -81.16467368147194
+      "diff_MeV": 0.1438533825871348,
+      "err_pct": -81.16498023722811
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.03675941784392542,
-      "err_pct": -95.186907310632
+      "diff_MeV": 0.03675941396868706,
+      "err_pct": -95.18701419378334
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.01594440211909442,
-      "err_pct": -97.91232043985052
+      "diff_MeV": 0.01594448489711168,
+      "err_pct": -97.91235574205278
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.014221676164111213,
-      "err_pct": -98.13788548375081
+      "diff_MeV": 0.014221759017976243,
+      "err_pct": -98.1379157907343
     },
     {
       "formula": "\u03bc\u2080 \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.004351260130206682,
-      "err_pct": -99.43026795442853
+      "diff_MeV": 0.004351259671489675,
+      "err_pct": -99.43028060632625
     },
     {
       "formula": "\u03bc\u2080 \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.0018873596294524406,
-      "err_pct": -99.75287865348425
+      "diff_MeV": 0.0018873694279940734,
+      "err_pct": -99.75288283225187
     },
     {
       "formula": "\u03bc\u2080 \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.0016834383161439001,
-      "err_pct": -99.77957908128914
+      "diff_MeV": 0.0016834481236637324,
+      "err_pct": -99.77958266876622
     },
     {
       "formula": "m_e \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.0013613258901504,
-      "err_pct": -99.82175485701244
+      "diff_MeV": 0.001361325746637183,
+      "err_pct": -99.82175881525795
     }
   ],
   "best_absolute": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
-  "best_absolute_max_err": 90.67239788863924,
+  "best_absolute_max_err": 90.67239719233864,
   "best_mirror": "m_\u03c0 \u00b7 (pair_phase_sum)",
-  "best_mirror_err": -51.31546926116297
+  "best_mirror_err": -51.316550386419244,
+  "scriptHash": "d275c0563e00",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

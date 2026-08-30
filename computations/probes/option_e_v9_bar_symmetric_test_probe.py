@@ -62,6 +62,16 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 try:
     from qou_substrate.constants import q_at
 except ImportError:
@@ -117,8 +127,8 @@ def main() -> int:
     # (AME isotope bindings are not yet centralized in
     # experimental_constants.py; if/when added, swap these literals.)
     v8_base_MeV = mp.mpf("0.7232")  # PROBE INPUT from v8 audit
-    B_T_AME_MeV = mp.mpf("8.4817983")    # AME 2020 ³H binding
-    B_He3_AME_MeV = mp.mpf("7.7180428")  # AME 2020 ³He binding
+    B_T_AME_MeV = mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)    # AME 2020 ³H binding
+    B_He3_AME_MeV = mp.mpf(AME_B_HE3_MEV_VALIDATION)  # AME 2020 ³He binding
     target_MeV = B_T_AME_MeV - B_He3_AME_MeV
     required_factor = target_MeV / v8_base_MeV
 

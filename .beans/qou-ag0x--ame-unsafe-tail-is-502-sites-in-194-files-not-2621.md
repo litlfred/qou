@@ -4,7 +4,7 @@ title: AME UNSAFE tail is 502 sites in 194 files, not 262/101 — the roadmap no
 status: todo
 type: task
 created_at: 2026-08-29T20:03:23Z
-updated_at: 2026-08-29T20:03:23Z
+updated_at: 2026-08-30T04:05:00Z
 ---
 
 The SAFE (byte-exact, value-preserving) class is DRAINED as of 897caf93f —
@@ -38,3 +38,30 @@ of work here.
 Also excluded deliberately: registry_witness_pin_validator.py is in the SAFE
 list and must stay unrouted, because its literals are the fixtures it
 validates the registry against.
+
+---
+
+## TARGET class drained (this branch)
+
+The role classifier (2ce2597ac) split the UNSAFE tail into TARGET / INPUT /
+REVIEW. TARGET is now drained: 109 literal sites in 53 producers read
+`codata_constants`, and the triage reports
+
+    SAFE     9 routes in  4 files   (unchanged -- pin fixtures, must stay literal)
+    TARGET   0 sites  in  0 files   (was 109 in 53)
+    INPUT    0 sites  in  0 files   (was 0 -- nothing was ever routable here)
+    REVIEW 389 sites  in 140 files  (unchanged -- the tail that needs reading)
+
+Twenty-seven distinct spellings of four binding energies and four atomic
+masses collapsed onto nine constants. Largest value move 3.06e-6 relative
+(2.224573 -> 2.2245662); smallest 1.9e-10.
+
+The INPUT count is 0 both before and after, which is only worth stating
+because the classifier's `--selftest` pins a positive INPUT case: the path
+fires, it just has nothing to fire on. The calibration sites that do exist
+(e.g. `binding_single_pipeline_comparison.py:255`, `alpha_D =
+deut["B_AME_MeV"] / ell_bond`) read AME out of WITNESSES, not literals, so
+the 3-cal blocker was never in this tail.
+
+Left behind on purpose: the deuteron literal `2.22452`, 2.1e-5 from the
+registry -- too far to be a rounding. See qou-e2cf.

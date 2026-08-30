@@ -45,6 +45,15 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt as _fmt  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 t0 = time.time()
 
 
@@ -54,7 +63,7 @@ def log(msg):
 
 # β-decay Q-value calibration E₀ (free-neutron), per prop:categorical-mass-markov.
 E_0_MEV = 0.78233341
-B_D_AME_MEV = 2.224573  # AME2020 deuteron binding (audit comparison only)
+B_D_AME_MEV = AME_B_DEUTERON_MEV_VALIDATION  # AME2020 deuteron binding (audit comparison only)
 
 
 def main():
@@ -234,7 +243,7 @@ def _emit_witness(results, q0, h, word_bound, word_free, sum_dim_sq,
     out["scriptFile"] = os.path.basename(__file__)
     dest = os.path.join(here, "..", "h6-deuteron-free-word-chi-lambda.witness.json")
     with open(dest, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
+        json.dump(out, f, indent=2, ensure_ascii=False, default=str)
         f.write("\n")
     print(f"[witness] wrote {os.path.normpath(dest)}", flush=True)
 

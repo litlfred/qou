@@ -62,10 +62,20 @@ from b4_1four_complete_graph_writhe_signs import (  # noqa: E402
 
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 COMP = str(_COMP)
 
-AME_B_2H = mp.mpf("2.224566")
-AME_B_4HE = mp.mpf("28.29566")
+AME_B_2H = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)
+AME_B_4HE = mp.mpf(AME_B_HE4_MEV_VALIDATION)
 B4_TARGET = mp.mpf("9.2431")   # connected 4-body cumulant (b4_value_cumulant_target_probe.py)
 
 
@@ -141,7 +151,7 @@ def main() -> int:
     B4_det = E0 * nld4
     b4_det = B4_det - 6 * b2_det - 4 * b3_det
     q3 = {
-        "b2_det_MeV": mp.nstr(b2_det, 8), "b2_AME": "2.224566",
+        "b2_det_MeV": mp.nstr(b2_det, 8), "b2_AME": AME_B_DEUTERON_MEV_VALIDATION,
         "B3_ppn_MeV": mp.nstr(B3_ppn, 8), "B3_pnn_MeV": mp.nstr(B3_pnn, 8),
         "b3_det_MeV": mp.nstr(b3_det, 8), "b3_AME": "1.4264",
         "b4_det_MeV": mp.nstr(b4_det, 8), "b4_AME": "9.2431",

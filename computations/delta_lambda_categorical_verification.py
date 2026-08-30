@@ -62,7 +62,15 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from codata_constants import M_E_MEV
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV,
+)
 from q_parameter import Q as Q0
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -71,7 +79,7 @@ from q_parameter import Q as Q0
 # Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
+B_D_AME_MEV = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)  # AME 2020 deuteron binding energy
 
 
 def load_chi_deuteron() -> tuple[mp.mpf, list[dict]]:

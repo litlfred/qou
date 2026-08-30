@@ -64,6 +64,18 @@ sys.path[:0] = [str(COMP), str(COMP / "substrate")]
 import closed_form_tau_M as C  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 # ---- derived substrate constants (0-fit) -----------------------------------
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
@@ -76,8 +88,8 @@ TRM_D = mp.mpf("0.7280918153466761555460727563")
 TAU_N = TRM_D / (TAU_P * Z_MK)
 
 # AME bindings (DIAGNOSTIC-ONLY — used to form the target, never to fit)
-AME = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-       "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
+AME = {"D": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "T": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION),
+       "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION), "4He": mp.mpf(AME_B_HE4_MEV_VALIDATION)}
 
 
 def pair_factor(kind: str, pn: str) -> mp.mpf:

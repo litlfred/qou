@@ -57,10 +57,21 @@ from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 COMP = str(_COMP)
 
-AME = {"b2_pn": mp.mpf("2.224566"), "b3": mp.mpf("1.4264"),
-       "b4": mp.mpf("9.2431"), "B4He": mp.mpf("28.29566")}
+AME = {"b2_pn": mp.mpf(AME_B_DEUTERON_MEV_VALIDATION), "b3": mp.mpf("1.4264"),
+       "b4": mp.mpf("9.2431"), "B4He": mp.mpf(AME_B_HE4_MEV_VALIDATION)}
 
 
 def det_n(pairs, n):

@@ -35,10 +35,19 @@ import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
 HERE = Path(__file__).resolve().parent
 N = 12
 m_e = mpf("0.51099895069")
-AME_HE4 = mpf("28.295660")
+AME_HE4 = mpf(AME_B_HE4_MEV_VALIDATION)
 BETTI_WALL_BUDGET_S = 25.0    # cap the Rust Betti loop; rest fall back to f^λ
 NMAX_BETTI = 1                # only n(λ) ≤ this (instant cells). EMPIRICAL: even
                              # shallow (10,2) (n=2) is ~100s/shape in Rust (w_0-deep

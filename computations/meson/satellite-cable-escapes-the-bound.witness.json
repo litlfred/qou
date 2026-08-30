@@ -1,12 +1,12 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-27T05:31:42.186323+00:00",
-  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "computedAt": "2026-08-30T05:16:37.437854+00:00",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "assertions": [
     {
       "name": "satellite_cable_exceeds_required_trace",
-      "computed": "4.9937848930689173797",
+      "computed": "4.9937846685853751362",
       "expected": "4.99378",
       "passed": true,
       "tolerance": "1e-4",
@@ -15,7 +15,7 @@
     },
     {
       "name": "control_uncabled_word_falls_short",
-      "computed": "0.68271975402849274107",
+      "computed": "0.68271972333847464345",
       "expected": "0.68272",
       "passed": true,
       "tolerance": "1e-4",
@@ -69,7 +69,7 @@
     },
     {
       "name": "atom_convex_2cable_also_clears_the_requirement",
-      "computed": "1.1109865833030256594",
+      "computed": "1.1109865333613063132",
       "expected": "1.11099",
       "passed": true,
       "tolerance": "1e-4",
@@ -87,11 +87,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5691,
+  "durationMs": 5673,
   "computation": "satellite-cable-escapes-the-bound",
   "scriptFile": "satellite_cable_escapes_the_bound_probe.py",
-  "scriptHash": "048a55f2e3b5",
-  "scriptCommitSha": "7affd753c3a7eb0d9b9c0a31760e31437ecd163d",
+  "scriptHash": "e59667380a0b",
+  "scriptCommitSha": "dc17437c90d9279352b9ef02271456fa4560b2eb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -103,9 +103,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -121,8 +122,8 @@
     "cable_min_trace": "0.14746776848583106107543",
     "cable_max_trace": "7.44821970499603017377246",
     "atom_2cable_trace": "1.65703416124888558080082",
-    "required_trace": "1.49149790479236007540919",
-    "ratio_cabled": "4.99378489306891737966741",
+    "required_trace": "1.49149797183905013850535",
+    "ratio_cabled": "4.99378466858537513620929",
     "lean_predicted_by": "qou:QOU.MassTheory.larger_index_set_escapes_the_bound"
   },
   "caveats": [

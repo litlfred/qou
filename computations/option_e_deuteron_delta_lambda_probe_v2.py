@@ -37,6 +37,15 @@ from mpmath import mpf, mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 
 def young_contents(partition):
     """Return list of contents (c-r) over all cells of the Young diagram."""
@@ -78,7 +87,7 @@ def main() -> int:
             "contents": contents,
         })
 
-    B_D_MeV = mpf("2.224566")
+    B_D_MeV = mpf(AME_B_DEUTERON_MEV_VALIDATION)
     m_e_MeV = mpf("0.51099895069")
     closure_threshold = mpf("0.10") * B_D_MeV
 

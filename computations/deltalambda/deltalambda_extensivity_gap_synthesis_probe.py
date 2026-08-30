@@ -38,11 +38,32 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent      # computations/
 
 m_e = mpf('0.51099895069')
-B_AME = {'D': 2.22452, 'T': 8.48180, '3He': 7.71804, '4He': 28.29567}
+# NOTE: 'D' is NOT routed. The literal 2.22452 is 2.1e-5 from
+# AME_B_DEUTERON_MEV_VALIDATION (2.2245662) -- four times the band that
+# counts as a rounding of it, so routing it would change a value on a
+# guess about where it came from. Reconciliation is bean qou-e2cf.
+B_AME = {
+    'D': 2.22452,
+    'T': AME_B_TRITIUM_MEV_VALIDATION,
+    '3He': AME_B_HE3_MEV_VALIDATION,
+    '4He': AME_B_HE4_MEV_VALIDATION,
+}
 
 
 def conjugate(lam):
@@ -188,7 +209,7 @@ def main():
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         wit, script_path=__file__, engine=None, q0_anchor=False)
-    json.dump(wit, open(out, 'w'), indent=1)
+    json.dump(wit, open(out, 'w'), indent=1, default=str)
     print("\nwitness ->", out.name, "  allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:52:00.673529+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T03:40:14.216446+00:00",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "assertions": [
     {
       "name": "tr_M_reconstruction_from_chi",
@@ -16,19 +16,19 @@
     {
       "name": "best_mapping_B_D_pred_within_1_percent",
       "computed": "0.09760153545375076306936241809533301895790959317227864716506468559241267",
-      "expected": "2.22456607",
+      "expected": "2.224566199999999999999999999999999999999999999999997340954056611765576",
       "passed": false,
-      "tolerance": 0.0222456607,
+      "tolerance": 0.022245662,
       "unit": "MeV",
       "source": "closure form Δ_λ = |base_residue[k(by_first_row(λ))]| applied to deuteron (Phase 1b naive form; Phase 2 two-factor closure with JSJ Vol^(λ) addresses the miss)"
     }
   ],
   "allPassed": false,
-  "durationMs": 161,
+  "durationMs": 3509,
   "computation": "delta-lambda-categorical-verification",
   "scriptFile": "delta_lambda_categorical_verification.py",
-  "scriptHash": "a699b9e161ba",
-  "scriptCommitSha": "57b271dbc66c8076b886fe28c1771a3d1ed35b80",
+  "scriptHash": "be48ba6ffaa6",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -57,7 +57,7 @@
     "n_partitions": "11",
     "tr_M_at_q0_empirical": "0.57517224391777187082653534398618088915249435289286",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
-    "B_D_AME_MeV": "2.22456607"
+    "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576"
   },
   "data": {
     "base_residues_by_k": {
@@ -85,10 +85,10 @@
     "verification_per_mapping": {
       "by_rows": {
         "B_D_predicted_MeV": "0.00000316873672599265476952010193071215169980413360336993009518006417006555",
-        "B_D_AME_MeV": "2.22456607",
-        "error_abs_MeV": "2.22456290126327400734523047989806928784830019586639663006990481993583",
-        "error_relative": 0.9999985755708636,
-        "error_ppm": 999998.5755708636,
+        "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "error_abs_MeV": "2.224563031263274007345230479898069287848300195866393971023961431701406",
+        "error_relative": 0.9999985755709468,
+        "error_ppm": 999998.5755709468,
         "per_lambda": [
           {
             "partition": "[6]",
@@ -182,10 +182,10 @@
       },
       "by_first_row": {
         "B_D_predicted_MeV": "0.09760153545375076306936241809533301895790959317227864716506468559241267",
-        "B_D_AME_MeV": "2.22456607",
-        "error_abs_MeV": "2.126964534546249236930637581904666981042090406827721352834935314407587",
-        "error_relative": 0.9561255847735955,
-        "error_ppm": 956125.5847735956,
+        "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "error_abs_MeV": "2.126964664546249236930637581904666981042090406827718693788991926173163",
+        "error_relative": 0.9561255873375444,
+        "error_ppm": 956125.5873375444,
         "per_lambda": [
           {
             "partition": "[6]",
@@ -279,10 +279,10 @@
       },
       "by_distinct_rows": {
         "B_D_predicted_MeV": "0.000002892693058381370803797119626198480546901494344000324718448495530071534",
-        "B_D_AME_MeV": "2.22456607",
-        "error_abs_MeV": "2.22456317730694161862919620288037380151945309850565599967528155150447",
-        "error_relative": 0.9999986996596337,
-        "error_ppm": 999998.6996596337,
+        "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "error_abs_MeV": "2.224563307306941618629196202880373801519453098505653340629338163270046",
+        "error_relative": 0.9999986996597097,
+        "error_ppm": 999998.6996597097,
         "per_lambda": [
           {
             "partition": "[6]",
@@ -376,10 +376,10 @@
       },
       "by_sign": {
         "B_D_predicted_MeV": "0.06520320838180790484342576286381551235280903651373349167943943132541513",
-        "B_D_AME_MeV": "2.22456607",
-        "error_abs_MeV": "2.159362861618192095156574237136184487647190963486266508320560568674585",
-        "error_relative": 0.9706894709664398,
-        "error_ppm": 970689.4709664398,
+        "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "error_abs_MeV": "2.159362991618192095156574237136184487647190963486263849274617180440161",
+        "error_relative": 0.9706894726792991,
+        "error_ppm": 970689.4726792991,
         "per_lambda": [
           {
             "partition": "[6]",
@@ -473,10 +473,10 @@
       },
       "by_hook": {
         "B_D_predicted_MeV": "0.07650364040280669045868642338433203394741819706765231927385905437015762",
-        "B_D_AME_MeV": "2.22456607",
-        "error_abs_MeV": "2.148062429597193309541313576615667966052581802932347680726140945629842",
-        "error_relative": 0.9656096344206101,
-        "error_ppm": 965609.63442061,
+        "B_D_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "error_abs_MeV": "2.148062559597193309541313576615667966052581802932345021680197557395418",
+        "error_relative": 0.9656096364303266,
+        "error_ppm": 965609.6364303266,
         "per_lambda": [
           {
             "partition": "[6]",
@@ -570,7 +570,7 @@
       }
     },
     "best_fit_mapping": "by_first_row",
-    "best_fit_error_ppm": 956125.5847735956,
+    "best_fit_error_ppm": 956125.5873375444,
     "verdict": "MISS (> 1%, R1 or R2 fires)",
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",

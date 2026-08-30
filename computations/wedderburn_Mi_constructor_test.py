@@ -82,6 +82,15 @@ from alpha_blend_tower import (  # noqa: E402
 )
 from experimental_constants import M_P_MEV, M_N_MEV, M_E_MEV  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_D_ATOMIC_MEV_VALIDATION,
+)
+
 H = Q0 - QI  # h = q - q^-1, the Hecke parameter of Table 1
 
 # ── Table 1 (tbl:atomic-braid-table1-data), verbatim ──────────────
@@ -172,7 +181,7 @@ def main() -> int:
 
     # Target: the correction must equal -(binding energy of the D atom).
     # AME2020 deuterium ATOMIC mass, MeV (m_p + m_n + m_e - B_total).
-    D_ATOMIC_MEV = mp.mpf("1876.12392")          # AME2020 / CODATA
+    D_ATOMIC_MEV = mp.mpf(M_D_ATOMIC_MEV_VALIDATION)          # AME2020 / CODATA
     base = mp.mpf(str(M_P_MEV)) + mp.mpf(str(M_N_MEV)) + mp.mpf(str(M_E_MEV))
     target_corr = D_ATOMIC_MEV - base
     print(f"\nbase  = m_p + m_n + m_e = {mp.nstr(base, 12)} MeV")

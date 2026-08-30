@@ -31,7 +31,16 @@ Output: option-e-probe1-derive-1plusq-over-2.witness.json
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 (codata sweep)
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_PI_PM_MEV_VALIDATION,
+)
 import json
 import math
 import sys
@@ -51,7 +60,7 @@ M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.71806")}
+AME = {"T": mp.mpf(AME_B_TRITIUM_MEV_VALIDATION), "3He": mp.mpf(AME_B_HE3_MEV_VALIDATION)}
 DIFF_TARGET = AME["T"] - AME["3He"]      # B_T - B_³He (target)
 
 REPO = Path(__file__).resolve().parent.parent

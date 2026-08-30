@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:25:33.644852+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T03:42:07.372356+00:00",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "assertions": [
     {
       "name": "magicA_gap_is_5pct87",
-      "computed": "5.86663",
+      "computed": "5.86668",
       "expected": "5.87",
       "passed": true,
       "tolerance": "0.02",
@@ -22,10 +22,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 94,
   "computation": "magic-a-truncation-overclaim-correction",
   "scriptFile": "magic_a_truncation_overclaim_correction_probe.py",
-  "scriptHash": "939fbe7a4aa6",
+  "scriptHash": "14ea81829f51",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "0aaae20308e9cca7"
   },
   "invocation": {
     "argv": [
@@ -57,7 +57,7 @@
   },
   "data": {
     "magicA_formula_MeV": "29.95567728",
-    "magicA_err_pct": "5.86663",
+    "magicA_err_pct": "5.86668",
     "jet_sum_physical_n_le_4_MeV": "2.488442869",
     "jet_sum_partials": {
       "4": "2.488442869",

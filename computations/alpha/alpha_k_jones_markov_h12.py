@@ -96,6 +96,16 @@ set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
 from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 q0_mpf = mp.mpf(_Q50)
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
@@ -235,7 +245,7 @@ def main() -> int:
     print("=== Test 4: does this close the B(⁴He) gap? ===")
     m_e = float(mp.mpf("0.510998950"))
     vol_bor = float(8 * mp.catalan)
-    B_AME = 28.2956912
+    B_AME = AME_B_HE4_MEV_VALIDATION
     candidates = {
         "B_prod (2·m_e·A·8G, ν=2)": 2 * m_e * 4 * vol_bor,
         "m_e·A·8G·tr_M(β_⁴He)_H12": m_e * 4 * vol_bor * tr_M_he4,
@@ -302,7 +312,11 @@ def main() -> int:
         ),
     })
     w.add_data("candidate_B_4He_MeV", {n: _f(v) for n, v in candidates.items()})
-    w.add_data("B_4He_AME_MeV", repr(B_AME))
+    # _f, not repr: B_AME is now an mpf from the registry, and repr(mpf)
+    # writes "mpf('28.2956624...')" where repr(float) wrote a number. It is
+    # compared against candidates from the float64 solve above, so the width
+    # this file already chose for those is the right one for the target too.
+    w.add_data("B_4He_AME_MeV", _f(B_AME))
     w.add_assertion(
         "all_77_y_lambda_computed",
         computed=len(y),

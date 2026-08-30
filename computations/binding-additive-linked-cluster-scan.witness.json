@@ -146,15 +146,16 @@
     "rms_err_pct": "27.117"
    }
   },
-  "ame_scaling_4He_D": "12.719637",
+  "ame_scaling_4He_D": "12.719632",
   "closest_form": "LV/complete"
  },
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
- "scriptHash": "04b0b860e01f",
- "scriptCommitSha": "1024739349beafe3e04ccbe28663a7e21442520b",
- "commitSha": "07cc5ee67781228dcc45440e2926f3be75666cf0",
+ "scriptHash": "7d398885bb02",
+ "scriptCommitSha": "0ff640a173876dee856460260ed3eb42193c1c7e",
+ "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
  "engine": "python",
- "computedAt": "2026-08-29T00:58:06.977459+00:00",
- "durationMs": 0
+ "computedAt": "2026-08-30T03:43:28.288380+00:00",
+ "durationMs": 0,
+ "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

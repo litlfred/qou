@@ -59,6 +59,16 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 
@@ -67,7 +77,7 @@ d = json.loads(CACHE.read_text())
 q0 = mp.mpf(d["q_0_50dps"])
 m_e = mp.mpf("0.51099895069")
 E0 = m_e / (q0 * (q0 - 1))                       # SAME E0 as #4392 / rho_F
-B4He = mp.mpf("28.29566")                         # AME full 4He binding, target only
+B4He = mp.mpf(AME_B_HE4_MEV_VALIDATION)                         # AME full 4He binding, target only
 MU4 = mp.mpf("4.591048")                          # |mu4| 4-body simplex residual, target only
 MU3 = mp.mpf("0.47076896")
 

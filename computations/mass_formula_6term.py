@@ -141,6 +141,17 @@ def term_1_descended(Z, N, include_inter):
 # Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 def term_23_brane_tower(Z, N, include_inter):
     """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z²·Σ_{i<j} Φ_q(|V̂_i V̂_j|).
 
@@ -313,7 +324,11 @@ if __name__ == "__main__":
     # Unified AME 2020 values (matches `B_AME_REFERENCE` in
     # categorical_q_decay_ba_low_isotopes.py — fewer-digit truncations
     # caused a 0.0002% discrepancy in err_pct previously).
-    B_AME = {"D": 2.22456612, "T": 8.4817984, "3He": 7.7180375}
+    B_AME = {
+        "D": AME_B_DEUTERON_MEV_VALIDATION,
+        "T": AME_B_TRITIUM_MEV_VALIDATION,
+        "3He": AME_B_HE3_MEV_VALIDATION,
+    }
     rows = {}
     for iso in ["D", "T", "3He"]:
         Z, N = {"D": (1, 1), "T": (1, 2), "3He": (2, 1)}[iso]

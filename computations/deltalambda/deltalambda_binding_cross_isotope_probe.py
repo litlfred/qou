@@ -53,6 +53,17 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
 for _p in (os.path.join(_ROOT, "computations"),
@@ -61,7 +72,16 @@ for _p in (os.path.join(_ROOT, "computations"),
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-B_AME_MEV = {"d": "2.22452", "t": "8.48180", "3he": "7.71804", "4he": "28.29567"}
+# NOTE: 'D' is NOT routed. The literal 2.22452 is 2.1e-5 from
+# AME_B_DEUTERON_MEV_VALIDATION (2.2245662) -- four times the band that
+# counts as a rounding of it, so routing it would change a value on a
+# guess about where it came from. Reconciliation is bean qou-e2cf.
+B_AME_MEV = {
+    "d": "2.22452",
+    "t": AME_B_TRITIUM_MEV_VALIDATION,
+    "3he": AME_B_HE3_MEV_VALIDATION,
+    "4he": AME_B_HE4_MEV_VALIDATION,
+}
 M_E_MEV = "0.51099895000"
 
 

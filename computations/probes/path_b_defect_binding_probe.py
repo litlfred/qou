@@ -81,7 +81,18 @@ sys.path.insert(0, str(HERE.parent))
 
 from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
-from codata_constants import M_E_MEV as _M_E_MEV_MP
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    M_D_ATOMIC_MEV_VALIDATION,
+    M_E_MEV as _M_E_MEV_MP,
+    M_HE3_ATOMIC_MEV_VALIDATION,
+    M_HE4_ATOMIC_MEV_VALIDATION,
+    M_T_ATOMIC_MEV_VALIDATION,
+)
 # Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
 # used to report fit residuals against experiment, not as prediction inputs.
 from codata_constants import (
@@ -112,10 +123,10 @@ TR_M = {
 M_AME = {
     "p":   938.78308711,
     "n":   float(_M_N_MEV_MP),
-    "D":   1876.12393,
-    "T":   2809.43215,
-    "3He": 2809.41347,
-    "4He": 3728.40133,
+    "D":   M_D_ATOMIC_MEV_VALIDATION,
+    "T":   M_T_ATOMIC_MEV_VALIDATION,
+    "3He": M_HE3_ATOMIC_MEV_VALIDATION,
+    "4He": M_HE4_ATOMIC_MEV_VALIDATION,
 }
 
 

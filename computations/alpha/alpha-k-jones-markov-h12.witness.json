@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:38:55.419213+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-30T05:44:27.177583+00:00",
+  "commitSha": "2ce2597ac502cd04d354214dbb173d17cb9b0849",
   "assertions": [
     {
       "name": "all_77_y_lambda_computed",
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 24,
   "computation": "alpha-k-jones-markov-h12",
   "scriptFile": "alpha_k_jones_markov_h12.py",
-  "scriptHash": "629b948b9bab",
+  "scriptHash": "074ce33a76e7",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -58,7 +58,7 @@
     "n_partitions": 77,
     "chi_matrix_condition_number": "7984.908312037897",
     "sum_y_dim_check": "1.0000000000000002",
-    "elapsed_seconds": "330.13",
+    "elapsed_seconds": "353.34",
     "tr_M_he4_via_y_lambda": "0.9942610476982464",
     "tr_M_he4_multiplicative": "0.9942610476982431"
   },
@@ -936,15 +936,15 @@
       "m_e·A·8G·tr_M(β_⁴He)_H12": "14.891881518121007",
       "2·m_e·A·8G·tr_M(β_⁴He)_H12": "29.783763036242014"
     },
-    "B_4He_AME_MeV": "28.2956912",
+    "B_4He_AME_MeV": "28.2956624",
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },

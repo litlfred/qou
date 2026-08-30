@@ -90,6 +90,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 40)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 Q, H, TOL, WALL = Q_MP, HA_MP, mp.mpf("1e-9"), 3
 CANDIDATES = [
     ("I1", "s3", "current: a single wall crossing", [3]),
@@ -170,7 +179,7 @@ def main() -> int:
     sl = slots(word)
     gens = [g + 1 for (_c, _d, g) in word]
     pos = gens.index(WALL)
-    need = mp.sqrt(mp.mpf("2.224566"))
+    need = mp.sqrt(mp.mpf(AME_B_DEUTERON_MEV_VALIDATION))
 
     rows = []
     for tag, expr, note, I in CANDIDATES:

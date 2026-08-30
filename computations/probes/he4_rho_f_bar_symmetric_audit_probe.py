@@ -63,6 +63,15 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 try:
     from qou_substrate.constants import q_at
 except ImportError:
@@ -102,7 +111,7 @@ def main() -> int:
     G_catalan = mp.catalan
     # AME 2020 ⁴He binding (not yet centralized in experimental_constants.py;
     # swap to a registry constant when one is added).
-    B_AME = mp.mpf("28.295674")  # MeV
+    B_AME = mp.mpf(AME_B_HE4_MEV_VALIDATION)  # MeV
     required_rho_F = B_AME / (m_e * A * 8 * G_catalan)
 
     print("=" * 78)

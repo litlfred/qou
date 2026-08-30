@@ -72,10 +72,19 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
-BH2 = mp.mpf("2.224566")         # B(²H) MeV (AME)
+BH2 = mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)         # B(²H) MeV (AME)
 BCAT = mp.mpf("0.380132118905")  # categorical deuteron, master formula m_e·|Σ y_λ χ^λ sgn f^λ|
 C3_MEV = mp.mpf("0.297")         # 3-body Borromean cluster, MeV (E₀·deficit, #4364)
 MU3 = mp.mpf("0.4708")           # dimensionless 3-body simplex coefficient (AME ratio units)

@@ -90,6 +90,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 40)
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+)
+
 Q = Q_MP
 H = HA_MP
 TOL = mp.mpf("1e-9")
@@ -183,7 +192,7 @@ def main() -> int:
         cab_atom += w * c
 
     max_u, max_c, min_c = max(uncabled), max(cabled), min(cabled)
-    need = mp.sqrt(mp.mpf("2.224566"))
+    need = mp.sqrt(mp.mpf(AME_B_DEUTERON_MEV_VALIDATION))
     ratio_c, ratio_u = max_c / need, max_u / need
     norm12 = mp.fsum(weights(12)[l] * hook_dim(l) for l in two_row(12))
     norm6 = mp.fsum(weights(6)[l] * hook_dim(l) for l in two_row(6))

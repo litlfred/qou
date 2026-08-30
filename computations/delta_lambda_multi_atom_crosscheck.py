@@ -18,7 +18,17 @@ where c(λ) = content sum = Σ_{(i,j)∈λ} (j-i).
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402 (codata sweep)
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
@@ -81,7 +91,11 @@ T_parts, T_chi, T_n = load_chi('atom-chi-rust-t.witness.json')
 He_parts, He_chi, He_n = load_chi('atom-chi-rust-3he.witness.json')
 
 # AME binding energies (validation targets)
-B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': mpf('7.71804')}
+# NOTE: 'D' is NOT routed. The literal 2.22452 is 2.1e-5 from
+# AME_B_DEUTERON_MEV_VALIDATION (2.2245662) -- four times the band that
+# counts as a rounding of it, so routing it would change a value on a
+# guess about where it came from. Reconciliation is bean qou-e2cf.
+B_AME = {'D': mpf('2.22452'), 'T': mpf(AME_B_TRITIUM_MEV_VALIDATION), '3He': mpf(AME_B_HE3_MEV_VALIDATION)}
 
 # CODATA masses
 M_P = mpf(M_P_MEV_VALIDATION)

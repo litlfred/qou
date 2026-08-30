@@ -31,6 +31,15 @@ from hoefsmit_general import (
 from wenzl_y_axiomatic import derive_wenzl_y
 from experimental_constants import M_E_MEV  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 
 if __name__ == "__main__":
     print("=" * 78)
@@ -97,7 +106,7 @@ if __name__ == "__main__":
     print("─" * 78)
     M_E = M_E_MEV
     B_pred = M_E * rho * tr_M_q0
-    B_AME = 8.481798
+    B_AME = AME_B_TRITIUM_MEV_VALIDATION
     err = (B_pred - B_AME) / B_AME * 100
     print(f"  B_pred = {M_E} · {rho} · {tr_M_q0:.6f} = {B_pred:.6f} MeV")
     print(f"  B_AME  = {B_AME:.6f} MeV")

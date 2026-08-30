@@ -59,10 +59,19 @@ from _precision import set_compute_dps  # noqa: E402
 import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# AME comparison targets routed to the registry (beans qou-ag0x / fvxq).
+# Role: TARGET -- these values are only ever compared against, never
+# built from, so routing them is not the 3-cal violation that routing a
+# prediction INPUT would be. Values MOVE: each literal was a rounding of
+# the vendored AME2020 value that commit 03c25e8db made canonical.
+from codata_constants import (  # noqa: E402
+    AME_B_HE4_MEV_VALIDATION,
+)
+
 HE4 = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
 VOL_L6A4 = "7.327724753417752"
 # doubly-magic light nuclei (name, Z, N, A, B_AME MeV)
-DOUBLY_MAGIC = [("4He", 2, 2, 4, "28.295674"),
+DOUBLY_MAGIC = [("4He", 2, 2, 4, AME_B_HE4_MEV_VALIDATION),
                 ("16O", 8, 8, 16, "127.619336"),
                 ("40Ca", 20, 20, 40, "342.052000")]
 
