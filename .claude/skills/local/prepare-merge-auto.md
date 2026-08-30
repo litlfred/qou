@@ -75,14 +75,23 @@ Do NOT skip ahead — the review is the input to Phase 2.
 > | `get_check_runs` returns `total_count: 0` — no `copilot-pull-request-reviewer` run is ever created | **CONFIRMED** |
 > | therefore **zero reviews arrive** | **FALSE** — Copilot reviewed #6104 and #6116 |
 >
-> **Copilot delivers a review as a `pull_request_review.submitted` WEBHOOK
-> EVENT, not as a check run.** The wait protocol below polls `get_check_runs`
-> for a check run — so it is structurally incapable of observing the thing it
-> waits for, and `total_count: 0` was read as "no review is coming" when it
-> only ever meant "not delivered as a check run". This is the
-> detector-blindness pattern AGENTS.md catalogues, applied to the merge
-> pipeline itself: **the signal was measured correctly and the wrong signal
-> was measured.** n=5 on a blind instrument is n=0 on the question.
+> **The mechanism is UNSETTLED — do not repeat my first explanation.** I
+> wrote here that Copilot "delivers via webhook, not check run, so the poll is
+> structurally blind". That is a *candidate*, not a finding, and it does not
+> discriminate: `total_count: 0` is equally consistent with every other
+> candidate, including simple quota exhaustion. The adjudicated write-up is
+> [`docs/audits/2026-08-30-copilot-review-works-again.md`](../../../docs/audits/2026-08-30-copilot-review-works-again.md)
+> (bean `qou-gwe9`, **reopened**), which weighs three and picks none:
+> availability changed; Copilot reviews on its own trigger rather than on
+> `request_copilot_review`; or a quota gates it, making the whole thing
+> intermittent.
+>
+> **🛑 THERE IS A QUOTA, and it is easy to exhaust.** That audit measured five
+> requests across two repos in ~30 minutes returning *"the user who requested
+> the review has reached their quota limit"*. Copilot review is a **rationed**
+> resource, not a binary available/unavailable one. **Do not re-request after
+> every push** — nothing else in the repo's docs says this, and it is the
+> operational rule that actually follows from the measurement.
 >
 > **Cost, on the record:** #6104 and #6116 were merged on the "do not wait"
 > guidance and the reviews landed minutes later, carrying six findings — one a

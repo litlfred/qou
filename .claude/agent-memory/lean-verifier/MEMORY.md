@@ -173,10 +173,12 @@ gap. An honest bean is always acceptable.
 
 All three Phase-4 external gates are gone: **CI** (auto-triggers disabled
 repo-wide 2026-06-30, `build.yml` is `workflow_dispatch`-only, no `lean_ci.yml`
-exists), **Gemini** (sunset 2026-08-01), **Copilot** (measured n=5, never
-enqueues — `qou-gwe9`). `prepare-merge-auto` Phase 1b still prescribes a
-15-minute Copilot poll that can only expire; skip it and cite the bean. Full
-detail lives in `merge-coordinator`'s memory, which owns this.
+exists), **Gemini** (sunset 2026-08-01), **Copilot** — **CORRECTED 2026-08-30: reviews DO arrive**
+(~3-4 min) and are **quota-rationed**; the old "never enqueues" reading came
+from `get_check_runs: total_count 0`, which is real but does not discriminate.
+Do not block on that poll; do expect a review wake on a subscribed PR. Bean
+`qou-gwe9` (reopened), `docs/audits/2026-08-30-copilot-review-works-again.md`.
+Full detail lives in `merge-coordinator`'s memory, which owns this.
 
 So state the verification you actually ran and **never write "CI green"**
 unless a run exists. A **library** file under `content/<paper>/lean/QOU/**` has
