@@ -250,3 +250,14 @@ prune the log, never the TRAPs.
   Found a second red file the same way (`QOU/Mass/QIntegerBarParity.lean`, one
   stale `open`). Added `verification-harness.md` with all three traps measured.
   PR #6097.
+- 2026-08-30: re-verified 3 new files on `claude/milnor-a4-exact-tight-slice`
+  after +254-commit rebase (main changed `MilnorOrderLawGeneral.lean` via w4gn).
+  Chain is self-contained (only QOU dep is Milnor). Rebuilt Milnor from CURRENT
+  source FIRST (avoids false-green), then Borromean/Brunnian against the fresh
+  olean: all exit 0. Magnus standalone exit 0. All 9 key theorems axiom-clean
+  {propext,Classical.choice,Quot.sound}. No instance of `BrunnianDeficitRecursion`
+  (content-bearing class, honest §3b-cond open state). No rebase breakage; Milnor
+  still exports leadingOrder/leadingOrder_four/tauBorromean/borromean_deficit_factor/
+  MilnorExactOrderConjecture. Confirmed: cache restores to ROOT `.lake` (2277 QOU
+  oleans), the per-paper `content/.../lean/.lake` tree is a 3-olean decoy — the
+  harness §3 base path must be ROOT, not $LEANLIB.
