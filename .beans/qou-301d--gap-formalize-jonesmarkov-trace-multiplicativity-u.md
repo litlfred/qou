@@ -1,11 +1,11 @@
 ---
 # qou-301d
 title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (discharge the ArchimedeanTraceBridge multiplicativity hypothesis)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T12:34:44Z
+updated_at: 2026-08-30T12:55:30Z
 ---
 
 ## Context
@@ -63,3 +63,25 @@ identification is a definition). Low priority; the honest state is "modulo the J
 
 
 Upstream infra bean: qou-dyij (Mathlib knot theory — Jones/connected-sum/Markov-trace). See its roast: route B (algebraic Ocneanu trace) is the only sane path, and even it leaves the amplitude=trace identification as a modelling input.
+
+
+
+---
+**RESOLVED 2026-08-30 — multiplicativity DISCHARGED via route B (no link diagrams needed).**
+QOU.MathlibExt.MarkovTraceMultiplicative (sorry-free, generic CommRing, no QOU dep):
+markovTrace_juxtapose proves tr(disjoint-strand juxtaposition) = product of block traces — the
+algebraic form of J(K₁#K₂)=J(K₁)·J(K₂) — from Matrix.trace_kronecker. Plus _one (trivial component
+is the unit), _ne_zero and _pos (both bridge hypotheses supplied by the juxtaposition alone).
+
+Consumed in the ArchimedeanTraceBridge capstone: freeEnergy_juxtapose (additivity DERIVED, not
+assumed), freeEnergy_juxtapose_trivial, and binding_juxtapose_eq_zero — binding of a genuine
+disjoint union is ZERO, so binding is carried entirely by the FAILURE of juxtaposition (the
+linking). All lean-direct exit 0, axioms propext/Classical.choice/Quot.sound.
+
+The roast's prediction held exactly: what remains is NOT a theorem but the DEFINITION —
+IsJuxtaposition (the composite IS the disjoint-strand product) is the algebraic statement of
+non-interacting strands, and the identification 'substrate assembly amplitude = this trace' is the
+fibre functor's definition. Both are modelling inputs no formalisation removes. Route A (link
+diagrams) is NOT needed for the bridge and stays advised-against (qou-dyij).
+
+Status: the Lean-formalisable content of this bean is DONE.

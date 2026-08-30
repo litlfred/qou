@@ -1,16 +1,16 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:19:32.007985+00:00",
-  "commitSha": "79aa1eb4bc090278a12041c8b3e9a5804daed3f2",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:42:02.505029+00:00",
+  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
   "assertions": [
     {
       "name": "phi0_normalization_not_constant_across_orders",
-      "computed": "71.91752577319587628865979381443298969072164948453608247422680412371134",
-      "expected": "71.91752577319587628865979381443298969072164948453608247422680412371134",
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": "1e-06",
-      "unit": "|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
+      "tolerance": 0,
+      "unit": "1 = no constant N (|N_h2 − N_h4| ≥ 1e-6) ⇒ −64 is h²-only",
       "source": "N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀"
     }
   ],
@@ -18,8 +18,8 @@
   "durationMs": 7,
   "computation": "phi0-normalization-disproof",
   "scriptFile": "phi0_normalization_disproof.py",
-  "scriptHash": "b6585c606a97",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "602690de5d31",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -31,7 +31,7 @@ from mpmath import mp, mpf, fabs, sqrt, acos, pi as mppi, clsin, matrix, findroo
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -94,7 +94,11 @@ def main():
     theta_at_q0 = spectral_phase(q0)
 
     miss_abs = theta_at_q0 - vol_41
-    miss_pct = float(fabs(miss_abs) / vol_41 * 100)
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    miss_pct_exact_mpf = fabs(miss_abs) / vol_41 * 100
+    miss_pct = float(miss_pct_exact_mpf)
 
     print("=" * 70)
     print("q₀ DERIVATION: figure-eight phase = Vol(4₁)?")
@@ -203,7 +207,7 @@ def main():
 
     wb.add_assertion(
         "phase_within_5pct_of_vol",
-        computed=miss_pct,
+        computed=fmt(miss_pct_exact_mpf),
         expected=0,
         tolerance=5,
         source="θ(q₀) vs Vol(4₁)",

@@ -2647,20 +2647,32 @@ function seedProbeInhabitedCandidates(
     if (!existsSync(abs)) continue; // carrier's file moved or was deleted
     if (!shaCache.has(abs)) shaCache.set(abs, hashFile(abs));
 
-    // Locate the declaration for a clickable line. The baseline stores the
-    // fully-qualified name; the source writes the last component, so match on
-    // that at a `class`/`structure` head. A miss is not fatal — the candidate
-    // is still real, so fall back to line 1 rather than dropping it.
+    // Locate the declaration. The baseline stores the fully-qualified name;
+    // the source writes the last component, so match on that at a
+    // `class`/`structure` head.
     const leaf = decl.slice(decl.lastIndexOf(".") + 1);
     const lines = readFileSync(abs, "utf-8").split("\n");
     const at = lines.findIndex((l) =>
       new RegExp(`^\\s*(?:@\\[[^\\]]*\\]\\s*)?(?:class|structure)\\s+${leaf}\\b`).test(l),
     );
 
+    // A MISS MEANS THE DECLARATION IS GONE, AND THE CANDIDATE IS NOT REAL.
+    // This used to fall through to line 1 on the reasoning that "the candidate
+    // is still real, so fall back rather than dropping it" — but `existsSync`
+    // above tests the FILE, not the DECLARATION, so a carrier deleted from a
+    // file that still exists sailed through. Measured 2026-08-30: five
+    // carriers removed from `core-levi-form.lean` were still being seeded,
+    // each pointing at line 1, and each had collected a `genuine` ledger
+    // verdict for something that was not there — 5 of 19 baseline entries,
+    // and 5 of the 14 candidates in this category. Skipping is correct: the
+    // baseline records what Lean said about a declaration, and there is no
+    // declaration left for it to have said it about. Bean `qou-s3zd`.
+    if (at === -1) continue;
+
     out.push({
       key: `${rel}::${decl}::proof-carrier-inhabited-by-probe`,
       rel,
-      line: at >= 0 ? at + 1 : 1,
+      line: at + 1, // `at === -1` is impossible here — skipped above.
       decl,
       category: "proof-carrier-inhabited-by-probe",
       pattern: "lean-inhabited-no-hypotheses",

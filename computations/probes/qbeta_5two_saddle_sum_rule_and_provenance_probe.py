@@ -335,11 +335,20 @@ def main() -> int:
                     tolerance=float(CONV_TOL),
                     source="both legacy literals match the extraction "
                            "convention to ~4 digits")
+    # Was `computed=incons, expected=incons` -- so it passed even at incons = 0,
+    # i.e. even if the pair SATISFIED the relation, which is the outcome the
+    # name excludes (bean qou-3e5m). "Violates the exact relation" is an
+    # inequality against this file's own identity gate, EXACT_TOL = 1e-35, the
+    # same bar its four sibling assertions use; nothing new is chosen here.
+    # Measured margin: incons = 7.30e-5 against 1e-35, thirty orders clear.
+    w.add_data("legacy_pair_inconsistency", mp.nstr(incons, 30))
     w.add_assertion("legacy_pair_internally_inconsistent",
-                    computed=incons, expected=incons,
-                    tolerance=0.0,
-                    source="the pair violates the exact relation => the two "
-                           "were computed independently")
+                    computed=1 if incons > EXACT_TOL else 0,
+                    expected=1, tolerance=0,
+                    source="the pair violates the exact relation (residual "
+                           "exceeds EXACT_TOL) => the two were computed "
+                           "independently; residual in "
+                           "data.legacy_pair_inconsistency")
     w.add_data("identities", {
         "sum_Re_V": mp.nstr(S, 30),
         "minus_3_pi2_over_2": mp.nstr(-3 * mp.pi ** 2 / 2, 30),

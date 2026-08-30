@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T10:16:37Z
+updated_at: 2026-08-30T13:19:27Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2918,3 +2918,213 @@ At the proton pin: [2]_q = 2.01089686670712230, h²z_D/q² = 0.0217346842874601,
 **THE SHARPEST STATEMENT of why cos is C-only.** A resummation needs something to be centred on. Under C the bar-invariant is the **constant 1** — a fixed centre — and `cos` is the additive resummation about it. Under D the invariant is `V̂/q`, which **moves with q**: there is no fixed centre, so no additive resummation has anything to be centred on. That is stronger than Step 7's "the action is multiplicative": it names what is missing.
 
 **Still NOT established:** the replacement form. The class is fixed (must respect the multiplicative action; the invariant is `V̂/q`), the additive route is closed, and the closed form above is a derived candidate anchor — but naming the form needs the D-frame M_β spectrum on V_(2,1). No c_k proposed, extracted or wired.
+
+
+
+## (D1) IS LEAN-PROVED (PR #6211) — and this bean's own next-step note over-states what was missing
+
+The entry above says "The concrete next step is therefore narrower than
+'derive alpha': Lean-prove (D1)". Correct in direction, but the scope is
+smaller again, and the corpus-grep is why.
+
+### The analytic core has existed since 2026-06-16
+
+QOU/Interactions/qbeta_counit_vs_trace.lean already carries, TWO AND A HALF
+MONTHS before this bean asked for it:
+
+    epsNP h     = h^2/2 - h        the Frobenius counit of Delta  (= net)
+    trMNP h z   = h^2/2 - h*z      the Ocneanu trace of Delta
+    eps_sub_trMNP : epsNP h - trMNP h z = h*(z-1)      the exact gap
+    agree_iff     : for h != 0, the two agree iff z = 1
+
+I wrote a first draft that re-derived all four under new names before grepping.
+Deleted; #6211 imports them instead. Recording it because the bean's phrasing
+invites exactly that duplication: "Lean-prove (D1)" reads as from-scratch work
+and it is not.
+
+### What was genuinely missing: the alpha bridge
+
+That file relates the counit to the trace and NEVER MENTIONS alpha. So it never
+says the gap IS twice the rung-1 phase — which is the whole content of (D1) and
+the step that upgrades alpha from bare def to derived.
+
+Neither existing alpha closes it:
+  EigenphaseCarrierVacuity.eigenphase  built on markovZC — pinned to the
+                                       EXCISED convention C
+  BraidImageEigenphaseExclusion.alphaOf  R-valued AND function-valued
+A claim holding "identically in q and z" needs the free form over a general
+field. That is what #6211 adds.
+
+### The three theorems (sorry-free, axioms propext/Classical.choice/Quot.sound)
+
+  rungOnePhase_eq_counit_sub_trace    2*alpha = epsNP - trMNP          (D1)
+  generatorWeight_forced              with the sigma-weight left UNKNOWN as w,
+                                      (D1) holds IFF w = z. The falsifiable
+                                      content: the phase PINS the Markov
+                                      parameter rather than merely agreeing
+                                      with it. This is the precise form of
+                                      "z enters the ladder in exactly one
+                                      place", and it is what stops (D1) from
+                                      being arithmetic on chosen constants.
+  generatorWeight_unpinned_at_classical
+                                      sharpness: at h = 0 the weight is
+                                      unpinned — (D1) holds for EVERY w. Same
+                                      degeneracy this bean records elsewhere
+                                      when warning that a theorem evaluated
+                                      only at q = 1 is convention-agnostic by
+                                      accident.
+
+### Characteristic two is a REAL hypothesis
+
+2*(x/2) = x fails when 2 = 0, so (D1)'s left side is identically 0 in char 2
+while the gap need not be: the identity is FALSE there and (2 : K) != 0 is
+required. My first attempt omitted it and `ring` refused — that refusal was
+mathematics, not a syntax error. The imported lemmas do NOT need it (in
+epsNP - trMNP the h^2/2 cancels first); it enters with alpha's uncancelled /2.
+The classical-point lemma does not need it either, so it is DROPPED there
+rather than carried unused, which makes that lemma strictly stronger.
+
+### Scope
+
+Delta's NF coordinates are INPUT, not proved — rebuilt from typed-crossing
+words by qbeta_d_frame_rung_one_rederivation_probe.py and already encoded in
+the imported defs. Identification remains the sibling's (PR #5337 comment
+5421747260, bean qou-avt5); the exact derivation incl. the factor of 2 is that
+probe (PR #5864).
+
+NO convention is assumed: z free throughout, nothing substituted. This does NOT
+touch the resummation question — Steps 6-8 landed while I was working and Step
+8's "no fixed centre under D" is untouched by this.
+
+### What this does and does not change for the ladder
+
+alpha is now DERIVED in Lean rather than a bare def, which was the bean's
+stated goal for this step. It does not produce a c_k, does not re-derive the
+ladder, and does not reopen the additive-resummation route Step 8 closed. The
+status line above should now read alpha: DERIVED (probe) + FORMALIZED (#6211),
+where it previously read "NOT formalized in Lean, where it remains a bare def".
+
+
+
+## The offset is the BAR-MIDPOINT — and one rule derives C's `1` too (PR #6211)
+
+Owner authorised duplication ("duplicate ok", 2026-08-30). This walks at
+Steps 7/8 from a different direction and lands on a WEAKER conclusion than
+Step 8's. Probe: `computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py`,
+12/12, sympy exact, no float64 (verified: 0 hits in f64-into-mpmath and
+raw-float64; the file imports only sympy).
+
+### The measurement
+
+  * `(q^4+1)/(2q^2)` — the offset Step 7 solves for — is NOT an arbitrary
+    function of q. It is `(q^2 + q^-2)/2`, the BAR-MIDPOINT `(Vhat + bar Vhat)/2`,
+    i.e. `cosh(2 log q)`.
+  * Under C the bar-midpoint is the CONSTANT `1`. So the single rule
+    **offset := bar-midpoint** DERIVES convention C's offset instead of
+    assuming it, and hands D its `(q^2+q^-2)/2`. C's `1` is `cosh(0)`.
+  * The midpoint-built phase `(Vhat - midpoint - h)/2` is bar-ODD in BOTH
+    conventions.
+  * Under C it reproduces the KNOWN `alpha` exactly — so it is not a new object
+    there, it IS `alpha` re-derived. Under D it DIFFERS from the naive z-swap,
+    which is what makes it a candidate rather than a restatement.
+
+That is the same consistency test Step 2's bar-weight argument passed — a rule
+that only described D could be tuned to say anything — applied to the OFFSET
+rather than the weight.
+
+### What this changes, and what it does not
+
+**Step 8's "no FIXED centre" is CONFIRMED**, explicitly, by check 5:
+`d/dq` of the D midpoint is nonzero. Not overturned, and I am not claiming to.
+
+**Step 7's "a q-dependent offset is not a re-centring of the phase, it is a
+different object" is too strong as stated.** It IS the same object; its VALUE
+is constant in C and q-dependent in D — exactly as the bar-weight is 0 in C
+and −4 in D. Both are two-case facts about one construction, not a structure
+C has and D lacks. This bean already makes that correction once, for
+bar-homogeneity ("'bar-even' is not something C has and D lacks; it is weight
+0"). The offset is the same shape of correction, one line down.
+
+So: **"no fixed centre" stands; "nothing to be centred on" does not follow
+from it.**
+
+### What is still open — unchanged
+
+The replacement FORM. Naming a centre does not exhibit a resummation about it,
+and `cos` remains the wrong realisation because the action is multiplicative.
+NO `c_k` is proposed, extracted or wired. Scope (a): one object (`Vhat`), two
+conventions, symbolic.
+
+The concrete next question this leaves is narrower than Step 8's: not "what
+replaces the cosine" in general, but **what resums about a centre that moves as
+`cosh(2 log q)`** — a named, derived, q-dependent centre rather than an absent
+one.
+
+
+
+## The replacement FORM, named: resum `log Vhat`, not `Vhat` (PR #6211)
+
+Step 8 leaves this open in as many words — *"The replacement FORM. The class is
+fixed ... the additive route is closed ... but naming the form needs [more]."*
+Probe: `computations/qbeta/qbeta_d_frame_log_coordinate_form_probe.py`, 11/11,
+sympy exact.
+
+### The move
+
+Work in `theta = log q`, where the bar involution is simply `theta -> -theta`.
+Every bar statement becomes a PARITY statement in theta, and the two conventions
+stop looking like different phenomena.
+
+### Closed forms, derived not assumed
+
+    C:  Vhat = 1 + 2 sinh(theta/2)
+             = bar-EVEN CONSTANT  +  bar-ODD term            ADDITIVE
+
+    D:  Vhat = e^theta * cosh(2 theta)/cosh(theta)
+             = bar-ODD MONOMIAL   *  bar-EVEN factor         MULTIPLICATIVE
+
+D's even factor is `(q^2+q^-2)/(q+q^-1) = [2]_{q^2}/[2]_q` — a **ratio of
+q-integers**, not a generic function of q.
+
+### Why this answers the form question
+
+`cos` is not a generic resummation. It is the one adapted to C's shape: a SUM
+whose bar-odd part sits on a fixed centre. D has no such sum. The object adapted
+to a PRODUCT is the LOGARITHM:
+
+    log Vhat_D  =  theta  +  [ log cosh 2theta - log cosh theta ]
+                   ^odd       ^--------- even ---------^
+
+So the D-frame ladder should resum `log Vhat`, not `Vhat`. In that coordinate
+the bar-odd part is exactly `theta = log q`, and the bar-even remainder is a
+series in `theta^2` — equivalently in the `q^{2k}`-integers.
+
+### It absorbs the "moving centre"
+
+The bar-midpoint `cosh(2 theta)` — Step 7's q-dependent offset, identified as
+the bar-midpoint in the previous entry — is exactly the NUMERATOR of D's
+bar-even factor. So the moving centre is not a separate obstacle: it is one half
+of the multiplicative decomposition, and it moves *because* the decomposition is
+multiplicative rather than additive. Two entries that arrived separately are one
+fact.
+
+### Step 8 is CONFIRMED, not overturned
+
+There is no fixed centre for an ADDITIVE resummation of `Vhat`, and that is
+exactly why the additive form fails. What is added here is the positive half —
+the coordinate in which the structure is visible — not a contradiction.
+
+### Not claimed
+
+No `c_k`. Naming the coordinate and the parity structure is not exhibiting the
+ladder; the series coefficients are untouched and nothing is wired. Scope (a):
+one object (`Vhat`), two conventions, symbolic.
+
+### The next question, now sharper again
+
+Not "what replaces the cosine" (answered: the log), and not "what resums about a
+moving centre" (dissolved: the centre is the even factor's numerator). It is:
+**what are the coefficients of `log Vhat_D`'s bar-even remainder in the
+`q^{2k}`-integer basis, and do they reproduce the ladder's rung structure?**
+That is a concrete symbolic expansion, and it is the first form of this question
+that does not presuppose an additive shape.

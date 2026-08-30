@@ -143,12 +143,19 @@ def main() -> int:
     # Record the disproof as a passing assertion on the GAP between
     # the two order-wise normalizations: |N_h2 − N_h4| is large
     # (~72), which is the positive evidence that no constant N exists.
+    # Was `computed=abs(N_h2-N_h4), expected=abs(N_h2-N_h4)` -- the gap as its
+    # own expectation, so it passed even at gap = 0, which is precisely the
+    # case where a constant Φ₀ WOULD exist and the file's disproof collapses
+    # (bean qou-3e5m). The boolean is already computed 28 lines up as
+    # `structural = abs(N_h2 - N_h4) < 1e-6`, so no threshold is invented here:
+    # the assertion is that disproof, stated so it can fail. Magnitude (~72)
+    # stays in the `N_at_h2` / `N_at_h4` parameters above.
     w.add_assertion(
         "phi0_normalization_not_constant_across_orders",
-        computed=abs(N_h2 - N_h4),
-        expected=abs(N_h2 - N_h4),
-        tolerance=1e-6,
-        unit="|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
+        computed=0 if structural else 1,
+        expected=1,
+        tolerance=0,
+        unit="1 = no constant N (|N_h2 − N_h4| ≥ 1e-6) ⇒ −64 is h²-only",
         source="N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀",
     )
 
