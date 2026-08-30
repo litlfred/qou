@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T10:45:46Z
+updated_at: 2026-08-30T10:55:11Z
 parent: qou-mhj9
 ---
 
@@ -345,3 +345,51 @@ closed-form guessing is entropically dead at the target's 1-2 significant digits
 What is left needs a genuine three-body operator, and the corpus's own candidate
 is the Milnor triple linking number (all pairwise linking zero, mu-bar_123 != 0)
 -- the topological object with exactly the required structure. That is qou-brng.
+
+
+## MILNOR CANNOT CARRY THE MAGNITUDE EITHER (2026-08-30)
+
+Lean: `QOU/Mass/MilnorCarriesOrderNotMagnitude.lean` (sorry-free, axioms clean).
+Probe: `computations/probes/milnor_order_not_magnitude_probe.py` (1/1).
+
+I proposed Milnor mu-bar_123 as the last candidate — 'three-body by construction',
+since a Brunnian link has all PAIRWISE linking zero while mu-bar(123) != 0. Right
+about the SHAPE, wrong about the TYPE, and **the corpus already said so**:
+`QOU.KnotTheory.Vassiliev.brunnian_exact_leadingOrder` states the A-component
+Brunnian link's first non-vanishing Vassiliev invariant sits at degree
+leadingOrder A = 2(A-1) and takes the value **+-1**.
+
+**mu-bar is NORMALISED. It has no size.** If b_A = c_A * mu-bar then |b_A| = |c_A|
+— the magnitude is entirely c_A's. Same category error as the SU(4) Casimir: right
+structure, wrong type.
+
+**And the order law it does suggest is REFUTED.** mu-bar supplies the DEGREE
+2(A-1); the minimal quantitative reading b_A = s_A g^{2(A-1)} with |s_A| = 1 gives
+a division-free test with g eliminated:
+
+    b3^2 = b2 * b4
+
+Measured it is out by **10.11x** (isospin average) and **5.25x** (Coulomb-
+corrected). Scope-(a): the single-coupling family falls, not Milnor's involvement.
+
+**NOT claimed**: MilnorParitySignLaw predicts sign(1-tau_A) = (-1)^(A-1) = -,+,-
+while the measured cumulant signs are +,+,+. 1-tau_A is NOT b_A and no relation
+between them is established — flagging it as a non-conflict rather than reporting
+a refutation I have not earned.
+
+### WHERE THIS LEAVES THE FRONT
+Three mechanism families are now closed by proof or measurement: uniform-bond
+simple-graph (proved), SU(4) two-body (proved), single-coupling Markov/Milnor
+order laws (refuted under every convention). Closed-form guessing is entropically
+dead at the target's 1-2 significant digits.
+
+What survives is one shape: **a multi-term closure in which a topological
+invariant fixes each term's SIGN and ORDER while separate coefficients carry the
+SIZES.** Nothing tested supplies those coefficients, and I am not proposing a
+candidate — proposing one because it would fit is the anti-fit violation.
+
+### A BEAN MIS-NAMING OF MINE, CORRECTED
+I twice named `qou-brng` as 'the Milnor bean'. It is not: qou-brng is the
+hbar_q^2 saturated-binding-fraction bean whose surviving route is the
+linking-vs-self-energy AMPLITUDE question. Adjacent, not the same, and untouched
+by this work.

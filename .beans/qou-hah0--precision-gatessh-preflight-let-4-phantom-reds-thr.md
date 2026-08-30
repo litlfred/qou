@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:30:50Z
-updated_at: 2026-08-30T09:32:04Z
+updated_at: 2026-08-30T11:06:13Z
 ---
 
 ## The gate defect — FIXED in this branch
@@ -88,3 +88,41 @@ from measurement. **None of these is my work and none is new** — all are `main
 - A gates run regenerates `q0-anchor-consistency-audit`, `witness-provenance-audit`
   and `witness-raw-float64-audit`. Reverting them protects the committed
   environment stamp from this container's versions.
+
+
+## CORRECTION 2026-08-30 — red #1 is SETTLED, and my item 1 above had it backwards
+
+Item 1 warned *"do not assume the witness is wrong: AGENTS.md gives the canonical
+muon pin as 1.1099785955573347…, which matches the witness, not the audit's
+expectation."* **That is wrong, and so was the AGENTS.md line it leaned on.**
+
+The muon anchor was migrated to CODATA 2022 in `fca08de7d29` (2026-08-28,
+*'derive it, stop the self-certification'*), on the owner's **2026-08-22** ruling —
+six days before I wrote that warning. Measured on main `3a919ad14fe`:
+
+- `computations/q-pinning-50-digit.witness.json` = `1.109978595642739046681795129380001752700065561029011556974045769999095` (C, not A)
+- `muon_pin_stored_vs_live_gate.py`: stored vs live gap **0.0 ppb**, 0.0 sigma
+- `q0_anchor_consistency_audit.py`: **Q0_FLIP = 1**, `hadron-knot-table.witness.json`, still carrying A
+
+So the **audit is right and the witness is stale** — the reverse of what item 1
+said. `_EXPECTED_PREFIX['muon'] = '1.109978595642'` in the audit is not a
+hardcoded guess; it agrees with the anchor the tree now serves.
+
+**Remaining work on red #1 is one producer re-run, and it is NOT cheap:**
+`hadron_knot_table` is the producer AGENTS.md measures at >50 min for one bound
+atom before its own timeout kills it. Claim it as its own bean with a real
+compute budget; do not attempt it in an idle pass.
+
+## Merged from this bean's diagnosis (all on main)
+
+- `2b768409987` — the preflight defect itself (PR #6160): per-module dep check
+  + hints; the 4 phantom REDs are gone.
+- `ba4c0cf3e1a` — red #3 float64-padding (PR #6176): the `dim == 1` branch in
+  `gram_matrix_seminormal_h6.py` kept a float64 round trip the general branch
+  had lost. **CLEARED.**
+- `6209615ecf6` — red #4 raw-float64 (PR #6182): both regressed producers
+  drained to **0** raw floats. **Ratchet green. CLEARED.**
+
+**Reds still open: 2, 5, 6** (anchor-refill ratchet — owned by `qou-fl0a`;
+q0-value drift ratchet; witness scriptFile provenance, 1 unnamed witness).
+Red 1 is diagnosed but blocked on the long compute above.

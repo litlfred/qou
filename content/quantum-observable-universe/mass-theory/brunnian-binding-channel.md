@@ -60,10 +60,17 @@ energies cancel), so binding is exactly the inter-component pairing
 is $\tfrac{1}{2}\lvert\text{inter-crossings}\rvert$ in general, giving $\binom{A}{2}$ units and
 per-nucleon $z = A-1$ for a complete graph of minimal single clasps. This is the discrete
 counterpart of the unsigned-invariant resolution reached independently on the electromagnetic-linking
-side. The one modelling step not lifted is the identification of the substrate mass observable with
-this crossing energy at the full Markov-trace granularity (the self energy closes to the
-q-dimension self-trace $\mathrm{lw}$; the archimedean dressing
-$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$). The exact saturated fraction
+side. The additive partition lifts to the mass observable — whose self carrier is the multiplicative
+q-dimension Markov self-trace $\mathrm{lw}$ — through the archimedean functor
+$\tau = \log$: the Markov trace is multiplicative under connected sum
+($J(K_1 \# K_2) = J(K_1)\,J(K_2)$), so its free energy $E = \log T$ is additive, and the mass-deficit
+binding equals the connected (interaction) free energy $-\log I$, which vanishes exactly at
+independence ($I = 1$) and is positive exactly when the assembly amplitude is suppressed
+(`QOU.Mass.ArchimedeanTraceBridge`, sorry-free). Two modelling inputs remain named rather than
+derived: that the substrate assembly amplitude is the Markov trace (a citable Jones theorem, carried
+as a hypothesis), and the dimensional dressing
+$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (CAL-1 scale, geometric volume,
+CAL-2 cusp) — calibration and geometry, not a fit. The exact saturated fraction
 $B/A/\mathfrak{m}_N \approx \hbar_q^2$ is a numerical coincidence, not a prediction: the empirical
 $B/A$ peaks at $0.954\,\hbar_q^2$ near $A \approx 60$ and falls, and the fundamental volume
 coefficient is $a_V/\mathfrak{m}_N \approx 1.71\,\hbar_q^2$.

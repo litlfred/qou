@@ -15472,6 +15472,134 @@ export const references: Reference[] = [
     DOI: "10.3390/quantum7040055",
     note: "PDF library/quaternioms/ — registered from library intake. Volume, article number and year are from the article's own running head ('Quantum Rep. 2025, 7, 55'); the DOI is on the cover page. The extracted title was '3.01.3', the MDPI reprint cover's section number, so the title here comes from a hand-verified override (docs/audits/library-title-overrides.json).",
   }),
+
+  // ── Library intake 2026-08-30 — the cluster / Mayer-expansion drop ──
+  // Six PDFs uploaded together (commit a12f83c4cd), all cluster-expansion
+  // literature. They bear on the arc's live open problem — the super-pairwise
+  // extensive term — because that is exactly the vocabulary
+  // QOU.MassTheory.MayerThreeBodySign and QOU.Mass.PairwiseCumulantVanishing
+  // are stated in. jansen2022cluster is the load-bearing one: its §3.1 records
+  // the classical alternating-sign property of the Ursell functions, whose
+  // hypothesis is a NON-NEGATIVE pair potential — and the paper's own subject
+  // is convergence for possibly NEGATIVE ones, i.e. the class the corpus needs
+  // if b₃ > 0 is to be reachable at all. See
+  // docs/audits/2026-08-30-ursell-alternating-sign-and-the-b3-obstruction.md.
+
+  ref({
+    id: "jansen2022cluster",
+    library: {
+      docId: "s10955-022-02992-6",
+      dir: "library/s10955-022-02992-6",
+      pdf: "library/s10955-022-02992-6/s10955-022-02992-6.pdf",
+      stage: "candidates",
+      pages: 47,
+      sections: 15,
+    },
+    type: "article-journal",
+    title: "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+    author: [
+      { family: "Jansen", given: "Sabine" },
+      { family: "Kolesnikov", given: "Leonid" },
+    ],
+    "container-title": "Journal of Statistical Physics",
+    issued: { "date-parts": [[2022]] },
+    volume: "189",
+    issue: "3",
+    page: "33",
+    DOI: "10.1007/s10955-022-02992-6",
+    URL: "https://doi.org/10.1007/s10955-022-02992-6",
+    note: "PDF library/s10955-022-02992-6/ — registered 2026-08-30 from the cluster-expansion upload drop. Cite for §3.1 'Forest Partition Schemes: Alternating Sign Property', which states the classical alternating-sign property of the Ursell functions, φᵀ_n = (−1)ⁿ|φᵀ_n|, for NON-NEGATIVE (purely repulsive) pair potentials — the paper attributes it to its ref [8, Eq. (2.8)] and gives two independent proofs of the multi-rooted generalisation (a forest-graph equality, and Lemma 3.4). At n = 3 that is φᵀ₃ ≤ 0, the same conclusion QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos reaches by a different route. The paper's own result is a new convergence condition valid for POSSIBLY NEGATIVE pair potentials, if-and-only-if in the non-negative case; that generalisation is the interesting direction for the corpus, since the sign obstruction is carried by the positivity hypothesis. Do NOT cite it as establishing that the corpus's b₃ IS an Ursell function in its sense — that identification is open, see the audit doc.",
+  }),
+
+  ref({
+    id: "procacci2016mayer",
+    library: {
+      docId: "arxiv-1508.07379v2",
+      dir: "library/arxiv-1508.07379v2",
+      pdf: "library/arxiv-1508.07379v2/1508.07379v2.pdf",
+      stage: "candidates",
+      pages: 15,
+      sections: 5,
+      arxiv: "1508.07379v2",
+    },
+    type: "article",
+    title:
+      "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+    author: [
+      { family: "Procacci", given: "Aldo" },
+      { family: "Yuhjtman", given: "Sergio A." },
+    ],
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1508.07379",
+    note: "PDF library/arxiv-1508.07379v2/ — registered 2026-08-30 from the cluster-expansion upload drop. New lower bounds on the convergence radius of the Mayer and Virial series for a stable, tempered pair potential, improving Penrose–Ruelle (1963) and Lebowitz–Penrose (1964), via Penrose's 1967 tree-graph identity with a minimum-spanning-tree partition scheme. Cite for the tree-graph identity and for what 'stable and tempered' buys; it is a RADIUS-of-convergence result and says nothing about the sign of any particular cumulant.",
+  }),
+
+  ref({
+    id: "dousse2016ising",
+    library: {
+      docId: "arxiv-1610.05082v3",
+      dir: "library/arxiv-1610.05082v3",
+      pdf: "library/arxiv-1610.05082v3/1610.05082v3.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 15,
+      arxiv: "1610.05082v3",
+    },
+    type: "article",
+    title: "Weighted dependency graphs and the Ising model",
+    author: [
+      { family: "Dousse", given: "Jehanne" },
+      { family: "Féray", given: "Valentin" },
+    ],
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1610.05082",
+    note: "PDF library/arxiv-1610.05082v3/ — registered 2026-08-30 from the cluster-expansion upload drop. Proves that spins in the d-dimensional Ising model carry a weighted-dependency-graph structure, and derives central limit theorems for pattern counts in a growing box. Its working object is the CUMULANT, bounded through the dependency structure. DUPLICATE WARNING: the same drop also carried library/ising/, a LATER revision of this same work (four 2017 cites against two here; 21 sections against 15); the two are adjudicated in docs/audits/library-duplicate-ledger.json, which says read library/ising/ for the text and cite this stem. Two grep hits across the two directories are ONE source.",
+  }),
+
+  ref({
+    id: "rebenko2022virial",
+    library: {
+      docId: "arxiv-2205.07095v1",
+      dir: "library/arxiv-2205.07095v1",
+      pdf: "library/arxiv-2205.07095v1/2205.07095v1.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 10,
+      arxiv: "2205.07095v1",
+    },
+    type: "article",
+    title: "Virial Expansions for Correlation Functions in Canonical Ensemble",
+    author: [{ family: "Rebenko", given: "A. L." }],
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2205.07095",
+    note: "PDF library/arxiv-2205.07095v1/ — registered 2026-08-30 from the cluster-expansion upload drop. Graph expansions of correlation functions in the density parameter for the classical CANONICAL ensemble, via Kirkwood–Salsburg, with uniqueness at small density and high temperature. The canonical (fixed particle number) setting is the one that matches a nucleus, where the grand-canonical activity expansion does not; cite for that distinction.",
+  }),
+
+  ref({
+    id: "mann2021partition",
+    library: {
+      docId: "022201-1-online",
+      dir: "library/022201-1-online",
+      pdf: "library/022201-1-online/022201_1_online.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 8,
+    },
+    type: "article-journal",
+    title: "Efficient algorithms for approximating quantum partition functions",
+    author: [
+      { family: "Mann", given: "Ryan L." },
+      { family: "Helmuth", given: "Tyler" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    issued: { "date-parts": [[2021]] },
+    volume: "62",
+    issue: "2",
+    page: "022201",
+    DOI: "10.1063/5.0013689",
+    URL: "https://doi.org/10.1063/5.0013689",
+    note: "PDF library/022201-1-online/ — registered 2026-08-30 from the cluster-expansion upload drop. Approximation algorithms for quantum partition functions built on the abstract-polymer / cluster-expansion machinery. The QUANTUM member of this drop, and so the one whose setting is closest to the corpus's; cite for the polymer-model formulation, not for any nuclear claim.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
