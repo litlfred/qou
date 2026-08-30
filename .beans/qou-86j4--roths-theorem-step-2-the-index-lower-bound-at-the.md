@@ -38,3 +38,19 @@ TWO THINGS THIS DOES NOT CLAIM.
   2. Nothing here evaluates a derivative of P; the index is used only through
      le_index_iff_coeff_eq_zero.
 
+## 2026-08-30 -- the Z-coefficient case of step 2 is complete end to end
+
+qou-jm52 delivered the analytic half and is closed. Composed with this bean's arithmetic half,
+step 2 now runs end to end FOR RATIONAL-INTEGER COEFFICIENTS:
+
+  le_index_rational_of_taylor (RothIndexGap) : P over Z with large index at alpha, p_h/q_h close
+  to alpha, and one numeric inequality  ==>  the index at the rational point is at least nu.
+
+Non-vacuity checked by le_index_rational_of_taylor_witness. The numeric inequality is qou-ujl8.
+
+WHAT IS LEFT ON THIS BEAN is exactly the coefficient ring. Step 1's auxiliary polynomial has
+coefficients in O_K, and the denominator argument used here -- a non-zero rational integer has
+absolute value at least 1 -- becomes |N(x)| >= 1 for a non-zero algebraic integer, which needs
+beta's conjugates as well as beta. That is a different proof, not a generalisation of this one,
+and it has been kept unconflated with the Z case from the start.
+

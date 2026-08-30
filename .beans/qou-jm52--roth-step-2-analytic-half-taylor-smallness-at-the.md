@@ -1,7 +1,7 @@
 ---
 # qou-jm52
 title: 'Roth step 2, analytic half: Taylor smallness at the rational point'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:33:40Z
@@ -161,4 +161,27 @@ Recorded rather than papered over.
 REMAINING for step 2 as a whole: only the coefficient ring. This file is ZZ-coefficient; the
 step-1 auxiliary polynomial is over O_K, where "small implies zero" is |N(x)| >= 1 for a non-zero
 algebraic integer and needs beta's conjugates. Tracked on qou-86j4, not conflated with this.
+
+## Summary of Changes
+
+The analytic half of step 2 is delivered. QOU/Mathlib/RothTaylorBound.lean (14 declarations) and
+QOU/Mathlib/RothIndexGap.lean (8 declarations), all axiom-clean, each built with the .olean
+deleted first, both registered in QOU.lean.
+
+  * translate_translate / coeff_translate_add -- Taylor about alpha in the form the argument needs.
+  * seminorm_translateMatrix_le_prod -- the per-coordinate size bound, after the single-G form
+    turned out to be true and useless against a 1/r_h-weighted index (correction kept in place,
+    not deleted).
+  * abs_coeff_translate_le -- the height budget; card_support_le_prod_succ generalised from Z to
+    any CommSemiring to serve it.
+  * prod_pow_le_exp -- S = exp(-K(mu-nu)), from r_h T_h >= K. This is the one conversion the
+    whole step turns on.
+  * le_index_rational_of_taylor -- step 2, with a single numeric hypothesis left over, now
+    tracked as qou-ujl8.
+  * le_index_rational_of_taylor_witness -- all twelve hypotheses discharged at m = 1, so the
+    bundle is satisfiable and the conclusion non-vacuous. Its limits are stated in its docstring
+    rather than left implicit: gamma = 0 there, and no gamma /= 0 witness exists at small m.
+
+Deferred, both with homes: the numeric inequality -> qou-ujl8 (step 4); the O_K coefficient ring
+-> qou-86j4, where "small implies zero" becomes |N(x)| >= 1 and needs beta's conjugates.
 
