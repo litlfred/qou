@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:30:58Z
-updated_at: 2026-08-30T14:36:21Z
+updated_at: 2026-08-30T14:45:00Z
 ---
 
 NEXT TRANCHE, opened 2026-08-30 after PR #6095 merged (d43f261ed1).
@@ -94,3 +94,63 @@ untouched and is now the next thing to measure.
 This also removes a reason to distrust the 8x8: its entries are honest Markov
 traces of honest H_3(q) elements. What is still missing is a relation between
 those entries and the 6-dimensional cone condition, not a fix to the entries.
+
+
+## MEASURED 2026-08-30 — question (a) answered: the candidate is REFUTED
+
+The negative-proportionality candidate predicted feasible <-> -P_76 > 0 <-> q > 1.
+Measured across the threshold (probe toffoli_cone_threshold.py):
+
+    q <= 0.8   infeasible    -P_76 < 0     consistent
+    q = 0.9    FEASIBLE      -P_76 < 0     CONTRADICTS
+    q = 0.95   FEASIBLE      -P_76 < 0     CONTRADICTS
+    q >= 1.05  feasible      -P_76 > 0     consistent
+
+The cone condition DOES have a threshold -- but at q ~ 0.8945, strictly below
+1, while -P_76 changes sign exactly at 1. So no reduction of the cone condition
+to the sign of P_76 holds, with EITHER proportionality. Question (a) is closed
+negative, and with the sign-inheriting form already excluded by
+toffoliFlip_mul_coneCoord_nonpos, the reduction as the proof states it has no
+surviving form.
+
+## A POSITIVE FINDING: exactly ONE constraint governs
+
+Of the six components of G.t, five stay strictly positive across the threshold.
+Only row 5 -- the NF word (0,1,0) = sigma_0 sigma_1 sigma_0, the LONGEST word --
+changes sign. So the LP cone condition for the q-Toffoli is a SINGLE
+inequality, not six. That is new and is the natural handle on question (b): a
+map to the 8x8 only has to explain one constraint.
+
+## THE THRESHOLD'S EXACT VALUE IS UNDETERMINED, and I nearly claimed otherwise
+
+q_c ~ 0.894480292910614763779 (about 50 trustworthy digits).
+
+PSLQ at degree 10 returns [1,0,-1,0,1,0,-1,0,0,0,-1], i.e.
+1 - q^2 + q^4 - q^6 - q^10, evaluating to ~5e-51 at q_c. DO NOT QUOTE IT.
+AGENTS.md's entropy bound puts degree 10 at ~58 digits needed and there are
+~58 available, so there is no headroom and the hit is not evidence. Degrees 2
+through 8, which do have headroom, return nothing.
+
+TWO ERRORS OF MINE ALONG THE WAY, both from the same cause:
+  - I first read the degree-10 hit as the answer.
+  - I then "REJECTED" it after a dps-160 run -- but the residual was IDENTICAL
+    to the dps-80 run (-1.50343e-51 both times), because
+    pyhecke.gram.gram_matrix_mp SATURATES near 60 digits: its Markov weights
+    are built at _GRAM_MP_DPS = 60, and its dps=80 and dps=160 outputs are
+    bit-identical. Every digit past ~58 was noise, so the rejection rested on
+    noise just as the acceptance had.
+Neither verdict stands. The honest state is UNDETERMINED.
+
+## WHAT WOULD SETTLE IT
+
+A symbolic Gram in q. Then row 5 gives the threshold as the root of an explicit
+polynomial with no PSLQ involved. Blocker: that needs a GENERAL H_3 normal-form
+multiplication. The `mul` in toffoli_nf_coordinates_and_lp_feasibility.py was
+written for products of the shape (a s0 + b)(c s1 + d) and raises on (0,1,0,1),
+which the full 6x6 Gram requires. Either extend it (braid + quadratic relations
+to NF) or use pyhecke's own reducer with a symbolic q.
+
+Recorded Gram identities, verified to 40 dps, useful for that build:
+    G[0][1] = z(q)        G[0][3] = z(q)^2        G[0][5] = P_77(q)
+i.e. the Gram's first row IS the trace vector, as prop:operator-selection-lp
+says (G_1j = tr_M(b_j) = t_j).
