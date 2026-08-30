@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-08-30T12:39:03Z
+updated_at: 2026-08-30T13:02:25Z
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
@@ -91,3 +91,76 @@ computation has not been done and the recorded reduction does not typecheck as
 written. Whether a correct bridge exists -- e.g. t(q) obtained by expanding the
 Toffoli braid word in NF and the 8x8 arising as its action on orderings -- is
 open and is the natural next step.
+
+
+## MEASURED 2026-08-30 — t(q) IS constructible, and the result inverts the story
+
+computations/probes/toffoli_nf_coordinates_and_lp_feasibility.py, 8/8 orderings.
+
+WHAT MADE IT POSSIBLE, correcting my own framing above. I wrote that the
+construction "works entirely in scalars" and that option-1 needed a braid word
+that does not exist. Half right. The deprecated producer prints its own
+convention: "Crossing coefficients C_{ij} = c_j sigma_i + d_j" -- that IS an
+algebra element. And chain_reduce's recursion
+
+    new_a = a*c*ha + a*d + b*c ;  new_b = a*c + b*d
+
+is exactly (a s + b)(c s + d) reduced by s^2 = ha*s + 1. So chain_reduce
+returns the coefficients of prod_{j>i}(c_j sigma_i + d_j) = a_i sigma_i + b_i,
+and the Toffoli element is the product over generators. No braid word is
+needed; the element was implicit in the crossing coefficients all along.
+
+Verified by hand for the all-proton ordering: (c,d) = (1,0) at every crossing,
+so chain 0 = sigma_0^2 = ha sigma_0 + 1, chain 1 = sigma_1, and
+
+    T_q(1,1,1) = ha sigma_0 sigma_1 + sigma_1,   ha = q - 1/q.
+
+At q0 the NF vector is [0, 0, 1.0, 0.2090603, 0, 0] and ha(q0) = 0.20907. The
+probe reproduces exactly that, so the multiplication is right.
+
+RESULT: G.t(q0) >= 0 for ALL 8 orderings, including k=7 = (1,1,1), the
+Toffoli's own control-control-target ordering. Every component strictly
+positive. Gram is pyhecke.gram.gram_matrix_mp (production, convention D), NOT
+the producer's own -- which uses the retracted naive length rule.
+
+GRAM CROSS-CHECK, so this is provably the same object the proof block
+discusses: eigenvalues [-0.75270211, 8.4e-51, 0.75270211 x3, 4.2303392].
+lambda_min = -0.7527021133 reproduces the -0.75270211 recorded in
+toffoli-lp-stability-proof.md, and the 8.4e-51 confirms the form is SINGULAR,
+also as recorded.
+
+## HOW MUCH IT IS WORTH — less than it looks, and the probe says so
+
+The Gram is ENTRYWISE NON-NEGATIVE (0 negative entries of 36). So G.t >= 0 is
+informative only where cancellation was possible. Per-ordering: 2 of the 8 are
+TRIVIALLY feasible because t is entrywise non-negative too -- and k=7 is one of
+them. The other 6 have negative t components and are genuine.
+
+So: the condition the proposition STATES is satisfied at the substrate, but for
+the ordering that matters it is satisfied by shape rather than by physics. Do
+not quote "the q-Toffoli is LP-feasible at q0" without that qualifier.
+
+## THE REAL FINDING — the two sign structures run OPPOSITE ways
+
+t(k=7) = sigma_1 + ha sigma_0 sigma_1 has a negative component exactly when
+ha = q - 1/q < 0, i.e. on 0 < q < 1.
+
+    q > 1 :  P_76 < 0  (amplitude negative)  BUT  t entrywise >= 0, G.t > 0
+    q < 1 :  P_76 > 0  (amplitude positive)  BUT  t acquires a negative entry
+
+The amplitude sign and the cone condition move in OPPOSITE directions across
+q = 1. That is a direct obstruction to the proof's reduction, which reads the
+cone condition off the amplitude sign -- it is not merely that the index spaces
+differ, it is that the two quantities disagree about which side of q = 1 is the
+good one.
+
+## CONSEQUENCE for the prop:q-game-of-life open item
+
+The positivity-vs-non-vanishing dilemma is largely dissolved: under BOTH
+readings the substrate is fine. Non-vanishing holds for every q != 1;
+LP-feasibility, computed directly rather than via the reduction, holds at q0.
+What does NOT survive is the reduction connecting them.
+
+SCOPE (a). This measures the stated condition at one anchor. It does not prove
+the reduction false -- it exhibits a sign disagreement that any correct
+reduction would have to explain.
