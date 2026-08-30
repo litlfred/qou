@@ -1,11 +1,11 @@
 ---
 # qou-efzm
 title: '5 orphan QA sidecars: one block missing its .ts, four with no block at all'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T17:51:01Z
-updated_at: 2026-08-23T17:51:28Z
+updated_at: 2026-08-30T02:37:07Z
 ---
 
 Exposed by the 236-block pin-bump sweep on PR #5561 (they were its only two
@@ -49,3 +49,34 @@ denominator. Small, but it means "N sidecars" is not "N blocks".
 
 Not urgent. The fix is a decision (restore the `.ts` vs delete the leftovers),
 not a sweep.
+
+
+## Corrected + partly closed 2026-08-29
+
+**This bean named the wrong block.** `mass-theory/q-clt-jsj-mass-scaling` **gained its `.ts`** in
+`6d4bb17ccc` ("restore two manifests the bulk import dropped") — fixed by a sibling. The surviving
+`.md`-without-`.ts` case is `lean/AUDIT-REPORT`, which I dismissed at the time as a stray
+non-block path; it is the same orphan class.
+
+Remaining: 4 × `*/section-title-audit` (neither sibling) + `lean/AUDIT-REPORT`. See [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md) §4.
+
+
+## Resolved 2026-08-30 — 4 deleted, 1 deliberately kept
+
+Owner instruction: delete the orphan sidecars. Done for **4 of 5**; the fifth is not an
+orphan and deleting it would have destroyed data.
+
+**Deleted (4)** — `*/section-title-audit.qa.json` in `bach2013-double-slit`,
+`fred2005-formal-groups`, `unital-groebner-bases`, `visualizer`. Neither a `.ts` nor an
+`.md` sibling, and **0 criteria each** — empty files with no block behind them.
+
+**KEPT: `quantum-observable-universe/lean/AUDIT-REPORT.qa.json`.** It is not in the same
+class. It has an `.md` sibling (a Lean formalization audit report), and it carries **10
+criteria, every one an agent/human verdict**, including a substantive
+`trap-superlative` **fail** with cited evidence. Deleting it destroys 10 adjudications
+that only an agent can produce and that the sidecar system exists to preserve.
+
+Its actual defect is narrower than 'orphan': a `.md` with no `.ts` manifest, so
+`qa-sweep` reports `root not found` for it. Two honest dispositions, neither taken here:
+give it a `.ts`, or accept that a working audit document under `lean/` is not a content
+block and should not have acquired a sidecar. Owner call.

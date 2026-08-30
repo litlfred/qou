@@ -1,0 +1,106 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T13:01:35.451533+00:00",
+  "commitSha": "f97c4f63921194016396733d3e2b63bd71ba36d1",
+  "assertions": [
+    {
+      "name": "CONTROL_the_inverse_sum_is_NOT_the_representative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "tau_representative_system_is_FULL_rank_6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "N1_net_is_tau_paired_against_the_ALL_ONES_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "schur_system_is_FULL_rank_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "c_2_1_equals_bracket_three",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "N3_all_ones_COMMUTATOR_part_is_MINUS_DIM_times_dC",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "unscaled_representative_system_is_FULL_rank_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "N4_W_equals_Omega_21_over_the_schur_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-net-is-tau-against-all-ones",
+  "scriptFile": "qbeta_net_is_tau_against_all_ones_probe.py",
+  "scriptHash": "c59236c9b453",
+  "scriptCommitSha": "56c3453381f478714470cb58e5a950e937d2165a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_net_is_tau_against_all_ones_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_net_is_tau_against_all_ones_probe.py"
+  },
+  "description": "qou-xzrj: `net` is the canonical symmetrizing trace paired against the ALL-ONES element Omega = sum_w T_w (rank 6/6, unique). With tau = sum_lambda chi^lambda/c_lambda this DERIVES the Schur-element factor in mu -- W = Omega_(2,1)/c_(2,1) -- rather than identifying it. The whole remaining gap collapses to one identity between explicit canonical elements: Omega_(2,1) = -dim(V_(2,1)) * dC. Also records a failed guess: sum_w T_w^{-1} is NOT the representative (fails 5 of 6). Scope-(a); step 8 not closed.",
+  "data": {
+    "Omega": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "Omega_21_over_dC": "-2",
+    "c_2_1": "(q**2 - q + 1)*(q**2 + q + 1)/q**2",
+    "inverse_sum_failures": "5"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

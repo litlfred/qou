@@ -31,17 +31,43 @@ TWO LAYERS, because a source-only detector cannot decide this.
      precisely because it now DOCUMENTS the trap and carries the fix.  A file that
      discusses the defect scores like a file that has it.
 
+     One class of that false positive IS decidable without the numeric layer, and
+     is now decided: a file whose C-level constants sit ONLY in comments and
+     docstrings cannot affect a computation, whatever its prose says.  Measured
+     case: `y_lambda_su_n.py` quotes `2.5995` inside a passage explaining that the
+     value is retired evidence AGAINST convention C.  Decided structurally with
+     `ast` + `tokenize`, never by keyword -- looking for "historical" near the
+     number would be an escape hatch any file could acquire, and a string literal
+     in an expression is not prose, since `mpf("2.5995")` computes.  The tag reads
+     "but ONLY in prose"; the HARD-CODES tag stays visible beside it.
+
+  WITNESSLESS FILES ARE THE BLIND SPOT, and the triage now counts them.  Layers 2
+  and 3 both read `*.witness.json`, so a consumer that emits no witness is visible
+  to NOTHING but the source scan.  Measured on this corpus: 44 of the 167 y_lambda
+  consumers emit no witness, and 12 of those are flagged.  That is not a defect
+  list -- a library module legitimately emits none -- but it is where a real
+  instance hides, and it is how the sixth one (`qou-iav7`,
+  `threerow_isospin_parity_probe`) was found: by a sibling reading source, because
+  no other layer could reach it.  Tagged `NO WITNESS` in the report.
+
   2. `--measure`: NUMERIC confirmation, convention-agnostic.  Evaluates the
      `ell >= 3` stratum directly at the proton pin.  A value cannot be stale,
      mislabelled, or re-spelled and still be nonzero.  This is the layer that
      decides; the triage only says where to point it.
 
-`--selftest` fails unless the known instance is detected, so a future narrowing
-cannot quietly report a clean tree.
+`--selftest` tests each detector branch against a minimal string carrying exactly
+that pattern, and tests the prose-only discriminator in BOTH directions -- it must
+clear a retired mention and must NOT clear `mpf("2.5995")` or a file holding the
+value in prose and in code alike.  It is deliberately NOT anchored to any live
+file: the previous version required a specific probe to be detected, that probe
+was retired exactly as the audit asked, and the selftest then cried regression at
+its own fix.  A check anchored to a mutable instance goes stale the moment the
+instance is repaired.
 """
 from __future__ import annotations
 
 import argparse
+import ast
 import pathlib
 import re
 import sys
@@ -61,9 +87,82 @@ GUARD = re.compile(r"noise[_ ]?floor|NOISE\b", re.I)
 COMPARE = re.compile(r"C[_ ]?vs[_ ]?D|convention[-_ ]?C\b.*convention[-_ ]?D|D[_ ]?vs[_ ]?C", re.I)
 # C's level, hard-coded: Q^r = u^3/D(u) with D(u) = -u^6 - u^4 + u^3 + u^2 + 1
 C_LEVEL = re.compile(r"-\s*u\s*\*\*\s*6\s*-\s*u\s*\*\*\s*4|2\.5995|1\.7202|1\.13068")
+# Does the file emit a witness at all?  Heuristic, and deliberately broad: any of
+# the three routes this corpus uses to write one.  A file that emits none is
+# invisible to layers 2 and 3 -- see the WITNESSLESS note in the module docstring.
+EMITS = re.compile(r"WitnessBuilder|witness_base|\.save\(\s*\)")
 
 
 SELF = pathlib.Path(__file__).resolve()
+
+
+def _c_level_is_prose_only(txt: str) -> bool:
+    """Do ALL of this file's C-level constants sit in a comment or a docstring?
+
+    WHY THIS EXISTS.  The `HARD-CODES C's LEVEL` tag is a text match, so it fires
+    on a file that quotes `2.5995` in order to say the value is RETIRED.  Measured:
+    `computations/y_lambda_su_n.py` is flagged, and its only hit is inside a
+    docstring reading "kept because it is the evidence against C ... the implied
+    real N was 2.5995155".  That is the opposite of the defect the tag names.
+
+    WHY NOT KEYWORD PROXIMITY.  The obvious fix -- look for "historical" or
+    "retired" near the constant -- is an escape hatch: any file that writes the
+    word clears itself, and a real offender can acquire one by accident.  Whether
+    a number can reach a computation is not a question about vocabulary.
+
+    So decide it structurally: a constant that appears ONLY in a comment or a
+    docstring cannot affect any computation, whatever the prose around it says.
+    A string literal in an expression position is NOT prose -- `mpf("2.5995")`
+    computes -- so only comments and true docstrings (module, class, function)
+    count.
+
+    Conservative on failure: an unparseable file returns False, keeping the tag.
+    """
+    if not C_LEVEL.search(txt):
+        return False
+
+    spans = []  # (start_offset, end_offset) of prose regions
+
+    # line offsets, so token (row, col) -> absolute offset
+    starts, off = [], 0
+    for line in txt.splitlines(keepends=True):
+        starts.append(off)
+        off += len(line)
+    starts.append(off)
+
+    def _abs(row, col):
+        return starts[row - 1] + col if 1 <= row <= len(starts) else 0
+
+    try:
+        import io
+        import tokenize
+        for tok in tokenize.generate_tokens(io.StringIO(txt).readline):
+            if tok.type == tokenize.COMMENT:
+                spans.append((_abs(*tok.start), _abs(*tok.end)))
+    except (tokenize.TokenError, IndentationError, SyntaxError, ValueError):
+        return False
+
+    try:
+        tree = ast.parse(txt)
+    except SyntaxError:
+        return False
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.Module, ast.ClassDef,
+                                 ast.FunctionDef, ast.AsyncFunctionDef)):
+            continue
+        body = getattr(node, "body", None)
+        if not body:
+            continue
+        first = body[0]
+        if (isinstance(first, ast.Expr) and isinstance(first.value, ast.Constant)
+                and isinstance(first.value.value, str)):
+            spans.append((_abs(first.lineno, first.col_offset),
+                          _abs(first.end_lineno, first.end_col_offset)))
+
+    for m in C_LEVEL.finditer(txt):
+        if not any(a <= m.start() and m.end() <= b for a, b in spans):
+            return False
+    return True
 
 
 def _files():
@@ -101,6 +200,8 @@ def triage():
             "guarded": bool(GUARD.search(txt)),
             "comparison": bool(COMPARE.search(txt)),
             "hardcodes_C_level": bool(C_LEVEL.search(txt)),
+            "C_level_prose_only": _c_level_is_prose_only(txt),
+            "emits_witness": bool(EMITS.search(txt)),
         })
     rows.sort(key=lambda r: (-r["score"], r["path"]))
     return rows
@@ -209,15 +310,84 @@ def main() -> int:
     a = ap.parse_args()
 
     if a.selftest:
-        rows = triage()
-        known = "computations/deltalambda/threerow_qcross_trend_probe.py"
-        hit = next((r for r in rows if r["path"] == known), None)
-        if hit is None or not hit["score"]:
-            print(f"SELFTEST FAIL: {known} not detected")
+        # Anchor the SOURCE layer on a SYNTHETIC FIXTURE, not on a live file.
+        #
+        # This selftest used to require that
+        # `computations/deltalambda/threerow_qcross_trend_probe.py` be detected AND
+        # read as hard-coding C's level. That file was the confirmed instance when
+        # this tool was written -- and in 6ebae05c45 it was RETIRED, exactly as the
+        # audit asked. The selftest then began failing on a clean tree, reporting a
+        # regression that was in fact the fix landing.
+        #
+        # A selftest anchored to a mutable instance goes stale the moment the
+        # instance is repaired, and it fails in the WORST direction: it cries
+        # regression at success, which trains a reader to ignore it. Test the
+        # DETECTOR against a fixture it cannot lose, and leave the corpus to the
+        # report.
+        # Each pattern gets its OWN minimal probe string, so breaking one branch
+        # of one regex is detectable. A single combined fixture is NOT enough: the
+        # first version of this check used one blob containing a variable named
+        # `three_row`, which matches ROWS' `three[_-]?row` alternative — so
+        # sabotaging ROWS' `len(x) >= 3` branch left the selftest GREEN. The
+        # negative control caught it; without per-branch probes this selftest would
+        # have been decoration.
+        probes = {
+            "CONSUMER": (CONSUMER, "v = y_lambda_at_q0_mpmath(9, q)"),
+            "SIGN": (SIGN, "if Y[l] < 0:"),
+            "ROWS/len": (ROWS, "sel = [l for l in P if len(l) >= 3]"),
+            "ROWS/word": (ROWS, "the threerow stratum"),
+            "NEGV": (NEGV, "sum over negative-weight blocks"),
+            "C_LEVEL/poly": (C_LEVEL, "D = -u**6 - u**4 + u**3 + u**2 + 1"),
+            "C_LEVEL/const": (C_LEVEL, "r(q0) = 2.5995, Q^r = 1.7202, u* = 1.13068"),
+            "EMITS/builder": (EMITS, "w = WitnessBuilder('x')"),
+            "EMITS/import": (EMITS, "from witness_base import WitnessBuilder"),
+            "EMITS/save": (EMITS, "    w.save()"),
+        }
+        missing = [k for k, (rx, txt) in probes.items() if not rx.search(txt)]
+        if missing:
+            print(f"SELFTEST FAIL: the source detector missed {missing} on minimal "
+                  f"strings containing exactly those patterns — layer 1 has been "
+                  f"narrowed and no longer detects what it claims to")
             return 1
-        if not hit["hardcodes_C_level"]:
-            print(f"SELFTEST FAIL: {known} no longer reads as hard-coding C's level")
+
+        # The prose-only discriminator, BOTH directions. It exists to retract a
+        # false positive, so an over-broad version would be an escape hatch: it
+        # must clear a retired mention and must NOT clear a live one. The two
+        # cases that decide that are `mpf("2.5995")` -- a string literal that
+        # computes -- and a file carrying the value in prose AND in code.
+        prose_cases = [
+            ("docstring only",
+             '"""The implied real N was 2.5995155, evidence against C."""\nx = 1\n', True),
+            ("comment only",
+             "x = 1  # historical: r = 2.5995 under convention C\n", True),
+            ("mpf string literal is NOT prose",
+             'from mpmath import mpf\nr = mpf("2.5995")\n', False),
+            ("bare float in code",
+             "r = 2.5995\n", False),
+            ("polynomial in code",
+             "D = -u**6 - u**4 + u**3 + u**2 + 1\n", False),
+            ("prose mention AND a live copy",
+             '"""r = 2.5995 historically."""\nr = 2.5995\n', False),
+            ("no C level present",
+             "z = q**3 / (q**2 + 1)\n", False),
+            ("unparseable stays flagged",
+             "def f(:\n  2.5995\n", False),
+        ]
+        if EMITS.search("# reads the committed witness; emits none itself"):
+            print("SELFTEST FAIL: EMITS fires on prose that only MENTIONS a witness, "
+                  "so the NO-WITNESS count is an undercount and the blind spot reads "
+                  "smaller than it is")
             return 1
+
+        wrong = [name for name, src, want in prose_cases
+                 if _c_level_is_prose_only(src) is not want]
+        if wrong:
+            print(f"SELFTEST FAIL: the prose-only discriminator is wrong on {wrong}. "
+                  f"It clears a HARD-CODES tag, so a version that over-clears is an "
+                  f"escape hatch and one that under-clears re-raises the false "
+                  f"positive it was written for.")
+            return 1
+
         m = measure((9,))
         st = m["strata"][0]
         if not st["is_structural_zero"]:
@@ -227,6 +397,13 @@ def main() -> int:
         if st["n_negative_above_floor"]:
             print(f"SELFTEST FAIL: {st['n_negative_above_floor']} genuinely negative "
                   f"y_lambda at n=9 — convention D should leave none")
+            return 1
+        # Layer 3 must still be able to read provenance at all. It reports a COUNT,
+        # never a required count: zero C-frame records is the goal state, reached on
+        # main on 2026-08-25, not a failure.
+        if not date_witnesses():
+            print("SELFTEST FAIL: layer 3 matched no witnesses at all — the "
+                  "stem-matching has broken, not the corpus")
             return 1
         print("SELFTEST OK")
         return 0
@@ -281,13 +458,23 @@ def main() -> int:
     print(f"  y_lambda consumers scanned : {len(rows)}")
     print(f"  flagged                    : {len(flagged)}")
     print(f"  clean                      : {len(rows) - len(flagged)}")
+    _blind = [r for r in rows if not r["emits_witness"]]
+    _blind_flagged = [r for r in _blind if r["score"]]
+    print(f"  emitting NO witness        : {len(_blind)}  "
+          f"({len(_blind_flagged)} of them flagged)")
+    print( "                               ^ layers 2 and 3 are blind to these; this")
+    print( "                                 scan is the only thing that can see them.")
     print()
     for r in flagged:
         tags = []
         if r["hardcodes_C_level"]:
             tags.append("HARD-CODES C's LEVEL")
+            if r.get("C_level_prose_only"):
+                tags.append("but ONLY in prose -- cannot reach a computation")
         if r["comparison"]:
             tags.append("declares a C-vs-D comparison")
+        if not r["emits_witness"]:
+            tags.append("NO WITNESS -- layers 2 and 3 cannot see this file")
         if r["guarded"]:
             tags.append("has a noise floor")
         t = ("   [" + "; ".join(tags) + "]") if tags else ""
@@ -295,12 +482,24 @@ def main() -> int:
         print(f"       {r['hits']}")
     print()
     print("  Reading the tags:")
+    print("    but ONLY in prose             -- every C-level constant in the file sits")
+    print("                                     in a comment or a docstring, decided by")
+    print("                                     ast + tokenize, not by keywords. It cannot")
+    print("                                     reach a computation, so the tag above is a")
+    print("                                     false positive for this file. A string in an")
+    print("                                     expression is NOT prose: mpf(\"2.5995\") computes.")
     print("    HARD-CODES C's LEVEL          -- quotes Q^r = u^3/D(u), r = 2.5995,")
     print("                                     Q^r = 1.7202, or u* = 1.13068. On its")
     print("                                     own this is the strongest signal.")
     print("    declares a C-vs-D comparison  -- says so in its own text. Reasoning about")
     print("                                     the annihilated stratum is then CORRECT")
     print("                                     BY DESIGN; both tags together are expected.")
+    print("    NO WITNESS                    -- emits nothing for the numeric or dating")
+    print("                                     layers to check, so ONLY this source scan")
+    print("                                     can see it. Not a defect by itself -- a")
+    print("                                     library module legitimately emits none --")
+    print("                                     but it is where a real instance hides, and")
+    print("                                     is how the sixth one (qou-iav7) was found.")
     print("    has a noise floor             -- already distinguishes round-off from a")
     print("                                     measured value. Not a clearance, but it")
     print("                                     cannot make the mu3_door_budget error.")

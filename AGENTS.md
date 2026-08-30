@@ -1771,7 +1771,7 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
->    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −8.006`) are separated in §2 and in the notation register.
+>    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −7.4588`) are separated in §2 and in the notation register. **That third figure read `−8.006` until 2026-08-29 and was stale, not a different normalisation.** The producer's own upstream source of the exact rungs, `qbeta-c4even-exact-sseries.witness.json`, carries `−7.45876032789888019236780697835`, and a fresh run of `qbeta_c4even_ladder_reconstruction_probe` reproduces it byte-for-byte at BOTH pins — the `c_k^even` are exact s-series coefficients and are **anchor-independent** (only the `abs_ck_uk` products move, by ~4e-7). The downstream ladder witness had simply never been regenerated since it was first written: `−8.006` survived the convention C→D excision (`70d1ade383`) and a sweep whose own message claims it re-ran 154 producers (`119885a4c6`). Fixed in PR #6054, which regenerates that witness and pins the producer to proton.
 >    - **"PROVED" IS wrong.** The Lean is `1 − b²ℏ⁴ = 1 − (bℏ²)²`, a one-line `ring` identity: it proves only that *re-reading* the N=2 factor in the ansatz form yields `−1`. Corpus-grepped: `N2_factor` is a bare `def` with **no** theorem deriving it — every use in `QBetaCategoricalPrecisionLadder.lean` merely `unfold`s it, and its provenance ("Kashiwara `f̃_1†f̃_1`") lives in a docstring. **"Structural" is the defensible word** (no fit, no CODATA, no q₀) and is what the source block itself claims; the compression to "PROVED" happened here, not there.
 > 2. **"`N` is the truncation order chosen by target precision" does not describe the canonical producer.** `qbeta_ck_cache.py` extracts **one** rung by inverting the target; the residual at the next rung is then **exactly zero**, not merely below tolerance, so its guard fires and `c_4 … c_7` are **never computed** (`QOU.QBeta.greedy_rung_exact` / `greedy_later_rungs_vanish`, sorry-free). Whether some abstract ladder converges is a separate question this does not settle; the point is that no `N` is being *chosen* by an `ε` anywhere in the producer.
 > 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3748 %** (proton-normalised; 2.4571 % normalised by the candidate `-2`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.02020024`), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
@@ -1946,6 +1946,49 @@ object — pairwise cap `ρ_A ≤ C(A,2)` proved in
 seventh fit-based ansatz for the MAGNITUDE** — the three-calibration
 discipline review will catch it. Full framing:
 [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
+
+> **🟧 Extensive-term frontier + deuteron ruling (2026-08-29/30).** The "separate
+> super-pairwise additive extensive object" above is the arc's one real open
+> problem. It is now bounded by four sorry-free formalize-first results — the
+> *scaling* is pruned from four directions; the *coefficient/mechanism* stays
+> open (`qou-brng`). Do not re-attempt the excluded routes.
+>
+> - **Complete-graph coordination is excluded by saturation.**
+>   `QOU.Mass.CoordinationSaturation` (lean-direct sorry-free): the complete
+>   graph `M = C(A,2)` (the `z = A−1` law) gives `B/A = ε·(A−1)/2`, **unbounded**
+>   (no plateau); bounded-degree gives `B/A = ε·k/2`, constant. Observed
+>   saturation *forces* bounded degree and refutes `z = A−1` **structurally**
+>   (not merely at ⁴He). Audit:
+>   [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](docs/audits/2026-08-30-coordination-saturation-formalized.md).
+> - **Linear-chain coordination is excluded by arrangement-dependence.**
+>   `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` — the chain
+>   bond sum is arrangement-invariant iff `L_pp = L_pn = L_nn`; a nucleus has no
+>   arrangement (scope-(b), bean `qou-m07y`). The saturation lemma's uniform-`ε`
+>   is exactly that order-independent (physical) regime.
+> - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
+>   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
+> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
+>   wrong against AME**, independent of the bond set
+>   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+>
+> **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
+> canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
+> NOT a hyperbolic-volume term** (Bloch volume leg proved 0, PR #5242). The 6₂
+> census assignment (`Vol = 4.40`) is retired; `qou-e5jf` unblocked. Sourcing the
+> binding from the **Gram/Frobenius pairing (⟨g,g⟩) + confinement SDP** was tested
+> (`deuteron_real_sdp.py`, H₆) and is a **scope-(a) negative**: the diagonal Gram
+> SDP is degenerate and 0 of 6 off-diagonal encodings derive the binding — the
+> only non-zero result (`2.22456607`) is the AME value fed in as the constraint
+> (circular). Same intensive/extensive gap. Audits:
+> [`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`](docs/audits/2026-08-29-deuteron-knot-owner-decision.md),
+> [`docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md`](docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md).
+>
+> **Open positive target (`qou-brng`):** the linking-vs-self-energy amplitude
+> assignment — why the binding multiplier is the *mutual* (coordination) linking
+> count while the mass multiplier is the *self*-linking weight `lw`. The
+> exact-`ℏ_q²` saturated-fraction value is **suspect numerology** (volume-defect
+> route refuted); do not chase it. Consolidated arc ledger:
+> [`docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md`](docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md).
 
 > **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
 > The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:

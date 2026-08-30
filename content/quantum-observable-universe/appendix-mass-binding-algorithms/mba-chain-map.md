@@ -23,6 +23,7 @@ Four standalone algorithms support the production pipeline:
 2. **$c_k$ truncation ladder.** The convergent series whose truncation order $N$ is fixed by precision $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.
 3. **LP/SDP dual emission contract.** Every operator-selection compute must emit primal and dual variables, enforced by `lp_dual_witness_validator.py`.
 4. **Witness-JSON pipeline.** Cross-language interchange schema and the `WitnessBuilder` pattern.
+5. **Atomic electron layer (Level 6).** $M_{\mathrm{atom}} = M_{\mathrm{nuclear}} + Z\,m_e - B_{\mathrm{el}}(Z)$ with $B_{\mathrm{el}}$ the bare-$Z$ hydrogenic shell sum at the canonical e-Hartree scale $E_h = \alpha_{EM}^2 m_e c^2$ (CS-corrected $\alpha_{EM}$ at arbitrary precision). Producer `computations/atom_electron_mass.py`, witness `atom-electron-mass.witness.json`; consumed by the mass dashboard's atomic table (derived $B_{\mathrm{el}}$ since 2026-08-30, replacing the AME empirical fit, which is retained as a comparison). Inter-electron screening ($Z_{\mathrm{eff}}$) is open.
 
 **Location of the algorithm statements.**
 The per-step blocks provide the precise input/output contract, correctness conditions, complexity estimate, and Python signature. These specifications alone suffice to reproduce every numerical prediction without referencing implementation source code.
