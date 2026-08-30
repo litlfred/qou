@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-30T11:09:40Z
+updated_at: 2026-08-30T13:56:24Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -206,3 +206,80 @@ is unbounded as a -> r. That is why the measured max per-edge slope grows (0.5
 at n=12, 1 at n=15, 2 at n=28) rather than sitting at the same-sign bound of 1.
 
 Gap qou-k5r5 stays OPEN. Nothing wired; no fit; L2 unchanged.
+
+
+---
+
+## Leg A, 2026-08-30 — monotonicity 46 → 60, and a false RESULT line in our own probe
+
+**REFORMULATION (what made the rest affordable).** `sum over edges weighted by
+cc(lam,mu)` = `sum over TRIPLES lam -> Lam -> mu` = sum over `Lam |- n+1` of
+ordered pairs of removable corners. No pair dict. Three collapses follow:
+`dD2 = 2(D_Lam(c_x) - D_Lam(c_y))` (the +1 and -1 cancel); `D_Lam` at a corner
+in row `i` is just `min(i, Lam_i - 1) + 1`, so no diagonal dictionary is built;
+and the `2/((n+1)n!)` normalisation is common to N and P, so it cancels in the
+ratio and the whole accumulation is INTEGER with one divide at the end.
+Measured 19.3x at n=34 and 17.9x at n=38 against the pair-dict form, values
+exactly equal (a second control on the rewrite). Command in the probe docstring
+under MEASURED-COST.
+
+**FINDING 1 — monotonicity survives the trough it was most likely to fail at.**
+N/P monotone increasing on **n = 9..60**, exact Fractions. The n<=46 range put
+troughs at n = 20, 36, spaced 1.528 in sqrt(n), so the next was predicted at
+sqrt(n) ~ 7.53, n ~ 57. There is a trough at **exactly n = 57**, its increment
+is **+1.727e-4 > 0**, and increments rise again after it. Still OBSERVED, not
+proved.
+
+**FINDING 2 — "worst-case per-edge ratio <= 4" is FALSE for n >= 28, and it is
+our own line.** `..._edge_ratio_structure.py` prints it as a RESULT. The
+derivation printed one line above carries the hypothesis "(same-sign contents)";
+the RESULT drops it, and every extremal edge is OPPOSITE-sign — exactly the
+case the derivation excludes. Extremal family `Lam_m = ((2m+1)^(m+1), 1)`: two
+corners, at contents `m` and `-(m+1)`, with `D_Lam = m+1` and `1`, giving ratio
+`2m` at `n = 2m^2+3m+1 = 6, 15, 28, 45, ...`  Hence
+
+    max ratio_e = 2*floor((sqrt(8n+1)-3)/4) ~ sqrt(2n)      UNBOUNDED
+
+verified against a brute-force scan of every corner pair at every level
+n = 6..50, with a control (a formula shifted by +2 must disagree: 45/45). That
+probe's default nmax is 16 and 4 is correct up to n = 27, so **it never ran
+where it fails** — the session's recurring signature, an absent check
+indistinguishable from a passing one. Corrected in place. This STRENGTHENS the
+structure probe's real conclusion: if the per-edge worst case diverges, no
+per-edge argument can ever reach N/P < 1, so averaging is not merely convenient
+but forced.
+
+**CORRECTION TO MY OWN PRIOR CLAIM (cf5fefe06d).** That commit said the sqrt(n)
+periodicity is "refuted as a clean model" on the strength of one 6.3%
+discrepancy in the maxima. With the n = 57 trough the honest description is a
+systematic upward DRIFT, visible in both series — minima gaps 1.528, 1.550;
+maxima 1.536, 1.633. A constant period is still wrong, so the refutation
+stands; what changes is the reason.
+
+**HYPOTHESIS (recorded, falsifiable, NOT established).** D(0) — the central
+diagonal length, i.e. the Durfee side — has `D(0)/sqrt(n) -> 2/pi` under VKLS,
+so D(0) advances by 1 when sqrt(n) advances by `pi/2 = 1.5708`: precisely the
+value both gap series drift toward. That would make the oscillation period one
+unit of D(0). It puts the next maximum at **n ~ 67** and the next minimum at
+**n ~ 83**. Two gaps per series support it; the mechanism is unexplained.
+
+**ROUTE NOTE (untried, and the reason to prefer it).** Monotonicity is
+sufficient but strong; with N/P -> 0.6605 there is 0.36 of headroom to 1, so an
+effective upper bound is a far cheaper target. The per-edge worst case now
+provably diverges, so any route must average — and one exact DETERMINISTIC
+averaging identity is available and unused. Telescoping gives
+
+    sum_{u>=0} (D(u) - D(u+1)) = D(0)    exactly,
+
+so the mean drop rate of the diagonal profile on the positive side is exactly
+`D(0)/lambda_1`, and the same-sign contribution to N/P is twice that. Under
+VKLS `D(0)/lambda_1 -> (2/pi)/2 = 1/pi = 0.31831`, i.e. a uniform-average
+`S = 2/pi = 0.63662`, against the measured omega-weighted limit 0.6605: **the
+omega-weighting costs only 3.75%**. So a bound that ignores the weighting
+entirely still has enormous room. What it needs is `lambda_1 > 2 D(0)` with
+explicit tails — and effective Plancherel concentration for `lambda_1` is
+classical, which is precisely the part "Berry-Esseen-grade effective
+limit-shape estimates" was standing in for.
+
+**STILL OPEN.** Monotonicity is observed on n = 9..60, not proved. qou-k5r5
+stays OPEN.
