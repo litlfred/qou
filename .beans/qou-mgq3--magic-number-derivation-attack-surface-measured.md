@@ -223,3 +223,53 @@ worth nothing here because the sign was *determined by the sampling line*, not
 by the physics. Before treating a sign agreement as evidence, check whether the
 sampling forces it. `qou-o16k` is the same shape one block over: the kappa fit
 lived entirely where two conventions coincide, so it could not distinguish them.
+
+## The one SDP above H_3 already exists — and it cannot see magic numbers
+
+Chasing option 2 ("re-pose the LP above H_3") turned up that it partly exists,
+and that it fails for a reason worth recording.
+
+**`gram.py` is hardwired to H_3.** `gram_matrix()`, `gram_matrix_mp()`,
+`gram_matrix_mp_strings()` take **no `n` parameter**; the LP channel space is
+the 6-element NF basis `['γ','σ₀','σ₁','L₊','L₋','e⁻']` = dim H_3(q) = 3!. So a
+general-n Gram does not exist and is not a matter of passing `n=4`.
+
+**But `pyhecke.sdp.solve_shell_magic_sdp` DOES pose an SDP above H_3** — at
+`H_{3·A_magic}`, i.e. H_24 for the 8-shell. It forms `[[1,y],[y,1]]` with
+`y = shell_shadow_price(a_magic)["shadow_price_abs"]` and declares feasibility
+iff `|y| ≤ 1`, its docstring saying magic numbers satisfy it "by construction".
+
+**Measured, it cannot discriminate — two defects**
+([`shell_shadow_price_magic_contrast_probe.py`](../computations/probes/shell_shadow_price_magic_contrast_probe.py), 3/3):
+
+1. **The wrapper refuses non-magic input** (`a_magic in MAGIC_NUMBERS` or
+   infeasible), so no contrast can be produced through it. The underlying
+   `sigma_shell_characterization.shell_shadow_price` has **no such guard**, so
+   the contrast was always computable and had simply never been run.
+2. **The quantity has no feature at magic A.** Over A = 2..30 at the default
+   partition `(3A−1, 1)`, `shadow_price_abs` is **smooth and monotone
+   decreasing**, ~6 orders per unit A, from `5.3e-3` at A=2 to `2.6e-237` at
+   A=30. **Zero local extrema anywhere.** Magic and non-magic interleave on one
+   curve.
+
+   And the feasibility test is vacuous: `|y| ≤ 1` holds for **29/29** — 4/4
+   magic and 25/25 non-magic — by up to **237 orders** of margin. The
+   docstring's "by construction" is literally true, which is exactly why
+   passing it carries no shell-closure content. It cannot fail for any A.
+
+Scope **(a)**: the default standard-rep partition only. Other partitions of 3A
+are untested and are the live remainder of option 2.
+
+**Third instance of one pattern today, and that is the transferable finding.**
+The corpus keeps producing magic-number "signals" whose apparatus is
+constitutionally unable to see a non-magic counterexample:
+
+| # | site | mechanism |
+|---|---|---|
+| 1 | `conj:magic-numbers-from-q` table | tabulates only magic Z |
+| 2 | `magic_vs_nonmagic_report.json` `magic_ladder_member` | hardcoded copy of `MAGIC_LADDER` |
+| 3 | `solve_shell_magic_sdp` | rejects non-magic `a_magic` at the door |
+
+In all three the magic set is an **input** presented as an output. Any future
+magic-number claim should be required to state, up front, what its
+non-magic control is and what result would have falsified it.

@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:34:55.316455+00:00",
+  "commitSha": "4d7fcaf750ac9487253fdc9de514f845d6b29332",
+  "assertions": [
+    {
+      "name": "no_local_extremum_at_any_A",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "a magic feature would appear as an extremum"
+    },
+    {
+      "name": "feasibility_holds_for_every_A",
+      "computed": 29,
+      "expected": 29,
+      "passed": true,
+      "tolerance": 0,
+      "source": "|y|<=1 satisfied by magic and non-magic alike"
+    },
+    {
+      "name": "monotone_so_no_magic_structure",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "smooth monotone decay admits no shell signal"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "shell-shadow-price-magic-contrast",
+  "scriptFile": "shell_shadow_price_magic_contrast_probe.py",
+  "scriptHash": "9b2025da9c8a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/shell_shadow_price_magic_contrast_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/shell_shadow_price_magic_contrast_probe.py"
+  },
+  "description": "Magic vs non-magic contrast for the level-4 shell shadow price (pyhecke.sdp.solve_shell_magic_sdp), the only SDP in the corpus posed above H_3. The wrapper refuses non-magic a_magic so the contrast had never been run; the underlying shell_shadow_price has no such guard. Measured over A=2..30 at the default partition (k-1,1): the shadow price is smooth and monotone decreasing in A with no feature at any magic A, and the |y|<=1 feasibility condition holds for 29/29 values (4/4 magic, 25/25 non-magic) by up to 237 orders of margin. The condition cannot fail, so passing it carries no shell-closure content.",
+  "parameters": {
+    "A_max": 30,
+    "partition": "(3A-1, 1)  [function default, standard rep]"
+  },
+  "data": {
+    "monotone_decreasing_in_A": true,
+    "local_extrema_A": [],
+    "feasible_magic": "4/4",
+    "feasible_nonmagic": "25/25",
+    "shadow_price_abs_by_A": {
+      "2": "0.0053056659614487285966",
+      "3": "0.000015182256945981606984",
+      "4": "1.0690986108767083656e-8",
+      "5": "2.4081439748467854304e-12",
+      "6": "1.9350478909922088606e-16",
+      "7": "5.8377711213119793355e-21",
+      "8": "6.7791014990582700589e-26",
+      "9": "3.0672053097293417045e-31",
+      "10": "5.438060956404241418e-37",
+      "11": "3.7874526839486593924e-43",
+      "12": "1.0370905297741690919e-49",
+      "13": "1.1165419764816956307e-56",
+      "14": "4.7248846050632502476e-64",
+      "15": "7.8555254212085218188e-72",
+      "16": "5.1289095826952339016e-80",
+      "17": "1.3144607076541337264e-88",
+      "18": "1.3218055087418935556e-97",
+      "19": "5.2135003443912436116e-107",
+      "20": "8.0630049545246245072e-117",
+      "21": "4.8882264621055396222e-127",
+      "22": "1.1614193051540896258e-137",
+      "23": "1.0812340043296441201e-148",
+      "24": "3.9433389406994738151e-160",
+      "25": "5.633167496345563112e-172",
+      "26": "3.1515478764585046597e-184",
+      "27": "6.9043587558531296066e-197",
+      "28": "5.9224645557111800275e-210",
+      "29": "1.9889226790399487137e-223",
+      "30": "2.6147532798180121754e-237"
+    },
+    "errors": []
+  },
+  "caveats": [
+    "Scope (a): the default standard-rep partition (k-1, 1) only. Other partitions of 3A are untested and are the open question this leaves."
+  ]
+}
