@@ -1,11 +1,11 @@
 ---
 # qou-l81w
 title: the compute-vacuity audit prescribes a fix that is itself a tautology
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T09:26:05Z
-updated_at: 2026-08-30T09:26:05Z
+updated_at: 2026-08-30T09:45:55Z
 ---
 
 
@@ -68,3 +68,46 @@ Correct line 65's prescription, and add a sentence to B2 saying that a remedy
 must introduce an **independent route** to the value — a second derivation, a
 known constant, a recurrence — and that wrapping one side in a cast or a
 variable is not one.
+
+## RESOLVED 2026-08-30
+
+`docs/audits/2026-06-14-compute-vacuity-analogue.md` corrected in three places:
+
+* the **khovanov B2 entry** — the prescription is marked corrected, with the
+  reason spelled out (`empirical_c3` is `mpf(-2)`, a literal, so
+  `float(empirical_c3) == -2` is `x == x` with a cast, and invisible to the
+  census), and the real remedy named: the module's own two independent
+  tabulations, `kh_at_q1['Hopf+']` against
+  `kh_at_q1['unknot'] * abs(empirical_c3)`;
+* the **`m_p_m_e_li2q` entry** — "benign re: vacuity" withdrawn. Its secondary
+  point (the hardcoded CODATA literal should come from `codata_constants`) is
+  kept and flagged as still open, with the observation that until it does
+  there is nothing for an assertion to compare against;
+* a new **"What counts as a fix"** subsection stating the rule the document
+  was missing.
+
+## The rule, since it is the durable part
+
+An acceptable `expected` comes from a second derivation, a known constant, an
+evaluated property, or a coverage count rebuilt from inputs. Wrapping one side
+in `float()` / `str()` / `round()` / a variable is not a remedy — it is the
+same defect, minus the detector. Nor is a tolerance: a generous or conditional
+tolerance around two identical expressions obscures rather than fixes.
+
+The test: **name the two routes out loud.** If the second cannot be described
+without repeating the first, demote to `add_data` with
+`has_independent_expected_value: false`. A recorded measurement is not a
+failure, and it is what most of this class actually is.
+
+Also documented there, because neither is regex-detectable and both cost a
+reader to find: `computed=all(_ok)` where each element was bare-asserted on
+append, and an `add_assertion` inside an `if` so non-matching cases leave no
+trace at all.
+
+## Why this was urgent rather than tidy
+
+That audit is the list agents drain from. Three sibling agents were dispatched
+against it in this session; the corrected text and an explicit "do not follow
+line 65" warning went into their briefs. Without it the corpus count falls
+while the defect is merely relabelled — the one outcome this axis exists to
+prevent.
