@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-29T19:08:14Z
+updated_at: 2026-08-30T02:53:07Z
 ---
 
 THE FINDING behind PR #5972. `scripts/convention-c-producer-audit.py` reports 9
@@ -80,3 +80,5 @@ of z in the same file -- prearchimedean_bond_factor.py had one in its assertion
 comparand, and migrating only the first sent the assertion 5.55e-17 -> 0.1134.
 
 2026-08-29: adjudicated 37 of the 86 value-audit blocking sites as deliberate C-vs-D comparison arms (docstring frames it as convention work AND scope co-binds z_D; each entry quotes the file's own purpose). BLOCKING 86 -> 49, ledger 1 -> 38. Remaining 49 = 42 solo + 7 co-bound-but-unframed; the latter include qbeta_utils.py (cds1-gated ladder) and the fork-pricing probe, which need an eye rather than a keyword match. NOTE for anyone quoting a C-surface figure: the SHAPE audit's ACTIONABLE (8) is ~a tenth of the VALUE audit's surface (87 confirmed); do not report the former as the remaining work.
+
+2026-08-29 (cont): 49 -> 30 blocking. Adjudicated 16 sibling-def comparisons (taxonomy row 18), 1 whose D arm is a closed form in h not a z (row 19), and markov_trace_weights_wenzl's two sites — that one is a STALE CANONICITY CLAIM, not just a C binding: it called z_C 'the canonical Markov trace' post-R1. Relabelled, not migrated; zero importers and only inventory audits read its witness, so migration is cheap but is a separate decision. Ledger 38 -> 57.
