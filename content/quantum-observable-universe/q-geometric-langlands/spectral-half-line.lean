@@ -165,4 +165,105 @@ theorem spectral_coord_re_eq
   rw [eq_div_iff hlog]
   exact hl
 
+/-! ## Why the line is `Re = 1/2` — the functional equation's fixed locus
+
+`spectral_half_line` derives `Re(ρ) = 1/2` from `|α| = q^{1/2}`, but nothing so
+far says why *that* line rather than any other vertical one. The reason is a
+symmetry, and it is provable here.
+
+The functional equation pairs `α` with `q/α`. When `|α|² = q` — the Hasse–Weil
+conclusion — that partner is exactly the **complex conjugate**: `q/α = ᾱ`. So
+the Frobenius eigenvalues are Weil numbers on the circle of radius `√q`, closed
+under conjugation, and in the spectral coordinate `α = q^ρ` the pairing
+`α ↦ q/α` becomes `ρ ↦ 1 − ρ`. Its fixed locus under conjugation is
+`Re(ρ) = 1/2`.
+
+That is the classical picture, and stating it in the framework's own terms
+answers a question the arc otherwise leaves open: the critical line is not a
+fitted constant, it is where the functional equation's involution acts
+trivially on real parts. -/
+
+/-- **The functional-equation partner is the complex conjugate.** For a nonzero
+    `α` with `‖α‖² = q`, the partner `q/α` supplied by the functional equation
+    equals `conj α`.
+
+    This is what makes `|α| = √q` a *symmetry* statement rather than a bare
+    magnitude bound: the eigenvalue multiset is closed under conjugation. -/
+theorem weil_partner_eq_conj (q : ℝ) (α : ℂ) (hα : α ≠ 0)
+    (h : ‖α‖ ^ 2 = q) :
+    (q : ℂ) / α = (starRingEnd ℂ) α := by
+  have hns : (Complex.normSq α : ℂ) = (q : ℂ) := by
+    rw [Complex.normSq_eq_norm_sq, h]
+  rw [div_eq_iff hα, ← hns, ← Complex.mul_conj]
+  ring
+
+/-- **The pairing acts as `ρ ↦ 1 − ρ` on the spectral coordinate.** If
+    `α = q^ρ` and `q/α = q^σ`, then `σ = 1 − ρ` — provided `q > 1`, so that the
+    exponent is determined by its value up to the usual period.
+
+    Stated on real parts, which is where it is unambiguous:
+    `Re σ = 1 − Re ρ`. -/
+theorem partner_re_eq_one_sub
+    (q : ℝ) (hq : q > 1) (ρ σ : ℂ)
+    (h : (q : ℂ) ^ σ = (q : ℂ) / (q : ℂ) ^ ρ) :
+    σ.re = 1 - ρ.re := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hpow : ((q : ℂ) ^ ρ) ≠ 0 := by
+    simpa using Complex.cpow_ne_zero_iff.mpr
+      (Or.inl (Complex.ofReal_ne_zero.mpr (ne_of_gt hq0)))
+  -- take norms: q^{Re σ} = q / q^{Re ρ} = q^{1 - Re ρ}
+  have hn := congrArg (fun z : ℂ => ‖z‖) h
+  simp only [norm_div, Complex.norm_real, Real.norm_eq_abs, abs_of_pos hq0,
+    abs_cpow_ofReal_eq_rpow_re q hq0] at hn
+  -- hn : q ^ σ.re = q / q ^ ρ.re
+  have hrw : q / q ^ ρ.re = q ^ (1 - ρ.re) := by
+    rw [Real.rpow_sub hq0, Real.rpow_one]
+  rw [hrw] at hn
+  have hl := congrArg Real.log hn
+  rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
+  exact mul_right_cancel₀ hlog hl
+
+/-- **The critical line is the fixed locus.** For `q > 1`, a spectral exponent
+    has real part `1/2` exactly when it is fixed by the functional equation's
+    involution `ρ ↦ 1 − ρ` on real parts.
+
+    So `Re(ρ) = 1/2` is not a fitted constant: it is the unique vertical line on
+    which `α ↦ q/α` acts trivially. -/
+theorem critical_line_iff_fixed (ρ : ℂ) :
+    ρ.re = 1 / 2 ↔ ρ.re = 1 - ρ.re := by
+  constructor <;> intro h <;> linarith
+
+/-- **Assembled.** Under the Hasse–Weil bound, every eigenvalue's spectral
+    exponent is fixed by the functional-equation involution — the content of
+    `spectral_half_line`, restated as the symmetry statement it is. -/
+theorem spectral_half_line_is_fixed_locus
+    (Z : LocalQZetaFunction) (hq : Z.q > 1) (ρ : Fin 8 → ℂ)
+    (spectral_coord : ∀ i, Z.eigenvalues i = (Z.q : ℂ) ^ (ρ i))
+    (hw : ∀ i, ‖Z.eigenvalues i‖ = Z.q ^ (1 / 2 : ℝ)) :
+    ∀ i, (ρ i).re = 1 - (ρ i).re := fun i =>
+  (critical_line_iff_fixed (ρ i)).mp (spectral_half_line Z hq ρ spectral_coord hw i)
+
+/-! ### Non-vacuity of the conjugate-partner theorem
+
+`weil_partner_eq_conj` is only worth stating if it fires. Two witnesses at
+`q = 4`: the supersingular real eigenvalue `α = 2`, where the statement is
+`4/2 = 2` and the conjugation is invisible; and the genuinely complex `α = 2i`,
+where it says `4/(2i) = -2i` — the partner and the conjugate coincide only
+because `|α|² = q`. The second is the case the arc actually needs, since
+Frobenius eigenvalues of a curve come in conjugate pairs off the real axis. -/
+
+/-- The real (supersingular) witness: `q = 4`, `α = 2`. -/
+theorem weil_partner_real_witness :
+    ((4 : ℝ) : ℂ) / (2 : ℂ) = (starRingEnd ℂ) (2 : ℂ) :=
+  weil_partner_eq_conj 4 2 (by norm_num) (by norm_num)
+
+/-- The complex witness: `q = 4`, `α = 2i`, partner `= −2i = conj α`. -/
+theorem weil_partner_complex_witness :
+    ((4 : ℝ) : ℂ) / (2 * Complex.I) = (starRingEnd ℂ) (2 * Complex.I) := by
+  refine weil_partner_eq_conj 4 _ (by simp [Complex.ext_iff]) ?_
+  rw [← Complex.normSq_eq_norm_sq]
+  simp [Complex.normSq_mul]
+  norm_num
+
 end QOU.AlgebraicSubstrate
