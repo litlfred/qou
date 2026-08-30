@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T18:29:56Z
+updated_at: 2026-08-30T02:59:49Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -255,3 +255,115 @@ subprocesses: **0 new failures**.
 - **`mpf(repr(x))` is right for a float, broken for an mpf.** `repr(mpf('.78'))`
   is `"mpf('0.78')"`, unparseable. 96 sites unwrapped; the OTHER 84 in the tree
   lift genuine floats and must stay.
+
+
+## Session 2026-08-30 — the work order in this bean is INVERTED, and two drains landed
+
+PR #6060. Job 3 re-measured, job 1 untouched (owner-blocked), bucket-A drain
+started and immediately re-scoped.
+
+### Job 3: re-measured, no drift
+
+    ACTIONABLE fields  593    files 208
+      A. dps raised          304   (153 producers, long-tailed: most carry 2)
+      B. float64-equivalent  284
+      C. producer not found    5
+
+Reproduces the merged figure exactly. Re-checked against the 33 commits main
+gained during the session: only 7 touch `computations/`, none in the candidate
+set.
+
+### THE WORK ORDER IS BACKWARDS — pick by BINDING shape, not by edit shape
+
+I selected the 40 producers with an inline `computed=float(...)` because that
+shape is mechanically rewritable. **That criterion selects AGAINST gains.**
+
+    inline `computed=float(...)`     11 tried -> 0 KEEP, 4 REVERT, 5 SKIP
+    local  `x = float(EXPR)` -> x    both confirmed gains are this shape
+
+Not statistical. An inline cast at the assertion is what you write when
+WRAPPING a solver's float; binding to a local first is what you write when
+CARRYING an mpf. **Next agent: work the ~100 local-binding producers first.**
+
+### Bucket A contains producers that are float64 IN FACT
+
+Four confirmed: he4_sdp_compositional_probe, borromean_per_lambda_fr_probe,
+fr_pullback_k1_k2_test, qbeta_c3_phib_pole_seed_sensitivity_probe. Each calls
+`set_compute_dps()` (so the static classifier files it A) while its asserted
+value comes from a solver, a helper, or a float accumulation. `_precision.fmt`
+**short-circuits a Python float to `str()`** — its own docstring says so — so
+the prescribed repair changes the JSON type and NOTHING ELSE.
+
+This is this bean's own "the A/B split is a STATIC HEURISTIC" trap reached
+from the OPPOSITE side: a bucket-A file that is float64-valued. So A=304
+OVERSTATES what is drainable; the real boundary is between the two figures.
+
+### Two drains landed
+
+    probe_bring_residue_resolvent.py        8 fields  17 -> 60 digits
+    qbeta_c3_two_route_cross_pin_probe.py   2 fields  17 -> 60 digits
+
+Second witness: 16 raw float64 fields -> 1 (survivor is `expected: 0.0`).
+
+### Automation ceiling: 2 of 152
+
+With the only safe guard (the local feeds assertion values and nothing else),
+exactly **2 producers of 152** are auto-rewritable. Everything else reuses the
+local in a print or a comparison, where stringifying changes behaviour. This
+CONFIRMS this bean's "nothing here is a candidate for a textual sweep", now
+with a number.
+
+### Traps established this session
+
+- **`f"{mpf:.4f}"` raises TypeError.** Dropping a cast is not sufficient on
+  its own; every `:.Nf` print of that value must move to `mp.nstr`. I found
+  the second such print only by RUNNING the producer — it was on a branch the
+  first run did not take.
+- **A cast can hide in a list comprehension.** `dists = [(nm, float(...)) ...]`
+  then `min(dists, ...)`: `min` chooses among values already cut to 17 digits.
+  No rewriter here finds that shape.
+- **The drain driver's `restore()` wipes a previous KEEP.** Batch drains must
+  commit between producers, or run one at a time. (Batch 1's results were only
+  trustworthy because it had 0 KEEPs.)
+- **Re-running a producer in a bare container DOWNGRADES its provenance
+  block** (numpy/scipy/python/pyhecke_native). The witness tooling warns and
+  refuses. Build a venv matching the recorded environment; `pyhecke_native` is
+  not on PyPI and must be built with `maturin build --release`.
+- **precision-gates.sh already exits 1 on a CLEAN tree in a fresh container**
+  (q0-anchor flip, q0-anchor refill, mpf(<float>) source, float64-padding,
+  q0-value drift, CODATA stale-edition, mixed mpf/f64). Measure that baseline
+  before attributing any red to your own change.
+
+### Tooling added (both selftested; both were WRONG first)
+
+- `computations/audits/assertion_drain_verify.py` — the methodology this bean
+  states twice. **Its first version reported phantom gains**: it read a JSON
+  float as the exact BINARY double against a string read as an exact DECIMAL,
+  manufacturing a ~1e-17 difference from nothing (five phantom gains on a
+  producer whose values are byte-identical). The right question is not "did
+  the string change" but **does it carry information binary64 cannot hold**.
+- `computations/audits/assertion_value_provenance_audit.py` — predicts
+  DRAIN-NO-OP statically. **Three rule versions, first two pushed:**
+  v1 flagged every sum/min/max (35/152 — wrong: `sum(1 for ...)` is an exact
+  integer count); v2 required a visible float64 argument (3/152 — missed a
+  confirmed case); v3 flags unless the accumuland is provably an int literal
+  (34/152), validated **2 of 3** against the drain batch, negative control
+  clean. Blind spot is structural: it is call-site-local and cannot see a
+  float64 produced INSIDE a helper.
+
+**A green selftest was never evidence about the corpus.** Both tools passed
+their selftests through every wrong version; only running them against real
+producer verdicts corrected them.
+
+### Still open
+
+1. 32 q-dependent producers / 209 fields — owner decision, 32 times. Untouched.
+2. The 22 diagnosed reverts from #6022 — no committed list exists, so the list
+   itself must be re-derived. DRAIN-NO-OP is a candidate explanation for part
+   of the "no gain" half.
+3. Bucket A minus the 4 confirmed no-ops and the 2 drained. Work the
+   local-binding shape first, per above.
+4. `computations/witness-raw-float64-audit.witness.json` regenerates with
+   total_fields 35109 -> 34779 and drained_files +3, while this session's
+   drains account for far less. NOT committed — the movement is not
+   established as mine. Regenerate on a clean tree and attribute it.
