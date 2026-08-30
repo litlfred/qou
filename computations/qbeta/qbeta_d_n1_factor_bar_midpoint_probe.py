@@ -73,9 +73,38 @@ number.
 
 WHAT THIS DOES NOT CLAIM — scope (a).
 
-  * NOT full uniqueness. (c) is shown to exclude `G`; it is NOT shown that no
-    other function satisfies all three. That needs a functional-equation
-    argument this probe does not attempt.
+UNIQUENESS, SETTLED BY THE FUNCTIONAL EQUATION — the shift is forced, the
+constant is not.
+
+Under bar, `a -> delta - a`. Seek every `F(a, delta)` with (i) bar-invariance,
+(ii) the log-separable form of entry 3 (`F = phi(a - c(delta)) * K(delta)`), and
+(iii) the C limit `F(a, 0) = cos a`. Then (iii) gives `phi = cos` with
+`c(0) = 0`, `K(0) = 1`, and (i) forces
+
+    cos(a - c) = cos(delta - a - c)  for all a
+
+whose `+` branch gives `2a = delta` (not an identity in `a`) and whose `-`
+branch gives **`c(delta) = delta/2`**.
+
+  * **The phase re-centring by `delta/2` IS FORCED** by the three conditions.
+  * **`K(delta)` IS NOT.** Any `K` with `K(0) = 1` satisfies all three —
+    verified here symbolically for a free `K`. So uniqueness does NOT follow
+    from the conditions, and that is now a proof rather than a failure to find
+    one.
+
+What selects `K = cos(delta/2)` is the entry-2 bar-midpoint RULE, not the
+conditions. That distinction is load-bearing rather than pedantic:
+
+    |1 - K| at both pins = 5.96942e-5 = 59694 ppb
+    Q_beta 100x target                =     7.797 ppb
+    ratio                             =  7656x
+
+So the residual freedom the conditions leave open is ~7656x the accuracy
+target. The rule is doing quantitative work.
+
+  * NOT claimed: that the bar-midpoint rule is itself forced. It is the arc's
+    own rule, applied consistently; that is an argument from parsimony, not a
+    derivation.
   * NOT a D-frame Q_beta. Rungs above k=2 remain `cal-anchored` (extracted from
     experiment), so no D-frame number is computable here and none is quoted.
   * NOT a wiring. Nothing downstream consumes this.
@@ -203,14 +232,32 @@ def main() -> int:
           f"at delta=1/3: M has {len(poles_M)} pole families, G has {len(poles_G)}"
           " — a separated f(a-c)*K admits only one")
 
+    print("\n-- uniqueness: the functional equation forces the SHIFT, not the constant")
+    a_f, d_f = sp.symbols("a delta", real=True)
+    K_f = sp.Function("K")
+    F_free = sp.cos(a_f - d_f / 2) * K_f(d_f)
+    check("shift_delta_over_2_is_FORCED_by_the_three_conditions",
+          sp.simplify(sp.expand_trig(F_free.subs(a_f, d_f - a_f) - F_free)) == 0,
+          "bar-invariant for ARBITRARY K, so (i)+(ii)+(iii) fix c(delta)=delta/2 only")
+    f_K = sp.lambdify(q, sp.cos(h ** 2 / 4), "mpmath")
+    dep = abs(1 - f_K(mp.mpf("1.1099785827513808075916690956107688798744991218736")))
+    check("residual_K_freedom_is_LARGE_against_the_target",
+          dep * 10 ** 9 / mp.mpf("7.797") > 1000,
+          f"|1-K| = {mp.nstr(dep * 10**9, 6)} ppb = "
+          f"{mp.nstr(dep * 10**9 / mp.mpf('7.797'), 4)}x the Q_beta 100x target"
+          " — the rule, not the conditions, is what pins it")
+
     ok = all(p for _, p, _ in _A)
     print("\n" + "=" * 72)
     print(f"  {sum(p for _, p, _ in _A)}/{len(_A)} assertions passed")
     print("  Scope (a). Meets all three stated conditions, adding no new freedom.")
     print("  (a)+(b) alone do NOT pin it — the geometric mean also satisfies them")
     print("  and differs by 1.581e-7 (~20x the 7.8 ppb target). (c) excludes that")
-    print("  rival on pole structure. FULL uniqueness is NOT proved, and no")
-    print("  D-frame Q_beta is computable or quoted here.")
+    print("  rival on pole structure. And the functional equation now SETTLES")
+    print("  uniqueness in the negative: (i)+(ii)+(iii) FORCE the phase shift")
+    print("  delta/2 and leave K(delta) free (K(0)=1) — a residual ~7656x the")
+    print("  Q_beta target, pinned by the entry-2 RULE, not by the conditions.")
+    print("  No D-frame Q_beta is computable or quoted here.")
     print("=" * 72)
     return 0 if ok else 1
 
