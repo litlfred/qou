@@ -186,9 +186,13 @@ def main():
            "scriptFile": "milnor_recursion_tl_derivation_probe.py",
            "engine": "python-sympy-exact", "free_parameters": 0,
            "description": ("Verifies the spin-½/TL structural mechanism behind the convention-D "
-                           "deficit recursion D_{A+1}=-h^2(h^2+2)D_A, reducing it to a single "
-                           "conditional-expectation identity (C3). 0-fit, exact Q(q), no float64. "
-                           "No Lean instance created."),
+                           "deficit recursion D_{A+1}=-h^2(h^2+2)D_A: the operator expansion "
+                           "rho(w_{A+1})=1+q^2h e_A-hq^-2 We_AW^-1-h^2 We_AW^-1 e_A holds as "
+                           "matrices, and taking qtr of its four terms directly reproduces the "
+                           "recursion (C3/C4). NOTE: an earlier 'single conditional-expectation "
+                           "identity' formulation of C3 was RETRACTED (it used the wrong "
+                           "contraction); the verified statement is the direct qtr-of-expansion. "
+                           "0-fit, exact Q(q), no float64. No Lean instance created."),
            "results": results}
     (HERE / "milnor-recursion-tl-derivation.witness.json").write_text(json.dumps(out, indent=1) + "\n")
     print(json.dumps(results, indent=1))
