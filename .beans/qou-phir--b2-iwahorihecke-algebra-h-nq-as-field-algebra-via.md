@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T03:03:43Z
+updated_at: 2026-08-30T05:22:14Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -122,3 +122,69 @@ So the two halves fit: their `Rs` needs braid, and once it has it,
 `exists_unique_lift` from `QOU/MathlibExt/IwahoriHeckeAlgebra.lean` is exactly the
 map `H_n(q) → End (W →₀ R)` — no hand-built algebra map required. Recorded on
 #6053. **The `T_w` basis stays theirs**; this bean should not duplicate it.
+
+
+---
+
+## 2026-08-30 — the `T_w` basis LANDED (on #6053), and my survey had a gap
+
+**Open item (1) is closed, by the sibling, not by me.** `QOU/Hecke/TwBasisField.lean`
+on #6053: `basisTwOfField : Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)`
+and `finrank_eq_factorial : Module.finrank K (IwahoriHecke K q n) = (n+1)!`, sorry-free
+at general `n`, `#print axioms` clean.
+
+They went **around Matsumoto**, not through it — `T_w` is the product along *some*
+reduced word, and well-definedness is never invoked because along any reduced word the
+operators merely walk the basis. Matsumoto remains an open Mathlib TODO
+(`Coxeter/Basic.lean:78`) and is still unproved here. My note above called the basis
+"the genuinely hard part"; that framing was pessimistic about the *route*, not wrong
+about Matsumoto.
+
+They also proved `TwBasisBraid.Rs_braid`, the step I had flagged as open.
+
+## My survey had a real gap — recorded because it affects `qou-b5gu` too
+
+I reported "the corpus's `IwahoriHecke` cluster is 1429 lines over 7 files and is
+entirely self-contained." True **of that cluster**; I stated it as though it
+characterised the corpus's Hecke situation. It does not. I never found
+`QOU/Hecke/IwahoriHecke.lean` or `QOU/BraidKnot/IwahoriHeckeAPI.lean`, because I
+grepped for **consumers of the names I already had** rather than for Hecke-algebra
+**definitions as a class**. The `qou-b5gu` blast-radius measurement inherits that
+narrowness.
+
+## Measured: TEN Hecke-algebra-shaped definitions, not six
+
+The sibling opened `qou-img9` listing six. Re-measured with a definition-shaped grep:
+**ten**. The four extra are all `structure HeckeAlgebra`, and they are a *different*
+defect — three are verbatim identical:
+
+```lean
+structure HeckeAlgebra where
+  n : ℕ ; carrier : Type* ; q : R_q ; q_ne_zero : q ≠ 0
+```
+
+`carrier : Type*` with **no relation of any kind** and nothing tying it to `n` or `q`;
+the only assertion is `q ≠ 0`. (`knot-eigenbasis-complete.lean:53`,
+`QOU/PathIntegrals.lean:294`, `QOU/BraidKnot/CasimirShared.lean:176`.) The fourth,
+`frobenius-antipode-lean-stub.lean:35`, wraps a single real: `{coeff : ℝ}`, both
+parameters underscore-prefixed, over `ℝ`.
+
+So the bare name `HeckeAlgebra` resolves to **five** things, four carrying no Hecke
+content. That is a naming defect, not a reconciliation problem, and belongs as its own
+rows in `qou-img9`.
+
+**Measurement trap for whoever re-runs this:** the raw grep returns **twelve**. Two are
+false positives from my own docstrings — the `Defn.lean` and `TypeA.lean` rebuilds
+quote the superseded definitions inside ` ```lean ` fences to show what changed, and a
+line-oriented grep counts those as live.
+
+## What is still open in this bean
+
+**Cell / Specht modules only.** Not started. The `T_w` basis is done and is not mine to
+redo.
+
+Two caveats on the basis, from the sibling and not contested: it is at `Q = q` while
+`HeckeAlgebra R q M` here is used at `Q = q²`, and **the transport across the
+convention bridge is unproved** — do not cite the basis as applying to `HeckeAlgebra`
+until someone proves it. The field hypothesis is confined to the dimension squeeze;
+everything upstream holds over a commutative ring.
