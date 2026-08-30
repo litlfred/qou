@@ -81,11 +81,13 @@ collapses onto its `d = 1` member. On this carrier the weight is *determined*:
 `yLambda_forced_one` gives `y_λ = 1` at the supported partition, for an
 arbitrary decomposition rather than for a witness.
 
-What the class now commits to, stated so it is not mistaken for more: that
-`dimHLF λ` **is** `#SYT(λ)` is Frame–Robinson–Thrall, proved in this corpus for
-one-row, two-row and (added here) one-column shapes, and validated in aggregate
-by `dim_validated_le12`; the general theorem is open here. The class uses the
-FRT *formula*; it does not prove FRT.
+And there is no residue: `dimHLF λ = #SYT(λ)` is Frame–Robinson–Thrall, which
+this corpus **proves sorry-free at general `n`**
+(`QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF`, the GNW route). `blockDim` is
+therefore `f^λ` as a theorem (`QOU.Hecke.blockDim_eq_numSYT`), not as an assumed
+formula. An earlier version of this paragraph called the general theorem open —
+that was false, taken from a stale header in `SYTHookFormulaRows.lean`, and both
+are corrected in the same commit.
 
 ## What this module does and does not claim
 
