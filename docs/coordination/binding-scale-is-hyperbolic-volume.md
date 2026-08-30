@@ -44,6 +44,31 @@ volume → more binding.
 > van-der-Veen-closable link (as L6a4 did) or *derive* 8₁₁, replacing the
 > historical guess. Not a refutation of either leg; both are scope-(a) open.
 
+> **The 5- and 6-crossing instances are proven — and were already proven when
+> this ledger was written** (2026-08-30, bean `qou-ckbv`). VC for $5_2$ is
+> Ohtsuki, *On the asymptotic expansion of the Kashaev invariant of the $5_2$
+> knot* (library `104171-qt-83`, preprint `ki52`); for $6_1$, $6_2$, $6_3$ it is
+> Ohtsuki–Yokota, *…knots with 6 crossings* (library `ki6c`, §§3–5, each headed
+> "Proof of Theorem 1.1 for the $6_x$ knot"; the abstract states "we show the
+> volume conjecture for these knots"). **$6_2$ is the canonical $^2$H closure**
+> in `computations/substrate/knot_volumes.py`, so a load-bearing instance moves
+> from open to proven.
+>
+> Both papers were in `library/` the whole time, and `ki6c` was already cited by
+> `QOU/QBeta/GZThirdKnotRankGrading.lean` — for its saddle-point data, without
+> anyone noticing it also discharges the conjecture. Meanwhile
+> `b1-hyperbolic-rows-theorem-table2-data` recorded $6_2$ and $6_3$ as **open**
+> and $5_2$ as "numerical, not full proof", the opposite of what the papers say.
+> So this was not a literature gap but a reading gap: the corpus-grep discipline
+> that catches a *missing* citation does not catch one that is present, filed,
+> and unread.
+>
+> **Not upgraded:** the seven-crossing sequel (*Internat. J. Math.* **28**(13),
+> 2017) is real — web-verified — but is not in `library/` and its authorship is
+> unsettled here, so $7_*$ stays open pending a filed copy. **8₁₁ is unaffected**
+> and remains the load-bearing open instance: an 8-crossing knot, outside every
+> family above.
+
 **Bottom line for Lean:** the *combinatorics* of the scale (the bond count) is
 proved; the *identity* that makes `Vol` the scale is the open volume conjecture.
 So "binding = m_e·Vol" is a **rigorous conditional result** modulo one named,

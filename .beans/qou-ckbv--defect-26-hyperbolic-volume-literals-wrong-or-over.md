@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-30T13:40:00Z
+updated_at: 2026-08-30T14:20:00Z
 ---
 
 ## Measured, not estimated
@@ -379,3 +379,79 @@ Remaining on this bean: the 2 UNRECOGNISED, and the original item-5 triage of
 names the audit cannot map. The `.lean`/`.md`/`.json` carriers are still out
 of scope — this audit reads `.py` only, and qou-f8lit still owns the two Lean
 carriers at 14 and 20 digits.
+
+---
+
+## 2026-08-30 — two VC instances upgraded from open to proven, from papers already in `library/`
+
+Chased the two candidate upgrades. Both land, and one is load-bearing.
+
+| Knot | was | now |
+|---|---|---|
+| 5₂ | "partial — Ohtsuki (numerical, not full proof)" | **proven** `[ohtsuki2016-52]` |
+| 6₁ | "partial / numerical only" | **proven** `[ohtsuki-yokota-6crossings]` §3 |
+| 6₂ | **open** | **proven**, same paper §4 |
+| 6₃ | **open** | **proven**, same paper §5 |
+
+**6₂ is the canonical ²H (deuteron) closure** in `substrate/knot_volumes.py`, so
+a load-bearing instance moved off open ground.
+
+### It was a reading gap, not a literature gap
+
+Both papers were in `library/` the whole time (`104171-qt-83` + `ki52`;
+`ki6c`), and `ki6c` was **already cited** by
+`QOU/QBeta/GZThirdKnotRankGrading.lean` — for its saddle-point data and gluing
+quartic, by an agent who used the machinery without noticing the headline
+result. The old status was not stale, it was inverted: Ohtsuki–Yokota's abstract
+says "we show the volume conjecture for these knots", and §§3–5 are each headed
+"Proof of Theorem 1.1 for the 6ₓ knot". Saddle point + Poisson summation —
+theorems, not numerics.
+
+`check-citation-keys.py` and the no-fabricated-citation rule both police
+citations that are missing or wrong. Neither detects one that is present, filed,
+correct and **unread**. That is the gap this found.
+
+### Not upgraded, deliberately
+
+The seven-crossing sequel (*Internat. J. Math.* **28**(13), 2017) is real —
+web-verified — but is **not in `library/`** and sources disagree on authorship
+(Ohtsuki alone vs Ohtsuki–Yokota). Under the corpus's own discipline a status
+change should rest on a filed, read paper, so 7ₓ stays open. **Follow-up: file
+it.** It would cover 7₂, 7₃, 7₄ and the rest — several of which sit in the
+Tier-1 PSLQ basis.
+
+**8₁₁ is untouched** and remains the load-bearing open instance; the 2026-07-17
+audit stands, including its second open leg (the 8₁₁ = ³H assignment).
+
+### A distinction that had to be kept
+
+The chiral hyperbolic rows are still conditional — but now for a *different*
+reason. Their VC leg is discharged; the open leg is the **depth-3 Chern–Simons
+partner** (`prop:b1-figure-8-row-theorem`). Discharging VC does not promote
+those rows to theorems, and the status table now names which leg is which
+rather than saying "open knot-by-knot".
+
+### Scope correction to the KVC discharge survey
+
+"8₁₁ is the one genuinely open case" holds for the four load-bearing
+mass/binding instances. It does **not** hold for the Tier-1/Tier-2 PSLQ basis,
+which also carries 8₅, 8₁₀, 8₁₅, 8₁₆, 8₁₇, 8₁₈ — all open. Post-change the
+basis splits cleanly: everything through 6 crossings plus Borromean/Whitehead
+is proven; every 8-crossing member is open.
+
+### Landed
+
+- `references.bib`: two entries, each with a `note` recording exactly how much
+  was read (abstract + section structure, not line by line) and which fields
+  were web-verified vs taken from the library filename. Both keys resolve;
+  corpus unresolved-key count unchanged at 21.
+- `b1-hyperbolic-rows-theorem-table2-data` and `b1-current-status-table1-data`
+  updated and cited by key.
+- Audit: `docs/audits/2026-08-30-vc-discharge-5-2-and-6-crossing.md`.
+
+First draft of the table carried a bean id and a dated revision note **inside a
+content block**; the `voice-branch-jargon` / `voice-time-stamped-notes` QA axes
+exist precisely to stop that, so the narrative moved to the audit and this bean
+and the block kept only citations. Mechanical QA axes on both blocks: all pass
+or n/a. The `da-*` deep-audit axes remain `needs-agent` — as they are for 6,293
+blocks corpus-wide, so this is the standing state rather than a new debt.
