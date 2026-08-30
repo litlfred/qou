@@ -34,14 +34,32 @@ non-negativity/positivity *hypotheses* on $a_D^{(n)}$ and $w_n$, **not** derived
 this proposition:
 
 1. the **super-exponential magnitude** of the Seiberg–Witten period
-   $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ (the $\surd$-branch
-   falling-factorial growth) — the *quantitative* extensive channel;
+   $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ — the
+   *quantitative* extensive channel;
 2. the **non-abelian-Stokes identity** $a_D^{(n)} = \mathrm{lw}(n-1)$ (the mean
    quantum dimension; conjectural, with residue-sum
    form `prop:sw-period-residue-sum`);
-3. the per-atom **residue weight** $w_n(K)$ (the open $\rho\cdot A$ scale rule, a
+3. the per-atom **residue weight** $w_n(K)$ (the $\rho\cdot A$ scale rule, a
    $q$-difference recursion output).
 
 What is established is the *qualitative* extensivity: given non-negative period and
-weight data, the body-order binding grows with $A$. The magnitude that matches
-experiment depends on (1)–(3), which remain open.
+weight data, the body-order binding grows with $A$.
+
+**Status of (1)–(3) elsewhere in the corpus.** Being carried as a hypothesis *here*
+is not the same as being open, and only one of the three now is. Item (2) is open:
+it is axiomatised as the §3b conjecture class
+`QOU.Mass.NaStokesKeystone.ProlongationPeriodMeanQuantumDim`, which has no
+instance. Item (1) is settled as a **growth class** — the period is
+super-exponential by the $\surd$-branch argument of the colour cubic, confirmed
+independently by the residue-sum route, and the object is identified as the
+*q*-deformed involution number $T_q(n) = n\,\mathrm{lw}(n-1) \to I(n)$; what
+remains open there is the exact *q*-statistic, for which no *q*-holonomic
+recurrence exists at low depth. Note in particular that the falling factorial
+$(1/2)_n$ is **not** a closed form for $\mathrm{lw}$ — it outgrows it, and no
+constant geometric factor absorbs the difference. Item (3) is excluded rather than
+open: $w_3$ is a required boundary condition of a rank-2 problem, a scope-(b)
+result with its invariant cited (`no_scalar_kernel_on_carrier`).
+
+The magnitude that matches experiment therefore depends on (1)–(3) as *inputs*, of
+which (2) is the one still to be derived. See
+[`2026-08-29-jet-filtration-three-inputs-corpus-grep.md`](../../../docs/audits/2026-08-29-jet-filtration-three-inputs-corpus-grep.md).

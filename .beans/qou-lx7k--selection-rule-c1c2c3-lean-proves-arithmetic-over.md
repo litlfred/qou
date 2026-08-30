@@ -1,11 +1,11 @@
 ---
 # qou-lx7k
 title: selection-rule c1/c2/c3 Lean proves arithmetic over hand-substituted literals, not the hook-length formula
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-29T16:46:36Z
-updated_at: 2026-08-29T16:47:28Z
+updated_at: 2026-08-29T18:27:04Z
 ---
 
 Found 2026-08-29 working qou-u8oy (the three inputs jet-filtration-binding-extensive
@@ -82,3 +82,9 @@ SCOPE. This says nothing about whether lw(c) is the RIGHT selection rule, nor
 about a_D^(n) = lw(n-1) -- the identification that jet-filtration-binding-
 extensive actually calls conjectural. It says the q-dimension arithmetic those
 blocks rest on is now derived rather than asserted.
+
+RESOLVED 2026-08-29, PR #6051, branch claude/selection-rule-refs-to-derived-2026-08-29.
+
+QOU.Mass.QHookDimension extended to the partitions of 4, so all three cases (c=1, c=2, c=3) now derive from shape -> conjugate -> hook lengths -> dimQ rather than from hand-substituted literals. Derived theorems added to BOTH .lean siblings (not only the library) because AGENTS.md 0a resolves lean.ref to the sibling first -- a library-only target would have been shadowed. Both .ts retargeted, validation: validated.
+
+The original identities are kept: they are true, and they are what the derived statements reduce to. What changed is that the hook-length step is now inside a statement instead of inside a docstring.

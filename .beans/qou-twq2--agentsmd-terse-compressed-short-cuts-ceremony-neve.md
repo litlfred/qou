@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T09:50:12Z
-updated_at: 2026-08-25T09:50:39Z
+updated_at: 2026-08-29T18:22:17Z
 ---
 
 LANDED — PR #5756 (draft), branch claude/agents-md-terseness-directive-2026-08-25.
@@ -58,3 +58,25 @@ evidence only. The migration that followed (#5755) reversed my own HOLD.
 
 VERIFICATION: docs only. No .lean, no witness, no computations/ script — no
 Lean check, no qa-sweep criterion and no precision gate applies.
+
+=== LANDED 2026-08-29 — PR #5756 merged to main as 1c503bf4a7 ===
+
+Rebase-merged, 2 commits, 4 files (+204/-2).
+
+THE MERGE CONFLICT IS THE INTERESTING PART. AGENTS.md conflicted because a
+SIBLING added a rule at the same insertion point four days later:
+
+  main   "NAMING A DECISION IS ASKING A QUESTION — the frame above applies
+          wherever you raise one, not only in AskUserQuestion" (2026-08-29)
+  mine   "Terse != compressed: short governs ceremony, never content" (2026-08-25)
+
+KEPT BOTH. Picking a side would have deleted a standing owner directive. They
+are not rivals: main's generalises the six-part frame from the AskUserQuestion
+TOOL to the ACT of handing over a decision; mine generalises "Short answers"
+from a licence-to-compress into a rule about ceremony vs content. The same
+insight applied to the two halves of an agent's output — questions and reports
+— which is presumably why two agents reached it independently within four days.
+
+Verified on main after landing: both rules present, my three edits present (the
+rule, the "Short answers" cross-reference, and the item-3 clarification that the
+50-word cap bounds the LEDGER not the turn).
