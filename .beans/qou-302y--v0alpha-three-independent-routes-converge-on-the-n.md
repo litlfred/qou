@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T18:45:57Z
-updated_at: 2026-08-29T18:46:56Z
+updated_at: 2026-08-30T02:46:56Z
 parent: qou-mhj9
 ---
 
@@ -39,3 +39,16 @@ closed-form for 2.698 (e = 2.71828 is a numerology trap, explicitly not chased).
 The honest unit is: is there a DERIVED reason the NN interface carries a scale
 other than E_0 — and does route 3's proved O(hbar_q^2) dichotomy supply it once
 the refuted volume-defect mechanism is replaced?
+
+
+## CONSTRAINED 2026-08-30 by the b3 threshold result (PR #6059, commit dfcfa9c6)
+
+alpha is an overall energy scale, and b3's SIGN is scale-free, so alpha cannot
+bear on the wrong-signed 3-body cumulant at all. Recorded because the natural
+hope -- "the scale is 2.70x off, maybe that is also what breaks b3" -- is now
+excluded: QOU.MassTheory.MayerThreeBodySign.lt_of_b3_pos shows b3 > 0 requires
+fpn > 2/3 whatever the scale.
+
+So alpha stays a MAGNITUDE-only question. It cannot fix the sign, and any story
+that closes the magnitude via alpha must still leave the sign to a change of
+assembly.
