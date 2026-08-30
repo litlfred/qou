@@ -484,3 +484,49 @@ reusable, and it avoids inventing a bound at 50°.
 Domain membership at `0` (trivial) and at `3` (the theorem above), the two
 endpoint values, the angle-form bridge, and strictness. So the assembly is
 **one lemma away**, and that lemma is about Λ in general, not about 5₂.
+
+## 2026-08-30 — `lob_sum_nonneg` PROVED: the last missing input is in
+
+`0 ≤ Λ a + Λ b + Λ c` for `a, b, c > 0` summing to `π` — the ideal
+tetrahedron's volume is never negative. **The corpus did not have this**;
+`volChart_regular_pos` bounds one point and the max theorems bound above,
+nothing bounded the functional below.
+
+The entry above proposed the extreme-point route (concave function on a convex
+compact set attains its minimum at an extreme point). **Not needed** — an
+elementary argument works:
+
+    at most one angle exceeds π/2; if one does, Lob_pi_sub folds it and
+    Λ is CONCAVE on [0, π/2] with Λ 0 = 0, hence SUBADDITIVE there
+
+    Lob_pi_div_two               Λ(π/2) = 0, since Cl₂(π) = 0
+    concaveOn_Lob                from `deriv_deriv_Lob_neg`, already in corpus
+    Lob_nonneg_of_le_pi_div_two  concave + vanishing at both endpoints ⟹ ≥ 0
+    Lob_add_le                   concave + Λ0 = 0 ⟹ subadditive
+    lob_sum_nonneg               three-case split
+
+`deriv_deriv_Lob_neg` (`Λ'' < 0` on `(0, π/2)`) was already proved — I had not
+noticed it when writing `LobMonotonicity`'s first pass, which only used the
+first derivative.
+
+**`Lob_nonneg_of_le_pi_div_two` is derived, not imported.** The corpus's
+`Lob_nonneg_of_lt_pi_div_two` sits in `QOU.Archimedean.HyperbolicVolume`
+(`OrthoschemeWedgePair`), whose cone is the orthoscheme/measure-theory
+development — far heavier than one line needs — and the derived version covers
+the endpoint too.
+
+Five declarations, `lean`-direct exit 0, `#print axioms` clean on all five,
+guard 9/9 for the module.
+
+### Every input to the chord is now proved
+
+    f(0) = Cl₂(π/3)                three_Lob_pi_div_three
+    3·f(1) = VOL_5_2               VOL_5_2_eq_three_mul_lob_sum
+    0, 3 ∈ tetLineDomain           the second IS a₃ > 2π/9, proved
+    f(3) ≥ 0                       lob_sum_nonneg  ← this entry
+    strictness                     StrictConcaveOn
+    s₀ = 3, 3(1 − 1/3) = 2         exact
+
+What remains is assembling them: instantiate `strictConcaveOn_tetVolLine` with
+`(u,v,w) = (a₁−π/3, a₂−π/3, a₃−π/3)`, apply the chord at `t = 1` between `0`
+and `3`, and read off. No new mathematics.
