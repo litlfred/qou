@@ -130,6 +130,8 @@ export default chapter({
         "knot-particle-dictionary-table2-data",
         "knot-particle-dictionary-table3-data",
         "knot-particle-dictionary-table4-data",
+        "interaction-sector-taxonomy",
+        "fusion-process",
         "binding-knots-visual-inventory",
         "binding-knots-visual-inventory-table2-data",
         "binding-knots-visual-inventory-table1-data",

@@ -39,6 +39,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -64,11 +65,27 @@ def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
     `chi_at_q0_via_hoefsmit_mpfr.py`, if present. Returns None when
     the numerical cache is absent (callers fall back to the symbolic
     path).
+
+    Pin-specific (qou-wgaw / qou-3zby, 2026-08-30): the numerical cache is
+    computed at ONE fixed q_0, so a single un-suffixed file cannot serve both
+    the proton and muon pins without a straddle. Prefer the runtime-anchor file
+    `chi-{atom}-h{n}-at-q0-50dps-{anchor}.witness.json`, falling back to the
+    legacy un-suffixed (proton) file. Proton runs resolve to the legacy file and
+    are unaffected; the muon L1 cross-check now loads a MUON-pinned cache.
     """
-    path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
-    if not path.exists():
-        return None
-    return json.loads(path.read_text())
+    # Runtime anchor: the QOU_Q0_ANCHOR env is the reliable signal (default
+    # proton). anchor_of_q0() is NOT usable here — it returns None for the
+    # muon Q_50_DIGIT_STR (the 2022-CODATA value ...56427390..., which differs
+    # from the frozen canonical muon ...5573347... at the 13th digit).
+    _anchor = os.environ.get("QOU_Q0_ANCHOR", "proton")
+    candidates = []
+    if _anchor and _anchor != "proton":
+        candidates.append(HERE / f"chi-{atom_name}-h{n}-at-q0-50dps-{_anchor}.witness.json")
+    candidates.append(HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json")
+    for path in candidates:
+        if path.exists():
+            return json.loads(path.read_text())
+    return None
 
 
 def _load_chi_cache(atom_name: str, n: int) -> tuple[dict[tuple, str], bool, int]:

@@ -21,7 +21,8 @@ the Bring hyperkähler geometry and only *then* match it to the kernel.  This
 file scaffolds that independent side.
 
 **The 4-form → 2-form correction (documented, load-bearing).**  The Bring cone
-`C(𝓑) ⊂ ℂ⁵` is a **real-4-dimensional** manifold (`bring_tetraplectic.md` §1;
+`C(𝓑) ⊂ ℂ⁵` is a **real-4-dimensional** manifold
+(`def:bring-cone-tetraplectic-structure`;
 `QOU.Tetraplectic.BringCone`).  A tetraplectic 4-form on a `4m`-manifold needs
 `Ω^m` non-degenerate; at `m = 1` the 4-form degenerates to a mere volume form
 and carries **no** Lagrangian-fibration data.  The structure that actually
@@ -101,7 +102,9 @@ substrate→archimedean wall.
   SW base is generally **not** a Frobenius manifold — do not claim it is; the
   genuine fact used is "cubic = 3-jet of the prepotential").
 - [manuscript] `def:categorical-lagrangian`, `rem:wavefront-propagation`,
-  `bring_tetraplectic.md` §1/§4, `conj:categorical-lagrangian-dm-cubic`;
+  `def:bring-cone-tetraplectic-structure`,
+  `lem:bring-cone-reeb-quaternionic-twist`,
+  `conj:categorical-lagrangian-dm-cubic`;
   QDM-3 tautology audit
   `docs/audits/2026-07-20-qprolongation-definitional-sharpening.md`.
 -/
@@ -210,7 +213,8 @@ class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     exactly "the wavefront is a Lagrangian submanifold of `(·, Ω_ℂ)`".  No
     instance is supplied — the honest open state. -/
 -- Ref: [manuscript] def:categorical-lagrangian, rem:wavefront-propagation,
---      bring_tetraplectic.md §1/§4
+--      def:bring-cone-tetraplectic-structure,
+--      lem:bring-cone-reeb-quaternionic-twist
 -- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
 class BringHolomorphicSymplectic {R : Type*} [CommRing R]
     (D : BringHKData R) : Prop where

@@ -29,7 +29,7 @@ over a generic `{R : Type*} [CommRing R]`; only the hypercharge phase `u1Y`,
 which uses `Real.cos`/`Real.sin`, specializes to `ℝ`.
 
 The *identification* of this algebraic structure with the physical electroweak
-sector is interpretive — see `bring_tetraplectic.md` and
+sector is interpretive — see `rem:tetraplectic-su2-gauge-reading` and
 `mass-theory/hoefsmit-ew-cell-content.md` (Morita 1982; Cederwall–Preitschopf).
 No physical claim beyond the group-action content is asserted by this file.
 -/

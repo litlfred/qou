@@ -154,7 +154,12 @@ def surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
 theorem surreal_rate_calculus_conditional
     {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     [S : SurrealRateCalculus F]
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
+    -- `α` is the q-NS critical exponent the dependency record refers to. It is
+    -- universally quantified rather than fixed at `4/3`: `[CriticalExponent
+    -- (4/3)]` would be dischargeable by `⟨rfl⟩` at any call site, which would
+    -- make the dependency record satisfy itself and record nothing.
+    {α : ℝ}
+    [QAubinLions] [NSCounterexample] [CriticalExponent α]
     [BlowupYekutieli] [RegularityBreakdown]
     (hε_pos : 0 < S.epsilon)
     (hε_inf : ∀ (n : ℕ) (lam : F), 0 < lam → S.epsilon ^ (n + 1) < lam) :
