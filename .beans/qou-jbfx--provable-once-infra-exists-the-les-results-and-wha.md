@@ -33,7 +33,7 @@ getting colour out of the tetraplectic triad. Costed low deliberately.
 
 ## 3. Seidel-style exact triangle for the twist  — needs symplectic topology
 
-The real prize and the one that is decades away. `uploads/0105186v2.pdf`
+The real prize and the one that is decades away. `library/arxiv-math-0105186v2/0105186v2.pdf`
 (Seidel, *A long exact sequence for symplectic Floer cohomology*) gives
 
     HF(L₀,L₁) → HF(L₀, τ_L L₁) → HF(L₀,L) ⊗ HF(L,L₁) → [1]

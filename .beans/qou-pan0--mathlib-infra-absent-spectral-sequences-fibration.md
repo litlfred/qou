@@ -18,7 +18,7 @@ olean tree, not by guessing.
 | **Spectral sequences** | **no `SpectralSequence` oleans at all.** Mathlib has `HomologicalComplex`, `ChainComplex`, derived categories — the substrate an algebraic spectral sequence needs — but nobody has built the `E_r`-page abstraction. `QOU/Mathlib/SpectralSequence.lean` (402 lines) is the corpus's own shim, and it is currently vacuous (`qou-fngs`). |
 | **Long exact sequence of a fibration** | `Topology/Homotopy/HomotopyGroup` exists with a `Group` instance, so `π_n` is available — but there is **no LES**. `SU(2) → SU(3) → S⁵` cannot be stated as an exact sequence today. |
 | **Octonions / Cayley–Dickson / G₂** | absent. `ColourComplexStructure.lean` already records this ("Mathlib has `Quaternion` but no octonions"). |
-| **Symplectic topology** | Lagrangians, Dehn twists, Floer cohomology — nowhere near. Seidel's LES (`uploads/0105186v2.pdf`) is decades out. |
+| **Symplectic topology** | Lagrangians, Dehn twists, Floer cohomology — nowhere near. Seidel's LES (`library/arxiv-math-0105186v2/0105186v2.pdf`) is decades out. |
 
 ## Present and usable
 
