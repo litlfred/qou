@@ -3851,3 +3851,67 @@ one; it states the requirement, which is the next concrete thing to look for.
 Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb. The
 7656× figure of entry 12 is unchanged as a *measurement of the condition-set
 freedom*; what changes is that the arc does not actually sit at that freedom.
+
+
+---
+
+## Entry 14 — the third slot exists, the rule FAILS it, and entry 13 is withdrawn
+
+`computations/qbeta/qbeta_d_bar_midpoint_rule_third_slot_probe.py` — **6/6**.
+
+Entry 13 named the test that would settle `K`: **a third slot where the
+bar-midpoint rule is non-vacuous under C.** This entry finds one and runs it.
+
+**The slot:** the N=2 ladder factor `1 − u²`, whose `u²` coefficient is the
+corpus's structural `c₂ = −1` (no fit, no CODATA, no q₀). Under C the ladder
+variable is bar-**covariant** (`bar(u)/u = q²`), so the rule is non-vacuous
+there — exactly the condition entry 13 required.
+
+**The result:** the rule does not reproduce `c₂`.
+
+    bar-midpoint of (1 - u^2)  has u^2 coefficient  -(q^4 + 1)/2
+    at the proton pin          -1.25897662490917    vs known -1
+    off by                     25.8977 %
+
+| slot | C-frame | verdict |
+|---|---|---|
+| offset | non-vacuous | **passes** (entry 2 — re-derives C's `1` and C's `α`) |
+| N=1 factor | vacuous | no evidence available |
+| N=2 factor | non-vacuous | **FAILS, 25.90 %** |
+
+### Entry 13's status claim is withdrawn
+
+It rested on an implicit **universality** of the rule. That universality is now
+measured false. `K = cos(δ/2)` is rule-**transported** from a slot where the rule
+works, to a slot where it cannot be tested, **past a slot where it demonstrably
+fails**. Entry 12's **7656×** freedom is reinstated as live.
+
+### The defence, and what it costs
+
+One can read the rule as *"re-express in bar-invariant form"* rather than *"apply
+everywhere"* — vacuous wherever that is already done. Under D the N=2 slot **is**
+vacuous (`X = u·V̂` is bar-invariant, verified here), so on that reading the
+C-frame N=2 test is outside the rule's remit. But **entry 2's validation is a
+C-frame check of exactly the same kind.** The dichotomy has no comfortable
+branch:
+
+- the C-frame check is legitimate ⇒ **the rule fails at N=2**;
+- it is not ⇒ **entry 2's validation goes too**, and the rule is validated nowhere.
+
+Either way `K` is not rule-determined in entry 13's strong sense.
+
+### Also fixed here: entry 11 asserted entry 4 rather than computing it
+
+Entry 11's sixth check was labelled *"stated structurally; entry 4 supplies
+`bar(u·V̂) = u·V̂`"*. Now computed: `V̂ = z·h + 1` gives
+`V̂_D = (q⁴+1)/(q²+1) = 1.12808874411` (matching the value the arc records),
+`bar(V̂_D)/V̂_D = q⁻²` against `bar(u)/u = q²`, hence `bar(X)/X = 1` **exactly**.
+**Entry 4 is confirmed.** My first pass guessed `V̂ = q²` from the offset
+`cosh(2 log q)` and got `bar(X)/X = q⁻²` — which looked like a refutation of
+entry 4 and was a wrong `V̂`, not a wrong entry. Recorded because the near-miss
+is the point: an assumed definition nearly produced a false retraction of a
+correct result.
+
+### Scope
+
+Scope (a). No `c_k` produced, proposed or fitted; Q_β stays at 1279 ppb.
