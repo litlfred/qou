@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T08:41:28Z
-updated_at: 2026-08-30T09:22:43Z
+updated_at: 2026-08-30T10:04:31Z
 ---
 
 ## The defect
@@ -100,3 +100,38 @@ that as the defect. It was my LEAN_PATH omitting the sibling path-packages (ugb,
 that `scripts/lean-direct-cone.sh` adds from `content/*/lean/.lake/build/lib/lean`. Wrong
 environment, not wrong code. Use the script, or copy its WHOLE path construction — the
 fetched-packages loop alone is not enough.
+
+
+## 2026-08-30 — the finding is now a standing measurement, and my count was off by one
+
+Added the **sorry-free illusion** cross-check to `scripts/lean_cone_triage.py` — the tool
+that already summarises a `lean-direct-cone.sh --all -k --report` run into measured-red vs
+blocked vs env-gap. Corpus-grepped BEFORE writing this time; the tool existed and was better
+than my ad-hoc analysis (it separates environment olean gaps from genuine corpus reds, which
+mine did not). The one number it lacked is the one this session established.
+
+It reports, over every module that never type-checked: how many carry zero `sorry` tokens
+(the illusion — screen green, no verdict available) vs how many are honestly marked.
+
+### CORRECTION: 180, not 179
+
+I quoted **179** all session. That counted `blocked` only. The correct denominator is
+everything that never type-checked, which includes the errored module itself — and
+QIntegerCanonical also reads sorry-free. Validated against the three snapshots:
+
+    snapshot     blocked&clean   errored&clean   never-checked&clean
+    pre-#6108        179              1                 180
+    post-#6108         2              2                   4
+    post-#6140         0              0                   0
+
+So: **180 -> 4 -> 0**. The arc is unchanged and the fixes did what was claimed; the peak
+figure was understated by one, and the mechanism of the understatement is worth keeping —
+I split on `blocked` because that was the category I was chasing, and silently excluded the
+red module that started it.
+
+### Why it lives in the triage tool rather than a new script
+
+The count is only meaningful against a whole-corpus `-k` run, which is exactly this tool's
+input. A standalone script would have to reproduce the cone build, the env-gap distinction
+and the blocker attribution — all of which already exist here and are better than what I
+would have rebuilt.

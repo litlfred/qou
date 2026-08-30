@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-30T07:58:22Z
+updated_at: 2026-08-30T09:06:36Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -261,6 +261,55 @@ was n=1, request-agnostic, and had none of the quota mechanism or the
 self-sealing diagnosis. The rule-10 row on `main` is the sibling's and should
 stay that way.
 
+
+---
+
+## Data point 2026-08-30 — a review on a push with NO contemporaneous request
+
+Recorded because `docs/audits/2026-08-30-copilot-review-works-again.md` states
+it **cannot** separate the push-trigger and request-trigger hypotheses — *"in
+all three of my cases I pushed and requested within moments of each other. A
+push-triggered review and a request-triggered review are indistinguishable from
+my timings."* This session happened to separate them, by accident rather than
+design.
+
+| PR | push | `request_copilot_review` | outcome |
+|---|---|---|---|
+| #5744 | `7747b365ff` 03:03:54Z | immediately after, ~03:05Z | **nothing** |
+| #5744 | `2e6be9054d` 07:41:50Z | **none at this time** | **review 07:52:18Z, `commit_id = 2e6be9054d`** |
+| #6090 | `54958f587e` 08:48:01Z | 08:52Z | nothing by 09:05Z |
+
+**Row 2 is the one the audit lacked.** A review arrived **10m28s after a push**
+with no request anywhere near it, carrying that push's commit as its
+`commit_id`. That is consistent with the sibling's hypothesis (Copilot reviews
+on its own trigger) and is *not* what a request-triggered model predicts, since
+the only request on that PR was **4h38m earlier** and had produced nothing for
+those 4h38m.
+
+**What this does NOT establish, stated because the audit's own error was
+over-reading a single signature:**
+
+* It is not "no request ever" — a request existed on #5744, just 4h38m before.
+  A request-triggered review with multi-hour latency is not excluded, though it
+  would have to explain why the latency landed 10 minutes after an unrelated
+  push.
+* **Row 3 discriminates nothing.** It is consistent with quota exhaustion
+  (another agent hit the limit at 07:56Z, between rows 2 and 3), and equally
+  consistent with a push-trigger that simply had not fired yet. Note it produced
+  **no quota message at all**, whereas the audit records exhaustion
+  *announcing itself* as a posted review — so either the message is not always
+  posted, or row 3 is not quota. Undetermined.
+* **Latency: the audit's table says ~3–4 min; this measured 10m28s.** One
+  sample, but it is push→review, whereas the audit's is request→review, so the
+  two numbers are not measuring the same interval and should not be averaged.
+
+**Operational consequence, which holds under every candidate:** the corrected
+rule *"request once, do not wait, but it can arrive"* needs its second half
+taken seriously. On #5744 the review landed on the exact head that was merged
+minutes later, and was merged over unread — both of its findings were real, and
+one pointed at a defect worse than reported (two new `references.ts` entries
+inserted **between** the `Kawauchi 1996` banner and its own entry, orphaning
+both). Checking back before merging is the part that failed, not the not-waiting.
 ## The historical zeros: one datum that CONSTRAINS the open question above
 ## (session clinical-derivation-attack-vectors, PR #6131)
 
