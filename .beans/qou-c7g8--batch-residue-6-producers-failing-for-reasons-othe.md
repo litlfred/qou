@@ -270,3 +270,39 @@ still ends z^3 and/or Q_0 is the muon pin" — so this sits on the excision
 campaign as well, not only on this bean. And `per_channel_wenzl_level.py`
 independently flags `pyhecke.gram` as "registry says C, code is D — registry
 STALE", i.e. two separate signals that the pyhecke layer is out of step.
+
+### 6. `hadron_knot_table` — CONFIRMED: 53 ms in June, >3000 s now
+
+Ran it with a 3000 s cap. **EXIT=124** (SIGTERM from `timeout`) — it does not
+finish in 50 minutes. It got through **3 of 19 atoms** (proton, neutron,
+protium) and never wrote its witness.
+
+⚠️ The harness reported this background job as "exit code 0". That was the
+WRAPPER shell's status (it ended in an `echo`), not the producer's. Read the
+producer's own exit code, not the job's.
+
+The committed witness carries the decisive number:
+
+    computedAt   2026-06-17T04:13:13
+    durationMs   53           <-- FIFTY-THREE MILLISECONDS
+
+So this producer completed all 19 atoms in 53 ms in June and now cannot do 3 in
+3,000,000 ms. That is more than six orders of magnitude, which is not
+algorithmic drift — it is the loss of the compiled path. It confirms the
+`pyhecke_native` diagnosis above: the wheel is refused (correctly), everything
+falls back to pure Python, and the producer becomes unrunnable.
+
+**This is not a defective producer and no amount of raising the cap will fix
+it.** The fix is to rebuild the wheel. Rebuilding now (cargo/maturin/rustc are
+all present; installed wheel is pyhecke_native 0.9.0).
+
+Chain, for the record:
+
+    pyhecke_native wheel predates the 2026-08-15 convention-D port
+      -> gram.py refuses it (convention-D self-check fails)
+      -> pure-Python fallback, ~6 orders slower
+      -> hadron_knot_table exceeds every cap
+      -> (a) q0_migration_decompose "times out" (2 x 900 s of this producer)
+      -> (b) hadron-knot-table.witness.json cannot be repinned by re-running,
+             so it stays at retired pin A under a `muon` label and remains the
+             corpus's single Q0_FLIP, stale since 2026-06-17
