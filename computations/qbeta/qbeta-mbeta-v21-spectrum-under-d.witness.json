@@ -1,0 +1,319 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T11:05:15.449625+00:00",
+  "commitSha": "2db1f77d763292ecc40e8f59fce358f64f690b49",
+  "assertions": [
+    {
+      "name": "delta_beta_is_scalar_h_over_2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "delta_beta_universal_both_steps_agree",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "delta_beta_spectrum_is_repeated_h_over_2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "det_T_pp_eq_neg_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "det_T_nn_eq_neg_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "det_T_mix_eq_neg_one_minus_hsq_over_4",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "det_delta_beta_eq_hsq_over_4",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "no_named_transfer_matrix_has_det_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "det_T_mix_strictly_negative_for_all_real_q",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "delta_beta_det_one_only_at_h_pm2",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_equals_seminormal_d1_identically",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zD_plus_d2_equals_h",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "zC_differs_from_d1",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "sigma2_satisfies_hecke",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "braid_relation_holds",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "sigma1_sigma2inv_det_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "sigma1_sigma2inv_trace_eq_neg_one_minus_hsq",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "elliptic_boundary_is_golden_ratio",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "elliptic_classical_limit_is_2pi_over_3",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "ladder_alpha_C_vanishes_at_q_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "ladder_alpha_D_vanishes_at_q_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "substrate_is_elliptic_for_sigma1_sigma2inv",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "elliptic_phase_far_from_ladder_phase_at_q0",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "qbeta-mbeta-v21-spectrum-under-d",
+  "scriptFile": "qbeta_mbeta_v21_spectrum_under_d.py",
+  "scriptHash": "ff705de8ff65",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py"
+  },
+  "description": "The M_beta spectrum on V_(2,1) under the convention-D trace. M_beta is undefined in the corpus (2 occurrences, both inside the claim); the only universal beta-decay matrix the conditional-on block defines is Delta_beta = (h/2)*I, whose spectrum is the REPEATED REAL eigenvalue h/2 - a scalar matrix has no eigenphase. None of the four named transfer matrices has det = 1, which is necessary for a spectrum {e^{+-i.alpha}}, so all four are excluded by determinant rather than by the qou-pdix rationality invariant (which covers only the braid image). Separately: z_D = q^3/(q^2+1) IS a seminormal sigma_2 diagonal entry identically, so z_D + d2 = h splits the Hecke differential across the V_(2,1) diagonal - convention C does not do this.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)",
+    "convention": "D (z = q^3/(q^2+1))"
+  },
+  "data": {
+    "assertions_passed": 23,
+    "assertions_total": 23,
+    "checks": [
+      {
+        "name": "delta_beta_is_scalar_h_over_2",
+        "pass": true,
+        "why": "Delta_beta = (h/2)*I  (universal beta decay matrix, boxed in the block)"
+      },
+      {
+        "name": "delta_beta_universal_both_steps_agree",
+        "pass": true,
+        "why": "nn->mix and mix->pp give the same matrix"
+      },
+      {
+        "name": "delta_beta_spectrum_is_repeated_h_over_2",
+        "pass": true,
+        "why": "spectrum {h/2, h/2} — a repeated REAL eigenvalue, not a conjugate pair"
+      },
+      {
+        "name": "det_T_pp_eq_neg_one",
+        "pass": true,
+        "why": "Hecke unimodularity"
+      },
+      {
+        "name": "det_T_nn_eq_neg_one",
+        "pass": true,
+        "why": "Hecke unimodularity"
+      },
+      {
+        "name": "det_T_mix_eq_neg_one_minus_hsq_over_4",
+        "pass": true,
+        "why": "T_mix is an algebraic average, not a group element"
+      },
+      {
+        "name": "det_delta_beta_eq_hsq_over_4",
+        "pass": true,
+        "why": "scalar (h/2)I"
+      },
+      {
+        "name": "no_named_transfer_matrix_has_det_one",
+        "pass": true,
+        "why": "det = 1 is necessary for spectrum {e^{+-i.a}}; all four fail it"
+      },
+      {
+        "name": "det_T_mix_strictly_negative_for_all_real_q",
+        "pass": true,
+        "why": "-(1 + h^2/4) <= -1 < 0 for every real h, so never 1"
+      },
+      {
+        "name": "delta_beta_det_one_only_at_h_pm2",
+        "pass": true,
+        "why": "h = +-2  <=>  q = 1+sqrt(2) (or its inverse); not the substrate"
+      },
+      {
+        "name": "zD_equals_seminormal_d1_identically",
+        "pass": true,
+        "why": "same rational function, not a numerical coincidence"
+      },
+      {
+        "name": "zD_plus_d2_equals_h",
+        "pass": true,
+        "why": "convention D splits h across the V_(2,1) seminormal diagonal"
+      },
+      {
+        "name": "zC_differs_from_d1",
+        "pass": true,
+        "why": "convention C is NOT the V_(2,1)-adapted parameter"
+      },
+      {
+        "name": "sigma2_satisfies_hecke",
+        "pass": true,
+        "why": "sigma2^2 = h*sigma2 + 1"
+      },
+      {
+        "name": "braid_relation_holds",
+        "pass": true,
+        "why": "s1 s2 s1 = s2 s1 s2, so (d1,d2) is forced"
+      },
+      {
+        "name": "sigma1_sigma2inv_det_one",
+        "pass": true,
+        "why": "even word length"
+      },
+      {
+        "name": "sigma1_sigma2inv_trace_eq_neg_one_minus_hsq",
+        "pass": true,
+        "why": "trace = -1 - h^2, so 2cos(a_ell) = -1 - h^2"
+      },
+      {
+        "name": "elliptic_boundary_is_golden_ratio",
+        "pass": true,
+        "why": "|trace| = 2 exactly at q = (1+sqrt5)/2, the ellipticity boundary"
+      },
+      {
+        "name": "elliptic_classical_limit_is_2pi_over_3",
+        "pass": true,
+        "why": "trace -> -1 at q=1, i.e. a_ell -> arccos(-1/2) = 2pi/3"
+      },
+      {
+        "name": "ladder_alpha_C_vanishes_at_q_one",
+        "pass": true,
+        "why": "ladder phase -> 0 at q=1: a different classical limit entirely"
+      },
+      {
+        "name": "ladder_alpha_D_vanishes_at_q_one",
+        "pass": true,
+        "why": "ladder phase -> 0 at q=1: a different classical limit entirely"
+      },
+      {
+        "name": "substrate_is_elliptic_for_sigma1_sigma2inv",
+        "pass": true,
+        "why": "h^2 = 0.0437062085325 <= 1 at the proton pin"
+      },
+      {
+        "name": "elliptic_phase_far_from_ladder_phase_at_q0",
+        "pass": true,
+        "why": "the two phases differ by more than 2 rad at the substrate"
+      }
+    ],
+    "determinants": {
+      "T_pp": "-1",
+      "T_nn": "-1",
+      "T_mix": "(q**2*(-q**2 - 2) - 1)/(4*q**2)",
+      "Delta_beta": "(q**2*(q**2 - 2) + 1)/(4*q**2)"
+    },
+    "numeric_at_proton_pin": {
+      "q0_proton_pin": "1.10997858275138080759166909561",
+      "h_at_q0": "0.20906029879563931543084621313",
+      "det_T_mix_at_q0": "-1.01092655213313049735050483392",
+      "det_delta_beta_at_q0": "0.0109265521331304973505048339193",
+      "delta_beta_eigenvalue_at_q0": "0.104530149397819657715423106565",
+      "trace_sigma1_sigma2inv_at_q0": "-1.04370620853252198940201933568",
+      "elliptic_eigenphase_rad_at_q0": "2.11981820271589509012052524049",
+      "ladder_alpha_D_at_q0": "-0.0404857773406427649188472790652",
+      "ladder_alpha_C_at_q0": "-0.0523361202682288387988645268899"
+    },
+    "verdict": "DERIVED. Delta_beta = (h/2)I has spectrum {h/2, h/2}: a repeated real eigenvalue, no eigenphase. All four named transfer matrices fail det = 1. The spectrum claim of prop:q-beta-cos-resummation is not a property of any matrix the corpus defines. Scope-(b) for the four named matrices, invariant = determinant."
+  }
+}
