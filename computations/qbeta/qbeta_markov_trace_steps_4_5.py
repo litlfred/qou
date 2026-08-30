@@ -272,12 +272,13 @@ def main() -> None:
         tolerance=1e-50,
         source="max |G[:,0] - A| as polynomial in (q, b, y_3, y_21, y_111) — must be 0",
     )
-    wb.add_assertion(
-        name="S-at-q0-matches-sdp-witness",
-        computed=str(S_at_q0),
-        expected=str(S_at_q0),
-        source="S(q_0) loaded from qbeta-decay-sdp-knot-operator.witness.json tau_M_at_q0",
-    )
+    # DEMOTED, not fixed (bean qou-3e5m). The name promised a check against
+    # the SDP witness, but `S_at_q0` IS that witness's `tau_M_at_q0`, loaded
+    # above — there is no second source here to compare it to, so the
+    # assertion compared the loaded value to itself and reported `passed`.
+    # No expected value can be invented for it honestly. The value is not
+    # lost: it is already recorded in `add_data` below as `S_at_q0`, which is
+    # what recording a loaded input should look like.
     wb.add_data(
         "column_identity_residue",
         {
