@@ -16,14 +16,51 @@ there first. Re-measured with the same detector against both trees:
 | `main` now | **17** |
 | this branch on top of it | **11** |
 
-So the live count is **11**, not 30, and this branch's marginal contribution is
-**6**, not 26. Every disposition below still applies to the 11 that remain —
-they are `fr_pullback_borromean_h3a_test`, `phi0_normalization_disproof`,
-`intermediate_knot_detection`, `lambda_scale_all_c_i_family_a`,
-`probe_9b_manybody_expansion`, `probe_bring_residue_resolvent`,
+So the live count was **11**, not 30. Three have since been fixed on this
+branch under the protocol in §Why this is a document, leaving **9**:
+
+| site | disposition applied |
+|---|---|
+| `qbeta_5two_masbaum_cyclo_level_probe` | derived count, `expected = Σ\|LAM_GRID\| × 3 × \|SHIFTS\|` = 165 |
+| `qbeta_5two_v3_from_borel_poles_probe` | `expected=0.0` against the existing `tolerance=d_leg`; passes iff `d_ggm ≤ d_leg` |
+| `probe_9b_manybody_expansion` | `ratio_e0 > 1` flag — see the reclassification below |
+
+The **9 remaining** are `fr_pullback_borromean_h3a_test`,
+`phi0_normalization_disproof`, `intermediate_knot_detection`,
+`lambda_scale_all_c_i_family_a`, `probe_bring_residue_resolvent`,
 `casimir_q_factorial_probe`, `qbeta_5two_saddle_sum_rule_and_provenance_probe`,
-`qbeta_5two_v3_from_borel_poles_probe`, `qbeta_c3_phib_gluing_discriminant_probe`
-and `qbeta_uw_reparam_probe` — 7 class R, 3 class D, 1 class C.
+`qbeta_c3_phib_gluing_discriminant_probe` and `qbeta_uw_reparam_probe` —
+6 class R, 2 class D, 1 class C.
+
+### 🛑 `probe_9b_manybody_expansion` was mis-classified below, by me
+
+It is listed in **class D** on the strength of its `source` line opening with
+*"informational:"*. That is wrong. Its NAME —
+`he4_4body_cross_term_far_below_magic_A` — states a falsifiable direction, and
+by the `qou-26f2` rule adopted above the name's claim is what an assertion
+owes. It is **class R**, and is now `computed = 1 if ratio_e0 > 1 else 0`.
+
+The threshold is `> 1` deliberately: "below magic-A" is what can invert, and
+any sharper bound (10×, 49×) would be a number picked to match the observed
+value. The magnitude stays in `data.he4_4body_vs_magic_A` — 49.2× at the E_0
+scale, 263× at Q_β.
+
+**The general lesson, which applies to the two remaining class-D entries:**
+`source` prose saying "informational" or "recorded" is the author's *framing*,
+not a fact about what the assertion can do. Read the NAME first; demote only
+when the name promises nothing falsifiable. I trusted the prose over the name
+once and should be assumed to have done it elsewhere.
+
+### And re-running it exposed import-cone staleness
+
+Refreshing that one witness moved six assertions this branch does not touch, by
+~19 orders (`5.168e-31 → 1.842e-50`), and their underlying quantities at the
+**sixteenth** significant digit — the float64 signature. `compute_dps` is 70
+before and after and the producer's own source is unchanged, so this is
+import-cone drift: a module it calls now carries exact arithmetic and the
+committed numbers predate that. `scriptHash` does not move for this class and a
+file-local `git diff` cannot see it. Worth assuming other witnesses in the same
+cone are stale the same way.
 
 **The headline finding below is resolved, and not by me.** I wrote that
 `brundan_kleshchev_audit.py:189` asserts a theorem it never tests, called it the
