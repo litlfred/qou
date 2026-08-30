@@ -37,9 +37,41 @@ one does not.
 ## Scope
 
 This is the eigenvector property, not the Murphy basis. Still open, and deliberately not
-claimed here: that the `m_{st}` are a **basis**, and the cellular axioms (C1) and (C3)
-that the basis makes statable. Those need standard-tableau combinatorics and the dominance
-order, neither of which is in the corpus. Bean `qou-phir`.
+claimed here: that the `m_{st}` are a **basis**, and the cellular axioms (C1) and (C3) that
+the basis makes statable.
+
+> **Correction (2026-08-30, same day).** This paragraph first read *"Those need
+> standard-tableau combinatorics and the dominance order, **neither of which is in the
+> corpus**."* That is **false in both halves**, and it was written without running the
+> corpus-grep checklist on the claim itself. What is actually there:
+>
+> * **Standard Young tableaux** — `StandardYoungTableau (μ : YoungDiagram)` exists twice
+>   (`QOU/BraidKnot/`, `QOU/Mathlib/`) with a `Finite` instance, `numSYT`, `hookLength`,
+>   `hookProduct`, and roughly seventy supporting files (`SYTEnumeration`, `SYTHookFormula*`,
+>   the Schensted group, `SYTBranching*`). Note Mathlib itself has `YoungDiagram` and
+>   `SemistandardTableau` but **no** `StandardYoungTableau`, so this is all local.
+> * **The dominance order** — `partitionDom` at `QOU/BraidKnot/SpechtClassification.lean`,
+>   with `partitionDom_refl` and `partitionDom_antisymm` proved, plus `domRel` on tabloids in
+>   `SpechtDominanceCore` and the classification direction `dom_of_intertwiner`.
+> * **A reference tableau `t^λ`** — `colSuperstandard (μ) : Specht.Tableau μ` and
+>   `colSuperstandardSYT`, which is exactly the `t^λ` that `d(t)` is defined against.
+>
+> **What is genuinely missing is the `q`-deformation, and that is a different statement.**
+> The whole 21-file Specht cluster is the **`q = 1` symmetric-group** theory — it works over
+> `Representation k (Perm (Fin n))`, and no file in it imports the Hecke algebra. Murphy's
+> basis is the `q`-analogue of that story over `H_n(q)`, and *that* is what does not exist.
+>
+> **Nor is the cluster a finished foundation to build on:** it carries **310 `sorry`s**
+> across those 21 files, concentrated in `SpechtStandardBasisCore` (107), `SpechtIrreducible`
+> (57) and `SpechtDominanceCore` (51). So the combinatorial inputs exist as *definitions and
+> partial theory*, not as a settled base.
+>
+> The cost of the original wording, had it stood: it tells the next agent to rebuild seventy
+> files that are already here. Recorded rather than silently patched, because the failure was
+> not the fact but the method — a "the corpus does not have X" claim shipped without the
+> six-path check that exists precisely to catch it.
+
+Bean `qou-phir`.
 
 Ground ring: `[Field K]`, inherited from `QOU.Hecke.TwMul` — the `T_w` basis is a field
 statement (`QOU/Hecke/TwBasisField.lean`). Nothing here needs more than that.
