@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:08:01.794420+00:00",
-  "commitSha": "92d46000f691a683917a23310b049548e9f2a091",
+  "computedAt": "2026-08-30T03:16:29.721996+00:00",
+  "commitSha": "63f5dd055f5e46f1b7e3d589c0e24f915413255d",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 94,
+      "computed": 92,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "5e53ec53a5f2202a53f098b285d0b61cf3b572a5",
+  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,9 +29,11 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [
@@ -56,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2857,
-      "prov_ok": 2440,
+      "total_scanned": 2863,
+      "prov_ok": 2451,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 240,
-      "prov_exempt_acknowledged": 3,
-      "prov_missing": 94,
+      "prov_exempt_no_reader": 239,
+      "prov_exempt_acknowledged": 1,
+      "prov_missing": 92,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.967098354917745887294364718235911795589779488974448722436122"
+      "completeness_ratio": "0.967865874956339504016765630457561997904296192804750261962976"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -77,6 +79,10 @@
         },
         {
           "witness": "a-K-via-lp-dual.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "a3-magnitude-berezinian-crossterm.witness.json",
           "missing_fields": []
         },
         {
@@ -4848,6 +4854,10 @@
           "missing_fields": []
         },
         {
+          "witness": "option-e-probe1-derive-1plusq-over-2.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "orbit-trace-identity.witness.json",
           "missing_fields": []
         },
@@ -5365,6 +5375,10 @@
         },
         {
           "witness": "brane-tower-two-avenues-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "bring-cubic-monodromy-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -7452,6 +7466,10 @@
           "missing_fields": []
         },
         {
+          "witness": "fake-degree-via-telescope.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "fbor-normalisation-barsymmetry.witness.json",
           "missing_fields": []
         },
@@ -7473,6 +7491,10 @@
         },
         {
           "witness": "hd-to-s-bridge-anchor-dependence.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "integer-lp-gluon-convention-d.witness.json",
           "missing_fields": []
         },
         {
@@ -9588,6 +9610,10 @@
           "missing_fields": []
         },
         {
+          "witness": "toffoli-lp-stability.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "torus-knot-h-expansion-pattern.witness.json",
           "missing_fields": []
         },
@@ -9601,6 +9627,18 @@
         },
         {
           "witness": "tower-psd-marginality-vs-A.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "tower-vhat-chain-length-pole-margin.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "tower-vhat-markov-parameter.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "tower-z-convention-pole-sensitivity.witness.json",
           "missing_fields": []
         },
         {
@@ -9713,6 +9751,14 @@
         },
         {
           "witness": "wenzl-lr-convention-adapter.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wenzl-y-lambda-h12.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wenzl-y-lambda-h9.witness.json",
           "missing_fields": []
         },
         {
@@ -10263,12 +10309,6 @@
           ]
         },
         {
-          "witness": "option-e-probe1-derive-1plusq-over-2.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "option-e-q-reeb-phase-probe-v4.witness.json",
           "missing_fields": [
             "commitSha"
@@ -10436,12 +10476,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "toffoli-lp-stability.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
@@ -10823,12 +10857,6 @@
         }
       ],
       "PROV_EXEMPT_NO_READER": [
-        {
-          "witness": "a3-magnitude-berezinian-crossterm.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
         {
           "witness": "alpha-em-bring-real-structure.witness.json",
           "missing_fields": [
@@ -12666,18 +12694,6 @@
           "witness": "canonical-mass-table-242ppb.witness.json",
           "missing_fields": [
             "HAND-AUTHORED by design — the witness's own `provenance` field states 'no producer script was run to generate this file'. Per-isotope B(K) values carried from a prior-session mass-table sweep; provisional pending a producer-backed regeneration once the Delta_lambda closure lands. There is nothing to attribute."
-          ]
-        },
-        {
-          "witness": "wenzl-y-lambda-h12.witness.json",
-          "missing_fields": [
-            "LEGACY y_lambda cache at an OLD muon pin (as wenzl-y-lambda-h9). Producing script removed; still read by nucleus_real_sdp.py."
-          ]
-        },
-        {
-          "witness": "wenzl-y-lambda-h9.witness.json",
-          "missing_fields": [
-            "LEGACY y_lambda cache at an OLD muon pin (q0=1.109978595554..., differs from the current muon pin at digit 12). The producing script is no longer in the repo (no writer found in Python or Rust; still READ by nucleus_real_sdp.py so cannot be deleted). Attributing a current script would mislabel a stale-q0 artifact."
           ]
         }
       ],
