@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T04:51:16Z
-updated_at: 2026-08-30T05:00:52Z
+updated_at: 2026-08-30T05:04:19Z
 ---
 
 Found by `computations/audits/pin_straddle_unguarded_audit.py` stage 2 (PR #6104),
@@ -83,3 +83,43 @@ Fix: point at `y-lambda-mpfr-proton-witness.json`, or key by anchor.
 `atomic-tr-m-mpfr-50dps-proton.witness.json` exists, and
 `tr_m_q_hecke_seminormal.py:103` already selects between the two by anchor with
 a ternary — copy that shape.
+
+
+## CONFIRMED END-TO-END by the producer's own verdict (2026-08-30)
+
+Running `y_lambda_symbolic_validate.py` on current main flips its own
+`all_passed` from **true** to **false**. Every n from 2 to 11+ fails at
+**exactly probe index 2** -- the `Q0_STR` probe, the only one whose reference
+is `"ref": "mpfr-witness"` rather than the self-consistent
+`wenzl-bridge@100dps`. Every other probe passes at ~1e-51.
+
+    n=2   max_abs_diff 5.93e-10      n=7   1.06e-9
+    n=3               1.19e-9        n=8   8.04e-10
+    n=4               1.49e-9        n=9   5.82e-10
+    n=5               1.49e-9        n=10  4.06e-10
+    n=6               1.31e-9        n=11  2.75e-10
+
+against `TOL_CROSS_Q = 1e-30`. The self-referential probes are unaffected,
+which is what localises the defect to the witness comparison rather than to
+the bridge.
+
+### The committed witness is also STALE, and in an instructive way
+
+`computations/y-lambda-symbolic-validation.json` on main records
+`all_passed: true` and exactly one q value: **`1.1099785955541805`**.
+
+Two things wrong with that string. It is a MUON value, so the record was
+produced when this stem resolved to muon -- which is why it passed. And it is
+**17 significant digits**, not 50, in a witness whose whole subject is 50-dps
+validation. Per AGENTS.md's three-muon-values note, `...595554 1805` is
+specifically the lepton-tower derivation at **CODATA 2018**, not the frozen
+canonical pin `...5955573347`. So the committed record is a pass obtained at
+a third q that is neither of the two live anchors.
+
+DO NOT simply regenerate this witness to "refresh" it -- that would land
+`all_passed: false` as the recorded state. Fix the producer first (point
+`load_mpfr_witness` at `y-lambda-mpfr-proton-witness.json`, or key it by
+anchor the way `tr_m_q_hecke_seminormal.py:103` does), THEN regenerate.
+
+Not done here: the regenerated file was a diagnostic side-effect and was
+restored, per the contended-witness rule (qou-v0t8).
