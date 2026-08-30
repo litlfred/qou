@@ -41,22 +41,6 @@
         "QOU.BraidKnot.DeltaLambdaExponentKeystone"
       ],
       "lean_error": "import QOU.BraidKnot.DeltaLambdaExponentKeystone failed, environment already contains 'QOU.BraidKnot.writhe' from QOU.BraidKnot.AlphaShiftOneDimChannel"
-    },
-    {
-      "fqn": "QOU.Mathlib.IsAddableCell",
-      "modules": [
-        "QOU.Mathlib.YoungDiagramAddCell",
-        "QOU.Mathlib.YoungDiagramAddable"
-      ],
-      "lean_error": "import QOU.Mathlib.YoungDiagramAddable failed, environment already contains 'QOU.Mathlib.mem_addCell._simp_1' from QOU.Mathlib.YoungDiagramAddCell"
-    },
-    {
-      "fqn": "QOU.Mathlib.addCell",
-      "modules": [
-        "QOU.Mathlib.YoungDiagramAddCell",
-        "QOU.Mathlib.YoungDiagramAddable"
-      ],
-      "lean_error": "import QOU.Mathlib.YoungDiagramAddable failed, environment already contains 'QOU.Mathlib.mem_addCell._simp_1' from QOU.Mathlib.YoungDiagramAddCell"
     }
   ]
 }
