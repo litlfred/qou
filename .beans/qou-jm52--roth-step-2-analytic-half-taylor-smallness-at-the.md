@@ -74,3 +74,29 @@ WHAT REMAINS on this bean:
 Steps 1-2 are elementary and unblocked. Step 3 is the parameter bookkeeping and should share
 a record with RothGammaProducer rather than inventing its own normalisation.
 
+## 2026-08-30, same day -- CORRECTION to the entry above: one G is not enough
+
+seminorm_translateMatrix_le_pow bounds the entry by 2^{|n|} * G^{|n| - |i|}: a SINGLE G, and the
+UNWEIGHTED degree difference. I wrote it, landed it, and it cannot feed the argument.
+
+The index hypothesis at alpha gives idxWeight r n >= mu, and the conclusion is wanted for
+idxWeight r i < nu. idxWeight is weighted by 1/r_h. In Roth's regime the r_h are wildly unequal
+BY CONSTRUCTION -- RothGrowth forces r_{h+1} much smaller than r_h, that is the whole point of
+the ladder -- so a lower bound on the WEIGHTED difference gives no lower bound whatever on
+sum_h (n_h - i_h). The statement is true; it is useless.
+
+seminorm_translateMatrix_le_prod is the same induction tracking prod_h G_h^{n_h - i_h}, one G_h
+per coordinate, which is what pairs with |beta_h - alpha| <= q_h^{-(2+delta)} and r_h log q_h ~ L.
+abs_translateMatrix_le_prod and abs_coeff_translate_add_le_prod are the real instances.
+
+The weaker lemma is KEPT, with the reason recorded in the module header. Deleting it would hide
+that the first attempt at this estimate produced something true and unusable -- which is the same
+failure mode as correction 24 (a weaker-but-true bound that cost an exponent) and correction 26
+(halves that were each correct and did not compose). The build was green, the axioms were clean,
+and no witness would have caught it; what caught it was writing down what the consumer needs
+before writing the consumer.
+
+Item 3 of the remaining list is unchanged and is now the only real obstacle: turning the weighted
+index gap into prod_h q_h^{-(2+delta)(n_h - i_h)} under r_h log q_h ~ L. Items 1-2 (height budget,
+term count) remain elementary and unblocked.
+
