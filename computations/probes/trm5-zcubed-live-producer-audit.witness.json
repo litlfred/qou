@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:47:23.212193+00:00",
-  "commitSha": "bc89cee13e025347f08b77e4e256119102ad3216",
+  "computedAt": "2026-08-30T10:06:54.193307+00:00",
+  "commitSha": "4b5a7eed1528308da423028bd127d537f8db8396",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm5-zcubed-live-producer-audit",
   "scriptFile": "trm5_zcubed_live_producer_audit.py",
-  "scriptHash": "772636d70778",
-  "scriptCommitSha": "8a505f2b5a8913970c0d815642f8b49ace6e9335",
+  "scriptHash": "0b704f390325",
+  "scriptCommitSha": "48cc99bba6d294c4f2f31f1600e266bb48e84048",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -98,7 +98,7 @@
   },
   "corpus_scan": {
     "note": "Shape-keyed scan of the whole tree, not a file list. Added after the five-name guard printed all-clear while seven other files on the same basis still carried the bug -- two of them in spellings (`z ** 3` inside np.array, `z * z * z`) that no pattern in the guard could match.",
-    "six_vectors_found": 36,
+    "six_vectors_found": 32,
     "still_cubed": 0,
     "bug_sites": [],
     "clean_sites": [
@@ -188,22 +188,6 @@
         "sixth_entry": "h * z ** 2 + z"
       },
       {
-        "file": "computations/probes/nucleon-lp-convention-probe.py",
-        "line": 91,
-        "sixth_entry": "z**3",
-        "deliberate_comparison": true
-      },
-      {
-        "file": "computations/probes/nucleon-lp-convention-probe.py",
-        "line": 92,
-        "sixth_entry": "h*z**2+z"
-      },
-      {
-        "file": "computations/probes/nucleon-lp-convention-probe.py",
-        "line": 93,
-        "sixth_entry": "h*z**2+z"
-      },
-      {
         "file": "computations/qbeta/h3_markov_trace_cyclicity_preflight.py",
         "line": 34,
         "sixth_entry": "h * z ** 2 + z"
@@ -272,11 +256,6 @@
         "file": "tools/pyhecke/python/pyhecke/gram.py",
         "line": 220,
         "sixth_entry": "h * z ** 2 + z"
-      },
-      {
-        "file": "tools/pyhecke/tests/test_gram_values.py",
-        "line": 100,
-        "sixth_entry": "h*z*z + z"
       },
       {
         "file": "tools/sage-examples/scripts/hecke_surface.py",
