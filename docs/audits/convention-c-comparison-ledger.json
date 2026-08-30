@@ -724,6 +724,32 @@
       "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
       "date": "2026-08-29",
       "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/markov_trace_weights_wenzl.py",
+      "target": "z",
+      "source_hash": "4821d93f0fdc",
+      "line_when_adjudicated": "270",
+      "scope": "markov_trace_s",
+      "source": "z = 1 / (s + 1 / s)",
+      "verdict": "comparison",
+      "rationale": "Convention-C by design and now SCOPED as such. This module answers the question PR #3661/#3670 posed, which was posed in convention C: the closed form of the Wedderburn block weights w_lambda = tr_M(p_lambda) at z = 1/(q^{1/2}+q^{-1/2}). The derivation is correct as a C-frame result. Its docstring called that trace 'canonical', which owner ruling R1 (2026-08-15) made false; corrected in the same change. NOT migrated to z_D deliberately: re-deriving would change every value in markov-trace-weights-wenzl.witness.json, which is a separate decision. Measured 2026-08-29 -- zero Python importers, and the committed witness is read only by inventory audits (witness-provenance, q0-anchor-consistency, derivation-chain), so no scientific consumer depends on the numbers.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module scope + consumer measurement",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/markov_trace_weights_wenzl.py",
+      "target": "z",
+      "source_hash": "4821d93f0fdc",
+      "line_when_adjudicated": "473",
+      "scope": "main",
+      "source": "z = 1 / (s + 1 / s)",
+      "verdict": "comparison",
+      "rationale": "Convention-C by design and now SCOPED as such. This module answers the question PR #3661/#3670 posed, which was posed in convention C: the closed form of the Wedderburn block weights w_lambda = tr_M(p_lambda) at z = 1/(q^{1/2}+q^{-1/2}). The derivation is correct as a C-frame result. Its docstring called that trace 'canonical', which owner ruling R1 (2026-08-15) made false; corrected in the same change. NOT migrated to z_D deliberately: re-deriving would change every value in markov-trace-weights-wenzl.witness.json, which is a separate decision. Measured 2026-08-29 -- zero Python importers, and the committed witness is read only by inventory audits (witness-provenance, q0-anchor-consistency, derivation-chain), so no scientific consumer depends on the numbers.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module scope + consumer measurement",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     }
   ]
 }
