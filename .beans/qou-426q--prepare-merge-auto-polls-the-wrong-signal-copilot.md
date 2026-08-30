@@ -1,11 +1,11 @@
 ---
 # qou-426q
 title: 'prepare-merge-auto polls the wrong signal: Copilot reviews without ever creating a check run'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-30T07:56:54Z
-updated_at: 2026-08-30T07:57:27Z
+updated_at: 2026-08-30T08:38:10Z
 ---
 
 `qou-gwe9` (n=5) concluded that Copilot "never enqueues" and
@@ -65,3 +65,38 @@ Nor whether the earlier n=5 sample genuinely received no reviews: those PRs
 may have been reviewed and the review missed for the same reason — nobody was
 watching the event channel. That would make qou-gwe9's negative an artefact of
 its own instrument end to end, but it is UNVERIFIED and should not be asserted.
+
+
+## RETRACTED / MERGED INTO qou-gwe9 (2026-08-30, same day)
+
+**This bean should not have been opened.** A sibling agent had already found
+this and adjudicated it better, on `main`, before I started:
+`docs/audits/2026-08-30-copilot-review-works-again.md`, with `qou-gwe9`
+**reopened**. I skipped the corpus-grep checklist over `.beans/` and
+`docs/audits/` — the exact discipline that exists to prevent this — while
+having spent the session applying it elsewhere.
+
+**And my mechanism claim was an overclaim.** I asserted "Copilot delivers via
+webhook, not check run, so the poll is structurally blind" as THE explanation.
+It is a candidate and it does not discriminate: `total_count: 0` is equally
+consistent with the other candidates, including plain quota exhaustion. The
+audit weighs three and deliberately picks none.
+
+**What the sibling found that I did not, and it is the operationally important
+part: THERE IS A QUOTA.** Five requests across two repos in ~30 minutes
+returned *"the user who requested the review has reached their quota limit"*.
+I then fired three more today (#6104, #6116, #6132) — plausibly contributing
+to the same exhaustion — and read the resulting `total_count: 0` on #6132 as
+evidence for my structural theory. It may simply have been the quota. That
+inversion is worth keeping: I used a symptom of rationing as proof of
+blindness.
+
+**Kept from this bean, because it survives regardless of mechanism:** do not
+block on a check-run poll; the review arrives as a
+`pull_request_review.submitted` wake on a subscribed PR; and a session that
+merged past one must handle it as a follow-up PR.
+
+Superseded by `qou-gwe9`. Corrections landed in AGENTS.md rule 10, the
+`prepare-merge-auto` banner, and the `merge-coordinator` / `lean-verifier`
+memories — those two matter most, since they are injected into subagent
+system prompts and were still asserting "never arrives".
