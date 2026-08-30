@@ -237,3 +237,36 @@ either way — `--strict` gates only the exit code — and they show real progre
 (I briefly suspected `Q0_AMBIGUOUS_NO_REASON` 13 -> 14 was my c_knot stamp
 missing its reason. It is not — that witness carries both `q0Anchor` and
 `q0AnchorReason` at top level, verified. The +1 is a different witness.)
+
+### 🔴 ROOT CAUSE CANDIDATE for the hadron timeout: `pyhecke_native` is STALE
+
+The long hadron run emits this on every gram call:
+
+    pyhecke_native is installed but DIVERGES from pyhecke.gram at q0
+    (convention-D self-check failed). This is almost certainly a wheel built
+    before the qou-m7py convention-D port (2026-08-15): its trace_weights
+    still ends z^3 and/or Q_0 is the muon pin. REBUILD it --
+    `bash scripts/build-pyhecke-native.sh` ... Refusing rather than silently
+    returning divergent numbers.
+
+So the compiled accelerator is refused (correctly — it is convention-C-era and
+would return divergent numbers) and everything falls back to pure Python. That
+is the obvious candidate for why `hadron_knot_table` cannot finish inside 900s,
+and it would explain the timeout WITHOUT the producer being defective at all.
+
+If so, one `bash scripts/build-pyhecke-native.sh` unblocks the whole knot:
+
+    stale wheel -> native refused -> pure-Python fallback -> hadron_knot_table
+    exceeds 900s -> q0_migration_decompose "times out" AND the corpus's single
+    Q0_FLIP (hadron-knot-table.witness.json, retired pin A under a muon label,
+    stale since 2026-06-17) cannot be repinned by re-running.
+
+NOT rebuilt yet: a long hadron run is in flight and rebuilding a native
+extension underneath it would invalidate the measurement. Rebuild after it
+lands, then re-time.
+
+⚠️ Note the wheel's staleness is ALSO a convention-C residue — "trace_weights
+still ends z^3 and/or Q_0 is the muon pin" — so this sits on the excision
+campaign as well, not only on this bean. And `per_channel_wenzl_level.py`
+independently flags `pyhecke.gram` as "registry says C, code is D — registry
+STALE", i.e. two separate signals that the pyhecke layer is out of step.
