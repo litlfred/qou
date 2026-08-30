@@ -631,3 +631,63 @@ REMAINING on this bean:
      good approximations. This is what turns a contradiction into "finitely many solutions" and is
      what step 5 (not LiouvilleWith) needs. It is the only remaining piece that is not bookkeeping.
 
+## 2026-08-30 -- ITEM 1 IS NOT MECHANICAL: steps 1 and 3 do not compose
+
+I said the O_K analogue of roth_contradiction was mechanical. It is not there to be written,
+because the chain has a break I had not looked at, and it is not where I had been looking.
+
+THE GAP, verified by reading both signatures rather than assumed:
+  * step 1, exists_auxiliary_polynomial (RothAuxiliary):
+        exists P : MvPolynomial (Fin m) (O K), ...
+  * step 3, index_le_rothBound (RothRealLadder):
+        {A : MvPolynomial sigma Z} ... (hA : InRothPolySet a r A)
+    and InRothPolySet is defined only for MvPolynomial sigma Z.
+
+So the arc holds TWO HALF-CHAINS that share step 2 and not a coefficient ring:
+    Z:    step 2 (Z)  ->  step 3  ->  step 4      complete
+    O K:  step 1      ->  step 2 (O K)            complete
+and there is no path from step 1 to step 4. Nothing downstream of either half fixes it; the join
+has to be made at the coefficient ring.
+
+WHY IT HAPPENED. Step 1 was built on Mathlib's exists_ne_zero_int_vec_house_le, whose solution
+vector lies in O K. Step 3 was built (in the merged PR) on Mahler's Roth's Lemma, which is about
+rational-integer coefficients throughout -- including the finiteness of R(a;r)
+(RothLemmaStatement:331), which is a box count over Z and would become a Northcott statement over
+O K. The two were each correct and were never put in the same room, which is correction 26's shape
+at the scale of a whole arc rather than two lemmas.
+
+TWO ROUTES, and route A is much cheaper.
+  A. Build the auxiliary polynomial over Z instead: Siegel over Z is Mathlib's
+     Mathlib/NumberTheory/SiegelsLemma.lean (exists_ne_zero_int_vec_norm_le), and the K-linear
+     vanishing conditions expand in a Q-basis of K into deg(alpha) times as many Z-linear ones.
+     Everything from step 2 (Z) onward already works.
+  B. Re-prove Roth's Lemma over O K -- including replacing the R(a;r) box count with Northcott.
+     A much larger job for no gain I can see.
+
+AND ROUTE A RESTORES deg(alpha) TO THE COUNTING, which corrects my own note. RothAuxiliaryPolynomial's
+header carried a triumphant "the degree of alpha does not appear ... the degree cancels out of the
+counting condition entirely". That is TRUE OF MATHLIB'S ENGINE and describes the branch that does
+not reach step 3. On route A the classical condition deg(alpha) * #conditions < #unknowns is exactly
+what is needed. The note is now corrected in place with the reason.
+
+DELIVERED THIS TURN -- route A's counting prerequisite:
+  * nsmul_card_lt_card_idxBox, nsmul_card_lt_card_idxBox_of_eps -- the variance bound with a
+    multiplicity, so the system is underdetermined as soon as n < 4 eps^2 m;
+  * nsmul_card_idxWeight_lt, nsmul_fintypeCard_idxWeight_lt -- the multi-index and Fintype.card
+    forms, the latter being what Siegel over Z consumes;
+  * nsmul_fintypeCard_idxWeight_lt_witness -- non-vacuous at eps = 1/2, m = 5, n = 4, and chosen
+    so the threshold visibly BITES: 4 < 5 holds, 5 < 5 does not, so the same m that justifies a
+    degree-4 alpha does not justify a degree-5 one. deg(alpha) is not decoration.
+"take m large" is therefore m > deg(alpha)/(4 eps^2), not m > 1/(4 eps^2).
+
+REVISED REMAINING WORK, replacing the three-item list above:
+  1. Build the auxiliary polynomial over Z (route A). Needs: the Q-basis expansion of the K-linear
+     conditions, an integral basis for O K (Mathlib has NumberField.integralBasis), and Siegel
+     over Z. This is the real work and it is where deg(alpha) enters.
+  2. Then step 1 -> step 2 (Z) -> step 3 -> step 4 composes, and roth_contradiction takes it.
+  3. Then the parameter selection, unchanged: choosing q_1 large then q_2, ..., q_m from an
+     infinite sequence of good approximations. Still the only piece that is not bookkeeping.
+The O K half (le_index_of_taylor_house, le_index_of_norm_lt, RothAlgebraicInteger) is NOT wasted --
+it is the honest step 2 for an O K-coefficient polynomial, and it is what route B would consume --
+but it is off the critical path until route B is chosen, and route B should not be.
+

@@ -51,13 +51,21 @@ fewer than the coefficients as soon as `m > 1/(4ε²)`.  That is Roth's "take `m
 large" with the bound explicit, and it is what the variance computation was for — the threshold
 scales with `m` while the standard deviation scales with `√m`.
 
-⚠ **The degree of `α` does not appear.**  I expected it to: classically each `K`-linear equation
-is `deg α` equations over `ℚ`, so the count should be `deg α · #conditions < #unknowns`.  But
-Mathlib's `exists_ne_zero_int_vec_house_le` takes `p < q` with `p`, `q` the **`K`-counts**, and
-discharges the `ℚ`-counts `p·h`, `q·h` internally (`h = finrank ℚ K`).  Since `p·h < q·h ⟺ p < q`,
-the degree cancels out of the counting condition entirely.  It re-enters only through the
-`house` bound on the matrix entries — which is the piece still missing, so this is a
-simplification of the *counting*, not of the theorem.
+⚠ **The degree of `α` does not appear — on the route this file takes, which is not the route that
+composes.**  I expected it to: classically each `K`-linear equation is `deg α` equations over `ℚ`,
+so the count should be `deg α · #conditions < #unknowns`.  Mathlib's
+`exists_ne_zero_int_vec_house_le` takes `p < q` with `p`, `q` the **`K`-counts** and discharges the
+`ℚ`-counts internally, so `p·h < q·h ⟺ p < q` and the degree cancels.  That observation is correct
+about the engine.
+
+⚠⚠ **It describes the branch that does not reach step 3.**  That engine's solution vector lies in
+`𝓞 K`, so `exists_auxiliary_polynomial` produces a polynomial with `𝓞 K` coefficients — while
+Roth's Lemma (`index_le_rothBound`) requires `A : MvPolynomial σ ℤ` through `InRothPolySet`.  The
+two do not compose, and no amount of work downstream of either fixes that.  Closing the gap by
+building the auxiliary polynomial over `ℤ` instead (Siegel over `ℤ` is
+`Mathlib.NumberTheory.SiegelsLemma`) restores exactly the classical counting condition
+`deg α · #conditions < #unknowns` — which is what `nsmul_card_lt_card_idxBox_of_eps` below
+supplies, and why the threshold moves from `m > 1/(4ε²)` to `m > deg α/(4ε²)`.
 
 ## What remains
 
@@ -354,6 +362,42 @@ theorem card_lt_card_idxBox_of_eps {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r 
   refine card_lt_card_idxBox r hr (by positivity) ?_
   nlinarith [hmpos, hm]
 
+/-- **The counting condition with a multiplicity — `deg α · #conditions < #unknowns`.**
+
+The classical form.  Each `K`-linear vanishing condition is `deg α` conditions over `ℚ`, so a
+`ℤ`-coefficient auxiliary polynomial needs the *weighted* count to stay under the number of
+unknowns.  `card_lt_card_idxBox` is this at `n = 1`, which is what Mathlib's number-field Siegel
+lemma needs and what an auxiliary polynomial over `𝓞 K` would use — but that polynomial cannot
+feed Roth's Lemma, which is stated over `ℤ`.  See the ⚠⚠ in the header. -/
+theorem nsmul_card_lt_card_idxBox {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    (n : ℕ) {lam : ℚ} (hlam : 0 < lam) (hn : (n : ℚ) * (m : ℚ) < 4 * lam ^ 2) :
+    n * ((idxBox r).filter (fun x => centredWeight r x ≤ -lam)).card < (idxBox r).card := by
+  classical
+  by_contra hcon
+  push_neg at hcon
+  have hQpos : (0 : ℚ) < ((idxBox r).card : ℚ) := by
+    exact_mod_cast card_idxBox_pos r
+  have hch := card_centredWeight_le r hr hlam.le
+  have hconQ : ((idxBox r).card : ℚ)
+      ≤ (n : ℚ) * ((((idxBox r).filter (fun x => centredWeight r x ≤ -lam)).card : ℕ) : ℚ) := by
+    exact_mod_cast hcon
+  have hn0 : (0 : ℚ) ≤ (n : ℚ) := Nat.cast_nonneg n
+  nlinarith [hQpos, hch, hn, hconQ, hn0, sq_nonneg lam,
+    mul_le_mul_of_nonneg_left hch hn0,
+    mul_le_mul_of_nonneg_right hconQ (sq_nonneg lam)]
+
+/-- **`deg α` in the counting, at Roth's threshold.**  The system with multiplicity `n` is
+underdetermined as soon as `n < 4ε²m` — so "take `m` large" becomes `m > n/(4ε²)`, and the degree
+of `α` sets how large.  At `n = 1` this is `card_lt_card_idxBox_of_eps`. -/
+theorem nsmul_card_lt_card_idxBox_of_eps {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    (n : ℕ) {ε : ℚ} (hε : 0 < ε) (hm : (n : ℚ) < 4 * ε ^ 2 * (m : ℚ)) :
+    n * ((idxBox r).filter (fun x => centredWeight r x ≤ -(ε * (m : ℚ)))).card
+      < (idxBox r).card := by
+  have hn0 : (0 : ℚ) ≤ (n : ℚ) := Nat.cast_nonneg n
+  have hmpos : (0 : ℚ) < (m : ℚ) := by nlinarith [sq_nonneg ε, hm, hn0]
+  refine nsmul_card_lt_card_idxBox r hr n (by positivity) ?_
+  nlinarith [hmpos, hm]
+
 /-- **Non-vacuity of the `ε` form**, at `ε = ¼`, `m = 5`, `r ≡ 1`: the threshold `1 < 4ε²m`
 reads `1 < 5/4`.
 
@@ -582,5 +626,36 @@ theorem fintypeCard_idxWeight_lt {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h 
   classical
   rw [Fintype.card_coe, Fintype.card_coe]
   exact card_idxWeight_lt r hr hε hm
+
+/-- The multi-index form of `nsmul_card_lt_card_idxBox_of_eps`. -/
+theorem nsmul_card_idxWeight_lt {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    (n : ℕ) {ε : ℚ} (hε : 0 < ε) (hm : (n : ℚ) < 4 * ε ^ 2 * (m : ℚ)) :
+    n * ((idxBoxF r).filter (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))).card
+      < (idxBoxF r).card := by
+  rw [card_filter_idxBoxF, card_idxBoxF]
+  rw [show (m : ℚ) / 2 - ε * (m : ℚ) - (m : ℚ) / 2 = -(ε * (m : ℚ)) by ring]
+  exact nsmul_card_lt_card_idxBox_of_eps r hr n hε hm
+
+/-- **The form Siegel over `ℤ` consumes.**  `deg α · #conditions < #unknowns`, with the counts as
+`Fintype.card`s of the subtypes the linear system is indexed by. -/
+theorem nsmul_fintypeCard_idxWeight_lt {m : ℕ} (r : Fin m → ℕ) (hr : ∀ h, r h ≠ 0)
+    (n : ℕ) {ε : ℚ} (hε : 0 < ε) (hm : (n : ℚ) < 4 * ε ^ 2 * (m : ℚ)) :
+    n * Fintype.card {i // i ∈ (idxBoxF r).filter
+        (fun i => idxWeight r i ≤ (m : ℚ) / 2 - ε * (m : ℚ))}
+      < Fintype.card {k // k ∈ idxBoxF r} := by
+  classical
+  rw [Fintype.card_coe, Fintype.card_coe]
+  exact nsmul_card_idxWeight_lt r hr n hε hm
+
+/-- **Non-vacuity, and the threshold really does move with the degree.**  At `ε = 1/2` and
+`m = 5` the multiplicity-`4` system is still underdetermined (`4 < 4·(1/4)·5 = 5`), but the
+multiplicity-`5` one is not covered — `5 < 5` is false.  So `deg α` is not decoration: the same
+`m` that suffices for a degree-4 `α` fails to be justified for a degree-5 one. -/
+theorem nsmul_fintypeCard_idxWeight_lt_witness :
+    4 * Fintype.card {i // i ∈ (idxBoxF (fun _ : Fin 5 => 1)).filter
+        (fun i => idxWeight (fun _ : Fin 5 => 1) i ≤ ((5 : ℕ) : ℚ) / 2 - (1 / 2) * ((5 : ℕ) : ℚ))}
+      < Fintype.card {k // k ∈ idxBoxF (fun _ : Fin 5 => 1)} :=
+  nsmul_fintypeCard_idxWeight_lt (fun _ : Fin 5 => 1) (fun _ => one_ne_zero) 4
+    (by norm_num) (by norm_num)
 
 end MvPolynomial
