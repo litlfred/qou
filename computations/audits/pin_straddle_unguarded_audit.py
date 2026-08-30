@@ -539,6 +539,45 @@ def _consumed_at_artifact_q(tree: ast.Module) -> bool:
     return False
 
 
+#: Coefficient-like symbolic content: a polynomial in a variable, not a number.
+_SYMBOLIC_RE = re.compile(r'"[^"]*\*\*?[a-z][^"]*"')
+
+
+def _payload_is_pin_independent(path: Path, memo: dict[Path, bool]) -> bool:
+    """True if the artifact's DATA cannot depend on the pin it is stamped with.
+
+    THE EIGHTH FALSE-POSITIVE MECHANISM, and the first where I nearly changed
+    correct code to satisfy this audit.
+
+    `habiro-coefficients-extended.witness.json` carries a top-level q₀ stamp
+    and was flagged as a muon artifact read by a proton producer. But its
+    payload is a SYMBOLIC Habiro expansion — `a_m` entries like `"768"`,
+    `"-35712*u - 35712"`, `"491861*u**2 + 503768*u + 515411"`, with
+    `all_integral: true` — and the rows contain no q stamp at all. The
+    consumer evaluates it at `u₀ = q₀^{1/2}` from its OWN runtime pin, so
+    reading it at the proton pin is correct.
+
+    The stamp records the run that PRODUCED the symbolic object, not a frame
+    the data lives in. Stage 2 compares producer-anchor to artifact-stamp and
+    cannot tell pin-STAMPED from pin-DEPENDENT; that distinction is what this
+    restores.
+
+    The test is evidence, not a name list: symbolic coefficient strings in the
+    payload. It is deliberately narrow — a numeric artifact that merely
+    happens to contain one such string will not match, and a symbolic artifact
+    whose consumer nonetheless needs the stamp will be wrongly exempted. If
+    that second case appears, tighten HERE rather than adding the producer to
+    an allow-list, which would hide the reason.
+    """
+    if path not in memo:
+        try:
+            txt = path.read_text(errors="ignore")[:400_000]
+            memo[path] = bool(_SYMBOLIC_RE.search(txt)) and '"all_integral"' in txt
+        except Exception:                                  # noqa: BLE001
+            memo[path] = False
+    return memo[path]
+
+
 def _anchor_keyed(tree: ast.Module) -> set[str]:
     """Filename constants that sit under an anchor key in a dict literal.
 
@@ -579,6 +618,7 @@ def measure(hits: list[tuple[str, str]]) -> list[tuple[str, str, str, str]]:
     """For each candidate, compare its producer's anchor to its artifacts'."""
     anchors = _anchor_values()
     idx = _json_index(ROOT / "computations")
+    sym_memo: dict[Path, bool] = {}
     out: list[tuple[str, str, str, str]] = []
     for rel, _why in hits:
         path = ROOT / rel
@@ -625,6 +665,8 @@ def measure(hits: list[tuple[str, str]]) -> list[tuple[str, str, str, str]]:
                 cs = str(c)
                 if c.name in ARTIFACT_EXEMPT_NAMES or \
                         any(d in cs for d in ARTIFACT_EXEMPT_DIRS):
+                    continue
+                if _payload_is_pin_independent(c, sym_memo):
                     continue
                 got = _artifact_pin(c)
                 if got and got[:_Q0_PREFIX] != want_val:

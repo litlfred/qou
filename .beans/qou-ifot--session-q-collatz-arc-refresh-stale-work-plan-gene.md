@@ -1,11 +1,11 @@
 ---
 # qou-ifot
 title: 'Session: q-Collatz arc — refresh stale work plan, general-word cycle forcing'
-status: in-progress
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-08-29T16:28:38Z
-updated_at: 2026-08-29T18:38:58Z
+updated_at: 2026-08-30T09:24:15Z
 ---
 
 TURN 1 (2026-08-29). Reviewed the arc against main -- main's collatz substance is IDENTICAL to the working tree (only .qa.json sidecar churn differs on those paths), so 'lots landed on main' is true corpus-wide but did not move this arc. What HAD moved is the arc's own record: six beans listed as open work that had already landed. Refreshed all six (commit 4c8d75a98a) and opened + landed the successor chip qou-rcgi (commit 13d3d51bbb, PR #6042).
@@ -43,3 +43,13 @@ For the genuinely deep file (QOU/QCollatz.lean -- cone reaches QOU.Mass.*, Gloss
 NEW RESULT enabled by having the real cone: collatz_three_forms_bridge.lean proves the correspondence collatz_three_forms.lean had only ASSERTED -- contactThreshold_eq_qInt (the 7c-generic form IS the library's qInt form), qInt_contactThreshold_mem_Ioo (the two-sided 1 < v* < 2 in the library's own terms), agrees_with_landed (the landed one-sided theorem is recovered, so the developments are consistent rather than parallel). All exit 0 against the real cone, axioms clean.
 
 OPERATIONAL NOTE for the next agent: the AGENTS.md LEAN_PATH overlay trap is real and bit here. Lean resolves a module by the FIRST LEAN_PATH root owning the namespace and does NOT fall through, so a freshly-built QOU olean placed in a second root is invisible -- it must be copied into the restored root itself. Cost me one 5-minute cycle.
+
+Session complete. PR litlfred/qou#6042 MERGED 2026-08-30T09:18:32Z (head c669b225e3, 36 files, +4236/-13, 33 commits, twelve tranches).
+
+Durable results:
+- v=0 for the backward TREE is CLOSED (tranche 11, beans qou-btil + qou-ky5e). The Eisenstein norm is the invariant: N(w+1)=1 so the even branch-inverse preserves it; an odd-preimage forces P(w)=-w of norm 1; every k>=1 branch sits at N = 1+6k+12k^2 >= 19. Each branch is a bare even chain, so no two odd-preimages ever chain. This also EXPLAINS the observed mod-6 congruence: alpha = w+1 is a unit of order 6.
+- Four routes settled NEGATIVELY, which is the more useful half: no valuation can be a descent measure (tranche 3; block descent does not rescue it, tranche 8); the q=1 height criterion is provably empty at the critical ratio (tranche 6); C11 needs a real Hochschild computation and the two literature inputs provably cannot reach it (tranche 4).
+- A live overclaim fixed: contact_threshold_lt_two was titled '1 < v* < 2' but proved only the upper half; the lower half existed nowhere in the corpus and is now proved.
+- scripts/lean-olean-staleness-check.py (tranche 12, bean qou-ruo1).
+
+STILL OPEN: v=0 across all of D_inf, which is equivalent to the convergence conjecture (qcz7 A1). No bounded chip remains in this arc.

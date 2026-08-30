@@ -48,6 +48,11 @@
             "type": "command",
             "command": "./scripts/precommit-bean-id-warn.sh",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "./scripts/precommit-ledger-shrink-warn.sh",
+            "timeout": 20
           }
         ]
       }

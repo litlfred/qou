@@ -1,11 +1,27 @@
-"""Exact Wedderburn block weights of the canonical Markov trace.
+"""Exact Wedderburn block weights of the CONVENTION-C Markov trace.
+
+SCOPE (corrected 2026-08-29, bean `qou-t9r1`). This file said "the canonical
+Markov trace" and computed at z = 1/(q^{1/2} + q^{-1/2}), which is convention
+C. Owner ruling R1 of 2026-08-15 makes convention D (z = q^3/(q^2 + 1))
+canonical and excises C, so the word "canonical" here has been false since
+that date. The derivation below is correct and is retained AS A C-FRAME
+RESULT -- it answers the specific question PR #3661/#3670 asked, which was
+posed in C. What was wrong was the label, not the mathematics.
+
+NOT YET MIGRATED, deliberately. Re-deriving these weights at z_D would change
+every number in `markov-trace-weights-wenzl.witness.json`. That is a separate
+decision, not a relabel: measured 2026-08-29, this module has ZERO Python
+importers and the committed witness is read only by inventory-type audits
+(witness-provenance, q0-anchor-consistency, derivation-chain), so no
+scientific consumer depends on the values -- which makes migration cheap, but
+does not make it this change's business.
 
 Resolves the open question flagged on PR #3661/#3670: what is the
 closed form of the block weights w_lambda = tr_M(p_lambda) for the
-canonical Markov trace on H_n(q) with
+convention-C Markov trace on H_n(q) with
 
     tr_M(1) = 1,   tr_M(x sigma_n) = z tr_M(x),
-    z = 1/(q^{1/2} + q^{-1/2}),
+    z = 1/(q^{1/2} + q^{-1/2}),        # convention C (excised; see SCOPE)
 
 Hecke relation sigma^2 = (q - q^{-1}) sigma + 1 (eigenvalues q, -q^{-1})?
 

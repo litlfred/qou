@@ -1,11 +1,11 @@
 ---
 # qou-qcy6
 title: 'TOOL: proof-underdetermined-product — free class fields that occur only as a product'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T07:09:37Z
-updated_at: 2026-08-30T07:10:16Z
+updated_at: 2026-08-30T07:14:18Z
 ---
 
 Raised by a sibling on PR #6097, relayed as a coordination comment on #6093,

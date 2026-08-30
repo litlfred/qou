@@ -3471,8 +3471,52 @@ export interface AuthorNote {
 }
 ```
 
-`BlockBase.authorNotes?: AuthorNote[]` — every block kind accepts it
-(builders pass through via `Omit<XBlock, "kind">`).
+`BlockBase.authorNotes?: AuthorNote[]`.
+
+> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
+> silence (measured 2026-08-30).** This line read *"every block kind accepts
+> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
+> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
+> declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
+> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
+> note written on one of those blocks validates clean and **vanishes**.
+>
+> **Six authored fields are being dropped in this corpus right now**, and two
+> of them are substantive:
+>
+> | block | field | what is lost |
+> |---|---|---|
+> | `braids-and-knots/hecke-log-decomposition-table-data` | `authorNotes` | multi-paragraph caveat recording that the table has **no source block** and why the dangling `uses[]` was dropped rather than guessed |
+> | `nuclear-interactions/q-beta-form-a-n1-symbolic-table-data` | `authorNotes` | — |
+> | `observations/fine-structure-data` | `authorNotes` | — |
+> | `appendix-surreals/millennium-bounds-via-surreals-intro` | `authorNotes` | — |
+> | `appendix-transfer-matrices/tm-interaction-completeness` | `authorNotes` | — |
+> | `appendix-knot-periodic-table/knot-periodic-table` | `computation` | the block's link to its producer |
+>
+> **The wider hazard is not `authorNotes`.** Those same four kinds also drop
+> **`defines`** and (all but `prose`) **`cites`**. No block hits those today,
+> but §4c *mandates* `defines` for every glossary term, so the first `prose`
+> or `table` block to register one will have it silently discarded and the
+> glossary gate will not fire. `cites` dropping means bibliography extraction
+> would silently miss those kinds.
+>
+> **A second class, same symptom, different cause.** The validator also
+> reports five *invented* field names no schema declares anywhere —
+> `is_mathematics` (×3), `probe`, `consumers`. Those are authoring errors
+> rather than a schema gap, and they are dropped just as quietly.
+>
+> **You only see any of this if the validator is current.** These warnings
+> come from an "Unknown field" check that a stale `folio-assistant` clone does
+> not have; the same tree reported **1** issue before the clone was
+> fast-forwarded and **14** after. Run
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> check the clone is not behind before trusting a clean validate.
+>
+> **The fix is in `folio-assistant`, not here** — those four schemas should
+> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
+> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
+> be accepted and lost.
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable

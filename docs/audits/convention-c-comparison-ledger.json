@@ -16,12 +16,12 @@
       "path": "computations/probes/he4_body_order_shortfall_location_probe.py",
       "target": "<return>",
       "source_hash": "6a3e1d0c3e9c",
+      "line_at_adjudication": 102,
       "scope": "z_of",
       "rationale": "`z_of(q, convention)` is a two-arm frame-comparison helper: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe calls both to measure the frame difference in the He-4 body-order shortfall. The function's own docstring scopes the C arm 'excised - computed here ONLY to measure the frame difference, never wired'. Binding only z_D would delete the comparison the probe exists to make. NOTE: --propose-ledger does NOT stub this site, because its D arm is a CALL (`markov_z(q)`) rather than an inline z_D binding, so the co-binding hint does not fire. Adjudicated by hand for that reason; see bean qou-1jny.",
       "adjudicated_by": "claude (session 2b6a2d13)",
       "date": "2026-08-29",
-      "bean": "qou-1jny",
-      "line_when_adjudicated": 102
+      "bean": "qou-1jny"
     },
     {
       "path": "computations/markov_z_full_bar_condition_probe.py",
@@ -29,11 +29,12 @@
       "source_hash": "9f57e5bdffd0",
       "line_when_adjudicated": 102,
       "scope": "main",
-      "source": "z_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))   # EXCISED \u2014 kept as the comparison arm",
+      "source": "z_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))   # EXCISED — kept as the comparison arm",
       "verdict": "comparison",
-      "rationale": "MEASURED, not asserted. This probe's content is a two-sided contrast: it asserts bar(z) = z - h holds for z_D and FAILS for any bar-even z, hence for z_C. z_C is a quantified CANDIDATE here, not a convention the file computes in. Setting z_C := z_D drops the probe from 5/5 to 2/5 -- C_is_coefficient_half_invariant, C_fails_full_bar_condition and verdict_reverses_between_conditions all flip to FAIL. The file itself says this result 'is one of the reasons the ruling reads the way it does', so migrating the site would delete the evidence for the D ruling.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The ``z`` dilemma of #4767 / #4802 rests on the wrong bar condition.\" The enclosing scope `main` also binds convention D (as `z_D`), so `z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
@@ -43,9 +44,10 @@
       "scope": "main",
       "source": "z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # EXCISED (attribution stale)",
       "verdict": "comparison",
-      "rationale": "Same shape, symbolic arm. The module docstring states the probe's purpose as 'noting that z_C is bar-invariant where z_D is not' and concludes that z_C's bar-invariance is NOT a tiebreaker in D's favour. The z_C binding is the object that claim is about; the neighbouring z_D_expr is labelled CANONICAL and is what the rank-2 check tests against. Removing or migrating z_C leaves the docstring's claim unevaluable.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Choosing the Markov parameter ``z`` *is* choosing the fibre rank ``N``.\" The enclosing scope `main` also binds convention D (as `z_D_expr`), so `z_C_expr` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/markov_z_fibre_rank_bar_covariance_probe.py",
@@ -55,9 +57,10 @@
       "scope": "main",
       "source": "z_C_num = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))",
       "verdict": "comparison",
-      "rationale": "The numeric arm of the same comparison as z_C_expr in this file: the symbolic claim is re-checked at q0. Migrating it would make the numeric arm agree with the D arm by construction and the comparison vacuous.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Choosing the Markov parameter ``z`` *is* choosing the fibre rank ``N``.\" The enclosing scope `main` also binds convention D (as `z_D_expr`), so `z_C_num` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/h2s_chiral_residue_bar_antisymmetric.py",
@@ -67,9 +70,10 @@
       "scope": "main",
       "source": "z_c = mp.sqrt(q) / (q + 1)                    # convention C, for the comparison only",
       "verdict": "comparison",
-      "rationale": "The file's own docstring states the contrast it exists to test: 'z_C(1/q)/z_C(q) = 1  bar-even'  vs  'z_D(1/q)/z_D(q) = q^-4  NOT bar-even', and the scope computes bar_ratio_D beside this binding. z_c is the bar-even reference the D ratio is measured against; with it migrated both ratios would be D's and the bar-parity contrast would vanish.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The H₂S +2.1° is the BAR-ANTI-SYMMETRIC (chiral / skew) residue.\" The enclosing scope `main` also binds convention D (as `z`), so `z_c` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/gram_h3_convention_frame_probe.py",
@@ -79,9 +83,10 @@
       "scope": "<module>",
       "source": "Z_C = sp.sqrt(q) / (q + 1)      # convention C (excised 2026-08-09 / re-affirmed 2026-08-15)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The H_3(q) symbolic Gram is convention-C — and convention D is a ROOT of its determinant, so the block's headline theorem is FALSE in the canonical frame.\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/ground_state_ordering_convention_independence_probe.py",
@@ -91,9 +96,10 @@
       "scope": "<module>",
       "source": "zC = sp.sqrt(q) / (q + 1)      # convention C (excised 2026-08-15)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 2 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Is the `A = 5` ground-state-ordering refutation a fact about convention C?\" The enclosing scope `<module>` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/tower_vhat_markov_parameter_probe.py",
@@ -101,11 +107,12 @@
       "source_hash": "0fca3ce86f82",
       "line_when_adjudicated": 77,
       "scope": "<module>",
-      "source": "Z_C = mp.sqrt(Q) / (Q + 1)          # convention C \u2014 excised 2026-08-09/08-15",
+      "source": "Z_C = mp.sqrt(Q) / (Q + 1)          # convention C — excised 2026-08-09/08-15",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The tower's V̂ is affine in a Markov parameter — and that parameter is NEITHER convention C NOR convention D. Measuring it says which knob actually\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/tower_z_convention_pole_sensitivity_probe.py",
@@ -127,9 +134,10 @@
       "scope": "<module>",
       "source": "Z_C = sp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: the probe's exit status changed. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The Wenzl level family, and whether convention C belongs to it.\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/wenzl_level_tower_verify.py",
@@ -139,9 +147,10 @@
       "scope": "main",
       "source": "z_C = mp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 2 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Independent verification of the SU(r) Wenzl level tower.\" The enclosing scope `main` also binds convention D (as `z_D_sym`), so `z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/wenzl_level_tower_verify.py",
@@ -151,9 +160,10 @@
       "scope": "main",
       "source": "z_C_alt = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))  # detector-blind spelling",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Independent verification of the SU(r) Wenzl level tower.\" The enclosing scope `main` also binds convention D (as `z_D_sym`), so `z_C_alt` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/hoefsmit_b_vs_d_weights_probe.py",
@@ -163,9 +173,10 @@
       "scope": "main",
       "source": "zC = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 2 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"what is Lean-provable about the N2..N5 Kashiwara/Hopf tails of the Q_β ladder under convention D (bean qou-cds1).\" The enclosing scope `main` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_alpha_commutator_floor_probe.py",
@@ -175,9 +186,10 @@
       "scope": "<module>",
       "source": "Z_C = sp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"qou-cds1: the ladder phase splits into a z-dependent trace difference and a z-INDEPENDENT commutator floor, and the floor\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_c3_ladder_trace_convention_sensitivity_probe.py",
@@ -187,9 +199,10 @@
       "scope": "main",
       "source": "zC_sym = sp.sqrt(qs) / (1 + qs)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Owner redirect 2026-08-15: is the c_3 refutation evidence chain still valid after the compute-convention changes that landed since its probes ran?\" The enclosing scope `main` also binds convention D (as `zD_sym`), so `zC_sym` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d1_admissible_anchor_probe.py",
@@ -199,9 +212,10 @@
       "scope": "<module>",
       "source": "zC = sp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"(D1) is anchored at an INADMISSIBLE functional — and has an admissible form.\" The enclosing scope `<module>` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_c2_invariant_probe.py",
@@ -223,9 +237,10 @@
       "scope": "bar_parity_defects",
       "source": "z_c = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The D-frame ladder eigenphase is not bar-odd — the defect is exactly h²/2.\" The enclosing scope `bar_parity_defects` also binds convention D (as `z_d`), so `z_c` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py",
@@ -235,9 +250,10 @@
       "scope": "section1_exact",
       "source": "zC = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"the convention-D Q_β ladder: a DERIVED bar-odd eigenphase, and the width of the window its `c_2` must hit.\" The enclosing scope `section1_exact` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_markov_weights_probe.py",
@@ -247,9 +263,10 @@
       "scope": "main",
       "source": "z_c = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The convention-D H_3(q) Markov weights: two-row, and both bar-EVEN.\" The enclosing scope `main` also binds convention D (as `z_d`), so `z_c` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_tl_quotient_phase_probe.py",
@@ -271,9 +288,10 @@
       "scope": "a4_growth_bounds",
       "source": "zC = s / (s**2 + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The eigenphase exclusion extends from Laurent to ALGEBRAIC (bean `qou-cds1`).\" The enclosing scope `a4_growth_bounds` also binds convention D, so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
@@ -283,9 +301,10 @@
       "scope": "main",
       "source": "zC = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 3 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Is the ladder phase holonomy-shaped? A second-order test, and what discriminates.\" The enclosing scope `main` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py",
@@ -295,9 +314,10 @@
       "scope": "z_of",
       "source": "return mp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: the probe's exit status changed. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Bean qou-kc21im: is KC21's \"structural parity is convention-immune\" claim VERIFIED, or was it ASSERTED?\" The enclosing scope `z_of` also binds convention D (as `zd`), so `<return>` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_ladder_convention_dependence_is_one_phase_probe.py",
@@ -331,9 +351,10 @@
       "scope": "<module>",
       "source": "Z_C = sp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 1 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"qou-879g answered from the corpus, and the obstruction it exposes in the Q_beta ansatz.\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_z_convention_analytic_separation_probe.py",
@@ -343,9 +364,10 @@
       "scope": "<module>",
       "source": "Z_C = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "MEASURED, per site, not inferred from the name or a comment. An isolated copy of the repo was mutated so this binding evaluates to z_D instead of z_C, and the probe re-run: 3 assertion(s) flipped pass -> fail. So the binding is load-bearing as a COMPARISON ARM -- z_C here is a quantified candidate in a two-sided claim, not a convention the file computes in, and substituting it destroys the contrast the probe exists to make. Harness: scratchpad adj2.py, run in a detached git worktree so it could not touch the real tree; signal is a full-output diff plus True->False / PASS->FAIL detection, chosen because an earlier regex-on-'N/M checks passed' signal matched only 4 of 42 probes and was measuring the harness rather than the corpus.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Which analytic properties separate the Markov parameter's two conventions?\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/pn_splitting_proof_provenance_probe.py",
@@ -355,9 +377,10 @@
       "scope": "<module>",
       "source": "Z_C = mp.sqrt(Q0) / (Q0 + 1)                  # convention C (excised 2026-08-09)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 117 and line 140 both iterate `for cname, z in ((\"C\", Z_C), (\"D\", Z_D))` -- an explicit two-arm loop -- and line 109 prints z_C beside q0. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Provenance probe for observations/neutron-proton-mass-splitting-proof.md.\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/gram_radical_exact_probe.py",
@@ -367,9 +390,10 @@
       "scope": "main",
       "source": "zC = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 235 is `GD, GC = _gram(q, zD), _gram(q, zC)`: both Gram matrices are built, one per convention, for comparison. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The convention-D Gram radical, resolved EXACTLY — and who actually needs G^-1.\" The enclosing scope `main` also binds convention D (as `z`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/gram_ylambda_sign_check.py",
@@ -379,9 +403,10 @@
       "scope": "<module>",
       "source": "zC = 1/(s + 1/s)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 75 is `solve_for(zC, \"convention C\")` -- the arm is labelled at its own call site. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Which y_lambda vanish, and what are their SIGNS, under convention D at n=3?\" The enclosing scope `<module>` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/probes/markov_reduction_h3_to_h4_conventions.py",
@@ -391,9 +416,10 @@
       "scope": "<module>",
       "source": "Z_C = 1 / (mp.sqrt(Q) + 1 / mp.sqrt(Q))   # sqrt(q)/(q+1)  -- excised",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 178 prints |C-D|, line 181 runs `run(\"convention C (excised)\", Z_C, cache)`, and line 207 records z_C into the witness. The C arm is the measurement. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Does the Ind_{H3}^{H4} Markov reduction depend on the z convention? (qou-ze9n)\" The enclosing scope `<module>` also binds convention D (as `Z_D`), so `Z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_c3_ladder_trace_convention_sensitivity_probe.py",
@@ -403,9 +429,10 @@
       "scope": "z_of",
       "source": "return mp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: this is the `if conv == 'C': return ...` branch of the dispatcher `z_of(q, conv)`, reachable only by asking for C BY NAME -- the same shape as qbeta_utils.substrate_ladder_quantities. Removing it would make the convention argument undefined for one of its two documented values. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Owner redirect 2026-08-15: is the c_3 refutation evidence chain still valid after the compute-convention changes that landed since its probes ran?\" The enclosing scope `z_of` also binds convention D (as `zD_sym`), so `<return>` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_admissible_base_correction_search_probe.py",
@@ -415,9 +442,10 @@
       "scope": "main",
       "source": "zC = mp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 102 places zC in a labelled dict of candidate bases alongside 1/z_C and 1/[2]_q; it is one enumerated candidate among several, not the convention the probe computes in. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"is there a PARAMETER-FREE correction closing either convention-D admissible base? (bean\" The enclosing scope `main` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_d_frame_eigenphase_bar_parity_probe.py",
@@ -427,9 +455,10 @@
       "scope": "frames",
       "source": "z_c = mp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 127 iterates `for lab, z in ((\"C\", z_c), (\"D\", z_d))`, line 124 records bar(z_C) - z_C, and line 165 records C_alpha_C. The whole probe is the C-vs-D bar-parity contrast. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The D-frame ladder eigenphase is not bar-odd — the defect is exactly h²/2.\" The enclosing scope `frames` also binds convention D (as `z_d`), so `z_c` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py",
@@ -451,9 +480,10 @@
       "scope": "_symbolic",
       "source": "zC = sp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: lines 98/100/110 record zC_anomaly = zC - bar(zC), alphaC_bar_sum, and zC_bar_minus_negative_loop -- three C-specific bar-parity measurements that have no meaning if zC is z_D. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"- the ladder phase's bar-anomaly is `h * (z - bar z)`, and in convention D that is exactly `h^2`.\" The enclosing scope `_symbolic` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_ladder_phase_mirror_covariance_probe.py",
@@ -463,9 +493,10 @@
       "scope": "_numeric",
       "source": "zC = mp.sqrt(q) / (1 + q)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: the numeric arm of the same C-vs-D mirror comparison as line 94; line 127 forms aC and aCbar from it. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"- the ladder phase's bar-anomaly is `h * (z - bar z)`, and in convention D that is exactly `h^2`.\" The enclosing scope `_numeric` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/qbeta/qbeta_riesz_element_is_structurally_forced_probe.py",
@@ -487,9 +518,10 @@
       "scope": "main",
       "source": "zc = mp.sqrt(Q_MP) / (Q_MP + 1)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 179 prints `z_D/z_C - 1`; the separation between the two conventions is the quantity the probe exists to report. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Which analytic properties separate the Markov parameter's two conventions?\" The enclosing scope `main` also binds convention D (as `Z_D`), so `zc` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
     },
     {
       "path": "computations/schurweyl/ocneanu_weight_convention_d_support.py",
@@ -499,9 +531,397 @@
       "scope": "<module>",
       "source": "zC = sp.sqrt(q) / (q + 1)",
       "verdict": "comparison",
-      "rationale": "Read per site, and the consumer is named: line 93 prints the C weight and line 95 tests `(q^2-1) + z_C q (q^{2c}-1) == 0` -- a C-specific support condition, contrasted with D's. Verdict class DISCRIMINATES: substituting z_D changes this probe's output but flips no assertion, because the probe REPORTS on the C arm rather than asserting against it. That is weaker evidence than a flipped assertion, so the consumer line above -- not the substitution test -- is what this adjudication rests on.",
-      "adjudicated_by": "claude-opus-5 (session 019YaoTiLH4WC5zydwhEiQAf)",
-      "date": "2026-08-30"
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"Convention D's Markov parameter is exactly the value that kills every partition with three or more rows -- and the corpus's independent inversion path agrees.\" The enclosing scope `<module>` also binds convention D (as `zD`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py",
+      "target": "zc",
+      "source_hash": "545960f2d088",
+      "line_when_adjudicated": 244,
+      "scope": "main",
+      "source": "zc = mp.sqrt(q0) / (1 + q0)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The asserted ladder phase is not the eigenphase of ANY braid word on V_(2,1).\" The enclosing scope `main` also binds convention D (as `s2`), so `zc` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py",
+      "target": "zC",
+      "source_hash": "51825f2b4ca3",
+      "line_when_adjudicated": 298,
+      "scope": "main",
+      "source": "zC = sp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The asserted ladder phase is not the eigenphase of ANY braid word on V_(2,1).\" The enclosing scope `main` also binds convention D (as `s2`), so `zC` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_ladder_phase_mirror_covariance_probe.py",
+      "target": "zCbar",
+      "source_hash": "031bab52cdb7",
+      "line_when_adjudicated": 124,
+      "scope": "_numeric",
+      "source": "zCbar = mp.sqrt(1 / q) / (1 + 1 / q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"- the ladder phase's bar-anomaly is `h * (z - bar z)`, and in convention D that is exactly `h^2`.\" The enclosing scope `_numeric` also binds convention D (as `zD`), so `zCbar` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_when_adjudicated": 105,
+      "scope": "main",
+      "source": "z_C = mp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm. The module's own stated purpose is: \"The forced bar-odd projection does not make the ladder phase bar-odd — u/2 does not.\" The enclosing scope `main` also binds convention D (as `z_D`), so `z_C` is the C half of a two-arm comparison, not a residual C leak. Binding only z_D here would delete the comparison the module exists to make. Convention D remains canonical (owner ruling R1, 2026-08-15); this site is scoped C by construction, not by oversight.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: module docstring + audit co-binding",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/deuteron_two_body_kernel_overshoot_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_when_adjudicated": "209",
+      "scope": "locate_the_miss",
+      "source": "z_C = mp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `z_C` binds C in scope `locate_the_miss`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"where the +27 % deuteron overshoot lives. \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/gram_h3_symbolic_regression.py",
+      "target": "<return>",
+      "source_hash": "83653ad1813b",
+      "line_when_adjudicated": "72",
+      "scope": "gram_entry_symbolic_C",
+      "source": "return u / (u**2 + 1)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `gram_entry_symbolic_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"Regression guard for the symbolic H_3(q) Gram entries in `content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`.\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/binding_channel_convention_exposure_probe.py",
+      "target": "<return>",
+      "source_hash": "f84da808a965",
+      "line_when_adjudicated": "109",
+      "scope": "z_C",
+      "source": "return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"how exposed is the BINDING channel to the convention-D resolution that settled the MASS channel?\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/binding_closed_form_C_vs_D_probe.py",
+      "target": "<return>",
+      "source_hash": "f84da808a965",
+      "line_when_adjudicated": "94",
+      "scope": "z_C",
+      "source": "return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"the production closed-form binding chain under convention C vs convention D, A = 2..7.\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/binding_production_route_C_vs_D_probe.py",
+      "target": "<return>",
+      "source_hash": "f84da808a965",
+      "line_when_adjudicated": "84",
+      "scope": "z_C",
+      "source": "return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"the PRODUCTION binding route under convention C vs convention D.\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py",
+      "target": "<return>",
+      "source_hash": "f84da808a965",
+      "line_when_adjudicated": "119",
+      "scope": "z_C",
+      "source": "return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"the binding sum under the binding channel's current convention C vs the mass channel's convention D,\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/mu3_door_sign_C_vs_D_probe.py",
+      "target": "<return>",
+      "source_hash": "f84da808a965",
+      "line_when_adjudicated": "90",
+      "scope": "z_C",
+      "source": "return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"does the mu_3 door's RECORDED SIGN survive the convention-D resolution?\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/probe_convention_d_vs_c_borromean.py",
+      "target": "z_C_of_t",
+      "source_hash": "61995c285b44",
+      "line_when_adjudicated": "84",
+      "scope": "main",
+      "source": "z_C_of_t = t / (t**2 + 1)            # convention C: z = 1/(√q + 1/√q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm whose D counterpart is NOT a Markov parameter, so no z-shaped detector can pair them. This probe asks whether the Borromean single-pipeline closed form tau_pipe = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4) (Lean `BorromeanMarkovTrace`, convention D) equals the corpus-canonical Jones-Markov trace at beta_Bor (convention C, z = 1/(sqrt q + 1/sqrt q)). The D side is a derived closed form in h; only the C side is a z binding. Removing it leaves the probe with nothing to compare.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/wenzl_level_family.py",
+      "target": "zc",
+      "source_hash": "6897fbb293a0",
+      "line_when_adjudicated": "208",
+      "scope": "check_rC_at_anchor",
+      "source": "zc = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `zc` binds C in scope `check_rC_at_anchor`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"The Wenzl level family, and whether convention C belongs to it. \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py",
+      "target": "<return>",
+      "source_hash": "b33678fed70d",
+      "line_when_adjudicated": "65",
+      "scope": "z_C",
+      "source": "return mp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"the Q_β correction in the multiplicative coordinate F = Q_β/Q_A, and what the exact bridge does.\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_ck_cache.py",
+      "target": "z",
+      "source_hash": "82f7410ee65f",
+      "line_when_adjudicated": "140",
+      "scope": "main",
+      "source": "z = sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `z` binds C in scope `main`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"extract & cache c_k Taylor coefficients of Q_β at canonical q₀. \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_ladder_structure_probe.py",
+      "target": "<return>",
+      "source_hash": "b33678fed70d",
+      "line_when_adjudicated": "83",
+      "scope": "z_C",
+      "source": "return mp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"qbeta-d-frame-ladder-structure — what the Q_β ladder actually is, in both frames. \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_decay_channel_convention_status_probe.py",
+      "target": "<return>",
+      "source_hash": "b33678fed70d",
+      "line_when_adjudicated": "79",
+      "scope": "z_C",
+      "source": "return mp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"Q_beta decay channel convention registration — the numeric shadow (bean qou-b3nk). \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_ladder_required_phase_probe.py",
+      "target": "<return>",
+      "source_hash": "b33678fed70d",
+      "line_when_adjudicated": "72",
+      "scope": "z_C",
+      "source": "return mp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"what phase does the Q_β ladder actually require, and how far is each convention from it?\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_zcd_classical_coincidence_probe.py",
+      "target": "<return>",
+      "source_hash": "81bd908e04ce",
+      "line_when_adjudicated": "113",
+      "scope": "z_C",
+      "source": "return sp.sqrt(qq) / (qq + 1)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `<return>` binds C in scope `z_C`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"The C and D Markov parameters coincide at `q = 1` — and only there (bean qou-cds1). \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_zcd_classical_coincidence_probe.py",
+      "target": "markovZ_prime_C",
+      "source_hash": "869be0baf2c6",
+      "line_when_adjudicated": "217",
+      "scope": "main",
+      "source": "markovZ_prime_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `markovZ_prime_C` binds C in scope `main`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"The C and D Markov parameters coincide at `q = 1` — and only there (bean qou-cds1). \" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/schur_principal_mpmath.py",
+      "target": "z_markov",
+      "source_hash": "79c2bdd83833",
+      "line_when_adjudicated": "123",
+      "scope": "_wenzl_constants_convention_C_HISTORICAL",
+      "source": "z_markov = 1 / (sq + 1 / sq)",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C comparison arm, co-bound at FILE level rather than within the scope. `z_markov` binds C in scope `_wenzl_constants_convention_C_HISTORICAL`, and the same file separately binds convention D (typically a sibling `def z_D` beside a `def z_C`), which the audit's scope-local co-binding hint cannot see. Module purpose: \"mpmath-native fast path for the Wenzl-bridge Schur principal specialization + y_λ(q_0) computation.\" Binding only z_D would delete the C half of the comparison. Convention D remains canonical (owner ruling R1, 2026-08-15).",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: file-level D binding / stated D closed form",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/ocneanu_param_from_fibre_dimension.py",
+      "target": "z_c",
+      "source_hash": "dd1ca8095ef4",
+      "line_when_adjudicated": "178",
+      "scope": "check_convention_c",
+      "source": "z_c = 1 / (sqrt(q) + 1 / sqrt(q))   # EXCISED — audited here, not used",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C retention, and the module says so at the site: \"EXCISED -- audited here, not used\". Its purpose is RECOGNITION, not computation: the weights the corpus once quoted are the ones z_C actually produces, so keeping this arm is what lets a reader identify a surviving C-era number wherever it turns up. Deleting it would remove that ability, which is the opposite of what excision is for. Note on why no pairing test finds this file's D arm: it is written in the parametrised fibre form z = q^N/[N]_q (equal to q^3/(q^2+1) at N=2), not the N=2 literal -- a third spelling beyond taxonomy rows 18 and 19.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: in-function docstring + refutation shape",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/ocneanu_param_from_fibre_dimension.py",
+      "target": "z_c",
+      "source_hash": "9e078dc33ffd",
+      "line_when_adjudicated": "202",
+      "scope": "check_effective_N",
+      "source": "z_c = 1 / (sqrt(q) + 1 / sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "Deliberate convention-C retention: this check REFUTES z_C, by showing N_eff(z_C) is not an integer, i.e. z_C is not the Ocneanu parameter of any integer-dimensional fibre. The refutation is about z_C, so it cannot be stated without binding z_C. Note on why no pairing test finds this file's D arm: it is written in the parametrised fibre form z = q^N/[N]_q (equal to q^3/(q^2+1) at N=2), not the N=2 literal -- a third spelling beyond taxonomy rows 18 and 19.",
+      "adjudicated_by": "claude (session 2b6a2d13), evidence: in-function docstring + refutation shape",
+      "date": "2026-08-29",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/probes/probe_h3_central_idempotents_exact.py",
+      "target": "z_C",
+      "source_hash": "1f492232b19e",
+      "line_at_adjudication": 160,
+      "scope": "main",
+      "rationale": "Two-arm C-vs-D comparison whose D arm lives in LEAN, not in this file. The probe's A5 assertion checks tr_C(pi_lambda) = w_lambda(t)*d_lambda against the Markov-forced weights of the Lean `BorromeanCanonicalTraceDerivation` (`trC_borromean_derived`), which is the convention-C arm of a deliberately-maintained C/D pair; the D arm is `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D != C sorry-free. So z_C here is the object under comparison, not residual C: binding z_D would make the probe compare the D value against the Lean C weights and assert a known-false equality. RESOLVES the in-file note of 2026-08-10, which feared the reverse (that the Lean side had moved to D leaving this comparison mismatched). Evidence is the probe's own exact-symbolic PASS: because D != C is a THEOREM, a mismatched pairing could not pass, so the Lean weights it cites are necessarily C. Verified by running it (A5 traces: True, 4/4 assertions)."
+    },
+    {
+      "path": "computations/probes/mayer_threebody_sign_threshold_probe.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_at_adjudication": 74,
+      "scope": "z_of",
+      "rationale": "Two-arm frame-comparison helper `z_of(q, convention)`: the D arm returns the canonical `markov_z(q) = q**3/(q**2+1)`, the C arm returns `sqrt(q)/(q+1)`, and the probe evaluates BOTH to show its 2/3 threshold verdict is convention-independent. The function's own docstring scopes the C arm: 'excised, computed here ONLY to show the threshold verdict is convention-independent'. Binding only z_D would delete the comparison the probe exists to make -- the verdict's convention-independence is the result. Instance of taxonomy ROW 17 (the D arm is a CALL to the canonical helper, not an inline re-spelling, so the co-binding test sees no D-shaped expression in scope); same shape as the already-adjudicated he4_body_order_shortfall_location_probe.z_of, which is row 17's worked example."
+    },
+    {
+      "path": "computations/qbeta/qbeta_utils.py",
+      "target": "<return>",
+      "source_hash": "621de16c7521",
+      "line_at_adjudication": 83,
+      "scope": "markov_parameter_convention_C",
+      "rationale": "This IS the sanctioned named convention-C source. `markov_parameter_convention_C` exists precisely so that a deliberate C consumer is greppable rather than inlining sqrt(q)/(1+q); flagging its own return as residual C would be flagging the guard for doing its job, and migrating it to z_D would make the function a liar to every caller that asks for C by name. The registry registers this symbol under `evaluators.z` as C so R9 asserts z_C numerically on every validator run. Newly VISIBLE (not newly introduced) on 2026-08-30: the helper was mpmath-only and raised TypeError on a sympy Symbol, so symbolic consumers had to inline C and were invisible to the guard (taxonomy row 21); adding the sympy branch is what put this return in the audit's view. The mpmath arm at the same site is the identical object in the other numeric tower."
+    },
+    {
+      "path": "computations/probes/toffoli_diagonal_convention_frame_probe.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_at_adjudication": 61,
+      "scope": "z_C",
+      "rationale": "Two-arm C-vs-D comparison with BOTH arms as sibling defs in the same file: `def z_C` at :60 (docstring 'Convention C, excised 2026-08-09') and `def z_D` at :64 returning q**3/(q**2+1). The probe asks whether the q-GoL golden-ratio threshold is convention-dependent and PRINTS both values side by side ('same recipe, z_D = ...'). Binding only z_D deletes the comparison the probe exists to make. Taxonomy ROW 18 (sibling-def spelling: scope-local co-binding sees neither arm from the other)."
+    },
+    {
+      "path": "computations/qbeta/qbeta_bar_parity_of_the_decay_trace_probe.py",
+      "target": "zC",
+      "source_hash": "adfb5f133f3c",
+      "line_at_adjudication": 134,
+      "scope": "main",
+      "rationale": "Two-arm comparison, co-bound in one scope: zD = q**3/(q**2+1) at :133 immediately above zC at :134. The probe's conclusion is explicitly about the C arm -- :160 reports the bar-parity 'identity fails for z_C (markov_z_full_bar_condition_probe)' -- so z_C is the object under test and removing it removes the finding. The audit already tags this site [co-bound with z_D]; co-binding is reported but does not by itself exempt, hence the explicit adjudication."
+    },
+    {
+      "path": "computations/probes/toffoli_published_vs_construction_audit.py",
+      "target": "_zC",
+      "source_hash": "90ede994d1a1",
+      "line_at_adjudication": 97,
+      "scope": "<module>",
+      "rationale": "NOT residual C: this probe (bean qou-3j5m) independently reconstructs THE ONLY RECORDED CONSTRUCTION, `computations/_deprecated/toffoli-braid.py`, and compares three things -- its reconstruction, the producer's committed witness, and the values published in the content blocks. All three are convention-C-era artefacts. The reconstruction matches the producer EXACTLY (symbolic zero, both diagonals), which is what establishes the recipe as the framework's; rebuilding it with z_D would compare against a construction nobody recorded and would destroy the audit's purpose, which is to locate a published-vs-construction discrepancy (3 of 4 published entries do not match). Same class as probe_h3_central_idempotents_exact: reproducing a DEFINED C-era object, not carrying residual C."
+    },
+    {
+      "path": "computations/gram_h3_det_factorization.py",
+      "target": "<return>",
+      "source_hash": "070d0c725249",
+      "line_at_adjudication": 55,
+      "scope": "build_gram_h3_symbolic",
+      "rationale": "Mirrors a LEAN-DEFINED object and must track it, not be migrated independently. The script emits the witness discharging `gramMatrix_det_ne_zero`, whose Gram entries are fixed by the Lean side; `u/(u**2+1)` is the generic-u spelling of the Markov kernel, matching Lean `markovKernel (u : R) := u / (u ^ 2 + 1)` in MarkovConventionSeparation.lean. Per AGENTS.md the Tier-2 migration that replaced `Real.sqrt q` with a generic `markovZ (u : R)` DID NOT change the convention -- it removed the square root and left C harder to see -- so this is convention C in the generic-u disguise. Migrating the Python alone would DESYNCHRONISE the witness from the theorem it discharges. The Lean-side C surface is tracked separately as qou-cxjq; this site should move when that does, and not before."
+    },
+    {
+      "path": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
+      "target": "z_naive",
+      "source_hash": "b3ed07382e4a",
+      "line_at_adjudication": 131,
+      "scope": "main",
+      "rationale": "`z_naive` is one of the two PARAMETER-FREE magnitudes the probe fixes BEFORE comparison under its stated anti-fit discipline (the other is g_reeb); it is the object under study, named 'naive' precisely to mark it as the unrefined candidate being tested against the derived reeb magnitude and the 1/sqrt(5) ceiling. Substituting z_D would test a different candidate and invalidate the recorded comparison. Adjacent finding recorded in the source, not migrated: the companion `z_bar_even` assertion is VACUOUS -- z_bar differs from z_naive only by commuting the addition, so the difference is exactly 0 and the assertion cannot fail. The claim is true (z is bar-even) but the symmetry is syntactic, so no formulation of that test can be non-vacuous; g_bar_even by contrast is a genuine algebraic identity check. Labelled in situ so the witness's two assertions are not read as equally strong."
+    },
+    {
+      "path": "computations/probe3qrv_zpin.py",
+      "target": "z_C",
+      "source_hash": "fb43b1fe0f92",
+      "line_at_adjudication": 73,
+      "scope": "<module>",
+      "rationale": "The probe's entire subject is the C-vs-D selection: its docstring states the test as 'ONE equation in ONE unknown -- if it has a unique solution z_D, and the weight vector at z_D equals the Jones-closure vector, then convention D is [selected]', and :71 records the result, 'NOT a root of y_(1^3) = 0 while z_D is -- i.e. the two-row forcing selects D'. z_C is the arm being tested AGAINST and its exclusion is the finding. Binding z_D deletes the comparison that produced the corpus's own evidence for D."
+    },
+    {
+      "path": "computations/probes/casimir_phi_q_markov_probe.py",
+      "target": "z_M_v1",
+      "source_hash": "8bb7d434c4a1",
+      "line_at_adjudication": 125,
+      "scope": "main",
+      "rationale": "One of THREE tabulated convention variants, declared as such in the source: :123 'Markov parameter -- multiple conventions; tabulate them', and the witness description at :220 records 'candidates z_M (three convention variants), and mixed'. The probe exists to tabulate the variants side by side; keeping only one defeats the tabulation."
+    },
+    {
+      "path": "computations/lw2_c2_independent_hopf_test_attempt.py",
+      "target": "z",
+      "source_hash": "0a4acf4fc781",
+      "line_at_adjudication": 96,
+      "scope": "main",
+      "rationale": "The z of the CORPUS CLOSED FORM being cross-checked, not residual C. The probe verifies tr_M(σ₁²) = (q-q⁻¹)z + 1 against the closed form of trm-hopf-sigma1-sq-closed-form.md, which is proved over ℚ(q^{1/2}) WITH z = 1/(√q + 1/√q); it then cross-checks a second, independent q-Schur Plancherel decomposition of the same object. Measured: the quantity is NOT C/D-invariant -- z_C gives 1.1043880582592 and matches the closed form, z_D gives 1.1280887441144 and does not -- so substituting z_D would test the closed form against a value it was never proved to equal. ALSO LABELLED IN SITU: the adjacent comment 'Identical in Wenzl and q-Schur conventions at H₂' is true but is about the WENZL-vs-Q-SCHUR axis, not C-vs-D; sitting one line above this binding it reads as a convention-safety clearance it does not provide."
     }
   ]
 }

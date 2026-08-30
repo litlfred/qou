@@ -1,11 +1,11 @@
 ---
 # qou-zlvr
 title: 'Three q-NS conjecture carriers asserted nothing about their subject (PR #6099)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T03:50:55Z
-updated_at: 2026-08-30T03:50:56Z
+updated_at: 2026-08-30T09:05:51Z
 ---
 
 PR #6099 (draft), branch `claude/upstream-vacuous-carriers-2026-08-30`.
@@ -37,3 +37,20 @@ refreshed; zero consumers of any changed declaration.
 
 Still open and untouched: the value of β — which branch of conj:levi-degeneracy
 obtains — remains the conjecture's open content.
+
+COMPLETED — PR #6099 merged 2026-08-30.
+
+All three fluid-dynamics carriers landed parametrised by the objects their .md
+is about, with consistency witnesses and six negative controls:
+QAubinLions, RegularityBreakdown, and LeviGrowthTrichotomy (whose beta is now
+tied to condNumber by a two-sided limsup, earning
+bounded_condNumber_forces_beta_zero).
+
+Re-measured after the merge: scripts/unbounded-quantifier-audit.py reports 0
+candidates over 57 files across fluid-dynamics/ and lean/QOU/FluidDynamics/.
+The q-NS carriers no longer assert nothing.
+
+Scope note, so this is not over-read: this closed STATEMENT HYGIENE, not
+mathematics. None of the six walls in qou-innq moved. What changed is that
+wall 3 (the Levi branch value beta) is now EXPRESSIBLE in Lean, which it was
+not before.

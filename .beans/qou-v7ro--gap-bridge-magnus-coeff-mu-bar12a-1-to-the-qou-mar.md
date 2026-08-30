@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T03:30:41Z
+updated_at: 2026-08-30T09:24:19Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -89,3 +89,36 @@ REFUTED by the probe (messy rational, not affine) - the recursion is the full 4-
 Caught pre-durable; Lean+PR unaffected. STATUS: -h^2 derived at operator level; the (h^2+2)
 trace-assembly + forall-A Brunnian induction (a concrete TL statement, NOT the weight-system
 bridge) remain open. No instance.
+
+
+
+--- 2026-08-30 MERGED (#6077 f50bd72b03) + ∀A reduction ---
+PR #6077 rebase-merged to main: A=4 slice PROVED, recursion verified A=3-6, reduction Lean
+(recursion=>∀A tight slice) proved, operator-level -h^2(h^2+2) derivation (A=3). Also carried
+the dp32 Magnus commits (MagnusPairingSignStructure.lean) -> #6057 now redundant (noted there).
+
+∀A PROOF PROGRESS (milnor_recursion_forall_A_reduction_probe.py, verified A=3,4): 3 of 4 qtr-terms
+proven A-INDEPENDENT ([2]^A): T1 loop-closure, T2 via [rho(braid),mu]=0, T3 scalar q^2h-hq^-2=h^2[2].
+Recursion collapses EXACTLY to ONE identity (star-star): qtr_{A+1}(W e_A W^-1 e_A)=[2]^{A+1}(1-u)+u[2]qtr_A(W0),
+u=q^2+q^-2. HONEST: an earlier conditional-expectation reduction of star-star's LHS was WRONG
+(verification caught it); star-star is for the DIRECT 4th-term qtr. Recursive handle
+E_A(w_A^-1)=E_A(b w_{A-1} b^-1)w_{A-1}^-1 verified (A=4). REMAINING: prove star-star ∀A (the single
+open step). NOT yet ∀A-proven; no instance fabricated.
+
+## 2026-08-30 (merged #6135, 3dd1ba12fb) — cap-cup weight corrected to μ⁻¹; (★★) pinned to trace level
+
+The ∀A recursion D_{A+1}=−h²(h²+2)D_A is reduced to ONE identity and no further:
+- 3 of 4 qtr-terms A-independent ∀A (qtr(e_A)=qtr(We_AW⁻¹)=[2]^A; scalar q²h−hq⁻²=h²[2]).
+- The clean algebra (★★)⟹recursion is rigorous ∀A (eliminate the 4th term ⇒ 1−D_A=1+h²u·D_{A-1}).
+- (★★) ⟺ trace identity (†'') qtr_{A-1}(P·F)=[2]^{A+1}(1−u)+u[2]qtr_{A-1}(P),
+  P=ptr_μ(ρ(w_A)), F=ptr_{μ⁻¹}(ρ(w_A)⁻¹). Verified A=3,4.
+
+Corrections vs last session (probe milnor_recursion_capcup_weight_probe.py, exact ℚ(q)):
+- Cap-cup contraction weight is μ⁻¹, NOT μ. Clean sub-lemma ptr_{μ⁻¹}(e)=1; ptr_μ(e)=diag(q⁻²,q²).
+  μ-weighted control fails — that was last session's bug.
+- (†'') is a genuine TRACE identity: matrix form P·F=[2]²(1−u)1+u[2]P is FALSE at A=3,4.
+  ⇒ the ∀A proof must be a trace/Brunnian argument, not linear algebra.
+- No affine collapse: P not in span{1,ρ(w_{A-1}),ρ(w_{A-1})⁻¹}. Brunnian closures constrain but don't collapse.
+
+STILL OPEN ∀A: proving (†''). No BrunnianDeficitRecursion instance created. Recursive handle
+E_A(w_A⁻¹)=E_A(b·w_{A-1}·b⁻¹)·w_{A-1}⁻¹ (b=A_{A-1,A}, verified A=4) is the induction skeleton.
