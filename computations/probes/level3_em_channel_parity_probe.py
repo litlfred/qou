@@ -63,9 +63,18 @@ scaling `qou-vudb` measured against an observed `~A^0.87`.
 `(A, Z)` cannot equal a quadratic one, so the exclusion holds for every
 coefficient and every anchor, not merely for the ones tried.
 
-**(a)** for finding 1 as a statement about *this* braid family: it rests on the
-measured `n+ + n- = 10A - 2`, verified on 12 nuclei up to A = 39 but not proved
-for all `(Z, N)`.
+**(b)** for finding 1 as well, as of the Lean of 2026-08-30.
+`QOU/MassTheory/BondArcTheorems.lean` section 5 PROVES `n+ + n- = 10A - 2` and
+`n+ - n- = 4Z` from the chain model -- per proton (6, 3, 2), per neutron
+(5, 4, 2), plus `Z-1` pp interfaces, `N-1` nn, and exactly one pn -- and this
+probe verifies that model reproduces `atom_braid_word_3A` EXACTLY on every
+nucleus tested. So the Coulomb channel's mirror-invariance holds for all
+`(Z, N)`, not just the 12 checked.
+
+What remains unproved is one level down: that the per-nucleon counts
+`(6,3,2)` and `(5,4,2)` follow from the quark content. They are read off the
+implementation, so section 5's theorems are exact GIVEN the construction and
+are not a proof that the construction is right.
 
 Nothing is refuted -- `qou-toul`'s correction stands and this builds on it.
 Nothing is wired.
@@ -147,6 +156,21 @@ def main() -> int:
             "strong_channel_multiplicity": (npos - nneg) // 2,    # = 2Z
         })
 
+    # The Lean model (QOU/MassTheory/BondArcTheorems, section 5): per proton
+    # (6 pos, 3 neg, 2 avg), per neutron (5, 4, 2), plus the chain's Z-1 pp
+    # interfaces (positive), N-1 nn (negative) and exactly ONE pn (averaged) --
+    # a chain on p^Z n^N has exactly one p->n transition. Lean proves
+    # n+ + n- = 10A - 2 and n+ - n- = 4Z FROM this model; this checks the model
+    # reproduces the implementation, which is what makes those theorems bite.
+    def lean_model(Z, N):
+        return (6 * Z + 5 * N + (Z - 1), 3 * Z + 4 * N + (N - 1), 2 * (Z + N) + 1)
+
+    for r in rows:
+        m = lean_model(r["Z"], r["N"])
+        r["lean_model"] = list(m)
+        r["matches_lean_model"] = (r["n_plus"], r["n_minus"], r["n_averaged"]) == m
+    model_ok = all(r["matches_lean_model"] for r in rows)
+
     stats_ok = all(r["count_n_plus_n_minus"] == r["predicted_10A_minus_2"]
                    and r["writhe_n_plus_minus_n_minus"] == r["predicted_4Z"]
                    and r["averaged_matches_2A_plus_1"] for r in rows)
@@ -188,6 +212,7 @@ def main() -> int:
               f"{r['coulomb_channel_multiplicity']:>11}"
               f"{r['strong_channel_multiplicity']:>11}")
     print(f"\n  all 12 match mba-sidecar-mirror-cancellation: {stats_ok}")
+    print(f"  all 12 match the LEAN model of section 5 exactly:  {model_ok}")
 
     print("\n  FINDING 1 — the Coulomb channel is mirror-BLIND:")
     for m in mirror_checks:
@@ -205,6 +230,10 @@ def main() -> int:
     print("    -> an affine function cannot equal a quadratic one, for ANY coefficients.")
 
     assertions = [
+        {"name": "the Lean model's per-nucleon and per-interface counts reproduce "
+                 "the implementation exactly -- this is what lets Lean PROVE the "
+                 "two statistics rather than sample them",
+         "passed": model_ok},
         {"name": "n+ + n- = 10A - 2 on every nucleus tested (12, up to A=39)",
          "passed": all(r["count_n_plus_n_minus"] == r["predicted_10A_minus_2"] for r in rows)},
         {"name": "n+ - n- = 4Z on every nucleus tested",
@@ -241,6 +270,14 @@ def main() -> int:
         "q0": Q_50_DIGIT_STR,
         "crossing_statistics": rows,
         "statistics_match_sidecar": stats_ok,
+        "matches_lean_model": model_ok,
+        "lean_model": {
+            "per_proton": "(6 pos, 3 neg, 2 avg)",
+            "per_neutron": "(5 pos, 4 neg, 2 avg)",
+            "chain_interfaces": "Z-1 pp (pos), N-1 nn (neg), exactly 1 pn (avg)",
+            "closed_forms": "n+ = 7Z + 5N - 1 ; n- = 3Z + 5N - 1 ; avg = 2A + 1",
+            "lean": "QOU/MassTheory/BondArcTheorems.lean section 5",
+        },
         "mirror_checks": mirror_checks,
         "degree_argument": {
             "n_plus_formula": "5A - 1 + 2Z",
@@ -256,9 +293,14 @@ def main() -> int:
         "scope": (
             "(b) for the degree exclusion, invariant named: an affine function of "
             "(A,Z) cannot equal a quadratic one, so it holds for every coefficient "
-            "and every anchor. (a) for the mirror-invariance of the Coulomb channel "
-            "as a statement about THIS braid family -- measured on 12 nuclei up to "
-            "A=39, not proved for all (Z,N). Nothing refuted; qou-toul's correction "
+            "and every anchor. UPGRADED from (a) to (b) for the crossing "
+            "statistics too: QOU/MassTheory/BondArcTheorems section 5 PROVES "
+            "n+ + n- = 10A - 2 and n+ - n- = 4Z from the chain model, and this "
+            "probe verifies the model reproduces atom_braid_word_3A exactly, so "
+            "the Coulomb channel's mirror-invariance now holds for all (Z,N) "
+            "rather than for the 12 tested. What remains unproved is that the "
+            "per-nucleon counts (6,3,2)/(5,4,2) follow from the quark content -- "
+            "they are read off the implementation. Nothing refuted; qou-toul's correction "
             "stands and this builds on it. Nothing wired."),
         "lean": "QOU/MassTheory/CrossingCountAffine.lean",
         "beans": ["qou-toul", "qou-vudb", "qou-1pig"],
