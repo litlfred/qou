@@ -361,6 +361,21 @@ def gate_sparse_vs_dense(shapes, verbose=True):
 # ── main pairing computation (sparse, matrix-free) ───────────────────────────
 
 
+def _aggregate_P(rows):
+    """(P_total, P_ctrl) = Σ_λ y_λ·tr(ρΩ₂), Σ_λ y_λ·tr(Ω₂) from row records.
+
+    Each row carries y_λ, tr(ρΩ₂), tr(Ω₂) as fmt-strings, so P is reproducible
+    from the checkpoint alone — the aggregation never depends on in-memory mpf
+    accumulators that a reclaim would lose."""
+    P_total = mp.mpf(0)
+    P_ctrl = mp.mpf(0)
+    for r in rows:
+        y = mp.mpf(r["y_lambda"])
+        P_total += y * mp.mpf(r["tr_rho_Omega2"])
+        P_ctrl += y * mp.mpf(r["tr_Omega2_ctrl"])
+    return P_total, P_ctrl
+
+
 def _partition_contribution(shape, gens):
     """Per-partition worker: returns (row_dict, y*tr_rO, y*tr_O, tr_rO, hcheck).
 
@@ -421,43 +436,73 @@ def _pool_worker(args):
     return _partition_contribution(shape, gens)
 
 
-def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, workers=1):
+def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, workers=1,
+                     checkpoint=None):
     """Compute P = Σ_λ y_λ tr(ρ_λ Ω₂_λ) over λ ⊢ n_strands, matrix-free.
 
     workers>1 dispatches the independent partitions across a process pool
-    (biggest-first so the long-pole partition starts immediately)."""
+    (biggest-first so the long-pole partition starts immediately).
+
+    checkpoint: path to a JSONL file. Each completed partition's row (which
+    carries y_λ, tr(ρΩ₂) and the control as fmt-strings — everything needed to
+    re-aggregate) is appended and flushed as it lands, and on start any rows
+    already present are loaded and their partitions skipped. This makes the run
+    resumable across container reclaims: re-invoking the same command banks the
+    partitions already done and only recomputes the ones still missing."""
     parts = list(partitions(n_strands))
     parts_sorted = sorted(parts, key=_dim_estimate, reverse=True)  # long-pole first
     rows_by_shape = {}
-    P_total = mp.mpf(0)
-    P_ctrl = mp.mpf(0)
     worst_hcheck = mp.mpf(0)
     t0 = time.time()
-    done = 0
+
+    # resume from checkpoint
+    ckpt_fh = None
+    if checkpoint:
+        if os.path.exists(checkpoint):
+            with open(checkpoint) as fh:
+                for line in fh:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    rec = json.loads(line)
+                    rows_by_shape[tuple(rec["lambda"])] = rec
+            print(f"{log_prefix}  resumed: {len(rows_by_shape)}/{len(parts)} partitions "
+                  f"already in {os.path.basename(checkpoint)}", flush=True)
+        ckpt_fh = open(checkpoint, "a")
+
+    todo = [s for s in parts_sorted if tuple(s) not in rows_by_shape]
+    done = len(rows_by_shape)
 
     def _record(res):
-        nonlocal P_total, P_ctrl, worst_hcheck, done
+        nonlocal worst_hcheck, done
         row, dP, dC, tr_rO, hcheck, dim, nnz = res
         rows_by_shape[tuple(row["lambda"])] = row
-        P_total += dP
-        P_ctrl += dC
         worst_hcheck = max(worst_hcheck, hcheck)
         done += 1
+        if ckpt_fh is not None:
+            ckpt_fh.write(json.dumps(row) + "\n")
+            ckpt_fh.flush()
+            os.fsync(ckpt_fh.fileno())
         el = time.time() - t0
+        Prun = _aggregate_P(rows_by_shape.values())[0]
         print(f"{log_prefix}  [{done:>2}/{len(parts)}] {str(tuple(row['lambda'])):>28} dim={dim:>5} "
               f"nnzΩ2rows={nnz:>5}  tr(ρΩ2)={mp.nstr(tr_rO,6):>14}  "
-              f"[P={mp.nstr(P_total,6)}]  {el:7.1f}s", flush=True)
+              f"[P={mp.nstr(Prun,6)}]  {el:7.1f}s", flush=True)
 
-    if workers > 1:
-        import multiprocessing as _mp
-        with _mp.Pool(workers) as pool:
-            for res in pool.imap_unordered(_pool_worker, [(s, gens) for s in parts_sorted]):
-                _record(res)
-    else:
-        for shape in parts_sorted:
-            _record(_partition_contribution(shape, gens))
+    if todo:
+        if workers > 1:
+            import multiprocessing as _mp
+            with _mp.Pool(workers) as pool:
+                for res in pool.imap_unordered(_pool_worker, [(s, gens) for s in todo]):
+                    _record(res)
+        else:
+            for shape in todo:
+                _record(_partition_contribution(shape, gens))
+    if ckpt_fh is not None:
+        ckpt_fh.close()
 
     rows = [rows_by_shape[tuple(s)] for s in parts]  # canonical partition order
+    P_total, P_ctrl = _aggregate_P(rows)
     ctrl_ok = abs(P_ctrl) < _EXACT
     P_sign = 0 if abs(P_total) < _EXACT else (1 if P_total > 0 else -1)
     npos = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) > _EXACT)
@@ -499,7 +544,7 @@ def run_gate():
     return True
 
 
-def run_he4(workers=1):
+def run_he4(workers=1, checkpoint=None):
     from mass_at_3A_proper import atom_braid_word_3A
     triples = atom_braid_word_3A(2, 2)
     gens = [int(t[2]) for t in triples]
@@ -517,7 +562,10 @@ def run_he4(workers=1):
 
     print(f"[he4] word: {mult}  ({len(gens)} crossings, 12 strands, H₁₂; 77 partitions; "
           f"{workers} worker(s))", flush=True)
-    res = pairing_for_word(gens, 12, log_prefix="[he4]", a_baseline_sign=a3_sign, workers=workers)
+    if checkpoint is None:
+        checkpoint = os.path.join(os.path.dirname(__file__), "he4-magnus-omega2-sign.checkpoint.jsonl")
+    res = pairing_for_word(gens, 12, log_prefix="[he4]", a_baseline_sign=a3_sign,
+                           workers=workers, checkpoint=checkpoint)
     P_total, P_ctrl = res["P_total"], res["P_ctrl"]
     P_sign, npos, nneg = res["P_sign"], res["npos"], res["nneg"]
     ctrl_ok = res["ctrl_ok"]
@@ -641,6 +689,8 @@ def main():
     ap.add_argument("--full", action="store_true", help="run gate then the full H₁₂ ⁴He")
     ap.add_argument("--workers", type=int, default=1, help="process-pool size for the H₁₂ partitions")
     ap.add_argument("--skip-gate", action="store_true", help="skip the gate (gate already passed)")
+    ap.add_argument("--checkpoint", default=None,
+                    help="JSONL checkpoint path (resumable across reclaims; default alongside the witness)")
     args = ap.parse_args()
     if args.gate:
         run_gate()
@@ -648,7 +698,7 @@ def main():
     # default and --full: gate first (unless already verified), then He4
     if not args.skip_gate:
         run_gate()
-    run_he4(workers=args.workers)
+    run_he4(workers=args.workers, checkpoint=args.checkpoint)
 
 
 if __name__ == "__main__":
