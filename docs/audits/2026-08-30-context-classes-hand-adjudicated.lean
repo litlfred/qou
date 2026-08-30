@@ -51,6 +51,8 @@ import QOU.Hecke.InstanceH2
 import QOU.Hecke.MarkovTrace
 import QOU.Shared.MarkovTraceClaim
 import QOU.BraidsAndKnots.explicit_alpha_k_h4
+import QOU.BraidsAndKnots.qmn_recursive_memoized
+import QOU.BraidsAndKnots.wedderburn_bratteli_recursion
 
 /-! ## Inhabited with no hypotheses
 
@@ -278,7 +280,7 @@ open QOU.Hecke.InstanceH2 in
 /-- **`QOU.Shared.MarkovTraceContext` is inhabited**, at `R = A = ℚ`, `q = 1`.
 Every `extends MarkovTraceContext` class in the corpus can be built from this,
 so the parent contributes nothing to any of them. -/
-noncomputable def degenerateMarkovTraceContext : QOU.Shared.MarkovTraceContext where
+noncomputable instance degenerateMarkovTraceContext : QOU.Shared.MarkovTraceContext where
   R := ℚ
   ringR := inferInstance
   invR := inferInstance
@@ -296,3 +298,47 @@ noncomputable example : QOU.BraidsAndKnots.ExplicitAlphaKH4Context where
   toMarkovTraceContext := degenerateMarkovTraceContext
   n_classes := 5
   claim_explicit_alpha_k_h4 := rfl
+
+/-! ### An elaboration note that costs an hour if you don't know it
+
+`degenerateMarkovTraceContext` must be an `instance`, not a `def` or even a
+reducible `abbrev`.  A child class whose field types mention the INHERITED ring
+— `chi : ℕ → ℕ → R` — elaborates that `R` as `@MarkovTraceContext.R inst` with
+`inst` found by *instance search*, not from the term supplied for
+`toMarkovTraceContext`.  With a `def` the search fails and every numeral field
+reports `failed to synthesize OfNat QOU.Shared.MarkovTraceContext.R 0`, which
+reads like a missing algebraic instance and is really a missing context
+instance.  Type-ascribing the numerals does not help; nor does `{ ctx with … }`.
+
+That is why `ExplicitAlphaKH4Context` above went through immediately while the
+two below did not: its only field is `n_classes : ℕ`, a type that never mentions
+the parent's `R`. -/
+
+/-- Memoised Murnaghan–Nakayama: the cache identity holds when the character
+and its recursion are both zero, and the cache invariant holds vacuously with
+`cache_get` returning `none` everywhere — so "the stored result is faithful"
+constrains nothing when nothing is ever stored. -/
+noncomputable example : QOU.BraidsAndKnots.QmnRecursiveMemoizedContext :=
+  { degenerateMarkovTraceContext with
+    chi := fun _ _ => (0 : ℚ)
+    chi_recursion := fun _ _ => (0 : ℚ)
+    claim_i_looks_up_cache := fun _ _ => rfl
+    claim_ii_miss_computes_via := True
+    claim_ii_miss_computes_via_holds := trivial
+    cache_get := fun _ _ => (none : Option ℚ)
+    claim_iii_stores_result_cache := by intro _ _ v h; simp at h }
+
+/-- Bratteli recursion: per-row monotonicity, sign tracking and the ε-N limit
+all hold at the constant-zero ratio with `z_real := 0`.  The limit claim is the
+only one with analytic shape and it is satisfied by a constant sequence. -/
+noncomputable example : QOU.BraidsAndKnots.WedderburnBratteliRecursionContext :=
+  { degenerateMarkovTraceContext with
+    y_lambda := fun _ _ => (0 : ℚ)
+    ratio := fun _ => 0
+    claim_i_per_row_monotonicity := fun _ => le_refl 0
+    q_content_sign := fun _ => 0
+    claim_ii_sign_tracking_added := by intro _; norm_num
+    z_real := 0
+    diagonal_ratio_n := fun _ => 0
+    claim_iii_trivial_rep_limit := by
+      intro ε hε; exact ⟨0, fun n _ => by simpa using hε⟩ }

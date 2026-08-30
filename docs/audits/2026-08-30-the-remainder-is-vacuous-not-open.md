@@ -23,9 +23,9 @@ whole remainder assessment — it is what makes the job a week rather than a
 session, and it is what makes "do the research" the natural next step. So it is
 worth measuring before spending the week.
 
-## Result: 38 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
+## Result: 40 of the 79 classes are inhabited by `Unit` and zero — including all three the sizing audit named
 
-**26 by machine, 12 more by hand** (see "the method is per-class hand construction" below).
+**26 by machine, 14 more by hand** (see "the method is per-class hand construction" below).
 
 The 90 findings sit on **80 distinct context classes** (79 named, plus 4
 declarations with no instance binder at all). Probing each one by generating the
@@ -34,8 +34,8 @@ most trivial model available and asking `lean` whether it type-checks:
 | | |
 |---|---|
 | classes probed | 79 |
-| **INHABITED with no hypotheses** | **38** (26 machine + 12 hand) |
-| still undecided — INCONCLUSIVE, see method below | 41 |
+| **INHABITED with no hypotheses** | **40** (26 machine + 14 hand) |
+| still undecided — INCONCLUSIVE, see method below | 39 |
 | hand-verified before any tooling existed | 5 of 5 |
 
 **All three classes the sizing audit named** — `KnotOperatorSelectionContext`,
@@ -272,7 +272,19 @@ work, already on `main`) supplies `rankOneModel`, showing `ℚ` is a
 vanishes, so the class is satisfied by a rank-1 algebra where `H_n(1)` has
 dimension `n!`. Added here: the same model carries a **Markov trace**
 (`trace = id`, `z = 1`), hence a `MarkovTraceContext`. `ExplicitAlphaKH4Context`
-follows immediately, and the remaining four are mechanical.
+follows immediately; `QmnRecursiveMemoizedContext` and
+`WedderburnBratteliRecursionContext` follow after one elaboration obstacle worth
+recording.
+
+**The parent must be an `instance`, not a `def`.** A child whose field types
+mention the *inherited* ring (`chi : ℕ → ℕ → R`) elaborates that `R` as
+`@MarkovTraceContext.R inst` with `inst` found by **instance search**, not from
+the term supplied for `toMarkovTraceContext`. With a `def` every numeral field
+reports `failed to synthesize OfNat QOU.Shared.MarkovTraceContext.R 0` — which
+reads as a missing algebraic instance and is really a missing *context*
+instance. Ascribing the numerals does not help, nor does `{ ctx with … }`.
+`ExplicitAlphaKH4Context` sailed through only because its one field is
+`n_classes : ℕ`, a type that never mentions `R`.
 
 The credit is theirs and the finding is the same one twice over, one layer
 apart: a hypothesis that reads as "this is the Hecke algebra with its Markov
