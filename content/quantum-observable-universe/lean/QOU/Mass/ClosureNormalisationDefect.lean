@@ -126,4 +126,58 @@ theorem loopValue_ne_one {q : ℝ} (hq : 1 < q) : loopValue q ≠ 1 := by
   intro h
   linarith
 
+/-! ### `A` components, not two
+
+The section this corrects (`MarkovTraceMultiplicative`, *"Extensivity: `n` disjoint components
+multiply"*) states the two-fold case and cites an induction that is not there. With the loop factor
+in hand the `A`-fold statement is worth having, because the deficit **grows with `A`** rather than
+being a one-off constant.
+
+Joining `A` components with strand counts `n_i = k_i + 1` gives `∑ n_i` strands, so the normaliser
+goes from `∏ δ^{n_i − 1} = δ^{∑ k_i}` to `δ^{∑ k_i + (A − 1)}` — the composite is short by
+`δ^{A−1}`, and the free energy by `(A − 1)·log δ`. Writing `A = m + 1` keeps the exponent a natural
+number. At `q₀`, `⁴He` (`m = 3`) is short by `3 · 0.6985808249 = 2.0957424747`. -/
+
+variable {ι : Type*}
+
+/-- The closure-normalised traces of a family multiply into the normalisation at the **summed**
+exponent — the bookkeeping step, with no deficit yet. -/
+theorem closureNorm_prod {δ : R} (s : Finset ι) (k : ι → ℕ) (t : ι → R) :
+    ∏ i ∈ s, closureNorm δ (k i) (t i)
+      = closureNorm δ (∑ i ∈ s, k i) (∏ i ∈ s, t i) := by
+  unfold closureNorm
+  rw [Finset.prod_div_distrib, Finset.prod_pow_eq_pow_sum]
+
+/-- **The `A`-component deficit is `δ^{A−1}`.** Assembling `m + 1` components multiplies the
+normaliser by `δ^m` relative to the product of the parts, so the composite normalised trace is
+short by exactly that factor. The two-fold `closureNorm_juxtapose` is `m = 1`. -/
+theorem closureNorm_assemble {δ : R} (hδ : δ ≠ 0) (s : Finset ι) (k : ι → ℕ) (t : ι → R) (m : ℕ) :
+    δ ^ m * closureNorm δ ((∑ i ∈ s, k i) + m) (∏ i ∈ s, t i)
+      = ∏ i ∈ s, closureNorm δ (k i) (t i) := by
+  rw [closureNorm_prod s k t]
+  unfold closureNorm
+  rw [pow_add]
+  field_simp
+
+/-- **So the free energy of an `m + 1`-component assembly is short by `m · log δ`** — the deficit is
+extensive in the number of components, not a fixed offset. For `⁴He` (`m = 3`) that is
+`3 · log [2]_q = 2.0957424747` at the proton-pinned `q₀`. -/
+theorem freeEnergy_closureNorm_assemble {δ : ℝ} (hδ : 0 < δ) (s : Finset ι) (k : ι → ℕ)
+    {t : ι → ℝ} (ht : ∀ i ∈ s, 0 < t i) (m : ℕ) :
+    freeEnergy (closureNorm δ ((∑ i ∈ s, k i) + m) (∏ i ∈ s, t i))
+      = (∑ i ∈ s, freeEnergy (closureNorm δ (k i) (t i))) - m * Real.log δ := by
+  have hpos : ∀ i ∈ s, (0:ℝ) < closureNorm δ (k i) (t i) := fun i hi => by
+    unfold closureNorm; exact div_pos (ht i hi) (pow_pos hδ _)
+  have hprod : (0:ℝ) < ∏ i ∈ s, closureNorm δ (k i) (t i) := Finset.prod_pos hpos
+  have key := closureNorm_assemble (ne_of_gt hδ) s k t m
+  have hC : closureNorm δ ((∑ i ∈ s, k i) + m) (∏ i ∈ s, t i)
+      = (∏ i ∈ s, closureNorm δ (k i) (t i)) / δ ^ m := by
+    field_simp
+    rw [mul_comm]
+    exact key
+  rw [hC]
+  unfold freeEnergy
+  rw [Real.log_div (ne_of_gt hprod) (ne_of_gt (pow_pos hδ m)), Real.log_pow,
+      Real.log_prod s _ (fun i hi => ne_of_gt (hpos i hi))]
+
 end QOU.Mass.ClosureNormalisationDefect
