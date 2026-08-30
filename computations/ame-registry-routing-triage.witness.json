@@ -22,6 +22,7 @@
     "fr_pullback_k3_test.py": "INPUT",
     "log_delta_full_mass_subtract.py": "INPUT",
     "low_isotope_binding_sweep.py": "INPUT",
+    "mayer_threebody_sign_threshold_probe.py": "INPUT",
     "paper_six_term_isotope_sweep.py": "INPUT",
     "per_atom_rho_deviation.py": "INPUT",
     "probe_volume_wedderburn_delta_lambda.py": "INPUT"
@@ -41,6 +42,9 @@
     "low_isotope_binding_sweep.py:28.29566": "INPUT",
     "low_isotope_binding_sweep.py:31.9941": "INPUT",
     "low_isotope_binding_sweep.py:8.4818": "INPUT",
+    "mayer_threebody_sign_threshold_probe.py:2.224566": "INPUT",
+    "mayer_threebody_sign_threshold_probe.py:7.718043": "INPUT",
+    "mayer_threebody_sign_threshold_probe.py:8.481798": "INPUT",
     "paper_six_term_isotope_sweep.py:1876.124": "INPUT",
     "paper_six_term_isotope_sweep.py:2809.413": "INPUT",
     "paper_six_term_isotope_sweep.py:2809.432": "INPUT",
@@ -57,6 +61,7 @@
     "binding_mayer_linked_cluster_probe.py:2.224566",
     "low_isotope_binding_sweep.py:28.29566",
     "low_isotope_binding_sweep.py:8.4818",
+    "mayer_threebody_sign_threshold_probe.py:2.224566",
     "paper_six_term_isotope_sweep.py:1876.124",
     "paper_six_term_isotope_sweep.py:2809.432",
     "paper_six_term_isotope_sweep.py:3728.401",
@@ -76,6 +81,8 @@
     "log_delta_full_mass_subtract.py:7.7180428",
     "log_delta_full_mass_subtract.py:8.481798",
     "low_isotope_binding_sweep.py:31.9941",
+    "mayer_threebody_sign_threshold_probe.py:7.718043",
+    "mayer_threebody_sign_threshold_probe.py:8.481798",
     "paper_six_term_isotope_sweep.py:2809.413",
     "per_atom_rho_deviation.py:2.22456612",
     "per_atom_rho_deviation.py:28.2956912",
@@ -95,12 +102,6 @@
       [
         "8.4817962",
         "AME_B_TRITIUM_MEV_VALIDATION"
-      ]
-    ],
-    "delta_lambda_shape_probe.py": [
-      [
-        "2.224566",
-        "~near"
       ]
     ],
     "mpf_import_time_dps_audit.py": [
@@ -198,6 +199,23 @@
         "8.4817962"
       ]
     ],
+    "mayer_threebody_sign_threshold_probe.py": [
+      [
+        "2.224566",
+        "AME_B_DEUTERON_MEV_VALIDATION",
+        "2.2245662"
+      ],
+      [
+        "7.718043",
+        "AME_B_HE3_MEV_VALIDATION",
+        "7.71804132"
+      ],
+      [
+        "8.481798",
+        "AME_B_TRITIUM_MEV_VALIDATION",
+        "8.4817962"
+      ]
+    ],
     "paper_six_term_isotope_sweep.py": [
       [
         "1876.124",
@@ -263,17 +281,17 @@
   "counts": {
     "safe_routes": 0,
     "safe_files": 0,
-    "unsafe_near_matches": 25,
-    "unsafe_files": 7
+    "unsafe_near_matches": 28,
+    "unsafe_files": 8
   },
   "note": "Routing + per-file run-verification (the fvxq value-preservation discipline) is infra-gated in some sandboxes: many target files import pyhecke_native (buildable, ~42s) or have pre-existing runtime errors. This triage (pure string compare) runs anywhere and is the roadmap.",
   "bean": "fvxq",
   "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
-  "scriptHash": "93ebab6d5292",
-  "scriptCommitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
-  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
+  "scriptHash": "bb11eb2291c7",
+  "scriptCommitSha": "148ed240d9064f91f48b69b72cb6ce5c4f8839c0",
+  "commitSha": "56b3ba920d84129308723e64d294b9c4300ef052",
   "engine": "python",
-  "computedAt": "2026-08-30T09:59:43.144143+00:00",
+  "computedAt": "2026-08-30T10:54:21.509055+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

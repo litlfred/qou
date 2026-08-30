@@ -22,6 +22,10 @@ NO FLOAT64: all arithmetic in mpmath.mpf. Floats appear only inside display f-st
 """
 
 import mpmath as mp
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 mp.mp.dps = 50
 
@@ -37,8 +41,8 @@ M_N = mp.mpf("939.0")
 # AME2020 binding energies B (MeV) and mass number A. Standard values.
 # (B is total binding; B/A is binding per nucleon.)
 AME = [
-    ("2H",   mp.mpf("2.224566"),   2),
-    ("4He",  mp.mpf("28.295674"),  4),
+    ("2H",   mp.mpf(AME_B_DEUTERON_MEV_VALIDATION),   2),
+    ("4He",  mp.mpf(AME_B_HE4_MEV_VALIDATION),  4),
     ("12C",  mp.mpf("92.161728"),  12),
     ("16O",  mp.mpf("127.619336"), 16),
     ("40Ca", mp.mpf("342.052087"), 40),

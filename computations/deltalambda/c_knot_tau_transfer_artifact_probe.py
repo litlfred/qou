@@ -56,6 +56,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -63,14 +64,18 @@ mp.mp.dps = 50
 Q0_STR = "1.10997859555733471989976"
 M_E_STR = "0.51099895"                 # CODATA electron mass (MeV) — the τ-functor scale
 S_D_STR = "0.7438"                     # |S(D)| pinned Wenzl signed Markov sum (#4543)
-B_AME_STR = "2.2245662"                # AME2020 deuteron binding (MeV) — DIAGNOSTIC ONLY, never inverted
+# AME2020 deuteron binding (MeV) — DIAGNOSTIC ONLY, never inverted.
+# Taken as the registry mpf rather than re-parsed from a string: mp.mpf("...")
+# binds at whatever mp.mp.dps happens to be at import time, which is the pitfall
+# mpf_import_time_dps_audit exists to catch.
+B_AME_CONST = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def main() -> int:
     q0 = mp.mpf(Q0_STR)
     m_e = mp.mpf(M_E_STR)
     S_D = mp.mpf(S_D_STR)
-    B_AME = mp.mpf(B_AME_STR)
+    B_AME = B_AME_CONST
 
     h = q0 - 1 / q0                    # counit skein per-crossing weight (q − q⁻¹)
     hbar_q = 1 - 1 / q0                # ℏ_q
