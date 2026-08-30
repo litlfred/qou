@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T03:34:50Z
+updated_at: 2026-08-30T07:43:34Z
 parent: qou-mhj9
 ---
 
@@ -90,3 +90,31 @@ with zero 3-body content while the body-order programme needs some. My reading
 of where the escape is -- judgement, marked as such in the Lean docstring too --
 is that s10a assumes the trace factorises over INDEPENDENT subsystems, which a
 bound state is not.
+
+
+## SUPERSEDED IN PART ON MAIN 2026-08-30, and ONE SEAM CLOSED
+
+#6101 (merged 06:42) landed QOU/Mass/PairwiseCumulantVanishing.lean with
+b3_eq_zero_of_isPairwise / b4_eq_zero_of_isPairwise / b3_eq_zero_ofBondFunctional
+-- general over EVERY bond functional. My PairwiseAdditiveCumulants.lean assumed
+a COMMON BOND VALUE and is a special case, so it was DELETED rather than merged.
+
+WHAT WAS GENUINELY MISSING, and is now added
+(QOU/MassTheory/AmeBindingNotPairwise.lean, sorry-free, axioms clean):
+their not_isPairwise_of_b3_ne_zero is the falsifiable form, and its docstring
+instantiates it against measurement -- "Since AME2020 gives b3 = +1.426222 != 0,
+the physical binding is not of this shape" -- IN PROSE. No BindingMap is built
+from AME numbers anywhere on main. So the step from the general theorem to the
+physical conclusion was asserted, not checked. Now:
+  ameMap        -- pairs at B(D)=2.224566, triples at the 3H/3He isospin average
+  ame_b3_eq     -- b3 = 2852445/2000000 = 1.4262225 exactly
+  ame_not_isPairwise
+
+DISCREPANCY NOTED, NOT RESOLVED: the 4He AME literal is 28.295673 in
+he4_body_order_shortfall_location_probe.py and 28.2956624 in #6101's writeup --
+1.1e-5 MeV apart. b3 does not depend on it, so the b4 leg was deliberately NOT
+instantiated. Someone should reconcile the two literals against the AME2020
+table before any b4 statement is machine-checked.
+
+THE GATE IS STILL OPEN. Both assemblies are now excluded on main; nothing
+proposes a replacement.
