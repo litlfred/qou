@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T14:06:33Z
+updated_at: 2026-08-30T19:59:57Z
 parent: qou-mhj9
 ---
 
@@ -835,3 +835,84 @@ The magnitude. Nothing here proposes a mechanism and the constraint list above
 stands unchanged. What changed is that the front is not closed by the ruling, the
 turnover is pinned from both sides, the missing channel has a proved lower bound
 equal to the whole deficit, and the target's own 21% width is now measured.
+
+
+## CONSOLIDATION 2026-08-30 — three fronts returned, all negative, and together they close the loop on WHY
+
+The arc question is "derive the missing magnitude in closed form". Three
+independent fronts ran in parallel on the three places the magnitude could
+have come from. All three returned a measured negative, and the three
+negatives are *not* three failures of the same attempt — they are three
+different routes each blocked by the same missing object.
+
+### Front A — the braid does not supply the multiplicity (PR #6313, qou-x3y4)
+
+`bk-coordination-multiplicity` reads the coordination degree `z = A-1` as a
+topological reading of the canonical link `B_K`. Measured: the braid's
+inter-nucleon crossing set is the PATH graph `P_A` (bonds {(k,k+1)},
+degrees [1,2,...,2,1]). Its `A-1` is an EDGE COUNT; the block's `A-1` is a
+VERTEX DEGREE. Handshake `A*z = 2|E|` with both values forces `A <= 2`, so
+the identification is IMPOSSIBLE for every `A >= 3` — the eight rows where
+it was measured. Sorry-free: QOU/MassTheory/BraidPathNotCoordination.lean
+(11 decls, axiom-clean).
+
+Sharpest finding: `bk_crossing_coordination.py:106` is
+`def z_coord(A): return A - 1` — a Python literal in `A` alone. `B_K` never
+enters it; `z` is identical for 3H (8_11) and 3He (L6a4). Nothing derives
+`z` from anything. Three distinct quantities in this corpus are spelled
+`A-1`; the six matching rows could never have separated them, because both
+are the SAME AFFINE FUNCTION OF A.
+
+### Front B — the closed-shell factor is derived, but the identification is not (PR #6315, qou-22vu/qou-sh62)
+
+Corrects this corpus in the other direction. The block says the
+`M_need/z ~ 2.52` factor "is likewise an AME read rather than a derived
+Schur-Weyl period". HALF BACKWARDS: `a_D(n) = lw(n-1) = SUM_{lam|-n}
+dim_q(lam)/n` at theta_wn_kernel_derive_or_refute.py:86 is computed with NO
+AME input at all. Measured `a_D^(4) = 2.5327796563993915` (q=1 limit exactly
+5/2) against the AME read `M_need/z = 2.5188914618`.
+
+So the number IS derived and the IDENTIFICATION is what fails: the a-priori
+law `z*a_D^(A)` gives 3H +33.49%, 3He +29.73%, 4He +0.5514% (28.4517 vs
+28.2957 MeV). Genericity: 7 of 3996 pre-registered candidates land inside
+the +-0.551% window and ALL SEVEN are closer than `a_D^(4)` — `q0^5*(3/2) =
+2.52734` at 0.336%. A 0.55% hit on one nucleus, with 7 rivals beating it, is
+not evidence. Scope-(b) Lean: QOU/Mass/WignerSU4RowBoundInactive.lean —
+the SU(4) row bound is INACTIVE for all n <= 4 and first bites at n = 5.
+
+### Front C — the jet filtration has zero out-of-sample support (this branch, a68eb17fba)
+
+`B(K) = SUM_n m_e * a_D^(n) * w_n` runs on THREE points (2H, 3H/3He, 4He),
+all three of which were used to set it, and stops at `A = 4` for want of
+`Vol_A`. Nothing in the corpus evaluates it anywhere it was not fitted. My
+own earlier claim on this front was RETRACTED in 8da6755e8c: I asserted
+`mu_n = a_D^(n) * w_n` conditionally on `M_n(A) = C(A,n)`, and the block
+states `M_n(A) = z = A-1`. The antecedent is false.
+
+### What the three have in common — it is DATA, not MECHANISM
+
+Every route needs a nucleus->link assignment past `A = 4`, and there isn't
+one:
+
+- Front A can test any candidate bond set but has no link to read it off.
+- Front B's `a_D^(n)` is defined for all n; the comparison target
+  `M_need(A)` needs `Vol_A`.
+- Front C's sum stops exactly where `Vol_A` stops.
+
+Independently established this session: the AME light-nucleus cumulant
+tower is convention-limited to under 1 significant digit everywhere
+(b4/b3 = 0.030 digits); the N=Z chain is convention-free (~8 digits) but
+its leading content is an algebraic rewrite of B/A; every braid/Seifert
+invariant is affine in A (scope-(b)).
+
+### The one thing that would change it
+
+EXTEND THE NUCLEUS->KNOT/LINK ASSIGNMENT PAST A=4 (16O in particular). That
+is a construction task, not a search, and it unblocks all three routes at
+once. Front B reached the same conclusion independently and from the other
+side: "extending Vol_A to 16O, or deriving the multiplicity from the
+jet-filtration SUM rather than its collapse".
+
+Until then the honest statement is: the magnitude is not derived, and with
+the present data it is not DECIDABLE either — any candidate that lands
+within 0.55% on one nucleus has at least seven rivals doing better.
