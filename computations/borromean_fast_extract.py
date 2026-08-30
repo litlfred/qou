@@ -55,11 +55,20 @@ for i in range(R_ORD + 1):
     print(f"  q->1 coefficient a_{i} done ({time.time()-t0:.0f}s)", flush=True)
 
 result = {
-    "verified_exact": True,
-    "verification_note": ("operator CRT-lifted at 6 primes; exact symbolic "
-                          "annihilation confirmed n=1..9 in the full run "
-                          "(conclusive). This fast-extract skips the redundant "
-                          "n=10..12 cancels and produces the q->1 A-polynomial."),
+    # This script does NOT re-run the full n=1..12 symbolic annihilation, so it
+    # must NOT claim full verification (Copilot review #6064). The operator's
+    # correctness rests on the exact annihilation confirmed for n=1..9 in the
+    # full reconstruction run (conclusive: nine independent high-degree checks);
+    # this field records what THIS script did, not that provenance.
+    "verified_exact": False,
+    "fast_extract": True,
+    "operator_exact_annihilation_verified_upto_n": 9,
+    "verification_note": ("FAST-EXTRACT: operator CRT-lifted at 6 primes; the full "
+                          "n=1..12 symbolic annihilation verification was NOT re-run "
+                          "here. Exact annihilation was independently confirmed for "
+                          "n=1..9 in the full reconstruction run (conclusive). This "
+                          "script skips the redundant n=10..12 cancels and produces "
+                          "only the q->1 A-polynomial from the lifted operator."),
     "order": R_ORD, "m_window": W_WIN, "primes_used": len(runs),
     "q_to_1_A_polynomial": ("degenerate under this normalization" if degen
                             else str(sp.factor(sp.cancel(Apoly)))),
@@ -70,7 +79,19 @@ result = {
     "b": {str(k): str(sp.simplify(b_coeff(k)))
           for k in range(-W_WIN, W_WIN + 1) if b_coeff(k) != 0},
 }
-OUT.write_text(json.dumps(result, indent=2) + "\n")
+# Do NOT clobber a genuinely full-verified reconstruction output (Copilot #6064):
+# if OUT already holds a result with verified_exact True, write beside it instead.
+out_path = OUT
+if OUT.exists():
+    try:
+        prior = json.loads(OUT.read_text())
+    except Exception:
+        prior = {}
+    if prior.get("verified_exact") is True:
+        out_path = OUT.with_name(OUT.stem + "-fastextract.json")
+        print(f"  NOTE: {OUT.name} holds a full-verified result; writing to "
+              f"{out_path.name} instead so it is not clobbered.", flush=True)
+out_path.write_text(json.dumps(result, indent=2) + "\n")
 print(f"\n*** A-POLYNOMIAL EXTRACTED *** ({time.time()-t0:.0f}s)")
 print(f"q->1 diagonal Borromean A-polynomial:\n  {result['q_to_1_A_polynomial']}")
-print(f"written -> {OUT.name}")
+print(f"written -> {out_path.name}")
