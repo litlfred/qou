@@ -609,6 +609,20 @@ QOU.Encounter.FigureEightVolumeBridge | QOU.Encounter.FigureEightVolumeBridge.vo
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_VOL_5_2_of_realises | clean
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_eq_three_blochWigner_of_realises | clean
 QOU.Encounter.FiveTwoVolumeBridge | QOU.Encounter.FiveTwoVolumeBridge.vol_lt_iff_of_realises | clean
+#
+# FiveTwoShapeBounds: the first numeric handle on fiveTwoShape, which was
+# Classical.choose on an IVT statement and had NO bracket on re/im/modulus -- only
+# fiveTwoShape_im_pos. Steps (i)-(ii) of the qou-f8lit route to VOL_4_1 < VOL_5_2.
+# Step (iv) (certified Lambda at angles that are NOT rational multiples of pi) is NOT
+# attempted here and needs interval arithmetic on sin the corpus does not have.
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.realRoot_gt | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.realRoot_lt | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_re | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_re_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.radicand_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_im_bounds | clean
+QOU.Knot.FiveTwoShapeBounds | QOU.Knot.FiveTwoShapeBounds.fiveTwoShape_normSq_gt_one | clean
 
 """
 
