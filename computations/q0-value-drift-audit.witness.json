@@ -4,13 +4,13 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 220,
-      "proton-pin": 1908,
+      "STALE": 219,
+      "proton-pin": 1961,
       "unknown": 25,
-      "canonical": 83
+      "canonical": 57
     },
-    "stale_total": 220,
-    "new_stale": 14,
+    "stale_total": 219,
+    "new_stale": 13,
     "rows": [
       {
         "file": "computations/_deprecated/T5-categorical-attribution-candidates.witness.json",
@@ -1462,6 +1462,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/alpha/alpha-5-lp-dual-crystal.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/alpha/alpha-em-categorical-reidentification.witness.json",
         "field": "data.inputs.q0",
         "value": "1.10997858275138080759166909561",
@@ -1833,6 +1840,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/alpha_em/alpha-em-b2-canonical-scale-ratio.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/alpha_em/alpha-em-channel-swap-involution.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -1890,6 +1904,20 @@
       },
       {
         "file": "computations/atom-dual-q0-mpfr-demo.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/atom-electron-mass.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/atom-electron-mass.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -2240,6 +2268,13 @@
       },
       {
         "file": "computations/b-over-m-order-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/b3-charge-decomposition-a3.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -2668,16 +2703,16 @@
       {
         "file": "computations/binding-via-interface-knot.witness.json",
         "field": "parameters.q0_50dps",
-        "value": "1.109978595642739046681795129380001752700065561029010685236756785012502",
-        "class": "canonical",
-        "ppb_vs_canonical": -7.853640533313191e-43
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/binding-via-interface-knot.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/binding-wn-kernel-derive-refute.witness.json",
@@ -2710,16 +2745,16 @@
       {
         "file": "computations/block-swap-binding.witness.json",
         "field": "parameters.q0",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/block-swap-binding.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/bond-extensivity-equal-weight.witness.json",
@@ -5111,9 +5146,9 @@
       {
         "file": "computations/chi-lambda-he4-full-partition-table.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
@@ -6356,6 +6391,20 @@
       },
       {
         "file": "computations/deltalambda/deuteron-interface-handle-curvature.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/deltalambda/deuteron-magnus-omega2-sign.witness.json",
+        "field": "inputs.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/deltalambda/deuteron-magnus-omega2-sign.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -7930,13 +7979,6 @@
         "ppb_vs_canonical": -11.614060214572863
       },
       {
-        "file": "computations/habiro-interpolation-wlambda.witness.json",
-        "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
-      },
-      {
         "file": "computations/hadron-knot-table.witness.json",
         "field": "q0Value",
         "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
@@ -8065,16 +8107,16 @@
       {
         "file": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
         "field": "data.q0",
-        "value": "1.109978595642739",
-        "class": "canonical",
-        "ppb_vs_canonical": -4.2056482271488e-08
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060214572863
       },
       {
         "file": "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
@@ -8716,9 +8758,9 @@
       {
         "file": "computations/log-delta-categorical-derivation.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.614060214572863
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/low-isotope-binding-model-comparison.witness.json",
@@ -8912,9 +8954,9 @@
       {
         "file": "computations/m-tau-volume-target.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808076",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.614060207725885
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/markov/markov-peel-atomic-tr-m-muon.witness.json",
@@ -9696,16 +9738,16 @@
       {
         "file": "computations/option-e-phase1-gram-h6.witness.json",
         "field": "data.q_0_50dps",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/option-e-phase1-gram-h6.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/option-e-phase1-h3-cross-check.witness.json",
@@ -10151,7 +10193,7 @@
       {
         "file": "computations/probe-option-e-h6-entry-point.witness.json",
         "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218735787360728142402",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -10241,10 +10283,17 @@
       },
       {
         "file": "computations/probes/aoperator_a5_crosscheck.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/aoperator_a5_crosscheck.witness.json",
         "field": "q0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.07694231863325084
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
@@ -10354,7 +10403,7 @@
       {
         "file": "computations/probes/binding-color-vs-charge-tn3he-perknot-rerun.witness.json",
         "field": "data.q_0",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -10746,16 +10795,16 @@
       {
         "file": "computations/probes/fivetwo-stokes-matrix-zq.witness.json",
         "field": "parameters.q0",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/fivetwo-stokes-matrix-zq.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/flavor-split-3strand-derivation-probe.witness.json",
@@ -11325,6 +11374,13 @@
         "ppb_vs_canonical": -11.614060214572863
       },
       {
+        "file": "computations/probes/graded-hecke-energy-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/gram-h3-convention-frame-probe.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11334,16 +11390,16 @@
       {
         "file": "computations/probes/gram-norm-binding-probe.witness.json",
         "field": "parameters.q0",
-        "value": "1.109978595642739",
-        "class": "canonical",
-        "ppb_vs_canonical": -4.2056482271488e-08
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060214572863
       },
       {
         "file": "computations/probes/gram-norm-binding-probe.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/gram-qtrace-hutchinson-probe.witness.json",
@@ -11458,6 +11514,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/hecke-1d-irrep-closed-form-character-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/hecke-branching-trace-decomposition-probe.witness.json",
         "field": "parameters.q_0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11486,6 +11549,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/hecke-markov-transition-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/higgs-h6-correction-probe.witness.json",
         "field": "parameters.Q_0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11502,6 +11572,13 @@
       {
         "file": "computations/probes/hoefsmit-seminormal-form-probe.witness.json",
         "field": "parameters.q_0_50dps",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/hoefsmit-seminormal-form-probe.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
@@ -11808,6 +11885,20 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/mayer-threebody-sign-threshold.witness.json",
+        "field": "q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/mayer-threebody-sign-threshold.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/meson-lepton-knot-dictionary-probe.witness.json",
         "field": "parameters.q0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11971,6 +12062,13 @@
       {
         "file": "computations/probes/pauli-factor-wedderburn-probe.witness.json",
         "field": "parameters.q_0_50dps",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/pauli-factor-wedderburn-probe.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
@@ -12230,6 +12328,13 @@
       {
         "file": "computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
         "field": "parameters.q_0_50dps",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/q-hecke-seminormal-character-closure-probe.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
@@ -12543,6 +12648,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/symbolic-character-table-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/t6-tau-h5-embedding-probe.witness.json",
         "field": "constants.q_0",
         "value": "1.109978595642739046681795129380001752700065561029011562880083063401064",
@@ -12573,20 +12685,55 @@
       {
         "file": "computations/probes/theta_jet_gb_grading_probe.witness.json",
         "field": "parameters.q0",
-        "value": "1.1099785956427390467",
-        "class": "canonical",
-        "ppb_vs_canonical": 1.6401100608121746e-11
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060207725885
       },
       {
         "file": "computations/probes/theta_jet_gb_grading_probe.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/three-parameters-wedderburn-probe.witness.json",
         "field": "parameters.q_0_50dps",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/three-parameters-wedderburn-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/toffoli-diagonal-convention-frame.witness.json",
+        "field": "parameters.q0",
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/toffoli-diagonal-convention-frame.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/toffoli-qand-convention-d-derivation.witness.json",
+        "field": "parameters.q0",
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/probes/toffoli-qand-convention-d-derivation.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
@@ -12685,16 +12832,16 @@
       {
         "file": "computations/probes/wlambda-q0-continuation.witness.json",
         "field": "data.q0",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/wlambda-q0-continuation.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/probes/xq-habiro-element-search-probe.witness.json",
@@ -12741,16 +12888,16 @@
       {
         "file": "computations/proton-mass-full-tower-50dps.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785956427390466817951293800017527000655610290",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.0411889104111843e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/proton-mass-full-tower-50dps.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/proton-mu-mass-ratio-substrate-identity.witness.json",
@@ -13117,6 +13264,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/qbeta/qbeta-adjunction-ilp.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/qbeta/qbeta-admissible-functionals-bracket.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -13266,16 +13420,16 @@
       {
         "file": "computations/qbeta/qbeta-c4even-ladder-reconstruction.witness.json",
         "field": "parameters.q0",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/qbeta/qbeta-c4even-ladder-reconstruction.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/qbeta/qbeta-c6-c10-crossanchor-falsification.witness.json",
@@ -13558,6 +13712,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/qbeta/qbeta-delta-net-four-values.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
         "field": "data.q0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -13610,6 +13771,13 @@
         "file": "computations/qbeta/qbeta-fig8-cyclotomic-bar-invariance.witness.json",
         "field": "result.q0",
         "value": "1.109978582751380807591669",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/qbeta/qbeta-frobenius-gram-h3.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
       },
@@ -13831,6 +13999,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/qbeta/qbeta-nucleon-selection-rule.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/qbeta/qbeta-perlambda-collapse-cancellation.witness.json",
         "field": "canonical.q0",
         "value": "1.1099785827513808",
@@ -13857,6 +14032,13 @@
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.614060214572863
+      },
+      {
+        "file": "computations/qbeta/qbeta-primitive-basis-overcomplete.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/qbeta/qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
@@ -14757,16 +14939,16 @@
       {
         "file": "computations/substrate/lever1-binding-habiro-single-element-test.witness.json",
         "field": "params.q0",
-        "value": "1.109978595642739046681795129380001752700065561029",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.0411889104111843e-41
+        "value": "1.10997858275138",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060935307482
       },
       {
         "file": "computations/substrate/lever1-binding-habiro-single-element-test.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/substrate/lever1-binding-monodromy-hyperbolicity.witness.json",
@@ -15359,16 +15541,16 @@
       {
         "file": "computations/vhat-std-vs-full-tower-compare.witness.json",
         "field": "parameters.q_0_50dps",
-        "value": "1.1099785956427390466817951293800017527000655610290",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.0411889104111843e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/vhat-std-vs-full-tower-compare.witness.json",
         "field": "q0Value",
-        "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-        "class": "canonical",
-        "ppb_vs_canonical": 0.0
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/vhat-tower-im-cancellation.witness.json",
@@ -15669,9 +15851,9 @@
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "63f5dd055f5e46f1b7e3d589c0e24f915413255d",
+  "commitSha": "0b314f4de5553d5813502bd489ee995529fd4708",
   "engine": "python",
-  "computedAt": "2026-08-30T03:21:09.392849+00:00",
+  "computedAt": "2026-08-30T03:29:25.271279+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

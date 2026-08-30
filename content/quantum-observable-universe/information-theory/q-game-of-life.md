@@ -40,7 +40,7 @@ $$
    = 
   \sigma_i - (q - q^{-1})\cdot \mathbb{1},
 $$
-so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is invertible and the automaton is reversible. It is **not** unitary away from the classical limit: the eigenvalues of $\sigma_i$ are $q$ and $-q^{-1}$, of modulus $\neq 1$ for $q \neq 1$, so no inner product makes $\mathrm{Toff}_q$ unitary, and the Markov trace form is degenerate under the production trace convention. Reversibility in the sense a reversible cellular automaton requires — invertibility of the tick — therefore holds throughout the stable regime, while unitarity holds only at $q = 1$.
+so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is invertible and the automaton is reversible. It is **not** unitary away from the classical limit: the eigenvalues of $\sigma_i$ are $q$ and $-q^{-1}$, of modulus $\neq 1$ for $q \neq 1$, so no inner product makes $\mathrm{Toff}_q$ unitary, and the Markov trace form is degenerate under the production trace convention. Reversibility in the sense a reversible cellular automaton requires — invertibility of the tick — therefore holds for every $q > 0$, being a property of the quadratic relation alone and independent of the amplitude signs discussed below; unitarity holds only at $q = 1$.
 
 5. **Information bandwidth budget.** One generation advances in $3 |\mathcal{L}|$ Planck steps. The substrate bandwidth $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$ bounds the generation rate:
 $$
@@ -51,4 +51,14 @@ $$
   \frac{q \eta_q}{3  (q - 1)^2  |\mathcal{L}|}.
 $$
 
-**Stability condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ and the q-AND amplitude $\Phi(q)$ are strictly positive. This requires the physical regime $q > 1$. The physical substrate value $q_0 \approx 1.110$ lies safely inside the stable regime.
+**Stability condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ and the q-AND amplitude $\Phi(q)$ are strictly positive. In the canonical convention $z_D = q^3/(q^2+1)$ the two amplitudes are
+
+$$
+  P_{7,7}^{D}(q) \,=\, \frac{q^{3}\bigl(q^{4}+1\bigr)}{\bigl(q^{2}+1\bigr)^{2}},
+  \qquad
+  \Phi^{D}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}},
+$$
+
+the first having no positive root and the second carrying its sign entirely in the factor $(q-1)$, the sextic having no positive real root. The region on which both are strictly positive is therefore $0 < q < 1$, and the substrate value $q_0 \approx 1.110$ lies outside it: there $\Phi^{D}(q_0) \approx -0.1438$. The regime $q > 1$ previously named here, and the golden-ratio threshold $q_\star = 1/\varphi^{2}$ from which it was read off, are both artifacts of the excised convention $C$ (see [Toffoli LP-stability](#prop:toffoli-lp-stability) and [Toffoli q-AND](#rem:toffoli-q-and)).
+
+Whether strict positivity is the condition a reversible automaton actually requires is a separate question, and it is open. The universality argument of [Toffoli q-AND](#rem:toffoli-q-and) turns on $\Phi \neq 0$ rather than $\Phi > 0$, and the two conditions give opposite verdicts at the substrate: non-vanishing holds for every $q \neq 1$, strict positivity only below $1$. Which one governs is not settled here.
