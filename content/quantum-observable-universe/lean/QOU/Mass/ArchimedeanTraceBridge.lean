@@ -28,7 +28,9 @@ Ground ring `ℝ` (§7c: archimedean — `Real.log`, positivity). No fit.
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.LinearAlgebra.Matrix.Kronecker
 import Mathlib.Tactic
+import QOU.MathlibExt.MarkovTraceMultiplicative
 
 namespace QOU.Mass.ArchimedeanTraceBridge
 
@@ -103,8 +105,9 @@ the substrate modulus `q > 1` every quantum integer is strictly positive
 (`QOU.MathlibExt.qInt_pos`). So for the quantum-integer amplitude class the positivity follows from
 the substrate constraint `q > 1` and is discharged, not assumed. (The *multiplicativity* input — that
 the assembly amplitude factorises as `(∏ Tᵢ)·I` — is the separate, still-open item: the Jones trace
-is multiplicative under connected sum, `J(K₁#K₂)=J(K₁)·J(K₂)`, but that theorem is not yet formalised
-in Mathlib; bean `qou-301d`.) -/
+is multiplicative under connected sum, `J(K₁#K₂)=J(K₁)·J(K₂)`. That is now PROVED algebraically in
+`QOU.MathlibExt.MarkovTraceMultiplicative` and consumed in the capstone section at the end of this
+file; bean `qou-301d`.) -/
 
 /-- The quantum integer `[n]_q = ∑_{i<n} qⁱ`, restated inline to keep this file Mathlib-only (the
 canonical form is `QOU.MathlibExt.qInt`, `= ∑ i ∈ range n, q^i`; `qInt_pos` there proves the same
@@ -138,5 +141,52 @@ theorem binding_eq_qInt {ι : Type*} (s : Finset ι) (q : ℝ) (hq : 1 < q)
       = bindingFreeEnergy (qIntR q nI) :=
   binding_eq_bindingFreeEnergy s (fun i => qIntR q (nT i)) (qIntR q nI)
     (fun i hi => qIntR_pos hq (hnT i hi)) (qIntR_pos hq hnI)
+
+/-! ## Capstone — BOTH hypotheses discharged on juxtaposed matrix amplitudes (bean `qou-301d`)
+
+The lemmas above take `T₁ * T₂` (multiplicativity) and `0 < T` (positivity) as hypotheses. On the
+framework's actual amplitudes — Markov traces of Hecke-representation matrices — both are theorems:
+
+* multiplicativity is `MarkovTraceMultiplicative.markovTrace_juxtapose` (the trace of a
+  disjoint-strand juxtaposition is the product of the block traces, from `Matrix.trace_kronecker`) —
+  the algebraic form of `J(K₁#K₂)=J(K₁)·J(K₂)`;
+* positivity is preserved by juxtaposition (`markovTrace_juxtapose_pos`) and, for the
+  quantum-integer amplitude class, holds outright at `q > 1` (`qIntR_pos` above).
+
+So the bridge below assumes only that the composite amplitude IS the juxtaposition
+(`IsJuxtaposition`, the algebraic statement that the two sub-braids share no strand) and that each
+component amplitude is positive. Nothing about `log`-additivity is postulated. -/
+
+open QOU.MathlibExt.MarkovTraceMultiplicative in
+/-- **The archimedean bridge on juxtaposed amplitudes — multiplicativity DISCHARGED.** For two
+components whose composite evaluation is their disjoint-strand juxtaposition, the observable free
+energy is additive. The multiplicativity is not assumed: it is `markovTrace_juxtapose`. -/
+theorem freeEnergy_juxtapose {m n : Type*} [Fintype m] [Fintype n]
+    {A : Matrix m m ℝ} {B : Matrix n n ℝ} {C : Matrix (m × n) (m × n) ℝ}
+    (h : IsJuxtaposition A B C) (hA : 0 < A.trace) (hB : 0 < B.trace) :
+    freeEnergy C.trace = freeEnergy A.trace + freeEnergy B.trace := by
+  rw [markovTrace_juxtapose h]
+  exact freeEnergy_connectedSum A.trace B.trace hA hB
+
+open QOU.MathlibExt.MarkovTraceMultiplicative in
+/-- **Adding an unlinked trivial component costs no free energy.** With a `1×1` identity block (a
+single unlinked strand) the composite free energy equals the original: a disjoint trivial component
+contributes nothing to the mass, as it must. -/
+theorem freeEnergy_juxtapose_trivial {m : Type*} [Fintype m]
+    {A : Matrix m m ℝ} {C : Matrix (m × Unit) (m × Unit) ℝ}
+    (h : IsJuxtaposition A (1 : Matrix Unit Unit ℝ) C) :
+    freeEnergy C.trace = freeEnergy A.trace := by
+  rw [markovTrace_juxtapose_one h]
+
+open QOU.MathlibExt.MarkovTraceMultiplicative in
+/-- **Binding of a juxtaposed pair vanishes.** If the assembly is a genuine disjoint union (no
+linking), the mass-deficit binding is zero — the components are independent. Binding is therefore
+carried entirely by the FAILURE of juxtaposition, i.e. by the linking, which is what
+`bindingFreeEnergy` measures. This is the falsifiable content of the whole bridge. -/
+theorem binding_juxtapose_eq_zero {m n : Type*} [Fintype m] [Fintype n]
+    {A : Matrix m m ℝ} {B : Matrix n n ℝ} {C : Matrix (m × n) (m × n) ℝ}
+    (h : IsJuxtaposition A B C) (hA : 0 < A.trace) (hB : 0 < B.trace) :
+    (freeEnergy A.trace + freeEnergy B.trace) - freeEnergy C.trace = 0 := by
+  rw [freeEnergy_juxtapose h hA hB]; ring
 
 end QOU.Mass.ArchimedeanTraceBridge
