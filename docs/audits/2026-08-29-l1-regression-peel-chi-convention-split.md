@@ -1,4 +1,31 @@
-# L1 (1 ppQ) is NOT MET on `main`: the chi-cache combiner is wrong by 2.9e-7 — peel is correct
+# L1 (1 ppQ) regression: the chi-cache combiner was wrong by 2.9e-7 — RESOLVED 2026-08-30
+
+> **✅ RESOLVED 2026-08-30 — L1 is MET again: 6/6 atoms certified, `onepb allPassed = True`.**
+> This document is kept as the **record of a silent regression and its repair**, not as a
+> live defect. Read the body in the past tense.
+>
+> **Root cause (both halves were pin straddles, not convention C):**
+> 1. The chi combiner's numerical χ cache was pinned at the **proton** q₀ while the muon
+>    cross-check combined it with **muon**-pinned `y_λ` (PR #6091).
+> 2. `habiro-coefficients-extended.witness.json` was proton-pinned, so the cross-check's own
+>    guard `SystemExit`'d before the gate could even run (PR #6100, `qou-3zby` DEFECT 2).
+>
+> **Fixes:** a pin-straddle guard in `canonical_tr_m_via_chi_cache.py` (falls back to the
+> pin-correct symbolic χ when the cache pin ≠ runtime pin, but only where the symbolic cache
+> is complete); **pin-specific numerical χ cache filenames** (`-{anchor}` suffix; proton keeps
+> the legacy name); Habiro regenerated at muon; and the `onepb` gate re-pointed at the
+> **color-weighted** `exact_method_rel_delta` instead of `rel_delta_max`, which had been
+> failing on the informational color-blind legs (⁴He `rel_delta_max` ≈ 4.6 vs its
+> color-weighted ≈ 6e-50). **No tolerance was widened and no baseline grown.**
+>
+> **Final measured state** — `peel_vs_chi`, all six at 1 ppQ: proton 8.6e-50, neutron 6.1e-50,
+> deuteron 1.2e-49, tritium 8.7e-50, ³He 7.4e-50, ⁴He 6.2e-50.
+>
+> **The lesson worth carrying:** L1 was certified 2026-07-13 and broke *silently* during the
+> convention-D migration window; the gate that should have caught it was pointed at the wrong
+> quantity, and before that at a key (`rel_delta`) **no delta entry has ever carried**, so it
+> could not fail at all. A green L1 gate is only as good as the field it reads — re-check the
+> gated quantity, not just its boolean.
 
 **Date:** 2026-08-29 (root cause **corrected 2026-08-30** — see the box below) · **Method:** cross-witness forensics + **fresh producer recomputation** of both methods at the muon pin · **Tier:** measured fact (L1 not met; the culprit is chi-cache, established by fresh recompute) · **Beans:** resolves `qou-wgaw`; confirms `qou-mj1o`'s falsification comment.
 
