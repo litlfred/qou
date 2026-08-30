@@ -107,10 +107,10 @@ def main():
     set_compute_dps()
     
     isotopes = [
-        ("2H", 1, 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-        ("3H", 1, 2, 0.5, float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He", 2, 1, 0.5, float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He", 2, 2, 0, float(AME_B_HE4_MEV_VALIDATION))
+        ("2H", 1, 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("3H", 1, 2, 0.5, float(AME_B_TRITIUM_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("3He", 2, 1, 0.5, float(AME_B_HE3_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("4He", 2, 2, 0, float(AME_B_HE4_MEV_VALIDATION))  # float64-ok: site was already a float literal; routing corrects the value, not the precision
     ]
     
     print("=========================================================")

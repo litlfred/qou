@@ -479,7 +479,9 @@ def main() -> int:
             # no_free_parameter_certificate, and four unrelated magnitudes from
             # witness_raw_float64_audit, reporting six sites of routing work
             # that never existed.
-            _near = lit in REG or any(abs(v - float(rs)) / float(rs) < 5e-6
+            # classifier arithmetic on decimal strings, mirroring the
+            # near-match test below: this decides a BUCKET, not a quantity
+            _near = lit in REG or any(abs(v - float(rs)) / float(rs) < 5e-6  # float64-ok: bucket decision, not a computed quantity
                                       for rs in REG)
             if lineno in fixlines and _near:
                 fixture.setdefault(fn, set()).add((lit, REG.get(lit, "~near")))

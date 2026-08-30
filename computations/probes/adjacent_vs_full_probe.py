@@ -309,9 +309,9 @@ def binding_probe(Z, N, cross_mode, *, m_pp=None, m_pn=None, m_nn=None,
 if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
         ("6Li",  3, 3, 32.0),
         ("7Li",  3, 4, 39.244529),
         ("9Be",  4, 5, 58.1650),

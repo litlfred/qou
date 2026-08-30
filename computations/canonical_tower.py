@@ -708,9 +708,9 @@ def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
     ]
     print("=" * 100)
     print("CANONICAL-WITH-PROPER-TOWER: JM-based V̂ + Φ_q tower "

@@ -113,10 +113,10 @@ M_CODATA = {
     "6Li": 5601.518600,
 }
 B_CODATA = {
-    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
-    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),
-    "3He": float(AME_B_HE3_MEV_VALIDATION),
-    "4He": float(AME_B_HE4_MEV_VALIDATION),
+    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "3He": float(AME_B_HE3_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "4He": float(AME_B_HE4_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
     "6Li": 31.994576,
 }
 

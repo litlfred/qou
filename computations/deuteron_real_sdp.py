@@ -82,7 +82,7 @@ LEAN_UNIQUENESS_REF = "qou:QOU.BraidKnot.deuteron_uniqueness_closed"
 
 # AME2020 deuteron binding energy (MeV) — RHS for the physical constraint.
 # Matches the repo-wide constant (probe_k_ud_*, applied_uniqueness_mass_table).
-B_D_AME_MeV = float(AME_B_DEUTERON_MEV_VALIDATION)
+B_D_AME_MeV = float(AME_B_DEUTERON_MEV_VALIDATION)  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 # 9-pair color-flavor structure of p=uud × n=udd: 2·(u,u)+4·(u,d)+1·(d,u)+2·(d,d).
 # Neutron-heavy 5:4 weighting with a bar-involution sign flip on the mixed
 # (u,d)/(d,u) channel (probe_k_ud_fractional_and_alt_ansatz.nine_pair_ratio).

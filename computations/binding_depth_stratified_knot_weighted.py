@@ -240,7 +240,7 @@ def main() -> int:
           f"{all_results[best_beta]['max_over_min']:.4f})")
 
     builder.add_assertion(
-        "data_loaded", computed=B_AME["D"], expected=float(AME_B_DEUTERON_MEV_VALIDATION),
+        "data_loaded", computed=B_AME["D"], expected=float(AME_B_DEUTERON_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
         tolerance=1e-10, unit="B(D) MeV", source="AME 2020",
     )
     builder.save()

@@ -60,8 +60,8 @@ from codata_constants import (  # noqa: E402
 )
 set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
 
-ISO = {"D": (float(AME_B_DEUTERON_MEV_VALIDATION), 1, 2), "T": (float(AME_B_TRITIUM_MEV_VALIDATION), 1, 3),
-       "3He": (float(AME_B_HE3_MEV_VALIDATION), 2, 3), "4He": (float(AME_B_HE4_MEV_VALIDATION), 2, 4)}
+ISO = {"D": (float(AME_B_DEUTERON_MEV_VALIDATION), 1, 2), "T": (float(AME_B_TRITIUM_MEV_VALIDATION), 1, 3),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+       "3He": (float(AME_B_HE3_MEV_VALIDATION), 2, 3), "4He": (float(AME_B_HE4_MEV_VALIDATION), 2, 4)}  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 
 
 def b_strong(B, Z, A):

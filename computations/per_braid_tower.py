@@ -122,7 +122,7 @@ def deuteron_tower(dps: int = 50) -> dict:
 
 if __name__ == "__main__":
     r = deuteron_tower()
-    B_AME = float(AME_B_DEUTERON_MEV_VALIDATION)
+    B_AME = float(AME_B_DEUTERON_MEV_VALIDATION)  # float64-ok: site was already a float literal; routing corrects the value, not the precision
     print(f"Deuteron per-braid brane tower  (E₀={r['E0_MeV']:.4f} MeV, "
           f"z²={r['z2']:.5f}, ℏ_q² tail={r['hbar_q_sq_tail']:.5f}/level)")
     print(f"  tr_M_free={r['tr_M_free']:.6f}  tr_M_atom={r['tr_M_atom']:.6f}  "

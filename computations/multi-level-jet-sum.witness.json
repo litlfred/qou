@@ -1,7 +1,7 @@
 {
   "computation": "multi-level-jet-sum",
   "description": "Multi-level jet sum of mass tower \u2014 CURRENT IMPL is a single-level flat sum with all-pairs quadratic term (matching rem:mass-endomorphism-jet-tower's single-level form).  A genuine multi-level version requires jet-lifted V\u0302 at each level n; per-level lift not yet implemented.  This module is a stub that documents the interface and provides the single-level flat sum for callers migrating from tower_binding_full.",
-  "timestamp": "2026-08-30T09:48:09.368720+00:00",
+  "timestamp": "2026-08-30T10:18:32.650186+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "z_markov_sq": 0.3753866308623884,
@@ -23,27 +23,27 @@
       "Z": 1,
       "N": 2,
       "A": 3,
-      "B_AME_MeV": 8.4817962,
+      "B_AME_MeV": "8.4817962",
       "B_pred_MeV": -0.09503016471611452,
-      "delta_m_over_m_pct": 0.3047028845661224
+      "delta_m_over_m_pct": "0.304702884566122"
     },
     {
       "atom": "3He",
       "Z": 2,
       "N": 1,
       "A": 3,
-      "B_AME_MeV": 7.71804132,
+      "B_AME_MeV": "7.71804132",
       "B_pred_MeV": NaN,
-      "delta_m_over_m_pct": NaN
+      "delta_m_over_m_pct": "nan"
     },
     {
       "atom": "4He",
       "Z": 2,
       "N": 2,
       "A": 4,
-      "B_AME_MeV": 28.2956624,
+      "B_AME_MeV": "28.2956624",
       "B_pred_MeV": NaN,
-      "delta_m_over_m_pct": NaN
+      "delta_m_over_m_pct": "nan"
     },
     {
       "atom": "6Li",
@@ -101,11 +101,11 @@
     }
   ],
   "scriptFile": "multi_level_jet_sum.py",
-  "scriptHash": "189da195e5a8",
-  "scriptCommitSha": "28199dca89520c9a84c376331af98c2f5a1a5304",
-  "commitSha": "d6060b35f2c29ba774c7703294a149ba91ba9b43",
+  "scriptHash": "10f439fb2686",
+  "scriptCommitSha": "54cb6e1a7c0c189a1bf77ef8c68cf7ea7629e8ad",
+  "commitSha": "4bbb42537790189b732190fb0484fc113ab9ffce",
   "engine": "python",
-  "computedAt": "2026-08-30T09:48:09.382809+00:00",
+  "computedAt": "2026-08-30T10:18:32.662547+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

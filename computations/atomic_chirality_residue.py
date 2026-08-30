@@ -137,8 +137,8 @@ def main():
     # current vector-trace algorithm past 10-minute budgets.
     # Future work: SIMD vectorization or batched character evaluation.
     B_NUCL = {
-        ('D',   1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),
-        ('T',   1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),
+        ('D',   1, 1): float(AME_B_DEUTERON_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+        ('T',   1, 2): float(AME_B_TRITIUM_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
         ('3He', 2, 1): 8.59697,
         ('4He', 2, 2): 29.32700,
     }

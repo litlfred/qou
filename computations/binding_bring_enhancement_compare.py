@@ -55,10 +55,10 @@ from _precision import set_compute_dps  # noqa: E402
 
 # AME2020 binding energies (MeV)
 AME = {
-    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
-    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),
-    "³He": float(AME_B_HE3_MEV_VALIDATION),
-    "⁴He": float(AME_B_HE4_MEV_VALIDATION),
+    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "³He": float(AME_B_HE3_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "⁴He": float(AME_B_HE4_MEV_VALIDATION),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 }
 
 

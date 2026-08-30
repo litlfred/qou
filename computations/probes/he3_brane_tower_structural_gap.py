@@ -86,7 +86,7 @@ VHAT: dict[str, list[str]] = {
     ],
 }
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "helium3": (2, 1)}
-B_AME = {"deuteron": float(AME_B_DEUTERON_MEV_VALIDATION), "tritium": float(AME_B_TRITIUM_MEV_VALIDATION), "helium3": float(AME_B_HE3_MEV_VALIDATION)}
+B_AME = {"deuteron": float(AME_B_DEUTERON_MEV_VALIDATION), "tritium": float(AME_B_TRITIUM_MEV_VALIDATION), "helium3": float(AME_B_HE3_MEV_VALIDATION)}  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 NEAR_POLE = mp.mpf("0.9")  # |V̂| above this = proton/near-pole generator
 
 

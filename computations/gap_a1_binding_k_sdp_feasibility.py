@@ -76,7 +76,7 @@ A = 2
 # B_AME(D) = 2.224566 MeV — RECORDED FOR RESIDUAL REPORTING ONLY. It is NOT
 # fed into any selection / objective / normalization below. Its sole use is
 # the final honest residual print.
-B_AME_D_MEV = float(AME_B_DEUTERON_MEV_VALIDATION)
+B_AME_D_MEV = float(AME_B_DEUTERON_MEV_VALIDATION)  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 
 # The substrate-only PSD-feasible inter-nucleon binding for ²H, selected by
 # binding_k_enumerator.py (shortest PSD-feasible word in {σ_3, σ_3^{-1}},

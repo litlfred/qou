@@ -110,9 +110,9 @@ G_CATALAN = mp.catalan
 AME_ATOMIC = {
     "p": ("p (proton, A=1)", 938.78308711),  # H-1 atomic
     "n": ("n (neutron, A=1)", float(M_N_MEV)),
-    "D": ("D (deuteron, A=2)", float(M_D_ATOMIC_MEV_VALIDATION)),
-    "T": ("T (tritium, A=3)", float(M_T_ATOMIC_MEV_VALIDATION)),
-    "3He": ("3He (helium-3, A=3)", float(M_HE3_ATOMIC_MEV_VALIDATION)),
+    "D": ("D (deuteron, A=2)", float(M_D_ATOMIC_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "T": ("T (tritium, A=3)", float(M_T_ATOMIC_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "3He": ("3He (helium-3, A=3)", float(M_HE3_ATOMIC_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 }
 
 

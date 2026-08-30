@@ -81,7 +81,7 @@ from codata_constants import (  # noqa: E402
 HERE = Path(__file__).resolve().parent
 
 # AME2020 binding energies (MeV) — comparison targets only, nothing tuned.
-B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
+B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # Hand-assigned census binding-link volumes (binding_link_volumes.py) — the
 # Q3 reference the derived difference knot is asked to reproduce.

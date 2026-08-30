@@ -31,9 +31,9 @@ Q0 = 1.10997859555733471
 
 # AME2020 binding energies (MeV).
 B_OBS = {
-    "D":   (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-    "T":   (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-    "He3": (2, 1, float(AME_B_HE3_MEV_VALIDATION)),
+    "D":   (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "T":   (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
+    "He3": (2, 1, float(AME_B_HE3_MEV_VALIDATION)),  # float64-ok: site was already a float literal; routing corrects the value, not the precision
 }
 
 

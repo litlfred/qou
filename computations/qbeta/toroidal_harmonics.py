@@ -141,7 +141,7 @@ def evaluate_c_lambda():
     # NOTE the circularity: c_lambda_exp is DEFINED via the experimental
     # binding B_AME, so any 'match' below is a fit to an experimental input,
     # not a parameter-free prediction.
-    b_ame = float(AME_B_HE4_MEV_VALIDATION) # AME2020 binding energy in MeV
+    b_ame = float(AME_B_HE4_MEV_VALIDATION) # AME2020 binding energy in MeV  # float64-ok: site was already a float literal; routing corrects the value, not the precision
     e_gate = 29.99   # SU(4) Plancherel occupancy from B_gate
 
     c_lambda_exp = b_ame / e_gate
