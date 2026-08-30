@@ -243,3 +243,40 @@ Only the Siegel application itself. All four of its inputs now exist and are che
 | `p < q` | `fintypeCard_idxWeight_lt` |
 | entry bound (`house`) | `house_translateMatrix_le` |
 | the engine | `exists_ne_zero_int_vec_house_le`, built and verified |
+
+## From a solution to the polynomial — `QOU/Mathlib/RothAuxiliaryConstruction.lean`
+
+`exists_ofBox_of_solution`: a coefficient vector that is non-zero on the box and kills every
+vanishing condition of weight below `μ` **is** an auxiliary polynomial — degree bound, index
+bound, and coefficients read off. Siegel supplies exactly such a vector, so what remains between
+here and the auxiliary polynomial is the call itself.
+
+### Three things that had to be proved rather than assumed
+
+I expected this to be plumbing. Three pieces were not.
+
+* **`translate` is natural in the coefficient ring** (`map_translate`). The polynomial must be
+  built over `𝓞 K` — Siegel needs algebraic *integer* entries — while `index` is read over `K`.
+  Without naturality those are unrelated statements. With it, `index_map` says the index does not
+  notice the change of ring. This was the caveat I flagged last turn as "where the defect hides";
+  it was real, and it cost an induction over `MvPolynomial`.
+* **Outside the box the translate has no coefficients**
+  (`coeff_translate_eq_zero_of_notMem`). The system is indexed by the box, but
+  `le_index_iff_coeff_eq_zero` quantifies over **all** multi-indices of low weight — and there
+  are such indices outside the box (`i h > r h` costs only `> 1` of weight, and the threshold is
+  near `m/2`). They cost nothing only because translation preserves every `degreeOf`
+  (`degreeOf_translate_eq` — proved long ago for another purpose). Had that failed, the system
+  would have been genuinely infinite.
+* **The sum runs over the box, not the support** (`coeff_translate_ofBox`).
+  `coeff_translate_eq_sum` sums over `P.support`, which is what a polynomial gives you; a matrix
+  row needs a *fixed* index set. Extending is free because the extra coefficients vanish, but the
+  two are not the same sum and Siegel only accepts the second.
+
+The module deliberately does **not** import `RothHouseBound`, so the construction stays usable
+without the number-field dependency.
+
+## Remaining
+
+Only the Siegel call: build the matrix `a i n := translateMatrix α i n` over `𝓞 K` on the two
+subtypes, discharge `a ≠ 0` (the `(0,0)` entry is `1`) and `0 < p` (the zero multi-index is an
+equation when `ε ≤ ½`), and feed `fintypeCard_idxWeight_lt` and `house_translateMatrix_le`.
