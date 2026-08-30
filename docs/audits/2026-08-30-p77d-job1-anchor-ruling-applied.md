@@ -148,3 +148,43 @@ which is the point of this document.
 `Q0_OK 1126`, `Q0_FLIP 1`, `Q0_ANCHOR_MISSING 1645`, exit 0. The single
 `Q0_FLIP` is the known `hadron-knot-table.witness.json` survivor carrying the
 retired A-anchor (AGENTS.md §"q₀ anchor convention").
+
+## Scoping the follow-on work (measured, same session)
+
+Since the anchor question is settled, the useful remaining question is *what
+would the fix actually be*. Split the 32 by whether the prescribed `Q` →
+`q_at(dps)` swap is even applicable:
+
+| group | producers | fields | what the swap would do |
+|---|---:|---:|---|
+| **no mpmath at all** | 21 | 72 | inject one `mpf` into float64 arithmetic; every downstream `float()` kills it |
+| **imports mpmath, never raises dps** | 8 | 121 | plausible — needs `set_compute_dps()` in the same edit |
+| **already calls `q_at`** | 3 | 4 | nothing; the swap is already done |
+
+### The 3 that already call `q_at` were never anchor decisions
+
+- `lp_confinement_nf_forcing.py:119` — `q0 = q_at(50)`, no cast. Fully correct
+  at the q₀ read already; its one float64 field originates elsewhere.
+- `delta_lambda_canonical_residual.py:59` — `q0 = float(q_at(30))`. The accessor
+  swap is *done*; the defect is the cast one call out, a purely local repair
+  with no anchor content whatsoever.
+- `deuteron_from_scratch_ledger.py` — uses `q_at` / `q_muon_at` (the E1 producer).
+
+### The 21 without mpmath are the bean's own "43" class
+
+`d_density_derivation.py` is representative: `import math` at `:43`, `from
+q_parameter import Q as Q0` at `:54`, and `float(...)` on every emitted quantity
+(`:105-107`, `:233-262`). There is no mpf anywhere for a 50-digit `q_at` to flow
+into. Same shape in `tr_m_algebraic_q.py`, which evaluates through sympy
+`.subs(q, q0)` and casts at `:169`, `:182-183`.
+
+This is exactly the class the bean already characterised and already ruled out
+of a drain:
+
+> "43 producers **NO MPMATH AT ALL** — float64 end to end. → not a serialization
+> or dps problem. 'Fixing' one means RE-DERIVING the computation in mpmath, per
+> producer, changing values that feed real claims."
+
+So the honest residue of job 1 is **8 producers / 121 fields**, not 32 / 197 —
+and the other 24 belong to the bucket-B port that the bean says "wants its own
+bean", on precision grounds with no anchor content.
