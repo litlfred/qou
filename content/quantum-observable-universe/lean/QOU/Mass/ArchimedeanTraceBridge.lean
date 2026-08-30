@@ -169,9 +169,15 @@ theorem freeEnergy_juxtapose {m n : Type*} [Fintype m] [Fintype n]
   exact freeEnergy_connectedSum A.trace B.trace hA hB
 
 open QOU.MathlibExt.MarkovTraceMultiplicative in
-/-- **Adding an unlinked trivial component costs no free energy.** With a `1×1` identity block (a
-single unlinked strand) the composite free energy equals the original: a disjoint trivial component
-contributes nothing to the mass, as it must. -/
+/-- **Adding a `1×1` identity BLOCK costs no free energy** — at the matrix level.
+
+🛑 The physical gloss that stood here ("a disjoint trivial component contributes nothing to the
+mass, as it must") is FALSE and is retracted (bean `qou-bsfg`). A braid closure on `n` strands is
+normalised by `δ^{n−1}`, so juxtaposition drops exactly one loop factor: the cost is `log δ =
+0.6985808249` at `q₀`, and `⁴He` is short by `≈ 2.096`. Machine-checked in
+`QOU.Mass.ClosureNormalisationDefect` (`freeEnergy_closureNorm_additive_iff`: additivity holds iff
+`δ = 1`, which `loopValue_ne_one` excludes for `q > 1`). This lemma is retained as the matrix-level
+fact it is. -/
 theorem freeEnergy_juxtapose_trivial {m : Type*} [Fintype m]
     {A : Matrix m m ℝ} {C : Matrix (m × Unit) (m × Unit) ℝ}
     (h : IsJuxtaposition A (1 : Matrix Unit Unit ℝ) C) :
