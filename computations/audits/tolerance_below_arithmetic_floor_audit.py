@@ -85,6 +85,14 @@ SKIP_DIRS = {"_deprecated", "__pycache__", "data", "node_modules"}
 #: compared magnitude to get the absolute cancellation floor at that scale.
 FLOAT64_EPS = 2.220446049250313e-16
 
+#: Serializers that render a value to N SIGNIFICANT DIGITS. Their second
+#: argument is N, and it imposes a SECOND floor on the comparison -- coarser
+#: than float64 whenever N < 17. Measured: mp.nstr keeps a residual's exponent
+#: (nstr(1e-40, 10) == "1.0e-40"), so like float64 it costs nothing against an
+#: expected of 0; what it caps is the comparison of two SAME-SCALE values, at
+#: 10^-(N-1) relative instead of 2.22e-16.
+_DIGIT_SERIALIZERS = {"nstr", "N", "n"}
+
 #: Constructors that merely re-type a literal. Their argument is the value.
 _NUMERIC_CTORS = {"mpf", "mpmathify", "float", "int", "Decimal", "Fraction",
                   "Integer", "Float", "Rational", "S"}
@@ -125,6 +133,30 @@ def _numeric(node: ast.AST):
     return None
 
 
+def _serialization_digits(node: ast.AST):
+    """N, if this expression is serialized to N significant digits.
+
+    `mp.nstr(x, 10)` under a 1e-20 bound is unreachable BEFORE float64 enters --
+    a 10-digit string cannot express the difference. Found while draining, in
+    four sites the float64-only criterion flagged for the wrong reason and two
+    it would have under-corrected: `qbeta_ohtsuki_sixone_kappa_series` compares
+    `mp.nstr(det, 10)` at 1e-20, where nstr is the binding floor by 11 orders.
+    """
+    best = None
+    for sub in ast.walk(node):
+        if not isinstance(sub, ast.Call) or len(sub.args) < 2:
+            continue
+        fn = sub.func
+        nm = fn.attr if isinstance(fn, ast.Attribute) else (
+            fn.id if isinstance(fn, ast.Name) else None)
+        if nm not in _DIGIT_SERIALIZERS:
+            continue
+        d = _numeric(sub.args[1])
+        if d is not None and d >= 1:
+            best = int(d) if best is None else min(best, int(d))
+    return best
+
+
 def scan_file(path: str) -> list[dict]:
     try:
         src = open(path, encoding="utf-8", errors="replace").read()
@@ -146,7 +178,14 @@ def scan_file(path: str) -> list[dict]:
             continue
         if exp == 0.0:
             continue                      # nothing cancels against exact zero
-        floor = FLOAT64_EPS * abs(exp)
+        f64_floor = FLOAT64_EPS * abs(exp)
+        comp_node = kw.get("computed")
+        digits = _serialization_digits(comp_node) if comp_node is not None else None
+        ser_floor = (10.0 ** -(digits - 1)) * abs(exp) if digits else 0.0
+        # The binding floor is the COARSER of the two -- whichever the comparison
+        # hits first. Reported separately so a fix targets the right one.
+        floor = max(f64_floor, ser_floor)
+        binding = "serialization" if ser_floor > f64_floor else "float64"
         if tol >= floor:
             continue
         name = ""
@@ -164,6 +203,8 @@ def scan_file(path: str) -> list[dict]:
             "tolerance": tol,
             "expected": exp,
             "floor": floor,
+            "binding": binding,
+            "digits": digits,
             "shortfall": floor / tol,
             "snippet": lines[ln - 1].strip()[:88] if ln - 1 < len(lines) else "",
         })
@@ -176,6 +217,11 @@ w.add_assertion("a", computed=norm, expected=1.0, tolerance=1e-30)
 w.add_assertion("b", computed=float(x), expected=60.0, tolerance="1e-25")
 '''
 #: Each of these must stay quiet, and each for a DIFFERENT reason.
+#: nstr(x, 10) under 1e-20: the SERIALIZATION floor (1e-9 here) binds, not
+#: float64 (2.2e-15). Must fire AND attribute correctly.
+_SELFTEST_SERIAL = '''
+w.add_assertion("i", computed=mp.nstr(d, 10), expected="7", tolerance="1e-20")
+'''
 _SELFTEST_QUIET = '''
 w.add_assertion("c", computed=float(dev), expected=0.0, tolerance=1e-40)
 w.add_assertion("d", computed=float(dev), expected=1.0, tolerance=1e-12)
@@ -195,13 +241,19 @@ def _selftest() -> None:
     safe case is worse. Pin both, including the `expected == 0` non-firing --
     that is the case a previous version of this file GATED on."""
     import tempfile
-    for src, want in ((_SELFTEST_FIRES, 2), (_SELFTEST_CTOR, 1), (_SELFTEST_QUIET, 0)):
+    cases = ((_SELFTEST_FIRES, 2, None), (_SELFTEST_CTOR, 1, None),
+             (_SELFTEST_SERIAL, 1, "serialization"), (_SELFTEST_QUIET, 0, None))
+    for src, want, binding in cases:
         with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False) as f:
             f.write(src)
             tmp = f.name
         try:
-            got = len(scan_file(tmp))
+            hits = scan_file(tmp)
+            got = len(hits)
             assert got == want, f"selftest: expected {want} hit(s), got {got}"
+            if binding:
+                assert hits[0]["binding"] == binding, (
+                    f"selftest: expected binding {binding}, got {hits[0]['binding']}")
         finally:
             os.unlink(tmp)
 
@@ -230,7 +282,9 @@ def main(argv: list[str] | None = None) -> int:
     print("                              qou_substrate/witness.py:830 — always float64")
     print(f"  flagged assertions        : {len(findings)}")
     print(f"  files                     : {len({f['path'] for f in findings})}")
-    print("  selftest                  : PASS (3 must-fire incl. mp.mpf(1)-wrapped,")
+    print("  serialization floor       : 10^-(N-1) for mp.nstr(x, N) / sp.N(x, N)")
+    print("  selftest                  : PASS (4 must-fire incl. mp.mpf(1)-wrapped")
+    print("                              and nstr-bound,")
     print("                              5 must-stay-quiet incl. expected==0, which an")
     print("                              earlier version of this file GATED on)")
     if findings:
