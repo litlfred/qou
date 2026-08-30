@@ -39,7 +39,7 @@ import mpmath as mp  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -96,28 +96,53 @@ def main() -> int:
         s_, st_, a_ = mp.mpf(str(s)), mp.mpf(str(st)), mp.mpf(str(a))
         cl = classical["sym"] * s_ + classical["std"] * st_ + classical["alt"] * a_
         qd = ys * s_ + yd * st_ + ya * a_
-        results[name] = {"tr_sym": s, "tr_std": st, "tr_alt": a,
-                         "tr_full_classical": float(cl), "tr_full_qdeformed": float(qd)}
+        # fmt, not float(): the channel traces are inherited decimal data and
+        # the two tr_full columns are mpf sums. Casting either through float64
+        # on the way into the witness is the raw-float64 ratchet, and it throws
+        # away digits the 50-dps arithmetic above actually produced.
+        results[name] = {"tr_sym": fmt(s_), "tr_std": fmt(st_), "tr_alt": fmt(a_),
+                         "tr_full_classical": fmt(cl), "tr_full_qdeformed": fmt(qd)}
         print(f"{name:6s} {float(cl):>18.4f} {float(qd):>20.4f}")
 
     wb = WitnessBuilder("atom-mass-full-hecke", engine="mpmath")
     wb.data["q"] = "111/100"
     wb.data["weight_convention"] = "q-deformed Jones-Markov (Wenzl Schur principal specialisation)"
     wb.data["weight_source"] = "prop:y-lambda-closed-form-wenzl-bridge / y-lambda-at-q0.witness.json"
-    wb.data["yhat"] = {"sym": float(ys), "std": float(yd), "alt": float(ya)}
-    wb.data["yhat_classical_limit"] = {"sym": 1 / 6, "std": 2 / 3, "alt": 1 / 6}
+    wb.data["yhat"] = {"sym": fmt(ys), "std": fmt(yd), "alt": fmt(ya)}
+    wb.data["yhat_classical_limit"] = {
+        "sym": fmt(mp.mpf(1) / 6), "std": fmt(mp.mpf(2) / 3), "alt": fmt(mp.mpf(1) / 6)}
+    wb.data["convention_D_cap"] = (
+        "y_(1^3) = 0 EXACTLY -- the two-row cap, derived from the 2-dimensional "
+        "mass fibre (FibreDimensionForcesTL.lean, bean qou-n1dj), not a small "
+        "deformation of the classical 1/6. This producer was authored under "
+        "convention C, where the alt weight was 0.0228 (~7.3x below classical) "
+        "and its assertion divided by it; under D that division is by zero and "
+        "the script crashed with ZeroDivisionError on main. The alt channel is "
+        "not SUPPRESSED, it is ABSENT.")
     wb.data["channel_traces_provenance"] = (
         "inherited from published rem:atom-mass-full-hecke table; high-A χ^λ not "
         "independently witnessed (GS reducer infeasible past light nuclei)")
     wb.data["atoms"] = results
+    # NOT float(norm). The residual `norm - 1` is exactly 0 at 60 dps, but a
+    # float64 cast throws away the evidence for that: any mpf residual below
+    # ~1e-16 rounds to exactly 1.0, so under a cast the 1e-25 tolerance does no
+    # work and the assertion would pass identically on a value that missed by
+    # 1e-20. Compared as mpf, the tolerance resolves what it claims to.
     wb.add_assertion("qdeformed_weights_normalised",
-                     computed=float(norm), expected=1.0, tolerance=1e-25,
+                     computed=norm, expected=mp.mpf(1), tolerance=mp.mpf("1e-25"),
                      source="Σ_λ y_λ d_λ = tr_M(1) = 1")
-    # The deformation is large, not a small correction: ŷ_alt is ~7× below classical.
-    wb.add_assertion("alt_channel_suppressed_vs_classical",
-                     computed=1 if float((mp.mpf(1) / 6) / ya) > 5 else 0,
-                     expected=1, tolerance=0,
-                     source="classical/q-deformed alt weight ratio (1/6)/ŷ_alt > 5")
+    # WAS: `alt_channel_suppressed_vs_classical`, computing (1/6)/ŷ_alt > 5.
+    # Under convention D that is a division by ZERO -- ŷ_alt is identically 0,
+    # not merely small -- and the producer crashed. The honest replacement
+    # asserts the cap itself, which is the actual structural content: the alt
+    # channel does not contribute at all, so the trace is two-row.
+    wb.add_assertion("alt_channel_vanishes_two_row_cap",
+                     computed=ya, expected=mp.mpf(0), tolerance=mp.mpf("1e-40"),
+                     source="ŷ_(1^3) = 0 exactly under convention D (two-row cap, "
+                            "derived from the 2-dim mass fibre; qou-n1dj)")
+    wb.add_assertion("two_row_weights_carry_all_of_the_trace",
+                     computed=ys + yd, expected=mp.mpf(1), tolerance=mp.mpf("1e-40"),
+                     source="with ŷ_alt = 0, Σ_λ ŷ_λ = 1 is carried by (3) and (2,1) alone")
     wb.save()
     print("\n✓ Witness: atom-mass-full-hecke.witness.json")
     return 0
