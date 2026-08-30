@@ -2076,9 +2076,39 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
-> **🛑 OWNER RULING 2026-08-30 — the muon pin is CODATA 2022. The frozen value
-> is retired.** Verbatim: *"C."* then *"CODATA 2022 for muon"*, given against the
-> three-values measurement below.
+> **🛑 OWNER RULING — the muon pin is CODATA 2022. The frozen value is retired.
+> RULED 2026-08-22; IMPLEMENTED 2026-08-28; re-confirmed 2026-08-30.** The
+> original wording is a sibling session's record of the owner's 2026-08-22
+> ruling: *"2022 CODATA better than 2018. A --> CODATA 2022."* It was put to the
+> owner again on 2026-08-30, against the three-values measurement below, and
+> re-confirmed — *"C."* then *"CODATA 2022 for muon"*.
+>
+> **🛑 The 2026-08-30 half of this block was written as though nothing had been
+> done yet. It had. Corrected the same day — read this before acting on the
+> paragraphs below.** The ruling was dated 2026-08-30 (it is 2026-08-22), and the
+> anchor was described as still frozen at A. `fca08de7d29` (2026-08-28, *"muon
+> anchor -> CODATA 2022 (owner ruling): derive it, stop the self-certification"*)
+> had **already migrated it**, and that commit is an ancestor of the one carrying
+> the stale description. The corpus-grep checklist would have caught it — so
+> would `git log` on the named file.
+>
+> **What the tree actually holds, measured on `main` `3a919ad14fe`:**
+>
+> - `computations/q-pinning-50-digit.witness.json` carries
+>   `1.109978595642739046681795129380001752700065561029011556974045769999095`
+>   — that is **C**, not A.
+> - `computations/audits/muon_pin_stored_vs_live_gate.py`: stored and live agree,
+>   **gap 0.0 ppb** (0.0 σ against σ(q₀) = 1.22335 ppb).
+> - `q0_anchor_consistency_audit.py`: **`Q0_FLIP` = 1**, and it is
+>   `hadron-knot-table.witness.json` alone, still carrying **A**.
+>
+> **The fix was to DERIVE, not to re-freeze**, which is why it did not repeat the
+> 2026-08-19 breakage: `q_parameter`'s ideal/muon branch now takes q from
+> `q_muon_at()` over `constants.MASS_RATIO_MU_E_STR`, so the witness records a
+> value it did not choose. Previously `q_pinning_50_digit` was listed `ideal_muon`,
+> so `q_at` was rebound *for that very producer* and it wrote back the value it
+> had just read — **the anchor certified itself.** A also disagreed by 1.4 ppb
+> with the ratio the same witness declares in its own `calibration_inputs`.
 >
 > `computations/audits/muon_pin_three_values_probe.py` establishes that **three
 > different numbers are all called "the muon q₀"**, diverging at the 13th
@@ -2089,7 +2119,7 @@ Do not regress either.
 >
 > | | `m_μ/m_e` | `q₀ = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` |
 > |---|---|---|
-> | **A** frozen pin | *(none — see below)* | `1.1099785955573347…` |
+> | **A** former frozen pin (retired) | *(none — see below)* | `1.1099785955573347…` |
 > | **B** CODATA 2018 | `206.7682830` | `1.10997859555418057528159407961` |
 > | **C** CODATA 2022 | `206.7682827` | `1.10997859564273904668179512938` |
 >
@@ -2105,12 +2135,15 @@ Do not regress either.
 > the same `codata.py` that supplies `M_E_MEV` for CAL-1, so **C is the only
 > choice that does not also require rolling CAL-1 back**.
 >
-> **What is already true and needs no work:** the live derivation path computes C
-> today — `q_muon_at()` returns `1.10997859564274`. What is frozen at A is the
-> **anchor-defining witness** `computations/q-pinning-50-digit.witness.json`.
+> **What is already done:** both the live derivation path *and* the
+> anchor-defining witness `computations/q-pinning-50-digit.witness.json` are at C
+> (`fca08de7d29`, 2026-08-28), and `cfe73b8eb5f` drained the resulting flips
+> `Q0_FLIP` 83 → 34. **Do not "migrate the anchor" — that step has run.**
 >
-> **🛑 THIS RULING DOES NOT AUTHORISE THE SWEEP, and the reason is on the record.**
-> Re-pinning that witness is what took `main` red on 2026-08-19: both anchors
+> **🛑 WHAT REMAINS IS STILL NOT A BULK SWEEP, and the reason is on the record.**
+> The anchor step above was done deliberately and by derivation. Re-pinning that
+> witness *as a step in a bulk pass* is a different act, and it is what took
+> `main` red on 2026-08-19: both anchors
 > collapsed to one string, **262 correctly-stamped muon witnesses flipped to
 > `Q0_FLIP`** (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
 > including, circularly, the one that regenerates the anchor. `q0_repin_sweep.py`
@@ -2492,9 +2525,15 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
-     `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
+     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
+     (−11.5 ppb) when the counts below were measured, and since
+     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
+     `1.109978595642739…`. The **counts are still the counts** — they
+     describe witnesses computed under the old anchor, which is exactly
+     the population the migration is about — but do not read the literal
+     as the live anchor. It fed ~72 producers / **870** witnesses — the
+     canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -2508,7 +2547,8 @@ muon; muon-anchor → ~4000σ on proton).
      > fingerprint" is ambiguous *in this corpus specifically*, because
      > [`muon_pin_three_values_probe.py`](computations/audits/muon_pin_three_values_probe.py)
      > establishes that **three different values are all called "the muon
-     > q₀"** — the frozen canonical pin `1.1099785955573347…`, and the
+     > q₀"** — the then-canonical frozen pin `1.1099785955573347…`
+     > (**retired 2026-08-28**; C is canonical now), and the
      > lepton-tower derivation at CODATA 2018 (`…55541805…`) and 2022
      > (`…56427390…`). They diverge at the **13th significant digit**, so
      > the choice of prefix length silently selects which of the three you
@@ -2517,7 +2557,7 @@ muon; muon-anchor → ~4000σ on proton).
      > | match on | counts | at 2026-08-16 | at 2026-08-26 |
      > |---|---|---|---|
      > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
-     > | `1.1099785955573347` (full) | **the canonical pin only** | 468 | 149 |
+     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
      >
      > The **870** above is the ten-digit reading and is correct. Measured
      > with the same script at both ends (`git ls-tree` on each revision,
