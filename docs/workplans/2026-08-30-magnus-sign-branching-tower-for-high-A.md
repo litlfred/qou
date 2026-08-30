@@ -71,13 +71,30 @@ the irreps of the sub-chain `H_{3k}` that appear — bounded by `p(3k)`:
 |---|---|---|---|---|---|---|---|
 | p(3k) (bond upper bound) | 3 | 11 | 30 | 77 | 176 | 385 | 1575 |
 
-**This is polynomial, not exponential** — the A=8 midpoint bond is ≤ 77, vs the
-flat cost `24! ≈ 6e23`. So the tower is *plausibly* feasible to A≫4. The germ's
-tensor (an operator on the bond space) may square this to `p(3k)²` per link,
-still poly. **First build step is to MEASURE the actual bond dimension** (the
-number of nonzero branching multiplicities at each cut, and the germ operator's
-rank on the bond) at A=3,4 — where the flat-sparse answer is known — before
-committing to the full contraction.
+**MEASURED (step 2, `branching_tower.py --measure-bond`, 2026-08-30):**
+
+| A | n=3A | widest-cut bond p(3(A-1)) | max germ terms / cut | flat (3A)! |
+|---|---|---|---|---|
+| 3 | 9 | 11 | 2 | 3.6e5 |
+| 4 | 12 | 30 | 2 | 4.8e8 |
+| 5 | 15 | 77 | 2 | 1.3e12 |
+| 6 | 18 | 176 | 2 | 6.4e15 |
+| 8 | 24 | 792 | 2 | 6.2e23 |
+
+- **Branching bond = `p(3(A-1))`** — **SUB-EXPONENTIAL** (`p(m) ~ exp(π√(2m/3)) ~
+  exp(c√A)`), **not polynomial** (`p(m)` is not a polynomial), but vastly below
+  the flat `(3A)!`. Corrected from the plan's earlier "polynomial" wording.
+- **Germ locality = ≤ 2 straddling Ω₂ terms per cut, for every A** (each term
+  spans 3 consecutive strands, so only `a ∈ {3k-2, 3k-1}` cross the cut). O(1),
+  A-independent — measured, not argued.
+- **Link/ρ locality:** a seminormal `σ_g` is a ⊕ of 1×1/2×2 blocks (step 1), so a
+  straddling crossing couples the two sides at operator-Schmidt rank ≤ 2; ρ's
+  A−1 links ⇒ its MPO bond across any nucleon cut is O(1).
+
+**Verdict: the nucleon-chain contraction costs `~ A·p(3(A-1))^c ~ exp(c'√A)` vs
+the flat `exp(3A·ln 3A)`.** A≫4 is feasible: A=16 → bond ~9e4 vs flat 48! ~1e61.
+The germ does NOT blow the bond up (its locality is O(1)); the only growth is the
+sub-exponential branching bond. **Step 2 decision: BUILD steps 3-4.**
 
 ## Correctness gate (non-negotiable)
 
