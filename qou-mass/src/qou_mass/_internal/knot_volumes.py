@@ -148,10 +148,35 @@ def _vol_6_2(dps: int) -> mpf:
 def _vol_8_11(dps: int) -> mpf:
     """Vol(8_11) — used as the canonical 3H (tritium) knot closure.
 
-    SnapPy 50-dps:
-    8.2863168178065925881... (matched to 13 digits in mass_table_ppb)
+    SnapPy HP 50-dps (snappy 3.3.2, in-sandbox 2026-08-30; verified
+    positively-oriented solution).
+
+    Until 2026-08-30 this returned
+    `8.28631681780659258810000000000000000000000000000000` — the true
+    value to 20 significant digits followed by **thirty fabricated
+    zeros**, held in a variable named `_SNAPPY_HP_50`. The docstring
+    wrote the number with an ellipsis and noted it was "matched to 13
+    digits in mass_table_ppb", so the padding was not concealed so much
+    as unnoticed: the name asserted 50 dps and every mpf consumer got 20
+    (error 2.68e-20 while believing 1e-50).
+
+    Its three literal siblings here are genuine — 7²_1, 6_2 and 5_2 check
+    out at 4.7e-50, 3.5e-50 and 4.9e-50 against SnapPy — so this was one
+    bad entry, not a house style of padding to width.
+
+    Confirmed by three independent routes, all agreeing: ManifoldHP
+    (quad-double), `Manifold.volume(bits_prec=350)`, and a randomized
+    9-tetrahedron re-triangulation of the same manifold — volume is a
+    topological invariant, so a different triangulation is a real second
+    opinion rather than a re-read. Method controlled on the two volumes
+    in this module that have closed forms: SnapPy agrees with
+    2·Cl₂(π/3) to 4.5e-64 and with 8·G to 2.6e-65.
+
+    The f64 view is unchanged: `float()` of the old and new strings is
+    bit-identical, so f64-tier consumers are unaffected and only mpf
+    consumers move — which is exactly where the error was real.
     """
-    _SNAPPY_HP_50 = "8.28631681780659258810000000000000000000000000000000"
+    _SNAPPY_HP_50 = "8.2863168178065925881268247977511671629487442454111"
     with _with_dps(dps):
         return +mpf(_SNAPPY_HP_50)
 

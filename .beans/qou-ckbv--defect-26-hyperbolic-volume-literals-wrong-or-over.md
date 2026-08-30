@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:33:05Z
-updated_at: 2026-08-21T23:11:46Z
+updated_at: 2026-08-30T12:55:00Z
 ---
 
 ## Measured, not estimated
@@ -178,3 +178,105 @@ Use a pattern that cannot match the watcher (a pidfile, `$!`, or
 `pgrep -f "script.py --flag"` checked with `ps`), and prefer confirming
 "finished" from the artifact or the log's own completion line rather than
 from process absence.
+
+---
+
+## 2026-08-30 — the audit was reporting a clean corpus because it could not see
+
+Claimed this bean and re-ran its own gate. It said **WRONG 0, OVER_CLAIMED 0**.
+That was false, and the reason is the interesting part.
+
+### Why the gate was green
+
+`hyperbolic_volume_literal_audit.py` asked three questions in a row, every one
+of them answered by the variable's **name**:
+
+1. `grep -E '= *(mp\.)?mpf\("[0-9]'` — the literal had to sit inside a literal
+   `mpf(` call;
+2. `if "VOL" not in name.upper(): continue`;
+3. `resolve()` then needed a known knot key inside that name.
+
+So it only ever checked constants that already followed the naming convention.
+Everything named `v_6_2` or `_SNAPPY_HP_50` was invisible — not correct,
+**unexamined**. A detector whose recall depends on the author having named
+things well cannot find what a careless author wrote.
+
+It also read line by line, so implicit string concatenation
+(`mpf("4.4008…" "5458…")`) showed it only the first fragment, understating
+every printed width in the PSLQ basis.
+
+### What was actually wrong
+
+| site | what it held | good digits |
+|---|---|---|
+| `substrate/knot_volumes.py` `_vol_8_11` | 20 real digits + **30 fabricated zeros**, in a variable named `_SNAPPY_HP_50` | 20 / 50 claimed |
+| `tier_1_hyperbolic_3braid_pslq.py` | **all eight** basis volumes | 2–13 of 32–96 printed |
+| `tier_2_hyperbolic_bridge3_pslq.py` | same eight, copied | 2–13 |
+| `tier_2` `TIER2_LITERATURE` | six "KnotInfo ~15 dps" values | **0–6**; four wrong at digit 1 |
+| `m_tau_knot_prediction.py` `KNOT_VOL_TABLE` | 21 of 25 hyperbolic entries, under "All values verified to 8+ dps" | 1–11 of 20 |
+
+Six of the eight PSLQ literals match **no manifold in SnapPy's censuses**
+(searched 200,067), so they were corrupted numbers, not correct volumes under
+wrong labels. Two entries in the m_tau table *were* mislabels: `L5a1` held
+Vol(9_42) while the same table's `Whitehead` entry — the same manifold — was
+correct; and `9_46` held Vol(9_42) under the comment "cosmetic surgery with
+9_42", which is false (4.0569 vs 4.7517). That comment is what made a wrong
+entry look deliberate.
+
+### The consequence that matters most
+
+PSLQ searches for an integer relation among its basis. Fed noise past digit
+2–13 at `mp.dps = 100`, it reports a relation among wrong numbers. Both Tier-1
+and Tier-2 publish a **negative** ("no small relation"), and a negative is what
+a corrupted basis produces whether or not the true basis has one — the finding
+could not have failed for the reason it claimed.
+
+Re-run after correction: **both negatives survive**, with no assertion flips.
+So the conclusions stand — but they now mean something, which they did not
+before.
+
+`TIER2_LITERATURE` is the fallback taken exactly when SnapPy is *absent*, i.e.
+in the pipeline image it exists to serve. Wrong at the first digit, it did not
+degrade gracefully; it silently substituted noise. Both paths now agree to
+50 dps, so the result no longer depends on whether SnapPy happens to be
+installed — which it previously did, at the first significant digit.
+
+### Fixed
+
+- `_vol_8_11` → SnapPy 50-dps. f64 view is **bit-identical**, so f64 consumers
+  are unaffected and only mpf consumers move — which is where the error was
+  real. Vendor mirror re-synced.
+- Both PSLQ bases → 100-dps values matching `mp.dps`, each confirmed against a
+  **randomized re-triangulation** of the same manifold (volume is a topological
+  invariant, so that is a genuine second route, not a re-read). Method
+  controlled on the two volumes with closed forms: SnapPy agrees with
+  2·Cl₂(π/3) to 4.5e-64 and 8·G to 2.6e-65.
+- `KNOT_VOL_TABLE` → 21 entries corrected, each printing only the digits it is
+  good for; the false "cosmetic surgery" comment removed.
+- The audit rewritten to identify by **name OR value**, parsing with `ast` so
+  concatenation and non-`mpf(` idioms are caught. Both routes are needed:
+  `v_7_4` was off at the second digit (7.6e-3), which no value-matcher can
+  recognise — only the name knows; `_SNAPPY_HP_50` is a precision tag, not a
+  knot — only the value knows. New `MISLABELLED` verdict for name/value
+  disagreement, and `--strict` now fails on it.
+
+Audit on the same corpus: **0 → 14 WRONG** surfaced, then **14 → 4** after the
+fixes above.
+
+### Still open
+
+- 4 WRONG (`binding_ladder_catalog.py` ×2, `tau_amphichiral_sdp_probe.py`,
+  `fivetwo_stokes_matrix_zq.py`) — all "prints 15, good 9–11", f64-grade
+  values in probe tables. Small, but they print more than they have.
+- 12 OVER_CLAIMED, incl. six `VOL_4_1_STR` sites at 29 printed / 19 good — the
+  qou-f8lit 20-digit carrier again, and `Vol(4_1)` needs no literal at all
+  (`2*clsin(2, pi/3)`).
+- 38 UNRECOGNISED triage (item 5 of the original suggested order) — untouched.
+- `m_tau_knot_prediction` witness not regenerated in this pass.
+
+### Environment note
+
+snappy is **not** in this container by default; `pip install snappy` was needed
+and did not survive a mid-session container restart. The gate exits 77 without
+it, so in CI this audit is skipped, not passed — worth confirming the pipeline
+image actually carries it, or this hardening buys nothing there.

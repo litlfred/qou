@@ -48,9 +48,9 @@ silently mis-compared -- and anything unrecognised is reported as
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import re
-import subprocess
 import sys
 from pathlib import Path
 
@@ -124,46 +124,187 @@ def digits_correct(lit: str, true: mp.mpf) -> int:
     return max(0, int(mp.floor(-mp.log10(rel))))
 
 
-def scan() -> list[dict]:
-    grep = subprocess.run(
-        ["grep", "-rn", "--include=*.py", "-E", r'= *(mp\.)?mpf\("[0-9]',
-         "computations", "tools"],
-        capture_output=True, text=True, cwd=REPO,
-    ).stdout
+# ── Identifying WHICH manifold a literal is about ────────────────────
+#
+# Rewritten 2026-08-30 (bean qou-ckbv) after this audit reported WRONG 0 /
+# OVER_CLAIMED 0 on a corpus that contained a 30-zero-padded Vol(8_11) in the
+# canonical `substrate/knot_volumes.py` and an entire PSLQ basis of eight
+# volumes wrong at digits 2-13. It missed all of them because it asked three
+# questions in a row, every one answered by the variable's NAME:
+#
+#   1. grep for `= mpf("<digits>` -- so `_SNAPPY_HP_50 = "8.28..."`, whose
+#      mpf() is applied to the variable a line later, was never a candidate;
+#   2. `if "VOL" not in name.upper(): continue` -- so `v_6_2 = mpf("4.4008...")`
+#      was dropped, though it IS a hyperbolic volume and badly wrong;
+#   3. `resolve()` then needed a knot key inside that name.
+#
+# So the audit only ever checked constants that already followed the naming
+# convention, and reported a clean corpus because the badly-named ones were
+# invisible rather than correct. A detector whose recall depends on the author
+# having named things well cannot find what a careless author wrote.
+#
+# Identification now runs two routes and takes whichever can speak:
+#
+#   * BY NAME, for literals so wrong that their value identifies nothing --
+#     `v_7_4` was off at the SECOND significant digit (7.6e-3 relative), which
+#     no value-matcher will ever recognise as Vol(7_4). Only the name knows.
+#   * BY VALUE, for literals whose name says nothing -- `_SNAPPY_HP_50` is a
+#     precision tag, not a knot, but the number was good to 20 digits and the
+#     census identifies it at once.
+#
+# Neither route alone catches both, which is why the old single route caught
+# neither.
 
+# Knot/link tokens as they appear inside identifiers: `v_6_2`, `VOL_8_11`,
+# `"8_5"` (a dict key), `L6a4`. Bare `\d+_\d+` deliberately does NOT match
+# `_SNAPPY_HP_50` -- "HP_50" has no digit before the underscore.
+_KNOT_TOKEN = re.compile(r'(?<![0-9A-Za-z])(\d{1,2}_\d{1,2})(?![0-9])')
+_LINK_TOKEN = re.compile(r'(?<![0-9A-Za-z])(L\d+[an]\d+)(?![0-9])', re.I)
+DECIMAL = re.compile(r'\d+\.\d+')
+
+CENSUS = ([f"{n}_{i}" for n in range(3, 10) for i in range(1, 50)]
+          + ["L5a1", "L6a1", "L6a2", "L6a3", "L6a4", "L6a5", "L6n1",
+             "L7a1", "L7a2", "L7a3", "L7a4", "L7a5", "L7a6", "L7a7",
+             "7^2_1", "L8a1", "L8a2"])
+
+_census: dict | None = None
+
+
+def census_volumes() -> dict:
+    """Census volumes, hyperbolic only (torus knots have volume 0)."""
+    global _census
+    if _census is None:
+        import snappy
+        out = {}
+        for name in CENSUS:
+            try:
+                v = mp.mpf(str(snappy.Manifold(name).volume(bits_prec=500)))
+            except Exception:
+                continue
+            if v > 0:
+                out[name] = v
+        _census = out
+    return _census
+
+
+def identify_by_name(name: str) -> str | None:
+    """The manifold the IDENTIFIER claims, whatever the number says."""
+    up = name.upper()
+    if any(d in up for d in DERIVED):
+        return None
+    m = _LINK_TOKEN.search(name)
+    if m:
+        for key in census_volumes():
+            if key.lower() == m.group(1).lower():
+                return key
+    m = _KNOT_TOKEN.search(name)
+    if m and m.group(1) in census_volumes():
+        return m.group(1)
+    return resolve(name)          # the original VOL_*/BORROMEAN/8G route
+
+
+def identify_by_value(val: mp.mpf) -> str | None:
+    """The manifold the NUMBER is, whatever the identifier claims.
+
+    1e-9 is tight on purpose: this route exists to name literals whose
+    identifier is uninformative, and those are the nearly-right ones. A
+    literal wrong in its 3rd digit is not evidence about which manifold was
+    meant, so it is left to the name route.
+    """
+    best, best_rel = None, None
+    for name, v in census_volumes().items():
+        rel = abs(val - v) / v
+        if best_rel is None or rel < best_rel:
+            best, best_rel = name, rel
+    return best if best_rel is not None and best_rel < mp.mpf("1e-9") else None
+
+
+def _string_constants(path: Path) -> list:
+    """(lineno, literal, enclosing-name) for every decimal string in a file.
+
+    Parsed with `ast`, not grepped, for two reasons the old grep could not
+    handle: implicit concatenation across lines (the PSLQ basis is written as
+    `mpf("4.4008..." "5458...")`, and a line-oriented matcher sees only the
+    first fragment, understating the printed width), and the fact that a
+    literal need not sit inside an `mpf(` call to end up in one.
+    """
+    try:
+        tree = ast.parse(path.read_text(errors="ignore"))
+    except Exception:
+        return []
+
+    names: dict = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for t in node.targets:
+                if isinstance(t, ast.Name):
+                    for sub in ast.walk(node.value):
+                        if isinstance(sub, ast.Constant):
+                            names.setdefault(sub.lineno, t.id)
+        elif isinstance(node, ast.Dict):
+            for k, v in zip(node.keys, node.values):
+                if isinstance(k, ast.Constant) and isinstance(k.value, str):
+                    for sub in ast.walk(v):
+                        if isinstance(sub, ast.Constant):
+                            names.setdefault(sub.lineno, k.value)
+
+    out = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Constant) and isinstance(node.value, str):
+            lit = node.value.strip()
+            if DECIMAL.fullmatch(lit) and digits_printed(lit) >= 12:
+                out.append((node.lineno, lit, names.get(node.lineno)))
+    return out
+
+
+def scan() -> list[dict]:
+    roots = [REPO / "computations", REPO / "tools", REPO / "qou-mass"]
     rows: list[dict] = []
-    for line in grep.splitlines():
-        if "_deprecated" in line:
+    for root in roots:
+        if not root.exists():
             continue
-        parts = line.split(":", 2)
-        if len(parts) != 3:
-            continue
-        path, lineno, code = parts
-        m = LITERAL.match(code)
-        if not m:
-            continue
-        name, lit = m.group(1), m.group(2)
-        if "VOL" not in name.upper():
-            continue
-        mfld = resolve(name)
-        row = {"file": path, "line": int(lineno), "name": name, "literal": lit,
-               "manifold": mfld}
-        if mfld is None:
-            row["verdict"] = "UNRECOGNISED"
-            rows.append(row)
-            continue
-        true = true_volume(mfld)
-        printed = digits_printed(lit)
-        correct = digits_correct(lit, true)
-        row.update({"digits_printed": printed, "digits_correct": correct,
-                    "true": mp.nstr(true, 30)})
-        if correct < printed - 1:
-            # Wrong within what it prints, or padded far past what it backs.
-            row["verdict"] = "WRONG" if correct < printed - 3 and correct < 12 \
-                else "OVER_CLAIMED"
-        else:
-            row["verdict"] = "OK"
-        rows.append(row)
+        for path in sorted(root.rglob("*.py")):
+            if any(p in {"_deprecated", "__pycache__", ".git"}
+                   for p in path.parts):
+                continue
+            if path.resolve() == Path(__file__).resolve():
+                continue
+            rel = str(path.relative_to(REPO))
+            for lineno, lit, name in _string_constants(path):
+                val = mp.mpf(lit)
+                by_name = identify_by_name(name) if name else None
+                by_value = identify_by_value(val)
+                mfld = by_name or by_value
+                if mfld is None:
+                    # Only UNRECOGNISED when the NAME advertises a volume;
+                    # otherwise every long decimal in the corpus lands here
+                    # and the signal drowns.
+                    if name and "VOL" in name.upper():
+                        rows.append({"file": rel, "line": lineno, "name": name,
+                                     "literal": lit, "manifold": None,
+                                     "verdict": "UNRECOGNISED"})
+                    continue
+                true = true_volume(mfld)
+                printed = digits_printed(lit)
+                correct = digits_correct(lit, true)
+                row = {"file": rel, "line": lineno, "name": name or "(unnamed)",
+                       "literal": lit, "manifold": mfld,
+                       "digits_printed": printed, "digits_correct": correct,
+                       "true": mp.nstr(true, 30),
+                       "identified_by": "name" if by_name else "value"}
+                if by_name and by_value and by_name != by_value:
+                    # The identifier says one manifold and the number is
+                    # exactly another's volume. That is a mislabel, not a
+                    # precision problem, and wants a different fix.
+                    row["verdict"] = "MISLABELLED"
+                    row["value_is"] = by_value
+                elif correct < printed - 1:
+                    row["verdict"] = "WRONG" if (correct < printed - 3
+                                                 and correct < 12) \
+                        else "OVER_CLAIMED"
+                else:
+                    row["verdict"] = "OK"
+                rows.append(row)
     return rows
 
 
@@ -183,7 +324,8 @@ def main() -> int:
 
     rows = scan()
     by = {v: [r for r in rows if r["verdict"] == v]
-          for v in ("WRONG", "OVER_CLAIMED", "OK", "UNRECOGNISED")}
+          for v in ("WRONG", "MISLABELLED", "OVER_CLAIMED", "OK",
+                    "UNRECOGNISED")}
 
     if args.json:
         print(json.dumps({"counts": {k: len(v) for k, v in by.items()},
@@ -192,19 +334,26 @@ def main() -> int:
         print(f"hyperbolic-volume literals scanned: {len(rows)}\n")
         for verdict, blurb in [
             ("WRONG", "disagree within the digits they print"),
+            ("MISLABELLED", "the number is a DIFFERENT manifold's volume, exactly"),
             ("OVER_CLAIMED", "print materially more digits than are correct"),
         ]:
             print(f"{verdict}  ({len(by[verdict])}) -- {blurb}")
             for r in sorted(by[verdict], key=lambda r: r["digits_correct"]):
-                print(f"  {r['file']}:{r['line']}  {r['name']}")
-                print(f"      prints {r['digits_printed']}, correct to "
-                      f"{r['digits_correct']}   Vol({r['manifold']}) = {r['true']}")
+                print(f"  {r['file']}:{r['line']}  {r['name']}"
+                      f"   [identified by {r['identified_by']}]")
+                if verdict == "MISLABELLED":
+                    print(f"      named for {r['manifold']} but the value is "
+                          f"Vol({r['value_is']})")
+                else:
+                    print(f"      prints {r['digits_printed']}, correct to "
+                          f"{r['digits_correct']}   Vol({r['manifold']}) "
+                          f"= {r['true']}")
             print()
         print(f"OK            ({len(by['OK'])}) -- correct at every digit printed")
         print(f"UNRECOGNISED  ({len(by['UNRECOGNISED'])}) -- not matched to a "
               f"census manifold; NOT a pass")
 
-    if args.strict and (by["WRONG"] or by["OVER_CLAIMED"]):
+    if args.strict and (by["WRONG"] or by["OVER_CLAIMED"] or by["MISLABELLED"]):
         return 1
     return 0
 
