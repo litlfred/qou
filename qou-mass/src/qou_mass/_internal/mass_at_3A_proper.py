@@ -224,13 +224,39 @@ _BLOCK_CACHE: BlockCache | None = None
 #: BLAS for dtype=object anyway. Measured: 642x slower at dim=162, carrying
 #: float64 information. Worst of both (bean qou-d8gq).
 #:
-#: OFF BY DEFAULT, and deliberately so. Turning it on changes every value this
-#: module produces beyond digit ~16 and costs the full 642x, so it is not a
-#: change to make silently on behalf of ~20 consumers. It exists so the
-#: correct-and-slow path can be MEASURED — which is what the A-dependence
-#: question needs (bean qou-2tuv) — and so the choice between it and a declared
-#: float64 tier is made on numbers rather than on principle alone.
-_H3A_MPF = os.environ.get("QOU_H3A_MPF", "0") in ("1", "true", "yes")
+#: ON BY DEFAULT since 2026-08-30 (owner ruling; NO FLOAT64). It was off
+#: before, on the reasoning preserved above: that flipping it "costs the full
+#: 642x" and would be a silent change on behalf of "~20 consumers". BOTH of
+#: those figures were wrong, and the flip was made only after measuring them.
+#:
+#: THE CONSUMER COUNT. Resolved by AST over the tree — every `import
+#: mass_at_3A_proper` / `from mass_at_3A_proper import ...` — there are **199**
+#: direct importers, not ~20. That makes the change bigger than advertised, not
+#: smaller, and it is recorded here so nobody re-derives a comfortable number.
+#:
+#: THE COST. 642x was a dtype=object matmul microbenchmark at dim=162, not an
+#: end-to-end cost, and it does NOT transfer. Measured end-to-end through
+#: `markov_trace_3A`, flag off vs on, same warm caches:
+#:
+#:     deuteron  A=2    0.010s -> 0.013s     1.3x
+#:     tritium   A=3    0.280s -> 0.450s     1.6x
+#:     helium-3  A=3    0.064s -> 0.143s     2.2x
+#:
+#: The object-matmul penalty is dimension-dependent and only bites once the
+#: blocks are large; at the A the corpus actually computes it is a small
+#: constant factor. Cite these numbers, not 642x, and re-measure at A>=4 before
+#: assuming they hold there.
+#:
+#: WHAT IT CHANGES. Values move beyond digit ~16 — that is the whole point:
+#: with the flag off, `BlockCache(float(Q0), float(HA_VAL))` seeds every
+#: seminormal entry from a binary64 q, so the H_{3A} character sum is capped at
+#: 53 bits while the braid word it multiplies has been mpf since `efcaf789ed`.
+#: Cross-checked at A=3: tritium total agrees to 0.00041354402638308(89 -> 274),
+#: i.e. the two paths part company exactly where a 53-bit mantissa runs out.
+#:
+#: `QOU_H3A_MPF=0` still turns it OFF, so the float64 path stays reachable for
+#: the A-dependence comparison (bean qou-2tuv) that the flag was built for.
+_H3A_MPF = os.environ.get("QOU_H3A_MPF", "1") in ("1", "true", "yes")
 
 
 def _q_pair():
@@ -404,7 +430,19 @@ def _cached_seminormal(shape: tuple[int, ...], q):
         cache = _ensure_block_cache()
     else:
         cache = BlockCache(q, q - 1 / q)
-    data = build_seminormal_matrices_cached(shape, cache=cache)
+    # `sparse=False` under QOU_H3A_MPF, for the SAME reason the symbolic
+    # branch above forces it: `build_seminormal_matrices_cached` defaults to a
+    # scipy sparse representation once `dim > 500`
+    # (`syt_prefix_cache.py:154`), and scipy.sparse cannot hold a non-numeric
+    # dtype. With the mpf cache the entries are mpmath objects, so the build
+    # raises
+    #     ValueError: scipy.sparse does not support dtype object
+    # exactly as it would for sympy. Measured 2026-08-30: A=4 (n=12) fails
+    # under the flag and A<=2 does not, because only A=4 crosses dim > 500 —
+    # so this was invisible at every size the flag had been exercised at.
+    # `None` keeps the dim-based default for the float64 path.
+    data = build_seminormal_matrices_cached(
+        shape, cache=cache, sparse=(False if _H3A_MPF else None))
     _SEMINORMAL_CACHE[key] = data
     try:
         sigmas, dim, syts = data
