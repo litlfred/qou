@@ -1,0 +1,136 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T10:06:30.085097+00:00",
+  "commitSha": "2c9e803d545c05e3f370a036cd12fa0b7778df62",
+  "assertions": [
+    {
+      "name": "bond_strengthens_from_z1_to_z2",
+      "computed": "1.21370760735284029758251294117477825564372955050742027816479",
+      "expected": "1.213707607",
+      "passed": true,
+      "tolerance": "1e-8",
+      "unit": "dimensionless ratio",
+      "source": "w(2)/w(1); the entire content of b3 > 0, per lt_of_b3_pos"
+    },
+    {
+      "name": "single_ratio_scaling_refuted",
+      "computed": "0.439113782401431366740667060202085189181271964081330190795945",
+      "expected": "0.4390",
+      "passed": true,
+      "tolerance": "0.01",
+      "unit": "relative disagreement between the two measured ratios",
+      "source": "eps(z)=eps(1)*r^(z-1) requires w(2)/w(1) = w(3)/w(2); they differ by ~44%, refuting the family for every r, convention-independently"
+    },
+    {
+      "name": "su4_support_bound_locates_the_turnover",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "mass number A",
+      "source": "dim[1^n] = C(4,n) vanishes for n >= 5, so the fully antisymmetric spin-isospin regime ends at A=4; the measured eps peak is at A=4. A SUPPORT bound (C(4,n)=0), NOT a positivity claim -- an earlier probe's C(4,n)>0 sign argument was wrong and is not reused."
+    },
+    {
+      "name": "same_orbital_fraction_fails_beyond_A7",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "verdict (1 = close below A=7 and refuted above, as claimed)",
+      "source": "normalised at the alpha (one parameter); <8% for A=5,6,7 then >20% at A=9 and >70% at A=12. Recorded as a scope-(a) negative: this model ALONE does not reproduce w, which does not exclude the ingredient from a multi-term closure."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "coordination-weight-rise-and-turnover",
+  "scriptFile": "coordination_weight_rise_and_turnover_probe.py",
+  "scriptHash": "effa6489cf39",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/coordination_weight_rise_and_turnover_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/coordination_weight_rise_and_turnover_probe.py"
+  },
+  "description": "Measures the non-transferability the b3 > 0 rise requires, and tests candidate mechanisms for the rise and the alpha turnover. Refutes the single-ratio (Markov-power) scaling family and the same-orbital-fraction law; locates the turnover at A=4 from the SU(4) [1^n] support bound C(4,n) = 0 for n >= 5, without predicting its height. Derives no magnitude.",
+  "data": {
+    "su4_locates_but_does_not_size": {
+      "locates_peak_position": true,
+      "predicts_peak_height": false,
+      "wigner_assumption_derived_in_corpus": false
+    },
+    "same_orbital_fraction_table": [
+      {
+        "A": 5,
+        "fraction": "0.600000000000000000000000000000000000000000000000000000000000",
+        "predicted": "2.82956624000000000000000000000000000000000000000000000000000",
+        "measured": "2.63306625000000000000000000000000000000000000000000000000000",
+        "rel_err": "0.0746278184227229375637624005852492317654369691609544575644460"
+      },
+      {
+        "A": 6,
+        "fraction": "0.466666666666666666666666666666666666666666666666666666666667",
+        "predicted": "2.20077374222222222222222222222222222222222222222222222222222",
+        "measured": "2.13293248000000000000000000000000000000000000000000000000000",
+        "rel_err": "0.0318065681208165680998126214582386697127056840647024242521837"
+      },
+      {
+        "A": 7,
+        "fraction": "0.428571428571428571428571428571428571428571428571428571428571",
+        "predicted": "2.02111874285714285714285714285714285714285714285714285714286",
+        "measured": "1.86881336666666666666666666666666666666666666666666666666667",
+        "rel_err": "0.0814984411536705032179994982148170229141610607007873983044198"
+      },
+      {
+        "A": 9,
+        "fraction": "0.444444444444444444444444444444444444444444444444444444444444",
+        "predicted": "2.09597499259259259259259259259259259259259259259259259259259",
+        "measured": "1.61566732500000000000000000000000000000000000000000000000000",
+        "rel_err": "0.297281290622494078471626324802101566665397898414881041548942"
+      },
+      {
+        "A": 12,
+        "fraction": "0.515151515151515151515151515151515151515151515151515151515152",
+        "predicted": "2.42942555959595959595959595959595959595959595959595959595960",
+        "measured": "1.39638992727272727272727272727272727272727272727272727272727",
+        "rel_err": "0.739790234910131480828860667255897470703582557257812278401344"
+      },
+      {
+        "A": 16,
+        "fraction": "0.600000000000000000000000000000000000000000000000000000000000",
+        "predicted": "2.82956624000000000000000000000000000000000000000000000000000",
+        "measured": "1.06349429333333333333333333333333333333333333333333333333333",
+        "rel_err": "1.66063133364940670046786146678837530700055033675654764836099"
+      }
+    ],
+    "same_orbital_fraction_errors": {
+      "worst_rel_err_A_le_7": "0.0814984411536705032179994982148170229141610607007873983044198",
+      "worst_rel_err_A_ge_9": "1.66063133364940670046786146678837530700055033675654764836099"
+    },
+    "scope": {
+      "derives_a_magnitude": false,
+      "what_is_proved_elsewhere": "the NEGATIVE half: QOU.Mass.UniformBondSimpleGraphExclusion shows no uniform-bond simple-graph assembly can give the rise, for any graph family (a simple graph on 3 vertices has at most 3 edges)",
+      "what_is_refuted_here": [
+        "single-ratio scaling eps(z) = eps(1)*r^(z-1), for EVERY r (the two measured ratios differ by ~44%) -- kills the simplest form of the Markov-power mechanism, convention-independently",
+        "the same-orbital-fraction law beyond A=7 (scope-(a))"
+      ],
+      "what_survives": "the turnover LOCATION at A=4 from the SU(4) [1^n] support bound C(4,n)=0 for n>=5 -- parameter-free, but it locates only, and it rests on Wigner's symmetry-to-binding assumption which this corpus does not derive",
+      "still_open": "the SIZE of the rise: why eps(2)/eps(1) = 1.2137 and eps(3)/eps(1) = 2.1200. No mechanism tested here predicts either number."
+    }
+  }
+}
