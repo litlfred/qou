@@ -691,3 +691,43 @@ The O K half (le_index_of_taylor_house, le_index_of_norm_lt, RothAlgebraicIntege
 it is the honest step 2 for an O K-coefficient polynomial, and it is what route B would consume --
 but it is off the critical path until route B is chosen, and route B should not be.
 
+## 2026-08-30 -- ITEM 1 DONE: the auxiliary polynomial over Z. QOU/Mathlib/RothAuxiliaryInt.lean
+
+Six declarations, all axiom-clean, .olean deleted first, registered in QOU.lean.
+
+exists_auxiliary_polynomial_int is route A's step 1: a NON-ZERO Z-coefficient polynomial of
+bounded degree whose index at (alpha_1,...,alpha_m) is at least mu, with Siegel's height bound on
+its coefficients. So step 1 now produces the coefficient ring Roth's Lemma actually requires, and
+the break between steps 1 and 3 is closed.
+
+THE PIECE THAT MAKES IT WORK is sum_smul_eq_zero_iff_repr: one O_K-linear vanishing condition is
+finrank Q K integer-linear ones. Expand in an integral basis (Mathlib's RingOfIntegers.basis); the
+element vanishes exactly when all its coordinates do, and the coordinates of a Z-combination are
+the Z-combinations of the coordinates. That single equivalence is where deg(alpha) enters, and it
+is why the counting condition becomes the classical deg(alpha) * #conditions < #unknowns.
+
+card_prod_lt_card_idxBoxF discharges that condition from last entry's variance lemma via
+card_chooseBasisIndex_eq_finrank, so hcount is PROVED from eps and m rather than assumed:
+    finrank Q K < 4 eps^2 m   ==>   #conditions * deg(alpha) < #unknowns.
+
+Both Mathlib engines turned out to need no adaptation. Int.Matrix.exists_ne_zero_int_vec_norm_le
+is indexed by arbitrary Fintypes, so the equation index type
+({low-weight multi-indices} x {basis coordinates}) and the unknown index type {box} go in
+directly -- no Fin reindexing, which is the usual tax on this kind of call. The only wiring needed
+was `attribute [local instance] Matrix.seminormedAddCommGroup`, the same local instance Mathlib's
+own SiegelsLemma file sets, because the bound is stated against the sup norm.
+
+STILL A HYPOTHESIS in exists_auxiliary_polynomial_int: hpos (the system has at least one
+equation). Trivially true whenever the low-weight set and the basis are both non-empty, but it is
+Siegel's hypothesis and is left where Siegel puts it.
+
+REVISED REMAINING WORK:
+  1. DONE -- auxiliary polynomial over Z.
+  2. Compose: step 1 (Z) -> step 2 (Z) -> step 3 -> step 4. Now genuinely mechanical, in the sense
+     that the coefficient rings agree; roth_contradiction is waiting and takes InRothPolySet,
+     so the remaining glue is turning Siegel's real-valued height bound into the integer bound a
+     that InRothPolySet wants (a ceiling) and checking the degree/nonvanishing clauses line up.
+  3. The parameter selection -- choosing q_1 large then q_2, ..., q_m from an infinite sequence of
+     good approximations. Unchanged, and still the only piece that is not bookkeeping.
+The O_K half (RothAlgebraicInteger, RothAssembly) remains correct and off the critical path.
+

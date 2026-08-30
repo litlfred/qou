@@ -1307,6 +1307,14 @@ import QOU.Mathlib.RothAlgebraicInteger
 -- the asymmetry vanishes because d = 1; that is a fact about the shape, not a route
 -- from one vanishing criterion to the other.
 import QOU.Mathlib.RothAssembly
+-- ROUTE A: the auxiliary polynomial over Z, so that step 1 can reach step 3 at all.
+-- RothAuxiliary builds it over O_K (that is what Mathlib's number-field Siegel lemma
+-- produces) while Roth's Lemma requires MvPolynomial sigma Z through InRothPolySet, so
+-- those two never composed.  The join is made here on the Z side, which is cheaper:
+-- Siegel over Z is in Mathlib and everything from step 2 onward already works over Z.
+-- One O_K-linear vanishing condition is finrank Q K integer ones, so deg(alpha) comes
+-- back into the count and "take m large" becomes m > deg(alpha)/(4 eps^2).
+import QOU.Mathlib.RothAuxiliaryInt
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
