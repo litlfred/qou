@@ -82,9 +82,18 @@ namespace QOU.AlgebraicSubstrate
 -- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
 -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
 class IsWeilZeta (Z : LocalQZetaFunction) : Prop where
-  /-- Functional-equation pairing: `αᵢ ↦ q/αᵢ` permutes the eigenvalues. -/
+  /-- Functional-equation pairing: `αᵢ ↦ q/αᵢ` **permutes** the eigenvalues.
+
+      Stated as a permutation rather than as `∀ i, ∃ j`. The existential form is
+      strictly weaker and loses multiplicities — it is satisfied by families in
+      which two eigenvalues share a partner and a third has none — so nothing
+      about the root *multiset* follows from it, and `charPoly_map_conj` below
+      is exactly such a multiset statement. Weil's functional equation does
+      supply the bijection, so this is the faithful form, not a strengthening
+      of the cited result. -/
   functional_equation :
-    ∀ i : Fin 8, ∃ j : Fin 8, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i
+    ∃ σ : Equiv.Perm (Fin 8), ∀ i : Fin 8,
+      Z.eigenvalues (σ i) = ↑Z.q / Z.eigenvalues i
   /-- Castelnuovo–Severi: `|αᵢ|² ≤ q`. -/
   castelnuovo_severi : ∀ i : Fin 8, ‖Z.eigenvalues i‖ ^ 2 ≤ Z.q
 
@@ -93,8 +102,9 @@ class IsWeilZeta (Z : LocalQZetaFunction) : Prop where
     This pairs eigenvalues such that |αᵢ| · |q/αᵢ| = q. -/
 theorem eigenvalue_functional_equation
     (Z : LocalQZetaFunction) [IsWeilZeta Z] (i : Fin 8) :
-    ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i :=
-  IsWeilZeta.functional_equation i
+    ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i := by
+  obtain ⟨σ, hσ⟩ := IsWeilZeta.functional_equation (Z := Z)
+  exact ⟨σ i, hσ i⟩
 
 /-- The Castelnuovo–Severi inequality on B × B bounds the
     self-intersection of the Frobenius correspondence, yielding
@@ -179,8 +189,7 @@ noncomputable def weilZetaExample : LocalQZetaFunction where
 /-- The example is a Weil datum, so `IsWeilZeta` is inhabited and its two
     fields are jointly consistent — unlike the global axioms it replaces. -/
 instance : IsWeilZeta weilZetaExample where
-  functional_equation := by
-    intro i; exact ⟨i, by simp [weilZetaExample]; norm_num⟩
+  functional_equation := ⟨Equiv.refl _, by intro i; simp [weilZetaExample]; norm_num⟩
   castelnuovo_severi := by
     intro i; simp [weilZetaExample]; norm_num
 
@@ -252,5 +261,48 @@ theorem norm_charPoly_eval_zero (Z : LocalQZetaFunction) [IsWeilZeta Z] :
     ← Real.rpow_natCast (Z.q ^ (1 / 2 : ℝ)) 8, ← Real.rpow_mul (le_of_lt hq),
     ← Real.rpow_natCast Z.q 4]
   norm_num
+
+/-! ## The characteristic polynomial has real coefficients
+
+Conjugation-closure at the level of the *multiset* — which the permutation form
+of the functional equation supplies and the existential form does not — says
+`P̃` is fixed by coefficientwise conjugation. For a curve over `𝔽_q` the
+coefficients are in fact integers; `ℝ` is what follows from the two hypotheses
+carried here, and it is a genuine constraint: an arbitrary degree-8 monic
+complex polynomial does not satisfy it. -/
+
+/-- The functional-equation permutation carries each eigenvalue to its
+    conjugate. Sharpens `eigenvalues_conj_closed` from "some `j`" to "this
+    permutation", which is what a multiset argument needs. -/
+theorem eigenvalues_conj_perm (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ∃ σ : Equiv.Perm (Fin 8), ∀ i,
+      Z.eigenvalues (σ i) = (starRingEnd ℂ) (Z.eigenvalues i) := by
+  obtain ⟨σ, hσ⟩ := IsWeilZeta.functional_equation (Z := Z)
+  exact ⟨σ, fun i => (hσ i).trans (weil_partner_eq_conj Z.q (Z.eigenvalues i)
+    (Z.eigenvalues_ne_zero i) (eigenvalue_norm_sq_eq Z i))⟩
+
+/-- **`P̃` is fixed by coefficientwise conjugation** — equivalently, all its
+    coefficients are real.
+
+    Derived by reindexing `∏ (X − C ᾱᵢ)` along the functional-equation
+    permutation. The existential pairing could not do this: it does not rule out
+    two eigenvalues sharing a partner while a third has none, and the product is
+    sensitive to exactly that. -/
+theorem charPoly_map_conj (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    Z.charPoly.map (starRingEnd ℂ) = Z.charPoly := by
+  obtain ⟨σ, hσ⟩ := eigenvalues_conj_perm Z
+  conv_rhs => rw [Z.charPoly_roots]
+  rw [Z.charPoly_roots, Polynomial.map_prod]
+  simp only [Polynomial.map_sub, Polynomial.map_X, Polynomial.map_C]
+  exact Fintype.prod_equiv σ
+    (fun x => Polynomial.X - Polynomial.C ((starRingEnd ℂ) (Z.eigenvalues x)))
+    (fun j => Polynomial.X - Polynomial.C (Z.eigenvalues j))
+    (fun x => by simp only [hσ x])
+
+/-- Every coefficient of `P̃` is real. -/
+theorem charPoly_coeff_isReal (Z : LocalQZetaFunction) [IsWeilZeta Z] (n : ℕ) :
+    (starRingEnd ℂ) (Z.charPoly.coeff n) = Z.charPoly.coeff n := by
+  have h := congrArg (fun p => Polynomial.coeff p n) (charPoly_map_conj Z)
+  simpa using h
 
 end QOU.AlgebraicSubstrate
