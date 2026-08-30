@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:30:46.256919+00:00",
-  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "computedAt": "2026-08-30T07:40:32.372573+00:00",
+  "commitSha": "8e140acc2367383e143d76aef17f40a8b2acb8a1",
   "assertions": [
     {
       "name": "m_p_within_10_ppm_canonical",
@@ -47,6 +47,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {

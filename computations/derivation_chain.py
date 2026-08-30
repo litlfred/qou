@@ -162,8 +162,19 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   1.0653062286131670,  # 11-crossing typed B_3 (uud)
-    "n":   0.9232332971861535,  # 11-crossing typed B_3 (udd)
+    # CONVENTION FIX (2026-08-30, bean qou-46ab). `p` and `n` were the
+    # convention-C values, and this dict's OWN comment above is why they had to
+    # move with the Model A ones: it states that at A = 1 the two models
+    # converge and that the source is "the same as TR_M_AT_Q0 above". They are
+    # the same quantity, so leaving these at C while fixing that one would have
+    # split a documented identity.
+    #
+    # D / T / 3He are NOT touched here. They are SDP-canonical low-strand knots
+    # (6_2, 8_11, L6a4) — different quantities, not this trace under another
+    # convention — and they already carry their own "#1422-recompute pending"
+    # marker. Changing them would need those recomputes, not a substitution.
+    "p":   1.1457596924573009,  # 11-crossing typed B_3 (uud)
+    "n":   0.9877436881158096,  # 11-crossing typed B_3 (udd)
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)
