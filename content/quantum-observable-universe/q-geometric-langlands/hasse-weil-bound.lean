@@ -361,4 +361,55 @@ theorem prod_eigenvalues_eq_pm (Z : LocalQZetaFunction) [IsWeilZeta Z] :
   · exact Or.inl (by linear_combination h1)
   · exact Or.inr (by linear_combination h2)
 
+/-! ## The trace of Frobenius: real, and bounded by `2g√q`
+
+`∑ αᵢ` is the trace of `Fr_q` on `H¹`, and it is the arithmetically meaningful
+one: for a curve over `𝔽_q` the point count is `|ℬ(𝔽_q)| = q + 1 − ∑ αᵢ`, so a
+bound on the trace *is* a bound on the point count. The two hypotheses give both
+halves of the classical statement.
+
+`sum_eigenvalues_isReal` needs the permutation form of the functional equation
+for the same reason `charPoly_map_conj` did — a sum over the family is a multiset
+quantity, and the existential pairing does not control it.
+
+`norm_sum_eigenvalues_le` is the **Hasse–Weil point-count bound**: with
+`2g = 8`, `|∑ αᵢ| ≤ 2g√q`, i.e. `||ℬ(𝔽_q)| − (q+1)| ≤ 2g√q`. It follows from the
+magnitude bound by the triangle inequality alone — no further input. -/
+
+/-- **The trace of Frobenius is real.** `conj (∑ αᵢ) = ∑ αᵢ`, by reindexing the
+    conjugated sum along the functional-equation permutation. -/
+theorem sum_eigenvalues_isReal (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    (starRingEnd ℂ) (∑ i : Fin 8, Z.eigenvalues i) = ∑ i : Fin 8, Z.eigenvalues i := by
+  obtain ⟨σ, hσ⟩ := eigenvalues_conj_perm Z
+  rw [map_sum]
+  exact Fintype.sum_equiv σ
+    (fun i => (starRingEnd ℂ) (Z.eigenvalues i))
+    (fun j => Z.eigenvalues j)
+    (fun i => by simp only [hσ i])
+
+/-- **The Hasse–Weil point-count bound.** `‖∑ αᵢ‖ ≤ 2g · q^{1/2}` with `2g = 8`.
+
+    Since `|ℬ(𝔽_q)| = q + 1 − ∑ αᵢ` for a curve, this is exactly
+    `| |ℬ(𝔽_q)| − (q+1) | ≤ 2g√q` — the statement the theory is named for.
+    Derived from the magnitude bound by the triangle inequality; the functional
+    equation is not needed for this half. -/
+theorem norm_sum_eigenvalues_le (Z : LocalQZetaFunction) [IsWeilZeta Z] :
+    ‖∑ i : Fin 8, Z.eigenvalues i‖ ≤ 8 * Z.q ^ (1 / 2 : ℝ) := by
+  calc ‖∑ i : Fin 8, Z.eigenvalues i‖
+      ≤ ∑ i : Fin 8, ‖Z.eigenvalues i‖ := norm_sum_le _ _
+    _ = 8 * Z.q ^ (1 / 2 : ℝ) := by
+        simp only [hasse_weil_bound Z, Finset.sum_const, Finset.card_univ,
+          Fintype.card_fin, nsmul_eq_mul]
+        norm_num
+
+/-- The degree field is redundant given `charPoly_roots`: a product of eight
+    monic linear factors is monic of degree eight, so `charPoly_degree` is
+    derivable rather than independent. Recorded because a structure carrying a
+    consequence of its own field is a place where an inconsistent pair can be
+    written — an instance could in principle be refused for the wrong reason. -/
+theorem charPoly_natDegree_of_roots (α : Fin 8 → ℂ) :
+    (∏ i : Fin 8, (Polynomial.X - Polynomial.C (α i))).natDegree = 8 := by
+  rw [Polynomial.natDegree_prod _ _ (fun i _ => Polynomial.X_sub_C_ne_zero (α i))]
+  simp
+
 end QOU.AlgebraicSubstrate
