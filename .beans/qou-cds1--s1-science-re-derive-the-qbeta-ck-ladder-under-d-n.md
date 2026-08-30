@@ -4273,3 +4273,48 @@ decay fibre".
                                 and faithfulness picking z_D within {q, z_D}
   still open                    a cross-channel or structural derivation of the
                                 cap. NOT findable in Q_beta data.
+
+
+## Step 13 — WITHDRAWAL: the cap is DERIVED, not a ruling. Steps 10/12 framing was wrong.
+
+Asked "what condition makes the mass fibre functor land in Rep(SU_q(2))~TL".
+Answer: (a) tau monoidal, (b) dim tau(fundamental) = 2, i.e. Lambda^3_q V = 0 --
+the (1^3) block IS the image of the q-antisymmetrizer, which projects onto
+Lambda^3 V, zero for a 2-dim fibre.
+
+**And it is ALREADY VERIFIED.** Bean `qou-n1dj`, RESOLVED 2026-08-08, found on
+corpus-grep path 6 (`.beans/`):
+
+- `lem:feynman-eigenbasis-decomposition` writes the mass decomposition with the
+  row cap `l(lambda) <= 2` IN THE INDEX SET, so (1^3) is absent at n=3 by
+  construction — not an extra assumption.
+- `FibreDimensionForcesTL.lean` (verified today: lean-direct exit 0, 0 sorries)
+  proves `z*[N]_q = q^N` (fibre q-dim DETERMINES the Ocneanu parameter),
+  `N=2 => z_D`, and `z_D => y_(1^3) = 0`.
+
+### Why I got it wrong
+
+I read `MarkovTraceTLUniqueness.lean`'s "What this does NOT establish" section as
+current. It is STALE — the file establishing the premise is in the SAME
+DIRECTORY, and the audit that section cites is the one that POSED the question.
+AGENTS.md's "source-file status notes are NOT authoritative" applies to Lean
+docstrings too; mine only fired on `## Status` blocks. Fixed at the source.
+
+### Arc status
+
+  Step  9  chi^(2,1)(Delta_S) = 0                 STANDS
+  Step 10  z_required = 0.998500302563            STANDS
+  Step 10  "the block is a ruling"                WITHDRAWN
+  Step 11  bar-parity iff                         STANDS, less load-bearing
+  Step 12  decay cannot determine y_(1^3)         STANDS; the inference "hence
+                                                  the cap had to be a ruling" is
+                                                  WITHDRAWN
+  today    joint determinacy (decay+mass)         STANDS and GAINS: the derived
+                                                  cap is empirically falsifiable
+
+### The real remaining tension, restated
+
+The cap is derived, so z_D is forced, so z_required = 0.99850 is genuinely
+excluded. The gap between what the data wants and what the theory gives is
+therefore REAL and unexplained — not an artefact of an undecided convention.
+That is a sharper problem than the one I thought I had.
