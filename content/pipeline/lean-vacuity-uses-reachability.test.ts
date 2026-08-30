@@ -63,23 +63,19 @@ function reachable(
   g: Map<string, string[]>,
   from: string,
   target: string,
-  maxDepth = 5,
 ): boolean {
   if (!g.has(from)) return false;
   const seen = new Set([from]);
-  let frontier = [from];
-  for (let d = 0; d < maxDepth; d++) {
-    const next: string[] = [];
-    for (const n of frontier)
-      for (const c of g.get(n) ?? []) {
-        if (c === target) return true;
-        if (!seen.has(c)) {
-          seen.add(c);
-          next.push(c);
-        }
+  const queue = [from];
+  while (queue.length > 0) {
+    const n = queue.shift() as string;
+    for (const c of g.get(n) ?? []) {
+      if (c === target) return true;
+      if (!seen.has(c)) {
+        seen.add(c);
+        queue.push(c);
       }
-    if (next.length === 0) return false;
-    frontier = next;
+    }
   }
   return false;
 }
@@ -189,13 +185,25 @@ describe("uses[] reachability", () => {
     expect(reachable(cyclic, "a", "zzz")).toBe(false);
   });
 
-  test("depth is bounded", () => {
+  test("a long chain is reachable — the search is NOT depth-bounded", () => {
+    // This test asserted the opposite until 2026-08-30, pinning a depth bound
+    // of 5 that manufactured a false positive within the hour of being
+    // written: `prop:root-of-unity-truncation` reaches
+    // `conj:regularity-breakdown` at depth SIX, so the block was reported as
+    // failing to record a dependency it does record, and the ledger verdict
+    // written against it claimed "unreachable at any depth" on a search that
+    // had looked five deep.
+    //
+    // The bound was defended on the theory that an unbounded walk would
+    // connect almost anything to anything. Measured on the corpus, false: 3606
+    // blocks, 4912 edges, and the transitive closures of the four blocks in
+    // question are 164, 110, 11 and 1. Termination comes from `seen`.
     const chain = new Map<string, string[]>();
     for (let i = 0; i < 12; i++) chain.set(`n${i}`, [`n${i + 1}`]);
     chain.set("n12", []);
-    expect(reachable(chain, "n0", "n3", 5)).toBe(true);
-    // Beyond the bound the answer is "not established", not "reachable".
-    expect(reachable(chain, "n0", "n11", 5)).toBe(false);
+    expect(reachable(chain, "n0", "n3")).toBe(true);
+    expect(reachable(chain, "n0", "n11")).toBe(true);
+    expect(reachable(chain, "n0", "nowhere")).toBe(false);
   });
 });
 
