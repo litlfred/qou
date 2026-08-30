@@ -133,3 +133,70 @@ why does it turn over at the α particle?**
 - `#print axioms` on all 11 declarations: `propext` / `Classical.choice` / `Quot.sound` only. No `sorryAx`, no `sorry`, no `native_decide`.
 - Probe 5/5, mpmath at 65 dps, no float64 anywhere; AME values read from the vendored table via `codata_constants.ame_binding_mev`, not hardcoded literals.
 - `scripts/precision-gates.sh --changed` exits 1 on seven gates that are **red on `main`**; the full output mentions none of these three files, so this change widens none of them. Five audit witnesses were rewritten as a side effect of running the gates and were reverted: three carry an **environment downgrade** (records hold scipy 1.17.1 / sympy 1.12 / mpmath 1.4.1; this container has no scipy and mpmath 1.3.0). One of them, `witness-provenance-audit`, moved `PROV_MISSING` 78 → 94 — a real movement, not mine, and not separable from the environment change; flagged here rather than committed.
+
+---
+
+## Convergence with `qou-82mc` — a sibling reached the same wall first, by a different route
+
+**Added on discovering it, before merging.** `98e7ec907c` landed on `main` at 09:31Z —
+**24 minutes before** the commit this document describes — from a different session
+(`session_01BWn4JF2sE4kE3E7xbpK4je`), reaching the same unification independently.
+Per AGENTS.md §"Parallel exploration is valuable", that overlap is sanctioned; what
+it obliges is convergence rather than a second re-derivation. So: **the claim "the
+two walls are one wall" is not solely this document's, and it landed there first.**
+
+### Their route
+
+`QOU/MassTheory/AggregatorConvexityDichotomy.lean` writes a symmetric `A`-body
+binding as a function of its **total bond weight**, `B(A) = Φ(m_A · g)` with
+complete-graph counts `m₂ = 1`, `m₃ = 3`, so
+
+    b₃ = Φ(3g) − 3Φ(g)
+
+is a secant comparison on the ray through the origin. Jensen at `0` and `3g` with
+weights `(2/3, 1/3)` then gives, with no hypothesis on the bond set:
+
+* `b3Agg_nonpos_of_concaveOn` — `Φ` concave through `0` ⟹ `b₃ ≤ 0`
+* `b3Agg_nonneg_of_convexOn` — `Φ` convex through `0` ⟹ `b₃ ≥ 0`
+* `not_concaveOn_of_b3Agg_pos` — the falsifiable form
+
+### The bridge, and it is exact
+
+Under their hypothesis `B(A) = Φ(m_A·g)`, this document's coordination weight is
+
+    w(A−1) = Φ(m_A·g) / m_A = g · [ Φ(x)/x ]  at  x = m_A·g
+
+and `Φ` convex through the origin is *equivalent* to `Φ(x)/x` non-decreasing. So
+
+> **`Φ` convex through 0  ⟺  `w` non-decreasing.**
+
+Their dichotomy and this document's `b3_nonpos_of_le` / `lt_of_b3_pos` are the same
+statement in two coordinates. Neither is a correction of the other.
+
+### What each has that the other does not
+
+**Theirs is more general in the sign direction.** It proves *both* halves of a
+dichotomy (`≤` from concavity, `≥` from convexity) for an arbitrary convex or
+concave `Φ`, with Jensen doing the work. This document proves only the `≤` half,
+and by a one-line inequality rather than a convexity argument.
+
+**This one is more general in the assembly direction.** It needs **no aggregator**:
+`w(z) := B(A)/C(A,2)` is defined for *every* binding map, whereas `Φ` requires the
+binding to be a function of a single scalar total bond weight. Assemblies that are
+not of the form `Φ(total weight)` are outside their hypothesis and inside this one.
+
+**Additive here, not present there:** their declarations stop at `b₃` (plus the
+multiplicative special case `wMult`). The **finite-difference tower**
+`bₙ = C(n,2)·Δ^{n−2}w(1)`, the **non-monotonicity pincer** (`b₃ > 0` plus saturation
+forces `w` non-monotone), and the **blow-up diagnosis** (the tower expands a peaked
+`w` three steps below its maximum) have no counterpart in `AggregatorConvexityDichotomy`.
+
+**Additive there, not present here:** the Jensen framing, the `≥` direction, and the
+worked separations `b3Agg_linear_eq_zero` / `b3Agg_sq_pos`.
+
+### Scope, unchanged by the convergence
+
+Two independent routes to the same wall strengthen the wall. Neither derives a
+magnitude, and the second one arriving does not make the first one closer to closing
+the gate. The open question is the same in both coordinates: **why does `w` rise —
+equivalently, why is the aggregator convex — and why does it turn over at the α?**
