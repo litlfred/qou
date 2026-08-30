@@ -55,16 +55,20 @@ $$
   \frac{q \eta_q}{3  (q - 1)^2  |\mathcal{L}|}.
 $$
 
-**Well-definedness condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ is positive and the q-AND amplitude $\Phi(q)$ is **non-zero**. In the canonical convention $z_D = q^3/(q^2+1)$ the two amplitudes are
+**Well-definedness condition.** The evolution is well-defined only when the Toffoli diagonal $P_{7,7}(q)$ is positive and the q-AND amplitude $P_{7,6}(q)$ is **non-zero**. In the canonical convention $z_D = q^3/(q^2+1)$ the two amplitudes are
 
 $$
   P_{7,7}^{D}(q) \,=\, \frac{q^{3}\bigl(q^{4}+1\bigr)}{\bigl(q^{2}+1\bigr)^{2}},
   \qquad
-  \Phi^{D}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}}.
+  P_{7,6}^{D}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}}.
 $$
+
+The second amplitude is written $P_{7,6}$, not $\Phi$. This is a naming correction only and leaves the criterion above exactly as ruled: $\Phi$ named a specific published closed form that the Toffoli construction does not produce under any indexing or convention, so it is retired as an *object* rather than re-derived in a new frame ([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)), and item 1 of this proposition already records that withdrawal.
 
 For $q > 0$ the first is strictly positive, having no positive root. The second vanishes exactly at $q = 1$: the factor $(q+1)$ is positive there, and the sextic $q^{6}+q^{4}+2q^{2}+1$ has no positive real root, so the whole zero set on $q > 0$ is carried by $(q-1)$. The condition therefore holds on $q \neq 1$, which contains the substrate value $q_0 \approx 1.110$.
 
 **Non-vanishing, not positivity.** The criterion is that the q-AND does not degenerate, not that it carry a particular sign. This is the same condition the universality argument of [Toffoli q-AND](#rem:toffoli-q-and) uses — it turns on $P_{7,6}(q) \neq 0$ — and it is what invertibility of the tick requires. At $q = 1$ the q-AND vanishes and the braiding ceases to act: that is the classical limit, where the $q$-Toffoli degenerates to the ordinary Toffoli, and it is the one point the condition excludes.
 
-Strict positivity would be a different and stronger requirement. Under $z_D$ it holds only on $0 < q < 1$, since $\Phi^{D}(q_0) \approx -0.1438$, and would place the substrate outside the well-defined regime. It is not the criterion in force here. The regime $q > 1$ this block once named, and the golden-ratio threshold $q_\star = 1/\varphi^{2}$ from which it was read off, were both artifacts of the excised convention $C$ (see [Toffoli LP-stability](#prop:toffoli-lp-stability)); under $z_D$ the diagonal has no zero at all and $q_\star$ does not exist.
+Strict positivity would be a different and stronger requirement. Under $z_D$ it holds only on $0 < q < 1$, since $P_{7,6}^{D}(q_0) \approx -0.1438$, and would place the substrate outside the well-defined regime. It is not the criterion in force here.
+
+**A measurement that strengthens the ruling rather than reopening it.** Amplitude positivity was standing proxy for feasibility of the confinement LP. That proxy does not track what it proxies for. Constructing the q-Toffoli as an element of $H_3(q)$ — $T_q = \sigma_1 + \hbar_\times\,\sigma_0\sigma_1$ for the all-proton ordering — and evaluating the LP condition $G\vec t(q_0) \geq 0$ directly against the production Gram gives strictly positive components, for all eight strand-type orderings ([Toffoli LP-stability](#prop:toffoli-lp-stability)). So the substrate satisfies LP feasibility *as well as* non-vanishing; the counterfactual above is exact about amplitude positivity and would be wrong if read as "the LP would have excluded the substrate". Two caveats bound this: the Gram is entrywise non-negative and $\vec t$ is too for the all-proton ordering, so that ordering's positivity is forced by shape (2 of the 8 are trivial in this sense, 6 are not); and $\vec t$ turns negative on $0 < q < 1$, the *opposite* side of $q = 1$ from where $P_{7,6}$ does, so the amplitude sign and the cone condition disagree about which regime is admissible. The regime $q > 1$ this block once named, and the golden-ratio threshold $q_\star = 1/\varphi^{2}$ from which it was read off, were both artifacts of the excised convention $C$ (see [Toffoli LP-stability](#prop:toffoli-lp-stability)); under $z_D$ the diagonal has no zero at all and $q_\star$ does not exist.
