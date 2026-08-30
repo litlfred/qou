@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-30T17:54:41Z
+updated_at: 2026-08-30T18:06:51Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -637,3 +637,77 @@ the classical treatment. Recording it as a route to *test*, not a route that wor
 Net effect on the scope stated above: `lead` is not a one-liner, and the "three field proofs" figure
 should be read as **three field proofs plus either a longest-element construction or a demonstration
 that (b) avoids one.**
+
+---
+
+## 🛑 2026-08-30 — the candidate `lead` is REFUTED. Measured before formalising.
+
+The entry above sets up `lead(λ,s,t) = d(s)⁻¹ · w_λ · d(t)` as the leading-permutation map for
+(C1)'s triangularity, and calls `lead_inj` "the hard field". It is worse than hard: **as defined it
+is FALSE**, and it fails for a structural reason.
+
+Probe: [`computations/hecke/murphy_lead_injectivity_probe.py`](../computations/hecke/murphy_lead_injectivity_probe.py).
+Full enumeration, exact integer arithmetic, no sampling and no tolerance.
+
+### The measurement
+
+| `n+1` | pairs `(s,t)` over all λ | distinct `lead` values | collisions |
+|---|---|---|---|
+| 3 | 6 | 5 | **1** |
+| 4 | 24 | 17 | **7** |
+| 5 | 120 | 54 | **66** |
+
+The pair count is exactly `m!` — as `murphyIndex_card` proves — so the deficit is pure degeneracy,
+and it **worsens with rank** (1/6 → 7/24 → 66/120). Not a small-rank artifact.
+
+### The structural cause, and why this is a scope-(b) exclusion for the SHAPE
+
+`λ ↦ w_λ` is **itself not injective**, at every rank tested:
+
+| `m` | partitions | distinct `w_λ` | collisions |
+|---|---|---|---|
+| 3 | 3 | 2 | `w_(3) = w_(2,1) = (2 1 0)` |
+| 4 | 5 | 4 | `w_(3,1) = w_(2,1,1)` |
+| 5 | 7 | 5 | `w_(5) = w_(3,2)`, `w_(3,1,1) = w_(2,1,1,1)` |
+| 6 | 11 | 9 | `w_(3,3) = w_(2,2,1,1)`, `w_(3,1,1,1) = w_(2,1,1,1,1)` |
+
+Combined with a **proved** Lean lemma — `dOf_colSuperstandard : d(t^λ) = 1` (#6283) — this gives a
+two-line structural argument, not merely an enumeration:
+
+1. `d(t^λ) = 1` (Lean, proved).
+2. Hence `lead(λ, t^λ, t^λ) = w_λ`.
+3. `λ ↦ w_λ` is not injective (measured, every rank 3–6).
+4. So `lead(λ, t^λ, t^λ) = lead(μ, t^μ, t^μ)` for `λ ≠ μ` sharing a longest element. ∎
+
+The reference tableau always exists, so the witness is always available. **Any `lead` of this shape
+fails**, at every rank where two partitions share a longest element.
+
+### Scoping, per AGENTS.md
+
+* **(b) structural exclusion, invariant cited** — for the *shape* `d(s)⁻¹ w_λ d(t)`. The invariant
+  is `dOf_colSuperstandard` plus non-injectivity of `λ ↦ w_λ`.
+* **(a) scope-limited** — for `lead_inj` in general. `Triangular` asks only for *some* injective
+  `lead`, and this does **not** exclude other constructions. It excludes the textbook-shaped one.
+
+### What this costs and saves
+
+It **invalidates the plan in the two entries above.** #6293 said "three field proofs plus a
+longest-element construction"; the longest-element construction (landed on #6297) is real and
+reusable, but the `lead` it was meant to feed does not work. `supp_le` was never the blocker —
+`lead_inj` was, and the obvious `lead` is false.
+
+Saved: a formalisation attempt against a false statement. The probe cost minutes; `lead_inj` would
+have cost a tranche and could not have closed.
+
+### What the next agent should do
+
+Do **not** attempt `lead_inj` for this `lead`. Either:
+
+* find a `lead` that separates partitions — the collisions are all *cross-λ*, so the map needs to
+  see λ beyond `w_λ` (the obvious repair: pair `w_λ` with λ itself, i.e. order `MurphyIndex` by
+  dominance on λ first and permutation second, which is legitimate since
+  `exists_linearOrder_of_partialOrder` accepts any partial order); or
+* abandon single-`lead` triangularity for the cell-module **filtration** formulation, which is how
+  Murphy's theory actually stratifies by dominance.
+
+The first is worth probing before formalising — and the probe now exists to test it.
