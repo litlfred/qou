@@ -75,5 +75,19 @@ No claim of LP-instability is made, and none is available: the condition as stat
 
 All sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. The antisymmetry defect is exact and vanishes only at $q = 1$, so "reversing the crossing negates it" fails everywhere except the classical limit. Symbolic cross-check: [`toffoli_amplitude_sign_claims.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_amplitude_sign_claims.py), 9/9.
 
+**The reduction is refuted by a zero-set argument.** The proof reduces the cone condition to $P_{7,7}W_{\mathrm{std}}$ *"with the appropriate sign from"* $P_{7,6}$. A product vanishes exactly where a factor does, so such a reduction forces the cone condition's zero set into the union of the factors'. With the symbolic Gram — validated against the production `gram_matrix_mp` at five values of $q$ — the cone condition is a **single** constraint, the one indexed by the longest word $\sigma_0\sigma_1\sigma_0$:
+
+$$
+  (G\vec t)_5 \;=\; \frac{q^{10}+q^{6}-q^{4}+q^{2}-1}{(q^2+1)^2}
+$$
+
+| quantity | zeros on $q > 0$ |
+|---|---|
+| the cone constraint $(G\vec t)_5$ | one, at $q_c \approx 0.8944802929$ |
+| $P_{7,7}W_{\mathrm{std}} = (q^7+q^3)/(q^4+4q^2+1)$ | **none** — strictly positive |
+| $P_{7,6}$ | one, at $q = 1$ |
+
+Since $q_c \neq 1$, the cone's zero is accounted for by neither factor, so no reduction of the stated form holds. The numerator is irreducible over $\mathbb{Q}$ and has exactly one positive real root, matching the bisected threshold to $1.14\times10^{-46}$. Proved without the intermediate value theorem and without $q_c$'s value in `cone_sign_change_unexplained_by_factors`: across $[1/2, 9/10]$ the cone constraint changes sign while both claimed factors stay strictly positive at each endpoint.
+
 **Substrate stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).

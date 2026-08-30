@@ -1,11 +1,11 @@
 ---
 # qou-ahu3
 title: 'Reduction candidate: does the LP cone condition track -P_76, and via what orderings-to-NF map?'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:30:58Z
-updated_at: 2026-08-30T14:52:52Z
+updated_at: 2026-08-30T15:00:10Z
 ---
 
 NEXT TRANCHE, opened 2026-08-30 after PR #6095 merged (d43f261ed1).
@@ -200,3 +200,48 @@ rather than measured.
 
 QUESTION (b) -- the orderings-to-NF map -- is untouched and remains open, but
 is now a much smaller target: one constraint, with an explicit polynomial.
+
+
+## TRANCHE CLOSED 2026-08-30 — the reduction is refuted by a ZERO-SET argument
+
+The strongest and final form, needing no signs, no precision, no anchor and no
+convention. The proof reduces the cone condition to P_77 * W_std "with the
+appropriate sign from" P_76. A product vanishes exactly where a factor does,
+so any such reduction forces the cone's zero set into the union of the
+factors'. Measured symbolically:
+
+    (G t)_5              zeros on q>0:  ONE, at q_c ~ 0.8944802929
+    P_77 * W_std         zeros on q>0:  NONE  (= (q^7+q^3)/(q^4+4q^2+1) > 0)
+    P_76                 zeros on q>0:  ONE, at q = 1
+
+q_c != 1, so the cone's zero is accounted for by NEITHER factor. No reduction
+of the stated form can hold. This subsumes the sign arguments entirely: it does
+not matter what sign convention or proportionality is attached, because the
+zero sets already disagree.
+
+Also recorded: the two sides do not even share a denominator -- (q^2+1)^2 for
+the cone, q^4+4q^2+1 for the target -- so they are not related by any
+q-independent factor either.
+
+PROVED WITHOUT IVT AND WITHOUT q_c's VALUE:
+  cone_sign_change_unexplained_by_factors -- across [1/2, 9/10] the cone
+  constraint changes sign while BOTH claimed factors are strictly positive at
+  each endpoint. A quantity that changes sign where every factor of its alleged
+  product does not cannot be that product.
+  coneRow5Numerator_nineTenths_pos supports it.
+
+File is now 30 theorems, 0 sorries, all axioms [propext, Classical.choice,
+Quot.sound].
+
+## STATUS OF THE TWO QUESTIONS
+
+(a) Does the cone condition track -P_76?  ANSWERED NO, and now superseded by
+    the stronger zero-set result: it tracks no function of P_76 at all.
+
+(b) The orderings-to-NF map.  Still open as a POSITIVE question -- is there any
+    relation between the 8x8 entries and the cone condition? -- but the
+    negative half is settled: it is not the relation prop:toffoli-lp-stability
+    asserts. Anyone resuming should note the target is now concrete: a single
+    constraint with numerator q^10+q^6-q^4+q^2-1, irreducible over Q.
+
+Bean closed. (b) as a positive search is a fresh tranche, not a continuation.

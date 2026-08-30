@@ -504,6 +504,51 @@ theorem cone_threshold_ne_amplitude_threshold :
   · exact (toffoliFlip_eq_zero_iff one_pos).mpr rfl
   · rw [coneRow5Numerator_one]; norm_num
 
+/-!
+## The reduction is refuted by a ZERO-SET argument, independent of signs
+
+The strongest form of the arc's conclusion, and the one that needs no
+precision, no anchor and no convention.  The proof reduces the cone condition
+to `P₇₇ · W_std` "with the appropriate sign from" `P₇₆`.  A product vanishes
+exactly where one of its factors does, so any such reduction forces the cone
+condition's zero set to be contained in the union of the factors'.  It is not:
+
+| quantity | zeros on `q > 0` |
+|---|---|
+| the cone constraint `(G·t)₅` | one, at `q_c ≈ 0.8945` |
+| `P₇₇ · W_std` | **none** — strictly positive throughout |
+| `P₇₆` | one, at `q = 1` |
+
+`q_c ≠ 1`, so the cone's zero is accounted for by neither factor.
+
+The theorem below states this **without** needing the intermediate value
+theorem or the exact value of `q_c`: on the interval `[1/2, 9/10]` the cone
+constraint changes sign, while both claimed factors keep a constant (positive)
+sign at both endpoints.  A quantity that changes sign where every factor of its
+alleged product does not cannot be that product.
+-/
+
+/-- The cone constraint is already positive at `q = 9/10`, below `1`. -/
+theorem coneRow5Numerator_nineTenths_pos : 0 < coneRow5Numerator (9 / 10) := by
+  unfold coneRow5Numerator; norm_num
+
+/-- **The reduction is refuted, without appeal to signs or precision.**  Across
+    `[1/2, 9/10]` the cone constraint changes sign, while `P₇₇·W_std` and `P₇₆`
+    are both strictly positive at each endpoint.  No product of factors that do
+    not change sign can change sign, so the cone condition is not
+    `P₇₇·W_std` modulated by anything depending only on `P₇₆`. -/
+theorem cone_sign_change_unexplained_by_factors :
+    coneRow5Numerator (1 / 2) < 0 ∧ 0 < coneRow5Numerator (9 / 10)
+      ∧ 0 < toffoliDiagonal (1 / 2) * wStd (1 / 2)
+      ∧ 0 < toffoliDiagonal (9 / 10) * wStd (9 / 10)
+      ∧ 0 < toffoliFlipAmplitude (1 / 2)
+      ∧ 0 < toffoliFlipAmplitude (9 / 10) := by
+  refine ⟨coneRow5Numerator_half_neg, coneRow5Numerator_nineTenths_pos,
+          toffoliDiagonal_mul_wStd_pos (by norm_num),
+          toffoliDiagonal_mul_wStd_pos (by norm_num),
+          toffoliFlip_pos_of_lt_one (by norm_num) (by norm_num),
+          toffoliFlip_pos_of_lt_one (by norm_num) (by norm_num)⟩
+
 end
 
 end QOU.Information
