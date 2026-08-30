@@ -238,6 +238,14 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-08-30: authored+verified `QOU/StandardModel/BrunnianIsotypeExclusion.lean`
+  (sign-isotype exclusion, statement-B). lean-direct EXIT 0, `#print axioms` =
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`. TRAP: cache tarball is
+  now **2.3G** (was 1.6G) and restore ran out at ~2.2G free — extraction cut off
+  in the QOU library files, but mathlib extracted 3407 oleans, ENOUGH for a
+  Mathlib-only import cone. Lesson: a Mathlib-only file needs no complete restore
+  — probe the import cone with a minimal `example` first. Gotcha: `omit [inst] in`
+  must precede the docstring, not sit between docstring and `theorem`.
 - 2026-08-29 (cool-johnson): orphan-branch restore WORKS; the blocked host is
   Azure blob `lakecache.blob.core.windows.net`, which the restore never uses.
   Confirmed the cold-cache and sidecar TRAPs.
