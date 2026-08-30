@@ -79,6 +79,17 @@ theorem mostow_volume_eq_triangulation_volume
 
 /-- **The entered literal, pinned to a computed sum.**
 
+⚠ **CORRECTED — this theorem cannot be applied at the actual figure-eight.**  The
+literal below is a 15-significant-digit *truncation*; the corpus's exact value is
+`VOL_4_1 = 2·Cl₂(π/3) = 2.029883212819307250011597804990…`, and the two differ at the
+16th digit.  So instantiating this at `QOU.Knot.FigureEightTri.figureEightTriangulation`,
+whose volume is `VOL_4_1` by a sorry-free theorem, forces a false conclusion — its
+hypotheses are jointly unsatisfiable there.  The statement is sound and derived; it is
+simply unusable at the one knot it names.  Use
+`QOU.Encounter.FigureEightVolumeBridge.vol_eq_VOL_4_1_of_realises`, which is keyed on the
+exact constant.  Kept here rather than deleted because the defect is instructive: a
+theorem can be sorry-free and still name hypotheses nothing satisfies (bean `qou-hq3m`).
+
 `figureEight` sets `volume := 2.02988321281930` as a decimal literal. Under the
 bridge, that literal is not free: it is the Bloch–Wigner sum of any triangulation
 realising the complement.
