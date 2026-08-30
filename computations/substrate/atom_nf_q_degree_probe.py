@@ -168,14 +168,26 @@ def hm_laurent(nf, c, d, gen):
     return r
 
 
-def build_atom_nf_laurent(Z: int, N: int, *, inter_nucleon: bool = True):
+def build_atom_nf_laurent(Z: int, N: int, *, bonds: str = "complete"):
     """Laurent mirror of ``build_atom_nf_sym`` — same control flow, same factors.
 
-    ``inter_nucleon=False`` ABLATES the `for prev in range(k)` loop, i.e. drops the
-    complete-graph inter-nucleon crossings and keeps only the per-nucleon internal
-    structure and the charge closure. This is not a variant of the physics — it is the
-    control that isolates which part of the word carries the A-dependence.
+    ``bonds`` selects the inter-nucleon bond set, and ONLY that; everything else
+    (per-nucleon internal structure, charge closure, the crossing coefficients
+    themselves) is untouched:
+
+    * ``"complete"`` — as ``build_atom_nf_sym`` is written: `for prev in range(k)`,
+      i.e. every nucleon crosses every earlier one. `C(A,2)` crossings.
+    * ``"chain"`` — adjacent pairs only, the bond set
+      `closed_form_tau_M.closed_form_ratio` uses (`for k_idx in range(A-1)`).
+      `A-1` crossings.
+    * ``"none"`` — no inter-nucleon crossings at all. The control.
+
+    ``"chain"`` and ``"none"`` are NOT proposed variants of the physics. They are
+    what makes the A-dependence attributable: with three bond sets differing in
+    nothing else, whatever separates their degrees is the bond set.
     """
+    if bonds not in ("complete", "chain", "none"):
+        raise ValueError(f"bonds must be complete|chain|none, got {bonds!r}")
     A = Z + N
     if A == 0:
         return [dict(ONE_L)] + [dict() for _ in range(5)], 0
@@ -205,16 +217,21 @@ def build_atom_nf_laurent(Z: int, N: int, *, inter_nucleon: bool = True):
             nf = hm_laurent(nf, ONE_L, ZERO_L, 0); steps += 1
             nf = hm_laurent(nf, ONE_L, ZERO_L, 0); steps += 1
 
-        if inter_nucleon:
-            for prev in range(k):
-                ti, tj = ordering[prev], ordering[k]
-                if ti == "p" and tj == "p":
-                    nf = hm_laurent(nf, ONE_L, ZERO_L, 0)
-                elif ti == "n" and tj == "n":
-                    nf = hm_laurent(nf, ONE_L, NEG_H_L, 0)
-                else:
-                    nf = hm_laurent(nf, ONE_L, NEG_HALF_H_L, 0)
-                steps += 1
+        if bonds == "complete":
+            partners = range(k)
+        elif bonds == "chain":
+            partners = range(k - 1, k) if k >= 1 else range(0)
+        else:
+            partners = range(0)
+        for prev in partners:
+            ti, tj = ordering[prev], ordering[k]
+            if ti == "p" and tj == "p":
+                nf = hm_laurent(nf, ONE_L, ZERO_L, 0)
+            elif ti == "n" and tj == "n":
+                nf = hm_laurent(nf, ONE_L, NEG_H_L, 0)
+            else:
+                nf = hm_laurent(nf, ONE_L, NEG_HALF_H_L, 0)
+            steps += 1
 
     for _ in range(Z):
         nf = hm_laurent(nf, ONE_L, NEG_H_L, 1); steps += 1
@@ -330,6 +347,22 @@ def predicted_steps(Z: int, N: int) -> int:
     return 11 * A + A * (A - 1) // 2 + Z
 
 
+_BUILD_CACHE: dict[tuple[int, int, str], tuple] = {}
+
+
+def build_cached(Z: int, N: int, bonds: str = "complete"):
+    """Memoised ``build_atom_nf_laurent`` — the A=40 complete build is the expensive
+    one and several tables below want it."""
+    key = (Z, N, bonds)
+    if key not in _BUILD_CACHE:
+        _BUILD_CACHE[key] = build_atom_nf_laurent(Z, N, bonds=bonds)
+    return _BUILD_CACHE[key]
+
+
+def max_span(nf) -> int:
+    return max((ldeg(c)[0] - ldeg(c)[1]) for c in nf if c)
+
+
 def main() -> int:
     print("atom_nf_q_degree_probe — q-degree of the six NF coefficients vs A")
     print("=" * 78)
@@ -343,7 +376,7 @@ def main() -> int:
     print(f"{'nucleus':>8} {'Z':>3} {'N':>3} {'A':>4} {'steps':>7} {'11A+C(A,2)+Z':>13} {'ok':>4}")
     rows = []
     for name, Z, N in NUCLEI:
-        nf, steps = build_atom_nf_laurent(Z, N)
+        nf, steps = build_cached(Z, N)
         pred = predicted_steps(Z, N)
         ok = "yes" if steps == pred else "NO"
         print(f"{name:>8} {Z:>3} {N:>3} {Z+N:>4} {steps:>7} {pred:>13} {ok:>4}")
@@ -409,38 +442,44 @@ def main() -> int:
     #        inter-nucleon loop switched off.  If the quadratic A-dependence of the
     #        degree survives, it is not the complete graph; if it collapses to linear,
     #        the complete graph is the whole of it.  This replaces a fit with a control.
-    print("ABLATION: degree with the inter-nucleon loop ON vs OFF")
-    print("  ON  = build_atom_nf_sym as written (complete graph, C(A,2) crossings)")
-    print("  OFF = per-nucleon structure + charge closure only (no pair crossings)")
-    print(f"{'nucleus':>8} {'A':>4} {'span ON':>9} {'span OFF':>9} {'ON-OFF':>8}")
+    print("BOND SET COMPARISON: the same word with only the pair-bond set changed")
+    print("  complete = build_atom_nf_sym as written        (C(A,2) crossings)")
+    print("  chain    = adjacent pairs, as closed_form_ratio (A-1 crossings)")
+    print("  none     = no pair crossings at all            (the control)")
+    print(f"{'nucleus':>8} {'A':>4} {'complete':>9} {'chain':>7} {'none':>7} "
+          f"{'compl-none':>11} {'chain-none':>11}")
     for name, Z, N in NUCLEI:
         A = Z + N
-        nf_on, _ = build_atom_nf_laurent(Z, N, inter_nucleon=True)
-        nf_off, _ = build_atom_nf_laurent(Z, N, inter_nucleon=False)
-        s_on = max((ldeg(c)[0] - ldeg(c)[1]) for c in nf_on if c)
-        s_off = max((ldeg(c)[0] - ldeg(c)[1]) for c in nf_off if c)
-        print(f"{name:>8} {A:>4} {s_on:>9} {s_off:>9} {s_on - s_off:>8}")
+        s = {}
+        for mode in ("complete", "chain", "none"):
+            s[mode] = max_span(build_cached(Z, N, mode)[0])
+        print(f"{name:>8} {A:>4} {s['complete']:>9} {s['chain']:>7} {s['none']:>7} "
+              f"{s['complete'] - s['none']:>11} {s['chain'] - s['none']:>11}")
     print()
 
-    # Exact finite differences along an EVENLY SPACED N=Z chain (spacing hstep=4).
+    # Exact finite differences along an EVENLY SPACED N=Z chain (spacing HSTEP).
     # A degree-d polynomial in A has a vanishing (d+1)-th difference; the d-th is
-    # constant and equals d!·(leading coeff)·hstep^d.  This is exact integer
+    # constant and equals d!·(leading coeff)·HSTEP^d.  This is exact integer
     # arithmetic on measured integers -- there is no fit and no tolerance.
     HSTEP = 4
-    CHAIN = [12, 16, 20, 24, 28, 32, 36, 40]
-    on, off = [], []
-    for A in CHAIN:
-        nf_on, _ = build_atom_nf_laurent(A // 2, A // 2, inter_nucleon=True)
-        nf_off, _ = build_atom_nf_laurent(A // 2, A // 2, inter_nucleon=False)
-        on.append(max((ldeg(c)[0] - ldeg(c)[1]) for c in nf_on if c))
-        off.append(max((ldeg(c)[0] - ldeg(c)[1]) for c in nf_off if c))
-    delta = [b - a for a, b in zip(on, off)]
+    AXIS = [12, 16, 20, 24, 28, 32, 36, 40]
+    meas: dict[str, list[int]] = {}
+    for mode in ("complete", "chain", "none"):
+        vals = []
+        for A in AXIS:
+            vals.append(max_span(build_cached(A // 2, A // 2, mode)[0]))
+        meas[mode] = vals
+    meas["pairs-only (complete - none)"] = [
+        a - b for a, b in zip(meas["complete"], meas["none"])
+    ]
+    meas["pairs-only (chain - none)"] = [
+        a - b for a, b in zip(meas["chain"], meas["none"])
+    ]
 
-    print(f"Finite differences along the evenly spaced N=Z chain (A = {CHAIN}, "
+    print(f"Finite differences along the evenly spaced N=Z chain (A = {AXIS}, "
           f"spacing {HSTEP})")
-    for label, seq in (("span OFF (no pair crossings)", off),
-                       ("span ON - span OFF (pair crossings alone)", [-d for d in delta]),
-                       ("span ON (as written)", on)):
+    verdicts = {}
+    for label, seq in meas.items():
         d1 = [b - a for a, b in zip(seq, seq[1:])]
         d2 = [b - a for a, b in zip(d1, d1[1:])]
         d3 = [b - a for a, b in zip(d2, d2[1:])]
@@ -450,24 +489,37 @@ def main() -> int:
         print(f"    ΔΔ     {d2}")
         print(f"    ΔΔΔ    {d3}")
         if d2 and all(x == 0 for x in d2):
-            print(f"    => LINEAR in A; slope = {Fraction(d1[0], HSTEP)} per nucleon")
+            v = f"LINEAR in A; slope = {Fraction(d1[0], HSTEP)} per nucleon"
         elif d3 and all(x == 0 for x in d3):
-            lead = Fraction(d2[0], 2 * HSTEP * HSTEP)
-            print(f"    => QUADRATIC in A; leading coefficient = {lead}")
+            v = f"QUADRATIC in A; leading coefficient = {Fraction(d2[0], 2*HSTEP*HSTEP)}"
         else:
-            print("    => neither linear nor quadratic on this chain")
+            v = "neither linear nor quadratic on this chain"
+        verdicts[label] = v
+        print(f"    => {v}")
     print()
 
-    # Closed forms, VERIFIED on every N=Z nucleus measured (not fitted-and-hoped).
+    print("The diagnostic, stated as measured")
+    print("-" * 78)
+    for label in ("complete", "chain", "none"):
+        print(f"  {label:>9} bonds -> {verdicts[label]}")
+    kinds = {k: verdicts[k].split()[0] for k in ("complete", "chain", "none")}
+    if kinds["complete"] == "QUADRATIC" and kinds["chain"] == kinds["none"] == "LINEAR":
+        print("  => the q-degree SEPARATES the two bond sets live in the corpus: the")
+        print("     complete graph is quadratic in A while the adjacent-pair chain is")
+        print("     linear, i.e. the same growth class as no pair bonds at all.")
+    else:
+        print(f"  => NOT the expected separation: {kinds}")
+    print()
+
+    # Closed forms, VERIFIED at every measured point (not fitted-and-hoped).
     print("Closed forms on the N=Z chain, checked against every measured point")
     forms = [
-        ("span OFF", lambda A: 23 * A - 2, off),
-        ("span ON", lambda A: A * A + 14 * A + 42, on),
+        ("none", lambda A: 23 * A - 2, meas["none"]),
+        ("complete", lambda A: A * A + 14 * A + 42, meas["complete"]),
     ]
     for label, f, seq in forms:
-        bad = [(A, f(A), s) for A, s in zip(CHAIN, seq) if f(A) != s]
-        status = "all match" if not bad else f"MISMATCH {bad}"
-        print(f"  {label:>9}: {status}")
+        bad = [(A, f(A), s) for A, s in zip(AXIS, seq) if f(A) != s]
+        print(f"  {label:>9}: {'all match' if not bad else f'MISMATCH {bad}'}")
     print()
 
     print("Reading")
@@ -484,16 +536,19 @@ def main() -> int:
     print("    DENSE in that sublattice (gaps=0): the coefficient is q^-D * P(q^2)")
     print("    with P of full degree D.  So the degree is not carried by a sparse")
     print("    leading term that could cancel downstream.")
-    print("  * The q-degree is QUADRATIC in A, and the ablation shows the quadratic")
-    print("    is ENTIRELY the inter-nucleon loop: with that loop off the span is")
-    print("    exactly linear (23A - 2 on the N=Z chain, second difference 0), and")
-    print("    the pair crossings alone contribute a term with leading coefficient")
-    print("    exactly 1 in A^2.  That is a control, not a fit.")
-    print("  * Consequence for the bk-crossing arc: the braid word this producer")
-    print("    builds encodes the COMPLETE GRAPH on the nucleons -- the bond set")
+    print("  * The q-degree is QUADRATIC in A, and swapping ONLY the bond set shows")
+    print("    the quadratic is entirely the inter-nucleon loop: complete graph is")
+    print("    quadratic (leading coefficient exactly 1), the adjacent-pair chain is")
+    print("    linear (25/nucleon), and no pair bonds at all is linear (23/nucleon).")
+    print("    Exact integer finite differences, no fit and no tolerance.")
+    print("  * So the q-degree is a DIAGNOSTIC: it separates the bond sets by growth")
+    print("    class, needing no q0, no anchor and no AME.  Measured, the word")
+    print("    build_atom_nf_sym writes encodes the COMPLETE GRAPH -- the bond set")
     print("    QOU.Mass.CoordinationSaturation proves gives B/A = eps*(A-1)/2,")
-    print("    unbounded, with no plateau.  The q-degree is an algebraic readout of")
-    print("    which bond set a producer uses, needing no q0, no anchor and no AME.")
+    print("    unbounded, with no plateau.")
+    print("  * The chain and the complete graph are BOTH live in the corpus, on")
+    print("    different producers.  That is a scope-(a) statement about which word")
+    print("    a given producer writes; it does not decide what the physics needs.")
     return 0
 
 
