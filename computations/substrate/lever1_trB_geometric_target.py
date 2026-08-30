@@ -52,7 +52,47 @@ import mpmath as mp
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# q0 SOURCING (bean qou-cds3, 2026-08-30). This read
+#
+#     Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+#
+# which is the MUON pin, while this producer's stem is declared
+# `physical_proton` in q0_anchor_manifest.json — a computation and a
+# declaration asserting different layers, 11.5371 ppb apart.
+#
+# Resolved to the substrate pin rather than re-declared, on two independent
+# signals: main placed this stem in `physical_proton` in its 2026-08-29 sweep,
+# and the sibling `lever1_binding_core_characterization.py` in this directory
+# already removed its own hardcoded pin for exactly this reason, recording that
+# "a hardcoded pin here can only ever manufacture a straddle". Same family,
+# same directory, same fix.
+#
+# Fails loudly rather than falling back: this producer's whole output is an
+# evaluation AT the substrate pin, so a run that cannot read the pin has
+# nothing to say. THIS CHANGES VALUES — the committed witness is stale by
+# 11.5 ppb until regenerated (bean qou-jjge).
+import os as _os
+import sys as _sys
+
+# The sibling puts `tools/qou-substrate/python` on the path via os.getcwd(),
+# which only works when run from the repo root. Anchored on __file__ instead so
+# it holds wherever this is invoked from: computations/substrate/<this> -> repo.
+_QS = _os.path.join(
+    _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))),
+    "tools", "qou-substrate", "python")
+if _os.path.isdir(_QS) and _QS not in _sys.path:
+    _sys.path.insert(0, _QS)
+
+try:
+    from qou_substrate import constants as C  # noqa: E402
+except Exception as exc:  # noqa: BLE001
+    raise SystemExit(
+        "lever1_trB_geometric_target: cannot import qou_substrate.constants, so the substrate q0 is "
+        "unavailable. Refusing to fall back to a hardcoded pin — that is what "
+        "made this producer compute at the muon pin under a proton "
+        f"declaration. Install the package and re-run. Cause: {exc}"
+    )
+Q0 = mp.mpf(str(C.Q_MP if hasattr(C, "Q_MP") else C.Q))
 
 results: dict = {}
 asserts: list[tuple[str, bool]] = []

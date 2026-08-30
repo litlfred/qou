@@ -132,6 +132,14 @@ def _computes(src: str, mods: "set[str]", idx=None) -> str:
     Decided by mpmath distance for literals (so a truncation classifies like a
     50-digit value) and by call site for the ungoverned-module route.
     """
+    # `load_q_50dps` MENTIONS the pinning witness because reading it is that
+    # helper's non-default branch; a bare call returns PROTON. So when it is
+    # imported, the filename in this source proves nothing and the call-site /
+    # signature rules below must decide instead. `probe_9b_perlambda_brane_tower`
+    # calls it bare and names the witness only in a provenance string; without
+    # this guard it reads as a muon computation and contradicts a correct
+    # proton declaration.
+    defer_to_call_site = "load_q_50dps" in src
     if any(m in _UNGOVERNED for m in mods):
         try:
             tree = ast.parse(src)
@@ -147,7 +155,7 @@ def _computes(src: str, mods: "set[str]", idx=None) -> str:
         if has_p:
             return "proton"
         return "unknown"
-    layers = _layer_of_source(src)
+    layers = set() if defer_to_call_site else _layer_of_source(src, code_only=True)
     if not layers and idx is not None:
         layers = _helper_layer(src, idx) | _call_site_layer(src, _SIGS)
     if layers == {"muon"}:
@@ -159,8 +167,20 @@ def _computes(src: str, mods: "set[str]", idx=None) -> str:
     return "unknown"
 
 
-def _layer_of_source(text: str) -> "set[str]":
-    """Which pin layers does this snippet of source evidence carry?"""
+def _layer_of_source(text: str, *, code_only: bool = False) -> "set[str]":
+    """Which pin layers does this snippet of source evidence carry?
+
+    `code_only` strips comments before looking. It matters:
+    `lever1_binding_core_characterization` documents a fallback it REMOVED —
+
+        #     except:   Q0 = "1.10997859555733471"  # the MUON pin, silently
+
+    — and the live code raises rather than falling back. Reading that comment as
+    a muon computation reported a producer as defective *because it had recorded
+    how it was fixed*, which punishes exactly the behaviour this campaign wants.
+    """
+    if code_only:
+        text = "\n".join(l.split("#", 1)[0] for l in text.splitlines())
     out = set()
     if "q-pinning-50-digit.witness.json" in text:
         out.add("muon")          # that witness IS the muon anchor-defining file

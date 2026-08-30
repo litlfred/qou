@@ -66,8 +66,27 @@ from codata_constants import M_E_MEV  # noqa: E402  (drain qou-7ot6-a)
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+# q0 SOURCING (bean qou-cds3, 2026-08-30). This read `derived_50_digit.q`
+# straight out of q-pinning-50-digit.witness.json — the MUON anchor-defining
+# file — while this producer's stem is declared `physical_proton` in
+# q0_anchor_manifest.json. Compute and declaration asserted layers 11.5371 ppb
+# apart. (The pin in that witness has since moved A -> C, so the read was also
+# tracking a vintage change nobody here asked for.)
+#
+# Resolved to the proton pin, matching the declaration. The witness is still
+# recorded as an upstream so provenance is unchanged.
+#
+# THE float64 CAST STAYS, and is not a no-float64 violation: `pn` is
+# `pyhecke_native`, a Rust extension whose trace_weights_n takes a double. An
+# mpf would be converted at the call boundary regardless — this is f64 BY
+# CONSTRUCTION (bean qou-840k's 67-file class), not by neglect.
+#
+# THIS CHANGES VALUES by ~11.5 ppb; the committed witness is stale until
+# regenerated (bean qou-jjge).
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_f64 = float(mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"]))
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)      # provenance only, not the value
+from q_parameter import Q_MP  # noqa: E402
+q0_f64 = float(mp.mpf(str(Q_MP)))
 h_f64 = q0_f64 - 1.0 / q0_f64
 h_sq_f64 = h_f64 * h_f64
 
