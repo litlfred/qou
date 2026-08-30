@@ -179,13 +179,37 @@ w.add_parameter("h", HA)
 w.add_parameter("z", z)
 w.add_parameter("basis", NF_NAMES)
 
+# Expected e⁻ pair counts out of the 36 (b_i, b_j) pairs, pinned.
+#
+# This read `computed=all_tables[...], expected=all_tables[...]` — the same
+# expression on both sides, so it passed whatever the table held and
+# `allPassed` said nothing about it (bean `qou-26f2`).
+#
+# REGRESSION PINS, not an independent derivation: values from the H₃(q)
+# multiplication table as of 2026-08-25, recorded so a change in the table,
+# the basis order or the NF reduction is caught rather than silently
+# re-blessed.
+#
+# Cross-check worth knowing: `photon_operator_table.py` computes the same
+# quantity over the same basis by a different route and agrees on γ (19),
+# σ₀/σ₁ (24) and e⁻ (36) — it names its operators `T_{n,k}` rather than by
+# basis word, and covers the cinquefoil instead of the two Hopf links.
+EXPECTED_E_MINUS_PAIRS = {
+    "γ":  19,   # vacuum / photon (empty knot)
+    "σ₀": 24,   # single crossing (up quark channel)
+    "σ₁": 24,   # single crossing (color channel)
+    "L₊": 32,   # Hopf link (gluon +)
+    "L₋": 32,   # Hopf link (gluon −)
+    "e⁻": 36,   # trefoil (electron) — universally opens the channel
+}
+
 for op_name, _, _ in BASIS_KNOTS:
     w.add_assertion(
         f"{op_name} e⁻ pair count",
         computed=all_tables[op_name]["e_minus_pairs"],
-        expected=all_tables[op_name]["e_minus_pairs"],
+        expected=EXPECTED_E_MINUS_PAIRS[op_name],
         tolerance=0,
-        source="H₃(q) basis multiplication",
+        source="H₃(q) basis multiplication; expected pinned 2026-08-25",
     )
 
 # The key result

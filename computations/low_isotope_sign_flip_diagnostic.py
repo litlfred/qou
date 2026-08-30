@@ -315,8 +315,8 @@ def main() -> int:
     )
     w.add_assertion(
         "diagnostic_emitted_for_all_isotopes_with_predictions",
-        computed=len(rows_out),
-        expected=len(rows_out),
+        computed=len(rows_out) > 0,
+        expected=True,
         tolerance=0,
         unit="rows",
         source="low-isotope-mass-table.witness.json projection",

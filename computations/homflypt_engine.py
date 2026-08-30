@@ -842,6 +842,7 @@ def homflypt_operator_cost_vector(
 # ── Self-test ────────────────────────────────────────────────────
 
 def _self_test():
+    _ok: list[bool] = []
     import mpmath as mp
     set_compute_dps()
 
@@ -851,7 +852,8 @@ def _self_test():
 
     # Unknot
     p = homflypt_from_braid([], 1)
-    assert p == LaurentPoly2.one(), f"unknot: {p}"
+    _ok.append(bool(p == LaurentPoly2.one()))
+    assert _ok[-1], f'unknot: {p}'
     print(f"  unknot:         P = {p}  ✓")
 
     # Hopf link (σ₁²)
@@ -979,8 +981,8 @@ def _self_test():
     w.add_data("gram_trefoil_mirror_su2", mp.nstr(g_12, 16))
     w.add_assertion(
         "unknot_is_1",
-        computed=1.0,
-        expected=1.0,
+        computed=all(_ok),
+        expected=True,
     )
     w.add_assertion(
         "hopf_link_correct",

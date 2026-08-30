@@ -293,23 +293,28 @@ def main() -> int:
         ],
     })
     w.add_data("verdict", verdict)
-    w.add_assertion(
-        name="cross_anchor_u_subst_compared",
-        computed=True,
-        expected=True,
-        tolerance=0,
-        source="Step 2 of Q_β 1ppQ closure",
-    )
-    w.add_assertion(
-        name="step1_premise_supported",
-        computed=premise_supported,
-        expected=premise_supported,
-        tolerance=0,
-        source=("whether rungs 8-10 -- the ones Step 1's flat asymptote was "
-                "read off -- are certified resolved by the upstream extractor "
-                "(qou-8ofm / qou-frch). Recorded, not gated: this probe "
-                "reports the premise's status, it does not assert it."),
-    )
+    # Both demoted from `add_assertion` to data (bean `qou-26f2`).
+    #
+    # `step1_premise_supported` is the clearest case in the whole backlog: its
+    # own source string says "**Recorded, not gated**: this probe reports the
+    # premise's status, it does not assert it." That is exactly right, and
+    # `add_assertion` was the wrong instrument for saying it — as an assertion
+    # with `computed=premise_supported, expected=premise_supported` it fed
+    # `allPassed` a guaranteed pass whichever way the premise went, which is
+    # the opposite of reporting a status.
+    #
+    # `cross_anchor_u_subst_compared` is `True == True` under the source
+    # "Step 2 of Q_β 1ppQ closure" — a note that the step ran. The per-rung
+    # comparison it refers to is already recorded in `cross_anchor` above,
+    # with floors and both relative errors per rung.
+    w.add_data("step1_premise_supported", {
+        "supported": bool(premise_supported),
+        "meaning": "whether rungs 8-10 — the ones Step 1's flat asymptote "
+                   "was read off — are certified resolved by the upstream "
+                   "extractor (qou-8ofm / qou-frch)",
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0

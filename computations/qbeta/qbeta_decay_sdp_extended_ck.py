@@ -544,28 +544,26 @@ def main() -> None:
         ),
     })
 
-    # Assertions (low tolerance — these are 50dps reproducibility checks)
-    w.add_assertion(
-        "c_8_extracted_finite",
-        computed=abs(c_k[8]),
-        expected=abs(c_k[8]),
-        tolerance=1e-10,
-        source="c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization",
-    )
-    w.add_assertion(
-        "c_9_extracted_finite",
-        computed=abs(c_k[9]),
-        expected=abs(c_k[9]),
-        tolerance=1e-10,
-        source="c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization",
-    )
-    w.add_assertion(
-        "c_10_extracted_finite",
-        computed=abs(c_k[10]),
-        expected=abs(c_k[10]),
-        tolerance=1e-10,
-        source="c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization",
-    )
+    # Assertions
+    # These three read `computed=abs(c_k[k]), expected=abs(c_k[k])` — the same
+    # expression on both sides, so they passed for every value including `inf`
+    # and `nan`, which is exactly what a name ending `_finite` promises to
+    # exclude (bean `qou-26f2`). The `tolerance=1e-10` and the "50dps
+    # reproducibility check" comment made them look like precision checks;
+    # they compared a number to itself and could not measure precision.
+    #
+    # Each c_k is extracted by dividing by a product of N_j, so the failure
+    # this guards is a vanishing denominator arriving as `inf` or `nan` — the
+    # one thing the old form was structurally unable to see. `mp.isfinite`
+    # answers it on the mpf directly, without a float64 round trip.
+    for _k, _upto in ((8, 7), (9, 8), (10, 9)):
+        w.add_assertion(
+            f"c_{_k}_extracted_finite",
+            computed=bool(mp.isfinite(c_k[_k])),
+            expected=True,
+            source=f"c_{_k} extraction at q_0 from "
+                   f"R(q_0)/N_2..N_{_upto} factorization",
+        )
 
     w.save()
 

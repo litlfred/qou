@@ -1,12 +1,16 @@
 ---
 # qou-mt7r
 title: 'GAP: q_real in MarkovTraceContext descendants is untethered from the inherited q'
-status: todo
+status: completed
 type: task
 priority: medium
-tags: [lean, 7c, wall, markovtrace]
+tags:
+    - lean
+    - 7c
+    - wall
+    - markovtrace
 created_at: 2026-08-08T18:30:00Z
-updated_at: 2026-08-08T18:30:00Z
+updated_at: 2026-08-24T06:56:29Z
 ---
 
 Surfaced while working `qou-mtcx` (PR #4756). Not fixed there — fixing it needs
@@ -66,3 +70,70 @@ dressed as structure.
 `scripts/lean_cone_build.py`, and `LEAN_CONE_EXTRA_ARGS` is appended to it, not
 a substitute). Without it a field mentioning `R` auto-binds a fresh implicit
 and a no-op change compiles green. Never `lake build`.
+
+## Summary of Changes — 2026-08-24
+
+Route 1, varied: a **sibling mixin** `QOU/Shared/ArchimedeanEval.lean` rather
+than extending `MarkovTraceContext`. It carries `eval : R →+* ℝ` and *derives*
+`q_real := eval q`; the independent field is deleted from all three
+descendants. Commit `de221f5f64`.
+
+`ctx.q_real` reads identically at every call site — dot notation resolves
+through the parent exactly as it resolved to the field, the same trick
+`qou-6ome` used for `field_pos`.
+
+### What the tie buys, machine-checked
+
+`ArchimedeanEval.q_real_one_of_q_one : q = 1 → q_real = 1`. One line from
+`eval` being a ring hom, and **not provable at all** before. It bites hardest in
+`toffoli_transfer_matrix`, whose sub-claim (v) *is* a classical limit
+(`q_real = 1 → P_flip k = 0`) — previously satisfiable at `q_real = 1` with the
+substrate parameter anywhere at all.
+
+### Why not route 1 as written
+
+`MarkovTraceContext` has **15** descendants; only 3 are archimedean. Putting a
+map to `ℝ` on the parent gives the other 12 an archimedean field they have no
+business carrying — the §7c wall in reverse. The mixin costs the three one word
+in `extends` and leaves the twelve untouched. Blast radius: 4 files.
+
+### The anti-laundering rule, respected explicitly
+
+This bean's own warning was that positing `eval q = q_real` without the functor
+"would be assumption dressed as structure". So the module says outright that it
+is **not** the τ-functor, and `ArchimedeanEval.ofRingHom` machine-checks the
+point: an instance is buildable from *any* ring hom — no functoriality, no
+naturality, no braided category. Modelled on
+`TauFunctorTargetSpec.interface_alone_is_trivially_inhabitable`, which does the
+same for its interface.
+
+The distinction that makes this honest rather than laundering: the mixin does
+not claim `eval` *is* the archimedean evaluation. It claims `q_real` is *some*
+ring-homomorphic image of `q`, which is strictly more than "an unrelated real"
+and strictly less than the functor.
+
+### Not a second parallel mechanism
+
+The bean warns the τ should be shared with `qou-6ome`, not duplicated. It is:
+the mechanism is `RingHom _ ℝ`, already in Mathlib, and `ArchimedeanEval` is
+`MarkovTraceContext` plus one. Recorded in the docstring for whoever does the
+`qou-6ome` side, together with the asymmetry that matters there — `R_q` is
+`LaurentPolynomial ℤ`, so evaluation at a nonzero real is **constructible**, not
+assumed. Here `R` is an opaque `CommRing` and `eval` must be a hypothesis.
+
+### Residue
+
+- **`eval` is still assumed.** The τ-functor that would supply it with
+  provenance is open, and remains THE wall (`QOU/Archimedean/TauFunctorTargetSpec.lean`).
+- **`qou-6ome`'s side is untouched.** `SubstrateParameter` /
+  `ArchimedeanSubstrateField` are still untied. That is the follow-up, and it is
+  the easier half because `eval` is constructible there.
+
+### Verification
+
+```
+lean-direct-cone     exit 0 on all four modules
+run-validate         30 issues, unchanged
+mirror drift  @35    exit 0
+duplicate decls @57  exit 0
+```

@@ -262,8 +262,23 @@ def main():
     w.add_data("even_odd_ratio", float(net_even/net_odd))
     w.add_data("pi0_pi_pm_predicted", float(net_even/(net_even+net_odd)))
     w.add_data("pi0_pi_pm_pdg", 135.0/139.57)
-    w.add_assertion("charge_conj_neq_bar", computed=1, expected=1, tolerance=0,
-                     source="C and bar are distinct symmetries on the meson braid")
+    # `charge_conj_neq_bar` was `computed=1, expected=1` (bean `qou-26f2`).
+    # The claim — that C and bar are distinct symmetries on the meson braid —
+    # is a structural statement this script does not derive, so it stays as
+    # data. What the script DOES compute is the bar involution's even and odd
+    # nets, and their differing is the observable consequence: were bar acting
+    # as C does, the two sectors would coincide and the ratio would be 1. That
+    # is asserted instead, under a name that says what is actually checked.
+    w.add_data("charge_conj_neq_bar", {
+        "claim": "C and bar are distinct symmetries on the meson braid",
+        "derived_here": False,
+    })
+    w.add_assertion("bar_even_and_odd_nets_differ",
+                    computed=bool(abs(float(net_even / net_odd) - 1.0) > 1e-9),
+                    expected=True,
+                    source="the bar involution's even and odd sectors give "
+                           "different nets (ratio != 1) — the observable "
+                           "consequence of bar acting differently from C")
     print(f"\n  Witness: {w.save()}")
 
 

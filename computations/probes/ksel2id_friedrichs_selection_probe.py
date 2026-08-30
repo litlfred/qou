@@ -261,16 +261,20 @@ def aitken(seq):
 # ---------------------------------------------------------- F1 exact leg
 
 def block_f1_exact(wb: WitnessBuilder):
+    _ok: list[bool] = []
     r = Fr(21, 20)
     ms = balanced_moments(r, 2 * K_EXACT + 2)
     al, be = qd_jacobi(ms, K_EXACT)
-    assert all(b > 0 for b in be), "Favard positivity depth 25"
+    _ok.append(bool(all((b > 0 for b in be))))
+    assert _ok[-1], 'Favard positivity depth 25'
     qt = r * r
-    assert be[0] == qt + 1 / qt - 1, be[0]
+    _ok.append(bool(be[0] == qt + 1 / qt - 1))
+    assert _ok[-1], be[0]
     for n in range(13):
-        assert pow00(al, be, n) == ms[n], (n, "exact reproduction")
+        _ok.append(bool(pow00(al, be, n) == ms[n]))
+        assert _ok[-1], (n, 'exact reproduction')
     wb.add_assertion(
-        "f1_exact_qd_favard_depth25", computed="0", expected="0",
+        "f1_exact_qd_favard_depth25", computed=all(_ok), expected=True,
         tolerance=0,
         source="exact rational qd algorithm at r = 21/20 (q ~ 1.2155), "
                "K = 26: all Jacobi beta_k > 0 for k <= 25 (extends the "
@@ -284,13 +288,16 @@ def block_f1_exact(wb: WitnessBuilder):
 # ----------------------------------------------- F2 deformation-leg qd
 
 def block_f2_deformation_qd(wb: WitnessBuilder):
+    _ok: list[bool] = []
     mp.dps = QD_DPS
     r = mpf(6) / 5
     ms = balanced_moments(r, 2 * K_DEF + 2)
     al, be = qd_jacobi(ms, K_DEF)
-    assert all(b > 0 for b in be), "beta > 0 at r = 6/5"
+    _ok.append(bool(all((b > 0 for b in be))))
+    assert _ok[-1], 'beta > 0 at r = 6/5'
     worst = max(abs(pow00(al, be, n) / ms[n] - 1) for n in range(1, 25))
-    assert worst < mpf("1e-300"), worst
+    _ok.append(bool(worst < mpf('1e-300')))
+    assert _ok[-1], worst
     # cross-check vs exact rational qd at K = 12
     re_ = Fr(6, 5)
     mse = balanced_moments(re_, 2 * 12 + 2)
@@ -302,9 +309,10 @@ def block_f2_deformation_qd(wb: WitnessBuilder):
         if k < 11:
             ev = mpf(bee[k].numerator) / mpf(bee[k].denominator)
             xworst = max(xworst, abs(be[k] / ev - 1))
-    assert xworst < mpf("1e-350"), xworst
+    _ok.append(bool(xworst < mpf('1e-350')))
+    assert _ok[-1], xworst
     wb.add_assertion(
-        "f2_deformation_qd_certified", computed="0", expected="0",
+        "f2_deformation_qd_certified", computed=all(_ok), expected=True,
         tolerance=1e-300,
         source=f"mpf qd at r = 6/5 (q = 2.0736), dps {QD_DPS}, "
                f"K = {K_DEF}: beta_k > 0 all k, moment reproduction "
@@ -316,6 +324,7 @@ def block_f2_deformation_qd(wb: WitnessBuilder):
 # ------------------------------------------- F3 Friedrichs truncations
 
 def block_f3_friedrichs(wb: WitnessBuilder, al, be):
+    _ok: list[bool] = []
     mp.dps = EIG_DPS
     alf = [+a for a in al]
     bef = [+b for b in be]
@@ -325,15 +334,18 @@ def block_f3_friedrichs(wb: WitnessBuilder, al, be):
         res[N] = (lam, w)
     # min-max monotonicity: lambda_j(N) strictly decreasing in N
     for j in range(36):
-        assert res[48][0][j] < res[42][0][j] < res[36][0][j], j
+        _ok.append(bool(res[48][0][j] < res[42][0][j] < res[36][0][j]))
+        assert _ok[-1], j
     lam48, w48 = res[48]
     cauchy0 = abs(res[48][0][0] / res[42][0][0] - 1)
-    assert cauchy0 < mpf("1e-4"), cauchy0
-    assert mpf("0.33") < lam48[0] < mpf("0.34"), lam48[0]
+    _ok.append(bool(cauchy0 < mpf('1e-4')))
+    assert _ok[-1], cauchy0
+    _ok.append(bool(mpf('0.33') < lam48[0] < mpf('0.34')))
+    assert _ok[-1], lam48[0]
     # per-j convergence table for the class window
     conv = [abs(res[48][0][j] / res[42][0][j] - 1) for j in range(20)]
     wb.add_assertion(
-        "f3_friedrichs_limit_positive", computed="0", expected="0",
+        "f3_friedrichs_limit_positive", computed=all(_ok), expected=True,
         tolerance=1e-4,
         source="r = 6/5: truncation eigenvalues lambda_j(N) strictly "
                "decrease in N for every j (polynomials are a form core "
@@ -355,6 +367,7 @@ def block_f3_friedrichs(wb: WitnessBuilder, al, be):
 # ------------------------------------------------- F4 Krein via Radau
 
 def block_f4_krein(wb: WitnessBuilder, al, be, lamF):
+    _ok: list[bool] = []
     mp.dps = QD_DPS
     P0 = monic_p_at_zero(al, be, K_DEF)
     mp.dps = EIG_DPS
@@ -363,8 +376,10 @@ def block_f4_krein(wb: WitnessBuilder, al, be, lamF):
     N = 48
     tsh = +(P0[N] / P0[N - 1])
     lamK, wK = sym_trunc_eig(alf, bef, N, tshift=tsh)
-    assert abs(lamK[0]) < mpf("1e-80"), lamK[0]
-    assert all(x > 0 for x in lamK[1:]), "Krein atoms positive"
+    _ok.append(bool(abs(lamK[0]) < mpf('1e-80')))
+    assert _ok[-1], lamK[0]
+    _ok.append(bool(all((x > 0 for x in lamK[1:]))))
+    assert _ok[-1], 'Krein atoms positive'
     # Radau mass-at-0 identity: w_0 = 1 / sum_{k<N} p_k(0)^2
     mp.dps = QD_DPS
     D = [mpf(1)]
@@ -373,25 +388,30 @@ def block_f4_krein(wb: WitnessBuilder, al, be, lamF):
     Ssum = mp.fsum(P0[k] ** 2 / D[k] for k in range(N))
     mp.dps = EIG_DPS
     massid = abs(wK[0] * Ssum - 1)
-    assert massid < mpf("1e-25"), massid
+    _ok.append(bool(massid < mpf('1e-25')))
+    assert _ok[-1], massid
     # indeterminacy corroboration: sum p_k(0)^2 partials converge
     mp.dps = QD_DPS
     parts = [mp.fsum(P0[k] ** 2 / D[k] for k in range(m))
              for m in (16, 26, 36, 48)]
     incs = [parts[i + 1] - parts[i] for i in range(3)]
-    assert incs[2] < incs[1] < incs[0], "sum p_k(0)^2 increments"
-    assert incs[2] / incs[1] < mpf("0.9"), "convergent trend"
+    _ok.append(bool(incs[2] < incs[1] < incs[0]))
+    assert _ok[-1], 'sum p_k(0)^2 increments'
+    _ok.append(bool(incs[2] / incs[1] < mpf('0.9')))
+    assert _ok[-1], 'convergent trend'
     # convergence of the first Krein atoms (N = 42 vs 48)
     mp.dps = EIG_DPS
     tsh42 = +(P0[42] / P0[41])
     lamK42, _ = sym_trunc_eig(alf, bef, 42, tshift=tsh42)
     ck = abs(lamK[1] / lamK42[1] - 1)
-    assert ck < mpf("1e-4"), ck
+    _ok.append(bool(ck < mpf('1e-4')))
+    assert _ok[-1], ck
     # interlacing with Friedrichs
     for j in range(6):
-        assert lamF[j] < lamK[j + 1] < lamF[j + 1], (j, "interlace")
+        _ok.append(bool(lamF[j] < lamK[j + 1] < lamF[j + 1]))
+        assert _ok[-1], (j, 'interlace')
     wb.add_assertion(
-        "f4_krein_radau_pinned_at_zero", computed="0", expected="0",
+        "f4_krein_radau_pinned_at_zero", computed=all(_ok), expected=True,
         tolerance=1e-25,
         source="r = 6/5, N = 48 Gauss-Radau truncation with node pinned "
                "at 0 (boundary shift t_N = P_N(0)/P_{N-1}(0)) — the "
@@ -415,6 +435,7 @@ def block_f4_krein(wb: WitnessBuilder, al, be, lamF):
 # --------------------------------------------- F5 grid identification
 
 def block_f5_grid(wb: WitnessBuilder, lamF, wF, lamK):
+    _ok: list[bool] = []
     mp.dps = EIG_DPS
     r = mpf(6) / 5
     q = r ** 4
@@ -425,37 +446,44 @@ def block_f5_grid(wb: WitnessBuilder, lamF, wF, lamK):
     phi_half = frac1(phi1 + mpf(1) / 2)      # u = qtilde^{1/2} class
     # spacing in qtilde-steps: monotone decreasing to 2
     steps = [mlog(lamF[j + 1] / lamF[j]) / Lq for j in range(3, 18)]
-    assert all(steps[i + 1] < steps[i] for i in range(len(steps) - 1)), \
-        "spacing monotone"
-    assert mpf("1.995") < steps[-1] < mpf("2.05"), steps[-1]
+    _ok.append(bool(all((steps[i + 1] < steps[i] for i in range(len(steps) - 1)))))
+    assert _ok[-1], 'spacing monotone'
+    _ok.append(bool(mpf('1.995') < steps[-1] < mpf('2.05')))
+    assert _ok[-1], steps[-1]
     # Friedrichs class drift -> phi1 (Aitken on the monotone tail)
     classesF = [frac1(mlog(lamF[j]) / Lq) for j in range(3, 19)]
     tail = classesF[:]
     while len(tail) > 3 and not all(
             tail[i + 1] > tail[i] for i in range(len(tail) - 1)):
         tail = tail[1:]
-    assert len(tail) >= 6, "monotone class tail"
+    _ok.append(bool(len(tail) >= 6))
+    assert _ok[-1], 'monotone class tail'
     extF = aitken(tail)
     dF = circ_dist(extF, phi1)
     dFh = circ_dist(extF, phi_half)
-    assert dF < mpf("0.01"), (extF, phi1)
-    assert dFh > mpf("0.4"), dFh
+    _ok.append(bool(dF < mpf('0.01')))
+    assert _ok[-1], (extF, phi1)
+    _ok.append(bool(dFh > mpf('0.4')))
+    assert _ok[-1], dFh
     # Krein class drift -> same class
     classesK = [frac1(mlog(lamK[j]) / Lq) for j in range(3, 14)]
     tailK = classesK[:]
     while len(tailK) > 3 and not all(
             tailK[i + 1] > tailK[i] for i in range(len(tailK) - 1)):
         tailK = tailK[1:]
-    assert len(tailK) >= 4, "monotone Krein class tail"
+    _ok.append(bool(len(tailK) >= 4))
+    assert _ok[-1], 'monotone Krein class tail'
     extK = aitken(tailK)
     dK = circ_dist(extK, phi1)
-    assert dK < mpf("0.04"), (extK, phi1)
+    _ok.append(bool(dK < mpf('0.04')))
+    assert _ok[-1], (extK, phi1)
     # exact low-end mismatch: lowest Friedrichs atom is OFF the u=1 grid
     d0 = circ_dist(mlog(lamF[0]) / Lq, phi1)
-    assert d0 > mpf("0.1"), d0
+    _ok.append(bool(d0 > mpf('0.1')))
+    assert _ok[-1], d0
     wb.add_assertion(
-        "f5_extremal_grids_q_lattice_u1_class", computed="0",
-        expected="0", tolerance=0.01,
+        "f5_extremal_grids_q_lattice_u1_class", computed=all(_ok),
+        expected=True, tolerance=0.01,
         source="r = 6/5: Friedrichs atom spacing in qtilde-steps "
                "decreases monotonically to 2 (last window value "
                f"{mp.nstr(steps[-1], 8)}) — the extremal supports are "
@@ -497,6 +525,7 @@ def block_f5_grid(wb: WitnessBuilder, lamF, wF, lamK):
 # ------------------------------------------------------ F6 circle sweep
 
 def block_f6_sweep(wb: WitnessBuilder, al, be):
+    _ok: list[bool] = []
     mp.dps = QD_DPS
     P0 = monic_p_at_zero(al, be, K_DEF)
     N = 44
@@ -510,12 +539,15 @@ def block_f6_sweep(wb: WitnessBuilder, al, be):
         lam, _ = sym_trunc_eig(alf, bef, N,
                                tshift=(s * tK if snum else None))
         lam_mins.append(lam[0])
-    assert all(lam_mins[i + 1] < lam_mins[i] for i in range(4)), lam_mins
-    assert abs(lam_mins[-1]) < mpf("1e-80"), lam_mins[-1]
+    _ok.append(bool(all((lam_mins[i + 1] < lam_mins[i] for i in range(4)))))
+    assert _ok[-1], lam_mins
+    _ok.append(bool(abs(lam_mins[-1]) < mpf('1e-80')))
+    assert _ok[-1], lam_mins[-1]
     lam_beyond, _ = sym_trunc_eig(alf, bef, N, tshift=mpf(3) / 2 * tK)
-    assert lam_beyond[0] < 0, lam_beyond[0]
+    _ok.append(bool(lam_beyond[0] < 0))
+    assert _ok[-1], lam_beyond[0]
     wb.add_assertion(
-        "f6_extension_circle_sweep", computed="0", expected="0",
+        "f6_extension_circle_sweep", computed=all(_ok), expected=True,
         tolerance=0,
         source="r = 6/5, N = 44: boundary shifts s*t_N, s in {0, 1/4, "
                "1/2, 3/4, 1} interpolate the truncated extension "
@@ -533,6 +565,7 @@ def block_f6_sweep(wb: WitnessBuilder, al, be):
 # ------------------------------------------------------- F7 pin legs
 
 def block_f7_pins(wb: WitnessBuilder):
+    _ok: list[bool] = []
     out = {}
     for tag, qs in (("muon", Q0_MUON_STR), ("proton", Q0_PROTON_STR)):
         mp.dps = PIN_DPS
@@ -540,10 +573,12 @@ def block_f7_pins(wb: WitnessBuilder):
         r = q0 ** mpf("0.25")
         ms = balanced_moments(r, 2 * K_PIN + 2)
         al, be = qd_jacobi(ms, K_PIN)
-        assert all(b > 0 for b in be), (tag, "beta > 0")
+        _ok.append(bool(all((b > 0 for b in be))))
+        assert _ok[-1], (tag, 'beta > 0')
         worst = max(abs(pow00(al, be, n) / ms[n] - 1)
                     for n in range(1, 13))
-        assert worst < mpf("1e-150"), (tag, worst)
+        _ok.append(bool(worst < mpf('1e-150')))
+        assert _ok[-1], (tag, worst)
         P0 = monic_p_at_zero(al, be, K_PIN)
         D = [mpf(1)]
         for b in be:
@@ -556,13 +591,17 @@ def block_f7_pins(wb: WitnessBuilder):
         for N in (16, 20, 24):
             lam, _ = sym_trunc_eig(alf, bef, N)
             lam_mins.append(lam[0])
-        assert lam_mins[2] < lam_mins[1] < lam_mins[0], (tag, lam_mins)
-        assert lam_mins[2] > 0, tag
+        _ok.append(bool(lam_mins[2] < lam_mins[1] < lam_mins[0]))
+        assert _ok[-1], (tag, lam_mins)
+        _ok.append(bool(lam_mins[2] > 0))
+        assert _ok[-1], tag
         tsh = +(P0[K_PIN] / P0[K_PIN - 1])
         lamK, wK = sym_trunc_eig(alf, bef, K_PIN, tshift=tsh)
-        assert abs(lamK[0]) < mpf("1e-40"), (tag, lamK[0])
+        _ok.append(bool(abs(lamK[0]) < mpf('1e-40')))
+        assert _ok[-1], (tag, lamK[0])
         massid = abs(wK[0] * Ssum - 1)
-        assert massid < mpf("1e-20"), (tag, massid)
+        _ok.append(bool(massid < mpf('1e-20')))
+        assert _ok[-1], (tag, massid)
         out[tag] = {
             "lambda_min_N16_20_24": [mp.nstr(x, 10) for x in lam_mins],
             "krein_first_pos_atoms": [mp.nstr(lamK[i], 8)
@@ -571,7 +610,7 @@ def block_f7_pins(wb: WitnessBuilder):
             "repro_worst": mp.nstr(worst, 3),
         }
     wb.add_assertion(
-        "f7_pins_machinery", computed="0", expected="0",
+        "f7_pins_machinery", computed=all(_ok), expected=True,
         tolerance=1e-20,
         source="both q0 pins (muon + proton), K = 24: qd beta_k > 0, "
                "moment reproduction < 1e-150, lambda_min(N) strictly "
@@ -590,25 +629,31 @@ def block_f8_bar_reflection(wb: WitnessBuilder, al6, be6, lamF, wF,
                             al_e, be_e, ms_e):
     # (i) sympy exact: sigma fixes LN(-L/2, L); pushforward of LN(mu,s2)
     # under s -> e^{-L}/s is LN(-L - mu, s2); fixed iff mu = -L/2.
+    _ok: list[bool] = []
     Ls, mus, s2s, ks = sp.symbols("Ls mus s2s ks", positive=True)
     mom = sp.exp(ks * mus + ks ** 2 * s2s / 2)
     pushed = sp.exp(ks * (-Ls - mus) + ks ** 2 * s2s / 2)
     fixed = sp.simplify(
         (pushed - mom).subs(mus, -Ls / 2))
-    assert fixed == 0
+    _ok.append(bool(fixed == 0))
+    assert _ok[-1]
     # class action: phi -> frac(-1 - phi) = frac(-phi); fixed classes on
     # R/Z: -phi = phi (mod 1) <=> 2 phi in Z <=> phi in {0, 1/2} (the
     # u = 1 / u = qtilde^{1/2} pair of ksel1 R4) — exact:
     for ph in (sp.Rational(0), sp.Rational(1, 2)):
-        assert sp.Rational((-ph) % 1) == ph, ph          # fixed
+        _ok.append(bool(sp.Rational(-ph % 1) == ph))
+        assert _ok[-1], ph
     for ph in (sp.Rational(1, 3), sp.Rational(1, 4)):
-        assert sp.Rational((-ph) % 1) != ph, ph          # not fixed
+        _ok.append(bool(sp.Rational(-ph % 1) != ph))
+        assert _ok[-1], ph
     # (ii) obstruction: m_{k+1}/m_k -> oo exactly (superexponential):
     # ratio = qtilde^{k - ...}: verify strictly increasing and unbounded
     # on the exact moments at r = 6/5 (Fraction, k <= 24)
     ratios = [ms_e[k + 1] / ms_e[k] for k in range(24)]
-    assert all(ratios[i + 1] > ratios[i] for i in range(23))
-    assert ratios[-1] > 10 ** 3
+    _ok.append(bool(all((ratios[i + 1] > ratios[i] for i in range(23)))))
+    assert _ok[-1]
+    _ok.append(bool(ratios[-1] > 10 ** 3))
+    assert _ok[-1]
     # (iii) numeric: sigma-pushforward of the truncated Friedrichs
     # measure fails moment representation at r = 6/5 ...
     mp.dps = EIG_DPS
@@ -620,8 +665,10 @@ def block_f8_bar_reflection(wb: WitnessBuilder, al6, be6, lamF, wF,
         s = mp.fsum(wF[i] * (1 / (qt * lamF[i])) ** k
                     for i in range(len(lamF)))
         sig_ratios.append(s / msf[k])
-    assert abs(sig_ratios[0] - 1) > mpf("0.2"), sig_ratios[0]
-    assert sig_ratios[2] < mpf("0.1"), sig_ratios[2]
+    _ok.append(bool(abs(sig_ratios[0] - 1) > mpf('0.2')))
+    assert _ok[-1], sig_ratios[0]
+    _ok.append(bool(sig_ratios[2] < mpf('0.1')))
+    assert _ok[-1], sig_ratios[2]
     # ... and at r = 21/20 (exact-leg Jacobi data, N = 26)
     alf = [mpf(a.numerator) / mpf(a.denominator) for a in al_e]
     bef = [mpf(b.numerator) / mpf(b.denominator) for b in be_e]
@@ -632,10 +679,11 @@ def block_f8_bar_reflection(wb: WitnessBuilder, al6, be6, lamF, wF,
     s1 = mp.fsum(w26[i] * (1 / (qt2 * lam26[i])) ** 1
                  for i in range(26))
     ratio_2120 = s1 / ms2[1]
-    assert abs(ratio_2120 - 1) > mpf("1"), ratio_2120
+    _ok.append(bool(abs(ratio_2120 - 1) > mpf('1')))
+    assert _ok[-1], ratio_2120
     wb.add_assertion(
-        "f8_bar_reflection_no_pushforward_action", computed="0",
-        expected="0", tolerance=0,
+        "f8_bar_reflection_no_pushforward_action", computed=all(_ok),
+        expected=True, tolerance=0,
         source="(i) sympy exact: sigma: s -> qtilde^{-1}/s fixes the "
                "SW factor LN(-L/2, L) and acts on qtilde-grid classes "
                "as phi -> -phi with fixed classes exactly {0, 1/2} = "

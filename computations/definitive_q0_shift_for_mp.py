@@ -62,8 +62,22 @@ def main():
     w.add_data("q0_exact_for_mp", mp.nstr(q_exact, 25))
     w.add_data("shift_absolute", mp.nstr(shift, 15))
     w.add_data("shift_ppb", mp.nstr(shift_ppb, 10))
-    w.add_assertion("q0_shift_resolves_mp", computed=1, expected=1, tolerance=0,
-                     source="At q_exact, m_p/m_e matches CODATA to 10⁻⁴⁸")
+    # Was `computed=1, expected=1` (bean `qou-26f2`) — a constant standing in
+    # for the finding, so `findroot` could have returned anything, or failed
+    # to converge, and this would still have reported green. The `source`
+    # string already stated the check — "At q_exact, m_p/m_e matches CODATA to
+    # 10⁻⁴⁸" — and that is a residual, computable here: the print two lines
+    # above already puts both of its sides on screen.
+    #
+    # Deliberately tighter than `findroot`'s own `tol=1e-45`: that bounds
+    # where the root sits, this measures the residual in the value, which the
+    # identity resolves far more sharply.
+    _resid = abs(f(q_exact) - mp_over_me)
+    w.add_data("mp_me_residual_at_q_exact", mp.nstr(_resid, 10))
+    w.add_assertion("q0_shift_resolves_mp",
+                    computed=_resid, expected=mp.mpf(0),
+                    tolerance=mp.mpf("1e-48"),
+                    source="At q_exact, m_p/m_e matches CODATA to 10⁻⁴⁸")
     print(f"\nWitness: {w.save()}")
 
 

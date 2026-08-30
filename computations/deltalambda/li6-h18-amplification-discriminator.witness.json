@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:51:46.189663+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-30T06:50:57.683661+00:00",
+  "commitSha": "0c1f0f9d8f04990ea2f7b8477eccbd104c7c17b3",
   "assertions": [
     {
       "name": "anchor_kappaD_reproduced",
-      "computed": "6.41614616239163203857813088973964458360273416038234305649271",
+      "computed": "6.41614616239163203857813088973964458360273416038233595673652",
       "expected": "6.4161462",
       "passed": true,
       "tolerance": "0.01",
@@ -14,7 +14,7 @@
     },
     {
       "name": "anchor_kappa4He_reproduced",
-      "computed": "73.5943002136917302233689907796848835890781910601159883918676",
+      "computed": "73.5943002136917302233689907796848835890781910601159069564428",
       "expected": "73.5943",
       "passed": true,
       "tolerance": "0.1",
@@ -51,30 +51,14 @@
       "passed": true,
       "tolerance": "1e-30",
       "source": "Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0"
-    },
-    {
-      "name": "li6_amplification_measured",
-      "computed": "107.8856281624374438353035571801494430543174086484488946228194233630004",
-      "expected": "107.8856281624374438353035571801494430543174086484488946228194233630004",
-      "passed": true,
-      "tolerance": 0.0,
-      "source": "MEASURED diagnostic 𝒜(⁶Li) under w = y·dim — recorded value, self-referential by design (no target smuggling)"
-    },
-    {
-      "name": "geometric_law_verdict_flag",
-      "computed": 0,
-      "expected": 0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "1 = survives (in anchor-scatter band or ±40 % outer gate), 0 = breaks — recorded verdict, self-referential by design"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "li6-h18-amplification-discriminator",
   "scriptFile": "li6_h18_amplification_discriminator_probe.py",
-  "scriptHash": "91c28b84bb69",
-  "scriptCommitSha": "82d699c5f732fd77da3692d7156d30593f8692fc",
+  "scriptHash": "3bbcaab5ef5b",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -109,7 +93,7 @@
       "li6_atom_chi": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json (cached canonical, producer rust-chi-q-via-gp-lossless, 1382 s original wall; sign-only convention, ≤4.4e-6 rel vs the anchors' color-weighted convention where both exist)",
       "li6_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,3) — Frobenius characteristic map (power-sum expansion + Murnaghan–Nakayama; forms no LR coefficient). Agrees with the LR route to 1.3e-67 on all 385 blocks (chi-free-via-frobenius.witness.json), 0.09 s wall",
       "li5_atom_chi": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json (cached canonical, producer rust-chi-q-via-gp-lossless, 67 s original wall) — SECONDARY out-of-sample point at A=5",
-      "li5_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,2), 0.05 s wall",
+      "li5_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,2), 0.04 s wall",
       "anchors": "binding-reeb-phase-decomposition.witness.json θ vectors + chi-*-h*-at-q0-50dps y_λ (same as the audit probe)",
       "B_AME_role": "numerator of the MEASURED diagnostic 𝒜 only — never an input to a wired formula"
     },
@@ -117,7 +101,7 @@
       "5Li": {
         "n_partitions": 176,
         "tr_M_consistency_rel": "2.12032e-50",
-        "free_chi_wall_sec": 0.05,
+        "free_chi_wall_sec": 0.04,
         "channel_stats": {
           "rotation_free": 162,
           "rotation_atom": 169,
@@ -221,6 +205,16 @@
         "pred_A6_anchor_AD": "681.15652",
         "measured_over_pred_q3fact": "0.16603452"
       }
+    },
+    "li6_amplification_measured": {
+      "value": "107.8856281624374438353035571801494430543174086484487752424878709899614",
+      "meaning": "MEASURED diagnostic 𝒜(⁶Li) under w = y·dim",
+      "has_independent_expected_value": false
+    },
+    "geometric_law_verdict": {
+      "survives": false,
+      "meaning": "true = in anchor-scatter band or ±40 % outer gate; false = breaks",
+      "has_independent_expected_value": false
     }
   },
   "q0Anchor": "proton",

@@ -5,11 +5,13 @@ import QOU.MassEndomorphism.PhiQConvergence
 import QOU.MassEndomorphism.VolumeBridge
 import QOU.MassEndomorphism.ZHabiroCauchy
 -- `MassEndomorphismTrivial` deliberately NOT aggregated here:
--- the zero-data `MassEndomorphism ℤ β` instance would otherwise
+-- the zero-data `MassEndomorphism ℤ β` model would otherwise
 -- satisfy `MassEndomorphism` typeclass searches in unrelated
 -- developments.  Opt in explicitly with
 -- `import QOU.MassEndomorphism.MassEndomorphismTrivial`.
 -- Cf. copilot-pull-request-reviewer review on PR #541.
+-- Since 2026-08-24 that model is a `def`, not an `instance`, so the
+-- exclusion is belt-and-braces rather than the only guard.
 
 /-!
 # QOU.MassEndomorphism — Mass-endomorphism tower aggregator
@@ -34,7 +36,9 @@ Aggregator for the mass-endomorphism tower modules:
   bridge (Step 3 of `conj:mass-endomorphism`) as an instance-free class,
   and derives the manuscript's transient identity + full-mass = volume
   from it. Instance-free by design (honest open primary, §3b-tax); the
-  alternative to the trivially-inhabited `MassEndomorphism` class.
+  alternative to `MassEndomorphism`, whose two zero-data models were
+  demoted from `instance` to `def` on 2026-08-24 so that class is no
+  longer globally inhabited either.
 
 The pre-Arch tier of the mass-endomorphism tower lives in
 co-located stubs at

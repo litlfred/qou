@@ -234,19 +234,23 @@ def measure_eq(atoms_a, masses_a, atoms_b, masses_b, tol,
 def block_r1_corpus_operation(wb: WitnessBuilder) -> list[sp.Rational]:
     """R1: the corpus's actual formal operation — the keystone
     normalizer strip + the proved depth-2 recurrence, exact."""
+    _ok: list[bool] = []
     NN = 14
     I = involution_numbers(NN + 2)
     B = [None] + [sp.Rational(I[n], n) for n in range(1, NN + 1)]
     b = [None] + [sp.Rational(I[n], sp.factorial(n)) for n in range(1, NN + 1)]
     for n in range(1, NN + 1):
         Nn = sp.factorial(n - 1)
-        assert n * Nn == sp.factorial(n), n           # n·N(n) = n!
-        assert B[n] / Nn == b[n], n                   # the strip
+        _ok.append(bool(n * Nn == sp.factorial(n)))
+        assert _ok[-1], n
+        _ok.append(bool(B[n] / Nn == b[n]))
+        assert _ok[-1], n
     for n in range(1, NN - 1):
         # proved depth-2 kernel (KeystoneBridgeC1Binding, classical leg)
-        assert (n + 2) * b[n + 2] == b[n + 1] + b[n], n
+        _ok.append(bool((n + 2) * b[n + 2] == b[n + 1] + b[n]))
+        assert _ok[-1], n
     wb.add_assertion(
-        "corpus_formal_strip_exact", computed="0", expected="0",
+        "corpus_formal_strip_exact", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="n = 1..14, exact integers/rationals: the corpus binding "
                "operation is the FORMAL keystone strip b_n = B_n/N(n) with "
@@ -268,18 +272,21 @@ def block_r2_archimedean_falsifier(wb: WitnessBuilder,
                                    b: list[sp.Rational]) -> None:
     """R2: Attack-5 falsifier, archimedean leg — the strip IS
     integration against e^{−s} ds/s, exactly, order by order."""
+    _ok: list[bool] = []
     # per-order moments
     for n in range(1, N_ORD + 1):
         val = sp.integrate(_s ** n * sp.exp(-_s) / _s, (_s, 0, sp.oo))
-        assert sp.simplify(val - sp.factorial(n - 1)) == 0, n
+        _ok.append(bool(sp.simplify(val - sp.factorial(n - 1)) == 0))
+        assert _ok[-1], n
     # finite-order polynomial identity in x
     poly = sum(b[n] * (_x * _s) ** n for n in range(1, N_ORD + 1))
     lhs = sp.integrate(sp.expand(poly * sp.exp(-_s) / _s), (_s, 0, sp.oo))
     I = involution_numbers(N_ORD)
     rhs = sum(sp.Rational(I[n], n) * _x ** n for n in range(1, N_ORD + 1))
-    assert sp.expand(lhs - rhs) == 0, sp.expand(lhs - rhs)
+    _ok.append(bool(sp.expand(lhs - rhs) == 0))
+    assert _ok[-1], sp.expand(lhs - rhs)
     wb.add_assertion(
-        "archimedean_falsifier_match", computed="0", expected="0",
+        "archimedean_falsifier_match", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"sympy exact, n = 1..{N_ORD}: ∫₀^∞ s^n e^(−s) ds/s = (n−1)! "
                f"per order, and the finite-order polynomial identity "
@@ -352,6 +359,7 @@ def block_r3_fibre_falsifier(wb: WitnessBuilder, q_name: str,
 def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
     """R4: canonical-choice non-uniqueness at the fibre — the
     u-translate/reflection/symmetrization construction (q = 1.2)."""
+    _ok: list[bool] = []
     # R4a — exact reindex identity behind u-independence (sympy):
     # with j = i + k:  jk − j(j+1)/2 = k(k−1)/2 − i(i+1)/2, so
     # Σ_j q̃^{jk−j(j+1)/2} u^{−j} = q̃^{k(k−1)/2}·u^{−k}·Σ_i q̃^{−i(i+1)/2}u^{−i}
@@ -360,16 +368,19 @@ def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
     rhs = sp.Rational(1, 2) * _kk * (_kk - 1) \
         - sp.Rational(1, 2) * _ii * (_ii + 1)
     d = sp.expand(lhs.subs(_jj, _ii + _kk) - rhs)
-    assert d == 0, d
+    _ok.append(bool(d == 0))
+    assert _ok[-1], d
     # u-power bookkeeping: u^{−j} = u^{−i}·u^{−k} at j = i + k (trivial
     # but stated): exact.
     du = sp.simplify(_u ** (-(_ii + _kk)) - _u ** (-_ii) * _u ** (-_kk))
-    assert du == 0, du
+    _ok.append(bool(du == 0))
+    assert _ok[-1], du
     # log-normal reflection symmetry about μ̂ (sympy exact): the density
     # exp(−(t−μ̂)²/(2σ²)) is invariant under t ↦ 2μ̂ − t.
     t, mu, sg = sp.symbols("t mu sigma", real=True, positive=True)
     dens = sp.exp(-(t - mu) ** 2 / (2 * sg ** 2))
-    assert sp.simplify(dens.subs(t, 2 * mu - t) - dens) == 0
+    _ok.append(bool(sp.simplify(dens.subs(t, 2 * mu - t) - dens) == 0))
+    assert _ok[-1]
 
     # numeric layer at q = 1.2
     q0 = mpf("1.2")
@@ -384,11 +395,13 @@ def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
     for k in range(N_MOM + 1):
         tgt = q0 ** (mpf(k * (k - 1)) / 4)
         worst = max(worst, abs(mom1[k] / tgt - 1), abs(momu[k] / tgt - 1))
-    assert worst < TOL_50, worst
+    _ok.append(bool(worst < TOL_50))
+    assert _ok[-1], worst
     # support distinctness: fractional part of ln u / ln q̃ away from ℤ
     frac = mp.frac(mp.log(uu) / mp.log(qt))
     dist = min(frac, 1 - frac)
-    assert dist > mpf("0.05"), dist
+    _ok.append(bool(dist > mpf('0.05')))
+    assert _ok[-1], dist
 
     # R4c — the bar-reflection σ: s ↦ q̃^{−1}/s.
     # theta u = 1: σ-invariant via the exact index map j ↦ −1−j
@@ -396,16 +409,19 @@ def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
     for j in range(-6, 7):
         e1 = -sp.Rational(j * (j + 1), 2)
         e2 = -sp.Rational((-1 - j) * (-j), 2)
-        assert e1 == e2, j
+        _ok.append(bool(e1 == e2))
+        assert _ok[-1], j
     # pushforward σμ_u equals μ_{1/u} as a measure (numeric, 1e−30)
     at_ref = [qt ** (-1) / a for a in atu]
     _, at_inv, ms_inv, _ = theta_translate_factor(q0, 1 / uu, N_MOM)
-    assert measure_eq(at_ref, msu, at_inv, ms_inv, mpf(TOL_50) * 100)
+    _ok.append(bool(measure_eq(at_ref, msu, at_inv, ms_inv, mpf(TOL_50) * 100)))
+    assert _ok[-1]
     # and μ_{1/u} ≠ μ_u for generic u (support distance: u vs 1/u grids
     # differ iff 2·ln u / ln q̃ ∉ ℤ):
     frac2 = mp.frac(2 * mp.log(uu) / mp.log(qt))
     dist2 = min(frac2, 1 - frac2)
-    assert dist2 > mpf("0.05"), dist2
+    _ok.append(bool(dist2 > mpf('0.05')))
+    assert _ok[-1], dist2
 
     # R4d — symmetrization: μ^sym_u = ½(μ_u + μ_{1/u}) is positive,
     # σ-invariant by construction, atomic, and has the SAME moments;
@@ -419,18 +435,19 @@ def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
         full = mom_j[k] * m_sym
         nbal = mp_balanced_normalizer(q0, k + 1)
         worst_s = max(worst_s, abs(full / nbal - 1))
-    assert worst_s < TOL_50, worst_s
+    _ok.append(bool(worst_s < TOL_50))
+    assert _ok[-1], worst_s
     # σ-invariance of the symmetrized measure (pushforward = itself):
     at_sym = atu + at_i
     ms_sym = [m / 2 for m in msu] + [m / 2 for m in ms_i]
     at_sym_ref = [qt ** (-1) / a for a in at_sym]
-    assert measure_eq(at_sym_ref, ms_sym, at_sym, ms_sym,
-                      mpf(TOL_50) * 100)
+    _ok.append(bool(measure_eq(at_sym_ref, ms_sym, at_sym, ms_sym, mpf(TOL_50) * 100)))
+    assert _ok[-1]
     # distinct from the canonical u = 1 kernel (its support contains the
     # u-grid, disjoint from q̃^ℤ by dist > 0.05 above): recorded.
 
     wb.add_assertion(
-        "fibre_canonical_choice_not_pinned", computed="0", expected="0",
+        "fibre_canonical_choice_not_pinned", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source=f"q = 1.2, 60 dps + sympy-exact reindex/symmetry "
                f"identities: the u-translated theta factor (atoms u·q̃^j, "
