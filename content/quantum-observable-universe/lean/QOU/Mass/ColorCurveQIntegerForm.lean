@@ -41,6 +41,17 @@ namespace QOU.Mass.ColorCurveQIntegerForm
 open Finset
 open QOU.MathlibExt
 
+/-! ## Disambiguation (`qInt`)
+
+`QOU.Mass.qInt` (`QHookDimension`) is the **balanced** q-integer
+`∑_{i<n} q^{2i-(n-1)}`; the geometric `∑_{i<n} q^i` this file means is
+`QOU.MathlibExt.qInt`. Lean resolves a bare name against the enclosing namespace
+before an `open`ed one, so inside `namespace QOU.Mass.*` a bare `qInt` is the
+**balanced** one however this file opens `QOU.MathlibExt`. Every reference below is
+therefore fully qualified: the bare form compiled against the wrong convention from
+`1646b5d6d3` until this was fixed, and a bare form reintroduced here would silently
+mean different mathematics again. Bean `qou-lksc`. -/
+
 /-- **The color spectral cubic** `C_z(X) = X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1)`
 (`def:color-spectral-cubic`). -/
 def colorSpectralCubic {R : Type*} [CommRing R] (z X : R) : R :=
@@ -57,20 +68,22 @@ theorem colorSpectralCubic_geomSum_form {R : Type*} [CommRing R] (z X : R) :
   ring
 
 /-- **q-integer form (named, over a `Field`).** `C_z(X) = [1]_z·X³ + [2]_z·X² +
-[3]_z·X + [4]_z`, reusing the corpus quantum integer `qInt z k = [k]_z`. The color
+[3]_z·X + [4]_z`, reusing the corpus quantum integer `QOU.MathlibExt.qInt z k = [k]_z` (the
+geometric one — see the disambiguation note above). The color
 spectral curve is a **q-integer curve** — the structural handle for lifting the base
 q-shift to `Σ`. -/
 theorem colorSpectralCubic_qInt_form {K : Type*} [Field K] (z X : K) :
     colorSpectralCubic z X
-      = qInt z 1 * X ^ 3 + qInt z 2 * X ^ 2 + qInt z 3 * X + qInt z 4 := by
-  simpa [qInt] using colorSpectralCubic_geomSum_form z X
+      = QOU.MathlibExt.qInt z 1 * X ^ 3 + QOU.MathlibExt.qInt z 2 * X ^ 2
+        + QOU.MathlibExt.qInt z 3 * X + QOU.MathlibExt.qInt z 4 := by
+  simpa [QOU.MathlibExt.qInt] using colorSpectralCubic_geomSum_form z X
 
 /-- **Coefficient q-integer ladder.** Consecutive coefficients differ by a pure power
 of `z`: `[k+1]_z = [k]_z + z^k` (`qInt_succ`). So the four coefficients
 `[1]_z, [2]_z, [3]_z, [4]_z` form a q-integer ladder — the functional-equation
 structure through which the base q-shift `z ↦ q·z` acts on `Σ`. -/
 theorem colorSpectralCubic_coeff_ladder {K : Type*} [Field K] (z : K) (k : ℕ) :
-    qInt z (k + 1) = qInt z k + z ^ k :=
+    QOU.MathlibExt.qInt z (k + 1) = QOU.MathlibExt.qInt z k + z ^ k :=
   qInt_succ z k
 
 end QOU.Mass.ColorCurveQIntegerForm
