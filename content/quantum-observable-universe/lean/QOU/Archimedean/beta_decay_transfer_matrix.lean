@@ -3,6 +3,7 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import QOU.Archimedean.TransferMatrix
 
 /-!
 # QOU.Archimedean.beta_decay_transfer_matrix
@@ -42,7 +43,7 @@ open Matrix
 /-- The crossing transfer matrix `T(c, d) = !![c·(q − q⁻¹) + d, c; c, d]`
     of the manuscript (a `2×2` matrix over `ℝ`). -/
 noncomputable def betaTransfer (q c d : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
-  !![c * (q - q⁻¹) + d, c; c, d]
+  transferMatrixOf (q - q⁻¹) c d
 
 /-- `T_pp(q) = T(1, 0) = !![q − q⁻¹, 1; 1, 0]`. -/
 noncomputable def T_pp (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ := betaTransfer q 1 0
