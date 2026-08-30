@@ -66,8 +66,70 @@ _UPSTREAM_RECORDS: list = []
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-# Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# ── q₀ anchor — RESOLVED THROUGH `q_parameter`, never a literal ──
+#
+# WAS:
+#   # Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
+#   Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+#
+# That literal is the SUPERSEDED muon vintage (the old
+# `q-pinning-50-digit.witness.json` value, still readable at
+# `qou-mass/src/qou_mass/data/_deprecated/q-pinning-50-digit.witness.json`).
+# It sits 11.5371 ppb from the proton pin and 0.0769 ppb from today's muon
+# pin, so it matched NEITHER live anchor — it was frozen mid-drift.
+#
+# EVIDENCE (the old comment made a checkable claim; it was checked):
+#   • Every `chi-*-at-q0-50dps.witness.json` header records
+#       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+#     — the PROTON pin — as does `canonical-tr-m-via-chi-cache.witness.json`
+#     (`parameters.q_0_50dps`). The `-muon` siblings carry
+#     1.109978595642739046681795129380001752700065561029… instead. So
+#     "matches every chi-cache witness header" was TRUE of the proton value
+#     and FALSE of the literal sitting beside it.
+#   • The ONLY upstream this probe actually reads is
+#     `computations/y-lambda-at-q0.witness.json` (`_load_y_lambda_n` below).
+#     It records
+#       parameters.q_0 = 1.10997858275138080759166909561076887987449912187…
+#     — proton — with q0AnchorReason "recovered by transcription from this
+#     witness's own payload", i.e. PAYLOAD evidence, not a defaulted stamp;
+#     and its producer `y_lambda_at_q0_cache` is listed `physical_proton` in
+#     `computations/q0_anchor_manifest.json`, so the pin is POSITIVELY
+#     declared.
+#   • Cross-check on the numbers this file consumes: the n=3 rows
+#     (0.50540422650393080318755870324047227566035119774981,
+#      0.2472978867480345984062206483797638621698244011251, 0.0) are
+#     bit-identical to the `per_lambda.y_lambda_at_q0` values inside the
+#     proton-pinned `canonical-tr-m-via-chi-cache.witness.json`.
+#   • "Canonical" is NOT a muon tell-tale in this tree: the owner ruling of
+#     2026-08-15 (AGENTS.md §"q₀ anchor convention") makes the PROTON pin
+#     canonical.
+#   No `q0Anchor` stamp is cited as evidence: this producer is absent from
+#   `q0_anchor_manifest.json`, so `resolve_q0_anchor` would hand it the
+#   runtime DEFAULT of proton (which proves nothing), and its committed
+#   witness carries no `q0Anchor` field at all.
+#
+# THE LITERAL WAS OPERATIVE, not decorative — `main()` does
+# `q_0 = mp.mpf(Q_0_50DPS)` and hands it to `b2_verdict`, which substitutes it
+# into every `dim_q_sym(λ⁺)` and into `λ_A(q₀)`. B2 is a single-q₀ identity
+# test, so pairing proton-pinned `y_λ(q₀)` with a muon-vintage `dim_{q₀}` was
+# an anchor straddle. Deleting the constant was therefore not an option.
+#
+# CHANGED TO: resolve through `q_parameter`, so the value follows whatever
+# anchor this producer is assigned rather than being frozen at one vintage.
+# Do NOT put a literal back here, of any pin.
+#
+# ⚠ THIS MOVES VALUES. q₀ itself moves +11.5371 ppb (the μ–p substrate
+# tension); measured downstream, `b2.weighted_sum_at_q0` moves −2.984 ppb and
+# `b2.lambda_A_at_q0` −2.872 ppb. So every numeric field under
+# `data.b2_y_lambda_weighted` in the committed
+# `computations/probes/option-b-h3-h4-bratteli-probe.witness.json` is now
+# STALE and that witness needs regenerating — bean `qou-jjge`. B1/B3 are
+# symbolic in q and unaffected; both recorded assertions are q₀-independent
+# (one count, one at q=1); and B2 stays REFUTED at 0.6008 relative error, so
+# no verdict and no synthesis text changes.
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+Q_0_50DPS: str = Q_50_DIGIT_STR
 
 
 # ── §1. Young-diagram box-adding (Bratteli induction H_n → H_{n+1}) ──
