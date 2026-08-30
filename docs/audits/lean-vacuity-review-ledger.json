@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T07:02:32Z",
+  "updated_at": "2026-08-30T07:04:18Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2994,12 +2994,12 @@
       "pattern": "borrowed-name",
       "line": 69,
       "verdict": "legit",
-      "file_sha": "8d93aa475b47",
+      "file_sha": "f00cbf9a094f",
       "disposition": "no-change",
-      "evidence": "RE-VERIFIED 2026-08-30 after the file sha moved. The theorem body (`simp only [twoM]; ring`) and statement are byte-identical; `92fcab5fb` refreshed the module + decl docstrings, which had still described Identity I as a compute-verified n=2..14 input after it became a sorry-free general-n theorem on 2026-08-25. The docstring is now MORE accurate than when the verdict was recorded. Verdict unchanged (legit): `twoM n = n*(n-1) + 2*n^2` is a genuine ℤ ring identity, and the Plancherel / Jucys-Murphy names in the docstring attribute the two pieces to proved in-tree theorems (`PieceA.pieceA`, `identityB_via_wedderburn_unconditional`), not to the literature alone.",
+      "evidence": "RE-VERIFIED 2026-08-30 (SECOND time today the gate fired on this declaration, and the second time only its docstring moved). The theorem is byte-identical -- `twoM n = n*(n-1) + 2*n^2` closed by `simp only [twoM]; ring` at line 69. The file changed under `8d638d3ac` ('Identity I is closed -- correct the keystone docstring, and open Track B'), a currency fix to the surrounding prose, following `92fcab5fb` earlier the same day. Verdict unchanged (legit): a genuine Z ring identity whose Plancherel / Jucys-Murphy names attribute the two pieces to theorems proved in-tree (`PieceA.pieceA`, `identityB_via_wedderburn_unconditional`), not to the literature alone. Worth recording as a pattern rather than an incident: a file-keyed freshness gate fires on every docstring edit to any declaration in the file, so on a live keystone file it will keep firing. That is the cost of the only gate available for library Lean, which has no per-declaration sidecar.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)",
-      "reviewed_at": "2026-08-30T04:25:11Z",
+      "reviewed_at": "2026-08-30T07:04:18Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
