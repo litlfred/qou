@@ -174,6 +174,64 @@ theorem toffoli_lp_stable (q : ℝ) :
     the radical-quotient ruling first.
 -/
 
+/-!
+## The flip amplitude and the LP cone coordinate carry opposite signs
+
+Settles the open item of bean `qou-0pnj`.  `prop:toffoli-lp-stability`'s proof
+reduces feasibility of `G·t ≥ 0` to "the positivity of `P₇₇ · W_std` with the
+appropriate sign from" the flip amplitude.  The two quantities that step
+relates carry **exactly opposite** signs of the same factor `ħ = q - q⁻¹`,
+identically in `q` — so the reduction cannot inherit the amplitude's sign.
+
+* the derived flip amplitude is `P₇₆ = -(q-1)(q+1)·S / (2q(q²+1)²)`,
+* the q-Toffoli, all-proton ordering, is `T_q = σ₁ + ħ·σ₀σ₁`, so its NF
+  coordinate on the word `(0,1)` is `+ħ`.
+
+Since `ħ = (q-1)(q+1)/q`, the amplitude is `-ħ` times a strictly positive
+cofactor, giving `P₇₆ · ħ ≤ 0` on `q > 0`.  Scope (b): this excludes any
+reduction in which the cone condition inherits the amplitude's sign.  It does
+**not** exclude one carrying a negative proportionality.
+
+Symbolic cross-check: `computations/probes/toffoli_sign_inversion_is_structural.py`, 7/7.
+-/
+
+/-- The sextic cofactor `S(q) = q⁶ + q⁴ + 2q² + 1`. -/
+noncomputable def toffoliSextic (q : ℝ) : ℝ := q ^ 6 + q ^ 4 + 2 * q ^ 2 + 1
+
+/-- The derived convention-D target-flip amplitude `P₇₆`. -/
+noncomputable def toffoliFlipAmplitude (q : ℝ) : ℝ :=
+  -((q - 1) * (q + 1) * toffoliSextic q) / (2 * q * (q ^ 2 + 1) ^ 2)
+
+/-- The NF coordinate of `T_q` on the word `(0,1)`, namely `ħ = q - q⁻¹`. -/
+noncomputable def toffoliConeCoord (q : ℝ) : ℝ := q - 1 / q
+
+/-- `S(q) > 0` for every real `q`: every exponent is even, every coefficient
+    positive, and the constant term is `1`. -/
+theorem toffoliSextic_pos (q : ℝ) : 0 < toffoliSextic q := by
+  unfold toffoliSextic; positivity
+
+/-- **The factorisation.** `P₇₆ = -ħ · S / (2(q²+1)²)`. -/
+theorem toffoliFlipAmplitude_eq (q : ℝ) (hq : q ≠ 0) :
+    toffoliFlipAmplitude q
+      = -(toffoliConeCoord q) * (toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2)) := by
+  unfold toffoliFlipAmplitude toffoliConeCoord
+  have h1 : (q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Opposite signs, identically.** On `q > 0` the flip amplitude and the LP
+    cone coordinate never share a sign: their product is non-positive.  This is
+    the invariant that excludes a sign-inheriting reduction. -/
+theorem toffoliFlip_mul_coneCoord_nonpos (q : ℝ) (hq : 0 < q) :
+    toffoliFlipAmplitude q * toffoliConeCoord q ≤ 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  rw [toffoliFlipAmplitude_eq q hq0]
+  have hS : 0 < toffoliSextic q / (2 * (q ^ 2 + 1) ^ 2) := by
+    have := toffoliSextic_pos q
+    positivity
+  nlinarith [sq_nonneg (toffoliConeCoord q), hS,
+             mul_nonneg (le_of_lt hS) (sq_nonneg (toffoliConeCoord q))]
+
 end
 
 end QOU.Information

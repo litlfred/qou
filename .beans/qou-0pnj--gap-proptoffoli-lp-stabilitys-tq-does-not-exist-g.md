@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-08-30T13:02:25Z
+updated_at: 2026-08-30T14:05:02Z
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
@@ -164,3 +164,47 @@ What does NOT survive is the reduction connecting them.
 SCOPE (a). This measures the stated condition at one anchor. It does not prove
 the reduction false -- it exhibits a sign disagreement that any correct
 reduction would have to explain.
+
+
+## CLOSED-OUT 2026-08-30 — the sign disagreement is an IDENTITY, and it excludes the reduction
+
+The entry above recorded the disagreement as MEASURED at q0. Measured is
+weaker than proved, and this one is provable in two lines.
+
+    hbar = q - 1/q = (q-1)(q+1)/q
+
+so the derived flip amplitude factors as
+
+    P_76(q) = -(q-1)(q+1) S / (2 q (q^2+1)^2)
+            = - hbar * S / (2 (q^2+1)^2),      S = q^6+q^4+2q^2+1
+
+EXACTLY -- sympy simplify of the difference returns 0. S has NO real root and
+(q^2+1)^2 > 0, so the cofactor is strictly positive on all of R. Meanwhile the
+q-Toffoli's NF coordinate on the word (0,1) is +hbar. Therefore
+
+    sign P_76(q) = - sign t_(0,1)(q)     for every q > 0, identically.
+
+Not an anchor coincidence, not a convention artefact: an algebraic identity.
+
+FORMALIZED, sorry-free:
+  QOU.Information.toffoliSextic_pos                 (positivity)
+  QOU.Information.toffoliFlipAmplitude_eq           (the factorisation)
+  QOU.Information.toffoliFlip_mul_coneCoord_nonpos  (the payoff: product <= 0)
+lean-direct exit 0; #print axioms on all three = [propext, Classical.choice,
+Quot.sound], no sorryAx. Symbolic cross-check
+computations/probes/toffoli_sign_inversion_is_structural.py, 7/7, exact
+arithmetic, no floating point in the proof.
+
+SCOPE (b) EXCLUSION, invariant cited. No reduction in which the LP cone
+condition INHERITS the flip amplitude's sign can hold -- at any anchor, in any
+convention -- because the two carry opposite signs of the same factor.
+
+NOT EXCLUDED, and this is the remaining candidate: a reduction with a NEGATIVE
+proportionality, i.e. one in which the cone condition follows -P_76. Nothing
+here bears on that.
+
+WHAT REMAINS OPEN in this bean: the index-space mismatch is untouched by the
+above. G.t is a 6-vector over the Hecke NF basis; P_77/P_76 are entries of an
+8x8 matrix indexed by strand-type orderings. A correct reduction still needs a
+map between them, and none is recorded. The sign result narrows WHICH map
+could work; it does not supply one.
