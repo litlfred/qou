@@ -2,7 +2,15 @@
 
 > **✅ RESOLVED 2026-08-30 — L1 is MET again: 6/6 atoms certified, `onepb allPassed = True`.**
 > This document is kept as the **record of a silent regression and its repair**, not as a
-> live defect. Read the body in the past tense.
+> live defect.
+>
+> **⚠ SCOPE OF EVERYTHING BELOW THIS BANNER.** The remainder of this file is the
+> **2026-08-29 measurement, preserved verbatim as it was recorded that day** — it is a
+> historical snapshot of the RED state, not a description of the corpus now. Its
+> present-tense statements (*"is NOT demonstrated on `origin/main` HEAD"*, *"the corpus does
+> not demonstrate L1"*, the 2.9e-7 deltas) were true **on 2026-08-29** and are **false as of
+> 2026-08-30**. Read every claim below as carrying an implicit *"as measured on
+> 2026-08-29"*. For the current state, read only this banner.
 >
 > **Root cause (both halves were pin straddles, not convention C):**
 > 1. The chi combiner's numerical χ cache was pinned at the **proton** q₀ while the muon
@@ -55,7 +63,8 @@
 ## Headline
 
 The framework's **L1 leg** — internal cross-method agreement of `tr_M(β_atom)`
-at `q₀` to **1 ppQ = 10⁻¹⁵** — is **NOT demonstrated on `origin/main` HEAD.** The
+at `q₀` to **1 ppQ = 10⁻¹⁵** — was **NOT demonstrated on `origin/main` HEAD as measured on
+2026-08-29** (repaired 2026-08-30; see the banner above). The
 two float-clean, color-weighted methods the certification *explicitly rests on*,
 `markov_peel` and `chi-cache`, **disagree at 2.9×10⁻⁷** (⁴He) — 2.9×10⁸ times the
 1 ppQ target. `computations/onepb-status-dashboard.witness.json` `allPassed=false`
