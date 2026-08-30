@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:17:55.718000+00:00",
-  "commitSha": "ed6d9e034eee9ee160c269c0e0c17052c1ee9e69",
+  "computedAt": "2026-08-30T09:30:24.292675+00:00",
+  "commitSha": "b13e175aa3d1ad32f5a9f1233b6216b95c3e29e6",
   "assertions": [
     {
       "name": "gate_reproduces_committed_sweep",
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1329,
+  "durationMs": 488,
   "computation": "fitted-ideal-low-isotope-calibration",
   "scriptFile": "fitted_ideal_low_isotope_calibration.py",
-  "scriptHash": "26b2b63f251a",
+  "scriptHash": "6d8f8174bba8",
   "scriptCommitSha": "7c688107577089e7f430c55695b2c9cf5497f9af",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -105,7 +105,7 @@
     "layers": {
       "observational_ideal": {
         "q": "1.10997858275138080759166909561076887987449912187360000000000",
-        "Q_beta_MeV": "0.782333409309999949776681660296162590384483337402343750000000",
+        "Q_beta_MeV": "0.78233340931",
         "m_e_MeV": "0.510998950690000000000000000000000000000000000000000565443472",
         "rel_rms": "0.930910067645167637603969047936163372454168061204394787455654",
         "chosen_by": "measurement (CODATA/PDG)"
