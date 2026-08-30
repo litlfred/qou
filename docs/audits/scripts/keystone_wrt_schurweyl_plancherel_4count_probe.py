@@ -179,7 +179,7 @@ def main():
                        "(B) the ordered 4<->4 identification is NOT a numerical identity (no fit); "
                        "(C) the #2364 SU(2) Schur-Weyl row-bound annihilates the (3,1,1) peak block. No fit; nothing wired.",
         "computation": "docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py",
-        "q0": repr(Q0),
+        "q0": mp.nstr(Q0, 50),   # decimal string, not repr() — repr(mpf) is "mpf('…')"
         "convention": "balanced q-integers [k]=(q^k-q^-k)/(q-q^-1); W_lambda=d_q(lambda)^2/[5]_q!",
         "W_lambda": {str(lam): W[lam] for lam in PARTITIONS_5},
         "W_lambda_cross_check_max_abs_err_vs_canonical": max_err,
@@ -213,8 +213,22 @@ def main():
     }
     out = os.path.join(os.path.dirname(__file__), "..", "..", "..", "computations",
                        "keystone-wrt-schurweyl-plancherel-4count.witness.json")
+    def _jsonable(o):
+        """mpf -> full-precision STRING; anything else still raises.
+
+        Deliberately not `default=str`: that would silently stringify any
+        unexpected object and hide a real serialization bug. Only mpf is
+        expected here, and it is emitted at 50 digits so the witness carries
+        the precision the mpmath conversion bought rather than a float64
+        rounding of it.
+        """
+        if isinstance(o, mp.mpf):
+            return mp.nstr(o, 50)
+        raise TypeError(
+            f"not JSON serializable: {type(o).__name__}")
+
     with open(os.path.abspath(out), "w") as f:
-        json.dump(witness, f, indent=2)
+        json.dump(witness, f, indent=2, default=_jsonable)
         f.write("\n")
     print(f"\nwitness → {os.path.relpath(os.path.abspath(out))}")
     print("SCHUR-WEYL / PLANCHEREL 4-COUNT PROBE COMPLETE")
