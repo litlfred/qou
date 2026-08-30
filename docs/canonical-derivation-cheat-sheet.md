@@ -660,7 +660,11 @@ compute has already established:
 >    contradicted by the corpus's own triton model, which puts `lk = 0` on three
 >    *bonded* pairs; and on the branch that saves the premise, `M₃(T) = 0` makes
 >    the 3-body calibration `e₃` a division by zero. The conditional survives,
->    its hypothesis does not. Originally stated with the The physical max-contact tetrahedron `K₄` has all six pairs
+>    its hypothesis does not. **Superseded 2026-08-30**: the canonical braid word
+>    fixes the interfaces non-uniformly — ⁴He's three are `σ` (+1),
+>    `averaged_weighted` (no sign) and `σ⁻¹` (−1) — so the uniform premise is
+>    *false*, not merely unestablished. Originally stated as: the physical
+>    max-contact tetrahedron `K₄` has all six pairs
 >    Hopf-linked (`lk = 1`), so Milnor indeterminacy makes every higher `μ̄`
 >    defined only mod `gcd(lk) = 1` ⇒ `M₃_irr = M₄ = 0`, and the tower supplies
 >    nothing beyond `M₂ = 6`. It does **not** touch the non-link-invariant SU(4)
@@ -1052,7 +1056,7 @@ choice.
 - [`docs/audits/2026-08-30-magnitude-gate-is-the-assembly-five-fronts.md`](audits/2026-08-30-magnitude-gate-is-the-assembly-five-fronts.md) — **read first on this axis**: both corpus assemblies proved incapable of `b₃ > 0`; the double cover measured and not closing; SU(4) `[1⁴]` the surviving non-link-invariant candidate (its sign-capability is analytic and discriminates nothing — corrected 2026-08-30); the `M_n(K)` blocker stale under the Option-A ruling
 - [`docs/audits/2026-08-29-he4-magnitude-shortfall-location.md`](audits/2026-08-29-he4-magnitude-shortfall-location.md) — **the current magnitude localisation**: Ursell body-order inversion; the model's `b₃` is wrong-signed under every convention × typing; the convention leg closed as an explanation; held-out ³He−³H splitting short by 2–6×
 - [`docs/audits/2026-08-29-w3-closeability.md`](audits/2026-08-29-w3-closeability.md) — `w_3` is a rank-2 boundary condition, not a computable output; four routes measured, the ramified double cover the only one unexcluded
-- [`docs/audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`](audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md) — scope-(b): Milnor `μ̄` cannot carry the ⁴He magic surplus (indeterminacy on a max-contact cluster)
+- [`docs/audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`](audits/2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md) — **RE-SCOPED (b) → (a) 2026-08-30**: originally a structural exclusion (Milnor indeterminacy on a max-contact cluster); its uniform-`lk` premise is contradicted by the canonical braid word, so the conditional survives and the exclusion does not
 - [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](audits/2026-08-30-coordination-saturation-formalized.md) — complete-graph coordination cannot saturate; bounded degree is the forced regime
 - [`docs/audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md`](audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md) — provenance ladder + the G1–G8 expected-gap map; why every fusion channel through ⁴He currently has the wrong sign
 - [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md) — depth-stratified `Σ_k α_k Φ_k` is the canonical binding default; α_k structural (z² Markov + m_e·8G Borromean), per-depth assignment rule is the unclosed gap

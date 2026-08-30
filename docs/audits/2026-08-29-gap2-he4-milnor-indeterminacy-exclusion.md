@@ -1,4 +1,4 @@
-# GAP-2: the ⁴He magic surplus is NOT a Milnor μ̄ term — a structural (Milnor-indeterminacy) exclusion
+# GAP-2: the ⁴He magic surplus and the Milnor μ̄ term — CONDITIONAL, re-scoped (b) → (a) 2026-08-30
 
 > **🛑 RE-SCOPED 2026-08-30 (b) → (a), by its own author. The premise is
 > contradicted by the corpus one file over.**
