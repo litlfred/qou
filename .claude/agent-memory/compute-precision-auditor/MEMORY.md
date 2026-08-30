@@ -111,16 +111,11 @@ produced a confirmed environment case.
 
 ## TRAP — `fmt()` is not the universal answer (see `draining-raw-float64.md`)
 
-"Carry `mpf` and serialize with `_precision.fmt`" is right for a **computed**
-value and **wrong for a READ one**: `fmt(mpf("2.2245662"))` prints a
-9-significant-figure measurement to 60 digits. Emit an exact source's decimal
-**text verbatim** (`ame_2020_binding_energies.py` is the exemplar). Read
-**`draining-raw-float64.md`** before draining anything — it carries the
-decision procedure and four more traps: a float→string flip is not
-automatically a drain (`mp.dps` defaults to **15**); raising dps *manufactures*
-digits when the divisor has a ±1e-12 ceiling; a residue at 2⁻⁵⁴/2⁻⁵⁵ is the
-arithmetic floor, so trace it to the producer instead; and separate your gate
-reds from main's by stashing and re-running, not by grepping for filenames.
+Right for a **computed** value, **wrong for a READ one**: `fmt(mpf("2.2245662"))` prints
+a 9-sig-fig measurement to 60 digits — emit the source's decimal **text verbatim**
+(`ame_2020_binding_energies.py`). **Read `draining-raw-float64.md` first**: float→string
+is not automatically a drain (`mp.dps` defaults to **15**); raising dps *manufactures*
+digits against a ±1e-12 divisor; a 2⁻⁵⁴/2⁻⁵⁵ residue is the arithmetic floor.
 
 ## TRAP — producers write SIBLING witnesses
 
