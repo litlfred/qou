@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T04:51:16Z
-updated_at: 2026-08-30T05:24:47Z
+updated_at: 2026-08-30T05:27:00Z
 ---
 
 Found by `computations/audits/pin_straddle_unguarded_audit.py` stage 2 (PR #6104),
@@ -164,3 +164,34 @@ TRAP for whoever picks this up: a waiter that greps only for
 `ALL TESTS PASSED|SOME TESTS FAILED` hangs forever on a timeout kill, because a
 killed process prints neither. Watch for process death as well as for the
 marker.
+
+
+## The SECOND straddle is now SIZED (read-only measurement, nothing written)
+
+`atomic_tr_m_helium4.disjoint_product_value()`, computed directly from the two
+committed witnesses:
+
+    tr_M(p)   muon 1.14575978232   proton 1.14575969246   rel 7.84e-8
+    tr_M(n)   muon 0.987743756821  proton 0.987743688116  rel 6.96e-8
+    tr_p^2 * tr_n^2                                       rel 2.96e-7 = 296 ppb
+
+The fourth-power amplification is explicit in the arithmetic:
+(1+e)^2(1+f)^2 - 1 = 2e + 2f = 2(7.84e-8) + 2(6.96e-8) = 2.96e-7. So the
+per-factor 78 ppb becomes 296 ppb on the product.
+
+INDEPENDENT CONFIRMATION. These are the same numbers the `93888aa431` fix
+comment records for `canonical_tr_m_via_chi_cache` -- "7.84e-8 on the proton,
+2.9e-7 at 4He" -- reached here by a different route entirely (differencing the
+two committed witnesses rather than instrumenting the combiner). Two unrelated
+paths landing on the same figure is what makes this a measurement rather than
+a reading.
+
+FIX: same stamp-reconciliation as `y_lambda_symbolic_validate` -- select the
+witness whose recorded q matches the runtime pin. `_pb.witness_path(...)` at
+line 133 hardcodes the muon basename; the proton twin
+`atomic-tr-m-mpfr-50dps-proton.witness.json` carries identical structure and
+the same five atoms. `tr_m_q_hecke_seminormal.py:103` already picks between
+them with a ternary.
+
+Deferred off PR #6104 for regeneration cost (DIRECT_BUDGET_SEC = 480 per
+trace), NOT for difficulty. The load-path change itself is one line.
