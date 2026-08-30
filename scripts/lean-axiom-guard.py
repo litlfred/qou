@@ -706,6 +706,12 @@ QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_pow_nine_arg_pos | cl
 QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_zz_arg | clean
 QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.zz_arg_eq_angle₃ | clean
 QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.two_pi_div_nine_lt_angle₃ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_re_pos | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.fiveTwoShape_im_gt_re | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₁ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.angle₁_lt_pi_div_two | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.pi_div_four_lt_angle₂ | clean
+QOU.Knot.FiveTwoNinthPower | QOU.Knot.FiveTwoNinthPower.all_angles_gt_two_pi_div_nine | clean
 
 """
 
