@@ -75,56 +75,52 @@ def lob(t):
 
 
 def bracket_requirement() -> bool:
-    """How tight must a RATIONAL bracket on y_1 be to certify a_min > 2*pi/9?
+    """Is `QOU.Knot.FiveTwoShapeBounds` already tight enough to certify a_min > 2*pi/9?
 
-    a_min = arg(z) with z = 1 - 1/y, so
+    CORRECTED.  A first pass interval-evaluated the condition over a rational BOX for
+    (Re y_1, Im y_1) as if those were independent, concluded the existing bounds fall
+    short, and reported that denominators of 200 were required.  **That was wrong.**
+    Both coordinates are functions of the SINGLE real root `t` of X^3-2X^2+3X-1:
 
-        Im(z)/Re(z) = Im(y) / (Re(y)^2 - Re(y) + Im(y)^2)
+        Re = (2 - t)/2            Im = sqrt(3t^2 - 4t + 8)/2
 
-    and the condition is that this exceeds tan(2*pi/9).  Interval-evaluate the
-    right-hand side over a rational box for (Re y, Im y): the denominator
-    Re^2 - Re + Im^2 is increasing in Re on Re > 1/2 (which holds here) and in Im,
-    so the worst case is smallest numerator over largest denominator.
+    so the box relaxation throws away the constraint linking them -- and here it throws
+    away enough to invert the answer.  Parametrise by `t` instead:
 
-    This decides whether `QOU.Knot.FiveTwoShapeBounds` (landed #6084) already
-    suffices, or whether the Lean brackets must be refined first.
+        Re^2 - Re + Im^2 = (4t^2 - 6t + 8)/4
+
+        ratio(t) = Im / (Re^2 - Re + Im^2) = 2*sqrt(3t^2 - 4t + 8) / (4t^2 - 6t + 8)
+
+    `ratio` is strictly INCREASING across the bracket (ratio' ~ 0.25-0.28 on
+    [0.39, 0.46]), so a LOWER bracket on `t` alone settles it -- no upper bracket, and
+    no bound on Re or Im separately, is needed.
     """
     tan_ = mp.tan(2 * mp.pi / 9)
 
-    def ratio_lo(re_lo, re_hi, im_lo, im_hi):
-        d_hi = re_hi**2 - re_hi + im_hi**2      # largest denominator
-        return im_lo / d_hi                      # smallest numerator
+    def ratio(t):
+        return 2 * mp.sqrt(3 * t**2 - 4 * t + 8) / (4 * t**2 - 6 * t + 8)
 
     print("\n" + "=" * 66)
     print("BRACKET REQUIREMENT — is FiveTwoShapeBounds already tight enough?")
     print("=" * 66)
-    print("need Im(z)/Re(z) > tan(2*pi/9) =", mp.nstr(tan_, 20))
+    print("condition:  ratio(t) > tan(2*pi/9) =", mp.nstr(tan_, 20))
 
-    # the bounds QOU.Knot.FiveTwoShapeBounds actually proves
-    existing = (mp.mpf(31)/40, mp.mpf(4)/5, mp.mpf(13)/10, mp.mpf(33)/25)
-    lo = ratio_lo(*existing)
-    print("\nEXISTING (31/40 < Re < 4/5, 13/10 < Im < 33/25):")
-    print("  worst-case ratio =", mp.nstr(lo, 15),
-          "   SUFFICIENT" if lo > tan_ else
-          "   NOT SUFFICIENT, short by " + mp.nstr(tan_ - lo, 10))
+    # monotonicity is what licenses testing only the lower end
+    incr = all(mp.diff(ratio, mp.mpf("0.39") + mp.mpf(i) / 200) > 0 for i in range(15))
+    print("ratio increasing across the bracket:", incr)
 
-    y = five_two_shape()
-    re_y, im_y = mp.re(y), mp.im(y)
-    print("\nSmallest denominator that suffices:")
-    need = None
-    for den in (50, 100, 200, 400, 800):
-        rl, rh = mp.floor(re_y*den)/den, mp.ceil(re_y*den)/den
-        il, ih = mp.floor(im_y*den)/den, mp.ceil(im_y*den)/den
-        lo = ratio_lo(rl, rh, il, ih)
-        ok = lo > tan_
-        print(f"  den={den:4d}  ratio_lo={mp.nstr(lo, 15)}  {'SUFFICIENT' if ok else '-'}")
-        if ok and need is None:
-            need = (den, int(rl*den), int(rh*den), int(il*den), int(ih*den))
-    if need:
-        d, a, b, c, e = need
-        print(f"\n  -> refine FiveTwoShapeBounds to:  {a}/{d} < Re(y_1) < {b}/{d}")
-        print(f"                                     {c}/{d} < Im(y_1) < {e}/{d}")
-    return need is not None
+    t_crit = mp.findroot(lambda t: ratio(t) - tan_, mp.mpf("0.45"))
+    print("critical t (ratio = tan(2*pi/9)) =", mp.nstr(t_crit, 20))
+
+    lo = mp.mpf(2) / 5                     # the EXISTING `realRoot_gt` bracket
+    ok = incr and ratio(lo) > tan_
+    print("\nEXISTING bracket  realRoot_gt : 2/5 < t")
+    print("  ratio(2/5) =", mp.nstr(ratio(lo), 20))
+    print("  SUFFICIENT?", ok, "  margin =", mp.nstr(ratio(lo) - tan_, 12))
+    print("\n  -> NO refinement of FiveTwoShapeBounds is needed.  The upper bracket")
+    print("     `realRoot_lt` and the separate Re/Im bounds are not required either;")
+    print("     the whole angle condition rests on `2/5 < realRoot` plus monotonicity.")
+    return bool(ok)
 
 
 def main() -> int:
