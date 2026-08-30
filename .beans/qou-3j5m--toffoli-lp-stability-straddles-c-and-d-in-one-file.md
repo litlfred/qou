@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-30T05:49:49Z
+updated_at: 2026-08-30T07:50:07Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -698,3 +698,54 @@ the missing step in a reduction the proof block states in one clause.
 
 That is the honest residue, and it belongs in the proof block as an open note
 rather than as a question to the owner.
+
+
+## RESOLVED 2026-08-30 — PR #6095, four commits
+
+The blocking question this bean carried — *is the LP-stability criterion
+POSITIVITY or NON-VANISHING?* — was raised as an owner decision and **did
+not need one.** `toffoli-lp-stability-proof.md` states the criterion twice
+and both times it is positivity ("Positivity of G·t(q) therefore reduces to
+the positivity of the product P_77·W_std"; "the proof stands on the two
+amplitude positivities"), and `prop:operator-selection-lp` agrees at the LP
+level — its Frobenius constraint is `Sum_j G_ij x_j >= 0`, an inequality.
+So the recommendation I gave was right and is now settled by the source
+rather than by my judgement. Question withdrawn from the PR.
+
+WHAT THAT COSTS, narrowly. The proof reduces `G·t >= 0` to positivity of
+`P_77 · W_std` "with the appropriate sign from Phi(q)". First half survives
+untouched (`P_77·W_std = +0.4624` at q0, positive for all q > 0). Second
+half is the retired one, and the qualifying clause now carrying the weight
+is asserted in that one sub-clause and derived NOWHERE. So: the argument
+for stability does not close. NOT that the gate is LP-unstable — no block
+claims that, in either direction.
+
+NINE BLOCKS corrected, not one. The retired objects (Phi, the golden-ratio
+threshold q*, the antisymmetry P_67 = -P_76) had reached eight blocks
+downstream of the one #6033 fixed:
+toffoli-lp-stability{,-proof,-table1-data,-table2-data},
+toffoli-transfer-matrix-{interpretation,proof},
+tm-interactions{,-table2-data}, q-game-of-life{,-proof,-interpretation}.
+Derived at q0 under D: P_77 +0.6912, P_66 +0.5407, P_67 +0.1572,
+P_76 -0.1438.
+
+TWO LEAN DEFECTS, both PRE-EXISTING and both found only because the
+verification was actually run:
+
+  1. toffoli-lp-stability.lean DID NOT COMPILE ON MAIN. `q_param` is
+     unresolvable there — it lives in namespace QOU.GroundRing and the file
+     imports only QOU.QuantumObservableUniverse. Confirmed by lean-direct
+     against `git show origin/main:...`, same error, line 38. A content-block
+     Lean sibling is covered by NO CI, so nothing would ever have caught it.
+  2. `toffoli_shadow_bounded : exists k, 0 < k and k < 10 := <303/100,...>`
+     removed. Vacuous (mentions no Toffoli, no Gram, no q) AND its constant
+     is a number the content block retired on 2026-08-09. Zero consumers.
+
+`toffoli_lp_stable` kept, proof untouched — `q > q* <-> q + sqrt q - 1 > 0`
+is a true fact about a real function; only the docstring identifying that
+function with a live amplitude is withdrawn.
+
+VERIFIED: lean-direct exit 0 against the real 15-module import cone;
+#print axioms clean on all six theorems, no sorryAx; render preflight clean
+on all nine .md; qa-sweep re-run on 11 sidecars; re-verified after rebasing
+onto main (124 commits), branch-only diff byte-identical across the rebase.
