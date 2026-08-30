@@ -212,15 +212,37 @@ def compute_atom(name, Z, N, quarks=None):
 
 # ── Main ─────────────────────────────────────────────────────────
 
+# Per-atom timing + a real start_time (bean qou-c7g8).
+#
+# Two separate defects, both of which made this producer impossible to reason
+# about from its own output:
+#
+#  (a) `durationMs` was MEANINGLESS. `WitnessBuilder` is constructed below,
+#      AFTER this loop, and was passed no `start_time` -- so it reported the
+#      time to SERIALISE the witness, not to compute it. The committed witness
+#      says `durationMs: 53`, which was read (by me) as "19 atoms in 53 ms" and
+#      used to claim a six-orders-of-magnitude regression. It measured neither.
+#      `_T0` below is captured before any work and handed to WitnessBuilder.
+#
+#  (b) NO PROGRESS SIGNAL. stdout here is block-buffered when redirected, while
+#      warnings go to stderr unbuffered, so a redirected run shows a few atoms
+#      and then nothing -- which reads as "stalled at atom N" whether or not it
+#      stalled. Every atom line now carries its own elapsed time and flushes.
+import time as _time
+_T0 = _time.monotonic()
+_atom_secs = {}
+
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
 print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
 print()
-print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5}")
+print(f"{'Atom':>12} {'A':>3} {'tr_M':>14} {'B(MeV)':>10} {'cross_sum':>11} {'δ_xchan':>10} {'Frob':>5} {'wall':>9}")
 print("-" * 80)
 
 for name, Z, N, quarks in ATOMS:
+    _t_atom = _time.monotonic()
     r = compute_atom(name, Z, N, quarks)
+    _atom_secs[name] = _time.monotonic() - _t_atom
     results.append(r)
     print(
         f"{name:>12} {r['A']:>3} "
@@ -229,6 +251,8 @@ for name, Z, N, quarks in ATOMS:
         f"{r['cross_channel_sum']:>+11.6f} "
         f"{r['delta_xchan_MeV']:>+10.4f} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
+        f"{_atom_secs[name]:>9.2f}s",
+        flush=True,
     )
 
 total_terms = sum(r["n_terms"] for r in results)
@@ -236,7 +260,7 @@ print(f"\nTotal NF entries: {total_terms} (vs 21,694 quark-level)")
 
 # ── Witness ──────────────────────────────────────────────────────
 
-w = WitnessBuilder("hadron-knot-table", engine="python")
+w = WitnessBuilder("hadron-knot-table", engine="python", start_time=_T0)
 w.set_description(
     f"Hadron-level knot decomposition table for {len(ATOMS)} atoms in the "
     f"H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at "
@@ -250,6 +274,13 @@ w.add_parameter("basis", NF_NAMES)
 w.add_parameter("z_markov", _z)
 w.add_parameter("z_squared", _Z2)
 w.add_parameter("n_atoms", len(ATOMS))
+# Per-atom wall time, as STRINGS (bean qou-c7g8). Strings, not floats, so this
+# does not add raw float64 to the witness -- the NO-FLOAT64 directive applies to
+# diagnostics too. These exist because this producer's cost profile was pure
+# speculation for as long as its only timing signal was a `durationMs` that
+# measured witness serialisation.
+w.add_parameter("per_atom_wall_seconds",
+                {k: f"{v:.3f}" for k, v in _atom_secs.items()})
 w.add_parameter("total_nf_entries", total_terms)
 
 # Assertions: check key traces AND LP stability
