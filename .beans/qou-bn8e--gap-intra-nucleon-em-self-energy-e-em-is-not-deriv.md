@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-29T18:46:52Z
+updated_at: 2026-08-30T09:28:56Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -565,3 +565,111 @@ So the magnitude gap is unchanged in size but better characterised: it is not
 
 Audit: docs/audits/2026-08-29-coleman-glashow-retraction-and-octet-saturation.md
 Lean/probe corrected in place; both carry the retraction in their own docstrings.
+
+
+---
+
+## Literature search 2026-08-30 — the "outside the octet" routes exist and are standard
+
+Run because the octet-saturation result (`octet_em_pattern_surjective`, det `−1/3`)
+proved the couplings cannot be *constrained* by octet data, only fitted. So any
+derivation must use different data. It does, and the literature is mature.
+
+### First: the corpus does not hold this literature
+
+Measured, all four `library/` tiers, 536 document directories:
+
+| search | `sections/` | `ocr/` |
+|---|---|---|
+| `cottingham` | **1** — and it is a *different* Cottingham paper (Cottingham–Lacombe–Loiseau–Richard–Vinh Mau 1973, the Paris potential), inside a references list | 0 |
+| `electromagnetic self-energy` | 0 | 0 |
+| `self-energy of the nucleon` | 0 | 0 |
+| `proton-neutron mass difference` | 0 | 0 |
+| `electromagnetic mass difference` | 0 | 0 |
+
+`INDEX.md` returns zero on all of them (and covers 527 lines against 536
+directories, so it is not complete). **The shelf is empty on this topic** —
+this is an acquisition gap, not a corpus-grep miss.
+
+### The two routes, both of which use data the octet does not contain
+
+**1. The Cottingham formula (1963) — the direct answer to this bean's question.**
+It expresses the EM self-energy as an integral over the *forward virtual Compton
+amplitude*, evaluated from measured **electroproduction structure functions**.
+That is a determination of `E_EM` from electron-scattering data, with no baryon
+mass splitting used as input — exactly the "outside the octet" the saturation
+result forces. Modern treatments give `M_n − M_p = 1.35(18)(8) MeV`.
+
+**The known hard part, and it is the analogue of this bean's own gap.** The
+dispersive representation **requires a subtraction** (quarks and gluons
+reggeize), and the decomposition is
+`δM_B^γ = δM_B^el + δM_B^inel + δM_B^sub + δM̃_B^ct`. The subtraction function
+`δM_B^sub` is *not* fixed by the structure functions; low-energy effective theory
+relates it to the **nucleon isovector magnetic polarizability**. So the route
+does not eliminate an undetermined ingredient — it *relocates* it, from an
+unconstrained coupling to a measurable polarizability. That is a real
+improvement and should be stated as such rather than as a closure.
+
+**2. Lattice QCD+QED — an independent number for the EM piece.**
+BMW (Science 2015, `arXiv:1406.4088`), `N_f = 1+1+1+1` with independent u/d/s/c
+masses and three QED couplings: `m_n − m_p = +1.51(28) MeV`, and the
+**electromagnetic contribution alone = `1.00 ± 0.07_stat ± 0.14_syst` MeV**.
+
+### The structure this bean's Lean assumes is the standard one
+
+Worth recording, because it was reached independently here. The literature's
+pairwise term is `ΔE_ij = α Q_i Q_j ⟨1/r_ij⟩`, and **in the flavour-SU(3) limit
+`⟨1/r_ij⟩` is taken universal across the multiplet** — so every quark pair in
+every octet baryon shares one value. That is exactly `chargeInter` with a single
+coupling `B`, i.e. `B = α⟨1/r⟩`. The two-invariant split
+`E = A·Σqᵢ² + B·Σ_{i<j}qᵢqⱼ` is not an invention of this branch.
+
+It also partly rehabilitates a form I criticised as a "Euclidean import": the
+`α·⟨1/r⟩` shape is standard. What was wrong in that earlier attempt was
+importing a *specific numerical length* without deriving it — the criticism
+applies to the value, not the form.
+
+### 🛑 The crux, and why I am NOT stating a target number
+
+The obvious move is: BMW's EM contribution is `+1.00 MeV`, this bean's Lean gives
+`E(p) − E(n) = (A + B)/3`, therefore `A + B ≈ 3.00 MeV`.
+
+**That is the same `k = 3.0 MeV` retracted twice on this branch, and it is only
+valid under an assumption nobody has checked.** It holds iff the framework's
+leading nucleon term is the **pure-strong** quantity, so that EM must supply the
+full `+1.00 MeV`. If instead the framework's leading term already reproduces the
+**net** `−1.29 MeV` splitting — which is what the measured `0.638 %`
+over-prediction (residual `0.008255 MeV`) suggests — then EM must supply only
+that residual, and the target is ~120× smaller.
+
+**Those two readings differ by more than two orders of magnitude, and the
+literature cannot settle which applies.** It is a question about what the
+framework's own `m_p`/`m_n` construction already contains. **Resolving that is
+the prerequisite for using any of the numbers above**, and it is a corpus
+question, not a literature one.
+
+### Acquisition list (nothing ingested; `library/` unchanged)
+
+Ranked for this bean. Drop into `uploads/` and migrate to make them
+corpus-greppable:
+
+1. `arXiv:1907.05459` — *On the Cottingham formula and the electromagnetic
+   contribution to the proton-neutron mass splitting*. The most direct.
+2. `arXiv:1406.4088` — BMW, *Ab initio calculation of the neutron-proton mass
+   difference* (Science 2015). Source of the `1.00(7)(14) MeV` EM piece.
+3. `arXiv:1408.6628` — *Dispersive estimate of the electromagnetic charge
+   symmetry violation in the octet baryon masses*. Octet-wide, matches this
+   bean's `(A,B)` structure most closely.
+4. `arXiv:1506.06747` — *Cottingham formula and nucleon polarizabilities*. The
+   subtraction-function problem specifically.
+5. Cottingham, *Annals of Physics* **25** (1963) 424 — the original. Not on
+   arXiv.
+
+**Search provenance.** `library/` greps are exact and re-runnable. External
+results came via `WebSearch`; the paper-search MCP backends (arXiv, Semantic
+Scholar, CrossRef, OpenAlex) are **egress-blocked in this sandbox** — all four
+return `[]` even for a maximally-broad query, and `curl` to each host gives
+`CONNECT tunnel failed, response 403`. Per `local/sandbox-egress`, WebSearch is
+the open out-of-band lane and WebFetch is not. **The arXiv numbers above are
+from search-result metadata and are NOT verified against the papers**, which
+this session cannot fetch.
