@@ -1,7 +1,7 @@
 ---
 # qou-h6mq
 title: 'MAIN RED: QIntegerCanonical references qIntPoly, removed from QHookDimension'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-30T07:42:27Z
 updated_at: 2026-08-30T07:42:27Z
@@ -47,4 +47,40 @@ guess that type-checks would be worse than the red, because the rfl above means 
 propagates definitionally.
 
 Related: qou-qint (reconcile the eight q-integer definitions), qou-q7cm, qou-pv3a, qou-1lb8.
+
+## 2026-08-30, same day -- FIXED ON MAIN, by main. Closing.
+
+main's 68dc39ba72 ("fix: QIntegerCanonical is the second consumer of a namespace that moved")
+lands the repair. Re-verified on the merged tree:
+  * QOU.MathlibExt.QIntegerCanonical builds;
+  * all 7 previously-failing axiom-guard registry modules build;
+  * lean-axiom-guard reports ALL 217 REGISTRY DECLARATIONS MATCH their recorded axiom status.
+
+So the keystone gate is running again. Its last recorded state before this was ~4 months of not
+running at all (the workflow-dispatch history in .github/workflows/lean-axiom-guard.yml), and this
+episode added ~1 day of not-being-satisfiable on top.
+
+## Summary of Changes
+
+None by this bean -- it was a report, and main fixed the defect. What the bean contributed was the
+measurement: 18 of 25 registry modules building and 7 failing on one reference, and the finding
+that QOU.Mathlib.Summary now fails at the same place rather than at Summary.lean:100, which
+SUPERSEDED the standing claim in qou-1lb8.
+
+## Still open, and inherited from this
+
+qou-1lb8 claims main is red at QOU/Mathlib/Summary.lean:100 on IwahoriHeckeAlgebra R 2 q. While
+QIntegerCanonical was broken, Summary could not reach that line, so the claim was unverifiable.
+Now that the import chain is repaired, whether that defect survives is CHECKABLE AGAIN and
+nobody has checked it. Left to qou-1lb8's owner rather than silently re-asserted.
+
+## Correction to my own report
+
+My first attempt at the axiom guard failed twice for two different reasons and I reported only
+the first. The first failure was genuine -- missing oleans, caused by main's red. After building
+those, the second failure was mine: I ran the guard without sourcing scripts/lean-direct-env.sh,
+which the workflow does and which its own header documents, so lean had no LEAN_PATH and reported
+"unknown module prefix 'QOU'". A gate that fails because the caller did not read its invocation
+is not a gate failure, and reporting it as one would have been the same mistake as quoting a
+stale olean set.
 
