@@ -91,7 +91,7 @@
       },
       {
         "file": "computations/habiro/habiro_h9_spectral_decomposition.py",
-        "line": 292,
+        "line": 303,
         "class": "benign",
         "arg": "10000000000.0",
         "source": "best_miss = mp.mpf(1e10)",
@@ -221,10 +221,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "cdeb737aadf9",
-  "scriptCommitSha": "unknown",
-  "commitSha": "19c22712bb5c535b1483138fcdc36afe77a3d02a",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "e2f7ae13f7b316ad06123d127577dabcb3917875",
   "engine": "python",
-  "computedAt": "2026-08-29T07:01:21.846720+00:00",
+  "computedAt": "2026-08-30T09:02:27.815393+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

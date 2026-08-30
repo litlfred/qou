@@ -35,6 +35,10 @@ question.
 | 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
 | 16 | **the expression's SHAPE** — every matcher above | the same value under a sqrt-variable spelling, invisible in the *deliberate* bucket too | 21 sites `convention-c-producer-audit.py` reports in NO bucket (qou-t9r1) |
 | 17 | **the EXEMPTION's shape** — the dispatcher / co-binding test | a two-arm comparison whose D arm is a **call** to the canonical helper, not an inline re-spelling | `he4_body_order_shortfall_location_probe.z_of` counted ACTIONABLE, and `--propose-ledger` would not stub it either (qou-1jny) |
+| 18 | **the EXEMPTION's SCOPE** — co-binding checked within one scope | a two-arm comparison written as SIBLING `def z_C` / `def z_D`, so neither scope contains the other's binding | 16 of the 42 "solo" sites, i.e. 38 % of what looked like residue (qou-t9r1) |
+| 19 | **the EXEMPTION's SHAPE, other side** — the D arm assumed to be a Markov parameter | a C-vs-D comparison whose D side is a derived closed form in `h`, never a `z` at all | `probe_convention_d_vs_c_borromean.py`, whose D is `tau_pipe = (4+h^2-3h^4-h^6)/(h^2+4)` (qou-t9r1) |
+| 20 | **the EXEMPTION's LANGUAGE** — both arms assumed to be in the same file, hence the same language | a C-vs-D comparison whose D arm is a **Lean declaration**, so no Python-side pairing test can ever see it | `probe_h3_central_idempotents_exact.py` computes the C arm; its D counterpart is Lean `BorromeanMarkovTrace`, and `BorromeanTraceConventionSplit.lean` proves D ≠ C sorry-free (qou-t9r1) |
+| 21 | **the GUARD's TYPE** — the anti-invisibility helper is mpmath-only (SCOPE: 1 measured site, NOT a wide class — see note below) | a SYMBOLIC (sympy) consumer cannot call `markov_parameter_convention_C` (`TypeError: cannot create mpf from q`), so it MUST inline `sqrt(q)/(1+q)` — invisible to the very mechanism built to make deliberate C visible | `probes/qbeta_fmap_power_class_prune.py`; helper made polymorphic 2026-08-30 (qou-t9r1) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
@@ -613,6 +617,33 @@ next convention migration -- is what made the comparison look like a leak.
 When adding an exemption test, ask what a COMPLIANT author would write, not
 only what a careless one would.
 
+### Rows 17-19 are one family, and they cost three passes to see
+
+All three blind an EXEMPTION rather than a detector, and all three were found
+the same way: by draining the previous one and finding the count did not fall
+as far as it should have.
+
+The convention-C excision surface went 86 -> 49 -> 32 blocking in a single
+session, and each step revealed the next spelling:
+
+  * 86 -> 49  adjudicating scope-level co-bound comparisons (37 sites).
+  * 49 -> 42  seven co-bound sites whose docstrings do not frame them as
+              convention work -- left for an eye, correctly.
+  * 42 -> 26  row 18: the D arm as a SIBLING `def`, invisible to a scope-local
+              co-binding test. 16 sites, 38 % of the apparent residue.
+  * 26 -> 25  row 19: the D arm as a closed form in `h`, not a Markov
+              parameter, so no z-shaped pairing test can ever find it.
+
+**The lesson is about counting, not about z.** Every one of these inflated the
+*residue*, so each intermediate figure looked like real remaining work and was
+quotable as such. An agent reporting "42 sites left to excise" would have been
+wrong by 38 % and would have had no way to know from the report alone.
+
+**So: before quoting a residue, ask what would have to be true for a site to be
+a legitimate comparison that this tool cannot pair.** That question is cheap and
+it is what found rows 18 and 19; grepping harder for C is what found rows 1-16
+and would not have found either.
+
 ## Provenance
 
 Every count here is from a committed instrument, not a hand survey:
@@ -624,3 +655,41 @@ Every count here is from a committed instrument, not a hand survey:
 R11's negative test injected the historical `TR_M[5] = z³` bug and confirmed the
 gate fires; the three published miscounts and one retraction in the table above
 are recorded in `qou-2ixd` and `qou-76a6` rather than quietly fixed.
+
+## Row 21's scope — a measured NEGATIVE (2026-08-30, qou-t9r1)
+
+Row 21 is a real defect (`markov_parameter_convention_C` raised
+`TypeError: cannot create mpf from q` on a sympy Symbol, so a symbolic
+consumer could not call the guard built to make deliberate C greppable), but
+it is **narrow**, and the obvious follow-up hypothesis — *"then many symbolic
+consumers must have inlined C for the same reason"* — was tested and is
+**FALSE**.
+
+Surface searched: every `.py` under `computations/` and `tools/` that imports
+sympy AND contains a C-shaped `sqrt(q)/(1+q)` text match — 46 files. Against
+the value audit's four buckets (BLOCKING 30, ADJUDICATED 61, UNRESOLVED 2,
+NOT C 3) and the ledger:
+
+| | count |
+|---|---|
+| sympy-importing files with a C-shaped TEXT match | 46 |
+| of those, BLOCKING in the value audit | 30 |
+| of those, adjudicated in the ledger | 18 |
+| of those, in neither | 16 |
+| **of those 16, actual convention-C BINDINGS** | **0** |
+
+The 16 break down as **15 comment/docstring mentions** and **1 tuple of
+string-literal search tokens** (`gswz_program_convention_immunity_probe.py:88`,
+`Z_TOKENS = ("z_C", "z_D", "sqrt(q)/(q + 1)", ...)`).
+
+**So the value audit has no symbolic blind spot of this kind, and the count
+that looked like one was an artifact of grepping TEXT where the audit
+evaluates BINDINGS.** Recorded because the wrong version of this finding — "16
+files invisible to the audit" — was one commit away from entering the corpus,
+in the document whose subject is detectors that mis-measure. The distinguishing
+observation is cheap and should be run before any similar claim: strip
+comments, require an assignment, and check whether the right-hand side is an
+expression rather than a string.
+
+Only **one** site was ever affected by row 21
+(`probes/qbeta_fmap_power_class_prune.py`), and it is fixed.
