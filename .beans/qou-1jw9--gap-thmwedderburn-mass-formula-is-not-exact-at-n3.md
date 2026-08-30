@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-30T03:46:06Z
+updated_at: 2026-08-30T05:47:31Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -997,3 +997,42 @@ published block. If the answer is no, the honest move is to document the C-frame
 provenance and revert the adoption — NOT to re-fit Phi_1. Still prohibited,
 unchanged: no seventh Delta_lambda ansatz, no parameter beyond CAL-1/2/3, and
 sign agreement remains one bit.
+
+
+
+=== QUEUED LEAD (not worked): the xzrj arc on main derives a z-dependence I only measured ===
+
+Noticed on a check-in, recorded so it does not evaporate. NOT investigated, NOT
+claimed to transfer. Do not treat the connection below as established.
+
+WHAT LANDED ON MAIN (b1e9af9538 .. 9ce3ed2942, bean qou-xzrj, q-beta sector):
+"ALL of mu's convention-dependence is derived; only a pure-q constant is still
+identified", reaching mu = -dim/([3]_q * y_(2,1)) with the residual gap a
+z-FREE constant. Verified same object, not merely the same letter:
+qbeta_mu_is_block_invariants_probe.py evaluates y_(2,1)(z_D) at the proton pin
+under convention D — the same Markov parameter z = q^3/(q^2+1) that Phi_1 uses.
+
+WHY IT MIGHT BEAR ON PHI_1. Phi_1 is the one z-dependent invariant of the three,
+and this arc RECOMPUTED it numerically under D rather than deriving its
+z-dependence. The xzrj route factorises a z-dependent scalar into NAMED block
+invariants (y_(2,1), [3]_q, dim) and isolates a z-free residue. If Phi_1's
+z-dependence admits the same treatment, the D recomputation stops being a
+number and becomes a derivation — which is what would actually answer the
+2.4x accuracy question rather than merely reporting it.
+
+WHY IT PROBABLY DOES NOT TRANSFER, and this is the honest half. mu is a SCALAR
+NORMALISATION. Phi_1 is a MINIMUM over arrangements — exponential in A, hit by a
+400-arrangement cap in the earlier probe and by hill-climbing in the producer
+(5 rows exact, 14 local). A minimisation over a combinatorial set is not the
+kind of object a factorisation into block invariants closes; the min operator
+is exactly what blocks a closed form. Different sector too: q-beta decay, not
+the mass table.
+
+SO: a lead, at maybe-low odds, whose value is that it is CHEAP TO KILL — read
+qbeta_mu_is_block_invariants_probe.py and ask whether anything in it survives
+a min(). If the answer is no, write that down and close the lead; a recorded
+negative is worth more than an unexamined maybe.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; NO FITTING; only
+CAL-1/2/3 admissible; and a factorisation that reproduces Phi_1 by tuning a
+constant against the table is a fit, not a derivation.
