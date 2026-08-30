@@ -24,19 +24,25 @@
   `IdealTetrahedron` by construction.  The gap was never in the geometry — it was that
   the Λ-sum lemma had not been written.
 
-  ═══ NONNEGATIVE, NOT STRICTLY POSITIVE ═══
+  ═══ NONNEGATIVE, NOT STRICTLY POSITIVE — AND THE REASON GIVEN HERE WAS WRONG ═══
 
-  This proves `0 ≤ D(z)`, which is **weaker than what the two bridge files say is
-  missing**: they name `0 < BlochWigner_lob z`.  Do not read this file as closing that.
+  This proves `0 ≤ D(z)`.  The **strict** `0 < D(z)` is a separate statement and lives in
+  `Archimedean/BlochWignerPositive.lean` (bean `qou-0ag0`), which landed within the hour.
 
-  Strictness is genuinely a further step, and the reason is visible in the shape of the
-  argument above: `lob_sum_nonneg` descends from *subadditivity* of `Λ` on `[0, π/2]`,
-  which is not strict, and the Λ-sum really does tend to `0` as the tetrahedron
-  degenerates.  Ruling that out needs the angles bounded away from the corners, or a
-  strict form of the subadditivity — neither of which is here.  What the corpus does
-  carry, for the specific shapes it cares about, is a *comparison*: at 5₂, positivity
-  comes from `Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` against `Cl_2_pi_div_three_pos`
-  (see `Encounter/FiveTwoVolumeBridge.VOL_5_2_pos`), not from this file.
+  This paragraph originally read: *"Ruling that out needs the angles bounded away from the
+  corners, or a strict form of the subadditivity — neither of which is here."*  **Neither
+  is what the strict proof uses.**  It runs Rivin strict concavity along a horizontal
+  chord whose two endpoints stay strictly interior, and bounds those endpoints below with
+  `lob_sum_nonneg` — this file's own lemma, in its existing non-strict form.  The
+  strictness comes from the concavity, not from any strengthening of the subadditivity and
+  not from any bound on the angles.
+
+  The observation that survives is the narrow one: `lob_sum_nonneg` alone cannot give
+  strictness, because subadditivity is not strict and the Λ-sum really does tend to `0` as
+  the tetrahedron degenerates.  That says this file does not extend to the strict case; it
+  says nothing about whether some other argument does, and one does.  Recorded because
+  naming an obstacle to a result is a claim about the problem, and this one was a claim
+  about the route.
 
   -- Ref: [milnor1982] §2
   -- Ref: [neumann-zagier1985] §2
