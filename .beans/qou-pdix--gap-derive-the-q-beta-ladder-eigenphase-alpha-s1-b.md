@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-30T12:42:16Z
+updated_at: 2026-08-30T13:02:11Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1011,3 +1011,75 @@ theorem `deriv_at_one_eq_zero_of_barEven` is stated for an ARBITRARY
 differentiable `f` with `f(x⁻¹) = f(x)` near 1, which is what makes the
 acceptance-test correction general.
 PROBE: `qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py` (11/11, exact).
+
+
+## 2026-08-30 — ROUTE 5: constant-residue holonomies EXCLUDED, and entry (7)'s "EXACT" is not exact
+
+Two results, and together they mean the branch-3 acceptance test no longer
+discriminates anything.
+
+### 1. The exclusion — by the logarithm's FUNCTIONAL EQUATION, no transcendence
+
+Kohno-Drinfeld fixes the scale (`hbar = 2 ln q`), so a **constant-residue**
+holonomy angle is `c * ln q`. The obvious objection is transcendence — `alpha`
+is algebraic, `c ln q` is not — but that needs transcendence theory. **The
+elementary substitute needs none:** `ln(q^2) = 2 ln q`, so EVERY `c * ln`
+satisfies `f(q^2) = 2 f(q)` whatever `c` is, and `alpha` fails it:
+
+    C: alpha(q^2) - 2alpha(q)
+         = -(2q^{7/2} - 2q^{3/2} + q^5 - 2q^4 - 3q^3 + 3q^2 + 2q - 1)/(2q^2(q+1))
+    D: alpha(q^2) - 2alpha(q)
+         = (q-1)^2(q+1)(q^9+q^8+2q^6+q^5+3q^4-q^3+q^2-q+1)/(2q^2(q^2+1)(q^4+1))
+
+Both nonzero. **So alpha is not `c ln q` for ANY c, in either convention.**
+Scope-(b), invariant named.
+
+### 2. Entry (7)'s "EXACT: target / Re(log-gap) = -1/4" is a 0.32% APPROXIMATION
+
+Measured at the proton pin:
+
+    quantity          value          ratio to 2 ln q0     deviation from -1/4
+    alpha_C        -0.05233612          -0.25079432             0.32 %
+    alpha_D        -0.04048578          -0.19400756            22.4  %
+    alpha_required -0.05661728          -0.27130960             8.52 %
+
+And by result 1 it **cannot** be exact: exactness would give
+`alpha = -(1/2) ln q`, which fails the doubling identity. Entry (7) states it as
+EXACT and builds acceptance-test part 2 on it. It is not an identity, so there
+is nothing exact there to account for — and a construction reproducing `-1/4`
+exactly would be **wrong by 0.32%**.
+
+### 🛑 Consequence: the acceptance test does not discriminate
+
+    part 1  reproduce alpha through t^2         VACUOUS — a bar-symmetry test in
+                                                disguise (previous entry)
+    part 2  account for the -1/4 of Re(log-gap) RESTS ON A NON-IDENTITY
+    part 3  deliver a value below 1             a sanity check, not a test
+
+Both discriminating parts are defective. **This is a finding about the test, not
+about the hypothesis** — it does not refute a holonomy origin for alpha; it says
+the three-part test built over entries (6)-(8) cannot tell a right construction
+from a wrong one, and should not be used to accept one.
+
+### What route 5 still has — the exclusion is NARROW
+
+Result 1 removes **constant-residue** connections only. A connection whose
+residues depend on `q`, a non-flat construction, or a genuinely
+`q`-dependent-parameter transcendental object is untouched and need not satisfy
+the doubling identity. What is gone is precisely the Kohno-Drinfeld reading the
+acceptance test encoded — which is why the test went with it.
+
+### Honest position on route 5 after this session
+
+Routes 1-4: closed. Route 5: its constant-residue horn is now closed too, and
+its acceptance test is retired as non-discriminating. What remains is a
+genuinely open construction problem with **no accepted test to judge a candidate
+by** — building one is now part of the work, and a candidate accepted against
+the old three parts would not have been evidence of anything.
+
+LEAN: `QOU/QBeta/PhaseFailsLogFunctionalEquation.lean` — 9 theorems, lean-direct
+exit 0, ZERO warnings, #print axioms clean on all 9, zero sorryAx. The doubling
+lemma is stated for an ARBITRARY additive `L` and arbitrary `c`, so the
+exclusion holds for every `c` at once rather than for a fitted one.
+PROBE: `qbeta_phase_fails_log_functional_equation_probe.py` (7/7, exact
+symbolic + mpmath 50 dps at the proton pin).

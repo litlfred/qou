@@ -1,0 +1,146 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T13:01:32.537355+00:00",
+  "commitSha": "1d732643ee9c88d789e584af9f94cd6b166cf2c5",
+  "assertions": [
+    {
+      "name": "alpha_C_fails_log_doubling_identity",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_C_fails_doubling_at_a_point",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_D_fails_log_doubling_identity",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "alpha_D_fails_doubling_at_a_point",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "entry7_exact_minus_quarter_is_NOT_exact",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "entry7_deviation_is_about_a_third_of_a_percent",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "minus_quarter_is_far_worse_for_D_and_for_the_required_phase",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-phase-fails-log-functional-equation",
+  "scriptFile": "qbeta_phase_fails_log_functional_equation_probe.py",
+  "scriptHash": "f205d6f26b8e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phase_fails_log_functional_equation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phase_fails_log_functional_equation_probe.py"
+  },
+  "description": "Route 5, scope-(b): the ladder phase is NOT a constant-residue Kohno-Drinfeld holonomy angle. Elementary invariant, no transcendence needed — ln(q^2) = 2 ln q, so every c*ln satisfies f(q^2) = 2f(q), and alpha fails that identity in BOTH conventions as an explicit nonzero algebraic function. Separately: bean entry (7)'s 'EXACT: target / Re(log-gap) = -1/4' is a 0.32%% approximation for alpha_C (22.4%% for alpha_D, 8.52%% for the required phase) and provably cannot be exact, since exactness would make alpha = -(1/2) ln q. So BOTH discriminating parts of the branch-3 acceptance test are defective: part 1 is vacuous (a bar-symmetry test in disguise) and part 2 rests on a non-identity.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)"
+  },
+  "data": {
+    "assertions_passed": 7,
+    "assertions_total": 7,
+    "checks": [
+      {
+        "name": "alpha_C_fails_log_doubling_identity",
+        "pass": true,
+        "why": "C: alpha(q^2) - 2 alpha(q) != 0, so alpha != c*ln q for ANY c"
+      },
+      {
+        "name": "alpha_C_fails_doubling_at_a_point",
+        "pass": true,
+        "why": "C: nonzero at q=2, the witness the Lean proof uses"
+      },
+      {
+        "name": "alpha_D_fails_log_doubling_identity",
+        "pass": true,
+        "why": "D: alpha(q^2) - 2 alpha(q) != 0, so alpha != c*ln q for ANY c"
+      },
+      {
+        "name": "alpha_D_fails_doubling_at_a_point",
+        "pass": true,
+        "why": "D: nonzero at q=2, the witness the Lean proof uses"
+      },
+      {
+        "name": "entry7_exact_minus_quarter_is_NOT_exact",
+        "pass": true,
+        "why": "alpha_C/(2 ln q0) = -0.250794321277, not -1/4; entry (7) records this as EXACT"
+      },
+      {
+        "name": "entry7_deviation_is_about_a_third_of_a_percent",
+        "pass": true,
+        "why": "the -1/4 is a 0.32%% approximation for alpha_C"
+      },
+      {
+        "name": "minus_quarter_is_far_worse_for_D_and_for_the_required_phase",
+        "pass": true,
+        "why": "22.4%% off for D, 8.5%% off for the phase the ladder needs"
+      }
+    ],
+    "doubling_defect": {
+      "C": "-(2*q**(11/2) - 2*q**(3/2) + q**7 - 2*q**6 - 2*q**5 + q**4 - q**3 + 2*q**2 + 2*q - 1)/(2*q**2*(q + 1)*(q**2 + 1))",
+      "D": "(q - 1)**2*(q + 1)*(q**9 + q**8 + 2*q**6 + q**5 + 3*q**4 - q**3 + q**2 - q + 1)/(2*q**2*(q**2 + 1)*(q**4 + 1))"
+    },
+    "ratio_to_re_log_gap": {
+      "alpha_C": {
+        "value": "-0.05233612026822884",
+        "ratio_to_2lnq": "-0.2507943212772611",
+        "dev_from_minus_quarter_pct": "0.317729"
+      },
+      "alpha_D": {
+        "value": "-0.04048577734064276",
+        "ratio_to_2lnq": "-0.1940075610780928",
+        "dev_from_minus_quarter_pct": "22.397"
+      },
+      "alpha_required": {
+        "value": "-0.05661727816088094",
+        "ratio_to_2lnq": "-0.2713095998738724",
+        "dev_from_minus_quarter_pct": "8.52384"
+      }
+    },
+    "scope": "NARROW scope-(b): removes CONSTANT-RESIDUE connections only. A connection with q-dependent residues, a non-flat construction, or a genuinely q-dependent-parameter transcendental object is untouched and need not satisfy the doubling identity. What is gone is the specific Kohno-Drinfeld reading the acceptance test encoded."
+  }
+}
