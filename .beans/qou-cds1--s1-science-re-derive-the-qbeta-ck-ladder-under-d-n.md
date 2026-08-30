@@ -4038,3 +4038,71 @@ They converge on the same consequence from opposite ends: the D re-derivation
 needs a genuinely new form, not a repair of the C one. Step 8 says the C FORM
 has no D analogue; this says the nearest INADMISSIBLE point is not where the
 missing size comes from either.
+
+
+## Step 9 (2026-08-30, PR #6144) — the D decay carrier is ONE block, and that closes the block route
+
+**Lean-proved sorry-free**, `QOU/QBeta/DecayBlockCarrier.lean`, lean-direct exit 0,
+`#print axioms` = [propext, Classical.choice, Quot.sound] on all ten, no sorryAx.
+
+### The finding
+
+    chi^(2,1)(Delta_S) = 0     EXACTLY, at EVERY z
+
+The 2-dimensional block never carries the decay element. It follows from two
+one-line identities, both proved:
+
+    reg_char(Delta_S) = 0                  traceless in the regular rep
+    chi^(3)(Delta_S)  = -chi^(1^3)(Delta_S)  exact opposites
+
+so `chi^(2,1) = (reg - chi3 - chi111)/2 = 0`. Consequence, also proved:
+
+    tr(Delta_S) = (y_3 - y_(1^3)) * chi^(3)(Delta_S)   for ALL z
+
+### What it does to the framing
+
+**The two-row cap does NOT take the decay carrier from 3 blocks to 2. It takes
+it from 2 to 1**, because (2,1) was never in it. Under D the decay lives
+entirely in a single 1-dimensional block with weight
+`y_(3)(z_D) = (q^4+1)/(q^2+1)^2` (proved), alongside
+`y_(2,1)(z_D) = q^2/(q^2+1)^2` and `y_(1^3)(z_D) = 0` (both proved), normalising
+to 1 (proved).
+
+### Why this closes a class
+
+I set out to test whether the D weights are FORCED: two surviving blocks, two
+constraints (normalisation + anchor), zero free parameters. They are -- and the
+solve is DEGENERATE. The anchor constrains only `y_3`, returning
+
+    y_3*  = F * y_3^D          exactly: the anchor can only RESCALE the one
+                               carrying weight
+    y_21* = normalisation's leftover, INVISIBLE to Q_beta
+
+**So block re-weighting cannot source the convention-D correction.** There is
+one weight after the cap and it is fixed by the trace axioms. The new form the
+D re-derivation needs cannot come from the Wedderburn decomposition at all.
+
+Recognition test ran against a candidate list declared BEFORE solving (nearest
+form 8.9 %, not isolated) -- but the structural verdict does not depend on it.
+
+### How this sits with Steps 7-8
+
+Three routes now closed from three directions, none subsuming another:
+
+  Step 8    the ADDITIVE/cos route: under D the bar-invariant V^/q moves with q,
+            so there is no fixed centre to resum around
+  z=1 wall  rescuing the AUGMENTATION base via the z=1 return: the admissibility
+            leak is 1.459 % against an 11.087 % correction, 7.6x short
+  Step 9    the BLOCK route: only one block carries the decay, so re-weighting
+            has nothing to re-weight
+
+The 2026-08-29 audit had already closed `admissible base x one multiplicative
+correction`. Four classes down. Still NOT established: the replacement form.
+
+### Caveat on scope, stated in the Lean too
+
+The two 1-dim characters are DEFINED by their defining evaluations; the REGULAR
+character's basis values are taken as DATA from the corpus's own
+trace-of-left-multiplication computation. Formalising the H_3 multiplication
+table is not what these results turn on. The theorems are exactly "given those
+values, these identities hold".
