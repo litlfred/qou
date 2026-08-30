@@ -123,26 +123,34 @@ def main() -> int:
         "inherited from published rem:atom-mass-full-hecke table; high-A χ^λ not "
         "independently witnessed (GS reducer infeasible past light nuclei)")
     wb.data["atoms"] = results
-    # NOT float(norm). The residual `norm - 1` is exactly 0 at 60 dps, but a
-    # float64 cast throws away the evidence for that: any mpf residual below
-    # ~1e-16 rounds to exactly 1.0, so under a cast the 1e-25 tolerance does no
-    # work and the assertion would pass identically on a value that missed by
-    # 1e-20. Compared as mpf, the tolerance resolves what it claims to.
+    # Assert the RESIDUAL against 0, not the value against 1.
+    #
+    # `Assertion.passed` (qou_substrate/witness.py:830) computes
+    # `abs(float(computed) - float(expected)) <= float(tolerance)` -- ALWAYS in
+    # float64, whatever the producer passes. So `computed=norm, expected=1`
+    # cancels at ~1e-16 and the 1e-25 tolerance is unreachable: it would pass
+    # identically on a value that missed by 1e-20. Passing mpf instead of
+    # float() does NOT fix that; only removing the cancellation does.
+    #
+    # Subtracting first is lossless in the other direction: float64 carries 16
+    # significant digits at ANY exponent, so `float(mpf("1e-45"))` is exactly
+    # `1e-45` and the tolerance does the work it advertises.
     wb.add_assertion("qdeformed_weights_normalised",
-                     computed=norm, expected=mp.mpf(1), tolerance=mp.mpf("1e-25"),
-                     source="Σ_λ y_λ d_λ = tr_M(1) = 1")
+                     computed=fmt(abs(norm - 1)), expected="0", tolerance="1e-25",
+                     source="|Σ_λ y_λ d_λ − 1|, the residual of tr_M(1) = 1")
     # WAS: `alt_channel_suppressed_vs_classical`, computing (1/6)/ŷ_alt > 5.
     # Under convention D that is a division by ZERO -- ŷ_alt is identically 0,
     # not merely small -- and the producer crashed. The honest replacement
     # asserts the cap itself, which is the actual structural content: the alt
     # channel does not contribute at all, so the trace is two-row.
     wb.add_assertion("alt_channel_vanishes_two_row_cap",
-                     computed=ya, expected=mp.mpf(0), tolerance=mp.mpf("1e-40"),
+                     computed=fmt(abs(ya)), expected="0", tolerance="1e-40",
                      source="ŷ_(1^3) = 0 exactly under convention D (two-row cap, "
                             "derived from the 2-dim mass fibre; qou-n1dj)")
     wb.add_assertion("two_row_weights_carry_all_of_the_trace",
-                     computed=ys + yd, expected=mp.mpf(1), tolerance=mp.mpf("1e-40"),
-                     source="with ŷ_alt = 0, Σ_λ ŷ_λ = 1 is carried by (3) and (2,1) alone")
+                     computed=fmt(abs(ys + yd - 1)), expected="0", tolerance="1e-40",
+                     source="|ŷ_(3) + ŷ_(2,1) − 1|; with ŷ_alt = 0 the two rows "
+                            "carry the whole trace")
     wb.save()
     print("\n✓ Witness: atom-mass-full-hecke.witness.json")
     return 0
