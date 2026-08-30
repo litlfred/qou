@@ -4760,3 +4760,73 @@ them sees the collision: `qbeta_d_frame_terminus_probe.py`,
 prose across a dozen entries; the notes are the cheaper fix and they put the
 warning where the reader is. If a future tranche does rename, Step 14's is the
 one to change — it is the later coinage and the less used.
+## Where to look: the corpus names it — and the D generator is forced BAR-INVARIANT (PR #6282)
+
+Owner asked where to look for a structural replacement for `cos(alpha_eff)`.
+The corpus answers itself, and following the pointer gives two results. Probe:
+`computations/qbeta/qbeta_d_habiro_generator_parity_probe.py`, 8/8, sympy exact.
+
+### The place, already named
+
+AGENTS.md:1828 — "Permanent fix is the Q_beta Habiro element". The Lean exists:
+`QOU/BraidKnot/QBetaHabiroGeneratorRigidity.lean` carries the open class
+`QBetaSingleHabiroGenerator` (verified: **NO instance**), conjecturing the tower
+is ONE fixed generator, forcing the rank-1 law `c_{k+1} = rho*c_k` and
+collapsing the per-rung freedom to `(rho, c_2)`.
+
+It also already carries a **falsifiable test**: `hankel_minor_vanishes` /
+`not_single_generator_of_hankel_ne` — a single generator REQUIRES
+`c_2*c_4 = c_3^2`, and the corpus's fitted menu (`c_2=-1, c_3=-2, c_4 != -4`)
+already fails it.
+
+### Hypothesis (both results are conditional on it)
+
+Under D each ladder factor `(1 + c_k X^k)` must be bar-INVARIANT, since Q_beta
+is an observable and D's grading is multiplicative. Under C this does NOT apply
+— C's action is affine, weights are not its grading — so nothing here is a
+claim about the C ladder.
+
+### Result 1 — the generator's parity is FORCED, and is not bar-odd
+
+    X = u        bar(X)/X = q^2  ->  forced bar(rho)/rho = q^{-2}
+    X = u*Vhat   bar(X)/X = 1    ->  forced bar(rho)/rho = 1   BAR-INVARIANT
+
+Neither is `-1`. The class STATEMENT is parity-free
+(`exists rho, c_{k+1} = rho*c_k`), so **nothing in Lean has to change**. It is
+the DOCSTRING's intended bar-ODD "sinh partner" — dual to alpha_EM's bar-even
+`[2]_q` — that is a C-frame reading and does not carry to D. **The D-frame
+search target is a BAR-INVARIANT generator.**
+
+### Result 2 — `c_2 = -1` discriminates after all, by WEIGHT not by VALUE
+
+A previous entry of mine recorded that this test "does not discriminate". That
+holds for its VALUE (the `x^2` coefficient of `1 - x^2` is `-1` for any `x`) and
+I stand by it. Its BAR-WEIGHT is a different question:
+
+    c_2 = -1 is a rational constant  ->  bar-ratio 1, weight 0
+    X = u*Vhat requires w(c_k) = 0   ->  CONSISTENT
+    X = u      requires w(c_2) = -4  ->  INCONSISTENT
+
+So the one rung the corpus DERIVES rather than extracts is compatible with the
+forced form and incompatible with the naive one — evidence from an
+already-proved value, nothing fitted. This partially recovers a test I had
+written off; the write-off was right about the value and wrong to stop there.
+
+### Not claimed
+
+That the forced form IS the D ladder — conditional on the bar-invariance
+hypothesis, which is motivated but not proved. No `c_k` proposed, extracted or
+wired. No instance of `QBetaSingleHabiroGenerator` produced. Scope (a).
+
+### Other surfaces measured
+
+`Faddeev` (165 content files), `quantum dilogarithm` (141), `q-Pochhammer` (41),
+`cyclotomic completion` (13) — all carry MULTIPLICATIVE inversion relations, the
+right shape for D's multiplicative action.
+
+### The next move, concrete
+
+Search for a bar-INVARIANT single generator (not bar-odd), test any candidate
+against the already-formalized `c_2*c_4 = c_3^2` Hankel condition, and check its
+`c_k` weights are all 0. Three gates, all pre-existing or derived here, none
+requiring a fit.
