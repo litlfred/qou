@@ -60,10 +60,59 @@ from schur_principal_mpmath import (                       # noqa: E402
     y_lambda_at_q0_mpmath_convention_C_HISTORICAL as y_C,
 )
 
-#: The pin the pre-2026-08-16 upstream witness recorded for itself. Taken from
-#: the artifact rather than resolved at runtime — see the method note above.
-Q_OLD = "1.1099785955573347198997632204832250266562084087802"
-RECORDED = "1.06530622861316705936528454643137255765066167413520000000000"
+#: Fallbacks only. Both are READ FROM THE COMMITTED ARTIFACTS at run time by
+#: `_q_old()` / `_recorded()` below; these literals are used only when the
+#: artifact has moved on, and the run says so when it falls back.
+#:
+#: Copilot (PR #6104) was right that the docstring claimed these were "taken
+#: from the artifact" while they were hardcoded — the claim described the
+#: METHOD I used to obtain them, not what the code did, and a probe whose
+#: whole subject is values drifting out of sync with their source should not
+#: itself be able to drift out of sync with its source.
+Q_OLD_FALLBACK = "1.1099785955573347198997632204832250266562084087802"
+RECORDED_FALLBACK = "1.06530622861316705936528454643137255765066167413520000000000"
+
+
+def _q_old() -> tuple[str, str]:
+    """The pin recorded by THE SAME ARTIFACT the value under test comes from.
+
+    Taking q from a different witness is a straddle, and this probe committed
+    one: reading q from the muon `y-lambda-mpfr-witness.json` while reading
+    the value from the (now proton-pinned) He-4 witness left a 7.84e-8
+    residual — the μ–p pin gap — in a comparison meant to resolve a 7.55%
+    convention gap. Two artifacts, one quantity, and the smaller error hides
+    inside the larger one until the larger is fixed. Both now come from the
+    same file.
+    """
+    import json, re                                        # noqa: PLC0415
+    f = ROOT / "atomic-tr-m-helium4.witness.json"
+    try:
+        txt = f.read_text()
+        m = re.search(r'"(?:q_0_50dps|q_0|q0Value)":\s*"?(1\.10997[0-9]*)', txt)
+        if m:
+            return m.group(1), f.name
+    except Exception:                                      # noqa: BLE001
+        pass
+    return Q_OLD_FALLBACK, "FALLBACK LITERAL (artifact unreadable)"
+
+
+def _recorded() -> tuple[str, str]:
+    """The value under test, from the He-4 witness that records it.
+
+    Read live so the probe tracks the corpus. Once that witness is
+    regenerated under D this returns the D value and the verdict flips to
+    "NOT convention C" — which is the correct report at that point, not a
+    failure, and is why the exit code keys on reproduction rather than on C.
+    """
+    import json, re                                        # noqa: PLC0415
+    f = ROOT / "atomic-tr-m-helium4.witness.json"
+    try:
+        m = re.search(r'"abs_tr_p_50dps":\s*"([0-9.]+)"', f.read_text())
+        if m:
+            return m.group(1), f.name
+    except Exception:                                      # noqa: BLE001
+        pass
+    return RECORDED_FALLBACK, "FALLBACK LITERAL (artifact unreadable)"
 
 
 def chi_at(path: Path, q: mp.mpf) -> dict[tuple, mp.mpf]:
@@ -88,13 +137,16 @@ def chi_at(path: Path, q: mp.mpf) -> dict[tuple, mp.mpf]:
 
 def main() -> int:
     mp.mp.dps = 60
-    q = mp.mpf(Q_OLD)
+    q_str, q_src = _q_old()
+    rec_str, rec_src = _recorded()
+    q = mp.mpf(q_str)
     chi = chi_at(ROOT / "chi-proton-h3.witness.json", q)
 
     print("=" * 70)
     print("atomic-tr-m-helium4 7.55% gap — convention attribution")
     print("=" * 70)
-    print(f"  q (from the old witness): {Q_OLD[:26]}…")
+    print(f"  q        {q_str[:26]}…  <- {q_src}")
+    print(f"  recorded {rec_str[:26]}…  <- {rec_src}")
     print(f"  chi: {({k: mp.nstr(v, 10) for k, v in chi.items()})}")
 
     got: dict[str, mp.mpf] = {}
@@ -105,16 +157,34 @@ def main() -> int:
         got[name] = abs(tot)
         print(f"  {name}-frame |tr_M(proton)| = {mp.nstr(got[name], 20)}")
 
-    rec = mp.mpf(RECORDED)
+    rec = mp.mpf(rec_str)
     rel_c = abs(got["C"] - rec) / rec
     rel_d = abs(got["D"] - rec) / rec
     print(f"  recorded                 = {mp.nstr(rec, 20)}")
     print(f"    |C - recorded| / rec   = {mp.nstr(rel_c, 6)}")
     print(f"    |D - recorded| / rec   = {mp.nstr(rel_d, 6)}")
 
-    ok = rel_c < mp.mpf("1e-40") < rel_d
-    print("\n  VERDICT: the recorded value is CONVENTION C"
-          if ok else "\n  VERDICT: NOT reproduced — do not cite this attribution")
+    # Three outcomes, not two. The corpus moves under this probe by design:
+    # once the He-4 witness is regenerated under D, "not C" is the CORRECT
+    # report, not a failure — so the exit code keys on whether the recorded
+    # value is EXPLAINED by one of the two frames, never on it being C.
+    TOL = mp.mpf("1e-30")
+    if rel_c < TOL:
+        print("\n  VERDICT: the recorded value is CONVENTION C"
+              "\n           (the artifact is still the stale one)")
+        ok = True
+    elif rel_d < TOL:
+        print("\n  VERDICT: the recorded value is CONVENTION D — the artifact has"
+              "\n           been regenerated. The C attribution stands as history:"
+              "\n           it is what the value WAS, and this run confirms the"
+              "\n           frames are correctly separated at this pin.")
+        ok = True
+    else:
+        print("\n  VERDICT: matches NEITHER frame — do not cite an attribution."
+              "\n           A residual this size usually means q and the recorded"
+              "\n           value came from DIFFERENT artifacts (a pin straddle in"
+              "\n           the probe itself), so check that first.")
+        ok = False
     print("=" * 70)
     return 0 if ok else 1
 

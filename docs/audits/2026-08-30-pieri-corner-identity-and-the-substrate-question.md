@@ -118,27 +118,56 @@ the exact Lagrange keystone I had budgeted time to build from scratch. I found i
 by running the corpus grep a second time after the three-day gap. Had I skipped that,
 I would have rebuilt a sorry-free file that already existed.
 
-## What remains
+## What remains — RETRACTED AND REPLACED 2026-08-30
 
-One bridge, and the corpus names it itself. The docstring of
-`sum_eq_bracket_mul_of_qratio_scaling` calls out its own open input: the q-analogue of
-Frame–Robinson–Thrall relating `∏_c (1 − Q^{h(c)})` to the node coordinates. Measured
-today over 13 shapes at three padding lengths, k-independent, sign-free and power-free:
+**This section was wrong when it was merged, in the direction it warns about elsewhere in this
+document.** It said the q-analogue of Frame–Robinson–Thrall was the open input, and that its
+classical shadow being proved made it "a q-deformation of an existing proof rather than a new one."
 
-```
-prod_{c in lam} (1 - q^{h(c)})  =  prod_i (q;q)_{beta_i} / prod_{j<l} (1 - q^{beta_j - beta_l})
-```
+The q-deformation is **already proved, sorry-free, on `main`**, and was before I wrote that:
 
-Its classical shadow, `prodHooks_mul_betaProdGap`, is already proved on the list layer
-(option A), so this is a q-deformation of an existing proof rather than a new one. That
-is a real estimate of shape, **not** a schedule — the last one I gave was wrong by a
-large factor in the direction of pessimism, and I am not replacing it with a confident
-number in the other direction.
+| | |
+|---|---|
+| `SYTHookFormulaBetaMonoid.rowHookProdF_mul_betaGapProdF` | the per-row FRT identity in **any commutative monoid**, over an arbitrary `f : ℕ → M` |
+| `SYTHookFormulaBetaProdMonoid.prodHooksF_mul_betaGapProdF` | the whole-diagram assembly, same generality |
+| `SYTBetaGapVandermonde.prodHooksF_one_sub_pow_pair` | the q-case, `f n = 1 − Qⁿ`, in pair-product form |
 
-Note also that the substrate question re-appears here in its genuine form, and it is
-now a small one: the bridge relates a **list-layer** β fact (A) to a **YoungDiagram**
-q-hook product (B), and the corpus already has A↔B bridges
-(`hookLengthProduct_eq_prodHooks`, `ColLenRowLensBridge`, `PartitionListBridge`).
+Machine-checked here: `prodHooksF_one_sub_pow_pair` depends on
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx` — and every file in that chain
+(`SYTHookFormulaBeta`, `…Monoid`, `…Prod`, `…ProdMonoid`, `SYTBetaGapVandermonde`) has **zero**
+sorry tokens.
+
+**Why I got it wrong.** I took `LagrangeCoeffSum`'s own docstring at face value — it names the
+q-FRT identity as its remaining gap and points at bean `qou-j7ln`. That docstring is stale: the
+bean is `completed`, and the identity landed after the docstring was written. This corpus's rule
+that a source file's status note is not authoritative applies to docstrings verbatim, and I
+suspended it for a file whose Lean I had just read carefully — the same failure mode as trusting a
+sibling's bean, recorded in AGENTS.md, one artifact type over.
+
+**Three times in one session** the corpus already held what I was about to build: the Lagrange
+keystone (`sum_eval_div_prod_eq_coeff`), the hook-update rule (`qou-j7ln`), and now the whole
+q-FRT chain. The common cause is that my corpus grep ran on **topic** words — "Pieri",
+"telescope", "Macdonald" — while these files are named for their **method**
+(`SYTBetaGapVandermonde`, `LagrangeCoeffSum`). None of the three would surface on a topic grep;
+all three surface immediately on the *shape* of the statement. Grep the shape.
+
+### What is actually left
+
+`prodHooksF_one_sub_pow_pair` gives the identity in `(1 − Q^{β_i − β_j})` form. The node-sum
+consumers want it against a genuine Vandermonde in `x_i = Q^{β_i}`. That conversion is this PR:
+`QOU/Mathlib/QHookVandermonde.lean`, sorry-free, generic `[CommRing R]`, one termwise identity
+
+    x_i − x_j  =  (−x_j)·(1 − Q^{β_i − β_j})        (β_j ≤ β_i)
+
+whose only input is that `β` is strictly decreasing on a weakly-decreasing shape. The
+monomial-and-sign correction is left as the product `∏_{i<j}(−x_j)` rather than evaluated to
+`(−1)^{\binom k 2} Q^{\sum_j j·β_j}`: the evaluated form is where sign errors live, and no
+consumer needs it, since the same factor appears on both sides of every ratio of two such products.
+
+After that the remaining work is **wiring, not identity-proving**: discharging the `hw` hypothesis
+of `sum_eq_one_of_corner_ratio_scaling` by feeding it the box-addition ratio, which is the quotient
+of two instances of the theorem above. I am not putting a schedule on it — my last two estimates on
+this front were both wrong, in opposite directions.
 
 ## Verification
 

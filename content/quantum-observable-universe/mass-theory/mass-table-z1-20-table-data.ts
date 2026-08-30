@@ -6,9 +6,9 @@ export default table({
   computation: {
     engine: "python",
     status: "verified",
-    script: "computations/wedderburn_mass_table_z1_20.py",
+    script: "computations/wedderburn_mass_table_convention_d.py",
     witness: [
-      "computations/wedderburn-mass-table-z1-20.witness.json",
+      "computations/wedderburn-mass-table-convention-d.witness.json",
     ],
   },
   tags: ["extracted-table"],

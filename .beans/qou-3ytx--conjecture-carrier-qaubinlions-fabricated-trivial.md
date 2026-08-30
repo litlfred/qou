@@ -1,11 +1,11 @@
 ---
 # qou-3ytx
 title: 'Conjecture carrier: QAubinLions — fabricated trivial-zero instance, asserts nothing'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T19:46:33Z
-updated_at: 2026-08-29T19:46:34Z
+updated_at: 2026-08-30T07:22:32Z
 parent: qou-rq9n
 ---
 

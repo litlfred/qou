@@ -25,7 +25,7 @@ The five fronts, in the order they were worked:
 | M1 | replace the assembly | **§10a's Cauchy step is orthogonal to the defect** — proved for *every* bond functional, not only the log |
 | M2 | fixed-depth vs super-exponential | **machine-checked incompatibility**; which side gives is not decided |
 | M3 | ramified double cover | **measured, and it does not close** — a dichotomy by kernel depth |
-| M4 | SU(4) `[1⁴]` shell object | **the first sign-capable candidate**; a single common scale refuted |
+| M4 | SU(4) `[1⁴]` shell object | a single common scale **refuted**; the sign-capability claim **corrected below** — it is analytic and discriminates nothing |
 | M5 | `M_n(K)` under the Option-A ruling | the "blocked upstream" clause is **stale**; the counts are fixed and cannot supply the surplus |
 
 ---
@@ -198,12 +198,23 @@ counting.
 
 ---
 
-## M4 — the SU(4) `[1⁴]` object is the first sign-capable candidate
+## M4 — SU(4) `[1⁴]`: a common scale refuted, and my sign-capability claim corrected
 
 **Bean `qou-u8mu`. Probe:
 [`computations/probes/su4_supermultiplet_body_order_sign_probe.py`](../../computations/probes/su4_supermultiplet_body_order_sign_probe.py)
 — mpmath at 60 dps, no `float()`, AME from the canonical
 `ame_2020_binding_energies` table, no witness, nothing wired.**
+
+>**🛑 RE-SCOPED 2026-08-30.** The Milnor exclusion this section leans on
+>(`qou-klgu`) has been re-scoped **(b) → (a)** by its own author: its premise
+>*"every bonded pair has `lk = 1`"* is contradicted by the corpus's own triton
+>model (`BORROMEAN`, pairwise `lk = [0,0,0]`, on three **bonded** pairs), and
+>on the branch that saves the premise `M₃(T) = 0` makes `e₃` a division by
+>zero. The conditional survives; its hypothesis is not established. So "the one
+>named candidate left" below overstates how narrow the field is — the μ̄ route
+>is **not** structurally excluded, only conditional. See
+>[`bonded_pair_linking_inconsistency_probe.py`](../../computations/probes/bonded_pair_linking_inconsistency_probe.py)
+>and the note on that audit.
 
 After the Milnor exclusion (`qou-klgu`) the one named candidate left for the
 super-pairwise content is the **non-link-invariant** Wigner SU(4) `[1^n]`
@@ -211,10 +222,27 @@ antisymmetriser, `dim = C(4,n)`, vanishing for `n > 4`
 (`SU4SupermultipletGate`, sorry-free). Given M1, the first question is not "does
 it hit 9.24 MeV" but the one that killed its two predecessors.
 
-**Leg 1 — sign capability.** `C(4,n) > 0` for `n = 2,3,4`, so with positive
-per-order energies every connected cumulant is positive. **It is the first
-candidate in the corpus not sign-obstructed at 3-body.** Necessary condition
-only; not evidence of closure.
+**Leg 1 — sign capability. 🛑 CORRECTED 2026-08-30, against my own claim.**
+`C(4,n) > 0` for `n = 2,3,4`, so with positive per-order energies every
+connected cumulant is positive. I wrote that this makes SU(4) *"the first
+candidate in the corpus not sign-obstructed at 3-body"*. **That overstates it.**
+The property is `C(4,n) > 0` — binomial arithmetic — so it is **analytic**, and
+it holds for *any* object with positive per-order weights whether or not it has
+anything to do with binding. It discriminates nothing, and every
+positive-weight assembly is equally "sign-capable".
+
+What actually singles the object out is structural, not numerical: it is a
+**non-link-invariant, non-pairwise** object, so neither the Milnor `μ̄`
+indeterminacy exclusion nor `PairwiseCumulantVanishing` reaches it. **Cite the
+exclusions it survives, never its positivity.**
+
+This is the failure mode bean `qou-04ub` AMENDMENT 1 already recorded against
+the *same object one step over* — a choice-free candidate whose definite
+prediction is **analytic rather than synthetic** — and I walked into the
+neighbouring instance of it while citing that object. Their diagnostic question
+is the one to apply: *could the prediction have come out otherwise, given the
+specification?* For `C(4,n) > 0`, no. See
+[`prereg_su4_prediction_is_analytic_probe.py`](../../computations/meson/prereg_su4_prediction_is_analytic_probe.py).
 
 **Leg 2 — zero-parameter ratio test.** A single common scale forces the ratios:
 
@@ -238,8 +266,11 @@ because each would have inflated the result:
 
 Corrected: `2/3` is alone only at `q ≤ 6`; at `q ≤ 9` it is joined by `5/8`, at
 `q ≤ 12` by `7/11`. **So the 3.83 % agreement discriminates weakly and must not
-be reported as an identification.** What survives Leg 2 is Leg 1's sign result,
-which is structural.
+be reported as an identification.** And Leg 1's sign result does **not** rescue
+it — that is analytic, per the correction above, so neither leg discriminates.
+What survives is neither leg's number but a structural fact they do not measure:
+the object is **non-link-invariant and non-pairwise**, so it escapes both the
+Milnor and the pairwise-additivity arguments.
 
 **Leg 4 — required per-order energies (diagnostic, not a derivation).** Under
 the SU(4) weighting, `e₂ : e₃ : e₄ = 1 : 0.9617 : 24.93`. Against the
@@ -273,6 +304,7 @@ day and R3b cites the earlier adjudication, which is how they crossed.
 **What the lifted blocker actually buys, measured.** With the deuteron link
 fixed, the topological counts for `A ≤ 4` are determined rather than free:
 `M₂ = C(A,2)` (derived fit-free, #3588) and `M₃ = M₄ = 0` (Milnor indeterminacy
+— **conditional, re-scoped 2026-08-30**, see the note in M4:
 on the max-contact tetrahedron, `qou-klgu`). The tower then predicts
 
 ```

@@ -33,6 +33,16 @@ crossing number $2$, linking number $|\mathrm{lk}| = 1$, and per-nucleon coordin
 $z = 1$ — so the coordination carrier is the natural non-vanishing replacement for the
 volume on the two-body sub-link.
 
+That the carrier is a *coordination count* and not a Gauss linking number is now proved rather
+than posited ([the Brunnian binding channel](#prop:brunnian-binding-channel)). The ${}^3\mathrm{He}$
+and ${}^4\mathrm{He}$ carriers are Borromean, hence Brunnian: every pairwise linking number
+vanishes, so a linking-number multiplier would read zero for exactly these nuclei. In the proved
+crossing-energy channel split the signed (linking-number) channel is empty for a Brunnian pair and
+the binding is carried by the sign-blind coordination-count channel, which is bar-odd and therefore
+complementary to the bar-even mass self-weight $\mathrm{lw}$. The deuteron Hopf case
+($\mathrm{lk} = z = 1$) is the boundary where the two invariants coincide; they diverge at
+$A \geq 3$, where only the coordination count is non-vanishing.
+
 ## Extension: $\alpha$-cluster coordination for $A > 4$
 
 The heavier magic nuclei ${}^{16}\mathrm{O}$ and ${}^{40}\mathrm{Ca}$ are not single
