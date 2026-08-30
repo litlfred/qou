@@ -1,11 +1,11 @@
 ---
 # qou-3thc
 title: 'SphericalCategory: the braiding-free spherical class, and sphericalOfRibbon'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T07:03:25Z
-updated_at: 2026-08-30T07:04:11Z
+updated_at: 2026-08-30T07:24:39Z
 ---
 
 ## Why now
@@ -70,3 +70,62 @@ a weakened class.
   must **derive** it. An instance that assumes it is the §3b-cond non-degeneracy failure.
 - `qDimLeft`/`qDimRight` must not be definitionally equal, or the class is vacuous. Check with
   `rfl` being **rejected**, as `qou-djk4` did for `qDimTwistedLeftWith`.
+
+
+## CLOSED 2026-08-30 — all of it proved, sorry-free
+
+Commit `eb94a71fce` on `claude/spherical-category-ribbon-2026-08-30`, PR #6117.
+New module `QOU/MathlibExt/SphericalCategory.lean`, registered in `QOU.lean`.
+
+`qDimPivotalRight`, `qDimPivotalLeft`, `SphericalCategory`, both bridges, and
+`sphericalOfRibbon` — every ribbon right-rigid category is spherical. The instance
+**derives** the field (`qDimTwistedLeftWith_eq` discharges it); it does not carry its own
+conclusion.
+
+### The planned route held — with one piece that was not in the plan
+
+The bean predicted `qDimPivotalRight = qDimTwistedWith X Xᘁ` via `rightDualIso_hom_evaluation`,
+and that half went through in **three lines**. The *left* half did not: the evaluation form is
+structurally unable to reach it, because there the pivotor appears **whiskered on the left against
+a coevaluation**, not whiskered right against an evaluation. The missing lemma is
+
+    coev_comp_rightDualIso : η_{p₁} ≫ A ◁ (rightDualIso p₁ p₂).hom = η_{p₂}
+
+the coevaluation counterpart of `rightDualIso_hom_evaluation`, which the corpus did not have and
+Mathlib does not have either (Mathlib carries `rightDualIso` and `rightDualIso_id` and nothing
+else). So the tranche's real content is one new general rigid-category lemma plus the assembly.
+
+**The p₁-vs-p₂ choice inside it is not cosmetic**, and this is the part worth carrying forward.
+Transporting the goal through `tensorLeftHomEquiv` for **p₂** leaves a mixed `η_{p₂}` against
+`ε_{p₁}` which is no snake identity and does not close. The **p₁** equivalence reduces *both*
+sides to `(ρ_ B₁).hom ≫ (rightDualIso p₁ p₂).hom` after a single use of the evaluation form. Both
+were tried; only the second works.
+
+### Measured, not assumed
+
+- **Non-vacuity.** `qDimPivotalLeft X = qDimPivotalRight X := rfl` is **rejected** by the
+  elaborator, so the class field relates two genuinely distinct morphisms. Same check `qou-djk4`
+  applied to `qDimTwistedLeftWith`.
+- **The `qou-l64i` lesson transferred.** Two rewrites failed against goals they visibly matched;
+  both were fixed by restating the helper in **reassoc form with a trailing `k`** (`hnat`), the
+  same shape that unlocked the monodromy proof. A third failure was an over-eager `congr 2` that
+  produced an object-equality goal `Xᘁ ⊗ X = X ⊗ Xᘁ`; replacing it with a named rewrite fixed it.
+- **Instance coherence.** `sphericalOfRibbon` had to move out of the `[BalancedCategory C]`
+  section: with both that variable and `[RibbonCategory C]` in scope, `RibbonCategory.toBalancedCategory`
+  and the section variable are *different* instances and the final `exact` fails on it.
+
+### Verification (CI is `workflow_dispatch`-only; agent verification is the gate)
+
+- `lean`-direct exit 0, no warnings, on the new module and on the edited `PivotalCategory.lean`.
+- `#print axioms` on `coev_comp_rightDualIso`, both bridges and `sphericalOfRibbon`:
+  `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.
+- `scripts/check-sidecars.sh` clean; no §7c flags (generic over `C`, no `ℝ`).
+
+### Left deliberately undone
+
+- `coev_comp_rightDualIso` belongs in `RightDualIsoUnique.lean` beside the evaluation form. It is
+  in the new file instead, because that module is imported transitively by everything this file
+  uses, so adding it there invalidates each of their oleans and a `lake build` on a restored tree
+  is the documented way to destroy the cache. Docstring records the intended home.
+- `BraidKnot.SphericalStructure` is untouched, and should stay: it is the right object where no
+  twist is available, and `qou-djk4` established it is not derivable from ribbon at any twist.
