@@ -46,9 +46,14 @@ with the two consequences it is for: `Σ_λ f^λ · r(λ) = n · s(n-1)` and
 Proved here: the differential property, at row level and cell level, with both
 families related to the existing `IsAddableCell` / `IsCornerCell` predicates.
 
-**Not proved here:** the branching rule `f^μ = Σ_{λ↗μ} f^λ` and the operator step
-`Σ_λ f^λ r(λ) = n · s(n-1)` (the `DU = UD + I` consequence). Those are the two
-remaining pieces between this file and `Σ_λ f^λ = I(n)`.
+**Already proved elsewhere — do not rebuild:** the branching rule is
+`QOU.Mathlib.numStandardYoungTableaux_branching` (`SYTBranchingRule`, sorry-free),
+stated over the *same* `IsCornerCell` / `eraseCorner` API this file uses:
+`#SYT μ = Σ_{c : corners of μ} #SYT (μ ∖ c)`. `cornerCells_eq_corners` below ties this
+file's corner count to that theorem's index type, so the two compose directly.
+
+**Not proved here:** the operator step `Σ_λ f^λ r(λ) = n · s(n-1)` (the `DU = UD + I`
+consequence). That is the one remaining piece between this file and `Σ_λ f^λ = I(n)`.
 
 Pure combinatorics — no ring, nothing archimedean (§7c).
 
@@ -183,6 +188,31 @@ theorem isCornerCell_of_mem_cornerCells {c : ℕ × ℕ} (hc : c ∈ cornerCells
   · -- the cell to the right is absent
     simp only [YoungDiagram.mem_iff_lt_rowLen]
     omega
+
+/-- **Converse.** Every removable corner is listed by `cornerCells` — so the family is
+exactly the corner set, not merely a subset of it. Without this the count could be an
+undercount and `card_addableCells_eq_card_cornerCells_add_one` would not be about
+corners at all. -/
+theorem mem_cornerCells_of_isCornerCell {c : ℕ × ℕ} (hc : IsCornerCell μ c) :
+    c ∈ cornerCells μ := by
+  obtain ⟨i, j⟩ := c
+  obtain ⟨hmem, hdown, hright⟩ := hc
+
+  have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+  have hj1 : ¬ (j + 1 < μ.rowLen i) := fun h => hright (YoungDiagram.mem_iff_lt_rowLen.mpr h)
+  have hrow : μ.rowLen i = j + 1 := by omega
+  have hdn : ¬ (j < μ.rowLen (i + 1)) := fun h => hdown (YoungDiagram.mem_iff_lt_rowLen.mpr h)
+  have hi : i < numRows μ := (rowLen_pos_iff μ i).mp (by omega)
+  simp only [cornerCells, mem_image, cornerRows, mem_filter, mem_range]
+  exact ⟨i, ⟨hi, by omega⟩, by simp [hrow]⟩
+
+/-- **The corner family is exactly the corner set.** Combined with
+`isCornerCell_of_mem_cornerCells`, membership in `cornerCells` *characterises* removable
+corners. This is what lets `card_addableCells_eq_card_cornerCells_add_one` compose with
+`QOU.Mathlib.numStandardYoungTableaux_branching`, whose sum is indexed by the subtype
+`{c // IsCornerCell μ c}`. -/
+theorem mem_cornerCells_iff {c : ℕ × ℕ} : c ∈ cornerCells μ ↔ IsCornerCell μ c :=
+  ⟨isCornerCell_of_mem_cornerCells, mem_cornerCells_of_isCornerCell⟩
 
 /-! ## Non-vacuity
 
