@@ -13,7 +13,7 @@ export default conjecture({
   },
   uses: [
     "def:q-chebyshev-function",
-    "thm:tannaka-krein-isomorphism",
+    "conj:tannaka-krein-isomorphism",
   ],
   tags: [
     "explicit-formula",

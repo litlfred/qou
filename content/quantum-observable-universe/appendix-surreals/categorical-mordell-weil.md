@@ -6,7 +6,7 @@ $$
 \mathcal{E}_q(\mathbf{1}) := \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q),
 $$
 
-where $E_q \in \mathrm{Ob}(\mathbf{C})$ is the object whose fibre functor image $\tau(E_q) = H^1(\mathcal{E}_q, \mathbb{Z})$ is the first cohomology of the elliptic fiber. The group law is induced by chord-tangent addition on $\mathcal{E}_q$. Set $r_q := \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$. The Tannaka--Krein equivalence ([reconstruction](#thm:tannaka-krein-isomorphism)) identifies $\mathbf{C} \simeq \mathrm{Rep}(G)$, giving
+where $E_q \in \mathrm{Ob}(\mathbf{C})$ is the object whose fibre functor image $\tau(E_q) = H^1(\mathcal{E}_q, \mathbb{Z})$ is the first cohomology of the elliptic fiber. The group law is induced by chord-tangent addition on $\mathcal{E}_q$. Set $r_q := \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$. The Tannaka--Krein equivalence ([reconstruction](#conj:tannaka-krein-isomorphism)) identifies $\mathbf{C} \simeq \mathrm{Rep}(G)$, giving
 
 $$
 \mathcal{E}_q(\mathbf{1}) \cong \tau(E_q)^G = H^1(\mathcal{E}_q)^G.

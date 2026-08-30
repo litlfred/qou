@@ -173,6 +173,45 @@ Two real findings survive that correction:
   `da-lean-narrative-divergence`. Recorded here because it is load-bearing —
   `conj:explicit-formula` cites it in `uses[]`.
 
+  > **FIXED 2026-08-30.** A third defect turned up on close reading, and it is
+  > the worst of the three: `tannaka_krein_isomorphism` was *its own axiom* —
+  > `theorem … := tannaka_krein_isomorphism_axiom`, a proof term that returns
+  > the assumption asserting it. Sorry-free, `#print axioms`-dirty, and
+  > indistinguishable from a result without reading the proof. That is the shape
+  > §"Axiomatization is NOT a Proof" names.
+  >
+  > Also worth separating from "the types are opaque": **`≃` is `Equiv`, a
+  > bijection of types.** The narrative claims an equivalence of *categories*
+  > (`≌`). Even with the right types the statement would have forgotten every
+  > morphism.
+  >
+  > Replaced by `IsTannakaKreinDual`, which takes the two categories as
+  > **parameters** — nothing opaque — and carries one field:
+  >
+  > ```lean
+  > equiv_over_fibre : ∃ e : RepLoc ≌ ComodH, Nonempty (e.functor ⋙ τC ≅ τR)
+  > ```
+  >
+  > An equivalence of categories *lying over the fibre functors*. The
+  > compatibility is the content of Tannaka–Krein, not a decoration:
+  > inequivalent Hopf algebras can have equivalent comodule categories, and τ is
+  > what separates them. One field rather than two, so the compatibility is
+  > asserted of the *same* `e`.
+  >
+  > `isTannakaKreinDual_refl` witnesses inhabitedness (a category is dual to
+  > itself over its own fibre functor). **That witness is the identity, so it
+  > establishes a floor and not evidence** — it rules out an unsatisfiable
+  > carrier, nothing more. No instance for `Rep_loc(A)` and `Comod(H_ξ)`.
+  >
+  > The block is demoted `thm:` → `conj:`, matching the disposition chosen for
+  > `thm:explicit-formula` earlier in this session. **Cascade: zero.** Of the
+  > three `uses[]` consumers, two (`conj:q-birch-swinnerton-dyer`,
+  > `conj:explicit-formula`) are already conjectures, and the third
+  > (`def:categorical-mordell-weil`) is a definition, which §3b exempts from
+  > propagation. Two `axiom` declarations leave the corpus; `#print axioms` on
+  > `tannaka_krein_isomorphism` is now `[propext, Classical.choice, Quot.sound]`
+  > where it previously named the axiom.
+
 - **Two of the three chapter conjecture carriers assert nothing.**
   `Mirror3d3dCorrespondence` and `QuantumLanglandsDual` each have the single
   field `holds : Prop`, which `⟨True⟩` inhabits, so a `[C]`-conditional theorem

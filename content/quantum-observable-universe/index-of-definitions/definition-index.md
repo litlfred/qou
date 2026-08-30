@@ -309,7 +309,7 @@
 | [thm:rivin-concavity-one-tetrahedron](#thm:rivin-concavity-one-tetrahedron) | Rivin concavity for one ideal tetrahedron: $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ is strictly concave along every line in the angle simplex | Ch 12 | `qou:QOU.Knot.Rivin.strictConcaveOn_tetVolLine` |
 | [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 | `qou:QOU.AlgebraicSubstrate.substrate_self_duality` |
 | [thm:six-term-mass-formula-complete](#thm:six-term-mass-formula-complete) | Six-term mass formula: derivation + computation index | Ch 12 | `qou:QOU.BraidKnot.six_term_mass_formula_complete` |
-| [thm:tannaka-krein-isomorphism](#thm:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism` |
+| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism` |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 12 | `qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le` |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 | `qou:QOU.AppendixSurreals.liouvilleWith_separates` |
 | [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup | Ch 18 | `qou:QOU.FluidDynamics.ns_singularity_descartes` |
