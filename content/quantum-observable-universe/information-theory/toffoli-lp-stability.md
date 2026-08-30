@@ -46,7 +46,16 @@ $$
 $$
 Against the production Gram, every component of $G\vec t(q_0)$ is strictly positive, for all eight strand-type orderings ([`toffoli_nf_coordinates_and_lp_feasibility.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_nf_coordinates_and_lp_feasibility.py)). So the substrate satisfies the LP condition this proposition states.
 
-**Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced by shape with no cancellation possible — 2 of the 8 orderings are trivial in this sense and 6 are not. Second, and more consequential: $\vec t$ acquires a negative component exactly when $\hbar_\times < 0$, i.e. on $0 < q < 1$ — the *opposite* side of $q = 1$ from where $P_{7,6}$ is negative. The amplitude sign and the cone condition disagree about which regime is the admissible one, so the reduction above does not merely mix index spaces; any correct version of it must account for a sign inversion. That remains **open**.
+**Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced by shape with no cancellation possible — 2 of the 8 orderings are trivial in this sense and 6 are not. Second, and more consequential: $\vec t$ acquires a negative component exactly when $\hbar_\times < 0$, i.e. on $0 < q < 1$ — the *opposite* side of $q = 1$ from where $P_{7,6}$ is negative. The amplitude sign and the cone condition disagree about which regime is the admissible one, so the reduction above does not merely mix index spaces.
+
+**That sign inversion is now proved to be an identity, and it excludes the reduction as written.** Since $\hbar_\times = (q-1)(q+1)/q$, the flip amplitude factors as
+$$
+  P_{7,6}(q) \;=\; -\,\hbar_\times\,\cdot\,\frac{S(q)}{2(q^2+1)^2},
+  \qquad S(q) = q^6+q^4+2q^2+1,
+$$
+and $S$ has no real root while $(q^2+1)^2 > 0$, so the cofactor is strictly positive on all of $\mathbb{R}$. The flip amplitude is therefore $-\hbar_\times$ times something positive, while the cone coordinate is $+\hbar_\times$ — giving $P_{7,6}(q)\,\hbar_\times(q) \leq 0$ for every $q > 0$. Sorry-free in `QOU.Information.toffoliFlip_mul_coneCoord_nonpos`, with the symbolic cross-check in [`toffoli_sign_inversion_is_structural.py`](https://github.com/litlfred/qou/blob/main/computations/probes/toffoli_sign_inversion_is_structural.py) (7/7).
+
+This is a **scope-(b) exclusion**, and the invariant is the factorisation above: no reduction in which the cone condition *inherits* the flip amplitude's sign can hold, at any anchor or in any convention, because the two carry exactly opposite signs of the same factor. It does **not** exclude a reduction carrying a *negative* proportionality — one in which the cone condition follows $-P_{7,6}$ — and that is the natural remaining candidate.
 
 No claim of LP-instability is made, and none is available: the condition as stated is satisfied. The downstream statement that $\{q\text{-Toffoli}, H\}$ generates universal reversible computation on the Reeb bundles inherits that opening.
 
