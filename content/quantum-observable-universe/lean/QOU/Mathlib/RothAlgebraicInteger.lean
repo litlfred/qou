@@ -228,4 +228,91 @@ theorem submultSeminorm_norm_complex : SubmultSeminorm (norm : ℂ → ℝ) :=
 
 end Index
 
+section Embedding
+
+variable {m : ℕ}
+
+/-- **An embedding commutes with translation at a rational point.**  `φ` fixes `ℚ`, so the point
+does not move under `φ`; only the coefficients do.  That is why the same rational `β` can be used
+at every conjugate, and why the `d−1` "other" bounds are about the same polynomial evaluated the
+same way. -/
+theorem embedding_coeff_translate (φ : K →+* ℂ) (β : Fin m → ℚ)
+    (P : MvPolynomial (Fin m) (𝓞 K)) (i : Fin m →₀ ℕ) :
+    φ (coeff i (translate (fun h => algebraMap ℚ K (β h)) (map (algebraMap (𝓞 K) K) P)))
+      = coeff i (translate (fun h => ((β h : ℚ) : ℂ))
+          (map φ (map (algebraMap (𝓞 K) K) P))) := by
+  have hfix : ∀ h, φ (algebraMap ℚ K (β h)) = ((β h : ℚ) : ℂ) := by
+    intro h
+    have hcomp : (φ.comp (algebraMap ℚ K)) = (algebraMap ℚ ℂ) := RingHom.ext_rat _ _
+    calc φ (algebraMap ℚ K (β h)) = (φ.comp (algebraMap ℚ K)) (β h) := rfl
+      _ = (algebraMap ℚ ℂ) (β h) := by rw [hcomp]
+      _ = ((β h : ℚ) : ℂ) := by simp
+  have hfun : (fun j => φ (algebraMap ℚ K (β j))) = (fun h => ((β h : ℚ) : ℂ)) := funext hfix
+  rw [← coeff_map, map_translate, hfun]
+
+/-- **The trivial bound, at any embedding.**  No smallness is claimed — just the height budget with
+the translation point's own size.  This is what each of the `d−1` other conjugates contributes to
+`eq_zero_of_norm_mul_pow_lt_one`. -/
+theorem norm_embedding_coeff_translate_le (φ : K →+* ℂ) (pn : Fin m → ℤ) (qd : Fin m → ℕ)
+    (r : Fin m → ℕ) {P : MvPolynomial (Fin m) (𝓞 K)} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    {H B' : ℝ} (hB1' : 1 ≤ B')
+    (hH : ∀ k, house ((algebraMap (𝓞 K) K) (coeff k P)) ≤ H)
+    (hβ : ∀ h, ‖((((pn h : ℚ) / (qd h : ℚ)) : ℚ) : ℂ)‖ ≤ B') (i : Fin m →₀ ℕ) :
+    ‖φ (coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+        (map (algebraMap (𝓞 K) K) P)))‖
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B') ^ (∑ h, r h)) := by
+  rw [embedding_coeff_translate]
+  refine seminorm_coeff_translate_le submultSeminorm_norm_complex _ hB1' hβ
+    (fun h => le_trans (degreeOf_map_le _ _ _) (le_trans (degreeOf_map_le _ _ _) (hdeg h)))
+    (fun k => ?_) i
+  rw [coeff_map, coeff_map]
+  exact le_trans (norm_le_house φ _) (hH k)
+
+/-- **The Taylor bound at the distinguished embedding.**  This is the composition that makes the
+assembly honest: `hidx` is step 1's index at `α`, and it is what restricts the sum, so the estimate
+genuinely consumes step 1 instead of taking its consequence for granted.
+
+An assembly that instead took the smallness as a hypothesis would type-check and would never use
+step 1 at all — the polynomial's defining property would be inert. -/
+theorem norm_embedding_coeff_translate_le_index (φ₀ : K →+* ℂ) (pn : Fin m → ℤ) (qd : Fin m → ℕ)
+    (r : Fin m → ℕ) {P : MvPolynomial (Fin m) (𝓞 K)} (hdeg : ∀ h, degreeOf h P ≤ r h)
+    (α : Fin m → 𝓞 K) {H B : ℝ} (hB1 : 1 ≤ B)
+    (hH : ∀ k, house ((algebraMap (𝓞 K) K) (coeff k P)) ≤ H)
+    (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
+    {G : Fin m → ℝ} (hG0 : ∀ h, 0 ≤ G h) (hG1 : ∀ h, G h ≤ 1)
+    (hγ : ∀ h, ‖((((pn h : ℚ) / (qd h : ℚ)) : ℚ) : ℂ)
+        - φ₀ ((algebraMap (𝓞 K) K) (α h))‖ ≤ G h)
+    {μ : ℚ} (hidx : ((μ : ℚ) : WithTop ℚ)
+      ≤ index r (fun h => (algebraMap (𝓞 K) K) (α h)) (map (algebraMap (𝓞 K) K) P))
+    (i : Fin m →₀ ℕ) {S : ℝ} (hS0 : 0 ≤ S)
+    (hS : ∀ n : Fin m →₀ ℕ, (∀ h, n h ≤ r h) → μ ≤ idxWeight r n →
+      (∏ h, (G h) ^ (n h - i h)) ≤ S) :
+    ‖φ₀ (coeff i (translate (fun h => algebraMap ℚ K ((pn h : ℚ) / (qd h : ℚ)))
+        (map (algebraMap (𝓞 K) K) P)))‖
+      ≤ ((∏ h, (r h + 1) : ℕ) : ℝ)
+        * ((((∏ h, (r h + 1) : ℕ) : ℝ) * (H * (2 * B) ^ (∑ h, r h)))
+            * ((2 : ℝ) ^ (∑ h, r h) * S)) := by
+  classical
+  rw [embedding_coeff_translate]
+  have hsplit : (fun h => ((((pn h : ℚ) / (qd h : ℚ)) : ℚ) : ℂ))
+      = fun j => φ₀ ((algebraMap (𝓞 K) K) (α j))
+          + (((((pn j : ℚ) / (qd j : ℚ)) : ℚ) : ℂ) - φ₀ ((algebraMap (𝓞 K) K) (α j))) := by
+    funext j
+    ring
+  rw [hsplit]
+  have hidx' : ((μ : ℚ) : WithTop ℚ)
+      ≤ index r (fun h => φ₀ ((algebraMap (𝓞 K) K) (α h)))
+          (map φ₀ (map (algebraMap (𝓞 K) K) P)) := by
+    rw [index_map φ₀ φ₀.injective]
+    exact hidx
+  refine seminorm_coeff_translate_add_le_index submultSeminorm_norm_complex r
+    (fun h => φ₀ ((algebraMap (𝓞 K) K) (α h))) _ hG0 hG1 hγ hB1
+    (fun h => le_trans (norm_le_house φ₀ _) (hα h))
+    (fun h => le_trans (degreeOf_map_le _ _ _) (le_trans (degreeOf_map_le _ _ _) (hdeg h)))
+    (fun k => ?_) hidx' i hS0 hS
+  rw [coeff_map, coeff_map]
+  exact le_trans (norm_le_house φ₀ _) (hH k)
+
+end Embedding
+
 end MvPolynomial

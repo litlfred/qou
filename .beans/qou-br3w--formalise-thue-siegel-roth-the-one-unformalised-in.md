@@ -578,3 +578,26 @@ STILL OUT OF SCOPE after that: the parameter SELECTION -- choosing q_1 large the
 from an infinite sequence of good approximations with q_{h+1} >> q_h. That is what turns a
 contradiction into "finitely many solutions", and it is what step 5 (not LiouvilleWith) needs.
 
+## 2026-08-30 -- the composition that carries step 1
+
+embedding_coeff_translate / norm_embedding_coeff_translate_le /
+norm_embedding_coeff_translate_le_index (RothAlgebraicInteger), axiom-clean, .olean deleted first.
+
+embedding_coeff_translate is the structural fact the whole O_K case rests on: an embedding phi
+FIXES Q, so the rational point does not move under phi -- only the coefficients do. That is why
+the same beta serves at every conjugate and why the d-1 "other" bounds are about the same
+polynomial evaluated the same way.
+
+norm_embedding_coeff_translate_le_index is the composition the previous entry said was the honest
+next move, and it is honest for one specific reason: its hidx argument IS step 1's index at alpha,
+and that is what restricts the sum. The estimate consumes step 1 rather than assuming its
+consequence. norm_embedding_coeff_translate_le is the trivial companion at the other d-1
+embeddings -- no smallness, just the height budget against the point's own size.
+
+Both go through the seminorm_ generalisation from the previous entry with f = ||.|| on C; nothing
+new about the peeling was needed, which is the payoff of having generalised instead of copied.
+
+REMAINING on this bean: assemble these two into le_index_of_norm_lt's hypothesis (mechanical --
+M is the d-1 bound, the phi_0 bound is the Taylor one), then compose with steps 3 and 4. After
+that, the parameter SELECTION, which is what turns a contradiction into "finitely many solutions".
+
