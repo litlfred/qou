@@ -221,4 +221,41 @@ bar-parity cannot constrain the value at a point. -/
 theorem fullBar_add_const {q z zbar : R} (c : R) (h : FullBar q z zbar) :
     FullBar q (z + c) (zbar + c) := fullBar_add_barEven h
 
+
+/-! ### Why the cap had to be a ruling: the decay channel is BLIND to it
+
+`DecayBlockCarrier` proved `tr(Δ_S)(z) = (y_(3) − y_(1³)) · χ^(3)(Δ_S)`. The
+decay pairing therefore depends on the block weights ONLY through the difference
+`y_(3) − y_(1³)`. Together with normalisation that is two constraints on three
+unknowns, so a one-parameter family of normalised weight triples produces the
+SAME Q-value — and the family sweeps every value of `y_(1³)`.
+
+So the two-row cap `y_(1³) = 0` is not merely un-derived for this channel: it is
+**undeterminable by it**. No decay measurement, at any precision, can establish
+or refute it. It selects one member of a family the channel cannot tell apart.
+
+That is why it arrived as a ruling, and it says where a derivation would have to
+come from: another channel, or a structural argument — never from Q_β itself. -/
+
+/-- **The decay channel cannot determine the three-row weight.** For ANY
+prescribed value `t` of `y_(1³)`, there is a normalised weight triple whose
+decay pairing is the given `g`. The cap picks one member of this family; the
+data cannot. -/
+theorem threeRow_undetermined_by_decay (g t : R) :
+    ∃ y3 y21 y111 : R,
+      y3 - y111 = g ∧ y3 + 2 * y21 + y111 = 1 ∧ y111 = t := by
+  refine ⟨g + t, (1 - g - 2 * t) / 2, t, by ring, ?_, rfl⟩
+  have h2 : (2 : R) ≠ 0 := by norm_num
+  field_simp
+  ring
+
+/-- **The `y_(1³) = 0` member of that family**, exhibited: the cap is a choice
+of representative, not a consequence. -/
+theorem cap_member_of_family (g : R) :
+    (g : R) - 0 = g ∧ g + 2 * ((1 - g) / 2) + 0 = 1 := by
+  refine ⟨by ring, ?_⟩
+  have h2 : (2 : R) ≠ 0 := by norm_num
+  field_simp
+  ring
+
 end QOU.QBeta.DecayFibreBarParity
