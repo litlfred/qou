@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T09:10:47Z
+updated_at: 2026-08-30T09:14:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2799,3 +2799,23 @@ So the `1` is an artifact of an eigenphase computation on the 2-dim Wedderburn b
 **Sharpened next step, and it is narrower than "re-derive the ladder".** From `beta-decay-transfer-matrix-proof.md`, the phase factors as `(z − 1)·(h/2)` where `h/2` is the β-decay transfer-matrix shift `Δ_β = (h/2)·𝕀` — built from `h` alone, so **z-free and convention-INDEPENDENT**. All convention dependence sits in `(z − 1)`. The D phase therefore comes from re-deriving the single-wrap eigenphase on V_(2,1) under the D trace, from `prop:q-beta-spectral-bridge` — not by substituting `z_D`, and not by adjusting the offset to weight −4.
 
 **Also noted:** `computations/probes/probe_alpha.py` substitutes `z_D` into `α = (z−1)h/2` and calls it "the canonical convention", while `qbeta_utils.py:172` WITHHOLDS `α` under D because that substitution is "proved invalid". The probe is inert (no consumers, no witness) and its Taylor expansion of a formal expression is defensible, but the two files read as disagreeing and a reader could quote the probe.
+
+## Step 4 (2026-08-30) — WHAT breaks under D is now precisely located: the cosine loses its justification
+
+Traced the phase to its authority. Two corrections to my own Step 3 correction, and then a much stronger result.
+
+**(a) The `1` is not an eigenphase offset either — the ladder block and its authority describe it differently.** `q-beta-categorical-precision-ladder.md:21` calls `α = (z−1)h/2` "the single-wrap eigenphase on V_(2,1)". `prop:q-beta-spectral-bridge` derives it as the **first-order term of a ratio**: `Q^A/Q^B = 1 + (z−1)h/2 + O(h²)`. Both are right — `q-beta-cos-resummation` is the block that connects them, and it says so explicitly: it *replaces* the linear bridge correction with `cos((z−1)h/2)`, and separately identifies α as the eigenphase of M_β, whose spectrum on V_(2,1) is `{e^{+iα}, e^{−iα}}`.
+
+**(b) THE RESULT. The cosine's justification is that α is BAR-ODD — and under D it is not.** Quoting the theorem's own constraint 1:
+
+> Markov cyclicity. The trace is cyclic. It is invariant under the bar involution q ↦ q⁻¹, which maps **α ↦ −α**. The resummation must be **even in α**. The minimal even-power resummation that matches the linear bridge is the cosine.
+
+Measured (Step 2, this session): `bar(α_C)/α_C = −1` **exactly** — α IS bar-odd under C, so `α ↦ −α` holds and the evenness requirement is satisfied by `cos`. Under D, `bar(α_D)/α_D = (q³+q−1)/(q(q³−q²−1))` — not −1, not even constant in q. **So under convention D, α ↦ −α FAILS, the trace-symmetrization argument does not apply, and the cosine form loses the structural justification the theorem gives for it.**
+
+That is much sharper than Step 2's "the bar grading is destroyed". It names the exact load-bearing step that fails: constraint 1 of the cos-resummation theorem, which is the theorem's own stated reason for the cosine rather than some other even resummation.
+
+**(c) Two content blocks carry live convention-C `z` in their own statements**, and they are the upstream authority for the entire ladder phase:
+- `nuclear-interactions/q-beta-spectral-bridge.md` — "We define the Markov–Jones parameter as z := 1/(√q + 1/√q)"
+- `nuclear-interactions/q-beta-cos-resummation.md` — "z = 1/(√q + 1/√q)"
+
+**Consequence for the re-derivation.** The D-frame ladder needs more than a new phase value: it needs a replacement for the *resummation form*. Under C the chain is [α bar-odd] ⇒ [trace symmetrization is even in α] ⇒ [cos is the minimal even resummation]. Under D the first link is gone, so neither the cosine nor its minimality survives, and the D re-derivation must establish what the M_β spectrum on V_(2,1) is under the D trace and what evenness (if any) the D bar involution imposes.
