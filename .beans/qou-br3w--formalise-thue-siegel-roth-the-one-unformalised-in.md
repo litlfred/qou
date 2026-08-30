@@ -969,3 +969,35 @@ from slack_pos with the DOUBLED threshold (2 deg alpha < 4 eps^2 m), then H_0 pa
 threshold, then the rest of the heights by growth, then N.
 Then feed roth_contradiction_int, and step 5 (not LiouvilleWith).
 
+## 2026-08-30 -- the obligation, WITHOUT real logarithms
+
+ceil_siegelHeight_le and pow_le_pow_of_height (RothSiegelBound), axiom-clean, .olean deleted first.
+
+I had written the remaining obligation in logs -- log H_0 >~ m^2 q log(4B)/p -- and set out to
+formalise it that way. Exponentiating throughout removes the analysis entirely and leaves a purely
+INTEGER inequality:
+
+    C_0^{mq} * W^{2 m^2 q}  <=  H_0^p
+
+with C_0 any integer above c(K) and W any integer above 4B. Both are constants of K and alpha;
+neither involves r, N or the heights. So "choose H_0 large" is one arithmetic condition a parameter
+family can be checked against with no real-log reasoning anywhere.
+
+  * ceil_siegelHeight_le: ceil(siegelHeight) <= C_0 * W^{sum r}. The real-side chain is
+    2^{sum r} max(1, c(K)(2B)^{sum r}) <= C_0 (4B)^{sum r} <= C_0 W^{sum r}, then Int.ceil_le.
+  * pow_le_pow_of_height: the arithmetic. sum r <= 2m r_0 (from sum_rothDegrees_le once r_0 >= 1)
+    puts the exponent sum r * mq under 2 m^2 q r_0, which the H_0 condition dominates once raised
+    to r_0.
+
+THE LOG FORM WAS A DETOUR, and worth recording as one. It is how the informal proof states the
+condition and it is how I stated it in the previous two entries, but nothing in the formal chain
+needs a logarithm: every quantity in sight is already an integer power, and taking logs only to
+exponentiate again adds Real.log's junk-value cases and monotonicity side conditions for nothing.
+
+REMAINING:
+  1. Choose the family: m and eps from slack_pos with the doubled threshold, H_0 from the supply
+     past C_0^{mq} W^{2m^2q} (p-th root), the rest of the heights by growth, N from the heights.
+     Every condition is now arithmetic.
+  2. Feed roth_contradiction_int.
+  3. Step 5, not LiouvilleWith.
+

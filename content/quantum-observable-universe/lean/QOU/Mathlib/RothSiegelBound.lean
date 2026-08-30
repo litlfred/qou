@@ -237,4 +237,90 @@ theorem hbound_of_ceil_le [DecidableEq (K →+* ℂ)]
 
 end Exponent
 
+section Integral
+
+/-! ## The obligation, without real logarithms
+
+The remaining condition reads naturally in logs — `log H₀ ≳ m²q·log(4B)/p` — but that form is
+painful to formalise and, it turns out, unnecessary.  Exponentiating throughout leaves a purely
+**integer** inequality:
+
+    C₀^{mq} · W^{2m²q}  ≤  H₀^p
+
+with `C₀` any integer above `c K` and `W` any integer above `4B`.  Both are constants of `K` and
+`α`; neither involves `r`, `N` or the heights.  So "choose `H₀` large" is a single arithmetic
+condition on `H₀` that a parameter family can be checked against directly, with no analysis.
+
+`ceil_siegelHeight_le` turns the height bound into `⌈siegelHeight⌉ ≤ C₀·W^{Σr}`, and
+`pow_le_pow_of_height` is the arithmetic: `Σr ≤ 2m·r₀` (from `sum_rothDegrees_le` once `r₀ ≥ 1`)
+makes the exponent `Σr·mq` at most `2m²q·r₀`, which the condition on `H₀` then dominates once
+raised to `r₀`.
+-/
+
+open private c from Mathlib.NumberTheory.NumberField.House in
+/-- **The auxiliary polynomial's height, as an integer power.**  `⌈siegelHeight⌉ ≤ C₀·W^{Σr}` for
+any integers `C₀ ≥ max(1, c K)` and `W ≥ max(1, 4B)`. -/
+theorem ceil_siegelHeight_le [DecidableEq (K →+* ℂ)]
+    (r : Fin m → ℕ) (α : Fin m → 𝓞 K) (μ : ℚ) {B : ℝ} (hB1 : 1 ≤ B)
+    (hα : ∀ h, house ((algebraMap (𝓞 K) K) (α h)) ≤ B)
+    (hE : 2 * Fintype.card ({i // i ∈ (idxBoxF r).filter (fun i => idxWeight r i ≤ μ)}
+            × Module.Free.ChooseBasisIndex ℤ (𝓞 K))
+          ≤ Fintype.card {n // n ∈ idxBoxF r})
+    {C₀ W : ℤ} (hC₀1 : 1 ≤ C₀) (hC₀ : c K ≤ (C₀ : ℝ)) (hW : 4 * B ≤ (W : ℝ)) :
+    (⌈siegelHeight r α μ⌉ : ℤ) ≤ C₀ * W ^ (∑ h, r h) := by
+  have hB0 : (1 : ℝ) ≤ 2 * B := by linarith
+  have hC₀R : (1 : ℝ) ≤ (C₀ : ℝ) := by exact_mod_cast hC₀1
+  have hmax : max 1 (c K * (2 * B) ^ (∑ h, r h)) ≤ (C₀ : ℝ) * (2 * B) ^ (∑ h, r h) := by
+    refine max_le ?_ (mul_le_mul_of_nonneg_right hC₀ (by positivity))
+    have h2 : (1 : ℝ) ≤ (2 * B) ^ (∑ h, r h) := one_le_pow₀ hB0
+    nlinarith
+  have h2 : (2 : ℝ) ^ (∑ h, r h) * max 1 (c K * (2 * B) ^ (∑ h, r h))
+      ≤ (2 : ℝ) ^ (∑ h, r h) * ((C₀ : ℝ) * (2 * B) ^ (∑ h, r h)) :=
+    mul_le_mul_of_nonneg_left hmax (by positivity)
+  have hpow : ((2 : ℝ) ^ (∑ h, r h)) * ((2 : ℝ) ^ (∑ h, r h)) = (4 : ℝ) ^ (∑ h, r h) := by
+    rw [← mul_pow]
+    norm_num
+  have h3 : (2 : ℝ) ^ (∑ h, r h) * ((C₀ : ℝ) * (2 * B) ^ (∑ h, r h))
+      = (C₀ : ℝ) * (4 * B) ^ (∑ h, r h) := by
+    rw [mul_pow, mul_pow, ← hpow]
+    ring
+  have h4 : (C₀ : ℝ) * (4 * B) ^ (∑ h, r h) ≤ (C₀ : ℝ) * (W : ℝ) ^ (∑ h, r h) :=
+    mul_le_mul_of_nonneg_left (pow_le_pow_left₀ (by linarith) hW _) (by linarith)
+  have h1 := siegelHeight_le_pow r α μ hB1 hα hE
+  refine Int.ceil_le.mpr ?_
+  push_cast
+  linarith
+
+/-- **The arithmetic.**  `A ≤ C₀·W^S` with `S ≤ 2m·r₀` and `C₀^{mq}·W^{2m²q} ≤ H₀^p` gives
+`A^{mq} ≤ H₀^{r₀p}` — the height clause, from a condition on `H₀` alone. -/
+theorem pow_le_pow_of_height {A C₀ W H₀ : ℤ} {S r₀ m q p : ℕ}
+    (hA0 : 0 ≤ A) (hA : A ≤ C₀ * W ^ S) (hC₀1 : 1 ≤ C₀) (hW1 : 1 ≤ W)
+    (hS : S ≤ 2 * m * r₀) (hr₀ : 1 ≤ r₀)
+    (hH : C₀ ^ (m * q) * W ^ (2 * m * m * q) ≤ H₀ ^ p) :
+    A ^ (m * q) ≤ H₀ ^ (r₀ * p) := by
+  have hC₀0 : (0 : ℤ) ≤ C₀ := le_trans zero_le_one hC₀1
+  have hW0 : (0 : ℤ) ≤ W := le_trans zero_le_one hW1
+  have hbase : (0 : ℤ) ≤ C₀ ^ (m * q) * W ^ (2 * m * m * q) := by positivity
+  -- the left side, expanded
+  have hL : A ^ (m * q) ≤ C₀ ^ (m * q) * W ^ (S * (m * q)) := by
+    calc A ^ (m * q) ≤ (C₀ * W ^ S) ^ (m * q) := pow_le_pow_left₀ hA0 hA _
+      _ = C₀ ^ (m * q) * W ^ (S * (m * q)) := by rw [mul_pow, ← pow_mul]
+  have hexp : S * (m * q) ≤ 2 * m * m * q * r₀ := by nlinarith [hS, Nat.zero_le (m * q)]
+  have hL2 : C₀ ^ (m * q) * W ^ (S * (m * q))
+      ≤ C₀ ^ (m * q) * W ^ (2 * m * m * q * r₀) :=
+    mul_le_mul_of_nonneg_left (pow_le_pow_right₀ hW1 hexp) (by positivity)
+  -- the right side, expanded
+  have hR : (C₀ ^ (m * q) * W ^ (2 * m * m * q)) ^ r₀ ≤ (H₀ ^ p) ^ r₀ :=
+    pow_le_pow_left₀ hbase hH _
+  have hRexp : (H₀ ^ p) ^ r₀ = H₀ ^ (r₀ * p) := by rw [← pow_mul, mul_comm]
+  have hRL : C₀ ^ (m * q) * W ^ (2 * m * m * q * r₀)
+      ≤ (C₀ ^ (m * q) * W ^ (2 * m * m * q)) ^ r₀ := by
+    rw [mul_pow, ← pow_mul, ← pow_mul]
+    refine mul_le_mul_of_nonneg_right ?_ (by positivity)
+    exact pow_le_pow_right₀ hC₀1 (by nlinarith [hr₀, Nat.zero_le (m * q)])
+  rw [← hRexp]
+  exact le_trans hL (le_trans hL2 (le_trans hRL hR))
+
+end Integral
+
 end MvPolynomial
