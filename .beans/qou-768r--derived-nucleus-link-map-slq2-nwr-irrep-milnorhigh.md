@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T04:11:30Z
+updated_at: 2026-08-31T04:25:11Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -242,3 +242,62 @@ work and is not done.
    Suggestive, and precisely the kind of coincidence this corpus has repeatedly
    found to be generic -- do NOT read it as evidence without a genericity check
    of the kind `qou-22vu` ran.
+
+
+## ROUTE 3 CLOSED 2026-08-31 — the DEFINED triples are exactly the TRIVIAL ones
+
+This supersedes the "partially available from A=4" conclusion recorded above,
+and it did not need the Magnus expansion the next-step entry called for.
+
+### The cheap decisive measurement
+
+Between non-adjacent components the closure has **ZERO crossings** -- not merely
+a zero signed sum, which is all the previous probe established. Only the `mu-1`
+consecutive pairs carry any crossing at all.
+
+Stronger, and checked structurally rather than argued from the diagrammatic
+"no inter-component crossings implies split":
+
+  * every component occupies a **contiguous block** of strand positions;
+  * for every minimal-span triple `{i, i+2, i+4}`, the three blocks are
+    **pairwise disjoint intervals** and **zero letters act on two members**.
+
+So the sublink is the closure of a braid on three disjoint, non-interacting
+contiguous blocks -- each closes in its own annulus. **Split by construction.**
+
+### The collapse
+
+    Delta(ijk) = 0  =>  the triple is split  =>  mubar(ijk) = 0.
+
+Combined with the indeterminacy split: triples touching a linked pair are
+indeterminate (`Delta` 1 or 2), and triples that are well defined are zero.
+**No non-trivial well-defined Milnor triple invariant exists in this closure at
+any A.** The Magnus expansion would return zero on exactly the triples where it
+is meaningful, so it is not worth running.
+
+Definedness and triviality coincide **because the linking graph is a path**: on
+a path, "not linked" and "never interacts" are one condition. A Brunnian link
+separates them -- it interacts *without* linking, which is exactly what `L6a4`
+does and this word cannot.
+
+### Consequence for any future assignment
+
+The requirement is now sharp and checkable: a nucleus->link map whose closure
+supports a nonzero well-defined Milnor invariant must have a pair that
+**interacts without linking**. The path structure of the canonical word forbids
+it, so this is a requirement on the ASSIGNMENT, not on the invariant.
+
+### Lean
+
+`QOU/Mass/MilnorDefinedTriplesVanish.lean` -- sorry-free, lean-direct exit 0,
+`#print axioms` = **[propext]** only on all four. `PathLinkingStructure` carries
+the two measured facts and the classical "split implies vanishing" as
+hypotheses; the theorems derive the collapse (`Delta = 0 -> mubar = 0` is NOT a
+field). §3b-cond used honestly.
+
+### The minimal-span subfamily entry above is superseded too
+
+It named `{i, i+2, i+4}` as a canonical bounded-degree family with the right
+scaling. The family is still canonical and still correctly scaling -- and its
+invariants are all zero. Recorded rather than deleted: the counting was right
+and the conclusion it was heading toward was not.
