@@ -631,6 +631,177 @@ theorem sum_drop_diagLen :
   rw [Finset.range_eq_Ico, sum_drop_eq _ (Nat.zero_le _), diagLen_rowLen_zero]
   simp
 
+/-! ## The diagonal decomposition — the area constraint as an EQUALITY
+
+`sum_diagLen_le_card` bounds an initial run of diagonals by `n`. The bound is
+lossy by exactly the cells it never reaches, and the loss is nameable: run the
+diagonals *both* ways and every cell is hit exactly once.
+
+Cell `(i, j)` has content `j - i`. Split `μ.cells` on `i ≤ j`:
+
+* `i ≤ j` — the cell sits on diagonal `c = j - i ≥ 0` of `μ`, at row `i`;
+* `j < i` — the cell sits on diagonal `r = i - j ≥ 1` of `μᵀ`, at row `j`.
+
+Both maps are bijections onto their halves, so the two diagonal sums add to `n`
+exactly. Since `diagLen μᵀ 0 = diagLen μ 0`, the symmetric form double-counts the
+main diagonal and reads `∑ D + ∑ Dᵀ = n + D 0`.
+
+Why this matters for the `M₁ > 0` budget: the route needs the two one-sided
+areas `A₊`, `A₋`, and the *inequality* version can only ever give `A_σ ≤ n`.
+The equality gives `A₊ + A₋ + D 0 = n`, which is the finite-`n` statement behind
+the `A_σ → n/2` limit-shape input that takes the margin from 0.094 % to 7.54 %. -/
+
+/-- The upper half — cells on or above the main diagonal — swept by diagonals of
+`μ`. Any `T` past `λ₁` works, since `diagLen μ c = 0` there. -/
+theorem sum_diagLen_eq_card_upper {T : ℕ} (hT : μ.rowLen 0 ≤ T) :
+    ∑ c ∈ Finset.range T, diagLen μ c
+      = (μ.cells.filter (fun p => p.1 ≤ p.2)).card := by
+  classical
+  have hcard : ∑ c ∈ Finset.range T, diagLen μ c
+      = ((Finset.range T).sigma fun c => diagIdx μ c).card := (Finset.card_sigma _ _).symm
+  rw [hcard]
+  refine Finset.card_bij' (fun p _ => (p.2, p.2 + p.1)) (fun q _ => ⟨q.2 - q.1, q.1⟩) ?_ ?_ ?_ ?_
+  · rintro ⟨c, i⟩ hp
+    simp only [Finset.mem_sigma, Finset.mem_range] at hp
+    have h2 := hp.2
+    rw [mem_diagIdx] at h2
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells,
+      YoungDiagram.mem_iff_lt_rowLen]
+    exact ⟨h2.2, Nat.le_add_right _ _⟩
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells] at hq
+    obtain ⟨hmem, hle⟩ := hq
+    have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+    have hi : i < μ.colLen 0 :=
+      YoungDiagram.mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl i) (Nat.zero_le j) hmem)
+    have hrow : μ.rowLen i ≤ μ.rowLen 0 := μ.rowLen_anti 0 i (Nat.zero_le i)
+    simp only [Finset.mem_sigma, Finset.mem_range, mem_diagIdx]
+    exact ⟨by omega, hi, by omega⟩
+  · rintro ⟨c, i⟩ _
+    simp
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter] at hq
+    have hle := hq.2
+    simp only [Prod.mk.injEq]
+    exact ⟨trivial, by omega⟩
+
+/-- The lower half — cells strictly below the main diagonal — swept by diagonals
+`r ≥ 1` of the transpose. -/
+theorem sum_diagLen_eq_card_lower {T : ℕ} (hT : μ.colLen 0 ≤ T) :
+    ∑ r ∈ Finset.Ico 1 T, diagLen μ.transpose r
+      = (μ.cells.filter (fun p => ¬ p.1 ≤ p.2)).card := by
+  classical
+  have hcard : ∑ r ∈ Finset.Ico 1 T, diagLen μ.transpose r
+      = ((Finset.Ico 1 T).sigma fun r => diagIdx μ.transpose r).card :=
+    (Finset.card_sigma _ _).symm
+  rw [hcard]
+  refine Finset.card_bij' (fun p _ => (p.2 + p.1, p.2)) (fun q _ => ⟨q.1 - q.2, q.2⟩) ?_ ?_ ?_ ?_
+  · rintro ⟨r, j⟩ hp
+    simp only [Finset.mem_sigma, Finset.mem_Ico] at hp
+    obtain ⟨⟨hr1, _⟩, h2⟩ := hp
+    rw [mem_diagIdx, YoungDiagram.rowLen_transpose] at h2
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells,
+      YoungDiagram.mem_iff_lt_colLen, not_le]
+    exact ⟨h2.2, by omega⟩
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells, not_le] at hq
+    obtain ⟨hmem, hlt⟩ := hq
+    have hi : i < μ.colLen j := YoungDiagram.mem_iff_lt_colLen.mp hmem
+    have hj : j < μ.transpose.colLen 0 := by
+      rw [YoungDiagram.colLen_transpose]
+      exact YoungDiagram.mem_iff_lt_rowLen.mp (μ.up_left_mem (Nat.zero_le i) (le_refl j) hmem)
+    have hcol : μ.colLen j ≤ μ.colLen 0 := μ.colLen_anti 0 j (Nat.zero_le j)
+    simp only [Finset.mem_sigma, Finset.mem_Ico, mem_diagIdx,
+      YoungDiagram.rowLen_transpose]
+    exact ⟨⟨by omega, by omega⟩, hj, by omega⟩
+  · rintro ⟨r, j⟩ _
+    simp
+  · rintro ⟨i, j⟩ hq
+    simp only [Finset.mem_filter, not_le] at hq
+    have hlt := hq.2
+    simp only [Prod.mk.injEq]
+    exact ⟨by omega, trivial⟩
+
+/-- **The diagonal decomposition.** Every cell is on exactly one diagonal of `μ`
+(content `≥ 0`) or one diagonal `r ≥ 1` of `μᵀ` (content `< 0`). -/
+theorem card_eq_sum_diagLen_add {T T' : ℕ} (hT : μ.rowLen 0 ≤ T) (hT' : μ.colLen 0 ≤ T') :
+    μ.card = (∑ c ∈ Finset.range T, diagLen μ c)
+      + ∑ r ∈ Finset.Ico 1 T', diagLen μ.transpose r := by
+  classical
+  rw [sum_diagLen_eq_card_upper μ hT, sum_diagLen_eq_card_lower μ hT']
+  exact (Finset.filter_card_add_filter_neg_card_eq_card (s := μ.cells) _).symm
+
+/-- The symmetric form: sweeping both ways double-counts the main diagonal. -/
+theorem sum_diagLen_add_transpose {T T' : ℕ} (hT : μ.rowLen 0 ≤ T) (hT' : μ.colLen 0 < T') :
+    (∑ c ∈ Finset.range T, diagLen μ c) + ∑ r ∈ Finset.range T', diagLen μ.transpose r
+      = μ.card + diagLen μ 0 := by
+  classical
+  have hsplit : ∑ r ∈ Finset.range T', diagLen μ.transpose r
+      = diagLen μ.transpose 0 + ∑ r ∈ Finset.Ico 1 T', diagLen μ.transpose r := by
+    rw [Finset.range_eq_Ico]
+    exact Finset.sum_eq_sum_Ico_succ_bot (by omega) _
+  rw [hsplit, diagLen_transpose_zero,
+    card_eq_sum_diagLen_add μ hT (le_of_lt hT')]
+  ring
+
+/-! ## The two one-sided areas
+
+`A₊` and `A₋` — the cell counts strictly above and strictly below the main
+diagonal. These are the `A_σ` of the budget probes. In free-fermion language
+(`library/arxiv-1909.06797v5`, `library/arxiv-2105.09342v1`) `A₊ - A₋` is the
+first moment of the droplet density about the Fermi point — a **dipole moment**,
+one of the conserved charges `Hₙ` — and `D 0` is the droplet's Durfee side. -/
+
+/-- Area strictly above the main diagonal: cells of content `> 0`. -/
+def areaUpper : ℕ := ∑ c ∈ Finset.Ico 1 (μ.rowLen 0), diagLen μ c
+
+/-- Area strictly below the main diagonal: cells of content `< 0`. -/
+def areaLower : ℕ := ∑ r ∈ Finset.Ico 1 (μ.colLen 0), diagLen μ.transpose r
+
+/-- **The exact area split.** `A₊ + A₋ + D 0 = n`. -/
+theorem areaUpper_add_areaLower_add_diagLen_zero :
+    areaUpper μ + areaLower μ + diagLen μ 0 = μ.card := by
+  classical
+  have hup : ∑ c ∈ Finset.range (μ.rowLen 0), diagLen μ c = diagLen μ 0 + areaUpper μ := by
+    rcases Nat.eq_zero_or_pos (μ.rowLen 0) with h | h
+    · have h0 : diagLen μ 0 = 0 := by
+        have := diagLen_le_rowLen_zero_sub μ 0
+        omega
+      simp [areaUpper, h, h0]
+    · rw [Finset.range_eq_Ico]
+      exact Finset.sum_eq_sum_Ico_succ_bot h _
+  have := card_eq_sum_diagLen_add μ (T := μ.rowLen 0) (T' := μ.colLen 0)
+    (le_refl _) (le_refl _)
+  rw [hup] at this
+  simp only [areaLower] at this ⊢
+  omega
+
+/-- Conjugation swaps the two areas. Under any conjugation-invariant measure —
+Plancherel is one — this is what forces `E[A₊] = E[A₋]`, hence
+`E[A_σ] = (n - E[D 0])/2 < n/2` unconditionally. -/
+theorem areaUpper_transpose : areaUpper μ.transpose = areaLower μ := by
+  simp only [areaUpper, areaLower, YoungDiagram.rowLen_transpose]
+
+/-- The other direction, via `μᵀᵀ = μ`. -/
+theorem areaLower_transpose : areaLower μ.transpose = areaUpper μ := by
+  simp only [areaUpper, areaLower, YoungDiagram.colLen_transpose,
+    YoungDiagram.transpose_transpose]
+
+/-- **`2 A₊ ≤ n` is exactly "the dipole moment is bounded by the Durfee side".**
+
+Stated as an `iff` deliberately: the left side is FALSE pointwise — the one-row
+diagram `(n)` has `A₊ = n - 1`, `A₋ = 0`, `D 0 = 1` — so `A_σ ≤ n/2` can only
+ever hold *in expectation*, and any route that needs it must average. This is
+the reformulation that says what the average has to control: not an area, but
+the imbalance between the two halves. -/
+theorem two_mul_areaUpper_le_card_iff :
+    2 * areaUpper μ ≤ μ.card
+      ↔ (areaUpper μ : ℤ) - (areaLower μ : ℤ) ≤ (diagLen μ 0 : ℤ) := by
+  have h := areaUpper_add_areaLower_add_diagLen_zero μ
+  constructor
+  · intro hle; omega
+  · intro hle; push_cast at hle; omega
+
 /-! ## The reduction skeleton: what a Lean proof of `M₁ > 0` would still need
 
 Asked directly: can the finite-`n` crossover be closed in Lean? On the current
