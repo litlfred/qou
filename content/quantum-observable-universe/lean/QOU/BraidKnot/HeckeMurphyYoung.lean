@@ -492,4 +492,63 @@ theorem murphyFamily_linearIndependent
   rw [murphyIndex_fintypeCard, QOU.Hecke.TwBasis.finrank_eq_factorial]
 
 
+/-! ## 9. Step 2 of spanning: the one-column shape already gives every `T_w`
+
+Mathas' spanning argument (the input `basisOfSpanning` is missing) is three steps, and the
+first is already in the corpus. Reading the statements rather than the sentence that cites
+them:
+
+1. **`{T_w}` spans `H_n(q)`** — `QOU.Hecke.TwBasis.basisTwOfField`.
+2. **Every `T_w` *is* a Murphy element of the one-column shape** — this section.
+3. **Lemma 3.14** straightens row-standard pairs to standard ones, moving up in dominance.
+   Since `(1ⁿ)` is the dominance-minimum, everything is reachable from step 2.
+
+Step 2 is where the one-column shape earns its place. Its Young subgroup is **trivial** — every
+row has length one, so the row stabiliser is `{1}` — hence `x_{(1ⁿ)} = T_1 = 1` and
+`m_{st} = T_{d(s)}^* · 1 · T_{d(t)}`. Every filling of a single column is row-standard, so
+`d(t)` ranges over the whole symmetric group; taking `s` to be the reference tableau gives
+`m = T_{d(t)}`, i.e. every basis element. So the **row-standard** Murphy family spans
+immediately, and spanning reduces to straightening alone.
+
+> **The index set is the catch, and it is not a technicality.** Steps 2 and 3 concern the family
+> indexed by **row-standard** pairs — `n!` per shape — whereas `MurphyIndex` and `murphyFamily`
+> are over **standard** pairs, `(f^λ)²` per shape. At the one-column shape the standard family
+> has exactly **one** element where the row-standard family has `n!`. So spanning cannot even be
+> *stated* for `murphyFamily` directly; a row-standard-indexed family has to exist first, and the
+> corpus has no row-standard tableau type. That gap is the whole of step 3, not an indexing
+> detail. Bean `qou-phir`.
+
+What is proved here is the algebraic core of step 2, which needs no such type: the trivial
+Young subgroup contributes `1`, and the two-sided conjugates of that `1` already span. -/
+
+/-- **The trivial Young subgroup contributes `1`.** `x_{(1ⁿ)} = Σ_{w ∈ {1}} T_w = T_1 = 1`.
+
+The one-column shape `(1ⁿ)` has every row of length one, so its row stabiliser is trivial and
+its Murphy element is the identity — which is what makes step 2 of the spanning argument free. -/
+@[simp] theorem murphySum_singleton_one :
+    murphySum K q n {1} = 1 := by
+  rw [murphySum, Finset.sum_singleton, Tw_one]
+
+/-- **Step 2: the one-column Murphy elements already span `H_n(q)`.**
+
+`{T_u · x_{(1ⁿ)} · T_v}` spans, because `x_{(1ⁿ)} = 1` and the `T_w` are a basis: take `u = 1`
+and the family already contains every `T_v`. So the row-standard Murphy family spans as soon as
+the `T_w` do, and **the whole of the spanning input to `basisOfSpanning` is Lemma 3.14's
+straightening** — moving a row-standard pair to standard pairs of dominating shape.
+
+Stated over the conjugating pair rather than over tableaux precisely because the row-standard
+tableau type does not exist yet (see the section note): this is the algebraic content, and it
+does not have to wait for the indexing. -/
+theorem span_murphySum_one_conjugates_eq_top :
+    Submodule.span K (Set.range (fun p : Equiv.Perm (Fin (n + 1)) × Equiv.Perm (Fin (n + 1)) =>
+        Tw K q n p.1 * murphySum K q n {1} * Tw K q n p.2)) = ⊤ := by
+  classical
+  refine top_le_iff.mp ?_
+  rw [← (QOU.Hecke.TwBasis.basisTwOfField K q n).span_eq]
+  refine Submodule.span_le.mpr ?_
+  rintro x ⟨v, rfl⟩
+  refine Submodule.subset_span ⟨(1, v), ?_⟩
+  simp
+
+
 end QOU.BraidKnot.HeckeMurphyYoung
