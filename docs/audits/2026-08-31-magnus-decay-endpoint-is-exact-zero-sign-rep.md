@@ -35,6 +35,17 @@ measurement.
 
 ## Why this grounds the Garoufalidis–Le bridge (#6372)
 
+> **🛑 CORRECTED — the Schur–Weyl claim in this section is BACKWARDS. See
+> [`2026-08-31-alexander-sector-is-b1-burau-not-the-sign-endpoint.md`](2026-08-31-alexander-sector-is-b1-burau-not-the-sign-endpoint.md).**
+> The sign rep `(1ⁿ)` is fully-antisymmetric ✓, but it is **NOT** the Alexander sector — in the
+> sign rep every `σ_i` is the scalar `−q⁻¹`, so `ρ` is a writhe-only monomial carrying **no**
+> knot information. The genuine Alexander carrier in the Hecke `b`-grading is the **reduced
+> Burau = reflection rep `(n−1,1)` = `b=1`** (the decay's *peak*, Jones 1987 / Squier 1984), and
+> the MMR "color-`N` Alexander" is a third, different *large-color* limit. So the sign-rep
+> endpoint does **not** equal the color-`n` Alexander sector; the decay runs *away from* the
+> Burau/Alexander sector (`b=1`) toward the information-free sign endpoint. The **exact-zero
+> endpoint result below stands** — only this section's Alexander *direction* was wrong.
+
 Under **Schur–Weyl duality**, the `b`-grading of Hecke `H_n(q)` irreps is dual to a `U_q(gl_N)`
 rep grading, and the sign rep `(1ⁿ)` is the **fully-antisymmetric / determinant** sector — the
 same corner that hosts the **Alexander polynomial** in the Melvin–Morton–Rozansky loop
