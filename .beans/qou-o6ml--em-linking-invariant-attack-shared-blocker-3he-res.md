@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-30T14:55:58Z
+updated_at: 2026-08-31T02:58:35Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -468,3 +468,75 @@ it was not previously connected to 4-B.
 reckoning and is now formalisable, but its data requirement is an embedding per
 isotope, which nothing in the corpus supplies at any A. That is the real blocker
 and it should be stated at that size rather than as "geometry past A = 3".
+
+
+## 2026-08-31 — THE DATA BLOCKER IS MUCH WEAKER THAN I STATED, and my own integrand was the wrong term
+
+I closed the previous entry saying route (2) *"needs an embedding per isotope,
+which nothing in the corpus supplies at **any** A"*, and offered as next steps
+(a) find such embeddings or (b) ask whether the energy is computable from link
+invariants alone. Took (b). The answer reshapes the blocker and corrects the
+Lean I added yesterday.
+
+### 1. Route (2) wants the MUTUAL term, and I formalised the SELF term
+
+`oharaIntegrand` — `1/|γ(s)−γ(t)|² − 1/D(s,t)²` — is the **self**-energy of one
+curve, and its subtraction exists to tame the diagonal singularity as `t → s`.
+That is not what a per-pair EM weight is.
+
+For two **distinct** components the subtracted term is `1/D(s,t)²` with `D` the
+arc-length distance *along the curve*, and between different components **there
+is no path along the curve at all**, so `D = ∞` and the term vanishes
+identically. The mutual energy is the **unsubtracted** integral
+`∫∫ 1/|γ_i(s) − γ_j(t)|²`, and the regularisation question does not arise:
+distinct components are disjoint, so there is no diagonal to be singular on.
+
+Formalised (`lean`-direct exit 0):
+
+- **`mutualIntegrand`** — the unsubtracted cross-integrand.
+- **`mutualIntegrand_pos`** — strictly positive wherever the components do not
+  touch, **with no hypothesis beyond that**. Contrast `oharaIntegrand_nonneg`,
+  which needs `chord_le_arc` and yields only `0 ≤`. Unconditional positivity is
+  exactly what this bean asks of route (2) — *"nonzero for unlinked pairs"* —
+  and on the Borromean carrier every pairwise `lk_ij = 0` ((A3) of
+  `mirror_split_s3_em_functional_probe.py`), so a linking-number weight vanishes
+  there while this one cannot.
+- **`mutualIntegrand_eq_ohara_without_subtraction`** — the algebraic identity
+  that makes the two comparable, so the relationship is in the file rather than
+  in a docstring.
+
+### 2. So the data requirement is a MINIMISATION ON THREE NAMED LINKS, not nuclear geometry
+
+The mutual integrand is scale-invariant (length²/length², dimensionless) and
+Möbius-invariant, and the **minimum of the energy over an isotopy class is an
+invariant of the link type** — that is the content of Freedman–He–Wang, whose
+`E(unknot) = 4` this file already cites. So route (2) does **not** need the
+actual configuration of a nucleus. It needs the energy-minimising embedding of
+each *named carrier link* — and the carriers are named: Hopf (L2a1), 8₁₁,
+L6a4/Borromean.
+
+**That drops the blocker from "per-isotope geometry the corpus has at no A" to
+"run an energy minimisation on three links whose types are already fixed."**
+Retracting the previous entry's framing accordingly.
+
+**What is NOT claimed:** that there is a closed form from link invariants. There
+is not — the energy of a knot type is defined by a minimisation and is computed
+numerically by gradient flow, not read off a polynomial. So this is a *tractable
+computation*, not a formula, and it is still work.
+
+### 3. The real remaining gap, correctly sized
+
+`KnotEmbedding` carries a single `curve : ℝ → M` and **cannot express a
+multi-component link at all**. That is why `mutualIntegrand` is stated over a
+bare separation function rather than through the structure. A multi-component
+carrier is the next formalisation step, and it is bounded.
+
+### 4. Acquisition gap
+
+`freedman1994` and `ohara1991` are both registered in
+`content/schema/references.ts` and **neither appears in `library/INDEX.md`** —
+the corpus cites them and does not hold them. Same shape as `qou-bn8e`'s
+Cottingham gap. Anyone taking route (2) forward should drop both into
+`uploads/` and migrate, because the minimiser values and the link-energy
+conventions are in those papers and are being reasoned about from structure
+here.

@@ -156,6 +156,54 @@ theorem KnotEmbedding.oharaIntegrand_symm {M : Type*} (k : KnotEmbedding M)
     (s t : ℝ) : k.oharaIntegrand s t = k.oharaIntegrand t s := by
   simp [KnotEmbedding.oharaIntegrand, k.ambient_symm s t, k.arcLength_symm s t]
 
+/-! ### The MUTUAL term — what a per-pair EM weight actually needs
+
+`oharaIntegrand` above is the **self**-energy form: one curve, and the
+subtraction is what tames the diagonal singularity as `t → s`.  Bean `qou-o6ml`
+route (2) does not want that.  It wants the **mutual** energy between two
+*distinct* components of a link, and that is a different and simpler object. -/
+
+/-- The **mutual (cross) integrand** between points on two distinct components:
+
+    $$\frac{1}{|\gamma_i(s) - \gamma_j(t)|^2}.$$
+
+    **No subtraction.**  The subtracted term in `oharaIntegrand` is `1/D(s,t)²`
+    with `D` the arc-length distance *along the curve*; for points on different
+    components there is no path along the curve at all, so `D = ∞` and the term
+    vanishes identically.  The mutual energy is the unsubtracted integral, and
+    the regularisation question does not arise because distinct components are
+    disjoint — there is no diagonal to be singular on.
+
+    Modelled here as a bare separation function rather than through
+    `KnotEmbedding`, because that structure carries a single `curve : ℝ → M` and
+    **cannot express a multi-component link at all**.  That is the real gap on
+    route (2), and naming it is the point of this block. -/
+noncomputable def mutualIntegrand (sep : ℝ → ℝ → ℝ) (s t : ℝ) : ℝ :=
+  1 / sep s t ^ 2
+
+/-- **The mutual integrand is strictly positive** wherever the two components do
+    not touch — with no hypothesis beyond that, and in particular with no
+    chord-vs-arc inequality.
+
+    Contrast `oharaIntegrand_nonneg`, which needs `chord_le_arc` and yields only
+    `0 ≤`.  The mutual term is unconditionally `0 <`, which is exactly the
+    property bean `qou-o6ml` route (2) asks of a per-pair weight: *nonzero for
+    unlinked pairs*.  On the Borromean carrier every pairwise `lk_ij = 0`
+    (axiom (A3) of `mirror_split_s3_em_functional_probe.py`), so a weight built
+    from linking numbers vanishes there while this one does not. -/
+theorem mutualIntegrand_pos (sep : ℝ → ℝ → ℝ) (s t : ℝ) (h : 0 < sep s t) :
+    0 < mutualIntegrand sep s t := by
+  unfold mutualIntegrand
+  positivity
+
+/-- The mutual integrand is the `D → ∞` limit of the O'Hara integrand, stated as
+    the algebraic identity that makes the two comparable: dropping the
+    subtracted term is exactly setting `1/D² = 0`. -/
+theorem mutualIntegrand_eq_ohara_without_subtraction
+    (sep arc : ℝ → ℝ → ℝ) (s t : ℝ) (hD : 1 / arc s t ^ 2 = 0) :
+    mutualIntegrand sep s t = 1 / sep s t ^ 2 - 1 / arc s t ^ 2 := by
+  rw [hD, sub_zero]; rfl
+
 /-! ## §2  Categorical Möbius Energy -/
 
 /-- **Categorical Möbius energy data** for a knot `γ` in a quantum observable
