@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:11:15.280097+00:00",
-  "commitSha": "4f83a2c2dd29788823227451fc2712ce81d1b00b",
+  "computedAt": "2026-08-31T04:15:09.433809+00:00",
+  "commitSha": "dcc2e65caebec9249d70aefeb8363c663c2d0ef0",
   "assertions": [
     {
       "name": "roast_figure_divided_by_E0_is_ln2",
@@ -25,7 +25,7 @@
       "expected": "8.19176117219",
       "passed": true,
       "tolerance": "1e-7",
-      "source": "the '6.9056498' recorded in computations/probes/braid-nucleus-map-exponent-probe.witness.json (committed earlier, read from disk, not recomputed) divided by the same shortfall recomputed at E_0, vs E_0/m_e = 1/(q_0(q_0-1)). Equality means the scale choice is the WHOLE of the discrepancy and nothing else went wrong."
+      "source": "the '6.9056498' recorded in computations/probes/braid-nucleus-map-exponent-probe.witness.json — produced by a different script and read from disk here, not recomputed — divided by the same shortfall recomputed at E_0, vs E_0/m_e = 1/(q_0(q_0-1)). Equality means the scale choice is the WHOLE of the discrepancy and nothing else went wrong."
     },
     {
       "name": "at_E0_every_family_member_exceeds_B_over_A_plateau",
@@ -39,8 +39,8 @@
   "durationMs": 4,
   "computation": "extensive-term-energy-scale-reconciliation-probe",
   "scriptFile": "extensive_term_energy_scale_reconciliation_probe.py",
-  "scriptHash": "660f3a8aa2e8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1e7a708f142d",
+  "scriptCommitSha": "5f7e9aa1e789446840794d0c0e20f44a0cbcba36",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -17,7 +17,7 @@ All three multiplied a dimensionless log by **`m_e = 0.511 MeV`**. They gave no
 reason for that choice, and it is the wrong one: the corpus's own binding
 machinery uses the **hadronic energy unit**
 
-    E_0 = m_e / (q_0 (q_0 - 1)) = 4.18598... MeV        [assertion 1]
+    E_0 = m_e / (q_0 (q_0 - 1)) = 4.18598... MeV
 
 declared in `computations/b_over_a_evaluator.py` and used as `alpha` in the
 `B_sym` linear-chain derivation (`docs/audits/2026-06-16-b-sym-linear-chain-
@@ -40,7 +40,11 @@ reconstruct it".
 It does show its construction, one sentence earlier: *"if a nucleon is one strand
 the extensive coefficient is `E_0 log N`"*. At `N = 2`,
 
-    E_0 * ln 2 = 2.90150117984...  ~  2.91                [assertion 2]
+    2.91 / E_0 = 0.695176...   vs   ln 2 = 0.693147...   [assertion 1]
+
+to 0.3 %, while at `m_e` the figure is UNREACHABLE — it would need a
+normaliser with `log = 5.695`, against a family spanning 0.694-0.923
+[assertion 1b].
 
 The ROAST was using `E_0`; I was using `m_e`; the ratio 8.19 is the whole
 discrepancy. Nothing about the ROAST's arithmetic was unreconstructable.
@@ -209,8 +213,9 @@ def main() -> int:
         expected=mp.nstr(e0_closed / M_E_MEV, 12),
         tolerance="1e-7",
         source="the '6.9056498' recorded in computations/probes/"
-               "braid-nucleus-map-exponent-probe.witness.json (committed earlier, read from "
-               "disk, not recomputed) divided by the same shortfall recomputed at E_0, vs "
+               "braid-nucleus-map-exponent-probe.witness.json — produced by a different "
+               "script and read from disk here, not recomputed — divided by the same "
+               "shortfall recomputed at E_0, vs "
                "E_0/m_e = 1/(q_0(q_0-1)). Equality means the scale choice is the WHOLE of "
                "the discrepancy and nothing else went wrong.",
     )
