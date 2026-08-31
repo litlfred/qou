@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T18:00:25Z
+updated_at: 2026-08-31T18:24:56Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4546,3 +4546,92 @@ the recorded 1.4.1.
 recorded one (mpmath 1.4.1→1.3.0, numpy 2.5.0→2.4.6, python 3.13→3.11), and the
 probes' own guards say so; I reverted the timestamp-only changes rather than
 downgrade the provenance.
+
+
+## FINDING B — RESOLVED and CLOSED (2026-08-31, commit 636c1541c0)
+
+**It is not a third value; it is `qou-t39x`.** Finding B above reports
+`-2.01986031187` as "neither the live `-2.02020024` nor the superseded
+`-2.0097`". It is the live one. `-2.02020024` is the superseded one:
+`fca08de7d2` (2026-08-22, owner ruling) moved the muon pin to CODATA 2022 three
+weeks before Finding B was written, and the probe's regression target stayed on
+CODATA 2018. Attribution, at 60 dps (probe
+`qbeta-c3-muon-anchor-codata-edition-attribution`, 11/11):
+
+| quantity | value |
+|---|---|
+| disagreement `corpus − c_3(2022)` | −3.3992813e-4 |
+| edition shift `c_3(2018) − c_3(2022)` | −3.3992315e-4 |
+| **explained fraction** | **0.9999853535** |
+| residual | −5.0e-9 = the corpus literal's own rounding to its 9 quoted figures |
+
+The lever is `1/u³ = 1.618e6`: a **1.451 ppb** step on `m_μ/m_e`
+(206.7682830 → 206.7682827) is **1.7e-4 relative** on `c_3`, amplification
+2.1e6. The proton arm never warned because `m_p/m_e` moved 2e-12 relative
+against the muon ratio's 1.5e-9.
+
+**One correction to what Finding B records above:** "the committed witness on
+disk already records `allPassed: False`" — it does not. The witness records
+`allPassed: true` with `c_3(muon) = -2.020200235021255` and
+`computedAt 2026-08-15`, i.e. generated *before* the re-pin. Stale but
+internally consistent, which is worse to read and better to fix. Fixed.
+
+### THE EXPERIMENTAL IDEAL — and this is the part that matters for the bean
+
+Nothing had priced `c_3` against the CAL inputs it is built from. Recomputing at
+±1σ of each CODATA-2022 published uncertainty (not through a recorded
+derivative):
+
+| input | rel. σ | δc_3(proton) | δc_3(muon) | δ(swing) |
+|---|---|---|---|---|
+| CAL-2 `m_μ/m_e` | 2.225e-8 | 0 | 5.212e-3 | 5.212e-3 |
+| CAL-2′ `m_p/m_e` | 1.743e-11 | 3.54e-6 | 0 | 3.54e-6 |
+| CAL-1 `m_e` | 3.131e-10 | 5.068e-4 | 5.068e-4 | 3.06e-10 |
+| `Q_β` | 7.797e-7 | **1.2619** | **1.2619** | 7.63e-7 |
+| **total** | | **1.262** | **1.262** | **0.005212** |
+
+**`c_3(muon) = −2.0199 ± 1.26`, `Q_β`-dominated** — 0.78 ppm on a 0.782 MeV
+Q-value times `1/u³`. The registry quotes **nine** significant figures for a
+quantity its own calibration inputs support to **0.2** of one, and the 3.4e-4
+Finding B calls "340× the tolerance" is **3700× *inside* the error bar**. The
+1e-6 is a *reproducibility* tolerance being read as a physics one.
+
+**The cross-anchor swing survives, and it is the only thing that does.** `Q_β`
+and `m_e` are common mode and cancel in the difference to 7.6e-7 and 3.1e-10,
+leaving **swing = −0.0494823 ± 0.0052 = 9.49σ** — the same 9.5σ as the μ–p
+tension, because it is the same statement. So the "REFUTED as real-q fibre
+element" verdict, which rests on the swing, is experimentally supported while
+every absolute `c_3` digit past the first is not. **That asymmetry is the usable
+result for this bean**: a D-frame re-derivation must be validated against the
+swing, not against an absolute `c_3` target, because no absolute target here
+carries more than one supported figure.
+
+### What was changed in live compute
+
+- **sensitivity probe** — target retargeted to CODATA 2022, anchor-qualified,
+  with the 2018 literal kept and asserted-against so a slide back is caught
+  rather than re-diagnosed. **9/9 → 10/10**, witness regenerated under
+  mpmath 1.4.1 (matching its recorded provenance — no engine downgrade; the
+  container was upgraded 1.3.0 → 1.4.1, which is what unblocked this).
+- **`c3_even_canonical_split_contradiction.py`** — was itself a straddle
+  (frozen pin + CODATA-2018 `c_3`); both anchors now derived from the substrate
+  and licensed against the corpus proton value.
+- **`sleak_offset_genericity_check.py`** — anchors derived; window moves to
+  (2.01986, 2.06934), Vol(4₁) still strictly inside, conclusion unchanged.
+
+### Two more CODATA-2018-era literals the same step surfaced
+
+1. the 2026-07-07 audit's **`S(muon) = 886.8`** is now **3.17× outside its own
+   4-s.f. rounding window**; at the live pin it reads **886.6**.
+2. **KC21's Φ_b scale claim degrades 3.01 % → 6.63 %**, i.e. **2.2× worse**. The
+   deficit 0.0094 is anchor-blind to sub-ppm, so all the movement is on the |S|
+   side — the quoted "~2.9 %" was never a property of the saddle. The verdict
+   now computes it rather than asserting it.
+
+**STILL OPEN** (not done here, deliberately): ~20 prose/Lean/TS sites still
+carry `−2.02020024` as "today's muon extraction", including
+`SLeakZeroCrossing.lean`, `FaddeevModularDouble.lean`,
+`ThetaLipschitzObstruction.lean` and `qbeta-ck-truncation-canonical.ts`; and the
+registry's KC21 row and §9f window endpoints. Re-pinning
+`Q_MUON_50_DIGIT_STR` / migrating the 336 ancestor-bearing files is
+owner-authorised work sequenced behind PR #5500 and `qou-1c4y`.
