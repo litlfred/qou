@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-08-31T02:58:35Z
+updated_at: 2026-08-31T03:13:44Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -540,3 +540,61 @@ Cottingham gap. Anyone taking route (2) forward should drop both into
 `uploads/` and migrate, because the minimiser values and the link-energy
 conventions are in those papers and are being reasoned about from structure
 here.
+
+
+## 2026-08-31 — `LinkEmbedding`: the mutual term now goes THROUGH the encoding, and its positivity is free
+
+The last formalisation step named in the previous entry. `lean`-direct exit 0;
+`#print axioms` clean on all four new results.
+
+**`LinkEmbedding M n`** — `n` components, each a `KnotEmbedding`, plus a
+link-level `sep i s j t` giving the ambient distance between a point on
+component `i` and a point on component `j`. The separation is carried at link
+level rather than assembled from components, because `KnotEmbedding.ambientDist`
+relates two points on *the same* curve and nothing in that structure relates two
+curves.
+
+Five fields, and one of them is doing the work: **`disjoint : ∀ i j, i ≠ j → ∀
+s t, 0 < sep i s j t`** — distinct components never meet, which is what makes
+the configuration a *link* rather than a singular map.
+
+| result | content |
+|---|---|
+| `mutualIntegrand` | the unsubtracted cross term, stated through the structure |
+| **`mutualIntegrand_pos_of_ne`** | **positive with no hypothesis beyond `i ≠ j`** |
+| `mutualIntegrand_symm` | symmetric under exchanging (component, parameter) pairs |
+| `mutualIntegrand_self` | on the diagonal it is the *unsubtracted* part of that component's own O'Hara integrand — the two integrands are one object at different index pairs |
+| `selfIntegrand` | the O'Hara term, so `Σᵢ self` and `Σ_{i<j} mutual` are both expressible here |
+| `mutualIntegrand_smul` | rescaling every separation by `c` scales the integrand by `c⁻²` |
+
+**Why `mutualIntegrand_pos_of_ne` is the point.** Yesterday's bare-function
+version needed `0 < sep s t` supplied as a hypothesis. Here it is *discharged
+from `disjoint`*. A per-pair EM weight built this way is positive **because the
+carrier is a link**, not because positivity was assumed of it — which is the
+difference between a derivation and an axiomatisation, and this file's own
+history is full of the latter.
+
+**Two things named rather than claimed.** `mutualIntegrand_smul` is the
+*pointwise half* of scale invariance; the energy's invariance also needs the
+`ds dt` measure to scale by `c²`, which requires the integral this file does not
+build. And `selfIntegrand` makes both halves expressible but not summable —
+only the summation and integration are missing, and they want measure theory.
+
+### I checked my own structure for the defect I fixed here yesterday
+
+`NonSelfIntersection` carried `∀ E₀, energy > E₀` and was therefore
+**uninhabitable for every `M`** — sorry-free, seen by no detector, and every
+result conditional on it vacuous. A new structure with five interacting fields
+earns the same scrutiny, so **`nonempty_linkEmbedding`** exhibits an inhabitant
+rather than asserting consistency: components with all distances `0`, and a
+separation that is the component's own `ambientDist` on the diagonal and `1` off
+it. Deliberately degenerate — it establishes that the field set is *consistent*,
+not that this is a link anyone wants.
+
+### Where route (2) now stands
+
+The formalisation chain is complete end to end: a multi-component carrier, the
+mutual term through it, unconditional positivity, and the self/mutual
+relationship. What remains is **not** formalisation — it is the numerical
+minimisation on the three named carriers (Hopf, 8₁₁, L6a4/Borromean), plus the
+integration theory to turn pointwise statements into an energy.

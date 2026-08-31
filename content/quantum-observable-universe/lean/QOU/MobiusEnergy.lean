@@ -204,6 +204,152 @@ theorem mutualIntegrand_eq_ohara_without_subtraction
     mutualIntegrand sep s t = 1 / sep s t ^ 2 - 1 / arc s t ^ 2 := by
   rw [hD, sub_zero]; rfl
 
+/-! ### A multi-component carrier
+
+`mutualIntegrand` above is stated over a bare separation function because
+`KnotEmbedding` carries a single `curve : ℝ → M` and cannot express a link.
+This is that structure.  With it the mutual term is stated *through* the
+encoding, and — the point of the exercise — its positivity needs **no side
+hypothesis at all**, because disjointness is part of what it means to be a
+link. -/
+
+/-- An **`n`-component link embedding**: `n` parametrised components in `M`,
+    together with the ambient separation between a point on any component and a
+    point on any other.
+
+    The separation is carried at link level rather than assembled from the
+    components, because `KnotEmbedding.ambientDist` relates two points on *the
+    same* curve and there is nothing in that structure relating two curves. -/
+structure LinkEmbedding (M : Type*) (n : ℕ) where
+  /-- The components. -/
+  component : Fin n → KnotEmbedding M
+  /-- Ambient distance from `component i` at parameter `s` to `component j` at
+      parameter `t`. -/
+  sep : Fin n → ℝ → Fin n → ℝ → ℝ
+  /-- Separation is symmetric under exchanging the two (component, parameter)
+      pairs. -/
+  sep_symm : ∀ i s j t, sep i s j t = sep j t i s
+  /-- Separation is non-negative. -/
+  sep_nonneg : ∀ i s j t, 0 ≤ sep i s j t
+  /-- **Distinct components never meet.**  This is what makes the configuration
+      a *link* rather than a singular map, and it is exactly the hypothesis that
+      makes the mutual integrand unconditionally positive below. -/
+  disjoint : ∀ i j, i ≠ j → ∀ s t, 0 < sep i s j t
+  /-- Restricted to one component, the link-level separation is that
+      component's own ambient distance — so the two notions agree where they
+      overlap rather than sitting side by side. -/
+  sep_self : ∀ i s t, sep i s i t = (component i).ambientDist s t
+
+namespace LinkEmbedding
+
+variable {M : Type*} {n : ℕ}
+
+/-- The **mutual integrand** between component `i` at `s` and component `j` at
+    `t`, stated through the link structure. -/
+noncomputable def mutualIntegrand (L : LinkEmbedding M n) (i j : Fin n)
+    (s t : ℝ) : ℝ :=
+  1 / L.sep i s j t ^ 2
+
+/-- **Unconditional positivity on distinct components.**
+
+    The bare-function `mutualIntegrand_pos` above needs `0 < sep s t` supplied
+    as a hypothesis.  Here it is discharged from `disjoint`: nothing is assumed
+    beyond `i ≠ j`.  That is the whole reason to have this structure — a
+    per-pair EM weight built this way is positive *because the carrier is a
+    link*, not because positivity was assumed of it. -/
+theorem mutualIntegrand_pos_of_ne (L : LinkEmbedding M n) {i j : Fin n}
+    (hij : i ≠ j) (s t : ℝ) : 0 < L.mutualIntegrand i j s t := by
+  unfold mutualIntegrand
+  have := L.disjoint i j hij s t
+  positivity
+
+/-- The mutual integrand is symmetric under exchanging the two components
+    together with their parameters. -/
+theorem mutualIntegrand_symm (L : LinkEmbedding M n) (i j : Fin n) (s t : ℝ) :
+    L.mutualIntegrand i j s t = L.mutualIntegrand j i t s := by
+  unfold mutualIntegrand
+  rw [L.sep_symm]
+
+/-- The **self** integrand of one component is the O'Hara one, subtraction and
+    all.  Recorded so the two halves of a link's energy — `Σᵢ self` and
+    `Σ_{i<j} mutual` — are both expressible here.
+
+    Only the summation and integration are missing, and they need measure
+    theory this file does not set up. -/
+noncomputable def selfIntegrand (L : LinkEmbedding M n) (i : Fin n)
+    (s t : ℝ) : ℝ :=
+  (L.component i).oharaIntegrand s t
+
+/-- On one component the link-level and component-level ambient distances
+    agree, so the mutual integrand restricted to `i = i` is the *unsubtracted*
+    part of that component's own O'Hara integrand.
+
+    This is the statement that the two integrands are the same object seen at
+    different index pairs — the diagonal carries a subtraction, the off-diagonal
+    does not. -/
+theorem mutualIntegrand_self (L : LinkEmbedding M n) (i : Fin n) (s t : ℝ) :
+    L.mutualIntegrand i i s t = 1 / (L.component i).ambientDist s t ^ 2 := by
+  unfold mutualIntegrand
+  rw [L.sep_self]
+
+/-- **The scaling ingredient.**  Rescaling every separation by `c > 0` scales
+    the mutual integrand by `c⁻²`.
+
+    This is *not* scale-invariance of the energy — that also needs the `ds dt`
+    measure to scale by `c²`, which requires the integral this file does not
+    build.  It is the pointwise half, recorded so the mechanism is visible and
+    the missing half is named rather than assumed. -/
+theorem mutualIntegrand_smul (L L' : LinkEmbedding M n) (c : ℝ) (hc : 0 < c)
+    (i j : Fin n) (s t : ℝ)
+    (hscale : L'.sep i s j t = c * L.sep i s j t) :
+    L'.mutualIntegrand i j s t = c⁻¹ ^ 2 * L.mutualIntegrand i j s t := by
+  unfold mutualIntegrand
+  rw [hscale, mul_pow]
+  field_simp
+
+/-- **`LinkEmbedding` is inhabitable**, exhibited rather than asserted.
+
+    This file's own history is the reason to check: `NonSelfIntersection`
+    carried a field asserting `∀ E₀, energy > E₀` and was therefore
+    **uninhabitable for every `M`**, which made every result conditional on it
+    vacuous — sorry-free, and seen by no detector. A new structure with five
+    interacting fields earns the same scrutiny.
+
+    Witness: components with all distances `0`, and a separation that is the
+    component's own `ambientDist` on the diagonal and `1` off it.  Degenerate on
+    purpose — the point is that the field set is *consistent*, not that this is
+    a link anyone wants. -/
+theorem nonempty_linkEmbedding (M : Type*) (m : M) (n : ℕ) :
+    Nonempty (LinkEmbedding M n) := by
+  classical
+  let K : KnotEmbedding M :=
+    { curve := fun _ => m
+      arcLengthDist := fun _ _ => 0
+      arcLength_symm := fun _ _ => rfl
+      arcLength_nonneg := fun _ _ => le_refl 0
+      ambientDist := fun _ _ => 0
+      ambient_symm := fun _ _ => rfl
+      ambient_nonneg := fun _ _ => le_refl 0
+      chord_le_arc := fun _ _ => le_refl 0 }
+  exact ⟨{ component := fun _ => K
+           sep := fun i s j t => if i = j then (K.ambientDist s t) else 1
+           sep_symm := by
+             intro i s j t
+             by_cases h : i = j
+             · subst h; simpa using K.ambient_symm s t
+             · simp [h, Ne.symm h]
+           sep_nonneg := by
+             intro i s j t
+             by_cases h : i = j
+             · subst h; simpa using K.ambient_nonneg s t
+             · simp [h]
+           disjoint := by
+             intro i j hij s t
+             simp [hij]
+           sep_self := by intro i s t; simp }⟩
+
+end LinkEmbedding
+
 /-! ## §2  Categorical Möbius Energy -/
 
 /-- **Categorical Möbius energy data** for a knot `γ` in a quantum observable
