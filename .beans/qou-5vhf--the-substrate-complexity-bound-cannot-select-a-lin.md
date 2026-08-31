@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:00:48Z
-updated_at: 2026-08-31T03:01:24Z
+updated_at: 2026-08-31T03:11:11Z
 ---
 
 Answers the open question `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`
@@ -79,3 +79,39 @@ showing it cannot become evidential.
 I asserted "stored braid word length == crossing number". True for 6_2 and
 L6a4 (both 6), FALSE for 8_11 (14-letter word, c = 8). Braid word length is an
 upper bound on crossing number, never an identity. Fixed at the assertion.
+
+
+## Follow-on 2026-08-31 — the gate figure I named is convention-C-stale
+
+Having named the r5full anchor non-confirmation as the remaining route, I
+checked its own number. `tr_M(2H) ~ 0.388` is **convention C**. Convention D
+is canonical (owner ruling 2026-08-15) and PR #6318, merged the same day,
+regenerated the table from its producers at the proton pin:
+`0.3882864240747888 -> 0.5751722439177719` (**+48.13 %**). Re-verified live:
+`binding_canonical(1,1)` gives `tr_M_atom = 0.575172243917772`.
+
+**Verdict unchanged.** Against `J_{6_2}(q0) ~ 1.027` the atom trace is
+62.19 % low under C and 43.99 % low under D. Neither matches, so the gate is
+still live and still the right target.
+
+**Not established:** that the comparison is convention-clean. `tr_M` depends
+on `z`, and whether `1.027` was computed in the same frame has NOT been
+checked. Read the pair as a scope-(a) non-match, not a quantified gap.
+
+Scoped in both audits that carry it (`2026-07-04-he4-vol4-gated-on-r5full`,
+`2026-07-13-atom-knot-rule-a5plus-constraints` §5-bis).
+
+## Two near-errors, both caught by reading the cited artifact
+
+1. I read AGENTS.md's `0.388 -> 0.575` note as proof the gate figure was
+   stale. **The gate cites `atom-nf-symbolic-D.witness.json` — the
+   GS-symbolic route, a DIFFERENT producer from `binding_canonical`** — and
+   that witness still reads `0.3882864717176122`. Nearly reported a
+   producer confusion as a staleness finding.
+2. I then read the two values as a live disagreement between routes and was
+   about to flag it to the sibling. #6318 had settled it hours earlier as
+   the C->D migration, and was already merged.
+
+Both were caught by opening the artifact the audit cites instead of trusting
+a summary of it — including AGENTS.md's own summary, which is accurate about
+`binding_canonical` and says nothing about the GS route.
