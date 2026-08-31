@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T17:55:36Z
+updated_at: 2026-08-31T18:00:25Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4497,3 +4497,52 @@ denominator — derive-anew, not port; (3) only then compare to the C-frame `c�
 and **not** to the −974 sensitivity number.
 
 **Nothing here derives the ladder.** cds1 stays OPEN.
+
+
+---
+
+### 2026-08-31 — step 1 RUN, and REFUTED. Plus two findings under it.
+
+**🛑 My own recommended step 1 is closed, and I should have run the existing
+probe before recommending it.** `qbeta_ck_local_taylor_around_u0_probe.py` had
+already evaluated the route and returns FAIL with a structural diagnostic:
+
+> `R := tr_M(trefoil)/[Q_A·cos(α_eff)]` is **NOT** the correct global ladder
+> target `Π_k(1+c_k u^k)` … R's Taylor coefficients grow with ratio ~90 around
+> `u₀` (radius ≈0.011), whereas an O(1) ladder would have singularities at
+> `|u| ~ 1`. … **the c_k are PER-RUNG operator identities at each truncation
+> level N=k. Aggregating them via `tr_M` of the trefoil gives the WRONG global
+> function.**
+
+This kills the route **independent of C-vs-D**. So last entry's one-term D trace
+`q³(q⁴+1)/(q²+1)²` is a true closed form but **irrelevant to the ladder** — the
+ladder is not extracted from the global trace at all.
+
+**FINDING A — the per-rung route's own anchor is C-frame.** This bean's table
+already records it and the probe confirms it live:
+`implied c₂: C −1.0176238, D −9.2988629 (proved: −1, C frame)`, with the
+assertion `implied_c2_is_minus1_in_C_frame_only` **passing**. So "derive each
+`c_k` as a per-rung operator identity" cannot use `c₂ = −1` as its gate under D.
+**Both routes are blocked at the ANCHOR, not at the extraction** — which is a
+sharper statement of what this bean needs than "re-derive the ladder".
+
+**FINDING B — this bean cites the sensitivity probe as 9/9; it is committed at
+8/9.** `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` fails
+`C_frame_regression_matches_committed_corpus_values`, and the **committed
+witness on disk already records `allPassed: False`** — pre-existing, not a
+container artefact. The substance:
+
+| | probe computes | registry asserts | diff | tol |
+|---|---|---|---|---|
+| C proton | −2.06934257712 | −2.06934258 | 2.9e-9 | 1e-6 ✓ |
+| **C muon** | **−2.01986031187** | **−2.02020024** | **3.4e-4** | 1e-6 ✗ |
+
+**340× the tolerance, muon anchor only** — and the muon anchor is where `q₀` is
+pinned. Note −2.01986 is neither the live −2.02020024 nor the superseded
+−2.0097; it is a third value. Too large to be the container's mpmath 1.3.0 vs
+the recorded 1.4.1.
+
+**Witnesses NOT committed** — this container's environment is weaker than the
+recorded one (mpmath 1.4.1→1.3.0, numpy 2.5.0→2.4.6, python 3.13→3.11), and the
+probes' own guards say so; I reverted the timestamp-only changes rather than
+downgrade the provenance.
