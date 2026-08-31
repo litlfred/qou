@@ -90,6 +90,29 @@ sub-route** and reduces the theorem to a single local estimate:
   Proving `|tr(ρ_λ [A_a,A_{a+1}])|/dim_λ` decays with b (with a rate) remains the open
   work, now on a single 3-strand-local operator instead of the whole Ω₂ sum.
 
+## Lean backing (the algebraic skeleton, sorry-free)
+
+The two load-bearing *structural* assertions are formalized sorry-free in
+[`QOU/MassTheory/MagnusOmega2LocalDecomposition.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/MagnusOmega2LocalDecomposition.lean)
+(generic `CommRing`; lean-direct exit 0; `#print axioms` = the standard classical base
+`{propext, Classical.choice, Quot.sound}`, two declarations not even reaching
+`Classical.choice`):
+
+- `commutator_eq_zero_of_commute` — `Commute A B ⟹ A*B−B*A = 0`, the operator content of
+  the probe's `if |a−b| ≠ 1: continue` far-commutativity filter.
+- `omega2_reduces_to_adjacent` — `Σ_{i<j} ⁅A_i,A_j⁆ = Σ_adjacent ⁅A_a,A_{a+1}⁆` (far pairs
+  drop), i.e. Ω₂ *is* a lattice sum of 3-strand-local windows.
+- `trace_rho_localSum` / `trace_rho_weightedLocalSum` — `tr(ρ·Σ c_k•O_k) = Σ c_k·tr(ρ·O_k)`,
+  the exact algebraic identity the `4.3e-57` self-check verifies numerically.
+
+The `tr(Ω₂)=0` control is already `QOU.MassTheory.trace_commutator_eq_zero`
+(MagnusPairingSignStructure.lean), cited not re-proved.
+
+**What is NOT (and must not be) in Lean:** the empirical **peak-at-b=1 decay** itself. It
+is a measured fact and the open theorem; axiomatizing it or concluding it by `rfl`/`True`
+would be laundering. The Lean formalizes the algebraic skeleton the decay lives on — the
+reduction and the per-window linearity — not the analytic decay.
+
 ## Bottom line
 
 - **New positive structural result:** the tr-decay is **per-window local (P)**, not an
