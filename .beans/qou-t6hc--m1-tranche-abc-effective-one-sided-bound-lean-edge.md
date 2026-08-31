@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:43:34Z
-updated_at: 2026-08-31T03:55:12Z
+updated_at: 2026-08-31T04:16:24Z
 ---
 
 Tranche under qou-k5r5 (M_1 > 0 all-n), taking all three options put to the owner.
@@ -967,3 +967,52 @@ finite-n inequality**, not concentration.
 
 **Library:** 27 PDFs ingested across two batches (strong-Rayleigh toolchain +
 Plancherel growth). Pushed `03fdcab23b`.
+
+
+---
+
+### 2026-08-31 (cont.) — `E_ω[A_σ] ≤ n/2`: pointwise REFUTED, expectation holds but margin shrinks
+
+**Pointwise `2A_σ ≤ n` is FALSE on the ω-support.** 130/1640 violations over
+n = 4..16, one named family: `Λ = (K, 3, 1)`, corners at contents `+1` and `−2`,
+so the near corner is `+1` but the diagram is a long row and `A₊ = K−1`. Worst
+slack `−8` at n = 16, degrading linearly. CONTROL fired (918 violations for
+`A_far`), so the enumeration was live. My brief's hypothesis — that the
+`D₀` slack rescues it — is refuted; `A_near ≤ A_far + D₀` survives the *old*
+counterexample λ=(4,2,1) but not this family.
+
+**In ω-expectation it holds everywhere measured, but the margin is shrinking.**
+Splitting `E_ω[A_σ]/(n/2) = 1 + P − M`:
+
+| n | ratio | P (violating excess) | M (deficit) | P/M |
+|---|---|---|---|---|
+| 20 | 0.734 | 0.00077 | 0.2664 | 0.003 |
+| 100 | 0.912 | 0.00224 | 0.0902 | 0.025 |
+| 400 | 0.962 | 0.00176 | 0.0400 | 0.044 |
+| 800 | 0.975 | 0.00151 | 0.0269 | 0.056 |
+
+`M ~ n^{−0.57}` (→ n^{−1/2}); `P` peaks at n = 100 then decays only ~n^{−0.22}.
+So **P/M is still growing (~n^{0.35})** and a naive extrapolation crosses 1
+around n ~ 10⁶. 18× margin at n = 800. NOT asymptotically safe on this evidence.
+
+**But it is not load-bearing.** The Lean-proved `A_σ ≤ n` already gives a
+positive margin (0.094%); `A_σ → n/2` only widens it to 7.54%. So this leg is
+margin-widening, not a blocker — and the blocker is κ.
+
+### The κ result (the downstream payoff)
+
+`M₁ = Cov(Σ_□h, Σ_□h²)` **exactly**, via the classical `Σh² = Σc² + n²`
+(914 partitions, control fires). `sd(Σc²) ~ n^{3/2}` but `sd(Σh) ~ n¹`, and the
+new Lean theorem `two_mul_sum_hookLen` says why: `2Σh = Σλᵢ² + Σλ'ⱼ²`, a
+conjugation-symmetric combination of two order-`n` statistics that are ~96%
+anti-correlated. `σ_c = 1/√3` **derived** from Kerov (only mode m=3 survives);
+`σ_h → √6/24` measured; `ρ → 1`; product = **√2/24**, and the roadmap's "trends
+slightly above" is finite-n bias in `σ_c`, not evidence against it.
+
+**`κ > 0 ⟺ ρ > 0`** (Lean: `cov_pos_iff_corr_pos`), because σ_h, σ_c are
+standard deviations. So the SIGN k5r5 needs is a correlation sign — strictly
+weaker than pinning κ, and weaker than Sniady's genus expansion. Measured
+ρ = 0.974 → 0.9975 over n = 100..1600.
+
+**14 sorry-free Lean theorems added today**, all on
+`[propext, Classical.choice, Quot.sound]`. Pushed.
