@@ -38,8 +38,8 @@ supp (m x)`. Measured over the complete index set:
 | `n` | indices | `RSK⁻¹(P=s,Q=t) ∈ supp` | `RSK⁻¹(P=t,Q=s) ∈ supp` |
 |---|---|---|---|
 | 3 | 6 | 1 | 3 |
-| 4 | 24 | 3 | 9 |
-| 5 | 120 | 11 | 23 |
+| 4 | 24 | 1 | 9 |
+| 5 | 120 | 1 | 29 |
 
 The smallest witness is hand-checkable and needs no machine. At `n = 3`, `λ = (2,1)`, `s = t = t^λ`:
 then `d(s) = d(t) = 1`, so
@@ -73,6 +73,60 @@ the shape-(2,1) and shape-(1,1,1) supports then double every element. So no perm
 order-maximum, and no `Triangular` structure exists. The peel stalls after **0 of 6** indices at
 `n = 3`, **1 of 24** at `n = 4`, **5 of 120** at `n = 5`.
 
+## 3-bis. 🛑 CORRECTION — the first version of this probe had the wrong handedness
+
+**Recorded because the correction is the useful part.** The first run of the probe computed
+`m_{st} = T_{d(s)⁻¹} · x · T_{d(t)}` with a single `d`-direction — inverting on the **left**
+only. That family **is not a basis**: a rank test at a generic integer `q` puts it at 19/24
+at `n = 4`. So the supports it measured were of the wrong object, and the refutation above
+did not yet stand.
+
+A sweep of all sixteen combinations (reference tableau × `d`-direction × which side is
+inverted) shows exactly **four** are full rank at `n = 4`, and they are precisely the ones
+that invert the two `d`-factors on **opposite** sides. Which side carries the inversion
+depends on the direction of `d` itself, so Murphy's own `T_{d(s)}^* x_λ T_{d(t)}` is this
+same convention read with the other `d`; **what is convention-independent is that the two
+factors are inverted oppositely**. The probe now uses `m_{st} = T_{d(s)} x T_{d(t)⁻¹}` and
+carries the rank sweep as a standing guard (`run_rank_guard`).
+
+**The refutation survives the correction and gets stronger.** The `n = 3` support table in
+§3 — the load-bearing hand-checkable witness — is byte-identical under both conventions;
+they first differ at `n = 4`. The peel now stalls at **0 of 24** and **0 of 120** rather
+than 1 and 5, and the `diag_unit` rate is *lower*, not higher. Only the three numbers
+corrected above were wrong.
+
+## 3-ter. 🛑 A SEPARATE DEFECT, in `murphyM` on `main` — it cannot be Murphy's element
+
+The rank guard also measures an axis that has nothing to do with handedness, and here the
+corpus is wrong. Murphy's `x_λ` is the sum over **one fixed** subgroup — the row stabiliser
+of the reference tableau — for every pair `(s,t)` of that shape. `HeckeMurphyYoung.murphyM`
+sums over `youngSubgroup n h t`, which is `Specht.rowStab t`: the **second tableau's own**
+row stabiliser, a different (conjugate) subgroup for each `t`. Measured at `q = 7`, exact:
+
+| `n` | fixed `x_λ` (Murphy) | `rowStab t` (corpus `murphyM`) |
+|---|---|---|
+| 3 | **6 / 6** | 5 / 6 |
+| 4 | **24 / 24** | 23 / 24 (row-super ref) · 21 / 24 (col-super ref) |
+| 5 | **120 / 120** | 117 / 120 (row-super ref) · 112 / 120 (col-super ref) |
+
+Full rank in every fixed-`x_λ` cell, deficient in every `rowStab t` cell, under **both**
+reference tableaux and every handedness variant tested. So:
+
+* **The reference tableau does not matter.** Column-superstandard (`colSuperstandard`,
+  which the corpus's `dOf` uses) is as good as Murphy's row-superstandard `t^λ`. That axis
+  was the first thing suspected and it is a red herring.
+* **The subgroup does.** A family summing over `rowStab t` can **never** span `H_n(q)`,
+  so it is not the Murphy family, whatever it is called.
+
+**Consequence for the Lean landed in this same PR.** `basisOfSpanning` is stated for an
+**arbitrary** family and is unaffected — that genericity was deliberate and is what saves
+the work. But `murphyBasisOfSpanning` and `murphyFamily_linearIndependent` specialise it to
+`murphyFamily`, which is built on `murphyM`; both remain **true**, and both have a
+hypothesis that is now measured **unsatisfiable**. That is exactly the
+"conditional-proved ≠ premise-established" trap in AGENTS.md, so they are re-documented in
+place rather than left to read as progress. **The fix is at `murphyM`**: sum over the
+reference tableau's row stabiliser, not `t`'s. Tracked in bean `qou-phir`.
+
 ## 4. The route that replaces it
 
 Mathas does not use triangularity at all
@@ -91,7 +145,7 @@ bijection that gave `lead_inj`:
 |---|---|---|
 | `H` free of rank `n!` | `QOU.Hecke.TwBasis.finrank_eq_factorial` | sorry-free |
 | `Σ_λ (f^λ)² = n!` via RSK | `HeckeMurphyYoung.murphyIndex_fintypeCard` | sorry-free (new) |
-| the family `m_{st}` itself | `HeckeMurphyYoung.murphyFamily` | sorry-free (new) |
+| the family `m_{st}` itself | `HeckeMurphyYoung.murphyFamily` | sorry-free, but **wrong family** — see §3-ter |
 | spanning (Mathas Lemma 3.14) | — | **open — the one remaining input** |
 | ⇒ basis | `HeckeMurphyYoung.murphyBasisOfSpanning` | sorry-free (new) |
 
@@ -108,6 +162,17 @@ The probe took minutes and refuted a target that would otherwise have absorbed a
 outcome as `murphy_lead_injectivity_probe.py` earlier in this arc, which refuted
 `lead(λ,s,t) = d(s)⁻¹ w_λ d(t)` at the same cost. Two for two. **Probe the statement before
 formalising it** when the statement is a finite claim about small `n`.
+
+**The sharper lesson is §3-bis and §3-ter, and it is about the probe, not the target.**
+A probe that measures a rich structural property of an object — supports, orders, peelings —
+says nothing at all if the object is the wrong one, and it will not announce that it is
+wrong: it returns a perfectly well-formed table either way. The cheap invariant that
+discriminates here is a **rank test**, seconds of exact arithmetic, and it is what caught
+both a wrong handedness in this probe and a wrong subgroup in `murphyM` on `main` — the
+latter after the Lean built on it had already been written, verified sorry-free, committed,
+and described in a PR body as Murphy's family. Sorry-free and wrong are entirely compatible.
+**Before measuring a structure on a family, measure that the family is the family**; the
+guard is now `run_rank_guard` in the probe.
 
 The second lesson is the corpus-grep one, now at eight instances in this arc: the SYT-type bridge
 `murphyFamily` needed (`QOU.BraidKnot.toBraidKnotSYT`, reconciling the two `StandardYoungTableau`

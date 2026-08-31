@@ -219,12 +219,38 @@ def rsk_inverse_table(n):
 
 # -------------------------------------------------------------------- driver
 
-def murphy_support(lam, s, t):
-    tlam = row_superstandard(lam)
-    ds, dt = d_of(s, tlam), d_of(t, tlam)
-    x_lam = {w: dict(ONE) for w in row_stabiliser(tlam)}
-    elt = elt_left_mul_Tw(x_lam, inverse(ds))
-    elt = elt_right_mul_Tw(elt, dt)
+def col_superstandard(lam):
+    """Label l at the l-th cell in COLUMN-then-row order -- the corpus's reference
+    tableau (`ColSuperstandardTableau.colSuperstandard`), as opposed to Murphy's
+    row-superstandard `t^lambda`.  The rank sweep below shows the choice does not
+    affect whether the family is a basis."""
+    cells = sorted(((r, c) for r, L in enumerate(lam) for c in range(L)),
+                   key=lambda rc: (rc[1], rc[0]))
+    rows = [[0] * L for L in lam]
+    for e, (r, c) in enumerate(cells, start=1):
+        rows[r][c] = e
+    return tuple(tuple(r) for r in rows)
+
+
+def murphy_support(lam, s, t, ref="row", fixed_x=True):
+    """`m_st = T_{d(s)} x T_{d(t)^-1}` -- opposite-side inversion.
+
+    The handedness is NOT cosmetic and was got wrong on the first pass here.
+    `rank_sweep` below measures all sixteen combinations: at n = 4 exactly four are
+    full rank, and they are precisely the ones inverting the two `d`-factors on
+    OPPOSITE sides.  Which side carries the inversion depends on the direction of
+    `d` itself, so Murphy's own `T_{d(s)}^* x_lambda T_{d(t)}` is this same
+    convention read with the other `d`; what is convention-independent is that the
+    two factors are inverted oppositely.
+
+    `fixed_x=False` reproduces the corpus's `murphyM`, which sums over `rowStab t`
+    -- the SECOND TABLEAU's own row stabiliser -- rather than over the fixed
+    reference subgroup.  That is rank-deficient at every n tested."""
+    tref = row_superstandard(lam) if ref == "row" else col_superstandard(lam)
+    ds, dt = d_of(s, tref), d_of(t, tref)
+    x_lam = {w: dict(ONE) for w in row_stabiliser(tref if fixed_x else t)}
+    elt = elt_left_mul_Tw(x_lam, ds)
+    elt = elt_right_mul_Tw(elt, inverse(dt))
     return elt, ds, dt
 
 def has_cycle(edges, nodes):
@@ -373,3 +399,68 @@ if __name__ == "__main__":
         run(n)
         run_peel(n)
         print()
+
+
+# ---------------------------------------------------- is the family a basis at all?
+#
+# This section exists because the first version of this probe used the WRONG handedness
+# and reported supports of a family that is not a basis.  A rank test at a generic
+# integer `q` catches that in seconds and is exact (Fractions of an integer-evaluated
+# Laurent polynomial), so it is kept as a standing guard rather than a one-off check.
+
+from fractions import Fraction
+
+
+def _poly_eval(p, qv):
+    return sum(Fraction(c) * Fraction(qv) ** e for e, c in p.items())
+
+
+def _rank(rows, ncols):
+    rows = [list(r) for r in rows]
+    piv = 0
+    for col in range(ncols):
+        sel = next((i for i in range(piv, len(rows)) if rows[i][col] != 0), None)
+        if sel is None:
+            continue
+        rows[piv], rows[sel] = rows[sel], rows[piv]
+        pv = rows[piv][col]
+        rows[piv] = [x / pv for x in rows[piv]]
+        for i in range(len(rows)):
+            if i != piv and rows[i][col] != 0:
+                f = rows[i][col]
+                rows[i] = [a - f * b for a, b in zip(rows[i], rows[piv])]
+        piv += 1
+    return piv
+
+
+def family_rank(n, ref="row", fixed_x=True, qv=7):
+    perms = sorted(permutations(range(n)))
+    idx = {p: i for i, p in enumerate(perms)}
+    rows = []
+    for lam in partitions(n):
+        for s in standard_tableaux(lam):
+            for t in standard_tableaux(lam):
+                elt, _ds, _dt = murphy_support(lam, s, t, ref=ref, fixed_x=fixed_x)
+                row = [Fraction(0)] * len(perms)
+                for w, c in elt.items():
+                    row[idx[w]] = _poly_eval(c, qv)
+                rows.append(row)
+    return _rank(rows, len(perms)), len(perms)
+
+
+def run_rank_guard(n):
+    """Two axes, measured rather than assumed:
+
+    * the REFERENCE TABLEAU (Murphy's row-superstandard `t^lambda` vs the corpus's
+      column-superstandard) turns out NOT to matter -- both are full rank;
+    * the SUBGROUP does.  Summing over a fixed reference row-stabiliser is full rank;
+      summing over `rowStab t`, as the corpus's `murphyM` does, is deficient at every
+      n tested, so that family can never span and is not Murphy's element.
+    """
+    print(f"n = {n}  m_st = T_(d(s)) x T_(d(t)^-1)")
+    for ref in ("row", "col"):
+        for fixed_x, tag in ((True, "fixed x_lambda = rowStab(t_ref)   [Murphy]"),
+                             (False, "x = rowStab(t)                    [corpus murphyM]")):
+            r, nc = family_rank(n, ref=ref, fixed_x=fixed_x)
+            print(f"    ref={ref:3s} rank {r:4d}/{nc:4d}  "
+                  f"{'FULL     ' if r == nc else 'DEFICIENT'}  {tag}")
