@@ -1,23 +1,23 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:44:59.855604+00:00",
-  "commitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
+  "computedAt": "2026-08-31T07:38:26.192637+00:00",
+  "commitSha": "e8f5a64a81caf5c4316336a0c74b75a380c32996",
   "assertions": [
     {
       "name": "z_markov_below_one_linking_weight_above_one",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5"
     }
   ],
   "allPassed": true,
-  "durationMs": 1703,
+  "durationMs": 1556,
   "computation": "markov-stab-trace-axis-probe",
   "scriptFile": "markov_stab_trace_axis_probe.py",
-  "scriptHash": "ed5e888c9342",
-  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "scriptHash": "2ecb3ace0817",
+  "scriptCommitSha": "dfd7f798d7eae98f20711cd15716fb1efcc9abd8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -47,7 +47,7 @@
     "z_markov_inv_at_q0": "1.632151991505175166202175663576200362778731435939969166677785936070842",
     "linking_weight_at_q0": "2.5327796563993914920515145017580412323261604705351",
     "direction_obstruction": true,
-    "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
+    "direction_obstruction_note": "z = q³/(q²+1) ≈ 0.6127 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
     "M1_identity_trace": {
       "verdict": "REFUTED",
       "tr_M_identity_H4_at_q0": "0.999999999999999999999999999999999999999999999999998",
