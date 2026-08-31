@@ -15,7 +15,7 @@ $$
   \end{pmatrix}.
 $$
 
-The tensor product decomposes into irreducible modules $V \otimes V =  \mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$. The symmetric (spin-1) part has dimension 3, spanned by $e_1 \otimes e_1$, $q^{1/2} e_1 \otimes e_2 + q^{-1/2} e_2 \otimes e_1$, and $e_2 \otimes e_2$. The antisymmetric (spin-0) part has dimension 1, spanned by $q^{1/2} e_1 \otimes e_2 - q^{-1/2} e_2 \otimes e_1$.
+The tensor product decomposes into irreducible modules $V \otimes V =  \mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$. The symmetric (spin-1) part has dimension 3, spanned by $e_1 \otimes e_1$, $q^{-1/2} e_1 \otimes e_2 + q^{1/2} e_2 \otimes e_1$, and $e_2 \otimes e_2$. The antisymmetric (spin-0) part has dimension 1, spanned by $q^{1/2} e_1 \otimes e_2 - q^{-1/2} e_2 \otimes e_1$.
 
 On each summand, the braiding $\sigma$ acts as a scalar. It acts as $q$ on the symmetric part (attractive/binding) and as $-q^{-1}$ on the antisymmetric part (repulsive). These are exactly the eigenvalues of the Iwahori--Hecke algebra generator $\sigma$, satisfying the Hecke relation $(\sigma - q)(\sigma + q^{-1}) = 0$.
 
