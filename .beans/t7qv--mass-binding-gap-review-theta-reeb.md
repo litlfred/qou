@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T17:16:52Z
+updated_at: 2026-08-31T17:26:45Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -255,3 +255,55 @@ the link assignment (8₁₁ vs L6a4) from the braid word.
 **Consequence: Gap #3 is WIDER than recorded, not narrower.** The honest
 parameter-free figure is **2.899 %**, and 2.52 % should not sit beside it as a
 structural result.
+
+
+---
+
+### 2026-08-31 — Gap #4: gate checked, and it is CLOSED. No migration needed.
+
+This bean says of Gap #4: *"gated on R(K) derivation; **check gate first**"*. Done,
+and the answer is that the item is **stale, not open**.
+
+**1. The referenced bean is completed and its target superseded — twice.**
+`beans show 0voz` → status **`completed`**:
+
+> **Resolved 2026-07-05 (swarm 1).** Migration already substantially complete;
+> literal 'borromean→per_block' target **superseded by the 2026-06-24 owner
+> ruling** (per_block is binding-ratios-only; absolute mass routes via
+> `canonical_mass` facade). Inventory audit + docstring redirect merged in PR #3340.
+
+Superseded again on **2026-08-11** (`qou-exam`): absolute mass excised entirely.
+
+**2. The migration happened — to a different destination than Gap #4 names.**
+Measured now against the 2026-06-02 audit baseline:
+
+| | audit (2026-06-02) | now |
+|---|---|---|
+| uniform-form scripts | 87 | **66** |
+| `vol_density_per_block` | 2 | **3** |
+| atom-specific among uniform | 65 | **35** |
+| via `canonical_mass` | — | **51** |
+
+`per_block` is essentially flat (2→3) — **correctly**, since the ruling makes it
+binding-ratios-only. The real migration went to the `canonical_mass` facade.
+
+**3. Enforcement exists in three layers, all green.**
+
+| layer | check | result |
+|---|---|---|
+| prose | `canonical_mass_status_guard.py` | OK |
+| runtime | `DeprecationWarning`, `mass_vol_density.py:217` | present |
+| AST | `noncanonical_reentry_audit.py --strict` | **2730 scripts, 0 parse errors, 0 violations** |
+
+So the 35 remaining atom-specific uniform-form scripts are **not violations** —
+the banned-symbol registry finds nothing re-entered.
+
+**Verdict: Gap #4 is DONE.** Mark it closed rather than migrating anything.
+
+**Two process notes, because both are the failure mode this repo guards against.**
+I first ran `scripts/guard_check.py` assuming it was the gate — it is an
+unrelated markdown-diff check for `content/` edits, and its silent exit 0 means
+"no modified .md files". I nearly reported it as a pass. I then inferred "no
+mechanical enforcement" from the prose guard's `content/ + docs/` scope — also
+wrong; that guard's own docstring names the compute-layer and AST layers.
+Both corrected by reading rather than by the exit code.
