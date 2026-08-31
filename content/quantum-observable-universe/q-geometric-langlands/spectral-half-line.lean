@@ -438,4 +438,68 @@ theorem reeb_spectrum_sum_re_witness :
   haveI := hR
   exact reeb_spectrum_sum_re_of_isWeilZeta weilZetaExample hq R
 
+/-- **The Weil pairing is an involution on the eigenvalues.** Applying
+    `α ↦ q/α` twice returns `αᵢ`.
+
+    Stated on the eigenvalues rather than on the permutation, because that is
+    the form that is unconditionally true: `σ² = id` as a permutation needs the
+    `αᵢ` to be *distinct* (a repeated eigenvalue lets `σ` permute its indices
+    without moving any value), whereas `α_{σ²i} = αᵢ` holds always. The weaker
+    statement is the honest one and is all the fixed-point result below uses. -/
+theorem eigenvalue_functional_equation_involutive
+    (Z : LocalQZetaFunction)
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) :
+    Z.eigenvalues (σ (σ i)) = Z.eigenvalues i := by
+  have hq : (Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt Z.q_pos)
+  have hi : Z.eigenvalues i ≠ 0 := Z.eigenvalues_ne_zero i
+  rw [hσ (σ i), hσ i]
+  field_simp
+
+/-- **A fixed point of the pairing lies ON the critical line — from the
+    functional equation alone.**
+
+    If the Weil involution fixes index `i`, then `Re ρᵢ = 1/2` exactly, with **no
+    Castelnuovo–Severi input**. `reeb_spectrum_on_critical_line` gets the same
+    conclusion for *every* `i`, but pays the deep Weil bound for it; this gets it
+    for the fixed indices for free.
+
+    Why that is worth stating separately. `critical_line_iff_fixed` already
+    observes that `Re ρ = 1/2` is *equivalent* to being fixed by `ρ ↦ 1 − ρ`, but
+    that is an identity about real numbers — it holds for any `ρ` whatsoever and
+    says nothing about this spectrum. Here the fixed-ness is supplied by the
+    Weil pairing itself, so the critical line stops being a value the spectrum is
+    observed to have and becomes **the fixed locus of a symmetry the functional
+    equation forces on it**.
+
+    Concretely a fixed index means `αᵢ = q/αᵢ`, i.e. `αᵢ² = q` — the
+    supersingular shape, `αᵢ = ±√q`. `weilZetaExample` is exactly this case at
+    every index, which is why its permutation is `Equiv.refl`. -/
+theorem reeb_spectrum_fixed_point_on_critical_line
+    (Z : LocalQZetaFunction) (hq : Z.q > 1)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [HasReebSpectralCoords Z R]
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) (hfix : σ i = i) :
+    (R.spec i).re = 1 / 2 := by
+  have h := reeb_spectrum_reflected_by_functional_equation Z hq R σ hσ i
+  rw [hfix] at h
+  linarith
+
+/-- The eigenvalue form of the same fact: a fixed index has `αᵢ² = q`. Needs no
+    Reeb spectrum and no identification — it is a statement about `Z` alone. -/
+theorem eigenvalue_sq_eq_q_of_fixed
+    (Z : LocalQZetaFunction)
+    (σ : Equiv.Perm (Fin 8))
+    (hσ : ∀ i, Z.eigenvalues (σ i) = (Z.q : ℂ) / Z.eigenvalues i)
+    (i : Fin 8) (hfix : σ i = i) :
+    Z.eigenvalues i ^ 2 = (Z.q : ℂ) := by
+  have hi : Z.eigenvalues i ≠ 0 := Z.eigenvalues_ne_zero i
+  have h := hσ i
+  rw [hfix] at h
+  field_simp at h
+  linear_combination h
+
 end QOU.AlgebraicSubstrate
