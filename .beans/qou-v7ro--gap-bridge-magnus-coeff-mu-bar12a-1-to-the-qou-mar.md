@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-30T14:55:58Z
+updated_at: 2026-08-31T02:46:44Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -156,3 +156,21 @@ exit 0, axioms {propext,Classical.choice,Quot.sound}):
 This is brick 1 of the BrunnianDeficitRecursion instance: the 2-strand/4-dim atomic relations the
 ∀A induction composes. STILL OPEN for the instance: the ∀n tensor-power quantum trace, ρ(w_n), and
 the composing induction. No instance fabricated.
+
+## 2026-08-31 — Lean formalization of the instance: bricks landed
+
+The ∀A recursion is PROVED mathematically (#6217) and being formalized toward the
+BrunnianDeficitRecursion instance (no instance fabricated). Progress:
+
+- #6228 DeficitRecursionReduction (merged): field-algebra core — (I)+Q-recursion ⇒ D-recursion,
+  sorry-free, generic field.
+- #6268 TemperleyLiebSpinHalf (merged): BRICK 1 — concrete spin-½ TL relations (e=q−R, e²=[2]e,
+  ptr_{μ⁻¹}(e)=1 the cap-cup crux, ptr_μ(e)=diag(q⁻²,q²), band σ²=q²−he + inverse). sorry-free.
+- BRICK 2 (in progress, this branch): the ∀n weighted quantum trace — Kronecker multiplicativity
+  qtr_{D₁⊗D₂}(X₁⊗X₂)=qtr(X₁)·qtr(X₂) and the loop tower qtr(1)=[2]^n. These are the two
+  dimension-general facts identity (I) rests on (the [2]^n / [2]^{n-1} factors + the We_AW⁻¹
+  juxtaposition term).
+
+REMAINING for the instance (brick 3+): the Brunnian word ρ(w_n) as a concrete operator ∀n, the
+e_{n-1} embedding qtr(e_{n-1})=[2]^{n-1}, and the composing induction. Mathlib has no knot theory,
+so ρ(w_n) must be built from the R-matrix on tensor powers. Large; multi-session.
