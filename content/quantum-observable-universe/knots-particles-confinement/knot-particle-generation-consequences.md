@@ -1,6 +1,6 @@
 The fermion--boson decomposition extends the generator set to the even-$n$ torus links, which represent bosons. These include the $T(2,2)$ gluon, the $T(2,4)$ $W$ boson, the $T(2,6)$ $Z$ boson, and the $T(2,8)$ Higgs boson. These are two-component links with $\gcd(2,n) = 2$, carrying integer spin.
 
-All torus knots have zero hyperbolic volume. They are satellite knots, not hyperbolic. Consequently, their bare mass under the topological mass formula vanishes:
+All torus knots have zero hyperbolic volume. Thurston's trichotomy sorts every knot into torus, satellite, or hyperbolic; torus knots are their own class, and only the hyperbolic class carries a volume. Consequently, their bare mass under the topological mass formula vanishes:
 
 $$
   \mathfrak{m}_{\mathrm{bare}}(T_{m,n}) = 
