@@ -88,6 +88,28 @@ wording:
 - conclusion-carrier → *"Not blocked: the class carries the conclusion. Belongs to the `qou-z9ws` drain."*
 - genuinely upstream → keep, and name the specific library.
 
-Not applied here: rewriting ten beans is a separate change, and three of the classifications
-above (`qou-apcl`, and the two untouched `qou-phl4` entries) are marked as not re-checked in
-detail rather than asserted.
+Applied: six beans re-triaged, four marked confirmed, originals kept.
+
+## Addendum — the three "not re-checked" items, now checked
+
+**`qou-apcl` — verdict CONFIRMED.** Mathlib has no SDP/conic-duality API and that is the
+required input. Separately notable: this file *already carried* the conclusion-carrier defect
+and a prior agent already fixed it — its in-body comment records that the proof "previously
+read `exact HasConfinementSDPData.strong_duality`, projecting a `strong_duality` field the DATA
+class carried … **Both were false**". The field is deleted; the theorem now takes Slater as a
+real argument plus a separate, legitimate `[HasConfinementSDPStrongDuality n h]`.
+
+**The two `qou-phl4` entries — both accounted for, and the tiers are the real finding.**
+`skew_le_straight` is **proved unconditionally** (`YoungTableauStandard.lean:587`, four lines).
+`branching_two_one` is open with a checked route (`qou-b21r`).
+
+**This sharpens the whole audit.** The cataloguer assigned tiers **per entry**, and only tier-B
+("infra-blocked") entries got the "Track upstream" verdict. `skew_le_straight` and
+`branching_two_one` were tier **P** ("repo-infra-dependent") — and that was *correct*; one of
+them has since been proved. So the defect is not that fourteen items were lumped together. It
+is that **some genuinely in-repo items were mis-tiered into B**, and B carries advice that is
+actively wrong for in-repo work.
+
+The contrast sits inside one file: `skew_le_straight` (P) got proved; `sum_dimSYT_eq_involution`
+(B) sat for a month and needed nothing upstream at all. The tier decided the advice, and the
+advice decided whether anyone tried. `qou-fj8u` (hook-length) is the same mis-tiering.
