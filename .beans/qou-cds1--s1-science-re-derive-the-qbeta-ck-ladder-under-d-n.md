@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T20:02:25Z
+updated_at: 2026-08-31T20:10:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -5029,3 +5029,53 @@ logically open — but the one place the corpus had named as a source of
 imaginarity is excluded. **This is an owner call now, not a measurement
 question**: Steps 15–19 have priced everything that can be priced without
 choosing.
+
+
+## Step 20 (2026-08-31) — Bring's elliptic curve: right KIND of source, no phase
+
+Owner: *"Bring's surface has an elliptic curve naturally associated"*. It does.
+Probe `qbeta-bring-elliptic-generator` (5/5), Lean
+`QOU/QBeta/BringEllipticCurveJInvariant.lean` (3 theorems, sorry-free).
+
+**Guard against a pun, stated first:** "elliptic generator" (elliptic element of
+SL₂) and "elliptic curve" are different senses. The bridge is **KZB** — the
+elliptic analogue of KZ — which lives on an elliptic curve and whose monodromy
+genuinely carries `exp(2πiτ)` factors. That is where imaginary spectrum can enter
+a Drinfeld–Kohno construction, which Step 18 showed is missing.
+
+**Why it is the right kind.** A flat **unitary** connection on a torus has
+monodromy in `U(1)×U(1)` — elliptic by construction. So this is the **first
+candidate source of imaginarity to pass tier-0 D0 at all**, where `Im(q)` failed
+(Step 19). And it is not a foreign import: the corpus already carries a *"Bring
+color-tube (n=10 substrate)"* route in the **mass** sector (m_p ≈ 938 MeV,
+−670 ppm).
+
+**The curve** (library: Riera–Rodríguez, *Period matrix of Bring's curve*, Pacific
+J. Math. 154 (1992), held in full). Serre: Jacobian isogenous to **E⁴**,
+`E : y² = x³ − 675x − 79650`, **`j = −25/2`**, period matrix diagonalising to
+`(5τ, 5τ, 5τ, τ)`. `j` re-derived from the equation, not transcribed.
+
+**And it supplies no phase:**
+
+1. **`j = −25/2` is not a CM invariant** — every CM `j` is a rational *integer*;
+   `−25/2` is not even an algebraic integer. So **E has no complex
+   multiplication**, `τ` has no closed form, and the curve hands the ladder no
+   *derived* number — which was the whole appeal of "naturally associated".
+2. **`Re τ = 1/2` exactly** (forced by `j` real and negative), so the natural
+   angle `2π·Re τ = π` is a **sign**, not a tunable phase.
+3. **Nothing lands.** Ratios to `θ_required = 0.0565947`: **55.5, 277.6, 27.8,
+   0.0501** — closest a factor of **19.94**. The four comparisons were declared
+   *before* computing and are reported in full including the misses; no search
+   over combinations was run.
+
+**Verdict:** structurally the best candidate the arc has had; quantitatively
+empty. The **direction is not refuted** — a KZB construction on E is untouched
+and is where an elliptic generator could still come from — but this curve at face
+value gives nothing.
+
+**Provenance caveat:** the library copy is OCR of a scanned page, garbled in
+places. Only legible, independently checkable parts are used. The paper's own
+`τ₀` is pinned by **two** j-values, the second illegible in this scan, so `τ₀` is
+**not** reconstructed — only the SL(2,ℤ) representative with `j = −25/2`.
+Recovering `j(5τ₀)` from a clean copy is the obvious next step if anyone wants to
+push this.
