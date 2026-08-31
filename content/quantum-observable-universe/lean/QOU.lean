@@ -770,6 +770,7 @@ import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.HolonomySpectrumSignObstruction
 import QOU.QBeta.ImQCannotSupplyEllipticGenerator
+import QOU.QBeta.BringEllipticCurveJInvariant
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
