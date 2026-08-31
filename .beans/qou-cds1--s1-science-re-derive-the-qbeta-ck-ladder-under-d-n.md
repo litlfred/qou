@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-30T19:38:03Z
+updated_at: 2026-08-31T03:15:57Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -4370,3 +4370,79 @@ and `WitnessBuilder.build()` stamps `q0Anchor` only on a positive
 declaration. `q0-anchor-consistency-audit` `Q0_ANCHOR_MISSING`
 1634 → 1639; the +5 was mine. Registered and re-run (`7820b814f6`) —
 fixed at the producer, no witness hand-edited, no computed value moved.
+
+
+---
+
+## 2026-08-31 — the Borromean trace with `z` SYMBOLIC, and the anomaly is NOT the convention
+
+Owner-requested. `computations/qbeta/qbeta_z_symbolic_borromean_crosscheck.py`,
+PR #6328.
+
+### Why it was needed
+
+`m_p_substrate_identity_50dps.trM_borromean(q)` is a closed form in `h` alone
+with **no `z` parameter** — convention D was substituted before it was written
+down. So `y_(1³) = 0` is baked into `F_Bor → canonical_mass`, and any attempt to
+*measure* the cap through that route measures its own assumption. Provably
+circular, not merely suspected.
+
+### The control, which is why the rest is trustworthy
+
+    tr_M(β_Bor)(z,q) = (−q¹⁰z + q⁹z² − q⁹ + 5q⁸z − 4q⁷z² + 4q⁷ − 10q⁶z + 6q⁵z²
+                        − 5q⁵ + 10q⁴z − 4q³z² + 4q³ − 5q²z + qz² − q + z) / q⁵
+
+At `z = z_D` this reproduces `BorromeanMarkovTrace.lean`'s
+`(4 + h² − 3h⁴ − h⁶)/(h² + 4)` with **symbolic difference exactly 0**.
+`y_(1³)(z) = 0` has exactly the two known roots `{q, z_D}`.
+
+### 🛑 A CORRECTION TO PR #6144's FRAMING — mine
+
+#6144 solved a 3×3 system treating `(y₃, y₂₁, y₁₁₁)` as three unknowns fixed by
+three independent functionals, and concluded the cap is **"jointly
+determined"**. Correct as linear algebra, **wrong about the object**: for a
+normalised Markov trace the 3×3 Markov system already consumes all freedom, so
+the weights are a **one-parameter family in `z`** and `y_(1³)` is a function of
+`z` alone.
+
+Mass and decay do **not** measure three independent weights — they each
+determine **the same single parameter**. The system is **over-determined**, not
+jointly determined. Do not repeat the "jointly determined" phrasing.
+
+### The measurement — muon pin, the only convention-free one
+
+The proton pin is fixed *through* `F_Bor` and so presupposes what is under test.
+The muon pin is `m_μ/m_e = Vol(4₁)/ℏ_q²` — pure geometry, no trace.
+
+| determination of `z` | value | vs cap |
+|---|---|---|
+| the **cap** (`y_(1³) = 0`, derived) | 0.612688050638272415 | — |
+| **mass** (measured `m_p`, non-circular) | 0.612812650836121753 | **0.0203 %** |
+| **decay** (measured `Q_β`) | 0.998500302563013 | **62.97 %** |
+
+**The anomaly is localised to the decay channel, not the convention.** An
+independent, non-circular measurement puts `z` essentially where the derived cap
+puts it. That is a materially different problem from the one this arc has been
+treating.
+
+### Quoted with its leverage — the agreement is weaker than it looks
+
+`d ln(tr_M)/d ln z = 0.00119` against decay's `1.206`: the mass channel is
+**1012× less sensitive** to `z`. A tr_M residual of 2.42e-7 opens out to 2.03e-4
+in `z`. This does **not** claim mass confirms the cap to 1e-7.
+
+### The residual is not absorbed
+
+2.42e-7 relative in tr_M is **~21× the μ–p substrate tension** (11.5 ppb), so it
+is neither obviously that tension nor obviously experimental. Open.
+
+### Standing owner rulings from this session
+
+- The **cross-check was green-lit** and has now run.
+- A **categorically constrained *and derived*** search is permitted; a fit is
+  not. This licenses `[3]_q/[2]_q` (2.45 % from the needed character ratio,
+  isolated by 2.1× inside the constrained class) as something to derive
+  *toward*, never to fit to.
+- Open with the owner: whether the **counit reading** now becomes the leading
+  hypothesis for the decay channel, given `z_required` sits 0.15 % from `z = 1`
+  and mass independently confirms `z_D`.
