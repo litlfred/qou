@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T17:26:45Z
+updated_at: 2026-08-31T17:39:10Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -307,3 +307,57 @@ unrelated markdown-diff check for `content/` edits, and its silent exit 0 means
 mechanical enforcement" from the prose guard's `content/ + docs/` scope — also
 wrong; that guard's own docstring names the compute-layer and AST layers.
 Both corrected by reading rather than by the exit code.
+
+
+---
+
+### 2026-08-31 — `w_n(K)`: Part 5 and Part 13 are CONSISTENT; leverage relocated
+
+**The tension this bean flags** (frontier, "NOTE for future me"): the `C(A,n)`
+body-order weighting — ⁴He as `6·a_D^(2) + 4·a_D^(3) + 1·a_D^(4) ≈ 13.88×` vs
+`12.72×` exp — "is exactly Part-13's A≤4 simplex bond-count **AND** the
+Part-5-refuted full tower".
+
+**Resolved: they are consistent. The tower is domain-limited.**
+
+| A | model | exp | error | |
+|---|---|---|---|---|
+| 2 | 1.000 | 1.000 | 0% | anchor |
+| 3 | 4.340 | 3.813 | **+13.8%** | simplex valid |
+| 4 | 13.89 | 12.720 | **+9.2%** | simplex valid |
+| 6 | 125.6 | 14.382 | **+773%** | NOT a simplex |
+
+The break is exactly at the boundary of
+`MaxContactSimplex.not_five_equidistant`, and **Part 5's counterexamples are
+A = 6, 7, 9, 12 — every one outside the simplex domain.** So `C(A,n)` *is* the
+max-contact bond count where Part 13 claims it, and *is not* the packing's
+clique count where Part 5 refutes it. (Control: reproduces this bean's own
+quoted 13.88×/12.72× to three figures.)
+
+**🛑 My hypothesis, half falsified.** Part 5's redirect names a "few-body
+truncation (fixed small n_max, ~2–3)" as a *choice*; `not_five_equidistant`
+**derives** one (cliques ≤ 4). I expected that to rescue A ≥ 5. **It does not** —
+truncation takes A=6 from +773% only to **+454%**, because `C(6,4) = 15`
+mutually-tangent 4-sets is itself geometrically impossible. Necessary, not
+sufficient.
+
+**What carries the scaling.** Holding clique counts linear in A at densities
+read off the A=4 simplex (`κ_n = C(4,n)/4 = 1.5, 1.0, 0.25` — no free
+parameter, nothing fitted to A=6) drops A=6 to **+45%**:
+
+| constraint | effect | factor |
+|---|---|---|
+| body-order cap `n_max ≤ 4` | 773% → 454% | **1.7×** |
+| clique-count linearity | 454% → 45% | **10.1×** |
+
+Control: at A=4 all three coincide (+9.2%), as they must. Diagnostic, **not a
+model** — the 45% is not offered as a prediction.
+
+**Consequence: two geometric inputs needed, one in hand.**
+(i) `n_max ≤ 4` — **PROVED**, worth 1.7×.
+(ii) clique count `O(A)` — **NOT proved**, worth 10×, and it is exactly the
+bounded-degree hypothesis `CoordinationSaturation.bounded_degree_saturates`
+already assumes, i.e. the 3D kissing number.
+
+**The remaining leverage is the kissing-number bound, not the truncation Part
+5's redirect names.** Closure stays OPEN.
