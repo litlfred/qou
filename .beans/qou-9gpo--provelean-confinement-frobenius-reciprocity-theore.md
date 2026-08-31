@@ -10,7 +10,7 @@ tags:
     - infra-blocked
     - cite-bertsimas1997
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-08-01T23:31:07Z
+updated_at: 2026-08-31T02:53:38Z
 parent: qou-k1mq
 ---
 
@@ -24,3 +24,22 @@ parent: qou-k1mq
   - [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
 - **Tractability:** physExp = Σ shadow-price·Ginv·pairing + nonempty active set; LP duality (active set = positive duals) Mathlib lacks.
 - **Next step:** Infra-blocked: needs Mathlib theory that does not exist. Track upstream; do not launder via axiom/class.
+
+
+## RE-TRIAGED 2026-08-31 — NOT INFRA-BLOCKED — the class carries the conclusion
+
+The `Next step` line above ("Infra-blocked: needs Mathlib theory that does not exist. Track
+upstream") is one verdict that was stamped on fourteen beans in six seconds, and is wrong here.
+Full audit: `docs/audits/2026-08-31-individuating-the-fourteen-infra-blocked-verdicts.md`.
+
+`confinement_frobenius_reciprocity`'s proof is
+`<ctx.reciprocity, ctx.primal_nontrivial, ctx.y_0_star_pos, ctx.A_star_nonempty, ...>` --
+six conjuncts, six class fields, the first of which is literally named `reciprocity`. That is
+AGENTS.md section-3b-cond rule 5's conclusion-carrier, not a missing LP-duality library.
+
+Belongs to the qou-z9ws self-assuming drain. Note it is MISSED by
+scripts/lean-self-assuming-audit.py: that tool needs the whole proof term to be a single
+identifier, so a conjunctive `<...>` of projections never matches.
+
+The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
+only the Next-step verdict is being corrected.

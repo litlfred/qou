@@ -10,7 +10,7 @@ tags:
     - infra-blocked
     - cite-bertsimas1997
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-08-22T06:20:00Z
+updated_at: 2026-08-31T02:53:38Z
 parent: qou-k1mq
 ---
 
@@ -106,3 +106,19 @@ this pin, which computes to `0.499320334034` — the
 D (`z_D = q³/(q²+1) = 0.61269`). So the witness needs a convention pass too, not
 only a dual-fields pass.
 
+
+
+## RE-TRIAGED 2026-08-31 — NOT INFRA-BLOCKED — the class carries the conclusion
+
+The `Next step` line above ("Infra-blocked: needs Mathlib theory that does not exist. Track
+upstream") is one verdict that was stamped on fourteen beans in six seconds, and is wrong here.
+Full audit: `docs/audits/2026-08-31-individuating-the-fourteen-infra-blocked-verdicts.md`.
+
+`lp_dual_stability`'s proof is
+`<ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality>` -- four
+conjuncts, four class fields. Section-3b-cond rule 5's conclusion-carrier, not a missing
+LP-duality library. Belongs to the qou-z9ws drain, and is missed by the term-mode detector for
+the same conjunctive reason as qou-9gpo.
+
+The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
+only the Next-step verdict is being corrected.

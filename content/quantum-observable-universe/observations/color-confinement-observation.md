@@ -31,7 +31,7 @@ $$
 This decays exponentially in the number of crossings. The proton consists of three trefoils linked by $T_{2,9}$, forming a Borromean structure. It requires $9$ binding crossings from the force carrier and $9$ matter crossings from the three trefoils, giving
 
 $$
-  P_{\mathrm{isolation}} \sim q^{-18} \approx 0.13
+  P_{\mathrm{isolation}} \sim q^{-18} \approx 0.153
 $$
 
 at the bare level. Confinement is probabilistically suppressed rather than topologically absolute, as the knots embed freely. The fibre functor assigns exponentially small weight to single-color states.

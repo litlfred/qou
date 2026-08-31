@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T11:29:23Z
-updated_at: 2026-08-22T21:43:41Z
+updated_at: 2026-08-31T03:31:19Z
 ---
 
 # RECONCILED AGAINST MAIN, 2026-08-19
@@ -4298,3 +4298,170 @@ The root cause — `def:braid-twist-flip`'s V4 definition + its proved
 (real formalization work; a proved theorem becomes false). Until qou-htv4 lands,
 `def:braid-twist-flip` still says V4 while its blocks say S3: a KNOWN, filed
 transient inconsistency.
+
+
+---
+
+## 2026-08-31 — TRANCHE 1 LANDED (PR #6329): L-V4 – L-V10 fixed, and this bean's headline framing is wrong
+
+First items moved off "LIVE" since the ledger was opened. Thirteen content blocks, every
+value re-derived at `mp.dps = 40` before editing. **All the recorded figures reproduced** —
+the ledger's arithmetic is sound. Two things it got wrong are about *framing* and *extent*.
+
+### 1. The title's lead — "q₀ muon/proton pin straddle" — describes 1 of these 7 findings
+
+Measured against four candidate pins (`1.1097`, `1.10998`, proton `1.1099785827513808`,
+CODATA-2022 muon `1.109978595642739`):
+
+| cause | findings |
+|---|---|
+| stale-q₀ artifact | **L-V9 only** (`9.1158` is the 1.1097 value) |
+| premature rounding | L-V6 |
+| unexplained | L-V8's `0.05049` |
+| pin-independent error | L-V4, L-V5, L-V7, L-V10 |
+
+So a reader triaging this bean by its title will look for pin drift and find, in this cluster,
+one instance. Worth restating when the title is next touched.
+
+### 2. Three findings understate their defect
+
+- **L-V4 is not a labelling error.** The block concludes *"Arms equal legs, yielding
+  `Σ c(x) = 0`"* — and `(5,4,4,4,3)` has `Σ c(x) = **−5**`. The conclusion was false of the
+  exhibited partition. Replaced with `(5,5,4,4,2)` (self-conjugate, `Σ c(x) = 0` verified,
+  hooks `9,7,3,1`, same 5 rows / max part 5), diagram redrawn.
+- **L-V8's two tables carry two MORE wrong rows**, unflagged: `[2]_q = 2.01099` (true
+  `2.01090`, a last-two-digit transposition) and `𝔈_× = 0.10450` (true `0.10453`).
+- **L-V6's provenance is identifiable and is not a pin.** `borromean-hopf-energy-crossover`
+  shows its working: it rounds `ℏ_q` to `0.0989` then **squares it**, `0.009781` instead of
+  `0.0098172`.
+
+### 3. `0.05049` is UNEXPLAINED — recorded rather than guessed
+
+Not a stale-pin value at any of the four; and none of `(√q−1/√q)/2`, `(q−1)/2`, `ln q/2`,
+`ℏ_q/2`, `√q−1`, `1−q^{-1/2}` lands on it. The nearest, `1−q^{-1/2} = 0.050833`, is 0.7 %
+off — not convincing. If a later agent identifies it, that may point at a whole family.
+
+### Sidecar note, correcting an assumption I nearly made
+
+I expected these to be the `qou-zjfs` 86 %-false-positive class and checked instead: **12 of
+the 13 were fully fresh on main** (top-level, per-criterion and content hashes all agreeing).
+So the staleness is caused by this branch and was mine to fix, not a pre-existing tooling gap
+to point at. Refreshed via the per-directory sweep (258 + 177 + 60 + 15 blocks) with 127
+collateral sidecars reverted. `double-magic-Ca40-diagram` was the single one already stale.
+
+### Remaining
+
+**183 findings.** L-V1/L-V2/L-V3 (trefoil matrices, braid-word tables) are the natural next
+tranche but need representation-theoretic re-derivation, not arithmetic — a different kind of
+work from this one.
+## 2026-08-31 — MEASURED: this ledger is ~33 % STALE. Re-check before draining.
+
+I scoped a second tranche (L-V1 trefoil matrices, L-V2 braid words) from the "LIVE —
+re-verified" list, then checked each against `main` before editing. **Both were already
+fixed.** That prompted a sample.
+
+### The sample: 21 findings checked against `main` this session
+
+| verdict | n | findings |
+|---|---|---|
+| **already FIXED** (listed LIVE) | **7** | L-V1, L-V2, L-V17, L-V20, L-V21, L-V22, L-V23 |
+| still LIVE (confirmed) | 14 | L-V4–L-V10 (fixed in PR #6329), L-V11, L-V12, L-V13, L-V14, L-V16, L-V18, L-V24 |
+
+**≈ 33 % of the sample was already repaired.** The "LIVE — re-verified" tag is dated
+2026-08-19; `main` has advanced roughly a thousand commits since. So the headline **190 live**
+is probably nearer **~127**, and an agent draining this ledger top-to-bottom will spend about
+a third of its effort re-checking work already done — or, worse, "fix" something already
+correct.
+
+The repairs are real and good, not cosmetic. `trefoil-operator-algebra` (L-V1) now uses
+`s₁ = β`, `s₂ = α²β` — both trace 0, conjugate via α, and I verified at 25 dps that the braid
+relation `s₁s₂s₁ = s₂s₁s₂` **holds**, that the displayed common value is right, that
+`s₂ = α s₁ α⁻¹`, `s₁² = −I`, and `αβα = β`. That is exactly the structural repair this ledger
+prescribed. All three braid-word tables (L-V2) now carry the corrected words, and I re-derived
+all twelve closure component counts: every one matches its table's own Components column.
+
+### Two method warnings for whoever drains this
+
+1. **Grep-absence is NOT evidence of a fix.** My first pass marked L-V24 "gone → FIXED" — the
+   text is verbatim at `hydrogen-partition-function.md:30`; only LaTeX spacing (`$j = 0$`)
+   defeated the search string. Read the site.
+2. **This ledger's file paths omit chapter directories** (`vertex-algebra-jet-relations.md` is
+   in `climax-volume-mass/`, `vacuum-state-su2.md` in `lifting-and-descent/`,
+   `holonomy-trefoil.md` and `rho-s3-holonomy-exposition.md` in `braids-and-knots/`). My first
+   check reported five as FILE-GONE; all five exist. `find . -name` before concluding.
+
+### L-V24 fixed here
+
+`hydrogen-partition-function.md:30` had the heat-capacity limits exactly inverted. Corrected,
+and "recovers the classical **monatomic** result" → "classical **equipartition** result for
+three rotational degrees of freedom" — the block is about rotational modes, and `(3/2)Nk_B`
+there is equipartition over three rotational DOF, not the monatomic translational result.
+
+### Sidecar refresh has a CEILING, and it is 40/77
+
+Measured on this block. `--only <crit>` refreshes exactly that one criterion. A **full**
+directory sweep (no `--only`) refreshes **40 of 77** criteria: **17** never carry a hash at all
+(the `da-*`, `expo-*`, `milnor-*` agent-adjudicated ones, seeded `needs-agent` only) and **20**
+remain stale. Three distinct stale hashes coexist in one sidecar, so "the sidecar is fresh" is
+not even single-valued.
+
+**Correcting my own claim in PR #6329:** I wrote "sidecars refreshed for exactly these 13
+blocks" there having run `--only wall-side-correct` — i.e. **1 criterion of 77 per block**,
+not a refresh. The PR body needs that corrected. Recording it here because the overstatement
+is the same species this ledger exists to catch.
+
+
+---
+
+## 2026-08-31 — tranche 3 (on #6335): L-V11, L-V12, L-V16 fixed; **L-V14 ESCALATED, do not "fix" it**
+
+### L-V11 — the real count is 24, and the ledger's 26 is also wrong
+
+This entry records "claims 34 twice, enumerates 11+4+9+2 = 26". Counted the tables:
+
+    table1  J-1a J-1b J-1c J-2a J-2b J-3a J-3b J-3c J-4a J-5 J-6   = 11
+    table2  D-1 D-2 D-3 D-4                                        =  4
+    table3  JC-1 … JC-9                                            =  9
+
+**J-3c and J-4a — the prose's "plus the 2 inter-level relations" — are already inside the
+structural eleven.** So the "+2" is a double-count and the true total is **24**, not 26 and
+not 34. Both numbers in the prose were wrong and so was the ledger's replacement. Corrected at
+both sites (L9 and L403), with the inter-level pair now described as two *of* the eleven.
+
+### L-V12 — fixed for self-consistency only; the cross-chapter identification is NOT verified
+
+`3.4767` vs tritium `3.4764` is `0.0086 %`, not the stated `0.014 %` — confirmed. This entry
+proposes that the value should read `3.4769` because `frobenius-gram-matrix.md:42` carries
+`+3.47694980`. **I did not take that route.** That number is a **Gram eigenvalue under
+convention C** (also in `markov-gram-bilinear-vs-star.md:56` and `markov-gram-star-positive.md:57`,
+both saying "under convention C"), in a different chapter, and nothing establishes it is the
+same quantity as this `A = 3` ratio. Importing a convention-C eigenvalue as the value of a
+mass-tower ratio, under the 2026-08-15 convention-D ruling, needs an argument this ledger does
+not supply.
+
+So I made the block **self-consistent with its own displayed value**: `0.014 %` → `0.0086 %`.
+If the intended value really is `3.47695`, the percentage is `0.0158 %` — note that is *not*
+`0.014 %` either, so the ledger's "the percentage is right and the number is the rounding
+error" does not hold at 5 dp. Whoever establishes the identification should set both.
+
+### L-V16 — `[2]_{q_0}` 2.012 → **2.011**, `[3]_{q_0}` 3.041 → **3.044**
+
+Recomputed at the proton pin: `2.0108969` and `3.0437062`. Both digits were wrong.
+
+### ⚠ L-V14 — ESCALATED. The table has no determinable convention; do not substitute a number.
+
+This entry says row (3) `[1]_q[2]_q + [2]_q[3]_q ≈ 8.84` is "a mix" of balanced (8.13148) and
+unbalanced (9.1613). True — but the table cannot simply be moved to one convention, because
+**its rows do not agree with each other**:
+
+| row | printed | balanced | unbalanced |
+|---|---|---|---|
+| (2) `[1][2]` | 2.11 | 2.0109 | **2.1100** ✓ |
+| (3) `[1][2]+[2][3]` | 8.84 | 8.1315 | 9.1616 |
+| (1³) `[-1][0]+[-2][-1]` | 2.82 | 2.0109 | 1.5429 |
+
+Row (2) is unbalanced. Row (1³) matches **neither** — a finding this ledger does not record.
+Setting row (3) to the unbalanced `9.16` would make it agree with row (2) and leave row (1³)
+matching nothing. The block needs a convention decision (and, under the 2026-08-15 ruling, a
+statement of which convention it is in) rather than a numeric patch. **Left unedited
+deliberately.**

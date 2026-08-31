@@ -153,20 +153,43 @@ def trM_borromean(q):
     (markovWeights_eq_jones_of_threeRow_eq_zero); computed in
     computations/probe3qrv_zpin.py.
 
-    PREMISE NOT ESTABLISHED. The above is conditional on the mass fibre
-    functor landing in Rep(SU_q(2)) ~ TL rather than in the full H_3(q),
-    and that premise is currently CONTRADICTED in the corpus: the scope
-    note of prop:h3-markov-wenzl-weights (mass-theory/h3-markov-wenzl-
-    weights-context.md) states that the mass and binding computations use
-    the full-Hecke Ocneanu trace, i.e. convention C — while this function
-    (via F_Bor -> canonical_mass.py) supplies D. Do not read the Lean
-    file as settling the selection: it proves a closed form FOR D, and
-    the uniqueness theorem proves TL => D; neither proves TL.
+    PREMISE ESTABLISHED 2026-08-08 — THIS NOTE WAS STALE ON BOTH COUNTS.
+    It read "PREMISE NOT ESTABLISHED", on two claims that have each since
+    been settled in the opposite direction:
 
-    Until that premise is settled, treat the D-over-C choice as a
-    documented open item, not as a derived result. Do not "resolve" it by
-    observing that D is the value matching CODATA — deciding by match is
-    the failure mode the bean was opened to test for.
+      1. "conditional on the mass fibre functor landing in Rep(SU_q(2))
+         ~ TL". That link is now PROVED, sorry-free, in
+         QOU/BraidsAndKnots/FibreDimensionForcesTL.lean: the mass fibre
+         is 2-dimensional, which fixes the Ocneanu parameter and forces
+         y_(1^3) = 0. Bean qou-n1dj. With the uniqueness theorem above
+         (TL => D), the chain is complete and D is DERIVED.
+      2. "currently CONTRADICTED in the corpus ... states that the mass
+         and binding computations use ... convention C". That scope note
+         has itself been corrected: mass-theory/h3-markov-wenzl-weights-
+         context.md now records convention D for BOTH channels, since the
+         owner ruling of 2026-08-09 excised convention C, and flags its
+         own earlier version as wrong.
+
+    This is the THIRD instance of one staleness pattern — a "what this
+    does NOT establish" note outliving the file that establishes it. The
+    same note was corrected in MarkovTraceTLUniqueness.lean (PR #6144);
+    this copy was missed there and is corrected here.
+
+    WHAT IS *NOT* WEAKENED. Do not "resolve" a convention question by
+    observing which value matches CODATA — deciding by match is the
+    failure mode bean qou-3qrv was opened to test for, and that
+    discipline is independent of the premise being settled.
+
+    🛑 THIS FUNCTION CANNOT BE USED TO *MEASURE* THE CAP. The closed form
+    below is in h alone and carries NO z parameter: convention D was
+    substituted before it was written down, so y_(1^3) = 0 is baked in
+    rather than passed in. Any joint solve that tries to recover y_(1^3)
+    from (Q_beta, m_p) via F_Bor -> canonical_mass therefore measures its
+    own assumption. The cap IS jointly observable in principle — the mass
+    channel sees y_3 + y_(1^3) where decay sees y_3 - y_(1^3), and the
+    two together have nonzero determinant — but that cross-check needs a
+    mass pairing that does not already presuppose the convention, and
+    this route is not one. Bean qou-cds1.
     """
     h = q - 1 / q
     return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))

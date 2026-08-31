@@ -44,6 +44,7 @@ Base ring `ℝ`: the statement uses `Real.sqrt` (Cauchy–Schwarz) and division/
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic
+import QOU.Mass.InvolutionNumbers
 
 namespace QOU.BraidKnot.KeystoneC8SuperExpBound
 
@@ -89,15 +90,24 @@ theorem c8_lower_bound {ι : Type*} (s : Finset ι) (f g : ι → ℝ) (kfac Ik 
   rw [div_le_div_iff₀ (by positivity) hkfac]
   nlinarith [key]
 
-/-! ## Involution numbers (concrete; `I(k) = Σ_{λ⊢k} f^λ` at q=1) -/
+/-! ## Involution numbers (concrete; `I(k) = Σ_{λ⊢k} f^λ` at q=1)
 
-/-- The involution / telephone numbers `I(0)=I(1)=1`, `I(n+2)=I(n+1)+(n+1)I(n)`
-(OEIS A000085). `I(k) = Σ_{λ⊢k} f^λ` — the `q=1` value of the QOU na-Stokes
-period `S(n) = Σ_λ dim_q(λ)`. -/
-def involutionNumber : ℕ → ℕ
-  | 0 => 1
-  | 1 => 1
-  | (n + 2) => involutionNumber (n + 1) + (n + 1) * involutionNumber n
+**This file used to define its own `involutionNumber`.** It was a second, independent
+definition of the sequence `QOU.Mass.involutionNumber` already carried — same two base cases,
+same recurrence, no shared code. The duplication was harmless only by luck: the two constants
+were distinct, so a lemma proved about one said nothing about the other, and bridging them
+needed an explicit induction (`involutionNumber_eq_keystone`, now deleted as redundant).
+
+The single definition now lives in `QOU/Mass/InvolutionNumbers.lean`, where the substantive
+content also sits — `card_involutions_eq_involutionNumber`, that `I(n)` counts the involutions
+in `S_n`. The `export` below keeps `KeystoneC8SuperExpBound.involutionNumber` resolving, so
+every existing reference and the fully-qualified name both still work.
+
+`I(k) = Σ_{λ⊢k} f^λ` — the `q=1` value of the QOU na-Stokes period `S(n) = Σ_λ dim_q(λ)` — is
+proved in `QOU.Mass.sum_numSYT_eq_involutionNumber`. -/
+
+export QOU.Mass (involutionNumber involutionNumber_zero involutionNumber_one
+  involutionNumber_succ_succ)
 
 /-- `I(n) ≤ n!` — the involution numbers are dominated by the factorial (so the C8
 denominator `I(k)` keeps `k!/(9·I(k))` at least bounded below, and the super-
