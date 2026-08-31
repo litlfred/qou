@@ -1,29 +1,35 @@
 # merge-coordinator — memory
 
-Entry types: **STABLE** · **TRAP** · **BASELINE** (re-measure, never quote).
-Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them. Detail
-lives in sibling files; keep this file under 200 lines so it all gets injected.
+**STABLE** · **TRAP** · **BASELINE** (re-measure, never quote). Seeded
+2026-08-29 from `AGENTS.md`; detail lives in sibling files. **Keep under 200
+lines — line 201+ is silently dropped**, so when you add, cut, and order last-worst.
 
-## TRAP — ALL THREE Phase-4 external gates are dead. Do not wait on any.
+## TRAP — TWO Phase-4 gates are dead; the third (Copilot) is intermittent
 
 This is the single most expensive thing in this file. `prepare-merge-auto`
 Phase 1b still prescribes a 15-minute poll for a check run that is never
 created; that wait **can only expire**.
 
+> **This heading read "ALL THREE … are dead. Do not wait on any." until
+> 2026-08-31 — while line 19 of its own body said "ONE intermittent external
+> gate, not zero".** Exactly the heading-vs-body defect recorded at the bottom
+> of this section about `AGENTS.md`, reproduced here, about the same subject,
+> by the correction that fixed the row and not the heading. An agent who skims
+> the heading merges without ever looking for a review.
+
 | gate | actual state |
 |---|---|
 | **CI green** | Unavailable. Auto-triggers disabled repo-wide (owner directive 2026-06-30, Actions billing). `build.yml` is `workflow_dispatch`-only; there is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
 | **Gemini review** | Gone. The consumer Gemini Code Assist on GitHub was sunset — "All code review activity has officially ceased" (bot notice, PR #4514, 2026-08-01). |
-| **Copilot review** | **TRAP — this row was wrong, corrected 2026-08-30.** Reviews DO arrive (~3-4 min; measured on qou#6122, folio-assistant#153, and on qou#6104/#6116 where they landed minutes AFTER a merge taken on this row's old advice, carrying six findings incl. a real correctness regression). **They are RATIONED** — five requests across two repos in ~30 min hit *"reached their quota limit"*, so never re-request after every push. `get_check_runs` really does return `total_count: 0`, but that does NOT discriminate and must not be read as "none coming"; the review arrives as a `pull_request_review.submitted` wake via `subscribe_pr_activity`. Mechanism for the historical zeros is UNSETTLED — see `docs/audits/2026-08-30-copilot-review-works-again.md`, bean `qou-gwe9` (reopened). Superseded text: Measured n=5, bean `qou-gwe9`: requested via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help. The cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+| **Copilot review** | **INTERMITTENT — never read either way as settled.** Reviews DO arrive (~3-4 min; qou#6122, fa#153, and qou#6104/#6116 where they landed minutes AFTER a merge taken on this row's *older* "never arrives" advice, carrying six findings incl. a real correctness regression) — and DO NOT (n=5 zeros 2026-08-23; a clean 10-min zero on qou#6404 2026-08-31). **RATIONED**, and quota refusals say so explicitly, so a silent nothing is not a quota refusal. `get_check_runs` returns `total_count: 0` either way — it does **not** discriminate and must never be read as "none coming"; a review arrives as a `pull_request_review.submitted` wake via `subscribe_pr_activity`. **Every observation to date confounds the request with a later push, so the mechanism is UNMEASURED, not merely unsettled** — protocol to settle it and the full observation table: [`copilot-review-arrival.md`](copilot-review-arrival.md), bean `qou-gwe9` (reopened), `docs/audits/2026-08-30-copilot-review-works-again.md`. |
 
-**So the gate table has ONE intermittent external gate (Copilot, quota-limited), not zero.** The agent's own
-verification is not the last gate standing — it is the *only* gate. Do not block on a check-run poll (it sees nothing), but DO expect a
-review wake on a subscribed PR and handle it — after a merge that means a
-follow-up PR, not nothing.
+**One intermittent external gate, not zero.** Your own verification is not the
+last gate standing — it is very nearly the only one. Never block on a check-run
+poll (it sees nothing), but DO expect a review wake on a subscribed PR and act
+on it; after a merge that means a follow-up PR, not nothing.
 
-`AGENTS.md`'s heading over this table read "Two of the three" while the table
-and its own closing paragraph both said three; an agent skimming the heading
-waits forever. Corrected 2026-08-28.
+*(`AGENTS.md`'s heading here read "Two of the three" against a body saying
+three, until 2026-08-28. Same defect as the blockquote above. It recurs.)*
 
 ## STABLE — the Phase-4 verification gate (what replaces "CI green")
 
@@ -47,16 +53,15 @@ kick it manually via `workflow_dispatch`.
 
 ## TRAP — a 2–3 second multi-job failure is billing, not code
 
-Recognise it by: all failing jobs complete in ≤ 5 s (setup-phase only —
-checkout / pip install alone take longer); multiple jobs fail together with
-the same `started_at`; local reproduction passes; the webhook says
-`conclusion: failure` but no error log exists because the job never started.
-The MCP API does not expose job-startup-phase reasons.
+Recognise it by: all failing jobs finish in ≤ 5 s (setup-phase only — checkout
+alone takes longer); several fail together on the same `started_at`; local
+reproduction passes; the webhook says `conclusion: failure` with **no error log
+at all**, because the job never started. The MCP API does not expose
+startup-phase reasons.
 
-Do **not** diagnose it as a code issue and do **not** push retrigger commits
-— billing does not clear on retry. Notify the user, and document the skip in
-the PR: `[skip-ci: GitHub Actions billing; local validate exit 0]`.
-History: PR #1435, three consecutive failures with this exact pattern.
+Never diagnose it as code, never push retrigger commits — billing does not clear
+on retry. Tell the user; document the skip as `[skip-ci: GitHub Actions billing;
+local validate exit 0]`. (PR #1435, three consecutive.)
 
 ## STABLE — merge method
 
@@ -103,30 +108,24 @@ citing the first.
 
 ## STABLE — stalled-claim takeover
 
-A bean at `in-progress` whose backing branch has had **no new commit for
-> 3 h** is presumed abandoned and may be taken over. **Scope:** only the
-branch backing a *live in-progress bean* — **never** the thousands of
-long-idle `claude/*` branches, which are permanently stale and are never
-takeover targets by age alone.
+A bean at `in-progress` whose backing branch has had **no commit for > 3 h** is
+presumed abandoned and may be taken over. **Scope: only the branch backing a
+live in-progress bean** — never the thousands of long-idle `claude/*` branches,
+which are permanently stale and are never takeover targets by age alone.
 
-Before taking over: confirm genuine staleness (last commit > 3 h AND no
-newer PR activity / no in-flight CI — a long build is not a stall), re-claim
-the bean with a `--body-append` noting the takeover and the stale branch's
-last SHA, and continue from that branch's tip or from `main`. **Never
-force-push over a sibling's branch.** This is the one sanctioned exception
-to "never touch a sibling's claim".
+First confirm real staleness (> 3 h AND no newer PR activity / in-flight CI — a
+long build is not a stall), re-claim the bean with a `--body-append` naming the
+takeover and the stale SHA, then continue from that tip or from `main`. **Never
+force-push over a sibling's branch.** The one sanctioned exception to "never
+touch a sibling's claim".
 
 ## STABLE — commit granularity
 
-Good: "scaffold module X" / "implement X.foo() — case B (braid relation)" /
-"tests: cross-check vs reference at 50-dps" / "address review (5 comments)".
-Bad: one giant "implement X" mixing scaffold + implementation + tests.
-
-Exception — a **mechanical sweep** across many blocks/scripts/witnesses is
-one bulk commit ("regenerate N sidecars after checker fix"): the change is
-uniform, cherry-pick is rarely useful, and the audit doc plus the bulk
-commit convey the intent. A single non-sweep commit > 50 files or > 1000
-lines is a signal to break it up.
+Microcommit rule is in AGENTS.md, already in your system prompt — not
+re-derived here. The one carve-out that bites *in this role*: a **mechanical
+sweep** across many blocks/scripts/witnesses is legitimately **one bulk
+commit**, because the change is uniform and cherry-pick is useless. Outside a
+sweep, > 50 files or > 1000 lines means break it up.
 
 ## STABLE — asking the author anything at all
 
@@ -155,45 +154,47 @@ Detail: [`update-pull-request-partial-write.md`](update-pull-request-partial-wri
 
 ## TRAP — API dead session-wide · shared worktree · float64-guard marker
 
-2026-08-31, TWICE (#6395/#6396, then #6400/#6401 — the API gate is **2/2, a
-STANDING condition**). Recipes: [`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md).
+Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-shared-worktree.md).
 
-1. **API dead session-wide, `git` fine.** All `mcp__github__*` → *"No such tool
-   available"*, no `gh`, REST **403 "GitHub access is not enabled for this
-   session"** — an Anthropic *session gate*, not repo permission, not rate
-   limiting, and it does **not** clear on retry. `git` over HTTPS is
-   unaffected, so fetch/rebase/push/**merge** work while PR comments, review
-   requests and `subscribe_pr_activity` do not (the post-push hook then cannot
-   be satisfied — environmental, not a lapse). Merge = push the branch, then
-   push that **same SHA** to `main` (so GitHub marks it merged); prove
-   `merge-base --is-ancestor` first and keep the `main` push non-force, which
-   makes it FF-only and self-guarding.
-2. **`/home/user/qou` is SHARED with concurrent siblings.** I checked out a
-   branch there mid-session; **their next commit landed on my branch** and would
-   have shipped inside #6395. Symptom: **`HEAD` is not what you set it to**
-   (`rev-parse` to verify, `reflog` to diagnose). Work in
-   `git worktree add --detach`. Never `git add -A` (sweeps sibling files + the
-   `qou-v0t8` audit witnesses); never `git checkout <ref> -- <path>` to peek —
-   it writes the index — use `git show <ref>:<path> >`.
-3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line
-   (a block above only shifts line numbers). `from math import comb`/`factorial`
-   flag but are exact `int` — a real false positive; verify, annotate, never
-   widen a baseline. Grepping `math\.(sqrt|exp|log)` misses `from math import`.
+1. **The API can be dead session-wide while `git` is fine** — `mcp__github__*`
+   "No such tool available", REST 403 *"GitHub access is not enabled for this
+   session"*: an Anthropic session gate, not permission or rate limiting, and it
+   does not clear on retry. **Intermittent** — down on #6395/#6396 and
+   #6400/#6401, up on #6404/#6405 the same day; check, don't assume. Merge
+   git-natively: branch first, then the **same SHA** to `main`, non-force (so it
+   is FF-only and self-guarding).
+2. **`/home/user/qou` is SHARED with concurrent siblings** — a sibling's commit
+   landed on my branch and nearly shipped in #6395. Symptom: **`HEAD` is not
+   what you set it to**. Work in `git worktree add --detach`; never
+   `git add -A`; never `git checkout <ref> -- <path>` to peek (it writes the
+   index) — use `git show <ref>:<path> >`.
+3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line.
+   `from math import comb`/`factorial` flag but are exact `int` — a real false
+   positive; verify and annotate, never widen a baseline. A hand grep for
+   `math\.(sqrt|exp|log)` misses `from math import` entirely.
 
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
 |---|---|---|---|
-| Copilot reviews arriving | `request_copilot_review` then watch for a review wake | rationed; `get_check_runs` = 0 does not discriminate | `qou-gwe9`, 2026-08-30 |
+| Copilot reviews arriving | **request, then DO NOT PUSH**, `get_reviews` at 5/15/60 min — see below | intermittent; a clean 10-min zero on qou#6404 | `qou-gwe9`, 2026-08-31 |
 | workflows with auto-triggers | `grep -l 'on:' .github/workflows/*.yml` then read each | dispatch-only repo-wide | 2026-06-30 directive |
 
-## Session log — one entry per PR; prune this, never the TRAPs
+**That Copilot row is a METHOD, not a verdict.** Request **once**, then make
+**no further push**, and read `get_reviews` at 5 / 15 / 60 min — a push may
+supersede the request, which is why no observation so far measures what it
+claims to. **Never flip the TRAP row on one run.**
+Detail: [`copilot-review-arrival.md`](copilot-review-arrival.md).
 
-- **#6395** `337dd658c7` / **#6396** `34f2352431` (2026-08-31, FF pushes, API
-  403-gated so no PR comments). Both merged on agent verification alone: probes
-  exit 0, float64 guard clean, stdout byte-identical across comment-only edits.
-  Two defects caught that the hand-off said were absent — a **retraction that
-  reached the runtime block but not the module docstring** (#6395, so the file
-  asserted the retracted route where a reader looks first), and a **red
-  float64 guard** (#6396, adjudicated a false positive on exact-int
-  `math.comb`/`factorial`). *Re-run the gates; do not trust "already verified".*
+## TRAP — a retraction reaches ONE surface and you think it landed
+
+Twice in one day, 2026-08-31. #6395: the retraction reached the runtime print
+block but **not the module docstring** — so the file asserted the retracted
+route where a reader looks first. #6405: it reached the docstring *and* the
+runtime block but **not the PR body** — where a *reviewer* looks first (caught
+pre-merge, folded in rather than appended).
+
+**A correction is not landed until it reaches every surface stating the old
+claim. Enumerate them before you start:** module docstring, runtime output, PR
+body, bean, audit doc, `AGENTS.md`. This corpus has repeatedly had a wrong
+figure survive in five places after being fixed in one.
