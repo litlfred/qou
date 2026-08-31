@@ -92,6 +92,36 @@ Brunnian forces `a = b = 0`, the trivial carrier
 **adjacent** generators. So on the minimal set the enumerator could never have
 found the corpus's own answer, at any length.
 
+## The fix is the generator set, and it is a known one
+
+The obstruction above is **not** the strand layout — `n = 3A` is forced corpus-wide
+by the three-quark structure, and re-labelling which strands belong to which
+nucleon is a conjugation, which the Markov trace cannot see. It is the **generator
+set**.
+
+The braid group's **band** (Birman–Ko–Lee) generators
+`a_{t,s} = (σ_{t-1} ⋯ σ_{s+1}) σ_s (σ_{s+1}⁻¹ ⋯ σ_{t-1}⁻¹)` link strands `s` and
+`t` **directly**, for any `s < t`, and satisfy `a_{s+1,s} = σ_s`. So the adjacent
+transpositions the enumerator used are a **proper subset** of the bands — and,
+counted in `B₉`:
+
+| | count |
+|---|---|
+| inter-nucleon band generators | **27** |
+| of those, searched by the enumerator | **2** (`σ₃`, `σ₆`) |
+| bands reaching the `1|3` pair | **9** |
+| of those, searched | **0** |
+
+Every `1|3` band has `|t - s| ≥ 4`, so none is an adjacent transposition and none
+could have been in the search set. That is exactly the pair a Brunnian carrier
+needs. **The subset chosen excludes precisely what was required.**
+
+Corpus-grepped: band / Birman–Ko–Lee generators appear nowhere in `content/`,
+`computations/` or `docs/` — the one `BKL` hit is **BKLR**
+(Bischoff–Kawahigashi–Longo–Rehren), a Frobenius-algebra theory and a substring
+false positive. Four library documents cover the band presentation, so adopting
+it is a **citation, not a derivation**.
+
 ## Scope
 
 Scope **(b)** on the enumerator's selection criterion *as implemented*, with the

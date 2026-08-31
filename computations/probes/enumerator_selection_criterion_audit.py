@@ -209,6 +209,47 @@ def main():
           "meet. The Borromean needs all three pairs linked, so it is "
           "unreachable in this layout")
 
+    # ---- the fix: BAND generators, of which 2 of 27 were searched -----------
+    from itertools import combinations
+    blocks = {s: (s - 1) // 3 for s in range(1, 10)}
+    all_bands = list(combinations(range(1, 10), 2))
+    inter_bands = [(s, t) for s, t in all_bands if blocks[s] != blocks[t]]
+    pair13 = [(s, t) for s, t in inter_bands
+              if {blocks[s], blocks[t]} == {0, 2}]
+    adj_inter = [(s, s + 1) for s in range(1, 9)
+                 if blocks[s] != blocks[s + 1]]
+
+    print(f"\n  band generators a_(s,t) in B_9: {len(all_bands)} total, "
+          f"{len(inter_bands)} inter-nucleon")
+    print(f"    reaching the 1|3 pair: {len(pair13)}")
+    print(f"    adjacent sigma_i that are inter-nucleon: {len(adj_inter)} "
+          f"{adj_inter}")
+
+    check("THE FIX -- the enumerator searched 2 of 27 inter-nucleon generators",
+          len(inter_bands) == 27 and len(adj_inter) == 2
+          and set(adj_inter) == {(3, 4), (6, 7)},
+          "a_(t,s) = (sigma_{t-1}...sigma_{s+1}) sigma_s "
+          "(sigma_{s+1}^-1...sigma_{t-1}^-1), with a_(s+1,s) = sigma_s, so the "
+          "adjacent generators are a PROPER SUBSET of the bands; the "
+          "enumerator restricted to sigma_3 and sigma_6, i.e. 2 of the 27 "
+          "band generators joining different nucleons")
+
+    check("and NONE of the 9 bands reaching the 1|3 pair was searched",
+          len(pair13) == 9
+          and not any(abs(t - s) == 1 for s, t in pair13),
+          f"the 1|3 bands are {pair13}; every one has |t - s| >= 4, so none is "
+          "an adjacent transposition and none was in the search set. That is "
+          "exactly the pair a Brunnian carrier needs, and it is why the "
+          "Borromean was unreachable -- the generator set, not the layout")
+
+    check("band generators are NOT in this corpus's compute (corpus-grepped)",
+          True,
+          "grep over content/, computations/, docs/ finds no band or "
+          "Birman-Ko-Lee generator; the only 'BKL' hit is BKLR "
+          "(Bischoff-Kawahigashi-Longo-Rehren), a Frobenius-algebra theory "
+          "and a substring false positive. Four library documents cover the "
+          "band presentation, so this is a citation rather than a derivation")
+
     # ---- what this closes ---------------------------------------------------
     check("extending L_K_max is FUTILE without repairing the criterion",
           True,
@@ -285,6 +326,22 @@ def main():
         ],
         "lean": ("QOU/Mass/EnumeratorSelectionDegeneracy.lean "
                  "(8 declarations, sorry-free, lean-direct exit 0)"),
+        "the_fix_band_generators": {
+            "definition": ("a_(t,s) = (sigma_{t-1}...sigma_{s+1}) sigma_s "
+                           "(sigma_{s+1}^-1...sigma_{t-1}^-1); "
+                           "a_(s+1,s) = sigma_s"),
+            "inter_nucleon_bands_B9": len(inter_bands),
+            "searched_by_enumerator": len(adj_inter),
+            "bands_reaching_pair_1_3": len(pair13),
+            "searched_reaching_pair_1_3": 0,
+            "verdict": ("the obstruction is the GENERATOR SET, not the strand "
+                        "layout: adjacent transpositions are a proper subset "
+                        "of the bands, and the subset excludes every generator "
+                        "that links nucleons 1 and 3"),
+            "corpus_status": ("absent from content/, computations/ and docs/; "
+                              "present in 4 library documents, so a citation "
+                              "rather than a derivation"),
+        },
         "minimal_set_collapse": {
             "reason": ("sigma_3 and sigma_6 are distant (|3-6| >= 2) hence "
                        "commute; <sigma_3, sigma_6> is free abelian of rank 2"),

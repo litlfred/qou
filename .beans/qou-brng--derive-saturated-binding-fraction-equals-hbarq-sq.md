@@ -9,6 +9,7 @@ updated_at: 2026-09-03T04:08:18Z
 updated_at: 2026-08-31T21:20:07Z
 updated_at: 2026-08-31T04:40:24Z
 updated_at: 2026-08-31T04:44:50Z
+updated_at: 2026-08-31T04:50:43Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -982,3 +983,37 @@ needs all three pairs linked, is **unreachable in this layout**.
 That is the real open question now: **what braid presentation of three nucleons
 admits a Brunnian carrier at all?** It is a design question about the
 construction, not a search.
+
+
+### The fix is the GENERATOR SET, and it is a known one — band generators (2026-08-31)
+
+Not the strand layout: `n = 3A` is forced corpus-wide by the three-quark
+structure, and re-labelling which strands belong to which nucleon is a
+conjugation, which the Markov trace cannot see.
+
+The braid group's **band (Birman–Ko–Lee) generators**
+`a_{t,s} = (σ_{t-1}⋯σ_{s+1}) σ_s (σ_{s+1}⁻¹⋯σ_{t-1}⁻¹)` link strands `s` and `t`
+**directly**, and satisfy `a_{s+1,s} = σ_s` — so the adjacent transpositions the
+enumerator used are a **proper subset** of the bands. Counted in `B₉`:
+
+| | count |
+|---|---|
+| inter-nucleon band generators | **27** |
+| searched by the enumerator | **2** (`σ₃`, `σ₆`) |
+| bands reaching the `1|3` pair | **9** |
+| of those, searched | **0** |
+
+Every `1|3` band has `|t−s| ≥ 4`, so none is an adjacent transposition and none
+could have been in the search set. **The subset chosen excludes precisely the
+pair a Brunnian carrier needs** — which is why the Borromean was unreachable.
+
+**Corpus-grepped, absent:** no band / Birman–Ko–Lee generator anywhere in
+`content/`, `computations/` or `docs/`. The single `BKL` hit is **BKLR**
+(Bischoff–Kawahigashi–Longo–Rehren), a Frobenius-algebra theory — a substring
+false positive. **Four library documents** cover the band presentation, so
+adopting it is a **citation, not a derivation**.
+
+**This is the concrete next step**, and it is a rewrite of the search set rather
+than a longer search: re-run the binding-K enumeration over the 27 inter-nucleon
+bands (in `mpf`, not float64), which is a *smaller* space than the 87,380 words
+the length-extension would have walked.

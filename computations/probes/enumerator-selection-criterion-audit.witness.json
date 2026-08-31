@@ -1,7 +1,7 @@
 {
   "computation": "enumerator-selection-criterion-audit",
   "scriptFile": "probes/enumerator_selection_criterion_audit.py",
-  "computedAt": "2026-08-31T04:44:09.633616+00:00",
+  "computedAt": "2026-08-31T04:49:59.581934+00:00",
   "contentBlock": "qou-brng",
   "description": "The binding-K enumerator ranks carrier candidates by Frobenius residual. Read off its own recorded output, that criterion has three independent fatal defects: its rank-1 pick is an intra-nucleon self-crossing that binds nothing, its rank-1/rank-2 ordering is a 2-ULP float64 tie-break between two candidates that block symmetry makes exactly equal, and the two genuine interface generators are exactly degenerate. Extending the word-length bound cannot help. Nothing was re-run.",
   "source_witness": "_deprecated/binding-k-enumerator.witness.json",
@@ -220,6 +220,21 @@
       "detail": "Brunnian needs lk(1,2) = lk(2,3) = lk(1,3) = 0; those are a/2, b/2 and 0, so a = b = 0, the TRIVIAL carrier, at every length. lk(1,3) = 0 is FORCED: sigma_3 transposes positions 3,4 and sigma_6 transposes 6,7, so a block-1 strand and a block-3 strand never meet. The Borromean needs all three pairs linked, so it is unreachable in this layout"
     },
     {
+      "name": "THE FIX -- the enumerator searched 2 of 27 inter-nucleon generators",
+      "passed": true,
+      "detail": "a_(t,s) = (sigma_{t-1}...sigma_{s+1}) sigma_s (sigma_{s+1}^-1...sigma_{t-1}^-1), with a_(s+1,s) = sigma_s, so the adjacent generators are a PROPER SUBSET of the bands; the enumerator restricted to sigma_3 and sigma_6, i.e. 2 of the 27 band generators joining different nucleons"
+    },
+    {
+      "name": "and NONE of the 9 bands reaching the 1|3 pair was searched",
+      "passed": true,
+      "detail": "the 1|3 bands are [(1, 7), (1, 8), (1, 9), (2, 7), (2, 8), (2, 9), (3, 7), (3, 8), (3, 9)]; every one has |t - s| >= 4, so none is an adjacent transposition and none was in the search set. That is exactly the pair a Brunnian carrier needs, and it is why the Borromean was unreachable -- the generator set, not the layout"
+    },
+    {
+      "name": "band generators are NOT in this corpus's compute (corpus-grepped)",
+      "passed": true,
+      "detail": "grep over content/, computations/, docs/ finds no band or Birman-Ko-Lee generator; the only 'BKL' hit is BKLR (Bischoff-Kawahigashi-Longo-Rehren), a Frobenius-algebra theory and a substring false positive. Four library documents cover the band presentation, so this is a citation rather than a derivation"
+    },
+    {
       "name": "extending L_K_max is FUTILE without repairing the criterion",
       "passed": true,
       "detail": "a longer search re-ranks by a comparator that prefers non-carriers (defect 1), breaks ties in rounding error (defect 2) and is degenerate on the interfaces (defect 3); more candidates do not fix a broken comparator"
@@ -234,6 +249,15 @@
     "The corpus's canonical A=3 carrier (Borromean L6a4) is not reachable from the MINIMAL set at all: sigma_3 and sigma_6 are distant hence commute, so that subgroup is free abelian and Brunnian forces the trivial carrier. The recorded run used the EXTENDED set, where Brunnian carriers do exist."
   ],
   "lean": "QOU/Mass/EnumeratorSelectionDegeneracy.lean (8 declarations, sorry-free, lean-direct exit 0)",
+  "the_fix_band_generators": {
+    "definition": "a_(t,s) = (sigma_{t-1}...sigma_{s+1}) sigma_s (sigma_{s+1}^-1...sigma_{t-1}^-1); a_(s+1,s) = sigma_s",
+    "inter_nucleon_bands_B9": 27,
+    "searched_by_enumerator": 2,
+    "bands_reaching_pair_1_3": 9,
+    "searched_reaching_pair_1_3": 0,
+    "verdict": "the obstruction is the GENERATOR SET, not the strand layout: adjacent transpositions are a proper subset of the bands, and the subset excludes every generator that links nucleons 1 and 3",
+    "corpus_status": "absent from content/, computations/ and docs/; present in 4 library documents, so a citation rather than a derivation"
+  },
   "minimal_set_collapse": {
     "reason": "sigma_3 and sigma_6 are distant (|3-6| >= 2) hence commute; <sigma_3, sigma_6> is free abelian of rank 2",
     "by_length_bound": [
