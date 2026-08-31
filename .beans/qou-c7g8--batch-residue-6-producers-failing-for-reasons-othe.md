@@ -416,3 +416,44 @@ Neither is a batch defect and neither is fixable by raising a cap:
 Both unblock on `unified_iterative_correction`, then on (b). Recommend splitting
 those into their own bean — they are a performance/correctness problem in
 `hecke_core_legacy`, not batch residue.
+
+## 2026-08-31 — the two remaining items: root cause found, still blocked
+
+Both remaining items are `hadron_knot_table`, and its blocker is now
+CHARACTERISED rather than unknown. Chain, end to end:
+
+    hadron_knot_table -> compute_atom -> binding_energy (returns 0.0 for A<=1)
+      -> unified_iterative_correction        <- the cost lives here
+      -> binding_from_frobenius_pairing      <- was a hard crash, FIXED (qou-9ay6)
+
+Two defects were found under it and one is fixed:
+
+1. **FIXED** — `binding_from_frobenius_pairing` died with a scipy object-dtype
+   TypeError at every A>=2 atom. Root cause was a missing object branch in 2 of
+   3 copies of one loop; extracted to `_msig_object_safe`. Confirmed: TypeError
+   in under a second → computes.
+
+2. **FIXED, and it was the big one** — `_count_syts_by_12_relation` enumerated
+   every standard Young tableau of shape λ. Profiling put **80.3 s of 90 s and
+   26,028,387 calls** in its recursive `fill`, against under a second in all of
+   mpmath. Replaced by a closed form (`qou-9ay6`), verified on all 137
+   partitions of n=2..10 with zero mismatches. After the fix `fill` is gone from
+   the profile entirely.
+
+### ⚠️ Still not enough — and I will not claim a speedup factor
+
+`unified_iterative_correction(1,1)` — the SMALLEST input that reaches this code
+— is still running past **11 minutes** after the fix. So `hadron_knot_table`,
+whose `ATOMS` runs to ca40 (A=40), remains unreachable and these two items stay
+blocked.
+
+What is rigorously established is the PROFILE comparison: the dominant cost went
+from 89% of tottime to absent. What is NOT established is a wall-clock speedup
+factor, because no "before" completion time exists — the function was never
+measured to completion, only bounded at >120 s. I am not converting a profile
+share into a speedup claim.
+
+The remaining cost is genuine mpf matrix multiplication (`_matmul_dim`), which
+`qou-9ay6` now carries along with an owner question: the pipeline is float64 at
+both ends, so that cost may be protecting precision the inputs never had. That
+ruling, not more optimisation, is what unblocks these two.
