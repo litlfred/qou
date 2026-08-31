@@ -254,3 +254,45 @@ live target, and which `CrossingCountAffine.no_crossing_combination_is_protonPai
 proves the crossing counts cannot supply.
 
 No number moved; nothing wired. Recorded so the corroboration is not lost.
+
+---
+
+## One candidate obstruction REMOVED: the GS reduction preserves the coordination info (2026-08-31)
+
+`be017ea57b` named the informative direction — *"a `k` derived from the
+substrate — the braid word's own geometry — then COMPARED to the plateau"*.
+Before attempting that, a prior question: does the coordination information
+survive the Gröbner–Shirshov reduction into the **H₃ quotient** that the
+production chain actually carries? If not, no `k` is readable from the normal
+form and the route needs the full H_{3A} tower.
+
+**It survives.** `computations/probes/nf_bond_count_injectivity_probe.py`
+(PR #6358), sweeping every Z, N ≤ 4 with every bond count m ≤ C(A,2):
+
+    configurations swept   : 222
+    shape collisions       :  115   distinct shapes       107
+    NORMAL-FORM collisions :    0   distinct normal forms 222
+
+**This probe exists because the merged sibling result made the opposite look
+true.** `30c5628b56` measured the jet-grade **shape** — four term counts, one
+per Coxeter grade — and found it many-to-one (115 collisions). The tempting
+inference is that the reduction destroyed the bond information and the route is
+blocked at H₃. It is false: the shape is four integers, the normal form is six
+Laurent polynomials. Not one of the 222 configurations shares a normal form,
+and the closest shape-colliding pair — `(Z=1,N=3,m=3)` vs `(Z=1,N=3,m=1)` —
+differs in **261 Laurent coefficients**. A conclusion drawn from a lossy
+summary does not transfer to the object it summarises.
+
+**Scope.** scope-(a) POSITIVE: no collision *found* on the swept sample. NOT a
+proof that `(Z, N, bond count) → normal form` is injective in general. The
+companion negative is not sample-limited — one exhibited collision establishes
+that the shape is many-to-one, and 115 are exhibited.
+
+**What it does NOT do.** It supplies no derivation of `k`, and it argues
+nothing about the plateau, `bounded_degree_saturates`, or the ℏ_q² saturation
+verdict — the 2026-08-21 assessment (the saturated fraction is *more likely
+numerology than a derived prediction* now that the volume-defect route is
+refuted) stands untouched. It removes one candidate blocker and nothing more.
+
+**Live edge unchanged:** derive `k` from the braid word's own geometry, then
+compare. Nothing in the corpus does that yet.
