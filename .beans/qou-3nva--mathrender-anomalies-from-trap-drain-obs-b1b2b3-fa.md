@@ -4523,3 +4523,103 @@ Fixed by me: **11** (L-V4–L-V12, L-V16, L-V24). Already fixed before I arrived
 Escalated as decisions: **2** (L-V14, L-V18). Retracted as not-a-defect: **1** (L-V13).
 Of 21 sampled entries, **three of the ledger's own prescriptions were wrong** — L-V11's
 replacement count, L-V12's proposed source value, and L-V13 entirely.
+---
+
+## Tranche 5 — the render-class band (L-V50…L-V62), 2026-08-31 · PR #6347
+
+Six fixed, six already fixed, **one false positive whose obvious "fix" is
+documented to break the build**, and one new finding recorded rather than
+patched.
+
+**FIXED**
+
+| entry | class | actual sites | this ledger said |
+|---|---|---|---|
+| L-V56 | pandoc `[@key]` → `\cite{key}` | 26 sites / 12 files | 3 / 2 — **8× undercount** |
+| L-V57 | escaped `\[key]` → `\cite{key}` | 9 / 6 | 1 file |
+| L-V55 | `\operatorname` → `\mathrm` | 6 / 3 | **wrong files entirely** |
+| L-V61 | `Q_β` mislabelled CAL-3 | 3 | ✓ |
+| L-V62 | spurious `\cdot \pi` on `Vol(4₁)` | 1 | ✓ |
+| L-V53 | `\frac{X}{1}` | 1 | ✓ |
+
+All 26 pandoc keys and all 6 escaped keys were resolved against
+`content/schema/references.ts` **before** converting. Canonical `\cite{}`
+usage in the corpus is 244 sites, so the two odd spellings are outliers, not
+a competing convention.
+
+**L-V55 is stale AND an undercount at the same time.** The named sites
+(`mobius-surreal-renormalization`, `hyperreal-limit-transfer`,
+`jones-mobius-diagonal`) are all clean; the live ones are
+`index-of-definitions/definition-index.md:1086` and
+`mass-theory/piece-a-specht-character-trace{,-proof}.md`. A prior drain fixed
+the named sites and left the class alive elsewhere — precisely what a *class*
+entry exists to prevent. **When an entry names sites, re-run the class grep,
+not the site list.**
+
+**L-V61 is not a label swap.** CAL-3→CAL-2 would make line 69 read *"predicts
+from CAL-1, CAL-2 … CAL-2 enters only as a cross-check"*. The block's real
+argument is the CAL-2 **overdetermination**: q₀ pinned through the mass proxy
+`m_μ/m_e`, so the empirical decay-width proxy `Q_β` is a cross-check on the
+same calibration. Rewritten to say that.
+
+**🛑 L-V50 IS A FALSE POSITIVE — and acting on it is worse than ignoring it**
+
+`\pp` is not undefined. `main.tex:237` has
+`\newcommand{\pp}{p}  % prime p — used in p-adic content`, and all 8 live
+sites use it correctly. `quantum-observable-universe.ts:29-35` further records
+that re-emitting `\newcommand{\pp}{...}` in the KaTeX macros block *"triggered
+a fatal `Command \pp already defined` in the pdflatex compile"*. So the entry's
+natural reading — *define the missing macro* — is a documented build break.
+**Entry retracted.**
+
+**ALREADY FIXED (0 occurrences each):** L-V51 `\xiZ` · L-V52
+`\pid`/`\pia`/`\lambdaL` · L-V54 `\unicode{9737}` · L-V58 bare `Cech` (`.md`
+and `.ts`) · L-V59 `## Corollarys` → now `## Corollaries` · L-V60 the q₀ digit
+transposition.
+
+**NEW — L-V64. Stale muon anchor quoted in prose. NOT patched.**
+
+Two blocks quote the **CODATA-2018** muon pin as canonical:
+
+- `appendix-qvalues/proton-mass-substrate-identity-derivation.md:7` — `1.10997859555…`
+- `knots-particles-confinement/delta-skein-substrate-identity.md:40` — `1.109978595554181`
+
+Canonical since `fca08de7d29` (2026-08-28) is CODATA 2022,
+`1.109978595642739`. The three muon values (retired frozen A, CODATA-2018 B,
+CODATA-2022 C) diverge at the **13th significant digit**, so both quotes are
+wrong at the 12+ dps precision they themselves claim.
+
+**Deliberately not patched.** The tables directly beneath both quotes were
+computed at B. Changing the quoted anchor without re-running the producers
+converts a stale-but-consistent block into an internally inconsistent one.
+Belongs with `qou-tekx`, not with a prose sweep.
+
+**Sidecars.** 22 refreshed; **917 of 1645 criteria = 55.7%**. Per block the
+ratio runs 35 %–89 %, so the "40/77 ceiling" recorded in tranche 1 is
+block-dependent, not a constant — do not quote it as one. The 728 residual are
+`needs-agent` classes (twelve of them, on 20 blocks each) that no script
+invocation can discharge.
+
+**Method warning (mine).** My first measurement of that sweep said **0 of
+1645**, and I nearly committed it. Per-criterion freshness is
+`criteria.<c>[-1].field_hash.md`, **not** the top-level `source_hashes.md` — the
+top-level block updates regardless, so a script keying on it returns a
+plausible number that measures nothing. Read the raw `git diff` of one sidecar
+before trusting any aggregate over them.
+
+**RUNNING TALLY, five tranches**
+
+| outcome | count |
+|---|---|
+| fixed | 17 |
+| already fixed on arrival | 13 |
+| escalated as author decisions | 2 (L-V14, L-V18) |
+| retracted / false positive | 2 (L-V13, L-V50) |
+| new entries opened | 1 (L-V64) |
+
+**Five of this ledger's own prescriptions have now proven wrong**: L-V11's
+replacement count, L-V12's proposed source value, L-V13 entirely, L-V50
+actively harmful, L-V55 pointing at the wrong files. That is 5 of 21 sampled
+≈ **24 %**, on top of ~33 % simple staleness. **Every entry is a candidate.
+Re-derive before applying, and re-run the class grep rather than the site
+list.**
