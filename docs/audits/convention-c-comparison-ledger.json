@@ -1190,6 +1190,18 @@
       "rationale": "The replacement acceptance test's validation matrix rejects known-wrong candidates, and its decisive row (alpha_D + (q-1)^3) is decisive precisely because it PASSES the retired test's convention-C part 1 while tier 1 rejects it. Demonstrating that the old test was non-discriminating requires computing the C arm it was stated over.",
       "adjudicated_by": "claude (session 791c0e50, PR following #6299)",
       "date": "2026-08-30"
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_when_adjudicated": 138,
+      "scope": "<module>",
+      "source": "z_C = sp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "The probe's result IS the C-vs-D contrast: it establishes that the bar-invariance rule which forces the N=1 phase under D is VACUOUS under C, because a_C is bar-odd and cosine is even, so cos(bar(a_C)) = cos(a_C) identically. Two of its assertions are named controls -- control_C_phase_is_bar_odd and C_cosine_is_ALREADY_bar_invariant -- and neither can be stated without evaluating the C arm. Removing z_C would delete the demonstration that D is the frame where the rule has content.",
+      "adjudicated_by": "claude (session 791c0e50, branch claude/convention-migration-validation-77exfa)",
+      "date": "2026-08-31"
     }
   ]
 }
