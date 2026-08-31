@@ -59,6 +59,8 @@ import QOU.Shared.ArchimedeanEval
 import QOU.Information.toffoli_transfer_matrix
 import QOU.BraidKnot.ElectronShell
 import QOU.BraidKnot.LevelSufficiency
+import QOU.BraidKnot.ShellClosureStability
+import QOU.Archimedean.TMCorrespondence
 
 /-! ## Inhabited with no hypotheses
 
@@ -502,3 +504,88 @@ noncomputable example (m : ConfMorphism probeParticle2 probeParticle2) :
   trace_eq := rfl
 
 end HandAdjudicated2
+
+/-! ### `ShellClosureMonotone` — the ORDER is trivial, not merely the witness
+
+A fourth defect shape, and the sharpest one measured so far.  Everything above
+is vacuous because a *witness exists*: the class is inhabited at some value, so
+a `[C]` binder assumes nothing.  This one does not need a value at all.
+[`ShellClosureStability.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean)
+opens with
+
+    local instance : LE R_q := ⟨fun _ _ => True⟩
+
+so `≤` on `R_q` **is** `fun _ _ => True` throughout that file.  The class field
+
+    monotone : frobeniusStability D_prev q ≤ frobeniusStability D q
+
+therefore elaborates to `True`, and `⟨trivial⟩` inhabits the class at *every*
+`(D_prev, D, q, h)` — the theorem below is general in all four, not a witness at
+one tuple.  The consequence is that `shell_closure_monotone` — "the Frobenius
+stability index does not decrease under a one-step dressing", claim (1) of the
+shell-closure proposition — is not merely unproved: **it cannot be false**, and
+neither can the first conjunct of `shell_closure_terminality`, which is built
+from it.
+
+The file half-knows this.  Its own `shellClosureMonotone_refl` carries the
+comment *"`≤` on `R_q` is the trivial (`fun _ _ => True`) order (local instance
+above), so `x ≤ x` is `True`"* — which reads as an observation about the
+reflexive case.  It is not; it is the general fact, and stating it only for
+`D_prev = D` makes the other instances look like they cost something. -/
+
+namespace HandAdjudicated3
+open QOU.BraidKnot QOU.Archimedean
+
+/-- No Prop fields — inhabited at every dressed particle, like `HasMarkovTrace`. -/
+noncomputable instance frobStabZero (D : DressedParticle) :
+    HasFrobeniusStability D where
+  sigma := fun _ => 0
+
+/-- **Every** monotonicity instance is free, for every pair, every `q`, and every
+dressing proof — because the `≤` it is stated with is the trivial order. -/
+theorem shellClosureMonotone_always (D_prev D : DressedParticle)
+    [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
+    (q : R_q) (h : isOneStepDressing D_prev D) :
+    ShellClosureMonotone D_prev D q h :=
+  ⟨trivial⟩
+
+end HandAdjudicated3
+
+/-! ### `MatrixChainEqBuildChains` — NOT vacuous, and scored as such
+
+This one goes the other way, and is recorded because a drain that only reports
+vacuity is not a measurement.  The class carries a real claim about its
+parameters —
+
+    eq : matrixChain (chainCrossings config j) = (buildChains config).get! j
+
+— relating a right fold over the crossing sequence to a left fold in
+`buildChains`.  Nothing about it is trivial, and the witness below is a genuine
+computation: at `config = [proton, proton]`, `j = 0`, both sides evaluate to
+`2 • T_pp` and the equality is proved entry-by-entry, not projected.
+
+**So the class is satisfiable and non-trivial, and it does not join the vacuity
+count.**  The defect its projection carries is a different one.
+`matrixChain_eq_buildChains` states exactly the class field and discharges it
+with `exact matrixChain_eq_buildChains_axiom config j hj` — the §3b-cond item-5
+shape, a theorem proved by projecting a hypothesis identical to its own
+conclusion.  What the witness shows is that the honest route is open in both
+directions: for a *concrete* config the claim is decidable by unfolding and
+needs no class at all, and the *general* statement (all transfer matrices
+commute, so `foldl` and `foldr` agree) is a real lemma someone can prove.  The
+class is standing in for work, not for nothing. -/
+
+namespace HandAdjudicated4
+open QOU.Archimedean QOU.TMCorrespondence
+
+/-- A genuine instance: both folds give `2 • T_pp` at the two-proton config. -/
+example : MatrixChainEqBuildChains [NucleonType.proton, NucleonType.proton] 0
+    (by norm_num) where
+  eq := by
+    simp [matrixChain, chainCrossings, buildChains, crossingMatrix,
+      transferMatrix, vertexType, w_plus_t, w_zero_t]
+    refine Matrix.ext fun i j => ?_
+    fin_cases i <;> fin_cases j <;>
+      simp [T_pp, transferMatrix, Matrix.mul_apply, Matrix.ofNat_apply]
+
+end HandAdjudicated4
