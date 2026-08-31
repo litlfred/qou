@@ -368,3 +368,39 @@ lane has withdrawn three times.
 
 See the next note. It is formal hygiene rather than a binding gap, so it was
 taken last per the owner's redirect to the binding primary goal.
+
+## (5) formalising — the binding half landed, the permutation half scoped and NOT landed
+
+`QOU/MassTheory/PairwiseChainLeadingOrder.lean`, sorry-free (axioms
+`[propext, Classical.choice, Quot.sound]`).
+
+**Landed**, and it is the binding-relevant half: the leading-order
+pairwise-vs-exact ratios, proved exactly.
+
+* `c1_dyadic` — every leading coefficient is dyadic, stated as `c₁·2^k = m`
+  (`Rat.den` does not reduce under `decide` for a division literal).
+* `chain_over_atom_T = 292/163`, `chain_over_atom_He3 = 30/17`,
+  `chain_over_atom_He4 = 24/7` — the ⁴He one simplifies because `259 = 7·37`
+  and `888 = 24·37`.
+* `chain_over_atom_He4_gt_three` — the formal statement that the leading-order
+  error is **large**: the pairwise chain exceeds the exact `H_{3A}` trace by more
+  than a factor of three as `ℏ_q → 0`. This is the warning, not a result to be
+  pleased about.
+* `chains_overcount` — all three over-count.
+
+The `c₁` values enter as **definitions**, flagged as measurements. Only what
+follows from them is proved. That is the honest line: `c₀` is derived
+(`ClassicalTraceFloor`), `c₁` is not.
+
+**NOT landed: the permutation half.** Formalising `c(σ_atom) = A+1` needs
+"composing with a transposition changes the orbit count by exactly ±1, and
+decreases it exactly when the two points lie in different cycles". Mathlib at the
+pinned rev has `Equiv.Perm.cycleType`, `Equiv.Perm.SameCycle` and
+`card_support_swap_mul` (a support-cardinality *inequality*) — but **no
+orbit-count-under-swap lemma**. Orbit count would have to be built as
+`cycleType.card + (n − support.card)` and the swap behaviour proved from the
+cycle decomposition. That is a real development, and it is formal hygiene rather
+than a binding gap, so it was taken last and left open per the owner's redirect
+to the binding primary goal.
+
+It stays as the one remaining computational input other than Schur–Weyl.
